@@ -1,4 +1,4 @@
-name: Deploy Hugo site (with Tailwind & Submodule) to GitHub Pages
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
@@ -6,28 +6,20 @@ on:
       - main
 
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repo explicitly (with submodules)
-      - name: Checkout repository with submodules
+      - name: Checkout repository explicitly with submodules
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
 
-      # Step 2: Explicitly update and sync submodules
-      - name: Sync & Update theme submodule
+      - name: Explicitly sync & update submodule
         run: |
           git submodule sync --recursive
-          git submodule update --init --recursive --force --remote
-
-      # Step 3: Install Node.js explicitly
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+          git submodule update --init --recursive --force
 
       # Step 4: Install npm dependencies explicitly
       - name: Install npm dependencies
@@ -43,14 +35,13 @@ jobs:
         with:
           hugo-version: '0.147.3'
           extended: true
-
-      # Step 7: Build Hugo site explicitly
-      - name: Build Hugo site
+          
+      - name: Build Hugo Site
         env:
           HUGO_ENV: production
-        run: hugo --minify --baseURL "https://runink.org/"
+        run: |
+          hugo --minify --baseURL "https://runink.org/"
 
-      # Step 8: Deploy explicitly to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
