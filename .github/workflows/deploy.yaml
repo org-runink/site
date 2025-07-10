@@ -44,7 +44,7 @@ jobs:
       - name: Build Hugo Site
         env:
           HUGO_ENV: production
-        run: hugo --baseURL "https://runink.org/"
+        run: hugo --baseURL "https://runink.org/" -d docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
