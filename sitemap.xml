@@ -2,13 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://runink.org/tags/ai-governance/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/blog/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/data-privacy/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/deepfake-protection/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/ethical-ai/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/generative-ai/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/information-security/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/logistics/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/blog/information-security-ethical-gen-ai-logistics/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://runink.org/tags/agent-orchestration/</loc>
     <lastmod>2025-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/ai-retail-logistics/</loc>
-    <lastmod>2025-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/blog/</loc>
     <lastmod>2025-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/canadian-supply-chain/</loc>
@@ -24,9 +54,6 @@
     <lastmod>2025-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/genai/</loc>
-    <lastmod>2025-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/</loc>
     <lastmod>2025-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/blog/genai-supply-chain-emissions-reduction/</loc>
@@ -54,9 +81,6 @@
     <lastmod>2025-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/sustainability/</loc>
-    <lastmod>2025-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/</loc>
     <lastmod>2025-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/tms/</loc>
@@ -102,9 +126,6 @@
     <lastmod>2025-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/dropshipping/</loc>
-    <lastmod>2025-07-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/generative-ai/</loc>
     <lastmod>2025-07-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/blog/genai-open-source-dropshipping-logistics/</loc>
@@ -176,16 +197,10 @@
     <loc>https://runink.org/tags/task-orchestration/</loc>
     <lastmod>2025-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/ai-governance/</loc>
-    <lastmod>2025-06-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://runink.org/tags/data-quality/</loc>
     <lastmod>2025-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/data-driven-business/</loc>
-    <lastmod>2025-06-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/information-security/</loc>
     <lastmod>2025-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/iso-27000/</loc>
