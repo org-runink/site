@@ -6,7 +6,7 @@ author: "Runink Editorial Team"
 date: 2025-06-16
 tags: [ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001, ISO 27701, data quality, information security, privacy management, AI governance, data-driven business]
 robots: index, follow
-featured_image: /image/blog/iso-standards-data-driven.png
+featured_image: /images/blog/iso-standards-data-driven.png
 canonical: https://www.runink.org/blog/iso-standards-data-driven-business
 ---
 

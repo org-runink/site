@@ -6,7 +6,7 @@ author: "Runink Editorial Team"
 date: 2025-05-01
 tags: [Runink, Go, Raft, Linux, data pipelines, data governance, open lineage, open data contracts, open telemetry, observability, multi-tenancy, security]
 robots: index, follow
-featured_image: /image/blog/runink-go-raft-linux-data-pipelines.png
+featured_image: /images/blog/runink-go-raft-linux-data-pipelines.png
 canonical: https://www.runink.org/blog/runink-go-raft-linux-data-pipelines
 ---
 

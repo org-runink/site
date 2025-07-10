@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Runink"
 
 # Theme Config
-theme = "../.."
+theme = "hugo-saasify-theme"
 
 # Enable syntax highlighting
 pygmentsCodeFences = true
@@ -28,6 +28,7 @@ paginatePath = "page"
   description = ""
   logo = "/images/logo.png"
   googleAnalytics ='G-SEECKDWZNJ'
+  disablePostCSS = true
   
   # Global CTA Configuration
   [params.cta]
@@ -86,14 +87,14 @@ paginatePath = "page"
       
       # Get Started button
       [params.header.buttons.getStarted]
-        text = "Get Started"
+        text = "Book your Consultation"
         url = "/contact"
 
   # Blog configuration
   [params.blog]
     enable = true
-    title = "Latest Articles"
-    subtitle = "Learn more about web development and best practices"
+    title = "Publications, Insights & Expertise"
+    subtitle = "Explore whitepapers, real-world use cases, and actionable best practices to maximize ROI from your Digital Transformation initiatives."
     
     # Blog CTA configuration
     [params.blog.cta]
@@ -135,7 +136,11 @@ paginatePath = "page"
     min = "0.80.0"
 
 [build]
-  writeStats = true
+  writeStats = false
+
+[minify]
+  disableXML = true
+  useResourceCacheWhen = "never"
 
 [build.buildStats]
   enable = true
@@ -174,7 +179,7 @@ paginatePath = "page"
 #    url = "/pricing"
 #    weight = 2
   [[menu.main]]
-    name = "Blog"
+    name = "Publications, Insights & Expertise"
     url = "/blog"
     weight = 3
 #  [[menu.main]]
@@ -203,7 +208,7 @@ paginatePath = "page"
 
   # Footer Column 2 Menu
   [[menu.footer_column_2]]
-    name = "Blog"
+    name = "Publications, Insights & Expertise"
     url = "/blog"
     weight = 1
 #  [[menu.footer_column_2]]
