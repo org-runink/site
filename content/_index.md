@@ -35,19 +35,6 @@ client_logos:
     logo: "/images/logos/customer-17.png"
   - name: "Hydro Quebec"
     logo: "/images/logos/customer-18.png"
-testimonials:
-  - name: "Kroeger"
-    avatar: "/images/logos/customer-1.png"
-    quote: "Runink consultants consistently demonstrate exceptional technical expertise and a proactive approach, significantly enhancing client trust. They deliver valuable solutions and empower clients through effective knowledge transfer, making them indispensable assets to any project."
-  - name: "Engie"
-    avatar: "/images/logos/customer-17.png"
-    quote: "Runink's consultants are exceptional developers, attentive to project details and consistently supportive of their colleagues. Their collaborative approach significantly enhances overall team performance."
-  - name: "Reitmans"
-    avatar: "/images/logos/customer-4.png"
-    quote: "Runink consultants possess ability to quickly and effectively resolve complex problems with keen analytical and technical skills coupled with exemplary leadership."
-  - name: "Hydro Quebec"
-    avatar: "/images/logos/customer-18.png"
-    quote: "Runink consultants exhibit exceptional technical qualifications and unwavering commitment, consistently surpassing client expectations in analytics and digital transformation projects."
 
 ---
 
@@ -100,13 +87,6 @@ testimonials:
 >}}
 
 {{< /features-section >}}
-
-{{< testimonials 
-    title="Trusted by Industry Leaders"
-    description="See how top logistics teams drive efficiency and innovation with Runink."
-    animate="true"
-    background-color="#f1f5f9"
->}}
 
 {{< cta 
     title="Ready to Accelerate Your Logistics Transformation?"
