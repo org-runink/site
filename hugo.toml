@@ -13,7 +13,7 @@ pygmentsUseClasses = true
 enableEmoji = true
 
 # Enable Git info for lastmod
-enableGitInfo = false
+enableGitInfo = true
 
 # Enable taxonomies
 [taxonomies]
