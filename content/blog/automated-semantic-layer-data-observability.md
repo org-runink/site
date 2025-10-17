@@ -32,17 +32,17 @@ Think of it as a *translation layer* between machines and decision-makers — au
 
 ### 🧩 Visualizing the Concept
 
-```mermaid
+{{< mermaid >}}
 graph TD
-A[Raw Telemetry Streams] --> B[Semantic Layer Engine]
-B --> C[Entity Models]
-B --> D[Metrics + KPIs]
-B --> E[Lineage + Quality Scores]
-C --> F[Data Observability Platform]
-D --> F
-E --> F
-F --> G[Unified Business Context + Alerts]
-````
+  A[Raw Telemetry Streams] --> B[Semantic Layer Engine]
+  B --> C[Entity Models]
+  B --> D[Metrics + KPIs]
+  B --> E[Lineage + Quality Scores]
+  C --> F[Data Observability Platform]
+  D --> F
+  E --> F
+  F --> G[Unified Business Context + Alerts]
+{{< /mermaid >}}
 
 This continuous cycle allows data observability platforms to shift from reactive dashboards to **context-rich diagnostics** — where each alert, anomaly, or degradation has an immediate narrative behind it.
 
@@ -70,12 +70,12 @@ This turns observability into **a living system of record** for how data behaves
 Telemetry provides signals, but the semantic layer defines the meaning of those signals.
 It converts low-level metrics — like latency, schema drift, or pipeline retries — into higher-level indicators such as *data freshness*, *contract conformance*, and *trustworthiness*.
 
-```mermaid
+{{< mermaid >}}
 flowchart LR
-A[Telemetry: row_count_change=30%] --> B[Semantic Mapping: Dimension=Quality]
-B --> C[Business Context: "Inventory Update Frequency Degraded"]
-C --> D[Governance Rule Triggered: Investigate Supplier Feed Lag]
-```
+  A[Telemetry: row_count_change=30%] --> B[Semantic Mapping: Dimension=Quality]
+  B --> C["Business Context: Inventory Update Frequency Degraded"]
+  C --> D[Governance Rule Triggered: Investigate Supplier Feed Lag]
+{{< /mermaid >}}
 
 Without this translation, observability data remains a blur of metrics without narrative.
 
@@ -135,15 +135,15 @@ Executes policies and alerts based on semantic context (e.g., “Data Quality < 
 
 ### 🔧 Example Architecture
 
-```mermaid
+{{< mermaid >}}
 graph TD
-A[Telemetry Sources] --> B[Event Normalizer]
-B --> C[Semantic Mapper]
-C --> D[Knowledge Graph Store]
-D --> E[Governance Engine]
-E --> F[Dashboards + AI Agents]
-F --> G[End Users: Data, Ops, Risk Teams]
-```
+  A[Telemetry Sources] --> B[Event Normalizer]
+  B --> C[Semantic Mapper]
+  C --> D[Knowledge Graph Store]
+  D --> E[Governance Engine]
+  E --> F[Dashboards + AI Agents]
+  F --> G[End Users: Data, Ops, Risk Teams]
+{{< /mermaid >}}
 
 Each layer refines data observability from signal → structure → meaning → action.
 
@@ -208,14 +208,14 @@ At Runink, the **Analytics Companion** and **Herd Observability Layer** use tele
 Every telemetry event — from pipeline run to model prediction — becomes a node in a living graph, bound by contracts and lineage.
 This enables enterprises to build governed analytics ecosystems where every KPI, forecast, and automation is traceable to its source.
 
-```mermaid
+{{< mermaid >}}
 graph LR
-A[Telemetry Event] --> B[Semantic Layer]
-B --> C[Domain Knowledge Graph]
-C --> D[Governance + Quality Scoring]
-D --> E[Analytics Companion Insights]
-E --> F[Trusted Decisions + AI Readiness]
-```
+  A[Telemetry Event] --> B[Semantic Layer]
+  B --> C[Domain Knowledge Graph]
+  C --> D[Governance + Quality Scoring]
+  D --> E[Analytics Companion Insights]
+  E --> F[Trusted Decisions + AI Readiness]
+{{< /mermaid >}}
 
 It’s not just observability — it’s **accountable intelligence**.
 
