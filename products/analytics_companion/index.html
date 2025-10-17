@@ -427,52 +427,6 @@
 </section>
 
 <hr>
-<h2 id="how-it-works">How It Works</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Connect a source (e.g., Snowflake)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nb">set</span> <span class="nv">RUNI_USER_SFCONN</span><span class="o">=</span>Analyst
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nb">set</span> <span class="nv">RUNI_PWD_SFCONN</span><span class="o">=</span>SuperSecurePwd1!
-</span></span><span class="line"><span class="cl">runink config add-conn sfconn --type snowflake --url &lt;account&gt; --user <span class="nv">$RUNI_USER_SFCONN</span> --pwd <span class="nv">$RUNI_PWD_SFCONN</span> --database supply_chain
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Get your Current Domain State</span>
-</span></span><span class="line"><span class="cl">runink fetch --source sfconn
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Create Recommendations per domain</span>
-</span></span><span class="line"><span class="cl">runink herd --source sfconn
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Author a policy</span>
-</span></span><span class="line"><span class="cl">runink herd rule create --name low_stock --source sfconn --file low_stock.yaml --domain <span class="s1">&#39;finance&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Test &amp; simulate triggers (synthetic data renders in the UI)</span>
-</span></span><span class="line"><span class="cl">runink herd --name low_stock --dry-run
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Deploy</span>
-</span></span><span class="line"><span class="cl">runink push --domain <span class="s1">&#39;finance&#39;</span> --ruleset low_stock
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
 
 <section class="bg-white">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
