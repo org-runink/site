@@ -13,9 +13,6 @@ features:
     description: "Manage metadata, governance, and data lineage with a distributed, Raft-backed metadata store for high consistency."
   - title: "Simplified Execution"
     description: "Easily compile, manage, and execute pipelines using intuitive CLI commands for streamlined development and operations."
-demo:
-  description: "See how Runink Data Integrator streamlines pipeline orchestration and governance."
-  image: "/images/components.png"
 ---
 
 ## Optimized Data Integration & Orchestration
