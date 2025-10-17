@@ -60,32 +60,6 @@ Companion runs **in your environment**, applies domain-driven context modeling a
 
 ---
 
-## How It Works
-
-```bash
-# Connect a source (e.g., Snowflake)
-export set RUNI_USER_SFCONN=Analyst
-export set RUNI_PWD_SFCONN=SuperSecurePwd1!
-runink config add-conn sfconn --type snowflake --url <account> --user $RUNI_USER_SFCONN --pwd $RUNI_PWD_SFCONN --database supply_chain
-
-# Get your Current Domain State
-runink fetch --source sfconn
-
-# Create Recommendations per domain
-runink herd --source sfconn
-
-# Author a policy
-runink herd rule create --name low_stock --source sfconn --file low_stock.yaml --domain 'finance'
-
-# Test & simulate triggers (synthetic data renders in the UI)
-runink herd --name low_stock --dry-run
-
-# Deploy
-runink push --domain 'finance' --ruleset low_stock
-````
-
----
-
 {{< faq >}}
 {
     "title": "Companion Capabilities",
