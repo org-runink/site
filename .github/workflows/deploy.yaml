@@ -44,7 +44,7 @@ jobs:
       - name: Build Hugo Site
         env:
           HUGO_ENV: production
-        run: hugo serve --disableFastRender -d docs
+        run: hugo -d docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
