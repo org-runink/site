@@ -350,31 +350,22 @@ It’s how modern organizations are turning data observability from passive moni
 <p>Think of it as a <em>translation layer</em> between machines and decision-makers — automatically aligning technical signals with business meaning.</p>
 <hr>
 <h3 id="-visualizing-the-concept">🧩 Visualizing the Concept</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">graph TD
-</span></span><span class="line"><span class="cl">A[Raw Telemetry Streams] --&gt; B[Semantic Layer Engine]
-</span></span><span class="line"><span class="cl">B --&gt; C[Entity Models]
-</span></span><span class="line"><span class="cl">B --&gt; D[Metrics + KPIs]
-</span></span><span class="line"><span class="cl">B --&gt; E[Lineage + Quality Scores]
-</span></span><span class="line"><span class="cl">C --&gt; F[Data Observability Platform]
-</span></span><span class="line"><span class="cl">D --&gt; F
-</span></span><span class="line"><span class="cl">E --&gt; F
-</span></span><span class="line"><span class="cl">F --&gt; G[Unified Business Context + Alerts]
-</span></span></code></pre></td></tr></table>
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "neutral" });
+  </script><div class="mermaid">
+graph TD
+  A[Raw Telemetry Streams] --> B[Semantic Layer Engine]
+  B --> C[Entity Models]
+  B --> D[Metrics + KPIs]
+  B --> E[Lineage + Quality Scores]
+  C --> F[Data Observability Platform]
+  D --> F
+  E --> F
+  F --> G[Unified Business Context + Alerts]
 </div>
-</div><p>This continuous cycle allows data observability platforms to shift from reactive dashboards to <strong>context-rich diagnostics</strong> — where each alert, anomaly, or degradation has an immediate narrative behind it.</p>
+
+<p>This continuous cycle allows data observability platforms to shift from reactive dashboards to <strong>context-rich diagnostics</strong> — where each alert, anomaly, or degradation has an immediate narrative behind it.</p>
 <hr>
 <h2 id="why-telemetry-is-the-perfect-foundation">Why Telemetry Is the Perfect Foundation</h2>
 <p>Telemetry is the natural exhaust of every digital process: logs, traces, metrics, and events already describe <em>how</em> systems behave. The challenge has never been collecting it — it’s <strong>understanding it</strong>.</p>
@@ -391,21 +382,14 @@ It’s how modern organizations are turning data observability from passive moni
 <h3 id="1-it-defines-what-good-looks-like">1. <strong>It Defines “What Good Looks Like”</strong></h3>
 <p>Telemetry provides signals, but the semantic layer defines the meaning of those signals.
 It converts low-level metrics — like latency, schema drift, or pipeline retries — into higher-level indicators such as <em>data freshness</em>, <em>contract conformance</em>, and <em>trustworthiness</em>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">flowchart LR
-</span></span><span class="line"><span class="cl">A[Telemetry: row_count_change=30%] --&gt; B[Semantic Mapping: Dimension=Quality]
-</span></span><span class="line"><span class="cl">B --&gt; C[Business Context: &#34;Inventory Update Frequency Degraded&#34;]
-</span></span><span class="line"><span class="cl">C --&gt; D[Governance Rule Triggered: Investigate Supplier Feed Lag]
-</span></span></code></pre></td></tr></table>
+<div class="mermaid">
+flowchart LR
+  A[Telemetry: row_count_change=30%] --> B[Semantic Mapping: Dimension=Quality]
+  B --> C["Business Context: Inventory Update Frequency Degraded"]
+  C --> D[Governance Rule Triggered: Investigate Supplier Feed Lag]
 </div>
-</div><p>Without this translation, observability data remains a blur of metrics without narrative.</p>
+
+<p>Without this translation, observability data remains a blur of metrics without narrative.</p>
 <hr>
 <h3 id="2-it-enables-governed-domain-aware-insights">2. <strong>It Enables Governed, Domain-Aware Insights</strong></h3>
 <p>A true semantic layer doesn’t flatten everything into one schema — it <strong>models domains</strong>.</p>
@@ -435,27 +419,17 @@ Each prediction or automation can cite <em>which dataset, contract, and run ID</
 <p>Executes policies and alerts based on semantic context (e.g., “Data Quality &lt; 95% for Finance Domain triggers review”).</p>
 <hr>
 <h3 id="-example-architecture">🔧 Example Architecture</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">graph TD
-</span></span><span class="line"><span class="cl">A[Telemetry Sources] --&gt; B[Event Normalizer]
-</span></span><span class="line"><span class="cl">B --&gt; C[Semantic Mapper]
-</span></span><span class="line"><span class="cl">C --&gt; D[Knowledge Graph Store]
-</span></span><span class="line"><span class="cl">D --&gt; E[Governance Engine]
-</span></span><span class="line"><span class="cl">E --&gt; F[Dashboards + AI Agents]
-</span></span><span class="line"><span class="cl">F --&gt; G[End Users: Data, Ops, Risk Teams]
-</span></span></code></pre></td></tr></table>
+<div class="mermaid">
+graph TD
+  A[Telemetry Sources] --> B[Event Normalizer]
+  B --> C[Semantic Mapper]
+  C --> D[Knowledge Graph Store]
+  D --> E[Governance Engine]
+  E --> F[Dashboards + AI Agents]
+  F --> G[End Users: Data, Ops, Risk Teams]
 </div>
-</div><p>Each layer refines data observability from signal → structure → meaning → action.</p>
+
+<p>Each layer refines data observability from signal → structure → meaning → action.</p>
 <hr>
 <h2 id="real-world-applications">Real-World Applications</h2>
 <h3 id="-retail-analytics">🏬 Retail Analytics</h3>
@@ -516,25 +490,16 @@ When latency spikes or delays occur, root cause analysis is available instantly,
 <p>At Runink, the <strong>Analytics Companion</strong> and <strong>Herd Observability Layer</strong> use telemetry-driven semantics to make analytics transparent and explainable by default.</p>
 <p>Every telemetry event — from pipeline run to model prediction — becomes a node in a living graph, bound by contracts and lineage.
 This enables enterprises to build governed analytics ecosystems where every KPI, forecast, and automation is traceable to its source.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">graph LR
-</span></span><span class="line"><span class="cl">A[Telemetry Event] --&gt; B[Semantic Layer]
-</span></span><span class="line"><span class="cl">B --&gt; C[Domain Knowledge Graph]
-</span></span><span class="line"><span class="cl">C --&gt; D[Governance + Quality Scoring]
-</span></span><span class="line"><span class="cl">D --&gt; E[Analytics Companion Insights]
-</span></span><span class="line"><span class="cl">E --&gt; F[Trusted Decisions + AI Readiness]
-</span></span></code></pre></td></tr></table>
+<div class="mermaid">
+graph LR
+  A[Telemetry Event] --> B[Semantic Layer]
+  B --> C[Domain Knowledge Graph]
+  C --> D[Governance + Quality Scoring]
+  D --> E[Analytics Companion Insights]
+  E --> F[Trusted Decisions + AI Readiness]
 </div>
-</div><p>It’s not just observability — it’s <strong>accountable intelligence</strong>.</p>
+
+<p>It’s not just observability — it’s <strong>accountable intelligence</strong>.</p>
 <hr>
 <h2 id="final-thoughts">Final Thoughts</h2>
 <p>The future of data observability isn’t about collecting more telemetry; it’s about <strong>understanding it</strong>.
