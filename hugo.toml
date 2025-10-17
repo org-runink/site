@@ -223,11 +223,11 @@ paginatePath = "page"
     weight = 3
 
   # Footer Column 3 Menu
-  [[menu.footer_column_3]]
-    name = "License"
-    url = "/license"
-    weight = 1
-  [[menu.footer_column_3]]
-    name = "Privacy Policy"
-    url = "/privacy"
-    weight = 2
+#  [[menu.footer_column_3]]
+#    name = "License"
+#    url = "/license"
+#    weight = 1
+#  [[menu.footer_column_3]]
+#    name = "Privacy Policy"
+#    url = "/privacy"
+#    weight = 2
