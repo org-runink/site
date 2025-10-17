@@ -40,27 +40,27 @@ description: "Discover how Runink is redefining logistics intelligence through A
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {{< value-card 
           title="Operational Intelligence"
-          icon="lightbulb"
+          icon="light-bulb"
           description="We believe logistics should think for itself. Every workflow we design learns, predicts, and adapts with purpose."
       >}}
       {{< value-card 
           title="Transparency in Motion"
-          icon="adjustments-vertical"
+          icon="globe-alt"
           description="We build systems that reveal—not obscure—how data flows, decisions are made, and operations evolve."
       >}}
       {{< value-card 
           title="Human + Machine Collaboration"
-          icon="users"
+          icon="user-group"
           description="Our automation amplifies human judgment. We design tools that help people focus on strategy, not maintenance."
       >}}
       {{< value-card 
           title="Sustainable Growth"
-          icon="rocket-launch"
+          icon="scale"
           description="Efficiency and responsibility go hand-in-hand. We help companies reduce waste, energy use, and operational drag."
       >}}
       {{< value-card 
           title="Innovation by Design"
-          icon="scale"
+          icon="command-line"
           description="From data mesh architectures to AI copilots, we turn complexity into clarity through design-led engineering."
       >}}
       {{< value-card 

@@ -43,22 +43,22 @@ Our consultants help your business integrate data points, taking away the hassle
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
     {{< value-card
       title="Discover"
-      icon="fa-search"
+      icon="search"
       description="Assess where your data stands today, uncovering hidden strengths and areas to improve."
     >}}
     {{< value-card
       title="Plan"
-      icon="fa-clipboard-list"
+      icon="clipboard-list"
       description="Build a step-by-step roadmap showing exactly what’s needed to reach AI and analytics goals."
     >}}
     {{< value-card
       title="Pilot"
-      icon="fa-rocket"
+      icon="rocket-launch"
       description="Test new data and AI solutions on a small scale, quickly seeing what works in your business."
     >}}
     {{< value-card
       title="Scale & Sustain"
-      icon="fa-chart"
+      icon="chart-bar"
       description="Expand successful pilots and put ongoing checks in place to keep your data reliable and valuable."
     >}}
   </div>
@@ -69,22 +69,22 @@ Our consultants help your business integrate data points, taking away the hassle
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
     {{< value-card
       title="Observe"
-      icon="fa-eye"
+      icon="eye"
       description="Identify where delays, errors, or extra costs are slowing you down—using facts, not guesswork."
     >}}
     {{< value-card
       title="Analyze"
-      icon="fa-magnifying-glass"
+      icon="magnifying-glass"
       description="Dig into the reasons behind each bottleneck, so you know what’s causing the problem."
     >}}
     {{< value-card
       title="Optimize"
-      icon="fa-spray-can-sparkles"
+      icon="rocket-launch"
       description="Apply targeted improvements that cut waste and boost performance."
     >}}
     {{< value-card
       title="Institutionalize"
-      icon="check-circle"
+      icon="cpu-chip"
       description="Set up smart monitoring so gains are locked in, and you’re alerted to new issues right away."
     >}}
   </div>
@@ -95,22 +95,22 @@ Our consultants help your business integrate data points, taking away the hassle
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
     {{< value-card
       title="Align"
-      icon="link"
+      icon="cube-transparent"
       description="Connect technology plans directly with your business and logistics priorities, ensuring every investment has a clear purpose."
     >}}
     {{< value-card
       title="Prioritize"
-      icon="sort-ascending"
+      icon="arrow-path"
       description="Focus on the projects that offer the fastest improvements or solve your most pressing logistics challenges."
     >}}
     {{< value-card
       title="Deliver"
-      icon="truck"
+      icon="globe-alt"
       description="Implement solutions in manageable steps so you see real progress and value at each stage."
     >}}
     {{< value-card
       title="Refine"
-      icon="adjustments-horizontal"
+      icon="clipboard-list"
       description="Continually gather feedback and make adjustments so your technology keeps meeting your needs as your business grows."
     >}}
   </div>
@@ -121,7 +121,7 @@ Our consultants help your business integrate data points, taking away the hassle
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
     {{< value-card
       title="Map"
-      icon="fa-map"
+      icon="map"
       description="Visualize every important event in your operations—from shipments to exceptions—on one map."
     >}}
     {{< value-card
@@ -131,7 +131,7 @@ Our consultants help your business integrate data points, taking away the hassle
     >}}
     {{< value-card
       title="Implement"
-      icon="play-circle"
+      icon="check-circle"
       description="Launch real-time alerts and automatic actions so nothing falls through the cracks."
     >}}
     {{< value-card

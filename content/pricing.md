@@ -11,11 +11,11 @@ layout: "pricing"
     "plans": [
         {
             "name": "Launch",
-            "price": "19",
-            "description": "Ideal for teams activating their first knowledge graph.",
+            "price": "15",
+            "description": "Ideal for teams activating their first logistics knowledge graph.",
             "features": [
-                "Unlimited domains with semantic layer regeneration",
-                "Cross-department scorecards for data maturity & AI readiness",
+                "Up to 3 domain knowledge graphs with automated lineage",
+                "Standard connectors (Snowflake, S3, Postgres)",
                 "Policy playbook library with guided activation",
                 "Interactive node canvas with view publishing",
                 "Email support & monthly success reviews"
@@ -31,10 +31,11 @@ layout: "pricing"
             "description": "Built for multi-region logistics operations with advanced governance.",
             "featured": true,
             "features": [
+                "Everything in Launch, plus:",
                 "Unlimited domains with semantic layer regeneration",
                 "Cross-department scorecards for data maturity & AI readiness",
                 "Automated policy enforcement & SLA monitoring",
-                "Agentic Generated scenarios from natural language.",
+                "Agentic scenario generation from natural language prompts",
                 "Synthetic scenario simulation with agentic co-pilots"
             ],
             "button": {
@@ -48,8 +49,10 @@ layout: "pricing"
             "description": "For global networks requiring private deployments and bespoke integrations.",
             "features": [
                 "Isolated runtime with local agentic & fine-tuned models",
+                "Bring-your-own data contracts & security tooling",
                 "On-premise or virtual private cloud deployment options",
-                "Custom connectors, APIs, and integration engineering"
+                "Custom connectors, APIs, and integration engineering",
+                "Executive governance workshops & white-glove support"
             ],
             "button": {
                 "text": "Design your program",

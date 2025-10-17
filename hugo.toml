@@ -174,23 +174,25 @@ paginatePath = "page"
         { name = "Consulting", url = "/products/consulting/" },
         { name = "Data Integrator", url = "/products/data_integrator/" }
       ]
-#  [[menu.main]]
-#    name = "Pricing"
-#    url = "/pricing"
-#    weight = 2
   [[menu.main]]
     name = "Publications, Insights & Expertise"
     url = "/blog"
+    weight = 2
+  [[menu.main]]
+    name = "Company"
     weight = 3
-#  [[menu.main]]
-#    name = "Company"
-#    weight = 4
+    url = "/company"
 #    [menu.main.params]
 #      has_submenu = true
 #      submenu = [
 #        { name = "About Us", url = "/company/" },
 #        { name = "Careers", url = "/careers/" }
 #      ]
+  [[menu.main]]
+    name = "Pricing"
+    url = "/pricing"
+    weight = 4
+
 
   # Footer Column 1 Menu
   [[menu.footer_column_1]]
@@ -211,21 +213,21 @@ paginatePath = "page"
     name = "Publications, Insights & Expertise"
     url = "/blog"
     weight = 1
-#  [[menu.footer_column_2]]
-#    name = "About Us"
-#    url = "/company"
-#    weight = 2
-#  [[menu.footer_column_2]]
-#    name = "Careers"
-#    url = "/careers"
-#    weight = 3
+  [[menu.footer_column_2]]
+    name = "About Us"
+    url = "/company"
+    weight = 2
+  [[menu.footer_column_2]]
+    name = "Pricing"
+    url = "/pricing"
+    weight = 3
 
   # Footer Column 3 Menu
-#  [[menu.footer_column_3]]
-#    name = "License"
-#    url = "/license"
-#    weight = 1
-#  [[menu.footer_column_3]]
-#    name = "Privacy Policy"
-#    url = "/privacy"
-#    weight = 2
+  [[menu.footer_column_3]]
+    name = "License"
+    url = "/license"
+    weight = 1
+  [[menu.footer_column_3]]
+    name = "Privacy Policy"
+    url = "/privacy"
+    weight = 2
