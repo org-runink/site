@@ -49,7 +49,7 @@ paginatePath = "page"
   # Footer Configuration
   [params.footer]
     column_1_title = "Features"
-#    column_2_title = "COMPANY"
+    column_2_title = "Company"
 #    column_3_title = "LEGAL"
   
   [params.header]
@@ -176,8 +176,13 @@ paginatePath = "page"
       ]
   [[menu.main]]
     name = "Publications, Insights & Expertise"
-    url = "/blog"
     weight = 2
+    [menu.main.params]
+      has_submenu = true
+      submenu = [
+        { name = "Blog", url = "/blog/" },
+        { name = "Use Cases", url = "/use_cases" }
+      ]
   [[menu.main]]
     name = "Company"
     weight = 3
