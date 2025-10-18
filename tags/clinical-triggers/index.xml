@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clinical Triggers on Runink</title>
+    <link>https://runink.org/tags/clinical-triggers/</link>
+    <description>Recent content in Clinical Triggers on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://runink.org/tags/clinical-triggers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Healthcare Use Case: Escalation and Referral Coordination</title>
+      <link>https://runink.org/use_cases/use-cases/healthcare/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/healthcare/</guid>
+      <description>&lt;h2 id=&#34;from-care-lag-to-real-time-escalation&#34;&gt;From Care Lag to Real-Time Escalation&lt;/h2&gt;&#xA;&lt;p&gt;In hospitals, clinics, and virtual care, delays in responding to clinical signals—vitals, lab values, risk scores—can cost outcomes, dollars, and trust.&lt;/p&gt;&#xA;&lt;p&gt;Care coordination teams are overloaded. Analysts can’t keep up with ad hoc dashboards. And workflows lack transparency when something’s missed.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-the-challenge&#34;&gt;🚨 The Challenge&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Abnormal vitals and labs surface but aren’t always routed to the right team&lt;/li&gt;&#xA;&lt;li&gt;Escalations depend on paging trees or manual review&lt;/li&gt;&#xA;&lt;li&gt;Referral logic is trapped in EMR configuration or spreadsheets&lt;/li&gt;&#xA;&lt;li&gt;Ops leaders lack a reliable audit trail to know: “Was that handled?”&lt;/li&gt;&#xA;&lt;li&gt;Care teams want to &lt;strong&gt;define logic&lt;/strong&gt;, not code alerts&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-enter-runink&#34;&gt;🧠 Enter Runink&lt;/h2&gt;&#xA;&lt;p&gt;Runink Analytics Companion empowers clinical operations, social workers, referral managers, and nurses to define workflows that:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

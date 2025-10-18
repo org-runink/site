@@ -120,7 +120,23 @@
                         
                     
                         
-                        <a href="/blog" class="text-base text-gray-900 hover:text-primary-600 font-bold transition duration-200">Publications, Insights &amp; Expertise</a>
+                        <div class="relative group">
+                            <button class="flex items-center text-base text-gray-900 hover:text-primary-600 font-bold transition duration-200">
+                                Publications, Insights &amp; Expertise
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+                                <div class="py-6 bg-white border border-gray-100 shadow-xl rounded-lg">
+                                    
+                                    <a href="/blog/" class="block px-8 py-3 text-sm text-gray-700 hover:bg-gray-50">Blog</a>
+                                    
+                                    <a href="/use_cases" class="block px-8 py-3 text-sm text-gray-700 hover:bg-gray-50">Use Cases</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
                         
                     
                         
@@ -177,7 +193,16 @@
                     
                 
                     
-                    <a href="/blog" class="block text-xl text-gray-900 hover:text-primary-600 font-bold transition duration-200 py-2">Publications, Insights &amp; Expertise</a>
+                    <div class="py-2">
+                        <div class="text-xl text-gray-900 font-bold mb-2">Publications, Insights &amp; Expertise</div>
+                        <div class="pl-4">
+                            
+                            <a href="/blog/" class="block text-gray-700 hover:text-primary-600 py-2">Blog</a>
+                            
+                            <a href="/use_cases" class="block text-gray-700 hover:text-primary-600 py-2">Use Cases</a>
+                            
+                        </div>
+                    </div>
                     
                 
                     
@@ -636,6 +661,12 @@
                         <span class="text-gray-500">(1)</span>
                     </a>
                 
+                    <a href="/tags/access-policy-enforcement"
+                       class="text-sm text-gray-600 hover:text-primary-600">
+                        #access policy enforcement
+                        <span class="text-gray-500">(1)</span>
+                    </a>
+                
                     <a href="/tags/agent-orchestration"
                        class="text-sm text-gray-600 hover:text-primary-600">
                         #agent orchestration
@@ -681,12 +712,6 @@
                     <a href="/tags/business-efficiency"
                        class="text-sm text-gray-600 hover:text-primary-600">
                         #business efficiency
-                        <span class="text-gray-500">(1)</span>
-                    </a>
-                
-                    <a href="/tags/canadian-supply-chain"
-                       class="text-sm text-gray-600 hover:text-primary-600">
-                        #canadian supply chain
                         <span class="text-gray-500">(1)</span>
                     </a>
                 
@@ -808,7 +833,7 @@
 
             
             <div class="flex-1">
-                <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-900 mb-4"></h3>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-900 mb-4">Company</h3>
                 <ul class="space-y-2">
                     
                         <li><a href="/blog" class="text-gray-600 hover:text-primary-600">Publications, Insights &amp; Expertise</a></li>

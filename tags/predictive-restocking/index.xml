@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Predictive Restocking on Runink</title>
+    <link>https://runink.org/tags/predictive-restocking/</link>
+    <description>Recent content in Predictive Restocking on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://runink.org/tags/predictive-restocking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Supply Chain Use Case: Local Fulfillment and Inventory Precision</title>
+      <link>https://runink.org/use_cases/use-cases/supply-chain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/supply-chain/</guid>
+      <description>&lt;h2 id=&#34;fulfillment-triggers-written-in-plain-language&#34;&gt;Fulfillment Triggers. Written in Plain Language.&lt;/h2&gt;&#xA;&lt;p&gt;Imagine you&amp;rsquo;re an operations lead managing fulfillment from regional warehouses and local suppliers. You&amp;rsquo;re not writing SQL or coding policies—you just want shipments routed correctly, delays handled gracefully, and inventory managed before it runs out.&lt;/p&gt;&#xA;&lt;p&gt;Runink makes that real.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-the-problem&#34;&gt;⚙️ The Problem&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Forecasted stock ≠ what&amp;rsquo;s actually available&lt;/li&gt;&#xA;&lt;li&gt;Local suppliers can deliver faster—but aren’t integrated&lt;/li&gt;&#xA;&lt;li&gt;Ops teams rely on spreadsheets or disconnected dashboards&lt;/li&gt;&#xA;&lt;li&gt;Replenishment logic is brittle, buried in SQL, or depends on a single analyst&lt;/li&gt;&#xA;&lt;li&gt;SLA violations show up too late to react&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-what-runink-enables&#34;&gt;✅ What Runink Enables&lt;/h2&gt;&#xA;&lt;p&gt;With Runink Analytics Companion, your supply chain and fulfillment team can:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
