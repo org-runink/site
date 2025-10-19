@@ -65,7 +65,7 @@
     
         
     
-    <link rel="stylesheet" href="/css/main.min.ab9d8dda653e606383bae83e4c9297f0d92494cfb5a11ae360283ea243e6679d.css">
+    <link rel="stylesheet" href="/css/main.min.ef292a2be84128cb98b5d55d3e03cd1b4b2edcd0d302c1104565662af573fa69.css">
 
     
     
@@ -272,7 +272,7 @@
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
-                <span>2 min read</span>
+                <span>7 min read</span>
             </div>
 
             <div class="flex items-center">
@@ -324,85 +324,66 @@
             
 
             <div class="prose prose-lg max-w-none">
-                <h2 id="from-control-checklists-to-triggered-evidence">From Control Checklists to Triggered Evidence</h2>
-<p>Compliance teams face a gap: controls like NIST 800-53 demand evidence, not just config files. But proving access, retention, and lineage across dynamic pipelines is hard—and usually too late.</p>
-<p>Runink turns governance into <strong>actionable workflows</strong>: trigger audits when controls are breached, enforce policies at runtime, and generate structured evidence for review.</p>
-<hr>
-<h2 id="-sample-use-case-audit-pii-handling-on-data-pull">🔐 Sample Use Case: Audit PII Handling on Data Pull</h2>
-<ul>
-<li>Monitor usage of columns tagged as <code>PII</code></li>
-<li>Trigger log event when sensitive fields are queried by unauthorized users</li>
-<li>Route escalations to compliance team</li>
-<li>Store contract violations in auditable lineage store</li>
-</ul>
-<h3 id="example-trigger-nist-ac-6-least-privilege">Example Trigger: NIST AC-6 (Least Privilege)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">trigger</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">query.field in [&#34;ssn&#34;, &#34;dob&#34;, &#34;address&#34;] AND query.user.role != &#34;data_compliance&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">then</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">log</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;PII access violation&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">notify</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">who</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;compliance@org.com&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">tag</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;access_violation&#34;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+                <h2 id="continuous-compliance-starts-now">Continuous Compliance Starts Now</h2>
+<p>NIST 800-53 remains the gold standard for safeguarding federal systems, platforms, and regulated organizations proving resilience. Compliance teams face scrutiny from auditors and customers who expect continuous enforcement, not quarterly evidence hunts. Security strategies revolve around zero trust, supply chain assurance, and continuous diagnostics, amplifying the need for explainable control execution. Runink delivers an automated semantic layer that turns telemetry into living control narratives. Security, compliance, and engineering stakeholders operate from the same map, ensuring deviations are captured and resolved in real time. With Runink, NIST compliance stops being a checkbox exercise and becomes an engine for trustworthy operations.</p>
+<h2 id="the-control-gaps-we-must-close">The Control Gaps We Must Close</h2>
+<p>Enterprises attempting to satisfy NIST 800-53 often manage sprawling evidence collections manually. Identity access management logs, pipeline runs, configuration changes, and data handling events reside in separate tools. Control owners track obligations in spreadsheets or ticketing systems, leaving gaps in accountability. When an auditor requests proof for AC-6 or AU-2, the team scrambles to assemble screenshots, export files, and explain context that may be outdated. Engineering teams feel burdened by compliance because every policy change appears as an after-the-fact request, without clear ties to business outcomes. Documentation rarely forms a narrative that describes the “why” behind decisions, making it difficult to assess risk. As infrastructure evolves—adopting Kubernetes, serverless functions, and data lakehouses—the control library expands while existing monitoring fails to keep pace. Without a unified semantic layer, organizations waste time reconciling conflicting definitions of systems, owners, and data types. The absence of automated lineage and governance increases the risk of fines, reputational damage, and delayed product launches as compliance must re-validate every change manually. Teams crave a platform that harmonizes telemetry, enforces policies, and writes the story auditors want to read without overloading engineers.</p>
+<p>The pressure intensifies as agencies tighten zero-trust mandates, supply-chain regulations, and continuous monitoring expectations. Cloud migrations introduce new shared responsibility models, yet traditional GRC tools lag months behind actual control execution. Incident response teams struggle to connect detection events to authoritative system inventories, causing duplication, blind spots, and prolonged mean time to containment. Executives want dashboards that explain current risk posture, but instead receive static reports that provide no narrative on remediation progress or business impact. Without strategic shifts to contextual compliance, organizations will continue fighting fires rather than demonstrating resilience, and competitors who automate governance will earn the trust of customers and regulators more quickly.</p>
+<h2 id="runinks-nist-automation-blueprint">Runink’s NIST Automation Blueprint</h2>
+<p>Runink ingests telemetry from cloud providers, data warehouses, CI/CD pipelines, identity platforms, configuration management tools, and data processing engines, mapping each signal to the appropriate NIST control families, baselines, and overlays. The semantic layer understands assets, data classifications, users, system boundaries, and workflows, giving compliance leaders a live console to monitor posture in real time. Natural-language playbooks describe how to handle access violations, data transfers, infrastructure drift, vulnerability disclosures, and incident response triggers, automating the response while documenting every step for auditors.</p>
+<p>The Runink Analytics Companion lets compliance analysts adjust thresholds, add control mappings, and collaborate with engineering without writing code. Teams experiment in sandbox environments, test against policy-as-code rules, and promote changes through Git-based approvals that preserve segregation of duties. Evidence lands automatically in an immutable ledger with lineage, timestamps, approvers, compensating controls, and remediation paths, simplifying continuous monitoring packages and authority-to-operate renewals. Integrations with SIEM, GRC, ticketing, data catalogs, and collaboration tools push contextual insight to the teams who need it most, ensuring incidents are resolved with policy context intact.</p>
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "neutral" });
+  </script><div class="mermaid">
+flowchart LR
+  subgraph Telemetry
+    A[Cloud & Infra Logs]
+    B[CI/CD Pipelines]
+    C[IAM & Directory Events]
+    D[Data Platform Signals]
+    E[Manual Control Evidence]
+  end
+  subgraph Runink[Runink Semantic Layer]
+    N[Normalization & Correlation]
+    G((Control Knowledge Graph))
+    P[Policy-as-Code Playbooks]
+    L[Evidence Vault]
+  end
+  subgraph Stakeholders
+    Cx[Compliance & GRC]
+    Sec[Security Engineering]
+    Ops[Mission Owners]
+    Aud[Auditors & Regulators]
+  end
+
+  A --> N --> G
+  B --> N
+  C --> N
+  D --> N
+  E --> N
+  G --> P
+  G --> L
+  P --> Sec
+  P --> Ops
+  L --> Cx
+  L --> Aud
+
+  style G fill:#27467a,stroke:#152a4c,color:#ffffff,stroke-width:2px
+  style P fill:#152a4c,stroke:#0d1a32,color:#ffffff
+  style L fill:#0b1629,stroke:#0b1629,color:#ffffff
+  classDef st fill:#eef3ff,stroke:#152a4c,color:#152a4c;
+  class Cx,Sec,Ops,Aud st;
 </div>
-</div><hr>
-<h2 id="-controls-runink-can-enforce-or-audit">✅ Controls Runink Can Enforce or Audit</h2>
-<table>
-  <thead>
-      <tr>
-          <th>NIST Control</th>
-          <th>Example Trigger</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AC-6 Least Privilege</td>
-          <td>Trigger alerts for out-of-scope access</td>
-      </tr>
-      <tr>
-          <td>AU-2 Audit Events</td>
-          <td>Log every sensitive data transformation</td>
-      </tr>
-      <tr>
-          <td>SI-4 Incident Response</td>
-          <td>Auto-route anomalous data flow</td>
-      </tr>
-      <tr>
-          <td>CM-3 Config Tracking</td>
-          <td>Log version changes to pipeline contracts</td>
-      </tr>
-      <tr>
-          <td>MP-5 Media Transport</td>
-          <td>Monitor external export or data leaks</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-benefits-for-compliance--datasec-teams">💼 Benefits for Compliance &amp; DataSec Teams</h2>
-<ul>
-<li>✅ Trigger-based alerts with structured policies</li>
-<li>✅ Lineage evidence export for any column or DAG</li>
-<li>✅ Git-tracked rules with CI/CD enforcement</li>
-<li>✅ Fast onboarding: use with Snowflake, Postgres, S3</li>
-<li>✅ Audit timelines for SOC2, HIPAA, or ISO 27001 reviews</li>
-</ul>
-<p>📜 <a href="/contact">Talk to our data compliance team</a>
-🧭 <a href="/products/analytics_companion/">Explore Runink’s policy engine</a></p>
+
+<p>Dashboards surface risk appetite breaches, control drift trends, and remediation velocity so executives stay fully informed in real time. Automated testing enforces controls continuously across infrastructure and data platforms. APIs deliver curated control evidence to downstream GRC platforms, mission systems, and customer portals, ensuring every stakeholder consumes the same trusted narrative. Runink aligns zero-trust architectures, data inventory programs, and incident response runbooks on one governed foundation, with reports ready for NIST, FedRAMP, and agency overlays. Security architects simulate policy changes before rollout, while mission owners preview operational impact and residual risk. Executives receive briefings that connect technology investments to control health and mission outcomes. Joint teams rehearse incident response drills with evidence captured in-line. This shortens after-action reviews.</p>
+<h2 id="proof-that-governance-can-move-fast">Proof That Governance Can Move Fast</h2>
+<p>Runink sets a new benchmark for NIST compliance because it bridges policy intent with operational reality. Control owners no longer debate whether an event maps to AC-3, CM-3, or SI-4; the semantic graph captures relationships among systems, users, and data flows to make the determination automatically. Engineers receive actionable narratives with clear guidance, reducing friction between development velocity and compliance oversight. The evidence vault delights auditors, as every entry includes business context, remediation details, and traceable approvals. Governance teams appreciate version-controlled playbooks that allow experimentation without sacrificing accountability. Risk officers gain forward-looking insights because the platform highlights trends, emerging hotspots, and recurring violations. Runink integrates seamlessly with FedRAMP, SOC 2, HIPAA, and ISO initiatives, allowing organizations to reuse governed narratives across frameworks. By turning telemetry into understandable stories, Runink elevates compliance from cost center to strategic advantage, giving leadership confidence that controls work around the clock and adapt as the enterprise evolves.</p>
+<p>Executives and boards also leverage Runink to communicate cyber resilience with credibility. Dashboards translate technical anomalies into risk-weighted explanations, showing progress against remediation SLAs, supply-chain dependencies, and insider-threat prevention. When merger and acquisition activity introduces new systems, the semantic layer assimilates unfamiliar telemetry quickly, mapping it to existing control architectures and highlighting gaps before diligence closes. Security architects use the platform to simulate “what-if” scenarios, testing the impact of policy changes or tooling investments with concrete evidence. By eliminating guesswork and unifying stakeholders, Runink helps organizations align business priorities with zero-trust mandates, balancing innovation and assurance. Compliance champions build training modules directly from Runink narratives, ensuring engineers, analysts, and contractors understand why controls exist and how exceptions are handled. External assurance partners receive scoped access to the same evidence, accelerating joint accreditation activities without drowning teams in email.</p>
+<h2 id="bring-runink-into-your-ato-journey">Bring Runink Into Your ATO Journey</h2>
+<p>Organizations that implement Runink transform NIST 800-53 compliance into a continuous, collaborative practice. The semantic layer ensures policies live alongside telemetry, the Analytics Companion keeps stakeholders aligned, and auditors receive transparent narratives instead of static checklists. Security engineering regains velocity, compliance gains credibility, and executive leadership gains the visibility required to make confidence-inspiring decisions about risk, investment, and innovation. Teams no longer dread audit season or authority-to-operate renewals because evidence is curated daily, ready to share on demand.</p>
+<p>Ready to modernize your control program with accountable intelligence and prove resilience to every stakeholder? We’ll assess your current telemetry, map control ownership, and highlight automation wins that deliver near-term assurance without disrupting missions. Our team will demo live dashboards, policy-as-code workflows, and evidence exports tailored to your authorization boundary. <a href="/contact">Connect with our compliance specialists</a> and explore how Runink Analytics Companion keeps NIST enforcement precise, proactive, and painless, empowering you to lead with trust in an era where the most transparent organizations thrive.
+Prefer a hands-on approach? Request a sandbox environment so your analysts can validate policies, dashboards, and evidence pipelines with mission workloads before rollout. Experts stay with you post-launch.</p>
 
             </div>
         </article>

@@ -65,7 +65,7 @@
     
         
     
-    <link rel="stylesheet" href="/css/main.min.ab9d8dda653e606383bae83e4c9297f0d92494cfb5a11ae360283ea243e6679d.css">
+    <link rel="stylesheet" href="/css/main.min.ef292a2be84128cb98b5d55d3e03cd1b4b2edcd0d302c1104565662af573fa69.css">
 
     
     
@@ -272,7 +272,7 @@
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
-                <span>2 min read</span>
+                <span>6 min read</span>
             </div>
 
             <div class="flex items-center">
@@ -324,126 +324,62 @@
             
 
             <div class="prose prose-lg max-w-none">
-                <h2 id="from-lagging-reviews-to-real-time-routing">From Lagging Reviews to Real-Time Routing</h2>
-<p>In insurance operations, seconds matter—yet too often claims are queued manually, escalations are late, and fraud patterns go unflagged. Reviewers are overloaded. SIUs miss subtle patterns. Logic is hidden in spreadsheets or brittle ETL.</p>
-<p>Runink brings governance and automation to your claims signals—so escalations happen fast, fraud gets routed early, and your logic is transparent.</p>
-<hr>
-<h2 id="-claims-triage-the-fastest-escalation-wins">🚑 Claims Triage: The Fastest Escalation Wins</h2>
-<ul>
-<li>Define trigger logic based on claim value, severity, geolocation, or frequency</li>
-<li>Route to priority queues for review</li>
-<li>Tag cases with metadata (e.g., “missing ICD10” or “duplicate VIN”)</li>
-<li>Notify adjusters or call center proactively</li>
-<li>Audit every routing and policy decision</li>
-</ul>
-<h3 id="-example-high-severity-auto-claim-routing">🧾 Example: High-Severity Auto Claim Routing</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">trigger</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">claim.amount &gt; 10000 AND claim.incident_type = &#34;collision&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">where</span><span class="p">:</span><span class="w"> </span><span class="l">vehicle.age &lt; 2 AND coverage_type = &#34;comprehensive&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">then</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">notify</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">who</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;claims_team@insureco.com&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">route</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;priority_review&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">log</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;auto_claim_escalated&#34;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+                <h2 id="claims-intelligence-starts-here">Claims Intelligence Starts Here</h2>
+<p>Carriers now operate in a landscape where telematics, self-service portals, IoT devices, and medical bill processors stream continuous signals. Customers expect rapid answers, regulators expect impeccable documentation, and executives expect loss ratios to improve even as fraud grows more sophisticated. Distribution partners push their own updates, forcing operations to reconcile many systems quickly. Runink brings order to the chaos by structuring every claim signal inside a semantic layer. Adjusters see the context behind each incident, special investigations units share the same evidence trail, and policy operations stay aligned with contractual promises, producing faster claims, lower leakage, and happier policyholders.</p>
+<h2 id="whats-broken-in-insurance-operations">What’s Broken In Insurance Operations</h2>
+<p>Most insurers operate with siloed technology stacks stitched together over decades. The first notice of loss lives in one system, provider invoices in another, telematics in a third, and underwriting data in a warehouse that only analysts can query. Each team builds its own reporting layer, so definitions like “high severity” or “suspicious pattern” vary wildly. When a hailstorm hits or a suspicious billing trend emerges, claims leaders scramble to coordinate triage while SIU investigates with partial information. Regulations require detailed logs of every decision, but the evidence is scattered across business applications, spreadsheets, and email chains. Manual review queues swell, claims wait longer for resolution, and satisfaction plummets. Fraudsters exploit the confusion by submitting doctored invoices or exploiting the same coverage gaps before patterns are detected. Internal teams burn hours reconciling redundant entries or chasing updates from partners because automation is locked inside complex code nobody wants to touch. The enterprise is forced to choose between speed and governance, while brand trust erodes whenever claim handling feels opaque or inconsistent. Insurers need a unifying layer that normalizes signals, respects compliance obligations, and routes every case to the right expertise without rewriting their entire application landscape consistently.</p>
+<p>The pain intensifies when catastrophic events strike or when regulators demand deeper transparency. Suddenly, leadership needs to know which policies sit inside a weather footprint, whether vulnerable claimants have been contacted, and how reserves will shift. Traditional reporting cannot keep up, leaving policyholders frustrated by silence and adjusters overwhelmed by queues that lack prioritization. The lack of explainable automation creates tension between actuarial accuracy and empathetic service, eroding loyalty during the very moments that define a carrier’s reputation. Without reform, cost ratios spiral, fraud escalates, and opportunities to launch innovative usage-based or embedded products stall because operations cannot absorb additional complexity.</p>
+<h2 id="runinks-operating-backbone-for-insurance">Runink’s Operating Backbone For Insurance</h2>
+<p>Runink securely provides the connective tissue legacy claims environments lack. The platform ingests FNOL events, telematics telemetry, partner APIs, medical bills and regulatory notices, mapping each signal to a domain-aware ontology that understands policyholder, exposure, limits, provider, jurisdiction, and reserve posture. Claims leaders author triage rules, fraud heuristics, catastrophe protocols, and reserve policies in the Runink Analytics Companion using plain language. When an incident arrives, the semantic layer instantly contextualizes it by comparing historical submissions, environmental conditions, and coverage terms so adjusters know which playbook to trigger.</p>
+<p>Runink synchronizes that context across Guidewire, Duck Creek, policy platforms, claims workbenches, self-service portals, and collaboration tools. Embedded distribution partners and ecosystem APIs connect through governed interfaces, allowing new products to launch without one-off integrations. The knowledge graph tracks subrogation potential, reinsurance treaties, authority levels, and jurisdictional requirements, ensuring every action honors contractual and regulatory expectations automatically. Within weeks, carriers see faster triage, sharper fraud detection, and steadier reserves without ripping out core systems. Policyholders receive timely status updates, adjusters focus on high-impact work, and SIU teams pursue explainable investigative trails rather than opaque black boxes.</p>
+<p>Audit trails capture approvals, communications, and reserve adjustments, giving compliance officers an always-current dossier for market conduct exams. Finance and actuarial teams consume the same semantic layer to understand how operational actions influence loss development and ratings discussions. Runink becomes the operating spine that harmonizes claims, SIU, actuarial, and customer teams around trusted context, making resilience part of the carrier’s brand.</p>
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "neutral" });
+  </script><div class="mermaid">
+flowchart LR
+  subgraph Feeds
+    A[FNOL & Telematics]
+    B[Billing & Medical Feeds]
+    C[Policy & Underwriting Data]
+    D[Partner & Regulator Notices]
+  end
+  subgraph Runink[Runink Semantic Layer]
+    N[Normalization & Matching]
+    G((Claims Graph))
+    P[Automation & Playbooks]
+    L[Compliance Evidence Hub]
+  end
+  subgraph Outcomes
+    W[Adjuster Workbench]
+    S[SIU Investigation]
+    R[Regulators & Audit]
+    U[Customer & Partner Updates]
+  end
+
+  A --> N --> G
+  B --> N
+  C --> N
+  D --> N
+  G --> P
+  P --> W
+  P --> S
+  P --> U
+  G --> L --> R
+
+  style G fill:#0b4c9c,stroke:#062f61,color:#ffffff,stroke-width:2px
+  style P fill:#043b7a,stroke:#062f61,color:#ffffff
+  style L fill:#021f41,stroke:#021f41,color:#ffffff
+  classDef outcome fill:#f0f6ff,stroke:#043b7a,color:#043b7a;
+  class W,S,R,U outcome;
 </div>
-</div><hr>
-<h2 id="-fraud-detection-pattern-based-audit-ready">🔍 Fraud Detection: Pattern-Based, Audit-Ready</h2>
-<ul>
-<li>Use scoring thresholds or logic patterns to flag risk</li>
-<li>Route to SIU, auto-reject, or pause payout</li>
-<li>Combine rules with upstream ML or 3rd-party signals</li>
-<li>Maintain a full decision trail: “why flagged”, “what fired”, “who saw it”</li>
-</ul>
-<h3 id="-example-suspicious-pattern-signal-routing">🧠 Example: Suspicious Pattern Signal Routing</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">trigger</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">claim.amount &gt; 5000 AND claim_history.count_30d &gt; 3</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">where</span><span class="p">:</span><span class="w"> </span><span class="l">claimant_zip = &#34;75001&#34; AND treatment_code = &#34;X9923&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">then</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">tag</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;fraud_pattern_match&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">notify</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">who</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;siu@insureco.com&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l">log</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;potential_fraud_flagged&#34;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="-what-your-insurance-ops-teams-gain">🧾 What Your Insurance Ops Teams Gain</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Team Need</th>
-          <th>Runink Solution</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Faster claim escalation</td>
-          <td>Real-time routing based on defined logic</td>
-      </tr>
-      <tr>
-          <td>SIU fraud flagging</td>
-          <td>Score- or rule-based fraud detection triggers</td>
-      </tr>
-      <tr>
-          <td>Configurable logic</td>
-          <td>No-code YAML triggers, versioned in CI</td>
-      </tr>
-      <tr>
-          <td>SLA/claim audit visibility</td>
-          <td>Contract-based governance + logs</td>
-      </tr>
-      <tr>
-          <td>Reviewer clarity</td>
-          <td>“Why this claim?” answerable every time</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-integrates-with">📦 Integrates With:</h2>
-<ul>
-<li><strong>Snowflake / Redshift</strong> for claims, policy, and provider data</li>
-<li><strong>PostgreSQL / MSSQL</strong> for adjuster logs or intake CRM</li>
-<li><strong>S3, webhook, or file drop</strong> for external signal ingestion</li>
-<li><strong>Slack / Email / Teams</strong> for proactive alerting</li>
-<li><strong>CI/CD (GitHub Actions)</strong> for reviewable rule changes</li>
-</ul>
-<hr>
-<h2 id="insurance-workflows-you-can-trust">Insurance Workflows You Can Trust</h2>
-<p>Claims and fraud decisions don&rsquo;t belong in black boxes. Runink puts your logic, lineage, and auditability in plain view—so teams act fast, stay compliant, and explain every trigger.</p>
-<p>📍 <a href="/contact">Speak with our insurance specialists</a>
-🔍 <a href="/products/analytics_companion/">Explore Runink Analytics Companion</a></p>
+
+<h2 id="how-runink-accelerates-every-claim">How Runink Accelerates Every Claim</h2>
+<p>Runink gives insurance operations a single, trusted narrative that balances empathy and governance. Adjusters no longer sift through dozens of tabs to piece together a claim; contextual alerts summarize the policy history, coverage triggers, prior incidents, and recommended next steps. SIU analysts review the same evidence bundle, enriched with network graphs that expose linked claimants, suspicious providers, salvage activity, and device telemetry without manual spreadsheet matching. Compliance officers rely on an evidence ledger that maps each action to the state, federal, or carrier-specific regulation it satisfies, dramatically shrinking market conduct exams. Product managers experiment with new rating models or parametric offerings inside a controlled sandbox, confident that governance rules and audit trails follow every iteration. Because Runink codifies definitions centrally, actuarial, underwriting, claims, and customer experience teams all speak the same language when they debate severity, leakage, or customer impact.</p>
+<p>Executive teams value the platform as a growth accelerator. Embedded partners, fleet OEMs, smart home vendors, and health networks all integrate faster because Runink can absorb unfamiliar telemetry and map it into existing governance patterns. Finance and reserving teams analyze how operational decisions influence loss development, enabling proactive capital planning and conversations with ratings agencies. When catastrophes strike, leadership views live dashboards that connect weather footprints, triage queues, supplier availability, and customer communications, allowing rapid resource allocation and transparent outreach. Policyholders notice: service updates arrive promptly, adjusters arrive prepared, and resolutions include the rationale behind every decision. Runink transforms the claims and SIU organization from a reactive cost center into a proactive, data-driven experience engine that earns loyalty while protecting margin sustainably. Claims quality teams replay narrative evidence to coach adjusters, while training leaders build onboarding modules from live examples. Marketing and distribution teams reuse the same context to reassure partners and policyholders during renewals and catastrophe seasons.</p>
+<h2 id="ready-for-resilient-claims">Ready For Resilient Claims</h2>
+<p>Insurers that adopt Runink reclaim control over claims triage, fraud mitigation, and regulatory storytelling. The semantic layer delivers clarity that flows across every function, while the Analytics Companion empowers change without code and the evidence ledger keeps regulators satisfied. Policyholders experience empathy backed by data, employees operate with confidence that every decision is explainable, and leadership spots opportunities to protect margin and loyalty simultaneously.</p>
+<p>Whether you run property, casualty, life, or specialty lines, Runink brings intelligence to every signal. From catastrophe response to embedded launches, the platform ensures your brand is defined by swift resolution and transparent communication. Ready to modernize claims operations without ripping out your core systems? We’ll assess your existing workflows, highlight automation wins, and outline a phased launch that respects regulatory timelines and partner commitments. <a href="/contact">Speak with our insurance specialists</a> and explore how the Runink Analytics Companion elevates adjusters, SIU, and policy teams together, turning operational resilience into lasting advantage that policyholders notice and regulators trust. Prefer a tailored exploration? Request a guided tour of live playbooks, integrations, and evidence packs to see how Runink aligns underwriting, claims, fraud, and finance under one accountable narrative. Let us show how automation elevates every policy promise.</p>
 
             </div>
         </article>
