@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Runink</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Oct 2025 21:38:17 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 28 Oct 2025 08:13:18 -0400</lastBuildDate>
     <atom:link href="https://runink.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI Readiness</title>
@@ -359,10 +359,52 @@
       <description></description>
     </item>
     <item>
+      <title>AI Operations</title>
+      <link>https://runink.org/tags/ai-operations/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/ai-operations/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Analytics Automation</title>
+      <link>https://runink.org/tags/analytics-automation/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/analytics-automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Anomaly Detection</title>
+      <link>https://runink.org/tags/anomaly-detection/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/anomaly-detection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automated Reconciliation</title>
+      <link>https://runink.org/tags/automated-reconciliation/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/automated-reconciliation/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Cloud Data Strategy</title>
       <link>https://runink.org/tags/cloud-data-strategy/</link>
       <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://runink.org/tags/cloud-data-strategy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Telemetry</title>
+      <link>https://runink.org/tags/data-telemetry/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/data-telemetry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Domain Modeling</title>
+      <link>https://runink.org/tags/domain-modeling/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/domain-modeling/</guid>
       <description></description>
     </item>
     <item>
@@ -377,6 +419,13 @@
       <link>https://runink.org/tags/enterprise-ai/</link>
       <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://runink.org/tags/enterprise-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Enterprise Data</title>
+      <link>https://runink.org/tags/enterprise-data/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/enterprise-data/</guid>
       <description></description>
     </item>
     <item>
@@ -412,6 +461,13 @@
       <link>https://runink.org/tags/strategic-sourcing/</link>
       <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://runink.org/tags/strategic-sourcing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Streaming Data</title>
+      <link>https://runink.org/tags/streaming-data/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/streaming-data/</guid>
       <description></description>
     </item>
     <item>

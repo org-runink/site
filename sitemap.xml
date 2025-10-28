@@ -9,13 +9,13 @@
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/blog/</loc>
-    <lastmod>2025-10-17T14:47:31-04:00</lastmod>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/data-governance/</loc>
-    <lastmod>2025-10-17T14:47:31-04:00</lastmod>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/data-observability/</loc>
-    <lastmod>2025-10-17T14:47:31-04:00</lastmod>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/data-quality/</loc>
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
@@ -33,7 +33,7 @@
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/telemetry/</loc>
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
@@ -173,14 +173,35 @@
     <loc>https://runink.org/tags/ai-in-logistics/</loc>
     <lastmod>2025-07-10T10:19:32-04:00</lastmod>
   </url><url>
+    <loc>https://runink.org/tags/ai-operations/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/analytics-automation/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/anomaly-detection/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/automated-reconciliation/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
+  </url><url>
     <loc>https://runink.org/tags/cloud-data-strategy/</loc>
     <lastmod>2025-07-10T10:19:32-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/data-telemetry/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/domain-modeling/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/drone-logistics/</loc>
     <lastmod>2025-07-10T10:19:32-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/enterprise-ai/</loc>
     <lastmod>2025-07-10T10:19:32-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/enterprise-data/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/industry-4.0-procurement/</loc>
     <lastmod>2025-07-10T10:19:32-04:00</lastmod>
@@ -196,6 +217,12 @@
   </url><url>
     <loc>https://runink.org/tags/strategic-sourcing/</loc>
     <lastmod>2025-07-10T10:19:32-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/streaming-data/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/blog/data-governance-ai-logistics-roi/</loc>
     <lastmod>2025-07-10T10:19:32-04:00</lastmod>
@@ -368,15 +395,6 @@
     <loc>https://runink.org/tags/security/</loc>
     <lastmod>2025-07-10T15:56:02-04:00</lastmod>
   </url><url>
-    <loc>https://runink.org/jobs/</loc>
-    <lastmod>2025-07-10T10:19:32-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/jobs/product-manager/</loc>
-    <lastmod>2025-07-10T10:19:32-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/jobs/senior-frontend-developer/</loc>
-    <lastmod>2025-07-10T10:19:32-04:00</lastmod>
-  </url><url>
     <loc>https://runink.org/6/</loc>
   </url><url>
     <loc>https://runink.org/company/</loc>
@@ -443,9 +461,6 @@
   </url><url>
     <loc>https://runink.org/tags/inventory-orchestration/</loc>
     <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/careers/</loc>
-    <lastmod>2025-07-10T10:19:32-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/last-mile/</loc>
     <lastmod>2025-10-18T21:38:17-04:00</lastmod>

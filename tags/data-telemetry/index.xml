@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Telemetry on Runink</title>
+    <link>https://runink.org/tags/data-telemetry/</link>
+    <description>Recent content in Data Telemetry on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Oct 2025 08:13:18 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/data-telemetry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Telemetry Data Supercharges Automated Reconciliation Domain Models</title>
+      <link>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</guid>
+      <description>&lt;h1 id=&#34;telemetry-led-automation-for-reliable-reconciliation&#34;&gt;Telemetry-Led Automation for Reliable Reconciliation&lt;/h1&gt;&#xA;&lt;h2 id=&#34;problem-introduction&#34;&gt;Problem Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Telemetry data keeps piling up across our pipelines, yet most reconciliation routines still feel like slow manual patchwork. Every time metrics drift or a partner system sends malformed payloads, we scramble through log spelunking and spreadsheet cross-checks to explain mismatched totals. Automated data reconciliation based on domain models promises consistency, but we rarely trust the inputs enough to let algorithms decide the fixes. This post unpacks how rich telemetry streams become the connective tissue for reliable, automated reconciliation, especially when domain models drive rules, thresholds, and remediation playbooks designed for the realities of data professionals shipping analytics everyday at scale.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
