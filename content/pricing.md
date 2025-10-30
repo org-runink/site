@@ -14,7 +14,7 @@ layout: "pricing"
             "price": "$15 / seat",
             "description": "Perfect for teams getting started with semantic automation and data maturity insights.",
             "features": [
-                "Includes up to 6 data connections",
+                "Includes up to 3 data connections",
                 "Analyze up to 50 GB of metadata & data quality metrics",
                 "Automatic semantic layer generation",
                 "Data maturity & AI-readiness scoring",
