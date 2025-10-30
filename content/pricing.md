@@ -1,61 +1,63 @@
 ---
 title: "Pricing"
-description: "Pick the Runink Companion bundle that fits your logistics analytics journey."
+description: "Flexible plans based on seats, connections, and data usage."
 layout: "pricing"
 ---
 
 {{< pricing-table-1 >}}
 {
-    "title": "Operational AI packages tailored for logistics organizations",
-    "description": "Every plan includes governed knowledge-graph automation, policy-ready playbooks, and hands-on guidance to get value from day one.",
+    "title": "Simple, transparent pricing for your semantic and AI operations",
+    "description": "Every plan includes governed semantics, data-maturity scoring, and connection-based scaling. Pay only for what you use — grow seamlessly as your warehouse expands.",
     "plans": [
         {
-            "name": "Launch",
-            "price": "15",
-            "description": "Ideal for teams activating their first logistics knowledge graph.",
+            "name": "Standard",
+            "price": "$15 / seat",
+            "description": "Perfect for teams getting started with semantic automation and data maturity insights.",
             "features": [
-                "Up to 3 domain knowledge graphs with automated lineage",
-                "Standard connectors (Snowflake, S3, Postgres)",
-                "Policy playbook library with guided activation",
-                "Interactive node canvas with view publishing",
-                "Email support & monthly success reviews"
+                "Includes up to 6 data connections",
+                "Analyze up to 50 GB of metadata & data quality metrics",
+                "Automatic semantic layer generation",
+                "Data maturity & AI-readiness scoring",
+                "GitHub Action integration for PR-based workflows",
+                "Community & email support"
             ],
             "button": {
-                "text": "Start your rollout",
+                "text": "Start free trial",
                 "url": "/contact"
             }
         },
         {
-            "name": "Scale",
-            "price": "49",
-            "description": "Built for multi-region logistics operations with advanced governance.",
+            "name": "AI-Enhanced",
+            "price": "$60 / seat",
             "featured": true,
+            "description": "For teams that need LLM-safe insights, AI-driven recommendations, and graph automation.",
             "features": [
-                "Everything in Launch, plus:",
-                "Unlimited domains with semantic layer regeneration",
-                "Cross-department scorecards for data maturity & AI readiness",
-                "Automated policy enforcement & SLA monitoring",
-                "Agentic scenario generation from natural language prompts",
-                "Synthetic scenario simulation with agentic co-pilots"
+                "Everything in Standard, plus:",
+                "AI Copilot with policy-aware semantic Q&A",
+                "Automated recommendations for schema, lineage, and cost optimization",
+                "Dgraph Graph Memory integration",
+                "Metric API Publisher (REST/GraphQL)",
+                "Priority email & Slack support"
             ],
             "button": {
-                "text": "Talk with sales",
+                "text": "Book a demo",
                 "url": "/contact"
             }
         },
         {
             "name": "Enterprise",
             "price": "Custom",
-            "description": "For global networks requiring private deployments and bespoke integrations.",
+            "description": "For large organizations needing private deployment, unlimited data, and tailored governance.",
             "features": [
-                "Isolated runtime with local agentic & fine-tuned models",
-                "Bring-your-own data contracts & security tooling",
-                "On-premise or virtual private cloud deployment options",
-                "Custom connectors, APIs, and integration engineering",
-                "Executive governance workshops & white-glove support"
+                "Private or on-prem deployment",
+                "Unlimited connections and data volume",
+                "Dedicated environment with local AI agents",
+                "Custom connectors & APIs",
+                "Advanced compliance (PII, residency, audit exports)",
+                "White-glove onboarding and governance workshops"
             ],
             "button": {
-                "text": "Design your program",
+                "text": "Talk to sales",
                 "url": "/contact"
             }
         }
@@ -65,28 +67,28 @@ layout: "pricing"
 
 {{< faq >}}
 {
-    "title": "Pricing & Deployment FAQs",
-    "description": "Clarity on how Runink Companion packages align with your logistics strategy.",
+    "title": "Pricing & Usage FAQs",
+    "description": "Everything you need to know about connections, data, and scaling.",
     "questions": [
         {
-            "question": "Which environments are supported for deployment?",
-            "answer": "Launch & Scale plans run in Runink-managed clouds, while Enterprise includes private VPC or on-prem options with customer-controlled keys."
+            "question": "What counts as a connection?",
+            "answer": "A connection represents one active integration — e.g., Snowflake, dbt, Postgres, or a BI tool. You can mix and match up to 6 in the base plan."
         },
         {
-            "question": "Can we add new data sources or connectors mid-term?",
-            "answer": "Yes. You can add connectors at any time. Scale includes unlimited standard connectors, and Enterprise supports custom integrations."
+            "question": "What happens if we exceed 50 GB of analyzed data?",
+            "answer": "Additional data volume is billed at $0.10/GB per month. Enterprise plans include unlimited data."
         },
         {
-            "question": "How do you handle data residency and compliance?",
-            "answer": "All plans provide region-specific hosting choices and automated policy enforcement. Enterprise adds tailored residency controls and audit exports."
+            "question": "Can we add more connections mid-term?",
+            "answer": "Yes. Additional connections cost $10/month each on Standard and $20/month each on AI-Enhanced."
         },
         {
-            "question": "Can we bring our own models or extend agentic workflows?",
-            "answer": "Launch provides managed ML. Scale unlocks co-pilot customization, and Enterprise supports local agentic runtimes plus bring-your-own fine-tuned models."
+            "question": "Are AI features optional?",
+            "answer": "Yes. AI-Enhanced plans activate LLM-safe copilots and graph reasoning layers. Standard plans use rule-based semantics only."
         },
         {
-            "question": "What onboarding and training resources are included?",
-            "answer": "Every plan ships with guided onboarding. Scale adds domain governance workshops, and Enterprise includes bespoke enablement and executive briefings."
+            "question": "Is there a minimum seat requirement?",
+            "answer": "No. You can start with a single seat and add more anytime — volume discounts apply for 20+ seats."
         }
     ]
 }
