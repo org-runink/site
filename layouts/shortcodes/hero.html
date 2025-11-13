@@ -9,6 +9,17 @@
 {{ $gradient_from := .Get "gradient-from" }}
 {{ $gradient_to := .Get "gradient-to" }}
 {{ $gradient_angle := .Get "gradient-angle" | default "180" }}
+{{ $size := .Get "size" | default "normal" }}
+
+{{ $padding := "pt-16 pb-20 md:pt-24 md:pb-28" }}
+{{ $headlineSize := "text-4xl md:text-5xl lg:text-6xl" }}
+{{ $subheadSize := "text-xl" }}
+
+{{ if eq $size "double" }}
+  {{ $padding = "pt-32 pb-40 md:pt-48 md:pb-56" }}
+  {{ $headlineSize = "text-6xl md:text-7xl lg:text-8xl" }}
+  {{ $subheadSize = "text-2xl" }}
+{{ end }}
 
 <section class="relative overflow-hidden" {{ if $gradient_from }}style="background:linear-gradient({{ $gradient_angle }}deg,{{ $gradient_from }},{{ $gradient_to | default $gradient_from }})"{{ else }}class="bg-gradient-to-b from-gray-50 to-white"{{ end }}>
     {{ if $background_image }}
@@ -16,13 +27,13 @@
         <img src="{{ $background_image | relURL }}" alt="Background" class="w-full h-full object-cover">
     </div>
     {{ end }}
-    <div class="container pt-16 pb-20 md:pt-24 md:pb-28">
+    <div class="container {{ $padding }}">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-8">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <h1 class="{{ $headlineSize }} font-bold leading-tight">
                     {{ $headline | safeHTML }}
                 </h1>
-                <p class="text-xl text-gray-600">
+                <p class="{{ $subheadSize }} text-gray-600">
                     {{ $sub_headline | safeHTML }}
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">

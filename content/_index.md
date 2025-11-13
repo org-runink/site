@@ -9,6 +9,7 @@ title: Home
     primary_button_text="Schedule Your Consultation"
     primary_button_url="/contact"
     hero_image="/images/banner.png"
+    size="double"
     gradient-from="#dbeafe"
     gradient-to="#f3e8ff"
     gradient-angle="180"
@@ -44,7 +45,7 @@ title: Home
     description="Achieve clear, actionable insights with scalable analytics for enhanced forecasting, compliance, and risk management. Core unifies monitoring and semantics in a shareable web space. Small teams get dashboards, lineage maps, and health scores—all in one place."
     badge="Analytics"
     badgeColor="#16a34a"
-    image="/images/companion/core.png"
+    image="/images/companion/barn.png"
     features="Data assessment,AI roadmap,Pilot solutions,Scalable analytics"
     imagePosition="right"
 >}}
