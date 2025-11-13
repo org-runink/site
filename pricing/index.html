@@ -25,13 +25,13 @@
     <title>Pricing | Runink</title>
     
     
-    <meta name="description" content="Flexible plans based on seats, connections, and data usage.">
+    <meta name="description" content="Transparent, usage-based pricing — pay only for what your team actually uses.">
     <meta name="author" content="Runink">
     <meta name="robots" content="index, follow">
     
     
     <meta property="og:title" content="Pricing | Runink">
-    <meta property="og:description" content="Flexible plans based on seats, connections, and data usage.">
+    <meta property="og:description" content="Transparent, usage-based pricing — pay only for what your team actually uses.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://runink.org/pricing/">
     <meta property="og:site_name" content="Runink">
@@ -42,7 +42,7 @@
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pricing | Runink">
-    <meta name="twitter:description" content="Flexible plans based on seats, connections, and data usage.">
+    <meta name="twitter:description" content="Transparent, usage-based pricing — pay only for what your team actually uses.">
     
     
     
@@ -65,7 +65,7 @@
     
         
     
-    <link rel="stylesheet" href="/css/main.min.2b27529114a3ad7160c7045fe57fbfc76bf413d971ee586060e34d5245b2485c.css">
+    <link rel="stylesheet" href="/css/main.min.f4d1feb147b00ec4b78a7ebec43ec4c3377b12f79f9abe2ebdd8eb52d6d772a4.css">
 
     
     
@@ -254,13 +254,86 @@
     <h1 class="text-4xl font-bold text-center mb-12">Pricing</h1>
     <div class="!max-w-none">
         
+<section class="py-4">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center">
+      <div class="inline-flex rounded-lg bg-gray-100 p-1" role="tablist" aria-label="Pricing toggle">
+        
+          <button type="button"
+                  class="toggle-btn relative px-4 py-2 text-sm font-medium text-gray-700 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  data-value="monthly"
+                  role="tab"
+                  aria-selected="false">
+            Monthly
+          </button>
+        
+          <button type="button"
+                  class="toggle-btn relative px-4 py-2 text-sm font-medium text-gray-700 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  data-value="yearly"
+                  role="tab"
+                  aria-selected="false">
+            Yearly (save 10%)
+          </button>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  try {
+    var container = document.currentScript && document.currentScript.previousElementSibling;
+    if (!container) return;
+    var firstButtonGroup = container.querySelector('[role="tablist"]');
+    if (!firstButtonGroup) return;
+    var buttons = firstButtonGroup.querySelectorAll('button[data-value]');
+    if (!buttons.length) return;
+
+    function setActive(val) {
+      document.documentElement.setAttribute('data-pricing', val);
+      buttons.forEach(function(btn){
+        var isActive = btn.getAttribute('data-value') === val;
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.classList.toggle('bg-white', isActive);
+        btn.classList.toggle('text-gray-900', isActive);
+        btn.classList.toggle('shadow-sm', isActive);
+      });
+      
+      try {
+        var evt = new CustomEvent('pricing:toggle', { detail: { value: val } });
+        document.dispatchEvent(evt);
+      } catch(e) {   }
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){ setActive(btn.getAttribute('data-value')); });
+    });
+
+    
+    setActive(buttons[0].getAttribute('data-value'));
+  } catch (e) {
+    
+  }
+})();
+</script>
+
+
 <section class="py-16 bg-white">
+    <style>
+       
+      .price-yearly, .freq-yearly { display: none; }
+      [data-pricing="yearly"] .price-yearly, [data-pricing="yearly"] .freq-yearly { display: inline; }
+      [data-pricing="yearly"] .price-monthly, [data-pricing="yearly"] .freq-monthly { display: none; }
+      .billing-note-yearly { display: none; }
+      [data-pricing="yearly"] .billing-note-yearly { display: inline; }
+    </style>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center">
-            <h2 class="text-3xl font-bold text-gray-900">Simple, transparent pricing for your semantic and AI operations</h2>
+            <h2 class="text-3xl font-bold text-gray-900">Flexible plans that scale with your data maturity</h2>
             
-            <p class="mt-4 text-xl text-gray-600">Every plan includes governed semantics, data-maturity scoring, and connection-based scaling. Pay only for what you use — grow seamlessly as your warehouse expands.</p>
+            <p class="mt-4 text-xl text-gray-600">All plans include automatic semantic generation, data quality scoring, and policy governance. Pay by seats, connections, or usage — not by vanity features.</p>
             
         </div>
         
@@ -274,12 +347,19 @@
                         <div class="p-8 flex flex-col flex-grow">
                             <div class="mb-6">
                                 <h3 class="text-2xl font-bold text-gray-900">Standard</h3>
-                                <p class="mt-2 text-gray-500">Perfect for teams getting started with semantic automation and data maturity insights.</p>
+                                <p class="mt-2 text-gray-500">Perfect for small data teams starting their semantic and governance journey.</p>
                             </div>
                             <div class="mb-8">
                                 <p class="flex items-baseline">
-                                    <span class="text-5xl font-bold tracking-tight text-gray-900">$$15 / seat</span>
-                                    <span class="ml-2 text-gray-500">/month</span>
+                                    <span class="text-5xl font-bold tracking-tight text-gray-900 price-monthly">
+                                      $20 / seat
+                                    </span>
+                                    <span class="text-5xl font-bold tracking-tight text-gray-900 price-yearly">
+                                      $15 / seat
+                                    </span>
+                                    <span class="ml-2 text-gray-500 freq-monthly">/month</span>
+                                    <span class="ml-2 text-gray-500 freq-yearly">/month</span>
+                                    <span class="ml-3 text-sm text-gray-500 billing-note-yearly">billed yearly</span>
                                 </p>
                             </div>
                             <ul class="space-y-4 text-gray-600 flex-grow">
@@ -288,42 +368,28 @@
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Includes up to 3 data connections</span>
+                                    <span class="ml-3">Up to 3 data connections (Snowflake, BigQuery, Databricks, Postgres)</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Analyze up to 50 GB of metadata &amp; data quality metrics</span>
+                                    <span class="ml-3">Up to 15 GB analyzed per month (metadata &#43; lineage)</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Automatic semantic layer generation</span>
+                                    <span class="ml-3">Automatic schemas.yml generation &#43; PRs to github</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Data maturity &amp; AI-readiness scoring</span>
-                                </li>
-                                
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
-                                    </svg>
-                                    <span class="ml-3">GitHub Action integration for PR-based workflows</span>
-                                </li>
-                                
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
-                                    </svg>
-                                    <span class="ml-3">Community &amp; email support</span>
+                                    <span class="ml-3">Data maturity and AI-readiness scoring</span>
                                 </li>
                                 
                             </ul>
@@ -346,12 +412,19 @@
                         <div class="p-8 flex flex-col flex-grow">
                             <div class="mb-6">
                                 <h3 class="text-2xl font-bold text-gray-900">AI-Enhanced</h3>
-                                <p class="mt-2 text-gray-500">For teams that need LLM-safe insights, AI-driven recommendations, and graph automation.</p>
+                                <p class="mt-2 text-gray-500">For data teams that need LLM-safe copilots, graph memory, and smart optimizations.</p>
                             </div>
                             <div class="mb-8">
                                 <p class="flex items-baseline">
-                                    <span class="text-5xl font-bold tracking-tight text-gray-900">$$60 / seat</span>
-                                    <span class="ml-2 text-gray-500">/month</span>
+                                    <span class="text-5xl font-bold tracking-tight text-gray-900 price-monthly">
+                                      $80 / seat
+                                    </span>
+                                    <span class="text-5xl font-bold tracking-tight text-gray-900 price-yearly">
+                                      $60 / seat
+                                    </span>
+                                    <span class="ml-2 text-gray-500 freq-monthly">/month</span>
+                                    <span class="ml-2 text-gray-500 freq-yearly">/month</span>
+                                    <span class="ml-3 text-sm text-gray-500 billing-note-yearly">billed yearly</span>
                                 </p>
                             </div>
                             <ul class="space-y-4 text-gray-600 flex-grow">
@@ -367,35 +440,21 @@
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">AI Copilot with policy-aware semantic Q&amp;A</span>
+                                    <span class="ml-3">AI Copilot for semantic Q&amp;A and explanation tracing</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Automated recommendations for schema, lineage, and cost optimization</span>
+                                    <span class="ml-3">Automated PRs for model optimizations &amp; cost tuning</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Dgraph Graph Memory integration</span>
-                                </li>
-                                
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
-                                    </svg>
-                                    <span class="ml-3">Metric API Publisher (REST/GraphQL)</span>
-                                </li>
-                                
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
-                                    </svg>
-                                    <span class="ml-3">Priority email &amp; Slack support</span>
+                                    <span class="ml-3">Metric API Publisher (REST/GraphQL endpoints)</span>
                                 </li>
                                 
                             </ul>
@@ -414,12 +473,19 @@
                         <div class="p-8 flex flex-col flex-grow">
                             <div class="mb-6">
                                 <h3 class="text-2xl font-bold text-gray-900">Enterprise</h3>
-                                <p class="mt-2 text-gray-500">For large organizations needing private deployment, unlimited data, and tailored governance.</p>
+                                <p class="mt-2 text-gray-500">For larger or regulated teams needing private deployments and unlimited usage.</p>
                             </div>
                             <div class="mb-8">
                                 <p class="flex items-baseline">
-                                    <span class="text-5xl font-bold tracking-tight text-gray-900">$Custom</span>
-                                    <span class="ml-2 text-gray-500">/month</span>
+                                    <span class="text-5xl font-bold tracking-tight text-gray-900 price-monthly">
+                                      Custom
+                                    </span>
+                                    <span class="text-5xl font-bold tracking-tight text-gray-900 price-yearly">
+                                      Custom
+                                    </span>
+                                    <span class="ml-2 text-gray-500 freq-monthly">/month</span>
+                                    <span class="ml-2 text-gray-500 freq-yearly">/month</span>
+                                    <span class="ml-3 text-sm text-gray-500 billing-note-yearly">billed yearly</span>
                                 </p>
                             </div>
                             <ul class="space-y-4 text-gray-600 flex-grow">
@@ -428,42 +494,42 @@
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Private or on-prem deployment</span>
+                                    <span class="ml-3">Unlimited connections, data, and queries</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Unlimited connections and data volume</span>
+                                    <span class="ml-3">Private/on-prem deployment (VPC, SOC2, HIPAA-ready)</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Dedicated environment with local AI agents</span>
+                                    <span class="ml-3">Dedicated governance graph &amp; local agent runtimes</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Custom connectors &amp; APIs</span>
+                                    <span class="ml-3">Custom connectors &amp; security policies</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">Advanced compliance (PII, residency, audit exports)</span>
+                                    <span class="ml-3">SSO, audit exports, and SLA guarantees</span>
                                 </li>
                                 
                                 <li class="flex items-start">
                                     <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                                     </svg>
-                                    <span class="ml-3">White-glove onboarding and governance workshops</span>
+                                    <span class="ml-3">White-glove onboarding &amp; governance workshops</span>
                                 </li>
                                 
                             </ul>
@@ -482,12 +548,62 @@
 </section>
 
 
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900">Usage-based billing — pay only for what you analyze</h2>
+      
+      <p class="mt-4 text-xl text-gray-600">Runink charges only for what you actually process. Every query scanned, data connection added, and GB analyzed counts toward your usage credits.</p>
+      
+    </div>
+    
+
+    
+    <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <div class="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="flex items-start">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700 font-semibold">1</div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-900">Connect your data sources</h3>
+            <p class="mt-2 text-gray-600">Each source (Snowflake, BigQuery, Databricks, etc.) counts as a connection. The first 3 are included; extras are billed monthly.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="flex items-start">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700 font-semibold">2</div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-900">We monitor and analyze your queries</h3>
+            <p class="mt-2 text-gray-600">Each query inspected or optimized by Runink counts toward your usage limit. Dashboards show your monthly and annual usage.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="flex items-start">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700 font-semibold">3</div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-900">Pay only for overages</h3>
+            <p class="mt-2 text-gray-600">If you exceed your plan’s limits, small overage rates apply for queries, GB analyzed, or connections. Annual plans include pooled usage across all teams.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+ </section>
+
+
 <section class="bg-white">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Pricing &amp; Usage FAQs</h2>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Pricing &amp; Billing FAQs</h2>
             
-            <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Everything you need to know about connections, data, and scaling.</p>
+            <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Everything you need to know about Runink’s usage-based pricing model.</p>
             
         </div>
         
@@ -497,14 +613,14 @@
                 <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" 
                         onclick="this.parentElement.querySelector('.faq-content').classList.toggle('hidden');
                                  this.querySelector('svg').classList.toggle('rotate-180')">
-                    <span class="text-lg font-medium text-gray-900">What counts as a connection?</span>
+                    <span class="text-lg font-medium text-gray-900">What’s included in the seat price?</span>
                     <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div class="faq-content hidden border-t">
                     <div class="p-6 prose prose-sm sm:prose lg:prose-lg max-w-none">
-                        A connection represents one active integration — e.g., Snowflake, dbt, Postgres, or a BI tool. You can mix and match up to 6 in the base plan.
+                        Seats are for active users (engineers, analysts, or AI copilots) accessing Runink’s semantic dashboard or API. You can start with a single seat and add more anytime.
                     </div>
                 </div>
             </div>
@@ -513,14 +629,14 @@
                 <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" 
                         onclick="this.parentElement.querySelector('.faq-content').classList.toggle('hidden');
                                  this.querySelector('svg').classList.toggle('rotate-180')">
-                    <span class="text-lg font-medium text-gray-900">What happens if we exceed 50 GB of analyzed data?</span>
+                    <span class="text-lg font-medium text-gray-900">How is data usage measured?</span>
                     <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div class="faq-content hidden border-t">
                     <div class="p-6 prose prose-sm sm:prose lg:prose-lg max-w-none">
-                        Additional data volume is billed at $0.10/GB per month. Enterprise plans include unlimited data.
+                        Runink counts GB analyzed when scanning metadata, lineage, and query logs — not full table data. It’s lightweight and safe for regulated environments.
                     </div>
                 </div>
             </div>
@@ -529,14 +645,14 @@
                 <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" 
                         onclick="this.parentElement.querySelector('.faq-content').classList.toggle('hidden');
                                  this.querySelector('svg').classList.toggle('rotate-180')">
-                    <span class="text-lg font-medium text-gray-900">Can we add more connections mid-term?</span>
+                    <span class="text-lg font-medium text-gray-900">Can we switch between monthly and yearly plans?</span>
                     <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div class="faq-content hidden border-t">
                     <div class="p-6 prose prose-sm sm:prose lg:prose-lg max-w-none">
-                        Yes. Additional connections cost $10/month each on Standard and $20/month each on AI-Enhanced.
+                        Yes — you can switch anytime. Yearly plans offer a 15% discount and pool your query credits across all projects.
                     </div>
                 </div>
             </div>
@@ -545,14 +661,14 @@
                 <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" 
                         onclick="this.parentElement.querySelector('.faq-content').classList.toggle('hidden');
                                  this.querySelector('svg').classList.toggle('rotate-180')">
-                    <span class="text-lg font-medium text-gray-900">Are AI features optional?</span>
+                    <span class="text-lg font-medium text-gray-900">Do you charge for AI copilots separately?</span>
                     <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div class="faq-content hidden border-t">
                     <div class="p-6 prose prose-sm sm:prose lg:prose-lg max-w-none">
-                        Yes. AI-Enhanced plans activate LLM-safe copilots and graph reasoning layers. Standard plans use rule-based semantics only.
+                        Only the AI-Enhanced tier includes copilots and optimization features. You’re charged per seat, with optional usage credits for high-volume copilots.
                     </div>
                 </div>
             </div>
@@ -561,14 +677,14 @@
                 <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" 
                         onclick="this.parentElement.querySelector('.faq-content').classList.toggle('hidden');
                                  this.querySelector('svg').classList.toggle('rotate-180')">
-                    <span class="text-lg font-medium text-gray-900">Is there a minimum seat requirement?</span>
+                    <span class="text-lg font-medium text-gray-900">Can we buy usage credits upfront?</span>
                     <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div class="faq-content hidden border-t">
                     <div class="p-6 prose prose-sm sm:prose lg:prose-lg max-w-none">
-                        No. You can start with a single seat and add more anytime — volume discounts apply for 20+ seats.
+                        Yes. Credits start at $100 for 100K queries or 50 GB analyzed. Unused credits roll over for 12 months.
                     </div>
                 </div>
             </div>
