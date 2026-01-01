@@ -10,7 +10,7 @@ title: Home
     primary_button_url="/products/analytics_companion/"
     secondary_button_text="Book a Live Trace"
     secondary_button_url="/contact"
-    hero_image="/images/banner.png"
+    hero_image="/images/hero.png"
     size="normal"
 >}}
 
