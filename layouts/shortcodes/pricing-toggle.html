@@ -2,15 +2,14 @@
 <section class="py-4">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-center">
-      <div class="inline-flex rounded-lg bg-gray-100 p-1" role="tablist" aria-label="Pricing toggle">
+      <div class="inline-flex rounded-lg bg-stone-800 p-1 border border-stone-700" role="tablist"
+        aria-label="Pricing toggle">
         {{ range $i, $opt := $json.options }}
-          <button type="button"
-                  class="toggle-btn relative px-4 py-2 text-sm font-medium text-gray-700 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                  data-value="{{ $opt.value }}"
-                  role="tab"
-                  aria-selected="false">
-            {{ $opt.label }}
-          </button>
+        <button type="button"
+          class="toggle-btn relative px-4 py-2 text-sm font-medium text-[#D9CDB8] rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B9A6E]"
+          data-value="{{ $opt.value }}" role="tab" aria-selected="false">
+          {{ $opt.label }}
+        </button>
         {{ end }}
       </div>
     </div>
@@ -18,8 +17,7 @@
 </section>
 
 <script>
-(function() {
-  try {
+  (function () {
     var container = document.currentScript && document.currentScript.previousElementSibling;
     if (!container) return;
     var firstButtonGroup = container.querySelector('[role="tablist"]');
@@ -29,28 +27,30 @@
 
     function setActive(val) {
       document.documentElement.setAttribute('data-pricing', val);
-      buttons.forEach(function(btn){
+      buttons.forEach(function (btn) {
         var isActive = btn.getAttribute('data-value') === val;
         btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        btn.classList.toggle('bg-white', isActive);
-        btn.classList.toggle('text-gray-900', isActive);
+        btn.classList.toggle('from-[#5F6F3E]', isActive);
+        btn.classList.toggle('to-[#B87333]', isActive);
+        btn.classList.toggle('bg-gradient-to-r', isActive);
+        btn.classList.toggle('text-white', isActive);
         btn.classList.toggle('shadow-sm', isActive);
       });
-      // Emit a custom event in case other components want to react
+
+      // Emit custom event
       try {
         var evt = new CustomEvent('pricing:toggle', { detail: { value: val } });
         document.dispatchEvent(evt);
-      } catch(e) { /* no-op */ }
+      } catch (e) { /* no-op */ }
     }
 
-    buttons.forEach(function(btn){
-      btn.addEventListener('click', function(){ setActive(btn.getAttribute('data-value')); });
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () { setActive(btn.getAttribute('data-value')); });
     });
 
     // Default to the first option
-    setActive(buttons[0].getAttribute('data-value'));
-  } catch (e) {
-    // Fail silently to avoid breaking the page
-  }
-})();
+    if (buttons.length > 0) {
+      setActive(buttons[0].getAttribute('data-value'));
+    }
+  })();
 </script>

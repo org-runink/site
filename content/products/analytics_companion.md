@@ -1,127 +1,161 @@
 ---
 title: "Runink Analytics Companion"
-description: "Predictive signals, governed triggers, and real-time workflows—built to onboard fast and scale securely across supply chain, retail, insurance, and finance."
-layout: "feature"
+description: "Visibility that executes. Real-time reconciliation, hypothesis testing, and autonomous agents that fix margin leaks before they compound."
+layout: "landing"
 badge: "Analytics Companion"
 badgeColor: "#7c3aed"
-features:
-  - title: "Domain-Driven Context Modeling"
-    description: "Auto-builds knowledge graphs per data domain so every team sees how data flows, who owns it, and which metrics matter."
-  - title: "Decision-Ready Analytics"
-    description: "Semantic layers regenerate per business domain, exposing trusted SQL, confidence scores, and cross-department perspectives."
-  - title: "Analytics Stage Transparency"
-    description: "Score data maturity, AI readiness, and quality across ingestion, transformation, and activation stages while highlighting freshness and utilization.."
-  - title: "Extensible ML Runtime"
-    description: "Run managed models out of the box or extend with local, fine-tuned agentic models under enterprise controls."
 ---
 
-## Your AI-Powered Analytics Companion
+{{< hero 
+    headline="Stop Losing Money to Problems You Can't See"
+    sub_headline="Carrier overcharges. Vendor shortages. Inventory gaps. Policy violations. We show you <strong>today's biggest risks</strong>, let you test fixes safely, and execute solutions autonomously. Full visibility, safe testing, measurable results."
+    primary_button_text="Start Your First Trace"
+    primary_button_url="/contact"
+    hero_image="/images/companion/overview.png"
+    size="normal"
+    gradient-from="#3A2F2A"
+    gradient-to="#1A1512"
+    gradient-angle="135"
+>}}
 
-Runink Analytics Companion turns raw events, telemetry, and forecasts into **actionable workflows** your operations, finance, and customer teams can trust.
+{{< section-container class="py-20 relative z-10" >}}
 
-It now executes end-to-end analytics operations—from connecting sources and modeling domain contexts to deploying governed policies—within a single command-line and UI experience.
+{{< stats-grid >}}
+{{< stat number="100%" label="Domains Understood" >}}
+{{< stat number="<20sec" label="Agent Response Time" >}}
+{{< stat number="Zero" label="Data Left Behind" >}}
+{{< /stats-grid >}}
 
-Companion runs **in your environment**, applies domain-driven context modeling automatically, and keeps governance front and center. Machine learning insights, knowledge graphs, and the interactive node canvas update in real time as you iterate—delivering decision-ready intelligence without losing control of your data estate.
+<div class="max-w-4xl mx-auto text-center mt-32 space-y-10 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-red-500/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
-{{< section-container class="py-20" >}}
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-    {{< value-card
-      title="Planners"
-      icon="chart-bar"
-      description="Establishes a governed semantic layer with color‑tagged lineage, freshness scores, and usage insights; surfaces the real source of truth for KPIs and AI‑ready datasets; presents stage‑by‑stage data lifecycle views for ingestion, transformation, and activation."
-    >}}
-    {{< value-card
-      title="Merch Ops"
-      icon="tag"
-      description="Sequence promotions based on omni‑channel readiness by tapping into governed sources of truth and automated semantic layers that generate domain‑specific metrics and keep dashboards in sync."
-    >}}
-    {{< value-card
-      title="Risk Teams"
-      icon="shield-check"
-      description="Packages policy‑ready playbooks tied to domain contracts and SLA expectations; coordinates decisions across operations, finance, compliance, and customer care with shared context; enables rapid scenario simulation to test interventions before production."
-    >}}
-    {{< value-card
-      title="Claims Analysts"
-      icon="clipboard-list"
-      description="Renders an explorable node graph that clusters domains, relationships, and semantic views by color; lets users inspect generated SQL, adjust relationships, and publish changes directly from the UI; supports local editing, version control, and governance approvals before going live."
-    >}}
-    {{< value-card
-      title="Data Engineers"
-      icon="code-bracket-square"
-      description="Generates domain‑specific SQL, metric definitions, and business glossary entries on demand; assigns confidence scores and usage analytics to semantic artifacts; keeps dashboards, APIs, and copilots synchronized when schemas or contracts change."
-    >}}
-   {{< value-card
-      title="Domain-Driven Knowledge Graphs"
-      icon="collection"
-      description="Auto‑discovers business domains and builds contextual knowledge graphs; cross‑references departmental data usage to identify collaboration gaps; applies data mesh ownership so stewards certify domain facts before downstream automation."
-    >}}
-  </div>
+<h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter drop-shadow-2xl">
+The Problem: <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8B9A6E] via-[#A8B88B] to-[#D4A574] animate-gradient bg-300%">Weeks to Fix What Takes Minutes</span>
+</h2>
+
+<p class="text-xl md:text-2xl text-slate-300 leading-relaxed font-light drop-shadow-lg">
+You see the problem instantly. But fixing it takes <strong class="text-white font-bold bg-stone-800/50 px-2 py-1 rounded">weeks of manual work</strong>: filing claims, updating spreadsheets, coordinating vendors. By the time you act, the damage is done.
+</p>
+
+<p class="text-xl text-[#F5F1E8] font-medium max-w-3xl mx-auto leading-relaxed">
+Runink closes that gap. We show you what's broken, let you <strong class="text-[#D4A574] font-bold border-b-2 border-[#D4A574]/30 pb-0.5">test fixes in a safe sandbox</strong>, and execute solutions autonomously—all with full oversight and audit trails.
+</p>
+</div>
+
 {{< /section-container >}}
 
----
+{{< section-container class="py-20" >}}
+
+<div class="max-w-7xl mx-auto px-4">
+
+<div class="text-center mb-16">
+<h2 class="text-5xl font-bold text-white mb-4">Core Platform: Visibility, Governance & Testing</h2>
+<p class="text-xl text-slate-400">Integrated modules that expose risk, enforce policy, and validate decisions before execution.</p>
+</div>
+
+{{< card-grid cols="3" >}}
+
+{{< feature-card 
+    title="AI Posture Center"
+    icon="shield-check"
+    description="Monitor operational health and safety. Track incidents with full blast radius. Auto-generated runbooks for 'Fix Now' and 'Prevent Recurrence.' Know your readiness before deploying autonomous agents."
+    features="Domain health monitoring updated in real-time,Incident blast radius tracking and analysis,Maturity scores before deploying autonomous agents"
+>}}
+
+{{< feature-card 
+    title="Rules Studio"
+    icon="scale"
+    description="Guardrails and exposure tracking. See which business policies are followed or violated. Coverage percentage shows enforcement gaps. Real-time alerts prevent bad decisions before they happen."
+    features="Guardrail enforcement across all operations,Exposure alerts show where policies are violated,Compliance gap analysis with enforcement reporting"
+>}}
+
+{{< feature-card 
+    title="Hypothesis Lab"
+    icon="code-bracket-square"
+    description="What-if testing in a safe sandbox. Run pricing, inventory, and fulfillment scenarios. See profit and loss impact with confidence scores before risking live operations. Every assumption disclosed upfront."
+    features="What-if scenario modeling with outcome projections,Test inventory and fulfillment changes safely,Confidence levels and assumptions shown for every test"
+>}}
+
+{{< /card-grid >}}
+
+<div class="text-center mb-16">
+<h2 class="text-5xl font-bold text-white mb-4">Decision Engines: Autonomous Execution</h2>
+<p class="text-xl text-slate-400">Intelligent agents that automate complex workflows with full human oversight and auditability.</p>
+</div>
+
+{{< card-grid cols="3" >}}
+
+{{< feature-card 
+    title="Auto-Provisioning"
+    icon="bolt"
+    description="One AI agent manages complete procurement workflow: PO generation, vendor communications, shipment tracking, address validation, freight optimization. Reduces procurement cycles from weeks to minutes with full human oversight."
+    features="Address Intelligence,Porch Piracy Defense,Freight Mode Switching,Port Congestion Avoidance,Supplier Risk Radar,Dynamic Margin Protection,Demand-Pulse Positioning,Ghost Inventory Watch"
+>}}
+
+{{< feature-card 
+    title="Claims Recovery"
+    icon="currency-dollar"
+    description="One AI agent handles financial recovery across 18+ functions: invoice audits, carrier overcharge disputes, accessorial fee challenges, duty drawback claims, contract rate compliance. Pay only on successful recovery."
+    features="Dim-Weight Auditing,Accessorial Fee Buster,Duty Drawback Claims,Contract Rate Compliance,Lost Inbound Claims,Unclaimed Credit Hunter,Return Fraud Defense,VIP White-Glove Rescue"
+>}}
+
+{{< feature-card 
+    title="Safety & Grounding"
+    icon="shield-check"
+    description="The 'black box' problem solved. Every autonomous action is grounded in verified data and runs within strict operational guardrails. AI that asks for permission when uncertain and logs every decision."
+    features="Hallucination Defense,Immutable Audit Logs,Human-in-the-Loop Triggers,Role-Based Access,Operational Boundary Testing,Data Lineage Tracking,Policy Guardrails,Compliance Gates"
+>}}
+
+{{< /card-grid >}}
+
+</div>
+
+{{< /section-container >}}
 
 {{< faq >}}
 {
-    "title": "Companion Capabilities",
-    "description": "Experience how knowledge-graph automation turns logistics signals into a shared source of truth.",
+    "title": "How It Actually Works",
+    "description": "Grounded in real architecture—no fabrications.",
     "questions": [
         {
-            "question": "How does the Companion assemble knowledge graphs per logistics domain?",
-            "answer": "Domain-specific knowledge graphs weave manifests, IoT streams, and partner records into contextual nodes so yard, berth, and fleet teams reason from the same data fabric."
+            "question": "What's the difference between Core and Cockpit?",
+            "answer": "**Core**: You see the problems. Rules engine catches issues, Hypothesis Lab tests scenarios, AI Posture tracks readiness. **Cockpit**: We fix the problems. AI agents file claims, manage POs, execute corrections. Core = eyes. Cockpit = hands."
         },
         {
-            "question": "What cross-department visibility do we gain?",
-            "answer": "Operations, finance, compliance, and customer teams co-navigate the same graph, seeing how events impact cost centers, service levels, and contractual obligations in real time."
+            "question": "How is autonomous execution safe?",
+            "answer": "Every action runs through multi-layer validation: policy gates (what's allowed/blocked), confidence thresholds, maturity checks, and audit trails. Actions auto-execute only when all gates pass. Otherwise, explicit approval is required in the Action Proposal Queue."
         },
         {
-            "question": "How is a real source of truth maintained across regions?",
-            "answer": "A data-mesh approach assigns domain ownership, while automated reconciliations surface conflicts and certify a unified data view before plans or forecasts are approved."
+            "question": "How do I track ROI?",
+            "answer": "Every dollar is tagged to an action. Claims filed: recovery amount logged. Overcharges caught: savings attributed. Rules enforced: cost/risk reduction measured. Raft-backed audit trails preserve exact state at decision time for lineage and replayability."
         },
         {
-            "question": "Where do data contracts fit in the workflow?",
-            "answer": "Executable data contracts validate units, timestamps, and SLA clauses as data moves between partners, ensuring each graph node reflects compliant, trusted information."
+            "question": "How does integration work?",
+            "answer": "We connect via API to your ERP, WMS, carrier systems, commerce platforms. Setup takes 2-4 weeks. We handle data transformation, normalization, and reconciliation into a unified Knowledge Graph. Your team configures connections once."
         },
         {
-            "question": "How do teams self-serve insights without new dashboards?",
-            "answer": "An automated semantic layer regenerates domain metrics, hierarchies, and relationship maps so analysts and co-pilots can publish decision-ready views instantly."
+            "question": "How are agents different from chatbots?",
+            "answer": "Agents execute. They don't just answer questions—they generate POs, file claims, optimize routes, and manage exceptions. MCP-enabled tooling (Model Context Protocol) in the Decision Cockpit allows controlled interaction with external systems while keeping reasoning, policy, and approval local and governed."
+        },
+        {
+            "question": "When will I see actual financial results?",
+            "answer": "Day 1: Full visibility into lost margin. Week 2: Automated claims recovery begins. Month 1: 10x ROI realized. Unlike traditional ERP projects that take months to deploy, our pre-built integrations mean you start recovering cash almost immediately."
+        },
+        {
+            "question": "Does this replace my existing operations team?",
+            "answer": "No—it removes their busiest, lowest-value work. Instead of chasing data and filing paperwork, your team focuses on high-level strategy, vendor relationships, and complex exceptions. We give them 'superpowers' to manage 10x the volume without burnout."
+        },
+        {
+            "question": "Why shouldn't I just hire more analysts?",
+            "answer": "Hiring scales linearly; software scales exponentially. An analyst can process 50 claims a day; our agents process 5,000. Plus, agents don't sleep, don't make calculation errors, and catch every single penny, 24/7/365."
         }
     ]
 }
 {{< /faq >}}
 
-{{< faq >}}
-{
-    "title": "AI-Driven Features",
-    "description": "Guided intelligence keeps the knowledge graph current and every stakeholder aligned.",
-    "questions": [
-        {
-            "question": "Which AI engines curate the logistics knowledge graphs?",
-            "answer": "Production-grade ML models—graph neural nets, temporal transformers, and large-language models—collaborate to enrich entities, infer relationships, and spotlight dependencies across every domain."
-        },
-        {
-            "question": "What model options come ready to deploy?",
-            "answer": "Out-of-the-box anomaly, demand, ETA, and language models are pre-tuned for logistics vocabularies, giving teams immediate predictive coverage without a lengthy setup."
-        },
-        {
-            "question": "How does AI uphold the unified source of truth?",
-            "answer": "Continuous data-quality scoring flags anomalies, while lineage-aware reconciliation aligns duplicate events so the canonical view driving decisions stays accurate."
-        },
-        {
-            "question": "Can departments receive tailored insights from the same graph?",
-            "answer": "Yes. Role-specific semantic slices project the shared data mesh into finance, operations, and customer-care narratives without duplicating pipelines."
-        },
-        {
-            "question": "How are data contracts and mesh policies enforced automatically?",
-            "answer": "Policy agents monitor every ingestion path, applying contract tests, residency rules, and retention policies before graph updates are approved."
-        },
-        {
-            "question": "Can enterprise plans run agentic models locally?",
-            "answer": "Enterprise customers extend Companion with isolated, agentic model runtimes that execute near operational systems, including support for bringing your own fine-tuned models alongside managed baselines."
-        },
-        {
-            "question": "What keeps the semantic layer and dashboards in sync?",
-            "answer": "Automated semantic-layer generation rebuilds metrics and exposure models whenever domains change, refreshing BI layers, APIs, and copilots with governed definitions."
-        }
-    ]
-}
-{{< /faq >}}
+{{< cta 
+    title="Ready to Recover Lost Margin?"
+    description="Book a trace session and see exactly where you're losing money to carrier overcharges, vendor shortages, and unclaimed credits. ROI in the first session."
+    primary_button_text="Book Your Trace Session"
+    primary_button_url="/contact"
+>}}

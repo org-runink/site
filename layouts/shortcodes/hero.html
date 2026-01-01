@@ -16,48 +16,89 @@
 {{ $subheadSize := "text-xl" }}
 
 {{ if eq $size "double" }}
-  {{ $padding = "pt-32 pb-40 md:pt-48 md:pb-56" }}
-  {{ $headlineSize = "text-6xl md:text-7xl lg:text-8xl" }}
-  {{ $subheadSize = "text-2xl" }}
+{{ $padding = "pt-32 pb-40 md:pt-48 md:pb-56" }}
+{{ $headlineSize = "text-6xl md:text-7xl lg:text-8xl" }}
+{{ $subheadSize = "text-2xl" }}
 {{ end }}
 
-<section class="relative overflow-hidden" {{ if $gradient_from }}style="background:linear-gradient({{ $gradient_angle }}deg,{{ $gradient_from }},{{ $gradient_to | default $gradient_from }})"{{ else }}class="bg-gradient-to-b from-gray-50 to-white"{{ end }}>
+<section class="relative overflow-hidden py-24 md:py-32" {{ if $gradient_from
+    }}style="background:linear-gradient({{ $gradient_angle }}deg,{{ $gradient_from }},{{ $gradient_to | default $gradient_from }})"
+    {{ else }}class="bg-stone-900" {{ end }}>
+
+    <!-- Background Texture -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
+        <div
+            class="absolute inset-0 bg-[url('/images/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]">
+        </div>
+    </div>
+
     {{ if $background_image }}
-    <div class="absolute inset-0">
+    <div class="absolute inset-0 mix-blend-overlay opacity-30">
         <img src="{{ $background_image | relURL }}" alt="Background" class="w-full h-full object-cover">
     </div>
     {{ end }}
-    <div class="container {{ $padding }}">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <h1 class="{{ $headlineSize }} font-bold leading-tight">
+
+    <div class="container relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+            <!-- Text Content -->
+            <div class="lg:col-span-6 space-y-8 relative">
+                <!-- Glow behind text -->
+                <div
+                    class="absolute -top-20 -left-20 w-64 h-64 bg-[#8B9A6E]/20 rounded-full blur-[100px] pointer-events-none opacity-50">
+                </div>
+
+                <h1 class="{{ $headlineSize }} font-bold leading-normal text-white tracking-normal drop-shadow-xl">
                     {{ $headline | safeHTML }}
                 </h1>
-                <p class="{{ $subheadSize }} text-gray-600">
+
+                <p
+                    class="{{ $subheadSize }} text-[#F5F1E8] leading-relaxed drop-shadow-md border-l-4 border-[#8B9A6E] pl-6">
                     {{ $sub_headline | safeHTML }}
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
+
+                <div class="flex flex-col sm:flex-row gap-5 pt-4">
                     {{ if and $primary_button_text $primary_button_url }}
-                    <a href="{{ $primary_button_url }}" class="btn-primary text-center">
+                    <a href="{{ $primary_button_url }}"
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-[#5F6F3E] to-[#B87333] rounded-full hover:from-[#7C8D59] hover:to-[#D68F55] hover:shadow-lg hover:shadow-[#8B9A6E]/30 hover:-translate-y-1">
                         {{ $primary_button_text }}
+                        <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
                     </a>
                     {{ end }}
                     {{ if and $secondary_button_text $secondary_button_url }}
-                    <a href="{{ $secondary_button_url }}" class="btn-outline text-center">
+                    <a href="{{ $secondary_button_url }}"
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-[#F5F1E8] transition-all duration-200 bg-stone-800/50 border-2 border-[#8B9A6E] rounded-full hover:bg-[#6B7A4E]/30 hover:text-white hover:border-[#A8B88B] hover:-translate-y-1 backdrop-blur-sm">
                         {{ $secondary_button_text }}
                     </a>
                     {{ end }}
                 </div>
             </div>
-            <div class="relative">
+
+            <!-- Hero Image / Visual -->
+            <div class="lg:col-span-6 relative group perspective-1000">
                 {{ if $hero_image }}
-                <div class="relative z-10">
-                    <img src="{{ $hero_image | relURL }}" alt="Hero Image" class="rounded-xl shadow-elevation">
+                <div
+                    class="relative z-10 transform transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-[#5F6F3E] to-[#B87333] rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200">
+                    </div>
+                    <img src="{{ $hero_image | relURL }}" alt="Hero Image"
+                        class="relative w-full rounded-xl shadow-2xl border border-stone-700/50 bg-stone-900/50 backdrop-blur-xl">
+
+                    <!-- Reflection -->
+                    <div
+                        class="absolute inset-0 rounded-xl bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                    </div>
                 </div>
                 {{ end }}
-                <!-- Background decoration -->
-                <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary-100 rounded-full filter blur-3xl opacity-50"></div>
-                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary-100 rounded-full filter blur-3xl opacity-50"></div>
+
+                <!-- Background Orbs -->
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#8B9A6E]/15 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+                </div>
             </div>
         </div>
     </div>

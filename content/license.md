@@ -3,24 +3,25 @@ title: "License"
 layout: "simple"
 ---
 
-## MIT License
+## Runink Commercial License
 
-Copyright (c) 2024
+Runink is a proprietary platform. Your access and usage are governed by the Runink Commercial Subscription Agreement.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+### 1. Platform Subscription (SaaS)
+Runink provides access to its platform under a subscription model ("Core" or "Cockpit"). This subscription grants you a non-exclusive, non-transferable right to use the platform during the subscription term.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+### 2. Intelligent Action Fees (Variable)
+Certain features, specifically **Auto-Provisioning** and **Claims Recovery**, are subject to performance-based variable fees:
+*   **Auto-Provisioning:** Billed at 3% of the transaction value, capped at $50 per order.
+*   **Claims Recovery:** Billed as a success fee (20% of recovered funds).
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+### 3. Data & Compute Units
+High-intensity data processing features utilize "Runink Runner" and are billed based on actual resource consumption:
+*   **Data Units (DU):** $0.01 per unit (1 GB processed).
+*   **Compute Units (CU):** $0.01 per unit (1 minute of compute time).
+
+### 4. Ownership
+Runink retains all ownership and intellectual property rights to the platform, including any AI models and algorithms used to process your data. You retain ownership of your customer data.
+
+### 5. Contact
+For questions regarding licensing or custom enterprise agreements, please contact sales.

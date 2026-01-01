@@ -1,63 +1,95 @@
 {{ $json := .Inner | transform.Unmarshal }}
-<section class="py-16 bg-white">
+<section class="py-16 bg-stone-900">
     <style>
-      /* Default: show monthly, hide yearly; switch when data-pricing="yearly" */
-      .price-yearly, .freq-yearly { display: none; }
-      [data-pricing="yearly"] .price-yearly, [data-pricing="yearly"] .freq-yearly { display: inline; }
-      [data-pricing="yearly"] .price-monthly, [data-pricing="yearly"] .freq-monthly { display: none; }
-      .billing-note-yearly { display: none; }
-      [data-pricing="yearly"] .billing-note-yearly { display: inline; }
+        .price-yearly,
+        .freq-yearly {
+            display: none;
+        }
+
+        [data-pricing="yearly"] .price-yearly,
+        [data-pricing="yearly"] .freq-yearly {
+            display: inline;
+        }
+
+        [data-pricing="yearly"] .price-monthly,
+        [data-pricing="yearly"] .freq-monthly {
+            display: none;
+        }
+
+        .billing-note-yearly {
+            display: none;
+        }
+
+        [data-pricing="yearly"] .billing-note-yearly {
+            display: inline;
+        }
     </style>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {{ with $json.title }}
         <div class="text-center">
-            <h2 class="text-3xl font-bold text-gray-900">{{ . }}</h2>
+            <h2 class="text-3xl font-bold text-white">{{ . }}</h2>
             {{ with $json.description }}
-            <p class="mt-4 text-xl text-gray-600">{{ . }}</p>
+            <p class="mt-4 text-xl text-[#D9CDB8]">{{ . }}</p>
             {{ end }}
         </div>
         {{ end }}
-        
+
         <div class="mt-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {{ range $json.plans }}
                 <div class="w-full">
-                    <div class="h-full flex flex-col rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 relative">
+                    <div
+                        class="h-full flex flex-col rounded-2xl border {{ if .featured }}border-[#D4A574] bg-gradient-to-br from-amber-950 via-stone-900 to-neutral-950{{ else }}border-stone-700 bg-gradient-to-br from-stone-900 to-neutral-900{{ end }} shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
                         {{ if .featured }}
-                        <div class="absolute top-4 right-4 inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-800">
+                        <div
+                            class="absolute top-4 right-4 inline-block rounded-full bg-[#D4A574]/20 border border-[#D4A574]/50 px-4 py-1 text-sm font-semibold text-[#F5F1E8]">
                             Popular
                         </div>
                         {{ end }}
                         <div class="p-8 flex flex-col flex-grow">
                             <div class="mb-6">
-                                <h3 class="text-2xl font-bold text-gray-900">{{ .name }}</h3>
-                                <p class="mt-2 text-gray-500">{{ .description }}</p>
+                                <h3 class="text-2xl font-bold text-white">{{ .name }}</h3>
+                                <p class="mt-2 text-[#D9CDB8]">{{ .description }}</p>
                             </div>
                             <div class="mb-8">
                                 <p class="flex items-baseline">
-                                    <span class="text-5xl font-bold tracking-tight text-gray-900 price-monthly">
-                                      {{ with .price_monthly }}{{ . }}{{ else }}{{ with .price }}${{ . }}{{ end }}{{ end }}
+                                    <span class="text-5xl font-bold tracking-tight text-white price-monthly">
+                                        {{ with .price_monthly }}{{ . }}{{ else }}{{ with .price }}${{ . }}{{ end }}{{
+                                        end }}
                                     </span>
-                                    <span class="text-5xl font-bold tracking-tight text-gray-900 price-yearly">
-                                      {{ with .price_yearly }}{{ . }}{{ else }}{{ with .price }}${{ . }}{{ end }}{{ end }}
+                                    <span class="text-5xl font-bold tracking-tight text-white price-yearly">
+                                        {{ with .price_yearly }}{{ . }}{{ else }}{{ with .price }}${{ . }}{{ end }}{{
+                                        end }}
                                     </span>
-                                    <span class="ml-2 text-gray-500 freq-monthly">/month</span>
-                                    <span class="ml-2 text-gray-500 freq-yearly">/month</span>
-                                    <span class="ml-3 text-sm text-gray-500 billing-note-yearly">billed yearly</span>
+                                    <span class="ml-2 text-stone-500 freq-monthly">/month</span>
+                                    <span class="ml-2 text-stone-500 freq-yearly">/month</span>
+                                    <span class="ml-3 text-sm text-[#D4A574] billing-note-yearly">billed yearly</span>
                                 </p>
                             </div>
-                            <ul class="space-y-4 text-gray-600 flex-grow">
+                            <ul class="space-y-6 text-[#F5F1E8] flex-grow">
                                 {{ range .features }}
                                 <li class="flex items-start">
-                                    <svg class="h-6 w-6 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
                                     </svg>
                                     <span class="ml-3">{{ . }}</span>
                                 </li>
                                 {{ end }}
+                                {{ range .usage }}
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">{{ . }}</span>
+                                </li>
+                                {{ end }}
                             </ul>
                             <div class="mt-8">
-                                <a href="{{ .button.url }}" class="btn btn-primary w-full">
+                                <a href="{{ .button.url }}"
+                                    class="btn {{ if .featured }}btn-primary{{ else }}btn-secondary{{ end }} w-full">
                                     {{ .button.text }}
                                 </a>
                             </div>

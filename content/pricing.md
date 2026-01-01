@@ -7,75 +7,53 @@ layout: "pricing"
 {{< pricing-toggle >}}
 {
   "options": [
-    { "label": "Monthly", "value": "monthly" },
-    { "label": "Yearly (save 10%)", "value": "yearly" }
+    { "label": "Monthly Commitment", "value": "monthly" },
+    { "label": "Annual Contract (Save 25%)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
 
 {{< pricing-table-1 >}}
 {
-  "title": "Flexible plans that scale with your data maturity",
-  "description": "All plans include automatic semantic generation, data quality scoring, and policy governance. Pay by seats, connections, or usage — not by vanity features.",
+  "title": "Invest in Outcome Certainty",
+  "description": "Stop paying for shelfware. Pay for the engine that protects your P&L.",
   "plans": [
     {
-      "name": "Standard",
-      "price_monthly": "$20 / seat",
-      "price_yearly": "$15 / seat",
-      "description": "Perfect for small data teams starting their semantic and governance journey.",
+      "name": "Core",
+      "price_monthly": "$20",
+      "price_yearly": "$15",
+      "description": "For Ops Teams Demanding Visibility",
       "features": [
-        "Up to 3 data connections (Snowflake, BigQuery, Databricks, Postgres)",
-        "Up to 15 GB analyzed per month (metadata + lineage)",
-        "Automatic schemas.yml generation + PRs to github",
-        "Data maturity and AI-readiness scoring"
+        "Rules/Data Reconciliations",
+        "Hypothesis Labs",
+        "Data Maturity AI Posture Center"
       ],
       "usage": [
-        "$0.001 / query analyzed beyond 50K per month",
-        "$5 / month for each extra connection",
-        "$0.05 / GB beyond 20 GB"
+        "Data and Compute usage-based scale ($0.01/unit)"
       ],
       "button": {
-        "text": "Start free trial",
+        "text": "Start Core",
         "url": "/contact"
       }
     },
     {
-      "name": "AI-Enhanced",
-      "price_monthly": "$80 / seat",
-      "price_yearly": "$60 / seat",
+      "name": "Cockpit",
+      "price_monthly": "$80",
+      "price_yearly": "$60",
       "featured": true,
-      "description": "For data teams that need LLM-safe copilots, graph memory, and smart optimizations.",
+      "description": "For Leaders Who Demand Control",
       "features": [
-        "Everything in Standard, plus:",
-        "AI Copilot for semantic Q&A and explanation tracing",
-        "Automated PRs for model optimizations & cost tuning",
-        "Metric API Publisher (REST/GraphQL endpoints)"
+        "Everything in Core",
+        "AI-Driven Execution Agents",
+        "Advanced Risk Simulation"
       ],
       "usage": [
-        "$0.0008 / query analyzed beyond 250K",
-        "$10 / month for each extra connection",
-        "$0.04 / GB beyond 250 GB"
+        "Auto-Provisioning: 3% per PO (capped at $50/order)",
+        "Claims Recovery: 20% Success Fee",
+        "Data and Compute usage-based scale ($0.01/unit)"
       ],
       "button": {
-        "text": "Book a demo",
-        "url": "/contact"
-      }
-    },
-    {
-      "name": "Enterprise",
-      "price_monthly": "Custom",
-      "price_yearly": "Custom",
-      "description": "For larger or regulated teams needing private deployments and unlimited usage.",
-      "features": [
-        "Unlimited connections, data, and queries",
-        "Private/on-prem deployment (VPC, SOC2, HIPAA-ready)",
-        "Dedicated governance graph & local agent runtimes",
-        "Custom connectors & security policies",
-        "SSO, audit exports, and SLA guarantees",
-        "White-glove onboarding & governance workshops"
-      ],
-      "button": {
-        "text": "Talk to sales",
+        "text": "Deploy Cockpit",
         "url": "/contact"
       }
     }
@@ -83,54 +61,47 @@ layout: "pricing"
 }
 {{< /pricing-table-1 >}}
 
-{{< usage-section >}}
-{
-  "title": "Usage-based billing — pay only for what you analyze",
-  "description": "Runink charges only for what you actually process. Every query scanned, data connection added, and GB analyzed counts toward your usage credits.",
-  "steps": [
-    {
-      "icon": "plug",
-      "title": "Connect your data sources",
-      "text": "Each source (Snowflake, BigQuery, Databricks, etc.) counts as a connection. The first 3 are included; extras are billed monthly."
-    },
-    {
-      "icon": "bar-chart",
-      "title": "We monitor and analyze your queries",
-      "text": "Each query inspected or optimized by Runink counts toward your usage limit. Dashboards show your monthly and annual usage."
-    },
-    {
-      "icon": "credit-card",
-      "title": "Pay only for overages",
-      "text": "If you exceed your plan’s limits, small overage rates apply for queries, GB analyzed, or connections. Annual plans include pooled usage across all teams."
-    }
-  ]
-}
-{{< /usage-section >}}
 
 {{< faq >}}
 {
-  "title": "Pricing & Billing FAQs",
-  "description": "Everything you need to know about Runink’s usage-based pricing model.",
+  "title": "Billing Logic. No Surprises.",
+  "description": "How we charge for high-performance execution.",
   "questions": [
     {
-      "question": "What’s included in the seat price?",
-      "answer": "Seats are for active users (engineers, analysts, or AI copilots) accessing Runink’s semantic dashboard or API. You can start with a single seat and add more anytime."
+      "question": "Why the split between Core and Cockpit?",
+      "answer": "Core gives you the eyes ($20/mo). Cockpit gives you the hands ($80/mo). If you just want to see problems, buy Core. If you want us to fix them, buy Cockpit."
     },
     {
-      "question": "How is data usage measured?",
-      "answer": "Runink counts GB analyzed when scanning metadata, lineage, and query logs — not full table data. It’s lightweight and safe for regulated environments."
+      "question": "How does the granular pricing work?",
+      "answer": "We charge separately for **Data Units (DU)** and **Compute Units (CU)**. Each costs **$0.01 per unit** (rounded up):<br>• **1 DU = 1GB of data processed**<br>• **1 CU = 60 seconds of compute time**<br>These are direct pass-through costs from cloud providers with zero markup."
     },
     {
-      "question": "Can we switch between monthly and yearly plans?",
-      "answer": "Yes — you can switch anytime. Yearly plans offer a 15% discount and pool your query credits across all projects."
+      "question": "Why charge for Data and Compute separately?",
+      "answer": "Transparency. We run on multiple cloud providers (AWS, GCP, Azure). Each has different infrastructure costs. By separating DU and CU, you see exactly what you're paying for: data movement vs. actual computation. No hidden fees, no inflated margins."
     },
     {
-      "question": "Do you charge for AI copilots separately?",
-      "answer": "Only the AI-Enhanced tier includes copilots and optimization features. You’re charged per seat, with optional usage credits for high-volume copilots."
+      "question": "Pricing Simulation: Small Base (2GB/day)",
+      "answer": "**Daily:** 2GB data + 2 min compute<br>**Monthly:** 60 DU + 60 CU = **$1.20/mo**<br><br>60 DU × $0.01 = $0.60<br>60 CU × $0.01 = $0.60<br><br>Less than a cup of coffee for daily reconciliation automation."
     },
     {
-      "question": "Can we buy usage credits upfront?",
-      "answer": "Yes. Credits start at $100 for 100K queries or 50 GB analyzed. Unused credits roll over for 12 months."
+      "question": "Pricing Simulation: Medium Base (10GB/day)",
+      "answer": "**Daily:** 10GB data + 4 min compute<br>**Monthly:** 300 DU + 120 CU = **$4.20/mo**<br><br>300 DU × $0.01 = $3.00<br>120 CU × $0.01 = $1.20<br><br>The cost of a single lunch for enterprise-grade automation."
+    },
+    {
+      "question": "Pricing Simulation: Large Base (50GB/day)",
+      "answer": "**Daily:** 50GB data + 10 min compute<br>**Monthly:** 1,500 DU + 300 CU = **$18.00/mo**<br><br>1,500 DU × $0.01 = $15.00<br>300 CU × $0.01 = $3.00<br><br>High-volume operations at a fraction of competitor pricing."
+    },
+    {
+      "question": "Auto-Provisioning ROI Example",
+      "answer": "**Scenario:** You place 100 purchase orders/month averaging $5,000 each.<br>**Cost:** 100 orders × $50 (capped) = **$5,000/mo**<br>**Value:** We handle vendor communications, shipment tracking, and exception management automatically. Your team saves 80 hours/month. At $50/hr = **$4,000 saved** in labor alone.<br><br>Net cost after labor savings: **$1,000/mo** for full procurement automation."
+    },
+    {
+      "question": "Claims Recovery ROI Example",
+      "answer": "**Scenario:** We identify $50,000 in lost inventory and billing errors.<br>**Recovery:** We file claims and recover $40,000.<br>**Our Fee:** 20% × $40,000 = **$8,000**<br>**You Keep:** **$32,000**<br><br>If we recover nothing, you pay nothing. It's pure found money with zero downside risk."
+    },
+    {
+      "question": "Explain the 'Success Fee' again.",
+      "answer": "It's simple. We identify lost inventory and claims. When we recover the capital, we keep 20% as our fee. You keep 80%. It is strictly performance-based."
     }
   ]
 }

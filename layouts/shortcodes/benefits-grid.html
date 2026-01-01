@@ -1,25 +1,44 @@
-{{ $title := .Get "title" }}
-{{ $subtitle := .Get "subtitle" }}
+<section class="py-24 relative">
+  <div class="container mx-auto px-4">
+    {{ $title := .Get "title" }}
+    {{ $subtitle := .Get "subtitle" }}
 
-<div class="text-center mb-16">
-  <h2 class="text-3xl font-bold mb-4">{{ $title }}</h2>
-  <p class="text-xl text-gray-600">{{ $subtitle }}</p>
-</div>
+    <div class="text-center mb-20 relative">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#8B9A6E]/20 blur-[80px] rounded-full -z-10">
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight drop-shadow-lg">{{ $title }}</h2>
+      <p class="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">{{ $subtitle }}</p>
+    </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-  {{ range $index := (seq 1 10) }}
-    {{ $benefit := printf "benefit%d" $index }}
-    {{ with $.Get $benefit }}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+      {{ range $index := (seq 1 10) }}
+      {{ $benefit := printf "benefit%d" $index }}
+      {{ with $.Get $benefit }}
       {{ $parts := split . "|" }}
       {{ if ge (len $parts) 4 }}
-        <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background-color: {{ index $parts 1 }}15;">
-            {{ partial "icons" (dict "name" (index $parts 0) "color" (index $parts 1) "size" "6") }}
-          </div>
-          <h3 class="text-xl font-bold mb-2">{{ index $parts 2 }}</h3>
-          <p class="text-gray-600">{{ index $parts 3 }}</p>
+      <div
+        class="relative p-8 bg-stone-800/80 backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300 border border-stone-700 hover:-translate-y-2 hover:shadow-2xl hover:bg-stone-800 hover:border-[#8B9A6E]/30 group overflow-hidden flex flex-col h-full">
+
+        <!-- Hover Gradient Background -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-[#8B9A6E]/5 to-[#D4A574]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
         </div>
+
+        <div
+          class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110 shadow-lg shadow-black/20 shrink-0"
+          style="background-color: {{ index $parts 1 }}20; border: 1px solid {{ index $parts 1 }}40;">
+          {{ partial "icons" (dict "name" (index $parts 0) "color" (index $parts 1) "size" "7") }}
+        </div>
+
+        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-[#F5F1E8] transition-colors relative z-10">{{
+          index $parts 2 }}</h3>
+        <p class="text-slate-400 leading-relaxed group-hover:text-slate-200 transition-colors relative z-10">{{ index
+          $parts 3 }}</p>
+      </div>
       {{ end }}
-    {{ end }}
-  {{ end }}
-</div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>

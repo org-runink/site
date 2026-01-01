@@ -1,4 +1,17 @@
-<div class="stat-card">
-    <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{{ .Get "number" }}</div>
-    <div class="text-gray-600 font-medium">{{ .Get "label" }}</div>
+<div
+    class="stat-card relative bg-gradient-to-br from-stone-900 to-neutral-950 p-8 rounded-2xl shadow-xl shadow-stone-900/20 border border-[#8B9A6E]/30 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#8B9A6E]/20 group overflow-hidden">
+    <!-- Gradient Border via before element -->
+    <div
+        class="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-br from-[#8B9A6E]/30 to-[#D4A574]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+    </div>
+
+    <div class="relative z-10 text-center">
+        <div class="text-5xl md:text-6xl font-black text-[#F5F1E8] mb-3 drop-shadow-lg">
+            {{ .Get "number" }}
+        </div>
+        <div
+            class="text-[#D9CDB8] font-semibold tracking-wide text-sm border-t border-stone-700/50 pt-4 mt-2 group-hover:text-[#F5F1E8] transition-colors">
+            {{ .Get "label" }}
+        </div>
+    </div>
 </div>

@@ -1,26 +1,29 @@
 {{ $data := .Inner | transform.Unmarshal }}
-<section class="bg-white">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{{ $data.title | default "Frequently Asked Questions" }}</h2>
+<section class="bg-stone-900">
+    <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-12">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{{ $data.title }}</h2>
             {{ with $data.description }}
-            <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">{{ . }}</p>
+            <p class="mb-5 font-light text-[#D9CDB8] sm:text-xl">{{ . }}</p>
             {{ end }}
         </div>
-        
+
         <div class="space-y-6">
             {{ range $data.questions }}
-            <div class="border rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-200">
-                <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none" 
-                        onclick="this.parentElement.querySelector('.faq-content').classList.toggle('hidden');
+            <div
+                class="border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <button
+                    class="w-full flex justify-between items-center p-6 text-left hover:bg-stone-700 transition-colors duration-200 focus:outline-none"
+                    onclick="this.parentElement.querySelector('.faq-content').classList.toggle('hidden');
                                  this.querySelector('svg').classList.toggle('rotate-180')">
-                    <span class="text-lg font-medium text-gray-900">{{ .question }}</span>
-                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="text-lg font-medium text-white">{{ .question }}</span>
+                    <svg class="w-5 h-5 text-[#D9CDB8] transform transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div class="faq-content hidden border-t">
-                    <div class="p-6 prose prose-sm sm:prose lg:prose-lg max-w-none">
+                <div class="faq-content hidden border-t border-stone-700">
+                    <div class="p-6 prose prose-invert max-w-none text-[#F5F1E8]">
                         {{ .answer | markdownify }}
                     </div>
                 </div>

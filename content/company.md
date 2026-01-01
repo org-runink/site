@@ -4,15 +4,15 @@ layout: "company"
 description: "Discover how Runink is redefining logistics intelligence through AI, automation, and integrated data engineering."
 ---
 
-{{< section-container class="bg-gradient-to-b from-indigo-50 via-indigo-50 to-white pt-20 pb-32" >}}
+{{< section-container class="bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 pt-20 pb-32" >}}
   <div class="text-center">
     <h1 class="text-4xl md:text-5xl font-bold mb-6">Shaping the Future of Integrated Logistics Intelligence</h1>
-    <p class="text-xl text-gray-600 mb-16">
+    <p class="text-xl text-[#D9CDB8] mb-16">
       Runink helps enterprises unify their logistics, data, and AI operations into a single, intelligent ecosystem.
     </p>
-    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-sm p-8">
+    <div class="max-w-3xl mx-auto bg-stone-800/90 rounded-xl shadow-sm p-8">
       <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
-      <p class="text-xl text-gray-600">
+      <p class="text-xl text-[#D9CDB8]">
         We empower businesses to connect every data signal—from procurement to delivery—through a platform built for speed, automation, and real-time decision-making. 
         By combining modern data engineering, AI readiness frameworks, and event-driven automation, Runink transforms operations into resilient, intelligent systems.
       </p>
@@ -20,21 +20,7 @@ description: "Discover how Runink is redefining logistics intelligence through A
   </div>
 {{< /section-container >}}
 
-{{< section-container class="py-20 bg-gray-50" >}}
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Leadership Team</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {{< team-member 
-          name="Daniel Paes"
-          title="Founder & CEO"
-          image="/images/company/team_1.png"
-          linkedin="https://linkedin.com/in/danspaes"
-      >}}
-    </div>
-  </div>
-{{< /section-container >}}
-
-{{< section-container class="py-20 bg-gray-50" >}}
+{{< section-container class="py-20 bg-stone-900" >}}
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl font-bold text-center mb-12">Our Core Values</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
