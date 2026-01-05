@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inventory on Runink</title>
+    <link>https://runink.org/tags/inventory/</link>
+    <description>Recent content in Inventory on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://runink.org/tags/inventory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Fulfillment Agent: Fix Problems Before Customers Call</title>
+      <link>https://runink.org/use_cases/use-cases/fulfillment-optimization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/fulfillment-optimization/</guid>
+      <description>&lt;h1 id=&#34;fix-problems-before-customers-call&#34;&gt;Fix Problems Before Customers Call&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-the-dumb-rule-trap&#34;&gt;The Daily Nightmare: The &amp;ldquo;Dumb Rule&amp;rdquo; Trap&lt;/h2&gt;&#xA;&lt;p&gt;It’s Cyber Monday. Orders are pouring in. Your Order Management System (OMS) is running on the same logic it has used for 10 years:&#xA;&lt;strong&gt;&amp;ldquo;If Region A has stock, ship from Region A.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;It’s a good rule. Until it isn’t.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Backup:&lt;/strong&gt; Region A has stock, but the dock is backed up for 3 days.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Storm:&lt;/strong&gt; A massive blizzard is hitting the Midwest hub.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The VIP:&lt;/strong&gt; The customer is your biggest account, and they need it by Friday.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Your &amp;ldquo;Dumb Rule&amp;rdquo; doesn&amp;rsquo;t know about the storm. It doesn&amp;rsquo;t know about the VIP. It just follows the script. It ships from Region A. The package gets stuck in the snow. The customer churns.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Procurement Agent: Stop Buying Dead Stock</title>
+      <link>https://runink.org/use_cases/use-cases/procurement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/procurement/</guid>
+      <description>&lt;h1 id=&#34;stop-buying-dead-stock&#34;&gt;Stop Buying Dead Stock&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-buying-on-hype&#34;&gt;The Daily Nightmare: &amp;ldquo;Buying on Hype&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;It’s Tuesday morning. Your buyer, Sarah, is staring at a spreadsheet with 12,000 SKUs. She has 4 hours to place orders for the next quarter.&lt;/p&gt;&#xA;&lt;p&gt;She sorts by &lt;strong&gt;&amp;ldquo;Sales Velocity.&amp;rdquo;&lt;/strong&gt; At the top is the &lt;em&gt;Blue Velvet Sofa&lt;/em&gt;. It’s flying off the shelves. She hits reorder for 500 more units.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What the spreadsheet didn&amp;rsquo;t tell her:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Returns are 40%:&lt;/strong&gt; The velvet rips easily. Customers hate it.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Storage is Expensive:&lt;/strong&gt; It’s a bulky item taking up prime rack space.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Supplier Hiked Cost:&lt;/strong&gt; The factory raised prices 15% last week.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Sarah just spent $200,000 of your capital to buy an item that loses $12 on every sale. She didn&amp;rsquo;t do it on purpose. She did it because she was buying blind.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

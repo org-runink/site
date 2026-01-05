@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Runink</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Oct 2025 08:13:18 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jan 2026 11:24:02 -0500</lastBuildDate>
     <atom:link href="https://runink.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI Readiness</title>
@@ -814,129 +814,59 @@
       <description></description>
     </item>
     <item>
-      <title>Access Policy Enforcement</title>
-      <link>https://runink.org/tags/access-policy-enforcement/</link>
+      <title>Agentic AI</title>
+      <link>https://runink.org/tags/agentic-ai/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/access-policy-enforcement/</guid>
+      <guid>https://runink.org/tags/agentic-ai/</guid>
       <description></description>
     </item>
     <item>
-      <title>Care Escalation</title>
-      <link>https://runink.org/tags/care-escalation/</link>
+      <title>Claims</title>
+      <link>https://runink.org/tags/claims/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/care-escalation/</guid>
+      <guid>https://runink.org/tags/claims/</guid>
       <description></description>
     </item>
     <item>
-      <title>CICD Trigger Routing</title>
-      <link>https://runink.org/tags/cicd-trigger-routing/</link>
+      <title>Cost Control</title>
+      <link>https://runink.org/tags/cost-control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/cicd-trigger-routing/</guid>
+      <guid>https://runink.org/tags/cost-control/</guid>
       <description></description>
     </item>
     <item>
-      <title>Claims Triage</title>
-      <link>https://runink.org/tags/claims-triage/</link>
+      <title>Cost Recovery</title>
+      <link>https://runink.org/tags/cost-recovery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/claims-triage/</guid>
+      <guid>https://runink.org/tags/cost-recovery/</guid>
       <description></description>
     </item>
     <item>
-      <title>Clinical Triggers</title>
-      <link>https://runink.org/tags/clinical-triggers/</link>
+      <title>Customs</title>
+      <link>https://runink.org/tags/customs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/clinical-triggers/</guid>
+      <guid>https://runink.org/tags/customs/</guid>
       <description></description>
     </item>
     <item>
-      <title>Credit Signals</title>
-      <link>https://runink.org/tags/credit-signals/</link>
+      <title>Fraud</title>
+      <link>https://runink.org/tags/fraud/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/credit-signals/</guid>
+      <guid>https://runink.org/tags/fraud/</guid>
       <description></description>
     </item>
     <item>
-      <title>CVEs</title>
-      <link>https://runink.org/tags/cves/</link>
+      <title>Fulfillment</title>
+      <link>https://runink.org/tags/fulfillment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/cves/</guid>
+      <guid>https://runink.org/tags/fulfillment/</guid>
       <description></description>
     </item>
     <item>
-      <title>Dependency Monitoring</title>
-      <link>https://runink.org/tags/dependency-monitoring/</link>
+      <title>Inventory</title>
+      <link>https://runink.org/tags/inventory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/dependency-monitoring/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Financial Workflow Automation</title>
-      <link>https://runink.org/tags/financial-workflow-automation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/financial-workflow-automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Fraud Detection</title>
-      <link>https://runink.org/tags/fraud-detection/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/fraud-detection/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Governed Pipelines</title>
-      <link>https://runink.org/tags/governed-pipelines/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/governed-pipelines/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Inventory Orchestration</title>
-      <link>https://runink.org/tags/inventory-orchestration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/inventory-orchestration/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Last Mile</title>
-      <link>https://runink.org/tags/last-mile/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/last-mile/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Lineage Controls</title>
-      <link>https://runink.org/tags/lineage-controls/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/lineage-controls/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Loan Underwriting</title>
-      <link>https://runink.org/tags/loan-underwriting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/loan-underwriting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>NIST 800-53</title>
-      <link>https://runink.org/tags/nist-800-53/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/nist-800-53/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>No-Code Governance</title>
-      <link>https://runink.org/tags/no-code-governance/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/no-code-governance/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Predictive Restocking</title>
-      <link>https://runink.org/tags/predictive-restocking/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/predictive-restocking/</guid>
+      <guid>https://runink.org/tags/inventory/</guid>
       <description></description>
     </item>
     <item>
@@ -947,66 +877,10 @@
       <description></description>
     </item>
     <item>
-      <title>Referral Routing</title>
-      <link>https://runink.org/tags/referral-routing/</link>
+      <title>Returns</title>
+      <link>https://runink.org/tags/returns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/referral-routing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SBOM</title>
-      <link>https://runink.org/tags/sbom/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/sbom/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security Workflow</title>
-      <link>https://runink.org/tags/security-workflow/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/security-workflow/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SIU Routing</title>
-      <link>https://runink.org/tags/siu-routing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/siu-routing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SLA Triggers</title>
-      <link>https://runink.org/tags/sla-triggers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/sla-triggers/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Trigger Auditing</title>
-      <link>https://runink.org/tags/trigger-auditing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/trigger-auditing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Trigger Logic</title>
-      <link>https://runink.org/tags/trigger-logic/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/trigger-logic/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vendor Fulfillment</title>
-      <link>https://runink.org/tags/vendor-fulfillment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/vendor-fulfillment/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Workflow Governance</title>
-      <link>https://runink.org/tags/workflow-governance/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/workflow-governance/</guid>
+      <guid>https://runink.org/tags/returns/</guid>
       <description></description>
     </item>
   </channel>

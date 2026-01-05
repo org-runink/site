@@ -6,7 +6,7 @@
     <description>Recent content in Logistics on Runink</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Jul 2025 10:38:54 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jan 2026 11:24:02 -0500</lastBuildDate>
     <atom:link href="https://runink.org/tags/logistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why Gen AI Hallucinations Can Be a Nightmare for Logistics—And How to Fix Them</title>
@@ -21,6 +21,13 @@
       <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://runink.org/blog/information-security-ethical-gen-ai-logistics/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;br&gt;&#xA;Information security practices are essential for ensuring generative AI is developed and implemented ethically, especially in logistics. Effective data governance, access control, privacy, transparency, and oversight protect organizations from risks like deepfakes, privacy violations, and regulatory challenges.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;secure-and-ethical-generative-ai-in-logistics-why-information-security-is-key&#34;&gt;Secure and Ethical Generative AI in Logistics: Why Information Security Is Key&lt;/h1&gt;&#xA;&lt;p&gt;Generative AI (Gen AI) is transforming business – from drafting documents and analyzing data to automating customer interactions. Its potential to boost efficiency and innovation seems limitless. But alongside this promise comes a &lt;strong&gt;new frontier of ethical risks&lt;/strong&gt;. AI systems can produce misinformation or biased outputs, expose private data, or be weaponized for malicious uses like deepfakes. For business leaders in data-driven industries like logistics, these risks aren’t just theoretical – they carry &lt;strong&gt;real operational and reputational stakes&lt;/strong&gt;. The good news is that &lt;strong&gt;strong information security practices&lt;/strong&gt; provide a foundation to develop Gen AI applications that are both innovative and responsible. In this post, we’ll explore how ethical AI development and InfoSec go hand-in-hand, from the latest AI governance moves (like Denmark’s bold deepfake law) to practical steps for securing Gen AI in logistics. Let’s dive in.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Compliance Agent: Stop Getting Stuck at the Border</title>
+      <link>https://runink.org/use_cases/use-cases/compliance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/compliance/</guid>
+      <description>&lt;h1 id=&#34;stop-getting-stuck-at-the-border&#34;&gt;Stop Getting Stuck at the Border&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-the-high-cost-of-a-typo&#34;&gt;The Daily Nightmare: The High Cost of a Typo&lt;/h2&gt;&#xA;&lt;p&gt;Global trade runs on paper. Specifically, the Commercial Invoice and the &lt;strong&gt;HS Code&lt;/strong&gt; (Harmonized System Code). These 6-10 digit numbers tell customs exactly what is in your container.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Imagine this:&lt;/strong&gt;&#xA;You are shipping a container of &amp;ldquo;Boy&amp;rsquo;s Cotton T-Shirts&amp;rdquo; to France.&#xA;Your supplier in Vietnam types the code &lt;code&gt;6205.20&lt;/code&gt; into the spreadsheet.&#xA;That code is for &lt;em&gt;&amp;ldquo;Men&amp;rsquo;s or Boys&amp;rsquo; Shirts.&amp;rdquo;&lt;/em&gt;&#xA;But France has a specific quota on &lt;em&gt;Men&amp;rsquo;s&lt;/em&gt; shirts this month.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

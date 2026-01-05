@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agentic AI on Runink</title>
+    <link>https://runink.org/tags/agentic-ai/</link>
+    <description>Recent content in Agentic AI on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://runink.org/tags/agentic-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Claims Agent: Get Paid What You&#39;re Owed</title>
+      <link>https://runink.org/use_cases/use-cases/claims-recovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/claims-recovery/</guid>
+      <description>&lt;h1 id=&#34;get-paid-what-youre-owed&#34;&gt;Get Paid What You&amp;rsquo;re Owed&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-leaves-it-on-the-dock&#34;&gt;The Daily Nightmare: &amp;ldquo;Leaves It On The Dock&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;It’s 4 PM on a Friday. A truck arrives with 4 pallets of electronics. One pallet is tipped over. The shrink wrap is torn. The driver shrugs, &amp;ldquo;It was loaded like that.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;Your receiving clerk is tired. He knows the drill:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Take photos.&lt;/li&gt;&#xA;&lt;li&gt;Note &amp;ldquo;Damaged&amp;rdquo; on the Bill of Lading (BOL).&lt;/li&gt;&#xA;&lt;li&gt;Scan the docs to the Claims Team.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;But the Claims Team is buried. They have 400 open claims. They look at this one: &lt;strong&gt;Value $300.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Compliance Agent: Stop Getting Stuck at the Border</title>
+      <link>https://runink.org/use_cases/use-cases/compliance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/compliance/</guid>
+      <description>&lt;h1 id=&#34;stop-getting-stuck-at-the-border&#34;&gt;Stop Getting Stuck at the Border&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-the-high-cost-of-a-typo&#34;&gt;The Daily Nightmare: The High Cost of a Typo&lt;/h2&gt;&#xA;&lt;p&gt;Global trade runs on paper. Specifically, the Commercial Invoice and the &lt;strong&gt;HS Code&lt;/strong&gt; (Harmonized System Code). These 6-10 digit numbers tell customs exactly what is in your container.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Imagine this:&lt;/strong&gt;&#xA;You are shipping a container of &amp;ldquo;Boy&amp;rsquo;s Cotton T-Shirts&amp;rdquo; to France.&#xA;Your supplier in Vietnam types the code &lt;code&gt;6205.20&lt;/code&gt; into the spreadsheet.&#xA;That code is for &lt;em&gt;&amp;ldquo;Men&amp;rsquo;s or Boys&amp;rsquo; Shirts.&amp;rdquo;&lt;/em&gt;&#xA;But France has a specific quota on &lt;em&gt;Men&amp;rsquo;s&lt;/em&gt; shirts this month.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Finance Agent: Stop Paying for Things You Didn&#39;t Get</title>
+      <link>https://runink.org/use_cases/use-cases/finance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/finance/</guid>
+      <description>&lt;h1 id=&#34;stop-paying-for-things-you-didnt-get&#34;&gt;Stop Paying for Things You Didn&amp;rsquo;t Get&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-the-rubber-stamp&#34;&gt;The Daily Nightmare: The &amp;ldquo;Rubber Stamp&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;In logistics, the price you &lt;em&gt;quoted&lt;/em&gt; is rarely the price you get &lt;em&gt;billed&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Surprise Fees:&lt;/strong&gt; &amp;ldquo;Wait time,&amp;rdquo; &amp;ldquo;gate fees,&amp;rdquo; &amp;ldquo;rewtigh fees&amp;rdquo; appear out of nowhere.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Duplicates:&lt;/strong&gt; Carriers send the same bill twice with different ref numbers.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rate Changes:&lt;/strong&gt; Fuel surcharges change between the quote and the ship date.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Your Finance Team is overwhelmed. They receive 5,000 invoices a month. They spend thousands of hours staring at spreadsheets, trying to match lines.&#xA;Eventually, they get tired. They set a rule: &lt;strong&gt;&amp;ldquo;If the variance is under $50, just pay it.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Fulfillment Agent: Fix Problems Before Customers Call</title>
+      <link>https://runink.org/use_cases/use-cases/fulfillment-optimization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/fulfillment-optimization/</guid>
+      <description>&lt;h1 id=&#34;fix-problems-before-customers-call&#34;&gt;Fix Problems Before Customers Call&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-the-dumb-rule-trap&#34;&gt;The Daily Nightmare: The &amp;ldquo;Dumb Rule&amp;rdquo; Trap&lt;/h2&gt;&#xA;&lt;p&gt;It’s Cyber Monday. Orders are pouring in. Your Order Management System (OMS) is running on the same logic it has used for 10 years:&#xA;&lt;strong&gt;&amp;ldquo;If Region A has stock, ship from Region A.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;It’s a good rule. Until it isn’t.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Backup:&lt;/strong&gt; Region A has stock, but the dock is backed up for 3 days.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Storm:&lt;/strong&gt; A massive blizzard is hitting the Midwest hub.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The VIP:&lt;/strong&gt; The customer is your biggest account, and they need it by Friday.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Your &amp;ldquo;Dumb Rule&amp;rdquo; doesn&amp;rsquo;t know about the storm. It doesn&amp;rsquo;t know about the VIP. It just follows the script. It ships from Region A. The package gets stuck in the snow. The customer churns.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Procurement Agent: Stop Buying Dead Stock</title>
+      <link>https://runink.org/use_cases/use-cases/procurement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/procurement/</guid>
+      <description>&lt;h1 id=&#34;stop-buying-dead-stock&#34;&gt;Stop Buying Dead Stock&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-buying-on-hype&#34;&gt;The Daily Nightmare: &amp;ldquo;Buying on Hype&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;It’s Tuesday morning. Your buyer, Sarah, is staring at a spreadsheet with 12,000 SKUs. She has 4 hours to place orders for the next quarter.&lt;/p&gt;&#xA;&lt;p&gt;She sorts by &lt;strong&gt;&amp;ldquo;Sales Velocity.&amp;rdquo;&lt;/strong&gt; At the top is the &lt;em&gt;Blue Velvet Sofa&lt;/em&gt;. It’s flying off the shelves. She hits reorder for 500 more units.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What the spreadsheet didn&amp;rsquo;t tell her:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Returns are 40%:&lt;/strong&gt; The velvet rips easily. Customers hate it.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Storage is Expensive:&lt;/strong&gt; It’s a bulky item taking up prime rack space.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Supplier Hiked Cost:&lt;/strong&gt; The factory raised prices 15% last week.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Sarah just spent $200,000 of your capital to buy an item that loses $12 on every sale. She didn&amp;rsquo;t do it on purpose. She did it because she was buying blind.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Returns Agent: Stop Taking Back Trash</title>
+      <link>https://runink.org/use_cases/use-cases/returns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/returns/</guid>
+      <description>&lt;h1 id=&#34;stop-taking-back-trash&#34;&gt;Stop Taking Back Trash&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-the-blind-refund&#34;&gt;The Daily Nightmare: The &amp;ldquo;Blind Refund&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;In the race to be &amp;ldquo;Customer Obsessed,&amp;rdquo; e-commerce brands have trained customers to expect instant gratification. You buy it, you hate it, you return it, you get paid. Instantly.&lt;/p&gt;&#xA;&lt;p&gt;But the dishonest 1% have weaponized this kindness.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Brick:&lt;/strong&gt; A customer buys a PS5 ($500). They put a literal brick in the box and ship it back. The carrier scans the label. You refund the $500. Your warehouse opens the box 3 days later. It&amp;rsquo;s too late. The money is gone.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Swap:&lt;/strong&gt; A customer buys a new blender. They return their old, broken blender in the new box.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Wardrobe:&lt;/strong&gt; An influencer buys a gown for a gala. Wears it Saturday. Returns it Monday covered in makeup/perfume.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Your warehouse team is processing 300 returns an hour. They don&amp;rsquo;t have time to be detectives. They scan, refund, and throw it in the &amp;ldquo;Damaged&amp;rdquo; bin. You lose the product &lt;em&gt;and&lt;/em&gt; the money.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

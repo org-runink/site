@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Customs on Runink</title>
+    <link>https://runink.org/tags/customs/</link>
+    <description>Recent content in Customs on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://runink.org/tags/customs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Compliance Agent: Stop Getting Stuck at the Border</title>
+      <link>https://runink.org/use_cases/use-cases/compliance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/use_cases/use-cases/compliance/</guid>
+      <description>&lt;h1 id=&#34;stop-getting-stuck-at-the-border&#34;&gt;Stop Getting Stuck at the Border&lt;/h1&gt;&#xA;&lt;h2 id=&#34;the-daily-nightmare-the-high-cost-of-a-typo&#34;&gt;The Daily Nightmare: The High Cost of a Typo&lt;/h2&gt;&#xA;&lt;p&gt;Global trade runs on paper. Specifically, the Commercial Invoice and the &lt;strong&gt;HS Code&lt;/strong&gt; (Harmonized System Code). These 6-10 digit numbers tell customs exactly what is in your container.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Imagine this:&lt;/strong&gt;&#xA;You are shipping a container of &amp;ldquo;Boy&amp;rsquo;s Cotton T-Shirts&amp;rdquo; to France.&#xA;Your supplier in Vietnam types the code &lt;code&gt;6205.20&lt;/code&gt; into the spreadsheet.&#xA;That code is for &lt;em&gt;&amp;ldquo;Men&amp;rsquo;s or Boys&amp;rsquo; Shirts.&amp;rdquo;&lt;/em&gt;&#xA;But France has a specific quota on &lt;em&gt;Men&amp;rsquo;s&lt;/em&gt; shirts this month.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

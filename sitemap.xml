@@ -33,7 +33,7 @@
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/</loc>
-    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/telemetry/</loc>
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
@@ -54,7 +54,7 @@
     <lastmod>2025-09-18T14:18:21-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/procurement/</loc>
-    <lastmod>2025-09-18T14:18:21-04:00</lastmod>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/reverse-logistics/</loc>
     <lastmod>2025-09-18T14:18:21-04:00</lastmod>
@@ -87,7 +87,7 @@
     <lastmod>2025-07-22T10:38:54-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/logistics/</loc>
-    <lastmod>2025-07-22T10:38:54-04:00</lastmod>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/retail-inventory-management/</loc>
     <lastmod>2025-07-22T10:38:54-04:00</lastmod>
@@ -400,134 +400,80 @@
     <loc>https://runink.org/company/</loc>
     <lastmod>2026-01-01T12:26:30-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/access-policy-enforcement/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/agentic-ai/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/care-escalation/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/use_cases/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/categories/</loc>
   </url><url>
-    <loc>https://runink.org/tags/cicd-trigger-routing/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/claims/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/claims-triage/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/cost-control/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/clinical-triggers/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/cost-recovery/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/use_cases/use-cases/nist-compliance/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/customs/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/credit-signals/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/fraud/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/cves/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/dependency-monitoring/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/use_cases/use-cases/cvs-dependency-check/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/use_cases/use-cases/finance/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/financial-workflow-automation/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/fraud-detection/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/fulfillment/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/contact/</loc>
     <lastmod>2026-01-01T12:26:30-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/governed-pipelines/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/use_cases/use-cases/healthcare/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
     <loc>https://runink.org/</loc>
-    <lastmod>2026-01-01T13:10:01-05:00</lastmod>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/use_cases/use-cases/insurance/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/inventory-orchestration/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/last-mile/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/inventory/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/license/</loc>
     <lastmod>2026-01-01T12:26:30-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/lineage-controls/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/loan-underwriting/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/nist-800-53/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/no-code-governance/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
     <loc>https://runink.org/page/</loc>
   </url><url>
-    <loc>https://runink.org/tags/predictive-restocking/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
     <loc>https://runink.org/pricing/</loc>
-    <lastmod>2026-01-01T12:26:30-05:00</lastmod>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/privacy/</loc>
     <lastmod>2025-07-10T10:19:32-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/products/</loc>
-    <lastmod>2026-01-01T12:26:30-05:00</lastmod>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/reconciliation/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/referral-routing/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/tags/returns/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/products/analytics_companion/</loc>
-    <lastmod>2026-01-01T12:26:30-05:00</lastmod>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/sbom/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/use_cases/use-cases/claims-recovery/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/security-workflow/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/use_cases/use-cases/compliance/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/siu-routing/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/use_cases/use-cases/finance/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/sla-triggers/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/use_cases/use-cases/fulfillment-optimization/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/use_cases/use-cases/supply-chain/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/use_cases/use-cases/procurement/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
-    <loc>https://runink.org/tags/trigger-auditing/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/trigger-logic/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/use_cases/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/vendor-fulfillment/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/workflow-governance/</loc>
-    <lastmod>2025-10-18T21:38:17-04:00</lastmod>
+    <loc>https://runink.org/use_cases/use-cases/returns/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url>
 </urlset>
