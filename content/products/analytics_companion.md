@@ -1,15 +1,15 @@
 ---
 title: "Runink Analytics Companion"
-description: "Visibility that executes. Real-time reconciliation, hypothesis testing, and autonomous agents that fix margin leaks before they compound."
+description: "The operational immune system. Real-time visibility, active enforcement, and autonomous repair."
 layout: "landing"
 badge: "Analytics Companion"
 badgeColor: "#7c3aed"
 ---
 
 {{< hero 
-    headline="Stop Losing Money to Problems You Can't See"
-    sub_headline="Carrier overcharges. Vendor shortages. Inventory gaps. Policy violations. We show you <strong>today's biggest risks</strong>, let you test fixes safely, and execute solutions autonomously. Full visibility, safe testing, measurable results."
-    primary_button_text="Start Your First Trace"
+    headline="The Team That Never Sleeps."
+    sub_headline="Stop treating symptoms. Hire digital workers that <strong>find lost money</strong>, <strong>block bad orders</strong>, and <strong>fix problems</strong> while you sleep. It's not software. It's a workforce."
+    primary_button_text="Meet Your New Team"
     primary_button_url="/contact"
     hero_image="/images/companion/overview.png"
     size="normal"
@@ -20,142 +20,186 @@ badgeColor: "#7c3aed"
 
 {{< section-container class="py-20 relative z-10" >}}
 
-{{< stats-grid >}}
-{{< stat number="100%" label="Domains Understood" >}}
-{{< stat number="<20sec" label="Agent Response Time" >}}
-{{< stat number="Zero" label="Data Left Behind" >}}
-{{< /stats-grid >}}
-
-<div class="max-w-4xl mx-auto text-center mt-32 space-y-10 relative">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-red-500/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
-
+<div class="max-w-4xl mx-auto text-center mt-10 space-y-10 relative">
 <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter drop-shadow-2xl">
-The Problem: <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8B9A6E] via-[#A8B88B] to-[#D4A574] animate-gradient bg-300%">Weeks to Fix What Takes Minutes</span>
+Don't Managed Data. Manage Outcomes.
 </h2>
 
-<p class="text-xl md:text-2xl text-slate-300 leading-relaxed font-light drop-shadow-lg">
-You see the problem instantly. But fixing it takes <strong class="text-white font-bold bg-stone-800/50 px-2 py-1 rounded">weeks of manual work</strong>: filing claims, updating spreadsheets, coordinating vendors. By the time you act, the damage is done.
-</p>
-
-<p class="text-xl text-[#F5F1E8] font-medium max-w-3xl mx-auto leading-relaxed">
-Runink closes that gap. We show you what's broken, let you <strong class="text-[#D4A574] font-bold border-b-2 border-[#D4A574]/30 pb-0.5">test fixes in a safe sandbox</strong>, and execute solutions autonomously—all with full oversight and audit trails.
+<p class="text-xl md:text-2xl text-slate-200 leading-relaxed font-light drop-shadow-lg">
+Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at charts. It's a set of engines that do the work for you.
 </p>
 </div>
 
 {{< /section-container >}}
 
-{{< section-container class="py-20" >}}
+{{< section-container class="py-10" >}}
 
-<div class="max-w-7xl mx-auto px-4">
+<div class="max-w-7xl mx-auto px-4 space-y-32">
 
-<div class="text-center mb-16">
-<h2 class="text-5xl font-bold text-white mb-4">Core Platform: Visibility, Governance & Testing</h2>
-<p class="text-xl text-slate-400">Integrated modules that expose risk, enforce policy, and validate decisions before execution.</p>
+<!-- PILLAR 1: RULES STUDIO -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div>
+        <div class="inline-block px-3 py-1 rounded bg-[#5F6F3E]/30 text-[#C8D9A8] font-bold mb-4 tracking-wide">1. Rules Studio</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Teach It Once.</h3>
+        <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
+            <p>
+                You know how to run your business. The problem is, you can't be everywhere at once. <strong>Rules Studio</strong> lets you teach the system your "Best Practices" one time, and it remembers them forever.
+            </p>
+            <p>
+                <strong>Teach it to recover revenue:</strong> "If a shipment sits for 7 days, chase the carrier."<br>
+                <strong>Teach it to block risk:</strong> "If a duplicate order comes in, stop it."
+            </p>
+        </div>
+        <ul class="space-y-4 mt-8">
+            <li class="flex items-start"><span class="text-[#C8D9A8] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Performance:</strong> See how much money your rules saved you.</span></li>
+            <li class="flex items-start"><span class="text-[#C8D9A8] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Detail View:</strong> Check exactly why a rule fired.</span></li>
+            <li class="flex items-start"><span class="text-[#C8D9A8] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Deploy:</strong> Push new rules instantly.</span></li>
+        </ul>
+    </div>
+    <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#5F6F3E] to-[#8B9A6E] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
+        <pre class="relative rounded-lg shadow-2xl border border-white/10 bg-[#1e1e1e] p-4 text-xs font-mono text-slate-300 overflow-x-auto">
+            <img src="/images/companion/rules.png" alt="Rules Studio" class="relative rounded-lg shadow-2xl border border-white/10">
+</pre>
+    </div>
 </div>
 
-{{< card-grid cols="3" >}}
-
-{{< feature-card 
-    title="AI Posture Center"
-    icon="shield-check"
-    description="Monitor operational health and safety. Track incidents with full blast radius. Auto-generated runbooks for 'Fix Now' and 'Prevent Recurrence.' Know your readiness before deploying autonomous agents."
-    features="Domain health monitoring updated in real-time,Incident blast radius tracking and analysis,Maturity scores before deploying autonomous agents"
->}}
-
-{{< feature-card 
-    title="Rules Studio"
-    icon="scale"
-    description="Guardrails and exposure tracking. See which business policies are followed or violated. Coverage percentage shows enforcement gaps. Real-time alerts prevent bad decisions before they happen."
-    features="Guardrail enforcement across all operations,Exposure alerts show where policies are violated,Compliance gap analysis with enforcement reporting"
->}}
-
-{{< feature-card 
-    title="Hypothesis Lab"
-    icon="code-bracket-square"
-    description="What-if testing in a safe sandbox. Run pricing, inventory, and fulfillment scenarios. See profit and loss impact with confidence scores before risking live operations. Every assumption disclosed upfront."
-    features="What-if scenario modeling with outcome projections,Test inventory and fulfillment changes safely,Confidence levels and assumptions shown for every test"
->}}
-
-{{< /card-grid >}}
-
-<div class="text-center mb-16">
-<h2 class="text-5xl font-bold text-white mb-4">Decision Engines: Autonomous Execution</h2>
-<p class="text-xl text-slate-400">Intelligent agents that automate complex workflows with full human oversight and auditability.</p>
+<!-- PILLAR 2: DECISION COCKPIT -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div class="order-2 md:order-1 relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#D4A574] to-[#F3E5AB] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
+        <img src="/images/companion/cockpit.png" alt="Decision Cockpit" class="relative rounded-lg shadow-2xl border border-white/10">
+    </div>
+    <div class="order-1 md:order-2">
+        <div class="inline-block px-3 py-1 rounded bg-[#D4A574]/30 text-[#FFE5B4] font-bold mb-4 tracking-wide">2. Decision Cockpit</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Work Gets Done.</h3>
+        <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
+            <p>
+                This isn't a chat bot. It's a command center. Your digital workers sit here, waiting for your approval to take action.
+            </p>
+            <p>
+                The <strong>"Action Deck"</strong> shows you the work that's ready to go. A PO that needs signing. A refund claim ready to file. You review the work, hit <strong>[Approve]</strong>, and they go do it.
+            </p>
+        </div>
+        <ul class="space-y-4 mt-8">
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Ordering Agent:</strong> "I found the best price. Ready to order?"</span></li>
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Claims Agent:</strong> "I found 14 lost packages. File for refund?"</span></li>
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Simulation:</strong> "If we wait, we lose $8.5k in sales."</span></li>
+        </ul>
+    </div>
 </div>
 
-{{< card-grid cols="3" >}}
+<!-- PILLAR 3: AI POSTURE CENTER -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div>
+        <div class="inline-block px-3 py-1 rounded bg-[#A0522D]/30 text-[#FFB090] font-bold mb-4 tracking-wide">3. AI Posture Center</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Sleep At Night.</h3>
+        <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
+            <p>
+                You can't trust automation if it breaks every time something changes. The <strong>Readiness Scoreboard</strong> gives you peace of mind.
+            </p>
+            <p>
+                It watches your infrastructure 24/7. If a connection gets slow or data looks weird, it flags it immediately. It keeps your agents healthy so you don't have to check on them constantly.
+            </p>
+        </div>
+        <ul class="space-y-4 mt-8">
+            <li class="flex items-start"><span class="text-[#FFB090] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Incident Timeline:</strong> See what happened and why.</span></li>
+            <li class="flex items-start"><span class="text-[#FFB090] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Scoreboard:</strong> A simple grade for your system's health.</span></li>
+            <li class="flex items-start"><span class="text-[#FFB090] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Auto-Fix:</strong> It suggests fixes for technical problems.</span></li>
+        </ul>
+    </div>
+    <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#A0522D] to-[#FFA07A] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
+        <img src="/images/companion/posture.png" alt="AI Posture Center" class="relative rounded-lg shadow-2xl border border-white/10">
+    </div>
+</div>
 
-{{< feature-card 
-    title="Auto-Provisioning"
-    icon="bolt"
-    description="One AI agent manages complete procurement workflow: PO generation, vendor communications, shipment tracking, address validation, freight optimization. Reduces procurement cycles from weeks to minutes with full human oversight."
-    features="Address Intelligence,Porch Piracy Defense,Freight Mode Switching,Port Congestion Avoidance,Supplier Risk Radar,Dynamic Margin Protection,Demand-Pulse Positioning,Ghost Inventory Watch"
->}}
-
-{{< feature-card 
-    title="Claims Recovery"
-    icon="currency-dollar"
-    description="One AI agent handles financial recovery across 18+ functions: invoice audits, carrier overcharge disputes, accessorial fee challenges, duty drawback claims, contract rate compliance. Pay only on successful recovery."
-    features="Dim-Weight Auditing,Accessorial Fee Buster,Duty Drawback Claims,Contract Rate Compliance,Lost Inbound Claims,Unclaimed Credit Hunter,Return Fraud Defense,VIP White-Glove Rescue"
->}}
-
-{{< feature-card 
-    title="Safety & Grounding"
-    icon="shield-check"
-    description="The 'black box' problem solved. Every autonomous action is grounded in verified data and runs within strict operational guardrails. AI that asks for permission when uncertain and logs every decision."
-    features="Hallucination Defense,Immutable Audit Logs,Human-in-the-Loop Triggers,Role-Based Access,Operational Boundary Testing,Data Lineage Tracking,Policy Guardrails,Compliance Gates"
->}}
-
-{{< /card-grid >}}
+<!-- PILLAR 4: HYPOTHESIS LAB -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div class="order-2 md:order-1 relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#B87333] to-[#D4A574] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
+        <img src="/images/companion/hypothesis.png" alt="Hypothesis Lab" class="relative rounded-lg shadow-2xl border border-white/10">
+    </div>
+    <div class="order-1 md:order-2">
+        <div class="inline-block px-3 py-1 rounded bg-[#B87333]/30 text-[#FFCC99] font-bold mb-4 tracking-wide">4. Hypothesis Lab</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Test The Future.</h3>
+        <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
+            <p>
+                Making big changes is scary. Runink removes the fear by letting you <strong>simulate the future</strong>.
+            </p>
+            <p>
+                "If we raise prices 5%, do we lose customers?" The AI checks your history and tells you the likely outcome. Know the result before you make the move.
+            </p>
+        </div>
+        <ul class="space-y-4 mt-8">
+            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>See The Impact:</strong> "Margin up 4%, Volume down 8%."</span></li>
+            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Confidence Meter:</strong> Know how sure the AI is.</span></li>
+            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Make It Real:</strong> Turn a good idea into a rule instantly.</span></li>
+        </ul>
+    </div>
+</div>
 
 </div>
 
 {{< /section-container >}}
+
+{{< section-container class="py-20 bg-stone-900" >}}
+<div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-6">Trust Architecture</h2>
+        <p class="text-xl text-slate-300">You're always in control.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="bg-white/5 p-8 rounded-xl border border-white/10">
+            <h3 class="text-2xl font-bold text-white mb-4">1. Shadow Mode</h3>
+            <p class="text-slate-300 mb-6">Test safely. Runink watches your data and <strong>simulates</strong> actions without doing them. See exactly what the agents <em>would</em> have done (e.g., "I would have filed this claim") before you give them the keys.</p>
+        </div>
+        <div class="bg-white/5 p-8 rounded-xl border border-white/10">
+            <h3 class="text-2xl font-bold text-white mb-4">2. Graduated Autonomy</h3>
+            <p class="text-slate-300 mb-6">You set the leash. Start with <strong>"Junior Analyst Mode"</strong> (Agent drafts, you approve). Graduate to <strong>"Co-Pilot"</strong> (Agent handles small tasks). Finally, unlock <strong>"Full Autonomy"</strong> only when you're ready.</p>
+        </div>
+    </div>
+</div>
+{{< /section-container >}}
+
 
 {{< faq >}}
 {
-    "title": "How It Actually Works",
-    "description": "Grounded in real architecture—no fabrications.",
+    "title": "Suture The Bleeding.",
+    "description": "Direct answers to your most expensive problems.",
     "questions": [
         {
-            "question": "What's the difference between Core and Cockpit?",
-            "answer": "**Core**: You see the problems. Rules engine catches issues, Hypothesis Lab tests scenarios, AI Posture tracks readiness. **Cockpit**: We fix the problems. AI agents file claims, manage POs, execute corrections. Core = eyes. Cockpit = hands."
+            "question": "My team follows SOPs loosely. How does this help?",
+            "answer": "It's hard to remember every rule in a fast-paced environment. Rules Studio turns your written SOPs into active 'Guardrails.' It catches common slips—like duplicate POs—in real-time, helping your team stay compliant without slowing them down."
         },
         {
-            "question": "How is autonomous execution safe?",
-            "answer": "Every action runs through multi-layer validation: policy gates (what's allowed/blocked), confidence thresholds, maturity checks, and audit trails. Actions auto-execute only when all gates pass. Otherwise, explicit approval is required in the Action Proposal Queue."
+            "question": "Do I have to rip out my WMS or ERP?",
+            "answer": "No. Runink is designed to work *with* your current stack, not replace it. We connect to your existing tools (Shopify, Guidewire, Snowflake) to catch the signals they miss."
         },
         {
-            "question": "How do I track ROI?",
-            "answer": "Every dollar is tagged to an action. Claims filed: recovery amount logged. Overcharges caught: savings attributed. Rules enforced: cost/risk reduction measured. Raft-backed audit trails preserve exact state at decision time for lineage and replayability."
+            "question": "How long until I see a return on investment?",
+            "answer": "Very quickly. Our initial 'Leakage Audit' often identifies enough unrecovered claims and stuck shipments to cover the platform cost within the first few days. We focus on finding value immediately."
         },
         {
-            "question": "How does integration work?",
-            "answer": "We connect via API to your ERP, WMS, carrier systems, commerce platforms. Setup takes 2-4 weeks. We handle data transformation, normalization, and reconciliation into a unified Knowledge Graph. Your team configures connections once."
+            "question": "Is this safe? Can the AI break things?",
+            "answer": "Safety is the priority. We start in 'Shadow Mode' (simulation only). You see exactly what the AI *would* do without it touching a thing. You only switch to 'Action Mode' when you are fully comfortable with the results."
         },
         {
-            "question": "How are agents different from chatbots?",
-            "answer": "Agents execute. They don't just answer questions—they generate POs, file claims, optimize routes, and manage exceptions. MCP-enabled tooling (Model Context Protocol) in the Decision Cockpit allows controlled interaction with external systems while keeping reasoning, policy, and approval local and governed."
+            "question": "Does Rules Studio require coding?",
+            "answer": "No. It uses an AI Assistant to write the rules for you. You describe what you want ('Alert me if margins drop below 10%'), and the system builds it."
         },
         {
-            "question": "When will I see actual financial results?",
-            "answer": "Day 1: Full visibility into lost margin. Week 2: Automated claims recovery begins. Month 1: 10x ROI realized. Unlike traditional ERP projects that take months to deploy, our pre-built integrations mean you start recovering cash almost immediately."
-        },
-        {
-            "question": "Does this replace my existing operations team?",
-            "answer": "No—it removes their busiest, lowest-value work. Instead of chasing data and filing paperwork, your team focuses on high-level strategy, vendor relationships, and complex exceptions. We give them 'superpowers' to manage 10x the volume without burnout."
-        },
-        {
-            "question": "Why shouldn't I just hire more analysts?",
-            "answer": "Hiring scales linearly; software scales exponentially. An analyst can process 50 claims a day; our agents process 5,000. Plus, agents don't sleep, don't make calculation errors, and catch every single penny, 24/7/365."
+            "question": "Can Decision Cockpit execute actual work?",
+            "answer": "Yes. It connects to your systems to do the job. Every action (PO creation, Claim filing) is logged so you can see exactly who did what and when."
         }
     ]
 }
 {{< /faq >}}
 
 {{< cta 
-    title="Ready to Recover Lost Margin?"
-    description="Book a trace session and see exactly where you're losing money to carrier overcharges, vendor shortages, and unclaimed credits. ROI in the first session."
-    primary_button_text="Book Your Trace Session"
+    title="Stop The Bleeding."
+    description="See your operational risks in real-time and fix them automatically."
+    primary_button_text="Get Started"
     primary_button_url="/contact"
 >}}

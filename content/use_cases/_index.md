@@ -1,37 +1,71 @@
 ---
-title: "Use Cases"
-description: "See how Runink powers predictive triggers and governed workflows across supply chain, healthcare, finance, insurance, and security."
+title: "Agentic AI in Logistics: From \"Doers\" to \"Thinkers\""
+description: "Why the future of supply chain belongs to autonomous agents that See, Think, and Do."
 layout: "section"
 ---
 
-## Why Stories Matter
+## The Shift: From Automation to Autonomy
 
-Runink brings harmony to the whirlwind of operational telemetry. Orders, vitals, claims, cash flows, vulnerabilities, and compliance events flow into a single semantic layer that speaks the language of business outcomes. Teams across industries use Runink to move beyond dashboards and embrace narrative-rich automation. This collection of use cases showcases how supply chain, healthcare, finance, insurance, compliance, and DevSecOps leaders transform their operations with accountable intelligence. Dive in to see how the same platform flexes to meet each domain’s vocabulary, governance standards, and customer expectations.
+Most "automation" in logistics is really just scripting. *"If file A arrives, move it to Folder B."*
 
-## The Cross-Functional Gap
+It's brittle. If File A changes format, the bot breaks. If the folder is full, the bot stops. This is **Robotic Process Automation (RPA)**. It's useful, but it's not intelligent.
 
-Organizations depend on data streams that grow faster than the humans tasked with interpreting them. Retailers juggle inventory across omnichannel networks, health systems orchestrate escalations for complex care journeys, and insurers balance claim triage with regulatory scrutiny. Finance teams fight reconciliation fires while proving audit readiness, security teams chase dependency risk, and compliance officers must show that every control works continuously. Manufacturers expand global supplier networks, while digital-native brands scale customer experiences across new channels. The common thread is fragmentation. Telemetry lives in point solutions that rarely share context, and definitions vary by department, causing duplicate work and missed opportunities. Stakeholders rewrite playbooks in spreadsheets, only to find that real-time operations outpace their efforts. Customers feel the pain through stock-outs, delayed care, slow claims, confusing invoices, and security incidents that damage trust. Leadership invests in analytics but still lacks the narrative that links data to decisions, making cross-functional alignment elusive. Without a unifying layer, organizations cannot operationalize governance while innovating at the speed their markets demand, and the distance between strategic vision and frontline execution continues to widen.
+**Agentic AI** represents a paradigm shift. Agents aren't defined by what they *do* (a script), but by what they *achieve* (an outcome). You don't tell an agent *how* to file a claim; you tell it, "Recover every eligible dollar from this shipment."
 
-## Runink’s Unified Approach
+## The Architecture: See, Think, Do
 
-Runink’s semantic layer ingests telemetry from every domain, normalizes it, and maps it to business entities, policies, and desired outcomes. The Runink Analytics Companion empowers subject-matter experts to describe workflows in natural language, turning complex rules into reusable playbooks that adapt as operations evolve. As events stream in, Runink narrates what changed, why it matters, and who should respond, aligning decision-making across departments that previously operated in isolation. Integrated governance ensures every action is documented with lineage, ownership, and policy context, satisfying regulators and stakeholders who demand transparency. Because the platform connects with existing systems—WMS, EHR, ERP, core insurance platforms, banking portals, CI/CD pipelines, data warehouses, CRM suites, and collaboration tools—teams adopt Runink without disrupting foundational technology. Analytics teams leverage the semantic layer as a trusted substrate for predictive models, while business leaders consume explainable insights that inspire confident action. The case studies in this section illustrate how each industry harnesses the same engine to solve unique challenges, delivering faster decisions, happier customers, and demonstrable compliance.
+Runink agents act like digital employees because they follow the same cognitive process as humans:
 
-{{< mermaid >}}
-graph TD
-  A[Domain Telemetry] --> B[Runink Semantic Layer]
-  B --> C[Use Case Playbooks]
-  C --> D[Analytics Companion]
-  D --> E[Operations & Governance]
-  B --> F[Evidence & Insights]
-  F --> G[Customers, Auditors, Leadership]
-{{< /mermaid >}}
+### 1. Perception (See)
+Agents ingest unstructured data from the messy real world.
+*   **Reading:** They OCR Bills of Lading, parse PDF invoices, and extract data from email threads.
+*   **Seeing:** They analyze photos of damaged cargo to classify "crushed" vs. "wet."
+*   **Sensing:** They monitor carrier portals and weather feeds for disruptions.
 
-## A Platform Built For Every Team
+### 2. Reasoning (Think)
+Agents use LLMs to understand context and make decisions.
+*   **Knowledge:** They reference the Carmack Amendment, carrier tariffs, and your specific business rules.
+*   **Logic:** *"The carrier denied this claim, but the photo clearly proves them wrong. I should fight this."*
+*   **Planning:** *"To reroute this order, I first need to check stock in DC2, then check shipping rates, then update the OMS."*
 
-Runink stands out because it respects the expertise embedded in every team while dissolving the walls that keep them apart. Supply chain planners see inventory actions aligned with customer promises. Clinicians receive contextual patient narratives that honor consent and quality metrics. Finance leaders understand variances before executives ask for explanations. Insurers route claims and fraud investigations with confidence, compliance teams live inside continuously updated control evidence, and DevSecOps groups coordinate vulnerability response without sacrificing speed. Every use case shares a commitment to explainability. Stakeholders can trace how a decision was made, which data fueled it, and how it complied with policy. As organizations expand into AI-driven automation, Runink provides the trustworthy foundation they need to scale without losing oversight.
+### 3. Action (Do)
+Agents have "hands." They execute tasks in your systems.
+*   **Tools:** They can log into web portals, send emails, query SQL databases, and trigger APIs.
+*   **Output:** They don't just give you a "suggested action"—they do the work (with your permission).
 
-## See It In Action
+## Meet Your Digital Workforce
 
-Explore each use case to see Runink in action—whether you need to orchestrate fulfillment, modernize care coordination, strengthen financial governance, streamline claims, automate NIST controls, or secure your software supply chain. Every story demonstrates how narrative-rich automation turns operational data into competitive advantage, ensuring teams can act with speed and confidence without compromising governance. Leaders unlock the freedom to innovate because they can prove the integrity of every decision, while frontline teams rediscover the clarity that fuels customer delight. 
+We don't sell a "platform." We deploy specialized agents that join your team.
 
-When you are ready to apply the semantic layer to your unique challenge, [talk with our team](/contact) and discover how the Runink Analytics Companion delivers accountable intelligence tailored to your domain. Our experts will partner with you to align strategy, data, and governance so your organization moves faster, stays compliant, and delights the customers who put their trust in your brand, today and as your strategy evolves.
+{{< card-grid cols="3" >}}
+
+{{< card 
+    title="The Claims Agent"
+    icon="currency-dollar"
+    link="/use_cases/claims_recovery"
+    description="Reads BOLs, identifies damage, and fights carrier denials on autopilot. Recover 40% more freight spend."
+>}}
+
+{{< card 
+    title="The Fulfillment Agent"
+    icon="box"
+    link="/use_cases/fulfillment_optimization"
+    description="Orchestrates inventory and routing based on real-time constraints (weather, dock status, margin). Inventory that thinks."
+>}}
+
+{{< card 
+    title="The Finance Agent"
+    icon="scale"
+    link="/use_cases/finance"
+    description="Audits every invoice against your contracts. Short-pays valid discrepancies and reconciles ledgers instantly."
+>}}
+
+{{< /card-grid >}}
+
+## The "Trust Gap": Human-in-the-Loop
+
+We know "AI" sounds scary in high-stakes operations. That's why Runink uses **Augmented Autonomy**.
+
+*   **Co-Pilot Mode:** The agent handles low-risk tasks (e.g., Claims <$100) autonomously.
+*   **Supervisor Mode:** For high-stakes decisions, the agent acts as a Junior Analyst. It gathers the data, prepares the plan, and asks you for approval.
+*   **Chain of Thought:** Every action comes with an explanation: *"I did X because of Y."* You can audit the agent's logic anytime.

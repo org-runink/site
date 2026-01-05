@@ -4,12 +4,12 @@ title: Home
 ---
 
 {{< hero 
-    headline="See Today's Risks. Test Tomorrow's Decisions. Execute What Works."
-    sub_headline="Stop losing money to problems you can't see. Runink shows you <strong>today's biggest risks</strong>, lets you test changes safely, and executes fixes autonomously. Command view, guardrails, testing, execution."
-    primary_button_text="See How It Works"
-    primary_button_url="/products/analytics_companion/"
-    secondary_button_text="Book a Live Trace"
-    secondary_button_url="/contact"
+    headline="Your automation needs a babysitter."
+    sub_headline="You spent millions on software that breaks the moment the real world changes. Stop fixing broken bots. Start using <strong>autonomous agents</strong> that think like your best employees."
+    primary_button_text="Get Your Free Leakage Audit"
+    primary_button_url="/contact"
+    secondary_button_text="See the Agents"
+    secondary_button_url="/products/analytics_companion/"
     hero_image="/images/hero.png"
     size="normal"
 >}}
@@ -17,15 +17,15 @@ title: Home
 {{< section-container class="py-16 bg-stone-900/50" >}}
 
 <div class="max-w-4xl mx-auto text-center px-4">
-<h2 class="text-3xl md:text-5xl font-bold text-white mb-6"><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8B9A6E] to-[#D4A574]">You See Problems, But Can't Fix Them Fast Enough</span>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6"><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8B9A6E] to-[#D4A574]">Stop Running into Walls.</span>
 </h2>
 
 <p class="text-xl text-slate-300 leading-relaxed mb-6">
-You spot the overcharge. You see the inventory gap. You catch the vendor shortage. But fixing it takes <strong class="text-white">weeks of manual work</strong>. By then, the damage is done.
+Most "automation" is just a recording of clicks. When the warehouse layout changes or a storm hits, the recording fails. You aren't really automated; you're just constantly rebooting the system. Meanwhile, <strong>$50 billion is lost annually</strong> to problems your software missed.
 </p>
 
 <p class="text-2xl text-[#F5F1E8] font-semibold">
-Runink closes that gap in minutes, not weeks.
+Don't just record clicks. Understand the job.
 </p>
 </div>
 
@@ -34,52 +34,52 @@ Runink closes that gap in minutes, not weeks.
 {{< features-section >}}
 
 {{< feature
-    title="Overview: Your Daily Command View"
-    description="Every morning, see your <strong>top 3 risks and top 3 opportunities</strong>—ranked by impact and backed by evidence. Operational radar shows spend pressure, inventory risk, demand volatility, data freshness, and automation safety. No digging through dashboards."
-    badge="Overview: Command Center"
+    title="Mission Control: See The Business"
+    description="Old dashboards just show you logs. <strong>Mission Control</strong> watches your entire operation. It doesn't just tell you a connection is down; it tells you that you're losing money in Nevada because inventory is stuck. It finds the problems that matter."
+    badge="Core Platform"
     badgeColor="#5F6F3E"
     image="/images/companion/overview.png"
-    features="Top 3 Risks Ranked,Top 3 Opportunities Identified,Operational Posture Radar,Direct Evidence Links"
+    features="Money,Not Logs,Root Cause,Real-Time"
     imagePosition="right"
 >}}
 
 {{< feature
-    title="AI Posture Center: Safety & Incidents"
-    description="Monitor operational health and track incidents with full blast radius. Know your readiness before deploying autonomous agents. Auto-generated runbooks for <strong>\"Fix Now\" and \"Prevent Recurrence\"</strong>. Domain maturity scores updated in real-time."
-    badge="Safety Monitor"
+    title="Rules Studio: Set The Logic"
+    description="Written rules get ignored. Hardcoded scripts break. <strong>Rules Studio</strong> lets you set the 'Guardrails' for your business. 'Block duplicate orders.' 'Escalate stuck shipments.' You define the outcome, and the system enforces it, no matter what."
+    badge="Core Platform"
     badgeColor="#6B7A4E"
-    image="/images/companion/posture.png"
-    features="Domain Health Monitoring,Incident Blast Radius Tracking,Auto-Generated Runbooks,Maturity Score Assessment"
+    image="/images/companion/rules.png"
+    features="Active Guardrails,Stop Mistakes,Always On,Flexible"
     imagePosition="left"
 >}}
 
 {{< feature
-    title="Rules Studio: Guardrails & Exposure"
-    description="Track which business policies are followed or violated. Coverage percentage shows enforcement gaps. Real-time alerts catch bad decisions before they happen. <strong>Policy gates enforce compliance automatically.</strong>"
-    badge="Policy Enforcement"
+    title="Risk Simulation: Test The Future"
+    description="Usually, you have to guess if a change will work. Runink lets you <strong>simulate it first</strong>. 'If we raise prices, what happens to sales?' We test your ideas against history so you know the result before you risk a dime."
+    badge="Core Platform"
     badgeColor="#B87333"
-    image="/images/companion/rules.png"
-    features="Policy Coverage Tracking,Real-Time Violation Alerts,Compliance Gap Analysis,Automated Enforcement Gates"
+    image="/images/companion/hypothesis.png"
+    features="Test Ideas,Safe Mode,Know The Cost,No Surprises"
     imagePosition="right"
 >}}
 
 {{< feature
-    title="Hypothesis Lab: What-If Testing"
-    description="Run pricing, inventory, and fulfillment scenarios in a safe sandbox. See profit and loss impact with confidence scores <strong>before you risk real operations</strong>. Every assumption and data gap disclosed upfront."
-    badge="Safe Testing"
+    title="AI Posture: Sleep At Night"
+    description="You can't automate if you don't trust the data. <strong>AI Posture</strong> acts as your safety net. It constantly checks your systems for health and stability, automatically fixing small issues so your agents can keep working."
+    badge="Core Platform"
     badgeColor="#A0522D"
-    image="/images/companion/hypothesis.png"
-    features="Pricing Scenario Modeling,Inventory Impact Analysis,Profit \u0026 Loss Projections,Assumption Disclosure"
+    image="/images/companion/posture.png"
+    features="Health Check,Auto-Fix,Safety Score,Reliability"
     imagePosition="left"
 >}}
 
 {{< feature
-    title="Decision Cockpit: Human-in-the-Loop Execution"
-    description="AI agents that <strong>auto-file claims, manage purchase orders, and catch overcharges</strong>—all with policy gates and approval controls. Machine speed with human oversight. Full audit trail for every action taken."
-    badge="Autonomous Execution"
-    badgeColor="#B87333"
+    title="Decision Cockpit: Work Gets Done"
+    description="Old bots create alerts. <strong>Agents take action.</strong> The Decision Cockpit employs digital workers that handle the boring stuff—filing claims, ordering stock, fixing errors. They do the work, so your team doesn't have to."
+    badge="Add-On: Decision Cockpit"
+    badgeColor="#D4A574"
     image="/images/companion/cockpit.png"
-    features="Claims Recovery Automation,Purchase Order Management,Policy Gate Enforcement,Action Approval Queue"
+    features="Reasoning Agents,Real Work,Checks Context,Human Review"
     imagePosition="right"
 >}}
 
@@ -92,12 +92,10 @@ Runink closes that gap in minutes, not weeks.
 {{< /section-container >}}
 
 {{< cta 
-    title="Ready to See What You're Missing?"
-    description="Book a trace session and see your top risks and opportunities in real-time. No sales pitch—just show you what's broken and how to fix it."
-    primary_button_text="Book Your Trace Session"
+    title="Stop The Bleeding."
+    description="We'll audit your last 12 months of shipping data. We'll show you exactly how much 'leakage' you missed—and how much we can get back."
+    primary_button_text="Get Your Free Leakage Audit"
     primary_button_url="/contact"
-    secondary_button_text="Explore Pricing"
+    secondary_button_text="View Pricing"
     secondary_button_url="/pricing/"
 >}}
-
-

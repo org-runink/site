@@ -1,6 +1,6 @@
 ---
 title: "Pricing"
-description: "Transparent, usage-based pricing — pay only for what your team actually uses."
+description: "Pay for protection, not features. Transparent infrastructure + outcome-based value."
 layout: "pricing"
 ---
 
@@ -15,24 +15,28 @@ layout: "pricing"
 
 {{< pricing-table-1 >}}
 {
-  "title": "Invest in Outcome Certainty",
-  "description": "Stop paying for shelfware. Pay for the engine that protects your P&L.",
+  "title": "Platform Access + Usage-Based Infrastructure",
+  "description": "Start cheap. Pay for what you use.",
   "plans": [
     {
       "name": "Core",
       "price_monthly": "$20",
       "price_yearly": "$15",
-      "description": "For Ops Teams Demanding Visibility",
+      "description": "See & Stop Problems",
       "features": [
-        "Rules/Data Reconciliations",
-        "Hypothesis Labs",
-        "Data Maturity AI Posture Center"
+        "Operational Radar (Daily Risk Dashboard)",
+        "Rules Enforcer (Policy Blocking)",
+        "Risk Simulation Engine (What-If Testing)",
+        "Data Helper (Auto-Cleaning)",
+        "Incident Detection (Blast Radius)"
       ],
       "usage": [
-        "Data and Compute usage-based scale ($0.01/unit)"
+        "Data Units: $0.01/GB processed",
+        "Compute Units: $0.01/60s runtime",
+        "Unlimited team members"
       ],
       "button": {
-        "text": "Start Core",
+        "text": "Start with Core",
         "url": "/contact"
       }
     },
@@ -41,19 +45,45 @@ layout: "pricing"
       "price_monthly": "$80",
       "price_yearly": "$60",
       "featured": true,
-      "description": "For Leaders Who Demand Control",
+      "description": "Autonomous Execution",
       "features": [
         "Everything in Core",
-        "AI-Driven Execution Agents",
-        "Advanced Risk Simulation"
+        "Decision Cockpit (Autonomous Agents)",
+        "Auto-Provisioning Workflows",
+        "Autonomous Claims Processing",
+        "Automated Exception Handling"
       ],
       "usage": [
-        "Auto-Provisioning: 3% per PO (capped at $50/order)",
-        "Claims Recovery: 20% Success Fee",
-        "Data and Compute usage-based scale ($0.01/unit)"
+        "Data Units: $0.01/GB processed",
+        "Compute Units: $0.01/60s runtime",
+        "Auto-Provisioning: 3% per PO (cap $50)",
+        "Claims Recovery: 20% success fee"
       ],
       "button": {
-        "text": "Deploy Cockpit",
+        "text": "Add Cockpit",
+        "url": "/contact"
+      }
+    },
+    {
+      "name": "Enterprise",
+      "price_monthly": "Custom",
+      "price_yearly": "Contact Sales",
+      "description": "Dedicated Support & Custom SLAs",
+      "features": [
+        "Everything in Cockpit",
+        "Bundled Infrastructure Options",
+        "Dedicated Success Engineer",
+        "Custom SLA & Response Times",
+        "Multi-Region Deployment"
+      ],
+      "usage": [
+        "Negotiable bundled pricing",
+        "Volume discounts available",
+        "Success fee models available",
+        "White-glove onboarding"
+      ],
+      "button": {
+        "text": "Talk to Sales",
         "url": "/contact"
       }
     }
@@ -65,43 +95,39 @@ layout: "pricing"
 {{< faq >}}
 {
   "title": "Billing Logic. No Surprises.",
-  "description": "How we charge for high-performance execution.",
+  "description": "Low barrier to entry. Revenue scales with your actual infrastructure usage.",
   "questions": [
     {
-      "question": "Why the split between Core and Cockpit?",
-      "answer": "Core gives you the eyes ($20/mo). Cockpit gives you the hands ($80/mo). If you just want to see problems, buy Core. If you want us to fix them, buy Cockpit."
+      "question": "How does Data Unit (DU) and Compute Unit (CU) billing work?",
+      "answer": "**Infrastructure is pass-through at cost.**<br>• **1 DU = 1GB of data processed** = $0.01<br>• **1 CU = 60 seconds of compute time** = $0.01<br><br>You pay your base tier ($20 or $80/mo) for platform features. DU/CU scales with actual usage—no markup."
     },
     {
-      "question": "How does the granular pricing work?",
-      "answer": "We charge separately for **Data Units (DU)** and **Compute Units (CU)**. Each costs **$0.01 per unit** (rounded up):<br>• **1 DU = 1GB of data processed**<br>• **1 CU = 60 seconds of compute time**<br>These are direct pass-through costs from cloud providers with zero markup."
+      "question": "What's the difference between Core and Cockpit?",
+      "answer": "**Core ($20/mo):** All the visibility and testing.<br>• Operational Radar (see what's breaking)<br>• Rules Enforcer (block bad decisions)<br>• Risk Simulation Engine (test changes)<br>• Data Helper (clean your data)<br><br>**Cockpit ($80/mo):** Adds autonomous execution.<br>• Agents that auto-file claims<br>• Auto-provision purchase orders<br>• Resolve business exceptions<br><br>Core shows you problems. Cockpit fixes them."
     },
     {
-      "question": "Why charge for Data and Compute separately?",
-      "answer": "Transparency. We run on multiple cloud providers (AWS, GCP, Azure). Each has different infrastructure costs. By separating DU and CU, you see exactly what you're paying for: data movement vs. actual computation. No hidden fees, no inflated margins."
+      "question": "Pricing Example: Small Team (5GB/day processing, Core only)",
+      "answer": "**Core:**<br>Base: $20/mo<br>Data: 150 DU × $0.01 = $1.50<br>Compute: 60 CU × $0.01 = $0.60<br>**Total: ~$22/mo**<br><br>Start cheaper than Netflix. Scale as you grow."
     },
     {
-      "question": "Pricing Simulation: Small Base (2GB/day)",
-      "answer": "**Daily:** 2GB data + 2 min compute<br>**Monthly:** 60 DU + 60 CU = **$1.20/mo**<br><br>60 DU × $0.01 = $0.60<br>60 CU × $0.01 = $0.60<br><br>Less than a cup of coffee for daily reconciliation automation."
+      "question": "Pricing Example: Growing Team (20GB/day, with Cockpit)",
+      "answer": "**Cockpit:**<br>Base: $80/mo<br>Data: 600 DU × $0.01 = $6<br>Compute: 240 CU × $0.01 = $2.40<br>**Total: ~$88/mo**<br><br>Plus success fees on recoveries (20% of capital found). Most teams cover annual costs with one successful recovery."
     },
     {
-      "question": "Pricing Simulation: Medium Base (10GB/day)",
-      "answer": "**Daily:** 10GB data + 4 min compute<br>**Monthly:** 300 DU + 120 CU = **$4.20/mo**<br><br>300 DU × $0.01 = $3.00<br>120 CU × $0.01 = $1.20<br><br>The cost of a single lunch for enterprise-grade automation."
+      "question": "What if my data usage spikes?",
+      "answer": "DU/CU billing is transparent and predictable. Monitor usage in real-time through the dashboard. For high-volume scenarios (100GB+/day), Enterprise tier offers bundled infrastructure pricing."
     },
     {
-      "question": "Pricing Simulation: Large Base (50GB/day)",
-      "answer": "**Daily:** 50GB data + 10 min compute<br>**Monthly:** 1,500 DU + 300 CU = **$18.00/mo**<br><br>1,500 DU × $0.01 = $15.00<br>300 CU × $0.01 = $3.00<br><br>High-volume operations at a fraction of competitor pricing."
+      "question": "What are 'Success Fee' options?",
+      "answer": "**For claims recovery and fraud detection:**<br>When agents identify and recover capital (fraud, overpayments, subrogation), we charge 20% of recovered funds. You keep 80%. If we find nothing, you pay nothing beyond base platform fees.<br><br>Optional and only applies to recovery workflows."
     },
     {
-      "question": "Auto-Provisioning ROI Example",
-      "answer": "**Scenario:** You place 100 purchase orders/month averaging $5,000 each.<br>**Cost:** 100 orders × $50 (capped) = **$5,000/mo**<br>**Value:** We handle vendor communications, shipment tracking, and exception management automatically. Your team saves 80 hours/month. At $50/hr = **$4,000 saved** in labor alone.<br><br>Net cost after labor savings: **$1,000/mo** for full procurement automation."
+      "question": "Can I start with Core and add Cockpit later?",
+      "answer": "Yes. Start with **Core** ($20/mo) to get visibility and testing. Add **Cockpit** when you're ready to deploy autonomous agents. Your data/compute usage carries over."
     },
     {
-      "question": "Claims Recovery ROI Example",
-      "answer": "**Scenario:** We identify $50,000 in lost inventory and billing errors.<br>**Recovery:** We file claims and recover $40,000.<br>**Our Fee:** 20% × $40,000 = **$8,000**<br>**You Keep:** **$32,000**<br><br>If we recover nothing, you pay nothing. It's pure found money with zero downside risk."
-    },
-    {
-      "question": "Explain the 'Success Fee' again.",
-      "answer": "It's simple. We identify lost inventory and claims. When we recover the capital, we keep 20% as our fee. You keep 80%. It is strictly performance-based."
+      "question": "Do I have to commit to annual?",
+      "answer": "No. Monthly is available. Annual contracts save 25%."
     }
   ]
 }
