@@ -1,15 +1,19 @@
 # ==========================================
-# Build Stage - Compile llama.cpp server
+# Build Stage - Compile binaries on Ubuntu
 # ==========================================
-FROM alpine:latest AS builder
+FROM ubuntu:22.04 AS builder
+
+# Prevent interactive prompts during build
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install build dependencies
-RUN apk update && apk add --no-cache \
-    build-base \
+RUN apt-get update && apt-get install -y \
+    build-essential \
     cmake \
     git \
-    openblas-dev \
-    linux-headers
+    libopenblas-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
 
 # Build stable-diffusion.cpp for image generation
 WORKDIR /opt
@@ -27,18 +31,18 @@ RUN git clone --recursive https://github.com/leejet/stable-diffusion.cpp \
 WORKDIR /opt
 RUN git clone https://github.com/ggml-org/llama.cpp \
     && cd llama.cpp \
-    && cmake -B build -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS \
+    && cmake -B build -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS -DBUILD_SHARED_LIBS=ON \
     && cmake --build build --config Release \
+    && mkdir -p /opt/binaries \
     && cp build/bin/llama-server /opt/binaries/server \
+    && cp build/src/*.so* /opt/binaries/ || true \
     && cd /opt \
     && rm -rf llama.cpp
-
-# At this point, only /opt/binaries contains our binaries, all source code removed
 
 # ==========================================
 # Runtime Stage
 # ==========================================
-FROM alpine:latest
+FROM ubuntu:22.04
 
 # OCI Image Annotations
 LABEL org.opencontainers.image.title="Runink Blog Generator" \
@@ -53,12 +57,11 @@ LABEL org.opencontainers.image.title="Runink Blog Generator" \
 WORKDIR /app
 
 # Install runtime dependencies
-RUN apk update && apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     ca-certificates \
-    libstdc++ \
-    libgomp \
-    openblas \
-    bash
+    libopenblas0 \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy our blog-gen binary
 COPY cmd/blog-gen .
@@ -66,10 +69,11 @@ COPY cmd/blog-gen .
 # Copy models and config
 COPY cmd/models/ ./models/
 
-# Copy compiled binaries from builder
+# Copy compiled binaries and shared libraries from builder
 RUN mkdir -p ./shbin
 COPY --from=builder /opt/binaries/server ./shbin/server
 COPY --from=builder /opt/binaries/txt2img ./shbin/txt2img
+COPY --from=builder /opt/binaries/*.so* ./shbin/ 2>/dev/null || true
 RUN chmod +x ./shbin/server ./shbin/txt2img
 
 # Make blog-gen executable
@@ -78,6 +82,7 @@ RUN chmod +x /app/blog-gen
 # Environment
 ENV LOG_LEVEL=info \
     PATH="/app:${PATH}" \
+    LD_LIBRARY_PATH="/app/shbin:${LD_LIBRARY_PATH}" \
     GIN_MODE=release
 
 # Direct execution
