@@ -1,9 +1,37 @@
 # ==========================================
-# Runtime Stage (Single Stage)
+# Build Stage - Compile llama.cpp server
+# ==========================================
+FROM alpine:latest AS builder
+
+# Install build dependencies
+RUN apk update && apk add --no-cache \
+    build-base \
+    cmake \
+    git \
+    openblas-dev \
+    linux-headers
+
+# Clone llama.cpp (we'll use a specific version for stability)
+WORKDIR /build
+RUN git clone https://github.com/ggerganov/llama.cpp.git \
+    && cd llama.cpp \
+    && git checkout b4355 
+
+# Build llama-server with OpenBLAS support
+WORKDIR /build/llama.cpp
+RUN cmake -B build \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DGGML_BLAS=ON \
+    -DGGML_BLAS_VENDOR=OpenBLAS \
+    -DBUILD_SHARED_LIBS=OFF \
+    && cmake --build build --config Release --target llama-server -j$(nproc)
+
+# ==========================================
+# Runtime Stage
 # ==========================================
 FROM alpine:latest
 
-# OCI Image Annotations (https://github.com/opencontainers/image-spec/blob/main/annotations.md)
+# OCI Image Annotations
 LABEL org.opencontainers.image.title="Runink Blog Generator" \
     org.opencontainers.image.description="AI-powered blog generation tool using Tavily search, ARIMA analysis, and llama-cli" \
     org.opencontainers.image.version="1.0.0" \
@@ -16,32 +44,31 @@ LABEL org.opencontainers.image.title="Runink Blog Generator" \
 WORKDIR /app
 
 # Install runtime dependencies
-# openblas, libstdc++, etc are needed for llama-cli
-# gcompat provides glibc compatibility for txt2img binary
 RUN apk update && apk add --no-cache \
     ca-certificates \
-    libc6-compat \
-    gcompat \
     libstdc++ \
     libgomp \
     openblas \
     bash
 
-# Copy pre-built binary from host
+# Copy our blog-gen binary
 COPY cmd/blog-gen .
 
-# Copy application assets
-# We only need models and shbin. Content and static are mounted at runtime.
+# Copy models and config
 COPY cmd/models/ ./models/
-COPY cmd/shbin/ ./shbin/
 
-# Make binary executable
+# Copy compiled llama-server from builder
+RUN mkdir -p ./shbin
+COPY --from=builder /build/llama.cpp/build/bin/llama-server ./shbin/server
+RUN chmod +x ./shbin/server
+
+# Make blog-gen executable
 RUN chmod +x /app/blog-gen
 
-# Permissions & Environment
+# Environment
 ENV LOG_LEVEL=info \
     PATH="/app:${PATH}" \
     GIN_MODE=release
 
-# Direct execution without wrapper
+# Direct execution
 ENTRYPOINT ["/app/blog-gen"]
