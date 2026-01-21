@@ -19,7 +19,7 @@ RUN git clone --recursive https://github.com/leejet/stable-diffusion.cpp \
     && cmake .. -DGGML_OPENBLAS=ON \
     && cmake --build . --config Release \
     && mkdir -p /build/bin \
-    && cp bin/sd /build/bin/txt2img \
+    && cp ../bin/sd-cli /build/bin/txt2img \
     && cd /build \
     && rm -rf stable-diffusion.cpp
 
@@ -43,7 +43,7 @@ FROM alpine:latest
 
 # OCI Image Annotations
 LABEL org.opencontainers.image.title="Runink Blog Generator" \
-    org.opencontainers.image.description="AI-powered blog generation tool using Tavily search, ARIMA analysis, and llama-cli" \
+    org.opencontainers.image.description="AI-powered blog generation tool" \
     org.opencontainers.image.version="1.0.0" \
     org.opencontainers.image.vendor="Runink" \
     org.opencontainers.image.licenses="MIT" \
