@@ -73,7 +73,7 @@ COPY cmd/models/ ./models/
 RUN mkdir -p ./shbin
 COPY --from=builder /opt/binaries/server ./shbin/server
 COPY --from=builder /opt/binaries/txt2img ./shbin/txt2img
-COPY --from=builder /opt/binaries/*.so* ./shbin/ 2>/dev/null || true
+COPY --from=builder /opt/binaries/*.so* ./shbin/
 RUN chmod +x ./shbin/server ./shbin/txt2img
 
 # Make blog-gen executable
