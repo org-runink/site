@@ -445,9 +445,9 @@ func executeLlamaCLI(ctx context.Context, prompt string) (*BlogArticle, error) {
 			return nil, fmt.Errorf("failed to start llama-server: %w", err)
 		}
 
-		// Wait for server to be ready (model loading can take 30-60 seconds for 3GB model)
-		fmt.Println("⏳ Waiting for model to load (this may take 1-2 minutes)...")
-		maxRetries := 40 // 40 * 3s = 2 minutes max
+		// Wait for server to be ready (model loading can take 3-5 minutes for 4B model on CPU)
+		fmt.Println("⏳ Waiting for model to load (this may take 3-5 minutes on CPU)...")
+		maxRetries := 100 // 100 * 3s = 5 minutes max
 		for i := 0; i < maxRetries; i++ {
 			time.Sleep(3 * time.Second)
 			if isServerReady(serverURL) {
@@ -455,10 +455,10 @@ func executeLlamaCLI(ctx context.Context, prompt string) (*BlogArticle, error) {
 				break
 			}
 			if i == maxRetries-1 {
-				return nil, fmt.Errorf("server failed to become ready after 2 minutes")
+				return nil, fmt.Errorf("server failed to become ready after 5 minutes - model may be too large for available CPU/memory")
 			}
 			if i%5 == 0 {
-				fmt.Printf("   Still loading... (%d seconds)\n", (i+1)*3)
+				fmt.Printf("   Still loading model... (%d seconds elapsed)\\n", (i+1)*3)
 			}
 		}
 	}
@@ -595,9 +595,13 @@ func startLlamaServer(ctx context.Context) error {
 	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH=../shbin:"+os.Getenv("LD_LIBRARY_PATH"))
 	cmd.Dir = "." // Already in models directory
 
+	// Capture server output for debugging
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
 	// Start server in background
 	if err := cmd.Start(); err != nil {
-		return err
+		return fmt.Errorf("failed to start server process: %w", err)
 	}
 
 	// Don't wait for it to finish
@@ -822,11 +826,11 @@ func GenerateLinkedInPosts(article *BlogArticle, blogURL string) *LinkedInPost {
 	// Use the first sentence or key insight from the introduction
 	intro := article.Content.IntroductionContext
 	firstSentence := extractFirstSentence(intro)
-	
+
 	// Create hashtags from the article tags (limit to first 3)
 	companyHashtags := []string{"#TechBlog", "#Innovation", "#KnowledgeSharing"}
 	personalHashtags := []string{"#TechInsights", "#Learning"}
-	
+
 	// Add article-specific tags
 	for i, tag := range article.Metadata.Tags {
 		if i >= 2 {
@@ -836,7 +840,7 @@ func GenerateLinkedInPosts(article *BlogArticle, blogURL string) *LinkedInPost {
 		companyHashtags = append(companyHashtags, hashtag)
 		personalHashtags = append(personalHashtags, hashtag)
 	}
-	
+
 	// Company page post - professional and brand-focused
 	companyText := fmt.Sprintf(`🚀 New insight: %s
 
@@ -850,7 +854,7 @@ Read more: %s
 		firstSentence,
 		blogURL,
 		strings.Join(companyHashtags, " "))
-	
+
 	// Personal repost - more casual and engaging
 	personalText := fmt.Sprintf(`💡 Excited to share our latest article on %s!
 
@@ -863,7 +867,7 @@ Check it out and let me know your thoughts: %s
 		firstSentence,
 		blogURL,
 		strings.Join(personalHashtags, " "))
-	
+
 	return &LinkedInPost{
 		CompanyPost: CompanyPagePost{
 			Text:     companyText,
@@ -881,7 +885,7 @@ Check it out and let me know your thoughts: %s
 // extractFirstSentence extracts the first sentence from a text block
 func extractFirstSentence(text string) string {
 	text = strings.TrimSpace(text)
-	
+
 	// Find first period, exclamation, or question mark
 	for _, delimiter := range []string{". ", "! ", "? "} {
 		if idx := strings.Index(text, delimiter); idx != -1 {
@@ -893,7 +897,7 @@ func extractFirstSentence(text string) string {
 			return sentence
 		}
 	}
-	
+
 	// If no sentence delimiter found, take first 150 chars
 	if len(text) > 150 {
 		return text[:147] + "..."
@@ -927,11 +931,11 @@ func GenerateBlogFromModels(ctx context.Context, topic, tavilyKey, contentDir, s
 	fmt.Println("\n✅ Blog article generated successfully!")
 	fmt.Printf("   Title: %s\n", article.Metadata.Title)
 	fmt.Printf("   Slug: %s\n", article.Metadata.Slug)
-	
+
 	// Generate LinkedIn posts
 	blogURL := fmt.Sprintf("https://www.runink.org/blog/%s/", article.Metadata.Slug)
 	linkedInPosts := GenerateLinkedInPosts(article, blogURL)
-	
+
 	// Output LinkedIn posts as JSON to stdout (will be captured by workflow)
 	fmt.Println("\n📱 LINKEDIN_POSTS_START")
 	postsJSON, err := json.MarshalIndent(linkedInPosts, "", "  ")
