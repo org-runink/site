@@ -1,7 +1,7 @@
 # ==========================================
 # Build Stage - Compile binaries on Ubuntu
 # ==========================================
-FROM ubuntu:22.04 AS builder
+FROM ubuntu:latest AS builder
 
 # Prevent interactive prompts during build
 ENV DEBIAN_FRONTEND=noninteractive
@@ -35,14 +35,16 @@ RUN git clone https://github.com/ggml-org/llama.cpp \
     && cmake --build build --config Release \
     && mkdir -p /opt/binaries \
     && cp build/bin/llama-server /opt/binaries/server \
-    && cp build/src/*.so* /opt/binaries/ || true \
+    && cp build/src/*.so* /opt/binaries/ 2>/dev/null || true \
+    && cp build/lib/*.so* /opt/binaries/ 2>/dev/null || true \
+    && cp build/ggml/src/*.so* /opt/binaries/ 2>/dev/null || true \
     && cd /opt \
     && rm -rf llama.cpp
 
 # ==========================================
 # Runtime Stage
 # ==========================================
-FROM ubuntu:22.04
+FROM ubuntu:latest
 
 # OCI Image Annotations
 LABEL org.opencontainers.image.title="Runink Blog Generator" \
@@ -79,10 +81,10 @@ RUN chmod +x ./shbin/server ./shbin/txt2img
 # Make blog-gen executable
 RUN chmod +x /app/blog-gen
 
-# Environment
+# Environment - set LD_LIBRARY_PATH without referencing undefined variable
 ENV LOG_LEVEL=info \
     PATH="/app:${PATH}" \
-    LD_LIBRARY_PATH="/app/shbin:${LD_LIBRARY_PATH}" \
+    LD_LIBRARY_PATH="/app/shbin" \
     GIN_MODE=release
 
 # Direct execution
