@@ -11,20 +11,20 @@ RUN apk update && apk add --no-cache \
     openblas-dev \
     linux-headers
 
-# Clone llama.cpp (we'll use a specific version for stability)
+# Build stable-diffusion.cpp for image generation
 WORKDIR /build
-RUN git clone https://github.com/ggerganov/llama.cpp.git \
-    && cd llama.cpp \
-    && git checkout b4355 
+RUN git clone --recursive https://github.com/leejet/stable-diffusion.cpp \
+    && cd stable-diffusion.cpp \
+    && mkdir build && cd build \
+    && cmake .. -DGGML_OPENBLAS=ON \
+    && cmake --build . --config Release
 
-# Build llama-server with OpenBLAS support
-WORKDIR /build/llama.cpp
-RUN cmake -B build \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DGGML_BLAS=ON \
-    -DGGML_BLAS_VENDOR=OpenBLAS \
-    -DBUILD_SHARED_LIBS=OFF \
-    && cmake --build build --config Release --target llama-server -j$(nproc)
+# Build llama.cpp for text generation
+WORKDIR /build
+RUN git clone https://github.com/ggml-org/llama.cpp \
+    && cd llama.cpp \
+    && cmake -B build -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS \
+    && cmake --build build --config Release
 
 # ==========================================
 # Runtime Stage
@@ -57,10 +57,11 @@ COPY cmd/blog-gen .
 # Copy models and config
 COPY cmd/models/ ./models/
 
-# Copy compiled llama-server from builder
+# Copy compiled binaries from builder
 RUN mkdir -p ./shbin
 COPY --from=builder /build/llama.cpp/build/bin/llama-server ./shbin/server
-RUN chmod +x ./shbin/server
+COPY --from=builder /build/stable-diffusion.cpp/build/bin/sd ./shbin/txt2img
+RUN chmod +x ./shbin/server ./shbin/txt2img
 
 # Make blog-gen executable
 RUN chmod +x /app/blog-gen
