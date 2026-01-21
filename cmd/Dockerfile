@@ -35,9 +35,8 @@ RUN git clone https://github.com/ggml-org/llama.cpp \
     && cmake --build build --config Release \
     && mkdir -p /opt/binaries \
     && cp build/bin/llama-server /opt/binaries/server \
-    && cp build/src/*.so* /opt/binaries/ 2>/dev/null || true \
-    && cp build/lib/*.so* /opt/binaries/ 2>/dev/null || true \
-    && cp build/ggml/src/*.so* /opt/binaries/ 2>/dev/null || true \
+    && find build -name "*.so*" -type f -exec cp {} /opt/binaries/ \; \
+    && echo "Copied shared libraries:" && ls -lh /opt/binaries/*.so* \
     && cd /opt \
     && rm -rf llama.cpp
 
