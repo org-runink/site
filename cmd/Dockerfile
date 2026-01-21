@@ -12,29 +12,28 @@ RUN apk update && apk add --no-cache \
     linux-headers
 
 # Build stable-diffusion.cpp for image generation
-WORKDIR /build
+WORKDIR /opt
 RUN git clone --recursive https://github.com/leejet/stable-diffusion.cpp \
     && cd stable-diffusion.cpp \
     && mkdir build && cd build \
     && cmake .. -DGGML_OPENBLAS=ON \
     && cmake --build . --config Release \
-    && mkdir -p /build/bin \
-    && cp ../bin/sd-cli /build/bin/txt2img \
-    && cd /build \
+    && mkdir -p /opt/binaries \
+    && cp ../../bin/sd-cli /opt/binaries/txt2img \
+    && cd /opt \
     && rm -rf stable-diffusion.cpp
 
 # Build llama.cpp for text generation
-WORKDIR /build
+WORKDIR /opt
 RUN git clone https://github.com/ggml-org/llama.cpp \
     && cd llama.cpp \
     && cmake -B build -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS \
     && cmake --build build --config Release \
-    && mkdir -p /build/bin \
-    && cp build/bin/llama-server /build/bin/server \
-    && cd /build \
+    && cp build/bin/llama-server /opt/binaries/server \
+    && cd /opt \
     && rm -rf llama.cpp
 
-# At this point, only /build/bin contains our binaries, all source code removed
+# At this point, only /opt/binaries contains our binaries, all source code removed
 
 # ==========================================
 # Runtime Stage
@@ -69,8 +68,8 @@ COPY cmd/models/ ./models/
 
 # Copy compiled binaries from builder
 RUN mkdir -p ./shbin
-COPY --from=builder /build/bin/server ./shbin/server
-COPY --from=builder /build/bin/txt2img ./shbin/txt2img
+COPY --from=builder /opt/binaries/server ./shbin/server
+COPY --from=builder /opt/binaries/txt2img ./shbin/txt2img
 RUN chmod +x ./shbin/server ./shbin/txt2img
 
 # Make blog-gen executable
