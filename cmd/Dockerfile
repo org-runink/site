@@ -25,34 +25,23 @@ RUN apk update && apk add --no-cache \
     libstdc++ \
     libgomp \
     openblas \
-    tini \
     bash
 
-# Create a non-root user
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-
 # Copy pre-built binary from host
-COPY --chown=appuser:appgroup cmd/blog-gen .
-
-# Copy license notification script
-COPY --chown=appuser:appgroup cmd/entrypoint.sh .
-RUN chmod +x entrypoint.sh
+COPY cmd/blog-gen .
 
 # Copy application assets
 # We only need models and shbin. Content and static are mounted at runtime.
-COPY --chown=appuser:appgroup cmd/models/ ./models/
-COPY --chown=appuser:appgroup cmd/shbin/ ./shbin/
+COPY cmd/models/ ./models/
+COPY cmd/shbin/ ./shbin/
+
+# Make binary executable
+RUN chmod +x /app/blog-gen
 
 # Permissions & Environment
 ENV LOG_LEVEL=info \
     PATH="/app:${PATH}" \
     GIN_MODE=release
 
-# Run as root to avoid permission issues with mounted volumes
-# The container is isolated, so this is acceptable
-# USER appuser (removed to fix volume mount permissions)
-
-# Pass output paths as parameters to the entrypoint
-# We allow the user to pass arguments at runtime (via CMD or docker run args)
-# The entrypoint wrapper displays license notice, then passes to tini
-ENTRYPOINT ["/app/entrypoint.sh", "/sbin/tini", "--", "/app/blog-gen"]
+# Direct execution without wrapper
+ENTRYPOINT ["/app/blog-gen"]
