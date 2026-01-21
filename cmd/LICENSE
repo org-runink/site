@@ -1,0 +1,84 @@
+Runink Blog Generator - Dual License
+
+Copyright (c) 2026 Runink
+
+This software is available under two different licenses:
+
+═══════════════════════════════════════════════════════════════════
+
+1. NON-COMMERCIAL LICENSE (Free)
+═══════════════════════════════════════════════════════════════════
+
+Permission is hereby granted, free of charge, to any person or 
+organization obtaining a copy of this software, to use, copy, modify,
+and distribute the software for NON-COMMERCIAL purposes only, subject 
+to the following conditions:
+
+NON-COMMERCIAL USE includes:
+  • Personal projects
+  • Educational purposes
+  • Research and development
+  • Internal company testing (not production)
+  • Non-profit organizations
+  • Open-source projects
+
+REQUIREMENTS:
+  a) This copyright notice and license must be included in all copies
+  b) You must notify Runink of your usage:
+     - Email: contact@runink.org OR
+     - GitHub Issue: https://github.com/runink/site/issues (label: image-usage)
+  c) Attribution to Runink must be maintained
+  d) Any modifications must also be non-commercial
+
+═══════════════════════════════════════════════════════════════════
+
+2. COMMERCIAL LICENSE (Paid)
+═══════════════════════════════════════════════════════════════════
+
+COMMERCIAL USE includes any use that:
+  • Generates revenue or supports revenue-generating activities
+  • Is used in production environments of for-profit companies
+  • Is integrated into commercial products or services
+  • Provides services to paying customers
+  • Is used by companies with >$1M annual revenue
+
+To obtain a commercial license:
+  1. Contact: contact@runink.org
+  2. Subject: "Blog Generator Commercial License Request"
+  3. Include: Company name, use case, expected scale
+  4. Pricing: Custom quote based on usage
+
+Commercial licensing benefits:
+  • Priority support
+  • Custom features and integrations
+  • SLA guarantees
+  • Removal of attribution requirements (optional)
+  • Access to premium models and features
+
+═══════════════════════════════════════════════════════════════════
+
+ENFORCEMENT
+═══════════════════════════════════════════════════════════════════
+
+Runink reserves the right to:
+  • Audit usage via telemetry and notifications
+  • Request proof of commercial license for suspected violations
+  • Pursue legal action for unauthorized commercial use
+  • Revoke non-commercial licenses if terms are violated
+
+═══════════════════════════════════════════════════════════════════
+
+DISCLAIMER
+═══════════════════════════════════════════════════════════════════
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+═══════════════════════════════════════════════════════════════════
+
+For questions or licensing inquiries: contact@runink.org

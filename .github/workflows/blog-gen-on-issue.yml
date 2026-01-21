@@ -1,0 +1,196 @@
+name: Blog Generation Agent
+
+on:
+  issues:
+    types: [opened, reopened]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  generate-blog:
+    if: contains(github.event.issue.labels.*.name, 'blog-request')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true # Important for large model files if they are in LFS
+
+      - name: Extract Topic
+        id: get_topic
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body;
+            // Simple parsing to find "Topic:" or just take the title if simple
+            // Based on new template: "**Topic:**"
+            const match = body.match(/\*\*Topic:\*\*\s*(.+)/);
+            let topic = "";
+            if (match && match[1]) {
+              topic = match[1].trim();
+            } else {
+              // Fallback to issue title if body parse fails
+              topic = context.payload.issue.title.replace('Blog Request:', '').trim();
+            }
+            core.setOutput('topic', topic);
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pull Blog Generator Image
+        run: docker pull ghcr.io/${{ github.repository }}/blog-gen:latest
+
+      - name: Ensure output directories exist
+        run: |
+          mkdir -p content/blog
+          mkdir -p static/images/blog
+
+      - name: Run Blog Generation
+        id: blog_gen
+        # We mount the content directory to persist the output back to the host
+        run: |
+          # Capture the blog generation output
+          OUTPUT=$(docker run --rm \
+            -v ${{ github.workspace }}/content:/app/content \
+            -v ${{ github.workspace }}/static:/app/static \
+            -e TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }} \
+            ghcr.io/${{ github.repository }}/blog-gen:latest \
+            --content-dir /app/content/blog \
+            --image-dir /app/static/images/blog \
+            -t "${{ steps.get_topic.outputs.topic }}" 2>&1)
+
+          echo "$OUTPUT"
+
+          # Extract LinkedIn posts JSON from output
+          LINKEDIN_JSON=$(echo "$OUTPUT" | sed -n '/📱 LINKEDIN_POSTS_START/,/📱 LINKEDIN_POSTS_END/p' | sed '1d;$d')
+
+          # Save to environment for next steps
+          echo "linkedin_posts<<EOF" >> $GITHUB_OUTPUT
+          echo "$LINKEDIN_JSON" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "📝 Add blog: ${{ steps.get_topic.outputs.topic }}"
+          branch: "blog-auto-${{ github.event.issue.number }}"
+          title: "📝 Blog: ${{ steps.get_topic.outputs.topic }}"
+          body: |
+            This PR adds a new blog post generated primarily by AI.
+
+            **Topic:** ${{ steps.get_topic.outputs.topic }}
+            **Triggered by:** #${{ github.event.issue.number }}
+
+            Please review the content and diagrams before merging.
+          labels: "automated-content"
+
+      - name: Send LinkedIn Post Suggestions to Slack
+        if: success()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ -n "$SLACK_WEBHOOK_URL" ]; then
+            # Parse the LinkedIn posts JSON from blog generation output
+            LINKEDIN_JSON='${{ steps.blog_gen.outputs.linkedin_posts }}'
+            
+            # Extract company and personal posts using jq
+            COMPANY_POST=$(echo "$LINKEDIN_JSON" | jq -r '.company_post.text')
+            PERSONAL_POST=$(echo "$LINKEDIN_JSON" | jq -r '.personal_post.text')
+            
+            # Send to Slack
+            curl -X POST "$SLACK_WEBHOOK_URL" \
+              -H 'Content-Type: application/json' \
+              -d "{
+              \"text\": \"📝 New Blog Published - LinkedIn Promotion Ready\",
+              \"blocks\": [
+                {
+                  \"type\": \"header\",
+                  \"text\": {
+                    \"type\": \"plain_text\",
+                    \"text\": \"📝 New Blog Article Ready for Promotion\"
+                  }
+                },
+                {
+                  \"type\": \"section\",
+                  \"fields\": [
+                    {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"*Repository:*\n${{ github.repository }}\"
+                    },
+                    {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"*Topic:*\n${{ steps.get_topic.outputs.topic }}\"
+                    }
+                  ]
+                },
+                {
+                  \"type\": \"section\",
+                  \"fields\": [
+                    {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"*Triggered by:*\nIssue #${{ github.event.issue.number }}\"
+                    },
+                    {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"*User:*\n${{ github.actor }}\"
+                    }
+                  ]
+                },
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"View workflow: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Run #${{ github.run_number }}>\"
+                  }
+                },
+                {
+                  \"type\": \"divider\"
+                },
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"*📢 LinkedIn Company Page Post:*\n\\\`\\\`\\\`${COMPANY_POST}\\\`\\\`\\\`\"
+                  }
+                },
+                {
+                  \"type\": \"divider\"
+                },
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"*🔁 Your Personal Repost Message:*\n\\\`\\\`\\\`${PERSONAL_POST}\\\`\\\`\\\`\"
+                  }
+                },
+                {
+                  \"type\": \"context\",
+                  \"elements\": [
+                    {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"✏️ Feel free to customize these messages before posting!\"
+                    }
+                  ]
+                }
+              ]
+            }"
+          fi
+
+      - name: Comment on Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "🚀 Blog generation complete! A Pull Request has been created with the new article."
+            })
