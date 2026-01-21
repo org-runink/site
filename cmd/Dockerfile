@@ -19,8 +19,7 @@ RUN git clone --recursive https://github.com/leejet/stable-diffusion.cpp \
     && cmake .. -DGGML_OPENBLAS=ON \
     && cmake --build . --config Release \
     && mkdir -p /opt/binaries \
-    && find /opt/stable-diffusion.cpp -name "sd-cli" -type f \
-    && cp /opt/stable-diffusion.cpp/bin/sd-cli /opt/binaries/txt2img \
+    && cp /opt/stable-diffusion.cpp/build/bin/sd-cli /opt/binaries/txt2img \
     && cd /opt \
     && rm -rf stable-diffusion.cpp
 
