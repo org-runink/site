@@ -42,48 +42,116 @@ export TAVILY_API_KEY="your-key-here"
 
 ## 2. Generate a Specific Article (Docker Manual Run)
 
-Once you have built the image (via step 1), you can generate any blog topic manually:
+Once you have built the image (via step 1), you can generate any blog topic manually using Docker.
+
+### From the `cmd` directory:
 
 ```bash
 # 1. Export your API Key
 export TAVILY_API_KEY="your-key-here"
 
-# 2. Run the generator with your topic
+# 2. Ensure output directories exist
+mkdir -p ../content/blog ../static/images/blog
+
+# 3. Run the generator with your topic
 docker run --rm \
   -v "$(pwd)/../content":/app/content \
   -v "$(pwd)/../static":/app/static \
   -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
-  -e OPENBLAS_NUM_THREADS=8 \
-  -e OPENBLAS_MAIN_FREE=1 \
-  blog-gen -t "Your specific blog topic here"
+  blog-gen:latest \
+  --content-dir /app/content/blog \
+  --image-dir /app/static/images/blog \
+  -t "Your specific blog topic here"
 ```
 
-**Arguments:**
-- `-v ...:/app/content`: Mounts local content dir so the markdown file is saved locally.
-- `-v ...:/app/static`: Mounts local static dir for generated images.
-- `-e TAVILY_API_KEY=...`: Passes your API key to the container.
-- `-e OPENBLAS_NUM_THREADS=8`: Sets OpenBLAS to use 8 threads for numerical operations.
-- `-e OPENBLAS_MAIN_FREE=1`: Enables OpenBLAS memory cleanup.
-- `-t "..."`: The topic you want to write about.
+### Using the published Docker image:
+
+If you prefer to use the published image from GitHub Container Registry:
+
+```bash
+export TAVILY_API_KEY="your-key-here"
+
+docker run --rm \
+  -v "$(pwd)/content":/app/content \
+  -v "$(pwd)/static":/app/static \
+  -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
+  ghcr.io/org-runink/site/blog-gen:latest \
+  --content-dir /app/content/blog \
+  --image-dir /app/static/images/blog \
+  -t "AI-powered DevOps automation"
+```
+
+**Key Arguments:**
+- `-v ...:/app/content`: Mounts local content directory (blog markdown saved here)
+- `-v ...:/app/static`: Mounts local static directory (featured images saved here)
+- `-e TAVILY_API_KEY`: Your Tavily API key for research
+- `--content-dir`: Path inside container where blog markdown will be saved
+- `--image-dir`: Path inside container where featured images will be saved
+- `-t "..."`: The blog topic you want to generate
+
+**Output Includes:**
+- Generated blog article in markdown format
+- Featured image (PNG)
+- **LinkedIn post suggestions** (printed to console - copy these for social media sharing!)
 
 ---
 
-## 3. Trigger via GitHub Issues (Automation)
+## 3. Trigger via GitHub Issues (Fully Automated)
 
-The system is configured to automatically generate blogs when a specific Issue is created.
+The system is configured to automatically generate blogs when a labeled GitHub Issue is created.
 
-### Steps
-1.  Go to the **Issues** tab in this repository.
-2.  Click **New Issue**.
-3.  Select **Blog Article Request**.
-4.  Fill in the **Topic**.
-5.  Submit the issue.
+### Steps to Request a Blog Article
 
-### What Happens Next?
-1.  GitHub Actions triggers the `generate-blog` workflow.
-2.  A Docker container is built and run.
-3.  The agent researches, writes, and validates the article.
-4.  A **Pull Request** is automatically created with the new content.
-5.  A comment is posted on your Issue with the result.
+1. Go to the **Issues** tab in your repository: https://github.com/org-runink/site/issues
+2. Click **New Issue**
+3. Select the **Blog Article Request** template
+4. Fill in the **Topic** field with your desired blog subject
+5. Submit the issue
 
+### Automation Workflow
+
+Once you submit the issue, the following happens automatically:
+
+1. **Workflow Trigger**: GitHub Actions detects the `blog-request` label and triggers the blog generation workflow
+2. **Docker Container**: The latest `blog-gen` Docker image is pulled from GitHub Container Registry
+3. **Content Generation**: 
+   - Tavily API researches the topic (20+ sources)
+   - ARIMA trend analysis ranks results
+   - AI generates 1200+ word article with Mermaid diagrams
+   - Featured image is generated
+   - **LinkedIn post suggestions are created** (company page + personal repost)
+4. **Pull Request Created**: A new PR is automatically opened with:
+   - Blog article markdown
+   - Featured image
+   - Automated validation results
+5. **Slack Notification**: Your configured Slack channel receives:
+   - Blog generation status
+   - **LinkedIn company page post** (ready to copy/paste)
+   - **LinkedIn personal repost suggestion** (ready to share)
+   - Link to the Pull Request for review
+6. **Issue Updated**: The original issue is commented with the PR link and marked as completed
+
+### Expected Timeline
+
+- **Total time**: 5-10 minutes
+- Research & generation: 3-5 minutes
+- Image generation: 1-2 minutes
+- Validation & PR creation: 30 seconds
+
+### LinkedIn Posts in Slack
+
+After successful generation, you'll receive a Slack message with two ready-to-use LinkedIn posts:
+
+**📢 Company Page Post** - Professional, brand-focused message with:
+- Topic introduction
+- Key insights teaser
+- Blog link
+- Relevant hashtags (#TechBlog, #Innovation, etc.)
+
+**🔁 Personal Repost** - Casual, engaging message for your personal profile with:
+- Personal touch
+- Blog link
+- Professional hashtags (#TechInsights, #Learning, etc.)
+
+Simply copy and paste these directly to LinkedIn - no additional editing needed!
 
