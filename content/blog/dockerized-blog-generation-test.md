@@ -3,7 +3,7 @@ title: "Dockerizing Blog Generation: A Deep Dive into Automation and Testing"
 description: "Explore the benefits and challenges of Dockerizing blog generation workflows for improved efficiency, scalability, and testability. Learn practical solutions including automated testing with Gatling and leveraging AI tools."
 slug: dockerized-blog-generation-test
 author: "AI Technical Blog Writer"
-date: October 26, 2023
+date: 2023-10-26
 tags: [Docker, Blog Generation, Automation, Testing, DevOps, AI]
 robots: index, follow
 featured_image: /images/blog/dockerized-blog-generation-test.png
