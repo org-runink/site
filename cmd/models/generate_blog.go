@@ -640,9 +640,7 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for problem_statement
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "problem_statement" {
-			md.WriteString("```mermaid\n")
-			md.WriteString(diagram.DiagramCode + "\n")
-			md.WriteString("```\n\n")
+			md.WriteString(diagram.DiagramCode + "\n\n")
 		}
 	}
 
@@ -652,9 +650,7 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for why_important
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "why_important" {
-			md.WriteString("```mermaid\n")
-			md.WriteString(diagram.DiagramCode + "\n")
-			md.WriteString("```\n\n")
+			md.WriteString(diagram.DiagramCode + "\n\n")
 		}
 	}
 
@@ -664,9 +660,7 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for ways_to_solve
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "ways_to_solve" {
-			md.WriteString("```mermaid\n")
-			md.WriteString(diagram.DiagramCode + "\n")
-			md.WriteString("```\n\n")
+			md.WriteString(diagram.DiagramCode + "\n\n")
 		}
 	}
 
@@ -701,7 +695,7 @@ func generateFeaturedImage(article *BlogArticle, staticDir string) error {
 	// Using reduced steps (10) for speed as requested
 	cmd := exec.Command(
 		"../shbin/txt2img",
-		"-m", "gemma-3-12b-it-q4_0/../stable-diffusion-v1-5-pruned-emaonly-Q4_1.gguf", // Assuming model location relative to execution
+		"-m", "stable-diffusion-v1-5-pruned-emaonly-Q4_1.gguf",
 		"--vae-on-cpu",
 		"--vae-tiling",
 		"--clip-on-cpu",
