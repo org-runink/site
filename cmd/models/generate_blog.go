@@ -854,9 +854,12 @@ func startLlamaServer(ctx context.Context) error {
 	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH=../shbin:"+os.Getenv("LD_LIBRARY_PATH"))
 	cmd.Dir = "." // Already in models directory
 
-	// Capture server output for debugging
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+	// Capture server output for debugging only in verbose mode
+	if isVerbose() {
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+	}
+	// In production mode, discard server output (embeddings vectors are very verbose)
 
 	// Start server in background
 	if err := cmd.Start(); err != nil {
