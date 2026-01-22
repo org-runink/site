@@ -475,7 +475,7 @@ type ImageGeneration struct {
 	StyleNotes     string `json:"style_notes"`
 }
 
-func generateBlogArticle(ctx context.Context, topic string, tavilyKey string) (*BlogArticle, error) {
+func generateBlogArticle(ctx context.Context, topic string, tavilyKey string, contentDir string) (*BlogArticle, error) {
 	// Step 1: Search Tavily for latest information
 	fmt.Printf("🔍 Searching Tavily for: %s\n", topic)
 	searchResults, err := searchTavily(ctx, topic, tavilyKey)
@@ -489,7 +489,7 @@ func generateBlogArticle(ctx context.Context, topic string, tavilyKey string) (*
 
 	// Step 3: Get existing blog articles for RAG
 	fmt.Println("📚 Retrieving existing blog articles...")
-	existingArticles, err := getExistingBlogArticles(ctx, topic, "../../content/blog")
+	existingArticles, err := getExistingBlogArticles(ctx, topic, contentDir)
 	if err != nil {
 		fmt.Printf("⚠️ Failed to retrieve existing articles: %v\n", err)
 		// Don't fail completely, just use empty context
@@ -950,6 +950,12 @@ func saveArticle(article *BlogArticle, contentDir, staticDir string) error {
 	// Convert to markdown (now includes correct featured_image path)
 	markdown := convertToMarkdown(article)
 
+	// Fix potential configuration issue where path has duplicate /blog/blog
+	// Check for both unix and windows separators just in case
+	if strings.HasSuffix(contentDir, "/blog/blog") || strings.HasSuffix(contentDir, "\\blog\\blog") {
+		contentDir = filepath.Dir(contentDir)
+	}
+
 	// Save markdown file
 	filePath := filepath.Join(contentDir, article.Metadata.Slug+".md")
 
@@ -1091,7 +1097,7 @@ func GenerateBlogFromModels(ctx context.Context, topic, tavilyKey, contentDir, s
 
 	fmt.Printf("🚀 Starting blog generation for: %s\n\n", topic)
 
-	article, err := generateBlogArticle(ctx, topic, tavilyKey)
+	article, err := generateBlogArticle(ctx, topic, tavilyKey, contentDir)
 	if err != nil {
 		return "", fmt.Errorf("generation error: %v", err)
 	}
