@@ -851,6 +851,9 @@ func sanitizeArticle(article *BlogArticle) {
 	article.Content.WhyImportant = htmlTagsReplacer.Replace(article.Content.WhyImportant)
 	article.Content.WaysToSolve = htmlTagsReplacer.Replace(article.Content.WaysToSolve)
 	article.Content.ConclusionCTA = htmlTagsReplacer.Replace(article.Content.ConclusionCTA)
+
+	// 4. Set Current Date (Don't trust the model's date)
+	article.Metadata.Date = time.Now().Format("2006-01-02")
 }
 
 func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArticleSummary) string {
@@ -956,7 +959,7 @@ func executeLlamaCLI(ctx context.Context, prompt string) (*BlogArticle, error) {
 	// Prepare completion request
 	reqBody := map[string]interface{}{
 		"prompt":         fullPrompt,
-		"n_predict":      4000,
+		"n_predict":      8192, // Increased from 4000 to 8192 to prevent truncation of long articles
 		"temperature":    0.7,
 		"top_k":          40,
 		"top_p":          0.92,
