@@ -678,10 +678,13 @@ func generateFeaturedImage(article *BlogArticle, staticDir string) error {
 		return fmt.Errorf("create image directory: %w", err)
 	}
 
-	// Fallback if prompt is empty (common issue with smaller models)
+	// Always enforce low-poly style for consistent branding
 	if strings.TrimSpace(article.ImageGen.PositivePrompt) == "" {
 		fmt.Println("⚠️ Model returned empty image prompt. Generating fallback prompt.")
 		article.ImageGen.PositivePrompt = fmt.Sprintf("low poly style illustration of %s, isometric 3d, soft lighting, minimal, 4k", article.Metadata.Title)
+	} else if !strings.Contains(strings.ToLower(article.ImageGen.PositivePrompt), "low poly") {
+		// Prepend low-poly style if not already present
+		article.ImageGen.PositivePrompt = "low poly style, " + article.ImageGen.PositivePrompt
 	}
 
 	fmt.Printf("🎨 Generating lowpoly image: %s\n", imagePath)
@@ -763,11 +766,14 @@ func createPlaceholderImage(imagePath string) error {
 // ============================================================================
 
 func saveArticle(article *BlogArticle, contentDir, staticDir string) error {
-	// Convert to markdown
+	// Set featured image path BEFORE converting to markdown
+	imageFilename := article.Metadata.Slug + ".png"
+	article.Metadata.FeaturedImage = "/images/blog/" + imageFilename
+
+	// Convert to markdown (now includes correct featured_image path)
 	markdown := convertToMarkdown(article)
 
 	// Save markdown file
-	// Use provided content directory
 	filePath := filepath.Join(contentDir, article.Metadata.Slug+".md")
 
 	// Create directory if it doesn't exist
