@@ -1132,6 +1132,7 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Content sections (New 5-section structure)
 	md.WriteString(article.Content.IntroductionContext + "\n\n")
 
+	md.WriteString("## The Challenge\n\n")
 	md.WriteString(article.Content.ProblemStatement + "\n\n")
 
 	// Insert diagram for problem_statement
@@ -1141,6 +1142,7 @@ func convertToMarkdown(article *BlogArticle) string {
 		}
 	}
 
+	md.WriteString("## Why This Matters\n\n")
 	md.WriteString(article.Content.WhyImportant + "\n\n")
 
 	// Insert diagram for why_important
@@ -1150,6 +1152,7 @@ func convertToMarkdown(article *BlogArticle) string {
 		}
 	}
 
+	md.WriteString("## Strategic Solutions\n\n")
 	md.WriteString(article.Content.WaysToSolve + "\n\n")
 
 	// Insert diagram for ways_to_solve
@@ -1159,6 +1162,7 @@ func convertToMarkdown(article *BlogArticle) string {
 		}
 	}
 
+	md.WriteString("## Key Takeaways and Next Steps\n\n")
 	md.WriteString(article.Content.ConclusionCTA + "\n\n")
 
 	return md.String()
