@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"math"
 	"net/http"
 	"os"
 	"os/exec"
@@ -216,9 +217,6 @@ type BlogArticleSummary struct {
 func getExistingBlogArticles(ctx context.Context, topic string, contentDir string) ([]BlogArticleSummary, error) {
 	summaries := []BlogArticleSummary{}
 
-	// Locate embedding model
-	modelPath := "bge-m3-f16.gguf" // Relative to cmd/models where binary runs
-
 	// Get list of markdown files
 	files, err := filepath.Glob(filepath.Join(contentDir, "*.md"))
 	if err != nil {
@@ -226,85 +224,202 @@ func getExistingBlogArticles(ctx context.Context, topic string, contentDir strin
 	}
 
 	if len(files) == 0 {
-		return summaries, nil // No files to search
+		return summaries, nil
 	}
 
-	// Sort files by modification time (newest first)
+	// 1. Get embedding for the current topic
+	fmt.Printf("🧠 Generating embedding for topic: %s\n", topic)
+	topicEmbedding, err := getEmbedding(ctx, topic)
+	if err != nil {
+		fmt.Printf("⚠️ Failed to get topic embedding (server might be starting): %v\n", err)
+		// Fallback to simple file listing if embeddings fail
+		return getRecentArticles(files, 5)
+	}
+
+	// 2. Process existing files and calculate similarity
+	type ScoredArticle struct {
+		Path       string
+		Snippet    string
+		Similarity float64
+	}
+	var scoredArticles []ScoredArticle
+
+	fmt.Printf("📚 Scanning %d existing articles for semantic relevance...\n", len(files))
+
+	// Limit to checking most recent 20 files to save time
+	maxCheck := 20
+	if len(files) > maxCheck {
+		sort.Strings(files) // Sort to ensure determinism, ideally sort by date buf glob doesn't guarantee
+		// Get last 20 (assuming alphabetical often correlates or just sample)
+		// Better: sort by mod time first
+		files = sortFilesByTime(files)[:maxCheck]
+	}
+
+	for _, f := range files {
+		content, err := os.ReadFile(f)
+		if err != nil {
+			continue
+		}
+
+		// Extract a meaningful snippet (first 500 chars usually contains intro)
+		text := string(content)
+		if len(text) > 1000 {
+			text = text[:1000]
+		}
+		// Remove frontmatter
+		if parts := strings.Split(text, "---"); len(parts) >= 3 {
+			text = parts[2]
+		}
+		text = strings.TrimSpace(text)
+		if len(text) > 500 {
+			text = text[:500]
+		}
+
+		if text == "" {
+			continue
+		}
+
+		// Get embedding for article snippet
+		embedding, err := getEmbedding(ctx, text)
+		if err != nil {
+			continue
+		}
+
+		similarity := cosineSimilarity(topicEmbedding, embedding)
+		scoredArticles = append(scoredArticles, ScoredArticle{
+			Path:       f,
+			Snippet:    text,
+			Similarity: similarity,
+		})
+	}
+
+	// 3. Sort by similarity
+	sort.Slice(scoredArticles, func(i, j int) bool {
+		return scoredArticles[i].Similarity > scoredArticles[j].Similarity
+	})
+
+	// 4. Return top 3
+	topK := 3
+	if len(scoredArticles) < topK {
+		topK = len(scoredArticles)
+	}
+
+	for i := 0; i < topK; i++ {
+		article := scoredArticles[i]
+		// Extract title from filename or content if possible, simplistic for now
+		filename := filepath.Base(article.Path)
+		slug := strings.TrimSuffix(filename, filepath.Ext(filename))
+
+		fmt.Printf("   Found related: %s (Score: %.2f)\n", slug, article.Similarity)
+
+		summaries = append(summaries, BlogArticleSummary{
+			Slug:           slug,
+			Title:          slug, // AI will see this as context
+			ContentSnippet: article.Snippet,
+		})
+	}
+
+	return summaries, nil
+}
+
+func getRecentArticles(files []string, count int) ([]BlogArticleSummary, error) {
+	// Simple fallback: sort by time and return recent
+	summaries := []BlogArticleSummary{}
+	sorted := sortFilesByTime(files)
+	if len(sorted) < count {
+		count = len(sorted)
+	}
+	for i := 0; i < count; i++ {
+		f := sorted[i]
+		info, _ := os.Stat(f)
+		summaries = append(summaries, BlogArticleSummary{
+			Slug:           filepath.Base(f),
+			Title:          filepath.Base(f),
+			ContentSnippet: fmt.Sprintf("Article from %s", info.ModTime().Format("2006-01-02")),
+		})
+	}
+	return summaries, nil
+}
+
+func sortFilesByTime(files []string) []string {
 	type fileInfo struct {
 		path string
 		time time.Time
 	}
 	var fileInfos []fileInfo
-
 	for _, f := range files {
 		info, err := os.Stat(f)
 		if err == nil {
 			fileInfos = append(fileInfos, fileInfo{path: f, time: info.ModTime()})
 		}
 	}
-
 	sort.Slice(fileInfos, func(i, j int) bool {
 		return fileInfos[i].time.After(fileInfos[j].time)
 	})
-
-	// Limit to latest 5 files to ensure speed
-	maxFiles := 5
-	if len(fileInfos) < maxFiles {
-		maxFiles = len(fileInfos)
+	var sorted []string
+	for _, fi := range fileInfos {
+		sorted = append(sorted, fi.path)
 	}
+	return sorted
+}
 
-	var limitedFiles []string
-	for i := 0; i < maxFiles; i++ {
-		limitedFiles = append(limitedFiles, fileInfos[i].path)
-	}
+// EmbeddingRequest struct for llama-server
+type EmbeddingRequest struct {
+	Content string `json:"content"`
+}
 
-	// Construct command for retrieval
-	args := []string{
-		"--model", modelPath,
-		"--top-k", "3",
-		"--chunk-size", "256",
-		"--chunk-separator", "\n",
-	}
+type EmbeddingResponse struct {
+	Embedding []float64 `json:"embedding"`
+}
 
-	// Add context files (comma-separated for retrieval binary)
-	contextFiles := strings.Join(limitedFiles, ",")
-	if contextFiles != "" {
-		args = append(args, "--context-file", contextFiles)
-	}
+func getEmbedding(ctx context.Context, text string) ([]float64, error) {
+	url := "http://localhost:8080/embedding"
 
-	// Add query using --prompt flag
-	args = append(args, "--prompt", topic)
-
-	fmt.Printf("📚 Running RAG retrieval for: %s (scanning latest %d articles)\n", topic, maxFiles)
-	cmd := exec.Command("../shbin/retrieval", args...)
-	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH=../shbin:"+os.Getenv("LD_LIBRARY_PATH"))
-	cmd.Dir = "." // Run in models dir where model files are
-
-	output, err := cmd.CombinedOutput()
+	payload := EmbeddingRequest{Content: text}
+	jsonPayload, err := json.Marshal(payload)
 	if err != nil {
-		// If retrieval binary fails (e.g. model mismatch), log but don't crash main flow
-		fmt.Printf("⚠️ Retrieval failed: %v\nOutput: %s\n", err, string(output))
-		return summaries, nil
+		return nil, err
 	}
 
-	// Parse output to create summaries
-	// Output format is unknown, assuming plain text chunks.
-	// We'll wrap them in a generic summary structure.
+	req, err := http.NewRequestWithContext(ctx, "POST", url, bytes.NewBuffer(jsonPayload))
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("Content-Type", "application/json")
 
-	chunks := strings.Split(string(output), "\n\n")
-	for i, chunk := range chunks {
-		if strings.TrimSpace(chunk) == "" {
-			continue
-		}
-		summary := BlogArticleSummary{
-			Slug:           fmt.Sprintf("retrieved-context-%d", i+1),
-			Title:          "Retrieved Context",
-			ContentSnippet: strings.TrimSpace(chunk),
-		}
-		summaries = append(summaries, summary)
+	client := &http.Client{Timeout: 10 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("bad status: %s", resp.Status)
 	}
 
-	return summaries, nil
+	var embeddingResp EmbeddingResponse
+	if err := json.NewDecoder(resp.Body).Decode(&embeddingResp); err != nil {
+		return nil, err
+	}
+
+	return embeddingResp.Embedding, nil
+}
+
+func cosineSimilarity(a, b []float64) float64 {
+	if len(a) != len(b) {
+		return 0
+	}
+	var dotProduct, normA, normB float64
+	for i := range a {
+		dotProduct += a[i] * b[i]
+		normA += a[i] * a[i]
+		normB += b[i] * b[i]
+	}
+	if normA == 0 || normB == 0 {
+		return 0
+	}
+	return dotProduct / (math.Sqrt(normA) * math.Sqrt(normB))
 }
 
 // ============================================================================
@@ -373,7 +488,9 @@ func generateBlogArticle(ctx context.Context, topic string, tavilyKey string) (*
 	fmt.Println("📚 Retrieving existing blog articles...")
 	existingArticles, err := getExistingBlogArticles(ctx, topic, "../../content/blog")
 	if err != nil {
-		return nil, fmt.Errorf("get existing articles: %w", err)
+		fmt.Printf("⚠️ Failed to retrieve existing articles: %v\n", err)
+		// Don't fail completely, just use empty context
+		existingArticles = []BlogArticleSummary{}
 	}
 
 	// Step 4: Build comprehensive prompt
@@ -591,6 +708,7 @@ func startLlamaServer(ctx context.Context) error {
 		"--port", "8080",
 		"--host", "127.0.0.1",
 		"-ngl", "0",
+		"--embedding",
 	)
 
 	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH=../shbin:"+os.Getenv("LD_LIBRARY_PATH"))
@@ -625,7 +743,9 @@ func convertToMarkdown(article *BlogArticle) string {
 	md.WriteString(fmt.Sprintf("slug: %s\n", article.Metadata.Slug))
 	md.WriteString(fmt.Sprintf("author: \"%s\"\n", article.Metadata.Author))
 	md.WriteString(fmt.Sprintf("date: %s\n", article.Metadata.Date))
-	md.WriteString(fmt.Sprintf("tags: [%s]\n", strings.Join(article.Metadata.Tags, ", ")))
+	// Deduplicate tags
+	cleanTags := uniqueStrings(article.Metadata.Tags)
+	md.WriteString(fmt.Sprintf("tags: [%s]\n", strings.Join(cleanTags, ", ")))
 	md.WriteString(fmt.Sprintf("robots: %s\n", article.Metadata.Robots))
 	md.WriteString(fmt.Sprintf("featured_image: %s\n", article.Metadata.FeaturedImage))
 	md.WriteString(fmt.Sprintf("canonical: %s\n", article.Metadata.Canonical))
@@ -639,7 +759,7 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for problem_statement
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "problem_statement" {
-			md.WriteString(diagram.DiagramCode + "\n\n")
+			md.WriteString(sanitizeMermaidCode(diagram.DiagramCode) + "\n\n")
 		}
 	}
 
@@ -648,7 +768,7 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for why_important
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "why_important" {
-			md.WriteString(diagram.DiagramCode + "\n\n")
+			md.WriteString(sanitizeMermaidCode(diagram.DiagramCode) + "\n\n")
 		}
 	}
 
@@ -657,7 +777,7 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for ways_to_solve
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "ways_to_solve" {
-			md.WriteString(diagram.DiagramCode + "\n\n")
+			md.WriteString(sanitizeMermaidCode(diagram.DiagramCode) + "\n\n")
 		}
 	}
 
@@ -667,10 +787,39 @@ func convertToMarkdown(article *BlogArticle) string {
 }
 
 // ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+
+func uniqueStrings(input []string) []string {
+	keys := make(map[string]bool)
+	list := []string{}
+	for _, entry := range input {
+		if _, value := keys[entry]; !value {
+			keys[entry] = true
+			list = append(list, entry)
+		}
+	}
+	return list
+}
+
+func sanitizeMermaidCode(code string) string {
+	// Remove existing backticks and language identifiers
+	code = strings.TrimSpace(code)
+	code = strings.ReplaceAll(code, "```mermaid", "")
+	code = strings.ReplaceAll(code, "```", "")
+	code = strings.TrimSpace(code)
+
+	// Wrap cleanly
+	return "```mermaid\n" + code + "\n```"
+}
+
+// ============================================================================
 // IMAGE GENERATION
 // ============================================================================
 
 func generateFeaturedImage(article *BlogArticle, staticDir string) error {
+	// staticDir already includes the full path (e.g., "../static/images/blog")
+	// Just append the image filename, not another /blog/ subdirectory
 	imagePath := filepath.Join(staticDir, article.Metadata.Slug+".png")
 
 	// Ensure directory exists
