@@ -499,7 +499,7 @@ func getEmbedding(ctx context.Context, text string) ([]float64, error) {
 		return rawEmbedding, nil
 	}
 
-	return nil, fmt.Errorf("could not parse embedding response: %s", string(body))
+	return nil, fmt.Errorf("could not parse embedding response (%d bytes)", len(body))
 }
 
 func cosineSimilarity(a, b []float64) float64 {
