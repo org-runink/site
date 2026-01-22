@@ -369,13 +369,12 @@ func generateBlogArticle(ctx context.Context, topic string, tavilyKey string) (*
 	fmt.Printf("📊 Analyzing trends from %d results...\n", len(searchResults.Results))
 	trends := analyzeAndRankTrends(searchResults.Results, topic)
 
-	// Step 3: Get existing blog articles for RAG (DISABLED)
-	// fmt.Println("📚 Retrieving existing blog articles...")
-	// existingArticles, err := getExistingBlogArticles(ctx, topic, "../../content/blog")
-	// if err != nil {
-	// 	return nil, fmt.Errorf("get existing articles: %w", err)
-	// }
-	var existingArticles []BlogArticleSummary // Empty slice
+	// Step 3: Get existing blog articles for RAG
+	fmt.Println("📚 Retrieving existing blog articles...")
+	existingArticles, err := getExistingBlogArticles(ctx, topic, "../../content/blog")
+	if err != nil {
+		return nil, fmt.Errorf("get existing articles: %w", err)
+	}
 
 	// Step 4: Build comprehensive prompt
 	prompt := buildPrompt(topic, trends[:5], existingArticles) // Top 5 trending results
@@ -404,15 +403,17 @@ func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArtic
 		prompt.WriteString(fmt.Sprintf("   Summary: %s\n\n", strings.Split(trend.Result.Content, ".")[0]))
 	}
 
-	// Add RAG context from existing articles (DISABLED)
-	// prompt.WriteString("\n## RAG Context - Existing Related Articles (Semantic Search):\n\n")
-	// for i, article := range existingArticles {
-	// 	if i >= 3 { // Limit to top 3 chunks
-	// 		break
-	// 	}
-	// 	prompt.WriteString(fmt.Sprintf("%d. Context Snippet:\n", i+1))
-	// 	prompt.WriteString(fmt.Sprintf("   %s\n\n", article.ContentSnippet))
-	// }
+	// Add RAG context from existing articles
+	if len(existingArticles) > 0 {
+		prompt.WriteString("\n## RAG Context - Existing Related Articles (Semantic Search):\n\n")
+		for i, article := range existingArticles {
+			if i >= 3 { // Limit to top 3 chunks
+				break
+			}
+			prompt.WriteString(fmt.Sprintf("%d. Context Snippet:\n", i+1))
+			prompt.WriteString(fmt.Sprintf("   %s\n\n", article.ContentSnippet))
+		}
+	}
 
 	prompt.WriteString("\n## Content Requirements (CRITICAL):\n")
 	prompt.WriteString("- TOTAL WORD COUNT: 1200+ words minimum.\n")
