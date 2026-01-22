@@ -506,7 +506,33 @@ func generateBlogArticle(ctx context.Context, topic string, tavilyKey string, co
 		return nil, fmt.Errorf("llama-cli execution: %w", err)
 	}
 
+	// Step 6: Sanitize content (fix slugs, domains, etc.)
+	sanitizeArticle(article)
+
 	return article, nil
+}
+
+func sanitizeArticle(article *BlogArticle) {
+	// 1. Sanitize Slug to prevent path traversal/duplication
+	article.Metadata.Slug = filepath.Base(article.Metadata.Slug)
+	article.Metadata.Slug = strings.ToLower(strings.TrimSpace(article.Metadata.Slug))
+	article.Metadata.Slug = strings.ReplaceAll(article.Metadata.Slug, " ", "-")
+	// Remove any remaining slashes just in case
+	article.Metadata.Slug = strings.Trim(article.Metadata.Slug, "/")
+
+	// 2. Fix Domains (Model often hallucinates .ai instead of .org)
+	replacer := strings.NewReplacer(
+		"runink.ai", "runink.org",
+		"http://runink.ai", "https://runink.org",
+		"https://runink.ai", "https://runink.org",
+		"/demo", "", // Remove hallucinated demo endpoints
+	)
+
+	article.Content.IntroductionContext = replacer.Replace(article.Content.IntroductionContext)
+	article.Content.ProblemStatement = replacer.Replace(article.Content.ProblemStatement)
+	article.Content.WhyImportant = replacer.Replace(article.Content.WhyImportant)
+	article.Content.WaysToSolve = replacer.Replace(article.Content.WaysToSolve)
+	article.Content.ConclusionCTA = replacer.Replace(article.Content.ConclusionCTA)
 }
 
 func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArticleSummary) string {
