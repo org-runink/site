@@ -584,19 +584,30 @@ func sortFilesByTime(files []string) []string {
 	return sorted
 }
 
-// EmbeddingRequest struct for llama-server
+// EmbeddingRequest struct for llama-server (OpenAI-compatible API)
 type EmbeddingRequest struct {
-	Content string `json:"content"`
+	Input string `json:"input"`
+	Model string `json:"model,omitempty"`
 }
 
 type EmbeddingResponse struct {
-	Embedding []float64 `json:"embedding"`
+	Object string `json:"object"`
+	Data   []struct {
+		Object    string    `json:"object"`
+		Embedding []float64 `json:"embedding"`
+		Index     int       `json:"index"`
+	} `json:"data"`
+	Model string `json:"model"`
 }
 
 func getEmbedding(ctx context.Context, text string) ([]float64, error) {
-	url := "http://localhost:8080/embedding"
+	// Use OpenAI-compatible endpoint
+	url := "http://localhost:8080/v1/embeddings"
 
-	payload := EmbeddingRequest{Content: text}
+	payload := EmbeddingRequest{
+		Input: text,
+		Model: "text-embedding", // Optional, llama-server ignores this
+	}
 	jsonPayload, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
@@ -624,16 +635,16 @@ func getEmbedding(ctx context.Context, text string) ([]float64, error) {
 		return nil, fmt.Errorf("read response body: %w", err)
 	}
 
-	// Try struct format first
+	// Try OpenAI-compatible format first
 	var embeddingResp EmbeddingResponse
-	if err := json.Unmarshal(body, &embeddingResp); err == nil && len(embeddingResp.Embedding) > 0 {
+	if err := json.Unmarshal(body, &embeddingResp); err == nil && len(embeddingResp.Data) > 0 {
 		if isVerbose() {
-			fmt.Printf("   Parsed as struct format, embedding size: %d\n", len(embeddingResp.Embedding))
+			fmt.Printf("   Parsed as OpenAI format, embedding size: %d\n", len(embeddingResp.Data[0].Embedding))
 		}
-		return embeddingResp.Embedding, nil
+		return embeddingResp.Data[0].Embedding, nil
 	}
 
-	// Try raw array format (likely what llama-server returns)
+	// Fallback: Try raw array format
 	var rawEmbedding []float64
 	if err := json.Unmarshal(body, &rawEmbedding); err == nil {
 		if isVerbose() {
