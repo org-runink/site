@@ -195,16 +195,16 @@ docker run --rm \
 
 **Cause**: Missing llama.cpp shared libraries
 
-**Solution**: Fixed in latest Dockerfile. The build now recursively finds ALL `.so*` files:
+**Solution**: Fixed in latest Dockerfile. The build now recursively finds ALL `.so*` files (including symlinks):
 ```dockerfile
-find build -name "*.so*" -type f -exec cp {} /opt/binaries/ \;
+find build -name "*.so*" ! -type d -exec cp -P {} /opt/binaries/ \;
 ```
 
 **Required libraries** (all copied automatically):
-- `libmtmd.so.0`
-- `libllama.so.0`
-- `libggml.so.0`
-- `libggml-base.so.0`
+- `libmtmd.so.0` (symlink to actual binary)
+- `libllama.so.0` (symlink)
+- `libggml.so.0` (symlink)
+- `libggml-base.so.0` (symlink)
 
 **Verify**:
 ```bash

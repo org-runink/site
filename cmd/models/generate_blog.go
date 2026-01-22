@@ -293,9 +293,12 @@ func getExistingBlogArticles(ctx context.Context, topic string, contentDir strin
 		})
 	}
 
-	// 3. Sort by similarity
+	// 3. Score and Rerank (Hybrid: Vector + Keyword)
 	sort.Slice(scoredArticles, func(i, j int) bool {
-		return scoredArticles[i].Similarity > scoredArticles[j].Similarity
+		// Calculate keyword overlap for reranking
+		scoreI := (scoredArticles[i].Similarity * 0.7) + (calculateKeywordScore(scoredArticles[i].Snippet, topic) * 0.3)
+		scoreJ := (scoredArticles[j].Similarity * 0.7) + (calculateKeywordScore(scoredArticles[j].Snippet, topic) * 0.3)
+		return scoreI > scoreJ
 	})
 
 	// 4. Return top 3
@@ -789,6 +792,31 @@ func convertToMarkdown(article *BlogArticle) string {
 // ============================================================================
 // HELPER FUNCTIONS
 // ============================================================================
+
+func calculateKeywordScore(text, topic string) float64 {
+	topicWords := strings.Fields(strings.ToLower(topic))
+	textLower := strings.ToLower(text)
+	score := 0.0
+	matches := 0
+	for _, word := range topicWords {
+		if len(word) < 3 {
+			continue
+		} // Skip short words
+		if strings.Contains(textLower, word) {
+			matches++
+			score += 0.2
+		}
+	}
+	// Bonus for exact phrase match
+	if strings.Contains(textLower, strings.ToLower(topic)) {
+		score += 0.5
+	}
+	// Normalize/Cap
+	if score > 1.0 {
+		score = 1.0
+	}
+	return score
+}
 
 func uniqueStrings(input []string) []string {
 	keys := make(map[string]bool)

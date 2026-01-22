@@ -44,26 +44,6 @@ export TAVILY_API_KEY="your-key-here"
 
 Once you have built the image (via step 1), you can generate any blog topic manually using Docker.
 
-### From the `cmd` directory:
-
-```bash
-# 1. Export your API Key
-export TAVILY_API_KEY="your-key-here"
-
-# 2. Ensure output directories exist
-mkdir -p ../content/blog ../static/images/blog
-
-# 3. Run the generator with your topic
-docker run --rm \
-  -v "$(pwd)/../content":/app/content \
-  -v "$(pwd)/../static":/app/static \
-  -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
-  blog-gen:latest \
-  --content-dir /app/content/blog \
-  --image-dir /app/static/images/blog \
-  -t "Your specific blog topic here"
-```
-
 ### Using the published Docker image:
 
 If you prefer to use the published image from GitHub Container Registry:
