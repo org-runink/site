@@ -476,6 +476,11 @@ type ImageGeneration struct {
 }
 
 func generateBlogArticle(ctx context.Context, topic string, tavilyKey string, contentDir string) (*BlogArticle, error) {
+	// Step 0: Ensure llama-server is running (required for embeddings in Step 3)
+	if err := ensureServerRunning(ctx); err != nil {
+		return nil, fmt.Errorf("server startup failed: %w", err)
+	}
+
 	// Step 1: Search Tavily for latest information
 	fmt.Printf("🔍 Searching Tavily for: %s\n", topic)
 	searchResults, err := searchTavily(ctx, topic, tavilyKey)
@@ -583,32 +588,9 @@ func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArtic
 }
 
 func executeLlamaCLI(ctx context.Context, prompt string) (*BlogArticle, error) {
-	// Start llama-server if not running
-	serverURL := "http://localhost:8080"
-
-	// Check if server is running, if not start it
-	if !isServerRunning(serverURL) {
-		fmt.Println("🔧 Starting llama-server...")
-		if err := startLlamaServer(ctx); err != nil {
-			return nil, fmt.Errorf("failed to start llama-server: %w", err)
-		}
-
-		// Wait for server to be ready (model loading can take 3-5 minutes for 4B model on CPU)
-		fmt.Println("⏳ Waiting for model to load (this may take 3-5 minutes on CPU)...")
-		maxRetries := 100 // 100 * 3s = 5 minutes max
-		for i := 0; i < maxRetries; i++ {
-			time.Sleep(3 * time.Second)
-			if isServerReady(serverURL) {
-				fmt.Println("✓ Server ready!")
-				break
-			}
-			if i == maxRetries-1 {
-				return nil, fmt.Errorf("server failed to become ready after 5 minutes - model may be too large for available CPU/memory")
-			}
-			if i%5 == 0 {
-				fmt.Printf("   Still loading model... (%d seconds elapsed)\\n", (i+1)*3)
-			}
-		}
+	// Ensure server is running
+	if err := ensureServerRunning(ctx); err != nil {
+		return nil, err
 	}
 
 	// Load Schema from file
@@ -663,6 +645,7 @@ func executeLlamaCLI(ctx context.Context, prompt string) (*BlogArticle, error) {
 	}
 
 	// Make HTTP request to llama-server
+	serverURL := "http://localhost:8080"
 	req, err := http.NewRequestWithContext(ctx, "POST", serverURL+"/completion", bytes.NewBuffer(jsonData))
 	if err != nil {
 		return nil, fmt.Errorf("create request: %w", err)
@@ -730,6 +713,36 @@ func isServerReady(serverURL string) bool {
 	return resp.StatusCode == http.StatusOK
 }
 
+func ensureServerRunning(ctx context.Context) error {
+	serverURL := "http://localhost:8080"
+
+	// Check if server is running, if not start it
+	if !isServerRunning(serverURL) {
+		fmt.Println("🔧 Starting llama-server...")
+		if err := startLlamaServer(ctx); err != nil {
+			return fmt.Errorf("failed to start llama-server: %w", err)
+		}
+
+		// Wait for server to be ready
+		fmt.Println("⏳ Waiting for model to load (this may take 3-5 minutes on CPU)...")
+		maxRetries := 100 // 100 * 3s = 5 minutes max
+		for i := 0; i < maxRetries; i++ {
+			time.Sleep(3 * time.Second)
+			if isServerReady(serverURL) {
+				fmt.Println("✓ Server ready!")
+				return nil
+			}
+			if i == maxRetries-1 {
+				return fmt.Errorf("server failed to become ready after 5 minutes")
+			}
+			if i%5 == 0 {
+				fmt.Printf("   Still loading model... (%d seconds elapsed)\n", (i+1)*3)
+			}
+		}
+	}
+	return nil
+}
+
 func startLlamaServer(ctx context.Context) error {
 	cmd := exec.Command(
 		"../shbin/server",
@@ -739,6 +752,7 @@ func startLlamaServer(ctx context.Context) error {
 		"--host", "127.0.0.1",
 		"-ngl", "0",
 		"--embedding",
+		"--no-warmup",
 	)
 
 	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH=../shbin:"+os.Getenv("LD_LIBRARY_PATH"))
