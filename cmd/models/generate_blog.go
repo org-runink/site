@@ -601,17 +601,8 @@ type EmbeddingResponse struct {
 }
 
 func getEmbedding(ctx context.Context, text string) ([]float64, error) {
-	// Try OpenAI-compatible endpoint first
-	embedding, err := tryEmbeddingEndpoint(ctx, text, "http://localhost:8080/v1/embeddings", true)
-	if err == nil {
-		return embedding, nil
-	}
-
-	// If OpenAI format fails, try legacy /embedding endpoint
-	if isVerbose() {
-		fmt.Printf("   OpenAI endpoint failed (%v), trying legacy endpoint...\n", err)
-	}
-	return tryEmbeddingEndpoint(ctx, text, "http://localhost:8080/embedding", false)
+	// Use OpenAI-compatible /v1/embeddings endpoint only
+	return tryEmbeddingEndpoint(ctx, text, "http://localhost:8080/v1/embeddings", true)
 }
 
 func tryEmbeddingEndpoint(ctx context.Context, text, url string, useOpenAIFormat bool) ([]float64, error) {
@@ -839,6 +830,27 @@ func sanitizeArticle(article *BlogArticle) {
 	article.Content.WhyImportant = replacer.Replace(article.Content.WhyImportant)
 	article.Content.WaysToSolve = replacer.Replace(article.Content.WaysToSolve)
 	article.Content.ConclusionCTA = replacer.Replace(article.Content.ConclusionCTA)
+
+	// 3. Remove HTML tags (model sometimes generates <p>, <figure>, etc instead of markdown)
+	htmlTagsReplacer := strings.NewReplacer(
+		"<p>", "",
+		"</p>", "",
+		"<figure>", "",
+		"</figure>", "",
+		"<figcaption>", "",
+		"</figcaption>", "",
+		"<code>", "",
+		"</code>", "",
+		"<br>", "\n",
+		"<br/>", "\n",
+		"<br />", "\n",
+	)
+
+	article.Content.IntroductionContext = htmlTagsReplacer.Replace(article.Content.IntroductionContext)
+	article.Content.ProblemStatement = htmlTagsReplacer.Replace(article.Content.ProblemStatement)
+	article.Content.WhyImportant = htmlTagsReplacer.Replace(article.Content.WhyImportant)
+	article.Content.WaysToSolve = htmlTagsReplacer.Replace(article.Content.WaysToSolve)
+	article.Content.ConclusionCTA = htmlTagsReplacer.Replace(article.Content.ConclusionCTA)
 }
 
 func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArticleSummary) string {
