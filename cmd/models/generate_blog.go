@@ -401,12 +401,24 @@ func getEmbedding(ctx context.Context, text string) ([]float64, error) {
 		return nil, fmt.Errorf("bad status: %s", resp.Status)
 	}
 
-	var embeddingResp EmbeddingResponse
-	if err := json.NewDecoder(resp.Body).Decode(&embeddingResp); err != nil {
-		return nil, err
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, fmt.Errorf("read response body: %w", err)
 	}
 
-	return embeddingResp.Embedding, nil
+	// Try struct format first
+	var embeddingResp EmbeddingResponse
+	if err := json.Unmarshal(body, &embeddingResp); err == nil && len(embeddingResp.Embedding) > 0 {
+		return embeddingResp.Embedding, nil
+	}
+
+	// Try raw array format (likely what llama-server returns)
+	var rawEmbedding []float64
+	if err := json.Unmarshal(body, &rawEmbedding); err == nil {
+		return rawEmbedding, nil
+	}
+
+	return nil, fmt.Errorf("could not parse embedding response: %s", string(body))
 }
 
 func cosineSimilarity(a, b []float64) float64 {
