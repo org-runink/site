@@ -84,7 +84,8 @@ RUN chmod +x /app/blog-gen
 ENV LOG_LEVEL=info \
     PATH="/app:${PATH}" \
     LD_LIBRARY_PATH="/app/shbin" \
-    GIN_MODE=release
+    GIN_MODE=release \
+    BLOG_DEBUG=1
 
 # Direct execution
 ENTRYPOINT ["/app/blog-gen"]
