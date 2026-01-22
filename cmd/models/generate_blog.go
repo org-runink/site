@@ -490,16 +490,40 @@ func getEmbedding(ctx context.Context, text string) ([]float64, error) {
 	// Try struct format first
 	var embeddingResp EmbeddingResponse
 	if err := json.Unmarshal(body, &embeddingResp); err == nil && len(embeddingResp.Embedding) > 0 {
+		if isVerbose() {
+			fmt.Printf("   Parsed as struct format, embedding size: %d\n", len(embeddingResp.Embedding))
+		}
 		return embeddingResp.Embedding, nil
 	}
 
 	// Try raw array format (likely what llama-server returns)
 	var rawEmbedding []float64
 	if err := json.Unmarshal(body, &rawEmbedding); err == nil {
+		if isVerbose() {
+			fmt.Printf("   Parsed as array format, embedding size: %d\n", len(rawEmbedding))
+		}
 		return rawEmbedding, nil
 	}
 
-	return nil, fmt.Errorf("could not parse embedding response (%d bytes)", len(body))
+	// Parse failed - provide diagnostic info without dumping vectors
+	contentType := resp.Header.Get("Content-Type")
+	preview := string(body)
+
+	// Detect if it's a JSON array (starts with '[') and truncate safely
+	if len(preview) > 0 && preview[0] == '[' {
+		// It's an array - show structure, not data
+		arrayEnd := strings.Index(preview, "]")
+		if arrayEnd > 200 {
+			preview = "[...large array, " + fmt.Sprintf("%d bytes", len(body)) + "...]"
+		} else if len(preview) > 200 {
+			preview = preview[:200] + "..."
+		}
+	} else if len(preview) > 500 {
+		preview = preview[:500] + "..."
+	}
+
+	return nil, fmt.Errorf("could not parse embedding response - Content-Type: %s, Size: %d bytes, Preview: %s",
+		contentType, len(body), preview)
 }
 
 func cosineSimilarity(a, b []float64) float64 {
