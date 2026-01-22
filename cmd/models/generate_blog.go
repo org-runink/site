@@ -1074,7 +1074,7 @@ func startLlamaServer(ctx context.Context) error {
 	cmd := exec.Command(
 		"../shbin/server",
 		"-m", "gemma-3-12b-it-q4_0.gguf",
-		"-c", "16384",
+		"-c", "65536", // Increased from 16k to 64k to better utilize model capacity
 		"--port", "8080",
 		"--host", "127.0.0.1",
 		"-ngl", "0",
