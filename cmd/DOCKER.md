@@ -8,33 +8,33 @@ Complete guide for building, running, and troubleshooting the Docker image for t
 - [OCI-Compliant Image](#oci-compliant-image)
 - [Building the Image](#building-the-image)
 - [Running the Container](#running-the-container)
+- [Automated Workflow (GitHub Issues)](#automated-workflow-github-issues)
 - [Environment Variables](#environment-variables)
 - [Volume Mounts](#volume-mounts)
 - [Troubleshooting](#troubleshooting)
 - [Publishing & CI/CD](#publishing--cicd)
+- [Performance](#performance)
+- [See Also](#see-also)
 
 ---
 
 ## Quick Start
 
 ```bash
-# Set your Tavily API key
+# 1. Set your Tavily API key
 export TAVILY_API_KEY="your-api-key-here"
 
-# Build the image (first time only)
+# 2. Build & Run (Helper Script)
 cd cmd
 ./build_locally.sh
-
-# Run a blog generation
-docker run --rm \
-  -v "$(pwd)/content":/app/content \
-  -v "$(pwd)/static":/app/static \
-  -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
-  blog-gen:latest \
-  --content-dir /app/content/blog \
-  --image-dir /app/static/images/blog \
-  -t "Your Blog Topic Here"
 ```
+
+**What the script does:**
+1. ✅ Tidies Go modules
+2. 🔨 Builds local `blog-gen` binary
+3. 🧪 Runs unit tests
+4. 🐳 Builds Docker image (`blog-gen:latest`)
+5. 🚀 Tests Docker run (Dry run generation)
 
 ---
 
@@ -120,6 +120,8 @@ docker build -t blog-gen:latest -f Dockerfile ..
 
 ### Pull from GitHub Packages
 
+If you prefer to use the pre-built image from GitHub Container Registry:
+
 ```bash
 # Login (requires GITHUB_TOKEN with packages:read)
 echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
@@ -127,6 +129,32 @@ echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
 # Pull latest
 docker pull ghcr.io/org-runink/site/blog-gen:latest
 ```
+
+### Specify Topic via Command Line
+
+```bash
+docker run --rm \
+  -v "$(pwd)/content":/app/content \
+  -v "$(pwd)/static":/app/static \
+  -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
+  ghcr.io/org-runink/site/blog-gen:latest \
+  --content-dir /app/content/blog \
+  --image-dir /app/static/images/blog \
+  -t "AI-powered DevOps automation"
+```
+
+**Key Arguments:**
+- `-v "$(pwd)/content":/app/content`: Mounts local content directory (markdown saved here).
+- `-v "$(pwd)/static":/app/static`: Mounts local static directory (images saved here).
+- `-e TAVILY_API_KEY`: Your Tavily API key for research.
+- `--content-dir`: Path inside container where markdown will be saved.
+- `--image-dir`: Path inside container where images will be saved.
+- `-t "..."`: The blog topic you want to generate.
+
+**Output Includes:**
+- Generated blog article in markdown.
+- Featured image (PNG).
+- **LinkedIn post suggestions** printed to console.
 
 ### Interactive Mode
 
@@ -137,31 +165,34 @@ docker run --rm -it \
   -i
 ```
 
-### Specify Topic via Command Line
+---
 
-```bash
-docker run --rm \
-  -v "$(pwd)/content":/app/content \
-  -v "$(pwd)/static":/app/static \
-  -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
-  blog-gen:latest \
-  --content-dir /app/content/blog \
-  --image-dir /app/static/images/blog \
-  -t "AI-Powered DevOps Automation"
-```
+## Automated Workflow (GitHub Issues)
 
-### Using GHCR Image
+The system is configured to automatically generate blogs when a labeled GitHub Issue is created.
 
-```bash
-docker run --rm \
-  -v "$(pwd)/content":/app/content \
-  -v "$(pwd)/static":/app/static \
-  -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
-  ghcr.io/org-runink/site/blog-gen:latest \
-  --content-dir /app/content/blog \
-  --image-dir /app/static/images/blog \
-  -t "Your Topic"
-```
+### Steps to Request a Blog Article
+
+1. Go to the **Issues** tab in the repository.
+2. Click **New Issue**.
+3. Select the **Blog Article Request** template.
+4. Fill in the **Topic** field with your desired blog subject.
+5. Submit the issue.
+
+### Automation Workflow
+
+Once you submit the issue, the following happens automatically:
+
+1. **Workflow Trigger**: GitHub Actions detects the `blog-request` label.
+2. **Content Generation**:
+   - Tavily API researches the topic (20+ sources).
+   - AI generates 1200+ word article with Mermaid diagrams.
+   - Featured image is generated.
+   - **LinkedIn post suggestions are created**.
+3. **Pull Request Created**: A new PR is automatically opened with content and validation results.
+4. **Notifications**:
+   - **Slack**: Your configured channel receives the status and ready-to-use LinkedIn posts.
+   - **GitHub**: The original issue is commented with the PR link.
 
 ---
 
@@ -367,7 +398,6 @@ gh attestation verify oci://ghcr.io/org-runink/site/blog-gen:v1.0.0 -R org-runin
 
 ## See Also
 
-- [Blog Request Examples](./BLOG_REQUEST_EXAMPLES.md) - Usage examples and GitHub Issues workflow
 - [Dockerfile](./Dockerfile) - Complete Dockerfile source
 - [Main README](../README.md) - Project overview
 
