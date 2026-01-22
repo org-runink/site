@@ -23,6 +23,41 @@ import (
 // ============================================================================
 
 const TavilyAPIURL = "https://api.tavily.com/search"
+const embeddingCacheFile = ".embeddings_cache.json"
+
+// ============================================================================
+// LOGGING & CACHING UTILITIES
+// ============================================================================
+
+// isVerbose checks BLOG_DEBUG environment variable for verbose logging
+func isVerbose() bool {
+	return os.Getenv("BLOG_DEBUG") == "1" || os.Getenv("BLOG_DEBUG") == "true"
+}
+
+// CachedEmbedding stores embedding vectors with metadata for persistence
+type CachedEmbedding struct {
+	Embedding []float64 `json:"embedding"`
+	Modified  time.Time `json:"modified"`
+	Snippet   string    `json:"snippet"`
+}
+
+func loadEmbeddingCache() map[string]CachedEmbedding {
+	cache := make(map[string]CachedEmbedding)
+	data, err := os.ReadFile(embeddingCacheFile)
+	if err != nil {
+		return cache // Return empty cache if file doesn't exist
+	}
+	json.Unmarshal(data, &cache)
+	return cache
+}
+
+func saveEmbeddingCache(cache map[string]CachedEmbedding) error {
+	data, err := json.MarshalIndent(cache, "", "  ")
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(embeddingCacheFile, data, 0644)
+}
 
 type TavilySearchRequest struct {
 	Query       string `json:"query"`
@@ -227,11 +262,17 @@ func getExistingBlogArticles(ctx context.Context, topic string, contentDir strin
 		return summaries, nil
 	}
 
+	// Load embedding cache
+	cache := loadEmbeddingCache()
+	cacheUpdated := false
+
 	// 1. Get embedding for the current topic
-	fmt.Printf("🧠 Generating embedding for topic: %s\n", topic)
+	if isVerbose() {
+		fmt.Printf("🧠 Generating embedding for topic: %s\n", topic)
+	}
 	topicEmbedding, err := getEmbedding(ctx, topic)
 	if err != nil {
-		fmt.Printf("⚠️ Failed to get topic embedding (server might be starting): %v\n", err)
+		fmt.Printf("⚠️  Failed to get topic embedding: %v\n", err)
 		// Fallback to simple file listing if embeddings fail
 		return getRecentArticles(files, 5)
 	}
@@ -239,19 +280,19 @@ func getExistingBlogArticles(ctx context.Context, topic string, contentDir strin
 	// 2. Process existing files and calculate similarity
 	type ScoredArticle struct {
 		Path       string
+		Title      string
 		Snippet    string
 		Similarity float64
 	}
 	var scoredArticles []ScoredArticle
 
-	fmt.Printf("📚 Scanning %d existing articles for semantic relevance...\n", len(files))
+	if isVerbose() {
+		fmt.Printf("📚 Scanning %d existing articles for semantic relevance...\n", len(files))
+	}
 
 	// Limit to checking most recent 20 files to save time
 	maxCheck := 20
 	if len(files) > maxCheck {
-		sort.Strings(files) // Sort to ensure determinism, ideally sort by date buf glob doesn't guarantee
-		// Get last 20 (assuming alphabetical often correlates or just sample)
-		// Better: sort by mod time first
 		files = sortFilesByTime(files)[:maxCheck]
 	}
 
@@ -261,15 +302,28 @@ func getExistingBlogArticles(ctx context.Context, topic string, contentDir strin
 			continue
 		}
 
-		// Extract a meaningful snippet (first 500 chars usually contains intro)
+		fileInfo, _ := os.Stat(f)
+		modTime := fileInfo.ModTime()
+		filename := filepath.Base(f)
+		slug := strings.TrimSuffix(filename, filepath.Ext(filename))
+
+		// Extract title and snippet
 		text := string(content)
-		if len(text) > 1000 {
-			text = text[:1000]
-		}
-		// Remove frontmatter
+		title := slug // Default to slug
+
+		// Parse frontmatter for title
 		if parts := strings.Split(text, "---"); len(parts) >= 3 {
-			text = parts[2]
+			frontmatter := parts[1]
+			for _, line := range strings.Split(frontmatter, "\n") {
+				if strings.HasPrefix(line, "title:") {
+					title = strings.TrimSpace(strings.Trim(strings.TrimPrefix(line, "title:"), "\""))
+					break
+				}
+			}
+			text = parts[2] // Content after frontmatter
 		}
+
+		// Extract snippet
 		text = strings.TrimSpace(text)
 		if len(text) > 500 {
 			text = text[:500]
@@ -279,18 +333,46 @@ func getExistingBlogArticles(ctx context.Context, topic string, contentDir strin
 			continue
 		}
 
-		// Get embedding for article snippet
-		embedding, err := getEmbedding(ctx, text)
-		if err != nil {
-			continue
+		// Check cache
+		var embedding []float64
+		if cached, ok := cache[slug]; ok && cached.Modified.Equal(modTime) && cached.Snippet == text {
+			// Cache hit
+			embedding = cached.Embedding
+			if isVerbose() {
+				fmt.Printf("   Cache hit: %s\n", slug)
+			}
+		} else {
+			// Cache miss - get fresh embedding
+			embedding, err = getEmbedding(ctx, text)
+			if err != nil {
+				continue
+			}
+			// Update cache
+			cache[slug] = CachedEmbedding{
+				Embedding: embedding,
+				Modified:  modTime,
+				Snippet:   text,
+			}
+			cacheUpdated = true
+			if isVerbose() {
+				fmt.Printf("   Cache miss: %s (updated)\n", slug)
+			}
 		}
 
 		similarity := cosineSimilarity(topicEmbedding, embedding)
 		scoredArticles = append(scoredArticles, ScoredArticle{
 			Path:       f,
+			Title:      title,
 			Snippet:    text,
 			Similarity: similarity,
 		})
+	}
+
+	// Save cache if updated
+	if cacheUpdated {
+		if err := saveEmbeddingCache(cache); err != nil {
+			fmt.Printf("⚠️  Failed to save embedding cache: %v\n", err)
+		}
 	}
 
 	// 3. Score and Rerank (Hybrid: Vector + Keyword)
@@ -301,23 +383,22 @@ func getExistingBlogArticles(ctx context.Context, topic string, contentDir strin
 		return scoreI > scoreJ
 	})
 
-	// 4. Return top 3
-	topK := 3
+	// 4. Return top 5 (increased from 3 for better RAG effectiveness)
+	topK := 5
 	if len(scoredArticles) < topK {
 		topK = len(scoredArticles)
 	}
 
 	for i := 0; i < topK; i++ {
 		article := scoredArticles[i]
-		// Extract title from filename or content if possible, simplistic for now
-		filename := filepath.Base(article.Path)
-		slug := strings.TrimSuffix(filename, filepath.Ext(filename))
 
-		fmt.Printf("   Found related: %s (Score: %.2f)\n", slug, article.Similarity)
+		if isVerbose() {
+			fmt.Printf("   Found related: %s (Score: %.2f)\n", article.Title, article.Similarity)
+		}
 
 		summaries = append(summaries, BlogArticleSummary{
-			Slug:           slug,
-			Title:          slug, // AI will see this as context
+			Slug:           strings.TrimSuffix(filepath.Base(article.Path), filepath.Ext(article.Path)),
+			Title:          article.Title,
 			ContentSnippet: article.Snippet,
 		})
 	}
@@ -568,13 +649,13 @@ func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArtic
 
 	// Add RAG context from existing articles
 	if len(existingArticles) > 0 {
-		prompt.WriteString("\n## RAG Context - Existing Related Articles (Semantic Search):\n\n")
+		prompt.WriteString("\n## Related Articles - MUST Reference These:\n\n")
+		prompt.WriteString("The following related articles from our blog MUST be referenced in your content.\n")
+		prompt.WriteString("Use 2-4 of these links naturally in the article with contextual anchor text.\n\n")
 		for i, article := range existingArticles {
-			if i >= 3 { // Limit to top 3 chunks
-				break
-			}
-			prompt.WriteString(fmt.Sprintf("%d. Context Snippet (Reference Link: /blog/%s):\n", i+1, article.Slug))
-			prompt.WriteString(fmt.Sprintf("   %s\n\n", article.ContentSnippet))
+			prompt.WriteString(fmt.Sprintf("%d. **%s**\n", i+1, article.Title))
+			prompt.WriteString(fmt.Sprintf("   Link: /blog/%s\n", article.Slug))
+			prompt.WriteString(fmt.Sprintf("   Context: %s\n\n", article.ContentSnippet))
 		}
 	}
 
@@ -593,7 +674,10 @@ func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArtic
 	prompt.WriteString("- Set 'placement' field to: 'problem_statement', 'why_important', or 'ways_to_solve'.\n")
 	prompt.WriteString("- Write factual, expert-level technical content.\n")
 	prompt.WriteString("- Position Runink as the authority in AI automation.\n")
-	prompt.WriteString("- REQUIRED: When referencing related articles from context, use the provided internal links (/blog/slug) directly.\n")
+	prompt.WriteString("- CRITICAL: You MUST include 2-4 internal links to the related articles provided above.\n")
+	prompt.WriteString("  - Use markdown format: [descriptive anchor text](/blog/slug)\n")
+	prompt.WriteString("  - Example: 'as discussed in [our guide to data quality](/blog/data-quality-monitoring)'\n")
+	prompt.WriteString("  - Integrate links naturally within the content where contextually relevant.\n")
 	prompt.WriteString("- MANDATORY: Generate a 'positive_prompt' for the image. Do not leave it empty.\n")
 
 	return prompt.String()
