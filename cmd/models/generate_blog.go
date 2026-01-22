@@ -242,11 +242,140 @@ func calculateTrendMomentum(content, query string) float64 {
 // RAG: RETRIEVE EXISTING BLOG ARTICLES
 // ============================================================================
 
+type Chunk struct {
+	Text     string
+	Type     string // "paragraph", "heading", "content"
+	Position int    // Chunk index in document
+}
+
 type BlogArticleSummary struct {
-	Slug           string
-	Title          string
-	Topics         []string
-	ContentSnippet string
+	Slug   string
+	Title  string
+	Topics []string
+	Chunks []Chunk // Multiple semantic chunks
+}
+
+// ============================================================================
+// SEMANTIC CHUNKING UTILITIES
+// ============================================================================
+
+// splitParagraphs splits text into paragraphs (double newline separated)
+func splitParagraphs(text string) []string {
+	var paragraphs []string
+	parts := strings.Split(text, "\n\n")
+	for _, p := range parts {
+		p = strings.TrimSpace(p)
+		if len(p) > 0 {
+			paragraphs = append(paragraphs, p)
+		}
+	}
+	return paragraphs
+}
+
+// splitSentences splits paragraph into sentences (rough heuristic)
+func splitSentences(para string) []string {
+	var sentences []string
+	// Split on . ! ? followed by space or newline
+	sentenceEnds := []string{". ", "! ", "? ", ".\n", "!\n", "?\n"}
+
+	remaining := para
+	for len(remaining) > 0 {
+		minIdx := len(remaining)
+		minEnd := ""
+
+		for _, end := range sentenceEnds {
+			idx := strings.Index(remaining, end)
+			if idx != -1 && idx < minIdx {
+				minIdx = idx
+				minEnd = end
+			}
+		}
+
+		if minIdx < len(remaining) {
+			// Found sentence boundary
+			sentence := strings.TrimSpace(remaining[:minIdx+len(minEnd)])
+			if len(sentence) > 0 {
+				sentences = append(sentences, sentence)
+			}
+			remaining = remaining[minIdx+len(minEnd):]
+		} else {
+			// No more sentence boundaries, take rest
+			sentence := strings.TrimSpace(remaining)
+			if len(sentence) > 0 {
+				sentences = append(sentences, sentence)
+			}
+			break
+		}
+	}
+
+	return sentences
+}
+
+// extractSemanticChunks intelligently chunks article content
+func extractSemanticChunks(content string, maxChunks int) []Chunk {
+	var chunks []Chunk
+
+	// Remove frontmatter
+	if parts := strings.Split(content, "---"); len(parts) >= 3 {
+		content = parts[2]
+	}
+	content = strings.TrimSpace(content)
+
+	// Split into paragraphs
+	paragraphs := splitParagraphs(content)
+
+	for _, para := range paragraphs {
+		if len(chunks) >= maxChunks {
+			break
+		}
+
+		// Small paragraph - keep as-is
+		if len(para) <= 600 {
+			chunks = append(chunks, Chunk{
+				Text:     para,
+				Type:     "paragraph",
+				Position: len(chunks),
+			})
+		} else {
+			// Large paragraph - split by sentences with overlap
+			sentences := splitSentences(para)
+			// Group into ~500 char chunks with 100 char overlap
+			var current strings.Builder
+			for i, sentence := range sentences {
+				if current.Len()+len(sentence) > 500 && current.Len() > 0 {
+					chunks = append(chunks, Chunk{
+						Text:     current.String(),
+						Type:     "content",
+						Position: len(chunks),
+					})
+					if len(chunks) >= maxChunks {
+						break
+					}
+					// Reset with overlap (last ~100 chars)
+					current.Reset()
+					currentText := chunks[len(chunks)-1].Text
+					if len(currentText) > 100 {
+						current.WriteString(currentText[len(currentText)-100:])
+						current.WriteString(" ")
+					}
+				}
+				current.WriteString(sentence)
+				if i < len(sentences)-1 {
+					current.WriteString(" ")
+				}
+			}
+			// Add final chunk
+			if current.Len() > 0 && len(chunks) < maxChunks {
+				chunks = append(chunks, Chunk{
+					Text:     current.String(),
+					Type:     "content",
+					Position: len(chunks),
+				})
+			}
+		}
+	}
+
+	return chunks
 }
 
 func getExistingBlogArticles(ctx context.Context, topic string, contentDir string) ([]BlogArticleSummary, error) {
@@ -396,10 +525,14 @@ func getExistingBlogArticles(ctx context.Context, topic string, contentDir strin
 			fmt.Printf("   Found related: %s (Score: %.2f)\n", article.Title, article.Similarity)
 		}
 
+		// Extract semantic chunks from content
+		fileContent, _ := os.ReadFile(article.Path)
+		chunks := extractSemanticChunks(string(fileContent), 3) // Max 3 chunks per article
+
 		summaries = append(summaries, BlogArticleSummary{
-			Slug:           strings.TrimSuffix(filepath.Base(article.Path), filepath.Ext(article.Path)),
-			Title:          article.Title,
-			ContentSnippet: article.Snippet,
+			Slug:   strings.TrimSuffix(filepath.Base(article.Path), filepath.Ext(article.Path)),
+			Title:  article.Title,
+			Chunks: chunks,
 		})
 	}
 
@@ -417,9 +550,13 @@ func getRecentArticles(files []string, count int) ([]BlogArticleSummary, error) 
 		f := sorted[i]
 		info, _ := os.Stat(f)
 		summaries = append(summaries, BlogArticleSummary{
-			Slug:           filepath.Base(f),
-			Title:          filepath.Base(f),
-			ContentSnippet: fmt.Sprintf("Article from %s", info.ModTime().Format("2006-01-02")),
+			Slug:  filepath.Base(f),
+			Title: filepath.Base(f),
+			Chunks: []Chunk{{
+				Text:     fmt.Sprintf("Article from %s", info.ModTime().Format("2006-01-02")),
+				Type:     "fallback",
+				Position: 0,
+			}},
 		})
 	}
 	return summaries, nil
@@ -679,7 +816,18 @@ func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArtic
 		for i, article := range existingArticles {
 			prompt.WriteString(fmt.Sprintf("%d. **%s**\n", i+1, article.Title))
 			prompt.WriteString(fmt.Sprintf("   Link: /blog/%s\n", article.Slug))
-			prompt.WriteString(fmt.Sprintf("   Context: %s\n\n", article.ContentSnippet))
+
+			// Display chunks as context
+			if len(article.Chunks) > 0 {
+				prompt.WriteString("   Context:\n")
+				for j, chunk := range article.Chunks {
+					if j >= 2 {
+						break // Limit to 2 chunks per article for prompt size
+					}
+					prompt.WriteString(fmt.Sprintf("   - %s\n", chunk.Text))
+				}
+			}
+			prompt.WriteString("\n")
 		}
 	}
 
