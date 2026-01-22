@@ -586,7 +586,7 @@ func isServerReady(serverURL string) bool {
 func startLlamaServer(ctx context.Context) error {
 	cmd := exec.Command(
 		"../shbin/server",
-		"-m", "gemma-3-4b-it-q4_0/gemma-3-4b-it-q4_0.gguf",
+		"-m", "gemma-3-12b-it-q4_0.gguf",
 		"-c", "16384",
 		"--port", "8080",
 		"--host", "127.0.0.1",
@@ -632,10 +632,8 @@ func convertToMarkdown(article *BlogArticle) string {
 	md.WriteString("---\n\n")
 
 	// Content sections (New 5-section structure)
-	md.WriteString("## Introduction/Context\n")
 	md.WriteString(article.Content.IntroductionContext + "\n\n")
 
-	md.WriteString("## Problem Statement\n")
 	md.WriteString(article.Content.ProblemStatement + "\n\n")
 
 	// Insert diagram for problem_statement
@@ -645,7 +643,6 @@ func convertToMarkdown(article *BlogArticle) string {
 		}
 	}
 
-	md.WriteString("## Why Is This Important\n")
 	md.WriteString(article.Content.WhyImportant + "\n\n")
 
 	// Insert diagram for why_important
@@ -655,7 +652,6 @@ func convertToMarkdown(article *BlogArticle) string {
 		}
 	}
 
-	md.WriteString("## Ways to Solve It\n")
 	md.WriteString(article.Content.WaysToSolve + "\n\n")
 
 	// Insert diagram for ways_to_solve
@@ -665,7 +661,6 @@ func convertToMarkdown(article *BlogArticle) string {
 		}
 	}
 
-	md.WriteString("## Conclusion and Call to Action\n")
 	md.WriteString(article.Content.ConclusionCTA + "\n\n")
 
 	return md.String()
