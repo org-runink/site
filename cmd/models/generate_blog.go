@@ -556,7 +556,7 @@ func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArtic
 			if i >= 3 { // Limit to top 3 chunks
 				break
 			}
-			prompt.WriteString(fmt.Sprintf("%d. Context Snippet:\n", i+1))
+			prompt.WriteString(fmt.Sprintf("%d. Context Snippet (Reference Link: /blog/%s):\n", i+1, article.Slug))
 			prompt.WriteString(fmt.Sprintf("   %s\n\n", article.ContentSnippet))
 		}
 	}
@@ -576,6 +576,7 @@ func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArtic
 	prompt.WriteString("- Set 'placement' field to: 'problem_statement', 'why_important', or 'ways_to_solve'.\n")
 	prompt.WriteString("- Write factual, expert-level technical content.\n")
 	prompt.WriteString("- Position Runink as the authority in AI automation.\n")
+	prompt.WriteString("- REQUIRED: When referencing related articles from context, use the provided internal links (/blog/slug) directly.\n")
 	prompt.WriteString("- MANDATORY: Generate a 'positive_prompt' for the image. Do not leave it empty.\n")
 
 	return prompt.String()
