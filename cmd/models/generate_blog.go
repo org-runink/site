@@ -601,14 +601,35 @@ type EmbeddingResponse struct {
 }
 
 func getEmbedding(ctx context.Context, text string) ([]float64, error) {
-	// Use OpenAI-compatible endpoint
-	url := "http://localhost:8080/v1/embeddings"
-
-	payload := EmbeddingRequest{
-		Input: text,
-		Model: "text-embedding", // Optional, llama-server ignores this
+	// Try OpenAI-compatible endpoint first
+	embedding, err := tryEmbeddingEndpoint(ctx, text, "http://localhost:8080/v1/embeddings", true)
+	if err == nil {
+		return embedding, nil
 	}
-	jsonPayload, err := json.Marshal(payload)
+
+	// If OpenAI format fails, try legacy /embedding endpoint
+	if isVerbose() {
+		fmt.Printf("   OpenAI endpoint failed (%v), trying legacy endpoint...\n", err)
+	}
+	return tryEmbeddingEndpoint(ctx, text, "http://localhost:8080/embedding", false)
+}
+
+func tryEmbeddingEndpoint(ctx context.Context, text, url string, useOpenAIFormat bool) ([]float64, error) {
+	var jsonPayload []byte
+	var err error
+
+	if useOpenAIFormat {
+		payload := EmbeddingRequest{
+			Input: text,
+			Model: "text-embedding",
+		}
+		jsonPayload, err = json.Marshal(payload)
+	} else {
+		// Legacy format: just {"content": "text"}
+		payload := map[string]string{"content": text}
+		jsonPayload, err = json.Marshal(payload)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -626,13 +647,18 @@ func getEmbedding(ctx context.Context, text string) ([]float64, error) {
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("bad status: %s", resp.Status)
-	}
-
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, fmt.Errorf("read response body: %w", err)
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		// Show actual error message from server
+		errorPreview := string(body)
+		if len(errorPreview) > 200 {
+			errorPreview = errorPreview[:200] + "..."
+		}
+		return nil, fmt.Errorf("bad status: %s - %s", resp.Status, errorPreview)
 	}
 
 	// Try OpenAI-compatible format first
@@ -644,9 +670,20 @@ func getEmbedding(ctx context.Context, text string) ([]float64, error) {
 		return embeddingResp.Data[0].Embedding, nil
 	}
 
+	// Try legacy struct format
+	var legacyResp struct {
+		Embedding []float64 `json:"embedding"`
+	}
+	if err := json.Unmarshal(body, &legacyResp); err == nil && len(legacyResp.Embedding) > 0 {
+		if isVerbose() {
+			fmt.Printf("   Parsed as legacy format, embedding size: %d\n", len(legacyResp.Embedding))
+		}
+		return legacyResp.Embedding, nil
+	}
+
 	// Fallback: Try raw array format
 	var rawEmbedding []float64
-	if err := json.Unmarshal(body, &rawEmbedding); err == nil {
+	if err := json.Unmarshal(body, &rawEmbedding); err == nil && len(rawEmbedding) > 0 {
 		if isVerbose() {
 			fmt.Printf("   Parsed as array format, embedding size: %d\n", len(rawEmbedding))
 		}
@@ -659,7 +696,6 @@ func getEmbedding(ctx context.Context, text string) ([]float64, error) {
 
 	// Detect if it's a JSON array (starts with '[') and truncate safely
 	if len(preview) > 0 && preview[0] == '[' {
-		// It's an array - show structure, not data
 		arrayEnd := strings.Index(preview, "]")
 		if arrayEnd > 200 {
 			preview = "[...large array, " + fmt.Sprintf("%d bytes", len(body)) + "...]"
