@@ -1079,6 +1079,7 @@ func startLlamaServer(ctx context.Context) error {
 		"--host", "127.0.0.1",
 		"-ngl", "0",
 		"--embedding",
+		"--pooling", "mean",
 		"--no-warmup",
 	)
 
