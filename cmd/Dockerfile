@@ -62,6 +62,9 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     libopenblas0 \
     libgomp1 \
+    git \
+    nodejs \
+    npm \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy our blogen binary
