@@ -15,15 +15,13 @@ body:
     attributes:
       label: Context & Reference Links
       description: |
-        **What should the blog be about?** (Put the main topic in the Issue Title above ⬆️)
-
-        Add any context, industry reports, or competitor links here:
+        Add any context, industry reports, or competitor links here to guide the AI:
       placeholder: |
-        Topic Context: "How AI reduces claims processing costs..."
+        Industry Context: "Focus on the shift from manual audits to automated..."
 
-        Links:
-        https://www.mckinsey.com/...
-        https://www.gartner.com/...
+        Reference Links:
+        - https://example.com/report-2024
+        - https://example.com/competitor-analysis
     validations:
       required: false
 

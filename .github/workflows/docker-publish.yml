@@ -63,6 +63,11 @@ jobs:
               run: |
                   CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o blogen main.go
 
+            - name: Verify CLI flags
+              working-directory: cmd
+              run: |
+                  ./blogen --help | grep -E "audience|value-driver|context"
+
             - name: Build and push Docker image
               uses: docker/build-push-action@v5
               with:

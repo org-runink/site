@@ -48,11 +48,11 @@ FROM ubuntu:latest
 # OCI Image Annotations
 LABEL org.opencontainers.image.title="Runink Blog Generator" \
     org.opencontainers.image.description="AI-powered blog generation tool" \
-    org.opencontainers.image.version="1.1.3" \
+    org.opencontainers.image.version="1.2.0" \
     org.opencontainers.image.vendor="Runink" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.source="https://github.com/runink/site" \
-    org.opencontainers.image.documentation="https://github.com/runink/site/blob/main/cmd/DOCKER.md" \
+    org.opencontainers.image.source="https://github.com/org-runink/site" \
+    org.opencontainers.image.documentation="https://github.com/org-runink/site/blob/main/cmd/DOCKER.md" \
     org.opencontainers.image.authors="Runink Team <contact@runink.org>"
 
 WORKDIR /app
@@ -65,10 +65,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy our blogen binary
-COPY cmd/blogen .
+COPY ./blogen .
 
 # Copy models and config
-COPY cmd/models/ ./models/
+COPY ./models/ ./models/
 
 # Copy compiled binaries and shared libraries from builder
 RUN mkdir -p ./shbin

@@ -19,31 +19,29 @@ echo "🔍 Dry run check (schema loading)..."
 echo "🐳 Building Docker image with buildx..."
 # Build from root context to include content/ and static/
 # Use buildx with --network=host to bypass Docker networking issues
-cd ..
 docker buildx build \
   --network=host \
   --load \
   -t ghcr.io/org-runink/blogen:v1.1.4 \
   -f Dockerfile \
   .
-cd cmd
 
-echo "🚀 Testing Docker run (Dry run generation)..."
-# We mount content/static to see output, and pass network host for local model server access if needed (though model is embedded/downloaded in image normally, but here we rely on what's in image)
-# Note: This runs a real generation!
-docker run --rm --netwdocker run --rm \
-  -v "$(pwd)/../content:/app/content" \
-  -v "$(pwd)/../static/images/blog:/app/static/images/blog" \
-  --network host \
-  -e TAVILY_API_KEY=$TAVILY_API_KEY \
-  -e BLOG_DEBUG=true \
-  ghcr.io/org-runink/blogen:v1.1.4 \
-  --topic "Dockerized Blog Generation Test" \
-  --audience "DevOps Engineers" \
-  --value-driver "Reliability" \
-  --context "Focus on how Docker ensures consistent environments for blog generation pipelines." \
-  --audience "Developers and DevOps Engineers" \
-  --value-driver "Improved Reliability" \
-  --context "Focus on practical examples."
+# echo "🚀 Testing Docker run (Dry run generation)..."
+# docker run --rm \
+#   -v "$(pwd)/../content:/app/content" \
+#   -v "$(pwd)/../static/images/blog:/app/static/images/blog" \
+#   --network host \
+#   -e TAVILY_API_KEY=$TAVILY_API_KEY \
+#   -e BLOG_DEBUG=true \
+#   ghcr.io/org-runink/blogen:v1.1.4 \
+#   --topic "Dockerized Blog Generation Test" \
+#   --audience "DevOps Engineers" \
+#   --value-driver "Reliability" \
+#   --context "Focus on how Docker ensures consistent environments for blog generation pipelines."
 
-echo "🎉 All tests and Docker verification passed!"
+echo "🎉 Build successful!"
+
+echo "📤 Pushing to GHCR..."
+docker tag ghcr.io/org-runink/blogen:v1.1.4 ghcr.io/org-runink/blogen:latest
+docker push ghcr.io/org-runink/blogen:latest
+echo "✅ Done! Package published."

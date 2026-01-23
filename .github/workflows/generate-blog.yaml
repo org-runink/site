@@ -14,6 +14,18 @@ on:
         description: "Blog topic to generate"
         required: true
         type: string
+      audience:
+        description: "Target decision maker (audience)"
+        required: false
+        type: string
+      value_driver:
+        description: "Primary value driver"
+        required: false
+        type: string
+      context:
+        description: "Additional context or links"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -39,7 +51,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull Blog Generator Image
-        run: docker pull ghcr.io/org-runink/blogen:v1.1.4
+        run: docker pull ghcr.io/org-runink/blogen:v1.2.0
 
       - name: Ensure output directories exist
         run: |
@@ -53,9 +65,21 @@ jobs:
           script: |
             const eventName = context.eventName;
             let topic = "";
-            let richContext = "";
-            let slug = "";
+            let audience = "";
+            let valueDriver = "";
+            let links = "";
             let issueNumber = "";
+
+            // Helper to generate slug
+            const slugify = (text) => {
+              return text
+                .toString()
+                .toLowerCase()
+                .trim()
+                .replace(/\s+/g, '-')     // Replace spaces with -
+                .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+                .replace(/\-\-+/g, '-');   // Replace multiple - with single -
+            };
 
             if (eventName === 'issues') {
               const issue = context.payload.issue;
@@ -65,27 +89,37 @@ jobs:
               issueNumber = issue.number;
               
               // 1. Get Topic from Title (strip prefix)
-              // Matches "[Blog Request]: " or just takes the whole title
               topic = title.replace(/^\[Blog Request\]:\s*/i, "").trim();
               
               // 2. Parse Form Body (Markdown)
-              // Helper to extract section content
               const extractSection = (header) => {
                 const regex = new RegExp(`### ${header}\\s+([\\s\\S]*?)(?=(###|$))`, 'i');
                 const match = body.match(regex);
                 return match ? match[1].trim() : "";
               };
               
-              const businessChallenge = extractSection("Business Challenge / Opportunity"); // Fallback if they used the field
-              const links = extractSection("Reference Links \\(Optional\\)");
-              const audience = extractSection("Target Decision Maker");
-              const valueDriver = extractSection("Primary Value Driver");
+              const businessChallenge = extractSection("Business Challenge / Opportunity");
+              links = extractSection("Context & Reference Links");
+              audience = extractSection("Target Decision Maker");
+              valueDriver = extractSection("Primary Value Driver");
               
-              // If title was generic "Blog Request", try to use the field
               if ((!topic || topic.toLowerCase() === "blog request") && businessChallenge) {
                 topic = businessChallenge;
               }
-              
+            } else if (eventName === 'workflow_dispatch') {
+              topic = context.payload.inputs.topic;
+              audience = context.payload.inputs.audience;
+              valueDriver = context.payload.inputs.value_driver;
+              links = context.payload.inputs.context;
+            } else if (eventName === 'repository_dispatch') {
+              topic = context.payload.client_payload.topic;
+              audience = context.payload.client_payload.audience;
+              valueDriver = context.payload.client_payload.value_driver;
+              links = context.payload.client_payload.context;
+            }
+
+            const slug = slugify(topic);
+
             // Output
             core.setOutput('topic', topic);
             core.setOutput('slug', slug);
@@ -104,7 +138,7 @@ jobs:
             -v ${{ github.workspace }}/content:/app/content \
             -v ${{ github.workspace }}/static:/app/static \
             -e TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }} \
-            ghcr.io/org-runink/blogen:v1.1.4 \
+            ghcr.io/org-runink/blogen:v1.2.0 \
             --content-dir /app/content/blog \
             --image-dir /app/static/images/blog \
             -t "${{ steps.topic.outputs.topic }}" \
