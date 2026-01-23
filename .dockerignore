@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Go
+# cmd/blog-gen (Needed for COPY)
+cmd/main
+cmd/*.exe
+cmd/*.dll
+cmd/*.so
+cmd/*.dylib
+
+# Node (if any)
+node_modules
+npm-debug.log
+
+# Docker
+.dockerignore
+Dockerfile
+cmd/Dockerfile
+
+# Hugo
+public
+resources
+.hugo_build.lock
+
+# Cache
+cache
+.cache
+
+# Large Model Files (Keep them if you want them BAKED into the image, otherwise ignore)
+# If the user wants to keep 3GB context, we keep them.
+# But usually we ignore .gguf unless explicitly needed.
+# Given the user's setup copies `cmd/models`, we KEEP them for now as per user intent "build locally".
+# However, we should verify if the user WANTS 3GB images.
+# For safety, we keep them, but ignore other junk.

@@ -5,7 +5,9 @@ layout: "simple"
 
 ## Introduction
 
-At Saasify, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.
+At Runink, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.
+
+---
 
 ---
 
@@ -13,34 +15,41 @@ At Saasify, we take your privacy seriously. This Privacy Policy explains how we 
 
 ### Personal Information
 
-* **Name and email address**
-* **Billing information**
-* **Usage data and analytics**
-* **Communication preferences**
+* **Account Information:** Name, email address, and authentication credentials.
+* **Billing Information:** Payment details and transaction history for platform subscriptions.
+* **Communication Preferences:** Your settings for notifications and support.
+
+### Operational Data (Logistics & Supply Chain)
+
+To provide our core services, we collect and process business-critical data, including but not limited to:
+
+* **Procurement Data:** Purchase orders, vendor details, and procurement logs.
+* **Logistics Data:** Shipment tracking, inventory levels, and carrier performance metrics.
+* **Financial Data:** Invoice details, payment records, and claims documentation for recovery workflows.
 
 ### Automatically Collected Information
 
-* **IP addresses**
-* **Browser type**
-* **Device information**
-* **Cookies and tracking technologies**
+* **Usage Metrics:** Data Units (DU) processed and Compute Units (CU) utilized.
+* **Device & Network:** IP addresses, browser type, and device identifiers.
+* **Cookies:** For session management and preference tracking.
 
 ---
 
 ## How We Use Your Information
 
-We use the collected information for:
+We use the collected information to power the Runink Intelligent Ecosystem:
 
-* **Service Delivery**  
-  Providing and maintaining our service
-* **Updates**  
-  Notifying you about changes to our service
-* **Support**  
-  Providing customer support
-* **Transactions**  
-  Processing your transactions
-* **Analytics**  
-  Analyzing usage patterns to improve our service
+* **Service Delivery & Automation**
+  * Processing low-latency data streams for operational visibility.
+  * executing autonomous workflows (e.g., Auto-Provisioning, Claims Recovery).
+* **AI & Operational Intelligence**
+  * **Model Training:** Refining our anomaly detection and decisioning models. **Note:** we do *not* train shared models on your proprietary customer data without explicit consent.
+  * **Decision Cockpit:** Powering AI agents that detect risks and recommend actions.
+* **Billing & Analytics**
+  * Calculating usage charges (Data/Compute Units) and success fees.
+  * Analyzing platform performance to optimize latency and throughput.
+* **Transactional Communication**
+  * Sending alerts, reports, and recovery status updates.
 
 ---
 
@@ -82,7 +91,7 @@ We may update our Privacy Policy from time to time. We will notify you of any ch
 
 If you have questions about this Privacy Policy, please contact us at:
 
-* **Email:** privacy@saasify.com
-* **Address:** 123 Tech Street, San Francisco, CA 94105
+* **Email:** privacy@runink.org
+* **Mailing Address:** Please contact us via email for our current mailing address.
 
-*Last Updated: January 2024*
+*Last Updated: January 2026*

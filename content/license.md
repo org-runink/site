@@ -24,4 +24,4 @@ High-intensity data processing features utilize "Runink Runner" and are billed b
 Runink retains all ownership and intellectual property rights to the platform, including any AI models and algorithms used to process your data. You retain ownership of your customer data.
 
 ### 5. Contact
-For questions regarding licensing or custom enterprise agreements, please contact sales.
+For questions regarding licensing or custom enterprise agreements, please contact [sales](/contact).

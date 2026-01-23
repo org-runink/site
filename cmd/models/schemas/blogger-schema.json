@@ -1,0 +1,195 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "article_metadata": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "SEO-optimized title (60-70 characters)"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Compelling meta description (150-160 characters)"
+                },
+                "slug": {
+                    "type": "string",
+                    "description": "URL-friendly slug (lowercase-with-hyphens)"
+                },
+                "author": {
+                    "type": "string",
+                    "description": "Author name, default: Runink Editorial Team"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "Publication date in YYYY-MM-DD format",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "8-12 relevant tags for SEO and categorization"
+                },
+                "robots": {
+                    "type": "string",
+                    "description": "SEO robots directive, default: index, follow"
+                },
+                "featured_image": {
+                    "type": "string",
+                    "description": "Path to featured image: /images/blog/{slug}.png"
+                },
+                "canonical": {
+                    "type": "string",
+                    "description": "Canonical URL: https://www.runink.org/blog/{slug}"
+                }
+            },
+            "required": [
+                "title",
+                "description",
+                "slug",
+                "author",
+                "date",
+                "tags",
+                "robots",
+                "featured_image",
+                "canonical"
+            ]
+        },
+        "content_sections": {
+            "type": "object",
+            "properties": {
+                "introduction_context": {
+                    "type": "string",
+                    "description": "Introduction and context about the topic (Min 300 words)"
+                },
+                "problem_statement": {
+                    "type": "string",
+                    "description": "Clear problem statement (Min 150 words)"
+                },
+                "why_important": {
+                    "type": "string",
+                    "description": "Why this problem is important to solve (Min 150 words)"
+                },
+                "ways_to_solve": {
+                    "type": "string",
+                    "description": "Detailed ways to solve the problem (Min 300 words)"
+                },
+                "conclusion_cta": {
+                    "type": "string",
+                    "description": "Conclusion and Call to Action (Min 300 words)"
+                }
+            },
+            "required": [
+                "introduction_context",
+                "problem_statement",
+                "why_important",
+                "ways_to_solve",
+                "conclusion_cta"
+            ]
+        },
+        "internal_links": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "article_slug": {
+                        "type": "string",
+                        "description": "Slug of the related existing article"
+                    },
+                    "anchor_text": {
+                        "type": "string",
+                        "description": "Descriptive anchor text for the link"
+                    },
+                    "context": {
+                        "type": "string",
+                        "description": "Why this article is relevant to link here"
+                    }
+                },
+                "required": [
+                    "article_slug",
+                    "anchor_text",
+                    "context"
+                ]
+            },
+            "description": "2-4 internal links to existing blog articles"
+        },
+        "mermaid_diagrams": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "diagram_type": {
+                        "type": "string",
+                        "enum": [
+                            "mindmap",
+                            "quadrantChart",
+                            "journey",
+                            "C4Context",
+                            "pie",
+                            "timeline",
+                            "erDiagram",
+                            "graph",
+                            "flowchart",
+                            "sequenceDiagram",
+                            "gantt",
+                            "classDiagram"
+                        ],
+                        "description": "Type of mermaid diagram"
+                    },
+                    "diagram_code": {
+                        "type": "string",
+                        "description": "Complete mermaid diagram code without special characters"
+                    },
+                    "placement": {
+                        "type": "string",
+                        "enum": [
+                            "problem_statement",
+                            "why_important",
+                            "ways_to_solve"
+                        ],
+                        "description": "Section where this diagram appears"
+                    }
+                },
+                "required": [
+                    "diagram_type",
+                    "diagram_code",
+                    "placement"
+                ]
+            },
+            "description": "Exactly 3 mermaid diagrams (1 per allowed section)"
+        },
+        "image_generation": {
+            "type": "object",
+            "properties": {
+                "positive_prompt": {
+                    "type": "string",
+                    "description": "Detailed prompt for lowpoly style illustration, isometric 3d, soft lighting, minimal, 4k"
+                },
+                "negative_prompt": {
+                    "type": "string",
+                    "description": "Elements to avoid in image generation"
+                },
+                "style_notes": {
+                    "type": "string",
+                    "description": "MUST BE Lowpoly aesthetic, data visualization theme"
+                }
+            },
+            "required": [
+                "positive_prompt",
+                "negative_prompt",
+                "style_notes"
+            ]
+        }
+    },
+    "required": [
+        "article_metadata",
+        "content_sections",
+        "internal_links",
+        "mermaid_diagrams",
+        "image_generation"
+    ]
+}

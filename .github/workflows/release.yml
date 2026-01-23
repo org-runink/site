@@ -1,0 +1,98 @@
+name: Create Release with Cmd Assets
+
+on:
+    push:
+        tags:
+            - "v*" # Triggers on version tags like v1.0.0
+
+env:
+    REGISTRY: ghcr.io
+    IMAGE_NAME: org-runink/blogen
+
+jobs:
+    create-release:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            packages: write
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Set up Go
+              uses: actions/setup-go@v5
+              with:
+                  go-version: "1.23"
+
+            - name: Get version from tag
+              id: get_version
+              run: echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+            - name: Build binaries for multiple platforms
+              working-directory: cmd
+              run: |
+                  # Linux AMD64
+                  CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o blogen-linux-amd64 main.go
+
+                  # Linux ARM64
+                  CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -ldflags="-w -s" -o blogen-linux-arm64 main.go
+
+                  # macOS AMD64
+                  CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags="-w -s" -o blogen-darwin-amd64 main.go
+
+                  # macOS ARM64 (Apple Silicon)
+                  CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -ldflags="-w -s" -o blogen-darwin-arm64 main.go
+
+                  # Windows AMD64
+                  CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags="-w -s" -o blogen-windows-amd64.exe main.go
+
+            - name: Create cmd folder archive
+              run: |
+                  # Create a tarball of just the cmd folder (excluding models)
+                  tar czf blogen-source-${{ steps.get_version.outputs.version }}.tar.gz \
+                    --exclude='cmd/models/*.gguf' \
+                    --exclude='cmd/blogen*' \
+                    cmd/
+
+            - name: Generate checksums
+              working-directory: cmd
+              run: |
+                  sha256sum blogen-* > SHA256SUMS.txt
+
+            - name: Create GitHub Release
+              uses: softprops/action-gh-release@v1
+              with:
+                  name: "${{ steps.get_version.outputs.version }}: Blogen - AI Blog Generator"
+                  body_path: .github/release-notes-template.md
+                  files: |
+                      cmd/blogen-linux-amd64
+                      cmd/blogen-linux-arm64
+                      cmd/blogen-darwin-amd64
+                      cmd/blogen-darwin-arm64
+                      cmd/blogen-windows-amd64.exe
+                      cmd/SHA256SUMS.txt
+                      blogen-source-${{ steps.get_version.outputs.version }}.tar.gz
+                  generate_release_notes: true
+                  draft: false
+                  prerelease: false
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Build and push Docker image
+              uses: docker/build-push-action@v5
+              with:
+                  context: .
+                  file: cmd/Dockerfile
+                  push: true
+                  tags: |
+                      ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.get_version.outputs.version }}
+                      ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+                  labels: |
+                      org.opencontainers.image.title=Blogen - AI Blog Generator
+                      org.opencontainers.image.version=${{ steps.get_version.outputs.version }}
+                      org.opencontainers.image.description=AI-powered blog generation tool for logistics and supply chain
+                      org.opencontainers.image.vendor=Runink
+                      org.opencontainers.image.licenses=MIT

@@ -1,0 +1,304 @@
+name: Generate Blog Article
+
+on:
+  # Trigger when issue is opened with 'blog-request' label
+  issues:
+    types: [opened, labeled]
+  # Keep repository_dispatch for Slack webhook integration
+  repository_dispatch:
+    types: [generate_blog]
+  # Keep manual trigger as fallback
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Blog topic to generate"
+        required: true
+        type: string
+
+jobs:
+  generate-blog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+
+      - name: Install Go dependencies
+        working-directory: cmd/models
+        run: |
+          go mod init blogger 2>/dev/null || true
+          go get github.com/sajari/regression
+          go mod tidy
+
+      - name: Download llama-cli binary
+        run: |
+          # Download pre-built llama.cpp binary or build from source
+          mkdir -p cmd/shbin
+          # Placeholder: Add your llama-cli download/build steps
+          echo "llama-cli binary setup" > cmd/shbin/cli
+          chmod +x cmd/shbin/cli
+
+      - name: Extract topic
+        id: topic
+        run: |
+          # Check if triggered by issue
+          if [ "${{ github.event_name }}" == "issues" ]; then
+            # Only proceed if issue has 'blog-request' label
+            LABELS='${{ toJSON(github.event.issue.labels.*.name) }}'
+            if echo "$LABELS" | grep -q "blog-request"; then
+              # Use issue title as topic
+              TOPIC="${{ github.event.issue.title }}"
+              ISSUE_NUMBER="${{ github.event.issue.number }}"
+              echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+            else
+              echo "Issue does not have 'blog-request' label, skipping..."
+              exit 0
+            fi
+          elif [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            TOPIC="${{ github.event.client_payload.topic }}"
+          else
+            TOPIC="${{ inputs.topic }}"
+          fi
+
+          echo "topic=$TOPIC" >> $GITHUB_OUTPUT
+          echo "slug=$(echo '$TOPIC' | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd '[:alnum:]-')" >> $GITHUB_OUTPUT
+
+      - name: Run Tavily search and generate blog
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        working-directory: cmd/models
+        run: |
+          go run generate_blog.go "${{ steps.topic.outputs.topic }}"
+
+      - name: Generate lowpoly featured image
+        run: |
+          # Extract image prompt from generated article
+          SLUG="${{ steps.topic.outputs.slug }}"
+          ARTICLE_FILE="content/blog/${SLUG}.md"
+
+          if [ -f "$ARTICLE_FILE" ]; then
+            echo "✅ Article generated: $ARTICLE_FILE"
+            
+            # TODO: Add your image generation pipeline
+            # For now, create a placeholder
+            mkdir -p static/images/blog
+            touch "static/images/blog/${SLUG}.png"
+            echo "🎨 Placeholder image created"
+          else
+            echo "❌ Article file not found!"
+            exit 1
+          fi
+
+      - name: Validate article quality
+        run: |
+          SLUG="${{ steps.topic.outputs.slug }}"
+          ARTICLE_FILE="content/blog/${SLUG}.md"
+
+          # Check frontmatter exists
+          if ! grep -q "^---$" "$ARTICLE_FILE"; then
+            echo "❌ Invalid frontmatter"
+            exit 1
+          fi
+
+          # Check required fields
+          for field in title description slug author date tags; do
+            if ! grep -q "^${field}:" "$ARTICLE_FILE"; then
+              echo "❌ Missing required field: $field"
+              exit 1
+            fi
+          done
+
+          # Check minimum content length (should be substantial)
+          WORD_COUNT=$(wc -w < "$ARTICLE_FILE")
+          if [ "$WORD_COUNT" -lt 800 ]; then
+            echo "❌ Article too short: $WORD_COUNT words (minimum 800)"
+            exit 1
+          fi
+
+          echo "✅ Article validation passed"
+          echo "   Word count: $WORD_COUNT"
+
+      - name: Extract LinkedIn Posts
+        id: linkedin
+        run: |
+          SLUG="${{ steps.topic.outputs.slug }}"
+          TOPIC="${{ steps.topic.outputs.topic }}"
+          BLOG_URL="https://www.runink.org/blog/${SLUG}/"
+
+          # Create LinkedIn company page post
+          cat << 'COMPANY_EOF' >> $GITHUB_OUTPUT
+          company_post<<EOF
+          🚀 New insight: ${TOPIC}
+
+          We've just published a new article exploring ${TOPIC}. Discover key insights and practical takeaways.
+
+          Read more: ${BLOG_URL}
+
+          #TechBlog #Innovation #KnowledgeSharing
+          EOF
+          COMPANY_EOF
+
+          # Create LinkedIn personal repost
+          cat << 'PERSONAL_EOF' >> $GITHUB_OUTPUT
+          personal_post<<EOF
+          💡 Excited to share our latest article on ${TOPIC}!
+
+          Check it out and let me know your thoughts: ${BLOG_URL}
+
+          #TechInsights #Learning
+          EOF
+          PERSONAL_EOF
+
+      - name: Create Pull Request
+        id: create_pr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "📝 Add blog: ${{ steps.topic.outputs.topic }}"
+          branch: "blog-auto/${{ steps.topic.outputs.slug }}"
+          title: "📝 Blog: ${{ steps.topic.outputs.topic }}"
+          body: |
+            This PR adds a new blog post generated by AI.
+
+            **Topic:** ${{ steps.topic.outputs.topic }}
+            **Triggered by:** ${{ github.event_name == 'issues' && format('Issue #{0}', steps.topic.outputs.issue_number) || 'Manual trigger' }}
+
+            ## Files Added
+            - `content/blog/${{ steps.topic.outputs.slug }}.md`
+            - `static/images/blog/${{ steps.topic.outputs.slug }}.png`
+
+            Please review the content and diagrams before merging.
+          labels: "automated-content"
+
+      - name: Comment on issue (success)
+        if: success() && github.event_name == 'issues' && steps.topic.outputs.issue_number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const slug = '${{ steps.topic.outputs.slug }}';
+            const prNumber = '${{ steps.create_pr.outputs.pull-request-number }}';
+            const prUrl = '${{ steps.create_pr.outputs.pull-request-url }}';
+
+            let message = `✅ **Blog Article Generated Successfully!**\n\n📁 **Files Generated:**\n- \`content/blog/${slug}.md\`\n- \`static/images/blog/${slug}.png\`\n\n`;
+
+            if (prNumber) {
+              message += `🔀 **Pull Request Created:** #${prNumber}\n${prUrl}\n\nPlease review and merge the PR to publish the article.`;
+            } else {
+              message += `✅ **Changes Committed Directly**\n🔗 **Preview:** https://www.runink.org/blog/${slug}/\n\nThe site will be deployed shortly.`;
+            }
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.topic.outputs.issue_number }},
+              body: message
+            });
+
+            // Close the issue
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.topic.outputs.issue_number }},
+              state: 'closed',
+              labels: ['blog-request', 'completed']
+            });
+
+      - name: Comment on issue (failure)
+        if: failure() && github.event_name == 'issues' && steps.topic.outputs.issue_number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.topic.outputs.issue_number }},
+              body: `❌ **Blog Generation Failed**\n\n⚠️ Please check the GitHub Actions logs for details:\nhttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\nKeeping this issue open for retry.`
+            });
+
+      - name: Send LinkedIn Post Suggestions to Slack
+        if: success()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ -n "$SLACK_WEBHOOK_URL" ]; then
+            TOPIC="${{ steps.topic.outputs.topic }}"
+            SLUG="${{ steps.topic.outputs.slug }}"
+            BLOG_URL="https://www.runink.org/blog/${SLUG}/"
+            PR_URL="${{ steps.create_pr.outputs.pull-request-url }}"
+            
+            COMPANY_POST='${{ steps.linkedin.outputs.company_post }}'
+            PERSONAL_POST='${{ steps.linkedin.outputs.personal_post }}'
+            
+            # Send to Slack
+            curl -X POST "$SLACK_WEBHOOK_URL" \
+              -H 'Content-Type: application/json' \
+              -d "{
+              \"text\": \"📝 New Blog Published - LinkedIn Promotion Ready\",
+              \"blocks\": [
+                {
+                  \"type\": \"header\",
+                  \"text\": {
+                    \"type\": \"plain_text\",
+                    \"text\": \"📝 New Blog Article Ready for Promotion\"
+                  }
+                },
+                {
+                  \"type\": \"section\",
+                  \"fields\": [
+                    {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"*Topic:*\n${TOPIC}\"
+                    },
+                    {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"*Blog URL:*\n<${BLOG_URL}|View Article>\"
+                    }
+                  ]
+                },
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"*PR for Review:*\n<${PR_URL}|View Pull Request>\"
+                  }
+                },
+                {
+                  \"type\": \"divider\"
+                },
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"*📢 LinkedIn Company Page Post:*\n\\\`\\\`\\\`${COMPANY_POST}\\\`\\\`\\\`\"
+                  }
+                },
+                {
+                  \"type\": \"divider\"
+                },
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"*🔁 Your Personal Repost Message:*\n\\\`\\\`\\\`${PERSONAL_POST}\\\`\\\`\\\`\"
+                  }
+                },
+                {
+                  \"type\": \"context\",
+                  \"elements\": [
+                    {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"✏️ Feel free to customize these messages before posting!\"
+                    }
+                  ]
+                }
+              ]
+            }"
+          fi
