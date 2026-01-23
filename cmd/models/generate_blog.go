@@ -1120,8 +1120,14 @@ func ensureServerRunning(ctx context.Context) error {
 }
 
 func startLlamaServer(ctx context.Context) error {
+	// Resolve binary path
+	binaryPath, binaryDir, err := resolveBinaryPath("server")
+	if err != nil {
+		return fmt.Errorf("resolve server binary: %w", err)
+	}
+
 	cmd := exec.Command(
-		"../shbin/server",
+		binaryPath,
 		"-m", "gemma-3-12b-it-q4_0.gguf",
 		"-c", "65536", // Increased from 16k to 64k to better utilize model capacity
 		"--port", "8080",
@@ -1132,7 +1138,7 @@ func startLlamaServer(ctx context.Context) error {
 		"--no-warmup",
 	)
 
-	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH=../shbin:"+os.Getenv("LD_LIBRARY_PATH"))
+	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH="+binaryDir+":"+os.Getenv("LD_LIBRARY_PATH"))
 	cmd.Dir = "." // Already in models directory
 
 	// Capture server output for debugging only in verbose mode
@@ -1227,6 +1233,35 @@ func convertToMarkdown(article *BlogArticle) string {
 // HELPER FUNCTIONS
 // ============================================================================
 
+func resolveBinaryPath(binaryName string) (string, string, error) {
+	// Possible locations to check
+	// 1. ./shbin/<binary> (Container CWD /app or local if in root)
+	// 2. ../shbin/<binary> (Local dev relative to cmd/)
+	// 3. /app/shbin/<binary> (Absolute container path)
+	// 4. PATH lookup
+
+	locations := []string{
+		filepath.Join(".", "shbin", binaryName),
+		filepath.Join("..", "shbin", binaryName),
+		filepath.Join("/app", "shbin", binaryName),
+	}
+
+	for _, loc := range locations {
+		if _, err := os.Stat(loc); err == nil {
+			absPath, _ := filepath.Abs(loc)
+			return absPath, filepath.Dir(absPath), nil
+		}
+	}
+
+	// Try PATH
+	if path, err := exec.LookPath(binaryName); err == nil {
+		absPath, _ := filepath.Abs(path)
+		return absPath, filepath.Dir(absPath), nil
+	}
+
+	return "", "", fmt.Errorf("binary %s not found in expected locations", binaryName)
+}
+
 func calculateKeywordScore(text, topic string) float64 {
 	topicWords := strings.Fields(strings.ToLower(topic))
 	textLower := strings.ToLower(text)
@@ -1307,8 +1342,17 @@ func generateFeaturedImage(article *BlogArticle, staticDir string) error {
 
 	// Construct command for txt2img
 	// Using reduced steps (10) for speed as requested
+	// Resolve binary path
+	binaryPath, binaryDir, err := resolveBinaryPath("txt2img")
+	if err != nil {
+		fmt.Printf("⚠️ Could not resolve txt2img binary: %v. Creating placeholder.\n", err)
+		return createPlaceholderImage(imagePath)
+	}
+
+	// Construct command for txt2img
+	// Using reduced steps (10) for speed as requested
 	cmd := exec.Command(
-		"../shbin/txt2img",
+		binaryPath,
 		"-m", "stable-diffusion-v1-5-pruned-emaonly-Q4_1.gguf",
 		"--vae-on-cpu",
 		"--vae-tiling",
@@ -1327,7 +1371,7 @@ func generateFeaturedImage(article *BlogArticle, staticDir string) error {
 	)
 
 	// Set LD_LIBRARY_PATH for the binary
-	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH=../shbin:"+os.Getenv("LD_LIBRARY_PATH"))
+	cmd.Env = append(os.Environ(), "LD_LIBRARY_PATH="+binaryDir+":"+os.Getenv("LD_LIBRARY_PATH"))
 	cmd.Dir = "."
 
 	// Capture output for debugging
