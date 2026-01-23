@@ -36,7 +36,7 @@ jobs:
   generate-blog:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/org-runink/blogen:v1.2.0
+      image: ghcr.io/org-runink/blogen:latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
