@@ -39,7 +39,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull Blog Generator Image
-        run: docker pull ghcr.io/org-runink/blogen:v1.0.0
+        run: docker pull ghcr.io/org-runink/blogen:v1.1.0
 
       - name: Ensure output directories exist
         run: |
@@ -86,39 +86,15 @@ jobs:
                 topic = businessChallenge;
               }
               
-              // 3. Construct Rich Context for AI
-              // Since CLI doesn't have flags for audience/value yet, we append to topic
-              let contextParts = [];
-              if (audience) contextParts.push(`Target Audience: ${audience}`);
-              if (valueDriver) contextParts.push(`Primary Value Driver: ${valueDriver}`);
-              if (links && links !== "No response") contextParts.push(`References:\n${links}`);
-              
-              if (contextParts.length > 0) {
-                richContext = contextParts.join("\n\n");
-                // Append to topic for the tool
-                topic = `${topic}\n\nContext:\n${richContext}`;
-              }
-
-            } else if (eventName === 'repository_dispatch') {
-              topic = context.payload.client_payload.topic;
-            } else {
-              topic = context.payload.inputs.topic;
-            }
-
-            if (!topic) {
-              core.setFailed("Topic could not be extracted. Please check inputs.");
-              return;
-            }
-
-            // Generate slug (simple sanitization)
-            // Take first line only for slug
-            const simpleTopic = topic.split('\n')[0].trim();
-            slug = simpleTopic.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-
             // Output
-            core.setOutput('topic', topic); // Rich topic passed to tool
+            core.setOutput('topic', topic);
             core.setOutput('slug', slug);
             if (issueNumber) core.setOutput('issue_number', issueNumber);
+
+            // New separate context outputs
+            core.setOutput('audience', audience || "");
+            core.setOutput('value_driver', valueDriver || "");
+            core.setOutput('context_links', links === "No response" ? "" : links || "");
 
       - name: Run Blog Generation with Docker
         id: blog_gen
@@ -128,10 +104,13 @@ jobs:
             -v ${{ github.workspace }}/content:/app/content \
             -v ${{ github.workspace }}/static:/app/static \
             -e TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }} \
-            ghcr.io/org-runink/blogen:v1.0.0 \
+            ghcr.io/org-runink/blogen:v1.1.0 \
             --content-dir /app/content/blog \
             --image-dir /app/static/images/blog \
-            -t "${{ steps.topic.outputs.topic }}" 2>&1)
+            -t "${{ steps.topic.outputs.topic }}" \
+            --audience "${{ steps.topic.outputs.audience }}" \
+            --value-driver "${{ steps.topic.outputs.value_driver }}" \
+            --context "${{ steps.topic.outputs.context_links }}" 2>&1)
 
           echo "$OUTPUT"
 

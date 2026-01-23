@@ -15,9 +15,12 @@ import (
 )
 
 var (
-	cfgFile     string
-	topic       string
-	interactive bool
+	cfgFile           string
+	topic             string
+	audience          string
+	valueDriver       string
+	additionalContext string
+	interactive       bool
 )
 
 var rootCmd = &cobra.Command{
@@ -36,7 +39,7 @@ The generator performs:
 		if interactive || topic == "" {
 			runInteractive()
 		} else {
-			generateBlog(topic)
+			generateBlog(topic, audience, valueDriver, additionalContext)
 		}
 	},
 }
@@ -46,6 +49,9 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is ./blogger.ini)")
 	rootCmd.Flags().StringVarP(&topic, "topic", "t", "", "Blog topic to generate")
+	rootCmd.Flags().StringVar(&audience, "audience", "", "Target audience for the article")
+	rootCmd.Flags().StringVar(&valueDriver, "value-driver", "", "Primary value driver or business benefit")
+	rootCmd.Flags().StringVar(&additionalContext, "context", "", "Additional context or reference links")
 	rootCmd.Flags().BoolVarP(&interactive, "interactive", "i", false, "Interactive mode (prompt for topic)")
 
 	// Add flags for output directories
@@ -107,12 +113,15 @@ func runInteractive() {
 		os.Exit(1)
 	}
 
-	generateBlog(blogTopic)
+	generateBlog(blogTopic, "", "", "")
 }
 
-func generateBlog(blogTopic string) {
+func generateBlog(blogTopic, audience, valueDriver, additionalContext string) {
 	fmt.Println()
 	fmt.Printf("🔍 Generating blog article for: %s\n", blogTopic)
+	if audience != "" {
+		fmt.Printf("👥 Target Audience: %s\n", audience)
+	}
 	fmt.Println()
 	fmt.Println("This will take 3-5 minutes...")
 	fmt.Println(strings.Repeat("-", 60))
@@ -153,7 +162,7 @@ func generateBlog(blogTopic string) {
 	contentDir := viper.GetString("content_dir")
 	imageDir := viper.GetString("image_dir")
 
-	blogFile, err := models.GenerateBlogFromModels(ctx, blogTopic, tavilyKey, contentDir, imageDir)
+	blogFile, err := models.GenerateBlogFromModels(ctx, blogTopic, audience, valueDriver, additionalContext, tavilyKey, contentDir, imageDir)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "\n❌ Blog generation failed: %v\n", err)
 		os.Exit(1)
