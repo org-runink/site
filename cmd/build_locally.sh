@@ -23,7 +23,7 @@ cd ..
 docker buildx build \
   --network=host \
   --load \
-  -t ghcr.io/org-runink/blogen:v1.1.2 \
+  -t ghcr.io/org-runink/blogen:v1.1.3 \
   -f cmd/Dockerfile \
   .
 cd cmd
@@ -37,7 +37,7 @@ docker run --rm --network=host \
   -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
   -e OPENBLAS_NUM_THREADS=8 \
   -e OPENBLAS_MAIN_FREE=1 \
-  ghcr.io/org-runink/blogen:v1.1.2 \
+  ghcr.io/org-runink/blogen:v1.1.3 \
   --content-dir /app/content/blog \
   --image-dir /app/static/images/blog \
   -t "Dockerized Blog Generation Test" \

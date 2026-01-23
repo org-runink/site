@@ -901,11 +901,11 @@ func buildPrompt(topic, audience, valueDriver, additionalContext string, trends 
 	}
 
 	// Add trending research context
-	prompt.WriteString("## Latest Research and Trends:\n\n")
+	prompt.WriteString("## Latest Research and Trends (For Information Only - DO NOT LINK):\n\n")
 	for i, trend := range trends {
-		prompt.WriteString(fmt.Sprintf("%d. **%s** (Relevance: %.2f, Trend Score: %.2f)\n",
-			i+1, trend.Result.Title, trend.Relevance, trend.TrendScore))
-		prompt.WriteString(fmt.Sprintf("   Source: %s\n", trend.Result.URL))
+		prompt.WriteString(fmt.Sprintf("%d. **%s** (Trend Score: %.2f)\n",
+			i+1, trend.Result.Title, trend.TrendScore))
+		// Omit URL to discourage external linking
 		prompt.WriteString(fmt.Sprintf("   Summary: %s\n\n", strings.Split(trend.Result.Content, ".")[0]))
 	}
 
@@ -949,6 +949,7 @@ func buildPrompt(topic, audience, valueDriver, additionalContext string, trends 
 	prompt.WriteString("- Position Runink as the authority in AI automation.\n")
 	prompt.WriteString("- CRITICAL: Output strictly in MARKDOWN format. Do NOT use HTML tags (e.g., no <ul>, <li>, <a>, <b>).\n")
 	prompt.WriteString("- Use standard markdown for lists (- item), bold (**text**), and links ([text](url)).\n")
+	prompt.WriteString("- CRITICAL: Do NOT include external links (no google.com, no wikipedia, etc). Use ONLY the internal links provided above.\n")
 	prompt.WriteString("- CRITICAL: You MUST include 2-4 internal links to the related articles provided above.\n")
 	prompt.WriteString("  - Use markdown format: [descriptive anchor text](/blog/slug)\n")
 	prompt.WriteString("  - Example: 'as discussed in [our guide to data quality](/blog/data-quality-monitoring)'\n")
