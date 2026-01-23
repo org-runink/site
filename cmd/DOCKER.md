@@ -45,9 +45,9 @@ cd cmd
 Published to GitHub Container Registry (ghcr.io):
 
 ```
-ghcr.io/org-runink/site/blog-gen:latest
-ghcr.io/org-runink/site/blog-gen:v1.0.0
-ghcr.io/org-runink/site/blog-gen:main-<sha>
+ghcr.io/org-runink/blogen:latest
+ghcr.io/org-runink/blogen:v1.2.0
+ghcr.io/org-runink/blogen:main-<sha>
 ```
 
 ### OCI Annotations
@@ -127,7 +127,7 @@ If you prefer to use the pre-built image from GitHub Container Registry:
 echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
 
 # Pull latest
-docker pull ghcr.io/org-runink/site/blog-gen:latest
+docker pull ghcr.io/org-runink/blogen:latest
 ```
 
 ### Specify Topic via Command Line
@@ -137,7 +137,7 @@ docker run --rm \
   -v "$(pwd)/content":/app/content \
   -v "$(pwd)/static":/app/static \
   -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
-  ghcr.io/org-runink/site/blog-gen:latest \
+  ghcr.io/org-runink/blogen:latest \
   --content-dir /app/content/blog \
   --image-dir /app/static/images/blog \
   -t "AI-powered DevOps automation"
@@ -332,7 +332,7 @@ Images are automatically built and published via GitHub Actions:
 **Triggers**:
 - **Push to main**: Tagged as `latest` and `main-<sha>`
 - **Pull requests**: Tagged as `pr-<number>`
-- **Git tags**: Tagged with semantic version (`v1.0.0`, `v1.0`, `v1`)
+- **Git tags**: Tagged with semantic version (`v1.2.0`, `v1.2`, `v1`)
 
 **Workflow**: `.github/workflows/docker-publish.yml`
 
@@ -351,7 +351,7 @@ Used in automated workflows:
       -v "${PWD}/content":/app/content \
       -v "${PWD}/static":/app/static \
       -e TAVILY_API_KEY="${{ secrets.TAVILY_API_KEY }}" \
-      ghcr.io/org-runink/site/blog-gen:latest \
+      ghcr.io/org-runink/blogen:latest \
       --content-dir /app/content/blog \
       --image-dir /app/static/images/blog \
       -t "${{ github.event.issue.title }}"
@@ -359,8 +359,8 @@ Used in automated workflows:
 
 ### Release Process
 
-1. Create tag: `git tag v1.0.0`
-2. Push tag: `git push origin v1.0.0`
+1. Create tag: `git tag v1.2.0`
+2. Push tag: `git push origin v1.2.0`
 3. Create GitHub Release (triggers attestation)
 4. Workflow publishes image with version tags
 
@@ -368,7 +368,7 @@ Used in automated workflows:
 
 **SBOM & Provenance**:
 ```bash
-gh attestation verify oci://ghcr.io/org-runink/site/blog-gen:v1.0.0 -R org-runink/site
+gh attestation verify oci://ghcr.io/org-runink/blogen:v1.2.0 -R org-runink/site
 ```
 
 ---

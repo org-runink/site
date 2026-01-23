@@ -22,7 +22,7 @@ echo "🐳 Building Docker image with buildx..."
 docker buildx build \
   --network=host \
   --load \
-  -t ghcr.io/org-runink/blogen:v1.1.4 \
+  -t ghcr.io/org-runink/blogen:v1.2.0 \
   -f Dockerfile \
   .
 
@@ -33,7 +33,7 @@ docker buildx build \
 #   --network host \
 #   -e TAVILY_API_KEY=$TAVILY_API_KEY \
 #   -e BLOG_DEBUG=true \
-#   ghcr.io/org-runink/blogen:v1.1.4 \
+#   ghcr.io/org-runink/blogen:v1.2.0 \
 #   --topic "Dockerized Blog Generation Test" \
 #   --audience "DevOps Engineers" \
 #   --value-driver "Reliability" \
@@ -42,6 +42,6 @@ docker buildx build \
 echo "🎉 Build successful!"
 
 echo "📤 Pushing to GHCR..."
-docker tag ghcr.io/org-runink/blogen:v1.1.4 ghcr.io/org-runink/blogen:latest
+docker tag ghcr.io/org-runink/blogen:v1.2.0 ghcr.io/org-runink/blogen:latest
 docker push ghcr.io/org-runink/blogen:latest
 echo "✅ Done! Package published."
