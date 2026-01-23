@@ -26,25 +26,20 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Setup Go
-        uses: actions/setup-go@v5
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
         with:
-          go-version: "1.21"
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Go dependencies
-        working-directory: cmd/models
-        run: |
-          go mod init blogger 2>/dev/null || true
-          go get github.com/sajari/regression
-          go mod tidy
+      - name: Pull Blog Generator Image
+        run: docker pull ghcr.io/org-runink/blogen:latest
 
-      - name: Download llama-cli binary
+      - name: Ensure output directories exist
         run: |
-          # Download pre-built llama.cpp binary or build from source
-          mkdir -p cmd/shbin
-          # Placeholder: Add your llama-cli download/build steps
-          echo "llama-cli binary setup" > cmd/shbin/cli
-          chmod +x cmd/shbin/cli
+          mkdir -p content/blog
+          mkdir -p static/images/blog
 
       - name: Extract topic
         id: topic
@@ -71,31 +66,18 @@ jobs:
           echo "topic=$TOPIC" >> $GITHUB_OUTPUT
           echo "slug=$(echo '$TOPIC' | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd '[:alnum:]-')" >> $GITHUB_OUTPUT
 
-      - name: Run Tavily search and generate blog
-        env:
-          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
-        working-directory: cmd/models
+      - name: Run Blog Generation with Docker
+        id: blog_gen
         run: |
-          go run generate_blog.go "${{ steps.topic.outputs.topic }}"
-
-      - name: Generate lowpoly featured image
-        run: |
-          # Extract image prompt from generated article
-          SLUG="${{ steps.topic.outputs.slug }}"
-          ARTICLE_FILE="content/blog/${SLUG}.md"
-
-          if [ -f "$ARTICLE_FILE" ]; then
-            echo "✅ Article generated: $ARTICLE_FILE"
-            
-            # TODO: Add your image generation pipeline
-            # For now, create a placeholder
-            mkdir -p static/images/blog
-            touch "static/images/blog/${SLUG}.png"
-            echo "🎨 Placeholder image created"
-          else
-            echo "❌ Article file not found!"
-            exit 1
-          fi
+          # Run blog generation using Docker
+          docker run --rm \
+            -v ${{ github.workspace }}/content:/app/content \
+            -v ${{ github.workspace }}/static:/app/static \
+            -e TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }} \
+            ghcr.io/org-runink/blogen:latest \
+            --content-dir /app/content/blog \
+            --image-dir /app/static/images/blog \
+            -t "${{ steps.topic.outputs.topic }}"
 
       - name: Validate article quality
         run: |
