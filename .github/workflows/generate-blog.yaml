@@ -127,45 +127,35 @@ jobs:
             core.setOutput('value_driver', valueDriver || "");
             core.setOutput('context_links', links === "No response" ? "" : links || "");
 
-      - name: Run Blog Generation with Docker
+      - name: Run Blog Generation
         id: blog_gen
         run: |
-          # Capture the blog generation output
-          OUTPUT=$(blogen \
+          # Run generation directly
+          blogen \
             --content-dir content/blog \
             --image-dir static/images/blog \
             -t "${{ steps.topic.outputs.topic }}" \
             --audience "${{ steps.topic.outputs.audience }}" \
             --value-driver "${{ steps.topic.outputs.value_driver }}" \
-            --context "${{ steps.topic.outputs.context_links }}" 2>&1)
+            --context "${{ steps.topic.outputs.context_links }}"
 
-          echo "$OUTPUT"
-
-          # Extract LinkedIn posts JSON from output
-          # Look for content between markers
-          LINKEDIN_JSON=$(echo "$OUTPUT" | sed -n '/📱 LINKEDIN_POSTS_START/,/📱 LINKEDIN_POSTS_END/p' | sed '1d;$d')
-
-          # If no JSON found (fallback), create default structure
-          if [ -z "$LINKEDIN_JSON" ]; then
-            echo "⚠️ No LinkedIn JSON found in output, creating default..."
-            SLUG="${{ steps.topic.outputs.slug }}"
-            TOPIC="${{ steps.topic.outputs.topic }}"
-            BLOG_URL="https://www.runink.org/blog/${SLUG}/"
+          # Create simple LinkedIn posts JSON
+          SLUG="${{ steps.topic.outputs.slug }}"
+          TOPIC="${{ steps.topic.outputs.topic }}"
+          BLOG_URL="https://www.runink.org/blog/${SLUG}/"
             
-            LINKEDIN_JSON=$(cat <<EOF
-            {
-              "company_post": {
-                "text": "🚀 New Article: ${TOPIC}\\n\\nRead more: ${BLOG_URL}\\n\\n#AI #Logistics"
-              },
-              "personal_post": {
-                "text": "I just published a new article on ${TOPIC}. Check it out: ${BLOG_URL}"
-              }
+          LINKEDIN_JSON=$(cat <<EOF
+          {
+            "company_post": {
+              "text": "🚀 New Article: ${TOPIC}\\n\\nRead more: ${BLOG_URL}\\n\\n#AI #Runink"
+            },
+            "personal_post": {
+              "text": "I just published a new article on ${TOPIC}. Check it out: ${BLOG_URL}"
             }
+          }
           EOF
-            )
-          fi
+          )
 
-          # Save to environment for next steps (multiline string)
           echo "linkedin_posts<<EOF" >> $GITHUB_OUTPUT
           echo "$LINKEDIN_JSON" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
