@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 	"time"
@@ -832,19 +833,21 @@ func sanitizeArticle(article *BlogArticle) {
 	article.Content.WaysToSolve = replacer.Replace(article.Content.WaysToSolve)
 	article.Content.ConclusionCTA = replacer.Replace(article.Content.ConclusionCTA)
 
-	// 3. Remove HTML tags (model sometimes generates <p>, <figure>, etc instead of markdown)
+	// 3. Remove/Convert HTML tags (model sometimes generates HTML instead of markdown)
+	// Simple replacements first
 	htmlTagsReplacer := strings.NewReplacer(
-		"<p>", "",
-		"</p>", "",
-		"<figure>", "",
-		"</figure>", "",
-		"<figcaption>", "",
-		"</figcaption>", "",
-		"<code>", "",
-		"</code>", "",
-		"<br>", "\n",
-		"<br/>", "\n",
-		"<br />", "\n",
+		"<p>", "", "</p>", "\n\n",
+		"<figure>", "", "</figure>", "",
+		"<figcaption>", "", "</figcaption>", "",
+		"<code>", "`", "</code>", "`",
+		"<br>", "\n", "<br/>", "\n", "<br />", "\n",
+		"<b>", "**", "</b>", "**",
+		"<i>", "*", "</i>", "*",
+		"<strong>", "**", "</strong>", "**",
+		"<em>", "*", "</em>", "*",
+		"<ul>", "", "</ul>", "",
+		"<ol>", "", "</ol>", "",
+		"<li>", "- ", "</li>", "\n",
 	)
 
 	article.Content.IntroductionContext = htmlTagsReplacer.Replace(article.Content.IntroductionContext)
@@ -852,6 +855,20 @@ func sanitizeArticle(article *BlogArticle) {
 	article.Content.WhyImportant = htmlTagsReplacer.Replace(article.Content.WhyImportant)
 	article.Content.WaysToSolve = htmlTagsReplacer.Replace(article.Content.WaysToSolve)
 	article.Content.ConclusionCTA = htmlTagsReplacer.Replace(article.Content.ConclusionCTA)
+
+	// Regex for complex tags (Links)
+	// Convert <a href="...">text</a> to [text](...)
+	linkRegex := regexp.MustCompile(`<a\s+href="([^"]+)">([^<]+)</a>`)
+
+	sanitizeField := func(text string) string {
+		return linkRegex.ReplaceAllString(text, "[$2]($1)")
+	}
+
+	article.Content.IntroductionContext = sanitizeField(article.Content.IntroductionContext)
+	article.Content.ProblemStatement = sanitizeField(article.Content.ProblemStatement)
+	article.Content.WhyImportant = sanitizeField(article.Content.WhyImportant)
+	article.Content.WaysToSolve = sanitizeField(article.Content.WaysToSolve)
+	article.Content.ConclusionCTA = sanitizeField(article.Content.ConclusionCTA)
 
 	// 4. Set Current Date (Don't trust the model's date)
 	article.Metadata.Date = time.Now().Format("2006-01-02")
@@ -925,6 +942,8 @@ func buildPrompt(topic, audience, valueDriver, additionalContext string, trends 
 	prompt.WriteString("- Set 'placement' field to: 'problem_statement', 'why_important', or 'ways_to_solve'.\n")
 	prompt.WriteString("- Write factual, expert-level technical content.\n")
 	prompt.WriteString("- Position Runink as the authority in AI automation.\n")
+	prompt.WriteString("- CRITICAL: Output strictly in MARKDOWN format. Do NOT use HTML tags (e.g., no <ul>, <li>, <a>, <b>).\n")
+	prompt.WriteString("- Use standard markdown for lists (- item), bold (**text**), and links ([text](url)).\n")
 	prompt.WriteString("- CRITICAL: You MUST include 2-4 internal links to the related articles provided above.\n")
 	prompt.WriteString("  - Use markdown format: [descriptive anchor text](/blog/slug)\n")
 	prompt.WriteString("  - Example: 'as discussed in [our guide to data quality](/blog/data-quality-monitoring)'\n")
