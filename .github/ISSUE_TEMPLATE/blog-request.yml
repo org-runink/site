@@ -1,4 +1,4 @@
-name: 💰 Business Value Blog Request
+name: Blog Request
 description: Generate ROI-focused content for logistics and supply chain automation
 title: "[Blog Request]: "
 labels: ["blog-request"]
@@ -6,17 +6,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 💵 Show Me The Money: AI-Powered Business Value Content
-
         Generate compelling blog articles that demonstrate **measurable business impact** and **ROI** for logistics and supply chain operations.
-
-        **⏱️ Generation time:** 5-10 minutes | **💰 Potential reach:** C-suite decision makers
 
   - type: input
     id: topic
     attributes:
       label: Business Challenge / Opportunity
-      description: What problem costs money or what opportunity generates revenue? Focus on business outcomes, not technology.
+      description: What problem costs money or what opportunity generates revenue? What would you like to see in a blog article?
       placeholder: "Example: How AI-powered claims retrieval automation reduces processing costs by 73% in logistics operations"
     validations:
       required: true
