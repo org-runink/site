@@ -8,28 +8,22 @@ body:
       value: |
         Generate compelling blog articles that demonstrate **measurable business impact** and **ROI** for logistics and supply chain operations.
 
-  - type: input
-    id: topic
-    attributes:
-      label: Business Challenge / Opportunity
-      description: What problem costs money or what opportunity generates revenue? What would you like to see in a blog article?
-      placeholder: "Example: How AI-powered claims retrieval automation reduces processing costs by 73% in logistics operations"
-    validations:
-      required: true
+        **⏱️ Generation time:** 5-10 minutes | **💰 Potential reach:** C-suite decision makers
 
   - type: textarea
     id: context_links
     attributes:
-      label: Reference Links (Optional)
+      label: Context & Reference Links
       description: |
-        Industry reports, case studies, or competitor analyses that support your business case.
-        **These will be fetched via Google search** to enrich the article with credible data.
+        **What should the blog be about?** (Put the main topic in the Issue Title above ⬆️)
+
+        Add any context, industry reports, or competitor links here:
       placeholder: |
-        Example:
-        https://www.mckinsey.com/industries/travel-logistics-and-infrastructure/our-insights/supply-chain-automation
-        https://www.gartner.com/en/supply-chain/topics/rpa-in-supply-chain
-        https://www.freightwaves.com/news/automation-roi-logistics-case-studies
-        https://supplychaindigital.com/digital-supply-chain/ai-automation-saves-millions
+        Topic Context: "How AI reduces claims processing costs..."
+
+        Links:
+        https://www.mckinsey.com/...
+        https://www.gartner.com/...
     validations:
       required: false
 

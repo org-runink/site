@@ -767,13 +767,14 @@ type ImageGeneration struct {
 	StyleNotes     string `json:"style_notes"`
 }
 
-func generateBlogArticle(ctx context.Context, topic string, tavilyKey string, contentDir string) (*BlogArticle, error) {
+func generateBlogArticle(ctx context.Context, topic, audience, valueDriver, additionalContext, tavilyKey, contentDir string) (*BlogArticle, error) {
 	// Step 0: Ensure llama-server is running (required for embeddings in Step 3)
 	if err := ensureServerRunning(ctx); err != nil {
 		return nil, fmt.Errorf("server startup failed: %w", err)
 	}
 
 	// Step 1: Search Tavily for latest information
+	// Note: We ONLY search for the TOPIC, not the context, to ensure high quality results
 	fmt.Printf("🔍 Searching Tavily for: %s\n", topic)
 	searchResults, err := searchTavily(ctx, topic, tavilyKey)
 	if err != nil {
@@ -794,7 +795,7 @@ func generateBlogArticle(ctx context.Context, topic string, tavilyKey string, co
 	}
 
 	// Step 4: Build comprehensive prompt
-	prompt := buildPrompt(topic, trends[:5], existingArticles) // Top 5 trending results
+	prompt := buildPrompt(topic, audience, valueDriver, additionalContext, trends[:5], existingArticles) // Top 5 trending results
 
 	// Step 5: Execute llama-cli
 	fmt.Println("🤖 Generating article with llama-cli...")
@@ -856,10 +857,26 @@ func sanitizeArticle(article *BlogArticle) {
 	article.Metadata.Date = time.Now().Format("2006-01-02")
 }
 
-func buildPrompt(topic string, trends []TrendScore, existingArticles []BlogArticleSummary) string {
+func buildPrompt(topic, audience, valueDriver, additionalContext string, trends []TrendScore, existingArticles []BlogArticleSummary) string {
 	var prompt strings.Builder
 
 	prompt.WriteString(fmt.Sprintf("Generate a blog article about: %s\n\n", topic))
+
+	// Add Business Context
+	if audience != "" || valueDriver != "" || additionalContext != "" {
+		prompt.WriteString("## Business Context & Goals:\n")
+		if audience != "" {
+			prompt.WriteString(fmt.Sprintf("- Target Audience: %s\n", audience))
+		}
+		if valueDriver != "" {
+			prompt.WriteString(fmt.Sprintf("- Key Value Driver: %s\n", valueDriver))
+		}
+		if additionalContext != "" {
+			// Check if context contains links and format them if needed, though raw text is usually fine for LLM
+			prompt.WriteString(fmt.Sprintf("- Additional Context/Links:\n%s\n", additionalContext))
+		}
+		prompt.WriteString("\n")
+	}
 
 	// Add trending research context
 	prompt.WriteString("## Latest Research and Trends:\n\n")
@@ -1469,14 +1486,14 @@ func extractFirstSentence(text string) string {
 
 // GenerateBlogFromModels is the exported function that can be called from main.go
 // It returns the absolute path of the generated file
-func GenerateBlogFromModels(ctx context.Context, topic, tavilyKey, contentDir, staticDir string) (string, error) {
+func GenerateBlogFromModels(ctx context.Context, topic, audience, valueDriver, additionalContext, tavilyKey, contentDir, staticDir string) (string, error) {
 	if tavilyKey == "" {
 		return "", fmt.Errorf("TAVILY_API_KEY environment variable is not set")
 	}
 
 	fmt.Printf("🚀 Starting blog generation for: %s\n\n", topic)
 
-	article, err := generateBlogArticle(ctx, topic, tavilyKey, contentDir)
+	article, err := generateBlogArticle(ctx, topic, audience, valueDriver, additionalContext, tavilyKey, contentDir)
 	if err != nil {
 		return "", fmt.Errorf("generation error: %v", err)
 	}
@@ -1523,7 +1540,8 @@ func MainCLI() {
 	staticDir := "../../static/images/blog"
 
 	ctx := context.Background()
-	absPath, err := GenerateBlogFromModels(ctx, topic, tavilyKey, contentDir, staticDir)
+	// Standalone CLI doesn't support context flags yet, passing empty strings
+	absPath, err := GenerateBlogFromModels(ctx, topic, "", "", "", tavilyKey, contentDir, staticDir)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)

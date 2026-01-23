@@ -39,37 +39,62 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull Blog Generator Image
-        run: docker pull ghcr.io/org-runink/blogen:v1.0.0
+        run: docker pull ghcr.io/org-runink/blogen:v1.1.0
 
       - name: Ensure output directories exist
         run: |
           mkdir -p content/blog
           mkdir -p static/images/blog
 
-      - name: Extract topic
+      - name: Extract Context & Topic
         id: topic
-        run: |
-          # Check if triggered by issue
-          if [ "${{ github.event_name }}" == "issues" ]; then
-            # Only proceed if issue has 'blog-request' label
-            LABELS='${{ toJSON(github.event.issue.labels.*.name) }}'
-            if echo "$LABELS" | grep -q "blog-request"; then
-              # Use issue title as topic
-              TOPIC="${{ github.event.issue.title }}"
-              ISSUE_NUMBER="${{ github.event.issue.number }}"
-              echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
-            else
-              echo "Issue does not have 'blog-request' label, skipping..."
-              exit 0
-            fi
-          elif [ "${{ github.event_name }}" == "repository_dispatch" ]; then
-            TOPIC="${{ github.event.client_payload.topic }}"
-          else
-            TOPIC="${{ inputs.topic }}"
-          fi
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const eventName = context.eventName;
+            let topic = "";
+            let richContext = "";
+            let slug = "";
+            let issueNumber = "";
 
-          echo "topic=$TOPIC" >> $GITHUB_OUTPUT
-          echo "slug=$(echo '$TOPIC' | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd '[:alnum:]-')" >> $GITHUB_OUTPUT
+            if (eventName === 'issues') {
+              const issue = context.payload.issue;
+              const title = issue.title;
+              const body = issue.body || "";
+              
+              issueNumber = issue.number;
+              
+              // 1. Get Topic from Title (strip prefix)
+              // Matches "[Blog Request]: " or just takes the whole title
+              topic = title.replace(/^\[Blog Request\]:\s*/i, "").trim();
+              
+              // 2. Parse Form Body (Markdown)
+              // Helper to extract section content
+              const extractSection = (header) => {
+                const regex = new RegExp(`### ${header}\\s+([\\s\\S]*?)(?=(###|$))`, 'i');
+                const match = body.match(regex);
+                return match ? match[1].trim() : "";
+              };
+              
+              const businessChallenge = extractSection("Business Challenge / Opportunity"); // Fallback if they used the field
+              const links = extractSection("Reference Links \\(Optional\\)");
+              const audience = extractSection("Target Decision Maker");
+              const valueDriver = extractSection("Primary Value Driver");
+              
+              // If title was generic "Blog Request", try to use the field
+              if ((!topic || topic.toLowerCase() === "blog request") && businessChallenge) {
+                topic = businessChallenge;
+              }
+              
+            // Output
+            core.setOutput('topic', topic);
+            core.setOutput('slug', slug);
+            if (issueNumber) core.setOutput('issue_number', issueNumber);
+
+            // New separate context outputs
+            core.setOutput('audience', audience || "");
+            core.setOutput('value_driver', valueDriver || "");
+            core.setOutput('context_links', links === "No response" ? "" : links || "");
 
       - name: Run Blog Generation with Docker
         id: blog_gen
@@ -79,10 +104,13 @@ jobs:
             -v ${{ github.workspace }}/content:/app/content \
             -v ${{ github.workspace }}/static:/app/static \
             -e TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }} \
-            ghcr.io/org-runink/blogen:v1.0.0 \
+            ghcr.io/org-runink/blogen:v1.1.0 \
             --content-dir /app/content/blog \
             --image-dir /app/static/images/blog \
-            -t "${{ steps.topic.outputs.topic }}" 2>&1)
+            -t "${{ steps.topic.outputs.topic }}" \
+            --audience "${{ steps.topic.outputs.audience }}" \
+            --value-driver "${{ steps.topic.outputs.value_driver }}" \
+            --context "${{ steps.topic.outputs.context_links }}" 2>&1)
 
           echo "$OUTPUT"
 
