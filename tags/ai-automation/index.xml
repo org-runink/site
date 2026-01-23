@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Automation on Runink</title>
+    <link>https://runink.org/tags/ai-automation/</link>
+    <description>Recent content in AI Automation on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Jan 2026 19:40:06 -0500</lastBuildDate>
+    <atom:link href="https://runink.org/tags/ai-automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dockerizing Blog Generation: A Comprehensive Testing and Deployment Strategy</title>
+      <link>https://runink.org/blog/dockerized-blog-generation-test/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/dockerized-blog-generation-test/</guid>
+      <description>&lt;h2 id=&#34;the-rise-of-containerization--blog-generation-in-devops&#34;&gt;The Rise of Containerization &amp;amp; Blog Generation in DevOps&lt;/h2&gt;&#xA;&lt;p&gt;The modern digital landscape demands constant content updates, rapid iteration cycles, and unwavering uptime. For blogs—a cornerstone of many businesses’ online presence—this translates to a need for efficient development, testing, and deployment pipelines. Traditional approaches often stumble under the weight of dependencies, environment inconsistencies, and manual configuration drift.&lt;/p&gt;&#xA;&lt;p&gt;Enter Docker: The de facto standard for containerization has revolutionized software delivery by packaging applications with all their dependencies into isolated units called containers. These containers ensure that an application runs consistently across different environments—from a developer&amp;rsquo;s laptop to production servers. This predictability is invaluable in the context of blog generation, where content creation workflows often involve multiple tools and services.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
