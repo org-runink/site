@@ -22,7 +22,7 @@ echo "🐳 Building Docker image with buildx..."
 docker buildx build \
   --network=host \
   --load \
-  -t ghcr.io/org-runink/blogen:v1.2.0 \
+  -t ghcr.io/org-runink/blogen:latest \
   -f Dockerfile \
   .
 
@@ -42,6 +42,5 @@ docker buildx build \
 echo "🎉 Build successful!"
 
 echo "📤 Pushing to GHCR..."
-docker tag ghcr.io/org-runink/blogen:v1.2.0 ghcr.io/org-runink/blogen:latest
 docker push ghcr.io/org-runink/blogen:latest
 echo "✅ Done! Package published."

@@ -46,7 +46,7 @@ Published to GitHub Container Registry (ghcr.io):
 
 ```
 ghcr.io/org-runink/blogen:latest
-ghcr.io/org-runink/blogen:v1.2.0
+ghcr.io/org-runink/blogen:latest
 ghcr.io/org-runink/blogen:main-<sha>
 ```
 
@@ -332,7 +332,7 @@ Images are automatically built and published via GitHub Actions:
 **Triggers**:
 - **Push to main**: Tagged as `latest` and `main-<sha>`
 - **Pull requests**: Tagged as `pr-<number>`
-- **Git tags**: Tagged with semantic version (`v1.2.0`, `v1.2`, `v1`)
+- **Git tags**: Tagged with semantic version (`latest`)
 
 **Workflow**: `.github/workflows/docker-publish.yml`
 
@@ -359,8 +359,8 @@ Used in automated workflows:
 
 ### Release Process
 
-1. Create tag: `git tag v1.2.0`
-2. Push tag: `git push origin v1.2.0`
+1. Create tag: `git tag latest`
+2. Push tag: `git push origin latest`
 3. Create GitHub Release (triggers attestation)
 4. Workflow publishes image with version tags
 
@@ -368,7 +368,7 @@ Used in automated workflows:
 
 **SBOM & Provenance**:
 ```bash
-gh attestation verify oci://ghcr.io/org-runink/blogen:v1.2.0 -R org-runink/site
+gh attestation verify oci://ghcr.io/org-runink/blogen:latest -R org-runink/site
 ```
 
 ---

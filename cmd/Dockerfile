@@ -48,7 +48,7 @@ FROM ubuntu:latest
 # OCI Image Annotations
 LABEL org.opencontainers.image.title="Runink Blog Generator" \
     org.opencontainers.image.description="AI-powered blog generation tool" \
-    org.opencontainers.image.version="1.2.0" \
+    org.opencontainers.image.version="latest" \
     org.opencontainers.image.vendor="Runink" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.source="https://github.com/org-runink/site" \

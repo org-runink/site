@@ -3,7 +3,7 @@
 
 cat << 'EOF'
 
-🚀 Runink Blog Generator v1.2.0
+🚀 Runink Blog Generator latest
    https://runink.org
    
 📋 USAGE NOTIFICATION REQUIRED
