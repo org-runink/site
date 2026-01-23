@@ -103,14 +103,14 @@ docker build -t blog-gen:latest -f Dockerfile ..
 #### **Builder Stage** (Ubuntu 24.04)
 - Installs build tools: `build-essential`, `cmake`, `git`, `libopenblas-dev`, `pkg-config`
 - **Compiles stable-diffusion.cpp**: For AI image generation (Flux Schnell model)
-- **Compiles llama.cpp**: For text generation (Gemma 3 4B model)
+- **Compiles llama.cpp**: For text generation (Gemma 3 12B model)
 - Builds with `OpenBLAS` support for optimized CPU inference
 - **Shared libraries**: Uses `find` to recursively locate ALL `.so*` files from build directories
 
 #### **Runtime Stage** (Ubuntu 24.04)
 - Minimal runtime: `ca-certificates`, `libopenblas0`, `libgomp1`
 - Copies binaries: `blog-gen`, `llama-server`, `txt2img`
-- Copies models: `gemma-3-4b-it-q4_0.gguf`, `flux1-schnell-q4_0.safetensors`
+- Copies models: `gemma-3-12b-it-q4_0.gguf`, `flux1-schnell-q4_0.safetensors`
 - **Sets `LD_LIBRARY_PATH=/app/shbin`** for dynamic library loading
 - Direct execution (no entrypoint wrapper for simplicity)
 
@@ -253,7 +253,7 @@ docker run --rm --entrypoint sh blog-gen:latest -c "ls -lh /app/shbin/"
 **Symptom**: "Server failed to become ready after 5 minutes"
 
 **Causes**:
-1. **Insufficient RAM**: 4B model needs ~4GB
+1. **Insufficient RAM**: 12B model needs ~10GB
 2. **Slow CPU**: Model loading takes 3-5 mins on CPU-only
 
 **Solutions**:
@@ -379,20 +379,20 @@ gh attestation verify oci://ghcr.io/org-runink/site/blog-gen:v1.0.0 -R org-runin
 
 | Model | Size | CPU Load | RAM |
 |-------|------|----------|-----|
-| Gemma 3 4B Q4 | ~3GB | 3-5 min | ~4GB |
+| Gemma 3 12B Q4 | ~8GB | 5-10 min | ~10GB |
 | Flux Schnell Q4 | ~12GB | 1-2 min | ~16GB |
 
 ### Resource Requirements
 
 **Minimum**:
-- CPU: 4 cores
-- RAM: 8GB
-- Disk: 20GB
+- CPU: 8 cores
+- RAM: 16GB
+- Disk: 30GB
 
 **Recommended**:
-- CPU: 8+ cores
-- RAM: 16GB+
-- Disk: 40GB
+- CPU: 16+ cores
+- RAM: 32GB+
+- Disk: 50GB
 
 ---
 

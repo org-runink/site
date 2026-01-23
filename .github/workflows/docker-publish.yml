@@ -18,7 +18,7 @@ on:
 
 env:
     REGISTRY: ghcr.io
-    IMAGE_NAME: ${{ github.repository }}/blog-gen
+    IMAGE_NAME: org-runink/blogen
 
 jobs:
     build-and-push:
@@ -63,7 +63,7 @@ jobs:
             - name: Build static binary
               working-directory: cmd
               run: |
-                  CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o blog-gen main.go
+                  CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o blogen main.go
 
             - name: Build and push Docker image
               uses: docker/build-push-action@v5

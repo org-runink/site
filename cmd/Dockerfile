@@ -64,8 +64,8 @@ RUN apt-get update && apt-get install -y \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy our blog-gen binary
-COPY cmd/blog-gen .
+# Copy our blogen binary
+COPY cmd/blogen .
 
 # Copy models and config
 COPY cmd/models/ ./models/
@@ -77,8 +77,8 @@ COPY --from=builder /opt/binaries/txt2img ./shbin/txt2img
 COPY --from=builder /opt/binaries/*.so* ./shbin/
 RUN chmod +x ./shbin/server ./shbin/txt2img
 
-# Make blog-gen executable
-RUN chmod +x /app/blog-gen
+# Make blogen executable
+RUN chmod +x /app/blogen
 
 # Environment - set LD_LIBRARY_PATH without referencing undefined variable
 ENV LOG_LEVEL=info \
@@ -88,4 +88,4 @@ ENV LOG_LEVEL=info \
     BLOG_DEBUG=1
 
 # Direct execution
-ENTRYPOINT ["/app/blog-gen"]
+ENTRYPOINT ["/app/blogen"]

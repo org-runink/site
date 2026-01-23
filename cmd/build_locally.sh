@@ -5,8 +5,8 @@ echo "🧹 Tidying Go modules..."
 go mod tidy
 
 # Build the Go application
-echo "🔨 Building blog-gen (CGO_ENABLED=0 for Alpine compatibility)..."
-CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o blog-gen main.go
+echo "🔨 Building blogen (CGO_ENABLED=0 for Alpine compatibility)..."
+CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o blogen main.go
 
 echo "✅ Build successful!"
 
@@ -14,7 +14,7 @@ echo "🧪 Running unit tests..."
 go test ./...
 
 echo "🔍 Dry run check (schema loading)..."
-./blog-gen --help
+./blogen --help
 
 echo "🐳 Building Docker image with buildx..."
 # Build from root context to include content/ and static/
@@ -23,7 +23,7 @@ cd ..
 docker buildx build \
   --network=host \
   --load \
-  -t blog-gen \
+  -t ghcr.io/org-runink/blogen:v1.0.0 \
   -f cmd/Dockerfile \
   .
 cd cmd
@@ -37,7 +37,7 @@ docker run --rm --network=host \
   -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
   -e OPENBLAS_NUM_THREADS=8 \
   -e OPENBLAS_MAIN_FREE=1 \
-  blog-gen \
+  ghcr.io/org-runink/blogen:v1.0.0 \
   --content-dir /app/content/blog \
   --image-dir /app/static/images/blog \
   -t "Dockerized Blog Generation Test"
