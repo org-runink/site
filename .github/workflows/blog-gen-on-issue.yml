@@ -45,7 +45,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull Blog Generator Image
-        run: docker pull ghcr.io/${{ github.repository }}/blog-gen:latest
+        run: docker pull ghcr.io/org-runink/blogen:latest
 
       - name: Ensure output directories exist
         run: |
@@ -61,7 +61,7 @@ jobs:
             -v ${{ github.workspace }}/content:/app/content \
             -v ${{ github.workspace }}/static:/app/static \
             -e TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }} \
-            ghcr.io/${{ github.repository }}/blog-gen:latest \
+            ghcr.io/org-runink/blogen:latest \
             --content-dir /app/content/blog \
             --image-dir /app/static/images/blog \
             -t "${{ steps.get_topic.outputs.topic }}" 2>&1)
