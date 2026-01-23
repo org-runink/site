@@ -1,3 +1,5 @@
 node_modules
 public
 docs
+cmd/models/gemma-3-12b-it-q4_0.gguf
+cmd/models/stable-diffusion-v1-5-pruned-emaonly-Q4_1.gguf
