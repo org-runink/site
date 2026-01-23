@@ -40,6 +40,9 @@ docker run --rm --network=host \
   ghcr.io/org-runink/blogen:v1.1.0 \
   --content-dir /app/content/blog \
   --image-dir /app/static/images/blog \
-  -t "Dockerized Blog Generation Test"
+  -t "Dockerized Blog Generation Test" \
+  --audience "Developers and DevOps Engineers" \
+  --value-driver "Improved Reliability" \
+  --context "Focus on practical examples."
 
 echo "🎉 All tests and Docker verification passed!"
