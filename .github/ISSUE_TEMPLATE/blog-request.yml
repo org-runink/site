@@ -1,0 +1,165 @@
+name: � Business Value Blog Request
+description: Generate ROI-focused content for logistics and supply chain automation
+title: "[Blog Request]: "
+labels: ["blog-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## � Show Me The Money: AI-Powered Business Value Content
+
+        Generate compelling blog articles that demonstrate **measurable business impact** and **ROI** for logistics and supply chain operations. Our AI will:
+        - Research proven cost savings and efficiency gains
+        - Quantify automation benefits with real-world metrics
+        - Generate executive-friendly content with clear value propositions
+        - Include financial impact models and ROI calculators
+
+        **⏱️ Generation time:** 5-10 minutes | **💰 Potential reach:** C-suite decision makers
+
+  - type: input
+    id: topic
+    attributes:
+      label: Business Challenge / Opportunity
+      description: What problem costs money or what opportunity generates revenue? Focus on business outcomes, not technology.
+      placeholder: "Example: How AI-powered claims retrieval automation reduces processing costs by 73% in logistics operations"
+    validations:
+      required: true
+
+  - type: textarea
+    id: business_value
+    attributes:
+      label: 💰 Expected Business Impact
+      description: Quantify the value - be specific about cost savings, revenue growth, or efficiency gains
+      placeholder: |
+        Example for automated RPA claims retrieval:
+        - Reduce claims processing time from 4 hours to 15 minutes (93.75% time savings)
+        - Cut manual labor costs by $180K/year per logistics team
+        - Improve accuracy from 87% to 99.2% (reduce costly errors)
+        - Process 10x more claims with same headcount
+        - ROI breakeven in 3.2 months
+    validations:
+      required: true
+
+  - type: textarea
+    id: context_links
+    attributes:
+      label: Reference Links (Optional)
+      description: |
+        Industry reports, case studies, or competitor analyses that support your business case.
+        **These will be fetched via Google search** to enrich the article with credible data.
+      placeholder: |
+        Example:
+        https://www.mckinsey.com/industries/travel-logistics-and-infrastructure/our-insights/supply-chain-automation
+        https://www.gartner.com/en/supply-chain/topics/rpa-in-supply-chain
+        https://www.freightwaves.com/news/automation-roi-logistics-case-studies
+        https://supplychaindigital.com/digital-supply-chain/ai-automation-saves-millions
+    validations:
+      required: false
+
+  - type: dropdown
+    id: target_audience
+    attributes:
+      label: Target Decision Maker
+      description: Who controls the budget for this initiative?
+      options:
+        - C-Suite Executives (CEO, CFO, COO)
+        - VP of Operations / Supply Chain
+        - VP of Technology / CTO
+        - Directors of Logistics / Procurement
+        - Finance & Business Operations Leaders
+        - Mixed Audience (Technical + Business)
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content_focus
+    attributes:
+      label: Primary Value Driver
+      description: What's the main "show me the money" angle?
+      options:
+        - Cost Reduction & Operational Efficiency
+        - Revenue Growth & Market Expansion
+        - Risk Mitigation & Compliance Savings
+        - Speed to Market & Competitive Advantage
+        - Customer Satisfaction & Retention ROI
+        - Balanced (Multiple Value Drivers)
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: content_preferences
+    attributes:
+      label: Business Value Elements
+      description: Select quantifiable elements to include
+      options:
+        - label: ROI calculator or payback period analysis
+        - label: Before/After cost comparison tables
+        - label: Industry benchmark comparisons
+        - label: Real-world customer case studies with $ figures
+        - label: Implementation timeline with phased savings
+        - label: Risk-adjusted financial projections
+
+  - type: textarea
+    id: industry_focus
+    attributes:
+      label: Industry Verticals (Optional)
+      description: Specific logistics/supply chain segments to emphasize
+      placeholder: |
+        Example:
+        - 3PL providers (freight forwarding, last-mile delivery)
+        - E-commerce fulfillment centers
+        - Cold chain logistics (pharma, food distribution)
+        - Automotive parts supply chain
+        - Cross-border trade/customs automation
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Context
+      description: Competitive insights, urgency factors, or specific pain points to address
+      placeholder: |
+        Example:
+        - Competitor X achieved 40% cost reduction - we need to match/beat that
+        - Peak season coming - emphasize scalability without hiring
+        - Recent regulatory changes increase manual workload by 60%
+        - Current system crashes cost $50K per hour of downtime
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### � Example: High-Impact Business Value Topics
+
+        **Cost Reduction Stories:**
+        - "How AI Agents Cut Freight Claims Processing Costs by $2.1M Annually"
+        - "Warehouse Automation ROI: $850K Savings in First 6 Months"
+        - "Eliminating Manual Data Entry: 40 FTE Cost Avoidance Strategy"
+
+        **Revenue & Efficiency:**
+        - "3PL Revenue Growth: +37% Capacity Without Adding Staff"
+        - "Same-Day Delivery Economics: Profitable Automation Playbook"
+        - "Peak Season Profitability: Handle 3x Volume, 0.8x Labor Costs"
+
+        **Risk & Compliance:**
+        - "Customs Automation: $4.3M in Penalty Avoidance + 99.8% Accuracy"
+        - "Cold Chain Compliance: Reduce Spoilage Losses by 84%"
+
+        ---
+
+        ### ⚙️ What Happens Next?
+
+        1. **AI Research**: The system pulls industry data, case studies, and ROI benchmarks
+        2. **Value-Focused Writing**: Generates executive-ready content with clear financial impact
+        3. **Review**: Article delivered for approval with embedded metrics and sources
+        4. **Publish**: Goes live to attract high-intent, budget-holding decision makers
+
+        **💡 Pro Tip:** The more specific your business metrics, the more compelling the article.
+
+        **Questions?** Check our [documentation](../cmd/DOCKER.md) or reach out to the team.
