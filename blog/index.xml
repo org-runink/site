@@ -6,15 +6,8 @@
     <description>Recent content in Blogs on Runink</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Jan 2026 19:40:06 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 28 Oct 2025 08:13:18 -0400</lastBuildDate>
     <atom:link href="https://runink.org/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Dockerizing Blog Generation: A Comprehensive Testing and Deployment Strategy</title>
-      <link>https://runink.org/blog/dockerized-blog-generation-test/</link>
-      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/blog/dockerized-blog-generation-test/</guid>
-      <description>&lt;h2 id=&#34;the-rise-of-containerization--blog-generation-in-devops&#34;&gt;The Rise of Containerization &amp;amp; Blog Generation in DevOps&lt;/h2&gt;&#xA;&lt;p&gt;The modern digital landscape demands constant content updates, rapid iteration cycles, and unwavering uptime. For blogs—a cornerstone of many businesses’ online presence—this translates to a need for efficient development, testing, and deployment pipelines. Traditional approaches often stumble under the weight of dependencies, environment inconsistencies, and manual configuration drift.&lt;/p&gt;&#xA;&lt;p&gt;Enter Docker: The de facto standard for containerization has revolutionized software delivery by packaging applications with all their dependencies into isolated units called containers. These containers ensure that an application runs consistently across different environments—from a developer&amp;rsquo;s laptop to production servers. This predictability is invaluable in the context of blog generation, where content creation workflows often involve multiple tools and services.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms</title>
       <link>https://runink.org/blog/automated-semantic-layer-data-observability/</link>
@@ -105,6 +98,13 @@
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://runink.org/blog/dynamic-masking-snowflake-shared-objects/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;br&gt;&#xA;Dynamic data masking on shared Snowflake objects is essential for compliant financial and insurance companies. It ensures regulatory alignment (GDPR, CCPA, HIPAA, etc.), strengthens data security, limits insider threats, and preserves real-time analytics integrity—enabling secure, scalable, and cost-efficient data sharing without compromising sensitive information.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In today&amp;rsquo;s landscape, compliant financial and insurance companies face unprecedented regulatory scrutiny and cybersecurity threats. With increased data-sharing across departments, external partners, and cloud-based data platforms like Snowflake, protecting sensitive information becomes paramount. Dynamic masking of shared Snowflake objects emerges not just as a technical convenience, but as an essential best practice.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink: Rethinking Data Pipelines with Go, Raft, and Linux Primitives</title>
+      <link>https://runink.org/blog/runink-go-raft-linux-data-pipelines/</link>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/runink-go-raft-linux-data-pipelines/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&#xA;Runink is a streamlined, Go-native platform for managing secure and efficient data pipelines without Kubernetes. It uses Linux primitives (namespaces, cgroups) for isolation, Raft consensus for strong consistency and governance, and complies with open standards such as OpenLineage, Open Data Contracts, and OpenTelemetry—simplifying orchestration, enhancing performance, and ensuring transparent data governance.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;runink-rethinking-data-pipelines-with-go-raft-and-linux-primitives&#34;&gt;Runink: Rethinking Data Pipelines with Go, Raft, and Linux Primitives&lt;/h1&gt;&#xA;&lt;p&gt;Modern data platforms often rely on complex stacks involving Kubernetes, Spark, Airflow, and DBT—each tool addressing part of the data pipeline lifecycle. Runink presents a radically simplified, vertically integrated alternative: a Go-native distributed pipeline execution and governance platform built upon Linux primitives and Raft consensus. In this article, we&amp;rsquo;ll explore the core components of Runink—Runink CLI/API, Runi Agent/Slices, the Barn Domain Model Control Plane, and Herd Domain Boundary Controls—and demonstrate how they redefine pipeline orchestration.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
