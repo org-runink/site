@@ -35,6 +35,19 @@ func isVerbose() bool {
 	return os.Getenv("BLOG_DEBUG") == "1" || os.Getenv("BLOG_DEBUG") == "true"
 }
 
+// Feature Gate Helpers
+func isImageGenEnabled() bool {
+	return os.Getenv("ENABLE_IMAGE_GEN") != "false" // Default true
+}
+
+func isLinkedInEnabled() bool {
+	return os.Getenv("ENABLE_LINKEDIN") != "false" // Default true
+}
+
+func isSearchEnabled() bool {
+	return os.Getenv("ENABLE_SEARCH") != "false" // Default true
+}
+
 // CachedEmbedding stores embedding vectors with metadata for persistence
 type CachedEmbedding struct {
 	Embedding []float64 `json:"embedding"`
@@ -776,10 +789,21 @@ func generateBlogArticle(ctx context.Context, topic, audience, valueDriver, addi
 
 	// Step 1: Search Tavily for latest information
 	// Note: We ONLY search for the TOPIC, not the context, to ensure high quality results
-	fmt.Printf("🔍 Searching Tavily for: %s\n", topic)
-	searchResults, err := searchTavily(ctx, topic, tavilyKey)
-	if err != nil {
-		return nil, fmt.Errorf("tavily search: %w", err)
+	var searchResults *TavilySearchResponse
+	if isSearchEnabled() {
+		fmt.Printf("🔍 Searching Tavily for: %s\n", topic)
+		var err error
+		searchResults, err = searchTavily(ctx, topic, tavilyKey)
+		if err != nil {
+			return nil, fmt.Errorf("tavily search: %w", err)
+		}
+	} else {
+		fmt.Println("⚠️ Search disabled (ENABLE_SEARCH=false). Skipping Tavily.")
+		// Create empty results to proceed without search data
+		searchResults = &TavilySearchResponse{
+			Results: []TavilyResult{},
+			Query:   topic,
+		}
 	}
 
 	// Step 2: Analyze and rank trends with ARIMA
@@ -1453,8 +1477,19 @@ func saveArticle(article *BlogArticle, contentDir, staticDir string) error {
 	fmt.Printf("✅ Saved article: %s\n", filePath)
 
 	// Generate featured image
-	if err := generateFeaturedImage(article, staticDir); err != nil {
-		return fmt.Errorf("generate image: %w", err)
+	if isImageGenEnabled() {
+		if err := generateFeaturedImage(article, staticDir); err != nil {
+			return fmt.Errorf("generate image: %w", err)
+		}
+	} else {
+		fmt.Println("⚠️ Image generation disabled (ENABLE_IMAGE_GEN=false). Skipping.")
+		// Create a placeholder anyway to avoid 404s? Or just rely on fallback logic if file missing.
+		// For now, we simply skip. The markdown still links to it.
+		// It is better to create a placeholder if disabled, to ensure site builds.
+		imagePath := filepath.Join(staticDir, article.Metadata.Slug+".png")
+		if err := createPlaceholderImage(imagePath); err != nil {
+			fmt.Printf("⚠️ Failed to create placeholder: %v\n", err)
+		}
 	}
 
 	return nil
@@ -1595,15 +1630,20 @@ func GenerateBlogFromModels(ctx context.Context, topic, audience, valueDriver, a
 
 	// Generate LinkedIn posts
 	blogURL := fmt.Sprintf("https://www.runink.org/blog/%s/", article.Metadata.Slug)
-	linkedInPosts := GenerateLinkedInPosts(article, blogURL)
 
-	// Output LinkedIn posts as JSON to stdout (will be captured by workflow)
-	fmt.Println("\n📱 LINKEDIN_POSTS_START")
-	postsJSON, err := json.MarshalIndent(linkedInPosts, "", "  ")
-	if err == nil {
-		fmt.Println(string(postsJSON))
+	if isLinkedInEnabled() {
+		linkedInPosts := GenerateLinkedInPosts(article, blogURL)
+
+		// Output LinkedIn posts as JSON to stdout (will be captured by workflow)
+		fmt.Println("\n📱 LINKEDIN_POSTS_START")
+		postsJSON, err := json.MarshalIndent(linkedInPosts, "", "  ")
+		if err == nil {
+			fmt.Println(string(postsJSON))
+		}
+		fmt.Println("📱 LINKEDIN_POSTS_END")
+	} else {
+		fmt.Println("⚠️ LinkedIn posts disabled (ENABLE_LINKEDIN=false). Skipping.")
 	}
-	fmt.Println("📱 LINKEDIN_POSTS_END")
 
 	// Return absolute path
 	absPath, _ := filepath.Abs(filepath.Join("..", "..", "content", "blog", article.Metadata.Slug+".md"))

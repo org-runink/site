@@ -71,7 +71,7 @@ RUN apt-get update && apt-get install -y \
 COPY ./blogen .
 
 # Copy models and config
-COPY ./models/ ./models/
+COPY ./models/ .
 
 # Copy compiled binaries and shared libraries from builder
 RUN mkdir -p ./shbin
