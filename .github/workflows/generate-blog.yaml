@@ -35,6 +35,11 @@ permissions:
 jobs:
   generate-blog:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/org-runink/blogen:v1.2.0
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -43,15 +48,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Pull Blog Generator Image
-        run: docker pull ghcr.io/org-runink/blogen:latest
+      # Steps dealing with docker login and pull are removed as we are running in a container
 
       - name: Ensure output directories exist
         run: |
@@ -134,13 +131,9 @@ jobs:
         id: blog_gen
         run: |
           # Capture the blog generation output
-          OUTPUT=$(docker run --rm \
-            -v ${{ github.workspace }}/content:/app/content \
-            -v ${{ github.workspace }}/static:/app/static \
-            -e TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }} \
-            ghcr.io/org-runink/blogen:v1.2.0 \
-            --content-dir /app/content/blog \
-            --image-dir /app/static/images/blog \
+          OUTPUT=$(blogen \
+            --content-dir content/blog \
+            --image-dir static/images/blog \
             -t "${{ steps.topic.outputs.topic }}" \
             --audience "${{ steps.topic.outputs.audience }}" \
             --value-driver "${{ steps.topic.outputs.value_driver }}" \
