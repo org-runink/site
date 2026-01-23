@@ -15,6 +15,11 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   generate-blog:
     runs-on: ubuntu-latest
@@ -34,7 +39,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull Blog Generator Image
-        run: docker pull ghcr.io/org-runink/blogen:latest
+        run: docker pull ghcr.io/org-runink/blogen:v1.0.0
 
       - name: Ensure output directories exist
         run: |
@@ -69,15 +74,46 @@ jobs:
       - name: Run Blog Generation with Docker
         id: blog_gen
         run: |
-          # Run blog generation using Docker
-          docker run --rm \
+          # Capture the blog generation output
+          OUTPUT=$(docker run --rm \
             -v ${{ github.workspace }}/content:/app/content \
             -v ${{ github.workspace }}/static:/app/static \
             -e TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }} \
-            ghcr.io/org-runink/blogen:latest \
+            ghcr.io/org-runink/blogen:v1.0.0 \
             --content-dir /app/content/blog \
             --image-dir /app/static/images/blog \
-            -t "${{ steps.topic.outputs.topic }}"
+            -t "${{ steps.topic.outputs.topic }}" 2>&1)
+
+          echo "$OUTPUT"
+
+          # Extract LinkedIn posts JSON from output
+          # Look for content between markers
+          LINKEDIN_JSON=$(echo "$OUTPUT" | sed -n '/📱 LINKEDIN_POSTS_START/,/📱 LINKEDIN_POSTS_END/p' | sed '1d;$d')
+
+          # If no JSON found (fallback), create default structure
+          if [ -z "$LINKEDIN_JSON" ]; then
+            echo "⚠️ No LinkedIn JSON found in output, creating default..."
+            SLUG="${{ steps.topic.outputs.slug }}"
+            TOPIC="${{ steps.topic.outputs.topic }}"
+            BLOG_URL="https://www.runink.org/blog/${SLUG}/"
+            
+            LINKEDIN_JSON=$(cat <<EOF
+            {
+              "company_post": {
+                "text": "🚀 New Article: ${TOPIC}\\n\\nRead more: ${BLOG_URL}\\n\\n#AI #Logistics"
+              },
+              "personal_post": {
+                "text": "I just published a new article on ${TOPIC}. Check it out: ${BLOG_URL}"
+              }
+            }
+          EOF
+            )
+          fi
+
+          # Save to environment for next steps (multiline string)
+          echo "linkedin_posts<<EOF" >> $GITHUB_OUTPUT
+          echo "$LINKEDIN_JSON" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Validate article quality
         run: |
@@ -108,36 +144,24 @@ jobs:
           echo "✅ Article validation passed"
           echo "   Word count: $WORD_COUNT"
 
-      - name: Extract LinkedIn Posts
-        id: linkedin
+      - name: Extract Post Content for Slack
+        id: post_content
         run: |
-          SLUG="${{ steps.topic.outputs.slug }}"
-          TOPIC="${{ steps.topic.outputs.topic }}"
-          BLOG_URL="https://www.runink.org/blog/${SLUG}/"
+          LINKEDIN_JSON='${{ steps.blog_gen.outputs.linkedin_posts }}'
 
-          # Create LinkedIn company page post
-          cat << 'COMPANY_EOF' >> $GITHUB_OUTPUT
-          company_post<<EOF
-          🚀 New insight: ${TOPIC}
+          # Extract using jq, remove quotes
+          COMPANY_POST=$(echo "$LINKEDIN_JSON" | jq -r '.company_post.text')
+          PERSONAL_POST=$(echo "$LINKEDIN_JSON" | jq -r '.personal_post.text')
 
-          We've just published a new article exploring ${TOPIC}. Discover key insights and practical takeaways.
+          # Escape newlines for Slack JSON payload
+          # We use a trick to escape content safely for JSON inclusion
+          echo "company_post<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMPANY_POST" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
-          Read more: ${BLOG_URL}
-
-          #TechBlog #Innovation #KnowledgeSharing
-          EOF
-          COMPANY_EOF
-
-          # Create LinkedIn personal repost
-          cat << 'PERSONAL_EOF' >> $GITHUB_OUTPUT
-          personal_post<<EOF
-          💡 Excited to share our latest article on ${TOPIC}!
-
-          Check it out and let me know your thoughts: ${BLOG_URL}
-
-          #TechInsights #Learning
-          EOF
-          PERSONAL_EOF
+          echo "personal_post<<EOF" >> $GITHUB_OUTPUT
+          echo "$PERSONAL_POST" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         id: create_pr
@@ -216,8 +240,8 @@ jobs:
             BLOG_URL="https://www.runink.org/blog/${SLUG}/"
             PR_URL="${{ steps.create_pr.outputs.pull-request-url }}"
             
-            COMPANY_POST='${{ steps.linkedin.outputs.company_post }}'
-            PERSONAL_POST='${{ steps.linkedin.outputs.personal_post }}'
+            COMPANY_POST='${{ steps.post_content.outputs.company_post }}'
+            PERSONAL_POST='${{ steps.post_content.outputs.personal_post }}'
             
             # Send to Slack
             curl -X POST "$SLACK_WEBHOOK_URL" \
