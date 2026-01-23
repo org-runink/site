@@ -865,6 +865,11 @@ func sanitizeArticle(article *BlogArticle) {
 
 	sanitizeField := func(text string) string {
 		text = linkRegex.ReplaceAllString(text, "[$2]($1)")
+
+		// Remove empty markdown links [text]() -> text
+		emptyLinkRegex := regexp.MustCompile(`\[([^\]]+)\]\(\)`)
+		text = emptyLinkRegex.ReplaceAllString(text, "$1")
+
 		text = mermaidRegex.ReplaceAllString(text, "")
 		return strings.TrimSpace(text)
 	}
@@ -901,7 +906,7 @@ func buildPrompt(topic, audience, valueDriver, additionalContext string, trends 
 	}
 
 	// Add trending research context
-	prompt.WriteString("## Latest Research and Trends (For Information Only - DO NOT LINK):\n\n")
+	prompt.WriteString("## Background Information (For Context Only - Do Not Cite):\n\n")
 	for i, trend := range trends {
 		prompt.WriteString(fmt.Sprintf("%d. **%s** (Trend Score: %.2f)\n",
 			i+1, trend.Result.Title, trend.TrendScore))
@@ -940,16 +945,15 @@ func buildPrompt(topic, audience, valueDriver, additionalContext string, trends 
 	prompt.WriteString("  3. Why Important (150 words)\n")
 	prompt.WriteString("  4. Ways to Solve (300 words)\n")
 	prompt.WriteString("  5. Conclusion/CTA (300 words)\n")
-	prompt.WriteString("- REQUIRED: Generate exactly 3 Mermaid diagrams.\n")
-	prompt.WriteString("  - Place diagram 1 in 'problem_statement' section\n")
-	prompt.WriteString("  - Place diagram 2 in 'why_important' section\n")
-	prompt.WriteString("  - Place diagram 3 in 'ways_to_solve' section\n")
-	prompt.WriteString("- Set 'placement' field to: 'problem_statement', 'why_important', or 'ways_to_solve'.\n")
+	prompt.WriteString("- REQUIRED: Generate exactly 3 Mermaid diagrams in the 'diagrams' JSON list. Do NOT embed them in the text fields.\n")
+	prompt.WriteString("  - Diagram 1: placement='problem_statement'\n")
+	prompt.WriteString("  - Diagram 2: placement='why_important'\n")
+	prompt.WriteString("  - Diagram 3: placement='ways_to_solve'\n")
 	prompt.WriteString("- Write factual, expert-level technical content.\n")
 	prompt.WriteString("- Position Runink as the authority in AI automation.\n")
 	prompt.WriteString("- CRITICAL: Output strictly in MARKDOWN format. Do NOT use HTML tags (e.g., no <ul>, <li>, <a>, <b>).\n")
 	prompt.WriteString("- Use standard markdown for lists (- item), bold (**text**), and links ([text](url)).\n")
-	prompt.WriteString("- CRITICAL: Do NOT include external links (no google.com, no wikipedia, etc). Use ONLY the internal links provided above.\n")
+	prompt.WriteString("- CRITICAL: Do NOT include external links or citations (e.g. no [Youtube](), no [Google]()). Content must be self-contained or reference ONLY the internal links provided.\n")
 	prompt.WriteString("- CRITICAL: You MUST include 2-4 internal links to the related articles provided above.\n")
 	prompt.WriteString("  - Use markdown format: [descriptive anchor text](/blog/slug)\n")
 	prompt.WriteString("  - Example: 'as discussed in [our guide to data quality](/blog/data-quality-monitoring)'\n")
@@ -1180,7 +1184,10 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for problem_statement
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "problem_statement" {
-			md.WriteString(sanitizeMermaidCode(diagram.DiagramCode) + "\n\n")
+			code := sanitizeMermaidCode(diagram.DiagramCode)
+			if code != "" {
+				md.WriteString(code + "\n\n")
+			}
 		}
 	}
 
@@ -1190,7 +1197,10 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for why_important
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "why_important" {
-			md.WriteString(sanitizeMermaidCode(diagram.DiagramCode) + "\n\n")
+			code := sanitizeMermaidCode(diagram.DiagramCode)
+			if code != "" {
+				md.WriteString(code + "\n\n")
+			}
 		}
 	}
 
@@ -1200,7 +1210,10 @@ func convertToMarkdown(article *BlogArticle) string {
 	// Insert diagram for ways_to_solve
 	for _, diagram := range article.Diagrams {
 		if diagram.Placement == "ways_to_solve" {
-			md.WriteString(sanitizeMermaidCode(diagram.DiagramCode) + "\n\n")
+			code := sanitizeMermaidCode(diagram.DiagramCode)
+			if code != "" {
+				md.WriteString(code + "\n\n")
+			}
 		}
 	}
 
@@ -1257,6 +1270,10 @@ func sanitizeMermaidCode(code string) string {
 	code = strings.ReplaceAll(code, "```mermaid", "")
 	code = strings.ReplaceAll(code, "```", "")
 	code = strings.TrimSpace(code)
+
+	if code == "" {
+		return ""
+	}
 
 	// Wrap cleanly
 	return "```mermaid\n" + code + "\n```"

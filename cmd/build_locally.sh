@@ -23,24 +23,25 @@ cd ..
 docker buildx build \
   --network=host \
   --load \
-  -t ghcr.io/org-runink/blogen:v1.1.3 \
-  -f cmd/Dockerfile \
+  -t ghcr.io/org-runink/blogen:v1.1.4 \
+  -f Dockerfile \
   .
 cd cmd
 
 echo "🚀 Testing Docker run (Dry run generation)..."
 # We mount content/static to see output, and pass network host for local model server access if needed (though model is embedded/downloaded in image normally, but here we rely on what's in image)
 # Note: This runs a real generation!
-docker run --rm --network=host \
-  -v "$(pwd)/../content":/app/content \
-  -v "$(pwd)/../static":/app/static \
-  -e TAVILY_API_KEY="${TAVILY_API_KEY}" \
-  -e OPENBLAS_NUM_THREADS=8 \
-  -e OPENBLAS_MAIN_FREE=1 \
-  ghcr.io/org-runink/blogen:v1.1.3 \
-  --content-dir /app/content/blog \
-  --image-dir /app/static/images/blog \
-  -t "Dockerized Blog Generation Test" \
+docker run --rm --netwdocker run --rm \
+  -v "$(pwd)/../content:/app/content" \
+  -v "$(pwd)/../static/images/blog:/app/static/images/blog" \
+  --network host \
+  -e TAVILY_API_KEY=$TAVILY_API_KEY \
+  -e BLOG_DEBUG=true \
+  ghcr.io/org-runink/blogen:v1.1.4 \
+  --topic "Dockerized Blog Generation Test" \
+  --audience "DevOps Engineers" \
+  --value-driver "Reliability" \
+  --context "Focus on how Docker ensures consistent environments for blog generation pipelines." \
   --audience "Developers and DevOps Engineers" \
   --value-driver "Improved Reliability" \
   --context "Focus on practical examples."
