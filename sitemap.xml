@@ -2,38 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://runink.org/tags/ai-automation/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/blog-generation/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/blog/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/ci/cd/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/devops/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/docker/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/blog/dockerized-blog-generation-test/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
-    <loc>https://runink.org/tags/testing/</loc>
-    <lastmod>2026-01-22T19:40:06-05:00</lastmod>
-  </url><url>
     <loc>https://runink.org/tags/ai-readiness/</loc>
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/analytics-engineering/</loc>
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/blog/</loc>
+    <lastmod>2025-10-28T08:13:18-04:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/data-governance/</loc>
     <lastmod>2025-10-28T08:13:18-04:00</lastmod>
@@ -55,6 +31,9 @@
   </url><url>
     <loc>https://runink.org/tags/semantic-layer/</loc>
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
+  </url><url>
+    <loc>https://runink.org/tags/</loc>
+    <lastmod>2026-01-05T11:24:02-05:00</lastmod>
   </url><url>
     <loc>https://runink.org/tags/telemetry/</loc>
     <lastmod>2025-10-17T14:47:31-04:00</lastmod>
