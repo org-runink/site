@@ -6,8 +6,50 @@
     <description>Recent content in Tags on Runink</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jan 2026 11:24:02 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 19:40:06 -0500</lastBuildDate>
     <atom:link href="https://runink.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Automation</title>
+      <link>https://runink.org/tags/ai-automation/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/ai-automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blog Generation</title>
+      <link>https://runink.org/tags/blog-generation/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/blog-generation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CI/CD</title>
+      <link>https://runink.org/tags/ci/cd/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>https://runink.org/tags/devops/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://runink.org/tags/docker/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testing</title>
+      <link>https://runink.org/tags/testing/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/tags/testing/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI Readiness</title>
       <link>https://runink.org/tags/ai-readiness/</link>
@@ -748,69 +790,6 @@
       <link>https://runink.org/tags/snowflake/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://runink.org/tags/snowflake/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Go</title>
-      <link>https://runink.org/tags/go/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/go/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://runink.org/tags/linux/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Multi-Tenancy</title>
-      <link>https://runink.org/tags/multi-tenancy/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/multi-tenancy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Observability</title>
-      <link>https://runink.org/tags/observability/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/observability/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Open Data Contracts</title>
-      <link>https://runink.org/tags/open-data-contracts/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/open-data-contracts/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Open Lineage</title>
-      <link>https://runink.org/tags/open-lineage/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/open-lineage/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Open Telemetry</title>
-      <link>https://runink.org/tags/open-telemetry/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/open-telemetry/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Raft</title>
-      <link>https://runink.org/tags/raft/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/raft/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security</title>
-      <link>https://runink.org/tags/security/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://runink.org/tags/security/</guid>
       <description></description>
     </item>
     <item>
