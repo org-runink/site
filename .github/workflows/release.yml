@@ -91,8 +91,8 @@ jobs:
                       ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.get_version.outputs.version }}
                       ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
                   labels: |
-                      org.opencontainers.image.title=Blogen - AI Blog Generator
+                      org.opencontainers.image.title="Blogen - AI Blog Generator"
                       org.opencontainers.image.version=${{ steps.get_version.outputs.version }}
-                      org.opencontainers.image.description=AI-powered blog generation tool for logistics and supply chain
-                      org.opencontainers.image.vendor=Runink
-                      org.opencontainers.image.licenses=MIT
+                      org.opencontainers.image.description="AI-powered blog generation tool for logistics and supply chain"
+                      org.opencontainers.image.vendor="Runink"
+                      org.opencontainers.image.licenses="MIT"
