@@ -858,10 +858,15 @@ func sanitizeArticle(article *BlogArticle) {
 
 	// Regex for complex tags (Links)
 	// Convert <a href="...">text</a> to [text](...)
+	// Convert <a href="...">text</a> to [text](...)
 	linkRegex := regexp.MustCompile(`<a\s+href="([^"]+)">([^<]+)</a>`)
+	// Remove embedded mermaid blocks (to prevent duplication)
+	mermaidRegex := regexp.MustCompile("(?s)```mermaid.*?```")
 
 	sanitizeField := func(text string) string {
-		return linkRegex.ReplaceAllString(text, "[$2]($1)")
+		text = linkRegex.ReplaceAllString(text, "[$2]($1)")
+		text = mermaidRegex.ReplaceAllString(text, "")
+		return strings.TrimSpace(text)
 	}
 
 	article.Content.IntroductionContext = sanitizeField(article.Content.IntroductionContext)
