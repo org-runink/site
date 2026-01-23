@@ -51,7 +51,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull Blog Generator Image
-        run: docker pull ghcr.io/org-runink/blogen:v1.2.0
+        run: docker pull ghcr.io/org-runink/blogen:latest
 
       - name: Ensure output directories exist
         run: |
