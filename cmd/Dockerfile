@@ -65,6 +65,7 @@ RUN apt-get update && apt-get install -y \
     git \
     nodejs \
     npm \
+    hugo \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy our blogen binary
