@@ -17,6 +17,7 @@ import (
 	"time"
 
 	"github.com/sajari/regression"
+	"github.com/spf13/viper"
 )
 
 // ============================================================================
@@ -1150,9 +1151,16 @@ func startLlamaServer(ctx context.Context) error {
 		return fmt.Errorf("resolve server binary: %w", err)
 	}
 
+	// Get model path from config (default to 4B if not set, or fall back to what's in ini)
+	modelPath := viper.GetString("shepherd-blogger.model")
+	if modelPath == "" {
+		// Fallback to local hardcoded if config fails
+		modelPath = "gemma-3-12b-it-q4_0.gguf"
+	}
+
 	cmd := exec.Command(
 		binaryPath,
-		"-m", "gemma-3-12b-it-q4_0.gguf",
+		"-m", modelPath,
 		"-c", "65536", // Increased from 16k to 64k to better utilize model capacity
 		"--port", "8080",
 		"--host", "127.0.0.1",
