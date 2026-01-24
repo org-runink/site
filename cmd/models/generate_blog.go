@@ -1608,8 +1608,8 @@ func extractFirstSentence(text string) string {
 // GenerateBlogFromModels is the exported function that can be called from main.go
 // It returns the absolute path of the generated file
 func GenerateBlogFromModels(ctx context.Context, topic, audience, valueDriver, additionalContext, tavilyKey, contentDir, staticDir string) (string, error) {
-	if tavilyKey == "" {
-		return "", fmt.Errorf("TAVILY_API_KEY environment variable is not set")
+	if isSearchEnabled() && tavilyKey == "" {
+		return "", fmt.Errorf("TAVILY_API_KEY environment variable is not set (and search is enabled)")
 	}
 
 	fmt.Printf("🚀 Starting blog generation for: %s\n\n", topic)

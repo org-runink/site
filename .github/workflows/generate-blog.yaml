@@ -130,6 +130,12 @@ jobs:
 
       - name: Run Blog Generation
         id: blog_gen
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          BLOG_DEBUG: "true"
+          ENABLE_IMAGE_GEN: "true"
+          ENABLE_LINKEDIN: "true"
+          ENABLE_SEARCH: "true"
         run: |
           # Run generation directly
           # We run from /app because schemas/templates are now in /app (via Dockerfile COPY ./models/ .)
@@ -191,6 +197,13 @@ jobs:
 
           echo "✅ Article validation passed"
           echo "   Word count: $WORD_COUNT"
+
+      - name: Validate Site Build (Hugo)
+        run: |
+          echo "🏗️ Building site with Hugo to verify content..."
+          # Run Hugo to ensure the new article doesn't break the build
+          # Using --gc --minify to simulate a production build
+          hugo --gc --minify
 
       - name: Extract Post Content for Slack
         id: post_content
