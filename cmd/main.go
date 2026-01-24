@@ -143,19 +143,28 @@ func generateBlog(blogTopic, audience, valueDriver, additionalContext string) {
 	}
 	os.Setenv("TAVILY_API_KEY", tavilyKey)
 
-	// Change to models directory for config file access
-	modelsDir := "models"
+	// Change to models directory for config file access ONLY if not already there
+	// Checks if "schemas" exists in current dir (flattened container structure)
 	originalDir, err := os.Getwd()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "❌ Error: Could not get current directory: %v\n", err)
 		os.Exit(1)
 	}
 
-	if err := os.Chdir(modelsDir); err != nil {
-		fmt.Fprintf(os.Stderr, "❌ Error: Could not change to models directory: %v\n", err)
-		os.Exit(1)
+	if _, err := os.Stat("schemas"); err == nil {
+		// We are already in the correct directory (container root or models dir)
+		// No need to chdir
+	} else if _, err := os.Stat("models"); err == nil {
+		// We are in source root (cmd/), change to models
+		if err := os.Chdir("models"); err != nil {
+			fmt.Fprintf(os.Stderr, "❌ Error: Could not change to models directory: %v\n", err)
+			os.Exit(1)
+		}
+		defer os.Chdir(originalDir)
+	} else {
+		// Fallback/Error state
+		fmt.Println("⚠️ Warning: Could not find schemas/ or models/ directory. Execution might fail.")
 	}
-	defer os.Chdir(originalDir)
 
 	// Call the blog generation function directly
 	ctx := context.Background()

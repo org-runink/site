@@ -33,7 +33,7 @@ docker buildx build \
 #   --network host \
 #   -e TAVILY_API_KEY=$TAVILY_API_KEY \
 #   -e BLOG_DEBUG=true \
-#   ghcr.io/org-runink/blogen:v1.2.0 \
+#   ghcr.io/org-runink/blogen:latest \
 #   --topic "Dockerized Blog Generation Test" \
 #   --audience "DevOps Engineers" \
 #   --value-driver "Reliability" \
