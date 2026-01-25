@@ -99,7 +99,7 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
                 You can't trust automation if it breaks every time something changes. The <strong>Readiness Scoreboard</strong> gives you peace of mind.
             </p>
             <p>
-                It watches your infrastructure 24/7. If a connection gets slow or data looks weird, it flags it immediately. It keeps your agents healthy so you don't have to check on them constantly.
+                It checks your infrastructure on demand. If a connection gets slow or data looks weird, it flags it immediately. You can verify system health whenever you need to ensure stability.
             </p>
         </div>
         <ul class="space-y-4 mt-8">

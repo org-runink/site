@@ -60,7 +60,7 @@
                 <div class="flex flex-col sm:flex-row gap-5 pt-4">
                     {{ if and $primary_button_text $primary_button_url }}
                     <a href="{{ $primary_button_url }}"
-                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-[#5F6F3E] to-[#B87333] rounded-full hover:from-[#7C8D59] hover:to-[#D68F55] hover:shadow-lg hover:shadow-[#8B9A6E]/30 hover:-translate-y-1">
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full hover:from-blue-500 hover:to-blue-400 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1">
                         {{ $primary_button_text }}
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -70,7 +70,7 @@
                     {{ end }}
                     {{ if and $secondary_button_text $secondary_button_url }}
                     <a href="{{ $secondary_button_url }}"
-                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-[#F5F1E8] transition-all duration-200 bg-stone-800/50 border-2 border-[#8B9A6E] rounded-full hover:bg-[#6B7A4E]/30 hover:text-white hover:border-[#A8B88B] hover:-translate-y-1 backdrop-blur-sm">
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-blue-100 transition-all duration-200 bg-stone-800/50 border-2 border-blue-500/50 rounded-full hover:bg-blue-600/20 hover:text-white hover:border-blue-400 hover:-translate-y-1 backdrop-blur-sm">
                         {{ $secondary_button_text }}
                     </a>
                     {{ end }}

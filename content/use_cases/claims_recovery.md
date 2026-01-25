@@ -50,7 +50,7 @@ The Runink **Claims Agent** doesn't care if the claim is $300 or $30,000. It fig
 The agent automates the entire lifecycle of a claim, from the receiving dock to the bank deposit.
 
 ### 1. Perception (See)
-The agent watches your inbound emails and carrier portals 24/7. It ingests unstructured data.
+The agent connects to your inbound emails and carrier portals to ingest unstructured data.
 *   **Reads Documents:** It OCRs every Bill of Lading (BOL) and Delivery Receipt (POD).
 *   **Spots Damage:** It notices specific keywords in driver notes: *"1 case crushed," "driver refused inspection," "tipping noted."*
 *   **Checks Photos:** It uses Computer Vision to scan arrival photos. "Classification: Crushed Corner. Severity: High."

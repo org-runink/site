@@ -91,6 +91,63 @@ layout: "pricing"
 }
 {{< /pricing-table-1 >}}
 
+<div class="py-12"></div>
+
+{{< pricing-table-1 >}}
+{
+  "title": "Enterprise Agent",
+  "description": "Automated content engineering. Generate expert blogs locally.",
+  "plans": [
+    {
+      "name": "Community",
+      "price_monthly": "$0",
+      "price_yearly": "$0",
+      "description": "Internal Use Only",
+      "features": [
+        "Unlimited Generation",
+        "Runs Locally (Docker)",
+        "Deep Web Research",
+        "SEO Optimization",
+        "Markdown Export"
+      ],
+      "usage": [
+        "Internal Docs: Allowed",
+        "Personal Projects: Allowed",
+        "Commercial Use: Prohibited",
+        "Support: Community Only"
+      ],
+      "button": {
+        "text": "Get Started",
+        "url": "/products/blog-generation#download"
+      }
+    },
+    {
+      "name": "Commercial",
+      "price_monthly": "$60",
+      "price_yearly": "$50",
+      "description": "For Agencies & Growth Teams",
+      "features": [
+        "Everything in Community",
+        "Commercial Usage License",
+        "CMS Integration (Wordpress/Ghost)",
+        "Scheduled Auto-Posting",
+        "API Access"
+      ],
+      "usage": [
+        "Client Work: Allowed",
+        "Multi-Brand Management",
+        "Bulk Generation",
+        "Priority Support"
+      ],
+      "button": {
+        "text": "Get License",
+        "url": "/contact"
+      }
+    }
+  ]
+}
+{{< /pricing-table-1 >}}
+
 
 {{< faq >}}
 {
