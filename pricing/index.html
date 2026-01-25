@@ -72,7 +72,7 @@
     
     
     
-    <link rel="stylesheet" href="/css/main.min.3385a275bf985fb7cc71a68f7fb7da73f36889b89233fcd612d73fbf7ae889b3.css">
+    <link rel="stylesheet" href="/css/main.min.a6300d2422c84d210b0ea8a6678a1b67083df89e86da771f53d661d15b6e71ac.css">
 
     
     
@@ -108,8 +108,28 @@
                     class="hidden md:flex items-center space-x-8">
                     
                     
-                    <a href="/products/analytics_companion/"
-                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Analytics Companion</a>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">
+                            Products
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/products/analytics_companion/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Analytics Companion</a>
+                                
+                                <a href="/products/blog-generation/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Content Engineer</a>
+                                
+                            </div>
+                        </div>
+                    </div>
                     
                     
                     
@@ -181,8 +201,16 @@
             <div class="w-full px-6 py-4">
                 
                 
-                <a href="/products/analytics_companion/"
-                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Analytics Companion</a>
+                <div class="py-2">
+                    <div class="text-xl text-[#F5F1E8] font-bold mb-2">Products</div>
+                    <div class="pl-4">
+                        
+                        <a href="/products/analytics_companion/" class="block text-[#D9CDB8] hover:text-[#5F6F3E] py-2">Analytics Companion</a>
+                        
+                        <a href="/products/blog-generation/" class="block text-[#D9CDB8] hover:text-[#5F6F3E] py-2">Content Engineer</a>
+                        
+                    </div>
+                </div>
                 
                 
                 
@@ -689,6 +717,274 @@
         </div>
     </div>
 </section>
+<div class="py-12"></div>
+
+<section class="py-16 bg-stone-900">
+    <style>
+        .price-yearly,
+        .freq-yearly {
+            display: none;
+        }
+
+        [data-pricing="yearly"] .price-yearly,
+        [data-pricing="yearly"] .freq-yearly {
+            display: inline;
+        }
+
+        [data-pricing="yearly"] .price-monthly,
+        [data-pricing="yearly"] .freq-monthly {
+            display: none;
+        }
+
+        .billing-note-yearly {
+            display: none;
+        }
+
+        [data-pricing="yearly"] .billing-note-yearly {
+            display: inline;
+        }
+    </style>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-white">Enterprise Agent</h2>
+            
+            <p class="mt-4 text-xl text-[#D9CDB8]">Automated content engineering. Generate expert blogs locally.</p>
+            
+        </div>
+        
+
+        <div class="mt-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <div class="w-full">
+                    <div
+                        class="h-full flex flex-col rounded-2xl border border-stone-700 bg-gradient-to-br from-stone-900 to-neutral-900 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                        
+                        <div class="p-8 flex flex-col flex-grow">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-bold text-white">Community</h3>
+                                <p class="mt-2 text-[#D9CDB8]">Internal Use Only</p>
+                            </div>
+                            <div class="mb-8">
+                                <p class="flex items-baseline">
+                                    <span class="text-5xl font-bold tracking-tight text-white price-monthly">
+                                        $0
+                                    </span>
+                                    <span class="text-5xl font-bold tracking-tight text-white price-yearly">
+                                        $0
+                                    </span>
+                                    <span class="ml-2 text-stone-500 freq-monthly">/month</span>
+                                    <span class="ml-2 text-stone-500 freq-yearly">/month</span>
+                                    <span class="ml-3 text-sm text-[#D4A574] billing-note-yearly">billed yearly</span>
+                                </p>
+                            </div>
+                            <ul class="space-y-6 text-[#F5F1E8] flex-grow">
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">Unlimited Generation</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">Runs Locally (Docker)</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">Deep Web Research</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">SEO Optimization</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">Markdown Export</span>
+                                </li>
+                                
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">Internal Docs: Allowed</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">Personal Projects: Allowed</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">Commercial Use: Prohibited</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">Support: Community Only</span>
+                                </li>
+                                
+                            </ul>
+                            <div class="mt-8">
+                                <a href="/products/blog-generation#download"
+                                    class="btn btn-secondary w-full">
+                                    Get Started
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full">
+                    <div
+                        class="h-full flex flex-col rounded-2xl border border-stone-700 bg-gradient-to-br from-stone-900 to-neutral-900 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                        
+                        <div class="p-8 flex flex-col flex-grow">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-bold text-white">Commercial</h3>
+                                <p class="mt-2 text-[#D9CDB8]">For Agencies &amp; Growth Teams</p>
+                            </div>
+                            <div class="mb-8">
+                                <p class="flex items-baseline">
+                                    <span class="text-5xl font-bold tracking-tight text-white price-monthly">
+                                        $60
+                                    </span>
+                                    <span class="text-5xl font-bold tracking-tight text-white price-yearly">
+                                        $50
+                                    </span>
+                                    <span class="ml-2 text-stone-500 freq-monthly">/month</span>
+                                    <span class="ml-2 text-stone-500 freq-yearly">/month</span>
+                                    <span class="ml-3 text-sm text-[#D4A574] billing-note-yearly">billed yearly</span>
+                                </p>
+                            </div>
+                            <ul class="space-y-6 text-[#F5F1E8] flex-grow">
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">Everything in Community</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">Commercial Usage License</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">CMS Integration (Wordpress/Ghost)</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">Scheduled Auto-Posting</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+                                    </svg>
+                                    <span class="ml-3">API Access</span>
+                                </li>
+                                
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">Client Work: Allowed</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">Multi-Brand Management</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">Bulk Generation</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span class="ml-3 italic text-[#D9CDB8]">Priority Support</span>
+                                </li>
+                                
+                            </ul>
+                            <div class="mt-8">
+                                <a href="/contact"
+                                    class="btn btn-secondary w-full">
+                                    Get License
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="bg-stone-900">
     <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
@@ -900,6 +1196,9 @@
                 <ul class="space-y-2">
                     
                     <li><a href="/products/analytics_companion/" class="text-[#D9CDB8] hover:text-white transition-colors">Analytics Companion</a>
+                    </li>
+                    
+                    <li><a href="/products/blog-generation/" class="text-[#D9CDB8] hover:text-white transition-colors">Content Engineer</a>
                     </li>
                     
                 </ul>
