@@ -184,4 +184,60 @@
   .table-of-contents ul {
     @apply list-none ml-4 space-y-2;
   }
+
+  /* Parallax and Animation Styles */
+  .parallax-wrapper {
+    @apply fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden;
+  }
+
+  .parallax-layer {
+    @apply absolute will-change-transform;
+  }
+
+  .low-poly-shape {
+    @apply absolute opacity-20 blur-sm;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    backdrop-filter: blur(4px);
+  }
+
+  .shape-1 {
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    @apply bg-gradient-to-br from-indigo-500/30 to-purple-500/30;
+  }
+  .shape-2 {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    @apply bg-gradient-to-tr from-blue-500/30 to-teal-500/30;
+  }
+  .shape-3 {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    @apply bg-gradient-to-bl from-amber-500/30 to-orange-500/30;
+  }
+
+  .section-fullscreen {
+    @apply min-h-screen flex flex-col justify-center relative z-10 py-20;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .mask-image-b {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
 }
