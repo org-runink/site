@@ -1,0 +1,33 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Road -->
+  <path d="M0 1080 L1920 1080 L1920 900 L0 900 Z" fill="#1e293b" />
+  <path d="M0 990 L1920 990" stroke="#facc15" stroke-width="4" stroke-dasharray="20,20" />
+
+  <!-- Truck 1 -->
+  <g transform="translate(200, 850)">
+    <!-- Wheels -->
+    <circle cx="50" cy="150" r="30" fill="#000" />
+    <circle cx="150" cy="150" r="30" fill="#000" />
+    <circle cx="350" cy="150" r="30" fill="#000" />
+
+    <!-- Body -->
+    <rect x="0" y="50" width="400" height="100" fill="#fff" />
+    <rect x="280" y="50" width="120" height="100" fill="#3b82f6" />
+    <!-- Cab window -->
+    <path d="M300 50 L380 50 L380 90 L300 90 Z" fill="#93c5fd" />
+  </g>
+
+  <!-- Truck 2 -->
+  <g transform="translate(1200, 800) scale(0.8)">
+    <!-- Wheels -->
+    <circle cx="50" cy="150" r="30" fill="#000" />
+    <circle cx="150" cy="150" r="30" fill="#000" />
+    <circle cx="350" cy="150" r="30" fill="#000" />
+
+    <!-- Body -->
+    <rect x="0" y="50" width="400" height="100" fill="#fff" />
+    <rect x="280" y="50" width="120" height="100" fill="#ef4444" />
+    <!-- Cab window -->
+    <path d="M300 50 L380 50 L380 90 L300 90 Z" fill="#93c5fd" />
+  </g>
+</svg>
