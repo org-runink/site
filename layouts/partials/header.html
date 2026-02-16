@@ -17,15 +17,17 @@
                     {{ if .Params.has_submenu }}
                     <div class="relative group">
                         <button
+                            aria-haspopup="true"
+                            aria-expanded="false"
                             class="flex items-center {{ with $headerConfig.menu.linkClass }}{{ . }}{{ else }}text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200{{ end }}">
                             {{ .Name }}
-                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
                         <div class="absolute left-0 mt-2 {{ $dropdownConfig.width | default " w-72" }} opacity-0
-                            invisible group-hover:opacity-100 group-hover:visible transition-all duration-200
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200
                             ease-in-out">
                             <div class="{{ $dropdownConfig.container_padding | default " py-6" }} {{
                                 $dropdownConfig.background | default "bg-stone-800" }} {{ $dropdownConfig.border |
