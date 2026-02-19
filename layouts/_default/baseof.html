@@ -82,6 +82,11 @@
 </head>
 
 <body class="min-h-screen flex flex-col">
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-white focus:text-primary-600 focus:shadow-xl focus:rounded-lg focus:font-bold transition-transform ring-2 ring-primary-600">
+        Skip to main content
+    </a>
+
     <!-- Google Tag Manager (noscript) -->
     {{ if and hugo.IsProduction .Site.Params.googleTagManager }}
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.googleTagManager }}" height="0"
@@ -94,9 +99,9 @@
     </div>
 
     <!-- Main Content -->
-    <div class="pt-20">
+    <main id="main-content" class="pt-20 flex-grow" tabindex="-1">
         {{ block "main" . }}{{ end }}
-    </div>
+    </main>
 
     <!-- Footer -->
     {{ partial "footer" . }}

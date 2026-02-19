@@ -1,0 +1,21 @@
+
+> hugo-sassify-theme@1.0.0 start /app
+> concurrently "npx tailwindcss -i themes/hugo-saasify-theme/assets/css/main.css -o static/css/style.css --watch" "hugo server -D"
+
+[1] /bin/sh: 1: hugo: not found
+[1] hugo server -D exited with code 127
+[0] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+[0] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+[0] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+[0]
+[0] Rebuilding...
+[0]
+[0] Done in 1649ms.
+[0]
+[0] Rebuilding...
+[0]
+[0] Done in 191ms.
+[0]
+[0] Rebuilding...
+[0]
+[0] Done in 182ms.
