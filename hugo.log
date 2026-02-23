@@ -1,0 +1,182 @@
+Watching for changes in /home/me/Documents/site/archetypes, /home/me/Documents/site/assets/{css,icons,images,js}, /home/me/Documents/site/content/{blog,products,use-cases}, /home/me/Documents/site/layouts/{_default,partials,shortcodes,taxonomy,use_cases}, /home/me/Documents/site/package.json, /home/me/Documents/site/postcss.config.js, /home/me/Documents/site/static/{css,images}, /home/me/Documents/site/tailwind.config.js, /home/me/Documents/site/themes/hugo-saasify-theme/assets/css, /home/me/Documents/site/themes/hugo-saasify-theme/layouts/{_default,partials,shortcodes,taxonomy}, ... and 4 more
+Watching for config changes in /home/me/Documents/site/hugo.toml, /home/me/Documents/site/themes/hugo-saasify-theme/config.toml
+Start building sites … 
+hugo v0.155.3+extended+withdeploy linux/amd64 BuildDate=unknown
+
+
+                  │ EN  
+──────────────────┼─────
+ Pages            │ 256 
+ Paginator pages  │   1 
+ Non-page files   │   0 
+ Static files     │  91 
+ Processed images │   0 
+ Aliases          │ 109 
+ Cleaned          │   0 
+
+Built in 1568 ms
+Environment: "development"
+Serving pages from disk
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop
+
+Change detected, rebuilding site (#1).
+2026-02-23 13:19:46.304 -0500
+Template changed /shortcodes/painkiller-pitches.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 27 ms
+
+Change detected, rebuilding site (#2).
+2026-02-23 13:31:52.336 -0500
+Template changed /shortcodes/use-case-parallax.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 35 ms
+
+Change detected, rebuilding site (#3).
+2026-02-23 13:32:01.805 -0500
+Source changed /_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 40 ms
+
+Change detected, rebuilding site (#4).
+2026-02-23 13:35:30.305 -0500
+Template changed /shortcodes/use-case-parallax.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 46 ms
+
+Change detected, rebuilding site (#5).
+2026-02-23 13:36:44.808 -0500
+Source changed /use-cases/fulfillment-optimization.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /use-cases/route-optimization: "/home/me/Documents/site/content/use-cases/route-optimization.md:1:1": failed to open file "/home/me/Documents/site/content/use-cases/route-optimization.md": open /home/me/Documents/site/content/use-cases/route-optimization.md: no such file or directory
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 83 ms
+
+Change detected, rebuilding site (#6).
+2026-02-23 13:36:45.316 -0500
+Source changed /use-cases/route-optimization.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 434 ms
+
+Change detected, rebuilding site (#7).
+2026-02-23 13:38:51.316 -0500
+Source changed /products/blog-generation.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 79 ms
+
+Change detected, rebuilding site (#8).
+2026-02-23 13:38:59.805 -0500
+Template changed /shortcodes/use-case-parallax.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 75 ms
+
+Change detected, rebuilding site (#9).
+2026-02-23 13:44:07.353 -0500
+Template changed /shortcodes/use-case-parallax.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 107 ms
+
+Change detected, rebuilding site (#10).
+2026-02-23 13:46:49.885 -0500
+Template changed /shortcodes/painkiller-pitches.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 527 ms
+
+Change detected, rebuilding site (#11).
+2026-02-23 13:49:16.317 -0500
+Template changed /shortcodes/use-case-parallax.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 75 ms
+
+Change detected, rebuilding site (#12).
+2026-02-23 13:54:51.347 -0500
+Template changed /shortcodes/use-case-parallax.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 81 ms
+
+Change of Static files detected, rebuilding site (#13).
+2026-02-23 13:58:01.805 -0500
+Syncing /css/style.css to /
+
+Change detected, rebuilding site (#14).
+2026-02-23 13:58:55.306 -0500
+Template changed /shortcodes/painkiller-pitches.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 50 ms
+
+Change detected, rebuilding site (#15).
+2026-02-23 13:59:21.805 -0500
+Template changed /shortcodes/painkiller-pitches.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 42 ms
+
+Change detected, rebuilding site (#16).
+2026-02-23 14:00:12.805 -0500
+Template changed /shortcodes/painkiller-pitches.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 43 ms
+
+Change detected, rebuilding site (#17).
+2026-02-23 14:00:51.304 -0500
+Template changed /shortcodes/painkiller-pitches.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 27 ms
+
+Change detected, rebuilding site (#18).
+2026-02-23 14:03:17.805 -0500
+Template changed /shortcodes/painkiller-pitches.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 56 ms
+
+Change detected, rebuilding site (#19).
+2026-02-23 14:04:26.805 -0500
+Source changed /blog/bill-of-lading-swiss-army-knife.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 110 ms
+
+Change of Static files detected, rebuilding site (#20).
+2026-02-23 14:05:01.805 -0500
+Syncing /images/blog/bill-of-lading-header.png to /
+
+Change detected, rebuilding site (#21).
+2026-02-23 14:06:11.805 -0500
+Source changed /blog/bill-of-lading-swiss-army-knife.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 29 ms
+
+Change detected, rebuilding site (#22).
+2026-02-23 14:07:57.305 -0500
+Source changed /blog/bill-of-lading-swiss-army-knife.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 20 ms
+
+Change detected, rebuilding site (#23).
+2026-02-23 14:11:00.305 -0500
+Source changed /blog/what-is-digital-twin-agentic-decisions.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 96 ms
+
+Change detected, rebuilding site (#24).
+2026-02-23 14:29:17.804 -0500
+Source changed /blog/what-is-digital-twin-agentic-decisions.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 42 ms
+
+Change detected, rebuilding site (#25).
+2026-02-23 14:30:37.805 -0500
+Source changed /blog/what-is-digital-twin-agentic-decisions.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 40 ms
+
+Change of Static files detected, rebuilding site (#26).
+2026-02-23 14:32:03.305 -0500
+Syncing /images/blog/digital-twin-agentic-decisions.png to /
+
+Change of Static files detected, rebuilding site (#27).
+2026-02-23 14:32:39.804 -0500
+Syncing /css/style.css to /
+
+Change detected, rebuilding site (#28).
+2026-02-23 14:33:22.304 -0500
+Source changed /blog/bill-of-lading-swiss-army-knife.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 40 ms

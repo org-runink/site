@@ -53,7 +53,7 @@
     {{ end }}
     {{ end }}
 
-    <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
+    <link rel="icon" type="image/png" href="{{ " images/favicon.png" | relURL }}">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ .Permalink }}">
@@ -64,14 +64,18 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
 
     <!-- Main CSS -->
     {{ $css := resources.Get "css/main.css" }}
     {{ $css = $css | css.PostCSS }}
     {{ if hugo.IsProduction }}
     {{ $css = $css | minify | fingerprint | resources.PostProcess }}
-    {{ end }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ else }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}?v={{ now.Unix }}">
+    {{ end }}
 
     <!-- Additional Meta Tags from Front Matter -->
     {{ with .Params.customMeta }}
@@ -113,6 +117,10 @@
             });
         }
     </script>
+
+    <!-- Main JS -->
+    {{ $js := resources.Get "js/main.js" | js.Build (dict "Minify" hugo.IsProduction) }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
 </body>
 
 </html>

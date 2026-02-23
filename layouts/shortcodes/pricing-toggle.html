@@ -2,11 +2,11 @@
 <section class="py-4">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-center">
-      <div class="inline-flex rounded-lg bg-stone-800 p-1 border border-stone-700" role="tablist"
+      <div class="inline-flex rounded-full bg-[#161515] p-1.5 border border-stone-800 shadow-inner" role="tablist"
         aria-label="Pricing toggle">
         {{ range $i, $opt := $json.options }}
         <button type="button"
-          class="toggle-btn relative px-4 py-2 text-sm font-medium text-[#D9CDB8] rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B9A6E]"
+          class="toggle-btn relative px-6 py-2.5 text-xs font-black uppercase tracking-[0.15em] text-stone-500 rounded-full transition-all duration-300 focus:outline-none"
           data-value="{{ $opt.value }}" role="tab" aria-selected="false">
           {{ $opt.label }}
         </button>
@@ -30,11 +30,15 @@
       buttons.forEach(function (btn) {
         var isActive = btn.getAttribute('data-value') === val;
         btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        btn.classList.toggle('from-[#5F6F3E]', isActive);
-        btn.classList.toggle('to-[#B87333]', isActive);
-        btn.classList.toggle('bg-gradient-to-r', isActive);
-        btn.classList.toggle('text-white', isActive);
-        btn.classList.toggle('shadow-sm', isActive);
+
+        // Active Styles
+        btn.classList.toggle('bg-[#9B6F45]', isActive);
+        btn.classList.toggle('text-[#f3e9d7]', isActive);
+        btn.classList.toggle('shadow-md', isActive);
+
+        // Inactive Styles
+        btn.classList.toggle('text-stone-500', !isActive);
+        btn.classList.toggle('hover:text-stone-300', !isActive);
       });
 
       // Emit custom event

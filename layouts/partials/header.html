@@ -59,7 +59,8 @@
                     {{ end }}
 
                     {{ with $headerConfig.buttons.getStarted }}
-                    <a href="{{ .url | default " #" }}" class="{{ with .class }}{{ . }}{{ else }}btn-primary{{ end }}">
+                    <a href="{{ .url | default " #" }}"
+                        class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5{{ end }}">
                         {{ .text | default "Get Started" }}
                     </a>
                     {{ end }}
@@ -111,7 +112,7 @@
 
                     {{ with $headerConfig.buttons.getStarted }}
                     <a href="{{ .url | default " #" }}"
-                        class="{{ with .mobileClass }}{{ . }}{{ else }}block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-[#5F6F3E] text-white hover:bg-[#4E5B33] hover:scale-105{{ end }}">
+                        class="{{ with .mobileClass }}{{ . }}{{ else }}block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#ea580c] to-[#ca4708] text-white hover:opacity-90 hover:scale-[1.02]{{ end }}">
                         {{ .text | default "Get Started" }}
                     </a>
                     {{ end }}

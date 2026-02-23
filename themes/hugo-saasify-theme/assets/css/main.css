@@ -12,7 +12,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold text-gray-900;
+    @apply font-heading font-bold;
   }
 }
 
@@ -126,7 +126,7 @@
   }
 
   .prose h1, .prose h2, .prose h3, .prose h4 {
-    @apply font-heading font-bold text-gray-900;
+    @apply font-heading font-bold;
   }
 
   .prose h1 {
@@ -142,11 +142,11 @@
   }
 
   .prose p {
-    @apply text-gray-700 leading-relaxed mb-6;
+    @apply leading-relaxed mb-6;
   }
 
   .prose a {
-    @apply text-primary-600 hover:text-primary-700 no-underline;
+    @apply no-underline;
   }
 
   .prose ul, .prose ol {
@@ -158,7 +158,7 @@
   }
 
   .prose blockquote {
-    @apply border-l-4 border-gray-200 pl-4 italic text-gray-700 my-8;
+    @apply border-l-4 border-stone-700 pl-4 italic my-8;
   }
 
   .prose img {
@@ -178,7 +178,7 @@
   }
 
   .table-of-contents a {
-    @apply text-gray-700 hover:text-primary-600 no-underline;
+    @apply hover:text-[#ea580c] no-underline;
   }
 
   .table-of-contents ul {

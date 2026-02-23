@@ -8,83 +8,87 @@ layout: "pricing"
 {
   "options": [
     { "label": "Monthly Commitment", "value": "monthly" },
-    { "label": "Annual Contract (Save 25%)", "value": "yearly" }
+    { "label": "Annual Contract (Save 15%)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
 
 {{< pricing-table-1 >}}
 {
-  "title": "Platform Access + Usage-Based Infrastructure",
-  "description": "Start cheap. Pay for what you use.",
   "plans": [
     {
-      "name": "Core",
-      "price_monthly": "$20",
-      "price_yearly": "$15",
-      "description": "See & Stop Problems",
+      "pill": "STANDARD PROTOCOL",
+      "pill_color": "stone",
+      "name": "MONITOR",
+      "subtitle": "FULL-SPECTRUM INTELLIGENCE",
+      "price_monthly": "18",
+      "price_yearly": "15",
+      "price_subtitle": "VISIBILITY & RISK CONTAINMENT",
+      "credits": "1,000 ELITE CREDITS",
       "features": [
-        "Operational Radar (Daily Risk Dashboard)",
-        "Rules Enforcer (Policy Blocking)",
-        "Risk Simulation Engine (What-If Testing)",
-        "Data Helper (Auto-Cleaning)",
-        "Incident Detection (Blast Radius)"
-      ],
-      "usage": [
-        "Data Units: $0.01/GB processed",
-        "Compute Units: $0.01/60s runtime",
-        "Unlimited team members"
+        "GLOBAL OPERATIONAL RADAR",
+        "DEEP RISK & DISCREPANCY INGESTION",
+        "RULES RECONCILIATION ENGINE",
+        "PREDICTIVE HYPOTHESIS SIMULATOR",
+        "READ-ONLY INTELLIGENCE SUITE"
       ],
       "button": {
-        "text": "Start with Core",
-        "url": "/contact"
+        "text": "INITIALIZE MONITOR",
+        "url": "/#contact",
+        "style": "outline"
       }
     },
     {
-      "name": "Cockpit",
-      "price_monthly": "$80",
-      "price_yearly": "$60",
-      "featured": true,
-      "description": "Autonomous Execution",
-      "features": [
-        "Everything in Core",
-        "Decision Cockpit (Autonomous Agents)",
-        "Auto-Provisioning Workflows",
-        "Autonomous Claims Processing",
-        "Automated Exception Handling"
+      "pill": "ELITE PRIORITY",
+      "pill_color": "orange",
+      "name": "AGENTIC",
+      "subtitle": "AUTONOMOUS EXCELLENCE",
+      "price_color": "orange",
+      "price_monthly": "95",
+      "price_yearly": "80",
+      "price_subtitle": "FULL-STACK AGENCY & EXECUTION",
+      "credits": "3,000 ELITE CREDITS",
+      "outcome_strategies": [
+        {"label": "OUTCOME STRATEGY", "value": "20% of Recovered Claims"},
+        {"label": "OUTCOME STRATEGY", "value": "3% of Auto-Provisioned POs"}
       ],
-      "usage": [
-        "Data Units: $0.01/GB processed",
-        "Compute Units: $0.01/60s runtime",
-        "Auto-Provisioning: 3% per PO (cap $50)",
-        "Claims Recovery: 20% success fee"
+      "features": [
+        "EVERYTHING IN MONITOR +",
+        "AUTONOMOUS PROVISIONING AGENT",
+        "CLAIMS & REVENUE RECOVERY NODE",
+        "MARKET SIGNAL INTELLIGENCE",
+        "PRIORITY COMMAND INTERFACE"
       ],
       "button": {
-        "text": "Add Cockpit",
-        "url": "/contact"
+        "text": "DEPLOY AGENTIC",
+        "url": "/#contact",
+        "style": "solid"
       }
     },
     {
-      "name": "Enterprise",
-      "price_monthly": "Custom",
-      "price_yearly": "Contact Sales",
-      "description": "Dedicated Support & Custom SLAs",
-      "features": [
-        "Everything in Cockpit",
-        "Bundled Infrastructure Options",
-        "Dedicated Success Engineer",
-        "Custom SLA & Response Times",
-        "Multi-Region Deployment"
+      "pill": "STANDARD PROTOCOL",
+      "pill_color": "stone",
+      "name": "ENTERPRISE",
+      "subtitle": "SOVEREIGN INFRASTRUCTURE",
+      "price_monthly": "CUSTOM",
+      "price_yearly": "CUSTOM",
+      "price_subtitle": "CUSTOM RUNNERS",
+      "credits": "10,000 ELITE CREDITS<br>(MANAGED)",
+      "outcome_strategies": [
+        {"label": "OUTCOME STRATEGY", "value": "20% of Recovered Claims"},
+        {"label": "OUTCOME STRATEGY", "value": "3% of Auto-Provisioned POs"}
       ],
-      "usage": [
-        "Negotiable bundled pricing",
-        "Volume discounts available",
-        "Success fee models available",
-        "White-glove onboarding"
+      "features": [
+        "SELF-HOSTED CUSTOM RUNNERS ENABLED",
+        "EVERYTHING IN AGENTIC +",
+        "ADVANCED SSO & AUDIT LAYER",
+        "STRATEGIC SUCCESS GOVERNANCE",
+        "AIR-GAPPED DEPLOYMENT OPTIONS"
       ],
       "button": {
-        "text": "Talk to Sales",
-        "url": "/contact"
+        "text": "CONSULT SALES",
+        "url": "/#contact",
+        "style": "outline"
       }
     }
   ]
@@ -93,98 +97,35 @@ layout: "pricing"
 
 <div class="py-12"></div>
 
-{{< pricing-table-1 >}}
-{
-  "title": "Enterprise Agent",
-  "description": "Automated content engineering. Generate expert blogs locally.",
-  "plans": [
-    {
-      "name": "Community",
-      "price_monthly": "$0",
-      "price_yearly": "$0",
-      "description": "Internal Use Only",
-      "features": [
-        "Unlimited Generation",
-        "Runs Locally (Docker)",
-        "Deep Web Research",
-        "SEO Optimization",
-        "Markdown Export"
-      ],
-      "usage": [
-        "Internal Docs: Allowed",
-        "Personal Projects: Allowed",
-        "Commercial Use: Prohibited",
-        "Support: Community Only"
-      ],
-      "button": {
-        "text": "Get Started",
-        "url": "/products/blog-generation#download"
-      }
-    },
-    {
-      "name": "Commercial",
-      "price_monthly": "$60",
-      "price_yearly": "$50",
-      "description": "For Agencies & Growth Teams",
-      "features": [
-        "Everything in Community",
-        "Commercial Usage License",
-        "CMS Integration (Wordpress/Ghost)",
-        "Scheduled Auto-Posting",
-        "API Access"
-      ],
-      "usage": [
-        "Client Work: Allowed",
-        "Multi-Brand Management",
-        "Bulk Generation",
-        "Priority Support"
-      ],
-      "button": {
-        "text": "Get License",
-        "url": "/contact"
-      }
-    }
-  ]
-}
-{{< /pricing-table-1 >}}
-
-
+{{< enterprise-a2a >}}
 {{< faq >}}
 {
   "title": "Billing Logic. No Surprises.",
   "description": "Low barrier to entry. Revenue scales with your actual infrastructure usage.",
   "questions": [
     {
-      "question": "How does Data Unit (DU) and Compute Unit (CU) billing work?",
-      "answer": "**Infrastructure is pass-through at cost.**<br>• **1 DU = 1GB of data processed** = $0.01<br>• **1 CU = 60 seconds of compute time** = $0.01<br><br>You pay your base tier ($20 or $80/mo) for platform features. DU/CU scales with actual usage—no markup."
+      "question": "How are Ops Credits calculated for usage?",
+      "answer": "**Ops Credits dynamically wrap usage.**<br>They are calculated by tracking CPU usage, rounded up per 60-second window. For example, if a process runs on a 4vCPU node and takes 45 seconds to complete, it will consume **4 Ops Credits**. You automatically draw from your tier's monthly Elite Credits allocation for these operations."
     },
     {
-      "question": "What's the difference between Core and Cockpit?",
-      "answer": "**Core ($20/mo):** All the visibility and testing.<br>• Operational Radar (see what's breaking)<br>• Rules Enforcer (block bad decisions)<br>• Risk Simulation Engine (test changes)<br>• Data Helper (clean your data)<br><br>**Cockpit ($80/mo):** Adds autonomous execution.<br>• Agents that auto-file claims<br>• Auto-provision purchase orders<br>• Resolve business exceptions<br><br>Core shows you problems. Cockpit fixes them."
+      "question": "What happens if my operations exceed my credit limit?",
+      "answer": "We ensure continuity. If you run out of credits, agents will pause to prevent overages. You can instantly restore operations with a **Fuel Canister top-up ($15 for +1,000 credits)** without needing to upgrade your base tier."
     },
     {
-      "question": "Pricing Example: Small Team (5GB/day processing, Core only)",
-      "answer": "**Core:**<br>Base: $20/mo<br>Data: 150 DU × $0.01 = $1.50<br>Compute: 60 CU × $0.01 = $0.60<br>**Total: ~$22/mo**<br><br>Start cheaper than Netflix. Scale as you grow."
+      "question": "How are Success Fees managed?",
+      "answer": "Success fees only apply to capital recovery workflows (e.g., claims and fraud detection). We take a 20% commission on recovered funds—meaning we only win when you win. Strategic auto-provisioning is capped at 3% per PO."
     },
     {
-      "question": "Pricing Example: Growing Team (20GB/day, with Cockpit)",
-      "answer": "**Cockpit:**<br>Base: $80/mo<br>Data: 600 DU × $0.01 = $6<br>Compute: 240 CU × $0.01 = $2.40<br>**Total: ~$88/mo**<br><br>Plus success fees on recoveries (20% of capital found). Most teams cover annual costs with one successful recovery."
+      "question": "Is my data secure in an automated environment?",
+      "answer": "Security is our baseline. All data is encrypted at rest and in transit. For high-security environments, our Enterprise tier offers **Air-Gapped Deployment** and **Bring Your Own Runner (BYOR)** options to keep data inside your private cloud."
     },
     {
-      "question": "What if my data usage spikes?",
-      "answer": "DU/CU billing is transparent and predictable. Monitor usage in real-time through the dashboard. For high-volume scenarios (100GB+/day), Enterprise tier offers bundled infrastructure pricing."
+      "question": "What's the difference between Monitor and Agentic roles?",
+      "answer": "**Monitor ($18/mo):** All the visibility and testing.<br>• Operational Radar (see what's breaking)<br>• Rules Reconciliation (flag bad decisions)<br>• Predictive Simulator (test changes)<br><br>**Agentic ($95/mo):** Adds autonomous execution.<br>• Agents that auto-file claims<br>• Auto-provision purchase orders<br>• Resolve business exceptions<br><br>Monitor shows you problems. Agentic fixes them."
     },
     {
-      "question": "What are 'Success Fee' options?",
-      "answer": "**For claims recovery and fraud detection:**<br>When agents identify and recover capital (fraud, overpayments, subrogation), we charge 20% of recovered funds. You keep 80%. If we find nothing, you pay nothing beyond base platform fees.<br><br>Optional and only applies to recovery workflows."
-    },
-    {
-      "question": "Can I start with Core and add Cockpit later?",
-      "answer": "Yes. Start with **Core** ($20/mo) to get visibility and testing. Add **Cockpit** when you're ready to deploy autonomous agents. Your data/compute usage carries over."
-    },
-    {
-      "question": "Do I have to commit to annual?",
-      "answer": "No. Monthly is available. Annual contracts save 25%."
+      "question": "Do I have to commit to an annual plan?",
+      "answer": "No. Monthly commitments are perfectly fine. However, annual contracts save you 15%."
     }
   ]
 }
