@@ -2,41 +2,48 @@
 {{ $distribution := resources.Get "images/landing/distribution.svg" }}
 {{ $trucks := resources.Get "images/landing/trucks.svg" }}
 
-<section class="relative h-screen overflow-hidden bg-slate-900 flex items-center justify-center">
+<section class="relative h-screen overflow-hidden bg-stone-900 flex items-center justify-center">
   <!-- Parallax Container -->
   <div id="hero-parallax" class="absolute inset-0 w-full h-full">
     <!-- Layer 1: Warehouse (Deepest) -->
-    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center"
-         style="background-image: url('{{ $warehouse.RelPermalink }}'); z-index: 1;"
-         data-depth="0.1">
+    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-luminosity opacity-80"
+      style="background-image: url('{{ $warehouse.RelPermalink }}'); z-index: 1;" data-depth="0.1">
     </div>
 
     <!-- Layer 2: Distribution (Mid) -->
-    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center"
-         style="background-image: url('{{ $distribution.RelPermalink }}'); z-index: 2;"
-         data-depth="0.3">
+    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-color-burn opacity-90"
+      style="background-image: url('{{ $distribution.RelPermalink }}'); z-index: 2;" data-depth="0.3">
     </div>
 
     <!-- Layer 3: Trucks (Foreground) -->
-    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center"
-         style="background-image: url('{{ $trucks.RelPermalink }}'); z-index: 3;"
-         data-depth="0.6">
+    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-screen opacity-90"
+      style="background-image: url('{{ $trucks.RelPermalink }}'); z-index: 3;" data-depth="0.6">
     </div>
   </div>
 
   <!-- Content Overlay -->
-  <div class="relative z-20 text-center max-w-5xl px-6">
-    <h1 class="text-6xl md:text-9xl font-black text-white tracking-tighter leading-none italic uppercase mb-6 drop-shadow-lg">
-      Digital <span class="text-[#00f5ff] not-italic">Twin</span><br/>Control
+  <div class="relative z-20 text-center max-w-5xl px-6 flex flex-col items-center">
+    <h1
+      class="text-6xl md:text-7xl lg:text-[100px] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#9f1239] to-[#ea580c] tracking-tighter leading-[0.95] italic uppercase mb-6 drop-shadow-lg max-w-5xl">
+      Your Operations <br />Digital Twin
     </h1>
-    <p class="text-xl text-slate-100 font-light max-w-2xl mx-auto tracking-wide mb-10 drop-shadow-md">
-      Navigating the isometric landscape of autonomous enterprise operations.
-    </p>
-    <div class="flex flex-col items-center gap-4">
-        <div class="text-[#00f5ff] text-[10px] font-mono uppercase tracking-[0.4em] animate-bounce bg-slate-900/50 px-2 py-1 rounded">Scroll to Deploy Facility</div>
+    <div
+      class="text-stone-400 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 max-w-4xl leading-relaxed">
+      Ground your Automation with validated business rules. Simulate Financial & Logistics Scenarios, gaining
+      exponential customer valued operational advantage over fulfilments and claims.
+    </div>
+    <div class="flex flex-col items-center gap-4 mt-8">
+      <div
+        class="text-[#ea580c] text-[10px] font-mono uppercase tracking-[0.4em] animate-bounce bg-stone-900/50 px-2 py-1 rounded">
+        Scroll to Deploy Facility</div>
     </div>
   </div>
 
   <!-- Overlay Gradient -->
-  <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-transparent to-slate-900 pointer-events-none z-10"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-900 pointer-events-none z-10">
+  </div>
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-[#9f1239]/20 via-transparent pointer-events-none z-10 mix-blend-overlay">
+  </div>
 </section>

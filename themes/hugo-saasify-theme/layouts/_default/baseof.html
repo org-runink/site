@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}" class="h-full">
+<html lang="{{ .Site.LanguageCode | default " en" }}" class="h-full">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Google Tag Manager -->
     {{ partial "google-tag-manager" . }}
 
     <!-- Google Analytics -->
     {{ partial "google-analytics" . }}
-    
+
     <!-- Title -->
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    
+
     <!-- Meta Tags -->
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
     <meta name="author" content="{{ .Site.Params.author | default .Site.Title }}">
     <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index, follow{{ end }}">
-    
+
     <!-- Open Graph -->
-    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta property="og:title"
+        content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+    <meta property="og:description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
     <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
@@ -31,11 +35,13 @@
     <meta property="og:image" content="{{ . | absURL }}">
     {{ end }}
     {{ end }}
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="twitter:title"
+        content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+    <meta name="twitter:description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
     {{ with .Site.Params.twitter }}
     <meta name="twitter:site" content="@{{ . }}">
     {{ end }}
@@ -46,38 +52,43 @@
     <meta property="twitter:image" content="{{ . | absURL }}">
     {{ end }}
     {{ end }}
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ "images/favicon.ico" | relURL }}">
-    
+    <link rel="icon" type="image/x-icon" href="{{ " images/favicon.ico" | relURL }}">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ .Permalink }}">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Main CSS -->
     {{ $css := resources.Get "css/main.css" }}
     {{ $css = $css | css.PostCSS }}
     {{ if hugo.IsProduction }}
-        {{ $css = $css | minify | fingerprint | resources.PostProcess }}
-    {{ end }}
+    {{ $css = $css | minify | fingerprint | resources.PostProcess }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ else }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}?v={{ now.Unix }}">
+    {{ end }}
 
     <!-- Additional Meta Tags from Front Matter -->
     {{ with .Params.customMeta }}
-        {{ range . }}
-        <meta {{ range $key, $value := . }} {{ $key }}="{{ $value }}"{{ end }}>
-        {{ end }}
+    {{ range . }}
+    <meta {{ range $key, $value :=. }} {{ $key }}="{{ $value }}" {{ end }}>
+    {{ end }}
     {{ end }}
 </head>
+
 <body class="min-h-screen flex flex-col">
     <!-- Google Tag Manager (noscript) -->
     {{ if and hugo.IsProduction .Site.Params.googleTagManager }}
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.googleTagManager }}"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.googleTagManager }}" height="0"
+            width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {{ end }}
     <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
@@ -97,7 +108,7 @@
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         if (mobileMenuButton) {
-            mobileMenuButton.addEventListener('click', function() {
+            mobileMenuButton.addEventListener('click', function () {
                 const mobileMenu = document.getElementById('mobile-menu');
                 if (mobileMenu) {
                     mobileMenu.classList.toggle('hidden');
@@ -106,4 +117,5 @@
         }
     </script>
 </body>
+
 </html>

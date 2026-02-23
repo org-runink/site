@@ -42,22 +42,36 @@ We don't sell a "platform." We deploy specialized agents that join your team.
 {{< card 
     title="The Claims Agent"
     icon="currency-dollar"
-    link="/use_cases/claims_recovery"
+    link="/use-cases/claims-recovery"
     description="Reads BOLs, identifies damage, and fights carrier denials on autopilot. Recover 40% more freight spend."
 >}}
 
 {{< card 
     title="The Fulfillment Agent"
     icon="box"
-    link="/use_cases/fulfillment_optimization"
+    link="/use-cases/fulfillment-optimization"
     description="Orchestrates inventory and routing based on real-time constraints (weather, dock status, margin). Inventory that thinks."
 >}}
 
 {{< card 
     title="The Finance Agent"
     icon="scale"
-    link="/use_cases/finance"
+    link="/use-cases/finance"
     description="Audits every invoice against your contracts. Short-pays valid discrepancies and reconciles ledgers instantly."
+>}}
+
+{{< card 
+    title="Drop Shipping Command Center"
+    icon="globe-alt"
+    link="/use-cases/drop-shipping"
+    description="Syncs inventory across all vendors in real-time. Routes orders to the best vendor to prevent overselling."
+>}}
+
+{{< card 
+    title="Fleet Optimizer"
+    icon="truck"
+    link="/use-cases/route-optimization"
+    description="Dynamically re-sequences routes based on traffic and backhaul opportunities. Stop hauling air."
 >}}
 
 {{< /card-grid >}}

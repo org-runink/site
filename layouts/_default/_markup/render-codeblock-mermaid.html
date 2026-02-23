@@ -1,8 +1,54 @@
 {{- $scratch := .Page.Scratch -}}
 {{- if not ($scratch.Get "mermaidInit") -}}
+<style>
+    .mermaid {
+        width: 100%;
+        height: 600px;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        background-color: #0c0a09;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: 2rem;
+    }
+
+    .mermaid svg {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        cursor: grab;
+    }
+
+    .mermaid svg:active {
+        cursor: grabbing;
+    }
+</style>
 <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "neutral" });
+    mermaid.initialize({ startOnLoad: false, securityLevel: "loose", theme: "dark" });
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        await mermaid.run({
+            querySelector: '.mermaid'
+        });
+
+        const script = document.createElement('script');
+        script.src = "https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js";
+        script.onload = () => {
+            document.querySelectorAll('.mermaid svg').forEach(svg => {
+                svgPanZoom(svg, {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,
+                    minZoom: 0.1,
+                    maxZoom: 10
+                });
+            });
+        };
+        document.head.appendChild(script);
+    });
 </script>
 {{- $scratch.Set "mermaidInit" true -}}
 {{- end -}}

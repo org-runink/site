@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="bg-stone-950 min-h-screen relative overflow-hidden text-stone-300">
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950 z-0">
+    </div>
+    <div class="absolute inset-0 opacity-20 pointer-events-none z-0"
+        style="background-image: linear-gradient(#ea580c 1px, transparent 1px), linear-gradient(90deg, #ea580c 1px, transparent 1px); background-size: 60px 60px;">
+    </div>
+
+    <div class="container mx-auto px-4 py-24 relative z-10">
+        <!-- Main Layout Content -->
+        <div class="mb-12 flex justify-center w-full">
+            <!-- Main Content -->
+            <article
+                class="w-full max-w-5xl bg-[#161515] border border-stone-800/80 rounded-[2.5rem] p-8 md:p-16 shadow-2xl relative z-10">
+                <header class="mb-8">
+                    {{ with .Params.categories }}
+                    <div class="mb-4">
+                        {{ range . }}
+                        <a href="{{ " /categories/" | relLangURL }}{{ . | urlize }}"
+                            class="inline-block px-3 py-1 text-sm font-medium text-primary-600 bg-primary-50 rounded-full hover:bg-primary-100 mr-2">
+                            {{ . }}
+                        </a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    <div
+                        class="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full border border-[#ea580c]/30 text-[#ea580c] text-[10px] font-black uppercase tracking-[0.25em] bg-stone-900/50 shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                        Transmission
+                    </div>
+
+                    {{ partial "post-meta.html" . }}
+                </header>
+
+                {{ with .Params.featured_image }}
+                <div class="mb-8">
+                    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-auto rounded-lg" loading="lazy">
+                </div>
+                {{ end }}
+
+                <div
+                    class="w-full prose prose-invert prose-stone max-w-none lg:prose-lg prose-headings:text-white prose-p:text-stone-300 prose-li:text-stone-300 prose-strong:text-white prose-a:text-[#ea580c] hover:prose-a:text-[#ca4708]">
+                    {{ .Content }}
+                </div>
+            </article>
+        </div>
+    </div>
+    {{ end }}

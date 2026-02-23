@@ -1,28 +1,95 @@
-<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-  <!-- Ceiling lights -->
-  <path d="M400 0 L1520 0 L1100 300 L820 300 Z" fill="#334155" opacity="0.3" />
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.20">
+  <!-- Warehouse: Low Poly Industrial Storage -->
 
-  <!-- Left Shelves -->
-  <path d="M0 1080 L600 700 L600 200 L0 0 Z" fill="#1e293b" />
-  <path d="M0 900 L550 600 L550 250 L0 100 Z" fill="#334155" />
+  <!-- Left Side Shelf 1 -->
+  <g transform="translate(200, 300)">
+    <!-- Base Isometric Box -->
+    <polygon points="100,0 200,50 100,100 0,50" fill="#475569" />
+    <polygon points="0,50 100,100 100,450 0,400" fill="#334155" />
+    <polygon points="100,100 200,50 200,400 100,450" fill="#1E293B" />
+    
+    <!-- Racks and Inventory Boxes (Low Poly Cutouts) -->
+    <!-- Level 1 -->
+    <polygon points="10,65 90,105 190,55 110,15" fill="#0F172A" opacity="0.5" />
+    <polygon points="20,70 50,85 50,125 20,110" fill="#F59E0B" />
+    <polygon points="50,85 80,100 80,140 50,125" fill="#D97706" />
+    <polygon points="120,80 150,65 150,105 120,120" fill="#65A30D" />
+    
+    <!-- Level 2 -->
+    <polygon points="10,165 90,205 190,155 110,115" fill="#0F172A" opacity="0.5" />
+    <polygon points="150,165 180,150 180,190 150,205" fill="#BE123C" />
+    <polygon points="120,180 150,165 150,205 120,220" fill="#9F1239" />
+    
+    <!-- Level 3 -->
+    <polygon points="10,265 90,305 190,255 110,215" fill="#0F172A" opacity="0.5" />
+    <polygon points="20,270 50,285 50,325 20,310" fill="#F59E0B" />
+  </g>
 
-  <!-- Right Shelves -->
-  <path d="M1920 1080 L1320 700 L1320 200 L1920 0 Z" fill="#1e293b" />
-  <path d="M1920 900 L1370 600 L1370 250 L1920 100 Z" fill="#334155" />
+  <!-- Left Side Shelf 2 -->
+  <g transform="translate(450, 450)">
+    <!-- Base Isometric Box -->
+    <polygon points="100,0 200,50 100,100 0,50" fill="#64748B" />
+    <polygon points="0,50 100,100 100,450 0,400" fill="#475569" />
+    <polygon points="100,100 200,50 200,400 100,450" fill="#334155" />
+    
+    <polygon points="10,65 90,105 190,55 110,15" fill="#0F172A" opacity="0.5" />
+    <polygon points="20,70 50,85 50,125 20,110" fill="#BE123C" />
+    <polygon points="50,85 80,100 80,140 50,125" fill="#9F1239" />
+    
+    <polygon points="10,165 90,205 190,155 110,115" fill="#0F172A" opacity="0.5" />
+    <polygon points="120,180 180,150 180,210 120,240" fill="#65A30D" />
+    
+    <polygon points="10,265 90,305 190,255 110,215" fill="#0F172A" opacity="0.5" />
+  </g>
+  
+  <!-- Right Side Shelf 1 -->
+  <g transform="translate(1400, 200)">
+    <polygon points="100,0 200,50 100,100 0,50" fill="#475569" />
+    <polygon points="0,50 100,100 100,550 0,500" fill="#334155" />
+    <polygon points="100,100 200,50 200,500 100,550" fill="#1E293B" />
+    
+    <polygon points="10,65 90,105 190,55 110,15" fill="#0F172A" opacity="0.5" />
+    <polygon points="120,80 180,50 180,110 120,140" fill="#F59E0B" />
+    
+    <polygon points="10,165 90,205 190,155 110,115" fill="#0F172A" opacity="0.5" />
+    <polygon points="20,170 80,200 80,260 20,230" fill="#BE123C" />
 
-  <!-- Boxes on Left -->
-  <path d="M50 800 L200 750 L200 650 L50 700 Z" fill="#475569" />
-  <path d="M200 750 L250 720 L250 620 L200 650 Z" fill="#64748b" />
-  <path d="M50 700 L200 650 L250 620 L100 670 Z" fill="#94a3b8" />
+    <polygon points="10,265 90,305 190,255 110,215" fill="#0F172A" opacity="0.5" />
+    <polygon points="120,280 150,265 150,305 120,320" fill="#65A30D" />
 
-  <!-- Boxes on Right -->
-  <path d="M1870 800 L1720 750 L1720 650 L1870 700 Z" fill="#475569" />
-  <path d="M1720 750 L1670 720 L1670 620 L1720 650 Z" fill="#64748b" />
-  <path d="M1870 700 L1720 650 L1670 620 L1820 670 Z" fill="#94a3b8" />
+    <polygon points="10,365 90,405 190,355 110,315" fill="#0F172A" opacity="0.5" />
+  </g>
 
-  <!-- Floor Grid lines -->
-  <path d="M0 1080 L960 540" stroke="#334155" stroke-width="2" />
-  <path d="M1920 1080 L960 540" stroke="#334155" stroke-width="2" />
-  <path d="M480 1080 L960 540" stroke="#334155" stroke-width="2" />
-  <path d="M1440 1080 L960 540" stroke="#334155" stroke-width="2" />
+  <!-- Right Side Shelf 2 -->
+  <g transform="translate(1100, 450)">
+    <polygon points="100,0 200,50 100,100 0,50" fill="#64748B" />
+    <polygon points="0,50 100,100 100,450 0,400" fill="#475569" />
+    <polygon points="100,100 200,50 200,400 100,450" fill="#334155" />
+    
+    <polygon points="10,65 90,105 190,55 110,15" fill="#0F172A" opacity="0.5" />
+    <polygon points="20,70 50,85 50,125 20,110" fill="#65A30D" />
+    <polygon points="50,85 80,100 80,140 50,125" fill="#4D7C0F" />
+    
+    <polygon points="10,165 90,205 190,155 110,115" fill="#0F172A" opacity="0.5" />
+    <polygon points="120,180 180,150 180,210 120,240" fill="#F59E0B" />
+    
+    <polygon points="10,265 90,305 190,255 110,215" fill="#0F172A" opacity="0.5" />
+  </g>
+
+  <!-- Low Poly Floor Pathways -->
+  <polygon points="800,900 1000,980 1200,900 1000,820" fill="#0F172A" opacity="0.8" />
+  <polygon points="650,830 850,910 1050,830 850,750" fill="#0F172A" opacity="0.6" />
+  <!-- Moving Robot / AGV on the pathway (Low poly style) -->
+  <g transform="translate(950, 880)">
+    <polygon points="50,0 100,25 50,50 0,25" fill="#1E293B" />
+    <polygon points="0,25 50,50 50,70 0,45" fill="#0F172A" />
+    <polygon points="50,50 100,25 100,45 50,70" fill="#020617" />
+    
+    <!-- glowing payload -->
+    <polygon points="50,5 90,25 50,45 10,25" fill="#F59E0B" />
+    <polygon points="10,25 50,45 50,55 10,35" fill="#D97706" />
+    <polygon points="50,45 90,25 90,35 50,55" fill="#B45309" />
+  </g>
+  </g>
 </svg>

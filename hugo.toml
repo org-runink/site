@@ -40,7 +40,7 @@ paginatePath = "page"
     gradient_angle = 30
     [params.cta.primary_button]
       text = "Book your Consultation"
-      url = "/contact"
+      url = "/#contact"
   
   # Social Media Links
   [params.social]
@@ -48,9 +48,7 @@ paginatePath = "page"
   
   # Footer Configuration
   [params.footer]
-    column_1_title = "Features"
-    column_2_title = "Company"
-#    column_3_title = "LEGAL"
+    enable = false
   
   [params.header]
     # Header background and border styles (optional)
@@ -88,7 +86,7 @@ paginatePath = "page"
       # Get Started button
       [params.header.buttons.getStarted]
         text = "Book your Consultation"
-        url = "/contact"
+        url = "/#contact"
 
   # Blog configuration
   [params.blog]
@@ -165,69 +163,31 @@ paginatePath = "page"
 # Navigation Menu
 [menu]
   [[menu.main]]
-    name = "Products"
+    name = "Why Runink?"
+    url = "/#why-runink"
     weight = 1
-    [menu.main.params]
-      has_submenu = true
-      submenu = [
-        { name = "Analytics Companion", url = "/products/analytics_companion/" },
-        { name = "Content Engineer", url = "/products/blog-generation/" }
-      ]
 
   [[menu.main]]
-    name = "Publications, Insights & Expertise"
+    name = "What makes it a painkiller"
+    url = "/#painkiller"
     weight = 2
-    [menu.main.params]
-      has_submenu = true
-      submenu = [
-        { name = "Blog", url = "/blog/" },
-        { name = "Use Cases", url = "/use_cases" }
-      ]
+
   [[menu.main]]
-    name = "Company"
+    name = "Use cases"
+    url = "/#use-cases"
     weight = 3
-    url = "/company"
-#    [menu.main.params]
-#      has_submenu = true
-#      submenu = [
-#        { name = "About Us", url = "/company/" },
-#        { name = "Careers", url = "/careers/" }
-#      ]
+
   [[menu.main]]
-    name = "Pricing"
-    url = "/pricing"
+    name = "Blog"
+    url = "/blog/"
     weight = 4
 
-
-  [[menu.footer_column_1]]
-    name = "Analytics Companion"
-    url = "/products/analytics_companion/"
-    weight = 1
-  [[menu.footer_column_1]]
-    name = "Content Engineer"
-    url = "/products/blog-generation/"
-    weight = 2
-
-  # Footer Column 2 Menu
-  [[menu.footer_column_2]]
-    name = "Publications, Insights & Expertise"
-    url = "/blog"
-    weight = 1
-  [[menu.footer_column_2]]
-    name = "About Us"
-    url = "/company"
-    weight = 2
-  [[menu.footer_column_2]]
+  [[menu.main]]
     name = "Pricing"
     url = "/pricing"
-    weight = 3
+    weight = 5
 
-  # Footer Column 3 Menu
-#  [[menu.footer_column_3]]
-#    name = "License"
-#    url = "/license"
-#    weight = 1
-#  [[menu.footer_column_3]]
-#    name = "Privacy Policy"
-#    url = "/privacy"
-#    weight = 2
+  [[menu.main]]
+    name = "Talk to us"
+    url = "/#contact"
+    weight = 6

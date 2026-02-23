@@ -1,33 +1,103 @@
-<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-  <!-- Road -->
-  <path d="M0 1080 L1920 1080 L1920 900 L0 900 Z" fill="#1e293b" />
-  <path d="M0 990 L1920 990" stroke="#facc15" stroke-width="4" stroke-dasharray="20,20" />
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.20">
+  <!-- Trucks: Low Poly Fleet -->
+  
+  <g transform="translate(150, 600) scale(1.2)">
+    <!-- Shadow / Ground reflection -->
+    <polygon points="0,220 900,220 850,260 -50,260" fill="#0F172A" opacity="0.5" />
 
-  <!-- Truck 1 -->
-  <g transform="translate(200, 850)">
-    <!-- Wheels -->
-    <circle cx="50" cy="150" r="30" fill="#000" />
-    <circle cx="150" cy="150" r="30" fill="#000" />
-    <circle cx="350" cy="150" r="30" fill="#000" />
+    <!-- Trailer Side -->
+    <polygon points="0,50 650,50 650,200 0,200" fill="#1E293B" />
+    <polygon points="0,50 325,120 0,200" fill="#334155" />
+    <polygon points="325,120 650,50 650,200 0,200" fill="#1E293B" />
+    <polygon points="0,50 650,50 325,120" fill="#475569" />
 
-    <!-- Body -->
-    <rect x="0" y="50" width="400" height="100" fill="#fff" />
-    <rect x="280" y="50" width="120" height="100" fill="#3b82f6" />
-    <!-- Cab window -->
-    <path d="M300 50 L380 50 L380 90 L300 90 Z" fill="#93c5fd" />
+    <!-- Trailer Top/Front Edge (Perspectives) -->
+    <polygon points="650,50 670,40 670,190 650,200" fill="#0F172A" />
+    <polygon points="0,50 20,40 670,40 650,50" fill="#475569" />
+
+    <!-- Trailer Brand Polygons (Abstract) -->
+    <polygon points="400,100 550,80 500,150" fill="#F59E0B" opacity="0.9" />
+    <polygon points="550,80 600,130 500,150" fill="#D97706" opacity="0.9" />
+
+    <!-- Cab Unit -->
+    <!-- Sleeper/Cab side -->
+    <polygon points="680,80 780,80 820,130 820,200 680,200" fill="#334155" />
+    <polygon points="680,80 750,120 680,200" fill="#475569" />
+    <polygon points="750,120 780,80 820,130 820,200 680,200" fill="#1E293B" />
+    
+    <!-- Windshield -->
+    <polygon points="780,80 820,130 860,130 810,80" fill="#0EA5E9" opacity="0.8" />
+    <polygon points="780,80 810,80 795,105" fill="#38BDF8" opacity="0.9" />
+    
+    <!-- Hood -->
+    <polygon points="820,130 890,140 890,200 820,200" fill="#475569" />
+    <polygon points="820,130 860,130 890,140" fill="#64748B" />
+    <polygon points="850,160 890,140 890,200 820,200" fill="#334155" />
+
+    <!-- Wheels (Low Poly Hexagons/Octagons) -->
+    <g transform="translate(100, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+    <g transform="translate(200, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+    <g transform="translate(600, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+    <g transform="translate(720, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+    <g transform="translate(840, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
   </g>
 
-  <!-- Truck 2 -->
-  <g transform="translate(1200, 800) scale(0.8)">
-    <!-- Wheels -->
-    <circle cx="50" cy="150" r="30" fill="#000" />
-    <circle cx="150" cy="150" r="30" fill="#000" />
-    <circle cx="350" cy="150" r="30" fill="#000" />
+  <g transform="translate(1000, 300) scale(0.8)">
+    <polygon points="0,220 900,220 850,260 -50,260" fill="#0F172A" opacity="0.3" />
+    
+    <polygon points="0,50 650,50 650,200 0,200" fill="#334155" />
+    <polygon points="0,50 325,120 0,200" fill="#475569" />
+    <polygon points="325,120 650,50 650,200 0,200" fill="#1E293B" />
+    
+    <polygon points="650,50 670,40 670,190 650,200" fill="#0F172A" />
+    <polygon points="0,50 20,40 670,40 650,50" fill="#64748B" />
 
-    <!-- Body -->
-    <rect x="0" y="50" width="400" height="100" fill="#fff" />
-    <rect x="280" y="50" width="120" height="100" fill="#ef4444" />
-    <!-- Cab window -->
-    <path d="M300 50 L380 50 L380 90 L300 90 Z" fill="#93c5fd" />
+    <polygon points="400,100 550,80 500,150" fill="#BE123C" opacity="0.9" />
+    <polygon points="550,80 600,130 500,150" fill="#9F1239" opacity="0.9" />
+
+    <polygon points="680,80 780,80 820,130 820,200 680,200" fill="#475569" />
+    <polygon points="680,80 750,120 680,200" fill="#64748B" />
+    <polygon points="750,120 780,80 820,130 820,200 680,200" fill="#334155" />
+    
+    <polygon points="780,80 820,130 860,130 810,80" fill="#0EA5E9" opacity="0.6" />
+    <polygon points="820,130 890,140 890,200 820,200" fill="#64748B" />
+    
+    <g transform="translate(100, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+    <g transform="translate(200, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+    <g transform="translate(600, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+    <g transform="translate(720, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+    <g transform="translate(840, 200)">
+      <polygon points="-30,0 -15,-25 15,-25 30,0 15,25 -15,25" fill="#0F172A"/>
+      <polygon points="-15,0 -7,-12 7,-12 15,0 7,12 -7,12" fill="#475569"/>
+    </g>
+  </g>
   </g>
 </svg>

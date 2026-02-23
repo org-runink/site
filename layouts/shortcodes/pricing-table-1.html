@@ -1,103 +1,161 @@
 {{ $json := .Inner | transform.Unmarshal }}
-<section class="py-16 bg-stone-900">
+<section class="py-16 relative z-10">
     <style>
         .price-yearly,
         .freq-yearly {
-            display: none;
+            display: none !important;
         }
 
         [data-pricing="yearly"] .price-yearly,
         [data-pricing="yearly"] .freq-yearly {
-            display: inline;
+            display: inline !important;
         }
 
         [data-pricing="yearly"] .price-monthly,
         [data-pricing="yearly"] .freq-monthly {
-            display: none;
-        }
-
-        .billing-note-yearly {
-            display: none;
-        }
-
-        [data-pricing="yearly"] .billing-note-yearly {
-            display: inline;
+            display: none !important;
         }
     </style>
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {{ with $json.title }}
-        <div class="text-center">
-            <h2 class="text-3xl font-bold text-white">{{ . }}</h2>
-            {{ with $json.description }}
-            <p class="mt-4 text-xl text-[#D9CDB8]">{{ . }}</p>
-            {{ end }}
-        </div>
-        {{ end }}
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {{ range $json.plans }}
+            {{ $isOrangePill := eq .pill_color "orange" }}
+            {{ $isOrangePrice := eq .price_color "orange" }}
+            {{ $isSolidButton := eq .button.style "solid" }}
 
-        <div class="mt-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {{ range $json.plans }}
-                <div class="w-full">
-                    <div
-                        class="h-full flex flex-col rounded-2xl border {{ if .featured }}border-[#D4A574] bg-gradient-to-br from-amber-950 via-stone-900 to-neutral-950{{ else }}border-stone-700 bg-gradient-to-br from-stone-900 to-neutral-900{{ end }} shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
-                        {{ if .featured }}
-                        <div
-                            class="absolute top-4 right-4 inline-block rounded-full bg-[#D4A574]/20 border border-[#D4A574]/50 px-4 py-1 text-sm font-semibold text-[#F5F1E8]">
-                            Popular
+            {{ $cardClasses := `border-stone-800 bg-[#161515]` }}
+            {{ if $isOrangePill }}{{ $cardClasses = `border-[#ca4708]/30 bg-[#1a1716]` }}{{ end }}
+
+            {{ $pillClasses := `border-stone-800 text-stone-500` }}
+            {{ if $isOrangePill }}{{ $pillClasses = `border-[#ca4708]/50 text-[#ca4708]` }}{{ end }}
+
+            {{ $headerClasses := `text-white` }}
+            {{ if $isOrangePill }}{{ $headerClasses = `text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b]
+            to-[#ea580c]` }}{{ end }}
+
+            {{ $priceClasses := `text-white` }}
+            {{ if $isOrangePrice }}{{ $priceClasses = `text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b]
+            to-[#ea580c]` }}{{ end }}
+
+            {{ $iconClasses := `text-stone-400` }}
+            {{ if $isOrangePill }}{{ $iconClasses = `text-[#ea580c]` }}{{ end }}
+
+            {{ $checkClasses := `text-stone-700` }}
+            {{ if $isOrangePill }}{{ $checkClasses = `text-[#ca4708]` }}{{ end }}
+
+            {{ $btnClasses := `bg-[#211F1F] text-stone-400 border border-stone-800 hover:border-stone-600
+            hover:text-white` }}
+            {{ if $isSolidButton }}{{ $btnClasses = `bg-gradient-to-r from-[#ea580c] to-[#ca4708] text-white
+            hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1` }}{{ end }}
+
+            <div class="w-full">
+                <!-- Outer card container -->
+                <div
+                    class="h-full flex flex-col rounded-[2.5rem] border shadow-2xl relative overflow-hidden transition-all duration-300 {{ $cardClasses }}">
+                    <div class="p-8 lg:p-12 flex flex-col flex-grow items-center text-center">
+
+                        <!-- Pill -->
+                        {{ if .pill }}
+                        <div class="mb-8">
+                            <span
+                                class="inline-block font-black text-[10px] uppercase tracking-[0.25em] italic {{ $pillClasses }}">
+                                {{ .pill }}
+                            </span>
                         </div>
                         {{ end }}
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="mb-6">
-                                <h3 class="text-2xl font-bold text-white">{{ .name }}</h3>
-                                <p class="mt-2 text-[#D9CDB8]">{{ .description }}</p>
-                            </div>
-                            <div class="mb-8">
-                                <p class="flex items-baseline">
-                                    <span class="text-5xl font-bold tracking-tight text-white price-monthly">
-                                        {{ with .price_monthly }}{{ . }}{{ else }}{{ with .price }}${{ . }}{{ end }}{{
-                                        end }}
-                                    </span>
-                                    <span class="text-5xl font-bold tracking-tight text-white price-yearly">
-                                        {{ with .price_yearly }}{{ . }}{{ else }}{{ with .price }}${{ . }}{{ end }}{{
-                                        end }}
-                                    </span>
-                                    <span class="ml-2 text-stone-500 freq-monthly">/month</span>
-                                    <span class="ml-2 text-stone-500 freq-yearly">/month</span>
-                                    <span class="ml-3 text-sm text-[#D4A574] billing-note-yearly">billed yearly</span>
-                                </p>
-                            </div>
-                            <ul class="space-y-6 text-[#F5F1E8] flex-grow">
-                                {{ range .features }}
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 flex-shrink-0 text-[#8B9A6E]" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+
+                        <!-- Headers -->
+                        <h3
+                            class="text-4xl xl:text-5xl font-black italic tracking-tighter uppercase mb-2 break-words w-full {{ $headerClasses }}">
+                            {{ .name }}</h3>
+                        <p class="text-[10px] font-bold text-stone-500 uppercase tracking-[0.2em] mb-12">{{ .subtitle }}
+                        </p>
+
+                        <!-- Price -->
+                        {{ $isCustom := eq .price_monthly "CUSTOM" }}
+                        {{ $priceSizeClass := `text-6xl lg:text-7xl leading-none` }}
+                        {{ if $isCustom }}{{ $priceSizeClass = `text-4xl lg:text-5xl leading-tight` }}{{ end
+                        }}
+                        <div class="mb-4 w-full flex flex-wrap items-baseline justify-center">
+                            <span
+                                class="{{ $priceSizeClass }} font-black tracking-tighter italic price-monthly break-words {{ $priceClasses }}">
+                                {{ if not $isCustom }}${{ end }}{{ .price_monthly }}
+                            </span>
+                            <span
+                                class="{{ $priceSizeClass }} font-black tracking-tighter italic price-yearly break-words {{ $priceClasses }}">
+                                {{ if not $isCustom }}${{ end }}{{ .price_yearly }}
+                            </span>
+                            {{ if not $isCustom }}
+                            <span
+                                class="ml-2 text-stone-500 font-bold text-[10px] tracking-widest italic freq-monthly">/
+                                MO</span>
+                            <span class="ml-2 text-stone-500 font-bold text-[10px] tracking-widest italic freq-yearly">/
+                                MO</span>
+                            {{ end }}
+                        </div>
+                        <p class="text-[10px] font-bold text-stone-500 uppercase tracking-[0.2em] mb-10">{{
+                            .price_subtitle }}</p>
+
+                        <!-- Inner Box Info -->
+                        <div
+                            class="w-full bg-[#1b1919] border border-stone-800/60 rounded-2xl p-6 mb-12 text-left shadow-inner flex flex-col">
+                            <div
+                                class="flex items-center gap-4 {{ if .outcome_strategies }}mb-6 pb-6 border-b border-stone-800/60{{ end }}">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-stone-800/50 flex items-center justify-center shrink-0 border border-stone-700/50 shadow-inner">
+                                    <svg class="w-5 h-5 {{ $iconClasses }}" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                            clip-rule="evenodd" />
                                     </svg>
-                                    <span class="ml-3">{{ . }}</span>
-                                </li>
-                                {{ end }}
-                                {{ range .usage }}
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 flex-shrink-0 text-[#D4A574]" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                    <span class="ml-3 italic text-[#D9CDB8]">{{ . }}</span>
-                                </li>
-                                {{ end }}
-                            </ul>
-                            <div class="mt-8">
-                                <a href="{{ .button.url }}"
-                                    class="btn {{ if .featured }}btn-primary{{ else }}btn-secondary{{ end }} w-full">
-                                    {{ .button.text }}
-                                </a>
+                                </div>
+                                <div class="text-sm font-black text-white italic tracking-wide uppercase leading-snug">
+                                    {{ .credits | safeHTML }}
+                                </div>
                             </div>
+
+                            {{ if .outcome_strategies }}
+                            <div class="flex flex-col gap-5">
+                                {{ range .outcome_strategies }}
+                                <div>
+                                    <div
+                                        class="text-[10px] font-black text-stone-500 tracking-[0.2em] mb-1.5 uppercase">
+                                        {{ .label
+                                        }}</div>
+                                    <div class="text-xs font-bold text-stone-300 italic tracking-normal">{{ .value }}
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+
+                        <!-- Checklist -->
+                        <ul class="space-y-5 w-full text-left flex-grow mb-12">
+                            {{ range .features }}
+                            <li class="flex items-start">
+                                <svg class="h-4 w-4 mt-0.5 flex-shrink-0 {{ $checkClasses }}" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span
+                                    class="ml-4 text-[10px] font-bold text-stone-400/80 tracking-widest uppercase leading-snug">{{
+                                    . }}</span>
+                            </li>
+                            {{ end }}
+                        </ul>
+
+                        <div class="w-full mt-auto">
+                            <a href="{{ .button.url }}"
+                                class="flex items-center justify-center w-full px-8 py-4 text-xs font-black italic uppercase tracking-widest rounded-xl transition-all duration-300 {{ $btnClasses }}">
+                                {{ .button.text }}
+                            </a>
                         </div>
                     </div>
                 </div>
-                {{ end }}
             </div>
+            {{ end }}
         </div>
     </div>
 </section>

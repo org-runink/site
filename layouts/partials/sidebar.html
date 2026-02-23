@@ -21,7 +21,7 @@
         <!-- Glow Effect -->
         <div
             class="absolute inset-0 opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-500 pointer-events-none">
-            <div class="absolute inset-0 bg-gradient-to-br from-[#8B9A6E]/5 via-transparent to-[#D4A574]/5"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#ea580c]/5 via-transparent to-[#ca4708]/5"></div>
         </div>
 
         <h3 class="text-lg font-bold mb-4 text-white relative z-10">{{ .Site.Params.blog.sidebar.recent.title | default
@@ -39,7 +39,7 @@
                     </div>
                     {{ end }}
                     <h4
-                        class="font-medium text-slate-200 group-hover:text-[#8B9A6E] transition-colors duration-200 line-clamp-2">
+                        class="font-medium text-slate-200 group-hover:text-[#ea580c] transition-colors duration-200 line-clamp-2">
                         {{ .Title }}
                     </h4>
                     <div class="flex items-center text-sm text-slate-400 mt-2">
@@ -67,9 +67,9 @@
         <div class="flex flex-wrap gap-2">
             {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
             <a href="{{ " /categories/" | relLangURL }}{{ $name | urlize }}"
-                class="inline-block px-3 py-1 text-sm font-medium text-[#D9CDB8] bg-stone-700/50 border border-stone-600 rounded-full hover:bg-[#8B9A6E] hover:text-white hover:border-[#A8B88B] transition-all duration-300">
+                class="inline-block px-3 py-1 text-sm font-medium text-stone-300 bg-stone-800 border border-stone-700 rounded-full hover:bg-stone-800 hover:text-[#ea580c] hover:border-[#ea580c]/50 transition-all duration-300">
                 {{ $name }}
-                <span class="text-slate-500 group-hover:text-[#F5F1E8] ml-1">({{ $taxonomy.Count }})</span>
+                <span class="text-stone-500 group-hover:text-[#ea580c]/80 ml-1">({{ $taxonomy.Count }})</span>
             </a>
             {{ end }}
         </div>
@@ -85,9 +85,9 @@
             {{ $tagCount := .Site.Params.blog.sidebar.tags.count | default 20 }}
             {{ range first $tagCount .Site.Taxonomies.tags.ByCount }}
             <a href="{{ " /tags/" | relLangURL }}{{ .Name | urlize }}"
-                class="text-sm text-slate-400 hover:text-[#8B9A6E] transition-colors duration-200">
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
                 #{{ .Name }}
-                <span class="text-slate-600">({{ .Count }})</span>
+                <span class="text-stone-600">({{ .Count }})</span>
             </a>
             {{ end }}
         </div>
