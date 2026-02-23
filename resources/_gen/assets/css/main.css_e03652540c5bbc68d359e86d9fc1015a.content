@@ -4106,11 +4106,6 @@ select {
   --tw-gradient-to: rgb(95 111 62 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-\[\#65793e\] {
-  --tw-gradient-from: #65793e var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(101 121 62 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
 .from-\[\#84cc16\]\/10 {
   --tw-gradient-from: rgb(132 204 22 / 0.1) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(132 204 22 / 0) var(--tw-gradient-to-position);
@@ -4233,9 +4228,6 @@ select {
 }
 .to-\[\#1c1917\] {
   --tw-gradient-to: #1c1917 var(--tw-gradient-to-position);
-}
-.to-\[\#4a5835\] {
-  --tw-gradient-to: #4a5835 var(--tw-gradient-to-position);
 }
 .to-\[\#8B9A6E\] {
   --tw-gradient-to: #8B9A6E var(--tw-gradient-to-position);
@@ -4923,11 +4915,6 @@ select {
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.shadow-\[0_0_15px_rgba\(101\2c 121\2c 62\2c 0\.1\)\] {
-  --tw-shadow: 0 0 15px rgba(101,121,62,0.1);
-  --tw-shadow-colored: 0 0 15px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .shadow-\[0_0_15px_rgba\(101\2c 121\2c 62\2c 0\.15\)\] {

@@ -126,3 +126,57 @@ Change detected, rebuilding site (#18).
 Template changed /shortcodes/painkiller-pitches.html
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Total in 56 ms
+
+Change detected, rebuilding site (#19).
+2026-02-23 14:04:26.805 -0500
+Source changed /blog/bill-of-lading-swiss-army-knife.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 110 ms
+
+Change of Static files detected, rebuilding site (#20).
+2026-02-23 14:05:01.805 -0500
+Syncing /images/blog/bill-of-lading-header.png to /
+
+Change detected, rebuilding site (#21).
+2026-02-23 14:06:11.805 -0500
+Source changed /blog/bill-of-lading-swiss-army-knife.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 29 ms
+
+Change detected, rebuilding site (#22).
+2026-02-23 14:07:57.305 -0500
+Source changed /blog/bill-of-lading-swiss-army-knife.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 20 ms
+
+Change detected, rebuilding site (#23).
+2026-02-23 14:11:00.305 -0500
+Source changed /blog/what-is-digital-twin-agentic-decisions.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 96 ms
+
+Change detected, rebuilding site (#24).
+2026-02-23 14:29:17.804 -0500
+Source changed /blog/what-is-digital-twin-agentic-decisions.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 42 ms
+
+Change detected, rebuilding site (#25).
+2026-02-23 14:30:37.805 -0500
+Source changed /blog/what-is-digital-twin-agentic-decisions.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 40 ms
+
+Change of Static files detected, rebuilding site (#26).
+2026-02-23 14:32:03.305 -0500
+Syncing /images/blog/digital-twin-agentic-decisions.png to /
+
+Change of Static files detected, rebuilding site (#27).
+2026-02-23 14:32:39.804 -0500
+Syncing /css/style.css to /
+
+Change detected, rebuilding site (#28).
+2026-02-23 14:33:22.304 -0500
+Source changed /blog/bill-of-lading-swiss-army-knife.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 40 ms
