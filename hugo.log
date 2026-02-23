@@ -180,3 +180,9 @@ Change detected, rebuilding site (#28).
 Source changed /blog/bill-of-lading-swiss-army-knife.md
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Total in 40 ms
+
+Change detected, rebuilding site (#29).
+2026-02-23 15:07:25.305 -0500
+Template changed /shortcodes/painkiller-pitches.html
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 30 ms
