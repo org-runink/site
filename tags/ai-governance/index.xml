@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Governance on Runink</title>
+    <link>https://runink.org/tags/ai-governance/</link>
+    <description>Recent content in AI Governance on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jul 2025 10:38:54 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/ai-governance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Securing the Future of Gen AI: How Information Security Enables Ethical AI in Logistics</title>
+      <link>https://runink.org/blog/information-security-ethical-gen-ai-logistics/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/information-security-ethical-gen-ai-logistics/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;br&gt;&#xA;Information security practices are essential for ensuring generative AI is developed and implemented ethically, especially in logistics. Effective data governance, access control, privacy, transparency, and oversight protect organizations from risks like deepfakes, privacy violations, and regulatory challenges.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;secure-and-ethical-generative-ai-in-logistics-why-information-security-is-key&#34;&gt;Secure and Ethical Generative AI in Logistics: Why Information Security Is Key&lt;/h1&gt;&#xA;&lt;p&gt;Generative AI (Gen AI) is transforming business – from drafting documents and analyzing data to automating customer interactions. Its potential to boost efficiency and innovation seems limitless. But alongside this promise comes a &lt;strong&gt;new frontier of ethical risks&lt;/strong&gt;. AI systems can produce misinformation or biased outputs, expose private data, or be weaponized for malicious uses like deepfakes. For business leaders in data-driven industries like logistics, these risks aren’t just theoretical – they carry &lt;strong&gt;real operational and reputational stakes&lt;/strong&gt;. The good news is that &lt;strong&gt;strong information security practices&lt;/strong&gt; provide a foundation to develop Gen AI applications that are both innovative and responsible. In this post, we’ll explore how ethical AI development and InfoSec go hand-in-hand, from the latest AI governance moves (like Denmark’s bold deepfake law) to practical steps for securing Gen AI in logistics. Let’s dive in.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Why ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001 &amp; ISO 27701 Matter for Data‑Driven Business Success</title>
+      <link>https://runink.org/blog/iso-standards-data-driven-business/</link>
+      <pubDate>Mon, 16 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/iso-standards-data-driven-business/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;br&gt;&#xA;Implementing ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001, and ISO 27701 together forms a &lt;strong&gt;holistic framework&lt;/strong&gt; that strengthens data quality, security, privacy, and AI governance—laying a &lt;strong&gt;trustworthy foundation for data‑driven growth&lt;/strong&gt;.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;building-reliable-secure-and-privacycentric-data-foundations-with-iso-8000-iso-27000-iso-27017-iso-27018-iso-42001-and-iso-27701&#34;&gt;Building Reliable, Secure, and Privacy‑Centric Data Foundations with ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001, and ISO 27701&lt;/h1&gt;&#xA;&lt;p&gt;Modern enterprises thrive on data. From predictive analytics that steer product development to AI‑powered customer engagement, &lt;strong&gt;data‑driven decision making&lt;/strong&gt; separates market leaders from the rest. Yet data is only as valuable as it is &lt;strong&gt;accurate, secure, and trustworthy&lt;/strong&gt;. A single breach, a privacy violation, or a flawed dataset can erode customer confidence and stall innovation. That is why a growing number of organizations are adopting a suite of internationally recognized standards—&lt;strong&gt;ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001, and ISO 27701&lt;/strong&gt;—to create data foundations that are &lt;strong&gt;reliable, secure, and privacy‑centric&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

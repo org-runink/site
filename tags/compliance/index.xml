@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compliance on Runink</title>
+    <link>https://runink.org/tags/compliance/</link>
+    <description>Recent content in Compliance on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jul 2025 10:19:32 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/compliance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Dynamic Masking on Shared Snowflake Objects is Mandatory for Data-Driven Companies</title>
+      <link>https://runink.org/blog/dynamic-masking-snowflake-shared-objects/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/dynamic-masking-snowflake-shared-objects/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;br&gt;&#xA;Dynamic data masking on shared Snowflake objects is essential for compliant financial and insurance companies. It ensures regulatory alignment (GDPR, CCPA, HIPAA, etc.), strengthens data security, limits insider threats, and preserves real-time analytics integrity—enabling secure, scalable, and cost-efficient data sharing without compromising sensitive information.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In today&amp;rsquo;s landscape, compliant financial and insurance companies face unprecedented regulatory scrutiny and cybersecurity threats. With increased data-sharing across departments, external partners, and cloud-based data platforms like Snowflake, protecting sensitive information becomes paramount. Dynamic masking of shared Snowflake objects emerges not just as a technical convenience, but as an essential best practice.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud Data Strategy on Runink</title>
+    <link>https://runink.org/tags/cloud-data-strategy/</link>
+    <description>Recent content in Cloud Data Strategy on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jul 2025 10:19:32 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/cloud-data-strategy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Data Governance Supercharges AI Logistics ROI with LLM-Driven Drone Sourcing</title>
+      <link>https://runink.org/blog/data-governance-ai-logistics-roi/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/data-governance-ai-logistics-roi/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&#xA;AI tools like LLMs and autonomous drones are transforming logistics and procurement—but without strong data governance, their potential remains untapped. Learn how data quality, consistency, and compliance fuel ROI and give enterprises a competitive edge in the smart supply chain era.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;maximizing-roi-in-ai-driven-logistics-why-data-governance-matters-in-industry40-procurement&#34;&gt;Maximizing ROI in AI-Driven Logistics: Why Data Governance Matters in Industry 4.0 Procurement&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction-ai-drones-and-the-data-dilemma&#34;&gt;Introduction: AI, Drones, and the Data Dilemma&lt;/h2&gt;&#xA;&lt;p&gt;AI is revolutionizing logistics and supply chain operations. &lt;strong&gt;Industry 4.0&lt;/strong&gt; technologies like &lt;strong&gt;autonomous drones, IoT sensors, and large language models (LLMs)&lt;/strong&gt; are being deployed to automate deliveries and optimize procurement. From AI-powered route planning to smart strategic sourcing tools, companies are investing heavily in these innovations. But there’s a catch – all the &lt;strong&gt;AI in logistics&lt;/strong&gt; in the world won’t deliver value if it’s fed bad data. In fact, many organizations struggle to realize a return on investment (&lt;strong&gt;ROI&lt;/strong&gt;) from AI projects due to poor data quality and siloed information. This is where &lt;strong&gt;data governance&lt;/strong&gt; comes in. It might not sound as exciting as drones or machine learning, but it’s the secret sauce to maximizing the ROI of IT investments in AI-driven logistics.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

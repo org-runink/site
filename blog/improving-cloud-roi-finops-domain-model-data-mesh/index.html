@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en-us" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+
+
+
+    
+    <title>Improving Cloud ROI with FinOps, Domain Models, and Data Mesh | Runink</title>
+
+    
+    <meta name="description"
+        content="Explore how integrating domain-driven models, data mesh principles, and FinOps cloud controls can enhance departmental cloud ROI measurement and optimize financial transparency.">
+    <meta name="author" content="Runink">
+    <meta name="robots" content="index, follow">
+
+    
+    <meta property="og:title"
+        content="Improving Cloud ROI with FinOps, Domain Models, and Data Mesh | Runink">
+    <meta property="og:description"
+        content="Explore how integrating domain-driven models, data mesh principles, and FinOps cloud controls can enhance departmental cloud ROI measurement and optimize financial transparency.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/improving-cloud-roi-finops-domain-model-data-mesh/">
+    <meta property="og:site_name" content="Runink">
+    
+    
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+        content="Improving Cloud ROI with FinOps, Domain Models, and Data Mesh | Runink">
+    <meta name="twitter:description"
+        content="Explore how integrating domain-driven models, data mesh principles, and FinOps cloud controls can enhance departmental cloud ROI measurement and optimize financial transparency.">
+    
+    
+    
+    
+
+    <link rel="icon" type="image/png" href="/%20images/favicon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/blog/improving-cloud-roi-finops-domain-model-data-mesh/">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/main.min.99961625bb7e626c75e75d708448a0e912179fa72a9033ad93c030afc846bfdd.css">
+    
+
+    
+    
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-[#8B9A6E] transition-colors duration-300">
+        <img src="/images/logo.png" alt="Runink Logo"
+            class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300">
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-8">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/#painkiller"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">What makes it a painkiller</a>
+                    
+                    
+                    
+                    <a href="/#use-cases"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Use cases</a>
+                    
+                    
+                    
+                    <a href="/blog/"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Blog</a>
+                    
+                    
+                    
+                    <a href="/pricing"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Pricing</a>
+                    
+                    
+                    
+                    <a href="/#contact"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Talk to us</a>
+                    
+                    
+                </div>
+
+                
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+
+                    
+                    <a href="/#contact"
+                        class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-[#F5F1E8] hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-[#8B9A6E] focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/#painkiller"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">What makes it a painkiller</a>
+                
+                
+                
+                <a href="/#use-cases"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Use cases</a>
+                
+                
+                
+                <a href="/blog/"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Blog</a>
+                
+                
+                
+                <a href="/pricing"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/#contact"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Talk to us</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/#contact"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#ea580c] to-[#ca4708] text-white hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<div class="bg-stone-950 min-h-screen relative overflow-hidden text-stone-300">
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950 z-0">
+    </div>
+    <div class="absolute inset-0 opacity-20 pointer-events-none z-0"
+        style="background-image: linear-gradient(#ea580c 1px, transparent 1px), linear-gradient(90deg, #ea580c 1px, transparent 1px); background-size: 60px 60px;">
+    </div>
+
+    <div class="container mx-auto px-4 py-24 relative z-10">
+        
+        <div class="flex flex-col lg:flex-row gap-8 mb-12">
+            
+            <article
+                class="flex-1 w-full bg-[#161515] border border-stone-800/80 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative z-10 overflow-hidden">
+                <header class="mb-8">
+                    
+
+                    <div
+                        class="inline-flex items-center justify-center px-4 py-1 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-xs font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                        Transmission
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg leading-[1]">
+                        Improving Cloud ROI with FinOps, Domain Models, and Data Mesh
+                    </h1>
+
+                    <div class="flex flex-col space-y-4">
+
+
+    
+    <div class="flex items-center justify-between text-sm text-gray-500">
+        
+            <div class="flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span>Runink Editorial Team</span>
+            </div>
+        
+
+        <div class="flex items-center space-x-6">
+            <div class="flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span>3 min read</span>
+            </div>
+
+            <div class="flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <time datetime="2025-06-07">
+                    June 7, 2025
+                </time>
+            </div>
+        </div>
+    </div>
+
+    
+    
+        <div class="flex items-center flex-wrap gap-2">
+            
+                <a href="/tags/finops" 
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors duration-200">
+                    #FinOps
+                </a>
+            
+                <a href="/tags/cloud-roi" 
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors duration-200">
+                    #Cloud ROI
+                </a>
+            
+                <a href="/tags/data-mesh" 
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors duration-200">
+                    #Data Mesh
+                </a>
+            
+                <a href="/tags/domain-models" 
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors duration-200">
+                    #Domain Models
+                </a>
+            
+                <a href="/tags/cloud-management" 
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors duration-200">
+                    #Cloud Management
+                </a>
+            
+        </div>
+    
+</div>
+
+                </header>
+
+                
+                <div class="mb-8">
+                    <img src="/images/blog/improving-cloud-roi-finops-domain-model-data-mesh.png" alt="Improving Cloud ROI with FinOps, Domain Models, and Data Mesh" class="w-full h-auto rounded-lg" loading="lazy">
+                </div>
+                
+
+                <div
+                    class="w-full prose prose-invert prose-stone max-w-none lg:prose-lg prose-headings:text-white prose-p:text-stone-300 prose-li:text-stone-300 prose-strong:text-white prose-a:text-[#ea580c] hover:prose-a:text-[#ca4708]">
+                    <blockquote>
+<p><strong>TL;DR:</strong>
+TL;DR: Aligning domain models and data mesh principles with FinOps frameworks and standardized cloud controls significantly improves cloud ROI measurement at the departmental level by ensuring financial transparency, accountability, and efficient optimization.</p></blockquote>
+<br>
+<hr>
+<p>As enterprises accelerate their cloud adoption journeys, accurately measuring return on investment (ROI) at the departmental level becomes crucial. Adopting a FinOps framework, complemented by domain models and data mesh principles alongside standardized cloud controls from FinOps, can significantly enhance the precision of ROI measurement per departmental initiative.</p>
+<h3 id="the-role-of-domain-models-and-data-mesh">The Role of Domain Models and Data Mesh</h3>
+<p>Domain-driven design (DDD) and data mesh principles emphasize clear ownership and decentralized management. Domain models segment business logic into clearly defined areas, each managed independently. Data mesh takes this further by applying these principles specifically to data management, enabling decentralized data responsibility and governance.</p>
+<p>Combining these approaches means each department or business domain manages its own data lifecycle, cost allocation, and cloud resource usage transparently and effectively. Ownership clarity helps departments monitor costs closely, identify waste promptly, and justify expenditures through precise ROI calculations.</p>
+<h3 id="finops-framework-integration">FinOps Framework Integration</h3>
+<p>The FinOps framework aims to foster financial accountability and cost efficiency within cloud environments. At its core are three phases:</p>
+<ol>
+<li><strong>Inform:</strong> Providing visibility into costs.</li>
+<li><strong>Optimize:</strong> Continuously seeking cost efficiencies.</li>
+<li><strong>Operate:</strong> Managing costs effectively through clear processes.</li>
+</ol>
+<p>Domain models and data mesh complement the FinOps framework by embedding these financial controls directly into operational teams. Each department gains real-time visibility into resource consumption and expenditure, facilitating immediate optimization and informed decision-making.</p>
+<h3 id="cloud-controls-from-finops">Cloud Controls from FinOps</h3>
+<p>Standardized cloud controls, derived from the FinOps Foundation&rsquo;s best practices, further enhance the management of departmental ROI. Key cloud controls include:</p>
+<ul>
+<li><strong>Cost Allocation Tagging:</strong> Ensuring every cloud resource is clearly tagged with department and initiative labels.</li>
+<li><strong>Budget Alerts and Thresholds:</strong> Implementing proactive alerts and thresholds at the departmental level to prevent overspending.</li>
+<li><strong>Chargeback and Showback Mechanisms:</strong> Establishing clear chargeback (actual billing) or showback (informative billing) procedures to enhance financial transparency.</li>
+<li><strong>Automated Reporting and Analytics:</strong> Utilizing automated dashboards to provide immediate insight into departmental cost and usage patterns.</li>
+</ul>
+<p>These controls, when paired with the transparency fostered by domain models and data mesh, streamline cloud financial management, ensuring departments can track and measure their ROI with precision.</p>
+<h3 id="enhancing-roi-measurement">Enhancing ROI Measurement</h3>
+<p>Integrating these elements delivers distinct advantages:</p>
+<ul>
+<li><strong>Transparency:</strong> Departments can clearly associate cloud expenditures with specific business outcomes.</li>
+<li><strong>Accountability:</strong> Defined departmental ownership of data and cloud resources ensures clear accountability.</li>
+<li><strong>Optimization Opportunities:</strong> Immediate visibility into financial data allows swift action to optimize resource usage and costs.</li>
+</ul>
+<h3 id="implementing-a-robust-measurement-strategy">Implementing a Robust Measurement Strategy</h3>
+<p>For practical implementation, organizations should:</p>
+<ol>
+<li><strong>Establish Clear Domain Ownership:</strong> Align departments and initiatives with clear data and cloud resource ownership.</li>
+<li><strong>Integrate FinOps Controls:</strong> Embed standardized cloud controls (e.g., tagging, budgeting, chargeback) within departmental processes.</li>
+<li><strong>Leverage Automation:</strong> Deploy automated analytics and monitoring tools to support real-time decision-making.</li>
+<li><strong>Continuous Improvement:</strong> Regularly refine domain models and FinOps practices based on departmental feedback and performance metrics.</li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>By strategically aligning domain models, data mesh practices, and robust FinOps cloud controls, enterprises can dramatically enhance their ability to measure and optimize cloud ROI at a departmental level. This combined approach ensures accurate financial management, transparency, and accountability, driving maximum value from cloud investments.</p>
+
+                </div>
+            </article>
+
+            
+            <aside class="lg:w-80 xl:w-96">
+                <div class="space-y-8">
+    
+    
+
+    
+    
+    <div
+        class="bg-stone-800 border border-stone-700 rounded-2xl shadow-xl shadow-stone-900/50 p-6 overflow-hidden relative group/sidebar">
+        
+        <div
+            class="absolute inset-0 opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#ea580c]/5 via-transparent to-[#ca4708]/5"></div>
+        </div>
+
+        <h3 class="text-lg font-bold mb-4 text-white relative z-10">Recent Articles</h3>
+        <div class="space-y-4 relative z-10">
+            
+            
+            <div class="group">
+                <a href="/blog/digital-twin-agentic-decisions/" class="block">
+                    
+                    <div class="aspect-w-16 aspect-h-9 mb-3 overflow-hidden rounded-lg bg-stone-700">
+                        <img src="/images/blog/digital-twin-agentic-decisions.png" alt="Improving Cloud ROI with FinOps, Domain Models, and Data Mesh"
+                            class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                            loading="lazy">
+                    </div>
+                    
+                    <h4
+                        class="font-medium text-slate-200 group-hover:text-[#ea580c] transition-colors duration-200 line-clamp-2">
+                        What Is a Digital Twin? How Agentic Decisions Are Reshaping the Supply Chain
+                    </h4>
+                    <div class="flex items-center text-sm text-slate-400 mt-2">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        <time datetime=" 2026-02-23">
+                            Feb 23, 2026
+                        </time>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="group">
+                <a href="/blog/what-is-bill-of-lading/" class="block">
+                    
+                    <div class="aspect-w-16 aspect-h-9 mb-3 overflow-hidden rounded-lg bg-stone-700">
+                        <img src="/images/blog/bill-of-lading-header.png" alt="Improving Cloud ROI with FinOps, Domain Models, and Data Mesh"
+                            class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                            loading="lazy">
+                    </div>
+                    
+                    <h4
+                        class="font-medium text-slate-200 group-hover:text-[#ea580c] transition-colors duration-200 line-clamp-2">
+                        The Bill of Lading: The Swiss Army Knife of Global Trade
+                    </h4>
+                    <div class="flex items-center text-sm text-slate-400 mt-2">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        <time datetime=" 2026-01-22">
+                            Jan 22, 2026
+                        </time>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="group">
+                <a href="/blog/automated-semantic-layer-data-observability/" class="block">
+                    
+                    <div class="aspect-w-16 aspect-h-9 mb-3 overflow-hidden rounded-lg bg-stone-700">
+                        <img src="/images/blog/automated-semantic-layer-data-observability.png" alt="Improving Cloud ROI with FinOps, Domain Models, and Data Mesh"
+                            class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                            loading="lazy">
+                    </div>
+                    
+                    <h4
+                        class="font-medium text-slate-200 group-hover:text-[#ea580c] transition-colors duration-200 line-clamp-2">
+                        Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms
+                    </h4>
+                    <div class="flex items-center text-sm text-slate-400 mt-2">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        <time datetime=" 2025-10-17">
+                            Oct 17, 2025
+                        </time>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="group">
+                <a href="/blog/what-is-integrated-logistics/" class="block">
+                    
+                    <div class="aspect-w-16 aspect-h-9 mb-3 overflow-hidden rounded-lg bg-stone-700">
+                        <img src="/images/blog/what-is-integrated-logistics.png" alt="Improving Cloud ROI with FinOps, Domain Models, and Data Mesh"
+                            class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                            loading="lazy">
+                    </div>
+                    
+                    <h4
+                        class="font-medium text-slate-200 group-hover:text-[#ea580c] transition-colors duration-200 line-clamp-2">
+                        What Is Integrated Logistics? A Helpful Explanation
+                    </h4>
+                    <div class="flex items-center text-sm text-slate-400 mt-2">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        <time datetime=" 2025-09-15">
+                            Sep 15, 2025
+                        </time>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="group">
+                <a href="/blog/gen-ai-hallucinations-logistics-solutions/" class="block">
+                    
+                    <div class="aspect-w-16 aspect-h-9 mb-3 overflow-hidden rounded-lg bg-stone-700">
+                        <img src="/images/blog/gen-ai-hallucinations-logistics.png" alt="Improving Cloud ROI with FinOps, Domain Models, and Data Mesh"
+                            class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                            loading="lazy">
+                    </div>
+                    
+                    <h4
+                        class="font-medium text-slate-200 group-hover:text-[#ea580c] transition-colors duration-200 line-clamp-2">
+                        Why Gen AI Hallucinations Can Be a Nightmare for Logistics—And How to Fix Them
+                    </h4>
+                    <div class="flex items-center text-sm text-slate-400 mt-2">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        <time datetime=" 2025-07-22">
+                            Jul 22, 2025
+                        </time>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    
+    <div class="bg-stone-800 border border-stone-700 rounded-2xl shadow-xl shadow-stone-900/50 p-6">
+        <h3 class="text-lg font-bold mb-4 text-white">Categories</h3>
+        <div class="flex flex-wrap gap-2">
+            
+            <a href="/%20/categories/logistics-ai"
+                class="inline-block px-3 py-1 text-sm font-medium text-stone-300 bg-stone-800 border border-stone-700 rounded-full hover:bg-stone-800 hover:text-[#ea580c] hover:border-[#ea580c]/50 transition-all duration-300">
+                logistics ai
+                <span class="text-stone-500 group-hover:text-[#ea580c]/80 ml-1">(1)</span>
+            </a>
+            
+            <a href="/%20/categories/logistics-law"
+                class="inline-block px-3 py-1 text-sm font-medium text-stone-300 bg-stone-800 border border-stone-700 rounded-full hover:bg-stone-800 hover:text-[#ea580c] hover:border-[#ea580c]/50 transition-all duration-300">
+                logistics law
+                <span class="text-stone-500 group-hover:text-[#ea580c]/80 ml-1">(1)</span>
+            </a>
+            
+            <a href="/%20/categories/maritime"
+                class="inline-block px-3 py-1 text-sm font-medium text-stone-300 bg-stone-800 border border-stone-700 rounded-full hover:bg-stone-800 hover:text-[#ea580c] hover:border-[#ea580c]/50 transition-all duration-300">
+                maritime
+                <span class="text-stone-500 group-hover:text-[#ea580c]/80 ml-1">(1)</span>
+            </a>
+            
+            <a href="/%20/categories/supply-chain"
+                class="inline-block px-3 py-1 text-sm font-medium text-stone-300 bg-stone-800 border border-stone-700 rounded-full hover:bg-stone-800 hover:text-[#ea580c] hover:border-[#ea580c]/50 transition-all duration-300">
+                supply chain
+                <span class="text-stone-500 group-hover:text-[#ea580c]/80 ml-1">(2)</span>
+            </a>
+            
+            <a href="/%20/categories/technology"
+                class="inline-block px-3 py-1 text-sm font-medium text-stone-300 bg-stone-800 border border-stone-700 rounded-full hover:bg-stone-800 hover:text-[#ea580c] hover:border-[#ea580c]/50 transition-all duration-300">
+                technology
+                <span class="text-stone-500 group-hover:text-[#ea580c]/80 ml-1">(1)</span>
+            </a>
+            
+        </div>
+    </div>
+    
+
+    
+    
+    <div class="bg-stone-800 border border-stone-700 rounded-2xl shadow-xl shadow-stone-900/50 p-6">
+        <h3 class="text-lg font-bold mb-4 text-white">Popular Tags</h3>
+        <div class="flex flex-wrap gap-2">
+            
+            
+            <a href="/%20/tags/data-governance"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #data governance
+                <span class="text-stone-600">(4)</span>
+            </a>
+            
+            <a href="/%20/tags/generative-ai"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #generative ai
+                <span class="text-stone-600">(3)</span>
+            </a>
+            
+            <a href="/%20/tags/runink"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #runink
+                <span class="text-stone-600">(3)</span>
+            </a>
+            
+            <a href="/%20/tags/ai-governance"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #ai governance
+                <span class="text-stone-600">(2)</span>
+            </a>
+            
+            <a href="/%20/tags/ai-in-logistics"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #ai in logistics
+                <span class="text-stone-600">(2)</span>
+            </a>
+            
+            <a href="/%20/tags/data-observability"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #data observability
+                <span class="text-stone-600">(2)</span>
+            </a>
+            
+            <a href="/%20/tags/data-quality"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #data quality
+                <span class="text-stone-600">(2)</span>
+            </a>
+            
+            <a href="/%20/tags/demand-forecasting"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #demand forecasting
+                <span class="text-stone-600">(2)</span>
+            </a>
+            
+            <a href="/%20/tags/information-security"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #information security
+                <span class="text-stone-600">(2)</span>
+            </a>
+            
+            <a href="/%20/tags/logistics"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #logistics
+                <span class="text-stone-600">(2)</span>
+            </a>
+            
+            <a href="/%20/tags/a2a"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #a2a
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/agent-orchestration"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #agent orchestration
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/agent-protocol"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #agent protocol
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/agentic-ai"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #agentic ai
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/ai-hallucinations"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #ai hallucinations
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/ai-operations"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #ai operations
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/ai-readiness"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #ai readiness
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/ai-retail-logistics"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #ai retail logistics
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/analytics"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #analytics
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+            <a href="/%20/tags/analytics-automation"
+                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                #analytics automation
+                <span class="text-stone-600">(1)</span>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+            </aside>
+        </div>
+
+        
+        <nav class="border-t border-stone-800 mt-12 pt-8">
+            <div class="flex justify-between items-center">
+                
+                <a href="/blog/dynamic-masking-snowflake-shared-objects/" class="group flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-stone-500 group-hover:text-[#ea580c] transition-colors" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <div>
+                        <div class="text-xs text-stone-500 uppercase tracking-widest font-bold mb-1">Previous Post</div>
+                        <div class="font-medium text-stone-300 group-hover:text-[#ea580c] transition-colors">Why Dynamic Masking on Shared Snowflake Objects is Mandatory for Data-Driven Companies</div>
+                    </div>
+                </a>
+                
+
+                
+                <a href="/blog/iso-standards-data-driven-business/" class="group flex items-center text-right">
+                    <div>
+                        <div class="text-xs text-stone-500 uppercase tracking-widest font-bold mb-1">Next Post</div>
+                        <div class="font-medium text-stone-300 group-hover:text-[#ea580c] transition-colors">Why ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001 &amp; ISO 27701 Matter for Data‑Driven Business Success</div>
+                    </div>
+                    <svg class="w-5 h-5 ml-3 text-stone-500 group-hover:text-[#ea580c] transition-colors" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+                
+            </div>
+        </nav>
+
+        
+        
+        <div class="mt-16">
+            
+
+<section class="cta-section my-24">
+    <div class="container">
+        <div
+            class="relative rounded-[2rem] p-8 md:p-16 bg-stone-800/40 border border-stone-700 backdrop-blur shadow-2xl overflow-hidden group">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-[#9f1239] to-[#ea580c] opacity-20 blur transition duration-1000 group-hover:opacity-40 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Runink: Data You Can Trust. Decisions You Can Defend.</h2>
+                <p class="text-xl md:text-2xl text-[#F5F1E8] mb-10 max-w-2xl mx-auto leading-relaxed">Your Go-to Hub for for orchestrating secure, testable, and governance-driven data pipelines at scale. Fitting your Cloud, Data Engineering, and Generative AI initiatives with secure solutions, and cutting-edge compliant technologies.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    
+                    
+                    <a href="/#contact"
+                        class="inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-[#ea580c] hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)]">
+                        Book your Consultation &rarr;
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+    
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function () {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle('hidden');
+                }
+            });
+        }
+    </script>
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>

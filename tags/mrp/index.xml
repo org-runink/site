@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MRP on Runink</title>
+    <link>https://runink.org/tags/mrp/</link>
+    <description>Recent content in MRP on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jan 2026 06:47:40 -0500</lastBuildDate>
+    <atom:link href="https://runink.org/tags/mrp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Gen AI Agents Help Retailers Cut Emissions by 30% with Smart Supply Chain Systems</title>
+      <link>https://runink.org/blog/genai-supply-chain-emissions-reduction/</link>
+      <pubDate>Tue, 08 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/genai-supply-chain-emissions-reduction/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&#xA;Wholesale food &amp;amp; beverage retailers in Canada and the U.S. can cut emissions by 30% by adopting orchestrated Gen AI agents connected to key supply chain systems. Leveraging Model Context Protocol and retrieval-based rules, these AI agents optimize forecasts, logistics, and disruption responses—delivering greener, smarter operations.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;ai-agent-orchestration-a-30-emissions-cut-for-supply-chain-networks&#34;&gt;AI Agent Orchestration: A 30% Emissions Cut for Supply Chain Networks&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Executive Summary:&lt;/strong&gt;&#xA;Food &amp;amp; beverage and materials wholesalers in North America face rising pressure to cut carbon emissions while juggling complex logistics. An orchestrated &lt;strong&gt;Generative AI agent&lt;/strong&gt; – connected to core supply chain systems via the emerging &lt;strong&gt;Model Context Protocol (MCP)&lt;/strong&gt; – offers a solution. By integrating with Transportation Management Systems (TMS), Order Management Systems (OMS), Manufacturing Resource Planning (MRP), and Manufacturing Execution Systems (MES), such an AI agent can automate smarter demand forecasts, optimize delivery routes in real time, and dynamically respond to disruptions. The result, as illustrated in the provided infographic, is a more agile supply chain that can &lt;strong&gt;reduce emissions by up to 30%&lt;/strong&gt; through efficiency gains and proactive decision-making. This article breaks down how it works and why it matters, in practical terms for executives and supply chain professionals.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

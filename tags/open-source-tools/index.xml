@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open-Source Tools on Runink</title>
+    <link>https://runink.org/tags/open-source-tools/</link>
+    <description>Recent content in Open-Source Tools on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jul 2025 10:19:32 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/open-source-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How GenAI Agents and Open-Source Tools Optimize Dropshipping Logistics</title>
+      <link>https://runink.org/blog/genai-open-source-dropshipping-logistics/</link>
+      <pubDate>Fri, 04 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/genai-open-source-dropshipping-logistics/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&#xA;Fine-tuned Generative AI agents connected to open-source tools like Model Context Protocols, Openrouteservice, and RAG servers help supply chain managers automate real-time decisions, optimize delivery routes, and proactively handle logistics issues. The result is increased efficiency, reduced costs, and improved customer satisfaction in e-commerce dropshipping.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;ai-agents-and-open-source-tools-transforming-dropshipping-logistics&#34;&gt;AI Agents and Open-Source Tools: Transforming Dropshipping Logistics&lt;/h1&gt;&#xA;&lt;p&gt;Dropshipping operations involve coordinating many moving parts – multiple suppliers, ever-changing inventories, shipping routes, and customer communications. Traditional systems and manual processes often struggle to keep up, leading to issues like inventory discrepancies or supplier delays that slow delivery times. Today, a new generation of AI-driven solutions is changing the game. Fine-tuned large language models (LLMs) deployed as AI agents can analyze data, make decisions, and even communicate on your behalf in real time. This article explores how these intelligent agents, coupled with open-source tools, enable more accurate fulfillment routing, proactive delivery coordination, and faster customer response in e-commerce dropshipping.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

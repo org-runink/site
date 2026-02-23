@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Products on Runink</title>
+    <link>https://runink.org/products/</link>
+    <description>Recent content in Products on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://runink.org/products/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Runink Analytics Companion</title>
+      <link>https://runink.org/products/analytics_companion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/products/analytics_companion/</guid>
+      <description>&lt;section class=&#34;relative overflow-hidden py-24 md:py-32&#34; style=&#34;background:linear-gradient(135deg,#3A2F2A,#1A1512)&#34;&#xA;    &gt;&#xA;&#xA;    &#xA;    &lt;div class=&#34;absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay&#34;&gt;&#xA;        &lt;div&#xA;            class=&#34;absolute inset-0 bg-[url(&#39;/images/grid.svg&#39;)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]&#34;&gt;&#xA;        &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &#xA;&#xA;    &lt;div class=&#34;container relative z-10&#34;&gt;&#xA;        &lt;div class=&#34;grid lg:grid-cols-12 gap-12 items-center&#34;&gt;&#xA;&#xA;            &#xA;            &lt;div class=&#34;lg:col-span-6 space-y-8 relative&#34;&gt;&#xA;                &#xA;                &lt;div&#xA;                    class=&#34;absolute -top-20 -left-20 w-64 h-64 bg-[#8B9A6E]/20 rounded-full blur-[100px] pointer-events-none opacity-50&#34;&gt;&#xA;                &lt;/div&gt;&#xA;&#xA;                &lt;h1 class=&#34;text-4xl md:text-5xl lg:text-6xl font-bold leading-normal text-white tracking-normal drop-shadow-xl&#34;&gt;&#xA;                    The Team That Never Sleeps.&#xA;                &lt;/h1&gt;&#xA;&#xA;                &lt;p&#xA;                    class=&#34;text-xl text-[#F5F1E8] leading-relaxed drop-shadow-md border-l-4 border-[#8B9A6E] pl-6&#34;&gt;&#xA;                    Stop treating symptoms. Hire digital workers that &lt;strong&gt;find lost money&lt;/strong&gt;, &lt;strong&gt;block bad orders&lt;/strong&gt;, and &lt;strong&gt;fix problems&lt;/strong&gt; while you sleep. It&#39;s not software. It&#39;s a workforce.&#xA;                &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

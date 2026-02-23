@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Demand Forecasting on Runink</title>
+    <link>https://runink.org/tags/demand-forecasting/</link>
+    <description>Recent content in Demand Forecasting on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jan 2026 06:47:40 -0500</lastBuildDate>
+    <atom:link href="https://runink.org/tags/demand-forecasting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Gen AI Hallucinations Can Be a Nightmare for Logistics—And How to Fix Them</title>
+      <link>https://runink.org/blog/gen-ai-hallucinations-logistics-solutions/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/gen-ai-hallucinations-logistics-solutions/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;br&gt;&#xA;Hallucinations in generative AI—fabricated, inaccurate information—can wreak havoc in logistics, retail, transportation, and healthcare operations. Techniques like query expansion, reranking, embedding adapters, and model tuning can significantly reduce these errors, improving forecasting, routing, and inventory decisions.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;generative-ai-hallucinations-a-logistics-nightmare-and-how-to-stop-them&#34;&gt;Generative AI Hallucinations: A Logistics Nightmare and How to Stop Them&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction-what-are-ai-hallucinations&#34;&gt;Introduction: What Are AI &amp;ldquo;Hallucinations&amp;rdquo;?&lt;/h2&gt;&#xA;&lt;p&gt;Imagine asking an AI for advice on optimizing your delivery routes or forecasting next month’s product demand, and it responds with confident-sounding &lt;strong&gt;nonsense&lt;/strong&gt;. In the world of generative AI, this phenomenon is known as a &lt;em&gt;hallucination&lt;/em&gt;. When a language model hallucinates, &lt;strong&gt;it generates information that seems accurate but is actually false&lt;/strong&gt;. In other words, the AI is essentially making things up – not out of malice, but because it doesn’t know any better given its training and input.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Gen AI Agents Help Retailers Cut Emissions by 30% with Smart Supply Chain Systems</title>
+      <link>https://runink.org/blog/genai-supply-chain-emissions-reduction/</link>
+      <pubDate>Tue, 08 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/genai-supply-chain-emissions-reduction/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&#xA;Wholesale food &amp;amp; beverage retailers in Canada and the U.S. can cut emissions by 30% by adopting orchestrated Gen AI agents connected to key supply chain systems. Leveraging Model Context Protocol and retrieval-based rules, these AI agents optimize forecasts, logistics, and disruption responses—delivering greener, smarter operations.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;ai-agent-orchestration-a-30-emissions-cut-for-supply-chain-networks&#34;&gt;AI Agent Orchestration: A 30% Emissions Cut for Supply Chain Networks&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Executive Summary:&lt;/strong&gt;&#xA;Food &amp;amp; beverage and materials wholesalers in North America face rising pressure to cut carbon emissions while juggling complex logistics. An orchestrated &lt;strong&gt;Generative AI agent&lt;/strong&gt; – connected to core supply chain systems via the emerging &lt;strong&gt;Model Context Protocol (MCP)&lt;/strong&gt; – offers a solution. By integrating with Transportation Management Systems (TMS), Order Management Systems (OMS), Manufacturing Resource Planning (MRP), and Manufacturing Execution Systems (MES), such an AI agent can automate smarter demand forecasts, optimize delivery routes in real time, and dynamically respond to disruptions. The result, as illustrated in the provided infographic, is a more agile supply chain that can &lt;strong&gt;reduce emissions by up to 30%&lt;/strong&gt; through efficiency gains and proactive decision-making. This article breaks down how it works and why it matters, in practical terms for executives and supply chain professionals.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

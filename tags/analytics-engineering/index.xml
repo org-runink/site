@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analytics Engineering on Runink</title>
+    <link>https://runink.org/tags/analytics-engineering/</link>
+    <description>Recent content in Analytics Engineering on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Oct 2025 14:47:31 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/analytics-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms</title>
+      <link>https://runink.org/blog/automated-semantic-layer-data-observability/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/automated-semantic-layer-data-observability/</guid>
+      <description>&lt;h1 id=&#34;why-automated-semantic-layers-from-telemetry-events-are-the-pillars-of-data-observability-platforms&#34;&gt;Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms&lt;/h1&gt;&#xA;&lt;p&gt;In the era of streaming data, AI copilots, and self-service analytics, one truth has become unavoidable: &lt;strong&gt;you can’t observe what you can’t define&lt;/strong&gt;.&lt;br&gt;&#xA;Enter the &lt;strong&gt;automated semantic layer&lt;/strong&gt; — the missing connective tissue between raw telemetry and meaningful business context.&lt;/p&gt;&#xA;&lt;p&gt;When powered by continuous telemetry events, an automated semantic layer transforms fragmented observability metrics into &lt;strong&gt;a governed, contextual map of your entire data ecosystem&lt;/strong&gt;.&lt;br&gt;&#xA;It’s how modern organizations are turning data observability from passive monitoring into &lt;strong&gt;active, explainable intelligence&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

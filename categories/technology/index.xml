@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology on Runink</title>
+    <link>https://runink.org/categories/technology/</link>
+    <description>Recent content in Technology on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Feb 2026 14:34:23 -0500</lastBuildDate>
+    <atom:link href="https://runink.org/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Is a Digital Twin? How Agentic Decisions Are Reshaping the Supply Chain</title>
+      <link>https://runink.org/blog/digital-twin-agentic-decisions/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/blog/digital-twin-agentic-decisions/</guid>
+      <description>&lt;h1 id=&#34;1-the-emergence-of-the-supply-chain-digital-twin&#34;&gt;1. The Emergence of the Supply Chain Digital Twin&lt;/h1&gt;&#xA;&lt;p&gt;In the intricate, globally distributed machinery of international trade and logistics, visibility has historically been the primary operational bottleneck. For decades, supply chain managers have relied on fragmented dashboards, delayed Electronic Data Interchange (EDI) messages, and manual updates to track the movement of goods. However, as global trade networks grow exponentially more complex and resilient logistics become a board-level imperative, merely &lt;em&gt;seeing&lt;/em&gt; a delayed shipment or a low inventory alert is no longer sufficient. Enter the &lt;strong&gt;Digital Twin&lt;/strong&gt;—a concept that is fundamentally altering how organizations interact with physical reality.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

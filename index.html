@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en-us" class="h-full">
+
+<head>
+	<meta name="generator" content="Hugo 0.147.3">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+
+
+
+    
+    <title>Runink</title>
+
+    
+    <meta name="description"
+        content="Digital Twin Control for your logistics and supply chain.">
+    <meta name="author" content="Runink">
+    <meta name="robots" content="index, follow">
+
+    
+    <meta property="og:title"
+        content="Runink">
+    <meta property="og:description"
+        content="Digital Twin Control for your logistics and supply chain.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://runink.org/">
+    <meta property="og:site_name" content="Runink">
+    
+    
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+        content="Runink">
+    <meta name="twitter:description"
+        content="Digital Twin Control for your logistics and supply chain.">
+    
+    
+    
+    
+
+    <link rel="icon" type="image/png" href="/%20images/favicon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/main.min.99961625bb7e626c75e75d708448a0e912179fa72a9033ad93c030afc846bfdd.css">
+    
+
+    
+    
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-[#8B9A6E] transition-colors duration-300">
+        <img src="/images/logo.png" alt="Runink Logo"
+            class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300">
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-8">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/#painkiller"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">What makes it a painkiller</a>
+                    
+                    
+                    
+                    <a href="/#use-cases"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Use cases</a>
+                    
+                    
+                    
+                    <a href="/blog/"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Blog</a>
+                    
+                    
+                    
+                    <a href="/pricing"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Pricing</a>
+                    
+                    
+                    
+                    <a href="/#contact"
+                        class="text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200">Talk to us</a>
+                    
+                    
+                </div>
+
+                
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+
+                    
+                    <a href="/#contact"
+                        class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-[#F5F1E8] hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-[#8B9A6E] focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/#painkiller"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">What makes it a painkiller</a>
+                
+                
+                
+                <a href="/#use-cases"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Use cases</a>
+                
+                
+                
+                <a href="/blog/"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Blog</a>
+                
+                
+                
+                <a href="/pricing"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/#contact"
+                    class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold transition duration-200 py-2">Talk to us</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/#contact"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#ea580c] to-[#ca4708] text-white hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+
+
+
+
+<section class="relative h-screen overflow-hidden bg-stone-900 flex items-center justify-center">
+  
+  <div id="hero-parallax" class="absolute inset-0 w-full h-full">
+    
+    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-luminosity opacity-80"
+      style="background-image: url('/images/landing/warehouse.svg'); z-index: 1;" data-depth="0.1">
+    </div>
+
+    
+    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-color-burn opacity-90"
+      style="background-image: url('/images/landing/distribution.svg'); z-index: 2;" data-depth="0.3">
+    </div>
+
+    
+    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-screen opacity-90"
+      style="background-image: url('/images/landing/trucks.svg'); z-index: 3;" data-depth="0.6">
+    </div>
+  </div>
+
+  
+  <div class="relative z-20 text-center max-w-5xl px-6 flex flex-col items-center">
+    <h1
+      class="text-6xl md:text-7xl lg:text-[100px] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#9f1239] to-[#ea580c] tracking-tighter leading-[0.95] italic uppercase mb-6 drop-shadow-lg max-w-5xl">
+      Your Operations <br />Digital Twin
+    </h1>
+    <div
+      class="text-stone-400 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 max-w-4xl leading-relaxed">
+      Ground your Automation with validated business rules. Simulate Financial & Logistics Scenarios, gaining
+      exponential customer valued operational advantage over fulfilments and claims.
+    </div>
+    <div class="flex flex-col items-center gap-4 mt-8">
+      <div
+        class="text-[#ea580c] text-[10px] font-mono uppercase tracking-[0.4em] animate-bounce bg-stone-900/50 px-2 py-1 rounded">
+        Scroll to Deploy Facility</div>
+    </div>
+  </div>
+
+  
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-900 pointer-events-none z-10">
+  </div>
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-[#9f1239]/20 via-transparent pointer-events-none z-10 mix-blend-overlay">
+  </div>
+</section>
+<section class="py-32 bg-stone-950 border-t border-stone-800 relative overflow-hidden">
+    <div class="container mx-auto px-4">
+        
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950">
+        </div>
+        <div class="absolute inset-0 opacity-20"
+            style="background-image: linear-gradient(#ea580c 1px, transparent 1px), linear-gradient(90deg, #ea580c 1px, transparent 1px); background-size: 60px 60px;">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10" id="why-runink">
+            <div class="text-center mb-20 flex flex-col items-center">
+                <div
+                    class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                    Architecture
+                </div>
+                <h2
+                    class="text-6xl md:text-7xl lg:text-[90px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                    Why Runink?
+                </h2>
+                <div
+                    class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 mt-6 max-w-3xl">
+                    Deploy the right level of intelligence for your operations. Choose between deep analytical
+                    visibility or AI-assisted execution.
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <div
+                    class="bg-[#1f1d1b] border border-stone-700 p-10 lg:p-12 rounded-[2rem] relative overflow-hidden group shadow-2xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-[#5F6F3E]/10 blur-[100px] rounded-full translate-x-10 -translate-y-10 group-hover:bg-[#5F6F3E]/30 transition-all duration-700">
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-4xl font-black text-white mb-2 tracking-tight">Runink Monitor</h3>
+                        <p class="text-[#C8D9A8] font-mono text-sm mb-12 uppercase tracking-widest">Visibility &
+                            Intelligence</p>
+
+                        <ul class="space-y-8">
+                            <li class="flex items-start group/item">
+                                <div
+                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#C8D9A8] mr-5 mt-1 group-hover/item:border-[#C8D9A8]/50 group-hover/item:bg-[#C8D9A8]/10 transition-all shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Data & AI Maturity Assessments</h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">Evaluate data quality and AI
+                                        maturity directly from documents, spreadsheets, PDFs, images, and tabular
+                                        databases (Snowflake, Databricks, BigQuery, Postgres).</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start group/item">
+                                <div
+                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#C8D9A8] mr-5 mt-1 group-hover/item:border-[#C8D9A8]/50 group-hover/item:bg-[#C8D9A8]/10 transition-all shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Rules Reconciliation</h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">Map SOPs against legacy code
+                                        (SQL/VBA/Python) or new platforms (SAP/Salesforce/Shopify). Add unmapped rules
+                                        manually that our engine hasn't uncovered yet.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start group/item">
+                                <div
+                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#C8D9A8] mr-5 mt-1 group-hover/item:border-[#C8D9A8]/50 group-hover/item:bg-[#C8D9A8]/10 transition-all shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Hypothesis Lab</h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">Simulate changes to your rules
+                                        before deployment. Test the future without risking the present.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div
+                    class="bg-[#1f1d1b] border border-[#ea580c]/30 p-10 lg:p-12 rounded-[2rem] relative overflow-hidden group shadow-[0_0_40px_rgba(234,88,12,0.1)] hover:shadow-[0_0_60px_rgba(234,88,12,0.2)] transition-all duration-500 hover:-translate-y-1">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-[#ea580c]/10 blur-[100px] rounded-full translate-x-10 -translate-y-10 group-hover:bg-[#ea580c]/20 transition-all duration-700">
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-4xl font-black text-white mb-2 tracking-tight">Runink Cockpit</h3>
+                        <p class="text-[#ea580c] font-mono text-sm mb-8 uppercase tracking-widest">Agentic Assistance
+                        </p>
+
+
+                        <ul class="space-y-8">
+                            <li class="flex items-start group/item">
+                                <div
+                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#ea580c] mr-5 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Decision Cockpit</h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">Uncover "hidden treasures" and
+                                        anomalies standard tools miss utilizing deep semantic understanding. Our agents
+                                        check their facts before ever jumping into biased assumptions.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start group/item">
+                                <div
+                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#ea580c] mr-5 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Agentic Drafts & Recommendations
+                                    </h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">Turn the "Edge Brain" loose.
+                                        Agents
+                                        act as Digital Paralegals and Buyers to draft claims and route orders, awaiting
+                                        your one-click approval.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex items-start group/item">
+                                <div
+                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#ea580c] mr-5 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Actionable Notifications</h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">Real-time alerts of findings,
+                                        claims
+                                        filed, and fulfilment actions taken on your behalf.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-32 bg-stone-950 relative overflow-hidden border-t border-stone-800">
+    
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950">
+    </div>
+    <div class="absolute inset-0 opacity-20"
+        style="background-image: linear-gradient(#65793e 1px, transparent 1px), linear-gradient(90deg, #65793e 1px, transparent 1px); background-size: 60px 60px;">
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-6xl mx-auto px-6" id="painkiller">
+            <div class="text-center mb-16 flex flex-col items-center">
+                <div
+                    class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                    Personas
+                </div>
+                <h2
+                    class="text-6xl md:text-7xl lg:text-[90px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                    Targeted Painkillers
+                </h2>
+                <div
+                    class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 mt-6 max-w-3xl">
+                    Tailored value for every stakeholder.
+                </div>
+            </div>
+
+            <div class="painkiller-tabs-container">
+                
+                <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-6 relative z-10 w-full max-w-6xl mx-auto">
+                    <button
+                        class="pitch-tab-btn active bg-[#161515] border border-orange-600 rounded-xl py-6 px-4 text-center transition-all focus:outline-none group flex flex-col items-center justify-center"
+                        data-target="pitch-cfo">
+                        <div
+                            class="w-10 h-10 bg-[#161515] border border-stone-800 rounded-full flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5 text-stone-300 group-[.active]:text-white" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-sm tracking-wide text-white transition-colors duration-300">The CFO
+                        </h3>
+                    </button>
+
+                    <button
+                        class="pitch-tab-btn bg-[#161515] border border-stone-800 hover:border-stone-700 hover:bg-[#1a1919] rounded-xl py-6 px-4 text-center transition-all focus:outline-none group flex flex-col items-center justify-center"
+                        data-target="pitch-ops">
+                        <div
+                            class="w-10 h-10 bg-[#1b1a1a] border border-stone-800 rounded-full flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5 text-stone-500 group-[.active]:text-white transition-colors" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-sm tracking-wide text-stone-500 transition-colors duration-300">Ops
+                            Director</h3>
+                    </button>
+
+                    <button
+                        class="pitch-tab-btn bg-[#161515] border border-stone-800 hover:border-stone-700 hover:bg-[#1a1919] rounded-xl py-6 px-4 text-center transition-all focus:outline-none group flex flex-col items-center justify-center"
+                        data-target="pitch-inventory">
+                        <div
+                            class="w-10 h-10 bg-[#1b1a1a] border border-stone-800 rounded-full flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5 text-stone-500 group-[.active]:text-white transition-colors" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-sm tracking-wide text-stone-500 transition-colors duration-300">
+                            Inventory Managers</h3>
+                    </button>
+
+                    <button
+                        class="pitch-tab-btn bg-[#161515] border border-stone-800 hover:border-stone-700 hover:bg-[#1a1919] rounded-xl py-6 px-4 text-center transition-all focus:outline-none group flex flex-col items-center justify-center"
+                        data-target="pitch-shipper">
+                        <div
+                            class="w-10 h-10 bg-[#1b1a1a] border border-stone-800 rounded-full flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5 text-stone-500 group-[.active]:text-white transition-colors" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-sm tracking-wide text-stone-500 transition-colors duration-300">The
+                            Shipper</h3>
+                    </button>
+
+                    <button
+                        class="pitch-tab-btn bg-[#161515] border border-stone-800 hover:border-stone-700 hover:bg-[#1a1919] rounded-xl py-6 px-4 text-center transition-all focus:outline-none group flex flex-col items-center justify-center"
+                        data-target="pitch-broker">
+                        <div
+                            class="w-10 h-10 bg-[#1b1a1a] border border-stone-800 rounded-full flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5 text-stone-500 group-[.active]:text-white transition-colors" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-sm tracking-wide text-stone-500 transition-colors duration-300">The
+                            Broker</h3>
+                    </button>
+                </div>
+
+                
+                <div
+                    class="bg-[#161515] border border-stone-800 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-xl min-h-[360px] transform z-0 w-full max-w-6xl mx-auto -mt-2">
+                    <div
+                        class="absolute right-8 top-12 text-[#65793e]/30 text-[180px] font-black font-serif italic leading-none pointer-events-none">
+                        "</div>
+
+                    
+                    <div id="pitch-cfo" class="pitch-content active">
+                        <h3
+                            class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-600 mb-8 leading-tight">
+                            Stop looking at claims recovery as <strong class="text-[#850716] font-bold">operational
+                                overhead</strong>. It is <strong class="text-[#65793e] font-bold">Revenue
+                                Leakage</strong>.</h3>
+                        <p
+                            class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
+                            RPA tools are just a cost center that speeds up data entry. RunInk is a capital recovery
+                            asset. By deploying reasoning-capable AI agents with deep semantic understanding, we don't
+                            just 'process' claims—we find hidden treasures that basic tools miss. We draft complete
+                            claims and fulfillments for all findings, preparing winning packages for your team's
+                            one-click approval. We anticipate a 40% increase in successful recoveries.
+                        </p>
+                        <div>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
+                                Closer</h4>
+                            <p class="text-[#65793e] text-xl font-black italic">"We turn a 5% write-off into a 3%
+                                recovery.
+                                That's pure margin."</p>
+                        </div>
+                    </div>
+
+                    
+                    <div id="pitch-ops" class="pitch-content hidden">
+                        <h3
+                            class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-600 mb-8 leading-tight">
+                            Your team is <strong class="text-[#850716] font-bold">drowning</strong> in paperwork. Let's
+                            give them a <strong class="text-[#65793e] font-bold">Digital Paralegal</strong>.</h3>
+                        <p
+                            class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
+                            RunInk isn't another dashboard to manage. It's an agentic teammate equipped with cognitive
+                            mapping to make sense of your unstructured operational data. It reasons through the 80% of
+                            low-value workflows entirely on its own—reading supply chain constraints, checking
+                            telemetry, and queuing the executions for your approval. Because it supports the <strong>A2A
+                                (Agent-to-Agent) protocol</strong>, it delegates cleanly to parallel autonomous actors.
+                        </p>
+                        <div>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
+                                Closer</h4>
+                            <p class="text-[#65793e] text-xl font-black italic">"It's not a tool you use; it's a
+                                teammate
+                                capable of logical execution."</p>
+                        </div>
+                    </div>
+
+                    
+                    <div id="pitch-inventory" class="pitch-content hidden">
+                        <h3
+                            class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-600 mb-8 leading-tight">
+                            Stop fighting <strong class="text-[#850716] font-bold">stockouts and disconnected</strong>
+                            data. Get <strong class="text-[#65793e] font-bold">Agentic Foresight</strong>.</h3>
+                        <p
+                            class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
+                            Unlike rigid rule-engines, our Inventory agents employ dynamic reasoning trees over
+                            real-time telemetry. RunInk cognitive models monitor stock levels across fragmented
+                            distribution chains to deduce anomalies before they disrupt supply streams, autonomously
+                            preparing secondary routing logic and drafting POs the moment primary constraints are
+                            violated.
+                        </p>
+                        <div>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
+                                Closer</h4>
+                            <p class="text-[#65793e] text-xl font-black italic">"We reason through the shortage
+                                dependencies
+                                before the shelf is empty."</p>
+                        </div>
+                    </div>
+
+                    
+                    <div id="pitch-shipper" class="pitch-content hidden">
+                        <h3
+                            class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-600 mb-8 leading-tight">
+                            Stop paying for <strong class="text-[#850716] font-bold">carrier mistakes</strong>. Get
+                            <strong class="text-[#65793e] font-bold">Automated
+                                Accountability</strong>.
+                        </h3>
+                        <p
+                            class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
+                            Managing freight logically shouldn't mean accepting abstract loss patterns as a cost of
+                            business. RunInk agents autonomously reason through complex invoice deviations, synthesizing
+                            GPS chronologies and cross-referencing tariff rates to logically disprove accessorial
+                            charges, initiating dispute architectures without human bottlenecking.
+                        </p>
+                        <div>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
+                                Closer</h4>
+                            <p class="text-[#65793e] text-xl font-black italic">"Hold your carriers to their promises,
+                                automatically."</p>
+                        </div>
+                    </div>
+
+                    
+                    <div id="pitch-broker" class="pitch-content hidden">
+                        <h3
+                            class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-600 mb-8 leading-tight">
+                            Stop settling for <strong class="text-[#850716] font-bold">generalized risk</strong> models.
+                            Get <strong class="text-[#65793e] font-bold">Precision Underwriting</strong>.</h3>
+                        <p
+                            class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
+                            RunInk agents autonomously reason through complex policy structures and historical claims
+                            data.
+                            Instead of relying on rigid, templated underwriting logic that leaves margin on the table,
+                            our reasoning engines evaluate edge cases dynamically—identifying micro-trend risks before
+                            they become liabilities.
+                        </p>
+                        <div>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
+                                Closer</h4>
+                            <p class="text-[#65793e] text-xl font-black italic">"We price the exact risk, not the
+                                category."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const btns = document.querySelectorAll('.pitch-tab-btn');
+        const contents = document.querySelectorAll('.pitch-content');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                
+                btns.forEach(b => {
+                    b.classList.remove('active', 'border-orange-600', 'bg-[#161515]');
+                    b.classList.add('border-stone-800', 'bg-[#161515]', 'hover:border-stone-700', 'hover:bg-[#1a1919]');
+                    b.querySelector('h3').classList.remove('text-white');
+                    b.querySelector('h3').classList.add('text-stone-500');
+                });
+
+                
+                btn.classList.add('active', 'border-orange-600', 'bg-[#161515]');
+                btn.classList.remove('border-stone-800', 'hover:border-stone-700', 'hover:bg-[#1a1919]');
+                btn.querySelector('h3').classList.add('text-white');
+                btn.querySelector('h3').classList.remove('text-stone-500');
+
+                
+                contents.forEach(c => c.classList.add('hidden'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                
+                const targetId = btn.getAttribute('data-target');
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                    
+                    setTimeout(() => targetContent.classList.add('active'), 50);
+                }
+            });
+        });
+    });
+</script>
+<div
+    class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-stone-950 group border-b border-stone-800">
+    
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950">
+    </div>
+    <div class="absolute inset-0 opacity-20"
+        style="background-image: linear-gradient(#ea580c 1px, transparent 1px), linear-gradient(90deg, #ea580c 1px, transparent 1px); background-size: 60px 60px;">
+    </div>
+
+    <div
+        class="relative z-20 max-w-[1400px] w-full mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        
+        <div class="max-w-xl order-2 md:order-1">
+            
+            <div
+                class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                Global Trade
+            </div>
+            
+            <h2
+                class="text-4xl md:text-5xl xl:text-7xl 2xl:text-[80px] whitespace-nowrap font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                Compliance
+            </h2>
+            
+            <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10">
+                Digital Broker
+            </div>
+            
+            <a href=""
+                class="inline-flex items-center gap-3 px-8 py-4 bg-[#b92b3f] hover:bg-[#9a2133] text-white font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg text-sm">
+                Read Full Use Case <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        
+        <div class="w-full max-w-2xl mx-auto md:ml-auto relative z-10 order-1 md:order-2">
+            
+            
+
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            <div class="flex flex-col w-full pl-0 md:pl-6">
+
+                
+                <div
+                    class="mb-12 p-6 md:p-8 bg-[#111] border border-stone-800/80 rounded-[1.25rem] relative overflow-hidden group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-[#ea580c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <h4 class="text-white font-bold mb-3 flex items-center gap-3 tracking-tight">
+                        <svg class="w-5 h-5 text-[#ea580c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        The Operational Problem
+                    </h4>
+                    <div
+                        class="text-stone-400 text-[13px] md:text-sm leading-relaxed prose prose-invert prose-p:last:mb-0">
+                        Global trade doesn&rsquo;t forgive typos. A single wrong digit on an invoice can hold your container hostage for weeks, costing thousands in demurrage fees. Runink acts as a forensic customs auditor, verifying HS Codes and Certificates of Origin before your cargo ever hits the water.
+                    </div>
+                </div>
+                
+
+                
+                <h3 class="text-lg font-bold text-white tracking-tight flex items-center gap-3 mb-4">
+                    <span class="w-2 h-2 rounded-full bg-[#65793e] shadow-[0_0_8px_#65793e]"></span>
+                    Runink Monitor
+                </h3>
+
+                
+                <div class="flex flex-col step-container w-full">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#65793e]/30 bg-[#65793e]/5 shadow-[0_0_20px_rgba(101,121,62,0.2),inset_0_0_15px_rgba(101,121,62,0.1)] hover:shadow-[0_0_35px_rgba(101,121,62,0.4),inset_0_0_25px_rgba(101,121,62,0.2)] hover:bg-[#65793e]/10 hover:border-[#65793e]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #65793e;">Data &amp; AI Maturity Assessment</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">ingests your Commercial Invoices and COOs to verify immediate parsing viability.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#65793e]/10 border border-[#65793e]/30 text-[#65793e] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(101,121,62,0.15)] group-hover:bg-[#65793e]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                1</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#65793e]/30 bg-[#65793e]/5 shadow-[0_0_20px_rgba(101,121,62,0.2),inset_0_0_15px_rgba(101,121,62,0.1)] hover:shadow-[0_0_35px_rgba(101,121,62,0.4),inset_0_0_25px_rgba(101,121,62,0.2)] hover:bg-[#65793e]/10 hover:border-[#65793e]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #65793e;">Rules Reconciliation</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">cross-references the declared HS Codes against the massive global tariff databases.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#65793e]/10 border border-[#65793e]/30 text-[#65793e] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(101,121,62,0.15)] group-hover:bg-[#65793e]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                2</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#65793e]/30 bg-[#65793e]/5 shadow-[0_0_20px_rgba(101,121,62,0.2),inset_0_0_15px_rgba(101,121,62,0.1)] hover:shadow-[0_0_35px_rgba(101,121,62,0.4),inset_0_0_25px_rgba(101,121,62,0.2)] hover:bg-[#65793e]/10 hover:border-[#65793e]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #65793e;">Hypothesis Lab</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">simulates customs logic flags to predict if your shipment will be stopped at the border.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#65793e]/10 border border-[#65793e]/30 text-[#65793e] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(101,121,62,0.15)] group-hover:bg-[#65793e]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                3</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+                <h3 class="text-lg font-bold text-white tracking-tight flex items-center gap-3 mt-12 mb-4">
+                    <span class="w-2 h-2 rounded-full bg-[#991b1b] shadow-[0_0_8px_#991b1b]"></span>
+                    Decision Cockpit
+                </h3>
+
+                
+                <div class="flex flex-col step-container pb-8 w-full">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#991b1b]/30 bg-[#991b1b]/5 shadow-[0_0_20px_rgba(153,27,27,0.2),inset_0_0_15px_rgba(153,27,27,0.1)] hover:shadow-[0_0_35px_rgba(153,27,27,0.4),inset_0_0_25px_rgba(153,27,27,0.2)] hover:bg-[#991b1b]/10 hover:border-[#991b1b]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #991b1b;">Decision Cockpit</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">highlights exact document mismatches—like &#39;Boy&#39;s Cotton&#39; vs &#39;Men&#39;s Suits&#39;—with color-coded severity.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#991b1b]/10 border border-[#991b1b]/30 text-[#991b1b] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(153,27,27,0.2)] group-hover:bg-[#991b1b]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                4</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#991b1b]/30 bg-[#991b1b]/5 shadow-[0_0_20px_rgba(153,27,27,0.2),inset_0_0_15px_rgba(153,27,27,0.1)] hover:shadow-[0_0_35px_rgba(153,27,27,0.4),inset_0_0_25px_rgba(153,27,27,0.2)] hover:bg-[#991b1b]/10 hover:border-[#991b1b]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #991b1b;">Digital Broker</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">drafts the corrected customs entry alongside the required documentation proofs.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#991b1b]/10 border border-[#991b1b]/30 text-[#991b1b] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(153,27,27,0.2)] group-hover:bg-[#991b1b]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                5</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#991b1b]/30 bg-[#991b1b]/5 shadow-[0_0_20px_rgba(153,27,27,0.2),inset_0_0_15px_rgba(153,27,27,0.1)] hover:shadow-[0_0_35px_rgba(153,27,27,0.4),inset_0_0_25px_rgba(153,27,27,0.2)] hover:bg-[#991b1b]/10 hover:border-[#991b1b]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #991b1b;">One-Click Execution</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">routes the verified package to your Customs Broker for filing.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#991b1b]/10 border border-[#991b1b]/30 text-[#991b1b] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(153,27,27,0.2)] group-hover:bg-[#991b1b]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                6</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const steps = entry.target.querySelectorAll('.reveal-step');
+                    if (entry.isIntersecting) {
+                        steps.forEach((step, idx) => {
+                            
+                            step.style.transitionDelay = `${idx * 200}ms`;
+                            step.classList.remove('opacity-20', 'translate-y-4');
+                            step.classList.add('opacity-100', 'translate-y-0');
+                        });
+                    } else {
+                        
+                        steps.forEach(step => {
+                            step.style.transitionDelay = '0ms'; 
+                            step.classList.add('opacity-20', 'translate-y-4');
+                            step.classList.remove('opacity-100', 'translate-y-0');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -15% 0px"
+            });
+
+            
+            setTimeout(() => {
+                document.querySelectorAll('.step-container').forEach(container => {
+                    observer.observe(container);
+                });
+            }, 100);
+        });
+    </script>
+</div>
+<div
+    class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-stone-950 group border-b border-stone-800">
+    
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950">
+    </div>
+    <div class="absolute inset-0 opacity-20"
+        style="background-image: linear-gradient(#ea580c 1px, transparent 1px), linear-gradient(90deg, #ea580c 1px, transparent 1px); background-size: 60px 60px;">
+    </div>
+
+    <div
+        class="relative z-20 max-w-[1400px] w-full mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        
+        <div class="max-w-xl order-2 md:order-2">
+            
+            <div
+                class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                Demand Planning
+            </div>
+            
+            <h2
+                class="text-4xl md:text-5xl xl:text-7xl 2xl:text-[80px] whitespace-nowrap font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                Procurement
+            </h2>
+            
+            <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10">
+                Trend Hunter
+            </div>
+            
+            <a href=""
+                class="inline-flex items-center gap-3 px-8 py-4 bg-[#b92b3f] hover:bg-[#9a2133] text-white font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg text-sm">
+                Read Full Use Case <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        
+        <div class="w-full max-w-2xl mx-auto md:ml-auto relative z-10 order-1
+            md:order-1">
+            
+            
+
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            <div class="flex flex-col w-full pl-0 md:pl-6">
+
+                
+                <div
+                    class="mb-12 p-6 md:p-8 bg-[#111] border border-stone-800/80 rounded-[1.25rem] relative overflow-hidden group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-[#ea580c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <h4 class="text-white font-bold mb-3 flex items-center gap-3 tracking-tight">
+                        <svg class="w-5 h-5 text-[#ea580c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        The Operational Problem
+                    </h4>
+                    <div
+                        class="text-stone-400 text-[13px] md:text-sm leading-relaxed prose prose-invert prose-p:last:mb-0">
+                        By the time a demand spike hits your sales report, it&rsquo;s often too late. Buying the peak usually means owning the crash, leaving you buried in dead stock. Runink senses trends before they break, optimizing inventory through predictive metasearch and time-series modeling.
+                    </div>
+                </div>
+                
+
+                
+                <h3 class="text-lg font-bold text-white tracking-tight flex items-center gap-3 mb-4">
+                    <span class="w-2 h-2 rounded-full bg-[#65793e] shadow-[0_0_8px_#65793e]"></span>
+                    Runink Monitor
+                </h3>
+
+                
+                <div class="flex flex-col step-container w-full">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#65793e]/30 bg-[#65793e]/5 shadow-[0_0_20px_rgba(101,121,62,0.2),inset_0_0_15px_rgba(101,121,62,0.1)] hover:shadow-[0_0_35px_rgba(101,121,62,0.4),inset_0_0_25px_rgba(101,121,62,0.2)] hover:bg-[#65793e]/10 hover:border-[#65793e]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #65793e;">Data &amp; AI Maturity Assessment</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">aggregates external signals, confirming reliable streams from social volume spikes and competitor stockouts.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#65793e]/10 border border-[#65793e]/30 text-[#65793e] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(101,121,62,0.15)] group-hover:bg-[#65793e]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                1</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#65793e]/30 bg-[#65793e]/5 shadow-[0_0_20px_rgba(101,121,62,0.2),inset_0_0_15px_rgba(101,121,62,0.1)] hover:shadow-[0_0_35px_rgba(101,121,62,0.4),inset_0_0_25px_rgba(101,121,62,0.2)] hover:bg-[#65793e]/10 hover:border-[#65793e]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #65793e;">Rules Reconciliation</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">applies ARIMA time-series logic to separate sustainable shifts from flash trends.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#65793e]/10 border border-[#65793e]/30 text-[#65793e] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(101,121,62,0.15)] group-hover:bg-[#65793e]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                2</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#65793e]/30 bg-[#65793e]/5 shadow-[0_0_20px_rgba(101,121,62,0.2),inset_0_0_15px_rgba(101,121,62,0.1)] hover:shadow-[0_0_35px_rgba(101,121,62,0.4),inset_0_0_25px_rgba(101,121,62,0.2)] hover:bg-[#65793e]/10 hover:border-[#65793e]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #65793e;">Hypothesis Lab</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">stress-tests cashflow under various bulk-buy and air-freight scenarios.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#65793e]/10 border border-[#65793e]/30 text-[#65793e] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(101,121,62,0.15)] group-hover:bg-[#65793e]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                3</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+                <h3 class="text-lg font-bold text-white tracking-tight flex items-center gap-3 mt-12 mb-4">
+                    <span class="w-2 h-2 rounded-full bg-[#991b1b] shadow-[0_0_8px_#991b1b]"></span>
+                    Decision Cockpit
+                </h3>
+
+                
+                <div class="flex flex-col step-container pb-8 w-full">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#991b1b]/30 bg-[#991b1b]/5 shadow-[0_0_20px_rgba(153,27,27,0.2),inset_0_0_15px_rgba(153,27,27,0.1)] hover:shadow-[0_0_35px_rgba(153,27,27,0.4),inset_0_0_25px_rgba(153,27,27,0.2)] hover:bg-[#991b1b]/10 hover:border-[#991b1b]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #991b1b;">Decision Cockpit</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">charts the demand curve projection directly against your current inventory burn rate.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#991b1b]/10 border border-[#991b1b]/30 text-[#991b1b] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(153,27,27,0.2)] group-hover:bg-[#991b1b]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                4</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#991b1b]/30 bg-[#991b1b]/5 shadow-[0_0_20px_rgba(153,27,27,0.2),inset_0_0_15px_rgba(153,27,27,0.1)] hover:shadow-[0_0_35px_rgba(153,27,27,0.4),inset_0_0_25px_rgba(153,27,27,0.2)] hover:bg-[#991b1b]/10 hover:border-[#991b1b]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #991b1b;">Trend Hunter</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">queues a preemptive PO for expedited air freight to capture the impending peak.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#991b1b]/10 border border-[#991b1b]/30 text-[#991b1b] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(153,27,27,0.2)] group-hover:bg-[#991b1b]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                5</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <div
+                        class="reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border border-[#991b1b]/30 bg-[#991b1b]/5 shadow-[0_0_20px_rgba(153,27,27,0.2),inset_0_0_15px_rgba(153,27,27,0.1)] hover:shadow-[0_0_35px_rgba(153,27,27,0.4),inset_0_0_25px_rgba(153,27,27,0.2)] hover:bg-[#991b1b]/10 hover:border-[#991b1b]/50 flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4">
+
+                        
+                        <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
+                            
+                            <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
+                                style="color: #991b1b;">One-Click Execution</strong>
+                            <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">dispatches the order instantly, blocking further buys when the trend cools.</span>
+                            
+                        </div>
+
+                        
+                        <div class="shrink-0 z-20 self-end md:self-auto">
+                            <span
+                                class="inline-flex items-center justify-center bg-[#991b1b]/10 border border-[#991b1b]/30 text-[#991b1b] font-mono text-[11px] tracking-widest px-4 py-2 rounded-full shadow-[0_0_15px_rgba(153,27,27,0.2)] group-hover:bg-[#991b1b]/20 transition-all uppercase font-bold whitespace-nowrap">Step
+                                6</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const steps = entry.target.querySelectorAll('.reveal-step');
+                    if (entry.isIntersecting) {
+                        steps.forEach((step, idx) => {
+                            
+                            step.style.transitionDelay = `${idx * 200}ms`;
+                            step.classList.remove('opacity-20', 'translate-y-4');
+                            step.classList.add('opacity-100', 'translate-y-0');
+                        });
+                    } else {
+                        
+                        steps.forEach(step => {
+                            step.style.transitionDelay = '0ms'; 
+                            step.classList.add('opacity-20', 'translate-y-4');
+                            step.classList.remove('opacity-100', 'translate-y-0');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -15% 0px"
+            });
+
+            
+            setTimeout(() => {
+                document.querySelectorAll('.step-container').forEach(container => {
+                    observer.observe(container);
+                });
+            }, 100);
+        });
+    </script>
+</div>
+<section class="py-32 bg-stone-950 border-t border-stone-800 overflow-hidden relative">
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950 z-0">
+    </div>
+    <div class="absolute inset-0 opacity-20 pointer-events-none z-0"
+        style="background-image: linear-gradient(#ea580c 1px, transparent 1px), linear-gradient(90deg, #ea580c 1px, transparent 1px); background-size: 60px 60px;">
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 mb-16" id="use-cases">
+            <div
+                class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                Applications
+            </div>
+            <h2
+                class="text-6xl md:text-7xl lg:text-[90px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                Explore All Cures
+            </h2>
+            <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 mt-6 max-w-3xl">
+                Discover how the Digital Twin transforms your operational workflows.
+            </div>
+        </div>
+
+        <div id="use-cases-scroll-container"
+            class="flex overflow-x-auto gap-6 pb-8 px-6 lg:pl-16 max-w-[100vw] snap-x snap-mandatory lg:snap-none hide-scrollbar">
+            
+            <div
+                class="snap-start lg:snap-align-none shrink-0 w-80 md:w-96 bg-stone-800/80 backdrop-blur border border-stone-700 rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(234,88,12,0.15)] hover:border-[#ea580c]/50">
+                <div class="mb-6 flex justify-between items-start">
+                    <span class="px-3 py-1 rounded text-xs font-bold tracking-widest uppercase"
+                        style="background-color: #92400E20; color: #92400E">Shopify &amp; E-commerce</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#ea580c] transition-colors">Drop Shipping Command Center
+                </h3>
+                <p class="text-stone-400 text-sm leading-relaxed mb-8 flex-grow">Don&#39;t sell what you don&#39;t have. Sync inventory across all vendors in real-time.</p>
+                <a href="/use-cases/drop-shipping/"
+                    class="text-[#ea580c] font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto border-t border-stone-700 pt-4">
+                    Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            
+            <div
+                class="snap-start lg:snap-align-none shrink-0 w-80 md:w-96 bg-stone-800/80 backdrop-blur border border-stone-700 rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(234,88,12,0.15)] hover:border-[#ea580c]/50">
+                <div class="mb-6 flex justify-between items-start">
+                    <span class="px-3 py-1 rounded text-xs font-bold tracking-widest uppercase"
+                        style="background-color: #7c3aed20; color: #7c3aed">Cost Recovery</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#ea580c] transition-colors">The Claims Agent: Your Digital Paralegal
+                </h3>
+                <p class="text-stone-400 text-sm leading-relaxed mb-8 flex-grow">Recover 40% more freight spend. Automate the fight against carrier denials with legal precision.</p>
+                <a href="/use-cases/claims-recovery/"
+                    class="text-[#ea580c] font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto border-t border-stone-700 pt-4">
+                    Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            
+            <div
+                class="snap-start lg:snap-align-none shrink-0 w-80 md:w-96 bg-stone-800/80 backdrop-blur border border-stone-700 rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(234,88,12,0.15)] hover:border-[#ea580c]/50">
+                <div class="mb-6 flex justify-between items-start">
+                    <span class="px-3 py-1 rounded text-xs font-bold tracking-widest uppercase"
+                        style="background-color: #ea580c20; color: #ea580c">Global Trade</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#ea580c] transition-colors">The Compliance Agent: Your Digital Broker
+                </h3>
+                <p class="text-stone-400 text-sm leading-relaxed mb-8 flex-grow">Zero Demurrage. Audit commercial invoices and HS codes before they leave your desk.</p>
+                <a href="/use-cases/compliance/"
+                    class="text-[#ea580c] font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto border-t border-stone-700 pt-4">
+                    Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            
+            <div
+                class="snap-start lg:snap-align-none shrink-0 w-80 md:w-96 bg-stone-800/80 backdrop-blur border border-stone-700 rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(234,88,12,0.15)] hover:border-[#ea580c]/50">
+                <div class="mb-6 flex justify-between items-start">
+                    <span class="px-3 py-1 rounded text-xs font-bold tracking-widest uppercase"
+                        style="background-color: #10b98120; color: #10b981">Logistics Finance</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#ea580c] transition-colors">The Finance Agent: The Forensic Auditor
+                </h3>
+                <p class="text-stone-400 text-sm leading-relaxed mb-8 flex-grow">Stop the &#39;Rubber Stamp&#39;. Audit every single EDI 210 invoice line against your contract.</p>
+                <a href="/use-cases/finance/"
+                    class="text-[#ea580c] font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto border-t border-stone-700 pt-4">
+                    Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            
+            <div
+                class="snap-start lg:snap-align-none shrink-0 w-80 md:w-96 bg-stone-800/80 backdrop-blur border border-stone-700 rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(234,88,12,0.15)] hover:border-[#ea580c]/50">
+                <div class="mb-6 flex justify-between items-start">
+                    <span class="px-3 py-1 rounded text-xs font-bold tracking-widest uppercase"
+                        style="background-color: #db277720; color: #db2777">Demand Planning</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#ea580c] transition-colors">The Procurement Agent: The Trend Hunter
+                </h3>
+                <p class="text-stone-400 text-sm leading-relaxed mb-8 flex-grow">Predict the future. Use web scrapers and time-series analysis to catch inventory spikes before they happen.</p>
+                <a href="/use-cases/procurement/"
+                    class="text-[#ea580c] font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto border-t border-stone-700 pt-4">
+                    Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            
+            <div
+                class="snap-start lg:snap-align-none shrink-0 w-80 md:w-96 bg-stone-800/80 backdrop-blur border border-stone-700 rounded-3xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(234,88,12,0.15)] hover:border-[#ea580c]/50">
+                <div class="mb-6 flex justify-between items-start">
+                    <span class="px-3 py-1 rounded text-xs font-bold tracking-widest uppercase"
+                        style="background-color: #ef444420; color: #ef4444">Reverse Logistics</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#ea580c] transition-colors">The Returns Agent: The Gatekeeper
+                </h3>
+                <p class="text-stone-400 text-sm leading-relaxed mb-8 flex-grow">Stop return fraud. Analyze weight, serial numbers, and customer history before releasing a refund.</p>
+                <a href="/use-cases/returns/"
+                    class="text-[#ea580c] font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto border-t border-stone-700 pt-4">
+                    Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<style>
+     
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+     
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carousel = document.getElementById('use-cases-scroll-container');
+        if (!carousel) return;
+
+        let isHovered = false;
+        carousel.addEventListener('mouseenter', () => isHovered = true);
+        carousel.addEventListener('mouseleave', () => isHovered = false);
+
+        setInterval(() => {
+            if (!isHovered) {
+                
+                if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                    carousel.scrollTo({ left: 0, behavior: 'smooth' }); 
+                } else {
+                    
+                    carousel.scrollBy({ left: 340, behavior: 'smooth' });
+                }
+            }
+        }, 3000); 
+    });
+</script>
+<section id="contact" class="relative bg-stone-950 py-32 overflow-hidden border-t border-stone-800">
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950 z-0">
+    </div>
+    <div class="absolute inset-0 opacity-20 pointer-events-none z-0"
+        style="background-image: linear-gradient(#ea580c 1px, transparent 1px), linear-gradient(90deg, #ea580c 1px, transparent 1px); background-size: 60px 60px;">
+    </div>
+    <div class="container mx-auto px-4">
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+
+            
+            <div class="space-y-6">
+                <div
+                    class="inline-flex items-center justify-center px-6 py-2 mb-2 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                    Secure Comm Channel
+                </div>
+
+                <h2
+                    class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                    Partner With Runink
+                </h2>
+
+                <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 max-w-lg">
+                    Let's navigate your AI-assisted operations together. Bypass the red tape and inject our Digital Twin
+                    into your logistics pipeline.
+                </div>
+
+                <div
+                    class="bg-stone-800/40 border border-stone-700 rounded-2xl p-8 backdrop-blur shadow-2xl relative overflow-hidden group">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-[#9f1239] to-[#ea580c] opacity-20 blur transition duration-1000 group-hover:opacity-40">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-white mb-4">Direct Link (Video)</h3>
+                        <p class="text-stone-400 mb-8 leading-relaxed">Schedule a strategic briefing immediately. We'll
+                            map
+                            your operational bottlenecks and deploy a shadow simulation.</p>
+
+                        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
+                            async></script>
+                        <a class="inline-flex items-center justify-center w-full px-8 py-4 bg-stone-900 text-white font-black uppercase tracking-widest border border-stone-700 hover:border-[#ea580c] transition-all duration-300 rounded hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)]"
+                            href="#"
+                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/runink'});return false;">
+                            <span class="mr-2">Initiate Briefing</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="relative group mt-8 lg:mt-0">
+                
+                <div
+                    class="absolute -inset-1 bg-gradient-to-tr from-[#9f1239]/20 via-[#ea580c]/10 to-[#1c1917] rounded-3xl blur-2xl z-0 transition duration-500 group-hover:from-[#9f1239]/30 group-hover:via-[#ea580c]/20">
+                </div>
+
+                <div
+                    class="bg-stone-900/80 backdrop-blur border border-stone-700 p-8 md:p-12 rounded-3xl shadow-2xl relative z-10">
+                    <h3 class="text-3xl font-bold text-white mb-2">Initialize Deployment</h3>
+                    <p class="text-stone-400 mb-8 font-mono text-sm leading-relaxed">Or drop us a secure message below.
+                        We
+                        respond within 1 business day.</p>
+
+                    
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                        onload="if(submitted) {window.location='/';}"></iframe>
+
+                    <form class="space-y-6"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSfE6RANq4sVOs49LI71f6KZA-7d1Rm_ddb2dqQWgZF1dqfvXA/formResponse"
+                        method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-stone-500 uppercase tracking-widest">Full Name <span
+                                    class="text-[#ea580c]">*</span></label>
+                            <input type="text" name="entry.2005620554" placeholder="Jane Doe"
+                                class="w-full bg-stone-800 border items-center p-4 border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all"
+                                required>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-stone-500 uppercase tracking-widest">Business Email
+                                <span class="text-[#ea580c]">*</span></label>
+                            <input type="email" name="entry.1045781291" placeholder="jane@company.com"
+                                class="w-full bg-stone-800 border p-4 border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all"
+                                required>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-stone-500 uppercase tracking-widest">Company
+                                Name</label>
+                            <input type="text" name="entry.1160391826" placeholder="Logistics Corp"
+                                class="w-full bg-stone-800 border p-4 border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-stone-500 uppercase tracking-widest">Where did you find
+                                about us?</label>
+                            <div class="relative">
+                                <select name="entry.17726350"
+                                    class="w-full bg-stone-800 border p-4 border-stone-700 rounded-lg text-white appearance-none focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all">
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Referral">Referral</option>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="Web Search">Web Search</option>
+                                    <option value="Event">Event</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-stone-400">
+                                    <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-stone-500 uppercase tracking-widest">Briefly describe
+                                your
+                                needs or project <span class="text-[#ea580c]">*</span></label>
+                            <textarea name="entry.1065046570"
+                                placeholder="Tell us about your operational bottlenecks..." rows="4"
+                                class="w-full bg-stone-800 border p-4 border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all resize-none"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 mt-4 bg-gradient-to-r from-[#9f1239] to-[#ea580c] text-white font-black uppercase tracking-widest rounded-lg hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] transition-all duration-300 hover:-translate-y-1">
+                            Transmit Data
+                        </button>
+                        <p class="text-xs text-stone-500 font-mono text-center mt-6">* Data transmission is encrypted
+                            and
+                            secure.</p>
+                    </form>
+                    <script type="text/javascript">var submitted = false;</script>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </div>
+
+    
+    
+
+    
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function () {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle('hidden');
+                }
+            });
+        }
+    </script>
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>

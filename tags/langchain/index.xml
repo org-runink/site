@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LangChain on Runink</title>
+    <link>https://runink.org/tags/langchain/</link>
+    <description>Recent content in LangChain on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jul 2025 10:19:32 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/langchain/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Affordable Analytics: Harnessing A2A and LangChain for Scalable Insights</title>
+      <link>https://runink.org/blog/a2a-langchain-affordable-analytics/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/a2a-langchain-affordable-analytics/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&#xA;A2A offers cost-effective, modular analytics through lightweight, open-source agents. Paired with LangChain, it enables scalable, AI-powered insights without the overhead of traditional BI tools. Perfect for teams on a budget seeking advanced data workflows.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;better-insights-on-a-budget-leveraging-a2a-with-langchain&#34;&gt;Better Insights on a Budget: Leveraging A2A with LangChain&lt;/h2&gt;&#xA;&lt;p&gt;In today&amp;rsquo;s fast-paced, data-driven world, businesses often face a critical challenge: extracting meaningful insights without the deep pockets typically associated with powerful analytics solutions. The Agent-to-Agent (A2A) open-source protocol emerges as a compelling answer to this challenge, offering affordable yet sophisticated analytics capabilities.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

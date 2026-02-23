@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Runink</title>
+    <link>https://runink.org/categories/</link>
+    <description>Recent content in Categories on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Feb 2026 14:34:23 -0500</lastBuildDate>
+    <atom:link href="https://runink.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logistics AI</title>
+      <link>https://runink.org/categories/logistics-ai/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/categories/logistics-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Supply Chain</title>
+      <link>https://runink.org/categories/supply-chain/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/categories/supply-chain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>https://runink.org/categories/technology/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/categories/technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Logistics Law</title>
+      <link>https://runink.org/categories/logistics-law/</link>
+      <pubDate>Thu, 22 Jan 2026 11:00:00 +0000</pubDate>
+      <guid>https://runink.org/categories/logistics-law/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Maritime</title>
+      <link>https://runink.org/categories/maritime/</link>
+      <pubDate>Thu, 22 Jan 2026 11:00:00 +0000</pubDate>
+      <guid>https://runink.org/categories/maritime/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

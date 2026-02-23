@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logistics on Runink</title>
+    <link>https://runink.org/tags/logistics/</link>
+    <description>Recent content in Logistics on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jul 2025 10:38:54 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/logistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Gen AI Hallucinations Can Be a Nightmare for Logistics—And How to Fix Them</title>
+      <link>https://runink.org/blog/gen-ai-hallucinations-logistics-solutions/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/gen-ai-hallucinations-logistics-solutions/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;br&gt;&#xA;Hallucinations in generative AI—fabricated, inaccurate information—can wreak havoc in logistics, retail, transportation, and healthcare operations. Techniques like query expansion, reranking, embedding adapters, and model tuning can significantly reduce these errors, improving forecasting, routing, and inventory decisions.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;generative-ai-hallucinations-a-logistics-nightmare-and-how-to-stop-them&#34;&gt;Generative AI Hallucinations: A Logistics Nightmare and How to Stop Them&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction-what-are-ai-hallucinations&#34;&gt;Introduction: What Are AI &amp;ldquo;Hallucinations&amp;rdquo;?&lt;/h2&gt;&#xA;&lt;p&gt;Imagine asking an AI for advice on optimizing your delivery routes or forecasting next month’s product demand, and it responds with confident-sounding &lt;strong&gt;nonsense&lt;/strong&gt;. In the world of generative AI, this phenomenon is known as a &lt;em&gt;hallucination&lt;/em&gt;. When a language model hallucinates, &lt;strong&gt;it generates information that seems accurate but is actually false&lt;/strong&gt;. In other words, the AI is essentially making things up – not out of malice, but because it doesn’t know any better given its training and input.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Securing the Future of Gen AI: How Information Security Enables Ethical AI in Logistics</title>
+      <link>https://runink.org/blog/information-security-ethical-gen-ai-logistics/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/information-security-ethical-gen-ai-logistics/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;br&gt;&#xA;Information security practices are essential for ensuring generative AI is developed and implemented ethically, especially in logistics. Effective data governance, access control, privacy, transparency, and oversight protect organizations from risks like deepfakes, privacy violations, and regulatory challenges.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;secure-and-ethical-generative-ai-in-logistics-why-information-security-is-key&#34;&gt;Secure and Ethical Generative AI in Logistics: Why Information Security Is Key&lt;/h1&gt;&#xA;&lt;p&gt;Generative AI (Gen AI) is transforming business – from drafting documents and analyzing data to automating customer interactions. Its potential to boost efficiency and innovation seems limitless. But alongside this promise comes a &lt;strong&gt;new frontier of ethical risks&lt;/strong&gt;. AI systems can produce misinformation or biased outputs, expose private data, or be weaponized for malicious uses like deepfakes. For business leaders in data-driven industries like logistics, these risks aren’t just theoretical – they carry &lt;strong&gt;real operational and reputational stakes&lt;/strong&gt;. The good news is that &lt;strong&gt;strong information security practices&lt;/strong&gt; provide a foundation to develop Gen AI applications that are both innovative and responsible. In this post, we’ll explore how ethical AI development and InfoSec go hand-in-hand, from the latest AI governance moves (like Denmark’s bold deepfake law) to practical steps for securing Gen AI in logistics. Let’s dive in.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

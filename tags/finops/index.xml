@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FinOps on Runink</title>
+    <link>https://runink.org/tags/finops/</link>
+    <description>Recent content in FinOps on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jul 2025 10:19:32 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/finops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improving Cloud ROI with FinOps, Domain Models, and Data Mesh</title>
+      <link>https://runink.org/blog/improving-cloud-roi-finops-domain-model-data-mesh/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/improving-cloud-roi-finops-domain-model-data-mesh/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&#xA;TL;DR: Aligning domain models and data mesh principles with FinOps frameworks and standardized cloud controls significantly improves cloud ROI measurement at the departmental level by ensuring financial transparency, accountability, and efficient optimization.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;br&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;As enterprises accelerate their cloud adoption journeys, accurately measuring return on investment (ROI) at the departmental level becomes crucial. Adopting a FinOps framework, complemented by domain models and data mesh principles alongside standardized cloud controls from FinOps, can significantly enhance the precision of ROI measurement per departmental initiative.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
