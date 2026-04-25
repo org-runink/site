@@ -891,6 +891,48 @@ Food &amp; beverage and materials wholesalers in North America face rising press
     
 
     
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies and similar technologies to enhance your experience, analyze our traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies.
+            Read our <a href="/privacy" class="text-primary-500 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-primary-600 text-white rounded-lg hover:bg-primary-500 transition-colors">
+            Accept All
+        </button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+
+    if (localStorage.getItem('cookieConsent')) {
+        consentBanner.style.display = 'none';
+    }
+
+    acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        consentBanner.style.display = 'none';
+        
+    });
+
+    rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'rejected');
+        consentBanner.style.display = 'none';
+    });
+});
+</script>
+
+
+    
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         if (mobileMenuButton) {
