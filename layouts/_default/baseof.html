@@ -69,7 +69,9 @@
 
     <!-- Main CSS -->
     {{ $css := resources.Get "css/main.css" }}
-    {{ $css = $css | css.PostCSS }}
+    {{ if not .Site.Params.disablePostCSS }}
+      {{ $css = $css | css.PostCSS }}
+    {{ end }}
     {{ if hugo.IsProduction }}
     {{ $css = $css | minify | fingerprint | resources.PostProcess }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
@@ -83,6 +85,9 @@
     <meta {{ range $key, $value :=. }} {{ $key }}="{{ $value }}" {{ end }}>
     {{ end }}
     {{ end }}
+
+    <!-- JSON-LD Schema -->
+    {{ partial "schema.html" . }}
 </head>
 
 <body class="min-h-screen flex flex-col">
