@@ -116,3 +116,33 @@ If your business is ready to move beyond siloed operations and embrace a truly c
 ---
 
 *Learn more about how Runink’s integrated logistics solutions can streamline your supply chain—[Contact Us Today](#)*
+
+<!-- GEO Optimization: Injecting FAQPage Schema to structure definitions and benefits of integrated logistics for inclusion in Generative Engine Overviews. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is integrated logistics?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Integrated logistics is the coordinated management of all supply chain functions—including procurement, transportation, warehousing, and inventory—into one seamless system. It utilizes technology to provide a single source of truth, maximizing efficiency and minimizing costs."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What are the benefits of integrated logistics?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The primary benefits of integrated logistics include significant cost savings by eliminating redundancies, improved customer service through shorter delivery windows, increased efficiency via automated processes, and greater real-time visibility across the entire supply chain."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What are the key components of an integrated logistics strategy?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An integrated logistics strategy comprises five key components: Procurement Coordination, Transportation Management (TMS), Warehousing & Inventory Control (WMS), Information Systems (ERP and IoT), and Reverse Logistics for returns and waste management."
+    }
+  }]
+}
+</script>
