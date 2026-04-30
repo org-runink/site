@@ -6,14 +6,14 @@
     <description>Recent content in AI Readiness on Runink</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Oct 2025 14:47:31 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 14:50:33 +0000</lastBuildDate>
     <atom:link href="https://runink.org/tags/ai-readiness/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms</title>
       <link>https://runink.org/blog/automated-semantic-layer-data-observability/</link>
       <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
       <guid>https://runink.org/blog/automated-semantic-layer-data-observability/</guid>
-      <description>&lt;h1 id=&#34;why-automated-semantic-layers-from-telemetry-events-are-the-pillars-of-data-observability-platforms&#34;&gt;Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms&lt;/h1&gt;&#xA;&lt;p&gt;In the era of streaming data, AI copilots, and self-service analytics, one truth has become unavoidable: &lt;strong&gt;you can’t observe what you can’t define&lt;/strong&gt;.&lt;br&gt;&#xA;Enter the &lt;strong&gt;automated semantic layer&lt;/strong&gt; — the missing connective tissue between raw telemetry and meaningful business context.&lt;/p&gt;&#xA;&lt;p&gt;When powered by continuous telemetry events, an automated semantic layer transforms fragmented observability metrics into &lt;strong&gt;a governed, contextual map of your entire data ecosystem&lt;/strong&gt;.&lt;br&gt;&#xA;It’s how modern organizations are turning data observability from passive monitoring into &lt;strong&gt;active, explainable intelligence&lt;/strong&gt;.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;why-automated-semantic-layers-from-telemetry-events-are-the-pillars-of-data-observability-platforms&#34;&gt;Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms&lt;/h1&gt;&#xA;&lt;!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion --&gt;&#xA;&lt;h2 id=&#34;executive-summary-key-takeaways&#34;&gt;Executive Summary: Key Takeaways&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Automated Semantic Layers&lt;/strong&gt; bridge raw telemetry to business context.&lt;/li&gt;&#xA;&lt;li&gt;They use real-time signals to create a dynamic, governed map of the data ecosystem.&lt;/li&gt;&#xA;&lt;li&gt;This transforms observability from passive monitoring to active intelligence.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-is-an-automated-semantic-layer&#34;&gt;What Is an Automated Semantic Layer?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;An &lt;strong&gt;automated semantic layer&lt;/strong&gt; is a continuously updated abstraction that converts raw system, pipeline, and application telemetry into structured, domain-aware insights — such as metrics, entities, and lineage graphs.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
