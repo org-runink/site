@@ -3066,6 +3066,9 @@ select {
 .-top-4 {
   top: -1rem;
 }
+.bottom-0 {
+  bottom: 0px;
+}
 .bottom-2 {
   bottom: 0.5rem;
 }
@@ -4784,6 +4787,10 @@ select {
 .text-primary-100 {
   --tw-text-opacity: 1;
   color: rgb(221 227 249 / var(--tw-text-opacity, 1));
+}
+.text-primary-500 {
+  --tw-text-opacity: 1;
+  color: rgb(85 115 223 / var(--tw-text-opacity, 1));
 }
 .text-primary-600 {
   --tw-text-opacity: 1;
@@ -6868,6 +6875,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(221 227 249 / var(--tw-bg-opacity, 1));
 }
+.hover\:bg-primary-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(85 115 223 / var(--tw-bg-opacity, 1));
+}
 .hover\:bg-primary-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(53 72 171 / var(--tw-bg-opacity, 1));
@@ -6910,6 +6921,10 @@ select {
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+}
+.hover\:text-primary-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(119 143 230 / var(--tw-text-opacity, 1));
 }
 .hover\:text-primary-600:hover {
   --tw-text-opacity: 1;
@@ -7283,6 +7298,10 @@ select {
 
   .md\:order-2 {
     order: 2;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .md\:ml-auto {
