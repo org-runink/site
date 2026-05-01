@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intelligent Twin on Runink</title>
+    <link>https://runink.org/tags/intelligent-twin/</link>
+    <description>Recent content in Intelligent Twin on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Feb 2026 22:52:22 -0500</lastBuildDate>
+    <atom:link href="https://runink.org/tags/intelligent-twin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Digital Twin Evolution: Driving Efficiency and ESG in Modern Logistics</title>
+      <link>https://runink.org/blog/digital-twin-evolution-logistics/</link>
+      <pubDate>Tue, 03 Mar 2026 17:15:00 +0000</pubDate>
+      <guid>https://runink.org/blog/digital-twin-evolution-logistics/</guid>
+      <description>&lt;h1 id=&#34;1-the-maturity-journey-of-digital-twins&#34;&gt;1. The Maturity Journey of Digital Twins&lt;/h1&gt;&#xA;&lt;p&gt;The concept of a &amp;ldquo;Digital Twin&amp;rdquo; is frequently discussed in modern logistics, but the term encompasses a wide spectrum of technological maturity. A true enterprise digital twin does much more than simply visualize where a truck or container is on a map. As organizations push for greater operational efficiency and seek to meet rigorous ESG (Environmental, Social, and Governance) targets, the technological foundation of supply chain management must fundamentally evolve.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
