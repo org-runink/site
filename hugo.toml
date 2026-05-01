@@ -28,7 +28,6 @@ paginatePath = "page"
   description = ""
   logo = "/images/logo.png"
   googleAnalytics ='G-SEECKDWZNJ'
-  disablePostCSS = true
   
   # Global CTA Configuration
   [params.cta]
