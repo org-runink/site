@@ -1,7 +1,7 @@
 <div class="team-member text-center w-64">
     <div class="relative mb-4 rounded-lg overflow-hidden aspect-square">
         {{ if .Get "image" }}
-        <img src="{{ .Get " image" | relURL }}" alt="{{ .Get " name" }}" class="w-full h-full object-cover">
+        <img src="{{ .Get "image" | relURL }}" alt="{{ .Get "name" }}" class="w-full h-full object-cover">
         {{ else }}
         <div class="w-full h-full bg-gray-200 flex items-center justify-center">
             <svg class="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
@@ -11,7 +11,7 @@
         </div>
         {{ end }}
         {{ if .Get "linkedin" }}
-        <a href="{{ .Get " linkedin" }}" target="_blank" rel="noopener"
+        <a href="{{ .Get "linkedin" | relURL }}" target="_blank" rel="noopener"
             class="absolute bottom-2 right-2 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-shadow">
             <svg class="w-5 h-5 text-[#8B9A6E]" fill="currentColor" viewBox="0 0 24 24">
                 <path

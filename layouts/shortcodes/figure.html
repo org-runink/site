@@ -5,7 +5,7 @@
 
 <figure class="my-8">
     <img 
-        src="{{ $src }}" 
+        src="{{ $src | relURL }}"
         alt="{{ $alt }}" 
         class="{{ $class }} rounded-lg shadow-lg"
         loading="lazy"
