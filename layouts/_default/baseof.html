@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Tag Manager -->
-    {{ partial "google-tag-manager" . }}
+    {{ partialCached "google-tag-manager" . }}
 
     <!-- Google Analytics -->
-    {{ partial "google-analytics" . }}
+    {{ partialCached "google-analytics" . }}
 
     <!-- Title -->
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
@@ -99,7 +99,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
     <div class="fixed top-0 left-0 right-0 z-50">
-        {{ partial "header" . }}
+        {{ partialCached "header" . }}
     </div>
 
     <!-- Main Content -->
@@ -108,10 +108,10 @@
     </div>
 
     <!-- Footer -->
-    {{ partial "footer" . }}
+    {{ partialCached "footer" . }}
 
     <!-- Consent Management Banner -->
-    {{ partial "consent.html" . }}
+    {{ partialCached "consent.html" . }}
 
     <!-- Mobile Menu Script -->
     <script>
