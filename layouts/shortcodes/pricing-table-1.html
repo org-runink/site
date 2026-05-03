@@ -147,7 +147,7 @@
                         </ul>
 
                         <div class="w-full mt-auto">
-                            <a href="{{ .button.url }}"
+                            <a href="{{ .button.url | relURL }}"
                                 class="flex items-center justify-center w-full px-8 py-4 text-xs font-black italic uppercase tracking-widest rounded-xl transition-all duration-300 {{ $btnClasses }}">
                                 {{ .button.text }}
                             </a>

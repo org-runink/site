@@ -34,7 +34,7 @@
             </li>
             {{ end }}
         </ul>
-        <a href="{{ $buttonLink }}" class="btn-primary inline-block">{{ $buttonText }}</a>
+        <a href="{{ $buttonLink | relURL }}" class="btn-primary inline-block">{{ $buttonText }}</a>
     </div>
 
     {{ if ne $imagePosition "left" }}

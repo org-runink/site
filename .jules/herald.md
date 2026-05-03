@@ -10,3 +10,6 @@
 ## 2024-05-24 - Prevent Accidental Inclusion of Extracted Files during Hugo Local Testing
 **Learning:** When manually downloading and extracting the Hugo binary archive (`hugo_extended_..._linux-amd64.tar.gz`) for local build verification, `tar` extracts additional files like `README.md` and `LICENSE` alongside the binary. These can easily be staged and committed accidentally, polluting the project repository.
 **Action:** When manually extracting Hugo, explicitly delete all extracted files other than the `hugo` binary (e.g., `rm README.md LICENSE`) and avoid using blanket `git add .` to prevent unrelated files from entering the PR.
+## 2026-05-03 - Hugo Security Model and safeURL
+**Learning:** Hugo uses Go's `html/template` engine, which provides automatic, context-aware escaping for `href` and `src` attributes. The `| safeURL` filter is not a sanitizer but a mechanism to bypass this escaping. Using it on untrusted input like shortcode parameters actually introduces XSS vulnerabilities by disabling default protections.
+**Action:** Rely on Hugo's default escaping for user-controlled input in templates. Use `| relURL` or `| absURL` for best-practice URL handling without bypassing security. Always double-check shortcode parameter names for typos (like leading spaces) that prevent data from reaching the template.
