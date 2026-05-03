@@ -19,10 +19,7 @@
                         <button
                             class="flex items-center {{ with $headerConfig.menu.linkClass }}{{ . }}{{ else }}text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200{{ end }}">
                             {{ .Name }}
-                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
+                            {{ partial "icons" (dict "name" "chevron-down" "class" "ml-2 w-4 h-4") }}
                         </button>
                         <div class="absolute left-0 mt-2 {{ $dropdownConfig.width | default " w-72" }} opacity-0
                             invisible group-hover:opacity-100 group-hover:visible transition-all duration-200
@@ -71,10 +68,7 @@
                 <div class="md:hidden">
                     <label for="nav-toggle"
                         class="p-2 rounded-lg text-[#F5F1E8] hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-[#8B9A6E] focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                        {{ partial "icons" (dict "name" "menu" "class" "w-6 h-6") }}
                     </label>
                 </div>
             </nav>
