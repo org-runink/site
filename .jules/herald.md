@@ -7,3 +7,6 @@
 ## 2025-04-28 - Executive Summary for GEO
 **Learning:** Generative Engines prefer highly structured bulleted lists over generic paragraph summaries.
 **Action:** When updating articles, replace generic "TL;DR" sections with a structured `## Executive Summary: Key Takeaways` that uses bullet points directly addressing core concepts to improve chances of appearing in AI generated summaries.
+## 2024-05-24 - Prevent Accidental Inclusion of Extracted Files during Hugo Local Testing
+**Learning:** When manually downloading and extracting the Hugo binary archive (`hugo_extended_..._linux-amd64.tar.gz`) for local build verification, `tar` extracts additional files like `README.md` and `LICENSE` alongside the binary. These can easily be staged and committed accidentally, polluting the project repository.
+**Action:** When manually extracting Hugo, explicitly delete all extracted files other than the `hugo` binary (e.g., `rm README.md LICENSE`) and avoid using blanket `git add .` to prevent unrelated files from entering the PR.
