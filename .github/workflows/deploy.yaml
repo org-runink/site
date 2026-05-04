@@ -49,6 +49,15 @@ jobs:
           HUGO_ENV: production
         run: hugo -d docs
 
+      - name: Setup Quarkdown
+        run: curl -fsSL https://raw.githubusercontent.com/quarkdown-labs/get-quarkdown/refs/heads/main/install.sh | sudo env "PATH=$PATH" bash
+
+      - name: Build Quarkdown Reports
+        run: |
+          mkdir -p docs/reports
+          quarkdown c reports/obsydian-ai-target-brief.qd
+          mv reports/*.html docs/reports/ || true
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
