@@ -69,9 +69,17 @@
 
                     <!-- Hidden iframe to prevent page reload on Google Form submit -->
                     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-                        onload="if(submitted) {window.location='/';}"></iframe>
+                        onload="if(submitted) { document.getElementById('contact-form').style.display='none'; document.getElementById('success-message').style.display='block'; }"></iframe>
 
-                    <form class="space-y-6"
+                    <div id="success-message" style="display:none;" class="text-center py-12">
+                        <svg class="w-16 h-16 text-[#65793e] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h4 class="text-2xl font-bold text-white mb-2">Transmission Successful</h4>
+                        <p class="text-stone-400">Your secure message has been received. We will respond within 1 business day.</p>
+                    </div>
+
+                    <form id="contact-form" class="space-y-6"
                         action="https://docs.google.com/forms/d/e/1FAIpQLSfE6RANq4sVOs49LI71f6KZA-7d1Rm_ddb2dqQWgZF1dqfvXA/formResponse"
                         method="POST" target="hidden_iframe" onsubmit="submitted=true;">
 
