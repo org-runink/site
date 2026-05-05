@@ -13,3 +13,6 @@
 ## 2026-05-03 - Hugo Security Model and safeURL
 **Learning:** Hugo uses Go's `html/template` engine, which provides automatic, context-aware escaping for `href` and `src` attributes. The `| safeURL` filter is not a sanitizer but a mechanism to bypass this escaping. Using it on untrusted input like shortcode parameters actually introduces XSS vulnerabilities by disabling default protections.
 **Action:** Rely on Hugo's default escaping for user-controlled input in templates. Use `| relURL` or `| absURL` for best-practice URL handling without bypassing security. Always double-check shortcode parameter names for typos (like leading spaces) that prevent data from reaching the template.
+## 2024-05-18 - Emphasizing Citable Statistics for GEO
+**Learning:** Adding semantic `<strong>` tags around citable statistics and key insights helps AI generative engines easily extract and summarize information from the content.
+**Action:** Always inject semantic `<strong>` tags around key facts or statistics in the text to optimize for Generative Engines.
