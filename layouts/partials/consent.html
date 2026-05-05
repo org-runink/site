@@ -21,18 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const acceptBtn = document.getElementById('accept-cookies');
     const rejectBtn = document.getElementById('reject-cookies');
 
-    if (localStorage.getItem('cookieConsent')) {
-        consentBanner.style.display = 'none';
-    }
-
     acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
         consentBanner.style.display = 'none';
         // Initialize GA/GTM here if consent is required before loading
     });
 
     rejectBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'rejected');
         consentBanner.style.display = 'none';
     });
 });
