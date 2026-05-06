@@ -16,3 +16,6 @@
 ## 2024-05-18 - Emphasizing Citable Statistics for GEO
 **Learning:** Adding semantic `<strong>` tags around citable statistics and key insights helps AI generative engines easily extract and summarize information from the content.
 **Action:** Always inject semantic `<strong>` tags around key facts or statistics in the text to optimize for Generative Engines.
+## 2025-05-06 - GEO FinOps Optimization
+**Learning:** Restructuring technical IT content from informal TL;DR blocks to authoritative 'Executive Summary: Key Takeaways' sections with bolded metrics, combined with an FAQPage schema, drastically improves the probability of the content being cited in generative AI searches around Cloud ROI and FinOps.
+**Action:** For highly technical infrastructure/financial content, strictly use the Executive Summary and FAQPage format to bridge deep technical details with business ROI for LLMs.
