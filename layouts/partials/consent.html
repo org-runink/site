@@ -14,25 +14,33 @@
         </button>
     </div>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const consentBanner = document.getElementById('consent-banner');
     const acceptBtn = document.getElementById('accept-cookies');
     const rejectBtn = document.getElementById('reject-cookies');
 
-    if (localStorage.getItem('cookieConsent')) {
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    const ttl = 300 * 1000; // 300 seconds in milliseconds
+
+    if (consentTimestamp && (now - parseInt(consentTimestamp, 10) < ttl)) {
         consentBanner.style.display = 'none';
+    } else {
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
     }
 
     acceptBtn.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'accepted');
+        localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
         consentBanner.style.display = 'none';
         // Initialize GA/GTM here if consent is required before loading
     });
 
     rejectBtn.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'rejected');
+        localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
         consentBanner.style.display = 'none';
     });
 });
