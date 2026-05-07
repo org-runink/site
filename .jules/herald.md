@@ -19,3 +19,5 @@
 ## 2025-05-06 - GEO FinOps Optimization
 **Learning:** Restructuring technical IT content from informal TL;DR blocks to authoritative 'Executive Summary: Key Takeaways' sections with bolded metrics, combined with an FAQPage schema, drastically improves the probability of the content being cited in generative AI searches around Cloud ROI and FinOps.
 **Action:** For highly technical infrastructure/financial content, strictly use the Executive Summary and FAQPage format to bridge deep technical details with business ROI for LLMs.
+
+## 2024-05-07 - Hugo Temporary Build Workarounds **Learning:** When verifying local builds with a downloaded Hugo binary instead of `pnpm exec hugo`, adding `disablePostCSS = true` to `hugo.toml` allows the build to pass without PostCSS evaluation errors. **Action:** This is a temporary local workaround only and must NOT be committed to the repository, as it will break production styling.
