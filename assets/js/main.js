@@ -47,4 +47,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  const btns = document.querySelectorAll('.pitch-tab-btn');
+  const contents = document.querySelectorAll('.pitch-content');
+
+  if (btns.length > 0) {
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Reset all buttons
+            btns.forEach(b => {
+                b.classList.remove('active', 'border-orange-600', 'bg-[#161515]');
+                b.classList.add('border-stone-800', 'bg-[#161515]', 'hover:border-stone-700', 'hover:bg-[#1a1919]');
+                b.querySelector('h3').classList.remove('text-white');
+                b.querySelector('h3').classList.add('text-stone-500');
+            });
+
+            // Set active button
+            btn.classList.add('active', 'border-orange-600', 'bg-[#161515]');
+            btn.classList.remove('border-stone-800', 'hover:border-stone-700', 'hover:bg-[#1a1919]');
+            btn.querySelector('h3').classList.add('text-white');
+            btn.querySelector('h3').classList.remove('text-stone-500');
+
+            // Hide all content
+            contents.forEach(c => c.classList.add('hidden'));
+            contents.forEach(c => c.classList.remove('active'));
+
+            // Show target content
+            const targetId = btn.getAttribute('data-target');
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+                // Small delay for fade in effect if added in CSS
+                setTimeout(() => targetContent.classList.add('active'), 50);
+            }
+        });
+    });
+  }
 });
