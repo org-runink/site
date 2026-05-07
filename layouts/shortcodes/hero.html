@@ -49,12 +49,12 @@
                 </div>
 
                 <h1 class="{{ $headlineSize }} font-bold leading-normal text-white tracking-normal drop-shadow-xl">
-                    {{ $headline | safeHTML }}
+                    {{ $headline | markdownify }}
                 </h1>
 
                 <p
                     class="{{ $subheadSize }} text-[#F5F1E8] leading-relaxed drop-shadow-md border-l-4 border-[#8B9A6E] pl-6">
-                    {{ $sub_headline | safeHTML }}
+                    {{ $sub_headline | markdownify }}
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-5 pt-4">
