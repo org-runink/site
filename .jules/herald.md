@@ -21,3 +21,6 @@
 **Action:** For highly technical infrastructure/financial content, strictly use the Executive Summary and FAQPage format to bridge deep technical details with business ROI for LLMs.
 
 ## 2024-05-07 - Hugo Temporary Build Workarounds **Learning:** When verifying local builds with a downloaded Hugo binary instead of `pnpm exec hugo`, adding `disablePostCSS = true` to `hugo.toml` allows the build to pass without PostCSS evaluation errors. **Action:** This is a temporary local workaround only and must NOT be committed to the repository, as it will break production styling.
+## 2026-05-07 - Weaver Performance Optimization
+**Learning:** Continuous `setInterval` animation loops in Javascript continue to execute and consume CPU cycles even when the user is tabbed out or the target element is far off-screen.
+**Action:** Replace `setInterval` logic with `requestAnimationFrame` and an `IntersectionObserver` to automatically pause animation loops when elements are not visible, improving client-side performance and battery life.
