@@ -60,12 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(parallaxContainer);
   }
 
-  // Use Cases Carousel Initialization
-  const carousel = document.getElementById('use-cases-scroll-container');
-  if (carousel) {
-      let isHovered = false;
-      carousel.addEventListener('mouseenter', () => isHovered = true);
-      carousel.addEventListener('mouseleave', () => isHovered = false);
+  const btns = document.querySelectorAll('.pitch-tab-btn');
+  const contents = document.querySelectorAll('.pitch-content');
 
       let carouselInterval;
 

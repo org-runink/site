@@ -65,7 +65,5 @@
     {{ end }}
 
     <!-- Tags Cloud -->
-    {{ if .Site.Params.blog.sidebar.tags.enable }}
-        {{ partialCached "sidebar/tags.html" . }}
-    {{ end }}
+    {{ partialCached "components/sidebar-tags.html" . }}
 </div>
