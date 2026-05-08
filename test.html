@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<body>
+<a id="test1" href="{{ "javascript:alert(1)" }}">test1</a>
+<a id="test2" href="{{ "javascript:alert(1)" | safeURL }}">test2</a>
+<a id="test3" href="{{ "javascript:alert(1)" | relURL }}">test3</a>
+</body>
+</html>
