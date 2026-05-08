@@ -28,7 +28,7 @@
             "Recent Articles" }}</h3>
         <div class="space-y-4 relative z-10">
             {{ $recentCount := .Site.Params.blog.sidebar.recent.count | default 5 }}
-            {{ range first $recentCount (where .Site.RegularPages "Type" "blog") }}
+            {{ range first $recentCount (.Site.GetPage "blog").RegularPages }}
             <div class="group">
                 <a href="{{ .RelPermalink }}" class="block">
                     {{ with .Params.featured_image }}
