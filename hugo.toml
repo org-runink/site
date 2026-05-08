@@ -25,6 +25,7 @@ paginate = 6
 paginatePath = "page"
 
 [params]
+  disablePostCSS = true
   description = ""
   logo = "/images/logo.png"
   googleAnalytics ='G-SEECKDWZNJ'
@@ -184,9 +185,3 @@ paginatePath = "page"
   [[menu.main]]
     name = "Pricing"
     url = "/pricing"
-    weight = 5
-
-  [[menu.main]]
-    name = "Talk to us"
-    url = "/#contact"
-    weight = 6
