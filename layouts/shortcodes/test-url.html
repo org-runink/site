@@ -1,0 +1,3 @@
+{{ $url := .Get 0 }}
+{{ $parsed := urls.Parse $url }}
+Scheme: {{ $parsed.Scheme }}
