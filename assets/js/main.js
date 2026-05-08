@@ -39,84 +39,65 @@ document.addEventListener('DOMContentLoaded', () => {
       ticking = false;
     }
 
-    window.addEventListener('scroll', () => {
+    const scrollHandler = () => {
       lastScrollY = window.scrollY;
       if (!ticking) {
         window.requestAnimationFrame(updateParallax);
         ticking = true;
       }
-    });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', scrollHandler, { passive: true });
+        } else {
+          window.removeEventListener('scroll', scrollHandler);
+        }
+      });
+    }, { rootMargin: '0px', threshold: 0.0 });
+
+    observer.observe(parallaxContainer);
   }
 
-<<<<<<< 🧹-refactor-painkiller-tabs-js-3418265174173478458
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
 
-  if (btns.length > 0) {
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Reset all buttons
-            btns.forEach(b => {
-                b.classList.remove('active', 'border-orange-600', 'bg-[#161515]');
-                b.classList.add('border-stone-800', 'bg-[#161515]', 'hover:border-stone-700', 'hover:bg-[#1a1919]');
-                b.querySelector('h3').classList.remove('text-white');
-                b.querySelector('h3').classList.add('text-stone-500');
-            });
+      let carouselInterval;
 
-            // Set active button
-            btn.classList.add('active', 'border-orange-600', 'bg-[#161515]');
-            btn.classList.remove('border-stone-800', 'hover:border-stone-700', 'hover:bg-[#1a1919]');
-            btn.querySelector('h3').classList.add('text-white');
-            btn.querySelector('h3').classList.remove('text-stone-500');
-
-            // Hide all content
-            contents.forEach(c => c.classList.add('hidden'));
-            contents.forEach(c => c.classList.remove('active'));
-
-            // Show target content
-            const targetId = btn.getAttribute('data-target');
-            const targetContent = document.getElementById(targetId);
-            if (targetContent) {
-                targetContent.classList.remove('hidden');
-                // Small delay for fade in effect if added in CSS
-                setTimeout(() => targetContent.classList.add('active'), 50);
-            }
-        });
-    });
-=======
-  // Parallax Steps Observer
-  const stepContainers = document.querySelectorAll('.step-container');
-  if (stepContainers.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const steps = entry.target.querySelectorAll('.reveal-step');
-        if (entry.isIntersecting) {
-          steps.forEach((step, idx) => {
-            // Delay each step by 200ms dynamically
-            step.style.transitionDelay = `${idx * 200}ms`;
-            step.classList.remove('opacity-20', 'translate-y-4');
-            step.classList.add('opacity-100', 'translate-y-0');
-          });
-        } else {
-          // Reset when scrolled out, so it triggers next time
-          steps.forEach(step => {
-            step.style.transitionDelay = '0ms'; // reset delay immediately so hide is instant
-            step.classList.add('opacity-20', 'translate-y-4');
-            step.classList.remove('opacity-100', 'translate-y-0');
-          });
+      const startCarousel = () => {
+        if (!carouselInterval) {
+          carouselInterval = setInterval(() => {
+              if (!isHovered) {
+                  // Determine if we've reached the end
+                  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                      carousel.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
+                  } else {
+                      // Scroll right by the width of one card + gap roughly
+                      carousel.scrollBy({ left: 340, behavior: 'smooth' });
+                  }
+              }
+          }, 3000); // 3 seconds interval
         }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: "0px 0px -15% 0px"
-    });
+      };
 
-    // Delay observer mount to allow layout to settle
-    setTimeout(() => {
-      stepContainers.forEach(container => {
-        observer.observe(container);
-      });
-    }, 100);
->>>>>>> main
+      const stopCarousel = () => {
+        if (carouselInterval) {
+          clearInterval(carouselInterval);
+          carouselInterval = null;
+        }
+      };
+
+      const carouselObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCarousel();
+          } else {
+            stopCarousel();
+          }
+        });
+      }, { rootMargin: '0px', threshold: 0.0 });
+
+      carouselObserver.observe(carousel);
   }
 });
