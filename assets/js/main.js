@@ -39,13 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
       ticking = false;
     }
 
-    window.addEventListener('scroll', () => {
+    const scrollHandler = () => {
       lastScrollY = window.scrollY;
       if (!ticking) {
         window.requestAnimationFrame(updateParallax);
         ticking = true;
       }
-    });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', scrollHandler, { passive: true });
+        } else {
+          window.removeEventListener('scroll', scrollHandler);
+        }
+      });
+    }, { rootMargin: '0px', threshold: 0.0 });
+
+    observer.observe(parallaxContainer);
   }
 
   // Use Cases Carousel Initialization
@@ -55,16 +67,41 @@ document.addEventListener('DOMContentLoaded', () => {
       carousel.addEventListener('mouseenter', () => isHovered = true);
       carousel.addEventListener('mouseleave', () => isHovered = false);
 
-      setInterval(() => {
-          if (!isHovered) {
-              // Determine if we've reached the end
-              if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-                  carousel.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
-              } else {
-                  // Scroll right by the width of one card + gap roughly
-                  carousel.scrollBy({ left: 340, behavior: 'smooth' });
+      let carouselInterval;
+
+      const startCarousel = () => {
+        if (!carouselInterval) {
+          carouselInterval = setInterval(() => {
+              if (!isHovered) {
+                  // Determine if we've reached the end
+                  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                      carousel.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
+                  } else {
+                      // Scroll right by the width of one card + gap roughly
+                      carousel.scrollBy({ left: 340, behavior: 'smooth' });
+                  }
               }
+          }, 3000); // 3 seconds interval
+        }
+      };
+
+      const stopCarousel = () => {
+        if (carouselInterval) {
+          clearInterval(carouselInterval);
+          carouselInterval = null;
+        }
+      };
+
+      const carouselObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCarousel();
+          } else {
+            stopCarousel();
           }
-      }, 3000); // 3 seconds interval
+        });
+      }, { rootMargin: '0px', threshold: 0.0 });
+
+      carouselObserver.observe(carousel);
   }
 });
