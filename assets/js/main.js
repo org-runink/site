@@ -47,4 +47,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Use Cases Carousel Initialization
+  const carousel = document.getElementById('use-cases-scroll-container');
+  if (carousel) {
+      let isHovered = false;
+      carousel.addEventListener('mouseenter', () => isHovered = true);
+      carousel.addEventListener('mouseleave', () => isHovered = false);
+
+      setInterval(() => {
+          if (!isHovered) {
+              // Determine if we've reached the end
+              if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                  carousel.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
+              } else {
+                  // Scroll right by the width of one card + gap roughly
+                  carousel.scrollBy({ left: 340, behavior: 'smooth' });
+              }
+          }
+      }, 3000); // 3 seconds interval
+  }
 });
