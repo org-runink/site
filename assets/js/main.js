@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+<<<<<<< 🧹-refactor-painkiller-tabs-js-3418265174173478458
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
 
@@ -82,5 +83,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+=======
+  // Parallax Steps Observer
+  const stepContainers = document.querySelectorAll('.step-container');
+  if (stepContainers.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const steps = entry.target.querySelectorAll('.reveal-step');
+        if (entry.isIntersecting) {
+          steps.forEach((step, idx) => {
+            // Delay each step by 200ms dynamically
+            step.style.transitionDelay = `${idx * 200}ms`;
+            step.classList.remove('opacity-20', 'translate-y-4');
+            step.classList.add('opacity-100', 'translate-y-0');
+          });
+        } else {
+          // Reset when scrolled out, so it triggers next time
+          steps.forEach(step => {
+            step.style.transitionDelay = '0ms'; // reset delay immediately so hide is instant
+            step.classList.add('opacity-20', 'translate-y-4');
+            step.classList.remove('opacity-100', 'translate-y-0');
+          });
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -15% 0px"
+    });
+
+    // Delay observer mount to allow layout to settle
+    setTimeout(() => {
+      stepContainers.forEach(container => {
+        observer.observe(container);
+      });
+    }, 100);
+>>>>>>> main
   }
 });

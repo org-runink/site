@@ -20,6 +20,18 @@
   .rounded-lg {
     border-radius: 2rem;
   }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+  }
+
 }
 
 @layer components {
@@ -184,4 +196,20 @@
   .table-of-contents ul {
     @apply list-none ml-4 space-y-2;
   }
+}
+
+@keyframes cta-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(234, 88, 12, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(234, 88, 12, 0);
+  }
+}
+
+.cta-pulse {
+  animation: cta-pulse 2s infinite;
 }
