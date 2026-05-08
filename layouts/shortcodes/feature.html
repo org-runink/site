@@ -21,7 +21,7 @@
         <div class="badge badge-neon inline-block px-4 py-2 rounded-full font-medium"
             style="background-color: {{ $badgeColor }}; box-shadow: 0 0 15px {{ $badgeColor }}80;">{{ $badge }}</div>
         <h3 class="text-2xl md:text-3xl font-bold text-white">{{ $title }}</h3>
-        <p class="text-lg text-[#D9CDB8]">{{ $description | safeHTML }}</p>
+        <p class="text-lg text-[#D9CDB8]">{{ $description | markdownify }}</p>
         <ul class="space-y-4">
             {{ range $features }}
             <li class="flex items-center space-x-3">
