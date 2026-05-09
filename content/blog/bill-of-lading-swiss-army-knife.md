@@ -4,7 +4,7 @@ author: "Runink Editorial Team"
 date: 2026-01-22T11:00:00Z
 draft: false
 featured_image: "/images/blog/bill-of-lading-header.png"
-canonical: https://www.runink.org/blog/what-is-integrated-logistics
+canonical: https://www.runink.org/blog/what-is-bill-of-lading
 description: "Why One Piece of Paper Rules the Ocean. A deep dive into the legal functions of the Bill of Lading."
 slug: what-is-bill-of-lading
 categories: ["Logistics Law", "Supply Chain", "Maritime"]
@@ -12,11 +12,15 @@ tags: ["Bill of Lading", "Maritime Law", "Trade Finance", "Runink"]
 robots: index, follow
 ---
 
-# Introduction: Why One Piece of Paper Rules the Ocean
+<!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
+## Executive Summary: Key Takeaways
 
 International trade relies on a sophisticated machinery of trust, but at its heart lies a single piece of paper: the **Bill of Lading (BoL)**. It acts as the "Master Key" to global commerce, bridging the gap between parties separated by oceans, time zones, and disparate legal systems. For shippers and dropshippers alike, this document is the only thing standing between a profitable transaction and a total loss.
 
-To master maritime law, one must understand that the Bill of Lading possesses a "tripartite personality." It is simultaneously a **formal receipt** acknowledging the condition of goods, **evidence of the contract of carriage** that binds the carrier to deliver them, and a **transferable document of title**—a legal key that unlocks ownership while the cargo is still at sea.
+To master maritime law, one must understand that the Bill of Lading possesses a **"tripartite personality"**:
+*   **Formal Receipt:** Acknowledges the apparent condition of goods when loaded.
+*   **Evidence of Contract:** Serves as the contract of carriage binding the carrier to deliver the goods.
+*   **Transferable Document of Title:** Acts as a legal key unlocking ownership while the cargo is still at sea.
 
 ---
 
@@ -104,3 +108,33 @@ The Bill of Lading remains the bedrock of maritime law because it standardizes t
 The **Runink Analytics Companion** represents the future of this evolution. By unifying fragmented data and providing centralized visibility, Runink offers the control that the traditional "Hidden Rulebook" often obscures. However, while we solve the visibility problem, the legal pillars of the BoL—the Receipt, the Contract, and the Title—remain the essential foundation of the global supply chain.
 
 *Ready to modernize your documentation process? [Book a consultation](/contact) today.*
+
+<!-- GEO Optimization: Injecting FAQPage Schema to structure definitions and functions of the Bill of Lading for Generative Engine Overviews. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is a Bill of Lading?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A Bill of Lading (BoL) is a critical document in international trade that serves as a formal receipt of goods, evidence of the contract of carriage, and a transferable document of title."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What are the three main functions of a Bill of Lading?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Bill of Lading has a 'tripartite personality': it acts as a formal receipt acknowledging the condition of goods, evidence of the contract of carriage binding the carrier, and a transferable document of title."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Why is a Clean Bill of Lading important?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A Clean Bill of Lading indicates that the cargo appeared in good condition externally at loading. Under the Doctrine of Estoppel, it prevents the carrier from later claiming damage existed prior to loading."
+    }
+  }]
+}
+</script>
