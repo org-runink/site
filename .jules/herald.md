@@ -24,3 +24,5 @@
 ## 2026-05-07 - Weaver Performance Optimization
 **Learning:** Continuous `setInterval` animation loops in Javascript continue to execute and consume CPU cycles even when the user is tabbed out or the target element is far off-screen.
 **Action:** Replace `setInterval` logic with `requestAnimationFrame` and an `IntersectionObserver` to automatically pause animation loops when elements are not visible, improving client-side performance and battery life.
+
+## 2026-05-09 - SEO Optimization: Canonical URL Mismatch and Schema **Learning:** Existing content templates might copy frontmatter verbatim (including canonical URLs) which severely impacts SEO ranking. **Action:** Always audit canonical URLs when working on existing pages to ensure they match the page's actual slug.
