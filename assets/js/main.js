@@ -63,6 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
 
+  const carousel = document.getElementById("partner-carousel");
+  if (carousel) {
+      let isHovered = false;
+      carousel.addEventListener("mouseenter", () => isHovered = true);
+      carousel.addEventListener("mouseleave", () => isHovered = false);
+
       let carouselInterval;
 
       const startCarousel = () => {
