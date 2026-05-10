@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial reveal
     layerArray.forEach((layer, index) => {
+        // Cache depth for performance optimization
+        layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
+
         const animation = layer.animate([
             { opacity: 0, transform: 'scale(1.2)' },
             { opacity: 1, transform: 'scale(1)' }
@@ -28,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateParallax() {
       layerArray.forEach(layer => {
-        const depth = parseFloat(layer.getAttribute('data-depth')) || 0;
+        const depth = layer.parallaxDepth;
         const movement = -(lastScrollY * depth * 0.5);
         const scale = 1 + (lastScrollY * 0.0002);
 
