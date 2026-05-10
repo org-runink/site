@@ -1,15 +1,4 @@
-**What:**
-- Updated the `canonical` URL in the frontmatter of `content/blog/bill-of-lading-swiss-army-knife.md` to properly match its slug.
-- Replaced the generic `# Introduction` paragraph with a highly structured `## Executive Summary: Key Takeaways` using bolding and bullet points.
-- Appended a `FAQPage` JSON-LD schema block to the bottom of the article.
-- Logged the learning regarding canonical URL copy-pasting to `.jules/herald.md`.
-- Fixed a syntax error in `assets/js/main.js` from upstream merge.
-
-**Why:**
-The article required Generative Engine Optimization (GEO). The introduction was too dense for easy LLM extraction, lacking clear structure. The canonical URL was incorrect due to a template copy-paste error, diluting its SEO equity. Adding FAQ schema natively improves rich-snippet visibility in Google search and conversational AI engines.
-
-**Impact:**
-The structure bridges the gap between the technical reality of maritime law and immediate executive clarity. LLMs can now perfectly extract the "tripartite personality" of a Bill of Lading.
-
-**Measurement:**
-Local Lighthouse SEO audit verified the page now scores 100.
+**What**: Appended FAQPage Schema to telemetry-data-reconciliation-domain-modeling.md
+**Why**: Addresses discoverability gaps for generative search by structuring core questions about telemetry-aware data reconciliation.
+**Impact**: Improves the article's likelihood of being cited in generative AI engine overviews and increases domain authority for data engineering search queries.
+**Measurement**: Validated a 100 Lighthouse SEO score and confirmed correct JSON-LD structure.
