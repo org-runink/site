@@ -89,7 +89,21 @@ spacing:
     20: "5rem"
     24: "6rem"
     32: "8rem"
+motion:
+  durations:
+    fast: "200ms"
+    normal: "300ms"
+    slow: "500ms"
+    very_slow: "700ms"
+    snail: "1000ms"
+  easings:
+    default: "cubic-bezier(0.4, 0, 0.2, 1)"
+    in: "cubic-bezier(0.4, 0, 1, 1)"
+    out: "cubic-bezier(0, 0, 0.2, 1)"
+    in_out: "cubic-bezier(0.4, 0, 0.2, 1)"
 radii:
+  none: "0"
+  sm: "0.125rem"
   md: "0.375rem"
   lg: "0.5rem"
   xl: "0.75rem"
@@ -98,6 +112,13 @@ radii:
   full: "9999px"
   custom_card: "2rem"
   custom_large: "2.5rem"
+elevation:
+  z_index:
+    hide: "-10"
+    base: "0"
+    content: "10"
+    overlay: "20"
+    modal: "50"
 shadows:
   sm: "0 1px 2px 0 rgb(0 0 0 / 0.05)"
   md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)"

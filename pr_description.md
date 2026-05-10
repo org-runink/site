@@ -1,4 +1,4 @@
-**What**: Appended FAQPage Schema to telemetry-data-reconciliation-domain-modeling.md
-**Why**: Addresses discoverability gaps for generative search by structuring core questions about telemetry-aware data reconciliation.
-**Impact**: Improves the article's likelihood of being cited in generative AI engine overviews and increases domain authority for data engineering search queries.
-**Measurement**: Validated a 100 Lighthouse SEO score and confirmed correct JSON-LD structure.
+**What**: Updated `DESIGN.md` to include comprehensive design tokens for `motion`, `radii`, and `elevation`.
+**Why**: Ensures the design system documentation correctly reflects the implemented visual identity, particularly the interaction patterns and layer depth.
+**Impact**: Provides a complete, self-contained reference for developers and designers to maintain visual consistency across the project.
+**Measurement**: Verified valid YAML formatting and successful Hugo build.
