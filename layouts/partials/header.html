@@ -17,7 +17,7 @@
                     {{ if .Params.has_submenu }}
                     <div class="relative group">
                         <button
-                            class="flex items-center {{ with $headerConfig.menu.linkClass }}{{ . }}{{ else }}text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200{{ end }}">
+                            class="flex items-center {{ with $headerConfig.menu.linkClass }}{{ . }}{{ else }}text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200 py-4 px-2{{ end }}">
                             {{ .Name }}
                             {{ partial "icons" (dict "name" "chevron-down" "class" "ml-2 w-4 h-4") }}
                         </button>
@@ -39,7 +39,7 @@
                     </div>
                     {{ else }}
                     <a href="{{ .URL }}"
-                        class="{{ with $headerConfig.menu.linkClass }}{{ . }}{{ else }}text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200{{ end }}">{{
+                        class="{{ with $headerConfig.menu.linkClass }}{{ . }}{{ else }}text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200 py-4 px-2 inline-block{{ end }}">{{
                         .Name }}</a>
                     {{ end }}
                     {{ end }}
