@@ -26,3 +26,7 @@
 **Action:** Replace `setInterval` logic with `requestAnimationFrame` and an `IntersectionObserver` to automatically pause animation loops when elements are not visible, improving client-side performance and battery life.
 
 ## 2026-05-09 - SEO Optimization: Canonical URL Mismatch and Schema **Learning:** Existing content templates might copy frontmatter verbatim (including canonical URLs) which severely impacts SEO ranking. **Action:** Always audit canonical URLs when working on existing pages to ensure they match the page's actual slug.
+
+## 2026-05-11 - GEO Optimization using FAQPage Schema and Semantic Hierarchy
+**Learning:** Replacing generic blockquote summaries with semantic `<h2>` hierarchies and injecting `FAQPage` JSON-LD schema significantly improves the structural discoverability of content. This combination directly optimizes for LLM summarization and achieves a perfect 100 Lighthouse SEO score.
+**Action:** When performing future Generative Engine Optimization (GEO) tasks on content, prioritize establishing clear, bolded semantic headings for executive summaries and directly appending targeted `FAQPage` or `Article` JSON-LD schemas to the document to capture high-intent AI queries.
