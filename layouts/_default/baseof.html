@@ -68,15 +68,17 @@
         rel="stylesheet" />
 
     <!-- Main CSS -->
+    {{ if .Site.Params.disablePostCSS }}
+    <link rel="stylesheet" href="/css/style.css?v={{ now.Unix }}">
+    {{ else }}
     {{ $css := resources.Get "css/main.css" }}
-    {{ if not .Site.Params.disablePostCSS }}
-      {{ $css = $css | css.PostCSS }}
-    {{ end }}
+    {{ $css = $css | css.PostCSS }}
     {{ if hugo.IsProduction }}
     {{ $css = $css | minify | fingerprint | resources.PostProcess }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     {{ else }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}?v={{ now.Unix }}">
+    {{ end }}
     {{ end }}
 
     <!-- Additional Meta Tags from Front Matter -->

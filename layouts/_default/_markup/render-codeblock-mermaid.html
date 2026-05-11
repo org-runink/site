@@ -1,57 +1,139 @@
-{{- $scratch := .Page.Scratch -}}
-{{- if not ($scratch.Get "mermaidInit") -}}
 <style>
-    .mermaid {
-        width: 100%;
-        height: 600px;
-        border-radius: 0.75rem;
-        overflow: hidden;
-        background-color: #0c0a09;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        position: relative;
-        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-        margin-bottom: 2rem;
-    }
+  .mermaid-wrapper {
+    width: 100%;
+    height: 600px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #0c0a09;
+    border: 1px solid rgba(234, 88, 12, 0.2);
+    position: relative;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(234, 88, 12, 0.05);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .mermaid-wrapper:hover {
+    border-color: rgba(234, 88, 12, 0.4);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 30px rgba(234, 88, 12, 0.1);
+  }
 
-    .mermaid svg {
-        width: 100% !important;
-        height: 100% !important;
-        max-width: none !important;
-        cursor: grab;
-    }
+  .mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .mermaid svg:active {
-        cursor: grabbing;
+  .mermaid svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    cursor: grab;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+  }
+
+  .mermaid svg:active {
+    cursor: grabbing;
+  }
+
+  /* Interactive Neon Nodes */
+  .mermaid rect, .mermaid circle, .mermaid polygon {
+    transition: all 0.3s ease-in-out;
+  }
+  .mermaid g:hover > rect, 
+  .mermaid g:hover > circle, 
+  .mermaid g:hover > polygon {
+    filter: drop-shadow(0 0 15px rgba(234, 88, 12, 0.8)) brightness(1.2);
+  }
+
+  /* Animated Relationship Arrows */
+  .mermaid .edgePath path, .mermaid .messageLine0, .mermaid .messageLine1 {
+    stroke-dasharray: 6, 6;
+    animation: flowData 15s linear infinite;
+  }
+  @keyframes flowData {
+    to {
+      stroke-dashoffset: -1000;
     }
+  }
 </style>
 <script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: false, securityLevel: "loose", theme: "dark" });
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  
+  if (!window.mermaidInitialized) {
+    window.mermaidInitialized = true;
+    
+    mermaid.initialize({ 
+      startOnLoad: false, 
+      securityLevel: "loose", 
+      theme: "base",
+      themeVariables: {
+        fontFamily: "Inter, system-ui, sans-serif",
+        primaryColor: "#1b1919",
+        primaryTextColor: "#ffffff",
+        primaryBorderColor: "#ea580c",
+        lineColor: "#ea580c",
+        secondaryColor: "#1f1d1b",
+        tertiaryColor: "#0c0a09",
+        clusterBkg: "transparent",
+        clusterBorder: "#65793e",
+        titleColor: "#ea580c",
+        edgeLabelBackground: "#1b1919",
+        nodeBorder: "#ea580c",
+        mainBkg: "#1b1919",
+        nodeTextColor: "#ffffff"
+      },
+      c4: {
+        personBgColor: "#0c0a09",
+        personBorderColor: "#ea580c",
+        systemBgColor: "#ea580c",
+        systemBorderColor: "#ca4708",
+        systemExtBgColor: "#1b1919",
+        systemExtBorderColor: "#65793e",
+        boundaryBgColor: "transparent"
+      }
+    });
 
-    document.addEventListener("DOMContentLoaded", async () => {
+    const initMermaid = async () => {
+      try {
         await mermaid.run({
-            querySelector: '.mermaid'
+          querySelector: '.mermaid'
         });
 
         const script = document.createElement('script');
         script.src = "https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js";
         script.onload = () => {
-            document.querySelectorAll('.mermaid svg').forEach(svg => {
-                svgPanZoom(svg, {
-                    zoomEnabled: true,
-                    controlIconsEnabled: true,
-                    fit: true,
-                    center: true,
-                    minZoom: 0.1,
-                    maxZoom: 10
-                });
-            });
+          document.querySelectorAll('.mermaid svg').forEach(svg => {
+            if (!svg.classList.contains('pan-zoom-initialized')) {
+              svg.classList.add('pan-zoom-initialized');
+              svgPanZoom(svg, {
+                zoomEnabled: true,
+                controlIconsEnabled: true,
+                fit: true,
+                center: true,
+                minZoom: 0.1,
+                maxZoom: 10
+              });
+            }
+          });
         };
         document.head.appendChild(script);
-    });
+      } catch (error) {
+        console.error("Mermaid initialization failed:", error);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMermaid);
+    } else {
+      initMermaid();
+    }
+  }
 </script>
-{{- $scratch.Set "mermaidInit" true -}}
-{{- end -}}
-<pre class="mermaid">
-{{ .Inner | safeHTML }}
-</pre>
+
+<div class="mermaid-wrapper">
+  <div class="mermaid">
+    {{- .Inner | safeHTML -}}
+  </div>
+</div>

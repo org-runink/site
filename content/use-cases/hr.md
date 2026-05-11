@@ -30,8 +30,8 @@ badgeColor: "#ec4899"
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
              <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">The Hovering Guide</h3>
              
-             <!-- Mermaid Diagram -->
-             <div class="mermaid">
+             <!-- Custom Stylish Diagram -->
+             {{< mermaid >}}
              C4Context
                 title System Context: HR Twin
                 
@@ -48,7 +48,7 @@ badgeColor: "#ec4899"
                 Rel(agent, directory, "Queries Persona Mapping")
                 Rel(agent, wiki, "Retrieves relevant docs")
                 Rel(agent, employee, "Provides Name, Email, and Doc Link")
-             </div>
+             {{< /mermaid >}}
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Contextual help, exactly when and where you need it.</p>
         </div>
@@ -80,32 +80,3 @@ badgeColor: "#ec4899"
     </div>
 </div>
 {{< /section-container >}}
-<style>
-  .mermaid {
-    width: 100%;
-    height: 400px;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    background-color: #0c0a09;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    margin-bottom: 2rem;
-  }
-  .mermaid svg {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    cursor: grab;
-  }
-</style>
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: false, theme: 'dark' });
-
-  document.addEventListener("DOMContentLoaded", async () => {
-      await mermaid.run({
-        querySelector: '.mermaid'
-      });
-  });
-</script>

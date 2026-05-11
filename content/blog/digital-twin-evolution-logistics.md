@@ -55,7 +55,7 @@ For example, AI-driven route optimization isn't just about faster delivery or fu
 
 Below is a system context diagram illustrating how an Intelligent Twin bridges these personas and systems:
 
-<div class="mermaid">
+{{< mermaid >}}
 C4Context
     title System Context: Logistics Intelligent Twin Architecture
 
@@ -75,7 +75,7 @@ C4Context
     Rel(intelligent_twin, carrier, "Dispatches autonomous route optimizations")
     Rel(intelligent_twin, consignee, "Provides predictive SLA & proactive delay mitigation")
     Rel(intelligent_twin, erp, "Executes system updates autonomously")
-</div>
+{{< /mermaid >}}
 
 ---
 
@@ -109,7 +109,7 @@ Moving past static, rule-based inventory allocation, our Fulfilment Twin orchest
 
 Consider the Unified Modeling Language (UML) sequence of how the Fulfilment Agent autonomously handles a disruption:
 
-<div class="mermaid">
+{{< mermaid >}}
 sequenceDiagram
     participant Shopify as E-Commerce Frontend
     participant Twin as Fulfilment Intelligent Twin
@@ -126,7 +126,7 @@ sequenceDiagram
     Backup-->>Twin: 7. SUCCESS: Inventory secured.
     Twin->>Shopify: 8. Update shipping ETA seamlessly for customer.
     Twin->>ERP: 9. Record margin delta for internal audit.
-</div>
+{{< /mermaid >}}
 
 This ensures that a promise made on your storefront is fulfilled by the most optimal, secondary supplier, completely invisibly to the consumer.
 
@@ -152,30 +152,6 @@ Supply chains are ultimately run by people, and organizational friction slows do
 
 The logistics networks of the 2010s were built on the premise that humans needed better visibility. The networks of the late 2020s realize that visibility is simply the prerequisite for autonomy. By transitioning from simple digital representations to agentic, Intelligent Twins, ambitious supply chains can finally stop reacting to the past and start autonomously orchestrating the future. With Runink, that future is deploying today.
 
-<style>
-  .mermaid {
-    width: 100%;
-    margin: 2rem 0;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    background-color: #0c0a09;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-  }
-</style>
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: false, theme: 'dark' });
-
-  document.addEventListener("DOMContentLoaded", async () => {
-      await mermaid.run({
-        querySelector: '.mermaid'
-      });
-  });
-</script>
 
 <!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail logistics AI queries regarding digital twin maturity and logistics sustainability for Generative Engines. -->
 <script type="application/ld+json">

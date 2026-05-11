@@ -22,7 +22,7 @@ Meanwhile, the domain models themselves usually encode business concepts but not
 
 Stakeholders feel the pain everywhere, almost daily now. Finance must certify revenue numbers while fielding ad hoc adjustments from sales. Product ops relies on telemetry to understand feature adoption yet distrusts the reconciled metrics feeding OKRs. Data engineers burn sprint cycles patching lineage DAGs because every reconciliation break is treated as an urgent defect, even when the mismatch represents expected latency from external partners. The business impact compounds: slower closes, delayed customer communications, and compliance risk when auditors probe the gaps between systems of record. All because our automation ignores the telemetry breadcrumb trail that already describes system intent.
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     Sources[Disparate Data Sources]
     Observability[Observability Tools]
@@ -34,7 +34,7 @@ flowchart TD
     Observability -->|Unlinked Signals| Analysts
     DomainModel -->|Unclear Root Cause| Analysts
     Analysts -->|Ad hoc Fixes| Outcomes
-```
+{{< /mermaid >}}
 
 ## Proposed Approach Introduction
 Embedding telemetry directly into reconciliation domain models starts with inventorying every signal already streaming through your stack. Instead of treating observability as a separate concern, map ingestion timestamps, schema evolution events, anomaly scores, and downstream consumer acknowledgements to the same entities the domain model governs. For a payments model, that means linking bank settlement APIs, message broker offsets, and ledger posting results to each transaction aggregate. The goal is to describe not only the data attributes but also the machine-observable behaviors showing how those attributes moved, transformed, and settled. Telemetry becomes the evidence layer that wraps each business rule.
@@ -43,7 +43,7 @@ Next, codify telemetry-informed expectations as part of the domain contract. A m
 
 Finally, expose the enriched model through self-service APIs and notebooks so analytics teams can collaborate on adjustments without hunting through log silos. Provide a telemetry catalog view that surfaces lineage graphs, health scores, and playbooks directly from the domain model repository. Pair it with simulation harnesses that replay historical telemetry patterns to test new reconciliation logic before enabling it in production. This approach gives data professionals a shared workspace where business logic, telemetry evidence, and automated remediation steps live together. The automation then evolves with the ecosystem instead of calcifying as a brittle batch of scripts managed by one hero engineer.
 
-```mermaid
+{{< mermaid >}}
 flowchart LR
     Inventory[Telemetry Inventory]
     Bindings[Telemetry-Domain Bindings]
@@ -54,7 +54,7 @@ flowchart LR
     Inventory --> Bindings --> Contracts --> Workspace --> Automation
     Contracts -->|Dynamic Thresholds| Automation
     Workspace -->|Simulation & Playbooks| Automation
-```
+{{< /mermaid >}}
 
 ## How the Proposed Approach Solves the Problem
 Once telemetry is woven into the domain model, reconciliation automation stops guessing and starts testing hypotheses. When totals diverge, the system checks whether ingestion events for the affected entities arrived on time, whether transformations emitted the expected row counts, and whether downstream consumers acknowledged processing. Those checks narrow the blast radius from dozens of systems to the segment where telemetry shows abnormal behavior. Instead of paging every data engineer, the platform routes alerts to the owner of the failing signal—maybe the streaming team for offset gaps, or the API squad for elevated 5xx rates—because the domain model records that ownership.
@@ -63,7 +63,7 @@ Telemetry-enhanced domain models also accelerate remediation because they embed 
 
 Most importantly, telemetry-driven reconciliation democratizes insights for business stakeholders. Dashboards fed by the domain model can highlight not just whether metrics match, but why they drifted and how the system responded. Finance can view reconciliation status alongside service health indicators before closing the books. Customer success can confirm that credit adjustments processed through the same telemetry-verified pipeline that powers invoices. Compliance teams gain a living control matrix showing evidence of every automated check. When people trust the automated reconciliation, they spend less time debating numbers and more time using them to trigger revenue actions, product experiments, or meaningful retention outreach.
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     Divergence[Metric Divergence Detected]
     Signals[Telemetry Signals Queried]
@@ -75,7 +75,7 @@ flowchart TD
     Divergence --> Signals --> Ownership --> Playbook --> Evidence --> Trust
     Signals -->|Dynamic Thresholds| Playbook
     Evidence -->|Auditor Access| Trust
-```
+{{< /mermaid >}}
 
 ## Oh, I Haven’t Thought That / This Might Not Be for You Because…
 Telemetry-first reconciliation sounds great until you confront data gravity. If your telemetry remains trapped in vendor black boxes or aged on-prem schedulers, the effort to harvest, normalize, and store those signals may outweigh short-term benefits. Likewise, organizations with highly regulated data domains must confirm that capturing granular telemetry doesn’t violate retention rules or privacy commitments. Some teams discover that telemetry volume explodes storage costs or that the observability tooling lacks retention controls. Before diving in, model the total cost of ownership, especially when telemetry must be streamed across network boundaries or cross-team governance councils are slow to approve new signals.

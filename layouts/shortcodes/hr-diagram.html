@@ -1,0 +1,76 @@
+<div class="flex flex-col items-center gap-6 mt-8 mb-4 relative z-10 overflow-hidden md:overflow-visible">
+    <!-- Employee Node -->
+    <div class="bg-stone-800/80 backdrop-blur border border-stone-700 p-5 rounded-2xl w-64 text-center shadow-lg relative group transition-all duration-300 hover:border-[#ea580c]/50">
+        <div class="absolute inset-0 bg-[#ea580c]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="w-12 h-12 bg-stone-900 border border-stone-700 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-[#ea580c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+        </div>
+        <h4 class="text-white font-bold text-lg">Employee</h4>
+        <p class="text-stone-400 text-xs mt-1">Needs a policy or technical help.</p>
+    </div>
+
+    <!-- Down Arrow -->
+    <div class="flex flex-col items-center -my-2 relative z-0">
+        <div class="text-[#ea580c] text-[10px] font-bold uppercase tracking-widest bg-[#1b1919] px-3 py-1.5 rounded-full z-10 absolute top-1/2 -translate-y-1/2 whitespace-nowrap border border-stone-800 shadow-md">Asks: Who handles IFRS 17?</div>
+        <div class="w-0.5 h-20 bg-gradient-to-b from-stone-700 to-[#ea580c]"></div>
+        <div class="w-3 h-3 border-r-2 border-b-2 border-[#ea580c] transform rotate-45 -mt-2"></div>
+    </div>
+
+    <!-- Core System Box -->
+    <div class="border border-[#ea580c]/30 bg-[#ea580c]/5 rounded-[2rem] p-8 w-full max-w-3xl relative shadow-[0_0_30px_rgba(234,88,12,0.1)]">
+        <div class="absolute -top-3 left-8 bg-[#1b1919] px-4 py-1 text-[#ea580c] text-[10px] font-black uppercase tracking-widest border border-[#ea580c]/30 rounded-lg shadow-sm">Runink HR Platform</div>
+        
+        <div class="flex flex-col md:flex-row items-center gap-10 justify-between mt-4">
+            <!-- HR Twin -->
+            <div class="bg-stone-900 border border-[#ea580c]/50 p-6 rounded-2xl flex-1 text-center shadow-[0_0_20px_rgba(234,88,12,0.2)] w-full relative z-10">
+                <div class="w-10 h-10 bg-[#ea580c]/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-5 h-5 text-[#ea580c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h4 class="text-white font-black text-xl mb-1 tracking-tight">HR Twin Chatbot</h4>
+                <p class="text-stone-400 text-sm">Context-aware guidance.</p>
+            </div>
+            
+            <!-- Arrows to external -->
+            <div class="flex flex-col gap-6 w-full md:w-1/2 items-center md:items-start relative z-20">
+                <!-- To AD -->
+                <div class="flex flex-col md:flex-row items-center gap-3 w-full justify-center md:justify-start relative">
+                    <div class="hidden md:flex items-center w-12 shrink-0">
+                        <div class="w-full border-t-2 border-dashed border-stone-600"></div>
+                        <div class="w-2 h-2 border-r-2 border-t-2 border-stone-600 transform 45deg rotate-45 -ml-1"></div>
+                    </div>
+                    <div class="md:absolute md:-top-4 left-1/2 md:left-6 -translate-x-1/2 md:translate-x-0 text-[9px] font-bold uppercase tracking-widest text-stone-500 whitespace-nowrap bg-[#1b1919] md:bg-[#1f1d1b] px-2 py-0.5 rounded shadow-sm">Queries Persona Mapping</div>
+                    <div class="bg-stone-800 border border-stone-700 p-4 rounded-xl text-center shadow-lg w-full md:min-w-[180px] z-10 relative">
+                        <h4 class="text-white font-bold text-sm mb-1">Active Directory</h4>
+                        <p class="text-stone-400 text-[11px]">Key Personas & Org Chart</p>
+                    </div>
+                </div>
+                
+                <!-- To Wiki -->
+                <div class="flex flex-col md:flex-row items-center gap-3 w-full justify-center md:justify-start relative">
+                    <div class="hidden md:flex items-center w-12 shrink-0">
+                        <div class="w-full border-t-2 border-dashed border-stone-600"></div>
+                        <div class="w-2 h-2 border-r-2 border-t-2 border-stone-600 transform rotate-45 -ml-1"></div>
+                    </div>
+                    <div class="md:absolute md:-top-4 left-1/2 md:left-6 -translate-x-1/2 md:translate-x-0 text-[9px] font-bold uppercase tracking-widest text-stone-500 whitespace-nowrap bg-[#1b1919] md:bg-[#1f1d1b] px-2 py-0.5 rounded shadow-sm">Retrieves relevant docs</div>
+                    <div class="bg-stone-800 border border-stone-700 p-4 rounded-xl text-center shadow-lg w-full md:min-w-[180px] z-10 relative">
+                        <h4 class="text-white font-bold text-sm mb-1">Corporate Wiki</h4>
+                        <p class="text-stone-400 text-[11px]">Onboarding & Policies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Down Arrow -->
+    <div class="flex flex-col items-center -my-2 relative z-0">
+        <div class="text-[#65793e] text-[10px] font-bold uppercase tracking-widest bg-[#1b1919] px-3 py-1.5 rounded-full z-10 absolute top-1/2 -translate-y-1/2 whitespace-nowrap border border-stone-800 shadow-md">Provides Name, Email & Doc Link</div>
+        <div class="w-0.5 h-20 bg-gradient-to-b from-[#ea580c] to-[#65793e]"></div>
+        <div class="w-3 h-3 border-r-2 border-b-2 border-[#65793e] transform rotate-45 -mt-2"></div>
+    </div>
+    
+    <!-- Success State -->
+    <div class="bg-[#65793e]/10 border border-[#65793e]/30 p-5 rounded-2xl w-64 text-center shadow-[0_0_20px_rgba(101,121,62,0.1)] relative z-10">
+        <h4 class="text-white font-bold text-base">Action Complete</h4>
+        <p class="text-[#65793e] text-xs font-bold mt-1 tracking-wide">Employee continues flow seamlessly.</p>
+    </div>
+</div>
