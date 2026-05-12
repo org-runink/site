@@ -1,3 +1,4 @@
+cat << 'INNEREOF' > layouts/shortcodes/faq.html
 {{ $data := .Inner | transform.Unmarshal }}
 <section class="bg-stone-900">
     <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
@@ -49,3 +50,4 @@
 <script type="application/ld+json">
 {{ $schema | jsonify | safeJS | safeHTML }}
 </script>
+INNEREOF
