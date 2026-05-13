@@ -30,3 +30,4 @@
 ## 2026-05-11 - GEO Optimization using FAQPage Schema and Semantic Hierarchy
 **Learning:** Replacing generic blockquote summaries with semantic `<h2>` hierarchies and injecting `FAQPage` JSON-LD schema significantly improves the structural discoverability of content. This combination directly optimizes for LLM summarization and achieves a perfect 100 Lighthouse SEO score.
 **Action:** When performing future Generative Engine Optimization (GEO) tasks on content, prioritize establishing clear, bolded semantic headings for executive summaries and directly appending targeted `FAQPage` or `Article` JSON-LD schemas to the document to capture high-intent AI queries.
+## 2026-05-13 - Route Optimization GEO Structure **Learning:** Use case pages lack structured data and executive summaries, hindering their discoverability in Generative AI searches. **Action:** Implement FAQPage schemas and high-density executive summaries in all future use case content.
