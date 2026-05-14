@@ -16,6 +16,15 @@ badgeColor: "#10b981"
         </p>
     </div>
 
+    <div class="mb-16">
+        <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>100% Invoice Auditing:</strong> The Finance Agent forensically audits every single EDI 210 line item against negotiated contract rates to prevent overbilling.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Automated Short-Pays:</strong> Invalid accessorial charges (e.g., unsupported detention or liftgate fees) are automatically disputed and short-paid with specific remittance advice codes.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>GPS Validation:</strong> Proof of Delivery (POD) and GPS timestamps are actively cross-referenced to validate service execution before payment authorization.</li>
+        </ul>
+    </div>
+
     <div class="flex flex-col gap-12 mb-20">
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The "Rubber Stamp" Trap</h2>
@@ -26,7 +35,7 @@ badgeColor: "#10b981"
                 Carriers know this rule.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Suddenly, every invoice has a $45 "Liftgate Fee" or a $30 "Notification Charge." You stamp them "Approved." You just lost 4% of your total freight budget to ghost fees.
+                Suddenly, every invoice has a $45 "Liftgate Fee" or a $30 "Notification Charge." You stamp them "Approved." You just lost <strong>4% of your total freight budget</strong> to ghost fees.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
@@ -137,4 +146,32 @@ badgeColor: "#10b981"
       };
       document.head.appendChild(script);
   });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does automated freight auditing save money?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Automated freight auditing saves money by forensically analyzing every invoice line item against negotiated contracts to stop leakage from invalid accessorial charges."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is an automated short-pay in logistics?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An automated short-pay is when an AI agent detects an invalid charge, such as unverified driver detention, and automatically authorizes payment only for the correct linehaul amount, appending a specific denial code."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How are GPS logs used in freight invoice auditing?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GPS timestamps from delivery events are cross-referenced with invoices to validate accessorial charges like driver detention, ensuring payment is only authorized for actual wait times that exceed contract allowances."
+    }
+  }]
+}
 </script>
