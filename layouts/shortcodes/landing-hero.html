@@ -6,19 +6,13 @@
   <!-- Parallax Container -->
   <div id="hero-parallax" class="absolute inset-0 w-full h-full">
     <!-- Layer 1: Warehouse (Deepest) -->
-    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-luminosity opacity-80"
-      style="background-image: url('{{ $warehouse.RelPermalink }}'); z-index: 1;" data-depth="0.1">
-    </div>
+    <img src="{{ $warehouse.RelPermalink }}" alt="Warehouse facility background" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-luminosity opacity-80" style="z-index: 1;" data-depth="0.1">
 
     <!-- Layer 2: Distribution (Mid) -->
-    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-color-burn opacity-90"
-      style="background-image: url('{{ $distribution.RelPermalink }}'); z-index: 2;" data-depth="0.3">
-    </div>
+    <img src="{{ $distribution.RelPermalink }}" alt="" role="presentation" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-color-burn opacity-90" style="z-index: 2;" data-depth="0.3">
 
     <!-- Layer 3: Trucks (Foreground) -->
-    <div class="parallax-layer absolute inset-0 w-full h-full bg-cover bg-center mix-blend-screen opacity-90"
-      style="background-image: url('{{ $trucks.RelPermalink }}'); z-index: 3;" data-depth="0.6">
-    </div>
+    <img src="{{ $trucks.RelPermalink }}" alt="" role="presentation" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-screen opacity-90" style="z-index: 3;" data-depth="0.6">
   </div>
 
   <!-- Content Overlay -->

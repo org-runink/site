@@ -1,4 +1,4 @@
-<div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800">
+<div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
     <div class="mb-4 md:mb-0 max-w-3xl">
         <p class="text-sm">
             We use cookies and similar technologies to enhance your experience, analyze our traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies.
@@ -15,33 +15,33 @@
     </div>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
     const consentBanner = document.getElementById('consent-banner');
-    const acceptBtn = document.getElementById('accept-cookies');
-    const rejectBtn = document.getElementById('reject-cookies');
-
     const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
     const now = Date.now();
     const ttl = 300 * 1000; // 300 seconds in milliseconds
 
-    if (consentTimestamp && (now - parseInt(consentTimestamp, 10) < ttl)) {
-        consentBanner.style.display = 'none';
-    } else {
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
         localStorage.removeItem('cookieConsent');
         localStorage.removeItem('cookieConsentTimestamp');
     }
 
-    acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
-        consentBanner.style.display = 'none';
-        // Initialize GA/GTM here if consent is required before loading
-    });
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
 
-    rejectBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'rejected');
-        localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
-        consentBanner.style.display = 'none';
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            consentBanner.style.display = 'none';
+        });
     });
-});
+})();
 </script>
