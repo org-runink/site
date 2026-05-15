@@ -1,34 +1,23 @@
+function initParallax() {
+  const parallaxContainer = document.getElementById('hero-parallax');
+  if (parallaxContainer) {
+    const layers = parallaxContainer.querySelectorAll('.parallax-layer');
+    const layerArray = Array.from(layers);
 
-function initParallax(parallaxContainer) {
-  if (!parallaxContainer) return;
+    // Initial reveal
+    layerArray.forEach((layer, index) => {
+        // Cache depth for performance optimization
+        layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
 
-  const layers = parallaxContainer.querySelectorAll('.parallax-layer');
-  const layerArray = Array.from(layers);
-
-  // Initial reveal
-  layerArray.forEach((layer, index) => {
-      // Cache depth for performance optimization
-      layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
-
-      if (layer.animate) {
-          const animation = layer.animate([
-              { opacity: 0, transform: 'scale(1.2)' },
-              { opacity: 1, transform: 'scale(1)' }
-          ], {
-              duration: 2000,
-              easing: 'cubic-bezier(0.19, 1, 0.22, 1)', // approximate outExpo
-              delay: index * 200,
-              fill: 'both'
-          });
-
-          animation.onfinish = () => {
-              animation.cancel(); // Let the scroll transform take over completely
-              layer.style.opacity = '1';
-          };
-      } else {
-          layer.style.opacity = '1';
-      }
-  });
+        const animation = layer.animate([
+            { opacity: 0, transform: 'scale(1.2)' },
+            { opacity: 1, transform: 'scale(1)' }
+        ], {
+            duration: 2000,
+            easing: 'cubic-bezier(0.19, 1, 0.22, 1)', // approximate outExpo
+            delay: index * 200,
+            fill: 'both'
+        });
 
   let ticking = false;
 
@@ -65,55 +54,52 @@ function initParallax(parallaxContainer) {
 
   observer.observe(parallaxContainer);
 
-  return updateParallax;
+    observer.observe(parallaxContainer);
+  }
 }
 
-// Export for tests
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { initParallax };
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const parallaxContainer = document.getElementById('hero-parallax');
-  initParallax(parallaxContainer);
-
+function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
 
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons and contents
-      btns.forEach(b => {
-        b.classList.remove('active', 'border-orange-600', 'border-orange-400');
-        b.classList.add('border-stone-800');
-        const svg = b.querySelector('svg');
-        const h3 = b.querySelector('h3');
-        if (svg) svg.classList.replace('text-white', 'text-stone-300');
-        if (h3) h3.classList.replace('text-white', 'text-stone-300');
+  if (btns.length > 0 && contents.length > 0) {
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        btns.forEach(b => {
+          b.classList.remove('active', 'border-orange-600', 'border-orange-400');
+          b.classList.add('border-stone-800');
+          const svg = b.querySelector('svg');
+          const h3 = b.querySelector('h3');
+          if (svg) svg.classList.replace('text-white', 'text-stone-300');
+          if (h3) h3.classList.replace('text-white', 'text-stone-300');
+        });
+
+        contents.forEach(c => {
+          c.classList.remove('active');
+          c.classList.add('hidden');
+        });
+
+        // Add active class to clicked button and target content
+        btn.classList.add('active', 'border-orange-400');
+        btn.classList.remove('border-stone-800');
+        const svg = btn.querySelector('svg');
+        const h3 = btn.querySelector('h3');
+        if (svg) svg.classList.replace('text-stone-300', 'text-white');
+        if (h3) h3.classList.replace('text-stone-300', 'text-white');
+
+        const targetId = btn.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.remove('hidden');
+          targetContent.classList.add('active');
+        }
       });
-
-      contents.forEach(c => {
-        c.classList.remove('active');
-        c.classList.add('hidden');
-      });
-
-      // Add active class to clicked button and target content
-      btn.classList.add('active', 'border-orange-400');
-      btn.classList.remove('border-stone-800');
-      const svg = btn.querySelector('svg');
-      const h3 = btn.querySelector('h3');
-      if (svg) svg.classList.replace('text-stone-300', 'text-white');
-      if (h3) h3.classList.replace('text-stone-300', 'text-white');
-
-      const targetId = btn.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.classList.remove('hidden');
-        targetContent.classList.add('active');
-      }
     });
-  });
+  }
+}
 
+function initCarousel() {
   const carousel = document.getElementById('use-cases-scroll-container');
   if (carousel) {
       let isHovered = false;
@@ -157,8 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       carouselObserver.observe(carousel);
   }
+}
 
-  // Reveal step animations
+function initRevealSteps() {
   const revealSteps = document.querySelectorAll('.reveal-step');
   if (revealSteps.length > 0) {
     const revealObserver = new IntersectionObserver((entries) => {
@@ -182,4 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
       revealObserver.observe(step);
     });
   }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initParallax();
+  initTabs();
+  initCarousel();
+  initRevealSteps();
 });
