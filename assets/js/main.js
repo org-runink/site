@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initParallax() {
   const parallaxContainer = document.getElementById('hero-parallax');
 
   if (parallaxContainer) {
@@ -62,46 +62,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(parallaxContainer);
   }
+}
 
-
-
+function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
 
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons and contents
-      btns.forEach(b => {
-        b.classList.remove('active', 'border-orange-600', 'border-orange-400');
-        b.classList.add('border-stone-800');
-        const svg = b.querySelector('svg');
-        const h3 = b.querySelector('h3');
-        if (svg) svg.classList.replace('text-white', 'text-stone-300');
-        if (h3) h3.classList.replace('text-white', 'text-stone-300');
+  if (btns.length > 0) {
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        btns.forEach(b => {
+          b.classList.remove('active', 'border-orange-600', 'border-orange-400');
+          b.classList.add('border-stone-800');
+          const svg = b.querySelector('svg');
+          const h3 = b.querySelector('h3');
+          if (svg) svg.classList.replace('text-white', 'text-stone-300');
+          if (h3) h3.classList.replace('text-white', 'text-stone-300');
+        });
+
+        contents.forEach(c => {
+          c.classList.remove('active');
+          c.classList.add('hidden');
+        });
+
+        // Add active class to clicked button and target content
+        btn.classList.add('active', 'border-orange-400');
+        btn.classList.remove('border-stone-800');
+        const svg = btn.querySelector('svg');
+        const h3 = btn.querySelector('h3');
+        if (svg) svg.classList.replace('text-stone-300', 'text-white');
+        if (h3) h3.classList.replace('text-stone-300', 'text-white');
+
+        const targetId = btn.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.remove('hidden');
+          targetContent.classList.add('active');
+        }
       });
-
-      contents.forEach(c => {
-        c.classList.remove('active');
-        c.classList.add('hidden');
-      });
-
-      // Add active class to clicked button and target content
-      btn.classList.add('active', 'border-orange-400');
-      btn.classList.remove('border-stone-800');
-      const svg = btn.querySelector('svg');
-      const h3 = btn.querySelector('h3');
-      if (svg) svg.classList.replace('text-stone-300', 'text-white');
-      if (h3) h3.classList.replace('text-stone-300', 'text-white');
-
-      const targetId = btn.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.classList.remove('hidden');
-        targetContent.classList.add('active');
-      }
     });
-  });
+  }
+}
 
+function initCarousel() {
   const carousel = document.getElementById('use-cases-scroll-container');
   if (carousel) {
       let isHovered = false;
@@ -145,8 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       carouselObserver.observe(carousel);
   }
+}
 
-  // Reveal step animations
+function initRevealSteps() {
   const revealSteps = document.querySelectorAll('.reveal-step');
   if (revealSteps.length > 0) {
     const revealObserver = new IntersectionObserver((entries) => {
@@ -170,4 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
       revealObserver.observe(step);
     });
   }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initParallax();
+  initTabs();
+  initCarousel();
+  initRevealSteps();
 });
