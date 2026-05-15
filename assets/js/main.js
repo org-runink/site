@@ -30,14 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     function updateParallax() {
-      layerArray.forEach(layer => {
+      const scale = 1 + (lastScrollY * 0.0002);
+
+      for (let i = 0; i < layerArray.length; i++) {
+        const layer = layerArray[i];
         const depth = layer.parallaxDepth;
         const movement = -(lastScrollY * depth * 0.5);
-        const scale = 1 + (lastScrollY * 0.0002);
 
         // Apply transform
         layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-      });
+      }
 
       ticking = false;
     }
