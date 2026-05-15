@@ -1,6 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initParallax() {
   const parallaxContainer = document.getElementById('hero-parallax');
-
   if (parallaxContainer) {
     const layers = parallaxContainer.querySelectorAll('.parallax-layer');
     const layerArray = Array.from(layers);
@@ -20,51 +19,46 @@ document.addEventListener('DOMContentLoaded', () => {
             fill: 'both'
         });
 
-        animation.onfinish = () => {
-            animation.cancel(); // Let the scroll transform take over completely
-            layer.style.opacity = '1';
-        };
+  let ticking = false;
+
+  const updateParallax = function() {
+    let currentScrollY = window.scrollY || 0;
+    layerArray.forEach(layer => {
+      const depth = layer.parallaxDepth;
+      const movement = -(currentScrollY * depth * 0.5);
+      const scale = 1 + (currentScrollY * 0.0002);
+
+      // Apply transform
+      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
     });
 
-    let lastScrollY = window.scrollY;
-    let ticking = false;
+    ticking = false;
+  };
 
-    function updateParallax() {
-      layerArray.forEach(layer => {
-        const depth = layer.parallaxDepth;
-        const movement = -(lastScrollY * depth * 0.5);
-        const scale = 1 + (lastScrollY * 0.0002);
-
-        // Apply transform
-        layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-      });
-
-      ticking = false;
+  const scrollHandler = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
     }
+  };
 
-    const scrollHandler = () => {
-      lastScrollY = window.scrollY;
-      if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        window.addEventListener('scroll', scrollHandler, { passive: true });
+      } else {
+        window.removeEventListener('scroll', scrollHandler);
       }
-    };
+    });
+  }, { rootMargin: '0px', threshold: 0.0 });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          window.addEventListener('scroll', scrollHandler, { passive: true });
-        } else {
-          window.removeEventListener('scroll', scrollHandler);
-        }
-      });
-    }, { rootMargin: '0px', threshold: 0.0 });
+  observer.observe(parallaxContainer);
 
     observer.observe(parallaxContainer);
   }
+}
 
-
-
+function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
 
@@ -85,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bElem.h3) bElem.h3.classList.replace('text-white', 'text-stone-300');
       });
 
-      contents.forEach(c => {
-        c.classList.remove('active');
-        c.classList.add('hidden');
-      });
+        contents.forEach(c => {
+          c.classList.remove('active');
+          c.classList.add('hidden');
+        });
 
       // Add active class to clicked button and target content
       btn.classList.add('active', 'border-orange-400');
@@ -102,8 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
         targetContent.classList.add('active');
       }
     });
-  });
+  }
+}
 
+function initCarousel() {
   const carousel = document.getElementById('use-cases-scroll-container');
   if (carousel) {
       let isHovered = false;
@@ -147,8 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       carouselObserver.observe(carousel);
   }
+}
 
-  // Reveal step animations
+function initRevealSteps() {
   const revealSteps = document.querySelectorAll('.reveal-step');
   if (revealSteps.length > 0) {
     const revealObserver = new IntersectionObserver((entries) => {
@@ -172,4 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
       revealObserver.observe(step);
     });
   }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initParallax();
+  initTabs();
+  initCarousel();
+  initRevealSteps();
 });
