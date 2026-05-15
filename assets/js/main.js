@@ -1,6 +1,5 @@
 function initParallax() {
   const parallaxContainer = document.getElementById('hero-parallax');
-
   if (parallaxContainer) {
     const layers = parallaxContainer.querySelectorAll('.parallax-layer');
     const layerArray = Array.from(layers);
@@ -20,45 +19,40 @@ function initParallax() {
             fill: 'both'
         });
 
-        animation.onfinish = () => {
-            animation.cancel(); // Let the scroll transform take over completely
-            layer.style.opacity = '1';
-        };
+  let ticking = false;
+
+  const updateParallax = function() {
+    let currentScrollY = window.scrollY || 0;
+    layerArray.forEach(layer => {
+      const depth = layer.parallaxDepth;
+      const movement = -(currentScrollY * depth * 0.5);
+      const scale = 1 + (currentScrollY * 0.0002);
+
+      // Apply transform
+      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
     });
 
-    let lastScrollY = window.scrollY;
-    let ticking = false;
+    ticking = false;
+  };
 
-    function updateParallax() {
-      layerArray.forEach(layer => {
-        const depth = layer.parallaxDepth;
-        const movement = -(lastScrollY * depth * 0.5);
-        const scale = 1 + (lastScrollY * 0.0002);
-
-        // Apply transform
-        layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-      });
-
-      ticking = false;
+  const scrollHandler = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
     }
+  };
 
-    const scrollHandler = () => {
-      lastScrollY = window.scrollY;
-      if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        window.addEventListener('scroll', scrollHandler, { passive: true });
+      } else {
+        window.removeEventListener('scroll', scrollHandler);
       }
-    };
+    });
+  }, { rootMargin: '0px', threshold: 0.0 });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          window.addEventListener('scroll', scrollHandler, { passive: true });
-        } else {
-          window.removeEventListener('scroll', scrollHandler);
-        }
-      });
-    }, { rootMargin: '0px', threshold: 0.0 });
+  observer.observe(parallaxContainer);
 
     observer.observe(parallaxContainer);
   }
