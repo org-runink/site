@@ -1,4 +1,12 @@
-**What**: Updated `DESIGN.md` to include comprehensive design tokens for `motion`, `radii`, and `elevation`.
-**Why**: Ensures the design system documentation correctly reflects the implemented visual identity, particularly the interaction patterns and layer depth.
-**Impact**: Provides a complete, self-contained reference for developers and designers to maintain visual consistency across the project.
-**Measurement**: Verified valid YAML formatting and successful Hugo build.
+🎯 **What:**
+Added a test suite for `assets/js/main.js` to verify DOM initialization, layout modifications, and frontend interactions. The file lacked testing, leading to a gap in coverage for client-side functionality. Setup includes configuring Jest to use the `jsdom` environment and establishing mock classes for unsupported browser APIs like `IntersectionObserver` and `window.animate`.
+
+📊 **Coverage:**
+Tests now verify the following behaviors in an isolated DOM state:
+*   Parallax Container logic (layer depth calculations and animation initialization).
+*   Pitch Tab Button interactions (active class toggling, content visibility updates).
+*   Use Case Carousel interaction observers (setup of mouse event listeners).
+*   Reveal Steps Animation (delay staggering, intersection observer assignment).
+
+✨ **Result:**
+The test suite ensures that regressions in core UI interactions are caught automatically. The complete script executes via `pnpm test`, successfully passing all 6 assertions.
