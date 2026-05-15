@@ -1,12 +1,7 @@
-🎯 **What:**
-Added a test suite for `assets/js/main.js` to verify DOM initialization, layout modifications, and frontend interactions. The file lacked testing, leading to a gap in coverage for client-side functionality. Setup includes configuring Jest to use the `jsdom` environment and establishing mock classes for unsupported browser APIs like `IntersectionObserver` and `window.animate`.
+🎯 **What:** The initialisation logic in `assets/js/main.js` was refactored by moving parallax, tab, carousel, and reveal steps initialisation into their own dedicated functions (`initParallax`, `initTabs`, `initCarousel`, and `initRevealSteps`) instead of keeping them within a monolithic `DOMContentLoaded` event listener.
 
-📊 **Coverage:**
-Tests now verify the following behaviors in an isolated DOM state:
-*   Parallax Container logic (layer depth calculations and animation initialization).
-*   Pitch Tab Button interactions (active class toggling, content visibility updates).
-*   Use Case Carousel interaction observers (setup of mouse event listeners).
-*   Reveal Steps Animation (delay staggering, intersection observer assignment).
+💡 **Why:** By extracting complex functionality into dedicated self-contained modules, the readability, testability, and maintainability of the codebase are significantly improved.
 
-✨ **Result:**
-The test suite ensures that regressions in core UI interactions are caught automatically. The complete script executes via `pnpm test`, successfully passing all 6 assertions.
+✅ **Verification:** Verified that the contents were correctly written to `assets/js/main.js` using `cat assets/js/main.js` and confirmed that `pnpm run build` as well as `pnpm exec hugo` execute cleanly without introducing any build-time or runtime errors.
+
+✨ **Result:** A more modular and easier to read `assets/js/main.js` file, improving overall code health and standardising initialisation patterns across the frontend JavaScript.
