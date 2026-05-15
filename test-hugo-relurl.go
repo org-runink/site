@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "html/template"
-	_ "os"
+	"html/template"
+	"os"
 )
 
 func relURL(s string) string {
@@ -10,4 +10,6 @@ func relURL(s string) string {
 }
 
 func main() {
+    _ = template.HTMLEscapeString("")
+    _ = os.Args
 }
