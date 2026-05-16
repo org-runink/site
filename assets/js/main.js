@@ -21,18 +21,28 @@ function initParallax() {
     });
 
   let ticking = false;
+  let lastScrollY = window.scrollY || 0;
 
   const updateParallax = function() {
-    let currentScrollY = window.scrollY || 0;
-    const scale = 1 + (currentScrollY * 0.0002);
+    lastScrollY = window.scrollY || 0;
+    const scale = 1 + (lastScrollY * 0.0002);
 
     for (let i = 0; i < layerArray.length; i++) {
       const layer = layerArray[i];
       const depth = layer.parallaxDepth;
-      const movement = -(currentScrollY * depth * 0.5);
+      const movement = -(lastScrollY * depth * 0.5);
 
       // Apply transform
       layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+    }
+    ticking = false;
+  }
+
+  const scrollHandler = () => {
+    lastScrollY = window.scrollY || 0;
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
     }
     ticking = false;
   };
@@ -169,10 +179,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = {
-    initParallax,
-    initTabs,
-    initCarousel,
-    initRevealSteps
-  };
+  module.exports = { initParallax };
 }

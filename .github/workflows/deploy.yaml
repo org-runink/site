@@ -33,7 +33,7 @@ jobs:
         run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: rm pnpm-lock.yaml && pnpm install
 
       - name: Build Tailwind CSS
         run: pnpm run build
