@@ -54,8 +54,6 @@ function initParallax() {
   }, { rootMargin: '0px', threshold: 0.0 });
 
   observer.observe(parallaxContainer);
-
-    observer.observe(parallaxContainer);
   }
 }
 
@@ -149,17 +147,14 @@ function initCarousel() {
 function initRevealSteps() {
   const revealSteps = document.querySelectorAll('.reveal-step');
   if (revealSteps.length > 0) {
-    const revealObserver = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Remove initial hidden states
           entry.target.classList.remove('opacity-20', 'translate-y-4');
           // Add visible states
           entry.target.classList.add('opacity-100', 'translate-y-0');
-        } else {
-          // Re-add hidden states to dim out
-          entry.target.classList.remove('opacity-100', 'translate-y-0');
-          entry.target.classList.add('opacity-20', 'translate-y-4');
+          observer.unobserve(entry.target);
         }
       });
     }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
@@ -178,3 +173,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initRevealSteps();
 });
+
+if (typeof module !== 'undefined' && module.exports) { module.exports = { initParallax, initTabs, initCarousel, initRevealSteps }; }

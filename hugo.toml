@@ -25,6 +25,7 @@ paginate = 6
 paginatePath = "page"
 
 [params]
+  disablePostCSS = true
   description = ""
   logo = "/images/logo.png"
   googleAnalytics ='G-SEECKDWZNJ'

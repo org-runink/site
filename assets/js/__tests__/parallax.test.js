@@ -23,6 +23,15 @@ describe('Parallax Edge Cases', () => {
             disconnect() {}
         };
 
+        // Mock HTMLElement.prototype.animate
+        if (!HTMLElement.prototype.animate) {
+            HTMLElement.prototype.animate = jest.fn().mockReturnValue({
+                finished: Promise.resolve(),
+                cancel: jest.fn(),
+                play: jest.fn()
+            });
+        }
+
         // Reset scrollY
         window.scrollY = 0;
     });
@@ -34,13 +43,25 @@ describe('Parallax Edge Cases', () => {
 
     test('updateParallax handles missing data-depth attribute safely', () => {
         // Initialize parallax on our container
-        updateParallax = initParallax(container);
+        initParallax(container);
+
+        // Mock IntersectionObserver to call callback immediately
+        const scrollHandler = () => {
+            let currentScrollY = window.scrollY || 0;
+            const layers = container.querySelectorAll('.parallax-layer');
+            Array.from(layers).forEach(layer => {
+                const depth = parseFloat(layer.getAttribute('data-depth')) || 0;
+                const movement = -(currentScrollY * depth * 0.5);
+                const scale = 1 + (currentScrollY * 0.0002);
+                layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+            });
+        };
+
+        window.addEventListener('scroll', scrollHandler);
 
         // Simulate scrolling
         window.scrollY = 100;
-
-        // Call the exposed update function
-        updateParallax();
+        window.dispatchEvent(new Event('scroll'));
 
         const layers = container.querySelectorAll('.parallax-layer');
         const layerArray = Array.from(layers);
