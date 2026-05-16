@@ -1,0 +1,4 @@
+allowBuilds:
+  esbuild: set this to true or false
+  hugo-bin: set this to true or false
+  unrs-resolver: true
