@@ -18,29 +18,28 @@ function initParallax() {
             delay: index * 200,
             fill: 'both'
         });
+    });
 
   let ticking = false;
+  let lastScrollY = window.scrollY || 0;
 
   const updateParallax = function() {
-    let currentScrollY = window.scrollY || 0;
-    layerArray.forEach(layer => {
+    lastScrollY = window.scrollY || 0;
+    const scale = 1 + (lastScrollY * 0.0002);
+
+    for (let i = 0; i < layerArray.length; i++) {
+      const layer = layerArray[i];
       const depth = layer.parallaxDepth;
-      const movement = -(currentScrollY * depth * 0.5);
-      const scale = 1 + (currentScrollY * 0.0002);
+      const movement = -(lastScrollY * depth * 0.5);
 
-    function updateParallax() {
-      const scale = 1 + (lastScrollY * 0.0002);
-
-      for (let i = 0; i < layerArray.length; i++) {
-        const layer = layerArray[i];
-        const depth = layer.parallaxDepth;
-        const movement = -(lastScrollY * depth * 0.5);
-
-        // Apply transform
-        layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-      }
+      // Apply transform
+      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+    }
+    ticking = false;
+  }
 
   const scrollHandler = () => {
+    lastScrollY = window.scrollY || 0;
     if (!ticking) {
       window.requestAnimationFrame(updateParallax);
       ticking = true;
@@ -58,8 +57,7 @@ function initParallax() {
   }, { rootMargin: '0px', threshold: 0.0 });
 
   observer.observe(parallaxContainer);
-
-    observer.observe(parallaxContainer);
+  return updateParallax;
   }
 }
 
@@ -182,3 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initRevealSteps();
 });
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { initParallax };
+}

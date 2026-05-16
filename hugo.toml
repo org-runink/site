@@ -154,7 +154,7 @@ paginatePath = "page"
     guessSyntax = true
     lineNumbersInTable = true
   [markup.goldmark.renderer]
-    unsafe = true
+    unsafe = false
   [markup.tableOfContents]
     endLevel = 3
     ordered = false
@@ -185,3 +185,4 @@ paginatePath = "page"
   [[menu.main]]
     name = "Pricing"
     url = "/pricing"
+ignoreLogs = ['warning-goldmark-raw-html']
