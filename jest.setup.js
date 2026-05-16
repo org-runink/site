@@ -1,18 +1,23 @@
-// Mock IntersectionObserver
-class IntersectionObserver {
-  constructor(callback, options) {
-    this.callback = callback;
-    this.options = options;
-  }
-  observe() {}
-  unobserve() {}
-  disconnect() {}
-}
 
-window.IntersectionObserver = IntersectionObserver;
+Object.defineProperty(global, 'IntersectionObserver', {
+  writable: true,
+  value: jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+  })),
+});
 
-// Mock window.animate
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  value: jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+  })),
+});
+
 window.HTMLElement.prototype.animate = jest.fn().mockImplementation(() => ({
-  onfinish: jest.fn(),
-  cancel: jest.fn()
+    onfinish: null,
+    cancel: jest.fn()
 }));

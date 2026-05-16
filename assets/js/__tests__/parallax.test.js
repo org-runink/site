@@ -38,6 +38,7 @@ describe('Parallax Edge Cases', () => {
 
         // Simulate scrolling
         window.scrollY = 100;
+        window.dispatchEvent(new Event("scroll")); // Update lastScrollY via scrollHandler
 
         // Call the exposed update function
         updateParallax();
