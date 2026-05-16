@@ -32,11 +32,8 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Approve builds
-        run: pnpm config set ignore-scripts false
-
       - name: Install dependencies
-        run: pnpm install --config.ignore-scripts=false
+        run: pnpm install --ignore-scripts=false
 
       - name: Build Tailwind CSS
         run: pnpm run build
