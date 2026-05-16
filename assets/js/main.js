@@ -18,6 +18,7 @@ function initParallax() {
             delay: index * 200,
             fill: 'both'
         });
+    });
 
   let ticking = false;
 
@@ -96,7 +97,7 @@ function initTabs() {
         targetContent.classList.add('active');
       }
     });
-  }
+  });
 }
 
 function initCarousel() {
