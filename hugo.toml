@@ -1,3 +1,4 @@
+ignoreLogs = ['warning-goldmark-raw-html']
 baseURL = "https://runink.org/"
 languageCode = "en-us"
 title = "Runink"
@@ -185,4 +186,3 @@ paginatePath = "page"
   [[menu.main]]
     name = "Pricing"
     url = "/pricing"
-ignoreLogs = ['warning-goldmark-raw-html']
