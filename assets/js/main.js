@@ -1,5 +1,5 @@
 function initParallax() {
-  const parallaxContainer = document.getElementById('hero-parallax');
+  const parallaxContainer = document.querySelector('.hero-parallax-container');
   if (parallaxContainer) {
     const layers = parallaxContainer.querySelectorAll('.parallax-layer');
     const layerArray = Array.from(layers);
@@ -62,7 +62,6 @@ function initParallax() {
     return updateParallax;
   }
 }
-
 function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
