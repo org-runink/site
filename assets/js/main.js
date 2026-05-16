@@ -1,5 +1,5 @@
 function initParallax() {
-  const parallaxContainer = document.getElementById('hero-parallax');
+  const parallaxContainer = document.querySelector('.hero-parallax-container');
   if (parallaxContainer) {
     const layers = parallaxContainer.querySelectorAll('.parallax-layer');
     const layerArray = Array.from(layers);
@@ -37,28 +37,17 @@ function initParallax() {
     ticking = false;
   };
 
-  const scrollHandler = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-      } else {
-        window.removeEventListener('scroll', scrollHandler);
+    const scrollHandler = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
       }
-    });
-  }, { rootMargin: '0px', threshold: 0.0 });
+    };
 
   observer.observe(parallaxContainer);
   return updateParallax;
   }
 }
-
 function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
