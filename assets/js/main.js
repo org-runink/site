@@ -18,17 +18,12 @@ function initParallax() {
             delay: index * 200,
             fill: 'both'
         });
+    });
 
-  let ticking = false;
-
-  const updateParallax = function() {
-    let currentScrollY = window.scrollY || 0;
-    layerArray.forEach(layer => {
-      const depth = layer.parallaxDepth;
-      const movement = -(currentScrollY * depth * 0.5);
-      const scale = 1 + (currentScrollY * 0.0002);
+    let ticking = false;
 
     function updateParallax() {
+      let lastScrollY = window.scrollY || 0;
       const scale = 1 + (lastScrollY * 0.0002);
 
       for (let i = 0; i < layerArray.length; i++) {
@@ -39,25 +34,25 @@ function initParallax() {
         // Apply transform
         layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
       }
-
-  const scrollHandler = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
+      ticking = false;
     }
-  };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-      } else {
-        window.removeEventListener('scroll', scrollHandler);
+    const scrollHandler = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
       }
-    });
-  }, { rootMargin: '0px', threshold: 0.0 });
+    };
 
-  observer.observe(parallaxContainer);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', scrollHandler, { passive: true });
+        } else {
+          window.removeEventListener('scroll', scrollHandler);
+        }
+      });
+    }, { rootMargin: '0px', threshold: 0.0 });
 
     observer.observe(parallaxContainer);
   }
@@ -182,3 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initRevealSteps();
 });
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { initParallax, initTabs, initCarousel, initRevealSteps };
+}

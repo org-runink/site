@@ -1,3 +1,21 @@
+
+// Mock IntersectionObserver
+global.IntersectionObserver = class IntersectionObserver {
+  constructor(callback, options) {
+    this.callback = callback;
+    this.options = options;
+  }
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+};
+
+// Mock window.animate
+window.HTMLElement.prototype.animate = jest.fn().mockImplementation(() => ({
+  onfinish: jest.fn(),
+  cancel: jest.fn()
+}));
+
 describe('main.js DOM initialization', () => {
   beforeEach(() => {
     // Reset DOM
@@ -129,6 +147,70 @@ describe('main.js DOM initialization', () => {
       const steps = document.querySelectorAll('.reveal-step');
       expect(steps[0].style.transitionDelay).toBe('0ms');
       expect(steps[1].style.transitionDelay).toBe('150ms');
+    });
+  });
+
+
+  describe('Parallax Edge Cases', () => {
+    let container;
+    let layer1;
+    let layer2;
+    let scrollHandler;
+
+    beforeEach(() => {
+      document.body.innerHTML = `
+        <div id="hero-parallax">
+          <div class="parallax-layer" data-depth="0.5"></div>
+          <div class="parallax-layer"></div>
+        </div>
+      `;
+
+      container = document.getElementById('hero-parallax');
+      const layers = container.querySelectorAll('.parallax-layer');
+      layer1 = layers[0];
+      layer2 = layers[1];
+
+      // Override IntersectionObserver for this suite
+      window.IntersectionObserver = jest.fn(function(callback) {
+        this.observe = jest.fn(() => {
+          callback([{ isIntersecting: true, target: container }]);
+        });
+        this.unobserve = jest.fn();
+        this.disconnect = jest.fn();
+      });
+
+      // Override animate for this suite
+      window.HTMLElement.prototype.animate = jest.fn().mockImplementation(() => ({
+        onfinish: jest.fn(),
+        cancel: jest.fn()
+      }));
+
+      jest.spyOn(window, 'addEventListener').mockImplementation((event, handler) => {
+        if (event === 'scroll') {
+          scrollHandler = handler;
+        }
+      });
+
+      jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => {
+        cb();
+      });
+
+      Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
+    });
+
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
+
+    it('handles parallax layer without data-depth attribute', () => {
+      const { initParallax } = require('../main.js');
+      initParallax();
+
+      expect(scrollHandler).toBeDefined();
+      scrollHandler();
+
+      expect(layer1.style.transform).toBe('translate3d(0, -25px, 0) scale(1.02)');
+      expect(layer2.style.transform).toBe('translate3d(0, 0px, 0) scale(1.02)');
     });
   });
 });

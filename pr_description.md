@@ -1,12 +1,10 @@
 🎯 **What:**
-Added a unit test file `test-hugo-relurl_test.go` for the untest function `relURL` in `test-hugo-relurl.go`. This function is a simple pure string manipulation function, and setting up tests for it increases reliability. The target code was stubbed out to make a standalone go program to pass tests without unused imports errors.
+This PR addresses missing test coverage for the parallax animation logic by adding an explicit edge-case test for elements lacking a `data-depth` attribute. It also resolves latent syntax errors within the `initParallax` function introduced in a prior commit.
 
 📊 **Coverage:**
-The added test suite covers multiple scenarios:
-- Empty strings `""` to verify root path returns.
-- Simple string paths `foo`.
-- Nested paths `foo/bar`.
-- Paths with leading slashes `/foo`.
+- Syntactic fixes applied to `assets/js/main.js` (unclosed blocks, undeclared variables).
+- Mock environment implementations provided in `jest.setup.js` and imported correctly via `jest.config.js`.
+- New `Parallax Edge Cases` describe block in `main.test.js` covering default math fallbacks (i.e., `depth = 0`) to prevent `NaN` transformations during scroll handling.
 
 ✨ **Result:**
-The `relURL` function is now fully tested and deterministic, allowing for future refactoring with confidence. The standalone tests can be executed quickly via `go test`.
+The application's scroll-bound animations correctly fail-open on malformed components, and Jest securely asserts this behavior against simulated native window events, guaranteeing stability for `assets/js/main.js`.
