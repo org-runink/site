@@ -18,46 +18,39 @@ function initParallax() {
             delay: index * 200,
             fill: 'both'
         });
+    });
 
-  let ticking = false;
+    let ticking = false;
 
-  const updateParallax = function() {
-    let currentScrollY = window.scrollY || 0;
-    layerArray.forEach(layer => {
-      const depth = layer.parallaxDepth;
-      const movement = -(currentScrollY * depth * 0.5);
-      const scale = 1 + (currentScrollY * 0.0002);
-
-    function updateParallax() {
-      const scale = 1 + (lastScrollY * 0.0002);
-
-      for (let i = 0; i < layerArray.length; i++) {
-        const layer = layerArray[i];
+    const updateParallax = function() {
+      let currentScrollY = window.scrollY || 0;
+      layerArray.forEach(layer => {
         const depth = layer.parallaxDepth;
-        const movement = -(lastScrollY * depth * 0.5);
+        const movement = -(currentScrollY * depth * 0.5);
+        const scale = 1 + (currentScrollY * 0.0002);
 
         // Apply transform
         layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+      });
+      ticking = false;
+    };
+
+    const scrollHandler = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
       }
+    };
 
-  const scrollHandler = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-      } else {
-        window.removeEventListener('scroll', scrollHandler);
-      }
-    });
-  }, { rootMargin: '0px', threshold: 0.0 });
-
-  observer.observe(parallaxContainer);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', scrollHandler, { passive: true });
+        } else {
+          window.removeEventListener('scroll', scrollHandler);
+        }
+      });
+    }, { rootMargin: '0px', threshold: 0.0 });
 
     observer.observe(parallaxContainer);
   }

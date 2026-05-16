@@ -16,6 +16,15 @@ badgeColor: "#7c3aed"
         </p>
     </div>
 
+    <div class="mb-16">
+        <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Automated Evidence Collection:</strong> Uses OCR to scan Delivery Receipts and automatically cross-reference with the Bill of Lading to identify discrepancies.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Legal Rebuttal Generation:</strong> Drafts comprehensive legal rebuttals automatically, directly citing 49 U.S.C. § 14706 (The Carmack Amendment) to shift the burden of proof back to the carrier.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Weather API Verification:</strong> Proactively queries historical NOAA weather data to mathematically disprove invalid "Act of God" weather-related claim denials.</li>
+        </ul>
+    </div>
+
     <div class="flex flex-col gap-12 mb-20">
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The "Friday 4 PM" Crisis</h2>
@@ -92,3 +101,32 @@ Rel(portal, agent, "Sends Settlement Check")
     </div>
 </div>
 {{< /section-container >}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does an automated claims agent recover freight spend?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An automated claims agent recovers freight spend by using OCR to scan delivery documents for damage reports and automatically drafting legal rebuttals citing the Carmack Amendment to fight carrier denials."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is the Carmack Amendment in freight claims?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Carmack Amendment (49 U.S.C. § 14706) is a federal law that governs carrier liability, shifting the burden of proof to carriers and providing a legal basis to dispute unfounded claim denials."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How does AI verify weather-related freight claims?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "AI verifies weather-related freight claims by automatically checking historical weather data from sources like NOAA for specific routes to disprove false 'Act of God' carrier denials."
+    }
+  }]
+}
+</script>
