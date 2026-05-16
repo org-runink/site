@@ -4279,11 +4279,6 @@ snapshots:
 
   agent-base@7.1.4: {}
 
-  ansi-escapes@4.3.2:
-    dependencies:
-      type-fest: 0.21.3
-
-  ansi-regex@5.0.1: {}
 
   ansi-regex@6.2.2: {}
 
