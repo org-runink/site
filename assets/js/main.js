@@ -1,68 +1,40 @@
 function initParallax() {
-  const parallaxContainer = document.getElementById('hero-parallax');
+  const parallaxContainer = document.querySelector('.hero-parallax-container');
   if (parallaxContainer) {
-    const layers = parallaxContainer.querySelectorAll('.parallax-layer');
-    const layerArray = Array.from(layers);
+    const layers = document.querySelectorAll('.hero-parallax-layer');
+    let ticking = false;
 
-    // Initial reveal
-    layerArray.forEach((layer, index) => {
-        // Cache depth for performance optimization
-        layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
-
-        const animation = layer.animate([
-            { opacity: 0, transform: 'scale(1.2)' },
-            { opacity: 1, transform: 'scale(1)' }
-        ], {
-            duration: 2000,
-            easing: 'cubic-bezier(0.19, 1, 0.22, 1)', // approximate outExpo
-            delay: index * 200,
-            fill: 'both'
-        });
-
-  let ticking = false;
-
-  const updateParallax = function() {
-    let currentScrollY = window.scrollY || 0;
-    layerArray.forEach(layer => {
-      const depth = layer.parallaxDepth;
-      const movement = -(currentScrollY * depth * 0.5);
-      const scale = 1 + (currentScrollY * 0.0002);
-
-    function updateParallax() {
-      const scale = 1 + (lastScrollY * 0.0002);
-
-      for (let i = 0; i < layerArray.length; i++) {
-        const layer = layerArray[i];
-        const depth = layer.parallaxDepth;
-        const movement = -(lastScrollY * depth * 0.5);
-
-        // Apply transform
+    const updateParallax = () => {
+      const scrolled = window.pageYOffset;
+      layers.forEach((layer) => {
+        const speed = layer.getAttribute('data-speed');
+        const movement = -(scrolled * speed);
+        const scale = 1 + (scrolled * 0.0005 * speed);
         layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+      });
+      ticking = false;
+    };
+
+    const scrollHandler = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
       }
+    };
 
-  const scrollHandler = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-      } else {
-        window.removeEventListener('scroll', scrollHandler);
-      }
-    });
-  }, { rootMargin: '0px', threshold: 0.0 });
-
-  observer.observe(parallaxContainer);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', scrollHandler, { passive: true });
+        } else {
+          window.removeEventListener('scroll', scrollHandler);
+        }
+      });
+    }, { rootMargin: '0px', threshold: 0.0 });
 
     observer.observe(parallaxContainer);
   }
 }
-
 function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');

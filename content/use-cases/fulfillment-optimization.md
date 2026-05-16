@@ -112,7 +112,7 @@ badgeColor: "#0ea5e9"
 </style>
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+  mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'dark' });
 
   document.addEventListener("DOMContentLoaded", async () => {
       await mermaid.run({
