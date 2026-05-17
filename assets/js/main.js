@@ -1,5 +1,5 @@
 function initParallax() {
-  const parallaxContainer = document.querySelector('.hero-parallax-container');
+  const parallaxContainer = document.getElementById('hero-parallax');
   if (parallaxContainer) {
     const layers = parallaxContainer.querySelectorAll('.parallax-layer');
     const layerArray = Array.from(layers);
@@ -30,14 +30,38 @@ function initParallax() {
         const movement = -(currentScrollY * depth * 0.5);
         const scale = 1 + (currentScrollY * 0.0002);
 
-        // Apply transform
-        layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-      });
-      ticking = false;
-    };
+    for (let i = 0; i < layerArray.length; i++) {
+      const layer = layerArray[i];
+      const depth = layer.parallaxDepth;
+      const movement = -(lastScrollY * depth * 0.5);
 
-  if (typeof observer !== 'undefined') observer.observe(parallaxContainer);
-  return updateParallax;
+      // Apply transform
+      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+    }
+    ticking = false;
+  }
+
+  const onScroll = () => {
+    lastScrollY = window.scrollY || 0;
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', onScroll, { passive: true });
+          updateParallax();
+        } else {
+          window.removeEventListener('scroll', onScroll);
+        }
+      });
+    }, { rootMargin: '0px' });
+
+    observer.observe(parallaxContainer);
+    return updateParallax;
   }
 }
 function initTabs() {
