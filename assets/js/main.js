@@ -20,32 +20,20 @@ function initParallax() {
         });
     });
 
-  let ticking = false;
-  let lastScrollY = window.scrollY || 0;
+    let ticking = false;
 
-  const updateParallax = function() {
-    lastScrollY = window.scrollY || 0;
-    const scale = 1 + (lastScrollY * 0.0002);
+    const updateParallax = function() {
+      let currentScrollY = window.scrollY || 0;
+      layerArray.forEach(layer => {
+        const depth = layer.parallaxDepth;
+        const movement = -(currentScrollY * depth * 0.5);
+        const scale = 1 + (currentScrollY * 0.0002);
 
-    for (let i = 0; i < layerArray.length; i++) {
-      const layer = layerArray[i];
-      const depth = layer.parallaxDepth;
-      const movement = -(lastScrollY * depth * 0.5);
-
-      // Apply transform
-      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-    }
-    ticking = false;
-  }
-
-  const scrollHandler = () => {
-    lastScrollY = window.scrollY || 0;
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-    ticking = false;
-  };
+        // Apply transform
+        layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+      });
+      ticking = false;
+    };
 
     const scrollHandler = () => {
       if (!ticking) {
@@ -54,8 +42,17 @@ function initParallax() {
       }
     };
 
-  observer.observe(parallaxContainer);
-  return updateParallax;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', scrollHandler, { passive: true });
+        } else {
+          window.removeEventListener('scroll', scrollHandler);
+        }
+      });
+    }, { rootMargin: '0px', threshold: 0.0 });
+
+    observer.observe(parallaxContainer);
   }
 }
 function initTabs() {
