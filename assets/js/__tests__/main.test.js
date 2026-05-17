@@ -1,5 +1,6 @@
 describe('main.js DOM initialization', () => {
   beforeEach(() => {
+    HTMLElement.prototype.animate = jest.fn();
     // Reset DOM
     document.body.innerHTML = '';
     jest.resetModules();
@@ -10,7 +11,7 @@ describe('main.js DOM initialization', () => {
   describe('Parallax Container', () => {
     it('should initialize parallax if container exists', () => {
       document.body.innerHTML = `
-        <div id="hero-parallax">
+        <div class="hero-parallax-container">
           <div class="parallax-layer" data-depth="0.5"></div>
           <div class="parallax-layer"></div>
         </div>

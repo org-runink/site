@@ -8,6 +8,7 @@ function initParallax() {
     layerArray.forEach((layer, index) => {
         // Cache depth for performance optimization
         layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
+        layer.dataset.depth = layer.parallaxDepth;
 
         const animation = layer.animate([
             { opacity: 0, transform: 'scale(1.2)' },
@@ -44,9 +45,10 @@ function initParallax() {
       window.requestAnimationFrame(updateParallax);
       ticking = true;
     }
+    ticking = false;
   };
 
-  observer.observe(parallaxContainer);
+  if (typeof observer !== 'undefined') observer.observe(parallaxContainer);
   return updateParallax;
   }
 }
