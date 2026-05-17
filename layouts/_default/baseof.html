@@ -74,8 +74,10 @@
     {{ $css = $css | css.PostCSS }}
     {{ if hugo.IsProduction }}
     {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+    <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     {{ else }}
+    <link rel="preload" href="{{ $css.RelPermalink }}?v={{ now.Unix }}" as="style">
     <link rel="stylesheet" href="{{ $css.RelPermalink }}?v={{ now.Unix }}">
     {{ end }}
     {{ end }}

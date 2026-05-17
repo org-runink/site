@@ -8,6 +8,7 @@ function initParallax() {
     layerArray.forEach((layer, index) => {
         // Cache depth for performance optimization
         layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
+        layer.dataset.depth = layer.parallaxDepth;
 
         const animation = layer.animate([
             { opacity: 0, transform: 'scale(1.2)' },
@@ -34,29 +35,35 @@ function initParallax() {
     });
   };
 
-  const scrollHandler = () => {
+      // Apply transform
+      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+    }
+    ticking = false;
+  }
+
+  const onScroll = () => {
+    lastScrollY = window.scrollY || 0;
     if (!ticking) {
       window.requestAnimationFrame(updateParallax);
       ticking = true;
     }
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-      } else {
-        window.removeEventListener('scroll', scrollHandler);
-      }
-    });
-  }, { rootMargin: '0px', threshold: 0.0 });
-
-  observer.observe(parallaxContainer);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', onScroll, { passive: true });
+          updateParallax();
+        } else {
+          window.removeEventListener('scroll', onScroll);
+        }
+      });
+    }, { rootMargin: '0px' });
 
     observer.observe(parallaxContainer);
+    return updateParallax;
   }
 }
-
 function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
