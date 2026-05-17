@@ -8,6 +8,7 @@ function initParallax() {
     layerArray.forEach((layer, index) => {
         // Cache depth for performance optimization
         layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
+        layer.dataset.depth = layer.parallaxDepth;
 
         const animation = layer.animate([
             { opacity: 0, transform: 'scale(1.2)' },
@@ -32,70 +33,76 @@ function initParallax() {
       // Apply transform
       layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
     });
-
     ticking = false;
   };
 
-  const scrollHandler = () => {
+  const onScroll = () => {
+    let lastScrollY = window.scrollY || 0;
     if (!ticking) {
       window.requestAnimationFrame(updateParallax);
       ticking = true;
     }
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-      } else {
-        window.removeEventListener('scroll', scrollHandler);
-      }
-    });
-  }, { rootMargin: '0px', threshold: 0.0 });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', onScroll, { passive: true });
+          updateParallax();
+        } else {
+          window.removeEventListener('scroll', onScroll);
+        }
+      });
+    }, { rootMargin: '0px' });
 
-  observer.observe(parallaxContainer);
+    observer.observe(parallaxContainer);
+    return updateParallax;
   }
 }
-
 function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
 
-  const btnElements = Array.from(btns).map(btn => ({
-    btn,
-    svg: btn.querySelector('svg'),
-    h3: btn.querySelector('h3'),
-    targetId: btn.getAttribute('data-target')
-  }));
+  if (btns.length > 0) {
+    // Map button to its associated SVG and H3 to avoid repetitive DOM queries
+    const btnData = Array.from(btns).map(btn => ({
+      btn,
+      svg: btn.querySelector('svg'),
+      h3: btn.querySelector('h3'),
+      targetId: btn.getAttribute('data-target'),
+      targetContent: document.getElementById(btn.getAttribute('data-target'))
+    }));
 
-  btnElements.forEach(({ btn, svg, h3, targetId }) => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons and contents
-      btnElements.forEach(bElem => {
-        bElem.btn.classList.remove('active', 'border-orange-600', 'border-orange-400');
-        bElem.btn.classList.add('border-stone-800');
-        if (bElem.svg) bElem.svg.classList.replace('text-white', 'text-stone-300');
-        if (bElem.h3) bElem.h3.classList.replace('text-white', 'text-stone-300');
-      });
+    btnData.forEach(data => {
+      data.btn.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        btnData.forEach(bData => {
+          const { btn: b, svg, h3 } = bData;
+          b.classList.remove('active', 'border-orange-600', 'border-orange-400');
+          b.classList.add('border-stone-800');
+          if (svg) svg.classList.replace('text-white', 'text-stone-300');
+          if (h3) h3.classList.replace('text-white', 'text-stone-300');
+        });
 
         contents.forEach(c => {
           c.classList.remove('active');
           c.classList.add('hidden');
         });
 
-      // Add active class to clicked button and target content
-      btn.classList.add('active', 'border-orange-400');
-      btn.classList.remove('border-stone-800');
-      if (svg) svg.classList.replace('text-stone-300', 'text-white');
-      if (h3) h3.classList.replace('text-stone-300', 'text-white');
+        // Add active class to clicked button and target content
+        data.btn.classList.add('active', 'border-orange-400');
+        data.btn.classList.remove('border-stone-800');
 
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.classList.remove('hidden');
-        targetContent.classList.add('active');
-      }
+        if (data.svg) data.svg.classList.replace('text-stone-300', 'text-white');
+        if (data.h3) data.h3.classList.replace('text-stone-300', 'text-white');
+
+        if (data.targetContent) {
+          data.targetContent.classList.remove('hidden');
+          data.targetContent.classList.add('active');
+        }
+      });
     });
-  });
+  }
 }
 
 function initCarousel() {
@@ -147,14 +154,17 @@ function initCarousel() {
 function initRevealSteps() {
   const revealSteps = document.querySelectorAll('.reveal-step');
   if (revealSteps.length > 0) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Remove initial hidden states
           entry.target.classList.remove('opacity-20', 'translate-y-4');
           // Add visible states
           entry.target.classList.add('opacity-100', 'translate-y-0');
-          observer.unobserve(entry.target);
+        } else {
+          // Re-add hidden states to dim out
+          entry.target.classList.remove('opacity-100', 'translate-y-0');
+          entry.target.classList.add('opacity-20', 'translate-y-4');
         }
       });
     }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
@@ -174,4 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initRevealSteps();
 });
 
-if (typeof module !== 'undefined' && module.exports) { module.exports = { initParallax, initTabs, initCarousel, initRevealSteps }; }
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { initParallax, initTabs, initCarousel, initRevealSteps };
+}
