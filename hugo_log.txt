@@ -1,0 +1,49 @@
+WARN  Module "project" is not compatible with this Hugo version: Min 0.80.0 extended; run "hugo mod graph" for more information.
+WARN  Module "hugo-saasify-theme" is not compatible with this Hugo version: Min 0.80.0 extended; run "hugo mod graph" for more information.
+Watching for changes in /app/{archetypes,assets,babel.config.js,content,layouts,package.json,postcss.config.js,static,tailwind.config.js,themes}
+Watching for config changes in /app/hugo.toml, /app/themes/hugo-saasify-theme/config.toml
+Start building sites …
+hugo v0.152.2-6abdacad3f3fe944ea42177844469139e81feda6 linux/amd64 BuildDate=2025-10-24T15:31:49Z VendorInfo=gohugoio
+
+
+                  │ EN
+──────────────────┼─────
+ Pages            │ 299
+ Paginator pages  │   1
+ Non-page files   │   0
+ Static files     │  95
+ Processed images │   0
+ Aliases          │ 125
+ Cleaned          │   0
+
+Built in 293 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:8080/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+
+Change detected, rebuilding site (#1).
+2026-05-17 03:14:45.440 +0000
+Asset changed /js/main.js
+Web Server is available at http://localhost:8080/ (bind address 127.0.0.1)
+Total in 21 ms
+
+Change detected, rebuilding site (#2).
+2026-05-17 03:15:22.439 +0000
+Asset changed /js/main.js
+ERROR Rebuild failed: JSBUILD: failed to transform "/js/main.js" (text/javascript): "/app/assets/js/main.js:50:10": The symbol "scrollHandler" has already been declared
+Web Server is available at http://localhost:8080/ (bind address 127.0.0.1)
+Total in 25 ms
+
+Change detected, rebuilding site (#3).
+2026-05-17 03:15:39.940 +0000
+Asset changed /js/main.js
+Web Server is available at http://localhost:8080/ (bind address 127.0.0.1)
+Total in 17 ms
+
+Change detected, rebuilding site (#4).
+2026-05-17 03:17:12.440 +0000
+Asset changed /js/main.test.js
+Web Server is available at http://localhost:8080/ (bind address 127.0.0.1)
+Total in 3 ms
