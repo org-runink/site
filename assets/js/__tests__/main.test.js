@@ -1,3 +1,5 @@
+global.HTMLElement.prototype.animate = jest.fn();
+global.IntersectionObserver = class IntersectionObserver { observe() {} disconnect() {} unobserve() {} };
 describe('main.js DOM initialization', () => {
   beforeEach(() => {
     HTMLElement.prototype.animate = jest.fn();
