@@ -1,5 +1,5 @@
 function initParallax() {
-  const parallaxContainer = document.getElementById('hero-parallax');
+  const parallaxContainer = document.querySelector('.hero-parallax-container');
   if (parallaxContainer) {
     const layers = parallaxContainer.querySelectorAll('.parallax-layer');
     const layerArray = Array.from(layers);
@@ -55,7 +55,6 @@ function initParallax() {
     observer.observe(parallaxContainer);
   }
 }
-
 function initTabs() {
   const btns = document.querySelectorAll('.pitch-tab-btn');
   const contents = document.querySelectorAll('.pitch-content');
@@ -175,3 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initRevealSteps();
 });
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { initParallax };
+}
