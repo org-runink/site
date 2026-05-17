@@ -33,16 +33,11 @@ function initParallax() {
       // Apply transform
       layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
     });
-  };
-
-      // Apply transform
-      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-    }
     ticking = false;
   }
 
   const onScroll = () => {
-    lastScrollY = window.scrollY || 0;
+    let lastScrollY = window.scrollY || 0;
     if (!ticking) {
       window.requestAnimationFrame(updateParallax);
       ticking = true;
