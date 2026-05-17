@@ -18,6 +18,7 @@ function initParallax() {
             delay: index * 200,
             fill: 'both'
         });
+    });
 
   let ticking = false;
 
@@ -28,17 +29,10 @@ function initParallax() {
       const movement = -(currentScrollY * depth * 0.5);
       const scale = 1 + (currentScrollY * 0.0002);
 
-    function updateParallax() {
-      const scale = 1 + (lastScrollY * 0.0002);
-
-      for (let i = 0; i < layerArray.length; i++) {
-        const layer = layerArray[i];
-        const depth = layer.parallaxDepth;
-        const movement = -(lastScrollY * depth * 0.5);
-
-        // Apply transform
-        layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-      }
+      // Apply transform
+      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+    });
+  };
 
   const scrollHandler = () => {
     if (!ticking) {
@@ -68,14 +62,22 @@ function initTabs() {
   const contents = document.querySelectorAll('.pitch-content');
 
   if (btns.length > 0) {
-    btns.forEach(btn => {
-      btn.addEventListener('click', () => {
+    // Map button to its associated SVG and H3 to avoid repetitive DOM queries
+    const btnData = Array.from(btns).map(btn => ({
+      btn,
+      svg: btn.querySelector('svg'),
+      h3: btn.querySelector('h3'),
+      targetId: btn.getAttribute('data-target'),
+      targetContent: document.getElementById(btn.getAttribute('data-target'))
+    }));
+
+    btnData.forEach(data => {
+      data.btn.addEventListener('click', () => {
         // Remove active class from all buttons and contents
-        btns.forEach(b => {
+        btnData.forEach(bData => {
+          const { btn: b, svg, h3 } = bData;
           b.classList.remove('active', 'border-orange-600', 'border-orange-400');
           b.classList.add('border-stone-800');
-          const svg = b.querySelector('svg');
-          const h3 = b.querySelector('h3');
           if (svg) svg.classList.replace('text-white', 'text-stone-300');
           if (h3) h3.classList.replace('text-white', 'text-stone-300');
         });
@@ -86,18 +88,15 @@ function initTabs() {
         });
 
         // Add active class to clicked button and target content
-        btn.classList.add('active', 'border-orange-400');
-        btn.classList.remove('border-stone-800');
-        const svg = btn.querySelector('svg');
-        const h3 = btn.querySelector('h3');
-        if (svg) svg.classList.replace('text-stone-300', 'text-white');
-        if (h3) h3.classList.replace('text-stone-300', 'text-white');
+        data.btn.classList.add('active', 'border-orange-400');
+        data.btn.classList.remove('border-stone-800');
 
-        const targetId = btn.getAttribute('data-target');
-        const targetContent = document.getElementById(targetId);
-        if (targetContent) {
-          targetContent.classList.remove('hidden');
-          targetContent.classList.add('active');
+        if (data.svg) data.svg.classList.replace('text-stone-300', 'text-white');
+        if (data.h3) data.h3.classList.replace('text-stone-300', 'text-white');
+
+        if (data.targetContent) {
+          data.targetContent.classList.remove('hidden');
+          data.targetContent.classList.add('active');
         }
       });
     });
@@ -182,3 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initRevealSteps();
 });
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { initParallax, initTabs, initCarousel, initRevealSteps };
+}
