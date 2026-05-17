@@ -52,7 +52,7 @@ describe('Carousel auto-scroll', () => {
       }
     });
 
-    eval(`(function() { ${mainJsCode} })();`);
+    eval(mainJsCode);
 
     const event = document.createEvent('Event');
     event.initEvent('DOMContentLoaded', true, true);

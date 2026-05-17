@@ -44,7 +44,15 @@ function initParallax() {
       window.requestAnimationFrame(updateParallax);
       ticking = true;
     }
+    ticking = false;
   };
+
+    const scrollHandler = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    };
 
   observer.observe(parallaxContainer);
   return updateParallax;
