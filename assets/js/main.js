@@ -8,6 +8,7 @@ function initParallax() {
     layerArray.forEach((layer, index) => {
         // Cache depth for performance optimization
         layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
+        layer.dataset.depth = layer.parallaxDepth;
 
         const animation = layer.animate([
             { opacity: 0, transform: 'scale(1.2)' },
@@ -20,12 +21,14 @@ function initParallax() {
         });
     });
 
-  let ticking = false;
-  let lastScrollY = window.scrollY || 0;
+    let ticking = false;
 
-  const updateParallax = function() {
-    lastScrollY = window.scrollY || 0;
-    const scale = 1 + (lastScrollY * 0.0002);
+    const updateParallax = function() {
+      let currentScrollY = window.scrollY || 0;
+      layerArray.forEach(layer => {
+        const depth = layer.parallaxDepth;
+        const movement = -(currentScrollY * depth * 0.5);
+        const scale = 1 + (currentScrollY * 0.0002);
 
     for (let i = 0; i < layerArray.length; i++) {
       const layer = layerArray[i];

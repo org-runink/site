@@ -7,13 +7,13 @@ describe('Parallax Edge Cases', () => {
     beforeEach(() => {
         // Setup simple DOM for tests
         document.body.innerHTML = `
-            <div id="hero-parallax">
+            <div class="hero-parallax-container">
                 <div class="parallax-layer" data-depth="0.2"></div>
                 <div class="parallax-layer"></div>
             </div>
         `;
 
-        container = document.getElementById('hero-parallax');
+        container = document.querySelector('.hero-parallax-container');
 
         // Mock IntersectionObserver
         global.IntersectionObserver = class IntersectionObserver {
