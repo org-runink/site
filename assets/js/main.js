@@ -34,7 +34,7 @@ function initParallax() {
       layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
     });
     ticking = false;
-  };
+  }
 
   const onScroll = () => {
     let lastScrollY = window.scrollY || 0;
