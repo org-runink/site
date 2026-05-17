@@ -24,6 +24,15 @@ badgeColor: "#7c3aed"
         </p>
     </div>
 
+    <div class="mb-16">
+        <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Automated Evidence Collection:</strong> Uses OCR to scan Delivery Receipts and automatically cross-reference with the Bill of Lading to identify discrepancies.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Legal Rebuttal Generation:</strong> Drafts comprehensive legal rebuttals automatically, directly citing 49 U.S.C. § 14706 (The Carmack Amendment) to shift the burden of proof back to the carrier.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Weather API Verification:</strong> Proactively queries historical NOAA weather data to mathematically disprove invalid "Act of God" weather-related claim denials.</li>
+        </ul>
+    </div>
+
     <div class="flex flex-col gap-12 mb-20">
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The "Friday 4 PM" Crisis</h2>
