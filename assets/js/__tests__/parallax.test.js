@@ -15,6 +15,7 @@ describe('Parallax Edge Cases', () => {
         `;
 
         container = document.querySelector('.hero-parallax-container');
+        container.id = 'hero-parallax';
 
         // Mock IntersectionObserver
         global.IntersectionObserver = class IntersectionObserver {
