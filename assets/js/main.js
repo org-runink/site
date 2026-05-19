@@ -126,28 +126,37 @@ function initCarousel() {
       carousel.addEventListener('mouseenter', () => isHovered = true);
       carousel.addEventListener('mouseleave', () => isHovered = false);
 
-      let carouselInterval;
+      let carouselAnimationFrame;
+      let lastTime = 0;
 
-      const startCarousel = () => {
-        if (!carouselInterval) {
-          carouselInterval = setInterval(() => {
+      const animateCarousel = (timestamp) => {
+          if (!lastTime) lastTime = timestamp;
+          const progress = timestamp - lastTime;
+
+          if (progress >= 3000) {
               if (!isHovered) {
-                  // Determine if we've reached the end
                   if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
                       carousel.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
                   } else {
-                      // Scroll right by the width of one card + gap roughly
                       carousel.scrollBy({ left: 340, behavior: 'smooth' });
                   }
               }
-          }, 3000); // 3 seconds interval
+              lastTime = timestamp;
+          }
+          carouselAnimationFrame = window.requestAnimationFrame(animateCarousel);
+      };
+
+      const startCarousel = () => {
+        if (!carouselAnimationFrame) {
+            lastTime = 0;
+            carouselAnimationFrame = window.requestAnimationFrame(animateCarousel);
         }
       };
 
       const stopCarousel = () => {
-        if (carouselInterval) {
-          clearInterval(carouselInterval);
-          carouselInterval = null;
+        if (carouselAnimationFrame) {
+          window.cancelAnimationFrame(carouselAnimationFrame);
+          carouselAnimationFrame = null;
         }
       };
 

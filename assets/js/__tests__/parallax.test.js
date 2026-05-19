@@ -8,14 +8,13 @@ describe('Parallax Edge Cases', () => {
     beforeEach(() => {
         // Setup simple DOM for tests
         document.body.innerHTML = `
-            <div class="hero-parallax-container">
+            <div id="hero-parallax">
                 <div class="parallax-layer" data-depth="0.2"></div>
                 <div class="parallax-layer"></div>
             </div>
         `;
 
-        container = document.querySelector('.hero-parallax-container');
-        container.id = 'hero-parallax';
+        container = document.getElementById('hero-parallax');
 
         // Mock IntersectionObserver
         global.IntersectionObserver = class IntersectionObserver {
@@ -35,6 +34,8 @@ describe('Parallax Edge Cases', () => {
     });
 
     test('updateParallax handles missing data-depth attribute safely', () => {
+        // Suppress console errors about requestAnimationFrame
+        jest.spyOn(console, 'error').mockImplementation(() => {});
         const originalRAF = window.requestAnimationFrame;
         window.requestAnimationFrame = (cb) => { cb(); };
 
@@ -48,7 +49,7 @@ describe('Parallax Edge Cases', () => {
             disconnect() {}
         };
 
-        initParallax(container);
+        initParallax();
 
         if (intersectCallback) {
             intersectCallback([{ isIntersecting: true }]);
