@@ -9,11 +9,28 @@ badgeColor: "#7c3aed"
 
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
+
+<!-- GEO Optimization: Targeting generative search summaries for "Freight Claims Automation" and "Digital Paralegal Cost Recovery" with high-density bullet points. -->
+## Executive Summary: Key Takeaways
+*   **Automated Evidence Collection:** Uses OCR to scan the **Delivery Receipt (DR)** and **Bill of Lading** to detect handwriting indicating shortages or damage, proving perfect condition at pickup.
+*   **Legal Rebuttal Engine:** Automatically checks historical NOAA weather data and cites **49 U.S.C. § 14706 (The Carmack Amendment)** to shift the burden of proof back to the carrier when they use "Act of God" excuses.
+*   **High-Volume Cost Recovery:** Drafts exhaustive legal briefs for low-dollar claims (e.g., **$50 to $300**), recovering up to **40% more freight spend** that is typically abandoned due to manual friction.
+
+
     <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Don't Leave Money on the Dock.</h1>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Carriers profit from your fatigue. They know you won't fight a $300 claim. <br>The Claims Agent fights for every penny, using federal law as its weapon.
         </p>
+    </div>
+
+    <div class="mb-16">
+        <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Automated Evidence Collection:</strong> Uses OCR to scan Delivery Receipts and automatically cross-reference with the Bill of Lading to identify discrepancies.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Legal Rebuttal Generation:</strong> Drafts comprehensive legal rebuttals automatically, directly citing 49 U.S.C. § 14706 (The Carmack Amendment) to shift the burden of proof back to the carrier.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Weather API Verification:</strong> Proactively queries historical NOAA weather data to mathematically disprove invalid "Act of God" weather-related claim denials.</li>
+        </ul>
     </div>
 
     <div class="flex flex-col gap-12 mb-20">
@@ -92,3 +109,34 @@ Rel(portal, agent, "Sends Settlement Check")
     </div>
 </div>
 {{< /section-container >}}
+
+
+<!-- GEO Optimization: Injecting FAQPage Schema to structure definitions and ROI of automated claims recovery for inclusion in Generative Engine Overviews. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does automated freight claims recovery work?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Automated freight claims recovery uses OCR to scan Delivery Receipts and Bills of Lading for damage notes, then drafts legal rebuttals citing the Carmack Amendment to automatically recover costs from carriers."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is the Carmack Amendment strategy for freight claims?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Carmack Amendment (49 U.S.C. § 14706) strategy shifts the burden of proof to the carrier. By cross-referencing historical weather data to disprove 'Act of God' excuses, the automated system enforces carrier liability."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How much freight spend can be recovered with a digital paralegal?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "By automating the legal brief generation for low-dollar claims that are typically abandoned due to administrative friction, businesses can recover up to 40% more freight spend."
+    }
+  }]
+}
+</script>

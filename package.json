@@ -31,7 +31,8 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
-      "hugo-bin"
+      "hugo-bin",
+      "unrs-resolver"
     ]
   },
   "main": "postcss.config.js",

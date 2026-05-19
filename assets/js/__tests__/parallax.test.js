@@ -1,3 +1,4 @@
+global.HTMLElement.prototype.animate = jest.fn();
 const { initParallax } = require('../main.js');
 
 describe('Parallax Edge Cases', () => {
@@ -7,13 +8,13 @@ describe('Parallax Edge Cases', () => {
     beforeEach(() => {
         // Setup simple DOM for tests
         document.body.innerHTML = `
-            <div id="hero-parallax">
+            <div class="hero-parallax-container">
                 <div class="parallax-layer" data-depth="0.2"></div>
                 <div class="parallax-layer"></div>
             </div>
         `;
 
-        container = document.getElementById('hero-parallax');
+        container = document.querySelector('.hero-parallax-container');
 
         // Mock IntersectionObserver
         global.IntersectionObserver = class IntersectionObserver {
@@ -33,26 +34,34 @@ describe('Parallax Edge Cases', () => {
     });
 
     test('updateParallax handles missing data-depth attribute safely', () => {
-        // Initialize parallax on our container
-        updateParallax = initParallax(container);
+        const originalRAF = window.requestAnimationFrame;
+        window.requestAnimationFrame = (cb) => { cb(); };
 
-        // Simulate scrolling
+        let intersectCallback;
+        global.IntersectionObserver = class IntersectionObserver {
+            constructor(callback) {
+                intersectCallback = callback;
+            }
+            observe() {}
+            unobserve() {}
+            disconnect() {}
+        };
+
+        initParallax(container);
+
+        if (intersectCallback) {
+            intersectCallback([{ isIntersecting: true }]);
+        }
+
         window.scrollY = 100;
-
-        // Call the exposed update function
-        updateParallax();
+        window.dispatchEvent(new Event('scroll'));
 
         const layers = container.querySelectorAll('.parallax-layer');
         const layerArray = Array.from(layers);
 
-        // Layer 1: has data-depth 0.2
-        // movement = -(100 * 0.2 * 0.5) = -10
-        // scale = 1 + (100 * 0.0002) = 1.02
         expect(layerArray[0].style.transform).toBe('translate3d(0, -10px, 0) scale(1.02)');
-
-        // Layer 2: missing data-depth, should default to 0
-        // movement = -(100 * 0 * 0.5) = -0 (or 0)
-        // scale = 1 + (100 * 0.0002) = 1.02
         expect(layerArray[1].style.transform).toBe('translate3d(0, 0px, 0) scale(1.02)');
+
+        window.requestAnimationFrame = originalRAF;
     });
 });
