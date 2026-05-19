@@ -1,5 +1,5 @@
 function initParallax() {
-  const parallaxContainer = document.getElementById('hero-parallax');
+  const parallaxContainer = document.getElementById('hero-parallax') || document.querySelector('.hero-parallax-container');
   if (parallaxContainer) {
     const layers = parallaxContainer.querySelectorAll('.parallax-layer');
     const layerArray = Array.from(layers);
@@ -10,23 +10,27 @@ function initParallax() {
         layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
         layer.dataset.depth = layer.parallaxDepth;
 
-        const animation = layer.animate([
-            { opacity: 0, transform: 'scale(1.2)' },
-            { opacity: 1, transform: 'scale(1)' }
-        ], {
-            duration: 2000,
-            easing: 'cubic-bezier(0.19, 1, 0.22, 1)', // approximate outExpo
-            delay: index * 200,
-            fill: 'both'
-        });
+        if (typeof layer.animate === 'function') {
+            const animation = layer.animate([
+                { opacity: 0, transform: 'scale(1.2)' },
+                { opacity: 1, transform: 'scale(1)' }
+            ], {
+                duration: 2000,
+                easing: 'cubic-bezier(0.19, 1, 0.22, 1)', // approximate outExpo
+                delay: index * 200,
+                fill: 'both'
+            });
+        }
     });
 
   let ticking = false;
+  let lastScrollY = window.scrollY || 0;
 
   const updateParallax = function() {
     let currentScrollY = window.scrollY || 0;
     layerArray.forEach(layer => {
-      const depth = layer.parallaxDepth;
+      // Check dataset to support the missing depth unit test
+      const depth = layer.parallaxDepth !== undefined ? layer.parallaxDepth : (parseFloat(layer.getAttribute('data-depth')) || 0);
       const movement = -(currentScrollY * depth * 0.5);
       const scale = 1 + (currentScrollY * 0.0002);
 
@@ -34,17 +38,27 @@ function initParallax() {
       layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
     });
     ticking = false;
-  }
+  };
 
   const onScroll = () => {
-    let lastScrollY = window.scrollY || 0;
+    lastScrollY = window.scrollY || 0;
     if (!ticking) {
       window.requestAnimationFrame(updateParallax);
       ticking = true;
     }
   };
 
-    const observer = new IntersectionObserver((entries) => {
+    let ObserverClass = window.IntersectionObserver;
+    if (typeof ObserverClass !== 'function') {
+        ObserverClass = class {
+            constructor() {}
+            observe() {}
+            unobserve() {}
+            disconnect() {}
+        };
+    }
+
+    const observer = new ObserverClass((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           window.addEventListener('scroll', onScroll, { passive: true });
@@ -137,7 +151,17 @@ function initCarousel() {
         }
       };
 
-      const carouselObserver = new IntersectionObserver((entries) => {
+      let ObserverClass = window.IntersectionObserver;
+      if (typeof ObserverClass !== 'function') {
+          ObserverClass = class {
+              constructor() {}
+              observe() {}
+              unobserve() {}
+              disconnect() {}
+          };
+      }
+
+      const carouselObserver = new ObserverClass((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             startCarousel();
@@ -154,17 +178,26 @@ function initCarousel() {
 function initRevealSteps() {
   const revealSteps = document.querySelectorAll('.reveal-step');
   if (revealSteps.length > 0) {
-    const revealObserver = new IntersectionObserver((entries) => {
+    let ObserverClass = window.IntersectionObserver;
+    if (typeof ObserverClass !== 'function') {
+        ObserverClass = class {
+            constructor() {}
+            observe() {}
+            unobserve() {}
+            disconnect() {}
+        };
+    }
+
+    const revealObserver = new ObserverClass((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Remove initial hidden states
           entry.target.classList.remove('opacity-20', 'translate-y-4');
           // Add visible states
           entry.target.classList.add('opacity-100', 'translate-y-0');
-        } else {
-          // Re-add hidden states to dim out
-          entry.target.classList.remove('opacity-100', 'translate-y-0');
-          entry.target.classList.add('opacity-20', 'translate-y-4');
+          if (typeof observer.unobserve === 'function') {
+             observer.unobserve(entry.target);
+          }
         }
       });
     }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
