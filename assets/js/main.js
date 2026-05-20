@@ -7,38 +7,38 @@ function initParallax() {
     // Initial reveal
     layerArray.forEach((layer, index) => {
         // Cache depth for performance optimization
-        layer.parallaxDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
-        layer.dataset.depth = layer.parallaxDepth;
+        layer.cachedDepth = parseFloat(layer.getAttribute('data-depth')) || 0;
 
-        if (typeof layer.animate === 'function') {
-            const animation = layer.animate([
-                { opacity: 0, transform: 'scale(1.2)' },
-                { opacity: 1, transform: 'scale(1)' }
-            ], {
-                duration: 2000,
-                easing: 'cubic-bezier(0.19, 1, 0.22, 1)', // approximate outExpo
-                delay: index * 200,
-                fill: 'both'
-            });
-        }
+        const animation = layer.animate([
+            { opacity: 0, transform: 'scale(1.2)' },
+            { opacity: 1, transform: 'scale(1)' }
+        ], {
+            duration: 2000,
+            easing: 'cubic-bezier(0.19, 1, 0.22, 1)', // approximate outExpo
+            delay: index * 200,
+            fill: 'both'
+        });
     });
 
-  let ticking = false;
-  let lastScrollY = window.scrollY || 0;
+    let ticking = false;
+    let lastScrollY = window.scrollY || 0;
 
-  const updateParallax = function() {
-    let currentScrollY = window.scrollY || 0;
-    layerArray.forEach(layer => {
-      // Check dataset to support the missing depth unit test
-      const depth = layer.parallaxDepth !== undefined ? layer.parallaxDepth : (parseFloat(layer.getAttribute('data-depth')) || 0);
-      const movement = -(currentScrollY * depth * 0.5);
+    function updateParallax() {
+      const currentScrollY = window.scrollY || 0;
       const scale = 1 + (currentScrollY * 0.0002);
 
-      // Apply transform
-      layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
-    });
-    ticking = false;
-  };
+      for (let i = 0; i < layerArray.length; i++) {
+        const layer = layerArray[i];
+        // PERFORMANCE FIX: use cached property
+        const depth = layer.cachedDepth;
+        const movement = -(currentScrollY * depth * 0.5);
+
+        // Apply transform
+        layer.style.transform = `translate3d(0, ${movement}px, 0) scale(${scale})`;
+      }
+
+      ticking = false;
+    }
 
   const onScroll = () => {
     lastScrollY = window.scrollY || 0;
@@ -58,18 +58,18 @@ function initParallax() {
         };
     }
 
-    const observer = new ObserverClass((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          window.addEventListener('scroll', onScroll, { passive: true });
-          updateParallax();
+          window.addEventListener('scroll', scrollHandler, { passive: true });
         } else {
-          window.removeEventListener('scroll', onScroll);
+          window.removeEventListener('scroll', scrollHandler);
         }
       });
-    }, { rootMargin: '0px' });
+    }, { rootMargin: '0px', threshold: 0.0 });
 
     observer.observe(parallaxContainer);
+
     return updateParallax;
   }
 }
@@ -215,6 +215,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initRevealSteps();
 });
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { initParallax, initTabs, initCarousel, initRevealSteps };
-}
+if (typeof module !== 'undefined' && module.exports) { module.exports = { initParallax, initTabs, initCarousel, initRevealSteps }; }

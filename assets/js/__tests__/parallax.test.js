@@ -39,15 +39,9 @@ describe('Parallax Edge Cases', () => {
         const originalRAF = window.requestAnimationFrame;
         window.requestAnimationFrame = (cb) => { cb(); };
 
-        let intersectCallback;
-        global.IntersectionObserver = class IntersectionObserver {
-            constructor(callback) {
-                intersectCallback = callback;
-            }
-            observe() {}
-            unobserve() {}
-            disconnect() {}
-        };
+        // Simulate scrolling
+        window.scrollY = 100;
+        window.dispatchEvent(new Event("scroll")); // Update lastScrollY via scrollHandler
 
         initParallax();
 

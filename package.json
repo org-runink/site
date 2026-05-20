@@ -32,7 +32,8 @@
     "onlyBuiltDependencies": [
       "esbuild",
       "hugo-bin",
-      "unrs-resolver"
+      "unrs-resolver",
+      "@unrs/resolver-binding-linux-x64-gnu"
     ]
   },
   "main": "postcss.config.js",
