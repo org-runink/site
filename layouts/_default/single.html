@@ -38,6 +38,16 @@
                 </div>
                 {{ end }}
 
+
+                {{ if and (gt (len .TableOfContents) 30) (ne .Params.toc false) }}
+                <aside class="toc-container mb-8 p-6 bg-stone-900 rounded-xl border border-stone-800">
+                    <h2 class="text-xl font-bold text-stone-200 mb-4 uppercase tracking-wider text-sm">Table of Contents</h2>
+                    <div class="prose prose-sm prose-invert prose-stone prose-a:text-[#ea580c] hover:prose-a:text-[#ca4708]">
+                        {{ .TableOfContents }}
+                    </div>
+                </aside>
+                {{ end }}
+
                 <div
                     class="w-full prose prose-invert prose-stone max-w-none lg:prose-lg prose-headings:text-white prose-p:text-stone-300 prose-li:text-stone-300 prose-strong:text-white prose-a:text-[#ea580c] hover:prose-a:text-[#ca4708]">
                     {{ .Content }}

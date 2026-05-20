@@ -11,7 +11,7 @@ canonical: https://www.runink.org/blog/improving-cloud-roi-finops-domain-model-d
 ---
 
 <!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
-## Executive Summary: Key Takeaways
+## What are the Key Takeaways from this Executive Summary?
 *   **Align Domain Models and Data Mesh:** Integrating domain-driven models with FinOps practices creates clear ownership, significantly improving **cloud ROI measurement at the departmental level**.
 *   **Standardized Cloud Controls:** Employing tagging, budgeting, and chargeback controls ensures **financial transparency** and strict accountability.
 *   **Real-time Optimization:** Decentralized data responsibility allows teams to monitor costs closely, enabling **immediate cost efficiencies** and waste reduction.
@@ -99,3 +99,23 @@ By strategically aligning domain models, data mesh practices, and robust FinOps 
   }]
 }
 </script>
+
+---
+
+<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
+  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <p class="text-stone-300">
+    <strong>Lead Data & Cloud Architect</strong><br>
+    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Generative AI. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and AI-driven logistics solutions.
+  </p>
+</section>
+
+<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
+  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
+  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
+    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Generative AI for Supply Chain Optimization</a> - Advanced methodologies for AI-driven logistics.</li>
+    <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
+  </ul>
+</section>

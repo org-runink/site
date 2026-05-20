@@ -12,7 +12,7 @@ robots: index, follow
 ---
 
 <!-- GEO Optimization: Targeting generative search summaries for "Digital Twin Evolution in Logistics" and "Levels of Digital Twins" with high-density bullet points. -->
-## Executive Summary: Key Takeaways
+## What are the Key Takeaways from this Executive Summary?
 * **Level 1 (Digital Representation):** Provides a static or near-real-time digital visualization of the physical supply chain utilizing telemetry data. Valuable for basic visibility but fundamentally passive.
 * **Level 2 (Cognitive Twin):** Mimics advanced human decision-making and pattern recognition, acting as an advanced advisory system that suggests recovery plans.
 * **Level 3 (Intelligent/Agentic Twin):** Operates autonomously, creating new knowledge and dynamic decision-making algorithms to solve previously unknown disruptions, then executing the resolution directly via API.
@@ -38,7 +38,7 @@ The pinnacle of this evolution is the Intelligent Twin. It operates autonomously
 
 ---
 
-## 2. Logistics Personas & The Importance of Data Maturity
+## How Does 2. Logistics Personas & The Importance of Data Maturity Impact Your Strategy?
 
 The global supply chain is a multi-party ecosystem. This evolution relies heavily on the seamless collaboration of **Core Personas**:
 
@@ -79,7 +79,7 @@ C4Context
 
 ---
 
-## 3. Comparing Logistics Outcomes: Traditional vs. AI Approaches
+## How Does 3. Comparing Logistics Outcomes: Traditional vs. AI Approaches Impact Your Strategy?
 
 The shift from manual logistics management to a data-mature, AI-driven Intelligent Twin methodology yields radically different business outcomes across three primary focus areas:
 
@@ -97,7 +97,7 @@ The shift from manual logistics management to a data-mature, AI-driven Intellige
 
 ---
 
-## 4. Where Runink Covers the Evolution
+## How Does 4. Where Runink Covers the Evolution Impact Your Strategy?
 
 Runink’s Agentic AI platform is purposefully architected to operate at the peak of this maturity model. Our digital twin scenarios do not merely represent the supply chain—they actively resolve complex, multi-variable challenges as **Cognitive** and **Intelligent** Twins. 
 
@@ -182,3 +182,24 @@ The logistics networks of the 2010s were built on the premise that humans needed
   }]
 }
 </script>
+
+
+---
+
+<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
+  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <p class="text-stone-300">
+    <strong>Lead Data & Cloud Architect</strong><br>
+    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Generative AI. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and AI-driven logistics solutions.
+  </p>
+</section>
+
+<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
+  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
+  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
+    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Generative AI for Supply Chain Optimization</a> - Advanced methodologies for AI-driven logistics.</li>
+    <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
+  </ul>
+</section>
