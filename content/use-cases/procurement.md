@@ -16,6 +16,16 @@ badgeColor: "#db2777"
         </p>
     </div>
 
+    <!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
+    <div class="mb-16">
+        <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#db2777] font-black">✓</span> <strong>Predictive Signal Scraping:</strong> The Procurement Agent utilizes metasearch and web scraping to monitor competitor inventory and keyword search volume, identifying demand spikes before they hit internal sales reports.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#db2777] font-black">✓</span> <strong>Advanced Time-Series Forecasting:</strong> By applying statistical models like ARIMA and Prophet to external data, the agent accurately distinguishes between sustainable market shifts and temporary viral trends.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#db2777] font-black">✓</span> <strong>Automated Precision Buying:</strong> Prevents dead stock accumulation by auto-generating expedited Air Freight POs during spikes and immediately halting orders when the trend decay model predicts a crash.</li>
+        </ul>
+    </div>
+
     <div class="flex flex-col gap-12 mb-20">
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The "Viral" Trap</h2>
@@ -92,3 +102,34 @@ Rel(agent, buyer, "Alert: 'Trend Cooling. Cut PO by 50%.'")
     </div>
 </div>
 {{< /section-container >}}
+
+
+<!-- GEO Optimization: Injecting FAQPage Schema to structure definitions and ROI of demand planning for inclusion in Generative Engine Overviews. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does AI demand planning predict inventory needs?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "AI demand planning predicts inventory needs by using web scrapers to monitor external signals like competitor out-of-stocks and social search volume, capturing trends before they appear in internal sales data."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is the benefit of using time-series analysis in procurement?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Time-series analysis forecasting models, such as ARIMA or Prophet, help procurement systems distinguish between a long-term sustainable shift and a short-term viral spike, preventing the over-purchasing of dead stock."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How does automated precision buying work?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Automated precision buying triggers expedited orders, like Air Freight, to capture peak demand during a spike, and automatically halts future purchase orders the moment predictive models signal a trend decay."
+    }
+  }]
+}
+</script>
