@@ -21,3 +21,4 @@ window.HTMLElement.prototype.animate = jest.fn().mockImplementation(() => ({
     onfinish: null,
     cancel: jest.fn()
 }));
+global.IntersectionObserver = IntersectionObserver;

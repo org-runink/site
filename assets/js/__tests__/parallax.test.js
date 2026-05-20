@@ -1,3 +1,4 @@
+global.HTMLElement.prototype.animate = jest.fn();
 const { initParallax } = require('../main.js');
 
 describe('Parallax Edge Cases', () => {
@@ -33,27 +34,30 @@ describe('Parallax Edge Cases', () => {
     });
 
     test('updateParallax handles missing data-depth attribute safely', () => {
-        // Initialize parallax on our container
-        updateParallax = initParallax(container);
+        // Suppress console errors about requestAnimationFrame
+        jest.spyOn(console, 'error').mockImplementation(() => {});
+        const originalRAF = window.requestAnimationFrame;
+        window.requestAnimationFrame = (cb) => { cb(); };
 
         // Simulate scrolling
         window.scrollY = 100;
         window.dispatchEvent(new Event("scroll")); // Update lastScrollY via scrollHandler
 
-        // Call the exposed update function
-        updateParallax();
+        initParallax();
+
+        if (intersectCallback) {
+            intersectCallback([{ isIntersecting: true }]);
+        }
+
+        window.scrollY = 100;
+        window.dispatchEvent(new Event('scroll'));
 
         const layers = container.querySelectorAll('.parallax-layer');
         const layerArray = Array.from(layers);
 
-        // Layer 1: has data-depth 0.2
-        // movement = -(100 * 0.2 * 0.5) = -10
-        // scale = 1 + (100 * 0.0002) = 1.02
         expect(layerArray[0].style.transform).toBe('translate3d(0, -10px, 0) scale(1.02)');
-
-        // Layer 2: missing data-depth, should default to 0
-        // movement = -(100 * 0 * 0.5) = -0 (or 0)
-        // scale = 1 + (100 * 0.0002) = 1.02
         expect(layerArray[1].style.transform).toBe('translate3d(0, 0px, 0) scale(1.02)');
+
+        window.requestAnimationFrame = originalRAF;
     });
 });

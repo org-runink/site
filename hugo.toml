@@ -1,3 +1,4 @@
+ignoreLogs = ['warning-goldmark-raw-html']
 baseURL = "https://runink.org/"
 languageCode = "en-us"
 title = "Runink"
@@ -154,7 +155,7 @@ paginatePath = "page"
     guessSyntax = true
     lineNumbersInTable = true
   [markup.goldmark.renderer]
-    unsafe = true
+    unsafe = false
   [markup.tableOfContents]
     endLevel = 3
     ordered = false

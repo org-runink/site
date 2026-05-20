@@ -1,5 +1,5 @@
 function initParallax() {
-  const parallaxContainer = document.querySelector('.hero-parallax-container');
+  const parallaxContainer = document.getElementById('hero-parallax') || document.querySelector('.hero-parallax-container');
   if (parallaxContainer) {
     const layers = parallaxContainer.querySelectorAll('.parallax-layer');
     const layerArray = Array.from(layers);
@@ -40,12 +40,23 @@ function initParallax() {
       ticking = false;
     }
 
-    const scrollHandler = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    };
+  const onScroll = () => {
+    lastScrollY = window.scrollY || 0;
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  };
+
+    let ObserverClass = window.IntersectionObserver;
+    if (typeof ObserverClass !== 'function') {
+        ObserverClass = class {
+            constructor() {}
+            observe() {}
+            unobserve() {}
+            disconnect() {}
+        };
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -67,14 +78,22 @@ function initTabs() {
   const contents = document.querySelectorAll('.pitch-content');
 
   if (btns.length > 0) {
-    btns.forEach(btn => {
-      btn.addEventListener('click', () => {
+    // Map button to its associated SVG and H3 to avoid repetitive DOM queries
+    const btnData = Array.from(btns).map(btn => ({
+      btn,
+      svg: btn.querySelector('svg'),
+      h3: btn.querySelector('h3'),
+      targetId: btn.getAttribute('data-target'),
+      targetContent: document.getElementById(btn.getAttribute('data-target'))
+    }));
+
+    btnData.forEach(data => {
+      data.btn.addEventListener('click', () => {
         // Remove active class from all buttons and contents
-        btns.forEach(b => {
+        btnData.forEach(bData => {
+          const { btn: b, svg, h3 } = bData;
           b.classList.remove('active', 'border-orange-600', 'border-orange-400');
           b.classList.add('border-stone-800');
-          const svg = b.querySelector('svg');
-          const h3 = b.querySelector('h3');
           if (svg) svg.classList.replace('text-white', 'text-stone-300');
           if (h3) h3.classList.replace('text-white', 'text-stone-300');
         });
@@ -85,18 +104,15 @@ function initTabs() {
         });
 
         // Add active class to clicked button and target content
-        btn.classList.add('active', 'border-orange-400');
-        btn.classList.remove('border-stone-800');
-        const svg = btn.querySelector('svg');
-        const h3 = btn.querySelector('h3');
-        if (svg) svg.classList.replace('text-stone-300', 'text-white');
-        if (h3) h3.classList.replace('text-stone-300', 'text-white');
+        data.btn.classList.add('active', 'border-orange-400');
+        data.btn.classList.remove('border-stone-800');
 
-        const targetId = btn.getAttribute('data-target');
-        const targetContent = document.getElementById(targetId);
-        if (targetContent) {
-          targetContent.classList.remove('hidden');
-          targetContent.classList.add('active');
+        if (data.svg) data.svg.classList.replace('text-stone-300', 'text-white');
+        if (data.h3) data.h3.classList.replace('text-stone-300', 'text-white');
+
+        if (data.targetContent) {
+          data.targetContent.classList.remove('hidden');
+          data.targetContent.classList.add('active');
         }
       });
     });
@@ -110,32 +126,51 @@ function initCarousel() {
       carousel.addEventListener('mouseenter', () => isHovered = true);
       carousel.addEventListener('mouseleave', () => isHovered = false);
 
-      let carouselInterval;
+      let carouselAnimationFrame;
+      let lastTime = 0;
 
-      const startCarousel = () => {
-        if (!carouselInterval) {
-          carouselInterval = setInterval(() => {
+      const animateCarousel = (timestamp) => {
+          if (!lastTime) lastTime = timestamp;
+          const progress = timestamp - lastTime;
+
+          if (progress >= 3000) {
               if (!isHovered) {
-                  // Determine if we've reached the end
                   if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
                       carousel.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
                   } else {
-                      // Scroll right by the width of one card + gap roughly
                       carousel.scrollBy({ left: 340, behavior: 'smooth' });
                   }
               }
-          }, 3000); // 3 seconds interval
+              lastTime = timestamp;
+          }
+          carouselAnimationFrame = window.requestAnimationFrame(animateCarousel);
+      };
+
+      const startCarousel = () => {
+        if (!carouselAnimationFrame) {
+            lastTime = 0;
+            carouselAnimationFrame = window.requestAnimationFrame(animateCarousel);
         }
       };
 
       const stopCarousel = () => {
-        if (carouselInterval) {
-          clearInterval(carouselInterval);
-          carouselInterval = null;
+        if (carouselAnimationFrame) {
+          window.cancelAnimationFrame(carouselAnimationFrame);
+          carouselAnimationFrame = null;
         }
       };
 
-      const carouselObserver = new IntersectionObserver((entries) => {
+      let ObserverClass = window.IntersectionObserver;
+      if (typeof ObserverClass !== 'function') {
+          ObserverClass = class {
+              constructor() {}
+              observe() {}
+              unobserve() {}
+              disconnect() {}
+          };
+      }
+
+      const carouselObserver = new ObserverClass((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             startCarousel();
@@ -152,17 +187,15 @@ function initCarousel() {
 function initRevealSteps() {
   const revealSteps = document.querySelectorAll('.reveal-step');
   if (revealSteps.length > 0) {
-    const revealObserver = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Remove initial hidden states
           entry.target.classList.remove('opacity-20', 'translate-y-4');
           // Add visible states
           entry.target.classList.add('opacity-100', 'translate-y-0');
-        } else {
-          // Re-add hidden states to dim out
-          entry.target.classList.remove('opacity-100', 'translate-y-0');
-          entry.target.classList.add('opacity-20', 'translate-y-4');
+          // Unobserve to trigger only once
+          observer.unobserve(entry.target);
         }
       });
     }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });

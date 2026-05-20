@@ -3,4 +3,5 @@ module.exports = {
   clearMocks: true,
   setupFiles: ['<rootDir>/jest.setup.js'],
   modulePathIgnorePatterns: ['<rootDir>/themes/'],
+  setupFiles: ['<rootDir>/jest.setup.js'],
 };

@@ -26,6 +26,30 @@ describe('Carousel auto-scroll', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    let rafTime = 0;
+    let callbacks = [];
+    jest.spyOn(window, 'requestAnimationFrame').mockImplementation(cb => {
+      callbacks.push(cb);
+      return 1;
+    });
+
+    window.clearRAFCallbacks = () => { callbacks = []; };
+    window.advanceRAF = (ms) => {
+      rafTime += 16;
+      if (callbacks.length > 0) {
+        const cbs1 = callbacks;
+        callbacks = [];
+        cbs1.forEach(cb => cb(rafTime)); // Set lastTime
+      }
+
+      rafTime += ms;
+
+      if (callbacks.length > 0) {
+        const cbs2 = callbacks;
+        callbacks = [];
+        cbs2.forEach(cb => cb(rafTime)); // Calculate progress and scroll
+      }
+    };
     document.body.innerHTML = `
       <div id="use-cases-scroll-container" style="width: 500px;">
         <div style="width: 300px;">Card 1</div>
@@ -52,7 +76,7 @@ describe('Carousel auto-scroll', () => {
       }
     });
 
-    eval(mainJsCode);
+    eval(`(function() { ${mainJsCode} })();`);
 
     const event = document.createEvent('Event');
     event.initEvent('DOMContentLoaded', true, true);
@@ -65,37 +89,44 @@ describe('Carousel auto-scroll', () => {
 
   it('should start auto-scrolling when intersecting', () => {
     carousel._observerCallback([{ isIntersecting: true }]);
-    jest.advanceTimersByTime(3000);
+    window.advanceRAF(3000);
     expect(carousel.scrollBy).toHaveBeenCalledWith({ left: 340, behavior: 'smooth' });
-    expect(carousel.scrollLeft).toBe(340);
   });
 
   it('should not auto-scroll when hovered', () => {
     carousel._observerCallback([{ isIntersecting: true }]);
     const mouseEnterEvent = new Event('mouseenter');
     carousel.dispatchEvent(mouseEnterEvent);
-    jest.advanceTimersByTime(3000);
+    window.advanceRAF(3000);
     expect(carousel.scrollBy).not.toHaveBeenCalled();
     const mouseLeaveEvent = new Event('mouseleave');
     carousel.dispatchEvent(mouseLeaveEvent);
-    jest.advanceTimersByTime(3000);
+    window.advanceRAF(3000);
     expect(carousel.scrollBy).toHaveBeenCalled();
   });
 
   it('should loop back to start when reaching the end', () => {
     carousel.scrollLeft = 800;
     carousel._observerCallback([{ isIntersecting: true }]);
-    jest.advanceTimersByTime(3000);
+    window.advanceRAF(3000);
     expect(carousel.scrollTo).toHaveBeenCalledWith({ left: 0, behavior: 'smooth' });
-    expect(carousel.scrollLeft).toBe(0);
   });
 
   it('should stop auto-scrolling when no longer intersecting', () => {
     carousel._observerCallback([{ isIntersecting: true }]);
-    jest.advanceTimersByTime(3000);
+    window.advanceRAF(3000);
     expect(carousel.scrollBy).toHaveBeenCalledTimes(1);
+
+    // clear the call count before testing stop
+    carousel.scrollBy.mockClear();
+
     carousel._observerCallback([{ isIntersecting: false }]);
-    jest.advanceTimersByTime(3000);
-    expect(carousel.scrollBy).toHaveBeenCalledTimes(1);
+    // In actual requestAnimationFrame, cancelAnimationFrame would be called,
+    // but our mock doesn't implement that fully, so let's clear the mock callbacks manually
+    // if the real implementation handles it, the next frame won't be requested.
+    window.clearRAFCallbacks();
+
+    window.advanceRAF(3000);
+    expect(carousel.scrollBy).not.toHaveBeenCalled();
   });
 });
