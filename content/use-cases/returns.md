@@ -105,34 +105,26 @@ Rel(agent, gateway, "BLOCK REFUND: Fraud Detected")
 </div>
 {{< /section-container >}}
 
-<script type="application/ld+json">
+{{< faq >}}
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How does automated weight verification prevent return fraud?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Automated weight verification prevents return fraud by querying Carrier APIs to ensure the weight of the returned package matches the outbound shipment's exact weight. Any significant variance (e.g., returning a brick instead of a laptop) automatically freezes the instant refund process."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What is serial number authentication in reverse logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Serial number authentication uses Optical Character Recognition (OCR) on warehouse photo scans to match a returned device's serial number against the original sales order, preventing fraudsters from swapping new units for older or broken ones (wardrobing)."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How do dynamic watchlists optimize the refund process?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Dynamic watchlists cross-reference a customer's return history to build a real-time risk score. This enables businesses to provide frictionless instant refunds to low-risk VIP customers while automatically blocking or delaying refunds for users with high claims ratios."
-    }
-  }]
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "How does automated weight verification prevent return fraud?",
+            "answer": "Automated weight verification prevents return fraud by querying Carrier APIs to ensure the weight of the returned package matches the outbound shipment's exact weight. Any significant variance (e.g., returning a brick instead of a laptop) automatically freezes the instant refund process."
+        },
+        {
+            "question": "What is serial number authentication in reverse logistics?",
+            "answer": "Serial number authentication uses Optical Character Recognition (OCR) on warehouse photo scans to match a returned device's serial number against the original sales order, preventing fraudsters from swapping new units for older or broken ones (wardrobing)."
+        },
+        {
+            "question": "How do dynamic watchlists optimize the refund process?",
+            "answer": "Dynamic watchlists cross-reference a customer's return history to build a real-time risk score. This enables businesses to provide frictionless instant refunds to low-risk VIP customers while automatically blocking or delaying refunds for users with high claims ratios."
+        }
+    ]
 }
-</script>
+{{< /faq >}}
 
 ---
 
@@ -153,3 +145,28 @@ Rel(agent, gateway, "BLOCK REFUND: Fraud Detected")
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< howto >}}
+{
+    "name": "How to Optimize the Returns Process",
+    "description": "Steps to streamline returns and improve customer satisfaction.",
+    "step": [
+        {
+            "name": "Simplify Return Policies",
+            "text": "Ensure your return policy is clear, concise, and easy for customers to understand."
+        },
+        {
+            "name": "Automate Return Authorizations",
+            "text": "Implement a self-service portal where customers can easily request and receive return authorizations."
+        },
+        {
+            "name": "Optimize Reverse Logistics",
+            "text": "Use data to identify the most efficient and cost-effective ways to process returned items."
+        },
+        {
+            "name": "Analyze Return Reasons",
+            "text": "Track the reasons for returns to identify product issues and improve future offerings."
+        }
+    ]
+}
+{{< /howto >}}
