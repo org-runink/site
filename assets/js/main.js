@@ -61,9 +61,9 @@ function initParallax() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          window.addEventListener('scroll', scrollHandler, { passive: true });
+          window.addEventListener('scroll', onScroll, { passive: true });
         } else {
-          window.removeEventListener('scroll', scrollHandler);
+          window.removeEventListener('scroll', onScroll);
         }
       });
     }, { rootMargin: '0px', threshold: 0.0 });
