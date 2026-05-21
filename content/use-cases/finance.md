@@ -149,34 +149,26 @@ author: "Lead Data & Cloud Architect"
       document.head.appendChild(script);
   });
 </script>
-<script type="application/ld+json">
+{{< faq >}}
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How does automated freight auditing save money?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Automated freight auditing saves money by forensically analyzing every invoice line item against negotiated contracts to stop leakage from invalid accessorial charges."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What is an automated short-pay in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "An automated short-pay is when an AI agent detects an invalid charge, such as unverified driver detention, and automatically authorizes payment only for the correct linehaul amount, appending a specific denial code."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How are GPS logs used in freight invoice auditing?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "GPS timestamps from delivery events are cross-referenced with invoices to validate accessorial charges like driver detention, ensuring payment is only authorized for actual wait times that exceed contract allowances."
-    }
-  }]
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "How does automated freight auditing save money?",
+            "answer": "Automated freight auditing saves money by forensically analyzing every invoice line item against negotiated contracts to stop leakage from invalid accessorial charges."
+        },
+        {
+            "question": "What is an automated short-pay in logistics?",
+            "answer": "An automated short-pay is when an AI agent detects an invalid charge, such as unverified driver detention, and automatically authorizes payment only for the correct linehaul amount, appending a specific denial code."
+        },
+        {
+            "question": "How are GPS logs used in freight invoice auditing?",
+            "answer": "GPS timestamps from delivery events are cross-referenced with invoices to validate accessorial charges like driver detention, ensuring payment is only authorized for actual wait times that exceed contract allowances."
+        }
+    ]
 }
-</script>
+{{< /faq >}}
 
 
 ---
@@ -198,3 +190,28 @@ author: "Lead Data & Cloud Architect"
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< howto >}}
+{
+    "name": "How to Implement Automated Freight Auditing",
+    "description": "A guide to automating the auditing of freight invoices to prevent overbilling.",
+    "step": [
+        {
+            "name": "Centralize Contracts",
+            "text": "Digitize and store all carrier contracts and negotiated rates in a centralized database."
+        },
+        {
+            "name": "Integrate Invoice Data",
+            "text": "Set up electronic data interchange (EDI) or OCR to automatically ingest carrier invoices."
+        },
+        {
+            "name": "Automate Auditing",
+            "text": "Use software to cross-reference invoice line items against negotiated rates and identify discrepancies."
+        },
+        {
+            "name": "Process Short-Pays",
+            "text": "Automatically generate short-pays for invalid charges and communicate deductions to carriers."
+        }
+    ]
+}
+{{< /howto >}}
