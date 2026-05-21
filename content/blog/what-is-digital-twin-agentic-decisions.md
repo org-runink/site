@@ -111,35 +111,7 @@ By adopting these advanced technologies, supply chain leaders can finally transc
 
 *Ready to transition from passive visibility to autonomous optimization? [Discover how the Runink Analytics Companion can transform your operations today](/contact/).*
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail logistics AI queries in generative engines (e.g., Perplexity, Google AI Overviews). -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is a supply chain digital twin?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A supply chain digital twin is a dynamic, highly granular virtual replica of physical logistics assets, processes, and networks. It uses real-time telemetry data to mirror the state of physical systems, allowing organizations to simulate scenarios and optimize workflows."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How do Agentic Decisions improve logistics operations?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Agentic Decisions move beyond passive predictive analytics by using Cognitive RPA to autonomously execute solutions. When a digital twin detects a disruption, Agentic AI can generate mitigation strategies, run simulations, and execute API-driven resolutions across enterprise systems automatically."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the four types of Digital Twins in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The four archetypes are: 1. Component Twins (individual sensors/parts), 2. Asset Twins (entire equipment like containers or AGVs), 3. System Twins (interacting networks like warehouses), and 4. Process Twins (end-to-end operational workflows like procurement to final-mile fulfillment)."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -161,3 +133,24 @@ By adopting these advanced technologies, supply chain leaders can finally transc
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What is a supply chain digital twin?",
+            "answer": "A supply chain digital twin is a dynamic, highly granular virtual replica of physical logistics assets, processes, and networks. It uses real-time telemetry data to mirror the state of physical systems, allowing organizations to simulate scenarios and optimize workflows."
+        },
+        {
+            "question": "How do Agentic Decisions improve logistics operations?",
+            "answer": "Agentic Decisions move beyond passive predictive analytics by using Cognitive RPA to autonomously execute solutions. When a digital twin detects a disruption, Agentic AI can generate mitigation strategies, run simulations, and execute API-driven resolutions across enterprise systems automatically."
+        },
+        {
+            "question": "What are the four types of Digital Twins in logistics?",
+            "answer": "The four archetypes are: 1. Component Twins (individual sensors/parts), 2. Asset Twins (entire equipment like containers or AGVs), 3. System Twins (interacting networks like warehouses), and 4. Process Twins (end-to-end operational workflows like procurement to final-mile fulfillment)."
+        }
+    ]
+}
+{{< /faq >}}

@@ -101,42 +101,7 @@ None of these techniques involve magic – they’re extensions of good old-fash
 
 In a fast-paced logistics environment, trust is everything. With query expansion, reranking, embedding adapters, and model tuning in your playbook, you can trust that your AI is working with you *and* with the facts. That means better forecasts, smoother fulfillment, and ultimately a more resilient supply chain – no nightmares required.
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture high-intent AI queries regarding AI hallucinations and prevention techniques in generative engines (e.g., Perplexity, Google AI Overviews). -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What are AI hallucinations in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "AI Hallucinations occur when generative AI models produce fabricated or inaccurate information. In logistics, this can lead to severe operational errors such as misinformed demand forecasting or faulty transportation routing."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How does query expansion reduce AI hallucinations?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Query expansion mitigates hallucinations by broadening search queries to fetch more comprehensive context, preventing the AI from generating answers without sufficient background information."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What is the role of an embedding adapter in preventing AI hallucinations?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Embedding adapters align the AI's understanding with domain-specific terminology, such as retail SKUs or medical supply codes, which prevents the misinterpretation of queries and ensures the AI retrieves the exact records needed."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Why is model tuning important for AI in supply chains?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Model tuning trains the AI directly on specific domain data. This equips the AI with deep operational knowledge, drastically reducing its tendency to guess or hallucinate, and turns it into a reliable co-pilot for critical tasks."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -158,3 +123,28 @@ In a fast-paced logistics environment, trust is everything. With query expansion
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What are AI hallucinations in logistics?",
+            "answer": "AI Hallucinations occur when generative AI models produce fabricated or inaccurate information. In logistics, this can lead to severe operational errors such as misinformed demand forecasting or faulty transportation routing."
+        },
+        {
+            "question": "How does query expansion reduce AI hallucinations?",
+            "answer": "Query expansion mitigates hallucinations by broadening search queries to fetch more comprehensive context, preventing the AI from generating answers without sufficient background information."
+        },
+        {
+            "question": "What is the role of an embedding adapter in preventing AI hallucinations?",
+            "answer": "Embedding adapters align the AI's understanding with domain-specific terminology, such as retail SKUs or medical supply codes, which prevents the misinterpretation of queries and ensures the AI retrieves the exact records needed."
+        },
+        {
+            "question": "Why is model tuning important for AI in supply chains?",
+            "answer": "Model tuning trains the AI directly on specific domain data. This equips the AI with deep operational knowledge, drastically reducing its tendency to guess or hallucinate, and turns it into a reliable co-pilot for critical tasks."
+        }
+    ]
+}
+{{< /faq >}}

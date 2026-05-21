@@ -106,38 +106,32 @@ Rel(agent, buyer, "Alert: 'Trend Cooling. Cut PO by 50%.'")
 {{< /section-container >}}
 
 
-<!-- GEO Optimization: Injecting FAQPage Schema to structure definitions and ROI of demand planning for inclusion in Generative Engine Overviews. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How does AI demand planning predict inventory needs?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "AI demand planning predicts inventory needs by using web scrapers to monitor external signals like competitor out-of-stocks and social search volume, capturing trends before they appear in internal sales data."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What is the benefit of using time-series analysis in procurement?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Time-series analysis forecasting models, such as ARIMA or Prophet, help procurement systems distinguish between a long-term sustainable shift and a short-term viral spike, preventing the over-purchasing of dead stock."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How does automated precision buying work?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Automated precision buying triggers expedited orders, like Air Freight, to capture peak demand during a spike, and automatically halts future purchase orders the moment predictive models signal a trend decay."
-    }
-  }]
-}
-</script>
+
 
 
 ---
+
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "How does AI demand planning predict inventory needs?",
+            "answer": "AI demand planning predicts inventory needs by using web scrapers to monitor external signals like competitor out-of-stocks and social search volume, capturing trends before they appear in internal sales data."
+        },
+        {
+            "question": "What is the benefit of using time-series analysis in procurement?",
+            "answer": "Time-series analysis forecasting models, such as ARIMA or Prophet, help procurement systems distinguish between a long-term sustainable shift and a short-term viral spike, preventing the over-purchasing of dead stock."
+        },
+        {
+            "question": "How does automated precision buying work?",
+            "answer": "Automated precision buying triggers expedited orders, like Air Freight, to capture peak demand during a spike, and automatically halts future purchase orders the moment predictive models signal a trend decay."
+        }
+    ]
+}
+{{< /faq >}}
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
@@ -156,3 +150,28 @@ Rel(agent, buyer, "Alert: 'Trend Cooling. Cut PO by 50%.'")
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< howto >}}
+{
+    "name": "How to Automate Procurement Processes",
+    "description": "A step-by-step guide to automating procurement and vendor management.",
+    "step": [
+        {
+            "name": "Centralize Vendor Data",
+            "text": "Maintain a single source of truth for all vendor information, contracts, and performance metrics."
+        },
+        {
+            "name": "Automate Purchase Orders",
+            "text": "Implement systems to automatically generate purchase orders when inventory levels fall below a threshold."
+        },
+        {
+            "name": "Streamline Approvals",
+            "text": "Set up automated approval workflows based on purchase amounts and departmental budgets."
+        },
+        {
+            "name": "Evaluate Vendor Performance",
+            "text": "Regularly analyze vendor performance using automated reports to ensure optimal relationships."
+        }
+    ]
+}
+{{< /howto >}}

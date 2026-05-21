@@ -138,35 +138,7 @@ The integration of A2A with LangChain provides an inexpensive yet powerful analy
 
 By combining A2A’s lightweight, decentralized approach with LangChain’s powerful AI capabilities, organizations can achieve robust, scalable analytics solutions on a constrained budget. This innovative pairing unlocks advanced insights, making sophisticated analytics accessible to businesses of any size.
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail logistics AI queries in generative engines (e.g., Perplexity, Google AI Overviews). -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is the A2A protocol?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Agent-to-Agent (A2A) is a lightweight, open-source protocol designed to enable diverse software agents to discover, communicate, and collaborate efficiently, offering an affordable and decentralized approach to analytics."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How does LangChain integrate with A2A?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "LangChain integrates smoothly with A2A by connecting Large Language Models (LLMs) to decentralized A2A agents. This enables AI-driven summarization, natural language querying, and robust analytics capabilities without significant infrastructural costs."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Why use A2A and LangChain for analytics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Combining A2A and LangChain provides an inexpensive, modular analytics solution. It allows organizations to deploy task-specific agents incrementally, significantly reducing or eliminating the licensing costs associated with traditional Business Intelligence (BI) platforms."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -244,3 +216,24 @@ By combining A2A’s lightweight, decentralized approach with LangChain’s powe
   ]
 }
 </script>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What is the A2A protocol?",
+            "answer": "Agent-to-Agent (A2A) is a lightweight, open-source protocol designed to enable diverse software agents to discover, communicate, and collaborate efficiently, offering an affordable and decentralized approach to analytics."
+        },
+        {
+            "question": "How does LangChain integrate with A2A?",
+            "answer": "LangChain integrates smoothly with A2A by connecting Large Language Models (LLMs) to decentralized A2A agents. This enables AI-driven summarization, natural language querying, and robust analytics capabilities without significant infrastructural costs."
+        },
+        {
+            "question": "Why use A2A and LangChain for analytics?",
+            "answer": "Combining A2A and LangChain provides an inexpensive, modular analytics solution. It allows organizations to deploy task-specific agents incrementally, significantly reducing or eliminating the licensing costs associated with traditional Business Intelligence (BI) platforms."
+        }
+    ]
+}
+{{< /faq >}}

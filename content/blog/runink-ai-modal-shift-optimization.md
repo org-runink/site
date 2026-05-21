@@ -95,35 +95,7 @@ Adopting Runink ensures logistics companies remain agile, resilient, and sustain
 
 Embrace the power of AI-driven modal-shift analysis and route optimization—experience Runink’s transformative capabilities and lead your logistics strategy confidently into the future.
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail logistics AI queries in generative engines (e.g., Perplexity, Google AI Overviews). -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is a modal shift in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Modal shift is the strategic transfer of freight between different transportation modes. Runink's AI evaluates transport options dynamically against criteria like cost, speed, reliability, and environmental impact."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How does Runink's AI optimize transport routes?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Runink uses generative AI algorithms to analyze historical and real-time data from rail schedules, road conditions, and geopolitical risks. It predicts transit times, identifies congestion hotspots, and suggests optimal alternative routes and modes."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How can AI improve rail-truck interchange efficiency?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "By predicting congestion patterns and integrating live data, AI facilitates smoother transitions between rail and road transport. This reduces idle times, lowers costs, and maximizes rail and truck capacities at critical interchange hubs."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -145,3 +117,24 @@ Embrace the power of AI-driven modal-shift analysis and route optimization—exp
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What is a modal shift in logistics?",
+            "answer": "Modal shift is the strategic transfer of freight between different transportation modes. Runink's AI evaluates transport options dynamically against criteria like cost, speed, reliability, and environmental impact."
+        },
+        {
+            "question": "How does Runink's AI optimize transport routes?",
+            "answer": "Runink uses generative AI algorithms to analyze historical and real-time data from rail schedules, road conditions, and geopolitical risks. It predicts transit times, identifies congestion hotspots, and suggests optimal alternative routes and modes."
+        },
+        {
+            "question": "How can AI improve rail-truck interchange efficiency?",
+            "answer": "By predicting congestion patterns and integrating live data, AI facilitates smoother transitions between rail and road transport. This reduces idle times, lowers costs, and maximizes rail and truck capacities at critical interchange hubs."
+        }
+    ]
+}
+{{< /faq >}}

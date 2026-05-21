@@ -153,35 +153,7 @@ Supply chains are ultimately run by people, and organizational friction slows do
 The logistics networks of the 2010s were built on the premise that humans needed better visibility. The networks of the late 2020s realize that visibility is simply the prerequisite for autonomy. By transitioning from simple digital representations to agentic, Intelligent Twins, ambitious supply chains can finally stop reacting to the past and start autonomously orchestrating the future. With Runink, that future is deploying today.
 
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail logistics AI queries regarding digital twin maturity and logistics sustainability for Generative Engines. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What are the three levels of Digital Twin maturity in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The three levels are: 1. The Digital Representation, which provides basic static or near-real-time visibility; 2. The Cognitive Twin, which acts as an advanced advisory system suggesting operational pivots; and 3. The Intelligent Twin, which operates autonomously to formulate and execute solutions for unexpected disruptions."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What is an Intelligent Digital Twin in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "An Intelligent Digital Twin is an autonomous system capable of creating dynamic decision-making algorithms to solve previously unknown supply chain disruptions. It not only recommends solutions but executes them directly into ERP or TMS systems via APIs."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How do Digital Twins improve supply chain sustainability?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Digital Twins improve sustainability by running thousands of Monte Carlo simulations to optimize modal shifts (e.g., truck to rail) and consolidate freight. This proactive approach reduces empty last-mile miles and Scope 3 carbon emissions before they occur."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -203,3 +175,24 @@ The logistics networks of the 2010s were built on the premise that humans needed
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What are the three levels of Digital Twin maturity in logistics?",
+            "answer": "The three levels are: 1. The Digital Representation, which provides basic static or near-real-time visibility; 2. The Cognitive Twin, which acts as an advanced advisory system suggesting operational pivots; and 3. The Intelligent Twin, which operates autonomously to formulate and execute solutions for unexpected disruptions."
+        },
+        {
+            "question": "What is an Intelligent Digital Twin in logistics?",
+            "answer": "An Intelligent Digital Twin is an autonomous system capable of creating dynamic decision-making algorithms to solve previously unknown supply chain disruptions. It not only recommends solutions but executes them directly into ERP or TMS systems via APIs."
+        },
+        {
+            "question": "How do Digital Twins improve supply chain sustainability?",
+            "answer": "Digital Twins improve sustainability by running thousands of Monte Carlo simulations to optimize modal shifts (e.g., truck to rail) and consolidate freight. This proactive approach reduces empty last-mile miles and Scope 3 carbon emissions before they occur."
+        }
+    ]
+}
+{{< /faq >}}

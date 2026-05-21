@@ -235,21 +235,7 @@ It’s the **foundation of modern data accountability** — and the core of ever
 
 *Interested in how Runink automates semantic layers for governed observability? [Learn more about the Runink Analytics Companion →](products/analytics_companion/)*
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail queries regarding automated semantic layers and telemetry data observability for Generative Engines. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is an automated semantic layer?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "An automated semantic layer is a continuously updated abstraction that converts raw system, pipeline, and application telemetry into structured, domain-aware insights — such as metrics, entities, and lineage graphs."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -271,3 +257,16 @@ It’s the **foundation of modern data accountability** — and the core of ever
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What is an automated semantic layer?",
+            "answer": "An automated semantic layer is a continuously updated abstraction that converts raw system, pipeline, and application telemetry into structured, domain-aware insights \u2014 such as metrics, entities, and lineage graphs."
+        }
+    ]
+}
+{{< /faq >}}

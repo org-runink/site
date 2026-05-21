@@ -77,35 +77,7 @@ For professionals in tech innovation and smart supply chain solutions, the takea
 
 <br>
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail AI logistics and data governance queries in Generative Engine search summaries. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Why is data governance important for AI in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Data governance is essential for AI in logistics because AI models rely on high-quality, accurate data to generate reliable insights. Proper governance prevents issues like overstocking and stockouts caused by bad data, and instead helps drive efficiency and a higher ROI."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How does data governance improve ROI in AI logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "By ensuring data accuracy, consistency, and compliance, data governance helps organizations deploy AI faster and make smarter decisions. It can help reduce operational costs like transportation by 5-10%, streamline procurement, and achieve up to 2-3x greater ROI compared to siloed point solutions."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What role do LLMs and drones play in Industry 4.0 procurement?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "In Industry 4.0, LLMs act as intelligent assistants that analyze massive amounts of unstructured data to optimize supplier discovery and procurement. Meanwhile, autonomous drones handle last-mile deliveries, with LLMs helping to optimize their routes for greater efficiency, provided they are fed governed data."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -127,3 +99,24 @@ For professionals in tech innovation and smart supply chain solutions, the takea
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "Why is data governance important for AI in logistics?",
+            "answer": "Data governance is essential for AI in logistics because AI models rely on high-quality, accurate data to generate reliable insights. Proper governance prevents issues like overstocking and stockouts caused by bad data, and instead helps drive efficiency and a higher ROI."
+        },
+        {
+            "question": "How does data governance improve ROI in AI logistics?",
+            "answer": "By ensuring data accuracy, consistency, and compliance, data governance helps organizations deploy AI faster and make smarter decisions. It can help reduce operational costs like transportation by 5-10%, streamline procurement, and achieve up to 2-3x greater ROI compared to siloed point solutions."
+        },
+        {
+            "question": "What role do LLMs and drones play in Industry 4.0 procurement?",
+            "answer": "In Industry 4.0, LLMs act as intelligent assistants that analyze massive amounts of unstructured data to optimize supplier discovery and procurement. Meanwhile, autonomous drones handle last-mile deliveries, with LLMs helping to optimize their routes for greater efficiency, provided they are fed governed data."
+        }
+    ]
+}
+{{< /faq >}}

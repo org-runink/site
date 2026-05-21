@@ -102,31 +102,7 @@ Dynamic masking on shared Snowflake objects is not merely optional; it's essenti
 
 Adopting dynamic masking isn't just about security—it's a fundamental commitment to maintaining trust, ensuring compliance, and enabling innovation securely.
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail AI queries in generative engines (e.g., Perplexity, Google AI Overviews). -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is dynamic data masking in Snowflake?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dynamic data masking (DDM) is a security technique in Snowflake where sensitive data is obscured in real-time based on user roles or privileges, without altering the underlying stored data. It maintains data integrity while ensuring secure and flexible access."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is dynamic data masking important for compliance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dynamic data masking helps financial and insurance companies comply with stringent data protection regulations like GDPR, CCPA, and HIPAA by minimizing data exposure, providing auditable controls, and enforcing real-time masking policies without altering original datasets."
-      }
-    }
-  ]
-}
-</script>
+
 
 ---
 
@@ -147,3 +123,20 @@ Adopting dynamic masking isn't just about security—it's a fundamental commitme
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What is dynamic data masking in Snowflake?",
+            "answer": "Dynamic data masking (DDM) is a security technique in Snowflake where sensitive data is obscured in real-time based on user roles or privileges, without altering the underlying stored data. It maintains data integrity while ensuring secure and flexible access."
+        },
+        {
+            "question": "Why is dynamic data masking important for compliance?",
+            "answer": "Dynamic data masking helps financial and insurance companies comply with stringent data protection regulations like GDPR, CCPA, and HIPAA by minimizing data exposure, providing auditable controls, and enforcing real-time masking policies without altering original datasets."
+        }
+    ]
+}
+{{< /faq >}}

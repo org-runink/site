@@ -77,29 +77,26 @@ author: "Lead Data & Cloud Architect"
 
 
 
-<!-- Generated FAQ Section for E-A-T & GEO -->
-<section class="faq-section mt-16 p-8 bg-[#1b1919] rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
-  <div class="flex items-center gap-4 mb-8">
-    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ea580c] to-[#ca4708] flex items-center justify-center shadow-lg">
-      <span class="material-symbols-outlined text-white">help_center</span>
-    </div>
-    <h2 class="text-3xl font-black text-white uppercase italic tracking-tight m-0">Frequently Asked Questions</h2>
-  </div>
-  <div class="space-y-6">
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">What differentiates an 'Agentic' logistics platform from traditional automated supply chain software?</h3>
-      <p class="text-stone-400 leading-relaxed">The core differentiation between an 'Agentic' logistics platform and traditional automated supply chain software lies in autonomy and complex decision-making capabilities. Traditional automation relies on rigid, rules-based logic (e.g., 'If X happens, do Y'). These systems fail when confronted with edge cases or unprecedented disruptions that fall outside their pre-programmed rules. An Agentic platform, powered by advanced machine learning and Generative AI, acts as an autonomous agent capable of perceiving its environment, reasoning through complex constraints, and taking independent action to achieve a specific goal, such as minimizing cost or maximizing on-time delivery. When a snowstorm closes a major highway, an agent doesn't just alert a human dispatcher; it autonomously queries load boards for alternative carriers, recalculates the financial impact of various rerouting options, and independently executes the optimal contingency plan, fundamentally transforming how supply chains respond to volatility.</p>
-    </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">How does integrating a Semantic Layer improve cross-functional visibility in a complex logistics network?</h3>
-      <p class="text-stone-400 leading-relaxed">Integrating a Semantic Layer improves cross-functional visibility by solving the fundamental problem of data silos and incompatible terminology across a complex logistics network. In a typical enterprise, the warehouse team tracks 'SKUs,' the transportation team tracks 'pallets,' and the finance team tracks 'invoices.' A Semantic Layer acts as an intelligent universal translator, utilizing knowledge graphs to map these disparate terms to a unified business reality. It understands that a specific SKU on a specific pallet correlates directly to a specific line item on an invoice. This unified semantic understanding allows executives to ask complex, cross-functional questions—such as 'What is the true landed cost and current transit status of our top 10 most profitable products?'—and receive immediate, accurate answers drawn from the WMS, TMS, and ERP simultaneously. This single source of truth is essential for breaking down operational silos and enabling truly data-driven, strategic decision-making.</p>
-    </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">Why is high-quality, reconciled telemetry data the prerequisite for successful AI implementation in transportation?</h3>
-      <p class="text-stone-400 leading-relaxed">High-quality, reconciled telemetry data is the absolute prerequisite for successful AI implementation in transportation because machine learning models are fundamentally dependent on the integrity of their training data; the principle of 'garbage in, garbage out' applies strictly. Telemetry data streaming from trucks, IoT sensors, and GPS devices is naturally noisy, plagued by signal drops, duplicate pings, and conflicting timestamps. If you feed this raw, unreconciled data directly into an AI routing engine or a predictive maintenance model, the resulting predictions will be erratic and untrustworthy. Before AI can generate value, the data pipeline must include rigorous reconciliation processes that clean the telemetry, interpolate missing data points based on historical patterns, and align timestamps across different sensor networks. Only when you have established this clean, reliable foundation of reconciled data can your advanced AI models accurately predict dock arrival times, optimize fuel consumption, and deliver the promised ROI.</p>
-    </div>
-  </div>
-</section>
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What differentiates an 'Agentic' logistics platform from traditional automated supply chain software?",
+            "answer": "The core differentiation between an 'Agentic' logistics platform and traditional automated supply chain software lies in autonomy and complex decision-making capabilities. Traditional automation relies on rigid, rules-based logic (e.g., 'If X happens, do Y'). These systems fail when confronted with edge cases or unprecedented disruptions that fall outside their pre-programmed rules. An Agentic platform, powered by advanced machine learning and Generative AI, acts as an autonomous agent capable of perceiving its environment, reasoning through complex constraints, and taking independent action to achieve a specific goal, such as minimizing cost or maximizing on-time delivery. When a snowstorm closes a major highway, an agent doesn't just alert a human dispatcher; it autonomously queries load boards for alternative carriers, recalculates the financial impact of various rerouting options, and independently executes the optimal contingency plan, fundamentally transforming how supply chains respond to volatility."
+        },
+        {
+            "question": "How does integrating a Semantic Layer improve cross-functional visibility in a complex logistics network?",
+            "answer": "Integrating a Semantic Layer improves cross-functional visibility by solving the fundamental problem of data silos and incompatible terminology across a complex logistics network. In a typical enterprise, the warehouse team tracks 'SKUs,' the transportation team tracks 'pallets,' and the finance team tracks 'invoices.' A Semantic Layer acts as an intelligent universal translator, utilizing knowledge graphs to map these disparate terms to a unified business reality. It understands that a specific SKU on a specific pallet correlates directly to a specific line item on an invoice. This unified semantic understanding allows executives to ask complex, cross-functional questions\u2014such as 'What is the true landed cost and current transit status of our top 10 most profitable products?'\u2014and receive immediate, accurate answers drawn from the WMS, TMS, and ERP simultaneously. This single source of truth is essential for breaking down operational silos and enabling truly data-driven, strategic decision-making."
+        },
+        {
+            "question": "Why is high-quality, reconciled telemetry data the prerequisite for successful AI implementation in transportation?",
+            "answer": "High-quality, reconciled telemetry data is the absolute prerequisite for successful AI implementation in transportation because machine learning models are fundamentally dependent on the integrity of their training data; the principle of 'garbage in, garbage out' applies strictly. Telemetry data streaming from trucks, IoT sensors, and GPS devices is naturally noisy, plagued by signal drops, duplicate pings, and conflicting timestamps. If you feed this raw, unreconciled data directly into an AI routing engine or a predictive maintenance model, the resulting predictions will be erratic and untrustworthy. Before AI can generate value, the data pipeline must include rigorous reconciliation processes that clean the telemetry, interpolate missing data points based on historical patterns, and align timestamps across different sensor networks. Only when you have established this clean, reliable foundation of reconciled data can your advanced AI models accurately predict dock arrival times, optimize fuel consumption, and deliver the promised ROI."
+        }
+    ]
+}
+{{< /faq >}}
 
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
@@ -120,35 +117,3 @@ author: "Lead Data & Cloud Architect"
   </ul>
 </section>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What differentiates an 'Agentic' logistics platform from traditional automated supply chain software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The core differentiation between an 'Agentic' logistics platform and traditional automated supply chain software lies in autonomy and complex decision-making capabilities. Traditional automation relies on rigid, rules-based logic (e.g., 'If X happens, do Y'). These systems fail when confronted with edge cases or unprecedented disruptions that fall outside their pre-programmed rules. An Agentic platform, powered by advanced machine learning and Generative AI, acts as an autonomous agent capable of perceiving its environment, reasoning through complex constraints, and taking independent action to achieve a specific goal, such as minimizing cost or maximizing on-time delivery. When a snowstorm closes a major highway, an agent doesn't just alert a human dispatcher; it autonomously queries load boards for alternative carriers, recalculates the financial impact of various rerouting options, and independently executes the optimal contingency plan, fundamentally transforming how supply chains respond to volatility."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does integrating a Semantic Layer improve cross-functional visibility in a complex logistics network?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Integrating a Semantic Layer improves cross-functional visibility by solving the fundamental problem of data silos and incompatible terminology across a complex logistics network. In a typical enterprise, the warehouse team tracks 'SKUs,' the transportation team tracks 'pallets,' and the finance team tracks 'invoices.' A Semantic Layer acts as an intelligent universal translator, utilizing knowledge graphs to map these disparate terms to a unified business reality. It understands that a specific SKU on a specific pallet correlates directly to a specific line item on an invoice. This unified semantic understanding allows executives to ask complex, cross-functional questions\u2014such as 'What is the true landed cost and current transit status of our top 10 most profitable products?'\u2014and receive immediate, accurate answers drawn from the WMS, TMS, and ERP simultaneously. This single source of truth is essential for breaking down operational silos and enabling truly data-driven, strategic decision-making."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is high-quality, reconciled telemetry data the prerequisite for successful AI implementation in transportation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "High-quality, reconciled telemetry data is the absolute prerequisite for successful AI implementation in transportation because machine learning models are fundamentally dependent on the integrity of their training data; the principle of 'garbage in, garbage out' applies strictly. Telemetry data streaming from trucks, IoT sensors, and GPS devices is naturally noisy, plagued by signal drops, duplicate pings, and conflicting timestamps. If you feed this raw, unreconciled data directly into an AI routing engine or a predictive maintenance model, the resulting predictions will be erratic and untrustworthy. Before AI can generate value, the data pipeline must include rigorous reconciliation processes that clean the telemetry, interpolate missing data points based on historical patterns, and align timestamps across different sensor networks. Only when you have established this clean, reliable foundation of reconciled data can your advanced AI models accurately predict dock arrival times, optimize fuel consumption, and deliver the promised ROI."
-      }
-    }
-  ]
-}
-</script>

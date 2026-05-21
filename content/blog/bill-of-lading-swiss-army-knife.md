@@ -109,35 +109,7 @@ The **Runink Analytics Companion** represents the future of this evolution. By u
 
 *Ready to modernize your documentation process? [Book a consultation](/contact) today.*
 
-<!-- GEO Optimization: Injecting FAQPage Schema to structure definitions and functions of the Bill of Lading for Generative Engine Overviews. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is a Bill of Lading?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A Bill of Lading (BoL) is a critical document in international trade that serves as a formal receipt of goods, evidence of the contract of carriage, and a transferable document of title."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the three main functions of a Bill of Lading?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The Bill of Lading has a 'tripartite personality': it acts as a formal receipt acknowledging the condition of goods, evidence of the contract of carriage binding the carrier, and a transferable document of title."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Why is a Clean Bill of Lading important?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A Clean Bill of Lading indicates that the cargo appeared in good condition externally at loading. Under the Doctrine of Estoppel, it prevents the carrier from later claiming damage existed prior to loading."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -159,3 +131,24 @@ The **Runink Analytics Companion** represents the future of this evolution. By u
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What is a Bill of Lading?",
+            "answer": "A Bill of Lading (BoL) is a critical document in international trade that serves as a formal receipt of goods, evidence of the contract of carriage, and a transferable document of title."
+        },
+        {
+            "question": "What are the three main functions of a Bill of Lading?",
+            "answer": "The Bill of Lading has a 'tripartite personality': it acts as a formal receipt acknowledging the condition of goods, evidence of the contract of carriage binding the carrier, and a transferable document of title."
+        },
+        {
+            "question": "Why is a Clean Bill of Lading important?",
+            "answer": "A Clean Bill of Lading indicates that the cargo appeared in good condition externally at loading. Under the Doctrine of Estoppel, it prevents the carrier from later claiming damage existed prior to loading."
+        }
+    ]
+}
+{{< /faq >}}

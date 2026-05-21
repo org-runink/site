@@ -70,35 +70,7 @@ For practical implementation, organizations should:
 
 By strategically aligning domain models, data mesh practices, and robust FinOps cloud controls, enterprises can dramatically enhance their ability to measure and optimize cloud ROI at a departmental level. This combined approach ensures accurate financial management, transparency, and accountability, driving maximum value from cloud investments.
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture high-intent queries regarding cloud ROI measurement with FinOps and Data Mesh in Generative Engines. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How do domain models and data mesh improve cloud ROI?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Domain models and data mesh improve cloud ROI by establishing clear, decentralized ownership of data and cloud resources. This transparency enables departments to accurately measure and optimize their specific cloud expenditures and directly link them to business outcomes."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What role does the FinOps framework play in departmental cloud management?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The FinOps framework provides essential cloud controls—such as cost allocation tagging, budget alerts, and chargeback mechanisms—which foster financial accountability and allow individual departments to operate cost-effectively."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are key standardized cloud controls for ROI measurement?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Key standardized cloud controls include comprehensive cost allocation tagging, proactive budget alerts and thresholds, structured chargeback and showback mechanisms, and automated reporting and analytics for real-time cost visibility."
-    }
-  }]
-}
-</script>
+
 
 ---
 
@@ -119,3 +91,24 @@ By strategically aligning domain models, data mesh practices, and robust FinOps 
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "How do domain models and data mesh improve cloud ROI?",
+            "answer": "Domain models and data mesh improve cloud ROI by establishing clear, decentralized ownership of data and cloud resources. This transparency enables departments to accurately measure and optimize their specific cloud expenditures and directly link them to business outcomes."
+        },
+        {
+            "question": "What role does the FinOps framework play in departmental cloud management?",
+            "answer": "The FinOps framework provides essential cloud controls\u2014such as cost allocation tagging, budget alerts, and chargeback mechanisms\u2014which foster financial accountability and allow individual departments to operate cost-effectively."
+        },
+        {
+            "question": "What are key standardized cloud controls for ROI measurement?",
+            "answer": "Key standardized cloud controls include comprehensive cost allocation tagging, proactive budget alerts and thresholds, structured chargeback and showback mechanisms, and automated reporting and analytics for real-time cost visibility."
+        }
+    ]
+}
+{{< /faq >}}

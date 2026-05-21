@@ -85,35 +85,7 @@ In practical terms, this means making AI ethics and security a board-level conve
 
 Take a look at your organization’s AI projects *(existing or planned)* and ask – have we built in the controls, safeguards, and governance to make this truly secure and ethical? If not, now is the time to close those gaps. Update your AI policies, engage your security teams early, and educate your people. By doing so, you’ll not only comply with the laws coming down the pike, but you’ll build AI systems that customers, employees, and partners can trust. In a world increasingly powered by generative AI, **embedding security and ethics by design** is the key to sustainable success. It’s time to innovate *with integrity* – your business’s future may depend on it.
 
-<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail AI ethics and security queries in Generative Engine search summaries. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Why is information security important for ethical AI?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Information security is the bedrock of ethical AI because it ensures data integrity, prevents unauthorized access, and protects privacy. Without robust security, AI systems are vulnerable to manipulation, biased outputs, and data leaks."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How can logistics companies protect against deepfakes?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Logistics companies can protect against deepfakes by establishing robust AI governance, implementing strict zero-trust access controls, and deploying advanced AI monitoring and authentication tools, such as digital watermarks and liveness detection."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the best practices for Gen AI security in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Best practices include embedding privacy-by-design from the start, ensuring data quality and tracking lineage, utilizing input/output filters, applying multi-factor authentication to AI tools, and continuously educating employees on AI risks and ethical use."
-    }
-  }]
-}
-</script>
+
 
 
 ---
@@ -135,3 +107,24 @@ Take a look at your organization’s AI projects *(existing or planned)* and ask
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "Why is information security important for ethical AI?",
+            "answer": "Information security is the bedrock of ethical AI because it ensures data integrity, prevents unauthorized access, and protects privacy. Without robust security, AI systems are vulnerable to manipulation, biased outputs, and data leaks."
+        },
+        {
+            "question": "How can logistics companies protect against deepfakes?",
+            "answer": "Logistics companies can protect against deepfakes by establishing robust AI governance, implementing strict zero-trust access controls, and deploying advanced AI monitoring and authentication tools, such as digital watermarks and liveness detection."
+        },
+        {
+            "question": "What are the best practices for Gen AI security in logistics?",
+            "answer": "Best practices include embedding privacy-by-design from the start, ensuring data quality and tracking lineage, utilizing input/output filters, applying multi-factor authentication to AI tools, and continuously educating employees on AI risks and ethical use."
+        }
+    ]
+}
+{{< /faq >}}
