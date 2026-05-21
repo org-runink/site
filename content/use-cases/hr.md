@@ -103,3 +103,49 @@ author: "Lead Data & Cloud Architect"
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions",
+    "description": "",
+    "questions": [
+        {
+            "question": "What is an HR Twin?",
+            "answer": "The HR Twin is an always-on, context-aware chatbot that hovers over your company's digital modules. It instantly answers employee questions regarding technical processes, onboarding documents, and helps identify key personnel to contact."
+        },
+        {
+            "question": "How does the HR Twin improve productivity?",
+            "answer": "It eliminates context-switching by providing contextual help exactly when and where an employee needs it. Instead of searching through intranets or interrupting senior colleagues, employees get instant answers, saving hours of wasted time."
+        },
+        {
+            "question": "Can the HR Twin route me to the right person?",
+            "answer": "Yes. If an employee needs a specific approval or wants to know who handles a certain process (like an air-freight shipment or IFRS 17), the HR Twin queries the Active Directory to provide the name, email, and contact info of the exact persona."
+        }
+    ]
+}
+{{< /faq >}}
+
+{{< howto >}}
+{
+    "name": "How to Implement an HR Twin Chatbot",
+    "description": "A guide to setting up an always-on HR assistant for your team.",
+    "step": [
+        {
+            "name": "Consolidate Knowledge Bases",
+            "text": "Gather all your corporate wikis, onboarding PDFs, and technical documentation into a centralized repository accessible by the chatbot."
+        },
+        {
+            "name": "Integrate with the Directory",
+            "text": "Connect the chatbot to your company's Active Directory or HR system so it understands the organizational chart and employee roles."
+        },
+        {
+            "name": "Define Context Triggers",
+            "text": "Set up the chatbot to recognize which module or software the employee is currently using, enabling it to provide context-aware answers."
+        },
+        {
+            "name": "Launch and Iterate",
+            "text": "Deploy the chatbot to a pilot group. Monitor the questions asked and refine its responses over time to improve accuracy."
+        }
+    ]
+}
+{{< /howto >}}
