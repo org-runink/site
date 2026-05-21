@@ -21,8 +21,8 @@ describe('main.js DOM initialization', () => {
       document.dispatchEvent(new Event('DOMContentLoaded'));
 
       const layers = document.querySelectorAll('.parallax-layer');
-      expect(layers[0].parallaxDepth).toBe(0.5);
-      expect(layers[1].parallaxDepth).toBe(0); // Default when attribute is missing
+      expect(layers[0].cachedDepth).toBe(0.5);
+      expect(layers[1].cachedDepth).toBe(0); // Default when attribute is missing
       expect(layers[0].animate).toHaveBeenCalled();
     });
 

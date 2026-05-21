@@ -30,10 +30,10 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@unrs/resolver-binding-linux-x64-gnu",
       "esbuild",
       "hugo-bin",
-      "unrs-resolver",
-      "@unrs/resolver-binding-linux-x64-gnu"
+      "unrs-resolver"
     ]
   },
   "main": "postcss.config.js",

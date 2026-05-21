@@ -4,6 +4,7 @@ const { initParallax } = require('../main.js');
 describe('Parallax Edge Cases', () => {
     let container;
     let updateParallax;
+    let intersectCallback;
 
     beforeEach(() => {
         // Setup simple DOM for tests
@@ -18,7 +19,9 @@ describe('Parallax Edge Cases', () => {
 
         // Mock IntersectionObserver
         global.IntersectionObserver = class IntersectionObserver {
-            constructor() {}
+            constructor(callback) {
+                intersectCallback = callback;
+            }
             observe() {}
             unobserve() {}
             disconnect() {}
@@ -41,7 +44,7 @@ describe('Parallax Edge Cases', () => {
 
         // Simulate scrolling
         window.scrollY = 100;
-        window.dispatchEvent(new Event("scroll")); // Update lastScrollY via scrollHandler
+
 
         initParallax();
 
