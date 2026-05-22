@@ -17,6 +17,16 @@ author: "Lead Data & Cloud Architect"
         </p>
     </div>
 
+
+    <div class="mb-16">
+        <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
+        <ul class="space-y-3">
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Context-Aware Assistance:</strong> The HR Twin hovers over modules, understanding user context to instantly surface relevant technical documents and guides without requiring a search.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Intelligent Persona Routing:</strong> Automatically maps complex workflows (like IFRS 17 approvals) to specific organizational chart members, instantly providing the right contact.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Accelerated Onboarding:</strong> Proactively guides new hires through tools and company policies, reducing ramp-up time and eliminating the need for context-switching.</li>
+        </ul>
+    </div>
+
     <div class="flex flex-col gap-12 mb-20">
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The "Who Do I Ask?" Problem</h2>
