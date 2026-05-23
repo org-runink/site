@@ -6,13 +6,13 @@
   <!-- Parallax Container -->
   <div id="hero-parallax" class="absolute inset-0 w-full h-full">
     <!-- Layer 1: Warehouse (Deepest) -->
-    <img src="{{ $warehouse.RelPermalink }}" alt="Warehouse facility background" width="1920" height="1080" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-luminosity opacity-80" style="z-index: 1;" data-depth="0.1">
+    <img src="{{ $warehouse.RelPermalink }}" srcset="{{ $warehouse.RelPermalink }} 1x, {{ $warehouse.RelPermalink }} 2x" alt="Warehouse facility background" width="1920" height="1080" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-luminosity opacity-80" style="z-index: 1;" data-depth="0.1">
 
     <!-- Layer 2: Distribution (Mid) -->
-    <img src="{{ $distribution.RelPermalink }}" alt="{{ .Page.Title | default "Detailed visual representation of logistics concept" }}" role="presentation" width="1920" height="1080" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-color-burn opacity-90" style="z-index: 2;" data-depth="0.3">
+    <img src="{{ $distribution.RelPermalink }}" srcset="{{ $distribution.RelPermalink }} 1x, {{ $distribution.RelPermalink }} 2x" alt="{{ .Page.Title | default "Detailed visual representation of logistics concept" }}" role="presentation" width="1920" height="1080" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-color-burn opacity-90" style="z-index: 2;" data-depth="0.3">
 
     <!-- Layer 3: Trucks (Foreground) -->
-    <img src="{{ $trucks.RelPermalink }}" alt="{{ .Page.Title | default "Detailed visual representation of logistics concept" }}" role="presentation" width="1920" height="1080" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-screen opacity-90" style="z-index: 3;" data-depth="0.6">
+    <img src="{{ $trucks.RelPermalink }}" srcset="{{ $trucks.RelPermalink }} 1x, {{ $trucks.RelPermalink }} 2x" alt="{{ .Page.Title | default "Detailed visual representation of logistics concept" }}" role="presentation" width="1920" height="1080" fetchpriority="high" decoding="sync" class="parallax-layer absolute inset-0 w-full h-full object-cover object-center mix-blend-screen opacity-90" style="z-index: 3;" data-depth="0.6">
   </div>
 
   <!-- Content Overlay -->
