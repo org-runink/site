@@ -21,10 +21,16 @@ function initParallax() {
     });
 
     let ticking = false;
-    let lastScrollY = window.scrollY || 0;
 
     function updateParallax() {
       const currentScrollY = window.scrollY || 0;
+      const rect = parallaxContainer.getBoundingClientRect();
+      // We only update if the container is still in view
+      if (rect.bottom < 0 || rect.top > window.innerHeight) {
+         ticking = false;
+         return;
+      }
+
       const scale = 1 + (currentScrollY * 0.0002);
 
       for (let i = 0; i < layerArray.length; i++) {
@@ -41,7 +47,6 @@ function initParallax() {
     }
 
   const onScroll = () => {
-    lastScrollY = window.scrollY || 0;
     if (!ticking) {
       window.requestAnimationFrame(updateParallax);
       ticking = true;
@@ -62,11 +67,16 @@ function initParallax() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           window.addEventListener('scroll', onScroll, { passive: true });
+          // Update once when coming into view
+          if (!ticking) {
+              window.requestAnimationFrame(updateParallax);
+              ticking = true;
+          }
         } else {
           window.removeEventListener('scroll', onScroll);
         }
       });
-    }, { rootMargin: '0px', threshold: 0.0 });
+    }, { rootMargin: '100px 0px', threshold: 0.0 });
 
     observer.observe(parallaxContainer);
 
@@ -178,12 +188,11 @@ function initCarousel() {
             stopCarousel();
           }
         });
-      }, { rootMargin: '0px', threshold: 0.0 });
+      }, { rootMargin: '100px 0px', threshold: 0.0 });
 
       carouselObserver.observe(carousel);
   }
 }
-
 function initRevealSteps() {
   const revealSteps = document.querySelectorAll('.reveal-step');
   if (revealSteps.length > 0) {
