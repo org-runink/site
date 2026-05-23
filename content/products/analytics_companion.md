@@ -30,6 +30,16 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
 </p>
 </div>
 
+<!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
+<div class="max-w-4xl mx-auto mt-16 mb-8 text-left">
+    <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
+    <ul class="space-y-3">
+        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Autonomous Action Execution:</strong> Shift from passive dashboards to active operations. The Analytics Companion auto-files claims and orchestrates orders, reducing manual operational drag by <strong>up to 60%</strong>.</li>
+        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Predictive Margin Protection:</strong> Utilizing the Hypothesis Lab, logistics operators can simulate pricing changes and routing rules, reliably predicting margin impacts <strong>before</strong> executing risky operational shifts.</li>
+        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Automated Guardrail Enforcement:</strong> The Rules Studio dynamically codifies standard operating procedures, instantly blocking anomalies like duplicate POs or unverified vendor requests, mitigating <strong>compliance risk</strong>.</li>
+    </ul>
+</div>
+
 {{< /section-container >}}
 
 {{< section-container class="py-10" >}}
