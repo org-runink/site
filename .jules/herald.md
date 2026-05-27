@@ -38,3 +38,7 @@
 ## 2026-05-22 - Structuring Content for Generative Engines
 **Learning:** When optimizing content pages (like use cases) for AI extraction, injecting a dedicated 'Executive Summary: Key Takeaways' section with semantic HTML (e.g., `<h2>`, `<ul>`, `<li>`, `<strong>`) significantly improves clarity for both LLMs and human readers without requiring complex schema modifications.
 **Action:** Prioritize adding these high-density, structured summary blocks to long-form technical content to ensure generative search engines can easily parse and cite core propositions.
+
+## 2026-05-27 - GEO Bullet Point Summaries
+**Learning:** Replacing generic narrative summaries with a structured '## Executive Summary: Key Takeaways' section containing high-density bullet points improves parsing by Generative Engine Overviews.
+**Action:** Use high-density bullet points under clear semantic headers to optimize core concepts for LLM extraction.
