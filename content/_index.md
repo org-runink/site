@@ -12,60 +12,37 @@ author: "Lead Data & Cloud Architect"
 {{< painkiller-pitches >}}
 
 {{< use-case-parallax 
-  pill="Operations"
-  title="Fulfilment" 
-  subtitle="Command Center"
-  problem="Your Shopify store says 'In Stock,' but your vendor is empty. You just sold a promise you can't keep. Runink orchestrates your operations and inventory across all vendors in real-time."
+  pill="Retail Branches & DCs"
+  title="Demand Forecasting" 
+  subtitle="Intelligent Inventory Agent"
+  problem="Retailers face the bullwhip effect daily across disparate branches. Stockouts at one merchant location kill revenue, while overstock at a distribution center destroys margins. The Inventory Agent intelligently predicts localized demand and orchestrates cross-branch allocation."
   img="/images/companion/fulfilment.png"
-  url="/use-cases/drop-shipping/"
-  monitor="**Inventory Sync** parses legacy Vendor CSVs and modern APIs to orchestrate operations. \\n**Rules Reconciliation** routing orders to the most cost-effective vendor with stock. \\n**Hypothesis Lab** stress-tests allocation against shipping delays."
-  cockpit="The **Decision Cockpit** charts real-time vendor availability. \\n**Orchestration Engine** dynamically routes the order to the correct vendor. \\n**One-Click Execution** updates fulfillment status instantly."
+  url="/use-cases/fulfillment-optimization/"
+  monitor="**Demand Forecasting** ingests market trends, seasonal data, and local branch sales velocity to predict exact stock needs. \\n**Rules Reconciliation** routes inventory allocation to the optimal retail location based on carrying costs. \\n**Hypothesis Lab** stress-tests retail supply chains against sudden consumer demand spikes."
+  cockpit="The **Operations Twins** chart real-time branch capacities and predicted stockouts. \\n**Orchestration Engine** dynamically issues transfer orders to rebalance stock across retail locations. \\n**One-Click Execution** syncs the new allocation with your merchant WMS/ERP."
 >}}
 
 {{< use-case-parallax 
   invert="true"
   pill="Revenue Recovery"
-  title="Paralegal" 
-  subtitle="The Claims Agent"
-  problem="Carriers profit from your fatigue. The Paralegal Twin intelligently manages claims, recovering lost revenue by integrating directly with systems like Guidewire to build airtight cases automatically."
+  title="Claims Disputes" 
+  subtitle="The Digital Paralegal"
+  problem="Vendors profit from your operational fatigue. Missed inbound SLAs, damaged merchandise, and supplier non-compliance cost retailers millions. The Digital Paralegal intelligently audits inbound vendor shipments, uncovers violations, and autonomously files irrefutable chargebacks."
   img="/images/companion/claims.png"
   url="/use-cases/claims-recovery/"
-  monitor="**Evidence Collection** uses OCR on Delivery Receipts and pulls Guidewire policy data. \\n**Rules Reconciliation** checks NOAA weather data to disprove 'Act of God' excuses. \\n**Hypothesis Lab** calculates the exact legal probability of a successful claim."
-  cockpit="The **Decision Cockpit** highlights exact discrepancies between Bill of Lading and Delivery Receipts. \\n**Legal Engine** drafts a comprehensive legal rebuttal citing the Carmack Amendment. \\n**One-Click Execution** files the claim directly to the Carrier Portal."
+  monitor="**Evidence Collection** uses an optimized AI model trained in logistics to OCR inbound manifest discrepancies and cross-reference vendor SLAs securely. \\n**Rules Reconciliation** checks exact receiving timestamps to prove supplier delivery failures. \\n**Hypothesis Lab** calculates the exact financial probability of a successful chargeback."
+  cockpit="The **Digital Paralegals** highlight exact discrepancies between vendor purchase orders and receiving logs. \\n**Legal Engine** drafts a comprehensive penalty notice citing merchant compliance agreements. \\n**One-Click Execution** files the dispute directly to the vendor's portal."
 >}}
 
 {{< use-case-parallax 
-  pill="Reconciliation"
-  title="Finance" 
-  subtitle="Forensic Auditor"
-  problem="Handling end-of-cycle data reconciliation and reporting requires meticulous accuracy. The Finance Agent audits every single invoice line against your contract and manages complex reconciliations like IFRS 17 reporting."
-  img="/images/companion/finance.png"
-  url="/use-cases/finance/"
-  monitor="**Maturity Assessment** aggregates EDI invoices alongside IFRS 17 reporting requirements. \\n**Rules Reconciliation** validates charges against GPS timestamps and negotiated accessorials. \\n**Hypothesis Lab** models end-of-cycle financial scenarios based on outstanding liabilities."
-  cockpit="The **Decision Cockpit** exposes exact ghost fees and reconciliation gaps. \\n**Forensic Auditor** executes a Short-Pay, authorizing payment only for the legitimate Linehaul. \\n**One-Click Execution** queues the finalized financial reports."
->}}
-
-{{< use-case-parallax 
-  invert="true"
-  pill="Risk Management"
-  title="Compliance" 
-  subtitle="Digital Auditor"
-  problem="Ensuring adherence to standards like IFRS 17 for insurance and monitoring risk is traditionally a manual, error-prone process. The Compliance Twin continuously monitors financial and operational data to guarantee regulatory adherence."
+  pill="Distribution Centers"
+  title="Cargo Verification" 
+  subtitle="End of Billing Cycle Reconciler"
+  problem="Manual dock-door checks bottleneck Distribution Centers, and unreconciled cargo data delays the CFO's monthly close. The Operations Agent autonomously verifies inbound cargo against POs and instantly underwrites the end of billing cycle."
   img="/images/companion/overview.png"
   url="/use-cases/compliance/"
-  monitor="**Data & AI Maturity Assessment** ingests internal datasets to evaluate risk exposure. \\n**Rules Reconciliation** cross-references actuarial models against IFRS 17 compliance standards. \\n**Hypothesis Lab** simulates audit conditions to predict regulatory flags."
-  cockpit="The **Decision Cockpit** highlights exact deviations from compliance requirements with color-coded severity. \\n**Digital Auditor** drafts the necessary compliance documentation. \\n**One-Click Execution** routes the verified compliance reports to your risk committee."
->}}
-
-{{< use-case-parallax 
-  pill="Employee Experience"
-  title="HR Twin" 
-  subtitle="Always-On Guide"
-  problem="Employees constantly search for onboarding documents or key personas to reach. The HR Twin acts as an always-on hover chatbot, instantly providing employee guidance, technical help, and onboarding support."
-  img="/images/companion/hr.png"
-  url="/use-cases/hr/"
-  monitor="**Context Awareness** tracks the user's current module to surface relevant technical documentation. \\n**Rules Reconciliation** matches employee queries with the exact onboarding manual needed. \\n**Hypothesis Lab** identifies gaps in the current knowledge base based on frequent questions."
-  cockpit="The **Decision Cockpit** tracks top employee inquiries across all business domains. \\n**Knowledge Engine** instantly points users to key personas or department heads. \\n**One-Click Execution** directly embeds the requested onboarding document into the chat interface."
+  monitor="**Dock-to-Stock Tracking** ingests real-time receiving scanner data to verify inbound cargo integrity. \\n**Rules Reconciliation** perfectly matches received quantities against internal merchant Purchase Orders. \\n**Hypothesis Lab** simulates the financial impact of damaged goods before the cycle closes."
+  cockpit="The **Operations Managers** visualize real-time dock bottlenecks and discrepancy alerts. \\n**Underwriting Engine** autonomously reconciles the ledger for end of billing cycle reporting. \\n**One-Click Execution** submits the perfectly underwritten cargo data to the CFO's financial ERP."
 >}}
 
 {{< use-cases-carousel >}}
@@ -88,15 +65,15 @@ author: "Lead Data & Cloud Architect"
   <div class="space-y-6">
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">What differentiates an 'Agentic' logistics platform from traditional automated supply chain software?</h3>
-      <p class="text-stone-400 leading-relaxed">The core differentiation between an 'Agentic' logistics platform and traditional automated supply chain software lies in autonomy and complex decision-making capabilities. Traditional automation relies on rigid, rules-based logic (e.g., 'If X happens, do Y'). These systems fail when confronted with edge cases or unprecedented disruptions that fall outside their pre-programmed rules. An Agentic platform, powered by advanced machine learning and Generative AI, acts as an autonomous agent capable of perceiving its environment, reasoning through complex constraints, and taking independent action to achieve a specific goal, such as minimizing cost or maximizing on-time delivery. When a snowstorm closes a major highway, an agent doesn't just alert a human dispatcher; it autonomously queries load boards for alternative carriers, recalculates the financial impact of various rerouting options, and independently executes the optimal contingency plan, fundamentally transforming how supply chains respond to volatility.</p>
+      <p class="text-stone-400 leading-relaxed">The core differentiation between an 'Agentic' logistics platform and traditional automated supply chain software lies in autonomy and complex decision-making capabilities. Traditional automation relies on rigid, rules-based logic. These systems fail when confronted with edge cases or unprecedented disruptions that fall outside their pre-programmed rules. For retailers and distribution centers handling intelligent inventory management and demand planning, an Agentic platform acts as an autonomous agent capable of perceiving its environment, reasoning through complex constraints, and taking independent action to achieve a specific goal, such as minimizing stockouts or maximizing on-time delivery. When a snowstorm closes a major highway, an agent doesn't just alert a human dispatcher; it autonomously queries load boards for alternative carriers, recalculates the financial impact of various last-mile dropshipping options, and independently executes the optimal route optimization plan, fundamentally transforming how supply chains respond to volatility.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">How does integrating a Semantic Layer improve cross-functional visibility in a complex logistics network?</h3>
-      <p class="text-stone-400 leading-relaxed">Integrating a Semantic Layer improves cross-functional visibility by solving the fundamental problem of data silos and incompatible terminology across a complex logistics network. In a typical enterprise, the warehouse team tracks 'SKUs,' the transportation team tracks 'pallets,' and the finance team tracks 'invoices.' A Semantic Layer acts as an intelligent universal translator, utilizing knowledge graphs to map these disparate terms to a unified business reality. It understands that a specific SKU on a specific pallet correlates directly to a specific line item on an invoice. This unified semantic understanding allows executives to ask complex, cross-functional questions—such as 'What is the true landed cost and current transit status of our top 10 most profitable products?'—and receive immediate, accurate answers drawn from the WMS, TMS, and ERP simultaneously. This single source of truth is essential for breaking down operational silos and enabling truly data-driven, strategic decision-making.</p>
+      <p class="text-stone-400 leading-relaxed">Integrating a Semantic Layer improves cross-functional visibility by solving the fundamental problem of data silos and incompatible terminology across a complex logistics network. In a typical enterprise, the warehouse team tracks 'SKUs,' the transportation team tracks 'pallets,' and the finance team tracks 'invoices.' A Semantic Layer acts as an intelligent universal translator, utilizing knowledge graphs to map these disparate terms to a unified business reality. This is critical for agentic and automated insurance claims disputes, where the system must instantly connect a damaged 'SKU' from a WMS to a delayed 'pallet' in a TMS, and correlate it to an 'invoice' in an ERP. This unified semantic understanding allows executives to ask complex, cross-functional questions\u2014such as 'What is the true landed cost and current transit status of our top 10 most profitable products?'\u2014and receive immediate, accurate answers drawn from the WMS, TMS, and ERP simultaneously. This single source of truth is essential for breaking down operational silos and enabling truly data-driven, strategic demand planning.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">Why is high-quality, reconciled telemetry data the prerequisite for successful AI implementation in transportation?</h3>
-      <p class="text-stone-400 leading-relaxed">High-quality, reconciled telemetry data is the absolute prerequisite for successful AI implementation in transportation because machine learning models are fundamentally dependent on the integrity of their training data; the principle of 'garbage in, garbage out' applies strictly. Telemetry data streaming from trucks, IoT sensors, and GPS devices is naturally noisy, plagued by signal drops, duplicate pings, and conflicting timestamps. If you feed this raw, unreconciled data directly into an AI routing engine or a predictive maintenance model, the resulting predictions will be erratic and untrustworthy. Before AI can generate value, the data pipeline must include rigorous reconciliation processes that clean the telemetry, interpolate missing data points based on historical patterns, and align timestamps across different sensor networks. Only when you have established this clean, reliable foundation of reconciled data can your advanced AI models accurately predict dock arrival times, optimize fuel consumption, and deliver the promised ROI.</p>
+      <p class="text-stone-400 leading-relaxed">High-quality, reconciled telemetry data is the absolute prerequisite for successful AI implementation in transportation because machine learning models are fundamentally dependent on the integrity of their training data; the principle of 'garbage in, garbage out' applies strictly. Telemetry data streaming from trucks, IoT sensors, and GPS devices is naturally noisy, plagued by signal drops, duplicate pings, and conflicting timestamps. If you feed this raw, unreconciled data directly into an AI routing engine for last-mile dropshipping route optimization, the resulting predictions will be erratic and untrustworthy. Before Local Specialized AI can generate value, the data pipeline must include rigorous reconciliation processes that clean the telemetry, interpolate missing data points based on historical patterns, and align timestamps across different sensor networks. Only when you have established this clean, reliable foundation of reconciled data can your advanced AI models accurately predict dock arrival times, optimize fuel consumption, and deliver the promised ROI on your distribution center network.</p>
     </div>
   </div>
 </section>
@@ -130,7 +107,7 @@ author: "Lead Data & Cloud Architect"
       "name": "What differentiates an 'Agentic' logistics platform from traditional automated supply chain software?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The core differentiation between an 'Agentic' logistics platform and traditional automated supply chain software lies in autonomy and complex decision-making capabilities. Traditional automation relies on rigid, rules-based logic (e.g., 'If X happens, do Y'). These systems fail when confronted with edge cases or unprecedented disruptions that fall outside their pre-programmed rules. An Agentic platform, powered by advanced machine learning and Generative AI, acts as an autonomous agent capable of perceiving its environment, reasoning through complex constraints, and taking independent action to achieve a specific goal, such as minimizing cost or maximizing on-time delivery. When a snowstorm closes a major highway, an agent doesn't just alert a human dispatcher; it autonomously queries load boards for alternative carriers, recalculates the financial impact of various rerouting options, and independently executes the optimal contingency plan, fundamentally transforming how supply chains respond to volatility."
+        "text": "The core differentiation between an 'Agentic' logistics platform and traditional automated supply chain software lies in autonomy and complex decision-making capabilities. Traditional automation relies on rigid, rules-based logic. These systems fail when confronted with edge cases or unprecedented disruptions that fall outside their pre-programmed rules. For retailers and distribution centers handling intelligent inventory management and demand planning, an Agentic platform acts as an autonomous agent capable of perceiving its environment, reasoning through complex constraints, and taking independent action to achieve a specific goal, such as minimizing stockouts or maximizing on-time delivery. When a snowstorm closes a major highway, an agent doesn't just alert a human dispatcher; it autonomously queries load boards for alternative carriers, recalculates the financial impact of various last-mile dropshipping options, and independently executes the optimal route optimization plan, fundamentally transforming how supply chains respond to volatility."
       }
     },
     {
@@ -138,7 +115,7 @@ author: "Lead Data & Cloud Architect"
       "name": "How does integrating a Semantic Layer improve cross-functional visibility in a complex logistics network?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Integrating a Semantic Layer improves cross-functional visibility by solving the fundamental problem of data silos and incompatible terminology across a complex logistics network. In a typical enterprise, the warehouse team tracks 'SKUs,' the transportation team tracks 'pallets,' and the finance team tracks 'invoices.' A Semantic Layer acts as an intelligent universal translator, utilizing knowledge graphs to map these disparate terms to a unified business reality. It understands that a specific SKU on a specific pallet correlates directly to a specific line item on an invoice. This unified semantic understanding allows executives to ask complex, cross-functional questions\u2014such as 'What is the true landed cost and current transit status of our top 10 most profitable products?'\u2014and receive immediate, accurate answers drawn from the WMS, TMS, and ERP simultaneously. This single source of truth is essential for breaking down operational silos and enabling truly data-driven, strategic decision-making."
+        "text": "Integrating a Semantic Layer improves cross-functional visibility by solving the fundamental problem of data silos and incompatible terminology across a complex logistics network. In a typical enterprise, the warehouse team tracks 'SKUs,' the transportation team tracks 'pallets,' and the finance team tracks 'invoices.' A Semantic Layer acts as an intelligent universal translator, utilizing knowledge graphs to map these disparate terms to a unified business reality. This is critical for agentic and automated insurance claims disputes, where the system must instantly connect a damaged 'SKU' from a WMS to a delayed 'pallet' in a TMS, and correlate it to an 'invoice' in an ERP. This unified semantic understanding allows executives to ask complex, cross-functional questions\u2014such as 'What is the true landed cost and current transit status of our top 10 most profitable products?'\u2014and receive immediate, accurate answers drawn from the WMS, TMS, and ERP simultaneously. This single source of truth is essential for breaking down operational silos and enabling truly data-driven, strategic demand planning."
       }
     },
     {
@@ -146,7 +123,7 @@ author: "Lead Data & Cloud Architect"
       "name": "Why is high-quality, reconciled telemetry data the prerequisite for successful AI implementation in transportation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "High-quality, reconciled telemetry data is the absolute prerequisite for successful AI implementation in transportation because machine learning models are fundamentally dependent on the integrity of their training data; the principle of 'garbage in, garbage out' applies strictly. Telemetry data streaming from trucks, IoT sensors, and GPS devices is naturally noisy, plagued by signal drops, duplicate pings, and conflicting timestamps. If you feed this raw, unreconciled data directly into an AI routing engine or a predictive maintenance model, the resulting predictions will be erratic and untrustworthy. Before AI can generate value, the data pipeline must include rigorous reconciliation processes that clean the telemetry, interpolate missing data points based on historical patterns, and align timestamps across different sensor networks. Only when you have established this clean, reliable foundation of reconciled data can your advanced AI models accurately predict dock arrival times, optimize fuel consumption, and deliver the promised ROI."
+        "text": "High-quality, reconciled telemetry data is the absolute prerequisite for successful AI implementation in transportation because machine learning models are fundamentally dependent on the integrity of their training data; the principle of 'garbage in, garbage out' applies strictly. Telemetry data streaming from trucks, IoT sensors, and GPS devices is naturally noisy, plagued by signal drops, duplicate pings, and conflicting timestamps. If you feed this raw, unreconciled data directly into an AI routing engine for last-mile dropshipping route optimization, the resulting predictions will be erratic and untrustworthy. Before Local Specialized AI can generate value, the data pipeline must include rigorous reconciliation processes that clean the telemetry, interpolate missing data points based on historical patterns, and align timestamps across different sensor networks. Only when you have established this clean, reliable foundation of reconciled data can your advanced AI models accurately predict dock arrival times, optimize fuel consumption, and deliver the promised ROI on your distribution center network."
       }
     }
   ]
