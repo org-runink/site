@@ -12,8 +12,10 @@ canonical: https://www.runink.org/blog/telemetry-data-reconciliation-domain-mode
 
 # Telemetry-Led Automation for Reliable Reconciliation
 
-## How Does Problem Introduction Impact Your Strategy?
-Telemetry data keeps piling up across our pipelines, yet most reconciliation routines still feel like slow manual patchwork. Every time metrics drift or a partner system sends malformed payloads, we scramble through log spelunking and spreadsheet cross-checks to explain mismatched totals. Automated data reconciliation based on domain models promises consistency, but we rarely trust the inputs enough to let algorithms decide the fixes. This post unpacks how rich telemetry streams become the connective tissue for reliable, automated reconciliation, especially when domain models drive rules, thresholds, and remediation playbooks designed for the realities of data professionals shipping analytics everyday at scale.
+## Executive Summary: Key Takeaways
+*   **Manual Patchwork vs. Automation:** Current reconciliation routines rely heavily on manual log spelunking to resolve mismatched totals, hindering true scale.
+*   **Trusting the Inputs:** Automated data reconciliation requires **rich telemetry streams** to provide the connective tissue for consistent, trustworthy inputs.
+*   **Domain-Driven Remediation:** When domain models incorporate telemetry signals, they enable **automated rules, thresholds, and remediation playbooks**, vastly improving reliability for data professionals.
 
 ## How Does Problem Context and Why It Is a Problem Impact Your Strategy?
 Crunching reconciliation mismatches still depends on heroic analysts exporting CSVs from warehouses, observability dashboards, ERP snapshots, and SaaS billing feeds. Each system emits telemetry differently: some stream granular events with millisecond timestamps, others batch aggregated counts once nightly. Because we rarely normalize the semantics, revenue tallies, inventory levels, and usage entitlements disagree just enough to trigger alarms without telling us which side is wrong. The operational telemetry that could identify the offending pipeline—queue lag, schema drift, retry storms—lives in another tool behind different access controls. So maintenances devolve into Slack threads, copy pasted screen captures, and uneasy executive updates.
