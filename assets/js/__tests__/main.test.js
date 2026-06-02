@@ -102,6 +102,44 @@ describe('main.js DOM initialization', () => {
 
       expect(btn2.classList.contains('active')).toBe(true);
     });
+
+    it('should maintain correct content visibility after rapid switching', () => {
+      document.body.innerHTML = `
+        <button class="pitch-tab-btn active border-orange-400" data-target="content1">
+          <svg class="text-white"></svg>
+          <h3 class="text-white">Btn1</h3>
+        </button>
+        <button class="pitch-tab-btn border-stone-800" data-target="content2">
+          <svg class="text-stone-300"></svg>
+          <h3 class="text-stone-300">Btn2</h3>
+        </button>
+
+        <div id="content1" class="pitch-content active"></div>
+        <div id="content2" class="pitch-content hidden"></div>
+      `;
+
+      document.dispatchEvent(new Event('DOMContentLoaded'));
+
+      const btns = document.querySelectorAll('.pitch-tab-btn');
+      const btn1 = btns[0];
+      const btn2 = btns[1];
+
+      // Rapidly click buttons
+      btn2.click();
+      btn1.click();
+      btn2.click();
+
+      // Check content visibility
+      const content1 = document.getElementById('content1');
+      const content2 = document.getElementById('content2');
+
+      expect(content1.classList.contains('hidden')).toBe(true);
+      expect(content1.classList.contains('active')).toBe(false);
+
+      expect(content2.classList.contains('active')).toBe(true);
+      expect(content2.classList.contains('hidden')).toBe(false);
+    });
+
   });
 
   describe('Use Cases Carousel', () => {
