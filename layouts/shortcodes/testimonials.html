@@ -9,29 +9,11 @@
         <div class="testimonials-container overflow-hidden">
             <div class="testimonials-track{{ if ne (.Get "animate" | default "true") "false" }} animate{{ end }}">
                 {{ range .Page.Params.testimonials }}
-                <div class="testimonial-card">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <img src="{{ .avatar | relURL }}" alt="{{ .name }}" class="w-12 h-12 rounded-full" width="48" height="48" loading="lazy">
-                        <div>
-                            <h4 class="font-bold">{{ .name }}</h4>
-                            <p class="text-[#D9CDB8]">{{ .title }}</p>
-                        </div>
-                    </div>
-                    <p class="text-[#D9CDB8]">{{ .quote }}</p>
-                </div>
+                {{ partial "components/testimonial-card.html" . }}
                 {{ end }}
                 {{ if ne (.Get "animate" | default "true") "false" }}
                     {{ range .Page.Params.testimonials }}
-                    <div class="testimonial-card">
-                        <div class="flex items-center space-x-4 mb-6">
-                            <img src="{{ .avatar | relURL }}" alt="{{ .name }}" class="w-12 h-12 rounded-full" width="48" height="48" loading="lazy">
-                            <div>
-                                <h4 class="font-bold">{{ .name }}</h4>
-                                <p class="text-[#D9CDB8]">{{ .title }}</p>
-                            </div>
-                        </div>
-                        <p class="text-[#D9CDB8]">{{ .quote }}</p>
-                    </div>
+                    {{ partial "components/testimonial-card.html" . }}
                     {{ end }}
                 {{ end }}
             </div>
@@ -39,58 +21,3 @@
     </div>
 </section>
 
-<style>
-.testimonials-container {
-    padding: 20px 0;
-    position: relative;
-}
-
-.testimonials-container.static {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    overflow: visible;
-}
-
-.testimonials-track {
-    display: flex;
-    gap: 2rem;
-}
-
-.testimonials-track.animate {
-    animation: 40s testimonials-scroll infinite linear;
-}
-
-.testimonial-card {
-    flex: 0 0 auto;
-    width: 300px;
-    background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.testimonials-container.static .testimonial-card {
-    width: 100%;
-}
-
-@keyframes testimonials-scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(calc(-100% / 2));
-    }
-}
-
-.testimonials-container:hover .testimonials-track.animate {
-    animation-play-state: paused;
-}
-
-/* Mobile-specific animation speed */
-@media (max-width: 768px) {
-    .testimonials-track.animate {
-        animation: 15s testimonials-scroll infinite linear;
-    }
-}
-</style>
