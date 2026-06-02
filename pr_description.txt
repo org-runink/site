@@ -1,0 +1,8 @@
+🎯 **What:**
+Removed `safeHTML` from the `{{- .Inner | safeHTML -}}` expression in the Mermaid codeblock render hook (`layouts/_default/_markup/render-codeblock-mermaid.html`).
+
+⚠️ **Risk:**
+Using `safeHTML` instructed Hugo's template engine to trust the content without escaping it. This allowed malicious HTML and JavaScript (e.g., `<script>alert('xss')</script>`) placed inside a Mermaid markdown block to be passed raw into the HTML output, resulting in a Cross-Site Scripting (XSS) vulnerability.
+
+🛡️ **Solution:**
+Changed the output to `{{- .Inner -}}`. By relying on Hugo's default context-aware engine, HTML characters are securely escaped (e.g., `<` becomes `&lt;`). This neutralizes the XSS vector while allowing Mermaid (which understands standard HTML entities) to still accurately parse the block's text and render valid diagrams.
