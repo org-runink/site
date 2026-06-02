@@ -53,16 +53,6 @@ function initParallax() {
     }
   };
 
-    let ObserverClass = window.IntersectionObserver;
-    if (typeof ObserverClass !== 'function') {
-        ObserverClass = class {
-            constructor() {}
-            observe() {}
-            unobserve() {}
-            disconnect() {}
-        };
-    }
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
