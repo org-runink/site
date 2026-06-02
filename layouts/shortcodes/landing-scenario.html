@@ -20,8 +20,8 @@
 
       <div class="prose prose-invert prose-lg text-stone-400 leading-relaxed">
         <p>{{ $page.Description }}</p>
-        <div class="text-sm font-mono text-[#ea580c]/70 mt-4 border-l-2 border-[#ea580c] pl-4">
-          {{ $page.Summary | plainify | truncate 200 }}
+        <div class="text-sm font-mono text-[#ea580c]/70 mt-4 border-l-2 border-[#ea580c] pl-4 line-clamp-3">
+          {{ $page.Summary | plainify }}
         </div>
       </div>
 
