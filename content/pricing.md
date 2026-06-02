@@ -19,76 +19,77 @@ author: "Lead Data & Cloud Architect"
 {
   "plans": [
     {
-      "pill": "STANDARD PROTOCOL",
+      "pill": "ESSENTIAL AUTOMATION",
       "pill_color": "stone",
-      "name": "MONITOR",
-      "subtitle": "FULL-SPECTRUM INTELLIGENCE",
-      "price_monthly": "18",
-      "price_yearly": "15",
-      "price_subtitle": "VISIBILITY & RISK CONTAINMENT",
-      "credits": "1,000 ELITE CREDITS",
+      "name": "LITE LICENSE",
+      "subtitle": "1 TO 9 SEATS",
+      "price_color": "stone",
+      "price_monthly": "86",
+      "price_yearly": "75",
+      "price_subtitle": "PER SEAT / MONTH",
+      "credits": "DYNAMIC CU POOL",
+      "outcome_strategies": [
+        {"label": "CLAIMS RECOVERY", "value": "20% Success Fee"},
+        {"label": "AUTO-PROVISIONING", "value": "1-3% (Capped $50)"}
+      ],
       "features": [
-        "GLOBAL OPERATIONAL RADAR",
-        "DEEP RISK & DISCREPANCY INGESTION",
-        "RULES RECONCILIATION ENGINE",
-        "PREDICTIVE HYPOTHESIS SIMULATOR",
-        "READ-ONLY INTELLIGENCE SUITE"
+        "SHARED HIGH-DENSITY NODE",
+        "BASIC AUTOMATION WORKFLOWS",
+        "STANDARD COMPUTE PRIORITY",
+        "MONTHLY OR ANNUAL COMMITMENTS"
       ],
       "button": {
-        "text": "INITIALIZE MONITOR",
+        "text": "START LITE",
         "url": "/#contact",
         "style": "outline"
       }
     },
     {
-      "pill": "ELITE PRIORITY",
+      "pill": "PLATFORM & SECURITY",
       "pill_color": "orange",
-      "name": "AGENTIC",
-      "subtitle": "AUTONOMOUS EXCELLENCE",
+      "name": "DEDICATED LICENSE",
+      "subtitle": "10+ SEATS",
       "price_color": "orange",
-      "price_monthly": "95",
-      "price_yearly": "80",
-      "price_subtitle": "FULL-STACK AGENCY & EXECUTION",
-      "credits": "3,000 ELITE CREDITS",
+      "price_monthly": "75",
+      "price_yearly": "75",
+      "price_subtitle": "PER SEAT / MONTH (ANNUAL ONLY)",
+      "credits": "MASSIVE CU POOL",
       "outcome_strategies": [
-        {"label": "OUTCOME STRATEGY", "value": "20% of Recovered Claims"},
-        {"label": "OUTCOME STRATEGY", "value": "3% of Auto-Provisioned POs"}
+        {"label": "CLAIMS RECOVERY", "value": "20% Success Fee"},
+        {"label": "AUTO-PROVISIONING", "value": "1-3% (Capped $50)"}
       ],
       "features": [
-        "EVERYTHING IN MONITOR +",
-        "AUTONOMOUS PROVISIONING AGENT",
-        "CLAIMS & REVENUE RECOVERY NODE",
-        "MARKET SIGNAL INTELLIGENCE",
-        "PRIORITY COMMAND INTERFACE"
+        "DEDICATED SOVEREIGN COMPUTE",
+        "CUSTOM DOMAIN CONFIGURATION",
+        "PRIORITY ROUTING & INFERENCE",
+        "1,000 CU PER SEAT + 2,000 CU BONUS/10 SEATS"
       ],
       "button": {
-        "text": "DEPLOY AGENTIC",
+        "text": "INITIALIZE DEDICATED",
         "url": "/#contact",
         "style": "solid"
       }
     },
     {
-      "pill": "STANDARD PROTOCOL",
+      "pill": "SOVEREIGN INFRASTRUCTURE",
       "pill_color": "stone",
       "name": "ENTERPRISE",
-      "subtitle": "SOVEREIGN INFRASTRUCTURE",
+      "subtitle": "AIR-GAPPED & ON-PREMISES",
       "price_monthly": "CUSTOM",
       "price_yearly": "CUSTOM",
-      "price_subtitle": "CUSTOM RUNNERS",
-      "credits": "10,000 ELITE CREDITS<br>(MANAGED)",
+      "price_subtitle": "CUSTOM DEPLOYMENTS",
+      "credits": "MANAGED CAPACITY",
       "outcome_strategies": [
-        {"label": "OUTCOME STRATEGY", "value": "20% of Recovered Claims"},
-        {"label": "OUTCOME STRATEGY", "value": "3% of Auto-Provisioned POs"}
+        {"label": "OUTCOME STRATEGY", "value": "Custom SLAs"}
       ],
       "features": [
-        "SELF-HOSTED CUSTOM RUNNERS ENABLED",
-        "EVERYTHING IN AGENTIC +",
-        "ADVANCED SSO & AUDIT LAYER",
-        "STRATEGIC SUCCESS GOVERNANCE",
-        "AIR-GAPPED DEPLOYMENT OPTIONS"
+        "SELF-HOSTED ON-PREM",
+        "EDGE EMBEDDING CAPABILITIES",
+        "EVERYTHING IN DEDICATED PLATFORM",
+        "ADVANCED AUDIT LOGGING"
       ],
       "button": {
-        "text": "CONSULT SALES",
+        "text": "CONTACT ENTERPRISE",
         "url": "/#contact",
         "style": "outline"
       }
@@ -106,28 +107,24 @@ author: "Lead Data & Cloud Architect"
   "description": "Low barrier to entry. Revenue scales with your actual infrastructure usage.",
   "questions": [
     {
-      "question": "How are Ops Credits calculated for usage?",
-      "answer": "**Ops Credits dynamically wrap usage.**<br>They are calculated by tracking CPU usage, rounded up per 60-second window. For example, if a process runs on a 4vCPU node and takes 45 seconds to complete, it will consume **4 Ops Credits**. You automatically draw from your tier's monthly Elite Credits allocation for these operations."
+      "question": "When is the Lite License a good fit?",
+      "answer": "The **Lite License** is designed for SMEs, startups, and highly lean teams (1-9 seats) who need immediate automation ROI without massive upfront commitments. It operates on shared high-density nodes, providing excellent performance at an accessible $75/seat (annually) or ~$86/seat (monthly). It's the perfect entry point to start capturing lost claims revenue and automating basic supply chain tasks without restrictive annual contracts."
     },
     {
-      "question": "What happens if my operations exceed my credit limit?",
-      "answer": "We ensure continuity. If you run out of credits, agents will pause to prevent overages. You can instantly restore operations with a **Fuel Canister top-up ($15 for +1,000 credits)** without needing to upgrade your base tier."
+      "question": "Why should we choose the Dedicated License over Lite?",
+      "answer": "Once your team scales to 10+ seats, security and compute volume become paramount. The **Dedicated License** automatically provisions an isolated Sovereign Node exclusively for your organization, complete with custom domain routing and strict data boundaries. While the base price remains an incredibly competitive $75/seat/month, it requires a 1-year commitment. In return, your organization unlocks massive shared CU bonuses (2,000 extra CU per 10 seats) to execute high-volume AI tasks."
     },
     {
-      "question": "How are Success Fees managed?",
-      "answer": "Success fees only apply to capital recovery workflows (e.g., claims and fraud detection). We take a 20% commission on recovered funds—meaning we only win when you win. Strategic auto-provisioning is capped at 3% per PO."
-    },
-    {
-      "question": "Is my data secure in an automated environment?",
-      "answer": "Security is our baseline. All data is encrypted at rest and in transit. For high-security environments, our Enterprise tier offers **Air-Gapped Deployment** and **Bring Your Own Runner (BYOR)** options to keep data inside your private cloud."
-    },
-    {
-      "question": "What's the difference between Monitor and Agentic roles?",
-      "answer": "**Monitor ($18/mo):** All the visibility and testing.<br>• Operational Radar (see what's breaking)<br>• Rules Reconciliation (flag bad decisions)<br>• Predictive Simulator (test changes)<br><br>**Agentic ($95/mo):** Adds autonomous execution.<br>• Agents that auto-file claims<br>• Auto-provision purchase orders<br>• Resolve business exceptions<br><br>Monitor shows you problems. Agentic fixes them."
+      "question": "What is the value of a full Enterprise engagement?",
+      "answer": "For highly regulated industries (defense, finance, healthcare) or extreme transaction volumes, the **Enterprise** tier provides absolute control. We offer full air-gapped, on-premises deployments or custom VPC architectures. Most importantly, Enterprise unlocks **optimized fine-tuning**—we train and optimize custom LLMs explicitly on your internal digital twin data, resulting in unparalleled accuracy and sub-second reasoning speeds tailored to your specific SLAs."
     },
     {
       "question": "Do I have to commit to an annual plan?",
-      "answer": "No. Monthly commitments are perfectly fine. However, annual contracts save you 15%."
+      "answer": "Only for Dedicated and Enterprise. **Lite Licenses** offer full flexibility with a month-to-month option at a 15% markup (~$86/seat/month). Because **Dedicated** and **Enterprise** licenses require us to provision and isolate substantial sovereign cloud infrastructure specifically for your organization, they strictly require a 1-year minimum commitment."
+    },
+    {
+      "question": "How are compute resources calculated?",
+      "answer": "**We utilize a Dynamic Capacity approach.**<br>Every seat includes **1,000 Capacity Units (CU)**. Furthermore, for every block of 10 seats you purchase (unlocking Dedicated), your organization receives a **2,000 CU Bonus**. You are only billed overage ($0.10/100 CU or $5.00/Compute Hour) for extreme, high-intensity batch processing."
     }
   ]
 }
@@ -149,15 +146,15 @@ author: "Lead Data & Cloud Architect"
   <div class="space-y-6">
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">What is the true total cost of ownership (TCO) for implementing an AI-driven logistics platform?</h3>
-      <p class="text-stone-400 leading-relaxed">When evaluating the total cost of ownership for an AI-driven logistics platform, you must look beyond the initial software licensing or SaaS subscription fees. The true TCO encompasses implementation costs, which involve system integration with your existing ERP, TMS, or WMS systems, data migration, and custom API development. Additionally, you must factor in change management and training costs to ensure your staff can effectively leverage the new tools. Ongoing expenses include cloud infrastructure usage, API call volumes to advanced LLMs or routing engines, and continuous model fine-tuning. However, this investment is typically offset by the rapid ROI generated through reduced empty miles, optimized fuel consumption, lower manual dispatch overhead, and minimized SLA penalties. A comprehensive TCO analysis should model these savings against the operational expenses over a three to five-year horizon to accurately reflect the platform's financial impact on your supply chain.</p>
+      <p class="text-stone-400 leading-relaxed">When evaluating the total cost of ownership for an AI-driven logistics platform, you must look beyond the initial software licensing or SaaS subscription fees. The true TCO encompasses implementation costs, which involve system integration with your existing ERP, TMS, or WMS systems, data migration, and custom API development. Additionally, you must factor in change management and training costs to ensure your staff can effectively leverage the new tools. Ongoing expenses include cloud infrastructure usage, API call volumes to advanced LLMs or routing engines, and continuous model fine-tuning. However, this investment is typically offset by the rapid ROI generated through reduced empty miles, optimized fuel consumption, lower manual dispatch overhead, and minimized SLA penalties.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">How do you structure pricing for enterprise-scale deployments with high transaction volumes?</h3>
-      <p class="text-stone-400 leading-relaxed">For enterprise-scale deployments experiencing high transaction volumes, a rigid, one-size-fits-all pricing model is often inefficient. Instead, we utilize a modular, consumption-based pricing structure tailored to the specific functional nodes you deploy. This means you are billed based on core metrics such as the number of active routing nodes processed per month, the volume of generative AI queries executed for document extraction, or the total number of telemetry data points reconciled. We also offer tiered volume discounts, where the per-unit cost decreases as your operational scale increases. Furthermore, enterprise agreements include dedicated support SLAs, custom data governance controls, and access to advanced predictive modeling capabilities. This flexible approach ensures that your costs align directly with the measurable value and efficiency gains our platform delivers to your sprawling logistics network, rather than charging arbitrarily based on user seat counts.</p>
+      <h3 class="text-xl font-bold text-stone-200 mb-4">How do you structure pricing for enterprise-scale deployments or on-premises requirements?</h3>
+      <p class="text-stone-400 leading-relaxed">By default, our standard Pro License provides high data isolation by deploying Shared Sovereign Compute. However, for organizations experiencing extreme transaction volumes or requiring strict compliance, our Enterprise tiers offer custom sovereign, air-gapped, and on-premises hosting. In these scenarios, you can deploy the Runink platform on your own hardware, physically isolated infrastructure, or deep edge embedding environments. Contact our sales team to discuss dedicated SLAs, custom data governance controls, and on-premises licensing options tailored to your specific infrastructure constraints.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">Why should I transition from a legacy on-premise system to a cloud-native, AI-powered logistics solution?</h3>
-      <p class="text-stone-400 leading-relaxed">Transitioning from a legacy on-premise system to a cloud-native, AI-powered logistics solution is critical for maintaining competitiveness in a rapidly evolving supply chain landscape. Legacy systems are often siloed, require expensive local hardware maintenance, and suffer from sluggish update cycles that leave you vulnerable to inefficiencies. A cloud-native architecture offers elastic scalability, allowing your computing resources to expand dynamically during peak seasons without upfront capital expenditure. More importantly, it serves as the foundational layer required to deploy advanced Generative AI and machine learning models. These AI capabilities can process vast datasets in real-time to identify hidden optimization opportunities, predict supply chain disruptions before they occur, and automate complex, labor-intensive tasks like document processing and route sequencing. The agility, security, and continuous innovation delivered by a cloud-native AI platform provide a massive strategic advantage over the rigid constraints of traditional on-premise software.</p>
+      <p class="text-stone-400 leading-relaxed">Transitioning from a legacy on-premise system to a cloud-native, AI-powered logistics solution is critical for maintaining competitiveness. A cloud-native architecture offers elastic scalability, allowing your computing resources to expand dynamically. More importantly, it serves as the foundational layer required to deploy advanced Generative AI and machine learning models. These AI capabilities can process vast datasets in real-time to identify hidden optimization opportunities, predict supply chain disruptions before they occur, and automate complex tasks.</p>
     </div>
   </div>
 </section>
@@ -180,36 +177,3 @@ author: "Lead Data & Cloud Architect"
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the true total cost of ownership (TCO) for implementing an AI-driven logistics platform?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "When evaluating the total cost of ownership for an AI-driven logistics platform, you must look beyond the initial software licensing or SaaS subscription fees. The true TCO encompasses implementation costs, which involve system integration with your existing ERP, TMS, or WMS systems, data migration, and custom API development. Additionally, you must factor in change management and training costs to ensure your staff can effectively leverage the new tools. Ongoing expenses include cloud infrastructure usage, API call volumes to advanced LLMs or routing engines, and continuous model fine-tuning. However, this investment is typically offset by the rapid ROI generated through reduced empty miles, optimized fuel consumption, lower manual dispatch overhead, and minimized SLA penalties. A comprehensive TCO analysis should model these savings against the operational expenses over a three to five-year horizon to accurately reflect the platform's financial impact on your supply chain."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you structure pricing for enterprise-scale deployments with high transaction volumes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For enterprise-scale deployments experiencing high transaction volumes, a rigid, one-size-fits-all pricing model is often inefficient. Instead, we utilize a modular, consumption-based pricing structure tailored to the specific functional nodes you deploy. This means you are billed based on core metrics such as the number of active routing nodes processed per month, the volume of generative AI queries executed for document extraction, or the total number of telemetry data points reconciled. We also offer tiered volume discounts, where the per-unit cost decreases as your operational scale increases. Furthermore, enterprise agreements include dedicated support SLAs, custom data governance controls, and access to advanced predictive modeling capabilities. This flexible approach ensures that your costs align directly with the measurable value and efficiency gains our platform delivers to your sprawling logistics network, rather than charging arbitrarily based on user seat counts."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why should I transition from a legacy on-premise system to a cloud-native, AI-powered logistics solution?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Transitioning from a legacy on-premise system to a cloud-native, AI-powered logistics solution is critical for maintaining competitiveness in a rapidly evolving supply chain landscape. Legacy systems are often siloed, require expensive local hardware maintenance, and suffer from sluggish update cycles that leave you vulnerable to inefficiencies. A cloud-native architecture offers elastic scalability, allowing your computing resources to expand dynamically during peak seasons without upfront capital expenditure. More importantly, it serves as the foundational layer required to deploy advanced Generative AI and machine learning models. These AI capabilities can process vast datasets in real-time to identify hidden optimization opportunities, predict supply chain disruptions before they occur, and automate complex, labor-intensive tasks like document processing and route sequencing. The agility, security, and continuous innovation delivered by a cloud-native AI platform provide a massive strategic advantage over the rigid constraints of traditional on-premise software."
-      }
-    }
-  ]
-}
-</script>

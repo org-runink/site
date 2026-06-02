@@ -2,13 +2,15 @@
 <section class="py-16 relative z-10">
     <style>
         .price-yearly,
-        .freq-yearly {
+        .freq-yearly,
+        .feature-yearly {
             display: none !important;
         }
 
         [data-pricing="yearly"] .price-yearly,
-        [data-pricing="yearly"] .freq-yearly {
-            display: inline !important;
+        [data-pricing="yearly"] .freq-yearly,
+        [data-pricing="yearly"] .feature-yearly {
+            display: inline-flex !important;
         }
 
         [data-pricing="yearly"] .price-monthly,
@@ -133,7 +135,9 @@
                         <!-- Checklist -->
                         <ul class="space-y-5 w-full text-left flex-grow mb-12">
                             {{ range .features }}
-                            <li class="flex items-start">
+                            {{ $isYearlyOnly := in . "(YEARLY ONLY)" }}
+                            {{ $cleanFeature := replace . "(YEARLY ONLY)" "" }}
+                            <li class="flex items-start {{ if $isYearlyOnly }}feature-yearly{{ end }}">
                                 <svg class="h-4 w-4 mt-0.5 flex-shrink-0 {{ $checkClasses }}" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
@@ -141,7 +145,7 @@
                                 </svg>
                                 <span
                                     class="ml-4 text-[10px] font-bold text-stone-400/80 tracking-widest uppercase leading-snug">{{
-                                    . }}</span>
+                                    trim $cleanFeature " " }}</span>
                             </li>
                             {{ end }}
                         </ul>

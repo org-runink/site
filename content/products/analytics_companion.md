@@ -74,14 +74,15 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
     </div>
 </div>
 
-<!-- PILLAR 2: DECISION COCKPIT -->
+<!-- PILLAR 2: OPERATIONS TWINS -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-    <div class="order-2 md:order-1 relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-[#D4A574] to-[#F3E5AB] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
-        <img src="/images/companion/cockpit.png" alt="Decision Cockpit" class="relative rounded-lg shadow-2xl border border-white/10">
-    </div>
-    <div class="order-1 md:order-2">
-        <div class="inline-block px-3 py-1 rounded bg-[#D4A574]/30 text-[#FFE5B4] font-bold mb-4 tracking-wide">2. Decision Cockpit</div>
+        <div class="space-y-6">
+            <div class="relative group">
+                <div class="absolute -inset-2 bg-gradient-to-r from-[#D4A574]/20 to-transparent rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <img src="/images/companion/cockpit.png" alt="Operations Twins" class="relative rounded-lg shadow-2xl border border-white/10">
+            </div>
+            <div>
+                <div class="inline-block px-3 py-1 rounded bg-[#D4A574]/30 text-[#FFE5B4] font-bold mb-4 tracking-wide">2. Operations Twins</div>
         <h3 class="text-4xl font-bold text-white mb-6">Work Gets Done.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
@@ -200,7 +201,7 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
             "answer": "No. It uses an AI Assistant to write the rules for you. You describe what you want ('Alert me if margins drop below 10%'), and the system builds it."
         },
         {
-            "question": "Can Decision Cockpit execute actual work?",
+            "question": "Can the Operations Twins execute actual work?",
             "answer": "Yes. It connects to your systems to do the job. Every action (PO creation, Claim filing) is logged so you can see exactly who did what and when."
         }
     ]
