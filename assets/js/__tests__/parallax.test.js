@@ -63,4 +63,30 @@ describe('Parallax Edge Cases', () => {
 
         window.requestAnimationFrame = originalRAF;
     });
+
+    test('updateParallax returns early and leaves transform untouched when container is out of view', () => {
+        const update = initParallax();
+
+        const layers = container.querySelectorAll('.parallax-layer');
+        const layerArray = Array.from(layers);
+
+        // Set initial transforms
+        layerArray[0].style.transform = 'translate3d(0, 0px, 0) scale(1)';
+        layerArray[1].style.transform = 'translate3d(0, 0px, 0) scale(1)';
+
+        // Mock innerHeight
+        Object.defineProperty(window, 'innerHeight', { value: 1000, writable: true, configurable: true });
+
+        // Case 1: rect.bottom < 0 (scrolled way past)
+        container.getBoundingClientRect = jest.fn(() => ({ bottom: -10, top: -500 }));
+        update();
+        expect(layerArray[0].style.transform).toBe('translate3d(0, 0px, 0) scale(1)');
+        expect(layerArray[1].style.transform).toBe('translate3d(0, 0px, 0) scale(1)');
+
+        // Case 2: rect.top > window.innerHeight (below viewport)
+        container.getBoundingClientRect = jest.fn(() => ({ bottom: 1500, top: 1010 }));
+        update();
+        expect(layerArray[0].style.transform).toBe('translate3d(0, 0px, 0) scale(1)');
+        expect(layerArray[1].style.transform).toBe('translate3d(0, 0px, 0) scale(1)');
+    });
 });

@@ -33,7 +33,7 @@
             {{ with .Description }}
                 {{ . }}
             {{ else }}
-                {{ .Summary | truncate 160 }}
+                {{ .Summary }}
             {{ end }}
         </p>
 
