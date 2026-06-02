@@ -19,29 +19,53 @@ author: "Lead Data & Cloud Architect"
 {
   "plans": [
     {
-      "pill": "PLATFORM & TEAM",
-      "pill_color": "orange",
-      "name": "AGENT LICENSE",
-      "subtitle": "SCALABLE PER-SEAT PRICING",
-      "price_color": "orange",
-      "price_monthly": "350",
-      "price_yearly": "289",
-      "price_subtitle": "PER SEAT / MONTH (BILLED ANNUALLY)",
-      "credits": "1,400 POOLED CUs PER SEAT",
+      "pill": "ESSENTIAL AUTOMATION",
+      "pill_color": "stone",
+      "name": "LITE LICENSE",
+      "subtitle": "1 TO 9 SEATS",
+      "price_color": "stone",
+      "price_monthly": "86",
+      "price_yearly": "75",
+      "price_subtitle": "PER SEAT / MONTH",
+      "credits": "DYNAMIC CU POOL",
       "outcome_strategies": [
-        {"label": "OUTCOME STRATEGY", "value": "20% of Recovered Claims (After Payment)"},
-        {"label": "OUTCOME STRATEGY", "value": "3% of Fulfilment Orders (Capped at $150)"}
+        {"label": "CLAIMS RECOVERY", "value": "20% Success Fee"},
+        {"label": "AUTO-PROVISIONING", "value": "1-3% (Capped $50)"}
       ],
       "features": [
-        "FINE-TUNED OPTIMIZED LLM PER DIGITAL TWIN",
-        "PROBABILISTIC SHADOW EDGE SCENARIOS",
-        "STRICTLY COMPARTMENTALIZED NODE (SOC2, ISO27001)",
-        "5+ SEATS (YEARLY ONLY): DEDICATED SOVEREIGN COMPUTE",
-        "5+ SEATS (YEARLY ONLY): CUSTOM DOMAIN CONFIGURATION",
-        "5+ SEATS (YEARLY ONLY): PRIORITY COMPUTE ROUTING"
+        "SHARED HIGH-DENSITY NODE",
+        "BASIC AUTOMATION WORKFLOWS",
+        "STANDARD COMPUTE PRIORITY",
+        "MONTHLY OR ANNUAL COMMITMENTS"
       ],
       "button": {
-        "text": "INITIALIZE PLATFORM",
+        "text": "START LITE",
+        "url": "/#contact",
+        "style": "outline"
+      }
+    },
+    {
+      "pill": "PLATFORM & SECURITY",
+      "pill_color": "orange",
+      "name": "DEDICATED LICENSE",
+      "subtitle": "10+ SEATS",
+      "price_color": "orange",
+      "price_monthly": "75",
+      "price_yearly": "75",
+      "price_subtitle": "PER SEAT / MONTH (ANNUAL ONLY)",
+      "credits": "MASSIVE CU POOL",
+      "outcome_strategies": [
+        {"label": "CLAIMS RECOVERY", "value": "20% Success Fee"},
+        {"label": "AUTO-PROVISIONING", "value": "1-3% (Capped $50)"}
+      ],
+      "features": [
+        "DEDICATED SOVEREIGN COMPUTE",
+        "CUSTOM DOMAIN CONFIGURATION",
+        "PRIORITY ROUTING & INFERENCE",
+        "1,000 CU PER SEAT + 2,000 CU BONUS/10 SEATS"
+      ],
+      "button": {
+        "text": "INITIALIZE DEDICATED",
         "url": "/#contact",
         "style": "solid"
       }
@@ -54,45 +78,18 @@ author: "Lead Data & Cloud Architect"
       "price_monthly": "CUSTOM",
       "price_yearly": "CUSTOM",
       "price_subtitle": "CUSTOM DEPLOYMENTS",
-      "credits": "MANAGED / UNLIMITED CAPACITY",
+      "credits": "MANAGED CAPACITY",
       "outcome_strategies": [
-        {"label": "OUTCOME STRATEGY", "value": "Custom Performance Pricing"},
-        {"label": "OUTCOME STRATEGY", "value": "Sovereign Instance SLAs"}
+        {"label": "OUTCOME STRATEGY", "value": "Custom SLAs"}
       ],
       "features": [
-        "SELF-HOSTED / AIR-GAPPED ON-PREM",
+        "SELF-HOSTED ON-PREM",
         "EDGE EMBEDDING CAPABILITIES",
-        "FINE-TUNED OPTIMIZED LLM PER DIGITAL TWIN",
-        "PROBABILISTIC SHADOW EDGE SCENARIOS",
         "EVERYTHING IN DEDICATED PLATFORM",
-        "ADVANCED SSO & AUDIT LOGGING"
+        "ADVANCED AUDIT LOGGING"
       ],
       "button": {
         "text": "CONTACT ENTERPRISE",
-        "url": "/#contact",
-        "style": "outline"
-      }
-    },
-    {
-      "pill": "CAPACITY SCALING",
-      "pill_color": "stone",
-      "name": "COMPUTE TOP-UP",
-      "subtitle": "ON-DEMAND COMPUTE INJECTION",
-      "price_monthly": "25",
-      "price_yearly": "25",
-      "price_subtitle": "PER 1,000 CUs",
-      "credits": "1,000 POOLED CUs",
-      "outcome_strategies": [
-        {"label": "FLEXIBILITY", "value": "Never hit a compute bottleneck"}
-      ],
-      "features": [
-        "INSTANT CAPACITY INJECTION",
-        "POOLS ACROSS ALL ACTIVE SEATS",
-        "ROLLS OVER MONTH TO MONTH",
-        "HIGH-PRIORITY INFERENCE QUEUE"
-      ],
-      "button": {
-        "text": "BUY CREDITS",
         "url": "/#contact",
         "style": "outline"
       }
@@ -110,32 +107,24 @@ author: "Lead Data & Cloud Architect"
   "description": "Low barrier to entry. Revenue scales with your actual infrastructure usage.",
   "questions": [
     {
-      "question": "How are Capacity Units (CUs) calculated for usage?",
-      "answer": "**Capacity Units (CUs) dynamically wrap usage.**<br>They are calculated by tracking compute resources during agent execution, rounded up per 60-second window. Each Agent License seat includes **1,400 Capacity Units (CUs)** which pool across your team. These CUs power our highly optimized **Qwen 3.7 Quantized 12B models** on efficient infrastructure, guaranteeing blazing fast inference per Digital Twin. Baseline licenses are hosted on a **Strictly Compartmentalized Node** that complies with SOC2, PCI-DSS, ISO27001, ISO31000, and ISO42001. Once you commit to an annual plan with 5+ seats, you automatically unlock your own **Dedicated Sovereign Compute** instance with priority routing and custom domains."
+      "question": "When is the Lite License a good fit?",
+      "answer": "The **Lite License** is designed for SMEs, startups, and highly lean teams (1-9 seats) who need immediate automation ROI without massive upfront commitments. It operates on shared high-density nodes, providing excellent performance at an accessible $75/seat (annually) or ~$86/seat (monthly). It's the perfect entry point to start capturing lost claims revenue and automating basic supply chain tasks without restrictive annual contracts."
     },
     {
-      "question": "We are an SME with a lean team. Is an enterprise-grade AI platform overkill for us?",
-      "answer": "Absolutely not. In fact, SMEs gain the most leverage from Runink. At just $289/seat/month (yearly commitment), the platform costs a fraction of a single full-time employee's salary. Yet, it operates 24/7, autonomously handling the workload of an entire back-office team—from auditing freight bills to provisioning inventory. **You aren't buying software; you are hiring an indefatigable digital workforce.**"
+      "question": "Why should we choose the Dedicated License over Lite?",
+      "answer": "Once your team scales to 10+ seats, security and compute volume become paramount. The **Dedicated License** automatically provisions an isolated Sovereign Node exclusively for your organization, complete with custom domain routing and strict data boundaries. While the base price remains an incredibly competitive $75/seat/month, it requires a 1-year commitment. In return, your organization unlocks massive shared CU bonuses (2,000 extra CU per 10 seats) to execute high-volume AI tasks."
     },
     {
-      "question": "What if we don't have the time or resources to 'train' an AI?",
-      "answer": "Runink doesn't require traditional training. It connects directly to your existing systems and immediately begins analyzing data, reconciling rules, and finding discrepancies. The ROI is near-instant: the moment it plugs in, it starts hunting for leaked revenue and operational inefficiencies that manual teams miss. It's a plug-and-play revenue recovery engine designed for immediate impact."
-    },
-    {
-      "question": "How does the platform pay for itself?",
-      "answer": "Through immediate capital recovery and radical operational efficiency. Our **Claims & Revenue Recovery Node** audits every shipment and invoice, catching errors, duplicate charges, and SLA violations that human teams miss. Many of our customers find that the platform recovers more than its own subscription cost within the first 30 days of deployment. Plus, we only take a 20% commission on the funds we successfully recover for you (billed only after the claim is paid)—aligning our success entirely with yours."
-    },
-    {
-      "question": "What happens if we need more seats or if we exceed our CU limit?",
-      "answer": "We make scaling frictionless. Adding an **Agent Seat** for $289/month immediately injects an additional +1,400 CUs into your organization's pool. If you run high-volume operations and simply need more compute without adding users, you can instantly scale with a **Compute Capacity Top-Up** at $25 per 1,000 CUs. Operations never pause unexpectedly."
-    },
-    {
-      "question": "Is my data secure in an automated environment?",
-      "answer": "Security is our absolute baseline. Standard licenses deploy on a **Strictly Compartmentalized Node** that rigidly adheres to SOC2, PCI-DSS, ISO27001, ISO31000, and ISO42001 protocols to guarantee zero PII leakage. The moment you commit to an annual plan with 5+ seats, your infrastructure automatically shifts to **Dedicated Sovereign Compute**. For absolute data sovereignty, we also offer fully air-gapped Enterprise and On-Premises deployment models with deep **Edge Embedding capabilities**."
+      "question": "What is the value of a full Enterprise engagement?",
+      "answer": "For highly regulated industries (defense, finance, healthcare) or extreme transaction volumes, the **Enterprise** tier provides absolute control. We offer full air-gapped, on-premises deployments or custom VPC architectures. Most importantly, Enterprise unlocks **optimized fine-tuning**—we train and optimize custom LLMs explicitly on your internal digital twin data, resulting in unparalleled accuracy and sub-second reasoning speeds tailored to your specific SLAs."
     },
     {
       "question": "Do I have to commit to an annual plan?",
-      "answer": "No. Monthly commitments are perfectly fine and start at $350/seat/month. However, our annual contracts lock in the discounted rate of $289/seat/month, giving you maximum ROI and predictable operational expenses."
+      "answer": "Only for Dedicated and Enterprise. **Lite Licenses** offer full flexibility with a month-to-month option at a 15% markup (~$86/seat/month). Because **Dedicated** and **Enterprise** licenses require us to provision and isolate substantial sovereign cloud infrastructure specifically for your organization, they strictly require a 1-year minimum commitment."
+    },
+    {
+      "question": "How are compute resources calculated?",
+      "answer": "**We utilize a Dynamic Capacity approach.**<br>Every seat includes **1,000 Capacity Units (CU)**. Furthermore, for every block of 10 seats you purchase (unlocking Dedicated), your organization receives a **2,000 CU Bonus**. You are only billed overage ($0.10/100 CU or $5.00/Compute Hour) for extreme, high-intensity batch processing."
     }
   ]
 }
@@ -157,15 +146,15 @@ author: "Lead Data & Cloud Architect"
   <div class="space-y-6">
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">What is the true total cost of ownership (TCO) for implementing an AI-driven logistics platform?</h3>
-      <p class="text-stone-400 leading-relaxed">When evaluating the total cost of ownership for an AI-driven logistics platform, you must look beyond the initial software licensing or SaaS subscription fees. The true TCO encompasses implementation costs, which involve system integration with your existing ERP, TMS, or WMS systems, data migration, and custom API development. Additionally, you must factor in change management and training costs to ensure your staff can effectively leverage the new tools. Ongoing expenses include cloud infrastructure usage, API call volumes to advanced LLMs or routing engines, and continuous model fine-tuning. However, this investment is typically offset by the rapid ROI generated through reduced empty miles, optimized fuel consumption, lower manual dispatch overhead, and minimized SLA penalties. A comprehensive TCO analysis should model these savings against the operational expenses over a three to five-year horizon to accurately reflect the platform's financial impact on your supply chain.</p>
+      <p class="text-stone-400 leading-relaxed">When evaluating the total cost of ownership for an AI-driven logistics platform, you must look beyond the initial software licensing or SaaS subscription fees. The true TCO encompasses implementation costs, which involve system integration with your existing ERP, TMS, or WMS systems, data migration, and custom API development. Additionally, you must factor in change management and training costs to ensure your staff can effectively leverage the new tools. Ongoing expenses include cloud infrastructure usage, API call volumes to advanced LLMs or routing engines, and continuous model fine-tuning. However, this investment is typically offset by the rapid ROI generated through reduced empty miles, optimized fuel consumption, lower manual dispatch overhead, and minimized SLA penalties.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">How do you structure pricing for enterprise-scale deployments or on-premises requirements?</h3>
-      <p class="text-stone-400 leading-relaxed">By default, our standard Agent License provides complete data and performance isolation by deploying **Dedicated Sovereign Compute** designed for heavy Local Specialized AI workloads. For enterprise-scale deployments experiencing extreme transaction volumes or organizations requiring strict compliance, we offer custom sovereign, air-gapped, and on-premises hosting. In these scenarios, you can deploy the Runink platform on your own hardware, physically isolated infrastructure, or deep edge embedding environments. Contact our sales team to discuss dedicated SLAs, custom data governance controls, and on-premises licensing options tailored to your specific infrastructure constraints.</p>
+      <p class="text-stone-400 leading-relaxed">By default, our standard Pro License provides high data isolation by deploying Shared Sovereign Compute. However, for organizations experiencing extreme transaction volumes or requiring strict compliance, our Enterprise tiers offer custom sovereign, air-gapped, and on-premises hosting. In these scenarios, you can deploy the Runink platform on your own hardware, physically isolated infrastructure, or deep edge embedding environments. Contact our sales team to discuss dedicated SLAs, custom data governance controls, and on-premises licensing options tailored to your specific infrastructure constraints.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">Why should I transition from a legacy on-premise system to a cloud-native, AI-powered logistics solution?</h3>
-      <p class="text-stone-400 leading-relaxed">Transitioning from a legacy on-premise system to a cloud-native, AI-powered logistics solution is critical for maintaining competitiveness in a rapidly evolving supply chain landscape. Legacy systems are often siloed, require expensive local hardware maintenance, and suffer from sluggish update cycles that leave you vulnerable to inefficiencies. A cloud-native architecture offers elastic scalability, allowing your computing resources to expand dynamically during peak seasons without upfront capital expenditure. More importantly, it serves as the foundational layer required to deploy advanced Generative AI and machine learning models. These AI capabilities can process vast datasets in real-time to identify hidden optimization opportunities, predict supply chain disruptions before they occur, and automate complex, labor-intensive tasks like document processing and route sequencing. The agility, security, and continuous innovation delivered by a cloud-native AI platform provide a massive strategic advantage over the rigid constraints of traditional on-premise software.</p>
+      <p class="text-stone-400 leading-relaxed">Transitioning from a legacy on-premise system to a cloud-native, AI-powered logistics solution is critical for maintaining competitiveness. A cloud-native architecture offers elastic scalability, allowing your computing resources to expand dynamically. More importantly, it serves as the foundational layer required to deploy advanced Generative AI and machine learning models. These AI capabilities can process vast datasets in real-time to identify hidden optimization opportunities, predict supply chain disruptions before they occur, and automate complex tasks.</p>
     </div>
   </div>
 </section>
@@ -188,36 +177,3 @@ author: "Lead Data & Cloud Architect"
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
   </ul>
 </section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the true total cost of ownership (TCO) for implementing an AI-driven logistics platform?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "When evaluating the total cost of ownership for an AI-driven logistics platform, you must look beyond the initial software licensing or SaaS subscription fees. The true TCO encompasses implementation costs, which involve system integration with your existing ERP, TMS, or WMS systems, data migration, and custom API development. Additionally, you must factor in change management and training costs to ensure your staff can effectively leverage the new tools. Ongoing expenses include cloud infrastructure usage, API call volumes to advanced LLMs or routing engines, and continuous model fine-tuning. However, this investment is typically offset by the rapid ROI generated through reduced empty miles, optimized fuel consumption, lower manual dispatch overhead, and minimized SLA penalties. A comprehensive TCO analysis should model these savings against the operational expenses over a three to five-year horizon to accurately reflect the platform's financial impact on your supply chain."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you structure pricing for enterprise-scale deployments or on-premises requirements?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By default, our standard Agent License provides complete data and performance isolation by deploying a dedicated, single-tenant cloud instance for your organization. For enterprise-scale deployments experiencing high transaction volumes or organizations requiring strict compliance, we offer custom sovereign, air-gapped, and on-premises hosting. In these scenarios, you can deploy the Runink platform on your own cloud runners or physically isolated infrastructure. Contact our sales team to discuss dedicated SLAs, custom data governance controls, and on-premises licensing options tailored to your specific infrastructure constraints."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why should I transition from a legacy on-premise system to a cloud-native, AI-powered logistics solution?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Transitioning from a legacy on-premise system to a cloud-native, AI-powered logistics solution is critical for maintaining competitiveness in a rapidly evolving supply chain landscape. Legacy systems are often siloed, require expensive local hardware maintenance, and suffer from sluggish update cycles that leave you vulnerable to inefficiencies. A cloud-native architecture offers elastic scalability, allowing your computing resources to expand dynamically during peak seasons without upfront capital expenditure. More importantly, it serves as the foundational layer required to deploy advanced Generative AI and machine learning models. These AI capabilities can process vast datasets in real-time to identify hidden optimization opportunities, predict supply chain disruptions before they occur, and automate complex, labor-intensive tasks like document processing and route sequencing. The agility, security, and continuous innovation delivered by a cloud-native AI platform provide a massive strategic advantage over the rigid constraints of traditional on-premise software."
-      }
-    }
-  ]
-}
-</script>
