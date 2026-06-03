@@ -1,8 +1,10 @@
-🎯 **What**
+🔒 Fix XSS vulnerability in hero shortcode
+
+🎯 What:
 Fixed a Cross-Site Scripting (XSS) vulnerability in the `hero` shortcode. The vulnerability allowed arbitrary raw HTML and javascript to be injected via the `headline` and `sub_headline` parameters because they were processed through an incomplete regex sanitization pipeline and passed to `safeHTML`.
 
-⚠️ **Risk**
+⚠️ Risk:
 If left unfixed, an attacker could potentially inject malicious JavaScript payloads through these parameters, which could lead to stealing sensitive user data, hijacking sessions, or performing unauthorized actions on behalf of the user when the content is rendered. The previous regex-based sanitization could be bypassed with clever payload construction, and passing the result to `safeHTML` instructed Hugo to bypass its built-in security mechanisms and render the raw string as trusted HTML.
 
-🛡️ **Solution**
+🛡️ Solution:
 Removed the custom regex and `safeHTML` sanitization pipeline. Replaced it with Hugo's built-in `$.Page.RenderString (dict "display" "inline")`, which safely parses markdown formatting inline while correctly escaping and stripping raw HTML/javascript injections, neutralizing the XSS vector entirely while preserving the expected text formatting styling (e.g. `**bold**`).
