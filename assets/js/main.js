@@ -160,17 +160,7 @@ function initCarousel() {
         }
       };
 
-      let ObserverClass = window.IntersectionObserver;
-      if (typeof ObserverClass !== 'function') {
-          ObserverClass = class {
-              constructor() {}
-              observe() {}
-              unobserve() {}
-              disconnect() {}
-          };
-      }
-
-      const carouselObserver = new ObserverClass((entries) => {
+      const carouselObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             startCarousel();
