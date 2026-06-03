@@ -32,6 +32,13 @@ describe('main.js DOM initialization', () => {
         document.dispatchEvent(new Event('DOMContentLoaded'));
       }).not.toThrow();
     });
+
+    it('should not throw if parallax container is empty', () => {
+      document.body.innerHTML = `<div id="hero-parallax"></div>`;
+      expect(() => {
+        document.dispatchEvent(new Event('DOMContentLoaded'));
+      }).not.toThrow();
+    });
   });
 
   describe('Pitch Tab Buttons', () => {
