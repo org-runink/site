@@ -42,3 +42,6 @@
 ## 2026-05-27 - GEO Bullet Point Summaries
 **Learning:** Replacing generic narrative summaries with a structured '## Executive Summary: Key Takeaways' section containing high-density bullet points improves parsing by Generative Engine Overviews.
 **Action:** Use high-density bullet points under clear semantic headers to optimize core concepts for LLM extraction.
+## 2024-05-28 - Groundedness Rule in Planning
+**Learning:** When citing internal logs or documentation (e.g., `.jules/herald.md`) to justify decisions in an execution plan, do not hallucinate entries or dates.
+**Action:** Verify the exact content using file reading tools beforehand to comply with the Groundedness Rule.
