@@ -42,3 +42,4 @@
 ## 2026-05-27 - GEO Bullet Point Summaries
 **Learning:** Replacing generic narrative summaries with a structured '## Executive Summary: Key Takeaways' section containing high-density bullet points improves parsing by Generative Engine Overviews.
 **Action:** Use high-density bullet points under clear semantic headers to optimize core concepts for LLM extraction.
+## 2025-05-20 - [Agentic AI landing page] **Learning:** Landing pages presenting high-level concepts like 'Agentic AI in Logistics' lack visibility on Generative Engine Overviews without explicit schema and structural formatting. **Action:** Applied the 'Executive Summary: Key Takeaways' pattern and an FAQ schema addressing core questions about the concept to significantly improve AI parser legibility.

@@ -4,6 +4,14 @@ description: "Why the future of supply chain belongs to autonomous agents that S
 layout: "section"
 ---
 
+
+<!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
+## Executive Summary: Key Takeaways
+
+*   **Agentic AI vs. RPA:** Agentic AI represents a paradigm shift from rigid Robotic Process Automation (RPA) to outcome-driven autonomous systems.
+*   **The See, Think, Do Architecture:** Agents ingest unstructured data (See), use Large Language Models for context and planning (Think), and autonomously execute tasks across enterprise systems (Do).
+*   **Augmented Autonomy:** Mitigates risk by offering Co-Pilot and Supervisor modes, keeping human oversight for high-stakes operational decisions while automating repetitive workflows.
+
 ## The Shift: From Automation to Autonomy
 
 Most "automation" in logistics is really just scripting. *"If file A arrives, move it to Folder B."*
@@ -83,3 +91,34 @@ We know "AI" sounds scary in high-stakes operations. That's why Runink uses **Au
 *   **Co-Pilot Mode:** The agent handles low-risk tasks (e.g., Claims <$100) autonomously.
 *   **Supervisor Mode:** For high-stakes decisions, the agent acts as a Junior Analyst. It gathers the data, prepares the plan, and asks you for approval.
 *   **Chain of Thought:** Every action comes with an explanation: *"I did X because of Y."* You can audit the agent's logic anytime.
+
+
+<!-- GEO Optimization: Injecting FAQPage Schema to capture high-intent queries regarding Agentic AI in logistics in Generative Engine Overviews. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is Agentic AI in logistics?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Agentic AI is a paradigm shift from traditional Robotic Process Automation (RPA). Instead of following rigid scripts, agents are outcome-driven autonomous systems capable of perceiving environments, reasoning through complex constraints, and executing tasks to achieve a specific goal, such as minimizing stockouts or recovering freight spend."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How does the See, Think, Do architecture work in Agentic AI?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The See, Think, Do architecture mimics human cognitive processes. Agents ingest unstructured data like PDFs or photos ('See'), use Large Language Models to understand context and formulate plans ('Think'), and autonomously interact with web portals, databases, or APIs to execute tasks ('Do')."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is Augmented Autonomy in supply chain AI?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Augmented Autonomy is a risk mitigation strategy that keeps a 'human-in-the-loop' for high-stakes decisions. It offers varying levels of control, such as a Co-Pilot mode for low-risk autonomous tasks or a Supervisor mode where the AI acts as an analyst preparing plans for human approval."
+    }
+  }]
+}
+</script>
