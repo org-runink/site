@@ -4,6 +4,16 @@ description: "Why the future of supply chain belongs to autonomous agents that S
 layout: "section"
 ---
 
+<!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
+<div class="max-w-4xl mx-auto mt-8 mb-8 text-left">
+    <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
+    <ul class="space-y-3">
+        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Outcome-Driven Autonomy:</strong> Agentic AI replaces brittle Robotic Process Automation (RPA) by understanding goals (e.g., "recover eligible dollars") rather than just executing rigid scripts.</li>
+        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Cognitive Architecture (See, Think, Do):</strong> Agents perceive real-world data (OCR, vision), reason using LLMs against business logic like the Carmack Amendment, and execute multi-step API actions.</li>
+        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Augmented Human Control:</strong> To mitigate risk, agents offer graduated autonomy—from Co-Pilot tasks to Supervisor mode—requiring explicit human approval for high-stakes operational shifts.</li>
+    </ul>
+</div>
+
 ## The Shift: From Automation to Autonomy
 
 Most "automation" in logistics is really just scripting. *"If file A arrives, move it to Folder B."*
