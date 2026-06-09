@@ -1,5 +1,5 @@
 ---
-title: "The Compliance Agent: Your Digital Auditor"
+title: "Compliance Auditing: Automated Adherence Monitoring"
 description: "Ensure complete adherence to standards like IFRS 17 for insurance and continuously monitor risk."
 layout: "use_case"
 badge: "Risk Management"
@@ -14,7 +14,7 @@ author: "Lead Data & Cloud Architect"
     <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Stop Fearing the Audit.</h1>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            Ensuring adherence to complex standards like IFRS 17 is traditionally a manual, error-prone process that drains resources. <br>The Compliance Twin continuously monitors financial and operational data to guarantee regulatory adherence, transforming compliance from a reactive scramble into a proactive advantage.
+            Ensuring adherence to complex standards like IFRS 17 is traditionally a manual, error-prone process that drains resources. <br>The Compliance Model continuously monitors financial and operational data to guarantee regulatory adherence, transforming compliance from a reactive scramble into a proactive advantage.
         </p>
     </div>
 
@@ -22,7 +22,7 @@ author: "Lead Data & Cloud Architect"
     <div class="mb-16">
         <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
         <ul class="space-y-3">
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Continuous IFRS 17 Adherence:</strong> The Compliance Twin ingests operational data to continuously monitor and validate Contractual Service Margin (CSM) calculations.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Continuous IFRS 17 Adherence:</strong> The Compliance Model ingests operational data to continuously monitor and validate Contractual Service Margin (CSM) calculations.</li>
             <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Proactive Risk Mitigation:</strong> It simulates audit conditions via the Hypothesis Lab to detect exposure prior to the financial reporting cycle conclusion.</li>
             <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Automated Documentation:</strong> It routes verified compliance reports directly to the risk committee, accelerating end-of-cycle closing times.</li>
         </ul>
@@ -41,7 +41,7 @@ author: "Lead Data & Cloud Architect"
                 We've replaced the panic with continuous monitoring.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                The Compliance Twin ensures that all underlying contractual service margins and risk adjustments are accurately monitored and reported in real-time.
+                The Compliance Model ensures that all underlying contractual service margins and risk adjustments are accurately monitored and reported in real-time.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
@@ -50,12 +50,12 @@ author: "Lead Data & Cloud Architect"
              <!-- Mermaid Diagram -->
              <div class="mermaid">
              C4Context
-                title System Context: Compliance Agent
+                title System Context: Compliance Module
                 
                 Person(officer, "Chief Risk Officer", "Needs audit-ready reports.")
                 
                 Enterprise_Boundary(b0, "Runink Insurance") {
-                    System(agent, "Compliance Agent", "Digital Auditor.")
+                    System(agent, "Compliance Module", "Digital Auditor.")
                     
                     System_Ext(actuarial, "Actuarial Models", "Risk Adjustments")
                     System_Ext(erp, "Financial Ledger", "Cash Flows")
@@ -74,7 +74,7 @@ author: "Lead Data & Cloud Architect"
     <div class="max-w-3xl mx-auto prose prose-invert prose-lg mb-20">
         <h3>How It Wins: Continuous Adherence</h3>
         <p>
-            The Agent reads every line of your financial models and cross-references it with regulatory requirements.
+            The module reads every line of your financial models and cross-references it with regulatory requirements.
         </p>
         <p>
             <strong>1. The IFRS 17 Verification</strong><br>
@@ -140,7 +140,7 @@ author: "Lead Data & Cloud Architect"
     "questions": [
         {
             "question": "How does automated compliance ensure IFRS 17 adherence?",
-            "answer": "Automated compliance uses a digital auditor to ingest internal datasets and cross-reference actuarial models against IFRS 17 standards, ensuring metrics like the Contractual Service Margin (CSM) are calculated continuously and accurately."
+            "answer": "Automated compliance uses a decision engine to ingest internal datasets and cross-reference actuarial models against IFRS 17 standards, ensuring metrics like the Contractual Service Margin (CSM) are calculated continuously and accurately."
         },
         {
             "question": "What is an audit simulation in risk management?",
@@ -158,7 +158,7 @@ author: "Lead Data & Cloud Architect"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
     <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Generative AI. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and AI-driven logistics solutions.
+    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
   </p>
 </section>
 
@@ -166,9 +166,9 @@ author: "Lead Data & Cloud Architect"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Generative AI for Supply Chain Optimization</a> - Advanced methodologies for AI-driven logistics.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
     <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on analytical applications in freight and transportation.</li>
   </ul>
 </section>
 

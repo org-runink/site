@@ -1,5 +1,5 @@
 ---
-title: "The Claims Agent: Your Digital Paralegal"
+title: "Claims Recovery: Automated Claims Auditing"
 description: "Recover 40% more freight spend. Automate the fight against carrier denials with legal precision."
 layout: "use_case"
 badge: "Cost Recovery"
@@ -22,7 +22,7 @@ author: "Lead Data & Cloud Architect"
     <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Don't Leave Money on the Dock.</h1>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            Carriers profit from your fatigue. They know you won't fight a $300 claim. <br>The Claims Agent fights for every penny, using federal law as its weapon.
+            Carriers profit from your fatigue. They know you won't fight a $300 claim. <br>The Claims Module fights for every penny, using federal law as its weapon.
         </p>
     </div>
 
@@ -52,12 +52,12 @@ author: "Lead Data & Cloud Architect"
              <!-- Mermaid Diagram -->
 {{< mermaid >}}
 C4Context
-title System Context: Claims Agent
+title System Context: Claims Module
 
 Person(clerk, "Receiving Clerk", "Takes 1 photo of damage.")
 
 Enterprise_Boundary(b0, "Runink Finance") {
-System(agent, "Claims Agent", "Digital Paralegal.")
+System(agent, "Claims Module", "Digital Audit Specialist.")
 
 System_Ext(legal, "Legal Engine", "49 U.S.C. § 14706")
 System_Ext(weather, "NOAA Weather", "Validates 'Act of God'")
@@ -81,7 +81,7 @@ Rel(portal, agent, "Sends Settlement Check")
     <div class="max-w-3xl mx-auto prose prose-invert prose-lg mb-20">
         <h3>How It Wins: The "Carmack" Strategy</h3>
         <p>
-            The Agent doesn't just fill out forms. It builds a case file.
+            The system doesn't just fill out forms. It builds a case file.
         </p>
         <p>
             <strong>1. The Evidence Collection</strong><br>
@@ -89,11 +89,11 @@ Rel(portal, agent, "Sends Settlement Check")
         </p>
         <p>
             <strong>2. The Legal Rebuttal</strong><br>
-            When a carrier denies a claim due to "Act of God" (weather), the Agent checks historical weather data from NOAA for that specific route. If it was sunny, it drafts a rebuttal citing <strong>49 U.S.C. § 14706 (The Carmack Amendment)</strong>, shifting the burden of proof back to the carrier.
+            When a carrier denies a claim due to "Act of God" (weather), the system checks historical weather data from NOAA for that specific route. If it was sunny, it drafts a rebuttal citing <strong>49 U.S.C. § 14706 (The Carmack Amendment)</strong>, shifting the burden of proof back to the carrier.
         </p>
         <p>
             <strong>3. The Payout</strong><br>
-            Carriers pay claims that are hard to fight. When they receive a 10-page legal brief for a $300 box, they cut the check. The Agent then updates your <a href="/use-cases/finance" class="text-[#D4A574] hover:underline">Finance Ledger</a> automatically.
+            Carriers pay claims that are hard to fight. When they receive a 10-page legal brief for a $300 box, they cut the check. The system then updates your <a href="/use-cases/finance" class="text-[#D4A574] hover:underline">Finance Ledger</a> automatically.
         </p>
     </div>
     
@@ -126,7 +126,7 @@ Rel(portal, agent, "Sends Settlement Check")
             "answer": "The Carmack Amendment (49 U.S.C. \u00a7 14706) strategy shifts the burden of proof to the carrier. By cross-referencing historical weather data to disprove 'Act of God' excuses, the automated system enforces carrier liability."
         },
         {
-            "question": "How much freight spend can be recovered with a digital paralegal?",
+            "question": "How much freight spend can be recovered with automated auditing?",
             "answer": "By automating the legal brief generation for low-dollar claims that are typically abandoned due to administrative friction, businesses can recover up to 40% more freight spend."
         }
     ]
@@ -137,7 +137,7 @@ Rel(portal, agent, "Sends Settlement Check")
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
     <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Generative AI. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and AI-driven logistics solutions.
+    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
   </p>
 </section>
 
@@ -145,9 +145,9 @@ Rel(portal, agent, "Sends Settlement Check")
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Generative AI for Supply Chain Optimization</a> - Advanced methodologies for AI-driven logistics.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
     <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on analytical applications in freight and transportation.</li>
   </ul>
 </section>
 

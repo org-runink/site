@@ -6,7 +6,7 @@
             <div class="text-center mb-16 flex flex-col items-center">
                 <h2
                     class="text-6xl md:text-7xl lg:text-[90px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
-                    Tailored value for every stakeholder
+                    {{ if eq .Page.Language.Lang "pt" }}Valor sob medida para cada stakeholder{{ else if eq .Page.Language.Lang "fr" }}Valeur sur mesure pour chaque partie prenante{{ else if eq .Page.Language.Lang "es" }}Valor a la medida de cada parte interesada{{ else }}Tailored value for every stakeholder{{ end }}
                 </h2>
             </div>
 
@@ -25,7 +25,8 @@
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="font-bold text-sm tracking-wide text-white transition-colors duration-300">The CFO
+                        <h3 class="font-bold text-sm tracking-wide text-white transition-colors duration-300">
+                            {{ if eq .Page.Language.Lang "pt" }}O CFO{{ else if eq .Page.Language.Lang "fr" }}Le CFO{{ else if eq .Page.Language.Lang "es" }}El CFO{{ else }}The CFO{{ end }}
                         </h3>
                     </button>
 
@@ -43,8 +44,9 @@
                                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="font-bold text-sm tracking-wide text-stone-300 transition-colors duration-300">DC Ops
-                            Director</h3>
+                        <h3 class="font-bold text-sm tracking-wide text-stone-300 transition-colors duration-300">
+                            {{ if eq .Page.Language.Lang "pt" }}Dir. de Ops de CD{{ else if eq .Page.Language.Lang "fr" }}Dir. des Ops du CD{{ else if eq .Page.Language.Lang "es" }}Dir. de Ops de CD{{ else }}DC Ops Director{{ end }}
+                        </h3>
                     </button>
 
                     <button
@@ -60,7 +62,8 @@
                             </svg>
                         </div>
                         <h3 class="font-bold text-sm tracking-wide text-stone-300 transition-colors duration-300">
-                            Merchandise Mgr</h3>
+                            {{ if eq .Page.Language.Lang "pt" }}Ger. de Mercadorias{{ else if eq .Page.Language.Lang "fr" }}Dir. des Approvisionnements{{ else if eq .Page.Language.Lang "es" }}Ger. de Mercancías{{ else }}Merchandise Mgr{{ end }}
+                        </h3>
                     </button>
 
                     <button
@@ -77,8 +80,9 @@
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="font-bold text-sm tracking-wide text-stone-300 transition-colors duration-300">Compliance
-                            Officer</h3>
+                        <h3 class="font-bold text-sm tracking-wide text-stone-300 transition-colors duration-300">
+                            {{ if eq .Page.Language.Lang "pt" }}Analista de Conf.{{ else if eq .Page.Language.Lang "fr" }}Resp. de la Conformité{{ else if eq .Page.Language.Lang "es" }}Oficial de Cumplimiento{{ else }}Compliance Officer{{ end }}
+                        </h3>
                     </button>
 
                     <button
@@ -93,8 +97,9 @@
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="font-bold text-sm tracking-wide text-stone-300 transition-colors duration-300">Branch
-                            Manager</h3>
+                        <h3 class="font-bold text-sm tracking-wide text-stone-300 transition-colors duration-300">
+                            {{ if eq .Page.Language.Lang "pt" }}Gerente de Filial{{ else if eq .Page.Language.Lang "fr" }}Directeur de Filiale{{ else if eq .Page.Language.Lang "es" }}Gerente de Sucursal{{ else }}Branch Manager{{ end }}
+                        </h3>
                     </button>
                 </div>
 
@@ -109,17 +114,37 @@
                     <div id="pitch-cfo" class="pitch-content active">
                         <h3
                             class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-400 mb-8 leading-tight">
-                            Stop waiting 30 days for a <strong class="text-[#fca5a5] font-bold">monthly close</strong>. Get <strong class="text-[#65793e] font-bold">End of Cycle Underwriting</strong>.</h3>
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Pare de esperar 30 dias por um <strong class="text-[#fca5a5] font-bold">fechamento mensal</strong>. Tenha <strong class="text-[#65793e] font-bold">Subscrição de Fim de Ciclo</strong>.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Arrêtez d'attendre 30 jours pour une <strong class="text-[#fca5a5] font-bold">clôture mensuelle</strong>. Obtenez une <strong class="text-[#65793e] font-bold">Souscription de Fin de Cycle</strong>.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Deje de esperar 30 días para un <strong class="text-[#fca5a5] font-bold">cierre mensual</strong>. Obtenga <strong class="text-[#65793e] font-bold">Suscripción de Fin de Ciclo</strong>.
+                            {{ else }}
+                                Stop waiting 30 days for a <strong class="text-[#fca5a5] font-bold">monthly close</strong>. Get <strong class="text-[#65793e] font-bold">End of Cycle Underwriting</strong>.
+                            {{ end }}
+                        </h3>
                         <p
                             class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
-                            RPA tools are just a cost center that speeds up data entry. RunInk is a capital recovery
-                            asset. By deploying reasoning-capable AI agents with deep semantic understanding, we don't
-                            just 'process' numbers—we autonomously underwrite the end of billing cycle perfectly. We dynamically reconcile inbound cargo data against your ledger, eliminating manual accounting bottlenecks.
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                As ferramentas de RPA são apenas um centro de custo que acelera a entrada de dados. A RunInk é um ativo de recuperação de capital. Ao implantar sistemas especializados de decisão capazes de processar com profunda compreensão semântica, nós não apenas "processamos" números — subscrevemos de forma autônoma o final do ciclo de faturamento perfeitamente. Reconciliamos dinamicamente os dados de carga de entrada com seu livro-razão, eliminando gargalos contábeis manuais.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Les outils RPA ne sont qu'un centre de coûts qui accélère la saisie de données. Runink é um ativo de recuperação de capital. En déployant des systèmes spécialisés capables de raisonner avec une compréhension sémantique profonde, nous ne faisons pas que « traiter » des chiffres — nous souscrivons de manière autonome la fin du cycle de facturation de façon parfaite. Nous réconcilions dynamiquement les données de cargaison entrantes avec votre grand livre, éliminant ainsi les goulots d'étranglement comptables manuels.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Las herramientas de RPA son solo un centro de costos que acelera la entrada de datos. Runink es un activo de recuperación de capital. Al implementar sistemas especializados capaces de razonar con una profunda comprensión semántica, no solo "procesamos" números: suscribimos de forma autónoma el final del ciclo de facturación a la perfección. Reconciliamos dinámicamente los datos de carga entrantes con su libro contable, eliminando los cuellos de botella contables manuales.
+                            {{ else }}
+                                RPA tools are just a cost center that speeds up data entry. RunInk is a capital recovery
+                                asset. By deploying reasoning-capable specialized systems with deep semantic understanding, we don't
+                                just 'process' numbers—we autonomously underwrite the end of billing cycle perfectly. We dynamically reconcile inbound cargo data against your ledger, eliminating manual accounting bottlenecks.
+                            {{ end }}
                         </p>
                         <div>
-                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
-                                Closer</h4>
-                            <p class="text-[#65793e] text-xl font-black italic">"Perfect financial reconciliation without the headcount."</p>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">
+                                {{ if eq .Page.Language.Lang "pt" }}O Conclusor{{ else if eq .Page.Language.Lang "fr" }}L'Argument Décisif{{ else if eq .Page.Language.Lang "es" }}El Conclusor{{ else }}The Closer{{ end }}
+                            </h4>
+                            <p class="text-[#65793e] text-xl font-black italic">
+                                {{ if eq .Page.Language.Lang "pt" }}"Reconciliação financeira perfeita sem aumento de pessoal."{{ else if eq .Page.Language.Lang "fr" }}« Une réconciliation financière parfaite sans augmentation d'effectif. »{{ else if eq .Page.Language.Lang "es" }}“Reconciliación financiera perfecta sin aumento de personal.”{{ else }}"Perfect financial reconciliation without the headcount."{{ end }}
+                            </p>
                         </div>
                     </div>
 
@@ -127,17 +152,37 @@
                     <div id="pitch-ops" class="pitch-content hidden">
                         <h3
                             class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-400 mb-8 leading-tight">
-                            Your dock doors are <strong class="text-[#fca5a5] font-bold">bottlenecked</strong>. Automate your <strong class="text-[#65793e] font-bold">Cargo Verification</strong>.</h3>
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Suas portas de doca estão <strong class="text-[#fca5a5] font-bold">congestionadas</strong>. Automatize sua <strong class="text-[#65793e] font-bold">Verificação de Carga</strong>.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Vos portes de quai sont <strong class="text-[#fca5a5] font-bold">encombrées</strong>. Automatisez votre <strong class="text-[#65793e] font-bold">Vérification de Fret</strong>.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Sus puertas de muelle están <strong class="text-[#fca5a5] font-bold">congestionadas</strong>. Automatice su <strong class="text-[#65793e] font-bold">Verificación de Carga</strong>.
+                            {{ else }}
+                                Your dock doors are <strong class="text-[#fca5a5] font-bold">bottlenecked</strong>. Automate your <strong class="text-[#65793e] font-bold">Cargo Verification</strong>.
+                            {{ end }}
+                        </h3>
                         <p
                             class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
-                            RunInk isn't another dashboard to manage. It's an agentic teammate equipped with cognitive
-                            mapping to make sense of your unstructured receiving data. It reasons through the 80% of
-                            low-value workflows entirely on its own—reading inbound cargo manifests, comparing them against POs, and verifying dock-to-stock integrity instantly so your DC teams can keep moving.
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                A RunInk não é apenas mais um painel para gerenciar. É um colega autônomo equipado com mapeamento lógico avançado para dar sentido aos seus dados de recebimento não estruturados. Ela raciocina através de 80% dos fluxos de trabalho de baixo valor inteiramente por conta própria — lendo manifestos de carga de entrada, comparando-os com POs e verificando a integridade da doca ao estoque instantaneamente para que suas equipes de CD continuem avançando.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Runink n'est pas un tableau de bord supplémentaire à gérer. C'est un collaborateur autonome équipé d'une cartographie logique avancée pour donner du sens à vos données de réception non structurées. Il résout de lui-même 80 % des flux de travail à faible valeur — lisant les manifestes de cargaison entrantes, les comparant aux bons de commande (PO) et vérifiant instantanément l'intégrité du quai au stock pour que vos équipes du CD puissent continuer à avancer.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Runink no es otro panel más para gestionar. Es un compañero autónomo equipado con un mapeo lógico avanzado para dar sentido a sus datos de recepción no estructurados. Resuelve por sí solo el 80% de los flujos de trabajo de bajo valor: lee manifiestos de carga entrantes, los compara con las órdenes de compra (PO) y verifica la integridad desde el muelle hasta el stock al instante para que sus equipos de CD sigan moviéndose.
+                            {{ else }}
+                                RunInk isn't another dashboard to manage. It's an autonomous teammate equipped with advanced
+                                logical mapping to make sense of your unstructured receiving data. It reasons through the 80% of
+                                low-value workflows entirely on its own—reading inbound cargo manifests, comparing them against POs, and verifying dock-to-stock integrity instantly so your DC teams can keep moving.
+                            {{ end }}
                         </p>
                         <div>
-                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
-                                Closer</h4>
-                            <p class="text-[#65793e] text-xl font-black italic">"Inbound verification in milliseconds, not hours."</p>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">
+                                {{ if eq .Page.Language.Lang "pt" }}O Conclusor{{ else }}The Closer{{ end }}
+                            </h4>
+                            <p class="text-[#65793e] text-xl font-black italic">
+                                {{ if eq .Page.Language.Lang "pt" }}"Verificação de entrada em milissegundos, não em horas."{{ else if eq .Page.Language.Lang "fr" }}« Vérification des entrées en millisecondes, pas en heures. »{{ else if eq .Page.Language.Lang "es" }}“Verificación de entrada en milisegundos, no en horas.”{{ else }}"Inbound verification in milliseconds, not hours."{{ end }}
+                            </p>
                         </div>
                     </div>
 
@@ -145,18 +190,38 @@
                     <div id="pitch-inventory" class="pitch-content hidden">
                         <h3
                             class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-400 mb-8 leading-tight">
-                            Stop losing margin to the <strong class="text-[#fca5a5] font-bold">bullwhip effect</strong>. Get <strong class="text-[#65793e] font-bold">Demand Forecasting</strong>.</h3>
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Pare de perder margem para o <strong class="text-[#fca5a5] font-bold">efeito chicote</strong>. Tenha <strong class="text-[#65793e] font-bold">Previsão de Demanda</strong>.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Arrêtez de perdre de la marge à cause de l'effet coup de fouet. Obtenez des <strong class="text-[#65793e] font-bold">Prévisions de Demande</strong>.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Deje de perder margen por el efecto látigo. Obtenga <strong class="text-[#65793e] font-bold">Previsión de Demanda</strong>.
+                            {{ else }}
+                                Stop losing margin to the <strong class="text-[#fca5a5] font-bold">bullwhip effect</strong>. Get <strong class="text-[#65793e] font-bold">Demand Forecasting</strong>.
+                            {{ end }}
+                        </h3>
                         <p
                             class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
-                            Unlike rigid rule-engines, our Inventory agents employ dynamic reasoning trees over
-                            real-time sales telemetry. RunInk cognitive models monitor pipeline velocity across
-                            disparate retail branches to deduce anomalies before they disrupt in-store availability, autonomously
-                            preparing transfer orders to optimize cross-branch inventory allocation.
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Ao contrário dos mecanismos de regras rígidos, nossos sistemas de estoque empregam árvores de decisão dinâmicas sobre telemetria de vendas em tempo real. Os modelos analíticos da RunInk monitoram a velocidade do pipeline em diferentes filiais de varejo para deduzir anomalias antes que elas interrompam a disponibilidade nas lojas, preparando de forma autônoma ordens de transferência para otimizar a alocação de estoque entre filiais.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Contrairement aux moteurs de règles rigides, nos systèmes d'inventaire utilisent des arbres de décision dynamiques basés sur la télémétrie des ventes en temps réel. Les modèles analytiques de Runink surveillent la vitesse des flux à travers différentes filiales de vente pour déduire les anomalies avant qu'elles ne perturbent la disponibilité en magasin, préparant de manière autonome les ordres de transfert pour optimiser l'allocation des stocks entre filiales.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                A diferencia de los motores de reglas rígidos, nuestros sistemas de inventario emplean árboles de decisión dinámicos sobre la telemetría de ventas en tiempo real. Los modelos analíticos de Runink monitorean la velocidad del flujo en diferentes sucursales para deducir anomalías antes de que afecten la disponibilidad en tienda, preparando de forma autónoma órdenes de transferencia para optimizar la asignación de inventario entre sucursales.
+                            {{ else }}
+                                Unlike rigid rule-engines, our Inventory systems employ dynamic reasoning trees over
+                                real-time sales telemetry. RunInk analytical models monitor pipeline velocity across
+                                disparate retail branches to deduce anomalies before they disrupt in-store availability, autonomously
+                                preparing transfer orders to optimize cross-branch inventory allocation.
+                            {{ end }}
                         </p>
                         <div>
-                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
-                                Closer</h4>
-                            <p class="text-[#65793e] text-xl font-black italic">"Predict localized demand and never stockout a branch again."</p>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">
+                                {{ if eq .Page.Language.Lang "pt" }}O Conclusor{{ else }}The Closer{{ end }}
+                            </h4>
+                            <p class="text-[#65793e] text-xl font-black italic">
+                                {{ if eq .Page.Language.Lang "pt" }}"Preveja a demanda localizada e nunca mais fique sem estoque em uma filial."{{ else if eq .Page.Language.Lang "fr" }}« Prédisez la demande localisée et ne tombez plus jamais en rupture de stock en filiale. »{{ else if eq .Page.Language.Lang "es" }}“Prediga la demanda localizada y nunca más se quede sin stock en una sucursal.”{{ else }}"Predict localized demand and never stockout a branch again."{{ end }}
+                            </p>
                         </div>
                     </div>
 
@@ -164,18 +229,37 @@
                     <div id="pitch-shipper" class="pitch-content hidden">
                         <h3
                             class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-400 mb-8 leading-tight">
-                            Stop eating the cost of <strong class="text-[#fca5a5] font-bold">vendor compliance failures</strong>. Deploy the <strong class="text-[#65793e] font-bold">Digital Paralegal</strong>.
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Pare de arcar com o custo de <strong class="text-[#fca5a5] font-bold">falhas de conformidade do fornecedor</strong>. Implante o <strong class="text-[#65793e] font-bold">Paralegal Digital</strong>.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Arrêtez de supporter le coût des <strong class="text-[#fca5a5] font-bold">échecs de conformité des fournisseurs</strong>. Déployez le <strong class="text-[#65793e] font-bold">Paralégal Digital</strong>.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Deje de asumir el costo de los <strong class="text-[#fca5a5] font-bold">fallos de cumplimiento de los proveedores</strong>. Despliegue el <strong class="text-[#65793e] font-bold">Paralegal Digital</strong>.
+                            {{ else }}
+                                Stop eating the cost of <strong class="text-[#fca5a5] font-bold">vendor compliance failures</strong>. Deploy the <strong class="text-[#65793e] font-bold">Digital Paralegal</strong>.
+                            {{ end }}
                         </h3>
                         <p
                             class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
-                            Managing retail vendors logically shouldn't mean accepting abstract loss patterns as a cost of
-                            business. RunInk's Claims Dispute Operator autonomously reasons through complex inbound SLA deviations, synthesizing
-                            receiving chronologies and cross-referencing vendor agreements to logically draft irrefutable chargebacks without human bottlenecking.
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Gerenciar fornecedores de varejo logicamente não deveria significar aceitar padrões de perdas abstratos como um custo de negócio. O Operador de Contestação de Cobranças da RunInk processa de forma autônoma sobre desvios complexos de SLA de entrada, sintetizando cronologias de recebimento e cruzando acordos de fornecedores para redigir estornos irrefutáveis sem gargalos humanos.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Gérer logiquement les fournisseurs de vente ne devrait pas signifier accepter des schémas de perte abstraits comme un coût d'exploitation. L'opérateur de litiges de réclamation de Runink traite de manière autonome les écarts complexes des SLA d'entrée, synthétisant les chronologies de réception et croisant les accords des fournisseurs pour rédiger logiquement des débits compensatoires sans goulots d'étranglement humains.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Gestionar a los proveedores minoristas lógicamente no debería significar aceptar patrones de pérdidas abstractos como un costo de negocio. El operador de disputas de reclamaciones de Runink procesa de forma autónoma desviaciones complejas de SLA entrantes, sintetizando cronologías de recepción y cruzando los acuerdos con proveedores para redactar cargos por incumplimiento lógicamente sin cuellos de botella humanos.
+                            {{ else }}
+                                Managing retail vendors logically shouldn't mean accepting abstract loss patterns as a cost of
+                                business. RunInk's Claims Dispute Operator autonomously processes complex inbound SLA deviations, synthesizing
+                                receiving chronologies and cross-referencing vendor agreements to logically draft chargebacks without human bottlenecking.
+                            {{ end }}
                         </p>
                         <div>
-                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
-                                Closer</h4>
-                            <p class="text-[#65793e] text-xl font-black italic">"Hold your suppliers to their SLAs, automatically."</p>
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">
+                                {{ if eq .Page.Language.Lang "pt" }}O Conclusor{{ else }}The Closer{{ end }}
+                            </h4>
+                            <p class="text-[#65793e] text-xl font-black italic">
+                                {{ if eq .Page.Language.Lang "pt" }}"Cobre de seus fornecedores o cumprimento dos SLAs, automaticamente."{{ else if eq .Page.Language.Lang "fr" }}« Exigez le respect des SLA de vos fournisseurs, automatiquement. »{{ else if eq .Page.Language.Lang "es" }}“Exija a sus proveedores el cumplimiento de sus SLA, automáticamente.”{{ else }}"Hold your suppliers to their SLAs, automatically."{{ end }}
+                            </p>
                         </div>
                     </div>
 
@@ -183,18 +267,37 @@
                     <div id="pitch-broker" class="pitch-content hidden">
                         <h3
                             class="text-3xl lg:text-4xl font-black italic tracking-tight text-orange-400 mb-8 leading-tight">
-                            Stop accepting <strong class="text-[#fca5a5] font-bold">inconsistent store execution</strong>. Deploy <strong class="text-[#65793e] font-bold">Local Specialized AI</strong>.</h3>
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Pare de aceitar uma <strong class="text-[#fca5a5] font-bold">execução inconsistente de loja</strong>. Implante <strong class="text-[#65793e] font-bold">Automação Local Especializada</strong>.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Arrêtez d'accepter une <strong class="text-[#fca5a5] font-bold">exécution incohérente en magasin</strong>. Déployez l'<strong class="text-[#65793e] font-bold">Automatisation Locale Spécialisée</strong>.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Deje de aceptar una <strong class="text-[#fca5a5] font-bold">ejecución inconsistente en tienda</strong>. Despliegue la <strong class="text-[#65793e] font-bold">Automatización Local Especializada</strong>.
+                            {{ else }}
+                                Stop accepting <strong class="text-[#fca5a5] font-bold">inconsistent store execution</strong>. Deploy <strong class="text-[#65793e] font-bold">Local Specialized Automation</strong>.
+                            {{ end }}
+                        </h3>
                         <p
                             class="text-stone-300 text-base md:text-lg leading-relaxed mb-10 pb-10 border-b border-stone-800/50 pr-8">
-                            RunInk agents autonomously reason through complex local store telemetry and employee schedules.
-                            Instead of relying on rigid, templated corporate directives that ignore local branch realities,
-                            our reasoning engines evaluate edge cases dynamically—identifying micro-trend risks before
-                            they impact the customer experience.
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Os sistemas da RunInk decidem de forma autônoma através de telemetria complexa de lojas locais e cronogramas de funcionários. Em vez de depender de diretrizes corporativas rígidas e padronizadas que ignoram as realidades das filiais locais, nossos mecanismos de raciocínio avaliam casos extremos dinamicamente — identificando riscos de micro-tendências antes que impactem a experiência do cliente.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Les systèmes Runink analysent de manière autonome la télémétrie complexe des magasins locaux et les plannings des employés. Au lieu de s'appuyer sur des directives d'entreprise rigides et standardisées qui ignorent les réalités des succursales locales, nos moteurs d'analyse évaluent les cas limites de manière dynamique — identifiant les risques de micro-tendances avant qu'ils n'affectent l'expérience client.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Los sistemas Runink analizan de forma autónoma la compleja telemetría de las tiendas locales y los horarios de los empleados. En lugar de depender de directrices corporativas rígidas y estandarizadas que ignoran la realidad de las sucursales locales, nuestros motores de análisis evalúan los casos límite de forma dinámica, identificando riesgos de microtendencias antes de que afecten la experiencia del cliente.
+                            {{ else }}
+                                RunInk systems autonomously reason through complex local store telemetry and employee schedules.
+                                Instead of relying on rigid, templated corporate directives that ignore local branch realities,
+                                our reasoning engines evaluate edge cases dynamically—identifying micro-trend risks before
+                                they impact the customer experience.
+                            {{ end }}
                         </p>
                         <div>
-                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">The
-                                Closer</h4>
-                            <p class="text-[#65793e] text-xl font-black italic">"Flawless execution tailored to every individual branch."
+                            <h4 class="text-[#888581] text-[10px] font-black uppercase tracking-[0.15em] mb-2">
+                                {{ if eq .Page.Language.Lang "pt" }}O Conclusor{{ else }}The Closer{{ end }}
+                            </h4>
+                            <p class="text-[#65793e] text-xl font-black italic">
+                                {{ if eq .Page.Language.Lang "pt" }}"Execução impecável sob medida para cada filial individual."{{ else if eq .Page.Language.Lang "fr" }}« Une exécution impeccable adaptée à chaque filiale individuelle. »{{ else if eq .Page.Language.Lang "es" }}“Ejecución impecable adaptada a cada sucursal individual.”{{ else }}"Flawless execution tailored to every individual branch."{{ end }}
                             </p>
                         </div>
                     </div>
@@ -203,4 +306,3 @@
         </div>
     </div>
 </section>
-

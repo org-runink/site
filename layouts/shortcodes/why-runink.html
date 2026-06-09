@@ -6,16 +6,24 @@
             <div class="text-center mb-20 flex flex-col items-center">
                 <div
                     class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
-                    Architecture
+                    {{ if eq .Page.Language.Lang "pt" }}Arquitetura{{ else if eq .Page.Language.Lang "es" }}Arquitectura{{ else }}Architecture{{ end }}
                 </div>
                 <h2
                     class="text-6xl md:text-7xl lg:text-[90px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
-                    Why Runink?
+                    {{ if eq .Page.Language.Lang "pt" }}Por que Runink?{{ else if eq .Page.Language.Lang "fr" }}Pourquoi Runink ?{{ else if eq .Page.Language.Lang "es" }}¿Por qué Runink?{{ else }}Why Runink?{{ end }}
                 </h2>
                 <div
                     class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 mt-6 max-w-3xl">
-                    Deploy the right level of intelligence for your operations. Choose between deep analytical
-                    visibility or AI-assisted execution.
+                    {{ if eq .Page.Language.Lang "pt" }}
+                        Implante o nível certo de inteligência para suas operações. Escolha entre visibilidade analítica profunda ou execução automatizada.
+                    {{ else if eq .Page.Language.Lang "fr" }}
+                        Déployez le juste niveau d'intelligence pour vos opérations. Choisissez entre une visibilité analytique profonde ou une exécution automatisée.
+                    {{ else if eq .Page.Language.Lang "es" }}
+                        Despliegue el nivel adecuado de inteligencia para sus operaciones. Elija entre una visibilidad analítica profunda o una ejecución automatizada.
+                    {{ else }}
+                        Deploy the right level of intelligence for your operations. Choose between deep analytical
+                        visibility or automated execution.
+                    {{ end }}
                 </div>
             </div>
 
@@ -29,8 +37,9 @@
 
                     <div class="relative z-10">
                         <h3 class="text-4xl font-black text-white mb-2 tracking-tight">Runink Monitor</h3>
-                        <p class="text-[#C8D9A8] font-mono text-sm mb-12 uppercase tracking-widest">Visibility &
-                            Intelligence</p>
+                        <p class="text-[#C8D9A8] font-mono text-sm mb-12 uppercase tracking-widest">
+                            {{ if eq .Page.Language.Lang "pt" }}Visibilidade e Inteligência{{ else if eq .Page.Language.Lang "fr" }}Visibilité & Intelligence{{ else if eq .Page.Language.Lang "es" }}Visibilidad e Inteligencia{{ else }}Visibility & Intelligence{{ end }}
+                        </p>
 
                         <ul class="space-y-8">
                             <li class="flex items-start group/item">
@@ -42,8 +51,20 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">Data & AI Maturity Assessments</h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">Evaluate data quality and operational maturity directly from logistics documents, EDI feeds, spreadsheets, PDFs, and core WMS/TMS databases.</p>
+                                    <h4 class="text-xl font-bold text-white mb-2">
+                                        {{ if eq .Page.Language.Lang "pt" }}Avaliações de Maturidade de Dados e Operações{{ else if eq .Page.Language.Lang "fr" }}Évaluations de la Maturité des Données & des Opérations{{ else if eq .Page.Language.Lang "es" }}Evaluaciones de Madurez de Datos y Operaciones{{ else }}Data & Operations Maturity Assessments{{ end }}
+                                    </h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">
+                                        {{ if eq .Page.Language.Lang "pt" }}
+                                            Avalie a qualidade dos dados e a maturidade operacional diretamente de documentos de logística, feeds de EDI, planilhas, PDFs e bancos de dados WMS/TMS principais.
+                                        {{ else if eq .Page.Language.Lang "fr" }}
+                                            Évaluez la qualité des données et la maturité opérationnelle directement à partir des documents logistiques, des flux EDI, des feuilles de calcul, des PDF et des bases de données WMS/TMS principales.
+                                        {{ else if eq .Page.Language.Lang "es" }}
+                                            Evalúe la calidad de los datos y la madurez operativa directamente a partir de documentos logísticos, transmisiones EDI, hojas de cálculo, PDF y bases de datos principales de WMS/TMS.
+                                        {{ else }}
+                                            Evaluate data quality and operational maturity directly from logistics documents, EDI feeds, spreadsheets, PDFs, and core WMS/TMS databases.
+                                        {{ end }}
+                                    </p>
                                 </div>
                             </li>
                             <li class="flex items-start group/item">
@@ -56,10 +77,20 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">Rules Reconciliation</h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">Map SOPs against legacy code
-                                        (SQL/VBA/Python) or new platforms (SAP/Salesforce/Shopify). Add unmapped rules
-                                        manually that our engine hasn't uncovered yet.</p>
+                                    <h4 class="text-xl font-bold text-white mb-2">
+                                        {{ if eq .Page.Language.Lang "pt" }}Reconciliação de Regras{{ else if eq .Page.Language.Lang "fr" }}Réconciliation des Règles{{ else if eq .Page.Language.Lang "es" }}Reconciliación de Reglas{{ else }}Rules Reconciliation{{ end }}
+                                    </h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">
+                                        {{ if eq .Page.Language.Lang "pt" }}
+                                            Mapeie procedimentos operacionais padrão (SOPs) contra código legado (SQL/VBA/Python) ou novas plataformas (SAP/Salesforce/Shopify). Adicione regras não mapeadas manualmente caso nosso mecanismo ainda não as tenha descoberto.
+                                        {{ else if eq .Page.Language.Lang "fr" }}
+                                            Cartographiez les procédures opérationnelles standard (SOP) par rapport au code hérité (SQL/VBA/Python) ou aux nouvelles plateformes (SAP/Salesforce/Shopify). Ajoutez manuellement les règles non cartographiées que notre moteur n'a pas encore découvertes.
+                                        {{ else if eq .Page.Language.Lang "es" }}
+                                            Mapee los procedimientos operativos estándar (SOP) frente al código heredado (SQL/VBA/Python) o nuevas plataformas (SAP/Salesforce/Shopify). Agregue manualmente reglas no mapeadas que nuestro motor aún no haya descubierto.
+                                        {{ else }}
+                                            Map SOPs against legacy code (SQL/VBA/Python) or new platforms (SAP/Salesforce/Shopify). Add unmapped rules manually that our engine hasn't uncovered yet.
+                                        {{ end }}
+                                    </p>
                                 </div>
                             </li>
                             <li class="flex items-start group/item">
@@ -72,9 +103,20 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">Hypothesis Lab</h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">Simulate changes to your rules
-                                        before deployment. Test the future without risking the present.</p>
+                                    <h4 class="text-xl font-bold text-white mb-2">
+                                        {{ if eq .Page.Language.Lang "pt" }}Laboratório de Hipóteses{{ else if eq .Page.Language.Lang "fr" }}Laboratoire d'Hypothèses{{ else if eq .Page.Language.Lang "es" }}Laboratorio de Hipótesis{{ else }}Hypothesis Lab{{ end }}
+                                    </h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">
+                                        {{ if eq .Page.Language.Lang "pt" }}
+                                            Simule alterações em suas regras antes da implantação. Teste o futuro sem arriscar o presente.
+                                        {{ else if eq .Page.Language.Lang "fr" }}
+                                            Simulez les modifications de vos règles avant le déploiement. Testez l'avenir sans risquer le présent.
+                                        {{ else if eq .Page.Language.Lang "es" }}
+                                            Simule cambios en sus reglas antes del despliegue. Pruebe el futuro sin arriesgar el presente.
+                                        {{ else }}
+                                            Simulate changes to your rules before deployment. Test the future without risking the present.
+                                        {{ end }}
+                                    </p>
                                 </div>
                             </li>
                         </ul>
@@ -89,10 +131,12 @@
                     </div>
 
                     <div class="relative z-10">
-                        <h3 class="text-4xl font-black text-white mb-2 tracking-tight">Operations Twins</h3>
-                        <p class="text-[#ea580c] font-mono text-sm mb-8 uppercase tracking-widest">Agentic Assistance
+                        <h3 class="text-4xl font-black text-white mb-2 tracking-tight">
+                            {{ if eq .Page.Language.Lang "pt" }}Gêmeos Digitais de Operações{{ else if eq .Page.Language.Lang "fr" }}Jumeaux Numériques d'Opérations{{ else if eq .Page.Language.Lang "es" }}Gemelos Digitales de Operaciones{{ else }}Operations Digital Twins{{ end }}
+                        </h3>
+                        <p class="text-[#ea580c] font-mono text-sm mb-8 uppercase tracking-widest">
+                            {{ if eq .Page.Language.Lang "pt" }}Assistência Autônoma{{ else if eq .Page.Language.Lang "fr" }}Assistance Autonome{{ else if eq .Page.Language.Lang "es" }}Asistencia Autónoma{{ else }}Autonomous Assistance{{ end }}
                         </p>
-
 
                         <ul class="space-y-8">
                             <li class="flex items-start group/item">
@@ -104,10 +148,20 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">Agentic Reasoning</h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">Uncover "hidden treasures" and
-                                        anomalies standard tools miss utilizing deep semantic understanding. Our agents
-                                        check their facts before ever jumping into biased assumptions.</p>
+                                    <h4 class="text-xl font-bold text-white mb-2">
+                                        {{ if eq .Page.Language.Lang "pt" }}Raciocínio Autônomo{{ else if eq .Page.Language.Lang "fr" }}Raisonnement Autonome{{ else if eq .Page.Language.Lang "es" }}Razonamiento Autónomo{{ else }}Autonomous Reasoning{{ end }}
+                                    </h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">
+                                        {{ if eq .Page.Language.Lang "pt" }}
+                                            Descubra "tesouros escondidos" e anomalias que as ferramentas padrão perdem, utilizando compreensão semântica profunda. Nossos sistemas verificam os fatos antes de assumir premissas tendenciosas.
+                                        {{ else if eq .Page.Language.Lang "fr" }}
+                                            Découvrez des « trésors cachés » et des anomalies que les outils standards manquent en utilisant une compréhension sémantique profonde. Nos systèmes vérifient les faits avant de se lancer dans des hypothèses biaisées.
+                                        {{ else if eq .Page.Language.Lang "es" }}
+                                            Descubra "tesoros ocultos" y anomalías que las herramientas estándar pasan por alto utilizando una comprensión semántica profunda. Nuestros sistemas verifican los hechos antes de lanzarse a suposiciones sesgadas.
+                                        {{ else }}
+                                            Uncover "hidden treasures" and anomalies standard tools miss utilizing deep semantic understanding. Our systems check their facts before ever jumping into biased assumptions.
+                                        {{ end }}
+                                    </p>
                                 </div>
                             </li>
                             <li class="flex items-start group/item">
@@ -119,8 +173,20 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">Operations Twins Execution</h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">Turn the "Edge Brain" loose. Deploy Digital Paralegals, Operations Managers, Statistical Buyers, and Agentic Revenue Operators to autonomously draft claims, route orders, and execute Short-Pays, awaiting your one-click approval.</p>
+                                    <h4 class="text-xl font-bold text-white mb-2">
+                                        {{ if eq .Page.Language.Lang "pt" }}Execução com Gêmeos Digitais de Operações{{ else if eq .Page.Language.Lang "fr" }}Exécution par Jumeaux Numériques d'Opérations{{ else if eq .Page.Language.Lang "es" }}Ejecución con Gemelos Digitales de Operaciones{{ else }}Operations Digital Twin Execution{{ end }}
+                                    </h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">
+                                        {{ if eq .Page.Language.Lang "pt" }}
+                                            Liberte o "Cérebro de Borda". Implante Paralegais Digitais, Gerentes de Operações, Compradores Estatísticos e Operadores de Receita Automatizados para redigir contestações autonomamente, rotear pedidos e executar pagamentos a menor, aguardando sua aprovação em um clique.
+                                        {{ else if eq .Page.Language.Lang "fr" }}
+                                            Libérez le « Cerveau de Bordure ». Déployez des paralégaux digitaux, des responsables d'opérations, des acheteurs statistiques et des opérateurs de revenus automatisés pour rédiger des réclamations de manière autonome, acheminer des commandes et exécuter des retenues de paiement, en attente de votre approbation en un clic.
+                                        {{ else if eq .Page.Language.Lang "es" }}
+                                            Libere el "Cerebro de Borde". Despliegue paralegales digitales, gerentes de operaciones, compradores estadísticos y operadores de ingresos automatizados para redactar reclamaciones de forma autónoma, enrutar pedidos y ejecutar retenciones de pago, a la espera de su aprobación en un solo clic.
+                                        {{ else }}
+                                            Turn the "Edge Brain" loose. Deploy Digital Paralegals, Operations Managers, Statistical Buyers, and Automated Revenue Operators to autonomously draft claims, route orders, and execute Short-Pays, awaiting your one-click approval.
+                                        {{ end }}
+                                    </p>
                                 </div>
                             </li>
                             <li class="flex items-start group/item">
@@ -133,10 +199,20 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">Actionable Notifications</h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">Real-time alerts of findings,
-                                        claims
-                                        filed, and fulfilment actions taken on your behalf.</p>
+                                    <h4 class="text-xl font-bold text-white mb-2">
+                                        {{ if eq .Page.Language.Lang "pt" }}Notificações Acionáveis{{ else if eq .Page.Language.Lang "fr" }}Notifications Actionnables{{ else if eq .Page.Language.Lang "es" }}Notificaciones Accionables{{ else }}Actionable Notifications{{ end }}
+                                    </h4>
+                                    <p class="text-stone-400 text-base leading-relaxed">
+                                        {{ if eq .Page.Language.Lang "pt" }}
+                                            Alertas em tempo real de descobertas, contestações registradas e ações de atendimento tomadas em seu nome.
+                                        {{ else if eq .Page.Language.Lang "fr" }}
+                                            Alertes en temps réel des découvertes, des réclamations déposées et des actions d'exécution prises en votre nom.
+                                        {{ else if eq .Page.Language.Lang "es" }}
+                                            Alertas en tiempo real de hallazgos, reclamaciones presentadas y acciones de cumplimiento tomadas en su nombre.
+                                        {{ else }}
+                                            Real-time alerts of findings, claims filed, and fulfilment actions taken on your behalf.
+                                        {{ end }}
+                                    </p>
                                 </div>
                             </li>
                         </ul>

@@ -1,5 +1,5 @@
 ---
-title: "The Finance Agent: The Forensic Auditor"
+title: "Finance Auditing: Automated Invoice Audits"
 description: "Stop the 'Rubber Stamp'. Audit every single EDI 210 invoice line against your contract."
 layout: "use_case"
 badge: "Logistics Finance"
@@ -14,14 +14,14 @@ author: "Lead Data & Cloud Architect"
     <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Stop Paying for Things You Didn't Get.</h1>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            Your negotiated rates mean nothing if you don't enforce them. <br>The Finance Agent audits every single line item of every invoice, stopping leakage before you pay.
+            Your negotiated rates mean nothing if you don't enforce them. <br>The Finance Engine audits every single line item of every invoice, stopping leakage before you pay.
         </p>
     </div>
 
     <div class="mb-16">
         <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
         <ul class="space-y-3">
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>100% Invoice Auditing:</strong> The Finance Agent forensically audits every single EDI 210 line item against negotiated contract rates to prevent overbilling.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>100% Invoice Auditing:</strong> The Finance Engine forensically audits every single EDI 210 line item against negotiated contract rates to prevent overbilling.</li>
             <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Automated Short-Pays:</strong> Invalid accessorial charges (e.g., unsupported detention or liftgate fees) are automatically disputed and short-paid with specific remittance advice codes.</li>
             <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>GPS Validation:</strong> Proof of Delivery (POD) and GPS timestamps are actively cross-referenced to validate service execution before payment authorization.</li>
         </ul>
@@ -46,12 +46,12 @@ author: "Lead Data & Cloud Architect"
              <!-- Mermaid Diagram -->
              <div class="mermaid">
              C4Context
-                title System Context: Finance Agent
+                title System Context: Finance Auditing
                 
                 Person(ap, "AP Manager", "Approves final payment run.")
                 
                 Enterprise_Boundary(b0, "Runink Finance") {
-                    System(agent, "Finance Agent", "Forensic Auditor.")
+                    System(engine, "Finance Engine", "Forensic Auditor.")
                     
                     System_Ext(contract, "Rate Card DB", "Negotiated Accessorials")
                     System_Ext(pod, "Proof of Delivery", "Validates Service")
@@ -61,11 +61,11 @@ author: "Lead Data & Cloud Architect"
                     }
                 }
 
-                Rel(carrier, agent, "Sends Invoice ($125)")
-                Rel(agent, contract, "Checks Rate: Liftgate=$50")
-                Rel(agent, pod, "Checks POD: 'No Liftgate Used'")
-                Rel(agent, carrier, "Disputes: Short-Pays to $75")
-                Rel(agent, ap, "Queues Clean Payment")
+                Rel(carrier, engine, "Sends Invoice ($125)")
+                Rel(engine, contract, "Checks Rate: Liftgate=$50")
+                Rel(engine, pod, "Checks POD: 'No Liftgate Used'")
+                Rel(engine, carrier, "Disputes: Short-Pays to $75")
+                Rel(engine, ap, "Queues Clean Payment")
              </div>
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">It catches the $50 error that humans ignore.</p>
@@ -75,11 +75,11 @@ author: "Lead Data & Cloud Architect"
     <div class="max-w-3xl mx-auto prose prose-invert prose-lg mb-20">
         <h3>How It Wins: The "Short-Pay" Strategy</h3>
         <p>
-            The Agent doesn't ask for permission. It validates charges against reality.
+            The system doesn't ask for permission. It validates charges against reality.
         </p>
         <p>
             <strong>1. The Reality Check</strong><br>
-            The carrier bills $75 for "Driver Detention" (Waiting time). The Agent checks the <strong>GPS timestamp</strong> on the delivery event. It sees the driver was onsite for only 15 minutes. The contract allows 2 hours free.
+            The carrier bills $75 for "Driver Detention" (Waiting time). The system checks the <strong>GPS timestamp</strong> on the delivery event. It sees the driver was onsite for only 15 minutes. The contract allows 2 hours free.
         </p>
         <p>
             <strong>2. The Dispute</strong><br>
@@ -90,7 +90,7 @@ author: "Lead Data & Cloud Architect"
             It matches the cleaned invoice to your General Ledger code automatically. Your AP team stops being data-entry clerks and starts being financial analysts.
         </p>
         <p>
-             Got damaged goods? Use the <a href="/use-cases/claims-recovery" class="text-[#D4A574] hover:underline">Claims Recovery Agent</a> to get the rest of your money back.
+             Got damaged goods? Use the <a href="/use-cases/claims-recovery" class="text-[#D4A574] hover:underline">Claims Recovery Module</a> to get the rest of your money back.
         </p>
     </div>
     
@@ -160,7 +160,7 @@ author: "Lead Data & Cloud Architect"
         },
         {
             "question": "What is an automated short-pay in logistics?",
-            "answer": "An automated short-pay is when an AI agent detects an invalid charge, such as unverified driver detention, and automatically authorizes payment only for the correct linehaul amount, appending a specific denial code."
+            "answer": "An automated short-pay is when an automated engine detects an invalid charge, such as unverified driver detention, and automatically authorizes payment only for the correct linehaul amount, appending a specific denial code."
         },
         {
             "question": "How are GPS logs used in freight invoice auditing?",
@@ -177,7 +177,7 @@ author: "Lead Data & Cloud Architect"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
     <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Generative AI. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and AI-driven logistics solutions.
+    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
   </p>
 </section>
 
@@ -185,9 +185,9 @@ author: "Lead Data & Cloud Architect"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Generative AI for Supply Chain Optimization</a> - Advanced methodologies for AI-driven logistics.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
     <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on automated applications in freight and transportation.</li>
   </ul>
 </section>
 

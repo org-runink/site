@@ -5,19 +5,25 @@
         <div class="text-center mb-20 flex flex-col items-center">
             <div
                 class="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-lg border border-[#ca4708]/50 text-[#ca4708] text-[10px] font-black uppercase tracking-[0.2em] bg-[#211F1F]">
-                Enterprise Exclusive
+                {{ if eq .Page.Language.Lang "pt" }}Exclusivo de Enterprise{{ else if eq .Page.Language.Lang "fr" }}Exclusivité Enterprise{{ else if eq .Page.Language.Lang "es" }}Exclusivo de Enterprise{{ else }}Enterprise Exclusive{{ end }}
             </div>
             <h2
                 class="text-5xl md:text-6xl lg:text-[70px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg leading-[1.1] break-words">
-                Operations Twins
+                {{ if eq .Page.Language.Lang "pt" }}Gêmeos Digitais de Operações{{ else if eq .Page.Language.Lang "fr" }}Jumeaux Numériques d'Opérations{{ else if eq .Page.Language.Lang "es" }}Gemelos Digitales de Operaciones{{ else }}Operations Digital Twins{{ end }}
             </h2>
             <div
                 class="text-stone-500 font-bold uppercase tracking-[0.15em] text-sm md:text-base mb-10 mt-6 max-w-3xl leading-relaxed mx-auto px-4">
-                Autonomous digital workers deployed on your dedicated infrastructure to augment your team, orchestrate logistics, and protect your margins 24/7.
+                {{ if eq .Page.Language.Lang "pt" }}
+                    Módulos operacionais autônomos implantados em sua infraestrutura dedicada para aumentar sua equipe, orquestrar a logística e proteger suas margens 24 horas por dia, 7 dias por semana.
+                {{ else if eq .Page.Language.Lang "fr" }}
+                    Des modules d'opérations autonomes déployés sur votre infrastructure dédiée pour renforcer votre équipe, orchestrer la logistique et protéger vos marges 24h/24 et 7j/7.
+                {{ else if eq .Page.Language.Lang "es" }}
+                    Módulos de operaciones autónomos desplegados en su infraestructura dedicada para aumentar su equipo, orquestar la logística y proteger sus márgenes las 24 horas, los 7 días de la semana.
+                {{ else }}
+                    Autonomous operations modules deployed on your dedicated infrastructure to augment your team, orchestrate logistics, and protect your margins 24/7.
+                {{ end }}
             </div>
         </div>
-
-
 
         <!-- The 3 Integrations -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -27,11 +33,21 @@
                 class="bg-[#1b1919] border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-[#29B5E8]/30 transition-colors group flex flex-col h-full">
                 <h3
                     class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-[#29B5E8] transition-colors">
-                    Digital <span class="text-[#29B5E8]">Paralegals</span></h3>
+                    {{ if eq .Page.Language.Lang "pt" }}Paralegais <span class="text-[#29B5E8]">Digitais</span>{{ else if eq .Page.Language.Lang "fr" }}Paralégaux <span class="text-[#29B5E8]">Digitaux</span>{{ else if eq .Page.Language.Lang "es" }}Paralegales <span class="text-[#29B5E8]">Digitales</span>{{ else }}Digital <span class="text-[#29B5E8]">Paralegals</span>{{ end }}</h3>
                 <p class="text-sm text-stone-400 leading-relaxed mb-8 flex-grow">
-                    Your automated legal and compliance team. They autonomously ingest freight bills, cross-reference SLA agreements, and instantly file irrefutable claims to recover lost margins from carriers without manual intervention.
+                    {{ if eq .Page.Language.Lang "pt" }}
+                        Sua equipe jurídica e de conformidade automatizada. Eles ingerem faturas de frete autonomamente, cruzam acordos de SLA e registram instantaneamente contestações irrefutáveis para recuperar margens perdidas de transportadoras sem intervenção manual.
+                    {{ else if eq .Page.Language.Lang "fr" }}
+                        Votre équipe juridique et de conformité automatisée. Ils ingèrent les factures de transport de façon autonome, comparent les accords de niveau de service (SLA) et déposent instantanément des réclamations irréfutables pour récupérer les marges perdues auprès des transporteurs, sans intervention manuelle.
+                    {{ else if eq .Page.Language.Lang "es" }}
+                        Su equipo legal y de cumplimiento automatizado. Ingieren de forma autónoma las facturas de transporte, cotejan los acuerdos de nivel de servicio (SLA) y presentan instantáneamente reclamaciones irrefutables para recuperar los márgenes perdidos de los transportistas sin intervención manual.
+                    {{ else }}
+                        Your automated legal and compliance team. They autonomously ingest freight bills, cross-reference SLA agreements, and instantly file irrefutable claims to recover lost margins from carriers without manual intervention.
+                    {{ end }}
                 </p>
-                <div class="text-[10px] font-black text-stone-500 tracking-[0.2em] uppercase mt-auto">Focus: Claims & Recovery</div>
+                <div class="text-[10px] font-black text-stone-500 tracking-[0.2em] uppercase mt-auto">
+                    {{ if eq .Page.Language.Lang "pt" }}Foco: Contestações e Recuperação{{ else if eq .Page.Language.Lang "fr" }}Focus : Litiges et Récupération{{ else if eq .Page.Language.Lang "es" }}Foco: Reclamaciones y Recuperación{{ else }}Focus: Claims & Recovery{{ end }}
+                </div>
             </div>
 
             <!-- Statistical Buyers & Ops -->
@@ -39,11 +55,21 @@
                 class="bg-[#1b1919] border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-[#FF3621]/30 transition-colors group flex flex-col h-full">
                 <h3
                     class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-[#FF3621] transition-colors">
-                    Statistical <span class="text-[#FF3621]">Buyers</span></h3>
+                    {{ if eq .Page.Language.Lang "pt" }}Compradores <span class="text-[#FF3621]">Estatísticos</span>{{ else if eq .Page.Language.Lang "fr" }}Acheteurs <span class="text-[#FF3621]">Statistiques</span>{{ else if eq .Page.Language.Lang "es" }}Compradores <span class="text-[#FF3621]">Estadísticos</span>{{ else }}Statistical <span class="text-[#FF3621]">Buyers</span>{{ end }}</h3>
                 <p class="text-sm text-stone-400 leading-relaxed mb-8 flex-grow">
-                    Your autonomous demand planning unit. They intelligently ingest market trends and sales velocity to predict exact stock needs, dynamically orchestrating inventory allocation across your entire distribution network.
+                    {{ if eq .Page.Language.Lang "pt" }}
+                        Sua unidade de planejamento de demanda autônoma. Eles ingerem de forma inteligente as tendências de mercado e a velocidade de vendas para prever necessidades exatas de estoque, orquestrando dinamicamente a alocação de estoque em toda a sua rede de distribuição.
+                    {{ else if eq .Page.Language.Lang "fr" }}
+                        Votre unité autonome de planification de la demande. Ils analysent intelligemment les tendances du marché et la vitesse des ventes pour prédire les besoins exacts de stockage, orchestrant de manière dynamique la répartition des stocks sur l'ensemble de votre réseau.
+                    {{ else if eq .Page.Language.Lang "es" }}
+                        Su unidad de planificación de demanda autónoma. Analizan de manera inteligente las tendencias del mercado y la velocidad de ventas para predecir las necesidades exactas de stock, orquestando dinámicamente la asignación de inventario en toda su red de distribución.
+                    {{ else }}
+                        Your autonomous demand planning unit. They intelligently ingest market trends and sales velocity to predict exact stock needs, dynamically orchestrating inventory allocation across your entire distribution network.
+                    {{ end }}
                 </p>
-                <div class="text-[10px] font-black text-stone-500 tracking-[0.2em] uppercase mt-auto">Focus: Inventory & Fulfilment</div>
+                <div class="text-[10px] font-black text-stone-500 tracking-[0.2em] uppercase mt-auto">
+                    {{ if eq .Page.Language.Lang "pt" }}Foco: Estoque e Atendimento{{ else if eq .Page.Language.Lang "fr" }}Focus : Stock et Exécution{{ else if eq .Page.Language.Lang "es" }}Foco: Inventario y Cumplimiento{{ else }}Focus: Inventory & Fulfilment{{ end }}
+                </div>
             </div>
 
             <!-- Revenue Operators -->
@@ -51,11 +77,21 @@
                 class="bg-[#1b1919] border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-[#4285F4]/30 transition-colors group flex flex-col h-full">
                 <h3
                     class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-[#4285F4] transition-colors">
-                    Revenue <span class="text-[#4285F4]">Operators</span></h3>
+                    {{ if eq .Page.Language.Lang "pt" }}Operadores de <span class="text-[#4285F4]">Receita</span>{{ else if eq .Page.Language.Lang "fr" }}Opérateurs de <span class="text-[#4285F4]">Revenus</span>{{ else if eq .Page.Language.Lang "es" }}Operadores de <span class="text-[#4285F4]">Ingresos</span>{{ else }}Revenue <span class="text-[#4285F4]">Operators</span>{{ end }}</h3>
                 <p class="text-sm text-stone-400 leading-relaxed mb-8 flex-grow">
-                    Your forensic financial auditors. They meticulously audit every invoice line against your negotiated carrier contracts, automatically flagging ghost fees and executing Short-Pays to halt margin leakage.
+                    {{ if eq .Page.Language.Lang "pt" }}
+                        Seus auditores financeiros forenses. Eles auditam meticulosamente cada linha de fatura em relação aos contratos negociados com as transportadoras, sinalizando taxas fantasmas automaticamente e executando pagamentos a menor para interromper perdas de margem.
+                    {{ else if eq .Page.Language.Lang "fr" }}
+                        Vos auditeurs financiers légaux. Ils auditent méticuleusement chaque ligne de facture par rapport à vos contrats de transport négociés, signalent automatiquement les frais indus et exécutent des retenues de paiement pour stopper les fuites de marge.
+                    {{ else if eq .Page.Language.Lang "es" }}
+                        Sus auditores financieros forenses. Auditan meticulosamente cada línea de factura contra sus contratos de transporte negociados, marcando tarifas fantasmas automáticamente y ejecutando retenciones de pago para detener la pérdida de margen.
+                    {{ else }}
+                        Your forensic financial auditors. They meticulously audit every invoice line against your negotiated carrier contracts, automatically flagging ghost fees and executing Short-Pays to halt margin leakage.
+                    {{ end }}
                 </p>
-                <div class="text-[10px] font-black text-stone-500 tracking-[0.2em] uppercase mt-auto">Focus: Finance & Reconciliation</div>
+                <div class="text-[10px] font-black text-stone-500 tracking-[0.2em] uppercase mt-auto">
+                    {{ if eq .Page.Language.Lang "pt" }}Foco: Finanças e Reconciliação{{ else if eq .Page.Language.Lang "fr" }}Focus : Finance et Réconciliation{{ else if eq .Page.Language.Lang "es" }}Foco: Finanzas y Reconciliación{{ else }}Focus: Finance & Reconciliation{{ end }}
+                </div>
             </div>
 
         </div>

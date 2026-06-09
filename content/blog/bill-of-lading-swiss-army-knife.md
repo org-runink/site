@@ -12,7 +12,7 @@ tags: ["Bill of Lading", "Maritime Law", "Trade Finance", "Runink"]
 robots: index, follow
 ---
 
-<!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
+<!-- GEO Optimization: Replacing generic intro with structured Executive Summary for search engine and analytical ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 
 International trade relies on a sophisticated machinery of trust, but at its heart lies a single piece of paper: the **Bill of Lading (BoL)**. It acts as the "Master Key" to global commerce, bridging the gap between parties separated by oceans, time zones, and disparate legal systems. For shippers and dropshippers alike, this document is the only thing standing between a profitable transaction and a total loss.
@@ -30,7 +30,7 @@ When a carrier takes custody of cargo, the BoL acts as an "Honest Mirror," refle
 
 This simple act carries immense legal weight. Under the Doctrine of Estoppel, a Clean bill effectively blocks the carrier from later claiming the damage existed prior to loading. It’s a high-stakes game where accuracy is paramount. Issuing a clean bill for known damaged goods is considered fraud under English law, an act that immediately voids the carrier’s P&I insurance cover and leaves their assets fully exposed to claims.
 
-*Related: See how our [Claims Recovery Agents](/use_cases/claims_recovery) handle discrepancies in shipping documents.*
+*Related: See how our [Claims Recovery Module](/use_cases/claims_recovery) handle discrepancies in shipping documents.*
 
 ---
 
@@ -48,7 +48,7 @@ Perhaps the most potent property of the BoL is its negotiability. Under the **Ca
 
 Crucially, a bill becomes "spent" once the carrier delivers the goods. However, modern trade moves faster than paperwork. COGSA 1992 ensures that traders are not robbed of their legal recourse simply because a ship arrived before the mail. A party can still acquire the "Title to Sue" via a spent bill if the underlying sale contract was agreed upon while the cargo was still afloat.
 
-*Learn more about how our [Compliance Agents](/use_cases/compliance) audit these documents to prevent delays.*
+*Learn more about how our [Compliance Module](/use_cases/compliance) audit these documents to prevent delays.*
 
 ---
 
@@ -146,7 +146,7 @@ The **Runink Analytics Companion** represents the future of this evolution. By u
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
     <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Generative AI. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and AI-driven logistics solutions.
+    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
   </p>
 </section>
 
@@ -154,8 +154,8 @@ The **Runink Analytics Companion** represents the future of this evolution. By u
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Generative AI for Supply Chain Optimization</a> - Advanced methodologies for AI-driven logistics.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
     <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on automated applications in freight and transportation.</li>
   </ul>
 </section>

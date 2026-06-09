@@ -1,6 +1,7 @@
 ignoreLogs = ['warning-goldmark-raw-html']
 baseURL = "https://runink.org/"
-languageCode = "en-us"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 title = "Runink"
 
 # Theme Config
@@ -35,7 +36,7 @@ paginatePath = "page"
   [params.cta]
     enable = true
     title = "Runink: Data You Can Trust. Decisions You Can Defend."
-    description = "Your Go-to Hub for for orchestrating secure, testable, and governance-driven data pipelines at scale. Fitting your Cloud, Data Engineering, and Generative AI initiatives with secure solutions, and cutting-edge compliant technologies."
+    description = "Your Go-to Hub for for orchestrating secure, testable, and governance-driven data pipelines at scale. Fitting your Cloud, Data Engineering, and advanced analytical initiatives with secure solutions, and cutting-edge compliant technologies."
     gradient_from = "#3A2F2A"  # Indigo-600
     gradient_to = "#1A1512"    # Purple-600
     gradient_angle = 30
@@ -161,28 +162,147 @@ paginatePath = "page"
     ordered = false
     startLevel = 2
 
-# Navigation Menu
-[menu]
-  [[menu.main]]
-    name = "Why Runink?"
-    url = "/#why-runink"
+[languages]
+  [languages.en]
+    languageCode = "en-us"
+    languageName = "English"
     weight = 1
 
-  [[menu.main]]
-    name = "What makes it a painkiller"
-    url = "/#painkiller"
+    [[languages.en.menu.main]]
+      name = "Why Runink?"
+      url = "/#why-runink"
+      weight = 1
+
+    [[languages.en.menu.main]]
+      name = "What makes it a painkiller"
+      url = "/#painkiller"
+      weight = 2
+
+    [[languages.en.menu.main]]
+      name = "Use cases"
+      url = "/#use-cases"
+      weight = 3
+
+    [[languages.en.menu.main]]
+      name = "Blog"
+      url = "/blog/"
+      weight = 4
+
+    [[languages.en.menu.main]]
+      name = "Pricing"
+      url = "/pricing"
+      weight = 5
+
+  [languages.fr]
+    languageCode = "fr-fr"
+    languageName = "Français"
     weight = 2
 
-  [[menu.main]]
-    name = "Use cases"
-    url = "/#use-cases"
+    [languages.fr.params.header.buttons.getStarted]
+      text = "Réserver une Consultation"
+      url = "/fr/#contact"
+
+    [languages.fr.params.blog]
+      title = "Publications, Décryptages & Expertise"
+      subtitle = "Explorez nos livres blancs, cas d'usage réels et meilleures pratiques pour maximiser le ROI de vos initiatives de Transformation Digitale."
+
+    [[languages.fr.menu.main]]
+      name = "Pourquoi Runink ?"
+      url = "/fr/#why-runink"
+      weight = 1
+
+    [[languages.fr.menu.main]]
+      name = "Ce qui nous différencie"
+      url = "/fr/#painkiller"
+      weight = 2
+
+    [[languages.fr.menu.main]]
+      name = "Cas d'usage"
+      url = "/fr/#use-cases"
+      weight = 3
+
+    [[languages.fr.menu.main]]
+      name = "Blog"
+      url = "/fr/blog/"
+      weight = 4
+
+    [[languages.fr.menu.main]]
+      name = "Tarifs"
+      url = "/fr/pricing"
+      weight = 5
+
+  [languages.es]
+    languageCode = "es-es"
+    languageName = "Español"
     weight = 3
 
-  [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
+    [languages.es.params.header.buttons.getStarted]
+      text = "Reserve una Consulta"
+      url = "/es/#contact"
+
+    [languages.es.params.blog]
+      title = "Publicaciones, Insights y Especialidad"
+      subtitle = "Explore libros blancos, casos de uso reales y mejores prácticas accionables para maximizar el ROI de sus iniciativas de Transformación Digital."
+
+    [[languages.es.menu.main]]
+      name = "¿Por qué Runink?"
+      url = "/es/#why-runink"
+      weight = 1
+
+    [[languages.es.menu.main]]
+      name = "Qué nos diferencia"
+      url = "/es/#painkiller"
+      weight = 2
+
+    [[languages.es.menu.main]]
+      name = "Casos de uso"
+      url = "/es/#use-cases"
+      weight = 3
+
+    [[languages.es.menu.main]]
+      name = "Blog"
+      url = "/es/blog/"
+      weight = 4
+
+    [[languages.es.menu.main]]
+      name = "Precios"
+      url = "/es/pricing"
+      weight = 5
+
+  [languages.pt]
+    languageCode = "pt-br"
+    languageName = "Português"
     weight = 4
 
-  [[menu.main]]
-    name = "Pricing"
-    url = "/pricing"
+    [languages.pt.params.header.buttons.getStarted]
+      text = "Agende uma Consulta"
+      url = "/pt/#contact"
+
+    [languages.pt.params.blog]
+      title = "Publicações, Insights e Especialização"
+      subtitle = "Explore whitepapers, casos de uso reais e melhores práticas acionáveis para maximizar o ROI de suas iniciativas de Transformação Digital."
+
+    [[languages.pt.menu.main]]
+      name = "Por que Runink?"
+      url = "/pt/#why-runink"
+      weight = 1
+
+    [[languages.pt.menu.main]]
+      name = "O que nos diferencia"
+      url = "/pt/#painkiller"
+      weight = 2
+
+    [[languages.pt.menu.main]]
+      name = "Casos de uso"
+      url = "/pt/#use-cases"
+      weight = 3
+
+    [[languages.pt.menu.main]]
+      name = "Blog"
+      url = "/pt/blog/"
+      weight = 4
+
+    [[languages.pt.menu.main]]
+      name = "Preços"
+      url = "/pt/pricing"
+      weight = 5

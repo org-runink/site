@@ -8,8 +8,8 @@ badgeColor: "#7c3aed"
 
 {{< hero 
     headline="The Team That Never Sleeps."
-    sub_headline="Stop treating symptoms. Hire digital workers that <strong>find lost money</strong>, <strong>block bad orders</strong>, and <strong>fix problems</strong> while you sleep. It's not software. It's a workforce."
-    primary_button_text="Meet Your New Team"
+    sub_headline="Stop treating symptoms. Deploy automated systems that <strong>find lost money</strong>, <strong>block bad orders</strong>, and <strong>fix problems</strong> while you sleep. It's not software. It's an automated workforce."
+    primary_button_text="Meet Your New System"
     primary_button_url="/#contact"
     hero_image="/images/companion/overview.png"
     size="normal"
@@ -22,7 +22,7 @@ badgeColor: "#7c3aed"
 
 <div class="max-w-4xl mx-auto text-center mt-10 space-y-10 relative">
 <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter drop-shadow-2xl">
-Don't Managed Data. Manage Outcomes.
+Don't Manage Data. Manage Outcomes.
 </h2>
 
 <p class="text-xl md:text-2xl text-slate-200 leading-relaxed font-light drop-shadow-lg">
@@ -53,11 +53,11 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
         <h3 class="text-4xl font-bold text-white mb-6">Teach It Once.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                You know how to run your business. The problem is, you can't be everywhere at once. <strong>Rules Studio</strong> lets you teach the system your "Best Practices" one time, and it remembers them forever.
+                You know how to run your business. The problem is, you can't be everywhere at once. <strong>Rules Studio</strong> lets you teach the system your \"Best Practices\" one time, and it remembers them forever.
             </p>
             <p>
-                <strong>Teach it to recover revenue:</strong> "If a shipment sits for 7 days, chase the carrier."<br>
-                <strong>Teach it to block risk:</strong> "If a duplicate order comes in, stop it."
+                <strong>Teach it to recover revenue:</strong> \"If a shipment sits for 7 days, chase the carrier.\"<br>
+                <strong>Teach it to block risk:</strong> \"If a duplicate order comes in, stop it.\"
             </p>
         </div>
         <ul class="space-y-4 mt-8">
@@ -74,36 +74,36 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
     </div>
 </div>
 
-<!-- PILLAR 2: OPERATIONS TWINS -->
+<!-- PILLAR 2: OPERATIONS DIGITAL TWINS -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div class="space-y-6">
             <div class="relative group">
                 <div class="absolute -inset-2 bg-gradient-to-r from-[#D4A574]/20 to-transparent rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                <img src="/images/companion/cockpit.png" alt="Operations Twins" class="relative rounded-lg shadow-2xl border border-white/10">
+                <img src="/images/companion/cockpit.png" alt="Operations Digital Twins" class="relative rounded-lg shadow-2xl border border-white/10">
             </div>
             <div>
-                <div class="inline-block px-3 py-1 rounded bg-[#D4A574]/30 text-[#FFE5B4] font-bold mb-4 tracking-wide">2. Operations Twins</div>
+                <div class="inline-block px-3 py-1 rounded bg-[#D4A574]/30 text-[#FFE5B4] font-bold mb-4 tracking-wide">2. Operations Digital Twins</div>
         <h3 class="text-4xl font-bold text-white mb-6">Work Gets Done.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                This isn't a chat bot. It's a command center. Your digital workers sit here, waiting for your approval to take action.
+                This isn't a chat bot. It's a command center. Your automated operations sit here, waiting for your approval to take action.
             </p>
             <p>
-                The <strong>"Action Deck"</strong> shows you the work that's ready to go. A PO that needs signing. A refund claim ready to file. You review the work, hit <strong>[Approve]</strong>, and they go do it.
+                The <strong>\"Action Deck\"</strong> shows you the work that's ready to go. A PO that needs signing. A refund claim ready to file. You review the work, hit <strong>[Approve]</strong>, and the system executes it.
             </p>
         </div>
         <ul class="space-y-4 mt-8">
-            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Ordering Agent:</strong> "I found the best price. Ready to order?"</span></li>
-            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Claims Agent:</strong> "I found 14 lost packages. File for refund?"</span></li>
-            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Simulation:</strong> "If we wait, we lose $8.5k in sales."</span></li>
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Ordering System:</strong> \"I found the best price. Ready to order?\"</span></li>
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Claims System:</strong> \"I found 14 lost packages. File for refund?\"</span></li>
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Simulation:</strong> \"If we wait, we lose $8.5k in sales.\"</span></li>
         </ul>
     </div>
 </div>
 
-<!-- PILLAR 3: AI POSTURE CENTER -->
+<!-- PILLAR 3: SYSTEM POSTURE CENTER -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
     <div>
-        <div class="inline-block px-3 py-1 rounded bg-[#A0522D]/30 text-[#FFB090] font-bold mb-4 tracking-wide">3. AI Posture Center</div>
+        <div class="inline-block px-3 py-1 rounded bg-[#A0522D]/30 text-[#FFB090] font-bold mb-4 tracking-wide">3. System Posture Center</div>
         <h3 class="text-4xl font-bold text-white mb-6">Sleep At Night.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
@@ -121,7 +121,7 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
     </div>
     <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-[#A0522D] to-[#FFA07A] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
-        <img src="/images/companion/posture.png" alt="AI Posture Center" class="relative rounded-lg shadow-2xl border border-white/10">
+        <img src="/images/companion/posture.png" alt="System Posture Center" class="relative rounded-lg shadow-2xl border border-white/10">
     </div>
 </div>
 
@@ -139,12 +139,12 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
                 Making big changes is scary. Runink removes the fear by letting you <strong>simulate the future</strong>.
             </p>
             <p>
-                "If we raise prices 5%, do we lose customers?" The AI checks your history and tells you the likely outcome. Know the result before you make the move.
+                \"If we raise prices 5%, do we lose customers?\" The decision engine checks your history and tells you the likely outcome. Know the result before you make the move.
             </p>
         </div>
         <ul class="space-y-4 mt-8">
-            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>See The Impact:</strong> "Margin up 4%, Volume down 8%."</span></li>
-            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Confidence Meter:</strong> Know how sure the AI is.</span></li>
+            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>See The Impact:</strong> \"Margin up 4%, Volume down 8%.\"</span></li>
+            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Confidence Meter:</strong> Know how sure the model is.</span></li>
             <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Make It Real:</strong> Turn a good idea into a rule instantly.</span></li>
         </ul>
     </div>
@@ -164,11 +164,11 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div class="bg-white/5 p-8 rounded-xl border border-white/10">
             <h3 class="text-2xl font-bold text-white mb-4">1. Shadow Mode</h3>
-            <p class="text-slate-300 mb-6">Test safely. Runink watches your data and <strong>simulates</strong> actions without doing them. See exactly what the agents <em>would</em> have done (e.g., "I would have filed this claim") before you give them the keys.</p>
+            <p class="text-slate-300 mb-6">Test safely. Runink watches your data and <strong>simulates</strong> actions without doing them. See exactly what the automated systems <em>would</em> have done (e.g., \"I would have filed this claim\") before you give them the keys.</p>
         </div>
         <div class="bg-white/5 p-8 rounded-xl border border-white/10">
             <h3 class="text-2xl font-bold text-white mb-4">2. Graduated Autonomy</h3>
-            <p class="text-slate-300 mb-6">You set the leash. Start with <strong>"Junior Analyst Mode"</strong> (Agent drafts, you approve). Graduate to <strong>"Co-Pilot"</strong> (Agent handles small tasks). Finally, unlock <strong>"Full Autonomy"</strong> only when you're ready.</p>
+            <p class="text-slate-300 mb-6">You set the leash. Start with <strong>\"Junior Analyst Mode\"</strong> (System drafts, you approve). Graduate to <strong>\"Co-Pilot\"</strong> (System handles small tasks). Finally, unlock <strong>\"Full Autonomy\"</strong> only when you're ready.</p>
         </div>
     </div>
 </div>
@@ -193,15 +193,15 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
             "answer": "Very quickly. Our initial 'Leakage Audit' often identifies enough unrecovered claims and stuck shipments to cover the platform cost within the first few days. We focus on finding value immediately."
         },
         {
-            "question": "Is this safe? Can the AI break things?",
-            "answer": "Safety is the priority. We start in 'Shadow Mode' (simulation only). You see exactly what the AI *would* do without it touching a thing. You only switch to 'Action Mode' when you are fully comfortable with the results."
+            "question": "Is this safe? Can automation break things?",
+            "answer": "Safety is the priority. We start in 'Shadow Mode' (simulation only). You see exactly what the system *would* do without it touching a thing. You only switch to 'Action Mode' when you are fully comfortable with the results."
         },
         {
             "question": "Does Rules Studio require coding?",
-            "answer": "No. It uses an AI Assistant to write the rules for you. You describe what you want ('Alert me if margins drop below 10%'), and the system builds it."
+            "answer": "No. It uses an automated editor to write the rules for you. You describe what you want ('Alert me if margins drop below 10%'), and the system builds it."
         },
         {
-            "question": "Can the Operations Twins execute actual work?",
+            "question": "Can the Operations Digital Twins execute actual work?",
             "answer": "Yes. It connects to your systems to do the job. Every action (PO creation, Claim filing) is logged so you can see exactly who did what and when."
         }
     ]

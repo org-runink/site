@@ -45,24 +45,73 @@
                     {{ end }}
                 </div>
 
-                <!-- CTA Buttons -->
-                {{ if not $headerConfig.hideButtons }}
+                <!-- CTA Buttons & Language Switcher -->
                 <div class="hidden md:flex items-center space-x-4">
-                    {{ with $headerConfig.buttons.signIn }}
-                    <a href="{{ .url | default " #" }}"
-                        class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out border-2 border-gray-200 hover:border-primary-600 hover:text-primary-600{{ end }}">
-                        {{ .text | default "Sign in" }}
-                    </a>
+                    {{ if not $headerConfig.hideButtons }}
+                        {{ with $headerConfig.buttons.signIn }}
+                        <a href="{{ .url | default " #" }}"
+                            class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out border-2 border-gray-200 hover:border-primary-600 hover:text-primary-600{{ end }}">
+                            {{ .text | default "Sign in" }}
+                        </a>
+                        {{ end }}
+
+                        {{ with $headerConfig.buttons.getStarted }}
+                        <a href="{{ .url | default " #" }}"
+                            class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5{{ end }}">
+                            {{ .text | default "Get Started" }}
+                        </a>
+                        {{ end }}
                     {{ end }}
 
-                    {{ with $headerConfig.buttons.getStarted }}
-                    <a href="{{ .url | default " #" }}"
-                        class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5{{ end }}">
-                        {{ .text | default "Get Started" }}
+                    <!-- Check it now Demo Link -->
+                    <a href="/demo/" class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold text-[#ea580c] transition-all duration-300 border border-[#ea580c] rounded-lg hover:bg-[#ea580c] hover:text-white">
+                        Check it now
                     </a>
-                    {{ end }}
+
+                    <!-- Language Switcher Flags -->
+                    <div class="flex items-center space-x-3 pl-3 border-l border-stone-850">
+                        {{ $currentLang := .Language.Lang }}
+                        {{ $enLink := "/" }}
+                        {{ if .IsTranslated }}
+                            {{ range .AllTranslations }}
+                                {{ if eq .Language.Lang "en" }}{{ $enLink = .RelPermalink }}{{ end }}
+                            {{ end }}
+                        {{ end }}
+                        <a href="{{ $enLink }}" class="flex items-center transition-all duration-200 hover:scale-110 {{ if eq $currentLang "en" }}ring-2 ring-[#ea580c] ring-offset-2 ring-offset-stone-900 rounded-sm{{ else }}opacity-50 hover:opacity-100{{ end }}" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        {{ $frLink := "/fr/" }}
+                        {{ if .IsTranslated }}
+                            {{ range .AllTranslations }}
+                                {{ if eq .Language.Lang "fr" }}{{ $frLink = .RelPermalink }}{{ end }}
+                            {{ end }}
+                        {{ end }}
+                        <a href="{{ $frLink }}" class="flex items-center transition-all duration-200 hover:scale-110 {{ if eq $currentLang "fr" }}ring-2 ring-[#ea580c] ring-offset-2 ring-offset-stone-900 rounded-sm{{ else }}opacity-50 hover:opacity-100{{ end }}" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        {{ $esLink := "/es/" }}
+                        {{ if .IsTranslated }}
+                            {{ range .AllTranslations }}
+                                {{ if eq .Language.Lang "es" }}{{ $esLink = .RelPermalink }}{{ end }}
+                            {{ end }}
+                        {{ end }}
+                        <a href="{{ $esLink }}" class="flex items-center transition-all duration-200 hover:scale-110 {{ if eq $currentLang "es" }}ring-2 ring-[#ea580c] ring-offset-2 ring-offset-stone-900 rounded-sm{{ else }}opacity-50 hover:opacity-100{{ end }}" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        {{ $ptLink := "/pt/" }}
+                        {{ if .IsTranslated }}
+                            {{ range .AllTranslations }}
+                                {{ if eq .Language.Lang "pt" }}{{ $ptLink = .RelPermalink }}{{ end }}
+                            {{ end }}
+                        {{ end }}
+                        <a href="{{ $ptLink }}" class="flex items-center transition-all duration-200 hover:scale-110 {{ if eq $currentLang "pt" }}ring-2 ring-[#ea580c] ring-offset-2 ring-offset-stone-900 rounded-sm{{ else }}opacity-50 hover:opacity-100{{ end }}" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
                 </div>
-                {{ end }}
 
                 <!-- Mobile Menu Toggle -->
                 <div class="md:hidden">
@@ -112,6 +161,58 @@
                     {{ end }}
                 </div>
                 {{ end }}
+                
+                <a href="/demo/" class="block text-center px-6 py-3 mt-4 rounded-lg font-bold transition duration-200 ease-in-out border-2 border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white">
+                    Check it now
+                </a>
+
+                <!-- Mobile Language Switcher -->
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-stone-850">
+                    {{ $currentLang := .Language.Lang }}
+                    {{ $enLink := "/" }}
+                    {{ if .IsTranslated }}
+                        {{ range .AllTranslations }}
+                            {{ if eq .Language.Lang "en" }}{{ $enLink = .RelPermalink }}{{ end }}
+                        {{ end }}
+                    {{ end }}
+                    <a href="{{ $enLink }}" class="flex items-center space-x-2 text-stone-300 {{ if eq $currentLang "en" }}text-white font-bold{{ end }}">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    {{ $frLink := "/fr/" }}
+                    {{ if .IsTranslated }}
+                        {{ range .AllTranslations }}
+                            {{ if eq .Language.Lang "fr" }}{{ $frLink = .RelPermalink }}{{ end }}
+                        {{ end }}
+                    {{ end }}
+                    <a href="{{ $frLink }}" class="flex items-center space-x-2 text-stone-300 {{ if eq $currentLang "fr" }}text-white font-bold{{ end }}">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    {{ $esLink := "/es/" }}
+                    {{ if .IsTranslated }}
+                        {{ range .AllTranslations }}
+                            {{ if eq .Language.Lang "es" }}{{ $esLink = .RelPermalink }}{{ end }}
+                        {{ end }}
+                    {{ end }}
+                    <a href="{{ $esLink }}" class="flex items-center space-x-2 text-stone-300 {{ if eq $currentLang "es" }}text-white font-bold{{ end }}">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    {{ $ptLink := "/pt/" }}
+                    {{ if .IsTranslated }}
+                        {{ range .AllTranslations }}
+                            {{ if eq .Language.Lang "pt" }}{{ $ptLink = .RelPermalink }}{{ end }}
+                        {{ end }}
+                    {{ end }}
+                    <a href="{{ $ptLink }}" class="flex items-center space-x-2 text-stone-300 {{ if eq $currentLang "pt" }}text-white font-bold{{ end }}">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>

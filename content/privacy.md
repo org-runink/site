@@ -37,14 +37,14 @@ To provide our core services, we collect and process business-critical data, inc
 
 ## How We Use Your Information
 
-We use the collected information to power the Runink Intelligent Ecosystem:
+We use the collected information to power the Runink Ecosystem:
 
 * **Service Delivery & Automation**
   * Processing low-latency data streams for operational visibility.
   * executing autonomous workflows (e.g., Auto-Provisioning, Claims Recovery).
-* **AI & Operational Intelligence**
+* **Advanced Analysis & Operational Intelligence**
   * **Model Training:** Refining our anomaly detection and decisioning models. **Note:** we guarantee absolute data sovereignty. We strictly adhere to SOC2, PCI-DSS, ISO27001, ISO31000, and ISO42001 protocols to ensure zero PII leakage. We never train shared models on your proprietary data.
-  * **Operations Twins:** Powering AI agents that detect risks and recommend actions.
+  * **Operations Models:** Powering systems that detect risks and recommend actions.
 * **Billing & Analytics**
   * Calculating usage charges (Data/Compute Units) and success fees.
   * Analyzing platform performance to optimize latency and throughput.

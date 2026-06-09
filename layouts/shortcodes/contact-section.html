@@ -1,24 +1,31 @@
-<section id="contact" class="relative bg-stone-950 py-32 overflow-hidden border-t border-stone-800">
+<section class="py-24 relative z-10 border-t border-stone-800 bg-[#161515] relative overflow-hidden">
     {{ partial "background-effects.html" . }}
-    <div class="container mx-auto px-4">
 
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
 
-            <!-- Left side: Text & Calendly -->
-            <div class="space-y-6">
+            <!-- Left side: Value Pitch & Direct Call Widget -->
+            <div class="flex flex-col">
                 <div
                     class="inline-flex items-center justify-center px-6 py-2 mb-2 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
-                    Secure Comm Channel
+                    {{ if eq .Page.Language.Lang "pt" }}Canal de Comunicação Seguro{{ else if eq .Page.Language.Lang "fr" }}Canal de Communication Sécurisé{{ else if eq .Page.Language.Lang "es" }}Canal de Comunicación Seguro{{ else }}Secure Comm Channel{{ end }}
                 </div>
 
                 <h2
                     class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
-                    Partner With Runink
+                    {{ if eq .Page.Language.Lang "pt" }}Parceria Com A Runink{{ else if eq .Page.Language.Lang "fr" }}Partenariat Avec Runink{{ else if eq .Page.Language.Lang "es" }}Alianza Con Runink{{ else }}Partner With Runink{{ end }}
                 </h2>
 
                 <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 max-w-lg">
-                    Let's navigate your AI-assisted operations together. Bypass the red tape and inject our Digital Twin
-                    into your logistics pipeline.
+                    {{ if eq .Page.Language.Lang "pt" }}
+                        Vamos navegar juntos em suas operações automatizadas. Ignore a burocracia e injete nosso Gêmeo Digital de Operações em seu pipeline de logística.
+                    {{ else if eq .Page.Language.Lang "fr" }}
+                        Naviguons ensemble dans vos opérations automatisées. Contournez la bureaucratie et injectez notre Jumeau Numérique d'Opérations dans votre flux logistique.
+                    {{ else if eq .Page.Language.Lang "es" }}
+                        Naveguemos juntos en sus operaciones automatizadas. Evite la burocracia e integre nuestro Gemelo Digital de Operaciones en su flujo de logística.
+                    {{ else }}
+                        Let's navigate your automated operations together. Bypass the red tape and inject our Operations Digital Twin into your logistics pipeline.
+                    {{ end }}
                 </div>
 
                 <div
@@ -27,10 +34,20 @@
                         class="absolute -inset-1 bg-gradient-to-r from-[#9f1239] to-[#ea580c] opacity-20 blur transition duration-1000 group-hover:opacity-40">
                     </div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl font-bold text-white mb-4">Direct Link (Video)</h3>
-                        <p class="text-stone-400 mb-8 leading-relaxed">Schedule a strategic briefing immediately. We'll
-                            map
-                            your operational bottlenecks and deploy a shadow simulation.</p>
+                        <h3 class="text-2xl font-bold text-white mb-4">
+                            {{ if eq .Page.Language.Lang "pt" }}Link Direto (Vídeo){{ else if eq .Page.Language.Lang "fr" }}Lien Direct (Vidéo){{ else if eq .Page.Language.Lang "es" }}Enlace Directo (Video){{ else }}Direct Link (Video){{ end }}
+                        </h3>
+                        <p class="text-stone-400 mb-8 leading-relaxed">
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Agende uma reunião estratégica imediatamente. Mapearemos seus gargalos operacionais e implantaremos uma simulação paralela.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Planifiez immédiatement une réunion stratégique. Nous cartographierons vos goulots d'étranglement opérationnels et déploierons une simulation parallèle.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Programe una reunión estratégica de inmediato. Mapearemos sus cuellos de botella operativos y desplegaremos una simulación paralela.
+                            {{ else }}
+                                Schedule a strategic briefing immediately. We'll map your operational bottlenecks and deploy a shadow simulation.
+                            {{ end }}
+                        </p>
 
                         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
                         <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
@@ -38,7 +55,7 @@
                         <a class="inline-flex items-center justify-center w-full px-8 py-4 bg-stone-900 text-white font-black uppercase tracking-widest border border-stone-700 hover:border-[#ea580c] transition-all duration-300 rounded hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)]"
                             href="#"
                             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/runink'});return false;">
-                            <span class="mr-2">Initiate Briefing</span>
+                            <span class="mr-2">{{ if eq .Page.Language.Lang "pt" }}Iniciar Reunião{{ else if eq .Page.Language.Lang "fr" }}Prendre Rendez-vous{{ else if eq .Page.Language.Lang "es" }}Iniciar Consulta{{ else }}Initiate Briefing{{ end }}</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -57,10 +74,20 @@
 
                 <div
                     class="bg-stone-900/80 backdrop-blur border border-stone-700 p-8 md:p-12 rounded-3xl shadow-2xl relative z-10">
-                    <h3 class="text-3xl font-bold text-white mb-2">Initialize Deployment</h3>
-                    <p class="text-stone-400 mb-8 font-mono text-sm leading-relaxed">Or drop us a secure message below.
-                        We
-                        respond within 1 business day.</p>
+                    <h3 class="text-3xl font-bold text-white mb-2">
+                        {{ if eq .Page.Language.Lang "pt" }}Iniciar Implantação{{ else if eq .Page.Language.Lang "fr" }}Lancer le Déploiement{{ else if eq .Page.Language.Lang "es" }}Iniciar Despliegue{{ else }}Initialize Deployment{{ end }}
+                    </h3>
+                    <p class="text-stone-400 mb-8 font-mono text-sm leading-relaxed">
+                        {{ if eq .Page.Language.Lang "pt" }}
+                            Ou envie-nos uma mensagem segura abaixo. Respondemos em até 1 dia útil.
+                        {{ else if eq .Page.Language.Lang "fr" }}
+                            Ou laissez-nous un message sécurisé ci-dessous. Nous répondons sous 1 jour ouvrable.
+                        {{ else if eq .Page.Language.Lang "es" }}
+                            O envíenos un mensaje seguro a continuación. Respondemos en un plazo de 1 día hábil.
+                        {{ else }}
+                            Or drop us a secure message below. We respond within 1 business day.
+                        {{ end }}
+                    </p>
 
                     <!-- Hidden iframe to prevent page reload on Google Form submit -->
                     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
@@ -70,8 +97,20 @@
                         <svg class="w-16 h-16 text-[#65793e] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <h4 class="text-2xl font-bold text-white mb-2">Transmission Successful</h4>
-                        <p class="text-stone-400">Your secure message has been received. We will respond within 1 business day.</p>
+                        <h4 class="text-2xl font-bold text-white mb-2">
+                            {{ if eq .Page.Language.Lang "pt" }}Transmissão Bem-Sucedida{{ else if eq .Page.Language.Lang "fr" }}Transmission Réussie{{ else if eq .Page.Language.Lang "es" }}Transmisión Exitosa{{ else }}Transmission Successful{{ end }}
+                        </h4>
+                        <p class="text-stone-400">
+                            {{ if eq .Page.Language.Lang "pt" }}
+                                Sua mensagem segura foi recebida. Responderemos em até 1 dia útil.
+                            {{ else if eq .Page.Language.Lang "fr" }}
+                                Votre message sécurisé a été reçu. Nous vous répondrons sous 1 jour ouvrable.
+                            {{ else if eq .Page.Language.Lang "es" }}
+                                Su mensaje seguro ha sido recibido. Responderemos en un plazo de 1 día hábil.
+                            {{ else }}
+                                Your secure message has been received. We will respond within 1 business day.
+                            {{ end }}
+                        </p>
                     </div>
 
                     <form id="contact-form" class="space-y-6"
@@ -79,40 +118,67 @@
                         method="POST" target="hidden_iframe" onsubmit="window.submitted=true;">
 
                         <div class="space-y-2">
-                            <label for="entry.2005620554" class="text-xs font-bold text-stone-500 uppercase tracking-widest">Full Name <span
-                                    class="text-[#ea580c]">*</span></label>
+                            <label for="entry.2005620554" class="text-xs font-bold text-stone-500 uppercase tracking-widest">
+                                {{ if eq .Page.Language.Lang "pt" }}Nome Completo{{ else if eq .Page.Language.Lang "fr" }}Nom Complet{{ else if eq .Page.Language.Lang "es" }}Nombre Completo{{ else }}Full Name{{ end }} <span class="text-[#ea580c]">*</span>
+                            </label>
                             <input type="text" id="entry.2005620554" name="entry.2005620554" placeholder="Jane Doe"
                                 class="w-full bg-stone-800 border items-center p-4 border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all"
                                 required>
                         </div>
 
                         <div class="space-y-2">
-                            <label for="entry.1045781291" class="text-xs font-bold text-stone-500 uppercase tracking-widest">Business Email
-                                <span class="text-[#ea580c]">*</span></label>
+                            <label for="entry.1045781291" class="text-xs font-bold text-stone-500 uppercase tracking-widest">
+                                {{ if eq .Page.Language.Lang "pt" }}E-mail Corporativo{{ else if eq .Page.Language.Lang "fr" }}E-mail Professionnel{{ else if eq .Page.Language.Lang "es" }}Correo Corporativo{{ else }}Business Email{{ end }} <span class="text-[#ea580c]">*</span>
+                            </label>
                             <input type="email" id="entry.1045781291" name="entry.1045781291" placeholder="jane@company.com"
                                 class="w-full bg-stone-800 border p-4 border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all"
                                 required>
                         </div>
 
                         <div class="space-y-2">
-                            <label for="entry.1160391826" class="text-xs font-bold text-stone-500 uppercase tracking-widest">Company
-                                Name</label>
+                            <label for="entry.1160391826" class="text-xs font-bold text-stone-500 uppercase tracking-widest">
+                                {{ if eq .Page.Language.Lang "pt" }}Nome da Empresa{{ else if eq .Page.Language.Lang "fr" }}Nom de l'Entreprise{{ else if eq .Page.Language.Lang "es" }}Nombre de la Empresa{{ else }}Company Name{{ end }}
+                            </label>
                             <input type="text" id="entry.1160391826" name="entry.1160391826" placeholder="Logistics Corp"
                                 class="w-full bg-stone-800 border p-4 border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all">
                         </div>
 
                         <div class="space-y-2">
-                            <label for="entry.17726350" class="text-xs font-bold text-stone-500 uppercase tracking-widest">Where did you find
-                                about us?</label>
+                            <label for="entry.17726350" class="text-xs font-bold text-stone-500 uppercase tracking-widest">
+                                {{ if eq .Page.Language.Lang "pt" }}Como ficou sabendo sobre nós?{{ else if eq .Page.Language.Lang "fr" }}Comment nous avez-vous connus ?{{ else if eq .Page.Language.Lang "es" }}¿Cómo se enteró de nosotros?{{ else }}Where did you find out about us?{{ end }}
+                            </label>
                             <div class="relative">
                                 <select id="entry.17726350" name="entry.17726350"
                                     class="w-full bg-stone-800 border p-4 border-stone-700 rounded-lg text-white appearance-none focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all">
-                                    <option value="" disabled selected>Select an option</option>
-                                    <option value="Referral">Referral</option>
-                                    <option value="LinkedIn">LinkedIn</option>
-                                    <option value="Web Search">Web Search</option>
-                                    <option value="Event">Event</option>
-                                    <option value="Other">Other</option>
+                                    {{ if eq .Page.Language.Lang "pt" }}
+                                        <option value="" disabled selected>Selecione uma opção</option>
+                                        <option value="Referral">Recomendação</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="Web Search">Busca na Web</option>
+                                        <option value="Event">Evento</option>
+                                        <option value="Other">Outro</option>
+                                    {{ else if eq .Page.Language.Lang "fr" }}
+                                        <option value="" disabled selected>Sélectionnez une option</option>
+                                        <option value="Referral">Recommandation</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="Web Search">Recherche Web</option>
+                                        <option value="Event">Événement</option>
+                                        <option value="Other">Autre</option>
+                                    {{ else if eq .Page.Language.Lang "es" }}
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="Referral">Recomendación</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="Web Search">Búsqueda Web</option>
+                                        <option value="Event">Evento</option>
+                                        <option value="Other">Otro</option>
+                                    {{ else }}
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Referral">Referral</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="Web Search">Web Search</option>
+                                        <option value="Event">Event</option>
+                                        <option value="Other">Other</option>
+                                    {{ end }}
                                 </select>
                                 <div
                                     class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-stone-400">
@@ -126,22 +192,22 @@
                         </div>
 
                         <div class="space-y-2">
-                            <label for="entry.1065046570" class="text-xs font-bold text-stone-500 uppercase tracking-widest">Briefly describe
-                                your
-                                needs or project <span class="text-[#ea580c]">*</span></label>
+                            <label for="entry.1065046570" class="text-xs font-bold text-stone-500 uppercase tracking-widest">
+                                {{ if eq .Page.Language.Lang "pt" }}Descreva brevemente suas necessidades ou projeto{{ else if eq .Page.Language.Lang "fr" }}Décrivez brièvement vos besoins ou votre projet{{ else if eq .Page.Language.Lang "es" }}Describa brevemente sus necesidades o proyecto{{ else }}Briefly describe your needs or project{{ end }} <span class="text-[#ea580c]">*</span>
+                            </label>
                             <textarea id="entry.1065046570" name="entry.1065046570"
-                                placeholder="Tell us about your operational bottlenecks..." rows="4"
+                                placeholder="{{ if eq .Page.Language.Lang "pt" }}Conte-nos sobre seus gargalos operacionais...{{ else if eq .Page.Language.Lang "fr" }}Parlez-nous de vos goulots d'étranglement opérationnels...{{ else if eq .Page.Language.Lang "es" }}Cuéntenos sobre sus cuellos de botella operativos...{{ else }}Tell us about your operational bottlenecks...{{ end }}" rows="4"
                                 class="w-full bg-stone-800 border p-4 border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all resize-none"
                                 required></textarea>
                         </div>
 
                         <button type="submit"
                             class="w-full py-4 mt-4 bg-gradient-to-r from-[#9f1239] to-[#ea580c] text-white font-black uppercase tracking-widest rounded-lg hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] transition-all duration-300 hover:-translate-y-1">
-                            Transmit Data
+                            {{ if eq .Page.Language.Lang "pt" }}Transmitir Dados{{ else if eq .Page.Language.Lang "fr" }}Transmettre les Données{{ else if eq .Page.Language.Lang "es" }}Transmitir Datos{{ else }}Transmit Data{{ end }}
                         </button>
-                        <p class="text-xs text-stone-500 font-mono text-center mt-6">* Data transmission is encrypted
-                            and
-                            secure.</p>
+                        <p class="text-xs text-stone-500 font-mono text-center mt-6">
+                            {{ if eq .Page.Language.Lang "pt" }}* A transmissão de dados é criptografada e segura.{{ else if eq .Page.Language.Lang "fr" }}* La transmission des données est cryptée et sécurisée.{{ else if eq .Page.Language.Lang "es" }}* La transmisión de datos está encriptada y es segura.{{ else }}* Data transmission is encrypted and secure.{{ end }}
+                        </p>
                     </form>
                     <script type="text/javascript">window.submitted = false;</script>
                 </div>

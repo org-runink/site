@@ -22,9 +22,9 @@
                 {{ .Get "subtitle" }}
             </div>
             {{ end }}
-            <a href="{{ .Get "url" | relURL }}"
+            <a href="{{ .Get "url" | relLangURL }}"
                 class="inline-flex items-center gap-3 px-8 py-4 bg-[#b92b3f] hover:bg-[#9a2133] text-white font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-lg text-sm">
-                Read Full Use Case <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {{ if eq .Page.Language.Lang "pt" }}Ler Caso de Uso Completo{{ else if eq .Page.Language.Lang "fr" }}Lire le cas d'usage complet{{ else if eq .Page.Language.Lang "es" }}Leer caso de uso completo{{ else }}Read Full Use Case{{ end }} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
                     </path>
                 </svg>
@@ -65,7 +65,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        The Operational Problem
+                        {{ if eq .Page.Language.Lang "pt" }}O Problema Operacional{{ else if eq .Page.Language.Lang "fr" }}Le Problème Opérationnel{{ else if eq .Page.Language.Lang "es" }}El Problema Operacional{{ else }}The Operational Problem{{ end }}
                     </h3>
                     <div
                         class="text-stone-400 text-[13px] md:text-sm leading-relaxed prose prose-invert prose-p:last:mb-0">
@@ -93,14 +93,14 @@
                     {{ end }}
                     {{ $stepNum := add $index 1 }}
 
-                    {{ partial "step-card.html" (dict "type" "monitor" "title" $title "desc" $desc "stepNum" $stepNum "hasParts" (gt (len $parts) 2)) }}
+                    {{ partial "step-card.html" (dict "type" "monitor" "title" $title "desc" $desc "stepNum" $stepNum "hasParts" (gt (len $parts) 2) "lang" $.Page.Language.Lang) }}
                     {{ end }}
                 </div>
 
                 <!-- Cockpit Header -->
                 <h3 class="text-lg font-bold text-white tracking-tight flex items-center gap-3 mt-12 mb-4">
                     <span class="w-2 h-2 rounded-full bg-[#991b1b] shadow-[0_0_8px_#991b1b]"></span>
-                    Operations Twin Execution
+                    {{ if eq .Page.Language.Lang "pt" }}Execução com Gêmeo Digital de Operações{{ else if eq .Page.Language.Lang "fr" }}Exécution par Jumeau Numérique d'Opérations{{ else if eq .Page.Language.Lang "es" }}Ejecución con Gemelo Digital de Operaciones{{ else }}Operations Digital Twin Execution{{ end }}
                 </h3>
 
                 <!-- Cockpit Steps -->
@@ -117,7 +117,7 @@
                     {{ end }}
                     {{ $stepNum := add $index (add $monitorCount 1) }}
 
-                    {{ partial "step-card.html" (dict "type" "cockpit" "title" $title "desc" $desc "stepNum" $stepNum "hasParts" (gt (len $parts) 2)) }}
+                    {{ partial "step-card.html" (dict "type" "cockpit" "title" $title "desc" $desc "stepNum" $stepNum "hasParts" (gt (len $parts) 2) "lang" $.Page.Language.Lang) }}
                     {{ end }}
                 </div>
             </div>

@@ -112,11 +112,11 @@ author: "Lead Data & Cloud Architect"
     },
     {
       "question": "Why should we choose the Dedicated License over Lite?",
-      "answer": "Once your team scales to 10+ seats, security and compute volume become paramount. The **Dedicated License** automatically provisions an isolated Sovereign Node exclusively for your organization, complete with custom domain routing and strict data boundaries. While the base price remains an incredibly competitive $75/seat/month, it requires a 1-year commitment. In return, your organization unlocks massive shared CU bonuses (2,000 extra CU per 10 seats) to execute high-volume AI tasks."
+      "answer": "Once your team scales to 10+ seats, security and compute volume become paramount. The **Dedicated License** automatically provisions an isolated Sovereign Node exclusively for your organization, complete with custom domain routing and strict data boundaries. While the base price remains an incredibly competitive $75/seat/month, it requires a 1-year commitment. In return, your organization unlocks massive shared CU bonuses (2,000 extra CU per 10 seats) to execute high-volume automated tasks."
     },
     {
       "question": "What is the value of a full Enterprise engagement?",
-      "answer": "For highly regulated industries (defense, finance, healthcare) or extreme transaction volumes, the **Enterprise** tier provides absolute control. We offer full air-gapped, on-premises deployments or custom VPC architectures. Most importantly, Enterprise unlocks **optimized fine-tuning**—we train and optimize custom LLMs explicitly on your internal digital twin data, resulting in unparalleled accuracy and sub-second reasoning speeds tailored to your specific SLAs."
+      "answer": "For highly regulated industries (defense, finance, healthcare) or extreme transaction volumes, the **Enterprise** tier provides absolute control. We offer full air-gapped, on-premises deployments or custom VPC architectures. Most importantly, Enterprise unlocks **optimized decision-tuning**—we train and optimize custom reasoning models explicitly on your internal operations data, resulting in unparalleled accuracy and sub-second decision speeds tailored to your specific SLAs."
     },
     {
       "question": "Do I have to commit to an annual plan?",
@@ -145,16 +145,16 @@ author: "Lead Data & Cloud Architect"
   </div>
   <div class="space-y-6">
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">What is the true total cost of ownership (TCO) for implementing an AI-driven logistics platform?</h3>
-      <p class="text-stone-400 leading-relaxed">When evaluating the total cost of ownership for an AI-driven logistics platform, you must look beyond the initial software licensing or SaaS subscription fees. The true TCO encompasses implementation costs, which involve system integration with your existing ERP, TMS, or WMS systems, data migration, and custom API development. Additionally, you must factor in change management and training costs to ensure your staff can effectively leverage the new tools. Ongoing expenses include cloud infrastructure usage, API call volumes to advanced LLMs or routing engines, and continuous model fine-tuning. However, this investment is typically offset by the rapid ROI generated through reduced empty miles, optimized fuel consumption, lower manual dispatch overhead, and minimized SLA penalties.</p>
+      <h3 class="text-xl font-bold text-stone-200 mb-4">What is the true total cost of ownership (TCO) for implementing an automated logistics platform?</h3>
+      <p class="text-stone-400 leading-relaxed">When evaluating the total cost of ownership for an automated logistics platform, you must look beyond the initial software licensing or SaaS subscription fees. The true TCO encompasses implementation costs, which involve system integration with your existing ERP, TMS, or WMS systems, data migration, and custom API development. Additionally, you must factor in change management and training costs to ensure your staff can effectively leverage the new tools. Ongoing expenses include cloud infrastructure usage, API call volumes to advanced analytical models or routing engines, and continuous logic tuning. However, this investment is typically offset by the rapid ROI generated through reduced empty miles, optimized fuel consumption, lower manual dispatch overhead, and minimized SLA penalties.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">How do you structure pricing for enterprise-scale deployments or on-premises requirements?</h3>
       <p class="text-stone-400 leading-relaxed">By default, our standard Pro License provides high data isolation by deploying Shared Sovereign Compute. However, for organizations experiencing extreme transaction volumes or requiring strict compliance, our Enterprise tiers offer custom sovereign, air-gapped, and on-premises hosting. In these scenarios, you can deploy the Runink platform on your own hardware, physically isolated infrastructure, or deep edge embedding environments. Contact our sales team to discuss dedicated SLAs, custom data governance controls, and on-premises licensing options tailored to your specific infrastructure constraints.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">Why should I transition from a legacy on-premise system to a cloud-native, AI-powered logistics solution?</h3>
-      <p class="text-stone-400 leading-relaxed">Transitioning from a legacy on-premise system to a cloud-native, AI-powered logistics solution is critical for maintaining competitiveness. A cloud-native architecture offers elastic scalability, allowing your computing resources to expand dynamically. More importantly, it serves as the foundational layer required to deploy advanced Generative AI and machine learning models. These AI capabilities can process vast datasets in real-time to identify hidden optimization opportunities, predict supply chain disruptions before they occur, and automate complex tasks.</p>
+      <h3 class="text-xl font-bold text-stone-200 mb-4">Why should I transition from a legacy on-premise system to a cloud-native, automated logistics solution?</h3>
+      <p class="text-stone-400 leading-relaxed">Transitioning from a legacy on-premise system to a cloud-native, automated logistics solution is critical for maintaining competitiveness. A cloud-native architecture offers elastic scalability, allowing your computing resources to expand dynamically. More importantly, it serves as the foundational layer required to deploy advanced analytical and machine learning models. These analytical capabilities can process vast datasets in real-time to identify hidden optimization opportunities, predict supply chain disruptions before they occur, and automate complex tasks.</p>
     </div>
   </div>
 </section>
@@ -164,7 +164,7 @@ author: "Lead Data & Cloud Architect"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
     <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Generative AI. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and AI-driven logistics solutions.
+    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
   </p>
 </section>
 
@@ -172,8 +172,8 @@ author: "Lead Data & Cloud Architect"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Generative AI for Supply Chain Optimization</a> - Advanced methodologies for AI-driven logistics.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
     <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on analytical applications in freight and transportation.</li>
   </ul>
 </section>

@@ -38,9 +38,10 @@
         <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">{{ $desc }}</span>
         {{ end }}
     </div>
+    {{ $lang := .lang }}
     <div class="shrink-0 z-20 self-end md:self-auto">
         <span
-            class="inline-flex items-center justify-center border font-mono text-[11px] tracking-widest px-4 py-2 rounded-full transition-all uppercase font-bold whitespace-nowrap {{ $activeBadgeClass }}">Step
+            class="inline-flex items-center justify-center border font-mono text-[11px] tracking-widest px-4 py-2 rounded-full transition-all uppercase font-bold whitespace-nowrap {{ $activeBadgeClass }}">{{ if eq $lang "pt" }}Passo{{ else if eq $lang "fr" }}Étape{{ else if eq $lang "es" }}Paso{{ else }}Step{{ end }}
             {{ $stepNum }}</span>
     </div>
 </div>

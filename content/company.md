@@ -1,7 +1,7 @@
 ---
 title: "About Runink"
 layout: "company"
-description: "Discover how Runink is redefining logistics intelligence through AI, automation, and integrated data engineering."
+description: "Discover how Runink is redefining logistics intelligence through advanced automation, decision engines, and integrated data engineering."
 date: "2024-05-20T00:00:00Z"
 author: "Lead Data & Cloud Architect"
 ---
@@ -10,13 +10,13 @@ author: "Lead Data & Cloud Architect"
   <div class="text-center">
     <h1 class="text-4xl md:text-5xl font-bold mb-6">Shaping the Future of Integrated Logistics Intelligence</h1>
     <p class="text-xl text-[#D9CDB8] mb-16">
-      Runink helps enterprises unify their logistics, data, and AI operations into a single, intelligent ecosystem.
+      Runink helps enterprises unify their logistics, data, and analytical operations into a single, intelligent ecosystem.
     </p>
     <div class="max-w-3xl mx-auto bg-stone-800/90 rounded-xl shadow-sm p-8">
       <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
       <p class="text-xl text-[#D9CDB8]">
         We empower businesses to connect every data signal—from procurement to delivery—through a platform built for speed, automation, and real-time decision-making. 
-        By combining modern data engineering, AI readiness frameworks, and event-driven automation, Runink transforms operations into resilient, intelligent systems.
+        By combining modern data engineering, structured data integration, and event-driven automation, Runink transforms operations into resilient, intelligent systems.
       </p>
     </div>
   </div>
@@ -49,7 +49,7 @@ author: "Lead Data & Cloud Architect"
       {{< value-card 
           title="Innovation by Design"
           icon="scale"
-          description="From data mesh architectures to AI copilots, we turn complexity into clarity through design-led engineering."
+          description="From data mesh architectures to decision assistance systems, we turn complexity into clarity through design-led engineering."
       >}}
       {{< value-card 
           title="Customer-Centric Excellence"
@@ -67,7 +67,7 @@ author: "Lead Data & Cloud Architect"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
     <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Generative AI. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and AI-driven logistics solutions.
+    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
   </p>
 </section>
 
@@ -75,9 +75,9 @@ author: "Lead Data & Cloud Architect"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Generative AI for Supply Chain Optimization</a> - Advanced methodologies for AI-driven logistics.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
     <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on AI applications in freight and transportation.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on automated applications in freight and transportation.</li>
   </ul>
 </section>
 
@@ -88,7 +88,7 @@ author: "Lead Data & Cloud Architect"
   "name": "Runink",
   "url": "https://runink.com",
   "logo": "https://runink.com/images/logo.png",
-  "description": "AI-driven logistics platform specializing in dynamic route optimization, backhaul matching, and supply chain emissions reduction.",
+  "description": "Automated logistics platform specializing in dynamic route optimization, backhaul matching, and supply chain emissions reduction.",
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",

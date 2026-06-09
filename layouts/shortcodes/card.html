@@ -1,9 +1,9 @@
 {{- $link := .Get "link" -}}
 {{- $safeLink := "" -}}
-{{- if or (hasPrefix $link "http://") (hasPrefix $link "https://") (hasPrefix $link "/") (hasPrefix $link "#") (hasPrefix $link "mailto:") -}}
+{{- if or (hasPrefix $link "http://") (hasPrefix $link "https://") (hasPrefix $link "#") (hasPrefix $link "mailto:") -}}
   {{- $safeLink = $link | safeURL -}}
 {{- else -}}
-  {{- $safeLink = $link | relURL -}}
+  {{- $safeLink = $link | relLangURL -}}
 {{- end -}}
 <a href="{{ $safeLink }}" class="block group h-full">
     <div class="h-full bg-stone-900/30 rounded-2xl p-8 border border-[#8B9A6E]/30 hover:border-[#A8B88B] hover:bg-stone-800/50 transition-all duration-300 hover:-translate-y-1">
