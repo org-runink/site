@@ -16,8 +16,8 @@
                     {{ with $cta.primary_button }}
                     {{ if .text }}
                     <a href="{{ .url }}"
-                        class="inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-[#ea580c] hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
-                        {{ .text }} &rarr;
+                        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-[#ea580c] hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
+                        {{ .text }} <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
                     </a>
                     {{ end }}
                     {{ end }}

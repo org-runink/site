@@ -53,16 +53,6 @@ function initParallax() {
     }
   };
 
-    let ObserverClass = window.IntersectionObserver;
-    if (typeof ObserverClass !== 'function') {
-        ObserverClass = class {
-            constructor() {}
-            observe() {}
-            unobserve() {}
-            disconnect() {}
-        };
-    }
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -97,21 +87,26 @@ function initTabs() {
       targetContent: document.getElementById(btn.getAttribute('data-target'))
     }));
 
+    // Track the currently active tab to avoid O(N) loop on every click
+    let activeData = btnData.find(d => d.btn.classList.contains('active')) || btnData[0];
+
     btnData.forEach(data => {
       data.btn.addEventListener('click', () => {
-        // Remove active class from all buttons and contents
-        btnData.forEach(bData => {
-          const { btn: b, svg, h3 } = bData;
+        if (activeData === data) return; // Already active
+
+        // Remove active class from previously active button and content
+        if (activeData) {
+          const { btn: b, svg, h3, targetContent: c } = activeData;
           b.classList.remove('active', 'border-orange-600', 'border-orange-400');
           b.classList.add('border-stone-800');
           if (svg) svg.classList.replace('text-white', 'text-stone-300');
           if (h3) h3.classList.replace('text-white', 'text-stone-300');
-        });
 
-        contents.forEach(c => {
-          c.classList.remove('active');
-          c.classList.add('hidden');
-        });
+          if (c) {
+            c.classList.remove('active');
+            c.classList.add('hidden');
+          }
+        }
 
         // Add active class to clicked button and target content
         data.btn.classList.add('active', 'border-orange-400');
@@ -124,6 +119,9 @@ function initTabs() {
           data.targetContent.classList.remove('hidden');
           data.targetContent.classList.add('active');
         }
+
+        // Update active reference
+        activeData = data;
       });
     });
   }
@@ -170,17 +168,7 @@ function initCarousel() {
         }
       };
 
-      let ObserverClass = window.IntersectionObserver;
-      if (typeof ObserverClass !== 'function') {
-          ObserverClass = class {
-              constructor() {}
-              observe() {}
-              unobserve() {}
-              disconnect() {}
-          };
-      }
-
-      const carouselObserver = new ObserverClass((entries) => {
+      const carouselObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             startCarousel();

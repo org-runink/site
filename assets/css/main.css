@@ -130,6 +130,50 @@
   .table-of-contents ul {
     @apply list-none ml-4 space-y-2;
   }
+
+  .testimonials-container {
+      @apply py-5 relative;
+  }
+
+  .testimonials-container.static {
+      @apply grid gap-8 overflow-visible;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .testimonials-track {
+      @apply flex gap-8;
+  }
+
+  .testimonials-track.animate {
+      animation: 40s testimonials-scroll infinite linear;
+  }
+
+  .testimonial-card {
+      @apply flex-none w-[300px] bg-white p-8 rounded-lg shadow-md;
+  }
+
+  .testimonials-container.static .testimonial-card {
+      @apply w-full;
+  }
+
+  .testimonials-container:hover .testimonials-track.animate {
+      animation-play-state: paused;
+  }
+}
+
+@keyframes testimonials-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% / 2));
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-track.animate {
+        animation: 15s testimonials-scroll infinite linear;
+    }
 }
 
 @keyframes cta-pulse {
