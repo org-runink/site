@@ -12,7 +12,15 @@ author: "Lead Data & Cloud Architect"
     <p class="text-xl text-[#D9CDB8] mb-16">
       Runink helps enterprises unify their logistics, data, and analytical operations into a single, intelligent ecosystem.
     </p>
-    <div class="max-w-3xl mx-auto bg-stone-800/90 rounded-xl shadow-sm p-8">
+    <div class="max-w-3xl mx-auto bg-stone-800/90 rounded-xl shadow-sm p-8 text-left">
+      <!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
+      <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Executive Summary: Key Takeaways</h2>
+      <ul class="list-disc pl-6 text-[#D9CDB8] space-y-2 mb-8 font-medium">
+        <li><strong>Unified Ecosystem:</strong> Runink transforms fragmented logistics into a single, intelligent ecosystem connecting procurement, transportation, and warehousing.</li>
+        <li><strong>Event-Driven Automation:</strong> Built for speed, our platform uses event-driven automation to adapt to disruptions and enable real-time decision-making.</li>
+        <li><strong>Data Mesh Architecture:</strong> We leverage modern data engineering to break down departmental silos and provide a single source of truth across the supply chain.</li>
+      </ul>
+
       <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
       <p class="text-xl text-[#D9CDB8]">
         We empower businesses to connect every data signal—from procurement to delivery—through a platform built for speed, automation, and real-time decision-making. 
@@ -80,6 +88,27 @@ author: "Lead Data & Cloud Architect"
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on automated applications in freight and transportation.</li>
   </ul>
 </section>
+
+{{< faq >}}
+{
+    "title": "Frequently Asked Questions About Runink",
+    "description": "",
+    "questions": [
+        {
+            "question": "What is Runink?",
+            "answer": "Runink is an automated logistics platform that specializes in dynamic route optimization, backhaul matching, and supply chain emissions reduction. We empower businesses to connect every data signal from procurement to delivery."
+        },
+        {
+            "question": "How does Runink improve logistics operations?",
+            "answer": "Runink improves logistics by unifying data, analytical operations, and automated workflows into a single intelligent ecosystem. This reduces redundancies, improves load optimization, and enables proactive adaptability to disruptions."
+        },
+        {
+            "question": "Who uses Runink?",
+            "answer": "Runink is utilized by enterprises and logistics organizations seeking to modernize their supply chain through data mesh architectures, decision assistance systems, and automated real-time operations."
+        }
+    ]
+}
+{{< /faq >}}
 
 <script type="application/ld+json">
 {
