@@ -191,3 +191,149 @@
 .cta-pulse {
   animation: cta-pulse 2s infinite;
 }
+
+
+/* Refactored inline styles from components */
+
+/* layouts/_default/feature.html */
+.badge {
+  background-color: color-mix(in srgb, var(--badge-color) 10%, transparent);
+  color: var(--badge-color);
+}
+.gradient-bg {
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--badge-color) 5%, white), white);
+}
+
+/* layouts/partials/header.html */
+.mobile-menu-wrapper {
+  position: relative;
+}
+.nav-toggle {
+  display: none;
+}
+.nav-content {
+  display: none;
+}
+.nav-toggle:checked~header .nav-content {
+  display: block;
+}
+
+/* layouts/shortcodes/pricing-table-1.html */
+.price-yearly,
+.freq-yearly,
+.feature-yearly {
+  display: none !important;
+}
+[data-pricing="yearly"] .price-yearly,
+[data-pricing="yearly"] .freq-yearly,
+[data-pricing="yearly"] .feature-yearly {
+  display: inline-flex !important;
+}
+[data-pricing="yearly"] .price-monthly,
+[data-pricing="yearly"] .freq-monthly {
+  display: none !important;
+}
+
+/* layouts/shortcodes/client-logos.html */
+.logo-scroll {
+  overflow: hidden;
+  padding: 20px 0;
+  white-space: nowrap;
+  position: relative;
+}
+.logo-scroll.static {
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+.logo-scroll.static .logos-slide {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.logos-slide {
+  display: inline-block;
+}
+.logos-slide.animate {
+  animation: 30s slide infinite linear;
+}
+.logos-slide img {
+  max-height: 1.5rem;
+  margin: 0 40px;
+  display: inline-block;
+  vertical-align: middle;
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+.logo-scroll.static .logos-slide img {
+  margin: 0;
+}
+@keyframes slide {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(calc(-100% / 2));
+  }
+}
+.logo-scroll:hover .logos-slide.animate {
+  animation-play-state: paused;
+}
+@media (max-width: 768px) {
+  .logos-slide.animate {
+      animation: 15s slide infinite linear;
+  }
+}
+
+/* layouts/shortcodes/mermaid.html */
+.mermaid-wrapper {
+  width: 100%;
+  height: 600px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #0c0a09;
+  border: 1px solid rgba(234, 88, 12, 0.2);
+  position: relative;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(234, 88, 12, 0.05);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+.mermaid-wrapper:hover {
+  border-color: rgba(234, 88, 12, 0.4);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 30px rgba(234, 88, 12, 0.1);
+}
+.mermaid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mermaid svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  cursor: grab;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+}
+.mermaid svg:active {
+  cursor: grabbing;
+}
+.mermaid rect, .mermaid circle, .mermaid polygon {
+  transition: all 0.3s ease-in-out;
+}
+.mermaid g:hover > rect,
+.mermaid g:hover > circle,
+.mermaid g:hover > polygon {
+  filter: drop-shadow(0 0 15px rgba(234, 88, 12, 0.8)) brightness(1.2);
+}
+.mermaid .edgePath path, .mermaid .messageLine0, .mermaid .messageLine1 {
+  stroke-dasharray: 6, 6;
+  animation: flowData 15s linear infinite;
+}
+@keyframes flowData {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
