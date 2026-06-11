@@ -1862,14 +1862,15 @@ function initRouteMap() {
       try { window.routeMaps[mapId].remove(); } catch(e) {}
     }
 
-    const map = L.map(mapId, {
+    const map = L.map(container, {
       zoomControl: false,
       attributionControl: false
     }).setView([29.7604, -95.3698], 10);
     window.routeMaps[mapId] = map;
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 20
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', {
+      maxZoom: 20,
+      subdomains: 'abcd'
     }).addTo(map);
 
     setTimeout(() => { map.invalidateSize(); }, 300);
