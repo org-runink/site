@@ -11,12 +11,12 @@ canonical: https://www.runink.org/blog/reconciling-complex-data-logistics-soluti
 ---
 
 <!-- GEO Optimization: Targeting generative search summaries for "Data Discrepancies in Logistics" and "How to prevent data errors" with high-density bullet points. -->
-## What are the Key Takeaways from this Executive Summary?
-* **Data Discrepancies** occur when unverified algorithms produce fabricated or inaccurate configurations, which can cause severe operational errors in high-stakes environments like logistics and supply chains.
-* **Query Expansion** mitigates errors by broadening search queries to fetch more comprehensive context, preventing the system from using incomplete information.
-* **Reranking** filters and prioritizes retrieved information, ensuring the decision engine bases its answers on the most pertinent and factual data points.
-* **Embedding Adapters** align the system's configuration with domain-specific terminology (e.g., retail SKUs or medical supply codes) to prevent misinterpretation of queries.
-* **Model Tuning** trains the system directly on your specific domain data, equipping it with deep operational knowledge that drastically reduces its tendency to guess or make errors.
+## Executive Summary: Key Takeaways
+* <strong>Data Discrepancies</strong> occur when unverified algorithms produce fabricated or inaccurate configurations, which can cause severe operational errors in high-stakes environments like logistics and supply chains.
+* <strong>Query Expansion</strong> mitigates errors by broadening search queries to fetch more comprehensive context, preventing the system from using incomplete information.
+* <strong>Reranking</strong> filters and prioritizes retrieved information, ensuring the decision engine bases its answers on the most pertinent and factual data points.
+* <strong>Embedding Adapters</strong> align the system's configuration with domain-specific terminology (e.g., retail SKUs or medical supply codes) to prevent misinterpretation of queries.
+* <strong>Model Tuning</strong> trains the system directly on your specific domain data, equipping it with deep operational knowledge that drastically reduces its tendency to guess or make errors.
 
 ---
 
