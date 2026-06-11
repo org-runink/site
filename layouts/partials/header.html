@@ -63,10 +63,12 @@
                         {{ end }}
                     {{ end }}
 
-                    <!-- Check it now Demo Link -->
-                    <a href="/demo/" class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold text-[#ea580c] transition-all duration-300 border border-[#ea580c] rounded-lg hover:bg-[#ea580c] hover:text-white">
-                        Check it now
+                    <!-- Check it out Demo Link -->
+                    {{ with $headerConfig.buttons.checkItOut }}
+                    <a href="{{ .url }}" class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold text-[#ea580c] transition-all duration-300 border border-[#ea580c] rounded-lg hover:bg-[#ea580c] hover:text-white">
+                        {{ .text }}
                     </a>
+                    {{ end }}
 
                     <!-- Language Switcher Flags -->
                     <div class="flex items-center space-x-3 pl-3 border-l border-stone-850">
@@ -162,9 +164,11 @@
                 </div>
                 {{ end }}
                 
-                <a href="/demo/" class="block text-center px-6 py-3 mt-4 rounded-lg font-bold transition duration-200 ease-in-out border-2 border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white">
-                    Check it now
+                {{ with $headerConfig.buttons.checkItOut }}
+                <a href="{{ .url }}" class="block text-center px-6 py-3 mt-4 rounded-lg font-bold transition duration-200 ease-in-out border-2 border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white">
+                    {{ .text }}
                 </a>
+                {{ end }}
 
                 <!-- Mobile Language Switcher -->
                 <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-stone-850">

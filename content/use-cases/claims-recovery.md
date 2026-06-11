@@ -1,6 +1,6 @@
 ---
-title: "Claims Recovery: Automated Claims Auditing"
-description: "Recover 40% more freight spend. Automate the fight against carrier denials with legal precision."
+title: "Claims Disputes & Vendor Compliance"
+description: "RunInk's Forensic Claims Module processes complex inbound SLA deviations."
 layout: "use_case"
 badge: "Cost Recovery"
 badgeColor: "#7c3aed"
@@ -14,15 +14,15 @@ author: "Lead Data & Cloud Architect"
 
 <!-- GEO Optimization: Targeting generative search summaries for "Freight Claims Automation" and "Digital Paralegal Cost Recovery" with high-density bullet points. -->
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Executive Summary: Key Takeaways</h2>
-*   **Automated Evidence Collection:** Uses OCR to scan the **Delivery Receipt (DR)** and **Bill of Lading** to detect handwriting indicating shortages or damage, proving perfect condition at pickup.
-*   **Legal Rebuttal Engine:** Automatically checks historical NOAA weather data and cites **49 U.S.C. § 14706 (The Carmack Amendment)** to shift the burden of proof back to the carrier when they use "Act of God" excuses.
-*   **High-Volume Cost Recovery:** Drafts exhaustive legal briefs for low-dollar claims (e.g., **$50 to $300**), recovering up to **40% more freight spend** that is typically abandoned due to manual friction.
+*   **Forensic Claims Module:** Processes complex inbound SLA deviations automatically.
+*   **Synthesizing Chronologies:** Evaluates receiving chronologies alongside vendor agreements.
+*   **Irrefutable Chargebacks:** Logically drafts irrefutable chargebacks without human bottlenecking, recovering costs that are typically abandoned.
 
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Don't Leave Money on the Dock.</h1>
+        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Stop Eating Vendor Costs.</h1>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            Carriers profit from your fatigue. They know you won't fight a $300 claim. <br>The Claims Module fights for every penny, using federal law as its weapon.
+            Stop eating the cost of vendor compliance failures. <br>RunInk's Forensic Claims Module processes complex inbound SLA deviations, synthesizing receiving chronologies and cross-referencing vendor agreements to logically draft irrefutable chargebacks without human bottlenecking.
         </p>
     </div>
 
@@ -30,20 +30,18 @@ author: "Lead Data & Cloud Architect"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The "Friday 4 PM" Crisis</h2>
+            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The Vendor Compliance Gap</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                It’s late. Your receiving clerk is tired. A pallet arrives with a crushed corner. The driver shrugs, "It was loaded like that."
+                It’s late. A delivery arrives out of SLA or with missing items. Processing the claim manually takes hours.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-               The clerk has two choices:
-               <br>1. Spend an hour taking photos and filling out a PDF.
-               <br>2. Sign the iPad and go home.
+               Your team is forced to either waste time building a case or accept the loss.
             </p>
             <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
-                He signs. You just lost $450.
+                Most companies just eat the cost.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                This isn't laziness; it's friction. And when you do file, the Carrier denies it anyway citing "Improper Packaging." It feels like a rigorous game you can't win.
+                This isn't laziness; it's friction. And when you do file, vendors often deny it. The Forensic Claims Module eliminates this friction entirely.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
@@ -51,27 +49,29 @@ author: "Lead Data & Cloud Architect"
              
              <!-- Mermaid Diagram -->
 {{< mermaid >}}
+             <div class="mermaid">
 C4Context
-title System Context: Claims Module
+title System Context: Forensic Claims Module
 
-Person(clerk, "Receiving Clerk", "Takes 1 photo of damage.")
+Person(clerk, "Receiving Team", "Logs delivery data.")
 
 Enterprise_Boundary(b0, "Runink Finance") {
-System(agent, "Claims Module", "Digital Audit Specialist.")
+System(agent, "Forensic Claims Module", "Compliance Auditor.")
 
-System_Ext(legal, "Legal Engine", "49 U.S.C. § 14706")
-System_Ext(weather, "NOAA Weather", "Validates 'Act of God'")
+System_Ext(legal, "Vendor Agreements", "SLA Terms")
+System_Ext(weather, "Receiving Chronologies", "Delivery Times")
 
-System_Boundary(b1, "Carrier Interaction") {
-System_Ext(portal, "Carrier Portal", "Uploads Evidence")
+System_Boundary(b1, "Vendor Interaction") {
+System_Ext(portal, "Vendor Portal", "Uploads Evidence")
 }
 }
 
-Rel(clerk, agent, "Uploads Photo via App")
-Rel(agent, legal, "Cites Carmack Amendment")
-Rel(agent, weather, "Disproves 'Storm' Excuse")
-Rel(agent, portal, "Files 10-Page Rebuttal")
-Rel(portal, agent, "Sends Settlement Check")
+Rel(clerk, agent, "Uploads Receiving Data")
+Rel(agent, legal, "Cross-references SLA")
+Rel(agent, weather, "Synthesizes Chronology")
+Rel(agent, portal, "Files Irrefutable Chargeback")
+Rel(portal, agent, "Secures Compliance Payout")
+             </div>
 {{< /mermaid >}}
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">It drafts a legal brief for a $50 claim. It never sleeps.</p>
@@ -79,21 +79,21 @@ Rel(portal, agent, "Sends Settlement Check")
     </div>
 
     <div class="max-w-3xl mx-auto prose prose-invert prose-lg mb-20">
-        <h3>How It Wins: The "Carmack" Strategy</h3>
+        <h3>How It Wins: Forensic Accuracy</h3>
         <p>
-            The system doesn't just fill out forms. It builds a case file.
+            The system doesn't just fill out forms. It builds a bulletproof case file.
         </p>
         <p>
-            <strong>1. The Evidence Collection</strong><br>
-            It uses OCR to scan the <strong>Delivery Receipt (DR)</strong>. It specifically looks for handwriting like *"1 case short"* or *"Shrinkwrap torn."* It cross-references this with the <strong>Bill of Lading</strong> to prove the goods were in perfect condition at pickup.
+            <strong>1. Synthesizing Chronologies</strong><br>
+            It processes complex inbound SLA deviations by evaluating exact delivery timestamps and receiving chronologies.
         </p>
         <p>
-            <strong>2. The Legal Rebuttal</strong><br>
-            When a carrier denies a claim due to "Act of God" (weather), the system checks historical weather data from NOAA for that specific route. If it was sunny, it drafts a rebuttal citing <strong>49 U.S.C. § 14706 (The Carmack Amendment)</strong>, shifting the burden of proof back to the carrier.
+            <strong>2. Cross-Referencing Agreements</strong><br>
+            It checks these chronologies against specific vendor agreements to identify violations.
         </p>
         <p>
-            <strong>3. The Payout</strong><br>
-            Carriers pay claims that are hard to fight. When they receive a 10-page legal brief for a $300 box, they cut the check. The system then updates your <a href="/use-cases/finance" class="text-[#D4A574] hover:underline">Finance Ledger</a> automatically.
+            <strong>3. Irrefutable Chargebacks</strong><br>
+            It logically drafts comprehensive chargebacks without human bottlenecking, recovering costs that are usually written off.
         </p>
     </div>
     

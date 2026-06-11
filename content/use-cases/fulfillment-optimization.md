@@ -1,6 +1,6 @@
 ---
-title: "Fulfillment Orchestration: Dynamic Inventory Allocation"
-description: "Orchestrates inventory and routing based on real-time constraints (weather, dock status, margin)."
+title: "Demand Forecasting & Inventory Rebalancing"
+description: "RunInk’s Predictive Inventory Twin monitors pipeline velocity across disparate retail branches to deduce anomalies."
 layout: "use_case"
 badge: "Logistics Optimization"
 badgeColor: "#0ea5e9"
@@ -11,9 +11,9 @@ author: "Lead Data & Cloud Architect"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Fulfillment with Constraints.</h1>
+        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Get Demand Forecasting.</h1>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            Standard routing logic just connects A to B. <br>The Fulfillment Module treats every order as a multi-variable equation, optimizing for cost, speed, and real-world conditions like weather or dock delays.
+            Stop losing margin to the bullwhip effect. <br>RunInk’s Predictive Inventory Twin monitors pipeline velocity across disparate retail branches to deduce anomalies before they disrupt in-store availability, autonomously preparing transfer orders to optimize cross-branch inventory allocation.
         </p>
     </div>
 
@@ -21,22 +21,22 @@ author: "Lead Data & Cloud Architect"
     <div class="mb-16">
         <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
         <ul class="space-y-3">
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Dynamic Orchestration:</strong> The Fulfillment Module treats every order as a multi-variable equation, optimizing for cost, speed, and real-world conditions.</li>
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Real-Time Adaptation:</strong> It monitors external APIs like weather and traffic alongside internal telemetry such as facility overload to route intelligently.</li>
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Margin Protection:</strong> It instantly splits orders or adjusts routing to protect SLA guarantees while keeping shipping costs within margin guardrails.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Predictive Inventory Twin:</strong> Monitors pipeline velocity across disparate retail branches to deduce anomalies.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Proactive Rebalancing:</strong> Acts before anomalies disrupt in-store availability.</li>
+            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Autonomous Execution:</strong> Autonomously prepares transfer orders to optimize cross-branch inventory allocation.</li>
         </ul>
     </div>
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The "Blind Allocation" Trap</h2>
+            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">The Bullwhip Effect</h2>
             <p class="text-lg text-stone-400 font-medium mb-4">
-                Your OMS receives an order and assigns it to the closest warehouse. Simple, right? But what if that warehouse has a 3-day backlog? What if a winter storm is approaching the outbound route?
+                Stop losing margin to the bullwhip effect caused by reactive supply chain systems.
             </p>
             <ul class="space-y-3">
-                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> Ignoring operational bottlenecks (dock door availability)</li>
-                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> Static rules that fail under real-world pressure</li>
-                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> Margin erosion from split shipments</li>
+                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> Ignoring pipeline velocity</li>
+                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> In-store stockouts and disruptions</li>
+                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> Suboptimal cross-branch allocation</li>
             </ul>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
@@ -45,22 +45,20 @@ author: "Lead Data & Cloud Architect"
              <!-- Mermaid Diagram -->
              <div class="mermaid">
              C4Context
-                title System Context: Fulfillment Module
+                title System Context: Predictive Inventory Twin
                 
-                Person(customer, "Customer", "Needs their order quickly.")
+                Person(customer, "Customer", "Expects in-store availability.")
                 
-                Enterprise_Boundary(b0, "Runink Operations") {
-                    System(agent, "Fulfillment Module", "Dynamic Orchestrator.")
+                Enterprise_Boundary(b0, "Runink Retail") {
+                    System(agent, "Predictive Inventory Twin", "Pipeline Monitor.")
                     
-                    System_Ext(oms, "Order Management", "Holds Pending Orders")
-                    System_Ext(wms, "Warehouse System", "Live Capacity & Stock")
-                    System_Ext(weather, "NOAA/Traffic Feeds", "Live Conditions")
+                    System_Ext(oms, "Retail Branches", "Branch Inventory")
+                    System_Ext(wms, "Warehouse System", "Stock Capacity")
                 }
 
-                Rel(oms, agent, "Sends Order Data")
-                Rel(agent, weather, "Checks API for route disruptions")
-                Rel(agent, wms, "Checks DC1 backlog vs DC2 capacity")
-                Rel(agent, oms, "Modifies Routing to DC2 to guarantee SLA")
+                Rel(agent, oms, "Monitors pipeline velocity")
+                Rel(agent, wms, "Deduces anomalies")
+                Rel(agent, oms, "Prepares transfer orders")
              </div>
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">It looks at the full board before making a move.</p>
@@ -68,21 +66,21 @@ author: "Lead Data & Cloud Architect"
     </div>
 
     <div class="max-w-3xl mx-auto prose prose-invert prose-lg mb-20">
-        <h3>How It Wins: The Multi-Variable Optimization</h3>
+        <h3>How It Wins: Predictive Capabilities</h3>
         <p>
-            The Fulfillment Module doesn't settle for the easy answer; it finds the optimal outcome.
+            The Predictive Inventory Twin acts proactively to protect margins.
         </p>
         <p>
-            <strong>1. Ingesting Real-Time Streams</strong><br>
-            It monitors external APIs (weather patterns, carrier capacity) alongside internal telemetry (which facilities are overloaded, open dock doors).
+            <strong>1. Monitoring Velocity</strong><br>
+            It monitors pipeline velocity across disparate retail branches.
         </p>
         <p>
-            <strong>2. Margin vs. SLA Calculation</strong><br>
-            It can instantly split an order to lower the shipping cost or absorb the extra cost to protect a high-value customer's SLA guarantee. Its logic is configurable based on your margin guardrails.
+            <strong>2. Deducing Anomalies</strong><br>
+            It deduces anomalies before they disrupt in-store availability.
         </p>
         <p>
-            <strong>3. Autonomous Execution</strong><br>
-            Once constrained by parameters, the system assigns the inventory and dispatches the routing order automatically to the warehouse floor. It turns your fulfillment network into a dynamic organism.
+            <strong>3. Autonomous Rebalancing</strong><br>
+            It autonomously prepares transfer orders to optimize cross-branch inventory allocation.
         </p>
     </div>
     

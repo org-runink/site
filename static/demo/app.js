@@ -1,6 +1,6 @@
 // State Management
 let currentScreen = 'twins';
-let activeFilter = 'Sentinel';
+let activeFilter = 'Compliance';
 let currentLanguage = 'Portuguese';
 // Contact Lists Databases & Metasearch state
 let dedicatedContacts = [
@@ -284,7 +284,7 @@ const mockActions = [
   // Sentinel Cases (Security/Control)
   {
     id: "AI-102",
-    category: "Sentinel",
+    category: "Compliance",
     title: "Suspicious Access Attempt",
     titleKey: "action_sentinel_1_title",
     description: "Attempt to access the partner portal from outside the authorized corporate network. Access blocked.",
@@ -305,7 +305,7 @@ const mockActions = [
   },
   {
     id: "AI-103",
-    category: "Sentinel",
+    category: "Compliance",
     title: "Suspect Billing Spike",
     titleKey: "action_sentinel_2_title",
     description: "Unusual invoice generation frequency spike during non-business hours. Access suspended pending verification.",
@@ -320,7 +320,7 @@ const mockActions = [
   },
   {
     id: "AI-104",
-    category: "Sentinel",
+    category: "Compliance",
     title: "Unapproved Supplier Signup",
     titleKey: "action_sentinel_3_title",
     description: "Automated attempt to register a new vendor profile without matching internal procurement authorization. Profile quarantined.",
@@ -335,7 +335,7 @@ const mockActions = [
   },
   {
     id: "AI-108",
-    category: "Sentinel",
+    category: "Compliance",
     title: "Privileged Table Query Alert",
     titleKey: "action_sentinel_4_title",
     description: "Direct query executed on raw credentials table by non-admin identity. Blocked.",
@@ -350,7 +350,7 @@ const mockActions = [
   },
   {
     id: "AI-115",
-    category: "Sentinel",
+    category: "Compliance",
     title: "Suspicious Key Rotation",
     titleKey: "action_sentinel_5_title",
     description: "Multiple session key rotation requests received within 1 minute. Sandbox lock engaged.",
@@ -365,7 +365,7 @@ const mockActions = [
   },
   {
     id: "AI-116",
-    category: "Sentinel",
+    category: "Compliance",
     title: "Unmasked Ingress Attempt",
     titleKey: "action_sentinel_6_title",
     description: "External connection attempted to ingest customer records without hashing variables. Quarantined.",
@@ -380,7 +380,7 @@ const mockActions = [
   },
   {
     id: "AI-130",
-    category: "Sentinel",
+    category: "Compliance",
     title: "API Token Boundary Violation",
     titleKey: "action_sentinel_7_title",
     description: "Access token generated for partner portal outside standard geographical boundaries. Suspended.",
@@ -389,13 +389,13 @@ const mockActions = [
     impact: "Access Control",
     impactKey: "action_impact_control",
     ai_generated: true,
-    source: "Geofence Agent",
+    source: "Geofence Module",
     sourceKey: "action_sentinel_7_source",
     path: "/remediation"
   },
   {
     id: "AI-131",
-    category: "Sentinel",
+    category: "Compliance",
     title: "Vendor API Data Hallucination",
     titleKey: "action_sentinel_8_title",
     description: "Public LLM query returned mismatched JSON schema for shipping schedules. Blocked by local inference validator.",
@@ -410,7 +410,7 @@ const mockActions = [
   },
   {
     id: "AI-132",
-    category: "Sentinel",
+    category: "Compliance",
     title: "SOP Database Logic Drift",
     titleKey: "action_sentinel_9_title",
     description: "Active SQL ingestion rules drifted from verified Operating Manual SOPs. Discrepancy logged for review.",
@@ -425,7 +425,7 @@ const mockActions = [
   },
   {
     id: "AI-151",
-    category: "Sentinel",
+    category: "Compliance",
     title: "Cold Chain Compressor Degradation",
     titleKey: "action_sentinel_151_title",
     description: "Reefer Container #MSCU-8849201 telemetry indicates slow compressor degradation. Current temp 3.2°C (Limit: 4.0°C). Rerouting port power-plug request to Terminal 4.",
@@ -440,7 +440,7 @@ const mockActions = [
   },
   {
     id: "AI-152",
-    category: "Sentinel",
+    category: "Compliance",
     title: "HazMat Segregation Violation",
     titleKey: "action_sentinel_152_title",
     description: "Dangerous Goods Class 3 (Flammable) staged within 5m of Class 5.1 (Oxidizer) at Zone C. Crane movement locked until 15m compliance is restored.",
@@ -457,7 +457,7 @@ const mockActions = [
   // Forge Cases (Supplies/Generations)
   {
     id: "AI-112",
-    category: "Forge",
+    category: "Compliance",
     title: "Preemptive Purchase Order Draft",
     titleKey: "action_forge_1_title",
     description: "Pre-approved PO generated to compress lead times ahead of forecasted inflation anomalies.",
@@ -480,7 +480,7 @@ const mockActions = [
   },
   {
     id: "AI-113",
-    category: "Forge",
+    category: "Compliance",
     title: "Raw Material Contract Optimization",
     titleKey: "action_forge_2_title",
     description: "Contract renegotiation draft based on recent commodity index drops, projecting an annual saving of 8%.",
@@ -495,7 +495,7 @@ const mockActions = [
   },
   {
     id: "AI-114",
-    category: "Forge",
+    category: "Compliance",
     title: "Warehouse Space Pre-allocation",
     titleKey: "action_forge_3_title",
     description: "Automated cargo consolidation draft for next quarter's peak season, reducing external warehousing storage costs.",
@@ -510,7 +510,7 @@ const mockActions = [
   },
   {
     id: "AI-117",
-    category: "Forge",
+    category: "Compliance",
     title: "Transport Dispatch Schedule",
     titleKey: "action_forge_4_title",
     description: "Automated schedule generated for empty carrier pickups to avoid depot congestion next week.",
@@ -525,7 +525,7 @@ const mockActions = [
   },
   {
     id: "AI-118",
-    category: "Forge",
+    category: "Compliance",
     title: "Supply Chain Re-routing Suggestion",
     titleKey: "action_forge_5_title",
     description: "Synthetic twin plan to shift raw material sourcing to secondary supplier due to storm alert.",
@@ -540,7 +540,7 @@ const mockActions = [
   },
   {
     id: "AI-119",
-    category: "Forge",
+    category: "Compliance",
     title: "Demurrage Dispute Invoice Draft",
     titleKey: "action_forge_6_title",
     description: "Drafted fee refund letter based on HS Customs code discrepancy, reclaiming $18,200.00.",
@@ -555,7 +555,7 @@ const mockActions = [
   },
   {
     id: "AI-120",
-    category: "Forge",
+    category: "Compliance",
     title: "Inventory Reorder Suggestion",
     titleKey: "action_forge_7_title",
     description: "Pre-calculated purchase request generated for safe stock replenishment ahead of shutdown.",
@@ -564,13 +564,13 @@ const mockActions = [
     impact: "Safety Stock Buffer",
     impactKey: "action_forge_7_impact",
     ai_generated: true,
-    source: "Predictive Reorder Agent",
+    source: "Predictive Reorder Module",
     sourceKey: "action_forge_7_source",
     path: "/artifact"
   },
   {
     id: "AI-140",
-    category: "Forge",
+    category: "Compliance",
     title: "IoT Maintenance Service Request",
     titleKey: "action_forge_iot_title",
     description: "RFID telemetry indicates pallet operations downgrading due to postponed maintenance. Maintenance scheduling draft generated.",
@@ -579,13 +579,13 @@ const mockActions = [
     impact: "Operations Uptime",
     impactKey: "action_forge_iot_impact",
     ai_generated: true,
-    source: "IoT Telemetry Agent",
+    source: "IoT Telemetry Module",
     sourceKey: "action_forge_iot_source",
     path: "/artifact"
   },
   {
     id: "AI-153",
-    category: "Forge",
+    category: "Compliance",
     title: "Last-Mile SLA Breach Mitigation",
     titleKey: "action_forge_153_title",
     description: "Sorting hub failure in Chicago. 1,400 express parcels risk missing SLA. Alternative LTL carrier (XPO) drafted for downstream injection to save $24,000.",
@@ -600,7 +600,7 @@ const mockActions = [
   },
   {
     id: "AI-154",
-    category: "Forge",
+    category: "Compliance",
     title: "Labor & Dock Scheduling Clash",
     titleKey: "action_forge_154_title",
     description: "Vessel 'Ever Given' ETA delayed 18h. Terminal B gang shifts will incur $12k idle time. Labor re-allocation draft to cross-docking operations prepared.",
@@ -806,7 +806,7 @@ const mockActions = [
     impact: "+$3,450.00 Refund",
     impactKey: "action_finance_4_impact",
     ai_generated: true,
-    source: "Billing Dispute Agent",
+    source: "Billing Dispute Module",
     sourceKey: "action_finance_4_source",
     path: "/artifact"
   },
@@ -874,7 +874,7 @@ const mockActions = [
   // Route Cases (Logistics/Route optimization)
   {
     id: "AI-105",
-    category: "Route",
+    category: "Operations",
     title: "Weight Discrepancy in Cargo Route",
     titleKey: "action_route_1_title",
     description: "Weight discrepancy of 14.5% detected between bill of lading records and physical scales. Dispatch held for audit.",
@@ -901,7 +901,7 @@ const mockActions = [
   },
   {
     id: "AI-106",
-    category: "Route",
+    category: "Operations",
     title: "Empty Backhaul Route Optimization",
     titleKey: "action_route_2_title",
     description: "Vehicle returning empty from Depot B. Rerouted to pick up customer returns at supplier, saving transport overhead.",
@@ -928,7 +928,7 @@ const mockActions = [
   },
   {
     id: "AI-107",
-    category: "Route",
+    category: "Operations",
     title: "Adverse Weather Rerouting",
     titleKey: "action_route_3_title",
     description: "Shipment from Port of Houston rerouted due to severe storm alert, preserving estimated delivery window.",
@@ -955,7 +955,7 @@ const mockActions = [
   },
   {
     id: "AI-125",
-    category: "Route",
+    category: "Operations",
     title: "Port Congestion Bypass",
     titleKey: "action_route_4_title",
     description: "Houston Port Terminal Gate 4 experiencing 4-hour delays. Fleet routed to Gate B entry point.",
@@ -982,7 +982,7 @@ const mockActions = [
   },
   {
     id: "AI-126",
-    category: "Route",
+    category: "Operations",
     title: "Empty Backhaul Consolidation",
     titleKey: "action_route_5_title",
     description: "Consolidating return trip route from Depot B to pick up raw packaging materials from nearest packaging plant.",
@@ -1009,7 +1009,7 @@ const mockActions = [
   },
   {
     id: "AI-127",
-    category: "Route",
+    category: "Operations",
     title: "Driver Shortage Reroute",
     titleKey: "action_route_6_title",
     description: "Carrier rescheduled shipment FL309 to rail line transport due to lack of truck driver availability.",
@@ -1036,7 +1036,7 @@ const mockActions = [
   },
   {
     id: "AI-128",
-    category: "Route",
+    category: "Operations",
     title: "Port Gate Entry Window Adjustment",
     titleKey: "action_route_7_title",
     description: "Shipment departure scheduled 2 hours early to match low-congestion gate entry windows at Houston Port.",
@@ -1179,16 +1179,16 @@ const mockActions = [
 
 // Dynamically associate contacts to mockActions items
 mockActions.forEach(action => {
-  if (action.category === 'Sentinel' || action.id.startsWith('RULE-210')) {
+  if (action.sentinelCard || action.id.startsWith("RULE-210")) {
     action.contactName = "Jane Smith (SecOps Lead)";
     action.contactPhone = "+1 555-019-9823";
   } else if (action.category === 'Finance') {
     action.contactName = "Port Authority Billing";
     action.contactPhone = "+1 555-012-7744";
-  } else if (action.category === 'Route') {
+  } else if (action.routeCard || (action.id && action.id.startsWith("AI-1") && !action.predictiveCard && !action.operationsCard)) {
     action.contactName = "Logistics Control Center";
     action.contactPhone = "+1 555-011-8833";
-  } else if (action.category === 'Forge') {
+  } else if (action.forgeCard) {
     action.contactName = "John Doe (Broker)";
     action.contactPhone = "+1 555-010-9921";
   } else if (action.category === 'Operations') {
@@ -1203,7 +1203,7 @@ mockActions.forEach(action => {
 // Carousel Business Insights Mock
 const carouselInsights = [
   "Claims audit recovered $18,200 this morning from HS customs tariff mismatch refunds.",
-  "Fulfilment pipeline simulation predicts 99.4% on-time delivery using autonomous agent task delegation.",
+  "Fulfilment pipeline simulation predicts 99.4% on-time delivery using autonomous module task delegation.",
   "Route Optimization model automatically re-allocated 14 outbound shipments, avoiding storm fronts and saving 12% in diesel costs.",
   "Predictive Maintenance telemetry identified Pallet RFID-882 degradation, automatically scheduling vendor service to prevent operational downgrades."
 ];
@@ -1327,7 +1327,7 @@ const fetchStepDetails = {
     logs: [
       "[INFO] Spawning isolated specialist executors...",
       "[INFO] Task A: Rules Recon verifying query compliance...",
-      "[SUCCESS] Data Posture Agent report: Security settings baseline drift flagged."
+      "[SUCCESS] Data Posture Module report: Security settings baseline drift flagged."
     ],
     toon: `[PersonaSwarmResult:
   DataMaturity: { score: 92 }
@@ -1494,10 +1494,10 @@ function navigateToScreen(screenName) {
     animateMaturityScorebars();
     setupMaturityGraph();
     resetNodeDetails();
-  } else if (screenName === 'twins' && activeFilter === 'Route') {
+  } else if (screenName === 'twins' && activeFilter === 'Operations') {
     setTimeout(initRouteMap, 50);
   } else if (screenName === 'remediation') {
-    const sel = document.getElementById("react-agent-selector");
+    const sel = document.getElementById("react-module-selector");
     if (sel) updateRemediationScreenForAgent(sel.value);
   }
 }
@@ -1519,6 +1519,16 @@ function setupFilterBar() {
 function renderActionFeed() {
   const container = document.getElementById("action-cards-feed");
   if (!container) return;
+  
+  if (window.routeMaps) {
+    for (const id in window.routeMaps) {
+      if (window.routeMaps[id]) {
+        try { window.routeMaps[id].remove(); } catch(e) {}
+      }
+    }
+    window.routeMaps = {};
+  }
+  
   container.innerHTML = "";
 
   // Filter mock actions
@@ -1541,13 +1551,13 @@ function renderActionFeed() {
 
     // Choose icon
     let iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
-    if (action.category === 'Route') {
+    if (action.routeCard || (action.id && action.id.startsWith("AI-1") && !action.predictiveCard && !action.operationsCard)) {
       iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`;
-    } else if (action.category === 'Sentinel') {
+    } else if (action.sentinelCard) {
       iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`;
     } else if (action.category === 'Finance') {
       iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`;
-    } else if (action.category === 'Forge') {
+    } else if (action.forgeCard) {
       iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`;
     }
 
@@ -1583,7 +1593,7 @@ function renderActionFeed() {
               <span class="route-stop-val">${toVal}</span>
             </div>
           </div>
-          <div id="osm-map" class="osm-map-container"></div>
+          <div id="osm-map-${action.id}" class="osm-map-container"></div>
           <div class="route-metric-grid">
             <div class="route-metric-grid-cell">
               <span class="route-metric-label">${varLabel}</span>
@@ -1742,10 +1752,10 @@ function renderActionFeed() {
 
     // Call operations row
     let callRowHtml = "";
-    if (action.category === 'Route' || action.category === 'Finance' || action.category === 'Forge') {
+    if (action.category === 'Route' || action.category === 'Finance' || action.forgeCard) {
       let buttonLabel = appTranslations[currentLanguage]["call_carrier"] || "Voice Call Carrier";
       if (action.category === 'Finance') buttonLabel = appTranslations[currentLanguage]["call_finance"] || "Initiate Claims Call";
-      if (action.category === 'Forge') buttonLabel = appTranslations[currentLanguage]["call_supplier"] || "Call Supplier Agent";
+      if (action.forgeCard) buttonLabel = appTranslations[currentLanguage]["call_supplier"] || "Call Supplier Module";
 
       callRowHtml = `
         <div class="action-card-call-row">
@@ -1787,7 +1797,7 @@ function renderActionFeed() {
     cardEl.innerHTML = `
       <div class="action-card-header">
         <div class="action-card-label-row">
-          ${action.ai_generated ? '<span class="ai-star-icon">✨ ISO 42001 AI TWIN</span>' : '<span>RULE MATCH</span>'}
+          ${action.ai_generated ? '<span class="ai-star-icon">✨ ISO 42001 System TWIN</span>' : '<span>RULE MATCH</span>'}
         </div>
         <span class="action-card-priority-badge" style="background-color:${tagColor};">${action.priority.toUpperCase()}</span>
       </div>
@@ -1825,27 +1835,12 @@ function renderActionFeed() {
 
 // OpenStreetMap routing drawing via Leaflet
 function initRouteMap() {
-  const mapContainer = document.getElementById("osm-map");
-  if (!mapContainer) return;
+  const mapContainers = document.querySelectorAll(".osm-map-container");
+  if (mapContainers.length === 0) return;
 
-  if (window.routeMap) {
-    window.routeMap.remove();
+  if (!window.routeMaps) {
+    window.routeMaps = {};
   }
-
-  // Houston Area logistics coordinates
-  const map = L.map('osm-map', {
-    zoomControl: false,
-    attributionControl: false
-  }).setView([29.7604, -95.3698], 10);
-  window.routeMap = map;
-
-  // Elegant Dark-matter tiles that match the Obsidian Ember layout perfectly
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    maxZoom: 20
-  }).addTo(map);
-
-  const depot = [29.8100, -95.4500];
-  const port = [29.7100, -95.2600];
 
   const depotMarkerIcon = L.divIcon({
     className: 'custom-map-marker',
@@ -1859,26 +1854,57 @@ function initRouteMap() {
     iconSize: [12, 12]
   });
 
-  L.marker(depot, {icon: depotMarkerIcon}).addTo(map);
-  L.marker(port, {icon: portMarkerIcon}).addTo(map);
+  mapContainers.forEach(container => {
+    const mapId = container.id;
+    if (!mapId) return;
 
-  // Optimized empty last-mile delivery leg path representation (dashed)
-  const emptyLegPoints = [
-    depot,
-    [29.8000, -95.3800],
-    [29.7600, -95.3300],
-    [29.7400, -95.3000],
-    port
-  ];
+    if (window.routeMaps[mapId]) {
+      try { window.routeMaps[mapId].remove(); } catch(e) {}
+    }
 
-  const routeLine = L.polyline(emptyLegPoints, {
-    color: '#EC5B13',
-    weight: 4,
-    opacity: 0.85,
-    dashArray: '8, 12'
-  }).addTo(map);
+    const map = L.map(mapId, {
+      zoomControl: false,
+      attributionControl: false
+    }).setView([29.7604, -95.3698], 10);
+    window.routeMaps[mapId] = map;
 
-  map.fitBounds(routeLine.getBounds(), { padding: [30, 30] });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 20
+    }).addTo(map);
+
+    setTimeout(() => { map.invalidateSize(); }, 300);
+    setTimeout(() => { map.invalidateSize(); }, 1000);
+
+    // Generate dynamic-looking coordinates based on mapId string hash
+    let hash = 0;
+    for(let i=0; i<mapId.length; i++) {
+       hash = mapId.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    hash = Math.abs(hash);
+
+    const depot = [29.8100 + (hash % 10) * 0.01, -95.4500 + (hash % 5) * 0.01];
+    const port = [29.7100 + (hash % 7) * 0.01, -95.2600 + (hash % 3) * 0.01];
+
+    L.marker(depot, {icon: depotMarkerIcon}).addTo(map);
+    L.marker(port, {icon: portMarkerIcon}).addTo(map);
+
+    const emptyLegPoints = [
+      depot,
+      [depot[0] - 0.01, depot[1] + 0.07],
+      [depot[0] - 0.05, depot[1] + 0.12],
+      [port[0] + 0.03, port[1] - 0.04],
+      port
+    ];
+
+    const routeLine = L.polyline(emptyLegPoints, {
+      color: '#EC5B13',
+      weight: 4,
+      opacity: 0.85,
+      dashArray: '8, 12'
+    }).addTo(map);
+
+    map.fitBounds(routeLine.getBounds(), { padding: [30, 30] });
+  });
 }
 
 function navigateAction(actionId) {
@@ -1890,7 +1916,7 @@ function navigateAction(actionId) {
 
   if (path === '/remediation') {
     navigateToScreen('remediation');
-    const sel = document.getElementById("react-agent-selector");
+    const sel = document.getElementById("react-module-selector");
     if (sel && category) {
       if (category === 'Sentinel' || category === 'Compliance') {
         sel.value = 'Sentinel';
@@ -1936,6 +1962,16 @@ function navigateAction(actionId) {
     const subTitleBox = document.querySelector("#screen-artifact .draft-card-subtitle");
     if(titleBox) titleBox.innerHTML = titleText;
     if(subTitleBox) subTitleBox.innerHTML = `Category: ${category}`;
+
+    const artifactMapWrapper = document.getElementById("artifact-map-wrapper");
+    if (artifactMapWrapper) {
+      if (action.routeCard) {
+        artifactMapWrapper.style.display = "block";
+        setTimeout(initRouteMap, 100);
+      } else {
+        artifactMapWrapper.style.display = "none";
+      }
+    }
   }
 }
 
@@ -2044,19 +2080,37 @@ function triggerScoreboardFlicker() {
 }
 
 function animateMaturityScorebars() {
-  const scorecards = document.querySelectorAll("#maturity-scores .scorecard-num");
-  const targets = [92, 85, 94];
+  const scorecards = document.querySelectorAll("#maturity-scores .scorecard-box");
 
-  scorecards.forEach((card, idx) => {
+  scorecards.forEach((card) => {
+    const circle = card.querySelector(".gauge-circle");
+    const valueText = card.querySelector(".gauge-value");
+    if (!circle || !valueText) return;
+
+    const targetVal = parseInt(circle.getAttribute("data-target") || "0");
+    const maxDash = 176;
+
+    // Reset for re-animations
+    circle.style.strokeDashoffset = maxDash;
+    valueText.innerText = "0%";
+
+    // Animate text counter
     let current = 0;
     const interval = setInterval(() => {
-      if (current < targets[idx]) {
-        current += 3;
-        card.innerText = Math.min(targets[idx], current) + "%";
+      if (current < targetVal) {
+        current += Math.max(1, Math.ceil((targetVal - current) / 8));
+        valueText.innerText = Math.min(targetVal, current) + "%";
       } else {
+        valueText.innerText = targetVal + "%";
         clearInterval(interval);
       }
-    }, 20);
+    }, 30);
+
+    // Animate SVG stroke via CSS transition
+    setTimeout(() => {
+      const offset = maxDash - (targetVal / 100) * maxDash;
+      circle.style.strokeDashoffset = offset;
+    }, 100);
   });
 }
 
@@ -2196,7 +2250,7 @@ function setupInteractiveWorkflowActions() {
     runReactAgentLoop();
   });
 
-  const reactSelector = document.getElementById("react-agent-selector");
+  const reactSelector = document.getElementById("react-module-selector");
   if (reactSelector) {
     reactSelector.addEventListener("change", (e) => {
       updateRemediationScreenForAgent(e.target.value);
@@ -2209,7 +2263,7 @@ function setupInteractiveWorkflowActions() {
       if (reactLoopTimer) clearTimeout(reactLoopTimer);
       const overlay = document.getElementById("react-console-overlay");
       if (overlay) overlay.style.display = "none";
-      showToast(currentLanguage === 'Portuguese' ? "Execução do loop ReAct abortada." : "ReAct agentic loop execution aborted.");
+      showToast(currentLanguage === 'Portuguese' ? "Execução do loop ReAct abortada." : "execution loop execution aborted.");
     });
   }
 
@@ -2219,7 +2273,7 @@ function setupInteractiveWorkflowActions() {
       const overlay = document.getElementById("react-console-overlay");
       if (overlay) overlay.style.display = "none";
 
-      const sel = document.getElementById("react-agent-selector");
+      const sel = document.getElementById("react-module-selector");
       const activeAgent = sel ? sel.value : "Sentinel";
 
       let targetActionId = "";
@@ -2230,7 +2284,7 @@ function setupInteractiveWorkflowActions() {
         targetActionId = "RULE-201";
         successMsg = currentLanguage === 'Portuguese' ? "SOP de remediação de mascaramento aplicado com sucesso!" : "Security masking SOP successfully applied to Customer Profile Registry.";
         finalImpactValue = "342,850";
-      } else if (activeAgent === "Route") {
+      } else if (activeAgent === "Operations") {
         targetActionId = "AI-105";
         successMsg = currentLanguage === 'Portuguese' ? "Rota otimizada despachada com sucesso ao motorista!" : "Route optimization backhaul dispatched successfully.";
         finalImpactValue = "330,400";
@@ -2554,7 +2608,7 @@ function startVoiceCall(actionId, category, callType = 'regular') {
     callerName.innerText = prefix + "Logistics Carrier Broker (FL309)";
     avatar.innerText = callType === 'whatsapp' ? "💬" : "🚚";
   } else if (category === 'Finance') {
-    callerName.innerText = prefix + "Customs Demurrage Billing Agent";
+    callerName.innerText = prefix + "Customs Demurrage Billing Module";
     avatar.innerText = callType === 'whatsapp' ? "💬" : "🏛️";
   } else if (category === 'Forge') {
     callerName.innerText = prefix + "Supplier Warehouse Dispatch";
@@ -2608,8 +2662,8 @@ function appendTranscriptLine(speaker, message) {
 
   if (speaker === 'System') {
     line.innerHTML = `<span style="color:var(--text-muted); font-weight:700;">[SYS]:</span> <span style="color:var(--text-secondary);">${message}</span>`;
-  } else if (speaker === 'Voice Agent' || speaker === 'AI Platform') {
-    line.innerHTML = `<span class="transcript-speaker">[AI Platform]:</span> <span>${message}</span>`;
+  } else if (speaker === 'Voice Module' || speaker === 'System Platform') {
+    line.innerHTML = `<span class="transcript-speaker">[System Platform]:</span> <span>${message}</span>`;
   } else {
     line.innerHTML = `<span class="transcript-user">[${speaker}]:</span> <span>${message}</span>`;
   }
@@ -2622,29 +2676,29 @@ function streamVoiceCallTranscript() {
   const category = currentVoipCategory;
 
   if (category === 'Route') {
-    queueTranscriptLine("AI Platform", "Initiating route optimization dispute for weight discrepancy on FL309...", 500);
+    queueTranscriptLine("System Platform", "Initiating route optimization dispute for weight discrepancy on FL309...", 500);
     queueTranscriptLine("Logistics Carrier Broker", "FL309 Broker line. Weight discrepancy of 14.5% is due to returning empty cargo logistics crates, not cargo leakage.", 3500);
-    queueTranscriptLine("AI Platform", "Verifying gate scan against BOL details. Reconciling empty leg telemetry...", 7000);
+    queueTranscriptLine("System Platform", "Verifying gate scan against BOL details. Reconciling empty leg telemetry...", 7000);
     queueTranscriptLine("Logistics Carrier Broker", "Correct, the empty leg route map is optimized. We consolidated the return crates to Depot A to clear space.", 10000);
-    queueTranscriptLine("AI Platform", "Audit parameters matched. Ready to authorize route clearance.", 13000);
+    queueTranscriptLine("System Platform", "Audit parameters matched. Ready to authorize route clearance.", 13000);
   } else if (category === 'Finance') {
-    queueTranscriptLine("AI Platform", "Demurrage claims filing for container line #SH-908B, amount $18,200...", 500);
-    queueTranscriptLine("Customs Billing Agent", "Customs Agent here. We checked the HS Code entry. Code 8479.89.97 was incorrectly charged. Refund claim is valid.", 3500);
-    queueTranscriptLine("AI Platform", "Reconciling overcharge against Customs Registry schema...", 7000);
-    queueTranscriptLine("Customs Billing Agent", "We have authorized the fee waiver adjusting the billing. You can approve claims retrieval now.", 10000);
-    queueTranscriptLine("AI Platform", "Verification successful. Demurrage invoice refund signed.", 13000);
+    queueTranscriptLine("System Platform", "Demurrage claims filing for container line #SH-908B, amount $18,200...", 500);
+    queueTranscriptLine("Customs Billing Module", "Customs Module here. We checked the HS Code entry. Code 8479.89.97 was incorrectly charged. Refund claim is valid.", 3500);
+    queueTranscriptLine("System Platform", "Reconciling overcharge against Customs Registry schema...", 7000);
+    queueTranscriptLine("Customs Billing Module", "We have authorized the fee waiver adjusting the billing. You can approve claims retrieval now.", 10000);
+    queueTranscriptLine("System Platform", "Verification successful. Demurrage invoice refund signed.", 13000);
   } else if (category === 'Forge') {
-    queueTranscriptLine("AI Platform", "Checking lock terms for Preemptive Purchase Order PO-112...", 500);
+    queueTranscriptLine("System Platform", "Checking lock terms for Preemptive Purchase Order PO-112...", 500);
     queueTranscriptLine("Supplier Dispatch", "Hi, Supplier dispatch. We confirm pricing is locked for 24 hours. Inventory buffer stands at 15% safety stock.", 3500);
-    queueTranscriptLine("AI Platform", "Acknowledging inflation buffer. Confirming ERP release parameters...", 7000);
+    queueTranscriptLine("System Platform", "Acknowledging inflation buffer. Confirming ERP release parameters...", 7000);
     queueTranscriptLine("Supplier Dispatch", "Excellent. Once you sign off, we release empty transport units for final routing immediately.", 10000);
-    queueTranscriptLine("AI Platform", "Fulfillment route optimized. Verification completed.", 13000);
+    queueTranscriptLine("System Platform", "Fulfillment route optimized. Verification completed.", 13000);
   } else if (category === 'Sentinel') {
-    queueTranscriptLine("AI Platform", "Initiating SecOps dispatch regarding suspicious login attempt from IP 192.168.4.22...", 500);
+    queueTranscriptLine("System Platform", "Initiating SecOps dispatch regarding suspicious login attempt from IP 192.168.4.22...", 500);
     queueTranscriptLine("SecOps Security Coordinator", "SecOps line. We detected the credential match but it was from a recognized remote backup gateway.", 3500);
-    queueTranscriptLine("AI Platform", "Verifying gateway signature hash against secure logs...", 7000);
+    queueTranscriptLine("System Platform", "Verifying gateway signature hash against secure logs...", 7000);
     queueTranscriptLine("SecOps Security Coordinator", "Yes, it matches key runink-user-key-01. You can safely authorize the security bypass.", 10000);
-    queueTranscriptLine("AI Platform", "Handshake signature reconciled. Paused fulfillment released.", 13000);
+    queueTranscriptLine("System Platform", "Handshake signature reconciled. Paused fulfillment released.", 13000);
   }
 }
 
@@ -2675,7 +2729,7 @@ function resolveVoiceCallAction() {
 
     const valText = document.getElementById("cockpit-impact-value");
     if (valText) {
-      if (action.category === 'Route') {
+      if (action.routeCard || (action.id && action.id.startsWith("AI-1") && !action.predictiveCard && !action.operationsCard)) {
         valText.innerText = "355,300";
       } else if (action.category === 'Finance') {
         valText.innerText = "361,050";
@@ -2683,7 +2737,7 @@ function resolveVoiceCallAction() {
         valText.innerText = "387,850";
       }
     }
-    showToast(`Action ${action.id} resolved successfully via voice agent call verification.`);
+    showToast(`Action ${action.id} resolved successfully via voice module call verification.`);
   }
 
   navigateToScreen('twins');
@@ -3850,7 +3904,7 @@ const appTranslations = {
     btn_send_to_lab: "Send to Lab (Shadow Simulation)",
     notification_channel_label: "Preferred Channels",
     audit_terminal: "AUDIT REASONING TERMINAL",
-    react_console_title: "Semantic Validation Agent (ReAct Loop)",
+    react_console_title: "Semantic Validation Module (Execution Loop)",
     react_console_progress_label: "ReAct Execution Progress",
     react_btn_abort: "Abort Stream",
     react_btn_resolve: "Apply Remediation",
@@ -3886,31 +3940,31 @@ const appTranslations = {
     route_est_leak: "Est. Leak",
     call_carrier: "Voice Call Carrier",
     call_finance: "Initiate Claims Call",
-    call_supplier: "Call Supplier Agent",
+    call_supplier: "Call Supplier Module",
 
     // Slide Deck translations
-    slide_0_title: "The Digital Twin for <span>Enterprise Operations</span>",
-    slide_0_body: "Grounding autonomous agent workflows in validated compliance logic. We audit transaction pipelines, stress-test supply cashflows, and reconcile written SOPs against active databases securely under localized AI.",
+    slide_0_title: "Your Operations <span>Digital Twin</span>",
+    slide_0_body: "Continuous Forecasting. Defensible Execution. Ground your automation with validated business rules on a Strictly Compartmentalized Node. Gain exponential operational advantage over fulfillments and claims.",
     slide_1_title: "Aligning <span>Business Stakeholders</span>",
-    slide_1_body: "Addressing operational inefficiencies through dedicated agentic specialist profiles:",
-    slide_1_cfo: "<strong>The CFO:</strong> Outlines margin loss from customs demurrage fee discrepancies. <em>\"Turn recovery claims into net profit.\"</em>",
-    slide_1_ops: "<strong>Ops Director:</strong> Focuses on database code drifting from written operating manual guides. <em>\"Verify observed matches expected.\"</em>",
-    slide_1_revops: "<strong>RevOps Manager:</strong> Protects query ingestion models from public vendor hallucinations. <em>\"Local inference guarantees data safety.\"</em>",
-    slide_1_shipper: "<strong>Shipper/Broker:</strong> Minimizes port container demurrage through automated tariff audits. <em>\"Acts as an autonomous broker paralegal.\"</em>",
-    slide_2_title: "Runink Monitor & <span>Actionable Twins</span>",
-    slide_2_mon_title: "1. Runink Monitor",
-    slide_2_mon_body: "Gathers non-invasive query telemetry, runs HDBSCAN semantic clustering, maps SQL rules, and stress-tests cashflow via local runners in isolated Linux containers.",
-    slide_2_twin_title: "2. Actionable Twins",
-    slide_2_twin_body: "Executes the inferred resolutions as pre-compiled drafts (WhatsApp alerts, email drafts, SQL scripts) awaiting one-click human-in-the-loop authorization.",
-    slide_3_title: "Global Trade <span>Detention Claims</span>",
-    slide_3_body: "Automating claims audits at customs ports to eliminate demurrage losses:",
+    slide_1_body: "Addressing operational inefficiencies through dedicated autonomous execution modules:",
+    slide_1_cfo: "<strong>Claims Disputes:</strong> Processes complex inbound SLA deviations to logically draft irrefutable chargebacks.",
+    slide_1_ops: "<strong>Reverse Logistics:</strong> Triages inbound returns to instantly deduce the optimal routing, protecting cash flow and warehouse capacity.",
+    slide_1_revops: "<strong>Demand Forecasting:</strong> Monitors pipeline velocity across disparate retail branches to deduce anomalies before they disrupt availability.",
+    slide_1_shipper: "<strong>Predictive Maintenance:</strong> Monitors IoT telemetry from your critical assets, identifying degradation patterns before mechanical failures occur.",
+    slide_2_title: "Telemetry-Driven Visibility & <span>Autonomous Execution</span>",
+    slide_2_mon_title: "1. Telemetry-Driven Visibility",
+    slide_2_mon_body: "Uncover hidden anomalies standard tools miss utilizing deep semantic understanding. Our models validate telemetry and facts before executing operations.",
+    slide_2_twin_title: "2. Autonomous Execution",
+    slide_2_twin_body: "Deploy Forensic Claims Modules, Predictive Inventory Twins, and Anomaly Engines to directly drive exponential operational advantage and defensible execution.",
+    slide_3_title: "Claims <span>Disputes</span>",
+    slide_3_body: "Processing complex inbound SLA deviations without human bottlenecking:",
     slide_3_step1: "<strong>Metadata Recovery:</strong> Connects to Snowflake database schemas.",
     slide_3_step2: "<strong>Tariff Check:</strong> Cross-references HS customs codes against compliance checklists.",
     slide_3_step3: "<strong>Simulation:</strong> Predicts container flag probability in sandboxed runner.",
     slide_3_step4: "<strong>Synthesis:</strong> Drafts Weight Discrepancy Adjustment claim email automatically.",
     slide_3_step5: "<strong>Dispatch:</strong> Operations manager signs off PO in Cockpit with one click.",
-    slide_4_title: "Preemptive <span>Purchase Orders</span>",
-    slide_4_body: "Avoiding inventory stockouts through statistical trend decomposition:",
+    slide_4_title: "Demand <span>Forecasting</span>",
+    slide_4_body: "Deducing anomalies before they disrupt in-store availability:",
     slide_4_step1: "<strong>Telemetry Scan:</strong> Aggregates warehousing inventory signals.",
     slide_4_step2: "<strong>Seasonality:</strong> Prophet filters seasonal variance.",
     slide_4_step3: "<strong>ERP Release:</strong> Dispatches PO directly to Odoo ERP upon verification.",
@@ -3922,10 +3976,10 @@ const appTranslations = {
     slide_iot_step4: "<strong>Dispatch:</strong> Manager reviews and sends the service request with one click.",
     slide_5_title: "Zero-Trust <span>Security Blueprint</span>",
     slide_5_body: "Designed from the ground up for data isolation and security requirements:",
-    slide_5_sec1: "<strong>✓ Isolated AI Processing:</strong> Running locally. Enterprise data is never transmitted to external APIs.",
+    slide_5_sec1: "<strong>✓ Isolated System Processing:</strong> Running locally. Enterprise data is never transmitted to external APIs.",
     slide_5_sec2: "<strong>✓ Secure Sandboxed Execution:</strong> Active script runners execute in secure sandboxes to prevent unauthorized data access.",
     slide_5_sec3: "<strong>✓ Continuous Data Sync:</strong> Internal system states synchronize securely across pipelines in real-time.",
-    slide_5_sec4: "<strong>✓ ISO 42001 Compliance:</strong> Includes visible AI indicator notices (✨) on generated text to trace data history.",
+    slide_5_sec4: "<strong>✓ ISO 42001 Compliance:</strong> Includes visible System indicator notices (✨) on generated text to trace data history.",
 
     // Action cases
     action_sentinel_1_title: "Suspicious Access Attempt",
@@ -4032,7 +4086,7 @@ const appTranslations = {
     action_sentinel_6_source: "Data Ingress Filter",
     action_sentinel_7_title: "API Token Boundary Violation",
     action_sentinel_7_desc: "Access token generated for partner portal outside standard geographical boundaries. Suspended.",
-    action_sentinel_7_source: "Geofence Agent",
+    action_sentinel_7_source: "Geofence Module",
 
     action_forge_4_title: "Transport Dispatch Schedule",
     action_forge_4_desc: "Automated schedule generated for empty carrier pickups to avoid depot congestion next week.",
@@ -4048,7 +4102,7 @@ const appTranslations = {
     action_forge_6_impact: "+$18,200.00 Reclaim",
     action_forge_7_title: "Inventory Reorder Suggestion",
     action_forge_7_desc: "Pre-calculated purchase request generated for safe stock replenishment ahead of shutdown.",
-    action_forge_7_source: "Predictive Reorder Agent",
+    action_forge_7_source: "Predictive Reorder Module",
     action_forge_7_impact: "Safety Stock Buffer",
 
     action_compliance_4_title: "Decalibration Drift Flagged",
@@ -4070,7 +4124,7 @@ const appTranslations = {
 
     action_finance_4_title: "Tariff Mismatch Penalty Claim",
     action_finance_4_desc: "HS Code 8479.89.97 was double-billed for port services. Dispute draft queued.",
-    action_finance_4_source: "Billing Dispute Agent",
+    action_finance_4_source: "Billing Dispute Module",
     action_finance_4_impact: "+$3,450.00 Refund",
     action_finance_5_title: "Fuel Surcharge Discrepancy",
     action_finance_5_desc: "Logistics carrier invoiced fuel charge 12% above negotiated contract index rate. Held.",
@@ -4250,11 +4304,11 @@ const appTranslations = {
     slide_0_title: "El Gemelo Digital para <span>Operaciones Empresariales</span>",
     slide_0_body: "Fundamentando los flujos de agentes autónomos en una lógica de cumplimiento validada. Auditamos canales de transacciones, analizamos flujos de caja y reconciliamos manuales operativos con bases de datos activas mediante IA local de forma segura.",
     slide_1_title: "Alineando a los <span>Líderes de Negocio</span>",
-    slide_1_body: "Abordando las ineficiencias operativas mediante perfiles de especialistas agenticos dedicados:",
+    slide_1_body: "Abordando las ineficiencias operativas mediante perfiles de especialistas autonomousos dedicados:",
     slide_1_cfo: "<strong>El CFO:</strong> Identifica pérdida de margen por discrepancias de demurrage portuario. <em>\"Convierta los reclamos de reembolso en beneficio neto.\"</em>",
     slide_1_ops: "<strong>Director de Ops:</strong> Evita divergencias entre las reglas de base de datos y manuales operativos escritos. <em>\"Verifique si lo observado coincide con lo esperado.\"</em>",
     slide_1_revops: "<strong>Gerente de RevOps:</strong> Protege la ingesta de datos contra alucinaciones de modelos públicos. <em>\"La ejecución local garantiza la seguridad de datos.\"</em>",
-    slide_1_shipper: "<strong>Despachante/Broker:</strong> Minimiza retrasos portuarios mediante auditorías automáticas de aranceles. <em>\"Actúa como un paralegal de aduanas autónomo.\"</em>",
+    slide_1_shipper: "<strong>Despachante/Broker:</strong> Minimiza retrasos portuarios mediante auditorías automáticas de aranceles. <em>\"Actúa como un module de aduanas autónomo.\"</em>",
     slide_2_title: "Runink Monitor y <span>Gemelos Activos</span>",
     slide_2_mon_title: "1. Monitor Runink",
     slide_2_mon_body: "Recopila telemetría de datos no invasiva, agrupa incidencias semánticas, mapea reglas operativas y valida flujos de caja en contenedores seguros aislados.",
@@ -4566,7 +4620,7 @@ const appTranslations = {
     btn_send_to_lab: "Envoyer au Lab (Simulation Ombre)",
     notification_channel_label: "Canaux Préférés",
     audit_terminal: "CONSOLE DE RAISONNEMENT D'AUDIT",
-    react_console_title: "Agent de Validation Sémantique (Boucle ReAct)",
+    react_console_title: "Module de Validation Sémantique (Boucle ReAct)",
     react_console_progress_label: "Progrès de l'Exécution ReAct",
     react_btn_abort: "Abandonner le Flux",
     react_btn_resolve: "Appliquer la Remédiation",
@@ -4599,7 +4653,7 @@ const appTranslations = {
     route_est_leak: "Perte Est.",
     call_carrier: "Appeler Transporteur",
     call_finance: "Lancer l'Appel de Réclamation",
-    call_supplier: "Appeler Agent Fournisseur",
+    call_supplier: "Appeler Module Fournisseur",
 
     // Slide translations
     slide_0_title: "Le Jumeau Numérique pour <span>Opérations d'Entreprise</span>",
@@ -4741,7 +4795,7 @@ const appTranslations = {
     action_sentinel_6_source: "Filtre d'Ingestion de Données",
     action_sentinel_7_title: "Violation de Limite Token API",
     action_sentinel_7_desc: "Token d'accès généré pour le portail partenaire en dehors des limites géographiques standard. Suspendu.",
-    action_sentinel_7_source: "Agent de Géorepérage",
+    action_sentinel_7_source: "Module de Géorepérage",
 
     action_forge_4_title: "Planning d'Envoi de Transport",
     action_forge_4_desc: "Planning automatisé généré pour les ramassages de transporteurs à vide afin d'éviter la congestion du dépôt la semaine prochaine.",
@@ -4757,7 +4811,7 @@ const appTranslations = {
     action_forge_6_impact: "+$18,200.00 Réclamation",
     action_forge_7_title: "Suggestion de Réapprovisionnement",
     action_forge_7_desc: "Demande d'achat précalculée générée pour le réapprovisionnement sécurisé des stocks avant la fermeture.",
-    action_forge_7_source: "Agent de Commande Prédictive",
+    action_forge_7_source: "Module de Commande Prédictive",
     action_forge_7_impact: "Stock de Sécurité",
 
     action_compliance_4_title: "Écart de Calibrage Signalé",
@@ -4779,7 +4833,7 @@ const appTranslations = {
 
     action_finance_4_title: "Litige pour Écart de Code HS",
     action_finance_4_desc: "Le code tarifaire HS 8479.89.97 a été facturé en double pour les services portuaires. Projet de contestation en attente.",
-    action_finance_4_source: "Agent de Litige de Facturation",
+    action_finance_4_source: "Module de Litige de Facturation",
     action_finance_4_impact: "+$3,450.00 Remboursement",
     action_finance_5_title: "Écart de Surcharge de Carburant",
     action_finance_5_desc: "Le transporteur logistique a facturé le carburant 12% au-dessus du taux contractuel. Retenu.",
@@ -5273,7 +5327,7 @@ function changeLanguage(lang, showToastAlert = true) {
     showNodeDetails(nodeTitle.innerText);
   }
 
-  const sel = document.getElementById("react-agent-selector");
+  const sel = document.getElementById("react-module-selector");
   if (sel) {
     updateRemediationScreenForAgent(sel.value);
   }
@@ -5360,7 +5414,7 @@ const screenSpecs = {
 - Target Dashboard: Demand & Trend Simulator
 - Parameters: Forecast Seasonality, Margin Safety Buffer, Outlier Z-Score Limits
 - Data Standard: Operational Predictive Models`,
-    telecom: "Synthetic twin action results trigger WhatsApp alerts. Voice agent call pathways verified."
+    telecom: "Synthetic twin action results trigger WhatsApp alerts. Voice module call pathways verified."
   },
   "runner-conn": {
     name: "Runner & Connection Configurations",
@@ -5395,7 +5449,7 @@ function closeSpecsModal() {
   if (overlay) overlay.style.display = "none";
 }
 
-// ReAct Agent streams containing step-by-step Execution Loop state outputs (Thoughts, Actions, Observations, and Final Results in TOON)
+// ReAct Module streams containing step-by-step Execution Loop state outputs (Thoughts, Actions, Observations, and Final Results in TOON)
 const reactAgentStreams = {
   English: {
     Sentinel: [
@@ -5927,24 +5981,24 @@ function runReactAgentLoop() {
   const btnAbort = document.getElementById("btn-react-abort");
   const btnResolve = document.getElementById("btn-react-resolve");
 
-  const agentSelector = document.getElementById("react-agent-selector");
+  const agentSelector = document.getElementById("react-module-selector");
   const activeAgent = agentSelector ? agentSelector.value : "Sentinel";
 
-  const agentIcon = document.getElementById("react-console-agent-icon");
-  const agentName = document.getElementById("react-console-agent-name");
-  const agentGoal = document.getElementById("react-console-agent-goal");
+  const agentIcon = document.getElementById("react-console-module-icon");
+  const agentName = document.getElementById("react-console-module-name");
+  const agentGoal = document.getElementById("react-console-module-goal");
 
   if (activeAgent === "Sentinel") {
     if (agentIcon) agentIcon.innerText = "🛡️";
-    if (agentName) agentName.innerText = currentLanguage === 'Portuguese' ? "Agente Sentinel (Conformidade)" : "Sentinel Agent (Compliance)";
+    if (agentName) agentName.innerText = currentLanguage === 'Portuguese' ? "Agente Sentinel (Conformidade)" : "Forensic Claims Module (Compliance)";
     if (agentGoal) agentGoal.innerText = currentLanguage === 'Portuguese' ? "Tarefa: Inspeção automática de campos expostos na tabela Customer Gold" : "Task: Auto-inspect unmasked fields in Customer Gold table";
-  } else if (activeAgent === "Route") {
+  } else if (activeAgent === "Operations") {
     if (agentIcon) agentIcon.innerText = "🚚";
-    if (agentName) agentName.innerText = currentLanguage === 'Portuguese' ? "Agente de Distribuição (Logística)" : "Fulfilment Agent (Logistics)";
+    if (agentName) agentName.innerText = currentLanguage === 'Portuguese' ? "Agente de Distribuição (Logística)" : "Fulfilment Module (Logistics)";
     if (agentGoal) agentGoal.innerText = currentLanguage === 'Portuguese' ? "Tarefa: Otimizar retorno de frota vazia para coleta de fornecedor" : "Task: Optimize empty fleet return for backhaul pickup";
   } else if (activeAgent === "Finance") {
     if (agentIcon) agentIcon.innerText = "💰";
-    if (agentName) agentName.innerText = currentLanguage === 'Portuguese' ? "Agente de Contestações (Finanças)" : "Claims Agent (Finance)";
+    if (agentName) agentName.innerText = currentLanguage === 'Portuguese' ? "Agente de Contestações (Finanças)" : "Anomaly Engine (Finance)";
     if (agentGoal) agentGoal.innerText = currentLanguage === 'Portuguese' ? "Tarefa: Detectar e contestar tarifas excedentes de demurrage" : "Task: Detect and dispute demurrage contract cap overruns";
   }
 
@@ -6082,7 +6136,7 @@ function scrollLogsToBottom() {
   }
 }
 
-// Update the entire Remediation screen content based on active agent selection
+// Update the entire Remediation screen content based on active module selection
 function updateRemediationScreenForAgent(agentType) {
   const title = document.getElementById("remediation-title");
   const subtitle = document.getElementById("remediation-header-subtitle");
@@ -6361,11 +6415,11 @@ function triggerWhatsAppAgentNegotiation() {
       id: "TWIN-116",
       category: "Finance",
       title: "Approve Discounted Order",
-      description: `Our agent was able to get better discounts over WhatsApp through messages with provider ${providerName}.`,
+      description: `Our module was able to get better discounts over WhatsApp through messages with provider ${providerName}.`,
       priority: "High",
       impact: "+14.2% Saving",
       ai_generated: true,
-      source: "Agentic WhatsApp Negotiator",
+      source: "Autonomous WhatsApp Negotiator",
       path: "/artifact",
       contactName: providerName,
       contactPhone: providerPhone
@@ -6376,7 +6430,7 @@ function triggerWhatsAppAgentNegotiation() {
   showToast(
     currentLanguage === 'Portuguese'
       ? `Nosso agente conseguiu descontos melhores no WhatsApp com o provedor ${providerName}. Aprovar pedido atualizado?`
-      : `Our agent was able to get better discounts over WhatsApp through messages with provider ${providerName}. Approve updated order?`
+      : `Our module was able to get better discounts over WhatsApp through messages with provider ${providerName}. Approve updated order?`
   );
 }
 

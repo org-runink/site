@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/> <!-- pragma: allowlist secret -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> <!-- pragma: allowlist secret -->
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="icon" href="favicon.png">
 </head>
 <body>
 
@@ -47,7 +47,7 @@
           <span class="screen-pill-status"></span>
         </div>
         <div class="screen-pill" id="btn-show-slides">
-          <span>What's Runink FACE (Fulfilment Autonomous Claims Engine)</span>
+          <span>What's Runink Operations Digital Twin</span>
           <span class="screen-pill-status"></span>
         </div>
 
@@ -146,13 +146,13 @@
                 </div>
                 <h2 class="screen-header-title" data-translate="title_twin">Digital <span>Twin</span></h2>
               </div>
-              <div class="screen-header-btn" onclick="triggerWhatsAppAgentNegotiation()" title="Trigger Agent Simulator"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+              <div class="screen-header-btn" onclick="triggerWhatsAppAgentNegotiation()" title="Trigger System Simulator"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
             </div>
 
             <!-- Top Dashboard Stats Grid -->
-            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 24px;">
+            <div class="dashboard-top-grid">
               <!-- Impact Potential Card -->
-              <div class="flutter-card">
+              <div class="flutter-card" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
                 <div class="impact-label">IMPACT POTENTIAL</div>
                 <div class="impact-row">
                   <div class="impact-val-container">
@@ -202,8 +202,8 @@
                 </div>
               </div>
 
-              <div style="border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px; display:flex; flex-direction:column; gap:6px;">
-                <span style="font-size:0.65rem; color:var(--text-muted);">Simulate offline agent tasks:</span>
+              <div style="border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px; display:flex; flex-direction:column; gap:6px; margin-top:auto;">
+                <span style="font-size:0.65rem; color:var(--text-muted);">Simulate offline module tasks:</span>
                 <button type="button" class="draft-card-button" style="margin:0; width:100%; justify-content:center; font-size:0.65rem; border-color:rgba(37,211,102,0.3); color:#25D366; background:rgba(37,211,102,0.1); display:flex; align-items:center; gap:4px; padding:6px 8px;" onclick="triggerWhatsAppAgentNegotiation()">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                   Simulate WhatsApp Negotiation
@@ -212,7 +212,7 @@
             </div>
 
             <!-- Contacts quick view section on Twins page -->
-            <div class="flutter-card" style="display:flex; flex-direction:column; gap:10px;">
+            <div class="flutter-card" style="display:flex; flex-direction:column; gap:10px; height:100%;">
               <div class="status-section-title" style="margin:0; font-size:0.7rem; margin-left:-18px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 TWIN CONTACT LISTS
@@ -248,25 +248,9 @@
               </div>
 
             <div class="status-scroll-bar">
-              <div class="status-card selected status-sentinel" data-filter="Sentinel">
-                <div class="status-icon-wrapper">
-                  <div class="status-icon-inner" style="position: relative; display: flex;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    <span class="status-dot-badge"></span>
-                  </div>
-                </div>
-                <span class="status-card-label">SENTINEL</span>
-              </div>
-              <div class="status-card status-forge" data-filter="Forge">
-                <div class="status-icon-wrapper">
-                  <div class="status-icon-inner" style="position: relative; display: flex;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    <span class="status-dot-badge"></span>
-                  </div>
-                </div>
-                <span class="status-card-label">FORGE</span>
-              </div>
-              <div class="status-card status-compliance" data-filter="Compliance">
+              
+              
+              <div class="status-card selected status-compliance" data-filter="Compliance">
                 <div class="status-icon-wrapper">
                   <div class="status-icon-inner" style="position: relative; display: flex;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -284,15 +268,7 @@
                 </div>
                 <span class="status-card-label">FINANCE</span>
               </div>
-              <div class="status-card status-route" data-filter="Route">
-                <div class="status-icon-wrapper">
-                  <div class="status-icon-inner" style="position: relative; display: flex;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-                    <span class="status-dot-badge"></span>
-                  </div>
-                </div>
-                <span class="status-card-label">ROUTE</span>
-              </div>
+              
               <div class="status-card status-operations" data-filter="Operations">
                 <div class="status-icon-wrapper">
                   <div class="status-icon-inner" style="position: relative; display: flex;">
@@ -362,9 +338,13 @@
               <div class="ai-prob-box">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ai-prob-icon"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
                 <div class="ai-prob-text">
-                  AI detected a <span class="ai-prob-highlight">92% probability</span> of catastrophic engine failure within 400 miles based on vibration and temp telemetry.
+                  System detected a <span class="ai-prob-highlight">92% probability</span> of catastrophic engine failure within 400 miles based on vibration and temp telemetry.
                 </div>
               </div>
+            </div>
+
+            <div id="artifact-map-wrapper" style="display: none; width: 100%; margin-bottom: 24px;">
+              <div id="artifact-osm-map" class="osm-map-container"></div>
             </div>
 
             <div class="section-label">GENERATED DRAFTS</div>
@@ -460,12 +440,12 @@
                 </div>
                 <h2 class="screen-header-title" data-translate="title_remediation">Remediation <span>Workflow</span></h2>
               </div>
-              <!-- Dropdown selector for active Agent Context -->
+              <!-- Dropdown selector for active Module Context -->
               <div style="margin-left:auto; margin-right:8px;">
-                <select id="react-agent-selector" style="background:rgba(236, 91, 19, 0.15); border:1px solid rgba(236, 91, 19, 0.4); color:var(--accent-orange-light); padding:4px 8px; border-radius:12px; font-size:0.7rem; font-weight:700; cursor:pointer; outline:none; font-family:var(--font-sans);">
-                  <option value="Sentinel" style="background:#120907; color:#fff;" selected>Sentinel Agent (Compliance)</option>
-                  <option value="Route" style="background:#120907; color:#fff;">Fulfilment Agent (Logistics)</option>
-                  <option value="Finance" style="background:#120907; color:#fff;">Claims Agent (Finance)</option>
+                <select id="react-module-selector" style="background:rgba(236, 91, 19, 0.15); border:1px solid rgba(236, 91, 19, 0.4); color:var(--accent-orange-light); padding:4px 8px; border-radius:12px; font-size:0.7rem; font-weight:700; cursor:pointer; outline:none; font-family:var(--font-sans);">
+                  <option value="Sentinel" style="background:#120907; color:#fff;" selected>Forensic Claims Module (Compliance)</option>
+                  <option value="Operations" style="background:#120907; color:#fff;">Predictive Inventory Twin</option>
+                  <option value="Finance" style="background:#120907; color:#fff;">Anomaly Engine (Finance)</option>
                 </select>
               </div>
               <div class="screen-header-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
@@ -706,6 +686,70 @@
               <div class="screen-header-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
             </div>
 
+            <!-- Scorecard grid metrics -->
+            <div class="scoreboard-grid" id="maturity-scores">
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="92"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">Predictive Accuracy</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="85"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">Fleet Uptime Index</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="94"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">SLA Conformity</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="88"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">Data Quality Index</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="96"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">Risk & Compliance</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="81"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">System Readiness Level</span>
+              </div>
+            </div>
+
             <!-- Graph and Inspector details panel in a two-column desktop grid -->
             <div class="screen-grid-2" style="grid-template-columns: 1.1fr 0.9fr; margin-bottom: 24px; align-items: stretch;">
               <!-- Maturity Graph Node simulation widget -->
@@ -740,33 +784,6 @@
               </div>
             </div>
 
-            <!-- Scorecard grid metrics -->
-            <div class="scoreboard-grid" id="maturity-scores">
-              <div class="scorecard-box">
-                <span class="scorecard-num">92%</span>
-                <span class="scorecard-label">Predictive Accuracy</span>
-              </div>
-              <div class="scorecard-box">
-                <span class="scorecard-num">85%</span>
-                <span class="scorecard-label">Fleet Uptime Index</span>
-              </div>
-              <div class="scorecard-box">
-                <span class="scorecard-num">94%</span>
-                <span class="scorecard-label">SLA Conformity</span>
-              </div>
-              <div class="scorecard-box">
-                <span class="scorecard-num">88%</span>
-                <span class="scorecard-label">Data Quality</span>
-              </div>
-              <div class="scorecard-box">
-                <span class="scorecard-num">91%</span>
-                <span class="scorecard-label">Risk & Compliance</span>
-              </div>
-              <div class="scorecard-box">
-                <span class="scorecard-num">78%</span>
-                <span class="scorecard-label">AI Readiness</span>
-              </div>
-            </div>
 
             <div class="status-section-title">LOGISTICS & PREDICTIVE MAINTENANCE ASSESSMENT</div>
 
@@ -949,7 +966,7 @@
               <div style="background-color:rgba(236,91,19,0.1); border:1px solid rgba(236,91,19,0.3); border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px;">
                 <div style="width:20px; height:20px; border:2px solid var(--accent-orange-light); border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
                 <div>
-                  <div style="font-size:0.65rem; font-weight:700; color:var(--accent-orange-light); letter-spacing:1px;">AGENT ORCHESTRATION IN PROGRESS</div>
+                  <div style="font-size:0.65rem; font-weight:700; color:var(--accent-orange-light); letter-spacing:1px;">MODULE ORCHESTRATION IN PROGRESS</div>
                   <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Verifying maintenance policies against Fleet Telemetry Streams...</div>
                 </div>
               </div>
@@ -1241,9 +1258,9 @@
                   </div>
 
                   <div style="display:flex; gap:16px;">
-                    <button style="flex:1; background:transparent; border:1px solid var(--glass-white-05); color:var(--technical-orange); padding:16px; border-radius:12px; font-weight:700; letter-spacing:1.5px; display:flex; justify-content:center; align-items:center; gap:8px; cursor:pointer;" onclick="showToast('Hypothesis sent to Twins Agent. Dashboard updated.')">
+                    <button style="flex:1; background:transparent; border:1px solid var(--glass-white-05); color:var(--technical-orange); padding:16px; border-radius:12px; font-weight:700; letter-spacing:1.5px; display:flex; justify-content:center; align-items:center; gap:8px; cursor:pointer;" onclick="showToast('Hypothesis sent to Predictive Inventory Twin. Dashboard updated.')">
                       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                      INFORM AGENT
+                      INFORM TWIN
                     </button>
                     <button id="btn-execute-hypothesis" style="flex:2; background:var(--technical-orange); color:#fff; border:none; padding:16px; border-radius:12px; font-weight:900; letter-spacing:1.5px; display:flex; justify-content:center; align-items:center; gap:8px; cursor:pointer;">
                       <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -1477,13 +1494,13 @@
             <button class="bottom-action-btn-primary" id="btn-cancel-mic" style="max-width:200px; background-color:var(--surface-highlight); border:1px solid rgba(255,255,255,0.05); box-shadow:none;">Cancel</button>
           </div>
 
-          <!-- VOICE AGENT CALL OVERLAY -->
+          <!-- VOICE SYSTEM CALL OVERLAY -->
           <div id="voip-call-overlay" class="voip-call-overlay" style="display:none;">
             <div class="voip-contact-avatar" id="voip-avatar">
               <div class="voip-avatar-pulse"></div>
               📞
             </div>
-            <div class="voip-contact-name" id="voip-caller-name">Voice Agent Dispatcher</div>
+            <div class="voip-contact-name" id="voip-caller-name">Operations Voice Dispatcher</div>
             <div class="voip-call-status" id="voip-call-status">
               <span class="pulse-dot-red" style="background-color: #EC5B13; box-shadow: 0 0 8px #EC5B13;"></span>
               <span id="voip-call-timer">Connecting...</span>
@@ -1559,17 +1576,17 @@
             <div style="display:flex; width:100%; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(236, 91, 19, 0.25); padding-bottom:10px; margin-bottom:12px;">
               <div style="display:flex; align-items:center; gap:8px;">
                 <span class="pulse-dot-red" id="react-console-status-dot" style="background-color:#ef4444; box-shadow:0 0 8px #ef4444; width:8px; height:8px;"></span>
-                <span style="font-family:var(--font-mono); font-size:0.75rem; color:#fff; font-weight:bold; letter-spacing:1px; text-transform:uppercase;" id="react-console-title" data-translate="react_console_title">Semantic Validation Agent (ReAct Loop)</span>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:#fff; font-weight:bold; letter-spacing:1px; text-transform:uppercase;" id="react-console-title" data-translate="react_console_title">Semantic Validation Module (Execution Loop)</span>
               </div>
               <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--text-muted); background:rgba(255,255,255,0.03); padding:2px 6px; border-radius:4px; border:1px solid rgba(255,255,255,0.05);" id="react-console-iter">ITERATION: --/--</span>
             </div>
 
-            <!-- Agent Details Area (Obsidian Ember theme) -->
+            <!-- Module Details Area (Obsidian Ember theme) -->
             <div style="width:100%; display:flex; gap:10px; margin-bottom:12px; background:rgba(236, 91, 19, 0.03); border:1px solid rgba(236, 91, 19, 0.1); border-radius:8px; padding:8px 12px; font-size:0.8rem; line-height:1.4;">
-              <div style="font-size:1.5rem; display:flex; align-items:center; justify-content:center;" id="react-console-agent-icon">🛡️</div>
+              <div style="font-size:1.5rem; display:flex; align-items:center; justify-content:center;" id="react-console-module-icon">🛡️</div>
               <div style="flex:1;">
-                <div style="font-weight:700; color:#fff;" id="react-console-agent-name">Sentinel Agent (Compliance)</div>
-                <div style="color:var(--text-muted); font-size:0.75rem;" id="react-console-agent-goal">Task: Auto-inspect unmasked fields in Customer Gold table</div>
+                <div style="font-weight:700; color:#fff;" id="react-console-module-name">Forensic Claims Module (Compliance)</div>
+                <div style="color:var(--text-muted); font-size:0.75rem;" id="react-console-module-goal">Task: Auto-inspect unmasked fields in Customer Gold table</div>
               </div>
             </div>
 
@@ -1673,7 +1690,7 @@
             <span class="slide-number-tag">01 / 07 - INTRODUCTION</span>
             <h1 class="slide-heading-main" data-translate="slide_0_title">The Digital Twin for <span>Enterprise Operations</span></h1>
             <p class="slide-body-text" data-translate="slide_0_body">
-              Grounding autonomous agent workflows in validated compliance logic. We audit transaction pipelines, stress-test supply cashflows, and reconcile written SOPs against active databases securely under localized AI.
+              Ground your automation with validated business rules on a Strictly Compartmentalized Node. Gain exponential operational advantage over fulfillments and claims.
             </p>
           </div>
 
@@ -1682,7 +1699,7 @@
             <span class="slide-number-tag">02 / 07 - TARGET PERSONAS</span>
             <h1 class="slide-heading-main" data-translate="slide_1_title">Aligning <span>Business Stakeholders</span></h1>
             <p class="slide-body-text" data-translate="slide_1_body">
-              Addressing operational inefficiencies through dedicated agentic specialist profiles:
+              Addressing operational inefficiencies through dedicated autonomous execution modules:
             </p>
             <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; font-size:0.9rem;">
               <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);" data-translate="slide_1_cfo">
@@ -1695,7 +1712,7 @@
                 <strong style="color:var(--accent-orange-light);">RevOps Manager:</strong> Protects query ingestion models from public vendor hallucinations. <em>"Local inference guarantees data safety."</em>
               </div>
               <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);" data-translate="slide_1_shipper">
-                <strong style="color:var(--accent-orange-light);">Shipper/Broker:</strong> Minimizes port container demurrage through automated tariff audits. <em>"Acts as an autonomous broker paralegal."</em>
+                <strong style="color:var(--accent-orange-light);">Shipper/Broker:</strong> Minimizes port container demurrage through automated tariff audits. <em>"Acts as an autonomous compliance module."</em>
               </div>
             </div>
           </div>
@@ -1703,18 +1720,18 @@
           <!-- Slide 2: Workflow -->
           <div class="pitch-slide" id="p-slide-2">
             <span class="slide-number-tag">03 / 07 - OPERATIONAL FLOW</span>
-            <h1 class="slide-heading-main" data-translate="slide_2_title">Runink Monitor & <span>Actionable Twins</span></h1>
+            <h1 class="slide-heading-main" data-translate="slide_2_title">Telemetry-Driven Visibility & <span>Autonomous Execution</span></h1>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-top:10px;">
               <div>
-                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;" data-translate="slide_2_mon_title">1. Runink Monitor</h3>
+                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;" data-translate="slide_2_mon_title">1. Telemetry-Driven Visibility</h3>
                 <p style="font-size:0.85rem; line-height:1.5; color:var(--text-secondary);" data-translate="slide_2_mon_body">
-                  Gathers non-invasive query telemetry, runs HDBSCAN semantic clustering, maps SQL rules, and stress-tests cashflow via local runners in isolated Linux containers.
+                  Uncover hidden anomalies standard tools miss utilizing deep semantic understanding. Our models validate telemetry and facts before executing operations.
                 </p>
               </div>
               <div>
-                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;" data-translate="slide_2_twin_title">2. Actionable Twins</h3>
+                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;" data-translate="slide_2_twin_title">2. Autonomous Execution</h3>
                 <p style="font-size:0.85rem; line-height:1.5; color:var(--text-secondary);" data-translate="slide_2_twin_body">
-                  Executes the inferred resolutions as pre-compiled drafts (WhatsApp alerts, email drafts, SQL scripts) awaiting one-click human-in-the-loop authorization.
+                  Deploy Forensic Claims Modules, Predictive Inventory Twins, and Anomaly Engines to directly affect cash flow.
                 </p>
               </div>
             </div>
@@ -1783,15 +1800,29 @@
                 <strong style="color:var(--color-compliance);">✓ Continuous Data Sync:</strong> Internal system states synchronize securely across pipelines in real-time.
               </div>
               <div style="background-color:rgba(0,0,0,0.2); padding:16px; border-radius:12px;" data-translate="slide_5_sec4">
-                <strong style="color:var(--color-compliance);">✓ ISO 42001 Compliance:</strong> Includes visible AI indicator notices (✨) on generated text to trace data history.
+                <strong style="color:var(--color-compliance);">✓ ISO 42001 Compliance:</strong> Includes visible System indicator notices (✨) on generated text to trace data history.
               </div>
+            </div>
+          </div>
+
+          <!-- Slide 7: CTA -->
+          <div class="pitch-slide" id="p-slide-7">
+            <span class="slide-number-tag">08 / 08 - CALL TO ACTION</span>
+            <h1 class="slide-heading-main" data-translate="slide_7_title">What We Are <span>Seeking</span></h1>
+            <p class="slide-body-text" data-translate="slide_7_body">
+              Strategic networking and intellectual exchange. Initiate a technical briefing to map your operational bottlenecks and review our architectural deployment.
+            </p>
+            <div style="margin-top: 30px;">
+              <button class="draft-card-button" style="background-color: var(--accent-orange); color: #fff; padding: 12px 24px; font-size: 1rem; border: none; border-radius: 8px; cursor: pointer;">
+                Initiate Technical Briefing
+              </button>
             </div>
           </div>
 
         </div>
 
         <footer class="slides-footer">
-          <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);" id="slide-page-indicator">1 of 7</span>
+          <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);" id="slide-page-indicator">1 of 8</span>
 
           <div class="slides-progress-track">
             <div class="slides-progress-bar" id="slide-page-bar"></div>

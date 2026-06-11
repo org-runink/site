@@ -36,7 +36,9 @@
                     </div>
 
                     <div class="relative z-10">
-                        <h3 class="text-4xl font-black text-white mb-2 tracking-tight">Runink Monitor</h3>
+                        <h3 class="text-4xl font-black text-white mb-2 tracking-tight">
+                            {{ if eq .Page.Language.Lang "pt" }}Visibilidade Orientada por Telemetria{{ else if eq .Page.Language.Lang "fr" }}Visibilité Pilotée par la Télémétrie{{ else if eq .Page.Language.Lang "es" }}Visibilidad Impulsada por Telemetría{{ else }}Telemetry-Driven Visibility{{ end }}
+                        </h3>
                         <p class="text-[#C8D9A8] font-mono text-sm mb-12 uppercase tracking-widest">
                             {{ if eq .Page.Language.Lang "pt" }}Visibilidade e Inteligência{{ else if eq .Page.Language.Lang "fr" }}Visibilité & Intelligence{{ else if eq .Page.Language.Lang "es" }}Visibilidad e Inteligencia{{ else }}Visibility & Intelligence{{ end }}
                         </p>
@@ -135,7 +137,7 @@
                             {{ if eq .Page.Language.Lang "pt" }}Gêmeos Digitais de Operações{{ else if eq .Page.Language.Lang "fr" }}Jumeaux Numériques d'Opérations{{ else if eq .Page.Language.Lang "es" }}Gemelos Digitales de Operaciones{{ else }}Operations Digital Twins{{ end }}
                         </h3>
                         <p class="text-[#ea580c] font-mono text-sm mb-8 uppercase tracking-widest">
-                            {{ if eq .Page.Language.Lang "pt" }}Assistência Autônoma{{ else if eq .Page.Language.Lang "fr" }}Assistance Autonome{{ else if eq .Page.Language.Lang "es" }}Asistencia Autónoma{{ else }}Autonomous Assistance{{ end }}
+                            {{ if eq .Page.Language.Lang "pt" }}Visibilidade Orientada a Telemetria{{ else if eq .Page.Language.Lang "fr" }}Visibilité Pilotée par la Télémétrie{{ else if eq .Page.Language.Lang "es" }}Visibilidad Impulsada por Telemetría{{ else }}Telemetry-Driven Visibility{{ end }}
                         </p>
 
                         <ul class="space-y-8">
@@ -153,13 +155,13 @@
                                     </h4>
                                     <p class="text-stone-400 text-base leading-relaxed">
                                         {{ if eq .Page.Language.Lang "pt" }}
-                                            Descubra "tesouros escondidos" e anomalias que as ferramentas padrão perdem, utilizando compreensão semântica profunda. Nossos sistemas verificam os fatos antes de assumir premissas tendenciosas.
+                                            Descubra anomalias ocultas que as ferramentas padrão perdem utilizando compreensão semântica profunda. Nossos modelos validam telemetria e fatos antes de executar operações.
                                         {{ else if eq .Page.Language.Lang "fr" }}
-                                            Découvrez des « trésors cachés » et des anomalies que les outils standards manquent en utilisant une compréhension sémantique profonde. Nos systèmes vérifient les faits avant de se lancer dans des hypothèses biaisées.
+                                            Découvrez des anomalies cachées que les outils standards manquent en utilisant une compréhension sémantique profonde. Nos modèles valident la télémétrie et les faits avant d'exécuter des opérations.
                                         {{ else if eq .Page.Language.Lang "es" }}
-                                            Descubra "tesoros ocultos" y anomalías que las herramientas estándar pasan por alto utilizando una comprensión semántica profunda. Nuestros sistemas verifican los hechos antes de lanzarse a suposiciones sesgadas.
+                                            Descubra anomalías ocultas que las herramientas estándar pasan por alto utilizando una comprensión semántica profunda. Nuestros modelos validan telemetría y hechos antes de ejecutar operaciones.
                                         {{ else }}
-                                            Uncover "hidden treasures" and anomalies standard tools miss utilizing deep semantic understanding. Our systems check their facts before ever jumping into biased assumptions.
+                                            Uncover hidden anomalies standard tools miss utilizing deep semantic understanding. Our models validate telemetry and facts before executing operations.
                                         {{ end }}
                                     </p>
                                 </div>
@@ -174,17 +176,17 @@
                                 </div>
                                 <div>
                                     <h4 class="text-xl font-bold text-white mb-2">
-                                        {{ if eq .Page.Language.Lang "pt" }}Execução com Gêmeos Digitais de Operações{{ else if eq .Page.Language.Lang "fr" }}Exécution par Jumeaux Numériques d'Opérations{{ else if eq .Page.Language.Lang "es" }}Ejecución con Gemelos Digitales de Operaciones{{ else }}Operations Digital Twin Execution{{ end }}
+                                        {{ if eq .Page.Language.Lang "pt" }}Execução Autônoma{{ else if eq .Page.Language.Lang "fr" }}Exécution Autonome{{ else if eq .Page.Language.Lang "es" }}Ejecución Autónoma{{ else }}Autonomous Execution{{ end }}
                                     </h4>
                                     <p class="text-stone-400 text-base leading-relaxed">
                                         {{ if eq .Page.Language.Lang "pt" }}
-                                            Liberte o "Cérebro de Borda". Implante Paralegais Digitais, Gerentes de Operações, Compradores Estatísticos e Operadores de Receita Automatizados para redigir contestações autonomamente, rotear pedidos e executar pagamentos a menor, aguardando sua aprovação em um clique.
+                                            Implante Módulos Forenses de Contestações, Gêmeos Preditivos de Inventário e Reconciliadores de Fim de Ciclo para redigir contestações autonomamente, rotear pedidos e executar pagamentos a menor, aguardando sua aprovação em um clique.
                                         {{ else if eq .Page.Language.Lang "fr" }}
-                                            Libérez le « Cerveau de Bordure ». Déployez des paralégaux digitaux, des responsables d'opérations, des acheteurs statistiques et des opérateurs de revenus automatisés pour rédiger des réclamations de manière autonome, acheminer des commandes et exécuter des retenues de paiement, en attente de votre approbation en un clic.
+                                            Déployez des Modules Médico-Légaux de Réclamations, des Jumeaux Prédictifs d'Inventaire et des Réconciliateurs de Fin de Cycle pour rédiger des réclamations de manière autonome, acheminer des commandes et exécuter des retenues de paiement, en attente de votre approbation en un clic.
                                         {{ else if eq .Page.Language.Lang "es" }}
-                                            Libere el "Cerebro de Borde". Despliegue paralegales digitales, gerentes de operaciones, compradores estadísticos y operadores de ingresos automatizados para redactar reclamaciones de forma autónoma, enrutar pedidos y ejecutar retenciones de pago, a la espera de su aprobación en un solo clic.
+                                            Despliegue Módulos Forenses de Reclamaciones, Gemelos Predictivos de Inventario y Reconciliadores de Fin de Ciclo para redactar reclamaciones de forma autónoma, enrutar pedidos y ejecutar retenciones de pago, a la espera de su aprobación en un solo clic.
                                         {{ else }}
-                                            Turn the "Edge Brain" loose. Deploy Digital Paralegals, Operations Managers, Statistical Buyers, and Automated Revenue Operators to autonomously draft claims, route orders, and execute Short-Pays, awaiting your one-click approval.
+                                            Deploy Forensic Claims Modules, Predictive Inventory Twins, and End-of-Cycle Reconcilers to autonomously draft claims, route orders, and execute Short-Pays, awaiting your one-click approval.
                                         {{ end }}
                                     </p>
                                 </div>

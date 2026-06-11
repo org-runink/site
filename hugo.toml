@@ -90,6 +90,11 @@ paginatePath = "page"
         text = "Book your Consultation"
         url = "/#contact"
 
+      # Check it out button
+      [params.header.buttons.checkItOut]
+        text = "Check it out"
+        url = "/demo/"
+
   # Blog configuration
   [params.blog]
     enable = true
@@ -202,6 +207,10 @@ paginatePath = "page"
       text = "Réserver une Consultation"
       url = "/fr/#contact"
 
+    [languages.fr.params.header.buttons.checkItOut]
+      text = "Découvrez-le"
+      url = "/fr/demo/"
+
     [languages.fr.params.blog]
       title = "Publications, Décryptages & Expertise"
       subtitle = "Explorez nos livres blancs, cas d'usage réels et meilleures pratiques pour maximiser le ROI de vos initiatives de Transformation Digitale."
@@ -240,6 +249,10 @@ paginatePath = "page"
       text = "Reserve una Consulta"
       url = "/es/#contact"
 
+    [languages.es.params.header.buttons.checkItOut]
+      text = "Descúbrelo"
+      url = "/es/demo/"
+
     [languages.es.params.blog]
       title = "Publicaciones, Insights y Especialidad"
       subtitle = "Explore libros blancos, casos de uso reales y mejores prácticas accionables para maximizar el ROI de sus iniciativas de Transformación Digital."
@@ -277,6 +290,10 @@ paginatePath = "page"
     [languages.pt.params.header.buttons.getStarted]
       text = "Agende uma Consulta"
       url = "/pt/#contact"
+
+    [languages.pt.params.header.buttons.checkItOut]
+      text = "Confira"
+      url = "/pt/demo/"
 
     [languages.pt.params.blog]
       title = "Publicações, Insights e Especialização"

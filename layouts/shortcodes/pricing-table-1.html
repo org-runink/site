@@ -135,8 +135,12 @@
                         <!-- Checklist -->
                         <ul class="space-y-5 w-full text-left flex-grow mb-12">
                             {{ range .features }}
-                            {{ $isYearlyOnly := in . "(YEARLY ONLY)" }}
-                            {{ $cleanFeature := replace . "(YEARLY ONLY)" "" }}
+                            {{ $yearlyText := "(YEARLY ONLY)" }}
+                            {{ if eq $.Page.Language.Lang "fr" }}{{ $yearlyText = "(ANNUEL UNIQUEMENT)" }}{{ end }}
+                            {{ if eq $.Page.Language.Lang "es" }}{{ $yearlyText = "(SOLO ANUAL)" }}{{ end }}
+                            {{ if eq $.Page.Language.Lang "pt" }}{{ $yearlyText = "(APENAS ANUAL)" }}{{ end }}
+                            {{ $isYearlyOnly := in . $yearlyText }}
+                            {{ $cleanFeature := replace . $yearlyText "" }}
                             <li class="flex items-start {{ if $isYearlyOnly }}feature-yearly{{ end }}">
                                 <svg class="h-4 w-4 mt-0.5 flex-shrink-0 {{ $checkClasses }}" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
