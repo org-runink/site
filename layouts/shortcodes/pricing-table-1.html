@@ -1,24 +1,5 @@
 {{ $json := .Inner | transform.Unmarshal }}
-<section class="py-16 relative z-10">
-    <style>
-        .price-yearly,
-        .freq-yearly,
-        .feature-yearly {
-            display: none !important;
-        }
-
-        [data-pricing="yearly"] .price-yearly,
-        [data-pricing="yearly"] .freq-yearly,
-        [data-pricing="yearly"] .feature-yearly {
-            display: inline-flex !important;
-        }
-
-        [data-pricing="yearly"] .price-monthly,
-        [data-pricing="yearly"] .freq-monthly {
-            display: none !important;
-        }
-    </style>
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-16 relative z-10">    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {{ range $json.plans }}
             {{ $isOrangePill := eq .pill_color "orange" }}
