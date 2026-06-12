@@ -1873,8 +1873,10 @@ function initRouteMap() {
       subdomains: 'abcd'
     }).addTo(map);
 
+    // Force map to update its size to match the newly visible container
+    setTimeout(() => { map.invalidateSize(); }, 50);
     setTimeout(() => { map.invalidateSize(); }, 300);
-    setTimeout(() => { map.invalidateSize(); }, 1000);
+    setTimeout(() => { map.invalidateSize(); }, 800);
 
     // Generate dynamic-looking coordinates based on mapId string hash
     let hash = 0;
@@ -1967,8 +1969,13 @@ function navigateAction(actionId) {
     const artifactMapWrapper = document.getElementById("artifact-map-wrapper");
     if (artifactMapWrapper) {
       if (action.routeCard) {
+        // Ensure DOM registers the display block before Leaflet initializes
         artifactMapWrapper.style.display = "block";
-        setTimeout(initRouteMap, 100);
+        artifactMapWrapper.style.opacity = "0"; // hide momentarily while map renders
+        setTimeout(() => {
+            initRouteMap();
+            setTimeout(() => { artifactMapWrapper.style.opacity = "1"; }, 150);
+        }, 100);
       } else {
         artifactMapWrapper.style.display = "none";
       }

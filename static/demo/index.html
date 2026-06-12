@@ -152,17 +152,29 @@
             <!-- Top Dashboard Stats Grid -->
             <div class="dashboard-top-grid">
               <!-- Impact Potential Card -->
-              <div class="flutter-card" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+              <div class="flutter-card" style="display:flex; flex-direction:column; justify-content:space-between;">
                 <div class="impact-label">IMPACT POTENTIAL</div>
                 <div class="impact-row">
                   <div class="impact-val-container">
                     <span class="impact-val" id="cockpit-impact-value" style="font-size: 1.8rem;">342,850</span>
                   <span class="impact-unit">USD</span>
                 </div>
-                <div class="impact-trend-container">
+                <div class="impact-trend-container" style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
                   <div class="trend-badge">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                     <span>+14.2%</span>
+                  </div>
+                  <div class="trend-chart" style="width: 80px; height: 30px;">
+                    <svg viewBox="0 0 100 30" style="width:100%; height:100%; overflow:visible;">
+                      <path d="M0,25 L15,20 L30,28 L50,10 L70,15 L100,0" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M0,25 L15,20 L30,28 L50,10 L70,15 L100,0 L100,30 L0,30 Z" fill="url(#grad)" opacity="0.3"/>
+                      <defs>
+                        <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
                   </div>
                   <div class="trend-period">last 7 days</div>
                 </div>
@@ -212,7 +224,7 @@
             </div>
 
             <!-- Contacts quick view section on Twins page -->
-            <div class="flutter-card" style="display:flex; flex-direction:column; gap:10px; height:100%;">
+            <div class="flutter-card" style="display:flex; flex-direction:column; gap:10px;">
               <div class="status-section-title" style="margin:0; font-size:0.7rem; margin-left:-18px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 TWIN CONTACT LISTS
@@ -1393,7 +1405,7 @@
 
             <div class="screen-grid-2" style="grid-template-columns: 1fr 1fr;">
               <!-- Left: Database Connections -->
-              <div class="flutter-card" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+              <div class="flutter-card" style="display:flex; flex-direction:column; justify-content:space-between;">
                 <div>
                   <div class="status-section-title">INTEGRATION ENDPOINTS</div>
                   <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
