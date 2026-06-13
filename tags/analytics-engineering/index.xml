@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analytics Engineering on Runink</title>
+    <link>https://runink.org/tags/analytics-engineering/</link>
+    <description>Recent content in Analytics Engineering on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jun 2026 12:13:40 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/analytics-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms</title>
+      <link>https://runink.org/blog/automated-semantic-layer-data-observability/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/automated-semantic-layer-data-observability/</guid>
+      <description>&lt;h1 id=&#34;why-automated-semantic-layers-from-telemetry-events-are-the-pillars-of-data-observability-platforms&#34;&gt;Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Automated Semantic Layers&lt;/strong&gt; bridge raw telemetry to business context.&lt;/li&gt;&#xA;&lt;li&gt;They use real-time signals to create a dynamic, governed map of the data ecosystem.&lt;/li&gt;&#xA;&lt;li&gt;This transforms observability from passive monitoring to active intelligence.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-is-an-automated-semantic-layer&#34;&gt;What Is an Automated Semantic Layer?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;An &lt;strong&gt;automated semantic layer&lt;/strong&gt; is a continuously updated abstraction that converts raw system, pipeline, and application telemetry into structured, domain-aware insights — such as metrics, entities, and lineage graphs.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

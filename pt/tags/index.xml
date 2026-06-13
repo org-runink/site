@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Runink</title>
+    <link>https://runink.org/pt/tags/</link>
+    <description>Recent content in Tags on Runink</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 09 Jun 2026 12:13:40 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/pt/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automação De Processos</title>
+      <link>https://runink.org/pt/tags/automa%C3%A7%C3%A3o-de-processos/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/pt/tags/automa%C3%A7%C3%A3o-de-processos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Decisões Autônomas</title>
+      <link>https://runink.org/pt/tags/decis%C3%B5es-aut%C3%B4nomas/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/pt/tags/decis%C3%B5es-aut%C3%B4nomas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gêmeos Digitais</title>
+      <link>https://runink.org/pt/tags/g%C3%AAmeos-digitais/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/pt/tags/g%C3%AAmeos-digitais/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Runink</title>
+      <link>https://runink.org/pt/tags/runink/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/pt/tags/runink/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

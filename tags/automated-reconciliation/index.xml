@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automated Reconciliation on Runink</title>
+    <link>https://runink.org/tags/automated-reconciliation/</link>
+    <description>Recent content in Automated Reconciliation on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jun 2026 12:13:40 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/automated-reconciliation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Telemetry Data Supercharges Automated Reconciliation Domain Models</title>
+      <link>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</guid>
+      <description>&lt;h1 id=&#34;telemetry-led-automation-for-reliable-reconciliation&#34;&gt;Telemetry-Led Automation for Reliable Reconciliation&lt;/h1&gt;&#xA;&lt;h2 id=&#34;executive-summary-key-takeaways&#34;&gt;Executive Summary: Key Takeaways&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual Patchwork vs. Automation:&lt;/strong&gt; Current reconciliation routines rely heavily on manual log spelunking to resolve mismatched totals, hindering true scale.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Trusting the Inputs:&lt;/strong&gt; Automated data reconciliation requires &lt;strong&gt;rich telemetry streams&lt;/strong&gt; to provide the connective tissue for consistent, trustworthy inputs.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Domain-Driven Remediation:&lt;/strong&gt; When domain models incorporate telemetry signals, they enable &lt;strong&gt;automated rules, thresholds, and remediation playbooks&lt;/strong&gt;, vastly improving reliability for data professionals.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;how-does-problem-context-and-why-it-is-a-problem-impact-your-strategy&#34;&gt;How Does Problem Context and Why It Is a Problem Impact Your Strategy?&lt;/h2&gt;&#xA;&lt;p&gt;Crunching reconciliation mismatches still depends on heroic analysts exporting CSVs from warehouses, observability dashboards, ERP snapshots, and SaaS billing feeds. Each system emits telemetry differently: some stream granular events with millisecond timestamps, others batch aggregated counts once nightly. Because we rarely normalize the semantics, revenue tallies, inventory levels, and usage entitlements disagree just enough to trigger alarms without telling us which side is wrong. The operational telemetry that could identify the offending pipeline—queue lag, schema drift, retry storms—lives in another tool behind different access controls. So maintenances devolve into Slack threads, copy pasted screen captures, and uneasy executive updates.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

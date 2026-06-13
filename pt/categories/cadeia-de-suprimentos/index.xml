@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cadeia De Suprimentos on Runink</title>
+    <link>https://runink.org/pt/categories/cadeia-de-suprimentos/</link>
+    <description>Recent content in Cadeia De Suprimentos on Runink</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 09 Jun 2026 12:13:40 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/pt/categories/cadeia-de-suprimentos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>O que é um Gêmeo Digital? Como Decisões Autônomas estão Remodelando a Cadeia de Suprimentos</title>
+      <link>https://runink.org/pt/blog/gemeo-digital-decisoes-autonomas/</link>
+      <pubDate>Mon, 23 Feb 2026 14:10:11 +0000</pubDate>
+      <guid>https://runink.org/pt/blog/gemeo-digital-decisoes-autonomas/</guid>
+      <description>&lt;h2 id=&#34;quais-são-as-principais-conclusões-deste-resumo-executivo&#34;&gt;Quais são as Principais Conclusões deste Resumo Executivo?&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Um Gêmeo Digital da Cadeia de Suprimentos&lt;/strong&gt; é uma réplica virtual e dinâmica de ativos físicos e fluxos de trabalho logísticos, mantendo sincronização contínua em tempo real por meio de dados de telemetria.&lt;/li&gt;&#xA;&lt;li&gt;Os gêmeos digitais são categorizados em quatro arquétipos em escala: &lt;strong&gt;Gêmeos de Componente, Ativo, Sistema e Processo&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Decisões Autônomas&lt;/strong&gt; aumentam os modelos operacionais usando automação avançada de fluxo de trabalho para mudar de avisos preditivos passivos para a resolução autônoma e prescritiva de problemas.&lt;/li&gt;&#xA;&lt;li&gt;O &lt;strong&gt;Runink Analytics Companion&lt;/strong&gt; utiliza um pipeline autônomo de 11 etapas para identificar anomalias na cadeia de suprimentos, simular mitigações (como redirecionamento devido ao clima) e executar correções otimizadas baseadas em APIs de forma autônoma.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;1-a-emergência-da-gêmeos-digitais-na-cadeia-de-suprimentos&#34;&gt;1. A Emergência da Gêmeos Digitais na Cadeia de Suprimentos&lt;/h1&gt;&#xA;&lt;p&gt;Na intrincada e globalmente distribuída engrenagem do comércio internacional e da logística, a visibilidade tem sido historicamente o principal gargalo operacional. Por décadas, os gerentes de cadeia de suprimentos confiaram em painéis fragmentados, mensagens de Intercâmbio Eletrônico de Dados (EDI) atrasadas e atualizações manuais para rastrear o movimento de mercadorias. No entanto, à medida que as redes de comércio global crescem exponencialmente mais complexas e a logística resiliente torna-se um imperativo a nível de conselho, apenas &lt;em&gt;ver&lt;/em&gt; uma remessa atrasada ou um alerta de estoque baixo não é mais suficiente. Surge a &lt;strong&gt;Gêmeos Digitais&lt;/strong&gt; — um conceito que está alterando fundamentalmente a forma como as organizações interagem com a realidade física.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

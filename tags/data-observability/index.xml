@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Observability on Runink</title>
+    <link>https://runink.org/tags/data-observability/</link>
+    <description>Recent content in Data Observability on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jun 2026 12:13:40 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/data-observability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms</title>
+      <link>https://runink.org/blog/automated-semantic-layer-data-observability/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/automated-semantic-layer-data-observability/</guid>
+      <description>&lt;h1 id=&#34;why-automated-semantic-layers-from-telemetry-events-are-the-pillars-of-data-observability-platforms&#34;&gt;Why Automated Semantic Layers from Telemetry Events Are the Pillars of Data Observability Platforms&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Automated Semantic Layers&lt;/strong&gt; bridge raw telemetry to business context.&lt;/li&gt;&#xA;&lt;li&gt;They use real-time signals to create a dynamic, governed map of the data ecosystem.&lt;/li&gt;&#xA;&lt;li&gt;This transforms observability from passive monitoring to active intelligence.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-is-an-automated-semantic-layer&#34;&gt;What Is an Automated Semantic Layer?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;An &lt;strong&gt;automated semantic layer&lt;/strong&gt; is a continuously updated abstraction that converts raw system, pipeline, and application telemetry into structured, domain-aware insights — such as metrics, entities, and lineage graphs.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Telemetry Data Supercharges Automated Reconciliation Domain Models</title>
+      <link>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</guid>
+      <description>&lt;h1 id=&#34;telemetry-led-automation-for-reliable-reconciliation&#34;&gt;Telemetry-Led Automation for Reliable Reconciliation&lt;/h1&gt;&#xA;&lt;h2 id=&#34;executive-summary-key-takeaways&#34;&gt;Executive Summary: Key Takeaways&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual Patchwork vs. Automation:&lt;/strong&gt; Current reconciliation routines rely heavily on manual log spelunking to resolve mismatched totals, hindering true scale.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Trusting the Inputs:&lt;/strong&gt; Automated data reconciliation requires &lt;strong&gt;rich telemetry streams&lt;/strong&gt; to provide the connective tissue for consistent, trustworthy inputs.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Domain-Driven Remediation:&lt;/strong&gt; When domain models incorporate telemetry signals, they enable &lt;strong&gt;automated rules, thresholds, and remediation playbooks&lt;/strong&gt;, vastly improving reliability for data professionals.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;how-does-problem-context-and-why-it-is-a-problem-impact-your-strategy&#34;&gt;How Does Problem Context and Why It Is a Problem Impact Your Strategy?&lt;/h2&gt;&#xA;&lt;p&gt;Crunching reconciliation mismatches still depends on heroic analysts exporting CSVs from warehouses, observability dashboards, ERP snapshots, and SaaS billing feeds. Each system emits telemetry differently: some stream granular events with millisecond timestamps, others batch aggregated counts once nightly. Because we rarely normalize the semantics, revenue tallies, inventory levels, and usage entitlements disagree just enough to trigger alarms without telling us which side is wrong. The operational telemetry that could identify the offending pipeline—queue lag, schema drift, retry storms—lives in another tool behind different access controls. So maintenances devolve into Slack threads, copy pasted screen captures, and uneasy executive updates.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

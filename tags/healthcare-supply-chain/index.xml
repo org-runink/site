@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Healthcare Supply Chain on Runink</title>
+    <link>https://runink.org/tags/healthcare-supply-chain/</link>
+    <description>Recent content in Healthcare Supply Chain on Runink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jun 2026 12:13:40 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/healthcare-supply-chain/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reconciling Complex Logistics Data Safely: Methods for Data Reliability</title>
+      <link>https://runink.org/blog/reconciling-complex-data-logistics-solutions/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/reconciling-complex-data-logistics-solutions/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Discrepancies&lt;/strong&gt; occur when unverified algorithms produce fabricated or inaccurate configurations, which can cause severe operational errors in high-stakes environments like logistics and supply chains.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Query Expansion&lt;/strong&gt; mitigates errors by broadening search queries to fetch more comprehensive context, preventing the system from using incomplete information.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Reranking&lt;/strong&gt; filters and prioritizes retrieved information, ensuring the decision engine bases its answers on the most pertinent and factual data points.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Embedding Adapters&lt;/strong&gt; align the system&amp;rsquo;s configuration with domain-specific terminology (e.g., retail SKUs or medical supply codes) to prevent misinterpretation of queries.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Model Tuning&lt;/strong&gt; trains the system directly on your specific domain data, equipping it with deep operational knowledge that drastically reduces its tendency to guess or make errors.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;reconciling-complex-logistics-data-safely-methods-for-data-reliability&#34;&gt;Reconciling Complex Logistics Data Safely: Methods for Data Reliability&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction-what-are-data-discrepancies&#34;&gt;Introduction: What Are Data Discrepancies?&lt;/h2&gt;&#xA;&lt;p&gt;Imagine asking an automated system for advice on optimizing your delivery routes or forecasting next month’s product demand, and it responds with confident-sounding &lt;strong&gt;nonsense&lt;/strong&gt;. In the world of automated planning, this phenomenon is known as a &lt;em&gt;data discrepancy&lt;/em&gt;. When a planning model experiences this, &lt;strong&gt;it generates outputs that seem accurate but are actually false&lt;/strong&gt;. In other words, the system is essentially making calculations based on incomplete context – not out of malice, but because it doesn’t have the right inputs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
