@@ -771,7 +771,6 @@ body {
 
 /* OpenStreetMap container */
 .osm-map-container {
-  transition: opacity 0.3s ease;
   height: 250px;
   width: 100%;
   border-radius: 12px;
@@ -2503,13 +2502,73 @@ input:checked + .switch-slider:before {
   word-wrap: break-word;
 }
 
-@media (max-width: 1024px) {
-  .dashboard-top-grid {
-    flex-direction: column;
-  }
-  .dashboard-top-grid > *:nth-child(1),
-  .dashboard-top-grid > *:nth-child(2),
-  .dashboard-top-grid > *:nth-child(3) {
-    flex: 1 1 100% !important;
-  }
+/* Gauge Chart CSS */
+.gauge-container {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: var(--glass-white-05);
+  stroke-width: 6;
+}
+
+.gauge-circle {
+  fill: none;
+  stroke: var(--accent-orange-light);
+  stroke-width: 6;
+  stroke-dasharray: 176; /* 2 * pi * r (28) = 175.9 */
+  stroke-dashoffset: 176;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gauge-value {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.scorecard-box {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scorecard-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(236, 91, 19, 0.15);
+  border-color: rgba(236, 91, 19, 0.3);
+}
+
+.scorecard-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-top: 5px;
 }

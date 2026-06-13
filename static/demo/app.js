@@ -4,8 +4,8 @@ let activeFilter = 'Compliance';
 let currentLanguage = 'Portuguese';
 // Contact Lists Databases & Metasearch state
 let dedicatedContacts = [
-  { name: "John Doe (Broker)", phone: "+1 555-010-9921" },
-  { name: "Jane Smith (SecOps Lead)", phone: "+1 555-019-9823" }
+  { name: "John Doe (Customs Broker)", phone: "+1 555-010-9921" },
+  { name: "Jane Smith (Yard Ops Manager)", phone: "+1 555-019-9823" }
 ];
 let sharedContacts = [
   { name: "Logistics Control Center", phone: "+1 555-011-8833" },
@@ -60,7 +60,7 @@ const nodeMetadata = {
       Spanish: "08 de Junio a las 18:30 (Sincronización Activa)",
       French: "08 Juin à 18h30 (Synchro Active)"
     },
-    schema: `Table: raw_invoices
+    schema: `Table: waybills_live
 Columns:
 - invoice_id VARCHAR (PK)
 - hs_code VARCHAR
@@ -89,7 +89,7 @@ Columns:
       Spanish: "08 de Junio a las 17:15 (Sincronización Inactiva)",
       French: "08 Juin à 17h15 (Synchro En Attente)"
     },
-    schema: `Table: sensor_zones
+    schema: `Table: reefer_telemetry
 Columns:
 - pallet_id VARCHAR (PK)
 - zone_id VARCHAR
@@ -117,7 +117,7 @@ Columns:
       Spanish: "08 de Junio a las 18:45 (Sincronización Activa)",
       French: "08 Juin à 18h45 (Synchro Active)"
     },
-    schema: `Table: manifests_live
+    schema: `Table: cargo_manifests
 Columns:
 - bol_id VARCHAR (PK)
 - order_id VARCHAR
@@ -145,7 +145,7 @@ Columns:
       Spanish: "08 de Junio a las 18:48 (Sincronización Activa)",
       French: "08 Juin à 18h48 (Synchro Active)"
     },
-    schema: `Table: model_registry
+    schema: `Table: ai_models
 Columns:
 - model_version VARCHAR (PK)
 - accuracy_score FLOAT
@@ -172,7 +172,7 @@ Columns:
       Spanish: "08 de Junio a las 18:40 (Sincronización Activa)",
       French: "08 Juin à 18h40 (Synchro Active)"
     },
-    schema: `Table: supplier_sla_ledger
+    schema: `Table: carrier_sla_ledger
 Columns:
 - supplier_id VARCHAR (PK)
 - order_id VARCHAR
@@ -200,7 +200,7 @@ Columns:
       Spanish: "08 de Junio a las 16:20 (Sincronización Inactiva)",
       French: "08 Juin à 16h20 (Synchro En Attente)"
     },
-    schema: `Table: audit_logs
+    schema: `Table: compliance_audits
 Columns:
 - audit_id VARCHAR (PK)
 - vehicle_id VARCHAR
@@ -228,7 +228,7 @@ Columns:
       Spanish: "08 de Junio a las 18:55 (Sincronización Activa)",
       French: "08 Juin à 18h55 (Synchro Active)"
     },
-    schema: `Table: route_metrics
+    schema: `Table: route_optimizer_log
 Columns:
 - route_id VARCHAR (PK)
 - traffic_delay_min INTEGER
@@ -255,7 +255,7 @@ Columns:
       Spanish: "08 de Junio a las 18:30 (Sincronización Activa)",
       French: "08 Juin à 18h30 (Synchro Active)"
     },
-    schema: `Table: service_records
+    schema: `Table: yard_maintenance_log
 Columns:
 - asset_id VARCHAR (PK)
 - service_date DATE
@@ -285,15 +285,15 @@ const mockActions = [
   {
     id: "AI-102",
     category: "Compliance",
-    title: "Suspicious Access Attempt",
+    title: "Unapproved Broker Token Access",
     titleKey: "action_sentinel_1_title",
-    description: "Attempt to access the partner portal from outside the authorized corporate network. Access blocked.",
+    description: "Attempt to access the Customs Broker portal from an unauthorized geo-fence. API Token blocked.",
     descKey: "action_sentinel_1_desc",
     priority: "Critical",
     impact: "Risk Mitigation",
     impactKey: "action_impact_mitigated",
     ai_generated: true,
-    source: "Security Access Gateway",
+    source: "Broker Access Gateway",
     sourceKey: "action_sentinel_1_source",
     path: "/remediation",
     sentinelCard: {
@@ -306,24 +306,24 @@ const mockActions = [
   {
     id: "AI-103",
     category: "Compliance",
-    title: "Suspect Billing Spike",
+    title: "Toll Fee Scraping Anomaly",
     titleKey: "action_sentinel_2_title",
-    description: "Unusual invoice generation frequency spike during non-business hours. Access suspended pending verification.",
+    description: "Unusual toll routing queries detected during non-business hours on the Toll Plaza API. Traffic paused.",
     descKey: "action_sentinel_2_desc",
     priority: "High",
     impact: "Fraud Prevention",
     impactKey: "action_impact_fraud",
     ai_generated: true,
-    source: "Access Anomaly Filter",
+    source: "Toll Plaza Rate Filter",
     sourceKey: "action_sentinel_2_source",
     path: "/remediation"
   },
   {
     id: "AI-104",
     category: "Compliance",
-    title: "Unapproved Supplier Signup",
+    title: "Unverified LTL Carrier Signup",
     titleKey: "action_sentinel_3_title",
-    description: "Automated attempt to register a new vendor profile without matching internal procurement authorization. Profile quarantined.",
+    description: "Automated attempt to register a new LTL Carrier profile without matching DOT/FMCSA authorization. Profile quarantined.",
     descKey: "action_sentinel_3_desc",
     priority: "Medium",
     impact: "Access Control",
@@ -336,9 +336,9 @@ const mockActions = [
   {
     id: "AI-108",
     category: "Compliance",
-    title: "Privileged Table Query Alert",
+    title: "HazMat Registry Dump Alert",
     titleKey: "action_sentinel_4_title",
-    description: "Direct query executed on raw credentials table by non-admin identity. Blocked.",
+    description: "Direct query executed on raw HazMat Registry table by non-authorized identity. Blocked.",
     descKey: "action_sentinel_4_desc",
     priority: "High",
     impact: "Access Control",
@@ -351,9 +351,9 @@ const mockActions = [
   {
     id: "AI-115",
     category: "Compliance",
-    title: "Suspicious Key Rotation",
+    title: "Carrier Session Hijacking",
     titleKey: "action_sentinel_5_title",
-    description: "Multiple session key rotation requests received within 1 minute. Sandbox lock engaged.",
+    description: "Multiple session token rotation requests received from Carrier within 1 minute. API Sandbox lock engaged.",
     descKey: "action_sentinel_5_desc",
     priority: "Medium",
     impact: "Access Control",
@@ -366,9 +366,9 @@ const mockActions = [
   {
     id: "AI-116",
     category: "Compliance",
-    title: "Unmasked Ingress Attempt",
+    title: "Raw Telemetry Ingress Attempt",
     titleKey: "action_sentinel_6_title",
-    description: "External connection attempted to ingest customer records without hashing variables. Quarantined.",
+    description: "External carrier attempted to ingest OBD-II telemetry without hashing VIN/Driver ID variables. Quarantined.",
     descKey: "action_sentinel_6_desc",
     priority: "Critical",
     impact: "Risk Mitigation",
@@ -381,9 +381,9 @@ const mockActions = [
   {
     id: "AI-130",
     category: "Compliance",
-    title: "API Token Boundary Violation",
+    title: "Yard Access Geofence Violation",
     titleKey: "action_sentinel_7_title",
-    description: "Access token generated for partner portal outside standard geographical boundaries. Suspended.",
+    description: "Gate access token triggered outside standard yard geofence. Suspended.",
     descKey: "action_sentinel_7_desc",
     priority: "High",
     impact: "Access Control",
@@ -396,9 +396,9 @@ const mockActions = [
   {
     id: "AI-131",
     category: "Compliance",
-    title: "Vendor API Data Hallucination",
+    title: "EDI/API Data Hallucination",
     titleKey: "action_sentinel_8_title",
-    description: "Public LLM query returned mismatched JSON schema for shipping schedules. Blocked by local inference validator.",
+    description: "Public LLM query returned mismatched JSON schema for EDI 204 freight schedules. Blocked by inference validator.",
     descKey: "action_sentinel_8_desc",
     priority: "Critical",
     impact: "Data Safety Guard",
@@ -411,9 +411,9 @@ const mockActions = [
   {
     id: "AI-132",
     category: "Compliance",
-    title: "SOP Database Logic Drift",
+    title: "Customs Rules Logic Drift",
     titleKey: "action_sentinel_9_title",
-    description: "Active SQL ingestion rules drifted from verified Operating Manual SOPs. Discrepancy logged for review.",
+    description: "Active SQL ingestion rules drifted from verified Customs Declaration SOPs. Discrepancy logged for review.",
     descKey: "action_sentinel_9_desc",
     priority: "High",
     impact: "Verify Code vs SOP",
@@ -458,15 +458,15 @@ const mockActions = [
   {
     id: "AI-112",
     category: "Compliance",
-    title: "Preemptive Purchase Order Draft",
+    title: "Emergency Freight Capacity Spot Bid",
     titleKey: "action_forge_1_title",
-    description: "Pre-approved PO generated to compress lead times ahead of forecasted inflation anomalies.",
+    description: "Pre-approved spot bid generated to secure LTL capacity ahead of forecasted port strike anomalies.",
     descKey: "action_forge_1_desc",
     priority: "Medium",
     impact: "Save $45,000 Outage",
     impactKey: "action_forge_1_impact",
     ai_generated: true,
-    source: "Demand Scenario Simulator",
+    source: "Spot Bid Freight Simulator",
     sourceKey: "action_forge_1_source",
     path: "/artifact",
     forgeCard: {
@@ -481,9 +481,9 @@ const mockActions = [
   {
     id: "AI-113",
     category: "Compliance",
-    title: "Raw Material Contract Optimization",
+    title: "Port Demurrage Dispute Invoice Draft",
     titleKey: "action_forge_2_title",
-    description: "Contract renegotiation draft based on recent commodity index drops, projecting an annual saving of 8%.",
+    description: "Dispute drafted for unverified demurrage fees based on GPS logs showing truck arrival prior to cut-off, reclaiming \$18,200.",
     descKey: "action_forge_2_desc",
     priority: "Low",
     impact: "+$22,500.00",
@@ -496,9 +496,9 @@ const mockActions = [
   {
     id: "AI-114",
     category: "Compliance",
-    title: "Warehouse Space Pre-allocation",
+    title: "Cold Storage Cross-Dock Allocation",
     titleKey: "action_forge_3_title",
-    description: "Automated cargo consolidation draft for next quarter's peak season, reducing external warehousing storage costs.",
+    description: "Automated cold chain cross-dock consolidation drafted for peak season, reducing reefer plug-in costs.",
     descKey: "action_forge_3_desc",
     priority: "Medium",
     impact: "12% Cost Reduction",
@@ -511,9 +511,9 @@ const mockActions = [
   {
     id: "AI-117",
     category: "Compliance",
-    title: "Transport Dispatch Schedule",
+    title: "Drayage Dispatch Optimization",
     titleKey: "action_forge_4_title",
-    description: "Automated schedule generated for empty carrier pickups to avoid depot congestion next week.",
+    description: "Automated schedule generated for empty container drayage pickups to avoid yard congestion.",
     descKey: "action_forge_4_desc",
     priority: "Low",
     impact: "Logistics Optimization",
@@ -526,9 +526,9 @@ const mockActions = [
   {
     id: "AI-118",
     category: "Compliance",
-    title: "Supply Chain Re-routing Suggestion",
+    title: "HazMat Carrier Re-routing Plan",
     titleKey: "action_forge_5_title",
-    description: "Synthetic twin plan to shift raw material sourcing to secondary supplier due to storm alert.",
+    description: "Synthetic twin plan to re-route HazMat carriers away from severe weather anomaly, maintaining SLA.",
     descKey: "action_forge_5_desc",
     priority: "Medium",
     impact: "+$12,500.00 Saved",
@@ -556,15 +556,15 @@ const mockActions = [
   {
     id: "AI-120",
     category: "Compliance",
-    title: "Inventory Reorder Suggestion",
+    title: "Safety Stock Relocation Rule",
     titleKey: "action_forge_7_title",
-    description: "Pre-calculated purchase request generated for safe stock replenishment ahead of shutdown.",
+    description: "Pre-calculated transport request generated for safety stock relocation ahead of regional shutdown.",
     descKey: "action_forge_7_desc",
     priority: "Low",
     impact: "Safety Stock Buffer",
     impactKey: "action_forge_7_impact",
     ai_generated: true,
-    source: "Predictive Reorder Module",
+    source: "Safety Stock Network Module",
     sourceKey: "action_forge_7_source",
     path: "/artifact"
   },
@@ -1180,7 +1180,7 @@ const mockActions = [
 // Dynamically associate contacts to mockActions items
 mockActions.forEach(action => {
   if (action.sentinelCard || action.id.startsWith("RULE-210")) {
-    action.contactName = "Jane Smith (SecOps Lead)";
+    action.contactName = "Jane Smith (Yard Ops Manager)";
     action.contactPhone = "+1 555-019-9823";
   } else if (action.category === 'Finance') {
     action.contactName = "Port Authority Billing";
@@ -1189,7 +1189,7 @@ mockActions.forEach(action => {
     action.contactName = "Logistics Control Center";
     action.contactPhone = "+1 555-011-8833";
   } else if (action.forgeCard) {
-    action.contactName = "John Doe (Broker)";
+    action.contactName = "John Doe (Customs Broker)";
     action.contactPhone = "+1 555-010-9921";
   } else if (action.category === 'Operations') {
     action.contactName = "Logistics Control Center";
@@ -1827,10 +1827,8 @@ function renderActionFeed() {
     container.appendChild(cardEl);
   });
 
-  // Draw Leaflet map if Route is active
-  if (activeFilter === 'Route') {
-    setTimeout(initRouteMap, 100);
-  }
+  // Draw Leaflet map if there are maps
+  setTimeout(initRouteMap, 100);
 }
 
 // OpenStreetMap routing drawing via Leaflet
@@ -1873,10 +1871,8 @@ function initRouteMap() {
       subdomains: 'abcd'
     }).addTo(map);
 
-    // Force map to update its size to match the newly visible container
-    setTimeout(() => { map.invalidateSize(); }, 50);
     setTimeout(() => { map.invalidateSize(); }, 300);
-    setTimeout(() => { map.invalidateSize(); }, 800);
+    setTimeout(() => { map.invalidateSize(); }, 1000);
 
     // Generate dynamic-looking coordinates based on mapId string hash
     let hash = 0;
@@ -1969,13 +1965,8 @@ function navigateAction(actionId) {
     const artifactMapWrapper = document.getElementById("artifact-map-wrapper");
     if (artifactMapWrapper) {
       if (action.routeCard) {
-        // Ensure DOM registers the display block before Leaflet initializes
         artifactMapWrapper.style.display = "block";
-        artifactMapWrapper.style.opacity = "0"; // hide momentarily while map renders
-        setTimeout(() => {
-            initRouteMap();
-            setTimeout(() => { artifactMapWrapper.style.opacity = "1"; }, 150);
-        }, 100);
+        setTimeout(initRouteMap, 100);
       } else {
         artifactMapWrapper.style.display = "none";
       }
@@ -1993,10 +1984,38 @@ function resetNodeDetails() {
   }
 }
 
+// Global state for dragging
+let isDraggingNode = null;
+
 // Maturity screen logic & Node graph SVG drawing
 function setupMaturityGraph() {
   const svg = document.getElementById("node-graph-svg");
   if (!svg) return;
+
+  // Initialize global drag listeners on SVG once
+  if (!svg.dataset.dragInit) {
+    svg.dataset.dragInit = "true";
+    
+    svg.addEventListener("mousemove", (e) => {
+      if (!isDraggingNode) return;
+      const rect = svg.getBoundingClientRect();
+      isDraggingNode.x = e.clientX - rect.left;
+      isDraggingNode.y = e.clientY - rect.top;
+      setupMaturityGraph(); // Redraw with new coordinates
+    });
+
+    svg.addEventListener("mouseup", () => {
+      if (isDraggingNode) {
+        isDraggingNode = null;
+        setupMaturityGraph(); // Final redraw to reset cursor if needed
+      }
+    });
+
+    svg.addEventListener("mouseleave", () => {
+      isDraggingNode = null;
+    });
+  }
+
   svg.innerHTML = "";
 
   // Draw edges first (under nodes)
@@ -2018,28 +2037,34 @@ function setupMaturityGraph() {
   // Draw nodes
   graphNodes.forEach(node => {
     const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    group.style.cursor = isDraggingNode === node ? "grabbing" : "grab";
+
+    group.addEventListener("mousedown", (e) => {
+      isDraggingNode = node;
+      
+      // Toggle node active state
+      graphNodes.forEach(n => n.active = false);
+      node.active = true;
+      triggerScoreboardFlicker();
+      
+      // Load details into inspector card
+      showNodeDetails(node.id);
+      setupMaturityGraph();
+    });
 
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute("cx", node.x);
     circle.setAttribute("cy", node.y);
     circle.setAttribute("r", 12);
     circle.setAttribute("class", `graph-node-circle ${node.active ? 'active' : ''}`);
-    circle.addEventListener("click", () => {
-      // Toggle node active state
-      graphNodes.forEach(n => n.active = false);
-      node.active = true;
-      setupMaturityGraph();
-      triggerScoreboardFlicker();
-
-      // Load details into inspector card
-      showNodeDetails(node.id);
-    });
     group.appendChild(circle);
 
     const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
     text.setAttribute("x", node.x);
     text.setAttribute("y", node.y + 24);
     text.setAttribute("class", "graph-node-label");
+    // Ensure text isn't selectable during drag
+    text.style.userSelect = "none";
     text.textContent = node.id;
     group.appendChild(text);
 
@@ -2056,6 +2081,13 @@ function showNodeDetails(nodeId) {
   const rows = document.getElementById("node-detail-rows");
   const time = document.getElementById("node-detail-time");
   const schema = document.getElementById("node-detail-schema");
+  const connectorRow = document.getElementById("node-detail-connector-row");
+  const connectorText = document.getElementById("node-detail-connector");
+  const tableRow = document.getElementById("node-detail-table-row");
+  const tableText = document.getElementById("node-detail-table");
+  const objectsContainer = document.getElementById("node-detail-objects");
+  const documentsContainer = document.getElementById("node-detail-documents");
+  const specsContainer = document.getElementById("node-detail-specs");
 
   if (!detailsEmpty || !detailsContent || !title || !endpoint || !sync || !rows || !time || !schema) return;
 
@@ -2064,6 +2096,8 @@ function showNodeDetails(nodeId) {
 
   detailsEmpty.style.display = "none";
   detailsContent.style.display = "flex";
+  if (connectorRow) connectorRow.style.display = "none";
+  if (tableRow) tableRow.style.display = "none";
 
   title.innerText = nodeId;
   endpoint.innerText = data.endpoint;
@@ -2071,6 +2105,556 @@ function showNodeDetails(nodeId) {
   rows.innerText = data.rowsKeys ? (data.rowsKeys[currentLanguage] || data.rowsKeys['English']) : data.rows;
   time.innerText = data.timeKeys ? (data.timeKeys[currentLanguage] || data.timeKeys['English']) : data.time;
   schema.innerText = data.schema;
+
+  const nodeSpecifics = {
+    "FleetTelemetry_Live": {
+      objects: [
+        { name: "Vehicle_State", connector: "Databricks" },
+        { name: "GPS_Stream", connector: "Snowflake" },
+        { name: "Engine_Metrics", connector: "MySQL" }
+      ],
+      documents: ["Telematics_API.pdf", "GPS_Calibration_Guide.md"],
+      specs: ["Protocol: MQTT", "Freq: 1Hz", "Format: Protobuf"]
+    },
+    "WarehouseSensors": {
+      objects: [
+        { name: "Zone_Temp", connector: "Postgresql" },
+        { name: "Pallet_RFID", connector: "SAP" },
+        { name: "Humidity_Log", connector: "Excel" }
+      ],
+      documents: ["Sensor_Placement_Map.pdf", "Calibration_Certificates.zip"],
+      specs: ["Protocol: CoAP", "Freq: 5min", "Format: JSON"]
+    },
+    "RouteOptimization": {
+      objects: [
+        { name: "Route_Plan", connector: "Databricks" },
+        { name: "Traffic_Feed", connector: "Snowflake" },
+        { name: "Toll_Rates", connector: "MySQL" }
+      ],
+      documents: ["Routing_Algorithm_v4.pdf", "Maps_API_SLA.pdf"],
+      specs: ["Protocol: REST/HTTPS", "Freq: On-demand", "Format: GeoJSON"]
+    },
+    "MaintenanceLogs": {
+      objects: [
+        { name: "Work_Order", connector: "SAP" },
+        { name: "Part_Inventory", connector: "SalesForce" },
+        { name: "Mechanic_Notes", connector: "Sharepoint" }
+      ],
+      documents: ["Maintenance_SOP.docx", "Vendor_Manuals.zip"],
+      specs: ["Protocol: SOAP", "Freq: Daily Batch", "Format: XML"]
+    },
+    "CargoManifests": {
+      objects: [
+        { name: "Bill_Of_Lading", connector: "Microsoft D365" },
+        { name: "Customs_Declaration", connector: "SAP" },
+        { name: "Hazmat_Cert", connector: "Sharepoint" }
+      ],
+      documents: ["Customs_Compliance_2026.pdf", "Hazmat_Guidelines.pdf"],
+      specs: ["Protocol: AS2", "Freq: Event-driven", "Format: EDIFACT"]
+    },
+    "ColdChainAudits": {
+      objects: [
+        { name: "Temperature_Log", connector: "Snowflake" },
+        { name: "Deviation_Alert", connector: "SalesForce" },
+        { name: "Audit_Trail", connector: "Postgresql" }
+      ],
+      documents: ["FDA_Compliance_Report.pdf", "Quality_Assurance_Plan.docx"],
+      specs: ["Protocol: SFTP", "Freq: Hourly", "Format: CSV"]
+    },
+    "PredictiveModels": {
+      objects: [
+        { name: "Model_Weights", connector: "Databricks" },
+        { name: "Feature_Vector", connector: "Snowflake" },
+        { name: "Inference_Result", connector: "Postgresql" }
+      ],
+      documents: ["Model_Architecture.pdf", "Training_Dataset_Stats.html"],
+      specs: ["Protocol: gRPC", "Freq: Real-time", "Format: Tensor"]
+    },
+    "SupplierSLAs": {
+      objects: [
+        { name: "Contract_Terms", connector: "SalesForce" },
+        { name: "Performance_Metric", connector: "Snowflake" },
+        { name: "Penalty_Log", connector: "Microsoft D365" }
+      ],
+      documents: ["SLA_Master_Agreement.pdf", "Legal_Addendums.zip"],
+      specs: ["Protocol: REST/HTTPS", "Freq: Monthly", "Format: JSON"]
+    }
+  };
+
+  const specifics = nodeSpecifics[nodeId] || { 
+    objects: [{ name: "Entity_Map", connector: "Postgresql" }], 
+    documents: ["Integration_Guide.pdf"], 
+    specs: ["Protocol: HTTPS"] 
+  };
+
+  if (objectsContainer) {
+    objectsContainer.innerHTML = specifics.objects.map(o => `<span class="schema-object-btn" style="background: rgba(236,91,19,0.2); padding:2px 6px; border-radius:4px; border:1px solid rgba(236,91,19,0.3); cursor:pointer; transition: opacity 0.2s;" data-obj="${o.name}" data-conn="${o.connector}">${o.name}</span>`).join('');
+    
+    const btns = objectsContainer.querySelectorAll('.schema-object-btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const objName = e.target.getAttribute('data-obj');
+        const connName = e.target.getAttribute('data-conn');
+        if (connectorRow && connectorText && tableRow && tableText) {
+          connectorRow.style.display = "block";
+          connectorText.innerText = connName;
+          tableRow.style.display = "block";
+          tableText.innerText = "dbo." + objName.toLowerCase() + "_tbl";
+        }
+        
+                const schemas3PL = {
+          "Vehicle_State": `Columns:
+- vehicle_id VARCHAR(36) (PK)
+- geom_location GEOMETRY(Point, 4326)
+- heading DECIMAL(5,2)
+- velocity_kmh INT
+- altitude_m DECIMAL(6,2)
+- gps_status VARCHAR(16)
+- ignition_status BOOLEAN
+- fuel_level_pct DECIMAL(5,2)
+- def_fluid_pct DECIMAL(5,2)
+- engine_hours INT
+- battery_volts DECIMAL(4,1)
+- weight_on_axles JSONB
+- dtc_fault_codes JSONB
+- driver_id VARCHAR(64)
+- obd2_vin VARCHAR(17)
+- cell_signal_dbm INT
+- firmware_version VARCHAR(32)
+- _raw_nmea_payload JSONB
+- _sync_hash VARCHAR(64)
+- _kafka_offset BIGINT
+- sys_created_on TIMESTAMP
+- sys_updated_on TIMESTAMP
+- is_active BOOLEAN`,
+          "GPS_Stream": `Columns:
+- stream_id BIGINT (PK)
+- raw_nmea_sentence TEXT
+- parsed_lat DECIMAL(9,6)
+- parsed_long DECIMAL(9,6)
+- sat_count INT
+- hdop FLOAT
+- vdop FLOAT
+- pdop FLOAT
+- speed_knots DECIMAL(6,2)
+- course_true DECIMAL(5,2)
+- magnetic_variation DECIMAL(5,2)
+- fix_quality INT
+- dgps_age FLOAT
+- dgps_station_id INT
+- checksum VARCHAR(4)
+- device_imei VARCHAR(32)
+- ingested_at TIMESTAMP`,
+          "Engine_Metrics": `Columns:
+- obd2_record_id UUID (PK)
+- vehicle_id VARCHAR(36)
+- rpm INT
+- engine_load FLOAT
+- coolant_temp INT
+- dtc_codes JSONB
+- intake_air_temp INT
+- run_time INT
+- mass_air_flow DECIMAL(6,2)
+- throttle_pos DECIMAL(5,2)
+- fuel_pressure DECIMAL(6,2)
+- manifold_pressure INT
+- timing_advance DECIMAL(5,2)
+- o2_sensor_volts JSONB
+- mil_distance INT
+- egr_error DECIMAL(5,2)
+- dpf_temp DECIMAL(6,2)
+- dpf_diff_pressure DECIMAL(6,2)
+- _raw_canbus_frame VARCHAR(128)
+- recorded_at TIMESTAMP`,
+          "Zone_Temp": `Columns:
+- sensor_id VARCHAR(50) (PK)
+- recorded_at TIMESTAMP (PK)
+- facility_id VARCHAR(32)
+- zone_name VARCHAR(64)
+- temperature_c DECIMAL(4,2)
+- temperature_f DECIMAL(4,2)
+- humidity_pct DECIMAL(4,2)
+- dew_point_c DECIMAL(4,2)
+- ambient_light_lux INT
+- motion_detected BOOLEAN
+- battery_level_pct INT
+- voltage DECIMAL(4,2)
+- signal_strength_dbm INT
+- gateway_id VARCHAR(32)
+- firmware_version VARCHAR(16)
+- alert_flag BOOLEAN
+- threshold_breach_type VARCHAR(16)
+- _raw_lorawan_payload TEXT
+- _message_seq INT
+- sys_ingested_at TIMESTAMP`,
+          "Pallet_RFID": `Columns:
+- epc_code VARCHAR(64) (PK)
+- event_id UUID
+- tag_type VARCHAR(16)
+- read_timestamp TIMESTAMP
+- reader_id VARCHAR(32)
+- antenna_id VARCHAR(16)
+- facility_code VARCHAR(16)
+- zone_id VARCHAR(32)
+- rssi_dbm FLOAT
+- tx_power_dbm FLOAT
+- peak_rssi FLOAT
+- read_count INT
+- phase_angle FLOAT
+- doppler_shift FLOAT
+- direction_vector VARCHAR(16)
+- operator_id VARCHAR(32)
+- pallet_type VARCHAR(16)
+- contents_sku VARCHAR(64)
+- _raw_hl7_packet JSONB
+- _confidence_score FLOAT
+- is_deleted BOOLEAN
+- sys_updated_on TIMESTAMP`,
+          "Humidity_Log": `Columns:
+- log_id BIGINT (PK)
+- device_serial VARCHAR(32)
+- relative_humidity FLOAT
+- absolute_humidity FLOAT
+- temp_ambient FLOAT
+- dew_point FLOAT
+- vapor_pressure FLOAT
+- sensor_calibration_date DATE
+- reading_interval_sec INT
+- sync_status VARCHAR(16)
+- battery_mv INT
+- recorded_at TIMESTAMP`,
+          "Route_Plan": `Columns:
+- route_id VARCHAR(36) (PK)
+- vehicle_id VARCHAR(36)
+- driver_id VARCHAR(64)
+- start_node_id VARCHAR(36)
+- end_node_id VARCHAR(36)
+- planned_start TIMESTAMP
+- planned_end TIMESTAMP
+- waypoints JSONB
+- segment_details JSONB
+- estimated_distance_km DECIMAL(8,2)
+- estimated_duration_sec INT
+- total_tolls_usd DECIMAL(8,2)
+- hazmat_routing BOOLEAN
+- oversized_routing BOOLEAN
+- avoid_tolls BOOLEAN
+- avoid_highways BOOLEAN
+- created_by VARCHAR(64)
+- algorithm_version VARCHAR(16)
+- _optimization_score FLOAT
+- sys_created_on TIMESTAMP`,
+          "Traffic_Feed": `Columns:
+- segment_id BIGINT (PK)
+- source_vendor VARCHAR(32)
+- observed_at TIMESTAMP
+- jam_factor FLOAT
+- speed_unconstrained FLOAT
+- speed_current FLOAT
+- travel_time_sec INT
+- free_flow_time_sec INT
+- closed_flag BOOLEAN
+- construction_flag BOOLEAN
+- incident_ref VARCHAR(32)
+- event_description TEXT
+- severity_level INT
+- road_type VARCHAR(16)
+- _provider_raw_json JSONB`,
+          "Toll_Rates": `Columns:
+- toll_plaza_id VARCHAR(32) (PK)
+- vehicle_class VARCHAR(16) (PK)
+- time_of_day_category VARCHAR(16) (PK)
+- currency VARCHAR(3)
+- cost DECIMAL(10,2)
+- transponder_discount DECIMAL(5,2)
+- effective_date DATE
+- expiry_date DATE
+- active BOOLEAN
+- plaza_name VARCHAR(128)
+- operator_id VARCHAR(32)
+- location GEOMETRY(Point, 4326)
+- sys_updated_on TIMESTAMP`,
+          "Work_Order": `Columns:
+- wo_number VARCHAR(32) (PK)
+- wo_type VARCHAR(16)
+- asset_id VARCHAR(36)
+- parent_wo VARCHAR(32)
+- requested_by VARCHAR(64)
+- issue_description TEXT
+- priority INT
+- status VARCHAR(20)
+- assigned_mechanic VARCHAR(64)
+- scheduled_start TIMESTAMP
+- scheduled_end TIMESTAMP
+- actual_start TIMESTAMP
+- actual_end TIMESTAMP
+- downtime_hours DECIMAL(6,2)
+- labor_hours DECIMAL(6,2)
+- parts_cost DECIMAL(10,2)
+- labor_cost DECIMAL(10,2)
+- total_cost DECIMAL(10,2)
+- resolution_code VARCHAR(16)
+- resolution_notes TEXT
+- warranty_claim BOOLEAN
+- _cmms_sync_id VARCHAR(64)
+- created_at TIMESTAMP
+- updated_at TIMESTAMP`,
+          "Part_Inventory": `Columns:
+- sku VARCHAR(64) (PK)
+- warehouse_id VARCHAR(32) (PK)
+- bin_location VARCHAR(32)
+- item_description TEXT
+- category_code VARCHAR(16)
+- quantity_on_hand INT
+- quantity_allocated INT
+- quantity_in_transit INT
+- reorder_level INT
+- reorder_qty INT
+- max_stock_level INT
+- unit_of_measure VARCHAR(8)
+- weight_kg DECIMAL(8,2)
+- dimensions_cm JSONB
+- hazardous_material BOOLEAN
+- serial_number_tracked BOOLEAN
+- lot_control_flag BOOLEAN
+- supplier_id VARCHAR(36)
+- unit_cost DECIMAL(10,2)
+- currency VARCHAR(3)
+- avg_lead_time_days INT
+- last_cycle_count DATE
+- abc_classification VARCHAR(1)
+- _erp_sync_status VARCHAR(16)
+- sys_updated_on TIMESTAMP`,
+          "Mechanic_Notes": `Columns:
+- note_id UUID (PK)
+- wo_reference VARCHAR(32)
+- author_id VARCHAR(64)
+- text_content TEXT
+- note_type VARCHAR(16)
+- is_internal BOOLEAN
+- attachments JSONB
+- dictation_audio_url VARCHAR(255)
+- parsed_entities JSONB
+- sentiment_score FLOAT
+- created_at TIMESTAMP`,
+          "Bill_Of_Lading": `Columns:
+- bol_number VARCHAR(32) (PK)
+- sys_guid UUID
+- shipper_id VARCHAR(36)
+- shipper_address JSONB
+- consignee_id VARCHAR(36)
+- consignee_address JSONB
+- bill_to_party VARCHAR(36)
+- carrier_scac VARCHAR(4)
+- equipment_initial VARCHAR(4)
+- equipment_number VARCHAR(12)
+- seal_number VARCHAR(32)
+- freight_terms VARCHAR(16)
+- declared_value DECIMAL(12,2)
+- currency VARCHAR(3)
+- total_weight_lbs DECIMAL(10,2)
+- total_pallets INT
+- hazmat_flag BOOLEAN
+- un_number VARCHAR(4)
+- temperature_control VARCHAR(32)
+- special_instructions TEXT
+- expected_delivery_date DATE
+- pod_signature_url VARCHAR(255)
+- edi_856_payload JSONB
+- edi_204_payload JSONB
+- source_erp VARCHAR(32)
+- _created_by VARCHAR(64)
+- _last_modified TIMESTAMP`,
+          "Customs_Declaration": `Columns:
+- declaration_id VARCHAR(32) (PK)
+- entry_number VARCHAR(32)
+- filer_code VARCHAR(8)
+- port_of_entry VARCHAR(8)
+- port_of_unlading VARCHAR(8)
+- transport_mode VARCHAR(16)
+- carrier_code VARCHAR(8)
+- vessel_flight_no VARCHAR(32)
+- voyage_no VARCHAR(16)
+- arrival_date DATE
+- importer_of_record VARCHAR(32)
+- ultimate_consignee VARCHAR(32)
+- country_of_origin VARCHAR(2)
+- export_country VARCHAR(2)
+- harmonized_codes JSONB
+- line_items_count INT
+- total_value_usd DECIMAL(12,2)
+- duties_usd DECIMAL(10,2)
+- taxes_usd DECIMAL(10,2)
+- fees_usd DECIMAL(10,2)
+- clearance_status VARCHAR(16)
+- release_date TIMESTAMP
+- broker_ref VARCHAR(32)
+- ace_response_message TEXT
+- _edi_346_payload JSONB
+- sys_updated_on TIMESTAMP`,
+          "Hazmat_Cert": `Columns:
+- cert_id UUID (PK)
+- un_number VARCHAR(4)
+- packing_group VARCHAR(4)
+- proper_shipping_name VARCHAR(128)
+- hazard_class VARCHAR(8)
+- subsidiary_risk VARCHAR(8)
+- emergency_contact VARCHAR(32)
+- erg_number INT
+- marine_pollutant BOOLEAN
+- poison_inhalation BOOLEAN
+- flash_point_c DECIMAL(5,2)
+- pdf_document_url VARCHAR(255)
+- issued_by VARCHAR(64)
+- expiry_date DATE
+- verified_by VARCHAR(64)`,
+          "Temperature_Log": `Columns:
+- log_id BIGINT (PK)
+- reefer_id VARCHAR(32)
+- container_id VARCHAR(32)
+- temp_celsius DECIMAL(5,2)
+- set_point DECIMAL(5,2)
+- return_air_temp DECIMAL(5,2)
+- supply_air_temp DECIMAL(5,2)
+- ambient_temp DECIMAL(5,2)
+- defrost_active BOOLEAN
+- door_open BOOLEAN
+- compressor_status VARCHAR(16)
+- alarm_codes JSONB
+- gps_location GEOMETRY(Point, 4326)
+- recorded_at TIMESTAMP`,
+          "Deviation_Alert": `Columns:
+- alert_id UUID (PK)
+- alert_rule_id VARCHAR(32)
+- entity_id VARCHAR(64)
+- severity VARCHAR(16)
+- metric_name VARCHAR(32)
+- threshold_breach FLOAT
+- current_value FLOAT
+- duration_minutes INT
+- alert_timestamp TIMESTAMP
+- context_data JSONB
+- acknowledged_by VARCHAR(64)
+- acknowledged_at TIMESTAMP
+- status VARCHAR(16)
+- ticket_reference VARCHAR(32)
+- _notification_sent BOOLEAN`,
+          "Audit_Trail": `Columns:
+- audit_id BIGINT (PK)
+- entity_type VARCHAR(32)
+- entity_id VARCHAR(64)
+- action VARCHAR(16)
+- previous_state JSONB
+- new_state JSONB
+- changed_fields JSONB
+- changed_by VARCHAR(64)
+- user_ip VARCHAR(45)
+- session_id VARCHAR(64)
+- request_url VARCHAR(255)
+- timestamp TIMESTAMP`,
+          "Model_Weights": `Columns:
+- model_version VARCHAR(16) (PK)
+- model_name VARCHAR(64)
+- algorithm VARCHAR(32)
+- binary_blob BYTEA
+- hyperparameters JSONB
+- features_used JSONB
+- validation_rmse FLOAT
+- validation_mae FLOAT
+- training_duration_sec INT
+- trained_by VARCHAR(64)
+- deployed_at TIMESTAMP
+- is_champion BOOLEAN
+- artifact_uri VARCHAR(255)`,
+          "Feature_Vector": `Columns:
+- vector_id UUID (PK)
+- entity_id VARCHAR(64)
+- entity_type VARCHAR(32)
+- features FLOAT[]
+- sparse_features JSONB
+- schema_version VARCHAR(8)
+- generated_at TIMESTAMP
+- pipeline_run_id VARCHAR(64)
+- is_imputed BOOLEAN
+- _redis_cache_key VARCHAR(128)`,
+          "Inference_Result": `Columns:
+- inference_id BIGINT (PK)
+- model_version VARCHAR(16)
+- entity_id VARCHAR(64)
+- prediction_value FLOAT
+- confidence_score FLOAT
+- upper_bound FLOAT
+- lower_bound FLOAT
+- explainability_shap JSONB
+- input_vector_id UUID
+- executed_at TIMESTAMP
+- latency_ms INT
+- _consumed_by_downstream BOOLEAN`,
+          "Contract_Terms": `Columns:
+- contract_id VARCHAR(32) (PK)
+- supplier_id VARCHAR(36)
+- buyer_id VARCHAR(36)
+- status VARCHAR(16)
+- effective_start DATE
+- effective_end DATE
+- sla_metrics JSONB
+- penalty_clauses TEXT
+- payment_terms VARCHAR(32)
+- auto_renew BOOLEAN
+- governing_law VARCHAR(64)
+- signed_by VARCHAR(64)
+- pdf_contract_url VARCHAR(255)
+- _salesforce_id VARCHAR(18)
+- sys_updated_on TIMESTAMP`,
+          "Performance_Metric": `Columns:
+- metric_id UUID (PK)
+- supplier_id VARCHAR(36)
+- month_year VARCHAR(7)
+- total_deliveries INT
+- on_time_delivery_pct FLOAT
+- in_full_delivery_pct FLOAT
+- defect_rate_ppm INT
+- average_delay_hrs DECIMAL(6,2)
+- claims_filed INT
+- total_claim_value DECIMAL(10,2)
+- compliance_score FLOAT
+- calculated_at TIMESTAMP
+- is_finalized BOOLEAN`,
+          "Penalty_Log": `Columns:
+- penalty_id BIGINT (PK)
+- contract_id VARCHAR(32)
+- supplier_id VARCHAR(36)
+- incident_ref VARCHAR(64)
+- violation_type VARCHAR(32)
+- penalty_amount_usd DECIMAL(10,2)
+- status VARCHAR(16)
+- disputed BOOLEAN
+- dispute_reason TEXT
+- resolved_at TIMESTAMP
+- applied_at TIMESTAMP
+- invoice_deduction_ref VARCHAR(32)
+- created_by VARCHAR(64)
+- _erp_journal_id VARCHAR(32)`
+        };
+        const schemaDef = schemas3PL[objName] || "Columns:\n- id VARCHAR(36) (PK)\n- sys_updated_on TIMESTAMP\n- raw_payload JSONB\n- sys_created_by VARCHAR(64)";
+        
+        schema.innerText = schemaDef;
+        btns.forEach(b => b.style.opacity = '0.5');
+        e.target.style.opacity = '1';
+      });
+    });
+    
+    // Automatically select the first object to populate the rich schema
+    if (btns.length > 0) {
+      btns[0].click();
+    }
+  }
+  if (documentsContainer) {
+    documentsContainer.innerHTML = specifics.documents.map(d => `<span style="background: rgba(34,197,94,0.1); padding:2px 6px; border-radius:4px; border:1px solid rgba(34,197,94,0.2); margin-bottom:2px;">📄 ${d}</span>`).join('');
+  }
+  if (specsContainer) {
+    specsContainer.innerHTML = specifics.specs.map(s => `<span>• ${s}</span>`).join('');
+  }
 }
 
 function triggerScoreboardFlicker() {
@@ -2132,7 +2716,10 @@ function renderIncidentsList() {
     { title: "Multi-Object Semantic Drift", desc: "Predictive Model v4.1 drift exceeds 14% on FleetTelemetry_Live ingestion. Recommended action: Rollback to v3.8 and initiate XGBoost retraining.", level: "Critical", color: "#EF4444" },
     { title: "Hazardous Documentation Missing", desc: "Cargo Manifest #BOL-9921 cross-validation failure. hazmat_flag is true, but corresponding Safety Data Sheet document is missing from the Customs Registry link.", level: "Critical", color: "#EF4444" },
     { title: "Cold Chain Perishable Risk", desc: "WarehouseSensor_ZoneB detected ambient temp > 4°C for 45 mins. CargoManifests indicate $42k of perishable pharmaceuticals at immediate spoilage risk.", level: "High", color: "#EC5B13" },
-    { title: "Inefficient Rerouting Metric", desc: "RouteOptimization algorithm bypassed toll roads on Route #88B, resulting in a net-negative impact: 12% increase in diesel consumption and high SLA breach risk.", level: "Medium", color: "#fbbf24" }
+    { title: "Inefficient Rerouting Metric", desc: "RouteOptimization algorithm bypassed toll roads on Route #88B, resulting in a net-negative impact: 12% increase in diesel consumption and high SLA breach risk.", level: "Medium", color: "#fbbf24" },
+    { title: "Supplier Data Delay", desc: "SAP API timeout detected for SupplierSLAs context. Expected SLA is 100ms, current response time is 3400ms.", level: "High", color: "#EC5B13" },
+    { title: "Predictive Overfitting", desc: "Predictive Models are over-reliant on RouteOptimization historicals; confidence score dropped to 68%.", level: "Medium", color: "#fbbf24" },
+    { title: "Unmapped Databricks Tables", desc: "3 new tables detected in Databricks without a corresponding Semantic Context node. Governance approval required.", level: "Low", color: "#22c55e" }
   ];
 
   mockIncidents.forEach(inc => {
@@ -2217,7 +2804,7 @@ function showToast(text, isSuccess = true) {
   const toastText = document.getElementById("toast-sim-text");
   if (!toast || !toastText) return;
 
-  toastText.innerText = text;
+  toastText.innerHTML = text;
   toast.className = `toast-simulator ${isSuccess ? 'toast-simulator-success' : ''}`;
   toast.style.display = "flex";
 
@@ -2290,7 +2877,7 @@ function setupInteractiveWorkflowActions() {
 
       if (activeAgent === "Sentinel") {
         targetActionId = "RULE-201";
-        successMsg = currentLanguage === 'Portuguese' ? "SOP de remediação de mascaramento aplicado com sucesso!" : "Security masking SOP successfully applied to Customer Profile Registry.";
+        successMsg = currentLanguage === 'Portuguese' ? "SOP de remediação de mascaramento aplicado com sucesso!" : "Security masking SOP successfully applied to Carrier Drivers Registry.";
         finalImpactValue = "342,850";
       } else if (activeAgent === "Operations") {
         targetActionId = "AI-105";
@@ -2541,7 +3128,7 @@ function setupVoiceAndCameraSimulators() {
         } else {
           ocrOutput.innerText = `[DocumentOCR:
   DocType: "DatabaseDump"
-  TableSource: "customer_gold"
+  TableSource: "carrier_drivers"
   FieldsExposed: [ "Email", "Phone" ]
   UnmaskedPII: "bob@company.com"
   Severity: "Critical"
@@ -3129,7 +3716,7 @@ function runDocumentReasoningAudit() {
     } else if (selectedDoc === "pii_leakage.png") {
       toonText = `[DocumentOCR:
   DocType: "DatabaseDump"
-  TableSource: "customer_gold"
+  TableSource: "carrier_drivers"
   FieldsExposed: [ "Email", "Phone" ]
   UnmaskedPII: "bob@company.com"
   Severity: "Critical"
@@ -3627,6 +4214,14 @@ function sendRuleToHypothesisLab() {
   runHypothesisExperiment();
 }
 
+function showContactDetails(type, idx) {
+  const c = type === 'dedicated' ? dedicatedContacts[idx] : sharedContacts[idx];
+  const msg = currentLanguage === 'Portuguese' 
+    ? `Detalhes do Contato:<br><b style="color:var(--accent-orange-light);">${c.name}</b><br>Celular: ${c.phone}${c.details ? '<br>Info: ' + c.details : ''}` 
+    : `Contact Details:<br><b style="color:var(--accent-orange-light);">${c.name}</b><br>Phone: ${c.phone}${c.details ? '<br>Info: ' + c.details : ''}`;
+  showToast(msg, true);
+}
+
 function renderContactsLists() {
   const twinsDedicated = document.getElementById("twins-dedicated-contacts-list");
   const twinsShared = document.getElementById("twins-shared-contacts-list");
@@ -3636,12 +4231,12 @@ function renderContactsLists() {
   // Render Twins Dedicated
   if (twinsDedicated) {
     twinsDedicated.innerHTML = dedicatedContacts.map((c, idx) => `
-      <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-white-05); padding:6px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+      <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-white-05); padding:6px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" onclick="showContactDetails('dedicated', ${idx})">
         <div>
           <div style="font-weight:700; color:#fff;">${c.name}</div>
           <div style="font-size:0.6rem; color:var(--text-muted); font-family:var(--font-mono);">${c.phone}</div>
         </div>
-        <button type="button" style="background:transparent; border:none; color:#ef4444; font-size:1rem; cursor:pointer; padding: 2px 6px;" onclick="deleteContact('dedicated', ${idx})">×</button>
+        <button type="button" style="background:transparent; border:none; color:#ef4444; font-size:1rem; cursor:pointer; padding: 2px 6px;" onclick="event.stopPropagation(); deleteContact('dedicated', ${idx})">×</button>
       </div>
     `).join("");
     if (dedicatedContacts.length === 0) {
@@ -3652,12 +4247,12 @@ function renderContactsLists() {
   // Render Twins Shared
   if (twinsShared) {
     twinsShared.innerHTML = sharedContacts.map((c, idx) => `
-      <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-white-05); padding:6px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+      <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-white-05); padding:6px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" onclick="showContactDetails('shared', ${idx})">
         <div>
           <div style="font-weight:700; color:#fff;">${c.name}</div>
           <div style="font-size:0.6rem; color:var(--text-muted); font-family:var(--font-mono);">${c.phone}</div>
         </div>
-        <button type="button" style="background:transparent; border:none; color:#ef4444; font-size:1rem; cursor:pointer; padding: 2px 6px;" onclick="deleteContact('shared', ${idx})">×</button>
+        <button type="button" style="background:transparent; border:none; color:#ef4444; font-size:1rem; cursor:pointer; padding: 2px 6px;" onclick="event.stopPropagation(); deleteContact('shared', ${idx})">×</button>
       </div>
     `).join("");
     if (sharedContacts.length === 0) {
@@ -3924,7 +4519,7 @@ const appTranslations = {
     profile_cert_expires: "Expiration:",
     profile_cert_status: "Status:",
     profile_client_node: "Device: Companion Web Client",
-    profile_admin_title: "Principal Administrator",
+    profile_admin_title: "Lead Logistics Architect",
     profile_admin_role: "Role: Security & Governance Lead",
     profile_cert_status_val: "Encrypted & Active",
     header_connection_label: "CONNECTION: ACTIVE",
@@ -3990,29 +4585,29 @@ const appTranslations = {
     slide_5_sec4: "<strong>✓ ISO 42001 Compliance:</strong> Includes visible System indicator notices (✨) on generated text to trace data history.",
 
     // Action cases
-    action_sentinel_1_title: "Suspicious Access Attempt",
-    action_sentinel_1_desc: "Attempt to access the partner portal from outside the authorized corporate network. Access blocked.",
-    action_sentinel_1_source: "Security Access Gateway",
-    action_sentinel_2_title: "Suspect Billing Spike",
-    action_sentinel_2_desc: "Unusual invoice generation frequency spike during non-business hours. Access suspended pending verification.",
-    action_sentinel_2_source: "Access Anomaly Filter",
-    action_sentinel_3_title: "Unapproved Supplier Signup",
-    action_sentinel_3_desc: "Automated attempt to register a new vendor profile without matching internal procurement authorization. Profile quarantined.",
+    action_sentinel_1_title: "Unapproved Broker Token Access",
+    action_sentinel_1_desc: "Attempt to access the Customs Broker portal from an unauthorized geo-fence. API Token blocked.",
+    action_sentinel_1_source: "Broker Access Gateway",
+    action_sentinel_2_title: "Toll Fee Scraping Anomaly",
+    action_sentinel_2_desc: "Unusual toll routing queries detected during non-business hours on the Toll Plaza API. Traffic paused.",
+    action_sentinel_2_source: "Toll Plaza Rate Filter",
+    action_sentinel_3_title: "Unverified LTL Carrier Signup",
+    action_sentinel_3_desc: "Automated attempt to register a new LTL Carrier profile without matching DOT/FMCSA authorization. Profile quarantined.",
     action_sentinel_3_source: "Registration Audit Filter",
     action_impact_mitigated: "Risk Mitigation",
     action_impact_fraud: "Fraud Prevention",
     action_impact_control: "Access Control",
 
-    action_forge_1_title: "Preemptive Purchase Order Draft",
-    action_forge_1_desc: "Pre-approved PO generated to compress lead times ahead of forecasted inflation anomalies.",
-    action_forge_1_source: "Demand Scenario Simulator",
+    action_forge_1_title: "Emergency Freight Capacity Spot Bid",
+    action_forge_1_desc: "Pre-approved spot bid generated to secure LTL capacity ahead of forecasted port strike anomalies.",
+    action_forge_1_source: "Spot Bid Freight Simulator",
     action_forge_1_impact: "Save $45,000 Outage",
-    action_forge_2_title: "Raw Material Contract Optimization",
-    action_forge_2_desc: "Contract renegotiation draft based on recent commodity index drops, projecting an annual saving of 8%.",
+    action_forge_2_title: "Port Demurrage Dispute Invoice Draft",
+    action_forge_2_desc: "Dispute drafted for unverified demurrage fees based on GPS logs showing truck arrival prior to cut-off, reclaiming \$18,200.",
     action_forge_2_source: "Contract Semantic Analyzer",
     action_forge_2_impact: "+$22,500.00",
-    action_forge_3_title: "Warehouse Space Pre-allocation",
-    action_forge_3_desc: "Automated cargo consolidation draft for next quarter's peak season, reducing external warehousing storage costs.",
+    action_forge_3_title: "Cold Storage Cross-Dock Allocation",
+    action_forge_3_desc: "Automated cold chain cross-dock consolidation drafted for peak season, reducing reefer plug-in costs.",
     action_forge_3_source: "Space Optimization Simulator",
     action_forge_3_impact: "12% Cost Reduction",
 
@@ -4083,34 +4678,34 @@ const appTranslations = {
     action_ops_3_source: "Cold Chain Fleet Monitor",
     action_ops_3_impact: "Cargo Preservation",
 
-    action_sentinel_4_title: "Privileged Table Query Alert",
-    action_sentinel_4_desc: "Direct query executed on raw credentials table by non-admin identity. Blocked.",
+    action_sentinel_4_title: "HazMat Registry Dump Alert",
+    action_sentinel_4_desc: "Direct query executed on raw HazMat Registry table by non-authorized identity. Blocked.",
     action_sentinel_4_source: "Access Audit Filter",
-    action_sentinel_5_title: "Suspicious Key Rotation",
-    action_sentinel_5_desc: "Multiple session key rotation requests received within 1 minute. Sandbox lock engaged.",
+    action_sentinel_5_title: "Carrier Session Hijacking",
+    action_sentinel_5_desc: "Multiple session token rotation requests received from Carrier within 1 minute. API Sandbox lock engaged.",
     action_sentinel_5_source: "Security Policy Guard",
-    action_sentinel_6_title: "Unmasked Ingress Attempt",
-    action_sentinel_6_desc: "External connection attempted to ingest customer records without hashing variables. Quarantined.",
+    action_sentinel_6_title: "Raw Telemetry Ingress Attempt",
+    action_sentinel_6_desc: "External carrier attempted to ingest OBD-II telemetry without hashing VIN/Driver ID variables. Quarantined.",
     action_sentinel_6_source: "Data Ingress Filter",
-    action_sentinel_7_title: "API Token Boundary Violation",
-    action_sentinel_7_desc: "Access token generated for partner portal outside standard geographical boundaries. Suspended.",
+    action_sentinel_7_title: "Yard Access Geofence Violation",
+    action_sentinel_7_desc: "Gate access token triggered outside standard yard geofence. Suspended.",
     action_sentinel_7_source: "Geofence Module",
 
-    action_forge_4_title: "Transport Dispatch Schedule",
-    action_forge_4_desc: "Automated schedule generated for empty carrier pickups to avoid depot congestion next week.",
+    action_forge_4_title: "Drayage Dispatch Optimization",
+    action_forge_4_desc: "Automated schedule generated for empty container drayage pickups to avoid yard congestion.",
     action_forge_4_source: "Dispatch Planner",
     action_forge_4_impact: "Logistics Optimization",
-    action_forge_5_title: "Supply Chain Re-routing Suggestion",
-    action_forge_5_desc: "Synthetic twin plan to shift raw material sourcing to secondary supplier due to storm alert.",
+    action_forge_5_title: "HazMat Carrier Re-routing Plan",
+    action_forge_5_desc: "Synthetic twin plan to re-route HazMat carriers away from severe weather anomaly, maintaining SLA.",
     action_forge_5_source: "Alternative Sourcing Engine",
     action_forge_5_impact: "+$12,500.00 Saved",
     action_forge_6_title: "Demurrage Dispute Invoice Draft",
     action_forge_6_desc: "Drafted fee refund letter based on HS Customs code discrepancy, reclaiming $18,200.00.",
     action_forge_6_source: "Dispute Claim Generator",
     action_forge_6_impact: "+$18,200.00 Reclaim",
-    action_forge_7_title: "Inventory Reorder Suggestion",
-    action_forge_7_desc: "Pre-calculated purchase request generated for safe stock replenishment ahead of shutdown.",
-    action_forge_7_source: "Predictive Reorder Module",
+    action_forge_7_title: "Safety Stock Relocation Rule",
+    action_forge_7_desc: "Pre-calculated transport request generated for safety stock relocation ahead of regional shutdown.",
+    action_forge_7_source: "Safety Stock Network Module",
     action_forge_7_impact: "Safety Stock Buffer",
 
     action_compliance_4_title: "Decalibration Drift Flagged",
@@ -5427,10 +6022,10 @@ const screenSpecs = {
   "runner-conn": {
     name: "Runner & Connection Configurations",
     widget: "RunnerConnectionsScreen (runner_connections_screen.dart)",
-    desc: "Connectivity terminal testing Customs Registry Link, Customer Profile Registry, and Access Controls Registry auth gateways. Displays isolated worker pool bounds and memory limits alongside diagnostic telemetry outputs.",
+    desc: "Connectivity terminal testing Customs Registry Link, Carrier Drivers Registry, and Access Controls Registry auth gateways. Displays isolated worker pool bounds and memory limits alongside diagnostic telemetry outputs.",
     grpc: `[Business Integration Fields]
 - Target Dashboard: Network Connection Monitor
-- Connectivity Targets: Customs Registry Link, Customer Profile Registry, Access Controls Registry
+- Connectivity Targets: Customs Registry Link, Carrier Drivers Registry, Access Controls Registry
 - Data Standard: Secure Gateway Connection`,
     telecom: "Verifies secure tunnel diagnostics. Connection metrics route through secure VoIP lines for live vendor coordination."
   }
@@ -5463,29 +6058,29 @@ const reactAgentStreams = {
     Sentinel: [
       {
         status: "LOOP_STATUS_WORKING",
-        thought: "I need to inspect the customer_gold schema on Customer Profile Registry to find which columns contain unmasked PII.",
+        thought: "I need to inspect the carrier_drivers schema on Carrier Drivers Registry to find which columns contain unmasked PII.",
         action: "read_file",
-        input: "db/schemas/customer_gold.schema"
+        input: "db/schemas/carrier_drivers.schema"
       },
       {
         status: "LOOP_STATUS_EXECUTING",
         action: "read_file",
-        input: "db/schemas/customer_gold.schema"
+        input: "db/schemas/carrier_drivers.schema"
       },
       {
         status: "LOOP_STATUS_OBSERVING",
-        observation: `[SchemaMeta:\n  Table: "customer_gold"\n  Columns: [\n    { Name: "cust_id", Type: "INT", Masked: false },\n    { Name: "email", Type: "VARCHAR", Masked: false },\n    { Name: "phone", Type: "VARCHAR", Masked: false },\n    { Name: "tax_id", Type: "VARCHAR", Masked: true }\n  ]\n]`
+        observation: `[SchemaMeta:\n  Table: "carrier_drivers"\n  Columns: [\n    { Name: "driver_id", Type: "INT", Masked: false },\n    { Name: "email", Type: "VARCHAR", Masked: false },\n    { Name: "phone", Type: "VARCHAR", Masked: false },\n    { Name: "tax_id", Type: "VARCHAR", Masked: true }\n  ]\n]`
       },
       {
         status: "LOOP_STATUS_WORKING",
         thought: "Columns 'email' and 'phone' are currently unmasked. I must compile a masking policy SOP and run an SQL test query to verify policy behavior.",
         action: "run_sql",
-        input: "SELECT email, phone FROM customer_gold WHERE cust_id = 1001"
+        input: "SELECT email, phone FROM carrier_drivers WHERE driver_id = 1001"
       },
       {
         status: "LOOP_STATUS_EXECUTING",
         action: "run_sql",
-        input: "SELECT email, phone FROM customer_gold WHERE cust_id = 1001"
+        input: "SELECT email, phone FROM carrier_drivers WHERE driver_id = 1001"
       },
       {
         status: "LOOP_STATUS_OBSERVING",
@@ -5499,7 +6094,7 @@ const reactAgentStreams = {
       },
       {
         status: "LOOP_STATUS_DONE",
-        final: `[RemediationResult:\n  Status: "SUCCESS"\n  SOP_ID: "SOP-8402"\n  Actions_Taken: [\n    "Generated Customer Profile column-masking policy SOP-8402",\n    "Verified plaintext exposure via SQL diagnostic queries",\n    "Dispatched WhatsApp alert to security response lead (+55 11 99999-1234)"\n  ]\n]`
+        final: `[RemediationResult:\n  Status: "SUCCESS"\n  SOP_ID: "SOP-8402"\n  Actions_Taken: [\n    "Generated Carrier Drivers column-masking policy SOP-8402",\n    "Verified plaintext exposure via SQL diagnostic queries",\n    "Dispatched WhatsApp alert to security response lead (+55 11 99999-1234)"\n  ]\n]`
       }
     ],
     Route: [
@@ -5591,29 +6186,29 @@ const reactAgentStreams = {
     Sentinel: [
       {
         status: "LOOP_STATUS_WORKING",
-        thought: "Necesito leer el esquema de la tabla del Registro de Perfiles `customer_gold` para identificar campos de PII desprotegidos.",
+        thought: "Necesito leer el esquema de la tabla del Registro de Perfiles `carrier_drivers` para identificar campos de PII desprotegidos.",
         action: "read_file",
-        input: "db/schemas/customer_gold.schema"
+        input: "db/schemas/carrier_drivers.schema"
       },
       {
         status: "LOOP_STATUS_EXECUTING",
         action: "read_file",
-        input: "db/schemas/customer_gold.schema"
+        input: "db/schemas/carrier_drivers.schema"
       },
       {
         status: "LOOP_STATUS_OBSERVING",
-        observation: `[SchemaMeta:\n  Tabla: "customer_gold"\n  Columnas: [\n    { Nombre: "cust_id", Tipo: "INT", Mascarado: false },\n    { Nombre: "email", Tipo: "VARCHAR", Mascarado: false },\n    { Nombre: "phone", Tipo: "VARCHAR", Mascarado: false },\n    { Nombre: "tax_id", Tipo: "VARCHAR", Mascarado: true }\n  ]\n]`
+        observation: `[SchemaMeta:\n  Tabla: "carrier_drivers"\n  Columnas: [\n    { Nombre: "driver_id", Tipo: "INT", Mascarado: false },\n    { Nombre: "email", Tipo: "VARCHAR", Mascarado: false },\n    { Nombre: "phone", Tipo: "VARCHAR", Mascarado: false },\n    { Nombre: "tax_id", Tipo: "VARCHAR", Mascarado: true }\n  ]\n]`
       },
       {
         status: "LOOP_STATUS_WORKING",
         thought: "Las columnas 'email' y 'phone' no están enmascaradas. Debo ejecutar una consulta SQL de prueba para verificar la exposición de los datos.",
         action: "run_sql",
-        input: "SELECT email, phone FROM customer_gold WHERE cust_id = 1001"
+        input: "SELECT email, phone FROM carrier_drivers WHERE driver_id = 1001"
       },
       {
         status: "LOOP_STATUS_EXECUTING",
         action: "run_sql",
-        input: "SELECT email, phone FROM customer_gold WHERE cust_id = 1001"
+        input: "SELECT email, phone FROM carrier_drivers WHERE driver_id = 1001"
       },
       {
         status: "LOOP_STATUS_OBSERVING",
@@ -5719,29 +6314,29 @@ const reactAgentStreams = {
     Sentinel: [
       {
         status: "LOOP_STATUS_WORKING",
-        thought: "Je dois inspecter le schéma de la table du Registre des Profils `customer_gold` pour trouver les colonnes contenant des PII en clair.",
+        thought: "Je dois inspecter le schéma de la table du Registre des Profils `carrier_drivers` pour trouver les colonnes contenant des PII en clair.",
         action: "read_file",
-        input: "db/schemas/customer_gold.schema"
+        input: "db/schemas/carrier_drivers.schema"
       },
       {
         status: "LOOP_STATUS_EXECUTING",
         action: "read_file",
-        input: "db/schemas/customer_gold.schema"
+        input: "db/schemas/carrier_drivers.schema"
       },
       {
         status: "LOOP_STATUS_OBSERVING",
-        observation: `[SchemaMeta:\n  Table: "customer_gold"\n  Colonnes: [\n    { Nom: "cust_id", Type: "INT", Masque: false },\n    { Nom: "email", Type: "VARCHAR", Masque: false },\n    { Nom: "phone", Type: "VARCHAR", Masque: false },\n    { Nom: "tax_id", Type: "VARCHAR", Masque: true }\n  ]\n]`
+        observation: `[SchemaMeta:\n  Table: "carrier_drivers"\n  Colonnes: [\n    { Nom: "driver_id", Type: "INT", Masque: false },\n    { Nom: "email", Type: "VARCHAR", Masque: false },\n    { Nom: "phone", Type: "VARCHAR", Masque: false },\n    { Nom: "tax_id", Type: "VARCHAR", Masque: true }\n  ]\n]`
       },
       {
         status: "LOOP_STATUS_WORKING",
         thought: "Les colonnes 'email' et 'phone' ne sont pas masquées. Je dois exécuter une requête SQL pour valider l'exposition des données.",
         action: "run_sql",
-        input: "SELECT email, phone FROM customer_gold WHERE cust_id = 1001"
+        input: "SELECT email, phone FROM carrier_drivers WHERE driver_id = 1001"
       },
       {
         status: "LOOP_STATUS_EXECUTING",
         action: "run_sql",
-        input: "SELECT email, phone FROM customer_gold WHERE cust_id = 1001"
+        input: "SELECT email, phone FROM carrier_drivers WHERE driver_id = 1001"
       },
       {
         status: "LOOP_STATUS_OBSERVING",
@@ -5847,29 +6442,29 @@ const reactAgentStreams = {
     Sentinel: [
       {
         status: "LOOP_STATUS_WORKING",
-        thought: "Eu preciso ler o esquema da tabela do Registro de Perfis `customer_gold` para identificar colunas unmasked de PII.",
+        thought: "Eu preciso ler o esquema da tabela do Registro de Perfis `carrier_drivers` para identificar colunas unmasked de PII.",
         action: "read_file",
-        input: "db/schemas/customer_gold.schema"
+        input: "db/schemas/carrier_drivers.schema"
       },
       {
         status: "LOOP_STATUS_EXECUTING",
         action: "read_file",
-        input: "db/schemas/customer_gold.schema"
+        input: "db/schemas/carrier_drivers.schema"
       },
       {
         status: "LOOP_STATUS_OBSERVING",
-        observation: `[SchemaMeta:\n  Tabela: "customer_gold"\n  Colunas: [\n    { Nome: "cust_id", Tipo: "INT", Mascarado: false },\n    { Nome: "email", Tipo: "VARCHAR", Mascarado: false },\n    { Nome: "phone", Tipo: "VARCHAR", Mascarado: false },\n    { Nome: "tax_id", Tipo: "VARCHAR", Mascarado: true }\n  ]\n]`
+        observation: `[SchemaMeta:\n  Tabela: "carrier_drivers"\n  Colunas: [\n    { Nome: "driver_id", Tipo: "INT", Mascarado: false },\n    { Nome: "email", Tipo: "VARCHAR", Mascarado: false },\n    { Nome: "phone", Tipo: "VARCHAR", Mascarado: false },\n    { Nome: "tax_id", Tipo: "VARCHAR", Mascarado: true }\n  ]\n]`
       },
       {
         status: "LOOP_STATUS_WORKING",
         thought: "As colunas 'email' e 'phone' estão desprotegidas. Vou rodar uma query SQL diagnóstica para verificar a exposição dos dados em plaintext.",
         action: "run_sql",
-        input: "SELECT email, phone FROM customer_gold WHERE cust_id = 1001"
+        input: "SELECT email, phone FROM carrier_drivers WHERE driver_id = 1001"
       },
       {
         status: "LOOP_STATUS_EXECUTING",
         action: "run_sql",
-        input: "SELECT email, phone FROM customer_gold WHERE cust_id = 1001"
+        input: "SELECT email, phone FROM carrier_drivers WHERE driver_id = 1001"
       },
       {
         status: "LOOP_STATUS_OBSERVING",
@@ -6169,9 +6764,9 @@ function updateRemediationScreenForAgent(agentType) {
       subtitle.innerText = currentLanguage === 'Portuguese' ? "ANOMALIA DE SEGURANÇA DETECTADA" : "SECURITY ANOMALY DETECTED";
     }
     if (title) {
-      title.innerHTML = currentLanguage === 'Portuguese' ? "Exposição de PII em<br>customer_gold" : "PII Exposure in<br>customer_gold";
+      title.innerHTML = currentLanguage === 'Portuguese' ? "Exposição de PII em<br>carrier_drivers" : "PII Exposure in<br>carrier_drivers";
     }
-    if (source) source.innerText = currentLanguage === 'Portuguese' ? "Reg. de Perfis: Customer_Gold" : "Customer Profile Registry: Customer_Gold";
+    if (source) source.innerText = currentLanguage === 'Portuguese' ? "Reg. de Perfis: Customer_Gold" : "Carrier Drivers Registry: Customer_Gold";
     if (badge) {
       badge.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ${currentLanguage === 'Portuguese' ? 'Alerta de Segurança' : 'Security Alert'}`;
     }
@@ -6191,7 +6786,7 @@ function updateRemediationScreenForAgent(agentType) {
       step1Desc.innerText = currentLanguage === 'Portuguese' ? "Procedimento operacional padrão detalhado para modificação física de banco de dados." : "Provide detailed Standard Operating Procedure for physical database modification. Do not apply directly.";
     }
     if (step1Script) {
-      step1Script.innerText = `SOP: Implement Masking\n1. Connect to database.\n2. Execute:\n   ALTER TABLE customer_gold ADD MASKING POLICY pii_mask;\n3. Verify masking is applied.`;
+      step1Script.innerText = `SOP: Implement Masking\n1. Connect to database.\n2. Execute:\n   ALTER TABLE carrier_drivers ADD MASKING POLICY pii_mask;\n3. Verify masking is applied.`;
     }
     if (step1ActionBtn) {
       step1ActionBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> ${currentLanguage === 'Portuguese' ? 'Ver SOP Completo' : 'View Full SOP'}`;

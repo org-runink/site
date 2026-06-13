@@ -75,7 +75,7 @@
 
         <div class="nav-section-title" style="margin-top: 20px;" data-translate="sidebar_control">Operations Control</div>
         <div class="screen-pill" data-screen="profile">
-          <span data-translate="nav_profile">Profile & Billing CU</span>
+          <span data-translate="nav_profile">Profile & Cloud Quota</span>
           <span class="screen-pill-status"></span>
         </div>
         <div class="screen-pill" data-screen="rules-recon">
@@ -113,7 +113,7 @@
 
       <!-- INTERACTIVE DESKTOP VIEWPORT -->
       <div id="simulator-container" class="device-shell">
-        <div class="device-header">
+        <div class="device-header" style="display: none;">
           <div style="display:flex; align-items:center; gap:8px;">
             <span class="pulse-dot-red" style="background-color:#22c55e; box-shadow:0 0 8px #22c55e; animation:none; width:8px; height:8px;"></span>
             <span style="font-weight:700; font-family:var(--font-display); letter-spacing:0.5px; color:#fff;" data-translate="header_cockpit">RUNINK WEB COCKPIT</span>
@@ -157,20 +157,32 @@
                 <div class="impact-row">
                   <div class="impact-val-container">
                     <span class="impact-val" id="cockpit-impact-value" style="font-size: 1.8rem;">342,850</span>
-                  <span class="impact-unit">USD</span>
-                </div>
-                <div class="impact-trend-container">
-                  <div class="trend-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    <span>+14.2%</span>
+                    <span class="impact-unit">USD</span>
                   </div>
-                  <div class="trend-period">last 7 days</div>
+                  <div class="impact-trend-container">
+                    <div class="trend-badge">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                      <span>+14.2%</span>
+                    </div>
+                    <div class="trend-period">last 7 days</div>
+                  </div>
                 </div>
+                <svg width="100%" height="60" viewBox="0 0 200 60" preserveAspectRatio="none" style="margin-top: auto;">
+                  <defs>
+                    <linearGradient id="impactGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(34, 197, 94, 0.3)" />
+                      <stop offset="100%" stop-color="rgba(34, 197, 94, 0)" />
+                    </linearGradient>
+                  </defs>
+                  <polygon points="0,60 0,40 40,50 80,30 120,40 160,15 200,5 200,60" fill="url(#impactGradient)" />
+                  <polyline points="0,40 40,50 80,30 120,40 160,15 200,5" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="160" cy="15" r="3" fill="#22c55e" stroke="#1c1917" stroke-width="2" />
+                  <circle cx="200" cy="5" r="4" fill="#22c55e" stroke="#1c1917" stroke-width="2" />
+                </svg>
               </div>
-            </div>
 
             <!-- Metasearch & Contact addition widget (Twins Page) -->
-            <div class="flutter-card" style="display:flex; flex-direction:column; gap:10px; border:1px solid rgba(236,91,19,0.25); background:rgba(236,91,19,0.02);">
+            <div class="flutter-card" style="display:none; flex-direction:column; gap:10px; border:1px solid rgba(236,91,19,0.25); background:rgba(236,91,19,0.02);">
               <div class="impact-label" style="display:flex; align-items:center; gap:6px; color:var(--accent-orange-light); margin-left:-18px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 PROVIDER METASEARCH
@@ -217,14 +229,19 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 TWIN CONTACT LISTS
               </div>
-              <div class="screen-grid-2" style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+              <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
                 <div>
                   <div style="font-size:0.65rem; font-weight:800; color:var(--accent-orange-light); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px; display:flex; justify-content:space-between; align-items:center;">
                     <span>Dedicated Contacts</span>
                     <span style="font-size:0.55rem; background:var(--accent-orange-muted); color:#fff; padding:1px 4px; border-radius:3px;" id="count-dedicated-contacts">0</span>
                   </div>
-                  <div id="twins-dedicated-contacts-list" style="display:flex; flex-direction:column; gap:4px; max-height:100px; overflow-y:auto; font-size:0.7rem;">
+                  <div id="twins-dedicated-contacts-list" style="display:flex; flex-direction:column; gap:4px; overflow-y:auto; font-size:0.7rem;">
                     <!-- JS Rendered -->
+                  </div>
+                  <div style="display:flex; gap:4px; margin-top:6px; width:100%;">
+                    <input type="text" id="add-dedicated-name" placeholder="Name" style="flex:2; background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:6px 8px; border-radius:4px; font-size:0.65rem; outline:none; height:24px;">
+                    <input type="text" id="add-dedicated-phone" placeholder="Phone" style="flex:2; background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:6px 8px; border-radius:4px; font-size:0.65rem; outline:none; height:24px;">
+                    <button type="button" class="draft-card-button" style="margin:0; padding:0 12px; font-size:0.8rem; flex:1; height:24px; display:flex; align-items:center; justify-content:center;" onclick="addManualContact('dedicated')">+</button>
                   </div>
                 </div>
                 <div>
@@ -232,10 +249,23 @@
                     <span>Shared (Dedicated Inst.)</span>
                     <span style="font-size:0.55rem; background:rgba(34,197,94,0.2); color:#22c55e; padding:1px 4px; border-radius:3px;" id="count-shared-contacts">0</span>
                   </div>
-                  <div id="twins-shared-contacts-list" style="display:flex; flex-direction:column; gap:4px; max-height:100px; overflow-y:auto; font-size:0.7rem;">
+                  <div id="twins-shared-contacts-list" style="display:flex; flex-direction:column; gap:4px; overflow-y:auto; font-size:0.7rem;">
                     <!-- JS Rendered -->
                   </div>
+                  <div style="display:flex; gap:4px; margin-top:6px; width:100%;">
+                    <input type="text" id="add-shared-name" placeholder="Name" style="flex:2; background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:6px 8px; border-radius:4px; font-size:0.65rem; outline:none; height:24px;">
+                    <input type="text" id="add-shared-phone" placeholder="Phone" style="flex:2; background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:6px 8px; border-radius:4px; font-size:0.65rem; outline:none; height:24px;">
+                    <button type="button" class="draft-card-button" style="margin:0; padding:0 12px; font-size:0.8rem; flex:1; height:24px; border-color:rgba(34,197,94,0.3); color:#22c55e; background:rgba(34,197,94,0.1); display:flex; align-items:center; justify-content:center;" onclick="addManualContact('shared')">+</button>
+                  </div>
                 </div>
+              </div>
+
+              <div style="border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px; display:flex; flex-direction:column; gap:6px; margin-top:auto;">
+                <span style="font-size:0.65rem; color:var(--text-muted);">Simulate offline module tasks:</span>
+                <button type="button" class="draft-card-button" style="margin:0; width:100%; justify-content:center; font-size:0.65rem; border-color:rgba(37,211,102,0.3); color:#25D366; background:rgba(37,211,102,0.1); display:flex; align-items:center; gap:4px; padding:6px 8px;" onclick="triggerWhatsAppAgentNegotiation()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  Simulate WhatsApp Negotiation
+                </button>
               </div>
             </div>
             </div> <!-- Close Top Dashboard Stats Grid -->
@@ -675,85 +705,19 @@
 
           <!-- SCREEN 5: Maturity Center (ai_center_screen.dart) -->
           <div id="screen-maturity" class="screen-view">
-            <div class="screen-header-bar">
-              <div class="screen-header-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-              <div class="screen-header-title-wrapper">
+            <div class="screen-header-bar" style="justify-content: center;">
+              <div class="screen-header-title-wrapper" style="text-align: center;">
                 <div class="screen-header-subtitle" data-translate="subtitle_maturity">
-                  GOVERNANCE CONTROLS
+                  AUDITORIA DE DOMÍNIO
                 </div>
-                <h2 class="screen-header-title" data-translate="title_maturity">Maturity <span>Center</span></h2>
-              </div>
-              <div class="screen-header-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-            </div>
-
-            <!-- Scorecard grid metrics -->
-            <div class="scoreboard-grid" id="maturity-scores">
-              <div class="scorecard-box">
-                <div class="gauge-container">
-                  <svg class="gauge-svg" viewBox="0 0 70 70">
-                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
-                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="92"></circle>
-                  </svg>
-                  <div class="gauge-value">0%</div>
-                </div>
-                <span class="scorecard-label">Predictive Accuracy</span>
-              </div>
-              <div class="scorecard-box">
-                <div class="gauge-container">
-                  <svg class="gauge-svg" viewBox="0 0 70 70">
-                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
-                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="85"></circle>
-                  </svg>
-                  <div class="gauge-value">0%</div>
-                </div>
-                <span class="scorecard-label">Fleet Uptime Index</span>
-              </div>
-              <div class="scorecard-box">
-                <div class="gauge-container">
-                  <svg class="gauge-svg" viewBox="0 0 70 70">
-                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
-                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="94"></circle>
-                  </svg>
-                  <div class="gauge-value">0%</div>
-                </div>
-                <span class="scorecard-label">SLA Conformity</span>
-              </div>
-              <div class="scorecard-box">
-                <div class="gauge-container">
-                  <svg class="gauge-svg" viewBox="0 0 70 70">
-                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
-                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="88"></circle>
-                  </svg>
-                  <div class="gauge-value">0%</div>
-                </div>
-                <span class="scorecard-label">Data Quality Index</span>
-              </div>
-              <div class="scorecard-box">
-                <div class="gauge-container">
-                  <svg class="gauge-svg" viewBox="0 0 70 70">
-                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
-                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="96"></circle>
-                  </svg>
-                  <div class="gauge-value">0%</div>
-                </div>
-                <span class="scorecard-label">Risk & Compliance</span>
-              </div>
-              <div class="scorecard-box">
-                <div class="gauge-container">
-                  <svg class="gauge-svg" viewBox="0 0 70 70">
-                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
-                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="81"></circle>
-                  </svg>
-                  <div class="gauge-value">0%</div>
-                </div>
-                <span class="scorecard-label">System Readiness Level</span>
+                <h2 class="screen-header-title" style="font-size: 1.5rem;">AI Readiness and <span>Maturity Center</span></h2>
               </div>
             </div>
 
-            <!-- Graph and Inspector details panel in a two-column desktop grid -->
-            <div class="screen-grid-2" style="grid-template-columns: 1.1fr 0.9fr; margin-bottom: 24px; align-items: stretch;">
+            <!-- Graph and Inspector details panel in a stacked column layout -->
+            <div class="screen-grid-2" style="grid-template-columns: 1fr; margin-bottom: 24px; align-items: stretch; gap: 24px;">
               <!-- Maturity Graph Node simulation widget -->
-              <div class="node-graph-box" id="node-graph-box" style="margin-bottom:0; height:100%;">
+              <div class="node-graph-box" id="node-graph-box" style="margin-bottom:0; height:350px;">
                 <svg class="node-graph-svg" id="node-graph-svg">
                   <!-- Nodes and edges rendered in Javascript -->
                 </svg>
@@ -769,21 +733,98 @@
                   <div id="node-details-empty" style="text-align:center; padding:40px 20px; color:var(--text-muted); font-size:0.8rem;">
                     Click on any node in the data lineage graph to inspect its schema metadata and integration parameters.
                   </div>
-                  <div id="node-details-content" style="display:none; flex-direction:column; gap:12px;">
+                  <div id="node-details-content" style="display:none; flex-direction:column; gap:12px; overflow-y:auto; max-height: 400px; padding-right:8px;">
                     <h3 id="node-detail-title" style="font-family:var(--font-display); font-size:1.2rem; color:#fff; display:flex; align-items:center; gap:8px;">FleetTelemetry_Live</h3>
-                    <div style="background-color:rgba(0,0,0,0.2); border-radius:10px; border:1px solid var(--glass-white-05); padding:12px; font-family:var(--font-mono); font-size:0.75rem; display:flex; flex-direction:column; gap:6px;">
-                      <div><span style="color:var(--text-muted);">Endpoint:</span> <span id="node-detail-endpoint" style="color:#fff;">iot.fleet.telemetry</span></div>
+                    <div style="background-color:rgba(0,0,0,0.2); border-radius:10px; border:1px solid var(--glass-white-05); padding:12px; font-family:var(--font-mono); font-size:0.65rem; display:flex; flex-direction:column; gap:6px;">
+                      <div><span style="color:var(--text-muted);">Endpoint:</span> <span id="node-detail-endpoint" style="color:#fff;"></span></div>
+                      <div id="node-detail-connector-row" style="display:none;"><span style="color:var(--text-muted);">Connector:</span> <span id="node-detail-connector" style="color:#38bdf8; font-weight:bold;"></span></div>
+                      <div id="node-detail-table-row" style="display:none;"><span style="color:var(--text-muted);">Table:</span> <span id="node-detail-table" style="color:#a78bfa; font-weight:bold;"></span></div>
                       <div><span style="color:var(--text-muted);" id="node-detail-sync-label">Conexão:</span> <span id="node-detail-sync" style="color:var(--color-compliance);">Segura / Ativa</span></div>
                       <div><span style="color:var(--text-muted);">Linhas Totais:</span> <span id="node-detail-rows" style="color:var(--accent-orange-light);">8,520 Rows</span></div>
                       <div><span style="color:var(--text-muted);">Last Sync:</span> <span id="node-detail-time" style="color:#fff;">Just Now</span></div>
                     </div>
                     <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px;">Schema Columns</div>
-                    <pre id="node-detail-schema" style="background-color:#000; border-radius:8px; padding:10px; font-family:var(--font-mono); font-size:0.65rem; color:var(--color-forge); height:80px; overflow-y:auto; margin:0; white-space:pre-wrap;"></pre>
+                    <pre id="node-detail-schema" style="background-color:#000; border-radius:8px; padding:10px; font-family:var(--font-mono); font-size:0.65rem; color:var(--color-forge); max-height:80px; overflow-y:auto; margin:0; white-space:pre-wrap; flex-shrink:0;"></pre>
+                    <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px;">Available Objects</div>
+                    <div id="node-detail-objects" style="background-color:rgba(0,0,0,0.2); border-radius:8px; padding:8px; font-family:var(--font-mono); font-size:0.65rem; color:var(--accent-orange-light); display:flex; flex-wrap:wrap; gap:4px; margin-bottom: 4px;"></div>
+                    <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px;">Related Documents</div>
+                    <div id="node-detail-documents" style="background-color:rgba(0,0,0,0.2); border-radius:8px; padding:8px; font-family:var(--font-mono); font-size:0.65rem; color:var(--color-compliance); display:flex; flex-direction:column; gap:4px; margin-bottom: 4px;"></div>
+                    <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px;">Technical Specifications</div>
+                    <div id="node-detail-specs" style="background-color:rgba(0,0,0,0.2); border-radius:8px; padding:8px; font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); display:flex; flex-direction:column; gap:4px;"></div>
                   </div>
                 </div>
               </div>
             </div>
 
+            <!-- Scorecard grid metrics -->
+            <div class="scoreboard-grid" id="maturity-scores" style="margin-bottom: 24px;">
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="92"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">Predictive Accuracy</span>
+                <span class="scorecard-indicator" style="font-size:0.65rem; color:var(--color-compliance); margin-top:4px;">+1.2% vs last month</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="85"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">Fleet Uptime Index</span>
+                <span class="scorecard-indicator" style="font-size:0.65rem; color:var(--color-compliance); margin-top:4px;">+3.4% YoY</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="94"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">SLA Conformity</span>
+                <span class="scorecard-indicator" style="font-size:0.65rem; color:var(--color-compliance); margin-top:4px;">Consistently High</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="88"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">Data Quality Index</span>
+                <span class="scorecard-indicator" style="font-size:0.65rem; color:var(--accent-orange-light); margin-top:4px;">Needs Review</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="96"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">Risk & Compliance</span>
+                <span class="scorecard-indicator" style="font-size:0.65rem; color:var(--color-compliance); margin-top:4px;">All Audits Passed</span>
+              </div>
+              <div class="scorecard-box">
+                <div class="gauge-container">
+                  <svg class="gauge-svg" viewBox="0 0 70 70">
+                    <circle class="gauge-bg" cx="35" cy="35" r="28"></circle>
+                    <circle class="gauge-circle" cx="35" cy="35" r="28" data-target="81"></circle>
+                  </svg>
+                  <div class="gauge-value">0%</div>
+                </div>
+                <span class="scorecard-label">System Readiness Level</span>
+                <span class="scorecard-indicator" style="font-size:0.65rem; color:var(--text-muted); margin-top:4px;">Pending Update</span>
+              </div>
+            </div>
 
             <div class="status-section-title">LOGISTICS & PREDICTIVE MAINTENANCE ASSESSMENT</div>
 
@@ -798,8 +839,8 @@
             <div class="screen-header-bar">
               <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
               <div class="screen-header-title-wrapper">
-                <div class="screen-header-subtitle" data-translate="subtitle_profile">SYSTEM USER PROFILE</div>
-                <h2 class="screen-header-title" data-translate="title_profile">Identity & <span>Billing</span></h2>
+                <div class="screen-header-subtitle" data-translate="subtitle_profile">SYSTEM DISPATCH PROFILE</div>
+                <h2 class="screen-header-title" data-translate="title_profile">Identity & <span>Logistics Quota</span></h2>
               </div>
               <div class="artifact-pending-badge" style="color:var(--color-compliance); border-color:rgba(34,197,94,0.3); background-color:rgba(34,197,94,0.1);">
                 <span class="artifact-pending-dot" style="background-color:var(--color-compliance);"></span> SECURE SESSION
@@ -809,14 +850,14 @@
             <div class="screen-grid-2" style="grid-template-columns: 1fr 1fr;">
               <!-- Left Column: User identity & certs -->
               <div class="flutter-card">
-                <div class="status-section-title" data-translate="admin_creds">ADMINISTRATOR CREDENTIALS</div>
+                <div class="status-section-title" data-translate="admin_creds">LOGISTICS ARCHITECT CREDENTIALS</div>
                 <div style="display:flex; align-items:center; gap:20px; margin-bottom:24px; margin-top:14px;">
                   <div style="width:70px; height:70px; border-radius:50%; background:radial-gradient(circle, var(--accent-orange), var(--accent-orange-muted)); display:flex; align-items:center; justify-content:center; font-size:1.8rem; font-weight:900; color:#fff; border:2px solid var(--accent-orange-light); flex-shrink:0;">
                     AD
                   </div>
                   <div>
                     <h3 style="font-family:var(--font-display); font-size:1.2rem; color:#fff; margin-bottom:4px;" data-translate="profile_admin_title">Principal Administrator</h3>
-                    <p style="font-size:0.8rem; color:var(--text-secondary);" data-translate="profile_admin_role">Role: Security & Governance Lead</p>
+                    <p style="font-size:0.8rem; color:var(--text-secondary);" data-translate="profile_admin_role">Role: Data Governance & Fleet Operations Lead</p>
                     <p style="font-size:0.7rem; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px;" id="profile-user-node" data-translate="profile_client_node">Device: Companion Web Client</p>
                   </div>
                 </div>
@@ -835,12 +876,12 @@
 
               <!-- Right Column: Compute Unit details (Billing CU) -->
               <div class="flutter-card">
-                <div class="status-section-title" data-translate="cu_consumption">COMPUTE UNITS (CU) CONSUMPTION</div>
+                <div class="status-section-title" data-translate="cu_consumption">LOGISTICS DATA CLOUD (LDC) CONSUMPTION</div>
 
                 <!-- Quota progress bar -->
                 <div style="margin: 20px 0;">
                   <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
-                    <span style="font-size:0.85rem; font-weight:700; color:var(--text-secondary);" data-translate="monthly_quota">Monthly Runner Quota</span>
+                    <span style="font-size:0.85rem; font-weight:700; color:var(--text-secondary);" data-translate="monthly_quota">Monthly Query Quota</span>
                     <span style="font-size:1.4rem; font-family:var(--font-display); font-weight:900; color:var(--accent-orange-light);">4,210 / 5,000 <span style="font-size:0.75rem; font-family:var(--font-sans); color:var(--text-muted); font-weight:500;">CU</span></span>
                   </div>
                   <div style="height:10px; background-color:var(--surface-highlight); border-radius:5px; overflow:hidden; border:1px solid var(--glass-white-05);">
@@ -852,11 +893,11 @@
                   </div>
                 </div>
 
-                <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px;" data-translate="active_runner_credits">Active Runner Credits Allocated</div>
+                <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px;" data-translate="active_runner_credits">Active Warehouse Compute Allocated</div>
                 <div style="display:flex; flex-direction:column; gap:10px;">
                   <div style="display:flex; justify-content:space-between; align-items:center; background-color:rgba(0,0,0,0.2); padding:10px 14px; border-radius:8px; border:1px solid var(--glass-white-05);">
                     <div style="display:flex; flex-direction:column; gap:2px;">
-                      <span style="font-size:0.8rem; font-weight:600;" data-translate="worker_pool_1">Worker Pool 1 (Isolated)</span>
+                      <span style="font-size:0.8rem; font-weight:600;" data-translate="worker_pool_1">Fleet Stream Pool 1</span>
                       <span style="font-size:0.65rem; color:var(--text-muted);" data-translate="allocated_limit">Allocated: 50 CU Limit / Memory 1GB</span>
                     </div>
                     <span class="indicator-dot-green" style="width:8px; height:8px; border-radius:50%; background-color:var(--color-compliance); box-shadow:0 0 6px var(--color-compliance);"></span>
@@ -864,7 +905,7 @@
 
                   <div style="display:flex; justify-content:space-between; align-items:center; background-color:rgba(0,0,0,0.2); padding:10px 14px; border-radius:8px; border:1px solid var(--glass-white-05);">
                     <div style="display:flex; flex-direction:column; gap:2px;">
-                      <span style="font-size:0.8rem; font-weight:600;" data-translate="worker_pool_2">Worker Pool 2 (Isolated)</span>
+                      <span style="font-size:0.8rem; font-weight:600;" data-translate="worker_pool_2">EDI Processing Pool 2</span>
                       <span style="font-size:0.65rem; color:var(--text-muted);" data-translate="allocated_limit">Allocated: 50 CU Limit / Memory 1GB</span>
                     </div>
                     <span class="indicator-dot-green" style="width:8px; height:8px; border-radius:50%; background-color:var(--color-compliance); box-shadow:0 0 6px var(--color-compliance);"></span>
