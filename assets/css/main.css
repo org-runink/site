@@ -159,6 +159,14 @@
   .testimonials-container:hover .testimonials-track.animate {
       animation-play-state: paused;
   }
+
+  .aeo-direct-answer {
+      @apply my-6 p-6 border-l-4 border-[#ea580c] bg-orange-50 rounded-r-lg text-gray-800 shadow-sm;
+  }
+
+  .aeo-direct-answer strong {
+      @apply text-[#ea580c] font-bold block mb-2 text-lg;
+  }
 }
 
 @keyframes testimonials-scroll {
