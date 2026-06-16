@@ -1,4 +1,9 @@
 {{ define "main" }}
+<!-- Reading Progress Bar -->
+<div id="reading-progress-container" class="fixed top-20 left-0 w-full h-1.5 bg-stone-900 z-[40] hidden shadow-sm border-b border-stone-800">
+    <div id="reading-progress-bar" class="h-full bg-gradient-to-r from-[#ea580c] to-[#ca4708] w-0 transition-all duration-150 ease-out shadow-[0_0_10px_rgba(234,88,12,0.5)]"></div>
+</div>
+
 <div class="bg-stone-950 min-h-screen relative overflow-hidden text-stone-300">
     {{ partial "background-effects.html" . }}
 
@@ -107,4 +112,8 @@
         {{ end }}
     </div>
 </div>
+
+<!-- Reading Progress Script -->
+{{ $readingProgressJs := resources.Get "js/reading-progress.js" | js.Build (dict "Minify" hugo.IsProduction) }}
+<script src="{{ $readingProgressJs.RelPermalink }}" defer></script>
 {{ end }}
