@@ -2,7 +2,7 @@
 title: "Reconciling Complex Logistics Data Safely: Methods for Data Reliability"
 description: "Learn about data discrepancies and validation errors in complex supply chains, and discover practical techniques to ensure reliable automated data outputs."
 slug: "reconciling-complex-data-logistics-solutions"
-author: "Runink Editorial Team"
+author: "Runink Logistics Operations Team"
 date: "2025-07-22"
 tags: ["Data Integrity", "Data Verification", "Logistics", "Demand Forecasting", "Transportation", "Healthcare Supply Chain", "Retail Inventory Management"]
 robots: "index, follow"
@@ -169,8 +169,8 @@ In a fast-paced logistics environment, trust is everything. With query expansion
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
+    <strong>Lead Logistics Operations Architect</strong><br>
+    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers, data pipelines, and automated logistics solutions.
   </p>
 </section>
 

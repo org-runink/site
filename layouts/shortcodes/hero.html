@@ -34,7 +34,7 @@
 
     {{ if $background_image }}
     <div class="absolute inset-0 mix-blend-overlay opacity-30">
-        <img src="{{ $background_image | relURL }}" alt="Background" fetchpriority="high" decoding="sync" class="w-full h-full object-cover">
+        {{ partial "image.html" (dict "src" $background_image "alt" "Background" "fetchpriority" "high" "class" "w-full h-full object-cover" "context" $.Page) }}
     </div>
     {{ end }}
 
@@ -85,8 +85,7 @@
                     <div
                         class="absolute -inset-1 bg-gradient-to-r from-[#5F6F3E] to-[#B87333] rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200">
                     </div>
-                    <img src="{{ $hero_image | relURL }}" alt="Hero Image" fetchpriority="high" decoding="sync"
-                        class="relative w-full rounded-xl shadow-2xl border border-stone-700/50 bg-stone-900/50 backdrop-blur-xl">
+                    {{ partial "image.html" (dict "src" $hero_image "alt" "Hero Image" "fetchpriority" "high" "class" "relative w-full rounded-xl shadow-2xl border border-stone-700/50 bg-stone-900/50 backdrop-blur-xl" "context" $.Page) }}
 
                     <!-- Reflection -->
                     <div

@@ -48,24 +48,7 @@ author: "Arquiteto Líder de Dados e Nuvem"
              <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">O Firewall Regulatório</h3>
              
              <!-- Mermaid Diagram -->
-             <div class="mermaid">
-             C4Context
-                title Contexto do Sistema: Módulo de Conformidade
-                
-                Person(officer, "Diretor de Risco", "Precisa de relatórios prontos para auditoria.")
-                
-                Enterprise_Boundary(b0, "Seguros Runink") {
-                    System(agent, "Módulo de Conformidade", "Auditor Digital.")
-                    
-                    System_Ext(actuarial, "Modelos Atuariais", "Ajustes de Risco")
-                    System_Ext(erp, "Razão Financeiro", "Fluxos de Caixa")
-                }
-
-                Rel(agent, actuarial, "Valida modelos IFRS 17")
-                Rel(agent, erp, "Reconcilia fluxos esperados vs reais")
-                Rel(agent, officer, "Alerta sobre desvio de conformidade")
-                Rel(agent, officer, "Gera razão pronto para auditoria")
-             </div>
+             
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Ele detecta a exposição *antes* do término do ciclo de relatórios financeiros.</p>
         </div>
@@ -97,35 +80,8 @@ author: "Arquiteto Líder de Dados e Nuvem"
     </div>
 </div>
 {{< /section-container >}}
-<style>
-  .mermaid {
-    width: 100%;
-    height: 400px;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    background-color: #0c0a09;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    margin-bottom: 2rem;
-  }
-  .mermaid svg {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    cursor: grab;
-  }
-</style>
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'dark' });
 
-  document.addEventListener("DOMContentLoaded", async () => {
-      await mermaid.run({
-        querySelector: '.mermaid'
-      });
-  });
-</script>
+
 
 
 

@@ -1,0 +1,32 @@
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+{{ $width := .width | default "800x" }}
+{{ $loading := .loading | default "lazy" }}
+{{ $fetchpriority := .fetchpriority | default "auto" }}
+
+{{ $img := false }}
+{{ if hasPrefix $src "http" }}
+  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+{{ else }}
+  {{/* Try to find as page resource */}}
+  {{ if $.context.Resources }}
+    {{ $img = $.context.Resources.GetMatch (strings.TrimPrefix "/" $src) }}
+  {{ end }}
+  
+  {{/* If not found, try to find as global resource in assets */}}
+  {{ if not $img }}
+    {{ $img = resources.Get (strings.TrimPrefix "/" $src) }}
+  {{ end }}
+  
+  {{ if $img }}
+    {{ if eq $img.MediaType.SubType "svg" }}
+      <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+    {{ else }}
+      {{ $resized := $img.Resize (printf "%s webp" $width) }}
+      <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ $resized.Width }}" height="{{ $resized.Height }}" loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+    {{ end }}
+  {{ else }}
+    <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+  {{ end }}
+{{ end }}

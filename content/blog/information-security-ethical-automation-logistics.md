@@ -2,7 +2,7 @@
 title: "Securing the Future of Automated Systems: How Information Security Enables Ethical Automation in Logistics"
 description: "Discover why information security is critical to developing ethical and mature automated decision solutions, particularly in logistics and data-driven industries."
 slug: "information-security-ethical-automation-logistics"
-author: "Runink Editorial Team"
+author: "Runink Logistics Operations Team"
 date: "2025-07-10"
 tags: ["Ethical Automation", "Automated Systems", "Information Security", "System Governance", "Logistics", "Data Privacy", "Security Protection"]
 robots: "index, follow"
@@ -144,8 +144,8 @@ Take a look at your organizationâ€™s projects *(existing or planned)* and ask â€
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
+    <strong>Lead Logistics Operations Architect</strong><br>
+    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers, data pipelines, and automated logistics solutions.
   </p>
 </section>
 

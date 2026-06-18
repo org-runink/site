@@ -43,25 +43,7 @@ author: "Arquiteto Líder de Dados e Nuvem"
              <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">O Roteador Sensível ao Contexto</h3>
              
              <!-- Mermaid Diagram -->
-             <div class="mermaid">
-             C4Context
-                title Contexto do Sistema: Módulo de Atendimento
-                
-                Person(customer, "Cliente", "Precisa de seu pedido rapidamente.")
-                
-                Enterprise_Boundary(b0, "Operações Runink") {
-                    System(agent, "Módulo de Atendimento", "Orquestrador Dinâmico.")
-                    
-                    System_Ext(oms, "Gerenciamento de Pedidos", "Mantém Pedidos Pendentes")
-                    System_Ext(wms, "Sistema de Armazém", "Capacidade e Estoque em Tempo Real")
-                    System_Ext(weather, "Feeds de Clima/Tráfego", "Condições em Tempo Real")
-                }
-
-                Rel(oms, agent, "Envia Dados do Pedido")
-                Rel(agent, weather, "Verifica API para interrupções de rota")
-                Rel(agent, wms, "Verifica acúmulo do CD1 vs capacidade do CD2")
-                Rel(agent, oms, "Modifica o roteamento para o CD2 para garantir SLA")
-             </div>
+             
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Ele analisa todo o tabuleiro antes de fazer uma jogada.</p>
         </div>
@@ -93,35 +75,8 @@ author: "Arquiteto Líder de Dados e Nuvem"
     </div>
 </div>
 {{< /section-container >}}
-<style>
-  .mermaid {
-    width: 100%;
-    height: 400px;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    background-color: #0c0a09;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    margin-bottom: 2rem;
-  }
-  .mermaid svg {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    cursor: grab;
-  }
-</style>
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'dark' });
 
-  document.addEventListener("DOMContentLoaded", async () => {
-      await mermaid.run({
-        querySelector: '.mermaid'
-      });
-  });
-</script>
+
 
 
 

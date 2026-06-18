@@ -47,24 +47,7 @@ author: "Lead Data & Cloud Architect"
              <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Le Pare-feu Réglementaire</h3>
              
              <!-- Mermaid Diagram -->
-             <div class="mermaid">
-             C4Context
-                title Contexte du Système : Module de Conformité
-                
-                Person(officer, "Directeur des Risques", "A besoin de rapports prêts pour l'audit.")
-                
-                Enterprise_Boundary(b0, "Assurance Runink") {
-                    System(agent, "Module de Conformité", "Auditeur Digital.")
-                    
-                    System_Ext(actuarial, "Modèles Actuariels", "Ajustements de Risque")
-                    System_Ext(erp, "Grand Livre Financier", "Flux de Trésorerie")
-                }
-
-                Rel(agent, actuarial, "Valide les modèles IFRS 17")
-                Rel(agent, erp, "Réconcilie les flux attendus vs réels")
-                Rel(agent, officer, "Alerte en cas d'écart de conformité")
-                Rel(agent, officer, "Génère un grand livre auxiliaire prêt pour l'audit")
-             </div>
+             
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Il détecte les écarts *avant* la clôture du cycle d'information financière.</p>
         </div>
@@ -96,35 +79,8 @@ author: "Lead Data & Cloud Architect"
     </div>
 </div>
 {{< /section-container >}}
-<style>
-  .mermaid {
-    width: 100%;
-    height: 400px;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    background-color: #0c0a09;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    margin-bottom: 2rem;
-  }
-  .mermaid svg {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    cursor: grab;
-  }
-</style>
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'dark' });
 
-  document.addEventListener("DOMContentLoaded", async () => {
-      await mermaid.run({
-        querySelector: '.mermaid'
-      });
-  });
-</script>
+
 
 
 

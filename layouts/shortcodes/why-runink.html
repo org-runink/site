@@ -134,86 +134,75 @@
 
                     <div class="relative z-10">
                         <h3 class="text-4xl font-black text-white mb-2 tracking-tight">
-                            {{ if eq .Page.Language.Lang "pt" }}Gêmeos Digitais de Operações{{ else if eq .Page.Language.Lang "fr" }}Jumeaux Numériques d'Opérations{{ else if eq .Page.Language.Lang "es" }}Gemelos Digitales de Operaciones{{ else }}Operations Digital Twins{{ end }}
+                            {{ if eq .Page.Language.Lang "pt" }}Gêmeos Digitais de Operações{{ else if eq .Page.Language.Lang "fr" }}Jumeaux Numériques d'Opérations{{ else if eq .Page.Language.Lang "es" }}Gemelos Digitales de Operaciones{{ else }}Operations Actionable Twins{{ end }}
                         </h3>
                         <p class="text-[#ea580c] font-mono text-sm mb-8 uppercase tracking-widest">
                             {{ if eq .Page.Language.Lang "pt" }}Visibilidade Orientada a Telemetria{{ else if eq .Page.Language.Lang "fr" }}Visibilité Pilotée par la Télémétrie{{ else if eq .Page.Language.Lang "es" }}Visibilidad Impulsada por Telemetría{{ else }}Telemetry-Driven Visibility{{ end }}
                         </p>
 
-                        <ul class="space-y-8">
+                        <ul class="space-y-6">
                             <li class="flex items-start group/item">
-                                <div
-                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#ea580c] mr-5 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                                    </svg>
+                                <div class="bg-stone-800 border border-stone-700 p-2.5 rounded-xl text-[#ea580c] mr-4 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">
-                                        {{ if eq .Page.Language.Lang "pt" }}Raciocínio Autônomo{{ else if eq .Page.Language.Lang "fr" }}Raisonnement Autonome{{ else if eq .Page.Language.Lang "es" }}Razonamiento Autónomo{{ else }}Autonomous Reasoning{{ end }}
+                                    <h4 class="text-lg font-bold text-white mb-1">
+                                        {{ if eq .Page.Language.Lang "pt" }}ASK (Pergunte){{ else if eq .Page.Language.Lang "fr" }}ASK (Demander){{ else if eq .Page.Language.Lang "es" }}ASK (Preguntar){{ else }}ASK (QuickAsk){{ end }}
                                     </h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">
-                                        {{ if eq .Page.Language.Lang "pt" }}
-                                            Descubra anomalias ocultas que as ferramentas padrão perdem utilizando compreensão semântica profunda. Nossos modelos validam telemetria e fatos antes de executar operações.
-                                        {{ else if eq .Page.Language.Lang "fr" }}
-                                            Découvrez des anomalies cachées que les outils standards manquent en utilisant une compréhension sémantique profonde. Nos modèles valident la télémétrie et les faits avant d'exécuter des opérations.
-                                        {{ else if eq .Page.Language.Lang "es" }}
-                                            Descubra anomalías ocultas que las herramientas estándar pasan por alto utilizando una comprensión semántica profunda. Nuestros modelos validan telemetría y hechos antes de ejecutar operaciones.
-                                        {{ else }}
-                                            Uncover hidden anomalies standard tools miss utilizing deep semantic understanding. Our models validate telemetry and facts before executing operations.
-                                        {{ end }}
+                                    <p class="text-stone-400 text-sm leading-relaxed">
+                                        Natural language querying across the entire supply chain network for rapid S&OP pressure-testing.
                                     </p>
                                 </div>
                             </li>
                             <li class="flex items-start group/item">
-                                <div
-                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#ea580c] mr-5 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
+                                <div class="bg-stone-800 border border-stone-700 p-2.5 rounded-xl text-[#ea580c] mr-4 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">
-                                        {{ if eq .Page.Language.Lang "pt" }}Execução Autônoma{{ else if eq .Page.Language.Lang "fr" }}Exécution Autonome{{ else if eq .Page.Language.Lang "es" }}Ejecución Autónoma{{ else }}Autonomous Execution{{ end }}
+                                    <h4 class="text-lg font-bold text-white mb-1">
+                                        {{ if eq .Page.Language.Lang "pt" }}DIAGNÓSTICOS{{ else if eq .Page.Language.Lang "fr" }}DIAGNOSTICS{{ else if eq .Page.Language.Lang "es" }}DIAGNÓSTICOS{{ else }}DIAGNOSTICS (UploadAnalyze){{ end }}
                                     </h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">
-                                        {{ if eq .Page.Language.Lang "pt" }}
-                                            Implante Módulos Forenses de Contestações, Gêmeos Preditivos de Inventário e Reconciliadores de Fim de Ciclo para redigir contestações autonomamente, rotear pedidos e executar pagamentos a menor, aguardando sua aprovação em um clique.
-                                        {{ else if eq .Page.Language.Lang "fr" }}
-                                            Déployez des Modules Médico-Légaux de Réclamations, des Jumeaux Prédictifs d'Inventaire et des Réconciliateurs de Fin de Cycle pour rédiger des réclamations de manière autonome, acheminer des commandes et exécuter des retenues de paiement, en attente de votre approbation en un clic.
-                                        {{ else if eq .Page.Language.Lang "es" }}
-                                            Despliegue Módulos Forenses de Reclamaciones, Gemelos Predictivos de Inventario y Reconciliadores de Fin de Ciclo para redactar reclamaciones de forma autónoma, enrutar pedidos y ejecutar retenciones de pago, a la espera de su aprobación en un solo clic.
-                                        {{ else }}
-                                            Deploy Forensic Claims Modules, Predictive Inventory Twins, and End-of-Cycle Reconcilers to autonomously draft claims, route orders, and execute Short-Pays, awaiting your one-click approval.
-                                        {{ end }}
+                                    <p class="text-stone-400 text-sm leading-relaxed">
+                                        Self-service file uploads for automated root-cause analysis on delays, inventory anomalies, and spend leakage.
                                     </p>
                                 </div>
                             </li>
                             <li class="flex items-start group/item">
-                                <div
-                                    class="bg-stone-800 border border-stone-700 p-3 rounded-xl text-[#ea580c] mr-5 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                                        </path>
-                                    </svg>
+                                <div class="bg-stone-800 border border-stone-700 p-2.5 rounded-xl text-[#ea580c] mr-4 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white mb-2">
-                                        {{ if eq .Page.Language.Lang "pt" }}Notificações Acionáveis{{ else if eq .Page.Language.Lang "fr" }}Notifications Actionnables{{ else if eq .Page.Language.Lang "es" }}Notificaciones Accionables{{ else }}Actionable Notifications{{ end }}
+                                    <h4 class="text-lg font-bold text-white mb-1">
+                                        {{ if eq .Page.Language.Lang "pt" }}WORKFLOWS AGÊNTICOS{{ else if eq .Page.Language.Lang "fr" }}WORKFLOWS AGENTIQUES{{ else if eq .Page.Language.Lang "es" }}WORKFLOWS AGÉNTICOS{{ else }}AGENTIC WORKFLOWS{{ end }}
                                     </h4>
-                                    <p class="text-stone-400 text-base leading-relaxed">
-                                        {{ if eq .Page.Language.Lang "pt" }}
-                                            Alertas em tempo real de descobertas, contestações registradas e ações de atendimento tomadas em seu nome.
-                                        {{ else if eq .Page.Language.Lang "fr" }}
-                                            Alertes en temps réel des découvertes, des réclamations déposées et des actions d'exécution prises en votre nom.
-                                        {{ else if eq .Page.Language.Lang "es" }}
-                                            Alertas en tiempo real de hallazgos, reclamaciones presentadas y acciones de cumplimiento tomadas en su nombre.
-                                        {{ else }}
-                                            Real-time alerts of findings, claims filed, and fulfilment actions taken on your behalf.
-                                        {{ end }}
+                                    <p class="text-stone-400 text-sm leading-relaxed">
+                                        S&OP Planning and Maturity Roadmap generation orchestrated entirely by autonomous agents.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex items-start group/item">
+                                <div class="bg-stone-800 border border-stone-700 p-2.5 rounded-xl text-[#ea580c] mr-4 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-1">
+                                        {{ if eq .Page.Language.Lang "pt" }}DRAFT (Rascunho){{ else if eq .Page.Language.Lang "fr" }}DRAFT (Brouillon){{ else if eq .Page.Language.Lang "es" }}DRAFT (Borrador){{ else }}DRAFT{{ end }}
+                                    </h4>
+                                    <p class="text-stone-400 text-sm leading-relaxed">
+                                        Automatic generation of claims, legally compliant BOL amendments, and regulatory filings without human intervention.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex items-start group/item">
+                                <div class="bg-stone-800 border border-stone-700 p-2.5 rounded-xl text-[#ea580c] mr-4 mt-1 group-hover/item:border-[#ea580c]/50 group-hover/item:bg-[#ea580c]/10 transition-all shadow-lg">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-1">
+                                        {{ if eq .Page.Language.Lang "pt" }}ANALYSE (Análise){{ else if eq .Page.Language.Lang "fr" }}ANALYSE{{ else if eq .Page.Language.Lang "es" }}ANALYSE (Análisis){{ else }}ANALYSE (Spend Analytics){{ end }}
+                                    </h4>
+                                    <p class="text-stone-400 text-sm leading-relaxed">
+                                        Deep financial and spend analytics for immediate ROI identification and continuous cost reduction.
                                     </p>
                                 </div>
                             </li>

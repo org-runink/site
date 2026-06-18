@@ -362,7 +362,7 @@ body {
 }
 
 /* Cards & Components */
-.flutter-card {
+.detail-card {
   border-radius: var(--border-radius-card);
   background: linear-gradient(135deg, rgba(42, 26, 24, 0.5) 0%, rgba(20, 10, 8, 0.6) 100%);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -372,7 +372,7 @@ body {
   transition: var(--transition-smooth);
 }
 
-.flutter-card.highlighted {
+.detail-card.highlighted {
   border-color: rgba(201, 51, 24, 0.25);
   box-shadow: 0 8px 30px rgba(201, 51, 24, 0.08);
 }
@@ -2081,25 +2081,32 @@ body {
   background-color: rgba(34, 197, 94, 0.1);
 }
 
-/* Toast simulation bottom */
+/* Toast simulation mid-screen */
 .toast-simulator {
   position: absolute;
-  bottom: 24px;
-  left: 24px;
-  right: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
   background-color: var(--surface-elevated);
   border: 1.5px solid var(--accent-orange);
   border-radius: 12px;
   padding: 16px;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
   display: none;
-  align-items: center;
+  flex-direction: column;
   gap: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   z-index: 2000;
-  animation: slideUpToast 0.3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation: popInToast 0.3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes popInToast {
+  from { opacity: 0; transform: translate(-50%, -40%) scale(0.95); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
 .toast-simulator-success {
@@ -2108,11 +2115,73 @@ body {
 
 .toast-simulator-text {
   flex: 1;
+  text-align: left;
 }
 
 .toast-simulator-close {
   cursor: pointer;
   color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.toast-action-btn {
+  background-color: var(--color-compliance);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 8px;
+  width: 100%;
+  transition: var(--transition-fast);
+}
+.toast-action-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Kickbacks Loader */
+.kickbacks-loader-container {
+  padding: 12px 16px;
+  background-color: rgba(30, 15, 10, 0.6);
+  border: 1px solid var(--glass-white-10);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto;
+  max-width: 340px;
+}
+.kickbacks-loader-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.kickbacks-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(236, 91, 19, 0.3);
+  border-top-color: var(--accent-orange-light);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.kickbacks-text {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  animation: fadeSlideUp 0.4s ease-out forwards;
+}
+.kickbacks-cta {
+  color: var(--accent-orange-light);
+  font-size: 0.75rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* System Ingestion Overlays */

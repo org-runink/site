@@ -2,7 +2,7 @@
 title: "How Automated Decision Systems and Open-Source Tools Optimize Dropshipping Logistics"
 description: "Discover how fine-tuned decision models, integrated with open-source mapping, routing, and data retrieval tools, transform e-commerce dropshipping into a smarter, more responsive operation."
 slug: automated-open-source-dropshipping-logistics
-author: "Runink Editorial Team"
+author: "Runink Logistics Operations Team"
 date: 2025-07-04
 tags: [Workflow Automation, Dropshipping, Logistics Automation, Supply Chain, Open-Source Tools]
 robots: index, follow
@@ -123,8 +123,8 @@ In summary, deploying fine-tuned decision models with open-source tools can revo
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
+    <strong>Lead Logistics Operations Architect</strong><br>
+    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers, data pipelines, and automated logistics solutions.
   </p>
 </section>
 

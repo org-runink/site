@@ -2,7 +2,7 @@
 title: "What Is Integrated Logistics? A Helpful Explanation"
 description: "Learn what integrated logistics means, why it’s important, and how businesses use it to streamline supply chains, cut costs, and boost efficiency with real-world examples."
 slug: what-is-integrated-logistics
-author: "Runink Editorial Team"
+author: "Runink Logistics Operations Team"
 date: 2025-09-15
 tags: [integrated logistics, supply chain management, logistics strategy, business efficiency, procurement, transportation management, warehouse optimization, logistics technology, supply chain visibility, reverse logistics]
 robots: index, follow
@@ -176,8 +176,8 @@ If your business is ready to move beyond siloed operations and embrace a truly c
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
+    <strong>Lead Logistics Operations Architect</strong><br>
+    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers, data pipelines, and automated logistics solutions.
   </p>
 </section>
 

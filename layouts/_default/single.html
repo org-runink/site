@@ -34,7 +34,7 @@
 
                 {{ with .Params.featured_image }}
                 <div class="mb-8">
-                    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-auto rounded-lg" loading="lazy">
+                    {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-auto rounded-lg" "loading" "lazy" "context" $) }}
                 </div>
                 {{ end }}
 
@@ -52,6 +52,7 @@
                     class="w-full prose prose-invert prose-stone max-w-none lg:prose-lg prose-headings:text-white prose-p:text-stone-300 prose-li:text-stone-300 prose-strong:text-white prose-a:text-[#ea580c] hover:prose-a:text-[#ca4708]">
                     {{ .Content }}
                 </div>
+
             </article>
 
             <!-- Sidebar -->

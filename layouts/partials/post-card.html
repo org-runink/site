@@ -10,9 +10,7 @@
     class="group bg-stone-800 rounded-2xl shadow-lg border border-stone-700 overflow-hidden hover:shadow-2xl hover:shadow-[#8B9A6E]/10 hover:border-[#8B9A6E]/50 transition-all duration-300 hover:-translate-y-1">
     {{ with .Params.featured_image }}
     <a href="{{ $link }}" class="block w-full h-56 overflow-hidden relative">
-        <img src="{{ . }}" alt="{{ $title }}"
-            class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
-            loading="lazy">
+        {{ partial "image.html" (dict "src" . "alt" $title "class" "object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" "loading" "lazy" "context" $) }}
     </a>
     {{ end }}
 

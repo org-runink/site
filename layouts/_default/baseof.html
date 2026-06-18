@@ -11,52 +11,67 @@
     <!-- Google Analytics -->
     {{ partialCached "google-analytics" . }}
 
+    <!-- SEO Variables -->
+    {{ $seoTitle := default (printf "%s | %s" .Title .Site.Title) .Params.seo_title }}
+    {{ if .IsHome }}{{ $seoTitle = default .Site.Title .Params.seo_title }}{{ end }}
+    
+    {{ $seoDescription := default .Summary .Description }}
+    {{ $seoDescription = default $seoDescription .Params.seo_description }}
+    {{ $seoDescription = default .Site.Params.description $seoDescription }}
+    
+    {{ $canonicalUrl := default .Permalink .Params.canonicalUrl }}
+
+    <!-- Resolve Image for SEO -->
+    {{ $seoImage := "" }}
+    {{ $imgUrl := default .Site.Params.logo .Site.Params.image }}
+    {{ $imgUrl = default $imgUrl .Params.image }}
+    {{ $imgUrl = default $imgUrl .Params.featured_image }}
+    {{ with $imgUrl }}
+      {{ $img := resources.Get . }}
+      {{ if $img }}
+        {{ if eq $img.MediaType.SubType "svg" }}
+          {{ $seoImage = $img.Permalink }}
+        {{ else }}
+          {{ $seoImage = ($img.Resize "1200x630 webp").Permalink }}
+        {{ end }}
+      {{ else }}
+        {{ $seoImage = . | absURL }}
+      {{ end }}
+    {{ end }}
+
     <!-- Title -->
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ $seoTitle }}</title>
 
     <!-- Meta Tags -->
-    <meta name="description"
-        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="description" content="{{ $seoDescription }}">
     <meta name="author" content="{{ .Site.Params.author | default .Site.Title }}">
     <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index, follow{{ end }}">
 
     <!-- Open Graph -->
-    <meta property="og:title"
-        content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-    <meta property="og:description"
-        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta property="og:title" content="{{ $seoTitle }}">
+    <meta property="og:description" content="{{ $seoDescription }}">
     <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:url" content="{{ $canonicalUrl }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
-    {{ with .Params.image }}
-    <meta property="og:image" content="{{ . | absURL }}">
-    {{ else }}
-    {{ with .Site.Params.image }}
-    <meta property="og:image" content="{{ . | absURL }}">
-    {{ end }}
+    {{ with $seoImage }}
+    <meta property="og:image" content="{{ . }}">
     {{ end }}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title"
-        content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-    <meta name="twitter:description"
-        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="twitter:title" content="{{ $seoTitle }}">
+    <meta name="twitter:description" content="{{ $seoDescription }}">
     {{ with .Site.Params.twitter }}
     <meta name="twitter:site" content="@{{ . }}">
     {{ end }}
-    {{ with .Params.image }}
-    <meta name="twitter:image" content="{{ . | absURL }}">
-    {{ else }}
-    {{ with .Site.Params.image }}
-    <meta property="twitter:image" content="{{ . | absURL }}">
-    {{ end }}
+    {{ with $seoImage }}
+    <meta name="twitter:image" content="{{ . }}">
     {{ end }}
 
     <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ $canonicalUrl }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,6 +123,7 @@
     <!-- Main Content -->
     <div class="pt-20">
         {{ block "main" . }}{{ end }}
+        {{ partial "trust-signals.html" . }}
     </div>
 
     <!-- Footer -->

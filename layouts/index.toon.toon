@@ -1,0 +1,16 @@
+{{- $highValueSections := slice "blog" "use-cases" -}}
+{{- $pages := where .Site.RegularPages "Type" "in" $highValueSections -}}
+training_content[{{ len $pages }}]:
+{{- range $page := $pages }}
+  - title: {{ $page.Title | jsonify }}
+    permalink: {{ $page.Permalink | jsonify }}
+    date: {{ $page.Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }}
+    category: {{ $page.Type | jsonify }}
+    description: {{ $page.Params.description | default $page.Summary | plainify | jsonify }}
+    content: {{ $page.Plain | jsonify }}
+    {{- $tags := default slice $page.Params.tags }}
+    tags[{{ len $tags }}]:
+    {{- range $tag := $tags }}
+      - {{ $tag | jsonify }}
+    {{- end }}
+{{- end }}

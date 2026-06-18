@@ -46,29 +46,7 @@ author: "Lead Data & Cloud Architect"
              <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">La Defensa Automatizada</h3>
              
              <!-- Mermaid Diagram -->
-{{< mermaid >}}
-C4Context
-title Contexto del Sistema: Módulo de Reclamaciones
 
-Person(clerk, "Recepcionista", "Toma 1 foto del daño.")
-
-Enterprise_Boundary(b0, "Finanzas Runink") {
-System(agent, "Módulo de Reclamaciones", "Especialista en auditoría digital.")
-
-System_Ext(legal, "Motor Legal", "49 U.S.C. § 14706")
-System_Ext(weather, "Clima NOAA", "Valida fuerza mayor")
-
-System_Boundary(b1, "Interacción Transportista") {
-System_Ext(portal, "Portal del Transportista", "Sube pruebas")
-}
-}
-
-Rel(clerk, agent, "Sube foto vía App")
-Rel(agent, legal, "Cita Enmienda Carmack")
-Rel(agent, weather, "Refuta excusa de tormenta")
-Rel(agent, portal, "Presenta disputa de 10 páginas")
-Rel(portal, agent, "Envía cheque de liquidación")
-{{< /mermaid >}}
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Redacta un informe legal completo para una reclamación de $50. Nunca duerme.</p>
         </div>

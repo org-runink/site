@@ -279,8 +279,104 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 
-// Mock Action Feed items matching Flutter formats
+// Mock Action Feed items matching Interface formats
 const mockActions = [
+  // New Twin Integrations
+  {
+    id: "TWIN-200",
+    category: "Operations",
+    title: "HazMat Segregation Breach",
+    titleKey: "action_hazmat_title",
+    description: "IoT Telemetry indicates Class 3 Flammable stored within 5m of Class 5 Oxidizer. Crane locked.",
+    descKey: "action_hazmat_desc",
+    priority: "Critical",
+    impact: "Safety / Compliance",
+    impactKey: "action_impact_safety",
+    ai_generated: true,
+    maturity: "Level 4 Autonomous",
+    rules: "EPA HazMat Strict",
+    source: "IoT Yard Sensors",
+    sourceKey: "action_hazmat_source",
+    path: "/remediation",
+    operationsCard: {
+      sensorId: "ZONE-B-CRANE-04",
+      metric: "Proximity Alert",
+      threshold: "> 10m",
+      currentValue: "4.2m",
+      forecast: "COLLISION RISK"
+    }
+  },
+  {
+    id: "TWIN-201",
+    category: "Admin",
+    title: "Automated BOL & Customs Generation",
+    titleKey: "action_docgen_title",
+    description: "Fulfilment Agent compiled Commercial Invoice and BOL for Outbound Vessel 88. Ready for dispatch.",
+    descKey: "action_docgen_desc",
+    priority: "High",
+    impact: "Process Automation",
+    impactKey: "action_impact_automation",
+    ai_generated: true,
+    maturity: "Level 3 Autonomous",
+    rules: "CBP Clearance Policy",
+    source: "Fulfilment Engine",
+    sourceKey: "action_docgen_source",
+    path: "/remediation",
+    complianceCard: {
+      policy: "Export Compliance Verification",
+      violationType: "Documentation Complete",
+      severity: "Clear to Load",
+      status: "Verified"
+    }
+  },
+  {
+    id: "TWIN-202",
+    category: "Operations",
+    title: "Reverse Logistics Triage",
+    titleKey: "action_reverse_title",
+    description: "Barcode scan ingested. Secure API calculated repair cost > yield. DEFECTIVE item routed to Chennai Refurb Hub. PRISTINE routed to Pune Restock Hub.",
+    descKey: "action_reverse_desc",
+    priority: "Medium",
+    impact: "Margin Recovery",
+    impactKey: "action_impact_margin",
+    ai_generated: true,
+    maturity: "Level 4 Autonomous",
+    rules: "Circular Economy",
+    source: "TriageReturnItem Secure API",
+    sourceKey: "action_reverse_source",
+    path: "/remediation",
+    operationsCard: {
+      returnId: "RMA-9942",
+      condition: "DEFECTIVE",
+      resaleYield: "$450.00",
+      repairCost: "$120.00",
+      routingDest: "Chennai Refurb Hub"
+    }
+  },
+  {
+    id: "TWIN-203",
+    category: "Finance",
+    title: "Weight Scale Mismatch (Demurrage)",
+    titleKey: "action_claims_title",
+    description: "Forensic Audit detected 12% mismatch between Supplier Invoice weight and Yard Scale weight. Short-Pay initiated.",
+    descKey: "action_claims_desc",
+    priority: "Critical",
+    impact: "Cost Recovery",
+    impactKey: "action_impact_recovery",
+    ai_generated: true,
+    maturity: "Level 4 Forensic",
+    rules: "Zero-Tolerance Variance",
+    source: "Claims Audit Engine",
+    sourceKey: "action_claims_source",
+    path: "/remediation",
+    financeCard: {
+      invoiceId: "INV-99382-A",
+      expectedCost: "$42,000",
+      billedCost: "$47,800",
+      variance: "+$5,800 (Disputed)",
+      disputedCode: "ERR_WEIGHT_MISMATCH"
+    }
+  },
   // Sentinel Cases (Security/Control)
   {
     id: "AI-102",
@@ -1247,7 +1343,7 @@ const fetchStepDetails = {
 ]`
   },
   2: {
-    title: "HDBSCAN Semantic Clustering",
+    title: "Density-based Semantic Clustering",
     desc: "Sorting raw transaction metadata histories into data domains.",
     logs: [
       "[INFO] Ingesting Customs Registry query history (30 days)...",
@@ -1256,7 +1352,7 @@ const fetchStepDetails = {
       "  -> Domain: 'Logistics_Customs'"
     ],
     toon: `[ClusterRun:
-  Algorithm: "HDBSCAN"
+  Algorithm: "Density-based"
   Metrics: {
     Silhouette: 0.89,
     Domains: [ "Logistics_Customs", "Procurement_POs" ]
@@ -1264,10 +1360,10 @@ const fetchStepDetails = {
 ]`
   },
   3: {
-    title: "XGBoost Bound Selection",
+    title: "Algorithm Bound Selection",
     desc: "Calculating operational boundaries for RAG window digestion.",
     logs: [
-      "[INFO] Running XGBoost chunking model on cargo invoice metrics...",
+      "[INFO] Running advanced chunking model on cargo invoice metrics...",
       "[SUCCESS] Boundary parameters mapped with 91.2% confidence score:",
       "  -> Limit: 'demurrage_fee > 5000'",
       "  -> Limit: 'days_delayed > 3'"
@@ -1294,10 +1390,10 @@ const fetchStepDetails = {
 ]`
   },
   5: {
-    title: "Prophet Trend Decomposition",
+    title: "Time-series modeling Trend Decomposition",
     desc: "Isolating seasonal trends and transactional anomalies.",
     logs: [
-      "[INFO] Running Prophet additive seasonality decomposition...",
+      "[INFO] Running Time-series modeling additive seasonality decomposition...",
       "[WARN] Anomaly detected: +14.2% demurrage fee variance spike in carrier billing cycles."
     ],
     toon: `[AnomalyForecast:
@@ -1308,44 +1404,46 @@ const fetchStepDetails = {
 ]`
   },
   6: {
-    title: "LLM Local Forensic Judgment",
-    desc: "Localized llama.cpp model deducing structural issues.",
+    title: "Secure API Telemetry & PII Masking Protocol",
+    desc: "Subscribing to active IoT streams and applying real-time data masking for compliance.",
     logs: [
-      "[INFO] Parsing context window through local llama.cpp thread...",
-      "[INFO] Model loaded: Qwen2.5-VL-7B-Instruct-Q4...",
-      "[SUCCESS] Judge verdict: 'Breach_Confirmed_Customs_Error' on BOL weight audit."
+      "[INFO] Connecting to Go Secure API Telemetry stream...",
+      "[INFO] Processing continuous weighbridge and refrigeration data...",
+      "[WARN] PII Exposure Risk Detected in driver payload (SSN included).",
+      "[SUCCESS] PII Data Masking applied. Route data cleared for orchestration."
     ],
-    toon: `[LLMJudgment:
-  Judge: "Qwen-VL-Instruct-7B"
-  Verdict: "Breach_Confirmed_Customs_Error"
-  Reasoning: "Demurrage overcharges discovered on shipping carrier cargo invoice INV-2026-089A matching pattern of HS tariff code misclassification."
+    toon: `[TelemetryStream:
+  Protocol: "gRPC_Go_Backend"
+  Masking: { target: "Driver_PII", action: "Redacted_SSN_Phone" }
+  StreamStatus: "Active"
 ]`
   },
   7: {
-    title: "Specialist Persona Swarm",
-    desc: "Triggering Data Posture, Rules Recon, and Lab Runners.",
+    title: "Specialist Persona Swarm (Go Orchestrator)",
+    desc: "Triggering Data Posture, Fulfilment, and Telemetry Agents via Secure API.",
     logs: [
-      "[INFO] Spawning isolated specialist executors...",
-      "[INFO] Task A: Rules Recon verifying query compliance...",
-      "[SUCCESS] Data Posture Module report: Security settings baseline drift flagged."
+      "[INFO] Go orchestrator spawning isolated specialist agents in cgroups...",
+      "[INFO] Task A: Telemetry Agent evaluating HazMat constraints...",
+      "[INFO] Task B: Fulfilment Agent evaluating Reverse Logistics flow...",
+      "[SUCCESS] Data Posture Module report: ISO 42001 Compliance Verified."
     ],
     toon: `[PersonaSwarmResult:
-  DataMaturity: { score: 92 }
-  RulesRecon: { findings_count: 2, confidence: 0.948 }
+  DataMaturity: { score: 92, standard: "ISO 42001" }
+  RulesRecon: { findings_count: 3, confidence: 0.948 }
 ]`
   },
   8: {
-    title: "Actionable Twin Synthesis",
-    desc: "Drafting emails and SQL fixes to push to approval queues.",
+    title: "Actionable Twin Synthesis & UI Streaming",
+    desc: "Streaming intelligent actions directly to SCMDigitalTwinService.",
     logs: [
-      "[INFO] Compiling specialist verdicts...",
-      "[SUCCESS] Queued auto-refund BOL Claims email draft for vendor manager.",
-      "[SUCCESS] Queued auto-revoke security write access draft for Firebase admin.",
+      "[INFO] Compiling specialist verdicts in TOON format...",
+      "[SUCCESS] Queued auto-refund BOL Claims short-pay via Secure API.",
+      "[SUCCESS] Queued Telemetry auto-lock for HazMat proximity.",
       "[SUCCESS] Ingestion pipeline execution SUCCESS."
     ],
     toon: `[ActionTwinQueue:
-  QueuedAction: { action_id: 1, type: "CLAIMS_RECOVERY", value: 12450.00 }
-  QueuedAction: { action_id: 3, type: "SECURITY_REVOKE", target: "Over-privileged write" }
+  QueuedAction: { action_id: 1, type: "CLAIMS_RECOVERY", protocol: "Secure API" }
+  QueuedAction: { action_id: 3, type: "HAZMAT_LOCK", target: "Crane_04" }
 ]`
   }
 };
@@ -1366,9 +1464,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Setup newly added operational control modules
   setupOperationalControls();
 
-  // Initial render
   renderActionFeed();
-  renderIncidentsList();
+  // renderIncidentsList(); // Now rendered statically in HTML
   renderContactsLists();
   updateTime();
   changeLanguage('Portuguese', false);
@@ -1794,10 +1891,15 @@ function renderActionFeed() {
     const sourceText = appTranslations[currentLanguage][action.sourceKey] || action.source;
     const impactText = appTranslations[currentLanguage][action.impactKey] || action.impact;
 
+    let maturityHtml = action.maturity ? `<span style="background:rgba(76,175,80,0.15); color:#4caf50; padding:2px 6px; border-radius:4px; font-size:0.55rem; font-weight:700; margin-left:6px; font-family:var(--font-mono); border: 1px solid rgba(76,175,80,0.3);">🏛️ ${action.maturity}</span>` : '';
+    let rulesHtml = action.rules ? `<span style="background:rgba(139,92,246,0.15); color:#8b5cf6; padding:2px 6px; border-radius:4px; font-size:0.55rem; font-weight:700; margin-left:6px; font-family:var(--font-mono); border: 1px solid rgba(139,92,246,0.3);">⚖️ ${action.rules}</span>` : '';
+
     cardEl.innerHTML = `
       <div class="action-card-header">
-        <div class="action-card-label-row">
+        <div class="action-card-label-row" style="display:flex; align-items:center;">
           ${action.ai_generated ? '<span class="ai-star-icon">✨ ISO 42001 System TWIN</span>' : '<span>RULE MATCH</span>'}
+          ${maturityHtml}
+          ${rulesHtml}
         </div>
         <span class="action-card-priority-badge" style="background-color:${tagColor};">${action.priority.toUpperCase()}</span>
       </div>
@@ -2168,7 +2270,7 @@ function showNodeDetails(nodeId) {
         { name: "Inference_Result", connector: "Postgresql" }
       ],
       documents: ["Model_Architecture.pdf", "Training_Dataset_Stats.html"],
-      specs: ["Protocol: gRPC", "Freq: Real-time", "Format: Tensor"]
+      specs: ["Protocol: Secure API", "Freq: Real-time", "Format: Tensor"]
     },
     "SupplierSLAs": {
       objects: [
@@ -2706,41 +2808,9 @@ function animateMaturityScorebars() {
   });
 }
 
-// Incidents list rendering
+// Incidents list rendering (Now static in index.html)
 function renderIncidentsList() {
-  const container = document.getElementById("incidents-scroll-list");
-  if (!container) return;
-  container.innerHTML = "";
-
-  const mockIncidents = [
-    { title: "Multi-Object Semantic Drift", desc: "Predictive Model v4.1 drift exceeds 14% on FleetTelemetry_Live ingestion. Recommended action: Rollback to v3.8 and initiate XGBoost retraining.", level: "Critical", color: "#EF4444" },
-    { title: "Hazardous Documentation Missing", desc: "Cargo Manifest #BOL-9921 cross-validation failure. hazmat_flag is true, but corresponding Safety Data Sheet document is missing from the Customs Registry link.", level: "Critical", color: "#EF4444" },
-    { title: "Cold Chain Perishable Risk", desc: "WarehouseSensor_ZoneB detected ambient temp > 4°C for 45 mins. CargoManifests indicate $42k of perishable pharmaceuticals at immediate spoilage risk.", level: "High", color: "#EC5B13" },
-    { title: "Inefficient Rerouting Metric", desc: "RouteOptimization algorithm bypassed toll roads on Route #88B, resulting in a net-negative impact: 12% increase in diesel consumption and high SLA breach risk.", level: "Medium", color: "#fbbf24" },
-    { title: "Supplier Data Delay", desc: "SAP API timeout detected for SupplierSLAs context. Expected SLA is 100ms, current response time is 3400ms.", level: "High", color: "#EC5B13" },
-    { title: "Predictive Overfitting", desc: "Predictive Models are over-reliant on RouteOptimization historicals; confidence score dropped to 68%.", level: "Medium", color: "#fbbf24" },
-    { title: "Unmapped Databricks Tables", desc: "3 new tables detected in Databricks without a corresponding Semantic Context node. Governance approval required.", level: "Low", color: "#22c55e" }
-  ];
-
-  mockIncidents.forEach(inc => {
-    const card = document.createElement("div");
-    card.className = "incident-badge-card";
-    card.style.borderColor = `${inc.color}40`; // 25% alpha
-
-    card.innerHTML = `
-      <div class="incident-card-top">
-        <span class="incident-card-badge" style="background-color:${inc.color}20; border: 1.5px solid ${inc.color}40; color:${inc.color};">${inc.level.toUpperCase()}</span>
-      </div>
-      <div>
-        <h4 class="incident-card-title">${inc.title}</h4>
-        <p class="incident-card-desc">${inc.desc}</p>
-      </div>
-      <button class="incident-remediation-link" style="color:${inc.color};" onclick="navigateToScreen('remediation')">
-        View Remediation
-      </button>
-    `;
-    container.appendChild(card);
-  });
+  // Logic migrated to static HTML in index.html to ensure visibility on boot
 }
 
 // Fetch Center Carousel
@@ -3048,12 +3118,12 @@ function setupVoiceAndCameraSimulators() {
     setTimeout(() => {
       if (micOverlay.style.display === "flex") {
         clearInterval(micAnimInterval);
-        micStatus.innerText = "Whisper speech-to-text compiled.";
+        micStatus.innerText = "Speech-to-text compiled.";
         searchInput.value = "Analyze container demurrage invoice #INV-908B and fetch active claims.";
 
         setTimeout(() => {
           micOverlay.style.display = "none";
-          showToast("Voice command recognized via Whisper GGUF locally.");
+          showToast("Voice command recognized via local voice models.");
           triggerFetchProcessingSimulator();
         }, 800);
       }
@@ -3411,18 +3481,18 @@ function setupOperationalControls() {
   }
 
   // 2. Hypothesis Lab range sliders
-  const hdbscanSlider = document.getElementById("param-hdbscan");
-  const prophetSlider = document.getElementById("param-prophet");
+  const hdbscanSlider = document.getElementById("param-density-based");
+  const prophetSlider = document.getElementById("param-time-series modeling");
   const zscoreSlider = document.getElementById("param-zscore");
 
   if (hdbscanSlider) {
     hdbscanSlider.addEventListener("input", () => {
-      document.getElementById("lbl-param-hdbscan").innerText = hdbscanSlider.value + " items";
+      document.getElementById("lbl-param-density-based").innerText = hdbscanSlider.value + " items";
     });
   }
   if (prophetSlider) {
     prophetSlider.addEventListener("input", () => {
-      document.getElementById("lbl-param-prophet").innerText = (prophetSlider.value / 100).toFixed(2);
+      document.getElementById("lbl-param-time-series modeling").innerText = (prophetSlider.value / 100).toFixed(2);
     });
   }
   if (zscoreSlider) {
@@ -3835,7 +3905,7 @@ const causalTranslations = {
     causalTitle: "INFERRED CAUSAL DIAGNOSTIC",
     remediationTitle: "REMEDIATION ACTIONS & TELECOM",
     weightCause: "Scale calibration drift at Loading Dock 4 (last calibrated 90 days ago). Ingress logs indicate heavy vibration causing sensor offset.",
-    weightSuggestion: "Tune HDBSCAN clusters dynamically in the Hypothesis Lab to adjust outlier thresholds by +2.5% during high-impact loading schedules.",
+    weightSuggestion: "Tune Density-based clusters dynamically in the Hypothesis Lab to adjust outlier thresholds by +2.5% during high-impact loading schedules.",
     demurrageCause: "Carrier demurrage fee mismatch due to customs clearance hold on HS Code category 84 (Equipment) at Houston Terminal.",
     demurrageSuggestion: "Recalibrate the demurrage limits dynamically to allow temporary $5,000 variance buffers during peak seasonal congestions.",
     piiCause: "Developer bypassed data fabric anonymization during staging database sync to speed up Databricks queries.",
@@ -3851,7 +3921,7 @@ const causalTranslations = {
     causalTitle: "DIAGNÓSTICO CAUSAL INFERIDO",
     remediationTitle: "AÇÕES DE REMEDIAÇÃO E TELECOM",
     weightCause: "Desvio de calibração da balança no Portão de Carga 4 (última calibração há 90 dias). Vibrações pesadas causaram offset nos sensores.",
-    weightSuggestion: "Ajuste os clusters HDBSCAN dinamicamente no Lab de Hipóteses para elevar os limiares de outliers em +2.5% durante picos de carga.",
+    weightSuggestion: "Ajuste os clusters Density-based dinamicamente no Lab de Hipóteses para elevar os limiares de outliers em +2.5% durante picos de carga.",
     demurrageCause: "Divergência na taxa de demurrage devido a atraso na liberação alfandegária de equipamentos do grupo HS Code 84 no Porto de Houston.",
     demurrageSuggestion: "Recalibre as regras de demurrage para tolerar buffers de variação temporária de $5.000 durante congestionamentos sazonais.",
     piiCause: "O desenvolvedor ignorou a anonimização de dados do pipeline durante a sincronização para acelerar testes no Databricks.",
@@ -3867,7 +3937,7 @@ const causalTranslations = {
     causalTitle: "DIAGNÓSTICO CAUSAL INFERIDO",
     remediationTitle: "ACCIONES DE REMEDIACIÓN Y TELECOM",
     weightCause: "Desviación de calibración en la báscula de Carga 4 (última calibración hace 90 días). Las vibraciones causaron un desfase de sensores.",
-    weightSuggestion: "Calibre los clusters HDBSCAN en el Laboratorio de Hipótesis para ajustar umbrales de outliers en +2.5% durante picos de carga.",
+    weightSuggestion: "Calibre los clusters Density-based en el Laboratorio de Hipótesis para ajustar umbrales de outliers en +2.5% durante picos de carga.",
     demurrageCause: "Discrepancia de demurrage debido a retenciones aduaneras de equipos del código HS 84 en la terminal de Houston.",
     demurrageSuggestion: "Recalibre las reglas de límite para permitir un buffer temporal de $5,000 durante congestiones portuarias de temporada.",
     piiCause: "El desarrollador omitió la asignación de enmascaramiento de datos durante la sincronización para acelerar consultas en Databricks.",
@@ -3883,7 +3953,7 @@ const causalTranslations = {
     causalTitle: "DIAGNOSTIC CAUSAL INFÉRÉ",
     remediationTitle: "ACTIONS DE REMÉDIATION ET TÉLÉCOM",
     weightCause: "Dérive de calibrage de la balance du quai 4 (dernier étalonnage il y a 90 jours). Les vibrations ont causé un décalage des capteurs.",
-    weightSuggestion: "Ajustez les clusters HDBSCAN dans le Lab d'Hypothèses pour augmenter les seuils d'anomalies de +2.5% lors des pointes.",
+    weightSuggestion: "Ajustez les clusters Density-based dans le Lab d'Hypothèses pour augmenter les seuils d'anomalies de +2.5% lors des pointes.",
     demurrageCause: "Divergence de surestaries due à un retard de dédouanement des équipements de catégorie HS 84 au port de Houston.",
     demurrageSuggestion: "Recalibrez les limites de surestaries pour tolérer des tampons temporaires de $5 000 lors des congestions saisonnières.",
     piiCause: "Le développeur a contourné l'anonymisation du pipeline lors de la synchronisation pour accélérer les requêtes Databricks.",
@@ -3986,7 +4056,7 @@ function renderAuditVerdict(isApplicable, selectedDoc, selectedRule, t) {
 
   // Construct stack of all 6 suggestions
   const suggestionTypes = [
-    { key: "weight", title: currentLanguage === 'Portuguese' ? "Calibração de Peso e Ajustes HDBSCAN" : "Weight Calibration & HDBSCAN Adjustments", isCritical: false, match: (d) => d === "bol_manifest.png" || d === "route_manifest.json" },
+    { key: "weight", title: currentLanguage === 'Portuguese' ? "Calibração de Peso e Ajustes Density-based" : "Weight Calibration & Density-based Adjustments", isCritical: false, match: (d) => d === "bol_manifest.png" || d === "route_manifest.json" },
     { key: "demurrage", title: currentLanguage === 'Portuguese' ? "Recalibração de Tarifas de Demurrage" : "Demurrage Fee Recalibration", isCritical: false, match: (d) => d === "customs_invoice.png" || d === "calculate_demurrage.sql" || d === "carrier_tariffs.csv" },
     { key: "pii", title: currentLanguage === 'Portuguese' ? "Restrições de PII e Sandbox de Segurança" : "PII Security Sandbox Restrictions", isCritical: true, match: (d) => d === "pii_leakage.png" || d === "data_masking.py" },
     { key: "temp", title: currentLanguage === 'Portuguese' ? "Otimização de Rota da Cadeia de Frio" : "Cold Chain Route Optimization", isCritical: false, match: (d) => d === "cold_chain_log.png" || d === "temperature_control.py" },
@@ -4440,7 +4510,7 @@ const appTranslations = {
     sidebar_control: "Operations Control",
     sidebar_actions: "Fetch Simulator Actions",
     sidebar_trigger: "Trigger Fetch Run",
-    nav_twins: "Digital Twin (Action Feed)",
+    nav_twins: "Actionable Twin (Action Feed)",
     nav_artifact: "Decision Artifact Screen",
     nav_remediation: "Remediation Workflow",
     nav_fetch: "Fetch Center Screen",
@@ -4454,9 +4524,9 @@ const appTranslations = {
     header_specs_btn: "SCREEN DETAILS",
     header_secure_connection: "Secure Data Connection",
     subtitle_twin: "ACTION FEED",
-    title_twin: "Digital <span>Twin</span>",
+    title_twin: "Actionable <span>Twin</span>",
     impact_potential: "IMPACT POTENTIAL",
-    twin_status: "DIGITAL TWIN STATUS",
+    twin_status: "ACTIONABLE TWIN STATUS",
     priority_actions: "PRIORITY ACTIONS",
     subtitle_artifact: "DECISION PIPELINE",
     title_artifact: "Decision <span>Artifact</span>",
@@ -4533,7 +4603,7 @@ const appTranslations = {
     allocated_limit: "Allocated: 50 CU Limit / Memory 1GB",
     cu_disclaimer: "* Compute Units (CU) are consumed during sandboxed runner executions in isolated environments. Quota resets on the 1st of every calendar month.",
     test_gateway_btn: "Test Secure Gateway Pings",
-    specs_grpc_title: "⚡ Secure Integration Schemas:",
+    specs_integration_title: "⚡ Secure Integration Schemas:",
 
     // Route detail labels
     route_from: "From",
@@ -4546,7 +4616,7 @@ const appTranslations = {
     call_supplier: "Call Supplier Module",
 
     // Slide Deck translations
-    slide_0_title: "Your Operations <span>Digital Twin</span>",
+    slide_0_title: "Your Operations <span>Actionable Twin</span>",
     slide_0_body: "Continuous Forecasting. Defensible Execution. Ground your automation with validated business rules on a Strictly Compartmentalized Node. Gain exponential operational advantage over fulfillments and claims.",
     slide_1_title: "Aligning <span>Business Stakeholders</span>",
     slide_1_body: "Addressing operational inefficiencies through dedicated autonomous execution modules:",
@@ -4569,7 +4639,7 @@ const appTranslations = {
     slide_4_title: "Demand <span>Forecasting</span>",
     slide_4_body: "Deducing anomalies before they disrupt in-store availability:",
     slide_4_step1: "<strong>Telemetry Scan:</strong> Aggregates warehousing inventory signals.",
-    slide_4_step2: "<strong>Seasonality:</strong> Prophet filters seasonal variance.",
+    slide_4_step2: "<strong>Seasonality:</strong> Time-series modeling filters seasonal variance.",
     slide_4_step3: "<strong>ERP Release:</strong> Dispatches PO directly to Odoo ERP upon verification.",
     slide_iot_title: "Predictive <span>Maintenance</span>",
     slide_iot_body: "Automating equipment health checks via intelligent smart devices over IoT telemetry data:",
@@ -4802,7 +4872,7 @@ const appTranslations = {
     sidebar_control: "Control de Operaciones",
     sidebar_actions: "Acciones del Simulador",
     sidebar_trigger: "Ejecutar Captura (Fetch)",
-    nav_twins: "Digital Twin (Canal de Acciones)",
+    nav_twins: "Actionable Twin (Canal de Acciones)",
     nav_artifact: "Pantalla de Artefactos",
     nav_remediation: "Flujo de Remediación",
     nav_fetch: "Pantalla del Centro de Captura",
@@ -4893,7 +4963,7 @@ const appTranslations = {
     allocated_limit: "Asignado: 50 CU Límite / Memoria 1GB",
     cu_disclaimer: "* Las unidades de cómputo (CU) se consumen durante las ejecuciones del runner en entornos aislados. El límite se restablece el día 1 de cada mes.",
     test_gateway_btn: "Probar Conexión del Gateway Seguro",
-    specs_grpc_title: "⚡ Esquemas de Integración Segura:",
+    specs_integration_title: "⚡ Esquemas de Integración Segura:",
 
     route_from: "Desde",
     route_to: "Hacia",
@@ -5156,7 +5226,7 @@ const appTranslations = {
     sidebar_control: "Contrôle des Opérations",
     sidebar_actions: "Actions du Simulateur",
     sidebar_trigger: "Déclencher l'Acquisition",
-    nav_twins: "Digital Twin (Flux d'Actions)",
+    nav_twins: "Actionable Twin (Flux d'Actions)",
     nav_artifact: "Écran d'Artéfacts",
     nav_remediation: "Flux de Remédiation",
     nav_fetch: "Centre d'Acquisition",
@@ -5247,7 +5317,7 @@ const appTranslations = {
     allocated_limit: "Alloué: Limite de 50 CU / Mémoire 1Go",
     cu_disclaimer: "* Les unités de calcul (CU) sont consommées lors des exécutions du runner dans des environnements isolés. Le quota est réinitialisé le 1er de chaque mois.",
     test_gateway_btn: "Tester la Connexion de la Passerelle",
-    specs_grpc_title: "⚡ Schémas d'Intégration Sécurisés:",
+    specs_integration_title: "⚡ Schémas d'Intégration Sécurisés:",
 
     route_from: "De",
     route_to: "À",
@@ -5511,7 +5581,7 @@ const appTranslations = {
     sidebar_control: "Controle de Operações",
     sidebar_actions: "Ações do Simulador",
     sidebar_trigger: "Disparar Captura (Fetch)",
-    nav_twins: "Digital Twin (Fluxo de Ações)",
+    nav_twins: "Actionable Twin (Fluxo de Ações)",
     nav_artifact: "Tela de Artefatos",
     nav_remediation: "Fluxo de Remediação",
     nav_fetch: "Tela de Captura (Fetch)",
@@ -5525,9 +5595,9 @@ const appTranslations = {
     header_specs_btn: "INFORMAÇÕES DA TELA",
     header_secure_connection: "Conexão de Dados Protegida",
     subtitle_twin: "FLUXO DE AÇÕES",
-    title_twin: "Gêmeo <span>Digital</span>",
+    title_twin: "Gêmeo <span>Acionável</span>",
     impact_potential: "POTENCIAL DE IMPACTO",
-    twin_status: "STATUS DO GÊMEO DIGITAL",
+    twin_status: "STATUS DO GÊMEO ACIONÁVEL",
     priority_actions: "AÇÕES PRIORITÁRIAS",
     subtitle_artifact: "PIPELINE DE DECISÃO",
     title_artifact: "Artefato de <span>Decisão</span>",
@@ -5602,7 +5672,7 @@ const appTranslations = {
     allocated_limit: "Alocado: Limite 50 CU / Memória 1GB",
     cu_disclaimer: "* As Unidades de Computação (CU) são consumidas em execuções de runners em ambientes isolados. A cota é reiniciada no dia 1 de cada mês.",
     test_gateway_btn: "Testar Conexão do Gateway Seguro",
-    specs_grpc_title: "⚡ Esquemas de Integração Segura:",
+    specs_integration_title: "⚡ Esquemas de Integração Segura:",
 
     route_from: "Origem",
     route_to: "Destino",
@@ -5613,7 +5683,7 @@ const appTranslations = {
     call_finance: "Iniciar Chamada de Reclamação",
     call_supplier: "Ligar Para Agente de Suprimentos",
 
-    slide_0_title: "O Gêmeo Digital para <span>Operações Empresariais</span>",
+    slide_0_title: "O Gêmeo Acionável para <span>Operações Empresariais</span>",
     slide_0_body: "Fundamentando os fluxos de agentes autônomos em lógica de conformidade validada. Auditamos fluxos de transações, testamos fluxos de caixa e reconciliamos manuais de operação com bancos de dados ativos de forma segura por meio de IA local.",
     slide_1_title: "Alinhando os <span>Interesses do Negócio</span>",
     slide_1_body: "Corrigindo ineficiências operacionais por meio de perfis especialistas de agentes dedicados:",
@@ -5940,10 +6010,10 @@ function changeLanguage(lang, showToastAlert = true) {
 // Technical Specifications Data Domain Mapping
 const screenSpecs = {
   twins: {
-    name: "Digital Twin (Action Feed)",
+    name: "Actionable Twin (Action Feed)",
     widget: "TwinsIntakeScreen (twins_screen.dart)",
-    desc: "Main cockpit screen. Aggregates live operational events (Sentinel, Forge, Compliance, Finance, Route, Operations) into an actionable priority feed. Operators view impact metrics ($USD potentials) and click priority actions to launch decision pipelines. Whisper microphone simulation allows vocal searches (e.g. 'trigger fetch') directly filtering lists.",
-    grpc: `[Business Integration Fields]
+    desc: "Main cockpit screen. Aggregates live operational events (Sentinel, Forge, Compliance, Finance, Route, Operations) into an actionable priority feed. Operators view impact metrics ($USD potentials) and click priority actions to launch decision pipelines. Voice microphone simulation allows vocal searches (e.g. 'trigger fetch') directly filtering lists.",
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Action Cockpit
 - Key Metrics: Priority Level, Financial Impact ($USD), Target Category, Source Twin
 - Data Standard: Token-Oriented Document Schema`,
@@ -5953,7 +6023,7 @@ const screenSpecs = {
     name: "Decision Artifact Screen",
     widget: "DecisionArtifactScreen (decision_artifact_screen.dart)",
     desc: "Compliance screen for physical-to-digital record verification. Parses cargo documentation (Customs Invoice #INV-908B, Bill of Lading Cargo Manifest #FL309) using local OCR engine pipelines. Features secure signature verification, sensitive PII database masking checks, and simulated invoice adjustment dispatches.",
-    grpc: `[Business Integration Fields]
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Compliance Decision Hub
 - OCR Document Fields: HS Code Tariffs, Declared Weight, Verified Scale Weight, Vendor ID
 - Data Standard: Audited Document Records`,
@@ -5963,7 +6033,7 @@ const screenSpecs = {
     name: "Remediation Workflow",
     widget: "RemediationWorkflowScreen (remediation_workflow_screen.dart)",
     desc: "Automated Incident Remediation console. Traces live isolated execution sandboxes, mapping network isolations and configuration revokes step-by-step. Renders execution status (PENDING, RUNNING, SUCCESS) and output diagnostic logs.",
-    grpc: `[Business Integration Fields]
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Remediation Workflow Control
 - Step Parameters: Step Description, Progress Status, Completion Timestamp, Suggested Remediation
 - Data Standard: SOP Automation Playbook`,
@@ -5973,7 +6043,7 @@ const screenSpecs = {
     name: "Fetch Center Screen",
     widget: "ScheduleFetchScreen (schedule_fetch_screen.dart)",
     desc: "Ingestion gateway coordinator. Controls manual fetch runs that query ERP endpoints, mapping data structures onto local caches. Shows processed document carousels and streams live pipeline ingestion logs.",
-    grpc: `[Business Integration Fields]
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Data Ingest Portal
 - Sync Parameters: Ingest Schedule, Records Processed, Source System, Last Run Status
 - Data Standard: Real-Time Stream Synchronization`,
@@ -5983,7 +6053,7 @@ const screenSpecs = {
     name: "Maturity Center Screen",
     widget: "MaturityCenterScreen (ai_center_screen.dart)",
     desc: "Governance and domain compliance node map. Features interactive nodes (CustomsAudits, CustomerProfiles, InvoiceAuditing, DisputedClaims). Clicking nodes dynamically displays the domain inspector details: endpoints, row tallies, schema models, and sync methods.",
-    grpc: `[Business Integration Fields]
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Maturity Map Inspector
 - Node Properties: Database Name, Secure Endpoint, Row Counts, Sync Method, Latency (ms)
 - Data Standard: Secure Storage Schemas`,
@@ -5993,7 +6063,7 @@ const screenSpecs = {
     name: "Profile & Billing CU",
     widget: "ProfileScreen (profile_screen.dart)",
     desc: "Governance profile and resource billing console. Rotates secure peer session keys, displaying connection status. Tracks Monthly Runner Quotas in Compute Units (CU) allocated across isolated sandboxes. Language menu switches localization states.",
-    grpc: `[Business Integration Fields]
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Profile & Resource Administration
 - Key Settings: Administrative Contact, Connected Messaging Channels, Active API Webhooks
 - Data Standard: Account Credentials Schema`,
@@ -6003,7 +6073,7 @@ const screenSpecs = {
     name: "Rules Reconciliation",
     widget: "RulesReconScreen (rules_recon_screen.dart)",
     desc: "Weight discrepancy bounds and PII scan manager. Features sliders to calibrate detection sensitivity percentages and toggles to engage automated crawlers. Initiates localized database checks.",
-    grpc: `[Business Integration Fields]
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Compliance Rules Manager
 - Config Settings: Tolerance Sliders, Custom Limits, Verification Thresholds
 - Data Standard: Business Policy Constraints`,
@@ -6013,7 +6083,7 @@ const screenSpecs = {
     name: "Hypothesis Simulation Lab",
     widget: "HypothesisLabScreen (hypothesis_lab_screen.dart)",
     desc: "Predictive modeling sandbox. Tunes semantic clustering elements, trend seasonality parameters, and outlier Z-scores. Executing a run compiles local logs and generates synthetic twin actions.",
-    grpc: `[Business Integration Fields]
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Demand & Trend Simulator
 - Parameters: Forecast Seasonality, Margin Safety Buffer, Outlier Z-Score Limits
 - Data Standard: Operational Predictive Models`,
@@ -6023,7 +6093,7 @@ const screenSpecs = {
     name: "Runner & Connection Configurations",
     widget: "RunnerConnectionsScreen (runner_connections_screen.dart)",
     desc: "Connectivity terminal testing Customs Registry Link, Carrier Drivers Registry, and Access Controls Registry auth gateways. Displays isolated worker pool bounds and memory limits alongside diagnostic telemetry outputs.",
-    grpc: `[Business Integration Fields]
+    integration_schema: `[Business Integration Fields]
 - Target Dashboard: Network Connection Monitor
 - Connectivity Targets: Customs Registry Link, Carrier Drivers Registry, Access Controls Registry
 - Data Standard: Secure Gateway Connection`,
@@ -6037,9 +6107,9 @@ function openScreenSpecsCard() {
   if (!specs) return;
 
   document.getElementById("specs-screen-name").innerText = specs.name;
-  document.getElementById("specs-flutter-widget").innerText = "Widget: " + specs.widget;
+  document.getElementById("specs-ui-component").innerText = "Widget: " + specs.widget;
   document.getElementById("specs-screen-desc").innerText = specs.desc;
-  document.getElementById("specs-grpc-info").innerText = specs.grpc;
+  document.getElementById("specs-integration-info").innerText = specs.integration_schema;
   document.getElementById("specs-telecom-info").innerText = specs.telecom;
 
   const overlay = document.getElementById("specs-modal-overlay");

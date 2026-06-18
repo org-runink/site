@@ -139,6 +139,31 @@ paginatePath = "page"
   [module.hugoVersion]
     extended = true
     min = "0.80.0"
+  
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+  [[module.mounts]]
+    source = "static/images"
+    target = "assets/images"
 
 [build]
   writeStats = false
@@ -323,3 +348,19 @@ paginatePath = "page"
       name = "Preços"
       url = "/pt/pricing"
       weight = 5
+
+[mediaTypes."application/toon"]
+  suffixes = ["toon"]
+
+[outputFormats.TOON]
+  mediaType = "application/toon"
+  baseName = "index"
+  isPlainText = true
+  isHTML = false
+
+[outputs]
+  home = ["HTML", "RSS", "TOON"]
+  page = ["HTML", "TOON"]
+  section = ["HTML", "RSS", "TOON"]
+  taxonomy = ["HTML", "TOON"]
+  term = ["HTML", "RSS", "TOON"]

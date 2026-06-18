@@ -3,10 +3,7 @@
         class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-[#8B9A6E] transition-colors duration-300">
         {{ $logo := resources.Get "images/logo.png" }}
         {{ if $logo }}
-            {{ $resized := $logo.Resize "80x80" }}
-            <img src="{{ $resized.RelPermalink }}" alt="Runink Logo" width="40" height="40"
-                class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300"
-                fetchpriority="high" decoding="sync">
+            {{ partial "image.html" (dict "src" "images/logo.png" "alt" "Runink Logo" "width" "80x80" "class" "object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" "fetchpriority" "high" "context" $) }}
         {{ else }}
             <img src="/images/logo.png" alt="Runink Logo" width="40" height="40"
                 class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300"

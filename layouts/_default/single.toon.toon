@@ -1,0 +1,30 @@
+page_context[1]:
+  - title: {{ .Title | jsonify }}
+    permalink: {{ .Permalink | jsonify }}
+    date: {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }}
+    category: {{ .Type | jsonify }}
+    description: {{ .Params.description | default .Summary | plainify | jsonify }}
+    content: {{ .Plain | jsonify }}
+    {{- $tags := default slice .Params.tags }}
+    tags[{{ len $tags }}]:
+    {{- range $tag := $tags }}
+      - {{ $tag | jsonify }}
+    {{- end }}
+    {{- $partnerships := default slice .Params.partnerships }}
+    partnerships[{{ len $partnerships }}]:
+    {{- range $partner := $partnerships }}
+      - name: {{ $partner.name | jsonify }}
+        url: {{ $partner.url | default "" | jsonify }}
+    {{- end }}
+    {{- $case_studies := default slice .Params.case_studies }}
+    case_studies[{{ len $case_studies }}]:
+    {{- range $case := $case_studies }}
+      - headline: {{ $case.title | jsonify }}
+        url: {{ $case.url | default "" | jsonify }}
+    {{- end }}
+    {{- $compliance := default slice .Params.compliance }}
+    compliance[{{ len $compliance }}]:
+    {{- range $standard := $compliance }}
+      - name: {{ $standard.name | jsonify }}
+        url: {{ $standard.url | default "" | jsonify }}
+    {{- end }}

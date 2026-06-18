@@ -1,6 +1,6 @@
 ---
 title: "O que é um Gêmeo Digital? Como Decisões Autônomas estão Remodelando a Cadeia de Suprimentos"
-author: "Equipe Editorial Runink"
+author: "Runink Logistics Operations Team"
 date: 2026-02-23T14:10:11Z
 draft: false
 featured_image: "/images/blog/digital-twin-autonomous-decisions.png"
@@ -98,26 +98,7 @@ Impulsionado por automação de fluxo de trabalho avançada, nosso Companion vai
 
 Para compreender plenamente como esses componentes convergem para automatizar operações logísticas complexas, considere o seguinte fluxo de contexto C4 que ilustra a interação entre o mundo físico, o Gêmeo Digital e o Mecanismo Autônomo da Runink:
 
-{{< mermaid >}}
-C4Context
-    title Ecossistema de Gêmeos Digitais e Decisão Autônoma
-    
-    System_Ext(PhysicalSupplyChain, "Cadeia de Suprimentos Física", "Sensores IoT, Wearables, Ativos de Transporte, Linhas de Produção")
-    System_Ext(ExternalData, "Feeds Geopolíticos e de Clima", "APIs externas fornecendo contexto macro.")
-    
-    Enterprise_Boundary(b0, "O Ambiente Digital Runink") {
-        System(OperationsModel, "Gêmeo Digital da Empresa", "Réplica virtual em tempo real e com estado de todos os ativos e processos.")
-        System(AnalyticsCompanion, "Runink Analytics Companion", "Executando o pipeline de decisão autônoma de 11 etapas.")
-        System(CoreSystem, "Sistemas de Operação", "ERP, TMS, WMS, CRM e Snowflake Data Warehouses.")
-    }
 
-    Rel(PhysicalSupplyChain, OperationsModel, "1. Transmite Telemetria", "Dados de API/MQTT de alta frequência")
-    Rel(ExternalData, OperationsModel, "2. Fornece Fatores de Risco Macro", "Estado externo em tempo real")
-    Rel(OperationsModel, AnalyticsCompanion, "3. Transmite Irregularidades de Estado", "Arquitetura orientada a eventos")
-    Rel(AnalyticsCompanion, CoreSystem, "4. Executa Consultas de Contexto", "Recupera restrições e regras de SLA")
-    Rel(AnalyticsCompanion, OperationsModel, "5. Simula Cenários de Impacto", "Testa variáveis em relação ao modelo")
-    Rel(AnalyticsCompanion, CoreSystem, "6. Consolida Otimizações Autônomas", "Integração via API (Execução Strict Mode)")
-{{< /mermaid >}}
 
 ### Conclusão: O Canivete Suíço do Amanhã
 
@@ -163,7 +144,7 @@ Ao adotar essas tecnologias avançadas, os líderes de cadeia de suprimentos pod
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Sobre o Autor</h2>
   <p class="text-stone-300">
     <strong>Arquiteto Líder de Dados e Nuvem</strong><br>
-    Especialista no assunto (SME) em AWS Data Analytics, AWS Certified Developer e Google Cloud Professional Certified em Engenharia de Dados e Análise Avançada. Com mais de uma década de experiência na construção de arquiteturas de nuvem resilientes e de alto rendimento, pipelines de dados e soluções de logística automatizada.
+    Especialista no assunto (SME) em AWS Data Analytics, Freight Analytics e Google Cloud Professional Certified em Engenharia de Dados e Análise Avançada. Com mais de uma década de experiência na construção de arquiteturas de nuvem resilientes e de alto rendimento, pipelines de dados e soluções de logística automatizada.
   </p>
 </section>
 

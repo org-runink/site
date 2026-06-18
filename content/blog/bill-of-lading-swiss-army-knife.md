@@ -1,6 +1,6 @@
 ---
 title: "The Bill of Lading: The Swiss Army Knife of Global Trade"
-author: "Runink Editorial Team"
+author: "Runink Logistics Operations Team"
 date: 2026-01-22T11:00:00Z
 draft: false
 featured_image: "/images/blog/bill-of-lading-header.png"
@@ -88,40 +88,7 @@ For a dropshipper, understanding the Bill of Lading ecosystem is vital for maint
 
 Visualizing the flow of liability and title is often easier than parsing the legal text. Below is the ecosystem from your perspective:
 
-{{< mermaid >}}
-C4Context
-    title BoL Workflow in Dropshipping Logistics
-    
-    Enterprise_Boundary(b0, "Supply Chain Ecosystem") {
-        Person(Dropshipper, "Dropshipper / Exporter", "Manages orders, pays supplier, controls inventory.")
-        
-        System_Boundary(b1, "Origin Logistics") {
-            System_Ext(Supplier, "Manufacturing Factor", "Produces goods, loads container.")
-            System(FreightForwarder, "Freight Forwarder", "Issues House BoL (HBL).<br/>Books space with Carrier.")
-        }
 
-        System_Boundary(b2, "The Critical Document") {
-            System(BillOfLading, "House Bill of Lading", "The key to release cargo.")
-        }
-
-        System_Boundary(b3, "Destination Logistics") {
-            System_Ext(CustomsBroker, "Customs Broker", "Clears goods for import.")
-            System_Ext(FulfillmentCenter, "3PL / Warehouse", "Receives goods for final delivery.")
-        }
-        
-         System_Ext(OceanCarrier, "Ocean Carrier", "Moves the physical container.")
-    }
-
-    Rel(Supplier, FreightForwarder, "1. Hands Over Cargo", "Physical Goods")
-    Rel(FreightForwarder, Supplier, "2. Issues Original HBL", "Draft Copy")
-    Rel(Supplier, Dropshipper, "3. Sends Copy as Proof", "HBL Copy")
-    Rel(Dropshipper, Supplier, "4. Pays Balance", "TT Wiring")
-    Rel(Supplier, FreightForwarder, "5. Surrenders Original HBL", "Telex Release")
-    Rel(FreightForwarder, CustomsBroker, "6. Forwarder Releases Cargo", "Arrival Notice being pre-alerted")
-    Rel(CustomsBroker, FulfillmentCenter, "7. Delivery Order Issued", "Trucking to Warehouse")
-    
-    BiRel(FreightForwarder, OceanCarrier, "Manage Master BoL", "Contract of Carriage")
-{{< /mermaid >}}
 
 ---
 
@@ -173,8 +140,8 @@ The **Runink Analytics Companion** represents the future of this evolution. By u
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
+    <strong>Lead Logistics Operations Architect</strong><br>
+    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers, data pipelines, and automated logistics solutions.
   </p>
 </section>
 

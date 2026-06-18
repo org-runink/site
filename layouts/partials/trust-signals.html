@@ -1,0 +1,28 @@
+{{/* GEO Trust Signals Injection */}}
+{{ if or .Params.partnerships .Params.compliance }}
+<section class="max-w-7xl mx-auto mt-12 pt-8 border-t border-stone-800 px-4 pb-12" aria-label="Trust and Compliance Details">
+  <h3 class="text-xl font-bold text-stone-200 mb-6 uppercase tracking-wider text-sm">Verification & Standards</h3>
+  
+  {{ with .Params.compliance }}
+  <div class="mb-6">
+    <strong class="block text-stone-400 mb-2">Compliant Standards:</strong>
+    <ul class="flex flex-wrap gap-3 list-none p-0">
+      {{ range . }}
+      <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer nofollow" class="inline-block px-3 py-1 text-sm font-medium text-[#ea580c] bg-stone-900 border border-[#ea580c]/30 rounded-full hover:bg-stone-800">{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{ with .Params.partnerships }}
+  <div class="mb-6">
+    <strong class="block text-stone-400 mb-2">Key Technology Partners:</strong>
+    <ul class="flex flex-wrap gap-3 list-none p-0">
+      {{ range . }}
+      <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="inline-block px-3 py-1 text-sm font-medium text-stone-300 bg-stone-800 rounded-full hover:bg-stone-700">{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+{{ end }}

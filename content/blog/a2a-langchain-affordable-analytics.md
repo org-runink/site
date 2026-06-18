@@ -1,8 +1,8 @@
 ---
-title: "Affordable Analytics: Harnessing A2A and Modular Workflows for Scalable Insights"
-description: "Learn how the A2A protocol combined with modular processing frameworks empowers teams to build scalable, intelligent analytics workflows—without the high costs of traditional platforms."
+title: "How AI Agents Drive Cost-Effective Supply Chain Operations"
+description: "Learn how autonomous agents reduce operational overhead and improve cost-effectiveness in global supply chains."
 slug: a2a-langchain-affordable-analytics
-author: "Runink Editorial Team"
+author: "Runink Logistics Operations Team"
 date: 2025-06-24
 tags: [A2A, integration, analytics, open source, data protocol, data pipelines, low-cost analytics, modular workflows, task orchestration, sentiment analysis, open standards]
 robots: index, follow
@@ -182,8 +182,8 @@ By combining A2A’s lightweight, decentralized approach with modern data proces
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
+    <strong>Lead Logistics Operations Architect</strong><br>
+    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers, data pipelines, and automated logistics solutions.
   </p>
 </section>
 

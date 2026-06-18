@@ -5,7 +5,49 @@
   "@type": "WebSite",
   "name": {{ .Site.Title | jsonify }},
   "url": {{ .Site.BaseURL | jsonify }},
-  "description": {{ .Site.Params.description | jsonify }}
+  "description": {{ .Site.Params.description | jsonify }},
+
+  {{/* GEO Entity Relationships Injection for Homepage */}}
+  {{ with .Params.partnerships }}
+  "mentions": [
+    {{ range $index, $partner := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Organization",
+      "name": {{ $partner.name | jsonify }},
+      "url": {{ $partner.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ],
+  {{ end }}
+
+  {{ with .Params.case_studies }}
+  "citation": [
+    {{ range $index, $case := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Article",
+      "headline": {{ $case.title | jsonify }},
+      "url": {{ $case.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ],
+  {{ end }}
+
+  {{ with .Params.compliance }}
+  "about": [
+    {{ range $index, $standard := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Thing",
+      "name": {{ $standard.name | jsonify }},
+      "sameAs": {{ $standard.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ]
+  {{ else }}
+  "about": []
+  {{ end }}
 }
 </script>
 {{ else if .IsPage }}
@@ -19,9 +61,67 @@
   },
   "headline": {{ .Title | jsonify }},
   {{ with .Params.description }}"description": {{ . | jsonify }},{{ end }}
-  {{ with .Params.featured_image }}"image": {{ . | absURL | jsonify }},{{ end }}
+  {{ $imgUrl := .Params.featured_image }}
+  {{ with $imgUrl }}
+    {{ $img := resources.Get . }}
+    {{ if $img }}
+      {{ if eq $img.MediaType.SubType "svg" }}
+        "image": {{ $img.Permalink | jsonify }},
+      {{ else }}
+        {{ $optimized := $img.Resize "1200x630 webp" }}
+        "image": {{ $optimized.Permalink | jsonify }},
+      {{ end }}
+    {{ else }}
+      "image": {{ . | absURL | jsonify }},
+    {{ end }}
+  {{ end }}
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+
+  {{/* GEO Entity Relationships Injection */}}
+  
+  {{/* Partnerships mapped to schema.org 'mentions' */}}
+  {{ with .Params.partnerships }}
+  "mentions": [
+    {{ range $index, $partner := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Organization",
+      "name": {{ $partner.name | jsonify }},
+      "url": {{ $partner.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ],
+  {{ end }}
+
+  {{/* Case Studies mapped to schema.org 'citation' */}}
+  {{ with .Params.case_studies }}
+  "citation": [
+    {{ range $index, $case := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Article",
+      "headline": {{ $case.title | jsonify }},
+      "url": {{ $case.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ],
+  {{ end }}
+
+  {{/* Compliance & Standards mapped to schema.org 'certification' or 'about' */}}
+  {{ with .Params.compliance }}
+  "about": [
+    {{ range $index, $standard := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Thing",
+      "name": {{ $standard.name | jsonify }},
+      "sameAs": {{ $standard.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ],
+  {{ end }}
+
   "author": {
     "@type": "Person",
     "name": {{ .Params.author | default .Site.Params.author | default .Site.Title | jsonify }}
@@ -31,9 +131,72 @@
     "name": {{ .Site.Title | jsonify }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ .Site.Params.logo | absURL | jsonify }}
+      {{ $logoUrl := .Site.Params.logo }}
+      {{ $logoImg := resources.Get $logoUrl }}
+      {{ if $logoImg }}
+        {{ if eq $logoImg.MediaType.SubType "svg" }}
+          "url": {{ $logoImg.Permalink | jsonify }}
+        {{ else }}
+          {{ $optLogo := $logoImg.Resize "512x512 webp" }}
+          "url": {{ $optLogo.Permalink | jsonify }}
+        {{ end }}
+      {{ else }}
+        "url": {{ $logoUrl | absURL | jsonify }}
+      {{ end }}
     }
   }
+}
+</script>
+{{ else if .IsNode }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ .Title | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "description": {{ .Description | default .Site.Params.description | jsonify }},
+
+  {{/* GEO Entity Relationships Injection for Collection */}}
+  {{ with .Params.partnerships }}
+  "mentions": [
+    {{ range $index, $partner := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Organization",
+      "name": {{ $partner.name | jsonify }},
+      "url": {{ $partner.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ],
+  {{ end }}
+
+  {{ with .Params.case_studies }}
+  "citation": [
+    {{ range $index, $case := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Article",
+      "headline": {{ $case.title | jsonify }},
+      "url": {{ $case.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ],
+  {{ end }}
+
+  {{ with .Params.compliance }}
+  "about": [
+    {{ range $index, $standard := . }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "Thing",
+      "name": {{ $standard.name | jsonify }},
+      "sameAs": {{ $standard.url | default "" | jsonify }}
+    }
+    {{ end }}
+  ]
+  {{ else }}
+  "about": []
+  {{ end }}
 }
 </script>
 {{ end }}

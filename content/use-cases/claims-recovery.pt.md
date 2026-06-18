@@ -50,29 +50,7 @@ author: "Arquiteto Líder de Dados e Nuvem"
              <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">A Defesa Automatizada</h3>
              
              <!-- Mermaid Diagram -->
-{{< mermaid >}}
-C4Context
-title Contexto do Sistema: Módulo de Contestações
 
-Person(clerk, "Atendente de Recebimento", "Tira 1 foto do dano.")
-
-Enterprise_Boundary(b0, "Finanças Runink") {
-System(agent, "Módulo de Contestações", "Especialista de Auditoria Digital.")
-
-System_Ext(legal, "Mecanismo Jurídico", "49 U.S.C. § 14706")
-System_Ext(weather, "Clima NOAA", "Valida 'Caso Fortuito'")
-
-System_Boundary(b1, "Interação com Transportadora") {
-System_Ext(portal, "Portal da Transportadora", "Envia Evidências")
-}
-}
-
-Rel(clerk, agent, "Envia Foto via App")
-Rel(agent, legal, "Cita Emenda Carmack")
-Rel(agent, weather, "Desmente Desculpa de 'Tempestade'")
-Rel(agent, portal, "Registra Contestação de 10 Págs")
-Rel(portal, agent, "Envia Cheque de Acordo")
-{{< /mermaid >}}
              
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Ele elabora uma contestação jurídica completa para uma reclamação de $50. E nunca dorme.</p>
         </div>

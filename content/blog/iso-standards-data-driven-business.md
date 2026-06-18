@@ -2,7 +2,7 @@
 title: "Why ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001 & ISO 27701 Matter for Data‑Driven Business Success"
 description: "Explore how ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001, and ISO 27701 create reliable, secure, and privacy‑centric data foundations—essential for modern, data‑driven enterprises."
 slug: iso-standards-data-driven-business
-author: "Runink Editorial Team"
+author: "Runink Logistics Operations Team"
 date: 2025-06-16
 tags: [ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001, ISO 27701, data quality, information security, privacy management, model governance, data-driven business]
 robots: index, follow
@@ -251,8 +251,8 @@ The result is a **resilient, future‑proof enterprise** where reliable data dri
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
+    <strong>Lead Logistics Operations Architect</strong><br>
+    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers, data pipelines, and automated logistics solutions.
   </p>
 </section>
 

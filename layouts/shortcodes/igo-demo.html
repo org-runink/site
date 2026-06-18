@@ -1,0 +1,4 @@
+<div id="igo-react-root" style="margin: 40px 0; min-height: 400px;"></div>
+
+{{ $reactBuild := resources.Get "js/igo-demo/index.jsx" | js.Build (dict "minify" true) }}
+<script src="{{ $reactBuild.RelPermalink }}" defer></script>
