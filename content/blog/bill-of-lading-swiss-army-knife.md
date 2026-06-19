@@ -1,7 +1,7 @@
 ---
 title: "The Bill of Lading: The Swiss Army Knife of Global Trade"
 author: "Runink Logistics Operations Team"
-date: 2026-01-22T11:00:00Z
+date: 2026-04-29T06:47:22Z
 draft: false
 featured_image: "/images/blog/bill-of-lading-header.png"
 canonical: https://www.runink.org/blog/what-is-bill-of-lading

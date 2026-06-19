@@ -2,7 +2,7 @@
 title: "Securing Third-Party Logistics Data Sharing for Regulatory Compliance"
 description: "Discover how advanced data governance and dynamic masking enable 3PLs and Shippers to share critical supply chain data securely while maintaining strict compliance and operational agility."
 author: "Runink Logistics Operations Team"
-date: 2025-06-01
+date: 2026-03-13T17:02:07Z
 tags: ["Supply Chain Visibility", "Data Security", "3PL Collaboration", "Logistics Compliance", "Data Governance", "Freight Management"]
 slug: "securing-third-party-logistics-data-sharing"
 robots: index, follow

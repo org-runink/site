@@ -2,7 +2,7 @@
 title: "The \"Endless Aisle\" Supply Chain: How Omnichannel Fulfillment Powers Retail"
 description: "Discover how omnichannel fulfillment, distributed order management, and real-time inventory visibility enable the endless aisle for modern retail logistics."
 author: "Runink Logistics Operations Team"
-date: 2026-06-18T23:22:34Z
+date: 2026-04-07T12:51:41Z
 draft: false
 featured_image: "/images/blog/endless-aisle-omnichannel-fulfillment-logistics-header.png"
 canonical: https://www.runink.org/blog/endless-aisle-omnichannel-fulfillment-logistics

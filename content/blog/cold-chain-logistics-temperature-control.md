@@ -2,7 +2,7 @@
 title: "Cold Chain Logistics — Why Temperature Excursions Cost More Than You Think"
 description: "Temperature excursions destroy product value and trigger regulatory violations. Learn how real-time IoT telemetry and AI-driven platforms cut cold chain spoilage by 25-40%."
 author: "Runink Logistics Operations Team"
-date: 2026-06-02T11:00:00Z
+date: 2026-06-09T19:24:39Z
 draft: false
 featured_image: "/images/blog/cold-chain-logistics-temperature-control-header.png"
 canonical: https://www.runink.org/blog/cold-chain-logistics-temperature-control

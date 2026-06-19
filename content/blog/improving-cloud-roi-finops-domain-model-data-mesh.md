@@ -1,7 +1,7 @@
 ---
 title: "Maximizing IT ROI in Complex Supply Chain Networks"
 description: "Explore strategies for aligning technology spend with logistics output, maximizing ROI across complex carrier networks."
-date: 2025-06-07
+date: 2026-05-26T05:53:17Z
 slug: improving-cloud-roi-finops-domain-model-data-mesh
 author: "Runink Logistics Operations Team"
 tags: [Freight Spend Optimization, Supply Chain Technology ROI, Decentralized Carrier Network, Logistics Operations Frameworks, Cloud Management]

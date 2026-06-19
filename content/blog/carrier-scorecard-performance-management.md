@@ -2,7 +2,7 @@
 title: "Carrier Scorecards — How to Hold Your Transportation Partners Accountable with Data"
 description: "Learn how carrier scorecards transform anecdotal carrier feedback into structured, data-driven performance management that improves OTD, reduces claims, and strengthens lane-level accountability."
 author: "Runink Logistics Operations Team"
-date: 2026-05-10T11:00:00Z
+date: 2026-02-27T15:26:54Z
 draft: false
 featured_image: "/images/blog/carrier-scorecard-performance-management-header.png"
 canonical: https://www.runink.org/blog/carrier-scorecard-performance-management

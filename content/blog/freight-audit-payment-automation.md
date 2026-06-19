@@ -2,7 +2,7 @@
 title: "Freight Audit and Payment Automation — Stop Overpaying Your Carriers"
 description: "1 in 5 freight invoices contains an error. Learn how freight audit and payment automation eliminates carrier overpayments, duplicate invoices, and rate discrepancies at scale."
 author: "Runink Logistics Operations Team"
-date: 2026-06-04T11:00:00Z
+date: 2026-03-15T20:23:02Z
 draft: false
 featured_image: "/images/blog/freight-audit-payment-automation-header.png"
 canonical: https://www.runink.org/blog/freight-audit-payment-automation

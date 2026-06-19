@@ -2,7 +2,7 @@
 title: "The 10 Logistics KPIs Every Operations Leader Must Track in 2026"
 description: "Move beyond vanity metrics. These 10 logistics KPIs drive profitability, service excellence, and supply chain resilience for operations leaders in 2026."
 author: "Runink Logistics Operations Team"
-date: 2026-05-28T11:00:00Z
+date: 2026-03-24T16:42:01Z
 draft: false
 featured_image: "/images/blog/logistics-kpis-metrics-operations-header.png"
 canonical: https://www.runink.org/blog/logistics-kpis-metrics-operations

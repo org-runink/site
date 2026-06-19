@@ -2,7 +2,7 @@
 title: "Point-of-Sale Data in Logistics: Using Real-Time Retail Sync for Demand Sensing"
 description: "Discover how integrating store-level POS data transforms reactive forecasting into proactive, AI-driven demand sensing for resilient logistics operations."
 author: "Runink Logistics Operations Team"
-date: 2026-06-18T23:22:34Z
+date: 2026-05-29T00:24:23Z
 draft: false
 featured_image: "/images/blog/pos-data-logistics-demand-sensing-header.png"
 canonical: https://www.runink.org/blog/pos-data-logistics-demand-sensing

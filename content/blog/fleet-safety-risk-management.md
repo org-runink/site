@@ -2,7 +2,7 @@
 title: "Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics"
 description: "How predictive analytics and telematics data help fleet operators reduce accident rates by 20-35%, lower insurance premiums, and stay ahead of HOS and ELD compliance."
 author: "Runink Logistics Operations Team"
-date: 2026-06-06T11:00:00Z
+date: 2026-03-15T14:45:31Z
 draft: false
 featured_image: "/images/blog/fleet-safety-risk-management-header.png"
 canonical: https://www.runink.org/blog/fleet-safety-risk-management

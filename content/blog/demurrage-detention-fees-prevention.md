@@ -2,7 +2,7 @@
 title: "Demurrage and Detention Fees — The Silent Margin Killer and How to Fight Back"
 description: "Demurrage and detention fees drain $5B+ annually from global supply chains. Learn how AI-driven container visibility and automated dispute resolution cut costs by 40-60%."
 author: "Runink Logistics Operations Team"
-date: 2026-06-08T11:00:00Z
+date: 2026-06-05T16:22:42Z
 draft: false
 featured_image: "/images/blog/demurrage-detention-fees-prevention-header.png"
 canonical: https://www.runink.org/blog/demurrage-detention-fees-prevention

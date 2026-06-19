@@ -2,7 +2,7 @@
 title: "Managing Retail Promotional Peaks: Capacity, Cross-Docking, and Returns"
 description: "Discover how supply chain leaders can manage retail promotional peaks using strategic cross-docking, elastic carrier capacity, and proactive reverse logistics."
 author: "Runink Logistics Operations Team"
-date: 2026-06-18T11:00:00Z
+date: 2026-02-24T14:37:21Z
 draft: false
 featured_image: "/images/blog/retail-promotional-peaks-cross-docking-returns-header.png"
 canonical: https://www.runink.org/blog/retail-promotional-peaks-cross-docking-returns

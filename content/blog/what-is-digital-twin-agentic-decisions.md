@@ -1,7 +1,7 @@
 ---
 title: "What Is a Actionable Twin? How Autonomous Decisions Are Reshaping the Supply Chain"
 author: "Runink Logistics Operations Team"
-date: 2026-02-23T14:10:11Z
+date: 2026-05-22T21:40:59Z
 draft: false
 featured_image: "/images/blog/digital-twin-autonomous-decisions.png"
 canonical: https://www.runink.org/blog/digital-twin-autonomous-decisions

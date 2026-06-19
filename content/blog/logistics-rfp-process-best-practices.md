@@ -2,7 +2,7 @@
 title: "How to Write a Logistics RFP That Actually Gets You the Right Partner"
 description: "A practical framework for logistics RFPs that attract the right 3PL, TMS, or WMS partner — covering scope, SLAs, pricing models, and AI-driven evaluation."
 author: "Runink Logistics Operations Team"
-date: 2026-05-16T11:00:00Z
+date: 2026-05-31T00:42:51Z
 draft: false
 featured_image: "/images/blog/logistics-rfp-process-best-practices-header.png"
 canonical: https://www.runink.org/blog/logistics-rfp-process-best-practices

@@ -1,7 +1,7 @@
 ---
 title: "O que é um Gêmeo Digital? Como Decisões Autônomas estão Remodelando a Cadeia de Suprimentos"
 author: "Runink Logistics Operations Team"
-date: 2026-02-23T14:10:11Z
+date: 2026-05-23T21:21:26Z
 draft: false
 featured_image: "/images/blog/digital-twin-autonomous-decisions.png"
 canonical: https://www.runink.org/pt/blog/gemeo-digital-decisoes-autonomas

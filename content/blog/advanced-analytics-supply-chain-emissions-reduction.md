@@ -3,7 +3,7 @@ title: "How Autonomous Decision Systems Help Retailers Cut Emissions by 30% with
 description: "Discover how orchestrated decision engines integrated via Model Context Protocol can reduce emissions by 30% for Canadian and U.S. food & beverage retailers—leveraging TMS, OMS, MRP, MES, and database-driven forecasting."
 slug: advanced-analytics-supply-chain-emissions-reduction
 author: "Runink Logistics Operations Team"
-date: 2025-07-08
+date: 2026-06-06T02:16:21Z
 tags: [Model Context Protocol, emissions reduction, supply chain automation, TMS, OMS, MRP, MES, logistics optimization, database forecasting, demand forecasting, wholesale logistics, sustainability, workflow orchestration, food and beverage, Canadian supply chain, U.S. wholesale, retail logistics]
 robots: index, follow
 featured_image: /images/blog/advanced-analytics-supply-chain-emissions-reduction.png

@@ -1,0 +1,59 @@
+Line 153: +1 -0 = depth 1 | <div class="dashboard-top-grid">
+Line 155: +1 -0 = depth 2 | <div class="detail-card" style="display:flex; flex
+Line 156: +1 -1 = depth 2 | <div class="impact-label">IMPACT POTENTIAL</div>
+Line 157: +1 -0 = depth 3 | <div class="impact-row">
+Line 158: +1 -0 = depth 4 | <div class="impact-val-container">
+Line 161: +0 -1 = depth 3 | </div>
+Line 162: +1 -0 = depth 4 | <div class="impact-trend-container">
+Line 163: +1 -0 = depth 5 | <div class="trend-badge">
+Line 166: +0 -1 = depth 4 | </div>
+Line 167: +1 -1 = depth 4 | <div class="trend-period">last 7 days</div>
+Line 168: +0 -1 = depth 3 | </div>
+Line 169: +0 -1 = depth 2 | </div>
+Line 182: +0 -1 = depth 1 | </div>
+Line 185: +1 -0 = depth 2 | <div class="detail-card" style="display:flex; flex
+Line 186: +1 -0 = depth 3 | <div class="impact-label" style="display:flex; ali
+Line 189: +0 -1 = depth 2 | </div>
+Line 190: +1 -0 = depth 3 | <div style="display:flex; gap:8px;">
+Line 193: +0 -1 = depth 2 | </div>
+Line 196: +1 -0 = depth 3 | <div id="metasearch-result-container" style="displ
+Line 197: +1 -0 = depth 4 | <div style="font-size:0.75rem; color:#fff; font-we
+Line 199: +0 -1 = depth 3 | </div>
+Line 200: +1 -1 = depth 3 | <div style="font-size:0.65rem; color:var(--text-se
+Line 201: +1 -0 = depth 4 | <div style="display:flex; gap:8px; margin-top:4px;
+Line 204: +0 -1 = depth 3 | </div>
+Line 205: +0 -1 = depth 2 | </div>
+Line 208: +1 -0 = depth 3 | <div id="contact-prompt-container" style="display:
+Line 209: +1 -1 = depth 3 | <div style="font-size:0.75rem; color:#fff; font-we
+Line 210: +1 -1 = depth 3 | <div style="font-size:0.7rem; color:var(--text-sec
+Line 211: +1 -0 = depth 4 | <div style="display:flex; gap:8px; margin-top:4px;
+Line 214: +0 -1 = depth 3 | </div>
+Line 215: +0 -1 = depth 2 | </div>
+Line 217: +1 -0 = depth 3 | <div style="border-top: 1px dashed rgba(255,255,25
+Line 223: +0 -1 = depth 2 | </div>
+Line 224: +0 -1 = depth 1 | </div>
+Line 227: +1 -0 = depth 2 | <div class="detail-card" style="display:flex; flex
+Line 228: +1 -0 = depth 3 | <div class="status-section-title" style="margin:0;
+Line 231: +0 -1 = depth 2 | </div>
+Line 232: +1 -0 = depth 3 | <div style="display:flex; flex-direction:column; g
+Line 233: +1 -0 = depth 4 | <div>
+Line 234: +1 -0 = depth 5 | <div style="font-size:0.65rem; font-weight:800; co
+Line 237: +0 -1 = depth 4 | </div>
+Line 238: +1 -0 = depth 5 | <div id="twins-dedicated-contacts-list" style="dis
+Line 240: +0 -1 = depth 4 | </div>
+Line 241: +1 -0 = depth 5 | <div style="display:flex; gap:4px; margin-top:6px;
+Line 245: +0 -1 = depth 4 | </div>
+Line 246: +0 -1 = depth 3 | </div>
+Line 247: +1 -0 = depth 4 | <div>
+Line 248: +1 -0 = depth 5 | <div style="font-size:0.65rem; font-weight:800; co
+Line 251: +0 -1 = depth 4 | </div>
+Line 252: +1 -0 = depth 5 | <div id="twins-shared-contacts-list" style="displa
+Line 254: +0 -1 = depth 4 | </div>
+Line 255: +1 -0 = depth 5 | <div style="display:flex; gap:4px; margin-top:6px;
+Line 259: +0 -1 = depth 4 | </div>
+Line 260: +0 -1 = depth 3 | </div>
+Line 261: +0 -1 = depth 2 | </div>
+Line 265: +0 -1 = depth 1 | </div>
+Line 266: +0 -1 = depth 0 | </div>
+Line 267: +0 -1 = depth -1 | </div>
+Line 268: +0 -1 = depth -2 | </div> <!-- Close Top Dashboard Stats Grid -->

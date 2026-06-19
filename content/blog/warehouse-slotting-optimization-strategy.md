@@ -2,7 +2,7 @@
 title: "Warehouse Slotting Optimization — The Overlooked Strategy That Can Cut Picking Time by 30%"
 description: "Warehouse slotting optimization reduces picker travel time, labor costs, and fulfillment delays. Learn slotting methodologies and how AI drives continuous re-slotting."
 author: "Runink Logistics Operations Team"
-date: 2026-05-08T11:00:00Z
+date: 2026-03-10T22:17:47Z
 draft: false
 featured_image: "/images/blog/warehouse-slotting-optimization-strategy-header.png"
 canonical: https://www.runink.org/blog/warehouse-slotting-optimization-strategy

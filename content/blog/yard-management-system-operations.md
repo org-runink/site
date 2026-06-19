@@ -2,7 +2,7 @@
 title: "Yard Management Systems: Why Your Distribution Center Cannot Afford to Operate Without One"
 description: "Yard Management Systems cut truck dwell times, eliminate dock scheduling chaos, and reduce detention fees. Learn how AI-powered YMS platforms are transforming yard operations."
 author: "Runink Logistics Operations Team"
-date: 2026-06-18T11:00:00Z
+date: 2026-03-16T02:37:03Z
 draft: false
 featured_image: "/images/blog/yard-management-system-operations-header.png"
 canonical: https://www.runink.org/blog/yard-management-system-operations

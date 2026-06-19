@@ -2,7 +2,7 @@
 title: "Reverse Logistics and Returns Management — The Hidden Profit Leak in Your Supply Chain"
 description: "Returns are not a cost center. Learn how data-driven reverse logistics recovers margin, improves OTIF, and turns e-commerce returns into a strategic advantage."
 author: "Runink Logistics Operations Team"
-date: 2026-06-16T11:00:00Z
+date: 2026-04-25T15:42:36Z
 draft: false
 featured_image: "/images/blog/reverse-logistics-returns-management-header.png"
 canonical: https://www.runink.org/blog/reverse-logistics-returns-management

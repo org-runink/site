@@ -2,7 +2,7 @@
 title: "What Is S&OP (Sales & Operations Planning) and Why Do Most Companies Get It Wrong?"
 description: "Learn what S&OP really is, the 5-step planning cycle, why 70%+ of implementations underperform, and how AI-powered data foundations make S&OP actually work."
 author: "Runink Logistics Operations Team"
-date: 2026-05-26T11:00:00Z
+date: 2026-03-08T16:16:22Z
 draft: false
 featured_image: "/images/blog/what-is-sop-sales-operations-planning-header.png"
 canonical: https://www.runink.org/blog/what-is-sop-sales-operations-planning

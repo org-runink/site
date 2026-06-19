@@ -3,7 +3,7 @@ title: "Securing the Future of Automated Systems: How Information Security Enabl
 description: "Discover why information security is critical to developing ethical and mature automated decision solutions, particularly in logistics and data-driven industries."
 slug: "information-security-ethical-automation-logistics"
 author: "Runink Logistics Operations Team"
-date: "2025-07-10"
+date: 2026-03-28T05:00:45Z
 tags: ["Ethical Automation", "Automated Systems", "Information Security", "System Governance", "Logistics", "Data Privacy", "Security Protection"]
 robots: "index, follow"
 featured_image: "/images/blog/logistics-security-automation.png"

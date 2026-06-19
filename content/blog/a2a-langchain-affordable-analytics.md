@@ -3,7 +3,7 @@ title: "How AI Agents Drive Cost-Effective Supply Chain Operations"
 description: "Learn how autonomous agents reduce operational overhead and improve cost-effectiveness in global supply chains."
 slug: a2a-langchain-affordable-analytics
 author: "Runink Logistics Operations Team"
-date: 2025-06-24
+date: 2026-05-20T21:06:02Z
 tags: [A2A, integration, analytics, open source, data protocol, data pipelines, low-cost analytics, modular workflows, task orchestration, sentiment analysis, open standards]
 robots: index, follow
 featured_image: /images/blog/a2a-langchain-affordable-analytics.png

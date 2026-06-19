@@ -21,7 +21,7 @@ const metasearchProvidersPool = [
 ];
 
 let currentSlide = 0;
-const totalSlides = 7;
+const totalSlides = 15;
 let fetchActive = false;
 let fetchStep = 0;
 let fetchInterval = null;
@@ -1457,6 +1457,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFetchCenterCarousel();
   setupInteractiveWorkflowActions();
   setupPresentationControls();
+  
+  // Kickbacks.ai initializers
+  startKickbacksTyping();
+  startKickbacksCarousel();
 
   // Custom dialog events
   setupVoiceAndCameraSimulators();
@@ -1469,7 +1473,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderContactsLists();
   updateTime();
   changeLanguage('English', false);
-  startBackgroundWhatsAppSimulator();
 });
 
 // Boot screen simulator
@@ -1521,13 +1524,13 @@ function setupSidebarNavigation() {
   }
 
   // Simulator vs Slide Deck toggles
-  document.getElementById("btn-show-simulator").addEventListener("click", () => {
+  document.getElementById("btn-show-simulator")?.addEventListener("click", () => {
     showSimulatorView();
   });
-  document.getElementById("btn-show-slides").addEventListener("click", () => {
+  document.getElementById("btn-show-slides")?.addEventListener("click", () => {
     showSlidesView();
   });
-  document.getElementById("btn-close-deck").addEventListener("click", () => {
+  document.getElementById("btn-close-deck")?.addEventListener("click", () => {
     showSimulatorView();
   });
 
@@ -1567,6 +1570,7 @@ function showSlidesView() {
 
 function navigateToScreen(screenName) {
   currentScreen = screenName;
+  showSimulatorView();
 
   // Update screen view container classes
   const views = document.querySelectorAll(".screen-view");
@@ -1575,6 +1579,16 @@ function navigateToScreen(screenName) {
   const targetView = document.getElementById(`screen-${screenName}`);
   if (targetView) {
     targetView.classList.add("active");
+  }
+
+  // Reset dashboard state for runner-conn
+  if (screenName === 'runner-conn') {
+    const dash = document.getElementById("runner-dashboard-container");
+    const wizard = document.getElementById("runner-wizard-container");
+    if (dash && wizard) {
+      dash.style.display = "flex";
+      wizard.style.display = "none";
+    }
   }
 
   // Update sidebar pills
@@ -2068,7 +2082,7 @@ function navigateAction(actionId) {
     if (artifactMapWrapper) {
       if (action.routeCard) {
         artifactMapWrapper.style.display = "block";
-        setTimeout(initRouteMap, 100);
+        setTimeout(initRouteMap, 50);
       } else {
         artifactMapWrapper.style.display = "none";
       }
@@ -2890,7 +2904,7 @@ function closeToast() {
 
 function setupInteractiveWorkflowActions() {
   // Decision Artifact - Approve All button
-  document.getElementById("btn-approve-artifact").addEventListener("click", () => {
+  document.getElementById("btn-approve-artifact")?.addEventListener("click", () => {
     const btn = document.getElementById("btn-approve-artifact");
     btn.innerText = "Reconciling state...";
     btn.disabled = true;
@@ -2911,7 +2925,7 @@ function setupInteractiveWorkflowActions() {
   });
 
   // Remediation Workflow - Dispatch SOP
-  document.getElementById("btn-dispatch-remediation").addEventListener("click", () => {
+  document.getElementById("btn-dispatch-remediation")?.addEventListener("click", () => {
     runReactAgentLoop();
   });
 
@@ -2928,7 +2942,7 @@ function setupInteractiveWorkflowActions() {
       if (reactLoopTimer) clearTimeout(reactLoopTimer);
       const overlay = document.getElementById("react-console-overlay");
       if (overlay) overlay.style.display = "none";
-      showToast(currentLanguage === 'Portuguese' ? "Execução do loop ReAct abortada." : "execution loop execution aborted.");
+      showToast(currentLanguage === 'Portuguese' ? "Execução do loop do sub-agente abortada." : "execution loop execution aborted.");
     });
   }
 
@@ -2990,7 +3004,7 @@ function setupInteractiveWorkflowActions() {
   }
 
   // Fetch button trigger from sidebar
-  document.getElementById("btn-trigger-fetch").addEventListener("click", () => {
+  document.getElementById("btn-trigger-fetch")?.addEventListener("click", () => {
     navigateToScreen('fetch');
     setTimeout(() => {
       triggerFetchProcessingSimulator();
@@ -2998,7 +3012,7 @@ function setupInteractiveWorkflowActions() {
   });
 
   // Fetch screen send button
-  document.getElementById("btn-submit-fetch").addEventListener("click", () => {
+  document.getElementById("btn-submit-fetch")?.addEventListener("click", () => {
     const input = document.getElementById("fetch-search-input");
     if (input && input.value.trim() !== "") {
       input.value = "";
@@ -3006,17 +3020,19 @@ function setupInteractiveWorkflowActions() {
     }
   });
 
-  document.getElementById("fetch-search-input").addEventListener("keydown", (e) => {
+  document.getElementById("fetch-search-input")?.addEventListener("keydown", (e) => {
     if (e.key === 'Enter') {
       document.getElementById("btn-submit-fetch").click();
     }
   });
 
   // Cancel simulator overlay
-  document.getElementById("btn-cancel-fetch-sim").addEventListener("click", () => {
+  document.getElementById("btn-cancel-fetch-sim")?.addEventListener("click", () => {
     fetchActive = false;
     clearInterval(fetchInterval);
     document.getElementById("fetch-pipeline-overlay").style.display = "none";
+    const promoCard = document.getElementById("kickbacks-promo-card");
+    if (promoCard) promoCard.style.display = "none";
   });
 }
 
@@ -3027,13 +3043,16 @@ function triggerFetchProcessingSimulator() {
   fetchStep = 1;
 
   const overlay = document.getElementById("fetch-pipeline-overlay");
-  const consoleEl = document.getElementById("sim-console-text");
-  const toonEl = document.getElementById("sim-toon-text");
-
   overlay.style.display = "flex";
-  consoleEl.innerHTML = "";
-  toonEl.innerHTML = "";
-
+  
+  const c1 = document.getElementById("sim-console-text-1");
+  const c2 = document.getElementById("sim-console-text-2");
+  const c3 = document.getElementById("sim-console-text-3");
+  if (c1) c1.innerHTML = "";
+  if (c2) c2.innerHTML = "";
+  if (c3) c3.innerHTML = "";
+  
+  startKickbacksCarousel();
   runNextFetchStepSimulator();
 }
 
@@ -3042,15 +3061,46 @@ function runNextFetchStepSimulator() {
   if (fetchStep > 8) {
     fetchActive = false;
     showToast("Ingestion run complete. Swarm compiled and pushed to Twin Cockpit.", true);
-
     const historyList = document.getElementById("execution-history-list");
     const item = document.createElement("div");
     item.className = "list-item-wrapper";
     item.style.backgroundColor = "rgba(34, 197, 94, 0.05)";
+    // Create a unique ID for this execution log to bind the modal to
+    const execId = 'hist-' + Date.now();
     item.innerHTML = `
       <div class="list-item-title" style="color:#22C55E;">Intelligent Swarm Audit Run - SUCCESS</div>
       <div class="list-item-time">Just Now</div>
+      <div style="font-size:0.65rem; color:var(--accent-orange-light); cursor:pointer; font-weight:700; margin-top:4px;" onclick="showDetailsModal('${execId}')">View Detailed Logs</div>
     `;
+    
+    // Dynamically insert details for this run into our REMEDIATION_DETAILS constant
+    if (typeof REMEDIATION_DETAILS !== 'undefined') {
+      const details = {
+        title: 'Fetch History Logs',
+        format: 'code'
+      };
+      
+      for (let i = 1; i <= 12; i++) {
+        const c = document.getElementById(`sim-console-text-${i}`);
+        if (c) {
+          details[`content${i}`] = c.innerText;
+        } else {
+          details[`content${i}`] = 'Agent executed successfully.';
+        }
+      }
+      
+      REMEDIATION_DETAILS[execId] = details;
+    }
+    
+    // Automatically trigger the WhatsApp negotiation node finding 3 seconds after fetch completion
+    setTimeout(() => {
+      triggerWhatsAppAgentNegotiation(false);
+    }, 3000);
+
+    setTimeout(() => {
+      document.getElementById("btn-approve-artifact").innerText = currentLanguage === 'Portuguese' ? "Aprovar Rascunho" : "Approve Draft";
+    }, 100);
+
     if (historyList) historyList.insertBefore(item, historyList.firstChild);
 
     setTimeout(() => {
@@ -3059,29 +3109,39 @@ function runNextFetchStepSimulator() {
     return;
   }
 
-  document.getElementById("sim-running-step-label").innerText = `Step ${fetchStep}/8`;
-
   const stepInfo = fetchStepDetails[fetchStep];
-  document.getElementById("sim-running-step-title").innerText = stepInfo.title;
-  document.getElementById("sim-running-step-desc").innerText = stepInfo.desc;
-
-  const consoleEl = document.getElementById("sim-console-text");
-  const toonEl = document.getElementById("sim-toon-text");
-
-  consoleEl.innerHTML += `--- RUNNING: ${stepInfo.title.toUpperCase()} ---\n`;
+  
+  // Parallel Agents Logic
+  const consoles = [];
+  for (let i = 1; i <= 12; i++) {
+    consoles.push(document.getElementById(`sim-console-text-${i}`));
+  }
+  
+  consoles.forEach((c, idx) => {
+    if (c) {
+      if (idx === 0) c.innerHTML += `> ${stepInfo.title}\n`;
+      else if (idx % 2 === 0) c.innerHTML += `> Synchronizing context vectors...\n`;
+      else if (idx % 3 === 0) c.innerHTML += `> Cross-referencing DB tables...\n`;
+      else c.innerHTML += `> Analyzing parameters...\n`;
+    }
+  });
+  
   let logIdx = 0;
-
   function printLogLine() {
     if (!fetchActive) return;
     if (logIdx < stepInfo.logs.length) {
-      consoleEl.innerHTML += stepInfo.logs[logIdx] + "\n";
-      consoleEl.scrollTop = consoleEl.scrollHeight;
+      consoles.forEach((c, idx) => {
+        if (c) {
+          if (idx === 0) c.innerHTML += stepInfo.logs[logIdx] + "\\n";
+          else if (idx % 2 === 0 && logIdx % 2 === 0) c.innerHTML += "Verification complete.\n";
+          else if (idx % 3 === 0 && logIdx % 3 === 0) c.innerHTML += "Data schema OK.\n";
+          else if (logIdx % 4 === 0) c.innerHTML += "Executing subroutine.\n";
+          c.scrollTop = c.scrollHeight;
+        }
+      });
       logIdx++;
-      setTimeout(printLogLine, 300);
+      setTimeout(printLogLine, 250);
     } else {
-      toonEl.innerHTML += `// TOON Output Step ${fetchStep}\n${stepInfo.toon}\n\n`;
-      toonEl.scrollTop = toonEl.scrollHeight;
-
       setTimeout(() => {
         fetchStep++;
         runNextFetchStepSimulator();
@@ -3090,6 +3150,55 @@ function runNextFetchStepSimulator() {
   }
 
   printLogLine();
+}
+
+let kickbacksCarouselInterval;
+function startKickbacksCarousel() {
+  const target = document.getElementById("kickbacks-carousel-target");
+  if (!target) return;
+  
+  const messages = [
+    "Priority Agent Routing: Upgrade registered partners to close deals 3x faster.",
+    "Cross-Sell Opportunity: Partner 'TransGlobal' is eligible for Priority Dispatch.",
+    "Premium Tier: Register partners for direct agent priority to secure more volume.",
+    "Deal Acceleration: Prioritized partners get instant compliance sign-off."
+  ];
+  
+  let msgIdx = 0;
+  target.textContent = messages[msgIdx];
+  
+  clearInterval(kickbacksCarouselInterval);
+  kickbacksCarouselInterval = setInterval(() => {
+    target.style.opacity = 0;
+    setTimeout(() => {
+      msgIdx = (msgIdx + 1) % messages.length;
+      target.textContent = messages[msgIdx];
+      target.style.opacity = 1;
+    }, 500);
+  }, 4000);
+}
+
+function startKickbacksTyping() {
+  const target = document.getElementById("kickbacks-typing-target");
+  const cursor = document.getElementById("kickbacks-cursor");
+  if (!target) return;
+  
+  const text = "Your Actionable Twin detected 2 anomalies across 847 telemetry signals.";
+  let charIdx = 0;
+  target.textContent = "";
+  
+  function typeChar() {
+    if (charIdx < text.length) {
+      target.textContent += text.charAt(charIdx);
+      charIdx++;
+      setTimeout(typeChar, 30);
+    } else {
+      if (cursor) cursor.style.display = "inline-block";
+    }
+  }
+  
+  if (cursor) cursor.style.display = "none";
+  typeChar();
 }
 
 // VoIP Call, Microphone voice, and Camera scanner logic
@@ -3410,10 +3519,10 @@ function resolveVoiceCallAction() {
 
 // Slide Deck Controls
 function setupPresentationControls() {
-  document.getElementById("btn-slide-prev").addEventListener("click", () => {
+  document.getElementById("btn-slide-prev")?.addEventListener("click", () => {
     prevPitchSlide();
   });
-  document.getElementById("btn-slide-next").addEventListener("click", () => {
+  document.getElementById("btn-slide-next")?.addEventListener("click", () => {
     nextPitchSlide();
   });
 
@@ -3457,6 +3566,48 @@ function updateSlidesDeckState() {
   document.getElementById("slide-page-indicator").innerText = `${currentSlide + 1} of ${totalSlides}`;
   const bar = document.getElementById("slide-page-bar");
   if (bar) bar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+}
+
+function exportDeckToPDF() {
+  const btn = document.getElementById('btn-download-pdf');
+  if (!btn) return;
+  const originalText = btn.innerText;
+  btn.innerText = "Generating...";
+  btn.disabled = true;
+
+  const pdfContainer = document.createElement('div');
+  pdfContainer.style.background = '#1c110b';
+  pdfContainer.style.color = '#fff';
+  pdfContainer.style.padding = '40px';
+  pdfContainer.style.width = '1000px';
+
+  const slides = document.querySelectorAll('.pitch-slide');
+  slides.forEach((slide) => {
+    const clone = slide.cloneNode(true);
+    clone.style.display = 'flex';
+    clone.style.marginBottom = '60px';
+    clone.style.pageBreakAfter = 'always';
+    pdfContainer.appendChild(clone);
+  });
+
+  // The details-modal has been removed from the Pitch Deck PDF output as it is a UX screen.
+
+  const opt = {
+    margin:       0.5,
+    filename:     'Runink_FACE_Pitch_Deck.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2, useCORS: true, logging: false },
+    jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+  };
+
+  html2pdf().set(opt).from(pdfContainer).save().then(() => {
+    btn.innerText = originalText;
+    btn.disabled = false;
+  }).catch((err) => {
+    console.error("PDF generation error", err);
+    btn.innerText = "Error!";
+    setTimeout(() => { btn.innerText = originalText; btn.disabled = false; }, 3000);
+  });
 }
 
 // Setup newly added operational control modules
@@ -3521,6 +3672,18 @@ function setupOperationalControls() {
     pingShortcutHeader.addEventListener("click", () => {
       navigateToScreen("runner-conn");
       setTimeout(testConnectionPing, 400);
+    });
+  }
+
+  const btnAddConn = document.getElementById("btn-add-connection");
+  if (btnAddConn) {
+    btnAddConn.addEventListener("click", () => {
+      const dash = document.getElementById("runner-dashboard-container");
+      const wizard = document.getElementById("runner-wizard-container");
+      if (dash && wizard) {
+        dash.style.display = "none";
+        wizard.style.display = "flex";
+      }
     });
   }
 
@@ -4577,8 +4740,8 @@ const appTranslations = {
     btn_send_to_lab: "Send to Lab (Shadow Simulation)",
     notification_channel_label: "Preferred Channels",
     audit_terminal: "AUDIT REASONING TERMINAL",
-    react_console_title: "Semantic Validation Module (Execution Loop)",
-    react_console_progress_label: "ReAct Execution Progress",
+    react_console_title: "Sub-Agent Orchestration (Execution Loop)",
+    react_console_progress_label: "Sub-Agent Workflow Progress",
     react_btn_abort: "Abort Stream",
     react_btn_resolve: "Apply Remediation",
 
@@ -4939,8 +5102,8 @@ const appTranslations = {
     btn_send_to_lab: "Enviar al Lab (Simulación Sombra)",
     notification_channel_label: "Canales Preferidos",
     audit_terminal: "TERMINAL DE RAZONAMIENTO DE AUDITORÍA",
-    react_console_title: "Agente de Validación Semántica (Bucle ReAct)",
-    react_console_progress_label: "Progreso de Ejecución ReAct",
+    react_console_title: "Agente de Validación Semántica (Flujo de Trabajo)",
+    react_console_progress_label: "Progreso de Sub-Agente",
     react_btn_abort: "Abortar Transmisión",
     react_btn_resolve: "Aplicar Remediación",
 
@@ -5293,8 +5456,8 @@ const appTranslations = {
     btn_send_to_lab: "Envoyer au Lab (Simulation Ombre)",
     notification_channel_label: "Canaux Préférés",
     audit_terminal: "CONSOLE DE RAISONNEMENT D'AUDIT",
-    react_console_title: "Module de Validation Sémantique (Boucle ReAct)",
-    react_console_progress_label: "Progrès de l'Exécution ReAct",
+    react_console_title: "Module de Validation Sémantique (Flux de travail)",
+    react_console_progress_label: "Progrès du Sous-Agent",
     react_btn_abort: "Abandonner le Flux",
     react_btn_resolve: "Appliquer la Remédiation",
 
@@ -5648,8 +5811,8 @@ const appTranslations = {
     btn_send_to_lab: "Enviar para o Lab (Simulação Sombra)",
     notification_channel_label: "Canais Preferidos",
     audit_terminal: "TERMINAL DE RACIOCÍNIO DE AUDITORIA",
-    react_console_title: "Agente de Validação Semântica (Loop ReAct)",
-    react_console_progress_label: "Progresso da Execução ReAct",
+    react_console_title: "Agente de Validação Semântica (Fluxo de Trabalho)",
+    react_console_progress_label: "Progresso do Sub-Agente",
     react_btn_abort: "Abortar Fluxo",
     react_btn_resolve: "Aplicar Remediação",
 
@@ -6167,7 +6330,7 @@ const reactAgentStreams = {
         final: `[RemediationResult:\n  Status: "SUCCESS"\n  SOP_ID: "SOP-8402"\n  Actions_Taken: [\n    "Generated Carrier Drivers column-masking policy SOP-8402",\n    "Verified plaintext exposure via SQL diagnostic queries",\n    "Dispatched WhatsApp alert to security response lead (+55 11 99999-1234)"\n  ]\n]`
       }
     ],
-    Route: [
+    Operations: [
       {
         status: "LOOP_STATUS_WORKING",
         thought: "I need to inspect route telemetry log under CC-204 to identify empty container return legs.",
@@ -6728,8 +6891,20 @@ function runReactAgentLoop() {
 
       reactLoopTimer = setTimeout(() => {
         const thoughtHtml = `
-          <div style="border-left: 2px solid var(--accent-orange); padding-left: 10px; margin-bottom: 10px;">
-            <div style="color:var(--text-muted); font-size:0.65rem; text-transform:uppercase; font-family:var(--font-sans);">[LoopStatus: LOOP_STATUS_WORKING]</div>
+          <div style="padding-left: 10px; margin-bottom: 10px; display: flex; flex-direction: column; gap: 4px;">
+            <div style="color:var(--text-muted); font-weight:bold; font-size:0.8rem; display: flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+              Thinking...
+            </div>
+            <div style="color:rgba(255,255,255,0.85); font-size:0.75rem; padding-left:20px;">${step.thought}</div>
+            ${step.action ? `
+            <div style="color:#a855f7; font-weight:bold; font-size:0.8rem; margin-top:8px; display: flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              Calling tool: ${step.action}
+            </div>
+            <div style="color:var(--text-muted); font-size:0.7rem; font-family:var(--font-mono); padding-left:20px; margin-top:2px;">{"input": "${step.input}"}</div>
+            ` : ''}
+          </div>
             <div style="color:#fff; font-weight:700;"><span style="color:var(--accent-orange-light);">Thought:</span> "${step.thought}"</div>
             ${step.action ? `<div style="color:var(--text-secondary); margin-top:4px;"><span style="color:#a855f7;">Action Attempt:</span> ${step.action}(input: "${step.input}")</div>` : ''}
           </div>
@@ -6747,8 +6922,9 @@ function runReactAgentLoop() {
 
       reactLoopTimer = setTimeout(() => {
         const execHtml = `
-          <div style="border-left: 2px solid #a855f7; padding-left: 10px; margin-bottom: 10px;">
-            <div style="color:var(--text-muted); font-size:0.65rem; text-transform:uppercase; font-family:var(--font-sans);">[LoopStatus: LOOP_STATUS_EXECUTING]</div>
+          <div style="padding-left: 30px; margin-bottom: 10px; color:var(--text-muted); font-style:italic; font-size:0.7rem;">
+            Executing ${step.action}...
+          </div>
             <div style="color:#a855f7; font-weight:700;">&gt; Calling secure database query: <span style="color:#fff; font-family:var(--font-mono);">${step.action}</span></div>
             <div style="color:var(--text-muted); font-size:0.7rem; margin-top:2px;">Args: ${step.input}</div>
           </div>
@@ -6766,8 +6942,13 @@ function runReactAgentLoop() {
 
       reactLoopTimer = setTimeout(() => {
         const obsHtml = `
-          <div style="border-left: 2px solid #3b82f6; padding-left: 10px; margin-bottom: 10px;">
-            <div style="color:var(--text-muted); font-size:0.65rem; text-transform:uppercase; font-family:var(--font-sans);">[LoopStatus: LOOP_STATUS_OBSERVING]</div>
+          <div style="padding-left: 10px; margin-bottom: 10px;">
+            <div style="color:#3b82f6; font-weight:bold; font-size:0.8rem; display: flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 5 18 3-9h5"/></svg>
+              Tool result
+            </div>
+            <pre style="margin-left:20px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); border-radius:4px; padding:8px; font-family:var(--font-mono); font-size:0.7rem; color:#22c55e; white-space:pre-wrap; margin-top:4px;">${step.observation}</pre>
+          </div>
             <div style="color:#3b82f6; font-weight:700;">Observation Result:</div>
             <pre style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); border-radius:4px; padding:6px; font-family:var(--font-mono); font-size:0.7rem; color:#22c55e; white-space:pre-wrap; margin:4px 0 0 0;">${step.observation}</pre>
           </div>
@@ -6785,8 +6966,13 @@ function runReactAgentLoop() {
 
       reactLoopTimer = setTimeout(() => {
         const doneHtml = `
-          <div style="border-left: 2px solid #22c55e; padding-left: 10px; margin-bottom: 10px;">
-            <div style="color:var(--text-muted); font-size:0.65rem; text-transform:uppercase; font-family:var(--font-sans);">[LoopStatus: LOOP_STATUS_DONE]</div>
+          <div style="padding-left: 10px; margin-bottom: 10px;">
+            <div style="color:#22c55e; font-weight:bold; font-size:0.85rem; display: flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Final Answer
+            </div>
+            <pre style="margin-left:20px; background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.15); border-radius:6px; padding:10px; font-family:var(--font-mono); font-size:0.75rem; color:#fff; white-space:pre-wrap; margin-top:6px;">${step.final}</pre>
+          </div>
             <div style="color:#22c55e; font-weight:700;">Final Parsed Answer (TOON):</div>
             <pre style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.2); border-radius:4px; padding:8px; font-family:var(--font-mono); font-size:0.7rem; color:#fff; white-space:pre-wrap; margin:4px 0 0 0;">${step.final}</pre>
           </div>
@@ -7078,7 +7264,7 @@ function dispatchClaimsDraft() {
   }
 }
 
-function triggerWhatsAppAgentNegotiation() {
+function triggerWhatsAppAgentNegotiation(isFromBell = false) {
   const providerName = lastFoundContact ? lastFoundContact.name : "Lumina Logistics Ltd";
   const providerPhone = lastFoundContact ? lastFoundContact.phone : "+1 555-014-9988";
 
@@ -7098,23 +7284,31 @@ function triggerWhatsAppAgentNegotiation() {
       contactPhone: providerPhone
     });
     renderActionFeed();
+
+    // Show the notification dot on the bell icon
+    const bellDot = document.getElementById("global-bell-dot");
+    const bellIcon = document.getElementById("global-bell-icon");
+    if (bellDot) bellDot.style.display = "block";
+    if (bellIcon) {
+      bellIcon.onclick = () => triggerWhatsAppAgentNegotiation(true);
+    }
   }
 
-  showToast(
-    currentLanguage === 'Portuguese'
-      ? `Nosso agente conseguiu descontos melhores no WhatsApp com o provedor ${providerName}. Aprovar pedido atualizado?`
-      : `Our module was able to get better discounts over WhatsApp through messages with provider ${providerName}. Approve updated order?`
-  );
+  if (isFromBell) {
+    // Hide the dot when clicked
+    const bellDot = document.getElementById("global-bell-dot");
+    if (bellDot) bellDot.style.display = "none";
+
+    showToast(
+      currentLanguage === 'Portuguese'
+        ? `Nosso agente conseguiu descontos melhores no WhatsApp com o provedor ${providerName}. Aprovar pedido atualizado?`
+        : `Our module was able to get better discounts over WhatsApp through messages with provider ${providerName}. Approve updated order?`
+    );
+  }
 }
 
-function startBackgroundWhatsAppSimulator() {
-  setTimeout(() => {
-    triggerWhatsAppAgentNegotiation();
-    setInterval(() => {
-      triggerWhatsAppAgentNegotiation();
-    }, 45000);
-  }, 12000);
-}
+// startBackgroundWhatsAppSimulator removed as per user request to avoid UX bloat
+
 
 // ==========================================
 // Runner & Connectors Wizard Logic
@@ -7195,13 +7389,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const source = e.target.getAttribute('data-source');
       
       const formSnowflake = document.getElementById('form-snowflake');
+      const formInventory = document.getElementById('form-inventory');
+      const formOms = document.getElementById('form-oms');
+      const formWhs = document.getElementById('form-whs');
       const formGeneric = document.getElementById('form-generic');
+      
+      [formSnowflake, formInventory, formOms, formWhs, formGeneric].forEach(f => { if(f) f.style.display = 'none'; });
       
       if(source === 'Snowflake') {
         if(formSnowflake) formSnowflake.style.display = 'block';
-        if(formGeneric) formGeneric.style.display = 'none';
+      } else if (source === 'Inventory') {
+        if(formInventory) formInventory.style.display = 'block';
+      } else if (source === 'OMS') {
+        if(formOms) formOms.style.display = 'block';
+      } else if (source === 'WHS') {
+        if(formWhs) formWhs.style.display = 'block';
       } else {
-        if(formSnowflake) formSnowflake.style.display = 'none';
         if(formGeneric) formGeneric.style.display = 'block';
       }
       
@@ -7232,3 +7435,191 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const REMEDIATION_DETAILS = {
+  'compliance-step1': {
+    title: 'Data Masking Rule',
+    content1: 'ALTER TABLE customer_gold\nALTER COLUMN ssn\nADD MASKING POLICY pii_mask;',
+    content2: 'No financial impact.',
+    content3: 'Database schema lock verified.',
+    format: 'code'
+  },
+  'compliance-step2': {
+    title: 'Notification Draft',
+    content1: 'To: privacy-officer@company.com\nSubject: Action Required: PII Exposure Remediation\n\nWe have detected a PII exposure incident in the Customer_Gold table. Immediate action has been taken to mask the affected columns. Please review the incident details and approve the remediation workflow.',
+    content2: 'Pending audit sign-off.',
+    content3: 'Notification dispatched to SLA tracker.',
+    format: 'text'
+  },
+  'operations-step1': {
+    title: 'SOP-8402: Divert & Service',
+    content1: 'Safety regulations verified for new route.',
+    content2: 'Estimated reroute cost: $340.00',
+    content3: '# Standard Operating Procedure: Rerouting\n\n1. Send reroute coordinates to Vehicle #402.\n2. Notify Workshop Alpha of incoming priority repair.\n3. Update Fulfillment ETA for Order #9921.\n4. Dispatch backup vehicle to intercept cargo.',
+    format: 'markdown'
+  },
+  'operations-step2': {
+    title: 'Dispatch Draft',
+    content1: 'Driver hour limits checked.',
+    content2: 'Fuel surcharge updated.',
+    content3: 'To: fleet-dispatch@company.com\nSubject: Priority: Intercept & Service Vehicle #402\n\nPlease dispatch backup vehicle to intercept cargo from Vehicle #402 at coordinates 34.0522 N, 118.2437 W. Vehicle #402 is experiencing critical engine failure risks.',
+    format: 'text'
+  },
+  'finance-step1': {
+    title: 'API Payload Preview',
+    content1: 'Tariff code validated.',
+    content2: 'PUT /claims/v1/update\n{\n  "claimId": "CLM-9921",\n  "bol_weight": 2100,\n  "status": "VERIFIED"\n}',
+    content3: 'Inventory weight synced with manifest.',
+    format: 'code'
+  },
+  'finance-step2': {
+    title: 'Notification Draft',
+    content1: 'Audit log created.',
+    content2: 'To: ops@fasttrack-logistics.com\nSubject: Weight Adjustment: Order CLM-9921\n\nWe have adjusted the BOL weight for Order CLM-9921 to 2100kg to match the manifest. Please update your records accordingly.',
+    content3: 'Carrier alerted.',
+    format: 'text'
+  }
+};
+
+function showDetailsModal(id) {
+  const data = REMEDIATION_DETAILS[id];
+  if (!data) return;
+  const modal = document.getElementById("details-modal");
+  const title = document.getElementById("details-modal-title");
+  
+  title.innerText = data.title;
+  
+  for (let i = 1; i <= 12; i++) {
+    // The documentation is the one that MUST NOT TOUCH? Let's check what that means.
+    // I will update all consoles that exist.
+    const c = document.getElementById("modal-console-" + i);
+    if (c) {
+      // For "hist" entries, data[`content${i}`] is present
+      c.innerText = data[`content${i}`] || 'No data';
+    }
+  }
+  
+  modal.style.display = "flex";
+}
+
+function closeDetailsModal() {
+  document.getElementById("details-modal").style.display = "none";
+}
+
+REMEDIATION_DETAILS['hist-1'] = {
+  title: 'Execution Trace (hist-1)',
+  content1: `[AI Posture] Scanning model maturity...
+[AI Posture] Drift detected: 0.02%
+[AI Posture] Status: STABLE`,
+  content2: `[Rules Recon] Validating BOL AL-773410...
+[Rules Recon] Policy matched.
+[Rules Recon] Status: PASS`,
+  content3: `[Documentation] Generating manifest draft.
+[Documentation] OCR Confidence: 99.8%
+[Documentation] Archiving...`,
+  content4: `[Compliance] Auditing regulatory guidelines...
+[Compliance] Hazmat check: CLEAR.
+[Compliance] Signed off.`,
+  content5: `[Finance] Reconciling invoice #4492...
+[Finance] Tariff applied: v4.02
+[Finance] Discrepancy: $0.00`,
+  content6: `[Route Twin] Optimizing path 14-B...
+[Route Twin] Traffic avoidance applied.
+[Route Twin] ETA revised: +12m`,
+  content7: `[Pred. Maint.] Scanning telemetry data...
+[Pred. Maint.] Engine Temp: Nominal.
+[Pred. Maint.] No action required.`,
+  content8: `[Fulfilment] Checking dock availability.
+[Fulfilment] Dock 4 reserved.
+[Fulfilment] Allocation complete.`,
+  content9: `[Claims] Reviewing recovery opportunities.
+[Claims] No claims found for voyage.
+[Claims] Cleared.`,
+  content10: `[Rev. Logistics] Checking return queues...
+[Rev. Logistics] 2 pallets assigned.
+[Rev. Logistics] Routing to Depot A.`,
+  content11: `[Hypothesis] Simulating delay impact.
+[Hypothesis] Margin risk: <0.1%
+[Hypothesis] Simulation finished.`,
+  content12: `[Actionable Twin] Aggregating swarm data...
+[Actionable Twin] Workflow committed.
+[Actionable Twin] Success.`
+};
+REMEDIATION_DETAILS['hist-2'] = {
+  title: 'Execution Trace (hist-2)',
+  content1: `[AI Posture] Scanning model maturity...
+[AI Posture] Drift detected: 0.02%
+[AI Posture] Status: STABLE`,
+  content2: `[Rules Recon] Validating BOL AL-773410...
+[Rules Recon] Policy matched.
+[Rules Recon] Status: PASS`,
+  content3: `[Documentation] Generating manifest draft.
+[Documentation] OCR Confidence: 99.8%
+[Documentation] Archiving...`,
+  content4: `[Compliance] Auditing regulatory guidelines...
+[Compliance] Hazmat check: CLEAR.
+[Compliance] Signed off.`,
+  content5: `[Finance] Reconciling invoice #4492...
+[Finance] Tariff applied: v4.02
+[Finance] Discrepancy: $0.00`,
+  content6: `[Route Twin] Optimizing path 14-B...
+[Route Twin] Traffic avoidance applied.
+[Route Twin] ETA revised: +12m`,
+  content7: `[Pred. Maint.] Scanning telemetry data...
+[Pred. Maint.] Engine Temp: Nominal.
+[Pred. Maint.] No action required.`,
+  content8: `[Fulfilment] Checking dock availability.
+[Fulfilment] Dock 4 reserved.
+[Fulfilment] Allocation complete.`,
+  content9: `[Claims] Reviewing recovery opportunities.
+[Claims] No claims found for voyage.
+[Claims] Cleared.`,
+  content10: `[Rev. Logistics] Checking return queues...
+[Rev. Logistics] 2 pallets assigned.
+[Rev. Logistics] Routing to Depot A.`,
+  content11: `[Hypothesis] Simulating delay impact.
+[Hypothesis] Margin risk: <0.1%
+[Hypothesis] Simulation finished.`,
+  content12: `[Actionable Twin] Aggregating swarm data...
+[Actionable Twin] Workflow committed.
+[Actionable Twin] Success.`
+};
+REMEDIATION_DETAILS['hist-3'] = {
+  title: 'Execution Trace (hist-3)',
+  content1: `[AI Posture] Scanning model maturity...
+[AI Posture] Drift detected: 0.02%
+[AI Posture] Status: STABLE`,
+  content2: `[Rules Recon] Validating BOL AL-773410...
+[Rules Recon] Policy matched.
+[Rules Recon] Status: PASS`,
+  content3: `[Documentation] Generating manifest draft.
+[Documentation] OCR Confidence: 99.8%
+[Documentation] Archiving...`,
+  content4: `[Compliance] Auditing regulatory guidelines...
+[Compliance] Hazmat check: CLEAR.
+[Compliance] Signed off.`,
+  content5: `[Finance] Reconciling invoice #4492...
+[Finance] Tariff applied: v4.02
+[Finance] Discrepancy: $0.00`,
+  content6: `[Route Twin] Optimizing path 14-B...
+[Route Twin] Traffic avoidance applied.
+[Route Twin] ETA revised: +12m`,
+  content7: `[Pred. Maint.] Scanning telemetry data...
+[Pred. Maint.] Engine Temp: Nominal.
+[Pred. Maint.] No action required.`,
+  content8: `[Fulfilment] Checking dock availability.
+[Fulfilment] Dock 4 reserved.
+[Fulfilment] Allocation complete.`,
+  content9: `[Claims] Reviewing recovery opportunities.
+[Claims] No claims found for voyage.
+[Claims] Cleared.`,
+  content10: `[Rev. Logistics] Checking return queues...
+[Rev. Logistics] 2 pallets assigned.
+[Rev. Logistics] Routing to Depot A.`,
+  content11: `[Hypothesis] Simulating delay impact.
+[Hypothesis] Margin risk: <0.1%
+[Hypothesis] Simulation finished.`,
+  content12: `[Actionable Twin] Aggregating swarm data...
+[Actionable Twin] Workflow committed.
+[Actionable Twin] Success.`
+};

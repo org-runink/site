@@ -2,7 +2,7 @@
 title: "FOB vs CIF — What Every Shipper Needs to Know About Incoterms and Risk Transfer"
 description: "Understand how FOB and CIF Incoterms define liability, insurance, and freight cost responsibility — and how the wrong choice can expose your supply chain to catastrophic losses."
 author: "Runink Logistics Operations Team"
-date: 2026-06-14T11:00:00Z
+date: 2026-02-23T18:35:06Z
 draft: false
 featured_image: "/images/blog/fob-cif-incoterms-explained-shippers-header.png"
 canonical: https://www.runink.org/blog/fob-cif-incoterms-explained-shippers

@@ -1,72 +1,66 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-12">
-    <div class="max-w-4xl mx-auto">
-        <header class="mb-12">
-            <h1 class="text-4xl font-bold mb-4">
-                {{ .Data.Singular | title }}: {{ .Title }}
-            </h1>
-            <div class="text-xl text-[#D9CDB8]">
-                {{ $count := len .Pages }}
-                {{ if eq $count 1 }}
-                1 post
-                {{ else }}
-                {{ $count }} posts
+<div class="bg-stone-950 min-h-screen relative overflow-hidden">
+    {{ partial "background-effects.html" . }}
+
+    <div class="container mx-auto px-4 py-24 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 flex flex-col items-center">
+                <div class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                    {{ .Data.Singular | humanize }}
+                </div>
+
+                <h1 class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                    {{ .Title | humanize }}
+                </h1>
+
+                <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mt-6 max-w-3xl">
+                    {{ $count := len .Pages }}
+                    {{ if eq $count 1 }}1 Post{{ else }}{{ $count }} Posts{{ end }}
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {{ $paginator := .Paginate .Pages }}
+                {{ range $paginator.Pages }}
+                {{ partial "post-card.html" . }}
                 {{ end }}
             </div>
-        </header>
 
-        <div class="grid gap-8">
             {{ $paginator := .Paginate .Pages }}
-            {{ range $paginator.Pages }}
-            {{ partial "post-card.html" . }}
-            {{ end }}
-        </div>
+            {{ if gt $paginator.TotalPages 1 }}
+            <nav class="mt-16 flex justify-between items-center border-t border-stone-800/50 pt-8">
+                <div class="flex space-x-3 items-center">
+                    {{ if $paginator.HasPrev }}
+                    <a href="{{ $paginator.Prev.URL }}"
+                        class="inline-flex items-center px-6 py-3 bg-stone-800 text-stone-300 rounded-full hover:bg-stone-700 hover:text-white transition-colors duration-200 font-medium text-lg">
+                        &larr; Prev
+                    </a>
+                    {{ end }}
 
-        {{ $paginator := .Paginate .Pages }}
-        {{ if gt $paginator.TotalPages 1 }}
-        <nav class="mt-12 flex justify-between items-center">
-            {{ if $paginator.HasPrev }}
-            <a href="{{ $paginator.Prev.URL }}"
-                class="inline-flex items-center px-4 py-2 bg-[#5F6F3E] text-white rounded-lg hover:bg-[#4E5B33] transition-colors duration-200">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-                Previous
-            </a>
-            {{ else }}
-            <div></div>
-            {{ end }}
+                    {{ range $paginator.Pagers }}
+                    {{ if eq . $paginator }}
+                    <span
+                        class="w-12 h-12 flex items-center justify-center bg-[#ea580c] text-white rounded-full text-lg font-medium shadow-[0_0_15px_rgba(234,88,12,0.3)]">
+                        {{ .PageNumber }}
+                    </span>
+                    {{ else }}
+                    <a href="{{ .URL }}"
+                        class="w-12 h-12 flex items-center justify-center bg-stone-100 text-stone-900 rounded-full hover:bg-white transition-colors duration-200 text-lg font-medium">
+                        {{ .PageNumber }}
+                    </a>
+                    {{ end }}
+                    {{ end }}
+                </div>
 
-            <div class="flex space-x-2">
-                {{ range $paginator.Pagers }}
-                {{ if eq . $paginator }}
-                <span class="px-4 py-2 bg-[#5F6F3E] text-white rounded-lg">
-                    {{ .PageNumber }}
-                </span>
-                {{ else }}
-                <a href="{{ .URL }}"
-                    class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200">
-                    {{ .PageNumber }}
+                {{ if $paginator.HasNext }}
+                <a href="{{ $paginator.Next.URL }}"
+                    class="inline-flex items-center px-6 py-3 bg-[#ea580c] text-white rounded-full hover:bg-[#ca4708] transition-colors duration-200 font-medium text-lg group shadow-[0_0_20px_rgba(234,88,12,0.2)]">
+                    Next <span class="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
                 </a>
                 {{ end }}
-                {{ end }}
-            </div>
-
-            {{ if $paginator.HasNext }}
-            <a href="{{ $paginator.Next.URL }}"
-                class="inline-flex items-center px-4 py-2 bg-[#5F6F3E] text-white rounded-lg hover:bg-[#4E5B33] transition-colors duration-200">
-                Next
-                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                    </path>
-                </svg>
-            </a>
-            {{ else }}
-            <div></div>
+            </nav>
             {{ end }}
-        </nav>
-        {{ end }}
+        </div>
     </div>
 </div>
 {{ end }}

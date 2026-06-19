@@ -2,7 +2,7 @@
 title: "Visual Merchandising & Upstream Replenishment: The Logistics of Shelf Availability"
 description: "Discover how aligning visual merchandising with upstream replenishment, warehouse slotting, and delivery schedules ensures high on-shelf availability for retail."
 author: "Runink Logistics Operations Team"
-date: 2026-06-18T11:00:00Z
+date: 2026-05-02T07:57:56Z
 draft: false
 featured_image: "/images/blog/visual-merchandising-upstream-replenishment-header.png"
 canonical: https://www.runink.org/blog/visual-merchandising-upstream-replenishment

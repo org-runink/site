@@ -2,7 +2,7 @@
 title: "Standard Operating Procedures (SOPs) in Warehouse and Logistics — Why They Matter More Than You Think"
 description: "Discover why documented warehouse SOPs reduce errors, improve safety, and accelerate onboarding — and how AI platforms auto-generate and enforce them."
 author: "Runink Logistics Operations Team"
-date: 2026-05-14T11:00:00Z
+date: 2026-05-24T12:14:12Z
 draft: false
 featured_image: "/images/blog/warehouse-sop-standard-operating-procedures-header.png"
 canonical: https://www.runink.org/blog/warehouse-sop-standard-operating-procedures

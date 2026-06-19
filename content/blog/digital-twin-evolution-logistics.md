@@ -1,7 +1,7 @@
 ---
 title: "The Actionable Twin Evolution: Driving Efficiency and ESG in Modern Logistics"
 author: "Runink Logistics Operations Team"
-date: 2026-03-03T17:15:00Z
+date: 2026-06-13T20:24:00Z
 draft: false
 featured_image: "/images/blog/low-poly-digital-twin.png"
 description: "Explore the maturity model of Actionable Twins—from simple digital representations to Cognitive and Intelligent Twins—and discover how Runink's Agentic Scenarios fit into this evolution."

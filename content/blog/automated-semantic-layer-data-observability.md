@@ -3,7 +3,7 @@ title: "Overcoming Data Silos for Complete Global Freight Visibility"
 description: "Discover how to break down carrier silos and achieve end-to-end freight visibility through automated logistics data orchestration."
 slug: automated-semantic-layer-data-observability
 author: "Runink Logistics Operations Team"
-date: 2025-10-17
+date: 2026-02-21T13:16:42Z
 tags: [data observability, semantic layer, telemetry, data governance, analytics engineering, data quality, lineage, knowledge graph, advanced analytics, Runink Analytics Companion]
 robots: index, follow
 featured_image: /images/blog/automated-semantic-layer-data-observability.png

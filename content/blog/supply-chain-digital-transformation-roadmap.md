@@ -2,7 +2,7 @@
 title: "Building a Supply Chain Digital Transformation Roadmap — From Spreadsheets to Autonomous Operations"
 description: "A practical 4-phase roadmap for supply chain digital transformation — from digitizing paper processes to autonomous AI-driven operations — with ROI benchmarks and change management guidance."
 author: "Runink Logistics Operations Team"
-date: 2026-05-12T11:00:00Z
+date: 2026-04-30T05:34:13Z
 draft: false
 featured_image: "/images/blog/supply-chain-digital-transformation-roadmap-header.png"
 canonical: https://www.runink.org/blog/supply-chain-digital-transformation-roadmap

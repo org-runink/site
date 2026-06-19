@@ -3,7 +3,7 @@ title: "Reconciling Complex Logistics Data Safely: Methods for Data Reliability"
 description: "Learn about data discrepancies and validation errors in complex supply chains, and discover practical techniques to ensure reliable automated data outputs."
 slug: "reconciling-complex-data-logistics-solutions"
 author: "Runink Logistics Operations Team"
-date: "2025-07-22"
+date: 2026-03-15T15:11:52Z
 tags: ["Data Integrity", "Data Verification", "Logistics", "Demand Forecasting", "Transportation", "Healthcare Supply Chain", "Retail Inventory Management"]
 robots: "index, follow"
 featured_image: "/images/blog/reconciling-complex-data-logistics.png"

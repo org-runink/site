@@ -2,7 +2,7 @@
 title: "Procurement Spend Analytics — Why You Can't Optimize What You Can't See"
 description: "Most organizations lack true visibility into 30-40% of their spend. Learn how procurement spend analytics uncovers maverick spending, contract leakage, and category savings."
 author: "Runink Logistics Operations Team"
-date: 2026-05-20T11:00:00Z
+date: 2026-02-22T05:54:14Z
 draft: false
 featured_image: "/images/blog/procurement-spend-analytics-visibility-header.png"
 canonical: https://www.runink.org/blog/procurement-spend-analytics-visibility

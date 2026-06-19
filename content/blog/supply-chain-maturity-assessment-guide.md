@@ -2,7 +2,7 @@
 title: "Supply Chain Maturity Assessment — How to Benchmark Your Operations and Build a Transformation Roadmap"
 description: "Learn how to assess your supply chain maturity across 5 levels, benchmark against industry peers, and build a practical transformation roadmap."
 author: "Runink Logistics Operations Team"
-date: 2026-05-24T11:00:00Z
+date: 2026-02-23T06:27:04Z
 draft: false
 featured_image: "/images/blog/supply-chain-maturity-assessment-guide-header.png"
 canonical: https://www.runink.org/blog/supply-chain-maturity-assessment-guide

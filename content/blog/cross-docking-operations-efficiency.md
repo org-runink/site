@@ -2,7 +2,7 @@
 title: "Cross-Docking Operations — How to Eliminate Warehousing Costs and Accelerate Fulfillment"
 description: "Learn how cross-docking operations cut warehousing costs, speed fulfillment, and boost OTIF. Discover the prerequisites, types, and AI-powered orchestration strategies."
 author: "Runink Logistics Operations Team"
-date: 2026-06-12T11:00:00Z
+date: 2026-04-09T10:02:43Z
 draft: false
 featured_image: "/images/blog/cross-docking-operations-efficiency-header.png"
 canonical: https://www.runink.org/blog/cross-docking-operations-efficiency

@@ -1,0 +1,1646 @@
+diff --git a/static/demo/index.html b/static/demo/index.html
+index f690388..189e271 100644
+--- a/static/demo/index.html
++++ b/static/demo/index.html
+@@ -7,7 +7,8 @@
+   <!-- Leaflet.js assets for OpenStreetMap integration -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/> <!-- pragma: allowlist secret -->
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> <!-- pragma: allowlist secret -->
+-  <link rel="stylesheet" href="style.css">
++  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
++  <link rel="stylesheet" href="style.css?v=2">
+   <link rel="icon" href="favicon.png">
+ </head>
+ <body>
+@@ -47,56 +48,55 @@
+           <span class="screen-pill-status"></span>
+         </div>
+         <div class="screen-pill" id="btn-show-slides">
+-          <span>What's Runink Operations Actionable Twin</span>
++          <span>What is Runink FACE</span>
++          <span class="screen-pill-status"></span>
++        </div>
++
++        <div class="nav-section-title" style="margin-top: 20px;">Demonstrations</div>
++        <div class="screen-pill" id="btn-trigger-fetch">
++          <span>Run Fetch Demonstration</span>
+           <span class="screen-pill-status"></span>
+         </div>
+ 
+         <div class="nav-section-title" style="margin-top: 20px;" data-translate="sidebar_selector">Screen Selector</div>
++        
+         <div class="screen-pill active" data-screen="twins">
+-          <span data-translate="nav_twins">Actionable Twin (Action Feed)</span>
++          <span>Actionable Twin (Action Feed)</span>
+           <span class="screen-pill-status"></span>
+         </div>
+-        <div class="screen-pill" data-screen="artifact">
+-          <span data-translate="nav_artifact">Decision Artifact Screen</span>
++        <div class="screen-pill" data-screen="fetch">
++          <span>Fetch Center Screen</span>
+           <span class="screen-pill-status"></span>
+         </div>
+-        <div class="screen-pill" data-screen="remediation">
+-          <span data-translate="nav_remediation">Remediation Workflow</span>
++        <div class="screen-pill" data-screen="remediation-compliance">
++          <span>Compliance Remediation</span>
+           <span class="screen-pill-status"></span>
+         </div>
+-        <div class="screen-pill" data-screen="fetch">
+-          <span data-translate="nav_fetch">Fetch Center Screen</span>
++        <div class="screen-pill" data-screen="remediation-operations">
++          <span>Operations Remediation</span>
+           <span class="screen-pill-status"></span>
+         </div>
+-        <div class="screen-pill" data-screen="maturity">
+-          <span data-translate="nav_maturity">Maturity Center Screen</span>
+-          <span class="screen-pill-status"></span>
+-        </div>
+-
+-        <div class="nav-section-title" style="margin-top: 20px;" data-translate="sidebar_control">Operations Control</div>
+-        <div class="screen-pill" data-screen="profile">
+-          <span data-translate="nav_profile">Profile & Cloud Quota</span>
++        <div class="screen-pill" data-screen="remediation-finance">
++          <span>Finance Remediation</span>
+           <span class="screen-pill-status"></span>
+         </div>
+         <div class="screen-pill" data-screen="rules-recon">
+-          <span data-translate="nav_rules">Rules Recon</span>
++          <span>Rules Recon</span>
+           <span class="screen-pill-status"></span>
+         </div>
+         <div class="screen-pill" data-screen="hypothesis-lab">
+-          <span data-translate="nav_hypothesis">Hypothesis Lab</span>
++          <span>Hypothesis Lab</span>
++          <span class="screen-pill-status"></span>
++        </div>
++        <div class="screen-pill" data-screen="profile">
++          <span>Profile & Cloud Quota</span>
+           <span class="screen-pill-status"></span>
+         </div>
+         <div class="screen-pill" data-screen="runner-conn">
+-          <span data-translate="nav_runner">Runner & Connections</span>
++          <span>Runner & Connections</span>
+           <span class="screen-pill-status"></span>
+         </div>
+ 
+-        <div class="nav-section-title" style="margin-top: 20px;" data-translate="sidebar_actions">Fetch Simulator Actions</div>
+-        <button class="screen-pill" id="btn-trigger-fetch" style="background-color: var(--accent-orange-muted); border-color: var(--accent-orange); color: #fff; width: 100%; text-align: left;">
+-          <span>Trigger Fetch Run</span>
+-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 3 14 9-14 9V3z"/></svg>
+-        </button>
+-
+       </div>
+ 
+       <!-- Info Footer -->
+@@ -260,12 +260,9 @@
+                 </div>
+               </div>
+ 
+-              <div style="border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px; display:flex; flex-direction:column; gap:6px; margin-top:auto;">
+-                <span style="font-size:0.65rem; color:var(--text-muted);">Simulate offline module tasks:</span>
+-                <button type="button" class="draft-card-button" style="margin:0; width:100%; justify-content:center; font-size:0.65rem; border-color:rgba(37,211,102,0.3); color:#25D366; background:rgba(37,211,102,0.1); display:flex; align-items:center; gap:4px; padding:6px 8px;" onclick="triggerWhatsAppAgentNegotiation()">
+-                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+-                  Simulate WhatsApp Negotiation
+-                </button>
++
++              
++                </div>
+               </div>
+             </div>
+             </div> <!-- Close Top Dashboard Stats Grid -->
+@@ -460,46 +457,171 @@
+             </div>
+           </div>
+ 
+-          <!-- SCREEN 3: Remediation Workflow (remediation_workflow_screen.dart) -->
+-          <div id="screen-remediation" class="screen-view">
++          <div id="screen-remediation-compliance" class="screen-view">
+             <div class="screen-header-bar">
+               <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+               <div class="screen-header-title-wrapper">
+-                <div class="screen-header-subtitle" id="remediation-header-subtitle" data-translate="subtitle_remediation">
+-                  FLEET TELEMETRY ANOMALY DETECTED
++                <div class="screen-header-subtitle">
++                  SECURITY REMEDIATION WORKFLOW
+                 </div>
+-                <h2 class="screen-header-title" data-translate="title_remediation">Remediation <span>Workflow</span></h2>
+-              </div>
+-              <!-- Dropdown selector for active Module Context -->
+-              <div style="margin-left:auto; margin-right:8px;">
+-                <select id="react-module-selector" style="background:rgba(236, 91, 19, 0.15); border:1px solid rgba(236, 91, 19, 0.4); color:var(--accent-orange-light); padding:4px 8px; border-radius:12px; font-size:0.7rem; font-weight:700; cursor:pointer; outline:none; font-family:var(--font-sans);">
+-                  <option value="Sentinel" style="background:#120907; color:#fff;" selected>Forensic Claims Module (Compliance)</option>
+-                  <option value="Operations" style="background:#120907; color:#fff;">Predictive Inventory Twin</option>
+-                  <option value="Finance" style="background:#120907; color:#fff;">Anomaly Engine (Finance)</option>
+-                </select>
++                <h2 class="screen-header-title">Compliance <span>Remediation</span></h2>
+               </div>
+-              <div class="screen-header-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
++              <div class="screen-header-btn" onclick="showToast('Help panel')"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+             </div>
+ 
+             <div style="padding:0 20px;">
+-              <div class="security-alert-label-box" id="remediation-alert-box">
+-                <div class="security-alert-badge" id="remediation-alert-badge">
++              <div class="security-alert-label-box">
++                <div class="security-alert-badge" style="background-color:rgba(255,64,129,0.15); border-color:rgba(255,64,129,0.4); color:#ff4081;">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Security Alert
+                 </div>
+-                <div class="security-alert-circle-icon" id="remediation-alert-icon">
++                <div class="security-alert-circle-icon">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                 </div>
+               </div>
+-              <h1 class="remediation-title" id="remediation-title">Critical Engine Failure Risk<br>Rerouting Required</h1>
++              <h1 class="remediation-title">PII Exposure Detected<br>Fix Required</h1>
++              <div class="remediation-source-row">
++                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-muted);"><path d="M4 7V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2H4"/><polyline points="14 2 14 8 20 8"/></svg>
++                <span>Source: <span class="remediation-source-highlight">Databricks: Customer_Gold</span></span>
++              </div>
++            </div>
++
++            <!-- Risk Projection -->
++            <div class="risk-projection-container">
++              <div class="risk-side-accent-stripe" style="background: linear-gradient(180deg, #ff4081, #c93318);"></div>
++              <div class="risk-projection-body">
++                <div class="risk-projection-title-row">
++                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
++                  RISK PROJECTION
++                </div>
++                <div class="risk-comparison-grid">
++                  <div class="risk-comparison-box">
++                    <div class="risk-comparison-label">Before Fix</div>
++                    <div class="risk-state-card red">
++                      <span class="risk-state-title">High</span>
++                      <span class="risk-state-desc">Compliance Risk</span>
++                    </div>
++                  </div>
++                  <span class="risk-arrow-divider">→</span>
++                  <div class="risk-comparison-box">
++                    <div class="risk-comparison-label">After Fix</div>
++                    <div class="risk-state-card green">
++                      <span class="risk-state-title">Safe</span>
++                      <span class="risk-state-desc">Masked Data</span>
++                    </div>
++                  </div>
++                </div>
++              </div>
++            </div>
++
++            <!-- Execution timeline -->
++            <div class="section-label">EXECUTION SUMMARY</div>
++
++            <div class="timeline-container">
++              <!-- Step 1: Update Data Masking Rule -->
++              <div class="timeline-row active">
++                <div class="timeline-connector-box">
++                  <div class="timeline-node">
++                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
++                  </div>
++                </div>
++                <div class="timeline-card">
++                  <div class="timeline-card-header">
++                    <h3 class="timeline-card-title">Update Data Masking<br>Rule</h3>
++                    <span class="timeline-card-step-num">Step<br>1</span>
++                  </div>
++                  <p class="timeline-card-desc">
++                    Apply dynamic masking to email and ssn columns in the gold layer. This will prevent unauthorized access to PII data.
++                  </p>
++                  <div class="terminal-script-box">
++                    <div class="terminal-dots-row">
++                      <span class="terminal-dot" style="background-color: #ef4444;"></span>
++                      <span class="terminal-dot" style="background-color: #fbbf24;"></span>
++                      <span class="terminal-dot" style="background-color: #22c55e;"></span>
++                    </div>
++                    <div class="terminal-script" style="color:#38bdf8;">ALTER TABLE customer_gold
++ALTER COLUMN ssn
++ADD MASKING POLICY pii_mask;</div>
++                  </div>
++                  <button class="timeline-action-button" onclick="showDetailsModal('compliance-step1')">
++                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
++                    View Code Snippet
++                  </button>
++                </div>
++              </div>
++
++              <!-- Step 2: Notify Data Privacy Officer -->
++              <div class="timeline-row">
++                <div class="timeline-connector-box">
++                  <div class="timeline-node">2</div>
++                </div>
++                <div class="timeline-card">
++                  <div class="timeline-card-header">
++                    <h3 class="timeline-card-title">Notify Data Privacy<br>Officer</h3>
++                    <span class="timeline-card-step-num">Step<br>2</span>
++                  </div>
++                  <p class="timeline-card-desc">
++                    Required by GDPR compliance protocols. Incident ID SEC-2941 generated.
++                  </p>
++                  <div class="timeline-recipient-card">
++                    <div class="timeline-recipient-avatar" style="background-color:rgba(255,64,129,0.2); color:#ff4081;">DP</div>
++                    <div class="timeline-recipient-details">
++                      <span class="timeline-recipient-name">To: privacy-officer@company.com</span>
++                      <span class="timeline-recipient-sub">Subject: Action Required: PII Exposure Remediation</span>
++                    </div>
++                  </div>
++                  <button class="timeline-action-button" onclick="showDetailsModal('compliance-step2')" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
++                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
++                    Review Notification Draft
++                  </button>
++                </div>
++              </div>
++            </div>
++
++            <!-- Bottom controls -->
++            <div class="bottom-actions-panel" style="padding-top: 10px;">
++              <div class="bottom-action-info-label">
++                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
++                Changes will be applied to source system configuration
++              </div>
++              <button class="bottom-action-btn-primary" onclick="showToast('Compliance remediation executed successfully')">
++                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
++                Execute Remediation
++              </button>
++            </div>
++          </div>
++
++<!-- SCREEN: Operations Remediation (Fleet Telemetry Workflow) -->
++          <div id="screen-remediation-operations" class="screen-view">
++            <div class="screen-header-bar">
++              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
++              <div class="screen-header-title-wrapper">
++                <div class="screen-header-subtitle">
++                  FLEET TELEMETRY ANOMALY DETECTED
++                </div>
++                <h2 class="screen-header-title">Operations <span>Remediation</span></h2>
++              </div>
++              <div class="screen-header-btn" onclick="showToast('Help panel')"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
++            </div>
++
++            <div style="padding:0 20px;">
++              <div class="security-alert-label-box">
++                <div class="security-alert-badge" style="background-color:rgba(234,179,8,0.15); border-color:rgba(234,179,8,0.4); color:#eab308;">
++                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Fleet Alert
++                </div>
++                <div class="security-alert-circle-icon" style="background-color:rgba(234,179,8,0.1); color:#eab308;">
++                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
++                </div>
++              </div>
++              <h1 class="remediation-title">Critical Engine Failure Risk<br>Rerouting Required</h1>
+               <div class="remediation-source-row">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-muted);"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+-                <span>Source: <span class="remediation-source-highlight" id="remediation-source-highlight">Fleet Telemetry Streams</span></span>
++                <span>Source: <span class="remediation-source-highlight" style="color:#eab308;">Fleet Telemetry Streams</span></span>
+               </div>
+             </div>
+ 
+-            <!-- Risk Projection side-by-side comparative card -->
++            <!-- Risk Projection -->
+             <div class="risk-projection-container">
+-              <div class="risk-side-accent-stripe"></div>
++              <div class="risk-side-accent-stripe" style="background: linear-gradient(180deg, #eab308, #c93318);"></div>
+               <div class="risk-projection-body">
+                 <div class="risk-projection-title-row">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+@@ -508,7 +630,7 @@
+                 <div class="risk-comparison-grid">
+                   <div class="risk-comparison-box">
+                     <div class="risk-comparison-label">Before Intervention</div>
+-                    <div class="risk-state-card red" id="remediation-risk-before">
++                    <div class="risk-state-card red">
+                       <span class="risk-state-title">Critical</span>
+                       <span class="risk-state-desc">Breakdown Risk</span>
+                     </div>
+@@ -516,7 +638,7 @@
+                   <span class="risk-arrow-divider">→</span>
+                   <div class="risk-comparison-box">
+                     <div class="risk-comparison-label">After Intervention</div>
+-                    <div class="risk-state-card green" id="remediation-risk-after">
++                    <div class="risk-state-card green">
+                       <span class="risk-state-title">Safe</span>
+                       <span class="risk-state-desc">Safely Rerouted</span>
+                     </div>
+@@ -525,88 +647,222 @@
+               </div>
+             </div>
+ 
+-            <!-- Execution timeline summary -->
++            <!-- Execution timeline -->
+             <div class="section-label">EXECUTION SUMMARY</div>
+ 
+             <div class="timeline-container">
+-
+-              <!-- Timeline Row 1 -->
++              <!-- Step 1: Generate Rerouting SOP -->
+               <div class="timeline-row active">
+                 <div class="timeline-connector-box">
+-                  <div class="timeline-node" id="remediation-step1-node">
++                  <div class="timeline-node">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                   </div>
+                 </div>
+                 <div class="timeline-card">
+                   <div class="timeline-card-header">
+-                    <h3 class="timeline-card-title" id="remediation-step1-title">Generate Rerouting<br>SOP</h3>
++                    <h3 class="timeline-card-title">Generate Rerouting<br>SOP</h3>
+                     <span class="timeline-card-step-num">Step<br>1</span>
+                   </div>
+-                  <p class="timeline-card-desc" id="remediation-step1-desc">
+-                    Provide detailed Standard Operating Procedure for diverting the vehicle to Workshop Alpha and halting fulfillment.
++                  <p class="timeline-card-desc">
++                    Provide detailed Standard Operating Procedure for diverting Vehicle #402 to Workshop Alpha and halting fulfillment.
+                   </p>
+-
+-                  <!-- Terminal shell box simulating script block -->
+                   <div class="terminal-script-box">
+                     <div class="terminal-dots-row">
+                       <span class="terminal-dot" style="background-color: #ef4444;"></span>
+                       <span class="terminal-dot" style="background-color: #fbbf24;"></span>
+                       <span class="terminal-dot" style="background-color: #22c55e;"></span>
+                     </div>
+-                    <div class="terminal-script" id="remediation-step1-script">SOP: Divert & Service
++                    <div class="terminal-script" style="color:#fbbf24;">SOP: Divert &amp; Service
+ 1. Send reroute coordinates to Vehicle #402.
+ 2. Notify Workshop Alpha of incoming priority repair.
+ 3. Update Fulfillment ETA for Order #9921.</div>
+                   </div>
+-
+-                  <button class="timeline-action-button" id="remediation-step1-action-btn" onclick="alert('Full SOP document generated under docs/remediations/SOP-8402.md')">
++                  <button class="timeline-action-button" onclick="showDetailsModal('operations-step1')">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                     View Full SOP
+                   </button>
+                 </div>
+               </div>
+ 
+-              <!-- Timeline Row 2 -->
++              <!-- Step 2: Assign Task & Reallocate Cargo -->
+               <div class="timeline-row">
+                 <div class="timeline-connector-box">
+-                  <div class="timeline-node" id="remediation-step2-node">2</div>
++                  <div class="timeline-node">2</div>
+                 </div>
+                 <div class="timeline-card">
+                   <div class="timeline-card-header">
+-                    <h3 class="timeline-card-title" id="remediation-step2-title">Assign Task &<br>Reallocate Cargo</h3>
++                    <h3 class="timeline-card-title">Assign Task &amp;<br>Reallocate Cargo</h3>
+                     <span class="timeline-card-step-num">Step<br>2</span>
+                   </div>
+-                  <p class="timeline-card-desc" id="remediation-step2-desc">
++                  <p class="timeline-card-desc">
+                     Send SOP to Fleet Manager and dispatch a backup vehicle to intercept time-sensitive cargo.
+                   </p>
+-
+-                  <!-- Recipient card layout -->
+-                  <div class="timeline-recipient-card" id="remediation-step2-recipient-card">
+-                    <div class="timeline-recipient-avatar" id="remediation-step2-avatar">DP</div>
+-                    <div class="timeline-recipient-details" id="remediation-step2-details">
++                  <div class="timeline-recipient-card">
++                    <div class="timeline-recipient-avatar" style="background-color:rgba(234,179,8,0.2); color:#eab308;">FM</div>
++                    <div class="timeline-recipient-details">
+                       <span class="timeline-recipient-name">To: fleet-dispatch@company.com</span>
+-                      <span class="timeline-recipient-sub">Subject: Priority: Intercept & Service Vehicle #402...</span>
++                      <span class="timeline-recipient-sub">Subject: Priority: Intercept &amp; Service Vehicle #402</span>
+                     </div>
+                   </div>
++                  <button class="timeline-action-button" onclick="showDetailsModal('operations-step2')" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
++                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
++                    Review Dispatch Draft
++                  </button>
+                 </div>
+               </div>
+-
+             </div>
+ 
+-            <!-- Bottom Dispatch controls -->
++            <!-- Bottom controls -->
+             <div class="bottom-actions-panel" style="padding-top: 10px;">
+-              <div class="bottom-action-info-label" id="remediation-info-label">
++              <div class="bottom-action-info-label">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                 Rerouting commands and backup dispatch will be sent for manual execution.
+               </div>
+-              <button class="bottom-action-btn-primary" id="btn-dispatch-remediation">
++              <button class="bottom-action-btn-primary" onclick="showToast('Operations remediation dispatched — Vehicle #402 rerouted')">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+-                Generate & Dispatch SOP
++                Generate &amp; Dispatch SOP
+               </button>
+             </div>
+           </div>
+ 
+-          <!-- SCREEN 4: Fetch Center (fetch_center_screen.dart) -->
++<!-- SCREEN: Finance Remediation (Auto-Claims BOL Workflow) -->
++          <div id="screen-remediation-finance" class="screen-view">
++            <div class="screen-header-bar">
++              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
++              <div class="screen-header-title-wrapper">
++                <div class="screen-header-subtitle">
++                  AUTO-CLAIMS BOL WORKFLOW
++                </div>
++                <h2 class="screen-header-title">Finance <span>Remediation</span></h2>
++              </div>
++              <div class="screen-header-btn" onclick="showToast('Help panel')"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
++            </div>
++
++            <div style="padding:0 20px;">
++              <div class="security-alert-label-box">
++                <div class="security-alert-badge" style="background-color:rgba(59,130,246,0.15); border-color:rgba(59,130,246,0.4); color:#3b82f6;">
++                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Auto-Claim
++                </div>
++                <div class="security-alert-circle-icon" style="background-color:rgba(59,130,246,0.1); color:#3b82f6;">
++                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
++                </div>
++              </div>
++              <h1 class="remediation-title">BOL Mismatch<br>Resolution</h1>
++              <div class="remediation-source-row">
++                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-muted);"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
++                <span>Source: <span class="remediation-source-highlight" style="color:#3b82f6;">Claims Portal: Order #CLM-9921</span></span>
++              </div>
++            </div>
++
++            <!-- Impact Analysis Card -->
++            <div style="margin: 16px 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-white-05); border-radius: 16px; padding: 16px;">
++              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
++                <span style="font-size:0.75rem; font-weight:700; color:#fff;">Impact Analysis</span>
++                <span style="font-size:0.65rem; font-weight:700; color:#eab308; background:rgba(234,179,8,0.15); padding:3px 8px; border-radius:8px; border:1px solid rgba(234,179,8,0.3);">-48h Delay</span>
++              </div>
++              <div style="display:flex; gap:16px;">
++                <div style="flex:1;">
++                  <div style="font-size:0.6rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">Current Status</div>
++                  <div style="font-size:0.9rem; font-weight:700; color:#eab308; margin-top:4px;">On Hold</div>
++                </div>
++                <div style="flex:1;">
++                  <div style="font-size:0.6rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">Projected Outcome</div>
++                  <div style="font-size:0.9rem; font-weight:700; color:#22c55e; margin-top:4px;">Cleared</div>
++                </div>
++              </div>
++            </div>
++
++            <!-- Execution timeline -->
++            <div class="section-label">RESOLUTION STEPS</div>
++
++            <div class="timeline-container">
++              <!-- Step 1: Reconcile BOL with Manifest -->
++              <div class="timeline-row active">
++                <div class="timeline-connector-box">
++                  <div class="timeline-node">
++                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
++                  </div>
++                </div>
++                <div class="timeline-card">
++                  <div class="timeline-card-header">
++                    <h3 class="timeline-card-title">Reconcile BOL with<br>Manifest</h3>
++                    <span class="timeline-card-step-num">Step<br>1</span>
++                  </div>
++                  <p class="timeline-card-desc">
++                    Detected discrepancy in cargo weight (2400kg vs 2100kg). AI suggests adopting manifest weight.
++                  </p>
++
++                  <!-- Rule reference -->
++                  <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px; padding:8px 12px; background:rgba(255,255,255,0.03); border:1px solid var(--glass-white-05); border-radius:8px;">
++                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange-light)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
++                    <span style="font-size:0.65rem; color:var(--text-muted);">Rule ID:</span>
++                    <span style="font-size:0.65rem; font-weight:700; color:var(--accent-orange-light);">R-7729</span>
++                    <span style="font-size:0.65rem; color:var(--text-muted); margin-left:auto;">Weight Tolerance</span>
++                  </div>
++
++                  <div class="terminal-script-box">
++                    <div class="terminal-dots-row">
++                      <span class="terminal-dot" style="background-color: #ef4444;"></span>
++                      <span class="terminal-dot" style="background-color: #fbbf24;"></span>
++                      <span class="terminal-dot" style="background-color: #22c55e;"></span>
++                    </div>
++                    <div class="terminal-script" style="color:#a78bfa;">PUT /claims/v1/update
++{
++  "claimId": "CLM-9921",
++  "bol_weight": 2100,
++  "status": "VERIFIED"
++}</div>
++                  </div>
++                  <button class="timeline-action-button" onclick="showDetailsModal('finance-step1')">
++                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
++                    Preview API Payload
++                  </button>
++                </div>
++              </div>
++
++              <!-- Step 2: Update Claims Portal -->
++              <div class="timeline-row">
++                <div class="timeline-connector-box">
++                  <div class="timeline-node">2</div>
++                </div>
++                <div class="timeline-card">
++                  <div class="timeline-card-header">
++                    <h3 class="timeline-card-title">Inform Logistics<br>Partner</h3>
++                    <span class="timeline-card-step-num">Step<br>2</span>
++                  </div>
++                  <p class="timeline-card-desc">
++                    Notify FastTrack Logistics of the weight adjustment and updated claim status.
++                  </p>
++                  <div class="timeline-recipient-card">
++                    <div class="timeline-recipient-avatar" style="background-color:rgba(59,130,246,0.2); color:#3b82f6;">FL</div>
++                    <div class="timeline-recipient-details">
++                      <span class="timeline-recipient-name">To: ops@fasttrack-logistics.com</span>
++                      <span class="timeline-recipient-sub">Subject: Weight Adjustment: Order CLM-9921</span>
++                    </div>
++                  </div>
++                  <button class="timeline-action-button" onclick="showDetailsModal('finance-step2')" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
++                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
++                    Review Draft
++                  </button>
++                </div>
++              </div>
++            </div>
++
++            <!-- Bottom controls -->
++            <div class="bottom-actions-panel" style="padding-top: 10px;">
++              <div class="bottom-action-info-label">
++                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
++                Corrected BOL values will be pushed to the central claims database via API.
++              </div>
++              <button class="bottom-action-btn-primary" onclick="showToast('Finance remediation executed — Claim CLM-9921 resolved')">
++                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
++                Execute Remediation
++              </button>
++            </div>
++          </div>
++
++          
++<!-- SCREEN 4: Fetch Center (fetch_center_screen.dart) -->
+           <div id="screen-fetch" class="screen-view">
+             <div class="screen-header-bar" style="border-bottom: 1px solid rgba(201, 51, 24, 0.2); padding: 12px 20px;">
+               <div style="display:flex; align-items:center; gap:10px;">
+@@ -659,46 +915,173 @@
+               <div class="list-item-wrapper">
+                 <div class="list-item-title">Cold Chain Sensor Batch Sync</div>
+                 <div class="list-item-time">10:45 AM</div>
++                <div style="font-size:0.65rem; color:var(--accent-orange-light); cursor:pointer; font-weight:700; margin-top:4px;" onclick="showDetailsModal('hist-1')">View Detailed Logs</div>
+               </div>
+               <div class="list-item-wrapper">
+                 <div class="list-item-title">Predictive Maintenance Model Retraining</div>
+                 <div class="list-item-time">09:12 AM</div>
++                <div style="font-size:0.65rem; color:var(--accent-orange-light); cursor:pointer; font-weight:700; margin-top:4px;" onclick="showDetailsModal('hist-2')">View Detailed Logs</div>
+               </div>
+               <div class="list-item-wrapper">
+                 <div class="list-item-title">Fleet Telemetry OBD-II Ingest</div>
+                 <div class="list-item-time">08:00 AM</div>
++                <div style="font-size:0.65rem; color:var(--accent-orange-light); cursor:pointer; font-weight:700; margin-top:4px;" onclick="showDetailsModal('hist-3')">View Detailed Logs</div>
+               </div>
+             </div>
+ 
+             <!-- Inline Fetch Pipeline simulator overlays -->
+-            <div id="fetch-pipeline-overlay" style="position:absolute; top:44px; left:0; width:100%; height:calc(100% - 44px); background-color:rgba(18,9,7,0.98); display:none; flex-direction:column; padding:20px; z-index:1000; overflow-y:auto;">
+-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:12px;">
+-                <h3 style="font-family:var(--font-display); font-size:1.1rem; color:#fff;">Fetch Processing Run</h3>
+-                <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--accent-orange-light);" id="sim-running-step-label">Step 1/8</span>
+-              </div>
++            <div id="fetch-pipeline-overlay" class="voip-call-overlay" style="display:none; flex-direction:column; padding: 20px; background-color: rgba(15, 8, 6, 0.98); z-index: 3000; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; justify-content:center; align-items:center; backdrop-filter: blur(10px);">
++              <div style="background: var(--background-dark); border: 1px solid var(--accent-orange); border-radius: 12px; width: 90%; max-width: 1000px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); overflow: hidden; display: flex; flex-direction: column; max-height: 85vh;">
++                <!-- Header -->
++                <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(236, 91, 19, 0.25); padding: 16px 20px; background: rgba(236, 91, 19, 0.05);">
++                  <div style="display:flex; align-items:center; gap:12px;">
++                    <div style="background-color:rgba(201, 51, 24, 0.2); color:var(--accent-orange-light); width:32px; height:32px; border-radius:8px; display:flex; justify-content:center; align-items:center;">
++                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:pulse 1s infinite alternate;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
++                    </div>
++                    <h3 style="color: var(--accent-orange-light); margin: 0; font-size: 1.1rem; letter-spacing: 0.5px;">Parallel Agent Reasoning</h3>
++                  </div>
++                  <button id="btn-cancel-fetch-sim" style="background:transparent; border:none; color:#fff; cursor:pointer; padding:4px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
++                  </div>
++                  <!-- Marketing Promo Carousel -->
++                  <div id="kickbacks-carousel-container" style="padding: 10px 20px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.05);">
++                    <div style="display:flex; align-items:center; gap:12px;">
++                       <div style="width:24px; height:24px; border-radius:6px; background:linear-gradient(135deg, #10b981, #047857); display:flex; align-items:center; justify-content:center;">
++                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
++                       </div>
++                       <div style="flex:1; position:relative; overflow:hidden; height:24px;">
++                          <div id="kickbacks-carousel-text" style="position:absolute; top:0; left:0; width:100%; transition: opacity 0.5s ease; color:rgba(255,255,255,0.8); font-size:0.75rem; font-family:var(--font-sans); display:flex; align-items:center; height:100%;">
++                             <span id="kickbacks-carousel-target">Scanning partners...</span>
++                          </div>
++                       </div>
++                       <div style="font-size:0.65rem; color:#10b981; border:1px solid rgba(16,185,129,0.3); padding:4px 8px; border-radius:6px; font-weight:700;">Actionable Twin</div>
++                    </div>
++                  </div>
+ 
+-              <div style="flex:1; display:flex; flex-direction:column; gap:16px;">
+-                <div style="display:flex; align-items:center; gap:12px;">
+-                  <div class="status-icon-wrapper" style="background-color:rgba(201, 51, 24, 0.2); color:var(--accent-orange-light); width:36px; height:36px;" id="sim-loader-node">
+-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:pulse 1s infinite alternate;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
++                  <!-- Multi-column logs -->
++                                <div style="padding: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; overflow-y: auto; flex: 1; align-content: start;">
++                  <!-- AI Posture Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-1" style="width:10px; height:10px; border:2px solid #10b981; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       AI Posture
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-1" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#10b981; white-space:pre-wrap;"></pre>
++                    </div>
+                   </div>
+-                  <div>
+-                    <h4 style="font-size:0.85rem; font-weight:700;" id="sim-running-step-title">Connecting telemetry endpoints...</h4>
+-                    <p style="font-size:0.7rem; color:var(--text-secondary);" id="sim-running-step-desc">Ingesting fleet sensor streams</p>
++                  <!-- Rules Recon Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-2" style="width:10px; height:10px; border:2px solid #3b82f6; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Rules Recon
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-2" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#3b82f6; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Documentation Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-3" style="width:10px; height:10px; border:2px solid #a855f7; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Documentation
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-3" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#a855f7; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Compliance Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-4" style="width:10px; height:10px; border:2px solid #ef4444; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Compliance
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-4" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#ef4444; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Finance Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-5" style="width:10px; height:10px; border:2px solid #f59e0b; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Finance
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-5" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#f59e0b; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Route Twin Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-6" style="width:10px; height:10px; border:2px solid #06b6d4; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Route Twin
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-6" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#06b6d4; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Predictive Maintenance Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-7" style="width:10px; height:10px; border:2px solid #8b5cf6; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Predictive Maintenance
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-7" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#8b5cf6; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Fulfilment Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-8" style="width:10px; height:10px; border:2px solid #ec4899; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Fulfilment
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-8" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#ec4899; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Claims Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-9" style="width:10px; height:10px; border:2px solid #14b8a6; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Claims
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-9" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#14b8a6; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Reverse Logistics Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-10" style="width:10px; height:10px; border:2px solid #f97316; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Reverse Logistics
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-10" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#f97316; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Hypothesis Lab Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-11" style="width:10px; height:10px; border:2px solid #6366f1; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Hypothesis Lab
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-11" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#6366f1; white-space:pre-wrap;"></pre>
++                    </div>
++                  </div>
++                  <!-- Actionable Twins Agent -->
++                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
++                    <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
++                       <div id="sim-spinner-12" style="width:10px; height:10px; border:2px solid #eab308; border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
++                       Actionable Twins
++                    </div>
++                    <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                      <pre id="sim-console-text-12" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#eab308; white-space:pre-wrap;"></pre>
++                    </div>
+                   </div>
+                 </div>
+-
+-                <!-- Sim local console -->
+-                <pre id="sim-console-text" style="background-color:#000; border:1px solid var(--glass-white-05); border-radius:8px; padding:12px; font-family:var(--font-mono); font-size:0.65rem; color:#8ba84b; height:120px; overflow-y:auto; white-space:pre-wrap;"></pre>
+-
+-                <!-- Streaming TOON structure -->
+-                <div style="font-size:0.65rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase; letter-spacing:1px; margin-top:8px;">Streamed TOON serialization</div>
+-                <pre id="sim-toon-text" style="background-color:#000; border:1px solid var(--glass-white-05); border-radius:8px; padding:12px; font-family:var(--font-mono); font-size:0.65rem; color:#c084fc; flex:1; overflow-y:auto; white-space:pre-wrap; margin-bottom:12px;"></pre>
+               </div>
+-
+-              <button class="bottom-action-btn-primary" id="btn-cancel-fetch-sim" style="background-color:var(--surface-highlight); border:1px solid rgba(255,255,255,0.05); margin-top:auto;">
+-                Close Processing Logs
+-              </button>
++            </div>
+             </div>
+ 
+           </div>
+@@ -1093,10 +1476,10 @@
+                 <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(0,0,0,0.15); border:1px solid var(--glass-white-05); border-radius:10px;">
+                   <span style="font-size:0.85rem; font-weight:700; color:#fff;" data-translate="target_language">Target Language</span>
+                   <select id="select-target-language" onchange="changeLanguage(this.value)" style="background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:6px; border-radius:6px; font-family:var(--font-sans); outline:none;">
+-                    <option value="English">English</option>
++                    <option value="English" selected>English</option>
+                     <option value="French">French</option>
+                     <option value="Spanish">Spanish</option>
+-                    <option value="Portuguese" selected>Portuguese</option>
++                    <option value="Portuguese">Portuguese</option>
+                   </select>
+                 </div>
+ 
+@@ -1121,11 +1504,16 @@
+           <div id="screen-rules-recon" class="screen-view">
+             <div class="screen-header-bar">
+               <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+-              <div class="screen-header-title-wrapper">
+-                <div class="screen-header-subtitle">Expanded Rules Recon</div>
+-                <h2 class="screen-header-title">Rules <span>Recon</span></h2>
++              <div class="screen-header-title-wrapper" style="display:flex; align-items:center; gap:12px;">
++                <div style="padding: 8px; background-color: rgba(236,91,19,0.1); border-radius: 8px;">
++                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l10 18H2z"/></svg>
++                </div>
++                <div>
++                  <h2 class="screen-header-title" style="font-size: 1.1rem;">Expanded Rules Recon</h2>
++                  <div class="screen-header-subtitle" style="font-family: monospace; letter-spacing: 2px;">DIGITAL TWIN v3.0.1</div>
++                </div>
+               </div>
+-              <div class="screen-header-btn" onclick="showToast('Rules scan initiated')"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
++              <div class="screen-header-btn" onclick="showToast('Rules scan initiated')"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+             </div>
+ 
+             <div style="padding: 24px; display:flex; flex-direction:column; gap:24px;">
+@@ -1225,12 +1613,67 @@
+                       <svg width="24" height="24" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                     </div>
+                     <div style="font-size:1.1rem; font-weight:700; line-height:1.4; color:#fff;">Upload for Policy<br>Reconciliation</div>
++                    <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:12px; line-height:1.5;">Drop a <span style="color:#fff; text-decoration:underline; font-weight:700;">Policy Document</span> here. I will extract business logic and check for drift against your infra.</div>
++                  </div>
++                </div>
++              </div>
++
++              <!-- Filters and Rules List to match flutter -->
++              <div style="display:flex; gap:8px; margin-top:0px;">
++                <div style="padding: 8px 20px; border-radius: 20px; background-color: var(--accent-orange-light); color: #fff; font-weight: bold; font-size: 0.75rem; cursor: pointer;">All</div>
++                <div style="padding: 8px 20px; border-radius: 20px; background-color: var(--surface-highlight); color: var(--text-secondary); font-weight: bold; font-size: 0.75rem; cursor: pointer;">Compliance</div>
++                <div style="padding: 8px 20px; border-radius: 20px; background-color: var(--surface-highlight); color: var(--text-secondary); font-weight: bold; font-size: 0.75rem; cursor: pointer;">Operations</div>
++                <div style="padding: 8px 20px; border-radius: 20px; background-color: var(--surface-highlight); color: var(--text-secondary); font-weight: bold; font-size: 0.75rem; cursor: pointer;">Finance</div>
++              </div>
++
++              <div style="display:flex; flex-direction:column; gap:16px; margin-top:8px;">
++                <!-- Rule Card 1 -->
++                <div class="detail-card" style="display:flex; justify-content:space-between; align-items:flex-start; padding:16px;">
++                  <div style="display:flex; gap:12px;">
++                    <div style="width:40px; height:40px; border-radius:12px; background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.2); display:flex; align-items:center; justify-content:center;">
++                      <svg width="20" height="20" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
++                    </div>
++                    <div>
++                      <div style="font-size:0.85rem; font-weight:700; color:#fff;">Scenario Evaluated</div>
++                      <div style="font-size:0.65rem; font-family:var(--font-mono); color:var(--text-secondary); margin-top:4px;">Logistics SLA delivery timeframe adherence. Impact: Minor</div>
++                    </div>
++                  </div>
++                  <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
++                    <div style="display:flex; align-items:center; gap:8px;">
++                      <svg width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
++                      <div style="text-align:right;">
++                        <div style="font-size:0.65rem; font-weight:700; letter-spacing:1px; color:var(--text-secondary);">CONFIDENCE</div>
++                        <div style="font-size:1rem; font-weight:900; color:#22c55e;">94%</div>
++                      </div>
++                    </div>
++                  </div>
++                </div>
++
++                <!-- Rule Card 2 -->
++                <div class="detail-card" style="display:flex; justify-content:space-between; align-items:flex-start; padding:16px;">
++                  <div style="display:flex; gap:12px;">
++                    <div style="width:40px; height:40px; border-radius:12px; background:rgba(255,64,129,0.1); border:1px solid rgba(255,64,129,0.2); display:flex; align-items:center; justify-content:center;">
++                      <svg width="20" height="20" fill="none" stroke="#ff4081" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
++                    </div>
++                    <div>
++                      <div style="font-size:0.85rem; font-weight:700; color:#fff;">Scenario Evaluated</div>
++                      <div style="font-size:0.65rem; font-family:var(--font-mono); color:var(--text-secondary); margin-top:4px;">Customs Demurrage Cap exception detected. Impact: Severe</div>
++                    </div>
++                  </div>
++                  <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
++                    <div style="display:flex; align-items:center; gap:8px;">
++                      <svg width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
++                      <div style="text-align:right;">
++                        <div style="font-size:0.65rem; font-weight:700; letter-spacing:1px; color:var(--text-secondary);">CONFIDENCE</div>
++                        <div style="font-size:1rem; font-weight:900; color:#ff4081;">81%</div>
++                      </div>
++                    </div>
+                   </div>
+                 </div>
+               </div>
+ 
+               <!-- Document-Based Audit Reasoning Panel -->
+-              <div class="detail-card" style="margin-top: 12px; display: flex; flex-direction: column; gap: 20px;">
++              <div class="detail-card" style="margin-top: 24px; display: flex; flex-direction: column; gap: 20px;">
+                 <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:12px;">
+                   <div style="display:flex; align-items:center; gap:8px;">
+                     <svg width="20" height="20" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+@@ -1305,7 +1748,6 @@
+                 <div id="audit-verdict-box" style="display:none; margin-top:8px; padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.06); background:rgba(0,0,0,0.3); transition:all 0.3s ease;">
+                 </div>
+               </div>
+-
+             </div>
+           </div>
+ 
+@@ -1747,83 +2189,192 @@
+               <div class="screen-header-btn" id="btn-header-conn-test"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><path d="M12 2v20M12 2a10 10 0 1 0 10 10"/></svg></div>
+             </div>
+ 
+-            <div class="screen-grid-2" style="grid-template-columns: 1fr 1fr;">
+-              <!-- Left: Database Connections -->
+-              <div class="detail-card" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+-                <div>
+-                  <div class="status-section-title">INTEGRATION ENDPOINTS</div>
+-                  <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
++            <!-- Dashboard Layout -->
++            <div id="runner-dashboard-container" style="display:flex; flex-direction:column; height:100%; padding: 0 24px; overflow-y:auto;">
++              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px;">
++                <h3 style="color:#fff; font-size:1.2rem;">Active Connections</h3>
++                <button id="btn-add-connection" style="background:var(--technical-orange); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-family:var(--font-sans); cursor:pointer; font-weight:bold;">+ Add Connection</button>
++              </div>
++              
++              <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:32px;">
++                <!-- Connection 1 -->
++                <div style="background:var(--surface-elevated); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
++                  <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
++                    <div style="font-weight:700; color:#fff;">Production ERP</div>
++                    <span style="color:#22c55e; font-size:0.8rem; background:rgba(34,197,94,0.1); padding:2px 6px; border-radius:4px;">● Active</span>
++                  </div>
++                  <div style="color:var(--text-secondary); font-size:0.85rem;">Source: Oracle OMS</div>
++                  <div style="color:var(--text-muted); font-size:0.75rem; margin-top:8px;">Last sync: 2 mins ago</div>
++                </div>
++                <!-- Connection 2 -->
++                <div style="background:var(--surface-elevated); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
++                  <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
++                    <div style="font-weight:700; color:#fff;">Analytics Data Warehouse</div>
++                    <span style="color:#22c55e; font-size:0.8rem; background:rgba(34,197,94,0.1); padding:2px 6px; border-radius:4px;">● Active</span>
++                  </div>
++                  <div style="color:var(--text-secondary); font-size:0.85rem;">Source: Snowflake</div>
++                  <div style="color:var(--text-muted); font-size:0.75rem; margin-top:8px;">Last sync: 5 mins ago</div>
++                </div>
++              </div>
+ 
+-                    <!-- DB 1 -->
+-                    <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(0,0,0,0.15); border:1px solid var(--glass-white-05); border-radius:10px;">
+-                      <div>
+-                        <h4 style="font-size:0.85rem; font-weight:700; color:#fff;">Global Telemetry Data Lake</h4>
+-                        <span style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted);">Host: iot.fleet.telemetry</span>
+-                      </div>
+-                      <span id="ping-db-snowflake" class="indicator-dot-green" style="width:8px; height:8px; border-radius:50%; background-color:var(--color-compliance); box-shadow:0 0 6px var(--color-compliance);"></span>
+-                    </div>
++              <h3 style="color:#fff; font-size:1.2rem; margin-bottom:16px;">Compute Runners</h3>
++              <div style="background:var(--surface-elevated); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.05); margin-bottom:32px;">
++                <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
++                  <div>
++                    <div style="font-weight:700; color:#fff; font-size:1.1rem;">Runink Managed Runner</div>
++                    <div style="color:var(--text-secondary); font-size:0.85rem;">Auto-scaling • Isolated VPC</div>
++                  </div>
++                  <span style="color:#22c55e; font-size:0.8rem; background:rgba(34,197,94,0.1); padding:2px 6px; border-radius:4px; height:fit-content;">● Active</span>
++                </div>
++                
++                <div style="margin-bottom:8px; display:flex; justify-content:space-between;">
++                  <span style="color:var(--text-secondary); font-size:0.9rem;">Remaining Credits</span>
++                  <span style="color:#fff; font-weight:bold;">1,450.00 / 2,000.00 CU</span>
++                </div>
++                <div style="height:8px; background:rgba(255,255,255,0.1); border-radius:4px; overflow:hidden;">
++                  <div style="height:100%; width:27.5%; background:var(--neon-cyan);"></div>
++                </div>
++                <div style="text-align:right; color:var(--text-muted); font-size:0.75rem; margin-top:8px;">27.5% usage this month</div>
++              </div>
++            </div>
+ 
+-                    <!-- DB 2 -->
+-                    <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(0,0,0,0.15); border:1px solid var(--glass-white-05); border-radius:10px;">
+-                      <div>
+-                        <h4 style="font-size:0.85rem; font-weight:700; color:#fff;">Warehouse Management System</h4>
+-                        <span style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted);">Host: wms.logistics.net</span>
+-                      </div>
+-                      <span id="ping-db-databricks" class="indicator-dot-green" style="width:8px; height:8px; border-radius:50%; background-color:var(--color-compliance); box-shadow:0 0 6px var(--color-compliance);"></span>
++            <!-- 3-Step Wizard Layout -->
++            <div id="runner-wizard-container" style="display:none; flex-direction:column; height:100%;">
++              <!-- Wizard Header with Steps -->
++              <div style="padding:0 24px; margin-bottom:20px;">
++                <div style="color:var(--text-secondary); font-size:0.8rem; margin-bottom:12px;" id="wizard-step-desc">Step 1/3 - Select Source & Credentials</div>
++                <div style="display:flex; gap:8px;">
++                  <div id="step-bar-1" style="height:4px; flex:1; background:var(--technical-orange); border-radius:2px;"></div>
++                  <div id="step-bar-2" style="height:4px; flex:1; background:var(--surface-highlight); border-radius:2px;"></div>
++                  <div id="step-bar-3" style="height:4px; flex:1; background:var(--surface-highlight); border-radius:2px;"></div>
++                </div>
++              </div>
++
++              <!-- Wizard Body -->
++              <div id="wizard-body" style="flex:1; overflow-y:auto; padding:0 24px;">
++                
++                <!-- STEP 1: Source Selection -->
++                <div id="wizard-step-1" class="wizard-step-content" style="display:block;">
++                  <input type="text" placeholder="Search sources (e.g. Snowflake)" style="width:100%; padding:12px 16px; border-radius:12px; border:none; background:var(--surface-elevated); color:#fff; margin-bottom:24px; outline:none; font-family:var(--font-sans);">
++                  
++                  <div class="source-carousel" style="display:flex; gap:16px; overflow-x:auto; padding-bottom:16px; margin-bottom:32px;">
++                    <div class="source-card active" data-source="Snowflake">Snowflake</div>
++                    <div class="source-card" data-source="Databricks">Databricks</div>
++                    <div class="source-card" data-source="PostgreSQL">PostgreSQL</div>
++                    <div class="source-card" data-source="Salesforce">Salesforce</div>
++                    <div class="source-card" data-source="Odoo">Odoo</div>
++                    <div class="source-card" data-source="PDF">PDF</div>
++                    <div class="source-card" data-source="Google Docs">Google Docs</div>
++                    <div class="source-card" data-source="Video Stream">Video Stream</div>
++                    <div class="source-card" data-source="Webpage">Webpage</div>
++                    <div class="source-card" data-source="Inventory">Inventory</div>
++                    <div class="source-card" data-source="OMS">OMS</div>
++                    <div class="source-card" data-source="WHS">WHS</div>
++                  </div>
++
++                  <div id="form-snowflake" class="source-form" style="display:block;">
++                    <div class="form-group"><label>CONNECTION NAME</label><input type="text" value="My Snowflake DW"></div>
++                    <div style="display:flex; gap:16px;">
++                      <div class="form-group" style="flex:1;"><label>ACCOUNT</label><input type="text" value="xy12345"></div>
++                      <div class="form-group" style="flex:1;"><label>WAREHOUSE</label><input type="text" value="COMPUTE_WH"></div>
++                    </div>
++                    <div style="display:flex; gap:16px;">
++                      <div class="form-group" style="flex:1;"><label>USER</label><input type="text" value="ADMIN"></div>
++                      <div class="form-group" style="flex:1;"><label>PASSWORD / PAT</label><input type="password" value=""></div>
+                     </div>
++                    <div style="display:flex; gap:16px;">
++                      <div class="form-group" style="flex:1;"><label>DATABASE</label><input type="text" value="ANALYTICS"></div>
++                      <div class="form-group" style="flex:1;"><label>SCHEMA</label><input type="text" value="PUBLIC"></div>
++                    </div>
++                  </div>
+ 
+-                    <!-- DB 3 -->
+-                    <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(0,0,0,0.15); border:1px solid var(--glass-white-05); border-radius:10px;">
+-                      <div>
+-                        <h4 style="font-size:0.85rem; font-weight:700; color:#fff;">Supplier ERP Hub</h4>
+-                        <span style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted);">Host: erp.suppliers.internal</span>
++                  <div id="form-inventory" class="source-form" style="display:none;">
++                    <h4 style="color:#fff; margin-bottom:16px;">Inventory System Configuration</h4>
++                    <div class="form-group"><label>BASE URL</label><input type="text" value="https://api.logistics.com"></div>
++                    <div class="form-group"><label>API KEY</label><input type="password" value="sk_live_12345"></div>
++                    <div class="form-group"><label>PROVIDER (e.g. Manhattan, Oracle)</label><input type="text" value="Manhattan"></div>
++                  </div>
++
++                  <div id="form-oms" class="source-form" style="display:none;">
++                    <h4 style="color:#fff; margin-bottom:16px;">Order Management Configuration</h4>
++                    <div class="form-group"><label>BASE URL</label><input type="text" value="https://api.logistics.com"></div>
++                    <div class="form-group"><label>API KEY</label><input type="password" value="sk_live_12345"></div>
++                    <div class="form-group"><label>SYSTEM TYPE (e.g. IBM Sterling)</label><input type="text" value="Manhattan"></div>
++                  </div>
++
++                  <div id="form-whs" class="source-form" style="display:none;">
++                    <h4 style="color:#fff; margin-bottom:16px;">Warehouse System Configuration</h4>
++                    <div class="form-group"><label>BASE URL</label><input type="text" value="https://api.logistics.com"></div>
++                    <div class="form-group"><label>API KEY</label><input type="password" value="sk_live_12345"></div>
++                    <div class="form-group"><label>WAREHOUSE ID</label><input type="text" value="DC-01"></div>
++                  </div>
++
++                  <div id="form-generic" class="source-form" style="display:none;">
++                    <div class="form-group"><label>CONNECTION NAME</label><input type="text" value="My Database"></div>
++                    <div style="display:flex; gap:16px;">
++                      <div class="form-group" style="flex:1;"><label>USER</label><input type="text" value="admin"></div>
++                      <div class="form-group" style="flex:1;"><label>PASSWORD</label><input type="password" value=""></div>
++                    </div>
++                    <div class="form-group"><label>HOST / ENDPOINT</label><input type="text" value="localhost:5432"></div>
++                    <div class="form-group" style="margin-top:20px;">
++                      <label>OPTIONAL CONFIGURATION / UPLOAD INSTRUCTIONS</label>
++                      <div style="height:100px; border-radius:12px; border:1px solid rgba(255,255,255,0.1); background:var(--surface-elevated); display:flex; align-items:center; justify-content:center; margin-top:8px;">
++                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--technical-orange)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                       </div>
+-                      <span id="ping-db-firebase" class="indicator-dot-green" style="width:8px; height:8px; border-radius:50%; background-color:var(--color-compliance); box-shadow:0 0 6px var(--color-compliance);"></span>
+                     </div>
+-
+                   </div>
+                 </div>
+-                <button class="bottom-action-btn-primary" id="btn-ping-connections" style="margin-top:24px;">
+-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+-                  Test Secure Gateway Pings
+-                </button>
+-              </div>
+-
+-              <!-- Right: Isolated runners -->
+-              <div class="detail-card" style="display:flex; flex-direction:column; height:100%;">
+-                <div class="status-section-title">ISOLATED RUNNER POOL</div>
+-                <div style="display:flex; flex-direction:column; gap:14px; margin-top:14px; flex:1;">
+ 
+-                  <!-- Runner 1 -->
+-                  <div style="border:1px solid var(--glass-white-05); border-radius:10px; padding:12px; background:rgba(255,255,255,0.01);">
+-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+-                      <span style="font-size:0.8rem; font-weight:700; color:#fff;">Runner Instance: worker-pool-01</span>
+-                      <span style="font-size:0.7rem; font-family:var(--font-mono); color:var(--color-compliance);">IDLE</span>
++                <!-- STEP 2: Compute Runner -->
++                <div id="wizard-step-2" class="wizard-step-content" style="display:none;">
++                  <h3 style="color:#fff; font-size:1.2rem; margin-bottom:8px;">Target Compute Runner</h3>
++                  <p style="color:var(--text-secondary); margin-bottom:24px;">Configure compute resources</p>
++                  
++                  <div class="runner-option active" data-runner="managed">
++                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
++                      <div style="font-weight:700; color:#fff;">Runink Managed</div>
++                      <input type="radio" checked>
+                     </div>
+-                    <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-secondary);">
+-                      <span>CPU Quota: 2.0 Cores</span>
+-                      <span>Memory Limit: 4.0 GB</span>
++                    <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:12px;">The application will automatically provision and manage the compute resources for this connection.</p>
++                    <div style="display:flex; gap:8px;">
++                      <span class="tag-pill">Auto-scaling</span>
++                      <span class="tag-pill">Isolated VPC</span>
+                     </div>
+                   </div>
+ 
+-                  <!-- Runner 2 -->
+-                  <div style="border:1px solid var(--glass-white-05); border-radius:10px; padding:12px; background:rgba(255,255,255,0.01);">
+-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+-                      <span style="font-size:0.8rem; font-weight:700; color:#fff;">Runner Instance: worker-pool-02</span>
+-                      <span style="font-size:0.7rem; font-family:var(--font-mono); color:var(--color-compliance);">IDLE</span>
+-                    </div>
+-                    <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-secondary);">
+-                      <span>CPU Quota: 4.0 Cores</span>
+-                      <span>Memory Limit: 8.0 GB</span>
++                  <div class="runner-option" data-runner="self-hosted" style="margin-top:16px;">
++                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
++                      <div style="font-weight:700; color:#fff;">Self-Hosted Runner</div>
++                      <input type="radio">
+                     </div>
++                    <p style="color:var(--text-secondary); font-size:0.85rem;">Connect your own Kubernetes cluster or VM instance. Requires manual setup.</p>
+                   </div>
++                </div>
+ 
++                <!-- STEP 3: Review -->
++                <div id="wizard-step-3" class="wizard-step-content" style="display:none;">
++                  <div style="background:var(--surface-elevated); padding:20px; border-radius:16px; border:1px solid var(--glass-white-05);">
++                    <h3 id="review-source-name" style="color:#fff; margin-bottom:16px;">Snowflake Connection</h3>
++                    <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:24px;">Read-only Access</p>
++                    <hr style="border-color:rgba(255,255,255,0.1); margin-bottom:24px;">
++                    <div id="review-details" style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
++                      <div><label style="color:var(--text-secondary); font-size:0.7rem;">ACCOUNT IDENTIFIER</label><div style="color:#fff;">xy12345.us-east-1</div></div>
++                      <div><label style="color:var(--text-secondary); font-size:0.7rem;">WAREHOUSE</label><div style="color:#fff;">COMPUTE_WH_XS</div></div>
++                    </div>
++                    <hr style="border-color:rgba(255,255,255,0.1); margin:24px 0;">
++                    <div><label style="color:var(--text-secondary); font-size:0.7rem;">COMPUTE RUNNER</label><div style="color:#fff;" id="review-runner-type">Runink Managed</div></div>
++                  </div>
+                 </div>
+ 
+-                <!-- Console feedback for pings -->
+-                <pre id="ping-console-output" style="background-color:#000; border:1px solid var(--glass-white-05); border-radius:10px; padding:12px; font-family:var(--font-mono); font-size:0.65rem; color:#8ba84b; height:90px; overflow-y:auto; margin-top:14px; margin-bottom:0; white-space:pre-wrap; line-height:1.4;">Gateway diagnostic shell ready.</pre>
++              </div>
++
++              <!-- Wizard Footer -->
++              <div style="padding:20px 24px; border-top:1px solid var(--glass-white-05); display:flex; justify-content:space-between; align-items:center;">
++                <button id="btn-wizard-back" style="background:transparent; color:var(--text-secondary); border:none; cursor:pointer; display:none;">← Back</button>
++                <button id="btn-wizard-next" class="bottom-action-btn-primary" style="margin-left:auto; min-width:150px;">NEXT STEP →</button>
+               </div>
+             </div>
++
+           </div>
+ 
+           <!-- SPEECH COMMAND MIC OVERLAY -->
+@@ -1926,13 +2477,13 @@
+             </div>
+           </div>
+ 
+-          <!-- ReAct LIVE CONSOLE TERMINAL OVERLAY -->
+-          <div id="react-console-overlay" class="voip-call-overlay" style="display:flex; flex-direction:column; padding: 20px; background-color: rgba(10, 5, 4, 0.98); z-index: 1010; overflow:hidden;">
++          <!-- SUB-AGENT WORKFLOW TERMINAL OVERLAY -->
++          <div id="react-console-overlay" class="voip-call-overlay" style="display:none; flex-direction:column; padding: 20px; background-color: rgba(15, 8, 6, 0.98); z-index: 2000; overflow:hidden; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 800px; height: 80%; max-height: 600px; border-radius: 12px; border: 1px solid rgba(236, 91, 19, 0.4); box-shadow: 0 20px 60px rgba(0,0,0,0.8);">
+             <!-- Header -->
+             <div style="display:flex; width:100%; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(236, 91, 19, 0.25); padding-bottom:10px; margin-bottom:12px;">
+               <div style="display:flex; align-items:center; gap:8px;">
+                 <span class="pulse-dot-red" id="react-console-status-dot" style="background-color:#ef4444; box-shadow:0 0 8px #ef4444; width:8px; height:8px;"></span>
+-                <span style="font-family:var(--font-mono); font-size:0.75rem; color:#fff; font-weight:bold; letter-spacing:1px; text-transform:uppercase;" id="react-console-title" data-translate="react_console_title">Semantic Validation Module (Execution Loop)</span>
++                <span style="font-family:var(--font-mono); font-size:0.75rem; color:#fff; font-weight:bold; letter-spacing:1px; text-transform:uppercase;" id="react-console-title" data-translate="react_console_title">Sub-Agent Orchestration (Execution Loop)</span>
+               </div>
+               <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--text-muted); background:rgba(255,255,255,0.03); padding:2px 6px; border-radius:4px; border:1px solid rgba(255,255,255,0.05);" id="react-console-iter">ITERATION: --/--</span>
+             </div>
+@@ -1959,7 +2510,7 @@
+             <!-- Progress Bar / Timeline inside Console -->
+             <div style="width:100%; margin:12px 0 4px 0;">
+               <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+-                <span id="react-console-progress-label" data-translate="react_console_progress_label">ReAct Execution Progress</span>
++                <span id="react-console-progress-label" data-translate="react_console_progress_label">Sub-Agent Workflow Progress</span>
+                 <span id="react-console-progress-percent">0%</span>
+               </div>
+               <div style="width:100%; height:4px; background:rgba(255,255,255,0.08); border-radius:2px; overflow:hidden;">
+@@ -1972,6 +2523,14 @@
+               <button class="bottom-action-btn-primary" id="btn-react-abort" style="background-color:var(--surface-highlight); border:1px solid rgba(255,255,255,0.05); color:#fff; box-shadow:none; flex:1;" data-translate="react_btn_abort">Abort Stream</button>
+               <button class="bottom-action-btn-primary" id="btn-react-resolve" style="background-color:var(--color-compliance); box-shadow:0 4px 15px rgba(34,197,94,0.3); flex:1; display:none;" data-translate="react_btn_resolve">Apply Remediation</button>
+             </div>
++            
++            <!-- Kickbacks.ai style Propaganda Ticker -->
++            <div class="kickbacks-ticker-container">
++              <div class="kickbacks-ticker">
++                <span>• METADATA SEARCH INITIATED • SCANNING PROVIDERS • CORRELATING SHIPPER DATA • CONTACT LIST SYNCED • ACTIONABLE TWINS DEPLOYED&nbsp;&nbsp;&nbsp;&nbsp;</span>
++                <span>• METADATA SEARCH INITIATED • SCANNING PROVIDERS • CORRELATING SHIPPER DATA • CONTACT LIST SYNCED • ACTIONABLE TWINS DEPLOYED&nbsp;&nbsp;&nbsp;&nbsp;</span>
++              </div>
++            </div>
+           </div>
+ 
+         </div>
+@@ -2028,11 +2587,19 @@
+           <h2 class="slides-header-title">What's <span>Runink FACE (Fulfilment Autonomous Claims Engine)</span></h2>
+           <div style="display:flex; gap:12px; align-items:center;">
+             <select id="presentation-lang-select" onchange="changeLanguage(this.value)" style="background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:6px; border-radius:6px; font-family:var(--font-sans); outline:none; cursor:pointer;">
++              <option value="English" selected>🇺🇸 EN</option>
+               <option value="Portuguese">🇧🇷 PT</option>
+-              <option value="English">🇺🇸 EN</option>
+               <option value="French">🇫🇷 FR</option>
+               <option value="Spanish">🇪🇸 ES</option>
+             </select>
++            <a href="user_journey.pdf" download="Runink_User_Journey.pdf" class="action-btn" style="text-decoration:none; background-color:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); padding: 8px 16px; color:#fff; border-radius:8px; cursor:pointer; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
++              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
++              Journey PDF
++            </a>
++            <button class="action-btn" id="btn-download-pdf" style="background-color:rgba(139,92,246,0.15); border:1px solid rgba(139,92,246,0.3); padding: 8px 16px; color:#fff; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:6px;" onclick="exportDeckToPDF()">
++              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
++              Deck PDF
++            </button>
+             <button class="action-btn" id="btn-close-deck" style="background-color:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); padding: 8px 16px; color:#fff; border-radius:8px; cursor:pointer;">
+               Exit Deck
+             </button>
+@@ -2043,142 +2610,233 @@
+ 
+           <!-- Slide 0: Title -->
+           <div class="pitch-slide active" id="p-slide-0">
+-            <span class="slide-number-tag">01 / 07 - INTRODUCTION</span>
+-            <h1 class="slide-heading-main" data-translate="slide_0_title">The Actionable Twin for <span>Enterprise Operations</span></h1>
+-            <p class="slide-body-text" data-translate="slide_0_body">
+-              Ground your automation with validated business rules on a Strictly Compartmentalized Node. Gain exponential operational advantage over fulfillments and claims.
++            <span class="slide-number-tag">01 / 15 - EXECUTIVE SUMMARY</span>
++            <h1 class="slide-heading-main">Runink <span>FACE</span></h1>
++            <p class="slide-body-text">
++              Fulfillment Autonomous Claims Engine. Bridging the gap between raw telemetry and autonomous workflow execution. Ground your automation with validated business rules on a strictly compartmentalized intelligence node.
+             </p>
+           </div>
+ 
+-          <!-- Slide 1: Personas -->
++          <!-- Slide 1: Data Privacy -->
+           <div class="pitch-slide" id="p-slide-1">
+-            <span class="slide-number-tag">02 / 07 - TARGET PERSONAS</span>
+-            <h1 class="slide-heading-main" data-translate="slide_1_title">Aligning <span>Business Stakeholders</span></h1>
+-            <p class="slide-body-text" data-translate="slide_1_body">
+-              Addressing operational inefficiencies through dedicated autonomous execution modules:
++            <span class="slide-number-tag">02 / 15 - DATA SOVEREIGNTY</span>
++            <h1 class="slide-heading-main">The Data Privacy <span>Imperative</span></h1>
++            <p class="slide-body-text">
++              Enterprise operations require absolute data security. We guarantee Zero-Trust compliance.
+             </p>
+             <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; font-size:0.9rem;">
+-              <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);" data-translate="slide_1_cfo">
+-                <strong style="color:var(--accent-orange-light);">The CFO:</strong> Outlines margin loss from customs demurrage fee discrepancies. <em>"Turn recovery claims into net profit."</em>
+-              </div>
+-              <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);" data-translate="slide_1_ops">
+-                <strong style="color:var(--accent-orange-light);">Ops Director:</strong> Focuses on database code drifting from written operating manual guides. <em>"Verify observed matches expected."</em>
+-              </div>
+-              <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);" data-translate="slide_1_revops">
+-                <strong style="color:var(--accent-orange-light);">RevOps Manager:</strong> Protects query ingestion models from public vendor hallucinations. <em>"Local inference guarantees data safety."</em>
++              <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);">
++                <strong style="color:var(--accent-orange-light);">Local Intelligence Inference:</strong> Operating entirely on your infrastructure. No external APIs, no public clouds, no exposure.
+               </div>
+-              <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);" data-translate="slide_1_shipper">
+-                <strong style="color:var(--accent-orange-light);">Shipper/Broker:</strong> Minimizes port container demurrage through automated tariff audits. <em>"Acts as an autonomous compliance module."</em>
++              <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);">
++                <strong style="color:var(--accent-orange-light);">No Third-Party Models:</strong> Say goodbye to external dependencies. Your data never leaves the organizational perimeter.
+               </div>
+             </div>
+           </div>
+ 
+-          <!-- Slide 2: Workflow -->
++          <!-- Slide 2: Sandboxing -->
+           <div class="pitch-slide" id="p-slide-2">
+-            <span class="slide-number-tag">03 / 07 - OPERATIONAL FLOW</span>
+-            <h1 class="slide-heading-main" data-translate="slide_2_title">Telemetry-Driven Visibility & <span>Autonomous Execution</span></h1>
++            <span class="slide-number-tag">03 / 15 - TECHNICAL MATURITY</span>
++            <h1 class="slide-heading-main">Isolated Sandboxed <span>Execution</span></h1>
++            <p class="slide-body-text">
++              Safe, reliable autonomous execution through rigorous technical isolation.
++            </p>
++            <ul style="font-size:0.9rem; line-height:1.7; color:var(--text-secondary); padding-left:20px;">
++              <li><strong>Secure Execution Environments:</strong> Workflows run inside highly restricted runners without direct infrastructure access.</li>
++              <li><strong>Pre-Execution Verification:</strong> Every proposed action is analyzed against defined business rules and Service Level Agreements before deployment.</li>
++              <li><strong>Drift Prevention:</strong> Ensuring database reality matches intended operating manual guidelines.</li>
++            </ul>
++          </div>
++
++          <!-- Slide 3: Forensic Auditing -->
++          <div class="pitch-slide" id="p-slide-3">
++            <span class="slide-number-tag">04 / 15 - BUSINESS VALUE</span>
++            <h1 class="slide-heading-main">Automated Forensic <span>Auditing</span></h1>
+             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-top:10px;">
+               <div>
+-                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;" data-translate="slide_2_mon_title">1. Telemetry-Driven Visibility</h3>
+-                <p style="font-size:0.85rem; line-height:1.5; color:var(--text-secondary);" data-translate="slide_2_mon_body">
+-                  Uncover hidden anomalies standard tools miss utilizing deep semantic understanding. Our models validate telemetry and facts before executing operations.
++                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;">Rules Reconnaissance</h3>
++                <p style="font-size:0.85rem; line-height:1.5; color:var(--text-secondary);">
++                  Cross-reference physical documents (e.g., Bills of Lading, Invoices) directly against real-time operational data.
+                 </p>
+               </div>
+               <div>
+-                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;" data-translate="slide_2_twin_title">2. Autonomous Execution</h3>
+-                <p style="font-size:0.85rem; line-height:1.5; color:var(--text-secondary);" data-translate="slide_2_twin_body">
+-                  Deploy Forensic Claims Modules, Predictive Inventory Twins, and Anomaly Engines to directly affect cash flow.
++                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;">Dispute Resolution</h3>
++                <p style="font-size:0.85rem; line-height:1.5; color:var(--text-secondary);">
++                  Automatically evaluate compliance conditions to resolve costly margin-eating disputes like customs demurrage and SLA breaches instantly.
+                 </p>
+               </div>
+             </div>
+           </div>
+ 
+-          <!-- Slide 3: Use Case Global Trade -->
+-          <div class="pitch-slide" id="p-slide-3">
+-            <span class="slide-number-tag">04 / 07 - USE CASE: SHIPPERS</span>
+-            <h1 class="slide-heading-main" data-translate="slide_3_title">Global Trade <span>Detention Claims</span></h1>
+-            <p class="slide-body-text" data-translate="slide_3_body">
+-              Automating claims audits at customs ports to eliminate demurrage losses:
++          <!-- Slide 4: Fetch Pipeline -->
++          <div class="pitch-slide" id="p-slide-4">
++            <span class="slide-number-tag">05 / 15 - BUSINESS VALUE</span>
++            <h1 class="slide-heading-main">Intelligent Document <span>Processing</span></h1>
++            <p class="slide-body-text">
++              Transforming unstructured chaos into structured, actionable intelligence.
+             </p>
+             <ol style="font-size:0.9rem; line-height:1.8; color:var(--text-secondary); padding-left:20px;">
+-              <li data-translate="slide_3_step1"><strong>Metadata Recovery:</strong> Connects to Customs Registry schemas.</li>
+-              <li data-translate="slide_3_step2"><strong>Tariff Check:</strong> Cross-references HS customs codes against compliance checklists.</li>
+-              <li data-translate="slide_3_step3"><strong>Simulation:</strong> Predicts container flag probability in sandboxed runner.</li>
+-              <li data-translate="slide_3_step4"><strong>Synthesis:</strong> Drafts Weight Discrepancy Adjustment claim email automatically.</li>
+-              <li data-translate="slide_3_step5"><strong>Dispatch:</strong> Operations manager signs off PO in Cockpit with one click.</li>
++              <li><strong>Intelligent Triage:</strong> Ingests emails, PDFs, and logs in real-time.</li>
++              <li><strong>Semantic Understanding:</strong> Analyzes context deeply, uncovering hidden anomalies that standard tools miss.</li>
++              <li><strong>Action Compilation:</strong> Compiles the raw data into operational workflows that are pushed straight to the management cockpit.</li>
+             </ol>
+           </div>
+ 
+-          <!-- Slide 4: Use Case Demand Planning -->
+-          <div class="pitch-slide" id="p-slide-4">
+-            <span class="slide-number-tag">05 / 07 - USE CASE: PROCUREMENT</span>
+-            <h1 class="slide-heading-main" data-translate="slide_4_title">Preemptive <span>Purchase Orders</span></h1>
+-            <p class="slide-body-text" data-translate="slide_4_body">
+-              Avoiding inventory stockouts through statistical trend decomposition:
++          <!-- Slide 5: Hypothesis Lab -->
++          <div class="pitch-slide" id="p-slide-5">
++            <span class="slide-number-tag">06 / 15 - PREDICTIVE CAPABILITIES</span>
++            <h1 class="slide-heading-main">Predictive <span>Risk Management</span></h1>
++            <p class="slide-body-text">
++              Moving from reactive fire-fighting to proactive risk management.
+             </p>
+-            <ul style="font-size:0.9rem; line-height:1.7; color:var(--text-secondary); list-style-type: square; padding-left:20px;">
+-              <li data-translate="slide_4_step1"><strong>Telemetry Scan:</strong> Aggregates warehousing inventory signals.</li>
+-              <li data-translate="slide_4_step2"><strong>Seasonality:</strong> Time-series modeling filters seasonal variance.</li>
+-              <li data-translate="slide_4_step3"><strong>ERP Release:</strong> Dispatches PO directly to Odoo ERP upon verification.</li>
++            <ul style="font-size:0.9rem; line-height:1.7; color:var(--text-secondary); padding-left:20px;">
++              <li><strong>Simulation Lab:</strong> Predict the impact of supply chain disruptions before they happen.</li>
++              <li><strong>Shadow Analysis:</strong> Run workflows in a simulated "shadow" state to forecast outcomes on margins and operations without affecting production.</li>
++              <li><strong>Data-Driven Continuity:</strong> Safeguard fulfillment resilience using predictive intelligence.</li>
+             </ul>
+           </div>
+ 
+-          <!-- Slide 5: Use Case IoT Edge -->
+-          <div class="pitch-slide" id="p-slide-5">
+-            <span class="slide-number-tag">06 / 07 - USE CASE: IOT EDGE</span>
+-            <h1 class="slide-heading-main" data-translate="slide_iot_title">Predictive <span>Maintenance</span></h1>
+-            <p class="slide-body-text" data-translate="slide_iot_body">
+-              Automating equipment health checks via intelligent smart devices over IoT telemetry data:
++          <!-- Slide 6: Integration -->
++          <div class="pitch-slide" id="p-slide-6">
++            <span class="slide-number-tag">07 / 15 - SYSTEM DESIGN</span>
++            <h1 class="slide-heading-main">Unified Systems <span>Ecosystem</span></h1>
++            <p class="slide-body-text">
++              Designed as a cohesive intelligence layer that wraps natively around your existing technology stack.
++            </p>
++            <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; font-size:0.9rem;">
++              <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);">
++                <strong style="color:var(--accent-orange-light);">Universal Connectors:</strong> Seamless ingestion from data lakes and legacy relational databases.
++              </div>
++              <div style="background-color:rgba(255,255,255,0.02); padding:16px; border-radius:12px; border:1px solid var(--glass-white-05);">
++                <strong style="color:var(--accent-orange-light);">WMS / TMS / ERP:</strong> Native synchronization with core systems to orchestrate physical movement without complex IT overhead.
++              </div>
++            </div>
++          </div>
++
++          <!-- Slide 7: Scalability -->
++          <div class="pitch-slide" id="p-slide-7">
++            <span class="slide-number-tag">08 / 15 - INFRASTRUCTURE</span>
++            <h1 class="slide-heading-main">Global Scalability & <span>Resilience</span></h1>
++            <p class="slide-body-text">
++              Built to handle the immense throughput of global supply chains.
++            </p>
++            <ul style="font-size:0.9rem; line-height:1.7; color:var(--text-secondary); padding-left:20px;">
++              <li><strong>High-Throughput Ingestion:</strong> Processes millions of telemetry events (RFID, OBD-II, cold chain logs) concurrently.</li>
++              <li><strong>Distributed Intelligence:</strong> Agents communicate across clustered environments for zero single points of failure.</li>
++              <li><strong>Elastic Capacity:</strong> Scales dynamically to handle promotional retail peaks and cross-docking surges.</li>
++            </ul>
++          </div>
++
++          <!-- Slide 8: Operations Twin -> Fulfillment Automation -->
++          <div class="pitch-slide" id="p-slide-8">
++            <span class="slide-number-tag">09 / 15 - BUSINESS CAPABILITIES</span>
++            <h1 class="slide-heading-main">Supply Chain <span>Fulfillment Automation</span></h1>
++            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-top:10px;">
++              <div>
++                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;">Unifying Disparate Data</h3>
++                <p style="font-size:0.85rem; line-height:1.5; color:var(--text-secondary);">
++                  Gathers fragmented data across disparate warehouse management systems and carrier endpoints into a single cohesive state.
++                </p>
++              </div>
++              <div>
++                <h3 style="color:var(--accent-orange-light); font-size:1.1rem; margin-bottom:8px;">Operational Execution</h3>
++                <p style="font-size:0.85rem; line-height:1.5; color:var(--text-secondary);">
++                  Triggers tasks like dynamic rerouting and proactive inventory replenishment automatically when operational thresholds are breached.
++                </p>
++              </div>
++            </div>
++          </div>
++
++          <!-- Slide 9: Finance Twin -> Claims Reconciliation -->
++          <div class="pitch-slide" id="p-slide-9">
++            <span class="slide-number-tag">10 / 15 - BUSINESS CAPABILITIES</span>
++            <h1 class="slide-heading-main">Automated Invoice & <span>Claims Reconciliation</span></h1>
++            <p class="slide-body-text">
++              Turning recovery claims into guaranteed net profit through automated precision.
+             </p>
+             <ol style="font-size:0.9rem; line-height:1.8; color:var(--text-secondary); padding-left:20px;">
+-              <li data-translate="slide_iot_step1"><strong>Telemetry Scan:</strong> Aggregates RFID readings from pallet operations.</li>
+-              <li data-translate="slide_iot_step2"><strong>Anomaly Detection:</strong> Identifies operations downgrading due to postponed maintenance.</li>
+-              <li data-translate="slide_iot_step3"><strong>Synthesis:</strong> Drafts an immediate scheduling request to the designated department/provider.</li>
+-              <li data-translate="slide_iot_step4"><strong>Dispatch:</strong> Manager reviews and sends the service request with one click.</li>
++              <li><strong>Automated Validation:</strong> Validates complex freight invoices against carrier tariff tables instantly.</li>
++              <li><strong>Anomaly Flagging:</strong> Detects duplicate billing and unwarranted detention charges autonomously.</li>
++              <li><strong>Action Dispatch:</strong> Compiles financial evidence and drafts a complete recovery claim for manager sign-off.</li>
+             </ol>
+           </div>
+ 
+-          <!-- Slide 6: Security -->
+-          <div class="pitch-slide" id="p-slide-6">
+-            <span class="slide-number-tag">07 / 07 - COMPLIANCE & TRUST</span>
+-            <h1 class="slide-heading-main" data-translate="slide_5_title">Zero-Trust <span>Security Blueprint</span></h1>
+-            <p class="slide-body-text" data-translate="slide_5_body">
+-              Designed from the ground up for data isolation and security requirements:
++          <!-- Slide 10: Compliance Twin -> Regulatory Compliance -->
++          <div class="pitch-slide" id="p-slide-10">
++            <span class="slide-number-tag">11 / 15 - BUSINESS CAPABILITIES</span>
++            <h1 class="slide-heading-main">Proactive Regulatory <span>Compliance</span></h1>
++            <p class="slide-body-text">
++              Continuous operational auditing to enforce Standard Operating Procedures (SOPs).
++            </p>
++            <ul style="font-size:0.9rem; line-height:1.7; color:var(--text-secondary); padding-left:20px;">
++              <li><strong>Regulatory Enforcement:</strong> Cross-references daily operations against compliance checklists and international trade mandates.</li>
++              <li><strong>Data Sanitization:</strong> Ensures PII masking and protects sensitive customer information automatically.</li>
++              <li><strong>Audit Trails:</strong> Generates immutable operational history logs for external regulatory reviews.</li>
++            </ul>
++          </div>
++
++          <!-- Slide 11: Security Blueprint -->
++          <div class="pitch-slide" id="p-slide-11">
++            <span class="slide-number-tag">12 / 15 - COMPLIANCE & TRUST</span>
++            <h1 class="slide-heading-main">Zero-Trust <span>Security Framework</span></h1>
++            <p class="slide-body-text">
++              Designed from the ground up to satisfy enterprise risk management frameworks.
+             </p>
+             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.85rem; line-height:1.5;">
+-              <div style="background-color:rgba(0,0,0,0.2); padding:16px; border-radius:12px;" data-translate="slide_5_sec1">
+-                <strong style="color:var(--color-compliance);">✓ Isolated Local Inference:</strong> Uses on-device AI models locally. Enterprise data is never transmitted to external APIs.
+-              </div>
+-              <div style="background-color:rgba(0,0,0,0.2); padding:16px; border-radius:12px;" data-translate="slide_5_sec2">
+-                <strong style="color:var(--color-compliance);">✓ Secure Sandboxed Execution:</strong> Active script runners execute in secure sandboxes to prevent unauthorized data access.
++              <div style="background-color:rgba(0,0,0,0.2); padding:16px; border-radius:12px;">
++                <strong style="color:var(--color-compliance);">✓ Sandboxed Execution:</strong> Complete logical separation of analytical processing and action dispatch.
+               </div>
+-              <div style="background-color:rgba(0,0,0,0.2); padding:16px; border-radius:12px;" data-translate="slide_5_sec3">
+-                <strong style="color:var(--color-compliance);">✓ Continuous Data Sync:</strong> Internal system states synchronize securely across pipelines in real-time.
+-              </div>
+-              <div style="background-color:rgba(0,0,0,0.2); padding:16px; border-radius:12px;" data-translate="slide_5_sec4">
+-                <strong style="color:var(--color-compliance);">✓ ISO 42001 Compliance:</strong> Includes visible System indicator notices (✨) on generated text to trace data history.
++              <div style="background-color:rgba(0,0,0,0.2); padding:16px; border-radius:12px;">
++                <strong style="color:var(--color-compliance);">✓ Role-Based Approvals:</strong> Human-in-the-loop (HITL) mandatory sign-offs for critical financial actions.
+               </div>
+             </div>
+           </div>
+ 
+-          <!-- Slide 7: CTA -->
+-          <div class="pitch-slide" id="p-slide-7">
+-            <span class="slide-number-tag">08 / 08 - CALL TO ACTION</span>
+-            <h1 class="slide-heading-main" data-translate="slide_7_title">What We Are <span>Seeking</span></h1>
+-            <p class="slide-body-text" data-translate="slide_7_body">
+-              Strategic networking and intellectual exchange. Initiate a technical briefing to map your operational bottlenecks and review our architectural deployment.
++          <!-- Slide 12: Deployment Models -->
++          <div class="pitch-slide" id="p-slide-12">
++            <span class="slide-number-tag">13 / 15 - DELIVERY</span>
++            <h1 class="slide-heading-main">Flexible <span>Deployment Models</span></h1>
++            <p class="slide-body-text">
++              Tailoring the infrastructure to your specific organizational needs:
++            </p>
++            <ul style="font-size:0.9rem; line-height:1.7; color:var(--text-secondary); padding-left:20px;">
++              <li><strong>Dedicated Cloud:</strong> Rapid deployment via highly available, fully-managed dedicated cloud instances.</li>
++              <li><strong>On-Premise Appliance:</strong> For strict regulatory requirements, run the intelligence engine securely within your firewall.</li>
++              <li><strong>Hybrid Edge:</strong> Process massive telemetry locally at the warehouse edge, syncing only critical state to the central hub.</li>
++            </ul>
++          </div>
++
++          <!-- Slide 13: ROI -->
++          <div class="pitch-slide" id="p-slide-13">
++            <span class="slide-number-tag">14 / 15 - STRATEGIC ADVANTAGE</span>
++            <h1 class="slide-heading-main">Driving ROI & <span>Profitability</span></h1>
++            <p class="slide-body-text">
++              Transforming logistics operations from a cost center to a competitive advantage.
+             </p>
+-            <div style="margin-top: 30px;">
+-              <button class="draft-card-button" style="background-color: var(--accent-orange); color: #fff; padding: 12px 24px; font-size: 1rem; border: none; border-radius: 8px; cursor: pointer;">
+-                Initiate Technical Briefing
++            <ol style="font-size:0.9rem; line-height:1.8; color:var(--text-secondary); padding-left:20px;">
++              <li><strong>Faster Dispute Resolution:</strong> Cutting days off claims processing and securing previously lost margins.</li>
++              <li><strong>Reduced Overhead:</strong> Automating the drudgery of reconciliation and manual data aggregation.</li>
++              <li><strong>Absolute Sovereignty:</strong> Owning your intelligence entirely with no SaaS lock-in or data leakage.</li>
++            </ol>
++          </div>
++
++          <!-- Slide 14: CTA -->
++          <div class="pitch-slide" id="p-slide-14">
++            <span class="slide-number-tag">15 / 15 - CALL TO ACTION</span>
++            <h1 class="slide-heading-main">Initiate Your <span>Transformation</span></h1>
++            <p class="slide-body-text">
++              Connect with us to map your operational bottlenecks and explore how our automated capabilities drive profitability. Don't let valuable data slip through the cracks.
++            </p>
++            <div style="margin-top: 30px; display: flex; gap: 16px;">
++              <button onclick="window.location.href='/contact'" class="draft-card-button" style="background-color: var(--accent-orange); color: #fff; padding: 12px 24px; font-size: 1rem; border: none; border-radius: 8px; cursor: pointer;">
++                Contact Us
+               </button>
+             </div>
+           </div>
+-
+         </div>
+ 
+         <footer class="slides-footer">
+-          <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);" id="slide-page-indicator">1 of 8</span>
++          <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);" id="slide-page-indicator">1 of 15</span>
+ 
+           <div class="slides-progress-track">
+             <div class="slides-progress-bar" id="slide-page-bar"></div>
+@@ -2198,6 +2856,132 @@
+     </main>
+   </div>
+ 
++  <div id="details-modal" class="voip-call-overlay" style="display:none; flex-direction:column; padding: 20px; background-color: rgba(15, 8, 6, 0.98); z-index: 3000; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; justify-content:center; align-items:center; backdrop-filter: blur(10px);">
++    <div style="background: var(--background-dark); border: 1px solid var(--accent-orange); border-radius: 12px; width: 80%; max-width: 600px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); overflow: hidden; display: flex; flex-direction: column;">
++      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(236, 91, 19, 0.25); padding: 16px 20px; background: rgba(236, 91, 19, 0.05);">
++        <h3 id="details-modal-title" style="color: var(--accent-orange-light); margin: 0; font-size: 1.1rem; letter-spacing: 0.5px;">Parallel Agent Reasoning</h3>
++          <button onclick="closeDetailsModal()" style="background:transparent; border:none; color:#fff; cursor:pointer; padding:4px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
++        </div>
++        <!-- Marketing Promo Carousel -->
++        <div id="details-kickbacks-carousel" style="padding: 10px 20px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.05);">
++          <div style="display:flex; align-items:center; gap:12px;">
++             <div style="width:24px; height:24px; border-radius:6px; background:linear-gradient(135deg, #10b981, #047857); display:flex; align-items:center; justify-content:center;">
++               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
++             </div>
++             <div style="flex:1; position:relative; overflow:hidden; height:24px;">
++                <div style="position:absolute; top:0; left:0; width:100%; transition: opacity 0.5s ease; color:rgba(255,255,255,0.8); font-size:0.75rem; font-family:var(--font-sans); display:flex; align-items:center; height:100%;">
++                   <span>Priority Partner Cross-Sell. Actionable Twin.</span>
++                </div>
++             </div>
++             <div style="font-size:0.65rem; color:#10b981; border:1px solid rgba(16,185,129,0.3); padding:4px 8px; border-radius:6px; font-weight:700;">Actionable Twin</div>
++          </div>
++        </div>
++      <div style="padding: 20px; max-height: 60vh; overflow-y: auto;">
++        <div id="details-modal-content" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:16px;">
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#10b981; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> AI Posture
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-1" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#10b981; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#3b82f6; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg> Rules Recon
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-2" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#3b82f6; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#a855f7; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Documentation
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-3" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#a855f7; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#ef4444; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg> Compliance
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-4" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#ef4444; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#f59e0b; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Finance
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-5" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#f59e0b; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#0ea5e9; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> Route Twin
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-6" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#0ea5e9; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#8b5cf6; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg> Predictive Maintenance
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-7" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#8b5cf6; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#ec4899; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> Fulfilment
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-8" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#ec4899; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#14b8a6; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Claims
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-9" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#14b8a6; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#f97316; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Reverse Logistics
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-10" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#f97316; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#6366f1; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Hypothesis Lab
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-11" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#6366f1; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
++              <div style="font-size:0.6rem; font-weight:800; color:#eab308; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
++                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Actionable Twins
++              </div>
++              <div style="flex:1; overflow-y:auto; padding-right:4px;">
++                <pre id="modal-console-12" style="margin:0; font-family:var(--font-mono); font-size:0.65rem; color:#eab308; white-space:pre-wrap;"></pre>
++              </div>
++            </div>
++          </div>
++        </div>
++        <div style="padding: 16px 20px; border-top:1px solid rgba(255,255,255,0.05); text-align:right;">
++        <button onclick="closeDetailsModal()" style="background:var(--technical-orange); border:none; color:#fff; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:700;">Close</button>
++      </div>
++    </div>
++  </div>
++
+   <script src="app.js"></script>
+ </body>
+ </html>

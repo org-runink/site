@@ -2,7 +2,7 @@
 title: "The Logistics of Food Service: Cold Chain Integrity and JIT Restaurant Delivery"
 description: "Discover how Operations Leaders optimize cold chain logistics, manage strict shelf-life compliance, and implement JIT delivery for food service supply chains."
 author: "Runink Logistics Operations Team"
-date: 2026-06-18T11:00:00Z
+date: 2026-03-21T11:52:12Z
 draft: false
 featured_image: "/images/blog/food-service-cold-chain-logistics-restaurant-delivery-header.png"
 canonical: https://www.runink.org/blog/food-service-cold-chain-logistics-restaurant-delivery

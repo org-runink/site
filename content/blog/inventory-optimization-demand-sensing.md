@@ -2,7 +2,7 @@
 title: "Inventory Optimization Beyond Safety Stock — How Demand Sensing Is Replacing Guesswork"
 description: "Traditional safety stock formulas fail in volatile markets. Learn how demand sensing and AI-driven inventory optimization reduce excess stock by 15-30% while improving fill rates."
 author: "Runink Logistics Operations Team"
-date: 2026-05-22T11:00:00Z
+date: 2026-02-28T06:20:29Z
 draft: false
 featured_image: "/images/blog/inventory-optimization-demand-sensing-header.png"
 canonical: https://www.runink.org/blog/inventory-optimization-demand-sensing

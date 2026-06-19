@@ -3,7 +3,7 @@ title: "Turning Noisy Fleet Telemetry into Actionable Dispatch Insights"
 description: "Understand how to leverage noisy fleet telemetry data to optimize routing, improve fleet utilization, and reduce demurrage."
 slug: telemetry-data-reconciliation-domain-modeling
 author: "Runink Logistics Operations Team"
-date: 2025-07-07
+date: 2026-05-09T00:15:18Z
 tags: [data telemetry, automated reconciliation, domain modeling, data observability, enterprise data, analytics automation, streaming data, anomaly detection, data governance, automated operations]
 robots: index, follow
 featured_image: /images/blog/telemetry-data-reconciliation-domain-modeling.png

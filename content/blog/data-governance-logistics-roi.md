@@ -3,7 +3,7 @@ title: "Why Data Governance Supercharges Operational ROI with Automated Dispatch
 description: "Discover how strong data governance enhances the ROI of operations in logistics—especially in Industry 4.0 use cases like automated routing and dispatch optimization for strategic sourcing and procurement."
 slug: data-governance-logistics-roi
 author: "Runink Logistics Operations Team"
-date: 2025-07-07
+date: 2026-04-06T00:40:02Z
 tags: [logistics automation, dispatch optimization, data governance, Industry 4.0 procurement, IT ROI, cloud data strategy, smart supply chain, strategic sourcing, drone logistics]
 robots: index, follow
 featured_image: /images/blog/data-governance-logistics-roi.png

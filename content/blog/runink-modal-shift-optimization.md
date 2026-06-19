@@ -3,7 +3,7 @@ title: "Revolutionizing Transportation: How Runink Powers Modal Shift and Route 
 description: "Discover how Runink's decision engine leverages real-time data to optimize transport routes and modal shifts—delivering cost savings, reduced emissions, and improved logistics for rail and truck networks."
 slug: runink-modal-shift-optimization
 author: "Runink Logistics Operations Team"
-date: 2025-06-30
+date: 2026-06-15T10:07:34Z
 tags: [logistics automation, modal shift, route optimization, transport automation, rail-road interchange, Runink, supply chain efficiency]
 robots: index, follow
 featured_image: /images/blog/runink-modal-shift-optimization.png

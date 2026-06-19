@@ -2,7 +2,7 @@
 title: "Last-Mile Delivery Optimization — Why It's the Most Expensive and Most Important Part of Your Supply Chain"
 description: "Last-mile delivery accounts for 53% of total shipping costs. Learn how dynamic routing, PUDO networks, and AI-powered prediction cut costs 20-30%."
 author: "Runink Logistics Operations Team"
-date: 2026-06-10T11:00:00Z
+date: 2026-04-27T17:37:45Z
 draft: false
 featured_image: "/images/blog/last-mile-delivery-optimization-header.png"
 canonical: https://www.runink.org/blog/last-mile-delivery-optimization

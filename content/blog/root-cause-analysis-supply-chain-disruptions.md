@@ -2,7 +2,7 @@
 title: "Root Cause Analysis in Supply Chain — Finding the Real Problem Behind Recurring Disruptions"
 description: "Stop firefighting the same supply chain disruptions. Learn how RCA methodologies like the 5 Whys, Fishbone diagrams, and Pareto analysis expose the true drivers behind recurring failures."
 author: "Runink Logistics Operations Team"
-date: 2026-05-18T11:00:00Z
+date: 2026-06-04T15:18:35Z
 draft: false
 featured_image: "/images/blog/root-cause-analysis-supply-chain-disruptions-header.png"
 canonical: https://www.runink.org/blog/root-cause-analysis-supply-chain-disruptions
