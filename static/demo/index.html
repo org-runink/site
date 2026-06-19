@@ -1093,10 +1093,10 @@
                 <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(0,0,0,0.15); border:1px solid var(--glass-white-05); border-radius:10px;">
                   <span style="font-size:0.85rem; font-weight:700; color:#fff;" data-translate="target_language">Target Language</span>
                   <select id="select-target-language" onchange="changeLanguage(this.value)" style="background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:6px; border-radius:6px; font-family:var(--font-sans); outline:none;">
-                    <option value="English">English</option>
+                    <option value="English" selected>English</option>
                     <option value="French">French</option>
                     <option value="Spanish">Spanish</option>
-                    <option value="Portuguese" selected>Portuguese</option>
+                    <option value="Portuguese">Portuguese</option>
                   </select>
                 </div>
 
@@ -1927,7 +1927,7 @@
           </div>
 
           <!-- ReAct LIVE CONSOLE TERMINAL OVERLAY -->
-          <div id="react-console-overlay" class="voip-call-overlay" style="display:flex; flex-direction:column; padding: 20px; background-color: rgba(10, 5, 4, 0.98); z-index: 1010; overflow:hidden;">
+          <div id="react-console-overlay" class="voip-call-overlay" style="display:none; flex-direction:column; padding: 20px; background-color: rgba(10, 5, 4, 0.98); z-index: 1010; overflow:hidden;">
             <!-- Header -->
             <div style="display:flex; width:100%; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(236, 91, 19, 0.25); padding-bottom:10px; margin-bottom:12px;">
               <div style="display:flex; align-items:center; gap:8px;">
@@ -2028,8 +2028,8 @@
           <h2 class="slides-header-title">What's <span>Runink FACE (Fulfilment Autonomous Claims Engine)</span></h2>
           <div style="display:flex; gap:12px; align-items:center;">
             <select id="presentation-lang-select" onchange="changeLanguage(this.value)" style="background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:6px; border-radius:6px; font-family:var(--font-sans); outline:none; cursor:pointer;">
+              <option value="English" selected>🇺🇸 EN</option>
               <option value="Portuguese">🇧🇷 PT</option>
-              <option value="English">🇺🇸 EN</option>
               <option value="French">🇫🇷 FR</option>
               <option value="Spanish">🇪🇸 ES</option>
             </select>
