@@ -1,7 +1,7 @@
 // State Management
 let currentScreen = 'twins';
 let activeFilter = 'Compliance';
-let currentLanguage = 'Portuguese';
+let currentLanguage = 'English';
 // Contact Lists Databases & Metasearch state
 let dedicatedContacts = [
   { name: "John Doe (Customs Broker)", phone: "+1 555-010-9921" },
@@ -1468,7 +1468,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // renderIncidentsList(); // Now rendered statically in HTML
   renderContactsLists();
   updateTime();
-  changeLanguage('Portuguese', false);
+  changeLanguage('English', false);
   startBackgroundWhatsAppSimulator();
 });
 
@@ -7115,3 +7115,120 @@ function startBackgroundWhatsAppSimulator() {
     }, 45000);
   }, 12000);
 }
+
+// ==========================================
+// Runner & Connectors Wizard Logic
+// ==========================================
+let wizardStep = 1;
+
+function updateWizardUI() {
+  const step1 = document.getElementById('wizard-step-1');
+  const step2 = document.getElementById('wizard-step-2');
+  const step3 = document.getElementById('wizard-step-3');
+  const btnNext = document.getElementById('btn-wizard-next');
+  const btnBack = document.getElementById('btn-wizard-back');
+  const stepDesc = document.getElementById('wizard-step-desc');
+  
+  if(step1) step1.style.display = (wizardStep === 1) ? 'block' : 'none';
+  if(step2) step2.style.display = (wizardStep === 2) ? 'block' : 'none';
+  if(step3) step3.style.display = (wizardStep === 3) ? 'block' : 'none';
+  
+  if(btnBack) btnBack.style.display = (wizardStep > 1) ? 'block' : 'none';
+  if(btnNext) {
+    if(wizardStep < 3) {
+      btnNext.innerHTML = 'NEXT STEP &rarr;';
+    } else {
+      btnNext.innerHTML = 'Save & Finalize &rarr;';
+    }
+  }
+  
+  if(stepDesc) {
+    if(wizardStep === 1) stepDesc.innerText = 'Step 1/3 - Select Source & Credentials';
+    if(wizardStep === 2) stepDesc.innerText = 'Step 2/3 - Target Compute Runner';
+    if(wizardStep === 3) stepDesc.innerText = 'Step 3/3 - Review & Finalize configuration';
+  }
+  
+  // Update progress bars
+  const bar1 = document.getElementById('step-bar-1');
+  const bar2 = document.getElementById('step-bar-2');
+  const bar3 = document.getElementById('step-bar-3');
+  if(bar1) bar1.style.background = (wizardStep >= 1) ? 'var(--technical-orange)' : 'var(--surface-highlight)';
+  if(bar2) bar2.style.background = (wizardStep >= 2) ? 'var(--technical-orange)' : 'var(--surface-highlight)';
+  if(bar3) bar3.style.background = (wizardStep >= 3) ? 'var(--technical-orange)' : 'var(--surface-highlight)';
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnNext = document.getElementById('btn-wizard-next');
+  const btnBack = document.getElementById('btn-wizard-back');
+  
+  if(btnNext) {
+    btnNext.addEventListener('click', () => {
+      if(wizardStep < 3) {
+        wizardStep++;
+        updateWizardUI();
+      } else {
+        btnNext.innerHTML = 'Saving...';
+        setTimeout(() => {
+          wizardStep = 1;
+          updateWizardUI();
+          showToast('Connection saved and runner provisioned successfully!');
+        }, 1500);
+      }
+    });
+  }
+  
+  if(btnBack) {
+    btnBack.addEventListener('click', () => {
+      if(wizardStep > 1) {
+        wizardStep--;
+        updateWizardUI();
+      }
+    });
+  }
+  
+  // Source Selection Logic
+  const sourceCards = document.querySelectorAll('.source-card');
+  sourceCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      sourceCards.forEach(c => c.classList.remove('active'));
+      e.target.classList.add('active');
+      const source = e.target.getAttribute('data-source');
+      
+      const formSnowflake = document.getElementById('form-snowflake');
+      const formGeneric = document.getElementById('form-generic');
+      
+      if(source === 'Snowflake') {
+        if(formSnowflake) formSnowflake.style.display = 'block';
+        if(formGeneric) formGeneric.style.display = 'none';
+      } else {
+        if(formSnowflake) formSnowflake.style.display = 'none';
+        if(formGeneric) formGeneric.style.display = 'block';
+      }
+      
+      const reviewName = document.getElementById('review-source-name');
+      if(reviewName) reviewName.innerText = source + ' Connection';
+    });
+  });
+  
+  // Runner Selection Logic
+  const runnerOptions = document.querySelectorAll('.runner-option');
+  runnerOptions.forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      // If self-hosted, show not available warning and prevent selection
+      const type = e.currentTarget.getAttribute('data-runner');
+      if(type === 'self-hosted') {
+        showToast('Not available in demo instance. No unmanaged runners attached.');
+        return;
+      }
+      
+      runnerOptions.forEach(c => {
+        c.classList.remove('active');
+        const r = c.querySelector('input[type="radio"]');
+        if(r) r.checked = false;
+      });
+      e.currentTarget.classList.add('active');
+      const radio = e.currentTarget.querySelector('input[type="radio"]');
+      if(radio) radio.checked = true;
+    });
+  });
+});

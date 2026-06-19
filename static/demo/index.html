@@ -7,7 +7,7 @@
   <!-- Leaflet.js assets for OpenStreetMap integration -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/> <!-- pragma: allowlist secret -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> <!-- pragma: allowlist secret -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
   <link rel="icon" href="favicon.png">
 </head>
 <body>
@@ -1747,83 +1747,112 @@
               <div class="screen-header-btn" id="btn-header-conn-test"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><path d="M12 2v20M12 2a10 10 0 1 0 10 10"/></svg></div>
             </div>
 
-            <div class="screen-grid-2" style="grid-template-columns: 1fr 1fr;">
-              <!-- Left: Database Connections -->
-              <div class="detail-card" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
-                <div>
-                  <div class="status-section-title">INTEGRATION ENDPOINTS</div>
-                  <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
-
-                    <!-- DB 1 -->
-                    <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(0,0,0,0.15); border:1px solid var(--glass-white-05); border-radius:10px;">
-                      <div>
-                        <h4 style="font-size:0.85rem; font-weight:700; color:#fff;">Global Telemetry Data Lake</h4>
-                        <span style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted);">Host: iot.fleet.telemetry</span>
-                      </div>
-                      <span id="ping-db-snowflake" class="indicator-dot-green" style="width:8px; height:8px; border-radius:50%; background-color:var(--color-compliance); box-shadow:0 0 6px var(--color-compliance);"></span>
-                    </div>
-
-                    <!-- DB 2 -->
-                    <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(0,0,0,0.15); border:1px solid var(--glass-white-05); border-radius:10px;">
-                      <div>
-                        <h4 style="font-size:0.85rem; font-weight:700; color:#fff;">Warehouse Management System</h4>
-                        <span style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted);">Host: wms.logistics.net</span>
-                      </div>
-                      <span id="ping-db-databricks" class="indicator-dot-green" style="width:8px; height:8px; border-radius:50%; background-color:var(--color-compliance); box-shadow:0 0 6px var(--color-compliance);"></span>
-                    </div>
-
-                    <!-- DB 3 -->
-                    <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(0,0,0,0.15); border:1px solid var(--glass-white-05); border-radius:10px;">
-                      <div>
-                        <h4 style="font-size:0.85rem; font-weight:700; color:#fff;">Supplier ERP Hub</h4>
-                        <span style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted);">Host: erp.suppliers.internal</span>
-                      </div>
-                      <span id="ping-db-firebase" class="indicator-dot-green" style="width:8px; height:8px; border-radius:50%; background-color:var(--color-compliance); box-shadow:0 0 6px var(--color-compliance);"></span>
-                    </div>
-
-                  </div>
+            <!-- 3-Step Wizard Layout -->
+            <div id="runner-wizard-container" style="display:flex; flex-direction:column; height:100%;">
+              <!-- Wizard Header with Steps -->
+              <div style="padding:0 24px; margin-bottom:20px;">
+                <div style="color:var(--text-secondary); font-size:0.8rem; margin-bottom:12px;" id="wizard-step-desc">Step 1/3 - Select Source & Credentials</div>
+                <div style="display:flex; gap:8px;">
+                  <div id="step-bar-1" style="height:4px; flex:1; background:var(--technical-orange); border-radius:2px;"></div>
+                  <div id="step-bar-2" style="height:4px; flex:1; background:var(--surface-highlight); border-radius:2px;"></div>
+                  <div id="step-bar-3" style="height:4px; flex:1; background:var(--surface-highlight); border-radius:2px;"></div>
                 </div>
-                <button class="bottom-action-btn-primary" id="btn-ping-connections" style="margin-top:24px;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                  Test Secure Gateway Pings
-                </button>
               </div>
 
-              <!-- Right: Isolated runners -->
-              <div class="detail-card" style="display:flex; flex-direction:column; height:100%;">
-                <div class="status-section-title">ISOLATED RUNNER POOL</div>
-                <div style="display:flex; flex-direction:column; gap:14px; margin-top:14px; flex:1;">
+              <!-- Wizard Body -->
+              <div id="wizard-body" style="flex:1; overflow-y:auto; padding:0 24px;">
+                
+                <!-- STEP 1: Source Selection -->
+                <div id="wizard-step-1" class="wizard-step-content" style="display:block;">
+                  <input type="text" placeholder="Search sources (e.g. Snowflake)" style="width:100%; padding:12px 16px; border-radius:12px; border:none; background:var(--surface-elevated); color:#fff; margin-bottom:24px; outline:none; font-family:var(--font-sans);">
+                  
+                  <div class="source-carousel" style="display:flex; gap:16px; overflow-x:auto; padding-bottom:16px; margin-bottom:32px;">
+                    <div class="source-card active" data-source="Snowflake">Snowflake</div>
+                    <div class="source-card" data-source="Databricks">Databricks</div>
+                    <div class="source-card" data-source="PostgreSQL">PostgreSQL</div>
+                    <div class="source-card" data-source="Salesforce">Salesforce</div>
+                    <div class="source-card" data-source="Odoo">Odoo</div>
+                    <div class="source-card" data-source="Inventory">Inventory</div>
+                    <div class="source-card" data-source="OMS">OMS</div>
+                    <div class="source-card" data-source="WHS">WHS</div>
+                  </div>
 
-                  <!-- Runner 1 -->
-                  <div style="border:1px solid var(--glass-white-05); border-radius:10px; padding:12px; background:rgba(255,255,255,0.01);">
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                      <span style="font-size:0.8rem; font-weight:700; color:#fff;">Runner Instance: worker-pool-01</span>
-                      <span style="font-size:0.7rem; font-family:var(--font-mono); color:var(--color-compliance);">IDLE</span>
+                  <div id="form-snowflake" class="source-form" style="display:block;">
+                    <div class="form-group"><label>CONNECTION NAME</label><input type="text" value="My Snowflake DW"></div>
+                    <div style="display:flex; gap:16px;">
+                      <div class="form-group" style="flex:1;"><label>ACCOUNT</label><input type="text" value="xy12345"></div>
+                      <div class="form-group" style="flex:1;"><label>WAREHOUSE</label><input type="text" value="COMPUTE_WH"></div>
                     </div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-secondary);">
-                      <span>CPU Quota: 2.0 Cores</span>
-                      <span>Memory Limit: 4.0 GB</span>
+                    <div style="display:flex; gap:16px;">
+                      <div class="form-group" style="flex:1;"><label>USER</label><input type="text" value="ADMIN"></div>
+                      <div class="form-group" style="flex:1;"><label>PASSWORD / PAT</label><input type="password" value=""></div>
+                    </div>
+                    <div style="display:flex; gap:16px;">
+                      <div class="form-group" style="flex:1;"><label>DATABASE</label><input type="text" value="ANALYTICS"></div>
+                      <div class="form-group" style="flex:1;"><label>SCHEMA</label><input type="text" value="PUBLIC"></div>
                     </div>
                   </div>
 
-                  <!-- Runner 2 -->
-                  <div style="border:1px solid var(--glass-white-05); border-radius:10px; padding:12px; background:rgba(255,255,255,0.01);">
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                      <span style="font-size:0.8rem; font-weight:700; color:#fff;">Runner Instance: worker-pool-02</span>
-                      <span style="font-size:0.7rem; font-family:var(--font-mono); color:var(--color-compliance);">IDLE</span>
+                  <div id="form-generic" class="source-form" style="display:none;">
+                    <div class="form-group"><label>CONNECTION NAME</label><input type="text" value="My Database"></div>
+                    <div style="display:flex; gap:16px;">
+                      <div class="form-group" style="flex:1;"><label>USER</label><input type="text" value="admin"></div>
+                      <div class="form-group" style="flex:1;"><label>PASSWORD</label><input type="password" value=""></div>
                     </div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-secondary);">
-                      <span>CPU Quota: 4.0 Cores</span>
-                      <span>Memory Limit: 8.0 GB</span>
-                    </div>
+                    <div class="form-group"><label>HOST / ENDPOINT</label><input type="text" value="localhost:5432"></div>
                   </div>
-
                 </div>
 
-                <!-- Console feedback for pings -->
-                <pre id="ping-console-output" style="background-color:#000; border:1px solid var(--glass-white-05); border-radius:10px; padding:12px; font-family:var(--font-mono); font-size:0.65rem; color:#8ba84b; height:90px; overflow-y:auto; margin-top:14px; margin-bottom:0; white-space:pre-wrap; line-height:1.4;">Gateway diagnostic shell ready.</pre>
+                <!-- STEP 2: Compute Runner -->
+                <div id="wizard-step-2" class="wizard-step-content" style="display:none;">
+                  <h3 style="color:#fff; font-size:1.2rem; margin-bottom:8px;">Target Compute Runner</h3>
+                  <p style="color:var(--text-secondary); margin-bottom:24px;">Configure compute resources</p>
+                  
+                  <div class="runner-option active" data-runner="managed">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                      <div style="font-weight:700; color:#fff;">Runink Managed</div>
+                      <input type="radio" checked>
+                    </div>
+                    <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:12px;">The application will automatically provision and manage the compute resources for this connection.</p>
+                    <div style="display:flex; gap:8px;">
+                      <span class="tag-pill">Auto-scaling</span>
+                      <span class="tag-pill">Isolated VPC</span>
+                    </div>
+                  </div>
+
+                  <div class="runner-option" data-runner="self-hosted" style="margin-top:16px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                      <div style="font-weight:700; color:#fff;">Self-Hosted Runner</div>
+                      <input type="radio">
+                    </div>
+                    <p style="color:var(--text-secondary); font-size:0.85rem;">Connect your own Kubernetes cluster or VM instance. Requires manual setup.</p>
+                  </div>
+                </div>
+
+                <!-- STEP 3: Review -->
+                <div id="wizard-step-3" class="wizard-step-content" style="display:none;">
+                  <div style="background:var(--surface-elevated); padding:20px; border-radius:16px; border:1px solid var(--glass-white-05);">
+                    <h3 id="review-source-name" style="color:#fff; margin-bottom:16px;">Snowflake Connection</h3>
+                    <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:24px;">Read-only Access</p>
+                    <hr style="border-color:rgba(255,255,255,0.1); margin-bottom:24px;">
+                    <div id="review-details" style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                      <div><label style="color:var(--text-secondary); font-size:0.7rem;">ACCOUNT IDENTIFIER</label><div style="color:#fff;">xy12345.us-east-1</div></div>
+                      <div><label style="color:var(--text-secondary); font-size:0.7rem;">WAREHOUSE</label><div style="color:#fff;">COMPUTE_WH_XS</div></div>
+                    </div>
+                    <hr style="border-color:rgba(255,255,255,0.1); margin:24px 0;">
+                    <div><label style="color:var(--text-secondary); font-size:0.7rem;">COMPUTE RUNNER</label><div style="color:#fff;" id="review-runner-type">Runink Managed</div></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Wizard Footer -->
+              <div style="padding:20px 24px; border-top:1px solid var(--glass-white-05); display:flex; justify-content:space-between; align-items:center;">
+                <button id="btn-wizard-back" style="background:transparent; color:var(--text-secondary); border:none; cursor:pointer; display:none;">← Back</button>
+                <button id="btn-wizard-next" class="bottom-action-btn-primary" style="margin-left:auto; min-width:150px;">NEXT STEP →</button>
               </div>
             </div>
+
           </div>
 
           <!-- SPEECH COMMAND MIC OVERLAY -->

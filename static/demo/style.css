@@ -2641,3 +2641,81 @@ input:checked + .switch-slider:before {
   font-weight: 600;
   margin-top: 5px;
 }
+
+/* Wizard Styles */
+.source-card {
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-elevated);
+  border: 1px solid var(--glass-white-10);
+  border-radius: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+.source-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.source-card.active {
+  background: rgba(236, 91, 19, 0.1);
+  border: 2px solid var(--technical-orange);
+  color: #fff;
+  font-weight: 700;
+}
+.source-form .form-group {
+  margin-bottom: 20px;
+}
+.source-form label {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.source-form input {
+  width: 100%;
+  padding: 12px;
+  background: var(--surface-elevated);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-family: var(--font-sans);
+  outline: none;
+}
+.source-form input:focus {
+  background: rgba(255,255,255,0.1);
+}
+.runner-option {
+  padding: 20px;
+  background: var(--background-dark);
+  border: 1px solid var(--glass-white-10);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.runner-option.active {
+  background: var(--surface-elevated);
+  border: 1.5px solid var(--technical-orange);
+}
+.tag-pill {
+  padding: 6px 10px;
+  background: rgba(236, 91, 19, 0.1);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.tag-pill::before {
+  content: '⚡';
+  margin-right: 4px;
+  font-size: 0.7rem;
+}
