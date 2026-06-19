@@ -42,3 +42,7 @@
 ## 2026-05-27 - GEO Bullet Point Summaries
 **Learning:** Replacing generic narrative summaries with a structured '## Executive Summary: Key Takeaways' section containing high-density bullet points improves parsing by Generative Engine Overviews.
 **Action:** Use high-density bullet points under clear semantic headers to optimize core concepts for LLM extraction.
+## 2026-06-19 - Ad-hoc Script Cleanup and Lockfile Safety\n**Learning:** When using temporary Python scripts to modify project files, those scripts must be deleted before submission. Furthermore, running commands that install extra dependencies (like ) alters , which should not be committed unless the corresponding  is also updated intentionally.\n**Action:** Always clean up temporary working scripts () and restore lockfiles () if dependencies were added locally just to pass tests, before requesting a code review or submitting the PR.
+## 2026-06-19 - Ad-hoc Script Cleanup and Lockfile Safety
+**Learning:** When using temporary Python scripts to modify project files, those scripts must be deleted before submission. Furthermore, running commands that install extra dependencies alters pnpm-lock.yaml, which should not be committed unless the corresponding package.json is also updated intentionally.
+**Action:** Always clean up temporary working scripts and restore lockfiles if dependencies were added locally just to pass tests, before requesting a code review or submitting the PR.

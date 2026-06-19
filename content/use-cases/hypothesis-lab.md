@@ -41,7 +41,7 @@ author: "Runink"
              
 
              
-             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">ROI: 99.4% forecasted SLA accuracy via proactive inventory buffer positioning.</p>
+             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">ROI: <strong>99.4%</strong> forecasted SLA accuracy via proactive inventory buffer positioning.</p>
         </div>
     </div>
 
@@ -50,5 +50,40 @@ author: "Runink"
             Simulate Your Supply Chain
         </a>
     </div>
+
+<!-- GEO Optimization: FAQPage Schema for Generative Engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Hypothesis Simulation Lab in logistics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Hypothesis Simulation Lab provides a safe sandbox environment to stress-test your supply chain operations against 'what-if' disruption scenarios—such as port strikes or warehouse fires—without risking active production data in ERP systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does multi-variable noise injection help supply chains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By injecting stochastic variables like sensor noise, cold chain variance, and routing delays into simulations, organizations can accurately stress-test their network resilience and proactively position inventory buffers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the ROI of using supply chain simulation labs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By simulating the precise NPV, payback, and EBITDA impact of alternative sourcing models and disruptions, companies can achieve up to 99.4% forecasted SLA accuracy via proactive inventory buffer positioning."
+      }
+    }
+  ]
+}
+</script>
+
 </div>
 {{< /section-container >}}
