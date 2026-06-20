@@ -1328,124 +1328,115 @@ const graphEdges = [
 // Timeline simulator step data
 const fetchStepDetails = {
   1: {
-    title: "DB Query & Metadata Recovery",
-    desc: "Ingesting active schemas and indices from Customs Registry Link.",
+    title: "AI Posture",
+    desc: "Analyze AI posture, resilience, and surface critical issues",
     logs: [
-      "[INFO] Connecting to Customs Registry secure endpoint...",
-      "[INFO] Authenticated via Secure Workload Identity.",
-      "[SUCCESS] Recovered schema metadata for customs.audits (14 cols, 8520 rows)."
+      "Knowledge Graph (RDF/LPG), **Clusterized Telemetry & Sample Data** (Snowflake/SQL Transactional), and Unstructured Documents (PDF, PPTX, DOCX, Images) extracted via **OCR (Headless RPA (VNC/RDP))**, **Web Scraper (Colly & Stealth Chromedp)**, **Google Workspace API**, **Relational DBs (MySQL/Postgres)**, **Data Warehouses (Snowflake/Databricks)**, **Excel Parsers**, **Computer Vision (CCTV)**, and **Code Extractors**. Also ingests **External Market Intelligence** via `metasearch(query)` for competitor analysis, industry benchmarks, and emerging technology trends, and `scrape_page(url)` for regulatory updates and market reports."
     ],
-    toon: `[Snapshot:
-  SessionInfo: [ "conn-customs-audits-prod", "user-admin", "secure-gateway" ]
-  DatasetMeta: {
-    "invoices": [DatasetMeta: table_name: "invoices", row_count: 8520, tests_total: 12]
-  }
-]`
+    toon: `[Snapshot: Agent Configured]`
   },
   2: {
-    title: "Density-based Semantic Clustering",
-    desc: "Sorting raw transaction metadata histories into data domains.",
+    title: "Rules Recon",
+    desc: "Extract and structure Business Rules from analysis or documents",
     logs: [
-      "[INFO] Ingesting Customs Registry query history (30 days)...",
-      "[INFO] Calculating token distance matrix using BM25 semantic hybrid search...",
-      "[SUCCESS] Identified 2 discrete cluster domains (Silhouette: 0.89):",
-      "  -> Domain: 'Logistics_Customs'"
+      "Initializing agent...",
+      "Loading context...",
+      "Agent ready."
     ],
-    toon: `[ClusterRun:
-  Algorithm: "Density-based"
-  Metrics: {
-    Silhouette: 0.89,
-    Domains: [ "Logistics_Customs", "Procurement_POs" ]
-  }
-]`
+    toon: `[Snapshot: Agent Configured]`
   },
   3: {
-    title: "Algorithm Bound Selection",
-    desc: "Calculating operational boundaries for RAG window digestion.",
+    title: "Documentation",
+    desc: "Generate automated structured documents and customs declarations",
     logs: [
-      "[INFO] Running advanced chunking model on cargo invoice metrics...",
-      "[SUCCESS] Boundary parameters mapped with 91.2% confidence score:",
-      "  -> Limit: 'demurrage_fee > 5000'",
-      "  -> Limit: 'days_delayed > 3'"
+      "Execute actions using **Relational DBs (MySQL/Postgres)**, **Data Warehouses (Snowflake/Databricks)**, and **Code Extractors**.",
+      "ERP triggers (\"Ready for Dispatch\"), shipping manifests, commercial invoices, and regulatory tables."
     ],
-    toon: `[XGBBoundSelection:
-  TargetColumns: [ "demurrage_fee", "cargo_value" ]
-  Bounds: [ "demurrage_fee > 5000", "days_delayed > 3" ]
-  Confidence: 0.912
- ]`
+    toon: `[Snapshot: Agent Configured]`
   },
   4: {
-    title: "Knowledge Graph Engineering",
-    desc: "Committing semantic edges and constraints to local Comet Vector DB.",
+    title: "Compliance",
+    desc: "Act as a Paralegal/Compliance Officer to monitor system compliance",
     logs: [
-      "[INFO] Creating Graph Node [Invoice_Clearance]...",
-      "[SUCCESS] Stored relationship: [Invoice_Clearance] - (Exceeds_Demurrage_Limit) -> [SOP_Section_4.2]",
-      "[INFO] Indexing 4 new vectors in Comet local store."
+      "Initializing agent...",
+      "Loading context...",
+      "Agent ready."
     ],
-    toon: `[KnowledgeGraphNode:
-  Domain: "Finance"
-  Node: "Invoice_Clearance"
-  Edge: "Exceeds_Demurrage_Limit"
-  Reference: "SOP_Section_4.2"
-]`
+    toon: `[Snapshot: Agent Configured]`
   },
   5: {
-    title: "Time-series modeling Trend Decomposition",
-    desc: "Isolating seasonal trends and transactional anomalies.",
+    title: "Finance",
+    desc: "Act as a CFO/Financial Controller to automate categorization and detect anomalies",
     logs: [
-      "[INFO] Running Time-series modeling additive seasonality decomposition...",
-      "[WARN] Anomaly detected: +14.2% demurrage fee variance spike in carrier billing cycles."
+      "Initializing agent...",
+      "Loading context...",
+      "Agent ready."
     ],
-    toon: `[AnomalyForecast:
-  Model: "Prophet_Additive_Seasonality"
-  Anomalies: [
-    { Date: "2026-06-03", Variance: "+14.2% Volatility", Severity: "High" }
-  ]
-]`
+    toon: `[Snapshot: Agent Configured]`
   },
   6: {
-    title: "Secure API Telemetry & PII Masking Protocol",
-    desc: "Subscribing to active IoT streams and applying real-time data masking for compliance.",
+    title: "Route Twin",
+    desc: "Generate automated routing and logistics recommendations",
     logs: [
-      "[INFO] Connecting to Go Secure API Telemetry stream...",
-      "[INFO] Processing continuous weighbridge and refrigeration data...",
-      "[WARN] PII Exposure Risk Detected in driver payload (SSN included).",
-      "[SUCCESS] PII Data Masking applied. Route data cleared for orchestration."
+      "Generate route plans, estimate cost savings, analyze distance and duration. Use `metasearch(\"freight rates [origin] to [destination] [mode]\")` to validate rates against market spot prices. Use `scrape_page(carrier_url)` to check real-time carrier schedules and availability.",
+      "Origin, Destination, Preferences (e.g., eco-friendly, fast, cheapest), cargo type, weight, volume, delivery deadline."
     ],
-    toon: `[TelemetryStream:
-  Protocol: "gRPC_Go_Backend"
-  Masking: { target: "Driver_PII", action: "Redacted_SSN_Phone" }
-  StreamStatus: "Active"
-]`
+    toon: `[Snapshot: Agent Configured]`
   },
   7: {
-    title: "Specialist Persona Swarm (Go Orchestrator)",
-    desc: "Triggering Data Posture, Fulfilment, and Telemetry Agents via Secure API.",
+    title: "Predictive Maintenance",
+    desc: "Generate automated predictive maintenance, anomaly detection, and equipment lifecycle actions",
     logs: [
-      "[INFO] Go orchestrator spawning isolated specialist agents in cgroups...",
-      "[INFO] Task A: Telemetry Agent evaluating HazMat constraints...",
-      "[INFO] Task B: Fulfilment Agent evaluating Reverse Logistics flow...",
-      "[SUCCESS] Data Posture Module report: ISO 42001 Compliance Verified."
+      "Execute actions using **Headless RPA (VNC/RDP)**, **Metasearch (SearXNG/MCP)**, **Page Scraping (Colly & Stealth Chromedp)**, **Google Workspace API**, **Relational DBs (MySQL/Postgres)**, **Data Warehouses (Snowflake/Databricks)**, **Excel Parsers**, **Computer Vision (CCTV/Surveillance — unified CCTVExtractor pipeline for equipment inspection and AI-based fault diagnosis)**, and **Code Extractors**.",
+      "Knowledge Graph with telemetry data, maintenance logs, failure rates, sensor readings, production schedules, fleet GPS/telematics data, cold chain IoT sensor data, warehouse equipment health metrics."
     ],
-    toon: `[PersonaSwarmResult:
-  DataMaturity: { score: 92, standard: "ISO 42001" }
-  RulesRecon: { findings_count: 3, confidence: 0.948 }
-]`
+    toon: `[Snapshot: Agent Configured]`
   },
   8: {
-    title: "Actionable Twin Synthesis & UI Streaming",
-    desc: "Streaming intelligent actions directly to SCMDigitalTwinService.",
+    title: "Fulfilment",
+    desc: "Generate automated provisioning, sourcing, and logistics actions",
     logs: [
-      "[INFO] Compiling specialist verdicts in TOON format...",
-      "[SUCCESS] Queued auto-refund BOL Claims short-pay via Secure API.",
-      "[SUCCESS] Queued Telemetry auto-lock for HazMat proximity.",
-      "[SUCCESS] Ingestion pipeline execution SUCCESS."
+      "Execute actions using **Headless RPA (VNC/RDP)**, **Metasearch (SearXNG/MCP)**, **Page Scraping (Colly & Stealth Chromedp)**, **Google Workspace API**, **Relational DBs (MySQL/Postgres)**, **Data Warehouses (Snowflake/Databricks)**, **Excel Parsers**, **Computer Vision (CCTV)**, and **Code Extractors**.",
+      "Knowledge Graph with inventory levels, supplier data, logistics routes, demand signals, financial metrics."
     ],
-    toon: `[ActionTwinQueue:
-  QueuedAction: { action_id: 1, type: "CLAIMS_RECOVERY", protocol: "Secure API" }
-  QueuedAction: { action_id: 3, type: "HAZMAT_LOCK", target: "Crane_04" }
-]`
-  }
+    toon: `[Snapshot: Agent Configured]`
+  },
+  9: {
+    title: "Claims",
+    desc: "Generate automated claims, audits, and financial recovery actions",
+    logs: [
+      "Execute actions using **Headless RPA (VNC/RDP)**, **Metasearch (SearXNG/MCP)**, **Page Scraping (Colly & Stealth Chromedp)**, **Google Workspace API**, **Relational DBs (MySQL/Postgres)**, **Data Warehouses (Snowflake/Databricks)**, **Excel Parsers**, **Computer Vision (CCTV/Surveillance — unified CCTVExtractor pipeline for damage evidence photography and structural grading)**, and **Code Extractors**.",
+      "Knowledge Graph with order data, invoices, shipping events, SLA violations, quality metrics, supplier data."
+    ],
+    toon: `[Snapshot: Agent Configured]`
+  },
+  10: {
+    title: "Reverse Logistics",
+    desc: "Generate automated reverse logistics, returns, and circular economy actions",
+    logs: [
+      "Execute actions using **Headless RPA (VNC/RDP)**, **Metasearch (SearXNG/MCP)**, **Page Scraping (Colly & Stealth Chromedp)**, **Google Workspace API**, **Relational DBs (MySQL/Postgres)**, **Data Warehouses (Snowflake/Databricks)**, **Excel Parsers**, **Computer Vision (CCTV/Surveillance — unified CCTVExtractor pipeline for return item scanning and condition grading)**, and **Code Extractors**.",
+      "Knowledge Graph with return rates, warranty claims, remanufacturing capacity, secondary market values, sustainability metrics, product lifecycle data, recycling partner capabilities, customer return feedback."
+    ],
+    toon: `[Snapshot: Agent Configured]`
+  },
+  11: {
+    title: "Hypothesis",
+    desc: "Translate Knowledge Graph into business decision scenarios",
+    logs: [
+      ""
+    ],
+    toon: `[Snapshot: Agent Configured]`
+  },
+  12: {
+    title: "Actionable Twins",
+    desc: "Actionable Twin — Continuous Forecasting, Defensible Execution via Flutter & Go gRPC microservices",
+    logs: [
+      "Initializing agent...",
+      "Loading context...",
+      "Agent ready."
+    ],
+    toon: `[Snapshot: Agent Configured]`
+  },
 };
 
 // Initialize listeners on DOM load
@@ -3058,7 +3049,7 @@ function triggerFetchProcessingSimulator() {
 
 function runNextFetchStepSimulator() {
   if (!fetchActive) return;
-  if (fetchStep > 8) {
+  if (fetchStep > 12) {
     fetchActive = false;
     showToast("Ingestion run complete. Swarm compiled and pushed to Twin Cockpit.", true);
     const historyList = document.getElementById("execution-history-list");
@@ -7508,118 +7499,82 @@ function closeDetailsModal() {
 
 REMEDIATION_DETAILS['hist-1'] = {
   title: 'Execution Trace (hist-1)',
-  content1: `[AI Posture] Scanning model maturity...
-[AI Posture] Drift detected: 0.02%
-[AI Posture] Status: STABLE`,
-  content2: `[Rules Recon] Validating BOL AL-773410...
-[Rules Recon] Policy matched.
-[Rules Recon] Status: PASS`,
-  content3: `[Documentation] Generating manifest draft.
-[Documentation] OCR Confidence: 99.8%
-[Documentation] Archiving...`,
-  content4: `[Compliance] Auditing regulatory guidelines...
-[Compliance] Hazmat check: CLEAR.
-[Compliance] Signed off.`,
-  content5: `[Finance] Reconciling invoice #4492...
-[Finance] Tariff applied: v4.02
-[Finance] Discrepancy: $0.00`,
-  content6: `[Route Twin] Optimizing path 14-B...
-[Route Twin] Traffic avoidance applied.
-[Route Twin] ETA revised: +12m`,
-  content7: `[Pred. Maint.] Scanning telemetry data...
-[Pred. Maint.] Engine Temp: Nominal.
-[Pred. Maint.] No action required.`,
-  content8: `[Fulfilment] Checking dock availability.
-[Fulfilment] Dock 4 reserved.
-[Fulfilment] Allocation complete.`,
-  content9: `[Claims] Reviewing recovery opportunities.
-[Claims] No claims found for voyage.
-[Claims] Cleared.`,
-  content10: `[Rev. Logistics] Checking return queues...
-[Rev. Logistics] 2 pallets assigned.
-[Rev. Logistics] Routing to Depot A.`,
-  content11: `[Hypothesis] Simulating delay impact.
-[Hypothesis] Margin risk: <0.1%
-[Hypothesis] Simulation finished.`,
-  content12: `[Actionable Twin] Aggregating swarm data...
-[Actionable Twin] Workflow committed.
-[Actionable Twin] Success.`
+  content1: `[AI Posture] Configuration loaded.
+[AI Posture] Purpose: Analyze AI posture, resilience, and surface critical issues`,
+  content2: `[Rules Recon] Configuration loaded.
+[Rules Recon] Purpose: Extract and structure Business Rules from analysis or documents`,
+  content3: `[Documentation] Configuration loaded.
+[Documentation] Purpose: Generate automated structured documents and customs declarations`,
+  content4: `[Compliance] Configuration loaded.
+[Compliance] Purpose: Act as a Paralegal/Compliance Officer to monitor system compliance`,
+  content5: `[Finance] Configuration loaded.
+[Finance] Purpose: Act as a CFO/Financial Controller to automate categorization and detect anomalies`,
+  content6: `[Route Twin] Configuration loaded.
+[Route Twin] Purpose: Generate automated routing and logistics recommendations`,
+  content7: `[Predictive Maintenance] Configuration loaded.
+[Predictive Maintenance] Purpose: Generate automated predictive maintenance, anomaly detection, and equipment lifecycle actions`,
+  content8: `[Fulfilment] Configuration loaded.
+[Fulfilment] Purpose: Generate automated provisioning, sourcing, and logistics actions`,
+  content9: `[Claims] Configuration loaded.
+[Claims] Purpose: Generate automated claims, audits, and financial recovery actions`,
+  content10: `[Reverse Logistics] Configuration loaded.
+[Reverse Logistics] Purpose: Generate automated reverse logistics, returns, and circular economy actions`,
+  content11: `[Hypothesis] Configuration loaded.
+[Hypothesis] Purpose: Translate Knowledge Graph into business decision scenarios`,
+  content12: `[Actionable Twins] Configuration loaded.
+[Actionable Twins] Purpose: Actionable Twin — Continuous Forecasting, Defensible Execution via Flutter & Go gRPC microservices`
 };
 REMEDIATION_DETAILS['hist-2'] = {
   title: 'Execution Trace (hist-2)',
-  content1: `[AI Posture] Scanning model maturity...
-[AI Posture] Drift detected: 0.02%
-[AI Posture] Status: STABLE`,
-  content2: `[Rules Recon] Validating BOL AL-773410...
-[Rules Recon] Policy matched.
-[Rules Recon] Status: PASS`,
-  content3: `[Documentation] Generating manifest draft.
-[Documentation] OCR Confidence: 99.8%
-[Documentation] Archiving...`,
-  content4: `[Compliance] Auditing regulatory guidelines...
-[Compliance] Hazmat check: CLEAR.
-[Compliance] Signed off.`,
-  content5: `[Finance] Reconciling invoice #4492...
-[Finance] Tariff applied: v4.02
-[Finance] Discrepancy: $0.00`,
-  content6: `[Route Twin] Optimizing path 14-B...
-[Route Twin] Traffic avoidance applied.
-[Route Twin] ETA revised: +12m`,
-  content7: `[Pred. Maint.] Scanning telemetry data...
-[Pred. Maint.] Engine Temp: Nominal.
-[Pred. Maint.] No action required.`,
-  content8: `[Fulfilment] Checking dock availability.
-[Fulfilment] Dock 4 reserved.
-[Fulfilment] Allocation complete.`,
-  content9: `[Claims] Reviewing recovery opportunities.
-[Claims] No claims found for voyage.
-[Claims] Cleared.`,
-  content10: `[Rev. Logistics] Checking return queues...
-[Rev. Logistics] 2 pallets assigned.
-[Rev. Logistics] Routing to Depot A.`,
-  content11: `[Hypothesis] Simulating delay impact.
-[Hypothesis] Margin risk: <0.1%
-[Hypothesis] Simulation finished.`,
-  content12: `[Actionable Twin] Aggregating swarm data...
-[Actionable Twin] Workflow committed.
-[Actionable Twin] Success.`
+  content1: `[AI Posture] Configuration loaded.
+[AI Posture] Purpose: Analyze AI posture, resilience, and surface critical issues`,
+  content2: `[Rules Recon] Configuration loaded.
+[Rules Recon] Purpose: Extract and structure Business Rules from analysis or documents`,
+  content3: `[Documentation] Configuration loaded.
+[Documentation] Purpose: Generate automated structured documents and customs declarations`,
+  content4: `[Compliance] Configuration loaded.
+[Compliance] Purpose: Act as a Paralegal/Compliance Officer to monitor system compliance`,
+  content5: `[Finance] Configuration loaded.
+[Finance] Purpose: Act as a CFO/Financial Controller to automate categorization and detect anomalies`,
+  content6: `[Route Twin] Configuration loaded.
+[Route Twin] Purpose: Generate automated routing and logistics recommendations`,
+  content7: `[Predictive Maintenance] Configuration loaded.
+[Predictive Maintenance] Purpose: Generate automated predictive maintenance, anomaly detection, and equipment lifecycle actions`,
+  content8: `[Fulfilment] Configuration loaded.
+[Fulfilment] Purpose: Generate automated provisioning, sourcing, and logistics actions`,
+  content9: `[Claims] Configuration loaded.
+[Claims] Purpose: Generate automated claims, audits, and financial recovery actions`,
+  content10: `[Reverse Logistics] Configuration loaded.
+[Reverse Logistics] Purpose: Generate automated reverse logistics, returns, and circular economy actions`,
+  content11: `[Hypothesis] Configuration loaded.
+[Hypothesis] Purpose: Translate Knowledge Graph into business decision scenarios`,
+  content12: `[Actionable Twins] Configuration loaded.
+[Actionable Twins] Purpose: Actionable Twin — Continuous Forecasting, Defensible Execution via Flutter & Go gRPC microservices`
 };
 REMEDIATION_DETAILS['hist-3'] = {
   title: 'Execution Trace (hist-3)',
-  content1: `[AI Posture] Scanning model maturity...
-[AI Posture] Drift detected: 0.02%
-[AI Posture] Status: STABLE`,
-  content2: `[Rules Recon] Validating BOL AL-773410...
-[Rules Recon] Policy matched.
-[Rules Recon] Status: PASS`,
-  content3: `[Documentation] Generating manifest draft.
-[Documentation] OCR Confidence: 99.8%
-[Documentation] Archiving...`,
-  content4: `[Compliance] Auditing regulatory guidelines...
-[Compliance] Hazmat check: CLEAR.
-[Compliance] Signed off.`,
-  content5: `[Finance] Reconciling invoice #4492...
-[Finance] Tariff applied: v4.02
-[Finance] Discrepancy: $0.00`,
-  content6: `[Route Twin] Optimizing path 14-B...
-[Route Twin] Traffic avoidance applied.
-[Route Twin] ETA revised: +12m`,
-  content7: `[Pred. Maint.] Scanning telemetry data...
-[Pred. Maint.] Engine Temp: Nominal.
-[Pred. Maint.] No action required.`,
-  content8: `[Fulfilment] Checking dock availability.
-[Fulfilment] Dock 4 reserved.
-[Fulfilment] Allocation complete.`,
-  content9: `[Claims] Reviewing recovery opportunities.
-[Claims] No claims found for voyage.
-[Claims] Cleared.`,
-  content10: `[Rev. Logistics] Checking return queues...
-[Rev. Logistics] 2 pallets assigned.
-[Rev. Logistics] Routing to Depot A.`,
-  content11: `[Hypothesis] Simulating delay impact.
-[Hypothesis] Margin risk: <0.1%
-[Hypothesis] Simulation finished.`,
-  content12: `[Actionable Twin] Aggregating swarm data...
-[Actionable Twin] Workflow committed.
-[Actionable Twin] Success.`
+  content1: `[AI Posture] Configuration loaded.
+[AI Posture] Purpose: Analyze AI posture, resilience, and surface critical issues`,
+  content2: `[Rules Recon] Configuration loaded.
+[Rules Recon] Purpose: Extract and structure Business Rules from analysis or documents`,
+  content3: `[Documentation] Configuration loaded.
+[Documentation] Purpose: Generate automated structured documents and customs declarations`,
+  content4: `[Compliance] Configuration loaded.
+[Compliance] Purpose: Act as a Paralegal/Compliance Officer to monitor system compliance`,
+  content5: `[Finance] Configuration loaded.
+[Finance] Purpose: Act as a CFO/Financial Controller to automate categorization and detect anomalies`,
+  content6: `[Route Twin] Configuration loaded.
+[Route Twin] Purpose: Generate automated routing and logistics recommendations`,
+  content7: `[Predictive Maintenance] Configuration loaded.
+[Predictive Maintenance] Purpose: Generate automated predictive maintenance, anomaly detection, and equipment lifecycle actions`,
+  content8: `[Fulfilment] Configuration loaded.
+[Fulfilment] Purpose: Generate automated provisioning, sourcing, and logistics actions`,
+  content9: `[Claims] Configuration loaded.
+[Claims] Purpose: Generate automated claims, audits, and financial recovery actions`,
+  content10: `[Reverse Logistics] Configuration loaded.
+[Reverse Logistics] Purpose: Generate automated reverse logistics, returns, and circular economy actions`,
+  content11: `[Hypothesis] Configuration loaded.
+[Hypothesis] Purpose: Translate Knowledge Graph into business decision scenarios`,
+  content12: `[Actionable Twins] Configuration loaded.
+[Actionable Twins] Purpose: Actionable Twin — Continuous Forecasting, Defensible Execution via Flutter & Go gRPC microservices`
 };

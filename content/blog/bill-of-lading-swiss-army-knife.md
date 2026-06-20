@@ -100,7 +100,7 @@ The Bill of Lading serves as the immutable foundation of maritime reliability by
 
 The Bill of Lading remains the bedrock of maritime law because it standardizes trust between strangers. While the physical document has ruled for centuries, modern technology is finally addressing its historical friction. 
 
-The **Runink Analytics Companion** represents the future of this evolution. By unifying fragmented data and providing centralized visibility, Runink offers the control that the traditional "Hidden Rulebook" often obscures. However, while we solve the visibility problem, the legal pillars of the BoL—the Receipt, the Contract, and the Title—remain the essential foundation of the global supply chain.
+The **Runink FACE** represents the future of this evolution. By unifying fragmented data and providing centralized visibility, Runink offers the control that the traditional "Hidden Rulebook" often obscures. However, while we solve the visibility problem, the legal pillars of the BoL—the Receipt, the Contract, and the Title—remain the essential foundation of the global supply chain.
 
 *Ready to modernize your documentation process? [Book a consultation](/contact) today.*
 

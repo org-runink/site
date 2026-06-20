@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Runink Companion - Interactive Product Mockup & Presentation</title>
+  <title>Runink FACE - Interactive Product Mockup & Presentation</title>
   <!-- Leaflet.js assets for OpenStreetMap integration -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/> <!-- pragma: allowlist secret -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> <!-- pragma: allowlist secret -->
@@ -87,11 +87,15 @@
           <span class="screen-pill-status"></span>
         </div>
         <div class="screen-pill" data-screen="rules-recon">
-          <span>Rules Recon</span>
+          <span data-translate="nav_rules">Rules Recon</span>
+          <span class="screen-pill-status"></span>
+        </div>
+        <div class="screen-pill" data-screen="maturity">
+          <span data-translate="nav_maturity">Maturity Center Screen</span>
           <span class="screen-pill-status"></span>
         </div>
         <div class="screen-pill" data-screen="hypothesis-lab">
-          <span>Hypothesis Lab</span>
+          <span data-translate="nav_hypothesis">Hypothesis Lab</span>
           <span class="screen-pill-status"></span>
         </div>
         <div class="screen-pill" data-screen="profile">
@@ -145,7 +149,7 @@
           <!-- SCREEN 1: Action Feed / Actionable Twin Screen (twins_screen.dart) -->
           <div id="screen-twins" class="screen-view active">
             <div class="screen-header-bar">
-              <div class="screen-header-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
+              <!-- Left circle removed as requested -->
               <div class="screen-header-title-wrapper">
                 <div class="screen-header-subtitle">
                   <span class="pulse-dot-red"></span> <span data-translate="subtitle_twin">ACTION FEED</span>
@@ -328,7 +332,7 @@
           <!-- SCREEN 2: Decision Artifact (decision_artifact_screen.dart) -->
           <div id="screen-artifact" class="screen-view">
             <div class="screen-header-bar">
-              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+              
               <div class="screen-header-title-wrapper">
                 <div class="screen-header-subtitle" data-translate="subtitle_artifact">
                   DECISION ARTIFACT #8402
@@ -462,7 +466,7 @@
 
           <div id="screen-remediation-compliance" class="screen-view">
             <div class="screen-header-bar">
-              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+              
               <div class="screen-header-title-wrapper">
                 <div class="screen-header-subtitle">
                   SECURITY REMEDIATION WORKFLOW
@@ -596,7 +600,7 @@ ADD MASKING POLICY pii_mask;</div>
 <!-- SCREEN: Operations Remediation (Fleet Telemetry Workflow) -->
           <div id="screen-remediation-operations" class="screen-view">
             <div class="screen-header-bar">
-              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+              
               <div class="screen-header-title-wrapper">
                 <div class="screen-header-subtitle">
                   FLEET TELEMETRY ANOMALY DETECTED
@@ -731,7 +735,7 @@ ADD MASKING POLICY pii_mask;</div>
 <!-- SCREEN: Finance Remediation (Auto-Claims BOL Workflow) -->
           <div id="screen-remediation-finance" class="screen-view">
             <div class="screen-header-bar">
-              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+              
               <div class="screen-header-title-wrapper">
                 <div class="screen-header-subtitle">
                   AUTO-CLAIMS BOL WORKFLOW
@@ -961,7 +965,7 @@ ADD MASKING POLICY pii_mask;</div>
                   </div>
 
                   <!-- Multi-column logs -->
-                                <div style="padding: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; overflow-y: auto; flex: 1; align-content: start;">
+                                <div style="padding: 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; overflow-y: auto; flex: 1; align-content: start;">
                   <!-- AI Posture Agent -->
                   <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; display:flex; flex-direction:column; height:150px;">
                     <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:700; margin-bottom:8px; text-transform:uppercase; display:flex; align-items:center; gap:6px;">
@@ -1348,7 +1352,7 @@ ADD MASKING POLICY pii_mask;</div>
           <!-- SCREEN 6: User Profile & Billing CU -->
           <div id="screen-profile" class="screen-view">
             <div class="screen-header-bar">
-              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+              
               <div class="screen-header-title-wrapper">
                 <div class="screen-header-subtitle" data-translate="subtitle_profile">SYSTEM DISPATCH PROFILE</div>
                 <h2 class="screen-header-title" data-translate="title_profile">Identity & <span>Logistics Quota</span></h2>
@@ -1505,7 +1509,7 @@ ADD MASKING POLICY pii_mask;</div>
           <!-- SCREEN 7: Rules Recon -->
           <div id="screen-rules-recon" class="screen-view">
             <div class="screen-header-bar">
-              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+              
               <div class="screen-header-title-wrapper" style="display:flex; align-items:center; gap:12px;">
                 <div style="padding: 8px; background-color: rgba(236,91,19,0.1); border-radius: 8px;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l10 18H2z"/></svg>
@@ -1620,6 +1624,20 @@ ADD MASKING POLICY pii_mask;</div>
                 </div>
               </div>
 
+              <!-- Add New Rule Entry -->
+              <div class="detail-card" style="margin-top:24px; margin-bottom:24px; display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <div style="padding:8px; background:var(--surface-highlight); border-radius:8px;">
+                    <svg width="16" height="16" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                  </div>
+                  <label style="font-size:0.65rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px;" data-translate="add_custom_rule_label">Or Create New Business Rule</label>
+                </div>
+                <div style="display:flex; gap:8px;">
+                  <input type="text" id="input-new-rule-name" placeholder="e.g. Rule #18: Fuel Cost Cap" style="flex:1; background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:12px 16px; border-radius:8px; font-size:0.8rem; outline:none; transition:var(--transition-fast);" onfocus="this.style.borderColor='var(--technical-orange)'" onblur="this.style.borderColor='var(--glass-white-05)'">
+                  <button type="button" id="btn-add-rule-shortcut" style="background:var(--technical-orange); border:none; color:#fff; padding:12px 24px; border-radius:8px; font-size:0.8rem; font-weight:700; cursor:pointer;" onclick="showToast('Custom rule submitted for analysis.')">Add</button>
+                </div>
+              </div>
+
               <!-- Filters and Rules List to match flutter -->
               <div style="display:flex; gap:8px; margin-top:0px;">
                 <div style="padding: 8px 20px; border-radius: 20px; background-color: var(--accent-orange-light); color: #fff; font-weight: bold; font-size: 0.75rem; cursor: pointer;">All</div>
@@ -1673,90 +1691,13 @@ ADD MASKING POLICY pii_mask;</div>
                   </div>
                 </div>
               </div>
-
-              <!-- Document-Based Audit Reasoning Panel -->
-              <div class="detail-card" style="margin-top: 24px; display: flex; flex-direction: column; gap: 20px;">
-                <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:12px;">
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <svg width="20" height="20" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    <span style="font-size:0.85rem; font-weight:700; color:#fff; letter-spacing:1px;" data-translate="doc_reasoning_title">DOCUMENT-BASED AUDIT REASONING</span>
-                  </div>
-                  <span id="lbl-engine-status" style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-secondary);" data-translate="engine_status">Forensic Judge Engine: Ready</span>
-                </div>
-
-                <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.5;" data-translate="doc_reasoning_desc">
-                  Compare physical documents (manifests, invoices, source dumps) against active database constraints and evaluate compliance conditions.
-                </p>
-
-                <div class="screen-grid-2" style="grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-                  <!-- Left inputs select -->
-                  <div style="display:flex; flex-direction:column; gap:16px;">
-                    <div>
-                      <label style="display:block; font-size:0.7rem; font-weight:700; color:var(--text-secondary); margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;" data-translate="select_doc_label">Select Source Document</label>
-                      <select id="select-audit-doc" style="width:100%; background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:10px; border-radius:8px; font-family:var(--font-sans); outline:none; font-size:0.8rem;">
-                        <option value="bol_manifest.png" selected data-translate="doc_bol">📄 Bill of Lading Cargo Manifest #FL309</option>
-                        <option value="customs_invoice.png" data-translate="doc_invoice">📄 HS Customs Demurrage Invoice #INV-908B</option>
-                        <option value="pii_leakage.png" data-translate="doc_pii">📄 Vehicle Diagnostic OBD-II Dump</option>
-                        <option value="cold_chain_log.png" data-translate="doc_cold">📄 Cold Chain Telemetry Ingress Log #CC-204</option>
-                        <option value="sla_ledger.png" data-translate="doc_sla">📄 Supplier SLA Delivery Ledger #SLA-881</option>
-                        <option value="cert_audit.png" data-translate="doc_cert">📄 Driver Route Time Logs #RT-509</option>
-                        <option value="data_masking.py" data-translate="doc_masking_py">🐍 Python Vibration ML: sensor_ml.py</option>
-                        <option value="calculate_demurrage.sql" data-translate="doc_demurrage_sql">💾 SQL Calculation: calculate_demurrage.sql</option>
-                        <option value="carrier_tariffs.csv" data-translate="doc_tariffs_csv">📊 Tariff Table: carrier_tariffs.csv</option>
-                        <option value="route_manifest.json" data-translate="doc_route_json">📋 Route JSON: route_manifest.json</option>
-                        <option value="temperature_control.py" data-translate="doc_temp_py">🐍 Python Temp Checker: temperature_control.py</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label style="display:block; font-size:0.7rem; font-weight:700; color:var(--text-secondary); margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;" data-translate="select_rule_label">Select Validation Rule</label>
-                      <select id="select-audit-rule" style="width:100%; background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:10px; border-radius:8px; font-family:var(--font-sans); outline:none; font-size:0.8rem;">
-                        <option value="rule_weight" selected data-translate="rule_weight_opt">Rule #4: Weight Discrepancy Margin</option>
-                        <option value="rule_demurrage" data-translate="rule_demurrage_opt">Rule #12: Customs Demurrage Cap</option>
-                        <option value="rule_pii" data-translate="rule_pii_opt">Rule #7: Critical Vibration Threshold Policy</option>
-                        <option value="rule_temp" data-translate="rule_temp_opt">Rule #9: Temperature Threshold Policy</option>
-                        <option value="rule_sla" data-translate="rule_sla_opt">Rule #15: Supplier SLA Timeframe</option>
-                        <option value="rule_cert" data-translate="rule_cert_opt">Rule #2: Security Key Expiration Check</option>
-                      </select>
-                    </div>
-
-                    <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-white-05); border-radius:8px; padding:12px; display:flex; flex-direction:column; gap:8px;">
-                      <label style="display:block; font-size:0.65rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px;" data-translate="add_custom_rule_label">Or Create New Business Rule</label>
-                      <div style="display:flex; gap:8px;">
-                        <input type="text" id="input-new-rule-name" placeholder="e.g. Rule #18: Fuel Cost Cap" style="flex:1; background:rgba(0,0,0,0.5); color:#fff; border:1px solid var(--glass-white-05); padding:8px 12px; border-radius:6px; font-size:0.75rem; outline:none;">
-                        <button type="button" id="btn-add-rule-shortcut" style="background:var(--accent-orange-muted); border:1px solid var(--accent-orange-light); color:#fff; padding:8px 12px; border-radius:6px; font-size:0.75rem; font-weight:700; cursor:pointer;" onclick="addNewCustomValidationRule()">Add</button>
-                      </div>
-                    </div>
-
-                    <button class="bottom-action-btn-primary" id="btn-run-doc-audit" style="background-color:var(--technical-orange); box-shadow:0 4px 15px rgba(236,91,19,0.2); margin-top:8px; width:100%; cursor:pointer;" data-translate="btn_run_audit">
-                      Execute Forensic Audit
-                    </button>
-                    <button class="bottom-action-btn-primary" id="btn-send-to-lab" style="background-color:#8b5cf6; box-shadow:0 4px 15px rgba(139,92,246,0.2); margin-top:8px; width:100%; cursor:pointer;" data-translate="btn_send_to_lab" onclick="sendRuleToHypothesisLab()">
-                      Send to Lab (Shadow Simulation)
-                    </button>
-                  </div>
-
-                  <!-- Right log output / status console -->
-                  <div style="display:flex; flex-direction:column; gap:12px;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                      <span style="font-size:0.7rem; font-weight:700; color:var(--text-secondary); letter-spacing:1px;" data-translate="audit_terminal">AUDIT REASONING TERMINAL</span>
-                      <div id="audit-spinner" style="display:none; width:12px; height:12px; border:2px solid var(--accent-orange-light); border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div>
-                    </div>
-                    <pre id="audit-reasoning-log" style="background-color:#000; border:1px solid var(--glass-white-05); border-radius:8px; padding:12px; font-family:var(--font-mono); font-size:0.7rem; color:#69f0ae; height: 160px; overflow-y:auto; white-space:pre-wrap; margin:0;">Awaiting reasoning execution...</pre>
-                  </div>
-                </div>
-
-                <!-- Verdict Box (displays outcome) -->
-                <div id="audit-verdict-box" style="display:none; margin-top:8px; padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.06); background:rgba(0,0,0,0.3); transition:all 0.3s ease;">
-                </div>
-              </div>
             </div>
           </div>
 
           <!-- SCREEN 8: Hypothesis Lab -->
           <div id="screen-hypothesis-lab" class="screen-view">
             <div class="screen-header-bar">
-              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+              
               <div class="screen-header-title-wrapper">
                 <div class="screen-header-subtitle" data-translate="subtitle_hypothesis">PREDICTIVE STRESS-TESTING</div>
                 <h2 class="screen-header-title" data-translate="title_hypothesis">Hypothesis <span>Lab</span></h2>
@@ -2183,7 +2124,7 @@ ADD MASKING POLICY pii_mask;</div>
           <!-- SCREEN 9: Runner & Connection Configurations -->
           <div id="screen-runner-conn" class="screen-view">
             <div class="screen-header-bar">
-              <div class="screen-header-btn back-to-twins"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+              
               <div class="screen-header-title-wrapper">
                 <div class="screen-header-subtitle" data-translate="subtitle_runner">GATEWAYS & CONTAINERS</div>
                 <h2 class="screen-header-title" data-translate="title_runner">Runner & <span>Connections</span></h2>
@@ -2879,7 +2820,7 @@ ADD MASKING POLICY pii_mask;</div>
           </div>
         </div>
       <div style="padding: 20px; max-height: 60vh; overflow-y: auto;">
-        <div id="details-modal-content" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:16px;">
+        <div id="details-modal-content" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
             <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:12px; display:flex; flex-direction:column; height:150px;">
               <div style="font-size:0.6rem; font-weight:800; color:#10b981; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> AI Posture

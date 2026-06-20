@@ -1,6 +1,6 @@
 ---
 title: "Runink - Operações Empresariais Autônomas"
-description: "Dados em que você pode confiar. Decisões que você pode defender."
+description: "Obtenha Visibilidade da Cadeia de Suprimentos em Tempo Real e mitigue interrupções instantaneamente. A plataforma de Gêmeo Digital da Cadeia de Suprimentos da Runink conecta telemetria logística com Análise Preditiva—abrangendo S&OP, Análise de Gastos e atendimento—para construir a máxima resiliência e proteger suas margens operacionais."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 ---
@@ -18,7 +18,7 @@ author: "Runink"
   problem="A alocação manual de estoque leva a rupturas locais que destroem a receita e ao excesso de estoque que corrói as margens. Nosso sistema autônomo elimina gargalos manuais, prevendo a demanda localizada e executando transferências de estoque entre filiais para maximizar as margens operacionais."
   img="/images/companion/fulfilment.png"
   url="/use-cases/fulfillment-optimization/"
-  monitor="**Previsão de Demanda** analisa a velocidade de vendas localizada e as tendências de mercado para garantir níveis ideais de estoque em todas as filiais. \n**Automação Transparente** roteia o estoque para os locais mais lucrativos com base nos custos de carregamento em tempo real. \n**Modelagem de Cenários** testa o estresse de sua cadeia de suprimentos para defender contra a volatilidade repentina do mercado."
+  monitor="**Previsão de Demanda** analisa a velocidade de vendas localizada e as tendências de mercado para garantir níveis ideais de estoque em todas as filiais. \n**Análise Preditiva** roteia o estoque para os locais mais lucrativos com base nos custos de carregamento em tempo real. \n**Modelagem de Cenários** testa o estresse de sua cadeia de suprimentos para defender contra a volatilidade repentina do mercado."
   cockpit="**Gêmeos Digitais de Operações** fornecem um mapa em tempo real e de alto contraste das capacidades das filiais e rupturas iminentes de estoque. \n**Mecanismo de Orquestração** emmiti ordens de transferência autonomamente para manter a precisão operacional. \n**Execução em um Clique** sincroniza perfeitamente com seus sistemas WMS/ERP existentes."
 >}}
 
@@ -30,7 +30,7 @@ author: "Runink"
   problem="SLAs não cumpridos, carga danificada e não conformidade de fornecedores drenam silenciosamente milhões das cadeias de suprimentos corporativas. Nossas soluções autônomas fornecem auditoria transparente de remessas recebidas, descobrindo violações e registrando estornos irrefutáveis para recuperar a receita perdida."
   img="/images/companion/claims.png"
   url="/use-cases/claims-recovery/"
-  monitor="**Auditoria Automatizada** utiliza lógica de decisão para cruzar manifestos de entrada com SLAs de fornecedores com conformidade absoluta de segurança. \n**Precisão Operacional** identifica o carimbo de data/hora exato de falhas de entrega para provar a não conformidade do fornecedor. \n**Modelagem Financeira** calcula o ROI preciso e a probabilidade de execução bem-sucedida do estorno."
+  monitor="**Análise Preditiva** utiliza lógica de decisão para cruzar manifestos de entrada com SLAs de fornecedores com conformidade absoluta de segurança. \n**Precisão Operacional** identifica o carimbo de data/hora exato de falhas de entrega para provar a não conformidade do fornecedor. \n**Modelagem Financeira** calcula o ROI preciso e a probabilidade de execução bem-sucedida do estorno."
   cockpit="**Gêmeos Digitais de Operações** expõem discrepâncias exatas entre pedidos de compra de fornecedores e registros reais de recebimento. \n**Mecanismo de Conformidade** redige avisos de penalidade de forma autônoma, apoiados por dados irrefutáveis da cadeia de suprimentos. \n**Execução em um Clique** envia a disputa diretamente ao fornecedor, recuperando a receita instantaneamente."
 >}}
 
@@ -64,7 +64,7 @@ author: "Runink"
   <div class="space-y-6">
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">Como uma plataforma de decisão autônoma maximiza as margens operacionais em comparação com o software tradicional?</h3>
-      <p class="text-stone-400 leading-relaxed">O software de cadeia de suprimentos tradicional depende de regras rígidas que falham durante interrupções operacionais, exigindo intervenção manual que cria gargalos. Os motores de decisão autônomos da Runink oferecem automação transparente ao perceber de forma autônoma a volatilidade da cadeia de suprimentos, raciocinar sobre restrições financeiras e executar as decisões mais lucrativas. Seja no redirecionamento de uma remessa ou no rebalanceamento de estoque, nossa plataforma toma medidas independentes para proteger e maximizar suas margens operacionais.</p>
+      <p class="text-stone-400 leading-relaxed">O software de cadeia de suprimentos tradicional depende de regras rígidas que falham durante interrupções operacionais, exigindo intervenção manual que cria gargalos. Os motores de decisão da Runink oferecem visibilidade em tempo real ao analisar dados logísticos, perceber a volatilidade da cadeia de suprimentos, raciocinar sobre restrições financeiras e executar as decisões mais lucrativas. Seja no redirecionamento de uma remessa ou no rebalanceamento de estoque, nossa plataforma toma medidas independentes para proteger e maximizar suas margens operacionais.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">Como os Gêmeos Digitais de Operações oferecem precisão operacional para logística complexa?</h3>
@@ -87,7 +87,7 @@ author: "Runink"
       "name": "Como uma plataforma de decisão autônoma maximiza as margens operacionais em comparação com o software tradicional?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O software de cadeia de suprimentos tradicional depende de regras rígidas que falham durante interrupções operacionais, exigindo intervenção manual que cria gargalos. Os motores de decisão autônomos da Runink oferecem automação transparente ao perceber de forma autônoma a volatilidade da cadeia de suprimentos, raciocinar sobre restrições financeiras e executar as decisões mais lucrativas. Seja no redirecionamento de uma remessa ou no rebalanceamento de estoque, nossa plataforma toma medidas independentes para proteger e maximizar suas margens operacionais."
+        "text": "O software de cadeia de suprimentos tradicional depende de regras rígidas que falham durante interrupções operacionais, exigindo intervenção manual que cria gargalos. Os motores de decisão da Runink oferecem visibilidade em tempo real ao analisar dados logísticos, perceber a volatilidade da cadeia de suprimentos, raciocinar sobre restrições financeiras e executar as decisões mais lucrativas. Seja no redirecionamento de uma remessa ou no rebalanceamento de estoque, nossa plataforma toma medidas independentes para proteger e maximizar suas margens operacionais."
       }
     },
     {

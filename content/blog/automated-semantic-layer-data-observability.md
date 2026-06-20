@@ -4,7 +4,7 @@ description: "Discover how to break down carrier silos and achieve end-to-end fr
 slug: automated-semantic-layer-data-observability
 author: "Runink Logistics Operations Team"
 date: 2026-02-21T13:16:42Z
-tags: [data observability, semantic layer, telemetry, data governance, analytics engineering, data quality, lineage, knowledge graph, advanced analytics, Runink Analytics Companion]
+tags: [data observability, semantic layer, telemetry, data governance, analytics engineering, data quality, lineage, knowledge graph, advanced analytics, Runink FACE]
 robots: index, follow
 featured_image: /images/blog/automated-semantic-layer-data-observability.png
 canonical: https://www.runink.org/blog/automated-semantic-layer-data-observability
@@ -213,10 +213,10 @@ The jump from Level 2 to Level 3 — **automated semantics** — is where data o
 ## How Does Bringing It Together: The Runink Approach Impact Your Strategy?
 
 {{< direct-answer >}}
-The Runink approach impacts your strategy by embedding telemetry-driven semantics directly into the Analytics Companion and Herd Observability Layer. Every system event becomes an interconnected node within a living knowledge graph. This enables enterprises to foster transparent, accountable intelligence where every automated decision, forecast, and KPI is completely traceable.
+The Runink approach impacts your strategy by embedding telemetry-driven semantics directly into the FACE and Herd Observability Layer. Every system event becomes an interconnected node within a living knowledge graph. This enables enterprises to foster transparent, accountable intelligence where every automated decision, forecast, and KPI is completely traceable.
 {{< /direct-answer >}}
 
-At Runink, the **Analytics Companion** and **Herd Observability Layer** use telemetry-driven semantics to make analytics transparent and explainable by default.
+At Runink, the **FACE** and **Herd Observability Layer** use telemetry-driven semantics to make analytics transparent and explainable by default.
 
 Every telemetry event — from pipeline run to model prediction — becomes a node in a living graph, bound by contracts and lineage.
 This enables enterprises to build governed analytics ecosystems where every KPI, forecast, and automation is traceable to its source.
@@ -243,7 +243,7 @@ It’s the **foundation of modern data accountability** — and the core of ever
 
 ---
 
-*Interested in how Runink automates semantic layers for governed observability? [Learn more about the Runink Analytics Companion →](products/analytics_companion/)*
+*Interested in how Runink automates semantic layers for governed observability? [Learn more about the Runink FACE →](products/face/)*
 
 <!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail queries regarding automated semantic layers and telemetry data observability. -->
 <script type="application/ld+json">

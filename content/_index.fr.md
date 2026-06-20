@@ -1,6 +1,6 @@
 ---
 title: "Runink - Opérations d'Entreprise Autonomes"
-description: "Des données fiables. Des décisions défendables."
+description: "Obtenez une Visibilité de la Chaîne d'Approvisionnement en Temps Réel et atténuez instantanément les perturbations. La plateforme de Jumeau Numérique de la Chaîne d'Approvisionnement de Runink connecte la télémétrie logistique avec l'Analyse Prédictive—couvrant le S&OP, l'Analyse des Dépenses et l'exécution—pour construire une résilience ultime et protéger vos marges."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 ---
@@ -18,7 +18,7 @@ author: "Runink"
   problem="L'allocation manuelle des stocks entraîne des ruptures locales qui détruisent le chiffre d'affaires et des surstocks qui érodent les marges. Notre système autonome élimine les goulots d'étranglement manuels, prédisant la demande locale et exécutant des transferts de stock entre agences pour maximiser les marges opérationnelles."
   img="/images/companion/fulfilment.png"
   url="/use-cases/fulfillment-optimization/"
-  monitor="**Prévision de la Demande** analyse la vitesse de vente locale et les tendances du marché pour garantir des niveaux de stock optimaux dans toutes les agences. \n**Autonomie Transparente** achemine les stocks vers les emplacements les plus rentables en fonction des coûts de détention en temps réel. \n**Modélisation de Scénarios** teste la résilience de votre chaîne d'approvisionnement face à la volatilité soudaine du marché."
+  monitor="**Prévision de la Demande** analyse la vitesse de vente locale et les tendances du marché pour garantir des niveaux de stock optimaux dans toutes les agences. \n**Analyse Prédictive** achemine les stocks vers les emplacements les plus rentables en fonction des coûts de détention en temps réel. \n**Modélisation de Scénarios** teste la résilience de votre chaîne d'approvisionnement face à la volatilité soudaine du marché."
   cockpit="**Jumeaux Numériques d'Opérations** fournissent une carte en temps réel et contrastée des capacités des agences et des ruptures de stock imminentes. \n**Moteur d'Orchestration** émet de manière autonome des ordres de transfert pour maintenir une précision opérationnelle. \n**Exécution en Un Clic** se synchronise parfaitement avec vos systèmes WMS/ERP existants."
  >}}
 
@@ -30,7 +30,7 @@ author: "Runink"
   problem="Les manquements aux accords de niveau de service (SLA), les cargaisons endommagées et la non-conformité des transporteurs drainent silencieusement des millions des chaînes d'approvisionnement des entreprises. Nos solutions autonomes fournissent un audit transparent des expéditions entrantes, détectant les infractions et déposant des demandes de remboursement irréfutables pour récupérer les revenus perdus."
   img="/images/companion/claims.png"
   url="/use-cases/claims-recovery/"
-  monitor="**Audit Automatisé** utilise une logique de décision pour croiser les manifestes entrants avec les accords de niveau de service (SLA) en toute sécurité et conformité. \n**Précision Opérationnelle** identifie l'horodatage exact des échecs de livraison pour prouver la non-conformité des fournisseurs. \n**Modélisation Financière** calcule le ROI précis et la probabilité de réussite de l'exécution des réclamations."
+  monitor="**Analyse Prédictive** utilise une logique de décision pour croiser les manifestes entrants avec les accords de niveau de service (SLA) en toute sécurité et conformité. \n**Précision Opérationnelle** identifie l'horodatage exact des échecs de livraison pour prouver la non-conformité des fournisseurs. \n**Modélisation Financière** calcule le ROI précis et la probabilité de réussite de l'exécution des réclamations."
   cockpit="**Jumeaux Numériques d'Opérations** exposent les écarts exacts entre les bons de commande des fournisseurs et les registres de réception réels. \n**Moteur de Conformité** rédige de manière autonome des avis de pénalité appuyés par des données logistiques irréfutables. \n**Exécution en Un Clic** dépose le litige directement auprès du fournisseur, récupérant les revenus instantanément."
  >}}
 
@@ -64,7 +64,7 @@ author: "Runink"
   <div class="space-y-6">
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">Comment une plateforme de décision autonome maximise-t-elle les marges opérationnelles par rapport aux logiciels traditionnels ?</h3>
-      <p class="text-stone-400 leading-relaxed">Les logiciels traditionnels de chaîne d'approvisionnement reposent sur des règles rigides qui échouent lors des perturbations opérationnelles, nécessitant des interventions manuelles créatrices de goulots d'étranglement. Les moteurs de décision de Runink offrent une automatisation transparente en percevant de manière autonome la volatilité de la chaîne d'approvisionnement, en analysant les contraintes financières et en exécutant les décisions les plus rentables. Qu'il s'agisse de réacheminer une expédition ou de rééquilibrer les stocks, notre plateforme prend des mesures indépendantes pour protéger et maximiser vos marges opérationnelles.</p>
+      <p class="text-stone-400 leading-relaxed">Les logiciels traditionnels de chaîne d'approvisionnement reposent sur des règles rigides qui échouent lors des perturbations opérationnelles, nécessitant des interventions manuelles créatrices de goulots d'étranglement. Les moteurs de décision de Runink offrent une visibilité en temps réel en analysant les données logistiques, en percevant la volatilité de la chaîne d'approvisionnement, en analysant les contraintes financières et en exécutant les décisions les plus rentables. Qu'il s'agisse de réacheminer une expédition ou de rééquilibrer les stocks, notre plateforme prend des mesures indépendantes pour protéger et maximiser vos marges opérationnelles.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">Comment les Jumeaux Numériques d'Opérations offrent-ils une précision opérationnelle pour la logistique complexe ?</h3>
@@ -87,7 +87,7 @@ author: "Runink"
       "name": "Comment une plateforme de décision autonome maximise-t-elle les marges opérationnelles par rapport aux logiciels traditionnels ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les logiciels traditionnels de chaîne d'approvisionnement reposent sur des règles rigides qui échouent lors des perturbations opérationnelles, nécessitant des interventions manuelles créatrices de goulots d'étranglement. Les moteurs de décision de Runink offrent une automatisation transparente en percevant de manière autonome la volatilité de la chaîne d'approvisionnement, en analysant les contraintes financières et en exécutant les décisions les plus rentables. Qu'il s'agisse de réacheminer une expédition ou de rééquilibrer les stocks, notre plateforme prend des mesures indépendantes pour protéger et maximiser vos marges opérationnelles."
+        "text": "Les logiciels traditionnels de chaîne d'approvisionnement reposent sur des règles rigides qui échouent lors des perturbations opérationnelles, nécessitant des interventions manuelles créatrices de goulots d'étranglement. Les moteurs de décision de Runink offrent une visibilité en temps réel en analysant les données logistiques, en percevant la volatilité de la chaîne d'approvisionnement, en analysant les contraintes financières et en exécutant les décisions les plus rentables. Qu'il s'agisse de réacheminer une expédition ou de rééquilibrer les stocks, notre plateforme prend des mesures indépendantes pour protéger et maximiser vos marges opérationnelles."
       }
     },
     {
