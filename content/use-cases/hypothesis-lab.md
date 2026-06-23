@@ -51,4 +51,34 @@ author: "Runink"
         </a>
     </div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is the Hypothesis Simulation Lab?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Hypothesis Simulation Lab runs simulations in isolated background compute pools, injecting stochastic variables like sensor noise and routing delays to safely test what-if scenarios without affecting active ERP databases."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How does the Hypothesis Lab help with supply chain disruptions?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It simulates alternative sourcing models to project the exact Net Present Value (NPV), payback, and EBITDA impact of structural network changes before committing capital."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is the ROI of using the Hypothesis Lab?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "By proactively simulating and positioning inventory buffers, the Hypothesis Lab achieves 99.4% forecasted SLA accuracy, avoiding costly stockouts or rushed shipping."
+    }
+  }]
+}
+</script>
+
 {{< /section-container >}}
