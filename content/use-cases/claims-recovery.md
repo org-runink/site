@@ -17,7 +17,7 @@ author: "Runink"
 *   **Irrefutable Chargebacks:** Auto-drafts legal tariff disputes and short-pays for demurrage fees.
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Recover $18,200 Per Dispute.</h1>
+        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Recover <strong>$18,200</strong> Per Dispute.</h1>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Stop eating the cost of carrier demurrage penalties and customs holds. Our Claims Agent cross-references real-time scale feeds against digital shipping documents instantly.
         </p>
@@ -33,7 +33,7 @@ author: "Runink"
                 Most companies write these fines off as a cost of doing business.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                When a scale registers a weight that mismatches the manifest by more than 5%, the Go backend instantly flags the risk and compiles a legally compliant BOL weight amendment draft.
+                When a scale registers a weight that mismatches the manifest by more than <strong>5%</strong>, the Go backend instantly flags the risk and compiles a legally compliant BOL weight amendment draft.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(124,58,237,0.05)] shadow-2xl">
@@ -41,7 +41,7 @@ author: "Runink"
              
 
              
-             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">ROI: $18,200 recovered per customs tariff mismatch dispute.</p>
+             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">ROI: <strong>$18,200</strong> recovered per customs tariff mismatch dispute.</p>
         </div>
     </div>
 
@@ -51,4 +51,20 @@ author: "Runink"
         </a>
     </div>
 </div>
+
+<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail logistics queries in search engines. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is Automated Claims Audit & Demurrage Recovery?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Forensic chronology reconstruction auto-drafts tariff disputes & short-pays."
+    }
+  }]
+}
+</script>
 {{< /section-container >}}
