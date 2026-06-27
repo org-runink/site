@@ -65,14 +65,29 @@
   {{ with $imgUrl }}
     {{ $img := resources.Get . }}
     {{ if $img }}
-      {{ if eq $img.MediaType.SubType "svg" }}
-        "image": {{ $img.Permalink | jsonify }},
-      {{ else }}
+      "image": {
+        "@type": "ImageObject",
+        {{ if eq $img.MediaType.SubType "svg" }}
+        "url": {{ $img.Permalink | jsonify }},
+        "width": {{ $img.Width | default 1200 }},
+        "height": {{ $img.Height | default 630 }}
+        {{ else }}
         {{ $optimized := $img.Resize "1200x630 webp" }}
-        "image": {{ $optimized.Permalink | jsonify }},
-      {{ end }}
+        "url": {{ $optimized.Permalink | jsonify }},
+        "width": {{ $optimized.Width }},
+        "height": {{ $optimized.Height }}
+        {{ end }}
+        {{ if $img.Exif }}
+        {{ with $img.Exif.Tags.Artist }}, "creator": { "@type": "Person", "name": {{ . | jsonify }} }{{ end }}
+        {{ with $img.Exif.Tags.Copyright }}, "copyrightNotice": {{ . | jsonify }}{{ end }}
+        {{ with $img.Exif.Tags.ImageDescription }}, "description": {{ . | jsonify }}{{ end }}
+        {{ end }}
+      },
     {{ else }}
-      "image": {{ . | absURL | jsonify }},
+      "image": {
+        "@type": "ImageObject",
+        "url": {{ . | absURL | jsonify }}
+      },
     {{ end }}
   {{ end }}
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",

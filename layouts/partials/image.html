@@ -1,32 +1,72 @@
 {{ $src := .src }}
-{{ $alt := .alt | default "" }}
 {{ $class := .class | default "" }}
 {{ $width := .width | default "800x" }}
 {{ $loading := .loading | default "lazy" }}
 {{ $fetchpriority := .fetchpriority | default "auto" }}
 
+{{/* New Parameters for IGO */}}
+{{ $caption := .caption | default "" }}
+{{ $creator := .creator | default "" }}
+{{ $license := .license | default "" }}
+{{ $alt := .alt | default $caption | default "" }}
+
 {{ $img := false }}
+{{ $finalUrl := "" }}
+{{ $finalWidth := "" }}
+{{ $finalHeight := "" }}
+
 {{ if hasPrefix $src "http" }}
-  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+  {{ $finalUrl = $src }}
 {{ else }}
-  {{/* Try to find as page resource */}}
   {{ if $.context.Resources }}
     {{ $img = $.context.Resources.GetMatch (strings.TrimPrefix "/" $src) }}
   {{ end }}
-  
-  {{/* If not found, try to find as global resource in assets */}}
   {{ if not $img }}
     {{ $img = resources.Get (strings.TrimPrefix "/" $src) }}
   {{ end }}
   
   {{ if $img }}
+    {{/* EXIF Extraction (if missing manual fields) */}}
+    {{ if $img.Exif }}
+      {{ if eq $caption "" }}{{ with $img.Exif.Tags.ImageDescription }}{{ $caption = . }}{{ $alt = . }}{{ end }}{{ end }}
+      {{ if eq $creator "" }}{{ with $img.Exif.Tags.Artist }}{{ $creator = . }}{{ end }}{{ end }}
+      {{ if eq $license "" }}{{ with $img.Exif.Tags.Copyright }}{{ $license = . }}{{ end }}{{ end }}
+    {{ end }}
+
     {{ if eq $img.MediaType.SubType "svg" }}
-      <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+      {{ $finalUrl = $img.RelPermalink }}
+      {{ $finalWidth = $img.Width }}
+      {{ $finalHeight = $img.Height }}
     {{ else }}
       {{ $resized := $img.Resize (printf "%s webp" $width) }}
-      <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ $resized.Width }}" height="{{ $resized.Height }}" loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+      {{ $finalUrl = $resized.RelPermalink }}
+      {{ $finalWidth = $resized.Width }}
+      {{ $finalHeight = $resized.Height }}
     {{ end }}
   {{ else }}
-    <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+    {{ $finalUrl = $src }}
   {{ end }}
 {{ end }}
+
+{{ $hasFig := ne $caption "" }}
+
+{{ if $hasFig }}<figure class="igo-figure">{{ end }}
+  <img src="{{ $finalUrl }}" alt="{{ $alt }}" class="{{ $class }}" {{ with $finalWidth }}width="{{ . }}"{{ end }} {{ with $finalHeight }}height="{{ . }}"{{ end }} loading="{{ $loading }}" fetchpriority="{{ $fetchpriority }}">
+{{ if $hasFig }}
+  <figcaption>{{ $caption }}</figcaption>
+</figure>
+{{ end }}
+
+{{/* Inline JSON-LD for ImageObject */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": {{ $finalUrl | absURL | jsonify }}
+  {{ with $finalWidth }}, "width": {{ . }}{{ end }}
+  {{ with $finalHeight }}, "height": {{ . }}{{ end }}
+  {{ with $caption }}, "caption": {{ . | jsonify }}, "description": {{ . | jsonify }}{{ end }}
+  {{ with $creator }}, "creator": { "@type": "Person", "name": {{ . | jsonify }} }{{ end }}
+  {{ with $license }}, "copyrightNotice": {{ . | jsonify }}{{ end }}
+}
+</script>
