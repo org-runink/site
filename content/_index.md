@@ -1,5 +1,6 @@
 ---
 title: "Run the Autonomous Supply Chain. Mitigate Disruption in Real Time."
+seo_title: "Mitigate Supply Chain Disruption in Real Time | Runink"
 description: "Achieve Real-Time Supply Chain Visibility and mitigate disruption instantly. Runink's Supply Chain Digital Twin platform connects live logistics telemetry with Predictive Analytics—spanning S&OP, Spend Analytics, and fulfillment—to build ultimate supply chain resilience and protect your operating margins."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
