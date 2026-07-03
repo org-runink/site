@@ -31,7 +31,12 @@ paginatePath = "page"
   description = ""
   logo = "/images/logo.png"
   googleAnalytics ='G-SEECKDWZNJ'
-  
+
+  # Pulse audit tool embedded at /pulse — the deployed Cloud Run URL of the
+  # Pulse backend+UI service (the /pulse page iframes it). Replace with the
+  # real URL after deploying the Pulse server (PULSE_WEB_DIR=<flutter build>).
+  pulseAppURL = "https://pulse-backend-REPLACE.a.run.app"
+
   # Global CTA Configuration
   [params.cta]
     enable = true
@@ -222,6 +227,11 @@ paginatePath = "page"
       name = "Pricing"
       url = "/pricing"
       weight = 5
+
+    [[languages.en.menu.main]]
+      name = "Pulse"
+      url = "/pulse/"
+      weight = 6
 
   [languages.fr]
     languageCode = "fr-fr"
