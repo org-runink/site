@@ -50,5 +50,36 @@ author: "Runink"
             Simulate Your Supply Chain
         </a>
     </div>
+
+<!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail AI queries for Generative Engines. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does the Hypothesis Simulation Lab avoid affecting active ERP databases?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Lab runs simulations using isolated shadow execution in background compute pools, ensuring that active production data in ERP systems is not put at risk while testing what-if disruption scenarios."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What type of stochastic variables can the Hypothesis Lab inject into network stress-tests?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Hypothesis Simulation Lab can inject multi-variable noise including sensor noise, cold chain variance, and routing delays to rigorously stress-test your supply chain network against real-world uncertainties."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How does the Hypothesis Lab evaluate alternative sourcing models?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It leverages massive simulations to project the exact Net Present Value (NPV), Cost-to-Serve (CTS), payback, and EBITDA impact of structural network changes before capital is committed."
+    }
+  }]
+}
+</script>
+
 </div>
 {{< /section-container >}}
