@@ -32,10 +32,18 @@ paginatePath = "page"
   logo = "/images/logo.png"
   googleAnalytics ='G-SEECKDWZNJ'
 
-  # Pulse audit tool embedded at /pulse — the deployed Cloud Run URL of the
-  # Pulse backend+UI service (the /pulse page iframes it). Replace with the
-  # real URL after deploying the Pulse server (PULSE_WEB_DIR=<flutter build>).
-  pulseAppURL = "https://pulse-backend-REPLACE.a.run.app"
+  # Embedded-app endpoints (Cloud Run URLs) for the /pulse and /demo iframes.
+  # This is a PUBLIC repository, and Pulse/FACE are private apps, so the real
+  # endpoints are NOT committed here. CI injects them at build time from
+  # repository secrets via Hugo's env-var override — HUGO_PARAMS_PULSEAPPURL and
+  # HUGO_PARAMS_DEMOAPPURL (see .github/workflows/deploy.yaml). Kept empty so a
+  # local/dev build renders the "not configured yet" placeholder rather than a
+  # stale URL. (A local preview can export those env vars to point at a running
+  # instance.) Note: an iframe src is inherently visible in the deployed public
+  # HTML — this keeps infra URLs out of version control and rotatable, not
+  # secret from a page viewer.
+  pulseAppURL = ""
+  demoAppURL = ""
 
   # Global CTA Configuration
   [params.cta]

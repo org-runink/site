@@ -51,6 +51,10 @@ jobs:
       - name: Build Hugo Site
         env:
           HUGO_ENV: production
+          # Private-app endpoints injected from repo secrets (not committed to
+          # this public repo). Override params.pulseAppURL / params.demoAppURL.
+          HUGO_PARAMS_PULSEAPPURL: ${{ secrets.PULSE_APP_URL }}
+          HUGO_PARAMS_DEMOAPPURL: ${{ secrets.DEMO_APP_URL }}
         run: hugo -d docs
 
       - name: Deploy to GitHub Pages
