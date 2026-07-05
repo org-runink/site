@@ -1,39 +1,61 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-12">
-    <div class="max-w-4xl mx-auto">
-        <header class="mb-12">
-            <h1 class="text-4xl font-bold mb-4">
-                {{ .Title }}
-            </h1>
-            <div class="text-xl text-[#D9CDB8]">
-                Browse all {{ .Data.Plural }}
-            </div>
-        </header>
+<div class="bg-stone-950 min-h-screen relative overflow-hidden">
+    {{ partial "background-effects.html" . }}
 
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {{ range .Data.Terms.ByCount }}
-                <a href="{{ .Page.RelPermalink }}" 
-                   class="group p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
-                    <h2 class="text-xl font-semibold mb-2 group-hover:text-primary-600">
-                        {{ .Page.Title }}
-                    </h2>
-                    <div class="text-[#D9CDB8]">
-                        {{ .Count }} 
-                        {{ if eq .Count 1 }}
-                            post
-                        {{ else }}
-                            posts
+    <div class="container mx-auto px-4 py-24 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            
+            <nav class="mb-12 flex justify-center items-center text-stone-400 text-sm md:text-base font-bold uppercase tracking-wider">
+                <a href="/" class="hover:text-[#ea580c] transition-colors">Home</a>
+                <span class="mx-3">/</span>
+                <span class="text-[#ea580c]">{{ .Title }}</span>
+            </nav>
+
+            <header class="mb-16 text-center flex flex-col items-center">
+                <h1 class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                    {{ .Title }}
+                </h1>
+            </header>
+                <!-- Latest Publications Section -->
+                <div class="mb-24">
+                    <div class="flex items-center justify-between mb-8 border-b border-stone-800/80 pb-4">
+                        <h2 class="text-3xl md:text-4xl font-black text-stone-100 uppercase italic tracking-tighter drop-shadow-md">
+                            Latest Publications
+                        </h2>
+                    </div>
+                    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        {{ range first 6 (where site.RegularPages "Section" "blog").ByDate.Reverse }}
+                            {{ partial "post-card.html" . }}
                         {{ end }}
                     </div>
-                </a>
+                </div>
+
+                <!-- All Categories Section -->
+                <div class="mb-8">
+                    <h2 class="text-3xl md:text-4xl font-black text-stone-100 uppercase italic tracking-tighter mb-8 border-b border-stone-800/80 pb-4">
+                        Browse all {{ .Data.Plural }}
+                    </h2>
+                    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {{ range .Data.Terms.ByCount }}
+                            <a href="{{ .Page.RelPermalink }}" 
+                               class="group p-8 bg-stone-900/60 border border-stone-800/80 rounded-2xl hover:border-[#ea580c]/50 hover:bg-stone-800/80 transition-all duration-300 backdrop-blur shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex flex-col justify-between h-full">
+                                <h2 class="text-2xl font-black mb-4 text-stone-100 group-hover:text-[#ea580c] transition-colors uppercase tracking-tight leading-tight">
+                                    {{ .Page.Title }}
+                                </h2>
+                                <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-[#ea580c]/30 text-[#ea580c] text-sm font-black uppercase tracking-[0.2em] bg-stone-950/50 w-fit">
+                                    {{ .Count }} {{ if eq .Count 1 }}post{{ else }}posts{{ end }}
+                                </div>
+                            </a>
+                        {{ end }}
+                    </div>
+                </div>
+
+            {{ if not .Data.Terms }}
+                <div class="text-center py-24 text-stone-500 font-bold uppercase tracking-widest">
+                    No {{ .Data.Plural }} found
+                </div>
             {{ end }}
         </div>
-
-        {{ if not .Data.Terms }}
-            <div class="text-center py-12 text-[#D9CDB8]">
-                No {{ .Data.Plural }} found
-            </div>
-        {{ end }}
     </div>
 </div>
 {{ end }}

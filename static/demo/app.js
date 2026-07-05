@@ -4742,7 +4742,7 @@ const appTranslations = {
     profile_cert_issuer: "Issuer Authority:",
     profile_cert_expires: "Expiration:",
     profile_cert_status: "Status:",
-    profile_client_node: "Device: Companion Web Client",
+    profile_client_node: "Device: FACE Web Client",
     profile_admin_title: "Lead Logistics Architect",
     profile_admin_role: "Role: Security & Governance Lead",
     profile_cert_status_val: "Encrypted & Active",

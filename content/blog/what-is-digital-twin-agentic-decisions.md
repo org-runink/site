@@ -92,7 +92,7 @@ The Runink Ecosystem drives strategic value by bridging comprehensive actionable
 
 At Runink, we recognized early on that the true value of an Actionable Twin is only unlocked when paired with a secure, highly capable autonomous decision engine. We are building the critical infrastructure required to bridge comprehensive Actionable Twins with enterprise-grade autonomous action. The **Runink FACE** is designed to serve as the intelligent "brain" interacting with your supply chain's virtual replica.
 
-Powered by advanced workflow automation, our Companion goes far beyond basic data aggregation. It is engineered with deep specialization in logistics operations, allowing it to seamlessly navigate the nuances of global trade. Whether it is parsing the complex legalities and "Tripartite Personality" of a [Bill of Lading](/blog/what-is-bill-of-lading) or continuously auditing import documentation to ensure flawless [Compliance](/use-cases/compliance/), the Runink FACE leverages autonomous decisions to act as an untiring, continuously learning member of your supply chain team.
+Powered by advanced workflow automation, our FACE platform goes far beyond basic data aggregation. It is engineered with deep specialization in logistics operations, allowing it to seamlessly navigate the nuances of global trade. Whether it is parsing the complex legalities and "Tripartite Personality" of a [Bill of Lading](/blog/what-is-bill-of-lading) or continuously auditing import documentation to ensure flawless [Compliance](/use-cases/compliance/), the Runink FACE leverages autonomous decisions to act as an untiring, continuously learning member of your supply chain team.
 
 ### Visualizing the Autonomous Actionable Twin Ecosystem
 

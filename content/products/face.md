@@ -11,7 +11,7 @@ badgeColor: "#7c3aed"
     sub_headline="Stop treating symptoms. Deploy automated systems that <strong>find lost money</strong>, <strong>block bad orders</strong>, and <strong>fix problems</strong> while you sleep. It's not software. It's an automated workforce."
     primary_button_text="Meet Your New System"
     primary_button_url="/#contact"
-    hero_image="/images/companion/overview.png"
+    hero_image="/images/face/overview.png"
     size="normal"
     gradient-from="#3A2F2A"
     gradient-to="#1A1512"
@@ -69,7 +69,7 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
     <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-[#5F6F3E] to-[#8B9A6E] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
         <pre class="relative rounded-lg shadow-2xl border border-white/10 bg-[#1e1e1e] p-4 text-xs font-mono text-slate-300 overflow-x-auto">
-            {{< figure src="/images/companion/rules.png" alt="Rules Studio" class="relative rounded-lg shadow-2xl border border-white/10" >}}
+            {{< figure src="/images/face/rules.png" alt="Rules Studio" class="relative rounded-lg shadow-2xl border border-white/10" >}}
 </pre>
     </div>
 </div>
@@ -79,7 +79,7 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
         <div class="space-y-6">
             <div class="relative group">
                 <div class="absolute -inset-2 bg-gradient-to-r from-[#D4A574]/20 to-transparent rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                {{< figure src="/images/companion/cockpit.png" alt="Operations Actionable Twins" class="relative rounded-lg shadow-2xl border border-white/10" >}}
+                {{< figure src="/images/face/cockpit.png" alt="Operations Actionable Twins" class="relative rounded-lg shadow-2xl border border-white/10" >}}
             </div>
             <div>
                 <div class="inline-block px-3 py-1 rounded bg-[#D4A574]/30 text-[#FFE5B4] font-bold mb-4 tracking-wide">2. Operations Actionable Twins</div>
@@ -121,7 +121,7 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
     </div>
     <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-[#A0522D] to-[#FFA07A] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
-        {{< figure src="/images/companion/posture.png" alt="System Posture Center" class="relative rounded-lg shadow-2xl border border-white/10" >}}
+        {{< figure src="/images/face/posture.png" alt="System Posture Center" class="relative rounded-lg shadow-2xl border border-white/10" >}}
     </div>
 </div>
 
@@ -129,7 +129,7 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
     <div class="order-2 md:order-1 relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-[#B87333] to-[#D4A574] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
-        {{< figure src="/images/companion/hypothesis.png" alt="Hypothesis Lab" class="relative rounded-lg shadow-2xl border border-white/10" >}}
+        {{< figure src="/images/face/hypothesis.png" alt="Hypothesis Lab" class="relative rounded-lg shadow-2xl border border-white/10" >}}
     </div>
     <div class="order-1 md:order-2">
         <div class="inline-block px-3 py-1 rounded bg-[#B87333]/30 text-[#FFCC99] font-bold mb-4 tracking-wide">4. Hypothesis Lab</div>
