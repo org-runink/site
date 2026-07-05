@@ -6,6 +6,9 @@ badge: "Claims Agent"
 badgeColor: "#7c3aed"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
+slug: "claims-recovery"
+canonical: "https://www.runink.org/use-cases/claims-recovery"
+robots: "index, follow"
 ---
 
 {{< section-container class="py-8" >}}
@@ -51,4 +54,35 @@ author: "Runink"
         </a>
     </div>
 </div>
+
+<!-- GEO Optimization: Injecting FAQPage Schema to capture high-intent queries regarding claims recovery. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does the Claims Agent perform forensic chronology reconstruction?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It pinpoints exact shifts in delay ownership by analyzing carrier tracking and terminal weighbridges."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How does weighbridge auditing help in claims recovery?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It automatically catches discrepancies between manifest BOLs and physical port scale weights."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How do you handle irrefutable chargebacks for demurrage fees?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Our system auto-drafts legal tariff disputes and short-pays for demurrage fees."
+    }
+  }]
+}
+</script>
+
 {{< /section-container >}}

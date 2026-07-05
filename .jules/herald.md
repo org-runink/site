@@ -42,3 +42,6 @@
 ## 2026-05-27 - GEO Bullet Point Summaries
 **Learning:** Replacing generic narrative summaries with a structured '## Executive Summary: Key Takeaways' section containing high-density bullet points improves parsing by Generative Engine Overviews.
 **Action:** Use high-density bullet points under clear semantic headers to optimize core concepts for LLM extraction.
+## 2026-05-30 - Missing SEO/GEO Frontmatter in Use Case Pages
+**Learning:** Use case pages in this repository are often missing complete frontmatter metadata (`slug`, `canonical`, and `robots`) compared to standard blog posts. This limits their crawl efficiency and SEO indexability, reducing the impact of any structured JSON-LD schemas we add to them.
+**Action:** Always audit frontmatter fields when optimizing non-blog content pages. Explicitly add canonical URLs, slugs, and robot indexing directives if they are missing to maximize the effectiveness of generative schema injections.
