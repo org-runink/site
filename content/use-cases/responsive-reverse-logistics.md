@@ -6,6 +6,9 @@ badge: "Circular Economy"
 badgeColor: "#14b8a6"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
+slug: "responsive-reverse-logistics"
+canonical: "https://runink.org/use-cases/responsive-reverse-logistics"
+robots: "index, follow"
 ---
 
 {{< section-container class="py-8" >}}
@@ -52,3 +55,24 @@ author: "Runink"
     </div>
 </div>
 {{< /section-container >}}
+
+{{< faq >}}
+{
+    "title": "Responsive Reverse Logistics FAQs",
+    "description": "Common questions regarding responsive reverse logistics and circular economy triage.",
+    "questions": [
+        {
+            "question": "How does barcode scanning validate returned goods?",
+            "answer": "Barcode scanning instantly validates warranty periods and logs condition codes directly from the field via mobile devices, eliminating manual entry delays."
+        },
+        {
+            "question": "What is real-time cost-benefit triage in reverse logistics?",
+            "answer": "Real-time triage uses instant Secure API calls to evaluate a returned item's residual market value against its projected repair costs to determine the most profitable disposition routing."
+        },
+        {
+            "question": "How does automated disposition routing work?",
+            "answer": "The system dynamically routes returned inventory to the optimal destination—whether for immediate restock, refurbishment at a specialized hub, or recycling—diverting e-waste from landfills and maximizing recovered value."
+        }
+    ]
+}
+{{< /faq >}}
