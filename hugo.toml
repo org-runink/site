@@ -237,10 +237,6 @@ paginatePath = "page"
       url = "/pricing"
       weight = 5
 
-    [[languages.en.menu.main]]
-      name = "Pulse"
-      url = "/pulse/"
-      weight = 6
 
   [languages.fr]
     languageCode = "fr-fr"
