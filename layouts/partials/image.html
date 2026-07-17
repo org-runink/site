@@ -27,10 +27,10 @@
   
   {{ if $img }}
     {{/* EXIF Extraction (if missing manual fields) */}}
-    {{ if $img.Exif }}
-      {{ if eq $caption "" }}{{ with $img.Exif.Tags.ImageDescription }}{{ $caption = . }}{{ $alt = . }}{{ end }}{{ end }}
-      {{ if eq $creator "" }}{{ with $img.Exif.Tags.Artist }}{{ $creator = . }}{{ end }}{{ end }}
-      {{ if eq $license "" }}{{ with $img.Exif.Tags.Copyright }}{{ $license = . }}{{ end }}{{ end }}
+    {{ if $img.Meta }}
+      {{ if eq $caption "" }}{{ with $img.Meta.ImageDescription }}{{ $caption = . }}{{ $alt = . }}{{ end }}{{ end }}
+      {{ if eq $creator "" }}{{ with $img.Meta.Artist }}{{ $creator = . }}{{ end }}{{ end }}
+      {{ if eq $license "" }}{{ with $img.Meta.Copyright }}{{ $license = . }}{{ end }}{{ end }}
     {{ end }}
 
     {{ if eq $img.MediaType.SubType "svg" }}

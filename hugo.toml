@@ -208,8 +208,8 @@ paginatePath = "page"
 
 [languages]
   [languages.en]
-    languageCode = "en-us"
-    languageName = "English"
+    locale = "en-us"
+    label = "English"
     weight = 1
 
     [[languages.en.menu.main]]
@@ -239,8 +239,8 @@ paginatePath = "page"
 
 
   [languages.fr]
-    languageCode = "fr-fr"
-    languageName = "Français"
+    locale = "fr-fr"
+    label = "Français"
     weight = 2
 
     [languages.fr.params.header.buttons.getStarted]
@@ -281,8 +281,8 @@ paginatePath = "page"
       weight = 5
 
   [languages.es]
-    languageCode = "es-es"
-    languageName = "Español"
+    locale = "es-es"
+    label = "Español"
     weight = 3
 
     [languages.es.params.header.buttons.getStarted]
@@ -323,8 +323,8 @@ paginatePath = "page"
       weight = 5
 
   [languages.pt]
-    languageCode = "pt-br"
-    languageName = "Português"
+    locale = "pt-br"
+    label = "Português"
     weight = 4
 
     [languages.pt.params.header.buttons.getStarted]

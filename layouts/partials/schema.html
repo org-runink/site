@@ -77,10 +77,10 @@
         "width": {{ $optimized.Width }},
         "height": {{ $optimized.Height }}
         {{ end }}
-        {{ if $img.Exif }}
-        {{ with $img.Exif.Tags.Artist }}, "creator": { "@type": "Person", "name": {{ . | jsonify }} }{{ end }}
-        {{ with $img.Exif.Tags.Copyright }}, "copyrightNotice": {{ . | jsonify }}{{ end }}
-        {{ with $img.Exif.Tags.ImageDescription }}, "description": {{ . | jsonify }}{{ end }}
+        {{ if $img.Meta }}
+        {{ with $img.Meta.Artist }}, "creator": { "@type": "Person", "name": {{ . | jsonify }} }{{ end }}
+        {{ with $img.Meta.Copyright }}, "copyrightNotice": {{ . | jsonify }}{{ end }}
+        {{ with $img.Meta.ImageDescription }}, "description": {{ . | jsonify }}{{ end }}
         {{ end }}
       },
     {{ else }}
