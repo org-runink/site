@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ with .Site.Params.demoAppURL }}
+<iframe src="{{ . }}" title="Runink FACE Demo" class="w-full h-full border-0 block" style="min-height: 100vh;" loading="lazy" referrerpolicy="no-referrer"></iframe>
+{{ else }}
+<div class="flex items-center justify-center h-full w-full text-white bg-stone-900">
+  <p>The FACE Demo app isn't configured yet.</p>
+</div>
+{{ end }}
+{{ end }}
