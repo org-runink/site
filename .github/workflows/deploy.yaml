@@ -55,6 +55,7 @@ jobs:
           # this public repo). Override params.pulseAppURL / params.demoAppURL.
           HUGO_PARAMS_PULSEAPPURL: ${{ secrets.PULSE_APP_URL }}
           HUGO_PARAMS_DEMOAPPURL: ${{ secrets.DEMO_APP_URL }}
+          HUGO_PARAMS_COREAPPURL: ${{ secrets.CORE_APP_URL }}
         run: hugo -d docs
 
       - name: Deploy to GitHub Pages

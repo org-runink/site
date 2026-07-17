@@ -44,6 +44,7 @@ paginatePath = "page"
   # secret from a page viewer.
   pulseAppURL = ""
   demoAppURL = ""
+  coreAppURL = ""
 
   # Global CTA Configuration
   [params.cta]

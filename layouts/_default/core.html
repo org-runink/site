@@ -1,0 +1,33 @@
+{{ define "main" }}
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="mb-6">
+    <h1 class="text-3xl font-extrabold text-[#F5F1E8]">CORE — Global Dashboard</h1>
+    <p class="mt-2 text-stone-400 max-w-3xl">
+      Explore the Runink CORE infrastructure — monitor multi-region deployments,
+      traffic steering, and secure telemetry data in real-time.
+    </p>
+  </div>
+
+  {{ with .Site.Params.coreAppURL }}
+  <div class="rounded-xl overflow-hidden border border-stone-800 shadow-xl bg-stone-900">
+    <iframe
+      src="{{ . }}"
+      title="Runink CORE — Global Dashboard"
+      class="w-full block"
+      style="height: 82vh; min-height: 640px; border: 0;"
+      loading="lazy"
+      referrerpolicy="no-referrer"></iframe>
+  </div>
+  <p class="mt-4 text-sm text-stone-500">
+    Trouble loading the embed?
+    <a class="underline hover:text-white" href="{{ . }}" target="_blank" rel="noopener">Open CORE in a new tab →</a>
+  </p>
+  {{ else }}
+  <div class="rounded-xl border border-stone-800 p-8 text-stone-400">
+    The CORE dashboard isn't configured yet. Set <code class="text-stone-200">params.coreAppURL</code>
+    in <code class="text-stone-200">hugo.toml</code> to the deployed Cloud Run URL of the CORE
+    web app.
+  </div>
+  {{ end }}
+</section>
+{{ end }}
