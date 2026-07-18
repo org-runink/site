@@ -78,9 +78,9 @@
         "height": {{ $optimized.Height }}
         {{ end }}
         {{ if $img.Meta }}
-        {{ with $img.Meta.Exif }}{{ with .Artist }}, "creator": { "@type": "Person", "name": {{ . | jsonify }} }{{ end }}{{ end }}
-        {{ with $img.Meta.Exif }}{{ with .Copyright }}, "copyrightNotice": {{ . | jsonify }}{{ end }}{{ end }}
-        {{ with $img.Meta.Exif }}{{ with .ImageDescription }}, "description": {{ . | jsonify }}{{ end }}{{ end }}
+        {{ with $img.Meta.Artist }}, "creator": { "@type": "Person", "name": {{ . | jsonify }} }{{ end }}
+        {{ with $img.Meta.Copyright }}, "copyrightNotice": {{ . | jsonify }}{{ end }}
+        {{ with $img.Meta.ImageDescription }}, "description": {{ . | jsonify }}{{ end }}
         {{ end }}
       },
     {{ else }}
