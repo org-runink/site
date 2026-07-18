@@ -1,5 +1,6 @@
 {{ define "main" }}
-{{ with .Params.demoAppURL }}
+{{ $url := index .Site.Params .Params.demoAppParam }}
+{{ with $url }}
 <iframe src="{{ . }}" title="{{ $.Title }}" class="w-full h-full border-0 block" style="min-height: 100vh;" loading="lazy" referrerpolicy="no-referrer"></iframe>
 {{ else }}
 <div class="flex items-center justify-center h-full w-full text-white bg-stone-900">
