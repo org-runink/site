@@ -4,5 +4,4 @@ description: "Runink CORE provides unified governance, edge mesh monitoring, and
 layout: "core"
 type: "app"
 seo_title: "CORE — Live Dashboard | Runink"
-redirect: "https://core.runink.org"
 ---

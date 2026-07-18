@@ -4,5 +4,4 @@ description: "Explore the Runink FACE cockpit live — autonomous logistics agen
 layout: "demo"
 type: "app"
 seo_title: "FACE — Live Demo | Runink"
-redirect: "https://face.runink.org"
 ---
