@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Locale | default "en" }}" class="h-full w-full overflow-hidden">
+<html lang="en-us" class="h-full w-full overflow-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ default (printf "%s | %s" .Title .Site.Title) .Params.seo_title }}</title>
-    {{ if .Site.Params.disablePostCSS }}
-    <link rel="stylesheet" href="/css/style.css?v={{ now.Unix }}">
+    {{ if .Params.redirect }}
+    <meta http-equiv="refresh" content="0; url={{ .Params.redirect }}">
+    <title>Redirecting to {{ .Params.redirect }}...</title>
     {{ else }}
-    {{ $css := resources.Get "css/main.css" | css.PostCSS }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    <title>{{ default (printf "%s | %s" .Title .Site.Title) .Params.seo_title }}</title>
     {{ end }}
 </head>
 <body class="h-full w-full overflow-hidden m-0 p-0 bg-stone-950">
+    {{ if .Params.redirect }}
+    <p>Redirecting to <a href="{{ .Params.redirect }}">{{ .Params.redirect }}</a>...</p>
+    {{ else }}
     {{ block "main" . }}{{ end }}
+    {{ end }}
 </body>
 </html>

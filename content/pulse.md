@@ -4,4 +4,5 @@ description: "Run a fast site-relevance audit — Search, AI, Technical and Auth
 layout: "pulse"
 type: "app"
 seo_title: "Pulse — Free Site Relevance Audit | Runink"
+redirect: "https://pulse.runink.org"
 ---
