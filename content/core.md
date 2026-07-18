@@ -1,7 +1,7 @@
 ---
-title: "CORE — Global App Dashboard"
-description: "Runink CORE provides unified governance, edge mesh monitoring, and fleet management for AI applications."
-layout: "core"
+title: "CORE — Live Demo"
+description: "Explore the Runink CORE UI"
+layout: "demo"
 type: "app"
-seo_title: "CORE — Live Dashboard | Runink"
+demoAppURL: "http://core.runink.org"
 ---
