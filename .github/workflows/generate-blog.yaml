@@ -36,11 +36,11 @@ jobs:
   generate-blog:
     if: github.event_name != 'issues' || contains(github.event.issue.labels.*.name, 'blog-request')
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/org-runink/blogen:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
 
     steps:
       - name: Checkout repository
@@ -51,12 +51,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      # Steps dealing with docker login and pull are removed as we are running in a container
-
       - name: Ensure output directories exist
-        run: |
-          mkdir -p content/blog
-          mkdir -p static/images/blog
+        run: mkdir -p content/blog
 
       - name: Extract Context & Topic
         id: topic
@@ -130,46 +126,110 @@ jobs:
             core.setOutput('value_driver', valueDriver || "");
             core.setOutput('context_links', links === "No response" ? "" : links || "");
 
-      - name: Run Blog Generation
+      # --- Sovereign generation: PULSE's own in-cluster Go agent on the local GKE
+      # model. No external blogen container, no Tavily, no external AI token. ---
+      - id: auth
+        name: Authenticate to Google Cloud (WIF)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - name: Install kubectl + GKE auth plugin
+        run: gcloud components install gke-gcloud-auth-plugin kubectl --quiet
+      - name: Get GKE credentials (as the deployer SA)
+        run: gcloud container clusters get-credentials runink-demo --zone northamerica-northeast1-b --project runink
+
+      - name: Build the blogen agent image (idempotent, keyless)
+        id: img
+        run: |
+          set -euo pipefail
+          TAG=$(find agents/blogen -type f | sort | xargs sha256sum | sha256sum | cut -c1-12)
+          IMG="us-central1-docker.pkg.dev/runink/face/site-blogen:${TAG}"
+          echo "img=$IMG" >> "$GITHUB_OUTPUT"
+          if gcloud artifacts docker images describe "$IMG" >/dev/null 2>&1; then
+            echo "blogen image $IMG exists — skip build"
+          else
+            gcloud auth print-access-token \
+              | docker login -u oauth2accesstoken --password-stdin https://us-central1-docker.pkg.dev
+            docker build -t "$IMG" agents/blogen
+            docker push "$IMG"
+          fi
+
+      - name: Generate article in-cluster (Go agent Job → local model)
         id: blog_gen
         env:
-          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
-          BLOG_DEBUG: "true"
-          ENABLE_IMAGE_GEN: "true"
-          ENABLE_LINKEDIN: "true"
-          ENABLE_SEARCH: "true"
+          IMG: ${{ steps.img.outputs.img }}
+          NS: inference-system
+          TOPIC: ${{ steps.topic.outputs.topic }}
+          SLUG: ${{ steps.topic.outputs.slug }}
+          AUDIENCE: ${{ steps.topic.outputs.audience }}
+          VALUE_DRIVER: ${{ steps.topic.outputs.value_driver }}
+          CONTEXT: ${{ steps.topic.outputs.context_links }}
         run: |
-          # Run generation directly
-          # We run from /app because schemas/templates are now in /app (via Dockerfile COPY ./models/ .)
-          cd /app
-          blogen \
-            --content-dir $GITHUB_WORKSPACE/content/blog \
-            --image-dir $GITHUB_WORKSPACE/static/images/blog \
-            -t "${{ steps.topic.outputs.topic }}" \
-            --audience "${{ steps.topic.outputs.audience }}" \
-            --value-driver "${{ steps.topic.outputs.value_driver }}" \
-            --context "${{ steps.topic.outputs.context_links }}"
-
-          # Create simple LinkedIn posts JSON
-          SLUG="${{ steps.topic.outputs.slug }}"
-          TOPIC="${{ steps.topic.outputs.topic }}"
-          BLOG_URL="https://www.runink.org/blog/${SLUG}/"
-            
-          LINKEDIN_JSON=$(cat <<EOF
-          {
-            "company_post": {
-              "text": "🚀 New Article: ${TOPIC}\\n\\nRead more: ${BLOG_URL}\\n\\n#AI #Runink"
-            },
-            "personal_post": {
-              "text": "I just published a new article on ${TOPIC}. Check it out: ${BLOG_URL}"
-            }
-          }
+          set -uo pipefail
+          JOB="blogen-${SLUG}-$(echo "$GITHUB_SHA" | cut -c1-7)"
+          JOB="$(echo "$JOB" | cut -c1-60)"
+          cat <<EOF | kubectl apply -f -
+          apiVersion: batch/v1
+          kind: Job
+          metadata:
+            name: ${JOB}
+            namespace: ${NS}
+          spec:
+            backoffLimit: 0
+            ttlSecondsAfterFinished: 300
+            activeDeadlineSeconds: 900
+            template:
+              spec:
+                restartPolicy: Never
+                containers:
+                  - name: blogen
+                    image: ${IMG}
+                    env:
+                      - { name: TOPIC, value: "${TOPIC}" }
+                      - { name: SLUG, value: "${SLUG}" }
+                      - { name: AUDIENCE, value: "${AUDIENCE}" }
+                      - { name: VALUE_DRIVER, value: "${VALUE_DRIVER}" }
+                      - { name: CONTEXT, value: "${CONTEXT}" }
+                      - { name: INFERENCE_URL, value: "http://inference.${NS}.svc.cluster.local:8080" }
+                      # PULSE's own imagegen runner (sd.cpp, CPU) for the hero image; if it is
+                      # not up/weighted the agent falls back to a deterministic branded SVG.
+                      - { name: IMAGE_GEN_URL, value: "http://pulse-model-imagegen.pulse-system.svc.cluster.local:8080" }
           EOF
-          )
+          kubectl -n "$NS" wait --for=condition=complete --timeout=900s "job/${JOB}" \
+            || { kubectl -n "$NS" wait --for=condition=failed --timeout=5s "job/${JOB}" >/dev/null 2>&1 || true; }
+          # Capture the FULL Job log; the agent emits the article + LinkedIn JSON
+          # between sentinel markers (diagnostics go to stderr, outside the markers).
+          kubectl -n "$NS" logs "job/${JOB}" > /tmp/blogen.log 2>&1 || true
+          kubectl -n "$NS" delete job "${JOB}" --ignore-not-found --wait=false
 
-          echo "linkedin_posts<<EOF" >> $GITHUB_OUTPUT
-          echo "$LINKEDIN_JSON" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          mkdir -p content/blog
+          awk '/^===BLOG-MD-BEGIN===$/{f=1;next} /^===BLOG-MD-END===$/{f=0} f' /tmp/blogen.log > "content/blog/${SLUG}.md"
+          if [ ! -s "content/blog/${SLUG}.md" ]; then
+            echo "❌ blogen produced no article — see agent log:"; cat /tmp/blogen.log
+            exit 1
+          fi
+          echo "✅ wrote content/blog/${SLUG}.md ($(wc -w < "content/blog/${SLUG}.md") words)"
+
+          LINKEDIN_JSON="$(awk '/^===LINKEDIN-BEGIN===$/{f=1;next} /^===LINKEDIN-END===$/{f=0} f' /tmp/blogen.log)"
+          [ -z "$LINKEDIN_JSON" ] && LINKEDIN_JSON='{"company_post":{"text":""},"personal_post":{"text":""}}'
+          echo "linkedin_posts<<JSONEOF" >> "$GITHUB_OUTPUT"
+          echo "$LINKEDIN_JSON" >> "$GITHUB_OUTPUT"
+          echo "JSONEOF" >> "$GITHUB_OUTPUT"
+
+          # Hero image: PNG from the imagegen runner, else the branded SVG fallback.
+          # The agent set the article's `image:` frontmatter to match the extension.
+          mkdir -p static/images/blog
+          awk '/^===IMAGE-PNG-B64-BEGIN===$/{f=1;next} /^===IMAGE-PNG-B64-END===$/{f=0} f' /tmp/blogen.log \
+            | tr -d '\n' | base64 -d > "static/images/blog/${SLUG}.png" 2>/dev/null || true
+          if [ -s "static/images/blog/${SLUG}.png" ]; then
+            echo "🖼️  hero: static/images/blog/${SLUG}.png (imagegen runner)"
+          else
+            rm -f "static/images/blog/${SLUG}.png"
+            awk '/^===IMAGE-SVG-BEGIN===$/{f=1;next} /^===IMAGE-SVG-END===$/{f=0} f' /tmp/blogen.log > "static/images/blog/${SLUG}.svg"
+            echo "🖼️  hero: static/images/blog/${SLUG}.svg (sovereign branded fallback)"
+          fi
 
       - name: Validate article quality
         run: |
@@ -199,6 +259,12 @@ jobs:
 
           echo "✅ Article validation passed"
           echo "   Word count: $WORD_COUNT"
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: latest
+          extended: true
 
       - name: Validate Site Build (Hugo)
         run: |
@@ -236,16 +302,17 @@ jobs:
           base: main
           title: "📝 Blog: ${{ steps.topic.outputs.topic }}"
           body: |
-            This PR adds a new blog post generated by AI.
+            This PR adds a new blog post generated by **PULSE** on the platform's own
+            in-cluster model (sovereign — no external AI service).
 
             **Topic:** ${{ steps.topic.outputs.topic }}
             **Triggered by:** ${{ github.event_name == 'issues' && format('Issue #{0}', steps.topic.outputs.issue_number) || 'Manual trigger' }}
 
             ## Files Added
             - `content/blog/${{ steps.topic.outputs.slug }}.md`
-            - `static/images/blog/${{ steps.topic.outputs.slug }}.png`
+            - hero image under `static/images/blog/${{ steps.topic.outputs.slug }}.*` (imagegen PNG, or a branded SVG fallback)
 
-            Please review the content and diagrams before merging.
+            Please review the content before merging.
           labels: "automated-content"
 
       - name: Comment on issue (success)
@@ -257,7 +324,7 @@ jobs:
             const prNumber = '${{ steps.create_pr.outputs.pull-request-number }}';
             const prUrl = '${{ steps.create_pr.outputs.pull-request-url }}';
 
-            let message = `✅ **Blog Article Generated Successfully!**\n\n📁 **Files Generated:**\n- \`content/blog/${slug}.md\`\n- \`static/images/blog/${slug}.png\`\n\n`;
+            let message = `✅ **Blog Article Generated Successfully!** (PULSE, sovereign in-cluster model)\n\n📁 **Files Generated:**\n- \`content/blog/${slug}.md\`\n- hero image (\`static/images/blog/${slug}.*\`)\n\n`;
 
             if (prNumber) {
               message += `🔀 **Pull Request Created:** #${prNumber}\n${prUrl}\n\nPlease review and merge the PR to publish the article.`;
