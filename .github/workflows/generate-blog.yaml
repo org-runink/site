@@ -193,6 +193,9 @@ jobs:
                       - { name: VALUE_DRIVER, value: "${VALUE_DRIVER}" }
                       - { name: CONTEXT, value: "${CONTEXT}" }
                       - { name: INFERENCE_URL, value: "http://inference.${NS}.svc.cluster.local:8080" }
+                      # PULSE's own imagegen runner (sd.cpp, CPU) for the hero image; if it is
+                      # not up/weighted the agent falls back to a deterministic branded SVG.
+                      - { name: IMAGE_GEN_URL, value: "http://pulse-model-imagegen.pulse-system.svc.cluster.local:8080" }
           EOF
           kubectl -n "$NS" wait --for=condition=complete --timeout=900s "job/${JOB}" \
             || { kubectl -n "$NS" wait --for=condition=failed --timeout=5s "job/${JOB}" >/dev/null 2>&1 || true; }
@@ -214,6 +217,19 @@ jobs:
           echo "linkedin_posts<<JSONEOF" >> "$GITHUB_OUTPUT"
           echo "$LINKEDIN_JSON" >> "$GITHUB_OUTPUT"
           echo "JSONEOF" >> "$GITHUB_OUTPUT"
+
+          # Hero image: PNG from the imagegen runner, else the branded SVG fallback.
+          # The agent set the article's `image:` frontmatter to match the extension.
+          mkdir -p static/images/blog
+          awk '/^===IMAGE-PNG-B64-BEGIN===$/{f=1;next} /^===IMAGE-PNG-B64-END===$/{f=0} f' /tmp/blogen.log \
+            | tr -d '\n' | base64 -d > "static/images/blog/${SLUG}.png" 2>/dev/null || true
+          if [ -s "static/images/blog/${SLUG}.png" ]; then
+            echo "🖼️  hero: static/images/blog/${SLUG}.png (imagegen runner)"
+          else
+            rm -f "static/images/blog/${SLUG}.png"
+            awk '/^===IMAGE-SVG-BEGIN===$/{f=1;next} /^===IMAGE-SVG-END===$/{f=0} f' /tmp/blogen.log > "static/images/blog/${SLUG}.svg"
+            echo "🖼️  hero: static/images/blog/${SLUG}.svg (sovereign branded fallback)"
+          fi
 
       - name: Validate article quality
         run: |
@@ -294,6 +310,7 @@ jobs:
 
             ## Files Added
             - `content/blog/${{ steps.topic.outputs.slug }}.md`
+            - hero image under `static/images/blog/${{ steps.topic.outputs.slug }}.*` (imagegen PNG, or a branded SVG fallback)
 
             Please review the content before merging.
           labels: "automated-content"
@@ -307,7 +324,7 @@ jobs:
             const prNumber = '${{ steps.create_pr.outputs.pull-request-number }}';
             const prUrl = '${{ steps.create_pr.outputs.pull-request-url }}';
 
-            let message = `✅ **Blog Article Generated Successfully!** (PULSE, sovereign in-cluster model)\n\n📁 **Files Generated:**\n- \`content/blog/${slug}.md\`\n\n`;
+            let message = `✅ **Blog Article Generated Successfully!** (PULSE, sovereign in-cluster model)\n\n📁 **Files Generated:**\n- \`content/blog/${slug}.md\`\n- hero image (\`static/images/blog/${slug}.*\`)\n\n`;
 
             if (prNumber) {
               message += `🔀 **Pull Request Created:** #${prNumber}\n${prUrl}\n\nPlease review and merge the PR to publish the article.`;
