@@ -1,0 +1,41 @@
+name: Agentic DevEx
+
+# The `site` repo is a PULSE-managed content surface (runink's online presence at
+# www.runink.org). Its autonomous PR review, issue triage, and self-healing CI are
+# delegated to CORE's reusable SOVEREIGN in-cluster agents (local GKE model, no
+# external AI token, no Python), gated centrally by core's feature-gates.yml.
+# NOTE: triage skips `blog-request` issues — those are the marketing intake handled
+# by generate-blog.yaml, not general triage.
+
+on:
+  pull_request:
+  issues:
+    types: [opened]
+  workflow_run:
+    workflows: ['Deploy Github Pages']
+    types: ['completed']
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+  actions: read
+  id-token: write
+
+jobs:
+  review:
+    if: ${{ github.event_name == 'pull_request' }}
+    uses: org-runink/core/.github/workflows/agentic-review.yml@main
+    secrets: inherit
+
+  triage:
+    if: ${{ github.event_name == 'issues' && !contains(github.event.issue.labels.*.name, 'blog-request') }}
+    uses: org-runink/core/.github/workflows/agentic-triage.yml@main
+    secrets: inherit
+
+  self-heal:
+    if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure' }}
+    uses: org-runink/core/.github/workflows/agentic-self-heal.yml@main
+    with:
+      pipeline_name: Deploy Github Pages
+    secrets: inherit
