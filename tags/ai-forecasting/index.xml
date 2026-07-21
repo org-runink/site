@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Forecasting on Runink</title>
+    <link>https://runink.org/tags/ai-forecasting/</link>
+    <description>Recent content in AI Forecasting on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/ai-forecasting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Point-of-Sale Data in Logistics: Using Real-Time Retail Sync for Demand Sensing</title>
+      <link>https://runink.org/blog/pos-data-logistics-demand-sensing/</link>
+      <pubDate>Fri, 29 May 2026 00:24:23 +0000</pubDate>
+      <guid>https://runink.org/blog/pos-data-logistics-demand-sensing/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Integrating Point-of-Sale (POS) data directly into back-end logistics transforms traditional, reactive inventory management into proactive demand sensing. By leveraging real-time retail sync, supply chain planners can anticipate store-level needs, improve fill rates, and dynamically optimize freight movements before stockouts occur.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Bridge the visibility gap&lt;/strong&gt; by connecting front-end retail checkout data directly with back-end WMS and TMS control towers.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shift from historical forecasting to real-time demand sensing&lt;/strong&gt;, utilizing AI to interpret micro-fluctuations in purchasing behavior and adjust logistics execution automatically.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Improve critical KPIs&lt;/strong&gt; like On-Time In-Full (OTIF), Order to Delivery (OTD) time, and fill rates while minimizing costly emergency expedited freight and drayage fees.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-are-the-major-business-challenges-of-reactive-supply-chain-planning&#34;&gt;What are the Major Business Challenges of Reactive Supply Chain Planning?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Reactive supply chain planning relies on delayed, historical data, which inherently causes a lag between retail demand and logistics execution. This latency results in frequent stockouts, forced use of expensive expedited freight, and compounding inefficiencies like the bullwhip effect.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;For Directors of Inventory Management and Supply Chain Planners, relying solely on historical sales data to project future inventory needs is a losing battle. Traditional forecasting models are inherently backward-looking. They process what happened last month or last year, attempting to smooth out anomalies to predict what might happen tomorrow. However, modern consumer behavior is volatile, and this reactive approach creates significant operational friction.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

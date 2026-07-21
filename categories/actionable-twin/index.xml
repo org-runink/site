@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Actionable Twin on Runink</title>
+    <link>https://runink.org/categories/actionable-twin/</link>
+    <description>Recent content in Actionable Twin on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/categories/actionable-twin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Actionable Twin Evolution: Driving Efficiency and ESG in Modern Logistics</title>
+      <link>https://runink.org/blog/digital-twin-evolution-logistics/</link>
+      <pubDate>Sat, 13 Jun 2026 20:24:00 +0000</pubDate>
+      <guid>https://runink.org/blog/digital-twin-evolution-logistics/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; The evolution of actionable twins spans three levels: passive digital representation, advisory cognitive twins, and autonomous intelligent twins. Driven by robust data maturity, these advanced agentic systems revolutionize supply chain management by dynamically resolving unexpected disruptions, proactively reducing Scope 3 emissions, and driving compounding operational and ESG improvements.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Level 1 (Digital Representation):&lt;/strong&gt; Provides a static or near-real-time digital visualization of the physical supply chain utilizing telemetry data. Valuable for basic visibility but fundamentally passive.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Level 2 (Cognitive Twin):&lt;/strong&gt; Mimics advanced human decision-making and pattern recognition, acting as an advanced advisory system that suggests recovery plans.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Level 3 (Intelligent/Agentic Twin):&lt;/strong&gt; Operates autonomously, creating new knowledge and dynamic decision-making algorithms to solve previously unknown disruptions, then executing the resolution directly via API.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Maturity is the Foundation:&lt;/strong&gt; The success of any actionable twin relies entirely on data integrity, availability, and quality to drive compounding Operational &amp;amp; ESG Wins.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sustainability through AI:&lt;/strong&gt; AI-driven route optimization and modal shifts proactively reduce empty last-mile miles and Scope 3 carbon emissions at the source.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;1-the-maturity-journey-of-actionable-twins&#34;&gt;1. The Maturity Journey of Actionable Twins&lt;/h1&gt;&#xA;&lt;p&gt;The concept of a &amp;ldquo;Actionable Twin&amp;rdquo; is frequently discussed in modern logistics, but the term encompasses a wide spectrum of technological maturity. A true enterprise actionable twin does much more than simply visualize where a truck or container is on a map. As organizations push for greater operational efficiency and seek to meet rigorous ESG (Environmental, Social, and Governance) targets, the technological foundation of supply chain management must fundamentally evolve.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

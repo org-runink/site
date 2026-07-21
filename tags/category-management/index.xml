@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Category Management on Runink</title>
+    <link>https://runink.org/tags/category-management/</link>
+    <description>Recent content in Category Management on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/category-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Procurement Spend Analytics — Why You Can&#39;t Optimize What You Can&#39;t See</title>
+      <link>https://runink.org/blog/procurement-spend-analytics-visibility/</link>
+      <pubDate>Sun, 22 Feb 2026 05:54:14 +0000</pubDate>
+      <guid>https://runink.org/blog/procurement-spend-analytics-visibility/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Most procurement organizations have limited visibility into 30–40% of their total spend, creating blind spots where maverick purchasing, contract non-compliance, and duplicative supplier relationships silently erode margins. Procurement spend analytics transforms fragmented purchasing data into actionable category intelligence — and organizations that deploy it typically identify 5–15% in addressable savings within the first 90 days.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fragmented PO systems, inconsistent commodity taxonomies, and tail spend opacity prevent CPOs from knowing where money actually goes.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;A structured spend analytics maturity path — from visibility through orchestration — turns procurement from a cost center into a strategic margin lever.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI-powered platforms like Runink automate spend classification, detect contract leakage, and surface savings opportunities that manual analysis and traditional BI dashboards consistently miss.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-do-most-procurement-organizations-operate-blind&#34;&gt;Why Do Most Procurement Organizations Operate Blind?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Procurement spend blindness results from data fragmentation — purchase orders scattered across multiple ERP instances, P-Card transactions in separate banking platforms, services spend buried in departmental budgets, and indirect categories that bypass formal procurement channels entirely. Without unified data, CPOs are making sourcing decisions based on incomplete intelligence.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;The uncomfortable reality for most Chief Procurement Officers is this: the organization is spending money in places, with suppliers, and at price points that procurement has never examined. Hackett Group research consistently shows that even mature procurement functions have direct visibility into only 60–70% of total enterprise spend. The remaining 30–40% sits in shadow — off-contract purchases, tail spend fragmented across hundreds of low-value suppliers, and services categories that were never brought under procurement governance.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

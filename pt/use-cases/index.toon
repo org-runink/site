@@ -1,0 +1,13 @@
+section_context[3]:
+  - title: "Auditoria de Conformidade: Monitoramento Automatizado"
+    permalink: "https://runink.org/pt/use-cases/compliance/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Garanta a total adesão a padrões como o IFRS 17 para seguros e monitore os riscos continuamente."
+  - title: "Orquestração de Atendimento: Alocação Dinâmica de Estoque"
+    permalink: "https://runink.org/pt/use-cases/fulfillment-optimization/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Orquestra estoque e rotas com base em restrições em tempo real (clima, status da doca, margem)."
+  - title: "Recuperação de Contestações: Auditoria de Contestações Automatizada"
+    permalink: "https://runink.org/pt/use-cases/claims-recovery/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Recupere até 40% mais despesas de frete. Automatize a luta contra recusas de transportadoras com precisão jurídica."

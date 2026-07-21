@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "ESG Compliance \u0026 Data Privacy Auditing"
+    permalink: "https://runink.org/use-cases/compliance/"
+    date: "2024-05-20T00:00:00Z"
+    category: "use-cases"
+    description: "Auto-hashes customer PII to comply with DPA and compiles Scope 3 emissions."
+    content: " Executive Summary: Key Takeaways * **Instant DPA Compliance:** The Data Protection Filter continuously audits operational reports for unmasked PII. * **Scope 3 Carbon Tracking:** Automatically extracts inbound ocean freight data to compute CO₂e intensity per ton-km. * **Automated Redaction:** Executes secure SHA-256 SQL masking policies to prevent million-dollar regulatory fines. 100% GDPR \u0026 ESG Alignment. Strict ESG reporting requirements and regulatory privacy frameworks demand granular audit trails. Our Compliance Auditor cuts reporting time from months to days. The PII Exposure Risk Ingesting unmasked customer PII (names, phone numbers, addresses) into operational or carrier dashboards violates the Data Protection Act (DPA) and GDPR. Fines for data exposure can reach millions of dollars. The moment unmasked PII exposure is detected in a driver dispatch feed, the engine pauses the UI visualization and executes a secure SHA-256 SQL masking policy immediately. The Autonomous Value Loop ROI: 100% GDPR/DPA alignment; cuts carbon reporting time to days.\nSecure Your Compliance "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Automated Claims Audit \u0026 Demurrage Recovery"
+    permalink: "https://runink.org/use-cases/claims-recovery/"
+    date: "2024-05-20T00:00:00Z"
+    category: "use-cases"
+    description: "Forensic chronology reconstruction auto-drafts tariff disputes \u0026 short-pays."
+    content: " Executive Summary: Key Takeaways * **Forensic Chronology Reconstruction:** Pinpoints exact shifts in delay ownership by analyzing carrier tracking and terminal weighbridges. * **Weighbridge Auditing:** Automatically catches discrepancies between manifest BOLs and physical port scale weights. * **Irrefutable Chargebacks:** Auto-drafts legal tariff disputes and short-pays for demurrage fees. Recover $18,200 Per Dispute. Stop eating the cost of carrier demurrage penalties and customs holds. Our Claims Agent cross-references real-time scale feeds against digital shipping documents instantly. The Zero-Hold Customs Gate Even minor discrepancies between a Bill of Lading and a terminal scale weight will trigger immediate customs holds at international ports, causing carrier demurrage penalties. Most companies write these fines off as a cost of doing business. When a scale registers a weight that mismatches the manifest by more than 5%, the Go backend instantly flags the risk and compiles a legally compliant BOL weight amendment draft. The Autonomous Value Loop ROI: $18,200 recovered per customs tariff mismatch dispute.\nStart Recovering Cash "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

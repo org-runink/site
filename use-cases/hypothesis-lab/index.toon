@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Hypothesis Simulation Lab"
+    permalink: "https://runink.org/use-cases/hypothesis-lab/"
+    date: "2024-05-20T00:00:00Z"
+    category: "use-cases"
+    description: "Tests what-if scenarios in sandbox pools to predict SLA accuracy and supply chain resilience."
+    content: " Executive Summary: Key Takeaways * **Isolated Shadow Execution:** Runs simulations in background compute pools without affecting active ERP databases. * **Multi-variable Noise Injection:** Injects stochastic variables (sensor noise, cold chain variance, routing delays) to stress-test your network. * **Alternative Sourcing Models:** Simulates the precise NPV, payback, and EBITDA impact of structural network changes. Test Without Breaking. Hard-coded ERP systems cannot evaluate \"what-if\" disruption scenarios without risking active production data. Our Hypothesis Lab provides a safe sandbox to stress-test your logistics against reality. The Blind Spot of Traditional S\u0026OP When a sudden port strike or warehouse fire occurs, static S\u0026OP plans collapse. You need to know the financial impact of rerouting *before* you commit the capital. Stop guessing the impact of disruptions. Our twin leverages sandboxed background compute worker pools to run massive simulations, projecting the exact Net Present Value (NPV) and Cost-to-Serve (CTS) of alternative supply chain architectures. The Autonomous Value Loop ROI: 99.4% forecasted SLA accuracy via proactive inventory buffer positioning.\nSimulate Your Supply Chain "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Carrier Billing on Runink</title>
+    <link>https://runink.org/tags/carrier-billing/</link>
+    <description>Recent content in Carrier Billing on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/carrier-billing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Freight Audit and Payment Automation — Stop Overpaying Your Carriers</title>
+      <link>https://runink.org/blog/freight-audit-payment-automation/</link>
+      <pubDate>Sun, 15 Mar 2026 20:23:02 +0000</pubDate>
+      <guid>https://runink.org/blog/freight-audit-payment-automation/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Most shippers overpay their carriers by 3–8% annually due to billing errors, duplicate invoices, and rate discrepancies that manual audit processes simply cannot catch at scale. Freight audit and payment automation validates every invoice against contracted rates in real-time, recovers millions in overpayments, and transforms transportation spend from a cost center liability into a controlled, auditable financial operation.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;One in five freight invoices contains a billing error — and most go undetected until they compound into seven-figure losses.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual freight audit teams can realistically review only 10–15% of total invoice volume, leaving the vast majority of carrier billing unverified.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI-powered freight audit platforms like Runink automate rate validation, duplicate detection, and GL coding to recover 2–5% of annual freight spend within the first year.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-are-shippers-still-overpaying-carriers-by-millions-every-year&#34;&gt;Why Are Shippers Still Overpaying Carriers by Millions Every Year?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Carrier overpayment persists because freight billing is inherently complex — with accessorial charges, fuel surcharges, minimum charges, dimensional weight adjustments, and multi-stop rate structures creating thousands of opportunities for errors on every invoice cycle. Most organizations lack the systems and headcount to validate each line item against contracted tariffs, so errors flow straight through to payment.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;The freight payment problem is not a matter of carrier dishonesty. It is a matter of complexity at scale. A mid-market shipper moving 50,000 shipments per year across FTL, LTL, parcel, and intermodal modes can easily generate 200,000+ individual invoice line items annually. Each line item carries its own rate logic: base rates, fuel surcharge tables, accessorial fees for liftgate, inside delivery, detention, or demurrage, and weight or dimensional adjustments that shift with every load.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

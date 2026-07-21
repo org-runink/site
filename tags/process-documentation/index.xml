@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Process Documentation on Runink</title>
+    <link>https://runink.org/tags/process-documentation/</link>
+    <description>Recent content in Process Documentation on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/process-documentation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Standard Operating Procedures (SOPs) in Warehouse and Logistics — Why They Matter More Than You Think</title>
+      <link>https://runink.org/blog/warehouse-sop-standard-operating-procedures/</link>
+      <pubDate>Sun, 24 May 2026 12:14:12 +0000</pubDate>
+      <guid>https://runink.org/blog/warehouse-sop-standard-operating-procedures/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Standard Operating Procedures are the operational backbone of every high-performing warehouse, yet most facilities still rely on tribal knowledge and informal training to run critical processes like receiving, putaway, picking, packing, and shipping. Documenting and enforcing SOPs reduces error rates, strengthens safety compliance, and cuts new-hire ramp-up time by as much as 50%.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Undocumented processes cost warehouses an estimated 20–30% in operational inefficiency through mispicks, safety incidents, and inconsistent throughput.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Effective SOPs follow a lifecycle — draft, review, train, audit, revise — that keeps procedures aligned with actual floor conditions.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI-driven platforms like Runink can auto-generate SOP drafts from operational data, flag real-time deviations, and continuously refine procedures based on performance analytics.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-are-sops-in-a-warehouse-and-logistics-context&#34;&gt;What Are SOPs in a Warehouse and Logistics Context?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; In logistics, a Standard Operating Procedure is a step-by-step documented instruction set that governs how a specific warehouse task — receiving, putaway, picking, packing, shipping, cycle counting, or returns processing — must be executed every time, by every associate, regardless of shift or experience level.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;SOPs are not training manuals or policy handbooks. They are precise, actionable work instructions tied to a single process. A receiving SOP, for example, specifies how inbound freight is inspected against the ASN, how discrepancies are escalated, where pallets are staged, and how the WMS transaction is completed. A cycle count SOP defines zone assignments, count tolerances, variance thresholds, and recount protocols.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

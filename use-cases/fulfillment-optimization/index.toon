@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Predictive JIT \u0026 Sourcing Optimization"
+    permalink: "https://runink.org/use-cases/fulfillment-optimization/"
+    date: "2024-05-20T00:00:00Z"
+    category: "use-cases"
+    description: "Solve supplier capacity bottlenecks and automate backup supplier routing to reduce stockouts."
+    content: " Executive Summary: Key Takeaways * **Supplier Capacity Bottlenecks:** Predicting stockouts before they breach safety stock levels. * **Automated Action Loops:** Automates the search for backup suppliers and generates pre-approved purchase order drafts. * **Consolidating Spend:** Evaluates fragmented supplier spend to consolidate and secure volume-based pricing. Stop Reacting to Stockouts. The Predictive Inventory Twin continuously decomposes seasonal trends and sales forecasts. When it projects an upcoming safety stock breach, it doesn't just alert you—it acts. The 14-Day Lead Time Trap Traditional inventory alerts notify you after safety stock is breached, leaving you at the mercy of a 14-day vendor lead time and triggering costly air-freight premiums. Most companies bleed revenue waiting for inventory. Our Fulfillment Agent executes an instant metasearch, evaluates alternative regional suppliers, and identifies secondary vendors with shorter lead times to protect your margins. The Autonomous Value Loop ROI: 15% reduction in stockouts \u0026 12% improvement in forecast accuracy.\nOptimize Your Fulfillment "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

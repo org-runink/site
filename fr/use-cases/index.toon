@@ -1,0 +1,13 @@
+section_context[3]:
+  - title: "Audit de Conformité : Suivi de Conformité Autonome"
+    permalink: "https://runink.org/fr/use-cases/compliance/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Assurez une conformité totale aux normes comme l'IFRS 17 pour l'assurance et surveillez en permanence les risques."
+  - title: "Orchestration de l'Exécution : Allocation Dynamique des Stocks"
+    permalink: "https://runink.org/fr/use-cases/fulfillment-optimization/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Orchestre les stocks et le routage en fonction des contraintes en temps réel (météo, statut des quais, marge)."
+  - title: "Récupération des Revenus : Audit Autonome des Réclamations"
+    permalink: "https://runink.org/fr/use-cases/claims-recovery/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Récupérez 40 % de dépenses de transport supplémentaires. Automatisez la lutte contre les refus des transporteurs avec une précision juridique."

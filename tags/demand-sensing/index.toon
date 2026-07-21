@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "Point-of-Sale Data in Logistics: Using Real-Time Retail Sync for Demand Sensing"
+    permalink: "https://runink.org/blog/pos-data-logistics-demand-sensing/"
+    date: "2026-05-29T00:24:23Z"
+    description: "Discover how integrating store-level POS data transforms reactive forecasting into proactive, AI-driven demand sensing for resilient logistics operations."
+  - title: "Inventory Optimization Beyond Safety Stock — How Demand Sensing Is Replacing Guesswork"
+    permalink: "https://runink.org/blog/inventory-optimization-demand-sensing/"
+    date: "2026-02-28T06:20:29Z"
+    description: "Traditional safety stock formulas fail in volatile markets. Learn how demand sensing and AI-driven inventory optimization reduce excess stock by 15-30% while improving fill rates."

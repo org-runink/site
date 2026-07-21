@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Responsive Reverse Logistics \u0026 Circular Economy Triage"
+    permalink: "https://runink.org/use-cases/responsive-reverse-logistics/"
+    date: "2024-05-20T00:00:00Z"
+    category: "use-cases"
+    description: "Streamlines returned goods processing from initial field scan to final closed-loop routing via real-time cost-benefit triage."
+    content: " Executive Summary: Key Takeaways * **Barcode Scanning Validation:** Instantly validates warranty periods and logs condition codes from the field via mobile scanning. * **Real-Time Cost-Benefit Triage:** Evaluates a returned item's residual value versus repair costs via instant Secure API calls. * **Automated Disposition Routing:** Dynamically routes inventory for restock, refurbishment (e.g., Chennai Hub), or recycling, diverting e-waste from landfills. Reclaim Margin on Returns. High return volumes spike transportation OPEX and clog warehouses. Our Reverse Logistics Engine instantly triages returns at the point of origin, ensuring optimal financial recovery. The Returns Processing Bottleneck Manual returns sorting causes slow refund cycles and results in high-value, refurbishable products sitting idle or mistakenly sent to landfills. Every delayed return is trapped working capital. The moment a barcode is scanned, the engine evaluates real-time market demand and projected repair costs. Pristine items are sent for immediate restock, while damaged items are routed directly to refurbishment hubs. The Autonomous Value Loop ROI: 40% processing time reduction \u0026 $32,000 monthly recovered value.\nOptimize Your Returns "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:
