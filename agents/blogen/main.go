@@ -1,5 +1,5 @@
 // Command blogen is PULSE's sovereign, in-cluster blog generator for runink's own
-// online presence (www.runink.org). It runs as a k8s Job inside GKE and writes the
+// online presence (www.runink.org). It runs as a k8s Job on the bare-metal k0s fleet and writes the
 // article on the platform's OWN inference (llama-server, OpenAI-compatible API)
 // reached at the in-cluster inference Service — NO external AI token, no Tavily, no
 // external blogen container. It emits a Hugo-frontmatter Markdown article and a
@@ -81,7 +81,7 @@ func main() {
 
 	// Deliverables to STDOUT between markers (nothing else goes to stdout); diagnostics
 	// to STDERR. The workflow extracts strictly between the markers with awk.
-	fmt.Fprintf(os.Stderr, "blogen: sovereign article generated (local GKE model, no external AI) — %d body chars, hero=%s\n", len(a.Body), heroExt)
+	fmt.Fprintf(os.Stderr, "blogen: sovereign article generated (local k0s-fleet model, no external AI) — %d body chars, hero=%s\n", len(a.Body), heroExt)
 	fmt.Println("===BLOG-MD-BEGIN===")
 	fmt.Print(md)
 	if !strings.HasSuffix(md, "\n") {
