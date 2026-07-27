@@ -126,7 +126,7 @@ jobs:
             core.setOutput('value_driver', valueDriver || "");
             core.setOutput('context_links', links === "No response" ? "" : links || "");
 
-      # --- Sovereign generation: PULSE's own in-cluster Go agent on the local GKE
+      # --- Sovereign generation: PULSE's own in-cluster Go agent on the local k0s fleet
       # model. No external blogen container, no Tavily, no external AI token. ---
       - id: auth
         name: Authenticate to Google Cloud (WIF)
