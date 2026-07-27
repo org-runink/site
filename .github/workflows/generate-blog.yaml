@@ -135,10 +135,12 @@ jobs:
           workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
       - uses: google-github-actions/setup-gcloud@v2
-      - name: Install kubectl + GKE auth plugin
-        run: gcloud components install gke-gcloud-auth-plugin kubectl --quiet
-      - name: Get GKE credentials (as the deployer SA)
-        run: gcloud container clusters get-credentials runink-demo --zone northamerica-northeast1-b --project runink
+      - name: Install kubectl
+        run: gcloud components install kubectl --quiet
+      - name: Fetch the fleet kubeconfig
+        run: |
+          gcloud secrets versions access latest --secret=runink-fleet-kubeconfig --project=runink > /tmp/fleet.kubeconfig
+          echo "KUBECONFIG=/tmp/fleet.kubeconfig" >> "$GITHUB_ENV"
 
       - name: Build the blogen agent image (idempotent, keyless)
         id: img
