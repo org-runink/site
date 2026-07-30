@@ -5,7 +5,7 @@
             <h1 class="text-4xl font-bold mb-4">
                 {{ .Data.Singular | title }}: {{ .Title }}
             </h1>
-            <div class="text-xl text-gray-600">
+            <div class="text-xl text-stone-400">
                 {{ $count := len .Pages }}
                 {{ if eq $count 1 }}
                     1 post
@@ -45,7 +45,7 @@
                             </span>
                         {{ else }}
                             <a href="{{ .URL }}" 
-                               class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200">
+                               class="px-4 py-2 bg-stone-900 text-stone-300 rounded-lg hover:bg-gray-200 transition-colors duration-200">
                                 {{ .PageNumber }}
                             </a>
                         {{ end }}

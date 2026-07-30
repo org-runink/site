@@ -1,4 +1,4 @@
-<div class="value-card bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="value-card bg-stone-900 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
     <div class="mb-4">
         {{ $icon := .Get "icon" }}
         {{ if eq $icon "lightbulb" }}
@@ -17,5 +17,5 @@
         {{ end }}
     </div>
     <h3 class="text-xl font-bold mb-2">{{ .Get "title" }}</h3>
-    <p class="text-gray-600">{{ .Get "description" }}</p>
+    <p class="text-stone-400">{{ .Get "description" }}</p>
 </div>

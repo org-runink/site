@@ -1,5 +1,5 @@
 {{ $background_color := .Get "background-color" }}
-<section class="section{{ if not $background_color }} bg-gray-50{{ end }}" {{ if $background_color }}style="background-color:{{ $background_color }};"{{ end }}>
+<section class="section{{ if not $background_color }} bg-stone-950{{ end }}" {{ if $background_color }}style="background-color:{{ $background_color }};"{{ end }}>
     <div class="container">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">{{ .Get "title" | default "Loved by Teams Worldwide" }}</h2>
