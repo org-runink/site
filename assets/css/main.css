@@ -7,12 +7,14 @@
     @apply scroll-smooth;
   }
   
+  /* Dark-mode-first limbic canvas (DESIGN.md): deep stone-950 background, soft
+     stone-300 body text; headings are bright white for max contrast. */
   body {
-    @apply font-sans text-gray-700 antialiased;
+    @apply font-sans bg-stone-950 text-stone-300 antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold;
+    @apply font-heading font-bold text-white;
   }
 }
 
@@ -55,12 +57,12 @@
   }
 
   .card {
-    @apply bg-white p-6 transition duration-200 hover:shadow-md;
+    @apply bg-stone-900 border border-stone-800 p-6 transition duration-200 hover:border-stone-700;
     border-radius: 2rem;
   }
 
   .nav-link {
-    @apply text-gray-600 hover:text-primary-600 font-bold transition duration-200;
+    @apply text-stone-400 hover:text-[#ea580c] font-bold transition duration-200;
   }
 
   .feature-grid {
@@ -112,11 +114,11 @@
   }
 
   .prose code:not(pre code) {
-    @apply bg-gray-100 text-gray-900 px-1.5 py-0.5 rounded text-sm font-mono;
+    @apply bg-stone-800 text-stone-100 px-1.5 py-0.5 rounded text-sm font-mono;
   }
 
   .table-of-contents {
-    @apply bg-gray-50 p-6 rounded-lg my-8;
+    @apply bg-stone-900 border border-stone-800 p-6 rounded-lg my-8;
   }
 
   .table-of-contents nav {
@@ -149,7 +151,7 @@
   }
 
   .testimonial-card {
-      @apply flex-none w-[300px] bg-white p-8 rounded-lg shadow-md;
+      @apply flex-none w-[300px] bg-stone-900 border border-stone-800 p-8 rounded-lg;
   }
 
   .testimonials-container.static .testimonial-card {
@@ -161,7 +163,7 @@
   }
 
   .aeo-direct-answer {
-      @apply my-6 p-6 border-l-4 border-[#ea580c] bg-orange-50 rounded-r-lg text-gray-800 shadow-sm;
+      @apply my-6 p-6 border-l-4 border-[#ea580c] bg-stone-900 rounded-r-lg text-stone-200;
   }
 
   .aeo-direct-answer strong {

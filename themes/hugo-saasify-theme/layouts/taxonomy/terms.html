@@ -5,7 +5,7 @@
             <h1 class="text-4xl font-bold mb-4">
                 {{ .Title }}
             </h1>
-            <div class="text-xl text-gray-600">
+            <div class="text-xl text-stone-400">
                 Browse all {{ .Data.Plural }}
             </div>
         </header>
@@ -13,11 +13,11 @@
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {{ range .Data.Terms.ByCount }}
                 <a href="{{ .Page.RelPermalink }}" 
-                   class="group p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                   class="group p-6 bg-stone-900 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
                     <h2 class="text-xl font-semibold mb-2 group-hover:text-primary-600">
                         {{ .Page.Title }}
                     </h2>
-                    <div class="text-gray-600">
+                    <div class="text-stone-400">
                         {{ .Count }} 
                         {{ if eq .Count 1 }}
                             post
@@ -30,7 +30,7 @@
         </div>
 
         {{ if not .Data.Terms }}
-            <div class="text-center py-12 text-gray-600">
+            <div class="text-center py-12 text-stone-400">
                 No {{ .Data.Plural }} found
             </div>
         {{ end }}
