@@ -14,6 +14,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    # The repo and org default_workflow_permissions is "read", which makes the
+    # gh-pages push below fail with 403 (github-actions[bot] denied). Request
+    # write on contents -- and only contents -- for this job. Declaring any
+    # permissions block sets every other scope to none, so this is strictly
+    # narrower than the read-everything default it replaces.
+    #
+    # contents: write -- actions-gh-pages publishes by force-pushing a commit
+    # to the gh-pages branch, which is a write to repository contents. No other
+    # scope is used: nothing here comments on PRs, touches packages, or uses
+    # the native Pages deployment API (which would need pages/id-token).
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
