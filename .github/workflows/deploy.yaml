@@ -46,11 +46,18 @@ jobs:
         with:
           node-version: '24.x'
 
+      # Must match the "packageManager" field in package.json and the
+      # lockfileVersion of pnpm-lock.yaml (9.0). pnpm 8 cannot read a v9
+      # lockfile at all -- it warns "Ignoring broken lockfile" and re-resolves
+      # from scratch, which is what made this build non-reproducible.
       - name: Install pnpm
-        run: npm install -g pnpm@8
+        run: npm install -g pnpm@9.15.9
 
+      # --frozen-lockfile: install exactly what pnpm-lock.yaml pins, and fail
+      # loudly if the lockfile has drifted from package.json instead of
+      # silently floating to whatever resolves today.
       - name: Install dependencies
-        run: rm pnpm-lock.yaml && pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build Tailwind CSS
         run: pnpm run build
