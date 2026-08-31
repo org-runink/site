@@ -4,6 +4,7 @@
   "description": "A modern Hugo theme for SaaS websites",
   "author": "Chaoming Li",
   "license": "MIT",
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "start": "concurrently \"npx tailwindcss -i themes/hugo-saasify-theme/assets/css/main.css -o static/css/style.css --watch\" \"hugo server -D\"",
     "build": "tailwindcss -i themes/hugo-saasify-theme/assets/css/main.css -o static/css/style.css --minify",
