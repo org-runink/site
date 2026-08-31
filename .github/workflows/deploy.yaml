@@ -58,7 +58,13 @@ jobs:
           HUGO_PARAMS_COREAPPURL: ${{ secrets.CORE_APP_URL }}
         run: hugo -d docs
 
+      # Publish only from the default branch. Pull request runs still build
+      # above -- a site that does not build should fail its PR -- but must
+      # never touch gh-pages: that branch is what runink.org serves, and the
+      # publish below is a force push with force_orphan, so a PR build
+      # overwriting it is not reversible.
       - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
