@@ -3,4 +3,6 @@ public
 docs
 cmd/models/gemma-3-12b-it-q4_0.gguf
 cmd/models/stable-diffusion-v1-5-pruned-emaonly-Q4_1.gguf
-serve.sh
+# serve.go is tracked; only the local endpoint values stay out of this public
+# repo (CI injects the same params from Actions secrets).
+serve.env

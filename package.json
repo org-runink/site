@@ -6,6 +6,7 @@
   "license": "MIT",
   "packageManager": "pnpm@9.15.9",
   "scripts": {
+    "serve": "go run serve.go --css",
     "start": "concurrently \"npx tailwindcss -i themes/hugo-saasify-theme/assets/css/main.css -o static/css/style.css --watch\" \"hugo server -D\"",
     "build": "tailwindcss -i themes/hugo-saasify-theme/assets/css/main.css -o static/css/style.css --minify",
     "test": "jest"
