@@ -1,0 +1,19 @@
+# Canonical identity for the platform's automation account.
+#
+# The bot that authors commits from the workstation and CI was renamed from
+# "Arlo Bot" to "runink-core". Renaming the identity does not retroactively
+# change ~2800 existing commits, and rewriting history to do so would break
+# every published SHA. .mailmap is the non-destructive equivalent: git log,
+# git shortlog and git blame display the canonical name, while the objects
+# stay untouched.
+#
+# Mapped by NAME AND EMAIL, not email alone, deliberately: one legacy variant
+# used paes@runink.org, which is also the humans' address. An email-only rule
+# would relabel their commits as the bot.
+#
+# Note: GitHub's web UI does not honour .mailmap (it attributes by commit
+# email), so this normalises local git tooling only.
+runink-core <bot@runink.org> Arlo Bot <bot@runink.org>
+runink-core <bot@runink.org> Arlo Bot <paes@runink.org>
+runink-core <bot@runink.org> Arlo Bot <arlo@dashie.ink>
+runink-core <bot@runink.org> Arlobot <arlobot@runink.org>
