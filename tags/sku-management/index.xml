@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SKU Management on Runink</title>
+    <link>https://runink.org/tags/sku-management/</link>
+    <description>Recent content in SKU Management on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/sku-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Warehouse Slotting Optimization — The Overlooked Strategy That Can Cut Picking Time by 30%</title>
+      <link>https://runink.org/blog/warehouse-slotting-optimization-strategy/</link>
+      <pubDate>Tue, 10 Mar 2026 22:17:47 +0000</pubDate>
+      <guid>https://runink.org/blog/warehouse-slotting-optimization-strategy/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Warehouse slotting optimization — the strategic placement of SKUs based on velocity, size, weight, and order affinity — is one of the highest-ROI improvements a distribution center can make. Most warehouses suffer from organic, unmanaged slotting that forces pickers to walk 30–40% of their shift instead of picking, inflating labor costs and dragging down fulfillment speed.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Poor slotting is the silent productivity killer in most warehouses — pickers spend more time walking than picking, and the problem compounds with every new SKU introduction.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Velocity-based, family grouping, ergonomic, and zone-based slotting methodologies each address different operational pain points, and the best results come from layering them together.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI-powered platforms like Runink analyze order patterns, product affinities, and seasonal demand shifts to continuously recommend optimal slot assignments — eliminating the need for disruptive, full-facility re-slotting events.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-is-warehouse-slotting-and-why-should-distribution-leaders-care&#34;&gt;What Is Warehouse Slotting and Why Should Distribution Leaders Care?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Warehouse slotting is the discipline of assigning every SKU to an optimal storage location based on pick frequency, physical dimensions, weight, and how often items are ordered together. When done well, slotting reduces travel distance, improves pick rates, lowers injury risk, and accelerates order fulfillment — all without adding headcount.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;For a VP of Distribution or Warehouse Manager, slotting is one of those operational levers that sits quietly beneath the surface. It does not make headlines the way a new WMS deployment or robotics investment does. But the impact is dramatic. The Warehousing Education and Research Council (WERC) consistently identifies slotting as a top-three driver of warehouse labor productivity, and for good reason: it determines how far and how often every picker in your facility has to travel on every single order.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

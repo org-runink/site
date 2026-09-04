@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Delivery Costs on Runink</title>
+    <link>https://runink.org/tags/delivery-costs/</link>
+    <description>Recent content in Delivery Costs on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/delivery-costs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Last-Mile Delivery Optimization — Why It&#39;s the Most Expensive and Most Important Part of Your Supply Chain</title>
+      <link>https://runink.org/blog/last-mile-delivery-optimization/</link>
+      <pubDate>Mon, 27 Apr 2026 17:37:45 +0000</pubDate>
+      <guid>https://runink.org/blog/last-mile-delivery-optimization/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Last-mile delivery is the single most expensive segment of the supply chain, consuming up to 53% of total shipping costs. By deploying dynamic route optimization, pick-up/drop-off (PUDO) collection point networks, and AI-driven delivery prediction, operations leaders can reduce last-mile expenditure by 20–30% while simultaneously improving on-time delivery rates and customer satisfaction scores.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Last-mile delivery costs are unsustainable at current scale&lt;/strong&gt; — failed deliveries alone cost European and North American carriers an estimated $20 per re-attempt, and first-attempt failure rates hover around 8–12%.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Consumer expectations have permanently shifted&lt;/strong&gt; — same-day delivery, real-time tracking, and narrow delivery windows are now table stakes, not differentiators.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Proven cost levers exist today&lt;/strong&gt; — dynamic routing, PUDO consolidation, and predictive delivery intelligence can compress costs by 20–30% without degrading the customer experience.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-does-last-mile-delivery-consume-over-half-of-total-shipping-costs&#34;&gt;Why Does Last-Mile Delivery Consume Over Half of Total Shipping Costs?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Last-mile delivery is disproportionately expensive because it involves the highest density of individual stops, the lowest vehicle utilization, and the greatest exposure to urban congestion, failed delivery attempts, and customer-driven re-routing — all of which compound into per-parcel costs that dwarf line-haul and middle-mile segments combined.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;The economics are straightforward but brutal. Line-haul freight moves high volumes between consolidation points on predictable routes with near-full truckloads. Middle-mile distribution follows optimized hub-and-spoke patterns. But the last mile fractures a single consolidated shipment into dozens or hundreds of individual doorstep deliveries — each one subject to traffic, parking constraints, access codes, and the most unpredictable variable of all: whether the customer is actually home.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

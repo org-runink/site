@@ -1,0 +1,13 @@
+section_context[3]:
+  - title: "Auditoría de Cumplimiento: Monitoreo de Cumplimiento Autónomo"
+    permalink: "https://runink.org/es/use-cases/compliance/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Garantice el cumplimiento total de estándares como IFRS 17 para seguros y monitoree continuamente el riesgo."
+  - title: "Orquestación del Cumplimiento: Asignación Dinámica de Inventario"
+    permalink: "https://runink.org/es/use-cases/fulfillment-optimization/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Orquesta el inventario y el enrutamiento según restricciones en tiempo real (clima, estado del muelle, margen)."
+  - title: "Recuperación de Ingresos: Auditoría Autónoma de Reclamaciones"
+    permalink: "https://runink.org/es/use-cases/claims-recovery/"
+    date: "2024-05-20T00:00:00Z"
+    description: "Recupere un 40% más de gastos de transporte. Automatice la lucha contra los rechazos de transportistas con precisión jurídica."

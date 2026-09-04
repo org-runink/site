@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pharma Logistics on Runink</title>
+    <link>https://runink.org/tags/pharma-logistics/</link>
+    <description>Recent content in Pharma Logistics on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/pharma-logistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cold Chain Logistics — Why Temperature Excursions Cost More Than You Think</title>
+      <link>https://runink.org/blog/cold-chain-logistics-temperature-control/</link>
+      <pubDate>Tue, 09 Jun 2026 19:24:39 +0000</pubDate>
+      <guid>https://runink.org/blog/cold-chain-logistics-temperature-control/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Temperature excursions in cold chain logistics cost the pharmaceutical and perishable food industries billions of dollars annually in destroyed product, regulatory penalties, and long-term brand erosion. Real-time IoT telemetry integrated with AI-powered platforms like Runink can predict excursions before they happen, automate compliance documentation, and reduce spoilage rates by 25-40%.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;A single temperature excursion can cascade into six-figure losses&lt;/strong&gt; when you factor in product destruction, batch recalls, regulatory fines, and downstream fulfillment delays.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Traditional monitoring tools — paper loggers, USB data recorders, and manual checks — create dangerous visibility gaps&lt;/strong&gt; that allow excursions to go undetected for hours or even days.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI-driven predictive alerting transforms cold chain management from reactive damage control to proactive risk prevention&lt;/strong&gt;, enabling operations teams to intervene before product integrity is compromised.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;how-large-is-the-cold-chain-logistics-market--and-what-is-really-at-stake&#34;&gt;How Large Is the Cold Chain Logistics Market — and What Is Really at Stake?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; The global pharmaceutical cold chain alone exceeds $380 billion in product value, and the perishable food logistics market adds hundreds of billions more. With biologics, mRNA therapies, and fresh-to-consumer grocery models accelerating, the volume of temperature-sensitive freight is growing faster than the infrastructure designed to protect it.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;Cold chain logistics is no longer a niche discipline reserved for vaccine distribution or frozen seafood. It is now a core operational capability for any organization shipping biologics, cell and gene therapies, specialty chemicals, or fresh produce under strict temperature mandates. According to IQVIA, global pharmaceutical spending surpassed $1.48 trillion in 2022, and a growing share of that value moves through temperature-controlled lanes ranging from cryogenic (-196°C) to controlled room temperature (15-25°C).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

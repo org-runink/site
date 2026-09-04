@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3PL Collaboration on Runink</title>
+    <link>https://runink.org/tags/3pl-collaboration/</link>
+    <description>Recent content in 3PL Collaboration on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/3pl-collaboration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Securing Third-Party Logistics Data Sharing for Regulatory Compliance</title>
+      <link>https://runink.org/blog/securing-third-party-logistics-data-sharing/</link>
+      <pubDate>Fri, 13 Mar 2026 17:02:07 +0000</pubDate>
+      <guid>https://runink.org/blog/securing-third-party-logistics-data-sharing/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Effective collaboration in global supply chains requires sharing sensitive freight and operational data with multiple Third-Party Logistics (3PL) providers and carriers. Implementing dynamic data security protocols ensures that proprietary shipper data, customer PII, and contracted freight rates remain protected in real-time. This allows operations teams to achieve end-to-end visibility and SLA compliance without exposing the business to regulatory risks or data breaches.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Secure Data Collaboration&lt;/strong&gt; is mandatory for modern Shippers relying on a vast network of 3PLs and carriers.&lt;/li&gt;&#xA;&lt;li&gt;It ensures strict regulatory alignment with global trade frameworks while protecting sensitive &lt;strong&gt;freight contracts and customer PII&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Intelligent data obfuscation &lt;strong&gt;limits supply chain insider threats&lt;/strong&gt; without permanently altering foundational transport databases.&lt;/li&gt;&#xA;&lt;li&gt;It preserves &lt;strong&gt;real-time visibility&lt;/strong&gt;, enabling agile routing and inventory tracking without compromising competitive advantage.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In today&amp;rsquo;s interconnected global supply chain, Shippers and Third-Party Logistics (3PL) providers must seamlessly exchange massive amounts of data to maintain velocity. From real-time GPS telemetry to customs declarations and bills of lading, collaboration is non-negotiable. However, exposing unrestricted operational databases to external partners introduces immense risk. Securing shared logistics data dynamically is no longer just an IT concern—it is a critical operational imperative to protect margins, ensure compliance, and maintain trust.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

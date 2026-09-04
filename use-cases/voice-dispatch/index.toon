@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Active Driver Voice Dispatch"
+    permalink: "https://runink.org/use-cases/voice-dispatch/"
+    date: "2024-05-20T00:00:00Z"
+    category: "use-cases"
+    description: "Driver routing detours via hands-free voice commands."
+    content: " Executive Summary: Key Takeaways * **Hands-Free Voice Support:** Drivers interact with our Interface mobile app via smart headsets, using voice transcriptions. * **Real-Time Rerouting:** Automatically calculates detours around road closures and weather events in under 2 seconds. * **Hands-Free Incident Logging:** Drivers log exceptions and maintenance alerts verbally, updating the dispatch map instantly. Drive Without Distraction. Dispatchers cannot monitor telematics in real time while driving, and heavy dashboard UI lists are dangerous for on-road drivers to consult. The Safety \u0026 Efficiency Dilemma Manual fleet dispatching forces drivers to pull over to consult maps or text dispatchers about delays, hurting both safety records and delivery ETAs. Empower your drivers with a conversational co-pilot. Our Go Secure API backend processes voice requests like \"What's my next stop?\" or \"Log a tire pressure alert,\" translating them into immediate UI updates on the dispatch map. The Autonomous Value Loop ROI: 12% reduction in fleet fuel consumption \u0026 3.4% YoY uptime increase.\nUpgrade Fleet Dispatch "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Lake on Runink</title>
+    <link>https://runink.org/tags/data-lake/</link>
+    <description>Recent content in Data Lake on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/data-lake/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Six Sigma Logistics: Defining Metrics with Global Telemetry Data Lakes</title>
+      <link>https://runink.org/blog/six-sigma-logistics-define-measure-telemetry-data-lakes/</link>
+      <pubDate>Mon, 13 Apr 2026 10:37:24 +0000</pubDate>
+      <guid>https://runink.org/blog/six-sigma-logistics-define-measure-telemetry-data-lakes/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Supply chain leaders can revitalize their Six Sigma methodologies by integrating global telemetry data lakes into the Define and Measure phases. Automated data ingestion and modern data platforms eliminate siloed logistics data, allowing operations executives to establish accurate baselines and aggressively reduce variance across global networks.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Eliminate Data Silos:&lt;/strong&gt; Overcome the limitations of fragmented WMS, TMS, and YMS systems by leveraging a unified data lake architecture to gain true end-to-end network visibility.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Accelerate the Measure Phase:&lt;/strong&gt; Automate data ingestion from ERPs, ELDs, and IoT sensors to achieve real-time visibility into OTIF (On-Time In-Full), fill rates, and dwell times.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Enable Seamless Integration:&lt;/strong&gt; Utilize Runink&amp;rsquo;s one-click connectors to enterprise platforms like Snowflake and Databricks to rapidly deploy continuous process improvement initiatives.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-do-traditional-six-sigma-implementations-fail-in-modern-logistics&#34;&gt;Why Do Traditional Six Sigma Implementations Fail in Modern Logistics?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Traditional Six Sigma implementations in logistics fail because they rely on fragmented, retrospective data extracted manually from disconnected systems, which prevents supply chain leaders from accurately measuring network-wide variability in real time.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;For decades, Vice Presidents of Operations and Supply Chain Directors have relied on Lean Six Sigma frameworks to systematically identify and eliminate defects within their networks. The DMAIC (Define, Measure, Analyze, Improve, Control) process is a proven methodology for driving operational excellence. However, the sheer complexity of today’s global supply chains has exposed a critical vulnerability in how organizations execute the first two phases: Define and Measure.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

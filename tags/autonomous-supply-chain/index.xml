@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Autonomous Supply Chain on Runink</title>
+    <link>https://runink.org/tags/autonomous-supply-chain/</link>
+    <description>Recent content in Autonomous Supply Chain on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/autonomous-supply-chain/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autonomous Optimization: Achieving Six Sigma &#39;Improve&#39; with Isolated Compute Runners</title>
+      <link>https://runink.org/blog/six-sigma-improve-autonomous-optimization-compute-runners/</link>
+      <pubDate>Thu, 28 May 2026 04:09:18 +0000</pubDate>
+      <guid>https://runink.org/blog/six-sigma-improve-autonomous-optimization-compute-runners/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Achieving the Six Sigma &amp;lsquo;Improve&amp;rsquo; phase in modern logistics requires utilizing isolated compute environments to test and deploy autonomous optimizations safely. This strategic approach safeguards core enterprise systems while enabling auto-scaling logistics workflows and highly secure execution of proprietary algorithms.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Isolating operational intelligence prevents catastrophic disruptions to mission-critical WMS and TMS environments.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Runink&amp;rsquo;s Target Compute Runner wizard accelerates the deployment of self-hosted, highly secure workflows for complex freight operations.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Auto-scaling managed instances adapt dynamically to peak logistics data volumes, ensuring maximum system resilience during critical surges.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;how-does-autonomous-optimization-drive-the-six-sigma-improve-phase&#34;&gt;How Does Autonomous Optimization Drive the Six Sigma &amp;lsquo;Improve&amp;rsquo; Phase?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Autonomous optimization continuously analyzes logistics variables to execute process improvements automatically, directly fulfilling the Six Sigma &amp;lsquo;Improve&amp;rsquo; mandate to eliminate defects, reduce variability, and streamline complex supply chain operations without human bottlenecking.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;For decades, the Six Sigma DMAIC framework—Define, Measure, Analyze, Improve, Control—has served as the gold standard for operational excellence in supply chain management. While modern control towers and advanced analytics platforms have largely solved the &amp;ldquo;Measure&amp;rdquo; and &amp;ldquo;Analyze&amp;rdquo; phases, the &amp;ldquo;Improve&amp;rdquo; phase remains a persistent bottleneck. Identifying a systemic inefficiency, such as suboptimal LTL (Less-Than-Truckload) consolidations or excessive yard dwell times, is only half the battle. Actually deploying the algorithmic fix into a live, breathing logistics network is fraught with operational peril.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

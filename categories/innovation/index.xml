@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Innovation on Runink</title>
+    <link>https://runink.org/categories/innovation/</link>
+    <description>Recent content in Innovation on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/categories/innovation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond DMAIC: Continuous Improvement Driven by Agentic Workflows</title>
+      <link>https://runink.org/blog/six-sigma-continuous-improvement-agentic-workflows/</link>
+      <pubDate>Tue, 26 May 2026 23:10:17 +0000</pubDate>
+      <guid>https://runink.org/blog/six-sigma-continuous-improvement-agentic-workflows/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Traditional Six Sigma methodologies like DMAIC struggle to keep pace with modern supply chain volatility. Agentic workflows resolve this by deploying autonomous Specialist Persona Swarms that constantly monitor telemetry, evaluate data posture, and execute continuous improvements in real time without waiting for periodic reviews.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Static Frameworks Fall Short:&lt;/strong&gt; Periodic DMAIC cycles cannot address immediate issues like sudden demurrage spikes or unexpected FTL capacity drops before they impact service levels.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Specialist Persona Swarms:&lt;/strong&gt; Autonomous agents dedicated to specific domains—such as Data Posture, Fulfilment, and Telemetry—collaborate to solve complex logistics disruptions dynamically.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Continuous Autonomous Execution:&lt;/strong&gt; Moving beyond batch-processed analytics, modern supply chain control towers autonomously act on insights to optimize fill rates and OTIF performance instantaneously.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The ReAct Live Console:&lt;/strong&gt; Runink provides a unified visibility layer that enables operations leaders to govern agentic swarms, ensuring strategic alignment and immediate intervention capabilities.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-is-traditional-dmaic-failing-modern-supply-chain-complexity&#34;&gt;Why is Traditional DMAIC Failing Modern Supply Chain Complexity?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Traditional DMAIC fails in modern supply chains because it is inherently reactive and batch-oriented, making it too slow to address rapidly fluctuating variables like carrier capacity, dwell times, and port congestion before they impact the bottom line.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;For decades, Six Sigma and the DMAIC (Define, Measure, Analyze, Improve, Control) framework have been the gold standard for continuous improvement in operations. Supply Chain VPs and Operations leaders have relied on these rigorous methodologies to systematically eliminate defects, reduce variance, and streamline processes from the factory floor to the final mile. However, the architecture of global trade has fundamentally shifted.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

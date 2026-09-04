@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Cold Chain \u0026 Terminal Safety"
+    permalink: "https://runink.org/use-cases/cold-chain-safety/"
+    date: "2024-05-20T00:00:00Z"
+    category: "use-cases"
+    description: "IoT-Edge Sentinel locks yard cranes on segregation violations and protects perishable cargo."
+    content: " Executive Summary: Key Takeaways * **Predictive Refrigeration Control:** Detects reefer compressor degradation before spoilage occurs. * **Automated Rerouting:** Triggers alternative port power-plugs or LTL injections to quarantine cargo. * **HazMat Buffer Enforcement:** Automatically locks crane movements when dangerous goods violate proximity buffers. Zero Safety Infractions. The IoT Cold Chain \u0026 Safety Sentinel ingests real-time telematics streams from connected reefer sensors and yard GPS, executing immediate Secure API lock commands when safety is compromised. The High Cost of Spoilage A failing compressor on a reefer container can spoil high-value biologics or food cargo within hours. Most companies only discover temperature excursions after arrival. We protect the cargo while it's in transit. Our twin detects degradation (e.g., rising to 4.0°C) and drafts an express alternate carrier injection to save the downstream delivery, protecting $42,000 in assets per container. The Autonomous Value Loop ROI: Zero safety infractions \u0026 cargo loss protection of $42K/reefer.\nSecure Your Yard "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

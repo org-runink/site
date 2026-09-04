@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distribution on Runink</title>
+    <link>https://runink.org/tags/distribution/</link>
+    <description>Recent content in Distribution on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/distribution/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cross-Docking Operations — How to Eliminate Warehousing Costs and Accelerate Fulfillment</title>
+      <link>https://runink.org/blog/cross-docking-operations-efficiency/</link>
+      <pubDate>Thu, 09 Apr 2026 10:02:43 +0000</pubDate>
+      <guid>https://runink.org/blog/cross-docking-operations-efficiency/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Cross-docking eliminates warehousing storage time by moving inbound freight directly to outbound docks within hours, dramatically cutting carrying costs and compressing order-to-delivery cycles. Success depends on dock scheduling precision, real-time shipment visibility, and tight carrier coordination — all of which can be orchestrated by AI-powered platforms like Runink.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cross-docking can reduce warehousing costs by 30–50% while improving OTIF rates by eliminating put-away, storage, and retrieval steps entirely.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pre-distributed and post-distributed cross-docking serve different operational needs — choosing the right model depends on your upstream supplier maturity and downstream order variability.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Predictive cross-dock orchestration powered by real-time visibility and AI-driven scheduling turns a high-risk operation into a repeatable, scalable fulfillment advantage.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-is-cross-docking-and-why-does-it-matter-for-distribution-operations&#34;&gt;What Is Cross-Docking and Why Does It Matter for Distribution Operations?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Cross-docking is a logistics strategy where inbound goods are received at a distribution center, sorted or consolidated, and shipped outbound within hours — bypassing traditional put-away and storage entirely. It matters because it eliminates the largest variable cost in distribution: warehousing dwell time.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;Every pallet that sits on a rack costs money. Between storage fees, inventory carrying costs, labor for put-away and retrieval, and the risk of shrinkage or obsolescence, traditional warehousing operations can consume 20–30% of total logistics spend. For Distribution Center Managers under pressure to improve fill rates and compress delivery windows, cross-docking offers a fundamentally different approach.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

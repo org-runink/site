@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Downloads"
+    permalink: "https://runink.org/downloads/"
+    date: "2026-08-11T00:00:00Z"
+    category: "page"
+    description: "Get the Runink FACE and PULSE apps for Android, or request access to the sovereign server image."
+    content: " Downloads Take Runink with you, or run it on your own hardware. FACE — Android Operations, in your pocket A debug-signed build for early access — install directly, no Play Store needed. A Play-Store-signed release is on the way. Download APK PULSE — Android Run your agency from the field A debug-signed build for early access — install directly, no Play Store needed. A Play-Store-signed release is on the way. Download APK Sovereign Server Run Runink on your own box The full data-sovereign appliance image — your data and inference never leave your hardware. Provisioned per deployment, not offered as a public download. Request Access "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

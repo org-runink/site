@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inventory Optimization on Runink</title>
+    <link>https://runink.org/tags/inventory-optimization/</link>
+    <description>Recent content in Inventory Optimization on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 14:19:42 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/inventory-optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inventory Optimization Beyond Safety Stock — How Demand Sensing Is Replacing Guesswork</title>
+      <link>https://runink.org/blog/inventory-optimization-demand-sensing/</link>
+      <pubDate>Sat, 28 Feb 2026 06:20:29 +0000</pubDate>
+      <guid>https://runink.org/blog/inventory-optimization-demand-sensing/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Traditional inventory management methods — static safety stock formulas, quarterly forecast cycles, and spreadsheet-driven replenishment — are fundamentally inadequate for today&amp;rsquo;s volatile demand patterns. Demand sensing replaces backward-looking statistical models with real-time signal ingestion from POS data, carrier ETAs, weather systems, and market indicators, enabling organizations to reduce excess inventory by 15–30% while simultaneously improving OTIF and fill rates.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;The bullwhip effect, elongated lead times, and seasonal misforecasting are costing enterprises billions in trapped working capital and lost sales — problems that static safety stock cannot solve.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Demand sensing differs from demand forecasting by incorporating real-time, forward-looking signals rather than relying solely on historical consumption patterns.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI-driven inventory platforms like Runink dynamically recalibrate inventory positions across the network, combining ABC/XYZ segmentation, EOQ adjustments, and postponement strategies to optimize both service levels and capital efficiency.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-do-traditional-inventory-methods-fail-in-volatile-markets&#34;&gt;Why Do Traditional Inventory Methods Fail in Volatile Markets?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; itemscope itemtype=&#34;https://schema.org/Answer&#34;&gt;&#xA;  &lt;div itemprop=&#34;text&#34;&gt;&#xA;    &lt;strong&gt;Quick Answer:&lt;/strong&gt; Traditional inventory management relies on historical averages and fixed reorder points that cannot adapt to demand volatility, supply disruptions, or rapid market shifts. The bullwhip effect amplifies small demand fluctuations into massive inventory distortions across the supply chain, and static safety stock formulas consistently produce either costly overstock positions or damaging stockouts.&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;Every VP of Inventory Management knows the pattern intimately. The quarterly demand plan arrives from the S&amp;amp;OP cycle, safety stock levels are set using standard deviation calculations against historical consumption, and within weeks the numbers are already wrong. A competitor launches a flash promotion. A container vessel skips a port rotation. A regional weather event shifts buying patterns overnight.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
