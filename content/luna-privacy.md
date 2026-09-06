@@ -100,6 +100,26 @@ position.
 * The permission is requested the first time you press start, and you can
   refuse it. Refusing disables the tracker and nothing else.
 
+### Steps, on Android
+
+Luna reads your **step count** from **Health Connect**, Android's own health
+data store, so that you never have to type it. This needs your explicit
+permission, granted through Health Connect's own dialog, and you can withdraw
+it there at any time without uninstalling Luna.
+
+* Luna reads **two numbers**: your step total for today and your step total for
+  yesterday, each for your local day. Nothing else — no heart rate, no sleep,
+  no weight, no exercise sessions, no other health data type.
+* Luna **only reads. It never writes anything into Health Connect.**
+* Those totals **are sent to our servers** and stored in your habit journal, so
+  your streak, your habit score and your coaching can use them. This is health
+  data, and we count it as such.
+* Withdrawing the permission stops the reading immediately. Step totals already
+  journaled stay until you delete your data (see "How long we keep it").
+* On Android 13 and older, Health Connect is a separate app you install
+  yourself. If it isn't there, Luna tells you so rather than silently showing
+  no steps.
+
 ### On your device
 
 The app stores on the device: your session token, your email address and
@@ -121,7 +141,12 @@ Signing out deletes the session record.
   by us; a finished session reaches our servers as a distance in kilometres and
   nothing more. Luna holds no location permission for background use. The
   app's permissions, as built, are: internet access, network state,
-  microphone, keeping the screen awake, and precise and approximate location.
+  microphone, keeping the screen awake, precise and approximate location, and
+  reading steps from Health Connect.
+* **No health data beyond steps.** Luna's Health Connect access is read-only
+  and covers exactly one type — step count. It cannot read heart rate, sleep,
+  weight, blood glucose, menstrual data or anything else Health Connect holds,
+  and it never writes to Health Connect at all.
 * **No camera.** Luna has no camera integration; photos come from the system
   file picker, which is why the app needs no photo or storage permission.
 * **No contacts, no calendar, no SMS, no browsing history, no installed-app
@@ -220,6 +245,11 @@ either or both.
   microphone permission leaves everything else working; you type instead.
 * **Spoken replies** — a toggle in the chat bar; off means Luna never speaks.
 * **Photos** — entirely optional. Luna works without ever being shown one.
+* **Steps** — optional. Grant or withdraw Luna's step access in Health
+  Connect's own settings, not in Luna. Withdrawing it leaves the rest of the
+  app working; your streak simply stops counting steps.
+* **Location** — optional, and only the activity tracker asks. Refusing it
+  disables that one screen and nothing else.
 * **Custom avatar video** — optional; the built-in animated forms need no
   upload.
 * **Signing out** removes the session and your email from the device.
@@ -241,8 +271,14 @@ children.
 `luna.runink.org` is a **development build**, not a product we distribute. It
 has two behaviours the mobile app does not: an optional local-weather backdrop
 that sends your coordinates, rounded to about one kilometre, to Open-Meteo; and
-an optional Google Fit connection that reads your daily step count. Both are
-off until you switch them on, and neither exists in the Android or iOS app.
+an optional **Google Fit** connection that reads your daily step count. Both
+are off until you switch them on, and neither exists in the Android or iOS app.
+
+To be precise about the second one, because the difference matters: the Android
+app also reads your steps, but through **Health Connect on the device** (see
+"Steps, on Android" above), not through Google Fit. Google Fit is a Google
+cloud service the browser talks to; Health Connect is a store on your own
+phone. The web build is the only place Google Fit is used.
 
 ---
 
