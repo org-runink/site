@@ -82,6 +82,24 @@ Luna records audio **only while you are holding a voice turn** — you tap the
 microphone, it records, it stops on silence or after 30 seconds. There is no
 background listening and no wake word.
 
+### Location
+
+Luna has one screen that uses location: the **outdoor activity tracker**, for
+walking, running and cycling on a live map. Nothing else in the app reads your
+position.
+
+* Location is read **only while that screen is open and a session is running.**
+  Luna does not have — and does not ask for — background location permission,
+  so it cannot follow you when the screen is closed or the app is in the
+  background.
+* **Your route never leaves the phone.** The trail drawn on the map is held in
+  the screen's own memory and is discarded when you leave. When you finish a
+  session, the only thing sent to our servers is a single number: the distance
+  you covered, in kilometres, recorded as one workout. No coordinates, no
+  trail, no start or end point.
+* The permission is requested the first time you press start, and you can
+  refuse it. Refusing disables the tracker and nothing else.
+
 ### On your device
 
 The app stores on the device: your session token, your email address and
@@ -97,9 +115,13 @@ Signing out deletes the session record.
 * **No advertising.** There are no ads, no ad SDK, no advertising identifier.
 * **No analytics and no crash-reporting SDK.** No Firebase, no Crashlytics, no
   attribution or measurement library of any kind is built into the app.
-* **No location.** The Android app declares no location permission at all, so
-  it cannot read your GPS position. The app's permissions, as built, are:
-  internet access, network state, microphone, and keeping the screen awake.
+* **No location history.** Luna does read your GPS position, but only on the
+  activity-tracking screen and only while a session is running — see
+  "Location" above. No coordinates and no route are ever sent to us or stored
+  by us; a finished session reaches our servers as a distance in kilometres and
+  nothing more. Luna holds no location permission for background use. The
+  app's permissions, as built, are: internet access, network state,
+  microphone, keeping the screen awake, and precise and approximate location.
 * **No camera.** Luna has no camera integration; photos come from the system
   file picker, which is why the app needs no photo or storage permission.
 * **No contacts, no calendar, no SMS, no browsing history, no installed-app
