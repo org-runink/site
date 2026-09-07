@@ -1,0 +1,909 @@
+/* ---------------------------------------------------------------------------
+   Runink whitepapers — long-form reading surface.
+
+   Everything is scoped under .wp so it cannot collide with the Tailwind
+   utilities that main.css ships for the header. No Tailwind classes are used
+   inside .wp, and no .wp rule leaks out of it, so there is no specificity
+   fight between the section and the site.
+
+   Palette is derived entirely from DESIGN.md. It leads with the sage/olive
+   ramp (brand_accents.green / dark_green / light_sage), which the rest of the
+   site under-uses, and keeps dark_orange for links so the section still reads
+   as Runink.
+
+   Type is the Fira superfamily, self-hosted from assets/fonts. No request
+   leaves the origin to render these pages.
+--------------------------------------------------------------------------- */
+
+/* -- self-hosted faces ---------------------------------------------------- */
+
+@font-face {
+  font-family: 'Fira Sans Wp';
+  src: url('../fonts/FiraSans-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Sans Wp';
+  src: url('../fonts/FiraSans-BookItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Sans Wp';
+  src: url('../fonts/FiraSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Cond Wp';
+  src: url('../fonts/FiraSansCondensed-Heavy.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Cond Wp';
+  src: url('../fonts/FiraSansCondensed-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code Wp';
+  src: url('../fonts/FiraCode-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -- tokens --------------------------------------------------------------- */
+
+.wp {
+  /* surfaces */
+  --paper: #F5F1E8;        /* DESIGN.md text.off_white   — the sheet        */
+  --paper-sunk: #ECE6D8;   /* derived from paper          — tables, quotes  */
+  --rule: #D9CDB8;         /* DESIGN.md text.beige_accent — hairlines       */
+  --deck: #1c1917;         /* DESIGN.md surface.stone_900 — the console     */
+  --deck-2: #292524;       /* DESIGN.md surface.stone_800                   */
+  --deck-3: #44403c;       /* DESIGN.md surface.stone_700                   */
+
+  /* ink */
+  --ink: #1c1917;
+  --ink-2: #44403c;
+  --ink-3: #78716c;        /* DESIGN.md text.stone_500                      */
+  --on-deck: #d6d3d1;      /* DESIGN.md text.stone_300                      */
+  --on-deck-2: #a8a29e;    /* DESIGN.md text.stone_400                      */
+  --on-deck-hi: #F5F1E8;
+
+  /* standing marks — the section's lead accent */
+  --runs: #5F6F3E;         /* DESIGN.md brand_accents.dark_green            */
+  --runs-lift: #C8D9A8;    /* DESIGN.md brand_accents.light_sage            */
+  --drawn: #D4A574;        /* DESIGN.md brand_accents.tan                   */
+  /* dark_orange darkened to 4.97:1 on paper; the published #ca4708 measures
+     4.22:1, which is under AA for body-size text. */
+  --link: #b83f07;
+  --link-deck: #ea580c;    /* DESIGN.md brand_accents.orange                */
+
+  /* type */
+  --body: 'Fira Sans Wp', ui-sans-serif, system-ui, sans-serif;
+  --display: 'Fira Cond Wp', 'Fira Sans Wp', ui-sans-serif, system-ui, sans-serif;
+  --util: 'Fira Code Wp', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --measure: 34rem;
+  --rail-w: 17.5rem;
+
+  background: var(--deck);
+  color: var(--on-deck);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: none;
+}
+
+/* main.css sets html{scroll-behavior:smooth} unconditionally. Undo it for
+   readers who asked not to be moved. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .wp *,
+  .wp *::before,
+  .wp *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* -- touch ---------------------------------------------------------------- */
+
+.wp a,
+.wp button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(200, 217, 168, 0.2);
+}
+
+/* -- visually hidden, still announced ------------------------------------- */
+
+.wp-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* -- focus ---------------------------------------------------------------- */
+
+.wp a:focus-visible,
+.wp button:focus-visible,
+.wp summary:focus-visible {
+  outline: 2px solid var(--link-deck);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.wp-sheet a:focus-visible {
+  outline-color: var(--runs);
+}
+
+/* Sits outside .wp (it must be the first focusable element on the page), so it
+   carries its own values rather than the .wp custom properties. */
+.wp-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 60;
+  padding: 0.75rem 1.25rem;
+  background: #F5F1E8;
+  color: #1c1917;
+  font: 600 0.875rem/1 'Fira Sans Wp', ui-sans-serif, system-ui, sans-serif;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0;
+}
+.wp-skip:focus {
+  left: 0;
+  outline: 2px solid #ea580c;
+  outline-offset: -4px;
+}
+
+/* -- utility lettering ---------------------------------------------------- */
+
+.wp-util {
+  font-family: var(--util);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* =========================================================================
+   HERO — sits on the console, before the sheet begins
+   ========================================================================= */
+
+.wp-hero {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+/* The hero is a two-column composition: the claim on the left, the footing it
+   stands on to the right of it. Both halves are visible before the reader
+   scrolls. */
+@media (min-width: 62rem) {
+  .wp-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 0 4.5rem;
+    align-items: start;
+  }
+  .wp-hero-eyebrow { grid-column: 1 / -1; }
+  .wp-hero-side { padding-top: 0.6rem; }
+  .wp-legend { grid-column: 1 / -1; margin-top: 1rem; }
+}
+
+.wp-hero-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--on-deck-2);
+  margin-bottom: 1.75rem;
+}
+.wp-hero-eyebrow .wp-mark-dot {
+  color: var(--runs-lift);
+}
+
+.wp-hero h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5.4vw, 4.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--on-deck-hi);
+  margin: 0 0 1.25rem;
+  text-wrap: balance;
+}
+
+.wp-hero-sub {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 1.9vw, 1.3rem);
+  letter-spacing: 0.01em;
+  color: var(--runs-lift);
+  margin: 0 0 1.75rem;
+  max-width: 34ch;
+}
+
+.wp-hero-deck {
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  color: var(--on-deck);
+  max-width: 52ch;
+  margin: 0 0 2.25rem;
+}
+.wp-hero-deck p { margin: 0 0 1rem; }
+.wp-hero-deck p:last-child { margin-bottom: 0; }
+.wp-hero-deck strong { color: var(--on-deck-hi); font-weight: 600; }
+
+/* how to read this — the legend for the standing marks */
+.wp-legend {
+  border-top: 1px solid var(--deck-3);
+  padding-top: 1.5rem;
+}
+.wp-legend-title {
+  color: var(--on-deck-2);
+  margin-bottom: 1rem;
+}
+.wp-legend-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+.wp-legend-list li {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--on-deck-2);
+  border-top: 1px solid var(--deck-3);
+  padding-top: 0.7rem;
+}
+.wp-legend-list li .wp-mark {
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+.wp-legend-list dfn {
+  font-style: normal;
+}
+
+/* =========================================================================
+   STANDING MARK — the signature
+   Every word is quoted from the documents' own vocabulary.
+   ========================================================================= */
+
+.wp-mark {
+  font-family: var(--util);
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+}
+.wp-mark::before {
+  content: '';
+  width: 0.5em;
+  height: 0.5em;
+  flex: none;
+  background: currentColor;
+}
+
+/* runs / first-party — something that exists and was exercised */
+.wp-mark[data-mark='runs'],
+.wp-mark[data-mark='first-party'] { color: var(--runs); }
+
+/* drawn / hypothetical / self-declared / not-measured — something the paper
+   is explicitly framing as description rather than record */
+.wp-mark[data-mark='drawn'],
+.wp-mark[data-mark='hypothetical'],
+.wp-mark[data-mark='self-declared'],
+.wp-mark[data-mark='not-measured'] { color: #8a6636; }
+
+/* on the dark console the same marks need lifting */
+.wp-hero .wp-mark[data-mark='runs'],
+.wp-hero .wp-mark[data-mark='first-party'],
+.wp-rail .wp-mark[data-mark='runs'],
+.wp-rail .wp-mark[data-mark='first-party'] { color: var(--runs-lift); }
+
+.wp-hero .wp-mark[data-mark='drawn'],
+.wp-hero .wp-mark[data-mark='hypothetical'],
+.wp-hero .wp-mark[data-mark='self-declared'],
+.wp-hero .wp-mark[data-mark='not-measured'],
+.wp-rail .wp-mark[data-mark='drawn'],
+.wp-rail .wp-mark[data-mark='hypothetical'],
+.wp-rail .wp-mark[data-mark='self-declared'],
+.wp-rail .wp-mark[data-mark='not-measured'] { color: var(--drawn); }
+
+/* the mark as it appears above a chapter heading, on paper */
+.wp-chapter-mark {
+  display: block;
+  margin-bottom: 0.875rem;
+}
+
+/* =========================================================================
+   BODY — rail + sheet
+   ========================================================================= */
+
+.wp-body {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+@media (min-width: 62rem) {
+  .wp-body {
+    display: grid;
+    grid-template-columns: var(--rail-w) minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: start;
+  }
+}
+
+/* -- the register (rail) -------------------------------------------------- */
+
+.wp-rail {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 62rem) {
+  .wp-rail {
+    position: sticky;
+    top: 6rem;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 0.5rem;
+  }
+  .wp-rail::-webkit-scrollbar { width: 3px; }
+  .wp-rail::-webkit-scrollbar-thumb { background: var(--deck-3); }
+}
+
+.wp-rail-head {
+  color: var(--on-deck-2);
+  padding-bottom: 0.875rem;
+  margin-bottom: 0.875rem;
+  border-bottom: 1px solid var(--deck-3);
+}
+
+.wp-reg {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wp-reg a {
+  display: grid;
+  grid-template-columns: 2.9rem 1fr;
+  gap: 0.625rem;
+  align-items: baseline;
+  padding: 0.4rem 0.5rem 0.4rem 0;
+  color: var(--on-deck-2);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+  line-height: 1.35;
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wp-reg a:hover {
+  color: var(--on-deck-hi);
+  border-left-color: var(--deck-3);
+}
+
+/* the page number, set in the utility face so the column rules itself */
+.wp-reg-page {
+  font-family: var(--util);
+  font-size: 0.625rem;
+  letter-spacing: 0.04em;
+  color: var(--on-deck-2);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.wp-reg a:hover .wp-reg-page { color: var(--on-deck-2); }
+
+.wp-reg-title {
+  font-size: 0.8125rem;
+}
+
+.wp-reg-mark {
+  grid-column: 2;
+  margin-top: 0.2rem;
+}
+
+/* current chapter */
+.wp-reg a[aria-current='true'] {
+  color: var(--on-deck-hi);
+  border-left-color: var(--runs-lift);
+}
+.wp-reg a[aria-current='true'] .wp-reg-page { color: var(--runs-lift); }
+.wp-reg a[aria-current='true'] .wp-reg-title { font-weight: 600; }
+
+/* mobile: a real disclosure, in flow, never overlaying the text */
+.wp-rail-toggle {
+  width: 100%;
+  margin: 0 0 1.5rem;
+  padding: 0.875rem 1rem;
+  background: var(--deck-2);
+  border: 1px solid var(--deck-3);
+  border-radius: 0.5rem;
+  color: var(--on-deck);
+  font-family: var(--util);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.wp-rail-toggle[aria-expanded='true'] {
+  border-radius: 0.5rem 0.5rem 0 0;
+  margin-bottom: 0;
+}
+.wp-rail-toggle-icon {
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  flex: none;
+}
+.wp-rail-toggle[aria-expanded='true'] .wp-rail-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.wp-rail-panel[hidden] { display: none; }
+
+@media (max-width: 61.99rem) {
+  .wp-rail-panel {
+    border: 1px solid var(--deck-3);
+    border-top: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  .wp-rail-head { display: none; }
+}
+
+.wp-rail-toggle[hidden] { display: none; }
+
+/* =========================================================================
+   THE SHEET — printed matter laid on the console
+   ========================================================================= */
+
+.wp-sheet {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 0.5rem;
+  padding: clamp(1.75rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 4rem);
+  box-shadow: 0 1px 0 rgba(245, 241, 232, 0.14),
+              0 24px 60px -24px rgba(0, 0, 0, 0.7);
+  overflow-wrap: break-word;
+}
+
+.wp-doc {
+  max-width: var(--measure);
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.72;
+  color: var(--ink);
+}
+
+@media (min-width: 48rem) {
+  .wp-doc { font-size: 1.1875rem; }
+}
+
+.wp-doc > *:first-child { margin-top: 0; }
+.wp-doc > *:last-child { margin-bottom: 0; }
+
+.wp-doc p {
+  margin: 0 0 1.35em;
+}
+
+/* chapter openings */
+.wp-doc h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 3.5em 0 0.85em;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 6rem;
+}
+.wp-doc > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+/* when a chapter carries a standing mark the mark sits above the rule break */
+.wp-doc .wp-chapter {
+  margin: 3.5em 0 0.85em;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 6rem;
+}
+.wp-doc .wp-chapter:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.wp-doc .wp-chapter h2 {
+  margin: 0;
+  padding-top: 0;
+  border-top: 0;
+  scroll-margin-top: 0;
+}
+
+.wp-doc h3 {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 1.3125rem;
+  line-height: 1.35;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+  margin: 2.4em 0 0.7em;
+  scroll-margin-top: 6rem;
+}
+/* h3 gets a short sage tick so subsections read as structure, not as bold text */
+.wp-doc h3::before {
+  content: '';
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  background: var(--runs);
+  margin-bottom: 0.75rem;
+}
+
+.wp-doc h4 {
+  font-family: var(--util);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 2em 0 0.6em;
+  font-weight: 400;
+}
+
+.wp-doc strong {
+  font-weight: 600;
+  color: #0f0d0c;
+}
+
+.wp-doc em { font-style: italic; }
+
+.wp-doc a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+.wp-doc a:hover { text-decoration-thickness: 2px; }
+
+.wp-doc ul,
+.wp-doc ol {
+  margin: 0 0 1.35em;
+  padding-left: 1.35em;
+}
+.wp-doc li {
+  margin-bottom: 0.6em;
+  padding-left: 0.25em;
+}
+.wp-doc ul { list-style: none; padding-left: 1.1em; }
+.wp-doc ul > li { position: relative; }
+.wp-doc ul > li::before {
+  content: '';
+  position: absolute;
+  left: -1.1em;
+  top: 0.72em;
+  width: 0.375rem;
+  height: 0.375rem;
+  background: var(--runs);
+}
+.wp-doc ol { list-style: decimal; }
+.wp-doc ol > li::marker {
+  font-family: var(--util);
+  font-size: 0.8em;
+  color: var(--ink-3);
+}
+
+/* the example artifact card in the FACE paper */
+.wp-doc blockquote {
+  margin: 2em 0;
+  padding: 1.5rem 1.75rem;
+  background: var(--paper-sunk);
+  border-left: 3px solid var(--runs);
+  border-radius: 0 0.375rem 0.375rem 0;
+  font-size: 0.9375em;
+  line-height: 1.62;
+}
+.wp-doc blockquote p { margin-bottom: 0.6em; }
+.wp-doc blockquote p:last-child { margin-bottom: 0; }
+.wp-doc blockquote strong { display: block; margin-bottom: 0.35em; }
+.wp-doc blockquote code {
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 0.15em 0.5em;
+  margin-right: 0.25em;
+}
+
+.wp-doc code {
+  font-family: var(--util);
+  font-size: 0.85em;
+  background: var(--paper-sunk);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  color: var(--ink);
+}
+
+.wp-doc hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5em 0;
+}
+
+/* -- wide content scrolls in its own container, never the body ------------ */
+
+.wp-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 2em 0;
+  max-width: 100%;
+}
+
+.wp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 34rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.wp-doc thead th {
+  font-family: var(--util);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 400;
+  color: var(--ink-3);
+  padding: 0 0.9rem 0.7rem;
+  border-bottom: 2px solid var(--ink);
+  vertical-align: bottom;
+}
+.wp-doc tbody th {
+  text-align: left;
+  font-weight: 600;
+}
+.wp-doc td,
+.wp-doc tbody th {
+  padding: 0.8rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.wp-doc tbody tr:last-child td,
+.wp-doc tbody tr:last-child th { border-bottom: 0; }
+.wp-doc tbody tr:nth-child(odd) { background: rgba(217, 205, 184, 0.24); }
+
+.wp-doc pre {
+  font-family: var(--util);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  background: var(--deck);
+  color: var(--on-deck);
+  padding: 1.25rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+.wp-doc pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* =========================================================================
+   FOOT — where the document ends
+   ========================================================================= */
+
+.wp-foot {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+.wp-foot-inner {
+  border-top: 1px solid var(--deck-3);
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.wp-foot-label {
+  color: var(--on-deck-2);
+  margin-bottom: 0.6rem;
+}
+.wp-foot p {
+  margin: 0;
+  color: var(--on-deck);
+  line-height: 1.6;
+}
+.wp-foot a {
+  color: var(--link-deck);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(234, 88, 12, 0.35);
+}
+.wp-foot a:hover { border-bottom-color: currentColor; }
+
+.wp-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.35rem;
+}
+
+/* =========================================================================
+   INDEX
+   ========================================================================= */
+
+.wp-index-hero {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 3rem;
+}
+@media (min-width: 62rem) {
+  .wp-index-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 4.5rem;
+    align-items: end;
+  }
+  .wp-index-hero .wp-hero-eyebrow { grid-column: 1 / -1; }
+}
+.wp-index-hero h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+  color: var(--on-deck-hi);
+  margin: 0;
+  text-wrap: balance;
+}
+.wp-index-hero .wp-hero-deck { margin-bottom: 0; max-width: 48ch; }
+
+.wp-list {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.wp-card {
+  display: grid;
+  gap: 1.25rem 2.5rem;
+  padding: 2rem clamp(1.25rem, 3vw, 2.5rem);
+  background: var(--deck-2);
+  border: 1px solid var(--deck-3);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+              background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wp-card:hover {
+  border-color: var(--runs);
+  background: #2f2b29;
+}
+@media (min-width: 52rem) {
+  .wp-card {
+    grid-template-columns: minmax(0, 1fr) 12rem;
+    align-items: start;
+    gap: 1.25rem 3rem;
+  }
+}
+
+.wp-card-eyebrow {
+  color: var(--on-deck-2);
+  margin-bottom: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+.wp-card h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  color: var(--on-deck-hi);
+  margin: 0 0 0.75rem;
+}
+.wp-card-sub {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--runs-lift);
+  margin: -0.4rem 0 0.85rem;
+  font-size: 1.0625rem;
+}
+.wp-card p {
+  margin: 0;
+  color: var(--on-deck);
+  line-height: 1.62;
+  font-size: 1rem;
+  max-width: 68ch;
+}
+.wp-card-meta {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  padding-top: 0.2rem;
+}
+.wp-card-meta .wp-util { color: var(--on-deck-2); }
+.wp-card-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--link-deck);
+  margin-top: 0.4rem;
+}
+.wp-card:hover .wp-card-read { color: #f97a3d; }
+
+/* a short note under the list — used for the localised index pages */
+.wp-note {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+.wp-note-inner {
+  border-left: 2px solid var(--runs);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  color: var(--on-deck-2);
+  max-width: 56ch;
+  line-height: 1.65;
+}
+.wp-note-inner a { color: var(--link-deck); }
+
+/* =========================================================================
+   Safe areas — notched phones in landscape
+   ========================================================================= */
+
+@supports (padding: max(0px)) {
+  .wp-hero,
+  .wp-body,
+  .wp-foot,
+  .wp-index-hero,
+  .wp-list,
+  .wp-note {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+}
+
+/* Mobile: the register panel scrolls itself and must not chain to the page,
+   and its rows need a full touch target. */
+@media (max-width: 61.99rem) {
+  .wp-rail-panel { overscroll-behavior: contain; }
+  .wp-reg a { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+  .wp-rail-toggle { min-height: 44px; }
+}

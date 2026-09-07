@@ -1,0 +1,60 @@
+{{ define "main" }}
+{{- /* The documents are published in English. Every language's index lists the
+       same four and links to them, so no locale gets an empty page or a dead
+       link. */ -}}
+{{- /* The English section page is the one that has the four documents as
+       children; every locale's index renders from it. */ -}}
+{{- $en := . -}}
+{{- range .AllTranslations -}}{{- if eq .Language.Lang "en" -}}{{- $en = . -}}{{- end -}}{{- end -}}
+{{- $papers := sort $en.Pages "Weight" -}}
+
+<div class="wp">
+  <header class="wp-index-hero">
+    <p class="wp-hero-eyebrow wp-util">
+      <span>Runink</span>
+      <span aria-hidden="true">/</span>
+      <span>Whitepapers</span>
+    </p>
+    <div class="wp-hero-title"><h1>{{ .Params.headline | default .Title }}</h1></div>
+    <div class="wp-hero-side">
+      <div class="wp-hero-deck">{{ .Params.deck | markdownify }}</div>
+    </div>
+  </header>
+
+  <div class="wp-list">
+    {{ range $papers }}
+    <a class="wp-card" href="{{ .RelPermalink }}">
+      <div>
+        <p class="wp-card-eyebrow wp-util">
+          <span translate="no">{{ .Params.product }}</span>
+          {{ with .Params.jointly_with }}
+          <span aria-hidden="true">/</span>
+          <span>With <span translate="no">{{ . }}</span></span>
+          {{ end }}
+        </p>
+        <h2>{{ .Params.headline | default .Title }}</h2>
+        {{ with .Params.subtitle }}<p class="wp-card-sub">{{ . }}</p>{{ end }}
+        <p>{{ .Params.blurb }}</p>
+      </div>
+      <div class="wp-card-meta">
+        <span class="wp-util">{{ .Params.source_pages }} pages &middot; {{ len .Params.register }} chapters</span>
+        {{- $used := slice -}}
+        {{- range .Params.register -}}
+          {{- with .mark -}}{{- if not (in $used .) -}}{{- $used = $used | append . -}}{{- end -}}{{- end -}}
+        {{- end -}}
+        {{ range $used }}
+        <span class="wp-mark" data-mark="{{ . }}">{{ . | replaceRE "-" " " }}</span>
+        {{ end }}
+        <span class="wp-card-read wp-util" aria-hidden="true">Read &rarr;</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+
+  {{ with .Params.note }}
+  <div class="wp-note">
+    <div class="wp-note-inner">{{ . | markdownify }}</div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}
