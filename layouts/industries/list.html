@@ -1,0 +1,57 @@
+{{/*
+  Industries overview — a switchboard, not a page to read.
+
+  Its only job is to get a visitor to the one card that is theirs in a few
+  seconds, so each card carries the industry name, the sentence that lets a
+  buyer recognise their own operation, and nothing else.
+*/}}
+{{ define "main" }}
+{{ $accent := .Params.accent | default "#ea580c" }}
+<div class="ind bg-stone-950 min-h-screen relative overflow-hidden text-stone-300"
+     style="--accent: {{ $accent }}; --accent-soft: color-mix(in srgb, {{ $accent }} 14%, transparent);">
+  {{ partial "background-effects.html" (dict "color" $accent) }}
+  {{ partial "industries-style.html" . }}
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-16 md:py-24 relative z-10">
+
+    <header class="mb-14 md:mb-16 max-w-3xl">
+      <p class="ind-eyebrow inline-flex items-center px-3 py-1 mb-6 rounded-lg border text-xs font-black uppercase tracking-[0.2em]">
+        {{ .Title }}
+      </p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
+        {{ .Params.headline }}
+      </h1>
+      <div class="ind-rule h-px w-24 mb-6" aria-hidden="true"></div>
+      <p class="text-lg md:text-xl text-stone-300 leading-relaxed">{{ .Params.deck }}</p>
+    </header>
+
+    <ul class="grid gap-5 sm:grid-cols-2 list-none p-0 m-0 mb-14">
+      {{ range .Pages.ByWeight }}
+      <li class="min-w-0">
+        <a href="{{ .RelPermalink }}"
+           class="ind-card block h-full p-6 md:p-7 no-underline"
+           style="--accent: {{ .Params.accent | default $accent }}; --accent-soft: color-mix(in srgb, {{ .Params.accent | default $accent }} 14%, transparent);">
+          <h2 class="text-xl font-bold text-white mb-2 leading-snug">{{ .Title }}</h2>
+          <p class="text-[0.95rem] text-stone-400 leading-relaxed mb-4">{{ .Params.card | default .Params.deck }}</p>
+          <span class="ind-num text-xs font-black uppercase tracking-[0.2em]">
+            {{ $.Params.card_cta | default "See the fit" }} <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+
+    <section class="ind-card p-7 md:p-10" aria-labelledby="next-heading">
+      <h2 id="next-heading" class="text-2xl md:text-3xl font-black text-white tracking-tight mb-4">
+        {{ .Params.next_heading | default "Not sure which one is you?" }}
+      </h2>
+      <p class="text-stone-400 leading-relaxed mb-8 max-w-2xl">{{ .Params.next_body }}</p>
+      <a href="{{ "/#contact" | relLangURL }}"
+         class="ind-cta inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-sm font-black uppercase tracking-widest">
+        {{ .Params.cta_text | default "Book a consultation" }}
+      </a>
+    </section>
+
+  </div>
+</div>
+{{ end }}

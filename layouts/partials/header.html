@@ -16,13 +16,20 @@
                     {{ range .Site.Menus.main }}
                     {{ if .Params.has_submenu }}
                     <div class="relative group">
-                        <button
+                        {{/* A link, not a button. The parent entry has a real
+                             destination (the section overview), so a keyboard
+                             user can Tab to it and press Enter instead of
+                             landing on a control that does nothing without a
+                             pointer. The submenu below opens on hover OR on
+                             focus reaching anything inside the group. */}}
+                        <a href="{{ .URL }}"
                             class="flex items-center {{ with $headerConfig.menu.linkClass }}{{ . }}{{ else }}text-base text-[#F5F1E8] hover:text-white font-bold transition duration-200 py-4 px-2{{ end }}">
                             {{ .Name }}
                             {{ partial "icons" (dict "name" "chevron-down" "class" "ml-2 w-4 h-4") }}
-                        </button>
+                        </a>
                         <div class="absolute left-0 mt-2 {{ $dropdownConfig.width | default " w-72" }} opacity-0
-                            invisible group-hover:opacity-100 group-hover:visible transition-all duration-200
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
                             ease-in-out">
                             <div class="{{ $dropdownConfig.container_padding | default " py-6" }} {{
                                 $dropdownConfig.background | default "bg-stone-800" }} {{ $dropdownConfig.border |
@@ -132,7 +139,9 @@
                 {{ range .Site.Menus.main }}
                 {{ if .Params.has_submenu }}
                 <div class="py-2">
-                    <div class="text-xl text-[#F5F1E8] font-bold mb-2">{{ .Name }}</div>
+                    {{/* The group heading is also the section overview, so it is
+                         a link here too rather than dead text. */}}
+                    <a href="{{ .URL }}" class="block text-xl text-[#F5F1E8] hover:text-[#5F6F3E] font-bold mb-2 transition duration-200">{{ .Name }}</a>
                     <div class="pl-4">
                         {{ range .Params.submenu }}
                         <a href="{{ .url }}" class="block text-[#D9CDB8] hover:text-[#5F6F3E] py-2">{{ .name }}</a>

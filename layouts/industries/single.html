@@ -1,0 +1,150 @@
+{{/*
+  Industry page — a qualification funnel, not a document.
+
+  The whole page is driven from front matter. There is no {{ .Content }} slot on
+  purpose: the section exists because the audit found the site already gives
+  buyers too much up front, so the template offers a fixed, short set of slots —
+  a headline, four problems, the people who own them, what changes, one next
+  step — and nothing to pour an essay into. Depth belongs in the whitepapers,
+  which every page links to once.
+
+  Layout resolution: this file sits in layouts/industries/ so it matches the
+  content section name, and the section's front-matter cascade also sets
+  `type: industries`. layouts/use_cases/single.html is the cautionary tale —
+  `layout: "use_case"` never resolved to it and those pages have been falling
+  through to _default/single.html.
+*/}}
+{{ define "main" }}
+{{ $accent := .Params.accent | default "#ea580c" }}
+{{ $section := .Site.GetPage "/industries" }}
+<div class="ind bg-stone-950 min-h-screen relative overflow-hidden text-stone-300"
+     style="--accent: {{ $accent }}; --accent-soft: color-mix(in srgb, {{ $accent }} 14%, transparent);">
+  {{ partial "background-effects.html" (dict "color" $accent) }}
+  {{ partial "industries-style.html" . }}
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-16 md:py-24 relative z-10">
+
+    {{/* Breadcrumb back to the overview — the section is a set, and a buyer who
+         landed on the wrong one should be able to leave in one click. */}}
+    <nav aria-label="Breadcrumb" class="mb-8">
+      <a href="{{ $section.RelPermalink }}"
+         class="inline-flex items-center gap-2 text-sm font-bold text-stone-400 hover:text-white transition duration-200">
+        <span aria-hidden="true">&larr;</span>
+        {{ $section.Title }}
+      </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="mb-14 md:mb-20">
+      <p class="ind-eyebrow inline-flex items-center px-3 py-1 mb-6 rounded-lg border text-xs font-black uppercase tracking-[0.2em]">
+        {{ .Title }}
+      </p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
+        {{ .Params.headline }}
+      </h1>
+      <div class="ind-rule h-px w-24 mb-6" aria-hidden="true"></div>
+      <p class="text-lg md:text-xl text-stone-300 leading-relaxed max-w-3xl">
+        {{ .Params.deck }}
+      </p>
+    </header>
+
+    <!-- The problems, in the industry's own words -->
+    {{ with .Params.problems }}
+    <section class="mb-14 md:mb-20" aria-labelledby="problems-heading">
+      <h2 id="problems-heading" class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-8">
+        {{ $.Params.problems_heading | default "Where it goes wrong" }}
+      </h2>
+      <div class="grid gap-5 sm:grid-cols-2">
+        {{ range $i, $p := . }}
+        <article class="ind-card p-6 md:p-7 min-w-0">
+          <p class="ind-num text-xs font-black tabular-nums tracking-[0.2em] mb-3">{{ printf "%02d" (add $i 1) }}</p>
+          <h3 class="text-lg font-bold text-white mb-2 leading-snug">{{ $p.title }}</h3>
+          <p class="text-[0.95rem] text-stone-400 leading-relaxed">{{ $p.body }}</p>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <!-- Who owns the problem -->
+    {{ with .Params.owners }}
+    <section class="mb-14 md:mb-20" aria-labelledby="owners-heading">
+      <h2 id="owners-heading" class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-3">
+        {{ $.Params.owners_heading | default "Who owns this" }}
+      </h2>
+      <p class="text-stone-400 mb-8 max-w-2xl">{{ $.Params.owners_intro }}</p>
+      <ul class="grid gap-x-10 gap-y-6 sm:grid-cols-2 list-none p-0 m-0">
+        {{ range . }}
+        <li class="ind-owner pl-4 min-w-0">
+          <p class="text-white font-bold mb-1">{{ .role }}</p>
+          <p class="text-[0.95rem] text-stone-400 leading-relaxed">{{ .line }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    <!-- What changes -->
+    {{ with .Params.outcomes }}
+    <section class="mb-14 md:mb-20" aria-labelledby="outcomes-heading">
+      <h2 id="outcomes-heading" class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-8">
+        {{ $.Params.outcomes_heading | default "What changes" }}
+      </h2>
+      <ul class="space-y-5 list-none p-0 m-0 max-w-3xl">
+        {{ range . }}
+        <li class="flex gap-4 min-w-0">
+          <span class="ind-tick shrink-0 mt-1" aria-hidden="true">
+            {{ partial "icons" (dict "name" "check-circle" "class" "w-5 h-5") }}
+          </span>
+          <span class="text-stone-300 leading-relaxed">{{ . }}</span>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    <!-- One next step -->
+    <section class="ind-card p-7 md:p-10 mb-14" aria-labelledby="next-heading">
+      <h2 id="next-heading" class="text-2xl md:text-3xl font-black text-white tracking-tight mb-4">
+        {{ .Params.next_heading | default "See whether it fits" }}
+      </h2>
+      <p class="text-stone-400 leading-relaxed mb-8 max-w-2xl">{{ .Params.next_body }}</p>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+        <a href="{{ "/#contact" | relLangURL }}"
+           class="ind-cta inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-sm font-black uppercase tracking-widest">
+          {{ .Params.cta_text | default "Book a consultation" }}
+        </a>
+        {{ with .Params.paper }}
+        <a href="{{ .url }}"
+           class="ind-cta-ghost inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-sm font-black uppercase tracking-widest">
+          {{ .text }}
+        </a>
+        {{ end }}
+      </div>
+      {{ with .Params.paper }}
+      <p class="text-sm text-stone-500 mt-5 max-w-2xl leading-relaxed">{{ .note }}</p>
+      {{ end }}
+    </section>
+
+    <!-- The other industries, so a mis-landed reader self-selects -->
+    {{ with $section }}
+    <nav class="border-t border-stone-800 pt-8" aria-label="Other industries">
+      <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-5">Other industries</p>
+      <ul class="flex flex-wrap gap-3 list-none p-0 m-0">
+        {{ range .Pages.ByWeight }}
+        {{ if ne .RelPermalink $.RelPermalink }}
+        <li>
+          <a href="{{ .RelPermalink }}"
+             class="inline-block px-4 py-2 rounded-lg border border-stone-800 bg-stone-900/60 text-sm font-bold text-stone-300 hover:text-white hover:border-stone-600 transition duration-200">
+            {{ .Title }}
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+    {{ end }}
+
+  </div>
+</div>
+{{ end }}
