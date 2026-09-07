@@ -66,12 +66,36 @@
          network tab would contradict the page it is serving, so the Fira
          superfamily is self-hosted from assets/fonts and preloaded here.
          Nothing on these pages is fetched from another origin.
+
+         PUBLISH ALL SIX, PRELOAD TWO. Hugo only emits an asset that something
+         asks for. This block used to call resources.Get on just the two faces
+         it preloads, so the other four were never written to public/fonts/ —
+         and whitepaper.css declares @font-face for all six. The result shipped
+         live: bold, italic, condensed-semibold and the mono face all 404'd and
+         silently fell back, which no build error and no "are the fonts local?"
+         check catches, because the ones that DO load are the body and display
+         faces that dominate a screenshot.
+
+         So: .Publish every face, and preload only the two needed for first
+         paint. Adding a face to whitepaper.css means adding it to $faces here.
          ------------------------------------------------------------------ */}}
-    {{ with resources.Get "fonts/FiraSans-Book.woff2" }}
+    {{ $faces := slice
+        "fonts/FiraSans-Book.woff2"
+        "fonts/FiraSans-BookItalic.woff2"
+        "fonts/FiraSans-SemiBold.woff2"
+        "fonts/FiraSansCondensed-Heavy.woff2"
+        "fonts/FiraSansCondensed-SemiBold.woff2"
+        "fonts/FiraCode-Regular.woff2" }}
+    {{ $preload := slice "fonts/FiraSans-Book.woff2" "fonts/FiraSansCondensed-Heavy.woff2" }}
+    {{ range $faces }}
+    {{ with resources.Get . }}
+    {{ .Publish }}
+    {{ end }}
+    {{ end }}
+    {{ range $preload }}
+    {{ with resources.Get . }}
     <link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin>
     {{ end }}
-    {{ with resources.Get "fonts/FiraSansCondensed-Heavy.woff2" }}
-    <link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin>
     {{ end }}
 
     <!-- Site CSS (header/footer chrome) -->
