@@ -107,10 +107,18 @@
       <div>
         <p class="wp-foot-label wp-util">Other papers</p>
         <p>
-          {{ range where (where .Site.RegularPages "Section" "whitepapers") "Permalink" "!=" .Permalink }}
+          {{/* Filter on TYPE, not Section. These pages live at
+               content/blog/whitepapers/, so .Section is "blog" — the old
+               `where … "Section" "whitepapers"` matched nothing and emptied
+               this list without erroring, which is exactly the kind of quiet
+               hole a moved section leaves behind. Type is set by the section's
+               cascade and does not change with the path. */}}
+          {{ range where (where .Site.RegularPages "Type" "whitepapers") "Permalink" "!=" .Permalink }}
           <a class="wp-next" href="{{ .RelPermalink }}">{{ .Params.product }} &mdash; {{ .Params.subtitle | default .Title }}</a><br>
           {{ end }}
-          <a class="wp-next" href="{{ "/whitepapers/" | relLangURL }}">All whitepapers</a>
+          {{/* Resolve the index from the page rather than a literal path, for
+               the same reason. */}}
+          <a class="wp-next" href="{{ with .Parent }}{{ .RelPermalink }}{{ else }}{{ "/blog/whitepapers/" | relLangURL }}{{ end }}">All whitepapers</a>
         </p>
       </div>
     </div>

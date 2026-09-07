@@ -1,5 +1,12 @@
 ---
 title: "Livres blancs"
+# Layouts resolve by TYPE, and the section under content/blog/ is "blog".
+# Without this the localised index renders through layouts/blog/ instead of
+# layouts/whitepapers/. Each language file carries it separately — front
+# matter is per-file, so the English one does not cover these.
+type: whitepapers
+aliases:
+  - /whitepapers/
 headline: "Des documents qui commencent par ce qui peut être prouvé."
 description: "Documents détaillés sur Runink CORE, FACE et PULSE. Pas d'études de cas, pas de noms de clients, pas de chiffres de retour sur investissement : le mécanisme, et sur quoi repose chaque affirmation."
 deck: |
