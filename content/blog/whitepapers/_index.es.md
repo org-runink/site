@@ -5,8 +5,6 @@ title: "Libros blancos"
 # layouts/whitepapers/. Each language file carries it separately — front
 # matter is per-file, so the English one does not cover these.
 type: whitepapers
-aliases:
-  - /whitepapers/
 headline: "Documentos que empiezan por lo que puede demostrarse."
 description: "Documentos extensos sobre Runink CORE, FACE y PULSE. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación."
 deck: |

@@ -5,8 +5,6 @@ title: "Whitepapers"
 # layouts/whitepapers/. Each language file carries it separately — front
 # matter is per-file, so the English one does not cover these.
 type: whitepapers
-aliases:
-  - /whitepapers/
 headline: "Documentos que começam pelo que pode ser comprovado."
 description: "Documentos extensos sobre Runink CORE, FACE e PULSE. Sem estudos de caso, sem nomes de clientes e sem números de retorno: o mecanismo, e onde cada afirmação se apoia."
 deck: |

@@ -26,6 +26,13 @@ cascade:
   categories: ["Whitepapers"]
 # Nothing has ever linked to the old top-level path (the section was never
 # deployed), but those URLs were quoted in review, so keep them resolving.
+#
+# ENGLISH ONLY — do not copy this alias into _index.es/fr/pt.md. This site sets
+# defaultContentLanguageInSubdir = false, so an alias declared here writes to
+# /whitepapers/index.html — and an identical alias in a localised file writes to
+# the SAME path rather than a language-scoped one. All four then race, the last
+# language built wins, and the redirect silently lands on whichever that was.
+# It shipped pointing at the Portuguese index for exactly this reason.
 aliases:
   - /whitepapers/
 headline: "Papers that open with what can be proven."
