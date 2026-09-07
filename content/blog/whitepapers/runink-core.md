@@ -15,8 +15,8 @@ deck: |
   uses to reach your own information, and carries changes from written to
   running.
 
-  **It runs on hardware the company already owns. The model it reasons with is
-  its own.**
+  **It runs on hardware the company already owns. The language model it reasons
+  with is one the company runs itself.**
 register:
   - { page: 2,  title: "Executive summary" }
   - { page: 3,  title: "The problem, in your terms" }
@@ -77,12 +77,14 @@ fingerprint computed over the record before it, so the whole sequence can be che
 to end.
 
 **It helps get changes made.** A roster of automated helpers reviews proposed changes,
-drafts corrections, sorts incoming issues, diagnoses failed builds, sweeps for known-risky
-dependencies, checks documented controls against what is actually in place, writes release
-notes, and works longer coding tasks turn by turn. Each one is listed in the console, and
+drafts corrections, sorts incoming reports, works out why an attempt to assemble the software
+failed, sweeps the outside components the software relies on for known problems, checks the
+rules a company has written down against what is actually in place, writes release notes, and
+works longer coding tasks turn by turn. Each one is listed in the console, and
 each one is switched on or off by a person.
 
-All of it runs on a model the company runs itself. That single property is what turns a
+All of it runs on a language model — the kind of system that reads and writes ordinary
+English — that the company runs on its own machines. That single property is what turns a
 security review from a negotiation into a description.
 
 ## The problem, in your terms
@@ -252,10 +254,10 @@ individually. None of them publishes anything until a person has armed it by typ
 
 ### On one machine, in one command
 
-CORE is local-first. A single command brings up the whole thing on a workstation: both
-application back ends, the shared model, the web consoles and the full security arrangement,
-running directly on the machine. No virtual machines, no images to build, and no elevated
-privileges in the day-to-day loop.
+CORE is built to run on one machine first. A single command brings up the whole thing on a
+workstation: both applications and the server halves behind them, the shared model, the web
+consoles and the full security arrangement, running directly on the machine. Nothing has to
+be packaged up first, and the everyday commands do not ask for administrator rights.
 
 This matters more than it sounds. It means an evaluation costs nothing and needs no
 procurement. It means a developer's local setup is the same shape as production rather than a
@@ -267,7 +269,7 @@ Naming one application instead of both runs only that one. One more command stop
 
 ### On the machines you own
 
-For shared use, one command provisions machines and installs the platform and the
+For shared use, one command sets up machines and installs the platform and the
 applications onto them. The same command shape works whether those machines are in a company
 building or rented from a cloud provider — the difference is a single option, not a different
 procedure.
@@ -276,8 +278,8 @@ A rented set of machines can be brought up deliberately for a demonstration or a
 session and removed afterwards. CORE removes its own, which is the part usually left to a
 person and therefore usually forgotten.
 
-For the strictest environments, the platform runs entirely self-hosted on the company's
-premises, including where there is no outside network connection at all.
+For the strictest environments, the platform runs entirely on the company's own premises,
+including where there is no outside network connection at all.
 
 ### Where things land, and why
 
@@ -285,9 +287,9 @@ The console has a screen dedicated to placement, because "where does this run" i
 question that precedes almost every other operational question.
 
 For each machine it reports whether it is available, whether it has been set aside for a
-particular application, how many accelerators it carries, how much processing power and
-memory it has in total, how much of that has already been claimed, and how many free slots
-remain.
+particular application, how many accelerator chips it carries — the specialist parts that
+make model work faster — how much processing power and memory it has in total, how much of
+that has already been claimed, and how many free slots remain.
 
 Beneath each machine it lists what is running there — the platform's own services, and the
 work belonging to each team — and for every single one it gives the reason that item landed
@@ -295,8 +297,8 @@ on that machine rather than another: the priority it was given, the reservations
 permitted to cross, whether it was pinned to a specific machine, and any preference it
 expressed for or against one.
 
-Work that is waiting for a machine is listed separately, with the scheduler's own words for
-why it is waiting.
+Work that is waiting for a machine is listed separately, in the platform's own words, with
+the reason it is waiting.
 
 The result is that "why is this here" and "why is this not running" are questions with
 printed answers rather than questions that start an investigation.
@@ -308,11 +310,12 @@ printed answers rather than questions that start an investigation.
 The console's first screen answers the state of everything.
 
 It reports how many of the platform's own services are healthy against how many exist. It
-lists the deployments belonging to each team, their state, the compute allowance each holds,
-and when each expires. It shows what the automated helpers have been doing: how many runs in
-the last seven days, how many succeeded, how many produced a deliverable, and how long
-recovery took after a failure. It shows compute spend grouped two ways — by initiative and by
-team — so a finance conversation and an engineering conversation can use the same figure.
+lists the deployments belonging to each team, their state, the computing allowance each
+holds, and when each expires. It shows what the automated helpers have been doing: how many
+runs in the last seven days, how many succeeded, how many produced a finished piece of work,
+and how long recovery took after a failure. It shows spending on computing capacity grouped
+two ways — by initiative and by team — so a finance conversation and an engineering
+conversation can use the same figure.
 
 It reports the state of every connection to a company data system. It reports which models
 are loaded, on what kind of hardware, with how much room to work. And it carries the
@@ -337,19 +340,21 @@ mental list of which numbers on this dashboard are real.
 Each headline figure opens onto its own screen.
 
 **Services.** Whether each of the platform's services is genuinely answering requests, rather
-than merely started, plus the console's own runtime figures — memory in use, memory reserved
-from the system, resident size, open files and concurrent tasks.
+than merely started, plus the console's own working figures — how much memory it is using,
+how much it has reserved, how many files it has open and how many tasks it is running at
+once.
 
 **Models.** For each loaded model: its name, the engine and version serving it, the exact
-build running, the model itself, how it was compressed, how much context it can hold and
-where that setting came from, whether it runs on ordinary processors or accelerated hardware,
+build running, the model itself, how it was compressed, how much text it can consider at
+once and where that setting came from, whether it runs on ordinary processors or on
+accelerator chips,
 the memory and processing power reserved for it against the amount actually in use, how many
 copies are ready against how many were asked for, and how many times it has restarted.
 
 **Trust.** Which issuing authority each part of the platform trusts, its subject, its
 fingerprint, its validity window, and how many days remain. A single line at the top states
-whether every part of the platform agrees on one root, and if a read was partial it says so
-rather than generalising from what it saw.
+whether every part of the platform agrees on the same authority, and if a read was partial it
+says so rather than generalising from what it saw.
 
 **Convergence.** For every managed application, whether what is running matches what was
 written down, naming the source, the path, the intended revision and the exact change in
@@ -391,8 +396,9 @@ assistant takes is written down where the next person can read it.
 ### The same idea, applied to code
 
 The same model that answers questions on the console also works longer tasks. A coding
-session takes a code repository and a task, works it turn by turn, records what it finds, and
-opens a draft change for a person to review. It keeps its state, so a session can be paused
+session takes a code repository — the place a team keeps the source of its software — and a
+task, works it turn by turn, records what it finds, and opens a draft change for a person to
+review. It keeps its state, so a session can be paused
 and resumed.
 
 Every action that would alter something outside its working area — running a command, opening
@@ -426,15 +432,15 @@ why" earns the attention it asks for.
 
 The categories cover the ground an operations lead would cover by hand:
 
-- Whether the platform's own services are ready, and whether each application's control
-  points are healthy.
+- Whether the platform's own services are ready, and whether each application's own health
+  checks are passing.
 - Whether the machines have capacity, and whether machines set aside for one application are
   actually available to it.
 - Whether the console itself requires sign-in.
 - Whether every part of the platform agrees on the same issuing authority, and whether that
   authority's validity window is comfortable.
-- Whether the models are ready, whether every tier is available, and whether each has room to
-  work.
+- Whether the models are ready, whether one of every size is available, and whether each has
+  room to work.
 - Whether what is running matches what was written down.
 - Whether the standing health check is in place.
 - Which automated helpers are switched on.
@@ -583,21 +589,22 @@ and a switch of its own.
 
 **reviewer** — reads a proposed change and posts what it found.
 
-**fixer** — takes the reviewer's findings and opens a draft correction. It never merges
-anything; a person does.
+**fixer** — takes the reviewer's findings and opens a draft correction. It never puts a
+change into the software itself; a person does that.
 
 **triage** — reads a newly opened report, categorises it and labels it, so the morning queue
 arrives sorted.
 
-**self-heal** — when a build fails, reads the failing steps and their output and posts one
-root-cause note. It is advisory; it changes nothing.
+**self-heal** — when an attempt to assemble the software fails, reads the failing steps and
+their output and posts one note naming the underlying cause. It advises; it changes nothing.
 
-**risk** — sweeps every part of the platform daily for dependencies with known problems and
-keeps one living report current, ranked by what a version change resolves.
+**risk** — sweeps every part of the platform daily for outside components the software
+relies on that have known problems, and keeps one report current, ranked by what moving to a
+newer version would resolve.
 
-**compliance** — checks the applications weekly against the control frameworks the company
-describes, and flags where a documented control and the thing that actually implements it
-have drifted apart.
+**compliance** — checks the applications weekly against the sets of rules the company says it
+follows, and flags where a rule written down and the thing that actually enforces it have
+drifted apart.
 
 **curator** — produces release notes, documentation corrections, replies on open threads,
 test scenarios, and security and compliance reviews, grounded in the actual state of the
@@ -608,11 +615,12 @@ back on that issue.
 
 **users** — grants and revokes access to deployments.
 
-**opsdoctor** — a standing health check every thirty minutes, with one bounded repair it is
-permitted to perform.
+**opsdoctor** — a standing health check every thirty minutes, with one specific, limited
+repair it is permitted to perform.
 
-**eval** — scores recorded runs against a known-good set, on both the route taken and the
-result reached, and blocks a regression.
+**eval** — scores recorded runs against a set of answers already known to be right, judging
+both the route taken and the result reached, and stops a change that would score worse than
+the one before it.
 
 **forger** — takes the oldest open brief for a new application, works it, and opens a draft
 change on that application.
@@ -632,9 +640,9 @@ it reaches a colleague.
 ### What this changes about capacity
 
 The work these helpers do is real work that somebody was doing. A first-pass review on every
-proposed change. Sorting the inbound queue. Reading a build failure closely enough to name
-the cause. Checking dependencies for known problems. Keeping release notes current. Checking
-that a documented control still points at something real.
+proposed change. Sorting the inbound queue. Reading a failed assembly of the software closely
+enough to name the cause. Checking the outside components for known problems. Keeping release
+notes current. Checking that a rule written down still points at something real.
 
 None of it is the interesting part of anybody's job, and all of it degrades quietly when the
 team is busy — which is precisely when it matters. Handing it to something that runs on a
@@ -654,12 +662,12 @@ panel.
 what is running compares with what was reserved for it.
 
 **Deployments** — the deployments belonging to each team: which application, which team, what
-role, which phase, what state, what compute allowance, and when each expires, with expiry
-shown in days or hours when it is near.
+role, which stage of work, what state, what computing allowance, and when each expires, with
+expiry shown in days or hours when it is near.
 
 **Placement** — what runs on which machine, and why there, as described on page 6.
 
-**Services** — whether each service is genuinely serving, plus the console's own runtime
+**Services** — whether each service is genuinely serving, plus the console's own working
 figures.
 
 ### Delivery
@@ -676,7 +684,7 @@ delivered, with the arming step described on page 12.
 ### Trust
 
 **Security** — which issuing authority each part of the platform trusts, its fingerprint and
-validity window, and whether every part agrees on one root.
+validity window, and whether every part agrees on the same authority.
 
 **Convergence** — whether what is running matches what was written down, for every managed
 application, naming the exact change in force.
@@ -699,9 +707,9 @@ and the worry list are legible from a phone.
 ### 08:40 — the first look
 
 The person on duty opens one screen. Fourteen of fifteen services healthy; the fifteenth
-names itself. Nine deployments, eight ready, one expiring in three hours. Compute spend by
-initiative, unchanged from yesterday. Helper runs overnight: eleven, ten succeeded, one
-failed and recovered in nineteen minutes.
+names itself. Nine deployments, eight ready, one expiring in three hours. Spending on
+computing capacity by initiative, unchanged from yesterday. Helper runs overnight: eleven,
+ten succeeded, one failed and recovered in nineteen minutes.
 
 Every panel says when it was measured. Nothing is guessed at.
 
@@ -725,7 +733,7 @@ It goes to the architecture discussion on Friday with the observation already wr
 
 A prospect wants to see the product on Thursday with their own kind of data.
 
-The requester fills a form: the application, a tenant name, the initiative the cost belongs
+The requester fills a form: the application, a customer name, the initiative the cost belongs
 to, an owner, and a life of two hours. Minutes later the request carries the address and the
 expiry time. It is the sample-data variant, so a connection can be created and worked with
 straight away.
@@ -749,11 +757,12 @@ months from now, when somebody asks who connected finance, the answer takes ten 
 ### 14:20 — a change to the software
 
 A developer proposes a change. The reviewer reads it and posts what it found. One finding is
-serious, so the fixer opens a draft correction on the same branch. The developer reads both,
+serious, so the fixer opens a draft correction alongside it. The developer reads both,
 accepts one and argues with the other in a comment.
 
-Nothing merged itself. A person made every decision. What the automation removed was the
-forty minutes of first-pass reading that had to happen before the decision could be made.
+Nothing went into the software on its own. A person made every decision. What the automation
+removed was the forty minutes of first-pass reading that had to happen before the decision
+could be made.
 
 ### 16:45 — the question from legal
 
@@ -797,14 +806,15 @@ every month.
 
 ### Everything else is yours too
 
-The same property extends through the platform. Records, files, the issuing authority, the
-secrets and the search index are all self-hosted. There is no managed outside database
-holding company information.
+The same property extends through the platform. Records, files, the authority that issues the
+platform's credentials, the secrets and the index that makes the company's own material
+searchable are all held on the company's own machines. There is no outside database, run by
+somebody else, holding company information.
 
-**The commercial consequence is that the boundary is real.** A single outside dependency
-holding company data would make the whole claim conditional, and a conditional sovereignty
-claim does not survive a procurement questionnaire. Making the property complete is what
-makes it usable in a sales conversation.
+**The commercial consequence is that the boundary is real.** A single outside service holding
+company data would make the whole claim conditional, and a claim that everything stays inside
+the company does not survive a procurement questionnaire if it has an exception in it. Making
+the property complete is what makes it usable in a sales conversation.
 
 ### It runs the same way everywhere
 
@@ -849,9 +859,9 @@ rota can only be staffed by three names, this is the problem CORE addresses.
 ### The company whose data cannot leave
 
 Regulated financial services, insurance, healthcare, public bodies, defence suppliers, and
-any company under a customer contract that confines their records. For these buyers the
-sovereign property is not a preference; it is the condition of the conversation existing at
-all.
+any company under a customer contract that confines their records. For these buyers, keeping
+everything on their own machines is not a preference; it is the condition of the conversation
+existing at all.
 
 The measure of fit: if a promising evaluation has ever ended at the question "and where does
 that run", CORE is built for the answer.
@@ -880,12 +890,12 @@ under whose account" without asking three people, CORE turns that into a screen.
   ones they would have written.
 - **The security lead** looks at the attribution rule, the permitted-changer list, the record
   format, and where the model runs.
-- **The finance lead** looks at compute attributed by initiative and by team, and at the
-  expiry rules that keep idle capacity from accumulating.
+- **The finance lead** looks at computing capacity attributed by initiative and by team, and
+  at the expiry rules that keep idle capacity from accumulating.
 - **The engineering lead** looks at the helper roster, the arming rule, and at how long it
   takes to have the whole thing running on a laptop.
-- **The commercial lead** looks at what the sovereign property does to the length of a
-  security review.
+- **The commercial lead** looks at what running everything on your own machines does to the
+  length of a security review.
 
 Each of those five can reach their own answer in an afternoon, on their own hardware, without
 committing to anything.
@@ -916,8 +926,8 @@ security lead, because it is the difference between a policy and a control.
 
 ### Step three: put it on machines you own
 
-One command provisions and installs. The same command shape works for machines in your own
-building and for rented ones; the difference is a single option.
+One command sets the machines up and installs onto them. The same command shape works for
+machines in your own building and for rented ones; the difference is a single option.
 
 At this point the platform is running the software it will run in production, in the same
 arrangement, with the same screens. What changes from here is scale and who has access, not
@@ -959,41 +969,47 @@ is yours.
 
 ## The commercial model
 
-Runink publishes its list pricing. It is per seat, with compute included as an allowance
-measured in Compute Units.
+Runink publishes its list pricing. It is per seat — one seat for each person who uses the
+platform — with an allowance of computing capacity included. That allowance is counted in a
+unit the console calls a Compute Unit, so what you have and what you have used are both
+stated in the same terms.
 
 ### Lite
 
 For one to nine seats. Eighty-six US dollars per seat per month on a monthly commitment, or
-seventy-five per seat per month on an annual contract. It includes a dynamic compute pool on
-a shared high-density machine, standard automation, and standard compute priority.
+seventy-five per seat per month on an annual contract. It includes a shared pool of computing
+capacity on a machine used by more than one customer, the standard set of automated helpers,
+and standard priority for that capacity.
 
-This is the tier for a first team, an evaluation that has outgrown a laptop, or a company
+This is the level for a first team, an evaluation that has outgrown a laptop, or a company
 whose whole platform group fits in a room.
 
 ### Dedicated
 
 For ten seats and above. Seventy-five US dollars per seat per month on an annual contract. It
-includes dedicated compute, custom domain configuration, priority routing, and a compute
-allowance of one thousand units per seat plus a two-thousand-unit bonus for every ten seats.
+includes computing capacity reserved for you alone, your own web address, first call on that
+capacity, and an allowance of one thousand units per seat plus a two-thousand-unit bonus for
+every ten seats.
 
-This is the tier for a company running its estate on CORE rather than trialling it.
+This is the level for a company running its estate on CORE rather than trialling it.
 
 ### Enterprise
 
-Custom pricing, for self-hosted and on-premises deployments including those with no outside
-network connection. It includes managed capacity, everything in Dedicated, edge capability,
-and service levels agreed with the customer.
+Custom pricing, for deployments you host yourself on your own premises, including those with
+no outside network connection. It includes capacity managed for you, everything in Dedicated, the
+ability to run on machines close to where the work happens, and service levels agreed with
+the customer.
 
-This is the tier for the buyers on page 4 whose information cannot leave a defined boundary.
+This is the level for the buyers on page 4 whose information cannot leave a defined boundary.
 
-### How compute is counted and reported
+### How computing capacity is counted and reported
 
-Compute is metered in Compute Units. Every deployment carries an allowance, shown in the
+Capacity is counted in Compute Units. Every deployment carries an allowance, shown in the
 console next to its expiry. Usage is attributed to an initiative and an owner, both captured
 at the moment the deployment is requested.
 
-The console reports allocated compute two ways: grouped by initiative, and grouped by team.
+The console reports the capacity given out in two ways: grouped by initiative, and grouped by
+team.
 That is a deliberate pairing. The first is the view a finance conversation needs — what is
 this programme costing. The second is the view an engineering conversation needs — which team
 is consuming it. Both come from the same figures, so the two conversations do not have to be
@@ -1001,7 +1017,7 @@ reconciled.
 
 ### What the pricing shape means
 
-Two things follow from per-seat pricing with an included compute allowance.
+Two things follow from charging per seat with an allowance of capacity included.
 
 **Using the software more does not cost more.** Because the model runs on the company's own
 hardware, a team that finds heavy use for the assistant, the helpers or the coding sessions
@@ -1020,7 +1036,8 @@ hardware, the files are stored on your hardware, and the identity authority runs
 hardware. No outside service is called for reasoning.
 
 **Can it run with no outside network connection at all?**
-Yes. Enterprise deployments run self-hosted on premises, including air-gapped.
+Yes. Enterprise deployments run on your own premises, including on sites with no connection
+to the outside world at all.
 
 **Who can change a connection to one of our systems?**
 Only somebody CORE can name. If sign-in is not configured, a connection change is refused
@@ -1068,7 +1085,7 @@ go.
 The most useful thing you can do with this paper is stop reading it.
 
 CORE runs on one machine, from one downloaded file, with one command. There is no
-environment to be provisioned for you, no trial account to be created, and nothing to sign
+environment to be set up for you, no trial account to be created, and nothing to sign
 before you see it working. The version that runs on your workstation is the version that runs
 on your machines.
 
@@ -1087,15 +1104,15 @@ read, for five days, what it would have published.
 At the end of that week you will have five answers, from your own hardware, with your own
 data, in your own words: whether the screen can be trusted, whether the remedies are the ones
 you would have written, whether the governance is a control rather than a policy, whether the
-helpers save real time, and whether the sovereign property does what we say it does to a
-security review.
+helpers save real time, and whether keeping everything on your own machines does what we say
+it does to a security review.
 
 That is the entire basis on which we would like to be judged.
 
 ### Talk to us
 
 For a guided walk-through, a conversation about your estate, or Enterprise pricing for a
-self-hosted or air-gapped deployment:
+deployment you host yourself, including one with no connection to the outside world:
 
 **paes@runink.org**
 **runink.org**
