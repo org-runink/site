@@ -111,6 +111,22 @@
         {{ block "main" . }}{{ end }}
     </div>
 
+    {{/* Same call the site's own _default/baseof.html makes, so this section
+         does not silently diverge from every other page.
+
+         It currently renders NOTHING: layouts/partials/footer.html is a
+         40-character stub, "<!-- Footer removed for landing page -->", so the
+         whole site has no footer. That is the owner's standing choice, not an
+         oversight here, and this line does not change it. It exists so that
+         whenever the footer is restored these pages inherit it along with
+         everything else, instead of being the one section that was wired
+         before the stub and never picked it up.
+
+         Worth knowing if you are reading this because a whitepaper page ends
+         in bare background: that is the missing site-wide footer, and the fix
+         belongs in the partial, not here. */}}
+    {{ partialCached "footer" . }}
+
     {{ partialCached "consent.html" . }}
 
     {{ $js := resources.Get "js/main.js" | js.Build (dict "Minify" hugo.IsProduction) }}
