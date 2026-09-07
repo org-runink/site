@@ -5,102 +5,752 @@
   CSS paths — the PostCSS pipeline over assets/css/main.css (what CI builds) and
   the pre-compiled static/css/style.css used when params.disablePostCSS is true,
   which is generated from the THEME's main.css and would never see a rule added
-  to ours. Inlining is the only place both paths agree.
+  to ours. Inlining is the only place both paths agree. For the same reason the
+  section uses its own `ind-` classes throughout rather than Tailwind utilities:
+  every rule a page needs is in this file, so both paths render it identically.
 
-  Every colour is a DESIGN.md token. The per-industry accent arrives as the
-  --accent custom property set on the wrapper, so the palette varies without
-  Tailwind having to generate a class it cannot see at build time.
+  WHY THE SECTION IS LIGHT. The review of the customer-facing material said the
+  black canvas makes the information hard to read and painful to print, and that
+  these pages should be visual and easy to skim. So the industry pages are set on
+  a near-white canvas with one deep navy band, and the whole page is built out of
+  ruled lines: a measure is a label and a line you write on. The site header
+  above stays dark, so the page still sits inside the site.
+
+  Every colour is a DESIGN.md token:
+    canvas/sheet/rule  surface.gray_50 / white / gray_200
+    tint/deep/deep-2   primary.50 / primary.900 / primary.700
+    ink/ink-2          text.gray_900 / text.gray_600
+    accent             per-page, from front matter
+
+  The per-industry accent arrives as --accent on the wrapper. Two of the five
+  accents are pale (light sage, tan) and would vanish on a white sheet, so
+  nothing that has to be legible uses the raw accent: --accent-ink mixes it
+  toward primary.900, which keeps every industry distinguishable while holding a
+  contrast ratio comfortably past 4.5:1 on white whatever the accent is. Rules
+  that use color-mix() declare a flat fallback first, so a browser without
+  color-mix() keeps a legible navy rather than dropping the declaration.
+
+  The print rules at the foot are global on purpose. This partial only ships on
+  industry pages, so hiding the fixed site header there cannot affect any other
+  page — and a fixed header reprinted on every sheet is exactly what the review
+  complained about.
+
+  Type is Inter and Plus Jakarta Sans, already loaded site-wide. Nothing here
+  adds a request.
 */}}
 <style>
   .ind {
+    --canvas: #f9fafb;
+    --sheet: #ffffff;
+    --rule: #e5e7eb;
+    --tint: #eef1fc;
+    --deep: #1b2456;
+    --deep-2: #3548ab;
+    --ink: #111827;
+    --ink-2: #4b5563;
+
     --accent: #ea580c;
-    --accent-soft: rgba(234, 88, 12, 0.14);
+    --accent-ink: #1b2456;
+    --accent-ink: color-mix(in srgb, var(--accent) 45%, #1b2456);
+    --accent-wash: #eef1fc;
+    --accent-wash: color-mix(in srgb, var(--accent) 12%, #ffffff);
+    --accent-edge: #1b2456;
+    --accent-edge: color-mix(in srgb, var(--accent) 52%, #1b2456);
+
+    --write-line: #a5aab2;
+    --write-line: color-mix(in srgb, var(--ink-2) 52%, #ffffff);
+
+    /* keep in step with .ind-accent below */
+
+    /* the grey the artwork uses for material the reader already holds — one
+       step darker than a hairline, so it survives a greyscale print */
+    --art-mute: #ccd0d7;
+    --art-mute: color-mix(in srgb, var(--ink-2) 30%, #ffffff);
+
+    --font-body: Inter, system-ui, -apple-system, sans-serif;
+    --font-display: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+
+    background-color: var(--canvas);
+    color: var(--ink-2);
+    font-family: var(--font-body);
+    min-height: 100vh;
   }
 
-  /* Keyboard focus must be visible on every interactive element in the section.
-     The site's base stylesheet does not define one, so it is defined here
-     against the industry accent rather than left to the UA default, which is
-     nearly invisible on a stone-950 canvas. */
+  /* Setting --accent further down the tree is not enough on its own: the three
+     derived colours above are resolved once, where they are declared, and what
+     descendants inherit is the resolved value rather than the recipe. Anywhere a
+     second industry's accent is set on a child — the cards on the overview, the
+     links to the other industries — this class has to be set with it, so the
+     derived colours are worked out again against the new accent. Keep the two
+     blocks identical. */
+  .ind-accent {
+    --accent-ink: #1b2456;
+    --accent-ink: color-mix(in srgb, var(--accent) 45%, #1b2456);
+    --accent-wash: #eef1fc;
+    --accent-wash: color-mix(in srgb, var(--accent) 12%, #ffffff);
+    --accent-edge: #1b2456;
+    --accent-edge: color-mix(in srgb, var(--accent) 52%, #1b2456);
+  }
+
+  /* ---- shell ------------------------------------------------------------ */
+
+  .ind-wrap {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .ind-wrap { padding: 3.5rem 2rem 6rem; }
+  }
+
+  .ind a { color: inherit; }
+
+  /* The base stylesheet defines no focus ring, and the UA default is weak on a
+     near-white sheet, so the section states its own. */
   .ind a:focus-visible,
   .ind button:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-edge);
     outline-offset: 3px;
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
   }
+
+  /* Long words — industry names, document titles — must never push the body
+     wider than the viewport at 320px. */
+  .ind, .ind * { overflow-wrap: anywhere; }
+
+  .ind-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-decoration: none;
+    margin-bottom: 2.25rem;
+    transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .ind-back:hover { color: var(--deep); }
+
+  /* ---- hero ------------------------------------------------------------- */
+
+  .ind-hero { margin-bottom: 3.5rem; }
 
   .ind-eyebrow {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--accent-wash);
+    border-left: 3px solid var(--accent-edge);
+    color: var(--accent-ink);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .ind-h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.875rem, 4.4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.022em;
+    color: var(--ink);
+    margin: 0 0 1.25rem;
+    max-width: 20ch;
+  }
+
+  .ind-deck {
+    font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  /* ---- section heads: the label sits on a rule that runs to the margin --- */
+
+  .ind-sec { margin-bottom: 3.5rem; }
+  @media (min-width: 768px) { .ind-sec { margin-bottom: 4.5rem; } }
+
+  .ind-head {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .ind-head__mark {
+    flex: none;
+    width: 1.5rem;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--accent-edge);
+  }
+
+  /* The label must be allowed to shrink and wrap. With `flex: none` the longest
+     of these headings sat at its full single-line width and pushed the body
+     wider than a 360px viewport, which put a horizontal scrollbar on the whole
+     page. */
+  .ind-head__label {
+    flex: 0 1 auto;
+    min-width: 0;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  .ind-head__rule {
+    flex: 1 1 auto;
+    height: 1px;
+    background-color: var(--rule);
+  }
+
+  .ind-intro {
+    max-width: 62ch;
+    margin: -0.5rem 0 1.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+
+  /* ---- the picture at the top of the page ------------------------------- */
+
+  .ind-figure {
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 0.875rem;
+    padding: 1.5rem 1.25rem 1.25rem;
+    margin-bottom: 3.5rem;
+  }
+  @media (min-width: 768px) {
+    .ind-figure { padding: 2rem 2rem 1.5rem; }
+  }
+
+  .ind-figure__art {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.25rem;
+  }
+
+  .ind-figure__beats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 860px) {
+    .ind-figure__beats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  .ind-figure__beat {
+    border-top: 2px solid var(--rule);
+    padding-top: 0.625rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+  .ind-figure__beat:first-child { border-top-color: var(--accent-edge); }
+
+  .ind-figure__beat b {
+    display: block;
+    font-weight: 700;
+    color: var(--deep);
+  }
+
+  /* ---- problems --------------------------------------------------------- */
+
+  .ind-grid2 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 640px) {
+    .ind-grid2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .ind-problem {
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent-edge);
+    border-radius: 0 0 0.75rem 0.75rem;
+    padding: 1.5rem 1.5rem 1.625rem;
+    min-width: 0;
+    transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ind-problem h3 {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 0.625rem;
+  }
+
+  .ind-problem p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* ---- owners: one aligned column of roles, readable as a set ----------- */
+
+  .ind-roles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .ind-role {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem 1.5rem;
+    padding: 0.9375rem 0;
+    border-bottom: 1px solid var(--rule);
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .ind-role {
+      grid-template-columns: 15rem minmax(0, 1fr);
+      align-items: baseline;
+    }
+  }
+
+  .ind-role__name {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--deep);
+    margin: 0;
+  }
+
+  .ind-role__line {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* ---- outcomes: the one dark band on the page -------------------------- */
+
+  .ind-band {
+    background-color: var(--deep);
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    color: #ffffff;
+  }
+  @media (min-width: 768px) {
+    .ind-band { padding: 2.75rem 2.5rem; }
+  }
+
+  .ind-band .ind-head__label { color: rgba(255, 255, 255, 0.72); }
+  .ind-band .ind-head__rule { background-color: rgba(255, 255, 255, 0.22); }
+  .ind-band .ind-head__mark { background-color: var(--accent); }
+
+  .ind-band__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ind-band__item {
+    display: flex;
+    gap: 0.875rem;
+    padding: 0.9375rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.9);
+    min-width: 0;
+  }
+  .ind-band__item:first-child { border-top: 0; padding-top: 0; }
+
+  .ind-band__tick {
+    flex: none;
+    margin-top: 0.1875rem;
     color: var(--accent);
-    border-color: color-mix(in srgb, var(--accent) 35%, transparent);
-    background-color: var(--accent-soft);
   }
 
-  .ind-rule {
-    background: linear-gradient(90deg, var(--accent), transparent);
+  /* ---- measures: a sheet of measures with a line for the reader's own
+          figure. The line is the point of the block, not an omission. ----- */
+
+  .ind-sheet {
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 0.875rem;
+    padding: 0.5rem 1.25rem 1rem;
+    overflow-x: auto;
+  }
+  @media (min-width: 768px) {
+    .ind-sheet { padding: 0.75rem 2rem 1.25rem; }
   }
 
-  .ind-card {
-    background-color: #161515;
-    border: 1px solid rgba(68, 64, 60, 0.8);
-    border-radius: 1.5rem;
-    transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-      transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  .ind-measures {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
   }
 
-  .ind-card:hover,
-  .ind-card:focus-within {
-    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  .ind-measures thead th {
+    padding: 1rem 1.5rem 0.75rem 0;
+    border-bottom: 2px solid var(--deep);
+    font-size: 0.625rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    white-space: nowrap;
+    vertical-align: bottom;
+  }
+  .ind-measures thead th:last-child { padding-right: 0; }
+
+  .ind-measures tbody th,
+  .ind-measures tbody td {
+    padding: 1.375rem 1.5rem 1.375rem 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    text-align: left;
+  }
+  .ind-measures tbody td:last-child { padding-right: 0; }
+  .ind-measures tbody tr:last-child th,
+  .ind-measures tbody tr:last-child td { border-bottom: 0; }
+
+  .ind-measures tbody th {
+    width: 24%;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    color: var(--deep);
   }
 
-  a.ind-card:hover,
-  a.ind-card:focus-visible {
-    transform: translateY(-2px);
+  .ind-measures tbody td {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--ink-2);
   }
 
-  .ind-num {
-    color: var(--accent);
+  .ind-measures .ind-col-today { width: 34%; }
+
+  /* The writing line. A heavier accent segment marks where it starts, so it
+     reads as a field to complete rather than a rule that lost its content —
+     and the segment survives a greyscale print as a change of weight. */
+  .ind-blank {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1.75rem;
+    margin: 0.125rem 0 0.625rem;
+    border-bottom: 1.5px solid var(--write-line);
+  }
+  .ind-blank::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1.5px;
+    width: 1.75rem;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--accent-edge);
   }
 
-  /* Each rule that tints with color-mix() declares a plain var(--accent)
-     fallback first. A browser without color-mix() drops the second declaration
-     and keeps the first, rather than dropping the whole shorthand and losing
-     the border entirely. */
-  .ind-owner {
-    border-left: 2px solid var(--accent);
-    border-left-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  .ind-source {
+    display: block;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--ink-2);
   }
 
-  .ind-tick {
-    color: var(--accent);
+  .ind-moves {
+    display: flex;
+    gap: 0.625rem;
+    align-items: flex-start;
+    min-width: 0;
+  }
+  .ind-moves__arrow {
+    flex: none;
+    margin-top: 0.3125rem;
+    color: var(--accent-edge);
+  }
+
+  @media (max-width: 759px) {
+    .ind-sheet { padding: 0.25rem 1.125rem 0.75rem; }
+    .ind-measures thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .ind-measures tbody tr { display: block; padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
+    .ind-measures tbody tr:last-child { border-bottom: 0; }
+    .ind-measures tbody th,
+    .ind-measures tbody td,
+    .ind-measures .ind-col-today {
+      display: block;
+      width: auto;
+      padding: 0;
+      border-bottom: 0;
+    }
+    .ind-measures tbody th { margin-bottom: 0.875rem; font-size: 1.0625rem; }
+    .ind-measures tbody td + td { margin-top: 1rem; }
+    .ind-measures tbody td::before {
+      content: attr(data-label);
+      display: block;
+      margin-bottom: 0.375rem;
+      font-size: 0.625rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+    }
+  }
+
+  /* ---- foundations ------------------------------------------------------ */
+
+  .ind-pair {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 640px) {
+    .ind-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .ind-found {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 0.875rem;
+    padding: 1.5rem 1.5rem 0;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  /* The artwork sits on its own plate at the top of the card, full-bleed to the
+     card edges, so the two figures read as a matched pair rather than as two
+     drawings floating in white. Both use the same viewBox, so the line around
+     "your machines" is drawn at exactly the same size in both — which is what
+     makes the one difference between them legible. */
+  .ind-found__plate {
+    margin: -1.5rem -1.5rem 1.375rem;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--canvas);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .ind-found__art {
+    display: block;
+    width: 100%;
+    max-width: 21rem;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .ind-found h3 {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 0.625rem;
+  }
+
+  .ind-found p {
+    margin: 0 0 1.375rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .ind-found__felt {
+    margin: auto -1.5rem 0;
+    padding: 1.125rem 1.5rem 1.25rem;
+    background-color: var(--accent-wash);
+    border-top: 2px solid var(--accent-edge);
+  }
+
+  .ind-found__felt dt {
+    font-size: 0.625rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin: 0 0 0.375rem;
+  }
+
+  .ind-found__felt dd {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  /* ---- next step -------------------------------------------------------- */
+
+  .ind-next {
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--accent-edge);
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+  @media (min-width: 768px) {
+    .ind-next { padding: 2.75rem 2.5rem; }
+  }
+
+  .ind-next h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin: 0 0 0.875rem;
+  }
+
+  .ind-next p {
+    margin: 0 0 1.75rem;
+    max-width: 62ch;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+
+  .ind-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+  }
+
+  .ind-cta,
+  .ind-cta-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .ind-cta {
-    background-color: var(--accent);
-    color: #0c0a09;
-    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
-      transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--accent-ink);
+    color: #ffffff;
+    border: 1px solid var(--accent-ink);
   }
-
-  .ind-cta:hover {
-    filter: brightness(1.12);
-    transform: translateY(-1px);
-  }
+  .ind-cta:hover { filter: brightness(1.15); }
 
   .ind-cta-ghost {
-    border: 1px solid var(--accent);
-    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
-    color: var(--accent);
-    transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    color: var(--accent-ink);
+    border: 1px solid var(--rule);
+  }
+  .ind-cta-ghost:hover { background-color: var(--accent-wash); }
+
+  .ind-note {
+    margin: 1.25rem 0 0;
+    max-width: 62ch;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--ink-2);
   }
 
-  .ind-cta-ghost:hover {
-    background-color: var(--accent-soft);
+  /* ---- other industries ------------------------------------------------- */
+
+  .ind-more { border-top: 1px solid var(--rule); padding-top: 1.75rem; }
+
+  .ind-more__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  /* Long words — "Supply Chain", document names — must never push the body
-     wider than the viewport at 320px. */
-  .ind,
-  .ind * {
-    overflow-wrap: anywhere;
+  .ind-chip {
+    display: inline-block;
+    padding: 0.5rem 0.875rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    background-color: var(--sheet);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--deep);
+    text-decoration: none;
+    transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .ind-chip:hover { border-color: var(--accent-edge); }
+
+  /* ---- overview cards --------------------------------------------------- */
+
+  .ind-pick {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent-edge);
+    border-radius: 0 0 0.75rem 0.75rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .ind-pick:hover,
+  .ind-pick:focus-visible {
+    border-color: var(--accent-edge);
+    transform: translateY(-2px);
+  }
+
+  .ind-pick h2 {
+    font-family: var(--font-display);
+    font-size: 1.1875rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    margin: 0 0 0.625rem;
+  }
+
+  .ind-pick p {
+    margin: 0 0 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .ind-pick__go {
+    margin-top: auto;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -112,11 +762,174 @@
       animation-iteration-count: 1 !important;
       scroll-behavior: auto !important;
     }
+    .ind-pick:hover,
+    .ind-pick:focus-visible { transform: none; }
+  }
 
-    a.ind-card:hover,
-    a.ind-card:focus-visible,
-    .ind-cta:hover {
-      transform: none;
+  /* ---- print ------------------------------------------------------------
+     These pages get printed and carried into meetings. Ink on white, the fixed
+     site chrome gone so it does not repeat on every sheet, nothing carried by
+     colour alone, and no block allowed to break across a page.
+     Global selectors are safe here: this partial only ships on industry pages.
+  ------------------------------------------------------------------------ */
+
+  @media print {
+    @page { margin: 14mm 12mm; }
+
+    html, body { background: #ffffff !important; }
+
+    /* The fixed header, the consent banner and the trust strip are screen
+       furniture. A fixed element reprints on every sheet. */
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .ind {
+      background: #ffffff !important;
+      color: #000000;
+      --canvas: #ffffff;
+      --sheet: #ffffff;
+      --rule: #9a9a9a;
+      --ink: #000000;
+      --ink-2: #1f1f1f;
+      --deep: #000000;
+      --accent-ink: #000000;
+      --accent-edge: #000000;
+      --accent-wash: #ffffff;
+      --write-line: #666666;
+      --art-mute: #a8a8a8;
     }
+
+    .ind-wrap { max-width: none; padding: 0; }
+
+    .ind-back,
+    .ind-more,
+    .ind-actions { display: none !important; }
+
+    .ind-h1 { font-size: 22pt; max-width: none; }
+    .ind-deck { font-size: 11pt; max-width: none; }
+    .ind-eyebrow {
+      background: #ffffff !important;
+      border: 1px solid #000000;
+      color: #000000;
+      padding: 2pt 5pt;
+    }
+
+    /* Print density. Keeping every block whole means a block that will not fit
+       moves to the next sheet and leaves the bottom of this one empty, so the
+       vertical rhythm is tightened on paper to make each block small enough to
+       land. Screen spacing is unaffected. */
+    .ind-hero { margin-bottom: 12pt; }
+    .ind-sec, .ind-figure, .ind-next { margin-bottom: 13pt; }
+    .ind-head { margin-bottom: 7pt; }
+    .ind-intro { margin: 0 0 9pt; max-width: none; }
+    .ind-grid2, .ind-pair { gap: 10pt; }
+    .ind-figure { padding: 10pt 12pt; }
+    .ind-figure__art { margin-bottom: 10pt; }
+    .ind-problem { padding: 9pt 11pt 11pt; }
+    .ind-role { padding: 6pt 0; }
+    .ind-band { padding: 10pt 12pt; }
+    .ind-band__item { padding: 6pt 0; }
+    .ind-found { padding: 0 11pt; }
+    .ind-found__plate { margin: 0 -11pt 9pt; padding: 9pt 11pt; }
+    .ind-found__art { max-width: 15rem; }
+    .ind-found p { margin-bottom: 9pt; }
+    .ind-found__felt { margin: auto -11pt 0; padding: 8pt 11pt 10pt; }
+    .ind-next { padding: 12pt; }
+    .ind-next p { margin-bottom: 7pt; max-width: none; }
+    .ind-next p:last-child { margin-bottom: 0; }
+    .ind-head__mark { background: #000000 !important; }
+    .ind-head__label { color: #000000; }
+    .ind-head__rule { background: #000000 !important; }
+
+    /* Keep every block whole on one sheet, and never orphan a heading. */
+    .ind-figure,
+    .ind-problem,
+    .ind-role,
+    .ind-found,
+    .ind-band__item,
+    .ind-measures tbody tr { break-inside: avoid; page-break-inside: avoid; }
+    /* A heading must not be the last thing on a sheet, and the sentence that
+       explains a block must not be cut in half by the page edge. */
+    .ind-head, .ind-intro {
+      break-after: avoid; page-break-after: avoid;
+      break-inside: avoid; page-break-inside: avoid;
+    }
+
+    /* The one dark band inverts to ink on white so it does not swallow a
+       cartridge, and keeps a rule so it still reads as its own block. */
+    .ind-band {
+      background: #ffffff !important;
+      color: #000000;
+      border: 1px solid #000000;
+      border-radius: 0;
+      padding: 12pt;
+    }
+    .ind-band .ind-head__label,
+    .ind-band__item { color: #000000; }
+    .ind-band__item { border-top-color: #bdbdbd; }
+    .ind-band .ind-head__rule,
+    .ind-band .ind-head__mark { background: #000000 !important; }
+    .ind-band__tick { color: #000000; }
+
+    .ind-figure, .ind-problem, .ind-found, .ind-sheet, .ind-next, .ind-pick {
+      border-color: #000000;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .ind-sheet { overflow: visible; padding: 0; border: 0; }
+
+    /* A printed page is narrower than 760 CSS pixels, so the small-screen
+       stacked layout for the measures would otherwise apply on paper, where
+       there is no reason for it: the three columns are exactly the comparison
+       the reader wants side by side. Put the table back, and let the column
+       heads repeat if the block runs over a sheet. */
+    .ind-measures thead {
+      display: table-header-group;
+      position: static;
+      width: auto;
+      height: auto;
+      clip: auto;
+    }
+    .ind-measures tbody tr { display: table-row; padding: 0; border-bottom: 0; }
+    .ind-measures tbody th { display: table-cell; width: 24%; font-size: 11pt; margin-bottom: 0; }
+    .ind-measures tbody td { display: table-cell; }
+    .ind-measures .ind-col-today { display: table-cell; width: 34%; }
+    .ind-measures tbody td::before { content: none; }
+    .ind-measures tbody td + td { margin-top: 0; }
+    .ind-measures tbody th,
+    .ind-measures tbody td { border-bottom: 1px solid #bdbdbd; padding-right: 14pt; }
+    .ind-measures tbody td:last-child { padding-right: 0; }
+
+    .ind-measures thead th { border-bottom-color: #000000; color: #000000; }
+    .ind-measures tbody th { color: #000000; }
+    .ind-measures tbody th,
+    .ind-measures tbody td { padding-top: 8pt; padding-bottom: 8pt; }
+
+    /* The writing line is the reason these pages get printed. Keep it dark
+       enough to write over and long enough to write on. */
+    .ind-blank { height: 19pt; border-bottom-width: 1.2pt; }
+    .ind-blank::before { background: #000000 !important; height: 2.5pt; }
+
+    .ind-found__felt {
+      background: #ffffff !important;
+      border-top: 1px solid #000000;
+    }
+    .ind-found__felt dt { color: #000000; }
+
+    .ind-figure__art, .ind-found__art { max-width: 100%; }
+    .ind-found__plate {
+      background: #ffffff !important;
+      border-bottom-color: #000000;
+    }
+    .ind-figure__beat { border-top-color: #000000; }
+    .ind-figure__beat b { color: #000000; }
+
+    .ind-note { color: #000000; }
+
+    a[href]::after { content: ""; }
   }
 </style>
