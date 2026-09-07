@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default "en" }}" class="h-full" style="color-scheme: dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1c1917">
+
+    <!-- Google Tag Manager -->
+    {{ partialCached "google-tag-manager" . }}
+
+    <!-- Google Analytics -->
+    {{ partialCached "google-analytics" . }}
+
+    <!-- SEO Variables -->
+    {{ $seoTitle := default (printf "%s | %s" .Title .Site.Title) .Params.seo_title }}
+    {{ $seoDescription := default .Summary .Description }}
+    {{ $seoDescription = default $seoDescription .Params.seo_description }}
+    {{ $seoDescription = default .Site.Params.description $seoDescription }}
+    {{ $canonicalUrl := default .Permalink .Params.canonicalUrl }}
+
+    {{ $seoImage := "" }}
+    {{ $imgUrl := default .Site.Params.logo .Site.Params.image }}
+    {{ $imgUrl = default $imgUrl .Params.image }}
+    {{ with $imgUrl }}
+      {{ $img := resources.Get . }}
+      {{ if $img }}
+        {{ if eq $img.MediaType.SubType "svg" }}
+          {{ $seoImage = $img.Permalink }}
+        {{ else }}
+          {{ $seoImage = ($img.Resize "1200x630 webp").Permalink }}
+        {{ end }}
+      {{ else }}
+        {{ $seoImage = . | absURL }}
+      {{ end }}
+    {{ end }}
+
+    <title>{{ $seoTitle }}</title>
+
+    <meta name="description" content="{{ $seoDescription }}">
+    <meta name="author" content="{{ .Site.Params.author | default .Site.Title }}">
+    <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index, follow{{ end }}">
+
+    <meta property="og:title" content="{{ $seoTitle }}">
+    <meta property="og:description" content="{{ $seoDescription }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ $canonicalUrl }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ with $seoImage }}<meta property="og:image" content="{{ . }}">{{ end }}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $seoTitle }}">
+    <meta name="twitter:description" content="{{ $seoDescription }}">
+    {{ with .Site.Params.twitter }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
+    {{ with $seoImage }}<meta name="twitter:image" content="{{ . }}">{{ end }}
+
+    <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
+    <link rel="canonical" href="{{ $canonicalUrl }}">
+
+    {{/* ------------------------------------------------------------------
+         FONTS — deliberately NOT the site-wide <link> to fonts.googleapis.com
+         that layouts/_default/baseof.html carries.
+
+         These pages argue that a company's material should be processed on
+         hardware it controls. A request to a third-party font host in the
+         network tab would contradict the page it is serving, so the Fira
+         superfamily is self-hosted from assets/fonts and preloaded here.
+         Nothing on these pages is fetched from another origin.
+         ------------------------------------------------------------------ */}}
+    {{ with resources.Get "fonts/FiraSans-Book.woff2" }}
+    <link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin>
+    {{ end }}
+    {{ with resources.Get "fonts/FiraSansCondensed-Heavy.woff2" }}
+    <link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin>
+    {{ end }}
+
+    <!-- Site CSS (header/footer chrome) -->
+    {{ if .Site.Params.disablePostCSS }}
+    <link rel="stylesheet" href="/css/style.css">
+    {{ else }}
+    {{ $css := resources.Get "css/main.css" | css.PostCSS }}
+    {{ if hugo.IsProduction }}
+    {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ end }}
+
+    <!-- Whitepaper reading surface -->
+    {{ $wp := resources.Get "css/whitepaper.css" }}
+    {{ if hugo.IsProduction }}{{ $wp = $wp | minify | fingerprint }}{{ end }}
+    <link rel="stylesheet" href="{{ $wp.RelPermalink }}">
+
+    {{ partial "schema.html" . }}
+</head>
+
+<body class="min-h-screen flex flex-col">
+    {{ if and hugo.IsProduction .Site.Params.googleTagManager }}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.googleTagManager }}" height="0"
+            width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {{ end }}
+
+    {{/* First focusable element on the page, ahead of the site header's own
+         nav, so it can actually do its job on a 12,000-word document. */}}
+    <a class="wp-skip" href="#wp-main">Skip to the paper</a>
+
+    <div class="fixed top-0 left-0 right-0 z-50">
+        {{ partial "header.html" . }}
+    </div>
+
+    <div class="pt-20" id="wp-main" tabindex="-1">
+        {{ block "main" . }}{{ end }}
+    </div>
+
+    {{ partialCached "consent.html" . }}
+
+    {{ $js := resources.Get "js/main.js" | js.Build (dict "Minify" hugo.IsProduction) }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
+    {{ block "scripts" . }}{{ end }}
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+{{ define "main" }}
+{{- /* Legend definitions for the standing marks. Each says what the MARK
+       means as a matter of the document's method. */ -}}
+{{- $legend := dict
+  "runs"         "Built, and exercised end to end in automated testing."
+  "drawn"        "Architecture. The paper marks where this line falls, on the pages it names."
+  "hypothetical" "An illustration of the mechanism, not an account of an event."
+  "first-party"  "Runink's own use of the product, offered as that and not as a customer case study."
+  "self-declared" "Stated in the paper's own words, with controls mapped and self-declared."
+  "not-measured" "The paper puts no number here. It says where the number is measured instead."
+-}}
+{{- $used := slice -}}
+{{- range .Params.register -}}
+  {{- with .mark -}}{{- if not (in $used .) -}}{{- $used = $used | append . -}}{{- end -}}{{- end -}}
+{{- end -}}
+
+<div class="wp">
+  <header class="wp-hero">
+    <p class="wp-hero-eyebrow wp-util">
+      <span translate="no">{{ .Params.product }}</span>
+      <span aria-hidden="true">/</span>
+      <span>Whitepaper</span>
+      {{ with .Params.jointly_with }}
+      <span aria-hidden="true">/</span>
+      <span>With <span translate="no">{{ . }}</span></span>
+      {{ end }}
+    </p>
+
+    <div class="wp-hero-title">
+      <h1>{{ .Params.headline | default .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="wp-hero-sub">{{ . }}</p>{{ end }}
+    </div>
+
+    <div class="wp-hero-side">
+      <div class="wp-hero-deck">
+        {{ .Params.deck | markdownify }}
+      </div>
+    </div>
+
+    {{ with $used }}
+    <div class="wp-legend">
+      <p class="wp-legend-title wp-util">How this document marks its own claims</p>
+      <ul class="wp-legend-list">
+        {{ range . }}
+        <li>
+          <span class="wp-mark" data-mark="{{ . }}"><dfn>{{ . | replaceRE "-" " " }}</dfn></span>
+          <span>{{ index $legend . }}</span>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </header>
+
+  <div class="wp-body">
+    <nav class="wp-rail" aria-labelledby="register-heading">
+      <p class="wp-rail-head wp-util" id="register-heading">
+        Register &mdash; {{ len .Params.register }} chapters, {{ .Params.source_pages }} pages
+      </p>
+
+      {{/* Hidden until the script that operates it has loaded, so a reader
+           without JavaScript gets the full list rather than a dead button. */}}
+      <button type="button" class="wp-rail-toggle" aria-expanded="false" aria-controls="register-panel" hidden>
+        <span>Contents &mdash; {{ len .Params.register }} chapters</span>
+        <svg class="wp-rail-toggle-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+          <path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="wp-rail-panel" id="register-panel">
+        <ol class="wp-reg">
+          {{ range .Params.register }}
+          <li>
+            <a href="#{{ anchorize .title }}">
+              <span class="wp-reg-page" aria-hidden="true">{{ .page }}{{ with .page_end }}&ndash;{{ . }}{{ end }}</span>
+              <span class="wp-reg-title">{{ .title }}<span class="wp-sr">, page {{ .page }}{{ with .page_end }} to {{ . }}{{ end }}</span></span>
+              {{ with .mark }}
+              <span class="wp-mark wp-reg-mark" data-mark="{{ . }}">{{ . | replaceRE "-" " " }}</span>
+              {{ end }}
+            </a>
+          </li>
+          {{ end }}
+        </ol>
+      </div>
+    </nav>
+
+    <article class="wp-sheet" id="document">
+      <div class="wp-doc">
+        {{ .Content
+            | replaceRE `<table>` `<div class="wp-scroll"><table>`
+            | replaceRE `</table>` `</table></div>`
+            | safeHTML }}
+      </div>
+    </article>
+  </div>
+
+  <footer class="wp-foot">
+    <div class="wp-foot-inner">
+      <div>
+        <p class="wp-foot-label wp-util">Talk to us</p>
+        <p>
+          <a href="mailto:paes@runink.org">paes@runink.org</a><br>
+          <a href="https://runink.org">runink.org</a>
+          {{ with .Params.partner_url }}<br><a href="{{ . }}">{{ $.Params.jointly_with }}</a>{{ end }}
+        </p>
+      </div>
+      <div>
+        <p class="wp-foot-label wp-util">Other papers</p>
+        <p>
+          {{ range where (where .Site.RegularPages "Section" "whitepapers") "Permalink" "!=" .Permalink }}
+          <a class="wp-next" href="{{ .RelPermalink }}">{{ .Params.product }} &mdash; {{ .Params.subtitle | default .Title }}</a><br>
+          {{ end }}
+          <a class="wp-next" href="{{ "/whitepapers/" | relLangURL }}">All whitepapers</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ $wpjs := resources.Get "js/whitepaper.js" }}
+{{ if hugo.IsProduction }}{{ $wpjs = $wpjs | minify | fingerprint }}{{ end }}
+<script src="{{ $wpjs.RelPermalink }}" defer></script>
+{{ end }}

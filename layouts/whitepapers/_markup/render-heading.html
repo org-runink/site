@@ -1,0 +1,32 @@
+{{- /*
+  Heading render hook, scoped to the whitepapers type only. No other page on
+  the site is affected by it.
+
+  Its one job is the section's signature: where a chapter carries a standing
+  mark declared in front matter, the mark is printed above the chapter title.
+
+  The vocabulary is not invented here. Every mark word is quoted from the
+  documents themselves — "does this run, or is it drawn?", "this is a
+  hypothetical, offered to show the shape rather than to report an event",
+  "this is a first-party reference", "controls mapped and self-declared".
+  The design hoists the papers' own self-classification into the margin; it
+  does not classify them from outside.
+*/ -}}
+{{- $anchor := .Anchor -}}
+{{- $mark := "" -}}
+{{- if eq .Level 2 -}}
+  {{- range .Page.Params.register -}}
+    {{- if and .mark (eq (anchorize .title) $anchor) -}}
+      {{- $mark = .mark -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and (eq .Level 2) $mark -}}
+<div class="wp-chapter">
+  <span class="wp-mark wp-chapter-mark" data-mark="{{ $mark }}">{{ $mark | replaceRE "-" " " }}</span>
+  <h2 id="{{ $anchor }}">{{ .Text | safeHTML }}</h2>
+</div>
+{{- else -}}
+<h{{ .Level }} id="{{ $anchor }}">{{ .Text | safeHTML }}</h{{ .Level }}>
+{{- end -}}
