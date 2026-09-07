@@ -53,17 +53,17 @@ register:
 
 ## What this paper is, and which part of it runs
 
-It is written jointly so that both
-engineering teams and any interested customer are reading the same description of the same
-shape. Part of that shape is now built. CORE accepts findings from an outside assessment
-platform, judges each one, and hands the verdicts back, and that path has been exercised end
-to end in automated testing. The other direction — CORE reaching into Atlas to collect
-findings itself or to push verdicts into it — is a named interface with nothing written behind
-it, and it waits on a technical interface from Logical Leap's side; Atlas is offered in
-private beta and does not publish one, which is ordinary for a product at that stage. Pages 11
-to 13 set out exactly which is which, and every claim in this paper should be read against
-them. Nothing here is an account of work performed for a customer, and nothing in it describes
-an outcome observed at one.
+This paper is written jointly by Runink and Logical Leap, so that both engineering teams and
+any interested customer are reading the same description of the same shape. Part of that
+shape is now built. CORE accepts findings from an outside assessment platform, judges each
+one, and hands the verdicts back, and that path has been exercised end to end in automated
+testing. The other direction — CORE reaching into Atlas to collect findings itself or to push
+verdicts into it — is a named way in with nothing written behind it, and it waits on a written
+description from Logical Leap's side of how to call Atlas; Atlas is offered in private beta,
+to selected customers rather than generally, and does not publish such a description, which is
+ordinary for a product at that stage. Pages 11 to 13 set out exactly which is which, and every
+claim in this paper should be read against them. Nothing here is an account of work performed
+for a customer, and nothing in it describes an outcome observed at one.
 
 ## Executive summary
 
@@ -73,7 +73,7 @@ A capital project overruns and the overrun is visible in the quarter-end pack. A
 invoices against a purchase order that nobody re-checked and the discrepancy surfaces in an
 audit sample nine months later. A rule that everyone believes is enforced was quietly
 switched off during a system upgrade in March and nobody notices until a regulator asks for
-evidence. A claim is paid that should have been questioned. A customer churns after four
+evidence. A claim is paid that should have been questioned. A customer leaves after four
 warning signals that were each individually unremarkable.
 
 None of these are failures of intelligence. They are failures of timing. In every case, the
@@ -86,14 +86,17 @@ configuration changes in a mid-sized company exceeds what a review function can 
 review became sampling, sampling became periodic, and periodic became the thing that happens
 after the decision.
 
-**Atlas addresses the timing.** Atlas is a data-quality and governance agent from Logical
-Leap. It evaluates transactions continuously against the rules a company has written down,
-inside the systems where the data originates — invoices, purchase orders, enterprise resource
-records — rather than in a spreadsheet assembled afterwards. It flags policy violations as
-they occur, detects unusual patterns, ranks what it finds by impact and exposure, forecasts
-overruns and delays ahead of time, recommends actions and tracks them to close, and keeps an
-unbroken record from plan through to the asset ledger. Logical Leap describes this as moving
-from reactive problem management to continuous governance.
+**Atlas addresses the timing.** Atlas is software from Logical Leap that watches the quality
+of a company's data and whether the company's own rules are being kept. It checks transactions
+continuously against the rules a company has written down, inside the systems where the
+records are first created — invoices, purchase orders, and the system that runs the company's
+finance and operations — rather than in a spreadsheet assembled afterwards. It flags breaches
+of policy as they occur, spots unusual patterns, ranks what it finds by how much money is at
+stake, warns of overruns and delays before they land, recommends actions and follows them
+until they are closed, and keeps an unbroken record from the original plan through to the
+books where the finished asset is recorded. Logical Leap describes this as moving from
+reactive problem management to continuous governance — from cleaning up after problems to
+checking every transaction as it happens.
 
 **CORE addresses what happens next.** Continuous monitoring creates a new problem the moment
 it works: a queue. If every item in the queue arrives with the same confidence, a person has
@@ -103,20 +106,23 @@ score it on both the reasoning that produced it and the conclusion it reached, a
 the items that carry a clear recommended action from the items where the judgement genuinely
 belongs to a person.
 
-**The division of labour is deliberate.** Atlas leads on the presentation and the interface:
-the customer's people work in Atlas, see findings in Atlas, and act in Atlas. CORE sits
+**The division of labour is deliberate.** Atlas leads on the screens people work in: the
+customer's people work in Atlas, see findings in Atlas, and act in Atlas. CORE sits
 behind it as an independent assessor and as the layer that runs the whole arrangement on the
-customer's own machines, on the customer's own model, with a written record of every action.
+customer's own machines, on a language model the customer runs itself, with a written record
+of every action.
 
 **What of this runs.** The path by which findings reach CORE, are judged, and are read back is
 built and has been exercised in automated testing. The path by which CORE would reach into
 Atlas is a design with nothing written behind it. Pages 11 to 13 draw that line precisely,
 and the rest of this paper is written so the two are never confused.
 
-**The two-stage path.** Stage one is visibility — assessments, reconciliation of written
-rules against enforced ones, and hypothesis testing. Nothing acts on the business. Stage two
-is autonomy — assessors that carry out a bounded set of actions, each one gated behind a
-named person's approval for anything irreversible. Most organisations should buy stage one,
+**The two-stage path.** Stage one is visibility — reading the estate and describing it,
+setting the rules a company has written down beside the rules its systems actually enforce
+and reporting the differences, and answering "what would have happened if" questions against
+the company's own records. Nothing acts on the business. Stage two is autonomy — assessors
+that carry out a limited, agreed set of actions, with anything that cannot be undone held
+until a named person approves it. Most organisations should buy stage one,
 run it for a period they choose, and decide about stage two with evidence in hand.
 
 ## The expensive problem, named before the product
@@ -127,9 +133,10 @@ Set both products aside for two pages.
 
 Every company has a set of rules about how money is committed. A purchase above a threshold
 needs an approval. A supplier must be on an approved list. An invoice must match a purchase
-order within a tolerance. A capital item must be capitalised, not expensed. A change to a
-payment destination must be verified out of band. A claim above a value must be reviewed by a
-second assessor. A discount above a level must be signed off.
+order within a tolerance. A capital item must be recorded as a long-lived asset rather than
+written off as a running cost. A change to a payment destination must be confirmed through a
+separate channel, not by replying to the message that asked for it. A claim above a value must
+be reviewed by a second assessor. A discount above a level must be signed off.
 
 These rules exist. They are written down. Somebody was paid to write them.
 
@@ -147,10 +154,11 @@ enforces, and no reliable way to describe the difference.
 The second cost is timing, and it compounds.
 
 Consider the ordinary sequence of a capital project. A plan is written. A request is
-approved. A purchase order is raised. Invoices arrive against it. Eventually the asset is
-capitalised. Each of those steps is an opportunity for a discrepancy: a plan that assumed
-one scope, an approval granted against an earlier version, a purchase order that drifted, an
-invoice that does not match, a capitalisation that puts the cost in the wrong place.
+approved. A purchase order is raised. Invoices arrive against it. Eventually the finished
+thing is entered in the books as a long-lived asset rather than written off as a running
+cost. Each of those steps is an opportunity for a discrepancy: a plan that assumed one scope,
+an approval granted against an earlier version, a purchase order that drifted, an invoice
+that does not match, an entry in the books that puts the cost in the wrong place.
 
 Review happens at the end. By the time the discrepancy is found, the money is spent, the
 supplier has been paid, the asset is on the books, and the remedy is a recovery action rather
@@ -186,8 +194,9 @@ throughout a period. Not that it exists. That it operated, continuously, across 
 and that any occasion on which it did not operate was detected and handled.
 
 The usual method of demonstrating this is to assemble evidence after the request. Somebody
-pulls extracts from several systems, reconciles them by hand, writes a narrative, and
-attaches screenshots. This takes weeks. It is done by people whose ordinary job is something
+pulls extracts from several systems, sets them against each other by hand to find where they
+disagree — what finance calls a reconciliation — writes a narrative, and attaches
+screenshots. This takes weeks. It is done by people whose ordinary job is something
 else. It is done again next quarter, and again for the next framework, and again for the next
 customer's security questionnaire, and the work is not cumulative — the second assembly does
 not make the third one shorter.
@@ -220,9 +229,9 @@ That combination is not industry-specific. Here is where it shows up.
 
 Any organisation that runs capital projects — utilities, manufacturers, real-estate
 developers, transport operators, hospital groups, mining and energy companies — carries the
-plan-to-capitalise sequence described on the previous pages. The amounts are large, the
-sequence is long, the participants are numerous, and the systems that hold the pieces are
-usually not the same system.
+sequence described on the previous pages: plan, approve, buy, spend, and finally record the
+finished thing in the books. The amounts are large, the sequence is long, the participants are
+numerous, and the systems that hold the pieces are usually not the same system.
 
 This is Atlas's primary ground, and Logical Leap names the audiences directly: Finance, the
 project management office, Procurement, Engineering, Internal Audit and Executive Leadership.
@@ -250,16 +259,18 @@ is not answered by a policy document.
 
 ### Telecoms operators
 
-Revenue assurance is the discipline of confirming that what was delivered was rated,
-that what was rated was billed, and that what was billed was collected. It exists as a named
-function in telecoms precisely because the transaction volume defeats inspection. Alongside
-it sit interconnect settlement, network capital programmes, device subsidy tracking and
-partner commission — each a reconciliation between two records that ought to agree.
+Revenue assurance is the discipline of confirming that what was delivered was priced — in
+telecoms, "rated" — that what was rated was billed, and that what was billed was collected.
+It exists as a named function in telecoms precisely because the transaction volume defeats
+inspection. Alongside it sit interconnect settlement, network capital programmes, device
+subsidy tracking and partner commission — each a reconciliation between two records that
+ought to agree.
 
 ### Marketing organisations
 
 Media spend commits money through agencies and platforms, against plans, with rules about
-brand safety, placement, data use and consent. Attribution is a reconciliation problem. Agency
+brand safety, placement, data use and consent. Working out which spending produced which
+result is a reconciliation problem. Agency
 fee validation is a rules problem. Consent handling is a control that must be demonstrable.
 The spend is continuous, the review is periodic, and the interval between them is where the
 money goes.
@@ -334,13 +345,16 @@ something to describe.
 
 ### Atlas, from Logical Leap
 
-Atlas is a data-quality and governance agent for capital expenditure oversight. Logical Leap
-states its purpose plainly: continuous oversight of every capital investment, stopping spend
-leakage at the source. It is offered in private beta, with access arranged through a
-walkthrough with the Logical Leap team.
+Atlas is software that watches the quality of a company's data and whether its own rules are
+being kept, applied to the money a company spends on lasting things — buildings, plant,
+equipment, large projects. Logical Leap states its purpose plainly: continuous oversight of
+every capital investment, stopping money leaking away at the point where it leaves. It is
+offered in private beta, with access arranged through a walkthrough with the Logical Leap
+team.
 
-Its method is to embed policy execution and metadata validation directly into the systems
-where capital data originates — invoices, purchase orders, enterprise resource records —
+Its method is to put the checking of rules, and the checking of the descriptive details
+attached to each record, directly into the systems where capital spending is first recorded —
+invoices, purchase orders, and the system that runs the company's finance and operations —
 rather than relying on spreadsheets and periodic audits.
 
 Logical Leap describes six capabilities:
@@ -350,11 +364,12 @@ Logical Leap describes six capabilities:
 - **Risk prioritisation** — ranking issues by impact and exposure.
 - **Predictive insights** — forecasting overruns and delays weeks ahead.
 - **Guided remediation** — recommending actions and tracking them to close.
-- **Complete lineage** — an unbroken trail from plan to the asset ledger.
+- **Complete lineage** — an unbroken trail from the original plan to the books where the
+  finished asset is recorded.
 
-It covers a five-stage sequence: plan, approve, procure, spend, capitalise. Findings are
-ranked across those stages, so the question "where in the lifecycle is our risk concentrated"
-has an answer that updates rather than an answer that is compiled.
+It covers a five-stage sequence: plan, approve, procure, spend, and record the finished thing
+in the books. Findings are ranked across those stages, so the question "where in that sequence
+is our risk concentrated" has an answer that updates rather than an answer that is compiled.
 
 Its named audiences are Finance, the project management office, Procurement, Engineering,
 Internal Audit and Executive Leadership.
@@ -371,12 +386,13 @@ Three properties of CORE matter to this design.
 **It runs on machines the company owns, on a model the company runs itself.** Every automated
 assessor, the console assistant and the longer coding sessions are served by a language model
 running on the customer's own hardware. No outside service is called for reasoning. Records,
-files, the identity authority, the secrets and the search index are all held on the
-customer's own systems.
+files, the authority that issues the platform's credentials, the secrets and the index that
+makes the company's own material searchable are all held on the customer's own systems.
 
 **It holds the connections to the company's own systems, under governance.** The links to
-databases, analytical stores, enterprise resource systems, procurement systems, document
-stores and object storage live in one place, described in one vocabulary, with credentials
+databases, the stores where data is gathered for analysis, the systems that run finance and
+operations, purchasing systems, document stores and file storage live in one place, described
+in one vocabulary, with credentials
 held separately from settings and encrypted with a key that is itself encrypted. A connection
 cannot be created, changed or removed by anyone CORE cannot name, the set of people permitted
 to make those changes can be listed explicitly, and every attempt — allowed, refused or
@@ -398,27 +414,29 @@ That last discipline is the one this design borrows and applies to Atlas's findi
 The division is simple enough to state in three sentences, and the rest of this section
 explains why each sentence is the right way round.
 
-**Atlas leads on presentation and interface.** The customer's people work in Atlas. Findings
-appear in Atlas. Actions are taken in Atlas. The lifecycle view, the ranking, the remediation
-tracking and the lineage record are Atlas's, and they are what the customer sees.
+**Atlas leads on the screens people work in.** The customer's people work in Atlas. Findings
+appear in Atlas. Actions are taken in Atlas. The view across the whole sequence, the ranking,
+the tracking of fixes to completion and the unbroken record from plan to books are Atlas's,
+and they are what the customer sees.
 
 **CORE judges.** Before a finding reaches a person, CORE's assessors read it — the reasoning
 that produced it as well as the conclusion it reached — and attach a verdict to it. The
 verdict is one of four words, and it always carries the reason behind it: CORE concurs, it
-dissents, it is unable to judge, or the subject is outside what it has standing over. This is
+dissents, it is unable to judge, or the subject is one it has no business ruling on. This is
 the part that is built; pages 11 to 13 describe it as it is written.
 
 **CORE runs the arrangement on the customer's own systems.** The machines, the model, the
 connections to the company's own data, the identity, and the record of who did what are
 CORE's contribution to the arrangement.
 
-### Why Atlas leads the interface
+### Why Atlas leads the screens
 
 Two reasons, one of them commercial and one of them practical.
 
 The commercial reason: capital oversight is a specific discipline with a specific vocabulary.
 Plan, approve, procure, spend, capitalise. Commitment, accrual, capitalisation, variance.
-Logical Leap has built an interface around that vocabulary for the people who use it daily.
+Logical Leap has built a set of screens around that vocabulary for the people who use it
+daily.
 Replacing it with a general-purpose screen would make the product worse for the buyer.
 
 The practical reason: the person who acts on a finding needs one place to act. Two screens is
@@ -440,20 +458,20 @@ them are informative.
 Runink's automated workers already talk to each other through a shared calling arrangement
 in the platform. One worker sends a message to another and receives back a task that moves
 from submitted, through working, to completed or failed, with intermediate progress reported
-as it happens. The same calling arrangement covers workers in the same process and workers
-reached across a network, so the design does not have to change if the two products end up
-running on the same machines or on different ones.
+as it happens. The same calling arrangement covers workers running inside the same program
+and workers reached across a network, so the design does not have to change if the two
+products end up running on the same machines or on different ones.
 
 Runink also keeps a register of every managed worker, turns that register into live
 addresses, and checks each one by asking it to describe itself — which doubles as the
-liveness check and refreshes what each worker says it can do.
+check that it is still alive and refreshes what each worker says it can do.
 
 Those pieces exist in the platform, and the arrangement that receives an outside assessment
 platform's findings is now built on CORE's side: findings arrive, verdicts are produced and
 kept against them, and the submitting platform reads them back on the same connection it
-submitted over. What is not built is CORE reaching the other way into Atlas, which waits on an
-interface from Logical Leap. Pages 11 to 13 state that boundary precisely, and a reader who
-takes nothing else from this paper should take that distinction.
+submitted over. What is not built is CORE reaching the other way into Atlas, which waits on a
+written description from Logical Leap of how to call it. Pages 11 to 13 state that boundary
+precisely, and a reader who takes nothing else from this paper should take that distinction.
 
 ## What "judging" means, in plain language
 
@@ -476,16 +494,17 @@ narrow set of questions about it:
 - **How confident should a person be?** Expressed as a score, with the reasoning behind the
   score attached.
 - **Is this a decision a machine should be making at all?** Some items are mechanical. Some
-  involve a judgement about intent, materiality, relationship or precedent. The second kind
-  should arrive labelled as the second kind.
+  involve a judgement about intent, about whether something is big enough to matter, about a
+  relationship or about precedent. The second kind should arrive labelled as the second kind.
 
 ### Where the method comes from
 
 CORE already scores automated work this way. Its assessment routine takes recorded runs,
-compares them against a known-good set, and scores each one on two separate axes: the route
-taken and the result reached. Scoring both is the point. A run that reached the right answer
-by the wrong route is a run that will reach the wrong answer as soon as the inputs shift, and
-a scoring method that only looks at outcomes cannot see that coming.
+compares them against a set of answers already known to be right, and scores each one on two
+separate counts: the route taken and the result reached. Scoring both is the point. A run
+that reached the right answer by the wrong route is a run that will reach the wrong answer as
+soon as the inputs shift, and a scoring method that only looks at outcomes cannot see that
+coming.
 
 CORE's operational screen already applies the other half of the discipline. Every reading
 carries a plain sentence explaining it, a severity, and where the reading is not fine, a
@@ -510,10 +529,11 @@ fewer findings. It gets many more, earlier, which is the entire point. But a que
 every item carries equal weight is a queue that a person has to read entirely, and reading it
 entirely is the review job that did not scale in the first place.
 
-Ranking by impact helps and Atlas does it. Ranking by confidence is a different axis and it
-is the one that decides how a person spends the first hour. The high-impact item that the
-assessor is confident about and the high-impact item the assessor disagrees with are two
-completely different pieces of work, and they should not look the same on arrival.
+Ranking by impact helps and Atlas does it. Ranking by confidence is a different question
+altogether, and it is the one that decides how a person spends the first hour. The
+high-impact item that the assessor is confident about and the high-impact item the assessor
+disagrees with are two completely different pieces of work, and they should not look the same
+on arrival.
 
 ### The self-assessment problem
 
@@ -598,10 +618,10 @@ configuration that was never completed cannot quietly become an open one.
 ### Two vocabularies, deliberately not merged
 
 CORE's verdict is one of four. It concurs. It dissents. It is unable to judge. Or the subject
-is outside anything CORE has standing over.
+is one CORE has no business ruling on.
 
-What the submitter concluded about its own finding is a separate matter, recorded on a
-separate axis: it asserted the claim, it refuted it, or it could not determine it.
+What the submitter concluded about its own finding is a separate matter, recorded separately:
+it asserted the claim, it refuted it, or it could not determine it.
 
 Keeping the two apart is not tidiness. Collapsing them is precisely how "CORE concurred" comes
 to mean "the submitter said so and nobody checked" — the two sentences look identical on a
@@ -656,7 +676,7 @@ disagree with.
 Where no model is reachable, the answer is unable to judge, with that stated as the reason.
 Never agreement by default.
 
-### Unable to judge is a first-class answer, and never renders as agreement
+### Unable to judge is an answer in its own right, and never renders as agreement
 
 No evidence, evidence that only restates the claim, evidence about a different subject,
 evidence past the staleness horizon, an unreadable answer, a submitter who also could not
@@ -670,7 +690,7 @@ screen are worth something.
 
 An automated test builds CORE's assessor as a working program, runs it against the real
 receiving code over a real connection, and checks that the verdicts survive the trip intact —
-the arithmetic, the dissents, the abstentions, and the reason attached to each.
+the arithmetic, the dissents, the times it declined to judge, and the reason attached to each.
 
 That test exists for a reason worth stating. The two halves were written in parallel, and each
 passed every test it had while the two disagreed about the shape of the document they were
@@ -683,27 +703,26 @@ one exercises both — it is the only test in this design that would have caught
 ### Designed, and not built: CORE reaching into Atlas
 
 The direction in which CORE would call Atlas — to collect findings itself, or to push verdicts
-into it — exists as a named interface with nothing written behind it.
+into it — exists as a named way in with nothing written behind it.
 
-Atlas is offered in private beta, and Logical Leap does not publish a technical interface for
-it. That is entirely ordinary for a product at that stage. The consequence for this design is
-concrete: software written against an interface nobody outside Logical Leap has seen would
-build cleanly, would pass every test written for it, and would fail the moment it met the real
-thing. So it has deliberately not been written. It waits on a specification rather than on
-effort, and it is short work once one exists.
+Atlas is offered in private beta, and Logical Leap does not publish a written description of
+how another program should call it. That is entirely ordinary for a product at that stage. The
+consequence for this design is concrete: software written against a description nobody outside
+Logical Leap has seen would build cleanly, would pass every test written for it, and would
+fail the moment it met the real thing. So it has deliberately not been written. It waits on a
+written description rather than on effort, and it is short work once one exists.
 
 The consequence is smaller than it sounds, because the direction that is built does not need
 it. A submitting platform receives CORE's verdicts on the same connection it submitted on, and
 can ask for them again by handing over the same batch. That is a working exchange between the
-two products that requires neither party to invent the other's interface.
+two products that requires neither party to invent the other's way in.
 
 ### Demonstrated where, and where not
 
-Everything on the previous two pages is argued from automated tests and from a measured size
-budget —
-the store that holds submissions and verdicts is sized against a real measurement of a
-realistic finding rather than an estimate, and the retention figures were revised downwards
-when the measurement said so.
+Everything on the previous two pages is argued from automated tests and from a measurement of
+how much room the stored material actually takes — the store that holds submissions and
+verdicts is sized against a real measurement of a realistic finding rather than against an
+estimate, and how long records are kept was revised downwards when the measurement said so.
 
 None of it has been run against a live installation at a customer, or against Atlas itself. A
 reader should treat the behaviour described here as proven in the workshop and unproven in the
@@ -721,9 +740,9 @@ is architecture, in the way a drawing describes a building.
 the real receiving code, over a real connection. Not against a live installation, and not
 against Atlas.
 
-**What would change the answer?** For the direction that is drawn, a published technical
-interface from Logical Leap's side. For the field evidence, a first installation — which is
-the thing to ask for before relying on any of this.
+**What would change the answer?** For the direction that is drawn, a published description
+from Logical Leap's side of how to call Atlas. For the field evidence, a first installation —
+which is the thing to ask for before relying on any of this.
 
 ## A note on how we name the assessors
 
@@ -784,14 +803,14 @@ connecting a read-only account to a system. Its output is a set of documents and
 
 ### Stage two: autonomy
 
-In stage two, assessors act. Not on everything — on a bounded set of actions the customer
+In stage two, assessors act. Not on everything — on a limited set of actions the customer
 defines, with a rule about which of them require a person.
 
-The gating is not advisory. Runink's platform includes a gate that holds an action until a
-named person decides it: the request is described, the assessor pauses, the request is
-surfaced for a human decision, and the assessor resumes on the answer. Where no human channel
-is configured, the gate can be set to refuse rather than to proceed. The default posture for
-anything irreversible is that it waits.
+That holding-back is not advice; it is built in. Runink's platform includes a gate that stops
+an action until a named person decides it: the request is described, the assessor pauses, the
+request is put in front of a person, and the assessor carries on once the answer comes back.
+Where there is no way to reach a person, the gate can be set to refuse rather than to
+proceed. The default for anything that cannot be undone is that it waits.
 
 CORE applies the same discipline to its own automated helpers today. Each one is switched on
 or off individually. Each runs on its schedule and reports what it would have done, and it is
@@ -864,22 +883,24 @@ What changed is timing. The same discrepancy, found at quarter-end, is a varianc
 
 ### The question you are answering
 
-Finance is asked to state what was committed, what was spent, what is accrued and what is
-capitalised — and to be right. Procurement is asked to confirm that what was bought was
-bought under the terms that were negotiated.
+Finance is asked to state what was committed, what was spent, what has been incurred but not
+yet invoiced, and what has been entered in the books as a long-lived asset — and to be right.
+Procurement is asked to confirm that what was bought was bought under the terms that were
+negotiated.
 
 Both questions are reconciliation questions between records that ought to agree and
 frequently do not.
 
 ### What the arrangement does for you
 
-**The lifecycle is one record.** Atlas's lineage runs from plan to the asset ledger. The
-question "where did this cost come from" is answered by following the record rather than by
-asking four people.
+**The whole sequence is one record.** Atlas's record runs unbroken from the original plan to
+the books where the finished asset appears. The question "where did this cost come from" is
+answered by following that record rather than by asking four people.
 
-**Consolidation of the data connections.** CORE holds the links to the systems the answer
-depends on — enterprise resource systems, analytical stores, procurement systems, spreadsheet
-and document stores, object storage — in one place, described in one vocabulary, with a
+**The data connections are brought together.** CORE holds the links to the systems the answer
+depends on — the systems that run finance and operations, the stores where data is gathered
+for analysis, purchasing systems, spreadsheet and document stores, file storage — in one
+place, described in one vocabulary, with a
 published catalogue that states what each kind of system requires before a person starts
 filling in a form.
 
@@ -977,10 +998,11 @@ the record it left.
 For a security review the question that ends most evaluations is where the information goes.
 
 CORE's reasoning is served by a model running on the customer's own hardware. Records, files,
-the identity authority, the secrets and the search index are held on the customer's own
-systems. No outside service is called for reasoning, and no outside account is required.
-Self-hosted deployments on the customer's premises are supported, including where there is no
-outside network connection at all.
+the authority that issues the platform's credentials, the secrets and the index that makes
+the company's own material searchable are held on the customer's own systems. No outside
+service is called for reasoning, and no outside account is required. Deployments the customer
+hosts on its own premises are supported, including where there is no outside network
+connection at all.
 
 The commercial consequence is that the security review becomes a description rather than a
 negotiation.
@@ -1016,7 +1038,8 @@ else in this paper.
 
 **Premium, commission and delegated authority.** Where underwriting is delegated, the
 principal remains accountable for decisions taken under the delegation. Reading the
-delegation agreement against the bordereaux is a rules-versus-records comparison.
+delegation agreement against the schedules of risks and premiums the agent reports back — the
+bordereaux — is a rules-versus-records comparison.
 
 **Conduct evidence.** Supervisory authorities ask insurers to demonstrate fair outcomes,
 consistently, across a population. That is an evidence problem of the shape described on the
@@ -1074,8 +1097,8 @@ demonstrable. An arrangement in which each finding carries its reasoning, its as
 independent score, and the identity of the person who acted, produces that explanation as
 part of doing the work.
 
-**Capital programme oversight.** Banks run large change programmes with the same plan-to-
-capitalise sequence as any capital-intensive organisation, and with more scrutiny.
+**Capital programme oversight.** Banks run large change programmes with the same
+plan-to-books sequence as any capital-intensive organisation, and with more scrutiny.
 
 **Fee and interest calculation.** Rate cards, tiers and product terms applied across a
 portfolio; a reconciliation between what the terms say and what was charged.
@@ -1097,8 +1120,8 @@ what changed operationally in that period.
 
 The point of the illustration is the division of labour. The machine is good at noticing that
 a pattern is unusual across a volume no person is reading. It is not good at knowing that the
-team changed a posting rule in month one. The design puts the observation in front of the
-person who knows that.
+team changed the way a class of transactions was recorded in month one. The design puts the
+observation in front of the person who knows that.
 
 ## Telecoms
 
@@ -1127,7 +1150,7 @@ a monthly sweep against a sample.
 against the agreement that governs the rates.
 
 **Network capital programmes.** Site builds, equipment purchases and rollout programmes carry
-the plan-to-capitalise sequence, across many small sites rather than a few large ones, which
+the same plan-to-books sequence, across many small sites rather than a few large ones, which
 makes the sampling problem worse rather than better.
 
 **Consent and data handling.** Obligations about what may be done with subscriber data are
@@ -1150,7 +1173,7 @@ and a re-rate rather than a discovered liability.
 
 ## Marketing
 
-Marketing is included as a first-class example because the shape holds exactly, and because
+Marketing is included as a full example because the shape holds exactly, and because
 marketing spend is one of the few large budgets that is routinely committed continuously and
 reviewed periodically.
 
@@ -1183,9 +1206,9 @@ already works this shape over a customer's own data.
 
 ### An illustration
 
-A churn-risk signal. An account reduces usage slightly, its main contact changes, a support
-case is opened and closed without escalation, and a renewal date approaches. Each of these
-events is unremarkable and each sits in a different system.
+A sign that a customer may be about to leave. An account reduces usage slightly, its main
+contact changes, a support case is opened and closed without escalation, and a renewal date
+approaches. Each of these events is unremarkable and each sits in a different system.
 
 An assessor reading the combination reports that this pattern, in this segment, has preceded
 non-renewal before. It says what it saw and where each piece came from. It does not claim to
@@ -1244,9 +1267,10 @@ conversation held every month.
 
 ### Everything else runs there too
 
-Records, files, the identity authority, the secrets and the search index are all held on the
-customer's own systems. There is no managed outside database holding company information, and
-self-hosted deployments on the customer's premises are supported, including where there is no
+Records, files, the authority that issues the platform's credentials, the secrets and the
+index that makes the company's own material searchable are all held on the customer's own
+systems. There is no managed outside database holding company information, and
+deployments the customer hosts on its own premises are supported, including where there is no
 outside network connection at all.
 
 **The consequence is that the data-control claim is complete.** A single outside dependency
@@ -1267,7 +1291,7 @@ identified parties, and the identity is checked rather than assumed.
 
 ### The record is a by-product
 
-Attribution on every change, a sequenced record with each entry fingerprinted against the one
+A name attached to every change, a sequenced record with each entry fingerprinted against the one
 before it, and a sixty-day history of what was built and what was rolled out.
 
 **The consequence is that assurance costs what the work costs.** The standing overhead of
@@ -1278,17 +1302,18 @@ than by a person assembling evidence after the question is asked.
 
 Runink's platform includes a shared calling arrangement for automated workers, a register of
 every managed worker, a way to check each one is alive by asking it to describe itself, and a
-gate that holds an irreversible action until a named person decides it. Workers in the same
+gate that holds an action that cannot be undone until a named person decides it. Workers in
+the same
 process and workers reached across a network are called the same way.
 
 **The consequence is that the inbound half of this integration is built rather than
 imagined.** Findings submitted by an outside assessment platform are received, judged and
 returned by working code, exercised end to end in automated testing. The outbound half — CORE
-reaching into Atlas — is a named interface with nothing written behind it, and that is a
-decision rather than an omission: software written against an interface nobody outside
+reaching into Atlas — is a named way in with nothing written behind it, and that is a
+decision rather than an omission: software written against a description nobody outside
 Logical Leap has seen would build cleanly, pass its own tests, and fail on first contact with
 the real thing. It waits
-on a specification, and nothing depends on it in the meantime, because a submitting platform
+on that description, and nothing depends on it in the meantime, because a submitting platform
 receives CORE's verdicts on the same connection it submitted on and can ask for them again by
 handing over the same batch. That is a statement about engineering risk, and it is the reason
 the two companies think this shape is the right one.
@@ -1372,11 +1397,13 @@ One half of the joint design is built and can be exercised. An outside assessmen
 hands CORE its findings, CORE judges each one and keeps the verdict against it, and the
 platform reads the verdicts back. That half has been proven in automated testing, against a
 real assessor program and the real receiving code. It has not been run against a live
-installation at a customer, so what is claimed for it is argued from tests and a measured size
-budget rather than from observed traffic.
+installation at a customer, so what is claimed for it is argued from tests and from a
+measurement of how much room the stored material takes, rather than from watching real
+traffic.
 
-The other half — CORE reaching into Atlas — is a named interface with nothing written behind
-it, and it waits on a technical interface from Logical Leap's side. Everything else in this
+The other half — CORE reaching into Atlas — is a named way in with nothing written behind
+it, and it waits on a written description from Logical Leap's side of how to call Atlas.
+Everything else in this
 paper is architecture: a shape the two companies believe is right, described in the way a
 drawing describes a building. What the paper is for is to let you tell us whether that shape
 fits your organisation before either party builds further against the other.
