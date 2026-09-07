@@ -1,0 +1,256 @@
+{{/*
+  Industry page — a qualification funnel, not a document.
+
+  The whole page is driven from front matter. There is no {{ .Content }} slot on
+  purpose: the section exists because the audit found the site already gives
+  buyers too much up front, so the template offers a fixed, short set of slots —
+  a headline, the problems, the people who own them, what changes, how the
+  reader will know it worked, the two things that make it possible, one next
+  step — and nothing to pour an essay into. Depth belongs in the whitepapers,
+  which every page links to once.
+
+  Every block is optional. The five industry pages are written independently and
+  land at different times, so a page missing `measures` or `foundations` renders
+  correctly with the rest of its blocks intact and nothing left hanging.
+
+  Layout resolution: this file sits in layouts/industries/ so it matches the
+  content section name, and the section's front-matter cascade also sets
+  `type: industries`. layouts/use_cases/single.html is the cautionary tale —
+  `layout: "use_case"` never resolved to it and those pages have been falling
+  through to _default/single.html.
+
+  On the restyle: the review of the customer-facing material asked for pages
+  that read at a glance and print, and said the black canvas was the problem.
+  So the page is light, each block has a different shape rather than a different
+  paragraph, and the two pictures are inline SVG in partials — markdown content
+  cannot draw them, because goldmark.renderer.unsafe is false.
+*/}}
+{{ define "main" }}
+{{ $accent := .Params.accent | default "#ea580c" }}
+{{ $section := .Site.GetPage "/industries" }}
+<div class="ind" style="--accent: {{ $accent }};">
+  {{ partial "industries-style.html" . }}
+
+  <div class="ind-wrap">
+
+    {{/* Breadcrumb back to the overview — the section is a set, and a buyer who
+         landed on the wrong one should be able to leave in one click. */}}
+    <nav aria-label="Breadcrumb">
+      <a class="ind-back" href="{{ $section.RelPermalink }}">
+        <span aria-hidden="true">&larr;</span> {{ $section.Title }}
+      </a>
+    </nav>
+
+    <header class="ind-hero">
+      <p class="ind-eyebrow">{{ .Title }}</p>
+      <h1 class="ind-h1">{{ .Params.headline }}</h1>
+      <p class="ind-deck">{{ .Params.deck }}</p>
+    </header>
+
+    {{/* The picture of the mechanism, before any of the prose. It is the same
+         on every industry page because the mechanism is. */}}
+    <figure class="ind-figure">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label">Where the decision happens</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ partial "industries/decision-figure.html" . }}
+      <ol class="ind-figure__beats">
+        <li class="ind-figure__beat"><b>Records you already keep</b>Spread across the systems you already run.</li>
+        <li class="ind-figure__beat"><b>One finding, with its evidence</b>Drawn together into a single proposed action.</li>
+        <li class="ind-figure__beat"><b>A person approves it</b>By name, and nothing goes out before they do.</li>
+        <li class="ind-figure__beat"><b>The work goes out</b>And the reason stays on the record.</li>
+      </ol>
+    </figure>
+
+    <!-- The problems, in the industry's own words -->
+    {{ with .Params.problems }}
+    <section class="ind-sec" aria-labelledby="problems-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="problems-heading">{{ $.Params.problems_heading | default "Where it goes wrong" }}</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      <ul class="ind-grid2">
+        {{ range . }}
+        <li class="ind-problem">
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{/* Who owns the problem. One column of role names, all on the same left
+         edge, so the set of people this lands on can be read straight down
+         without reading a word of the lines beside them. */}}
+    {{ with .Params.owners }}
+    <section class="ind-sec" aria-labelledby="owners-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="owners-heading">{{ $.Params.owners_heading | default "Who owns this" }}</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.owners_intro }}<p class="ind-intro">{{ . }}</p>{{ end }}
+      <ul class="ind-roles">
+        {{ range . }}
+        <li class="ind-role">
+          <p class="ind-role__name">{{ .role }}</p>
+          <p class="ind-role__line">{{ .line }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{/* What changes — the payoff, and the one dark band on the page, so the
+         eye has somewhere to land halfway down. It inverts to ink on white in
+         print. */}}
+    {{ with .Params.outcomes }}
+    <section class="ind-sec ind-band" aria-labelledby="outcomes-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="outcomes-heading">{{ $.Params.outcomes_heading | default "What changes" }}</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      <ul class="ind-band__list">
+        {{ range . }}
+        <li class="ind-band__item">
+          <span class="ind-band__tick" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M6.2 10.3 L8.8 12.9 L13.8 7.4" stroke="currentColor" stroke-width="1.9"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>{{ . }}</span>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{/* How this industry measures success.
+
+         There are no figures in this block and there will not be. The numbers
+         belong to the reader, and the block is built to say so: each row names
+         the measure, gives a line to write this year's figure on, and says
+         where in the reader's own systems that figure lives. A ruled line with
+         a label above it and its source below it is a field to complete, not a
+         value that failed to arrive — which is why this is a sheet with a
+         writing rule rather than a table with an empty column. It is also the
+         reason these pages get printed: the line is long enough, and dark
+         enough, to write on. */}}
+    {{ with .Params.measures }}
+    <section class="ind-sec" aria-labelledby="measures-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="measures-heading">{{ $.Params.measures_heading | default "How you will know it worked" }}</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.measures_intro }}<p class="ind-intro">{{ . }}</p>{{ end }}
+      <div class="ind-sheet">
+        <table class="ind-measures">
+          <thead>
+            <tr>
+              <th scope="col">The measure</th>
+              <th scope="col" class="ind-col-today">Your figure today</th>
+              <th scope="col">What moves it</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range . }}
+            <tr>
+              <th scope="row">{{ .metric }}</th>
+              <td class="ind-col-today" data-label="Your figure today">
+                <span class="ind-blank" aria-hidden="true"></span>
+                <span class="ind-source">{{ .today }}</span>
+              </td>
+              <td data-label="What moves it">
+                <span class="ind-moves">
+                  <span class="ind-moves__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                      <path d="M2 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.9"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span>{{ .moves }}</span>
+                </span>
+              </td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* The two properties, drawn as one idea seen twice. */}}
+    {{ with .Params.foundations }}
+    <section class="ind-sec" aria-labelledby="foundations-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="foundations-heading">{{ $.Params.foundations_heading | default "Two things that make the above possible" }}</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      <ul class="ind-pair">
+        {{ range $i, $f := . }}
+        <li class="ind-found">
+          <div class="ind-found__plate">
+            {{ partial "industries/boundary-figure.html" (dict "variant" (cond (eq $i 0) "held" "reach")) }}
+          </div>
+          <h3>{{ $f.name }}</h3>
+          <p>{{ $f.plain }}</p>
+          {{ with $f.measured_by }}
+          <dl class="ind-found__felt">
+            <dt>What you would notice</dt>
+            <dd>{{ . }}</dd>
+          </dl>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    <!-- One next step -->
+    <section class="ind-next" aria-labelledby="next-heading">
+      <h2 id="next-heading">{{ .Params.next_heading | default "See whether it fits" }}</h2>
+      <p>{{ .Params.next_body }}</p>
+      <div class="ind-actions">
+        <a class="ind-cta" href="{{ "/#contact" | relLangURL }}">
+          {{ .Params.cta_text | default "Book a consultation" }}
+        </a>
+        {{ with .Params.paper }}
+        <a class="ind-cta-ghost" href="{{ .url }}">{{ .text }}</a>
+        {{ end }}
+      </div>
+      {{ with .Params.paper }}<p class="ind-note">{{ .note }}</p>{{ end }}
+    </section>
+
+    <!-- The other industries, so a mis-landed reader self-selects -->
+    {{ with $section }}
+    <nav class="ind-more" aria-label="Other industries">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <p class="ind-head__label">Other industries</p>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      <ul class="ind-more__list">
+        {{ range .Pages.ByWeight }}
+        {{ if ne .RelPermalink $.RelPermalink }}
+        <li>
+          <a class="ind-chip ind-accent" href="{{ .RelPermalink }}"
+             style="--accent: {{ .Params.accent | default "#ea580c" }};">{{ .Title }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+    {{ end }}
+
+  </div>
+</div>
+{{ end }}

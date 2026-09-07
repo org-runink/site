@@ -222,20 +222,49 @@ paginatePath = "page"
       url = "/#painkiller"
       weight = 2
 
+    # Industries sits above Use cases deliberately. The site was organised by
+    # capability, which asks a buyer to recognise a product name before they can
+    # find their own problem; this is the entry that lets them start from their
+    # own industry instead.
+    #
+    # A dropdown rather than five top-level entries: the header is fixed, the
+    # desktop nav already carries five items plus two buttons and four language
+    # flags, and five more would either wrap or push the flags off. As a submenu
+    # it costs one item's width. On mobile the same menu renders as a labelled
+    # group inside the existing full-width panel, which has room.
+    #
+    # The industry pages exist in English only. These entries therefore point at
+    # the same unprefixed paths from every language, so no locale gets a menu
+    # entry that 404s. See the note in content/industries/_index.md on why there
+    # are no aliases.
+    [[languages.en.menu.main]]
+      name = "Industries"
+      url = "/industries/"
+      weight = 3
+      [languages.en.menu.main.params]
+        has_submenu = true
+        submenu = [
+          { name = "Logistics & Supply Chain", url = "/industries/logistics-supply-chain/" },
+          { name = "Insurance", url = "/industries/insurance/" },
+          { name = "Banking & Financial Services", url = "/industries/banking-financial-services/" },
+          { name = "Telecom", url = "/industries/telecom/" },
+          { name = "Marketing", url = "/industries/marketing/" },
+        ]
+
     [[languages.en.menu.main]]
       name = "Use cases"
       url = "/#use-cases"
-      weight = 3
+      weight = 4
 
     [[languages.en.menu.main]]
       name = "Blog"
       url = "/blog/"
-      weight = 4
+      weight = 5
 
     [[languages.en.menu.main]]
       name = "Pricing"
       url = "/pricing"
-      weight = 5
+      weight = 6
 
 
   [languages.fr]
@@ -265,20 +294,36 @@ paginatePath = "page"
       url = "/fr/#painkiller"
       weight = 2
 
+    # English pages, French label. The destinations are the unprefixed paths
+    # because that is where the pages are; a /fr/industries/ entry would 404.
+    [[languages.fr.menu.main]]
+      name = "Secteurs"
+      url = "/industries/"
+      weight = 3
+      [languages.fr.menu.main.params]
+        has_submenu = true
+        submenu = [
+          { name = "Logistics & Supply Chain", url = "/industries/logistics-supply-chain/" },
+          { name = "Insurance", url = "/industries/insurance/" },
+          { name = "Banking & Financial Services", url = "/industries/banking-financial-services/" },
+          { name = "Telecom", url = "/industries/telecom/" },
+          { name = "Marketing", url = "/industries/marketing/" },
+        ]
+
     [[languages.fr.menu.main]]
       name = "Cas d'usage"
       url = "/fr/#use-cases"
-      weight = 3
+      weight = 4
 
     [[languages.fr.menu.main]]
       name = "Blog"
       url = "/fr/blog/"
-      weight = 4
+      weight = 5
 
     [[languages.fr.menu.main]]
       name = "Tarifs"
       url = "/fr/pricing"
-      weight = 5
+      weight = 6
 
   [languages.es]
     locale = "es-es"
@@ -307,20 +352,35 @@ paginatePath = "page"
       url = "/es/#painkiller"
       weight = 2
 
+    # English pages, Spanish label — same reasoning as the French block above.
+    [[languages.es.menu.main]]
+      name = "Sectores"
+      url = "/industries/"
+      weight = 3
+      [languages.es.menu.main.params]
+        has_submenu = true
+        submenu = [
+          { name = "Logistics & Supply Chain", url = "/industries/logistics-supply-chain/" },
+          { name = "Insurance", url = "/industries/insurance/" },
+          { name = "Banking & Financial Services", url = "/industries/banking-financial-services/" },
+          { name = "Telecom", url = "/industries/telecom/" },
+          { name = "Marketing", url = "/industries/marketing/" },
+        ]
+
     [[languages.es.menu.main]]
       name = "Casos de uso"
       url = "/es/#use-cases"
-      weight = 3
+      weight = 4
 
     [[languages.es.menu.main]]
       name = "Blog"
       url = "/es/blog/"
-      weight = 4
+      weight = 5
 
     [[languages.es.menu.main]]
       name = "Precios"
       url = "/es/pricing"
-      weight = 5
+      weight = 6
 
   [languages.pt]
     locale = "pt-br"
@@ -349,20 +409,35 @@ paginatePath = "page"
       url = "/pt/#painkiller"
       weight = 2
 
+    # English pages, Portuguese label — same reasoning as the French block above.
+    [[languages.pt.menu.main]]
+      name = "Setores"
+      url = "/industries/"
+      weight = 3
+      [languages.pt.menu.main.params]
+        has_submenu = true
+        submenu = [
+          { name = "Logistics & Supply Chain", url = "/industries/logistics-supply-chain/" },
+          { name = "Insurance", url = "/industries/insurance/" },
+          { name = "Banking & Financial Services", url = "/industries/banking-financial-services/" },
+          { name = "Telecom", url = "/industries/telecom/" },
+          { name = "Marketing", url = "/industries/marketing/" },
+        ]
+
     [[languages.pt.menu.main]]
       name = "Casos de uso"
       url = "/pt/#use-cases"
-      weight = 3
+      weight = 4
 
     [[languages.pt.menu.main]]
       name = "Blog"
       url = "/pt/blog/"
-      weight = 4
+      weight = 5
 
     [[languages.pt.menu.main]]
       name = "Preços"
       url = "/pt/pricing"
-      weight = 5
+      weight = 6
 
 [mediaTypes."application/toon"]
   suffixes = ["toon"]

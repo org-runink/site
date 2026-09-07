@@ -1,0 +1,32 @@
+{{- /*
+  Industry pages carry their prose in front matter rather than in a markdown
+  body, so the shared _default/single.toon.toon — which fills `content` from
+  .Plain — would emit an empty string for every one of them. This assembles the
+  same prose the HTML page renders, in the same field, so the machine-readable
+  output says what the page says.
+*/ -}}
+{{- $parts := slice .Params.headline .Params.deck -}}
+{{- range .Params.problems }}{{ $parts = $parts | append (printf "%s — %s" .title .body) }}{{ end -}}
+{{- with .Params.owners_intro }}{{ $parts = $parts | append . }}{{ end -}}
+{{- range .Params.owners }}{{ $parts = $parts | append (printf "%s: %s" .role .line) }}{{ end -}}
+{{- range .Params.outcomes }}{{ $parts = $parts | append . }}{{ end -}}
+{{- /* The measures and foundations blocks are part of what the page says, so
+       they belong here too. A measure is three fields and only reads correctly
+       as all three: the name, where the reader's own figure lives, and what
+       moves it. */ -}}
+{{- with .Params.measures_intro }}{{ $parts = $parts | append . }}{{ end -}}
+{{- range .Params.measures }}{{ $parts = $parts | append (printf "%s — where it stands today: %s — what moves it: %s" .metric .today .moves) }}{{ end -}}
+{{- range .Params.foundations }}{{ $parts = $parts | append (printf "%s — %s — what you would notice: %s" .name .plain .measured_by) }}{{ end -}}
+{{- with .Params.next_body }}{{ $parts = $parts | append . }}{{ end -}}
+page_context[1]:
+  - title: {{ .Title | jsonify }}
+    permalink: {{ .Permalink | jsonify }}
+    date: {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }}
+    category: {{ .Type | jsonify }}
+    description: {{ .Params.description | default .Summary | plainify | jsonify }}
+    content: {{ delimit $parts "\n\n" | plainify | jsonify }}
+    {{- $tags := default slice .Params.tags }}
+    tags[{{ len $tags }}]:
+    {{- range $tag := $tags }}
+      - {{ $tag | jsonify }}
+    {{- end }}

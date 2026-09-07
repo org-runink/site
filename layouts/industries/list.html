@@ -1,0 +1,56 @@
+{{/*
+  Industries overview — a switchboard, not a page to read.
+
+  Its only job is to get a visitor to the one card that is theirs in a few
+  seconds, so each card carries the industry name, the sentence that lets a
+  buyer recognise their own operation, and nothing else. It shares the section's
+  light canvas and ruled-line grammar with the industry pages, so arriving on
+  one from here is not a change of surface.
+*/}}
+{{ define "main" }}
+{{ $accent := .Params.accent | default "#ea580c" }}
+<div class="ind" style="--accent: {{ $accent }};">
+  {{ partial "industries-style.html" . }}
+
+  <div class="ind-wrap">
+
+    <header class="ind-hero">
+      <p class="ind-eyebrow">{{ .Title }}</p>
+      <h1 class="ind-h1">{{ .Params.headline }}</h1>
+      <p class="ind-deck">{{ .Params.deck }}</p>
+    </header>
+
+    <section class="ind-sec" aria-labelledby="pick-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="pick-heading">Pick the one that reads like your week</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      <ul class="ind-grid2">
+        {{ range .Pages.ByWeight }}
+        <li class="ind-accent" style="--accent: {{ .Params.accent | default $accent }};">
+          <a class="ind-pick" href="{{ .RelPermalink }}">
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Params.card | default .Params.deck }}</p>
+            <span class="ind-pick__go">
+              {{ $.Params.card_cta | default "See the fit" }} <span aria-hidden="true">&rarr;</span>
+            </span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+
+    <section class="ind-next" aria-labelledby="next-heading">
+      <h2 id="next-heading">{{ .Params.next_heading | default "Not sure which one is you?" }}</h2>
+      <p>{{ .Params.next_body }}</p>
+      <div class="ind-actions">
+        <a class="ind-cta" href="{{ "/#contact" | relLangURL }}">
+          {{ .Params.cta_text | default "Book a consultation" }}
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+{{ end }}
