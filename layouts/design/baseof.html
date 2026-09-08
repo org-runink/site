@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{{/* ---------------------------------------------------------------------
+     The specimen carries its own shell rather than _default/baseof.html.
+
+     Two reasons, both load-bearing:
+
+     1. _default/baseof.html requests Inter, Plus Jakarta Sans and Material
+        Symbols from fonts.googleapis.com on every page. The whole point of
+        this identity is that nothing is fetched from a third party. A
+        specimen served over four external requests would be arguing against
+        itself, and it would also not be showing the real faces.
+
+     2. It keeps the diff off the shared shell. The header, homepage and site
+        audit are being worked on in parallel; nothing here touches them.
+
+     This shell is deliberately minimal. It is not a proposal for what the
+     site's shell should become.
+     --------------------------------------------------------------------- */}}
+<html lang="en" data-ground="sheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{/* Draft. Not linked from navigation, not in sitemaps, not indexed. */}}
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>{{ .Title }} — Runink</title>
+  <meta name="description" content="{{ .Description }}">
+
+  {{ partial "rk-fonts.html" . }}
+
+  {{ $tokens := resources.Get "css/tokens.css" }}
+  {{ $spec := resources.Get "css/specimen.css" }}
+  {{ $css := slice $tokens $spec | resources.Concat "css/design-specimen.css" }}
+  {{ if hugo.IsProduction }}{{ $css = $css | minify | fingerprint }}{{ end }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+
+<body>
+  {{ block "main" . }}{{ end }}
+</body>
+</html>

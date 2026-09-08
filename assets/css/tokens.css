@@ -1,0 +1,582 @@
+/* ===========================================================================
+   RUNINK — identity tokens
+   The single source of every colour, size, face and duration on the site.
+
+   HOW TO USE THIS FILE
+   Pages consume var(--rk-*). Pages never write a hex value, a px font-size or
+   a bare shadow. If a page needs a value this file does not have, the value is
+   missing from the system and belongs here — not in the page.
+
+   THREE LAYERS, IN ORDER
+     1. FACES      the self-hosted Fira superfamily. No external request.
+     2. PRIMITIVES the raw ramps. Declared once. NEVER referenced by a page.
+     3. SEMANTICS  what a page actually uses. Re-bound per ground.
+
+   TWO GROUNDS, ONE RAMP
+   The system has two grounds — sheet (light) and console (dark) — and they are
+   the same neutral ramp read from opposite ends. --rk-n-050 is the sheet's
+   canvas and the console's text; --rk-n-900 is the sheet's text and the
+   console's canvas. A component written against the semantic layer works on
+   both without being written twice. Set the ground with data-ground="console"
+   on any element; it cascades.
+
+   THE RULE ABOUT COLOUR
+   Colour carries exactly two jobs and never a third:
+     signal   — one orange, for places a person can act. Links, focus, the
+                primary action, the approval seam.
+     category — which industry or product this is. Never legible on its own,
+                always named in text beside it.
+   Standing (whether a claim is a record or a description) is carried by FILL,
+   not by hue — see the atoms at the foot of this file. Emphasis is weight.
+   Hierarchy is scale and rule. Nothing else gets colour.
+
+   Every ratio quoted here was measured. See DESIGN.md for the full table.
+   =========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   1. FACES — Fira superfamily, self-hosted, SIL OFL 1.1
+   Sourced from the locally installed ttf-fira-sans 1:4.301-3 and
+   ttf-fira-code 6.2-4, subset and converted to WOFF2. Licence and provenance:
+   assets/fonts/LICENCE.md.
+
+   Adding a face here means adding it to layouts/partials/rk-fonts.html as
+   well. Hugo only publishes an asset something asks for: a @font-face rule
+   alone does not cause the file to be written to public/, and the result is a
+   404 that silently falls back to a system face. This has already shipped
+   once.
+--------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Fira Sans Rk';
+  src: url('../fonts/FiraSans-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Sans Rk';
+  src: url('../fonts/FiraSans-BookItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Sans Rk';
+  src: url('../fonts/FiraSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Sans Rk';
+  src: url('../fonts/FiraSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Cond Rk';
+  src: url('../fonts/FiraSansCondensed-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Cond Rk';
+  src: url('../fonts/FiraSansCondensed-Heavy.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code Rk';
+  src: url('../fonts/FiraCode-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code Rk';
+  src: url('../fonts/FiraCode-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------------------
+   2. PRIMITIVES — the raw ramps. Do not reference these from a page.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* -- neutral: a blue-black document ink, hue ~205, low chroma -------------
+     Chosen over the previous indigo (#1b2456, bottom of a violet-leaning
+     ramp) because this material is printed and photocopied. Blue-black is
+     what a document is written in; it separates from black on screen and
+     survives a mono laser printer, which indigo does not. --------------- */
+  --rk-n-000: #FFFFFF;
+  --rk-n-050: #F2F5F7;
+  --rk-n-100: #E6ECEF;
+  --rk-n-200: #D2DADF;
+  --rk-n-300: #B6C2CA;
+  --rk-n-400: #8C9BA6;
+  --rk-n-450: #76838B;
+  --rk-n-500: #647680;
+  --rk-n-600: #546570;
+  --rk-n-700: #3A4A55;
+  --rk-n-750: #2C3B46;
+  --rk-n-800: #18242D;
+  --rk-n-900: #101A22;
+  --rk-n-950: #0A1015;
+
+  /* -- signal: one orange, two bindings ------------------------------------
+     Runink's orange, held at a value that measures. The published
+     brand_accents.dark_orange #ca4708 is 4.76:1 on white but only 4.22:1 on
+     the whitepaper's own paper (#F5F1E8) and on primary.50 (#eef1fc) — under
+     AA on the two grounds it most often sat on. These two replace it. */
+  --rk-signal-ink:  #A8400A; /* on light: 6.17 / 5.64 / 5.18 across the sheet grounds */
+  --rk-signal-lift: #F2801F; /* on dark:  6.61 / 5.93 / 7.18 across the console grounds */
+
+  /* -- category: five industries, two bindings each -------------------------
+     Each measures AA or better on all three grounds of its mode, so the raw
+     value is legible as text and needs no darkening step. Four are the same
+     hue family as the accent the section already used, corrected to a usable
+     value. Logistics is the one that genuinely moves: it was #ea580c, the
+     same hue as signal, which made "this is a category" and "you can click
+     this" the same colour on that page. Signal keeps the orange band
+     (roughly 10-45deg); no category may enter it. */
+  --rk-cat-logistics-ink:  #0F6F73;  --rk-cat-logistics-lift:  #4FB3B3;
+  --rk-cat-insurance-ink:  #5847B8;  --rk-cat-insurance-lift:  #9B8CF0;
+  --rk-cat-banking-ink:    #5A6B31;  --rk-cat-banking-lift:    #A3B96A;
+  --rk-cat-telecom-ink:    #1D5480;  --rk-cat-telecom-lift:    #5FA8DC;
+  --rk-cat-marketing-ink:  #A03A5E;  --rk-cat-marketing-lift:  #E4809C;
+}
+
+/* ---------------------------------------------------------------------------
+   3a. SEMANTICS — mode-invariant. Type, space, radius, motion.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* -- faces ---------------------------------------------------------------
+     One superfamily doing three jobs. This is the typographic form of the
+     product's own claim: things drawn to different briefs, made to read as
+     one voice. Condensed Heavy is the display face because it has the density
+     of a title block on a technical drawing rather than the roundness of a
+     SaaS hero; Sans Book is the reading face because it was drawn for
+     legibility at small sizes on poor screens; Code is the utility face
+     because standing marks and figures need a fixed advance. */
+  --rk-font-display: 'Fira Cond Rk', 'Fira Sans Rk', ui-sans-serif, system-ui, sans-serif;
+  --rk-font-body:    'Fira Sans Rk', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --rk-font-util:    'Fira Code Rk', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* -- size ----------------------------------------------------------------
+     The ratio accelerates: ~1.17 through the reading sizes where fine control
+     matters, ~1.33 through the display sizes where the jump has to be
+     unambiguous. A single geometric series gives you either mush at the
+     bottom or timidity at the top. */
+  --rk-t-mark:    0.6875rem; /* 11px  standing marks, column heads. The floor
+                                for a tracked mono cap that must survive both a
+                                phone and a 600dpi print. */
+  --rk-t-label:   0.75rem;   /* 12px  eyebrows, chips, table heads */
+  --rk-t-fine:    0.8125rem; /* 13px  captions, sources, footnotes */
+  --rk-t-small:   0.875rem;  /* 14px  dense cells, secondary UI */
+  --rk-t-body:    1rem;      /* 16px  interface prose */
+  --rk-t-read:    1.0625rem; /* 17px  long-form running text */
+  --rk-t-lead:    1.1875rem; /* 19px  decks */
+  --rk-t-4:       1.375rem;  /* 22px */
+  --rk-t-3:       1.75rem;   /* 28px */
+  --rk-t-2:       2.25rem;   /* 36px */
+  --rk-t-1:       3rem;      /* 48px */
+  --rk-t-display: 4rem;      /* 64px  Condensed Heavy only */
+
+  --rk-lh-display: 1.02;
+  --rk-lh-head:    1.15;
+  --rk-lh-lead:    1.45;
+  --rk-lh-body:    1.6;
+  --rk-lh-dense:   1.45;
+  --rk-lh-mark:    1;
+
+  --rk-tr-display: -0.02em;
+  --rk-tr-head:    -0.01em;
+  --rk-tr-body:    0;
+  --rk-tr-label:   0.1em;
+  --rk-tr-mark:    0.16em;
+
+  --rk-w-regular:  400;
+  --rk-w-medium:   500;
+  --rk-w-semibold: 600;
+  --rk-w-heavy:    800;
+
+  /* -- measure -------------------------------------------------------------
+     Three, because three kinds of text are read here: a headline that is
+     scanned, a deck that is read once, and a body that is read for an hour. */
+  --rk-measure-head:  18ch;   /* condensed display stacks narrow and dense */
+  --rk-measure-lead:  52ch;
+  --rk-measure-body:  66ch;
+
+  /* -- space ---------------------------------------------------------------
+     Ten rungs at roughly 1.5x. Coarse on purpose: two adjacent values are
+     visibly different, so nobody has to decide between 20px and 24px, which
+     is where spacing systems drift in a codebase several people touch. */
+  --rk-s-1:  0.25rem;  /*  4 */
+  --rk-s-2:  0.5rem;   /*  8 */
+  --rk-s-3:  0.75rem;  /* 12 */
+  --rk-s-4:  1rem;     /* 16 */
+  --rk-s-5:  1.5rem;   /* 24 */
+  --rk-s-6:  2rem;     /* 32 */
+  --rk-s-7:  3rem;     /* 48 */
+  --rk-s-8:  4rem;     /* 64 */
+  --rk-s-9:  6rem;     /* 96 */
+  --rk-s-10: 8rem;     /* 128 */
+
+  /* -- radius --------------------------------------------------------------
+     Nothing above 12px. The previous system went to 40px, which is the radius
+     of a consumer app card and belongs to a different argument. This material
+     is a document, and a document has a corner. The mark is at 0 because a
+     square that must read as filled-or-hollow at 7px cannot afford a curve. */
+  --rk-r-0: 0;
+  --rk-r-1: 2px;   /* chips, tags, inline marks */
+  --rk-r-2: 4px;   /* inputs, buttons */
+  --rk-r-3: 8px;   /* cards, figures */
+  --rk-r-4: 12px;  /* bands. The largest value in the system. */
+
+  /* -- elevation -----------------------------------------------------------
+     Two shadows, and they are for things that genuinely float above the page
+     — a menu, a dialog. Everything else expresses depth with a rule and a
+     change of ground, because that is the part that survives being printed.
+     The previous system's neon glows are gone: a glow means nothing on paper
+     and reads as a games console, not a control record. */
+  --rk-e-0: none;
+  --rk-e-1: 0 1px 2px rgba(16, 26, 34, 0.06), 0 0 0 1px rgba(16, 26, 34, 0.04);
+  --rk-e-2: 0 6px 16px -4px rgba(16, 26, 34, 0.14), 0 0 0 1px rgba(16, 26, 34, 0.06);
+
+  /* -- motion --------------------------------------------------------------
+     A decisive ease-out with no overshoot. The product puts a proposal in
+     front of a person; the gesture should land, not bounce. */
+  --rk-dur-1: 120ms; /* state change: hover, active */
+  --rk-dur-2: 200ms; /* transition: a thing becoming another thing */
+  --rk-dur-3: 320ms; /* entrance: a thing arriving */
+  --rk-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  --rk-z-base: 0;
+  --rk-z-raised: 10;
+  --rk-z-sticky: 20;
+  --rk-z-overlay: 40;
+  --rk-z-modal: 50;
+}
+
+/* ---------------------------------------------------------------------------
+   3b. SEMANTICS — ground-dependent. These are the names a page uses.
+   Sheet is the default. Console is opt-in via data-ground="console".
+--------------------------------------------------------------------------- */
+
+:root,
+[data-ground='sheet'] {
+  color-scheme: light;
+
+  --rk-ground: var(--rk-n-050);      /* the canvas the page sits on */
+  --rk-sheet:  var(--rk-n-000);      /* a raised surface: card, figure, table */
+  --rk-sunk:   var(--rk-n-100);      /* a recessed surface: a plate under art */
+
+  --rk-rule:        var(--rk-n-200); /* hairline. Separation, not a boundary. */
+  --rk-rule-strong: var(--rk-n-450); /* a boundary you could tab to. >= 3:1 on
+                                        all three grounds. */
+
+  --rk-text:   var(--rk-n-900);      /* headings, primary text */
+  --rk-text-2: var(--rk-n-700);      /* body */
+  --rk-text-3: var(--rk-n-600);      /* labels, captions, secondary */
+  --rk-text-on-signal: var(--rk-n-000);
+
+  --rk-signal: var(--rk-signal-ink);
+  --rk-signal-wash: color-mix(in srgb, var(--rk-signal-ink) 8%, var(--rk-n-000));
+
+  /* A page with no category has no category colour. Set --rk-accent from the
+     page's own front matter; everything below re-derives from it. */
+  --rk-accent: var(--rk-text);
+  --rk-accent-wash: color-mix(in srgb, var(--rk-accent) 10%, var(--rk-sheet));
+  --rk-accent-edge: var(--rk-accent);
+
+  --rk-focus: var(--rk-signal);
+}
+
+[data-ground='console'] {
+  color-scheme: dark;
+
+  --rk-ground: var(--rk-n-900);
+  --rk-sheet:  var(--rk-n-800);
+  --rk-sunk:   var(--rk-n-950);
+
+  --rk-rule:        var(--rk-n-750);
+  --rk-rule-strong: var(--rk-n-500);
+
+  --rk-text:   var(--rk-n-050);
+  --rk-text-2: var(--rk-n-300);
+  --rk-text-3: var(--rk-n-400);
+  --rk-text-on-signal: var(--rk-n-950);
+
+  --rk-signal: var(--rk-signal-lift);
+  --rk-signal-wash: color-mix(in srgb, var(--rk-signal-lift) 14%, var(--rk-n-900));
+
+  --rk-accent: var(--rk-text);
+  --rk-accent-wash: color-mix(in srgb, var(--rk-accent) 16%, var(--rk-sheet));
+  --rk-accent-edge: var(--rk-accent);
+
+  --rk-focus: var(--rk-signal);
+}
+
+/* Bind a category by name, in either ground. A page sets the class alongside
+   whatever sets its ground; the accent resolves to the right binding for that
+   ground without the page knowing which ground it is on. */
+:root .rk-cat-logistics  { --rk-accent: var(--rk-cat-logistics-ink); }
+:root .rk-cat-insurance  { --rk-accent: var(--rk-cat-insurance-ink); }
+:root .rk-cat-banking    { --rk-accent: var(--rk-cat-banking-ink); }
+:root .rk-cat-telecom    { --rk-accent: var(--rk-cat-telecom-ink); }
+:root .rk-cat-marketing  { --rk-accent: var(--rk-cat-marketing-ink); }
+
+[data-ground='console'] .rk-cat-logistics,
+[data-ground='console'].rk-cat-logistics { --rk-accent: var(--rk-cat-logistics-lift); }
+[data-ground='console'] .rk-cat-insurance,
+[data-ground='console'].rk-cat-insurance { --rk-accent: var(--rk-cat-insurance-lift); }
+[data-ground='console'] .rk-cat-banking,
+[data-ground='console'].rk-cat-banking   { --rk-accent: var(--rk-cat-banking-lift); }
+[data-ground='console'] .rk-cat-telecom,
+[data-ground='console'].rk-cat-telecom   { --rk-accent: var(--rk-cat-telecom-lift); }
+[data-ground='console'] .rk-cat-marketing,
+[data-ground='console'].rk-cat-marketing { --rk-accent: var(--rk-cat-marketing-lift); }
+
+/* --rk-accent-wash and --rk-accent-edge are resolved where they are declared,
+   so a descendant that changes --rk-accent must re-derive them. Any element
+   that sets a second category deeper in the tree carries .rk-rederive too. */
+.rk-rederive {
+  --rk-accent-wash: color-mix(in srgb, var(--rk-accent) 10%, var(--rk-sheet));
+  --rk-accent-edge: var(--rk-accent);
+}
+
+/* ---------------------------------------------------------------------------
+   4. ATOMS — the four shapes the identity is made of.
+   These live here rather than in a page because every page needs them to be
+   identical. Nothing else belongs in this file.
+--------------------------------------------------------------------------- */
+
+/* -- the standing mark ------------------------------------------------------
+   The signature. Runink publishes where a claim stands instead of publishing
+   a number, and the mark is that in one shape.
+
+   SOLID  = a record. Something that exists and was observed.  runs, first-party
+   HOLLOW = a description. Something stated, not measured.     drawn,
+            hypothetical, self-declared, not measured
+
+   The distinction is FILL, not hue, and that is deliberate. Hue would import
+   a verdict — green good, amber bad — and these standings are not better and
+   worse, they are different kinds of statement. Fill also survives the three
+   places colour does not: a greyscale print, a photocopy, and a reader who
+   does not separate red from green.
+-------------------------------------------------------------------------- */
+.rk-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  font-weight: var(--rk-w-medium);
+  line-height: var(--rk-lh-mark);
+  letter-spacing: var(--rk-tr-mark);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--rk-text-3);
+}
+.rk-mark::before {
+  content: '';
+  flex: none;
+  width: 0.66em;
+  height: 0.66em;
+  border: 1.5px solid currentColor;
+  border-radius: var(--rk-r-0);
+  background: currentColor;
+}
+.rk-mark[data-standing='drawn']::before,
+.rk-mark[data-standing='hypothetical']::before,
+.rk-mark[data-standing='self-declared']::before,
+.rk-mark[data-standing='not-measured']::before {
+  background: transparent;
+}
+
+/* -- the standing rule ------------------------------------------------------
+   A section label sitting on a line that runs to the margin. The line is not
+   decoration: it is the edge of a field, which is why the industry pages'
+   measures table works. Optionally carries a mark.
+-------------------------------------------------------------------------- */
+.rk-rule {
+  display: flex;
+  align-items: center;
+  gap: var(--rk-s-3);
+  min-width: 0;
+}
+.rk-rule > * { flex: 0 1 auto; min-width: 0; }
+.rk-rule::after {
+  content: '';
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--rk-rule);
+}
+
+/* -- the label --------------------------------------------------------------
+   Small, tracked, upper. The body face, not the utility face: the utility
+   face is reserved for standings and figures, so a label and a standing never
+   look like the same class of thing.
+-------------------------------------------------------------------------- */
+.rk-label {
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-t-label);
+  font-weight: var(--rk-w-semibold);
+  letter-spacing: var(--rk-tr-label);
+  text-transform: uppercase;
+  color: var(--rk-text-3);
+  margin: 0;
+}
+
+/* -- the seam ---------------------------------------------------------------
+   The one large use of signal in the system. It divides what the software
+   proposed from what a named person decided — the product's central fact,
+   given a shape. Nothing else on a page may be a 2px signal rule.
+-------------------------------------------------------------------------- */
+.rk-seam {
+  border: 0;
+  border-top: 2px solid var(--rk-signal);
+  margin: var(--rk-s-5) 0;
+  height: 0;
+}
+
+/* -- focus ------------------------------------------------------------------
+   Stated once, here, because the base stylesheet defines none and the UA
+   default is weak on a near-white sheet.
+-------------------------------------------------------------------------- */
+.rk-focus:focus-visible,
+[data-ground] a:focus-visible,
+[data-ground] button:focus-visible,
+[data-ground] summary:focus-visible,
+[data-ground] [tabindex]:focus-visible {
+  outline: 2px solid var(--rk-focus);
+  outline-offset: 3px;
+  border-radius: var(--rk-r-1);
+}
+
+/* ---------------------------------------------------------------------------
+   5. MOTION PREFERENCE
+--------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --rk-dur-1: 0.01ms;
+    --rk-dur-2: 0.01ms;
+    --rk-dur-3: 0.01ms;
+  }
+  [data-ground] *,
+  [data-ground] *::before,
+  [data-ground] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   6. PRINT — paper is a ground, not an afterthought.
+   This material is printed and carried into meetings, so the console collapses
+   to ink on white and the whole system re-binds once, here, rather than every
+   page writing its own print rules. 1rem maps to 10pt.
+--------------------------------------------------------------------------- */
+
+@media print {
+  :root,
+  [data-ground='sheet'],
+  [data-ground='console'] {
+    color-scheme: light;
+    --rk-ground: #FFFFFF;
+    --rk-sheet: #FFFFFF;
+    --rk-sunk: #FFFFFF;
+    --rk-rule: #9A9A9A;
+    --rk-rule-strong: #000000;
+    --rk-text: #000000;
+    --rk-text-2: #1F1F1F;
+    --rk-text-3: #3A3A3A;
+    --rk-text-on-signal: #FFFFFF;
+    --rk-signal: #000000;
+    --rk-signal-wash: #FFFFFF;
+    --rk-accent: #000000;
+    --rk-accent-wash: #FFFFFF;
+    --rk-accent-edge: #000000;
+    --rk-e-1: none;
+    --rk-e-2: none;
+    --rk-r-3: 0;
+    --rk-r-4: 0;
+  }
+
+  /* The category classes set --rk-accent on a DESCENDANT, so the block above
+     — which binds it on the ground element — never reaches them, and a page
+     printed from the console would put its light category accents on white
+     paper at around 2.4:1. They have to be re-bound where they are set. */
+     The category classes set --rk-accent on a DESCENDANT of the ground, so
+     the block above never reaches them: a page printed from the console would
+     put its light category accents on white paper at about 2.4:1.
+
+     Overriding --rk-accent again here does not fix it. `.rk-cat-marketing`
+     is bound by `[data-ground='console'] .rk-cat-marketing`, and trying to
+     outrank that turns into a specificity contest that is fragile and, in
+     practice, does not hold.
+
+     So the override happens one level down instead. `.rk-cat-*` sets
+     --rk-accent to var(--rk-cat-*-lift), and a var() is resolved where it is
+     USED, against whatever the element has inherited. Blacking out the
+     PRIMITIVES on :root therefore turns every binding black without competing
+     with any of them. Same for signal.
+
+     This deliberately does not touch the literal hex values on the specimen's
+     swatch chips: there, the colour is the subject of the page, not its
+     livery, so it should still print in colour. */
+     Written as `:root:root` with !important, which looks like overkill and is
+     not. A plain `:root` here — later in the file, same specificity, inside
+     the media query — does NOT reliably win: built both minified and not, the
+     industry worksheet's accent segment still came out olive on paper. The
+     doubled selector raises specificity to (0,2,0) so it cannot lose to any
+     `:root` rule, and gives the declaration distinct selector text so no
+     minifier can fold it into the global `:root` block. There is exactly one
+     correct value for these on paper, so the declaration says so.
+
+     Verified on paper, not assumed: with this in place the worksheet's accent
+     segment, the approval seam and the console band all come out black. */
+  :root:root {
+    --rk-signal-ink: #000000 !important;
+    --rk-signal-lift: #000000 !important;
+    --rk-cat-logistics-ink: #000000 !important;
+    --rk-cat-logistics-lift: #000000 !important;
+    --rk-cat-insurance-ink: #000000 !important;
+    --rk-cat-insurance-lift: #000000 !important;
+    --rk-cat-banking-ink: #000000 !important;
+    --rk-cat-banking-lift: #000000 !important;
+    --rk-cat-telecom-ink: #000000 !important;
+    --rk-cat-telecom-lift: #000000 !important;
+    --rk-cat-marketing-ink: #000000 !important;
+    --rk-cat-marketing-lift: #000000 !important;
+  }
+
+  /* The exception, and it is deliberate. On a block whose CONTENT is a colour
+     — a palette chip, an accent swatch — printing it black demonstrates
+     nothing, so those blocks opt back in. They also state their colour as a
+     literal rather than a token, because a token is re-bound above and would
+     go black before this class could save it. Furniture wears colour and
+     loses it on paper; a swatch IS the colour and keeps it. */
+  .rk-swatch-print {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* The mark is the one thing that must not flatten. On paper both standings
+     become black, and the fill is the only thing telling them apart — which
+     is exactly why the distinction is fill and not hue. */
+  .rk-mark { color: #000000; }
+
+  /* The seam still has to read as the seam once signal has gone to black, so
+     on paper it thickens rather than colours. */
+  .rk-seam { border-top-width: 3px; }
+}

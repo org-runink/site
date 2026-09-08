@@ -1,4 +1,184 @@
-{{ define "main" }}
-{{ .Content }}
+{{/*
+  The homepage — a qualification funnel, not a brochure.
 
+  It used to be four lines, `{{ .Content }}`, and the page was built out of
+  shortcodes in content/_index.md. That is how it grew into an essay: markdown
+  with no fixed slots takes as much copy as anyone pours into it, and the review
+  of the customer-facing material found the result overwhelming, written in
+  programming vocabulary, and led by the technology rather than by the customer's
+  problem.
+
+  So this file is a fixed, short set of slots driven entirely from front matter —
+  a headline, one picture, five industries, three reasons, one next step — and
+  there is deliberately no {{ .Content }} slot to pour an essay into. Depth
+  belongs in /industries/ and /blog/whitepapers/, and the page links to both.
+
+  The order is the argument: the buyer's problem, then the picture of it, then
+  the five industries in the buyer's own vocabulary, and only then anything at
+  all about how it works. Nothing above the third block names a technology.
+
+  There is one fallback. If a locale's front matter has no `hero`, the page
+  falls back to rendering its markdown, so a half-translated file cannot ship an
+  empty homepage in that language. All four locales carry full front matter
+  today; the fallback exists so that stays a choice rather than a requirement.
+
+  Two ids on this page are load-bearing and are asserted by the build check:
+  #why-runink, which the header menu links to in every language, and
+  #contact-form inside partials/home/contact.html.
+*/}}
+{{ define "main" }}
+{{ if not .Params.hero }}
+{{/* No front matter for this locale: render whatever markdown it has, on the
+     site's own surface, rather than an empty page. */}}
+{{ .Content }}
+{{ else }}
+{{ $accent := .Params.accent | default "#ea580c" }}
+<div class="hp" style="--accent: {{ $accent }};">
+  {{ partial "home/style.html" . }}
+
+  <div class="hp-wrap">
+
+    {{ $h := .Params.hero }}
+
+    <!-- 1. The buyer's problem, in one sentence -->
+    <header class="hp-hero">
+      <p class="hp-eyebrow">{{ $h.eyebrow }}</p>
+      <h1 class="hp-h1">
+        {{ $h.line1 }}
+        <span class="hp-h1__b">{{ $h.line2 }}</span>
+      </h1>
+      <p class="hp-deck">{{ $h.deck }}</p>
+      <div class="hp-actions">
+        <a class="hp-cta" href="{{ "/industries/" | relURL }}">{{ $h.cta_primary }}</a>
+        <a class="hp-cta-ghost" href="#contact-form">{{ $h.cta_secondary }}</a>
+      </div>
+    </header>
+
+    {{/* 2. The picture of the problem. Two panels of the same field of records:
+         one where a sample is read, one where all of it is. It is placed before
+         any explanation on purpose — the review asked for visuals a business
+         reader can take in without being walked through them. */}}
+    {{ with .Params.figure }}
+    <figure class="hp-field">
+      <div class="hp-field__panels">
+        <div class="hp-field__panel">
+          <p class="hp-field__label">{{ .today_label }}</p>
+          {{ partial "home/field-figure.html" (dict "variant" "today") }}
+          <p class="hp-field__note">{{ .today_note }}</p>
+        </div>
+        <div class="hp-field__panel hp-field__panel--now">
+          <p class="hp-field__label">{{ .read_label }}</p>
+          {{ partial "home/field-figure.html" (dict "variant" "read") }}
+          <p class="hp-field__note">{{ .read_note }}</p>
+        </div>
+      </div>
+      <ol class="hp-beats">
+        {{ range .beats }}
+        <li class="hp-beat"><b>{{ .title }}</b>{{ .body }}</li>
+        {{ end }}
+      </ol>
+      <figcaption class="hp-caption">{{ .caption }}</figcaption>
+    </figure>
+    {{ end }}
+
+    {{/* 3. The five industries, as five lines of one instrument rather than as
+         five cards. /industries/ is already the card switchboard; repeating it
+         here would make one of the two pages redundant. Read down, the five
+         lines say that this is one shape of problem seen five ways, and the
+         third column tells a reader whose job it is — the review asked for
+         exactly that, by name.
+
+         Title, link and accent are read from the industry page itself wherever
+         one exists, so they cannot drift from the section; the front-matter
+         values are the fallback that keeps the block intact on the localised
+         sites, where the industry pages do not exist as translations. */}}
+    {{ with .Params.industries }}
+    <section class="hp-sec" aria-labelledby="industries-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="industries-heading">{{ $.Params.industries_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.industries_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+
+      {{ with $.Params.industries_columns }}
+      <div class="hp-ledger__head" aria-hidden="true">
+        <span>{{ .name }}</span>
+        <span>{{ .cost }}</span>
+        <span>{{ .owner }}</span>
+      </div>
+      {{ end }}
+
+      <ul class="hp-ledger">
+        {{ range . }}
+        {{ $name := .name }}
+        {{ $url := printf "/industries/%s/" .page }}
+        {{ $acc := .accent | default $accent }}
+        {{ with site.GetPage (printf "/industries/%s" .page) }}
+          {{ $name = .Title }}
+          {{ $url = .RelPermalink }}
+          {{ $acc = .Params.accent | default $acc }}
+        {{ end }}
+        <li class="hp-line hp-accent" style="--accent: {{ $acc }};">
+          <a class="hp-row" href="{{ $url }}">
+            <p class="hp-row__name">
+              <span class="hp-row__tick" aria-hidden="true"></span>{{ $name }}
+            </p>
+            <p class="hp-row__cost">{{ .cost }}</p>
+            <p class="hp-row__owner">
+              {{ range .owners }}<span>{{ . }}</span>{{ end }}
+            </p>
+            <p class="hp-row__go">{{ $.Params.industries_cta }} <span aria-hidden="true">&rarr;</span></p>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{/* 4. Only now, how it works — and still in the buyer's words. The id is
+         the one the header menu links to in all four languages. */}}
+    {{ with .Params.why }}
+    <section class="hp-sec" id="why-runink" aria-labelledby="why-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="why-heading">{{ $.Params.why_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.why_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <ul class="hp-why">
+        {{ range . }}
+        <li class="hp-why__item">
+          <div class="hp-why__plate">
+            {{ partial "home/glyph.html" (dict "variant" .glyph) }}
+          </div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </li>
+        {{ end }}
+      </ul>
+
+      {{/* The one link out to the long version, and the only place on the page
+           a product name appears. It is a single line on purpose: the page's
+           job is to start a conversation, and a second call to action competing
+           with the consultation would cost it that. */}}
+      {{ with $.Params.paper }}
+      <p class="hp-paper">
+        <a class="hp-cta-ghost" href="{{ .url }}">{{ .text }}</a>
+        <span class="hp-paper__note">{{ .note }}</span>
+      </p>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    <!-- 5. One next step -->
+    {{ if .Params.contact }}{{ partial "home/contact.html" . }}{{ end }}
+
+    {{/* Print only. The printed sheet has no site header on it, so without this
+         a leave-behind carries nothing that says where it came from. */}}
+    <p class="hp-mark">runink.org</p>
+
+  </div>
+</div>
+{{ end }}
 {{ end }}
