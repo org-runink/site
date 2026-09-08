@@ -556,38 +556,7 @@ they were written.
 
 ### The whole rule, on one page
 
-```text {linenos=false}
-   somebody asks to create, change or remove a connection
-                            │
-                            ▼
-              ┌─────────────────────────────┐
-              │ can CORE name this person?  │
-              └──────┬───────────────┬──────┘
-                 no  │               │  yes
-                     ▼               ▼
-              REFUSED         ┌──────────────────────────┐
-              a change nobody │ are they on the list of   │
-              can be named    │ people permitted to make  │
-              for would be    │ this change?              │
-              unattributable  └──────┬────────────┬───────┘
-                     │           no  │            │  yes
-                     │               ▼            ▼
-                     │        REFUSED BY NAME   CARRIED OUT
-                     │        with the reason   settings stored
-                     │        given             apart from the
-                     │               │          credential, which
-                     │               │          is encrypted
-                     └───────┬───────┴────────────┬─────┘
-                             ▼                    ▼
-                    ╔══════════════════════════════════════╗
-                    ║ RECORDED EITHER WAY                  ║
-                    ║ time · sequence number · person ·    ║
-                    ║ action · thing acted on · outcome ·  ║
-                    ║ explanation · source address         ║
-                    ║ each record fingerprinted against    ║
-                    ║ the record before it                 ║
-                    ╚══════════════════════════════════════╝
-```
+![Somebody asks to change a connection, and the request meets two gates drawn as the same ring twice. The first ring holds a figure of a person: can CORE name this person? The second holds a tick: are they permitted to make this change? Each gate can refuse, and the two refusals are drawn as the same ring again — empty at the first gate, because a change nobody can be named for would be unattributable, and still holding the person at the second, because that one is refused by name. Where both gates pass, the settings and the credential are drawn as two shapes with a gap between them and only a dashed tie across it, the credential hatched over because it is encrypted. From all three outcomes a line runs down to the same place: a row of records, each joined to the one before it by a small ring, which is the fingerprint that lets the sequence be checked from end to end.](figures/whitepapers/core-authority-record.svg "Two gates, three outcomes, one record. Both refusals and the success land in the same place, and each record is fingerprinted against the one before it.")
 
 The shape worth noticing is that both refusals and the success land in the same place. Most
 systems record what happened; this one records what was attempted. In an incident
@@ -979,38 +948,13 @@ committing to anything.
 Five steps, in this order. The order is the useful part: each one is worth doing on its own,
 and each one answers a question the next step assumes.
 
-```text {linenos=false}
- WHAT YOU BRING         THE STEP            WHAT IT SETTLES
-
- one machine        ▶  1  run it here    ▶  whether the screen
- a workstation         one command, the     can be trusted —
-                       whole platform       which panels say
-                       natively             they did not measure
-      │
-      ▼
- one credential     ▶  2  connect one    ▶  whether the
- read-only, to a       real system, then    governance is a
- system you would      try to change it     control or a policy.
- like to stop          as somebody not      Show this one to
- worrying about        on the list          your security lead
-      │
-      ▼
- machines you own   ▶  3  put it there   ▶  nothing new. Same
- plus a sign-in        one command; same    arrangement, same
- arrangement           shape as step 1      screens, more scale
-      │
-      ▼
- somebody outside   ▶  4  have them      ▶  whether useful work
- the platform team     request a            happens without the
-                       deployment, and      platform team being
-                       watch it expire      in the loop
-      │
-      ▼
- one repository     ▶  5  switch on one  ▶  whether the helpers
-                       helper. Watch it     save real time —
-                       for a week before    judged on what it
-                       arming it            would have published
-```
+| | What you bring | The step | What it settles |
+| --- | --- | --- | --- |
+| 1 | One machine, a workstation | Run it here: one command, the whole platform natively | Whether the screen can be trusted — which panels say they did not measure |
+| 2 | One credential, read-only, to a system you would like to stop worrying about | Connect one real system, then try to change it as somebody not on the list | Whether the governance is a control or a policy. Show this one to your security lead |
+| 3 | Machines you own, plus a sign-in arrangement | Put it there: one command, same shape as step 1 | Nothing new. Same arrangement, same screens, more scale |
+| 4 | Somebody outside the platform team | Have them request a deployment, and watch it expire | Whether useful work happens without the platform team being in the loop |
+| 5 | One repository | Switch on one helper. Watch it for a week before arming it | Whether the helpers save real time — judged on what it would have published |
 
 Nothing in that sequence requires the previous step to have been bought, and the first two
 cost nothing and need no procurement.
@@ -1210,36 +1154,14 @@ your commercial lead can produce in an afternoon.
 
 ### How they combine
 
-```text {linenos=false}
-  foundation weeks  ×  applications   ×  loaded cost  =  build
-  per launch           still to come      per week       saving
-
-                                                              +
-
-  specialist hours  ×  52  ×  loaded  =  attention returned
-  per week                    cost       to the next thing
-
-                                                              +
-
-  person-days on    ×  requests  ×  loaded  =  assurance
-  evidence per         per year     cost       overhead removed
-  request
-
-                                                              +
-
-  idle environments ×  monthly cost each  =  capacity no longer
-                                             running unwatched
-
-                                                              +
-
-  stalled or lost   ×  value  ×  share the data  =  pipeline
-  opportunities        each      answer unblocks    effect
-
-                                                              −
-
-  seats  ×  published price  +  machines you  =  cost
-  (page 18)                     already run      side
-```
+| | What it is | How you get it |
+| --- | --- | --- |
+| Add | **Build saving** | Foundation weeks per launch × applications still to come × loaded cost per week |
+| Add | **Attention returned to the next thing** | Specialist hours per week × 52 × loaded cost |
+| Add | **Assurance overhead removed** | Person-days on evidence per request × requests per year × loaded cost |
+| Add | **Capacity no longer running unwatched** | Idle environments × monthly cost each |
+| Add | **Pipeline effect** | Stalled or lost opportunities × value each × the share the data answer unblocks |
+| Subtract | **Cost side** | Seats × the published price on page 18 + the machines you already run |
 
 Sum the five, subtract the sixth, divide the annual result by the monthly cost,
 and the quotient is a payback period in months. This paper does not state it,

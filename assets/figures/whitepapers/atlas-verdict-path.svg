@@ -1,0 +1,174 @@
+<!--
+  Atlas paper — "The whole built path, on one page".
+
+  What it draws, and what it deliberately refuses to draw:
+
+    - It is two doors in one wall, not a pipeline. The wall is CORE's edge.
+      A finding comes in through the upper door and the verdict goes back out
+      through the lower one, and the two doors are drawn with DIFFERENT marks
+      (a filled lozenge, a hollow ring) because they are opened by different
+      credentials. That is the commercial fact in the chapter; a single arrow
+      would have lost it.
+
+    - The eight checks are a comb, not eight boxes. Three findings enter it;
+      two stop at a tooth, each stop marked by a square and a riser to its own
+      small sheet, because a check that fires ends the matter there WITH ITS
+      OWN REASON. Showing only the survivor would have drawn a funnel that
+      never rejects anything.
+
+    - The model is a rounded pill, which is the same glyph the FACE paper uses
+      for language handled by the model. One strand goes into it and one comes
+      out: a single question. The dashed strand that stops short of it is the
+      load-bearing detail of the whole figure — the submitter's own conclusion
+      is drawn reaching toward the model and not arriving, because there is
+      nothing there for it to agree with.
+
+    - The upper branch is a sum with a rule under it: arithmetic the reader
+      performs on the raw counts, nowhere near a model.
+
+  Colour discipline: this figure uses --runs and never --drawn. In this paper
+  those two words are the standing marks for "this runs" and "this is drawn but
+  not built", and the chapter is titled "the whole BUILT path". Painting any
+  part of it in the drawn tan would contradict the register in the margin.
+
+  No text inside the artwork: at 360px the viewBox scales to about a third.
+  Every var() carries a literal fallback so the file still reads correctly when
+  it is opened on its own, outside the page that defines the tokens.
+-->
+<svg viewBox="0 0 1000 272" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ATLAS: transactions as they happen, and the one that produced a finding -->
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="8"   y="28"  width="84" height="8" rx="4"/>
+    <rect x="102" y="28"  width="52" height="8" rx="4"/>
+    <rect x="24"  y="54"  width="62" height="8" rx="4"/>
+    <rect x="96"  y="54"  width="74" height="8" rx="4"/>
+    <rect x="8"   y="80"  width="96" height="8" rx="4"/>
+    <rect x="114" y="80"  width="48" height="8" rx="4"/>
+    <rect x="24"  y="140" width="72" height="8" rx="4"/>
+    <rect x="106" y="140" width="58" height="8" rx="4"/>
+    <rect x="8"   y="166" width="88" height="8" rx="4"/>
+    <rect x="106" y="166" width="52" height="8" rx="4"/>
+    <rect x="30"  y="192" width="60" height="8" rx="4"/>
+    <rect x="100" y="192" width="70" height="8" rx="4"/>
+  </g>
+
+  <!-- the one that produced a finding, at the moment of the transaction -->
+  <g style="fill:var(--ink,#1c1917)">
+    <rect x="8"   y="106" width="96" height="8" rx="4"/>
+    <rect x="114" y="106" width="56" height="8" rx="4"/>
+  </g>
+
+  <!-- three findings arriving at the door -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-linecap:round">
+    <path d="M176,110 C 210,110 214,100 250,100" style="stroke-width:1.7;stroke-opacity:0.7"/>
+    <path d="M176,110 C 212,110 216,118 250,118" style="stroke-width:2.2"/>
+    <path d="M176,110 C 210,110 214,136 250,136" style="stroke-width:1.7;stroke-opacity:0.7"/>
+  </g>
+
+  <!-- the wall: CORE's edge, with a gap at each door -->
+  <g style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2">
+    <path d="M250,8 V92"/>
+    <path d="M250,144 V216"/>
+    <path d="M250,252 V268"/>
+  </g>
+
+  <!-- findings door: opened by the submitter's own secret -->
+  <rect x="243" y="111" width="14" height="14" rx="2"
+        transform="rotate(45 250 118)"
+        style="fill:var(--runs,#5F6F3E)"/>
+
+  <!-- verdict door: opened by a different credential -->
+  <circle cx="250" cy="234" r="8"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--runs,#5F6F3E);stroke-width:2.6"/>
+
+  <!-- eight checks, run in order -->
+  <g style="fill:var(--ink-3,#57534e)">
+    <rect x="300" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="326" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="352" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="378" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="404" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="430" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="456" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="482" y="92" width="5" height="52" rx="2.5"/>
+  </g>
+
+  <!-- two of the three stop at a tooth; the third goes through -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-linecap:round">
+    <path d="M250,100 H352" style="stroke-width:1.7;stroke-opacity:0.75"/>
+    <path d="M250,136 H456" style="stroke-width:1.7;stroke-opacity:0.75"/>
+    <path d="M250,118 H540" style="stroke-width:2.2"/>
+  </g>
+
+  <!-- and each stop states its own reason -->
+  <g style="fill:var(--ink,#1c1917)">
+    <rect x="348" y="95"  width="10" height="10" rx="2"/>
+    <rect x="452" y="131" width="10" height="10" rx="2"/>
+  </g>
+  <g style="fill:none;stroke:var(--ink,#1c1917);stroke-width:1.8">
+    <path d="M353,93 V70"/>
+    <path d="M457,143 V166"/>
+  </g>
+  <g style="fill:var(--paper,#F5F1E8);stroke:var(--ink-3,#57534e);stroke-width:1.4">
+    <rect x="331" y="40"  width="44" height="30" rx="4"/>
+    <rect x="435" y="166" width="44" height="30" rx="4"/>
+  </g>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="339" y="48"  width="28" height="4" rx="2"/>
+    <rect x="339" y="57"  width="20" height="4" rx="2"/>
+    <rect x="443" y="174" width="28" height="4" rx="2"/>
+    <rect x="443" y="183" width="20" height="4" rx="2"/>
+  </g>
+
+  <!-- what survives forks: does the claim carry a number? -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2.2;stroke-linecap:round">
+    <path d="M540,118 C 566,118 566,76 594,76"/>
+    <path d="M540,118 C 566,118 574,182 612,182"/>
+  </g>
+
+  <!-- a number: CORE divides the raw counts again itself -->
+  <g style="fill:var(--ink-3,#57534e)">
+    <rect x="600" y="46" width="86" height="7" rx="3.5"/>
+    <rect x="600" y="60" width="64" height="7" rx="3.5"/>
+    <rect x="600" y="74" width="76" height="7" rx="3.5"/>
+  </g>
+  <path d="M594,92 H704" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2"/>
+  <rect x="600" y="100" width="52" height="7" rx="3.5" style="fill:var(--runs,#5F6F3E)"/>
+
+  <!-- prose: one question put to the model -->
+  <rect x="612" y="148" width="50" height="68" rx="25"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.2"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="626" y="164" width="22" height="6" rx="3"/>
+    <rect x="626" y="179" width="22" height="6" rx="3"/>
+    <rect x="626" y="194" width="22" height="6" rx="3"/>
+  </g>
+
+  <!-- and what it is never told: the submitter's own conclusion, stopping short -->
+  <path d="M540,118 C 574,118 578,196 594,202" stroke-dasharray="6 6"
+        style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.9;stroke-opacity:0.85"/>
+  <path d="M600,184 V222"
+        style="fill:none;stroke:var(--ink,#1c1917);stroke-width:3;stroke-linecap:round"/>
+
+  <!-- a verdict, with its reason, kept against the finding -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2.2;stroke-linecap:round">
+    <path d="M710,76  C 742,76  746,118 778,118"/>
+    <path d="M666,182 C 714,182 744,124 778,118"/>
+  </g>
+  <rect x="792" y="94" width="180" height="76" rx="8"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--rule,#D9CDB8);stroke-width:1.6"/>
+  <rect x="780" y="82" width="180" height="76" rx="8"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.2"/>
+  <rect x="796" y="98" width="46" height="8" rx="4" style="fill:var(--runs,#5F6F3E)"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="796" y="118" width="130" height="7" rx="3.5"/>
+    <rect x="796" y="133" width="104" height="7" rx="3.5"/>
+  </g>
+
+  <!-- read back out, through the other door -->
+  <path d="M870,158 V234 H262"
+        style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/>
+  <path d="M238,234 H222" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
+  <polygon points="196,234 214,226 214,242" style="fill:var(--ink,#1c1917)"/>
+</svg>

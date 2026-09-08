@@ -296,6 +296,8 @@ per-minute service.
 The production stage takes a single input and produces the range of material a company needs
 at every stage, from a first glance to a signed deal.
 
+![One sheet on the left — a single brief, not a stack — opens out into a field of pieces whose shapes differ: long bars for written pieces, paired squares for pictures, tall narrow blocks for short video, broken runs for email. Every piece carries one status mark. A vertical line runs down the picture with a single ring in it, a tick, and only the pieces whose status mark is filled reach that ring; the ones that do not are drawn hollow and their strands stop short of the line. Past the ring the strands open out again into a dated grid of slots, some filled and some empty, which is the schedule of what publishes and when.](figures/whitepapers/pulse-one-brief.svg "One brief, opened out into every channel, and one ring between the work and the schedule.")
+
 **Channel content.** Posts are written for the channel they are going to, in the shape and
 the tone that channel expects. The supported set covers LinkedIn, Instagram, TikTok,
 blog, email, X, YouTube, Facebook, whitepaper, book outline, webinar, course and podcast.
@@ -766,32 +768,12 @@ conversation.
 
 ### How long does it take, and what do you need from us?
 
-```text {linenos=false}
-  WHAT YOU BRING          THE STEP               WHAT IT SETTLES
-
-  your own website   ▶  1  run one audit    ▶  a concrete document
-  address               on a workstation.       about your own
-                        Nothing moves           business, worth
-                        anywhere                having either way
-       │
-       ▼
-  the largest gap    ▶  2  brief one        ▶  whether the output
-  the audit names       anchor piece end       is good enough for
-                        to end, and fan it     your name to go on
-                        out into the posts,    it — the only test
-                        videos and emails      that decides this
-       │
-       ▼
-  your machines      ▶  3  install it       ▶  nothing new. Same
-  and a sign-in         there, connect the     application, more
-  arrangement           accounts you           people
-                        already run
-       │
-       ▼
-  a working rhythm   ▶  4  run one full     ▶  whether the team
-                        30-day cycle           wants the working
-                                               day this creates
-```
+| | What you bring | The step | What it settles |
+| --- | --- | --- | --- |
+| 1 | Your own website address | Run one audit on a workstation. Nothing moves anywhere | A concrete document about your own business, worth having either way |
+| 2 | The largest gap the audit names | Brief one anchor piece end to end, and fan it out into the posts, videos and emails | Whether the output is good enough for your name to go on it — the only test that decides this |
+| 3 | Your machines and a sign-in arrangement | Install it there, connect the accounts you already run | Nothing new. Same application, more people |
+| 4 | A working rhythm | Run one full 30-day cycle | Whether the team wants the working day this creates |
 
 Steps one and two cost an afternoon each and move no data anywhere, which usually means an
 evaluation can begin without a procurement conversation about data handling.
@@ -964,36 +946,13 @@ the input the sponsor cares about most and the one marketing least often produce
 
 ### How they combine
 
-```text {linenos=false}
-   pieces you would   ×   ( cost per piece   =  production cost
-   publish anyway         today − cost per      removed
-                          piece after )
-
-                                                       +
-
-   additional pieces  ×   value of a piece   =  coverage gained
-   the same team          to you                ( see the caution
-   can now produce                               below )
-
-                                                       +
-
-   days removed from  ×   occasions per      =  responses that
-   decision-to-publish    year when timing      become possible
-                          decided whether
-                          it was worth
-                          publishing at all
-
-                                                       +
-
-   deals worked that  ×   your win rate  ×   =  pipeline effect
-   would not have         average deal
-   been worked            value
-
-                                                       −
-
-   seats  ×  published price   +   the machine   =  cost side
-                                   you run
-```
+| | What it is | How you get it |
+| --- | --- | --- |
+| Add | **Production cost removed** | Pieces you would publish anyway × (cost per piece today − cost per piece after) |
+| Add | **Coverage gained** — see the caution below | Additional pieces the same team can now produce × the value of a piece to you |
+| Add | **Responses that become possible** | Days removed from decision-to-publish × occasions per year when timing decided whether it was worth publishing at all |
+| Add | **Pipeline effect** | Deals worked that would not have been worked × your win rate × average deal value |
+| Subtract | **Cost side** | Seats × the published price + the machine you run |
 
 Sum the four, subtract the fifth, divide the annual result by the monthly cost, and you have
 a payback period in months. This paper does not state one, because every term belongs to you.

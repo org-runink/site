@@ -751,39 +751,7 @@ one exercises both — it is the only test in this design that would have caught
 
 ### The whole built path, on one page
 
-```text {linenos=false}
-ATLAS                                    CORE
-─────                                    ────
-
- a finding      findings door
- produced at  ──────────────────▶  received, and kept
- the moment    opened by the               │
- of the        submitter's                 ▼
- transaction   own secret          eight checks, run in order
-                                           │
-                            all pass ──────┴────── any one fires
-                                   │                     │
-                                   ▼                     ▼
-                        does the claim            the matter ends
-                        carry a number?           here, with that
-                           │       │              check's own reason
-                       yes │       │ no
-                           ▼       ▼
-                  CORE divides    one question put to
-                  the raw counts  the model: does this
-                  again itself    evidence support this
-                           │      claim? — and it is never
-                           │      told what the submitter
-                           │      concluded
-                           └───────┬───────┘
-                                   ▼
-                          a verdict, with its reason,
-                          kept against the finding
- the verdicts   verdict door       │
- read back   ◀─────────────────────┘
- on the same   opened by a different credential;
- connection    the submitter's is refused by name
-```
+![On the left, transactions as they happen, and the one that produced a finding. The finding crosses CORE's edge through the findings door, opened by the submitting platform's own secret. Inside, it passes eight checks run in order, drawn as a comb; two of the three findings shown stop at a check, and each stop carries its own reason. What survives forks. A claim carrying a number goes to a sum CORE performs itself on the raw counts. A claim in prose goes to a single ring, one question put to the model, and a second strand — what the submitter concluded — is drawn reaching towards that ring and stopping short of it. Both branches arrive at a verdict kept against the finding, which leaves through a second door lower down the same wall, opened by a different credential.](figures/whitepapers/atlas-verdict-path.svg "Two doors in one wall. A finding comes in through the first; the verdict goes back out through the second, which a different credential opens.")
 
 The same thing in words, for a reader who would rather have the sentence. A finding arrives
 through one door, opened by a secret issued to the submitting platform. CORE keeps it and
@@ -1426,29 +1394,11 @@ and the difference between the two counts is your standing overhead.
 
 ### How they combine
 
-```text {linenos=false}
-  what accrues      days the         share where
-  per day, for   ×  interval      ×  earlier      =  recoverable
-  each class of     would shorten    notice          exposure
-  finding           by               changes the
-                                     decision
-
-                                                          +
-
-  person-days on    part of that                  assembly
-  evidence       ×  work that is  =               saving
-  requests          assembly
-  per year
-
-                                                          −
-
-  licences  +  machine capacity  +  the named  =  cost
-                                    owner's       side
-                                    time  +
-                                    connecting
-                                    the systems
-                                    read
-```
+| | What it is | How you get it |
+| --- | --- | --- |
+| Add | **Recoverable exposure** | What accrues per day, for each class of finding × the days the interval would shorten by × the share where earlier notice changes the decision |
+| Add | **Assembly saving** | Person-days on evidence requests per year × the part of that work that is assembly |
+| Subtract | **Cost side** | Licences + machine capacity + the named owner's time + connecting the systems read |
 
 Sum the first two, subtract the third, and divide the annual result by the monthly cost.
 That quotient is a payback period. This paper does not state one, because both terms belong

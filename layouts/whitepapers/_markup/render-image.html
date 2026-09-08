@@ -1,0 +1,84 @@
+{{- /*
+  Image render hook, scoped to the whitepapers type only.
+
+  WHY THIS EXISTS, AND WHY IT IS NOT A SHORTCODE
+  ----------------------------------------------
+  markup.goldmark.renderer.unsafe is false, so raw HTML in a paper is stripped
+  and an author cannot write inline SVG into the body. The usual escape is a
+  shortcode, and a shortcode would have worked — but these four papers are kept
+  in sync with print mirrors in ../pitch-decks, and the sync is a byte
+  comparison of the body text. A shortcode call renders here and appears there
+  as its own literal double-brace source, which puts a permanent, growing
+  difference between the two copies.
+
+  A markdown image has none of that problem. It is markdown, not Hugo: it
+  survives the mirror unchanged, it still means something read as plain text,
+  and any markdown converter pointed at the mirror renders the same picture.
+  So the carrier is:
+
+      ![long text alternative](figures/whitepapers/NAME.svg "Short caption")
+
+  and this hook turns it into a figure. Body text stays byte-identical between
+  the site source and the mirror, and the figures come with it.
+
+  WHAT IT EMITS
+  -------------
+  The SVG file is INLINED rather than referenced. That is the point of the
+  whole arrangement: an <img src="*.svg"> is a separate document and cannot see
+  this page's custom properties, so it could not re-ink itself when the print
+  block re-points the .wp tokens, and would print as a light-grey smear on
+  white. Inlined, the artwork reads --ink/--rule/--runs/--paper like everything
+  else on the sheet and converts to black-on-white with the rest of the page.
+
+  The files still carry literal fallbacks — var(--ink, #1c1917) — so the same
+  file opened on its own, by whatever converts the mirror, is not colourless.
+
+  ACCESSIBILITY
+  -------------
+  The artwork is aria-hidden. It has no text inside it (at 360px the viewBox
+  scales to about a third and any label set inside would be unreadable), so
+  there is nothing in it for a screen reader to reach. The meaning is carried
+  twice in HTML instead: the visible caption, and the markdown alt text as a
+  full sentence in an accessible-only span. Both survive monochrome, 360px, and
+  a reader who never sees the picture at all.
+
+  WHY SPANS AND role="figure" RATHER THAN <figure>
+  ------------------------------------------------
+  Goldmark wraps a stand-alone image in a paragraph, and <figure> is not
+  permitted inside <p> — the parser would close the paragraph early and leave a
+  stray </p> behind it. The alternative is to flip
+  markup.goldmark.parser.wrapStandAloneImageWithinParagraph in hugo.toml, which
+  is a site-wide switch that would also change the six ordinary blog images,
+  for a section that owns none of them. Phrasing-level elements carrying
+  role="figure" are valid exactly where Goldmark puts them and are announced
+  the same way, so the fix stays inside this section.
+
+  The block margins are left to collapse with the wrapping paragraph's own,
+  which is why .wp-figure sets a margin at all rather than relying on the <p>.
+
+  Anything that is not one of our figures falls through to the site's ordinary
+  image partial untouched.
+*/ -}}
+
+{{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $caption := .Title -}}
+
+{{- if and (hasPrefix $src "figures/whitepapers/") (hasSuffix $src ".svg") -}}
+  {{- $res := resources.Get (printf "%s" $src) -}}
+  {{- if $res -}}
+<span class="wp-figure" role="figure"{{ with $caption }} aria-label="{{ . }}"{{ end }}>
+  <span class="wp-figure__art" aria-hidden="true">{{ $res.Content | safeHTML }}</span>
+  {{- with $caption }}
+  <span class="wp-figure__caption">{{ . | safeHTML }}</span>
+  {{- end }}
+  {{- with $alt }}
+  <span class="wp-sr">{{ . | safeHTML }}</span>
+  {{- end }}
+</span>
+  {{- else -}}
+    {{- errorf "whitepaper figure not found under assets/: %q — add the file or fix the path" $src -}}
+  {{- end -}}
+{{- else -}}
+  {{- partial "image.html" (dict "src" $src "alt" $alt "context" .Page) -}}
+{{- end -}}

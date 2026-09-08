@@ -755,6 +755,66 @@
   color: inherit;
 }
 
+/* -- figures --------------------------------------------------------------
+   Drawn artwork, inlined into the page by the whitepapers image render hook.
+
+   The artwork carries no text, so there is nothing here to hold at a legible
+   size — the SVG simply takes the measure and scales. What has to stay legible
+   is the caption, which is HTML and therefore obeys the type scale like any
+   other line on the sheet.
+
+   The figure is allowed to run slightly wider than the text measure on roomy
+   screens. That is the one place this section departs from the measure on
+   purpose: artwork read at 34rem is small, and a picture is scanned rather
+   than read, so it does not need the line length that prose does. The bleed is
+   clamped to the sheet's own padding so it can never reach the sheet edge.
+   -------------------------------------------------------------------------- */
+
+/* The hook emits phrasing-level elements carrying role="figure", because
+   Goldmark wraps a stand-alone image in a <p> and <figure> cannot live there.
+   They are made block here; the vertical margin collapses with the wrapping
+   paragraph's, so the figure sits on the same rhythm as everything else. */
+.wp-figure {
+  display: block;
+  margin: 2.5em 0;
+}
+
+.wp-figure__art {
+  display: block;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule);
+  border-radius: 0.375rem;
+  padding: 1.25rem 1rem;
+}
+
+.wp-figure__art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wp-figure__caption {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: var(--util);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+
+/* The bleed waits until 75rem, where .wp-sheet's clamped padding has certainly
+   reached 3rem, so a 2rem bleed still leaves a rem of sheet inside the border
+   and cannot push the body into a horizontal scroll. */
+@media (min-width: 75rem) {
+  .wp-figure {
+    margin-inline: -2rem;
+  }
+  .wp-figure__caption {
+    margin-inline: 2rem;
+  }
+}
+
 /* =========================================================================
    FOOT — where the document ends
    ========================================================================= */
@@ -1222,8 +1282,46 @@
   .wp-doc pre,
   .wp-doc tr,
   .wp-card,
+  .wp-figure,
   .wp-foot-inner {
     break-inside: avoid;
+  }
+
+  /* -- figures on paper ---------------------------------------------------- */
+
+  /* The artwork is inlined SVG, not an <img>, precisely so that it reads the
+     .wp tokens this block re-points. Every fill and stroke in the four figures
+     resolves to one of four values here — #fff, #9a9a9a, #333, #000 — which is
+     a usable greyscale ramp rather than the near-black wash a screen palette
+     would have printed as. Nothing in the figures is distinguished by colour
+     alone; every distinction is also a difference of shape, of fill, or of
+     stroke weight, so the ramp collapsing further on a cheap printer costs
+     nothing.
+
+     The bleed is dropped: on paper the measure is set by the @page margin and
+     there is no sheet padding to bleed into. */
+  .wp-figure {
+    margin: 1.4em 0;
+    margin-inline: 0;
+  }
+  .wp-figure__caption {
+    margin-inline: 0;
+    font-size: 8pt;
+    color: #333;
+  }
+  .wp-figure__art {
+    background: transparent;
+    border: 0.5pt solid #9a9a9a;
+    border-radius: 0;
+    padding: 0.5rem;
+  }
+  /* Chromium prints an <svg> with height:auto at its intrinsic height unless
+     the aspect ratio is restated here; without this the figures come out as a
+     letterbox slice on some print paths. */
+  .wp-figure__art svg {
+    width: 100%;
+    height: auto;
+    max-height: 62vh;
   }
 
   /* -- wide content must fit the sheet, not scroll off it ------------------ */

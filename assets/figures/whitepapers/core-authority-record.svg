@@ -1,0 +1,139 @@
+<!--
+  CORE paper — "The whole rule, on one page": what happens when somebody asks
+  to create, change or remove a data connection.
+
+  The shape the chapter says is worth noticing is that BOTH refusals and the
+  success land in the same place, so the figure is built as a convergence onto
+  one record, not as a flow chart with three endings. Three lines leave three
+  very different outcomes and arrive at the same ledger.
+
+  The two gates are the same ring glyph twice, and so are the two refusals.
+  That repetition is the argument:
+
+    gate 1  — a ring with a person inside it: can CORE name this person?
+    gate 2  — a ring with a tick inside it:   are they permitted to do this?
+
+    refusal 1 — the ring, EMPTY. Nobody can be named for it.
+    refusal 2 — the ring, with the person still in it. Refused BY NAME.
+
+  Presence or absence of one mark carries the whole difference between the two
+  refusals, so it survives a greyscale print, where colour carries nothing.
+
+  On the right, the settings and the credential are drawn as two shapes with a
+  visible gap between them and only a dashed tie across it: they are one thing
+  kept apart, and the credential is hatched because it is encrypted. The gap is
+  the message, so nothing solid is allowed to bridge it.
+
+  The ledger is a chain. Between every pair of records sits a small ring — the
+  fingerprint computed over the record before it — which is what lets the
+  sequence be checked end to end.
+
+  No text inside the artwork; at 360px the viewBox scales to about a third.
+  Every var() carries a literal fallback so the file still reads correctly when
+  opened on its own, outside the page that defines the tokens.
+-->
+<svg viewBox="0 0 1000 274" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- somebody asks -->
+  <circle cx="26" cy="58" r="9" style="fill:var(--ink,#1c1917)"/>
+  <path d="M40,58 H216" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
+
+  <!-- gate one: can CORE name this person? -->
+  <circle cx="250" cy="58" r="30"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.6"/>
+  <circle cx="250" cy="49" r="7" style="fill:var(--ink,#1c1917)"/>
+  <path d="M237,72 a13,13 0 0 1 26,0"
+        style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.6;stroke-linecap:round"/>
+
+  <path d="M284,58 H506" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
+
+  <!-- gate two: are they on the list permitted to make this change? -->
+  <circle cx="540" cy="58" r="30"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--runs,#5F6F3E);stroke-width:2.8"/>
+  <path d="M527,58 L537,68 L555,46"
+        style="fill:none;stroke:var(--runs,#5F6F3E);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round"/>
+
+  <path d="M574,58 H700" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
+
+  <!-- refused: a change nobody can be named for -->
+  <path d="M250,92 V116" style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2"/>
+  <path d="M224,124 H276" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:3.4;stroke-linecap:round"/>
+  <circle cx="250" cy="156" r="15"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--ink-3,#57534e);stroke-width:2.2"/>
+
+  <!-- refused by name: the person is still there, and so is the reason -->
+  <path d="M540,92 V116" style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2"/>
+  <path d="M514,124 H566" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:3.4;stroke-linecap:round"/>
+  <circle cx="540" cy="156" r="15"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--ink-3,#57534e);stroke-width:2.2"/>
+  <circle cx="540" cy="152" r="4.5" style="fill:var(--ink,#1c1917)"/>
+  <path d="M533,166 a7,7 0 0 1 14,0"
+        style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
+
+  <!-- carried out: the settings, and the credential kept apart from them -->
+  <rect x="700" y="28" width="118" height="60" rx="8"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.2"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="714" y="42" width="76" height="7" rx="3.5"/>
+    <rect x="714" y="55" width="90" height="7" rx="3.5"/>
+    <rect x="714" y="68" width="58" height="7" rx="3.5"/>
+  </g>
+
+  <path d="M822,58 H862" stroke-dasharray="4 6"
+        style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.5;stroke-opacity:0.6"/>
+
+  <rect x="866" y="32" width="52" height="52" rx="7" style="fill:var(--ink,#1c1917)"/>
+  <g style="fill:none;stroke:var(--paper,#F5F1E8);stroke-width:2;stroke-opacity:0.55">
+    <path d="M870,66 L900,36"/>
+    <path d="M878,78 L914,42"/>
+    <path d="M892,82 L916,58"/>
+  </g>
+
+  <!-- recorded either way: three outcomes, one place -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2;stroke-linecap:round">
+    <path d="M250,174 C 250,202 420,204 600,204 C 780,204 850,202 908,200"/>
+    <path d="M540,174 C 540,188 660,190 908,196"/>
+    <path d="M759,90 C 759,148 828,160 908,190"/>
+  </g>
+  <path d="M924,196 V210" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.4"/>
+
+  <!-- the record: each one fingerprinted against the one before it -->
+  <g style="fill:var(--paper,#F5F1E8);stroke:var(--rule,#D9CDB8);stroke-width:1.6">
+    <rect x="36"  y="214" width="80" height="44" rx="6"/>
+    <rect x="142" y="214" width="80" height="44" rx="6"/>
+    <rect x="248" y="214" width="80" height="44" rx="6"/>
+    <rect x="354" y="214" width="80" height="44" rx="6"/>
+    <rect x="460" y="214" width="80" height="44" rx="6"/>
+    <rect x="566" y="214" width="80" height="44" rx="6"/>
+    <rect x="672" y="214" width="80" height="44" rx="6"/>
+    <rect x="778" y="214" width="80" height="44" rx="6"/>
+  </g>
+  <rect x="884" y="214" width="80" height="44" rx="6"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.4"/>
+
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="48"  y="226" width="44" height="6" rx="3"/><rect x="48"  y="238" width="30" height="6" rx="3"/>
+    <rect x="154" y="226" width="52" height="6" rx="3"/><rect x="154" y="238" width="34" height="6" rx="3"/>
+    <rect x="260" y="226" width="40" height="6" rx="3"/><rect x="260" y="238" width="48" height="6" rx="3"/>
+    <rect x="366" y="226" width="50" height="6" rx="3"/><rect x="366" y="238" width="28" height="6" rx="3"/>
+    <rect x="472" y="226" width="36" height="6" rx="3"/><rect x="472" y="238" width="46" height="6" rx="3"/>
+    <rect x="578" y="226" width="48" height="6" rx="3"/><rect x="578" y="238" width="32" height="6" rx="3"/>
+    <rect x="684" y="226" width="42" height="6" rx="3"/><rect x="684" y="238" width="50" height="6" rx="3"/>
+    <rect x="790" y="226" width="52" height="6" rx="3"/><rect x="790" y="238" width="36" height="6" rx="3"/>
+  </g>
+  <rect x="896" y="226" width="46" height="6" rx="3" style="fill:var(--runs,#5F6F3E)"/>
+  <rect x="896" y="238" width="34" height="6" rx="3" style="fill:var(--ink-3,#57534e)"/>
+
+  <!-- the fingerprints that join them -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.6">
+    <path d="M116,236 H142"/><path d="M222,236 H248"/><path d="M328,236 H354"/>
+    <path d="M434,236 H460"/><path d="M540,236 H566"/><path d="M646,236 H672"/>
+    <path d="M752,236 H778"/><path d="M858,236 H884"/>
+  </g>
+  <g style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:1.8">
+    <circle cx="129" cy="236" r="4.5"/><circle cx="235" cy="236" r="4.5"/>
+    <circle cx="341" cy="236" r="4.5"/><circle cx="447" cy="236" r="4.5"/>
+    <circle cx="553" cy="236" r="4.5"/><circle cx="659" cy="236" r="4.5"/>
+    <circle cx="765" cy="236" r="4.5"/><circle cx="871" cy="236" r="4.5"/>
+  </g>
+</svg>
