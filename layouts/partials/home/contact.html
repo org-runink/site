@@ -1,0 +1,101 @@
+{{/*
+  The homepage's one next step.
+
+  TWO IDS ON THIS BLOCK ARE LOAD-BEARING AND MUST NOT BE RENAMED:
+
+    id="contact"       the section. hugo.toml's header buttons point at
+                       /#contact, /fr/#contact, /es/#contact, and every industry
+                       page's "Book a consultation" points at /#contact. If this
+                       id goes, all of those land at the top of the page.
+    id="contact-form"  the form. The hidden-iframe success handler looks it up
+                       by this exact string, and the site's main conversion path
+                       is linked to /#contact-form.
+
+  The form posts to the same Google Form, with the same action URL and the same
+  entry.NNNN field names, as the contact-section shortcode this replaced. Change
+  a field name and the response lands in no column.
+
+  Every string is front matter, so each of the four locales carries its own and
+  this file holds no language at all. The select options are value/text pairs
+  because the value is what the Google Form stores and must stay in English.
+*/}}
+{{ $c := .Params.contact }}
+<section class="hp-contact" id="contact" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">{{ $c.heading }}</h2>
+  <p class="hp-contact__deck">{{ $c.deck }}</p>
+
+  <div class="hp-contact__cols">
+
+    <div class="hp-book">
+      <h3>{{ $c.book_title }}</h3>
+      <p>{{ $c.book_body }}</p>
+      <a class="hp-cta" href="https://calendar.app.google/Cu1gpYUyJNNwiSDk6"
+         target="_blank" rel="noopener noreferrer">{{ $c.book_cta }}</a>
+    </div>
+
+    <div class="hp-form">
+      <h3>{{ $c.form_title }}</h3>
+      <p class="hp-form__deck">{{ $c.form_deck }}</p>
+
+      {{/* The response posts into this iframe so the visitor is never navigated
+           away to a Google confirmation page. */}}
+      <iframe name="hidden_iframe" id="hidden_iframe" title="form response" style="display:none;"
+              onload="if(window.submitted){document.getElementById('contact-form').style.display='none';document.getElementById('contact-done').style.display='block';}"></iframe>
+
+      <div class="hp-done" id="contact-done" role="status">
+        <h3>{{ $c.done_title }}</h3>
+        <p>{{ $c.done_body }}</p>
+      </div>
+
+      <form id="contact-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfE6RANq4sVOs49LI71f6KZA-7d1Rm_ddb2dqQWgZF1dqfvXA/formResponse"
+            method="POST" target="hidden_iframe" onsubmit="window.submitted=true;">
+
+        <div class="hp-field-group">
+          <label class="hp-label" for="entry.2005620554">
+            {{ $c.name_label }} <span class="hp-req" aria-hidden="true">*</span>
+          </label>
+          <input class="hp-input" type="text" id="entry.2005620554" name="entry.2005620554"
+                 placeholder="{{ $c.name_placeholder }}" autocomplete="name" required>
+        </div>
+
+        <div class="hp-field-group">
+          <label class="hp-label" for="entry.1045781291">
+            {{ $c.email_label }} <span class="hp-req" aria-hidden="true">*</span>
+          </label>
+          <input class="hp-input" type="email" id="entry.1045781291" name="entry.1045781291"
+                 placeholder="{{ $c.email_placeholder }}" autocomplete="email" required>
+        </div>
+
+        <div class="hp-field-group">
+          <label class="hp-label" for="entry.1160391826">{{ $c.company_label }}</label>
+          <input class="hp-input" type="text" id="entry.1160391826" name="entry.1160391826"
+                 placeholder="{{ $c.company_placeholder }}" autocomplete="organization">
+        </div>
+
+        <div class="hp-field-group">
+          <label class="hp-label" for="entry.17726350">{{ $c.source_label }}</label>
+          <select class="hp-input" id="entry.17726350" name="entry.17726350">
+            <option value="" disabled selected>{{ $c.source_default }}</option>
+            {{ range $c.source_options }}
+            <option value="{{ .value }}">{{ .text }}</option>
+            {{ end }}
+          </select>
+        </div>
+
+        <div class="hp-field-group">
+          <label class="hp-label" for="entry.1065046570">
+            {{ $c.message_label }} <span class="hp-req" aria-hidden="true">*</span>
+          </label>
+          <textarea class="hp-input" id="entry.1065046570" name="entry.1065046570" rows="4"
+                    placeholder="{{ $c.message_placeholder }}" required></textarea>
+        </div>
+
+        <button class="hp-submit" type="submit">{{ $c.submit }}</button>
+        <p class="hp-note">{{ $c.note }}</p>
+      </form>
+      <script>window.submitted = false;</script>
+    </div>
+
+  </div>
+</section>
