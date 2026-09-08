@@ -43,7 +43,7 @@ We use the collected information to power the Runink Ecosystem:
   * Processing low-latency data streams for operational visibility.
   * executing autonomous workflows (e.g., Auto-Provisioning, Claims Recovery).
 * **Advanced Analysis & Operational Intelligence**
-  * **Model Training:** Refining our anomaly detection and decisioning models. **Note:** we guarantee absolute data sovereignty. We strictly adhere to SOC2, PCI-DSS, ISO27001, ISO31000, and ISO42001 protocols to ensure zero PII leakage. We never train shared models on your proprietary data.
+  * **Model Training:** Refining our anomaly detection and decisioning models. **Note:** we never train shared models on your proprietary data. The models that reason over your material run on hardware you control, and your material is not sent to an outside model provider. We map our controls to the SOC 2, ISO 27001 and ISO 42001 frameworks, and that mapping is our own statement rather than a certification issued by an auditor.
   * **Operations Models:** Powering systems that detect risks and recommend actions.
 * **Billing & Analytics**
   * Calculating usage charges (Data/Compute Units) and success fees.
