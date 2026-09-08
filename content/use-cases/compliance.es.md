@@ -1,6 +1,6 @@
 ---
-title: "Auditoría de Cumplimiento: Monitoreo de Cumplimiento Autónomo"
-description: "Garantice el cumplimiento total de estándares como IFRS 17 para seguros y monitoree continuamente el riesgo."
+title: "Datos Personales de Clientes e Informe de Emisiones"
+description: "Nombres y direcciones de clientes llegan a pantallas donde no deberían verse, y el informe de emisiones cuesta un trimestre entero. Los dos son trabajos de unir registros para los que nadie tiene horas."
 layout: "use_case"
 badge: "Gestión de Riesgos"
 badgeColor: "#ea580c"
@@ -10,144 +10,68 @@ author: "Lead Data & Cloud Architect"
 
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
-    <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Deje de Temer a la Auditoría.</h1>
-        <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            Garantizar el cumplimiento de estándares complejos como IFRS 17 es tradicionalmente un proceso manual, propenso a errores y que consume recursos. <br>El Módulo de Cumplimiento monitorea continuamente los datos financieros y operativos para garantizar el cumplimiento normativo, transformando el cumplimiento de una urgencia reactiva en una ventaja proactiva.
-        </p>
-    </div>
 
-    <!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
-    <div class="mb-16">
-        <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Resumen Ejecutivo: Conclusiones Clave</h2>
-        <ul class="space-y-3">
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Cumplimiento Continuo de IFRS 17:</strong> El Módulo de Cumplimiento ingiere datos operativos para monitorear y validar continuamente los cálculos del Margen de Servicio Contractual (CSM).</li>
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Mitigación Proactiva de Riesgos:</strong> Simula condiciones de auditoría a través del Laboratorio de Hipótesis para detectar la exposición antes de que concluya el ciclo de informes financieros.</li>
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Documentación Automatizada:</strong> Envía informes de cumplimiento validados directamente al comité de riesgos, acelerando los tiempos de cierre de fin de ciclo.</li>
-        </ul>
+<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
+<li><strong class="text-stone-200">Los datos personales se encuentran antes de que viajen.</strong> Los informes y las pantallas de reparto se revisan en busca de nombres, teléfonos y direcciones de clientes que no deberían estar ahí.</li>
+<li><strong class="text-stone-200">Cuando aparece uno, se tapa en vez de dejarlo.</strong> El dato se oculta en la pantalla y se le dice a una persona qué quedó a la vista, dónde y quién pudo verlo.</li>
+<li><strong class="text-stone-200">El informe de emisiones se arma con sus propios registros de envío.</strong> Los pesos, las distancias y el medio de transporte se juntan a medida que salen los envíos, en vez de reconstruirlos a fin de año.</li>
+</ul>
+
+    <div class="text-center mb-16">
+        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Dos Informes Que Nadie Tiene Tiempo De Hacer.</h1>
+        <p class="text-xl text-stone-400 font-bold leading-relaxed">
+            La privacidad y las emisiones parecen problemas distintos. Son el mismo problema: registros repartidos por varios sistemas, de los que solo puede responder una persona que los una a mano.
+        </p>
     </div>
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">El Pánico de \"Fin de Ciclo\"</h2>
+            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Cada trimestre, los actuarios y los responsables de riesgos pasan semanas reconciliando manualmente conjuntos de datos fragmentados para garantizar el cumplimiento de estándares como IFRS 17.
+                El nombre y la dirección de un cliente hacen falta para entregarle el paquete. No hacen falta en el panel de un transportista, ni en un informe que se manda a un socio, ni en la copia del archivo que alguien sacó para una reunión. Pero el dato viaja con el registro, y sigue viajando.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-               Es un entorno de alto estrés donde un solo error de cálculo puede provocar graves multas regulatorias y daños a la reputación.
+                Nadie planea esto. Pasa porque la forma más corta de responder una pregunta es exportar lo que uno tiene, y lo que uno tiene lleva dentro los datos personales.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
-                Hemos reemplazado el pánico con el monitoreo continuo.
+            <p class="text-lg text-stone-400 font-medium font-semibold text-[#10b981] tracking-wide font-bold text-sm">
+                No se puede proteger lo que no se ve salir.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                El Módulo de Cumplimiento garantiza que todos los márgenes de servicio contractuales subyacentes y los ajustes de riesgo se monitoreen y reporten con precisión en tiempo real.
+                El informe de emisiones tiene la misma forma. Los números que necesita —cuánto se movió, hasta dónde y por qué medio— están todos en sus propios registros de envío. Solo que están en varios sistemas, en varios formatos, y juntarlos es un trimestre del año de alguien.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">El Cortafuegos Regulatorio</h3>
-             
-             <!-- Mermaid Diagram -->
-             
-             
-             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Detecta la exposición *antes* de que concluya el ciclo de informes financieros.</p>
+        <div>
+            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Los informes y las pantallas de trabajo se revisan en busca de datos personales según se van creando. Cuando un nombre, un teléfono o una dirección aparece donde no debería, el dato se tapa en la pantalla. Y el aviso llega a una persona con los detalles: qué quedó a la vista, en qué informe y quién pudo verlo.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Para las emisiones, los registros de envío se unen a medida que salen los envíos. El peso, la distancia y si fue por mar, por carretera o por aire se recogen junto a cada movimiento, así que el informe anual es una consulta y no un proyecto.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                Los dos dejan constancia de su propio trabajo. Cuando un auditor pregunta por qué una cifra es la que es, o cuando un regulador pregunta quién vio la dirección de un cliente, la respuesta sale del registro y no de la memoria de quien hizo la hoja de cálculo.
+            </p>
+        </div>
+        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(16,185,129,0.05)] shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#059669] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+             <p class="text-lg text-stone-400 font-medium mb-6">
+                Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
+             </p>
+             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Días de trabajo en su ciclo de informes.</strong> Pregunte a quienes hacen el informe de emisiones cuántos días les llevó el año pasado, y cuántos de esos días se fueron en buscar números en vez de en revisarlos.</li>
+                <li><strong class="text-stone-200">Qué parte del informe puede respaldar.</strong> Cuente qué parte de sus cifras sale de un registro de envío que usted puede señalar, y qué parte se apoya en un cálculo aproximado que ya nadie sabe defender.</li>
+                <li><strong class="text-stone-200">Dónde están de verdad los datos personales.</strong> Tome una muestra de los informes y las pantallas que ven sus socios y sus transportistas. Cuente cuántos llevan un nombre, un teléfono o una dirección. Casi ningún equipo ha contado esto nunca.</li>
+                <li><strong class="text-stone-200">Tiempo entre que un dato queda a la vista y alguien se entera.</strong> La distancia entre que un dato personal llega a una pantalla donde no debería y que una persona lo sabe. Hoy eso no suele saberse, y ese es el hallazgo.</li>
+             </ul>
+             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga el informe del año pasado y una muestra de las pantallas que ven sus socios.</p>
         </div>
     </div>
 
-    <div class="max-w-3xl mx-auto prose prose-invert prose-lg mb-20">
-        <h3>Cómo Gana: Cumplimiento Continuo</h3>
-        <p>
-            El módulo lee cada línea de sus modelos financieros y la cruza con los requisitos reglamentarios.
-        </p>
-        <p>
-            <strong>1. Verificación IFRS 17</strong><br>
-            Ingiere conjuntos de datos internos para evaluar la exposición al riesgo y cruza los modelos actuariales con las últimas normas de cumplimiento IFRS 17, garantizando que el Margen de Servicio Contractual (CSM) se calcule correctamente.
-        </p>
-        <p>
-            <strong>2. Simulación de Auditoría</strong><br>
-            Simula condiciones de auditoría aprovechando el <strong>Laboratorio de Hipótesis</strong> para identificar alertas regulatorias antes de que los auditores externos revisen los libros.
-        </p>
-        <p>
-            <strong>3. Libro Auxiliar Automatizado</strong><br>
-            Cuando se verifican los datos, redacta automáticamente la documentación de cumplimiento necesaria y envía los informes de cumplimiento validados directamente a su comité de riesgos, acelerando todo el ciclo de informes.
-        </p>
-    </div>
-    
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
-            Automatice el Cumplimiento
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#10b981] to-[#059669] rounded-xl border border-[#10b981]/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:-translate-y-1">
+            Reserve una consulta
         </a>
     </div>
 </div>
 {{< /section-container >}}
-
-
-
-
-
-
----
-
-
-{{< faq >}}
-{
-    "title": "Preguntas Frecuentes",
-    "description": "",
-    "questions": [
-        {
-            "question": "¿Cómo garantiza el cumplimiento de IFRS 17 la auditoría de cumplimiento automatizada?",
-            "answer": "La auditoría de cumplimiento automatizada utiliza un motor de decisión para ingerir conjuntos de datos internos y cruzar los modelos actuariales con las normas IFRS 17, garantizando que métricas como el Margen de Servicio Contractual (CSM) se calculen continuamente y con precisión."
-        },
-        {
-            "question": "¿Qué es una simulación de auditoría en la gestión de riesgos?",
-            "answer": "Una simulación de auditoría implica probar proactivamente los datos financieros utilizando un Laboratorio de Hipótesis para identificar y señalar la exposición regulatoria antes de que los auditores externos revisen el libro contable oficial."
-        },
-        {
-            "question": "¿Cómo mejora el monitoreo continuo los ciclos de informes financieros?",
-            "answer": "El monitoreo continuo elimina el pánico de fin de ciclo al validar los flujos de efectivo esperados frente a los reales en tiempo real, generando automáticamente informes listos para auditoría y acelerando todo el ciclo de informes."
-        }
-    ]
-}
-{{< /faq >}}
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Sobre el Autor</h2>
-  <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Sujeto experto en la materia (SME) en AWS Data Analytics, AWS Certified Developer y Google Cloud Professional certificado en Data Engineering y Advanced Analytics. Con más de una década de experiencia en la construcción de arquitecturas en la nube resilientes y de alto rendimiento, pipelines de datos y soluciones logísticas automatizadas.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Citas y Referencias de la Industria</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Centro de Arquitectura AWS: Mejores Prácticas de Análisis de Datos</a> - Pautas completas para procesamiento de datos escalable.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Análisis Avanzado para Optimización de la Creada de Suministro</a> - Metodologías avanzadas para logística automatizada.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Principales Tendencias Tecnológicas Estratégicas en Logística</a> - Investigación estándar de la industria sobre tecnología de cadena de suministro.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Investigación académica sobre aplicaciones analíticas en flete y transporte.</li>
-  </ul>
-</section>
-
-{{< howto >}}
-{
-    "name": "Cómo automatizar la gestión del cumplimiento",
-    "description": "Instrucciones paso a paso para automatizar las verificaciones de cumplimiento y la gestión de documentos.",
-    "step": [
-        {
-            "name": "Identificar regulaciones clave",
-            "text": "Determine las regulaciones y estándares específicos que se aplican a sus operaciones comerciales."
-        },
-        {
-            "name": "Digitalizar documentos",
-            "text": "Asegúrese de que todos los documentos relacionados con el cumplimiento estén digitalizados y almacenados en un sistema seguro y centralizado."
-        },
-        {
-            "name": "Implementar comprobaciones automatizadas",
-            "text": "Configure sistemas automatizados para comprobar periódicamente las brechas de cumplimiento y alertar al personal pertinente."
-        },
-        {
-            "name": "Mantener registros de auditoría",
-            "text": "Mantenga registros detallados de todos los controles de cumplimiento y de las medidas adoptadas para futuras auditorías."
-        }
-    ]
-}
-{{< /howto >}}

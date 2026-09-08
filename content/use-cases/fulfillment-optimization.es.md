@@ -1,6 +1,6 @@
 ---
-title: "Orquestación del Cumplimiento: Asignación Dinámica de Inventario"
-description: "Orquesta el inventario y el enrutamiento según restricciones en tiempo real (clima, estado del muelle, margen)."
+title: "Cobertura de Stock y Planificación con Proveedores"
+description: "Casi todos los avisos de falta de stock llegan cuando la reserva de seguridad ya se ha ido, y eso lo deja pagando flete aéreo. La idea es verlo cuando todavía hay tiempo de pedir de forma normal."
 layout: "use_case"
 badge: "Optimización Logística"
 badgeColor: "#0ea5e9"
@@ -10,140 +10,68 @@ author: "Lead Data & Cloud Architect"
 
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
-    <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Cumplimiento bajo Restricciones.</h1>
-        <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            La lógica de enrutamiento estándar solo conecta A con B. <br>El Módulo de Cumplimiento trata cada pedido como una ecuación multivariable, optimizando costos, velocidad y condiciones del mundo real como el clima o los retrasos en los muelles.
-        </p>
-    </div>
 
-    <!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->
-    <div class="mb-16">
-        <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Resumen Ejecutivo: Conclusiones Clave</h2>
-        <ul class="space-y-3">
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Orquestación Dinámica:</strong> El Módulo de Cumplimiento trata cada pedido como una ecuación multivariable, optimizando costo, velocidad y condiciones del mundo real.</li>
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Adaptación en Tiempo Real:</strong> Monitorea APIs externas (clima, tránsito) y telemetría interna (saturación de instalaciones) para un enrutamiento inteligente.</li>
-            <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#ea580c] font-black">✓</span> <strong>Protección del Margen:</strong> Divide instantáneamente pedidos o ajusta el enrutamiento para proteger garantías de SLA manteniendo los costos de envío dentro de los límites de margen.</li>
-        </ul>
+<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
+<li><strong class="text-stone-200">Se le avisa cuando pedir todavía sale barato.</strong> El aviso llega antes de que se acabe la reserva de seguridad, el stock que se guarda por si acaso. Llega antes y no después, así que el pedido puede salir a la tarifa normal en vez de por avión.</li>
+<li><strong class="text-stone-200">La previsión le dice cuánto fiarse de ella.</strong> Cada proyección llega con lo bien que encajó con su propio histórico y con cuántos meses tuvo para aprender.</li>
+<li><strong class="text-stone-200">La alternativa ya viene preparada.</strong> Un segundo proveedor, un plazo más corto y la diferencia de precio llegan juntos, así que quien compra elige en vez de buscar.</li>
+</ul>
+
+    <div class="text-center mb-16">
+        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Deje De Enterarse Demasiado Tarde.</h1>
+        <p class="text-xl text-stone-400 font-bold leading-relaxed">
+            Un aviso de falta de stock que llega cuando la reserva de seguridad ya se ha ido no es un aviso. Es una factura de flete aéreo con unos días de antelación.
+        </p>
     </div>
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">La Trampa de la \"Asignación Ciega\"</h2>
-            <p class="text-lg text-stone-400 font-medium mb-4">
-                Su OMS recibe un pedido y lo asigna al almacén más cercano. Sencillo, ¿verdad? Pero, ¿qué pasa si ese almacén tiene un retraso de 3 días? ¿Qué pasa si se avecina una tormenta invernal en la ruta de salida?
+            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Casi todas las alertas de stock saltan por un nivel. Cuando la cobertura baja de la raya, se lo dicen. Pero el proveedor sigue necesitando quince días, y esos quince días empiezan cuando se lo dicen, no cuando empezó el problema.
             </p>
-            <ul class="space-y-3">
-                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> Ignorar cuellos de botella operativos (disponibilidad de puertas del muelle)</li>
-                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> Reglas estáticas que fallan bajo la presión del mundo real</li>
-                <li class="flex items-start text-[#ea580c] tracking-wide font-bold text-sm"><span class="mr-2">✕</span> Erosión del margen por envíos divididos</li>
-            </ul>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Así que la elección es mala. Pagar de más por traerlo en avión, o decírselo al cliente. Las dos se decidieron semanas antes, por una tendencia que estuvo a la vista todo el tiempo en sus propios datos de venta.
+            </p>
+            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+                El pedido ya iba tarde antes de que nadie supiera que iba tarde.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                Debajo hay un segundo coste. Cada paso de la cadena redondea a caja entera y añade un margen por seguridad. Así que la fábrica acaba produciendo para una demanda que nunca existió. Ese crecimiento vive en la secuencia, repartido por cuatro sistemas, y ninguno de ellos lo muestra por su cuenta.
+            </p>
+        </div>
+        <div>
+            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Se lee su propio histórico de ventas para ver la temporada y la tendencia que hay debajo. Luego la proyección se contrasta con lo que de verdad pasó. El aviso se ajusta al plazo del proveedor que tendría que servirlo, así que llega cuando un pedido corriente todavía resuelve el problema.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Llega como algo que decidir, no como algo que mirar. Qué artículo es, el día en que se acaba la cobertura, el proveedor que suele servirlo, un segundo proveedor que podría servirlo antes, y cuánto cuesta la diferencia.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa firma queda en el registro. Aprobar termina el trabajo en vez de empezarlo: el borrador del pedido y la actualización de su sistema de planificación salen de esa aprobación. Los márgenes de seguridad dejan de discutirse por rango y pasan a discutirse con sus propios números.
+            </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">El Enrutador Sensible al Contexto</h3>
-             
-             <!-- Mermaid Diagram -->
-             
-             
-             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Analiza todo el tablero antes de hacer un movimiento.</p>
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+             <p class="text-lg text-stone-400 font-medium mb-6">
+                Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
+             </p>
+             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Cuánto gasta en transporte urgente.</strong> Sus cuentas a pagar, filtradas por los códigos que usa su equipo para el flete aéreo o urgente. Tome un año entero, porque cambia con la temporada.</li>
+                <li><strong class="text-stone-200">Error de previsión, artículo por artículo.</strong> La previsión de su sistema de planificación frente a lo que de verdad se vendió. La idea no es que el error baje. Es que el error se diga en vez de darlo por supuesto.</li>
+                <li><strong class="text-stone-200">Días de cobertura por artículo.</strong> Cuántos días de stock lleva encima cada artículo, y cuánto de eso es margen que ya nadie sabe explicar.</li>
+                <li><strong class="text-stone-200">Pedidos entregados enteros y a tiempo.</strong> Su sistema de transporte o de almacén. Compare lo que salió con la fecha y la cantidad que prometió la línea del pedido, mes a mes y por cliente. Algunos de sus fallos no se pueden evitar. Vigile los que sí.</li>
+             </ul>
+             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga un año de una familia de producto y sus códigos de flete urgente.</p>
         </div>
     </div>
 
-    <div class="max-w-3xl mx-auto prose prose-invert prose-lg mb-20">
-        <h3>Cómo Gana: La Optimización Multivariable</h3>
-        <p>
-            El Módulo de Cumplimiento no se conforma con la respuesta fácil; encuentra el resultado óptimo.
-        </p>
-        <p>
-            <strong>1. Ingesta de Datos en Tiempo Real</strong><br>
-            Monitorea APIs externas (patrones climáticos, capacidad de transportistas) junto con la telemetria interna (instalaciones sobrecargadas, puertas de muelle abiertas).
-        </p>
-        <p>
-            <strong>2. Cálculo de Margen frente a SLA</strong><br>
-            Puede dividir instantáneamente un pedido para reducir el costo de envío o absorber costos adicionales para proteger el SLA de un cliente de alto valor. Su lógica es configurable según sus límites de margen.
-        </p>
-        <p>
-            <strong>3. Ejecución Autónoma</strong><br>
-            Una vez acotado por los parámetros, el sistema asigna el inventario y despacha el pedido de enrutamiento automáticamente al almacén. Transforma su red de cumplimiento en un organismo dinámico.
-        </p>
-    </div>
-    
     <div class="text-center">
         <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
-            Optimice el Cumplimiento Ahora
+            Reserve una consulta
         </a>
     </div>
 </div>
 {{< /section-container >}}
-
-
-
-
-
-
----
-
-
-{{< faq >}}
-{
-    "title": "Preguntas Frecuentes",
-    "description": "",
-    "questions": [
-        {
-            "question": "¿Qué es la orquestación dinámica del cumplimiento?",
-            "answer": "La orquestación dinámica del cumplimiento es el proceso automatizado de asignación de inventario y enrutamiento de pedidos según restricciones en tiempo real como el clima, el estado del muelle y el margen, en lugar de reglas estáticas."
-        },
-        {
-            "question": "¿Cómo protege el Módulo de Cumplimiento los márgenes?",
-            "answer": "El Módulo de Cumplimiento protege los márgenes dividiendo pedidos al instante para reducir costos de envío, o absorbiendo costos adicionales solo cuando es necesario para proteger las garantías SLA de clientes clave, operando estrictamente dentro de los límites de margen configurados."
-        },
-        {
-            "question": "¿Por qué es importante el monitoreo de restricciones en tiempo real en logística?",
-            "answer": "El monitoreo de restricciones en tiempo real, como la comprobación de patrones climáticos o retrasos en los almacenes, evita que los pedidos se enruten a instalaciones saturadas o se retrasen por factores externos, garantizando el cumplimiento de los SLA."
-        }
-    ]
-}
-{{< /faq >}}
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Sobre el Autor</h2>
-  <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Sujeto experto en la materia (SME) en AWS Data Analytics, AWS Certified Developer y Google Cloud Professional certificado en Data Engineering y Advanced Analytics. Con más de una década de experiencia en la construcción de arquitecturas en la nube resilientes y de alto rendimiento, pipelines de datos y soluciones logísticas automatizadas.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Citas y Referencias de la Industria</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Centro de Arquitectura AWS: Mejores Prácticas de Análisis de Datos</a> - Pautas completas para procesamiento de datos escalable.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Análisis Avanzado para Optimización de la Cadena de Suministro</a> - Metodologías avanzadas para logística automatizada.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Principales Tendencias Tecnológicas Estratégicas en Logística</a> - Investigación estándar de la industria sobre tecnología de cadena de suministro.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Investigación académica sobre aplicaciones analíticas en flete y transporte.</li>
-  </ul>
-</section>
-
-{{< howto >}}
-{
-    "name": "Cómo optimizar el cumplimiento de pedidos",
-    "description": "Pasos para agilizar el proceso de cumplimiento utilizando automatización avanzada.",
-    "step": [
-        {
-            "name": "Analizar datos del pedido",
-            "text": "Revise los datos históricos de pedidos para identificar patrones y cuellos de botella en su proceso de cumplimiento."
-        },
-        {
-            "name": "Implementar enrutamiento dinámico",
-            "text": "Use algoritmos de optimización para enrutar automáticamente los pedidos al centro de cumplimiento más eficiente según el inventario y la ubicación."
-        },
-        {
-            "name": "Automatizar la preparación y embalaje",
-            "text": "Introduzca sistemas automatizados o robots para ayudar con la preparación y el embalaje de pedidos en el almacén."
-        },
-        {
-            "name": "Monitorear el rendimiento",
-            "text": "Realice un seguimiento continuo de las métricas de cumplimiento y ajuste las estrategias para mejorar la eficiencia."
-        }
-    ]
-}
-{{< /howto >}}
