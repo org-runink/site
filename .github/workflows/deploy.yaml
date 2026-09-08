@@ -78,6 +78,21 @@ jobs:
           HUGO_PARAMS_COREAPPURL: ${{ secrets.CORE_APP_URL }}
         run: hugo -d docs
 
+      # Runs against the rendered output, so it sees what a visitor sees. It
+      # catches the two things a Hugo build cannot: a nav link to a page that no
+      # longer exists, and a "#fragment" naming an id that no page renders. Both
+      # return 200 in a browser and neither has ever failed anything here --
+      # /demo/ 404'd in four languages for seven weeks, and three header links
+      # scrolled nowhere for longer, with every build green throughout.
+      #
+      # Runs on pull_request too (the build step above already does), so a
+      # broken link fails review rather than the deploy.
+      #
+      # No new dependency: Go is preinstalled on ubuntu-latest, this is one
+      # stdlib-only file, and it makes no network requests.
+      - name: Check every internal link resolves
+        run: go run linkcheck.go docs
+
       # Publish only from the default branch. Pull request runs still build
       # above -- a site that does not build should fail its PR -- but must
       # never touch gh-pages: that branch is what runink.org serves, and the
