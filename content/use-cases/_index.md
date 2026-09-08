@@ -1,85 +1,86 @@
 ---
-title: "Autonomous Decision Systems in Logistics: From 'Execution' to 'Orchestration'"
-description: "Why the future of supply chain belongs to autonomous decision engines that See, Think, and Do."
+title: "What People Use Runink For"
+description: "Seven jobs where the evidence is already in your systems and nobody has the hours to join it up. Each one ends with a person approving a drafted action, not reading another dashboard."
 layout: "section"
 ---
 
-## The Shift: From Automation to Autonomy
+## The Same Problem, Wearing Seven Hats
 
-Most "automation" in logistics is really just scripting. *"If file A arrives, move it to Folder B."*
+Every job below has the same shape. The facts you need are already recorded somewhere in your business. They sit in four systems, in four formats, and joining them up takes a morning that nobody has.
 
-It's brittle. If File A changes format, the bot breaks. If the folder is full, the bot stops. This is **Robotic Process Automation (RPA)**. It's useful, but it's not intelligent.
+So the claim expires. The container is opened warm. The order goes out by air. Not because anyone made a bad call, but because nobody had the time to reach the point where a call could be made.
 
-**Autonomous Decision Systems** represent a paradigm shift. Specialized modules aren't defined by what they *do* (a script), but by what they *achieve* (an outcome). You don't tell a module *how* to file a claim; you tell it, "Recover every eligible dollar from this shipment."
+## What Runink Actually Does
 
-## The Architecture: See, Think, Do
+Checks run against your own records overnight. In the morning you get a short, ranked list of things that happened, with the records attached.
 
-Runink decision engines act like digital operators because they follow the same cognitive process as humans:
+Each item is a **proposed action**, not an alert. The claim comes with the receipt, the reading, the rate and the deadline, and a drafted letter. The temperature drift comes with the container, the customer and a drafted rerouting.
 
-### 1. Perception (See)
-Engines ingest unstructured data from the messy real world.
-*   **Reading:** They OCR Bills of Lading, parse PDF invoices, and extract data from email threads.
-*   **Seeing:** They analyze photos of damaged cargo to classify "crushed" vs. "wet."
-*   **Sensing:** They monitor carrier portals and weather feeds for disruptions.
+Then a named person approves, edits or rejects it, and that sign-off is kept on the record. Nothing leaves your business before someone approves it.
 
-### 2. Reasoning (Think)
-Engines use advanced analytical models to understand context and make decisions.
-*   **Knowledge:** They reference the Carmack Amendment, carrier tariffs, and your specific business rules.
-*   **Logic:** *"The carrier denied this claim, but the photo clearly proves them wrong. I should fight this."*
-*   **Planning:** *"To reroute this order, I first need to check stock in DC2, then check shipping rates, then update the OMS."*
+Approving ends the work rather than starting it. The message, the deadline and the update to your system of record all follow from the approval. Later, when someone asks why a claim was filed or an entry was held, the answer comes from the record.
 
-### 3. Action (Do)
-Engines have "hands." They execute tasks in your systems.
-*   **Tools:** They can log into web portals, send emails, query SQL databases, and trigger APIs.
-*   **Output:** They don't just give you a "suggested action"—they do the work (with your permission).
+## Two Things Worth Knowing Up Front
 
-## Meet Your Specialized Operational Modules
+**Your data stays on your machines.** The order files, the customs papers, the sensor readings and the reasoning about them all run on hardware you control. Nothing goes to an outside model provider. This tends to shorten the security review a customer runs before it will let you hold its order data.
 
-We don't sell a "platform." We deploy specialized modules that integrate with your team.
+**You decide how much is automatic.** Low-value, routine items can be handled without you. Anything that costs real money, or writes to a customer, waits for a person. Every action carries its reasoning, so you can read why it was proposed before you agree to it.
+
+## Where To Start
 
 {{< card-grid cols="3" >}}
 
 {{< card 
-    title="The Claims Module"
+    title="Freight claims and port charges"
     icon="currency-dollar"
     link="/use-cases/claims-recovery"
-    description="Reads BOLs, identifies damage, and fights carrier denials on autopilot. Recover 40% more freight spend."
+    description="Claims expire because assembling one takes a morning. The receipt, the weight, the rate and the deadline arrive already gathered."
 >}}
 
 {{< card 
-    title="The Fulfillment Module"
-    icon="box"
+    title="Cold chain and yard safety"
+    icon="shield-check"
+    link="/use-cases/cold-chain-safety"
+    description="The reading that condemns a load is recorded hours before anybody looks at it. The whole problem is the gap between the two."
+>}}
+
+{{< card 
+    title="Stock cover and supplier planning"
+    icon="cube-transparent"
     link="/use-cases/fulfillment-optimization"
-    description="Orchestrates inventory and routing based on real-time constraints (weather, dock status, margin). Inventory that thinks."
+    description="A stockout warning that arrives after the safety stock is gone is a bill for air freight with a few days' notice."
 >}}
 
 {{< card 
-    title="The Finance Module"
+    title="Customer data privacy and emissions reporting"
     icon="scale"
-    link="/use-cases/finance"
-    description="Audits every invoice against your contracts. Short-pays valid discrepancies and reconciles ledgers instantly."
+    link="/use-cases/compliance"
+    description="Personal details reach screens that should never show them, and the emissions report takes a quarter to build. Both are joining jobs."
 >}}
 
 {{< card 
-    title="Drop Shipping Command Center"
-    icon="globe-alt"
-    link="/use-cases/drop-shipping"
-    description="Syncs inventory across all vendors in real-time. Routes orders to the best vendor to prevent overselling."
+    title="Returns and what they are still worth"
+    icon="arrow-path"
+    link="/use-cases/responsive-reverse-logistics"
+    description="A return sitting in a bay is working capital nobody has counted. What it is worth depends on how fast it is judged."
 >}}
 
 {{< card 
-    title="Fleet Optimizer"
-    icon="truck"
-    link="/use-cases/route-optimization"
-    description="Dynamically re-sequences routes based on traffic and backhaul opportunities. Stop hauling air."
+    title="Hands-free dispatch for drivers"
+    icon="map"
+    link="/use-cases/voice-dispatch"
+    description="A driver who has to pull over to read a screen either stops or does not read it. Neither is what you wanted."
+>}}
+
+{{< card 
+    title="Testing a change before you commit to it"
+    icon="light-bulb"
+    link="/use-cases/hypothesis-lab"
+    description="Work out what rerouting costs before you spend the money, against your own numbers rather than a supplier's."
 >}}
 
 {{< /card-grid >}}
 
-## The "Trust Gap": Human-in-the-Loop
+## See Whether It Fits
 
-We know "autonomous systems" can sound complex in high-stakes operations. That's why Runink uses **Augmented Autonomy**.
-
-*   **Co-Pilot Mode:** The module handles low-risk tasks (e.g., Claims <$100) autonomously.
-*   **Supervisor Mode:** For high-stakes decisions, the module acts as a Junior Analyst. It gathers the data, prepares the plan, and asks you for approval.
-*   **Chain of Thought:** Every action comes with an explanation: *"I did X because of Y."* You can audit the system's logic anytime.
+Bring one lane, one carrier, or one month of returns. A short conversation is usually enough to tell whether the losses you carry are the shape of the ones described here.

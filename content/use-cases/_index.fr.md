@@ -1,85 +1,86 @@
 ---
-title: "Systèmes de Décision Autonomes en Logistique : Des 'Exécutants' aux 'Orchestrateurs'"
-description: "Pourquoi l'avenir de la chaîne d'approvisionnement appartient aux moteurs de décision autonomes qui Voient, Pensent et Agissent."
+title: "À Quoi Sert Runink"
+description: "Sept sujets où les faits sont déjà dans vos systèmes et où personne n'a les heures pour les rassembler. Chacun se termine par une personne qui approuve une action rédigée, pas par un tableau de bord de plus."
 layout: "section"
 ---
 
-## Le Passage : De l'Automatisation à l'Autonomie
+## Le Même Problème, Sous Sept Formes
 
-La plupart des « automatisations » en logistique ne sont en réalité que des scripts. *« Si le fichier A arrive, déplacez-le dans le dossier B. »*
+Tous les sujets ci-dessous ont la même forme. Les faits dont vous avez besoin sont déjà enregistrés quelque part dans votre entreprise. Ils sont dans quatre systèmes, sous quatre formats, et les rassembler prend une matinée que personne n'a.
 
-C'est fragile. Si le format du fichier A change, le robot plante. Si le dossier est plein, le robot s'arrête. C'est de l'**automatisation robotisée des processus (RPA)**. C'est utile, mais ce n'est pas intelligent.
+Alors la réclamation expire. Le conteneur est ouvert trop chaud. La commande part par avion. Non pas parce que quelqu'un a mal jugé, mais parce que personne n'a eu le temps d'arriver au point où l'on peut juger.
 
-Les **systèmes de décision autonomes** représentent un changement de paradigme. Les modules spécialisés ne sont pas définis par ce qu'ils *font* (un script), mais par ce qu'ils *accomplissent* (un résultat). Vous ne dites pas à un module *comment* déposer une réclamation ; vous lui dites : « Récupérez chaque dollar éligible de cette expédition. »
+## Ce Que Fait Runink
 
-## L'Architecture : Voir, Penser, Agir
+Les contrôles tournent la nuit sur vos propres enregistrements. Le matin, vous recevez une liste courte et classée de ce qui s'est passé, avec les pièces jointes.
 
-Les moteurs de décision Runink agissent comme des opérateurs digitaux car ils suivent le même processus cognitif que les humains :
+Chaque point est une **action proposée**, pas une alerte. La réclamation arrive avec le reçu, le relevé, le tarif et le délai, et une lettre déjà rédigée. La dérive de température arrive avec le conteneur, le client et un déroutement déjà rédigé.
 
-### 1. Perception (Voir)
-Les moteurs ingèrent des données non structurées du monde réel désordonné.
-*   **Lecture :** Ils effectuent l'OCR des connaissements (BOL), analysent les factures PDF et extraient les données des fils de discussion par e-mail.
-*   **Vision :** Ils analysent les photos de cargaisons endommagées pour classifier « écrasé » par rapport à « mouillé ».
-*   **Détection :** Ils surveillent les portails des transporteurs et les flux météo pour détecter les perturbations.
+Ensuite une personne nommée approuve, corrige ou refuse, et cette signature reste au dossier. Rien ne quitte votre entreprise avant que quelqu'un l'ait approuvé.
 
-### 2. Raisonnement (Penser)
-Les moteurs utilisent des modèles analytiques avancés pour comprendre le contexte et prendre des décisions.
-*   **Connaissance :** Ils se réfèrent à l'amendement Carmack, aux tarifs des transporteurs et à vos règles métier spécifiques.
-*   **Logique :** *« Le transporteur a rejeté cette réclamation, mais la photo prouve clairement le contraire. Je devrais contester cela. »*
-*   **Planification :** *« Pour réacheminer cette commande, je dois d'abord vérifier le stock dans le CD2, puis vérifier les tarifs d'expédition, puis mettre à jour l'OMS. »*
+Approuver termine le travail au lieu de le commencer. Le message, le délai et la mise à jour de votre système de gestion découlent de l'approbation. Plus tard, quand on demande pourquoi une réclamation a été déposée, la réponse vient du dossier.
 
-### 3. Action (Agir)
-Les moteurs ont des « mains ». Ils exécutent des tâches dans vos systèmes.
-*   **Outils :** Ils peuvent se connecter aux portails Web, envoyer des e-mails, interroger des bases de données SQL et déclencher des API.
-*   **Résultat :** Ils ne se contentent pas de vous proposer une « action suggérée » — ils font le travail (avec votre autorisation).
+## Deux Choses À Savoir D'Emblée
 
-## Rencontrez vos Moteurs Opérationnels Spécialisés
+**Vos données restent sur vos machines.** Les fichiers de commande, les papiers de douane, les relevés des capteurs et le raisonnement à leur sujet tournent sur du matériel que vous contrôlez. Rien ne part chez un fournisseur de modèles extérieur. Cela raccourcit en général l'examen de sécurité qu'un client mène avant de vous confier ses données de commande.
 
-Nous ne vendons pas de « plateforme ». Nous déployons des modules spécialisés qui s'intègrent à votre équipe.
+**Vous décidez de la part d'automatisme.** Ce qui est courant et de faible valeur peut se traiter sans vous. Tout ce qui coûte vraiment de l'argent, ou qui écrit à un client, attend une personne. Chaque action porte son raisonnement, vous pouvez donc lire pourquoi elle est proposée avant de l'accepter.
+
+## Par Où Commencer
 
 {{< card-grid cols="3" >}}
 
 {{< card 
-    title="Le Module de Réclamations"
+    title="Réclamations fret et frais de port"
     icon="currency-dollar"
-    link="/fr/use-cases/claims-recovery"
-    description="Lit les connaissements (BOL), identifie les dommages et conteste les rejets des transporteurs en pilote automatique. Récupérez 40 % de dépenses de transport supplémentaires."
+    link="/use-cases/claims-recovery"
+    description="Les réclamations expirent parce qu'en monter une prend une matinée. Le reçu, le poids, le tarif et le délai arrivent déjà rassemblés."
 >}}
 
 {{< card 
-    title="Le Module d'Exécution"
-    icon="box"
-    link="/fr/use-cases/fulfillment-optimization"
-    description="Orchestre les stocks et le routage en fonction des contraintes en temps réel (météo, statut des quais, marge). Le stock qui pense."
+    title="Chaîne du froid et sécurité du parc"
+    icon="shield-check"
+    link="/use-cases/cold-chain-safety"
+    description="Le relevé qui condamne un chargement est enregistré des heures avant que quiconque le regarde. Tout le problème est là."
 >}}
 
 {{< card 
-    title="Le Module de Finance"
+    title="Couverture de stock et plan d'approvisionnement"
+    icon="cube-transparent"
+    link="/use-cases/fulfillment-optimization"
+    description="Une alerte de rupture qui arrive après la fonte du stock de sécurité, c'est une facture d'avion avec quelques jours de préavis."
+>}}
+
+{{< card 
+    title="Données personnelles des clients et bilan des émissions"
     icon="scale"
-    link="/fr/use-cases/finance"
-    description="Audite chaque facture par rapport à vos contrats. Exécute des retenues sur paiement sur les écarts valides et réconcilie les grands livres instantanément."
+    link="/use-cases/compliance"
+    description="Des données personnelles atteignent des écrans qui ne devraient pas les montrer, et le bilan des émissions prend un trimestre."
 >}}
 
 {{< card 
-    title="Centre de Commandement Drop Shipping"
-    icon="globe-alt"
-    link="/fr/use-cases/drop-shipping"
-    description="Synchronise les stocks de tous les fournisseurs en temps réel. Oriente les commandes vers le meilleur fournisseur pour éviter les ruptures."
+    title="Retours et ce qu'ils valent encore"
+    icon="arrow-path"
+    link="/use-cases/responsive-reverse-logistics"
+    description="Un retour posé sur un quai, c'est de la trésorerie que personne n'a comptée. Ce qu'il vaut dépend de la vitesse à laquelle on le juge."
 >}}
 
 {{< card 
-    title="Optimiseur de Flotte"
-    icon="truck"
-    link="/fr/use-cases/route-optimization"
-    description="Réorganise dynamiquement les itinéraires en fonction du trafic et des opportunités de fret de retour. Arrêtez de transporter de l'air."
+    title="Répartition mains libres pour les conducteurs"
+    icon="map"
+    link="/use-cases/voice-dispatch"
+    description="Un conducteur qui doit s'arrêter pour lire un écran, soit il s'arrête, soit il ne le lit pas. Ni l'un ni l'autre n'était le but."
+>}}
+
+{{< card 
+    title="Tester un changement avant de s'y engager"
+    icon="light-bulb"
+    link="/use-cases/hypothesis-lab"
+    description="Chiffrez ce que coûte un déroutement avant de dépenser, sur vos propres chiffres plutôt que sur ceux d'un fournisseur."
 >}}
 
 {{< /card-grid >}}
 
-## La « Zone de Confiance » : Humain dans la Boucle
+## Voir Si Cela Vous Convient
 
-Nous savons que les « systèmes autonomes » peuvent sembler complexes pour des opérations à enjeux élevés. C'est pourquoi Runink utilise l'**Autonomie Augmentée**.
-
-*   **Mode Copilote :** Le module traite les tâches à faible risque (par exemple, les réclamations de moins de 100 $) de manière autonome.
-*   **Mode Superviseur :** Pour les décisions importantes, le module agit comme un analyste junior. Il rassemble les données, prépare le plan et demande votre approbation.
-*   **Chaîne de Pensée :** Chaque action est accompagnée d'une explication : *« J'ai fait X en raison de Y. »* Vous pouvez auditer la logique du système à tout moment.
+Apportez une ligne, un transporteur, ou un mois de retours. Une courte conversation suffit en général à dire si les pertes que vous portez ont la forme de celles décrites ici.
