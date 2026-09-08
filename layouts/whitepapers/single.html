@@ -86,9 +86,29 @@
 
     <article class="wp-sheet" id="document">
       <div class="wp-doc">
+        {{/* Wide tables get their own horizontal scroll container so the page
+             body never scrolls sideways.
+
+             The closing pattern is `</tbody></table>`, NOT a bare `</table>`,
+             and the difference is not cosmetic. Chroma renders a highlighted
+             code block WITH LINE NUMBERS as a table of its own — and that
+             table has no <tbody>. A bare `</table>` therefore matched four
+             times on a page that opened only two wrappers, and the two
+             surplus `</div>`s closed .wp-doc itself: from the first
+             line-numbered code block onward, the rest of the document spilled
+             out of .wp-doc as a direct child of .wp-sheet and lost every
+             typographic rule the section has — measure, paragraph spacing,
+             heading scale, the lot. It cost the Atlas paper 168 of its 345
+             elements, and it was silent, because unstyled HTML still renders.
+
+             `<table>` on the opening side is already safe for the same
+             reason in reverse: Chroma's is `<table class="lntable">`, so the
+             bare-tag pattern cannot match it. Both sides now key on markup
+             only Goldmark's markdown tables produce, which keeps the count
+             symmetric. */}}
         {{ .Content
             | replaceRE `<table>` `<div class="wp-scroll"><table>`
-            | replaceRE `</table>` `</table></div>`
+            | replaceRE `</tbody>\s*</table>` `</tbody></table></div>`
             | safeHTML }}
       </div>
     </article>

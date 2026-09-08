@@ -74,7 +74,15 @@
   /* ink */
   --ink: #1c1917;
   --ink-2: #44403c;
-  --ink-3: #78716c;        /* DESIGN.md text.stone_500                      */
+  /* The quiet ink: h4 labels, table headings, ordered-list markers. It was
+     DESIGN.md text.stone_500 (#78716c), which measures 4.26:1 on the paper —
+     under AA, and all three of its uses are 10-11px type, where AA is 4.5.
+     This is the next rung DOWN the same stone ramp DESIGN.md samples
+     (950/900/800/700 … 500/400/300); the 600 step it skips is #57534e, which
+     measures 6.77:1 on the paper and 6.13:1 on the sunk paper. Derived from
+     the house scale, not invented, and it keeps a clear tonal step between
+     --ink-2 (9.11:1) and --ink (15.51:1). */
+  --ink-3: #57534e;        /* DESIGN.md stone ramp, 600 step                */
   --on-deck: #d6d3d1;      /* DESIGN.md text.stone_300                      */
   --on-deck-2: #a8a29e;    /* DESIGN.md text.stone_400                      */
   --on-deck-hi: #F5F1E8;
@@ -316,11 +324,22 @@
 .wp-mark[data-mark='self-declared'],
 .wp-mark[data-mark='not-measured'] { color: #8a6636; }
 
-/* on the dark console the same marks need lifting */
+/* On the dark console the same marks need lifting. The paper values are ink
+   colours: --runs (#5F6F3E) measures 2.77:1 and the framing tone (#8a6636)
+   2.91:1 against the card surface #292524, which fails AA for the 10px mark
+   text AND fails the 3:1 floor for the swatch beside it — and the swatch is
+   the mark's only non-text channel. The lifted pair measures 10.07:1 and
+   6.81:1 on the same surface (9.31:1 / 6.30:1 on the card's hover surface).
+
+   .wp-card is on this list because the index page shows the same marks on the
+   same dark surface as the hero and the rail. It was the one dark surface the
+   lift did not reach. */
 .wp-hero .wp-mark[data-mark='runs'],
 .wp-hero .wp-mark[data-mark='first-party'],
 .wp-rail .wp-mark[data-mark='runs'],
-.wp-rail .wp-mark[data-mark='first-party'] { color: var(--runs-lift); }
+.wp-rail .wp-mark[data-mark='first-party'],
+.wp-card .wp-mark[data-mark='runs'],
+.wp-card .wp-mark[data-mark='first-party'] { color: var(--runs-lift); }
 
 .wp-hero .wp-mark[data-mark='drawn'],
 .wp-hero .wp-mark[data-mark='hypothetical'],
@@ -329,11 +348,28 @@
 .wp-rail .wp-mark[data-mark='drawn'],
 .wp-rail .wp-mark[data-mark='hypothetical'],
 .wp-rail .wp-mark[data-mark='self-declared'],
-.wp-rail .wp-mark[data-mark='not-measured'] { color: var(--drawn); }
+.wp-rail .wp-mark[data-mark='not-measured'],
+.wp-card .wp-mark[data-mark='drawn'],
+.wp-card .wp-mark[data-mark='hypothetical'],
+.wp-card .wp-mark[data-mark='self-declared'],
+.wp-card .wp-mark[data-mark='not-measured'] { color: var(--drawn); }
 
-/* the mark as it appears above a chapter heading, on paper */
+/* The mark as it appears above a chapter heading, on paper.
+
+   flex, not block. .wp-mark is inline-flex and its swatch is a ::before sized
+   0.5em square with `flex: none` — which only works while the mark is a flex
+   CONTAINER. `display: block` demoted the swatch to an inline box, and width
+   and height do not apply to inline non-replaced boxes, so the square
+   collapsed to a thin vertical bar the height of the line. flex keeps the
+   element block-level, so the h2 still starts on its own line, while the
+   swatch stays a flex item and keeps its geometry. This is the same display
+   the legend already sets on the same element for the same reason.
+
+   It matters more than a stray pixel: in print the swatch's SHAPE is what
+   carries the runs/drawn distinction once colour is gone, and a bar is
+   neither a filled square nor a hollow one. */
 .wp-chapter-mark {
-  display: block;
+  display: flex;
   margin-bottom: 0.875rem;
 }
 
@@ -839,7 +875,12 @@
   color: var(--on-deck-hi);
   margin: 0 0 0.75rem;
 }
-.wp-card-sub {
+/* Qualified with .wp-card because `.wp-card p` below is the same specificity
+   and comes later, so the unqualified selector lost both its colour and its
+   size to it: the card's identifying line was rendering as ordinary body grey
+   at body size, which is the one line a reader scans to tell four papers
+   apart. This is the same sage the hero gives the same line. */
+.wp-card .wp-card-sub {
   font-family: var(--display);
   font-weight: 600;
   color: var(--runs-lift);
@@ -860,11 +901,20 @@
   padding-top: 0.2rem;
 }
 .wp-card-meta .wp-util { color: var(--on-deck-2); }
-.wp-card-read {
+/* Qualified for the same reason: `.wp-card-meta .wp-util` above outranks a
+   single class, so the call to action was inheriting meta grey and reading as
+   another line of metadata rather than as the thing to click.
+
+   It is NOT set to --link-deck (#ea580c). That is the console orange, and it
+   measures 4.26:1 against the card and 3.94:1 against the card's hover
+   surface — a fail at 11px on both. #f97a3d is that orange lifted until it
+   clears AA on the darker of the two (5.26:1 hover, 5.69:1 resting); the file
+   was already using it for the hover state. */
+.wp-card-meta .wp-card-read {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--link-deck);
+  color: #f97a3d;
   margin-top: 0.4rem;
 }
 .wp-card:hover .wp-card-read { color: #f97a3d; }
@@ -906,4 +956,466 @@
   .wp-rail-panel { overscroll-behavior: contain; }
   .wp-reg a { padding-top: 0.7rem; padding-bottom: 0.7rem; }
   .wp-rail-toggle { min-height: 44px; }
+}
+
+/* =========================================================================
+   PRINT — the console goes, the sheet becomes the page
+   =========================================================================
+
+   These are 6,000-13,000 word documents. The reader who most wants them is
+   also the reader most likely to print them or save them to PDF, so print is
+   a first-class target, not a fallback.
+
+   Two rules govern everything below.
+
+   1. NOTHING MAY DEPEND ON A BACKGROUND BEING PAINTED. "Background graphics"
+      is off by default in every browser's print dialog, so any meaning
+      carried by a background-color or a box-shadow is meaning that silently
+      disappears on most real printers. Everything that must survive is
+      carried by borders, type and glyphs instead.
+
+   2. COLOUR IS NEVER THE ONLY CHANNEL. Most printing is monochrome. The
+      standing marks carry the documents' own epistemic classification — the
+      difference between "this runs" and "this is drawn" is the whole point of
+      the section — so on paper that difference is re-coded as a shape:
+      a FILLED square for what was built and exercised, a HOLLOW square for
+      what the paper is framing as description. The legend prints with the
+      same two shapes on the first page, so the key travels with the document.
+
+   Note that the print layout is narrower than 62rem, so the screen layout's
+   two-column grids (hero, body) never apply here and the page stacks
+   naturally: cover, contents, document. The `max-width: 61.99rem` block above
+   DOES apply, though, and several of its rules (a clipped 60vh register, a
+   hidden register heading) are wrong on paper. They are undone explicitly.
+   -------------------------------------------------------------------------- */
+
+@media print {
+
+  /* -- page box ----------------------------------------------------------- */
+
+  @page {
+    /* Paper size is the reader's choice; only the margin is ours. The side
+       margin is generous on purpose: it holds the measure near 80 characters
+       at the body size set below, which is the whole reason the screen design
+       has a --measure in the first place. */
+    margin: 16mm 20mm 18mm;
+  }
+
+  /* The document element carries style="color-scheme: dark" inline. Inline
+     style loses to !important, and it has to: left alone, the printed canvas
+     comes out dark. */
+  html {
+    color-scheme: light !important;
+    background: #fff !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* -- ink on white ------------------------------------------------------- */
+
+  /* Everything in this section reads its colour from a custom property, so
+     re-pointing the tokens converts the console AND the sheet to ink on white
+     in one move, with no rule-by-rule chase and nothing left behind. */
+  .wp {
+    --paper: #fff;
+    --paper-sunk: #fff;
+    --rule: #9a9a9a;
+    --deck: #fff;
+    --deck-2: #fff;
+    --deck-3: #9a9a9a;
+
+    --ink: #000;
+    --ink-2: #1a1a1a;
+    --ink-3: #333;
+    --on-deck: #000;
+    --on-deck-2: #333;
+    --on-deck-hi: #000;
+
+    --runs: #000;
+    --runs-lift: #000;
+    --drawn: #000;
+    --link: #000;
+    --link-deck: #000;
+
+    background: #fff;
+    color: #000;
+  }
+
+  /* -- chrome that must not reach the paper -------------------------------- */
+
+  /* The site header is position:fixed. Left alone it either reprints on every
+     sheet or sits on top of the first paragraph. It is the one thing outside
+     .wp this file touches, and only here. */
+  body > .fixed,
+  #consent-banner,
+  .wp-skip,
+  .wp-rail-toggle,
+  .wp-rail-toggle-icon,
+  noscript {
+    display: none !important;
+  }
+
+  /* the offset that cleared the fixed header */
+  .pt-20 { padding-top: 0 !important; }
+
+  /* -- stack: cover, contents, document ------------------------------------ */
+
+  .wp-hero,
+  .wp-body,
+  .wp-foot,
+  .wp-index-hero,
+  .wp-list,
+  .wp-note {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .wp-hero { padding-top: 0; padding-bottom: 1.5rem; }
+  .wp-body { display: block; padding-bottom: 0; }
+
+  .wp-hero h1 {
+    font-size: 25pt;
+    line-height: 1.04;
+    margin-bottom: 0.5rem;
+  }
+  .wp-hero-sub { font-size: 13pt; margin-bottom: 1rem; max-width: none; }
+  .wp-hero-deck { font-size: 10pt; line-height: 1.5; max-width: none; margin-bottom: 1.25rem; }
+  .wp-hero-eyebrow { margin-bottom: 1rem; }
+
+  /* the legend is the key to the marks — it must land on the first page and
+     must not be split across a fold */
+  .wp-legend {
+    break-inside: avoid;
+    border-top: 1px solid #9a9a9a;
+    padding-top: 1rem;
+  }
+  .wp-legend-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 1.75rem;
+  }
+  .wp-legend-list li {
+    font-size: 8.5pt;
+    line-height: 1.4;
+    break-inside: avoid;
+  }
+
+  /* -- the register becomes a static contents list ------------------------- */
+
+  .wp-rail {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+    font-size: 9pt;
+    /* the document starts on a fresh sheet */
+    break-after: page;
+  }
+
+  /* The disclosure script sets panel.hidden = true whenever the layout is
+     narrower than 62rem, and print layout always is. Without this the printed
+     document has no contents page at all. */
+  .wp-rail-panel,
+  .wp-rail-panel[hidden] {
+    display: block !important;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 0;
+    max-height: none;
+    overflow: visible;
+  }
+
+  /* undone from the narrow-screen block, which print inherits */
+  .wp-rail-head {
+    display: block;
+    font-size: 8.5pt;
+    border-bottom: 1px solid #9a9a9a;
+  }
+
+  .wp-reg { break-inside: auto; }
+  .wp-reg li { break-inside: avoid; }
+  /* A chapter's mark sits on a second row under its own title, so the
+     vertical rhythm has to say which entry it belongs to: tight above it,
+     looser below. Even padding makes a mark read as a heading for the entry
+     that follows it, which is the wrong chapter. */
+  .wp-reg a {
+    padding: 0.06rem 0 0.34rem;
+    border-left: 0;
+    color: #000;
+    grid-template-columns: 3.2rem 1fr;
+  }
+  .wp-reg-mark { margin-top: 0.06rem; }
+  .wp-reg-page { color: #000; font-size: 8pt; }
+  .wp-reg-title { font-size: 9pt; }
+  /* whichever chapter the reader happened to be looking at when they hit
+     print is not a fact about the paper */
+  .wp-reg a[aria-current='true'] .wp-reg-title { font-weight: 400; }
+
+  /* -- the sheet is now simply the page ------------------------------------ */
+
+  .wp-sheet {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .wp-doc {
+    max-width: none;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  /* -- breaking ------------------------------------------------------------ */
+
+  .wp-doc p,
+  .wp-doc li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* a heading may never be the last thing on a sheet */
+  .wp-doc h2,
+  .wp-doc h3,
+  .wp-doc h4,
+  .wp-doc .wp-chapter,
+  .wp-rail-head {
+    break-after: avoid;
+    break-inside: avoid;
+  }
+
+  .wp-doc h2 {
+    font-size: 16pt;
+    margin: 1.6em 0 0.5em;
+    padding-top: 0.5rem;
+  }
+  .wp-doc .wp-chapter {
+    margin: 1.6em 0 0.5em;
+    padding-top: 0.5rem;
+  }
+  .wp-doc .wp-chapter h2 { font-size: 16pt; }
+  .wp-doc h3 { font-size: 11.5pt; margin: 1.4em 0 0.4em; }
+  .wp-doc h4 { font-size: 8pt; margin: 1.2em 0 0.35em; }
+
+  /* The subsection tick and the list bullets are painted with background-color
+     on screen. Redrawn here as borders for the reason given at the top of this
+     block: a background is the first thing a print dialog drops, and a list
+     that silently loses its bullets stops looking like a list. */
+  .wp-doc h3::before {
+    background: transparent;
+    height: 0;
+    border-top: 2px solid #000;
+  }
+  .wp-doc ul > li::before {
+    box-sizing: border-box;
+    background: transparent;
+    border: 0.1875rem solid #000;
+  }
+
+  /* short self-contained blocks should not be torn in half */
+  .wp-doc blockquote,
+  .wp-doc pre,
+  .wp-doc tr,
+  .wp-card,
+  .wp-foot-inner {
+    break-inside: avoid;
+  }
+
+  /* -- wide content must fit the sheet, not scroll off it ------------------ */
+
+  /* On screen a table scrolls inside .wp-scroll. Paper has no scrollbar, so
+     the min-width that forces that scroll has to go or the right-hand columns
+     are simply cut off the page. */
+  .wp-scroll {
+    overflow: visible;
+    margin: 1.2em 0;
+  }
+  .wp-doc table {
+    min-width: 0;
+    width: 100%;
+    table-layout: auto;
+    font-size: 8.5pt;
+    break-inside: auto;
+  }
+  /* a table that runs over a fold reprints its own headings */
+  .wp-doc thead { display: table-header-group; }
+  .wp-doc thead th {
+    font-size: 7.5pt;
+    color: #000;
+    border-bottom: 1.5pt solid #000;
+    padding: 0 0.5rem 0.4rem;
+  }
+  .wp-doc td,
+  .wp-doc tbody th {
+    padding: 0.4rem 0.5rem;
+    border-bottom: 0.5pt solid #9a9a9a;
+  }
+  /* zebra striping is a background: it does not print. The row rules above
+     carry the same job, so the stripe is dropped rather than left to vanish
+     unpredictably depending on the print dialog. */
+  .wp-doc tbody tr:nth-child(odd) { background: transparent; }
+
+  /* Code has no horizontal room to give, so it wraps instead of being
+     guillotined at the margin. */
+  .wp-doc pre {
+    background: transparent;
+    color: #000;
+    border: 0.5pt solid #9a9a9a;
+    border-radius: 0;
+    padding: 0.6rem 0.75rem;
+    font-size: 8pt;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-x: visible;
+  }
+  .wp-doc code {
+    background: transparent;
+    padding: 0;
+    overflow-wrap: break-word;
+  }
+  .wp-doc blockquote {
+    background: transparent;
+    border-left: 2pt solid #000;
+    border-radius: 0;
+    padding: 0.2rem 0 0.2rem 1rem;
+    margin: 1.2em 0;
+  }
+  .wp-doc blockquote code { border-color: #9a9a9a; }
+
+  /* -- links reachable off the screen -------------------------------------- */
+
+  .wp-doc a,
+  .wp-foot a,
+  .wp-note-inner a {
+    color: #000;
+    text-decoration: underline;
+    border-bottom: 0;
+  }
+
+  /* Body prose is left alone: an inline URL after every link would wreck the
+     measure, and these documents carry almost no inline links anyway. The
+     URL is printed only where the link text is NOT already the address —
+     off-site references, and the navigational links in the footer and on the
+     index, which otherwise print as an unfollowable word. */
+  .wp-doc a[href^="http"]:not([href*="runink.org"])::after,
+  .wp-foot a[href^="http"]:not([href*="runink.org"])::after,
+  .wp-note-inner a[href^="http"]:not([href*="runink.org"])::after {
+    content: ' <' attr(href) '>';
+    font-family: var(--util);
+    font-size: 0.78em;
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+  /* Block, not inline-flex: as a flex item the URL was squeezed into whatever
+     the link text left of the line and broke mid-word ("…runink-cor / e/").
+     As block-level inline content it gets the full measure and wraps once, at
+     the end. */
+  .wp-foot .wp-next { display: block; }
+
+  .wp-foot .wp-next::after,
+  .wp-card::after {
+    content: ' — runink.org' attr(href);
+    font-family: var(--util);
+    font-size: 8pt;
+    letter-spacing: 0;
+    text-transform: none;
+    /* anywhere, not break-all: break only when a line genuinely cannot hold
+       the URL, rather than at whatever character the line happens to end on */
+    overflow-wrap: anywhere;
+  }
+
+  /* -- the standing marks, without colour ---------------------------------- */
+
+  /* All six marks print as black text. The classification survives in the
+     swatch: filled for a claim the paper stands behind as exercised, hollow
+     for one it is explicitly framing as description. Both shapes are drawn
+     with a BORDER, never a background, so neither can be dropped by a print
+     dialog that is not painting backgrounds. */
+  /* The [data-mark] attribute is load-bearing here, not decoration. The
+     framing family's paper colour is a hardcoded #8a6636 rather than a token,
+     so re-pointing the custom properties above does not reach it; and a bare
+     `.wp-mark` loses to `.wp-mark[data-mark='…']` on specificity. Matching the
+     attribute puts this rule level with every colour rule in the section, and
+     it is later in the file, so it wins all of them. */
+  .wp .wp-mark,
+  .wp .wp-mark[data-mark] {
+    color: #000;
+  }
+
+  .wp-mark::before {
+    box-sizing: border-box;
+    width: 0.62em;
+    height: 0.62em;
+    background: transparent;
+    /* half the box from each side: the border meets in the middle and the
+       square reads solid */
+    border: 0.31em solid currentColor;
+  }
+
+  /* drawn / hypothetical / self-declared / not measured — the framing family */
+  .wp-mark[data-mark='drawn']::before,
+  .wp-mark[data-mark='hypothetical']::before,
+  .wp-mark[data-mark='self-declared']::before,
+  .wp-mark[data-mark='not-measured']::before {
+    border-width: 0.75pt;
+  }
+
+  .wp-chapter-mark { margin-bottom: 0.5rem; }
+
+  /* -- index --------------------------------------------------------------- */
+
+  .wp-index-hero { padding-top: 0; padding-bottom: 1.5rem; }
+  /* The screen layout sets these side by side in a two-column grid that print
+     is too narrow to trigger, so on paper they stack — and h1's margin:0 left
+     the deck touching the headline. */
+  .wp-index-hero h1 { font-size: 25pt; margin-bottom: 0.75rem; }
+
+  /* On screen a ch-based max-width IS the measure, because the column is
+     wider than the text should be. On paper the page box already holds the
+     measure — that is what the 20mm side margin above is for — so the same
+     values just strand half the sheet as white space and read as a broken
+     layout rather than a considered one. Both selectors carry a descendant
+     and would otherwise outrank the print resets further up. */
+  .wp-index-hero .wp-hero-deck,
+  .wp-card p {
+    max-width: none;
+  }
+
+  .wp-list { gap: 0; padding-bottom: 1rem; }
+  .wp-card {
+    background: transparent;
+    border: 0;
+    border-top: 0.5pt solid #9a9a9a;
+    border-radius: 0;
+    padding: 1rem 0;
+    color: #000;
+  }
+  .wp-card h2 { font-size: 15pt; }
+  .wp-card .wp-card-sub { font-size: 10.5pt; }
+  .wp-card p { font-size: 9.5pt; }
+  /* "Read →" is a screen affordance; on paper the URL printed after the card
+     is the thing to follow. Qualified to match .wp-card-meta .wp-card-read,
+     which sets display: inline-flex and would otherwise win. */
+  .wp-card-meta .wp-card-read { display: none; }
+  .wp-note-inner { border-left: 2pt solid #000; max-width: none; }
+
+  /* -- foot ---------------------------------------------------------------- */
+
+  .wp-foot {
+    padding-bottom: 0;
+    break-inside: avoid;
+  }
+  .wp-foot-inner {
+    border-top: 0.5pt solid #9a9a9a;
+    padding-top: 1rem;
+    font-size: 9pt;
+  }
+  .wp-foot p { color: #000; }
 }
