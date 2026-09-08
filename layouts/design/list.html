@@ -1,0 +1,639 @@
+{{ define "main" }}
+{{/* ---------------------------------------------------------------------
+     The identity specimen. Draft. noindex, not in navigation.
+     It exists so the next pass and the owner can see the whole system at
+     once, and so that any value used on a page can be pointed at here.
+     --------------------------------------------------------------------- */}}
+
+{{/* The mark is one 30KB path. Inlining it at each of the fifteen sizes this
+     page shows would put 450KB of duplicated geometry in the document, so it
+     is emitted once as a <symbol> sprite and referenced with <use>. The two
+     symbols differ only in viewBox: the small one is the optical-size variant,
+     cropped to the head so the features survive below 24px. */}}
+{{ $full := (resources.Get "images/brand/runink-mark.svg").Content }}
+{{ $inner := replaceRE `(?s)^.*?<title[^>]*>.*?</title>` "" $full }}
+{{ $inner = replaceRE `(?s)</svg>\s*$` "" $inner }}
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="rk-mark" viewBox="0 0 2000 2397">{{ $inner | safeHTML }}</symbol>
+  <symbol id="rk-mark-sm" viewBox="290 0 1710 1360">{{ $inner | safeHTML }}</symbol>
+</svg>
+
+{{ $markSvg := `<svg viewBox="0 0 2000 2397" fill="currentColor" role="img" aria-label="Runink"><use href="#rk-mark"/></svg>` }}
+{{ $markSm := `<svg viewBox="290 0 1710 1360" fill="currentColor" role="img" aria-label="Runink"><use href="#rk-mark-sm"/></svg>` }}
+
+<header class="sp-mast">
+  <div class="sp-wrap">
+    <div class="sp-lockup">
+      {{/* The small variant, because the lockup mark is 36px and the rule this
+           system states is that the full mark is not used below about 24-32px.
+           The specimen has to obey the specimen. */}}
+      <span class="sp-lockup__mark" aria-hidden="true">{{ $markSm | safeHTML }}</span>
+      <span class="sp-lockup__word">Runink</span>
+    </div>
+
+    <p class="rk-mark" data-standing="drawn" style="margin:0 0 var(--rk-s-4)">Draft — visual identity</p>
+
+    <h1 class="sp-title">Where a claim stands</h1>
+
+    <p class="sp-deck">
+      Runink publishes where every claim stands instead of publishing a number.
+      That habit is the identity. One shape carries it, and the shape works in
+      greyscale, at eleven pixels, and on a photocopy.
+    </p>
+
+    <div class="sp-thesis">
+      <div class="sp-thesis__half">
+        <p class="rk-mark sp-thesis__mark" data-standing="runs">Runs</p>
+        <p class="sp-thesis__says">
+          <b>Solid: a record.</b>
+          Something that exists and was observed. Also <code>first-party</code>.
+        </p>
+      </div>
+      <div class="sp-thesis__half">
+        <p class="rk-mark sp-thesis__mark" data-standing="hypothetical">Hypothetical</p>
+        <p class="sp-thesis__says">
+          <b>Hollow: a description.</b>
+          Something stated rather than measured. Also <code>drawn</code>,
+          <code>self-declared</code>, <code>not measured</code>.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="sp-wrap">
+
+  <!-- ================= THE RULE ABOUT COLOUR ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">The rule about colour</h2></div>
+    <h2 class="sp-h2">Colour has two jobs</h2>
+    <p class="sp-note">
+      <b>Signal</b> — one orange, and it means a person can act here. Links,
+      focus, the primary action, the approval seam. It is never used for
+      emphasis or decoration, so an orange thing on a Runink page is always
+      something you can do.
+    </p>
+    <p class="sp-note">
+      <b>Category</b> — which industry or product this is. A category colour is
+      never legible on its own; the industry is always named in text beside it,
+      which is why two of the five can sit close in hue without costing anything.
+    </p>
+    <p class="sp-note">
+      <b>Nothing else.</b> Standing is fill. Emphasis is weight. Hierarchy is
+      scale and rule. In particular, standing is deliberately not colour:
+      hue would make <code>runs</code> look good and <code>hypothetical</code>
+      look bad, and they are not better and worse — they are different kinds of
+      statement.
+    </p>
+  </section>
+
+  <!-- ================= PALETTE ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">Palette</h2></div>
+    <h2 class="sp-h2">One ramp, read from both ends</h2>
+    <p class="sp-note">
+      The sheet and the console are the same neutral ramp. <code>--rk-n-050</code>
+      is the sheet's canvas and the console's text; <code>--rk-n-900</code> is
+      the sheet's text and the console's canvas. A component written against the
+      semantic names works on both grounds without being written twice.
+    </p>
+
+    <h3 class="sp-h3">Neutral ramp</h3>
+    <ul class="sp-swatches">
+      {{ range slice
+        (dict "n" "--rk-n-000" "h" "#FFFFFF" "r" "sheet: a raised surface")
+        (dict "n" "--rk-n-050" "h" "#F2F5F7" "r" "sheet: canvas / console: text")
+        (dict "n" "--rk-n-100" "h" "#E6ECEF" "r" "sheet: recessed surface")
+        (dict "n" "--rk-n-200" "h" "#D2DADF" "r" "sheet: hairline")
+        (dict "n" "--rk-n-300" "h" "#B6C2CA" "r" "console: body text")
+        (dict "n" "--rk-n-400" "h" "#8C9BA6" "r" "console: labels, captions")
+        (dict "n" "--rk-n-450" "h" "#76838B" "r" "sheet: boundary rule")
+        (dict "n" "--rk-n-500" "h" "#647680" "r" "console: boundary rule")
+        (dict "n" "--rk-n-600" "h" "#546570" "r" "sheet: labels, captions")
+        (dict "n" "--rk-n-700" "h" "#3A4A55" "r" "sheet: body text")
+        (dict "n" "--rk-n-750" "h" "#2C3B46" "r" "console: hairline")
+        (dict "n" "--rk-n-800" "h" "#18242D" "r" "console: raised surface")
+        (dict "n" "--rk-n-900" "h" "#101A22" "r" "sheet: text / console: canvas")
+        (dict "n" "--rk-n-950" "h" "#0A1015" "r" "console: recessed surface")
+      }}
+      <li class="sp-swatch">
+        <div class="sp-swatch__chip" style="background: {{ .h }}"></div>
+        <div class="sp-swatch__body">
+          <span class="sp-swatch__name">{{ .n }}</span>
+          <span class="sp-swatch__hex">{{ .h }}</span>
+          <span class="sp-swatch__role">{{ .r }}</span>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+
+    <h3 class="sp-h3">Signal</h3>
+    <p class="sp-note">
+      Runink's orange, held at two values that measure. The palette that this
+      one replaces published <code>#ca4708</code> as usable: it is 4.76:1 on
+      white, but only <b>4.22:1</b> on the whitepaper's own paper
+      (<code>#F5F1E8</code>) and on <code>primary.50</code>
+      (<code>#eef1fc</code>) — under AA on the two grounds it most often sat on.
+    </p>
+    <ul class="sp-swatches">
+      {{ range slice
+        (dict "n" "--rk-signal-ink" "h" "#A8400A" "r" "sheet ground. 6.17:1 on white, 5.64:1 on canvas, 5.18:1 on recessed.")
+        (dict "n" "--rk-signal-lift" "h" "#F2801F" "r" "console ground. 6.61:1 on canvas, 5.93:1 on raised, 7.18:1 on recessed.")
+      }}
+      <li class="sp-swatch">
+        <div class="sp-swatch__chip" style="background: {{ .h }}"></div>
+        <div class="sp-swatch__body">
+          <span class="sp-swatch__name">{{ .n }}</span>
+          <span class="sp-swatch__hex">{{ .h }}</span>
+          <span class="sp-swatch__role">{{ .r }}</span>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+
+    <h3 class="sp-h3">Category</h3>
+    <p class="sp-note">
+      Five industries, two bindings each. Every value measures AA or better on
+      all three grounds of its mode, so the raw accent is legible as text and
+      needs no darkening step. Four are the same hue family as the accent the
+      section already used, corrected to a usable value. Logistics is the one
+      that genuinely moves: it was <code>#ea580c</code> — the signal hue — which
+      made "this is a category" and "you can click this" the same colour on that
+      page. No category may enter the signal band.
+    </p>
+    <ul class="sp-swatches">
+      {{ range slice
+        (dict "n" "logistics" "a" "#0F6F73" "b" "#4FB3B3")
+        (dict "n" "insurance" "a" "#5847B8" "b" "#9B8CF0")
+        (dict "n" "banking"   "a" "#5A6B31" "b" "#A3B96A")
+        (dict "n" "telecom"   "a" "#1D5480" "b" "#5FA8DC")
+        (dict "n" "marketing" "a" "#A03A5E" "b" "#E4809C")
+      }}
+      <li class="sp-swatch">
+        <div class="sp-swatch__chip" style="background: linear-gradient(to right, {{ .a }} 0 50%, {{ .b }} 50% 100%)"></div>
+        <div class="sp-swatch__body">
+          <span class="sp-swatch__name">--rk-cat-{{ .n }}-ink / -lift</span>
+          <span class="sp-swatch__hex">{{ .a }} &nbsp;·&nbsp; {{ .b }}</span>
+          <span class="sp-swatch__role">sheet binding · console binding</span>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <!-- ================= CONTRAST ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">Contrast</h2></div>
+    <h2 class="sp-h2">Every pair the system sanctions</h2>
+    <p class="sp-note">
+      Measured, not estimated. A pair that is not in this table is not
+      sanctioned. Text pairs meet WCAG 2.1 AA (4.5:1); rules and boundaries meet
+      the 3:1 non-text minimum. The swatch in each row is the pair rendered, so
+      the number and the thing it describes cannot drift apart.
+    </p>
+
+    <div class="sp-tablewrap">
+      <table class="sp-table">
+        <thead>
+          <tr>
+            <th scope="col">Foreground</th>
+            <th scope="col">Ground</th>
+            <th scope="col" class="sp-num">Ratio</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Rendered</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{ range slice
+          (dict "f" "#101A22" "fn" "text"        "b" "#FFFFFF" "bn" "sheet"   "r" "17.60" "g" "AAA")
+          (dict "f" "#101A22" "fn" "text"        "b" "#F2F5F7" "bn" "ground"  "r" "16.08" "g" "AAA")
+          (dict "f" "#101A22" "fn" "text"        "b" "#E6ECEF" "bn" "sunk"    "r" "14.76" "g" "AAA")
+          (dict "f" "#3A4A55" "fn" "text-2"      "b" "#FFFFFF" "bn" "sheet"   "r" "9.17"  "g" "AAA")
+          (dict "f" "#3A4A55" "fn" "text-2"      "b" "#F2F5F7" "bn" "ground"  "r" "8.37"  "g" "AAA")
+          (dict "f" "#3A4A55" "fn" "text-2"      "b" "#E6ECEF" "bn" "sunk"    "r" "7.69"  "g" "AAA")
+          (dict "f" "#546570" "fn" "text-3"      "b" "#FFFFFF" "bn" "sheet"   "r" "6.05"  "g" "AA")
+          (dict "f" "#546570" "fn" "text-3"      "b" "#F2F5F7" "bn" "ground"  "r" "5.52"  "g" "AA")
+          (dict "f" "#546570" "fn" "text-3"      "b" "#E6ECEF" "bn" "sunk"    "r" "5.07"  "g" "AA")
+          (dict "f" "#A8400A" "fn" "signal"      "b" "#FFFFFF" "bn" "sheet"   "r" "6.17"  "g" "AA")
+          (dict "f" "#A8400A" "fn" "signal"      "b" "#F2F5F7" "bn" "ground"  "r" "5.64"  "g" "AA")
+          (dict "f" "#A8400A" "fn" "signal"      "b" "#E6ECEF" "bn" "sunk"    "r" "5.18"  "g" "AA")
+          (dict "f" "#76838B" "fn" "rule-strong" "b" "#FFFFFF" "bn" "sheet"   "r" "3.90"  "g" "AA non-text")
+          (dict "f" "#76838B" "fn" "rule-strong" "b" "#F2F5F7" "bn" "ground"  "r" "3.56"  "g" "AA non-text")
+          (dict "f" "#76838B" "fn" "rule-strong" "b" "#E6ECEF" "bn" "sunk"    "r" "3.27"  "g" "AA non-text")
+          (dict "f" "#0F6F73" "fn" "cat logistics" "b" "#FFFFFF" "bn" "sheet" "r" "5.93"  "g" "AA")
+          (dict "f" "#0F6F73" "fn" "cat logistics" "b" "#E6ECEF" "bn" "sunk"  "r" "4.97"  "g" "AA")
+          (dict "f" "#5847B8" "fn" "cat insurance" "b" "#FFFFFF" "bn" "sheet" "r" "6.98"  "g" "AA")
+          (dict "f" "#5847B8" "fn" "cat insurance" "b" "#E6ECEF" "bn" "sunk"  "r" "5.85"  "g" "AA")
+          (dict "f" "#5A6B31" "fn" "cat banking"   "b" "#FFFFFF" "bn" "sheet" "r" "5.86"  "g" "AA")
+          (dict "f" "#5A6B31" "fn" "cat banking"   "b" "#E6ECEF" "bn" "sunk"  "r" "4.92"  "g" "AA")
+          (dict "f" "#1D5480" "fn" "cat telecom"   "b" "#FFFFFF" "bn" "sheet" "r" "7.98"  "g" "AAA")
+          (dict "f" "#1D5480" "fn" "cat telecom"   "b" "#E6ECEF" "bn" "sunk"  "r" "6.69"  "g" "AA")
+          (dict "f" "#A03A5E" "fn" "cat marketing" "b" "#FFFFFF" "bn" "sheet" "r" "6.44"  "g" "AA")
+          (dict "f" "#A03A5E" "fn" "cat marketing" "b" "#E6ECEF" "bn" "sunk"  "r" "5.40"  "g" "AA")
+          (dict "f" "#F2F5F7" "fn" "text"        "b" "#101A22" "bn" "console ground" "r" "16.08" "g" "AAA")
+          (dict "f" "#F2F5F7" "fn" "text"        "b" "#18242D" "bn" "console sheet"  "r" "14.43" "g" "AAA")
+          (dict "f" "#B6C2CA" "fn" "text-2"      "b" "#101A22" "bn" "console ground" "r" "9.69"  "g" "AAA")
+          (dict "f" "#B6C2CA" "fn" "text-2"      "b" "#18242D" "bn" "console sheet"  "r" "8.70"  "g" "AAA")
+          (dict "f" "#8C9BA6" "fn" "text-3"      "b" "#101A22" "bn" "console ground" "r" "6.17"  "g" "AA")
+          (dict "f" "#8C9BA6" "fn" "text-3"      "b" "#18242D" "bn" "console sheet"  "r" "5.53"  "g" "AA")
+          (dict "f" "#F2801F" "fn" "signal"      "b" "#101A22" "bn" "console ground" "r" "6.61"  "g" "AA")
+          (dict "f" "#F2801F" "fn" "signal"      "b" "#18242D" "bn" "console sheet"  "r" "5.93"  "g" "AA")
+          (dict "f" "#647680" "fn" "rule-strong" "b" "#101A22" "bn" "console ground" "r" "3.73"  "g" "AA non-text")
+          (dict "f" "#647680" "fn" "rule-strong" "b" "#18242D" "bn" "console sheet"  "r" "3.34"  "g" "AA non-text")
+          (dict "f" "#4FB3B3" "fn" "cat logistics" "b" "#101A22" "bn" "console ground" "r" "7.07" "g" "AAA")
+          (dict "f" "#9B8CF0" "fn" "cat insurance" "b" "#101A22" "bn" "console ground" "r" "6.21" "g" "AA")
+          (dict "f" "#A3B96A" "fn" "cat banking"   "b" "#101A22" "bn" "console ground" "r" "8.14" "g" "AAA")
+          (dict "f" "#5FA8DC" "fn" "cat telecom"   "b" "#101A22" "bn" "console ground" "r" "6.81" "g" "AA")
+          (dict "f" "#E4809C" "fn" "cat marketing" "b" "#101A22" "bn" "console ground" "r" "6.59" "g" "AA")
+        }}
+          <tr>
+            <th scope="row" class="sp-mono">{{ .f }} <span class="sp-grade">{{ .fn }}</span></th>
+            <td class="sp-mono">{{ .b }} <span class="sp-grade">{{ .bn }}</span></td>
+            <td class="sp-num">{{ .r }}:1</td>
+            <td><span class="sp-grade">{{ .g }}</span></td>
+            <td><span class="sp-proof" style="background: {{ .b }}; color: {{ .f }}">Sample text</span></td>
+          </tr>
+        {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= TYPE ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">Type</h2></div>
+    <h2 class="sp-h2">One superfamily, three jobs</h2>
+    <p class="sp-note">
+      Fira, self-hosted under the SIL Open Font License. A superfamily is the
+      typographic form of the product's own claim: faces drawn to different
+      briefs, made to read as one voice. It also removes the request to
+      fonts.googleapis.com that every page except the whitepapers still makes —
+      a company arguing that your material should not leave your hardware
+      should not be fetching its typeface from a third party on every page load.
+    </p>
+
+    <div class="sp-faces">
+      <div class="sp-face">
+        <span class="sp-face__aa" style="font-family: var(--rk-font-display); font-weight: var(--rk-w-heavy); font-size: var(--rk-t-1); letter-spacing: var(--rk-tr-display)">Aa</span>
+        <p class="sp-face__name">Fira Sans Condensed — Heavy 800, SemiBold 600</p>
+        <p class="sp-face__job">Display and headings. Narrow and dense, with the weight of a title block on a technical drawing rather than the roundness of a product hero.</p>
+        <p class="sp-face__sample" style="font-family: var(--rk-font-display); font-weight: var(--rk-w-heavy); text-transform: uppercase">Nothing acts on its own</p>
+      </div>
+      <div class="sp-face">
+        <span class="sp-face__aa" style="font-family: var(--rk-font-body); font-weight: var(--rk-w-regular); font-size: var(--rk-t-1)">Aa</span>
+        <p class="sp-face__name">Fira Sans — Book 400, Italic, Medium 500, SemiBold 600</p>
+        <p class="sp-face__job">Reading and interface. Drawn for legibility at small sizes on poor screens, which is also the condition of a printed measures table.</p>
+        <p class="sp-face__sample">A proposed action, in front of a named person who approves it. Ação, señor, contrôle — Latin-1 is in the subset.</p>
+      </div>
+      <div class="sp-face">
+        <span class="sp-face__aa" style="font-family: var(--rk-font-util); font-weight: var(--rk-w-regular); font-size: var(--rk-t-1)">Aa</span>
+        <p class="sp-face__name">Fira Code — Regular 400, Medium 500</p>
+        <p class="sp-face__job">Standings, figures, identifiers. A fixed advance so a column of numbers lines up and a standing mark never reflows.</p>
+        <p class="sp-face__sample" style="font-family: var(--rk-font-util)">0123456789 · runs · not-measured</p>
+      </div>
+    </div>
+
+    <h3 class="sp-h3">Scale</h3>
+    <p class="sp-note">
+      The ratio accelerates: about 1.17 through the reading sizes where fine
+      control matters, about 1.33 through the display sizes where the jump has
+      to be unambiguous. A single geometric series gives you either mush at the
+      bottom or timidity at the top.
+    </p>
+    <ul class="sp-scale">
+      {{ range slice
+        (dict "t" "--rk-t-display" "px" "64px" "f" "display" "w" "800" "u" "Display. Condensed Heavy only." "s" "Where a claim stands")
+        (dict "t" "--rk-t-1"       "px" "48px" "f" "display" "w" "800" "u" "Page title." "s" "Where a claim stands")
+        (dict "t" "--rk-t-2"       "px" "36px" "f" "display" "w" "800" "u" "Section head." "s" "Nothing acts on its own")
+        (dict "t" "--rk-t-3"       "px" "28px" "f" "display" "w" "600" "u" "Subsection." "s" "A named person approves it")
+        (dict "t" "--rk-t-4"       "px" "22px" "f" "display" "w" "600" "u" "Card and block heads." "s" "A named person approves it")
+        (dict "t" "--rk-t-lead"    "px" "19px" "f" "body"    "w" "400" "u" "Decks. Read once." "s" "Read across systems that were never designed to talk to each other.")
+        (dict "t" "--rk-t-read"    "px" "17px" "f" "body"    "w" "400" "u" "Long-form running text. Read for an hour." "s" "Read across systems that were never designed to talk to each other.")
+        (dict "t" "--rk-t-body"    "px" "16px" "f" "body"    "w" "400" "u" "Interface prose. The default." "s" "Read across systems that were never designed to talk to each other.")
+        (dict "t" "--rk-t-small"   "px" "14px" "f" "body"    "w" "400" "u" "Dense cells, secondary UI." "s" "Where the tier applied and the tier earned differ.")
+        (dict "t" "--rk-t-fine"    "px" "13px" "f" "body"    "w" "400" "u" "Captions, sources, footnotes." "s" "Your issue register, raised date to closure date.")
+        (dict "t" "--rk-t-label"   "px" "12px" "f" "body"    "w" "600" "u" "Eyebrows, chips, table heads. Tracked, upper." "s" "How you will know it worked")
+        (dict "t" "--rk-t-mark"    "px" "11px" "f" "util"    "w" "500" "u" "Standing marks and column heads. The floor for a tracked mono cap that must survive a phone and a 600dpi print." "s" "First-party")
+      }}
+      <li>
+        <div class="sp-scale__meta">
+          <b>{{ .t }}</b>
+          {{ .px }} · {{ .f }} {{ .w }}<br>{{ .u }}
+        </div>
+        {{/* safeCSS, and not decoration: Go's html/template sanitises a style
+             attribute, and an INTERPOLATED var(--custom-property) does not
+             survive it — it is rewritten to var(ZgotmplZ), which the browser
+             drops. The failure is silent and it is invisible in a screenshot
+             unless you know the sizes are meant to differ, because every row
+             still renders, just all at the inherited size. A literal
+             var(--rk-font-body) written straight into the attribute is fine;
+             only the interpolated one is rewritten. */}}
+        {{ $fam := cond (eq .f "display") "--rk-font-display" (cond (eq .f "util") "--rk-font-util" "--rk-font-body") }}
+        {{ $extra := "" }}
+        {{ if eq .f "display" }}{{ $extra = "letter-spacing:var(--rk-tr-display);text-transform:uppercase;" }}{{ end }}
+        {{ if eq .t "--rk-t-label" }}{{ $extra = "letter-spacing:var(--rk-tr-label);text-transform:uppercase;" }}{{ end }}
+        {{ if eq .f "util" }}{{ $extra = "letter-spacing:var(--rk-tr-mark);text-transform:uppercase;" }}{{ end }}
+        <div class="sp-scale__demo"
+             style="{{ printf "font-size:var(%s);font-family:var(%s);font-weight:%s;%s" .t $fam .w $extra | safeCSS }}">{{ .s }}</div>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <!-- ================= ATOMS ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">Atoms</h2></div>
+    <h2 class="sp-h2">Four shapes</h2>
+    <p class="sp-note">
+      These live in <code>tokens.css</code> rather than in a page, because every
+      page needs them to be identical. Nothing else does.
+    </p>
+
+    <div class="sp-demo">
+      <p class="sp-demo__cap">.rk-mark — every standing, both fills</p>
+      <div style="display:flex; flex-wrap:wrap; gap: var(--rk-s-5) var(--rk-s-6)">
+        <span class="rk-mark" data-standing="runs">Runs</span>
+        <span class="rk-mark" data-standing="first-party">First-party</span>
+        <span class="rk-mark" data-standing="drawn">Drawn</span>
+        <span class="rk-mark" data-standing="hypothetical">Hypothetical</span>
+        <span class="rk-mark" data-standing="self-declared">Self-declared</span>
+        <span class="rk-mark" data-standing="not-measured">Not measured</span>
+      </div>
+    </div>
+
+    <div class="sp-demo">
+      <p class="sp-demo__cap">.rk-rule + .rk-label — a section head</p>
+      <div class="rk-rule"><h3 class="rk-label">How you will know it worked</h3></div>
+      <p class="sp-demo__cap" style="margin: var(--rk-s-5) 0 var(--rk-s-4)">.rk-rule carrying a standing</p>
+      <div class="rk-rule">
+        <h3 class="rk-label">Control coverage</h3>
+        <span class="rk-mark" data-standing="not-measured">Not measured</span>
+      </div>
+    </div>
+
+    <div class="sp-demo sp-gate">
+      <p class="sp-demo__cap">.rk-seam — the approval gate</p>
+      <div class="sp-gate__part">
+        <span class="rk-mark" data-standing="runs">Runs</span>
+        <h4>Hold the payment run to Meridian Freight</h4>
+        <p>
+          The remitting account on three invoices changed nine days ago. The
+          contract clause governing a change of destination requires
+          confirmation on a channel other than the one that carried the request.
+          No confirmation is recorded.
+        </p>
+      </div>
+
+      <hr class="rk-seam">
+
+      <div class="sp-gate__part">
+        <p>Nothing happens until this is approved.</p>
+        <div class="sp-gate__who">
+          <span class="sp-gate__name">Decision: Head of Financial Control</span>
+          <span class="rk-mark" data-standing="drawn">Awaiting approval</span>
+        </div>
+        <div class="sp-actions">
+          <button type="button" class="sp-btn">Approve</button>
+          <button type="button" class="sp-btn-ghost">Send back</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMPONENTS ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">Components</h2></div>
+    <h2 class="sp-h2">What the atoms build</h2>
+
+    <div class="sp-demo rk-cat-banking rk-rederive">
+      <p class="sp-demo__cap">The worksheet — a measure is a label and a line you write on</p>
+      <table class="sp-sheet">
+        <thead>
+          <tr>
+            <th scope="col">Measure</th>
+            <th scope="col">Where your number lives today</th>
+            <th scope="col" class="sp-col-blank">Your baseline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Time to close an audit finding</th>
+            <td>Your issue register — raised date to closure date, for findings closed in the last four quarters.</td>
+            <td><span class="sp-blank" aria-hidden="true"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Findings open past their due date</th>
+            <td>The ageing view of that register at last month end, with how many times each item has been extended.</td>
+            <td><span class="sp-blank" aria-hidden="true"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="sp-note" style="margin: var(--rk-s-4) 0 0">
+        The blank is the point of the block, not an omission — and its accent
+        segment is the one place a category colour appears as a shape. This
+        block is set to <code>.rk-cat-banking</code>.
+      </p>
+    </div>
+
+    <div class="sp-demo">
+      <p class="sp-demo__cap">Actions and links</p>
+      <div class="sp-actions" style="margin-top:0">
+        <a href="#top" class="sp-btn">Primary action</a>
+        <a href="#top" class="sp-btn-ghost">Secondary action</a>
+      </div>
+      <p class="sp-note" style="margin: var(--rk-s-4) 0 0">
+        Orange means a person can act, so
+        <a href="#top" class="sp-link">a link is orange</a> and a heading never is.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= SPACE / RADIUS / ELEVATION ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">Space, radius, elevation</h2></div>
+
+    <h3 class="sp-h3">Space</h3>
+    <p class="sp-note">
+      Ten rungs at roughly 1.5&times;. Coarse on purpose: two adjacent values are
+      visibly different, so nobody has to decide between 20px and 24px — which
+      is where spacing drifts in a codebase several people touch.
+    </p>
+    <ul class="sp-bars">
+      {{ range slice
+        (dict "k" "--rk-s-1" "v" "0.25rem" "p" "4")
+        (dict "k" "--rk-s-2" "v" "0.5rem"  "p" "8")
+        (dict "k" "--rk-s-3" "v" "0.75rem" "p" "12")
+        (dict "k" "--rk-s-4" "v" "1rem"    "p" "16")
+        (dict "k" "--rk-s-5" "v" "1.5rem"  "p" "24")
+        (dict "k" "--rk-s-6" "v" "2rem"    "p" "32")
+        (dict "k" "--rk-s-7" "v" "3rem"    "p" "48")
+        (dict "k" "--rk-s-8" "v" "4rem"    "p" "64")
+        (dict "k" "--rk-s-9" "v" "6rem"    "p" "96")
+        (dict "k" "--rk-s-10" "v" "8rem"   "p" "128")
+      }}
+      <li>
+        <span class="sp-bars__key">{{ .k }}</span>
+        <span class="sp-bars__bar" style="{{ printf "width:var(%s)" .k | safeCSS }}"></span>
+        <span class="sp-bars__key">{{ .p }}px</span>
+      </li>
+      {{ end }}
+    </ul>
+
+    <h3 class="sp-h3">Radius</h3>
+    <p class="sp-note">
+      Nothing above 12px. The system this replaces went to 40px, which is the
+      radius of a consumer app card and belongs to a different argument. This
+      material is a document, and a document has a corner. The standing mark is
+      at 0 because a square that must read as filled-or-hollow at 7px cannot
+      afford a curve.
+    </p>
+    <ul class="sp-tiles">
+      {{ range slice
+        (dict "k" "--rk-r-0" "u" "marks")
+        (dict "k" "--rk-r-1" "u" "chips")
+        (dict "k" "--rk-r-2" "u" "controls")
+        (dict "k" "--rk-r-3" "u" "cards")
+        (dict "k" "--rk-r-4" "u" "bands")
+      }}
+      <li class="sp-tile">
+        <div class="sp-tile__box" style="{{ printf "border-radius:var(%s)" .k | safeCSS }}"></div>
+        <span class="sp-tile__key">{{ .k }}<br>{{ .u }}</span>
+      </li>
+      {{ end }}
+    </ul>
+
+    <h3 class="sp-h3">Elevation</h3>
+    <p class="sp-note">
+      Two shadows, for things that genuinely float — a menu, a dialog.
+      Everything else expresses depth with a rule and a change of ground,
+      because that is the part that survives being printed. The previous
+      system's neon glows are gone: a glow means nothing on paper.
+    </p>
+    <ul class="sp-tiles sp-tiles--elev">
+      {{ range slice
+        (dict "k" "--rk-e-0" "u" "flat")
+        (dict "k" "--rk-e-1" "u" "raised")
+        (dict "k" "--rk-e-2" "u" "floating")
+      }}
+      <li class="sp-tile">
+        <div class="sp-tile__box" style="{{ printf "box-shadow:var(%s);border-radius:var(--rk-r-3)" .k | safeCSS }}"></div>
+        <span class="sp-tile__key">{{ .k }}<br>{{ .u }}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <!-- ================= THE MARK ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">The mark</h2></div>
+    <h2 class="sp-h2">The drawing holds. The file did not.</h2>
+    <p class="sp-note">
+      A herding dog in profile: it reads a field, gathers what is scattered into
+      one picture, and brings it to a named handler who decides. Nothing about
+      that needs redrawing. What needed fixing was the artefact — a 512px raster
+      with a cream background baked in, which is why the site header has always
+      had to crop it into a tile. It is now one vector path set to
+      <code>currentColor</code>, so it takes the ink of whatever ground it sits
+      on, at any size, on paper.
+    </p>
+
+    <ul class="sp-marks">
+      {{ range slice "16" "24" "32" "64" "128" }}
+      <li><span class="sp-m{{ . }}" style="display:block">{{ $markSvg | safeHTML }}</span><span class="sp-marks__key">{{ . }}px</span></li>
+      {{ end }}
+      <li><span class="sp-marks__key">full mark</span></li>
+    </ul>
+
+    <p class="sp-note">
+      Below about 24px the ruff strokes close up and the full mark goes to a
+      blob — visible above. So the system carries an optical-size variant: the
+      head alone, cropped so the features survive. It is always set inside a
+      container, so the crop reads as a bleed rather than a broken silhouette.
+    </p>
+
+    <ul class="sp-marks">
+      {{ range slice "16" "24" "32" "64" "128" }}
+      <li><span class="sp-m{{ . }}" style="display:block">{{ $markSm | safeHTML }}</span><span class="sp-marks__key">{{ . }}px</span></li>
+      {{ end }}
+      <li><span class="sp-marks__key">small mark, &le; 24px</span></li>
+    </ul>
+
+    <ul class="sp-marks" data-ground="console">
+      {{ range slice "16" "32" "64" "128" }}
+      <li><span class="sp-m{{ . }}" style="display:block">{{ $markSm | safeHTML }}</span><span class="sp-marks__key">{{ . }}px</span></li>
+      {{ end }}
+      <li><span class="sp-marks__key">on the console ground</span></li>
+    </ul>
+  </section>
+
+  <!-- ================= BOTH GROUNDS ================= -->
+  <section class="sp-sec">
+    <div class="rk-rule sp-secrule"><h2 class="rk-label">Both grounds</h2></div>
+    <h2 class="sp-h2">One identity, two registers</h2>
+    <p class="sp-note">
+      The block below is the same markup as the approval gate above, with
+      <code>data-ground="console"</code> set on its wrapper and nothing else
+      changed. The console is a documented mode of this identity, not a second
+      brand: it is where long-form reading and site chrome live.
+    </p>
+
+    <div class="sp-band" data-ground="console">
+      <div class="rk-rule" style="margin-bottom: var(--rk-s-5)">
+        <h3 class="rk-label">Console</h3>
+        <span class="rk-mark" data-standing="runs">Runs</span>
+      </div>
+
+      <div class="sp-gate">
+        <div class="sp-gate__part">
+          <span class="rk-mark" data-standing="runs">Runs</span>
+          <h4>Hold the payment run to Meridian Freight</h4>
+          <p>
+            The remitting account on three invoices changed nine days ago. No
+            confirmation on a second channel is recorded.
+          </p>
+        </div>
+        <hr class="rk-seam">
+        <div class="sp-gate__part">
+          <p>Nothing happens until this is approved.</p>
+          <div class="sp-gate__who">
+            <span class="sp-gate__name">Decision: Head of Financial Control</span>
+            <span class="rk-mark" data-standing="drawn">Awaiting approval</span>
+          </div>
+          <div class="sp-actions">
+            <button type="button" class="sp-btn">Approve</button>
+            <button type="button" class="sp-btn-ghost">Send back</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="sp-note" style="margin: var(--rk-s-6) 0 0">
+        Category accents on the console, all five. These are swatches, not
+        furniture: like the chips in the palette, they carry
+        <code>.rk-swatch-print</code> so the colour survives onto paper, where
+        page furniture using the same tokens correctly goes to black.
+      </p>
+      <div class="sp-conscats rk-swatch-print">
+        {{ range slice
+          (dict "n" "logistics" "h" "#4FB3B3")
+          (dict "n" "insurance" "h" "#9B8CF0")
+          (dict "n" "banking"   "h" "#A3B96A")
+          (dict "n" "telecom"   "h" "#5FA8DC")
+          (dict "n" "marketing" "h" "#E4809C")
+        }}
+        <span class="sp-conscat" style="color: {{ .h }}">{{ .n }}</span>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <footer class="sp-foot">
+    <p>
+      Draft, <code>noindex</code>, not linked from navigation. Every value on
+      this page comes from <code>assets/css/tokens.css</code>; the reasoning is
+      in <code>DESIGN.md</code> at the repo root. Faces are served from this
+      origin — no request on this page leaves it.
+    </p>
+  </footer>
+</main>
+{{ end }}
