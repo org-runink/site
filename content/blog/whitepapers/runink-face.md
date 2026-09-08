@@ -359,28 +359,12 @@ duty error on a repeating entry recurs monthly until somebody stops it.
 
 ### How they combine
 
-```text {linenos=false}
-  eligible events   ×  median value  ×  expected      =  recovery
-  below the            of those         recovery         now
-  threshold            events          rate on them      addressable
-
-                                                              +
-
-  what a category   ×  days the      ×  share where       =  losses
-  costs per day        interval         acting earlier       avoided
-  it runs              would shorten    changes the
-                       by               outcome
-
-                                                              −
-
-  seats  +  the machines  +  the named owner's time      =  cost
-            you already      +  the work of connecting      side
-            run              each system
-
-  ─────────────────────────────────────────────────────────────
-  annual benefit  ÷  monthly cost  =  the payback period,
-                                      in months, in your numbers
-```
+| | What it is | How you get it |
+| --- | --- | --- |
+| Add | **Recovery now addressable** | Eligible events below the threshold × the median value of those events × the expected recovery rate on them |
+| Add | **Losses avoided** | What a category costs per day it runs × the days the interval would shorten by × the share where acting earlier changes the outcome |
+| Subtract | **Cost side** | Seats + the machines you already run + the named owner's time + the work of connecting each system |
+| **=** | **The payback period, in months, in your numbers** | The annual benefit ÷ the monthly cost |
 
 In words, for a reader who would rather have the sentence than the figure.
 The first line is the recovery side: the population you are currently
@@ -518,48 +502,7 @@ leaves the approving where it belongs.
 The product runs one loop, continuously: **fetch, extract, reason,
 recommend.**
 
-```text {linenos=false}
-      YOUR SYSTEMS                        WHAT NOTHING TOUCHES
-      bought separately,                  ┌──────────────────────┐
-      never designed to     ───────────▶  │  1  FETCH            │
-      be read together     read-only      │  connect and sample  │
-      ▲                                   └──────────┬───────────┘
-      │                                              ▼
-      │                                   ┌──────────────────────┐
-      │                                   │  2  EXTRACT          │
-      │                                   │  group, split, index │
-      │                                   │  work out what each  │
-      │                                   │  table is about, and │
-      │                                   │  draw the links      │
-      │                                   └──────────┬───────────┘
-      │                                              ▼
-      │                                   ┌──────────────────────┐
-      │                                   │  3  REASON           │
-      │                                   │  quantities computed │
-      │                                   │  by statistical      │
-      │                                   │  method; language    │
-      │                                   │  handled by the      │
-      │                                   │  model — kept apart  │
-      │                                   └──────────┬───────────┘
-      │                                              ▼
-      │                                   ┌──────────────────────┐
-      │                                   │  4  RECOMMEND        │
-      │                                   │  one ranked queue of │
-      │                                   │  proposals, each     │
-      │                                   │  carrying its        │
-      │                                   │  evidence            │
-      │                                   └──────────┬───────────┘
-      │                                              ▼
-      │                              ╔═══════════════════════════╗
-      │                              ║   A NAMED PERSON DECIDES  ║
-      │                              ║   approve · edit · reject ║
-      │                              ╚═══════════┬═══════════════╝
-      │                                          │ approved only
-      │        the drafts an approved            ▼
-      └──────  action requires, and the   follow-through prepared,
-              decision recorded with      with the decision and the
-              the approver's name         execution recorded apart
-```
+![A double rule runs the width of the picture, and there is exactly one way through it: a ring with a tick in it, which is a named person. Above the line, your systems sit outside the rule as a scatter of blocks of different sizes, and a single one-way arrow reads from them. The four steps are told apart by how organised the marks become rather than by boxes or arrows: scattered, then aligned in columns with the links between them drawn, then measured bars kept a clear distance from a separate rounded shape for language, then a ranked queue of bars of decreasing length, each with its own small evidence tag. One strand leaves the queue and arrives at the ring. Below the line, the work goes out as a solid block, and the record is two sheets with a gap between them, only the upper one carrying a name mark. A last line leaves below the rule, runs left past where the rule begins, and comes back up outside it into your systems.](figures/whitepapers/face-proposal-gate.svg "Read it as a gate rather than a pipeline. Everything above the line is a proposal, and one ring is the only way through.")
 
 Read it as a gate rather than a pipeline. Everything above the double line
 is proposal: the system reads your systems without changing them, assembles
@@ -1729,32 +1672,12 @@ software should always be examined closely.
 The sequence matters more than any duration, because the duration depends
 almost entirely on how quickly your side can produce a credential.
 
-```text {linenos=false}
- YOU BRING             WHAT HAPPENS           WHAT YOU GET
-
- one file           ▶  analysed directly, ▶  findings on your
- a spreadsheet of      with no connection     own data, in the
- invoices, a folder    configured first       same session
- of correspondence
-      │
-      ▼
- one credential     ▶  connection created ▶  a populated queue
- read-only, to the     and tested on the      the following
- system holding        screen; a recurring    morning
- the money             question set to run
-                       overnight
-      │
-      ▼
- machines           ▶  the same software  ▶  the steady state
- and a sign-in         on your hardware,
- arrangement           installed once and
-                       maintained after
-      │
-      ▼
- the second system  ▶  each connection    ▶  compounding, not
- and the third         makes the previous     waiting for
-                       ones more useful       completeness
-```
+| | You bring | What happens | What you get |
+| --- | --- | --- | --- |
+| 1 | One file: a spreadsheet of invoices, a folder of correspondence | Analysed directly, with no connection configured first | Findings on your own data, in the same session |
+| 2 | One credential, read-only, to the system holding the money | Connection created and tested on the screen; a recurring question set to run overnight | A populated queue the following morning |
+| 3 | Machines and a sign-in arrangement | The same software on your hardware, installed once and maintained after | The steady state |
+| 4 | The second system and the third | Each connection makes the previous ones more useful | Compounding, not waiting for completeness |
 
 In words: you can have a finding on your own data before any connection
 exists, because a file can be analysed on its own. You can have a populated

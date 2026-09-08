@@ -1,0 +1,169 @@
+<!--
+  FACE paper — the four-step loop, drawn as the chapter asks it to be read:
+  "as a gate rather than a pipeline".
+
+  So the double rule is the dominant element, not the stages. It runs the full
+  width of the product and there is exactly one way through it: a ring with a
+  tick, straddling the line, which is a named person. Everything above the line
+  is proposal. Nothing below it happened without somebody putting their name
+  to it.
+
+  The four steps are drawn WITHOUT arrows between them, and without stage
+  boxes. They are told apart by how organised the marks are, which is what the
+  steps actually do to the material:
+
+    fetch    — the one-way arrow from your systems, which stay outside the line
+    extract  — the same marks, now aligned in columns with the links drawn
+    reason   — quantities as measured bars, and language as a separate shape
+               with a clear gap between them, because they are kept apart
+    recommend— a ranked queue: ordered, decreasing, each item with its evidence
+
+  Your systems sit OUTSIDE the double line and the return path never crosses
+  it. It leaves below the line, runs left past where the line begins, and comes
+  back up on the outside. A line that crossed the rule anywhere except through
+  the ring would say the opposite of what the chapter says.
+
+  Below the line the work and the record are separate objects, and the record
+  is two sheets with a visible gap: the decision and the execution are kept
+  apart. Only the upper one carries a name mark.
+
+  No text inside the artwork; at 360px the viewBox scales to about a third.
+  Every var() carries a literal fallback so the file still reads correctly when
+  opened on its own, outside the page that defines the tokens.
+-->
+<svg viewBox="0 0 1000 296" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- your systems: bought separately, never designed to be read together -->
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="8"   y="24"  width="64" height="20" rx="4"/>
+    <rect x="86"  y="30"  width="54" height="24" rx="4"/>
+    <rect x="18"  y="58"  width="44" height="18" rx="4"/>
+    <rect x="74"  y="66"  width="68" height="22" rx="4"/>
+    <rect x="8"   y="92"  width="58" height="20" rx="4"/>
+    <rect x="78"  y="100" width="50" height="18" rx="4"/>
+    <rect x="26"  y="126" width="74" height="20" rx="4"/>
+  </g>
+
+  <!-- fetch: read-only, one way -->
+  <path d="M178,60 H236" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
+  <polygon points="252,60 234,52 234,68" style="fill:var(--ink,#1c1917)"/>
+
+  <!-- extract: grouped, split, and the links drawn -->
+  <g style="fill:var(--ink-3,#57534e);fill-opacity:0.85">
+    <rect x="236" y="36"  width="66" height="10" rx="5"/>
+    <rect x="236" y="58"  width="52" height="10" rx="5"/>
+    <rect x="236" y="80"  width="66" height="10" rx="5"/>
+    <rect x="236" y="102" width="44" height="10" rx="5"/>
+    <rect x="236" y="124" width="60" height="10" rx="5"/>
+    <rect x="318" y="46"  width="58" height="10" rx="5"/>
+    <rect x="318" y="72"  width="46" height="10" rx="5"/>
+    <rect x="318" y="98"  width="58" height="10" rx="5"/>
+    <rect x="318" y="124" width="40" height="10" rx="5"/>
+  </g>
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.3;stroke-opacity:0.55">
+    <path d="M304,41 L318,51"/>
+    <path d="M290,63 L318,77"/>
+    <path d="M304,85 L318,51"/>
+    <path d="M282,107 L318,103"/>
+    <path d="M298,129 L318,129"/>
+    <path d="M304,85 L318,103"/>
+  </g>
+
+  <!-- reason: quantities computed, language kept apart from them -->
+  <g style="fill:var(--ink-3,#57534e)">
+    <rect x="420" y="44"  width="92" height="11" rx="5.5"/>
+    <rect x="420" y="66"  width="70" height="11" rx="5.5"/>
+    <rect x="420" y="88"  width="84" height="11" rx="5.5"/>
+    <rect x="420" y="110" width="58" height="11" rx="5.5"/>
+    <rect x="420" y="132" width="74" height="11" rx="5.5"/>
+  </g>
+  <path d="M416,152 H520" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:1.8;stroke-linecap:round"/>
+
+  <rect x="534" y="50" width="44" height="104" rx="22"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.2"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="545" y="72"  width="22" height="7" rx="3.5"/>
+    <rect x="545" y="92"  width="22" height="7" rx="3.5"/>
+    <rect x="545" y="112" width="22" height="7" rx="3.5"/>
+  </g>
+
+  <!-- recommend: one ranked queue, each proposal carrying its evidence.
+       The evidence tags sit at the RIGHT end of each bar, so they step down
+       with the ranking and leave the left side clear for the convergence. -->
+  <rect x="664" y="30" width="228" height="14" rx="7" style="fill:var(--ink,#1c1917)"/>
+  <g style="fill:var(--ink-3,#57534e);fill-opacity:0.8">
+    <rect x="664" y="54"  width="206" height="14" rx="7"/>
+    <rect x="664" y="78"  width="184" height="14" rx="7"/>
+    <rect x="664" y="102" width="162" height="14" rx="7"/>
+    <rect x="664" y="126" width="140" height="14" rx="7"/>
+    <rect x="664" y="150" width="118" height="14" rx="7"/>
+  </g>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="900" y="30"  width="14" height="14" rx="3"/>
+    <rect x="878" y="54"  width="14" height="14" rx="3"/>
+    <rect x="856" y="78"  width="14" height="14" rx="3"/>
+    <rect x="834" y="102" width="14" height="14" rx="3"/>
+    <rect x="812" y="126" width="14" height="14" rx="3"/>
+    <rect x="790" y="150" width="14" height="14" rx="3"/>
+  </g>
+
+  <!-- the whole queue arrives at a person: a convergence, not a container.
+       An earlier version routed one line around the outside of the queue and
+       it read as a border drawn round it rather than as anything arriving. -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-linecap:round">
+    <path d="M664,37  C 628,37  600,84  606,158" style="stroke-width:1.9"/>
+    <path d="M664,61  C 632,61  602,98  606,158" style="stroke-width:1.8"/>
+    <path d="M664,85  C 636,85  604,114 606,158" style="stroke-width:1.7"/>
+    <path d="M664,109 C 640,109 604,130 606,158" style="stroke-width:1.6"/>
+    <path d="M664,133 C 644,133 606,143 606,158" style="stroke-width:1.5"/>
+    <path d="M664,157 C 648,157 614,153 606,158" style="stroke-width:1.4"/>
+  </g>
+
+  <!-- the gate: nothing crosses it that a named person did not sign -->
+  <g style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.6">
+    <path d="M210,184 H992"/>
+    <path d="M210,191 H992"/>
+  </g>
+
+  <circle cx="600" cy="187" r="30"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--runs,#5F6F3E);stroke-width:3"/>
+  <path d="M587,187 L597,197 L615,175"
+        style="fill:none;stroke:var(--runs,#5F6F3E);stroke-width:3.6;stroke-linecap:round;stroke-linejoin:round"/>
+
+  <!-- what follows from the approval -->
+  <path d="M600,217 V250" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.4"/>
+  <path d="M600,250 H736" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.4;stroke-linecap:round"/>
+
+  <!-- the work goes out -->
+  <rect x="736" y="226" width="144" height="46" rx="7" style="fill:var(--ink,#1c1917)"/>
+  <g style="fill:var(--paper,#F5F1E8);fill-opacity:0.55">
+    <rect x="752" y="238" width="84" height="6" rx="3"/>
+    <rect x="752" y="252" width="56" height="6" rx="3"/>
+  </g>
+
+  <!-- the decision is recorded, and the execution separately from it -->
+  <path d="M626,196 C 740,208 840,208 906,212"
+        style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.8"/>
+  <path d="M880,262 H906" style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.8"/>
+
+  <rect x="906" y="200" width="80" height="34" rx="5"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2"/>
+  <circle cx="920" cy="211" r="4.5" style="fill:var(--runs,#5F6F3E)"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="932" y="208" width="42" height="6" rx="3"/>
+    <rect x="918" y="222" width="56" height="6" rx="3"/>
+  </g>
+
+  <rect x="906" y="246" width="80" height="34" rx="5"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="918" y="256" width="50" height="6" rx="3"/>
+    <rect x="918" y="268" width="38" height="6" rx="3"/>
+  </g>
+
+  <!-- and the drafts an approved action requires go back to your systems,
+       leaving below the line and returning outside it -->
+  <path d="M600,250 C 520,250 450,276 300,276 H208 Q196,276 196,264 V132 Q196,120 184,120"
+        style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2;stroke-linecap:round;stroke-linejoin:round"/>
+  <polygon points="170,120 188,112 188,128" style="fill:var(--ink-3,#57534e)"/>
+</svg>
