@@ -104,7 +104,20 @@
     .ind-wrap { padding: 3.5rem 2rem 6rem; }
   }
 
-  .ind a { color: inherit; }
+  /* `:not([class])` is load-bearing, not tidiness.
+
+     As `.ind a` this rule was specificity (0,1,1) and beat `.ind-cta`
+     (0,1,0), so the primary call to action inherited the sheet's dark body
+     ink instead of its own `#ffffff` — dark text on a dark accent fill. The
+     button rendered live on all five industry pages as a solid coloured
+     rectangle with no readable label. Nothing catches this: the markup is
+     correct, the colour is declared, the contrast checker never sees the
+     element because the label is the same colour as what is behind it, and
+     the ghost button beside it looks fine.
+
+     Scoped to unclassed links so prose inside the section still inherits,
+     while anything carrying its own class keeps the colour it declares. */
+  .ind a:not([class]) { color: inherit; }
 
   /* The base stylesheet defines no focus ring, and the UA default is weak on a
      near-white sheet, so the section states its own. */
