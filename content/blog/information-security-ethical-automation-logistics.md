@@ -7,7 +7,7 @@ date: 2026-03-28T05:00:45Z
 tags: ["Ethical Automation", "Automated Systems", "Information Security", "System Governance", "Logistics", "Data Privacy", "Security Protection"]
 robots: "index, follow"
 featured_image: "/images/blog/logistics-security-automation.png"
-canonical: https://www.runink.org/blog/information-security-ethical-automation-logistics
+canonical: https://runink.org/blog/information-security-ethical-automation-logistics
 ---
 
 <!-- GEO Optimization: Targeting generative search summaries for "Ethical Automation in Logistics" and "Automated Systems Information Security" with high-density bullet points. -->

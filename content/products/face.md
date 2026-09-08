@@ -34,8 +34,8 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
 <div class="max-w-4xl mx-auto mt-16 mb-8 text-left">
     <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Executive Summary: Key Takeaways</h2>
     <ul class="space-y-3">
-        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Autonomous Action Execution:</strong> Shift from passive dashboards to active operations. The FACE auto-files claims and orchestrates orders, reducing manual operational drag by <strong>up to 60%</strong>.</li>
-        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Predictive Margin Protection:</strong> Utilizing the Hypothesis Lab, logistics operators can simulate pricing changes and routing rules, reliably predicting margin impacts <strong>before</strong> executing risky operational shifts.</li>
+        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Autonomous Action Execution:</strong> Shift from passive dashboards to active operations. The FACE drafts the claim and places the order, and a person approves it. Count the hours your team spends on that work in a normal month, before and after.</li>
+        <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Predictive Margin Protection:</strong> Utilizing the Hypothesis Lab, logistics operators can try a pricing change or a routing rule against their own history and read the margin it works out, <strong>before</strong> committing to it.</li>
         <li class="flex items-start text-stone-300 tracking-wide font-medium text-lg"><span class="mr-2 text-[#7c3aed] font-black">✓</span> <strong>Automated Guardrail Enforcement:</strong> The Rules Studio dynamically codifies standard operating procedures, instantly blocking anomalies like duplicate POs or unverified vendor requests, mitigating <strong>compliance risk</strong>.</li>
     </ul>
 </div>
@@ -53,11 +53,11 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
         <h3 class="text-4xl font-bold text-white mb-6">Teach It Once.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                You know how to run your business. The problem is, you can't be everywhere at once. <strong>Rules Studio</strong> lets you teach the system your \"Best Practices\" one time, and it remembers them forever.
+                You know how to run your business. The problem is, you can't be everywhere at once. <strong>Rules Studio</strong> lets you teach the system your "Best Practices" one time, and it remembers them forever.
             </p>
             <p>
-                <strong>Teach it to recover revenue:</strong> \"If a shipment sits for 7 days, chase the carrier.\"<br>
-                <strong>Teach it to block risk:</strong> \"If a duplicate order comes in, stop it.\"
+                <strong>Teach it to recover revenue:</strong> "If a shipment sits for 7 days, chase the carrier."<br>
+                <strong>Teach it to block risk:</strong> "If a duplicate order comes in, stop it."
             </p>
         </div>
         <ul class="space-y-4 mt-8">
@@ -89,13 +89,13 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
                 This isn't a chat bot. It's a command center. Your automated operations sit here, waiting for your approval to take action.
             </p>
             <p>
-                The <strong>\"Action Deck\"</strong> shows you the work that's ready to go. A PO that needs signing. A refund claim ready to file. You review the work, hit <strong>[Approve]</strong>, and the system executes it.
+                The <strong>"Action Deck"</strong> shows you the work that's ready to go. A PO that needs signing. A refund claim ready to file. You review the work, hit <strong>[Approve]</strong>, and the system executes it.
             </p>
         </div>
         <ul class="space-y-4 mt-8">
-            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Ordering System:</strong> \"I found the best price. Ready to order?\"</span></li>
-            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Claims System:</strong> \"I found 14 lost packages. File for refund?\"</span></li>
-            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Simulation:</strong> \"If we wait, we lose $8.5k in sales.\"</span></li>
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Ordering System:</strong> "I found the best price. Ready to order?"</span></li>
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Claims System:</strong> "I found 14 lost packages. File for refund?"</span></li>
+            <li class="flex items-start"><span class="text-[#FFE5B4] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Simulation:</strong> "If we wait, we lose $8.5k in sales."</span></li>
         </ul>
     </div>
 </div>
@@ -139,11 +139,11 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
                 Making big changes is scary. Runink removes the fear by letting you <strong>simulate the future</strong>.
             </p>
             <p>
-                \"If we raise prices 5%, do we lose customers?\" The decision engine checks your history and tells you the likely outcome. Know the result before you make the move.
+                "If we raise prices 5%, do we lose customers?" The decision engine checks your history and tells you the likely outcome. Know the result before you make the move.
             </p>
         </div>
         <ul class="space-y-4 mt-8">
-            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>See The Impact:</strong> \"Margin up 4%, Volume down 8%.\"</span></li>
+            <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>See The Impact:</strong> "Margin up 4%, Volume down 8%."</span></li>
             <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Confidence Meter:</strong> Know how sure the model is.</span></li>
             <li class="flex items-start"><span class="text-[#FFCC99] mr-3 text-xl">✓</span> <span class="text-slate-300"><strong>Make It Real:</strong> Turn a good idea into a rule instantly.</span></li>
         </ul>
@@ -164,11 +164,11 @@ Dashboards don't pay the bills. Actions do. Runink isn't a tool for looking at c
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div class="bg-white/5 p-8 rounded-xl border border-white/10">
             <h3 class="text-2xl font-bold text-white mb-4">1. Shadow Mode</h3>
-            <p class="text-slate-300 mb-6">Test safely. Runink watches your data and <strong>simulates</strong> actions without doing them. See exactly what the automated systems <em>would</em> have done (e.g., \"I would have filed this claim\") before you give them the keys.</p>
+            <p class="text-slate-300 mb-6">Test safely. Runink watches your data and <strong>simulates</strong> actions without doing them. See exactly what the automated systems <em>would</em> have done (e.g., "I would have filed this claim") before you give them the keys.</p>
         </div>
         <div class="bg-white/5 p-8 rounded-xl border border-white/10">
             <h3 class="text-2xl font-bold text-white mb-4">2. Graduated Autonomy</h3>
-            <p class="text-slate-300 mb-6">You set the leash. Start with <strong>\"Junior Analyst Mode\"</strong> (System drafts, you approve). Graduate to <strong>\"Co-Pilot\"</strong> (System handles small tasks). Finally, unlock <strong>\"Full Autonomy\"</strong> only when you're ready.</p>
+            <p class="text-slate-300 mb-6">You set the leash. Start with <strong>"Junior Analyst Mode"</strong> (System drafts, you approve). Graduate to <strong>"Co-Pilot"</strong> (System handles small tasks). Finally, turn on <strong>"Full Autonomy"</strong> only when you're ready.</p>
         </div>
     </div>
 </div>

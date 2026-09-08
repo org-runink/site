@@ -7,7 +7,7 @@ date: 2026-02-26T09:24:58Z
 tags: [Workflow Automation, Dropshipping, Logistics Automation, Supply Chain, Open-Source Tools]
 robots: index, follow
 featured_image: /images/blog/automated-open-source-dropshipping-logistics.png
-canonical: https://www.runink.org/blog/automated-open-source-dropshipping-logistics
+canonical: https://runink.org/blog/automated-open-source-dropshipping-logistics
 ---
 
 

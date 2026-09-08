@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-05-31T00:42:51Z
 draft: false
 featured_image: "/images/blog/logistics-rfp-process-best-practices-header.png"
-canonical: https://www.runink.org/blog/logistics-rfp-process-best-practices
+canonical: https://runink.org/blog/logistics-rfp-process-best-practices
 slug: "logistics-rfp-process-best-practices"
 categories: ["Procurement", "Logistics Strategy"]
 tags: ["RFP", "3PL Selection", "Vendor Management", "Procurement", "Logistics Partners", "Runink"]
@@ -96,7 +96,7 @@ AI-powered supply chain platforms can pre-populate RFP data directly from operat
 
 Traditional RFP evaluation is slow, subjective, and resource-intensive. A procurement team manually compares spreadsheets, debates qualitative responses in steering committees, and often defaults to the incumbent or the lowest bidder because rigorous comparison feels impossible.
 
-Platforms like [Runink](/use_cases/) change that equation. By connecting directly to your TMS, WMS, and ERP systems, Runink can auto-generate the volume, lane, and service data that form the backbone of your RFP scope — eliminating weeks of manual data gathering and ensuring providers receive accurate, current information.
+Platforms like [Runink](/use-cases/) change that equation. By connecting directly to your TMS, WMS, and ERP systems, Runink can auto-generate the volume, lane, and service data that form the backbone of your RFP scope — eliminating weeks of manual data gathering and ensuring providers receive accurate, current information.
 
 When proposals come back, Runink benchmarks carrier rate submissions against market intelligence — flagging outliers, identifying lanes where you are being overcharged, and surfacing providers whose pricing aligns with your historical cost-per-unit benchmarks. Gain-share models can be stress-tested against actual shipment data rather than theoretical projections.
 
@@ -112,7 +112,7 @@ The logistics RFP is not a procurement formality — it is the single document t
 
 Every dollar of logistics spend is under pressure. Demurrage charges climb, carrier capacity tightens, and customer delivery expectations only move in one direction. You cannot afford to award a multi-year contract based on a vague RFP and a gut feeling.
 
-Build your RFP on operational truth — real volumes, real lanes, real SLA expectations. Evaluate proposals with the same rigor you apply to your own operations. And leverage platforms like [Runink](/contact) to ensure the data driving your decision is current, complete, and benchmarked against the market.
+Build your RFP on operational truth — real volumes, real lanes, real SLA expectations. Evaluate proposals with the same rigor you apply to your own operations. And leverage platforms like [Runink](/#contact-form) to ensure the data driving your decision is current, complete, and benchmarked against the market.
 
 The right logistics partner is out there. Your RFP just needs to be good enough to find them.
 

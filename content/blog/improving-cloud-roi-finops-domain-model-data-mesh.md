@@ -7,7 +7,7 @@ author: "Runink Logistics Operations Team"
 tags: [Freight Spend Optimization, Supply Chain Technology ROI, Decentralized Carrier Network, Logistics Operations Frameworks, Cloud Management]
 robots: index, follow
 featured_image: /images/blog/improving-cloud-roi-finops-domain-model-data-mesh.png
-canonical: https://www.runink.org/blog/improving-cloud-roi-finops-domain-model-data-mesh
+canonical: https://runink.org/blog/improving-cloud-roi-finops-domain-model-data-mesh
 ---
 
 <!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->

@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-05-29T00:24:23Z
 draft: false
 featured_image: "/images/blog/pos-data-logistics-demand-sensing-header.png"
-canonical: https://www.runink.org/blog/pos-data-logistics-demand-sensing
+canonical: https://runink.org/blog/pos-data-logistics-demand-sensing
 slug: "pos-data-logistics-demand-sensing"
 categories: ["Inventory Management", "Supply Chain Planning"]
 tags: ["Demand Sensing", "POS Data", "AI Forecasting", "Retail Logistics", "Runink"]
@@ -50,7 +50,7 @@ The disconnect between the front-end retail environment and back-end logistics o
 
 When POS data is synchronized with back-end logistics in real time, supply chain planners gain unprecedented visibility into the precise velocity of SKUs at the granular store level. Instead of waiting for a store manager to submit a manual replenishment request, the logistics network "sees" the product leave the shelf. This creates a continuous feedback loop where consumption instantly informs supply. 
 
-Data acts as the crucial enabler here. Advanced data pipelines harmonize the disparate formats of various POS terminals into a unified stream that logistics platforms can digest. By breaking down these silos, inventory managers can track exactly how marketing promotions or seasonal shifts are impacting physical inventory in the moment. This synchronized approach is a core component of many modern [supply chain visibility use cases](/use_cases/), allowing the supply chain to pivot from a push-based model—shoving product to stores based on a rigid calendar—to a true pull-based model, where actual consumer demand draws the required inventory through the network seamlessly.
+Data acts as the crucial enabler here. Advanced data pipelines harmonize the disparate formats of various POS terminals into a unified stream that logistics platforms can digest. By breaking down these silos, inventory managers can track exactly how marketing promotions or seasonal shifts are impacting physical inventory in the moment. This synchronized approach is a core component of many modern [supply chain visibility use cases](/use-cases/), allowing the supply chain to pivot from a push-based model—shoving product to stores based on a rigid calendar—to a true pull-based model, where actual consumer demand draws the required inventory through the network seamlessly.
 
 ---
 
@@ -108,7 +108,7 @@ Integrating real-time POS data into your logistics network replaces outdated for
 
 In today's unforgiving retail landscape, supply chain resilience cannot be achieved by simply moving boxes faster; it requires moving them smarter. The days of reacting to stockouts with expensive expedited freight and chaotic warehouse operations must come to an end. By harnessing the power of real-time POS sync, Operations leaders can bridge the chasm between the retail floor and the logistics control tower. AI and advanced data pipelines serve as the critical enablers, transforming raw checkout data into actionable intelligence that dictates precise, cost-effective inventory positioning. Ultimately, demand sensing allows your logistics network to operate not just with efficiency, but with anticipation.
 
-For operations teams ready to eliminate the blind spots between retail demand and logistics execution, Runink provides the intelligent supply chain visibility needed to turn POS data into proactive supply chain performance. Explore our platform or [contact our logistics experts](/contact) to see how we can help you build a more responsive, resilient logistics network.
+For operations teams ready to eliminate the blind spots between retail demand and logistics execution, Runink provides the intelligent supply chain visibility needed to turn POS data into proactive supply chain performance. Explore our platform or [contact our logistics experts](/#contact-form) to see how we can help you build a more responsive, resilient logistics network.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

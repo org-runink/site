@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-06-05T16:22:42Z
 draft: false
 featured_image: "/images/blog/demurrage-detention-fees-prevention-header.png"
-canonical: https://www.runink.org/blog/demurrage-detention-fees-prevention
+canonical: https://runink.org/blog/demurrage-detention-fees-prevention
 slug: "demurrage-detention-fees-prevention"
 categories: ["Freight Finance", "Maritime Logistics"]
 tags: ["Demurrage", "Detention", "Container Tracking", "Free Time", "Port Congestion", "Runink"]
@@ -56,7 +56,7 @@ The mechanics of these fees are designed to incentivize fluid cargo movement, bu
 
 **Carrier free time policies and invoice opacity.** Free time allocations vary by carrier, trade lane, terminal, and even contract tier. Supplemental demurrage invoices often arrive 30–60 days after the event, referencing container numbers without the operational context needed to validate or dispute them. Many organizations simply pay because the cost of investigating exceeds the individual charge — a calculus that collapses at scale.
 
-*Related: See how our [Supply Chain Visibility Module](/use_cases/) provides real-time container event tracking to prevent dwell time overruns.*
+*Related: See how our [Supply Chain Visibility Module](/use-cases/) provides real-time container event tracking to prevent dwell time overruns.*
 
 ---
 
@@ -90,7 +90,7 @@ The most effective defense against demurrage and detention is **not** negotiatin
 
 Consider a real-world scenario: a consumer goods importer moving 3,000 TEUs annually through the Port of Savannah was paying $1.8 million per year in combined demurrage and detention. After deploying an AI-driven visibility platform, the organization achieved three outcomes within six months — a 52% reduction in per-container dwell time through proactive dispatch, successful dispute recovery of $340,000 in invalid charges from the prior twelve months, and a renegotiated free time allocation based on data showing consistent sub-three-day pickup performance.
 
-*Learn more about how our [Freight Finance Analytics](/use_cases/) quantify and recover hidden accessorial costs.*
+*Learn more about how our [Freight Finance Analytics](/use-cases/) quantify and recover hidden accessorial costs.*
 
 ---
 
@@ -104,7 +104,7 @@ Every container sitting idle at a terminal is capital trapped in a queue — and
 
 **Runink** was built to deliver exactly this shift. By unifying container events, free time rules, and carrier tariffs into a single intelligence layer, Runink gives CFOs and logistics leaders the visibility to prevent charges before they accrue and the evidence to dispute them when they do. The silent margin killer only works in the dark.
 
-*Ready to quantify your demurrage and detention exposure? [Schedule a consultation](/contact) to see how Runink recovers hidden freight costs.*
+*Ready to quantify your demurrage and detention exposure? [Schedule a consultation](/#contact-form) to see how Runink recovers hidden freight costs.*
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

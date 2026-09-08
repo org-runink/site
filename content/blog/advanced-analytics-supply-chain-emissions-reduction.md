@@ -7,7 +7,7 @@ date: 2026-06-06T02:16:21Z
 tags: [Model Context Protocol, emissions reduction, supply chain automation, TMS, OMS, MRP, MES, logistics optimization, database forecasting, demand forecasting, wholesale logistics, sustainability, workflow orchestration, food and beverage, Canadian supply chain, U.S. wholesale, retail logistics]
 robots: index, follow
 featured_image: /images/blog/advanced-analytics-supply-chain-emissions-reduction.png
-canonical: https://www.runink.org/blog/advanced-analytics-supply-chain-emissions-reduction
+canonical: https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction
 ---
 
 <!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->

@@ -7,7 +7,7 @@ date: 2026-02-21T13:16:42Z
 tags: [data observability, semantic layer, telemetry, data governance, analytics engineering, data quality, lineage, knowledge graph, advanced analytics, Runink FACE]
 robots: index, follow
 featured_image: /images/blog/automated-semantic-layer-data-observability.png
-canonical: https://www.runink.org/blog/automated-semantic-layer-data-observability
+canonical: https://runink.org/blog/automated-semantic-layer-data-observability
 ---
 
 # Why Global Freight Visibilitys from Telemetry Events Are the Pillars of Data Quality Assurance Platforms

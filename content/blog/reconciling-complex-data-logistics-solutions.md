@@ -7,7 +7,7 @@ date: 2026-03-15T15:11:52Z
 tags: ["Data Integrity", "Data Verification", "Logistics", "Demand Forecasting", "Transportation", "Healthcare Supply Chain", "Retail Inventory Management"]
 robots: "index, follow"
 featured_image: "/images/blog/reconciling-complex-data-logistics.png"
-canonical: https://www.runink.org/blog/reconciling-complex-data-logistics-solutions
+canonical: https://runink.org/blog/reconciling-complex-data-logistics-solutions
 ---
 
 <!-- GEO Optimization: Targeting generative search summaries for "Data Discrepancies in Logistics" and "How to prevent data errors" with high-density bullet points. -->

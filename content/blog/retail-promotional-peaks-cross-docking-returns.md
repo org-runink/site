@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-02-24T14:37:21Z
 draft: false
 featured_image: "/images/blog/retail-promotional-peaks-cross-docking-returns-header.png"
-canonical: https://www.runink.org/blog/retail-promotional-peaks-cross-docking-returns
+canonical: https://runink.org/blog/retail-promotional-peaks-cross-docking-returns
 slug: "retail-promotional-peaks-cross-docking-returns"
 categories: ["Retail Logistics", "Supply Chain Strategy"]
 tags: ["Cross-Docking", "Reverse Logistics", "Carrier Capacity", "Runink"]
@@ -98,7 +98,7 @@ Surviving the chaos of Black Friday, Cyber Monday, and massive seasonal promotio
 
 By cultivating elastic carrier capacity, your transportation network can expand to absorb sudden volume spikes without compromising service. By deploying strategic cross-docking workflows, you can bypass sluggish put-away routines and maintain high-velocity throughput for your most critical SKUs. And by implementing proactive reverse logistics strategies, you can process the post-promotional wave of returns efficiently, recovering asset value and keeping your warehouse floors clear.
 
-Executing these complex, multi-layered strategies requires more than just operational grit; it demands profound visibility and intelligent orchestration across your entire network. This is where Runink’s AI-powered supply chain intelligence platform becomes indispensable. By providing a unified control tower view of your transportation assets, facility throughput, and inventory flows, Runink empowers logistics leaders to anticipate bottlenecks before they happen and make proactive, data-driven decisions. When the peak hits, Runink ensures you have the insights needed to keep your freight moving, your costs contained, and your customers satisfied. To explore how our solutions can transform your peak season execution, visit our [Use Cases](/use_cases/) page or [Contact Us](/contact) today.
+Executing these complex, multi-layered strategies requires more than just operational grit; it demands profound visibility and intelligent orchestration across your entire network. This is where Runink’s AI-powered supply chain intelligence platform becomes indispensable. By providing a unified control tower view of your transportation assets, facility throughput, and inventory flows, Runink empowers logistics leaders to anticipate bottlenecks before they happen and make proactive, data-driven decisions. When the peak hits, Runink ensures you have the insights needed to keep your freight moving, your costs contained, and your customers satisfied. To explore how our solutions can transform your peak season execution, visit our [Use Cases](/use-cases/) page or [Contact Us](/#contact-form) today.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

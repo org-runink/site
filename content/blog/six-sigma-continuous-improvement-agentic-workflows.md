@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-05-26T23:10:17Z
 draft: false
 featured_image: "/images/blog/six-sigma-continuous-improvement-agentic-workflows-header.png"
-canonical: https://www.runink.org/blog/six-sigma-continuous-improvement-agentic-workflows
+canonical: https://runink.org/blog/six-sigma-continuous-improvement-agentic-workflows
 slug: "six-sigma-continuous-improvement-agentic-workflows"
 categories: ["Innovation", "Supply Chain Strategy"]
 tags: ["Six Sigma", "Agentic Workflows", "Continuous Improvement", "Runink"]
@@ -73,7 +73,7 @@ Specialist Persona Swarms tackle these multi-dimensional issues by employing dis
 
 By working collaboratively, these swarms break down the traditional silos between transportation, warehousing, and procurement. They negotiate with one another to find the global optimum for the supply chain, rather than local optimums that inadvertently cause bottlenecks elsewhere. 
 
-For instance, a Fulfilment agent might want to rush an order to meet a strict OTIF deadline, but the Telemetry agent recognizes that doing so would require an expensive LTL carrier that violates the current cost constraints established by the strategy team. In milliseconds, the swarm negotiates a compromise: routing the shipment through an alternative cross-docking facility where it can be consolidated with other outbound freight. This dynamic, inter-agent collaboration mirrors the cross-functional teams seen in traditional Lean Six Sigma projects, but it operates at machine speed and scale. For more examples of how autonomous systems tackle specific logistics challenges, explore our [advanced use cases](/use_cases/).
+For instance, a Fulfilment agent might want to rush an order to meet a strict OTIF deadline, but the Telemetry agent recognizes that doing so would require an expensive LTL carrier that violates the current cost constraints established by the strategy team. In milliseconds, the swarm negotiates a compromise: routing the shipment through an alternative cross-docking facility where it can be consolidated with other outbound freight. This dynamic, inter-agent collaboration mirrors the cross-functional teams seen in traditional Lean Six Sigma projects, but it operates at machine speed and scale. For more examples of how autonomous systems tackle specific logistics challenges, explore our [advanced use cases](/use-cases/).
 
 ---
 
@@ -103,7 +103,7 @@ The era of static, retrospective process improvement is coming to an end. Modern
 
 Through proactive management of telemetry and data posture, and the powerful governance provided by the ReAct Live Console, supply chain leaders can finally build networks that are not just resilient, but truly self-optimizing. The future of operations lies in AI-driven autonomy, empowering your teams to focus on strategy while intelligent swarms handle the complexity of execution.
 
-Ready to elevate your continuous improvement strategy and deploy autonomous logistics agents? [Contact Runink](/contact) today to schedule a demonstration of the ReAct Live Console and see our Specialist Persona Swarms in action.
+Ready to elevate your continuous improvement strategy and deploy autonomous logistics agents? [Contact Runink](/#contact-form) today to schedule a demonstration of the ReAct Live Console and see our Specialist Persona Swarms in action.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

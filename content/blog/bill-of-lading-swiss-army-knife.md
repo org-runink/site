@@ -4,7 +4,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-04-29T06:47:22Z
 draft: false
 featured_image: "/images/blog/bill-of-lading-header.png"
-canonical: https://www.runink.org/blog/what-is-bill-of-lading
+canonical: https://runink.org/blog/what-is-bill-of-lading
 description: "Why One Piece of Paper Rules the Ocean. A deep dive into the legal functions of the Bill of Lading."
 slug: what-is-bill-of-lading
 categories: ["Logistics Law", "Supply Chain", "Maritime"]
@@ -38,7 +38,7 @@ When a carrier takes custody of cargo, the BoL acts as an "Honest Mirror," refle
 
 This simple act carries immense legal weight. Under the Doctrine of Estoppel, a Clean bill effectively blocks the carrier from later claiming the damage existed prior to loading. It’s a high-stakes game where accuracy is paramount. Issuing a clean bill for known damaged goods is considered fraud under English law, an act that immediately voids the carrier’s P&I insurance cover and leaves their assets fully exposed to claims.
 
-*Related: See how our [Claims Recovery Module](/use_cases/claims_recovery) handle discrepancies in shipping documents.*
+*Related: See how our [Claims Recovery Module](/use-cases/claims-recovery/) handle discrepancies in shipping documents.*
 
 ---
 
@@ -64,7 +64,7 @@ Perhaps the most potent property of the BoL is its negotiability. Under the **Ca
 
 Crucially, a bill becomes "spent" once the carrier delivers the goods. However, modern trade moves faster than paperwork. COGSA 1992 ensures that traders are not robbed of their legal recourse simply because a ship arrived before the mail. A party can still acquire the "Title to Sue" via a spent bill if the underlying sale contract was agreed upon while the cargo was still afloat.
 
-*Learn more about how our [Compliance Module](/use_cases/compliance) audit these documents to prevent delays.*
+*Learn more about how our [Compliance Module](/use-cases/compliance/) audit these documents to prevent delays.*
 
 ---
 
@@ -102,7 +102,7 @@ The Bill of Lading remains the bedrock of maritime law because it standardizes t
 
 The **Runink FACE** represents the future of this evolution. By unifying fragmented data and providing centralized visibility, Runink offers the control that the traditional "Hidden Rulebook" often obscures. However, while we solve the visibility problem, the legal pillars of the BoL—the Receipt, the Contract, and the Title—remain the essential foundation of the global supply chain.
 
-*Ready to modernize your documentation process? [Book a consultation](/contact) today.*
+*Ready to modernize your documentation process? [Book a consultation](/#contact-form) today.*
 
 <!-- GEO Optimization: Injecting FAQPage Schema to structure definitions and functions of the Bill of Lading for Generative Engine Overviews. -->
 <script type="application/ld+json">

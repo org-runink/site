@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-06-09T19:24:39Z
 draft: false
 featured_image: "/images/blog/cold-chain-logistics-temperature-control-header.png"
-canonical: https://www.runink.org/blog/cold-chain-logistics-temperature-control
+canonical: https://runink.org/blog/cold-chain-logistics-temperature-control
 slug: "cold-chain-logistics-temperature-control"
 categories: ["Cold Chain", "Pharma Logistics"]
 tags: ["Cold Chain", "Temperature Control", "Pharma Logistics", "Food Safety", "IoT", "Runink"]
@@ -96,7 +96,7 @@ Cold chain logistics failures are not inevitable operational hazards — they ar
 
 Temperature excursions will continue to be a reality of moving sensitive products through complex, multi-modal supply chains. The question is whether your organization detects them in time to act — or discovers them only when product is already lost and regulators are already asking questions.
 
-The shift from reactive monitoring to predictive cold chain intelligence is not a technology project. It is a strategic operations decision that protects revenue, reduces waste, and builds the kind of supply chain resilience that Quality Assurance Directors and Supply Chain leaders are measured on every quarter. Platforms like [Runink](https://www.runink.org/contact) are purpose-built to ingest IoT telemetry at scale, apply AI-driven analytics, and deliver the actionable visibility that cold chain operations demand. Explore how Runink can help you close the gap between where your cold chain is today and where it needs to be by visiting our [use cases](https://www.runink.org/use_cases/).
+The shift from reactive monitoring to predictive cold chain intelligence is not a technology project. It is a strategic operations decision that protects revenue, reduces waste, and builds the kind of supply chain resilience that Quality Assurance Directors and Supply Chain leaders are measured on every quarter. Platforms like [Runink](/#contact-form) are purpose-built to ingest IoT telemetry at scale, apply AI-driven analytics, and deliver the actionable visibility that cold chain operations demand. Explore how Runink can help you close the gap between where your cold chain is today and where it needs to be by visiting our [use cases](/use-cases/).
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

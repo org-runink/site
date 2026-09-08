@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-05-02T07:57:56Z
 draft: false
 featured_image: "/images/blog/visual-merchandising-upstream-replenishment-header.png"
-canonical: https://www.runink.org/blog/visual-merchandising-upstream-replenishment
+canonical: https://runink.org/blog/visual-merchandising-upstream-replenishment
 slug: "visual-merchandising-upstream-replenishment"
 categories: ["Retail Logistics", "Supply Chain Operations"]
 tags: ["Visual Merchandising", "Replenishment", "Warehouse Slotting", "Runink"]
@@ -69,7 +69,7 @@ Forward-thinking Operations VPs are pivoting towards "aisle-ready" or "retail-re
 
 This strategic approach to palletization drastically reduces dwell time for delivery vehicles. When drivers drop off aisle-ready pallets, store associates can immediately roll them to the corresponding section of the floor, bypassing the backroom entirely. This rapid turnaround is essential for maintaining high fill rates during peak shopping hours. 
 
-Moreover, intelligent pallet building considers the physical constraints of the receiving location. For urban stores with limited dock space and strict delivery windows, pallets must be engineered for swift unloading using pallet jacks rather than forklifts. By optimizing the physical configuration of the freight, logistics teams can ensure smoother handoffs, reducing driver detention and maximizing the efficiency of the entire last-mile network. For a deeper dive into optimizing urban freight, explore our [advanced logistics use cases](/use_cases/). Implementing these retail-ready strategies often involves sophisticated load planning software that factors in weight distribution, crushability, and aisle sequencing simultaneously. While this adds a layer of complexity upstream, the return on investment at the store level is immense. Labor hours previously spent breaking down generic pallets can be reallocated to customer-facing activities, enhancing the overall shopping experience.
+Moreover, intelligent pallet building considers the physical constraints of the receiving location. For urban stores with limited dock space and strict delivery windows, pallets must be engineered for swift unloading using pallet jacks rather than forklifts. By optimizing the physical configuration of the freight, logistics teams can ensure smoother handoffs, reducing driver detention and maximizing the efficiency of the entire last-mile network. For a deeper dive into optimizing urban freight, explore our [advanced logistics use cases](/use-cases/). Implementing these retail-ready strategies often involves sophisticated load planning software that factors in weight distribution, crushability, and aisle sequencing simultaneously. While this adds a layer of complexity upstream, the return on investment at the store level is immense. Labor hours previously spent breaking down generic pallets can be reallocated to customer-facing activities, enhancing the overall shopping experience.
 
 ---
 
@@ -115,7 +115,7 @@ The visual appeal of a retail environment is undeniably powerful, but its impact
 
 By prioritizing these logistical elements, retail organizations can dramatically reduce backroom congestion, lower handling costs, and ensure that their shelves remain fully stocked during critical promotional periods. The transition from reactive replenishment to a proactive, synchronized supply chain is the key to surviving and thriving in modern retail. 
 
-If you are ready to gain the visibility and control needed to align your merchandising strategies with flawless supply chain execution, [contact our team](/contact) to learn how Runink's AI-powered intelligence platform can transform your logistics network.
+If you are ready to gain the visibility and control needed to align your merchandising strategies with flawless supply chain execution, [contact our team](/#contact-form) to learn how Runink's AI-powered intelligence platform can transform your logistics network.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

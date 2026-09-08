@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-05-28T04:09:18Z
 draft: false
 featured_image: "/images/blog/six-sigma-improve-autonomous-optimization-compute-runners-header.png"
-canonical: https://www.runink.org/blog/six-sigma-improve-autonomous-optimization-compute-runners
+canonical: https://runink.org/blog/six-sigma-improve-autonomous-optimization-compute-runners
 slug: "six-sigma-improve-autonomous-optimization-compute-runners"
 categories: ["Supply Chain Optimization", "Logistics IT"]
 tags: ["Six Sigma", "Compute Runners", "Autonomous Supply Chain", "Runink"]
@@ -90,7 +90,7 @@ Mastering the Six Sigma 'Improve' phase requires blending autonomous optimizatio
 
 The future of supply chain management belongs to organizations that can continuously and autonomously optimize their operations without jeopardizing the stability of their core systems. Advancing beyond mere data analysis into the Six Sigma 'Improve' phase demands a robust, secure, and elastic execution environment. By leveraging Runink's Isolated VPCs, the Target Compute Runner wizard, and auto-scaling managed instances, supply chain IT leaders can finally say "yes" to rapid innovation. 
 
-Operational excellence is no longer just about identifying the right solution; it is about deploying that solution securely and flawlessly at scale. We invite you to explore our comprehensive [supply chain visibility use cases](/use_cases/) to see how these architectures are transforming global freight networks. To start building your secure optimization environment, [contact our operations team](/contact) today and schedule a technical deep dive.
+Operational excellence is no longer just about identifying the right solution; it is about deploying that solution securely and flawlessly at scale. We invite you to explore our comprehensive [supply chain visibility use cases](/use-cases/) to see how these architectures are transforming global freight networks. To start building your secure optimization environment, [contact our operations team](/#contact-form) today and schedule a technical deep dive.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

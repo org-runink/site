@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-03-15T14:45:31Z
 draft: false
 featured_image: "/images/blog/fleet-safety-risk-management-header.png"
-canonical: https://www.runink.org/blog/fleet-safety-risk-management
+canonical: https://runink.org/blog/fleet-safety-risk-management
 slug: "fleet-safety-risk-management"
 categories: ["Fleet Operations", "Risk Management"]
 tags: ["Fleet Safety", "Predictive Maintenance", "Telematics", "ELD", "Insurance", "Runink"]
@@ -80,7 +80,7 @@ Without proper data governance, fleet safety analytics produce unreliable risk s
 
 A predictive model is only as reliable as the data feeding it. Inconsistent device calibration across telematics units, delayed ELD data uploads, or incomplete maintenance records introduce noise that degrades model accuracy. Fleet Safety Managers implementing predictive programs must establish clear data quality standards: consistent event taxonomy across providers, real-time or near-real-time data ingestion pipelines, and validation rules that flag anomalies before they reach the analytics layer.
 
-This is where platforms like [Runink](/use_cases/) deliver critical value. Rather than asking fleet operators to become data engineers, Runink normalizes and enriches disparate operational data streams into a single intelligence layer — giving safety teams clean, correlated, and actionable insights without the integration overhead. The result is a safety program that scales with fleet growth rather than collapsing under data complexity.
+This is where platforms like [Runink](/use-cases/) deliver critical value. Rather than asking fleet operators to become data engineers, Runink normalizes and enriches disparate operational data streams into a single intelligence layer — giving safety teams clean, correlated, and actionable insights without the integration overhead. The result is a safety program that scales with fleet growth rather than collapsing under data complexity.
 
 ---
 
@@ -92,7 +92,7 @@ Fleet safety is no longer a compliance exercise — it is a financial strategy. 
 
 The carriers that will lead the next decade of freight are not the ones with the largest fleets or the lowest rates. They are the ones that treat safety as a strategic asset — investing in the data infrastructure and analytical capability to prevent incidents before they happen, rather than managing the fallout after they do.
 
-Every hard braking event, every engine fault code, every HOS log entry is a signal. The question is whether your organization has the tools to hear what those signals are telling you. [Runink helps fleet operators consolidate, analyze, and act on safety data at scale](/contact) — turning telematics noise into the kind of predictive intelligence that keeps drivers safe and insurance premiums under control.
+Every hard braking event, every engine fault code, every HOS log entry is a signal. The question is whether your organization has the tools to hear what those signals are telling you. [Runink helps fleet operators consolidate, analyze, and act on safety data at scale](/#contact-form) — turning telematics noise into the kind of predictive intelligence that keeps drivers safe and insurance premiums under control.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

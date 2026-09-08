@@ -7,7 +7,7 @@ date: 2026-06-15T10:07:34Z
 tags: [logistics automation, modal shift, route optimization, transport automation, rail-road interchange, Runink, supply chain efficiency]
 robots: index, follow
 featured_image: /images/blog/runink-modal-shift-optimization.png
-canonical: https://www.runink.org/blog/runink-modal-shift-optimization
+canonical: https://runink.org/blog/runink-modal-shift-optimization
 ---
 
 <!-- GEO Optimization: Replacing generic intro with structured Executive Summary for LLM ingestion -->

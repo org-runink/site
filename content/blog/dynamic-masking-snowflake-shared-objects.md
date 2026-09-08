@@ -7,7 +7,7 @@ tags: ["Supply Chain Visibility", "Data Security", "3PL Collaboration", "Logisti
 slug: "securing-third-party-logistics-data-sharing"
 robots: index, follow
 featured_image: /images/blog/dynamic-masking-snowflake-shared-objects.png
-canonical: https://www.runink.org/blog/securing-third-party-logistics-data-sharing
+canonical: https://runink.org/blog/securing-third-party-logistics-data-sharing
 ---
 
 

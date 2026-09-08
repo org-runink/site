@@ -7,7 +7,7 @@ date: 2026-04-06T00:40:02Z
 tags: [logistics automation, dispatch optimization, data governance, Industry 4.0 procurement, IT ROI, cloud data strategy, smart supply chain, strategic sourcing, drone logistics]
 robots: index, follow
 featured_image: /images/blog/data-governance-logistics-roi.png
-canonical: https://www.runink.org/blog/data-governance-logistics-roi
+canonical: https://runink.org/blog/data-governance-logistics-roi
 ---
 
 

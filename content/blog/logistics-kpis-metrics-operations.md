@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-03-24T16:42:01Z
 draft: false
 featured_image: "/images/blog/logistics-kpis-metrics-operations-header.png"
-canonical: https://www.runink.org/blog/logistics-kpis-metrics-operations
+canonical: https://runink.org/blog/logistics-kpis-metrics-operations
 slug: "logistics-kpis-metrics-operations"
 categories: ["Supply Chain Strategy", "Operations Management"]
 tags: ["KPIs", "Logistics Metrics", "OTIF", "Perfect Order Rate", "Operations", "Runink"]
@@ -84,9 +84,9 @@ Carrier scorecard compliance measures how well each carrier in your network perf
 AI-driven supply chain platforms automate the collection, normalization, and anomaly detection across all 10 KPIs simultaneously, replacing fragmented spreadsheets with a unified control tower that surfaces problems before they reach the customer. Rather than waiting for a monthly review to discover that dock-to-stock time doubled at a regional DC, continuous monitoring triggers alerts at the moment performance deviates from established thresholds.
 {{< /direct-answer >}}
 
-The challenge for most operations teams is not identifying which KPIs matter—it is sustaining accurate, timely measurement across fragmented data sources: TMS, WMS, YMS, ERP, carrier EDI feeds, and IoT telemetry. Platforms like [Runink](/use_cases/) integrate these data streams, apply machine learning to detect trend shifts and outliers, and present actionable intelligence at the lane, carrier, and facility level. The result is a shift from reactive reporting to proactive performance management—exactly the capability that separates supply chain leaders from the rest of the field.
+The challenge for most operations teams is not identifying which KPIs matter—it is sustaining accurate, timely measurement across fragmented data sources: TMS, WMS, YMS, ERP, carrier EDI feeds, and IoT telemetry. Platforms like [Runink](/use-cases/) integrate these data streams, apply machine learning to detect trend shifts and outliers, and present actionable intelligence at the lane, carrier, and facility level. The result is a shift from reactive reporting to proactive performance management—exactly the capability that separates supply chain leaders from the rest of the field.
 
-If your current KPI process still depends on manual data pulls and monthly slide decks, it is time to explore what continuous, AI-powered logistics intelligence can do for your operation. [Connect with the Runink team](/contact) to see how automated KPI tracking can protect your margins and elevate your service levels.
+If your current KPI process still depends on manual data pulls and monthly slide decks, it is time to explore what continuous, AI-powered logistics intelligence can do for your operation. [Connect with the Runink team](/#contact-form) to see how automated KPI tracking can protect your margins and elevate your service levels.
 
 ---
 
