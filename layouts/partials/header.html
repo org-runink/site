@@ -246,5 +246,21 @@
         .nav-toggle:checked~header .nav-content {
             display: block;
         }
+
+        /* The nav links and the dropdown panels carry Tailwind transition
+           utilities. Honour a reader who has asked the OS for less movement:
+           the menu still opens and still shows focus, it just does not animate
+           its way there. */
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
     </style>
 </div>

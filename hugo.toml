@@ -23,8 +23,28 @@ enableGitInfo = true
   tag = 'tags'
 
 # Pagination
-paginate = 6
-paginatePath = "page"
+#
+# These MUST stay inside their own [pagination] table and MUST NOT be written as
+# bare `paginate = 6` / `paginatePath = "page"` keys again. TOML has no dedent: a
+# blank line and a comment do not close [taxonomies] above, so those two keys
+# were being read as two extra TAXONOMY definitions —
+#
+#   paginate     = '6'      ->  a taxonomy whose plural is "6"
+#   paginatePath = 'page'   ->  a taxonomy whose plural is "page"
+#
+# — which is where the published /6/ and /page/ came from (plus /es/6/, /fr/6/,
+# /pt/6/ and their /page/ twins). Both rendered through layouts/taxonomy/list.html
+# with no terms to list, so they went out as near-empty pages with a blank <h1>,
+# `index, follow`, and an entry in the sitemap.
+#
+# The second half of the same bug: because neither key ever reached pagination
+# config, `paginate = 6` did nothing and list pages silently ran at Hugo's
+# default of 10. pagerSize = 6 below is the value this file has always asked for
+# and is now the value actually in force. `pagerSize`/`pagerPath` are the modern
+# spellings (Hugo 0.128+); the bare root-level forms are deprecated regardless.
+[pagination]
+  pagerSize = 6
+  pagerPath = "page"
 
 [params]
   disablePostCSS = false
@@ -54,6 +74,10 @@ paginatePath = "page"
     gradient_from = "#3A2F2A"  # Indigo-600
     gradient_to = "#1A1512"    # Purple-600
     gradient_angle = 30
+    # /#contact-form, not /#contact. The consultation form on the home page has
+    # always rendered with id="contact-form"; nothing has ever rendered
+    # id="contact", so this link scrolled nowhere and returned 200 while doing
+    # it. `go run linkcheck.go` now fails on exactly this.
     [params.cta.primary_button]
       text = "Book your Consultation"
       url = "/#contact-form"
@@ -77,7 +101,13 @@ paginatePath = "page"
     
     # Menu configuration
     [params.header.menu]
-      spacing = "space-x-8"
+      # space-x-6, down from space-x-8. Giving Blog a submenu adds a chevron to
+      # that entry, and at 1440 the ~24px it takes came out of the longest label
+      # instead: "Ce qui nous différencie" went from two lines to three. Six
+      # points back across the five gaps returns every language to the line
+      # count it had before, with the flags still on the row. Measured at 1440
+      # in en, fr and pt.
+      spacing = "space-x-6"
       
       # Dropdown menu configuration
       [params.header.menu.dropdown]
@@ -100,14 +130,24 @@ paginatePath = "page"
       #   url = "/signin"
       
       # Get Started button
+      # See the note on params.cta.primary_button above for the id.
       [params.header.buttons.getStarted]
         text = "Book your Consultation"
         url = "/#contact-form"
 
       # Check it out button
+      #
+      # This pointed at /demo/ until now. content/demo.md was renamed to
+      # content/face.md in July and the FACE, CORE and PULSE pages then moved
+      # out to subdomains, so /demo/ has 404'd in all four languages ever since
+      # — the button was simply never repointed. /industries/ is where it goes
+      # instead: it is live, and it is the page that lets a visitor check
+      # whether their own operation is one Runink is built around, which is what
+      # this button is for. Unprefixed from every language for the same reason
+      # the Industries menu entry is (see the note in the English menu below).
       [params.header.buttons.checkItOut]
         text = "Check it out"
-        url = "/demo/"
+        url = "/industries/"
 
   # Blog configuration
   [params.blog]
@@ -217,9 +257,19 @@ paginatePath = "page"
       url = "/#why-runink"
       weight = 1
 
+    # /#painkiller was an id on the home page that the English home page no
+    # longer renders — the painkiller-pitches shortcode is still called from the
+    # fr/es/pt home pages but was dropped from the English one, so this entry
+    # scrolled nowhere in English and nothing reported it.
+    #
+    # It points at a page rather than at a re-added anchor deliberately: an
+    # anchor is only as durable as whichever shortcode happens to be in the home
+    # page's markdown that week, and this is the second time that has broken it.
+    # The whitepapers are where the painkiller claim is actually argued at
+    # length, and the index exists and is translated in all four languages.
     [[languages.en.menu.main]]
       name = "What makes it a painkiller"
-      url = "/#painkiller"
+      url = "/blog/whitepapers/"
       weight = 2
 
     # Industries sits above Use cases deliberately. The site was organised by
@@ -251,15 +301,29 @@ paginatePath = "page"
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
+    # /#use-cases was the id of the carousel shortcode, which the English home
+    # page no longer calls either. /use-cases/ is the real section: the same
+    # argument at length, followed by every use case as a card, and it is
+    # translated in all four languages.
     [[languages.en.menu.main]]
       name = "Use cases"
-      url = "/#use-cases"
+      url = "/use-cases/"
       weight = 4
 
+    # Whitepapers hangs off Blog because that is where the pages live
+    # (content/blog/whitepapers/) and where the blog's own subtitle already
+    # tells readers to look. Same has_submenu mechanism as Industries above —
+    # the parent stays a real link to /blog/, so nothing is hidden behind a
+    # control that needs a pointer.
     [[languages.en.menu.main]]
       name = "Blog"
       url = "/blog/"
       weight = 5
+      [languages.en.menu.main.params]
+        has_submenu = true
+        submenu = [
+          { name = "Whitepapers", url = "/blog/whitepapers/" },
+        ]
 
     [[languages.en.menu.main]]
       name = "Pricing"
@@ -274,11 +338,11 @@ paginatePath = "page"
 
     [languages.fr.params.header.buttons.getStarted]
       text = "Réserver une Consultation"
-      url = "/fr/#contact"
+      url = "/fr/#contact-form"
 
     [languages.fr.params.header.buttons.checkItOut]
       text = "Découvrez-le"
-      url = "/fr/demo/"
+      url = "/industries/"
 
     [languages.fr.params.blog]
       title = "Publications, Décryptages & Expertise"
@@ -291,7 +355,7 @@ paginatePath = "page"
 
     [[languages.fr.menu.main]]
       name = "Ce qui nous différencie"
-      url = "/fr/#painkiller"
+      url = "/fr/blog/whitepapers/"
       weight = 2
 
     # English pages, French label. The destinations are the unprefixed paths
@@ -312,13 +376,18 @@ paginatePath = "page"
 
     [[languages.fr.menu.main]]
       name = "Cas d'usage"
-      url = "/fr/#use-cases"
+      url = "/fr/use-cases/"
       weight = 4
 
     [[languages.fr.menu.main]]
       name = "Blog"
       url = "/fr/blog/"
       weight = 5
+      [languages.fr.menu.main.params]
+        has_submenu = true
+        submenu = [
+          { name = "Livres blancs", url = "/fr/blog/whitepapers/" },
+        ]
 
     [[languages.fr.menu.main]]
       name = "Tarifs"
@@ -332,11 +401,11 @@ paginatePath = "page"
 
     [languages.es.params.header.buttons.getStarted]
       text = "Reserve una Consulta"
-      url = "/es/#contact"
+      url = "/es/#contact-form"
 
     [languages.es.params.header.buttons.checkItOut]
       text = "Descúbrelo"
-      url = "/es/demo/"
+      url = "/industries/"
 
     [languages.es.params.blog]
       title = "Publicaciones, Insights y Especialidad"
@@ -349,7 +418,7 @@ paginatePath = "page"
 
     [[languages.es.menu.main]]
       name = "Qué nos diferencia"
-      url = "/es/#painkiller"
+      url = "/es/blog/whitepapers/"
       weight = 2
 
     # English pages, Spanish label — same reasoning as the French block above.
@@ -369,13 +438,18 @@ paginatePath = "page"
 
     [[languages.es.menu.main]]
       name = "Casos de uso"
-      url = "/es/#use-cases"
+      url = "/es/use-cases/"
       weight = 4
 
     [[languages.es.menu.main]]
       name = "Blog"
       url = "/es/blog/"
       weight = 5
+      [languages.es.menu.main.params]
+        has_submenu = true
+        submenu = [
+          { name = "Libros blancos", url = "/es/blog/whitepapers/" },
+        ]
 
     [[languages.es.menu.main]]
       name = "Precios"
@@ -389,11 +463,11 @@ paginatePath = "page"
 
     [languages.pt.params.header.buttons.getStarted]
       text = "Agende uma Consulta"
-      url = "/pt/#contact"
+      url = "/pt/#contact-form"
 
     [languages.pt.params.header.buttons.checkItOut]
       text = "Confira"
-      url = "/pt/demo/"
+      url = "/industries/"
 
     [languages.pt.params.blog]
       title = "Publicações, Insights e Especialização"
@@ -406,7 +480,7 @@ paginatePath = "page"
 
     [[languages.pt.menu.main]]
       name = "O que nos diferencia"
-      url = "/pt/#painkiller"
+      url = "/pt/blog/whitepapers/"
       weight = 2
 
     # English pages, Portuguese label — same reasoning as the French block above.
@@ -426,13 +500,18 @@ paginatePath = "page"
 
     [[languages.pt.menu.main]]
       name = "Casos de uso"
-      url = "/pt/#use-cases"
+      url = "/pt/use-cases/"
       weight = 4
 
     [[languages.pt.menu.main]]
       name = "Blog"
       url = "/pt/blog/"
       weight = 5
+      [languages.pt.menu.main.params]
+        has_submenu = true
+        submenu = [
+          { name = "Whitepapers", url = "/pt/blog/whitepapers/" },
+        ]
 
     [[languages.pt.menu.main]]
       name = "Preços"

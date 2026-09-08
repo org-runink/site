@@ -1,0 +1,70 @@
+# Leadership — the copy for the block that closes every industry page.
+#
+# WHY A DATA FILE RATHER THAN FRONT MATTER. The industries section drives its
+# prose from each page's front matter because that prose is different on every
+# page. This block is not: it is the same on all five, so front matter would
+# mean five copies of one paragraph and four chances to let them drift. One
+# file, one place to edit, rendered by layouts/partials/industries/leadership.html.
+#
+# WHAT MAY GO IN HERE. Only things a reader can check for themselves — a tenure,
+# a role, a named foundation, a public profile. The review that asked for this
+# block asked for it because it builds confidence, and the whole of the rest of
+# this section builds confidence by refusing to state anything the reader cannot
+# verify: no case studies, no customer names, no return-on-investment figures,
+# and a measures table that gives the reader a line to write their own number
+# on rather than printing ours. A founder biography that promised a financial
+# outcome would read as the moment the restraint dropped, and would make a
+# sceptical reader re-read everything above it as a pose. The source material
+# for this block — his own profile summary — carried exactly one such sentence,
+# about what tech initiatives and operating costs would do. It is not here, and
+# nothing may be added that restates it in other words. Same rule for the word
+# the rest of this section has already been stripped of: teams are not
+# "empowered" anywhere on these pages.
+#
+# ONE PERSON, DELIBERATELY. There is one name because there is one name. No
+# advisor row, no placeholder cards, no wording that implies a headcount either
+# way. Depth comes from the track record, the foundation role and the
+# architectural stance — not from filling a grid.
+#
+# NO PORTRAIT. There is no photograph of him in this repository, and the site
+# takes no external requests, so there is nothing to show and nothing may be
+# invented to stand in for it. static/images/team.jpg is a stock crowd shot and
+# would imply exactly the headcount this block must not imply. The nameplate
+# carries a drawn monogram instead — clearly a mark rather than a missing face.
+
+label: "Who you would be working with"
+intro: "Runink is founder-led. The person in the first meeting is the person who designed the thing being discussed."
+
+name: "Dan Paes"
+role: "Chief executive and technical founder"
+
+# Four paragraphs, in the order a sceptical reader wants them: what he did
+# before this, what he does here, why the product is shaped the way it is, and
+# where he can be found arguing the same problem in public.
+bio:
+  - "Dan Paes has spent more than twenty years inside other people's enterprises, running digital transformation and full-scale modernisation programmes for global organisations. The long kind: what is being replaced is what the business is running on that morning, and the work is judged on whether anything broke."
+  - "He founded Runink and runs it as chief executive. Technical founder is the more useful half of that title — he sets the architecture and works in the code, so the person answering an architecture question in a first meeting is the person who decided the answer, and the distance between a question and a change is short."
+  - "It is also why the platform is shaped the way it is. It runs on hardware the customer controls, and the reasoning about their data stays there. That is the more expensive way to build it and it closes off the convenient route, which is the kind of decision that has to be settled by whoever owns the architecture rather than left where it can quietly be traded away."
+  - "He is a FINOS Ambassador. FINOS is the Fintech Open Source Foundation, part of the Linux Foundation, and the work there is interoperability between institutions that share a market but not their infrastructure and never their data. It is the same problem this platform is pointed at, argued in the open, in front of people who say so when it is wrong."
+
+# The three claims above, pulled out so they can be read without reading the
+# prose. Each one is a fact with a source, not a benefit.
+credentials:
+  - key: "20+ years"
+    line: "Digital transformation and full-scale modernisation for global enterprises."
+  - key: "CEO and technical founder"
+    line: "Runink. Sets the architecture and writes code in it."
+  - key: "FINOS Ambassador"
+    line: "Fintech Open Source Foundation, a Linux Foundation project. Open source interoperability, in public."
+
+# The block ends by handing the reader the means to check it, which is the same
+# move the measures table makes. Links only — no badge script, no remote image,
+# no request leaves the page.
+verify_label: "Check any of it"
+verify:
+  - text: "linkedin.com/in/danspaes"
+    url: "https://www.linkedin.com/in/danspaes/"
+  - text: "finos.org"
+    url: "https://www.finos.org/"
+  - text: "paes@runink.org"
+    url: "mailto:paes@runink.org"

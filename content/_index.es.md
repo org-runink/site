@@ -1,111 +1,131 @@
 ---
-title: "Runink - Operaciones de Empresa Autónomas"
-description: "Logre una Visibilidad de la Cadena de Suministro en Tiempo Real y mitigue las interrupciones al instante. La plataforma de Gemelo Digital de la Cadena de Suministro de Runink conecta la telemetría logística con Análisis Predictivo—abarcando S&OP, Análisis de Gastos y cumplimiento—para construir la máxima resiliencia y proteger sus márgenes."
+# Front matter only — see the notes in content/_index.md. The same rules apply
+# here: no figures of any kind, no aliases, and nothing below the front matter.
+#
+# The industry names stay in English because the industry pages themselves are
+# English and hugo.toml already lists them in English in the Spanish menu. The
+# link goes to the same /industries/... page in every language.
+title: "Runink"
+description: "Entradas aduaneras retenidas, siniestros resueltos sin la evidencia que ya estaba en el expediente, tráfico cursado y nunca tarificado. La respuesta suele estar ya en sus propios registros. Runink los lee todos y pone una acción concreta delante de la persona que puede aprobarla."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
+accent: "#ea580c"
+
+hero:
+  eyebrow: "Para operaciones, finanzas y cumplimiento"
+  line1: "La respuesta ya está en sus registros."
+  line2: "Nunca hubo tiempo de leerlos todos."
+  deck: "Una entrada aduanera retenida por un documento que falta mientras corre el cargo diario. Un siniestro resuelto sin la evidencia que ya estaba en el expediente. Tráfico cursado y nunca tarificado. En todos los casos quedó escrito en algún sitio primero, y después se leyó por muestreo, tarde, o no se leyó."
+  cta_primary: "Encuentre su sector"
+  cta_secondary: "Agende una consulta"
+
+figure:
+  today_label: "Cómo se lee hoy"
+  today_note: "El volumen venció a la inspección, así que se lee una muestra y del resto se supone que se parece a ella. Los registros que difieren ya están en el campo."
+  read_label: "Cómo lo lee Runink"
+  read_note: "Cada registro se compara con la regla que lo gobierna, de noche, en sus propias máquinas. Lo que difiere sale con nombre."
+  beats:
+    - title: "Los registros ya existen"
+      body: "Pedidos, siniestros, órdenes de pago, detalle de llamadas, contratos y lecturas de sensores, en los sistemas que ya opera."
+    - title: "Se leen todos"
+      body: "No es un barrido mensual sobre una muestra. La comparación corre registro a registro, así que una excepción llega como un caso con nombre y no como una tasa estimada."
+    - title: "Una persona decide qué pasa"
+      body: "Cada hallazgo llega con la regla que incumplió, los registros que lo sustentan y una acción redactada, para que alguien la apruebe, la corrija o la rechace."
+  caption: "Cuánto tarda su operación desde que algo queda registrado hasta que alguien actúa sobre ello es un número que conviene tener. Muy pocas operaciones lo han contado. Ese intervalo suele ser donde está el coste, y es una buena primera cosa que medir juntos."
+
+industries_heading: "Cinco sectores, una misma forma de problema"
+industries_intro: "Encuentre la línea que se parece a su semana. Cada una abre una página escrita para ese sector, con las medidas sobre las que anotar sus propias cifras."
+industries_cta: "Ver si encaja"
+industries_columns:
+  name: "Sector"
+  cost: "Lo que le está costando en silencio"
+  owner: "Quién lo tiene a su cargo"
+industries:
+  - page: "logistics-supply-chain"
+    name: "Logistics & Supply Chain"
+    accent: "#ea580c"
+    cost: "Una entrada retenida en el puerto por un documento que falta mientras corre el cargo diario. Una reclamación de flete todavía dentro de su plazo de presentación que nadie tuvo la mañana para armar."
+    owners:
+      - "Director de operaciones"
+      - "Director financiero"
+      - "Cumplimiento aduanero"
+  - page: "insurance"
+    name: "Insurance"
+    accent: "#778fe6"
+    cost: "Un umbral de revisión elevado para vaciar una cola, pensado como provisional, nunca devuelto y nunca decidido. Movimientos de reserva revisados por muestreo porque el flujo es demasiado largo para leerlo."
+    owners:
+      - "Operaciones de siniestros"
+      - "Cumplimiento y riesgos"
+      - "Auditoría interna"
+  - page: "banking-financial-services"
+    name: "Banking & Financial Services"
+    accent: "#C8D9A8"
+    cost: "Una diferencia que crece dentro del rango que siempre se aprueba, así que ningún mes escala y nadie lee la secuencia. Un contrato de proveedor que nadie ha vuelto a abrir desde la firma."
+    owners:
+      - "Cumplimiento y riesgos"
+      - "Auditoría interna"
+      - "Finanzas"
+  - page: "telecom"
+    name: "Telecom"
+    accent: "#c084fc"
+    cost: "Un cambio de tarificación correcto para la promoción y equivocado para un plan heredado, demasiado pequeño para mover un agregado. Un barrido que devuelve una tasa de error cuando operaciones necesita las cuentas por nombre."
+    owners:
+      - "Aseguramiento de ingresos"
+      - "Liquidación de interconexión"
+      - "Finanzas y compras"
+  - page: "marketing"
+    name: "Marketing"
+    accent: "#D4A574"
+    cost: "La herramienta de auditoría sabe que el sitio es lento. La de contenido no, así que sigue escribiendo para una página en la que nadie se queda. Cada campaña vuelve a empezar en blanco."
+    owners:
+      - "Responsable de marketing"
+      - "Ventas"
+      - "TI y seguridad de la información"
+
+why_heading: "Por qué esto no es otro panel de control"
+why_intro: "Tres cosas deciden si algo de lo anterior merece su tiempo."
+why:
+  - glyph: "finding"
+    title: "Recibe el hallazgo, no los datos"
+    body: "Un panel le muestra una cifra y le deja el trabajo a usted. Esto llega como una acción propuesta concreta, priorizada, con la regla que invocó y los registros que citó adjuntos."
+  - glyph: "approve"
+    title: "Decide una persona con nombre"
+    body: "Nada sale de su organización antes de que alguien lo apruebe. Quién lo aprobó, cuándo y qué cambió queda en el registro, para poder explicar el motivo más adelante sin volver a reconstruirlo."
+  - glyph: "held"
+    title: "Sus registros se quedan en sus máquinas"
+    body: "Los archivos y el razonamiento sobre ellos corren en hardware que usted controla. Nada se envía a un proveedor de modelos externo, que suele ser el camino más corto a través de una revisión de seguridad."
+
+paper:
+  text: "Lea el informe FACE"
+  url: "/blog/whitepapers/runink-face/"
+  note: "La versión larga: qué lee, qué produce, quién lo aprueba y dónde se ejecuta."
+
+contact:
+  heading: "Traiga una ruta, un siniestro o un mes de facturas."
+  deck: "Una conversación corta suele bastar para saber si las pérdidas que carga tienen la forma de lo que esto resuelve. Si no la tienen, se lo diremos."
+  book_title: "Agende una consulta"
+  book_body: "Media hora, con quien tenga el problema a su cargo en la sala. Recorreremos de principio a fin un ejemplo real suyo."
+  book_cta: "Elija una hora"
+  form_title: "O escríbanos"
+  form_deck: "Cuéntenos qué le está costando, con sus palabras. Respondemos en un día hábil."
+  name_label: "Nombre completo"
+  name_placeholder: "Ana Pérez"
+  email_label: "Correo de trabajo"
+  email_placeholder: "ana@empresa.com"
+  company_label: "Empresa"
+  company_placeholder: "Su organización"
+  source_label: "¿Cómo supo de nosotros?"
+  source_default: "Seleccione una opción"
+  source_options:
+    - { value: "Referral", text: "Alguien nos recomendó" }
+    - { value: "LinkedIn", text: "LinkedIn" }
+    - { value: "Web Search", text: "Búsqueda web" }
+    - { value: "Event", text: "Un evento" }
+    - { value: "Other", text: "Otro" }
+  message_label: "¿Qué problema intenta resolver?"
+  message_placeholder: "Basta con un ejemplo: una entrada retenida, un siniestro, una conciliación que lleva una semana."
+  submit: "Enviar mensaje"
+  note: "Usamos lo que nos envía aquí para responderle y para nada más."
+  done_title: "Mensaje recibido"
+  done_body: "Gracias. Le responderemos en un día hábil."
 ---
-
-{{< landing-hero >}}
-
-{{< why-runink >}}
-
-{{< painkiller-pitches >}}
-
-{{< use-case-parallax 
-  pill="Agencias de Venta & Centros de Distribución"
-  title="Orquestación de Inventario" 
-  subtitle="Reequilibrio Autónomo de Stock"
-  problem="La asignación manual de inventario provoca desabastecimientos locales que destruyen los ingresos y excesos de stock que erosionan los márgenes. Nuestro sistema autónomo elimina los cuellos de botella manuales, prediciendo la demanda local y ejecutando transferencias de stock entre agencias para maximizar los márgenes operativos."
-  img="/images/face/fulfilment.png"
-  url="/use-cases/fulfillment-optimization/"
-  monitor="**Predicción de Demanda** analiza la velocidad de ventas local y las tendencias del mercado para garantizar niveles de stock óptimos en todas las sucursales. \n**Análisis Predictivo** dirige el inventario a las ubicaciones más rentables según los costos de almacenamiento en tiempo real. \n**Modelado de Escenarios** somete a pruebas de esfuerzo su cadena de suministro para defenderse de la volatilidad repentina del mercado."
-  cockpit="**Gemelos Digitales de Operaciones** proporcionan un mapa contrastado y en tiempo real de las capacidades de las sucursales y los desabastecimientos inminentes. \n**Motor de Orquestación** emite de forma autónoma órdenes de transferencia para mantener la precisión operativa. \n**Ejecución en Un Clic** se sincroniza perfectamente con sus sistemas WMS/ERP existentes."
- >}}
-
-{{< use-case-parallax 
-  invert="true"
-  pill="Flujos Financieros"
-  title="Recuperación de Ingresos" 
-  subtitle="Auditoría Autónoma de Reclamaciones"
-  problem="Los incumplimientos de los acuerdos de nivel de servicio (SLA), la carga dañada y el incumplimiento de los transportistas drenan silenciosamente millones de las cadenas de suministro corporativas. Nuestras soluciones autónomas proporcionan una auditoría transparente de los envíos entrantes, identificando infracciones y presentando reclamaciones irrefutables para recuperar los ingresos perdidos."
-  img="/images/face/claims.png"
-  url="/use-cases/claims-recovery/"
-  monitor="**Análisis Predictivo** utiliza lógica de decisión para cotejar los manifiestos de entrada con los SLA de los proveedores con absoluta seguridad y conformidad. \n**Precisión Operativa** identifica la marca de tiempo exacta de los fallos de entrega para demostrar el incumplimiento de los proveedores. \n**Modelado Financiero** calcula el ROI preciso y la probabilidad de éxito de las reclamaciones presentadas."
-  cockpit="**Gemelos Digitales de Operaciones** exponen las discrepancias exactas entre los pedidos de compra de los proveedores y los registros de recepción reales. \n**Motor de Cumplimiento** redacta de forma autónoma avisos de penalización respaldados por datos de cadena de suministro irrefutables. \n**Ejecución en Un Clic** presenta la disputa directamente al proveedor, recuperando ingresos al instante."
- >}}
-
-{{< use-case-parallax 
-  pill="Centros de Distribución"
-  title="Auditoría de Cumplimiento" 
-  subtitle="Reconciliación Autónoma de Libros Contables"
-  problem="Los controles manuales en las puertas del muelle crean enormes cuellos de botella, y los datos de carga no reconciliados retrasan los informes financieros críticos. Runink despliega algoritmos especializados para verificar de forma autónoma la carga entrante, garantizando la soberanía de los datos y acelerando el cierre financiero mensual."
-  img="/images/face/overview.png"
-  url="/use-cases/compliance/"
-  monitor="**Seguimiento de Muelle a Stock** garantiza la soberanía de los datos al verificar la integridad de toda la carga entrante en tiempo real. \n**Reconciliación de Libros** alinea perfectamente los productos recibidos con las Órdenes de Compra internas para una precisión operativa absoluta. \n**Impacto Financierol** simula la erosión del margen de los productos dañados antes de que cierre el ciclo de facturación."
-  cockpit="**Cuadros de Mando de Gemelos Digitales** destacan los cuellos de botella en los muelles en tiempo real y las discrepancias de cumplimiento. \n**Motor de Reconciliación** suscribe de forma autónoma el libro contable para generar informes financieros fluidos. \n**Ejecución en Un Clic** envía datos de carga limpios y completamente auditados directamente al ERP del CFO."
- >}}
-
-{{< use-cases-carousel >}}
-
-{{< contact-section >}}
-
-
----
-
-
-<!-- Sección FAQ generada alineada con el ADN de la empresa -->
-<section class="faq-section mt-16 p-8 bg-[#1b1919] rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
-  <div class="flex items-center gap-4 mb-8">
-    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ea580c] to-[#ca4708] flex items-center justify-center shadow-lg">
-      <span class="material-symbols-outlined text-white">help_center</span>
-    </div>
-    <h2 class="text-3xl font-black text-white uppercase italic tracking-tight m-0">Preguntas Frecuentes</h2>
-  </div>
-  <div class="space-y-6">
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">¿Cómo maximiza los márgenes operativos una plataforma de decisión autónoma en comparación con el software tradicional?</h3>
-      <p class="text-stone-400 leading-relaxed">El software de cadena de suministro tradicional se basa en reglas rígidas que fallan durante las interrupciones operativas, lo que requiere una intervención manual que crea cuellos de botella. Los motores de decisión de Runink ofrecen visibilidad en tiempo real al percibir de forma autónoma la volatilidad de la cadena de suministro, analizar las restricciones financieras y ejecutar las decisiones más rentables. Ya sea que se trate de redirigir un envío o de reequilibrar el inventario, nuestra plataforma toma medidas independientes para proteger y maximizar sus márgenes operativos.</p>
-    </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">¿Cómo proporcionan precisión operativa los Gemelos Digitales de Operaciones para la logística compleja?</h3>
-      <p class="text-stone-400 leading-relaxed">Nuestros gemelos digitales de operaciones crean un espejo de alto contraste y en tiempo real de toda su red logística. Al consolidar datos dispares de sus sistemas WMS, TMS y ERP, establecemos una única fuente de verdad. Esto le permite a su empresa ir más allá de los informes aislados hacia la orquestación proactiva del inventario y la recuperación de ingresos. Obtiene datos en los que puede confiar, lo que le permite a su equipo tomar decisiones estratégicas que puede defender con confianza en cualquier sala de juntas.</p>
-    </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">¿Cómo garantiza Runink la soberanía de los datos y el cumplimiento de la seguridad?</h3>
-      <p class="text-stone-400 leading-relaxed">Entendemos que sus datos logísticos son su activo más crítico. Runink se basa en una base de absoluta soberanía de datos y un riguroso cumplimiento de la seguridad. Nuestra plataforma se integra de forma segura con su infraestructura empresarial, lo que garantiza que los flujos de trabajo financieros sensibles, los acuerdos con proveedores y las auditorías de cumplimiento permanezcan estrictamente bajo su control. Procesamos sus datos para eliminar cuellos de botella manuales sin comprometer nunca su inteligencia comercial patentada.</p>
-    </div>
-  </div>
-</section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo maximiza los márgenes operativos una plataforma de decisión autónoma en comparación con el software tradicional?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El software de cadena de suministro tradicional se basa en reglas rígidas que fallan durante las interrupciones operativas, lo que requiere una intervención manual que crea cuellos de botella. Los motores de decisión de Runink ofrecen visibilidad en tiempo real al percibir de forma autónoma la volatilidad de la cadena de suministro, analizar las restricciones financieras y ejecutar las decisiones más rentables. Ya sea que se trate de redirigir un envío o de reequilibrar el inventario, nuestra plataforma toma medidas independientes para proteger y maximizar sus márgenes operativos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo proporcionan precisión operativa los Gemelos Digitales de Operaciones para la logística compleja?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nuestros gemelos digitales de operaciones crean un espejo de alto contraste y en tiempo real de toda su red logística. Al consolidar datos dispares de sus sistemas WMS, TMS y ERP, establecemos una única fuente de verdad. Esto le permite a su empresa ir más allá de los informes aislados hacia la orquestación proactiva del inventario y la recuperación de ingresos. Obtiene datos en los que puede confiar, lo que le permite a su equipo tomar decisiones estratégicas que puede defender con confianza en cualquier sala de juntas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo garantiza Runink la soberanía de los datos y el cumplimiento de la seguridad?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Entendemos que sus datos logísticos son su activo más crítico. Runink se basa en una base de absoluta soberanía de datos y un riguroso cumplimiento de la seguridad. Nuestra plataforma se integra de forma segura con su infraestructura empresarial, lo que garantiza que los flujos de trabajo financieros sensibles, los acuerdos con proveedores y las auditorías de cumplimiento permanezcan estrictamente bajo su control. Procesamos sus datos para eliminar cuellos de botella manuales sin comprometer nunca su inteligencia comercial patentada."
-      }
-    }
-  ]
-}
-</script>

@@ -215,6 +215,21 @@
     </section>
     {{ end }}
 
+    {{/* Who is behind it — the last block before the ask.
+
+         The review of this material said to consider ending with the
+         leadership team and their relevant experience, to build confidence.
+         This is that block, and its position is the argument: everything above
+         has described what the platform does and how the reader would measure
+         it, and the sentence directly below asks for a meeting. The person
+         goes between the two.
+
+         Not driven from front matter, unlike every other block on this page:
+         it is identical on all five industry pages, so it reads from
+         data/leadership.yaml instead. See the partial for why it lives here
+         rather than on /company/ or on the overview. */}}
+    {{ partial "industries/leadership.html" . }}
+
     <!-- One next step -->
     <section class="ind-next" aria-labelledby="next-heading">
       <h2 id="next-heading">{{ .Params.next_heading | default "See whether it fits" }}</h2>

@@ -104,7 +104,20 @@
     .ind-wrap { padding: 3.5rem 2rem 6rem; }
   }
 
-  .ind a { color: inherit; }
+  /* `:not([class])` is load-bearing, not tidiness.
+
+     As `.ind a` this rule was specificity (0,1,1) and beat `.ind-cta`
+     (0,1,0), so the primary call to action inherited the sheet's dark body
+     ink instead of its own `#ffffff` — dark text on a dark accent fill. The
+     button rendered live on all five industry pages as a solid coloured
+     rectangle with no readable label. Nothing catches this: the markup is
+     correct, the colour is declared, the contrast checker never sees the
+     element because the label is the same colour as what is behind it, and
+     the ghost button beside it looks fine.
+
+     Scoped to unclassed links so prose inside the section still inherits,
+     while anything carrying its own class keeps the colour it declares. */
+  .ind a:not([class]) { color: inherit; }
 
   /* The base stylesheet defines no focus ring, and the UA default is weak on a
      near-white sheet, so the section states its own. */
@@ -603,6 +616,190 @@
     color: var(--ink);
   }
 
+  /* ---- leadership: the last block before the ask ------------------------
+
+     Built entirely out of grammar already on the page, so it lands as the
+     closing panel of this document rather than as a bolted-on "team" section:
+     the plate is the accent-topped sheet the problem cards use, the credential
+     strip is the ruled-beat row from the figure at the top, and the checkable
+     handles sit on the same washed footing as a foundation card's "what you
+     would notice". Nothing new is introduced except the nameplate.
+
+     There is one person and no photograph of him, so the plate is set to read
+     at the width of the page rather than as a card in an empty grid — a lone
+     portrait tile surrounded by white space is what makes a single name look
+     like a gap where three should be. Full width, prose, and a strip of three
+     facts underneath instead.
+  ------------------------------------------------------------------------ */
+
+  .ind-lead__plate {
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent-edge);
+    border-radius: 0 0 0.875rem 0.875rem;
+    padding: 1.5rem 1.5rem 0;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .ind-lead__plate { padding: 2rem 2rem 0; }
+  }
+
+  /* nameplate */
+
+  .ind-lead__id {
+    display: flex;
+    align-items: center;
+    gap: 1.125rem;
+    padding-bottom: 1.375rem;
+    border-bottom: 1px solid var(--rule);
+    min-width: 0;
+  }
+
+  /* The monogram, not an avatar. It is stroked in the accent so it belongs to
+     this page's industry, and it sits on the washed tile the section uses for
+     anything the reader is meant to read as a label rather than as content. */
+  .ind-lead__mark {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.625rem;
+    background-color: var(--accent-wash);
+    color: var(--accent-ink);
+  }
+  .ind-lead__mark svg { width: 2.5rem; height: 2.5rem; }
+  @media (min-width: 768px) {
+    .ind-lead__mark { width: 4.25rem; height: 4.25rem; }
+    .ind-lead__mark svg { width: 3rem; height: 3rem; }
+  }
+
+  .ind-lead__names { min-width: 0; }
+
+  .ind-lead__name {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.6vw, 1.625rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin: 0 0 0.375rem;
+  }
+
+  .ind-lead__role {
+    margin: 0;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+
+  /* prose */
+
+  .ind-lead__bio { padding: 1.5rem 0 0.375rem; }
+
+  .ind-lead__bio p {
+    max-width: 68ch;
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+
+  /* The opening line carries the whole of the track record, so it is set a step
+     up and in the darker ink — the one thing a reader who stops here has read. */
+  .ind-lead__bio p:first-child {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  /* the three facts, read straight down without reading the prose */
+
+  .ind-lead__creds {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.625rem 0 1.75rem;
+  }
+  @media (min-width: 700px) {
+    .ind-lead__creds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .ind-lead__cred {
+    border-top: 2px solid var(--rule);
+    padding-top: 0.6875rem;
+    min-width: 0;
+  }
+  .ind-lead__cred:first-child { border-top-color: var(--accent-edge); }
+
+  .ind-lead__cred-key {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--deep);
+  }
+
+  .ind-lead__cred-line {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  /* the means to check it, on the same washed footing a foundation card uses */
+
+  .ind-lead__verify {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1.25rem;
+    margin: 0 -1.5rem;
+    padding: 1.125rem 1.5rem 1.25rem;
+    background-color: var(--accent-wash);
+    border-top: 2px solid var(--accent-edge);
+  }
+  @media (min-width: 768px) {
+    .ind-lead__verify { margin: 0 -2rem; padding: 1.125rem 2rem 1.25rem; }
+  }
+
+  .ind-lead__verify-label {
+    margin: 0;
+    font-size: 0.625rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+
+  .ind-lead__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.375rem 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }
+
+  .ind-lead__links a {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-edge);
+    text-underline-offset: 3px;
+    transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .ind-lead__links a:hover { color: var(--accent-ink); }
+
   /* ---- next step -------------------------------------------------------- */
 
   .ind-next {
@@ -840,6 +1037,12 @@
     .ind-next { padding: 12pt; }
     .ind-next p { margin-bottom: 7pt; max-width: none; }
     .ind-next p:last-child { margin-bottom: 0; }
+    .ind-lead__plate { padding: 11pt 12pt 0; }
+    .ind-lead__id { padding-bottom: 9pt; }
+    .ind-lead__bio { padding: 10pt 0 2pt; }
+    .ind-lead__bio p { margin-bottom: 7pt; max-width: none; }
+    .ind-lead__creds { gap: 8pt 14pt; padding: 4pt 0 11pt; }
+    .ind-lead__verify { margin: 0 -12pt; padding: 8pt 12pt 9pt; }
     .ind-head__mark { background: #000000 !important; }
     .ind-head__label { color: #000000; }
     .ind-head__rule { background: #000000 !important; }
@@ -850,7 +1053,19 @@
     .ind-role,
     .ind-found,
     .ind-band__item,
+    .ind-lead__cred,
+    .ind-lead__bio p,
+    .ind-lead__verify,
     .ind-measures tbody tr { break-inside: avoid; page-break-inside: avoid; }
+
+    /* The leadership plate is the one block deliberately allowed to break: it
+       is four paragraphs plus a strip, so forcing it whole would push the
+       entire panel to a fresh sheet and leave the bottom of the previous one
+       empty. Its parts are kept whole individually above, and the nameplate is
+       not allowed to be the last thing on a sheet with the biography starting
+       on the next one. */
+    .ind-lead__id { break-after: avoid; page-break-after: avoid; }
+    .ind-lead__creds { break-before: avoid; page-break-before: avoid; }
     /* A heading must not be the last thing on a sheet, and the sentence that
        explains a block must not be cut in half by the page edge. */
     .ind-head, .ind-intro {
@@ -919,6 +1134,30 @@
       border-top: 1px solid #000000;
     }
     .ind-found__felt dt { color: #000000; }
+
+    /* The monogram tile is a screen device; on paper it would print as a grey
+       box for no reason. Drop the tile, keep the drawn mark. */
+    .ind-lead__mark {
+      background: #ffffff !important;
+      color: #000000;
+      width: auto;
+      height: auto;
+      border-radius: 0;
+    }
+    .ind-lead__name, .ind-lead__cred-key, .ind-lead__bio p:first-child { color: #000000; }
+    .ind-lead__role, .ind-lead__verify-label { color: #000000; }
+    .ind-lead__cred { border-top-color: #000000; }
+    /* Underlines survive greyscale where a coloured link does not, and
+       a[href]::after is suppressed site-wide, so the printed sheet keeps the
+       handles themselves — which is the whole point of this strip on paper. */
+    .ind-lead__verify {
+      background: #ffffff !important;
+      border-top: 1px solid #000000;
+    }
+    .ind-lead__links a {
+      color: #000000;
+      text-decoration-color: #000000;
+    }
 
     .ind-figure__art, .ind-found__art { max-width: 100%; }
     .ind-found__plate {

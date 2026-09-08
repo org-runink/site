@@ -1,16 +1,25 @@
 ---
 title: "Preços"
-description: "Pague por proteção, não por recursos. Infraestrutura transparente + valor baseado em resultados."
+description: "Você paga pelo número de pessoas que usam o Runink. Cada pessoa já vem com uma cota de capacidade de computação incluída, então usar mais não aumenta a conta."
 layout: "pricing"
 date: "2024-05-20T00:00:00Z"
 author: "Arquiteto Líder de Dados e Nuvem"
 ---
 
+<div class="max-w-3xl mx-auto text-center mb-4">
+  <p class="text-xl text-stone-300 font-medium leading-relaxed mb-6">
+    Você paga pelo número de pessoas que usam o Runink. Cada pessoa já vem com uma cota de capacidade de computação incluída no preço.
+  </p>
+  <p class="text-lg text-stone-400 font-medium leading-relaxed">
+    É toda a lógica. A conta acompanha o seu quadro de pessoal, não o seu uso, de modo que uma equipe que usa muito o Runink não abre uma linha de despesa que cresce junto. As três licenças abaixo se diferenciam por uma única pergunta: quantas pessoas precisam dele e em qual máquina ele roda.
+  </p>
+</div>
+
 {{< pricing-toggle >}}
 {
   "options": [
-    { "label": "Compromisso Mensal", "value": "monthly" },
-    { "label": "Contrato Anual (Economize 15%)", "value": "yearly" }
+    { "label": "Pagamento Mensal", "value": "monthly" },
+    { "label": "Pagamento Anual (15% Menos)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -19,77 +28,84 @@ author: "Arquiteto Líder de Dados e Nuvem"
 {
   "plans": [
     {
-      "pill": "AUTOMAÇÃO ESSENCIAL",
+      "pill": "EM UMA MÁQUINA COMPARTILHADA",
       "pill_color": "stone",
       "name": "LICENÇA LITE",
-      "subtitle": "1 A 9 ASSENTOS",
+      "subtitle": "PARA EQUIPES DE 1 A 9 PESSOAS",
       "price_color": "stone",
       "price_monthly": "86",
       "price_yearly": "75",
-      "price_subtitle": "POR ASSENTO / MÊS",
-      "credits": "POOL DE UC DINÂMICO",
+      "price_subtitle": "POR PESSOA, POR MÊS",
+      "credits": "COMPUTAÇÃO INCLUÍDA<br>DE UMA RESERVA COMPARTILHADA",
       "outcome_strategies": [
-        {"label": "RECUPERAÇÃO DE CONTESTAÇÕES", "value": "Taxa de Sucesso de 20%"},
-        {"label": "AUTO-PROVISIONAMENTO", "value": "1-3% (Limitado a $50)"}
+        {"label": "O QUE DEFINE A CONTA", "value": "Quantas pessoas você licencia. Não quanto elas usam."},
+        {"label": "COMPROMISSO MÍNIMO", "value": "Um mês."},
+        {"label": "SE RECUPERARMOS DINHEIRO PARA VOCÊ", "value": "20% do que for recuperado. Nada quando nada é recuperado."},
+        {"label": "TAXA DE ATIVAÇÃO AUTOMÁTICA", "value": "De 1% a 3%, nunca mais de $50."}
       ],
       "features": [
-        "NÓ COMPARTILHADO DE ALTA DENSIDADE",
-        "FLUXOS DE TRABALHO DE AUTOMAÇÃO BÁSICOS",
-        "PRIORIDADE DE COMPUTAÇÃO PADRÃO",
-        "COMPROMISSOS MENSAL OU ANUAL"
+        "RODA EM UMA MÁQUINA COMPARTILHADA COM OUTROS CLIENTES",
+        "CAPACIDADE DE COMPUTAÇÃO INCLUÍDA COM CADA PESSOA",
+        "O CONJUNTO PADRÃO DE ASSISTENTES AUTOMÁTICOS",
+        "O PONTO DE PARTIDA PARA UMA PRIMEIRA EQUIPE"
       ],
       "button": {
-        "text": "INICIAR LITE",
+        "text": "COMEÇAR COM A LITE",
         "url": "/#contact",
         "style": "outline"
       }
     },
     {
-      "pill": "PLATAFORMA E SEGURANÇA",
+      "pill": "NA SUA PRÓPRIA MÁQUINA",
       "pill_color": "orange",
       "name": "LICENÇA DEDICADA",
-      "subtitle": "10+ ASSENTOS",
+      "subtitle": "PARA 10 PESSOAS OU MAIS",
       "price_color": "orange",
       "price_monthly": "75",
       "price_yearly": "75",
-      "price_subtitle": "POR ASSENTO / MÊS (APENAS ANUAL)",
-      "credits": "POOL DE UC MASSIVO",
+      "price_subtitle": "POR PESSOA, POR MÊS",
+      "credits": "COMPUTAÇÃO INCLUÍDA<br>DA SUA PRÓPRIA RESERVA",
       "outcome_strategies": [
-        {"label": "RECUPERAÇÃO DE CONTESTAÇÕES", "value": "Taxa de Sucesso de 20%"},
-        {"label": "AUTO-PROVISIONAMENTO", "value": "1-3% (Limitado a $50)"}
+        {"label": "O QUE DEFINE A CONTA", "value": "Quantas pessoas você licencia. Não quanto elas usam."},
+        {"label": "COMPROMISSO MÍNIMO", "value": "Um ano."},
+        {"label": "SE RECUPERARMOS DINHEIRO PARA VOCÊ", "value": "20% do que for recuperado. Nada quando nada é recuperado."},
+        {"label": "TAXA DE ATIVAÇÃO AUTOMÁTICA", "value": "De 1% a 3%, nunca mais de $50."}
       ],
       "features": [
-        "COMPUTAÇÃO SOBERANA DEDICADA",
-        "CONFIGURAÇÃO DE DOMÍNIO PERSONALIZADO",
-        "ROTEAMENTO E INFERÊNCIA PRIORITÁRIOS",
-        "1.000 UC POR ASSENTO + BÔNUS DE 2.000 UC/10 ASSENTOS"
+        "RODA EM MÁQUINAS RESERVADAS SÓ PARA SUA EMPRESA",
+        "1.000 UNIDADES POR PESSOA, MAIS 2.000 A CADA 10",
+        "SEU PRÓPRIO ENDEREÇO NA WEB",
+        "PRIORIDADE SOBRE A CAPACIDADE QUE VOCÊ PAGA"
       ],
       "button": {
-        "text": "INICIALIZAR DEDICADO",
+        "text": "FALAR SOBRE A DEDICADA",
         "url": "/#contact",
         "style": "solid"
       }
     },
     {
-      "pill": "INFRAESTRUTURA SOBERANA",
+      "pill": "NO SEU PRÓPRIO PRÉDIO",
       "pill_color": "stone",
-      "name": "ENTERPRISE",
-      "subtitle": "ISOLADO E NO LOCAL (ON-PREM)",
-      "price_monthly": "SOB MEDIDA",
-      "price_yearly": "SOB MEDIDA",
-      "price_subtitle": "IMPLANTAÇÕES PERSONALIZADAS",
-      "credits": "CAPACIDADE GERENCIADA",
+      "name": "LICENÇA ENTERPRISE",
+      "subtitle": "PARA HOSPEDAR VOCÊ MESMO",
+      "price_monthly": "CUSTOM",
+      "price_yearly": "CUSTOM",
+      "price_subtitle": "PREÇO DEFINIDO COM VOCÊ",
+      "credits": "COMPUTAÇÃO INCLUÍDA<br>DIMENSIONADA COM VOCÊ",
       "outcome_strategies": [
-        {"label": "ESTRATÉGIA DE RESULTADOS", "value": "SLAs Personalizados"}
+        {"label": "O QUE DEFINE A CONTA", "value": "A capacidade que você precisa e os níveis de serviço que você fixa."},
+        {"label": "COMPROMISSO MÍNIMO", "value": "Combinado com você."},
+        {"label": "SE RECUPERARMOS DINHEIRO PARA VOCÊ", "value": "Combinado com você e escrito no contrato."},
+        {"label": "TAXA DE ATIVAÇÃO AUTOMÁTICA", "value": "Combinada com você e escrita no contrato."}
       ],
       "features": [
-        "HOSPEDAGEM LOCAL AUTO-PROVISIONADA",
-        "CAPACIDADES DE EMBUTIMENTO EM BORDA",
-        "TUDO DA PLATAFORMA DEDICADA",
-        "LOGS DE AUDITORIA AVANÇADOS"
+        "RODA NAS SUAS INSTALAÇÕES, INCLUSIVE FORA DA REDE",
+        "CAPACIDADE DIMENSIONADA E GERENCIADA COM VOCÊ",
+        "TUDO DA LICENÇA DEDICADA",
+        "UM REGISTRO COMPLETO DE QUEM FEZ O QUÊ, E QUANDO"
       ],
       "button": {
-        "text": "CONTATAR ENTERPRISE",
+        "text": "FALE CONOSCO",
         "url": "/#contact",
         "style": "outline"
       }
@@ -103,28 +119,32 @@ author: "Arquiteto Líder de Dados e Nuvem"
 {{< enterprise-a2a >}}
 {{< faq >}}
 {
-  "title": "Lógica de Faturamento. Sem Surpresas.",
-  "description": "Baixa barreira de entrada. A receita acompanha o uso real de sua infraestrutura.",
+  "title": "Como Funciona A Conta",
+  "description": "O que é cobrado, na ordem em que uma equipe financeira costuma perguntar.",
   "questions": [
     {
-      "question": "Quando a Licença Lite é a escolha certa?",
-      "answer": "A **Licença Lite** foi projetada para PMEs, startups e equipes muito enxutas (1-9 assentos) que precisam de retorno rápido sobre o investimento em automação, sem grandes compromissos iniciais. Ela opera em nós compartilhados de alta densidade, oferecendo excelente desempenho a acessíveis $75/assento (anualmente) ou ~$86/assento (mensalmente). É a porta de entrada perfeita para começar a capturar receitas de contestações perdidas e automatizar tarefas logísticas básicas sem contratos anuais restritivos."
+      "question": "O que eu estou pagando, afinal?",
+      "answer": "Assentos. Um **assento** é uma pessoa que usa o Runink. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.<br><br>Cada assento também vem com uma cota de capacidade de computação: o tempo de máquina que o Runink usa para ler seus documentos, conferir seus registros e redigir o trabalho. Essa cota está incluída no preço do assento. Você não é cobrado por pergunta, por documento nem por relatório."
     },
     {
-      "question": "Por que escolher a Licença Dedicada em vez da Lite?",
-      "answer": "Uma vez que sua equipe escala para mais de 10 assentos, a segurança e o volume de processamento tornam-se primordiais. A **Licença Dedicada** provisiona automaticamente um Nó Soberano isolado exclusivamente para sua organization, com roteamento de domínio personalizado e limites rígidos de dados. Embora o preço base continue incrivelmente competitivo a $75/assento/mês, ela requer um compromisso de 1 ano. Em troca, sua organização desbloqueia bônus massivos de UC compartilhados (2.000 UC extras a cada 10 assentos) para executar tarefas automatizadas de alto volume."
+      "question": "O que é uma Unidade de Computação?",
+      "answer": "É o medidor do tempo de máquina, assim como o quilowatt-hora é o medidor da eletricidade. O Runink mede a capacidade em **Unidades de Computação** para que o que foi concedido a você e o que você já gastou sejam expressos nos mesmos termos, e os dois números ficam na tela do console em vez de chegarem no fim do mês.<br><br>Cada assento **Dedicado** traz 1.000 unidades, e sua organização recebe mais 2.000 unidades a cada 10 assentos contratados. Essas unidades são comuns a todos, então uma semana pesada de uma pessoa sai da mesma cota que uma semana tranquila de outra."
     },
     {
-      "question": "Qual é o valor de um engajamento Enterprise completo?",
-      "answer": "Para indústrias altamente regulamentadas (defesa, finanças, saúde) ou volumes extremos de transações, o nível **Enterprise** oferece controle absoluto. Fornecemos implantações locais (on-premises) totalmente isoladas ou arquiteturas VPC personalizadas. Mais importante ainda, o Enterprise desbloqueia o **ajuste de decisão otimizado** — treinamos e otimizamos modelos de raciocínio personalizados especificamente nos dados de seu modelo operacional interno, resultando em precisão inigualável e velocidades de decisão de subsegundos adaptadas aos seus SLAs específicos."
+      "question": "O que acontece se passarmos da cota?",
+      "answer": "A capacidade adicional é cobrada a **$0,10 por 100 unidades**, ou **$5,00 por hora de máquina**. Na prática, essa linha fica vazia no trabalho comum do dia a dia e aparece quando você roda algo muito grande de uma vez só: reprocessar um ano de documentos em uma tarde, por exemplo.<br><br>Você vê o total acumulado no console e pode fixar um orçamento, de modo que a primeira notícia de um mês pesado não seja a fatura."
     },
     {
-      "question": "Preciso me comprometer com um plano anual?",
-      "answer": "Apenas para as licenças Dedicada e Enterprise. A **Licença Lite** oferece total flexibilidade com uma opção mensal com acréscimo de 15% (~$86/assento/mês). Como as licenças **Dedicada** e **Enterprise** exigem que provisionemos e isolemos uma infraestrutura substancial de nuvem soberana especificamente para sua organização, elas exigem estritamente um compromisso mínimo de 1 ano."
+      "question": "Qual licença serve para nós?",
+      "answer": "Conte primeiro as suas pessoas.<br><br>Menos de dez: a **Licença Lite**. Ela roda em uma máquina compartilhada com outros clientes e é a única que pode ser contratada mês a mês, então uma avaliação não exige um compromisso de um ano.<br><br>Dez ou mais: a **Licença Dedicada** custa menos por pessoa e roda em máquinas reservadas só para a sua empresa, com o seu próprio endereço na web e prioridade sobre a capacidade que você paga. Ela é contratada por um ano.<br><br>Se as suas informações não podem sair do seu próprio prédio, isso é **Enterprise**, e a conversa começa por onde ele precisa rodar."
     },
     {
-      "question": "Como os recursos de computação são calculados?",
-      "answer": "**Utilizamos uma abordagem de Capacidade Dinâmica.**<br>Cada assento inclui **1.000 Unidades de Capacidade (UC)**. Além disso, para cada bloco de 10 assentos adquiridos (desbloqueando o Dedicado), sua organização recebe um **Bônus de 2.000 UC**. Você só será cobrado pelo excedente ($0,10/100 UC ou $5,00/Hora de Computação) em processamentos em lote de intensidade extrema."
+      "question": "Precisamos assinar por um ano?",
+      "answer": "Só na Dedicada e na Enterprise. A **Licença Lite** pode ser contratada mês a mês por $86 por pessoa, ou por um ano por $75: a mesma diferença de 15% que o seletor acima mostra.<br><br>A Dedicada e a Enterprise são contratadas por um ano porque as duas envolvem separar máquinas para a sua empresa especificamente, e essa capacidade fica reservada quer você a use ou não em uma dada semana."
+    },
+    {
+      "question": "Por que usar mais não custa mais?",
+      "answer": "Porque o raciocínio roda em hardware, e não em um serviço de terceiros com medidor. O custo de uma pergunta é a eletricidade para respondê-la.<br><br>A consequência prática é orçamentária. Seu gasto depende da capacidade que você mantém, decidida uma vez, e não de um número que se mexe conforme quantas perguntas a sua equipe fez no mês passado. Uma equipe que usa muito o Runink não descobre um custo que cresce junto com esse sucesso."
     }
   ]
 }
@@ -135,7 +155,7 @@ author: "Arquiteto Líder de Dados e Nuvem"
 
 
 
-<!-- Generated FAQ Section for E-A-T & GEO -->
+<!-- Seção de FAQ gerada para E-A-T & GEO -->
 <section class="faq-section mt-16 p-8 bg-[#1b1919] rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
   <div class="flex items-center gap-4 mb-8">
     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ea580c] to-[#ca4708] flex items-center justify-center shadow-lg">
@@ -145,16 +165,16 @@ author: "Arquiteto Líder de Dados e Nuvem"
   </div>
   <div class="space-y-6">
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">Qual é o verdadeiro custo total de propriedade (TCO) para implementar uma plataforma de logística automatizada?</h3>
-      <p class="text-stone-400 leading-relaxed">Ao avaliar o custo total de propriedade de uma plataforma de logística automatizada, você deve olhar além do licenciamento inicial de software ou das taxas de assinatura de SaaS. O verdadeiro TCO abrange os custos de implementação, que envolvem a integração do sistema com seus sistemas ERP, TMS ou WMS existentes, migração de dados e desenvolvimento de APIs personalizadas. Além disso, você deve considerar os custos de gerenciamento de mudanças e treinamento para garantir que sua equipe possa aproveitar as novas ferramentas com eficácia. As despesas contínuas incluem o uso de infraestrutura de nuvem, volumes de processamento para modelos de raciocínio avançados ou mecanismos de roteamento e o ajuste contínuo da lógica. No entanto, esse investimento é normalmente compensado pelo rápido ROI gerado por meio de redução de quilometragem vazia, consumo de combustível otimizado, menor sobrecarga de despacho manual e penalidades de SLA minimizadas.</p>
+      <h3 class="text-xl font-bold text-stone-200 mb-4">O que devemos orçar além da licença em si?</h3>
+      <p class="text-stone-400 leading-relaxed">A licença é uma linha do custo. Antes de assinar, coloque números em mais quatro. Primeiro, conectar o Runink aos sistemas que você já usa: o sistema financeiro, o de transporte ou de armazém, e o lugar onde ficam os seus documentos. Segundo, mover o histórico que você quer que ele leia. Terceiro, as horas que a sua própria equipe gasta aprendendo a usá-lo e mudando a forma de trabalhar, que costuma ser a linha esquecida. Quarto, as máquinas. Nas licenças Lite e Dedicada elas são nossas; na Enterprise são suas, e vale colocar preço no hardware e nas pessoas que o mantêm funcionando. O que você não deveria precisar orçar é uma conta que se mexe conforme o quanto a sua equipe usa o software. Esse é o sentido de cobrar por assento.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">Como vocês estruturam os preços para implantações em escala empresarial ou requisitos locais?</h3>
-      <p class="text-stone-400 leading-relaxed">Por padrão, nossa Licença Pro padrão oferece alto isolamento de dados implantando Computação Soberana Compartilhada. No entanto, para organizações que experimentam volumes extremos de transações ou que exigem conformidade estrita, nossos níveis Enterprise oferecem hospedagem soberana, isolada e local (on-premises). Nesses cenários, você pode implantar a plataforma Runink em seu próprio hardware, infraestrutura fisicamente isolada ou ambientes de computação em borda. Entre em contato com nossa equipe de vendas para discutir SLAs dedicados, controles personalizados de governança de dados e opções de licenciamento local adaptadas às suas restrições de infraestrutura específicas.</p>
+      <h3 class="text-xl font-bold text-stone-200 mb-4">Como funciona o preço se tivermos que hospedar por conta própria?</h3>
+      <p class="text-stone-400 leading-relaxed">Isso é a licença Enterprise, e o preço é definido com você em vez de sair de uma tabela. Ela cobre implantações nas suas próprias instalações, incluindo sedes mantidas totalmente fora da rede, e máquinas colocadas perto de onde o trabalho acontece. Os termos que as pessoas costumam querer por escrito são os níveis de serviço, quem pode ver o quê, e o registro guardado de quem fez o quê. Traga a restrição que motiva tudo isso — o regulador, a cláusula do contrato ou a revisão de segurança que vive travando — e a conversa começa por aí, e não por uma lista de funcionalidades.</p>
     </div>
     <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">Por que devo fazer a transição de um sistema legado local para uma solução de logística automatizada nativa da nuvem?</h3>
-      <p class="text-stone-400 leading-relaxed">La transição de um sistema legado local para uma solução de logística automatizada nativa da nuvem é fundamental para manter a competitividade. Uma arquitetura nativa da nuvem oferece escalabilidade elástica, permitindo que seus recursos de computação se expandam dinamicamente. Mais importante ainda, serve como a camada fundamental necessária para implantar modelos matemáticos e analíticos avançados de aprendizado de máquina. Esses recursos analíticos podem processar vastos conjuntos de dados em tempo real para identificar oportunidades de otimização ocultas, prever interrupções na cadeia de suprimentos antes que ocorram e automatizar tarefas complexas.</p>
+      <h3 class="text-xl font-bold text-stone-200 mb-4">Para onde vão os nossos dados?</h3>
+      <p class="text-stone-400 leading-relaxed">Para uma máquina que você controla, e é lá que eles ficam. Os documentos, os registros e o raciocínio sobre eles rodam em hardware dentro do seu perímetro, e nada é enviado a um provedor de modelos externo. Isso importa tanto no comercial quanto no técnico. A pergunta que trava esse tipo de compra costuma ser alguma versão de "para onde vão as nossas informações", e aqui a resposta é curta o bastante para passar por um questionário de compras. Na Lite e na Dedicada a máquina é operada por nós; na Enterprise ela é sua. Em nenhum dos dois casos há um terceiro no caminho guardando os seus dados.</p>
     </div>
   </div>
 </section>
@@ -164,16 +184,16 @@ author: "Arquiteto Líder de Dados e Nuvem"
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Sobre o Autor</h2>
   <p class="text-stone-300">
     <strong>Arquiteto Líder de Dados e Nuvem</strong><br>
-    Especialista no assunto (SME) em AWS Data Analytics, AWS Certified Developer e Google Cloud Professional Certified in Engenharia de Dados e Análise Avançada. Com mais de uma década de experiência na construção de arquiteturas de nuvem resilientes e de alto rendimento, pipelines de dados e soluções de logística automatizadas.
+    Especialista no assunto (SME) em AWS Data Analytics, AWS Certified Developer e Google Cloud Professional Certified em Engenharia de Dados e Análise Avançada. Com mais de uma década de experiência na construção de arquiteturas de nuvem resilientes e de alto rendimento, pipelines de dados e soluções de logística automatizada.
   </p>
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Citações e Referências do Setor</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Centro de Arquitetura AWS: Melhores Práticas de Análise de Dados</a> - Diretrizes abrangentes para processamento de dados escalável.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Análise Avançada para Otimização da Cadeia de Suprimentos</a> - Metodologias avançadas para logística automatizada.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Principais Tendências de Tecnologia Estratégica em Logística</a> - Pesquisa padrão do setor sobre tecnologia de cadeia de suprimentos.</li>
+    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Diretrizes completas para o processamento de dados em larga escala.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Metodologias avançadas para logística automatizada.</li>
+    <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Pesquisa de referência do setor sobre tecnologia para a cadeia de suprimentos.</li>
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Pesquisa acadêmica sobre aplicações analíticas em frete e transporte.</li>
   </ul>
 </section>

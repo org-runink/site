@@ -1,0 +1,719 @@
+/* ===========================================================================
+   Specimen page for the Runink identity.
+
+   Every value here is a var(--rk-*). There is no literal colour, no literal
+   font-size and no literal radius below this line. If this file needed one,
+   the token system would be incomplete — which is the point of building the
+   specimen before restyling anything.
+
+   The two exceptions are declared and reasoned:
+     - the swatch grid uses a fixed 1px hairline width (a hairline is 1px)
+     - the mark sizes in the logo block are literal px, because the whole
+       question that block answers is "what does it do at 16 real pixels"
+   =========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--rk-ground);
+  color: var(--rk-text-2);
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-t-body);
+  line-height: var(--rk-lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Long tokens and hex strings must never widen the page on a phone. */
+body, body * { overflow-wrap: anywhere; }
+
+.sp-wrap {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 var(--rk-s-4);
+}
+@media (min-width: 48rem) {
+  .sp-wrap { padding: 0 var(--rk-s-6); }
+}
+
+/* ---- masthead ----------------------------------------------------------- */
+
+.sp-mast {
+  background: var(--rk-ground);
+  color: var(--rk-text);
+  padding: var(--rk-s-7) 0 var(--rk-s-8);
+  border-bottom: 1px solid var(--rk-rule);
+}
+
+.sp-lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--rk-s-3);
+  margin-bottom: var(--rk-s-7);
+}
+.sp-lockup__mark {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: none;
+  color: var(--rk-text);
+}
+.sp-lockup__mark svg { display: block; width: 100%; height: 100%; }
+.sp-lockup__word {
+  font-family: var(--rk-font-display);
+  font-weight: var(--rk-w-semibold);
+  font-size: var(--rk-t-4);
+  letter-spacing: var(--rk-tr-head);
+  line-height: 1;
+  color: var(--rk-text);
+}
+
+.sp-title {
+  font-family: var(--rk-font-display);
+  font-weight: var(--rk-w-heavy);
+  font-size: clamp(var(--rk-t-2), 8vw, var(--rk-t-display));
+  line-height: var(--rk-lh-display);
+  letter-spacing: var(--rk-tr-display);
+  text-transform: uppercase;
+  color: var(--rk-text);
+  max-width: var(--rk-measure-head);
+  margin: 0 0 var(--rk-s-5);
+}
+
+.sp-deck {
+  font-size: var(--rk-t-lead);
+  line-height: var(--rk-lh-lead);
+  color: var(--rk-text-2);
+  max-width: var(--rk-measure-lead);
+  margin: 0 0 var(--rk-s-6);
+}
+
+/* ---- the hero thesis: the two standings, at size ------------------------ */
+
+.sp-thesis {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--rk-s-4);
+  margin-top: var(--rk-s-6);
+}
+@media (min-width: 40rem) {
+  .sp-thesis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.sp-thesis__half {
+  background: var(--rk-sheet);
+  border: 1px solid var(--rk-rule);
+  border-top: 3px solid var(--rk-rule-strong);
+  border-radius: var(--rk-r-0) var(--rk-r-0) var(--rk-r-3) var(--rk-r-3);
+  padding: var(--rk-s-5);
+}
+
+/* The mark blown up to display size. It is set in em off a large font-size so
+   it scales as one object — this is the same .rk-mark every page uses, not a
+   drawing of it. */
+.sp-thesis__mark {
+  font-size: var(--rk-t-3);
+  letter-spacing: 0.06em;
+  color: var(--rk-text);
+  margin-bottom: var(--rk-s-4);
+}
+
+.sp-thesis__says {
+  margin: 0;
+  font-size: var(--rk-t-small);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-2);
+}
+.sp-thesis__says b {
+  display: block;
+  font-weight: var(--rk-w-semibold);
+  color: var(--rk-text);
+}
+
+/* ---- sections ----------------------------------------------------------- */
+
+.sp-sec { padding: var(--rk-s-8) 0 0; }
+.sp-sec:last-of-type { padding-bottom: var(--rk-s-9); }
+
+.sp-h2 {
+  font-family: var(--rk-font-display);
+  font-weight: var(--rk-w-heavy);
+  font-size: var(--rk-t-3);
+  line-height: var(--rk-lh-head);
+  letter-spacing: var(--rk-tr-head);
+  color: var(--rk-text);
+  margin: 0 0 var(--rk-s-3);
+}
+
+.sp-h3 {
+  font-family: var(--rk-font-display);
+  font-weight: var(--rk-w-semibold);
+  font-size: var(--rk-t-4);
+  line-height: var(--rk-lh-head);
+  letter-spacing: var(--rk-tr-head);
+  color: var(--rk-text);
+  margin: var(--rk-s-6) 0 var(--rk-s-3);
+}
+
+.sp-note {
+  max-width: var(--rk-measure-body);
+  font-size: var(--rk-t-small);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-2);
+  margin: 0 0 var(--rk-s-5);
+}
+.sp-note code {
+  font-family: var(--rk-font-util);
+  font-size: 0.92em;
+  color: var(--rk-text);
+}
+
+.sp-secrule { margin-bottom: var(--rk-s-4); }
+
+/* ---- swatches ----------------------------------------------------------- */
+
+.sp-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: var(--rk-s-3);
+  list-style: none;
+  margin: 0 0 var(--rk-s-5);
+  padding: 0;
+}
+
+.sp-swatch {
+  border: 1px solid var(--rk-rule);
+  border-radius: var(--rk-r-2);
+  overflow: hidden;
+  background: var(--rk-sheet);
+}
+
+/* The inset ring is what makes --rk-n-000 visible: a white chip on a white
+   card is otherwise not a swatch, it is a gap. */
+.sp-swatch__chip {
+  height: 3.5rem;
+  border-bottom: 1px solid var(--rk-rule);
+  box-shadow: inset 0 0 0 1px rgba(16, 26, 34, 0.08);
+}
+
+.sp-swatch__body { padding: var(--rk-s-3); }
+
+.sp-swatch__name {
+  display: block;
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  letter-spacing: 0.04em;
+  color: var(--rk-text);
+  margin-bottom: var(--rk-s-1);
+}
+.sp-swatch__hex {
+  display: block;
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  color: var(--rk-text-3);
+  text-transform: uppercase;
+  margin-bottom: var(--rk-s-2);
+}
+.sp-swatch__role {
+  display: block;
+  font-size: var(--rk-t-fine);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-2);
+}
+
+/* ---- contrast table ----------------------------------------------------- */
+
+.sp-tablewrap {
+  overflow-x: auto;
+  border: 1px solid var(--rk-rule);
+  border-radius: var(--rk-r-3);
+  background: var(--rk-sheet);
+}
+
+.sp-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--rk-t-small);
+}
+
+.sp-table th,
+.sp-table td {
+  padding: var(--rk-s-3) var(--rk-s-4);
+  border-bottom: 1px solid var(--rk-rule);
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+.sp-table thead th {
+  border-bottom: 2px solid var(--rk-rule-strong);
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-t-mark);
+  font-weight: var(--rk-w-semibold);
+  letter-spacing: var(--rk-tr-label);
+  text-transform: uppercase;
+  color: var(--rk-text-3);
+}
+.sp-table tbody tr:last-child th,
+.sp-table tbody tr:last-child td { border-bottom: 0; }
+
+.sp-table td.sp-num,
+.sp-table th.sp-mono {
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-fine);
+  color: var(--rk-text);
+}
+.sp-table td.sp-num { text-align: right; }
+
+/* A tiny live proof: the pair is actually rendered at the ratio claimed. */
+.sp-proof {
+  display: inline-block;
+  padding: var(--rk-s-1) var(--rk-s-2);
+  border-radius: var(--rk-r-1);
+  font-size: var(--rk-t-fine);
+  font-weight: var(--rk-w-medium);
+}
+
+.sp-grade {
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  letter-spacing: 0.08em;
+  color: var(--rk-text-3);
+}
+
+/* ---- type scale --------------------------------------------------------- */
+
+.sp-scale { list-style: none; margin: 0; padding: 0; }
+
+.sp-scale li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--rk-s-1) var(--rk-s-5);
+  padding: var(--rk-s-4) 0;
+  border-bottom: 1px solid var(--rk-rule);
+  align-items: baseline;
+}
+@media (min-width: 46rem) {
+  .sp-scale li { grid-template-columns: 11rem minmax(0, 1fr); }
+}
+
+.sp-scale__meta {
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-3);
+}
+.sp-scale__meta b {
+  display: block;
+  font-weight: var(--rk-w-medium);
+  color: var(--rk-text);
+}
+
+.sp-scale__demo {
+  color: var(--rk-text);
+  min-width: 0;
+  line-height: var(--rk-lh-head);
+}
+
+/* ---- faces -------------------------------------------------------------- */
+
+.sp-faces {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--rk-s-4);
+}
+@media (min-width: 52rem) {
+  .sp-faces { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.sp-face {
+  background: var(--rk-sheet);
+  border: 1px solid var(--rk-rule);
+  border-radius: var(--rk-r-3);
+  padding: var(--rk-s-5);
+  min-width: 0;
+}
+
+.sp-face__aa {
+  display: block;
+  color: var(--rk-text);
+  line-height: 1;
+  margin-bottom: var(--rk-s-3);
+  overflow: hidden;
+}
+
+.sp-face__name {
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-t-small);
+  font-weight: var(--rk-w-semibold);
+  color: var(--rk-text);
+  margin: 0 0 var(--rk-s-1);
+}
+.sp-face__job {
+  font-size: var(--rk-t-fine);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-2);
+  margin: 0 0 var(--rk-s-3);
+}
+.sp-face__sample {
+  font-size: var(--rk-t-fine);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-3);
+  margin: 0;
+  border-top: 1px solid var(--rk-rule);
+  padding-top: var(--rk-s-3);
+}
+
+/* ---- components --------------------------------------------------------- */
+
+.sp-demo {
+  background: var(--rk-sheet);
+  border: 1px solid var(--rk-rule);
+  border-radius: var(--rk-r-3);
+  padding: var(--rk-s-5);
+  margin-bottom: var(--rk-s-4);
+}
+.sp-demo[data-ground='console'] {
+  background: var(--rk-ground);
+  border-color: var(--rk-rule);
+  color: var(--rk-text-2);
+}
+
+.sp-demo__cap {
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  letter-spacing: var(--rk-tr-mark);
+  text-transform: uppercase;
+  color: var(--rk-text-3);
+  margin: 0 0 var(--rk-s-4);
+}
+
+/* the gate: what the software proposed, what a named person decided */
+.sp-gate__part { min-width: 0; }
+.sp-gate h4 {
+  font-family: var(--rk-font-display);
+  font-weight: var(--rk-w-semibold);
+  font-size: var(--rk-t-4);
+  line-height: var(--rk-lh-head);
+  letter-spacing: var(--rk-tr-head);
+  color: var(--rk-text);
+  margin: var(--rk-s-3) 0 var(--rk-s-2);
+  max-width: var(--rk-measure-lead);
+}
+.sp-gate p {
+  margin: 0;
+  font-size: var(--rk-t-small);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-2);
+  max-width: var(--rk-measure-body);
+}
+.sp-gate__who {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--rk-s-2) var(--rk-s-4);
+  margin-top: var(--rk-s-3);
+}
+.sp-gate__name {
+  font-family: var(--rk-font-body);
+  font-weight: var(--rk-w-semibold);
+  font-size: var(--rk-t-small);
+  color: var(--rk-text);
+}
+
+/* buttons */
+.sp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rk-s-3);
+  margin-top: var(--rk-s-4);
+}
+
+.sp-btn,
+.sp-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--rk-s-3) var(--rk-s-5);
+  border-radius: var(--rk-r-2);
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-t-label);
+  font-weight: var(--rk-w-semibold);
+  letter-spacing: var(--rk-tr-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--rk-dur-1) var(--rk-ease),
+              border-color var(--rk-dur-1) var(--rk-ease);
+}
+.sp-btn {
+  background: var(--rk-signal);
+  color: var(--rk-text-on-signal);
+  border: 1px solid var(--rk-signal);
+}
+.sp-btn:hover { background: var(--rk-text); border-color: var(--rk-text); }
+.sp-btn-ghost {
+  background: transparent;
+  color: var(--rk-text);
+  border: 1px solid var(--rk-rule-strong);
+}
+.sp-btn-ghost:hover { background: var(--rk-sunk); }
+
+/* link */
+.sp-link {
+  color: var(--rk-signal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+/* the worksheet row — the industries measures table, reduced to its atom */
+.sp-sheet { width: 100%; border-collapse: collapse; text-align: left; }
+.sp-sheet th, .sp-sheet td {
+  padding: var(--rk-s-4) var(--rk-s-5) var(--rk-s-4) 0;
+  border-bottom: 1px solid var(--rk-rule);
+  vertical-align: top;
+}
+.sp-sheet thead th {
+  padding-top: 0;
+  border-bottom: 2px solid var(--rk-rule-strong);
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-t-mark);
+  font-weight: var(--rk-w-semibold);
+  letter-spacing: var(--rk-tr-label);
+  text-transform: uppercase;
+  color: var(--rk-text-3);
+}
+.sp-sheet .sp-col-blank { width: 22%; }
+.sp-sheet tbody th {
+  width: 28%;
+  font-family: var(--rk-font-display);
+  font-weight: var(--rk-w-semibold);
+  font-size: var(--rk-t-body);
+  line-height: var(--rk-lh-head);
+  color: var(--rk-text);
+}
+.sp-sheet tbody td {
+  font-size: var(--rk-t-small);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-2);
+}
+.sp-sheet tbody tr:last-child th,
+.sp-sheet tbody tr:last-child td { border-bottom: 0; }
+
+/* the writing line: a measure is a label and a line you write on */
+.sp-blank {
+  position: relative;
+  display: block;
+  height: var(--rk-s-6);
+  margin-top: var(--rk-s-1);
+  border-bottom: 1.5px solid var(--rk-rule-strong);
+}
+.sp-blank::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1.5px;
+  width: var(--rk-s-6);
+  height: 3px;
+  background: var(--rk-accent);
+}
+
+/* ---- space / radius / elevation ----------------------------------------- */
+
+.sp-bars { list-style: none; margin: 0; padding: 0; }
+.sp-bars li {
+  display: flex;
+  align-items: center;
+  gap: var(--rk-s-4);
+  padding: var(--rk-s-2) 0;
+  border-bottom: 1px solid var(--rk-rule);
+}
+.sp-bars__key {
+  flex: none;
+  width: 6.5rem;
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  color: var(--rk-text-3);
+}
+/* Must be block: width and height do not apply to an inline box. */
+.sp-bars__bar {
+  display: block;
+  flex: none;
+  height: var(--rk-s-3);
+  background: var(--rk-text);
+  border-radius: var(--rk-r-1);
+}
+
+.sp-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rk-s-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sp-tile { text-align: center; }
+/* Filled, not outlined: at 5rem an outlined corner radius is nearly invisible
+   and the whole point of the block is to show the difference between rungs. */
+.sp-tile__box {
+  width: 5rem;
+  height: 5rem;
+  background: var(--rk-text);
+  margin-bottom: var(--rk-s-2);
+}
+/* The elevation tiles are the exception — a shadow needs a light face to fall
+   from, and a plate under them so it has somewhere to land. */
+.sp-tiles--elev {
+  background: var(--rk-sunk);
+  border-radius: var(--rk-r-3);
+  padding: var(--rk-s-5);
+}
+.sp-tiles--elev .sp-tile__box { background: var(--rk-sheet); }
+.sp-tile__key {
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  color: var(--rk-text-3);
+}
+
+/* ---- the mark ----------------------------------------------------------- */
+
+.sp-marks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--rk-s-5);
+  list-style: none;
+  margin: 0 0 var(--rk-s-4);
+  padding: var(--rk-s-5);
+  background: var(--rk-sheet);
+  border: 1px solid var(--rk-rule);
+  border-radius: var(--rk-r-3);
+}
+.sp-marks[data-ground='console'] { background: var(--rk-ground); }
+
+.sp-marks li { text-align: center; color: var(--rk-text); }
+.sp-marks li > span { margin: 0 auto var(--rk-s-2); }
+.sp-marks svg { display: block; width: 100%; height: 100%; }
+.sp-marks__key {
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  color: var(--rk-text-3);
+}
+
+/* The one place a literal px belongs: the question this block answers is what
+   the mark does at real device pixels. A rem here would be answering a
+   different question. */
+.sp-m16 { width: 16px; height: 16px; }
+.sp-m24 { width: 24px; height: 24px; }
+.sp-m32 { width: 32px; height: 32px; }
+.sp-m64 { width: 64px; height: 64px; }
+.sp-m128 { width: 128px; height: 128px; }
+
+/* ---- console band ------------------------------------------------------- */
+
+.sp-band {
+  background: var(--rk-ground);
+  color: var(--rk-text-2);
+  border-radius: var(--rk-r-4);
+  padding: var(--rk-s-6) var(--rk-s-5);
+  margin-top: var(--rk-s-4);
+}
+@media (min-width: 48rem) {
+  .sp-band { padding: var(--rk-s-7) var(--rk-s-6); }
+}
+
+/* The five console category accents, shown as swatches. The colour here is
+   the content of the block, so it is a literal, exactly as in the palette
+   chips — a token would be re-bound to black on paper and the block would
+   demonstrate nothing. */
+.sp-conscats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rk-s-2) var(--rk-s-4);
+  margin-top: var(--rk-s-3);
+}
+.sp-conscat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--rk-font-util);
+  font-size: var(--rk-t-mark);
+  letter-spacing: var(--rk-tr-mark);
+  text-transform: uppercase;
+}
+.sp-conscat::before {
+  content: '';
+  width: 0.66em;
+  height: 0.66em;
+  flex: none;
+  background: currentColor;
+}
+
+/* ---- foot --------------------------------------------------------------- */
+
+.sp-foot {
+  margin-top: var(--rk-s-8);
+  padding: var(--rk-s-6) 0 var(--rk-s-8);
+  border-top: 1px solid var(--rk-rule);
+  font-size: var(--rk-t-fine);
+  line-height: var(--rk-lh-dense);
+  color: var(--rk-text-3);
+  max-width: var(--rk-measure-body);
+}
+
+/* ---- print -------------------------------------------------------------- */
+
+@media print {
+  @page { margin: 14mm 12mm; }
+  body { background: #FFFFFF; font-size: 10pt; }
+  .sp-wrap { max-width: none; padding: 0; }
+  .sp-sec { padding-top: 14pt; }
+  .sp-mast { padding: 0 0 12pt; }
+  .sp-swatch, .sp-face, .sp-demo, .sp-marks,
+  .sp-scale li, .sp-sheet tbody tr { break-inside: avoid; }
+  .sp-h2, .sp-h3, .sp-note { break-after: avoid; }
+
+  /* The contrast table is forty rows and fits on no single sheet. Holding it
+     whole does not keep it together — it pushes the entire block to the next
+     page and leaves the current one blank. So the wrapper breaks freely, each
+     ROW stays whole, and the column heads repeat on every sheet the table
+     runs onto. */
+  .sp-tablewrap {
+    break-inside: auto;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+  }
+  .sp-table thead { display: table-header-group; }
+  .sp-table tr { break-inside: avoid; }
+  .sp-table th, .sp-table td { padding: 5pt 8pt 5pt 0; }
+
+  /* Every ratio in the table is a claim about a colour pair, so the rendered
+     sample has to keep its colour on paper even though the page around it has
+     gone to ink on white. */
+  .sp-proof { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sp-swatch__chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sp-swatch__chip { border: 1px solid #000000; }
+  .sp-band { border: 1px solid #000000; }
+
+  /* The elevation tiles are white boxes carrying a shadow. On paper the
+     shadow is gone and the plate under them is white, so without an outline
+     the block prints as three captions under nothing. Outlining them is
+     honest: it shows the shape whose elevation is being described, and the
+     caption already says a shadow means nothing here. */
+  .sp-tiles--elev { border: 1px solid #9A9A9A; }
+  .sp-tiles--elev .sp-tile__box { border: 1px solid #000000; }
+
+  /* The writing line's accent segment, stated at the component rather than
+     left to the token. tokens.css re-binds every category primitive to black
+     under @media print, and that is correct, but it does not reach here:
+     --rk-accent is bound as var(--rk-cat-banking-ink) on an ancestor, and
+     Chrome does not re-resolve that indirection when it switches to print —
+     it re-resolves a token set DIRECTLY on the element (which is why the seam
+     and the console band do go black) but not one that dereferences an
+     inherited primitive. Confirmed against both minified and unminified
+     builds, and against :root, :root:root and !important.
+
+     The rule for the next pass: a component that must change on paper states
+     its print value itself. Token re-binding is the default, not the proof —
+     print it and look. */
+  .sp-blank::before { background: #000000; }
+}

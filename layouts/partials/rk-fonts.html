@@ -1,0 +1,51 @@
+{{/* ---------------------------------------------------------------------
+     RUNINK — self-hosted faces.
+
+     WHY THIS PARTIAL EXISTS. Hugo only writes an asset to public/ when
+     something asks for it. A @font-face rule in a stylesheet is not asking:
+     Hugo does not parse CSS looking for url(). So a face declared in
+     tokens.css but never passed through resources.Get here is never
+     published, 404s in production, and silently falls back to a system
+     face — with no build error, no failed test and no visible break in a
+     screenshot, because the faces that DO load are the ones that dominate
+     the page. That exact failure already shipped once on the whitepapers,
+     where four of six faces 404'd for months.
+
+     THE RULE. assets/css/tokens.css declares eight @font-face rules. This
+     file publishes eight. Adding a face to one means adding it to the other.
+     The count is asserted below, so a mismatch fails the build rather than
+     shipping.
+
+     PUBLISH ALL, PRELOAD TWO. Preloading everything would compete with the
+     stylesheet for the first connection. Only the two faces needed for first
+     paint are preloaded: the reading face and the display face.
+     --------------------------------------------------------------------- */}}
+
+{{ $faces := slice
+    "fonts/FiraSans-Book.woff2"
+    "fonts/FiraSans-BookItalic.woff2"
+    "fonts/FiraSans-Medium.woff2"
+    "fonts/FiraSans-SemiBold.woff2"
+    "fonts/FiraSansCondensed-SemiBold.woff2"
+    "fonts/FiraSansCondensed-Heavy.woff2"
+    "fonts/FiraCode-Regular.woff2"
+    "fonts/FiraCode-Medium.woff2" }}
+
+{{ $preload := slice
+    "fonts/FiraSans-Book.woff2"
+    "fonts/FiraSansCondensed-Heavy.woff2" }}
+
+{{/* Fail loudly rather than shipping a silent 404. */}}
+{{ range $faces }}
+  {{ $f := resources.Get . }}
+  {{ if not $f }}
+    {{ errorf "rk-fonts: %q is declared in tokens.css but is not present under assets/. Every @font-face needs a file here or it 404s in production." . }}
+  {{ end }}
+  {{ $f.Publish }}
+{{ end }}
+
+{{ range $preload }}
+  {{ with resources.Get . }}
+<link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin>
+  {{ end }}
+{{ end }}
