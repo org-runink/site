@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-02-23T06:27:04Z
 draft: false
 featured_image: "/images/blog/supply-chain-maturity-assessment-guide-header.png"
-canonical: https://www.runink.org/blog/supply-chain-maturity-assessment-guide
+canonical: https://runink.org/blog/supply-chain-maturity-assessment-guide
 slug: "supply-chain-maturity-assessment-guide"
 categories: ["Supply Chain Strategy", "Digital Transformation"]
 tags: ["Maturity Assessment", "Benchmarking", "Digital Transformation", "Supply Chain Maturity", "Consulting", "Runink"]
@@ -108,7 +108,7 @@ First, **prioritize by constraint, not by aspiration.** If your logistics execut
 
 Second, **sequence for momentum.** Identify two or three quick wins — often in data quality, KPI visibility, or carrier management — that can show measurable improvement within 90 days. Early wins build the organizational credibility needed to fund larger initiatives.
 
-Third, **build the data foundation early.** Every capability above Level 3 depends on clean, integrated, accessible data. If your shipment data lives in 14 spreadsheets and three disconnected systems, no AI model will save you. Invest in [data infrastructure and governance](/use_cases/) before layering on advanced analytics.
+Third, **build the data foundation early.** Every capability above Level 3 depends on clean, integrated, accessible data. If your shipment data lives in 14 spreadsheets and three disconnected systems, no AI model will save you. Invest in [data infrastructure and governance](/use-cases/) before layering on advanced analytics.
 
 ---
 
@@ -120,7 +120,7 @@ A structured supply chain maturity assessment is the essential first step for an
 
 The distance between knowing your operations need to modernize and actually modernizing is a diagnostic gap. A rigorous maturity assessment closes that gap by giving you a benchmarked, dimension-by-dimension picture of where you stand and a sequenced plan for where to go next.
 
-Traditionally, this diagnostic required six to eight weeks of consulting time, dozens of stakeholder interviews, and a hefty engagement fee. Platforms like [Runink](https://www.runink.org/contact) are changing that equation — automating the data ingestion, scoring, and peer benchmarking process so that operations leaders get an honest, data-driven maturity assessment in minutes rather than months. The result is not a slide deck that sits on a shelf, but a living diagnostic that updates as your operations evolve.
+Traditionally, this diagnostic required six to eight weeks of consulting time, dozens of stakeholder interviews, and a hefty engagement fee. Platforms like [Runink](/#contact-form) are changing that equation — automating the data ingestion, scoring, and peer benchmarking process so that operations leaders get an honest, data-driven maturity assessment in minutes rather than months. The result is not a slide deck that sits on a shelf, but a living diagnostic that updates as your operations evolve.
 
 The organizations that will lead their industries over the next decade are the ones honest enough to assess where they are today — and disciplined enough to build a roadmap from that truth.
 

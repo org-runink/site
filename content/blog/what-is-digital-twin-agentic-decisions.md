@@ -4,7 +4,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-05-22T21:40:59Z
 draft: false
 featured_image: "/images/blog/digital-twin-autonomous-decisions.png"
-canonical: https://www.runink.org/blog/digital-twin-autonomous-decisions
+canonical: https://runink.org/blog/digital-twin-autonomous-decisions
 description: "Discover what Actionable Twins is, the four distinct types, and how the Runink FACE leverages Autonomous Decisions to automate and optimize logistics workflows."
 slug: digital-twin-autonomous-decisions
 categories: ["Logistics Automation", "Supply Chain", "Technology"]
@@ -106,7 +106,7 @@ If the Bill of Lading has historically served as the "Swiss Army Knife" of globa
 
 By adopting these advanced technologies, supply chain leaders can finally transcend the era of reactive firefighting. They can embrace a new paradigm of proactive, autonomous optimization, ensuring their supply chains remain resilient, efficient, and infinitely scalable in the face of tomorrow's challenges.
 
-*Ready to transition from passive visibility to autonomous optimization? [Discover how the Runink FACE can transform your operations today](/contact/).*
+*Ready to transition from passive visibility to autonomous optimization? [Discover how the Runink FACE can transform your operations today](/#contact-form).*
 
 <!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail logistics queries in search engines. -->
 <script type="application/ld+json">

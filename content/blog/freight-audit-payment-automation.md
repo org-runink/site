@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-03-15T20:23:02Z
 draft: false
 featured_image: "/images/blog/freight-audit-payment-automation-header.png"
-canonical: https://www.runink.org/blog/freight-audit-payment-automation
+canonical: https://runink.org/blog/freight-audit-payment-automation
 slug: "freight-audit-payment-automation"
 categories: ["Freight Finance", "Transportation Management"]
 tags: ["Freight Audit", "Payment Automation", "Carrier Billing", "Rate Validation", "Cost Recovery", "Runink"]
@@ -80,7 +80,7 @@ The problem intensifies during peak seasons. When freight volumes spike 30–50%
 AI-powered freight audit platforms automate the entire audit lifecycle — from invoice ingestion and rate matching to anomaly detection and payment execution — enabling 100% invoice coverage with real-time validation against contracted rates and historical patterns.
 {{< /direct-answer >}}
 
-Automation does not simply accelerate the manual process. It fundamentally changes what is possible. Platforms like [Runink](/use_cases/) bring several capabilities that manual teams cannot replicate:
+Automation does not simply accelerate the manual process. It fundamentally changes what is possible. Platforms like [Runink](/use-cases/) bring several capabilities that manual teams cannot replicate:
 
 **100% Invoice Coverage.** Every invoice, every line item, every accessorial charge is validated against the contracted rate. There is no sampling. There is no backlog. Errors are flagged before payment, not discovered months later during a quarterly reconciliation.
 
@@ -106,7 +106,7 @@ Every freight invoice your organization pays without validation is a calculated 
 
 The shift from manual sampling to automated 100% audit coverage eliminates the guesswork. It converts transportation finance from a reactive cost allocation function into a proactive margin recovery engine. Rate validation, duplicate detection, anomaly flagging, and GL coding happen in real-time, across every invoice, every carrier, every mode.
 
-Runink's freight intelligence platform is built for operations leaders who need to stop the revenue leak without adding headcount. If your organization is ready to validate every dollar of carrier spend against contracted rates and recover what you have been overpaying, [start a conversation with our team](/contact).
+Runink's freight intelligence platform is built for operations leaders who need to stop the revenue leak without adding headcount. If your organization is ready to validate every dollar of carrier spend against contracted rates and recover what you have been overpaying, [start a conversation with our team](/#contact-form).
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

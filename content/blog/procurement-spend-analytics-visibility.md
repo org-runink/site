@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-02-22T05:54:14Z
 draft: false
 featured_image: "/images/blog/procurement-spend-analytics-visibility-header.png"
-canonical: https://www.runink.org/blog/procurement-spend-analytics-visibility
+canonical: https://runink.org/blog/procurement-spend-analytics-visibility
 slug: "procurement-spend-analytics-visibility"
 categories: ["Procurement", "Supply Chain Finance"]
 tags: ["Spend Analytics", "Procurement", "Strategic Sourcing", "Category Management", "Cost Optimization", "Runink"]
@@ -100,7 +100,7 @@ Traditional BI tools require clean, pre-classified data and manual query constru
 
 The limitation of traditional business intelligence in procurement is not visualization — it is data preparation. Building a spend cube in a conventional BI platform requires months of manual classification, taxonomy mapping, and supplier normalization. By the time the dashboard is live, the data is stale and the underlying classification is already degrading as new suppliers and categories emerge.
 
-AI-powered platforms like [Runink](/use_cases/) fundamentally change this equation. Machine learning models classify spend transactions against standard taxonomies with 90–95% accuracy on first pass, reducing months of manual classification to days. Natural language processing normalizes supplier names across systems — matching "IBM Corp," "International Business Machines," and "IBM Consulting" to a single supplier entity without manual mapping.
+AI-powered platforms like [Runink](/use-cases/) fundamentally change this equation. Machine learning models classify spend transactions against standard taxonomies with 90–95% accuracy on first pass, reducing months of manual classification to days. Natural language processing normalizes supplier names across systems — matching "IBM Corp," "International Business Machines," and "IBM Consulting" to a single supplier entity without manual mapping.
 
 More critically, AI detects patterns that no analyst would think to query. A gradual 8% price drift on a commodity category over six months. A business unit consistently approving purchases just below the threshold that triggers procurement review. A supplier shifting invoice timing to avoid quarterly spend audits. These are the savings opportunities that traditional BI tools, built on static queries and predefined reports, structurally cannot surface.
 
@@ -116,7 +116,7 @@ The CPO's mandate has expanded far beyond cost reduction. Today's procurement le
 
 The organizations that treat spend analytics as a one-time data cleanup project will always lag behind. The ones that embed AI-driven spend intelligence into their procurement operating model — classifying every transaction, flagging every anomaly, and surfacing every savings opportunity in real time — will consistently outperform on cost, risk, and supplier value.
 
-Runink's procurement intelligence platform is built for CPOs and sourcing leaders who are done making decisions on partial data. If your organization is ready to see the full picture of where your money goes — and recover what you have been leaving on the table — [start a conversation with our team](/contact).
+Runink's procurement intelligence platform is built for CPOs and sourcing leaders who are done making decisions on partial data. If your organization is ready to see the full picture of where your money goes — and recover what you have been leaving on the table — [start a conversation with our team](/#contact-form).
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

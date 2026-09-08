@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-03-10T22:17:47Z
 draft: false
 featured_image: "/images/blog/warehouse-slotting-optimization-strategy-header.png"
-canonical: https://www.runink.org/blog/warehouse-slotting-optimization-strategy
+canonical: https://runink.org/blog/warehouse-slotting-optimization-strategy
 slug: "warehouse-slotting-optimization-strategy"
 categories: ["Warehouse Operations", "Fulfillment"]
 tags: ["Warehouse Slotting", "Pick Path Optimization", "Warehouse Efficiency", "SKU Management", "Labor Productivity", "Runink"]
@@ -98,7 +98,7 @@ The re-slotting challenge is real, but the answer is not a once-a-year facility-
 
 Start by identifying the moves that deliver the highest return. If ten SKU relocations can capture 60% of the total travel reduction opportunity, execute those ten moves during a slow shift — Sunday night or early Monday morning — and measure the impact before moving further. This is where most warehouse teams struggle, because identifying those high-impact moves manually requires analyzing thousands of order lines, pick paths, and velocity trends.
 
-This is precisely where an AI-powered supply chain intelligence platform changes the equation. [Runink](/use_cases/) continuously ingests order history, real-time pick activity, seasonal demand forecasts, and product affinity data to generate prioritized re-slotting recommendations. Instead of a team spending weeks building a slotting analysis in spreadsheets, Runink surfaces the top-impact moves automatically — ranked by projected travel time savings — so warehouse leadership can approve and execute changes on a rolling basis.
+This is precisely where an AI-powered supply chain intelligence platform changes the equation. [Runink](/use-cases/) continuously ingests order history, real-time pick activity, seasonal demand forecasts, and product affinity data to generate prioritized re-slotting recommendations. Instead of a team spending weeks building a slotting analysis in spreadsheets, Runink surfaces the top-impact moves automatically — ranked by projected travel time savings — so warehouse leadership can approve and execute changes on a rolling basis.
 
 The result is a warehouse that adapts its layout to actual demand patterns every week, not once a year. Seasonal velocity shifts are caught and acted on before they degrade productivity. New SKU introductions are slotted intelligently from day one based on predicted demand and product affinity, not dropped into the nearest open location.
 
@@ -114,7 +114,7 @@ Slotting is not glamorous. It does not involve robots, autonomous vehicles, or d
 
 The operations leaders who are pulling ahead are the ones treating slotting as a continuous, data-driven discipline rather than a one-time project. If your warehouse has not been re-slotted in the last 90 days, the inefficiency is already compounding.
 
-Gartner's WMS research reinforces that intelligent slotting — driven by machine learning and real-time order analytics — is a defining capability separating top-quartile warehouse operations from the rest. [Runink is built to deliver exactly that capability](/contact) — continuous slotting intelligence that turns your existing facility into a faster, leaner fulfillment engine without adding square footage or headcount.
+Gartner's WMS research reinforces that intelligent slotting — driven by machine learning and real-time order analytics — is a defining capability separating top-quartile warehouse operations from the rest. [Runink is built to deliver exactly that capability](/#contact-form) — continuous slotting intelligence that turns your existing facility into a faster, leaner fulfillment engine without adding square footage or headcount.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

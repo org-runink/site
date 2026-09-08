@@ -7,7 +7,7 @@ date: 2026-04-16T11:07:10Z
 tags: [ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001, ISO 27701, data quality, information security, privacy management, model governance, data-driven business]
 robots: index, follow
 featured_image: /images/blog/iso-standards-data-driven.png
-canonical: https://www.runink.org/blog/iso-standards-data-driven-business
+canonical: https://runink.org/blog/iso-standards-data-driven-business
 ---
 
 

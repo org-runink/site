@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-04-09T10:02:43Z
 draft: false
 featured_image: "/images/blog/cross-docking-operations-efficiency-header.png"
-canonical: https://www.runink.org/blog/cross-docking-operations-efficiency
+canonical: https://runink.org/blog/cross-docking-operations-efficiency
 slug: "cross-docking-operations-efficiency"
 categories: ["Warehouse Operations", "Fulfillment"]
 tags: ["Cross-Docking", "Warehousing", "Fulfillment", "Distribution", "OTIF", "Runink"]
@@ -96,7 +96,7 @@ Cross-docking is operationally unforgiving. When goods must flow through a facil
 AI-powered orchestration transforms cross-docking from a rigid, schedule-driven process into a predictive, self-adjusting operation that dynamically matches inbound arrivals with outbound demand in real time — reducing dwell time, improving OTIF, and lowering detention costs.
 {{< /direct-answer >}}
 
-Traditional cross-docking relies on static schedules and manual adjustments when plans break down. AI-powered platforms like [Runink](/use_cases/) change the operating model entirely.
+Traditional cross-docking relies on static schedules and manual adjustments when plans break down. AI-powered platforms like [Runink](/use-cases/) change the operating model entirely.
 
 **Predictive ETA management** uses historical carrier performance, traffic patterns, and weather data to forecast actual arrival times — not just scheduled ones. When the platform predicts a 90-minute delay on an inbound load, it automatically adjusts outbound carrier appointments and re-sequences dock door assignments to keep the operation flowing.
 
@@ -104,7 +104,7 @@ Traditional cross-docking relies on static schedules and manual adjustments when
 
 **Exception-driven replanning** detects disruptions — a carrier no-show, a shorted shipment, a quality hold — and triggers automated contingency workflows before the issue cascades. Instead of a dock supervisor making phone calls, the system reroutes freight, reassigns doors, and notifies affected stakeholders simultaneously.
 
-For Distribution Center Managers and VPs of Logistics Operations looking to compress fulfillment cycles while controlling costs, cross-docking is not a new idea — but doing it predictively and at scale is. Platforms like Runink provide the visibility, intelligence, and orchestration layer that turns cross-docking from a high-wire act into a sustainable competitive advantage. [Connect with our team](/contact) to explore how predictive cross-dock orchestration fits your network.
+For Distribution Center Managers and VPs of Logistics Operations looking to compress fulfillment cycles while controlling costs, cross-docking is not a new idea — but doing it predictively and at scale is. Platforms like Runink provide the visibility, intelligence, and orchestration layer that turns cross-docking from a high-wire act into a sustainable competitive advantage. [Connect with our team](/#contact-form) to explore how predictive cross-dock orchestration fits your network.
 
 ---
 
@@ -116,7 +116,7 @@ Cross-docking eliminates warehousing overhead and accelerates order-to-delivery 
 
 The economics are clear: every hour a pallet spends in static storage erodes margin. Cross-docking — whether pre-distributed, post-distributed, or opportunistic — removes that cost from the equation entirely. But the operational bar is high. Without synchronized dock schedules, real-time shipment tracking, and disciplined carrier management, cross-docking introduces more risk than it eliminates.
 
-This is where intelligent orchestration separates leaders from laggards. The ability to predict inbound arrival times, dynamically match loads to outbound orders, and replan in real time when disruptions occur is what makes cross-docking reliable at scale. Runink is purpose-built for this level of supply chain intelligence — giving operations leaders the predictive visibility and automated coordination they need to run flow-through distribution with confidence. [See how Runink supports cross-dock operations](/use_cases/) and take the next step toward eliminating unnecessary warehousing costs.
+This is where intelligent orchestration separates leaders from laggards. The ability to predict inbound arrival times, dynamically match loads to outbound orders, and replan in real time when disruptions occur is what makes cross-docking reliable at scale. Runink is purpose-built for this level of supply chain intelligence — giving operations leaders the predictive visibility and automated coordination they need to run flow-through distribution with confidence. [See how Runink supports cross-dock operations](/use-cases/) and take the next step toward eliminating unnecessary warehousing costs.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

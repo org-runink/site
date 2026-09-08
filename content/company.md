@@ -1,22 +1,22 @@
 ---
 title: "About Runink"
 layout: "company"
-description: "Discover how Runink is redefining logistics intelligence through advanced automation, decision engines, and integrated data engineering."
+description: "What Runink is for: reading the records a company already keeps, and turning them into decisions its own people can defend."
 date: "2024-05-20T00:00:00Z"
 author: "Lead Data & Cloud Architect"
 ---
 
 {{< section-container class="bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 pt-20 pb-32" >}}
   <div class="text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">Shaping the Future of Integrated Logistics Intelligence</h1>
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">The answer is usually already in the records</h1>
     <p class="text-xl text-[#D9CDB8] mb-16">
-      Runink helps enterprises unify their logistics, data, and analytical operations into a single, intelligent ecosystem.
+      A company already records what it bought, what it shipped, what it paid and what went wrong. Runink reads those records and puts an answer in front of the person who has to act on it.
     </p>
     <div class="max-w-3xl mx-auto bg-stone-800/90 rounded-xl shadow-sm p-8">
       <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
       <p class="text-xl text-[#D9CDB8]">
-        We empower businesses to connect every data signal—from procurement to delivery—through a platform built for speed, automation, and real-time decision-making. 
-        By combining modern data engineering, structured data integration, and event-driven automation, Runink transforms operations into resilient, intelligent systems.
+        Most of what an operations, finance or compliance team needs to decide is sitting in systems it already pays for, in a shape nobody has time to read.
+        We connect to those systems, keep the working copy on hardware the customer controls, and show the reasoning behind every answer so the person who signs off can check it.
       </p>
     </div>
   </div>
@@ -74,7 +74,7 @@ author: "Lead Data & Cloud Architect"
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
   <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Comprehensive guidelines for scalable data processing.</li>
+    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Guidelines for processing data at volume.</li>
     <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
     <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
     <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on automated applications in freight and transportation.</li>
@@ -86,14 +86,14 @@ author: "Lead Data & Cloud Architect"
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Runink",
-  "url": "https://runink.com",
-  "logo": "https://runink.com/images/logo.png",
+  "url": "https://runink.org",
+  "logo": "https://runink.org/images/logo.png",
   "description": "Automated logistics platform specializing in dynamic route optimization, backhaul matching, and supply chain emissions reduction.",
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer support",
-    "email": "support@runink.com"
+    "email": "support@runink.org"
   }
 }
 </script>

@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-05-24T12:14:12Z
 draft: false
 featured_image: "/images/blog/warehouse-sop-standard-operating-procedures-header.png"
-canonical: https://www.runink.org/blog/warehouse-sop-standard-operating-procedures
+canonical: https://runink.org/blog/warehouse-sop-standard-operating-procedures
 slug: "warehouse-sop-standard-operating-procedures"
 categories: ["Warehouse Operations", "Process Excellence"]
 tags: ["SOPs", "Standard Operating Procedures", "Warehouse Management", "Process Documentation", "Training", "Runink"]
@@ -118,7 +118,7 @@ More critically, Runink monitors ongoing operations against documented procedure
 
 Over time, Runink's analytics layer identifies which SOPs are correlated with the strongest throughput, accuracy, and safety outcomes, and recommends targeted revisions to close performance gaps. The result is a living SOP ecosystem that evolves with your operation rather than gathering dust in a binder.
 
-To explore how Runink can help your facility move from tribal knowledge to documented, data-driven standard operating procedures, visit our [supply chain use cases](/use_cases/) or [connect with our team](/contact).
+To explore how Runink can help your facility move from tribal knowledge to documented, data-driven standard operating procedures, visit our [supply chain use cases](/use-cases/) or [connect with our team](/#contact-form).
 
 ---
 

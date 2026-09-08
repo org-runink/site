@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-04-30T05:34:13Z
 draft: false
 featured_image: "/images/blog/supply-chain-digital-transformation-roadmap-header.png"
-canonical: https://www.runink.org/blog/supply-chain-digital-transformation-roadmap
+canonical: https://runink.org/blog/supply-chain-digital-transformation-roadmap
 slug: "supply-chain-digital-transformation-roadmap"
 categories: ["Digital Transformation", "Supply Chain Strategy"]
 tags: ["Digital Transformation", "Transformation Roadmap", "Automation", "AI in Supply Chain", "Change Management", "Runink"]
@@ -121,7 +121,7 @@ The path from spreadsheets to autonomous operations is real, but it demands oper
 
 The hardest leap in the roadmap is the transition from Phase 3 to Phase 4: moving from visibility and analytics to autonomous, AI-driven decisions. This is where most organizations stall, not because the technology does not exist, but because they lack an intelligence layer that can sit above existing systems and orchestrate decisions without forcing a costly rip-and-replace.
 
-[Runink](/contact) was built for exactly this inflection point — serving as the intelligence layer that connects to your existing ERP, TMS, and WMS ecosystem to accelerate the journey from connected analytics to autonomous supply chain operations. If your transformation roadmap has stalled at dashboards, the next phase is not another platform migration. It is the right intelligence layer.
+[Runink](/#contact-form) was built for exactly this inflection point — serving as the intelligence layer that connects to your existing ERP, TMS, and WMS ecosystem to accelerate the journey from connected analytics to autonomous supply chain operations. If your transformation roadmap has stalled at dashboards, the next phase is not another platform migration. It is the right intelligence layer.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

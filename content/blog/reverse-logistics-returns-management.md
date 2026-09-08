@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-04-25T15:42:36Z
 draft: false
 featured_image: "/images/blog/reverse-logistics-returns-management-header.png"
-canonical: https://www.runink.org/blog/reverse-logistics-returns-management
+canonical: https://runink.org/blog/reverse-logistics-returns-management
 slug: "reverse-logistics-returns-management"
 categories: ["Reverse Logistics", "E-Commerce Operations"]
 tags: ["Returns Management", "Reverse Logistics", "E-Commerce", "Disposition", "Sustainability", "Runink"]
@@ -93,7 +93,7 @@ The shift from reactive returns processing to proactive reverse logistics requir
 
 **Closed-loop analytics.** Every return generates data: why it was returned, what condition it arrived in, how long disposition took, what value was recovered, and where the item ultimately ended up. When that data feeds back into procurement, product design, and marketing, it closes the loop — reducing future return rates and improving the quality of goods entering the forward chain.
 
-This is the operational model that platforms like [Runink](/use_cases/) are purpose-built to enable. By unifying return intake data, disposition rules, recovery channel performance, and sustainability metrics into a single intelligence layer, operations leaders gain the visibility and automation required to treat reverse logistics as what it actually is: a margin recovery operation, not a write-off queue.
+This is the operational model that platforms like [Runink](/use-cases/) are purpose-built to enable. By unifying return intake data, disposition rules, recovery channel performance, and sustainability metrics into a single intelligence layer, operations leaders gain the visibility and automation required to treat reverse logistics as what it actually is: a margin recovery operation, not a write-off queue.
 
 ---
 
@@ -121,7 +121,7 @@ The $890 billion returns problem is not going away. E-commerce penetration conti
 
 That requires visibility into every return, intelligence at every disposition decision, and analytics that close the loop between reverse outcomes and forward operations. It requires treating your reverse supply chain with the same rigor you apply to your forward one.
 
-If your returns operation is still running on spreadsheets and gut decisions, [we should talk](/contact). Runink gives operations leaders the real-time disposition intelligence and reverse flow analytics to turn their highest-volume cost center into a margin recovery engine.
+If your returns operation is still running on spreadsheets and gut decisions, [we should talk](/#contact-form). Runink gives operations leaders the real-time disposition intelligence and reverse flow analytics to turn their highest-volume cost center into a margin recovery engine.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-02-28T06:20:29Z
 draft: false
 featured_image: "/images/blog/inventory-optimization-demand-sensing-header.png"
-canonical: https://www.runink.org/blog/inventory-optimization-demand-sensing
+canonical: https://runink.org/blog/inventory-optimization-demand-sensing
 slug: "inventory-optimization-demand-sensing"
 categories: ["Inventory Management", "Demand Planning"]
 tags: ["Inventory Optimization", "Demand Sensing", "Safety Stock", "Fill Rate", "Working Capital", "Runink"]
@@ -86,7 +86,7 @@ The challenge for most inventory organizations is not a lack of data — it is t
 
 McKinsey's research on working capital optimization confirms that companies integrating demand sensing with inventory optimization unlock 20–50% reductions in working capital tied to inventory, with corresponding improvements in cash conversion cycles. The key is connecting signal to action at the speed the market demands.
 
-This is where platforms like [Runink](/use_cases/) deliver operational impact. By ingesting data streams across the supply chain — POS feeds, carrier milestone events, warehouse capacity metrics, supplier performance scorecards, and external signals like weather and market indicators — Runink builds a unified, real-time inventory picture. Machine learning models continuously recalibrate demand projections at the SKU-location level, automatically adjusting safety stock parameters, reorder points, and allocation priorities as conditions change.
+This is where platforms like [Runink](/use-cases/) deliver operational impact. By ingesting data streams across the supply chain — POS feeds, carrier milestone events, warehouse capacity metrics, supplier performance scorecards, and external signals like weather and market indicators — Runink builds a unified, real-time inventory picture. Machine learning models continuously recalibrate demand projections at the SKU-location level, automatically adjusting safety stock parameters, reorder points, and allocation priorities as conditions change.
 
 The result is not incremental improvement to an outdated process. It is a fundamental shift from reactive replenishment to proactive inventory positioning — where every stocking decision is informed by the freshest available signal across the network.
 
@@ -102,7 +102,7 @@ The inventory leaders who will outperform in the coming years are not the ones a
 
 The cost of inaction is measurable: trapped working capital, eroding fill rates, and a planning team perpetually chasing yesterday's demand with tomorrow's inventory. The path forward requires a platform that can ingest, synthesize, and act on signals at the speed your supply chain demands.
 
-[Explore how Runink helps inventory leaders move from reactive replenishment to demand-driven optimization](/contact).
+[Explore how Runink helps inventory leaders move from reactive replenishment to demand-driven optimization](/#contact-form).
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

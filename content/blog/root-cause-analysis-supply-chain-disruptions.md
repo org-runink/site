@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-06-04T15:18:35Z
 draft: false
 featured_image: "/images/blog/root-cause-analysis-supply-chain-disruptions-header.png"
-canonical: https://www.runink.org/blog/root-cause-analysis-supply-chain-disruptions
+canonical: https://runink.org/blog/root-cause-analysis-supply-chain-disruptions
 slug: "root-cause-analysis-supply-chain-disruptions"
 categories: ["Continuous Improvement", "Operations Management"]
 tags: ["Root Cause Analysis", "5 Whys", "Fishbone Diagram", "Supply Chain Disruptions", "Continuous Improvement", "Runink"]
@@ -115,7 +115,7 @@ AI-powered supply chain platforms compress the RCA cycle from weeks of manual da
 
 The fundamental bottleneck in traditional RCA is not analytical skill — it is data access. Tracing a late delivery back to a dock scheduling conflict requires pulling data from the TMS, the YMS, the carrier's tracking system, and the warehouse appointment calendar. In most organizations, that means emails, spreadsheet exports, and two weeks of back-and-forth between departments.
 
-Platforms like [Runink](https://www.runink.org/use_cases/) eliminate this bottleneck by integrating and correlating data across every node in the supply chain. When a pattern of late deliveries emerges, the platform can automatically cross-reference carrier transit times, dock dwell times, appointment adherence rates, and upstream PO release timing to isolate the root cause — not in weeks, but in twenty minutes.
+Platforms like [Runink](/use-cases/) eliminate this bottleneck by integrating and correlating data across every node in the supply chain. When a pattern of late deliveries emerges, the platform can automatically cross-reference carrier transit times, dock dwell times, appointment adherence rates, and upstream PO release timing to isolate the root cause — not in weeks, but in twenty minutes.
 
 This is not about replacing the expertise of a Continuous Improvement Manager. It is about giving that expertise access to the complete picture instead of forcing investigations through the narrow aperture of whichever system each department happens to own. The best RCA practitioners still ask the sharpest questions. AI ensures they are working with the full dataset when they do.
 
@@ -129,7 +129,7 @@ Root cause analysis transforms supply chain operations from a reactive firefight
 
 The 5 Whys for linear drill-downs. Fishbone diagrams for cross-functional brainstorming. Pareto analysis for ruthless prioritization. Fault Tree Analysis for compound failure modes. These are not theoretical frameworks — they are operational tools that, when embedded in a supply chain's operating rhythm, permanently eliminate the disruptions that consume leadership bandwidth quarter after quarter.
 
-The difference between organizations that solve problems once and those that solve them repeatedly is not talent. It is tooling and discipline. If your team is ready to stop patching symptoms and start eliminating root causes, [explore how Runink's supply chain intelligence platform](https://www.runink.org/contact) can give your continuous improvement program the cross-system visibility it needs to move from investigation to resolution in a fraction of the time.
+The difference between organizations that solve problems once and those that solve them repeatedly is not talent. It is tooling and discipline. If your team is ready to stop patching symptoms and start eliminating root causes, [explore how Runink's supply chain intelligence platform](/#contact-form) can give your continuous improvement program the cross-system visibility it needs to move from investigation to resolution in a fraction of the time.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

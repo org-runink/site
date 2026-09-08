@@ -7,7 +7,7 @@ date: 2026-05-09T00:15:18Z
 tags: [data telemetry, automated reconciliation, domain modeling, data observability, enterprise data, analytics automation, streaming data, anomaly detection, data governance, automated operations]
 robots: index, follow
 featured_image: /images/blog/telemetry-data-reconciliation-domain-modeling.png
-canonical: https://www.runink.org/blog/telemetry-data-reconciliation-domain-modeling
+canonical: https://runink.org/blog/telemetry-data-reconciliation-domain-modeling
 ---
 
 # Telemetry-Led Automation for Reliable Reconciliation

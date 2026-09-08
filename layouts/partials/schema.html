@@ -3,9 +3,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": {{ .Site.Title | jsonify }},
-  "url": {{ .Site.BaseURL | jsonify }},
-  "description": {{ .Site.Params.description | jsonify }},
+  "name": {{ .Site.Title | jsonify | safeJS }},
+  "url": {{ .Site.BaseURL | jsonify | safeJS }},
+  "description": {{ .Site.Params.description | jsonify | safeJS }},
 
   {{/* GEO Entity Relationships Injection for Homepage */}}
   {{ with .Params.partnerships }}
@@ -14,8 +14,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Organization",
-      "name": {{ $partner.name | jsonify }},
-      "url": {{ $partner.url | default "" | jsonify }}
+      "name": {{ $partner.name | jsonify | safeJS }},
+      "url": {{ $partner.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ],
@@ -27,8 +27,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Article",
-      "headline": {{ $case.title | jsonify }},
-      "url": {{ $case.url | default "" | jsonify }}
+      "headline": {{ $case.title | jsonify | safeJS }},
+      "url": {{ $case.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ],
@@ -40,8 +40,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Thing",
-      "name": {{ $standard.name | jsonify }},
-      "sameAs": {{ $standard.url | default "" | jsonify }}
+      "name": {{ $standard.name | jsonify | safeJS }},
+      "sameAs": {{ $standard.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ]
@@ -57,10 +57,10 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": {{ .Permalink | jsonify }}
+    "@id": {{ .Permalink | jsonify | safeJS }}
   },
-  "headline": {{ .Title | jsonify }},
-  {{ with .Params.description }}"description": {{ . | jsonify }},{{ end }}
+  "headline": {{ .Title | jsonify | safeJS }},
+  {{ with .Params.description }}"description": {{ . | jsonify | safeJS }},{{ end }}
   {{ $imgUrl := .Params.featured_image }}
   {{ with $imgUrl }}
     {{ $img := resources.Get . }}
@@ -68,25 +68,25 @@
       "image": {
         "@type": "ImageObject",
         {{ if eq $img.MediaType.SubType "svg" }}
-        "url": {{ $img.Permalink | jsonify }},
+        "url": {{ $img.Permalink | jsonify | safeJS }},
         "width": {{ $img.Width | default 1200 }},
         "height": {{ $img.Height | default 630 }}
         {{ else }}
         {{ $optimized := $img.Resize "1200x630 webp" }}
-        "url": {{ $optimized.Permalink | jsonify }},
+        "url": {{ $optimized.Permalink | jsonify | safeJS }},
         "width": {{ $optimized.Width }},
         "height": {{ $optimized.Height }}
         {{ end }}
         {{ if $img.Exif }}
-        {{ with $img.Exif.Tags.Artist }}, "creator": { "@type": "Person", "name": {{ . | jsonify }} }{{ end }}
-        {{ with $img.Exif.Tags.Copyright }}, "copyrightNotice": {{ . | jsonify }}{{ end }}
-        {{ with $img.Exif.Tags.ImageDescription }}, "description": {{ . | jsonify }}{{ end }}
+        {{ with $img.Exif.Tags.Artist }}, "creator": { "@type": "Person", "name": {{ . | jsonify | safeJS }} }{{ end }}
+        {{ with $img.Exif.Tags.Copyright }}, "copyrightNotice": {{ . | jsonify | safeJS }}{{ end }}
+        {{ with $img.Exif.Tags.ImageDescription }}, "description": {{ . | jsonify | safeJS }}{{ end }}
         {{ end }}
       },
     {{ else }}
       "image": {
         "@type": "ImageObject",
-        "url": {{ . | absURL | jsonify }}
+        "url": {{ . | absURL | jsonify | safeJS }}
       },
     {{ end }}
   {{ end }}
@@ -102,8 +102,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Organization",
-      "name": {{ $partner.name | jsonify }},
-      "url": {{ $partner.url | default "" | jsonify }}
+      "name": {{ $partner.name | jsonify | safeJS }},
+      "url": {{ $partner.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ],
@@ -116,8 +116,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Article",
-      "headline": {{ $case.title | jsonify }},
-      "url": {{ $case.url | default "" | jsonify }}
+      "headline": {{ $case.title | jsonify | safeJS }},
+      "url": {{ $case.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ],
@@ -130,8 +130,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Thing",
-      "name": {{ $standard.name | jsonify }},
-      "sameAs": {{ $standard.url | default "" | jsonify }}
+      "name": {{ $standard.name | jsonify | safeJS }},
+      "sameAs": {{ $standard.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ],
@@ -139,24 +139,24 @@
 
   "author": {
     "@type": "Person",
-    "name": {{ .Params.author | default .Site.Params.author | default .Site.Title | jsonify }}
+    "name": {{ .Params.author | default .Site.Params.author | default .Site.Title | jsonify | safeJS }}
   },
   "publisher": {
     "@type": "Organization",
-    "name": {{ .Site.Title | jsonify }},
+    "name": {{ .Site.Title | jsonify | safeJS }},
     "logo": {
       "@type": "ImageObject",
       {{ $logoUrl := .Site.Params.logo }}
       {{ $logoImg := resources.Get $logoUrl }}
       {{ if $logoImg }}
         {{ if eq $logoImg.MediaType.SubType "svg" }}
-          "url": {{ $logoImg.Permalink | jsonify }}
+          "url": {{ $logoImg.Permalink | jsonify | safeJS }}
         {{ else }}
           {{ $optLogo := $logoImg.Resize "512x512 webp" }}
-          "url": {{ $optLogo.Permalink | jsonify }}
+          "url": {{ $optLogo.Permalink | jsonify | safeJS }}
         {{ end }}
       {{ else }}
-        "url": {{ $logoUrl | absURL | jsonify }}
+        "url": {{ $logoUrl | absURL | jsonify | safeJS }}
       {{ end }}
     }
   }
@@ -167,9 +167,9 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": {{ .Title | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "description": {{ .Description | default .Site.Params.description | jsonify }},
+  "name": {{ .Title | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }},
+  "description": {{ .Description | default .Site.Params.description | jsonify | safeJS }},
 
   {{/* GEO Entity Relationships Injection for Collection */}}
   {{ with .Params.partnerships }}
@@ -178,8 +178,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Organization",
-      "name": {{ $partner.name | jsonify }},
-      "url": {{ $partner.url | default "" | jsonify }}
+      "name": {{ $partner.name | jsonify | safeJS }},
+      "url": {{ $partner.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ],
@@ -191,8 +191,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Article",
-      "headline": {{ $case.title | jsonify }},
-      "url": {{ $case.url | default "" | jsonify }}
+      "headline": {{ $case.title | jsonify | safeJS }},
+      "url": {{ $case.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ],
@@ -204,8 +204,8 @@
     {{ if $index }},{{ end }}
     {
       "@type": "Thing",
-      "name": {{ $standard.name | jsonify }},
-      "sameAs": {{ $standard.url | default "" | jsonify }}
+      "name": {{ $standard.name | jsonify | safeJS }},
+      "sameAs": {{ $standard.url | default "" | jsonify | safeJS }}
     }
     {{ end }}
   ]

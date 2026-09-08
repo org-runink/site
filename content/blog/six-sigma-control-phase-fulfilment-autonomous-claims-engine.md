@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-02-25T18:35:52Z
 draft: false
 featured_image: "/images/blog/six-sigma-control-phase-fulfilment-autonomous-claims-engine-header.png"
-canonical: https://www.runink.org/blog/six-sigma-control-phase-fulfilment-autonomous-claims-engine
+canonical: https://runink.org/blog/six-sigma-control-phase-fulfilment-autonomous-claims-engine
 slug: "six-sigma-control-phase-fulfilment-autonomous-claims-engine"
 categories: ["Finance", "Supply Chain Optimization"]
 tags: ["Six Sigma", "FACE", "Demurrage", "Automation", "Runink"]
@@ -106,7 +106,7 @@ Sustaining the gains achieved through Six Sigma initiatives requires abandoning 
 
 The Control phase should not be the graveyard of supply chain optimization efforts; it should be the robust foundation upon which long-term profitability is built. For Directors of Finance and Supply Chain Controllers, relying on retrospective audits and manual interventions is no longer a viable strategy for protecting margins in a volatile global logistics market. 
 
-To ensure that process improvements stick and financial deviations are caught the moment they occur, organizations must deploy systems that monitor execution continuously and autonomously. By integrating the Runink Fulfilment Autonomous Claims Engine (FACE) into your daily operations, you can seamlessly automate demurrage dispute filing, enforce strict SLA compliance, and leverage immediate MS Teams Webhooks and WhatsApp alerts to keep your teams agile and informed. [Contact Runink](/contact) today to discover how our intelligent logistics solutions can help you maintain absolute financial control and turn your supply chain into a resilient, optimized driver of business growth.
+To ensure that process improvements stick and financial deviations are caught the moment they occur, organizations must deploy systems that monitor execution continuously and autonomously. By integrating the Runink Fulfilment Autonomous Claims Engine (FACE) into your daily operations, you can seamlessly automate demurrage dispute filing, enforce strict SLA compliance, and leverage immediate MS Teams Webhooks and WhatsApp alerts to keep your teams agile and informed. [Contact Runink](/#contact-form) today to discover how our intelligent logistics solutions can help you maintain absolute financial control and turn your supply chain into a resilient, optimized driver of business growth.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

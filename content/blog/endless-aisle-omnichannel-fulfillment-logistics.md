@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-04-07T12:51:41Z
 draft: false
 featured_image: "/images/blog/endless-aisle-omnichannel-fulfillment-logistics-header.png"
-canonical: https://www.runink.org/blog/endless-aisle-omnichannel-fulfillment-logistics
+canonical: https://runink.org/blog/endless-aisle-omnichannel-fulfillment-logistics
 slug: "endless-aisle-omnichannel-fulfillment-logistics"
 categories: ["Omnichannel Fulfillment", "Supply Chain Operations"]
 tags: ["Endless Aisle", "Distributed Order Management", "Cross-Docking", "Runink"]
@@ -53,7 +53,7 @@ Achieving this level of precision requires a unified data architecture. When a b
 
 Beyond the four walls of the DC or the store, real-time visibility must extend into the yard and out to the broader transportation network. A comprehensive control tower integrates Yard Management System (YMS) data to track the exact location of trailers and containers. If a critical inbound shipment of seasonal merchandise is delayed, operations leaders need immediate alerts to adjust safety stock parameters and re-route endless aisle orders to alternative nodes. This proactive visibility is essential for managing the complexities of drayage operations and avoiding punitive demurrage charges when containers are trapped at congested ports. By treating in-transit freight as dynamic inventory, supply chain directors can maintain the illusion of the endless aisle even amidst upstream disruptions.
 
-For more insights into building resilient data architectures, explore our advanced [Supply Chain Control Tower Use Cases](/use_cases/).
+For more insights into building resilient data architectures, explore our advanced [Supply Chain Control Tower Use Cases](/use-cases/).
 
 ---
 
@@ -93,7 +93,7 @@ Mastering the endless aisle requires moving beyond siloed logistics software to 
 
 The "endless aisle" is no longer just a retail buzzword; it is a baseline consumer expectation that places immense pressure on fulfillment operations. For a VP of Retail Supply Chain, the mandate is clear: you must deliver infinite choice with absolute precision and unyielding cost control. Achieving this requires breaking down the traditional barriers between your DCs, transit networks, and retail storefronts. By leveraging advanced distributed order management, insisting on real-time inventory visibility, and executing high-velocity cross-docking, operations leaders can turn logistical complexity into a definitive competitive advantage. 
 
-At Runink, our AI-powered supply chain intelligence platform provides the end-to-end visibility and actionable insights necessary to orchestrate profitable omnichannel fulfillment. We empower logistics leaders to proactively manage their networks, from upstream drayage to the final mile. Ready to optimize your fulfillment strategy and eliminate costly blind spots? [Contact the Runink team today](/contact) to transform your supply chain operations.
+At Runink, our AI-powered supply chain intelligence platform provides the end-to-end visibility and actionable insights necessary to orchestrate profitable omnichannel fulfillment. We empower logistics leaders to proactively manage their networks, from upstream drayage to the final mile. Ready to optimize your fulfillment strategy and eliminate costly blind spots? [Contact the Runink team today](/#contact-form) to transform your supply chain operations.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

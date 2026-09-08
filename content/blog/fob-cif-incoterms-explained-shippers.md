@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-02-23T18:35:06Z
 draft: false
 featured_image: "/images/blog/fob-cif-incoterms-explained-shippers-header.png"
-canonical: https://www.runink.org/blog/fob-cif-incoterms-explained-shippers
+canonical: https://runink.org/blog/fob-cif-incoterms-explained-shippers
 slug: "fob-cif-incoterms-explained-shippers"
 categories: ["International Trade", "Logistics Compliance"]
 tags: ["Incoterms", "FOB", "CIF", "Risk Transfer", "Trade Finance", "Runink"]
@@ -112,7 +112,7 @@ For high-value shipments where insurance adequacy and carrier performance are no
 
 Regardless of which Incoterm you choose, the operational discipline required is the same: you need to see your cargo, understand your liability exposure at every handoff point, and act on that data before dwell time, coverage gaps, or claims disputes erode your margins.
 
-Platforms like [Runink](https://www.runink.org/contact) are built to give operations leaders exactly that visibility — connecting Incoterms contract logic to real-time cargo intelligence across ocean, port, rail, and road, so you always know who owns the risk and where the cargo actually is. Explore how Runink can strengthen your [trade compliance and visibility workflows](/use_cases/) today.
+Platforms like [Runink](/#contact-form) are built to give operations leaders exactly that visibility — connecting Incoterms contract logic to real-time cargo intelligence across ocean, port, rail, and road, so you always know who owns the risk and where the cargo actually is. Explore how Runink can strengthen your [trade compliance and visibility workflows](/use-cases/) today.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

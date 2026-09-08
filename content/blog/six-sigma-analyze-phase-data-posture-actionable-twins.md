@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-03-24T09:29:31Z
 draft: false
 featured_image: "/images/blog/six-sigma-analyze-phase-data-posture-actionable-twins-header.png"
-canonical: https://www.runink.org/blog/six-sigma-analyze-phase-data-posture-actionable-twins
+canonical: https://runink.org/blog/six-sigma-analyze-phase-data-posture-actionable-twins
 slug: "six-sigma-analyze-phase-data-posture-actionable-twins"
 categories: ["Continuous Improvement", "Supply Chain Analytics"]
 tags: ["Six Sigma", "Root Cause Analysis", "Operations Actionable Twins", "Runink"]
@@ -64,7 +64,7 @@ To overcome the limitations of siloed analysis, forward-thinking logistics organ
 
 Every entity—whether it is a container sitting FOB at an origin port, a truck navigating a linehaul route, or a SKU awaiting put-away in a fulfillment center—is represented as a node. The relationships and interactions between these entities form the edges of the graph. By mapping the operational *intent* (the planned sequence of events) against the actual execution, IGO exposes the hidden constraints that traditional analytics miss.
 
-For example, when analyzing spiraling demurrage and detention fees, an Intent-Graph can instantly trace the financial penalty back through the chain of custody. It might reveal that the root cause is not terminal congestion, but rather a persistent lack of chassis availability synchronized with the customs clearance process. By illuminating these deep-tier dependencies, IGO empowers logistics leaders to target their interventions with surgical precision. To explore how this technology can transform specific operational challenges, review our [industry use cases](/use_cases/).
+For example, when analyzing spiraling demurrage and detention fees, an Intent-Graph can instantly trace the financial penalty back through the chain of custody. It might reveal that the root cause is not terminal congestion, but rather a persistent lack of chassis availability synchronized with the customs clearance process. By illuminating these deep-tier dependencies, IGO empowers logistics leaders to target their interventions with surgical precision. To explore how this technology can transform specific operational challenges, review our [industry use cases](/use-cases/).
 
 ---
 
@@ -104,7 +104,7 @@ The Analyze phase requires a transition from observing symptoms to eradicating r
 
 Mastering the Analyze phase of the Six Sigma methodology is the defining characteristic of a world-class logistics organization. When operations teams move beyond superficial metrics and begin dismantling the structural root causes of their supply chain defects, they unlock unprecedented levels of efficiency, resilience, and profitability. The key to this transformation lies in adopting the right analytical framework—one that can decipher the complexity of global freight networks while maintaining uncompromising data integrity.
 
-By deploying Runink's advanced suite of tools—including the schema-guarding Data Posture Module, the deep-mapping capabilities of Intent-Graph Optimization, and the execution power of Operations Actionable Twins—Directors of Logistics and Continuous Improvement Managers can confidently identify and permanently resolve the constraints holding their networks back. Ready to eradicate your most persistent logistics challenges and accelerate your continuous improvement journey? [Contact our team](/contact) to learn how Runink can transform your root cause analysis.
+By deploying Runink's advanced suite of tools—including the schema-guarding Data Posture Module, the deep-mapping capabilities of Intent-Graph Optimization, and the execution power of Operations Actionable Twins—Directors of Logistics and Continuous Improvement Managers can confidently identify and permanently resolve the constraints holding their networks back. Ready to eradicate your most persistent logistics challenges and accelerate your continuous improvement journey? [Contact our team](/#contact-form) to learn how Runink can transform your root cause analysis.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

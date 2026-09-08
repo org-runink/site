@@ -5,7 +5,7 @@ author: "Runink Logistics Operations Team"
 date: 2026-04-13T10:37:24Z
 draft: false
 featured_image: "/images/blog/six-sigma-logistics-define-measure-telemetry-data-lakes-header.png"
-canonical: https://www.runink.org/blog/six-sigma-logistics-define-measure-telemetry-data-lakes
+canonical: https://runink.org/blog/six-sigma-logistics-define-measure-telemetry-data-lakes
 slug: "six-sigma-logistics-define-measure-telemetry-data-lakes"
 categories: ["Data Strategy", "Supply Chain Operations"]
 tags: ["Six Sigma", "Telemetry", "Data Lake", "Runink"]
@@ -50,7 +50,7 @@ The Define phase is all about identifying the problem, scoping the project, and 
 
 A Global Telemetry Data Lake fundamentally shifts how operations executives approach this phase. By centralizing vast streams of data—ranging from GPS transponders and temperature loggers to EDI load tenders and customs clearance milestones—a data lake creates an unvarnished, high-fidelity digital twin of your physical operations. This unified repository effectively dismantles the informational silos that have historically plagued supply chain operations, bringing together enterprise data, third-party logistics (3PL) inputs, and real-time carrier telemetry under one standardized governance framework.
 
-Instead of debating which regional TMS has the correct timestamp for a shipment arrival, continuous improvement leaders can leverage the data lake to define defects with granular precision. For example, rather than a vague objective to "reduce carrier delays," a data lake enables leaders to define the problem as "reducing LTL transit variance by 18% on the trans-Pacific corridor during peak season, specifically targeting dwell time at origin cross-docks." This level of precision is only possible when your definition of a defect is anchored by continuous, comprehensive global telemetry rather than anecdotal reports. Furthermore, this precision empowers continuous improvement teams to build robust project charters that have clear, quantifiable objectives. For operations teams looking to explore specific applications of this approach, reviewing our [industry use cases](/use_cases/) can provide a roadmap for structural realignment.
+Instead of debating which regional TMS has the correct timestamp for a shipment arrival, continuous improvement leaders can leverage the data lake to define defects with granular precision. For example, rather than a vague objective to "reduce carrier delays," a data lake enables leaders to define the problem as "reducing LTL transit variance by 18% on the trans-Pacific corridor during peak season, specifically targeting dwell time at origin cross-docks." This level of precision is only possible when your definition of a defect is anchored by continuous, comprehensive global telemetry rather than anecdotal reports. Furthermore, this precision empowers continuous improvement teams to build robust project charters that have clear, quantifiable objectives. For operations teams looking to explore specific applications of this approach, reviewing our [industry use cases](/use-cases/) can provide a roadmap for structural realignment.
 
 ---
 
@@ -90,7 +90,7 @@ By leveraging global telemetry data lakes and automated ingestion, supply chain 
 
 The principles of Lean Six Sigma remain as relevant today as they were decades ago, but the tools required to execute them have fundamentally evolved. For Vice Presidents of Operations and Supply Chain Directors, the challenge is no longer about finding a methodology to improve performance; it is about securing the high-quality data necessary to make that methodology work at a global scale. 
 
-By upgrading your Define and Measure phases with a centralized, telemetry-driven data architecture, you eliminate the blind spots created by legacy data silos. Accurate baselines lead to precise analysis, which in turn drives sustainable, network-wide improvements in OTIF, fill rates, and cost-to-serve. If your organization is ready to move beyond reactive logistics management and build a resilient, Six Sigma-capable supply chain network, [contact the Runink team](/contact) to learn how our data lake capabilities and intelligent connectors can accelerate your operational excellence initiatives.
+By upgrading your Define and Measure phases with a centralized, telemetry-driven data architecture, you eliminate the blind spots created by legacy data silos. Accurate baselines lead to precise analysis, which in turn drives sustainable, network-wide improvements in OTIF, fill rates, and cost-to-serve. If your organization is ready to move beyond reactive logistics management and build a resilient, Six Sigma-capable supply chain network, [contact the Runink team](/#contact-form) to learn how our data lake capabilities and intelligent connectors can accelerate your operational excellence initiatives.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

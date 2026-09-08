@@ -7,7 +7,7 @@ date: 2026-05-20T21:06:02Z
 tags: [A2A, integration, analytics, open source, data protocol, data pipelines, low-cost analytics, modular workflows, task orchestration, sentiment analysis, open standards]
 robots: index, follow
 featured_image: /images/blog/a2a-langchain-affordable-analytics.png
-canonical: https://www.runink.org/blog/a2a-langchain-affordable-analytics
+canonical: https://runink.org/blog/a2a-langchain-affordable-analytics
 ---
 
 
