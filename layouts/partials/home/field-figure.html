@@ -1,0 +1,67 @@
+{{/*
+  "Sample, or all of it" — the one illustration on the homepage.
+
+  It draws the sentence the five industry pages all arrive at from different
+  directions: the records already exist, the volume defeated inspection, so a
+  sample gets read and the difference is found afterwards. Telecom says it
+  outright — "revenue assurance exists because the volume defeated inspection".
+
+  The two panels are THE SAME FIELD, mark for mark. Every rectangle is at the
+  same coordinate in both, so the only thing that changes between them is how
+  many are filled. That is the whole argument, and it is legible in about half a
+  second without reading a word.
+
+  Composition notes, so a later edit does not flatten it:
+    - Unread is a hairline OUTLINE and read is a SOLID FILL. Empty-versus-filled
+      survives a greyscale print and a photocopy; two shades of grey do not.
+    - The three accent marks sit at fixed indices that are deliberately NOT in
+      the sample set. In panel A they are outlined — already there, not read. In
+      panel B they are filled and ringed. Nothing counts them and nothing states
+      a rate; they are there so the reader sees that the exceptions were in the
+      field the whole time.
+    - There is no text, no axis and no unit inside the artwork. At 360px each
+      panel scales to roughly a third and any label set inside would be
+      unreadable. The panel labels and the captions are HTML, so they stay
+      legible at every size and in print.
+    - Colours come from the block's custom properties, so the figure re-inks
+      itself for print from the same @media print rules as the rest of the page.
+
+  All colour is decorative: the aria-label carries the full meaning without it.
+
+  Call with: (dict "variant" "today") or (dict "variant" "read").
+*/}}
+{{ $variant := .variant | default "today" }}
+{{/* 13 scattered indices into a 16 x 9 field — the sample. Deliberately not a
+     stripe or a block: a sample is scattered, and a contiguous highlighted
+     rectangle would read as a region of the business rather than a sample. */}}
+{{ $sample := slice 3 11 22 34 43 51 60 76 85 99 108 124 140 }}
+{{/* The three that differ. None of these is in $sample. */}}
+{{ $odd := slice 27 71 118 }}
+
+<svg class="hp-field__art" viewBox="0 0 440 234" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="{{ if eq $variant "read" }}The same field of records, with every record filled in to show it has been read, and the three that differ marked and ringed so they can be dealt with by name.{{ else }}A field of records held in the systems you already run. Only a scattered handful are filled in to show they were read. Three records that differ are already sitting in the field, unread.{{ end }}">
+  {{ range $j := seq 0 8 }}
+    {{ range $i := seq 0 15 }}
+      {{ $n := add (mul $j 16) $i }}
+      {{ $x := add 12 (mul $i 26) }}
+      {{ $y := add 14 (mul $j 24) }}
+      {{ $isOdd := in $odd $n }}
+      {{ $isRead := or (eq $variant "read") (in $sample $n) }}
+      {{ if $isOdd }}
+        {{ if $isRead }}
+      <rect x="{{ $x }}" y="{{ $y }}" width="16" height="7" rx="3.5" style="fill:var(--accent-edge)"/>
+      <rect x="{{ sub $x 4 }}" y="{{ sub $y 4 }}" width="24" height="15" rx="7.5"
+            style="fill:none;stroke:var(--accent-edge);stroke-width:1.4"/>
+        {{ else }}
+      <rect x="{{ add $x 0.6 }}" y="{{ add $y 0.6 }}" width="14.8" height="5.8" rx="2.9"
+            style="fill:none;stroke:var(--accent-edge);stroke-width:1.7"/>
+        {{ end }}
+      {{ else if $isRead }}
+      <rect x="{{ $x }}" y="{{ $y }}" width="16" height="7" rx="3.5" style="fill:var(--deep)"/>
+      {{ else }}
+      <rect x="{{ add $x 0.6 }}" y="{{ add $y 0.6 }}" width="14.8" height="5.8" rx="2.9"
+            style="fill:none;stroke:var(--art-mute);stroke-width:1.1"/>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</svg>
