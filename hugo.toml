@@ -23,8 +23,28 @@ enableGitInfo = true
   tag = 'tags'
 
 # Pagination
-paginate = 6
-paginatePath = "page"
+#
+# These MUST stay inside their own [pagination] table and MUST NOT be written as
+# bare `paginate = 6` / `paginatePath = "page"` keys again. TOML has no dedent: a
+# blank line and a comment do not close [taxonomies] above, so those two keys
+# were being read as two extra TAXONOMY definitions —
+#
+#   paginate     = '6'      ->  a taxonomy whose plural is "6"
+#   paginatePath = 'page'   ->  a taxonomy whose plural is "page"
+#
+# — which is where the published /6/ and /page/ came from (plus /es/6/, /fr/6/,
+# /pt/6/ and their /page/ twins). Both rendered through layouts/taxonomy/list.html
+# with no terms to list, so they went out as near-empty pages with a blank <h1>,
+# `index, follow`, and an entry in the sitemap.
+#
+# The second half of the same bug: because neither key ever reached pagination
+# config, `paginate = 6` did nothing and list pages silently ran at Hugo's
+# default of 10. pagerSize = 6 below is the value this file has always asked for
+# and is now the value actually in force. `pagerSize`/`pagerPath` are the modern
+# spellings (Hugo 0.128+); the bare root-level forms are deprecated regardless.
+[pagination]
+  pagerSize = 6
+  pagerPath = "page"
 
 [params]
   disablePostCSS = false

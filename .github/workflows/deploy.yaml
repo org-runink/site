@@ -78,20 +78,55 @@ jobs:
           HUGO_PARAMS_COREAPPURL: ${{ secrets.CORE_APP_URL }}
         run: hugo -d docs
 
-      # Runs against the rendered output, so it sees what a visitor sees. It
-      # catches the two things a Hugo build cannot: a nav link to a page that no
-      # longer exists, and a "#fragment" naming an id that no page renders. Both
-      # return 200 in a browser and neither has ever failed anything here --
-      # /demo/ 404'd in four languages for seven weeks, and three header links
-      # scrolled nowhere for longer, with every build green throughout.
-      #
-      # Runs on pull_request too (the build step above already does), so a
-      # broken link fails review rather than the deploy.
-      #
-      # No new dependency: Go is preinstalled on ubuntu-latest, this is one
-      # stdlib-only file, and it makes no network requests.
-      - name: Check every internal link resolves
-        run: go run linkcheck.go docs
+      # Nothing above can fail on WHAT was built -- `hugo -d docs` exits 0 for a
+      # site full of junk. Eight URL-sanitisation fixtures for the
+      # case-study-card shortcode shipped this way: /test/ … /test7/ and
+      # /test_parse/ went out with placeholder copy
+      # ("Tag", "Title", "#ff0000"), `index, follow`, sitemap entries, and in
+      # /test7/'s case a working CTA pointing at //evil.com. They are drafts in
+      # content/tests/ now, and this step is what keeps the next set from
+      # reaching gh-pages. It runs on pull_request too, so a regression fails
+      # its PR rather than the deploy.
+      - name: Guard published output
+        run: |
+          set -euo pipefail
+          fail=0
+
+          # ZgotmplZ is html/template's marker for a URL it refused to emit. It
+          # is inert -- that is the escaping working -- but it only ever appears
+          # when a template fed an unsafe URL into an href, and it propagates
+          # into docs/index.xml and out to RSS subscribers. No real page has a
+          # reason to contain it.
+          if grep -rl 'ZgotmplZ' docs; then
+            echo "::error::ZgotmplZ in built output (unsafe URL reached an href; see the files above)"
+            fail=1
+          fi
+
+          # Test fixtures must never publish. Matched at the top level of each
+          # language only -- deeper "page" directories are legitimate paginator
+          # output (docs/use-cases/page/2/ and friends).
+          for lang in . es fr pt; do
+            for d in "docs/$lang"/test "docs/$lang"/test[0-9_]* "docs/$lang"/tests; do
+              if [ -e "$d/index.html" ]; then
+                echo "::error::${d#docs/} published -- test fixtures must be draft: true"
+                fail=1
+              fi
+            done
+
+            # /6/ and /page/ were taxonomy term pages invented by pagination
+            # keys that had landed inside [taxonomies] in hugo.toml. Tested by
+            # index.html, not by directory: a real paginator writes page/1/ and
+            # page/2/ with no index.html of its own at page/, so this cannot
+            # fire on legitimate pagination.
+            for d in "docs/$lang"/6 "docs/$lang"/page; do
+              if [ -e "$d/index.html" ]; then
+                echo "::error::${d#docs/} published -- check that pagination keys in hugo.toml sit under [pagination], not [taxonomies]"
+                fail=1
+              fi
+            done
+          done
+
+          exit "$fail"
 
       # Publish only from the default branch. Pull request runs still build
       # above -- a site that does not build should fail its PR -- but must
