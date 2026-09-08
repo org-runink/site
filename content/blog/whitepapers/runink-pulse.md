@@ -6,7 +6,7 @@ subtitle: "Prescriptive Unified Lead & Social Engine"
 description: "A whitepaper for executives, marketing leaders and the people who sign off on where company data goes. One application your own team operates, on hardware you control."
 weight: 30
 date: 2026-09-03T00:00:00Z
-source_pages: 20
+source_pages: 25
 audience: "Executives, marketing leaders, and the people who sign off on where company data goes"
 blurb: "One application a marketing team operates directly. It audits your website and social presence, researches your market, prospects the public web for leads, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft for a named person to approve."
 deck: |
@@ -31,10 +31,13 @@ register:
   - { page: 14, title: "What a working month looks like — weeks three and four", mark: "hypothetical" }
   - { page: 15, title: "What it is built on, and why that matters commercially" }
   - { page: 16, title: "Runink runs its own marketing on PULSE", mark: "first-party" }
-  - { page: 17, title: "Who PULSE is for" }
-  - { page: 18, title: "What adopting PULSE involves" }
-  - { page: 19, title: "Commercial model" }
-  - { page: 20, title: "The next step" }
+  - { page: 17, title: "Who owns it, who sponsors it, and who signs it off" }
+  - { page: 18, title: "Who PULSE is for" }
+  - { page: 19, page_end: 20, title: "The questions a buyer asks" }
+  - { page: 21, title: "What adopting PULSE involves" }
+  - { page: 22, title: "Commercial model" }
+  - { page: 23, page_end: 24, title: "What it is worth, computed on your own numbers", mark: "not-measured" }
+  - { page: 25, title: "The next step" }
 ---
 
 ## Summary
@@ -552,6 +555,53 @@ This is a first-party reference. It is not a customer case study and it is not o
 one. What it establishes is that the product is used for the work it is sold for, by people
 who have to live with the result.
 
+## Who owns it, who sponsors it, and who signs it off
+
+Three different people are involved in a purchase like this one, and they are almost never
+the same person. Naming them separately is not organisational theory. It is the difference
+between a conversation that progresses and one that goes round twice and stops.
+
+**The person who feels it** is the marketing lead. They can describe the problem in one
+breath — three weeks to turn a brief around, a content plan abandoned in March, an agency
+that costs more than a headcount — and they usually cannot sign for the amount involved.
+
+**The person who sponsors it** carries the budget. In a company of this size that is the
+chief executive or the commercial director as often as it is a chief marketing officer,
+because marketing spend and sales pipeline are the same conversation at two hundred people.
+
+**The person who signs it off** is the one most often left until last, and that is the
+mistake. Where company material is processed is now a question with a named owner — a
+security lead, a data-protection officer, sometimes the finance director wearing that hat in
+a smaller company. They can stop the purchase and cannot start it.
+
+| The situation | Feels it daily | Sponsors it | Signs it off |
+|---|---|---|---|
+| **Not enough hands to say what there is to say** | The marketing lead and their part-time contributor | The chief executive or commercial director | Finance, on the agency spend being replaced |
+| **An agency retainer under review** | The person writing briefs and chasing revisions | The commercial director | Finance and legal, on the contract being ended |
+| **Selling into regulated sectors** | The person who fills in customer security questionnaires | The commercial director, whose deals stall on them | The security lead and data protection |
+| **Under data-residency requirements** | Whoever answers the residency question each time | The executive who answers the regulator | Data protection, and legal |
+| **Outbound pipeline built by volume** | The sales development team | The sales director | Data protection, on how prospect data is handled |
+| **Selling into more than one language market** | The marketing lead, who addresses one market because production costs bite | The chief executive | Finance |
+
+### The pattern worth naming
+
+In four of those six rows **the sponsor is not the marketing lead**. The budget sits with
+whoever owns revenue, and the case has to reach them in revenue's units rather than in
+production units. "We could publish four times as much" is a marketing sentence. "The
+response time to a competitor's announcement drops from three weeks to a day, and here is
+what that is worth" is the same fact in the sponsor's language.
+
+And in three of the six rows **the person who signs it off is asking about data**, not about
+marketing. That conversation has one answer, it is on page 6 and page 15, and it is worth
+having early. Bringing a security lead in at the end converts a short conversation into a
+long one held under deadline pressure.
+
+### Who should be in the first meeting
+
+The marketing lead, the person who owns the revenue number, and the security lead. Three
+people, one sitting. If the security lead cannot come, send them page 6 first rather than
+last.
+
 ## Who PULSE is for
 
 PULSE fits a recognisable set of situations. It fits less well where marketing is already a
@@ -589,6 +639,196 @@ that lead's business is directly commercial.
 **Companies selling to more than one language market.** The production cost of a second and
 third language is the reason most companies address one. When production is not the
 constraint, that reasoning changes.
+
+## The questions a buyer asks
+
+These are the questions that come up, in roughly the order they come up in. Each answer
+describes how the product behaves rather than offering an assurance, because a description
+can be checked in an afternoon on your own machine and an assurance cannot.
+
+### Does it need training on our business first?
+
+No, and there is nothing for you to label or upload in advance.
+
+The writing and the analysis are done by a model held as weight files on your own machine.
+Those files are the same on your first day and your five hundredth, and you can compare them
+and confirm it.
+
+What makes the output yours is not training but **reading at the moment of the question**.
+Your site audit, your positioning documents, your prior material and your customer records
+are indexed on your machine; when a brief is written, the relevant passages are retrieved and
+placed into the question, with the source of each travelling alongside. That is the mechanism
+behind the claim on page 5 that generic inputs produce generic copy: the inputs here are
+specific because they are your own records, read at the moment of writing.
+
+It is also why deleting a document removes its influence entirely. Nothing is left behind in
+a set of weights.
+
+### How does it get better over time?
+
+Four ways, none of which changes the model.
+
+**Your judgements carry forward.** When you mark a research result as useful or not, that
+judgement is kept and shapes the next round. Approvals and rejections in the content queue
+are recorded the same way. The improvement accumulates against your account rather than
+walking out with whoever made it, which is exactly what does not happen when the knowledge
+lives with an agency account manager.
+
+**The material it can reach grows.** Every audit run, every piece produced and every document
+indexed widens what the next brief can be written from.
+
+**The scoring is yours to tune.** The nine measures and the checks beneath them carry
+weightings held as settings rather than fixed rules, so the balance can be set to what your
+business actually competes on. They are also re-balanced around whichever data sources were
+available for a given site, so a score always reflects what was measured.
+
+**The quantitative work is chosen by testing.** Where a forward view is produced from your
+analytics history, candidate methods are fitted to the earlier part of that history and asked
+to predict the part held back; the one that missed by less is used, and how far each missed
+travels with the answer.
+
+### What happens when it cannot work something out?
+
+**A source that could not be read is set aside, not scored zero.** If a measure depends on
+data that was unavailable, that measure is skipped and the remaining ones are re-weighted
+around it. Your score is never quietly depressed by something that was not measured, which
+is the single commonest way audit tools mislead.
+
+**A source that failed is reported as failed**, distinctly from one that was simply not
+applicable, because the two need different responses from you.
+
+**Nothing publishes on its own, including after approval.** Every draft carries one stated
+status — draft, waiting for review, approved, rejected, published, archived — so at any
+moment you can see what is waiting on you and what actually went out. And a channel that has
+been switched off stays off even for approved material: an approval is consent to the
+*content*, and switching a channel off is a statement about the *channel*. Content held back
+that way is recorded as held back rather than as a failure, because "the upload failed" sends
+somebody to check tokens and quota for something that was never attempted.
+
+**The reasoning is watchable while it happens.** Research and copy stream onto the screen as
+they are produced. A wrong angle is caught in the second paragraph rather than on page nine,
+which is a more practical form of quality control than any confidence score.
+
+### How does it work with the systems we already run?
+
+PULSE connects to the accounts you already have — your social channels, your advertising and
+analytics accounts, your customer-record system, your mailing platform — configured in the
+console and tested there before you rely on any of them, and disconnected from the same
+screen.
+
+Leads synchronise into your customer-record system, so the sales team keeps working where
+they already work rather than being asked to move. That direction matters: PULSE is not
+trying to become your system of record, and a marketing tool that asks to be one is asking
+for a migration you did not budget for.
+
+Web research reads the public web through a browser the platform drives itself, extracting
+the readable substance of a page rather than the navigation and the banners.
+
+For outbound calling, PULSE connects to a telephone exchange you host yourself, so calls run
+over infrastructure you own rather than a service billed by the minute.
+
+### Where does our material live, and is it used to train anything?
+
+**It lives on your machines.** Working data is kept in a database inside the application
+itself, copied continuously into file storage you own and restored from that copy when the
+application starts. There is no database run by somebody else holding your positioning, your
+customer records or your pipeline.
+
+**It is not used to train anything.** No material is sent out to be trained on, and there is
+no account with an outside model provider for it to be sent to. That is enforced
+mechanically as well as stated: a published list of outside model libraries and their network
+addresses is checked against the software before any change is accepted, and a change that
+introduced one would be refused rather than reviewed.
+
+**Confidential material is protected in transit and in the record.** The console and the
+server behind it answer over an encrypted connection whose certificates the platform issues
+itself. Sign-in is by company identity or by password, and where a deployment is configured
+for company identity only, an address that is not on the named list cannot sign in — a list
+that has been configured but left empty admits nobody rather than everybody. What a person
+can see follows from the role they hold, the attributes recorded against them, and what they
+are related to. Personal details in a request are handled by the platform's own protection
+layer as the request passes through.
+
+**What the specialists may be asked is checked against fixed written rules** — the same input
+always produces the same answer, each specialist has its own set, and the rules are mapped to
+the published industry list of the ten commonest ways systems of this kind are attacked.
+
+### Does it need special hardware?
+
+No. The reasoning runs on ordinary processors where no specialist graphics chip is present,
+and production installations run on ordinary processors alone. An evaluation wants a
+well-specified developer workstation — a reasonable amount of memory, a decent number of
+processor cores and around thirty gigabytes of free storage — rather than a server purchase.
+
+This is not a specialist installation requiring specialist procurement, and the practical
+consequence is that an evaluation can start this week rather than after a hardware
+conversation.
+
+### How long does it take, and what do you need from us?
+
+```text {linenos=false}
+  WHAT YOU BRING          THE STEP               WHAT IT SETTLES
+
+  your own website   ▶  1  run one audit    ▶  a concrete document
+  address               on a workstation.       about your own
+                        Nothing moves           business, worth
+                        anywhere                having either way
+       │
+       ▼
+  the largest gap    ▶  2  brief one        ▶  whether the output
+  the audit names       anchor piece end       is good enough for
+                        to end, and fan it     your name to go on
+                        out into the posts,    it — the only test
+                        videos and emails      that decides this
+       │
+       ▼
+  your machines      ▶  3  install it       ▶  nothing new. Same
+  and a sign-in         there, connect the     application, more
+  arrangement           accounts you           people
+                        already run
+       │
+       ▼
+  a working rhythm   ▶  4  run one full     ▶  whether the team
+                        30-day cycle           wants the working
+                                               day this creates
+```
+
+Steps one and two cost an afternoon each and move no data anywhere, which usually means an
+evaluation can begin without a procurement conversation about data handling.
+
+**What we need from you**: machines you control; your existing account credentials for the
+channels you want connected; a sign-in arrangement and the list of addresses permitted to use
+it; and one named person who will own the approval queue. **What we do not need**: a data
+migration, a change to your customer-record system, or a period of setup before anything
+useful comes out.
+
+### Can a small marketing team run this without technical help?
+
+Yes, and the core case on page 18 assumes exactly that: one to five people in marketing.
+
+The operator is a marketing person, not an engineer. Connections are configured in the
+console. Briefs are written in ordinary language. The roster of specialists the assistant
+hands work to is something you configure from a screen rather than something you infer, so
+the division of labour is deliberate.
+
+The honest framing, repeated from page 21, is that the technical part is the small part. What
+determines whether adoption succeeds is a change in working habit — the team's centre of
+gravity moving from producing material to deciding about it — and that is a management
+question rather than a technical one.
+
+### Why should we trust what it produces?
+
+You should not, on trust. You should run the two-step test on page 25 and look at the output
+with your own name notionally on it, because that is the only judgement that matters for
+material you will publish.
+
+What the product does to earn that look is four things. Every audit score opens out into the
+measures beneath it and then into the individual checks, so a number is always traceable to
+what was actually examined. Generation streams as it happens, so a wrong direction is visible
+while it is being taken. Every piece carries an explicit status and an explicit approve or
+reject, so nothing reaches a channel without a named person having said yes. And the
+weightings behind the scoring are settings you can read, which means you can disagree with
+them specifically rather than in general.
 
 ## What adopting PULSE involves
 
@@ -665,6 +905,148 @@ language, one format. When the marginal cost of an additional draft is the elect
 produce it, the rationing stops, and the second angle, the third language and the fourth
 format become ordinary.
 
+## What it is worth, computed on your own numbers
+
+This paper puts no return figure in front of you. It cannot: the figure depends on what you
+currently pay for material, how much of it you produce, how long you take to respond to
+something, and what a deal is worth to you. All four are yours.
+
+Abstaining is only half an answer, though, and the easy half. What follows is the arithmetic,
+with every input named and every one read from an invoice, a calendar or a system you already
+have. There is no value anywhere in it. Run it on your figures and the result is yours —
+which is more than any number printed in a vendor's document has ever been.
+
+### Be exact about what actually moves
+
+Most calculations in this category quietly credit the software with things it does not do,
+and the figure falls apart the first time a finance director looks at it properly.
+
+PULSE does not make your market larger, and it does not make a bad offer good. What it moves
+is **the cost and the elapsed time of producing a piece of material** — and, through those
+two, how much you produce, how quickly you can respond, and how many things it becomes
+reasonable to try.
+
+Everything below measures those.
+
+### Six inputs, and where each one is read
+
+**One — what a piece of material costs you today.** Take the last twelve months. Add the
+agency retainer and project fees, the internal salary cost of the hours spent briefing,
+reviewing and chasing, and any per-seat tool costs for writing, design and scheduling. Divide
+by the number of pieces actually published. That quotient is your cost per piece, and it is
+almost always higher than anybody in the building expects, because the denominator is what
+was published rather than what was commissioned.
+
+**Two — what you commissioned but did not publish.** Count it. Briefs that died in revision,
+pieces abandoned when the moment passed. This is pure cost with no output against it and it
+belongs in input one's numerator, which is why input one is calculated the way it is.
+
+**Three — elapsed time from decision to publication.** Take five recent pieces. For each, the
+date somebody decided to say the thing and the date it went out. Take the median, not the
+mean. This is the number that decides whether you can respond to a competitor, a regulatory
+change or a seasonal spike at all — and a capability you do not have does not appear as a
+cost anywhere in your accounts.
+
+**Four — coverage against the channels you have decided matter.** List the channels and
+formats you have agreed are worth being present in. For each, how many pieces went out in the
+last twelve months. The rows near zero are the decision that production capacity made on your
+behalf, and it is worth seeing it written down as a decision, because that is what it was.
+
+**Five — how much rationing is happening.** For your last three campaigns: how many angles
+were considered, and how many were actually produced. How many languages the market has, and
+how many you addressed. The ratio is what the current cost per piece is buying you, expressed
+as things not attempted.
+
+**Six — what attention on the wrong leads costs.** Harder, and worth attempting. From your
+customer-record system: the share of sales time spent on leads that never qualified, and the
+value of the deals worked versus the deals that were in the pipeline but not worked. This is
+the input the sponsor cares about most and the one marketing least often produces.
+
+### How they combine
+
+```text {linenos=false}
+   pieces you would   ×   ( cost per piece   =  production cost
+   publish anyway         today − cost per      removed
+                          piece after )
+
+                                                       +
+
+   additional pieces  ×   value of a piece   =  coverage gained
+   the same team          to you                ( see the caution
+   can now produce                               below )
+
+                                                       +
+
+   days removed from  ×   occasions per      =  responses that
+   decision-to-publish    year when timing      become possible
+                          decided whether
+                          it was worth
+                          publishing at all
+
+                                                       +
+
+   deals worked that  ×   your win rate  ×   =  pipeline effect
+   would not have         average deal
+   been worked            value
+
+                                                       −
+
+   seats  ×  published price   +   the machine   =  cost side
+                                   you run
+```
+
+Sum the four, subtract the fifth, divide the annual result by the monthly cost, and you have
+a payback period in months. This paper does not state one, because every term belongs to you.
+
+### The caution on the second line, stated plainly
+
+The second line is where this kind of calculation usually becomes fiction, and it deserves to
+be said rather than buried.
+
+**More material is not automatically worth more.** Doubling output doubles value only if the
+additional pieces reach somebody and do something. If your constraint was never production —
+if you already publish everything you have to say, and the problem is that you have nothing
+to say — then the second line is zero and PULSE is solving a problem you do not have. Page 18
+says the same thing from the other direction: this fits less well where marketing already has
+its own production capacity.
+
+The honest way to value the second line is to price the additional pieces at what the
+*existing* pieces measurably produce, taken from your own analytics rather than from a
+benchmark. If you cannot measure what an existing piece produces, set the second line to zero
+and make the case on the other three. It will usually still hold, and a case that holds
+without its weakest term is a much stronger case to take into a room.
+
+### Four more ways the answer comes out wrong
+
+**Counting the retainer as a saving while still paying it.** If the agency relationship
+continues for the work it is genuinely better at, only the replaced portion is a saving.
+Count that portion, not the invoice.
+
+**Forgetting the review time that replaces the production time.** The team's day changes
+rather than empties. Somebody still reads every draft, and reading a complete draft takes
+real hours. Measure them in your first month and put them on the cost side.
+
+**Comparing across a period when something else changed.** A quarter that also carried a
+rebrand, a new product or a new hire is not a clean comparison. Choose a period where this is
+the change.
+
+**Attributing pipeline to marketing that sales would have found anyway.** The fourth line
+should count deals that were genuinely not being worked, not deals that were worked later.
+
+### Record the baseline before you start
+
+The commonest reason a marketing function cannot state what something returned is that nobody
+wrote down the starting position while it was still true.
+
+Five numbers, in the first week: cost per published piece, count published in the last twelve
+months, median decision-to-publication days, the coverage table by channel, and the current
+share of sales time spent on unqualified leads.
+
+All five become unrecoverable once the working rhythm changes, because the thing that would
+tell you is now the thing that changed. Twenty minutes in week one is the difference between
+a defensible figure at the end of the first quarter and an argument about whether it felt
+better.
+
 ## The next step
 
 The most useful first move costs you an afternoon and moves no data anywhere.
@@ -693,5 +1075,5 @@ deployment inside your own estate:
 
 Runink PULSE — Prescriptive Unified Lead & Social Engine.
 
-One application. Your own machines. A person approves everything.
 
+One application. Your own machines. A person approves everything.

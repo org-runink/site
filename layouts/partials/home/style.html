@@ -1,0 +1,872 @@
+{{/*
+  Scoped styles for the homepage.
+
+  Inlined rather than added to assets/css/main.css for the same reason the
+  Industries section inlines its own: the site has two CSS paths — the PostCSS
+  pipeline over assets/css/main.css, and the pre-compiled static/css/style.css
+  used when params.disablePostCSS is true, which is generated from the THEME's
+  main.css and would never see a rule added to ours. Inlining is the only place
+  both paths agree, which is why every rule this page needs is here and why it
+  uses its own `hp-` classes throughout rather than Tailwind utilities.
+
+  WHY THE PAGE IS LIGHT, AND WHY IT IS SHORT. The review of the customer-facing
+  material found the black canvas hard to read and painful to print, and found
+  the site giving buyers everything up front instead of qualifying them. So the
+  homepage is a near-white sheet, it is five blocks long, and every block has a
+  different shape rather than a different paragraph. Depth lives in /industries/
+  and in the whitepapers.
+
+  PALETTE. Identical tokens to layouts/partials/industries-style.html, so this
+  page reads as the front door of that section rather than as a different site:
+    canvas/sheet/rule  surface.gray_50 / white / gray_200
+    tint/deep          primary.50 / primary.900
+    ink/ink-2          text.gray_900 / text.gray_600
+    accent             per row, taken from each industry page's front matter
+  As there, nothing that must be legible uses the raw accent — two of the five
+  are pale enough to vanish on white — so --accent-ink mixes it toward
+  primary.900. Every color-mix() declares a flat navy fallback first.
+
+  TYPE. Body is Inter, already loaded site-wide, matching the Industries pages.
+  The display face is Fira Sans Condensed Heavy, self-hosted from assets/fonts
+  and already used by the whitepapers, so it adds no request to any other origin
+  and ties the front door to the deepest material on the site. It is used with
+  restraint — the headline, the section labels, the five industry names — and
+  nowhere else. It is chosen for one practical reason as well as one aesthetic
+  one: the review asked for plain business language, plain business language is
+  long, and a condensed face lets a whole plain sentence be the headline without
+  breaking into five lines.
+
+  Adding another self-hosted face here means adding it to $faces below, or Hugo
+  will never write the file to public/ and the @font-face will silently 404.
+*/}}
+{{ $faces := slice "fonts/FiraSansCondensed-Heavy.woff2" }}
+{{ $disp := "" }}
+{{ range $faces }}
+  {{ with resources.Get . }}
+    {{ .Publish }}
+    {{ $disp = .RelPermalink }}
+  {{ end }}
+{{ end }}
+<style>
+  {{ with $disp }}
+  @font-face {
+    font-family: 'Fira Cond Hp';
+    src: url('{{ . }}') format('woff2');
+    font-weight: 700 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  {{ end }}
+
+  .hp {
+    --canvas: #f9fafb;
+    --sheet: #ffffff;
+    --rule: #e5e7eb;
+    --tint: #eef1fc;
+    --deep: #1b2456;
+    --ink: #111827;
+    --ink-2: #4b5563;
+
+    --accent: #ea580c;
+    --accent-ink: #1b2456;
+    --accent-ink: color-mix(in srgb, var(--accent) 45%, #1b2456);
+    --accent-wash: #eef1fc;
+    --accent-wash: color-mix(in srgb, var(--accent) 12%, #ffffff);
+    --accent-edge: #1b2456;
+    --accent-edge: color-mix(in srgb, var(--accent) 52%, #1b2456);
+
+    --write-line: #a5aab2;
+    --write-line: color-mix(in srgb, var(--ink-2) 52%, #ffffff);
+
+    /* the grey the artwork uses for a record nobody has read — one step darker
+       than a hairline, so it survives a greyscale print */
+    --art-mute: #ccd0d7;
+    --art-mute: color-mix(in srgb, var(--ink-2) 30%, #ffffff);
+
+    --font-body: Inter, system-ui, -apple-system, sans-serif;
+    --font-display: 'Fira Cond Hp', 'Fira Sans Condensed', 'Inter Tight', Inter, system-ui, sans-serif;
+
+    background-color: var(--canvas);
+    color: var(--ink-2);
+    font-family: var(--font-body);
+  }
+
+  /* The three derived colours above are resolved once, where they are declared;
+     descendants inherit the resolved value, not the recipe. Every row of the
+     ledger sets its own --accent, so each one has to re-derive them. Keep this
+     block identical to the one above. */
+  .hp-accent {
+    --accent-ink: #1b2456;
+    --accent-ink: color-mix(in srgb, var(--accent) 45%, #1b2456);
+    --accent-wash: #eef1fc;
+    --accent-wash: color-mix(in srgb, var(--accent) 12%, #ffffff);
+    --accent-edge: #1b2456;
+    --accent-edge: color-mix(in srgb, var(--accent) 52%, #1b2456);
+  }
+
+  /* ---- shell ------------------------------------------------------------ */
+
+  .hp-wrap {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  @media (min-width: 768px) {
+    .hp-wrap { padding: 4rem 2rem 5rem; }
+  }
+
+  /* Links take the ink of whatever they sit in. `:not([class])` matters: with a
+     bare `.hp a` the rule is one specificity step above every single-class
+     button rule below it, so it silently repainted the white text on the two
+     solid call-to-action buttons and made both of them unreadable. */
+  .hp a:not([class]) { color: inherit; }
+
+  /* The base stylesheet defines no focus ring and the UA default is weak on a
+     near-white sheet, so the page states its own. */
+  .hp a:focus-visible,
+  .hp button:focus-visible,
+  .hp input:focus-visible,
+  .hp select:focus-visible,
+  .hp textarea:focus-visible {
+    outline: 2px solid var(--accent-edge);
+    outline-offset: 3px;
+    border-radius: 0.375rem;
+  }
+
+  /* Long words — industry names, job titles — must never push the body wider
+     than the viewport at 320px. */
+  .hp, .hp * { overflow-wrap: anywhere; }
+
+  /* ---- section heads: a label on a rule that runs to the margin ---------- */
+
+  .hp-sec { margin-bottom: 3.5rem; }
+  @media (min-width: 768px) { .hp-sec { margin-bottom: 5rem; } }
+
+  .hp-head {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .hp-head__mark {
+    flex: none;
+    width: 1.5rem;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--accent-edge);
+  }
+
+  /* Must be allowed to shrink and wrap, or the longest heading sits at its full
+     single-line width and puts a horizontal scrollbar on the whole page at
+     360px. */
+  .hp-head__label {
+    flex: 0 1 auto;
+    min-width: 0;
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  .hp-head__rule {
+    flex: 1 1 auto;
+    height: 1px;
+    background-color: var(--rule);
+  }
+
+  .hp-intro {
+    max-width: 62ch;
+    margin: -0.5rem 0 1.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+
+  /* ---- hero ------------------------------------------------------------- */
+
+  .hp-hero { margin-bottom: 3rem; }
+  @media (min-width: 768px) { .hp-hero { margin-bottom: 3.5rem; } }
+
+  .hp-eyebrow {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    margin: 0 0 1.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--accent-wash);
+    border-left: 3px solid var(--accent-edge);
+    color: var(--accent-ink);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* The headline is a two-beat statement, both beats at the same size. The
+     second is set in the softer ink rather than smaller, so it reads as the
+     other half of the sentence and not as a subtitle. */
+  .hp-h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.125rem, 5.6vw, 3.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 0 0 1.375rem;
+    max-width: 24ch;
+  }
+
+  .hp-h1__b {
+    display: block;
+    color: var(--ink-2);
+  }
+
+  .hp-deck {
+    font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: 62ch;
+    margin: 0 0 2rem;
+  }
+
+  .hp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+  }
+
+  .hp-cta,
+  .hp-cta-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hp-cta {
+    background-color: var(--accent-ink);
+    color: #ffffff;
+    border: 1px solid var(--accent-ink);
+  }
+  .hp-cta:hover { filter: brightness(1.15); }
+
+  .hp-cta-ghost {
+    background-color: var(--sheet);
+    color: var(--accent-ink);
+    border: 1px solid var(--rule);
+  }
+  .hp-cta-ghost:hover { background-color: var(--accent-wash); }
+
+  /* ---- the figure ------------------------------------------------------- */
+
+  .hp-field {
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 0.875rem;
+    padding: 1.5rem 1.25rem 1.375rem;
+    margin-bottom: 3.5rem;
+  }
+  @media (min-width: 768px) {
+    .hp-field { padding: 2rem 2rem 1.75rem; margin-bottom: 5rem; }
+  }
+
+  .hp-field__panels {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    margin: 0 0 1.75rem;
+  }
+  @media (min-width: 760px) {
+    .hp-field__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  }
+
+  /* The panels must be the same width to the pixel, or the two fields are drawn
+     at different scales and the comparison the figure is making is lost. */
+  .hp-field__panel { min-width: 0; }
+
+  .hp-field__label {
+    display: flex;
+    align-items: baseline;
+    gap: 0.625rem;
+    margin: 0 0 0.875rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 2px solid var(--rule);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--deep);
+  }
+  .hp-field__panel--now .hp-field__label { border-bottom-color: var(--accent-edge); }
+
+  .hp-field__art {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .hp-field__note {
+    margin: 0.875rem 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .hp-beats {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .hp-beats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .hp-beat {
+    border-top: 2px solid var(--rule);
+    padding-top: 0.625rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+  .hp-beat:first-child { border-top-color: var(--accent-edge); }
+
+  .hp-beat b {
+    display: block;
+    font-weight: 700;
+    color: var(--deep);
+  }
+
+  .hp-caption {
+    margin: 1.5rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    max-width: 66ch;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* ---- the ledger: five industries as five lines of one instrument ------ */
+
+  .hp-ledger {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid var(--deep);
+  }
+
+  .hp-ledger__head {
+    display: none;
+    gap: 1.5rem;
+    padding: 0.75rem 0.75rem 0.625rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  @media (min-width: 900px) {
+    .hp-ledger__head {
+      display: grid;
+      grid-template-columns: 15rem minmax(0, 1fr) 13rem;
+    }
+  }
+
+  .hp-ledger__head span {
+    font-size: 0.625rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+  .hp-line { border-bottom: 1px solid var(--rule); }
+
+  .hp-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem 1.5rem;
+    padding: 1.25rem 0.75rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-left-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @media (min-width: 900px) {
+    .hp-row {
+      grid-template-columns: 15rem minmax(0, 1fr) 13rem;
+      align-items: start;
+      padding: 1.5rem 0.75rem;
+    }
+  }
+  .hp-row:hover,
+  .hp-row:focus-visible {
+    background-color: var(--accent-wash);
+    border-left-color: var(--accent-edge);
+  }
+
+  .hp-row__name {
+    display: flex;
+    align-items: baseline;
+    gap: 0.625rem;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.005em;
+    color: var(--ink);
+    min-width: 0;
+  }
+
+  .hp-row__tick {
+    flex: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 1px;
+    background-color: var(--accent-edge);
+    transform: translateY(-0.15em);
+  }
+
+  .hp-row__cost {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* The third column is the point of the block: a reader scans it for their own
+     job title and finds out in one glance that the page is addressed to them.
+     So it is set as a list of roles, not as prose. */
+  .hp-row__owner {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    font-weight: 600;
+    color: var(--deep);
+  }
+  .hp-row__owner span { display: block; }
+  .hp-row__owner span::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 1px;
+    margin-right: 0.4375rem;
+    vertical-align: 0.28em;
+    background-color: var(--accent-edge);
+  }
+
+  .hp-row__go {
+    grid-column: 1 / -1;
+    margin: 0.25rem 0 0;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  /* On a wide screen it belongs under the industry name, in its own column.
+     Spanning the full row there pushes every line a third taller and breaks the
+     scan down the third column, which is the whole point of the block. */
+  @media (min-width: 900px) {
+    .hp-row__name  { grid-column: 1; grid-row: 1; }
+    .hp-row__go    { grid-column: 1; grid-row: 2; margin-top: 0.625rem; }
+    .hp-row__cost  { grid-column: 2; grid-row: 1 / span 2; }
+    .hp-row__owner { grid-column: 3; grid-row: 1 / span 2; }
+  }
+
+  /* ---- why: three glyphs ------------------------------------------------ */
+
+  .hp-why {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 860px) {
+    .hp-why { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .hp-why__item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 0.875rem;
+    padding: 1.5rem 1.5rem 1.625rem;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .hp-why__plate {
+    margin: -1.5rem -1.5rem 1.375rem;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--canvas);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hp-why__art {
+    display: block;
+    width: 100%;
+    max-width: 13rem;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .hp-why__item h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0.005em;
+    color: var(--ink);
+    margin: 0 0 0.625rem;
+  }
+
+  .hp-why__item p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* ---- next step and contact -------------------------------------------- */
+
+  .hp-contact {
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--accent-edge);
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .hp-contact { padding: 2.75rem 2.5rem; }
+  }
+
+  .hp-contact h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.625rem, 3.4vw, 2.375rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: 0.002em;
+    color: var(--ink);
+    margin: 0 0 0.875rem;
+    max-width: 22ch;
+  }
+
+  .hp-contact__deck {
+    margin: 0 0 2rem;
+    max-width: 62ch;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+
+  .hp-contact__cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+  @media (min-width: 900px) {
+    .hp-contact__cols { grid-template-columns: 20rem minmax(0, 1fr); gap: 3rem; }
+  }
+
+  .hp-book {
+    align-self: start;
+    background-color: var(--accent-wash);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent-edge);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  .hp-book h3,
+  .hp-form h3 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--deep);
+    margin: 0 0 0.625rem;
+  }
+
+  .hp-book p,
+  .hp-form__deck {
+    margin: 0 0 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .hp-field-group { margin-bottom: 1.125rem; }
+
+  .hp-label {
+    display: block;
+    margin-bottom: 0.375rem;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .hp-req { color: var(--accent-ink); }
+
+  .hp-input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0.875rem;
+    border: 1px solid var(--rule);
+    border-bottom: 2px solid var(--write-line);
+    border-radius: 0.375rem;
+    background-color: var(--sheet);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--ink);
+    transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hp-input:hover { border-bottom-color: var(--accent-edge); }
+  .hp-input::placeholder { color: #9ca3af; }
+  textarea.hp-input { resize: vertical; min-height: 6.5rem; }
+
+  .hp-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.9375rem 1.75rem;
+    border: 1px solid var(--accent-ink);
+    border-radius: 0.5rem;
+    background-color: var(--accent-ink);
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hp-submit:hover { filter: brightness(1.15); }
+
+  /* One link out to the long version, kept to a single quiet line so it cannot
+     turn into a second call to action competing with the consultation. */
+  .hp-paper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.875rem 1.25rem;
+    margin: -1.25rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .hp-paper__note {
+    flex: 1 1 22rem;
+    margin: 0;
+    min-width: 0;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* Screen shows the site header; a printed sheet does not, so the leave-behind
+     would otherwise carry nothing that says where it came from. */
+  .hp-mark { display: none; }
+
+  .hp-note {
+    margin: 1rem 0 0;
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .hp-done {
+    display: none;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent-edge);
+    border-radius: 0.5rem;
+    padding: 1.75rem 1.5rem;
+    background-color: var(--accent-wash);
+  }
+  .hp-done h3 { margin-bottom: 0.5rem; }
+  .hp-done p { margin: 0; font-size: 0.9375rem; line-height: 1.6; color: var(--ink-2); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hp *,
+    .hp *::before,
+    .hp *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ---- print ------------------------------------------------------------
+     The review said the black canvas was a pain to print. This page is the one
+     a buyer forwards, so it prints as ink on white, without the fixed site
+     chrome that would otherwise reprint on every sheet, with nothing carried by
+     colour alone, and with no block broken across a page.
+     Global selectors are safe here: this partial only ships on the homepage.
+  ------------------------------------------------------------------------ */
+
+  @media print {
+    @page { margin: 14mm 12mm; }
+
+    html, body { background: #ffffff !important; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .hp {
+      background: #ffffff !important;
+      color: #000000;
+      --canvas: #ffffff;
+      --sheet: #ffffff;
+      --rule: #9a9a9a;
+      --ink: #000000;
+      --ink-2: #1f1f1f;
+      --deep: #000000;
+      --accent-ink: #000000;
+      --accent-edge: #000000;
+      --accent-wash: #ffffff;
+      --write-line: #666666;
+      --art-mute: #a8a8a8;
+    }
+
+    .hp-wrap { max-width: none; padding: 0; }
+
+    /* Screen furniture. A printed page cannot be clicked and a printed form
+       cannot be submitted, so the sheet carries the argument and the invitation
+       and stops there. */
+    .hp-actions,
+    .hp-row__go,
+    .hp-book .hp-cta,
+    .hp-form,
+    .hp-done { display: none !important; }
+
+    .hp-mark {
+      display: block;
+      margin: 10pt 0 0;
+      font-family: var(--font-display);
+      font-size: 9pt;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    .hp-h1 { font-size: 26pt; max-width: none; }
+    .hp-deck { font-size: 11pt; max-width: none; margin-bottom: 10pt; }
+    .hp-eyebrow {
+      background: #ffffff !important;
+      border: 1px solid #000000;
+      color: #000000;
+      padding: 2pt 5pt;
+      margin-bottom: 9pt;
+    }
+
+    /* Print density. Keeping every block whole means a block that will not fit
+       moves to the next sheet and leaves this one short, so the vertical rhythm
+       is tightened on paper. Screen spacing is unaffected. */
+    .hp-hero { margin-bottom: 12pt; }
+    .hp-sec, .hp-field { margin-bottom: 14pt; }
+    .hp-head { margin-bottom: 7pt; }
+    .hp-intro { margin: 0 0 8pt; max-width: none; }
+    .hp-field { padding: 10pt 12pt; }
+    .hp-field__panels { gap: 14pt; margin-bottom: 10pt; }
+    .hp-beats { gap: 8pt 14pt; padding-top: 9pt; }
+    .hp-caption { margin-top: 9pt; padding-top: 8pt; max-width: none; }
+    .hp-why { gap: 10pt; }
+    .hp-why__item { padding: 0 11pt 10pt; }
+    .hp-why__plate { margin: 0 -11pt 8pt; padding: 8pt 11pt; }
+    .hp-why__art { max-width: 11rem; }
+    .hp-row { padding: 7pt 0; }
+    .hp-contact { padding: 12pt; }
+    .hp-contact__deck { margin-bottom: 0; max-width: none; }
+    .hp-book { padding: 9pt 11pt; }
+
+    .hp-head__mark { background: #000000 !important; }
+    .hp-head__label, .hp-row__owner { color: #000000; }
+    .hp-head__rule { background: #000000 !important; }
+    .hp-row__tick { background: #000000 !important; }
+    .hp-row__owner span::before { background: #000000 !important; }
+
+    /* At print width the ledger would otherwise fall to the stacked layout,
+       where the three columns stop being a comparison. Put the grid back. */
+    .hp-ledger__head { display: grid; grid-template-columns: 22% 1fr 26%; gap: 12pt; padding: 4pt 0; }
+    .hp-row { display: grid; grid-template-columns: 22% 1fr 26%; gap: 12pt; border-left: 0; }
+    .hp-row__name { font-size: 12pt; }
+    .hp-row__cost, .hp-row__owner { font-size: 9pt; }
+
+    /* A printed page is narrower than the 860px and 760px breakpoints, so both
+       of these blocks would fall to their stacked mobile layout on paper — the
+       two panels are the comparison the figure exists to make, and three cards
+       stacked one per sheet turns a two-page leave-behind into four. Put both
+       grids back. */
+    .hp-field__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hp-why { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .hp-why__item h3 { font-size: 11pt; }
+    .hp-why__item p { font-size: 9pt; }
+
+    /* A column head with no rows under it is the worst orphan on the sheet. */
+    .hp-ledger__head { break-after: avoid; page-break-after: avoid; }
+    .hp-paper { padding-top: 8pt; margin-top: 0; gap: 0 6pt; }
+    .hp-paper__note { font-size: 9pt; flex: 1 1 60%; }
+    /* Not hidden like the other buttons: its label is the subject of the
+       sentence beside it, and without it the note dangles. Printed as plain
+       bold text rather than as a button nobody can press. */
+    .hp-paper .hp-cta-ghost {
+      display: inline;
+      padding: 0;
+      border: 0;
+      background: none !important;
+      color: #000000;
+      font-size: 9pt;
+      letter-spacing: 0.1em;
+    }
+    .hp-book p { margin-bottom: 0; }
+    .hp-field__label { border-bottom-color: #000000; color: #000000; }
+    .hp-beat { border-top-color: #000000; }
+    .hp-beat b { color: #000000; }
+
+    .hp-field, .hp-why__item, .hp-contact, .hp-book, .hp-why__plate {
+      border-color: #000000;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .hp-why__plate { background: #ffffff !important; }
+    .hp-book { background: #ffffff !important; }
+
+    /* Keep every block whole on one sheet, and never orphan a heading. */
+    .hp-field, .hp-why__item, .hp-row, .hp-contact,
+    .hp-field__panel { break-inside: avoid; page-break-inside: avoid; }
+    .hp-head, .hp-intro, .hp-hero {
+      break-after: avoid; page-break-after: avoid;
+      break-inside: avoid; page-break-inside: avoid;
+    }
+
+    a[href]::after { content: ""; }
+  }
+</style>

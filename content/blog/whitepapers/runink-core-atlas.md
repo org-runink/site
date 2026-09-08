@@ -8,9 +8,9 @@ partner_url: "https://logicalleap.io/atlas"
 description: "A joint architecture paper from Runink and Logical Leap. Atlas watches capital spending as it happens; CORE's assessors read each finding and score it before a person is asked to act. The paper marks, on the pages it names, which half of the design runs and which is drawn."
 weight: 40
 date: 2026-09-03T00:00:00Z
-source_pages: 25
+source_pages: 27
 audience: "Executive, finance, operations and risk stakeholders"
-blurb: "Atlas watches a company's capital spending as it happens. CORE's automated assessors read Atlas's findings and score them before a person is asked to act on any of them. This is an architecture paper: it states on pages 11 to 13 exactly which half of the design runs today and which half is drawn, and every claim in it should be read against those pages."
+blurb: "Atlas watches a company's capital spending as it happens. CORE's automated assessors read Atlas's findings and score them before a person is asked to act on any of them. This is an architecture paper: it states on pages 12 to 14 exactly which half of the design runs today and which half is drawn, and every claim in it should be read against those pages."
 deck: |
   Atlas, from Logical Leap, watches a company's capital spending as it happens
   and tells the people responsible what deserves their attention. Runink CORE
@@ -22,33 +22,35 @@ deck: |
   findings and score them before a person is asked to act on any of them.
 
   **Part of that shape is now built, and part of it is drawn. Chapter one and
-  pages 11 to 13 set out exactly which is which, and every claim in this paper
+  pages 12 to 14 set out exactly which is which, and every claim in this paper
   should be read against them.**
 register:
   - { page: 1,  title: "What this paper is, and which part of it runs", mark: "drawn" }
   - { page: 2,  title: "Executive summary" }
   - { page: 3,  page_end: 4, title: "The expensive problem, named before the product" }
   - { page: 5,  title: "Who has this problem, by segment" }
-  - { page: 6,  title: "Why periodic review fails" }
-  - { page: 7,  title: "What the two products do" }
-  - { page: 8,  title: "How the two divide the work" }
-  - { page: 9,  title: "What \"judging\" means, in plain language" }
-  - { page: 10, title: "Why an independent assessor matters" }
-  - { page: 11, title: "What is built: findings in, verdicts back", mark: "runs" }
-  - { page: 12, title: "What is built: how a verdict is reached, and where the line falls", mark: "runs" }
-  - { page: 13, title: "Where the built part stops", mark: "drawn" }
-  - { page: 14, title: "A note on how we name the assessors" }
-  - { page: 15, title: "The two-stage adoption path" }
-  - { page: 16, title: "For operations leaders", mark: "hypothetical" }
-  - { page: 17, title: "For finance and procurement", mark: "hypothetical" }
-  - { page: 18, title: "For compliance, risk and security" }
-  - { page: 19, title: "Insurance", mark: "hypothetical" }
-  - { page: 20, title: "Banking and financial services", mark: "hypothetical" }
-  - { page: 21, title: "Telecoms", mark: "hypothetical" }
-  - { page: 22, title: "Marketing", mark: "hypothetical" }
-  - { page: 23, title: "Continuous versus periodic: a comparison" }
-  - { page: 24, title: "What the combination is built on, and why that matters commercially", mark: "drawn" }
-  - { page: 25, title: "Who this is for, what adopting it involves, and a straight note on numbers", mark: "not-measured" }
+  - { page: 6,  title: "Who owns it, who sponsors it, and who signs it off" }
+  - { page: 7,  title: "Why periodic review fails" }
+  - { page: 8,  title: "What the two products do" }
+  - { page: 9,  title: "How the two divide the work" }
+  - { page: 10, title: "What \"judging\" means, in plain language" }
+  - { page: 11, title: "Why an independent assessor matters" }
+  - { page: 12, title: "What is built: findings in, verdicts back", mark: "runs" }
+  - { page: 13, title: "What is built: how a verdict is reached, and where the line falls", mark: "runs" }
+  - { page: 14, title: "Where the built part stops", mark: "drawn" }
+  - { page: 15, title: "A note on how we name the assessors" }
+  - { page: 16, title: "The two-stage adoption path" }
+  - { page: 17, title: "For operations leaders", mark: "hypothetical" }
+  - { page: 18, title: "For finance and procurement", mark: "hypothetical" }
+  - { page: 19, title: "For compliance, risk and security" }
+  - { page: 20, title: "Insurance", mark: "hypothetical" }
+  - { page: 21, title: "Banking and financial services", mark: "hypothetical" }
+  - { page: 22, title: "Telecoms", mark: "hypothetical" }
+  - { page: 23, title: "Marketing", mark: "hypothetical" }
+  - { page: 24, title: "Continuous versus periodic: a comparison" }
+  - { page: 25, title: "What it is worth, computed on your own numbers", mark: "not-measured" }
+  - { page: 26, title: "What the combination is built on, and why that matters commercially", mark: "drawn" }
+  - { page: 27, title: "Who this is for, what adopting it involves, and a straight note on numbers", mark: "not-measured" }
 ---
 
 ## What this paper is, and which part of it runs
@@ -61,7 +63,7 @@ testing. The other direction — CORE reaching into Atlas to collect findings it
 verdicts into it — is a named way in with nothing written behind it, and it waits on a written
 description from Logical Leap's side of how to call Atlas; Atlas is offered in private beta,
 to selected customers rather than generally, and does not publish such a description, which is
-ordinary for a product at that stage. Pages 11 to 13 set out exactly which is which, and every
+ordinary for a product at that stage. Pages 12 to 14 set out exactly which is which, and every
 claim in this paper should be read against them. Nothing here is an account of work performed
 for a customer, and nothing in it describes an outcome observed at one.
 
@@ -114,7 +116,7 @@ of every action.
 
 **What of this runs.** The path by which findings reach CORE, are judged, and are read back is
 built and has been exercised in automated testing. The path by which CORE would reach into
-Atlas is a design with nothing written behind it. Pages 11 to 13 draw that line precisely,
+Atlas is a design with nothing written behind it. Pages 12 to 14 draw that line precisely,
 and the rest of this paper is written so the two are never confused.
 
 **The two-stage path.** Stage one is visibility — reading the estate and describing it,
@@ -282,6 +284,55 @@ authority, a certification body or a large customer's security team. For these o
 the continuous-versus-periodic question is not an efficiency question. It is the difference
 between assembling evidence and having it.
 
+## Who owns it, who sponsors it, and who signs it off
+
+The previous page describes organisations. This one describes people, because a purchase of
+this kind involves three different ones and they are almost never the same person. Naming
+them apart is not organisational theory. It is the difference between a conversation that
+progresses and one that goes round.
+
+**The person who feels it** lives with the problem daily and can describe it without being
+prompted. They are usually too junior to buy and too busy to be in the room, and their
+description is the most accurate one available.
+
+**The person who sponsors it** carries the budget and the consequence. They feel the problem
+as a number in a report rather than as an afternoon of work, which is why the case has to be
+made to them in their own units.
+
+**The person who signs it off** can stop the purchase and cannot start it. Security, risk,
+audit and data protection sit here. They are not obstacles; they are answering a question
+they will personally be held to.
+
+The commonest way a good evaluation dies is that the case is made to one of the three in the
+language of another.
+
+| Segment | Feels it daily | Sponsors it | Signs it off |
+|---|---|---|---|
+| **Capital projects** | The project office and the accountants reconciling commitments against plan | The finance director | Internal audit, and technology for the data connections |
+| **Insurance** | Claims handlers and the people reconciling reserves and recoveries | The claims or operations director | Compliance and the regulator-facing function; the security lead |
+| **Banking** | The control and reconciliation functions | The operations director, or whoever owns non-financial risk | Risk, compliance and the security lead |
+| **Telecoms** | Revenue assurance | The finance director, or the head of revenue assurance | Internal audit, and data protection for subscriber records |
+| **Marketing** | Marketing operations, checking agency billing against the agreement | The marketing director | Finance for the spend, legal for consent |
+| **Any regulated body** | Whoever assembles the evidence — usually as an addition to their real job | The executive who answers the supervisor | The security lead and the external auditor |
+
+Logical Leap names the Atlas audiences directly, and they map onto the same three positions:
+Finance, the project management office, Procurement, Engineering, Internal Audit and
+Executive Leadership.
+
+### What each of the three should be shown
+
+**To the person who feels it:** the queue. Whether it is sorted the way they would sort it,
+and whether the reasoning attached to an item is the reasoning they would have written. If
+it is not, nothing else matters.
+
+**To the person who sponsors it:** the method on page 25, run on their own figures. Not a
+figure from this paper — there is none — but the arithmetic and where each input is read.
+
+**To the person who signs it off:** the refusal. Sign in as somebody who is not on the
+permitted list, try to change a data connection, watch it be declined by name, and read the
+record that the refusal left behind. That takes an afternoon and settles the question of
+whether the governance is a control or a policy.
+
 ## Why periodic review fails
 
 It is worth being precise about this, because "we already have controls" is the most common
@@ -423,7 +474,7 @@ and they are what the customer sees.
 that produced it as well as the conclusion it reached — and attach a verdict to it. The
 verdict is one of four words, and it always carries the reason behind it: CORE concurs, it
 dissents, it is unable to judge, or the subject is one it has no business ruling on. This is
-the part that is built; pages 11 to 13 describe it as it is written.
+the part that is built; pages 12 to 14 describe it as it is written.
 
 **CORE runs the arrangement on the customer's own systems.** The machines, the model, the
 connections to the company's own data, the identity, and the record of who did what are
@@ -470,7 +521,7 @@ Those pieces exist in the platform, and the arrangement that receives an outside
 platform's findings is now built on CORE's side: findings arrive, verdicts are produced and
 kept against them, and the submitting platform reads them back on the same connection it
 submitted over. What is not built is CORE reaching the other way into Atlas, which waits on a
-written description from Logical Leap of how to call it. Pages 11 to 13 state that boundary
+written description from Logical Leap of how to call it. Pages 12 to 14 state that boundary
 precisely, and a reader who takes nothing else from this paper should take that distinction.
 
 ## What "judging" means, in plain language
@@ -512,7 +563,7 @@ specific remedy with the reasoning for why it is the right remedy. And where the
 belongs to a person, the item is filed under "Needs a human" rather than dressed up as a
 recommendation.
 
-Applying both to a governance finding is what CORE's assessor now does, and pages 11 to 13
+Applying both to a governance finding is what CORE's assessor now does, and pages 12 to 14
 describe the mechanism as it is written. The finding arrives from the assessment platform. The
 assessor reads it, checks the conclusion against the evidence cited, checks the reasoning,
 checks the rule, reaches a verdict, and hands it back with the reasoning and — where relevant
@@ -697,6 +748,53 @@ passed every test it had while the two disagreed about the shape of the document
 meant to exchange. Both sides reported themselves working, and together they could not have
 judged a single finding. A test that exercises one side is what produces that outcome, so this
 one exercises both — it is the only test in this design that would have caught it.
+
+### The whole built path, on one page
+
+```text {linenos=false}
+ATLAS                                    CORE
+─────                                    ────
+
+ a finding      findings door
+ produced at  ──────────────────▶  received, and kept
+ the moment    opened by the               │
+ of the        submitter's                 ▼
+ transaction   own secret          eight checks, run in order
+                                           │
+                            all pass ──────┴────── any one fires
+                                   │                     │
+                                   ▼                     ▼
+                        does the claim            the matter ends
+                        carry a number?           here, with that
+                           │       │              check's own reason
+                       yes │       │ no
+                           ▼       ▼
+                  CORE divides    one question put to
+                  the raw counts  the model: does this
+                  again itself    evidence support this
+                           │      claim? — and it is never
+                           │      told what the submitter
+                           │      concluded
+                           └───────┬───────┘
+                                   ▼
+                          a verdict, with its reason,
+                          kept against the finding
+ the verdicts   verdict door       │
+ read back   ◀─────────────────────┘
+ on the same   opened by a different credential;
+ connection    the submitter's is refused by name
+```
+
+The same thing in words, for a reader who would rather have the sentence. A finding arrives
+through one door, opened by a secret issued to the submitting platform. CORE keeps it and
+runs eight checks in order; any check that fires ends the matter there and states its own
+reason. What survives is one of two things. A claim carrying a number is settled by
+arithmetic CORE performs itself on the raw counts, and never goes near a model. A claim in
+prose is put to the model as a single question — does this evidence support this claim —
+without being told what the submitter concluded, so there is nothing for it to rubber-stamp
+or contradict. The verdict and its reason are kept against the finding, and the submitting
+platform reads them back on the connection it submitted over, through a second door opened
+by a different credential.
 
 ## Where the built part stops
 
@@ -1007,6 +1105,33 @@ connection at all.
 The commercial consequence is that the security review becomes a description rather than a
 negotiation.
 
+### Three questions a security reviewer always asks next
+
+**Is our material used to train a model?** No. The model is a set of weight files read from
+disk on the customer's own machine. Those files are the same on the first day of a
+deployment and on the last, and the customer can confirm that for themselves by comparing
+them. There is no training step in the arrangement, no step that sends material out to be
+trained on, and no account with a model provider for one to be sent to. The prohibition is
+enforced mechanically as well as by policy: a published list of outside model libraries and
+their network addresses is checked against the source before every change is accepted, and a
+change that introduced one would be refused rather than reviewed.
+
+**Then how does it come to understand our rules and our records?** By reading them at the
+moment a question is asked, not by absorbing them in advance. The customer's policies,
+contracts, configuration and records are indexed on the customer's own machine, and the
+relevant passages are retrieved and placed in front of the model as part of the question,
+with the source of each passage carried alongside it. This is why every finding can cite the
+record it came from: the record was present in the question, rather than remembered from
+training. It is also why removing a document removes its influence — there is nothing left
+behind in a set of weights.
+
+**Can one customer's material reach another's?** The retrieval index is filtered by
+organisation before anything is ranked, so material belonging to another organisation is
+never a candidate for an answer rather than being a candidate that is discarded afterwards.
+A second, independent check applies the same rule to whatever the first one returns. Two
+checks in sequence is deliberate: a single filter that quietly stopped working would fail
+open, and this one fails closed.
+
 ## Insurance
 
 Runink's published work is in logistics and operations. What follows describes the mechanism
@@ -1085,7 +1210,7 @@ finding independently, and keeps a record that can be checked end to end.
 **Payment instruction integrity.** A change to a payment destination is governed by a
 verification rule. The rule is either enforced in the system, performed by a person following
 a procedure, or neither. Reconciling written against enforced is precisely the exercise
-described on page 15.
+described on page 16.
 
 **Third-party and vendor risk.** Contracts carry obligations — on service levels, on
 sub-contracting, on data handling, on notification. Reading the contract against the observed
@@ -1243,6 +1368,154 @@ The last row is the one that matters to a regulated buyer, and it is worth readi
 two statements are not stronger and weaker versions of the same claim. They are answers to
 different questions, and only one of them is the question the supervisor asked.
 
+## What it is worth, computed on your own numbers
+
+Every buyer asks what the arrangement returns. Both companies have already said, and say
+again on the last page, that the figures in their marketing material are scenario
+illustrations rather than measured customer results. Declining to quote a number is only
+half an answer, and the half that is easy to give.
+
+This chapter is the other half: the arithmetic, with every input named and every input read
+from the reader's own systems. Nothing below carries a value. A finance function can run it
+and get a figure that is theirs, that they can show their working for, and that will survive
+being asked where it came from.
+
+### First, be precise about what actually moves
+
+Most calculations in this category quietly credit the software with things it does not do.
+
+Continuous evaluation does not make a bad transaction good. It does not improve a supplier's
+terms, and it does not change the rate at which a challenged invoice is conceded. What it
+moves is **the interval between an event and the notice of it** — and, through that interval,
+which remedies are still available at the moment somebody finally looks.
+
+So the value is the difference between the remedy available at today's moment of detection
+and the remedy available at the earlier one. That is a single quantity, and it can be
+measured rather than asserted.
+
+### The four inputs, and where each one is read
+
+**One — your present detection interval.** Take the last four quarters of findings from your
+review function: internal audit exceptions, control-testing failures, reconciliation breaks,
+invoice disputes. For each, record the date of the underlying event and the date it was
+first recorded as found. The median of those differences is your present interval. Most
+organisations have never computed this figure and are surprised by it, which is itself worth
+the afternoon.
+
+**Two — the exposure that accrues inside the interval.** For each class of finding, the
+amount that grows while nobody is looking: a daily charge that keeps running, a commitment
+that keeps being drawn against, an overpayment that repeats monthly on the same contract, a
+wrong rate applied to a rising volume. Read it from the ledger for the classes where it
+genuinely accrues, and record nothing for the classes where it does not. A one-off
+overpayment does not grow, and treating it as though it did is the commonest way this
+calculation gets inflated.
+
+**Three — the share of findings where earlier notice would have changed the decision.** This
+one is a judgement and it should be made by the people who worked the findings rather than
+estimated by anybody else. Take a sample of last year's findings and ask of each: had this
+arrived in the week of the event, was a different action available — hold, query,
+re-approve, decline — and would we have taken it? The honest answer is often no. Some
+findings are information rather than opportunity. The share where the answer is yes is the
+only share the arrangement can act on.
+
+**Four — what evidence assembly costs you.** Count the evidence requests answered in the
+last four quarters: supervisory, certification, customer security review, internal. For
+each, the person-days consumed and the seniority of the people consumed. Then count how many
+of those days made the next request shorter. That second count is usually close to nothing,
+and the difference between the two counts is your standing overhead.
+
+### How they combine
+
+```text {linenos=false}
+  what accrues      days the         share where
+  per day, for   ×  interval      ×  earlier      =  recoverable
+  each class of     would shorten    notice          exposure
+  finding           by               changes the
+                                     decision
+
+                                                          +
+
+  person-days on    part of that                  assembly
+  evidence       ×  work that is  =               saving
+  requests          assembly
+  per year
+
+                                                          −
+
+  licences  +  machine capacity  +  the named  =  cost
+                                    owner's       side
+                                    time  +
+                                    connecting
+                                    the systems
+                                    read
+```
+
+Sum the first two, subtract the third, and divide the annual result by the monthly cost.
+That quotient is a payback period. This paper does not state one, because both terms belong
+to the reader and neither of them is knowable from here.
+
+In words: the recoverable exposure is inputs one, two and three read together — for each
+class of finding, what accrues per day, multiplied by the number of days the interval would
+shorten by, multiplied by the share where earlier notice changes the decision, summed across
+classes. The assembly saving is input four, adjusted downwards for the part of an evidence
+request that is not assembly at all: the narrative, the review, the meeting. Only the
+assembly part is at stake. Against both sits the cost side, and because stage one is a
+reading exercise its cost side is bounded accordingly.
+
+### Stage one measures the terms stage two needs
+
+The two-stage path on page 16 exists partly for this reason. Stage one produces three
+numbers, measured inside the reader's own organisation: how many findings a week the
+arrangement produces, what share of them are filed as needing a person, and how often the
+assessor and the reader's own reviewers agree.
+
+Those three convert the method above from an estimate into a measurement. Findings per week
+gives the volume. The share needing a person gives the reading load, which is a cost and
+belongs on the cost side. The agreement rate is the one that decides whether the scored
+queue can be trusted enough to change how the first hour of the day is spent, which is where
+the interval actually closes.
+
+An organisation that has run stage one is deciding about stage two with its own terms in
+hand. An organisation that buys stage two first is deciding without them.
+
+### What would make the answer wrong
+
+Five ways, and they are the five worth checking before the figure leaves the building.
+
+**Counting the same money twice.** A charge avoided and a supplier credit recovered against
+the same shipment are one benefit, not two. Reconcile the classes against each other before
+summing them.
+
+**Crediting the arrangement with a decision nobody would have taken.** Input three exists to
+prevent exactly this. A finding that arrives earlier and is still not acted on has produced
+information, which is worth something, but not the thing being counted here.
+
+**Using a denominator produced by the process that misses things.** If the population of
+eligible findings is read from the same review function whose sampling is the problem, the
+calculation measures the sample and calls it the population. The denominator has to come
+from a complete inspection of some period, however short that period is.
+
+**Comparing across a period when something else changed.** A quarter that also carried a
+system migration, a new supplier or a reorganisation is not a clean comparison. Choose a
+period in which the arrangement is the change.
+
+**Assuming the interval closes to zero.** It does not. It closes to the frequency of
+evaluation plus the time a person takes to read a queue. Use a reading time measured in your
+own first weeks rather than an ideal one.
+
+### Record the baseline before anything is connected
+
+The commonest reason an organisation cannot state a return is that nobody wrote down the
+starting position while it was still true.
+
+Three numbers, recorded in the first week: the median detection interval, the person-days
+spent on the most recent evidence request, and the count of findings a period produces
+today. All three become unrecoverable once the arrangement is running, because the thing
+that would tell you is now the thing that changed.
+
+Both teams would rather be judged on that measurement than on a figure either company
+publishes.
+
 ## What the combination is built on, and why that matters commercially
 
 Each property below is a description of how the arrangement is built. Each has a commercial
@@ -1378,6 +1651,11 @@ document contains no numbers of that kind at all. The honest statement is this: 
 this arrangement depends on your transaction volume, your rule set, your current review
 frequency and the shape of your estate. It is measurable, and the place to measure it is your
 own deployment, against your own baseline, over a period you choose.
+
+Abstaining is only half an answer, and the easy half. Page 25 gives the other half: the
+arithmetic itself, with each input named and each one read from your own systems, together
+with the five ways the result can come out wrong. Run it on your figures and the number is
+yours rather than ours, which is the only version of it that will survive being questioned.
 
 Both teams would rather be judged on a measurement you take than on a figure we publish.
 
