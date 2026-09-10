@@ -35,6 +35,27 @@
     "fonts/FiraSans-Book.woff2"
     "fonts/FiraSansCondensed-Heavy.woff2" }}
 
+{{/* The count assertion this file's header promises.
+
+     Until now the header claimed "the count is asserted below" and nothing
+     asserted it -- there were only the per-file existence checks further down,
+     which catch a face listed HERE with no file, but not a face declared in
+     tokens.css and never listed here. That second direction is the one that
+     actually shipped the whitepaper 404s, because it fails silently: the
+     stylesheet asks for a URL Hugo never published.
+
+     Counted off the src url() rather than the @font-face token, because the
+     header comment in tokens.css contains the literal string "@font-face" and
+     would inflate the count to nine. */}}
+{{ $tokens := resources.Get "css/tokens.css" }}
+{{ if not $tokens }}
+  {{ errorf "rk-fonts: assets/css/tokens.css is missing -- it declares the faces this partial publishes." }}
+{{ end }}
+{{ $declared := len (findRE `url\('\.\./fonts/[^']+\.woff2'\)` $tokens.Content) }}
+{{ if ne $declared (len $faces) }}
+  {{ errorf "rk-fonts: tokens.css declares %d @font-face src urls but this partial publishes %d. Add the face to BOTH or it 404s in production (see the header)." $declared (len $faces) }}
+{{ end }}
+
 {{/* Fail loudly rather than shipping a silent 404. */}}
 {{ range $faces }}
   {{ $f := resources.Get . }}

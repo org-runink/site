@@ -16,10 +16,30 @@
   ruled lines: a measure is a label and a line you write on. The site header
   above stays dark, so the page still sits inside the site.
 
-  Every colour is a DESIGN.md token:
-    canvas/sheet/rule  surface.gray_50 / white / gray_200
-    tint/deep/deep-2   primary.50 / primary.900 / primary.700
-    ink/ink-2          text.gray_900 / text.gray_600
+  PROVENANCE, CORRECTED. The block below used to read "Every colour is a
+  DESIGN.md token" and name six of them — surface.gray_50, primary.50,
+  primary.900, primary.700, text.gray_900, text.gray_600. **None of those names
+  exists.** They came from the YAML frontmatter of the bot-authored DESIGN.md
+  (commit da8c7f1), which commit b6024cb deleted outright when it replaced that
+  file with the hand-written visual identity. Every one of them returns zero hits
+  in the current DESIGN.md.
+
+  Worse than dangling: the values here are actively contradicted by the file they
+  claim to cite. DESIGN.md §4 names and rejects `#1b2456` ("reads as generic SaaS
+  on screen and muddies on a mono laser printer"), and §2 says logistics has to
+  move off `#ea580c` — and this partial hardcodes both. §3 rejects the Inter /
+  Plus Jakarta Sans pairing this partial also hardcodes.
+
+  This is left as literals ON PURPOSE for now. DESIGN.md §8 and §11 both record
+  that repointing this partial and whitepaper.css at the tokens is the next pass
+  and that the identity commit deliberately did not touch them. What was wrong was
+  only the claim of provenance, so the claim is what changed. Do not "restore" a
+  token name from git history — the vocabulary it belonged to was deleted, not
+  renamed.
+
+    canvas/sheet/rule  literal, see :root below
+    tint/deep/deep-2   literal, see :root below
+    ink/ink-2          literal, see :root below
     accent             per-page, from front matter
 
   The per-industry accent arrives as --accent on the wrapper. Two of the five

@@ -11,26 +11,39 @@
 {{ $gradient_angle := .Get "gradient-angle" | default "180" }}
 {{ $size := .Get "size" | default "normal" }}
 
-{{ $padding := "pt-16 pb-20 md:pt-24 md:pb-28" }}
+{{/* `size` scales the TYPE only; the band's vertical rhythm is fixed.
+     There used to be a `$padding` here that switched to pt-32/pb-40 for
+     `double` — it was computed and then never referenced, because the
+     <section> below hardcodes py-24 md:py-32. So `size="double"` has always
+     scaled the headline without scaling the band, and the variable only made
+     it look otherwise. Removed rather than wired up: the ported React
+     component documents the fixed rhythm as the intended behaviour, and
+     making the band jump now would change every page that uses `double`. */}}
 {{ $headlineSize := "text-4xl md:text-5xl lg:text-6xl" }}
 {{ $subheadSize := "text-xl" }}
 
 {{ if eq $size "double" }}
-{{ $padding = "pt-32 pb-40 md:pt-48 md:pb-56" }}
 {{ $headlineSize = "text-6xl md:text-7xl lg:text-8xl" }}
 {{ $subheadSize = "text-2xl" }}
 {{ end }}
 
-<section class="relative overflow-hidden py-24 md:py-32" {{ if $gradient_from
-    }}style="background:linear-gradient({{ $gradient_angle }}deg,{{ $gradient_from }},{{ $gradient_to | default $gradient_from }})"
-    {{ else }}class="bg-stone-900" {{ end }}>
+{{/* ONE class attribute. This used to open with `class="relative …"` and then
+     emit a second `class="bg-stone-900"` from the else-branch. HTML keeps the
+     FIRST occurrence of a duplicated attribute and discards the rest, so the
+     fallback background was silently dropped and a hero with no `gradient-from`
+     rendered transparent. Only one page uses this shortcode and it happens to
+     set a gradient, so nothing is broken today — but it is a live trap for the
+     next page that omits one. Build the class list first, then emit it once. */}}
+{{ $sectionClass := "relative overflow-hidden py-24 md:py-32" }}
+{{ if not $gradient_from }}{{ $sectionClass = printf "%s bg-stone-900" $sectionClass }}{{ end }}
 
-    <!-- Background Texture -->
-    <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
-        <div
-            class="absolute inset-0 bg-[url('/images/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]">
-        </div>
-    </div>
+<section class="{{ $sectionClass }}"{{ if $gradient_from }} style="background:linear-gradient({{ $gradient_angle }}deg,{{ $gradient_from }},{{ $gradient_to | default $gradient_from }})"{{ end }}>
+
+    {{/* The grid-texture layer that sat here pointed at `/images/grid.svg`,
+         which exists in neither static/ nor assets/ — so it has never rendered,
+         on the deployed site either. Removed rather than left as a dead element
+         that still costs a compositing layer and a blend mode. The ported React
+         component dropped it for the same reason; this keeps the two in step. */}}
 
     {{ if $background_image }}
     <div class="absolute inset-0 mix-blend-overlay opacity-30">

@@ -63,6 +63,63 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # The design system's colour contract, checked before anything is built.
+      #
+      # These three scripts are deliberately zero-dependency -- node built-ins
+      # only, reading committed JSON -- so they need no install step of their
+      # own and cannot be skipped by a lockfile problem. They run BEFORE the
+      # builds because a palette that fails here produces a site that looks
+      # entirely plausible: every failure mode they catch is invisible in a
+      # screenshot of the dark ground, which was this system's only ground
+      # until the FACE migration.
+      #
+      # check:contrast -- 208 assertions over both ramps: every ink clears
+      #   4.5:1 on all four surfaces, every mark clears 3:1, every fill still
+      #   FAILS as ink (asserted as a negative, the way FACE does it), the chip
+      #   wash ceiling still bites at .18, and the severity ramp stays ordered
+      #   and perceptually separable. Alpha tokens are composited over their
+      #   real backdrop first -- a ratio against the bare token would be a lie.
+      # check:usage -- catches what the type system cannot: a solid fill
+      #   carrying a generic ink, raw hex, text-white, retired token names, and
+      #   var(--x) naming a property the token layer does not define (an
+      #   undefined var invalidates its whole declaration and CSS drops it
+      #   silently, so the rule renders nothing rather than rendering wrong).
+      #
+      # NOT here: check:alpha, the third gate. It reads the package's compiled
+      # packages/runink-ui/dist/runink-ui.css, which is gitignored and is not
+      # produced by this workflow -- `pnpm run build` above compiles the SITE's
+      # Tailwind (themes/.../main.css -> static/css/style.css) from a config
+      # that does not glob packages/runink-ui/src, so the package's utilities
+      # never appear in it. Running check:alpha against that file would find
+      # none of the classes it is looking for and report a vacuous pass, which
+      # is worse than not running it. It stays a package-level gate
+      # (`npm run check` in packages/runink-ui) until the package is built in
+      # CI. Do not "fix" this by pointing --css at static/css/style.css.
+      - name: Check design token contrast and usage
+        run: |
+          node packages/runink-ui/scripts/check-contrast.mjs
+          node packages/runink-ui/scripts/check-usage.mjs
+
+      # Content-side guards, added after a fact-audit against the FACE codebase
+      # found claims the code does not support — including seven product names
+      # announced as shipped that exist in no repository, and a fabricated case
+      # study labelled "real-world". Both rules below cover failures that were
+      # caught by people reading pages rather than by any check, and both ship
+      # silently: nothing errors, the page renders, the claim is simply false.
+      #
+      # check-content-doctrine enforces two things:
+      #   - every use-case page names its product in front matter. Without it a
+      #     reader cannot tell FACE from PULSE from the platform, and takes the
+      #     whole set as one product's track record.
+      #   - no savings figure is attributed to Runink. There is no producer for
+      #     one: savings_summary_test.go records that all four derived sources
+      #     were invented multipliers and were deleted. Third-party statistics
+      #     about the problem domain are deliberately NOT flagged — the rule
+      #     wants Runink as the subject of the verb, and carries its own
+      #     positive and negative controls.
+      - name: Check content doctrine
+        run: node scripts/check-content-doctrine.mjs
+
       - name: Build Tailwind CSS
         run: pnpm run build
 

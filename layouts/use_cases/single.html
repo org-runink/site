@@ -1,3 +1,30 @@
+{{/* ---------------------------------------------------------------------
+     DEAD FILE. NOTHING RENDERS THROUGH THIS, AND "FIXING" THAT WOULD BE A
+     REGRESSION. Read this before renaming the directory.
+
+     The use-case pages set `layout: "use_case"`. Hugo looks that up under the
+     SECTION name, which is `use-cases` with a HYPHEN (the content directory is
+     content/use-cases/). This directory is `use_cases` with an UNDERSCORE, so
+     the lookup has never matched and every page has fallen through to
+     layouts/_default/single.html. layouts/industries/single.html:18-19 already
+     records this.
+
+     The obvious "fix" — renaming this directory to use-cases/ — would make
+     layouts/use-cases/single.html win for all twelve pages, and this file is a
+     strict SUBSET of the default it would displace: no sidebar, no table of
+     contents, no CTA partial, and it reads neither .Params.toc nor .Params.cta.
+     Every use-case page would quietly lose three features, with nothing failing.
+
+     So the current state is the correct one, by accident rather than design.
+     The file is kept rather than deleted because it is the starting point if a
+     use-case-specific layout is ever actually wanted — in which case start by
+     diffing it against _default/single.html, not by renaming the directory.
+
+     One thing a real use-case layout SHOULD do, and neither this nor the default
+     does: render `.Params.product`. Attribution is currently hand-written HTML
+     in each page body, so a writer who forgets the paragraph ships an
+     unattributed page and nothing catches it.
+     --------------------------------------------------------------------- */}}
 {{ define "main" }}
 <div class="bg-stone-950 min-h-screen relative overflow-hidden text-stone-300">
     {{ partial "background-effects.html" . }}
