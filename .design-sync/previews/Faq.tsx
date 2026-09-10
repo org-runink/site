@@ -1,4 +1,4 @@
-import { Faq } from '@runink/ui';
+import { Faq, Surface } from '@runink/ui';
 
 const BILLING: Array<{ question: string; answer: string }> = [
   {
@@ -24,6 +24,22 @@ const BILLING: Array<{ question: string; answer: string }> = [
  */
 export function Default() {
   return <Faq title="Billing" items={BILLING} />;
+}
+
+/**
+ * `Default` on the sheet ground — first row open again, so the same rest state is on
+ * show. Not one class differs; only `ground`, because every token rebinds underneath.
+ *
+ * The accordion stacks three surfaces (`bg-surface` band, `bg-surface-raised` rows,
+ * `bg-surface-well` on hover) and those do not keep their console order on sheet, so
+ * this is the cell that shows the rows still read as rows.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Faq title="Billing" items={BILLING} />
+    </Surface>
+  );
 }
 
 /** With the section header the shortcode renders above the list. */

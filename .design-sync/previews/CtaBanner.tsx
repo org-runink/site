@@ -1,4 +1,4 @@
-import { CtaBanner } from '@runink/ui';
+import { CtaBanner, Surface } from '@runink/ui';
 
 /**
  * The structured API: both actions passed as `CtaBannerAction` objects. This is
@@ -14,6 +14,28 @@ export function Default() {
       primaryButton={{ text: 'Get Started', url: '/#contact' }}
       secondaryButton={{ text: 'Talk to an engineer', url: '/company' }}
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground — both actions, the same props, not one class changed.
+ * Only `ground` differs, because every token rebinds underneath.
+ *
+ * The band is the hardest case in this set: the panel is `bg-surface-raised/40` behind
+ * a `backdrop-blur`, both buttons are translucent `bg-surface` / `bg-surface/50`, and
+ * the glow is a 20%-opacity token gradient. All four depend on what shows through, so
+ * this cell is where a console-only assumption in the band would surface.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <CtaBanner
+        title="Stop The Bleeding."
+        description="See your operational risks in real-time and fix them automatically."
+        primaryButton={{ text: 'Get Started', url: '/#contact' }}
+        secondaryButton={{ text: 'Talk to an engineer', url: '/company' }}
+      />
+    </Surface>
   );
 }
 

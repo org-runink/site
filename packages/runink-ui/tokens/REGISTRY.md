@@ -14,7 +14,7 @@ an **ink** clears 4.5:1 as text on all four surfaces of its ramp.
 | `surface` | `surfaceDark` | fill | `#FF241F1C` | `#FFFFFDFA` |
 | `surface-raised` | `surfaceElevated` | fill | `#FF2A2320` | `#FFF6EFE4` |
 | `surface-well` | `surfaceHighlight` | fill | `#FF352E29` | `#FFEDE2D3` |
-| `hairline` | `surfaceHighlight` | mark | `#FF352E29` | `#FFEDE2D3` |
+| `hairline` | `surfaceHighlight` | separator | `#FF352E29` | `#FFEDE2D3` |
 | `edge` | `ink @ 0.40 console / 0.55 sheet` | mark | `—` | `—` |
 | `primary` | `textPrimary` | ink | `#FFF2EBE3` | `#FF2E2620` |
 | `secondary` | `textSecondary` | ink | `#99F2EBE3` | `#B32E2620` |

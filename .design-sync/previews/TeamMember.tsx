@@ -1,4 +1,4 @@
-import { TeamMember } from '@runink/ui';
+import { Surface, TeamMember } from '@runink/ui';
 
 /**
  * A portrait as an inline SVG data URI. The preview server only serves the design
@@ -90,5 +90,22 @@ export function LongRoleAndSuppressedBadge() {
         linkedinUrl="javascript:alert(1)"
       />
     </div>
+  );
+}
+
+/**
+ * The same card on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <TeamMember
+        name="Ana Paes"
+        role="Lead Data & Cloud Architect"
+        image={PORTRAIT}
+        linkedinUrl="https://www.linkedin.com/company/runink"
+      />
+    </Surface>
   );
 }

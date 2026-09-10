@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import { BackgroundEffects, Badge, Hero } from '@runink/ui';
+import { BackgroundEffects, Badge, Hero, Surface } from '@runink/ui';
 
 /**
  * Scales its child down when it is taller than the capture viewport, so the
@@ -81,6 +81,29 @@ export function Default() {
         body="Connect live logistics telemetry to a model of your whole network, so a disruption shows up as a decision rather than a surprise."
       />
     </Band>
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from `Default` —
+ * only `ground`, because every token rebinds underneath: the effect's own radial
+ * wash is `from-surface via-canvas to-canvas`, so it re-aims itself at the sheet
+ * ramp, and the band keeps its `border-hairline` while the copy keeps its inks. The
+ * `Band` wrapper is the same device the cells above use and is not optional —
+ * `BackgroundEffects` is `absolute inset-0`, so without a `relative
+ * overflow-hidden` parent it escapes and tiles the wrong box.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Band effect={<BackgroundEffects />}>
+        <Copy
+          eyebrow="Real-time visibility"
+          title="Run the autonomous supply chain"
+          body="Connect live logistics telemetry to a model of your whole network, so a disruption shows up as a decision rather than a surprise."
+        />
+      </Band>
+    </Surface>
   );
 }
 

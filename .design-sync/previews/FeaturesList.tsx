@@ -1,4 +1,4 @@
-import { FeaturesList } from '@runink/ui';
+import { FeaturesList, Surface } from '@runink/ui';
 
 const TWIN = [
   {
@@ -123,5 +123,19 @@ export function UnevenCopy() {
         },
       ]}
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground, at the same default `green` tone. Not one class or
+ * prop differs — only `ground`. This is the cell that grades the check tile: its tint
+ * is the component's one colour decision, so if the accent were bound to the console
+ * ramp rather than to a token it would go muddy or vanish here.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <FeaturesList title="What the Digital Twin gives you" items={TWIN} />
+    </Surface>
   );
 }

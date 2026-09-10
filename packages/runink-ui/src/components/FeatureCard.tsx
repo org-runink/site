@@ -42,7 +42,7 @@ export function FeatureCard({ title, description, icon, features, className }: F
     >
       {icon && (
         <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-card bg-gradient-to-br from-fill-accent to-accent-lift">
-          <Icon name={icon} className="h-6 w-6 text-primary" />
+          <Icon name={icon} className="h-6 w-6 text-on-accent" />
         </div>
       )}
       <h3 className="mb-4 text-2xl font-bold text-primary">{title}</h3>

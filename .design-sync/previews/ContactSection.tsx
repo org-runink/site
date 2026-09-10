@@ -1,4 +1,4 @@
-import { ContactSection } from '@runink/ui';
+import { ContactSection, Surface } from '@runink/ui';
 
 /**
  * `<ContactSection />` with no props at all — the band exactly as the English
@@ -86,5 +86,21 @@ export function WiredToAnEndpoint() {
         },
       ]}
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground — `<ContactSection />` again, with no props. Not one
+ * class differs, and here not one *prop* differs either: only `ground`, because every
+ * token rebinds underneath. The form is what this cell reports on, since inputs are
+ * the one place a band cannot borrow its contrast from the copy around it — the
+ * field's `bg-surface-raised` has to stay distinguishable from the panel behind it
+ * and the placeholder ink has to stay readable without being mistaken for a value.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <ContactSection />
+    </Surface>
   );
 }

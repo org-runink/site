@@ -125,7 +125,7 @@ export function PricingTableCompact({
               >
                 {featured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="rounded-full bg-gradient-to-r from-fill-success-glow to-accent-lift px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary shadow-lg">
+                    <span className="rounded-full bg-gradient-to-r from-fill-success-glow to-accent-lift px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-on-success shadow-lg">
                       {featuredLabel}
                     </span>
                   </div>

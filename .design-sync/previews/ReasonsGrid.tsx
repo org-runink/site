@@ -1,4 +1,4 @@
-import { BackgroundEffects, ReasonsGrid } from '@runink/ui';
+import { BackgroundEffects, ReasonsGrid, Surface } from '@runink/ui';
 import type { Reason } from '@runink/ui';
 
 const VISIBILITY: Reason = {
@@ -114,5 +114,23 @@ export function AllSageFlatBand() {
         VISIBILITY,
       ]}
     />
+  );
+}
+
+/**
+ * `ToneContrast` on the sheet ground. Not one class differs — only `ground`, because
+ * every token rebinds underneath. Both tones are in frame on purpose: the sage
+ * column's success bloom and the ember column's accent bloom are washes, and a wash
+ * that was tuned against the dark canvas is the thing most likely to disappear here.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <ReasonsGrid
+        title="Why Runink?"
+        reasons={[VISIBILITY, TWINS]}
+        backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" cellSize={80} />}
+      />
+    </Surface>
   );
 }

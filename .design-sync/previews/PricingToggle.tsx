@@ -1,4 +1,4 @@
-import { PricingToggle } from '@runink/ui';
+import { PricingToggle, Surface } from '@runink/ui';
 
 /** The two options `content/pricing.md` declares for the pricing page. */
 const OPTIONS = [
@@ -12,6 +12,23 @@ const OPTIONS = [
  */
 export function Default() {
   return <PricingToggle options={OPTIONS} />;
+}
+
+/**
+ * `Default` on the sheet ground — same uncontrolled switch at rest, first option
+ * selected, not one class changed. Only `ground` differs, because every token rebinds
+ * underneath.
+ *
+ * The track is `bg-canvas` inside a sheet page whose canvas is the *same* value, so
+ * this is the cell that shows whether the hairline border and the inner shadow are
+ * still doing the work of separating the track from the page.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <PricingToggle options={OPTIONS} />
+    </Surface>
+  );
 }
 
 /**

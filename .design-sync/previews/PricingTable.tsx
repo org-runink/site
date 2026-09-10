@@ -1,4 +1,4 @@
-import { PricingTable } from '@runink/ui';
+import { PricingTable, Surface } from '@runink/ui';
 import type { PricingTier } from '@runink/ui';
 
 /** The three licence tiers exactly as `content/pricing.md` declares them. */
@@ -68,6 +68,23 @@ const TIERS: PricingTier[] = [
  */
 export function Default() {
   return <PricingTable tiers={TIERS} />;
+}
+
+/**
+ * `Default` on the sheet ground. Not one prop or class differs — only `ground`,
+ * because every token rebinds underneath.
+ *
+ * This is also the cell that tests the highlighted tier: Dedicated's
+ * `border-fill-accent` + `bg-fill-accent-wash` has to stay legible as a *warm tint on
+ * a light card* rather than reading as the lit panel it is on console, and the
+ * clipped-gradient tier name and price have to hold against it.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <PricingTable tiers={TIERS} />
+    </Surface>
+  );
 }
 
 /**

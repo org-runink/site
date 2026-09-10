@@ -1,4 +1,4 @@
-import { TestimonialCard } from '@runink/ui';
+import { Surface, TestimonialCard } from '@runink/ui';
 
 /**
  * A headshot as an inline SVG data URI. The preview server only serves the design
@@ -114,5 +114,22 @@ export function LongQuote() {
       quote="We had real-time dashboards before and they still told us about yesterday. The difference here is that the twin acts: a temperature excursion, a weight variance, an incompatible HazMat staging — each one arrives as a drafted decision with the financial exposure already attached, and our operators accept or override it. That is the whole job."
       avatar={HEADSHOT}
     />
+  );
+}
+
+/**
+ * The same quote on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <TestimonialCard
+        name="Ana Paes"
+        role="Lead Data & Cloud Architect"
+        quote="Runink connected every data signal from procurement to delivery — our planners stopped maintaining pipelines and went back to strategy."
+        avatar={HEADSHOT}
+      />
+    </Surface>
   );
 }

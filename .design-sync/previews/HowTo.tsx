@@ -1,4 +1,4 @@
-import { HowTo } from '@runink/ui';
+import { HowTo, Surface } from '@runink/ui';
 
 /**
  * The canonical guide: a three-step Runink onboarding flow inside the
@@ -25,6 +25,40 @@ export function Default() {
         },
       ]}
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground — the same three-step guide, same microdata, not one
+ * class changed. Only `ground` differs, because every token rebinds underneath.
+ *
+ * The step cards are `bg-surface-raised` on a `bg-canvas` page, which on sheet means
+ * *darker* than the page rather than lighter, and each numbered medallion is a solid
+ * `bg-fill-accent` carrying `text-on-accent` — an ink that is light on both grounds.
+ * This is the cell that confirms both still hold.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <HowTo
+        name="How to run your first Runink audit"
+        description="What happens between connecting a telemetry feed and the first defensible automated decision."
+        steps={[
+          {
+            name: 'Connect one telemetry feed',
+            text: 'Start with a single source — the weighbridge, the reefer fleet or the TMS — over a mutually authenticated link. A narrow first feed makes the baseline easy to argue about.',
+          },
+          {
+            name: 'Confirm the constraints with your operators',
+            text: 'The people who run the yard review every business rule the agents will enforce, so each later action traces back to a constraint a named person signed off.',
+          },
+          {
+            name: 'Run the agents in shadow mode',
+            text: 'Claims, reroutes and holds are drafted but not executed for the first two weeks, which lets you audit the judgement before you delegate the authority.',
+          },
+        ]}
+      />
+    </Surface>
   );
 }
 

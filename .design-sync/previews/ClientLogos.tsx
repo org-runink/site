@@ -1,4 +1,4 @@
-import { ClientLogos } from '@runink/ui';
+import { ClientLogos, Surface } from '@runink/ui';
 import type { ClientLogo } from '@runink/ui';
 
 /*
@@ -89,5 +89,31 @@ export function FullWallStatic() {
       logos={WALL}
       animate={false}
     />
+  );
+}
+
+/**
+ * `StaticRow` on the sheet ground — held still with `animate={false}` so the screenshot
+ * is deterministic rather than catching the marquee mid-translate. Not one class or prop
+ * differs from it, only `ground`: the band's heading and its flattening treatment
+ * (`grayscale` at 60% opacity) both follow the surface.
+ *
+ * **Read this one expecting the marks to disappear.** A supplied logo is an image, not a
+ * token, so it cannot rebind with the ground — and these stand-ins are drawn at
+ * `fill="#E7E2D6"`, a near-white ink chosen for the console. On the sheet canvas that is
+ * light-on-light, and 60% opacity makes it worse. The stand-ins are the preview's own,
+ * so nothing ships broken; the real lesson is for the caller, because any customer
+ * wordmark supplied as a single-tone light-on-dark asset fails here identically. A wall
+ * that has to work on both grounds needs two assets, or marks with their own ground.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <ClientLogos
+        title="Trusted at the gate, the terminal and the dock"
+        logos={CORE}
+        animate={false}
+      />
+    </Surface>
   );
 }

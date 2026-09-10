@@ -1,4 +1,4 @@
-import { TrustSignals } from '@runink/ui';
+import { Surface, TrustSignals } from '@runink/ui';
 
 const COMPLIANCE = [
   { name: 'ISO 27001', url: 'https://www.iso.org/standard/27001' },
@@ -71,5 +71,21 @@ export function UnsafeUrlStaysUnlinked() {
         { name: 'C-TPAT', url: 'javascript:alert(1)' },
       ]}
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground. Not one class or prop differs, only `ground`. The block
+ * is the hardest of the footer pieces to get right on two grounds, because its whole
+ * argument is the contrast between two pill treatments — outlined compliance claims in
+ * the bright row, muted partner names in the quieter one. Both have to stay distinct
+ * from each other *and* from the canvas, so a ramp that only separates them on the dark
+ * ground collapses here into one flat row.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <TrustSignals compliance={COMPLIANCE} partnerships={PARTNERSHIPS} />
+    </Surface>
   );
 }

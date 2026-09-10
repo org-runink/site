@@ -1,4 +1,4 @@
-import { Testimonials } from '@runink/ui';
+import { Surface, Testimonials } from '@runink/ui';
 import type { TestimonialCardProps } from '@runink/ui';
 
 /**
@@ -111,5 +111,28 @@ export function SingleQuote() {
       description="The first deployment's own account of it."
       items={[QUOTES[0]]}
     />
+  );
+}
+
+/**
+ * `StaticRow` on the sheet ground — the still composition, so the screenshot is
+ * deterministic rather than catching the marquee mid-translate. Not one class or prop
+ * differs from it, only `ground`: the band paints `bg-canvas` when no `backgroundColor`
+ * override is given, which is what lets it follow the ground at all. Pass that prop
+ * (see `CustomBackground`) and this rebinding stops — an inline hex cannot.
+ *
+ * The headshot stays the same inline `data:` URI. It is an image, not a token, so it
+ * does not rebind; what this cell grades is the card and the ink around it.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Testimonials
+        animate={false}
+        title="Trusted by operations teams"
+        description="Why logistics and data leaders run Runink on their own infrastructure."
+        items={QUOTES.slice(0, 2)}
+      />
+    </Surface>
   );
 }

@@ -1,4 +1,4 @@
-import { PostMeta } from '@runink/ui';
+import { PostMeta, Surface } from '@runink/ui';
 
 /**
  * The canonical header strip of a single post page — byline left, reading time
@@ -20,6 +20,33 @@ export function Default() {
         { label: 'IoT', href: '/tags/iot/' },
       ]}
     />
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from `Default` —
+ * only `ground`, because every token rebinds underneath: the meta row's
+ * `text-secondary` and its three glyphs, which take `currentColor`, and the tag
+ * pills' `bg-surface`. The component's own doc comment still claims it "needs a dark
+ * canvas behind it"; this cell is the evidence that it no longer does.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <PostMeta
+        author="Runink Logistics Operations Team"
+        date="June 9, 2026"
+        dateTime="2026-06-09"
+        readingTime={11}
+        tags={[
+          { label: 'Cold Chain', href: '/tags/cold-chain/' },
+          { label: 'Temperature Control', href: '/tags/temperature-control/' },
+          { label: 'Pharma Logistics', href: '/tags/pharma-logistics/' },
+          { label: 'Food Safety', href: '/tags/food-safety/' },
+          { label: 'IoT', href: '/tags/iot/' },
+        ]}
+      />
+    </Surface>
   );
 }
 

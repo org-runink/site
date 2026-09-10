@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { Header, type HeaderLanguage, type HeaderNavItem } from '@runink/ui';
+import { Header, Surface, type HeaderLanguage, type HeaderNavItem } from '@runink/ui';
 
 // Real site assets, IMPORTED rather than referenced by URL. The capture server
 // serves only the bundle directory, so `/images/flags/gb.svg` would 404 — but the
@@ -118,6 +118,35 @@ export function DesktopBar() {
         checkItOut={ACTIONS.checkItOut}
         languages={LANGUAGES}
       />
+    </Viewport>
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from
+ * `DesktopBar` — only `ground`, because every token rebinds underneath: the bar's
+ * `bg-surface/90` and its bottom `border-hairline`, the nav links' ink, and both
+ * CTAs (the outlined `ink-accent` one and the filled `fill-accent`/`on-accent` one).
+ *
+ * Two details are specific to this component's harness. The `Surface` goes *inside*
+ * the frame, because `data-ground` cascades through a document and not across an
+ * iframe boundary — the outer card's provider cannot reach in. And it takes
+ * `min-h-screen` rather than the usual `p-8`: the frame is sized to the bar, so
+ * padding would push the bar out of the cell instead of surrounding it.
+ */
+export function OnSheet() {
+  return (
+    <Viewport width={1280} height={96}>
+      <Surface ground="sheet" tone="canvas" className="min-h-screen">
+        <Header
+          fixed={false}
+          navItems={NAV}
+          logoSrc={logoSrc}
+          getStarted={ACTIONS.getStarted}
+          checkItOut={ACTIONS.checkItOut}
+          languages={LANGUAGES}
+        />
+      </Surface>
     </Viewport>
   );
 }

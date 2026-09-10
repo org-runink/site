@@ -1,4 +1,4 @@
-import { DirectAnswer } from '@runink/ui';
+import { DirectAnswer, Surface } from '@runink/ui';
 
 /**
  * The canonical callout with the default "Quick Answer:" lead-in — one
@@ -12,6 +12,29 @@ export function Default() {
       equipment is held beyond the carrier's allocated free time inland (detention), and they are largely
       preventable with proactive container visibility and automated dispute workflows.
     </DirectAnswer>
+  );
+}
+
+/**
+ * `Default` on the sheet ground. Same text, same default lead-in, not one class
+ * different — only `ground`, because every token rebinds underneath.
+ *
+ * Two things are being checked. The left rule is `border-fill-accent`, a *mark*-tier
+ * token, so it has to stay visible as a 4px edge against a light page rather than
+ * disappearing into it; and the panel is `bg-surface`, which on sheet is lighter than
+ * the canvas, so the callout has to read as a panel without the rule doing all the
+ * work. The `text-ink-accent` lead-in is ink-tier and legible on both.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <DirectAnswer>
+        Demurrage and detention fees are among the largest hidden costs in global logistics, costing the industry
+        over $5 billion annually. These charges accumulate when containers sit idle at port (demurrage) or when
+        equipment is held beyond the carrier's allocated free time inland (detention), and they are largely
+        preventable with proactive container visibility and automated dispute workflows.
+      </DirectAnswer>
+    </Surface>
   );
 }
 

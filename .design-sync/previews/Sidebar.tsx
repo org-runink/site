@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import { Sidebar, type SidebarRecentPost } from '@runink/ui';
+import { Sidebar, Surface, type SidebarRecentPost } from '@runink/ui';
 
 // Real featured images from `static/images/blog/`, IMPORTED rather than
 // referenced by URL: the capture server serves only the bundle directory, so
@@ -114,6 +114,36 @@ export function FullColumn() {
         tagsCount={6}
       />
     </FitHeight>
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from
+ * `FullColumn` — only `ground`, because every token rebinds underneath: four
+ * stacked panels' `bg-surface-raised` and `border-hairline`, the subscribe field
+ * and its filled button, the category pills, and the tag cloud's muted counts.
+ *
+ * The column is the one place the two grounds diverge most: on the console ground
+ * each panel reads as lifted out of the canvas, while on the sheet `surface-raised`
+ * goes *darker* than the canvas, so the same panels read as recessed into the page.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <FitHeight width={COLUMN}>
+        <Sidebar
+          subscribe={{
+            title: 'Subscribe to Newsletter',
+            description: 'Get the latest posts delivered right to your inbox',
+          }}
+          recent={RECENT}
+          recentCount={1}
+          categories={CATEGORIES.slice(0, 4)}
+          tags={TAGS}
+          tagsCount={6}
+        />
+      </FitHeight>
+    </Surface>
   );
 }
 

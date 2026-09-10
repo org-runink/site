@@ -1,4 +1,4 @@
-import { PricingTableCompact } from '@runink/ui';
+import { PricingTableCompact, Surface } from '@runink/ui';
 import type { PricingTableCompactTier } from '@runink/ui';
 
 const TIERS: PricingTableCompactTier[] = [
@@ -42,6 +42,27 @@ export function Default() {
       description="Low barrier to entry. Revenue scales with your actual infrastructure usage."
       tiers={TIERS}
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground. Identical props and classes — only `ground` differs,
+ * because every token rebinds underneath.
+ *
+ * The band paints `bg-surface`, which on sheet goes *lighter* than the canvas rather
+ * than darker, so this is the cell that shows the section still separates from the
+ * page. It is also where the featured card's floating badge gets checked: the badge
+ * sits on a solid olive-to-orange gradient, so it needs a paired ink to survive here.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <PricingTableCompact
+        title="Billing logic. No surprises."
+        description="Low barrier to entry. Revenue scales with your actual infrastructure usage."
+        tiers={TIERS}
+      />
+    </Surface>
   );
 }
 

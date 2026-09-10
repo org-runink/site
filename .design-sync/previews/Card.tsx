@@ -1,4 +1,4 @@
-import { Card, CardGrid } from '@runink/ui';
+import { Card, CardGrid, Surface } from '@runink/ui';
 
 /** The canonical linked card. */
 export function Default() {
@@ -64,5 +64,22 @@ export function UnsafeHrefDegrades() {
       description="This card was given a javascript: href and renders with no anchor at all."
       href="javascript:alert(1)"
     />
+  );
+}
+
+/**
+ * The same card on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Card
+        icon="shield-check"
+        title="Zero-Hold Customs Gate"
+        description="Automatic customs and weighbridge auditing clears compliant loads without a manual hold."
+        href="/platform/customs"
+      />
+    </Surface>
   );
 }

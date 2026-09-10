@@ -1,4 +1,4 @@
-import { BackgroundEffects, CapabilityShowcase } from '@runink/ui';
+import { BackgroundEffects, CapabilityShowcase, Surface } from '@runink/ui';
 import type { Capability } from '@runink/ui';
 
 const TWIN_MODULES: Capability[] = [
@@ -112,5 +112,43 @@ export function MinimalFlatBand() {
         },
       ]}
     />
+  );
+}
+
+/**
+ * `MinimalFlatBand` on the sheet ground. Not one class differs — only `ground`,
+ * because every token rebinds underneath. The flat band is the useful one to flip:
+ * with no wash in front of it, the card's own `bg-surface` has to read as a card
+ * against the canvas in a register where `surface` goes *lighter* than the canvas
+ * rather than darker.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <CapabilityShowcase
+        eyebrow="Included in every tier"
+        title="Sovereign by default"
+        capabilities={[
+          {
+            title: 'Self-hosted',
+            titleAccent: 'Inference',
+            description:
+              'Every model the platform reasons with runs on your own infrastructure. No third-party LLM API sits in the path of your logistics data.',
+          },
+          {
+            title: 'Zero-Trust',
+            titleAccent: 'Transport',
+            description:
+              'Short-lived mTLS identities between every internal service, issued by an in-memory CA you control.',
+          },
+          {
+            title: 'Auditable',
+            titleAccent: 'Decisions',
+            description:
+              'Every autonomous action leaves the chronology it reasoned over, so a claim or a short-pay can be defended line by line.',
+          },
+        ]}
+      />
+    </Surface>
   );
 }

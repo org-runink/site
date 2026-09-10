@@ -23,13 +23,15 @@
     "extract:face": "node scripts/extract-face-ramp.mjs",
     "check:face": "node scripts/check-face-parity.mjs",
     "check:alpha": "node scripts/check-alpha-utilities.mjs",
-    "check": "npm run check:face && npm run check:alpha && npm run check:previews",
+    "check": "npm run check:face && npm run check:contrast && npm run check:alpha && npm run check:usage && npm run check:previews",
     "build:types": "tsc -p tsconfig.json",
     "build:js": "esbuild src/index.ts --bundle --format=esm --jsx=automatic --external:react --external:react-dom --external:react/jsx-runtime --outfile=dist/index.es.js",
     "build:css": "tailwindcss -i src/styles.css -o dist/runink-ui.css",
     "build": "npm run gen:tokens && npm run build:types && npm run build:js && npm run build:css",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "check:previews": "tsc -p tsconfig.previews.json"
+    "check:previews": "tsc -p tsconfig.previews.json",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "check:usage": "node scripts/check-usage.mjs"
   },
   "peerDependencies": {
     "react": ">=18",

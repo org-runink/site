@@ -1,4 +1,4 @@
-import { Card, CardGrid, FeatureCard } from '@runink/ui';
+import { Card, CardGrid, FeatureCard, Surface } from '@runink/ui';
 
 /** Dashed rule used only in these previews to make an invisible box visible. */
 const OUTLINE = 'border-2 border-dashed border-fill-accent';
@@ -115,5 +115,45 @@ export function TrailingRhythm() {
         rhythm `mb-32` exists to guarantee.
       </p>
     </div>
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from
+ * `TrailingRhythm` — only `ground`, because every token rebinds underneath.
+ *
+ * `CardGrid` is pure layout (`grid gap-8 mb-32` plus a column count), so nothing in it
+ * can break on a ground. Two things that *could* are checked here instead: the dashed
+ * rule is `border-fill-accent`, a mark-tier token with a value in both registers, so
+ * the grid's bounds and its stock `mb-32` stay legible against a light canvas; and the
+ * `Card` children are the real payload — their surface, hairline and icon ink all have
+ * to flip with the ground for the row to still read as two cards rather than two
+ * rectangles of the same colour as the page.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <div>
+        <Trace>dashed box = the grid, including its stock mb-32</Trace>
+        <CardGrid cols={2} className={OUTLINE}>
+          <Card
+            icon="lock-stack"
+            title="Sovereign persistence"
+            description="Objects, records and vector indexes on infrastructure you control."
+            href="/platform/store"
+          />
+          <Card
+            icon="cpu-chip"
+            title="Sovereign inference"
+            description="Model servers you run yourself — no third-party inference API in the path."
+            href="/platform/inference"
+          />
+        </CardGrid>
+        <p className="leading-relaxed">
+          Prose that follows the block. The distance from the cards to this sentence is the
+          rhythm `mb-32` exists to guarantee.
+        </p>
+      </div>
+    </Surface>
   );
 }

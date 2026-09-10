@@ -1,4 +1,4 @@
-import { Hero } from '@runink/ui';
+import { Hero, Surface } from '@runink/ui';
 
 /**
  * `site/static/` is not served from the design bundle, so a `/images/…` `src`
@@ -51,6 +51,33 @@ export function FlatBandTwoCtas() {
       secondaryButtonText="Read the docs"
       secondaryButtonUrl="/docs"
     />
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from
+ * `FlatBandTwoCtas` — only `ground`, because every token rebinds underneath: the
+ * band's `bg-surface`, the headline and subhead inks, the `border-hairline` rule,
+ * the filled CTA's `fill-accent`/`on-accent` pair, the outlined CTA, and the
+ * accent orb behind the image column.
+ *
+ * The flat band is the cell to mirror rather than `Default`: `Default`'s gradient
+ * stops arrive from page front matter as raw hex, so that band stays dark whatever
+ * the ground and the sheet's dark ink would sit on it. With no stops the band is a
+ * token and the hero follows the page.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Hero
+        headline="Run the Autonomous Supply Chain."
+        subHeadline="Achieve real-time supply chain visibility and mitigate disruption instantly, with telemetry that reaches a decision in under forty milliseconds."
+        primaryButtonText="See the platform"
+        primaryButtonUrl="/platform"
+        secondaryButtonText="Read the docs"
+        secondaryButtonUrl="/docs"
+      />
+    </Surface>
   );
 }
 

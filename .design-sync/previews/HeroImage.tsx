@@ -1,4 +1,4 @@
-import { HeroImage } from '@runink/ui';
+import { HeroImage, Surface } from '@runink/ui';
 
 /**
  * `site/static/` is not served from the design bundle, so `src="/images/…"` would
@@ -20,6 +20,25 @@ export function Default() {
       src={DASHBOARD}
       alt="The FACE cockpit showing live shipment exceptions across the network"
     />
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from `Default` —
+ * only `ground`. The component sets no colour of its own, so there is nothing in it
+ * to rebind; what this cell proves is the consequence of that. A light screenshot
+ * on the console canvas reads as a lit panel, and on the sheet canvas it dissolves
+ * into the page, which is why the product pages reach for the framing in `Framed`
+ * (`border-hairline`) rather than leaving the figure bare.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <HeroImage
+        src={DASHBOARD}
+        alt="The FACE cockpit showing live shipment exceptions across the network"
+      />
+    </Surface>
   );
 }
 

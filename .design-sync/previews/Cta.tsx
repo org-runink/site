@@ -1,4 +1,4 @@
-import { Cta } from '@runink/ui';
+import { Cta, Surface } from '@runink/ui';
 
 /**
  * The `cta` shortcode from `content/products/face.md`, transcribed prop for
@@ -14,6 +14,28 @@ export function Default() {
       primaryButtonText="Get Started"
       primaryButtonUrl="/#contact"
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground — the same four props, not one class different. Only
+ * `ground`, because every token rebinds underneath.
+ *
+ * `Cta` passes straight through to `CtaBanner`, so what this cell really shows is the
+ * band's default glow on a light page: the token ramp is a translucent
+ * `fill-provenance`-to-`accent-lift` wash over `bg-surface-raised/40`, which has far
+ * less room to register against sheet than against console.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Cta
+        title="Stop The Bleeding."
+        description="See your operational risks in real-time and fix them automatically."
+        primaryButtonText="Get Started"
+        primaryButtonUrl="/#contact"
+      />
+    </Surface>
   );
 }
 

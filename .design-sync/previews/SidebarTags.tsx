@@ -1,4 +1,4 @@
-import { SidebarTags } from '@runink/ui';
+import { SidebarTags, Surface } from '@runink/ui';
 
 const CLOUD = [
   { label: 'data governance', href: '/tags/data-governance', count: 12 },
@@ -32,6 +32,29 @@ export function Default() {
         { label: 'Runink FACE', href: '/tags/runink-face', count: 4 },
       ]}
     />
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from `Default` —
+ * only `ground`, because every token rebinds underneath: the panel's
+ * `bg-surface-raised` and `border-hairline`, the heading's `text-primary`, and the
+ * `text-secondary` the tags and their counts share. Note the panel goes *darker*
+ * than the canvas here and lighter on the console ground, which is why the tone is
+ * named by role rather than by luminance.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <SidebarTags
+        tags={[
+          { label: 'data governance', href: '/tags/data-governance', count: 12 },
+          { label: 'supply chain automation', href: '/tags/supply-chain-automation', count: 9 },
+          { label: 'Model Context Protocol', href: '/tags/model-context-protocol', count: 6 },
+          { label: 'Runink FACE', href: '/tags/runink-face', count: 4 },
+        ]}
+      />
+    </Surface>
   );
 }
 

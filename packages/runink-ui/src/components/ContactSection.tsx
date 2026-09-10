@@ -417,7 +417,7 @@ export function ContactSection({
 
                   <button
                     type="submit"
-                    className="mt-4 w-full rounded-card bg-gradient-to-r from-fill-provenance to-accent-lift py-4 font-black uppercase tracking-widest text-primary transition-all duration-300 hover:-translate-y-1 "
+                    className="mt-4 w-full rounded-card bg-gradient-to-r from-fill-provenance to-accent-lift py-4 font-black uppercase tracking-widest text-on-provenance transition-all duration-300 hover:-translate-y-1 "
                   >
                     {submitText}
                   </button>

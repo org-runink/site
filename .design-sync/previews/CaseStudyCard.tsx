@@ -1,4 +1,4 @@
-import { CaseStudyCard } from '@runink/ui';
+import { CaseStudyCard, Surface } from '@runink/ui';
 
 /**
  * A partner wordmark as an inline SVG data URI. The preview server only serves the
@@ -108,5 +108,28 @@ export function LongCopy() {
       href="/use-cases/compliance/"
       imageAlt="Zone C"
     />
+  );
+}
+
+/**
+ * The same band on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath. The partner accent does not:
+ * `accentColor` is the partner's own hex, so this cell is also where a CTA fill that
+ * only contrasts against the console ink would show up.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <CaseStudyCard
+        accentColor="#FF3621"
+        tag="Databricks"
+        title="Unifying logistics telemetry into one lakehouse"
+        description="Runink connected every signal from procurement to delivery, cutting manifest reconciliation work to near zero and recovering $18,200 per customs incident."
+        ctaLabel="Read the case study"
+        href="/use-cases/claims-recovery/"
+        image={DATABRICKS_MARK}
+        imageAlt="Databricks"
+      />
+    </Surface>
   );
 }

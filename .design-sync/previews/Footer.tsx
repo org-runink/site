@@ -1,4 +1,4 @@
-import { Footer, type FooterColumn } from '@runink/ui';
+import { Footer, Surface, type FooterColumn } from '@runink/ui';
 
 // Real site assets: the mark Hugo publishes as `/images/logo.png`, and the one
 // social icon `static/images/social/` ships that hugo.toml's `[params.social]`
@@ -55,6 +55,33 @@ export function Default() {
         { label: 'License', href: '/license/' },
       ]}
     />
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from `Default` —
+ * only `ground`, because every token rebinds underneath: the band's own `bg-canvas`,
+ * its top `border-hairline` and the second rule above the legal strip, the column
+ * headings' `text-primary` and the link rows' `text-secondary`.
+ *
+ * The two raster assets are the exception, as they must be: the lockup is a PNG and
+ * the social mark is an `<img>`, so neither can take its colour from the ground the
+ * way ink does. This is the cell where that asymmetry is visible.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Footer
+        logoSrc={logoSrc}
+        columns={COLUMNS}
+        social={SOCIAL}
+        year={2026}
+        bottomLinks={[
+          { label: 'Privacy Policy', href: '/privacy/' },
+          { label: 'License', href: '/license/' },
+        ]}
+      />
+    </Surface>
   );
 }
 

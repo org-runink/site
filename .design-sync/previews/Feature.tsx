@@ -1,4 +1,4 @@
-import { Feature } from '@runink/ui';
+import { Feature, Surface } from '@runink/ui';
 
 /**
  * A 16:9 stand-in for the product screenshots the site passes to `image`
@@ -193,5 +193,35 @@ export function Minimal() {
       description="Runink connects live logistics telemetry with predictive analytics — spanning S&OP, spend analytics and fulfillment — to protect operating margins."
       buttonLink="/platform/"
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground. Not one class differs — only `ground`, because every
+ * token rebinds underneath: the badge pill, the checklist ticks and the CTA all resolve
+ * in the light register without the row restating a colour.
+ *
+ * The screenshot stand-in is the same inline `data:` URI, and it stays a dark console
+ * panel on purpose — a product screenshot is an image, not a token, so it does not
+ * rebind with the ground. What this cell grades is the frame around it.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Feature
+        badge="Tariff & Demurrage Recovery"
+        title="Automatic Customs & Weighbridge Auditing"
+        description="Weighbridge telemetry is cross-checked against Bill of Lading manifests, and a weight amendment is drafted the moment a variance exceeds 5%."
+        image={shot('RULES STUDIO — weighbridge variance')}
+        imageAlt="Runink rule editor showing a weighbridge variance constraint"
+        features={[
+          'Real-time scale feeds audited against digital shipping documents',
+          'The exact weight variance that triggered the customs hold surfaced',
+          'Customs tariff refund claim valued instantly',
+        ]}
+        buttonText="Read the use case"
+        buttonLink="/use-cases/claims-recovery/"
+      />
+    </Surface>
   );
 }

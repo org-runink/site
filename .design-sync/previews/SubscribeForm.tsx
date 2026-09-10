@@ -1,4 +1,4 @@
-import { SubscribeForm } from '@runink/ui';
+import { Surface, SubscribeForm } from '@runink/ui';
 
 // The panel is designed for a sidebar column, so every cell gives it one rather
 // than letting it stretch across the full content width.
@@ -14,6 +14,26 @@ export function Default() {
     <div className={RAIL}>
       <SubscribeForm />
     </div>
+  );
+}
+
+/**
+ * `Default` on the sheet ground, in the same rail — the unsubmitted rest state, since
+ * `submitted` cannot be reached without interaction. Not one class differs; only
+ * `ground`, because every token rebinds underneath.
+ *
+ * The panel is `bg-surface` and the field inside it is `bg-canvas`, so on sheet the
+ * input goes *darker* than the panel it sits in instead of lighter. This is the cell
+ * that shows the field still reads as a field, and that the `bg-fill-accent` /
+ * `text-on-accent` button keeps its contrast.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <div className={RAIL}>
+        <SubscribeForm />
+      </div>
+    </Surface>
   );
 }
 

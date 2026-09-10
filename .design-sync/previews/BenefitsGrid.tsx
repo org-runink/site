@@ -1,4 +1,4 @@
-import { BenefitsGrid } from '@runink/ui';
+import { BenefitsGrid, Surface } from '@runink/ui';
 import type { Benefit } from '@runink/ui';
 
 const DIGITAL_TWIN: Benefit[] = [
@@ -128,5 +128,24 @@ export function UnevenCopy() {
         },
       ]}
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground — the same three `DIGITAL_TWIN` benefits, carrying the
+ * same per-item `sage` / `green` / `tan` tones. Not one class or prop differs, only
+ * `ground`. The frosted panels and the heading glow are the interesting part here:
+ * a translucent fill reads as a lift over a dark canvas and has to keep doing so over
+ * a light one.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <BenefitsGrid
+        title="Mitigate disruption in real time"
+        subtitle="Live logistics telemetry, turned into decisions that protect your margins."
+        benefits={DIGITAL_TWIN}
+      />
+    </Surface>
   );
 }

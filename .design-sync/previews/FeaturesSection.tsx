@@ -1,4 +1,4 @@
-import { Feature, FeatureCard, FeaturesSection } from '@runink/ui';
+import { Feature, FeatureCard, FeaturesSection, Surface } from '@runink/ui';
 
 /**
  * A 16:9 stand-in for the product screenshots the site passes to `Feature`'s
@@ -163,5 +163,32 @@ export function DescriptionWithoutTitleIsDropped() {
         buttonLink="/use-cases/spend-analytics/"
       />
     </FeaturesSection>
+  );
+}
+
+/**
+ * `Default` on the sheet ground. Not one class differs — only `ground`. The band's
+ * header column and the `Feature` row beneath it both take their ink from the surface,
+ * so the whole section rebinds without a single prop change.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <FeaturesSection
+        title="One platform, from telemetry to decision"
+        description="Runink connects live logistics telemetry to predictive analytics, so disruption is mitigated while it is still happening."
+      >
+        <Feature
+          badge="Tariff & Demurrage Recovery"
+          title="Automatic Customs & Weighbridge Auditing"
+          description="Weighbridge telemetry is cross-checked against Bill of Lading manifests, and amendments are drafted the moment a variance exceeds 5%."
+          image={shot('RULES STUDIO — weighbridge variance')}
+          imageAlt="Runink rule editor showing a weighbridge variance constraint"
+          features={['Scale feeds audited against manifests', 'Refund claim valued instantly']}
+          buttonText="Read the use case"
+          buttonLink="/use-cases/claims-recovery/"
+        />
+      </FeaturesSection>
+    </Surface>
   );
 }

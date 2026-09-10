@@ -1,4 +1,4 @@
-import { BackgroundEffects, TabbedPitches } from '@runink/ui';
+import { BackgroundEffects, Surface, TabbedPitches } from '@runink/ui';
 import type { TabbedPitch } from '@runink/ui';
 
 /**
@@ -125,5 +125,24 @@ export function BareTwoUp() {
       closerLabel="What they tell the board"
       tabsLabel="Pitch by operational role"
     />
+  );
+}
+
+/**
+ * `PresetTab` on the sheet ground. Not one class differs — only `ground`, because
+ * every token rebinds underneath. The tab strip is what this cell is for: the
+ * selected tab has to stay legibly selected against the four unselected ones, and the
+ * background-effects wash has to follow the ground rather than stay tuned for the dark
+ * band.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <TabbedPitches
+        defaultTabId="compliance"
+        tabs={PERSONAS}
+        backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" />}
+      />
+    </Surface>
   );
 }

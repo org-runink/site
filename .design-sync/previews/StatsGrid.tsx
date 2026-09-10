@@ -1,4 +1,4 @@
-import { Badge, Stat, StatsGrid } from '@runink/ui';
+import { Badge, Stat, StatsGrid, Surface } from '@runink/ui';
 
 /** Dashed rule used only in these previews to make an invisible box visible. */
 const OUTLINE = 'border-2 border-dashed border-fill-accent';
@@ -87,5 +87,37 @@ export function TrailingRhythm() {
         rhythm `mb-20` exists to guarantee.
       </p>
     </div>
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from
+ * `TrailingRhythm` — only `ground`, because every token rebinds underneath.
+ *
+ * The grid itself is `grid-cols-1 gap-8 mb-20 md:grid-cols-3` and carries no colour,
+ * so the ground cannot touch it. What the cell is really watching is the dashed rule —
+ * `border-fill-accent`, a mark-tier token with a value in both registers, so the grid's
+ * bounds and its stock `mb-20` stay visible against a light canvas — and `Stat`, whose
+ * panel is a `from-surface to-canvas` gradient. Both of those stops rebind, and on the
+ * sheet ground `surface` goes *lighter* than the canvas while the console ramp goes
+ * darker, so the panel's gradient reverses direction rather than disappearing. That
+ * inversion is the one thing here a reader should actually check.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <div>
+        <Trace>dashed box = the grid, including its stock mb-20</Trace>
+        <StatsGrid className={OUTLINE}>
+          <Stat number="11x" label="Faster customs clearance" />
+          <Stat number="94%" label="Perishable loss avoided" />
+          <Stat number="38ms" label="Telemetry to decision" />
+        </StatsGrid>
+        <p className="leading-relaxed">
+          Prose that follows the block. The distance from the numerals to this sentence is the
+          rhythm `mb-20` exists to guarantee.
+        </p>
+      </div>
+    </Surface>
   );
 }

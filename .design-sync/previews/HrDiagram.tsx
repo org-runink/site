@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import { HrDiagram } from '@runink/ui';
+import { HrDiagram, Surface } from '@runink/ui';
 
 /**
  * Scales the diagram down when it is taller than the capture viewport, so the
@@ -159,5 +159,42 @@ export function ThreeSystemsOfRecord() {
         }}
       />
     </FitHeight>
+  );
+}
+
+/**
+ * `WithoutDependencies` on the sheet ground. Not one class differs — only `ground`,
+ * because every token rebinds underneath. The shortest flow is the one mirrored so the
+ * connectors, not the `FitHeight` scale factor, are what the cell is reporting on: both
+ * rules are gradients between *fill* tokens (`surface-well` → `fill-accent`, then
+ * `fill-accent` → `fill-success`) with their chevron heads and floating captions on
+ * top, so this is where a gradient stop that only reads against the dark canvas would
+ * wash out.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <FitHeight>
+        <HrDiagram
+          actor={{
+            title: 'Dispatch Planner',
+            description: 'Needs tomorrow’s load plan.',
+            icon: 'user-group',
+          }}
+          requestLabel="Asks: Which lanes are at risk?"
+          platformLabel="Runink FACE"
+          assistant={{
+            title: 'Fulfillment Agent',
+            description: 'Scores every lane continuously.',
+            icon: 'cpu-chip',
+          }}
+          responseLabel="Returns ranked lane risk"
+          outcome={{
+            title: 'Load plan released',
+            description: 'Confirmed without a war room.',
+          }}
+        />
+      </FitHeight>
+    </Surface>
   );
 }

@@ -1,4 +1,4 @@
-import { StepCard } from '@runink/ui';
+import { StepCard, Surface } from '@runink/ui';
 
 /** The canonical step: green `monitor` track, bolded lead-in, glowing `Step 2` badge. */
 export function Default() {
@@ -117,5 +117,24 @@ export function CustomLabel() {
         desc="dynamically assigns inventory to restock, refurbish or recycle pathways, mitigating storage overflow."
       />
     </div>
+  );
+}
+
+/**
+ * The same step on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath. The card leans on a wash fill and
+ * a neon glow, both tuned on the console, so this is the cell where either would show
+ * up as washed out rather than quiet.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <StepCard
+        track="monitor"
+        stepNum={2}
+        title="Predictive Degradation"
+        desc="leverages predictive algorithms to identify compressor failures before cargo spoilage occurs, evaluating sensor data against strict safety constraints."
+      />
+    </Surface>
   );
 }

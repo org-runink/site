@@ -1,4 +1,4 @@
-import { Badge } from '@runink/ui';
+import { Badge, Surface } from '@runink/ui';
 
 /** Every tone, in the uppercase treatment DESIGN.md specifies for pills. */
 export function Tones() {
@@ -36,5 +36,22 @@ export function AsTagRow() {
       <Badge tone="outline">Returns</Badge>
       <Badge tone="outline">S&amp;OP</Badge>
     </div>
+  );
+}
+
+/**
+ * The same tones on the sheet ground. Not one class differs from `Tones` — only
+ * `ground`, because every token rebinds underneath.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <div className="flex flex-wrap items-center gap-3">
+        <Badge>Sovereign</Badge>
+        <Badge tone="sage">Compliant</Badge>
+        <Badge tone="orange">Disruption</Badge>
+        <Badge tone="outline">Beta</Badge>
+      </div>
+    </Surface>
   );
 }

@@ -1,4 +1,4 @@
-import { BackgroundEffects, UseCaseParallax } from '@runink/ui';
+import { BackgroundEffects, Surface, UseCaseParallax } from '@runink/ui';
 
 /**
  * The homepage's cold-chain band, left-copy / right-steps (`invert` unset). Shows
@@ -121,5 +121,50 @@ export function MonitorTrackOnly() {
       ]}
       parallax={false}
     />
+  );
+}
+
+/**
+ * `Inverted` on the sheet ground. Not one class differs — only `ground`, because every
+ * token rebinds underneath. It is the cell mirrored rather than `Default` because it
+ * carries both step tracks and the wash while dropping the problem panel, so the band
+ * fits the frame: the green **monitor** and red **cockpit** cards are washes and
+ * rings, which is where a colour tuned against the dark canvas shows up first.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <UseCaseParallax
+        invert
+        pill="Circular Economy"
+        title="Responsive Reverse Logistics"
+        subtitle="Returns Triage & Closed-Loop Routing"
+        url="/use-cases/responsive-reverse-logistics/"
+        ctaLabel="Read the triage playbook"
+        monitorLabel="Field Scan & Validation"
+        monitor={[
+          {
+            title: 'Barcode Scanning Validation',
+            text: 'instantly validates warranty periods and logs condition codes from the field via mobile scanning.',
+          },
+          {
+            title: 'Real-Time Cost-Benefit Triage',
+            text: "evaluates a returned item's residual value against repair cost via instant Secure API calls.",
+          },
+        ]}
+        cockpitLabel="Disposition Execution"
+        cockpit={[
+          {
+            title: 'Automated Disposition Routing',
+            text: 'dynamically routes inventory for restock, refurbishment, or recycling, diverting e-waste from landfill.',
+          },
+          {
+            title: 'ROI Impact:',
+            text: 'Reclaims margin on returns by triaging at the point of origin.',
+          },
+        ]}
+        backgroundEffect={<BackgroundEffects color="var(--color-brand-red)" cellSize={80} />}
+      />
+    </Surface>
   );
 }

@@ -1,4 +1,4 @@
-import { BackgroundEffects, UseCasesCarousel } from '@runink/ui';
+import { BackgroundEffects, Surface, UseCasesCarousel } from '@runink/ui';
 import type { UseCasesCarouselItem } from '@runink/ui';
 
 /**
@@ -117,5 +117,55 @@ export function FallbackAccents() {
         },
       ]}
     />
+  );
+}
+
+/**
+ * `FallbackAccents` on the sheet ground. Not one class differs — only `ground`, because
+ * every token rebinds underneath. That is the cell mirrored rather than `Default`
+ * deliberately: its cards pass no `badgeColor`, so every accent on screen resolves from
+ * `ink-accent` and the cell actually reports on the ground. The front-matter hexes the
+ * `Default` cards carry cannot rebind and would mask the result.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <UseCasesCarousel
+        eyebrow="In pilot"
+        title="Next Up"
+        subtitle="Use cases in validation with design partners."
+        anchorId={undefined}
+        autoAdvance={false}
+        items={[
+          {
+            title: 'Hypothesis Lab',
+            description:
+              'Simulate changes to your operating rules before deployment. Test the future without risking the present.',
+            badge: 'Simulation',
+            href: '/use-cases/hypothesis-lab/',
+            linkLabel: 'Open the lab',
+          },
+          {
+            title: 'Forecast LLM Document Auditing',
+            description:
+              'Reads the document trail behind a forecast and flags the assumptions nobody wrote down.',
+            href: '/forecast-llm-document-auditing/',
+          },
+          {
+            title: 'Spend Analytics',
+            description:
+              'Deep financial and spend analytics for immediate ROI identification and continuous cost reduction. No link on this card — it renders without the footer.',
+            badge: 'Revenue Operator',
+          },
+          {
+            title: 'Rules Reconciliation',
+            description:
+              'Map SOPs against legacy SQL, VBA and Python, or against SAP, Salesforce and Shopify.',
+            badge: 'Assessment',
+            href: '/products/',
+          },
+        ]}
+      />
+    </Surface>
   );
 }

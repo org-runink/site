@@ -1,4 +1,4 @@
-import { GradientText } from '@runink/ui';
+import { GradientText, Surface } from '@runink/ui';
 
 /** All four sweeps on the same headline, so the palettes are comparable. */
 export function Sweeps() {
@@ -17,6 +17,37 @@ export function Sweeps() {
         <GradientText sweep="signal">Signal</GradientText> — rose into purple
       </div>
     </div>
+  );
+}
+
+/**
+ * The same four sweeps on the sheet ground. Not one class differs from `Sweeps` —
+ * only `ground`, because every token rebinds underneath.
+ *
+ * Worth a look rather than a glance: the text is `text-transparent` with the sweep
+ * showing through `bg-clip-text`, so a stop that resolves to nothing renders the word
+ * INVISIBLE rather than merely wrong. `ember` and `moss` are the live pairs;
+ * `iris` and `signal` were re-pointed onto fills during the migration, and a dead
+ * stop on either would show up here as a missing word.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <div className="space-y-4 font-heading text-4xl font-black">
+        <div>
+          <GradientText sweep="ember">Ember</GradientText> — orange into red
+        </div>
+        <div>
+          <GradientText sweep="iris">Iris</GradientText> — purple into indigo
+        </div>
+        <div>
+          <GradientText sweep="moss">Moss</GradientText> — sage into green
+        </div>
+        <div>
+          <GradientText sweep="signal">Signal</GradientText> — rose into purple
+        </div>
+      </div>
+    </Surface>
   );
 }
 

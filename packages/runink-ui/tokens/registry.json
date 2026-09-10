@@ -50,7 +50,7 @@
     {
       "web": "hairline",
       "face": "surfaceHighlight",
-      "tier": "mark",
+      "tier": "separator",
       "positions": ["borderColor", "divideColor", "outlineColor"],
       "why": "surfaceHighlight under a second name because the border rule differs from the surface rule. Valid over canvas/surface/surface-raised only — over surface-well it is the same value, so the border vanishes. Use `edge` there.",
       "notOver": ["surface-well"]
@@ -132,6 +132,7 @@
       "face": "technicalOrangeMuted",
       "tier": "fill",
       "positions": ["backgroundColor", "gradientColorStops", "boxShadowColor"],
+      "neverInkOn": ["console"],
       "wash": 0.15,
       "why": "A FILL. Never ink — 2.97/2.69/2.55/2.20 as a foreground on the console surfaces, below even the 3:1 mark floor. Keeps its own wash tone so a critical/high severity chip stays distinct from an accent-washed one.",
       "invariant": true

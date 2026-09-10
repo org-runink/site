@@ -1,4 +1,4 @@
-import { PostCard } from '@runink/ui';
+import { PostCard, Surface } from '@runink/ui';
 
 /**
  * The canonical `/blog` teaser, from the front matter of
@@ -113,5 +113,26 @@ export function UnsafeHrefDegrades() {
       dateTime="2026-04-25"
       readingTime={8}
     />
+  );
+}
+
+/**
+ * The same teaser on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <PostCard
+        title="Demurrage and Detention Fees — The Silent Margin Killer and How to Fight Back"
+        href="/blog/demurrage-detention-fees-prevention/"
+        description="Demurrage and detention fees drain $5B+ annually from global supply chains. Learn how AI-driven container visibility and automated dispute resolution cut costs by 40-60%."
+        image="/images/blog/demurrage-detention-fees-prevention-header.png"
+        categories={['Freight Finance', 'Maritime Logistics']}
+        date="June 5, 2026"
+        dateTime="2026-06-05"
+        readingTime={9}
+      />
+    </Surface>
   );
 }

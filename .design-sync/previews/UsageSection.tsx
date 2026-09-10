@@ -1,4 +1,4 @@
-import { UsageSection } from '@runink/ui';
+import { Surface, UsageSection } from '@runink/ui';
 
 /**
  * The canonical three-step sequence: centred header over the numbered grid, which
@@ -134,5 +134,37 @@ export function RichStepText() {
         },
       ]}
     />
+  );
+}
+
+/**
+ * `Default` on the sheet ground. Not one class differs — only `ground`, because every
+ * token rebinds underneath. The band paints its own `bg-surface` and the step cards sit
+ * on `bg-surface-raised` inside it, which is the pairing worth flipping: on the sheet
+ * register `surface` goes *lighter* than the canvas while `raised` goes darker, so the
+ * card reads as a card here for the opposite reason it does on the console.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <UsageSection
+        title="How Runink deploys into your operation"
+        description="Three weeks from first telemetry to autonomous execution — no rip-and-replace."
+        steps={[
+          {
+            title: 'Connect your telemetry',
+            text: 'Point the Twin at your existing TMS, WMS and sensor feeds over a mutually authenticated link. Nothing leaves your perimeter.',
+          },
+          {
+            title: 'Validate the rules',
+            text: 'Your operators confirm the business constraints the agents will enforce, so every action is defensible before it is automated.',
+          },
+          {
+            title: 'Let the agents execute',
+            text: 'Claims, reroutes and compliance holds are drafted and actioned continuously, with the audit trail attached.',
+          },
+        ]}
+      />
+    </Surface>
   );
 }

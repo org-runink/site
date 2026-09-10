@@ -1,4 +1,4 @@
-import { FeatureCard } from '@runink/ui';
+import { FeatureCard, Surface } from '@runink/ui';
 
 /** The canonical use: icon, heading, copy and a capability checklist. */
 export function Default() {
@@ -64,5 +64,22 @@ export function LongCopy() {
       title="Instant S&OP and Spend Diagnostics"
       description="Achieve real-time supply chain visibility and mitigate disruption instantly. Runink connects live logistics telemetry with predictive analytics — spanning sales and operations planning, spend analytics, and fulfillment — to build durable supply chain resilience and protect your operating margins."
     />
+  );
+}
+
+/**
+ * The same card on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <FeatureCard
+        icon="cube-transparent"
+        title="Supply Chain Digital Twin"
+        description="Connect live logistics telemetry to a model of your whole network, so a disruption shows up as a decision rather than a surprise."
+        features={['Live telemetry ingest', 'Predictive disruption scoring', 'S&OP and spend diagnostics']}
+      />
+    </Surface>
   );
 }

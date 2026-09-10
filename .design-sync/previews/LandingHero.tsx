@@ -1,4 +1,4 @@
-import { LandingHero } from '@runink/ui';
+import { LandingHero, Surface } from '@runink/ui';
 import type { LandingHeroLayer } from '@runink/ui';
 
 /**
@@ -41,6 +41,35 @@ export function Default() {
       description="Ground your automation with validated business rules on a Strictly Compartmentalized Node. Gain exponential operational advantage over fulfillments and claims."
       scrollCue="Scroll to Deploy Facility"
     />
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from `Default` —
+ * only `ground`, because every token rebinds underneath: the band's `bg-surface`,
+ * the two washes (`from-surface`, `to-surface` and the `fill-provenance` overlay),
+ * the tagline and description inks, and the scroll cue's chip.
+ *
+ * The three scene planes are the one thing that cannot rebind — they are artwork,
+ * and their `mix-blend-luminosity` / `color-burn` / `screen` modes were tuned
+ * against a dark band. This is the cell where that shows.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <LandingHero
+        layers={LAYERS}
+        headline={
+          <>
+            Your Operations <br />
+            Actionable Twin
+          </>
+        }
+        tagline="Continuous Forecasting. Defensible Execution."
+        description="Ground your automation with validated business rules on a Strictly Compartmentalized Node. Gain exponential operational advantage over fulfillments and claims."
+        scrollCue="Scroll to Deploy Facility"
+      />
+    </Surface>
   );
 }
 

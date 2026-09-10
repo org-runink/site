@@ -1,4 +1,4 @@
-import { Container, Icon, Section, Stat, StatsGrid } from '@runink/ui';
+import { Container, Icon, Section, Stat, StatsGrid, Surface } from '@runink/ui';
 
 /** Dashed rule used only in these previews to make an invisible box visible. */
 const OUTLINE = 'border-2 border-dashed border-fill-accent';
@@ -22,7 +22,7 @@ export function Gutters() {
       <Trace>tinted band = full bleed · dashed box = the container column</Trace>
       <div className="bg-fill-success py-6">
         <Container className={`${OUTLINE} py-4`}>
-          <p className="font-mono text-[11px] text-primary">
+          <p className="font-mono text-[11px] text-on-success">
             mx-auto · w-full · max-w-7xl · px-4 sm:px-6 lg:px-8
           </p>
         </Container>
@@ -52,7 +52,7 @@ export function AlignsAcrossBands() {
       </div>
       <div className="bg-fill-success py-6">
         <Container className={OUTLINE}>
-          <p className="py-2 text-sm text-primary">Band three — an accent band behind a call to action.</p>
+          <p className="py-2 text-sm text-on-success">Band three — an accent band behind a call to action.</p>
         </Container>
       </div>
     </div>
@@ -111,5 +111,42 @@ export function NarrowMeasure() {
         <span className="text-sm">Both boxes stay centred and keep identical gutters.</span>
       </Container>
     </div>
+  );
+}
+
+/**
+ * The same composition on the sheet ground. Not one class differs from
+ * `NarrowMeasure` — only `ground`, because every token rebinds underneath.
+ *
+ * `Container` emits no colour at all: it is `mx-auto w-full max-w-7xl` plus gutters,
+ * so there is nothing in the component for a ground to change. What this cell checks
+ * is that the *preview device* survives the flip, which is the part that could
+ * silently fail — the dashed rule is `border-fill-accent`, a mark-tier token with a
+ * value in both registers (`#D9764E` console, `#C4693B` sheet), so the bounds stay
+ * legible here rather than vanishing into a light canvas the way a pinned-light rule
+ * would. The band behind it is `bg-canvas`, which rebinds with the ground, so the
+ * gutters still read as gutters.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <div className="space-y-6 bg-canvas py-6">
+        <Container className={OUTLINE}>
+          <p className="py-2 font-mono text-[11px] text-secondary">default — max-w-7xl</p>
+        </Container>
+        <Container className={`${OUTLINE} max-w-2xl`}>
+          <p className="py-2 leading-relaxed">
+            <span className="mb-2 block font-mono text-[11px] text-secondary">max-w-2xl</span>
+            Discrepancies between cargo documents and terminal weight scales cause customs holds,
+            fines and expensive demurrage. A narrower cap keeps long prose at a comfortable measure
+            without leaving the shared content column.
+          </p>
+        </Container>
+        <Container className="flex items-center gap-3">
+          <Icon name="check-circle" className="h-5 w-5 text-ink-success" />
+          <span className="text-sm">Both boxes stay centred and keep identical gutters.</span>
+        </Container>
+      </div>
+    </Surface>
   );
 }

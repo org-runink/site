@@ -1,4 +1,4 @@
-import { ValueCard } from '@runink/ui';
+import { Surface, ValueCard } from '@runink/ui';
 
 /** The canonical use: large bare icon, the value, one sentence expanding on it. */
 export function Default() {
@@ -89,5 +89,21 @@ export function LongCopy() {
       title="One ecosystem, not a toolchain"
       description="We empower businesses to connect every data signal — from procurement to delivery — through a platform built for speed, automation, and real-time decision-making. By combining modern data engineering, structured data integration, and event-driven automation, Runink transforms operations into resilient, intelligent systems."
     />
+  );
+}
+
+/**
+ * The same card on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <ValueCard
+        icon="lightbulb"
+        title="Operational Intelligence"
+        description="We believe logistics should think for itself. Every workflow we design learns, predicts, and adapts with purpose."
+      />
+    </Surface>
   );
 }

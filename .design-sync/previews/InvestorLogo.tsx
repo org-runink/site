@@ -1,4 +1,4 @@
-import { InvestorLogo } from '@runink/ui';
+import { InvestorLogo, Surface } from '@runink/ui';
 
 /*
  * `static/images/company/investor-*.svg` are theme placeholder blobs and the
@@ -63,5 +63,29 @@ export function PartnerRow() {
       <InvestorLogo name="Valdera Group" image={wordmark('Valdera')} />
       <InvestorLogo name="Cascadia Partners" />
     </div>
+  );
+}
+
+/**
+ * `Default` on the sheet ground. Not one class or prop differs, only `ground` — the
+ * component paints nothing but a padded centred cell, so there is nothing of its own
+ * to rebind.
+ *
+ * **Read this one expecting the wordmark to disappear.** A supplied logo is an image,
+ * not a token, so it cannot follow the ground — and this stand-in is drawn at
+ * `fill="#E7E2D6"`, a near-white ink chosen for the console, which `grayscale` keeps
+ * near-white. On the sheet canvas that is light-on-light, and only the orange dot
+ * survives. The stand-in is the preview's own so nothing ships broken, but the failure
+ * is the caller's to avoid: a partner logo supplied as a single-tone light-on-dark asset
+ * fails here identically. A wall that has to work on both grounds needs two assets.
+ *
+ * The no-`image` branch is the one that does survive — `WordmarkFallback` sets the name
+ * in `text-secondary`, which rebinds.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <InvestorLogo name="Meridian Capital" image={wordmark('Meridian Capital')} />
+    </Surface>
   );
 }

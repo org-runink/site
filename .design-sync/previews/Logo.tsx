@@ -1,4 +1,4 @@
-import { Logo } from '@runink/ui';
+import { Logo, Surface } from '@runink/ui';
 
 // The site's real mark. `assets/images/logo.png` is what Hugo publishes as
 // `/images/logo.png` — the path `Logo` defaults to — so importing it here gives
@@ -8,6 +8,25 @@ import logoSrc from '../../assets/images/logo.png';
 /** The navigation lockup as the header renders it: 40x40 mark plus the wordmark. */
 export function Default() {
   return <Logo src={logoSrc} href="/" />;
+}
+
+/**
+ * The same lockup on the sheet ground. Not one class differs from `Default` — only
+ * `ground`, because every token rebinds underneath.
+ *
+ * Two things have to hold here, and neither is the artwork: the tile is
+ * `bg-surface-raised` with a `border-hairline`, which on the sheet ground go *darker*
+ * than the canvas rather than lighter, so the mark still sits in a visible well; and
+ * the wordmark is `text-primary`, which inverts with the ground instead of being
+ * pinned light. The mark itself is a raster asset and does not rebind — if it ever
+ * stops reading against a light tile, this is the cell that says so.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <Logo src={logoSrc} href="/" />
+    </Surface>
+  );
 }
 
 /**
