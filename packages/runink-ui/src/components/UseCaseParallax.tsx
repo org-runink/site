@@ -328,7 +328,7 @@ export function UseCaseParallax({
                   <Icon name={problemIcon} className="h-5 w-5 text-ink-accent" />
                   {problemLabel}
                 </h3>
-                <div className="prose prose-invert text-[13px] leading-relaxed text-secondary prose-p:last:mb-0 md:text-sm">
+                <div className="prose dark:prose-invert text-[13px] leading-relaxed text-secondary prose-p:last:mb-0 md:text-sm">
                   {problem}
                 </div>
               </div>

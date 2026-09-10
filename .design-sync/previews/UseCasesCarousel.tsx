@@ -67,7 +67,7 @@ export function Default() {
       subtitle="Discover how the Operations Actionable Twin transforms your operational workflows."
       items={USE_CASES}
       autoAdvance={false}
-      backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" />}
+      backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" />}
     />
   );
 }

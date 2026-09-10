@@ -90,7 +90,7 @@ export function Default() {
       id="painkiller"
       heading="Tailored value for every stakeholder"
       tabs={PERSONAS}
-      backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" />}
+      backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" />}
     />
   );
 }
@@ -107,7 +107,7 @@ export function PresetTab() {
     <TabbedPitches
       defaultTabId="compliance"
       tabs={PERSONAS}
-      backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" />}
+      backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" />}
     />
   );
 }
@@ -141,7 +141,7 @@ export function OnSheet() {
       <TabbedPitches
         defaultTabId="compliance"
         tabs={PERSONAS}
-        backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" />}
+        backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" />}
       />
     </Surface>
   );

@@ -237,7 +237,7 @@ export function TabbedPitches({
                   <div
                     className={cx(
                       'mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-hairline transition-colors',
-                      selected ? 'bg-canvas' : 'bg-white/5',
+                      selected ? 'bg-canvas' : 'bg-primary/5',
                     )}
                   >
                     <Icon

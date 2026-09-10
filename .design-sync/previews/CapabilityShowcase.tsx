@@ -41,7 +41,7 @@ export function Default() {
       title="Operations Actionable Twins"
       subtitle="Autonomous operations modules deployed on your dedicated infrastructure to augment your team, orchestrate logistics, and protect your margins 24/7."
       capabilities={TWIN_MODULES}
-      backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" />}
+      backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" />}
     />
   );
 }

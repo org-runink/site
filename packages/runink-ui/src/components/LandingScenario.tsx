@@ -133,7 +133,7 @@ export function LandingScenario({
            * metric chip out of frame.
            */}
           {(description || excerpt) && (
-            <div className="prose prose-invert prose-lg leading-relaxed text-secondary">
+            <div className="prose dark:prose-invert prose-lg leading-relaxed text-secondary">
               {description && <p>{description}</p>}
               {excerpt && (
                 <div className="mt-4 line-clamp-3 border-l-2 border-hairline pl-4 font-mono text-sm text-secondary">

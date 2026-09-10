@@ -4,8 +4,8 @@ import { cx } from '../lib/cx';
 export interface BackgroundEffectsProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * Line colour of the grid overlay. Any CSS colour works — a token reference
-   * (`var(--color-brand-green)`), a channel function, or a raw hex for a
-   * third-party brand colour. Defaults to `var(--color-secondary-500)`, the
+   * (`rgb(var(--rk-fill-success-ch))`), a channel function, or a raw hex for a
+   * third-party brand colour. Defaults to `rgb(var(--rk-hairline-ch))`, the
    * custom property behind `secondary-500`, which is the violet the Hugo partial
    * hardcoded as `#a855f7`.
    */
@@ -37,7 +37,7 @@ export interface BackgroundEffectsProps extends HTMLAttributes<HTMLDivElement> {
  * @example
  * <UseCaseParallax
  *   title="The Autonomous Cold Chain Guard"
- *   backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" cellSize={80} />}
+ *   backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" cellSize={80} />}
  * />
  *
  * @example
@@ -48,7 +48,7 @@ export interface BackgroundEffectsProps extends HTMLAttributes<HTMLDivElement> {
  * </section>
  */
 export function BackgroundEffects({
-  color = 'var(--color-secondary-500)',
+  color = 'rgb(var(--rk-hairline-ch))',
   cellSize = 60,
   className,
   ...rest

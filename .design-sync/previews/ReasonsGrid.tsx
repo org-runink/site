@@ -76,7 +76,7 @@ export function Default() {
       title="Why Runink?"
       subtitle="Deploy the right level of intelligence for your operations. Choose between deep analytical visibility or automated execution."
       reasons={[VISIBILITY, TWINS]}
-      backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" />}
+      backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" />}
     />
   );
 }
@@ -93,7 +93,7 @@ export function ToneContrast() {
     <ReasonsGrid
       title="Why Runink?"
       reasons={[VISIBILITY, TWINS]}
-      backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" cellSize={80} />}
+      backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" cellSize={80} />}
     />
   );
 }
@@ -129,7 +129,7 @@ export function OnSheet() {
       <ReasonsGrid
         title="Why Runink?"
         reasons={[VISIBILITY, TWINS]}
-        backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" cellSize={80} />}
+        backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" cellSize={80} />}
       />
     </Surface>
   );

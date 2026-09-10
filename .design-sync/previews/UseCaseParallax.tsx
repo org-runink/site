@@ -43,7 +43,7 @@ export function Default() {
           text: 'Protects high-value cargo assets (e.g., $42,000 in biologics) from spoilage by executing instant edge-plug interventions.',
         },
       ]}
-      backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" cellSize={80} />}
+      backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" cellSize={80} />}
     />
   );
 }
@@ -86,7 +86,7 @@ export function Inverted() {
           text: 'Reclaims margin on returns by triaging at the point of origin.',
         },
       ]}
-      backgroundEffect={<BackgroundEffects color="var(--color-brand-red)" cellSize={80} />}
+      backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-provenance-ch))" cellSize={80} />}
     />
   );
 }
@@ -163,7 +163,7 @@ export function OnSheet() {
             text: 'Reclaims margin on returns by triaging at the point of origin.',
           },
         ]}
-        backgroundEffect={<BackgroundEffects color="var(--color-brand-red)" cellSize={80} />}
+        backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-provenance-ch))" cellSize={80} />}
       />
     </Surface>
   );

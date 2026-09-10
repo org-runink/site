@@ -56,6 +56,20 @@ function walk(dir, out = []) {
 const files = [...walk(join(PKG, 'src')), ...walk(join(SITE, '.design-sync/previews'))];
 const problems = [];
 
+/*
+ * Every custom property the token layer actually defines. A `var(--…)` naming
+ * anything else silently invalidates its whole declaration — and CSS error recovery
+ * drops the declaration without a word, so an inline
+ * `linear-gradient(var(--gone) 1px, transparent 1px)` renders NOTHING rather than
+ * rendering wrong. That is not hypothetical: the migration retired --color-* and left
+ * 19 references behind, so BackgroundEffects' grid was absent in every cell, on both
+ * grounds, and no class-based check could see it.
+ */
+const tokensCss = readFileSync(join(PKG, 'src/tokens.css'), 'utf8');
+const DEFINED = new Set([...tokensCss.matchAll(/^\s*(--[\w-]+)\s*:/gm)].map((m) => m[1]));
+/** Tailwind defines its own --tw-* at runtime; those are not ours to verify. */
+const isForeign = (name) => name.startsWith('--tw-');
+
 for (const file of files) {
   const src = readFileSync(file, 'utf8');
   const lineOf = (index) => src.slice(0, index).split('\n').length;
@@ -94,6 +108,16 @@ for (const file of files) {
       if (/(?<![\w-])text-white(?![\w-])/.test(classes)) {
         problems.push({ where, msg: 'text-white', why: 'invisible on the sheet ground — use text-primary, or the fill\'s paired ink' });
       }
+      if (/(?<![\w-:])bg-white(?:\/\d+)?(?![\w-])/.test(classes)) {
+        problems.push({ where, msg: 'bg-white wash', why: 'a lift on console and a no-op on sheet — use bg-primary/<alpha>, which inverts with the ground' });
+      }
+      if (/(?<![\w-:])prose-invert(?![\w-])/.test(classes)) {
+        problems.push({
+          where,
+          msg: 'unqualified prose-invert',
+          why: 'a hardcoded dark prose palette — use `dark:prose-invert`, which is bound to [data-ground=console]',
+        });
+      }
       if (/#[0-9a-fA-F]{3,8}\b/.test(classes)) {
         problems.push({ where, msg: 'raw hex in a class string', why: 'every colour must be a token; see tokens/REGISTRY.md' });
       }
@@ -102,6 +126,18 @@ for (const file of files) {
         problems.push({ where, msg: `retired token \`${retired[0]}\``, why: 'compiles to nothing since the FACE migration' });
       }
     }
+  }
+
+  // Custom properties, anywhere in the file — these live in inline styles and CSS
+  // strings, not in class attributes, so the scan above cannot see them.
+  for (const m of src.matchAll(/var\((--[\w-]+)\)/g)) {
+    const name = m[1];
+    if (isForeign(name) || DEFINED.has(name)) continue;
+    problems.push({
+      where: `${relative(SITE, file)}:${lineOf(m.index)}`,
+      msg: `undefined custom property \`${name}\``,
+      why: 'an undefined var invalidates its whole declaration, and CSS drops it silently — the rule renders nothing rather than rendering wrong',
+    });
   }
 }
 

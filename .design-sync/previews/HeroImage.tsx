@@ -50,7 +50,7 @@ export function OnSheet() {
  */
 export function InProse() {
   return (
-    <div className="prose prose-invert max-w-none">
+    <div className="prose dark:prose-invert max-w-none">
       <h2>Zero-Hold Customs Gate</h2>
       <p>
         The Terminal Weight Auditor compares incoming weighbridge telemetry against Bill of

@@ -108,13 +108,13 @@ export function OnSheet() {
 }
 
 /**
- * The token-coloured variant: `color="var(--color-brand-green)"` with a wider
+ * The token-coloured variant: `color="rgb(var(--rk-fill-success-ch))"` with a wider
  * 80px cell — the treatment the use-case sections use so the grid recedes and the
  * green reads as the analytical, non-alarming tone.
  */
 export function BrandGreenGrid() {
   return (
-    <Band effect={<BackgroundEffects color="var(--color-brand-green)" cellSize={80} />}>
+    <Band effect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" cellSize={80} />}>
       <Copy
         eyebrow="Cold chain"
         title="The Autonomous Cold Chain Guard"
@@ -131,7 +131,7 @@ export function BrandGreenGrid() {
  */
 export function TightCopperGrid() {
   return (
-    <Band effect={<BackgroundEffects color="var(--color-brand-copper)" cellSize="2rem" />}>
+    <Band effect={<BackgroundEffects color="rgb(var(--rk-fill-accent-ch))" cellSize="2rem" />}>
       <Copy
         eyebrow="Claims recovery"
         title="Recover what the carrier billed twice"
@@ -161,7 +161,7 @@ export function InTheHeroSlot() {
         }
         primaryButtonText="Meet Your New System"
         primaryButtonUrl="/#contact"
-        backgroundEffect={<BackgroundEffects color="var(--color-brand-green)" cellSize={80} />}
+        backgroundEffect={<BackgroundEffects color="rgb(var(--rk-fill-success-ch))" cellSize={80} />}
       />
     </FitHeight>
   );
