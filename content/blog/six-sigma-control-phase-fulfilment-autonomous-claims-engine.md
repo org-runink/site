@@ -1,6 +1,6 @@
 ---
 title: "Sustaining Six Sigma 'Control' via Fulfilment Autonomous Claims Engine"
-description: "Learn how Supply Chain Controllers use the Fulfilment Autonomous Claims Engine (FACE) to sustain Six Sigma improvements and automate demurrage disputes."
+description: "Why the Control phase fails in logistics, how accessorial charges are read against the contract that governs them, and where the line falls between drafting a demurrage dispute and filing one."
 author: "Runink Logistics Operations Team"
 date: 2026-02-25T18:35:52Z
 draft: false
@@ -15,7 +15,7 @@ robots: index, follow
 <!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-The "Control" phase of Six Sigma initiatives frequently fails in logistics because organizations rely on manual audits rather than continuous, automated monitoring. Implementing a Fulfilment Autonomous Claims Engine (FACE) ensures process improvements are sustained by automatically filing demurrage disputes and instantly catching financial deviations. By leveraging real-time alerts through MS Teams Webhooks and WhatsApp integrations, Supply Chain Controllers can protect profit margins and prevent cost leakage before it impacts the bottom line.
+The "Control" phase of Six Sigma initiatives frequently fails in logistics because organizations rely on monthly audits over a sample rather than on continuous reading. Runink FACE — the Fulfilment Autonomous Claims Engine — reads every accessorial charge against the agreement governing it and drafts the dispute where the records do not support the charge. The draft goes to whoever signs disputes: the reading is automated, the decision is not.
 {{< /direct-answer >}}
 
 * **The Control Phase Challenge:** Without automated systems, carefully engineered supply chain improvements degrade over time, leading to unexpected accessorial charges and margin erosion.
@@ -43,14 +43,16 @@ The volatility of modern logistics—exacerbated by unpredictable terminal capac
 ## What is a Fulfilment Autonomous Claims Engine (FACE) and How Does It Work?
 
 {{< direct-answer >}}
-A Fulfilment Autonomous Claims Engine (FACE) is an advanced financial control tower that continuously monitors logistics execution data against contracted agreements. It automatically identifies invalid accessorial charges, such as erroneous demurrage or detention fees, and autonomously files detailed, evidence-backed disputes with carriers and terminal operators.
+Runink FACE — the Fulfilment Autonomous Claims Engine — reads logistics execution records against the agreements that govern them. Where an accessorial charge such as demurrage or detention is not supported by the records, it raises that charge by name and drafts the dispute with the evidence attached. The filing itself waits for the person who signs disputes.
 {{< /direct-answer >}}
 
 To truly sustain Six Sigma improvements, Supply Chain Controllers are increasingly turning to advanced AI-enabled systems designed to enforce compliance autonomously. At the forefront of this shift is the Fulfilment Autonomous Claims Engine (FACE). Rather than waiting for human auditors to sift through hundreds of carrier invoices at the end of the month, FACE acts as a continuous, vigilant gatekeeper for your logistics spend.
 
 When a container arrives at a port or a Full Truckload (FTL) reaches a cross-docking facility, the clock begins ticking on free time. Often, delays caused by the terminal, lack of chassis availability, or carrier-side issues result in unfair demurrage and detention charges being passed down to the shipper. Historically, disputing these charges required a logistics analyst to manually gather terminal gate-out timestamps, GPS coordinates, WMS check-in logs, and delivery receipts, cross-reference them against the specific Service Level Agreement (SLA), and draft a formal dispute. This process is so labor-intensive that many finance departments simply write off these charges as the "cost of doing business," effectively abandoning the cost-saving controls established during their Six Sigma initiatives.
 
-Runink’s Fulfilment Autonomous Claims Engine changes this paradigm entirely. FACE integrates seamlessly into your existing Transportation Management System (TMS) and Warehouse Management System (WMS), continuously ingesting real-time milestone data. The moment an invoice is generated containing a demurrage or detention charge, FACE evaluates the charge against the contracted free time and the actual operational timestamps. If the charge is invalid—for instance, if the delay was due to a port closure or if the container was gated out within the allowable window—FACE automatically compiles the necessary documentation and files the dispute on your behalf. By automating demurrage dispute filing, organizations can recover millions in margin leakage without adding headcount, ensuring that the financial controls engineered during the DMAIC cycle remain firmly in place.
+Runink FACE changes where the effort goes. It reads the milestone records an operation already holds and, when an invoice carries a demurrage or detention charge, compares that charge against the contracted free time and the operational timestamps for the same container. Where the records do not support the charge — a port closure, or a container gated out inside the allowable window — FACE assembles the documentation and drafts the dispute.
+
+What it does not do is file it. The draft goes to whoever signs disputes, who approves, edits or rejects it. That boundary is deliberate: a dispute is a commercial communication to a carrier you have to keep working with, and an incorrect one costs more than the charge. Nor does FACE predict what a dispute programme will recover. The recoverable amount depends on which of your charges are genuinely unsupported, and that is a figure only your own invoices establish.
 
 ---
 
@@ -78,9 +80,9 @@ Real-time alerts are critical because they deliver actionable intelligence to th
 
 Information decay is the enemy of supply chain control. The value of identifying a delayed shipment or an impending demurrage charge drops precipitously with every hour that passes. For a Director of Finance or a Supply Chain Controller, having access to an executive dashboard is useful for strategic planning, but it is insufficient for tactical, day-to-day margin protection. To keep a process in control, alerts must find the user, rather than the user having to hunt for the alert.
 
-This is where the integration of real-time communication tools becomes a game-changer. The Runink Fulfilment Autonomous Claims Engine doesn't just quietly file disputes; it actively orchestrates the resolution of emerging issues. By leveraging MS Teams Webhooks and WhatsApp integrations, FACE pushes critical, context-rich alerts directly into the workflows where your teams already operate. 
+This is why the delivery channel matters as much as the detection. A finding that lands in a report somebody opens on Thursday is a finding about something that has already cost money. FACE raises each finding as a named item in a queue a person works through, rather than as a line in a periodic report.
 
-Imagine a scenario where a high-value container has only twenty-four hours of free time remaining at a congested terminal. Instead of this information being buried in a daily TMS report, FACE triggers an automated alert to a dedicated MS Teams channel, notifying the drayage coordinator, the warehouse manager, and the finance controller simultaneously. The alert includes the container number, the accrued cost if not moved, and a direct link to the underlying documentation. Similarly, if an automated demurrage dispute is successfully resolved, the finance team receives an instant WhatsApp notification confirming the recovered funds. These real-time alerts ensure that deviations are caught instantly, enabling rapid intervention that prevents minor operational hiccups from snowballing into significant financial losses.
+Take a container with twenty-four hours of free time remaining at a congested terminal. What is useful is not that the condition exists — a TMS report would say that — but that it arrives as one item, identified by container, with the free time terms it is measured against and the records behind it, in front of the coordinator who can move it. Once that item has been decided it leaves the queue, rather than reappearing every time somebody looks at the report. That property is duller than real-time alerting and it is the one that determines whether anything actually gets closed.
 
 ---
 
@@ -90,23 +92,25 @@ Imagine a scenario where a high-value container has only twenty-four hours of fr
 Automated claims management delivers measurable financial impact by directly recovering invalid accessorial charges, significantly reducing the administrative overhead of manual invoice auditing, and preventing future margin leakage through strict enforcement of carrier service level agreements.
 {{< /direct-answer >}}
 
-The ultimate goal of the Six Sigma Control phase is to guarantee financial predictability and operational stability. Implementing a Fulfilment Autonomous Claims Engine provides a highly quantifiable return on investment that resonates deeply with Directors of Finance and Supply Chain Controllers. The most immediate impact is the direct recovery of capital. Industry benchmarks suggest that a substantial percentage of accessorial charges invoiced by carriers and forwarders are either inaccurate or contractually invalid. By automating the dispute process, organizations can capture this revenue leakage in its entirety, translating directly to improved gross margins.
+The goal of the Six Sigma Control phase is financial predictability. The honest statement of the financial case for automated claims work is narrower than the usual one, and it has two parts. First, a share of accessorial charges invoiced by carriers and forwarders is not supported by the operational record — that is well established in the trade, and it is why dispute functions exist at all. Second, what that share is in your operation is unknown until somebody reads your own invoices against your own records, and nobody can quote it to you in advance. Any supplier offering a recovery percentage before seeing your data is describing somebody else's invoices.
 
 Beyond direct cost recovery, automated claims management drastically reduces administrative burden. The hours previously spent by logistics analysts and accounts payable clerks hunting down gate receipts, decoding complex tariff schedules, and exchanging endless emails with carrier representatives can be reallocated to high-value analytical tasks. This efficiency gain not only lowers the cost of the finance and operations functions but also accelerates the dispute resolution timeline, improving cash flow and reducing Days Sales Outstanding (DSO) complexities.
 
-Additionally, the comprehensive data structured by FACE provides an unparalleled advantage during future procurement cycles. When it comes time to renegotiate carrier contracts, Supply Chain Controllers are armed with precise, empirical data detailing exactly how often a specific carrier was at fault for delays and erroneous charges. This shifts the balance of power during negotiations, allowing organizations to secure better terms and lower baseline rates, thus creating a compounding financial benefit year over year.
+There is a third benefit that is easier to verify than either of the first two: the record itself. A dispute programme that reads every charge leaves behind a per-carrier history of how often that carrier's charges were unsupported. At the next contract renegotiation that history is evidence rather than recollection, and it is the same artefact whether or not any disputes were won.
 
 ---
 
 ## Conclusion
 
 {{< direct-answer >}}
-Sustaining the gains achieved through Six Sigma initiatives requires abandoning manual oversight in favor of intelligent, continuous monitoring. The Runink Fulfilment Autonomous Claims Engine empowers Supply Chain Controllers to automate dispute resolution, catch deviations instantly via real-time alerts, and permanently lock in operational cost reductions.
+Sustaining Six Sigma gains means replacing periodic sampling with continuous reading. Runink FACE reads every charge against the agreement governing it and drafts the dispute where the records do not support it — then hands the draft to a named person. The reading is automated; the decision is not.
 {{< /direct-answer >}}
 
 The Control phase should not be the graveyard of supply chain optimization efforts; it should be the robust foundation upon which long-term profitability is built. For Directors of Finance and Supply Chain Controllers, relying on retrospective audits and manual interventions is no longer a viable strategy for protecting margins in a volatile global logistics market. 
 
-To ensure that process improvements stick and financial deviations are caught the moment they occur, organizations must deploy systems that monitor execution continuously and autonomously. By integrating the Runink Fulfilment Autonomous Claims Engine (FACE) into your daily operations, you can seamlessly automate demurrage dispute filing, enforce strict SLA compliance, and leverage immediate MS Teams Webhooks and WhatsApp alerts to keep your teams agile and informed. [Contact Runink](/#contact-form) today to discover how our intelligent logistics solutions can help you maintain absolute financial control and turn your supply chain into a resilient, optimized driver of business growth.
+For process improvements to stick, deviations have to be read as they are recorded rather than at the end of the month. [Runink FACE](/products/face/) does the reading and the drafting; the filing, the short-pay and the carrier conversation stay with your people, because those are the parts that carry commercial consequences.
+
+The first number to establish is your own: total accessorial spend last year, and what proportion of it anyone has ever checked against the contract. [Contact Runink](/#contact-form) if it would help to work that out.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
@@ -127,15 +131,15 @@ To ensure that process improvements stick and financial deviations are caught th
       "name": "What is a Fulfilment Autonomous Claims Engine (FACE)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Fulfilment Autonomous Claims Engine (FACE) is an advanced financial control tower that continuously monitors logistics execution data against contracted agreements. It automatically identifies invalid accessorial charges, such as erroneous demurrage or detention fees, and autonomously files detailed, evidence-backed disputes with carriers."
+        "text": "Runink FACE, the Fulfilment Autonomous Claims Engine, reads logistics execution records against the agreements that govern them. Where an accessorial charge such as demurrage or detention is not supported by the records, it raises that charge by name and drafts the dispute with the evidence attached. The filing itself waits for approval by the person who signs disputes."
       }
     },
     {
       "@type": "Question",
-      "name": "Why are real-time alerts critical for margin protection?",
+      "name": "Why does it matter how a finding is delivered?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Real-time alerts are critical because they deliver actionable intelligence at the exact moment a process deviates from its control limits. Utilizing integrations like MS Teams Webhooks and WhatsApp ensures that operations and finance teams can intervene immediately to prevent imminent accessorial charges."
+        "text": "Because a finding buried in a periodic report describes money already spent. What changes behaviour is a finding that arrives as one named item — this container, these free time terms, these records — in a queue a specific person works through, and that leaves the queue once it has been decided rather than reappearing at every review."
       }
     }
   ]

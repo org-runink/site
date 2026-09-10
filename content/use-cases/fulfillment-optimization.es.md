@@ -2,6 +2,9 @@
 title: "Cobertura de Stock y Planificación con Proveedores"
 description: "Casi todos los avisos de falta de stock llegan cuando la reserva de seguridad ya se ha ido, y eso lo deja pagando flete aéreo. La idea es verlo cuando todavía hay tiempo de pedir de forma normal."
 layout: "use_case"
+product: "Runink FACE"
+scenario: "inventory fulfillment"
+standing: "hypothetical"
 badge: "Optimización Logística"
 badgeColor: "#0ea5e9"
 date: "2024-05-20T00:00:00Z"
@@ -11,11 +14,16 @@ author: "Lead Data & Cloud Architect"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
+<p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Cobertura de stock</p>
+<p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
+<span class="rk-mark" data-standing="hypothetical">Hipotético</span> &mdash; este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su lado de abastecimiento. Lo que sigue es lo que el producto está hecho para hacer y cómo correría contra sus propios registros. Es una ilustración del mecanismo, no el relato de una implantación. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Qué es FACE</a>.
+</p>
+
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">Se le avisa cuando pedir todavía sale barato.</strong> El aviso llega antes de que se acabe la reserva de seguridad, el stock que se guarda por si acaso. Llega antes y no después, así que el pedido puede salir a la tarifa normal en vez de por avión.</li>
-<li><strong class="text-stone-200">La previsión le dice cuánto fiarse de ella.</strong> Cada proyección llega con lo bien que encajó con su propio histórico y con cuántos meses tuvo para aprender.</li>
-<li><strong class="text-stone-200">La alternativa ya viene preparada.</strong> Un segundo proveedor, un plazo más corto y la diferencia de precio llegan juntos, así que quien compra elige en vez de buscar.</li>
+<li><strong class="text-stone-200">El aviso dice qué límite se cruzó, con palabras.</strong> El punto de pedido, el mínimo y el máximo son los que usted ya usa: FACE no se los inventa y no los deduce de un plazo de entrega que nunca ha visto. Lo que devuelve es el límite que se cruzó y el nivel que lo cruzó, escritos, así que el aviso se puede discutir en vez de solo acusar recibo.</li>
+<li><strong class="text-stone-200">La previsión le dice cuánto fiarse de ella.</strong> Cada proyección nombra el modelo &mdash;elegido apartando el tramo más reciente de su propio histórico y volviendo a ajustar cada candidato sobre lo anterior&mdash; y cuántos periodos tuvo para aprender. Cuando el histórico de un artículo no se predice a sí mismo, eso también es uno de los hallazgos.</li>
+<li><strong class="text-stone-200">Las alternativas se ordenan desde su propio cuadro de proveedores, y son contexto, no una recomendación.</strong> Los proveedores alternativos con valoración para el artículo expuesto vuelven del mejor valorado hacia abajo, sacados de los registros de transportistas y proveedores que usted ya lleva. No se adjunta ninguna diferencia de precio, porque FACE no guarda tarifario y una diferencia de precio que no puede justificar sería el número más citable de la página y el menos real. Los nombres quedan anotados con la decisión; no la condicionan.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -44,19 +52,25 @@ author: "Lead Data & Cloud Architect"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Se lee su propio histórico de ventas para ver la temporada y la tendencia que hay debajo. Luego la proyección se contrasta con lo que de verdad pasó. El aviso se ajusta al plazo del proveedor que tendría que servirlo, así que llega cuando un pedido corriente todavía resuelve el problema.
+                FACE lee su propio histórico de ventas para sacar la temporada y la tendencia que hay debajo, y contrasta la proyección con periodos que no se le mostraron. Esa es la mitad que le dice que un artículo está girando antes de lo que cree el plan.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Llega como algo que decidir, no como algo que mirar. Qué artículo es, el día en que se acaba la cobertura, el proveedor que suele servirlo, un segundo proveedor que podría servirlo antes, y cuánto cuesta la diferencia.
+                El aviso sobre el stock en sí es deliberadamente soso, y conviene decir lo que es en vez de lo que suena. El punto de pedido, el suelo y el techo vienen de usted. FACE compara el nivel con ellos y devuelve el límite que se cruzó y el nivel que lo cruzó en palabras llanas, y no un color en una baldosa. No saca el umbral de un plazo de entrega de proveedor: aquí dentro no hay modelo de plazos, y un aviso calculado contra un número que el software se ha figurado sería peor que la alerta de nivel que ya tiene, porque parecería más listo.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Lo que llega es algo que decidir: el artículo, el límite que cruzó, el proveedor que lo sirve de normal, y las alternativas con valoración de su propio cuadro, la mejor primero. Lo que no llega es una comparación de precios entre ellas. FACE no tiene tarifario, ni tabla de tarifas, ni consulta de tarifas históricas, así que la diferencia de coste entre dos proveedores no es algo que pueda decirle &mdash; y una inventada sería el primer número que le citarían de vuelta en la reunión.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                La previsión que hay debajo de esto es <a href="/use-cases/demand-forecasting/" class="underline decoration-stone-700 hover:text-stone-300">un escenario de FACE por su cuenta</a> &mdash; cómo se lee una serie, qué modelo se elige y qué dice cuando un artículo simplemente no es predecible. Esta página trata de la decisión de pedido que sale de ahí.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa firma queda en el registro. Aprobar termina el trabajo en vez de empezarlo: el borrador del pedido y la actualización de su sistema de planificación salen de esa aprobación. Los márgenes de seguridad dejan de discutirse por rango y pasan a discutirse con sus propios números.
+                Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa firma queda en el registro. Aprobar es lo que lo manda adelante. Y donde un paso de la acción redactada todavía no tiene nada detrás &mdash;la escritura en su ERP es el ejemplo honesto&mdash; la respuesta nombra ese paso como no ejecutado en vez de dar la cosa entera por hecha. Se le dice qué parte de la acción ocurrió, que es la diferencia entre un sistema del que puede fiarse y uno que tiene que ir a comprobar. Los márgenes de seguridad se pueden entonces discutir con sus propios números y no por rango.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
+                Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto algo cambia.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Cuánto gasta en transporte urgente.</strong> Sus cuentas a pagar, filtradas por los códigos que usa su equipo para el flete aéreo o urgente. Tome un año entero, porque cambia con la temporada.</li>

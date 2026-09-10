@@ -1,9 +1,10 @@
 ---
 title: "Réclamations Fret et Frais de Port"
-description: "Les réclamations expirent parce que monter un dossier prend une matinée. Le reçu, le poids, le tarif et la date limite arrivent déjà réunis. Une personne n'a plus qu'à juger si le dossier tient."
+description: "Les réclamations expirent parce que monter un dossier prend une matinée. La déclaration, le blocage, les papiers manquants, les jours d'immobilisation et les frais journaliers arrivent déjà réunis et rapprochés. Une personne n'a plus qu'à juger si le dossier tient."
 layout: "use_case"
 badge: "Récupération des Coûts"
 badgeColor: "#7c3aed"
+product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
 author: "Lead Data & Cloud Architect"
 ---
@@ -11,10 +12,13 @@ author: "Lead Data & Cloud Architect"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
+<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Réclamations fret</p>
+<p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong> &mdash; le Fulfilment Autonomous Claims Engine. Les réclamations ne sont pas une fonction annexe ici. Elles sont le C du nom du produit.</p>
+
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">Les papiers sont réunis pour vous.</strong> Le reçu du transporteur, le poids relevé au pont-bascule, le tarif en vigueur ce jour-là et la date limite de dépôt arrivent au même endroit, rattachés à l'envoi auquel ils appartiennent.</li>
-<li><strong class="text-stone-200">Les poids sont confrontés aux documents.</strong> Quand le poids écrit sur les papiers et le poids lu sur la bascule ne concordent pas, l'écart est signalé pendant que la marchandise bouge encore, et non une fois les frais courus.</li>
+<li><strong class="text-stone-200">Les papiers sont réunis pour vous, et seulement ceux qui sont réellement là.</strong> La déclaration, le port, le motif du blocage, les documents qui manquent au dossier, le nombre de jours d'immobilisation et les frais journaliers arrivent au même endroit, rattachés à l'envoi auquel ils appartiennent. Pas le tarif en vigueur ce jour-là : FACE ne détient aucune grille tarifaire, aucune table de tarifs et aucun barème de surcharges. Il ne peut donc pas vous dire quel était le tarif, et il ne fera pas semblant.</li>
+<li><strong class="text-stone-200">Les quantités sont confrontées de trois côtés.</strong> Le bon de commande, la facture et le connaissement sont comparés entre eux, et là où ils divergent, le constat nomme la paire et la taille de l'écart : connaissement contre commande, connaissement contre facture. C'est un contrôle d'écarts sur ce que disent les documents, pas un rapprochement avec une bascule ni avec un tarif. Il n'y a pas non plus de relevé de pont-bascule ici.</li>
 <li><strong class="text-stone-200">La lettre est rédigée, pas envoyée.</strong> Une personne nommée lit le dossier, le corrige ou le rejette, et son accord reste au dossier. Rien ne part chez le transporteur avant cela.</li>
 </ul>
 
@@ -29,7 +33,7 @@ author: "Lead Data & Cloud Architect"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Une seule réclamation, cela veut dire retrouver quatre choses : le reçu du transporteur, le poids noté par le terminal, le tarif en vigueur à la date, et le délai que le transporteur applique. Puis écrire la lettre. C'est une matinée de travail. Alors seules les plus grosses réclamations en obtiennent une.
+                Une seule réclamation, cela veut dire retrouver quatre choses : le reçu du transporteur, la quantité notée par le terminal, le tarif en vigueur à la date, et le délai que le transporteur applique. Puis écrire la lettre. C'est une matinée de travail. Alors seules les plus grosses réclamations en obtiennent une.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Au port, c'est pareil. Une déclaration est bloquée faute d'un papier, et des frais journaliers commencent à courir. L'avis arrive avec tout le reste de la nuit. Le temps que quelqu'un rattache le blocage à la facture, les frais courent depuis des jours.
@@ -44,13 +48,16 @@ author: "Lead Data & Cloud Architect"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Les contrôles tournent la nuit sur vos propres enregistrements. Le matin, la file est ce qui s'est vraiment passé, classé par ordre, avec les pièces jointes. Ce n'est pas un tableau de bord où aller chercher.
+                Les contrôles tournent sur vos propres enregistrements, et la file du matin est ce que ces enregistrements disent vraiment, classée par ordre, avec les pièces jointes. Ce n'est pas un tableau de bord où aller chercher. Le corollaire mérite d'être dit, parce que la plupart des produits le cachent : ne branchez rien et la file est vide. Elle ne s'ouvre pas sur des exemples travaillés qui ressemblent à vos lignes. C'est ainsi qu'elle s'est comportée une fois, et cela a été retiré.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Une réclamation arrive déjà montée : le reçu, le relevé, le tarif à la date, la date limite, et une lettre rédigée. Il ne reste à votre relecteur qu'une question, la seule qui vaille son temps : est-ce que le dossier tient ?
+                Côté port, l'arithmétique est de la bonne espèce. Le nombre de jours d'immobilisation du conteneur, multiplié par les frais journaliers portés sur la déclaration, et rien d'autre. Les droits de douane sont volontairement laissés hors de ce chiffre : ils sont dus de toute façon, que le conteneur bouge aujourd'hui ou dans une semaine, et les ajouter gonflerait l'exposition du montant d'une facture que personne n'a évitée. Ce qu'on vous montre, c'est le frais qui était évitable, un nombre plus petit et plus utile que celui qu'impriment la plupart des outils.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Une réclamation arrive déjà montée : la déclaration, le blocage et le motif invoqué, les documents qui manquent au dossier, l'écart de quantité s'il y en a un, et une lettre rédigée. Il ne reste à votre relecteur qu'une question, la seule qui vaille son temps : est-ce que le dossier tient ?
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Valider met fin au travail au lieu de le lancer. Le message au transporteur, la date limite et la mise à jour de votre système de référence découlent tous de la validation. Plus tard, la raison d'un dépôt se lit au dossier. Pas dans les souvenirs de quelqu'un.
+                C'est la validation qui envoie. Et là où une étape derrière la validation n'a pas encore d'implémentation &mdash; l'écriture en retour dans votre système de référence en est l'exemple réel &mdash; la réponse nomme cette étape comme non exécutée au lieu de déclarer toute l'action faite. Personne n'apprend donc trois semaines plus tard que le dépôt n'est jamais parti. Plus tard, la raison d'un dépôt se lit au dossier. Pas dans les souvenirs de quelqu'un.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(124,58,237,0.05)] shadow-2xl">
@@ -66,6 +73,13 @@ author: "Lead Data & Cloud Architect"
              </ul>
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez une ligne ou un transporteur, et un trimestre de factures.</p>
         </div>
+    </div>
+
+    <div class="border-l-2 border-stone-700 pl-5 mb-16">
+        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Statut : hypothétique &mdash; non mesuré</p>
+        <p class="text-base text-stone-500 font-medium">
+            La réclamation et le blocage au port décrits ci-dessus sont dessinés pour montrer la forme du travail. Ce ne sont pas les comptes rendus d'une mission chez un client. Nous ne publions aucun taux de recouvrement, aucun montant récupéré et aucun nom de client, parce que nous ne les avons mesurés ni sur vos enregistrements ni sur ceux de personne d'autre &mdash; et un taux de recouvrement tiré des lignes de quelqu'un d'autre ne vous dirait rien des vôtres.
+        </p>
     </div>
 
     <div class="text-center">

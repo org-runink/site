@@ -14,7 +14,8 @@ deck: |
   and drafts the fix — the order to hold, the reroute, the declaration, the
   claim — for a named person to approve.
 
-  **Nothing happens without that approval.**
+  **A drafted action waits. Approving it is what sends it, and the approver's
+  name goes on the record.**
 register:
   - { page: 2,  title: "What this document is" }
   - { page: 3,  title: "The problem, in your terms" }
@@ -26,11 +27,11 @@ register:
   - { page: 10, title: "How it works, in four steps" }
   - { page: 11, title: "Rules Recon: what you think you enforce" }
   - { page: 12, title: "Actionable Twins: one queue, ranked" }
-  - { page: 13, title: "Hypothesis Lab: test it before you commit" }
+  - { page: 13, title: "Hypothesis Lab: state it before you commit", mark: "drawn" }
   - { page: 14, title: "Fetch Center and Maturity Center" }
-  - { page: 15, title: "What the analysis actually covers" }
-  - { page: 16, title: "What arrives in the queue" }
-  - { page: 17, title: "The numbers are computed, not written" }
+  - { page: 15, title: "What the analysis actually covers", mark: "drawn" }
+  - { page: 16, title: "What the queue is made of", mark: "drawn" }
+  - { page: 17, title: "The numbers are computed, or they are absent" }
   - { page: 18, page_end: 23, title: "Six problems, worked through", mark: "hypothetical" }
   - { page: 24, title: "A working day", mark: "hypothetical" }
   - { page: 25, title: "Reaching it from where the work happens" }
@@ -41,7 +42,7 @@ register:
   - { page: 30, page_end: 32, title: "The questions a buyer asks" }
   - { page: 33, title: "Who this is for" }
   - { page: 34, title: "What adopting it involves" }
-  - { page: 35, title: "The commercial shape" }
+  - { page: 35, title: "The commercial shape", mark: "not-measured" }
   - { page: 36, title: "The argument in one page" }
   - { page: 37, title: "The next step" }
 ---
@@ -60,6 +61,37 @@ looks at, what it produces, who approves it, and where it all runs.
 If the mechanism makes sense to you, the numbers will follow from your own
 operation, measured in your own installation. If it does not, no case
 study would have saved it.
+
+### What this document refuses to claim, and why that is the product
+
+One thing is worth stating before the mechanism, because it is the
+engineering property the rest of this paper rests on, and because most
+documents in this category do the opposite.
+
+**FACE does not publish a figure for what it saves you, and it cannot.**
+Not as a matter of modesty. Four places in the software once produced such a
+figure, and each one was a made-up multiplier applied to a real number:
+spend times a constant, distance times an invented rate per kilometre, a
+reserve times a fraction, unused capacity times a fraction. All four were
+deleted, and the test that now stands in their place asserts that the
+software's derived savings total is **zero** — because no rate in the
+codebase can honestly turn a distance, a spend or a reserve into a saving,
+and a board built out of invented rates is worse than an empty one.
+
+That is the shape of every claim in this paper. Where a quantity is
+calculated, the method is named. Where it is not calculated, the software
+carries the absence as a typed state with a reason attached — not as a zero,
+and not as a plausible number. Two sentences from the codebase explain the
+discipline better than any feature list:
+
+> **A rule with no check is a comment.**
+>
+> **A test a comment can satisfy certifies the exact condition it exists to
+> detect.**
+
+A buyer can check this in the way that matters: ask every vendor in this
+category which of their numbers is an arithmetic result and which is a
+constant somebody chose, and watch how long the answer takes.
 
 A note on the name. The *claims* in Fulfilment Autonomous Claims Engine is
 where the product started, and recovering money you are owed is still one
@@ -86,8 +118,8 @@ assemble it.
 FACE assembles it. It connects to the systems you already run, works out
 what the combined picture means, and produces a specific, reviewable
 recommendation with the underlying records attached. A person reads it,
-approves or rejects it, and the approved ones carry through to the drafts
-and updates the action actually requires.
+approves or rejects it, and the decision is recorded against the
+recommendation with their name on it.
 
 That is the whole product. Everything that follows is detail about how
 well it does it, and where it runs.
@@ -290,6 +322,13 @@ your own figures and the result is yours: something you can show your working
 for, and something that will survive a finance director asking where it came
 from — which no number printed in a vendor's whitepaper has ever done.
 
+One thing to be clear about before the method: **this is a spreadsheet you
+build, not a screen in the product.** FACE does not compute your payback
+period, and no part of it produces a figure for what Runink saved you — see
+the first chapter for why that field no longer exists anywhere in the
+software. The method below is offered as a thing you own and can audit,
+which is the only kind of business case that holds up in the second meeting.
+
 ### First, be exact about what the mechanism moves
 
 Most calculations in this category quietly credit the software with things
@@ -463,32 +502,52 @@ records it was derived from.
 
 It is not a paragraph of prose, and it is not an alert. It is a specific
 proposed action, stated as an action, with the evidence attached and a
-severity band and an estimated impact figure computed for your data.
+severity band.
 
-An example, in the form an operator sees it:
+A claims artifact, for instance, is a typed record carrying a claim
+reference, a status, the amount in dispute as it was read out of your own
+documents, the reasoning for recovery, and the source records behind each
+step — with an approve, a reject and an edit against it.
 
-> **File customs refund claim CN-4471**
-> Basis: terminal scale reading 21,840 kg against the carrier's receipt for
-> 23,100 kg.
-> Estimated recovery: shown in your currency, computed from your records.
-> Severity: critical.
-> `[Approve]` `[Reject]` `[Edit]`
+What it does **not** carry is a figure for what Runink recovered or saved
+you. That field does not exist on the wire any more, in any of the four
+places it once did. This paper declines to print a specimen artifact with
+numbers in it for the same reason: a reader treats a worked example as a
+screenshot, and a screenshot of a figure nothing computes is the exact thing
+the deletion was for.
 
 The operator can see why. Every artifact shows the reasoning steps and the
 source records that produced it, so the review is a review of evidence
 rather than an act of faith in a machine.
 
-### What happens on approval
+### What happens on approval, stated exactly
 
-Approval is the point at which anything leaves the system. Before it, the
-recommendation is a proposal. After it, the follow-through work is drafted:
-the email that has to go to the carrier, the calendar entry for the
-deadline, the update that has to land in the operational system of record.
+Approval is the point at which the decision is committed and the work the
+action requires can be sent. What that means in practice is narrower than
+the category usually implies, and the software is precise about it rather
+than reassuring.
 
-The approval itself is recorded against the artifact, with the name of the
-person who gave it. Six months later, when someone asks why a claim was
-filed or why an order was held, the answer is in the artifact, not in
-somebody's memory.
+Approving an artifact records the decision, with the name of the person who
+gave it, as its own audited event. That much always happens. What happens
+next depends on the follow-through the action carries:
+
+- **Correspondence** — the email to the carrier or the customer — is sent
+  through a workplace account you have connected. If no such account is
+  connected, nothing is sent.
+- **A calendar entry** for a filing deadline and **an update written back
+  into your system of record** are drafted but **not carried out**. There is
+  no write path into an ERP in the product today.
+
+The reason to put that in a whitepaper is the mechanism that reports it.
+Every approval response carries two things: whether the decision was
+recorded, and a list of the steps that did **not** happen, each as a named
+token — *no workplace account connected*, *not implemented*. They are
+present on every response, including a partial run where the email went and
+the system update did not. The software tells you which half ran.
+
+Six months later, when someone asks why a claim was filed or why an order
+was held, the answer is in the artifact — including the part of it that the
+software never actually performed.
 
 ### Why this shape
 
@@ -502,14 +561,16 @@ leaves the approving where it belongs.
 The product runs one loop, continuously: **fetch, extract, reason,
 recommend.**
 
-![A double rule runs the width of the picture, and there is exactly one way through it: a ring with a tick in it, which is a named person. Above the line, your systems sit outside the rule as a scatter of blocks of different sizes, and a single one-way arrow reads from them. The four steps are told apart by how organised the marks become rather than by boxes or arrows: scattered, then aligned in columns with the links between them drawn, then measured bars kept a clear distance from a separate rounded shape for language, then a ranked queue of bars of decreasing length, each with its own small evidence tag. One strand leaves the queue and arrives at the ring. Below the line, the work goes out as a solid block, and the record is two sheets with a gap between them, only the upper one carrying a name mark. A last line leaves below the rule, runs left past where the rule begins, and comes back up outside it into your systems.](figures/whitepapers/face-proposal-gate.svg "Read it as a gate rather than a pipeline. Everything above the line is a proposal, and one ring is the only way through.")
+![A double rule runs the width of the picture, and there is exactly one way through it: a ring with a tick in it, which is a named person. Above the line, your systems sit outside the rule as a scatter of blocks of different sizes, and a single one-way arrow reads from them. The four steps are told apart by how organised the marks become rather than by boxes or arrows: scattered, then aligned in columns with the links between them drawn, then measured bars kept a clear distance from a separate rounded shape for language, then a ranked queue of bars of decreasing length, each with its own small evidence tag. One strand leaves the queue and arrives at the ring. Below the line, the work goes out as a solid block, and the record is two sheets with a gap between them, only the upper one carrying a name mark. A last line leaves below the rule, runs left past where the rule begins, and comes back up outside it into your systems.](figures/whitepapers/face-proposal-gate.svg "Read it as a gate rather than a pipeline. Everything above the line is a proposal; the ring is a named person approving, and the two sheets below it are the decision and the execution kept apart.")
 
 Read it as a gate rather than a pipeline. Everything above the double line
 is proposal: the system reads your systems without changing them, assembles
 what it read, computes the quantities, and files a ranked list of things it
-thinks should happen. Nothing crosses the double line without a named person
-putting their name to it, and what they decided is recorded separately from
-what was actually carried out.
+thinks should happen. A drafted action sits there and does nothing;
+approving it is the act that sends it, the approver is named, and **what
+they decided is recorded separately from what was actually carried out** —
+which is the part of this picture worth arguing about, and the subject of a
+later chapter.
 
 ### Fetch
 
@@ -610,7 +671,7 @@ Because it is the cheapest question in the building and nobody can answer
 it. An auditor asks whether you enforce a control. The honest answer is
 usually *we believe so*. Rules Recon converts that into a list, with each
 rule stated in plain English and naming the source it was read out of —
-data, document, sensor stream or system configuration.
+data, document, telemetry record or system configuration.
 
 Shadow rules are the ones that surprise people. They are the reason the
 system behaves in ways the policy cannot explain.
@@ -627,40 +688,79 @@ can act on rather than only look at.
 
 Every agent's output — compliance, finance, operations, planning, savings,
 sustainability, procurement — consolidates into that one ranked list, each
-entry carrying an estimated impact figure and a severity band.
+entry carrying a severity band and whatever quantities its own card type is
+defined to hold.
+
+### A note on what the queue starts with
+
+A standard installation starts **empty**, and this is worth saying plainly
+because it is the opposite of how the category demonstrates itself.
+
+The routines that populate the queue from bundled example data are gated
+behind a demonstration setting, and every file they read is a seed file.
+With that setting off — which is how a real instance runs — the queue
+derives nothing, and it shows you nothing, until your own connections and
+your own questions put something in it. The cockpit also carries a chip that
+states which kind of instance you are looking at: a demonstration serving
+prepared rows, or your own. The deployment always knew; the surface used not
+to say.
+
+So a populated screen on somebody else's laptop tells you about the screen.
+Insist on a queue filled from a credential you issued.
 
 ### What an operator does here
 
 They work down the list. For each entry: read the recommendation, read the
 evidence, approve, edit or reject.
 
-Approved actions carry through to a view showing the card and its outcome.
-Financial actions are tracked separately on a savings board, moving through
-their stages so that a recovery approved in January can be followed to the
-money arriving.
+Decisions are recorded against the card with the actor's name, and approved
+and rejected are the only two terminal states the server writes. Financial
+actions are gathered on a separate board that splits what has been
+identified from what an operator has actually committed to — two figures
+that must differ while anything is still pending, or the split is decorative.
+
+Both figures are sums of amounts that came out of your own records. Neither
+is a Runink estimate of your recovery, and with nothing but the software's
+own derivations behind it the identified total is zero, by test.
 
 ### Why the ranking matters more than it sounds
 
 An operations team's real constraint is not information, it is the order in
-which they spend the day. A queue ranked by value at stake and severity
-makes that ordering a property of the system rather than a judgement each
-person makes independently every morning.
+which they spend the day. A queue ranked by severity and by the value the
+underlying records state makes that ordering a property of the system rather
+than a judgement each person makes independently every morning.
 
 It also makes the day's work measurable. What was in the queue, what was
-approved, what it was worth — those are three questions with answers, which
-is not the normal condition of exception management.
+approved, and what the approved items were worth according to the documents
+behind them — those are three questions with answers, which is not the
+normal condition of exception management.
 
-### Nothing fires on its own
+### What the human gate actually is
 
-This is the part worth repeating to a risk committee. Consequential actions
-are gated by human approval. The system proposes; a named operator
-approves; the approval is recorded against the artifact.
+This is the part worth getting right in front of a risk committee, because
+the reassuring version of it is not true and a committee will eventually find
+that out.
+
+What is true: a drafted action waits in the queue and does nothing. The
+approval call takes the approver's decision, acts only on a stored action,
+and writes an audited decision event naming the actor. Approving is the act
+that sends. Edits are recorded with the name of the person who made them.
+
+What is **not** true, and is claimed by most products of this kind: a single
+blanket switch that gates everything leaving the building. FACE had a
+setting that read like one. It was consulted by nothing, so setting it
+achieved nothing — and the approval guard that stood in the execution path
+was keyed to a field no part of the software ever populated, so its condition
+could never become true. Both were removed rather than left standing, on a
+principle stated in the codebase and repeated here because it is the whole
+argument: *a control that cannot fire is worse than none, because it answers
+"is this handled?" with a confident yes.*
 
 The value of autonomy here is in the drafting, the evidence assembly and
 the ranking — the expensive, slow, skilled work. The judgement stays with
 the person accountable for it.
 
-## Hypothesis Lab: test it before you commit
+## Hypothesis Lab: state it before you commit
 
 Some decisions are too large to make from a queue.
 
@@ -669,36 +769,89 @@ season. Cutting a safety margin that may be doing more harm than good.
 These are decisions where being wrong is expensive and being slow is also
 expensive, which is the worst combination a management team faces.
 
-**Hypothesis Lab** is where those are examined before they are committed.
+**Hypothesis Lab** is where those are written down and argued before they are
+committed.
 
-### How it is used
+### Be exact about what this is, because the category is vague about it
 
-An operator states a scenario in ordinary words. The lab tests it against
-your own history and your own records — not a generic industry model — and
-returns what the evidence supports.
+This chapter is marked *drawn* and the mark is doing real work. The line
+below is where it falls.
 
-If the idea holds, it can be promoted into the Actionable Twins queue and
-become work. If it does not hold, it stops there, having cost an afternoon
-rather than a quarter.
+**The lab is not a simulation.** It does not take a copy of your records, it
+does not run a model of your operation, and it does not compute an outcome.
+There is no sandbox in the sense the word usually carries, and any vendor
+including this one who lets you believe otherwise has made your evaluation
+worse.
+
+What it actually is: you state the change in ordinary words, and you hand it
+the **rules that govern the thing you are changing** — the reorder points,
+the lead times, the service commitments, the reserve assumptions — together
+with the variables you think matter and the order you think they act in. That
+material, plus the map of the domains and relationships drawn from your
+connected systems, plus public market research where the scenario calls for
+it, is assembled into one body of context and reasoned over. What comes back
+is a ranked set of consequences, each tied to the rule it follows from.
+
+### What the quantitative blocks in the output are, and are not
+
+The reasoning is accompanied by two structured blocks, and a careful reader
+should know exactly what they contain, because they look like measurements
+and they are not.
+
+A **causal block** takes the variables you supplied, chains them in the order
+you listed them, applies a fixed effect size along each link, and reports
+what a ten per cent move in each one does to the rest. The chain is the one
+you asserted by listing them in that order — it is an input, not a discovery,
+and the code that builds it says so at the line that builds it.
+
+A **belief block** discretises your variables into low, medium and high
+against fixed probability tables and reports a posterior and a Bayes factor.
+The hypothesis it tests — *does this scenario have a positive impact* — is
+posed with a fixed prior and fixed likelihoods, so the Bayes factor it prints
+is the same number every time. It is a restatement of your own assumptions in
+probabilistic form. It is not evidence about your business.
+
+Saying that costs nothing, because the value was never in those numbers.
+
+### Where the value actually is
+
+**In the writing down.** Stating the hypothesis forces the assumptions into
+the open: which variables, in what order, against which rules, with what
+effect assumed. That is the step teams skip, and it is the reason two people
+can argue for an hour and discover they were discussing different plans.
+
+**In the consequence being attributable.** Each item that comes back names
+the rule it collides with, so you can disagree with it on the merits and
+point at the rule while you do. An argument you can check is a different
+object from a number you have to accept.
+
+**In a projection never being presented as a decision.** A projection handed
+over as an answer moves the judgement from somebody accountable to a piece of
+software that is not. The lab puts the options in a row; the room picks one.
+
+You can also make it rough on purpose. Run a lane a week late. Take the
+second source away. A plan that only holds when the week goes well falls over
+here, while it still costs nothing to find out.
 
 ### The discipline this introduces
 
-The important word is *promote*. A scenario does not become an action
-because somebody senior liked it. It becomes an action because it survived
-a test against the data and was then approved by a named person.
+The important word is *promote*. A scenario does not become an action because
+somebody senior liked it. It becomes an action when somebody named moves it
+into the queue and approves it, and both of those facts go on the record
+together.
 
-This is a governance property as much as an analytical one. It creates a
-record of why a structural decision was taken, at the moment it was taken,
-which is exactly the record that does not exist when a decision is made in
-a meeting.
+That is a governance property rather than an analytical one, and it is the
+honest description. It creates a record of why a structural decision was
+taken, at the moment it was taken, which is exactly the record that does not
+exist when a decision is made in a meeting.
 
 ### Where the outside world comes in
 
-Scenario work is not confined to your own records. The hypothesis agent
-reads outside market, competitor and freight-rate signals alongside the
-mindmap of your connected systems — the communities your data falls into
-and the lines between them — so a question about lane cost is examined
-against the market as well as against your own history.
+Scenario work is not confined to your own records. Where the scenario
+concerns a market question, the public web is searched and what is found is
+added to the context alongside the map of your connected systems — the
+communities your data falls into and the lines between them. That widens what
+the argument can draw on. It does not turn the argument into a measurement.
 
 ## Fetch Center and Maturity Center
 
@@ -714,10 +867,18 @@ Each run leaves a step-by-step record you can replay. That is the
 difference between an answer and an answer that survives an audit: you can
 go back and see the run, the sources it touched, and the steps it took.
 
-An operator can also skip the connection entirely and upload a spreadsheet
-or a document directly, receiving root-cause and savings analysis on the
-file itself. This matters more than it sounds during an evaluation, because
-it means the first useful output does not wait on an integration project.
+An operator can also skip the connection entirely and upload a file
+directly. A set of agents — posture, rules, documentation, compliance,
+finance, routing — read it and stream their findings back as they are
+written. Two limits are worth knowing before you judge that path on its
+output. It reads **delimited text** — comma- or tab-separated exports, plain
+text — as text; a binary workbook or a PDF is passed through as a sample
+rather than parsed into rows. And what comes back is **prose from a language
+model, not arithmetic**: if a dollar figure appears in it, that figure was
+composed rather than calculated, which is precisely the distinction the
+chapter on quantities is about. Treat the upload path as a fast read on
+whether the material is legible to the system, not as a finding you can take
+to a carrier.
 
 ### Maturity Center — the direction of travel
 
@@ -727,6 +888,17 @@ Maturity Center tracks how the operation is doing over time and produces a
 phased plan from where it is now to where it intends to be.
 That plan arrives as a Decision Artifact like any other: reviewable,
 evidenced, approvable.
+
+One property of it is worth naming, because it is the kind of thing that only
+gets built after it has gone wrong once. **The model enriches the posture; it
+does not produce it.** The domains, grades and risk checks are derived
+deterministically from the shape of your data, in milliseconds, and the
+language model is then asked to add commentary on top. The two passes are
+ordered so that a reasoning plane which is saturated, slow or refusing
+outright cannot stop the measured posture from being served — an earlier
+arrangement put the deterministic pass behind the model call, and a busy
+machine produced an empty Maturity Center while a complete assessment sat one
+function away.
 
 ### Why both exist
 
@@ -761,7 +933,7 @@ business terms rather than technical ones.
 customer.
 
 **Rules Recon.** Business and governance rules read out of data, documents,
-sensor streams and system configuration, each stated in plain English and
+telemetry records and system configuration, each stated in plain English and
 naming the source it came from.
 
 **Predictive maintenance.** When a piece of equipment is likely to need
@@ -771,13 +943,31 @@ maintenance history and its vehicle-tracking data.
 **Reverse logistics.** Returns, warranty claims, refurbishment and the
 decisions that keep material in use rather than in a skip.
 
-**Sensor readings.** Actions derived from live measurement streams —
+**Sensor readings.** Actions derived from measurement records —
 temperature, humidity, vibration, location, speed, fuel, engine
 diagnostics — covering refrigerated-cargo integrity, vehicle monitoring,
-and dangerous-goods and weight compliance.
+and dangerous-goods and weight compliance. Read the next paragraph with it,
+because the word *live* is load-bearing and this paper is not claiming it.
 
-**Route Twin.** Journeys costed across more than one form of transport —
-road, rail, sea, air — with distance, duration and cost estimated for each.
+**What there is no path for.** FACE has **no live sensor or telemetry
+integration**, and no connector for a warehouse, transport, order or yard
+management system as such. Those system types exist in the connection
+registry and resolve to a placeholder that deliberately fails, so that the
+bundled example telemetry can be read during a demonstration. The readings
+this agent works on have to arrive the way everything else does — as a table
+in a database you connect, or an export your monitoring platform already
+produces. That is a real path and a common one. It is not a sensor feed, and
+an operator should not be told it is.
+
+**Route Twin.** An origin-to-destination road journey, with distance,
+duration and the route line itself, obtained from the routing provider you
+connect. It carries **no cost and no saving**: the routing provider returns
+no cost, nothing else in the product can compute one, and the field is left
+empty rather than filled with an estimate. Where no routing provider is
+connected, the call reports itself unavailable — it used to return an empty
+card that a client could not tell apart from a successful optimisation, which
+painted a savings panel with nothing in it. Journeys across more than one
+form of transport are not modelled.
 
 **Documentation.** The formal trade and shipping papers a consignment
 travels with, including customs declarations.
@@ -788,18 +978,35 @@ still images of transport hubs, airports and infrastructure.
 **Voice.** Spoken commands, answered hands-free and routed with the
 speaker's location taken into account.
 
-**Hypothesis.** Business decision scenarios drawn from the mindmap of your
-connected data, together with outside market, competitor and freight-rate
-signals.
+**Hypothesis.** Business decision scenarios argued against the rules you
+supply and the mindmap of your connected data, with public market research
+added where the scenario calls for it. See the chapter on the lab for what
+this does and does not compute.
 
 **Twins.** The action cards themselves, with the approve and reject flows
 and the drafts an approved action requires.
 
-## What arrives in the queue
+## What the queue is made of
 
-Decision Artifacts arrive as typed cards. The type determines what the card
-shows, so a person reviewing one sees the fields that decision actually
-needs.
+Decision Artifacts are typed cards. The type determines what the card shows,
+so a person reviewing one sees the fields that decision actually needs.
+
+This chapter is marked *drawn*: it is the list of card types the software
+defines and the fields each one carries. It is not a claim that a fresh
+installation produces all of them, and the earlier note on the empty queue
+applies — what you see depends on what you have connected and what you have
+asked.
+
+One rule runs through the whole list. **Where a field would hold a figure
+that nothing in the product can compute, the field is empty.** Several of
+these card types used to carry one — a consolidation saving, a per-kilometre
+route saving, a percentage of spend, an abatement rate, a cover cost per
+unit — and each was a constant somebody picked. They are gone, and they
+cannot come back by the side door: a saved card is compared field by field
+against what today's derivations produce for the same identifier, and any
+number the current software no longer computes is stripped before the card
+reaches a screen. Deleting the arithmetic was not enough on its own, because
+yesterday's snapshot still had the figure in it.
 
 **Customs clearance.** A held entry with the port, the reason it is held,
 the specific documents that would release it, days held and the port
@@ -810,32 +1017,40 @@ answerable for the declaration and the duty, carrying its tariff
 classification and the duty at stake.
 
 **Cold chain.** A refrigerated asset that went outside its temperature
-range, the product at risk, the value at risk and the corrective dispatch
-action.
+range, the product at risk, the value of the load as the record states it,
+and the corrective dispatch action. The value is read off the consignment
+record, not estimated by the software.
 
-**Claims.** Claim number, status, amount and the reasoning for recovery.
+**Claims.** Claim number, status, the amount in dispute and the reasoning for
+recovery.
 
 **Freight forwarding.** A lane where separate bookings could be combined,
-with the bookings, how full the trailers ran on average, current spend and
-the saving available.
+with the bookings, how full the trailers ran on average and the current
+spend. No figure for the saving available — the rate that used to produce one
+was invented.
 
 **Cross-border trucking.** A crossing where trucks are waiting longer than
 booked, with the crossing, the carrier, the wait measured against the
-scheduled transit, the loads affected, the cost of the waiting time and the
-underlying cause.
+scheduled transit, the loads affected and the underlying cause where the
+record names one. Where the cause is not recorded, the card says *not
+recorded* rather than supplying a likely one.
 
 **Maintenance.** Equipment identifier, how likely a failure is, what kind of
-failure, the intervention and the downtime it would avoid.
+failure and the intervention.
 
-**Route.** An origin-to-destination journey with distance, duration,
-estimated cost saving and a map.
+**Route.** An origin-to-destination journey with distance, duration and the
+route line. No cost, and no saving.
 
-**Emissions.** Daily and annualised freight CO₂e, the worst-emitting lane
-and a specific action to reduce it, with the method of calculation stated
-so the figure survives audit.
+**Emissions.** Daily and annualised freight CO₂e and the worst-emitting lane,
+derived deterministically from lane distances against published emission
+factors, with the factor and the basis stated on the card so the figure can
+be audited. The abatement percentage the card once carried has been removed:
+the footprint was calculated, but the proportion of it you could avoid was a
+round number nobody measured.
 
-**Spend analysis.** Total spend, savings identified, the largest categories
-and a recommendation for combining purchases.
+**Spend analysis.** Total spend, the largest categories and a recommendation
+for combining purchases. No savings figure: the one that used to appear was a
+fixed fraction of the spend.
 
 **Sales-and-operations planning.** How well the forecast has matched
 history, the stock positions behind it, and a planning recommendation.
@@ -855,10 +1070,14 @@ vendors.
 where it intends to be.
 
 **Email draft, calendar invite and system update.** The concrete
-follow-through an approved action needs, so that approving is the end of
-the work rather than the beginning of it.
+follow-through an approved action needs, drafted with its details filled in.
+Of the three, only the email is sent by the software, and only through a
+workplace account you have connected; the other two are drafted and reported
+as not executed. That is stated again here rather than once, because a reader
+who skims a card list is exactly the reader who would otherwise assume all
+three land.
 
-## The numbers are computed, not written
+## The numbers are computed, or they are absent
 
 There is a failure mode in this category of product that a careful buyer
 should ask every vendor about: language models are fluent, and fluency
@@ -868,6 +1087,38 @@ FACE separates the two jobs. The language model handles language —
 reading documents, explaining findings, drafting correspondence. Quantities
 are produced by long-established statistical methods, which calculate
 rather than compose.
+
+And there is a third case, which most products in this category do not have
+and which is the one worth pressing on: **the quantity that could not be
+produced at all.** A fluent system rounds that to zero. A careful one makes
+the absence representable, and FACE does it four separate times as typed
+fields on the wire rather than as a greyed-out box in a user interface.
+
+- A health response carries a **list of the fields this build does not
+  measure**, because without it there is no way to tell a measured zero from
+  nobody having measured. Several values on that screen were once derived from
+  a goroutine count and served alongside two that were real, with nothing to
+  tell them apart.
+- A usage response carries an **unmeasured reason**, for the same argument
+  made in the codebase in one line: *absence has to be representable, not
+  rounded to zero.* Zeroing a fabricated charge removed the lie but not the
+  ambiguity, because a never-measured quantity still arrived looking like a
+  measured nothing.
+- A compliance assessment has a third verdict, **unable to assess**, with the
+  reason attached and spoken text that says outright that this is *not* a
+  finding of compliance.
+- The cockpit's provenance marker carries **failed** as a member of the type
+  rather than as a hidden badge, so every place in the interface that
+  switches on provenance is forced by the compiler to say what it does with
+  it.
+
+One consequence is commercial rather than technical, and it is the sentence
+from the codebase that a finance director should be shown: **never bill on
+unmeasured usage.** Where the metering for a quantity is not wired, the charge
+is nothing — not a plausible figure derived from something adjacent. An
+earlier version of that path produced a fabricated amount from invented
+processor-seconds and handed it to a payment provider, masked only by an
+allowance being larger than the invention.
 
 ### What does the computing
 
@@ -913,6 +1164,14 @@ specific to a place on an object rather than a general impression.
 Because it changes what a finding is worth in an argument. A figure that
 came out of a method tested against your own history can be defended to a
 carrier, an auditor or a board. One that came out of a sentence cannot.
+
+And because the same discipline is what decides whether a product of this kind
+is still trusted in month three. Around seventy test files in this codebase
+exist for no purpose other than to stop the software asserting something it
+did not establish — that a consensus surface was unauthenticated, that a
+simulator's output could be mistaken for evidence that a claim was filed, that
+an empty result was being served as a finding of nothing. They are not feature
+tests. They are the reason the chapters above can be checked.
 
 ## Six problems, worked through
 
@@ -1087,21 +1346,31 @@ delivery dates. What the alternatives cost, and how long they take.
 
 FACE does that assembly. The card names the incident, what kind of
 disruption it is, the orders it touches and the plan proposed to resolve
-them. Alternative journeys are costed across more than one form of
-transport — road, rail, sea, air — each with its own distance, duration and
-cost, so choosing between them is a comparison rather than a hunch under
-pressure.
+them. Where a routing provider is connected, an alternative road journey
+comes back with its distance, its duration and its route line, so the
+comparison is at least anchored to something measured.
 
-Signals the operation does not own are read alongside your own records —
-weather, traffic, fuel prices, freight rates — because a disruption is by
-definition something that started outside your systems and arrived in them.
+Here is where this paper stops short of what the category promises. **It does
+not cost those alternatives, and it does not compare road against rail, sea
+and air.** The routing provider returns no cost; nothing else in the product
+computes one; and the field stays empty rather than carrying a number derived
+from distance and a rate somebody chose. That is a real limit on this
+scenario, and the reason to state it is that a comparison which looks costed
+and is not is worse under time pressure than an honest pair of distances.
+
+Public sources are searched alongside your own records, because a disruption
+is by definition something that started outside your systems and arrived in
+them.
 
 Refrigerated cargo sits next to this and behaves the same way. A container
 that drifts above its range at two in the morning is a disruption in
-progress with a value attached: the product at risk is named, the value at
-risk is calculated, and the corrective dispatch is drafted and waiting when
-somebody opens the queue at eight. The window in which that is a save
-rather than a write-off is measured in hours.
+progress with a value attached: the product at risk is named, the value of
+the load is carried through from the consignment record, and the corrective
+dispatch is drafted and waiting when somebody opens the queue at eight. The
+window in which that is a save rather than a write-off is measured in hours.
+Read this one with the earlier paragraph on what there is no path for: the
+reading has to reach FACE as a record from your monitoring platform, because
+FACE does not take a sensor feed.
 
 ### Six — money you are owed
 
@@ -1125,12 +1394,18 @@ and the rest expire quietly. Everyone in the business knows this and nobody
 can fix it by trying harder.
 
 FACE changes the arithmetic by doing the assembly. The claim arrives as a
-card with a number, a status, an amount and the reasoning for recovery,
-with the supporting records attached, and the reviewer's job is the one
-they are actually good at: does this case hold. Approved recoveries move
-onto the savings board and through its stages, so a claim approved in
-January can be followed to the money arriving, which is the only version of
-this that a finance director will believe twice.
+card with a number, a status, the amount in dispute and the reasoning for
+recovery, with the supporting records attached, and the reviewer's job is the
+one they are actually good at: does this case hold. Approved recoveries are
+gathered on a board that keeps what has been identified apart from what an
+operator has committed to, so a claim approved in January can be followed,
+which is the only version of this that a finance director will believe twice.
+
+The amount on that board is the amount your own documents state. It is not
+Runink's estimate of your recovery, and no such estimate exists anywhere in
+the product — which is the honest answer to the question a finance director
+asks second, and a better one than a figure they would have been right to
+distrust.
 
 ### What the six have in common
 
@@ -1150,21 +1425,24 @@ The clearest way to describe a product is to describe a Tuesday.
 
 ### 06:40 — Overnight, without anyone present
 
-The recurring questions defined in Fetch Center have run. Sensor streams
-from refrigerated assets were read through the night. Carrier and customs
-positions were pulled. The agents worked over the results and filed their
-output.
+The recurring questions defined in Fetch Center have run. The table her
+refrigeration monitoring platform writes its readings into was queried on the
+interval she set. Carrier and customs positions were pulled. The agents
+worked over the results and filed their output.
 
 ### 08:15 — The operations lead opens the queue
 
-Actionable Twins shows the night's work, ranked. Fourteen items. The top
-one is critical: a refrigerated container went above range at 02:10, the
-product at risk is named, the value at risk is computed, and the corrective
-dispatch action is drafted and waiting.
+Actionable Twins shows the night's work, ranked. The top item is critical: a
+refrigerated container went above range overnight, the product at risk is
+named, the value of the load is carried through from the consignment record,
+and the corrective dispatch action is drafted and waiting.
 
 She reads the evidence — the temperature readings, the asset, the
-consignment. She approves. The dispatch instruction and the notification
-to the customer are drafted immediately.
+consignment. She approves. The notification to the customer is drafted and
+sent through the workplace account the installation is connected to. The
+dispatch instruction is drafted for her to send the way she sends dispatch
+instructions today, and the card says so: the response to her approval lists
+the step it did not carry out and why.
 
 The customer will hear about this from her, this morning, rather than from
 their own receiving dock on Thursday.
@@ -1189,13 +1467,14 @@ before approving it. The edit is recorded with her name on it.
 
 ### 11:00 — The claims review
 
-Nine claims artifacts, each with a claim number, a status, an amount and
-the reasoning for recovery. This is the hour that used to take a week,
-because the evidence assembly — the carrier's receipt, the weighbridge
-reading, the rate that applied — is already attached to each one.
+A set of claims artifacts, each with a claim number, a status, the amount in
+dispute as the documents state it, and the reasoning for recovery. This is the
+hour that used to take a week, because the evidence assembly — the carrier's
+receipt, the weighbridge reading, the rate that applied — is already attached
+to each one.
 
-She approves seven, edits one, rejects one where the reasoning does not
-hold. All the outcomes are recorded against the artifacts with her name.
+She approves most of them, edits one, rejects one where the reasoning does
+not hold. All the outcomes are recorded against the artifacts with her name.
 
 ### 14:00 — A question, asked out loud
 
@@ -1212,9 +1491,10 @@ agents the operations lead is using, and appears in the same queue.
 
 ### 17:00 — The board question
 
-The savings board shows what was approved this month and where each item
-has reached in its stages. That is the report, and it did not take a day to
-assemble.
+The board shows what was identified this month and, separately, what was
+actually approved. The two figures are different, the difference is the point,
+and both are sums of amounts that came out of her own documents. That is the
+report, and it did not take a day to assemble.
 
 ## Reaching it from where the work happens
 
@@ -1239,9 +1519,11 @@ pulled out of documents, tables pulled out of spreadsheets, structure
 pulled out of source repositories. The person uploading does not choose a
 route; they upload the file.
 
-**Direct file analysis.** A spreadsheet or document can be analysed on its
-own, producing root-cause and savings findings without a connection being
-configured first.
+**Direct file analysis.** A delimited export can be read on its own, without
+a connection being configured first, and several agents comment on it as the
+text streams back. What comes back is prose rather than calculated
+quantities — see the Fetch Center chapter for the limits, which are worth
+knowing before you judge the product on that path.
 
 **Four languages.** The operator interface ships in English, Spanish,
 French and Portuguese, which matters for any operation whose warehouse
@@ -1305,13 +1587,28 @@ platform's job rather than a task on somebody's list.
 Autonomy is only sellable to a risk committee if the controls around it are
 specific. These are the controls.
 
-### The person stays in command
+### The person stays in command, and here is the precise extent of it
 
-Consequential actions are gated by human approval. The system proposes; a
-named operator approves; the approval is recorded against the artifact.
+The system proposes. A drafted action waits in the queue and does nothing on
+its own. Approving it is the act that sends it, the approval is recorded
+against the artifact as an audited event naming the actor, and an edit is
+recorded with the name of whoever made it.
 
-This is a property of the design, not a setting. The queue is a queue of
-proposals.
+Two things are worth stating in the same breath, because a risk committee
+will ask and because the reassuring version of this claim is the one FACE
+deliberately withdrew.
+
+**There is no single blanket gate on everything that leaves.** There was a
+setting that read like one; nothing consulted it, so setting it achieved
+nothing, and it has been taken out rather than left in a document as a
+control. *A rule with no check is a comment.*
+
+**What the gate is instead is structural.** Of the three kinds of
+follow-through an approved action can carry, only correspondence is actually
+dispatched by FACE, and only through an account you connected. The other two
+are drafted and reported as not carried out, by name, on every response. A
+system with no write path into your ledger cannot write to your ledger by
+mistake, and that is a stronger guarantee than a switch.
 
 ### Identity between components
 
@@ -1337,6 +1634,25 @@ only by the account that owns them.
 Audit events are recorded as structured entries with a defined type rather
 than as free text, which means they can be queried rather than read.
 Personal identifiers inside them are replaced with a one-way code.
+
+### Redaction, with the calibration it deserves
+
+A redaction layer masks email addresses, payment card numbers, telephone
+numbers, national insurance and social security numbers, network and hardware
+addresses, and the contents of fields named as passwords, licence keys,
+secrets, tokens, webhooks and one-time codes. It is called at more than thirty
+points where material crosses a boundary, and the ordering inside it is
+deliberate: card numbers are matched before telephone numbers, because a
+telephone pattern applied first will swallow a card number and report it as
+masked.
+
+What should be said in the same paragraph, and is not said by anybody else in
+this category: **that layer has no automated test coverage.** It is
+implemented, it is wired in, and no test asserts that it masks what it claims
+to mask. This paper will describe what it does and will not describe it as
+verified, because one of those two sentences is checkable and the other is a
+promise. A buyer entitled to hold us to a control should ask for the test
+before they ask for the feature.
 
 ### Who sees what
 
@@ -1423,13 +1739,41 @@ Web pages, read by a browser the platform drives itself. Documents and
 images, with the text read out of scans and photographs. Source-code
 repositories. Live video from camera feeds.
 
-### Two properties worth noting
+### What is deliberately not on that list
+
+No warehouse, transport, order or yard management system, and no sensor or
+RFID feed. Those types can be named in a connection and they resolve to a
+placeholder that fails on purpose, so that bundled example data can be read
+during a demonstration. They are absent from the list above because listing
+them would be the single most misleading line this paper could contain.
+
+The honest path for that material is the third door described later: the
+export your warehouse or telemetry platform already produces, or the table it
+already writes to. That works, it is common, and it does not need a connector
+with a logo on it.
+
+### Four properties worth noting
 
 **Connections are tested at the moment they are created.** A connection that
-will not work says so there and then, in front of the person creating it,
-and the result distinguishes a live round trip to your system from a
-configuration that has been checked and stored. A test never reports a
-success it did not obtain.
+will not work says so there and then, in front of the person creating it.
+The answer is not a yes or a no — it distinguishes a live round trip to your
+system, a configuration stored without a live check being available for that
+source type, a source type the software does not know, a connection that no
+longer exists, and a failure to read the connection record at all. Five
+distinguishable answers, because four of them used to arrive as the same
+one.
+
+**A connector refuses rather than pretends.** Where a check cannot genuinely
+be performed it says so instead of passing. The reasoning is recorded at the
+line that does it, and it generalises to the whole product: returning success
+would make the screen print *connectivity verified* for a system nobody
+contacted. An empty source must read as empty and an unconfigured one as
+unconfigured; those are different sentences and a product that renders them
+identically is one you will stop trusting.
+
+**A connection without credentials cannot exist.** The credentials are written
+before the connection record, so a failure at that step leaves no row —
+rather than a connection that looks configured and cannot authenticate.
 
 **Nothing is replaced.** FACE reads the systems you have. It does not ask
 you to migrate off your transport system, your warehouse system or your
@@ -1517,20 +1861,43 @@ that could not be read, the measure is set aside and the remaining ones are
 re-balanced around it, rather than being scored as zero. A source that was
 never read cannot quietly depress a result and be mistaken for a finding.
 
-**Output that gives up on the data is discarded.** Analysis that comes back
-saying, in effect, that more information would be needed is not passed to
-you as a recommendation. It is dropped, and the arithmetic that can be done
-on what actually exists is done instead. "Insufficient data, please review"
-is not a decision, and putting it in a queue simply moves the work back to
-the person the queue was meant to help.
+**"There is not enough data here" must be sayable — and it is.** This one is
+worth the detail, because getting it wrong is subtle and the wrong version is
+the obvious version.
 
-**Confidence is a gate, not a decoration.** A proposed action that falls
-below the confidence bar is recorded, with the reason, and is not carried
-out. Separately, the action itself must be one of a named, permitted set —
-so a proposal outside that set stops there even if it arrives with high
-confidence attached. The two checks are independent on purpose: one asks
-whether the reasoning was strong enough, the other asks whether this is an
-action the system is allowed to propose at all.
+Filler is removed: where an analysis produces a real recommendation *and* a
+"review the inputs and re-run" line, the filler is stripped, because a queue
+padded with non-decisions moves the work back to the person it was meant to
+help. That rule is right, and it still stands.
+
+But it used to be applied unconditionally. So an analysis whose only honest
+output was *no data was returned for the requested lanes* was deleted
+entirely — and deleting it looked identical to the model having failed to
+produce anything parseable, which sent the caller down the substitution path,
+which on a standard instance substitutes nothing. The live behaviour was:
+delete the true answer, replace it with an empty one, show a blank screen.
+Worse than either outcome on its own.
+
+It now survives. An answer that consists only of *not enough data* reaches you
+as that answer, and is distinguishable from a failure to answer at all.
+
+**Where the software does act on its own, confidence is a gate.** There is
+one place in the product where something is carried out without a person
+reading it first, and it is not your operation — it is the installation
+repairing itself: restarting a worker, tripping a breaker, rolling back,
+scaling, notifying. That path has two independent checks. A remediation plan
+below a stated confidence floor is **recorded and not applied**, and the verb
+it proposes must be one of a named, permitted set, so a plan outside that set
+stops there however confident it is. There is also a single setting that
+narrows it back to one event type without a redeploy, because the first thing
+anyone wants during an incident caused by automation is a way to stop the
+automation.
+
+It is worth saying why that paragraph is in a whitepaper. Self-healing here
+was once wired, logged and metered — and structurally incapable of acting,
+because the only event that could reach the reasoner was one nothing emitted.
+It reported a capability it did not have, which is the same defect as a
+savings figure derived from a constant, wearing different clothes.
 
 **Instructions to do the wrong thing are refused before any reasoning
 happens.** An instruction to forge a tariff code, fake a delivery term,
@@ -1559,8 +1926,19 @@ FACE connects with the vendor's own driver, using an account you issue, and
 reads it in place. Every statement is checked before it is allowed to run,
 and only statements that read are permitted to execute — that is enforced by
 a validator that inspects the statement, not by a convention that everyone
-agrees to follow. A read-only account on your side and a validator on ours
-is two locks on the same door, which is the right number.
+agrees to follow. It walks the statement character by character rather than
+relying on a set of patterns applied in the right order, and the identifier
+rules are tight enough to be awkward on purpose — a double hyphen is rejected
+inside an identifier so that a source named `analytics-db` stays legal while
+something named to truncate a statement does not.
+
+And it documents its own limit in the file that implements it: a statement
+that unions a second table into a legitimate read passes every check in it.
+A read-only account on your side and a validator on ours is two locks on the
+same door, which is the right number — and the validator is the weaker of
+the two, which is why the account is not optional. A vendor who tells you
+their query guard is sufficient on its own has either not read it or is
+hoping you will not.
 
 **Through the system's own service interface.** Business applications that
 publish a service interface are read through it, with credentials you issue
@@ -1588,19 +1966,34 @@ that space only exists while they stay where they are.
 
 ### What actually happens to our systems when somebody approves something?
 
-The honest answer here is more useful than a reassuring one.
+Almost nothing, and the mechanism that tells you so is the best single answer
+in this document.
 
-Approval produces the follow-through the action requires: the correspondence
-that has to go to a carrier or a customer, prepared and ready to go, and the
-update your system of record needs, prepared as a specific instruction with
-its details filled in and shown to the approver before anything moves.
+What happens to your systems on approval is: **the correspondence is sent, if
+you have connected an account for it, and nothing else is written anywhere.**
+The calendar entry is drafted and not created. The update your system of
+record needs is drafted as a specific instruction with its details filled in,
+and is not applied — there is no write path into an ERP in the product today.
 
-The part worth knowing is how the record is kept. **The decision and the
-execution are recorded separately.** What a person decided is recorded as a
-decision, with their name on it. What was actually carried out is recorded
-as carried out, and a reference from a downstream system is produced only
-where a real effect actually occurred in one. An approval never reads as
-though something happened downstream when it did not.
+The reason to lead with that rather than bury it is the contract on the way
+back. **Every response to an approval carries two separate facts.** Whether
+the decision was recorded — which it is, even when nothing could be executed.
+And a list of the steps that did *not* run, each as a named token: *no
+workplace account connected*, *not implemented*. Both fields are set on every
+response, including a partial run where the email went and the system update
+did not, because a partial run is a real outcome and reporting the skips only
+when everything was skipped would hide it behind a success.
+
+Before that existed, "approved, recorded, but nothing was executable" left the
+server as a bare failure, byte-identical to a genuine one. A client could not
+tell them apart, so both of its sensible reactions were wrong: it retried a
+decision that had already been recorded, then gave up on it, and it showed the
+operator an error for a state change that had really happened.
+
+**The decision and the execution are recorded separately.** What a person
+decided is recorded as a decision with their name on it. What ran is recorded
+as having run, and a reference is minted only where something really did. An
+approval never reads as though something happened downstream when it did not.
 
 That distinction sounds like a technicality until the first time somebody
 asks, six months later, whether an action was taken. A record that conflates
@@ -1618,11 +2011,22 @@ surface is one thing you already control rather than several you do not.
 
 **It is not used to train anything.** No customer material is sent anywhere
 to be trained on, and there is no account with an outside model provider for
-it to be sent to. That is enforced mechanically as well as stated: a
-published list of outside model libraries and their network addresses is
-checked against the software before any change is accepted, and a change
-that introduced one would be refused rather than reviewed. It is a control,
-not a promise.
+it to be sent to. The architecture is the reason: there is no third-party
+model client anywhere in the software, and exactly one configurable inference
+endpoint, which points at a model server the installation runs itself.
+
+Now the calibration, because this is the claim a vendor is most tempted to
+overstate and the one a security reviewer is most entitled to test. **In FACE
+today that property is architectural and verifiable by inspection — it is not
+yet checked by a machine on every change.** The repository's commit-time checks
+validate agent definitions, not imports, so nothing would currently stop a
+future contributor adding such a dependency except review. A sibling product
+in the same organisation does run that scan in its build, which is how we know
+what the check looks like and what it costs; it is not yet wired here.
+
+We would rather write that paragraph than the one that claims a control we
+have not built. *A test a comment can satisfy certifies the exact condition it
+exists to detect* — and a whitepaper is a comment. Ask for the build log.
 
 **One organisation's material cannot surface in another's answer.** The
 search behind every answer is filtered by organisation before anything is
@@ -1754,10 +2158,12 @@ the reason — are the reason the confident answers are worth something. A
 system whose guesses and whose findings look identical from the outside gets
 ignored within a month, and deserves to be.
 
-And underneath all four: **nothing consequential happens without a named
-person approving it.** The autonomy is in the assembly, the drafting and the
-ranking — the slow, skilled, expensive work. The judgement stays with the
-person accountable for it, and their name stays on the record.
+And underneath all four: **a drafted action waits until a named person
+approves it, and there is almost nothing the software can do to your systems
+even then.** The autonomy is in the assembly, the drafting and the ranking —
+the slow, skilled, expensive work. The judgement stays with the person
+accountable for it, their name stays on the record, and what the software did
+not do is on the record beside it.
 
 ## Who this is for
 
@@ -1773,9 +2179,11 @@ your customer does, and you have the fix in front of you when you do.
 You are carrying losses classified as a cost of doing business, and
 recoveries that never appear because they were never identified. FACE
 produces claims with the evidence assembled and the reasoning stated, and
-tracks approved financial actions through their stages on a savings board.
-The specific promise: recoveries become a managed pipeline rather than an
-occasional heroic effort.
+keeps what has been identified separate from what has been approved. The
+specific promise: recoveries become a managed pipeline rather than an
+occasional heroic effort — with every amount on it traceable to one of your
+own documents, and no Runink estimate of your recovery anywhere on the
+screen.
 
 ### The head of planning
 
@@ -1808,9 +2216,12 @@ review, because the data does not go anywhere.
 
 You want the operation to catch its own problems and you want the
 improvement to be visible. Maturity Center tracks how the operation is
-doing over time and produces the phased plan; the savings board shows what
-was approved and what it recovered. The specific promise: operational
-improvement becomes something you can read, quarter over quarter.
+doing over time and produces the phased plan; the financial board shows what
+was identified and what was approved. The specific promise: operational
+improvement becomes something you can read, quarter over quarter — and the
+figure you read will be smaller and more defensible than the one a competing
+vendor will show you, for a reason this paper states outright in its first
+chapter.
 
 ## What adopting it involves
 
@@ -1820,11 +2231,12 @@ The same software that runs in production runs as it is on a single
 workstation. An evaluation does not require infrastructure to be set up
 first, and it does not require a data migration.
 
-The fastest first result comes from uploading a file — a spreadsheet of
-freight invoices, a folder of claims correspondence, two years of monthly
-order quantities — and receiving root-cause and savings analysis on it
-directly. This produces a finding on your own data in an afternoon, before
-any connection is configured.
+The fastest first read comes from uploading a delimited export — freight
+invoices, two years of monthly order quantities — and having the agents
+comment on it directly, before any connection is configured. Take that for
+what it is: a same-afternoon check that your material is legible to the
+system, returned as prose. The findings worth arguing with come from the first
+connection, because that is where the quantities start being calculated.
 
 ### Connections come next, one at a time
 
@@ -1865,15 +2277,27 @@ Each organisation holds its own entitlement record, carrying a subscription
 tier and a seat count. Licences are generated, validated and activated
 through the product itself.
 
-### How consumption is seen
+### How consumption is seen, and what is not measured yet
 
-The work the machines do is counted in units and shown in a usage view,
-so a heavy month is visible while it is happening. An operator can set a
-budget against it, which makes consumption a decision rather than a
-discovery at the end of a month.
+There is a usage view, and an operator can set a budget against it, which is
+what makes consumption a decision rather than a discovery at the end of a
+month.
 
-Because the reasoning runs on your own machines, this is a view of your own
-capacity, not a meter you are billed against per question.
+What that view will not do is invent a figure. **The per-unit metering behind
+it is not wired**, so where a quantity has not been measured the response says
+so — it carries the reason the figure is absent, rather than a zero that reads
+as a measured nothing or a plausible number derived from something adjacent.
+The provisioned-capacity figure reads zero for the same reason: capacity is
+metered nowhere, and the round thousand that used to appear there was chosen
+rather than counted.
+
+The commercial consequence is the line from the codebase worth reading twice:
+**never bill on unmeasured usage.** An earlier version of this path produced a
+charge out of invented processor-seconds and handed it to a payment provider.
+It now charges nothing until real sampling exists.
+
+Because the reasoning runs on your own machines, this is in any case a view of
+your own capacity rather than a meter you are billed against per question.
 
 ### What is included in the operator experience
 
@@ -1916,15 +2340,22 @@ specific recommendation with the evidence attached.
 hold, a demand swing that grows upstream, a return on a dock, a disruption
 in progress and a claim inside its filing window.
 
-**A person decides.** Every consequential action is proposed by the system
-and approved by a named operator, with the approval recorded against the
-artifact. The autonomy is in the drafting and the ranking. The judgement
-stays with the accountable human.
+**A person decides.** A drafted action waits; approving it is what sends it;
+the approver and their edits go on the record. The autonomy is in the drafting
+and the ranking. And the gate is structural rather than a setting: of the
+follow-through an approved action carries, only correspondence is dispatched
+by FACE at all, and every response names the steps that did not run.
 
-**The numbers are computed.** Forecasting, grouping, cause-and-effect and
-statistical analysis produce the quantities. The language model handles
-language. A figure that came from a method tested against your own history
-can be defended to a carrier or an auditor.
+**The numbers are computed, or they are absent.** Forecasting, grouping,
+cause-and-effect and statistical analysis produce the quantities, and the
+method is named. Where a quantity cannot be produced, the absence is a typed
+state with a reason attached rather than a zero or a plausible figure.
+
+**There is no Runink figure for what you save.** Four places in the software
+once produced one, each from a constant somebody chose, and all four were
+deleted — with a test that now asserts the derived total is zero. That refusal
+is checkable, it is the hardest thing in this document to fake, and it is the
+reason to believe the rest of it.
 
 **It runs on your hardware.** Your operational data is processed where it
 already sits. The security review is shorter, the cost of asking a question
@@ -1934,31 +2365,34 @@ third party's terms.
 **Its compliance posture is SOC 2-oriented, with controls mapped and
 self-declared** — stated in exactly those words, here and everywhere else.
 
-**The output is a queue, ranked by value.** Which turns exception
-management from an inbox into a measurable process with a beginning, a
-decision and a recorded outcome.
+**The output is a queue, ranked.** Which turns exception management from an
+inbox into a measurable process with a beginning, a decision and a recorded
+outcome. It starts empty, and it fills from your connections rather than from
+ours.
 
 ## The next step
 
 The right first step is small and specific.
 
-### Bring one file
+### Bring one export
 
-A spreadsheet of freight invoices. A folder of claims correspondence. Two
-years of monthly order quantities for one product line. A month of
-temperature readings from refrigerated assets.
+Freight invoices as a comma-separated export. Two years of monthly order
+quantities for one product line. A month of temperature readings from your
+monitoring platform, in whatever table or file it already writes them to.
 
-FACE analyses uploaded files directly, without a connection being
-configured first. Within an afternoon you will have Decision Artifacts
-derived from your own records — findings you can check against what you
-already know to be true, which is the only test of this kind of product
-that means anything.
+FACE reads a delimited export directly, without a connection being configured
+first, and the agents comment on it in the same sitting. That is a read on
+legibility, not a set of Decision Artifacts, and this paper would rather tell
+you that now than have you conclude it in the meeting.
 
-### Then connect one system
+### Then connect one system — this is the real first step
 
 The one holding the money, or the one holding the order history. Test the
 connection, define a recurring question, and let it run overnight. The
-following morning there is a queue.
+following morning there is a queue, and it holds what your own records
+support.
+
+The queue will be shorter than a demonstration's. That is the product working.
 
 ### Then decide
 

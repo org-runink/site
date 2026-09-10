@@ -102,7 +102,9 @@ The reverse is equally true. Shippers who do not measure carrier performance sig
 
 This is also where automation becomes essential. Manually compiling scorecard data from TMS exports, ERP billing records, claims databases, and EDI logs is a full-time job — and the delay between data collection and scorecard delivery erodes the program's value. By the time a manually assembled scorecard lands in a carrier's inbox, the performance it reflects is six weeks old.
 
-Platforms like [Runink](/use-cases/) eliminate that lag by ingesting live data from TMS, ERP, and WMS systems to generate carrier scorecards automatically — scored, weighted, and benchmarked against lane-specific performance baselines. When a carrier's OTD drops below your defined threshold on a specific lane, Runink triggers an automated alert to both your procurement team and the carrier's account manager, compressing the feedback loop from weeks to hours. The result is a scorecard program that operates at the speed of your freight, not the speed of your spreadsheet.
+The lag is not caused by a shortage of data. Every figure a scorecard needs — appointment time against arrival time, quantity shipped against quantity received, invoiced rate against contracted rate — was already written down in the TMS, the ERP, the WMS or the EDI log at the moment it happened. What is missing is anything that reads all four against each other on the day rather than at the end of the quarter.
+
+That is the shape of problem [Runink](/use-cases/) is built for: reading records that already exist across systems that were not built to talk to each other, comparing each one against the rule that governs it, and raising what differs as a named item rather than a rate. Who is told about a breach, and whether the carrier hears about it at all, stays a decision a person makes — an automated message to a carrier's account manager is a commercial act, not a notification.
 
 ---
 
@@ -114,7 +116,7 @@ Carrier scorecards are the most underutilized lever in transportation management
 
 The shippers who win in competitive freight markets are not necessarily the ones moving the most volume. They are the ones who know — with precision — which carriers are earning their lanes and which are coasting on inertia. A structured scorecard program, backed by weighted KPIs, a defined review cadence, and real consequences for underperformance, is how you build that knowledge into your operation.
 
-The question is not whether you should measure carrier performance. The question is whether you can afford the cost of not measuring it — in missed deliveries, inflated claims, wasted spot spend, and eroded customer confidence. [Runink helps transportation leaders automate carrier scorecards from live operational data](/#contact-form), turning performance management from a quarterly exercise into a continuous competitive advantage.
+The question is not whether you should measure carrier performance. The question is whether you can afford the cost of not measuring it — in missed deliveries, inflated claims, wasted spot spend, and eroded customer confidence. Start by writing down how long it currently takes your operation to go from a late delivery being recorded to somebody acting on it. Few operations have ever counted it, and it is usually where the cost sits. [Talk to us](/#contact-form) if you want to work that number out together.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

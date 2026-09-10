@@ -121,7 +121,7 @@ The path from spreadsheets to autonomous operations is real, but it demands oper
 
 The hardest leap in the roadmap is the transition from Phase 3 to Phase 4: moving from visibility and analytics to autonomous, AI-driven decisions. This is where most organizations stall, not because the technology does not exist, but because they lack an intelligence layer that can sit above existing systems and orchestrate decisions without forcing a costly rip-and-replace.
 
-[Runink](/#contact-form) was built for exactly this inflection point — serving as the intelligence layer that connects to your existing ERP, TMS, and WMS ecosystem to accelerate the journey from connected analytics to autonomous supply chain operations. If your transformation roadmap has stalled at dashboards, the next phase is not another platform migration. It is the right intelligence layer.
+[Runink FACE](/products/face/) is built for that inflection point: it reads the records an operation already holds, compares what it finds against the rules that govern it, and puts one drafted action in front of the person who can approve it. It replaces none of the systems underneath, and it acts on nothing without the approval. If your roadmap has stalled at dashboards, the first thing to establish is not which platform to buy. It is how long your operation currently takes to go from something being recorded to somebody acting on it — a number few operations have ever counted, and usually where the cost sits. [Talk to us](/#contact-form) if it would help to work it out.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

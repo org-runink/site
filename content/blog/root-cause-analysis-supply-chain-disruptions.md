@@ -115,7 +115,7 @@ AI-powered supply chain platforms compress the RCA cycle from weeks of manual da
 
 The fundamental bottleneck in traditional RCA is not analytical skill — it is data access. Tracing a late delivery back to a dock scheduling conflict requires pulling data from the TMS, the YMS, the carrier's tracking system, and the warehouse appointment calendar. In most organizations, that means emails, spreadsheet exports, and two weeks of back-and-forth between departments.
 
-Platforms like [Runink](/use-cases/) eliminate this bottleneck by integrating and correlating data across every node in the supply chain. When a pattern of late deliveries emerges, the platform can automatically cross-reference carrier transit times, dock dwell times, appointment adherence rates, and upstream PO release timing to isolate the root cause — not in weeks, but in twenty minutes.
+This is the bottleneck [Runink FACE](/products/face/) addresses: it reads records across systems that were never built to talk to each other, so carrier transit times, dock dwell, appointment adherence and upstream PO release timing can be compared against each other rather than requested department by department. What comes out is the set of records that differ from the rule governing them, named individually. Identifying which of those is the root cause remains an analyst's judgement; what changes is that the analyst starts with the records rather than with an email thread.
 
 This is not about replacing the expertise of a Continuous Improvement Manager. It is about giving that expertise access to the complete picture instead of forcing investigations through the narrow aperture of whichever system each department happens to own. The best RCA practitioners still ask the sharpest questions. AI ensures they are working with the full dataset when they do.
 
@@ -129,7 +129,7 @@ Root cause analysis transforms supply chain operations from a reactive firefight
 
 The 5 Whys for linear drill-downs. Fishbone diagrams for cross-functional brainstorming. Pareto analysis for ruthless prioritization. Fault Tree Analysis for compound failure modes. These are not theoretical frameworks — they are operational tools that, when embedded in a supply chain's operating rhythm, permanently eliminate the disruptions that consume leadership bandwidth quarter after quarter.
 
-The difference between organizations that solve problems once and those that solve them repeatedly is not talent. It is tooling and discipline. If your team is ready to stop patching symptoms and start eliminating root causes, [explore how Runink's supply chain intelligence platform](/#contact-form) can give your continuous improvement program the cross-system visibility it needs to move from investigation to resolution in a fraction of the time.
+The difference between organizations that solve problems once and those that solve them repeatedly is not talent. It is tooling and discipline. A reasonable first measure, before any tool is bought: count how many working days your last three investigations spent waiting for data from another department. That figure is the size of the problem, and it belongs to your operation. [Get in touch](/#contact-form) if it would help to work through it.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

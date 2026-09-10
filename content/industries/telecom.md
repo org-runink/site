@@ -1,12 +1,27 @@
 ---
 date: 2026-09-07T00:00:00Z
 title: "Telecom"
-description: "Revenue assurance, rating and billing, interconnect settlement, network capital programmes. Comparing two records that ought to agree, at the transaction."
+description: "Revenue assurance, rating and billing, interconnect settlement, network capital programmes. The Runink CORE and Atlas oversight arrangement applied to two records that ought to agree, at the transaction."
+# Same attribution as the banking page, and for the same reason. This is the
+# Runink CORE and Atlas arrangement, not Runink FACE and not a product on our
+# price list. There is nothing in FACE that touches mediation, rating,
+# interconnect settlement or subscriber plan terms — no connector, no domain —
+# so this page could only ever have been the platform arrangement, and it said
+# so nowhere.
+#
+# The built half is CORE's judging: findings arrive through one credentialed
+# door, are gated deterministically, have any arithmetic recomputed, and leave
+# as verdicts through a second door on a different credential. The producing
+# half — reading every rated record against that subscriber's plan terms — is
+# the assessment platform's, and that platform (Atlas, from Logical Leap) is in
+# private beta. The whitepaper's own register marks its telecoms page
+# `hypothetical`; the copy derived from it now carries that mark too.
+product: "Runink CORE + Atlas"
 weight: 40
 accent: "#c084fc"
-card: "Revenue assurance, rating and billing, interconnect settlement, and rollout across many small sites."
+card: "Runink CORE with Logical Leap's Atlas — revenue assurance, rating and billing, interconnect settlement, and rollout across many small sites. An architecture, not a product on our price list."
 headline: "Revenue assurance exists because the volume defeated inspection."
-deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples."
+deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples. Read this page as an architecture: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap, and the illustrations are hypothetical. No operator has run it."
 
 problems_heading: "Where it goes wrong"
 problems:
@@ -33,15 +48,18 @@ owners:
   - role: "Engineering and IT"
     line: "Reasoning runs on your own hardware; records and credentials stay on your systems."
 
-outcomes_heading: "What changes"
+outcomes_heading: "What the arrangement changes — and which half of it runs"
 outcomes:
-  - "The population tested is the population, so exceptions come back as named accounts, not an estimated rate."
-  - "Each item carries the observation, the rule it invoked, the records it cited, a severity and a proposed action."
-  - "The queue is sorted by impact and by how confident an independent assessment is, so the first hour goes to what is material and clear."
-  - "That assessment can decline: unable to judge is recorded as unable to judge, never as agreement, and goes to a person."
+  - "The design's central claim. The population tested is the population, so exceptions come back as named accounts a re-rate can still fix, rather than as an estimated error rate. Be clear whose half that is: reading every rated record against that subscriber's own plan terms is the assessment platform's work, and that platform is a partner's product in private beta. It is the reason to judge this page on the arrangement rather than on a Runink deliverable."
+  - "Built. Each finding that reaches CORE is gated deterministically before anything is put to a model: it must be complete enough to read, it must carry evidence, at least one piece must be readable, it must be about the subject of the finding rather than something adjacent, it must not be the claim written out a second time, and dated evidence must be recent enough to say something about the present. Each gate that fires ends the matter and states its own reason in a sentence a person reads."
+  - "Built. A finding claiming a rate is settled by arithmetic on the raw counts, recomputed rather than accepted, and never goes near a model. A count divided by nothing is unable to judge, never a rate of zero. Two readings of the same traffic that disagree are unable to judge, never averaged into a third figure neither party observed — which for interconnect is the whole argument."
+  - "Built. The judging happens on a different credential from the submitting, enforced by which door the message arrived at rather than by a field the sender fills in. A submitter cannot grade its own work."
+  - "Built. Unable to judge is a verdict in its own right and never renders as agreement. No evidence, evidence that only restates the claim, evidence about a different subject, evidence past the staleness horizon, an unreadable answer, or a submitter who could not determine the matter either: each ends there, with the reason written next to it, and goes to a person. An assessor whose confident answers and whose guesses look identical is ignored within a week, and this is the discipline that stops that."
+  - "Not built. The direction in which CORE would reach into the assessment platform to collect findings itself is a named way in with nothing written behind it, waiting on a published description of how to call it. What runs is the other direction: a platform submits a batch and reads its verdicts back on the same connection."
+  - "Demonstrated where. In automated testing, with a real assessor program against the real receiving code over a real connection. Not against a live installation and not against Atlas. There is no field evidence, and it is the thing to ask for before relying on any of this."
 
 measures_heading: "How you will know it worked"
-measures_intro: "The figures below are yours, not ours. Write down where you stand today, before anything changes — a baseline stops being recoverable once things start improving."
+measures_intro: "The figures below are yours, not ours. Write down where you stand today, before anything changes — a baseline stops being recoverable once things start improving. The right-hand column is the mechanism argued, not an outcome observed: no operator has run this arrangement, and the half that reads your stream belongs to a partner's product in private beta."
 measures:
   - metric: "Rating accuracy, and the usage it under-bills"
     today: "The rating error rate revenue assurance reports upward, and the sample size and month behind it. Then a month of mediated usage against what billing charged."
@@ -62,17 +80,29 @@ measures:
 foundations_heading: "Two things that make the above possible"
 foundations:
   - name: "Your records stay on machines you own"
-    plain: "The reasoning runs on hardware you own. Subscriber records, usage detail, contracts and credentials are read where they already live. Nothing goes to an outside model provider."
-    measured_by: "Call-detail and subscriber data sits under telecoms privacy and interception law and mostly cannot leave your estate. Measure this as the length of the security review before work can begin, and as whether a regulator's question about who saw what is answered from a record rather than an investigation."
-  - name: "Research on the open web that nobody sees you doing"
-    plain: "When something has to be checked in public — a competitor's tariff, a supplier, a regulator's notice — the system reads the web itself, with its own browser. No outside search company sits in the middle."
-    measured_by: "The question is often more sensitive than the answer: researching a rival's bundle pricing through an outside search vendor tells that vendor what you are about to launch. Measure it by what your commercial team is willing to check at all."
+    plain: "The reasoning runs on hardware you own. Subscriber records, usage detail, contracts and credentials are read where they already live. The judging model is the cluster's own inference plane — one endpoint, no API key, no vendor SDK, no fallback, and no code path that would accept an external model plane."
+    measured_by: "Call-detail and subscriber data sits under telecoms privacy and interception law and mostly cannot leave your estate. Measure this as the length of the security review before work can begin, and as whether a regulator's question about who saw what is answered from a hash-chained record rather than an investigation. One honest addition: the arrangement involves a second vendor, and your supplier assessment will want to see them as well as us."
+  # Corrected. "No outside search company sits in the middle" and "that nobody
+  # sees you doing" were both false absolutes: the shared engine puts the query
+  # to a public search endpoint before fetching the pages itself. The
+  # commercially real property — no vendor account, so no supplier profile of
+  # your questions — was already in the second half of this entry, and it now
+  # carries the whole claim rather than sitting under a promise of invisibility.
+  - name: "Open-web research with no vendor account behind it"
+    plain: "When something has to be checked in public — a competitor's tariff, a supplier, a regulator's notice — the search runs from inside your estate through a public search endpoint, and your own browser then fetches and reads the pages behind the results rather than a research service reading them for you."
+    measured_by: "Not invisibility — a search engine sees the query, as it would from any browser. What is absent is the account. Researching a rival's bundle pricing through a vendor's paid service builds that vendor a dated record of what your commercial team was working on, under your name. Here there is no key, no contract and no per-question bill, so nothing accumulates and nothing is capped. Measure it by what your commercial team is willing to check at all."
 
 next_heading: "See whether it fits"
 next_body: "Bring one comparison and the agreement that governs it — rating output against plan terms, or a month of interconnect traffic against the settlement. Half an hour is usually enough to see whether the differences that matter are the shape this finds. Bring today's figures for the measures above too; they are your baseline."
 cta_text: "Book a consultation"
+# Link kept on the CORE and Atlas paper. Unlike the insurance page, the
+# mechanism here genuinely is that arrangement's and not FACE's — FACE has no
+# rating, mediation or interconnect capability of any kind — so repointing this
+# at the FACE paper would send a revenue-assurance reader to a logistics
+# product. The note now sends them to pages 12 to 14, where the paper states
+# which half runs.
 paper:
-  text: "Read the CORE paper"
+  text: "Read the CORE and Atlas paper"
   url: "/blog/whitepapers/runink-core-atlas/"
-  note: "The long version: what gets read, what a finding contains, how a second independent judgement is formed, and who approves."
+  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how a rate is recomputed rather than accepted, and how a second judgement is formed on a separate credential. Start at pages 12 to 14, which say exactly which half is built and which is drawn. No case studies, no customer names, no return-on-investment figures, and no operator has run it."
 ---

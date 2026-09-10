@@ -8,14 +8,14 @@ weight: 30
 date: 2026-09-03T00:00:00Z
 source_pages: 25
 audience: "Executives, marketing leaders, and the people who sign off on where company data goes"
-blurb: "One application a marketing team operates directly. It audits your website and social presence, researches your market, prospects the public web for leads, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft for a named person to approve."
+blurb: "One application a marketing team operates directly. It audits your website and social presence, researches your market, prospects the public web for leads, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft with a status and an approve against it, on channels that stay disarmed until you arm them."
 deck: |
   PULSE replaces the marketing patchwork with one application your own team
   operates: audit, research, prospecting, production and follow-up, drawing on
   a single shared understanding of your business.
 
-  **Nothing publishes without a person approving it, and the reasoning runs on
-  hardware you control.**
+  **Every channel is disarmed until you arm it, nothing publishes on a channel
+  that is off, and the reasoning runs on hardware you control.**
 register:
   - { page: 3,  title: "Summary" }
   - { page: 4,  title: "The problem, in your terms" }
@@ -194,9 +194,14 @@ what is working.
 
 Around all four stages sit two constants.
 
-**A person approves everything.** Every draft — a LinkedIn post, a cold email, a call
-script, a whitepaper — arrives in a review queue with an approve and a reject. Nothing
-reaches a customer, a channel or a prospect without a named person having said yes.
+**A review queue, and a channel switch that is off by default.** Every draft — a LinkedIn
+post, a cold email, a call script, a whitepaper — arrives with an explicit status and an
+approve and a reject against it, so at any moment you can see what is waiting on you. The
+control that actually decides whether anything leaves is separate and blunter: **every
+publishing channel is disarmed unless it has been explicitly armed**, by a global switch
+narrowed by a per-channel one, with the resolved answer for each channel printed when the
+application starts. A channel that is off cannot publish, whatever status a piece carries.
+Page 20 says exactly where that line falls, including the part most vendors would leave out.
 
 **You watch the work happen.** Research and copy stream into the screen as they are
 produced, rather than appearing as a wall of text after a wait. If a direction is wrong,
@@ -296,7 +301,7 @@ per-minute service.
 The production stage takes a single input and produces the range of material a company needs
 at every stage, from a first glance to a signed deal.
 
-![One sheet on the left — a single brief, not a stack — opens out into a field of pieces whose shapes differ: long bars for written pieces, paired squares for pictures, tall narrow blocks for short video, broken runs for email. Every piece carries one status mark. A vertical line runs down the picture with a single ring in it, a tick, and only the pieces whose status mark is filled reach that ring; the ones that do not are drawn hollow and their strands stop short of the line. Past the ring the strands open out again into a dated grid of slots, some filled and some empty, which is the schedule of what publishes and when.](figures/whitepapers/pulse-one-brief.svg "One brief, opened out into every channel, and one ring between the work and the schedule.")
+![One sheet on the left — a single brief, not a stack — opens out into a field of pieces whose shapes differ: long bars for written pieces, paired squares for pictures, tall narrow blocks for short video, broken runs for email. Every piece carries one status mark. A vertical line runs down the picture with a single ring in it, a tick, and only the pieces whose status mark is filled reach that ring; the ones that do not are drawn hollow and their strands stop short of the line. Past the ring the strands open out again into a dated grid of slots, some filled and some empty, which is the schedule of what publishes and when.](figures/whitepapers/pulse-one-brief.svg "One brief, opened out into every channel. The ring is the review; the schedule past it only reaches a channel that has been armed.")
 
 **Channel content.** Posts are written for the channel they are going to, in the shape and
 the tone that channel expects. The supported set covers LinkedIn, Instagram, TikTok,
@@ -699,13 +704,30 @@ is the single commonest way audit tools mislead.
 **A source that failed is reported as failed**, distinctly from one that was simply not
 applicable, because the two need different responses from you.
 
-**Nothing publishes on its own, including after approval.** Every draft carries one stated
-status — draft, waiting for review, approved, rejected, published, archived — so at any
-moment you can see what is waiting on you and what actually went out. And a channel that has
-been switched off stays off even for approved material: an approval is consent to the
-*content*, and switching a channel off is a statement about the *channel*. Content held back
-that way is recorded as held back rather than as a failure, because "the upload failed" sends
-somebody to check tokens and quota for something that was never attempted.
+**A disarmed channel publishes nothing, and an unset setting is never consent.** Every draft
+carries one stated status — draft, waiting for review, approved, rejected, published,
+archived — so at any moment you can see what is waiting on you and what actually went out.
+A channel that has been switched off stays off even for approved material: an approval is
+consent to the *content*, and switching a channel off is a statement about the *channel*.
+Content held back that way is recorded as **held back** — its own terminal status, distinct
+both from published and from failed — because "the upload failed" sends somebody to check
+tokens and quota for something that was never attempted, and leaving the row merely due
+would load a spring behind the kill switch that fires the whole backlog the moment anybody
+flips it back. Each such row also carries a provenance for its own explanation: recorded,
+nothing-to-explain, or *missing* — so a held-back row with no stated reason reads as a defect
+rather than as silence. And where a publishing setting is absent or unrecognised it resolves
+to the most restrictive value available, under a test whose stated rule is that absence of
+configuration is not consent to publish.
+
+**And here is the limit, stated rather than implied.** Where a channel *is* armed, the gate
+is the channel switch and not a per-item approval: scheduling a piece for publication does
+not itself verify that a human approved that piece, and several of the production engines
+stage material for a channel automatically when autonomy is armed. So the accurate sentence
+is not *nothing publishes without a person approving it* — it is *nothing publishes on a
+channel you have not armed, and arming a channel is the decision you are making.* Runink's
+own installation runs with autonomy armed, which is how this paper knows the difference
+matters. A product of this kind that tells you it has a blanket approval gate is describing
+a control you should ask to see fire.
 
 **The reasoning is watchable while it happens.** Research and copy stream onto the screen as
 they are produced. A wrong angle is caught in the second paragraph rather than on page nine,
@@ -808,7 +830,8 @@ What the product does to earn that look is four things. Every audit score opens 
 measures beneath it and then into the individual checks, so a number is always traceable to
 what was actually examined. Generation streams as it happens, so a wrong direction is visible
 while it is being taken. Every piece carries an explicit status and an explicit approve or
-reject, so nothing reaches a channel without a named person having said yes. And the
+reject, and every publishing channel is disarmed until somebody arms it — with the honest
+boundary between those two controls set out on page 20 rather than blurred. And the
 weightings behind the scoring are settings you can read, which means you can disagree with
 them specifically rather than in general.
 
@@ -1035,4 +1058,4 @@ deployment inside your own estate:
 Runink PULSE — Prescriptive Unified Lead & Social Engine.
 
 
-One application. Your own machines. A person approves everything.
+One application. Your own machines. Every channel off until you turn it on.

@@ -1,7 +1,10 @@
 ---
 title: "Talking to Drivers Without a Screen"
-description: "The person who knows a load is late is the one who cannot type. Asking and answering out loud gets the update into the system while the truck keeps moving."
+description: "The person who knows a load is late is the one who cannot type. Asking and answering out loud gets the fact onto the record while the truck keeps moving, and the desk still makes the change."
 layout: "use_case"
+product: "Runink FACE"
+scenario: "reactive logistics"
+standing: "hypothetical"
 badge: "Voice-AI Dispatcher"
 badgeColor: "#f59e0b"
 date: "2024-05-20T00:00:00Z"
@@ -11,11 +14,16 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
+<p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Reactive logistics, driver-facing</p>
+<p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
+<span class="rk-mark" data-standing="hypothetical">Hypothetical</span> &mdash; this is a <strong class="text-stone-300">Runink FACE</strong> scenario, the driver-facing end of it. What follows is what the product is built to do and how it would run against your own fleet records. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
+</p>
+
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">The driver asks out loud and hears the answer.</strong> Where the next stop is, what the customer asked for, which door to use. No screen to read and no reason to pull over.</li>
-<li><strong class="text-stone-200">What the driver says is written down where it happened.</strong> A flat tyre, an hour waiting at a gate, a load the customer would not take. It lands on the board with the truck, the stop and the time on it.</li>
-<li><strong class="text-stone-200">A change is offered, not imposed.</strong> When the route has to change, the new plan is read out and the driver says yes or no. Somebody named on the desk still owns the call, and it stays on the record.</li>
+<li><strong class="text-stone-200">The driver asks out loud and hears the answer.</strong> Where the next stop is, what the customer asked for, which door to use. No screen to read and no reason to pull over. Both halves of the voice loop run on hardware you control: the speech is transcribed by your own model and the reply is synthesised in the same process, with no outside speech API on either side.</li>
+<li><strong class="text-stone-200">It is a phone call, so it goes over the phone network.</strong> Worth saying plainly rather than burying. The leg between the cab and the building is carried by a telephony provider, the same as any other call your drivers make. What that provider never gets is the transcription or the answer, because neither is done there.</li>
+<li><strong class="text-stone-200">What the call produces is a transcript, not an entry on the board.</strong> Both sides of the conversation are written to the call log, speaker by speaker, so the hour at the gate is recorded the moment it is said. What a voice turn cannot do is write into your dispatch or transport system — there is no action path from the call into your records, and an urgent word on the call raises a message to whoever is on escalation rather than creating a job. Somebody named on the desk still turns it into a change.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -44,19 +52,22 @@ author: "Runink"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                The driver speaks and is answered. Where is my next stop. Which gate. Log a flat tyre on the trailer. It is asked out loud and it comes back out loud, so the eyes stay on the road and the hands stay where they were.
+                The driver speaks and FACE answers. Where is my next stop. Which gate. It is asked out loud and it comes back out loud, so the eyes stay on the road and the hands stay where they were. The call itself is an ordinary phone call and rides a telephony provider to get there; the audio socket into the building is authenticated, and everything that happens after it arrives happens on your machines. Your own model turns the speech into text and the reply is spoken by a synthesiser running in the same process as the rest of FACE — there is no speech service to sign a contract with and no transcript sitting in somebody else's account.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                What the driver says turns into a record on the board straight away, with the truck, the stop and the time already on it. The hour at the gate is logged at the gate. Nobody has to remember it at six o'clock, and nobody has to type it up twice.
+                What the call leaves behind is the conversation itself, written down as it happens: each turn, who said it, against the call it belongs to. The hour at the gate is on the record at the gate rather than reconstructed at six o'clock. Where a word on the call reads as urgent, a message goes to whoever is on escalation so the desk hears about it during the shift instead of after it.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Here is the line, and it matters more than the feature list. A voice turn does not write into your systems. It does not create the delay record, it does not update the delivery and it does not move the drop — there is no path from the call into your transport system, and a product that told you otherwise would be describing an integration it has not built. What the call does is get the fact out of the cab and onto the record while it is still accurate. A person on the desk reads it and makes the change.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                When the road ahead is shut or a customer will not take the load, the new plan is read out and the driver agrees to it or does not. A named person on the desk still owns that change, and the record shows what was offered, who agreed and when.
+                One more refusal, because it is the kind that usually gets hidden. Elsewhere in FACE you can attach a voice memo to a thread, and that attachment is not transcribed. Rather than letting the model improvise around it, the model is told outright that an audio attachment arrived, that its contents are unknown, and that it must not guess at what was said — and it is instructed to tell you the audio was not processed. A system that cannot hear something and says so is worth more than one that fills the gap in.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(245,158,11,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#b45309] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#b45309] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
+                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Time the trucks spend stopped for no delivery.</strong> Your vehicles already send back where they are and when the engine is off. Take a week of it, drop the stops that match a drop, and look at what is left.</li>

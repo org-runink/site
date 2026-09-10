@@ -93,7 +93,7 @@ The shift from reactive returns processing to proactive reverse logistics requir
 
 **Closed-loop analytics.** Every return generates data: why it was returned, what condition it arrived in, how long disposition took, what value was recovered, and where the item ultimately ended up. When that data feeds back into procurement, product design, and marketing, it closes the loop — reducing future return rates and improving the quality of goods entering the forward chain.
 
-This is the operational model that platforms like [Runink](/use-cases/) are purpose-built to enable. By unifying return intake data, disposition rules, recovery channel performance, and sustainability metrics into a single intelligence layer, operations leaders gain the visibility and automation required to treat reverse logistics as what it actually is: a margin recovery operation, not a write-off queue.
+[Reverse logistics](/use-cases/responsive-reverse-logistics/) is one of the kinds of work Runink FACE does. It reads the return intake record against the disposition rule that applies to that item and its condition, and where the two do not line up it raises that return by name with a drafted disposition for someone to approve. The recovery value itself is not estimated for you: what a graded item is worth depends on the channel you can actually sell it into, and a number nobody measured sitting next to ones that were is how an estimate becomes a quoted fact.
 
 ---
 
@@ -121,7 +121,7 @@ The $890 billion returns problem is not going away. E-commerce penetration conti
 
 That requires visibility into every return, intelligence at every disposition decision, and analytics that close the loop between reverse outcomes and forward operations. It requires treating your reverse supply chain with the same rigor you apply to your forward one.
 
-If your returns operation is still running on spreadsheets and gut decisions, [we should talk](/#contact-form). Runink gives operations leaders the real-time disposition intelligence and reverse flow analytics to turn their highest-volume cost center into a margin recovery engine.
+If your returns operation is still running on spreadsheets and gut decisions, [we should talk](/#contact-form). The first figure worth establishing is how many days elapse between a return arriving and a disposition decision being recorded against it — and how many returns currently have no recorded decision at all.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

@@ -15,7 +15,7 @@ robots: index, follow
 <!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-Sales and Operations Planning (S&OP) is a cross-functional decision engine that aligns demand, supply, and financial plans on a rolling horizon — yet more than 70% of implementations underperform because organizations treat it as a monthly meeting rather than a disciplined, data-driven process. Success requires breaking down functional silos, replacing spreadsheet dependence with a single source of truth, and leveraging AI-powered platforms like Runink to deliver the real-time visibility and scenario planning that modern S&OP demands.
+Sales and Operations Planning (S&OP) is a cross-functional decision engine that aligns demand, supply, and financial plans on a rolling horizon — yet more than 70% of implementations underperform because organizations treat it as a monthly meeting rather than a disciplined, data-driven process. Success requires breaking down functional silos, replacing spreadsheet dependence with one agreed set of figures, and being able to re-run a scenario between meetings rather than only inside them.
 {{< /direct-answer >}}
 
 * **S&OP follows a structured 5-step monthly cycle — data gathering, demand planning, supply planning, pre-S&OP reconciliation, and executive S&OP — but most companies collapse these steps into a single slide review.**
@@ -85,12 +85,12 @@ Without effective S&OE, even a well-built S&OP plan degrades within the first we
 ## How Do AI-Powered Platforms Make S&OP Actually Work?
 
 {{< direct-answer >}}
-AI-powered platforms like Runink provide the data foundation that eliminates the root causes of S&OP failure — unifying fragmented data sources into a single source of truth, automating scenario planning to replace spreadsheet dependence, and delivering real-time demand and supply signals that keep plans grounded in operational reality.
+The root causes of S&OP failure are in the data layer, not the planning algorithm: functions arrive with different numbers for the same thing, the scenarios are built by hand so there are only ever three of them, and the demand signal in the pack is weeks old by the time the meeting reviews it.
 {{< /direct-answer >}}
 
 The technology conversation around S&OP has historically been about planning software — APS (Advanced Planning Systems), IBP (Integrated Business Planning) suites, and demand sensing tools. But the hardest problem in S&OP is not the planning algorithm. It is the data layer underneath it.
 
-**Unified visibility across sales, procurement, and logistics.** Platforms like [Runink](/use-cases/) integrate data from CRMs, ERPs, TMS, WMS, and procurement systems into a single operational data fabric. When every function works from the same data — same shipment status, same inventory positions, same supplier lead-time actuals — the reconciliation burden disappears, and pre-S&OP meetings focus on decisions instead of data disputes.
+**Unified visibility across sales, procurement, and logistics.** The prize is modest to describe and hard to achieve: every function working from the same shipment status, the same inventory positions and the same supplier lead-time actuals, so the pre-S&OP meeting argues about decisions instead of about whose number is right. Worth being precise about what "unified" has to mean here — not one warehouse containing copies of everything, but one agreed definition per figure, with the source records reachable when somebody disputes it.
 
 **Automated scenario planning.** Instead of a demand planner manually building three scenarios in a spreadsheet, AI-driven platforms generate probabilistic demand ranges, simulate supply constraints across multiple variables simultaneously, and quantify the financial impact of each scenario. When the executive S&OP session convenes, leadership is choosing between costed alternatives — not debating assumptions.
 
@@ -110,7 +110,9 @@ If your S&OP meetings end without clear decisions, if your demand and supply pla
 
 Companies that mature beyond Stage 2 on Gartner's S&OP Maturity Model share a common trait: they invest in the data infrastructure that makes cross-functional planning possible at speed. That means replacing fragmented, batch-updated data with a unified, real-time operational layer that every function can trust.
 
-Runink is purpose-built for this challenge — providing the supply chain intelligence platform that integrates demand signals, supply constraints, logistics execution data, and financial targets into a single source of truth. Whether you are standing up S&OP for the first time or transforming a mature process from Integrated Business Planning into an AI-augmented decision engine, the data foundation is where it starts. [Explore how Runink supports your planning maturity](/#contact-form) and stop treating S&OP as a meeting.
+[Demand forecasting](/use-cases/demand-forecasting/) is one of the kinds of work Runink FACE does: it reads the order and sell-through history you already hold, produces a forecast at the level you ask for, and shows the records it was built from so a planner can argue with it rather than accept it. That is one input to an S&OP process, not a replacement for one — the cross-functional discipline is the part no software supplies.
+
+The first diagnostic is free and unwelcome: at your last S&OP meeting, how much of the time went on reconciling numbers rather than deciding anything? [Get in touch](/#contact-form) if it would help to work through what that reconciliation is costing.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

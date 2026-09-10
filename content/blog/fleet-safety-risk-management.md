@@ -80,7 +80,7 @@ Without proper data governance, fleet safety analytics produce unreliable risk s
 
 A predictive model is only as reliable as the data feeding it. Inconsistent device calibration across telematics units, delayed ELD data uploads, or incomplete maintenance records introduce noise that degrades model accuracy. Fleet Safety Managers implementing predictive programs must establish clear data quality standards: consistent event taxonomy across providers, real-time or near-real-time data ingestion pipelines, and validation rules that flag anomalies before they reach the analytics layer.
 
-This is where platforms like [Runink](/use-cases/) deliver critical value. Rather than asking fleet operators to become data engineers, Runink normalizes and enriches disparate operational data streams into a single intelligence layer — giving safety teams clean, correlated, and actionable insights without the integration overhead. The result is a safety program that scales with fleet growth rather than collapsing under data complexity.
+The awkward implication is that the first deliverable of a predictive safety programme is not a model. It is an event taxonomy that means the same thing across every telematics provider in the fleet, plus a rule for what happens when a device's uploads stop. Programmes that skip this produce models whose accuracy varies by vendor, which is indistinguishable from accuracy varying by driver — and that is a conclusion no safety manager should be asked to act on.
 
 ---
 
@@ -92,7 +92,7 @@ Fleet safety is no longer a compliance exercise — it is a financial strategy. 
 
 The carriers that will lead the next decade of freight are not the ones with the largest fleets or the lowest rates. They are the ones that treat safety as a strategic asset — investing in the data infrastructure and analytical capability to prevent incidents before they happen, rather than managing the fallout after they do.
 
-Every hard braking event, every engine fault code, every HOS log entry is a signal. The question is whether your organization has the tools to hear what those signals are telling you. [Runink helps fleet operators consolidate, analyze, and act on safety data at scale](/#contact-form) — turning telematics noise into the kind of predictive intelligence that keeps drivers safe and insurance premiums under control.
+Every hard braking event, every engine fault code, every HOS log entry is a signal, and in almost every case it was recorded at the time it happened. The question is how long it then sat unread. A useful first measure: for last year's preventable incidents, how many were preceded by a recorded signal nobody acted on, and how many days passed in between. [Talk to us](/#contact-form) if it would help to work that out.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

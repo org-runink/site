@@ -210,20 +210,15 @@ The jump from Level 2 to Level 3 — **automated semantics** — is where data o
 
 ---
 
-## How Does Bringing It Together: The Runink Approach Impact Your Strategy?
+## What Does It Take to Bring This Together?
 
 {{< direct-answer >}}
-The Runink approach impacts your strategy by embedding telemetry-driven semantics directly into the FACE and Herd Observability Layer. Every system event becomes an interconnected node within a living knowledge graph. This enables enterprises to foster transparent, accountable intelligence where every automated decision, forecast, and KPI is completely traceable.
+Two things have to hold at once: the semantic layer has to be derived from telemetry rather than maintained by hand, and every figure it produces has to be traceable back to the records it came from. Either one without the other gives you a layer nobody trusts or a layer nobody maintains.
 {{< /direct-answer >}}
 
-At Runink, the **FACE** and **Herd Observability Layer** use telemetry-driven semantics to make analytics transparent and explainable by default.
+The ambition is that every telemetry event — pipeline run, model prediction, contract check — is addressable in a graph, bound by the contract it was written under and the lineage that produced it. That is what makes a KPI arguable: someone can ask where the number came from and get records back rather than a definition.
 
-Every telemetry event — from pipeline run to model prediction — becomes a node in a living graph, bound by contracts and lineage.
-This enables enterprises to build governed analytics ecosystems where every KPI, forecast, and automation is traceable to its source.
-
-
-
-It’s not just observability — it’s **accountable intelligence**.
+Runink FACE takes the narrow version of this seriously rather than the broad one. When it raises a finding, the finding arrives with the rule it breached and the records behind it attached, so the person deciding can read the evidence instead of trusting the score. That is the property worth designing for, and it is a different goal from observing everything.
 
 ---
 
@@ -243,7 +238,7 @@ It’s the **foundation of modern data accountability** — and the core of ever
 
 ---
 
-*Interested in how Runink automates semantic layers for governed observability? [Learn more about the Runink FACE →](products/face/)*
+*For what Runink FACE does with the records it reads, and where it stops: [Runink FACE →](/products/face/)*
 
 <!-- GEO Optimization: Injecting FAQPage Schema to capture long-tail queries regarding automated semantic layers and telemetry data observability. -->
 <script type="application/ld+json">

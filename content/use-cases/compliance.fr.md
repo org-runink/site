@@ -1,9 +1,10 @@
 ---
 title: "Données Personnelles des Clients et Bilan des Émissions"
-description: "Les noms et les adresses des clients arrivent sur des écrans qui ne devraient jamais les montrer. Le bilan des émissions prend un trimestre à monter. Dans les deux cas, il faut rapprocher des enregistrements, et personne n'en a les heures."
+description: "Faire tourner un système écrit sans bruit des données personnelles dans ses propres journaux, et le bilan des émissions prend un trimestre à monter. Voici exactement ce que le logiciel fait pour chacun des deux, y compris ce qu'il ne fait pas."
 layout: "use_case"
 badge: "Gestion des Risques"
 badgeColor: "#ea580c"
+product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
 author: "Lead Data & Cloud Architect"
 ---
@@ -11,11 +12,14 @@ author: "Lead Data & Cloud Architect"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
+<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Conformité et bilan des émissions</p>
+<p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong>, et non pour la plateforme qui se trouve dessous. Cela vaut d'être dit franchement, car la conformité a tout l'air d'un sujet de plateforme : les contrôles décrits ici lisent les enregistrements que FACE tient de vos envois et de vos rapports, et ils font partie de FACE au lieu d'être une option ajoutée à l'infrastructure.</p>
+
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">Les données personnelles sont trouvées avant de circuler.</strong> Les rapports et les écrans d'expédition sont relus pour y repérer les noms, les numéros de téléphone et les adresses de clients qui ne devraient pas s'y trouver.</li>
-<li><strong class="text-stone-200">Quand quelque chose est trouvé, c'est masqué et non laissé en place.</strong> La donnée est cachée à l'écran, et une personne est prévenue : ce qui a été exposé, à quel endroit, et qui pouvait le voir.</li>
-<li><strong class="text-stone-200">Le bilan des émissions se monte à partir de vos propres relevés d'expédition.</strong> Les poids, les distances et les modes de transport sont réunis au fil des envois, au lieu d'être reconstitués en fin d'année.</li>
+<li><strong class="text-stone-200">Les données personnelles n'atteignent pas les journaux.</strong> Les adresses e-mail, les numéros de téléphone, les numéros de carte, les numéros de sécurité sociale et les adresses IP sont retirés des journaux et des sorties de diagnostic avant qu'ils soient écrits. La trace qu'un système laisse derrière lui ne devient donc pas une deuxième copie des données.</li>
+<li><strong class="text-stone-200">C'est une propriété de la plateforme, pas un rapport que vous lancez &mdash; et elle n'a aucun test.</strong> Le masquage a lieu sur le chemin d'écriture sous chaque service, à chaque endroit où un service écrit une ligne. Nous vous dirons aussi que la fonction de masquage elle-même ne porte aucun test propre, car la liste de ce qu'une expression régulière est censée attraper ne prouve pas qu'elle l'attrape. Lisez la liste comme une description d'intention, et non comme une certification.</li>
+<li><strong class="text-stone-200">Le chiffre d'émissions, c'est un facteur routier publié multiplié par une distance réellement mesurée.</strong> Pas des poids, pas des modes, pas un modèle. Un seul facteur du puits à la roue, pour un poids lourd diesel, appliqué à la distance de la ligne que le calcul d'itinéraire a renvoyée, avec la méthode écrite sur le chiffre. La mer et l'air ne sont pas couverts, et une ligne sans distance mesurée ne produit rien plutôt qu'une estimation.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -44,13 +48,22 @@ author: "Lead Data & Cloud Architect"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Les rapports et les écrans du quotidien sont relus au moment où ils sont produits. On y cherche les données personnelles. Quand un nom, un numéro de téléphone ou une adresse apparaît là où il ne devrait pas, la donnée est masquée à l'écran. Le constat part vers une personne, avec le détail : ce qui a été exposé, dans quel rapport, et qui l'avait sous les yeux.
+                Du côté de la protection des données, le mécanisme est plus étroit qu'on ne le vend d'ordinaire, et il mérite d'être dit exactement. Chaque service écrit ses journaux et ses diagnostics à travers une étape de masquage partagée, qui retire du texte les adresses e-mail, les numéros de téléphone, les numéros de carte, les numéros de sécurité sociale, les adresses IP et les adresses matérielles avant qu'il n'atterrisse, ainsi que des champs nommés &mdash; mots de passe, jetons, secrets, clés de licence, URL de webhook &mdash; partout où ils apparaissent dans une charge structurée. L'idée est que faire tourner un système ne crée pas en silence une deuxième copie des données personnelles qu'il contient : l'endroit où les fuites se découvrent tard, et l'endroit où personne ne pense à regarder. Ce qu'il ne fait <em>pas</em> : relire vos rapports ou vos écrans d'expédition, décider qu'un nom ne devrait pas y figurer, ou vous dire qui l'a vu. Il n'y a ici ni relecture d'écran ni constat d'exposition ; si une page vous a dit le contraire, elle décrivait quelque chose qui n'existe pas.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Pour les émissions, les relevés d'expédition sont rapprochés au fil des envois. Le poids, la distance et le passage par mer, par route ou par air sont réunis pour chaque mouvement. Le bilan annuel devient donc une question posée, et non un projet.
+                Et il y a une chose que nous ne laisserons pas une liste à puces dissimuler. Ce masquage n'a aucun test à lui. L'ordre interne est soigné &mdash; les numéros de carte sont cherchés avant les numéros de téléphone, pour qu'un motif de téléphone n'avale pas une carte &mdash; et il est appelé depuis chaque service qui écrit une ligne, mais personne n'a écrit de test qui prouve qu'il attrape ce qu'il prétend attraper. Une règle sans contrôle est un commentaire. Nous préférons que vous l'appreniez de nous plutôt que de le trouver dans un dossier de <em>due diligence</em>.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Pour les émissions, soyons exacts sur ce dont le chiffre est fait, car la catégorie ne l'est pas. C'est un seul facteur publié de transport routier &mdash; du puits à la roue, pour un poids lourd diesel &mdash; multiplié par la distance de la ligne que le calcul d'itinéraire a réellement renvoyée, et annualisé sur un nombre de jours ouvrés qui est énoncé. La méthode voyage avec le chiffre, dans la même phrase, pour qu'un auditeur lise l'hypothèse au moment même où il lit le nombre. Ce que ce n'est pas : un modèle de poids et de modes. La mer et l'air n'y sont pas, et une ligne dont la distance n'a jamais été mesurée ne donne rien plutôt qu'une supposition. C'est aussi, aujourd'hui, une carte qui n'apparaît que là où ces distances de ligne se trouvent déjà dans les données de l'instance ; une instance sans rien de branché ne produit aucune carte d'émissions, plutôt qu'un exemple travaillé portant votre nom.
             </p>
             <p class="text-lg text-stone-400 font-medium">
+                Il y avait aussi un taux de réduction ici : une part dont une ligne modifiée était censée abaisser les émissions, présentée comme bien établie et sourcée sur rien. Il a été supprimé, et il existe désormais un test dont le seul travail est d'échouer si quelqu'un remet un taux de réduction. Une distance et un facteur ne peuvent pas soutenir un contrefactuel, et le moyen le moins cher de le garder vrai était de rendre cette absence exigible plutôt que de la confier à la mémoire.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
                 Les deux gardent la trace de leur propre travail. Un auditeur demande d'où sort un chiffre. Un régulateur demande qui a vu l'adresse d'un client. La réponse vient du dossier, et non de la mémoire de la personne qui a monté le tableur.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                Le dossier garde aussi séparées les deux réponses que l'on confond d'habitude. &laquo;&nbsp;Nous avons contrôlé et nous n'avons rien trouvé&nbsp;&raquo; et &laquo;&nbsp;nous n'avons pas pu lire ceci, donc cela n'a jamais été contrôlé&nbsp;&raquo; sont notées comme deux choses différentes. La seconde est le constat qu'un audit cherche vraiment, et c'est celle qu'une coche verte avale d'ordinaire.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(16,185,129,0.05)] shadow-2xl">
@@ -62,10 +75,20 @@ author: "Lead Data & Cloud Architect"
                 <li><strong class="text-stone-200">Les jours de travail dans votre cycle de reporting.</strong> Demandez aux personnes qui montent le bilan des émissions combien de jours cela leur a pris l'an dernier. Puis combien de ces jours sont passés à chercher des chiffres plutôt qu'à les vérifier.</li>
                 <li><strong class="text-stone-200">La part du bilan que vous pouvez sourcer.</strong> Comptez la part de vos chiffres qui remonte à un relevé d'expédition que vous pouvez montrer, face à la part qui repose sur une estimation que plus personne ne sait défendre.</li>
                 <li><strong class="text-stone-200">Où se trouvent vraiment les données personnelles.</strong> Prenez un échantillon des rapports et des écrans que vos partenaires et vos transporteurs voient. Comptez combien portent un nom, un numéro de téléphone ou une adresse. La plupart des équipes ne l'ont jamais compté.</li>
-                <li><strong class="text-stone-200">Le délai entre une fuite et le moment où quelqu'un l'apprend.</strong> Une donnée personnelle arrive sur un écran qui ne devrait pas la porter. Mesurez l'écart avec le moment où une personne le découvre. Aujourd'hui ce délai est en général inconnu, et c'est déjà un constat.</li>
+                <li><strong class="text-stone-200">La part de vos propres journaux qui passe par un masquage, tout simplement.</strong> Comptez les services qui écrivent des journaux applicatifs, puis comptez ceux dont la sortie traverse une étape de masquage avant d'être stockée ou envoyée chez un prestataire de journalisation. C'est le point de départ dont parle la moitié &laquo;&nbsp;données personnelles&nbsp;&raquo; de cette page, et c'est celui que la plupart des équipes peuvent établir en une après-midi et préféreraient ne pas établir.</li>
              </ul>
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez le bilan de l'an dernier et un échantillon des écrans vus par vos partenaires.</p>
         </div>
+    </div>
+
+    <div class="border-l-2 border-stone-700 pl-5 mb-16">
+        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Statut : hypothétique &mdash; non mesuré ; posture de conformité déclarée par nous</p>
+        <p class="text-base text-stone-500 font-medium mb-4">
+            Les expositions et le cycle de reporting décrits ci-dessus sont dessinés pour montrer la forme du travail. Ce ne sont pas les comptes rendus d'une mission chez un client, et rien sur cette page n'est un résultat mesuré.
+        </p>
+        <p class="text-base text-stone-500 font-medium">
+            Deux choses que cette page ne prétend pas. FACE est <strong class="text-stone-300">orienté SOC&nbsp;2</strong>, ce qui est une intention de conception que nous déclarons nous-mêmes : ce n'est pas un audit achevé et ce n'est pas une certification. Et rien ici ne vous met en conformité avec quoi que ce soit. Le logiciel trouve l'enregistrement, montre la règle à laquelle il a été confronté, et remet les deux à la personne qui en répond. Savoir si vous satisfaites une obligation est un jugement qui reste chez votre responsable conformité, votre DPO et votre auditeur, et nous vous mentirions en laissant croire autre chose.
+        </p>
     </div>
 
     <div class="text-center">

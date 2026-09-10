@@ -93,7 +93,7 @@ Mastering the endless aisle requires moving beyond siloed logistics software to 
 
 The "endless aisle" is no longer just a retail buzzword; it is a baseline consumer expectation that places immense pressure on fulfillment operations. For a VP of Retail Supply Chain, the mandate is clear: you must deliver infinite choice with absolute precision and unyielding cost control. Achieving this requires breaking down the traditional barriers between your DCs, transit networks, and retail storefronts. By leveraging advanced distributed order management, insisting on real-time inventory visibility, and executing high-velocity cross-docking, operations leaders can turn logistical complexity into a definitive competitive advantage. 
 
-At Runink, our AI-powered supply chain intelligence platform provides the end-to-end visibility and actionable insights necessary to orchestrate profitable omnichannel fulfillment. We empower logistics leaders to proactively manage their networks, from upstream drayage to the final mile. Ready to optimize your fulfillment strategy and eliminate costly blind spots? [Contact the Runink team today](/#contact-form) to transform your supply chain operations.
+Runink FACE works on the fulfilment side of this: it reads order, inventory and carrier records out of the systems that already hold them, compares each one against the rule that governs it, and puts a drafted action in front of the person who can approve it. No action is taken without that approval. [Contact the Runink team](/#contact-form) if you want to walk through the mechanism against your own order flow.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

@@ -15,7 +15,7 @@ robots: index, follow
 <!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-A Yard Management System (YMS) gives distribution centers real-time visibility into every trailer, truck, and dock door across the yard — replacing clipboard-driven chaos with automated gate check-ins, dynamic dock scheduling, and live trailer tracking. Without one, operations leaders bleed revenue through detention fees, inflated dwell times, and preventable safety incidents. AI-powered platforms like Runink layer predictive intelligence on top of core YMS tracking to forecast bottlenecks before they cascade into missed appointments and carrier penalties.
+A Yard Management System (YMS) gives distribution centers real-time visibility into every trailer, truck, and dock door across the yard — replacing clipboard-driven chaos with automated gate check-ins, dynamic dock scheduling, and live trailer tracking. Without one, operations leaders lose money to detention fees, inflated dwell times, and preventable safety incidents. The step beyond tracking is prediction: using the yard's own history to flag the trailers and doors heading for trouble, rather than reporting on them afterwards.
 {{< /direct-answer >}}
 
 * **Unmanaged yards cost the average high-volume DC between $500,000 and $1.2 million per year in detention and demurrage charges alone.**
@@ -64,7 +64,7 @@ Finally, there is the **carrier relationship erosion**. Drivers who consistently
 AI-powered yard intelligence platforms move beyond recording what happened in the yard to predicting what will happen next — forecasting dock congestion, dynamically re-sequencing trailer priorities, and surfacing anomalies before they cascade into detention events or missed delivery windows.
 {{< /direct-answer >}}
 
-A traditional YMS is a system of record. It tells you where trailers are right now. That alone is a massive improvement over manual operations. But the next frontier — and where platforms like [Runink](/use-cases/) operate — is turning that real-time data into a system of intelligence.
+A traditional YMS is a system of record. It tells you where trailers are right now. That alone is a large improvement over manual operations. The next step is turning that record into something that raises specific trailers for attention rather than displaying all of them.
 
 **Predictive dock scheduling** uses historical arrival patterns, carrier on-time performance data, and current yard density to forecast when congestion will peak and proactively reassign dock doors before bottlenecks form. Instead of reacting when six trucks are queued at Gate 2, the system anticipated the surge forty-five minutes ago and pre-positioned yard jockeys to clear staging lanes.
 
@@ -96,7 +96,7 @@ What separates a good implementation from a transformational one is what you do 
 Yard Management Systems have evolved from nice-to-have visibility tools into operational necessities for any distribution center serious about controlling detention costs, maximizing dock utilization, and maintaining carrier partnerships. AI-powered platforms represent the next step — transforming the yard from a reactive staging area into a predictive, self-optimizing node in the supply chain.
 {{< /direct-answer >}}
 
-The yard is the last mile of the first mile. Every shipment that enters or exits your facility passes through it, and yet it remains the least instrumented, least optimized segment of most supply chain operations. A YMS closes that gap. AI-powered yard intelligence — the kind [Runink is building](/#contact-form) — turns that closed gap into a competitive advantage.
+The yard is the last mile of the first mile. Every shipment that enters or exits your facility passes through it, and it remains the least instrumented segment of most supply chain operations. A YMS closes that gap. A worthwhile first measure, before any system decision: your average gate-to-gate dwell for last quarter, and the detention you paid against it. Most operations cannot produce either figure, which is itself the finding. [Talk to us](/#contact-form) if it would help to work them out.
 
 If your detention fees are climbing, your dock utilization is stagnant, and your yard jockeys are still navigating by memory, the question is not whether you need a YMS. The question is how many more quarters of avoidable cost you are willing to absorb before deploying one.
 
@@ -127,7 +127,7 @@ If your detention fees are climbing, your dock utilization is stagnant, and your
       "name": "How does AI improve yard management beyond basic YMS tracking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AI-powered yard intelligence platforms like Runink add predictive capabilities on top of basic YMS tracking, including forecasting dock congestion before it occurs, dynamically re-sequencing trailer priorities based on delivery urgency and detention clock status, and detecting anomalies such as stranded trailers or underperforming dock doors in real time."
+        "text": "Predictive yard capabilities sit on top of basic YMS tracking and consist of three things: forecasting dock congestion from the yard's own arrival and dwell history, proposing a re-sequence of trailer priorities against delivery urgency and detention clock status, and detecting anomalies such as stranded trailers or consistently underperforming dock doors. Whether a proposed re-sequence is applied automatically or confirmed by a yard supervisor is a governance decision, not a technical one."
       }
     },
     {

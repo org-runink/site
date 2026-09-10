@@ -1,6 +1,6 @@
 ---
 title: "Demurrage and Detention Fees — The Silent Margin Killer and How to Fight Back"
-description: "Demurrage and detention fees drain $5B+ annually from global supply chains. Learn how AI-driven container visibility and automated dispute resolution cut costs by 40-60%."
+description: "Demurrage and detention charges compound faster than the freight rate itself. Where they actually come from, which invoice lines are disputable under the carrier's own tariff, and why the dispute window closes before most finance teams see the invoice."
 author: "Runink Logistics Operations Team"
 date: 2026-06-05T16:22:42Z
 draft: false
@@ -20,7 +20,7 @@ Demurrage and detention fees are among the largest hidden costs in global logist
 
 * **Demurrage (port-side) and detention (inland) are distinct charges that compound rapidly — often exceeding the freight rate itself within days of the free time expiry.**
 * **Root causes include port congestion, documentation bottlenecks, customs holds, and poor container tracking — not operational negligence.**
-* **AI-driven visibility platforms and automated dispute resolution consistently recover 40-60% of these charges, turning a silent margin killer into a controllable line item.**
+* **A share of these charges is invalid under the carrier's own tariff — terminal closures, customs examinations, vessel delay before the consignee could act. What that share is for your operation is a number only your own invoices can tell you, and almost nobody has counted it.**
 
 <br>
 
@@ -77,7 +77,7 @@ The **World Shipping Council** has documented the cascading effect: when carrier
 ## How Can AI-Driven Visibility and Automated Dispute Resolution Cut These Costs?
 
 {{< direct-answer >}}
-AI-driven container visibility platforms reduce demurrage and detention exposure by 40-60% through three mechanisms: real-time free time monitoring that triggers proactive intervention, predictive ETA models that align drayage and documentation workflows with actual vessel arrivals, and automated dispute engines that identify invalid charges and generate carrier-ready dispute packages.
+Container visibility platforms attack demurrage and detention through three distinct mechanisms: real-time free time monitoring, so a clock running out is seen before it runs out; predictive ETA models, so drayage and documentation are scheduled against likely arrival rather than published arrival; and automated identification of invalid charges, so a disputable invoice line is caught inside its dispute window. How much each is worth depends entirely on which of the three your current losses come from.
 {{< /direct-answer >}}
 
 The most effective defense against demurrage and detention is **not** negotiating longer free time — it is eliminating the information gaps that cause containers to overstay. This requires three capabilities working in concert:
@@ -88,23 +88,23 @@ The most effective defense against demurrage and detention is **not** negotiatin
 
 **Automated dispute identification and resolution.** Not every demurrage invoice is valid. Carriers frequently charge for days when the terminal was closed, when the container was under customs examination (and therefore exempt under the carrier's own tariff), or when vessel delays consumed free time before the consignee had any opportunity to act. An automated dispute engine cross-references invoice line items against terminal event data, free time agreements, and exemption rules to flag recoverable charges and generate dispute packages with supporting documentation.
 
-Consider a real-world scenario: a consumer goods importer moving 3,000 TEUs annually through the Port of Savannah was paying $1.8 million per year in combined demurrage and detention. After deploying an AI-driven visibility platform, the organization achieved three outcomes within six months — a 52% reduction in per-container dwell time through proactive dispatch, successful dispute recovery of $340,000 in invalid charges from the prior twelve months, and a renegotiated free time allocation based on data showing consistent sub-three-day pickup performance.
+Note what each of the three does and does not promise. The countdown prevents charges that were about to start. The ETA model improves the odds that a pickup appointment lines up with the container actually being available. The dispute engine only recovers charges the records show were invalid in the first place — it does not negotiate, and it does not recover a valid charge. A programme sold as a single percentage saving is concealing which of the three it is actually doing.
 
-*Learn more about how our [Freight Finance Analytics](/use-cases/) quantify and recover hidden accessorial costs.*
+*The [Runink FACE use cases](/use-cases/) set out how accessorial charges are read against the contract and the operational record, and what is handed to a person to decide.*
 
 ---
 
 ## Conclusion
 
 {{< direct-answer >}}
-Demurrage and detention fees are not an unavoidable cost of doing business — they are a symptom of poor container visibility and fragmented operational workflows. Organizations that invest in AI-driven monitoring and automated dispute resolution consistently convert this silent margin killer into a controlled, auditable expense line, recovering 40-60% of historical charges while preventing future accruals.
+Demurrage and detention fees are not an unavoidable cost of doing business — they are a symptom of container events, free time rules and carrier tariffs being held in three places and never read against each other while the charge is still disputable. Making them an auditable line item starts with counting them, by container and by cause.
 {{< /direct-answer >}}
 
 Every container sitting idle at a terminal is capital trapped in a queue — and your organization is paying rent on the delay. The shift from reactive invoice processing to proactive container lifecycle management is not a technology upgrade; it is a fundamental change in how logistics finance teams protect margin.
 
-**Runink** was built to deliver exactly this shift. By unifying container events, free time rules, and carrier tariffs into a single intelligence layer, Runink gives CFOs and logistics leaders the visibility to prevent charges before they accrue and the evidence to dispute them when they do. The silent margin killer only works in the dark.
+**Runink FACE** works on the reading part of this. It compares a charge against the free time terms and the operational record for the same container, and where the records do not support the charge it raises that container by name with the evidence attached, for whoever signs disputes to decide. It does not quantify a recovery in advance, and it does not file anything on its own.
 
-*Ready to quantify your demurrage and detention exposure? [Schedule a consultation](/#contact-form) to see how Runink recovers hidden freight costs.*
+*The first number worth having is your own: total demurrage and detention paid last year, split by cause. [Schedule a consultation](/#contact-form) if it would help to work it out.*
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
@@ -133,7 +133,7 @@ Every container sitting idle at a terminal is capital trapped in a queue — and
       "name": "How can AI reduce demurrage and detention costs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AI-driven platforms reduce demurrage and detention by 40-60% through real-time free time monitoring with automated alerts, predictive vessel ETA models that align drayage and documentation workflows, and automated dispute engines that identify invalid charges and generate carrier-ready dispute packages with supporting evidence."
+        "text": "Three mechanisms are available: real-time free time monitoring, so a clock running out is seen before it runs out; predictive vessel ETA models, so drayage and documentation are scheduled against likely arrival rather than published arrival; and automated identification of invoice lines that are invalid under the carrier's own tariff, so they are caught inside the dispute window. How much each is worth depends on which of the three a given operation's losses come from, and that is a figure only its own invoices can establish."
       }
     },
     {

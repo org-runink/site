@@ -112,7 +112,7 @@ For high-value shipments where insurance adequacy and carrier performance are no
 
 Regardless of which Incoterm you choose, the operational discipline required is the same: you need to see your cargo, understand your liability exposure at every handoff point, and act on that data before dwell time, coverage gaps, or claims disputes erode your margins.
 
-Platforms like [Runink](/#contact-form) are built to give operations leaders exactly that visibility — connecting Incoterms contract logic to real-time cargo intelligence across ocean, port, rail, and road, so you always know who owns the risk and where the cargo actually is. Explore how Runink can strengthen your [trade compliance and visibility workflows](/use-cases/) today.
+The practical test is whether anyone in your business can state, for a consignment currently in transit, which Incoterm governs it, where the risk transfer point falls, and whether that point has been passed. In most operations the Incoterm lives in the contract file and the cargo position lives in a carrier portal, and nobody reads the two together until a claim forces it. [Runink FACE](/products/face/) reads records of that kind out of the systems that already hold them and raises the mismatches as named consignments; the [compliance](/use-cases/compliance/) and [supply chain visibility](/use-cases/supply-chain-visibility/) pages set out the mechanism.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
@@ -149,7 +149,7 @@ Platforms like [Runink](/#contact-form) are built to give operations leaders exa
       "name": "How can supply chain visibility platforms help manage Incoterms risk?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Supply chain visibility platforms like Runink connect real-time cargo tracking data across ocean, port, rail, and road legs to the contractual risk transfer points defined by Incoterms. This allows operations teams to confirm when liability has shifted, monitor dwell time against free-time allowances, and proactively manage insurance coverage across multi-modal journeys — reducing exposure to uninsured losses and demurrage charges."
+        "text": "Supply chain visibility platforms read cargo position data from ocean, port, rail and road legs alongside the contractual risk transfer point defined by the Incoterm on that consignment. That lets an operations team see whether liability has shifted, how dwell compares with the free-time allowance, and whether insurance cover matches the leg the cargo is actually on. The figures remain the shipper's to act on; the platform's job is to surface the mismatches by consignment rather than by exception rate."
       }
     }
   ]

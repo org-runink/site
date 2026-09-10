@@ -6,7 +6,7 @@
 # English and hugo.toml already lists them in English in the Spanish menu. The
 # link goes to the same /industries/... page in every language.
 title: "Runink"
-description: "Entradas aduaneras retenidas, siniestros resueltos sin la evidencia que ya estaba en el expediente, tráfico cursado y nunca tarificado. La respuesta suele estar ya en sus propios registros. Runink los lee todos y pone una acción concreta delante de la persona que puede aprobarla."
+description: "Entradas aduaneras retenidas, siniestros resueltos sin la evidencia que ya estaba en el expediente, tráfico cursado y nunca tarificado. La respuesta suele estar ya en sus propios registros. Runink FACE los lee todos y pone una acción concreta delante de la persona que puede aprobarla."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 accent: "#ea580c"
@@ -82,6 +82,22 @@ industries:
       - "Ventas"
       - "TI y seguridad de la información"
 
+# The one block that names the product — the Spanish counterpart of the `product`
+# key in content/_index.md, and it sits in the same place for the same reason:
+# after the industries and before the reasons, because everything above it is in
+# the buyer's vocabulary and a reader who has just found their own line is
+# exactly where "so what is it called" arrives. Until this key existed, the
+# Spanish page answered that only in the paper link near the bottom.
+#
+# "Runink FACE" is a product name and stays in English. The heading renders
+# uppercase and letterspaced, so it stays short. One heading, one paragraph, one
+# footnote, no call to action of its own — naming the product is not a licence to
+# start describing it; the depth belongs in /blog/whitepapers/runink-face/.
+product:
+  heading: "El producto es Runink FACE"
+  deck: "Runink FACE es el producto que está detrás de cada línea de arriba. Lee los registros que sus sistemas ya guardan, compara cada uno con la regla que lo gobierna y pone una acción redactada delante de la persona que tiene la decisión a su cargo. Lo que cambia de un sector a otro es qué registros importan y qué regla aplica; la lectura, la redacción y la aprobación no cambian."
+  note: "Debajo del nombre: agentes que leen los registros y redactan la acción, una pantalla de revisión para quien tiene la decisión a su cargo, y la plataforma que mantiene ambas cosas dentro de su propia red."
+
 why_heading: "Por qué esto no es otro panel de control"
 why_intro: "Tres cosas deciden si algo de lo anterior merece su tiempo."
 why:
@@ -90,7 +106,7 @@ why:
     body: "Un panel le muestra una cifra y le deja el trabajo a usted. Esto llega como una acción propuesta concreta, priorizada, con la regla que invocó y los registros que citó adjuntos."
   - glyph: "approve"
     title: "Decide una persona con nombre"
-    body: "Nada sale de su organización antes de que alguien lo apruebe. Quién lo aprobó, cuándo y qué cambió queda en el registro, para poder explicar el motivo más adelante sin volver a reconstruirlo."
+    body: "Un hallazgo llega como una acción redactada, y espera. Aprobarla es lo que la envía. Quién la aprobó, cuándo y qué cambió queda en el registro, para poder explicar el motivo más adelante sin volver a reconstruirlo."
   - glyph: "held"
     title: "Sus registros se quedan en sus máquinas"
     body: "Los archivos y el razonamiento sobre ellos corren en hardware que usted controla. Nada se envía a un proveedor de modelos externo, que suele ser el camino más corto a través de una revisión de seguridad."

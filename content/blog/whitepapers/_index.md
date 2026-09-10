@@ -36,9 +36,20 @@ cascade:
 aliases:
   - /whitepapers/
 headline: "Papers that open with what can be proven."
-description: "Long-form documents on Runink CORE, FACE and PULSE. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
+# FACE first, and named as the product: it is the flagship, it is `weight: 10`,
+# and it is what the list sorts to the top. CORE is named as the platform the
+# products run on, not as a third peer product, and PULSE is named as a separate
+# product so that nothing in its paper reads as a FACE capability. The previous
+# wording ("Runink CORE, FACE and PULSE") put them in one undifferentiated list
+# with the platform at the front.
+description: "Long-form documents on Runink FACE, on Runink PULSE — a separate product — and on the CORE platform the two of them run on. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
 deck: |
-  Four long-form documents on the Runink platform and the products built on it.
+  Four long-form documents. **Runink FACE** is the product the first of them is
+  about. **Runink PULSE** is a different product, for market analysis and
+  marketing, and its paper describes its own work rather than FACE's.
+  **Runink CORE** is not a product at all: it is the platform both run on, which
+  is the honest answer to where your data is processed and who can see it. The
+  fourth is a joint architecture paper with Logical Leap's Atlas.
 
   They carry no case studies, no customer names and no return-on-investment
   figures. Those things are easy to write and impossible to check, and a buyer

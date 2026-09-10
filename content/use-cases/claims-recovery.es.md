@@ -1,9 +1,10 @@
 ---
 title: "Reclamaciones de Transporte y Cargos de Puerto"
-description: "Las reclamaciones caducan porque preparar una cuesta toda una mañana. El recibo, el peso, la tarifa y la fecha límite llegan ya reunidos, así que una persona solo tiene que juzgar si el caso se sostiene."
+description: "Las reclamaciones caducan porque preparar una cuesta toda una mañana. La entrada, la retención, los documentos que faltan, los días retenida y el cargo por día llegan ya reunidos y unidos, así que una persona solo tiene que juzgar si el caso se sostiene."
 layout: "use_case"
 badge: "Recuperación de Costos"
 badgeColor: "#7c3aed"
+product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
 author: "Lead Data & Cloud Architect"
 ---
@@ -11,10 +12,13 @@ author: "Lead Data & Cloud Architect"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
+<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Reclamaciones de transporte</p>
+<p class="text-base text-stone-500 font-medium mb-10">Este es un escenario de <strong class="text-stone-300">Runink FACE</strong> &mdash; el Fulfilment Autonomous Claims Engine. Las reclamaciones no son aquí una función lateral. Son la C del nombre del producto.</p>
+
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">El papeleo se reúne por usted.</strong> El recibo del transportista, el peso que marcó la báscula, la tarifa que regía ese día y la fecha límite para reclamar llegan a un mismo sitio. Todo unido al envío al que pertenece.</li>
-<li><strong class="text-stone-200">Los pesos se comparan con los documentos.</strong> Cuando el peso del papel y el peso de la báscula no coinciden, esa diferencia se señala. Y se señala mientras la entrada aún se mueve, no cuando el cargo ya ha corrido.</li>
+<li><strong class="text-stone-200">El papeleo se reúne por usted, y solo las partes que de verdad están ahí.</strong> La entrada, el puerto, el motivo por el que está retenida, los documentos que faltan en el expediente, los días que lleva retenida y el cargo por día llegan a un mismo sitio, unidos al envío al que pertenecen. No la tarifa que regía ese día: FACE no guarda tarifario, ni tabla de tarifas, ni cuadro de recargos, así que no puede decirle cuál era la tarifa y no va a fingir que sí.</li>
+<li><strong class="text-stone-200">Las cantidades se comparan de tres maneras.</strong> El pedido de compra, la factura y el conocimiento de embarque se confrontan entre sí, y donde no coinciden el hallazgo nombra la pareja y el tamaño de la diferencia: conocimiento contra pedido, conocimiento contra factura. Eso es una comprobación de discrepancias sobre lo que dicen los documentos, no un cuadre contra una báscula ni contra una tarifa. Aquí tampoco hay señal de báscula de camiones.</li>
 <li><strong class="text-stone-200">La carta se redacta, no se envía.</strong> Una persona con nombre lee el caso, lo edita o lo rechaza, y esa firma queda en el registro. Nada llega al transportista antes.</li>
 </ul>
 
@@ -29,7 +33,7 @@ author: "Lead Data & Cloud Architect"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Una reclamación obliga a buscar cuatro cosas: el recibo del transportista, el peso que anotó la terminal, la tarifa que regía ese día y el plazo con el que trabaja el transportista. Luego hay que escribir la carta. Eso es una mañana de trabajo. Así que solo las reclamaciones más grandes llegan a tenerla.
+                Una reclamación obliga a buscar cuatro cosas: el recibo del transportista, la cantidad que anotó la terminal, la tarifa que regía ese día y el plazo con el que trabaja el transportista. Luego hay que escribir la carta. Eso es una mañana de trabajo. Así que solo las reclamaciones más grandes llegan a tenerla.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 En el puerto pasa lo mismo. Retienen una entrada por un papel que falta, y empieza a correr un cargo diario. El aviso llega con todo lo demás de la noche, y cuando alguien une esa retención a la factura, el cargo lleva días corriendo.
@@ -44,13 +48,16 @@ author: "Lead Data & Cloud Architect"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Las revisiones corren de noche contra sus propios registros. Por la mañana la lista es lo que de verdad pasó, ordenada, con los documentos ya adjuntos. No es un panel por el que usted tenga que ir buscando.
+                Las comprobaciones corren contra sus propios registros, y la lista de la mañana es lo que esos registros dicen de verdad, ordenada y con los documentos ya adjuntos. No es un panel por el que usted tenga que ir buscando. El corolario merece decirse, porque casi todos los productos lo esconden: si no conecta nada, la lista está vacía. No se abre con ejemplos preparados que parecen sus rutas. Así se comportó una vez, y se quitó.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                La reclamación llega ya armada: el recibo, la lectura de la báscula, la tarifa de ese día, el plazo y una carta redactada. A quien revisa le queda una sola pregunta, que es la única que merece su tiempo: ¿se sostiene este caso?
+                En la parte del puerto la aritmética es de la clase honesta. Los días que la caja lleva retenida, multiplicados por el cargo diario que figura en la entrada, y nada más. El arancel se deja fuera de esa cifra a propósito, porque el arancel se debe igual, se mueva la caja hoy o en una semana, y sumarlo inflaría la exposición por el valor de una factura que nadie evitó. Lo que se le muestra es el cargo que sí era evitable, que es un número más pequeño y más útil que el que imprime la mayoría de las herramientas.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                La reclamación llega ya armada: la entrada, la retención y el motivo que se dio para ella, los documentos que faltan en el expediente, la discrepancia de cantidad si la hay, y una carta redactada. A quien revisa le queda una sola pregunta, que es la única que merece su tiempo: ¿se sostiene este caso?
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Aprobarla termina el trabajo en vez de empezarlo. El mensaje al transportista, la fecha límite y la actualización de su sistema salen de esa aprobación. Más tarde, por qué se presentó una reclamación se responde desde el registro y no desde la memoria.
+                Aprobarla es lo que la envía. Y donde un paso detrás de la aprobación todavía no tiene implementación &mdash;la escritura de vuelta en su sistema de registro es el ejemplo real&mdash; la respuesta nombra ese paso como no ejecutado en vez de dar la acción entera por hecha, así que nadie se entera tres semanas después de que la presentación nunca salió. Más tarde, por qué se presentó una reclamación se responde desde el registro y no desde la memoria.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(124,58,237,0.05)] shadow-2xl">
@@ -66,6 +73,13 @@ author: "Lead Data & Cloud Architect"
              </ul>
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga una ruta o un transportista y un trimestre de facturas.</p>
         </div>
+    </div>
+
+    <div class="border-l-2 border-stone-700 pl-5 mb-16">
+        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Situación: hipotético &mdash; no medido</p>
+        <p class="text-base text-stone-500 font-medium">
+            La reclamación y la retención en puerto de arriba están dibujadas para mostrar la forma del trabajo. No son el relato de un trabajo con un cliente. No publicamos tasas de recuperación, ni importes recuperados, ni nombres de clientes, porque no los hemos medido sobre sus registros ni sobre los de nadie &mdash; y una tasa de recuperación sacada de las rutas de otro no le diría nada de las suyas.
+        </p>
     </div>
 
     <div class="text-center">

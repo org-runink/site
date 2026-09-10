@@ -20,7 +20,7 @@ Traditional inventory management methods — static safety stock formulas, quart
 
 * **The bullwhip effect, elongated lead times, and seasonal misforecasting are costing enterprises billions in trapped working capital and lost sales — problems that static safety stock cannot solve.**
 * **Demand sensing differs from demand forecasting by incorporating real-time, forward-looking signals rather than relying solely on historical consumption patterns.**
-* **AI-driven inventory platforms like Runink dynamically recalibrate inventory positions across the network, combining ABC/XYZ segmentation, EOQ adjustments, and postponement strategies to optimize both service levels and capital efficiency.**
+* **ABC/XYZ segmentation, EOQ adjustment and postponement are the levers available to an inventory team; what determines whether they work is how current the signal behind each decision is, and who is accountable for changing a parameter.**
 
 <br>
 
@@ -86,7 +86,7 @@ The challenge for most inventory organizations is not a lack of data — it is t
 
 McKinsey's research on working capital optimization confirms that companies integrating demand sensing with inventory optimization unlock 20–50% reductions in working capital tied to inventory, with corresponding improvements in cash conversion cycles. The key is connecting signal to action at the speed the market demands.
 
-This is where platforms like [Runink](/use-cases/) deliver operational impact. By ingesting data streams across the supply chain — POS feeds, carrier milestone events, warehouse capacity metrics, supplier performance scorecards, and external signals like weather and market indicators — Runink builds a unified, real-time inventory picture. Machine learning models continuously recalibrate demand projections at the SKU-location level, automatically adjusting safety stock parameters, reorder points, and allocation priorities as conditions change.
+Assembling that view is what [Runink FACE](/products/face/) does: it reads POS feeds, carrier milestone events, warehouse capacity records and supplier performance history out of the systems that already hold them, and produces a demand forecast at the SKU-location level with the records behind it attached. Proposed changes to a safety stock level, a reorder point or an allocation priority arrive as drafted actions for the planner who owns that SKU to approve, edit or reject. Nothing is re-parameterised on its own, because a safety stock change is a working capital decision.
 
 The result is not incremental improvement to an outdated process. It is a fundamental shift from reactive replenishment to proactive inventory positioning — where every stocking decision is informed by the freshest available signal across the network.
 
@@ -102,7 +102,7 @@ The inventory leaders who will outperform in the coming years are not the ones a
 
 The cost of inaction is measurable: trapped working capital, eroding fill rates, and a planning team perpetually chasing yesterday's demand with tomorrow's inventory. The path forward requires a platform that can ingest, synthesize, and act on signals at the speed your supply chain demands.
 
-[Explore how Runink helps inventory leaders move from reactive replenishment to demand-driven optimization](/#contact-form).
+A useful first measure, before any platform decision: how many days elapse in your operation between a sell-through signal being recorded and a replenishment parameter changing because of it. [Get in touch](/#contact-form) if it would help to work that number out together.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

@@ -20,7 +20,7 @@ A supply chain maturity assessment scores your operations across five progressiv
 
 * **Supply chain maturity models define five levels — Reactive, Defined, Managed, Integrated, and Leading/Autonomous — each with distinct operational signatures across planning, procurement, logistics, technology, talent, and sustainability.**
 * **The biggest assessment pitfalls are vanity scoring, failing to benchmark against industry-specific peers, and underestimating the organizational change required to advance.**
-* **Automated diagnostic platforms like Runink compress what used to be a six-week consulting engagement into a data-driven assessment that delivers benchmarked scores and an actionable roadmap in minutes.**
+* **Most of a six-week consulting diagnostic is spent collecting facts your own systems already hold, which is why the first pass is worth running internally — and why the dimensions you cannot score are the finding.**
 
 <br>
 
@@ -120,7 +120,7 @@ A structured supply chain maturity assessment is the essential first step for an
 
 The distance between knowing your operations need to modernize and actually modernizing is a diagnostic gap. A rigorous maturity assessment closes that gap by giving you a benchmarked, dimension-by-dimension picture of where you stand and a sequenced plan for where to go next.
 
-Traditionally, this diagnostic required six to eight weeks of consulting time, dozens of stakeholder interviews, and a hefty engagement fee. Platforms like [Runink](/#contact-form) are changing that equation — automating the data ingestion, scoring, and peer benchmarking process so that operations leaders get an honest, data-driven maturity assessment in minutes rather than months. The result is not a slide deck that sits on a shelf, but a living diagnostic that updates as your operations evolve.
+Traditionally, this diagnostic required six to eight weeks of consulting time, dozens of stakeholder interviews, and a substantial engagement fee. Much of that effort goes into collecting facts your own systems already hold, which is why the assessment is worth attempting internally first — scored honestly, against the dimensions above, by the people who own each one. An internal score you disagree about is more useful than an external one you accept, because the disagreement is where the real diagnostic sits. [Talk to us](/#contact-form) if you want a second read on yours.
 
 The organizations that will lead their industries over the next decade are the ones honest enough to assess where they are today — and disciplined enough to build a roadmap from that truth.
 
@@ -159,7 +159,7 @@ The organizations that will lead their industries over the next decade are the o
       "name": "How long does a supply chain maturity assessment take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Traditional consulting-led assessments take six to eight weeks including stakeholder interviews and analysis. Automated platforms like Runink can compress the diagnostic process to minutes by ingesting operational data, applying scoring algorithms, and benchmarking against industry peers — delivering actionable results without lengthy engagement cycles."
+        "text": "Traditional consulting-led assessments take six to eight weeks including stakeholder interviews and analysis. Much of that time is spent gathering facts the organisation's own systems already hold, so a first internal pass — each dimension scored by the person who owns it — is usually faster and more useful. The dimensions nobody can score are themselves the most important finding."
       }
     }
   ]

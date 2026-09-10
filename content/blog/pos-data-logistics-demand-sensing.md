@@ -108,7 +108,7 @@ Integrating real-time POS data into your logistics network replaces outdated for
 
 In today's unforgiving retail landscape, supply chain resilience cannot be achieved by simply moving boxes faster; it requires moving them smarter. The days of reacting to stockouts with expensive expedited freight and chaotic warehouse operations must come to an end. By harnessing the power of real-time POS sync, Operations leaders can bridge the chasm between the retail floor and the logistics control tower. AI and advanced data pipelines serve as the critical enablers, transforming raw checkout data into actionable intelligence that dictates precise, cost-effective inventory positioning. Ultimately, demand sensing allows your logistics network to operate not just with efficiency, but with anticipation.
 
-For operations teams ready to eliminate the blind spots between retail demand and logistics execution, Runink provides the intelligent supply chain visibility needed to turn POS data into proactive supply chain performance. Explore our platform or [contact our logistics experts](/#contact-form) to see how we can help you build a more responsive, resilient logistics network.
+Demand forecasting from POS and order history is one of the kinds of work Runink FACE does: it reads the records you already hold, produces a forecast at the level you ask for, and shows the records the forecast was built from. What it does not do is act on that forecast by itself — each proposed replenishment or reposition goes to a named person to approve, edit or reject. [Contact our logistics team](/#contact-form) if you want to see the mechanism against your own POS feed.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

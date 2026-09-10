@@ -20,7 +20,7 @@ Supply chain leaders can revitalize their Six Sigma methodologies by integrating
 
 * **Eliminate Data Silos:** Overcome the limitations of fragmented WMS, TMS, and YMS systems by leveraging a unified data lake architecture to gain true end-to-end network visibility.
 * **Accelerate the Measure Phase:** Automate data ingestion from ERPs, ELDs, and IoT sensors to achieve real-time visibility into OTIF (On-Time In-Full), fill rates, and dwell times.
-* **Enable Seamless Integration:** Utilize Runink's one-click connectors to enterprise platforms like Snowflake and Databricks to rapidly deploy continuous process improvement initiatives.
+* **Specify the integration by behaviour, not by logo:** what matters is not which warehouse a connector targets, but what happens when two source systems disagree about the same event.
 
 <br>
 
@@ -68,17 +68,19 @@ For a VP of Supply Chain, clean data ingestion means that a timestamp generated 
 
 ---
 
-## How Can Runink's Connectors Streamline Data Lake Integration?
+## What Does Data Lake Integration Actually Have to Solve?
 
 {{< direct-answer >}}
-Runink's one-click connectors streamline data lake integration by automatically routing normalized logistics telemetry from diverse WMS, TMS, and ERP systems directly into modern data platforms like Snowflake and Databricks, eliminating the need for complex, custom data engineering pipelines.
+Three things, in this order: getting logistics telemetry out of the systems that hold it, normalising payloads that differ by carrier and facility, and keeping the result current enough that a Six Sigma baseline computed on Monday is still true on Friday. The third is the one that defeats most projects, because it is an operating commitment rather than a build.
 {{< /direct-answer >}}
 
 The transition to a data-driven Six Sigma methodology is often bottlenecked by the technical complexities of pipeline engineering. Operations leaders cannot afford to wait months for IT teams to build custom API integrations to extract data from legacy systems. The speed of implementation is a critical competitive advantage in today's supply chain ecosystem. When IT departments are overburdened with building brittle ETL pipelines just to calculate a simple OTIF metric, the momentum of any continuous improvement initiative is lost before the Analyze phase even begins.
 
-This is where Runink provides a decisive advantage. We have engineered our platform to serve as the intelligent ingestion layer for global logistics operations. Runink’s Global Telemetry Data Lake capabilities include seamless, one-click connectors that integrate directly with enterprise-grade data warehouses and lakehouses, including Snowflake and Databricks. These connectors are purpose-built for the complexities of global freight, automatically recognizing and harmonizing distinct data payloads from thousands of different carriers, forwarders, and facilities.
+The hard part is rarely the transport. It is that a "delivered" event does not mean the same thing from two different carriers, a dwell timestamp may be recorded at the gate or at the door depending on the facility, and an EDI 214 from one forwarder carries fields another leaves blank. A pipeline that moves all of it faithfully into a warehouse has moved the ambiguity as well, and the Six Sigma team discovers it three weeks into the Measure phase.
 
-By eliminating the friction of data integration, Runink allows supply chain executives to connect their critical operational hubs—such as Oracle ERPs, Manhattan WMS, and Blue Yonder TMS—directly to their central analytics environments. This automated data pipeline ensures that the continuous improvement teams driving Six Sigma initiatives always have access to a real-time, pristine dataset. The platform handles the parsing of complex EDI messages, the normalization of carrier status updates, and the reconciliation of freight audit data, presenting operations teams with a unified baseline ready for advanced statistical analysis. This empowers supply chain leaders to rapidly deploy their resources toward analyzing variance and implementing robust control strategies, rather than wrangling data.
+So the question to ask of any ingestion layer — built, bought, or assembled — is not how quickly it connects. It is what it does when two sources disagree. Does the disagreement surface as a named record to be resolved, or does it get averaged into the baseline? A baseline that silently absorbs contradictions will produce a process capability figure, and the figure will be wrong in a direction nobody can trace.
+
+That is the property worth specifying before any tool is chosen: disagreements between sources must arrive as items, not as variance.
 
 ---
 
@@ -90,7 +92,7 @@ By leveraging global telemetry data lakes and automated ingestion, supply chain 
 
 The principles of Lean Six Sigma remain as relevant today as they were decades ago, but the tools required to execute them have fundamentally evolved. For Vice Presidents of Operations and Supply Chain Directors, the challenge is no longer about finding a methodology to improve performance; it is about securing the high-quality data necessary to make that methodology work at a global scale. 
 
-By upgrading your Define and Measure phases with a centralized, telemetry-driven data architecture, you eliminate the blind spots created by legacy data silos. Accurate baselines lead to precise analysis, which in turn drives sustainable, network-wide improvements in OTIF, fill rates, and cost-to-serve. If your organization is ready to move beyond reactive logistics management and build a resilient, Six Sigma-capable supply chain network, [contact the Runink team](/#contact-form) to learn how our data lake capabilities and intelligent connectors can accelerate your operational excellence initiatives.
+Upgrading Define and Measure with a centralised, telemetry-driven architecture closes the blind spots created by legacy silos — but only if the definitions travel with the data. Accurate baselines are what make the Analyze phase worth running; an imprecise baseline makes every later phase an argument about the numbers rather than about the process. Start by writing down, for your own network, how "on time" and "in full" are currently computed in each source system, and where those definitions differ. That document is usually the real deliverable of the Measure phase. [Contact the Runink team](/#contact-form) if it would help to work through it.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
@@ -124,10 +126,10 @@ By upgrading your Define and Measure phases with a centralized, telemetry-driven
     },
     {
       "@type": "Question",
-      "name": "How Can Runink's Connectors Streamline Data Lake Integration?",
+      "name": "What does data lake integration have to solve for logistics telemetry?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Runink's one-click connectors streamline data lake integration by automatically routing normalized logistics telemetry from diverse WMS, TMS, and ERP systems directly into modern data platforms like Snowflake and Databricks, eliminating the need for complex, custom data engineering pipelines."
+        "text": "Three things: extracting telemetry from the WMS, TMS and ERP systems that hold it; normalising payloads whose field meanings differ by carrier and facility; and keeping the result current enough that a baseline computed this week is still true next week. The third is the hardest, because it is an ongoing operating commitment rather than a one-off build. The test of any ingestion layer is what it does when two sources disagree about the same event — a disagreement should surface as a named record to resolve, not be absorbed into the baseline as variance."
       }
     }
   ]

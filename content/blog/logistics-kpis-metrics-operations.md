@@ -84,9 +84,9 @@ Carrier scorecard compliance measures how well each carrier in your network perf
 AI-driven supply chain platforms automate the collection, normalization, and anomaly detection across all 10 KPIs simultaneously, replacing fragmented spreadsheets with a unified control tower that surfaces problems before they reach the customer. Rather than waiting for a monthly review to discover that dock-to-stock time doubled at a regional DC, continuous monitoring triggers alerts at the moment performance deviates from established thresholds.
 {{< /direct-answer >}}
 
-The challenge for most operations teams is not identifying which KPIs matter—it is sustaining accurate, timely measurement across fragmented data sources: TMS, WMS, YMS, ERP, carrier EDI feeds, and IoT telemetry. Platforms like [Runink](/use-cases/) integrate these data streams, apply machine learning to detect trend shifts and outliers, and present actionable intelligence at the lane, carrier, and facility level. The result is a shift from reactive reporting to proactive performance management—exactly the capability that separates supply chain leaders from the rest of the field.
+The challenge for most operations teams is not identifying which KPIs matter—it is sustaining accurate, timely measurement across fragmented data sources: TMS, WMS, YMS, ERP, carrier EDI feeds, and IoT telemetry. [Runink FACE](/products/face/) reads across those sources and compares each record against the rule that governs it, so an outlier arrives as a named lane, carrier or facility rather than as a shifted average. The measures themselves, and what counts as acceptable on each, stay yours to define.
 
-If your current KPI process still depends on manual data pulls and monthly slide decks, it is time to explore what continuous, AI-powered logistics intelligence can do for your operation. [Connect with the Runink team](/#contact-form) to see how automated KPI tracking can protect your margins and elevate your service levels.
+The distinction worth holding onto is between a dashboard that reports a rate and a process that produces a named exception someone has to close. A monthly slide deck is the first; it is comfortable and nobody can act on it. [Connect with the Runink team](/#contact-form) if you want to talk through which of your ten measures could be read record by record instead.
 
 ---
 
@@ -96,7 +96,7 @@ If your current KPI process still depends on manual data pulls and monthly slide
 The 10 KPIs outlined above represent the operational backbone of a high-performing logistics organization. Tracking them consistently, at the right level of granularity, and with automated anomaly detection is what separates leaders from laggards in 2026 and beyond.
 {{< /direct-answer >}}
 
-Vanity metrics create comfort; operational KPIs create accountability. Every VP of Operations and Supply Chain Director should audit their current dashboard against these 10 measures and ask a simple question: can I see the root cause behind each number, or am I just watching the scoreboard? The organizations that invest in precise, automated KPI management—through platforms like Runink—are the ones building resilient, profitable supply chains that perform under pressure.
+Vanity metrics create comfort; operational KPIs create accountability. Every VP of Operations and Supply Chain Director should audit their current dashboard against these 10 measures and ask a simple question: can I see the root cause behind each number, or am I just watching the scoreboard? A measure you cannot trace back to the records that produced it is a scoreboard, however often it refreshes.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

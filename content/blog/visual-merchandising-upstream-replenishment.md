@@ -115,7 +115,7 @@ The visual appeal of a retail environment is undeniably powerful, but its impact
 
 By prioritizing these logistical elements, retail organizations can dramatically reduce backroom congestion, lower handling costs, and ensure that their shelves remain fully stocked during critical promotional periods. The transition from reactive replenishment to a proactive, synchronized supply chain is the key to surviving and thriving in modern retail. 
 
-If you are ready to gain the visibility and control needed to align your merchandising strategies with flawless supply chain execution, [contact our team](/#contact-form) to learn how Runink's AI-powered intelligence platform can transform your logistics network.
+One measure makes the rest of this concrete: for your last promotion, how many stores received the planogram-compliant pallet on the day the display was due to go live, and how many did not. Almost nobody counts it, and it is the single figure that tells you whether merchandising and replenishment are actually synchronised. [Contact our team](/#contact-form) if it would help to work it out.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

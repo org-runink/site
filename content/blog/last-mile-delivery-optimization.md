@@ -90,7 +90,7 @@ The most sophisticated delivery operations are moving beyond optimization into p
 
 This intelligence layer also powers demand-aware capacity planning. By forecasting parcel volumes at the zone level 48–72 hours ahead, operations leaders can pre-position fleet resources, adjust staffing, and negotiate spot capacity with gig-economy delivery partners — all before the volume spike materializes.
 
-Platforms like [Runink](/use-cases/) are purpose-built for this kind of supply chain intelligence, integrating freight data, delivery performance metrics, and predictive analytics into a unified operational view. When your delivery data flows into a single intelligence layer, pattern recognition replaces guesswork — and cost control becomes proactive rather than retrospective.
+Two capabilities underpin all of this, and they are worth separating. One is [demand forecasting](/use-cases/demand-forecasting/) — producing a volume projection at the zone level with the history it was derived from attached, so a planner can argue with it. The other is [route optimization](/use-cases/route-optimization/) — returning the measured distance and travel time for a leg under current conditions, cheaply enough that the question can be asked again after lunch. Runink FACE does both. Neither of them prints a saving next to the answer, because the routing provider does not return one and an invented figure beside two measured ones is how an estimate gets quoted as a fact.
 
 ---
 
@@ -100,9 +100,9 @@ Platforms like [Runink](/use-cases/) are purpose-built for this kind of supply c
 Last-mile delivery will remain the most expensive segment of the supply chain, but operations leaders who deploy dynamic routing, PUDO consolidation, and predictive intelligence can convert that cost center into a competitive advantage — reducing spend by 20–30% while delivering the experience customers now demand.
 {{< /direct-answer >}}
 
-The last mile is not going to get simpler. Urban congestion will intensify, consumer expectations will continue to escalate, and driver availability will remain constrained. But the operational levers available today — dynamic route optimization, intelligent PUDO network integration, and AI-powered delivery prediction — are proven, scalable, and delivering measurable ROI for the carriers and retailers that adopt them.
+The last mile is not going to get simpler. Urban congestion will intensify, consumer expectations will continue to escalate, and driver availability will remain constrained. But the operational levers available today — dynamic route optimization, PUDO network integration, and volume prediction — are well understood and do not depend on new infrastructure.
 
-The question for every Head of Delivery Operations is not whether to invest in last-mile intelligence, but how quickly you can deploy it before the margin erosion becomes irreversible. [Runink's supply chain intelligence platform](/#contact-form) helps operations teams unify delivery data, identify cost leakage, and build the predictive models that turn last-mile chaos into last-mile precision.
+The question for every Head of Delivery Operations is which of them addresses their actual cost. That depends on one figure most operations have never calculated: the proportion of deliveries that required a second attempt last quarter, and what each of those second journeys cost. A failed first attempt is two journeys, and it is usually the largest recoverable item in the last mile. [Talk to us](/#contact-form) if it would help to work that number out.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">

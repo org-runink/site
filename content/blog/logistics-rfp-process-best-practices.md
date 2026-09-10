@@ -20,7 +20,7 @@ Most logistics RFPs fail not because the market lacks capable providers, but bec
 
 * **A vague scope is the most expensive mistake in logistics procurement — it invites misaligned proposals, inflated pricing, and months of post-award renegotiation.**
 * **Great RFPs balance cost structure transparency (cost-plus, fixed, gain-share) with measurable SLA/KPI frameworks that include enforceable penalties and incentives.**
-* **AI-powered platforms like Runink can pre-populate RFP data from live operations, benchmark carrier responses against market rates, and score proposals objectively — removing bias and compressing evaluation timelines.**
+* **Source the RFP scope from the operational record rather than from recollection, and benchmark the responses against your own cost per unit by lane — a figure a bidder cannot dispute and an external index cannot replace.**
 
 <br>
 
@@ -96,9 +96,9 @@ AI-powered supply chain platforms can pre-populate RFP data directly from operat
 
 Traditional RFP evaluation is slow, subjective, and resource-intensive. A procurement team manually compares spreadsheets, debates qualitative responses in steering committees, and often defaults to the incumbent or the lowest bidder because rigorous comparison feels impossible.
 
-Platforms like [Runink](/use-cases/) change that equation. By connecting directly to your TMS, WMS, and ERP systems, Runink can auto-generate the volume, lane, and service data that form the backbone of your RFP scope — eliminating weeks of manual data gathering and ensuring providers receive accurate, current information.
+The fix has less to do with tooling than with where the scope comes from. The volume, lane and service data that form the backbone of an RFP already exist in the systems that executed last year's freight. Sourcing the scope from that record rather than from recollection removes the most common cause of mid-contract disputes — a scope built from what the business believes it ships — and it is faster than rebuilding it in workshops.
 
-When proposals come back, Runink benchmarks carrier rate submissions against market intelligence — flagging outliers, identifying lanes where you are being overcharged, and surfacing providers whose pricing aligns with your historical cost-per-unit benchmarks. Gain-share models can be stress-tested against actual shipment data rather than theoretical projections.
+When proposals come back, the comparison that matters is against your own history rather than against a market index. Your actual cost per unit by lane, last year, is a harder benchmark to argue with than a published rate, and it is the figure against which a gain-share model should be stress-tested. Be wary of any evaluation that leans on external market intelligence you cannot inspect: an outlier flagged against an opaque benchmark is an assertion, not a finding.
 
 Most critically, AI-driven scoring removes the subjectivity that plagues evaluation committees. Instead of five stakeholders arguing over whose preferred vendor "felt" stronger, every proposal is scored against the same weighted rubric — cost, technology fit, SLA commitment, transition readiness, and references — with full audit trails.
 
@@ -112,7 +112,7 @@ The logistics RFP is not a procurement formality — it is the single document t
 
 Every dollar of logistics spend is under pressure. Demurrage charges climb, carrier capacity tightens, and customer delivery expectations only move in one direction. You cannot afford to award a multi-year contract based on a vague RFP and a gut feeling.
 
-Build your RFP on operational truth — real volumes, real lanes, real SLA expectations. Evaluate proposals with the same rigor you apply to your own operations. And leverage platforms like [Runink](/#contact-form) to ensure the data driving your decision is current, complete, and benchmarked against the market.
+Build your RFP on operational truth — real volumes, real lanes, real SLA expectations. Evaluate proposals with the same rigour you apply to your own operations. And before you issue it, answer one question internally: can you state your own cost per unit, by lane, for last year? If not, that is the work to do first, because every bid you receive will be scored against a number you do not have. [Talk to us](/#contact-form) if it would help to establish it.
 
 The right logistics partner is out there. Your RFP just needs to be good enough to find them.
 

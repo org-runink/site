@@ -19,8 +19,8 @@ Achieving the Six Sigma 'Improve' phase in modern logistics requires utilizing i
 {{< /direct-answer >}}
 
 * **Isolating operational intelligence prevents catastrophic disruptions to mission-critical WMS and TMS environments.**
-* **Runink's Target Compute Runner wizard accelerates the deployment of self-hosted, highly secure workflows for complex freight operations.**
-* **Auto-scaling managed instances adapt dynamically to peak logistics data volumes, ensuring maximum system resilience during critical surges.**
+* **Self-hosted execution is what makes an Improve-phase experiment reviewable: the workflow, its inputs and its outputs stay on infrastructure the operation owns and can audit.**
+* **Capacity planning for logistics data is a seasonal problem, not an average one — provisioning for the mean guarantees the system is slowest during the peak that matters most.**
 
 <br>
 
@@ -54,17 +54,17 @@ Furthermore, data privacy and corporate security mandates often dictate that sen
 
 ---
 
-## What is the Role of the Target Compute Runner Wizard?
+## Why Deployment Friction Decides Which Improvements Get Tested
 
 {{< direct-answer >}}
-Runink's Target Compute Runner wizard simplifies the deployment of secure, self-hosted environments, allowing operations leaders to rapidly execute proprietary supply chain workflows without incurring complex, time-consuming IT overhead.
+Because the experiments that get run are the ones that can be provisioned inside the window in which they still matter. If standing up an isolated environment takes a quarter, the Improve phase quietly narrows to whatever can be tested in a spreadsheet — and the spreadsheet cannot tell you what the change does under real volume.
 {{< /direct-answer >}}
 
-Agility is the defining characteristic of a resilient supply chain. When a new optimization strategy is identified—perhaps a novel method for transitioning goods from CIF (Cost, Insurance, and Freight) to FOB (Free On Board) terms at the port—the window to capitalize on that strategy is often narrow. Unfortunately, provisioning the necessary infrastructure to test and run these workflows traditionally takes months of back-and-forth between logistics engineers and IT departments.
+Agility is the defining characteristic of a resilient supply chain. When a new optimization strategy is identified—perhaps a different approach to transitioning goods from CIF (Cost, Insurance, and Freight) to FOB (Free On Board) terms at the port—the window to capitalize on that strategy is often narrow. Provisioning the infrastructure to test and run these workflows traditionally takes months of back-and-forth between logistics engineers and IT departments.
 
-Runink has fundamentally eliminated this friction with the introduction of the new Target Compute Runner wizard. Designed with the needs of both the Operations Leader and the VP of IT in mind, this intuitive deployment tool bridges the gap between operational speed and infrastructure governance. The wizard guides teams through the process of spinning up self-hosted compute runners within their existing secure environments in a matter of minutes, not months. 
+The consequence is selection bias in your improvement programme, and it is rarely acknowledged. The ideas that survive to be tested are the ones with the lowest infrastructure cost, not the ones with the highest expected value. A continuous improvement function that has never once run an experiment requiring a new environment is not disciplined; it is constrained, and the constraint is invisible in its own reporting.
 
-By standardizing and automating the deployment of these isolated environments, the wizard removes the deep technical barriers previously associated with autonomous optimization. Logistics analysts and supply chain engineers can now focus entirely on refining their models—optimizing drayage loops or minimizing empty miles—confident that the underlying infrastructure is instantly available, correctly configured, and completely secure. It democratizes the deployment of advanced logistics intelligence, empowering the operations team to execute self-hosted workflows independently while maintaining strict adherence to enterprise IT standards.
+Two things reduce it. First, a standard, repeatable way to create an isolated execution environment, so that the request is routine rather than a project. Second, a default that the environment runs on infrastructure the organisation already owns and can audit, which is what makes the result defensible when the experiment turns into a control.
 
 ---
 
@@ -76,9 +76,9 @@ Auto-scaling managed instances automatically adjust computational resources to m
 
 The logistics industry is inherently cyclical and subject to extreme volatility. End-of-quarter pushes, holiday peak seasons, and sudden geopolitical shifts can cause freight volumes—and the corresponding data streams—to spike exponentially. A static IT infrastructure is ill-equipped to handle this elasticity. If compute resources are provisioned for baseline volumes, the system will inevitably choke during a peak surge, leading to delayed decision-making just when visibility is needed most. Conversely, provisioning for peak volume year-round results in massive, wasted expenditure on idle servers.
 
-Runink Managed instances solve this critical inefficiency through intelligent auto-scaling. As inbound Advance Shipping Notice (ASN) volumes surge, or as real-time telematics data from FTL (Full Truckload) fleets multiplies during a routing crisis, the compute environment automatically expands to meet the demand. The autonomous optimization routines continue to process smoothly, ensuring that fill rates are maximized and transit times are minimized, regardless of the transactional load. 
+Elastic capacity addresses this, and the logistics-specific point is which series drive the spike. Inbound Advance Shipping Notice volumes and telematics from a full-truckload fleet during a routing crisis do not grow proportionally with shipment count — they grow with the number of things going wrong, which is exactly when the analysis is needed. Capacity sized against shipment volume will therefore be wrong in the direction that hurts.
 
-Once the surge subsides, the environment elegantly scales back down. This elastic approach guarantees that the computational backbone of your supply chain optimization is always right-sized. Operations leaders gain the peace of mind that their optimization engines will never crash during the Black Friday rush, while IT leaders appreciate the aggressive cost-containment of a truly dynamic infrastructure model.
+When the surge subsides the environment should release the capacity again, which is the other half of the argument and the half that gets made to finance. Worth noting what elasticity does not fix: if the underlying decision pipeline is waiting on a source system that has its own peak-hour limits, more compute changes nothing. Establish where the binding constraint actually is before sizing anything.
 
 ---
 
@@ -88,9 +88,9 @@ Once the surge subsides, the environment elegantly scales back down. This elasti
 Mastering the Six Sigma 'Improve' phase requires blending autonomous optimization with risk-free execution, making isolated compute runners and auto-scaling infrastructure indispensable assets for modern, resilient supply chain networks.
 {{< /direct-answer >}}
 
-The future of supply chain management belongs to organizations that can continuously and autonomously optimize their operations without jeopardizing the stability of their core systems. Advancing beyond mere data analysis into the Six Sigma 'Improve' phase demands a robust, secure, and elastic execution environment. By leveraging Runink's Isolated VPCs, the Target Compute Runner wizard, and auto-scaling managed instances, supply chain IT leaders can finally say "yes" to rapid innovation. 
+The Improve phase is where continuous improvement programmes most often stall, and the reason is usually infrastructural rather than analytical: there is nowhere safe to run the experiment. Network isolation, a repeatable way to create an environment, and capacity that moves with the seasonal shape of logistics data are the three things that unblock it.
 
-Operational excellence is no longer just about identifying the right solution; it is about deploying that solution securely and flawlessly at scale. We invite you to explore our comprehensive [supply chain visibility use cases](/use-cases/) to see how these architectures are transforming global freight networks. To start building your secure optimization environment, [contact our operations team](/#contact-form) today and schedule a technical deep dive.
+Runink FACE runs on infrastructure the operation owns — that is a property of how it is deployed, not a separate product. The [supply chain visibility use cases](/use-cases/) describe what it reads and what it hands to a person to decide. [Contact our operations team](/#contact-form) if you want to go through the deployment model in detail.
 
 <!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
@@ -116,10 +116,10 @@ Operational excellence is no longer just about identifying the right solution; i
     },
     {
       "@type": "Question",
-      "name": "What is the Role of the Target Compute Runner Wizard?",
+      "name": "Why does deployment friction affect which Six Sigma improvements get tested?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Runink's Target Compute Runner wizard simplifies the deployment of secure, self-hosted environments, allowing operations leaders to rapidly execute proprietary supply chain workflows without incurring complex, time-consuming IT overhead."
+        "text": "The experiments that get run are the ones that can be provisioned inside the window in which they still matter. If standing up an isolated environment takes a quarter, the Improve phase narrows to whatever can be tested in a spreadsheet, which produces selection bias in favour of low-infrastructure ideas rather than high-value ones — and that bias is invisible in the programme's own reporting."
       }
     },
     {

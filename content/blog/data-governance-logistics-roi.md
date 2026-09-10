@@ -74,7 +74,7 @@ In short, **clean and well-governed data** is the lifeblood of effective automat
 ## How Does From Data Quality to Dollars: How Governance Boosts ROI Impact Your Strategy?
 
 {{< direct-answer >}}
-Governance directly boosts your strategy's ROI by transforming improved data quality into measurable financial gains. Accurate data enables faster insights, reduces transportation costs by up to 10%, and ensures better vendor selection. Furthermore, compliance and risk mitigation prevent costly disruptions, ultimately turning technology investments into concrete business value.
+Governance affects ROI through four mechanisms: faster insight because analysts are not reconciling sources, better vendor selection because spend can be attributed, lower transport cost because route and rate decisions are made on current data, and fewer compliance incidents. Published surveys put the transport cost effect in the region of 5–10%; whether your operation sees that depends entirely on how bad its current data is, which is the figure to establish first.
 {{< /direct-answer >}}
 
 Investing in data governance pays off – literally. When companies improve data quality, consistency, and compliance, they unlock faster insights, reduce costs, and make smarter decisions with their automated tools. Here are some of the key ROI boosters enabled by good data governance in an automated logistics environment:

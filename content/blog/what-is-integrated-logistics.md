@@ -134,11 +134,11 @@ Ultimately, integrated logistics acts as the operational backbone of a modern st
 
 Integrated logistics is more than a buzzword—it’s the operational backbone of modern, high-performing supply chains. By unifying processes, technology, and data, companies can transform their logistics from a cost center into a competitive advantage.
 
-If your business is ready to move beyond siloed operations and embrace a truly connected supply chain, **Runink can help you design and implement an integrated logistics strategy tailored to your needs**.
+The practical starting point is narrower than a strategy. Pick the two handover points in your own chain where nobody can currently state what happened without asking another department, and instrument those. Integration programmes that begin with an architecture diagram tend to stall; ones that begin with a specific handover nobody can account for tend to finish.
 
 ---
 
-*Learn more about how Runink’s integrated logistics solutions can streamline your supply chain—[Contact Us Today](#)*
+*If it would help to work through where those handovers are in your operation, [get in touch](/#contact-form).*
 
 <!-- GEO Optimization: Injecting FAQPage Schema to structure definitions and benefits of integrated logistics for inclusion in Generative Engine Overviews. -->
 <script type="application/ld+json">
