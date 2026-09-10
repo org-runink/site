@@ -9,9 +9,9 @@ import { safeHref } from '../lib/safeHref';
 export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 
 const VARIANTS: Record<ButtonVariant, string> = {
-  primary: 'bg-primary-600 text-white hover:bg-primary-700',
+  primary: 'bg-surface-well text-white hover:bg-surface-well',
   secondary: 'bg-secondary-600 text-white hover:bg-secondary-700',
-  outline: 'border-2 border-primary-600 text-primary-600',
+  outline: 'border-2 border-edge text-secondary',
 };
 
 /**
@@ -48,7 +48,7 @@ export type ButtonProps = Common &
  * on the marketing site are links, so this keeps the markup honest without
  * making callers choose an element.
  *
- * `outline` is tuned for light panels: its `text-primary-600` is low contrast on
+ * `outline` is tuned for light panels: its `text-secondary` is low contrast on
  * the dark canvas, so prefer `primary`/`secondary` on `Surface`, or override the
  * border and text colour via `className`.
  *

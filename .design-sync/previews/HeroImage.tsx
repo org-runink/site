@@ -60,7 +60,7 @@ export function Framed() {
     <HeroImage
       src={DASHBOARD}
       alt="Cockpit view of reefer telemetry with an active temperature excursion"
-      className="h-64 rounded-card border border-primary-700 object-cover shadow-2xl"
+      className="h-64 rounded-card border border-hairline object-cover shadow-2xl"
     />
   );
 }

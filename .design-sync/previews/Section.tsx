@@ -4,12 +4,12 @@ import { Badge, Card, CardGrid, Section } from '@runink/ui';
  * A dashed rule that makes an otherwise invisible wrapper's bounds legible.
  * Only ever used in these previews — a real page never outlines its bands.
  */
-const OUTLINE = 'border-2 border-dashed border-brand-copper';
+const OUTLINE = 'border-2 border-dashed border-fill-accent';
 
 /** The caption that names which box the dashed rule is drawing. */
 function Trace({ children }: { children: string }) {
   return (
-    <div className="mb-2 font-mono text-[11px] uppercase tracking-widest text-brand-copper">{children}</div>
+    <div className="mb-2 font-mono text-[11px] uppercase tracking-widest text-ink-accent">{children}</div>
   );
 }
 
@@ -23,7 +23,7 @@ export function Rhythm() {
   return (
     <div>
       <Trace>outer rule = the section band · inner rule = the container it wraps children in</Trace>
-      <Section className={`${OUTLINE} bg-primary-950`}>
+      <Section className={`${OUTLINE} bg-canvas`}>
         <div className={`${OUTLINE} p-4`}>
           <h2 className="font-heading text-2xl font-black text-white">Run the Autonomous Supply Chain</h2>
           <p className="mt-2 max-w-2xl leading-relaxed">
@@ -44,13 +44,13 @@ export function Rhythm() {
 export function ContainedVsFullBleed() {
   return (
     <div>
-      <Section className={`${OUTLINE} bg-primary-950`}>
-        <div className="rounded-card bg-brand-green-deep p-4 text-sm text-white">
+      <Section className={`${OUTLINE} bg-canvas`}>
+        <div className="rounded-card bg-fill-success p-4 text-sm text-white">
           contained (default) — gutters keep this child inside the content column
         </div>
       </Section>
-      <Section contained={false} className={`${OUTLINE} bg-primary-800`}>
-        <div className="rounded-card bg-brand-copper p-4 text-sm text-white">
+      <Section contained={false} className={`${OUTLINE} bg-surface-raised`}>
+        <div className="rounded-card bg-fill-accent-deep p-4 text-sm text-white">
           contained={'{false}'} — this child touches the band edge and manages its own width
         </div>
       </Section>
@@ -65,7 +65,7 @@ export function ContainedVsFullBleed() {
  */
 export function WithContent() {
   return (
-    <Section className="bg-primary-950">
+    <Section className="bg-canvas">
       <Badge tone="sage">Real-time visibility</Badge>
       <h2 className="mt-4 font-heading text-3xl font-black text-white">
         Mitigate disruption in real time
@@ -100,13 +100,13 @@ export function WithContent() {
 export function StackedBands() {
   return (
     <div>
-      <Section className="bg-primary-950">
+      <Section className="bg-canvas">
         <h2 className="font-heading text-2xl font-black text-white">Zero-Hold Customs Gate</h2>
         <p className="mt-4 max-w-3xl leading-relaxed">
           Automatic customs and weighbridge auditing clears compliant loads without a manual hold.
         </p>
       </Section>
-      <Section className="bg-primary-800">
+      <Section className="bg-surface-raised">
         <Badge tone="sage">Measured in production</Badge>
         <h2 className="mt-4 font-heading text-2xl font-black text-white">
           11x faster customs clearance

@@ -21,24 +21,24 @@ export type UseCaseParallaxTrack = 'monitor' | 'cockpit';
 // watches, red for what it acts on. Each has a matching glow token.
 const TRACK_CARD: Record<UseCaseParallaxTrack, string> = {
   monitor:
-    'border-brand-green/30 bg-brand-green/5 shadow-neon-green hover:border-brand-green/50 hover:bg-brand-green/10 hover:shadow-xl hover:shadow-brand-green/30',
+    'border-ink-success/30 bg-fill-success-wash shadow-neon-green hover:border-ink-success/50 hover:bg-fill-success-wash hover:shadow-xl hover:shadow-glow-success',
   cockpit:
-    'border-brand-red/30 bg-brand-red/5 shadow-neon-red hover:border-brand-red/50 hover:bg-brand-red/10 hover:shadow-xl hover:shadow-brand-red/30',
+    'border-ink-provenance/30 bg-fill-provenance-wash shadow-neon-red hover:border-ink-provenance/50 hover:bg-fill-provenance-wash hover:shadow-xl ',
 };
 
 const TRACK_BADGE: Record<UseCaseParallaxTrack, string> = {
-  monitor: 'border-brand-green/30 bg-brand-green/10 text-brand-green group-hover:bg-brand-green/20',
-  cockpit: 'border-brand-red/30 bg-brand-red/10 text-brand-red group-hover:bg-brand-red/20',
+  monitor: 'border-ink-success/30 bg-fill-success-wash text-ink-success group-hover:bg-fill-success-wash',
+  cockpit: 'border-ink-provenance/30 bg-fill-provenance-wash text-ink-provenance group-hover:bg-fill-provenance-wash',
 };
 
 const TRACK_TITLE: Record<UseCaseParallaxTrack, string> = {
-  monitor: 'text-brand-green',
-  cockpit: 'text-brand-red',
+  monitor: 'text-ink-success',
+  cockpit: 'text-ink-provenance',
 };
 
 const TRACK_DOT: Record<UseCaseParallaxTrack, string> = {
-  monitor: 'bg-brand-green ring-4 ring-brand-green/20',
-  cockpit: 'bg-brand-red ring-4 ring-brand-red/20',
+  monitor: 'bg-fill-success ring-4 ring-fill-accent/20',
+  cockpit: 'bg-fill-provenance ring-4 ring-ink-provenance/20',
 };
 
 export interface UseCaseParallaxProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
@@ -237,7 +237,7 @@ export function UseCaseParallax({
     <div
       key={`${track}-${stepNum}`}
       className={cx(
-        'group relative mb-5 flex w-full cursor-default flex-col items-start justify-between gap-4 overflow-hidden rounded-2xl border px-6 py-5 transition-all duration-700 ease-out md:flex-row md:items-center',
+        'group relative mb-5 flex w-full cursor-default flex-col items-start justify-between gap-4 overflow-hidden rounded-card border px-6 py-5 transition-all duration-700 ease-out md:flex-row md:items-center',
         TRACK_CARD[track],
       )}
     >
@@ -247,7 +247,7 @@ export function UseCaseParallax({
             {step.title}
           </strong>
         )}
-        <span className="text-primary-300 transition-colors duration-500 group-hover:text-primary-200">{step.text}</span>
+        <span className="text-secondary transition-colors duration-500 group-hover:text-primary">{step.text}</span>
       </div>
       <div className="z-20 shrink-0 self-end md:self-auto">
         <span
@@ -269,7 +269,7 @@ export function UseCaseParallax({
         // Deliberately NOT a `group`: the Hugo band was one, which made hovering
         // anywhere in it fire every step card's and the problem panel's
         // `group-hover` state at once. Each of those owns its own `group`.
-        'relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden border-b border-primary-800 bg-primary-950',
+        'relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden border-b border-hairline bg-canvas',
         className,
       )}
       {...rest}
@@ -283,15 +283,15 @@ export function UseCaseParallax({
           style={{ transform: `translate3d(0, ${copyDrift}px, 0)` }}
         >
           {pill && (
-            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-secondary-500/30 bg-primary-900/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
+            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
               {pill}
             </div>
           )}
-          <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-brand-orange-dark bg-clip-text text-4xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-5xl xl:text-7xl 2xl:text-[80px]">
+          <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-fill-accent bg-clip-text text-4xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-5xl xl:text-7xl 2xl:text-[80px]">
             {title}
           </h2>
           {subtitle && (
-            <div className="mb-10 text-lg font-bold uppercase tracking-[0.15em] text-primary-500 md:text-xl">
+            <div className="mb-10 text-lg font-bold uppercase tracking-[0.15em] text-secondary md:text-xl">
               {subtitle}
             </div>
           )}
@@ -313,13 +313,13 @@ export function UseCaseParallax({
         >
           <div className="flex w-full flex-col pl-0 md:pl-6">
             {problem && (
-              <div className="group relative mb-12 overflow-hidden rounded-[1.25rem] border border-primary-800/80 bg-brand-ink p-6 md:p-8">
+              <div className="group relative mb-12 overflow-hidden rounded-[1.25rem] border border-hairline/80 bg-canvas p-6 md:p-8">
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/5 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
                 <h3 className="mb-3 flex items-center gap-3 font-bold tracking-tight text-white">
                   <Icon name={problemIcon} className="h-5 w-5 text-secondary-500" />
                   {problemLabel}
                 </h3>
-                <div className="prose prose-invert text-[13px] leading-relaxed text-primary-400 prose-p:last:mb-0 md:text-sm">
+                <div className="prose prose-invert text-[13px] leading-relaxed text-secondary prose-p:last:mb-0 md:text-sm">
                   {problem}
                 </div>
               </div>

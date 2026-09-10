@@ -73,7 +73,7 @@ export function HowTo({ name, description, steps, className, ...rest }: HowToPro
       itemScope
       itemType="https://schema.org/HowTo"
       className={cx(
-        'relative z-10 mt-16 rounded-3xl border border-primary-800/80 bg-primary-900 p-8 shadow-2xl',
+        'relative z-10 mt-16 rounded-3xl border border-hairline/80 bg-surface p-8 shadow-2xl',
         className,
       )}
       {...rest}
@@ -84,7 +84,7 @@ export function HowTo({ name, description, steps, className, ...rest }: HowToPro
             {name}
           </h2>
           {description && (
-            <p className="font-light text-primary-300 sm:text-xl" itemProp="description">
+            <p className="font-light text-secondary sm:text-xl" itemProp="description">
               {description}
             </p>
           )}
@@ -98,7 +98,7 @@ export function HowTo({ name, description, steps, className, ...rest }: HowToPro
               itemProp="step"
               itemScope
               itemType="https://schema.org/HowToStep"
-              className="flex flex-col gap-6 rounded-card border border-primary-700 bg-primary-800 p-6 md:flex-row"
+              className="flex flex-col gap-6 rounded-card border border-hairline bg-surface-raised p-6 md:flex-row"
             >
               <div
                 aria-hidden="true"
@@ -110,7 +110,7 @@ export function HowTo({ name, description, steps, className, ...rest }: HowToPro
                 <h3 className="mb-2 text-xl font-bold text-white" itemProp="name">
                   {step.name}
                 </h3>
-                <div className="text-brand-paper" itemProp="text">
+                <div className="text-primary" itemProp="text">
                   {step.text}
                 </div>
               </div>

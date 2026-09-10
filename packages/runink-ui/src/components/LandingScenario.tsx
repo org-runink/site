@@ -98,7 +98,7 @@ export function LandingScenario({
 
   return (
     <section
-      className={cx('relative overflow-hidden border-t border-primary-800 bg-primary-900 py-20', className)}
+      className={cx('relative overflow-hidden border-t border-hairline bg-surface py-20', className)}
       {...rest}
     >
       {/*
@@ -117,7 +117,7 @@ export function LandingScenario({
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
         <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded border border-secondary-500/30 bg-primary-900/80 px-3 py-1 font-mono text-xs uppercase tracking-widest text-secondary-500 backdrop-blur">
+          <div className="inline-flex items-center gap-2 rounded border border-hairline/30 bg-surface/80 px-3 py-1 font-mono text-xs uppercase tracking-widest text-secondary-500 backdrop-blur">
             <span className="h-2 w-2 animate-pulse-slow rounded-full bg-secondary-500" />
             Target: {target}
           </div>
@@ -133,10 +133,10 @@ export function LandingScenario({
            * metric chip out of frame.
            */}
           {(description || excerpt) && (
-            <div className="prose prose-invert prose-lg leading-relaxed text-primary-400">
+            <div className="prose prose-invert prose-lg leading-relaxed text-secondary">
               {description && <p>{description}</p>}
               {excerpt && (
-                <div className="mt-4 line-clamp-3 border-l-2 border-secondary-500 pl-4 font-mono text-sm text-secondary-500/70">
+                <div className="mt-4 line-clamp-3 border-l-2 border-hairline pl-4 font-mono text-sm text-secondary-500/70">
                   {excerpt}
                 </div>
               )}
@@ -148,7 +148,7 @@ export function LandingScenario({
             {primaryHref && (
               <a
                 href={primaryHref}
-                className="rounded-full border border-primary-600/50 bg-brand-green-deep px-8 py-4 font-bold uppercase tracking-widest text-white transition-colors duration-200 hover:bg-brand-green"
+                className="rounded-full border border-edge/50 bg-fill-success px-8 py-4 font-bold uppercase tracking-widest text-white transition-colors duration-200 hover:bg-fill-success"
               >
                 {primaryLabel}
               </a>
@@ -156,7 +156,7 @@ export function LandingScenario({
             {altHref && secondaryLabel && (
               <a
                 href={altHref}
-                className="rounded-full border border-primary-700 bg-transparent px-8 py-4 font-bold uppercase tracking-widest text-primary-300 transition-colors duration-200 hover:bg-primary-800 hover:text-white"
+                className="rounded-full border border-hairline bg-transparent px-8 py-4 font-bold uppercase tracking-widest text-secondary transition-colors duration-200 hover:bg-surface-raised hover:text-white"
               >
                 {secondaryLabel}
               </a>
@@ -166,7 +166,7 @@ export function LandingScenario({
         </div>
 
         <div className="group relative">
-          <div className="relative aspect-video transform overflow-hidden rounded-3xl border border-primary-700 bg-primary-800/40 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-1 hover:scale-[1.02]">
+          <div className="relative aspect-video transform overflow-hidden rounded-3xl border border-hairline bg-surface-raised/40 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-1 hover:scale-[1.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-secondary-500/5 via-transparent to-rose-800/10" />
 
             {/* Window chrome, so the panel reads as a console rather than a card. */}
@@ -179,16 +179,16 @@ export function LandingScenario({
             <div className="flex h-full items-center justify-center">
               <Icon
                 name={icon}
-                className="h-24 w-24 text-primary-600 transition-colors duration-500 group-hover:text-secondary-500"
+                className="h-24 w-24 text-secondary transition-colors duration-500 group-hover:text-secondary-500"
               />
             </div>
 
-            <div className="absolute bottom-6 right-6 rounded-xl border border-primary-700/50 bg-primary-900/90 p-4 shadow-lg backdrop-blur">
+            <div className="absolute bottom-6 right-6 rounded-chip border border-hairline/50 bg-surface/90 p-4 shadow-lg backdrop-blur">
               <div className="mb-2 flex items-center justify-between gap-8">
                 <span className="font-mono text-[10px] text-secondary-500">{metricLabel}</span>
                 <span className="text-xs font-bold text-lime-500">{metricValue}</span>
               </div>
-              <div className="h-1 w-full overflow-hidden rounded-full bg-primary-800">
+              <div className="h-1 w-full overflow-hidden rounded-full bg-surface-raised">
                 <div className="h-full bg-gradient-to-r from-rose-800 to-secondary-500" style={{ width: barWidth }} />
               </div>
             </div>

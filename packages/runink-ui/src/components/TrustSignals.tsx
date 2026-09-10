@@ -32,9 +32,9 @@ export interface TrustSignalsProps extends Omit<HTMLAttributes<HTMLElement>, 'ti
 
 const ROWS = {
   compliance:
-    'inline-block rounded-full border border-secondary-500/30 bg-primary-900 px-3 py-1 text-sm font-medium text-secondary-500 hover:bg-primary-800',
+    'inline-block rounded-full border border-hairline/30 bg-surface px-3 py-1 text-sm font-medium text-secondary-500 hover:bg-surface-raised',
   partnerships:
-    'inline-block rounded-full bg-primary-800 px-3 py-1 text-sm font-medium text-primary-300 hover:bg-primary-700',
+    'inline-block rounded-full bg-surface-raised px-3 py-1 text-sm font-medium text-secondary hover:bg-surface-well',
 } as const;
 
 /**
@@ -77,14 +77,14 @@ export function TrustSignals({
   return (
     <section
       aria-label={ariaLabel}
-      className={cx('mx-auto mt-12 max-w-7xl border-t border-primary-800 px-4 pb-12 pt-8', className)}
+      className={cx('mx-auto mt-12 max-w-7xl border-t border-hairline px-4 pb-12 pt-8', className)}
       {...rest}
     >
-      <h3 className="mb-6 text-xl font-bold uppercase tracking-wider text-primary-200">{title}</h3>
+      <h3 className="mb-6 text-xl font-bold uppercase tracking-wider text-primary">{title}</h3>
 
       {hasCompliance && (
         <div className="mb-6">
-          <strong className="mb-2 block text-primary-400">{complianceLabel}</strong>
+          <strong className="mb-2 block text-secondary">{complianceLabel}</strong>
           <ul className="flex list-none flex-wrap gap-3 p-0">
             {compliance?.map((item) => (
               <li key={`${item.name}-${item.url}`}>
@@ -104,7 +104,7 @@ export function TrustSignals({
 
       {hasPartnerships && (
         <div className="mb-6">
-          <strong className="mb-2 block text-primary-400">{partnershipsLabel}</strong>
+          <strong className="mb-2 block text-secondary">{partnershipsLabel}</strong>
           <ul className="flex list-none flex-wrap gap-3 p-0">
             {partnerships?.map((item) => (
               <li key={`${item.name}-${item.url}`}>

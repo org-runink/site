@@ -49,7 +49,7 @@ export function TestimonialCard({ quote, name, role, avatar, avatarAlt, classNam
   const showAvatar = Boolean(avatar) && !avatarFailed;
 
   return (
-    <div className={cx('h-full rounded-card border border-secondary-500/30 bg-primary-900 p-8', className)}>
+    <div className={cx('h-full rounded-card border border-hairline/30 bg-surface p-8', className)}>
       <div className="mb-6 flex items-center gap-4">
         {showAvatar ? (
           <img
@@ -64,17 +64,17 @@ export function TestimonialCard({ quote, name, role, avatar, avatarAlt, classNam
         ) : (
           <div
             aria-hidden="true"
-            className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-primary-800 text-sm font-bold text-primary-300"
+            className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-surface-raised text-sm font-bold text-secondary"
           >
             {initialsOf(name)}
           </div>
         )}
         <div>
           <h4 className="font-bold text-white">{name}</h4>
-          <p className="text-primary-300">{role}</p>
+          <p className="text-secondary">{role}</p>
         </div>
       </div>
-      <p className="text-primary-300">{quote}</p>
+      <p className="text-secondary">{quote}</p>
     </div>
   );
 }

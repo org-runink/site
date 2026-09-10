@@ -96,12 +96,12 @@ export function Testimonials({
 
   return (
     <Section
-      className={cx(!backgroundColor && 'bg-primary-950', className)}
+      className={cx(!backgroundColor && 'bg-canvas', className)}
       style={backgroundColor ? { backgroundColor } : undefined}
     >
       <div className="mx-auto mb-16 max-w-3xl text-center">
         <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">{title}</h2>
-        <p className="text-xl text-primary-300">{description}</p>
+        <p className="text-xl text-secondary">{description}</p>
       </div>
 
       <div className="ri-testimonials-container relative overflow-hidden py-5">

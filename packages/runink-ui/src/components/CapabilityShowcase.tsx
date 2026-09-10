@@ -16,7 +16,7 @@ export type CapabilityAccent = 'platform' | 'snowflake' | 'databricks' | 'google
 
 const ACCENTS: Record<CapabilityAccent, { border: string; text: string; hoverText: string }> = {
   platform: {
-    border: 'hover:border-secondary-500/30',
+    border: 'hover:border-hairline/30',
     text: 'text-secondary-500',
     hoverText: 'group-hover:text-secondary-500',
   },
@@ -135,7 +135,7 @@ export function CapabilityShowcase({
 }: CapabilityShowcaseProps) {
   return (
     <section
-      className={cx('relative overflow-hidden border-t border-primary-800/50 bg-primary-950/50 py-24', className)}
+      className={cx('relative overflow-hidden border-t border-hairline/50 bg-canvas/50 py-24', className)}
       {...rest}
     >
       {backgroundEffect}
@@ -143,7 +143,7 @@ export function CapabilityShowcase({
       <Container className="relative z-10">
         <div className="mb-20 flex flex-col items-center text-center">
           {eyebrow && (
-            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-brand-orange-dark/50 bg-brand-ink-soft px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange-dark">
+            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-fill-accent/50 bg-surface px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-ink-accent">
               {eyebrow}
             </div>
           )}
@@ -157,7 +157,7 @@ export function CapabilityShowcase({
           </GradientText>
 
           {subtitle && (
-            <p className="mx-auto mb-10 mt-6 max-w-3xl px-4 text-sm font-bold uppercase leading-relaxed tracking-[0.15em] text-primary-500 md:text-base">
+            <p className="mx-auto mb-10 mt-6 max-w-3xl px-4 text-sm font-bold uppercase leading-relaxed tracking-[0.15em] text-secondary md:text-base">
               {subtitle}
             </p>
           )}
@@ -170,7 +170,7 @@ export function CapabilityShowcase({
               <div
                 key={capability.title + (capability.titleAccent ?? '')}
                 className={cx(
-                  'group flex h-full flex-col rounded-2xl border border-primary-800/60 bg-brand-ink-soft p-8 shadow-inner transition-colors',
+                  'group flex h-full flex-col rounded-card border border-hairline/60 bg-surface p-8 shadow-inner transition-colors',
                   accent.border,
                 )}
               >
@@ -189,10 +189,10 @@ export function CapabilityShowcase({
                   )}
                 </h3>
 
-                <p className="mb-8 grow text-sm leading-relaxed text-primary-400">{capability.description}</p>
+                <p className="mb-8 grow text-sm leading-relaxed text-secondary">{capability.description}</p>
 
                 {capability.focus && (
-                  <div className="mt-auto text-[10px] font-black uppercase tracking-[0.2em] text-primary-500">
+                  <div className="mt-auto text-[10px] font-black uppercase tracking-[0.2em] text-secondary">
                     {capability.focus}
                   </div>
                 )}

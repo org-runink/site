@@ -1,12 +1,12 @@
 import { Badge, Stat, StatsGrid } from '@runink/ui';
 
 /** Dashed rule used only in these previews to make an invisible box visible. */
-const OUTLINE = 'border-2 border-dashed border-brand-copper';
+const OUTLINE = 'border-2 border-dashed border-fill-accent';
 
 /** Caption naming which box the dashed rule is drawing. */
 function Trace({ children }: { children: string }) {
   return (
-    <div className="mb-2 font-mono text-[11px] uppercase tracking-widest text-brand-copper">{children}</div>
+    <div className="mb-2 font-mono text-[11px] uppercase tracking-widest text-ink-accent">{children}</div>
   );
 }
 
@@ -35,7 +35,7 @@ export function ThreeUp() {
  */
 export function InABand() {
   return (
-    <div className="rounded-card bg-primary-950 p-8">
+    <div className="rounded-card bg-canvas p-8">
       <Badge tone="sage">Measured in production</Badge>
       <h2 className="mb-8 mt-4 font-heading text-3xl font-black text-white">
         Mitigate disruption in real time

@@ -43,15 +43,15 @@ export interface HrDiagramProps extends HTMLAttributes<HTMLDivElement> {
 
 /** The vertical connector: a gradient rule, a chevron head, and a floating caption. */
 function Connector({ label, tone }: { label?: string; tone: 'request' | 'response' }) {
-  const line = tone === 'request' ? 'bg-gradient-to-b from-primary-700 to-secondary-500' : 'bg-gradient-to-b from-secondary-500 to-brand-green';
-  const head = tone === 'request' ? 'border-secondary-500' : 'border-brand-green';
-  const text = tone === 'request' ? 'text-secondary-500' : 'text-brand-green';
+  const line = tone === 'request' ? 'bg-gradient-to-b from-surface-well to-secondary-500' : 'bg-gradient-to-b from-secondary-500 to-fill-success';
+  const head = tone === 'request' ? 'border-hairline' : 'border-ink-success';
+  const text = tone === 'request' ? 'text-secondary-500' : 'text-ink-success';
   return (
     <div className="relative z-0 -my-2 flex flex-col items-center">
       {label && (
         <div
           className={cx(
-            'absolute top-1/2 z-10 -translate-y-1/2 whitespace-nowrap rounded-full border border-primary-800 bg-brand-ink-soft px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest shadow-md',
+            'absolute top-1/2 z-10 -translate-y-1/2 whitespace-nowrap rounded-full border border-hairline bg-surface px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest shadow-md',
             text,
           )}
         >
@@ -143,35 +143,35 @@ export function HrDiagram({
       {...rest}
     >
       {/* Actor */}
-      <div className="group relative w-64 rounded-2xl border border-primary-700 bg-primary-800/80 p-5 text-center shadow-lg backdrop-blur transition-all duration-300 hover:border-secondary-500/50">
-        <div className="absolute inset-0 rounded-2xl bg-secondary-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
+      <div className="group relative w-64 rounded-card border border-hairline bg-surface-raised/80 p-5 text-center shadow-lg backdrop-blur transition-all duration-300 hover:border-hairline/50">
+        <div className="absolute inset-0 rounded-card bg-fill-accent-wash opacity-0 transition-opacity group-hover:opacity-100" />
         {actor.icon && (
-          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-primary-700 bg-primary-900">
+          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-surface">
             <Icon name={actor.icon} className="h-6 w-6 text-secondary-500" />
           </div>
         )}
         <h4 className="text-lg font-bold text-white">{actor.title}</h4>
-        {actor.description && <p className="mt-1 text-xs text-primary-400">{actor.description}</p>}
+        {actor.description && <p className="mt-1 text-xs text-secondary">{actor.description}</p>}
       </div>
 
       <Connector label={requestLabel} tone="request" />
 
       {/* Platform boundary */}
-      <div className="relative w-full max-w-3xl rounded-card border border-secondary-500/30 bg-secondary-500/5 p-8 shadow-neon-orange">
-        <div className="absolute -top-3 left-8 rounded-card border border-secondary-500/30 bg-brand-ink-soft px-4 py-1 text-[10px] font-black uppercase tracking-widest text-secondary-500 shadow-sm">
+      <div className="relative w-full max-w-3xl rounded-card border border-hairline/30 bg-fill-accent-wash p-8 shadow-neon-orange">
+        <div className="absolute -top-3 left-8 rounded-card border border-hairline/30 bg-surface px-4 py-1 text-[10px] font-black uppercase tracking-widest text-secondary-500 shadow-sm">
           {platformLabel}
         </div>
 
         <div className="mt-4 flex flex-col items-center justify-between gap-10 md:flex-row">
           {/* Assistant */}
-          <div className="relative z-10 w-full flex-1 rounded-2xl border border-secondary-500/50 bg-primary-900 p-6 text-center shadow-neon-orange-strong">
+          <div className="relative z-10 w-full flex-1 rounded-card border border-hairline/50 bg-surface p-6 text-center shadow-neon-orange-strong">
             {assistant.icon && (
-              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-secondary-500/20">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-fill-accent-wash">
                 <Icon name={assistant.icon} className="h-5 w-5 text-secondary-500" />
               </div>
             )}
             <h4 className="mb-1 text-xl font-black tracking-tight text-white">{assistant.title}</h4>
-            {assistant.description && <p className="text-sm text-primary-400">{assistant.description}</p>}
+            {assistant.description && <p className="text-sm text-secondary">{assistant.description}</p>}
           </div>
 
           {/* Systems of record */}
@@ -183,18 +183,18 @@ export function HrDiagram({
                   className="relative flex w-full flex-col items-center justify-center gap-3 md:flex-row md:justify-start"
                 >
                   <div className="hidden w-12 shrink-0 items-center md:flex">
-                    <div className="w-full border-t-2 border-dashed border-primary-600" />
-                    <div className="-ml-1 h-2 w-2 rotate-45 transform border-r-2 border-t-2 border-primary-600" />
+                    <div className="w-full border-t-2 border-dashed border-edge" />
+                    <div className="-ml-1 h-2 w-2 rotate-45 transform border-r-2 border-t-2 border-edge" />
                   </div>
                   {dependency.label && (
-                    <div className="left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-brand-ink-soft px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-primary-500 shadow-sm md:absolute md:-top-4 md:left-6 md:translate-x-0 md:bg-brand-ink-raised">
+                    <div className="left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-surface px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-secondary shadow-sm md:absolute md:-top-4 md:left-6 md:translate-x-0 md:bg-surface-raised">
                       {dependency.label}
                     </div>
                   )}
-                  <div className="relative z-10 w-full rounded-xl border border-primary-700 bg-primary-800 p-4 text-center shadow-lg md:min-w-[180px]">
+                  <div className="relative z-10 w-full rounded-chip border border-hairline bg-surface-raised p-4 text-center shadow-lg md:min-w-[180px]">
                     <h4 className="mb-1 text-sm font-bold text-white">{dependency.title}</h4>
                     {dependency.description && (
-                      <p className="text-[11px] text-primary-400">{dependency.description}</p>
+                      <p className="text-[11px] text-secondary">{dependency.description}</p>
                     )}
                   </div>
                 </div>
@@ -207,10 +207,10 @@ export function HrDiagram({
       <Connector label={responseLabel} tone="response" />
 
       {/* Outcome */}
-      <div className="relative z-10 w-64 rounded-2xl border border-brand-green/30 bg-brand-green/10 p-5 text-center shadow-neon-green">
+      <div className="relative z-10 w-64 rounded-card border border-ink-success/30 bg-fill-success-wash p-5 text-center shadow-neon-green">
         <h4 className="text-base font-bold text-white">{outcome.title}</h4>
         {outcome.description && (
-          <p className="mt-1 text-xs font-bold tracking-wide text-brand-green">{outcome.description}</p>
+          <p className="mt-1 text-xs font-bold tracking-wide text-ink-success">{outcome.description}</p>
         )}
       </div>
     </div>

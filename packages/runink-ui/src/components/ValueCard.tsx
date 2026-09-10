@@ -29,7 +29,7 @@ export function ValueCard({ title, description, icon, className }: ValueCardProp
   return (
     <div
       className={cx(
-        'rounded-card border border-primary-700 bg-primary-800 p-8 shadow-lg transition-all duration-300',
+        'rounded-card border border-hairline bg-surface-raised p-8 shadow-lg transition-all duration-300',
         'hover:-translate-y-1 hover:shadow-2xl',
         className,
       )}
@@ -40,7 +40,7 @@ export function ValueCard({ title, description, icon, className }: ValueCardProp
         </div>
       )}
       <h3 className="mb-2 text-xl font-bold text-white">{title}</h3>
-      <p className="text-primary-300">{description}</p>
+      <p className="text-secondary">{description}</p>
     </div>
   );
 }

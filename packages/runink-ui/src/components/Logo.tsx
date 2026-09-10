@@ -52,7 +52,7 @@ export function Logo({
 }: LogoProps) {
   return (
     <a href={safeHref(href) ?? '/'} className={cx('group flex items-center space-x-3', className)} {...rest}>
-      <div className="relative h-10 w-10 overflow-hidden rounded-card border border-primary-700 bg-primary-800 shadow-lg transition-colors duration-300 group-hover:border-secondary-500">
+      <div className="relative h-10 w-10 overflow-hidden rounded-card border border-hairline bg-surface-raised shadow-lg transition-colors duration-300 group-hover:border-hairline">
         {src ? (
           <img
             src={src}
@@ -67,7 +67,7 @@ export function Logo({
           <span
             aria-label={alt}
             role="img"
-            className="flex h-full w-full items-center justify-center font-heading text-xl font-black text-brand-paper transition-transform duration-300 group-hover:scale-110"
+            className="flex h-full w-full items-center justify-center font-heading text-xl font-black text-primary transition-transform duration-300 group-hover:scale-110"
           >
             {(label || 'R').trim().charAt(0).toUpperCase()}
           </span>

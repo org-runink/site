@@ -68,6 +68,9 @@ module.exports = {
       },
       "ringColor": {
         "edge": "rgb(var(--rk-edge-ch) / var(--rk-edge-a))",
+        "ink-accent": "rgb(var(--rk-ink-accent-ch) / <alpha-value>)",
+        "ink-success": "rgb(var(--rk-ink-success-ch) / <alpha-value>)",
+        "ink-provenance": "rgb(var(--rk-ink-provenance-ch) / <alpha-value>)",
         "fill-accent": "rgb(var(--rk-fill-accent-ch) / <alpha-value>)"
       },
       "outlineColor": {
@@ -107,6 +110,10 @@ module.exports = {
         "ink-severity-ok": "rgb(var(--rk-ink-severity-ok-ch) / <alpha-value>)"
       },
       "gradientColorStops": {
+        "canvas": "rgb(var(--rk-canvas-ch) / <alpha-value>)",
+        "surface": "rgb(var(--rk-surface-ch) / <alpha-value>)",
+        "surface-raised": "rgb(var(--rk-surface-raised-ch) / <alpha-value>)",
+        "surface-well": "rgb(var(--rk-surface-well-ch) / <alpha-value>)",
         "fill-accent": "rgb(var(--rk-fill-accent-ch) / <alpha-value>)",
         "fill-accent-deep": "rgb(var(--rk-fill-accent-deep-ch) / <alpha-value>)",
         "accent-lift": "rgb(var(--rk-accent-lift-ch) / <alpha-value>)",
@@ -126,6 +133,12 @@ module.exports = {
       },
       "textDecorationColor": {
         "primary": "rgb(var(--rk-primary-ch) / <alpha-value>)"
+      },
+      "ringOffsetColor": {
+        "canvas": "rgb(var(--rk-canvas-ch) / <alpha-value>)",
+        "surface": "rgb(var(--rk-surface-ch) / <alpha-value>)",
+        "surface-raised": "rgb(var(--rk-surface-raised-ch) / <alpha-value>)",
+        "surface-well": "rgb(var(--rk-surface-well-ch) / <alpha-value>)"
       },
       "borderRadius": {
         "badge": "6px",

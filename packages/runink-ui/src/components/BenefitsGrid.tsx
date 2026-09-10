@@ -11,12 +11,12 @@ import { Icon, type IconName } from './Icon';
 export type BenefitTone = 'sage' | 'green' | 'orange' | 'tan' | 'primary' | 'secondary';
 
 const TONES: Record<BenefitTone, string> = {
-  sage: 'bg-brand-sage-dark/20 border-brand-sage-dark/40 text-brand-sage-dark',
-  green: 'bg-brand-green/20 border-brand-green/40 text-brand-sage',
-  orange: 'bg-brand-orange/20 border-brand-orange/40 text-brand-orange',
-  tan: 'bg-brand-tan/20 border-brand-tan/40 text-brand-tan',
-  primary: 'bg-primary-500/20 border-primary-500/40 text-primary-300',
-  secondary: 'bg-secondary-500/20 border-secondary-500/40 text-secondary-400',
+  sage: 'bg-fill-success-wash border-ink-success/40 text-ink-success',
+  green: 'bg-fill-success-wash border-ink-success/40 text-ink-success',
+  orange: 'bg-fill-accent-wash border-fill-accent/40 text-ink-accent',
+  tan: 'bg-fill-accent-deep-wash border-edge/40 text-brand-tan',
+  primary: 'bg-fill-accent-wash border-edge/40 text-secondary',
+  secondary: 'bg-fill-accent-wash border-hairline/40 text-secondary',
 };
 
 export interface Benefit {
@@ -90,11 +90,11 @@ export function BenefitsGrid({ title, subtitle, benefits, className, ...rest }: 
     <section className={cx('relative py-24', className)} {...rest}>
       <Container>
         <div className="relative mb-20 text-center">
-          <div className="absolute left-1/2 top-1/2 -z-10 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary-500/20 blur-[80px]" />
+          <div className="absolute left-1/2 top-1/2 -z-10 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-fill-accent-wash blur-[80px]" />
           <h2 className="mb-6 text-4xl font-black tracking-tight text-white drop-shadow-lg md:text-5xl">
             {title}
           </h2>
-          <p className="mx-auto max-w-2xl text-xl font-light leading-relaxed text-primary-300 md:text-2xl">
+          <p className="mx-auto max-w-2xl text-xl font-light leading-relaxed text-secondary md:text-2xl">
             {subtitle}
           </p>
         </div>
@@ -103,23 +103,23 @@ export function BenefitsGrid({ title, subtitle, benefits, className, ...rest }: 
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-primary-700 bg-primary-800/80 p-8 shadow-xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-secondary-500/30 hover:bg-primary-800 hover:shadow-2xl"
+              className="group relative flex h-full flex-col overflow-hidden rounded-card border border-hairline bg-surface-raised/80 p-8 shadow-xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-hairline/30 hover:bg-surface-raised hover:shadow-2xl"
             >
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-secondary-500/5 to-brand-tan/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-secondary-500/5 to-accent-lift/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               <div
                 className={cx(
-                  'relative z-10 mb-6 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border shadow-lg shadow-black/20 transition-transform duration-300 group-hover:scale-110',
+                  'relative z-10 mb-6 flex h-14 w-14 shrink-0 items-center justify-center rounded-chip border shadow-lg shadow-black/20 transition-transform duration-300 group-hover:scale-110',
                   TONES[benefit.tone ?? 'sage'],
                 )}
               >
                 <Icon name={benefit.icon} className="h-7 w-7" />
               </div>
 
-              <h3 className="relative z-10 mb-3 text-xl font-bold text-white transition-colors group-hover:text-brand-paper">
+              <h3 className="relative z-10 mb-3 text-xl font-bold text-white transition-colors group-hover:text-primary">
                 {benefit.title}
               </h3>
-              <p className="relative z-10 leading-relaxed text-primary-300 transition-colors group-hover:text-brand-paper">
+              <p className="relative z-10 leading-relaxed text-secondary transition-colors group-hover:text-primary">
                 {benefit.description}
               </p>
             </div>

@@ -10,11 +10,11 @@ import { Icon } from './Icon';
 export type FeaturesListTone = 'green' | 'sage' | 'orange' | 'tan' | 'primary';
 
 const TONES: Record<FeaturesListTone, string> = {
-  green: 'bg-brand-green-dark/15 text-brand-green-dark',
-  sage: 'bg-brand-sage-dark/15 text-brand-sage-dark',
-  orange: 'bg-brand-orange/15 text-brand-orange',
-  tan: 'bg-brand-tan/15 text-brand-tan',
-  primary: 'bg-primary-500/15 text-primary-300',
+  green: 'bg-fill-success-wash text-ink-success',
+  sage: 'bg-fill-success-wash text-ink-success',
+  orange: 'bg-fill-accent-wash text-ink-accent',
+  tan: 'bg-fill-accent-deep-wash text-brand-tan',
+  primary: 'bg-fill-accent-wash text-secondary',
 };
 
 export interface FeaturesListItem {
@@ -78,7 +78,7 @@ export function FeaturesList({ title, items, tone = 'green', className, ...rest 
           <div key={item.title} className="flex gap-6">
             <div
               className={cx(
-                'flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl',
+                'flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-chip',
                 TONES[tone],
               )}
             >
@@ -86,7 +86,7 @@ export function FeaturesList({ title, items, tone = 'green', className, ...rest 
             </div>
             <div>
               <h3 className="mb-3 text-2xl font-bold text-white">{item.title}</h3>
-              <p className="text-lg leading-relaxed text-primary-300">{item.description}</p>
+              <p className="text-lg leading-relaxed text-secondary">{item.description}</p>
             </div>
           </div>
         ))}

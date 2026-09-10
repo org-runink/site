@@ -164,9 +164,9 @@ export interface ContactSectionProps extends Omit<HTMLAttributes<HTMLElement>, '
 }
 
 const CONTROL =
-  'w-full rounded-card border border-primary-700 bg-primary-800 p-4 text-white placeholder-primary-600 transition-all focus:border-secondary-500 focus:outline-none focus:ring-1 focus:ring-secondary-500';
+  'w-full rounded-card border border-hairline bg-surface-raised p-4 text-white placeholder-primary-600 transition-all focus:border-hairline focus:outline-none focus:ring-1 focus:ring-secondary-500';
 
-const LABEL = 'text-xs font-bold uppercase tracking-widest text-primary-500';
+const LABEL = 'text-xs font-bold uppercase tracking-widest text-secondary';
 
 /**
  * The site's closing contact band: pitch and direct-booking panel on the left, a
@@ -257,7 +257,7 @@ export function ContactSection({
 
   return (
     <section
-      className={cx('relative z-10 overflow-hidden border-t border-primary-800 bg-brand-ink py-24', className)}
+      className={cx('relative z-10 overflow-hidden border-t border-hairline bg-canvas py-24', className)}
       {...rest}
     >
       {backgroundEffect}
@@ -267,17 +267,17 @@ export function ContactSection({
           {/* Left: the pitch, then the direct channels. */}
           <div className="flex flex-col">
             {eyebrow && (
-              <div className="mb-2 inline-flex items-center justify-center rounded-card border border-secondary-500/30 bg-primary-900/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
+              <div className="mb-2 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
                 {eyebrow}
               </div>
             )}
 
-            <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-brand-orange-dark bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[80px]">
+            <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-fill-accent bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[80px]">
               {title}
             </h2>
 
             {description && (
-              <div className="mb-10 max-w-lg text-lg font-bold uppercase tracking-[0.15em] text-primary-500 md:text-xl">
+              <div className="mb-10 max-w-lg text-lg font-bold uppercase tracking-[0.15em] text-secondary md:text-xl">
                 {description}
               </div>
             )}
@@ -291,7 +291,7 @@ export function ContactSection({
                   return (
                     <div
                       key={index}
-                      className="group relative overflow-hidden rounded-2xl border border-primary-700 bg-primary-800/40 p-8 shadow-2xl backdrop-blur"
+                      className="group relative overflow-hidden rounded-card border border-hairline bg-surface-raised/40 p-8 shadow-2xl backdrop-blur"
                     >
                       <div
                         aria-hidden="true"
@@ -300,13 +300,13 @@ export function ContactSection({
                       <div className="relative z-10">
                         <h3 className="mb-4 text-2xl font-bold text-white">{method.title}</h3>
                         {method.description && (
-                          <p className="mb-8 leading-relaxed text-primary-400">{method.description}</p>
+                          <p className="mb-8 leading-relaxed text-secondary">{method.description}</p>
                         )}
                         {href && method.actionText && (
                           <a
                             href={href}
                             {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                            className="inline-flex w-full items-center justify-center rounded border border-primary-700 bg-primary-900 px-8 py-4 font-black uppercase tracking-widest text-white shadow-neon-orange transition-all duration-300 hover:-translate-y-1 hover:border-secondary-500 hover:shadow-neon-orange-strong"
+                            className="inline-flex w-full items-center justify-center rounded border border-hairline bg-surface px-8 py-4 font-black uppercase tracking-widest text-white shadow-neon-orange transition-all duration-300 hover:-translate-y-1 hover:border-hairline hover:shadow-neon-orange-strong"
                           >
                             <span className="mr-2">{method.actionText}</span>
                             <Icon name="arrow-right" className="h-5 w-5" />
@@ -324,20 +324,20 @@ export function ContactSection({
           <div className="group relative mt-8 lg:mt-0">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -inset-1 z-0 rounded-3xl bg-gradient-to-tr from-rose-800/20 via-secondary-500/10 to-primary-900 blur-2xl transition duration-500 group-hover:from-rose-800/30 group-hover:via-secondary-500/20"
+              className="pointer-events-none absolute -inset-1 z-0 rounded-3xl bg-gradient-to-tr from-rose-800/20 via-secondary-500/10 to-surface blur-2xl transition duration-500 group-hover:from-rose-800/30 group-hover:via-secondary-500/20"
             />
 
-            <div className="relative z-10 rounded-3xl border border-primary-700 bg-primary-900/80 p-8 shadow-2xl backdrop-blur md:p-12">
+            <div className="relative z-10 rounded-3xl border border-hairline bg-surface/80 p-8 shadow-2xl backdrop-blur md:p-12">
               <h3 className="mb-2 text-3xl font-bold text-white">{formTitle}</h3>
               {formDescription && (
-                <p className="mb-8 font-mono text-sm leading-relaxed text-primary-400">{formDescription}</p>
+                <p className="mb-8 font-mono text-sm leading-relaxed text-secondary">{formDescription}</p>
               )}
 
               {submitted ? (
                 <div className="py-12 text-center" role="status">
-                  <Icon name="check-circle" className="mx-auto mb-4 h-16 w-16 text-brand-green" />
+                  <Icon name="check-circle" className="mx-auto mb-4 h-16 w-16 text-ink-success" />
                   <h4 className="mb-2 text-2xl font-bold text-white">{successTitle}</h4>
-                  <p className="text-primary-400">{successMessage}</p>
+                  <p className="text-secondary">{successMessage}</p>
                 </div>
               ) : (
                 <form action={safeAction} method="POST" onSubmit={handleSubmit} className="space-y-6">
@@ -383,7 +383,7 @@ export function ContactSection({
                                 </option>
                               ))}
                             </select>
-                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary-400">
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-secondary">
                               <Icon name="chevron-down" className="h-4 w-4" />
                             </div>
                           </div>
@@ -412,7 +412,7 @@ export function ContactSection({
                   </button>
 
                   {formNote && (
-                    <p className="mt-6 text-center font-mono text-xs text-primary-500">{formNote}</p>
+                    <p className="mt-6 text-center font-mono text-xs text-secondary">{formNote}</p>
                   )}
                 </form>
               )}

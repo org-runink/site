@@ -17,8 +17,7 @@
  *
  * Usage: node scripts/check-alpha-utilities.mjs [--css dist/runink-ui.css]
  */
-import { readFileSync, existsSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -38,31 +37,54 @@ const PREFIX = '(?:bg|text|border|divide|ring|outline|fill|stroke|from|via|to|ca
 /** A token name from the registry: role words, optionally with a -wash suffix. */
 const TOKEN = '[a-z][a-z0-9-]*';
 
-function usedUtilities() {
-  // ripgrep over the sources Tailwind itself scans.
-  let out = '';
-  try {
-    out = execFileSync(
-      'grep',
-      ['-rhoE', `\\b${PREFIX}-${TOKEN}(/[0-9]{1,3})?\\b`, join(PKG, 'src'), resolve(PKG, '../../.design-sync/previews')],
-      { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 },
-    );
-  } catch (e) {
-    if (e.status === 1) return new Set(); // no matches
-    throw e;
+/**
+ * Scan in JS rather than shelling out: `grep -E` is POSIX ERE and silently
+ * mis-parses `(?:…)`, which made an earlier version of this check report a
+ * phantom failure.
+ */
+function walk(dir, out = []) {
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) walk(p, out);
+    else if (/\.tsx?$/.test(name)) out.push(p);
   }
-  return new Set(out.split('\n').filter(Boolean));
+  return out;
+}
+
+function usedUtilities() {
+  const re = new RegExp(`(?<![\\w-])${PREFIX}-${TOKEN}(?:/[0-9]{1,3})?(?![\\w-])`, 'g');
+  const found = new Set();
+  const roots = [join(PKG, 'src'), resolve(PKG, '../../.design-sync/previews')];
+  for (const root of roots) {
+    if (!existsSync(root)) continue;
+    for (const file of walk(root)) {
+      const src = readFileSync(file, 'utf8');
+      for (const m of src.matchAll(re)) found.add(m[0]);
+    }
+  }
+  return found;
 }
 
 /** Tailwind escapes `/` and `.` in selectors. */
 const escapeClass = (c) => c.replace(/[./]/g, (m) => '\\' + m);
+
+/**
+ * A utility counts as emitted if it appears as a class, with or without variant
+ * prefixes: `group-hover:from-x/30` compiles to `.group-hover\:from-x\/30`, so
+ * looking only for a bare `.from-x\/30` reports a phantom drop. Anchor on `.` or `:`
+ * and require a class boundary after, so `from-x` does not match inside `from-x\/20`.
+ */
+function emitted(cls) {
+  const lit = escapeClass(cls).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`[.:]${lit}(?![\\w-])`).test(css);
+}
 
 const used = usedUtilities();
 const alphaModified = [...used].filter((c) => c.includes('/'));
 
 const missing = [];
 for (const c of used) {
-  if (!css.includes('.' + escapeClass(c))) missing.push(c);
+  if (!emitted(c)) missing.push(c);
 }
 
 // A utility can be legitimately absent: it may name a Tailwind stock colour we did not
@@ -70,7 +92,7 @@ for (const c of used) {
 // alpha-modified utility whose BASE form exists — that is the silent-drop signature.
 const silentDrops = missing.filter((c) => {
   const base = c.split('/')[0];
-  return c.includes('/') && css.includes('.' + escapeClass(base));
+  return c.includes('/') && emitted(base);
 });
 
 console.log(`scanned ${used.size} colour utilities (${alphaModified.length} alpha-modified)`);

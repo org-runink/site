@@ -1,12 +1,12 @@
 import { Card, CardGrid, FeatureCard } from '@runink/ui';
 
 /** Dashed rule used only in these previews to make an invisible box visible. */
-const OUTLINE = 'border-2 border-dashed border-brand-copper';
+const OUTLINE = 'border-2 border-dashed border-fill-accent';
 
 /** Caption naming which box the dashed rule is drawing. */
 function Trace({ children }: { children: string }) {
   return (
-    <div className="mb-2 font-mono text-[11px] uppercase tracking-widest text-brand-copper">{children}</div>
+    <div className="mb-2 font-mono text-[11px] uppercase tracking-widest text-ink-accent">{children}</div>
   );
 }
 

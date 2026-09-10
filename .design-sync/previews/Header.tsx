@@ -79,7 +79,7 @@ function Viewport({ children, width, height }: { children: ReactNode; width: num
     doc.documentElement.style.colorScheme = 'dark';
     doc.documentElement.style.overflow = 'hidden';
     doc.body.style.margin = '0';
-    doc.body.className = 'bg-primary-950';
+    doc.body.className = 'bg-canvas';
     setMount(doc.body);
   }, []);
 

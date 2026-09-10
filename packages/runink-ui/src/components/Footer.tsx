@@ -30,7 +30,7 @@ export interface FooterSocialLink {
   iconSrc?: string;
 }
 
-const LINK = 'text-primary-400 transition-colors hover:text-white';
+const LINK = 'text-secondary transition-colors hover:text-white';
 
 export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
   /** Wordmark beside the logo, and the name in the copyright line. Defaults to `"Runink"`. */
@@ -122,7 +122,7 @@ export function Footer({
   ...rest
 }: FooterProps) {
   return (
-    <footer className={cx('border-t border-primary-800 bg-primary-950 py-12', className)} {...rest}>
+    <footer className={cx('border-t border-hairline bg-canvas py-12', className)} {...rest}>
       <Container>
         <div className="flex flex-col justify-between space-y-4 md:flex-row md:space-y-0">
           {/* Lockup and social */}
@@ -165,7 +165,7 @@ export function Footer({
                           {link.label}
                         </a>
                       ) : (
-                        <span className="text-primary-400">{link.label}</span>
+                        <span className="text-secondary">{link.label}</span>
                       )}
                     </li>
                   );
@@ -176,9 +176,9 @@ export function Footer({
         </div>
 
         {/* Bottom strip */}
-        <div className="mt-12 border-t border-primary-800 pt-8">
+        <div className="mt-12 border-t border-hairline pt-8">
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-            <p className="text-sm text-primary-400">{copyright ?? `© ${year} ${title}. All rights reserved.`}</p>
+            <p className="text-sm text-secondary">{copyright ?? `© ${year} ${title}. All rights reserved.`}</p>
             {bottomLinks.length > 0 && (
               <div className="flex items-center space-x-6">
                 {bottomLinks.map((link, index) => {

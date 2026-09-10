@@ -9,10 +9,10 @@ import { cx } from '../lib/cx';
 export type BadgeTone = 'neutral' | 'sage' | 'orange' | 'outline';
 
 const TONES: Record<BadgeTone, string> = {
-  neutral: 'bg-primary-800 text-brand-paper',
-  sage: 'bg-brand-green/20 text-brand-sage',
-  orange: 'bg-brand-orange/15 text-brand-orange',
-  outline: 'border border-secondary-500/40 text-primary-300',
+  neutral: 'bg-surface-raised text-primary',
+  sage: 'bg-fill-success-wash text-ink-success',
+  orange: 'bg-fill-accent-wash text-ink-accent',
+  outline: 'border border-hairline/40 text-secondary',
 };
 
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {

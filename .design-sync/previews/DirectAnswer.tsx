@@ -59,7 +59,7 @@ export function InProse() {
         negligence. The lack of real-time visibility into container status and free time windows means most
         organizations only discover charges after they are already incurred.
       </DirectAnswer>
-      <p className="text-lg leading-relaxed text-primary-300">
+      <p className="text-lg leading-relaxed text-secondary">
         The mechanics of these fees are designed to incentivize fluid cargo movement, but the modern supply
         chain is anything but fluid. When terminals operate above 90% utilization, drayage appointments slip and
         containers dwell for days past the discharge window — and the shipper pays the demurrage even when the

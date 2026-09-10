@@ -35,8 +35,8 @@ export function FeatureCard({ title, description, icon, features, className }: F
   return (
     <div
       className={cx(
-        'rounded-2xl border border-secondary-500/50 bg-primary-900/30 p-8 transition-all',
-        'hover:-translate-y-2 hover:border-brand-sage-dark/70',
+        'rounded-card border border-hairline/50 bg-surface/30 p-8 transition-all',
+        'hover:-translate-y-2 hover:border-ink-success/70',
         className,
       )}
     >
@@ -46,9 +46,9 @@ export function FeatureCard({ title, description, icon, features, className }: F
         </div>
       )}
       <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
-      <p className="mb-6 leading-relaxed text-brand-paper">{description}</p>
+      <p className="mb-6 leading-relaxed text-primary">{description}</p>
       {features && features.length > 0 && (
-        <div className="space-y-3 text-sm text-primary-300">
+        <div className="space-y-3 text-sm text-secondary">
           {features.map((feature) => (
             <div key={feature} className="flex items-start gap-2">
               <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-500" fill="currentColor" viewBox="0 0 20 20">

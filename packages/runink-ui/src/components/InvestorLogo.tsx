@@ -38,7 +38,7 @@ export function InvestorLogo({ name, image, className }: InvestorLogoProps) {
           className="max-h-12 grayscale transition-all duration-300 hover:grayscale-0"
         />
       ) : (
-        <div className="text-xl font-bold text-primary-400">{name}</div>
+        <div className="text-xl font-bold text-secondary">{name}</div>
       )}
     </div>
   );

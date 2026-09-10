@@ -49,12 +49,12 @@ export interface UsageSectionProps extends Omit<HTMLAttributes<HTMLElement>, 'ti
  */
 export function UsageSection({ title, description, steps, className, ...rest }: UsageSectionProps) {
   return (
-    <section className={cx('bg-primary-900 py-16', className)} {...rest}>
+    <section className={cx('bg-surface py-16', className)} {...rest}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {title && (
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white">{title}</h2>
-            {description && <p className="mt-4 text-xl text-primary-300">{description}</p>}
+            {description && <p className="mt-4 text-xl text-secondary">{description}</p>}
           </div>
         )}
 
@@ -63,15 +63,15 @@ export function UsageSection({ title, description, steps, className, ...rest }: 
             {steps.map((step, index) => (
               <div
                 key={`${index}-${step.title}`}
-                className="group relative rounded-2xl border border-primary-700 bg-primary-800 p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+                className="group relative rounded-card border border-hairline bg-surface-raised p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
               >
                 <div className="flex items-start">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-700 font-semibold text-secondary-500 transition-colors group-hover:bg-brand-green group-hover:text-white">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-surface-well font-semibold text-secondary-500 transition-colors group-hover:bg-fill-success group-hover:text-white">
                     {index + 1}
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-white">{step.title}</h3>
-                    <p className="mt-2 text-primary-300">{step.text}</p>
+                    <p className="mt-2 text-secondary">{step.text}</p>
                   </div>
                 </div>
               </div>

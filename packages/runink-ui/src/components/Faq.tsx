@@ -78,12 +78,12 @@ export function Faq({ title, description, items, defaultOpenIndex = 0, className
   }
 
   return (
-    <section className={cx('bg-primary-900', className)} {...rest}>
+    <section className={cx('bg-surface', className)} {...rest}>
       <div className="mx-auto max-w-screen-xl px-4 py-16 lg:px-6 lg:py-20">
         {title && (
           <div className="mx-auto mb-12 max-w-screen-md text-center">
             <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-white">{title}</h2>
-            {description && <p className="mb-5 font-light text-primary-300 sm:text-xl">{description}</p>}
+            {description && <p className="mb-5 font-light text-secondary sm:text-xl">{description}</p>}
           </div>
         )}
 
@@ -96,7 +96,7 @@ export function Faq({ title, description, items, defaultOpenIndex = 0, className
             return (
               <div
                 key={`${item.question}-${index}`}
-                className="overflow-hidden rounded-card border border-primary-700 bg-primary-800 shadow-lg transition-shadow duration-200 hover:shadow-xl"
+                className="overflow-hidden rounded-card border border-hairline bg-surface-raised shadow-lg transition-shadow duration-200 hover:shadow-xl"
               >
                 <h3>
                   <button
@@ -105,13 +105,13 @@ export function Faq({ title, description, items, defaultOpenIndex = 0, className
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => toggle(index)}
-                    className="flex w-full items-center justify-between p-6 text-left transition-colors duration-200 hover:bg-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500"
+                    className="flex w-full items-center justify-between p-6 text-left transition-colors duration-200 hover:bg-surface-well focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500"
                   >
                     <span className="text-lg font-medium text-white">{item.question}</span>
                     <Icon
                       name="chevron-down"
                       className={cx(
-                        'h-5 w-5 flex-shrink-0 text-primary-300 transition-transform duration-200',
+                        'h-5 w-5 flex-shrink-0 text-secondary transition-transform duration-200',
                         isOpen && 'rotate-180',
                       )}
                     />
@@ -123,11 +123,11 @@ export function Faq({ title, description, items, defaultOpenIndex = 0, className
                   role="region"
                   aria-labelledby={buttonId}
                   aria-hidden={!isOpen}
-                  className="grid border-primary-700 transition-all duration-300 ease-in-out"
+                  className="grid border-hairline transition-all duration-300 ease-in-out"
                   style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
                 >
                   <div className="overflow-hidden">
-                    <div className="border-t border-primary-700 p-6 text-brand-paper">{item.answer}</div>
+                    <div className="border-t border-hairline p-6 text-primary">{item.answer}</div>
                   </div>
                 </div>
               </div>

@@ -73,7 +73,7 @@ export function ClientLogos({
     ));
 
   return (
-    <section className={cx('overflow-hidden border-y border-primary-800', className)} {...rest}>
+    <section className={cx('overflow-hidden border-y border-hairline', className)} {...rest}>
       {animate && <style>{MARQUEE_CSS}</style>}
       <Container>
         <div className="py-12">

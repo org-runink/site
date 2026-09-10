@@ -95,7 +95,7 @@ export function CtaBanner({
   return (
     <section className={cx('my-24 py-12', className)} {...rest}>
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="group relative overflow-hidden rounded-card border border-primary-700 bg-primary-800/40 p-8 shadow-2xl backdrop-blur md:p-16">
+        <div className="group relative overflow-hidden rounded-card border border-hairline bg-surface-raised/40 p-8 shadow-2xl backdrop-blur md:p-16">
           <div
             aria-hidden="true"
             className={cx(
@@ -108,7 +108,7 @@ export function CtaBanner({
           <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-white md:text-5xl">{title}</h2>
             {description && (
-              <p className="mx-auto mb-10 max-w-2xl text-xl leading-relaxed text-brand-paper md:text-2xl">
+              <p className="mx-auto mb-10 max-w-2xl text-xl leading-relaxed text-primary md:text-2xl">
                 {description}
               </p>
             )}
@@ -116,7 +116,7 @@ export function CtaBanner({
               {primaryButton?.text && (
                 <a
                   href={safeHref(primaryButton.url) ?? '#'}
-                  className="group/link inline-flex animate-cta-pulse items-center justify-center rounded border border-primary-700 bg-primary-900 px-8 py-4 text-lg font-black uppercase tracking-widest text-white shadow-neon-orange transition-all duration-300 hover:-translate-y-1 hover:border-secondary-500 hover:shadow-neon-orange-strong"
+                  className="group/link inline-flex animate-cta-pulse items-center justify-center rounded border border-hairline bg-surface px-8 py-4 text-lg font-black uppercase tracking-widest text-white shadow-neon-orange transition-all duration-300 hover:-translate-y-1 hover:border-hairline hover:shadow-neon-orange-strong"
                 >
                   {primaryButton.text}
                   <span
@@ -130,7 +130,7 @@ export function CtaBanner({
               {secondaryButton?.text && (
                 <a
                   href={safeHref(secondaryButton.url) ?? '#'}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-primary-700 bg-primary-900/50 px-8 py-4 text-lg font-bold text-primary-200 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary-500 hover:bg-primary-800 hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-hairline bg-surface/50 px-8 py-4 text-lg font-bold text-primary backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-hairline hover:bg-surface-raised hover:text-white"
                 >
                   {secondaryButton.text}
                 </a>

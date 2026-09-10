@@ -79,7 +79,7 @@ export function CaseStudyCard({
   const showImage = Boolean(image) && !imageFailed;
 
   return (
-    <div className={cx('not-prose overflow-hidden rounded-2xl bg-primary-900 shadow-xl', className)}>
+    <div className={cx('not-prose overflow-hidden rounded-card bg-surface shadow-xl', className)}>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="p-8 md:p-12">
           <div
@@ -89,7 +89,7 @@ export function CaseStudyCard({
             {tag}
           </div>
           <h3 className="mb-4 text-3xl font-bold text-white">{title}</h3>
-          <p className="mb-6 text-primary-300">{description}</p>
+          <p className="mb-6 text-secondary">{description}</p>
           <a
             href={safeHref(href)}
             className="inline-block rounded-card px-6 py-3 font-bold text-white no-underline transition-opacity hover:opacity-90"

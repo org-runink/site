@@ -50,11 +50,11 @@ export function DirectAnswer({ children, label = 'Quick Answer:', className, ...
     <div
       itemScope
       itemType="https://schema.org/Answer"
-      className={cx('my-6 rounded-r-lg border-l-4 border-brand-orange bg-primary-900 p-6 text-brand-paper', className)}
+      className={cx('my-6 rounded-r-lg border-l-4 border-fill-accent bg-surface p-6 text-primary', className)}
       {...rest}
     >
       <div itemProp="text">
-        {label && <strong className="mb-2 block text-lg font-bold text-brand-orange">{label}</strong>}
+        {label && <strong className="mb-2 block text-lg font-bold text-ink-accent">{label}</strong>}
         {children}
       </div>
     </div>

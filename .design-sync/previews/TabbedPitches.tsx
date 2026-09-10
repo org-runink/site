@@ -14,7 +14,7 @@ const PERSONAS: TabbedPitch[] = [
     headline: (
       <>
         Stop waiting 30 days for a <strong className="font-bold text-red-300">monthly close</strong>. Get{' '}
-        <strong className="font-bold text-brand-green">End of Cycle Underwriting</strong>.
+        <strong className="font-bold text-ink-success">End of Cycle Underwriting</strong>.
       </>
     ),
     body:
@@ -28,7 +28,7 @@ const PERSONAS: TabbedPitch[] = [
     headline: (
       <>
         Your dock doors are <strong className="font-bold text-red-300">bottlenecked</strong>. Automate your{' '}
-        <strong className="font-bold text-brand-green">Cargo Verification</strong>.
+        <strong className="font-bold text-ink-success">Cargo Verification</strong>.
       </>
     ),
     body:
@@ -42,7 +42,7 @@ const PERSONAS: TabbedPitch[] = [
     headline: (
       <>
         Stop losing margin to the <strong className="font-bold text-red-300">bullwhip effect</strong>. Get{' '}
-        <strong className="font-bold text-brand-green">Demand Forecasting</strong>.
+        <strong className="font-bold text-ink-success">Demand Forecasting</strong>.
       </>
     ),
     body:
@@ -56,7 +56,7 @@ const PERSONAS: TabbedPitch[] = [
     headline: (
       <>
         Stop eating the cost of <strong className="font-bold text-red-300">vendor compliance failures</strong>. Deploy
-        the <strong className="font-bold text-brand-green">Digital Paralegal</strong>.
+        the <strong className="font-bold text-ink-success">Digital Paralegal</strong>.
       </>
     ),
     body:
@@ -70,7 +70,7 @@ const PERSONAS: TabbedPitch[] = [
     headline: (
       <>
         Stop accepting <strong className="font-bold text-red-300">inconsistent store execution</strong>. Deploy{' '}
-        <strong className="font-bold text-brand-green">Local Specialized Automation</strong>.
+        <strong className="font-bold text-ink-success">Local Specialized Automation</strong>.
       </>
     ),
     body:

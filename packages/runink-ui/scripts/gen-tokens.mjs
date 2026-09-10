@@ -180,6 +180,7 @@ const POSITION_KEYS = [
   'boxShadowColor',
   'caretColor',
   'textDecorationColor',
+  'ringOffsetColor',
 ];
 
 function emitPreset() {

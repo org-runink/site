@@ -127,7 +127,7 @@ export function Hero({
 
   return (
     <section
-      className={cx('relative overflow-hidden py-24 md:py-32', !gradient && 'bg-primary-900', className)}
+      className={cx('relative overflow-hidden py-24 md:py-32', !gradient && 'bg-surface', className)}
       style={gradient}
       {...rest}
     >
@@ -158,7 +158,7 @@ export function Hero({
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="relative space-y-8 lg:col-span-6">
             {/* Glow behind the text block. */}
-            <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-secondary-500/20 opacity-50 blur-[100px]" />
+            <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-fill-accent-wash opacity-50 blur-[100px]" />
 
             <h1 className={cx('font-bold leading-normal tracking-normal text-white drop-shadow-xl', HEADLINE_SIZES[size])}>
               {headline}
@@ -167,7 +167,7 @@ export function Hero({
             {subHeadline && (
               <p
                 className={cx(
-                  'border-l-4 border-secondary-500 pl-6 leading-relaxed text-brand-paper drop-shadow-md',
+                  'border-l-4 border-hairline pl-6 leading-relaxed text-primary drop-shadow-md',
                   SUBHEAD_SIZES[size],
                 )}
               >
@@ -179,7 +179,7 @@ export function Hero({
               {primaryButtonText && primaryUrl && (
                 <a
                   href={primaryUrl}
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-secondary-600 to-secondary-500 px-8 py-4 text-base font-bold text-white transition-all duration-200 hover:-translate-y-1 hover:from-secondary-500 hover:to-secondary-400 hover:shadow-lg hover:shadow-secondary-500/30"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-secondary-600 to-secondary-500 px-8 py-4 text-base font-bold text-white transition-all duration-200 hover:-translate-y-1 hover:from-secondary-500 hover:to-secondary-400 hover:shadow-lg "
                 >
                   {primaryButtonText}
                   <Icon name="arrow-right" className="-mr-1 ml-2 h-5 w-5" />
@@ -188,7 +188,7 @@ export function Hero({
               {secondaryButtonText && secondaryUrl && (
                 <a
                   href={secondaryUrl}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-secondary-500/50 bg-primary-800/50 px-8 py-4 text-base font-bold text-secondary-100 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-secondary-400 hover:bg-secondary-600/20 hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-hairline/50 bg-surface-raised/50 px-8 py-4 text-base font-bold text-primary backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-edge hover:bg-fill-accent-wash hover:text-white"
                 >
                   {secondaryButtonText}
                 </a>
@@ -200,20 +200,20 @@ export function Hero({
             {heroImage && (
               <div className="relative z-10">
                 {/* Halo, green into the `brand-copper` accent. */}
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-green-dark to-brand-copper opacity-30 blur transition duration-1000 group-hover:opacity-60 group-hover:duration-200" />
+                <div className="absolute -inset-1 rounded-card bg-gradient-to-r from-fill-success-glow to-accent-lift opacity-30 blur transition duration-1000 group-hover:opacity-60 group-hover:duration-200" />
                 <img
                   src={heroImage}
                   alt={heroImageAlt}
                   fetchPriority="high"
-                  className="relative w-full rounded-xl border border-primary-700/50 bg-primary-900/50 shadow-2xl backdrop-blur-xl"
+                  className="relative w-full rounded-chip border border-hairline/50 bg-surface/50 shadow-2xl backdrop-blur-xl"
                 />
                 {/* Sheen across the screenshot on hover. */}
-                <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-tr from-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-20" />
+                <div className="pointer-events-none absolute inset-0 rounded-chip bg-gradient-to-tr from-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-20" />
               </div>
             )}
 
             {/* Orb behind the image column; renders with or without a screenshot. */}
-            <div className="absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 animate-pulse-slow rounded-full bg-secondary-500/15 blur-[100px]" />
+            <div className="absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 animate-pulse-slow rounded-full bg-fill-accent-wash blur-[100px]" />
           </div>
         </div>
       </Container>

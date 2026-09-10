@@ -14,16 +14,16 @@ export type ReasonTone = 'sage' | 'ember';
 
 const TONES: Record<ReasonTone, { panel: string; bloom: string; accent: string; tile: string }> = {
   sage: {
-    panel: 'border-primary-700 shadow-2xl',
-    bloom: 'bg-brand-green-dark/10 group-hover:bg-brand-green-dark/30',
-    accent: 'text-brand-sage',
-    tile: 'text-brand-sage group-hover/item:border-brand-sage/50 group-hover/item:bg-brand-sage/10',
+    panel: 'border-hairline shadow-2xl',
+    bloom: 'bg-fill-success-wash group-hover:bg-fill-success-glow/30',
+    accent: 'text-ink-success',
+    tile: 'text-ink-success group-hover/item:border-ink-success/50 group-hover/item:bg-fill-success-wash',
   },
   ember: {
-    panel: 'border-secondary-500/30 shadow-neon-orange hover:-translate-y-1 hover:shadow-neon-orange-strong',
-    bloom: 'bg-secondary-500/10 group-hover:bg-secondary-500/20',
+    panel: 'border-hairline/30 shadow-neon-orange hover:-translate-y-1 hover:shadow-neon-orange-strong',
+    bloom: 'bg-fill-accent-wash group-hover:bg-fill-accent-wash',
     accent: 'text-secondary-500',
-    tile: 'text-secondary-500 group-hover/item:border-secondary-500/50 group-hover/item:bg-secondary-500/10',
+    tile: 'text-secondary-500 group-hover/item:border-hairline/50 group-hover/item:bg-fill-accent-wash',
   },
 };
 
@@ -167,7 +167,7 @@ export function ReasonsGrid({
 }: ReasonsGridProps) {
   return (
     <section
-      className={cx('relative overflow-hidden border-t border-primary-800 bg-primary-950 py-32', className)}
+      className={cx('relative overflow-hidden border-t border-hairline bg-canvas py-32', className)}
       {...rest}
     >
       {backgroundEffect}
@@ -175,7 +175,7 @@ export function ReasonsGrid({
       <Container className="relative z-10">
         <div className="mb-20 flex flex-col items-center text-center">
           {eyebrow && (
-            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-secondary-500/30 bg-primary-900/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
+            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
               {eyebrow}
             </div>
           )}
@@ -189,7 +189,7 @@ export function ReasonsGrid({
           </GradientText>
 
           {subtitle && (
-            <p className="mb-10 mt-6 max-w-3xl text-lg font-bold uppercase tracking-[0.15em] text-primary-500 md:text-xl">
+            <p className="mb-10 mt-6 max-w-3xl text-lg font-bold uppercase tracking-[0.15em] text-secondary md:text-xl">
               {subtitle}
             </p>
           )}
@@ -207,7 +207,7 @@ export function ReasonsGrid({
               <div
                 key={reason.title}
                 className={cx(
-                  'group relative overflow-hidden rounded-card border bg-brand-ink-soft p-10 transition-all duration-500 lg:p-12',
+                  'group relative overflow-hidden rounded-card border bg-surface p-10 transition-all duration-500 lg:p-12',
                   tone.panel,
                 )}
               >
@@ -229,7 +229,7 @@ export function ReasonsGrid({
                       <li key={capability.title} className="group/item flex items-start">
                         <div
                           className={cx(
-                            'mr-5 mt-1 shrink-0 rounded-xl border border-primary-700 bg-primary-800 p-3 shadow-lg transition-all',
+                            'mr-5 mt-1 shrink-0 rounded-chip border border-hairline bg-surface-raised p-3 shadow-lg transition-all',
                             tone.tile,
                           )}
                         >
@@ -237,7 +237,7 @@ export function ReasonsGrid({
                         </div>
                         <div>
                           <h4 className="mb-2 text-xl font-bold text-white">{capability.title}</h4>
-                          <p className="text-base leading-relaxed text-primary-400">{capability.description}</p>
+                          <p className="text-base leading-relaxed text-secondary">{capability.description}</p>
                         </div>
                       </li>
                     ))}

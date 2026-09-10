@@ -23,28 +23,28 @@
       "web": "canvas",
       "face": "backgroundDark",
       "tier": "fill",
-      "positions": ["backgroundColor"],
+      "positions": ["backgroundColor", "gradientColorStops", "ringOffsetColor"],
       "why": "The page. Warm near-black on console, warm paper on sheet. The FACE name is misleading on the web (it is *light* in the sheet ramp) which is exactly why the web name is a role."
     },
     {
       "web": "surface",
       "face": "surfaceDark",
       "tier": "fill",
-      "positions": ["backgroundColor"],
+      "positions": ["backgroundColor", "gradientColorStops", "ringOffsetColor"],
       "why": "The default card. NOTE: in the sheet ramp this goes *lighter* than the canvas (#FFFDFA on #FBF7F1) while surface-raised and surface-well go darker — so these four are NOT a depth ladder and must not be renamed raised-1/2/3."
     },
     {
       "web": "surface-raised",
       "face": "surfaceElevated",
       "tier": "fill",
-      "positions": ["backgroundColor"],
+      "positions": ["backgroundColor", "gradientColorStops", "ringOffsetColor"],
       "why": "The warm/tan panel. FACE's GlassCard fill."
     },
     {
       "web": "surface-well",
       "face": "surfaceHighlight",
       "tier": "fill",
-      "positions": ["backgroundColor"],
+      "positions": ["backgroundColor", "gradientColorStops", "ringOffsetColor"],
       "why": "The most-contrasted surface."
     },
     {
@@ -84,21 +84,21 @@
       "web": "ink-accent",
       "face": "technicalOrangeLight",
       "tier": "ink",
-      "positions": ["textColor", "borderColor", "fill", "stroke"],
+      "positions": ["textColor", "borderColor", "ringColor", "fill", "stroke"],
       "why": "The compliant accent ink. Its SHEET value (#8B4024) is DARK — this token is not 'a lighter orange'. Not inkable by on-accent."
     },
     {
       "web": "ink-success",
       "face": "oliveInk",
       "tier": "ink",
-      "positions": ["textColor", "borderColor", "fill", "stroke"],
+      "positions": ["textColor", "borderColor", "ringColor", "fill", "stroke"],
       "why": "The ONLY olive that may carry text or a small mark."
     },
     {
       "web": "ink-provenance",
       "face": "wineProvenanceLight",
       "tier": "ink",
-      "positions": ["textColor", "borderColor", "fill", "stroke"],
+      "positions": ["textColor", "borderColor", "ringColor", "fill", "stroke"],
       "why": "The provenance hue as ink — AI-generated tag, BLOCKED verdict, anomaly count."
     },
     {

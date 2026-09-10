@@ -96,9 +96,9 @@ const GRADIENT_TEXT = 'bg-gradient-to-r from-amber-500 to-secondary-500 bg-clip-
 
 const CTA: Record<'solid' | 'outline', string> = {
   solid:
-    'bg-gradient-to-r from-secondary-500 to-brand-orange-dark text-white hover:-translate-y-1 hover:shadow-neon-orange-strong',
+    'bg-gradient-to-r from-secondary-500 to-fill-accent text-white hover:-translate-y-1 hover:shadow-neon-orange-strong',
   outline:
-    'border border-primary-800 bg-brand-ink-soft text-primary-400 hover:border-primary-600 hover:text-white',
+    'border border-hairline bg-surface text-secondary hover:border-edge hover:text-white',
 };
 
 /**
@@ -232,8 +232,8 @@ export function PricingTable({
               <div key={tier.name} className="w-full">
                 <div
                   className={cx(
-                    'relative flex h-full flex-col overflow-hidden rounded-large border shadow-2xl transition-all duration-300',
-                    hot ? 'border-brand-orange-dark/30 bg-brand-ink-soft' : 'border-primary-800 bg-brand-ink',
+                    'relative flex h-full flex-col overflow-hidden rounded-pill border shadow-2xl transition-all duration-300',
+                    hot ? 'border-fill-accent/30 bg-surface' : 'border-hairline bg-canvas',
                   )}
                 >
                   <div className="flex flex-grow flex-col items-center p-8 text-center lg:p-12">
@@ -242,7 +242,7 @@ export function PricingTable({
                         <span
                           className={cx(
                             'inline-block text-[10px] font-black uppercase italic tracking-[0.25em]',
-                            hot ? 'text-brand-orange-dark' : 'text-primary-500',
+                            hot ? 'text-ink-accent' : 'text-secondary',
                           )}
                         >
                           {tier.pill}
@@ -267,7 +267,7 @@ export function PricingTable({
                       {tier.name}
                     </h3>
                     {tier.subtitle && (
-                      <p className="mb-12 text-[10px] font-bold uppercase tracking-[0.2em] text-primary-500">
+                      <p className="mb-12 text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">
                         {tier.subtitle}
                       </p>
                     )}
@@ -283,30 +283,30 @@ export function PricingTable({
                         {numeric ? `${currency}${price}` : price}
                       </span>
                       {numeric && (
-                        <span className="ml-2 text-[10px] font-bold italic tracking-widest text-primary-500">
+                        <span className="ml-2 text-[10px] font-bold italic tracking-widest text-secondary">
                           {tier.periodLabel ?? '/ MO'}
                         </span>
                       )}
                     </div>
                     {tier.priceSubtitle && (
-                      <p className="mb-10 text-[10px] font-bold uppercase tracking-[0.2em] text-primary-500">
+                      <p className="mb-10 text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">
                         {tier.priceSubtitle}
                       </p>
                     )}
 
                     {(tier.credits || (tier.outcomes && tier.outcomes.length > 0)) && (
-                      <div className="mb-12 flex w-full flex-col rounded-2xl border border-primary-800/60 bg-brand-ink-soft p-6 text-left shadow-inner">
+                      <div className="mb-12 flex w-full flex-col rounded-card border border-hairline/60 bg-surface p-6 text-left shadow-inner">
                         {tier.credits && (
                           <div
                             className={cx(
                               'flex items-center gap-4',
-                              tier.outcomes && tier.outcomes.length > 0 && 'mb-6 border-b border-primary-800/60 pb-6',
+                              tier.outcomes && tier.outcomes.length > 0 && 'mb-6 border-b border-hairline/60 pb-6',
                             )}
                           >
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary-700/50 bg-primary-800/50 shadow-inner">
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-hairline/50 bg-surface-raised/50 shadow-inner">
                               <Icon
                                 name="bolt"
-                                className={cx('h-5 w-5', hot ? 'text-secondary-500' : 'text-primary-400')}
+                                className={cx('h-5 w-5', hot ? 'text-secondary-500' : 'text-secondary')}
                               />
                             </div>
                             <div className="whitespace-pre-line text-sm font-black uppercase italic leading-snug tracking-wide text-white">
@@ -319,10 +319,10 @@ export function PricingTable({
                           <div className="flex flex-col gap-5">
                             {tier.outcomes.map((outcome) => (
                               <div key={outcome.label}>
-                                <div className="mb-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-primary-500">
+                                <div className="mb-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-secondary">
                                   {outcome.label}
                                 </div>
-                                <div className="text-xs font-bold italic tracking-normal text-primary-300">
+                                <div className="text-xs font-bold italic tracking-normal text-secondary">
                                   {outcome.value}
                                 </div>
                               </div>
@@ -339,7 +339,7 @@ export function PricingTable({
                             <svg
                               className={cx(
                                 'mt-0.5 h-4 w-4 flex-shrink-0',
-                                hot ? 'text-brand-orange-dark' : 'text-primary-700',
+                                hot ? 'text-ink-accent' : 'text-secondary',
                               )}
                               fill="none"
                               stroke="currentColor"
@@ -353,7 +353,7 @@ export function PricingTable({
                                 d="M5 13l4 4L19 7"
                               />
                             </svg>
-                            <span className="ml-4 text-[10px] font-bold uppercase leading-snug tracking-widest text-primary-400/80">
+                            <span className="ml-4 text-[10px] font-bold uppercase leading-snug tracking-widest text-secondary/80">
                               {feature.label}
                             </span>
                           </li>
@@ -366,7 +366,7 @@ export function PricingTable({
                         <a
                           href={safeHref(tier.cta.href) ?? '#'}
                           className={cx(
-                            'flex w-full items-center justify-center rounded-xl px-8 py-4 text-xs font-black uppercase italic tracking-widest transition-all duration-300',
+                            'flex w-full items-center justify-center rounded-chip px-8 py-4 text-xs font-black uppercase italic tracking-widest transition-all duration-300',
                             CTA[ctaVariant],
                           )}
                         >

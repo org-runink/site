@@ -65,9 +65,9 @@ const ALIAS_PAIRS: [IconName, IconName][] = [
 
 function Swatch({ name }: { name: IconName }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-primary-700 bg-primary-900 px-3 py-2">
-      <Icon name={name} className="h-6 w-6 shrink-0 text-brand-sage-dark" />
-      <span className="break-words font-mono text-[11px] leading-tight text-primary-300">{name}</span>
+    <div className="flex items-center gap-3 rounded-card border border-hairline bg-surface px-3 py-2">
+      <Icon name={name} className="h-6 w-6 shrink-0 text-ink-success" />
+      <span className="break-words font-mono text-[11px] leading-tight text-secondary">{name}</span>
     </div>
   );
 }
@@ -105,8 +105,8 @@ export function Sizes() {
         { cls: 'h-12 w-12', label: 'h-12 w-12' },
       ].map(({ cls, label }) => (
         <div key={label} className="flex flex-col items-center gap-3">
-          <Icon name="shield-check" className={cls ? `${cls} text-brand-sage-dark` : 'text-brand-sage-dark'} />
-          <span className="font-mono text-[11px] text-primary-400">{label}</span>
+          <Icon name="shield-check" className={cls ? `${cls} text-ink-success` : 'text-ink-success'} />
+          <span className="font-mono text-[11px] text-secondary">{label}</span>
         </div>
       ))}
     </div>
@@ -125,27 +125,27 @@ export function ColourInheritance() {
     <div className="space-y-8">
       <div className="flex flex-wrap items-center gap-8">
         {[
-          'text-brand-sage-dark',
-          'text-brand-orange',
-          'text-brand-copper',
+          'text-ink-success',
+          'text-ink-accent',
+          'text-ink-accent',
           'text-secondary-500',
           'text-white',
         ].map((tone) => (
           <div key={tone} className="flex flex-col items-center gap-3">
             <Icon name="cube-transparent" className={`h-10 w-10 ${tone}`} />
-            <span className="font-mono text-[11px] text-primary-400">{tone}</span>
+            <span className="font-mono text-[11px] text-secondary">{tone}</span>
           </div>
         ))}
       </div>
 
-      <div className="rounded-card border border-primary-700 bg-primary-800 p-6 text-brand-orange">
+      <div className="rounded-card border border-hairline bg-surface-raised p-6 text-ink-accent">
         <div className="mb-4 font-mono text-[11px] uppercase tracking-widest">
           inherited from the wrapper — no colour utility on either icon
         </div>
         <div className="flex items-center gap-6">
           <Icon name="bolt" className="h-10 w-10" />
           <Icon name="rocket-launch" className="h-10 w-10" />
-          <span className="text-sm">Both glyphs pick up `text-brand-orange` from this container.</span>
+          <span className="text-sm">Both glyphs pick up `text-ink-accent` from this container.</span>
         </div>
       </div>
     </div>
@@ -163,12 +163,12 @@ export function Aliases() {
       {ALIAS_PAIRS.map(([alias, canonical]) => (
         <div
           key={alias}
-          className="flex items-center gap-4 rounded-card border border-primary-700 bg-primary-800 p-4"
+          className="flex items-center gap-4 rounded-card border border-hairline bg-surface-raised p-4"
         >
-          <Icon name={alias} className="h-8 w-8 text-brand-sage-dark" />
-          <span className="font-mono text-[11px] text-primary-400">{alias}</span>
-          <Icon name="arrow-right" className="h-4 w-4 text-primary-400" />
-          <Icon name={canonical} className="h-8 w-8 text-brand-sage-dark" />
+          <Icon name={alias} className="h-8 w-8 text-ink-success" />
+          <span className="font-mono text-[11px] text-secondary">{alias}</span>
+          <Icon name="arrow-right" className="h-4 w-4 text-secondary" />
+          <Icon name={canonical} className="h-8 w-8 text-ink-success" />
           <span className="font-mono text-[11px] text-white">{canonical}</span>
         </div>
       ))}
@@ -185,12 +185,12 @@ export function UnknownName() {
   return (
     <div className="flex flex-wrap items-center gap-8">
       <div className="flex flex-col items-center gap-3">
-        <Icon name={'container-ship' as IconName} className="h-12 w-12 text-brand-orange" />
-        <span className="font-mono text-[11px] text-primary-400">&quot;container-ship&quot; (unknown)</span>
+        <Icon name={'container-ship' as IconName} className="h-12 w-12 text-ink-accent" />
+        <span className="font-mono text-[11px] text-secondary">&quot;container-ship&quot; (unknown)</span>
       </div>
       <div className="flex flex-col items-center gap-3">
-        <Icon name="server-stack" className="h-12 w-12 text-brand-sage-dark" />
-        <span className="font-mono text-[11px] text-primary-400">&quot;server-stack&quot; (known)</span>
+        <Icon name="server-stack" className="h-12 w-12 text-ink-success" />
+        <span className="font-mono text-[11px] text-secondary">&quot;server-stack&quot; (known)</span>
       </div>
     </div>
   );

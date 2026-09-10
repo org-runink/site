@@ -10,19 +10,19 @@ export type StepCardTrack = 'monitor' | 'cockpit';
 
 const TRACK_CARD: Record<StepCardTrack, string> = {
   monitor:
-    'border-brand-green/30 bg-brand-green/5 shadow-neon-green hover:border-brand-green/50 hover:bg-brand-green/10 hover:shadow-xl hover:shadow-brand-green/30',
+    'border-ink-success/30 bg-fill-success-wash shadow-neon-green hover:border-ink-success/50 hover:bg-fill-success-wash hover:shadow-xl hover:shadow-glow-success',
   cockpit:
-    'border-brand-red/30 bg-brand-red/5 shadow-neon-red hover:border-brand-red/50 hover:bg-brand-red/10 hover:shadow-xl hover:shadow-brand-red/30',
+    'border-ink-provenance/30 bg-fill-provenance-wash shadow-neon-red hover:border-ink-provenance/50 hover:bg-fill-provenance-wash hover:shadow-xl ',
 };
 
 const TRACK_BADGE: Record<StepCardTrack, string> = {
-  monitor: 'border-brand-green/30 bg-brand-green/10 text-brand-green shadow-neon-green group-hover:bg-brand-green/20',
-  cockpit: 'border-brand-red/30 bg-brand-red/10 text-brand-red shadow-neon-red group-hover:bg-brand-red/20',
+  monitor: 'border-ink-success/30 bg-fill-success-wash text-ink-success shadow-neon-green group-hover:bg-fill-success-wash',
+  cockpit: 'border-ink-provenance/30 bg-fill-provenance-wash text-ink-provenance shadow-neon-red group-hover:bg-fill-provenance-wash',
 };
 
 const TRACK_TITLE: Record<StepCardTrack, string> = {
-  monitor: 'text-brand-green',
-  cockpit: 'text-brand-red',
+  monitor: 'text-ink-success',
+  cockpit: 'text-ink-provenance',
 };
 
 export interface StepCardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
@@ -92,7 +92,7 @@ export function StepCard({
   return (
     <div
       className={cx(
-        'group relative mb-5 flex w-full cursor-default flex-col items-start justify-between gap-4 overflow-hidden rounded-2xl border px-6 py-5 transition-all duration-700 ease-out md:flex-row md:items-center',
+        'group relative mb-5 flex w-full cursor-default flex-col items-start justify-between gap-4 overflow-hidden rounded-card border px-6 py-5 transition-all duration-700 ease-out md:flex-row md:items-center',
         TRACK_CARD[track],
         className,
       )}
@@ -104,7 +104,7 @@ export function StepCard({
             {title}
           </strong>
         )}
-        <span className="text-primary-300 transition-colors duration-500 group-hover:text-primary-200">{desc}</span>
+        <span className="text-secondary transition-colors duration-500 group-hover:text-primary">{desc}</span>
       </div>
       <div className="z-20 shrink-0 self-end md:self-auto">
         <span

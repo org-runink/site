@@ -10,11 +10,11 @@ import { Button } from './Button';
 export type FeatureBadgeTone = 'primary' | 'sage' | 'green' | 'orange' | 'tan';
 
 const BADGE_TONES: Record<FeatureBadgeTone, string> = {
-  primary: 'bg-primary-500 text-white shadow-lg shadow-primary-500/50',
-  sage: 'bg-brand-sage-dark text-brand-ink shadow-lg shadow-brand-sage-dark/50',
-  green: 'bg-brand-green text-white shadow-neon-green',
-  orange: 'bg-brand-orange text-white shadow-neon-orange',
-  tan: 'bg-brand-tan text-brand-ink shadow-lg shadow-brand-tan/50',
+  primary: 'bg-primary-500 text-white shadow-lg ',
+  sage: 'bg-fill-success text-primary shadow-lg shadow-glow-success',
+  green: 'bg-fill-success text-white shadow-neon-green',
+  orange: 'bg-fill-accent text-white shadow-neon-orange',
+  tan: 'bg-surface-well text-primary shadow-lg ',
 };
 
 export interface FeatureProps {
@@ -94,7 +94,7 @@ export function Feature({
 
   const picture = image ? (
     <div className={imageLeft ? 'order-2 lg:order-1' : undefined}>
-      <img src={image} alt={imageAlt ?? title} className="w-full rounded-xl shadow-xl" />
+      <img src={image} alt={imageAlt ?? title} className="w-full rounded-chip shadow-xl" />
     </div>
   ) : null;
 
@@ -111,7 +111,7 @@ export function Feature({
           </div>
         )}
         <h3 className="text-2xl font-bold text-white md:text-3xl">{title}</h3>
-        <p className="text-lg text-primary-300">{description}</p>
+        <p className="text-lg text-secondary">{description}</p>
         {features && features.length > 0 && (
           <ul className="space-y-4">
             {features.map((feature) => (
@@ -128,7 +128,7 @@ export function Feature({
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                   />
                 </svg>
-                <span className="text-brand-paper">{feature}</span>
+                <span className="text-primary">{feature}</span>
               </li>
             ))}
           </ul>

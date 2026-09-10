@@ -78,7 +78,7 @@ export function PricingToggle({
           <div
             role="tablist"
             aria-label={ariaLabel}
-            className="relative inline-flex rounded-full border border-primary-800 bg-brand-ink p-1.5 shadow-inner"
+            className="relative inline-flex rounded-full border border-hairline bg-canvas p-1.5 shadow-inner"
           >
             {options.map((option) => {
               const selected = option.value === active;
@@ -91,10 +91,10 @@ export function PricingToggle({
                   onClick={() => select(option.value)}
                   className={cx(
                     'relative z-10 rounded-full px-6 py-2.5 text-xs font-black uppercase tracking-[0.15em] transition-colors duration-300',
-                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ink',
+                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas',
                     selected
-                      ? 'bg-secondary-500 text-brand-paper shadow-md'
-                      : 'text-primary-500 hover:text-primary-300',
+                      ? 'bg-secondary-500 text-primary shadow-md'
+                      : 'text-secondary hover:text-secondary',
                   )}
                 >
                   {option.label}

@@ -56,7 +56,7 @@ export interface SidebarProps extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
-const PANEL = 'rounded-2xl border border-primary-700 bg-primary-800 p-6 shadow-xl shadow-primary-900/50';
+const PANEL = 'rounded-card border border-hairline bg-surface-raised p-6 shadow-xl ';
 
 /**
  * The blog and docs sidebar column: subscribe panel, recent posts, categories, tags.
@@ -141,7 +141,7 @@ export function Sidebar({
         <div className={cx(PANEL, 'group/sidebar relative overflow-hidden')}>
           {/* Glow: fades in across the whole panel on hover, never intercepts clicks. */}
           <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/sidebar:opacity-100">
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary-500/5 via-transparent to-brand-orange-dark/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-secondary-500/5 via-transparent to-fill-accent/5" />
           </div>
 
           {recentTitle && <h3 className="relative z-10 mb-4 text-lg font-bold text-white">{recentTitle}</h3>}
@@ -151,7 +151,7 @@ export function Sidebar({
               const body = (
                 <>
                   {post.image && (
-                    <div className="mb-3 aspect-video overflow-hidden rounded-card bg-primary-700">
+                    <div className="mb-3 aspect-video overflow-hidden rounded-card bg-surface-well">
                       <img
                         src={post.image}
                         alt={post.imageAlt ?? post.title}
@@ -160,11 +160,11 @@ export function Sidebar({
                       />
                     </div>
                   )}
-                  <h4 className="line-clamp-2 font-medium text-primary-200 transition-colors duration-200 group-hover:text-secondary-500">
+                  <h4 className="line-clamp-2 font-medium text-primary transition-colors duration-200 group-hover:text-secondary-500">
                     {post.title}
                   </h4>
                   {post.date && (
-                    <div className="mt-2 flex items-center text-sm text-primary-400">
+                    <div className="mt-2 flex items-center text-sm text-secondary">
                       <svg
                         className="mr-2 h-4 w-4"
                         fill="none"
@@ -209,7 +209,7 @@ export function Sidebar({
               const body = (
                 <>
                   {category.label}
-                  {category.count !== undefined && <span className="ml-1 text-primary-500">({category.count})</span>}
+                  {category.count !== undefined && <span className="ml-1 text-secondary">({category.count})</span>}
                 </>
               );
               const pill = 'inline-block rounded-full border px-3 py-1 text-sm font-medium transition-all duration-300';
@@ -219,13 +219,13 @@ export function Sidebar({
                   href={url}
                   className={cx(
                     pill,
-                    'border-primary-700 bg-primary-800 text-primary-300 hover:border-secondary-500/50 hover:text-secondary-500',
+                    'border-hairline bg-surface-raised text-secondary hover:border-hairline/50 hover:text-secondary-500',
                   )}
                 >
                   {body}
                 </a>
               ) : (
-                <span key={category.label} className={cx(pill, 'border-primary-700 bg-primary-800 text-primary-300')}>
+                <span key={category.label} className={cx(pill, 'border-hairline bg-surface-raised text-secondary')}>
                   {body}
                 </span>
               );

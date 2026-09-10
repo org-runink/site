@@ -26,13 +26,13 @@ export function Stat({ number, label, className }: StatProps) {
   return (
     <div
       className={cx(
-        'group relative overflow-hidden rounded-2xl border border-secondary-500/30 bg-gradient-to-br from-primary-900 to-primary-950 p-8',
-        'shadow-xl shadow-primary-900/20 transition-all duration-300',
-        'hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-500/20',
+        'group relative overflow-hidden rounded-card border border-hairline/30 bg-gradient-to-br from-surface to-canvas p-8',
+        'shadow-xl transition-all duration-300',
+        'hover:-translate-y-2 hover:shadow-2xl ',
         className,
       )}
     >
-      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-secondary-500/30 to-brand-tan/30 p-[1px] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 rounded-card bg-gradient-to-br from-secondary-500/30 to-accent-lift/30 p-[1px] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="relative z-10 text-center">
         {/*
          * The figure scales with the card rather than sitting at a fixed 60px.
@@ -41,10 +41,10 @@ export function Stat({ number, label, className }: StatProps) {
          * last glyph in a three-up grid. `break-words` is the final backstop for
          * a value longer than any of these steps can fit.
          */}
-        <div className="mb-3 break-words text-3xl font-black leading-none text-brand-paper drop-shadow-lg sm:text-4xl md:text-5xl lg:text-6xl">
+        <div className="mb-3 break-words text-3xl font-black leading-none text-primary drop-shadow-lg sm:text-4xl md:text-5xl lg:text-6xl">
           {number}
         </div>
-        <div className="mt-2 border-t border-primary-700/50 pt-4 text-sm font-semibold tracking-wide text-primary-300 transition-colors group-hover:text-brand-paper">
+        <div className="mt-2 border-t border-hairline/50 pt-4 text-sm font-semibold tracking-wide text-secondary transition-colors group-hover:text-primary">
           {label}
         </div>
       </div>

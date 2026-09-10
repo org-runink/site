@@ -42,7 +42,7 @@ export interface BackgroundEffectsProps extends HTMLAttributes<HTMLDivElement> {
  *
  * @example
  * // Hand-rolled band: `relative overflow-hidden` on the parent is required.
- * <section className="relative overflow-hidden bg-primary-950">
+ * <section className="relative overflow-hidden bg-canvas">
  *   <BackgroundEffects />
  *   <div className="relative z-10">…</div>
  * </section>
@@ -57,7 +57,7 @@ export function BackgroundEffects({
 
   return (
     <div aria-hidden="true" className={cx('pointer-events-none absolute inset-0 z-0', className)} {...rest}>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-primary-900 via-primary-950 to-primary-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-surface via-canvas to-canvas" />
       <div
         className="absolute inset-0 opacity-20"
         style={{

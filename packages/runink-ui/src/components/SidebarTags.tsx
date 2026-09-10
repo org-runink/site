@@ -58,7 +58,7 @@ export function SidebarTags({ title = 'Popular Tags', tags, max = 20, className,
   return (
     <div
       className={cx(
-        'rounded-2xl border border-primary-700 bg-primary-800 p-6 shadow-xl shadow-primary-900/50',
+        'rounded-card border border-hairline bg-surface-raised p-6 shadow-xl ',
         className,
       )}
       {...rest}
@@ -70,19 +70,19 @@ export function SidebarTags({ title = 'Popular Tags', tags, max = 20, className,
           const body = (
             <>
               #{tag.label}
-              {tag.count !== undefined && <span className="text-primary-600"> ({tag.count})</span>}
+              {tag.count !== undefined && <span className="text-secondary"> ({tag.count})</span>}
             </>
           );
           return url ? (
             <a
               key={tag.label}
               href={url}
-              className="text-sm text-primary-400 transition-colors duration-200 hover:text-secondary-500"
+              className="text-sm text-secondary transition-colors duration-200 hover:text-secondary-500"
             >
               {body}
             </a>
           ) : (
-            <span key={tag.label} className="text-sm text-primary-400">
+            <span key={tag.label} className="text-sm text-secondary">
               {body}
             </span>
           );

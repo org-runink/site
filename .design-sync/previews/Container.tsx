@@ -1,12 +1,12 @@
 import { Container, Icon, Section, Stat, StatsGrid } from '@runink/ui';
 
 /** Dashed rule used only in these previews to make an invisible box visible. */
-const OUTLINE = 'border-2 border-dashed border-brand-copper';
+const OUTLINE = 'border-2 border-dashed border-fill-accent';
 
 /** Caption naming which box the dashed rule is drawing. */
 function Trace({ children }: { children: string }) {
   return (
-    <div className="mb-2 font-mono text-[11px] uppercase tracking-widest text-brand-copper">{children}</div>
+    <div className="mb-2 font-mono text-[11px] uppercase tracking-widest text-ink-accent">{children}</div>
   );
 }
 
@@ -20,7 +20,7 @@ export function Gutters() {
   return (
     <div>
       <Trace>tinted band = full bleed · dashed box = the container column</Trace>
-      <div className="bg-brand-green-deep py-6">
+      <div className="bg-fill-success py-6">
         <Container className={`${OUTLINE} py-4`}>
           <p className="font-mono text-[11px] text-white">
             mx-auto · w-full · max-w-7xl · px-4 sm:px-6 lg:px-8
@@ -40,17 +40,17 @@ export function Gutters() {
 export function AlignsAcrossBands() {
   return (
     <div>
-      <div className="bg-primary-900 py-6">
+      <div className="bg-surface py-6">
         <Container className={OUTLINE}>
           <p className="py-2 text-sm text-white">Band one — the hero band, on the page canvas.</p>
         </Container>
       </div>
-      <div className="bg-primary-800 py-6">
+      <div className="bg-surface-raised py-6">
         <Container className={OUTLINE}>
           <p className="py-2 text-sm text-white">Band two — a raised band behind a card row.</p>
         </Container>
       </div>
-      <div className="bg-brand-green-deep py-6">
+      <div className="bg-fill-success py-6">
         <Container className={OUTLINE}>
           <p className="py-2 text-sm text-white">Band three — an accent band behind a call to action.</p>
         </Container>
@@ -67,7 +67,7 @@ export function AlignsAcrossBands() {
  */
 export function WithContent() {
   return (
-    <Section contained={false} className="bg-primary-950">
+    <Section contained={false} className="bg-canvas">
       <Container>
         <h2 className="font-heading text-3xl font-black text-white">
           Run the Autonomous Supply Chain
@@ -94,20 +94,20 @@ export function WithContent() {
  */
 export function NarrowMeasure() {
   return (
-    <div className="space-y-6 bg-primary-950 py-6">
+    <div className="space-y-6 bg-canvas py-6">
       <Container className={OUTLINE}>
-        <p className="py-2 font-mono text-[11px] text-primary-400">default — max-w-7xl</p>
+        <p className="py-2 font-mono text-[11px] text-secondary">default — max-w-7xl</p>
       </Container>
       <Container className={`${OUTLINE} max-w-2xl`}>
         <p className="py-2 leading-relaxed">
-          <span className="mb-2 block font-mono text-[11px] text-primary-400">max-w-2xl</span>
+          <span className="mb-2 block font-mono text-[11px] text-secondary">max-w-2xl</span>
           Discrepancies between cargo documents and terminal weight scales cause customs holds,
           fines and expensive demurrage. A narrower cap keeps long prose at a comfortable measure
           without leaving the shared content column.
         </p>
       </Container>
       <Container className="flex items-center gap-3">
-        <Icon name="check-circle" className="h-5 w-5 text-brand-sage-dark" />
+        <Icon name="check-circle" className="h-5 w-5 text-ink-success" />
         <span className="text-sm">Both boxes stay centred and keep identical gutters.</span>
       </Container>
     </div>

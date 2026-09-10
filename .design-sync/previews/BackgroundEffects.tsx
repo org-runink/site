@@ -46,7 +46,7 @@ function FitHeight({ children }: { children: ReactNode }) {
 function Band({ children, effect }: { children: ReactNode; effect: ReactNode }) {
   return (
     <section
-      className="relative overflow-hidden rounded-card border border-primary-800"
+      className="relative overflow-hidden rounded-card border border-hairline"
       style={{ minHeight: 280 }}
     >
       {effect}

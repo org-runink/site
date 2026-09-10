@@ -52,19 +52,19 @@ type ActionKind = 'signIn' | 'getStarted' | 'checkItOut';
 const ACTIONS: Record<ActionKind, { variant: ButtonVariant; desktop: string; mobile: string }> = {
   signIn: {
     variant: 'outline',
-    desktop: 'border-primary-800 font-bold text-brand-paper hover:border-secondary-600 hover:text-secondary-600',
-    mobile: 'w-full border-primary-700 font-bold text-brand-paper hover:border-brand-green-dark hover:text-brand-green-dark',
+    desktop: 'border-hairline font-bold text-primary hover:border-hairline hover:text-secondary-600',
+    mobile: 'w-full border-hairline font-bold text-primary hover:border-ink-success hover:text-ink-success',
   },
   getStarted: {
     variant: 'primary',
     desktop:
-      'bg-gradient-to-r from-secondary-500 to-brand-orange-dark px-6 py-2.5 text-sm font-bold text-white hover:-translate-y-0.5 hover:shadow-neon-orange',
-    mobile: 'w-full bg-gradient-to-r from-secondary-500 to-brand-orange-dark font-bold text-white hover:opacity-90',
+      'bg-gradient-to-r from-secondary-500 to-fill-accent px-6 py-2.5 text-sm font-bold text-white hover:-translate-y-0.5 hover:shadow-neon-orange',
+    mobile: 'w-full bg-gradient-to-r from-secondary-500 to-fill-accent font-bold text-white hover:opacity-90',
   },
   checkItOut: {
     variant: 'outline',
-    desktop: 'border-secondary-500 px-4 py-2 text-sm font-bold text-secondary-500 hover:bg-secondary-500 hover:text-white',
-    mobile: 'w-full border-secondary-500 font-bold text-secondary-500 hover:bg-secondary-500 hover:text-white',
+    desktop: 'border-hairline px-4 py-2 text-sm font-bold text-secondary-500 hover:bg-secondary-500 hover:text-white',
+    mobile: 'w-full border-hairline font-bold text-secondary-500 hover:bg-secondary-500 hover:text-white',
   },
 };
 
@@ -72,10 +72,10 @@ const ACTIONS: Record<ActionKind, { variant: ButtonVariant; desktop: string; mob
  * The top-level link treatment. The site writes this as `text-[#F5F1E8]`, which is
  * the `brand-paper` token.
  */
-const NAV_LINK = 'inline-block px-2 py-4 text-base font-bold text-brand-paper transition duration-200 hover:text-brand-orange';
+const NAV_LINK = 'inline-block px-2 py-4 text-base font-bold text-primary transition duration-200 hover:text-ink-accent';
 
 /** Same shape inside the drawer, where links stack and read larger. */
-const MOBILE_NAV_LINK = 'block py-2 text-xl font-bold text-brand-paper transition duration-200 hover:text-brand-green-dark';
+const MOBILE_NAV_LINK = 'block py-2 text-xl font-bold text-primary transition duration-200 hover:text-ink-success';
 
 export interface HeaderProps extends Omit<HTMLAttributes<HTMLElement>, 'children'> {
   /** The main menu, in order. Entries with `children` render as dropdowns. */
@@ -214,7 +214,7 @@ export function Header({
       <header
         className={cx(
           fixed ? 'fixed top-0' : 'relative',
-          'z-50 w-full border-b border-primary-800 bg-primary-900/90 backdrop-blur-sm',
+          'z-50 w-full border-b border-hairline bg-surface/90 backdrop-blur-sm',
           className,
         )}
         {...rest}
@@ -268,15 +268,15 @@ export function Header({
                             isOpen ? 'visible opacity-100' : 'invisible opacity-0',
                           )}
                         >
-                          <div className="rounded-card border border-primary-700 bg-primary-800 py-6 shadow-xl">
+                          <div className="rounded-card border border-hairline bg-surface-raised py-6 shadow-xl">
                             {item.children.map((child, childIndex) => {
                               const href = safeHref(child.href);
-                              const classes = 'block px-8 py-3 text-sm text-brand-paper';
+                              const classes = 'block px-8 py-3 text-sm text-primary';
                               return href ? (
                                 <a
                                   key={`${child.label}-${childIndex}`}
                                   href={href}
-                                  className={cx(classes, 'hover:bg-primary-700 hover:text-white')}
+                                  className={cx(classes, 'hover:bg-surface-well hover:text-white')}
                                 >
                                   {child.label}
                                 </a>
@@ -312,7 +312,7 @@ export function Header({
                 {action('checkItOut', checkItOut, 'desktop')}
 
                 {languages.length > 0 && (
-                  <div className="flex items-center space-x-3 border-l border-primary-800 pl-3">
+                  <div className="flex items-center space-x-3 border-l border-hairline pl-3">
                     {languages.map((language, index) => {
                       const href = safeHref(language.href);
                       if (!href) return null;
@@ -324,7 +324,7 @@ export function Header({
                           className={cx(
                             'flex items-center transition-all duration-200 hover:scale-110',
                             language.current
-                              ? 'rounded-sm ring-2 ring-secondary-500 ring-offset-2 ring-offset-primary-900'
+                              ? 'rounded-sm ring-2 ring-secondary-500 ring-offset-2 ring-offset-surface'
                               : 'opacity-50 hover:opacity-100',
                           )}
                           aria-current={language.current ? 'page' : undefined}
@@ -349,7 +349,7 @@ export function Header({
                   aria-controls={drawerId}
                   aria-label={menuButtonLabel}
                   onClick={() => setMobileOpen((open) => !open)}
-                  className="rounded-card p-2 text-brand-paper transition-colors hover:bg-primary-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-900"
+                  className="rounded-card p-2 text-primary transition-colors hover:bg-surface-raised focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
                 >
                   <Icon name="menu" className="h-6 w-6" />
                 </button>
@@ -365,7 +365,7 @@ export function Header({
               // output order, so only one of the two may ever be emitted.
               mobileOpen ? 'block' : 'hidden',
               fixed ? 'fixed' : 'absolute',
-              'left-0 right-0 top-20 w-full border-t border-primary-800 bg-primary-900 shadow-lg md:hidden',
+              'left-0 right-0 top-20 w-full border-t border-hairline bg-surface shadow-lg md:hidden',
             )}
           >
             <div className="w-full px-6 py-4">
@@ -373,7 +373,7 @@ export function Header({
                 if (item.children && item.children.length > 0) {
                   return (
                     <div key={`${item.label}-${index}`} className="py-2">
-                      <div className="mb-2 text-xl font-bold text-brand-paper">{item.label}</div>
+                      <div className="mb-2 text-xl font-bold text-primary">{item.label}</div>
                       <div className="pl-4">
                         {item.children.map((child, childIndex) => {
                           const href = safeHref(child.href);
@@ -381,12 +381,12 @@ export function Header({
                             <a
                               key={`${child.label}-${childIndex}`}
                               href={href}
-                              className="block py-2 text-primary-300 hover:text-brand-green-dark"
+                              className="block py-2 text-secondary hover:text-ink-success"
                             >
                               {child.label}
                             </a>
                           ) : (
-                            <span key={`${child.label}-${childIndex}`} className="block py-2 text-primary-300">
+                            <span key={`${child.label}-${childIndex}`} className="block py-2 text-secondary">
                               {child.label}
                             </span>
                           );
@@ -423,7 +423,7 @@ export function Header({
                * last label ("Português") rendered outside the drawer panel.
                */}
               {languages.length > 0 && (
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-primary-800 pt-6">
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-hairline pt-6">
                   {languages.map((language, index) => {
                     const href = safeHref(language.href);
                     if (!href) return null;
@@ -433,7 +433,7 @@ export function Header({
                         href={href}
                         aria-current={language.current ? 'page' : undefined}
                         className={cx(
-                          'flex items-center space-x-2 text-primary-300',
+                          'flex items-center space-x-2 text-secondary',
                           language.current && 'font-bold text-white',
                         )}
                       >

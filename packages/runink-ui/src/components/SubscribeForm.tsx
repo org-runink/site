@@ -95,14 +95,14 @@ export function SubscribeForm({
 
   return (
     <div
-      className={cx('rounded-card border border-primary-800 bg-primary-900 p-6', className)}
+      className={cx('rounded-card border border-hairline bg-surface p-6', className)}
       {...rest}
     >
       <h3 className="mb-2 text-lg font-bold text-white">{title}</h3>
-      {description && <p className="mb-4 text-sm text-primary-300">{description}</p>}
+      {description && <p className="mb-4 text-sm text-secondary">{description}</p>}
 
       {submitted ? (
-        <p className="text-sm font-medium text-brand-sage" role="status">
+        <p className="text-sm font-medium text-ink-success" role="status">
           {successMessage}
         </p>
       ) : (
@@ -123,7 +123,7 @@ export function SubscribeForm({
               placeholder={placeholder}
               autoComplete="email"
               required
-              className="w-full rounded-card border border-primary-700 bg-primary-950 px-4 py-2 text-primary-300 placeholder:text-primary-400 focus:border-secondary-500 focus:ring-2 focus:ring-secondary-500"
+              className="w-full rounded-card border border-hairline bg-canvas px-4 py-2 text-secondary placeholder:text-secondary focus:border-hairline focus:ring-2 focus:ring-secondary-500"
             />
           </div>
 
@@ -134,7 +134,7 @@ export function SubscribeForm({
             {buttonText}
           </button>
 
-          {disclaimer && <p className="mt-2 text-xs text-primary-400">{disclaimer}</p>}
+          {disclaimer && <p className="mt-2 text-xs text-secondary">{disclaimer}</p>}
         </form>
       )}
     </div>

@@ -10,9 +10,9 @@ import { cx } from '../lib/cx';
 export type GradientTextSweep = 'ember' | 'iris' | 'moss' | 'signal';
 
 const SWEEPS: Record<GradientTextSweep, string> = {
-  ember: 'from-brand-orange to-brand-red',
+  ember: 'from-fill-accent to-fill-provenance',
   iris: 'from-secondary-500 to-primary-400',
-  moss: 'from-brand-sage to-brand-green',
+  moss: 'from-fill-success to-fill-success',
   // The landing hero's headline treatment: deep rose into the purple accent.
   signal: 'from-rose-800 to-secondary-500',
 };

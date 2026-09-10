@@ -100,8 +100,8 @@ export function PostCard({
   return (
     <article
       className={cx(
-        'group flex h-full flex-col overflow-hidden rounded-2xl border border-primary-700 bg-primary-800 shadow-lg transition-all duration-300',
-        'hover:-translate-y-1 hover:border-secondary-500/50 hover:shadow-2xl hover:shadow-secondary-500/10',
+        'group flex h-full flex-col overflow-hidden rounded-card border border-hairline bg-surface-raised shadow-lg transition-all duration-300',
+        'hover:-translate-y-1 hover:border-hairline/50 hover:shadow-2xl ',
         className,
       )}
       {...rest}
@@ -112,7 +112,7 @@ export function PostCard({
           // house gradient rather than collapsing the card after paint.
           <div
             aria-hidden="true"
-            className="h-56 w-full shrink-0 bg-gradient-to-br from-primary-900 via-primary-800 to-brand-ink"
+            className="h-56 w-full shrink-0 bg-gradient-to-br from-surface via-surface-raised to-canvas"
           />
         ) : (
           <ImageBanner src={image} alt={imageAlt ?? title} href={url} onFail={() => setImageFailed(true)} />
@@ -121,14 +121,14 @@ export function PostCard({
       <div className="flex flex-1 flex-col p-6">
         {category && (
           <div className="mb-4">
-            <span className="inline-block rounded-full bg-gradient-to-r from-secondary-500 to-brand-tan px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
+            <span className="inline-block rounded-full bg-gradient-to-r from-secondary-500 to-accent-lift px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
               {category}
             </span>
           </div>
         )}
 
         {date && (
-          <div className="mb-3 flex items-center text-xs font-medium tracking-wide text-brand-paper">
+          <div className="mb-3 flex items-center text-xs font-medium tracking-wide text-primary">
             <svg
               className="mr-1.5 h-4 w-4 opacity-70"
               fill="none"
@@ -153,7 +153,7 @@ export function PostCard({
 
         {excerpt && <p className="mb-6 text-sm leading-relaxed text-slate-400 md:text-base">{excerpt}</p>}
 
-        <div className="mt-auto flex items-center justify-between border-t border-primary-700/50 pt-6">
+        <div className="mt-auto flex items-center justify-between border-t border-hairline/50 pt-6">
           {url ? (
             <a
               href={url}

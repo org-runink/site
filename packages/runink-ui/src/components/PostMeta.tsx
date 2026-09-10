@@ -127,7 +127,7 @@ export function PostMeta({
   return (
     <div className={cx('flex flex-col space-y-4', className)} {...rest}>
       {hasRow && (
-        <div className="flex items-center justify-between text-sm text-primary-400">
+        <div className="flex items-center justify-between text-sm text-secondary">
           {author && (
             <div className="flex items-center">
               <UserIcon />
@@ -159,9 +159,9 @@ export function PostMeta({
         <div className="flex flex-wrap items-center gap-2">
           {tags.map((tag) => {
             const href = safeHref(tag.href);
-            const pill = 'rounded-full bg-primary-900 px-3 py-1 text-sm text-primary-300';
+            const pill = 'rounded-full bg-surface px-3 py-1 text-sm text-secondary';
             return href ? (
-              <a key={tag.label} href={href} className={cx(pill, 'transition-colors duration-200 hover:bg-primary-800')}>
+              <a key={tag.label} href={href} className={cx(pill, 'transition-colors duration-200 hover:bg-surface-raised')}>
                 #{tag.label}
               </a>
             ) : (

@@ -45,18 +45,18 @@ export function Card({ title, description, icon, href, className }: CardProps) {
   const body = (
     <div
       className={cx(
-        'h-full rounded-2xl border border-secondary-500/30 bg-primary-900/30 p-8 transition-all duration-300',
-        'hover:-translate-y-1 hover:border-brand-sage-dark hover:bg-primary-800/50',
+        'h-full rounded-card border border-hairline/30 bg-surface/30 p-8 transition-all duration-300',
+        'hover:-translate-y-1 hover:border-ink-success hover:bg-surface-raised/50',
         className,
       )}
     >
       {icon && (
-        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-card bg-gradient-to-br from-secondary-500/20 to-primary-800 transition-colors group-hover:from-secondary-500 group-hover:to-primary-600">
-          <Icon name={icon} className="h-6 w-6 text-brand-sage-dark transition-colors group-hover:text-white" />
+        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-card bg-gradient-to-br from-secondary-500/20 to-surface-raised transition-colors group-hover:from-secondary-500 group-hover:to-primary-600">
+          <Icon name={icon} className="h-6 w-6 text-ink-success transition-colors group-hover:text-white" />
         </div>
       )}
-      <h3 className="mb-3 text-xl font-bold text-white group-hover:text-brand-paper">{title}</h3>
-      <p className="text-sm leading-relaxed text-primary-300 group-hover:text-brand-paper">{description}</p>
+      <h3 className="mb-3 text-xl font-bold text-white group-hover:text-primary">{title}</h3>
+      <p className="text-sm leading-relaxed text-secondary group-hover:text-primary">{description}</p>
     </div>
   );
 

@@ -101,12 +101,12 @@ export function PricingTableCompact({
   ...rest
 }: PricingTableCompactProps) {
   return (
-    <section className={cx('bg-primary-900', className)} {...rest}>
+    <section className={cx('bg-surface', className)} {...rest}>
       <div className="mx-auto max-w-screen-xl px-4 py-16 lg:px-6 lg:py-20">
         {title && (
           <div className="mx-auto mb-12 max-w-screen-md text-center">
             <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-white">{title}</h2>
-            {description && <p className="mb-5 font-light text-primary-300 sm:text-xl">{description}</p>}
+            {description && <p className="mb-5 font-light text-secondary sm:text-xl">{description}</p>}
           </div>
         )}
 
@@ -117,15 +117,15 @@ export function PricingTableCompact({
               <div
                 key={tier.name}
                 className={cx(
-                  'relative flex flex-col rounded-2xl border p-8 shadow-xl transition duration-300 hover:-translate-y-2',
+                  'relative flex flex-col rounded-card border p-8 shadow-xl transition duration-300 hover:-translate-y-2',
                   featured
-                    ? 'border-brand-tan bg-gradient-to-br from-amber-950 via-primary-900 to-neutral-950'
-                    : 'border-primary-700 bg-primary-800 shadow-primary-900/50',
+                    ? 'border-edge bg-gradient-to-br from-amber-950 via-surface to-neutral-950'
+                    : 'border-hairline bg-surface-raised ',
                 )}
               >
                 {featured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="rounded-full bg-gradient-to-r from-brand-green-dark to-brand-copper px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg">
+                    <span className="rounded-full bg-gradient-to-r from-fill-success-glow to-accent-lift px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg">
                       {featuredLabel}
                     </span>
                   </div>
@@ -133,14 +133,14 @@ export function PricingTableCompact({
 
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white">{tier.name}</h3>
-                  {tier.description && <p className="mt-2 text-primary-300">{tier.description}</p>}
+                  {tier.description && <p className="mt-2 text-secondary">{tier.description}</p>}
                 </div>
 
                 <div className="mb-6">
                   <div className="flex items-baseline">
                     <span className="text-4xl font-extrabold text-white">{currency}</span>
                     <span className="text-5xl font-extrabold tracking-tight text-white">{tier.price}</span>
-                    <span className="ml-1 text-primary-500">{periodLabel}</span>
+                    <span className="ml-1 text-secondary">{periodLabel}</span>
                   </div>
                 </div>
 
@@ -160,7 +160,7 @@ export function PricingTableCompact({
                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                           />
                         </svg>
-                        <span className="font-medium text-brand-paper">{feature}</span>
+                        <span className="font-medium text-primary">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -172,8 +172,8 @@ export function PricingTableCompact({
                     className={cx(
                       'w-full rounded-full px-6 py-4 text-center text-sm font-bold uppercase tracking-wider transition-all duration-300',
                       featured
-                        ? 'bg-secondary-600 text-white shadow-lg hover:bg-secondary-700 hover:shadow-secondary-500/50'
-                        : 'border border-primary-600 bg-primary-700 text-white hover:bg-primary-600',
+                        ? 'bg-secondary-600 text-white shadow-lg hover:bg-secondary-700 '
+                        : 'border border-edge bg-surface-well text-white hover:bg-surface-well',
                     )}
                   >
                     {tier.cta.label}

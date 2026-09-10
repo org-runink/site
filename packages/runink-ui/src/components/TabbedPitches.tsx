@@ -21,7 +21,7 @@ export interface TabbedPitch {
   /**
    * The pitch headline. A node, because the pattern is two emphasised spans
    * inside running text: the pain in `font-bold text-red-300` and the remedy in
-   * `font-bold text-brand-green`.
+   * `font-bold text-ink-success`.
    */
   headline: ReactNode;
   /** The argument: one paragraph, sitting above a hairline rule. */
@@ -105,7 +105,7 @@ const COLUMNS: Record<number, string> = {
  *       headline: (
  *         <>
  *           Stop waiting 30 days for a <strong className="font-bold text-red-300">monthly close</strong>. Get{' '}
- *           <strong className="font-bold text-brand-green">End of Cycle Underwriting</strong>.
+ *           <strong className="font-bold text-ink-success">End of Cycle Underwriting</strong>.
  *         </>
  *       ),
  *       body: "RPA tools are just a cost center that speeds up data entry. RunInk is a capital recovery asset. By deploying reasoning-capable specialized systems with deep semantic understanding, we don't just 'process' numbers—we autonomously underwrite the end of billing cycle perfectly. We dynamically reconcile inbound cargo data against your ledger, eliminating manual accounting bottlenecks.",
@@ -118,7 +118,7 @@ const COLUMNS: Record<number, string> = {
  *       headline: (
  *         <>
  *           Your dock doors are <strong className="font-bold text-red-300">bottlenecked</strong>. Automate your{' '}
- *           <strong className="font-bold text-brand-green">Cargo Verification</strong>.
+ *           <strong className="font-bold text-ink-success">Cargo Verification</strong>.
  *         </>
  *       ),
  *       body: "RunInk isn't another dashboard to manage. It's an autonomous teammate equipped with advanced logical mapping to make sense of your unstructured receiving data. It reasons through the 80% of low-value workflows entirely on its own—reading inbound cargo manifests, comparing them against POs, and verifying dock-to-stock integrity instantly so your DC teams can keep moving.",
@@ -132,7 +132,7 @@ const COLUMNS: Record<number, string> = {
  *         <>
  *           Stop eating the cost of{' '}
  *           <strong className="font-bold text-red-300">vendor compliance failures</strong>. Deploy the{' '}
- *           <strong className="font-bold text-brand-green">Digital Paralegal</strong>.
+ *           <strong className="font-bold text-ink-success">Digital Paralegal</strong>.
  *         </>
  *       ),
  *       body: "Managing retail vendors logically shouldn't mean accepting abstract loss patterns as a cost of business. RunInk's Claims Dispute Operator autonomously processes complex inbound SLA deviations, synthesizing receiving chronologies and cross-referencing vendor agreements to logically draft chargebacks without human bottlenecking.",
@@ -182,7 +182,7 @@ export function TabbedPitches({
   return (
     <section
       className={cx(
-        'relative overflow-hidden border-t border-primary-800 bg-primary-950 py-32',
+        'relative overflow-hidden border-t border-hairline bg-canvas py-32',
         className,
       )}
       {...rest}
@@ -193,7 +193,7 @@ export function TabbedPitches({
         <div className="mx-auto max-w-6xl px-6">
           {heading && (
             <div className="mb-16 flex flex-col items-center text-center">
-              <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-brand-orange-dark bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[90px]">
+              <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-fill-accent bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[90px]">
                 {heading}
               </h2>
             </div>
@@ -225,27 +225,27 @@ export function TabbedPitches({
                   onClick={() => setActiveId(tab.id)}
                   onKeyDown={(event) => onKeyDown(event, index)}
                   className={cx(
-                    'group flex flex-col items-center justify-center rounded-xl border bg-brand-ink px-4 py-6 text-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500',
+                    'group flex flex-col items-center justify-center rounded-chip border bg-canvas px-4 py-6 text-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500',
                     selected
-                      ? 'border-secondary-600'
-                      : 'border-primary-800 hover:border-primary-700 hover:bg-brand-ink-soft',
+                      ? 'border-hairline'
+                      : 'border-hairline hover:border-hairline hover:bg-surface',
                   )}
                 >
                   <div
                     className={cx(
-                      'mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-primary-800 transition-colors',
-                      selected ? 'bg-brand-ink' : 'bg-white/5',
+                      'mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-hairline transition-colors',
+                      selected ? 'bg-canvas' : 'bg-white/5',
                     )}
                   >
                     <Icon
                       name={tab.icon}
-                      className={cx('h-5 w-5 transition-colors', selected ? 'text-white' : 'text-primary-300')}
+                      className={cx('h-5 w-5 transition-colors', selected ? 'text-white' : 'text-secondary')}
                     />
                   </div>
                   <h3
                     className={cx(
                       'text-sm font-bold tracking-wide transition-colors duration-300',
-                      selected ? 'text-white' : 'text-primary-300',
+                      selected ? 'text-white' : 'text-secondary',
                     )}
                   >
                     {tab.label}
@@ -255,11 +255,11 @@ export function TabbedPitches({
             })}
           </div>
 
-          <div className="relative z-0 mx-auto -mt-2 w-full max-w-6xl overflow-hidden rounded-2xl border border-primary-800 bg-brand-ink p-8 shadow-xl md:p-12 min-h-[360px]">
+          <div className="relative z-0 mx-auto -mt-2 w-full max-w-6xl overflow-hidden rounded-card border border-hairline bg-canvas p-8 shadow-xl md:p-12 min-h-[360px]">
             {quoteGlyph && (
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute right-8 top-12 font-serif text-[180px] font-black italic leading-none text-brand-green/30"
+                className="pointer-events-none absolute right-8 top-12 font-serif text-[180px] font-black italic leading-none text-ink-success/30"
               >
                 &ldquo;
               </div>
@@ -277,18 +277,18 @@ export function TabbedPitches({
                   tabIndex={selected ? 0 : -1}
                   className={cx('focus:outline-none', !selected && 'hidden')}
                 >
-                  <h3 className="mb-8 text-3xl font-black italic leading-tight tracking-tight text-secondary-400 lg:text-4xl">
+                  <h3 className="mb-8 text-3xl font-black italic leading-tight tracking-tight text-secondary lg:text-4xl">
                     {tab.headline}
                   </h3>
-                  <p className="mb-10 border-b border-primary-800/50 pb-10 pr-8 text-base leading-relaxed text-primary-300 md:text-lg">
+                  <p className="mb-10 border-b border-hairline/50 pb-10 pr-8 text-base leading-relaxed text-secondary md:text-lg">
                     {tab.body}
                   </p>
                   {tab.closer && (
                     <div>
-                      <h4 className="mb-2 text-[10px] font-black uppercase tracking-[0.15em] text-brand-paper/50">
+                      <h4 className="mb-2 text-[10px] font-black uppercase tracking-[0.15em] text-primary/50">
                         {tab.closerLabel ?? closerLabel}
                       </h4>
-                      <p className="text-xl font-black italic text-brand-green">{tab.closer}</p>
+                      <p className="text-xl font-black italic text-ink-success">{tab.closer}</p>
                     </div>
                   )}
                 </div>
