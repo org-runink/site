@@ -1,0 +1,63 @@
+{
+  "pkg": "@runink/ui",
+  "globalName": "RuninkUI",
+  "shape": "package",
+  "buildCmd": "npm run build",
+  "srcDir": "src",
+  "tsconfig": "tsconfig.json",
+  "readmeHeader": ".design-sync/conventions.md",
+  "cssEntry": "dist/runink-ui.css",
+  "tokensGlob": "src/tokens.css",
+  "componentSrcMap": {
+    "Icon": "src/components/Icon.tsx"
+  },
+  "provider": {
+    "component": "Surface",
+    "props": {
+      "tone": "canvas",
+      "className": "p-8"
+    }
+  },
+  "overrides": {
+    "Card": { "cardMode": "column" },
+    "FeatureCard": { "cardMode": "column" },
+    "GradientText": { "cardMode": "column" },
+    "Testimonials": { "cardMode": "column" },
+    "CaseStudyCard": { "cardMode": "column" },
+
+    "ContactSection": { "cardMode": "column", "viewport": "1280x1400" },
+    "TabbedPitches": { "cardMode": "column", "viewport": "1280x1400" },
+    "ReasonsGrid": { "cardMode": "column", "viewport": "1280x1600" },
+    "CapabilityShowcase": { "cardMode": "column", "viewport": "1280x1200" },
+    "UseCaseParallax": { "cardMode": "column", "viewport": "1440x1600" },
+    "UseCasesCarousel": { "cardMode": "column", "viewport": "1440x1100" },
+    "LandingScenario": { "cardMode": "column", "viewport": "1440x900" },
+    "PricingTable": { "cardMode": "column", "viewport": "1280x1250" },
+    "PricingTableCompact": { "cardMode": "column", "viewport": "1280x950" },
+    "PostCard": { "cardMode": "column", "viewport": "1280x820" },
+    "Feature": { "cardMode": "column", "viewport": "1280x1450" },
+    "FeaturesSection": { "cardMode": "column", "viewport": "1280x1200" },
+    "HowTo": { "cardMode": "column", "viewport": "1100x1300" },
+    "UsageSection": { "cardMode": "column", "viewport": "1280x900" },
+    "FeaturesList": { "cardMode": "column", "viewport": "1000x1450" },
+    "Header": { "cardMode": "column", "viewport": "1400x920" },
+    "Footer": { "cardMode": "column", "viewport": "1280x560" },
+    "Sidebar": { "cardMode": "column", "viewport": "900x1240" },
+    "HrDiagram": { "cardMode": "column", "viewport": "900x1060" },
+    "BackgroundEffects": { "cardMode": "column", "viewport": "900x780" },
+    "Hero": { "cardMode": "column", "viewport": "1440x950" },
+    "LandingHero": { "cardMode": "column", "viewport": "1440x1200" },
+    "Section": { "cardMode": "column" },
+    "Container": { "cardMode": "column" },
+    "CardGrid": { "cardMode": "column" },
+    "StatsGrid": { "cardMode": "column" },
+    "HeroImage": { "cardMode": "column" },
+    "Icon": { "cardMode": "column" },
+    "BenefitsGrid": { "cardMode": "column" },
+    "Logo": { "cardMode": "column" },
+    "PricingToggle": { "cardMode": "column" },
+    "SubscribeForm": { "cardMode": "column" },
+    "TestimonialCard": { "cardMode": "column" },
+    "ValueCard": { "cardMode": "column" }
+  }
+}

@@ -1,0 +1,78 @@
+/**
+ * The @runink/ui stylesheet entry.
+ *
+ * Built to dist/runink-ui.css, which the design-sync converter picks up as
+ * `cssEntry` and makes reachable from the synced bundle's styles.css import
+ * closure — the only CSS a rendered design receives.
+ *
+ * Token custom properties come first so plain-CSS consumers can reach them
+ * without Tailwind.
+ */
+/*
+ * The brand faces. The Hugo site loads these with a <link> in baseof.html, which
+ * means nothing in the stylesheet itself references a font source — so a bundle
+ * built from the CSS alone would render every design in a system fallback. This
+ * @import is the same Google Fonts request baseof.html makes (Inter 400–700,
+ * Plus Jakarta Sans 600–800), expressed where the design system can carry it.
+ *
+ * There are no local .woff2 files anywhere in the repo; if the site ever
+ * self-hosts them, wire `extraFonts` in .design-sync/config.json instead.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  /*
+   * Font families only — deliberately no base text colour. The Runink identity
+   * is dark-canvas-first, so a `text-gray-700` base (as the Hugo theme sets)
+   * would fight every dark section and force each component to undo it.
+   * Components own their own colour; Surface owns the canvas.
+   */
+  body {
+    @apply font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer utilities {
+  /*
+   * Ported from the site's own utility layer. Carousels and the logo marquee
+   * scroll horizontally and must not show a scrollbar.
+   */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  /*
+   * The one place a component class still earns its keep: the gradient-clipped
+   * text treatment is used pervasively by the brand and is fiddly enough that
+   * repeating the four utilities at every call site invites drift.
+   */
+  .ri-text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+}
