@@ -10,23 +10,20 @@ title: "À Quoi Sert Runink FACE"
 # titled "À Quoi Sert Runink" and named no product at all.
 product: "Runink FACE"
 # Do not state a count in the title or the description. This file said "Sept" in
-# three places and was wrong the moment a page was added — there are twelve
-# English pages now and the set keeps growing.
+# three places and was wrong the moment a page was added. The set keeps growing;
+# the English file states no number either.
 description: "Les sujets opérationnels pour lesquels Runink FACE est fait. Dans chacun, les faits sont déjà dans vos systèmes et personne n'a les heures pour les rassembler, et chacun se termine par une personne qui approuve une action rédigée, pas par un tableau de bord de plus."
 # CARD LINKS STAY UNPREFIXED. layouts/shortcodes/card.html passes every relative
 # link through relLangURL, so "/use-cases/compliance/" written here renders as
 # "/fr/use-cases/compliance/"; writing "/fr/..." would render "/fr/fr/...".
 # The consequence is that a card in this file can only point at a page that
-# exists in French. Only claims-recovery, compliance and
-# fulfillment-optimization are translated, so those are the only three cards.
-# The English page's "Moving It" group has no French page at all, so it is left
-# out rather than shown empty, and the note after the last grid sends the reader
-# to the English index for the rest of the set. Add the card back here when the
-# page is translated.
+# exists in French. Every page in this section is now translated, so this index
+# carries the same cards in the same four groups as the English one. If a new
+# English page appears before its French translation, leave its card out rather
+# than link a page that is not there.
 #
 # Markdown links in the body are NOT rewritten by Hugo (there is no
-# render-link hook), so they carry an explicit /fr/ prefix where the target
-# exists in French and no prefix where it only exists in English.
+# render-link hook), so they carry an explicit /fr/ prefix by hand.
 #
 # KNOWN ISSUE — as in the English file: layout "section" has no match, so this
 # page falls through to layouts/_default/list.html, which prints the title and
@@ -86,10 +83,51 @@ Aucun des scénarios ci-dessous n'est un résultat client. Ils sont **esquissés
 {{< card-grid cols="3" >}}
 
 {{< card
+    title="Prévision de la demande"
+    icon="chart-bar"
+    link="/use-cases/demand-forecasting/"
+    description="Ce dont vous aurez besoin le trimestre prochain est contenu dans ce que vous avez vendu l'an dernier. Le lire dans votre propre historique est un travail pour lequel personne n'a la matinée."
+>}}
+
+{{< card
     title="Couverture de stock et plan d'approvisionnement"
     icon="cube-transparent"
     link="/use-cases/fulfillment-optimization/"
     description="Une alerte de rupture qui arrive après la fonte du stock de sécurité, c'est une facture d'avion avec quelques jours de préavis."
+>}}
+
+{{< card
+    title="Éprouver un changement avant de s'y engager"
+    icon="light-bulb"
+    link="/use-cases/hypothesis-lab/"
+    description="Chiffrez ce que coûte un déroutement avant de dépenser l'argent, sur vos propres chiffres plutôt que sur ceux d'un fournisseur."
+>}}
+
+{{< /card-grid >}}
+
+## Acheminer La Marchandise
+
+{{< card-grid cols="3" >}}
+
+{{< card
+    title="Un plan de tournée qui suit la journée"
+    icon="globe-alt"
+    link="/use-cases/route-optimization/"
+    description="La tournée la moins chère lundi n'est pas la moins chère jeudi. La replanifier à la main est la raison pour laquelle elle n'est planifiée qu'une fois."
+>}}
+
+{{< card
+    title="Voir toute la chaîne, pas seulement votre bout"
+    icon="eye"
+    link="/use-cases/supply-chain-visibility/"
+    description="Chaque fournisseur, transporteur et entrepôt détient une pièce du tableau. Le tableau lui-même n'est détenu nulle part."
+>}}
+
+{{< card
+    title="Répartition vocale pour les conducteurs"
+    icon="map"
+    link="/use-cases/voice-dispatch/"
+    description="Un conducteur qui doit se ranger pour lire un écran, soit il s'arrête, soit il ne le lit pas. Ni l'un ni l'autre n'était le but."
 >}}
 
 {{< /card-grid >}}
@@ -97,6 +135,20 @@ Aucun des scénarios ci-dessous n'est un résultat client. Ils sont **esquissés
 ## Quand Quelque Chose Va De Travers
 
 {{< card-grid cols="3" >}}
+
+{{< card
+    title="Chaîne du froid et sécurité du parc"
+    icon="shield-check"
+    link="/use-cases/cold-chain-safety/"
+    description="Le relevé qui condamne un chargement est enregistré des heures avant que quiconque le regarde. Tout le problème est l'écart entre les deux."
+>}}
+
+{{< card
+    title="Les retours et ce qu'ils valent encore"
+    icon="arrow-path"
+    link="/use-cases/responsive-reverse-logistics/"
+    description="Un retour posé sur un quai est du fonds de roulement que personne n'a compté. Ce qu'il vaut dépend de la vitesse à laquelle il est jugé."
+>}}
 
 {{< card
     title="Réclamations fret et frais de port"
@@ -112,6 +164,20 @@ Aucun des scénarios ci-dessous n'est un résultat client. Ils sont **esquissés
 {{< card-grid cols="3" >}}
 
 {{< card
+    title="Dossiers de souscription et de sinistre"
+    icon="clipboard-document-list"
+    link="/use-cases/insurance-underwriting/"
+    description="Un sinistre est une provision sur un contrat, et le dossier qui le règle arrive sous forme de documents. La lecture est rédigée pour vous ; la décision reste chez le souscripteur."
+>}}
+
+{{< card
+    title="Revue de contrats et d'obligations"
+    icon="magnifying-glass"
+    link="/use-cases/paralegal-review/"
+    description="La clause qui compte est dans un contrat que personne n'a rouvert. Elle est lue et citée pour vous, et une personne décide de ce qu'elle veut dire."
+>}}
+
+{{< card
     title="Données personnelles des clients et bilan des émissions"
     icon="scale"
     link="/use-cases/compliance/"
@@ -119,10 +185,6 @@ Aucun des scénarios ci-dessous n'est un résultat client. Ils sont **esquissés
 >}}
 
 {{< /card-grid >}}
-
-## Le Reste Du Jeu, Pour L'instant En Anglais
-
-FACE est fait pour d'autres sujets que les trois ci-dessus : la prévision de la demande, le chiffrage d'un changement avant de s'y engager, le plan de tournée, la vue de toute la chaîne et pas seulement de votre bout, la répartition vocale pour les conducteurs, la chaîne du froid et la sécurité du parc, les retours et ce qu'ils valent encore, les dossiers de souscription et la revue de contrats. Ces pages ne sont pour l'instant écrites qu'en anglais : elles se lisent depuis l'[index anglais](/use-cases/). Elles ne sont pas en carte ici parce qu'elles n'existent pas en français, et un lien vers une page absente vaut moins que pas de lien.
 
 ## Voir Si Cela Vous Convient
 

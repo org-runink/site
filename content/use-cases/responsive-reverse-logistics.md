@@ -1,6 +1,6 @@
 ---
 title: "Returns and What to Do With Them"
-description: "A returned item is worth the most on the day it comes back. The call on where it goes — shelf, refurbishment, parts or disposal — is drafted at the scan, from a written-down policy that gives the same grade the same answer every time."
+description: "A returned item is worth the most on the day it comes back. The call on where it goes — shelf, refurbishment, recycling or disposal — is drafted at the scan, from a written-down policy that gives the same grade the same answer every time."
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reverse logistics"
@@ -21,10 +21,10 @@ author: "Runink"
 
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">The call is drafted at the scan.</strong> The scan of the returned item is what FACE works from: the order it came from, the condition grade the person at the dock wrote down, and the disposition that grade maps to, all at the moment the box lands rather than the afternoon somebody gets to the pen.</li>
-<li><strong class="text-stone-200">The policy is written down, so the same grade always gets the same answer.</strong> Restock, refurbish, strip for parts, dispose — each condition grade routes to one of them and to a named class of destination, the same way every time, whoever is on the dock and whatever the queue looks like. A grade it does not recognise is refused rather than filed under its best guess.</li>
-<li><strong class="text-stone-200">No recovery figure is attached, and that is deliberate.</strong> What an item would fetch back on the shelf, and what a refurbishment would cost, are not things FACE can source from your records — so it does not print them. Those numbers used to be a fixed fraction of the item's value, which is to say they were invented, and a figure nobody measured sitting next to a decision is how an estimate gets quoted as a fact.</li>
-<li><strong class="text-stone-200">A person makes the call, and it is kept.</strong> The route is drafted, not sent. Somebody named approves, edits or rejects it, and that sign-off stays on the record.</li>
+<li><strong class="text-stone-200">The call is drafted at the scan.</strong> FACE works from four things the dock hands it: the return's id, the barcode, the condition grade the person at the dock wrote down, and the item's value as they type it. It looks nothing up behind those — no order, no warranty, no price file — and it answers at the moment the box lands rather than the afternoon somebody gets to the pen.</li>
+<li><strong class="text-stone-200">The policy is written down, so the same grade always gets the same answer.</strong> Restock, refurbish, recycle, dispose — each condition grade routes to one of them and to one of four destinations spelled out in the code, the same way every time, whoever is on the dock and whatever the queue looks like. A grade it does not recognise is refused rather than filed under its best guess.</li>
+<li><strong class="text-stone-200">There is a recovery figure, and it is arithmetic on a number you typed.</strong> The triage returns an estimated recovery yield and a refurbishment cost, and both are the value the dock entered multiplied by a fraction fixed against the grade: pristine yields 95% of that value and nothing to refurbish, damaged yields 75% and a quarter of it as the repair. Nothing is measured and nothing is looked up. We would rather you knew the multiplier than trusted the dollar sign.</li>
+<li><strong class="text-stone-200">The triage decides nothing on its own.</strong> It answers the screen and stops there: it moves no stock, raises no credit and stores no approval. The person at the dock still makes the call, and nothing in this step can make it for them.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -59,10 +59,13 @@ author: "Runink"
                 A grade it does not recognise comes back as a refusal rather than as a route. That is worth more than it sounds: the failure mode this replaces is a box that got a plausible-looking disposition because something had to go in the field, and nobody downstream could tell that answer apart from a real one.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                What does not come back is money. There is no figure for what the item would recover on the shelf and none for what the repair would cost, because FACE cannot source either from your records. It had them once, as fixed fractions of the item's original value, and they read as analysis while being arithmetic on a number somebody chose. The condition is real and it stays. What fraction of the value is recoverable is not known here, and saying so is cheaper than being caught. The destination is likewise a class of site, not a licensed facility out of a register — which facility is your decision and your contract.
+                Money comes back with the disposition, and it is worth knowing exactly what kind of number it is. Alongside the route, the triage returns an estimated recovery yield and a refurbishment cost, and the cockpit prints both as dollar amounts under those two labels. Both are the value somebody typed on the dock multiplied by a fraction fixed against the grade — a pristine item at 95% of that value with nothing to refurbish, a damaged one at 75% with a quarter of it as the repair, and the remaining grades the same shape. No price file is consulted and no resale is observed. The figure is the policy's arithmetic on your own input, and it is worth exactly what that input was worth, which is a thing you can judge and we cannot.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                The destination is the same kind of thing, and here the honest word is unfinished. It is one of four strings written into the code, and two of them name particular sites — a return hub and a refurbishment hub, both in India, with no relationship to any contract of yours. Which facility a grade ought to route to is your decision and your contract; the code does not yet give you anywhere to say so. That is a limitation of what is built today, not a design principle, and it is the first thing an implementation would have to fix.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                The route is drafted, not sent. A named person approves, edits or rejects it, and that sign-off is kept. Approving is what sends it — and where a step behind it has no implementation yet, the refund or the write into your stock record being the honest examples, the response names the step that did not happen instead of reporting the move as complete.
+                The triage call itself sends nothing. It returns a disposition and stops — no stock record is written, no credit is raised, no approval is stored. Acting on a drafted action is a separate part of FACE, and there the decision is recorded against a named person before anything runs; where a step behind it has no implementation yet, the write into an ERP being the honest example, the response names the step that did not happen instead of reporting the move as complete.
             </p>
         </div>
         <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(20,184,166,0.05)] shadow-2xl">

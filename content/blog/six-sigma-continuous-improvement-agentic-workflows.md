@@ -57,15 +57,15 @@ Furthermore, the integration of agentic workflows drastically reduces the latenc
 
 ---
 
-## What Are Specialist Persona Swarms in Supply Chain Operations?
+## What Does It Mean to Split Agents by Domain?
 
 {{< direct-answer >}}
-Specialist Persona Swarms are interconnected groups of hyper-focused AI agents—such as Data Posture, Fulfilment, and Telemetry agents—that collaborate autonomously to solve complex, multi-faceted logistics challenges faster than human silos.
+Splitting agents by domain means one reads inventory records, another reads telemetry, another reads the data's own quality — each with a remit narrow enough to be checked against. It is an architectural choice rather than a product, and the question that decides whether it is adoptable is not how well they collaborate but what any one of them is permitted to do without a person.
 {{< /direct-answer >}}
 
-One of the most profound advancements in continuous improvement is the deployment of Specialist Persona Swarms. Complex supply chain problems are rarely confined to a single domain. A drop in order fill rate, for example, might stem from a combination of supplier delays, WMS inventory discrepancies, and TMS routing errors.
+Complex supply chain problems are rarely confined to a single domain. A drop in order fill rate, for example, might stem from a combination of supplier delays, WMS inventory discrepancies, and TMS routing errors.
 
-Specialist Persona Swarms tackle these multi-dimensional issues by employing distinct personas, each acting as a highly skilled subject matter expert:
+A domain-split design addresses this by giving each agent a narrow remit, so that what it reads and what it may assert can both be stated:
 
 *   **Telemetry Agents:** These agents act as the central nervous system of the supply chain. They ingest and interpret vast streams of IoT sensor data, ELD pings, and port congestion reports. When a container's dwell time exceeds the baseline tolerance, the Telemetry agent immediately broadcasts this anomaly to the rest of the swarm.
 *   **Data Posture Agents:** Inconsistent or missing data is the enemy of optimization. Data Posture agents continuously audit the health and integrity of incoming feeds. If a carrier's EDI integration starts transmitting garbled location data, the Data Posture agent rectifies the formatting or flags the degradation before it corrupts downstream decision-making.
@@ -99,7 +99,7 @@ The second function is adjusting guardrails. If a VP decides to prioritise cost 
 As supply chains grow increasingly complex, moving beyond traditional DMAIC to continuous autonomous execution powered by agentic workflows is essential for maintaining resilience, efficiency, and competitive advantage.
 {{< /direct-answer >}}
 
-The era of static, retrospective process improvement is coming to an end. Modern logistics networks demand agility, precision, and continuous optimization that human-scale operations simply cannot sustain alone. By embracing agentic workflows and Specialist Persona Swarms, organizations can transform their approach to Six Sigma—turning episodic improvement projects into a relentless, autonomous engine of operational excellence. 
+The era of static, retrospective process improvement is coming to an end. Modern logistics networks demand agility, precision, and continuous optimization that human-scale operations simply cannot sustain alone. The shift worth making is from episodic improvement projects to continuous reading. The shift to be careful about is the one from continuous reading to unattended action, because that is the point at which accountability for a decision quietly changes hands.
 
 The part of that vision worth buying now is the continuous reading and the drafted proposal. The part to hold back on is unattended execution, because the accountability for a reroute or a short-pay does not move to the software that proposed it. [Runink FACE](/products/face/) is built to that split: the reading and the reasoning run continuously, and each resulting action waits for a named person to approve, edit or reject it.
 
@@ -121,10 +121,10 @@ The part of that vision worth buying now is the continuous reading and the draft
     },
     {
       "@type": "Question",
-      "name": "What are Specialist Persona Swarms?",
+      "name": "What does it mean to split agents by domain?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Specialist Persona Swarms are groups of hyper-focused AI agents, such as Data Posture, Fulfilment, and Telemetry agents. They collaborate autonomously to solve complex logistics challenges, breaking down departmental silos to optimize the entire supply chain network."
+        "text": "It means giving each agent a narrow remit \u2014 one reads inventory records, another telemetry, another the data's own quality \u2014 so that what each reads, and what it may assert, can be stated and checked. It is an architectural choice rather than a product."
       }
     },
     {

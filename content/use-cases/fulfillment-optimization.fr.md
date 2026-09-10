@@ -8,7 +8,7 @@ standing: "hypothetical"
 badge: "Optimisation Logistique"
 badgeColor: "#0ea5e9"
 date: "2024-05-20T00:00:00Z"
-author: "Lead Data & Cloud Architect"
+author: "Runink"
 ---
 
 {{< section-container class="py-8" >}}
@@ -23,7 +23,7 @@ author: "Lead Data & Cloud Architect"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">L'alerte dit quelle borne a été franchie, en mots.</strong> Le point de commande, le minimum et le maximum sont ceux que vous appliquez déjà : FACE ne les invente pas et ne les déduit pas d'un délai de livraison qu'il n'a jamais vu. Ce qu'il renvoie, c'est la borne franchie et le niveau qui l'a franchie, écrits en clair, pour qu'on puisse discuter l'alerte au lieu d'en accuser réception.</li>
 <li><strong class="text-stone-200">La prévision vous dit à quel point lui faire confiance.</strong> Chaque projection nomme le modèle &mdash; choisi en mettant de côté la période la plus récente de votre propre historique et en réajustant chaque candidat sur ce qui la précède &mdash; et le nombre de périodes sur lesquelles il a pu apprendre. Quand l'historique d'une référence ne se prédit pas lui-même, c'est aussi l'un des constats.</li>
-<li><strong class="text-stone-200">Les solutions de repli sont classées depuis votre propre grille de notation, et elles sont un contexte, pas une recommandation.</strong> Les fournisseurs de repli notés pour la référence exposée reviennent du mieux noté au moins bien noté, tirés des relevés de transporteurs et de fournisseurs que vous tenez déjà. Aucun écart de prix n'y est joint, car FACE ne détient aucune grille tarifaire, et un écart de prix qu'il ne peut pas sourcer serait le chiffre le plus citable de la page et le moins réel. Les noms sont consignés avec la décision ; ils ne la conditionnent pas.</li>
+<li><strong class="text-stone-200">L'alerte de stock ne vient pas avec une liste restreinte, et mieux vaut le dire que de laisser croire le contraire.</strong> Le seul classement de fournisseurs qui existe dans FACE trie des noms selon leurs étoiles d'avis publics, tirées d'un fichier d'échantillon amorcé, et ce qu'il alimente est une carte d'appel d'offres achats, pas l'alerte de stock &mdash; et quand aucun nom noté ne passe la barre, le champ qu'il remplit est une consigne littérale vous demandant d'en qualifier deux ou trois vous-même. Sur une instance ordinaire, sans rien de branché, rien ne classe de solutions de repli pour la référence exposée : ce que l'alerte renvoie, c'est la borne, le niveau qui l'a franchie et la raison, et aucune liste de fournisseurs. FACE ne détient pas non plus de grille tarifaire, il n'y a donc aucun écart de prix à y joindre, et un écart inventé serait le chiffre le plus citable de la page et le moins réel.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -58,7 +58,7 @@ author: "Lead Data & Cloud Architect"
                 Le déclencheur sur le stock lui-même est volontairement terne, et il vaut mieux dire ce qu'il est que ce qu'il a l'air d'être. Le point de commande, le plancher et le plafond viennent de vous. FACE compare le niveau à ces bornes et renvoie la borne franchie et le niveau qui l'a franchie, en mots simples, plutôt qu'une couleur sur une tuile. Il ne déduit pas le seuil d'un délai de livraison fournisseur : il n'y a pas de modèle de délai là-dedans, et une alerte calée sur un nombre que le logiciel aurait deviné serait pire que l'alerte de niveau que vous avez déjà, parce qu'elle aurait l'air plus savante.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Ce qui arrive est une décision à prendre : la référence, la borne franchie, le fournisseur qui sert d'habitude, et les solutions de repli notées depuis votre propre grille, la meilleure d'abord. Ce qui n'arrive pas, c'est une comparaison de prix entre elles. FACE n'a aucune grille tarifaire, aucune table de tarifs et aucune recherche de tarif historique. L'écart de coût entre deux fournisseurs n'est donc pas une chose qu'il peut vous dire &mdash; et un écart inventé serait le premier chiffre qu'on vous citerait en réunion.
+                Ce qui arrive est plus étroit qu'une décision d'achat, et c'est l'écart qui mérite d'être nommé. L'alerte renvoie la borne franchie, le niveau qui l'a franchie et la raison, en clair. Elle ne renvoie pas le fournisseur qui sert habituellement la référence, et elle ne renvoie pas de solutions de repli classées &mdash; le seul classement du produit lit des étoiles d'avis dans un fichier d'échantillon amorcé et les accroche à une carte d'appel d'offres achats, pas à ceci. Sur une instance où vos propres systèmes sont branchés, il n'y a ici aucune liste restreinte tant que ce chemin n'est pas construit, et une liste vide est la réponse honnête plutôt qu'un exemple travaillé portant votre nom. Il n'y a pas non plus de comparaison de prix à faire : FACE n'a aucune grille tarifaire, aucune table de tarifs et aucune recherche de tarif historique. L'écart de coût entre deux fournisseurs n'est donc pas une chose qu'il peut vous dire &mdash; et un écart inventé serait le premier chiffre qu'on vous citerait en réunion.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 La prévision qui court dessous est <a href="/use-cases/demand-forecasting/" class="underline decoration-stone-700 hover:text-stone-300">un scénario FACE à part entière</a> &mdash; comment une série est lue, quel modèle est choisi et ce qu'il dit quand une référence n'est simplement pas prévisible. Cette page porte sur la décision de commande qui en découle.
@@ -83,7 +83,7 @@ author: "Lead Data & Cloud Architect"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
             Réserver une consultation
         </a>
     </div>

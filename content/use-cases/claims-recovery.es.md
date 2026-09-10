@@ -6,7 +6,7 @@ badge: "Recuperación de Costos"
 badgeColor: "#7c3aed"
 product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
-author: "Lead Data & Cloud Architect"
+author: "Runink"
 ---
 
 {{< section-container class="py-8" >}}

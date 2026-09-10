@@ -117,7 +117,7 @@ jobs:
       #     about the problem domain are deliberately NOT flagged — the rule
       #     wants Runink as the subject of the verb, and carries its own
       #     positive and negative controls.
-      - name: Check content doctrine
+      - name: Check content doctrine (source)
         run: node scripts/check-content-doctrine.mjs
 
       - name: Build Tailwind CSS
@@ -148,6 +148,23 @@ jobs:
       # content/tests/ now, and this step is what keeps the next set from
       # reaching gh-pages. It runs on pull_request too, so a regression fails
       # its PR rather than the deploy.
+      # The same script again, in rendered mode, against what was actually built.
+      #
+      # THIS IS THE ONE THAT CATCHES THINGS. An adversarial sweep of the corrected
+      # site found survivors in alt text, a JSON-LD Organization description, a
+      # meta description, a front-matter title, an <h2>, a shortcode parameter,
+      # hugo.toml and three untouched translations — and in NOT ONE of the places
+      # the source-mode check above looks. Its blind spots were structural:
+      # English-only, content/-only, markdown-only. Every survivor lived in
+      # exactly those gaps.
+      #
+      # Running against docs/ closes all three at once: every language, every
+      # string that reaches a reader or a crawler, whatever produced it. It found
+      # a phantom product name still shipping after two prose passes had been
+      # over the same file.
+      - name: Check content doctrine (rendered output)
+        run: node scripts/check-content-doctrine.mjs --rendered docs
+
       - name: Guard published output
         run: |
           set -euo pipefail

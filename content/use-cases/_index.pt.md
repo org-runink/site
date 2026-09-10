@@ -10,23 +10,20 @@ title: "Para Que Serve O Runink FACE"
 # titled "Para Que As Pessoas Usam O Runink" and named no product at all.
 product: "Runink FACE"
 # Do not state a count in the title or the description. This file said "Sete" in
-# three places and was wrong the moment a page was added — there are twelve
-# English pages now and the set keeps growing.
+# three places and was wrong the moment a page was added. The set keeps growing;
+# the English file states no number either.
 description: "As frentes operacionais para as quais o Runink FACE foi feito. Em todas elas a evidência já está nos seus sistemas e ninguém tem as horas para juntá-la, e todas terminam com uma pessoa aprovando uma ação já redigida, não lendo mais um painel."
 # CARD LINKS STAY UNPREFIXED. layouts/shortcodes/card.html passes every relative
 # link through relLangURL, so "/use-cases/compliance/" written here renders as
 # "/pt/use-cases/compliance/"; writing "/pt/..." would render "/pt/pt/...".
 # The consequence is that a card in this file can only point at a page that
-# exists in Portuguese. Only claims-recovery, compliance and
-# fulfillment-optimization are translated, so those are the only three cards.
-# The English page's "Moving It" group has no Portuguese page at all, so it is
-# left out rather than shown empty, and the note after the last grid sends the
-# reader to the English index for the rest of the set. Add the card back here
-# when the page is translated.
+# exists in Portuguese. Every page in this section is now translated, so this
+# index carries the same cards in the same four groups as the English one. If a
+# new English page appears before its Portuguese translation, leave its card out
+# rather than link a page that is not there.
 #
 # Markdown links in the body are NOT rewritten by Hugo (there is no
-# render-link hook), so they carry an explicit /pt/ prefix where the target
-# exists in Portuguese and no prefix where it only exists in English.
+# render-link hook), so they carry an explicit /pt/ prefix by hand.
 #
 # KNOWN ISSUE — as in the English file: layout "section" has no match, so this
 # page falls through to layouts/_default/list.html, which prints the title and
@@ -84,10 +81,51 @@ Nenhum dos cenários abaixo é resultado de cliente. Eles são **traçados**: es
 {{< card-grid cols="3" >}}
 
 {{< card
+    title="Previsão de demanda"
+    icon="chart-bar"
+    link="/use-cases/demand-forecasting/"
+    description="O que você vai precisar no próximo trimestre está implícito no que você vendeu no ano passado. Ler isso no seu próprio histórico é um trabalho para o qual ninguém tem a manhã."
+>}}
+
+{{< card
     title="Cobertura de estoque e planejamento com fornecedores"
     icon="cube-transparent"
     link="/use-cases/fulfillment-optimization/"
     description="Um aviso de ruptura que chega depois que o estoque de segurança acabou é uma conta de avião com poucos dias de aviso."
+>}}
+
+{{< card
+    title="Testar uma mudança antes de assumir o custo"
+    icon="light-bulb"
+    link="/use-cases/hypothesis-lab/"
+    description="Calcule quanto custa um redirecionamento antes de gastar o dinheiro, contra os seus próprios números e não contra os de um fornecedor."
+>}}
+
+{{< /card-grid >}}
+
+## Mover A Carga
+
+{{< card-grid cols="3" >}}
+
+{{< card
+    title="Planejamento de rotas que acompanha o dia"
+    icon="globe-alt"
+    link="/use-cases/route-optimization/"
+    description="A rota mais barata na segunda não é a mais barata na quinta. Replanejar à mão é o motivo de ela ser planejada uma única vez."
+>}}
+
+{{< card
+    title="Ver a cadeia inteira, não só a sua ponta"
+    icon="eye"
+    link="/use-cases/supply-chain-visibility/"
+    description="Cada fornecedor, transportadora e armazém tem um pedaço do retrato. O retrato em si não está em lugar nenhum."
+>}}
+
+{{< card
+    title="Despacho por voz para motoristas"
+    icon="map"
+    link="/use-cases/voice-dispatch/"
+    description="Um motorista que precisa encostar para ler uma tela ou para ou não lê. Nenhuma das duas coisas era o que você queria."
 >}}
 
 {{< /card-grid >}}
@@ -95,6 +133,20 @@ Nenhum dos cenários abaixo é resultado de cliente. Eles são **traçados**: es
 ## Quando Algo Dá Errado
 
 {{< card-grid cols="3" >}}
+
+{{< card
+    title="Cadeia de frio e segurança no pátio"
+    icon="shield-check"
+    link="/use-cases/cold-chain-safety/"
+    description="A leitura que condena uma carga é registrada horas antes de alguém olhar para ela. O problema todo é o intervalo entre as duas coisas."
+>}}
+
+{{< card
+    title="Devoluções e quanto ainda valem"
+    icon="arrow-path"
+    link="/use-cases/responsive-reverse-logistics/"
+    description="Uma devolução parada numa baia é capital de giro que ninguém contou. Quanto ela vale depende da rapidez com que é julgada."
+>}}
 
 {{< card
     title="Contestações de frete e custos de porto"
@@ -110,6 +162,20 @@ Nenhum dos cenários abaixo é resultado de cliente. Eles são **traçados**: es
 {{< card-grid cols="3" >}}
 
 {{< card
+    title="Processos de subscrição e de sinistro"
+    icon="clipboard-document-list"
+    link="/use-cases/insurance-underwriting/"
+    description="Um sinistro é uma reserva contra uma apólice, e o processo que o liquida chega na forma de documentos. A leitura é redigida para você; a decisão continua com quem subscreve."
+>}}
+
+{{< card
+    title="Revisão de contratos e obrigações"
+    icon="magnifying-glass"
+    link="/use-cases/paralegal-review/"
+    description="A cláusula que importa está num contrato que ninguém reabriu. Ela é lida e citada para você, e uma pessoa decide o que ela quer dizer."
+>}}
+
+{{< card
     title="Dados pessoais de clientes e relatório de emissões"
     icon="scale"
     link="/use-cases/compliance/"
@@ -117,10 +183,6 @@ Nenhum dos cenários abaixo é resultado de cliente. Eles são **traçados**: es
 >}}
 
 {{< /card-grid >}}
-
-## O Resto Do Conjunto, Por Enquanto Em Inglês
-
-O FACE foi feito para mais frentes do que as três acima: previsão de demanda, testar uma mudança antes de assumir o custo, planejamento de rotas, ver a cadeia inteira e não só a sua ponta, despacho por voz para motoristas, cadeia de frio e segurança no pátio, devoluções e quanto ainda valem, processos de subscrição e revisão de contratos. Essas páginas por enquanto só estão escritas em inglês: elas se leem a partir do [índice em inglês](/use-cases/). Não entram como cartão aqui porque não existem em português, e link para página que não está é pior do que link nenhum.
 
 ## Veja Se Serve Para Você
 

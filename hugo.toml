@@ -70,9 +70,17 @@ enableGitInfo = true
   [params.cta]
     enable = true
     title = "Runink: Data You Can Trust. Decisions You Can Defend."
-    description = "Your Go-to Hub for for orchestrating secure, testable, and governance-driven data pipelines at scale. Fitting your Cloud, Data Engineering, and advanced analytical initiatives with secure solutions, and cutting-edge compliant technologies."
-    gradient_from = "#3A2F2A"  # Indigo-600
-    gradient_to = "#1A1512"    # Purple-600
+    # This is the CTA band's copy, rendered on every page that includes the partial.
+    # It used to read "Your Go-to Hub for for orchestrating … cutting-edge compliant
+    # technologies" — a doubled "for", and two unfalsifiable claims ("cutting-edge",
+    # "compliant") of exactly the kind the rest of this site was rewritten to remove.
+    # "Compliant" is the worse of the two: FACE is SOC 2-ORIENTED, a self-declared
+    # design intention, not a completed audit.
+    description = "Runink FACE reads the logistics records you already hold, compares them against the rules that govern them, and drafts an action for the person who owns the decision. It runs on infrastructure you control."
+    # The comments below said Indigo-600 / Purple-600. The values are the warm browns
+    # of the FACE palette and always were; the labels came from the vendor theme.
+    gradient_from = "#3A2F2A"
+    gradient_to = "#1A1512"
     gradient_angle = 30
     # /#contact-form, not /#contact. The consultation form on the home page has
     # always rendered with id="contact-form"; nothing has ever rendered

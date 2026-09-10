@@ -6,7 +6,7 @@ badge: "Gestion des Risques"
 badgeColor: "#ea580c"
 product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
-author: "Lead Data & Cloud Architect"
+author: "Runink"
 ---
 
 {{< section-container class="py-8" >}}
@@ -19,7 +19,7 @@ author: "Lead Data & Cloud Architect"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Les données personnelles n'atteignent pas les journaux.</strong> Les adresses e-mail, les numéros de téléphone, les numéros de carte, les numéros de sécurité sociale et les adresses IP sont retirés des journaux et des sorties de diagnostic avant qu'ils soient écrits. La trace qu'un système laisse derrière lui ne devient donc pas une deuxième copie des données.</li>
 <li><strong class="text-stone-200">C'est une propriété de la plateforme, pas un rapport que vous lancez &mdash; et elle n'a aucun test.</strong> Le masquage a lieu sur le chemin d'écriture sous chaque service, à chaque endroit où un service écrit une ligne. Nous vous dirons aussi que la fonction de masquage elle-même ne porte aucun test propre, car la liste de ce qu'une expression régulière est censée attraper ne prouve pas qu'elle l'attrape. Lisez la liste comme une description d'intention, et non comme une certification.</li>
-<li><strong class="text-stone-200">Le chiffre d'émissions, c'est un facteur routier publié multiplié par une distance réellement mesurée.</strong> Pas des poids, pas des modes, pas un modèle. Un seul facteur du puits à la roue, pour un poids lourd diesel, appliqué à la distance de la ligne que le calcul d'itinéraire a renvoyée, avec la méthode écrite sur le chiffre. La mer et l'air ne sont pas couverts, et une ligne sans distance mesurée ne produit rien plutôt qu'une estimation.</li>
+<li><strong class="text-stone-200">Le chiffre d'émissions, c'est un facteur routier publié multiplié par une distance de ligne &mdash; et la carte est aujourd'hui réservée à la démonstration.</strong> Pas des poids, pas des modes, pas un modèle. Un seul facteur du puits à la roue, pour un poids lourd diesel, appliqué aux distances de ligne présentes dans les données d'itinéraire, avec la méthode écrite sur le chiffre. Ces données d'itinéraire sont aujourd'hui un fichier d'échantillon amorcé, donc une instance branchée n'affiche aucune carte d'émissions. La mer et l'air ne sont pas couverts, et là où il n'y a pas de donnée de distance, la carte n'apparaît pas plutôt qu'une estimation ne vienne la remplacer.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -54,7 +54,7 @@ author: "Lead Data & Cloud Architect"
                 Et il y a une chose que nous ne laisserons pas une liste à puces dissimuler. Ce masquage n'a aucun test à lui. L'ordre interne est soigné &mdash; les numéros de carte sont cherchés avant les numéros de téléphone, pour qu'un motif de téléphone n'avale pas une carte &mdash; et il est appelé depuis chaque service qui écrit une ligne, mais personne n'a écrit de test qui prouve qu'il attrape ce qu'il prétend attraper. Une règle sans contrôle est un commentaire. Nous préférons que vous l'appreniez de nous plutôt que de le trouver dans un dossier de <em>due diligence</em>.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Pour les émissions, soyons exacts sur ce dont le chiffre est fait, car la catégorie ne l'est pas. C'est un seul facteur publié de transport routier &mdash; du puits à la roue, pour un poids lourd diesel &mdash; multiplié par la distance de la ligne que le calcul d'itinéraire a réellement renvoyée, et annualisé sur un nombre de jours ouvrés qui est énoncé. La méthode voyage avec le chiffre, dans la même phrase, pour qu'un auditeur lise l'hypothèse au moment même où il lit le nombre. Ce que ce n'est pas : un modèle de poids et de modes. La mer et l'air n'y sont pas, et une ligne dont la distance n'a jamais été mesurée ne donne rien plutôt qu'une supposition. C'est aussi, aujourd'hui, une carte qui n'apparaît que là où ces distances de ligne se trouvent déjà dans les données de l'instance ; une instance sans rien de branché ne produit aucune carte d'émissions, plutôt qu'un exemple travaillé portant votre nom.
+                Pour les émissions, soyons exacts sur ce dont le chiffre est fait, car la catégorie ne l'est pas. C'est un seul facteur publié de transport routier &mdash; du puits à la roue, pour un poids lourd diesel &mdash; multiplié par une distance de ligne tirée des données d'itinéraire plutôt que modélisée, et annualisé sur un nombre de jours ouvrés qui est énoncé. La méthode voyage avec le chiffre, dans la même phrase, pour qu'un auditeur lise l'hypothèse au moment même où il lit le nombre. Ce que ce n'est pas : un modèle de poids et de modes. La mer et l'air n'y sont pas, et une ligne dont la distance n'a jamais été mesurée ne donne rien plutôt qu'une supposition. C'est aussi, aujourd'hui, une carte réservée à la démonstration : les distances de ligne qu'elle multiplie sont lues dans un fichier d'échantillon amorcé, derrière le même interrupteur qui allume le bandeau de données de démonstration. Une instance sans rien de branché ne produit aucune carte d'émissions, plutôt qu'un exemple travaillé portant votre nom, et sur une instance où vos propres systèmes sont branchés la carte reste absente tant que ce chemin n'est pas construit.
             </p>
             <p class="text-lg text-stone-400 font-medium">
                 Il y avait aussi un taux de réduction ici : une part dont une ligne modifiée était censée abaisser les émissions, présentée comme bien établie et sourcée sur rien. Il a été supprimé, et il existe désormais un test dont le seul travail est d'échouer si quelqu'un remet un taux de réduction. Une distance et un facteur ne peuvent pas soutenir un contrefactuel, et le moyen le moins cher de le garder vrai était de rendre cette absence exigible plutôt que de la confier à la mémoire.
@@ -92,7 +92,7 @@ author: "Lead Data & Cloud Architect"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#10b981] to-[#059669] rounded-xl border border-[#10b981]/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:-translate-y-1">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#10b981] to-[#059669] rounded-xl border border-[#10b981]/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:-translate-y-1">
             Réserver une consultation
         </a>
     </div>

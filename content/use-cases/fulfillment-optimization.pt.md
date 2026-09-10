@@ -8,7 +8,7 @@ standing: "hypothetical"
 badge: "Otimização de Logística"
 badgeColor: "#0ea5e9"
 date: "2024-05-20T00:00:00Z"
-author: "Arquiteto Líder de Dados e Nuvem"
+author: "Runink"
 ---
 
 {{< section-container class="py-8" >}}
@@ -23,7 +23,7 @@ author: "Arquiteto Líder de Dados e Nuvem"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">O aviso diz qual limite foi cruzado, em palavras.</strong> O ponto de pedido, o mínimo e o máximo são os que você já usa: o FACE não os inventa e não os deduz de um prazo de entrega que ele nunca viu. O que ele devolve é o limite que foi cruzado e o nível que cruzou, por escrito, para que o aviso possa ser discutido em vez de apenas recebido.</li>
 <li><strong class="text-stone-200">A previsão diz o quanto confiar nela.</strong> Toda projeção nomeia o modelo &mdash; escolhido separando o trecho mais recente do seu próprio histórico e reajustando cada candidato sobre o que veio antes dele &mdash; e quantos períodos ele teve para aprender. Quando o histórico de um item não prevê a si mesmo, isso também é um dos achados.</li>
-<li><strong class="text-stone-200">As alternativas são ordenadas pelo seu próprio quadro de avaliação, e são contexto, não recomendação.</strong> Os fornecedores alternativos com nota para o item exposto voltam do melhor avaliado para baixo, tirados dos registros de transportadoras e fornecedores que você já mantém. Nenhuma diferença de preço vem anexada, porque o FACE não guarda tabela de frete, e uma diferença de preço que ele não pode comprovar seria o número mais citável da página e o menos real. Os nomes ficam anotados junto com a decisão; eles não a condicionam.</li>
+<li><strong class="text-stone-200">O aviso de estoque não vem com uma lista curta, e é melhor dizer isso do que sugerir o contrário.</strong> A única ordenação de fornecedores que existe no FACE ordena nomes pelas estrelas de avaliações públicas, tiradas de um arquivo de amostra semeado, e o que ela alimenta é um cartão de RFP de compras, não o aviso de estoque &mdash; e quando nenhum nome avaliado passa do corte, o campo que ela preenche é uma instrução literal para que você mesmo qualifique dois ou três. Numa instância comum, sem nada conectado, nada ordena alternativas para o item exposto: o que o aviso devolve é o limite, o nível que o cruzou e o motivo, e nenhuma lista de fornecedores. O FACE também não guarda tabela de frete, então não há diferença de preço para anexar, e uma inventada seria o número mais citável da página e o menos real.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -58,7 +58,7 @@ author: "Arquiteto Líder de Dados e Nuvem"
                 O gatilho no estoque em si é de propósito sem graça, e vale dizer o que ele é em vez do que ele parece. O ponto de pedido, o piso e o teto vêm de você. O FACE compara o nível contra eles e devolve o limite que foi cruzado e o nível que cruzou, em palavras simples, e não uma cor num quadradinho. Ele não deduz o limite a partir do prazo de entrega de um fornecedor: não existe modelo de prazo aqui dentro, e um aviso marcado contra um número que o software chutou seria pior do que o alerta de nível que você já tem, porque pareceria mais esperto.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                O que chega é algo a decidir: o item, o limite que ele cruzou, o fornecedor que costuma atender, e as alternativas com nota do seu próprio quadro, a melhor primeiro. O que não chega é uma comparação de preço entre elas. O FACE não tem tabela de frete, nem tabela de tarifas, nem consulta de tarifa histórica, então a diferença de custo entre dois fornecedores não é coisa que ele possa te dizer &mdash; e uma inventada seria o primeiro número citado de volta para você na reunião.
+                O que chega é mais estreito do que uma decisão de compra, e a lacuna é a parte que vale nomear. O aviso devolve o limite que foi cruzado, o nível que o cruzou e o motivo, por escrito. Ele não devolve o fornecedor que costuma atender o item, e não devolve alternativas ordenadas &mdash; a única ordenação que existe no produto lê estrelas de avaliação de um arquivo de amostra semeado e as prende a um cartão de RFP de compras, não a isto. Numa instância com os seus próprios sistemas conectados não há aqui lista curta nenhuma até que esse caminho seja construído, e uma lista vazia é a resposta honesta em vez de um exemplo pronto com o seu nome em cima. Também não há comparação de preço a fazer: o FACE não tem tabela de frete, nem tabela de tarifas, nem consulta de tarifa histórica, então a diferença de custo entre dois fornecedores não é coisa que ele possa te dizer &mdash; e uma inventada seria o primeiro número citado de volta para você na reunião.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A previsão que está por baixo disso é <a href="/use-cases/demand-forecasting/" class="underline decoration-stone-700 hover:text-stone-300">um cenário do FACE por conta própria</a> &mdash; como uma série é lida, qual modelo é escolhido e o que ele diz quando um item simplesmente não é previsível. Esta página é sobre a decisão de compra que sai disso.

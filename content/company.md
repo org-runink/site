@@ -88,7 +88,7 @@ author: "Lead Data & Cloud Architect"
   "name": "Runink",
   "url": "https://runink.org",
   "logo": "https://runink.org/images/logo.png",
-  "description": "Automated logistics platform specializing in dynamic route optimization, backhaul matching, and supply chain emissions reduction.",
+  "description": "Runink FACE reads the logistics records a business already holds — orders, carrier documents, claim files — compares them against the rules that govern them, and puts a drafted action in front of the person who owns the decision. Runs on infrastructure the customer controls.",
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",

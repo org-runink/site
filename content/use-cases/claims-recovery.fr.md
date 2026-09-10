@@ -6,7 +6,7 @@ badge: "Récupération des Coûts"
 badgeColor: "#7c3aed"
 product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
-author: "Lead Data & Cloud Architect"
+author: "Runink"
 ---
 
 {{< section-container class="py-8" >}}
@@ -83,7 +83,7 @@ author: "Lead Data & Cloud Architect"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#7c3aed] to-[#5b21b6] rounded-xl border border-[#7c3aed]/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:-translate-y-1">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#7c3aed] to-[#5b21b6] rounded-xl border border-[#7c3aed]/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:-translate-y-1">
             Réserver une consultation
         </a>
     </div>
