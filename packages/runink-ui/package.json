@@ -20,6 +20,10 @@
   ],
   "scripts": {
     "gen:tokens": "node scripts/gen-tokens.mjs",
+    "extract:face": "node scripts/extract-face-ramp.mjs",
+    "check:face": "node scripts/check-face-parity.mjs",
+    "check:alpha": "node scripts/check-alpha-utilities.mjs",
+    "check": "npm run check:face && npm run check:alpha",
     "build:types": "tsc -p tsconfig.json",
     "build:js": "esbuild src/index.ts --bundle --format=esm --jsx=automatic --external:react --external:react-dom --external:react/jsx-runtime --outfile=dist/index.es.js",
     "build:css": "tailwindcss -i src/styles.css -o dist/runink-ui.css",

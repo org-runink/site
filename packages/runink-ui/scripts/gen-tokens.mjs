@@ -1,259 +1,325 @@
 #!/usr/bin/env node
 /**
- * Generates the shared Tailwind token preset from DESIGN.md.
+ * Generates the Runink web token layer from FACE's palette.
  *
- * DESIGN.md's YAML frontmatter is the single source of truth for Runink's design
- * tokens. This script turns it into two dependency-free artifacts:
+ * Inputs (all committed, under tokens/):
+ *   face-ramp.json  — vendored ARGB snapshot of FACE's two ramps, stamped with the
+ *                     commit it was read from. face and site are separate repos, so
+ *                     the site build must not need a sibling checkout.
+ *   registry.json   — the web↔FACE mapping. The ONLY place the rename lives.
+ *   derived.json    — web-only values, each with the measurement that justifies it.
  *
- *   site/design-tokens.preset.js   a Tailwind preset consumed by BOTH
- *                                  site/tailwind.config.js and @runink/ui
- *   src/tokens.css                 the same tokens as CSS custom properties,
- *                                  so the synced design-system bundle ships a
- *                                  token layer that is reachable from styles.css
+ * Outputs:
+ *   ../../design-tokens.preset.js  — Tailwind preset, per-position palettes
+ *   ../src/tokens.css              — the two grounds
+ *   ../tokens/REGISTRY.md          — the human mapping table
  *
- * Run `npm run gen:tokens` after editing DESIGN.md. Both outputs are committed
- * so the site build never depends on this package being installed.
+ * THE MECHANISM. FACE swaps two const ramps behind a getter, so ~580 call sites never
+ * know which ramp they are on. A CSS custom property re-bound under a selector is that
+ * same getter, which is why colour flows through `var()` rather than through `dark:`
+ * variants — a missing `dark:` half renders plausibly wrong, and there is no compiler
+ * on the web to catch it.
  *
- * Deliberately narrow: we only emit tokens that DIFFER from Tailwind's stock
- * theme. DESIGN.md's typography scale, spacing scale and motion durations are
- * byte-identical to Tailwind's defaults, so emitting them would add vocabulary
- * without adding meaning — and every extra name is one more thing the design
- * agent has to choose between.
+ * WHY CHANNELS, NOT HEXES. Tailwind's alpha modifier (`bg-x/30`) needs an
+ * `<alpha-value>` placeholder, and `withAlphaValue` cannot parse a bare `var(--x)`.
+ * Emitting `rgb(var(--x-ch) / <alpha-value>)` over space-separated channels is what
+ * keeps the 78 alpha-modified utilities in this package working. Get it wrong and
+ * Tailwind DROPS those declarations silently — the design system still looks
+ * plausible, and nothing in the validate/grade loop can see it. gen-tokens verifies
+ * the count itself; see scripts/check-alpha-utilities.mjs.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import yaml from 'js-yaml';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PKG = resolve(HERE, '..');
 const SITE = resolve(PKG, '../..');
+const TOKENS = join(PKG, 'tokens');
 
-const DESIGN_MD = resolve(SITE, 'DESIGN.md');
-const PRESET_OUT = resolve(SITE, 'design-tokens.preset.js');
-const TOKENS_CSS_OUT = resolve(PKG, 'src/tokens.css');
+const ramp = JSON.parse(readFileSync(join(TOKENS, 'face-ramp.json'), 'utf8'));
+const registry = JSON.parse(readFileSync(join(TOKENS, 'registry.json'), 'utf8'));
+const derived = JSON.parse(readFileSync(join(TOKENS, 'derived.json'), 'utf8'));
 
-/**
- * `primary-950` is referenced 38 times across layouts/ but is defined in no
- * Tailwind config, so those backgrounds currently render transparent. It is the
- * near-black canvas that replaced `stone-950` (#0c0a09) during the move off hex
- * literals onto the named ramp. Chosen to hold the ramp's ~230deg hue at
- * near-black. This is the one value NOT derived from DESIGN.md.
- */
-const PRIMARY_950 = '#0f1330';
+const GROUNDS = { console: 'console', sheet: 'sheet' };
 
-/**
- * Hex literals used directly in layouts/ that DESIGN.md names, plus three it
- * does not. Naming them is the whole point of the preset: `bg-brand-green`
- * instead of `bg-[#65793e]` (44 occurrences), and so on.
- */
-const EXTRA_BRAND = {
-  // Deep canvases used as arbitrary values in layouts/. DESIGN.md documents
-  // #161515 in its prose; #1b1919 and #526332 are undocumented but in use.
-  ink: '#161515',
-  'ink-soft': '#1b1919',
-  // One step lighter again: the inset panel / secondary button fill that sits
-  // just above `ink-soft`. Appears in layouts/ as #211F1F, #1f1d1b and #1a1716 —
-  // three values within ~6 units of each other, i.e. one intended surface
-  // written three ways. Named once here so ports stop approximating it.
-  'ink-raised': '#211F1F',
-  'green-deep': '#526332',
-  // The interactive sage accent: hover border + hover icon colour throughout the
-  // card idiom. Sits between `sage` (#C8D9A8) and `green` (#65793e); DESIGN.md
-  // omits it, but the components can't express their hover state without it.
-  'sage-dark': '#A8B88B',
-  // The hero halo's warm stop. Used once in layouts/ as a literal; DESIGN.md
-  // omits it entirely.
-  copper: '#B87333',
-};
-
-/**
- * Motion the site defines as hand-written CSS rather than tokens.
- *
- * `cta-pulse` and `testimonials-scroll` are real `@keyframes` in
- * `assets/css/main.css`, reachable only through the bare class names `.cta-pulse`
- * and `.testimonials-track.animate`. `pulse-slow` is referenced in layouts/ as
- * `animate-pulse-slow` but is defined NOWHERE — a dead class, given a real
- * definition here.
- *
- * Promoting all three to Tailwind keyframes/animation makes them available as
- * `animate-*` utilities, which is what the ported React components use (they have
- * no access to the site's stylesheet).
- */
-const EXTRA_KEYFRAMES = {
-  'cta-pulse': {
-    '0%': { boxShadow: '0 0 0 0 rgba(234, 88, 12, 0.4)' },
-    '70%': { boxShadow: '0 0 0 15px rgba(234, 88, 12, 0)' },
-    '100%': { boxShadow: '0 0 0 0 rgba(234, 88, 12, 0)' },
-  },
-  // The site names this one after its first use (`testimonials-scroll`), but the
-  // same loop drives the client-logo wall too. `marquee` is the neutral name the
-  // components use; the site's original name is kept so the Hugo CSS and the
-  // React package still speak the same vocabulary.
-  marquee: {
-    from: { transform: 'translateX(0)' },
-    to: { transform: 'translateX(calc(-100% / 2))' },
-  },
-  'testimonials-scroll': {
-    from: { transform: 'translateX(0)' },
-    to: { transform: 'translateX(calc(-100% / 2))' },
-  },
-  'pulse-slow': {
-    '0%, 100%': { opacity: '1' },
-    '50%': { opacity: '0.4' },
-  },
-};
-
-const EXTRA_ANIMATION = {
-  'cta-pulse': 'cta-pulse 2s infinite',
-  marquee: 'marquee 40s infinite linear',
-  'testimonials-scroll': 'testimonials-scroll 40s infinite linear',
-  'pulse-slow': 'pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-};
-
-function readFrontmatter(path) {
-  const raw = readFileSync(path, 'utf8');
-  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!m) throw new Error(`${path}: no YAML frontmatter found`);
-  const data = yaml.load(m[1]);
-  if (!data || typeof data !== 'object') throw new Error(`${path}: frontmatter is not a mapping`);
-  return data;
-}
-
-/** YAML parses `50:` as a number; Tailwind wants string shade keys. */
-function shades(obj, extra = {}) {
-  const out = {};
-  for (const [k, v] of Object.entries(obj)) out[String(k)] = v;
-  return { ...out, ...extra };
-}
-
-/** `dark_orange` -> `orange-dark`, `light_sage` -> `sage`. */
-function brandKey(k) {
-  const explicit = { dark_orange: 'orange-dark', dark_green: 'green-dark', light_sage: 'sage' };
-  return explicit[k] ?? k.replace(/_/g, '-');
-}
-
-function buildPreset(d) {
-  const colors = d.colors ?? {};
-  const brand = {};
-  for (const [k, v] of Object.entries(colors.brand_accents ?? {})) brand[brandKey(k)] = v;
-  Object.assign(brand, EXTRA_BRAND);
-  // Names for the off-white / beige text tones that dark sections rely on.
-  if (colors.text?.off_white) brand.paper = colors.text.off_white;
-  if (colors.text?.beige_accent) brand.beige = colors.text.beige_accent;
-
-  const fonts = d.typography?.font_families ?? {};
-  const toStack = (s) => String(s).split(',').map((x) => x.trim()).filter(Boolean);
-
+/** '#AARRGGBB' → { r, g, b, a } with a in 0..1. */
+function argb(hex) {
+  const m = /^#([0-9A-Fa-f]{8})$/.exec(hex);
+  if (!m) throw new Error(`expected #AARRGGBB, got ${hex}`);
+  const n = m[1];
   return {
-    colors: {
-      primary: shades(colors.primary ?? {}, { 950: PRIMARY_950 }),
-      secondary: shades(colors.secondary ?? {}),
-      brand,
-    },
-    fontFamily: {
-      ...(fonts.sans ? { sans: toStack(fonts.sans) } : {}),
-      ...(fonts.heading ? { heading: toStack(fonts.heading) } : {}),
-      ...(fonts.mono ? { mono: toStack(fonts.mono) } : {}),
-    },
-    // Only the two non-stock radii. DESIGN.md's custom_card/custom_large are the
-    // generous card corners the aesthetic depends on.
-    borderRadius: {
-      ...(d.radii?.custom_card ? { card: d.radii.custom_card } : {}),
-      ...(d.radii?.custom_large ? { large: d.radii.custom_large } : {}),
-    },
-    // Only the glow shadows; sm..2xl/inner match Tailwind's stock scale.
-    boxShadow: {
-      ...Object.fromEntries(
-        Object.entries(d.shadows ?? {})
-          .filter(([k]) => k.startsWith('neon_'))
-          .map(([k, v]) => [k.replace(/_/g, '-'), v]),
-      ),
-      // The hover intensity of the orange glow. DESIGN.md only defines the
-      // at-rest `neon_orange` (15px/0.1); layouts/ reach for this stronger one
-      // as an arbitrary value on hover.
-      'neon-orange-strong': '0 0 25px rgba(234, 88, 12, 0.3)',
-      // The red counterpart to `neon_green`, following its 15px/0.3 shape.
-      // DESIGN.md defines glows for orange and green but not red, even though red
-      // (`brand-red`, #991b1b) is a first-class accent — the "cockpit" treatment
-      // has no glow token without this.
-      'neon-red': '0 0 15px rgba(153, 27, 27, 0.3)',
-    },
-    keyframes: EXTRA_KEYFRAMES,
-    animation: EXTRA_ANIMATION,
+    a: parseInt(n.slice(0, 2), 16) / 255,
+    r: parseInt(n.slice(2, 4), 16),
+    g: parseInt(n.slice(4, 6), 16),
+    b: parseInt(n.slice(6, 8), 16),
   };
 }
+const channels = (hex) => {
+  const { r, g, b } = argb(hex);
+  return `${r} ${g} ${b}`;
+};
 
-function emitPreset(theme) {
-  const body = JSON.stringify(theme, null, 2)
+/** Every registry entry, flattened, in emission order. */
+function allEntries() {
+  const out = [];
+  for (const group of ['surfaces', 'inks', 'fills', 'onFills']) {
+    for (const e of registry[group] ?? []) out.push(e);
+  }
+  out.push(registry.severity.wash);
+  for (const b of registry.severity.bands) out.push(b);
+  return out;
+}
+
+/** Resolve one entry to its channel string for a given ground. */
+function resolve1(entry, ground) {
+  if (entry.const) return channels(entry.const);
+  if (entry.face) {
+    const table = ramp[ground];
+    const v = table[entry.face];
+    if (!v) throw new Error(`face token "${entry.face}" not in ramp.${ground}`);
+    return channels(v);
+  }
+  return null; // derived — handled separately
+}
+
+/** textSecondary's alpha is baked and differs per ramp; edge is a derived alpha. */
+function alphaFor(entry, ground) {
+  if (entry.bakedAlpha && entry.face) return argb(ramp[ground][entry.face]).a;
+  if (entry.web === 'edge') return derived.alpha.edge[ground];
+  return null;
+}
+
+// ── tokens.css ────────────────────────────────────────────────────────────────
+function emitCss() {
+  const L = [];
+  L.push('/**');
+  L.push(' * GENERATED by scripts/gen-tokens.mjs — do not edit by hand.');
+  L.push(' *');
+  L.push(` * Runink's palette, from FACE ${ramp.provenance.commit.slice(0, 12)}.`);
+  L.push(' * Source of truth: face/DESIGN.md §2 and flutter/lib/core/theme/runink_theme.dart.');
+  L.push(' *');
+  L.push(' * One identity, two grounds. `console` is the dark register and the default;');
+  L.push(' * `sheet` is the light one. Set data-ground on any element to flip a subtree —');
+  L.push(' * a console band inside a sheet page is a real requirement, which is why this is');
+  L.push(' * a cascading attribute rather than a root-level dark: variant.');
+  L.push(' *');
+  L.push(' * The ground blocks contain ONLY channel assignments. That is deliberate: it makes');
+  L.push(' * the two ramps trivially diffable and turns a token missing from one ramp into a');
+  L.push(' * visible hole rather than a silently inherited wrong value.');
+  L.push(' */');
+  L.push('');
+
+  // Layer 1 — primitives, keyed by the exact Dart field name.
+  L.push('/* ── FACE primitives. Keyed by Dart field name; never used by a page. ── */');
+  L.push(':root {');
+  const faceNames = Object.keys(ramp.console).sort();
+  for (const g of Object.keys(GROUNDS)) {
+    for (const name of faceNames) {
+      L.push(`  --rk-face-${name}-${g}: ${channels(ramp[g][name])};`);
+    }
+  }
+  L.push('}');
+  L.push('');
+
+  // Layer 2 — semantics, per ground.
+  const entries = allEntries();
+  for (const [g, label] of Object.entries(GROUNDS)) {
+    const sel = g === 'console' ? `:root,\n[data-ground='console']` : `[data-ground='sheet']`;
+    L.push(`/* ── ${label} ── */`);
+    L.push(`${sel} {`);
+    L.push(`  color-scheme: ${g === 'console' ? 'dark' : 'light'};`);
+    for (const e of entries) {
+      if (e.web === 'edge') continue; // alpha-only, bound below
+      const ch = resolve1(e, g);
+      if (ch === null) continue;
+      const via = e.face ? `var(--rk-face-${e.face}-${g})` : ch;
+      L.push(`  --rk-${e.web}-ch: ${via};`);
+      const a = alphaFor(e, g);
+      if (a !== null) L.push(`  --rk-${e.web}-a: ${a};`);
+    }
+    // edge derives from the ink channel of this ground.
+    L.push(`  --rk-edge-ch: var(--rk-primary-ch);`);
+    L.push(`  --rk-edge-a: ${derived.alpha.edge[g]};`);
+    L.push('}');
+    L.push('');
+  }
+
+  // Layer 3 — derived forms that need no second ground block.
+  L.push('/* ── Derived. rgb(var()) resolves where USED, so a subtree that rebinds a');
+  L.push('   channel gets a correct wash for free — no color-mix, no re-derivation. ── */');
+  L.push(':root {');
+  for (const e of entries) {
+    if (e.wash) L.push(`  --rk-${e.web}-wash: rgb(var(--rk-${e.web}-ch) / ${derived.alpha.wash.value});`);
+  }
+  L.push('}');
+  L.push('');
+
+  L.push('@media (prefers-reduced-motion: reduce) {');
+  L.push('  *, *::before, *::after {');
+  L.push('    animation-duration: 0.01ms !important;');
+  L.push('    animation-iteration-count: 1 !important;');
+  L.push('    transition-duration: 0.01ms !important;');
+  L.push('  }');
+  L.push('}');
+  L.push('');
+  return L.join('\n');
+}
+
+// ── preset ────────────────────────────────────────────────────────────────────
+const POSITION_KEYS = [
+  'backgroundColor',
+  'textColor',
+  'borderColor',
+  'divideColor',
+  'ringColor',
+  'outlineColor',
+  'fill',
+  'stroke',
+  'gradientColorStops',
+  'boxShadowColor',
+  'caretColor',
+  'textDecorationColor',
+];
+
+function emitPreset() {
+  const entries = allEntries();
+  const palettes = Object.fromEntries(POSITION_KEYS.map((k) => [k, {}]));
+
+  for (const e of entries) {
+    const value =
+      alphaFor(e, 'console') !== null && e.bakedAlpha
+        ? `rgb(var(--rk-${e.web}-ch) / var(--rk-${e.web}-a))`
+        : e.web === 'edge'
+          ? `rgb(var(--rk-edge-ch) / var(--rk-edge-a))`
+          : `rgb(var(--rk-${e.web}-ch) / <alpha-value>)`;
+    for (const pos of e.positions) {
+      if (!palettes[pos]) throw new Error(`registry: unknown position "${pos}" on ${e.web}`);
+      palettes[pos][e.web] = value;
+    }
+    if (e.wash) {
+      palettes.backgroundColor[`${e.web}-wash`] = `rgb(var(--rk-${e.web}-ch) / ${derived.alpha.wash.value})`;
+    }
+  }
+
+  const body = {
+    ...Object.fromEntries(POSITION_KEYS.filter((k) => Object.keys(palettes[k]).length).map((k) => [k, palettes[k]])),
+    borderRadius: derived.borderRadius && Object.fromEntries(
+      Object.entries(derived.borderRadius).filter(([k]) => !k.startsWith('$')),
+    ),
+    boxShadow: Object.fromEntries(Object.entries(derived.boxShadow).filter(([k]) => !k.startsWith('$'))),
+    fontFamily: {
+      sans: ['Figtree Rk', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+      display: ['Figtree Rk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
+    },
+    /*
+     * cta-pulse referenced rgba(234,88,12,…) — the retired Saasify orange — baked
+     * into the keyframe rather than into the colour map, which is exactly why it
+     * would have survived a colour migration and pulsed a dead hue forever. It now
+     * reads the accent channel, so it follows the active ground like everything else.
+     */
+    keyframes: {
+      'cta-pulse': {
+        '0%': { boxShadow: '0 0 0 0 rgb(var(--rk-fill-accent-ch) / 0.4)' },
+        '70%': { boxShadow: '0 0 0 15px rgb(var(--rk-fill-accent-ch) / 0)' },
+        '100%': { boxShadow: '0 0 0 0 rgb(var(--rk-fill-accent-ch) / 0)' },
+      },
+      marquee: {
+        from: { transform: 'translateX(0)' },
+        to: { transform: 'translateX(calc(-100% / 2))' },
+      },
+      'testimonials-scroll': {
+        from: { transform: 'translateX(0)' },
+        to: { transform: 'translateX(calc(-100% / 2))' },
+      },
+      'pulse-slow': {
+        '0%, 100%': { opacity: '1' },
+        '50%': { opacity: '0.4' },
+      },
+    },
+    animation: {
+      'cta-pulse': 'cta-pulse 2s infinite',
+      marquee: 'marquee 40s infinite linear',
+      'testimonials-scroll': 'testimonials-scroll 40s infinite linear',
+      'pulse-slow': 'pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+    },
+  };
+
+  const json = JSON.stringify(body, null, 2)
     .split('\n')
-    .map((line, i) => (i === 0 ? line : '    ' + line))
+    .map((l, i) => (i === 0 ? l : '    ' + l))
     .join('\n');
+
   return `/**
- * GENERATED by packages/runink-ui/scripts/gen-tokens.mjs from DESIGN.md.
- * Do not edit by hand — edit DESIGN.md and re-run \`npm run gen:tokens\`
- * from packages/runink-ui.
+ * GENERATED by packages/runink-ui/scripts/gen-tokens.mjs — do not edit by hand.
+ * Edit tokens/registry.json (the mapping) or tokens/derived.json (web-only values)
+ * and re-run \`npm run gen:tokens\` from packages/runink-ui.
  *
- * Shared Tailwind preset: the single source of truth for Runink's design tokens.
- * Consumed by site/tailwind.config.js (the Hugo site) and by @runink/ui (the
- * React component library that claude.ai/design builds with), so both render
- * the same brand.
+ * Runink's palette, from FACE ${ramp.provenance.commit.slice(0, 12)}.
  *
- * Only tokens that DIFFER from Tailwind's stock theme live here. DESIGN.md's
- * type scale, spacing scale and motion durations are identical to Tailwind's
- * defaults and are deliberately not re-emitted.
+ * Colour palettes are defined PER POSITION rather than once under \`colors\`. That is
+ * what makes fill-vs-ink structural instead of a convention: a fill token has no
+ * textColor entry, so \`text-fill-success\` does not compile. FACE enforces the same
+ * rule with a contrast test suite; here the utility simply does not exist.
+ *
+ * Values are rgb(var(--…-ch) / <alpha-value>) so Tailwind's /NN modifier keeps
+ * working across both grounds. See tokens.css for why channels rather than hexes.
  *
  * @type {import('tailwindcss').Config}
  */
 module.exports = {
   theme: {
-    extend: ${body},
+    extend: ${json},
   },
 };
 `;
 }
 
-function emitTokensCss(theme) {
-  const lines = [];
-  lines.push('/**');
-  lines.push(' * GENERATED by scripts/gen-tokens.mjs from DESIGN.md — do not edit by hand.');
-  lines.push(' *');
-  lines.push(' * The Runink token layer as CSS custom properties. Tailwind utilities are the');
-  lines.push(' * primary styling idiom; these exist so tokens stay reachable from plain CSS');
-  lines.push(' * and from the design-system bundle\'s styles.css import closure.');
-  lines.push(' */');
-  lines.push(':root {');
-  for (const [family, shadeMap] of Object.entries(theme.colors)) {
-    for (const [shade, value] of Object.entries(shadeMap)) {
-      lines.push(`  --color-${family}-${shade}: ${value};`);
-    }
+// ── REGISTRY.md ───────────────────────────────────────────────────────────────
+function emitRegistryMd() {
+  const L = [];
+  L.push('# Runink web tokens');
+  L.push('');
+  L.push('_Generated from `tokens/registry.json`. Do not edit._');
+  L.push('');
+  L.push(`Palette source: FACE \`${ramp.provenance.commit.slice(0, 12)}\` — \`${ramp.provenance.path}\`.`);
+  L.push('');
+  L.push('`tier` is the WCAG floor the token clears, and it decides which utilities exist:');
+  L.push('a **fill** has no `text-*` utility at all, a **mark** clears 3:1 but not 4.5:1,');
+  L.push('an **ink** clears 4.5:1 as text on all four surfaces of its ramp.');
+  L.push('');
+  L.push('| utility | FACE token | tier | console | sheet |');
+  L.push('|---|---|---|---|---|');
+  for (const e of allEntries()) {
+    const face = e.face ?? e.faceConst ?? e.derived ?? '—';
+    const c = e.const ?? (e.face ? ramp.console[e.face] : '—');
+    const s = e.const ?? (e.face ? ramp.sheet[e.face] : '—');
+    L.push(`| \`${e.web}\` | \`${face}\` | ${e.tier} | \`${c}\` | \`${s}\` |`);
   }
-  for (const [name, stack] of Object.entries(theme.fontFamily)) {
-    lines.push(`  --font-${name}: ${stack.join(', ')};`);
-  }
-  for (const [name, value] of Object.entries(theme.borderRadius)) {
-    lines.push(`  --radius-${name}: ${value};`);
-  }
-  for (const [name, value] of Object.entries(theme.boxShadow)) {
-    lines.push(`  --shadow-${name}: ${value};`);
-  }
-  lines.push('}');
-  lines.push('');
-  return lines.join('\n');
+  L.push('');
+  L.push('## Rules that are not negotiable');
+  L.push('');
+  L.push('- **Fills never carry text.** `fill-accent-deep`, `fill-success`, `fill-success-glow`,');
+  L.push('  `fill-provenance` and `fill-severity` have no `text-*` utility by construction.');
+  L.push('- **`ink-success` is the only olive that may carry text.**');
+  L.push('- **`on-accent` inks `fill-accent` only** — it is not valid on `ink-accent`.');
+  L.push('- **Severity is its own family.** Do not colour a status with accent/olive/wine.');
+  L.push('  All five bands share one wash, and because adjacent bands cannot exceed ~1.17:1,');
+  L.push('  every severity mark also carries a glyph or the word.');
+  L.push('- **`hairline` is invisible on `surface-well`** (same value). Use `edge` there.');
+  L.push('');
+  return L.join('\n');
 }
 
-const design = readFrontmatter(DESIGN_MD);
-const theme = buildPreset(design);
+mkdirSync(join(PKG, 'src'), { recursive: true });
+writeFileSync(join(PKG, 'src/tokens.css'), emitCss(), 'utf8');
+writeFileSync(join(SITE, 'design-tokens.preset.js'), emitPreset(), 'utf8');
+writeFileSync(join(TOKENS, 'REGISTRY.md'), emitRegistryMd(), 'utf8');
 
-mkdirSync(dirname(TOKENS_CSS_OUT), { recursive: true });
-writeFileSync(PRESET_OUT, emitPreset(theme), 'utf8');
-writeFileSync(TOKENS_CSS_OUT, emitTokensCss(theme), 'utf8');
-
-const count = (o) => Object.keys(o).length;
-console.log(`wrote ${PRESET_OUT}`);
-console.log(`wrote ${TOKENS_CSS_OUT}`);
-console.log(
-  `tokens: primary ${count(theme.colors.primary)} shades (incl. injected 950=${PRIMARY_950}), ` +
-    `secondary ${count(theme.colors.secondary)}, brand ${count(theme.colors.brand)}, ` +
-    `fonts ${count(theme.fontFamily)}, radii ${count(theme.borderRadius)}, shadows ${count(theme.boxShadow)}`,
-);
+const entries = allEntries();
+console.log(`wrote src/tokens.css, design-tokens.preset.js, tokens/REGISTRY.md`);
+console.log(`  face commit : ${ramp.provenance.commit.slice(0, 12)}`);
+console.log(`  tokens      : ${entries.length} (${entries.filter((e) => e.tier === 'fill').length} fill, ` +
+  `${entries.filter((e) => e.tier === 'mark').length} mark, ${entries.filter((e) => e.tier === 'ink').length} ink)`);
+console.log(`  washes      : ${entries.filter((e) => e.wash).length} at alpha ${derived.alpha.wash.value}`);
