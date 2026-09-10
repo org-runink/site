@@ -200,7 +200,7 @@ export function LandingScenario({
           </div>
 
           {/*
-            Glow behind the panel, revealed on hover. The purple midpoint is gone
+            Glow behind the panel, revealed on hover. The port's mid stop is gone
             rather than retinted: with the sweep down to two stops it had nothing left
             to do, and there is no gradient-stop form of the wash to carry it.
           */}

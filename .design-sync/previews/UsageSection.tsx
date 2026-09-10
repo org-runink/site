@@ -67,12 +67,20 @@ export function SixSteps() {
 }
 
 /**
- * Header omitted, so the band renders the steps alone — how a second sequence later
- * on the same page avoids repeating a heading.
+ * Header omitted, so the band renders the steps alone — how a second sequence later on
+ * the same page avoids repeating a heading.
+ *
+ * The grid's `mt-12` is unconditional, so dropping the header leaves 48px of its rhythm
+ * reserved: the cards land 112px below the band's top edge but only 64px above its
+ * bottom, and the whole band reads top-heavy. Trimming the band's own top padding to
+ * `1rem` puts the two back level. It goes in through `style` because `pt-4` and `py-16`
+ * are competing utilities that resolve by stylesheet order — the same reason `CardGrid`
+ * and `StatsGrid` take their bottom margin that way.
  */
 export function WithoutHeader() {
   return (
     <UsageSection
+      style={{ paddingTop: '1rem' }}
       steps={[
         {
           title: 'Scan the return',

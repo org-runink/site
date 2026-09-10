@@ -22,10 +22,12 @@ export function Default() {
  * `submitted` cannot be reached without interaction. Not one class differs; only
  * `ground`, because every token rebinds underneath.
  *
- * The panel is `bg-surface` and the field inside it is `bg-canvas`, so on sheet the
- * input goes *darker* than the panel it sits in instead of lighter. This is the cell
- * that shows the field still reads as a field, and that the `bg-fill-accent` /
- * `text-on-accent` button keeps its contrast.
+ * The panel is `bg-surface` and the field inside it is `bg-canvas`, which sits below
+ * it on both ramps — so the input reads as recessed in either register, not only
+ * here. (`surface` does not invert; only `surface-raised` and `surface-well` do.)
+ * What this cell shows is that the recess survives on the light ramp, where the two
+ * are only four levels apart, and that the `bg-fill-accent` / `text-on-accent` button
+ * keeps its contrast.
  */
 export function OnSheet() {
   return (

@@ -13,9 +13,11 @@ export function Default() {
 }
 
 /**
- * The primary variant axis, side by side: `monitor` green telemetry against
- * `cockpit` red execution. The track swaps the border, the 5% fill, the neon glow,
- * the badge and the lead-in colour — everything.
+ * The primary variant axis, side by side: `monitor` olive telemetry against
+ * `cockpit` wine execution. The track swaps the border, the 15% wash, the badge and
+ * the lead-in colour — but not the glow. `monitor` has `shadow-glow-success` and
+ * `cockpit` has nothing, because the port's neon red had no counterpart here. That
+ * asymmetry is the one thing to check in this cell, since it looks like an omission.
  */
 export function TrackSweep() {
   return (
@@ -122,9 +124,11 @@ export function CustomLabel() {
 
 /**
  * The same step on the sheet ground. Not one class differs from `Default` — only
- * `ground`, because every token rebinds underneath. The card leans on a wash fill and
- * a neon glow, both tuned on the console, so this is the cell where either would show
- * up as washed out rather than quiet.
+ * `ground`, because every token rebinds underneath. This is the `monitor` track, so the
+ * card leans on the 15% `fill-success-wash` and `shadow-glow-success` — and neither
+ * rebinds: `fill-success` carries one value in both registers, so the wash and the glow
+ * are literally the console treatment laid over a light page. This is the cell where
+ * either would show up as muddy rather than quiet.
  */
 export function OnSheet() {
   return (

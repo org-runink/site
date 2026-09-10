@@ -8,7 +8,7 @@ const OPTIONS = [
 
 /**
  * The state the pricing page boots into: uncontrolled, so the first option is
- * selected and "Monthly Commitment" carries the purple pill.
+ * selected and "Monthly Commitment" carries the solid `fill-accent` pill.
  */
 export function Default() {
   return <PricingToggle options={OPTIONS} />;
@@ -19,9 +19,17 @@ export function Default() {
  * selected, not one class changed. Only `ground` differs, because every token rebinds
  * underneath.
  *
- * The track is `bg-canvas` inside a sheet page whose canvas is the *same* value, so
- * this is the cell that shows whether the hairline border and the inner shadow are
- * still doing the work of separating the track from the page.
+ * This cell is why the track is `bg-surface-well` rather than `bg-canvas`. It used to
+ * be canvas — which on a canvas-grounded sheet page is the *same value*, so the track
+ * was byte-identical to the page behind it and its right-hand end was genuinely
+ * unfindable. The `shadow-inner` that was supposed to carry the recess is a black
+ * inset, so it only ever read on one ground. Now the well fill does the separating on
+ * both, with `border-edge` closing it: measured `rgb(232,221,206)` against a
+ * `rgb(251,247,241)` canvas here.
+ *
+ * On the console ground the same two tokens read the other way round, which is the
+ * point of a role-named surface — `well` is the innermost surface in both registers
+ * even though it moves in opposite directions to get there.
  */
 export function OnSheet() {
   return (

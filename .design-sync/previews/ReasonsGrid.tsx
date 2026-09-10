@@ -84,9 +84,11 @@ export function Default() {
 /**
  * The same two columns with the heading chrome stripped back to a one-line title
  * — no eyebrow, no standfirst — so the capability lists themselves are in frame.
- * This is the cell to read the two tones off: the sage column's green bloom and
- * `brand-sage` category kicker beside the ember column's orange glow and
- * `secondary-500` kicker.
+ * This is the cell to read the two tones off: the sage column's olive bloom and
+ * `ink-success` category kicker beside the ember column's `fill-accent-wash` bloom and
+ * `ink-accent` kicker. Read it knowing `ember` no longer carries a glow — the port's
+ * neon orange shadow was retired with nothing to replace it — so at rest the two
+ * columns differ by hue and by `shadow-2xl`, not by luminance.
  */
 export function ToneContrast() {
   return (

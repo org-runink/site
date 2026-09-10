@@ -58,7 +58,11 @@ type ActionKind = 'signIn' | 'getStarted' | 'checkItOut';
 const ACTIONS: Record<ActionKind, { variant: ButtonVariant; desktop: string; mobile: string }> = {
   signIn: {
     variant: 'outline',
-    desktop: 'border-hairline font-bold text-primary hover:border-hairline hover:text-ink-accent',
+    // The desktop border travels with the label. It read `hover:border-hairline`, the
+    // value the button already rests on, so the outline sat still while only the ink
+    // moved — and the mobile row has always moved both (to `ink-success`, the drawer's
+    // hue). Now both placements recolour border and ink together, each in its own hue.
+    desktop: 'border-hairline font-bold text-primary hover:border-ink-accent hover:text-ink-accent',
     mobile: 'w-full border-hairline font-bold text-primary hover:border-ink-success hover:text-ink-success',
   },
   getStarted: {
@@ -75,8 +79,9 @@ const ACTIONS: Record<ActionKind, { variant: ButtonVariant; desktop: string; mob
 };
 
 /**
- * The top-level link treatment. The site writes this as `text-[#F5F1E8]`, which is
- * the `brand-paper` token.
+ * The top-level link treatment. The site writes this as a literal `text-[#F5F1E8]`,
+ * which pins it to the console; here it is the `primary` ink, so the bar reads on
+ * either ground. The hover is the accent, which is the one thing a nav link is.
  */
 const NAV_LINK = 'inline-block px-2 py-4 text-base font-bold text-primary transition duration-200 hover:text-ink-accent';
 

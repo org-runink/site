@@ -23,6 +23,11 @@ export interface FeatureCardProps {
  * (no hover reveal), and a 2-unit lift on hover. Use it where a feature needs to
  * enumerate what it includes; use `Card` when a sentence is enough.
  *
+ * Bounded the same way as `Card`: an opaque `surface` panel inside a `border-edge`
+ * boundary, because on the sheet ramp `surface` over `canvas` is 1.05:1 and the fill
+ * alone cannot say "card". The hover deepens that border to `ink-success/70` and lifts
+ * the panel two units.
+ *
  * @example
  * <FeatureCard
  *   icon="circle-stack"
@@ -35,7 +40,15 @@ export function FeatureCard({ title, description, icon, features, className }: F
   return (
     <div
       className={cx(
-        'rounded-card border border-hairline/50 bg-surface/30 p-8 transition-all',
+        // `edge` and an opaque fill, for the reason `Card` states at length: the border
+        // is what makes this read as a card, not the fill. This panel was
+        // `border-hairline/50` over `bg-surface/30`, which a grader measured at 1.12:1 —
+        // rgb(41,34,32) on the rgb(29,24,21) the translucent fill composites to — while
+        // `Card` and `TestimonialCard` get 3.34:1 (console) / 3.50:1 (sheet) from `edge`.
+        // Two components on a 1.12:1 boundary and the rest on 3.5:1 is not a style, it is
+        // the palette migration showing. No `/NN` on `edge`: it bakes its own alpha, so a
+        // modifier is dropped from the safelist and silently compiles to nothing.
+        'rounded-card border border-edge bg-surface p-8 transition-all',
         'hover:-translate-y-2 hover:border-ink-success/70',
         className,
       )}

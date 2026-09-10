@@ -67,8 +67,9 @@ const PANEL = 'rounded-card border border-hairline bg-surface-raised p-6 shadow-
  * given no content, which is the sensible behaviour on a page with no taxonomies.
  *
  * Drop it in a narrow grid column beside the article (the site uses one third of
- * a 12-column row) on a `Surface` of tone `canvas` or `raised` — each block
- * paints its own opaque `primary-800` panel and needs something darker behind it.
+ * a 12-column row) on a `Surface` of tone `canvas` or `surface` — each block paints
+ * its own opaque `surface-raised` panel, which lifts off the canvas on the console
+ * and recesses into it on the sheet, where `raised` goes darker than the ground.
  *
  * The subscribe block is `SubscribeForm` and the tag cloud is `SidebarTags`; both
  * are re-exported through their own props here, so anything they accept works

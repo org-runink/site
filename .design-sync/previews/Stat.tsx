@@ -23,17 +23,33 @@ export function InAGrid() {
  * The same row on the sheet ground. Not one class differs from `InAGrid` — only
  * `ground`, because every token rebinds underneath.
  *
- * `Stat` is the component in this set with the most to lose on a ground flip, because
- * its panel is not a flat fill: it is a `from-surface to-canvas` gradient over a
- * `border-hairline/30` edge. Both stops rebind, and the two ramps do not move in the
- * same direction — on the sheet ground `surface` is *lighter* than the canvas while on
- * console it is darker — so the gradient reads as a subtle inversion of itself rather
- * than going flat. The numeral stays `text-primary` and the label `text-secondary`, so
- * the hierarchy between them survives without either being pinned to a literal.
+ * `Stat`'s panel is not a flat fill: it is a `from-surface to-canvas` gradient. Both
+ * stops rebind with the ground, and what this cell shows is that the gradient keeps
+ * the **same** direction in both registers — light stop into dark stop — because
+ * `surface` is lighter than `canvas` on the sheet ramp as well as the console one.
+ *
+ * An earlier version of this note claimed the gradient "inverts" between grounds.
+ * It does not, and the claim was worth removing rather than softening: **only
+ * `surface-raised` and `surface-well` invert.** `surface` sits above `canvas` in both
+ * ramps (console `36,31,28` over `26,22,20`; sheet `255,253,250` over `251,247,241`),
+ * which is exactly why `Surface`'s tones are named for their role instead of their
+ * depth — the ladder is not uniform, so a name like `raised-1` would be a lie in one
+ * register. Do not generalise the inversion from `raised`/`well` to `surface`.
+ *
+ * The numeral stays `text-primary` and the label `text-secondary`, so the hierarchy
+ * between them survives without either being pinned to a literal.
+ *
+ * The wrapping `Surface` deliberately carries no `p-8`. The card provider already wraps
+ * every cell in one, and the 64px of column width the second copy costs is not free
+ * here: the numeral is `break-words` — `Stat`'s backstop against `overflow-hidden`
+ * clipping a long figure — so a narrower card does not shrink the type, it breaks the
+ * token. `<40ms` split to `<40m` / `s`, which pushed the third panel's rule and label
+ * 55px below its neighbours' and destroyed the row alignment this cell exists to show.
+ * Matching `InAGrid`'s width is what keeps the comparison to `ground` alone.
  */
 export function OnSheet() {
   return (
-    <Surface ground="sheet" tone="canvas" className="p-8">
+    <Surface ground="sheet" tone="canvas">
       <StatsGrid>
         <Stat number="11x" label="Faster customs clearance" />
         <Stat number="94%" label="Perishable loss avoided" />

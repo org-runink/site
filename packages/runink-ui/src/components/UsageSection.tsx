@@ -33,8 +33,8 @@ export interface UsageSectionProps extends Omit<HTMLAttributes<HTMLElement>, 'ti
  * filled `fill-success` circle (with its paired `on-success` ink) on hover, which is
  * the only interactive signal here (the cards are not links).
  *
- * Paints its own `primary-900` band, so place it between sections rather than
- * inside one.
+ * Paints its own `surface` band with `surface-raised` cards on it, so place it between
+ * sections rather than inside one.
  *
  * @example
  * <UsageSection

@@ -32,10 +32,17 @@ export function ThreeUp() {
  * How the metrics actually appear on a page: introduced by an eyebrow and a
  * headline inside a tinted band, so the numbers read as evidence for a claim
  * rather than as free-floating figures.
+ *
+ * The band is `bg-surface-raised`, not `bg-canvas`. It was canvas, which is the same
+ * value as the ground the cell renders on — so the "band" was byte-identical to the
+ * page behind it, had no edge anywhere, and the whole composition read as exactly the
+ * free-floating figures this cell exists to argue against. It demonstrated the
+ * opposite of its own claim. Same collapse as `PricingToggle`'s track, and the
+ * general rule is: **a band that has to be seen cannot be the ground it sits on.**
  */
 export function InABand() {
   return (
-    <div className="rounded-card bg-canvas p-8">
+    <div className="rounded-card bg-surface-raised p-8">
       <Badge tone="sage">Measured in production</Badge>
       <h2 className="mb-8 mt-4 font-heading text-3xl font-black text-primary">
         Mitigate disruption in real time
@@ -68,20 +75,28 @@ export function TwoRows() {
 }
 
 /**
- * The default trailing rhythm, made legible. The dashed box is the grid including
- * its stock `mb-20` — the gap the site relies on to separate a metric row from
- * whatever follows it. Pull it in with an inline `style` when the band already
- * supplies that rhythm; a `className` utility cannot win against it.
+ * The default trailing rhythm, made legible. The dashed rule is NOT on the grid — a
+ * margin renders outside the border box, so an outline on `StatsGrid` itself closes
+ * flush under the panels and shows none of the rhythm it is meant to draw. It sits on
+ * a plain wrapper instead, whose border keeps the child's margin from collapsing out,
+ * so the box measures the panels PLUS the stock `mb-20`: the numerals' panels end
+ * where the grid does, and the empty band between them and the rule is the margin.
+ *
+ * That gap is what the site relies on to separate a metric row from whatever follows
+ * it. Pull it in with an inline `style` when the band already supplies that rhythm; a
+ * `className` utility cannot win against it.
  */
 export function TrailingRhythm() {
   return (
     <div>
-      <Trace>dashed box = the grid, including its stock mb-20</Trace>
-      <StatsGrid className={OUTLINE}>
-        <Stat number="11x" label="Faster customs clearance" />
-        <Stat number="94%" label="Perishable loss avoided" />
-        <Stat number="38ms" label="Telemetry to decision" />
-      </StatsGrid>
+      <Trace>dashed box = the grid plus its stock mb-20 · panels end where the grid does</Trace>
+      <div className={OUTLINE}>
+        <StatsGrid>
+          <Stat number="11x" label="Faster customs clearance" />
+          <Stat number="94%" label="Perishable loss avoided" />
+          <Stat number="38ms" label="Telemetry to decision" />
+        </StatsGrid>
+      </div>
       <p className="leading-relaxed">
         Prose that follows the block. The distance from the numerals to this sentence is the
         rhythm `mb-20` exists to guarantee.
@@ -98,21 +113,29 @@ export function TrailingRhythm() {
  * so the ground cannot touch it. What the cell is really watching is the dashed rule —
  * `border-fill-accent`, a mark-tier token with a value in both registers, so the grid's
  * bounds and its stock `mb-20` stay visible against a light canvas — and `Stat`, whose
- * panel is a `from-surface to-canvas` gradient. Both of those stops rebind, and on the
- * sheet ground `surface` goes *lighter* than the canvas while the console ramp goes
- * darker, so the panel's gradient reverses direction rather than disappearing. That
- * inversion is the one thing here a reader should actually check.
+ * panel is a `from-surface to-canvas` gradient. Both stops rebind, and the gradient
+ * keeps the same direction in both registers rather than reversing: `surface` is
+ * lighter than `canvas` on the sheet ramp as well as the console one. What to check
+ * here is simply that the panel still separates from the page at all, since the two
+ * stops are only four levels apart on the light ramp.
+ *
+ * (An earlier version of this note promised a reversal and called it "the one thing a
+ * reader should actually check". There is no reversal — **only `surface-raised` and
+ * `surface-well` invert between grounds**, which is why `Surface`'s tones are named
+ * for role rather than depth.)
  */
 export function OnSheet() {
   return (
     <Surface ground="sheet" tone="canvas" className="p-8">
       <div>
-        <Trace>dashed box = the grid, including its stock mb-20</Trace>
-        <StatsGrid className={OUTLINE}>
-          <Stat number="11x" label="Faster customs clearance" />
-          <Stat number="94%" label="Perishable loss avoided" />
-          <Stat number="38ms" label="Telemetry to decision" />
-        </StatsGrid>
+        <Trace>dashed box = the grid plus its stock mb-20 · panels end where the grid does</Trace>
+        <div className={OUTLINE}>
+          <StatsGrid>
+            <Stat number="11x" label="Faster customs clearance" />
+            <Stat number="94%" label="Perishable loss avoided" />
+            <Stat number="38ms" label="Telemetry to decision" />
+          </StatsGrid>
+        </div>
         <p className="leading-relaxed">
           Prose that follows the block. The distance from the numerals to this sentence is the
           rhythm `mb-20` exists to guarantee.

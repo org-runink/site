@@ -3,7 +3,7 @@ import { LandingScenario, Surface } from '@runink/ui';
 /**
  * The canonical band: monospace "Target:" pill with its pulsing dot, the black
  * italic headline, lead paragraph, the monospace excerpt block on its
- * `secondary-500` rule, both CTAs, and the console-style visual with the `scale`
+ * `hairline` rule, both CTAs, and the console-style visual with the `scale`
  * glyph and the RECOVERY metric chip at 85%.
  */
 export function Default() {

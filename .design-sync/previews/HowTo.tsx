@@ -33,9 +33,15 @@ export function Default() {
  * class changed. Only `ground` differs, because every token rebinds underneath.
  *
  * The step cards are `bg-surface-raised` on a `bg-canvas` page, which on sheet means
- * *darker* than the page rather than lighter, and each numbered medallion is a solid
- * `bg-fill-accent` carrying `text-on-accent` — an ink that is light on both grounds.
- * This is the cell that confirms both still hold.
+ * *darker* than the page rather than lighter — `surface-raised` is one of the two
+ * tokens that genuinely inverts between grounds.
+ *
+ * Each numbered medallion is a solid `bg-fill-accent` carrying `text-on-accent`, and
+ * `on-accent` is **`#1A1614` — a near-black, and the same value in both registers.**
+ * It is one of the few tokens that deliberately does not flip: the accent orange is
+ * light enough in both ramps that dark ink is the legible choice on it either way.
+ * So the medallion numerals are dark on warm orange here exactly as they are on
+ * console, and that sameness is the point rather than a ground failure.
  */
 export function OnSheet() {
   return (

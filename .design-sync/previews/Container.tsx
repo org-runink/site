@@ -87,10 +87,18 @@ export function WithContent() {
 }
 
 /**
- * `className` merges onto the container, so a narrower cap for a reading measure
- * is a one-class override rather than a second wrapper. The wide box is the
- * default column, the narrow one is `max-w-2xl` — both stay centred and both keep
- * the same gutters.
+ * A narrower reading measure — and the trap in asking for one. The wide box is the
+ * default column; the narrow box is capped at `42rem`, which is `max-w-2xl`'s value,
+ * set through an inline `style`.
+ *
+ * It has to be. `max-w-2xl` passed via `className` renders a box the EXACT width of the
+ * default one: `cx` keeps the class and Tailwind compiles it, then `max-w-7xl` wins,
+ * because Tailwind resolves competing utilities by stylesheet order rather than class
+ * order and `7xl` is emitted last. The two dashed rules are the proof — the override
+ * that actually narrows the column is the `style` escape hatch, the same one
+ * `CardGrid` and `StatsGrid` need for their bottom margin. What `className` is good for
+ * is everything non-competing, which is why both boxes still centre and keep identical
+ * gutters.
  */
 export function NarrowMeasure() {
   return (
@@ -98,9 +106,11 @@ export function NarrowMeasure() {
       <Container className={OUTLINE}>
         <p className="py-2 font-mono text-[11px] text-secondary">default — max-w-7xl</p>
       </Container>
-      <Container className={`${OUTLINE} max-w-2xl`}>
+      <Container className={OUTLINE} style={{ maxWidth: '42rem' }}>
         <p className="py-2 leading-relaxed">
-          <span className="mb-2 block font-mono text-[11px] text-secondary">max-w-2xl</span>
+          <span className="mb-2 block font-mono text-[11px] text-secondary">
+            style maxWidth 42rem — the value of max-w-2xl, which className cannot deliver
+          </span>
           Discrepancies between cargo documents and terminal weight scales cause customs holds,
           fines and expensive demurrage. A narrower cap keeps long prose at a comfortable measure
           without leaving the shared content column.
@@ -134,9 +144,11 @@ export function OnSheet() {
         <Container className={OUTLINE}>
           <p className="py-2 font-mono text-[11px] text-secondary">default — max-w-7xl</p>
         </Container>
-        <Container className={`${OUTLINE} max-w-2xl`}>
+        <Container className={OUTLINE} style={{ maxWidth: '42rem' }}>
           <p className="py-2 leading-relaxed">
-            <span className="mb-2 block font-mono text-[11px] text-secondary">max-w-2xl</span>
+            <span className="mb-2 block font-mono text-[11px] text-secondary">
+              style maxWidth 42rem — the value of max-w-2xl, which className cannot deliver
+            </span>
             Discrepancies between cargo documents and terminal weight scales cause customs holds,
             fines and expensive demurrage. A narrower cap keeps long prose at a comfortable measure
             without leaving the shared content column.

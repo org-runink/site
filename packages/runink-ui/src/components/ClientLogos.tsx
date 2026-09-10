@@ -30,8 +30,10 @@ export interface ClientLogosProps extends HTMLAttributes<HTMLElement> {
  * logos are deliberately flattened — `grayscale` at 60% opacity — so the band reads
  * as texture and never competes with the section around it.
  *
- * Spans the viewport and draws its own `primary-800` rules top and bottom, so place
- * it between sections rather than inside one, and do not wrap it in a `Container`.
+ * Spans the viewport and draws its own `hairline` rules top and bottom (a single
+ * `border-y`), so place it between sections rather than inside one, and do not wrap it
+ * in a `Container`. It paints no band of its own — the rules are all it adds to
+ * whatever ground it is dropped onto.
  *
  * The loop comes from the `animate-marquee` token; a small scoped
  * `<style>` block carries only the four things that token cannot express — this

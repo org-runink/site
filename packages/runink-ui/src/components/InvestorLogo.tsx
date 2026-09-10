@@ -13,7 +13,7 @@ export interface InvestorLogoProps {
  *
  * Ported from the `investor-logo` shortcode. The grayscale-to-colour hover is the
  * whole point: a wall of logos reads as a quiet texture and only the one under the
- * cursor comes forward. With no `image` it degrades to a `primary-400` wordmark, so
+ * cursor comes forward. With no `image` it degrades to a `secondary` wordmark, so
  * a logo that has not been supplied yet still holds its place in the row.
  *
  * Only ever paints padding and centring — it expects a grid or flex row around it

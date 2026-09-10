@@ -45,9 +45,9 @@ export interface FaqProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
  * (the shortcode's technique, which needs no measured height), and a closed panel
  * is marked `aria-hidden` so assistive tech agrees with what is on screen.
  *
- * Paints its own `primary-900` band and `primary-800` rows, so drop it straight
- * onto `Surface` tone `canvas`; it owns its vertical rhythm and does not need a
- * `Section` wrapper.
+ * Paints its own `surface` band and `surface-raised` rows (a row's trigger goes
+ * `surface-well` on hover), so drop it straight onto `Surface` tone `canvas`; it owns
+ * its vertical rhythm and does not need a `Section` wrapper.
  *
  * @example
  * <Faq

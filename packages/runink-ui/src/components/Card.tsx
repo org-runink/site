@@ -22,12 +22,16 @@ export interface CardProps {
  * The system's linked content card: gradient icon tile, heading, supporting copy.
  *
  * This is the most-reused shape in the design system. Its whole personality is in
- * the hover state — border shifts to `brand-sage-dark`, the surface lightens, the
- * card lifts 1 unit, and the icon tile's gradient goes fully saturated. Those are
- * driven by `group-hover`, so the `group` class on the root is load-bearing.
+ * the hover state — the border shifts to `ink-success`, the panel moves to
+ * `surface-raised`, the card lifts 1 unit, and the icon tile's gradient goes fully
+ * saturated. Those are driven by `group-hover`, so the `group` class on the root is
+ * load-bearing.
  *
- * Sits on `Surface` tone `canvas` or `raised`; it paints its own translucent
- * `primary-900/30` panel and assumes something darker behind it.
+ * Sits on `Surface` tone `canvas` or `raised`. **The border is what makes this read
+ * as a card, not the fill.** `surface` over `canvas` is 1.05:1 on the sheet ramp, so
+ * an opaque panel still barely lifts off the ground there; `border-edge` (≥3.15:1 on
+ * every surface of both grounds) carries the boundary. `hairline` is a separator tier
+ * — 1.35:1 at best — and is only correct for a rule *inside* an already-bounded box.
  *
  * `href` is run through `safeHref`: a script-bearing destination degrades to the
  * static, unlinked card rather than becoming a clickable payload.
@@ -45,8 +49,12 @@ export function Card({ title, description, icon, href, className }: CardProps) {
   const body = (
     <div
       className={cx(
-        'h-full rounded-card border border-hairline/30 bg-surface/30 p-8 transition-all duration-300',
-        'hover:-translate-y-1 hover:border-ink-success hover:bg-surface-raised/50',
+        // Opaque panels, not `/30` translucency: a 30%-alpha `surface` over the sheet
+        // canvas lands within a byte of the ground, which is what made a row of these
+        // stop reading as cards there. The fill is still only a 1-level lift — the
+        // `edge` border is what bounds the card on both grounds.
+        'h-full rounded-card border border-edge bg-surface p-8 transition-all duration-300',
+        'hover:-translate-y-1 hover:border-ink-success hover:bg-surface-raised',
         className,
       )}
     >
@@ -55,7 +63,10 @@ export function Card({ title, description, icon, href, className }: CardProps) {
           <Icon name={icon} className="h-6 w-6 text-ink-success transition-colors group-hover:text-on-accent" />
         </div>
       )}
-      <h3 className="mb-3 text-xl font-bold text-primary group-hover:text-primary">{title}</h3>
+      {/* The heading rests on `primary` — the top of the ink ramp — so the
+          `group-hover:text-primary` it used to carry painted the rest state. The copy
+          below it is the line that actually moves, `secondary` → `primary`. */}
+      <h3 className="mb-3 text-xl font-bold text-primary">{title}</h3>
       <p className="text-sm leading-relaxed text-secondary group-hover:text-primary">{description}</p>
     </div>
   );

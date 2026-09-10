@@ -11,8 +11,8 @@ export interface StatProps {
 /**
  * A single headline metric on a gradient panel.
  *
- * The number carries the weight: `text-5xl`/`6xl`, `font-black`, in
- * `brand-paper` with a drop shadow. The label sits below a hairline rule. On
+ * The number carries the weight: `text-5xl`/`6xl`, `font-black`, in the `primary`
+ * ink with a drop shadow. The label sits below a hairline rule. On
  * hover a second gradient border fades in over the panel — that overlay is
  * absolutely positioned and `pointer-events-none`, so it never intercepts
  * clicks.

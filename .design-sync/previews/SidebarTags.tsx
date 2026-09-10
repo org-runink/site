@@ -61,8 +61,15 @@ export function OnSheet() {
 /**
  * Eighteen tags drawn from the real `/blog` taxonomy, constrained to a sidebar
  * column — the density the cloud is actually designed for, and the reason these
- * are bare inline links rather than pills. This is the cell where the wrapping
- * and the muted count colour read.
+ * are bare inline links rather than pills. This is the cell where the wrapping reads —
+ * eighteen names of very different lengths flowing into a 320px column at `gap-2`.
+ *
+ * Read the counts here as well, because they do not render what the component's own
+ * docstring promises. It describes the count as "muted a step below the tag itself";
+ * the count span and the tag link are both `text-secondary`, so at this density they
+ * are the same ink exactly and it is the parentheses, not a colour, doing the
+ * separating. The count only reads as muted against the panel heading, which is
+ * `text-primary`.
  */
 export function DenseCloud() {
   return (

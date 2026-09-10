@@ -27,8 +27,14 @@ export function Default() {
  * The same composition on the sheet ground. Not one class differs from `Default` —
  * only `ground`, because every token rebinds underneath: the meta row's
  * `text-secondary` and its three glyphs, which take `currentColor`, and the tag
- * pills' `bg-surface`. The component's own doc comment still claims it "needs a dark
- * canvas behind it"; this cell is the evidence that it no longer does.
+ * pills' `bg-surface`. This cell is the evidence that it wants a `canvas` ground
+ * rather than a *dark* one — the pills separate from the canvas in either register,
+ * which is what the component's doc comment now says.
+ *
+ * The tag pills are the thinnest margin in this component: `surface` over `canvas` is
+ * about 1.10:1 on console and **1.03:1 on the sheet**, and they carry no border. They
+ * read because their labels do, not because the pill shape does. Anything that
+ * reduces the label contrast here loses the pills entirely.
  */
 export function OnSheet() {
   return (
@@ -51,9 +57,14 @@ export function OnSheet() {
 }
 
 /**
- * No `author`: the row is `justify-between`, so reading time and date sit flush
- * right on their own. This is the cell that proves the row does not collapse or
- * re-centre when the byline is dropped.
+ * No `author`: the reading time and date sit flush **left**, holding the same left
+ * edge they occupy when a byline is present. This is the cell that proves the row
+ * does not collapse or re-centre when the byline is dropped.
+ *
+ * (This note used to say they sit flush *right*, reasoning from the row's
+ * `justify-between`. With the byline gone there is only one flex child left, and
+ * `justify-between` puts a lone child at the start — there is no second item for it
+ * to be pushed away from. The rendering was always right; the explanation was not.)
  */
 export function WithoutByline() {
   return (

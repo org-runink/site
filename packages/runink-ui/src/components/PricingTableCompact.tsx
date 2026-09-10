@@ -58,7 +58,7 @@ export interface PricingTableCompactProps extends Omit<HTMLAttributes<HTMLElemen
  * The featured card's absolutely positioned badge hangs above the card (`-top-4`),
  * so the grid needs the vertical room this section's `py-16` provides — do not
  * clip it with `overflow-hidden` on an ancestor. The section paints its own
- * `primary-900` band and brings its own rhythm, so do not wrap it in a `Section`.
+ * `surface` band and brings its own rhythm, so do not wrap it in a `Section`.
  *
  * @example
  * <PricingTableCompact

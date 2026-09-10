@@ -34,7 +34,7 @@ export interface CtaProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
  * `CtaBanner` when you are composing a layout in React and would rather pass
  * button objects.
  *
- * Like `CtaBanner` it owns its own vertical rhythm and expects the dark canvas
+ * Like `CtaBanner` it owns its own vertical rhythm and expects the `canvas` ground
  * behind it — drop it between prose blocks, not inside a `Section`. Both URLs are
  * sanitised by `CtaBanner` (via `safeHref`), so markdown-authored destinations
  * cannot smuggle a `javascript:` payload through this adapter.

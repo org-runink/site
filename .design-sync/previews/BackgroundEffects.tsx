@@ -66,9 +66,10 @@ function Copy({ eyebrow, title, body }: { eyebrow: string; title: string; body: 
 }
 
 /**
- * The default: the radial wash from `primary-900` to `primary-950` with the
- * violet `secondary-500` grid at 60px, which is exactly what the Hugo partial
- * hardcoded. On its own the component is invisible — it paints nothing but a
+ * The default: the radial wash from `surface` out to `canvas` with the `hairline` grid
+ * at 60px. The 60px cell is the one thing the Hugo partial hardcoded that survived —
+ * its violet line colour had no counterpart here, so the grid now rules in the same
+ * separator value as everything else. On its own the component is invisible — it paints nothing but a
  * backdrop — so it only ever grades as something you can see when it is behind
  * real content, as it is here.
  */

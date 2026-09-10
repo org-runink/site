@@ -33,37 +33,73 @@ Install/build the package with: `cd packages/runink-ui && npm install && npm run
 
 ## Tokens
 
-`DESIGN.md`'s YAML frontmatter is the source of truth. `npm run gen:tokens`
-(in `packages/runink-ui`) generates two committed artifacts:
+**Corrected 2026-09-10.** Everything this section previously said was wrong, and
+wrong in a way worth recording rather than quietly deleting.
 
-- `site/design-tokens.preset.js` — shared Tailwind preset, consumed by BOTH
-  `site/tailwind.config.js` and the package.
-- `packages/runink-ui/src/tokens.css` — the same tokens as `--color-*` custom
-  properties, so the synced bundle ships a token layer.
+### What was wrong
 
-Only tokens that **differ from Tailwind's stock theme** are emitted. DESIGN.md's
-type scale, spacing scale and motion durations are byte-identical to Tailwind's
-defaults and are intentionally not re-emitted.
+`DESIGN.md`'s YAML frontmatter was treated as the source of truth. That
+frontmatter defined `primary` as an indigo ramp and `secondary` as purple —
+both **verbatim `hugo-saasify-theme` vendor defaults**, from a theme file with a
+single commit in its history (`677d939`, the vendor drop). `DESIGN.md` itself was
+written by a bot (`da8c7f1`, `google-labs-jules[bot]`, *"Analyzed the codebase …
+to extract design tokens"*): it reverse-engineered the placeholder and canonised
+it. The chain was **vendor filler → bot "analysis" → DESIGN.md → preset → design
+system**, and nothing in the pipeline could tell the difference between a brand
+and a theme default, because every stage faithfully propagated its input.
 
-**Six values are NOT from DESIGN.md** — all injected in `scripts/gen-tokens.mjs`
-with a comment explaining why:
+Two of the six "invented" tokens above were self-inflicted. `primary-950` was
+justified as fixing 38 references in `layouts/` — but `primary-*` occurs **0**
+times at the merge base and on `origin/main`. Those 38 references were created by
+the uncommitted rename that was in the working tree at the time. The token was
+invented to solve a problem the same uncommitted work had introduced. Watch for
+this shape: a finding that justifies itself out of unlanded changes.
 
-| Token | Value | Why |
-|---|---|---|
-| `primary-950` | `#0f1330` | Referenced **38×** in `layouts/` but defined nowhere, so those backgrounds rendered transparent. The near-black canvas that replaced `stone-950` (`#0c0a09`). |
-| `brand-sage-dark` | `#A8B88B` | The hover border/icon accent throughout the card idiom (4× in layouts). |
-| `brand-copper` | `#B87333` | The hero halo's warm stop. |
-| `brand-ink-raised` | `#211F1F` | One surface written three ways in layouts (`#211F1F`, `#1f1d1b`, `#1a1716`, all within ~6 units). Named once so ports stop approximating. |
-| `shadow-neon-orange-strong` | `0 0 25px rgba(234,88,12,.3)` | The hover intensity; DESIGN.md defines only the at-rest glow. |
-| `shadow-neon-red` | `0 0 15px rgba(153,27,27,.3)` | DESIGN.md has glows for orange and green but not red, though `brand-red` is a first-class accent. |
+### What is true now
 
-Three **keyframes** are also promoted out of hand-written CSS into the preset, so
-they exist as `animate-*` utilities the React components can use:
-`cta-pulse` and `testimonials-scroll` are real `@keyframes` in
-`assets/css/main.css` reachable only via bare class names; **`pulse-slow` was
-referenced in layouts as `animate-pulse-slow` but defined nowhere** — a dead class
-given a real definition. `marquee` is a neutral alias for `testimonials-scroll`,
-which drives the client-logo wall as well as testimonials.
+The palette is **extracted from Runink FACE**, not authored here.
+`face/flutter/lib/core/theme/runink_theme.dart` is the authority; the web side
+vendors an ARGB snapshot and re-derives everything from it. Three committed
+inputs under `packages/runink-ui/tokens/`:
+
+- **`face-ramp.json`** — the snapshot, keyed by exact Dart field name, stamped
+  with the FACE commit it came from (`provenance.commit`). ARGB, not RGB, because
+  `textSecondary` carries a different alpha in each ramp (`0x99` / `0xB3`) and a
+  hex-only snapshot would silently drop it.
+- **`registry.json`** — the **only** place the web↔FACE rename lives. Each entry
+  carries `web`, `face`, `tier`, the Tailwind position keys the token may appear
+  in, and a `why`.
+- **`derived.json`** — the handful of web-only values, each with its measured
+  table.
+
+`npm run gen:tokens` reads those three and emits `src/tokens.css`,
+`site/design-tokens.preset.js` and `tokens/REGISTRY.md`. **Do not edit the
+outputs**; edit `registry.json`.
+
+### Three things about the emitted form that are load-bearing
+
+- **Channel triplets, not colours.** Every value is spelled
+  `rgb(var(--rk-x-ch) / <alpha-value>)`. Tailwind's `withAlphaValue` cannot parse
+  a bare `var()`, so a token emitted as `var(--rk-x)` makes **every** `bg-x/30`
+  in the codebase compile to nothing — silently, with no error, leaving a system
+  that still looks entirely plausible. `scripts/check-alpha-utilities.mjs` is the
+  permanent assertion against this.
+- **Per-position palettes.** `theme.textColor`, `backgroundColor`, `borderColor`
+  and friends are defined **independently** rather than all inheriting
+  `theme.colors`. That is what makes fill-vs-ink structural:
+  `text-fill-success` does not compile because `fill-success` has no `textColor`
+  entry. Misuse is a build error, not a review comment.
+- **Two grounds, cascading.** Ground blocks contain **only** `--*-ch:`
+  assignments, so the two ramps are trivially diffable and a missing token is a
+  visible hole. They are selected by `[data-ground]`, which cascades — so a
+  subtree can flip grounds, which a root-level `dark:` class cannot express.
+
+The four **keyframes** (`cta-pulse`, `marquee`, `testimonials-scroll`,
+`pulse-slow`) are still promoted into the preset so they exist as `animate-*`
+utilities. `cta-pulse` was re-coloured onto `--rk-fill-accent-ch`; it previously
+hard-coded the vendor orange as a literal `rgba()`. `pulse-slow` was referenced
+in layouts as `animate-pulse-slow` but defined nowhere — a dead class given a
+real definition.
 
 ## Porting traps
 
@@ -109,6 +145,211 @@ which drives the client-logo wall as well as testimonials.
    in the package's `content` globs. **Before that fix they silently no-opped**,
    which reads as a component bug. If you move the previews directory, update
    `packages/runink-ui/tailwind.config.cjs` or you will chase ghosts.
+5. **Every component carries one `OnSheet` cell.** It wraps the same composition
+   in `<Surface ground="sheet">` and changes **nothing else** — ideally not one
+   class differs from its console sibling. That is the point: the cell is a
+   controlled experiment, and it only proves the tokens rebind if `ground` is the
+   sole variable. A cell that also "fixes up" a colour to look good on light
+   proves nothing and hides the bug it was added to find.
+
+## What the light-ground pass found
+
+The dark ground was this system's only ground for its entire prior life, and
+`conventions.md` used to say *"There is no light mode. Do not build one."* Adding
+one cell per component surfaced a class of defect that **every screenshot taken
+until then had been blind to**, because all of them were of the dark ground:
+
+| Found | Count | Why it was invisible before |
+|---|---|---|
+| `text-white` | 98 | correct on console, invisible on sheet |
+| `shadow-neon-*` | 25 | retired by the migration; compiled to nothing |
+| dead `var(--color-*)` | 21 | an undefined var invalidates its **whole declaration** and CSS drops it silently — `BackgroundEffects`' grid rendered *nothing*, in every cell, on both grounds |
+| unqualified `prose-invert` | — | a hardcoded dark prose palette |
+| `bg-white/5` | — | a lift on console, an exact no-op on sheet |
+| solid fill + generic ink | 6 | the fill does not flip between grounds but the ink does |
+| near-white placeholder wordmarks | 7 | vanished into the sheet; `grayscale` preserves luminance rather than rescuing it |
+
+Two lessons worth more than the list. **The failure mode is silence** — every one
+of these renders a plausible-looking component rather than an obviously broken
+one, which is why the gates are scripts that count things rather than eyes on
+screenshots. And **`check-usage.mjs` cannot see the parent/child case**: it
+matches a fill and an ink on the *same element*, so a fill on a parent with the
+ink on a descendant is the identical bug and is invisible to it. Two real
+instances were found by agents reading code, not by the script. Treat a clean run
+as "no same-element pairing errors", never as "contrast is fine".
+
+## `-z-10` decoration needs a stacking context, or it paints nothing
+
+A negative z-index only stays inside its parent if that parent is a **stacking
+context**. `position: relative` alone is not one — it needs a `z-index`, or
+`isolation: isolate`. Otherwise the child escapes every `z-index: auto` ancestor
+and lands behind the nearest opaque background, rendering *nothing*.
+
+Three components use the pattern and **only one was broken**, which is what made
+it hard to see:
+
+| | ancestor chain | outcome |
+|---|---|---|
+| `Hero`'s orb | `Container` carries `z-10` | contained — paints |
+| `LandingScenario`'s glow | wrapper at `:118` carries `z-10` | contained — paints |
+| `BenefitsGrid`'s heading bloom | `div.relative` → `Container` → `section.relative`, all `z-index: auto` | escaped behind `Surface` — **painted nothing** |
+
+So "we use `-z-10` elsewhere and it works" was true and irrelevant. Fixed with
+`isolate` on the bloom's parent, which creates the context without touching
+layout. Grep for `-z-10` after any refactor that moves a decoration between
+wrappers — the defect is silent, and two docstrings described the glow for the
+whole time it was invisible.
+
+## Preview and component docstrings drift in both directions
+
+Only the **previews** are graded, so component docstrings quietly accumulate
+stale claims. Both directions occurred in the same component:
+
+- `PostMeta.tsx` kept "reading time and date sit flush right" long after the
+  preview was corrected to "flush left" — a correction applied to the graded file
+  only.
+- The `PostMeta` **preview** cited the component as still claiming it "needs a
+  dark canvas behind it", a phrase that had already been removed.
+
+When you correct a claim, grep the other file for the same sentence. And prefer
+not to quote one file's prose inside the other — a citation is a second copy that
+has to be maintained, and it will rot without anything failing.
+
+## Reading the sheets — two artifacts that produce false verdicts
+
+Both of these nearly cost real verdicts, in both directions.
+
+- **The tiled sheet under-reads light-ground contrast.** Downscaling into the
+  contact sheet compresses exactly the narrow luminance range the sheet ramp works
+  in, so a light-ground cell can look like it has a legibility problem it does not.
+  Two cells were nearly failed this way and were clean at full resolution.
+  **Any marginal call on the sheet ground must be re-checked against
+  `_screenshots/review/raw/`.**
+- **The raw captures clip; the contact sheet does not.** `raw/` is a fixed
+  900×700 (or 1280×1200) viewport, so a tall band genuinely runs past the bottom
+  edge there while being complete in the tiled sheet. That is a capture artifact,
+  not a clipping defect. Check the tiled sheet before failing a cell for clipping —
+  and the reverse of the rule above, so the two artifacts pull opposite ways and
+  neither view is authoritative alone.
+
+The general form: **the two views disagree in known, opposite directions.** Use
+raw for colour, tiled for extent.
+
+## Void grades by render hash, never by `git status`
+
+`.design-sync/.cache/review/` is **gitignored**. A deleted grade file is gone —
+no reflog, no `git checkout`. Roughly 4 agent-hours of verdicts live there with
+no backup, so deleting one is a one-way door.
+
+The temptation, after a fix wave, is to void the grades of every component whose
+file changed:
+
+```sh
+git status --short packages/runink-ui/src/components/ .design-sync/previews/ \
+  | sed 's|.*/||;s|\.tsx$||' | sort -u \
+  | sed 's|^|.design-sync/.cache/review/|;s|$|.grade.json|' | xargs -r rm -f --
+```
+
+**Do not.** `git status` cannot tell a JSDoc edit from a border change. A
+documentation sweep that touched 48 files — comment-only, incapable of moving a
+pixel — voided 48 verdicts when about 8 components had actually re-rendered. The
+other 40 were re-graded for nothing.
+
+The converter already solves this: `package-capture.mjs` compares **render
+hashes** and reports `N carried forward, M captured`. Let it decide. Run the full
+capture first and read what it says changed; only then void anything it did not
+carry forward. The one case that genuinely needs a manual void is a change the
+render hash cannot see — and there is exactly one of those, `--force` after a
+palette change, because the grade key does not include `srcSha` (see the trap
+above).
+
+Two smaller lessons from the same incident. **`cp … 2>/dev/null` hid the failure
+of the backup** that would have made the loss recoverable — do not silence the
+error on the command whose whole job is safety. And **the shell here is fish**,
+where `VAR=$(...)` is not an assignment: the first attempt at this deletion was a
+silent no-op that reported "0 deleted" against 54 intact files, which is how the
+second attempt came to be written without a dry run.
+
+## Order of operations — edit, build, capture, grade
+
+In that order, with no edits in between. It sounds obvious and it is easy to get
+wrong: a preview edited **after** `package-build.mjs` runs is not in the bundle,
+so the captured sheet renders the *old* code while the source on disk shows the
+new. Everything looks consistent — the source is right, the sheet exists, the
+capture reported success — and the only thing that disagrees is the pixels.
+
+This happened here. `UseCasesCarousel`'s six badge colours were retoned off the
+vendor hexes at 12:29:17; the compiled `_preview/UseCasesCarousel.js` was from
+12:22:54 and the sheet from 12:28:10. The grader caught it by sampling the badge
+ink, getting `#7c3aed` back, and reasoning that `--rk-ink-violet-ch` is
+`180 161 252` on console and therefore *could not* sample as that value. Nothing
+else in the pipeline would have flagged it: the source is correct, the checkers
+pass (they read source), and the capture had no reason to re-run.
+
+Two habits that make it unlikely: **rebuild immediately before capturing**, and
+when a grader reports a fix "did not work", check the artifact timestamps before
+re-opening the fix. The second one matters — the natural response to "still
+broken" is to change the code again, which would have made a correct fix worse.
+
+## The gates, and what each exists because of
+
+Five scripts under `packages/runink-ui/scripts/`. All are zero-dependency (node
+built-ins over committed inputs), so none needs an install and none can be
+skipped by a lockfile problem. `npm run check` runs them all; **`check:contrast`
+and `check:usage` also run in CI** (`.github/workflows/deploy.yaml`, before the
+builds).
+
+| gate | catches | written because |
+|---|---|---|
+| `check-contrast.mjs` | 208 assertions over both ramps: inks ≥4.5:1 on all four surfaces, marks ≥3:1, every fill still **fails** as ink, the chip wash ceiling still bites at .18, severity ordered and separable | a ratio against a bare token is a lie when 78 utilities carry alpha — it composites over the real backdrop first |
+| `check-usage.mjs` | solid fill under a generic ink; pinned `white`/`black`; unqualified `prose-invert`; raw hex; retired names; **undefined `var(--…)`**; backdrop-dependent `mix-blend-*` | an undefined var invalidates its whole declaration and CSS drops it **silently** — the rule renders nothing rather than rendering wrong |
+| `check-alpha-utilities.mjs` | every alpha-modified utility whose base compiles must itself compile | Tailwind cannot apply `/NN` to a bare `var()`; a token emitted without an `<alpha-value>` placeholder makes `bg-x/30` vanish with no error |
+| `check-collapsed-states.mjs` | a conditional or tone map painting two states the **same** colour, **and** a `hover:`/`focus:` that repeats its own rest state | a remap maps many source tokens onto fewer targets; four components kept accepting N tones and started painting N−1, and **19 interactions became dead** — including a `focus:` on a form input, which left keyboard users with no focus indication at all |
+| `check-face-parity.mjs` | the vendored snapshot vs a live FACE checkout | the palette is not ours to author — **skips loudly without `FACE_DIR`, so a skip is not a pass** |
+
+**Not in CI: `check:alpha`.** It reads the package's compiled
+`dist/runink-ui.css`, which is gitignored and is not produced by the deploy
+workflow — `pnpm run build` there compiles the *site's* Tailwind from a config
+that does not glob `packages/runink-ui/src`. Pointing it at `static/css/style.css`
+would find none of the classes it looks for and report a **vacuous pass**, which
+is worse than not running it. Do not "fix" it that way.
+
+### Three bugs found in the gates themselves
+
+Worth recording, because each made a checker *confidently wrong* rather than
+noisy, and that is the failure mode that matters here:
+
+- **A greedy regex made a whole scan vacuous.** `([a-z-]+)-(.+)` parses
+  `bg-fill-success` as position `bg-fill`, which is not a known position, so the
+  utility was skipped — `check-collapsed-states` printed a green tick while
+  seeing almost nothing. Split on the longest known position prefix instead,
+  sorted longest-first so `ring-offset` beats `ring`.
+- **Comments are not classes.** `check-usage`'s raw-hex rule fired on block
+  comments inside `cx(...)` that quote measured values — i.e. on exactly the
+  comments the project wants written. It strips comments now.
+- **Nested maps are not flat maps.** Flattening `Record<Tone, {panel, tile}>`
+  compares slots *across* tones and produced two confident false positives
+  (`Header.ACTIONS`'s `desktop`/`mobile`, which are two placements of one action
+  and are supposed to match). `check-collapsed-states` analyses flat maps only.
+- **A gate only sees the shape it was written for.** The first version compared
+  ternary arms and map keys, so it was blind to the *same* bug inside a single
+  class string — `border-hairline … group-hover:border-hairline`. Three instances
+  were found by an agent reading prose; adding the rule found **19**. When a human
+  finds a defect a gate should have caught, the gate is the bug.
+
+**Both no-op rules are scoped deliberately.** Only `hover`/`focus`/`active`-family
+variants count, and only single-variant ones: a `dark:` or `md:` variant repeating
+its base value is often a deliberate pin across a ground or breakpoint, and a
+compound like `md:hover:` is conditional on more than the pointer.
+
+### Two sanctioned exceptions, both enumerated rather than pattern-matched
+
+- **`BRAND_HEXES`** in `check-usage.mjs` — Snowflake `#29B5E8`, Databricks
+  `#FF3621`, Google `#4285F4`. A vendor's mark is not ours to tokenise; rendering
+  the Snowflake logotype in Runink's orange misrepresents someone else's
+  trademark. Enumerated, so a Runink colour smuggled in as a hex still fails.
+- **`mix-blend-normal`** is not flagged. It is the escape hatch a component uses
+  to *force* ground-neutrality over a caller's classes, which is the fix.
 
 ## The capture viewport — the binding constraint
 
@@ -136,7 +377,7 @@ Four independent batches converged on this, so it is the first thing to suspect.
   drawer cannot exist at any card viewport ≥768px. The preview portals into a
   frame with cloned stylesheets.
 
-## Open defect — `Header.DesktopBar` (graded `needs-work`, 1 of 215 cells)
+## Open defect — `Header.DesktopBar` (cell count was 215; it is 269 after the light-ground pass)
 
 The desktop four-flag **language switcher is compressed to a ~10px sliver** sitting
 outside the bar's right edge. The flags render, at near-zero width.
@@ -159,13 +400,25 @@ a real fix may mean thinning the nav rather than fitting it.
 
 ## Known render warns (triaged, expected — not new)
 
-- **`[FONT_REMOTE]`** for `Inter`, `Plus Jakarta Sans`, `Cambria`. Expected: the
-  package's `styles.css` carries the same Google Fonts `@import` that
-  `baseof.html` makes with a `<link>`. There are **no local `.woff2` files
-  anywhere in the repo**. `Cambria` is just part of Tailwind's stock `font-serif`
-  fallback chain, not a brand face. If this ever becomes `[FONT_MISSING]`, the
-  `@import` at the top of `packages/runink-ui/src/styles.css` was dropped — fix
-  that rather than substituting fonts.
+- **`[FONT_REMOTE]` no longer applies — corrected 2026-09-10.** The Google Fonts
+  `@import` is gone and `Inter` / `Plus Jakarta Sans` with it. The package now
+  self-hosts **Figtree** as `'Figtree Rk'`, matching FACE, from local `.woff2`
+  files (the old note's "no local `.woff2` files anywhere in the repo" is false
+  now). `Cambria` is also gone: it was never a brand face, only part of
+  Tailwind's stock `font-serif` fallback chain, and the preset now overrides
+  `serif` to drop it.
+
+  **`[FONT_MISSING]` is a failure here, not a warn.** The moment a declared face
+  has no file, both the reference and candidate panels render the same chromium
+  fallback — so the screenshots *match*, the capture looks clean, and every real
+  user gets the wrong font. Treat it as a hard stop.
+
+  One trap, worth its own line: Figtree is a **variable font whose default
+  instance is Light (300)**. Its `@font-face` **must** declare
+  `font-weight: 300 900`. Omit the range and every weight in the system renders
+  Light — including `font-black` headings, which simply look thin rather than
+  broken. There is a load-bearing comment on this in `src/fonts.css`; do not
+  "tidy" it away.
 - **`[DTS_STYLE_SYSTEM]`** filtering `@types/react` props. Informational.
 - **`[DOCS_UNMAPPED]`** for all 54 — there is no per-component docs tree; the
   `.prompt.md` files are synthesized from the `.d.ts` props plus the JSDoc, which
@@ -254,8 +507,11 @@ Ordered by how much they matter.
 
 - **`safeHref`** (`src/lib/safeHref.ts`) guards every link and form `action`. The
   Hugo templates got this free from `relURL`; React renders `javascript:` hrefs.
-  `content/test*.md` holds **seven XSS fixtures** aimed at `case-study-card`'s
-  link param — all verified blocked. Image `src` is deliberately **not** guarded:
+  **`content/tests/`** holds the XSS fixtures aimed at `case-study-card`'s link
+  param — all verified blocked. (They were at `content/test*.md`; they are drafts
+  under `content/tests/` now, and the `Guard published output` step in
+  `.github/workflows/deploy.yaml` is what keeps the next set from reaching
+  `gh-pages` — one of them once shipped a working CTA pointing at `//evil.com`.) Image `src` is deliberately **not** guarded:
   `javascript:` does not execute there, and guarding would break legitimate
   `data:` URI images.
 - **`SubscribeForm`'s success state is unreachable statically** — `submitted` is
@@ -273,17 +529,63 @@ Ordered by how much they matter.
 - **The React components can silently drift from the Hugo templates.** They were
   ported by hand on 2026-09-10 and nothing checks them against the shortcodes.
   Diff a shortcode against its component before trusting a no-change re-sync.
-- **The invented tokens are ours, not DESIGN.md's.** If DESIGN.md later defines
-  `primary-950`, `brand-sage-dark`, `brand-copper`, `brand-ink-raised` or the two
-  extra shadows, remove the injection from `scripts/gen-tokens.mjs` so DESIGN.md
-  wins.
+- **The palette belongs to FACE. Do not add a colour here.**
+  `scripts/check-face-parity.mjs` re-parses `_Ramp.dark` / `_Ramp.light` from a
+  live FACE checkout (via `FACE_DIR`) and diffs them against the vendored
+  snapshot. It **skips loudly** when `FACE_DIR` is unset, which is the normal
+  local case — so a skipped parity check is not a passing one. Run it with
+  `FACE_DIR` pointed at a real checkout before trusting a re-sync, and re-stamp
+  `face-ramp.json`'s `provenance.commit` whenever the snapshot moves.
+- **Grades do NOT clear when a component's source changes.** For
+  `shape: "package"` the converter passes no `srcSha`
+  (`package-build.mjs:838`), so source edits route to the spot-check canary tier
+  instead of invalidating verdicts. On a palette change that is exactly wrong:
+  every stale `good` carries forward over a completely different-looking system
+  and `resync.mjs` still exits 0. **On any change to colour, spacing or type,
+  capture with `--force`** and treat existing verdicts as void by construction
+  rather than as evidence.
+- **A scoped `package-capture.mjs --components …` run prunes the review sheets
+  for every component NOT in its scope.** Re-capturing two components after a fix
+  left 2 sheets on disk out of 54. Harmless if you know — the sheets regenerate —
+  but it will look like catastrophic data loss if you do not. Re-run the full
+  capture before grading.
 - **The component stylesheet is compiled against the live site's markup**
   (`tailwind.config.cjs` `content` includes `../../layouts`, `../../content`).
   Deleting site layouts shrinks the shipped CSS, so utilities the design agent
   relied on can vanish without any component changing. The `safelist` protects
   only the brand token families.
-- **Fonts are network-loaded.** If Google Fonts is ever swapped for self-hosted
-  files, wire `cfg.extraFonts` or every design renders in a fallback face.
+
+  **This fired, and here is what it looked like.** A content fact-check pass
+  removed whole sections, four images and a dead shortcode layer. The next build
+  dropped the CSS from 368,436 → 367,216 bytes and **2,611 → 2,605 rules**. The
+  fifteen selectors that disappeared were `bg-[url('/images/grid.svg')]`,
+  `bg-center`, the `[mask-image:…]` pair (the dead grid texture removed from
+  `hero.html`), `pt-32`/`pb-40` (the unused `size="double"` padding), and eight
+  literal-hex utilities that existed only in deleted content.
+
+  **The check that makes this safe takes one command.** Snapshot
+  `dist/runink-ui.css` before the build, diff the top-level selectors after, and
+  grep every dropped one against `packages/runink-ui/src` and
+  `.design-sync/previews`. If a dropped utility appears in either, a component or
+  preview has silently lost its styling; if it appears in neither, the shrink is
+  just the site shedding markup and is correct. Do this on any re-sync that
+  follows a content or layout change — the failure is invisible otherwise, and
+  every gate stays green while a card renders unstyled.
+
+  One trap while doing it: a dropped name can appear in package source as **prose
+  in a comment**. `grid.svg` matched `Hero.tsx` on this run, in the comment
+  explaining why the grid layer was deleted. Read the hit before acting on it.
+- **Fonts are self-hosted now** (Figtree, via `cfg.extraFonts`). The swap this
+  bullet used to warn about has happened. `layouts/partials/rk-fonts.html` has an
+  `errorf` gate that fails the Hugo build when a declared face has no file —
+  keep it, and run its negative control after changing the face list.
+- **Two colour systems still coexist in this repo.** `site/DESIGN.md` and
+  `assets/css/tokens.css` describe the *site's* identity (a stone ramp, the Fira
+  superfamily, the solid/hollow epistemic mark); `@runink/ui` now ships FACE's
+  (wine/olive/orange, Figtree). They are not reconciled, and the site's `--rk-*`
+  tokens reach only the `noindex` `/design/` specimen, so nothing is visibly
+  broken — but do not assume a name means the same thing on both sides of that
+  line.
 - **`BenefitsGrid` is authored to fit 700px**, so its copy is terser than the live
   band. A taller viewport override would let it carry full-length copy — declined
   this run because it clears four good grades for a cosmetic gain.

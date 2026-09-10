@@ -84,13 +84,39 @@ export function CustomHeading() {
 }
 
 /**
- * `backgroundColor` overriding the default `primary-950` canvas, applied inline
- * exactly as the shortcode's param did — the band's one colour axis.
+ * `backgroundColor` overriding the band's default canvas, applied inline exactly as the
+ * shortcode's param did — the band's one colour axis.
+ *
+ * The value is the wine provenance fill read off its token channel
+ * (`rgb(var(--rk-fill-provenance-ch))`) rather than a raw hex, so the override at least
+ * comes from the palette. It also has to be a colour that *reads*: this cell used to
+ * pass `#1C1917` against a default canvas of `rgb(26,22,20)`, which rendered a band
+ * indistinguishable from the one it was overriding and so proved nothing about whether
+ * the prop had fired at all.
+ *
+ * Spelling it as a `var()` buys one thing a hex does not: an inline `var()` still
+ * resolves in the element's own context, so the override follows a ground flip
+ * instead of being pinned to whichever register it was picked against.
+ *
+ * **It is a surface, not a fill, and that is the lesson.** This cell used to pass
+ * `fill-provenance`. The band's heading and standfirst are `text-primary` and
+ * `text-secondary`, which invert with the ground; wine is the *same value in both
+ * ramps*. So the ink walked toward the fill while the fill stayed put:
+ * `text-secondary` on wine measures 3.90:1 on console — legible only because
+ * `text-primary` happens to equal `on-provenance` there — and **1.41:1 on the sheet**.
+ * A surface token inverts along with the ink, so the pairing holds in both registers.
+ *
+ * The cost is that the override is now subtle rather than dramatic. That is the
+ * honest trade: this cell exists to show the prop fires *and* that an override still
+ * tracks the ground, and a band that only works on one of the two grounds cannot
+ * demonstrate the second half. `check-usage` cannot catch this class at all — the
+ * colour arrives as an inline style, not a class — so the exemplar is the only
+ * teaching there is.
  */
 export function CustomBackground() {
   return (
     <Testimonials
-      backgroundColor="#1C1917"
+      backgroundColor="rgb(var(--rk-surface-well-ch))"
       animate={false}
       title="What changed after go-live"
       description="Three continents, one ecosystem."
@@ -119,7 +145,8 @@ export function SingleQuote() {
  * deterministic rather than catching the marquee mid-translate. Not one class or prop
  * differs from it, only `ground`: the band paints `bg-canvas` when no `backgroundColor`
  * override is given, which is what lets it follow the ground at all. Pass that prop
- * (see `CustomBackground`) and this rebinding stops — an inline hex cannot.
+ * (see `CustomBackground`) and the band stops painting `bg-canvas` at all: the colour
+ * then comes from whatever the caller handed in, not from the surface.
  *
  * The headshot stays the same inline `data:` URI. It is an image, not a token, so it
  * does not rebind; what this cell grades is the card and the ink around it.

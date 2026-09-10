@@ -58,7 +58,7 @@ export function WordmarkFallback() {
  * The accent axis, against `Default`'s Databricks red: every coloured element —
  * pill tint, the 135° panel gradient, the CTA fill — is derived from
  * `accentColor`, so the card reads as the partner's while the surrounding panel
- * stays on the system's `primary-900`. One card per cell because the band is a
+ * stays on the system's `surface`. One card per cell because the band is a
  * full-width composition; two stacked overflow the capture viewport.
  */
 export function PartnerAccent() {

@@ -24,10 +24,17 @@ export interface PricingToggleProps extends Omit<HTMLAttributes<HTMLElement>, 'o
 /**
  * The monthly/annual segmented switch above a pricing table.
  *
- * A pill-shaped ink track with one button per option; the selected segment is the
- * solid `fill-accent` pill. Works controlled (`value` + `onChange`) or uncontrolled, and with
- * neither prop it still renders its first option selected, which is the state the
- * template booted into.
+ * A pill-shaped `surface-well` track with one button per option; the selected segment
+ * is the solid `fill-accent` pill. Works controlled (`value` + `onChange`) or
+ * uncontrolled, and with neither prop it still renders its first option selected,
+ * which is the state the template booted into.
+ *
+ * The track is a **well**, not the page ground. It was `bg-canvas`, which on a
+ * `canvas` band made its interior byte-identical to the ground: the inner shadow had
+ * nothing to recess against and the unselected end of the track simply could not be
+ * found. `surface-well` gives it a fill on both grounds, and the boundary is
+ * `border-edge` — `hairline` is the *same value* as `surface-well`, so it would have
+ * vanished against the new fill (the rule the registry already records).
  *
  * Two deliberate departures from the shortcode. Its inline `<script>` is gone:
  * selection is `useState`, and instead of mutating `data-pricing` on `<html>` and
@@ -75,10 +82,16 @@ export function PricingToggle({
     <section className={cx('py-4', className)} {...rest}>
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center">
+          {/*
+            `shadow-inner` is kept, but it is no longer load-bearing: it is a black
+            inset and so only reads on the light ground. The recess is now the
+            `surface-well` fill against the band's `canvas`, which moves with the
+            ground, plus the `edge` border that marks where the track ends.
+          */}
           <div
             role="tablist"
             aria-label={ariaLabel}
-            className="relative inline-flex rounded-full border border-hairline bg-canvas p-1.5 shadow-inner"
+            className="relative inline-flex rounded-full border border-edge bg-surface-well p-1.5 shadow-inner"
           >
             {options.map((option) => {
               const selected = option.value === active;
@@ -91,7 +104,9 @@ export function PricingToggle({
                   onClick={() => select(option.value)}
                   className={cx(
                     'relative z-10 rounded-full px-6 py-2.5 text-xs font-black uppercase tracking-[0.15em] transition-colors duration-300',
-                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-fill-accent focus-visible:ring-offset-1 focus-visible:ring-offset-surface',
+                    // Offset colour follows the track's own fill, which is what the
+                    // 1px gap actually exposes.
+                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-fill-accent focus-visible:ring-offset-1 focus-visible:ring-offset-surface-well',
                     selected
                       ? 'bg-fill-accent text-on-accent shadow-md'
                       : 'text-secondary hover:text-primary',

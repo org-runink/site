@@ -28,7 +28,7 @@ export interface HeroProps extends Omit<HTMLAttributes<HTMLElement>, 'children' 
    * directly instead of markup in a string.
    */
   headline: ReactNode;
-  /** Supporting sentence, set against a `hairline` left rule. */
+  /** Supporting sentence, set against an `edge` left rule. */
   subHeadline?: ReactNode;
   /** Label for the filled pill CTA. Rendered only with `primaryButtonUrl`. */
   primaryButtonText?: string;
@@ -46,12 +46,14 @@ export interface HeroProps extends Omit<HTMLAttributes<HTMLElement>, 'children' 
   heroImage?: string;
   /** Alt text for `heroImage`. Defaults to `"Hero Image"`, as the shortcode did. */
   heroImageAlt?: string;
-  /** Full-bleed photo layered into the band at 30% on `mix-blend-overlay`. */
+  /** Full-bleed photo layered into the band at 30% opacity. */
   backgroundImage?: string;
   /**
    * First stop of the band's background gradient, as a CSS colour. These arrive
    * from page front matter as raw hex (`"#3A2F2A"`) rather than tokens, so the
-   * gradient is an inline style. Omit both stops for the flat `primary-900` band.
+   * gradient is an inline style — and a raw hex cannot follow the ground, so a band
+   * given stops stays fixed while the sheet's ink inverts over it. Omit both stops for
+   * the flat `surface` band, which does follow.
    */
   gradientFrom?: string;
   /** Second stop of the gradient. Defaults to `gradientFrom` (a flat wash). */
@@ -80,9 +82,10 @@ export interface HeroProps extends Omit<HTMLAttributes<HTMLElement>, 'children' 
  * that must be clipped to it.
  *
  * The image column is a `group`; the gradient halo and the sheen over the
- * screenshot fade in on `group-hover`, and both are `pointer-events-none`. The
- * orbs render even with no `heroImage`, so the right column is never visually
- * empty.
+ * screenshot fade in on `group-hover`, and both are `pointer-events-none`. The orb
+ * renders even with no `heroImage`, so the right column is never visually empty —
+ * which is why it is sized off its own width (`aspect-square`) rather than off the
+ * column, whose height without a screenshot is zero.
  *
  * @example
  * <Hero
@@ -142,8 +145,17 @@ export function Hero({
        * `backgroundEffect={<BackgroundEffects />}`.
        */}
 
+      {/*
+        Plain alpha, not `mix-blend-overlay`. `overlay` is a function of the
+        backdrop: it multiplies against a dark one and SCREENS against a light one.
+        On the console band that darkened the photo into the surface; on the sheet
+        it would have blown the same photo out to near-white and lost it. No preview
+        passes `backgroundImage`, so no graded cell would ever have caught it — the
+        identical inversion was found in `LandingHero` only because its planes are
+        exercised.
+      */}
       {backgroundImage && (
-        <div className="absolute inset-0 opacity-30 mix-blend-overlay">
+        <div className="absolute inset-0 opacity-30">
           <img
             src={backgroundImage}
             alt=""
@@ -167,7 +179,12 @@ export function Hero({
             {subHeadline && (
               <p
                 className={cx(
-                  'border-l-4 border-hairline pl-6 leading-relaxed text-primary drop-shadow-md',
+                  // `border-edge`, not `hairline`: this rule is the only thing setting the
+                  // subhead apart, so it is load-bearing and needs the ≥3:1 tier. `hairline`
+                  // is the same value as `surface-well` and never exceeds 1.35:1 on any
+                  // surface — on the sheet it measured #EDE2D3 on #FFFCF9 and all but
+                  // vanished. `edge` measures 3.25–3.50:1 on all four surfaces of both ramps.
+                  'border-l-4 border-edge pl-6 leading-relaxed text-primary drop-shadow-md',
                   SUBHEAD_SIZES[size],
                 )}
               >
@@ -188,7 +205,11 @@ export function Hero({
               {secondaryButtonText && secondaryUrl && (
                 <a
                   href={secondaryUrl}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-hairline/50 bg-surface-raised/50 px-8 py-4 text-base font-bold text-primary backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-edge hover:bg-fill-accent-wash hover:text-primary"
+                  /* `hover:text-primary` is gone: the label already rests on `primary`,
+                     so it repainted the rest ink. The hover is the lift, the border
+                     moving from `hairline/50` to the `edge` mark tier, and the fill
+                     taking the accent wash — three real changes, none of them the ink. */
+                  className="inline-flex items-center justify-center rounded-full border-2 border-hairline/50 bg-surface-raised/50 px-8 py-4 text-base font-bold text-primary backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-edge hover:bg-fill-accent-wash"
                 >
                   {secondaryButtonText}
                 </a>
@@ -199,7 +220,7 @@ export function Hero({
           <div className="group relative lg:col-span-6">
             {heroImage && (
               <div className="relative z-10">
-                {/* Halo, green into the `brand-copper` accent. */}
+                {/* Halo, olive into the warm accent lift. */}
                 <div className="absolute -inset-1 rounded-card bg-gradient-to-r from-fill-success-glow to-accent-lift opacity-30 blur transition duration-1000 group-hover:opacity-60 group-hover:duration-200" />
                 <img
                   src={heroImage}
@@ -207,13 +228,34 @@ export function Hero({
                   fetchPriority="high"
                   className="relative w-full rounded-chip border border-hairline/50 bg-surface/50 shadow-2xl backdrop-blur-xl"
                 />
-                {/* Sheen across the screenshot on hover. */}
-                <div className="pointer-events-none absolute inset-0 rounded-chip bg-gradient-to-tr from-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-20" />
+                {/*
+                  Sheen across the screenshot on hover.
+
+                  `accent-lift`, not `white`: a white gloss is a dark-ground idiom
+                  that becomes an exact no-op on the sheet, where the screenshot
+                  beneath it is already near-white. `accent-lift` carries a value in
+                  both ramps (#E89B75 console, #D9764E sheet), so the sweep reads as
+                  a warm gloss on either. `primary` would be the obvious semantic
+                  pick, but it is a TEXT role with no gradient position by design —
+                  `from-primary/10` compiles to nothing.
+                */}
+                <div className="pointer-events-none absolute inset-0 rounded-chip bg-gradient-to-tr from-accent-lift/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-20" />
               </div>
             )}
 
-            {/* Orb behind the image column; renders with or without a screenshot. */}
-            <div className="absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 animate-pulse-slow rounded-full bg-fill-accent-wash blur-[100px]" />
+            {/*
+             * Orb behind the image column; renders with or without a screenshot.
+             *
+             * Sized `aspect-square` off its WIDTH, never `h-[120%]`. A percentage
+             * height on an absolutely positioned box resolves against its containing
+             * block, and with no `heroImage` this column's only child is the orb
+             * itself — out of flow, so the column measures 0 tall and `h-[120%]`
+             * computed to 0px. The orb was therefore absent in exactly the cells that
+             * exist to prove the right half is never empty, on both grounds, while
+             * rendering correctly whenever a screenshot was passed. The token is fine:
+             * `bg-fill-accent-wash` resolves on both grounds. This was geometry.
+             */}
+            <div className="absolute left-1/2 top-1/2 -z-10 aspect-square w-[120%] -translate-x-1/2 -translate-y-1/2 animate-pulse-slow rounded-full bg-fill-accent-wash blur-[100px]" />
           </div>
         </div>
       </Container>

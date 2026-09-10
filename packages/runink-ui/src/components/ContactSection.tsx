@@ -167,9 +167,14 @@ export interface ContactSectionProps extends Omit<HTMLAttributes<HTMLElement>, '
  * The focus ring carries a 1px offset on purpose: `ring-fill-accent` only measures
  * 3.02:1 over `surface-well` on the sheet ground, so on its own it can vanish into
  * the control. The offset gives it a guaranteed edge against the panel.
+ *
+ * The border moves to `fill-accent` on focus as well. It read `focus:border-hairline`,
+ * i.e. the value the control already rests on — a focus declaration that painted
+ * nothing, which left the ring carrying the entire keyboard affordance. Same fix as
+ * `SubscribeForm`'s field: ring and border move together.
  */
 const CONTROL =
-  'w-full rounded-card border border-hairline bg-surface-raised p-4 text-primary placeholder-secondary transition-all focus:border-hairline focus:outline-none focus:ring-1 focus:ring-fill-accent focus:ring-offset-1 focus:ring-offset-surface';
+  'w-full rounded-card border border-hairline bg-surface-raised p-4 text-primary placeholder-secondary transition-all focus:border-fill-accent focus:outline-none focus:ring-1 focus:ring-fill-accent focus:ring-offset-1 focus:ring-offset-surface';
 
 const LABEL = 'text-xs font-bold uppercase tracking-widest text-secondary';
 
@@ -198,7 +203,7 @@ const LABEL = 'text-xs font-bold uppercase tracking-widest text-secondary';
  * Two load-bearing details: the two glowing panels are each a `group` (their
  * gradient blooms brighten on hover), and the section is `overflow-hidden` +
  * `relative` so `backgroundEffect` can bleed without growing the page. Paints its
- * own `brand-ink` canvas and owns its `py-24` rhythm — put it directly in the page,
+ * own `canvas` band under a `hairline` top rule, and owns its `py-24` rhythm — put it directly in the page,
  * not inside a `Section`.
  *
  * @example
@@ -311,7 +316,12 @@ export function ContactSection({
                           <a
                             href={href}
                             {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                            className="inline-flex w-full items-center justify-center rounded border border-hairline bg-surface px-8 py-4 font-black uppercase tracking-widest text-primary transition-all duration-300 hover:-translate-y-1 hover:border-hairline "
+                            /* `hover:border-fill-accent`: the hover used to restate
+                               `border-hairline`, so the lift was the only thing that
+                               moved. This is a booking CTA, so it takes the accent
+                               border the system uses for "you can act here"
+                               (`Sidebar`'s active row is the same pairing). */
+                            className="inline-flex w-full items-center justify-center rounded border border-hairline bg-surface px-8 py-4 font-black uppercase tracking-widest text-primary transition-all duration-300 hover:-translate-y-1 hover:border-fill-accent"
                           >
                             <span className="mr-2">{method.actionText}</span>
                             <Icon name="arrow-right" className="h-5 w-5" />
@@ -330,8 +340,8 @@ export function ContactSection({
             <div
               aria-hidden="true"
               /*
-               * Two stops, no midpoint. Both purple `via-` stops are deleted rather
-               * than retinted: /10 and /20 are each at or under the 0.15 wash ceiling,
+               * Two stops, no midpoint. Both of the port's mid `via-` stops are deleted
+               * rather than retinted: /10 and /20 are each at or under the 0.15 wash ceiling,
                * so they would have collapsed to the same value and the hover would
                * have changed nothing. The hover now rides `from-fill-provenance/30` alone.
                */

@@ -39,8 +39,8 @@ export interface TeamMemberProps {
  * is `aspect-square` with `overflow-hidden`, which is what lets the optional
  * LinkedIn badge sit absolutely in its bottom-right corner.
  *
- * Sits on `Surface` tone `canvas` or `raised`; the portrait's fallback paints
- * its own `primary-800` panel.
+ * Sits on `Surface` tone `canvas` or `surface`; the portrait's fallback paints
+ * its own `surface-raised` panel, and the LinkedIn badge a `surface` one.
  *
  * **Never renders a broken image.** With no `image`, or if the portrait fails to
  * load, it draws the person's initials on that panel (and a neutral silhouette

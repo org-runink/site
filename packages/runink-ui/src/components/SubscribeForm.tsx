@@ -126,7 +126,14 @@ export function SubscribeForm({
               // `fill-accent` measures 3.02:1 over `surface-well` on the sheet
               // ground — zero headroom — so the focus ring carries a 1px offset in
               // the field's own ground rather than sitting flush on the border.
-              className="w-full rounded-card border border-hairline bg-canvas px-4 py-2 text-secondary placeholder:text-secondary focus:border-hairline focus:ring-2 focus:ring-fill-accent focus:ring-offset-1 focus:ring-offset-canvas"
+              //
+              // The BORDER moves on focus too. It said `focus:border-hairline`, which
+              // is the value the field already rests on — the declaration compiled and
+              // painted nothing, leaving the ring as the only focus signal. A focus
+              // state a keyboard user cannot see is an accessibility defect rather than
+              // a cosmetic one, so ring and border now move together and the field
+              // still reads as focused anywhere the ring is clipped or suppressed.
+              className="w-full rounded-card border border-hairline bg-canvas px-4 py-2 text-secondary placeholder:text-secondary focus:border-fill-accent focus:ring-2 focus:ring-fill-accent focus:ring-offset-1 focus:ring-offset-canvas"
             />
           </div>
 

@@ -26,8 +26,10 @@ export interface TestimonialCardProps {
  * A single customer quote: circular avatar, attribution, then the quote.
  *
  * Ported from the site's `.testimonial-card` class, whose `bg-stone-900 /
- * border-stone-800` pair is expressed here in the system's own ramp
- * (`primary-900` panel, `secondary-500/30` border).
+ * border-stone-800` pair is expressed here in the system's own ramp: a `surface`
+ * panel inside an `edge` border. The border is the card — `surface` over `canvas`
+ * measures 1.05:1 on the sheet ramp, so the fill cannot bound anything there, and
+ * `hairline` (a separator tier, 1.35:1 at best) disappeared into the ground.
  *
  * Deliberately **width-agnostic** — it fills whatever box it is given and takes
  * `h-full` so a row of them in a grid lines up. `Testimonials` is what gives it
@@ -49,7 +51,7 @@ export function TestimonialCard({ quote, name, role, avatar, avatarAlt, classNam
   const showAvatar = Boolean(avatar) && !avatarFailed;
 
   return (
-    <div className={cx('h-full rounded-card border border-hairline/30 bg-surface p-8', className)}>
+    <div className={cx('h-full rounded-card border border-edge bg-surface p-8', className)}>
       <div className="mb-6 flex items-center gap-4">
         {showAvatar ? (
           <img

@@ -86,6 +86,11 @@ const COLUMNS: Record<number, string> = {
  * activation: left/right arrows, Home and End move selection and focus, and only
  * the selected tab is in the tab order.
  *
+ * The selected tab is marked by the `fill-accent` border — plus the brighter icon
+ * tile and label it already carried — so which persona is showing is legible at
+ * rest, with no pointer anywhere near the strip. Unselected tabs are `hairline`
+ * and lift only as far as `edge` on hover.
+ *
  * The headline gradient is the brand sweep (`fill-accent` → `accent-lift`) — the
  * same pairing `GradientText`'s `ember` now carries — inlined here because this
  * heading also sets its own display sizing.
@@ -229,15 +234,38 @@ export function TabbedPitches({
                     // ground: flush, it measures 3.02:1 over `surface-well` on the
                     // sheet ground, i.e. no headroom.
                     'group flex flex-col items-center justify-center rounded-chip border bg-canvas px-4 py-6 text-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fill-accent focus-visible:ring-offset-1 focus-visible:ring-offset-canvas',
+                    /*
+                     * Selection is the ACCENT BORDER, not a second ground — which is
+                     * how FACE expresses selection (tokens/derived.json retires
+                     * `brand-sage-dark`, the port's invented hover green, for exactly
+                     * this reason). Both arms used to paint `border-hairline`, so the
+                     * five tabs were one colour until you pointed at one. `fill-accent`
+                     * is also what the focus ring already uses a few lines up, so
+                     * focus and selection stay one vocabulary rather than two.
+                     *
+                     * Unselected hover lifts to `edge` rather than repeating
+                     * `hairline`; it has to stay quieter than the accent so hovering a
+                     * neighbour never reads as selecting it.
+                     */
                     selected
-                      ? 'border-hairline'
-                      : 'border-hairline hover:border-hairline hover:bg-surface',
+                      ? 'border-fill-accent'
+                      : 'border-hairline hover:border-edge hover:bg-surface',
                   )}
                 >
                   <div
                     className={cx(
                       'mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-hairline transition-colors',
-                      selected ? 'bg-canvas' : 'bg-primary/5',
+                      /*
+                       * `primary` has no `backgroundColor` position in the registry,
+                       * so the unselected tile's old 5%-`primary` background compiled
+                       * to NOTHING — the tile showed the button's own `bg-canvas`
+                       * through, i.e. the same ground as the selected tile. Both
+                       * tints are real grounds now: the accent wash on the selected
+                       * tile, echoing its accent border, and the neutral well on the
+                       * rest. `surface-well` rather than `surface` because the button
+                       * itself goes `surface` on hover, which would swallow the tile.
+                       */
+                      selected ? 'bg-fill-accent-wash' : 'bg-surface-well',
                     )}
                   >
                     <Icon

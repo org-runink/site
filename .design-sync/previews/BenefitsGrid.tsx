@@ -133,14 +133,20 @@ export function UnevenCopy() {
 
 /**
  * `Default` on the sheet ground — the same three `DIGITAL_TWIN` benefits, carrying the
- * same per-item `sage` / `green` / `tan` tones. Not one class or prop differs, only
- * `ground`. The frosted panels and the heading glow are the interesting part here:
- * a translucent fill reads as a lift over a dark canvas and has to keep doing so over
- * a light one.
+ * same per-item `sage` / `green` / `tan` tones. Not one prop differs, only `ground`. The
+ * frosted panels and the heading glow are the interesting part here: a translucent fill
+ * reads as a lift over a dark canvas and has to keep doing so over a light one.
+ *
+ * The single departure from the house `OnSheet` wrapper is that this `Surface` carries
+ * no `p-8`. `BenefitsGrid` owns a `py-24` band of its own and is authored to fit the
+ * capture height exactly (see the re-sync notes), so 32px of extra padding top and
+ * bottom pushed the panels past the bottom edge — their lower borders and corners never
+ * rendered at all. The padding is redundant besides: the card provider already wraps
+ * every cell in a `Surface` with `p-8`, so the sheet patch still sits in a console frame.
  */
 export function OnSheet() {
   return (
-    <Surface ground="sheet" tone="canvas" className="p-8">
+    <Surface ground="sheet" tone="canvas">
       <BenefitsGrid
         title="Mitigate disruption in real time"
         subtitle="Live logistics telemetry, turned into decisions that protect your margins."

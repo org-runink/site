@@ -11,7 +11,7 @@ the design system's consistency is the whole product.
 | Hugo shortcodes (the source of truth for markup) | `../../layouts/shortcodes/*.html` |
 | Hugo partials | `../../layouts/partials/*.html`, and the theme's under `../../themes/hugo-saasify-theme/layouts/partials/` |
 | Icon registry (already ported) | `../../layouts/partials/icons.html` → `src/components/Icon.tsx` |
-| Design tokens (generated from `DESIGN.md`) | `../../design-tokens.preset.js` |
+| Design tokens (generated from `tokens/registry.json` + `tokens/derived.json`, **not** from `DESIGN.md`) | `../../design-tokens.preset.js` |
 | Component classes (`.btn`, `.container`, `.section`, `.card`) | `../../themes/hugo-saasify-theme/assets/css/main.css` |
 | Real usage examples (props in the wild) | `../../content/**/*.md` |
 

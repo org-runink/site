@@ -23,7 +23,20 @@ export interface TestimonialsProps {
   /**
    * Override the band background with any CSS colour — applied inline, exactly
    * as the shortcode's `background-color` param did. Omit it for the default
-   * `primary-950` canvas.
+   * `canvas` ground.
+   *
+   * **Pass a SURFACE, not a fill.** The band's copy is `text-primary` and
+   * `text-secondary`, which invert with the ground. A surface token (`surface`,
+   * `surface-raised`, `surface-well`) inverts along with them, so the pairing holds
+   * in both registers. A **fill** does not: `fill-provenance` is the same wine in
+   * both ramps, so `text-secondary` over it measures 3.90:1 on console and
+   * **1.41:1 on the sheet** — the ink walks toward the fill while the fill stays put.
+   * A literal hex is worse again, pinned to whichever ground it was picked against.
+   *
+   * Nothing can enforce this. The colour arrives as an inline style rather than a
+   * class, so the preset's fill/ink tiering never sees it and neither does
+   * `check-usage`. This is the one place in the component where the caller carries
+   * the contrast obligation.
    */
   backgroundColor?: string;
   className?: string;
@@ -55,8 +68,12 @@ const MARQUEE_CSS = `
  * A full-width social-proof band: centred heading, then a scrolling row of quotes.
  *
  * This is a whole page section, not a card — wrap it in `Surface`, don't nest it
- * inside another `Section`. It paints its own `primary-950` background (or an
- * arbitrary `backgroundColor`) edge to edge and manages its own container.
+ * inside another `Section`. It paints its own `canvas` ground (or an arbitrary
+ * `backgroundColor`) edge to edge and manages its own container.
+ *
+ * The band draws no boundary around the quotes: each `TestimonialCard` bounds itself
+ * with an `edge` border, which is what keeps the row readable as cards on the sheet
+ * ramp, where a `surface` card on this `canvas` ground is only a 1.05:1 lift.
  *
  * The row is a horizontal marquee: the track is a fixed-width flex row clipped by
  * `overflow-hidden`, and when `animate` is on the item list is rendered **twice**

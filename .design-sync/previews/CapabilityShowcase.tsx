@@ -47,10 +47,22 @@ export function Default() {
 }
 
 /**
- * The token-only fallback: every card on `accent: 'platform'`, flat headings with
- * no `titleAccent`, no eyebrow, and deliberately lopsided descriptions — the cell
- * that proves the `mt-auto` focus line still aligns across the row and that a card
- * belonging to no integration is not left colourless.
+ * The token-only fallback at its quietest: every card on the default
+ * `accent: 'platform'`, flat headings with no `titleAccent`, no eyebrow, and
+ * deliberately lopsided descriptions. Two things to read here.
+ *
+ * The `mt-auto` focus line sits on one baseline across the row however ragged the copy
+ * above it is — that is the layout claim, and the middle card runs three times the
+ * length of the third precisely to test it.
+ *
+ * The colour claim is the absence of one. `platform` contributes exactly two things: an
+ * ink for `titleAccent` and a hover border. Give it neither and the card carries **no
+ * accent at rest** — `surface`, the neutral `edge` boundary and the two text inks, with the band's
+ * ember heading the only colour in the composition. That is the honest resting state of
+ * a card belonging to no integration, and it is why the accent has to arrive through
+ * the heading: compare `MinimalFlatBand`, which is also `platform` throughout but
+ * supplies a `titleAccent`, so `text-ink-accent` shows on every card without borrowing
+ * a third-party brand hex the way `Default` does.
  */
 export function PlatformAccentFlatHeadings() {
   return (
@@ -82,7 +94,7 @@ export function PlatformAccentFlatHeadings() {
 }
 
 /**
- * No wash and no `focus` footers, on a flat `primary-950/50` band — the minimum
+ * No wash and no `focus` footers, on a flat `canvas/50` band — the minimum
  * viable configuration, and the contrast cell that shows what the background
  * effect and the pinned responsibility lines each add in the Default.
  */

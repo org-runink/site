@@ -5,10 +5,19 @@ import { GradientText } from './GradientText';
 import { Icon, type IconName } from './Icon';
 
 /**
- * Accent for one reason column. `sage` is the quiet, analytical treatment (green
- * bloom, sage accents, no lift); `ember` is the loud one the template reserved for
- * the column it wants you to pick — orange neon glow that deepens on hover, and the
- * panel lifts. Use `ember` on at most one column per grid.
+ * Accent for one reason column. `sage` is the quiet, analytical treatment: an olive
+ * bloom that brightens to `fill-success-glow/30` on hover, `ink-success` kicker and
+ * tiles, `shadow-2xl`, no lift. `ember` is the one the template reserved for the column
+ * it wants you to pick — `ink-accent` kicker and tiles, and the panel lifting a unit on
+ * hover.
+ *
+ * What `ember` no longer has is the loudness: the port gave it a neon orange glow, and
+ * this palette has no orange shadow to retint it to, so the glow was retired outright.
+ * Its bloom does still deepen — `fill-accent-wash` to `fill-accent/30` on column hover,
+ * the same wash-to-brighter move `sage` makes. It used to restate the wash on hover and
+ * change nothing, which left the lift carrying the entire state. `ember` is the louder of
+ * the two at rest, on its kicker and tiles, and it deepens on hover like `sage` does. Use
+ * it on at most one column per grid.
  */
 export type ReasonTone = 'sage' | 'ember';
 
@@ -21,7 +30,14 @@ const TONES: Record<ReasonTone, { panel: string; bloom: string; accent: string; 
   },
   ember: {
     panel: 'border-hairline/30 hover:-translate-y-1 ',
-    bloom: 'bg-fill-accent-wash group-hover:bg-fill-accent-wash',
+    /*
+     * `group-hover:bg-fill-accent/30` — the accent at double the wash alpha, which is the
+     * accent-side equivalent of `sage` going wash → `fill-success-glow/30`. The bloom is a
+     * `pointer-events-none` blurred disc that carries no text, so it is not bound by the
+     * 0.15 wash ceiling (derived.json: the ceiling exists because a wash sits UNDER ink).
+     * It previously restated `fill-accent-wash` on hover and moved nothing.
+     */
+    bloom: 'bg-fill-accent-wash group-hover:bg-fill-accent/30',
     accent: 'text-ink-accent',
     tile: 'text-ink-accent group-hover/item:border-hairline/50 group-hover/item:bg-fill-accent-wash',
   },
@@ -80,13 +96,13 @@ export interface ReasonsGridProps extends HTMLAttributes<HTMLElement> {
  * the reader can pick a level of intelligence rather than read a flat feature list.
  *
  * It owns its own `py-32` band, top border and `canvas` ground, so drop it
- * straight into a dark `Surface` — do **not** wrap it in `Section`, which would
+ * straight into a `Surface` — do **not** wrap it in `Section`, which would
  * double-pad it. The band is `relative overflow-hidden` because the per-column
  * blurred bloom is an absolutely positioned child that must be clipped to it.
  *
- * Each column is a `group` and each capability row a `group/item`: the bloom
- * saturates on column hover, and the icon tile tints on row hover. Both class names
- * are load-bearing.
+ * Each column is a `group` and each capability row a `group/item`: both blooms deepen on
+ * column hover, each within its own family (see `ReasonTone`), and the icon tile tints on
+ * row hover. Both class names are load-bearing.
  *
  * @example
  * <ReasonsGrid

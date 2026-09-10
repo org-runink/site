@@ -10,7 +10,7 @@ const HERO_IMAGE = `data:image/svg+xml;utf8,${encodeURIComponent(`<svg width="80
 
 /**
  * The canonical product hero, exactly as `content/products/face.md` configures
- * it: headline, a subhead against the `secondary-500` left rule, one filled CTA,
+ * it: headline, a subhead against the `border-edge` left rule, one filled CTA,
  * and the floating screenshot in the right column over the FACE brown gradient.
  */
 export function Default() {
@@ -37,7 +37,7 @@ export function Default() {
 
 /**
  * No gradient stops and no screenshot: the band falls back to a flat
- * `primary-900` and the image column still paints its pulsing orb, so the right
+ * `surface` and the image column still paints its pulsing orb, so the right
  * half is never visually empty. Both CTAs are present here — the outlined
  * secondary only renders when it has both a label and a surviving URL.
  */
@@ -57,9 +57,14 @@ export function FlatBandTwoCtas() {
 /**
  * The same composition on the sheet ground. Not one class differs from
  * `FlatBandTwoCtas` — only `ground`, because every token rebinds underneath: the
- * band's `bg-surface`, the headline and subhead inks, the `border-hairline` rule,
- * the filled CTA's `fill-accent`/`on-accent` pair, the outlined CTA, and the
+ * band's `bg-surface`, the headline and subhead inks, the subhead's `border-edge`
+ * rule, the filled CTA's `fill-accent`/`on-accent` pair, the outlined CTA, and the
  * accent orb behind the image column.
+ *
+ * That rule is `edge` rather than `hairline` because it is the only thing setting the
+ * subhead apart, and `hairline` never exceeds 1.35:1 against any surface on either
+ * ground — on this one it measured `rgb(237,226,211)` on `rgb(255,252,249)` and all
+ * but disappeared. `edge` clears 3:1 on all four surfaces of both ramps.
  *
  * The flat band is the cell to mirror rather than `Default`: `Default`'s gradient
  * stops arrive from page front matter as raw hex, so that band stays dark whatever

@@ -26,11 +26,48 @@ export interface FooterSocialLink {
   label: string;
   /** Profile URL. Sanitised with `safeHref`; a rejected or missing value drops the icon. */
   href?: string;
-  /** Icon path. Defaults to `/images/social/<label lowercased>.svg`, where the site keeps them. */
+  /**
+   * Icon path. Defaults to `/images/social/<label lowercased>.svg`, where the site
+   * keeps them. Painted as a **mask**, not loaded as an `<img>` — so it must be a
+   * single-colour glyph whose shape is its alpha. It takes the link's ink; any
+   * colour baked into the file is discarded.
+   */
   iconSrc?: string;
 }
 
 const LINK = 'text-secondary transition-colors hover:text-primary';
+
+/**
+ * Mask properties for one social glyph.
+ *
+ * The theme's social SVGs are `fill="currentColor"`, and the port loaded them with
+ * `<img src>`. An SVG in an `<img>` is an INDEPENDENT document: there is no `color`
+ * to inherit, so `currentColor` falls back to the initial value — pure black. That
+ * measured 1.1:1 on the canvas band and the LinkedIn mark was invisible on console
+ * (it only looked fine on sheet, where black happens to read). No class on the
+ * anchor can reach inside an `<img>`, so the fix has to stop it being one.
+ *
+ * Masking keeps `iconSrc` an arbitrary caller-supplied path while making the glyph's
+ * colour ours: the box is painted `bg-current` and the file supplies only the shape,
+ * so the anchor's `text-secondary` / `hover:text-primary` flow through and the mark
+ * reads on both grounds.
+ *
+ * `"` is percent-escaped because the URL goes inside a quoted `url("…")` — the prop
+ * is caller data and must not be able to terminate the string early.
+ */
+function maskStyle(iconSrc: string) {
+  const url = `url("${iconSrc.replace(/"/g, '%22')}")`;
+  return {
+    maskImage: url,
+    WebkitMaskImage: url,
+    maskSize: 'contain',
+    WebkitMaskSize: 'contain',
+    maskRepeat: 'no-repeat',
+    WebkitMaskRepeat: 'no-repeat',
+    maskPosition: 'center',
+    WebkitMaskPosition: 'center',
+  } as const;
+}
 
 export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
   /** Wordmark beside the logo, and the name in the copyright line. Defaults to `"Runink"`. */
@@ -62,14 +99,19 @@ export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> 
  * `params.footer.column_N_title`, the `footer_column_N` menus) is a prop here, so
  * column count, order and language are the caller's call.
  *
- * Paints its own `primary-950` band with a top border, which is the same value as
- * `Surface` tone `canvas` — so it sits flush at the bottom of a canvas page and
+ * Paints its own `canvas` band under a `hairline` top rule — the same value `Surface`
+ * tone `canvas` gives, so it sits flush at the bottom of a canvas page and
  * needs no wrapper of its own. It composes `Logo` at navigation size rather than
  * re-implementing the lockup smaller, per that component's contract.
  *
- * One deliberate deviation: the theme hovers column links to `primary-600`, which
- * *darkens* them — a leftover from when this footer sat on a light background. On
- * the dark canvas they hover to white instead.
+ * One deliberate deviation: the theme hovered column links to its `primary-600`, which
+ * *darkens* them — a leftover from when this footer sat on a light background. Here
+ * links rest on `secondary` and hover to `primary`, so the move reads on either ground.
+ *
+ * The social marks are **masked, not loaded as images**: the box takes the link's ink
+ * and the SVG supplies only the shape. The theme's files are `fill="currentColor"`,
+ * which resolves to pure black inside an `<img>` — invisible on the console band. So
+ * an `iconSrc` must be a single-colour glyph; its own colour is discarded.
  *
  * Every destination goes through `safeHref`: a rejected column link renders as
  * plain text, and a rejected social or bottom link is dropped.
@@ -143,7 +185,8 @@ export function Footer({
                       rel="noopener noreferrer"
                     >
                       <span className="sr-only">{item.label}</span>
-                      <img src={iconSrc} alt={item.label} className="h-5 w-5" />
+                      {/* Glyph as a mask over `bg-current` — see `maskStyle`. */}
+                      <span aria-hidden="true" className="block h-5 w-5 bg-current" style={maskStyle(iconSrc)} />
                     </a>
                   );
                 })}

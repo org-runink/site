@@ -35,9 +35,11 @@ export interface HowToProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
  * `id` of `step-1`, `step-2`, … matching the per-step anchor URLs the shortcode
  * emitted, so deep links into a single step keep working.
  *
- * Paints its own opaque `primary-900` panel with a 1.5rem radius and brings
+ * Paints its own opaque `surface` panel with a 1.5rem radius (`rounded-3xl`, not the
+ * `rounded-card` token — this panel is deliberately softer than a card) and brings
  * `mt-16` of its own rhythm — it is designed to sit at the end of a prose column
- * on `Surface` tone `canvas`, not inside a `Section`.
+ * on `Surface` tone `canvas`, not inside a `Section`. Each step row is a
+ * `surface-raised` panel inside it.
  *
  * @example
  * <HowTo

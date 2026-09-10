@@ -32,7 +32,7 @@ export function Default() {
 }
 
 /**
- * No portrait supplied — the frame paints its own `primary-800` panel and draws
+ * No portrait supplied — the frame paints its own `surface-raised` panel and draws
  * the person's initials. Real, intended behaviour: the card never renders a broken
  * image, so a statically screenshotted team grid always reads as portrait frames.
  */

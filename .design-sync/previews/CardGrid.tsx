@@ -86,30 +86,37 @@ export function FourUp() {
 }
 
 /**
- * The default trailing rhythm, made legible. The dashed box is the grid; the deep
- * space below it inside the rule is the stock `mb-32`, which is how the site
- * separates a card block from the prose that follows. Pull it in with an inline
- * `style` (as the other cells do) whenever the grid is not the last thing in its
- * section — a `className` utility cannot win against it.
+ * The default trailing rhythm, made legible. The dashed rule is NOT on the grid — a
+ * margin renders outside the border box, so an outline on `CardGrid` itself closes
+ * flush under the cards and draws nothing of the rhythm it is meant to show. It is on
+ * a plain wrapper instead, whose border stops the child's margin collapsing out, so the
+ * box measures the cards PLUS the stock `mb-32`: the cards end where the last row of
+ * copy does, and the deep band of empty space between them and the rule is the margin.
+ *
+ * That gap is how the site separates a card block from the prose that follows. Pull it
+ * in with an inline `style` (as the other cells do) whenever the grid is not the last
+ * thing in its section — a `className` utility cannot win against it.
  */
 export function TrailingRhythm() {
   return (
     <div>
-      <Trace>dashed box = the grid, including its stock mb-32</Trace>
-      <CardGrid cols={2} className={OUTLINE}>
-        <Card
-          icon="lock-stack"
-          title="Sovereign persistence"
-          description="Objects, records and vector indexes on infrastructure you control."
-          href="/platform/store"
-        />
-        <Card
-          icon="cpu-chip"
-          title="Sovereign inference"
-          description="Model servers you run yourself — no third-party inference API in the path."
-          href="/platform/inference"
-        />
-      </CardGrid>
+      <Trace>dashed box = the grid plus its stock mb-32 · cards end where the grid does</Trace>
+      <div className={OUTLINE}>
+        <CardGrid cols={2}>
+          <Card
+            icon="lock-stack"
+            title="Sovereign persistence"
+            description="Objects, records and vector indexes on infrastructure you control."
+            href="/platform/store"
+          />
+          <Card
+            icon="cpu-chip"
+            title="Sovereign inference"
+            description="Model servers you run yourself — no third-party inference API in the path."
+            href="/platform/inference"
+          />
+        </CardGrid>
+      </div>
       <p className="leading-relaxed">
         Prose that follows the block. The distance from the cards to this sentence is the
         rhythm `mb-32` exists to guarantee.
@@ -134,21 +141,23 @@ export function OnSheet() {
   return (
     <Surface ground="sheet" tone="canvas" className="p-8">
       <div>
-        <Trace>dashed box = the grid, including its stock mb-32</Trace>
-        <CardGrid cols={2} className={OUTLINE}>
-          <Card
-            icon="lock-stack"
-            title="Sovereign persistence"
-            description="Objects, records and vector indexes on infrastructure you control."
-            href="/platform/store"
-          />
-          <Card
-            icon="cpu-chip"
-            title="Sovereign inference"
-            description="Model servers you run yourself — no third-party inference API in the path."
-            href="/platform/inference"
-          />
-        </CardGrid>
+        <Trace>dashed box = the grid plus its stock mb-32 · cards end where the grid does</Trace>
+        <div className={OUTLINE}>
+          <CardGrid cols={2}>
+            <Card
+              icon="lock-stack"
+              title="Sovereign persistence"
+              description="Objects, records and vector indexes on infrastructure you control."
+              href="/platform/store"
+            />
+            <Card
+              icon="cpu-chip"
+              title="Sovereign inference"
+              description="Model servers you run yourself — no third-party inference API in the path."
+              href="/platform/inference"
+            />
+          </CardGrid>
+        </div>
         <p className="leading-relaxed">
           Prose that follows the block. The distance from the cards to this sentence is the
           rhythm `mb-32` exists to guarantee.

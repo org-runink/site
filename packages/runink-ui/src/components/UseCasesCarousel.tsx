@@ -84,11 +84,13 @@ function prefersReducedMotion(): boolean {
  * bleeding off the right edge. `autoAdvance` only nudges that same scroll
  * position, and never runs under `prefers-reduced-motion`.
  *
- * Each card is a `group`: the heading takes the accent colour, the card lifts 2
- * units and its glow comes up on hover.
+ * Each card is a `group`: on hover the heading goes `ink-accent`, the card lifts 2
+ * units and the link's gap opens. There is no glow — the card's `shadow-xl` is the
+ * same at rest and on hover, and the port's neon shadow had no counterpart here.
  *
- * This band paints its own `primary-950` canvas and top rule and spans the
- * viewport, so place it between sections rather than inside one.
+ * This band paints its own `canvas` ground under a `hairline` top rule and spans the
+ * viewport, so place it between sections rather than inside one. The cards are
+ * `surface-raised/80`, so the band's ground shows through them.
  *
  * @example
  * <UseCasesCarousel

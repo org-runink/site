@@ -14,7 +14,7 @@ export interface ValueCardProps {
 /**
  * A values / principles card — solid panel, large bare icon, no gradient tile.
  *
- * The quietest card in the family: it sits on an opaque `primary-800` panel and
+ * The quietest card in the family: it sits on an opaque `surface-raised` panel and
  * leans on elevation rather than colour, which is why it reads as editorial
  * rather than promotional. Used for "how we work" style content.
  *

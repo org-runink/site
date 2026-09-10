@@ -8,13 +8,18 @@ import type { ClientLogo } from '@runink/ui';
  * the bundle, so `/images/...` would 404 anyway. These are self-contained SVG
  * wordmarks for the same fictional operators the component's own `@example`
  * names, so every cell renders deterministically with no network.
+ *
+ * One tone for all of them, `#8A8178` — a mid warm grey, not the near-white these
+ * stand-ins used to carry. An image cannot rebind with the ground, so the only tone
+ * that works is one that reads on BOTH canvases after `grayscale` and 60% opacity.
+ * See `OnSheet` for the measured result.
  */
 type Mark = 'block' | 'ring' | 'chevron';
 
 const MARK: Record<Mark, string> = {
-  block: '<rect x="3" y="10" width="22" height="22" rx="6" fill="#E7E2D6"/>',
-  ring: '<circle cx="14" cy="21" r="9" fill="none" stroke="#E7E2D6" stroke-width="5"/>',
-  chevron: '<path d="M3 32 L14 10 L25 32 L18.5 32 L14 22 L9.5 32 Z" fill="#E7E2D6"/>',
+  block: '<rect x="3" y="10" width="22" height="22" rx="6" fill="#8A8178"/>',
+  ring: '<circle cx="14" cy="21" r="9" fill="none" stroke="#8A8178" stroke-width="5"/>',
+  chevron: '<path d="M3 32 L14 10 L25 32 L18.5 32 L14 22 L9.5 32 Z" fill="#8A8178"/>',
 };
 
 function wordmark(name: string, mark: Mark): string {
@@ -22,7 +27,7 @@ function wordmark(name: string, mark: Mark): string {
   const svg =
     `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="42" viewBox="0 0 ${width} 42">` +
     MARK[mark] +
-    `<text x="36" y="29" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#E7E2D6">${name}</text>` +
+    `<text x="36" y="29" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#8A8178">${name}</text>` +
     '</svg>';
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
@@ -98,13 +103,19 @@ export function FullWallStatic() {
  * differs from it, only `ground`: the band's heading and its flattening treatment
  * (`grayscale` at 60% opacity) both follow the surface.
  *
- * **Read this one expecting the marks to disappear.** A supplied logo is an image, not a
- * token, so it cannot rebind with the ground — and these stand-ins are drawn at
- * `fill="#E7E2D6"`, a near-white ink chosen for the console. On the sheet canvas that is
- * light-on-light, and 60% opacity makes it worse. The stand-ins are the preview's own,
- * so nothing ships broken; the real lesson is for the caller, because any customer
- * wordmark supplied as a single-tone light-on-dark asset fails here identically. A wall
- * that has to work on both grounds needs two assets, or marks with their own ground.
+ * All four marks stay readable here, and that is the point of how they are toned. A
+ * supplied logo is an image, not a token, so it cannot rebind with the ground — these
+ * stand-ins are drawn once at `fill="#8A8178"`, a mid warm grey that sits between the two
+ * canvases rather than being pinned to either. `grayscale` preserves luminance, so they
+ * flatten to about `rgb(130,130,130)`, and the band's 60% opacity composites that to
+ * roughly `rgb(178,177,174)` over the sheet canvas's `rgb(251,247,241)` — near 1.9:1,
+ * which is the flattening doing its job as texture rather than any contrast claim.
+ *
+ * The lesson is still the caller's, just inverted: a wordmark supplied as a single-tone
+ * NEAR-WHITE asset is the one that vanishes here, and nothing downstream can rescue it —
+ * `grayscale` keeps its luminance and the opacity only pushes it closer to the page. A
+ * wall that has to work on both grounds needs marks toned like these, two assets, or a
+ * ground of its own.
  */
 export function OnSheet() {
   return (

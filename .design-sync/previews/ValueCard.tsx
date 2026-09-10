@@ -52,7 +52,7 @@ export function InAGrid() {
 }
 
 /**
- * The icon sweep at a readable size: the 12×12 `secondary-500` glyph is the card's
+ * The icon sweep at a readable size: the 12×12 `ink-accent` glyph is the card's
  * only colour, so this is where a missing or mis-keyed icon would show up.
  */
 export function IconRange() {
@@ -78,9 +78,10 @@ export function IconRange() {
 }
 
 /**
- * Deliberately text-heavy with no icon — proves long descriptions wrap inside the
- * `primary-800` panel rather than overflowing it, and that the brand body face is
- * really loading.
+ * Deliberately text-heavy — proves a long description wraps inside the
+ * `surface-raised` panel rather than overflowing it, that the icon stays anchored at
+ * the top rather than centring against the block, and that the brand body face is
+ * really loading at this measure.
  */
 export function LongCopy() {
   return (

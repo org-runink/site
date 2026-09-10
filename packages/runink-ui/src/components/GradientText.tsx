@@ -21,8 +21,9 @@ export type GradientTextSweep = 'ember' | 'iris' | 'moss' | 'signal';
 const SWEEPS: Record<GradientTextSweep, string> = {
   ember: 'from-fill-accent to-accent-lift',
   moss: 'from-fill-success to-fill-success-glow',
-  // The landing hero's headline treatment: wine into the technical orange accent —
-  // the nearest legal analogue to the old rose-into-purple close.
+  // The landing hero's headline treatment: `fill-provenance` into `fill-accent` —
+  // wine into the technical orange. It is the nearest legal analogue to the close the
+  // port shipped here, whose second stop had no counterpart in this palette at all.
   signal: 'from-fill-provenance to-fill-accent',
   /** @deprecated No cool sweep survives the FACE palette; this is a deeper `ember`. Prefer `ember`. */
   iris: 'from-fill-accent-deep to-accent-lift',
@@ -66,8 +67,9 @@ export interface GradientTextProps extends HTMLAttributes<HTMLElement> {
  * Headline text filled with a brand gradient via background-clip.
  *
  * DESIGN.md treats gradients as a core component rather than decoration — this
- * is the treatment that makes bold headers punch against the dark canvas. Keep
- * it to the emphatic span of a heading, not the whole sentence.
+ * is the treatment that makes bold headers punch off the canvas — on either ground,
+ * since every stop is a fill rather than an ink and none of them is tuned for the
+ * console alone. Keep it to the emphatic span of a heading, not the whole sentence.
  *
  * @example
  * <h2 className="text-5xl font-black">

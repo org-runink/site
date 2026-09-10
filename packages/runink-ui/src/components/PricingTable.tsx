@@ -122,8 +122,11 @@ const CTA: Record<'solid' | 'outline', string> = {
  * `PricingToggle` above and pass its value down. On its own the table renders
  * monthly prices, which is the template's default.
  *
- * Sits on `Surface` tone `canvas`; it paints its own `brand-ink` panels and
- * brings its own vertical rhythm, so do not wrap it in a `Section`.
+ * The tier cards paint `canvas` themselves (`fill-accent-wash` on the highlighted
+ * one) and separate by `border-hairline` plus `shadow-2xl`, so prefer a `Surface` of
+ * tone `surface` under them — on a `canvas` ground the card fill is the same value as
+ * the page and the border is doing the whole job alone. It brings its own vertical
+ * rhythm, so do not wrap it in a `Section`.
  *
  * @example
  * const [period, setPeriod] = useState<PricingPeriod>('monthly');

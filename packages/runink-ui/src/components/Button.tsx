@@ -11,7 +11,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 /*
  * One accent, three emphasis levels — solid, tonal, neutral.
  *
- * `secondary` was `bg-secondary-600`, a second CHROMATIC variant, and FACE has no
+ * `secondary` was the port's `bg-secondary-600`, a second CHROMATIC variant, and FACE has no
  * second chroma to give it (olive and wine are semantic: success and provenance, not
  * "another button"). So emphasis carries the distinction instead: `primary` is the
  * solid accent fill, `secondary` is the same accent at wash strength with the accent

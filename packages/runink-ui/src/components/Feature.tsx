@@ -4,17 +4,38 @@ import { Button } from './Button';
 
 /**
  * Accent for the feature's eyebrow pill. The Hugo shortcode took a free-form
- * `badgeColor` hex (defaulting to `#5573df`, which is `primary-500`); the port
- * fixes that to the brand accents so the glow can be token-driven.
+ * `badgeColor` hex (defaulting to `#5573df`, the vendor theme's indigo — a hue this
+ * palette has nothing in); this fixes it to a closed set of tones so the pill and its
+ * glow are token-driven.
+ *
+ * Five rungs, loudest last: `primary` is the quiet accent wash, `sage` the pale
+ * olive wash, `green` the full-strength olive fill under its glow, `orange` the
+ * solid accent, and `tan` the warm neutral well.
  */
 export type FeatureBadgeTone = 'primary' | 'sage' | 'green' | 'orange' | 'tan';
 
+/*
+ * Two rules hold this map together.
+ *
+ * A SOLID FILL CARRIES ITS PAIRED INK. `green` and `orange` used to read
+ * `bg-fill-success text-primary` / `bg-fill-accent text-primary`, and `primary`
+ * inverts between grounds while both fills have a single value — so the pill was
+ * light-on-olive on console and dark-on-olive (2.5:1) on the sheet. `on-success`
+ * and `on-accent` exist precisely to be the fixed ink on a fixed fill.
+ *
+ * TWO OLIVES, TWO RUNGS. `sage` and `green` were the same colour, differing only
+ * by `shadow-lg` — a size, not a hue. The palette has one olive ink and one olive
+ * fill, so the honest distinction is the rung: `sage` takes the 15% wash with
+ * `ink-success` (the pairing `Badge`'s `sage` also carries, so the two agree), and
+ * `green` takes the full-strength fill, which is where `remap.json` sends the retired
+ * `bg-brand-green`.
+ */
 const BADGE_TONES: Record<FeatureBadgeTone, string> = {
-  primary: 'bg-fill-accent-wash text-ink-accent shadow-lg ',
-  sage: 'bg-fill-success text-primary shadow-lg shadow-glow-success',
-  green: 'bg-fill-success text-primary shadow-glow-success',
-  orange: 'bg-fill-accent text-primary ',
-  tan: 'bg-surface-well text-primary shadow-lg ',
+  primary: 'bg-fill-accent-wash text-ink-accent shadow-lg',
+  sage: 'bg-fill-success-wash text-ink-success shadow-lg',
+  green: 'bg-fill-success text-on-success shadow-glow-success',
+  orange: 'bg-fill-accent text-on-accent',
+  tan: 'bg-surface-well text-primary shadow-lg',
 };
 
 export interface FeatureProps {
@@ -58,7 +79,8 @@ export interface FeatureProps {
  * `imagePosition` — a left-hand image only makes sense once the row is two
  * columns wide.
  *
- * Paints no panel of its own, so it needs a dark `Surface` behind it.
+ * Paints no panel of its own, so it takes whatever `Surface` is behind it and follows
+ * that ground.
  *
  * @example
  * <Feature

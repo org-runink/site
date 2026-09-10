@@ -82,13 +82,17 @@ function CalendarIcon() {
  * The byline row for a blog post: author on the left, reading time and date on the right, tag pills beneath.
  *
  * This is the header strip of a single post page — it sits directly under the
- * post title, above the cover image. The row is `justify-between`, so with no
- * `author` the reading time and date sit flush right on their own, exactly as the
- * Hugo partial behaved.
+ * post title, above the cover image. The row is `justify-between`, so with an
+ * `author` the byline holds the left edge and the reading time and date hold the
+ * right. With **no** `author` there is only one flex child left, and
+ * `justify-between` places a lone child at the *start* — so the reading time and date
+ * sit flush **left**, on the same edge the byline would have used. (This note used to
+ * say they sit flush right, reasoning from `justify-between` without accounting for
+ * the single-child case. The rendering was always correct; the explanation was not.)
  *
- * Inherits body text colour from `Surface`; it paints only its own muted
- * `primary-400` meta text and `primary-900` tag pills, so it needs a dark canvas
- * behind it.
+ * Inherits body text colour from `Surface`; it paints only its own muted `secondary`
+ * meta text and `surface` tag pills (hovering to `surface-raised`), so it wants a
+ * `canvas` ground — that is the one those pills separate from on either register.
  *
  * Tag links go through `safeHref`: a script-bearing destination degrades to a
  * plain pill rather than becoming a clickable payload.

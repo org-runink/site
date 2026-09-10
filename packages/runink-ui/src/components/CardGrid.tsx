@@ -33,6 +33,11 @@ export interface CardGridProps extends HTMLAttributes<HTMLDivElement> {
  * Cards inside it stretch to the row height (`Card` is `h-full`), so mixed copy
  * lengths still line up.
  *
+ * The grid draws nothing of its own — no ground, no rules, no boundaries. Whether a
+ * row reads as cards is entirely the child's business, and on the sheet ramp that
+ * means the child needs an `edge` border: `gap-8` alone is not a boundary, and a
+ * `surface` fill is only a 1.05:1 lift off the canvas there.
+ *
  * @example
  * <CardGrid cols={3}>
  *   <Card

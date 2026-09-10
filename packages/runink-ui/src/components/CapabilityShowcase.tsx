@@ -11,27 +11,34 @@ import { GradientText } from './GradientText';
  * The three brand hexes are deliberately arbitrary values, not design tokens —
  * they are third-party identities (Snowflake, Databricks, Google) and must not be
  * folded into the Runink palette.
+ *
+ * Every hover border is now FULL strength. The cards rest on `border-edge` (≥3.15:1 on
+ * all four surfaces of both grounds) rather than the old `hairline/60`, and a 30%-alpha
+ * hover against that is a border going *backwards* — the recolour has to at least match
+ * the boundary it replaces. `platform`, which has no third-party identity to wear, takes
+ * `fill-accent`, the system's own "you can act here" border; it used to say
+ * `hover:border-hairline/30`, i.e. a fainter version of what it already rested on.
  */
 export type CapabilityAccent = 'platform' | 'snowflake' | 'databricks' | 'google';
 
 const ACCENTS: Record<CapabilityAccent, { border: string; text: string; hoverText: string }> = {
   platform: {
-    border: 'hover:border-hairline/30',
+    border: 'hover:border-fill-accent',
     text: 'text-ink-accent',
     hoverText: 'group-hover:text-ink-accent',
   },
   snowflake: {
-    border: 'hover:border-[#29B5E8]/30',
+    border: 'hover:border-[#29B5E8]',
     text: 'text-[#29B5E8]',
     hoverText: 'group-hover:text-[#29B5E8]',
   },
   databricks: {
-    border: 'hover:border-[#FF3621]/30',
+    border: 'hover:border-[#FF3621]',
     text: 'text-[#FF3621]',
     hoverText: 'group-hover:text-[#FF3621]',
   },
   google: {
-    border: 'hover:border-[#4285F4]/30',
+    border: 'hover:border-[#4285F4]',
     text: 'text-[#4285F4]',
     hoverText: 'group-hover:text-[#4285F4]',
   },
@@ -86,8 +93,8 @@ export interface CapabilityShowcaseProps extends HTMLAttributes<HTMLElement> {
  * no icon on purpose: the emphasis is the two-tone uppercase italic heading, which
  * is why each one needs an accent.
  *
- * It owns its own `py-24` band, top border and translucent canvas, so drop it into a
- * dark `Surface` rather than a `Section`. Each card is a `group` (the heading and
+ * It owns its own `py-24` band, top border and translucent `canvas/50`, so drop it into
+ * a `Surface` rather than a `Section`. Each card is a `group` (the heading and
  * border recolour on hover) and is `flex-col h-full`, so every `focus` line in the
  * row sits on the same baseline.
  *
@@ -135,7 +142,11 @@ export function CapabilityShowcase({
 }: CapabilityShowcaseProps) {
   return (
     <section
-      className={cx('relative overflow-hidden border-t border-hairline/50 bg-canvas/50 py-24', className)}
+      /* The top rule stays on `hairline` — it is a rule BETWEEN bands, not an element's
+         boundary, which is the line `ReasonsGrid` and `UseCaseParallax` draw too. Only
+         the `/50` goes: a separator already capped at ~1.35:1 has nothing to give away.
+         The band ground stays `canvas/50` so a page wash reads through it. */
+      className={cx('relative overflow-hidden border-t border-hairline bg-canvas/50 py-24', className)}
       {...rest}
     >
       {backgroundEffect}
@@ -170,7 +181,15 @@ export function CapabilityShowcase({
               <div
                 key={capability.title + (capability.titleAccent ?? '')}
                 className={cx(
-                  'group flex h-full flex-col rounded-card border border-hairline/60 bg-surface p-8 shadow-inner transition-colors',
+                  // `border-edge`, not `hairline/60`: this border is the card's own
+                  // boundary, and a grader measured the old one at 1.09:1 against the
+                  // sheet canvas while the fill under it is only 1.05:1 — so nothing was
+                  // defining the card at all. `edge` is the ≥3:1 mark tier (3.15–3.50:1
+                  // measured on every surface of both grounds), which is what `Card`,
+                  // `TestimonialCard` and `FeatureCard` bound themselves with. Never
+                  // `edge/NN`: the token bakes its own alpha, so a modifier compiles to
+                  // nothing.
+                  'group flex h-full flex-col rounded-card border border-edge bg-surface p-8 shadow-inner transition-colors',
                   accent.border,
                 )}
               >

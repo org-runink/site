@@ -1,10 +1,32 @@
 import { PostCard, Surface } from '@runink/ui';
 
+/*
+ * Covers are IMPORTED, never referenced as paths. `/images/...` 404s in the preview
+ * render — the capture server serves only the bundle and nothing copies `static/` in,
+ * so a path renders a blank 14rem banner. `.ds-sync/lib/story-imports.mjs` maps every
+ * raster extension onto esbuild's `dataurl` loader, so each of these inlines.
+ *
+ * They import from `assets/` rather than `static/images/blog/` because `dataurl`
+ * means the file lands in the bundle base64-encoded, at 4/3 its size on disk. The
+ * four real post headers are 40 KB–1.1 MB PNGs sized for a full-bleed hero, and
+ * inlining them verbatim made `_preview/PostCard.js` **3.8 MB — 45% of the whole
+ * bundle** for one component's card. These are the same four images downscaled to
+ * 720px wide, which is already generous for a 14rem banner captured at 900px:
+ * 2.9 MB of PNG becomes 456 KB of JPEG, and the pairings stay the posts' own.
+ *
+ * If you add a cover, downscale it the same way. Nothing in the pipeline will warn
+ * you — the bundle just quietly grows.
+ */
+import demurrageCover from './assets/demurrage-detention-fees-prevention-header.jpg';
+import coldChainCover from './assets/cold-chain-logistics-temperature-control-header.jpg';
+import billOfLadingCover from './assets/bill-of-lading-header.jpg';
+import lastMileCover from './assets/last-mile-delivery-optimization-header.jpg';
+
 /**
  * The canonical `/blog` teaser, from the front matter of
  * `content/blog/demurrage-detention-fees-prevention.md`. Only the first category
  * is drawn, as the gradient badge above the date. The cover is the post's real
- * `featured_image`, cropped into the 14rem banner.
+ * `featured_image`, inlined and cropped into the 14rem banner.
  */
 export function Default() {
   return (
@@ -12,7 +34,7 @@ export function Default() {
       title="Demurrage and Detention Fees — The Silent Margin Killer and How to Fight Back"
       href="/blog/demurrage-detention-fees-prevention/"
       description="Demurrage and detention fees drain $5B+ annually from global supply chains. Learn how AI-driven container visibility and automated dispute resolution cut costs by 40-60%."
-      image="/images/blog/demurrage-detention-fees-prevention-header.png"
+      image={demurrageCover}
       categories={['Freight Finance', 'Maritime Logistics']}
       date="June 5, 2026"
       dateTime="2026-06-05"
@@ -51,7 +73,7 @@ export function InAGrid() {
         title="Cold Chain Logistics — Why Temperature Excursions Cost More Than You Think"
         href="/blog/cold-chain-logistics-temperature-control/"
         description="Temperature excursions destroy product value and trigger regulatory violations. Learn how real-time IoT telemetry and AI-driven platforms cut cold chain spoilage by 25-40%."
-        image="/images/blog/cold-chain-logistics-temperature-control-header.png"
+        image={coldChainCover}
         categories={['Cold Chain', 'Pharma Logistics']}
         date="June 9, 2026"
         dateTime="2026-06-09"
@@ -61,7 +83,7 @@ export function InAGrid() {
         title="The Bill of Lading: The Swiss Army Knife of Global Trade"
         href="/blog/what-is-bill-of-lading/"
         description="Why one piece of paper rules the ocean. A deep dive into the legal functions of the Bill of Lading."
-        image="/images/blog/bill-of-lading-header.png"
+        image={billOfLadingCover}
         categories={['Logistics Law', 'Supply Chain', 'Maritime']}
         date="April 29, 2026"
         dateTime="2026-04-29"
@@ -71,7 +93,7 @@ export function InAGrid() {
         title="Last-Mile Delivery Optimization — Why It's the Most Expensive Part of Your Supply Chain"
         href="/blog/last-mile-delivery-optimization/"
         description="Last-mile delivery accounts for 53% of total shipping costs. Learn how dynamic routing, PUDO networks, and AI-powered prediction cut costs 20-30%."
-        image="/images/blog/last-mile-delivery-optimization-header.png"
+        image={lastMileCover}
         categories={['Last-Mile Logistics', 'E-Commerce Operations']}
         date="April 27, 2026"
         dateTime="2026-04-27"
@@ -127,7 +149,7 @@ export function OnSheet() {
         title="Demurrage and Detention Fees — The Silent Margin Killer and How to Fight Back"
         href="/blog/demurrage-detention-fees-prevention/"
         description="Demurrage and detention fees drain $5B+ annually from global supply chains. Learn how AI-driven container visibility and automated dispute resolution cut costs by 40-60%."
-        image="/images/blog/demurrage-detention-fees-prevention-header.png"
+        image={demurrageCover}
         categories={['Freight Finance', 'Maritime Logistics']}
         date="June 5, 2026"
         dateTime="2026-06-05"

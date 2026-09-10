@@ -5,9 +5,10 @@ export interface BackgroundEffectsProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * Line colour of the grid overlay. Any CSS colour works — a token reference
    * (`rgb(var(--rk-fill-success-ch))`), a channel function, or a raw hex for a
-   * third-party brand colour. Defaults to `rgb(var(--rk-hairline-ch))`, the
-   * custom property behind `secondary-500`, which is the violet the Hugo partial
-   * hardcoded as `#a855f7`.
+   * third-party brand colour. Defaults to `rgb(var(--rk-hairline-ch))` — the channel
+   * behind `hairline`, so the grid rules in the same value as every other separator
+   * and rebinds with the ground. The Hugo partial hardcoded a violet `#a855f7` here;
+   * that colour has no counterpart in this palette and did not survive.
    */
   color?: string;
   /**
@@ -19,10 +20,13 @@ export interface BackgroundEffectsProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * The house backdrop: a radial wash from `primary-900` to `primary-950` with a faint grid ruled over it.
+ * The house backdrop: a radial wash from `surface` out to `canvas` with a faint grid ruled over it.
  *
- * This is the layer that makes a dark band read as a lit space rather than a flat
- * rectangle. It is what the `backgroundEffect` slot on `Hero`, `TabbedPitches`,
+ * This is the layer that makes a band read as a lit space rather than a flat
+ * rectangle. The circle is centred at the top, so the lift is `surface` against the
+ * `canvas` it falls away to — and `surface` is the lighter of the two in *both*
+ * registers, which is why the wash needs no per-ground handling even though `raised`
+ * and `well` invert. It is what the `backgroundEffect` slot on `Hero`, `TabbedPitches`,
  * `ContactSection`, `ReasonsGrid`, `CapabilityShowcase`, `UseCasesCarousel` and
  * `UseCaseParallax` is for — pass it there rather than placing it by hand.
  *

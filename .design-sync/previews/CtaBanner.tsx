@@ -54,9 +54,11 @@ export function PrimaryOnly() {
 }
 
 /**
- * `gradientFrom` + `gradientTo` switch the glow off the token ramp
- * (`rose-800` → `secondary-500`) and onto an explicit `linear-gradient`. Brand
- * sage into brand orange, so the retint is unmistakable against `Default`.
+ * `gradientFrom` + `gradientTo` switch the glow off the token stops
+ * (`fill-provenance` → `accent-lift`) and onto an explicit `linear-gradient`. The two
+ * values here are raw hex from the port's palette, not tokens — a pale sage into a hot
+ * orange — so the retint is unmistakable against `Default`. Raw hex is also the point
+ * of the escape hatch and its cost: these stops cannot follow the ground.
  */
 export function CustomGradient() {
   return (

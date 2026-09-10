@@ -29,11 +29,14 @@ export interface SidebarTagsProps extends Omit<HTMLAttributes<HTMLDivElement>, '
  *
  * Deliberately *not* pill-shaped: unlike the category list these are bare inline
  * links, so two dozen of them can sit in a sidebar column without turning into a
- * wall of chips. The count is muted a step below the tag itself (`primary-600`
- * against `primary-400`) so the cloud scans as names first, weights second.
+ * wall of chips. The count no longer sits a step below the tag: the palette has one
+ * muted ink, so tag and count are both `secondary` and the weights read from the
+ * parentheses rather than from a second tone.
  *
- * Paints its own opaque `primary-800` panel, so it wants a darker surface behind
- * it — `Surface` tone `canvas` or `raised`. Used standalone or as the last block
+ * Paints its own opaque `surface-raised` panel, so it wants a ground that panel
+ * separates from — `Surface` tone `canvas` or `surface`. On the sheet ground
+ * `raised` goes *darker* than the canvas, so the panel reads as recessed rather
+ * than lifted; that is the same panel either way. Used standalone or as the last block
  * of `Sidebar`, which renders it for you when given `tags`.
  *
  * A tag whose `href` is rejected by `safeHref` still renders, as static text

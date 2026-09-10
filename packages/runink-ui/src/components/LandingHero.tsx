@@ -13,24 +13,33 @@ export interface LandingHeroLayer {
    * for the deepest plane and `0.6` for the foreground.
    */
   depth: number;
-  /** Blend/opacity utilities for the plane, e.g. `"mix-blend-screen opacity-90"`. */
+  /**
+   * Opacity and filter utilities for the plane, e.g. `"opacity-80"`.
+   *
+   * **`mix-blend-*` is ignored here.** The component forces `mix-blend-normal`
+   * inline, because no blend mode is ground-neutral — see the component docs. A mode
+   * left over in a caller's layer list is overridden rather than honoured.
+   */
   className?: string;
 }
 
 /**
- * The three planes of the homepage composition, deepest first. Each one is the
- * same 1920×1080 frame blended differently, which is what makes the single scene
- * read as depth rather than three stacked pictures.
+ * The three planes of the homepage composition, deepest first.
+ *
+ * Each plane is a sparse, mostly transparent 1920×1080 isometric frame, so they
+ * composite with plain alpha. Depth is the **opacity ramp** — deepest faintest, as
+ * aerial perspective — plus the per-plane `depth` drift rate. Both are ground-neutral;
+ * the blend modes these layers used to carry were not (see the component docs).
  */
 const DEFAULT_LAYERS: LandingHeroLayer[] = [
   {
     src: '/images/landing/warehouse.svg',
     alt: 'Warehouse facility background',
     depth: 0.1,
-    className: 'mix-blend-luminosity opacity-80',
+    className: 'opacity-70',
   },
-  { src: '/images/landing/distribution.svg', alt: '', depth: 0.3, className: 'mix-blend-color-burn opacity-90' },
-  { src: '/images/landing/trucks.svg', alt: '', depth: 0.6, className: 'mix-blend-screen opacity-90' },
+  { src: '/images/landing/distribution.svg', alt: '', depth: 0.3, className: 'opacity-80' },
+  { src: '/images/landing/trucks.svg', alt: '', depth: 0.6, className: 'opacity-90' },
 ];
 
 export interface LandingHeroProps extends Omit<HTMLAttributes<HTMLElement>, 'children'> {
@@ -39,7 +48,7 @@ export interface LandingHeroProps extends Omit<HTMLAttributes<HTMLElement>, 'chi
    * with a `<br />` and the break point is editorial.
    */
   headline: ReactNode;
-  /** One-line promise under the headline, in white. */
+  /** One-line promise under the headline, in `primary` ink. */
   tagline?: ReactNode;
   /** The uppercase letterspaced paragraph below the tagline. */
   description?: ReactNode;
@@ -57,13 +66,25 @@ export interface LandingHeroProps extends Omit<HTMLAttributes<HTMLElement>, 'chi
 /**
  * The homepage's full-viewport opener: a parallax logistics scene behind a gradient headline.
  *
- * The headline is `GradientText` on the `signal` sweep (rose into the purple
- * accent), re-aimed to `br` — the one treatment this band exists to carry.
+ * The headline is `GradientText` on the `signal` sweep (`fill-provenance` into
+ * `fill-accent` — wine closing into the technical orange), re-aimed to `br` — the one
+ * treatment this band exists to carry.
  *
  * `h-screen` and `overflow-hidden` are load-bearing — the planes are absolutely
  * positioned at `inset-0` and scale up as the page scrolls, so they must be
  * clipped. Two gradient washes sit above the planes and below the copy to keep
  * the text legible; the copy itself is `z-20`.
+ *
+ * **The scene composites with plain alpha, never with a blend mode, and the component
+ * enforces that.** `mix-blend-*` is not ground-neutral: `screen` lightens, so it is a
+ * mathematical no-op against near-white, and `multiply` darkens, so it is a no-op
+ * against near-black. The planes were authored `luminosity` / `color-burn` / `screen`
+ * against the console ground; on sheet the `screen` plane vanished outright, the other
+ * two bleached to value-less ghosts, and all that survived were blend artefacts. One
+ * mode cannot serve two grounds, and binding each to `dark:` would mean maintaining
+ * two separately-tuned compositions of the same artwork — so the modes are gone rather
+ * than doubled. Depth is carried by the opacity ramp and the per-plane drift rate, both
+ * of which mean the same thing on either ground.
  *
  * Renders the scene at rest (no transform, no stagger) before any interaction, so
  * it screenshots correctly. With `parallax` on, each plane translates by
@@ -137,15 +158,26 @@ export function LandingHero({
             )}
             style={{
               zIndex: index + 1,
+              // Compositing belongs to the component, not the caller. Inline rather
+              // than a `mix-blend-normal` class because Tailwind resolves competing
+              // blend utilities by stylesheet order, not class order — `screen` is
+              // emitted after `normal` and would win. A layer list still carrying a
+              // ground-tuned mode is overridden here instead of breaking one ground.
+              mixBlendMode: 'normal',
               transform: `translate3d(0, ${-(scrollY * layer.depth * 0.5)}px, 0) scale(${scale})`,
             }}
           />
         ))}
       </div>
 
-      {/* Washes: darken top and bottom so the copy stays legible over the scene. */}
+      {/*
+        Washes: settle the top and bottom of the scene so the copy stays legible. Both
+        composite with plain alpha. The wine wash used `mix-blend-overlay`, which is
+        backdrop-dependent — it screened against the near-white sheet ground and came
+        out as a pastel smear over the scene instead of seating it.
+      */}
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-surface/40 via-transparent to-surface" />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-fill-provenance/20 via-transparent mix-blend-overlay" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-fill-provenance/20 via-transparent" />
 
       <div className="relative z-20 flex max-w-5xl flex-col items-center px-6 text-center">
         <GradientText

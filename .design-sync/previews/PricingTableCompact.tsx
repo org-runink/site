@@ -49,10 +49,13 @@ export function Default() {
  * `Default` on the sheet ground. Identical props and classes — only `ground` differs,
  * because every token rebinds underneath.
  *
- * The band paints `bg-surface`, which on sheet goes *lighter* than the canvas rather
- * than darker, so this is the cell that shows the section still separates from the
- * page. It is also where the featured card's floating badge gets checked: the badge
- * sits on a solid olive-to-orange gradient, so it needs a paired ink to survive here.
+ * The band paints `bg-surface`, which sits *above* the canvas on both ramps — it is
+ * one of the tokens that does **not** invert, unlike `surface-raised` and
+ * `surface-well`. So this cell is not about a flip; it is about whether a four-level
+ * step still separates the section from the page on the light ramp, where the whole
+ * range is compressed. It is also where the featured card's floating badge gets
+ * checked: the badge sits on a solid olive-to-orange gradient, so it needs a paired
+ * ink to survive here.
  */
 export function OnSheet() {
   return (
@@ -129,13 +132,22 @@ export function TranslatedAndRepriced() {
 }
 
 /**
- * Two plans instead of three, with markedly uneven checklists — the edge case a
- * product page hits when only part of the range is on offer. The grid stays even
- * and the shorter card still stretches to the featured card's height.
+ * Two plans instead of three, with markedly uneven checklists — the edge case a product
+ * page hits when only part of the range is on offer. The heights equalise: the two-line
+ * card stretches to the five-line featured one and both CTAs land on the same baseline.
+ *
+ * The band's grid is hardcoded `md:grid-cols-3`, so a two-tier range would otherwise sit
+ * in columns one and two with the right third empty under a centred heading — the shape
+ * of a missing card rather than of a two-plan range. The `md:[&_.grid]:grid-cols-2` here
+ * is a **preview device**: it reaches into the band and gives it the column count the
+ * content needs, so the cell shows the equalisation instead of the hole. It is a device
+ * because the component has no column prop — a real page needs that prop, not this
+ * selector.
  */
 export function TwoPlansUnevenChecklists() {
   return (
     <PricingTableCompact
+      className="md:[&_.grid]:grid-cols-2"
       title="Start lean, scale sovereign."
       tiers={[
         {

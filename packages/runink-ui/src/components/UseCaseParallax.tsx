@@ -19,16 +19,36 @@ export type UseCaseParallaxTrack = 'monitor' | 'cockpit';
 
 // The two tracks are distinguished only by accent: green for what the system
 // watches, red for what it acts on. Each has a matching glow token.
+//
+// The card ground is OPAQUE `surface`; the track wash rides on top of it as its own
+// layer (TRACK_WASH below). A 15%-alpha fill made the card a window: the band's
+// decorative grid read straight through it and through the step copy, which is
+// invisible on the console ground and reads as a rendering fault on sheet.
+// The hover fills are gone with it — each restated the rest-state wash, so they were
+// already no-ops.
+//
+// `monitor`'s `hover:shadow-glow-success` went the same way. It repeated the rest glow,
+// and `shadow-xl` sorts after `shadow-glow-*` in the emitted stylesheet, so it never won
+// the hover it was written for. The glow is the card's resting depth; the hover trades it
+// for the deeper drop shadow and brightens the track border /30 → /50.
 const TRACK_CARD: Record<UseCaseParallaxTrack, string> = {
-  monitor:
-    'border-ink-success/30 bg-fill-success-wash shadow-glow-success hover:border-ink-success/50 hover:bg-fill-success-wash hover:shadow-xl hover:shadow-glow-success',
-  cockpit:
-    'border-ink-provenance/30 bg-fill-provenance-wash hover:border-ink-provenance/50 hover:bg-fill-provenance-wash hover:shadow-xl ',
+  monitor: 'border-ink-success/30 bg-surface shadow-glow-success hover:border-ink-success/50 hover:shadow-xl',
+  cockpit: 'border-ink-provenance/30 bg-surface hover:border-ink-provenance/50 hover:shadow-xl',
 };
 
+/** The track's identity wash, painted over the card's opaque ground. */
+const TRACK_WASH: Record<UseCaseParallaxTrack, string> = {
+  monitor: 'bg-fill-success-wash',
+  cockpit: 'bg-fill-provenance-wash',
+};
+
+// The badge follows the card's hover on its BORDER, not its fill: the wash under
+// `ink-success`/`ink-provenance` text is pinned at the 0.15 ceiling, so the
+// `group-hover:bg-fill-<track>-wash` it used to carry was the rest value repainted.
+// Matches `StepCard`, which renders this same badge standalone.
 const TRACK_BADGE: Record<UseCaseParallaxTrack, string> = {
-  monitor: 'border-ink-success/30 bg-fill-success-wash text-ink-success group-hover:bg-fill-success-wash',
-  cockpit: 'border-ink-provenance/30 bg-fill-provenance-wash text-ink-provenance group-hover:bg-fill-provenance-wash',
+  monitor: 'border-ink-success/30 bg-fill-success-wash text-ink-success group-hover:border-ink-success/50',
+  cockpit: 'border-ink-provenance/30 bg-fill-provenance-wash text-ink-provenance group-hover:border-ink-provenance/50',
 };
 
 const TRACK_TITLE: Record<UseCaseParallaxTrack, string> = {
@@ -57,7 +77,7 @@ export interface UseCaseParallaxProps extends Omit<HTMLAttributes<HTMLElement>, 
   /** CTA label. Defaults to `"Read Full Use Case"`. */
   ctaLabel?: string;
   /**
-   * The operational problem, in the dark panel above the steps. Omit the panel by
+   * The operational problem, in the raised panel above the steps. Omit the panel by
    * omitting this. The shortcode ran it through `markdownify`, so pass a node if
    * the copy needs emphasis.
    */
@@ -122,7 +142,7 @@ function prefersReducedMotion(): boolean {
  * One use case told as a two-column scene: gradient headline and CTA beside the numbered observe-then-act loop.
  *
  * This is the homepage's workhorse band — the page stacks five of them,
- * alternating `invert`. The right column is the whole argument: a dark problem
+ * alternating `invert`. The right column is the whole argument: a raised problem
  * panel, then the **monitor** track (green, telemetry-driven visibility) and the
  * **cockpit** track (red, what the Twin executes), numbered as one continuous
  * sequence so the reader sees a single loop rather than two lists.
@@ -130,6 +150,14 @@ function prefersReducedMotion(): boolean {
  * `relative overflow-hidden` on the band is load-bearing — the background effect
  * and the drifting columns are clipped to it. Each step card is a `group` for its
  * own hover state.
+ *
+ * **Three planes, in this order: decoration, card grounds, content.** The
+ * `backgroundEffect` slot is wrapped in its own `z-0 isolate` stacking context, so
+ * nothing passed into it can reach the content plane however it is classed. The step
+ * cards and the problem panel sit on *opaque* grounds with their track wash as a
+ * separate layer — a translucent card let the decorative grid read through the copy,
+ * which on the console ground is dark-on-dark and unnoticeable and on sheet looks like
+ * pink rules ruled across the text.
  *
  * The columns render at **identity transform** before any scroll, so the static
  * screenshot is the real scene, and every step is fully visible from the first
@@ -245,6 +273,12 @@ export function UseCaseParallax({
         TRACK_CARD[track],
       )}
     >
+      {/*
+        The wash as a layer, not as the card's fill. Positioned but `z-auto`, so it
+        paints under the `z-10` copy and the `z-20` badge while still covering the
+        card's whole face.
+      */}
+      <div aria-hidden="true" className={cx('absolute inset-0', TRACK_WASH[track])} />
       <div className="relative z-10 flex-grow pl-2 pr-2 text-sm leading-relaxed md:text-base lg:pl-3">
         {step.title && (
           <strong className={cx('block text-lg font-bold tracking-tight lg:mr-2 lg:inline md:text-xl', TRACK_TITLE[track])}>
@@ -253,7 +287,12 @@ export function UseCaseParallax({
         )}
         <span className="text-secondary transition-colors duration-500 group-hover:text-primary">{step.text}</span>
       </div>
-      <div className="z-20 shrink-0 self-end md:self-auto">
+      {/*
+        `relative` is what makes the `z-20` mean anything — a z-index on a statically
+        positioned element is inert, which left the badge painting in the in-flow layer
+        BELOW any positioned sibling, the wash layer above included.
+      */}
+      <div className="relative z-20 shrink-0 self-end md:self-auto">
         <span
           className={cx(
             'inline-flex items-center justify-center whitespace-nowrap rounded-full border px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-widest transition-all',
@@ -278,7 +317,18 @@ export function UseCaseParallax({
       )}
       {...rest}
     >
-      {backgroundEffect}
+      {/*
+        The decorative layer is clamped into its OWN stacking context — a positioned
+        wrapper with an explicit `z-0` plus `isolate` — so no z-index on whatever is
+        passed into the slot can paint into the content plane above it. The grid is
+        `opacity-20` artwork: on console it reads as texture, on sheet its rules were
+        running across the step cards and behind the body copy.
+      */}
+      {backgroundEffect && (
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 isolate z-0 overflow-hidden">
+          {backgroundEffect}
+        </div>
+      )}
 
       <div className="relative z-20 mx-auto grid w-full max-w-[1400px] items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:gap-24">
         {/* Copy and CTA. */}
@@ -287,7 +337,10 @@ export function UseCaseParallax({
           style={{ transform: `translate3d(0, ${copyDrift}px, 0)` }}
         >
           {pill && (
-            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-ink-accent backdrop-blur md:text-base">
+            /* `border-edge`: the pill is a bounded element sitting straight on the
+               band, and its fill is a 50% `surface` behind `backdrop-blur` — next to
+               nothing on the sheet ramp — so the border is all that shapes it. */
+            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-edge bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-ink-accent backdrop-blur md:text-base">
               {pill}
             </div>
           )}
@@ -317,18 +370,26 @@ export function UseCaseParallax({
         >
           <div className="flex w-full flex-col pl-0 md:pl-6">
             {problem && (
-              <div className="group relative mb-12 overflow-hidden rounded-[1.25rem] border border-hairline/80 bg-canvas p-6 md:p-8">
+              /* `surface` inside an `edge` border. It was `bg-canvas` on a `canvas`
+                 band — the same value as the ground — so the "panel" was only ever a
+                 `hairline/80` rectangle, which is a whisper on console and nothing at
+                 all on sheet. The lift and the boundary are now both real on either
+                 ground. */
+              <div className="group relative mb-12 overflow-hidden rounded-[1.25rem] border border-edge bg-surface p-6 md:p-8">
                 {/*
                   `from-fill-accent/15`, not `from-fill-accent-wash`: the wash is a
                   background token with no gradient-stop form, so the 0.15 ceiling is
                   written as the modifier. Same colour, not a second number.
+
+                  Positioned, so the copy below it takes `z-10` — otherwise this tint
+                  paints over the heading and the prose rather than behind them.
                 */}
                 <div className="absolute inset-0 bg-gradient-to-r from-fill-accent/15 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                <h3 className="mb-3 flex items-center gap-3 font-bold tracking-tight text-primary">
+                <h3 className="relative z-10 mb-3 flex items-center gap-3 font-bold tracking-tight text-primary">
                   <Icon name={problemIcon} className="h-5 w-5 text-ink-accent" />
                   {problemLabel}
                 </h3>
-                <div className="prose dark:prose-invert text-[13px] leading-relaxed text-secondary prose-p:last:mb-0 md:text-sm">
+                <div className="prose dark:prose-invert relative z-10 text-[13px] leading-relaxed text-secondary prose-p:last:mb-0 md:text-sm">
                   {problem}
                 </div>
               </div>

@@ -40,6 +40,22 @@ const PAIRED_INK = {
 };
 /** Generic inks that are wrong on a solid fill. */
 const GENERIC_INKS = ['text-primary', 'text-secondary'];
+
+/*
+ * Third-party brand colours, which are deliberately literal.
+ *
+ * A vendor's mark is not ours to tokenise: rendering the Snowflake logotype in
+ * Runink's technical orange misrepresents someone else's trademark, and there is
+ * no token that could be correct. These are the ONLY sanctioned raw hexes, they
+ * are enumerated rather than pattern-matched, and adding a new one is a
+ * deliberate edit to this list — so a Runink colour smuggled in as a hex still
+ * fails the way it should.
+ */
+const BRAND_HEXES = new Map([
+  ['#29B5E8', 'Snowflake'],
+  ['#FF3621', 'Databricks'],
+  ['#4285F4', 'Google'],
+]);
 /** Names retired by the FACE migration. Any survivor compiles to nothing. */
 const RETIRED = /\b(?:bg|text|border|ring|from|via|to|shadow|divide|outline)-(?:primary|secondary)-\d{2,3}\b|\bshadow-neon-[a-z-]+\b|\b(?:bg|text|border|ring|from|via|to)-brand-[a-z-]+\b/;
 
@@ -83,8 +99,57 @@ for (const file of files) {
 
   for (const m of src.matchAll(CLASS_ATTR)) {
     const where = `${relative(SITE, file)}:${lineOf(m.index)}`;
-    const classes = (m[1] ?? m[2] ?? m[3] ?? '').replace(/['"]/g, ' ');
+    /*
+     * Strip comments before scanning. A `cx(...)` call routinely carries a block
+     * comment explaining the colour choice, and those comments quote measured
+     * values — so the raw-hex rule fired on prose that documents WHY a token was
+     * picked, which is exactly the comment we want people to write. Reported as a
+     * false positive on a comment reading "on the sheet it measured #EDE2D3 on
+     * #FFFCF9". Comments are not classes; they cannot reach the stylesheet.
+     */
+    const classes = (m[1] ?? m[2] ?? m[3] ?? '')
+      .replace(/\/\*[\s\S]*?\*\//g, ' ')
+      .replace(/\/\/[^\n]*/g, ' ')
+      .replace(/['"]/g, ' ');
 
+    checkClasses(classes, where);
+  }
+
+  /*
+   * Tone maps — the blind spot that let a real bug through to the graders.
+   *
+   * Components keep their variants in a `Record<Tone, string>` lookup rather than
+   * inline, so the rules above never saw them: `Feature`'s BADGE_TONES carried
+   * `bg-fill-success text-primary` — a solid fill under a generic ink, the exact
+   * pairing this file exists to catch — and shipped clean through every run. It
+   * was found by a human reading the map, which is not a repeatable gate.
+   *
+   * Matched on the flat `key: 'classes',` form, which is how every tone map in
+   * this package is written.
+   */
+  const MAP_BLOCK = /const\s+[A-Z_][A-Za-z0-9_]*\s*(?::[^=]*)?=\s*\{([\s\S]*?)\n\}/g;
+  const MAP_ENTRY = /^\s*['"]?[A-Za-z0-9_-]+['"]?\s*:\s*(['"])([^'"]*)\1\s*,?\s*$/gm;
+  for (const block of src.matchAll(MAP_BLOCK)) {
+    for (const e of block[1].matchAll(MAP_ENTRY)) {
+      checkClasses(e[2], `${relative(SITE, file)}:${lineOf(block.index + e.index)}`);
+    }
+  }
+
+  /*
+   * Bare string constants — `const CONTROL = 'rounded-chip border-hairline …'`.
+   *
+   * A class string hoisted into a plain `const` for a repeated element is neither an
+   * attribute nor a map entry, so both scans above skip it. `ContactSection`'s
+   * CONTROL is shared by every field on the contact form, which makes it the
+   * highest-blast-radius string in the file and the one that was invisible here.
+   * Length-gated so short constants (ids, keys, labels) are not treated as classes.
+   */
+  const CONST_STR = /const\s+[A-Z_][A-Za-z0-9_]*\s*(?::[^=]*)?=\s*(['"])([^'"]{12,})\1/g;
+  for (const m of src.matchAll(CONST_STR)) {
+    checkClasses(m[2], `${relative(SITE, file)}:${lineOf(m.index)}`);
+  }
+
+  function checkClasses(classes, where) {
     {
       for (const [fill, ink] of Object.entries(PAIRED_INK)) {
         /*
@@ -108,8 +173,54 @@ for (const file of files) {
       if (/(?<![\w-])text-white(?![\w-])/.test(classes)) {
         problems.push({ where, msg: 'text-white', why: 'invisible on the sheet ground — use text-primary, or the fill\'s paired ink' });
       }
-      if (/(?<![\w-:])bg-white(?:\/\d+)?(?![\w-])/.test(classes)) {
-        problems.push({ where, msg: 'bg-white wash', why: 'a lift on console and a no-op on sheet — use bg-primary/<alpha>, which inverts with the ground' });
+      /*
+       * `white`/`black` in ANY colour position, not just `bg-`.
+       *
+       * The first version tested `bg-white` alone and missed
+       * `from-white/10 to-transparent` — Hero's hover sheen, a gloss that lifts on
+       * console and is an exact no-op on the sheet, where the content beneath it is
+       * already near-white. A gradient stop is as pinned as a background.
+       *
+       * Two positions are deliberately NOT listed. `text-` has its own rule below
+       * with more specific advice. `shadow-` is genuinely ground-neutral: a drop
+       * shadow is darker than whatever it falls on in BOTH registers, so
+       * `shadow-black/20` is correct rather than pinned — unlike a sheen, which has
+       * to be lighter and therefore has no single cross-ground value.
+       */
+      const pinned = classes.match(/(?<![\w-])(?:bg|from|via|to|border|ring|divide|outline)-(?:white|black)(?:\/\d+)?(?![\w-])/);
+      if (pinned) {
+        problems.push({
+          where,
+          msg: `pinned stock colour \`${pinned[0]}\``,
+          why: 'white and black do not flip with the ground — one register gets a lift and the other gets nothing; use a token that carries a value in both ramps',
+        });
+      }
+      /*
+       * Backdrop-dependent blend modes.
+       *
+       * A blend mode is a function of what is BEHIND it, so the ground decides what
+       * it does: `screen` lightens, `multiply` darkens, and `overlay` switches
+       * between the two depending on backdrop luminance. None of them can serve two
+       * grounds, and each fails in the direction that looks fine on whichever ground
+       * it was tuned against.
+       *
+       * Both instances in this codebase were tuned on console. `LandingHero`'s
+       * `screen` plane vanished outright on the sheet (screen against near-white is
+       * a no-op) and its `overlay` wash left a pastel-pink smear; `Hero`'s `overlay`
+       * photo would have blown out to near-white, and NO preview exercises that prop,
+       * so no graded cell could ever have caught it. Composite with alpha instead.
+       *
+       * `mix-blend-normal` and `mix-blend-plus-lighter` are not listed: `normal` is
+       * the escape hatch a component uses to FORCE ground-neutrality, which is the
+       * fix rather than the bug.
+       */
+      const blend = classes.match(/(?<![\w-])mix-blend-(?:multiply|screen|overlay|darken|lighten|color-dodge|color-burn|hard-light|soft-light|difference|exclusion|hue|saturation|color|luminosity)(?![\w-])/);
+      if (blend) {
+        problems.push({
+          where,
+          msg: `backdrop-dependent \`${blend[0]}\``,
+          why: 'a blend mode is a function of the backdrop, so it cannot serve both grounds — composite with opacity, or force mix-blend-normal',
+        });
       }
       if (/(?<![\w-:])prose-invert(?![\w-])/.test(classes)) {
         problems.push({
@@ -118,8 +229,13 @@ for (const file of files) {
           why: 'a hardcoded dark prose palette — use `dark:prose-invert`, which is bound to [data-ground=console]',
         });
       }
-      if (/#[0-9a-fA-F]{3,8}\b/.test(classes)) {
-        problems.push({ where, msg: 'raw hex in a class string', why: 'every colour must be a token; see tokens/REGISTRY.md' });
+      for (const hex of classes.match(/#[0-9a-fA-F]{3,8}\b/g) ?? []) {
+        if (BRAND_HEXES.has(hex.toUpperCase())) continue; // a vendor's own mark
+        problems.push({
+          where,
+          msg: `raw hex \`${hex}\` in a class string`,
+          why: 'every colour must be a token (see tokens/REGISTRY.md); the only exception is a third-party brand colour, which must be added to BRAND_HEXES with the vendor named',
+        });
       }
       const retired = classes.match(RETIRED);
       if (retired) {
@@ -129,6 +245,7 @@ for (const file of files) {
   }
 
   // Custom properties, anywhere in the file — these live in inline styles and CSS
+  // strings, not in class attributes, so the scans above cannot see them.
   // strings, not in class attributes, so the scan above cannot see them.
   for (const m of src.matchAll(/var\((--[\w-]+)\)/g)) {
     const name = m[1];

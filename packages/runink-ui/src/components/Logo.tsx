@@ -29,9 +29,13 @@ export interface LogoProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>,
  * The Runink lockup: the logo mark in a bordered tile plus the wordmark, linked home.
  *
  * Ported from the site's `logo.html` partial, so this is the exact mark the header
- * uses. The hover behaviour is split across two elements — the tile's border goes
- * `secondary-500` while the image scales 110% inside it — and both are driven by
- * `group-hover`, so the `group` class on the anchor is load-bearing. The tile is
+ * uses. The hover is the image scaling 110% inside the tile and nothing else: the port
+ * moved the tile's border to a chromatic hover, which this palette has no counterpart
+ * for, so `group-hover:border-hairline` resolved to the same `hairline` the tile rests
+ * on — a declaration that compiled and painted nothing. It is deleted rather than
+ * replaced, along with the `transition-colors` that was animating it: a lockup is a link
+ * home, not a control with states, and the scale is affordance enough. The scale is
+ * still driven by `group-hover`, so the `group` class on the anchor is load-bearing. The tile is
  * `overflow-hidden`, which is what clips the scaling image instead of letting it
  * grow the header.
  *
@@ -52,7 +56,7 @@ export function Logo({
 }: LogoProps) {
   return (
     <a href={safeHref(href) ?? '/'} className={cx('group flex items-center space-x-3', className)} {...rest}>
-      <div className="relative h-10 w-10 overflow-hidden rounded-card border border-hairline bg-surface-raised shadow-lg transition-colors duration-300 group-hover:border-hairline">
+      <div className="relative h-10 w-10 overflow-hidden rounded-card border border-hairline bg-surface-raised shadow-lg">
         {src ? (
           <img
             src={src}

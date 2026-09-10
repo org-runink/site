@@ -64,9 +64,16 @@ export function Default() {
  * its top `border-hairline` and the second rule above the legal strip, the column
  * headings' `text-primary` and the link rows' `text-secondary`.
  *
- * The two raster assets are the exception, as they must be: the lockup is a PNG and
- * the social mark is an `<img>`, so neither can take its colour from the ground the
- * way ink does. This is the cell where that asymmetry is visible.
+ * The lockup is the one exception, as it must be: it is a PNG, so it cannot take its
+ * colour from the ground the way ink does. This is the cell where that shows.
+ *
+ * The social mark used to be the second exception and no longer is. It was an `<img>`
+ * pointed at an SVG whose fill is `currentColor` — and an SVG loaded through `<img>`
+ * is an independent document with no inherited `color`, so `currentColor` fell back
+ * to its initial value: pure black, on a near-black band. It read fine here on the
+ * sheet, which is exactly why it survived until a grader sampled the console cells.
+ * The glyph is now painted as a mask over `bg-current`, so the file supplies the
+ * shape and the anchor's ink supplies the colour, on both grounds.
  */
 export function OnSheet() {
   return (

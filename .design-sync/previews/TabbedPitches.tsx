@@ -4,7 +4,7 @@ import type { TabbedPitch } from '@runink/ui';
 /**
  * All five homepage personas, with the copy the `painkiller-pitches` shortcode
  * hardcoded. The headline nodes follow the pattern the component documents: the
- * pain in `red-300`, the remedy in `brand-green`.
+ * pain in `ink-provenance`, the remedy in `ink-success`.
  */
 const PERSONAS: TabbedPitch[] = [
   {
@@ -97,8 +97,9 @@ export function Default() {
 
 /**
  * `defaultTabId="compliance"` — the fourth tab starts selected instead of the
- * first. This is the variant axis: compare the active tab's `secondary-600`
- * border and white label, and the swapped panel, against the Default cell. The
+ * first. This is the variant axis: compare the active tab's `fill-accent` border,
+ * `fill-accent-wash` icon tile and `primary` label — selection is the accent border
+ * here, not a second ground — and the swapped panel, against the Default cell. The
  * `heading` is omitted here on purpose so the tab strip and the panel it controls
  * sit in the same frame.
  */
@@ -115,7 +116,7 @@ export function PresetTab() {
 /**
  * A bare tab block: no `heading`, no decorative quote glyph, a custom
  * `closerLabel`, and only two tabs — so the strip collapses to two columns and
- * the band is the flat `primary-950` canvas with no wash behind it.
+ * the band is the flat `canvas` ground with no wash behind it.
  */
 export function BareTwoUp() {
   return (

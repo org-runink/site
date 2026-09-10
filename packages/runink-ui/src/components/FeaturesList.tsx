@@ -4,17 +4,36 @@ import { Icon } from './Icon';
 
 /**
  * Accent for the check tiles. The Hugo shortcode took a free-form `color` hex
- * defaulting to `#5F6F3E` — that is the `brand-green-dark` token, so `green`
- * is the default here.
+ * defaulting to `#5F6F3E`, the port's dark brand green; the palette has exactly one
+ * olive fill, so `green` is the default here.
+ *
+ * Five rungs on three hues: `green` is the full-strength olive and `sage` the wash
+ * above it; `orange` is the bright accent wash and `tan` the muted deep one; and
+ * `primary` is the neutral rung, for a list that should not pick up a hue at all.
  */
 export type FeaturesListTone = 'green' | 'sage' | 'orange' | 'tan' | 'primary';
 
+/*
+ * Each tone has to land on its OWN colour — the tile is a 40px swatch and a tick,
+ * so it is all a reader has to tell two tones apart. Three pairs had collapsed:
+ *
+ *   - `green`/`sage` were the same wash and ink. Split by rung, the way the
+ *     palette's one olive ink and one olive fill allow: `green` is the solid fill,
+ *     which is where `remap.json` sends the retired `bg-brand-green`, and takes `on-success` because a
+ *     solid fill carries its paired ink. `sage` keeps the 15% wash, the pairing
+ *     `Badge` and `BenefitsGrid` also give `sage`.
+ *   - `orange`/`tan` both ticked `ink-accent`. Only the ground differed, and a
+ *     ground at 15% barely carries a hue, so `tan` takes a neutral tick.
+ *   - `primary` was an accent ground under a MUTED ink, which is what made it read
+ *     as a disabled `orange` rather than as a tone. It is the neutral rung: a
+ *     neutral ground and full-strength ink.
+ */
 const TONES: Record<FeaturesListTone, string> = {
-  green: 'bg-fill-success-wash text-ink-success',
+  green: 'bg-fill-success text-on-success',
   sage: 'bg-fill-success-wash text-ink-success',
   orange: 'bg-fill-accent-wash text-ink-accent',
-  tan: 'bg-fill-accent-deep-wash text-ink-accent',
-  primary: 'bg-fill-accent-wash text-secondary',
+  tan: 'bg-fill-accent-deep-wash text-primary',
+  primary: 'bg-surface-well text-primary',
 };
 
 export interface FeaturesListItem {
@@ -46,7 +65,8 @@ export interface FeaturesListProps extends HTMLAttributes<HTMLDivElement> {
  * gap under the heading (`mb-24`), which is what makes the list read as a
  * document section rather than a widget.
  *
- * Assumes a dark `Surface` behind it; it paints no background of its own.
+ * Assumes a `Surface` behind it; it paints no background of its own, so it inherits
+ * whichever ground the subtree is on.
  *
  * @example
  * <FeaturesList

@@ -92,9 +92,10 @@ function Connector({ label, tone }: { label?: string; tone: 'request' | 'respons
  * Purely static — the connector captions sit over the rules at rest, so it
  * screenshots complete. On a narrow screen the platform's interior stacks and the
  * dashed horizontal connectors drop out (`hidden md:flex`), which is intended:
- * the vertical reading order still carries the story. Expects a dark canvas, and
- * the captions punch through the rules with `brand-ink-soft`, so keep it on a
- * `Surface` of tone `canvas`.
+ * the vertical reading order still carries the story. The connector captions punch
+ * through the rules by painting their own opaque `surface` pill, so keep it on a
+ * `Surface` of tone `canvas` — that is the one ground `surface` separates from in both
+ * registers.
  *
  * @example
  * <HrDiagram
