@@ -177,6 +177,11 @@ module.exports = {
           "Menlo",
           "Consolas",
           "monospace"
+        ],
+        "serif": [
+          "ui-serif",
+          "Georgia",
+          "serif"
         ]
       },
       "keyframes": {

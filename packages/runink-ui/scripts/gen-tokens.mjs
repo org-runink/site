@@ -219,6 +219,13 @@ function emitPreset() {
       sans: ['Figtree Rk', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
       display: ['Figtree Rk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
+      /*
+       * The design system ships no serif. Tailwind's stock stack names Cambria,
+       * a Windows-only face we cannot ship — which surfaces as a [FONT_MISSING]
+       * for a family nothing in the brand uses. Overridden so the fallback chain
+       * only names faces that either exist everywhere or are ours.
+       */
+      serif: ['ui-serif', 'Georgia', 'serif'],
     },
     /*
      * cta-pulse referenced rgba(234,88,12,…) — the retired Saasify orange — baked

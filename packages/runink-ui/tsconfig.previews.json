@@ -1,0 +1,37 @@
+{
+  "$comment": [
+    "Type-checks the design-sync preview cards against the package's built types.",
+    "",
+    "The previews live outside src/ and so were checked by nothing. That is not a",
+    "theoretical gap: the palette migration renamed a Surface tone and the preview kept",
+    "passing the old value, which React happily renders as a missing background rather",
+    "than an error. A card that quietly loses its surface still screenshots, still",
+    "grades, and looks merely 'a bit flat'.",
+    "",
+    "Run after `npm run build` — it checks against dist/, so the types must exist."
+  ],
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    /*
+     * The previews sit above this package, so bare `react` resolves to the SITE's
+     * node_modules — which carries no types. Pin all three specifiers at the
+     * package's own copy, the one the components and the bundler already use.
+     */
+    "paths": {
+      "@runink/ui": ["./dist/index.d.ts"],
+      "react": ["./node_modules/@types/react"],
+      "react/jsx-runtime": ["./node_modules/@types/react/jsx-runtime"],
+      "react-dom": ["./node_modules/@types/react-dom"]
+    }
+  },
+  "include": ["../../.design-sync/previews/**/*.tsx", "types/assets.d.ts"]
+}
