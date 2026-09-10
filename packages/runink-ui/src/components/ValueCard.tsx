@@ -36,10 +36,10 @@ export function ValueCard({ title, description, icon, className }: ValueCardProp
     >
       {icon && (
         <div className="mb-4">
-          <Icon name={icon} className="h-12 w-12 text-secondary-500" />
+          <Icon name={icon} className="h-12 w-12 text-ink-accent" />
         </div>
       )}
-      <h3 className="mb-2 text-xl font-bold text-white">{title}</h3>
+      <h3 className="mb-2 text-xl font-bold text-primary">{title}</h3>
       <p className="text-secondary">{description}</p>
     </div>
   );

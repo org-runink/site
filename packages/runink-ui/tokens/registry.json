@@ -76,7 +76,7 @@
       "web": "secondary",
       "face": "textSecondary",
       "tier": "ink",
-      "positions": ["textColor"],
+      "positions": ["textColor", "placeholderColor"],
       "bakedAlpha": true,
       "why": "Labels and secondary text. Carries a real alpha that DIFFERS per ramp on purpose (0x99 console, 0xB3 sheet) — dark ink on a light ground needs more opacity for the same ratio. Because the alpha is baked, the Tailwind /NN modifier does nothing useful here; check-usage.mjs bans it."
     },

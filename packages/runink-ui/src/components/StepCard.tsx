@@ -10,14 +10,14 @@ export type StepCardTrack = 'monitor' | 'cockpit';
 
 const TRACK_CARD: Record<StepCardTrack, string> = {
   monitor:
-    'border-ink-success/30 bg-fill-success-wash shadow-neon-green hover:border-ink-success/50 hover:bg-fill-success-wash hover:shadow-xl hover:shadow-glow-success',
+    'border-ink-success/30 bg-fill-success-wash shadow-glow-success hover:border-ink-success/50 hover:bg-fill-success-wash hover:shadow-xl hover:shadow-glow-success',
   cockpit:
-    'border-ink-provenance/30 bg-fill-provenance-wash shadow-neon-red hover:border-ink-provenance/50 hover:bg-fill-provenance-wash hover:shadow-xl ',
+    'border-ink-provenance/30 bg-fill-provenance-wash hover:border-ink-provenance/50 hover:bg-fill-provenance-wash hover:shadow-xl ',
 };
 
 const TRACK_BADGE: Record<StepCardTrack, string> = {
-  monitor: 'border-ink-success/30 bg-fill-success-wash text-ink-success shadow-neon-green group-hover:bg-fill-success-wash',
-  cockpit: 'border-ink-provenance/30 bg-fill-provenance-wash text-ink-provenance shadow-neon-red group-hover:bg-fill-provenance-wash',
+  monitor: 'border-ink-success/30 bg-fill-success-wash text-ink-success shadow-glow-success group-hover:bg-fill-success-wash',
+  cockpit: 'border-ink-provenance/30 bg-fill-provenance-wash text-ink-provenance group-hover:bg-fill-provenance-wash',
 };
 
 const TRACK_TITLE: Record<StepCardTrack, string> = {

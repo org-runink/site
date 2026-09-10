@@ -98,7 +98,7 @@ export function SubscribeForm({
       className={cx('rounded-card border border-hairline bg-surface p-6', className)}
       {...rest}
     >
-      <h3 className="mb-2 text-lg font-bold text-white">{title}</h3>
+      <h3 className="mb-2 text-lg font-bold text-primary">{title}</h3>
       {description && <p className="mb-4 text-sm text-secondary">{description}</p>}
 
       {submitted ? (
@@ -123,13 +123,19 @@ export function SubscribeForm({
               placeholder={placeholder}
               autoComplete="email"
               required
-              className="w-full rounded-card border border-hairline bg-canvas px-4 py-2 text-secondary placeholder:text-secondary focus:border-hairline focus:ring-2 focus:ring-secondary-500"
+              // `fill-accent` measures 3.02:1 over `surface-well` on the sheet
+              // ground — zero headroom — so the focus ring carries a 1px offset in
+              // the field's own ground rather than sitting flush on the border.
+              className="w-full rounded-card border border-hairline bg-canvas px-4 py-2 text-secondary placeholder:text-secondary focus:border-hairline focus:ring-2 focus:ring-fill-accent focus:ring-offset-1 focus:ring-offset-canvas"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-card bg-secondary-600 px-4 py-2 text-white transition-colors duration-200 hover:bg-secondary-700"
+            // `on-accent` inks `fill-accent` only, so the hover state stays in that
+            // token and merely dims it; `fill-accent-deep` would drop the label to
+            // 2.97:1.
+            className="w-full rounded-card bg-fill-accent px-4 py-2 text-on-accent transition-colors duration-200 hover:bg-fill-accent/90"
           >
             {buttonText}
           </button>

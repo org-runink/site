@@ -100,7 +100,7 @@ export function Testimonials({
       style={backgroundColor ? { backgroundColor } : undefined}
     >
       <div className="mx-auto mb-16 max-w-3xl text-center">
-        <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">{title}</h2>
+        <h2 className="mb-6 text-3xl font-bold text-primary md:text-4xl">{title}</h2>
         <p className="text-xl text-secondary">{description}</p>
       </div>
 

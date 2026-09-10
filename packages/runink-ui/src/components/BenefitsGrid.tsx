@@ -14,7 +14,7 @@ const TONES: Record<BenefitTone, string> = {
   sage: 'bg-fill-success-wash border-ink-success/40 text-ink-success',
   green: 'bg-fill-success-wash border-ink-success/40 text-ink-success',
   orange: 'bg-fill-accent-wash border-fill-accent/40 text-ink-accent',
-  tan: 'bg-fill-accent-deep-wash border-edge/40 text-brand-tan',
+  tan: 'bg-fill-accent-deep-wash border-edge/40 text-ink-accent',
   primary: 'bg-fill-accent-wash border-edge/40 text-secondary',
   secondary: 'bg-fill-accent-wash border-hairline/40 text-secondary',
 };
@@ -47,8 +47,8 @@ export interface BenefitsGridProps extends HTMLAttributes<HTMLElement> {
  * A three-up band of benefit panels under a display heading, lit by a soft glow.
  *
  * The loudest section in the system: `font-black` display heading, a blurred
- * `secondary-500` bloom behind it, and frosted `primary-800/80` panels that lift,
- * deepen their shadow and wash a faint sage-to-tan gradient across themselves on
+ * `fill-accent-wash` bloom behind it, and frosted `surface-raised/80` panels that
+ * lift, deepen their shadow and wash a faint accent gradient across themselves on
  * hover. Use it once per page, for the "why this matters" band.
  *
  * Each panel is a `group` with an absolutely positioned gradient overlay, so the
@@ -91,7 +91,7 @@ export function BenefitsGrid({ title, subtitle, benefits, className, ...rest }: 
       <Container>
         <div className="relative mb-20 text-center">
           <div className="absolute left-1/2 top-1/2 -z-10 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-fill-accent-wash blur-[80px]" />
-          <h2 className="mb-6 text-4xl font-black tracking-tight text-white drop-shadow-lg md:text-5xl">
+          <h2 className="mb-6 text-4xl font-black tracking-tight text-primary drop-shadow-lg md:text-5xl">
             {title}
           </h2>
           <p className="mx-auto max-w-2xl text-xl font-light leading-relaxed text-secondary md:text-2xl">
@@ -105,7 +105,7 @@ export function BenefitsGrid({ title, subtitle, benefits, className, ...rest }: 
               key={benefit.title}
               className="group relative flex h-full flex-col overflow-hidden rounded-card border border-hairline bg-surface-raised/80 p-8 shadow-xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-hairline/30 hover:bg-surface-raised hover:shadow-2xl"
             >
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-secondary-500/5 to-accent-lift/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-fill-accent/5 to-accent-lift/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               <div
                 className={cx(
@@ -116,7 +116,7 @@ export function BenefitsGrid({ title, subtitle, benefits, className, ...rest }: 
                 <Icon name={benefit.icon} className="h-7 w-7" />
               </div>
 
-              <h3 className="relative z-10 mb-3 text-xl font-bold text-white transition-colors group-hover:text-primary">
+              <h3 className="relative z-10 mb-3 text-xl font-bold text-primary transition-colors group-hover:text-primary">
                 {benefit.title}
               </h3>
               <p className="relative z-10 leading-relaxed text-secondary transition-colors group-hover:text-primary">

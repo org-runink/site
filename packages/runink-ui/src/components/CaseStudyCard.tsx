@@ -88,11 +88,11 @@ export function CaseStudyCard({
           >
             {tag}
           </div>
-          <h3 className="mb-4 text-3xl font-bold text-white">{title}</h3>
+          <h3 className="mb-4 text-3xl font-bold text-primary">{title}</h3>
           <p className="mb-6 text-secondary">{description}</p>
           <a
             href={safeHref(href)}
-            className="inline-block rounded-card px-6 py-3 font-bold text-white no-underline transition-opacity hover:opacity-90"
+            className="inline-block rounded-card px-6 py-3 font-bold text-primary no-underline transition-opacity hover:opacity-90"
             style={{ backgroundColor: accentColor }}
           >
             {ctaLabel}

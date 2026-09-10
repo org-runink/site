@@ -82,7 +82,7 @@ export function Faq({ title, description, items, defaultOpenIndex = 0, className
       <div className="mx-auto max-w-screen-xl px-4 py-16 lg:px-6 lg:py-20">
         {title && (
           <div className="mx-auto mb-12 max-w-screen-md text-center">
-            <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-white">{title}</h2>
+            <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-primary">{title}</h2>
             {description && <p className="mb-5 font-light text-secondary sm:text-xl">{description}</p>}
           </div>
         )}
@@ -105,9 +105,9 @@ export function Faq({ title, description, items, defaultOpenIndex = 0, className
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => toggle(index)}
-                    className="flex w-full items-center justify-between p-6 text-left transition-colors duration-200 hover:bg-surface-well focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500"
+                    className="flex w-full items-center justify-between p-6 text-left transition-colors duration-200 hover:bg-surface-well focus:outline-none focus-visible:ring-2 focus-visible:ring-fill-accent focus-visible:ring-offset-1 focus-visible:ring-offset-surface-raised"
                   >
-                    <span className="text-lg font-medium text-white">{item.question}</span>
+                    <span className="text-lg font-medium text-primary">{item.question}</span>
                     <Icon
                       name="chevron-down"
                       className={cx(

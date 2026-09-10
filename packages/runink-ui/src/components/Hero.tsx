@@ -28,7 +28,7 @@ export interface HeroProps extends Omit<HTMLAttributes<HTMLElement>, 'children' 
    * directly instead of markup in a string.
    */
   headline: ReactNode;
-  /** Supporting sentence, set against a `secondary-500` left rule. */
+  /** Supporting sentence, set against a `hairline` left rule. */
   subHeadline?: ReactNode;
   /** Label for the filled pill CTA. Rendered only with `primaryButtonUrl`. */
   primaryButtonText?: string;
@@ -160,7 +160,7 @@ export function Hero({
             {/* Glow behind the text block. */}
             <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-fill-accent-wash opacity-50 blur-[100px]" />
 
-            <h1 className={cx('font-bold leading-normal tracking-normal text-white drop-shadow-xl', HEADLINE_SIZES[size])}>
+            <h1 className={cx('font-bold leading-normal tracking-normal text-primary drop-shadow-xl', HEADLINE_SIZES[size])}>
               {headline}
             </h1>
 
@@ -179,7 +179,7 @@ export function Hero({
               {primaryButtonText && primaryUrl && (
                 <a
                   href={primaryUrl}
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-secondary-600 to-secondary-500 px-8 py-4 text-base font-bold text-white transition-all duration-200 hover:-translate-y-1 hover:from-secondary-500 hover:to-secondary-400 hover:shadow-lg "
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-fill-accent-deep to-fill-accent px-8 py-4 text-base font-bold text-on-accent transition-all duration-200 hover:-translate-y-1 hover:from-fill-accent hover:to-accent-lift hover:shadow-lg "
                 >
                   {primaryButtonText}
                   <Icon name="arrow-right" className="-mr-1 ml-2 h-5 w-5" />
@@ -188,7 +188,7 @@ export function Hero({
               {secondaryButtonText && secondaryUrl && (
                 <a
                   href={secondaryUrl}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-hairline/50 bg-surface-raised/50 px-8 py-4 text-base font-bold text-primary backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-edge hover:bg-fill-accent-wash hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-hairline/50 bg-surface-raised/50 px-8 py-4 text-base font-bold text-primary backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-edge hover:bg-fill-accent-wash hover:text-primary"
                 >
                   {secondaryButtonText}
                 </a>

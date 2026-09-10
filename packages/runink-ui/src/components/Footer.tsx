@@ -30,7 +30,7 @@ export interface FooterSocialLink {
   iconSrc?: string;
 }
 
-const LINK = 'text-secondary transition-colors hover:text-white';
+const LINK = 'text-secondary transition-colors hover:text-primary';
 
 export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
   /** Wordmark beside the logo, and the name in the copyright line. Defaults to `"Runink"`. */
@@ -154,7 +154,7 @@ export function Footer({
           {/* Link columns */}
           {columns.map((column, index) => (
             <div key={`${column.title}-${index}`} className="flex-1">
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">{column.title}</h3>
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">{column.title}</h3>
               <ul className="space-y-2">
                 {column.links.map((link, linkIndex) => {
                   const href = safeHref(link.href);

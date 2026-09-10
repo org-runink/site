@@ -51,11 +51,11 @@ export function Card({ title, description, icon, href, className }: CardProps) {
       )}
     >
       {icon && (
-        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-card bg-gradient-to-br from-secondary-500/20 to-surface-raised transition-colors group-hover:from-secondary-500 group-hover:to-primary-600">
-          <Icon name={icon} className="h-6 w-6 text-ink-success transition-colors group-hover:text-white" />
+        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-card bg-gradient-to-br from-fill-accent/20 to-surface-raised transition-colors group-hover:from-fill-accent group-hover:to-accent-lift">
+          <Icon name={icon} className="h-6 w-6 text-ink-success transition-colors group-hover:text-on-accent" />
         </div>
       )}
-      <h3 className="mb-3 text-xl font-bold text-white group-hover:text-primary">{title}</h3>
+      <h3 className="mb-3 text-xl font-bold text-primary group-hover:text-primary">{title}</h3>
       <p className="text-sm leading-relaxed text-secondary group-hover:text-primary">{description}</p>
     </div>
   );

@@ -2,19 +2,30 @@ import type { ElementType, HTMLAttributes, ReactNode } from 'react';
 import { cx } from '../lib/cx';
 
 /**
- * The gradient sweeps the brand uses for clipped headline text. `ember` is the
- * signature orange-to-red treatment DESIGN.md describes; `iris` is the
- * indigo-to-purple sweep used on the marketing pages; `moss` is the organic
- * green pairing.
+ * The gradient sweeps the brand uses for clipped headline text.
+ *
+ * `ember` is FACE's actual brand gradient: the accent fill lifting into
+ * `accent-lift` (`brandGradientTop`, split off the accent ink on purpose so the ink
+ * could darken without flattening the sweep). `moss` is the olive pair. `signal` is
+ * the wine-into-accent close the landing hero sets.
+ *
+ * `iris` is **retired as a treatment**. FACE has no cool gradient family: its two
+ * cool marks, `ink-ice` and `ink-violet`, are INKS, and gradient stops exist only
+ * for surfaces and fills — `from-ink-ice` compiles to nothing, exactly as
+ * `text-fill-accent` does. A dead stop under `bg-clip-text text-transparent` is
+ * worse than a wrong colour: the headline renders invisible. The name survives as a
+ * deeper ember so the call sites outside this component keep working.
  */
 export type GradientTextSweep = 'ember' | 'iris' | 'moss' | 'signal';
 
 const SWEEPS: Record<GradientTextSweep, string> = {
-  ember: 'from-fill-accent to-fill-provenance',
-  iris: 'from-secondary-500 to-primary-400',
-  moss: 'from-fill-success to-fill-success',
-  // The landing hero's headline treatment: deep rose into the purple accent.
-  signal: 'from-rose-800 to-secondary-500',
+  ember: 'from-fill-accent to-accent-lift',
+  moss: 'from-fill-success to-fill-success-glow',
+  // The landing hero's headline treatment: wine into the technical orange accent —
+  // the nearest legal analogue to the old rose-into-purple close.
+  signal: 'from-fill-provenance to-fill-accent',
+  /** @deprecated No cool sweep survives the FACE palette; this is a deeper `ember`. Prefer `ember`. */
+  iris: 'from-fill-accent-deep to-accent-lift',
 };
 
 /**

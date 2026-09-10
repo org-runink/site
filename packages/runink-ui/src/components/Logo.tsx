@@ -73,7 +73,7 @@ export function Logo({
           </span>
         )}
       </div>
-      {showLabel && <span className="text-2xl font-bold tracking-tight text-white">{label}</span>}
+      {showLabel && <span className="text-2xl font-bold tracking-tight text-primary">{label}</span>}
     </a>
   );
 }

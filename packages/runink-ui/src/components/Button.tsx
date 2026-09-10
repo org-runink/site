@@ -8,9 +8,27 @@ import { safeHref } from '../lib/safeHref';
  */
 export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 
+/*
+ * One accent, three emphasis levels — solid, tonal, neutral.
+ *
+ * `secondary` was `bg-secondary-600`, a second CHROMATIC variant, and FACE has no
+ * second chroma to give it (olive and wine are semantic: success and provenance, not
+ * "another button"). So emphasis carries the distinction instead: `primary` is the
+ * solid accent fill, `secondary` is the same accent at wash strength with the accent
+ * border and accent ink, `outline` stays neutral. That also keeps `secondary` apart
+ * from `outline`, which a surface-based treatment (`bg-surface-well` + `border-edge`)
+ * would not have — both would have read as "the quiet bordered one".
+ *
+ * No variant changes colour on hover. `hover:` on an accent button has nowhere to go:
+ * `fill-accent` measures 4.69:1 against `on-accent` on the sheet ground, so ANY
+ * darkening (`fill-accent-deep`, or an alpha step) drops the label below 4.5:1 — and
+ * `accent-lift` has no `backgroundColor` utility, only gradient stops. The feedback is
+ * the `hover:scale-105` in BASE, which costs no contrast.
+ */
+
 const VARIANTS: Record<ButtonVariant, string> = {
-  primary: 'bg-surface-well text-white hover:bg-surface-well',
-  secondary: 'bg-secondary-600 text-white hover:bg-secondary-700',
+  primary: 'bg-fill-accent text-on-accent',
+  secondary: 'border border-fill-accent bg-fill-accent-wash text-ink-accent',
   outline: 'border-2 border-edge text-secondary',
 };
 
@@ -48,9 +66,8 @@ export type ButtonProps = Common &
  * on the marketing site are links, so this keeps the markup honest without
  * making callers choose an element.
  *
- * `outline` is tuned for light panels: its `text-secondary` is low contrast on
- * the dark canvas, so prefer `primary`/`secondary` on `Surface`, or override the
- * border and text colour via `className`.
+ * `outline` is the quietest of the three — neutral `edge` border over whatever is
+ * behind it — so prefer `primary`/`secondary` when the control needs to be found.
  *
  * `href` is run through `safeHref`, so a script-bearing destination still renders
  * the anchor — same size, same treatment — but without an `href`, which makes it

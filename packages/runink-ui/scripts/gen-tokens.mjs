@@ -181,6 +181,7 @@ const POSITION_KEYS = [
   'caretColor',
   'textDecorationColor',
   'ringOffsetColor',
+  'placeholderColor',
 ];
 
 function emitPreset() {
@@ -199,7 +200,12 @@ function emitPreset() {
       palettes[pos][e.web] = value;
     }
     if (e.wash) {
-      palettes.backgroundColor[`${e.web}-wash`] = `rgb(var(--rk-${e.web}-ch) / ${derived.alpha.wash.value})`;
+      const washValue = `rgb(var(--rk-${e.web}-ch) / ${derived.alpha.wash.value})`;
+      palettes.backgroundColor[`${e.web}-wash`] = washValue;
+      // Gradients need the wash too, or every washed stop re-types the 0.15
+      // ceiling as a raw alpha at the call site — which is how the number
+      // escaped its measurement last time.
+      palettes.gradientColorStops[`${e.web}-wash`] = washValue;
     }
   }
 

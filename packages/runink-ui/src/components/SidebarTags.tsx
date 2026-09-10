@@ -63,7 +63,7 @@ export function SidebarTags({ title = 'Popular Tags', tags, max = 20, className,
       )}
       {...rest}
     >
-      {title && <h3 className="mb-4 text-lg font-bold text-white">{title}</h3>}
+      {title && <h3 className="mb-4 text-lg font-bold text-primary">{title}</h3>}
       <div className="flex flex-wrap gap-2">
         {shown.map((tag) => {
           const url = safeHref(tag.href);
@@ -77,7 +77,7 @@ export function SidebarTags({ title = 'Popular Tags', tags, max = 20, className,
             <a
               key={tag.label}
               href={url}
-              className="text-sm text-secondary transition-colors duration-200 hover:text-secondary-500"
+              className="text-sm text-secondary transition-colors duration-200 hover:text-ink-accent"
             >
               {body}
             </a>

@@ -25,7 +25,7 @@ export function Rhythm() {
       <Trace>outer rule = the section band · inner rule = the container it wraps children in</Trace>
       <Section className={`${OUTLINE} bg-canvas`}>
         <div className={`${OUTLINE} p-4`}>
-          <h2 className="font-heading text-2xl font-black text-white">Run the Autonomous Supply Chain</h2>
+          <h2 className="font-heading text-2xl font-black text-primary">Run the Autonomous Supply Chain</h2>
           <p className="mt-2 max-w-2xl leading-relaxed">
             Everything inside this inner rule lines up with every other contained band on
             the page, because they all resolve to the same centred `max-w-7xl` column.
@@ -45,12 +45,12 @@ export function ContainedVsFullBleed() {
   return (
     <div>
       <Section className={`${OUTLINE} bg-canvas`}>
-        <div className="rounded-card bg-fill-success p-4 text-sm text-white">
+        <div className="rounded-card bg-fill-success p-4 text-sm text-primary">
           contained (default) — gutters keep this child inside the content column
         </div>
       </Section>
       <Section contained={false} className={`${OUTLINE} bg-surface-raised`}>
-        <div className="rounded-card bg-fill-accent-deep p-4 text-sm text-white">
+        <div className="rounded-card bg-fill-accent-deep p-4 text-sm text-primary">
           contained={'{false}'} — this child touches the band edge and manages its own width
         </div>
       </Section>
@@ -67,7 +67,7 @@ export function WithContent() {
   return (
     <Section className="bg-canvas">
       <Badge tone="sage">Real-time visibility</Badge>
-      <h2 className="mt-4 font-heading text-3xl font-black text-white">
+      <h2 className="mt-4 font-heading text-3xl font-black text-primary">
         Mitigate disruption in real time
       </h2>
       <p className="mb-8 mt-4 max-w-3xl leading-relaxed">
@@ -101,14 +101,14 @@ export function StackedBands() {
   return (
     <div>
       <Section className="bg-canvas">
-        <h2 className="font-heading text-2xl font-black text-white">Zero-Hold Customs Gate</h2>
+        <h2 className="font-heading text-2xl font-black text-primary">Zero-Hold Customs Gate</h2>
         <p className="mt-4 max-w-3xl leading-relaxed">
           Automatic customs and weighbridge auditing clears compliant loads without a manual hold.
         </p>
       </Section>
       <Section className="bg-surface-raised">
         <Badge tone="sage">Measured in production</Badge>
-        <h2 className="mt-4 font-heading text-2xl font-black text-white">
+        <h2 className="mt-4 font-heading text-2xl font-black text-primary">
           11x faster customs clearance
         </h2>
         <p className="mt-4 max-w-3xl leading-relaxed">

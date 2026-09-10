@@ -20,10 +20,10 @@ const TONES: Record<ReasonTone, { panel: string; bloom: string; accent: string; 
     tile: 'text-ink-success group-hover/item:border-ink-success/50 group-hover/item:bg-fill-success-wash',
   },
   ember: {
-    panel: 'border-hairline/30 shadow-neon-orange hover:-translate-y-1 hover:shadow-neon-orange-strong',
+    panel: 'border-hairline/30 hover:-translate-y-1 ',
     bloom: 'bg-fill-accent-wash group-hover:bg-fill-accent-wash',
-    accent: 'text-secondary-500',
-    tile: 'text-secondary-500 group-hover/item:border-hairline/50 group-hover/item:bg-fill-accent-wash',
+    accent: 'text-ink-accent',
+    tile: 'text-ink-accent group-hover/item:border-hairline/50 group-hover/item:bg-fill-accent-wash',
   },
 };
 
@@ -79,7 +79,7 @@ export interface ReasonsGridProps extends HTMLAttributes<HTMLElement> {
  * choose Runink, names its category, and enumerates the capabilities behind it, so
  * the reader can pick a level of intelligence rather than read a flat feature list.
  *
- * It owns its own `py-32` band, top border and `primary-950` canvas, so drop it
+ * It owns its own `py-32` band, top border and `canvas` ground, so drop it
  * straight into a dark `Surface` — do **not** wrap it in `Section`, which would
  * double-pad it. The band is `relative overflow-hidden` because the per-column
  * blurred bloom is an absolutely positioned child that must be clipped to it.
@@ -175,7 +175,7 @@ export function ReasonsGrid({
       <Container className="relative z-10">
         <div className="mb-20 flex flex-col items-center text-center">
           {eyebrow && (
-            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
+            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-ink-accent backdrop-blur md:text-base">
               {eyebrow}
             </div>
           )}
@@ -219,7 +219,7 @@ export function ReasonsGrid({
                 />
 
                 <div className="relative z-10">
-                  <h3 className="mb-2 text-4xl font-black tracking-tight text-white">{reason.title}</h3>
+                  <h3 className="mb-2 text-4xl font-black tracking-tight text-primary">{reason.title}</h3>
                   <p className={cx('mb-10 font-mono text-sm uppercase tracking-widest', tone.accent)}>
                     {reason.category}
                   </p>
@@ -236,7 +236,7 @@ export function ReasonsGrid({
                           <Icon name={capability.icon} className="h-6 w-6" />
                         </div>
                         <div>
-                          <h4 className="mb-2 text-xl font-bold text-white">{capability.title}</h4>
+                          <h4 className="mb-2 text-xl font-bold text-primary">{capability.title}</h4>
                           <p className="text-base leading-relaxed text-secondary">{capability.description}</p>
                         </div>
                       </li>

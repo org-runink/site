@@ -70,7 +70,7 @@ export function RichStepText() {
           name: 'Free time expires',
           text: (
             <>
-              Carriers grant <strong className="text-white">two to seven days</strong> depending on the lane.
+              Carriers grant <strong className="text-primary">two to seven days</strong> depending on the lane.
             </>
           ),
         },
@@ -78,7 +78,7 @@ export function RichStepText() {
           name: 'The first tier bites',
           text: (
             <>
-              Charges start at <strong className="text-white">$75–$150</strong> per container per day.
+              Charges start at <strong className="text-primary">$75–$150</strong> per container per day.
             </>
           ),
         },
@@ -86,8 +86,8 @@ export function RichStepText() {
           name: 'The second tier compounds',
           text: (
             <>
-              After the first week it climbs past <strong className="text-white">$300</strong> — see the{' '}
-              <a href="/blog/demurrage-detention-fees-prevention/" className="text-secondary-500 underline">
+              After the first week it climbs past <strong className="text-primary">$300</strong> — see the{' '}
+              <a href="/blog/demurrage-detention-fees-prevention/" className="text-ink-accent underline">
                 full breakdown
               </a>
               .

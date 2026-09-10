@@ -31,7 +31,7 @@ export interface CtaBannerProps extends Omit<HTMLAttributes<HTMLElement>, 'title
   /**
    * Start colour of the glow gradient (`--gradient-from`). Any CSS colour. Set it
    * **together with** `gradientTo`; if either is omitted the banner keeps its token
-   * gradient (`rose-800` → `secondary-500`).
+   * gradient (`rose-800` → `accent-lift`).
    */
   gradientFrom?: string;
   /** End colour of the glow gradient (`--gradient-to`). See `gradientFrom`. */
@@ -100,13 +100,13 @@ export function CtaBanner({
             aria-hidden="true"
             className={cx(
               'pointer-events-none absolute -inset-1 opacity-20 blur transition duration-1000 group-hover:opacity-40',
-              !customGradient && 'from-rose-800 to-secondary-500',
+              !customGradient && 'from-fill-provenance to-accent-lift',
             )}
             style={glowStyle}
           />
 
           <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-            <h2 className="mb-6 text-3xl font-bold tracking-tight text-white md:text-5xl">{title}</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-primary md:text-5xl">{title}</h2>
             {description && (
               <p className="mx-auto mb-10 max-w-2xl text-xl leading-relaxed text-primary md:text-2xl">
                 {description}
@@ -116,7 +116,7 @@ export function CtaBanner({
               {primaryButton?.text && (
                 <a
                   href={safeHref(primaryButton.url) ?? '#'}
-                  className="group/link inline-flex animate-cta-pulse items-center justify-center rounded border border-hairline bg-surface px-8 py-4 text-lg font-black uppercase tracking-widest text-white shadow-neon-orange transition-all duration-300 hover:-translate-y-1 hover:border-hairline hover:shadow-neon-orange-strong"
+                  className="group/link inline-flex animate-cta-pulse items-center justify-center rounded border border-hairline bg-surface px-8 py-4 text-lg font-black uppercase tracking-widest text-primary transition-all duration-300 hover:-translate-y-1 hover:border-hairline "
                 >
                   {primaryButton.text}
                   <span
@@ -130,7 +130,7 @@ export function CtaBanner({
               {secondaryButton?.text && (
                 <a
                   href={safeHref(secondaryButton.url) ?? '#'}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-hairline bg-surface/50 px-8 py-4 text-lg font-bold text-primary backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-hairline hover:bg-surface-raised hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-hairline bg-surface/50 px-8 py-4 text-lg font-bold text-primary backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-hairline hover:bg-surface-raised hover:text-primary"
                 >
                   {secondaryButton.text}
                 </a>

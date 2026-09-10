@@ -20,7 +20,7 @@ export interface TabbedPitch {
   label: string;
   /**
    * The pitch headline. A node, because the pattern is two emphasised spans
-   * inside running text: the pain in `font-bold text-red-300` and the remedy in
+   * inside running text: the pain in `font-bold text-ink-provenance` and the remedy in
    * `font-bold text-ink-success`.
    */
   headline: ReactNode;
@@ -46,8 +46,8 @@ export interface TabbedPitchesProps extends Omit<HTMLAttributes<HTMLElement>, 'c
   closerLabel?: string;
   /**
    * Decorative layer painted behind the content, full-bleed. The site passes the
-   * `background-effects` partial tinted `brand-green`; leave it out and the band
-   * is a flat `primary-950`.
+   * `background-effects` partial tinted olive; leave it out and the band is a flat
+   * `canvas`.
    */
   backgroundEffect?: ReactNode;
   /** Draw the oversized decorative quote glyph in the panel's top-right. Defaults to true. */
@@ -75,7 +75,7 @@ const COLUMNS: Record<number, string> = {
  * it when one product has to be sold differently to five people in the same room;
  * for parallel, non-exclusive content use a card grid instead.
  *
- * Paints its own `primary-950` band with a top hairline, so it needs no `Surface`
+ * Paints its own `canvas` band with a top hairline, so it needs no `Surface`
  * wrapper, and it clips its own overflow for `backgroundEffect`. Give it an `id`
  * (the site uses `id="painkiller"`) if it is a nav anchor target.
  *
@@ -86,9 +86,9 @@ const COLUMNS: Record<number, string> = {
  * activation: left/right arrows, Home and End move selection and focus, and only
  * the selected tab is in the tab order.
  *
- * The headline gradient is the brand's orange close (`secondary-500` →
- * `brand-orange-dark`), which no `GradientText` sweep covers, so the utilities are
- * inlined here.
+ * The headline gradient is the brand sweep (`fill-accent` → `accent-lift`) — the
+ * same pairing `GradientText`'s `ember` now carries — inlined here because this
+ * heading also sets its own display sizing.
  *
  * @example
  * // Two of the five homepage personas — the full set (CFO, DC Ops Director,
@@ -104,7 +104,7 @@ const COLUMNS: Record<number, string> = {
  *       label: 'The CFO',
  *       headline: (
  *         <>
- *           Stop waiting 30 days for a <strong className="font-bold text-red-300">monthly close</strong>. Get{' '}
+ *           Stop waiting 30 days for a <strong className="font-bold text-ink-provenance">monthly close</strong>. Get{' '}
  *           <strong className="font-bold text-ink-success">End of Cycle Underwriting</strong>.
  *         </>
  *       ),
@@ -117,7 +117,7 @@ const COLUMNS: Record<number, string> = {
  *       label: 'DC Ops Director',
  *       headline: (
  *         <>
- *           Your dock doors are <strong className="font-bold text-red-300">bottlenecked</strong>. Automate your{' '}
+ *           Your dock doors are <strong className="font-bold text-ink-provenance">bottlenecked</strong>. Automate your{' '}
  *           <strong className="font-bold text-ink-success">Cargo Verification</strong>.
  *         </>
  *       ),
@@ -131,7 +131,7 @@ const COLUMNS: Record<number, string> = {
  *       headline: (
  *         <>
  *           Stop eating the cost of{' '}
- *           <strong className="font-bold text-red-300">vendor compliance failures</strong>. Deploy the{' '}
+ *           <strong className="font-bold text-ink-provenance">vendor compliance failures</strong>. Deploy the{' '}
  *           <strong className="font-bold text-ink-success">Digital Paralegal</strong>.
  *         </>
  *       ),
@@ -193,7 +193,7 @@ export function TabbedPitches({
         <div className="mx-auto max-w-6xl px-6">
           {heading && (
             <div className="mb-16 flex flex-col items-center text-center">
-              <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-fill-accent bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[90px]">
+              <h2 className="mb-2 bg-gradient-to-r from-fill-accent to-accent-lift bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[90px]">
                 {heading}
               </h2>
             </div>
@@ -225,7 +225,10 @@ export function TabbedPitches({
                   onClick={() => setActiveId(tab.id)}
                   onKeyDown={(event) => onKeyDown(event, index)}
                   className={cx(
-                    'group flex flex-col items-center justify-center rounded-chip border bg-canvas px-4 py-6 text-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500',
+                    // The ring is `fill-accent` with a 1px offset in the tab's own
+                    // ground: flush, it measures 3.02:1 over `surface-well` on the
+                    // sheet ground, i.e. no headroom.
+                    'group flex flex-col items-center justify-center rounded-chip border bg-canvas px-4 py-6 text-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fill-accent focus-visible:ring-offset-1 focus-visible:ring-offset-canvas',
                     selected
                       ? 'border-hairline'
                       : 'border-hairline hover:border-hairline hover:bg-surface',
@@ -239,13 +242,13 @@ export function TabbedPitches({
                   >
                     <Icon
                       name={tab.icon}
-                      className={cx('h-5 w-5 transition-colors', selected ? 'text-white' : 'text-secondary')}
+                      className={cx('h-5 w-5 transition-colors', selected ? 'text-primary' : 'text-secondary')}
                     />
                   </div>
                   <h3
                     className={cx(
                       'text-sm font-bold tracking-wide transition-colors duration-300',
-                      selected ? 'text-white' : 'text-secondary',
+                      selected ? 'text-primary' : 'text-secondary',
                     )}
                   >
                     {tab.label}

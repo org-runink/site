@@ -22,7 +22,7 @@ export function Gutters() {
       <Trace>tinted band = full bleed · dashed box = the container column</Trace>
       <div className="bg-fill-success py-6">
         <Container className={`${OUTLINE} py-4`}>
-          <p className="font-mono text-[11px] text-white">
+          <p className="font-mono text-[11px] text-primary">
             mx-auto · w-full · max-w-7xl · px-4 sm:px-6 lg:px-8
           </p>
         </Container>
@@ -42,17 +42,17 @@ export function AlignsAcrossBands() {
     <div>
       <div className="bg-surface py-6">
         <Container className={OUTLINE}>
-          <p className="py-2 text-sm text-white">Band one — the hero band, on the page canvas.</p>
+          <p className="py-2 text-sm text-primary">Band one — the hero band, on the page canvas.</p>
         </Container>
       </div>
       <div className="bg-surface-raised py-6">
         <Container className={OUTLINE}>
-          <p className="py-2 text-sm text-white">Band two — a raised band behind a card row.</p>
+          <p className="py-2 text-sm text-primary">Band two — a raised band behind a card row.</p>
         </Container>
       </div>
       <div className="bg-fill-success py-6">
         <Container className={OUTLINE}>
-          <p className="py-2 text-sm text-white">Band three — an accent band behind a call to action.</p>
+          <p className="py-2 text-sm text-primary">Band three — an accent band behind a call to action.</p>
         </Container>
       </div>
     </div>
@@ -69,7 +69,7 @@ export function WithContent() {
   return (
     <Section contained={false} className="bg-canvas">
       <Container>
-        <h2 className="font-heading text-3xl font-black text-white">
+        <h2 className="font-heading text-3xl font-black text-primary">
           Run the Autonomous Supply Chain
         </h2>
         <p className="mb-10 mt-4 max-w-3xl leading-relaxed">

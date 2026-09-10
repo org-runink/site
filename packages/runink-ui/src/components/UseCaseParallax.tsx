@@ -21,9 +21,9 @@ export type UseCaseParallaxTrack = 'monitor' | 'cockpit';
 // watches, red for what it acts on. Each has a matching glow token.
 const TRACK_CARD: Record<UseCaseParallaxTrack, string> = {
   monitor:
-    'border-ink-success/30 bg-fill-success-wash shadow-neon-green hover:border-ink-success/50 hover:bg-fill-success-wash hover:shadow-xl hover:shadow-glow-success',
+    'border-ink-success/30 bg-fill-success-wash shadow-glow-success hover:border-ink-success/50 hover:bg-fill-success-wash hover:shadow-xl hover:shadow-glow-success',
   cockpit:
-    'border-ink-provenance/30 bg-fill-provenance-wash shadow-neon-red hover:border-ink-provenance/50 hover:bg-fill-provenance-wash hover:shadow-xl ',
+    'border-ink-provenance/30 bg-fill-provenance-wash hover:border-ink-provenance/50 hover:bg-fill-provenance-wash hover:shadow-xl ',
 };
 
 const TRACK_BADGE: Record<UseCaseParallaxTrack, string> = {
@@ -36,8 +36,12 @@ const TRACK_TITLE: Record<UseCaseParallaxTrack, string> = {
   cockpit: 'text-ink-provenance',
 };
 
+// Each dot rings in its OWN family. The monitor dot briefly ringed in `fill-accent`,
+// which is the mechanical fallout of `ring-fill-accent` having no olive ring token in
+// the table — an orange halo on the green track, and the one place the two headings
+// stopped being parallel.
 const TRACK_DOT: Record<UseCaseParallaxTrack, string> = {
-  monitor: 'bg-fill-success ring-4 ring-fill-accent/20',
+  monitor: 'bg-fill-success ring-4 ring-ink-success/20',
   cockpit: 'bg-fill-provenance ring-4 ring-ink-provenance/20',
 };
 
@@ -136,7 +140,7 @@ function prefersReducedMotion(): boolean {
  * rAF-throttled scroll listener `LandingHero` uses, and nothing moves under
  * `prefers-reduced-motion`.
  *
- * Paints its own `primary-950` canvas and bottom rule, so place it between
+ * Paints its own `canvas` ground and bottom rule, so place it between
  * sections rather than inside one.
  *
  * @example
@@ -283,11 +287,11 @@ export function UseCaseParallax({
           style={{ transform: `translate3d(0, ${copyDrift}px, 0)` }}
         >
           {pill && (
-            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
+            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-ink-accent backdrop-blur md:text-base">
               {pill}
             </div>
           )}
-          <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-fill-accent bg-clip-text text-4xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-5xl xl:text-7xl 2xl:text-[80px]">
+          <h2 className="mb-2 bg-gradient-to-r from-fill-accent to-accent-lift bg-clip-text text-4xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-5xl xl:text-7xl 2xl:text-[80px]">
             {title}
           </h2>
           {subtitle && (
@@ -298,7 +302,7 @@ export function UseCaseParallax({
           {href && (
             <a
               href={href}
-              className="inline-flex items-center gap-3 rounded-full bg-rose-700 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition-all duration-300 hover:bg-rose-800"
+              className="inline-flex items-center gap-3 rounded-full bg-fill-provenance px-8 py-4 text-sm font-bold uppercase tracking-wider text-on-provenance shadow-lg transition-all duration-300 hover:bg-fill-provenance/90"
             >
               {ctaLabel}
               <Icon name="arrow-right" className="h-4 w-4" />
@@ -314,9 +318,14 @@ export function UseCaseParallax({
           <div className="flex w-full flex-col pl-0 md:pl-6">
             {problem && (
               <div className="group relative mb-12 overflow-hidden rounded-[1.25rem] border border-hairline/80 bg-canvas p-6 md:p-8">
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/5 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                <h3 className="mb-3 flex items-center gap-3 font-bold tracking-tight text-white">
-                  <Icon name={problemIcon} className="h-5 w-5 text-secondary-500" />
+                {/*
+                  `from-fill-accent/15`, not `from-fill-accent-wash`: the wash is a
+                  background token with no gradient-stop form, so the 0.15 ceiling is
+                  written as the modifier. Same colour, not a second number.
+                */}
+                <div className="absolute inset-0 bg-gradient-to-r from-fill-accent/15 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+                <h3 className="mb-3 flex items-center gap-3 font-bold tracking-tight text-primary">
+                  <Icon name={problemIcon} className="h-5 w-5 text-ink-accent" />
                   {problemLabel}
                 </h3>
                 <div className="prose prose-invert text-[13px] leading-relaxed text-secondary prose-p:last:mb-0 md:text-sm">
@@ -327,7 +336,7 @@ export function UseCaseParallax({
 
             {monitor.length > 0 && (
               <>
-                <h3 className="mb-4 flex items-center gap-3 text-lg font-bold tracking-tight text-white">
+                <h3 className="mb-4 flex items-center gap-3 text-lg font-bold tracking-tight text-primary">
                   <span className={cx('h-2 w-2 rounded-full', TRACK_DOT.monitor)} />
                   {monitorLabel}
                 </h3>
@@ -339,7 +348,7 @@ export function UseCaseParallax({
 
             {cockpit.length > 0 && (
               <>
-                <h3 className="mb-4 mt-12 flex items-center gap-3 text-lg font-bold tracking-tight text-white">
+                <h3 className="mb-4 mt-12 flex items-center gap-3 text-lg font-bold tracking-tight text-primary">
                   <span className={cx('h-2 w-2 rounded-full', TRACK_DOT.cockpit)} />
                   {cockpitLabel}
                 </h3>

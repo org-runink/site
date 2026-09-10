@@ -67,8 +67,8 @@ export interface PricingTier {
    */
   ctaVariant?: 'solid' | 'outline';
   /**
-   * The "most popular" tier: warmer card, orange eyebrow and checks, gradient
-   * name and price, solid gradient button. Set it on at most one tier.
+   * The "most popular" tier: accent border over the accent wash, accent eyebrow and
+   * checks, gradient name and price, solid gradient button. Set it on at most one tier.
    */
   highlighted?: boolean;
 }
@@ -92,13 +92,13 @@ function normaliseFeature(feature: PricingFeature): { label: string; yearlyOnly:
   return { label: feature.label, yearlyOnly: feature.yearlyOnly === true };
 }
 
-const GRADIENT_TEXT = 'bg-gradient-to-r from-amber-500 to-secondary-500 bg-clip-text text-transparent';
+const GRADIENT_TEXT = 'bg-gradient-to-r from-fill-accent to-accent-lift bg-clip-text text-transparent';
 
 const CTA: Record<'solid' | 'outline', string> = {
   solid:
-    'bg-gradient-to-r from-secondary-500 to-fill-accent text-white hover:-translate-y-1 hover:shadow-neon-orange-strong',
+    'bg-gradient-to-r from-fill-accent to-accent-lift text-on-accent hover:-translate-y-1 ',
   outline:
-    'border border-hairline bg-surface text-secondary hover:border-edge hover:text-white',
+    'border border-hairline bg-surface text-secondary hover:border-edge hover:text-primary',
 };
 
 /**
@@ -107,8 +107,9 @@ const CTA: Record<'solid' | 'outline', string> = {
  * This is the site's most opinionated card: a 2.5rem-radius ink panel, centred
  * display-face tier name, a price that swaps between monthly and annual, an
  * inset panel for included capacity and outcome-based terms, then a checklist and
- * a full-width action. One tier may be `highlighted`, which warms the card and
- * switches its name, price, checks and button to the orange/purple gradient.
+ * a full-width action. One tier may be `highlighted`, which puts the card into the
+ * system's selected state — accent border over the accent wash — and switches its
+ * name, price, checks and button to the accent gradient.
  *
  * The shortcode carried no parameters at all — its content was a JSON blob in
  * `content/pricing.md` plus three inlined language branches for the
@@ -233,7 +234,7 @@ export function PricingTable({
                 <div
                   className={cx(
                     'relative flex h-full flex-col overflow-hidden rounded-pill border shadow-2xl transition-all duration-300',
-                    hot ? 'border-fill-accent/30 bg-surface' : 'border-hairline bg-canvas',
+                    hot ? 'border-fill-accent bg-fill-accent-wash' : 'border-hairline bg-canvas',
                   )}
                 >
                   <div className="flex flex-grow flex-col items-center p-8 text-center lg:p-12">
@@ -261,7 +262,7 @@ export function PricingTable({
                     <h3
                       className={cx(
                         'mb-2 w-full break-normal text-4xl font-black uppercase italic tracking-tighter',
-                        hot ? GRADIENT_TEXT : 'text-white',
+                        hot ? GRADIENT_TEXT : 'text-primary',
                       )}
                     >
                       {tier.name}
@@ -277,7 +278,7 @@ export function PricingTable({
                         className={cx(
                           'break-words font-black italic tracking-tighter',
                           numeric ? 'text-6xl leading-none lg:text-7xl' : 'text-4xl leading-tight lg:text-5xl',
-                          hot ? GRADIENT_TEXT : 'text-white',
+                          hot ? GRADIENT_TEXT : 'text-primary',
                         )}
                       >
                         {numeric ? `${currency}${price}` : price}
@@ -306,10 +307,10 @@ export function PricingTable({
                             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-hairline/50 bg-surface-raised/50 shadow-inner">
                               <Icon
                                 name="bolt"
-                                className={cx('h-5 w-5', hot ? 'text-secondary-500' : 'text-secondary')}
+                                className={cx('h-5 w-5', hot ? 'text-ink-accent' : 'text-secondary')}
                               />
                             </div>
-                            <div className="whitespace-pre-line text-sm font-black uppercase italic leading-snug tracking-wide text-white">
+                            <div className="whitespace-pre-line text-sm font-black uppercase italic leading-snug tracking-wide text-primary">
                               {tier.credits}
                             </div>
                           </div>

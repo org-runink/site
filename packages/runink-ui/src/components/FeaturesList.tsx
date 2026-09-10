@@ -13,7 +13,7 @@ const TONES: Record<FeaturesListTone, string> = {
   green: 'bg-fill-success-wash text-ink-success',
   sage: 'bg-fill-success-wash text-ink-success',
   orange: 'bg-fill-accent-wash text-ink-accent',
-  tan: 'bg-fill-accent-deep-wash text-brand-tan',
+  tan: 'bg-fill-accent-deep-wash text-ink-accent',
   primary: 'bg-fill-accent-wash text-secondary',
 };
 
@@ -71,7 +71,7 @@ export interface FeaturesListProps extends HTMLAttributes<HTMLDivElement> {
 export function FeaturesList({ title, items, tone = 'green', className, ...rest }: FeaturesListProps) {
   return (
     <div className={cx('mx-auto max-w-3xl', className)} {...rest}>
-      <h2 className="mb-24 text-center text-3xl font-bold text-white">{title}</h2>
+      <h2 className="mb-24 text-center text-3xl font-bold text-primary">{title}</h2>
 
       <div className="space-y-12">
         {items.map((item) => (
@@ -85,7 +85,7 @@ export function FeaturesList({ title, items, tone = 'green', className, ...rest 
               <Icon name="check" className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="mb-3 text-2xl font-bold text-white">{item.title}</h3>
+              <h3 className="mb-3 text-2xl font-bold text-primary">{item.title}</h3>
               <p className="text-lg leading-relaxed text-secondary">{item.description}</p>
             </div>
           </div>

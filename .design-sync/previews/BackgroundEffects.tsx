@@ -59,7 +59,7 @@ function Copy({ eyebrow, title, body }: { eyebrow: string; title: string; body: 
   return (
     <>
       <Badge tone="sage">{eyebrow}</Badge>
-      <h2 className="mt-4 font-heading text-3xl font-black text-white">{title}</h2>
+      <h2 className="mt-4 font-heading text-3xl font-black text-primary">{title}</h2>
       <p className="mt-4 max-w-lg leading-relaxed">{body}</p>
     </>
   );

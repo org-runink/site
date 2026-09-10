@@ -145,7 +145,7 @@ export function LandingHero({
 
       {/* Washes: darken top and bottom so the copy stays legible over the scene. */}
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-surface/40 via-transparent to-surface" />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-rose-800/20 via-transparent mix-blend-overlay" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-fill-provenance/20 via-transparent mix-blend-overlay" />
 
       <div className="relative z-20 flex max-w-5xl flex-col items-center px-6 text-center">
         <GradientText
@@ -159,7 +159,7 @@ export function LandingHero({
           {headline}
         </GradientText>
 
-        {tagline && <div className="mb-2 text-2xl font-bold tracking-wide text-white">{tagline}</div>}
+        {tagline && <div className="mb-2 text-2xl font-bold tracking-wide text-primary">{tagline}</div>}
 
         {description && (
           <div className="mb-10 max-w-4xl text-lg font-bold uppercase leading-relaxed tracking-[0.15em] text-secondary md:text-xl">
@@ -169,7 +169,7 @@ export function LandingHero({
 
         {scrollCue && (
           <div className="mt-8 flex flex-col items-center gap-4">
-            <div className="animate-bounce rounded bg-surface/50 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.4em] text-secondary-500">
+            <div className="animate-bounce rounded bg-surface/50 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.4em] text-secondary">
               {scrollCue}
             </div>
           </div>

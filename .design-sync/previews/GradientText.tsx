@@ -23,7 +23,7 @@ export function Sweeps() {
 /** The intended use: one emphatic span inside an otherwise plain heading. */
 export function InAHeading() {
   return (
-    <h2 className="max-w-2xl font-heading text-5xl font-black leading-tight text-white">
+    <h2 className="max-w-2xl font-heading text-5xl font-black leading-tight text-primary">
       Run the autonomous supply chain.{' '}
       <GradientText sweep="ember">Mitigate disruption in real time.</GradientText>
     </h2>

@@ -32,7 +32,7 @@ export function Stat({ number, label, className }: StatProps) {
         className,
       )}
     >
-      <div className="pointer-events-none absolute inset-0 rounded-card bg-gradient-to-br from-secondary-500/30 to-accent-lift/30 p-[1px] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 rounded-card bg-gradient-to-br from-fill-accent/30 to-accent-lift/30 p-[1px] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="relative z-10 text-center">
         {/*
          * The figure scales with the card rather than sitting at a fixed 60px.

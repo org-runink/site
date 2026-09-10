@@ -299,7 +299,7 @@ const SIZED = /(?:^|[\s:])!?(?:[hw]-|size-)/;
  * A single-colour line icon from the Runink registry.
  *
  * Icons inherit colour from `currentColor`, so set the colour on the icon or any
- * ancestor with a text utility — `text-ink-success`, `text-white`, and so on.
+ * ancestor with a text utility — `text-ink-success`, `text-primary`, and so on.
  * This is what makes the group-hover colour transitions in Card and FeatureCard
  * work without the icon knowing anything about them.
  */

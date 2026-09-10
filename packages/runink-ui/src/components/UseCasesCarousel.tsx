@@ -171,11 +171,11 @@ export function UseCasesCarousel({
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div id={anchorId} className="mx-auto mb-16 max-w-7xl px-6">
           {eyebrow && (
-            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
+            <div className="mb-6 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-ink-accent backdrop-blur md:text-base">
               {eyebrow}
             </div>
           )}
-          <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-fill-accent bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[90px]">
+          <h2 className="mb-2 bg-gradient-to-r from-fill-accent to-accent-lift bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[90px]">
             {title}
           </h2>
           {subtitle && (
@@ -197,11 +197,11 @@ export function UseCasesCarousel({
         >
           {items.map((item, index) => {
             const href = safeHref(item.href);
-            const accent = item.badgeColor ?? 'var(--color-secondary-500)';
+            const accent = item.badgeColor ?? 'rgb(var(--rk-ink-accent-ch))';
             return (
               <div
                 key={`${index}-${item.title}`}
-                className="group flex w-80 shrink-0 snap-start flex-col rounded-3xl border border-hairline bg-surface-raised/80 p-8 shadow-xl backdrop-blur transition-transform duration-300 hover:-translate-y-2 hover:border-hairline/50 hover:shadow-neon-orange-strong md:w-96 lg:snap-align-none"
+                className="group flex w-80 shrink-0 snap-start flex-col rounded-3xl border border-hairline bg-surface-raised/80 p-8 shadow-xl backdrop-blur transition-transform duration-300 hover:-translate-y-2 hover:border-hairline/50 md:w-96 lg:snap-align-none"
               >
                 {item.badge && (
                   <div className="mb-6 flex items-start justify-between">
@@ -213,14 +213,14 @@ export function UseCasesCarousel({
                     </span>
                   </div>
                 )}
-                <h3 className="mb-3 text-2xl font-bold text-white transition-colors group-hover:text-secondary-500">
+                <h3 className="mb-3 text-2xl font-bold text-primary transition-colors group-hover:text-ink-accent">
                   {item.title}
                 </h3>
                 <p className="mb-8 flex-grow text-sm leading-relaxed text-secondary">{item.description}</p>
                 {href && (
                   <a
                     href={href}
-                    className="mt-auto inline-flex items-center gap-2 border-t border-hairline pt-4 text-sm font-bold uppercase tracking-widest text-secondary-500 transition-all group-hover:gap-3"
+                    className="mt-auto inline-flex items-center gap-2 border-t border-hairline pt-4 text-sm font-bold uppercase tracking-widest text-ink-accent transition-all group-hover:gap-3"
                   >
                     {item.linkLabel ?? `Read about ${item.title}`}
                     <Icon name="arrow-right" className="h-4 w-4" />

@@ -32,7 +32,7 @@ export interface TrustSignalsProps extends Omit<HTMLAttributes<HTMLElement>, 'ti
 
 const ROWS = {
   compliance:
-    'inline-block rounded-full border border-hairline/30 bg-surface px-3 py-1 text-sm font-medium text-secondary-500 hover:bg-surface-raised',
+    'inline-block rounded-full border border-hairline/30 bg-surface px-3 py-1 text-sm font-medium text-ink-accent hover:bg-surface-raised',
   partnerships:
     'inline-block rounded-full bg-surface-raised px-3 py-1 text-sm font-medium text-secondary hover:bg-surface-well',
 } as const;

@@ -62,7 +62,7 @@ export function InSidebar() {
   return (
     <div className="flex gap-8">
       <div className="flex-1 space-y-4">
-        <h2 className="text-3xl font-bold text-white">Preventing demurrage and detention fees</h2>
+        <h2 className="text-3xl font-bold text-primary">Preventing demurrage and detention fees</h2>
         <p className="text-lg leading-relaxed text-secondary">
           Demurrage and detention fees are among the largest hidden costs in global logistics, costing the
           industry over $5 billion annually. They accumulate when containers sit idle at port or when equipment

@@ -19,9 +19,9 @@ export interface PricingTableCompactTier {
     href?: string;
   };
   /**
-   * The featured tier: amber-to-black gradient card, tan border, a floating
-   * "most popular" badge straddling the top edge, and the solid purple button.
-   * Set it on at most one tier.
+   * The featured tier: the system's selected state — a `fill-accent` border over
+   * the accent wash, a floating "most popular" badge straddling the top edge, and
+   * the solid accent button. Set it on at most one tier.
    */
   featured?: boolean;
 }
@@ -105,7 +105,7 @@ export function PricingTableCompact({
       <div className="mx-auto max-w-screen-xl px-4 py-16 lg:px-6 lg:py-20">
         {title && (
           <div className="mx-auto mb-12 max-w-screen-md text-center">
-            <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-white">{title}</h2>
+            <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-primary">{title}</h2>
             {description && <p className="mb-5 font-light text-secondary sm:text-xl">{description}</p>}
           </div>
         )}
@@ -119,27 +119,27 @@ export function PricingTableCompact({
                 className={cx(
                   'relative flex flex-col rounded-card border p-8 shadow-xl transition duration-300 hover:-translate-y-2',
                   featured
-                    ? 'border-edge bg-gradient-to-br from-amber-950 via-surface to-neutral-950'
+                    ? 'border-fill-accent bg-fill-accent-wash'
                     : 'border-hairline bg-surface-raised ',
                 )}
               >
                 {featured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="rounded-full bg-gradient-to-r from-fill-success-glow to-accent-lift px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg">
+                    <span className="rounded-full bg-gradient-to-r from-fill-success-glow to-accent-lift px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary shadow-lg">
                       {featuredLabel}
                     </span>
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-white">{tier.name}</h3>
+                  <h3 className="text-2xl font-bold text-primary">{tier.name}</h3>
                   {tier.description && <p className="mt-2 text-secondary">{tier.description}</p>}
                 </div>
 
                 <div className="mb-6">
                   <div className="flex items-baseline">
-                    <span className="text-4xl font-extrabold text-white">{currency}</span>
-                    <span className="text-5xl font-extrabold tracking-tight text-white">{tier.price}</span>
+                    <span className="text-4xl font-extrabold text-primary">{currency}</span>
+                    <span className="text-5xl font-extrabold tracking-tight text-primary">{tier.price}</span>
                     <span className="ml-1 text-secondary">{periodLabel}</span>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export function PricingTableCompact({
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex items-center">
                         <svg
-                          className={cx('mr-3 h-5 w-5', featured ? 'text-secondary-500' : 'text-brand-tan')}
+                          className={cx('mr-3 h-5 w-5', featured ? 'text-ink-accent' : 'text-secondary')}
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           aria-hidden="true"
@@ -172,8 +172,8 @@ export function PricingTableCompact({
                     className={cx(
                       'w-full rounded-full px-6 py-4 text-center text-sm font-bold uppercase tracking-wider transition-all duration-300',
                       featured
-                        ? 'bg-secondary-600 text-white shadow-lg hover:bg-secondary-700 '
-                        : 'border border-edge bg-surface-well text-white hover:bg-surface-well',
+                        ? 'bg-fill-accent text-on-accent shadow-lg hover:bg-fill-accent-deep '
+                        : 'border border-edge bg-surface-well text-primary hover:bg-surface-well',
                     )}
                   >
                     {tier.cta.label}

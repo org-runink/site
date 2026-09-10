@@ -70,7 +70,7 @@ export function TestimonialCard({ quote, name, role, avatar, avatarAlt, classNam
           </div>
         )}
         <div>
-          <h4 className="font-bold text-white">{name}</h4>
+          <h4 className="font-bold text-primary">{name}</h4>
           <p className="text-secondary">{role}</p>
         </div>
       </div>

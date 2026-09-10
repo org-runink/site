@@ -22,6 +22,8 @@ const PREFIX_FOR = {
   boxShadowColor: ['shadow'],
   caretColor: ['caret'],
   textDecorationColor: ['decoration'],
+  ringOffsetColor: ['ring-offset'],
+  placeholderColor: ['placeholder'],
 };
 
 /** Alpha steps the components actually use. Keep tight — every entry is emitted CSS. */

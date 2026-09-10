@@ -25,7 +25,7 @@ export interface PricingToggleProps extends Omit<HTMLAttributes<HTMLElement>, 'o
  * The monthly/annual segmented switch above a pricing table.
  *
  * A pill-shaped ink track with one button per option; the selected segment is the
- * purple pill. Works controlled (`value` + `onChange`) or uncontrolled, and with
+ * solid `fill-accent` pill. Works controlled (`value` + `onChange`) or uncontrolled, and with
  * neither prop it still renders its first option selected, which is the state the
  * template booted into.
  *
@@ -91,10 +91,10 @@ export function PricingToggle({
                   onClick={() => select(option.value)}
                   className={cx(
                     'relative z-10 rounded-full px-6 py-2.5 text-xs font-black uppercase tracking-[0.15em] transition-colors duration-300',
-                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas',
+                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-fill-accent focus-visible:ring-offset-1 focus-visible:ring-offset-surface',
                     selected
-                      ? 'bg-secondary-500 text-primary shadow-md'
-                      : 'text-secondary hover:text-secondary',
+                      ? 'bg-fill-accent text-on-accent shadow-md'
+                      : 'text-secondary hover:text-primary',
                   )}
                 >
                   {option.label}

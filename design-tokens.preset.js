@@ -115,11 +115,15 @@ module.exports = {
         "surface-raised": "rgb(var(--rk-surface-raised-ch) / <alpha-value>)",
         "surface-well": "rgb(var(--rk-surface-well-ch) / <alpha-value>)",
         "fill-accent": "rgb(var(--rk-fill-accent-ch) / <alpha-value>)",
+        "fill-accent-wash": "rgb(var(--rk-fill-accent-ch) / 0.15)",
         "fill-accent-deep": "rgb(var(--rk-fill-accent-deep-ch) / <alpha-value>)",
+        "fill-accent-deep-wash": "rgb(var(--rk-fill-accent-deep-ch) / 0.15)",
         "accent-lift": "rgb(var(--rk-accent-lift-ch) / <alpha-value>)",
         "fill-success": "rgb(var(--rk-fill-success-ch) / <alpha-value>)",
+        "fill-success-wash": "rgb(var(--rk-fill-success-ch) / 0.15)",
         "fill-success-glow": "rgb(var(--rk-fill-success-glow-ch) / <alpha-value>)",
-        "fill-provenance": "rgb(var(--rk-fill-provenance-ch) / <alpha-value>)"
+        "fill-provenance": "rgb(var(--rk-fill-provenance-ch) / <alpha-value>)",
+        "fill-provenance-wash": "rgb(var(--rk-fill-provenance-ch) / 0.15)"
       },
       "boxShadowColor": {
         "fill-accent": "rgb(var(--rk-fill-accent-ch) / <alpha-value>)",
@@ -139,6 +143,9 @@ module.exports = {
         "surface": "rgb(var(--rk-surface-ch) / <alpha-value>)",
         "surface-raised": "rgb(var(--rk-surface-raised-ch) / <alpha-value>)",
         "surface-well": "rgb(var(--rk-surface-well-ch) / <alpha-value>)"
+      },
+      "placeholderColor": {
+        "secondary": "rgb(var(--rk-secondary-ch) / var(--rk-secondary-a))"
       },
       "borderRadius": {
         "badge": "6px",

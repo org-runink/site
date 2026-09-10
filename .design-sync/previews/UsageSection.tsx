@@ -106,7 +106,7 @@ export function RichStepText() {
           title: 'Detect the degradation',
           text: (
             <>
-              Reefer <strong className="text-white">MSCU-8849201</strong> is flagged when its cooling rate
+              Reefer <strong className="text-primary">MSCU-8849201</strong> is flagged when its cooling rate
               declines — not when it crosses the threshold.
             </>
           ),
@@ -115,7 +115,7 @@ export function RichStepText() {
           title: 'Price the exposure',
           text: (
             <>
-              The Twin values the load at <strong className="text-white">$42,000</strong> in biologics and
+              The Twin values the load at <strong className="text-primary">$42,000</strong> in biologics and
               raises the alert with that figure attached.
             </>
           ),
@@ -125,7 +125,7 @@ export function RichStepText() {
           text: (
             <>
               An alternative port power-plug is claimed automatically. See the{' '}
-              <a href="/use-cases/cold-chain-safety/" className="text-secondary-500 underline">
+              <a href="/use-cases/cold-chain-safety/" className="text-ink-accent underline">
                 cold chain use case
               </a>
               .

@@ -43,9 +43,15 @@ export interface HrDiagramProps extends HTMLAttributes<HTMLDivElement> {
 
 /** The vertical connector: a gradient rule, a chevron head, and a floating caption. */
 function Connector({ label, tone }: { label?: string; tone: 'request' | 'response' }) {
-  const line = tone === 'request' ? 'bg-gradient-to-b from-surface-well to-secondary-500' : 'bg-gradient-to-b from-secondary-500 to-fill-success';
-  const head = tone === 'request' ? 'border-hairline' : 'border-ink-success';
-  const text = tone === 'request' ? 'text-secondary-500' : 'text-ink-success';
+  /*
+   * The two tones each carry the accent at the platform end: the request rises out of
+   * the surface INTO the platform, the response leaves it for the olive outcome. So
+   * `fill-accent` is the shared stop, and the caption is its ink (`ink-accent`) — not
+   * the muted body ink, because the caption is the step's name.
+   */
+  const line = tone === 'request' ? 'bg-gradient-to-b from-surface-well to-fill-accent' : 'bg-gradient-to-b from-fill-accent to-fill-success';
+  const head = tone === 'request' ? 'border-fill-accent' : 'border-ink-success';
+  const text = tone === 'request' ? 'text-ink-accent' : 'text-ink-success';
   return (
     <div className="relative z-0 -my-2 flex flex-col items-center">
       {label && (
@@ -147,30 +153,30 @@ export function HrDiagram({
         <div className="absolute inset-0 rounded-card bg-fill-accent-wash opacity-0 transition-opacity group-hover:opacity-100" />
         {actor.icon && (
           <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-surface">
-            <Icon name={actor.icon} className="h-6 w-6 text-secondary-500" />
+            <Icon name={actor.icon} className="h-6 w-6 text-ink-accent" />
           </div>
         )}
-        <h4 className="text-lg font-bold text-white">{actor.title}</h4>
+        <h4 className="text-lg font-bold text-primary">{actor.title}</h4>
         {actor.description && <p className="mt-1 text-xs text-secondary">{actor.description}</p>}
       </div>
 
       <Connector label={requestLabel} tone="request" />
 
       {/* Platform boundary */}
-      <div className="relative w-full max-w-3xl rounded-card border border-hairline/30 bg-fill-accent-wash p-8 shadow-neon-orange">
-        <div className="absolute -top-3 left-8 rounded-card border border-hairline/30 bg-surface px-4 py-1 text-[10px] font-black uppercase tracking-widest text-secondary-500 shadow-sm">
+      <div className="relative w-full max-w-3xl rounded-card border border-hairline/30 bg-fill-accent-wash p-8 ">
+        <div className="absolute -top-3 left-8 rounded-card border border-hairline/30 bg-surface px-4 py-1 text-[10px] font-black uppercase tracking-widest text-ink-accent shadow-sm">
           {platformLabel}
         </div>
 
         <div className="mt-4 flex flex-col items-center justify-between gap-10 md:flex-row">
           {/* Assistant */}
-          <div className="relative z-10 w-full flex-1 rounded-card border border-hairline/50 bg-surface p-6 text-center shadow-neon-orange-strong">
+          <div className="relative z-10 w-full flex-1 rounded-card border border-hairline/50 bg-surface p-6 text-center ">
             {assistant.icon && (
               <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-fill-accent-wash">
-                <Icon name={assistant.icon} className="h-5 w-5 text-secondary-500" />
+                <Icon name={assistant.icon} className="h-5 w-5 text-ink-accent" />
               </div>
             )}
-            <h4 className="mb-1 text-xl font-black tracking-tight text-white">{assistant.title}</h4>
+            <h4 className="mb-1 text-xl font-black tracking-tight text-primary">{assistant.title}</h4>
             {assistant.description && <p className="text-sm text-secondary">{assistant.description}</p>}
           </div>
 
@@ -192,7 +198,7 @@ export function HrDiagram({
                     </div>
                   )}
                   <div className="relative z-10 w-full rounded-chip border border-hairline bg-surface-raised p-4 text-center shadow-lg md:min-w-[180px]">
-                    <h4 className="mb-1 text-sm font-bold text-white">{dependency.title}</h4>
+                    <h4 className="mb-1 text-sm font-bold text-primary">{dependency.title}</h4>
                     {dependency.description && (
                       <p className="text-[11px] text-secondary">{dependency.description}</p>
                     )}
@@ -207,8 +213,8 @@ export function HrDiagram({
       <Connector label={responseLabel} tone="response" />
 
       {/* Outcome */}
-      <div className="relative z-10 w-64 rounded-card border border-ink-success/30 bg-fill-success-wash p-5 text-center shadow-neon-green">
-        <h4 className="text-base font-bold text-white">{outcome.title}</h4>
+      <div className="relative z-10 w-64 rounded-card border border-ink-success/30 bg-fill-success-wash p-5 text-center shadow-glow-success">
+        <h4 className="text-base font-bold text-primary">{outcome.title}</h4>
         {outcome.description && (
           <p className="mt-1 text-xs font-bold tracking-wide text-ink-success">{outcome.description}</p>
         )}

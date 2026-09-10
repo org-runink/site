@@ -52,7 +52,7 @@ export function WithoutLabel() {
 export function InProse() {
   return (
     <div className="mx-auto max-w-3xl">
-      <h2 className="text-3xl font-bold text-white">Why do demurrage costs spiral?</h2>
+      <h2 className="text-3xl font-bold text-primary">Why do demurrage costs spiral?</h2>
       <DirectAnswer>
         Demurrage and detention costs spiral because of systemic inefficiencies — port congestion,
         documentation delays, customs holds and fragmented container tracking — not because of shipper

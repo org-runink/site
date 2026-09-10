@@ -73,7 +73,7 @@ const PANEL = 'rounded-card border border-hairline bg-surface-raised p-6 shadow-
  * The subscribe block is `SubscribeForm` and the tag cloud is `SidebarTags`; both
  * are re-exported through their own props here, so anything they accept works
  * from the sidebar. The recent-posts panel carries the column's one hover
- * flourish: a named `group/sidebar` that fades in an orange-to-violet wash, plus
+ * flourish: a named `group/sidebar` that fades in an accent wash, plus
  * a per-entry `group` that tints the title and scales the thumbnail. Both group
  * classes are load-bearing.
  *
@@ -141,10 +141,10 @@ export function Sidebar({
         <div className={cx(PANEL, 'group/sidebar relative overflow-hidden')}>
           {/* Glow: fades in across the whole panel on hover, never intercepts clicks. */}
           <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/sidebar:opacity-100">
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary-500/5 via-transparent to-fill-accent/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-accent-lift/5 via-transparent to-fill-accent/5" />
           </div>
 
-          {recentTitle && <h3 className="relative z-10 mb-4 text-lg font-bold text-white">{recentTitle}</h3>}
+          {recentTitle && <h3 className="relative z-10 mb-4 text-lg font-bold text-primary">{recentTitle}</h3>}
           <div className="relative z-10 space-y-4">
             {posts.map((post) => {
               const url = safeHref(post.href);
@@ -160,7 +160,7 @@ export function Sidebar({
                       />
                     </div>
                   )}
-                  <h4 className="line-clamp-2 font-medium text-primary transition-colors duration-200 group-hover:text-secondary-500">
+                  <h4 className="line-clamp-2 font-medium text-primary transition-colors duration-200 group-hover:text-ink-accent">
                     {post.title}
                   </h4>
                   {post.date && (
@@ -202,7 +202,7 @@ export function Sidebar({
 
       {cats.length > 0 && (
         <div className={PANEL}>
-          {categoriesTitle && <h3 className="mb-4 text-lg font-bold text-white">{categoriesTitle}</h3>}
+          {categoriesTitle && <h3 className="mb-4 text-lg font-bold text-primary">{categoriesTitle}</h3>}
           <div className="flex flex-wrap gap-2">
             {cats.map((category) => {
               const url = safeHref(category.href);
@@ -219,7 +219,7 @@ export function Sidebar({
                   href={url}
                   className={cx(
                     pill,
-                    'border-hairline bg-surface-raised text-secondary hover:border-hairline/50 hover:text-secondary-500',
+                    'border-hairline bg-surface-raised text-secondary hover:border-fill-accent hover:text-ink-accent',
                   )}
                 >
                   {body}

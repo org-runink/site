@@ -29,9 +29,9 @@ export interface UsageSectionProps extends Omit<HTMLAttributes<HTMLElement>, 'ti
  * Three to six steps is the shape it is built for: the grid goes one column, then
  * two from `sm`, then three from `lg`.
  *
- * Each card is a `group` — the number medallion flips to a filled brand-green
- * circle with white text on hover, which is the only interactive signal here (the
- * cards are not links).
+ * Each card is a `group` — the number medallion flips from accent ink on a well to a
+ * filled `fill-success` circle (with its paired `on-success` ink) on hover, which is
+ * the only interactive signal here (the cards are not links).
  *
  * Paints its own `primary-900` band, so place it between sections rather than
  * inside one.
@@ -53,7 +53,7 @@ export function UsageSection({ title, description, steps, className, ...rest }: 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {title && (
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white">{title}</h2>
+            <h2 className="text-3xl font-bold text-primary">{title}</h2>
             {description && <p className="mt-4 text-xl text-secondary">{description}</p>}
           </div>
         )}
@@ -66,11 +66,11 @@ export function UsageSection({ title, description, steps, className, ...rest }: 
                 className="group relative rounded-card border border-hairline bg-surface-raised p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
               >
                 <div className="flex items-start">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-surface-well font-semibold text-secondary-500 transition-colors group-hover:bg-fill-success group-hover:text-white">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-surface-well font-semibold text-ink-accent transition-colors group-hover:bg-fill-success group-hover:text-on-success">
                     {index + 1}
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-white">{step.title}</h3>
+                    <h3 className="text-lg font-semibold text-primary">{step.title}</h3>
                     <p className="mt-2 text-secondary">{step.text}</p>
                   </div>
                 </div>

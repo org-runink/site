@@ -10,10 +10,10 @@ import { Button } from './Button';
 export type FeatureBadgeTone = 'primary' | 'sage' | 'green' | 'orange' | 'tan';
 
 const BADGE_TONES: Record<FeatureBadgeTone, string> = {
-  primary: 'bg-primary-500 text-white shadow-lg ',
+  primary: 'bg-fill-accent-wash text-ink-accent shadow-lg ',
   sage: 'bg-fill-success text-primary shadow-lg shadow-glow-success',
-  green: 'bg-fill-success text-white shadow-neon-green',
-  orange: 'bg-fill-accent text-white shadow-neon-orange',
+  green: 'bg-fill-success text-primary shadow-glow-success',
+  orange: 'bg-fill-accent text-primary ',
   tan: 'bg-surface-well text-primary shadow-lg ',
 };
 
@@ -110,14 +110,14 @@ export function Feature({
             {badge}
           </div>
         )}
-        <h3 className="text-2xl font-bold text-white md:text-3xl">{title}</h3>
+        <h3 className="text-2xl font-bold text-primary md:text-3xl">{title}</h3>
         <p className="text-lg text-secondary">{description}</p>
         {features && features.length > 0 && (
           <ul className="space-y-4">
             {features.map((feature) => (
               <li key={feature} className="flex items-center space-x-3">
                 <svg
-                  className="h-5 w-5 flex-shrink-0 text-secondary-500"
+                  className="h-5 w-5 flex-shrink-0 text-ink-accent"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"

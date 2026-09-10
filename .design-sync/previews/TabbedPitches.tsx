@@ -13,7 +13,7 @@ const PERSONAS: TabbedPitch[] = [
     label: 'The CFO',
     headline: (
       <>
-        Stop waiting 30 days for a <strong className="font-bold text-red-300">monthly close</strong>. Get{' '}
+        Stop waiting 30 days for a <strong className="font-bold text-ink-provenance">monthly close</strong>. Get{' '}
         <strong className="font-bold text-ink-success">End of Cycle Underwriting</strong>.
       </>
     ),
@@ -27,7 +27,7 @@ const PERSONAS: TabbedPitch[] = [
     label: 'DC Ops Director',
     headline: (
       <>
-        Your dock doors are <strong className="font-bold text-red-300">bottlenecked</strong>. Automate your{' '}
+        Your dock doors are <strong className="font-bold text-ink-provenance">bottlenecked</strong>. Automate your{' '}
         <strong className="font-bold text-ink-success">Cargo Verification</strong>.
       </>
     ),
@@ -41,7 +41,7 @@ const PERSONAS: TabbedPitch[] = [
     label: 'Merchandise Mgr',
     headline: (
       <>
-        Stop losing margin to the <strong className="font-bold text-red-300">bullwhip effect</strong>. Get{' '}
+        Stop losing margin to the <strong className="font-bold text-ink-provenance">bullwhip effect</strong>. Get{' '}
         <strong className="font-bold text-ink-success">Demand Forecasting</strong>.
       </>
     ),
@@ -55,7 +55,7 @@ const PERSONAS: TabbedPitch[] = [
     label: 'Compliance Officer',
     headline: (
       <>
-        Stop eating the cost of <strong className="font-bold text-red-300">vendor compliance failures</strong>. Deploy
+        Stop eating the cost of <strong className="font-bold text-ink-provenance">vendor compliance failures</strong>. Deploy
         the <strong className="font-bold text-ink-success">Digital Paralegal</strong>.
       </>
     ),
@@ -69,7 +69,7 @@ const PERSONAS: TabbedPitch[] = [
     label: 'Branch Manager',
     headline: (
       <>
-        Stop accepting <strong className="font-bold text-red-300">inconsistent store execution</strong>. Deploy{' '}
+        Stop accepting <strong className="font-bold text-ink-provenance">inconsistent store execution</strong>. Deploy{' '}
         <strong className="font-bold text-ink-success">Local Specialized Automation</strong>.
       </>
     ),

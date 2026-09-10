@@ -163,8 +163,13 @@ export interface ContactSectionProps extends Omit<HTMLAttributes<HTMLElement>, '
   className?: string;
 }
 
+/*
+ * The focus ring carries a 1px offset on purpose: `ring-fill-accent` only measures
+ * 3.02:1 over `surface-well` on the sheet ground, so on its own it can vanish into
+ * the control. The offset gives it a guaranteed edge against the panel.
+ */
 const CONTROL =
-  'w-full rounded-card border border-hairline bg-surface-raised p-4 text-white placeholder-primary-600 transition-all focus:border-hairline focus:outline-none focus:ring-1 focus:ring-secondary-500';
+  'w-full rounded-card border border-hairline bg-surface-raised p-4 text-primary placeholder-secondary transition-all focus:border-hairline focus:outline-none focus:ring-1 focus:ring-fill-accent focus:ring-offset-1 focus:ring-offset-surface';
 
 const LABEL = 'text-xs font-bold uppercase tracking-widest text-secondary';
 
@@ -267,12 +272,12 @@ export function ContactSection({
           {/* Left: the pitch, then the direct channels. */}
           <div className="flex flex-col">
             {eyebrow && (
-              <div className="mb-2 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-secondary-500 shadow-neon-orange backdrop-blur md:text-base">
+              <div className="mb-2 inline-flex items-center justify-center rounded-card border border-hairline/30 bg-surface/50 px-6 py-2 text-sm font-black uppercase tracking-[0.25em] text-ink-accent backdrop-blur md:text-base">
                 {eyebrow}
               </div>
             )}
 
-            <h2 className="mb-2 bg-gradient-to-r from-secondary-500 to-fill-accent bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[80px]">
+            <h2 className="mb-2 bg-gradient-to-r from-fill-accent to-accent-lift bg-clip-text text-6xl font-black uppercase italic leading-[0.9] tracking-tighter text-transparent drop-shadow-lg md:text-7xl lg:text-[80px]">
               {title}
             </h2>
 
@@ -295,10 +300,10 @@ export function ContactSection({
                     >
                       <div
                         aria-hidden="true"
-                        className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-rose-800 to-secondary-500 opacity-20 blur transition duration-1000 group-hover:opacity-40"
+                        className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-fill-provenance to-accent-lift opacity-20 blur transition duration-1000 group-hover:opacity-40"
                       />
                       <div className="relative z-10">
-                        <h3 className="mb-4 text-2xl font-bold text-white">{method.title}</h3>
+                        <h3 className="mb-4 text-2xl font-bold text-primary">{method.title}</h3>
                         {method.description && (
                           <p className="mb-8 leading-relaxed text-secondary">{method.description}</p>
                         )}
@@ -306,7 +311,7 @@ export function ContactSection({
                           <a
                             href={href}
                             {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                            className="inline-flex w-full items-center justify-center rounded border border-hairline bg-surface px-8 py-4 font-black uppercase tracking-widest text-white shadow-neon-orange transition-all duration-300 hover:-translate-y-1 hover:border-hairline hover:shadow-neon-orange-strong"
+                            className="inline-flex w-full items-center justify-center rounded border border-hairline bg-surface px-8 py-4 font-black uppercase tracking-widest text-primary transition-all duration-300 hover:-translate-y-1 hover:border-hairline "
                           >
                             <span className="mr-2">{method.actionText}</span>
                             <Icon name="arrow-right" className="h-5 w-5" />
@@ -324,11 +329,17 @@ export function ContactSection({
           <div className="group relative mt-8 lg:mt-0">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -inset-1 z-0 rounded-3xl bg-gradient-to-tr from-rose-800/20 via-secondary-500/10 to-surface blur-2xl transition duration-500 group-hover:from-rose-800/30 group-hover:via-secondary-500/20"
+              /*
+               * Two stops, no midpoint. Both purple `via-` stops are deleted rather
+               * than retinted: /10 and /20 are each at or under the 0.15 wash ceiling,
+               * so they would have collapsed to the same value and the hover would
+               * have changed nothing. The hover now rides `from-fill-provenance/30` alone.
+               */
+              className="pointer-events-none absolute -inset-1 z-0 rounded-3xl bg-gradient-to-tr from-fill-provenance/20 to-surface blur-2xl transition duration-500 group-hover:from-fill-provenance/30"
             />
 
             <div className="relative z-10 rounded-3xl border border-hairline bg-surface/80 p-8 shadow-2xl backdrop-blur md:p-12">
-              <h3 className="mb-2 text-3xl font-bold text-white">{formTitle}</h3>
+              <h3 className="mb-2 text-3xl font-bold text-primary">{formTitle}</h3>
               {formDescription && (
                 <p className="mb-8 font-mono text-sm leading-relaxed text-secondary">{formDescription}</p>
               )}
@@ -336,7 +347,7 @@ export function ContactSection({
               {submitted ? (
                 <div className="py-12 text-center" role="status">
                   <Icon name="check-circle" className="mx-auto mb-4 h-16 w-16 text-ink-success" />
-                  <h4 className="mb-2 text-2xl font-bold text-white">{successTitle}</h4>
+                  <h4 className="mb-2 text-2xl font-bold text-primary">{successTitle}</h4>
                   <p className="text-secondary">{successMessage}</p>
                 </div>
               ) : (
@@ -349,7 +360,7 @@ export function ContactSection({
                       <div key={field.name} className="space-y-2">
                         <label htmlFor={id} className={LABEL}>
                           {field.label}
-                          {field.required && <span className="text-secondary-500"> *</span>}
+                          {field.required && <span className="text-ink-accent"> *</span>}
                         </label>
 
                         {type === 'textarea' && (
@@ -406,7 +417,7 @@ export function ContactSection({
 
                   <button
                     type="submit"
-                    className="mt-4 w-full rounded-card bg-gradient-to-r from-rose-800 to-secondary-500 py-4 font-black uppercase tracking-widest text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-neon-orange-strong"
+                    className="mt-4 w-full rounded-card bg-gradient-to-r from-fill-provenance to-accent-lift py-4 font-black uppercase tracking-widest text-primary transition-all duration-300 hover:-translate-y-1 "
                   >
                     {submitText}
                   </button>

@@ -37,7 +37,7 @@ export function InABand() {
   return (
     <div className="rounded-card bg-canvas p-8">
       <Badge tone="sage">Measured in production</Badge>
-      <h2 className="mb-8 mt-4 font-heading text-3xl font-black text-white">
+      <h2 className="mb-8 mt-4 font-heading text-3xl font-black text-primary">
         Mitigate disruption in real time
       </h2>
       <StatsGrid style={{ marginBottom: '1rem' }}>

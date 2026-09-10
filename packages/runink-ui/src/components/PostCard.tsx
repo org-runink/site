@@ -49,12 +49,12 @@ export interface PostCardProps extends Omit<HTMLAttributes<HTMLElement>, 'title'
  * The unit of the `/blog` index — drop a list of these into a responsive grid and
  * the layout is done. The `group` class on the root `<article>` is load-bearing:
  * the cover image scales, the title and the read-more link shift to
- * `secondary-500`, and the arrow slides right, all from the card's hover state.
+ * `ink-accent`, and the arrow slides right, all from the card's hover state.
  * The root is a flex column with `h-full` so the footer rule pins to the bottom
  * and a row of cards of unequal copy length still aligns (the Hugo markup put
  * `h-full` on the inner body, where it had nothing to measure against).
  *
- * Sits on `Surface` tone `canvas`; it paints its own opaque `primary-800` panel.
+ * Sits on `Surface` tone `canvas`; it paints its own opaque `surface-raised` panel.
  *
  * **Never renders a broken image.** With no `image` there is no banner at all,
  * exactly as Hugo's `with .Params.featured_image` behaved; if a supplied image
@@ -121,7 +121,7 @@ export function PostCard({
       <div className="flex flex-1 flex-col p-6">
         {category && (
           <div className="mb-4">
-            <span className="inline-block rounded-full bg-gradient-to-r from-secondary-500 to-accent-lift px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
+            <span className="inline-block rounded-full bg-gradient-to-r from-fill-accent to-accent-lift px-3 py-1 text-xs font-bold uppercase tracking-wider text-on-accent shadow-sm">
               {category}
             </span>
           </div>
@@ -147,17 +147,17 @@ export function PostCard({
           </div>
         )}
 
-        <h2 className="mb-3 text-xl font-bold leading-tight text-white transition-colors duration-200 group-hover:text-secondary-500 md:text-2xl">
+        <h2 className="mb-3 text-xl font-bold leading-tight text-primary transition-colors duration-200 group-hover:text-ink-accent md:text-2xl">
           {url ? <a href={url}>{title}</a> : title}
         </h2>
 
-        {excerpt && <p className="mb-6 text-sm leading-relaxed text-slate-400 md:text-base">{excerpt}</p>}
+        {excerpt && <p className="mb-6 text-sm leading-relaxed text-secondary md:text-base">{excerpt}</p>}
 
         <div className="mt-auto flex items-center justify-between border-t border-hairline/50 pt-6">
           {url ? (
             <a
               href={url}
-              className="inline-flex items-center text-sm font-bold text-white transition-colors group-hover:text-secondary-500"
+              className="inline-flex items-center text-sm font-bold text-primary transition-colors group-hover:text-ink-accent"
             >
               {readMoreLabel}
               <svg
@@ -175,7 +175,7 @@ export function PostCard({
           )}
 
           {readingTime !== undefined && (
-            <span className="text-xs font-medium text-slate-500">
+            <span className="text-xs font-medium text-secondary">
               {readingTime} {readingTimeLabel}
             </span>
           )}

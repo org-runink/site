@@ -80,7 +80,7 @@ export function HowTo({ name, description, steps, className, ...rest }: HowToPro
     >
       <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-10">
         <div className="mx-auto mb-8 max-w-screen-md text-center">
-          <h2 className="mb-4 text-3xl font-black uppercase italic tracking-tight text-white" itemProp="name">
+          <h2 className="mb-4 text-3xl font-black uppercase italic tracking-tight text-primary" itemProp="name">
             {name}
           </h2>
           {description && (
@@ -102,12 +102,12 @@ export function HowTo({ name, description, steps, className, ...rest }: HowToPro
             >
               <div
                 aria-hidden="true"
-                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-secondary-600 text-xl font-bold text-white"
+                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-fill-accent text-xl font-bold text-on-accent"
               >
                 {index + 1}
               </div>
               <div>
-                <h3 className="mb-2 text-xl font-bold text-white" itemProp="name">
+                <h3 className="mb-2 text-xl font-bold text-primary" itemProp="name">
                   {step.name}
                 </h3>
                 <div className="text-primary" itemProp="text">

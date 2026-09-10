@@ -29,7 +29,7 @@ export function AsPageCanvas() {
   return (
     <Surface tone="canvas" className="space-y-6 p-10">
       <Badge tone="sage">Real-time visibility</Badge>
-      <h2 className="font-heading text-3xl font-black text-white">
+      <h2 className="font-heading text-3xl font-black text-primary">
         Run the autonomous supply chain
       </h2>
       <p className="max-w-xl leading-relaxed">

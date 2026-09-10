@@ -18,7 +18,13 @@ export interface HeaderNavLink {
 
 /** A top-level navigation entry, optionally owning a dropdown of child links. */
 export interface HeaderNavItem extends HeaderNavLink {
-  /** Child links. Supplying any turns the entry into a dropdown trigger and `href` is ignored. */
+  /**
+   * Child links. Supplying any turns the entry into a dropdown. `href` is still
+   * honoured: the partial renders the parent as `<a href="{{ .URL }}">` because the
+   * entry has a real destination (the section overview), so a keyboard user can Tab
+   * to it and press Enter. Only a parent with no usable `href` falls back to a
+   * `<button>` that toggles the panel.
+   */
   children?: HeaderNavLink[];
 }
 
@@ -52,19 +58,19 @@ type ActionKind = 'signIn' | 'getStarted' | 'checkItOut';
 const ACTIONS: Record<ActionKind, { variant: ButtonVariant; desktop: string; mobile: string }> = {
   signIn: {
     variant: 'outline',
-    desktop: 'border-hairline font-bold text-primary hover:border-hairline hover:text-secondary-600',
+    desktop: 'border-hairline font-bold text-primary hover:border-hairline hover:text-ink-accent',
     mobile: 'w-full border-hairline font-bold text-primary hover:border-ink-success hover:text-ink-success',
   },
   getStarted: {
     variant: 'primary',
     desktop:
-      'bg-gradient-to-r from-secondary-500 to-fill-accent px-6 py-2.5 text-sm font-bold text-white hover:-translate-y-0.5 hover:shadow-neon-orange',
-    mobile: 'w-full bg-gradient-to-r from-secondary-500 to-fill-accent font-bold text-white hover:opacity-90',
+      'bg-gradient-to-r from-fill-accent to-accent-lift px-6 py-2.5 text-sm font-bold text-on-accent hover:-translate-y-0.5 ',
+    mobile: 'w-full bg-gradient-to-r from-fill-accent to-accent-lift font-bold text-on-accent hover:opacity-90',
   },
   checkItOut: {
     variant: 'outline',
-    desktop: 'border-hairline px-4 py-2 text-sm font-bold text-secondary-500 hover:bg-secondary-500 hover:text-white',
-    mobile: 'w-full border-hairline font-bold text-secondary-500 hover:bg-secondary-500 hover:text-white',
+    desktop: 'border-hairline px-4 py-2 text-sm font-bold text-ink-accent hover:bg-fill-accent hover:text-on-accent',
+    mobile: 'w-full border-hairline font-bold text-ink-accent hover:bg-fill-accent hover:text-on-accent',
   },
 };
 
@@ -129,9 +135,12 @@ export interface HeaderProps extends Omit<HTMLAttributes<HTMLElement>, 'children
  *
  * Interaction is React state, not the partial's CSS-only `:checked` trick. The
  * drawer is closed on first render, which is what a static screenshot shows; set
- * `defaultMobileMenuOpen` to preview it open. Dropdowns open on hover *and* on
- * click of their `aria-expanded` trigger, so they are reachable from the keyboard
- * — the partial's `group-hover` alone was not. `Escape` closes whatever is open.
+ * `defaultMobileMenuOpen` to preview it open. Dropdowns open on hover and on
+ * `focus-within`, so they are reachable from the keyboard — the partial's
+ * `group-hover` alone was not. A submenu parent with an `href` is a link (as the
+ * partial now emits), so focus rather than a click opens its panel; a parent with
+ * no destination stays a button and toggles on click. `Escape` closes whatever is
+ * open.
  *
  * The bar is `fixed` and `z-50` by default, so the page beneath it needs `pt-20`
  * of its own (the bar is `h-20`); pass `fixed={false}` to place it in flow
@@ -240,32 +249,66 @@ export function Header({
                   if (item.children && item.children.length > 0) {
                     const isOpen = openDropdown === index;
                     const panelId = `${baseId}-dropdown-${index}`;
+                    const parentHref = safeHref(item.href);
+                    /*
+                     * `ring-fill-accent` measures 3.02:1 over `surface-well` on the
+                     * sheet ground — no headroom — so the ring always carries a 1px
+                     * offset rather than relying on the ring alone.
+                     */
+                    const triggerClasses = cx(
+                      'flex items-center',
+                      NAV_LINK,
+                      'focus:outline-none focus-visible:ring-2 focus-visible:ring-fill-accent focus-visible:ring-offset-1 focus-visible:ring-offset-surface',
+                    );
                     return (
                       <div
                         key={`${item.label}-${index}`}
-                        className="relative"
+                        /*
+                         * `group` so the panel can open on `group-focus-within` too.
+                         * Pointer users get the React `openDropdown` state; keyboard
+                         * users get the CSS state, which is what makes Tabbing into
+                         * the panel work now the parent navigates instead of toggling.
+                         */
+                        className="group relative"
                         onMouseEnter={() => setOpenDropdown(index)}
                         onMouseLeave={() => setOpenDropdown((current) => (current === index ? null : current))}
                       >
-                        <button
-                          type="button"
-                          aria-expanded={isOpen}
-                          aria-controls={panelId}
-                          onClick={() => setOpenDropdown((current) => (current === index ? null : index))}
-                          className={cx(
-                            'flex items-center',
-                            NAV_LINK,
-                            'focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500',
-                          )}
-                        >
-                          {item.label}
-                          <Icon name="chevron-down" className="ml-2 h-4 w-4" />
-                        </button>
+                        {/*
+                          The parent is a real link when it has a destination, matching
+                          `partials/header.html`: the entry is the section overview, so
+                          a keyboard user presses Enter on it rather than landing on a
+                          control that does nothing without a pointer. With no usable
+                          href there is nothing to navigate to, so it stays a button
+                          that toggles the panel.
+                        */}
+                        {parentHref ? (
+                          <a
+                            href={parentHref}
+                            aria-expanded={isOpen}
+                            aria-controls={panelId}
+                            className={triggerClasses}
+                          >
+                            {item.label}
+                            <Icon name="chevron-down" className="ml-2 h-4 w-4" />
+                          </a>
+                        ) : (
+                          <button
+                            type="button"
+                            aria-expanded={isOpen}
+                            aria-controls={panelId}
+                            onClick={() => setOpenDropdown((current) => (current === index ? null : index))}
+                            className={triggerClasses}
+                          >
+                            {item.label}
+                            <Icon name="chevron-down" className="ml-2 h-4 w-4" />
+                          </button>
+                        )}
                         <div
                           id={panelId}
                           className={cx(
                             'absolute left-0 mt-2 w-72 transition-all duration-200 ease-in-out',
                             isOpen ? 'visible opacity-100' : 'invisible opacity-0',
+                            'group-focus-within:opacity-100 group-focus-within:visible',
                           )}
                         >
                           <div className="rounded-card border border-hairline bg-surface-raised py-6 shadow-xl">
@@ -276,7 +319,7 @@ export function Header({
                                 <a
                                   key={`${child.label}-${childIndex}`}
                                   href={href}
-                                  className={cx(classes, 'hover:bg-surface-well hover:text-white')}
+                                  className={cx(classes, 'hover:bg-surface-well hover:text-primary')}
                                 >
                                   {child.label}
                                 </a>
@@ -324,7 +367,7 @@ export function Header({
                           className={cx(
                             'flex items-center transition-all duration-200 hover:scale-110',
                             language.current
-                              ? 'rounded-sm ring-2 ring-secondary-500 ring-offset-2 ring-offset-surface'
+                              ? 'rounded-sm ring-2 ring-fill-accent ring-offset-2 ring-offset-surface'
                               : 'opacity-50 hover:opacity-100',
                           )}
                           aria-current={language.current ? 'page' : undefined}
@@ -349,7 +392,7 @@ export function Header({
                   aria-controls={drawerId}
                   aria-label={menuButtonLabel}
                   onClick={() => setMobileOpen((open) => !open)}
-                  className="rounded-card p-2 text-primary transition-colors hover:bg-surface-raised focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+                  className="rounded-card p-2 text-primary transition-colors hover:bg-surface-raised focus:outline-none focus-visible:ring-2 focus-visible:ring-fill-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
                 >
                   <Icon name="menu" className="h-6 w-6" />
                 </button>
@@ -371,9 +414,24 @@ export function Header({
             <div className="w-full px-6 py-4">
               {navItems.map((item, index) => {
                 if (item.children && item.children.length > 0) {
+                  const parentHref = safeHref(item.href);
                   return (
                     <div key={`${item.label}-${index}`} className="py-2">
-                      <div className="mb-2 text-xl font-bold text-primary">{item.label}</div>
+                      {/*
+                        Same call as the desktop parent: the partial makes the drawer's
+                        group heading a link to the section overview rather than dead
+                        text, so it is a link here whenever there is a destination.
+                      */}
+                      {parentHref ? (
+                        <a
+                          href={parentHref}
+                          className="mb-2 block text-xl font-bold text-primary transition duration-200 hover:text-ink-success"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <div className="mb-2 text-xl font-bold text-primary">{item.label}</div>
+                      )}
                       <div className="pl-4">
                         {item.children.map((child, childIndex) => {
                           const href = safeHref(child.href);
@@ -434,7 +492,7 @@ export function Header({
                         aria-current={language.current ? 'page' : undefined}
                         className={cx(
                           'flex items-center space-x-2 text-secondary',
-                          language.current && 'font-bold text-white',
+                          language.current && 'font-bold text-primary',
                         )}
                       >
                         <img src={language.flagSrc} alt="" className="h-4 w-6 rounded-sm object-cover" />

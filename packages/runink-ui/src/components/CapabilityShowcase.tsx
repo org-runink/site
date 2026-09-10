@@ -17,8 +17,8 @@ export type CapabilityAccent = 'platform' | 'snowflake' | 'databricks' | 'google
 const ACCENTS: Record<CapabilityAccent, { border: string; text: string; hoverText: string }> = {
   platform: {
     border: 'hover:border-hairline/30',
-    text: 'text-secondary-500',
-    hoverText: 'group-hover:text-secondary-500',
+    text: 'text-ink-accent',
+    hoverText: 'group-hover:text-ink-accent',
   },
   snowflake: {
     border: 'hover:border-[#29B5E8]/30',
@@ -176,7 +176,7 @@ export function CapabilityShowcase({
               >
                 <h3
                   className={cx(
-                    'mb-4 break-words text-2xl font-black uppercase italic tracking-tighter text-white transition-colors',
+                    'mb-4 break-words text-2xl font-black uppercase italic tracking-tighter text-primary transition-colors',
                     accent.hoverText,
                   )}
                 >

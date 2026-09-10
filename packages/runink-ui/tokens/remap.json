@@ -59,7 +59,11 @@
     "text-brand-ink": "text-primary",
     "text-brand-beige": "text-secondary",
     "text-secondary-100": "text-primary",
-    "text-secondary-400": "text-secondary"
+    "text-secondary-400": "text-secondary",
+    "text-white": "text-primary",
+    "placeholder-primary-600": "placeholder-secondary",
+    "text-slate-400": "text-secondary",
+    "text-slate-500": "text-secondary"
   },
   "accents": {
     "$why": "The fill/ink split is the biggest correctness win here: 12 text-brand-green sites were a FILL carrying text. FACE is explicit that oliveInk is the only olive that may.",
@@ -98,7 +102,15 @@
     "to-brand-tan": "to-accent-lift",
     "bg-brand-copper": "bg-fill-accent-deep",
     "text-brand-copper": "text-ink-accent",
-    "border-brand-copper": "border-fill-accent"
+    "border-brand-copper": "border-fill-accent",
+    "text-red-300": "text-ink-provenance",
+    "bg-red-500": "bg-fill-provenance",
+    "from-rose-800": "from-fill-provenance",
+    "to-rose-800": "to-fill-provenance",
+    "bg-rose-800": "bg-fill-provenance",
+    "bg-rose-700": "bg-fill-provenance",
+    "text-lime-500": "text-ink-success",
+    "from-lime-500": "from-fill-success"
   },
   "washes": {
     "$why": "FACE's chipWashAlpha is 0.15 and it is a CEILING set by olive (4.64 at .15, 4.44 at .18). The ported code used 5/10/15/20 ad hoc. Anything at or below the ceiling becomes the named wash so the number lives in one place.",
@@ -137,7 +149,11 @@
     "shadow-brand-green/30": "shadow-glow-success",
     "shadow-brand-sage-dark/50": "shadow-glow-success",
     "shadow-brand-red/30": "",
-    "shadow-brand-tan/50": ""
+    "shadow-brand-tan/50": "",
+    "shadow-neon-orange": "",
+    "shadow-neon-orange-strong": "",
+    "shadow-neon-red": "",
+    "shadow-neon-green": "shadow-glow-success"
   },
   "radii": {
     "$why": "FACE's scale. `rounded-card` needs no rewrite — the CLASS name is unchanged and its VALUE moves 2rem/32px -> 18px in the preset, so existing call sites pick it up for free. Stock Tailwind radii are left alone: rounded-lg (8px) on a small element is fine and remapping it to the 12px chip would change pixels for no reason.",
@@ -163,7 +179,7 @@
     "to-secondary-500": "gradient end -> to-accent-lift.",
     "via-secondary-500/10": "gradient midpoint; usually deletable once the sweep is two-stop.",
     "via-secondary-500/20": "same.",
-    "from-secondary-500/5": "washed gradient start -> from-fill-accent-wash or delete.",
+    "from-secondary-500/5": "washed gradient start -> from-fill-accent-wash (now a real gradient stop, carrying the measured 0.15) or delete if the sweep is two-stop.",
     "from-secondary-500/20": "same.",
     "from-secondary-500/30": "same.",
     "from-secondary-600": "same as from-secondary-500.",

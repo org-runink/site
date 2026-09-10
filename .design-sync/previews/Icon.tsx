@@ -128,8 +128,8 @@ export function ColourInheritance() {
           'text-ink-success',
           'text-ink-accent',
           'text-ink-accent',
-          'text-secondary-500',
-          'text-white',
+          'text-secondary',
+          'text-primary',
         ].map((tone) => (
           <div key={tone} className="flex flex-col items-center gap-3">
             <Icon name="cube-transparent" className={`h-10 w-10 ${tone}`} />
@@ -169,7 +169,7 @@ export function Aliases() {
           <span className="font-mono text-[11px] text-secondary">{alias}</span>
           <Icon name="arrow-right" className="h-4 w-4 text-secondary" />
           <Icon name={canonical} className="h-8 w-8 text-ink-success" />
-          <span className="font-mono text-[11px] text-white">{canonical}</span>
+          <span className="font-mono text-[11px] text-primary">{canonical}</span>
         </div>
       ))}
     </div>

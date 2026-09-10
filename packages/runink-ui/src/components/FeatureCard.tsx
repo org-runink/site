@@ -41,17 +41,17 @@ export function FeatureCard({ title, description, icon, features, className }: F
       )}
     >
       {icon && (
-        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-card bg-gradient-to-br from-secondary-500 to-primary-600">
-          <Icon name={icon} className="h-6 w-6 text-white" />
+        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-card bg-gradient-to-br from-fill-accent to-accent-lift">
+          <Icon name={icon} className="h-6 w-6 text-primary" />
         </div>
       )}
-      <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
+      <h3 className="mb-4 text-2xl font-bold text-primary">{title}</h3>
       <p className="mb-6 leading-relaxed text-primary">{description}</p>
       {features && features.length > 0 && (
         <div className="space-y-3 text-sm text-secondary">
           {features.map((feature) => (
             <div key={feature} className="flex items-start gap-2">
-              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary-500" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-ink-accent" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
