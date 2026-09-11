@@ -115,36 +115,6 @@ The bill of lading has lasted because it standardises trust between strangers. T
 
 *Want to look at your own documents? [Book a consultation](/#contact-form).*
 
-<!-- FAQPage schema for search engines -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is a Bill of Lading?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A document used in international trade that does three jobs at once: it is a receipt for the goods as loaded, evidence of the contract to carry them, and a transferable document of title."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the three functions of a Bill of Lading?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Receipt, evidence of contract, and document of title. The receipt records how the goods looked when loaded; the contract function binds the carrier to carry them; the title function lets ownership transfer while the cargo is still at sea."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Why does a Clean Bill of Lading matter?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A clean bill states that the cargo looked sound when loaded. Under the doctrine of estoppel it stops the carrier arguing later that the damage was already there. Issuing one for cargo known to be damaged is fraud under English law and voids the carrier's insurance cover."
-    }
-  }]
-}
-</script>
-
 
 ---
 

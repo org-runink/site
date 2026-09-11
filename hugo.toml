@@ -308,8 +308,8 @@ enableGitInfo = true
     # The whitepapers are where the painkiller claim is actually argued at
     # length, and the index exists and is translated in all four languages.
     [[languages.en.menu.main]]
-      name = "Whitepapers"
-      url = "/blog/whitepapers/"
+      name = "Library"
+      url = "/library/"
       weight = 2
 
     # Industries sits above Use cases deliberately. The site was organised by
@@ -345,11 +345,16 @@ enableGitInfo = true
     # page no longer calls either. /use-cases/ is the real section: the same
     # argument at length, followed by every use case as a card, and it is
     # translated in all four languages.
-    [[languages.en.menu.main]]
-      name = "Use cases"
-      url = "/use-cases/"
-      weight = 4
 
+    # ONE entry over the papers AND the scenarios, pointing at /library/.
+    #
+    # "Whitepapers" and "Use cases" were two headings on one answer to the same
+    # question — what is this for, and how far can I read into it — and a reader
+    # had to open one to find out which was which. /library/ answers it once and
+    # sends them on. Nothing moved: the papers keep /blog/whitepapers/ and the
+    # scenarios keep /use-cases/, with their layouts, URLs and inbound links
+    # intact, so no ranking was spent on this.
+    #
     # There is deliberately no "Blog" entry, in any language.
     #
     # /blog/ and /blog/whitepapers/ are parent and child, so two entries read as
@@ -399,8 +404,8 @@ enableGitInfo = true
       weight = 1
 
     [[languages.fr.menu.main]]
-      name = "Livres blancs"
-      url = "/fr/blog/whitepapers/"
+      name = "Bibliothèque"
+      url = "/fr/library/"
       weight = 2
 
     # English pages, French label. The destinations are the unprefixed paths
@@ -419,10 +424,6 @@ enableGitInfo = true
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
-    [[languages.fr.menu.main]]
-      name = "Cas d'usage"
-      url = "/fr/use-cases/"
-      weight = 4
 
     [[languages.fr.menu.main]]
       name = "Tarifs"
@@ -454,8 +455,8 @@ enableGitInfo = true
       weight = 1
 
     [[languages.es.menu.main]]
-      name = "Informes técnicos"
-      url = "/es/blog/whitepapers/"
+      name = "Biblioteca"
+      url = "/es/library/"
       weight = 2
 
     # English pages, Spanish label — same reasoning as the French block above.
@@ -473,10 +474,6 @@ enableGitInfo = true
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
-    [[languages.es.menu.main]]
-      name = "Casos de uso"
-      url = "/es/use-cases/"
-      weight = 4
 
     [[languages.es.menu.main]]
       name = "Precios"
@@ -507,8 +504,8 @@ enableGitInfo = true
       weight = 1
 
     [[languages.pt.menu.main]]
-      name = "Whitepapers"
-      url = "/pt/blog/whitepapers/"
+      name = "Biblioteca"
+      url = "/pt/library/"
       weight = 2
 
     # English pages, Portuguese label — same reasoning as the French block above.
@@ -526,10 +523,6 @@ enableGitInfo = true
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
-    [[languages.pt.menu.main]]
-      name = "Casos de uso"
-      url = "/pt/use-cases/"
-      weight = 4
 
     [[languages.pt.menu.main]]
       name = "Preços"

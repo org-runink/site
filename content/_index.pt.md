@@ -91,6 +91,25 @@ product:
   deck: "O Runink FACE é o produto por trás de cada linha acima. Ele lê os registros que os seus sistemas já guardam, compara cada um com a regra que o governa e coloca uma ação já redigida diante de quem carrega a decisão. O que muda de setor para setor é quais registros importam e qual regra se aplica; a leitura, a redação e a aprovação não mudam."
   note: "Debaixo do nome: agentes que leem os registros e redigem a ação, uma tela de revisão para quem carrega a decisão, e a plataforma embaixo, que mantém as duas coisas dentro da sua própria rede."
 
+# Um único caso, do início ao fim. Ver o comentário em content/_index.md: cada
+# número aqui é do leitor, não nosso, e nada neste bloco diz que o software
+# registra, desembaraça, classifica ou calcula qualquer coisa.
+scenario_heading: "Uma declaração, de retida a decidida"
+scenario_intro: "Um contêiner fica retido no porto. Isto é tudo o que o software faz a respeito, em ordem, sem pular nada do meio."
+scenario_note: "Cada número dessa sequência é seu. A diária é a do seu próprio acordo, o imposto é o da sua declaração, e os dias são contados a partir dos seus próprios registros. Nada é estimado, e onde um número não pode ser obtido a partir do que você forneceu, o campo fica vazio em vez de preenchido no chute."
+scenario:
+  - step: "A retenção aparece"
+    body: "Uma declaração volta como retida, em exame ou detida, e a contagem de dias retida está acima de zero. Essa combinação é o teste inteiro — é uma regra fixa, não um julgamento, e roda contra todas as declarações e não só contra as que alguém lembrou de conferir."
+  - step: "O custo é contado, não estimado"
+    body: "Os dias que ficou retida, multiplicados pela diária de sobrestadia do seu próprio acordo. Essa é a aritmética inteira. É o número que já está correndo enquanto a declaração espera numa fila que ninguém lê por completo."
+  - step: "O documento que falta é nomeado"
+    body: "O motivo da retenção e os documentos pendentes saem do registro da declaração e ficam escritos no item, de modo que quem o pega não começa descobrindo o que está errado."
+  - step: "Verifica-se quem responde"
+    body: "Separadamente, as declarações são lidas em busca de um importador de registro em branco, preenchido com o consignatário, ou com um texto provisório que alguém digitou uma vez. Essas carregam imposto e tributo sem ninguém respondendo por eles, e são levantadas como item próprio com o valor em jogo anexado."
+  - step: "Os dois nunca são somados"
+    body: "A sobrestadia de uma declaração retida e o imposto de uma sem responsável são dinheiros diferentes, e contá-los como um número só é a forma mais comum de inflar esse tipo de total. Ficam separados, de propósito, e há um teste que falha se algum dia se juntarem."
+  - step: "Uma pessoa com nome decide"
+    body: "O item espera. Aprovar é o que envia qualquer coisa, e quem aprovou, quando, e o que mudou fica registrado. Se parte do que foi redigido não pôde ser executada, o resultado nomeia essa parte em vez de relatar sucesso."
 why_heading: "Por que isto não é mais um painel"
 why_intro: "Três coisas decidem se algo acima vale o seu tempo."
 why:

@@ -91,6 +91,25 @@ product:
   deck: "Runink FACE es el producto que está detrás de cada línea de arriba. Lee los registros que sus sistemas ya guardan, compara cada uno con la regla que lo gobierna y pone una acción redactada delante de la persona que tiene la decisión a su cargo. Lo que cambia de un sector a otro es qué registros importan y qué regla aplica; la lectura, la redacción y la aprobación no cambian."
   note: "Debajo del nombre: agentes que leen los registros y redactan la acción, una pantalla de revisión para quien tiene la decisión a su cargo, y la plataforma que mantiene ambas cosas dentro de su propia red."
 
+# Un solo caso, de principio a fin. Ver el comentario de content/_index.md: cada
+# cifra que aparece aquí es del lector, no nuestra, y nada en este bloque dice
+# que el software presente, despache, clasifique ni calcule nada.
+scenario_heading: "Una entrada, de retenida a resuelta"
+scenario_intro: "Un contenedor queda retenido en el puerto. Esto es todo lo que el software hace al respecto, en orden y sin saltarse nada del medio."
+scenario_note: "Cada cifra de esa secuencia es suya. La tarifa diaria es la de su propio acuerdo, el arancel es el de su entrada, y los días se cuentan desde sus propios registros. Nada se estima, y donde una cifra no puede deducirse de lo que usted aportó, el campo se deja vacío en lugar de rellenarse a ojo."
+scenario:
+  - step: "Aparece la retención"
+    body: "Una entrada vuelve como retenida, en examen o detenida, y el número de días retenida es mayor que cero. Esa combinación es toda la prueba — es una regla fija, no un criterio, y se aplica a todas las entradas y no solo a las que alguien pensó en revisar."
+  - step: "El coste se cuenta, no se estima"
+    body: "Los días que lleva retenida, multiplicados por la tarifa diaria de demora de su propio acuerdo. Esa es toda la aritmética. Es la cifra que ya está corriendo mientras la entrada espera en una cola que nadie lee entera."
+  - step: "Se nombra el documento que falta"
+    body: "El motivo de la retención y los documentos pendientes salen del registro de la entrada y quedan escritos en el elemento, de modo que quien lo recoge no empieza por averiguar qué va mal."
+  - step: "Se comprueba quién responde"
+    body: "Por separado, las entradas se leen buscando un importador registrado en blanco, relleno con el consignatario, o con un marcador de posición que alguien tecleó una vez. Esas llevan arancel e impuestos sin nadie que responda por ellos, y se levantan como elemento propio con el importe en juego adjunto."
+  - step: "Las dos cifras nunca se suman"
+    body: "La demora de una entrada retenida y el arancel de una sin responsable son dinero distinto, y contarlos como una sola cifra es la forma más común de inflar este tipo de total. Se mantienen separados, deliberadamente, y hay una prueba que falla si alguna vez se juntan."
+  - step: "Decide una persona con nombre"
+    body: "El elemento espera. Aprobarlo es lo que envía algo, y queda escrito quién lo aprobó, cuándo y qué cambió. Si parte de lo redactado no pudo ejecutarse, el resultado nombra esa parte en lugar de informar de un éxito."
 why_heading: "Por qué esto no es otro panel de control"
 why_intro: "Tres cosas deciden si algo de lo anterior merece su tiempo."
 why:

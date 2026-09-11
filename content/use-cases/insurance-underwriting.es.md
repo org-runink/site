@@ -14,7 +14,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Seguros, dentro del dominio de Finanzas</p>
 <p class="text-base text-stone-500 font-medium mb-10">Este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, el Fulfilment Autonomous Claims Engine. Seguros no es un producto aparte ni un módulo aparte: FACE tipifica siniestros, reservas, primas, franquicias, liquidaciones y registros de suscripción dentro de su dominio de <strong class="text-stone-300">Finanzas</strong>, por el razonamiento de que un siniestro es una reserva constituida contra una póliza.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">El expediente se reúne. No se juzga.</strong> Las condiciones, los documentos del siniestro, los movimientos de reserva y el límite de autorización que se aplica a ese importe llegan a un mismo sitio, unidos al siniestro al que pertenecen.</li>
 <li><strong class="text-stone-200">Cada lectura dice de dónde viene.</strong> El texto extraído de un documento vuelve con el archivo del que se leyó y con el método que se usó para leerlo, así que una cifra del borrador se puede rastrear hasta una página en vez de darse por buena. Lo que no vuelve con ella es una puntuación de confianza por cifra &mdash; hay un número de confianza en la respuesta y es un número fijo, lo que significa que no le dice nada, y preferimos decirlo a dejar que usted lo lea como una señal de calidad.</li>
@@ -22,7 +22,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Reunir Es El Trabajo. Debería Serlo Juzgar.</h1>
+        <h2 id="reunir-es-el-trabajo-deberia-serlo-juzgar" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Reunir Es El Trabajo. Debería Serlo Juzgar.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             La mañana de un perito se va en buscar las condiciones, el informe del siniestro y el movimiento de reserva del trimestre pasado. La parte que de verdad pedía su formación ocupa diez minutos al final.
         </p>
@@ -30,7 +30,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
+            <h2 id="donde-se-tuerce" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Entra un siniestro. Las condiciones de la póliza están en un gestor documental. El informe del siniestro es un PDF que alguien envió por correo el viernes. El historial de reservas está en el sistema de gestión de pólizas. El límite de autorización que se aplica a un siniestro de este tamaño está en una nota de procedimiento, y cuál es la versión vigente de esa nota no es evidente. Unir las cuatro cosas es la mayor parte del trabajo y nada del oficio.
             </p>
@@ -45,7 +45,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Los registros de seguros se reconocen como registros de seguros. Una extracción de siniestros salida de un sistema de gestión de pólizas se tipifica por su vocabulario &mdash; siniestro, reserva, perito, prima, franquicia, liquidación, pago &mdash; en vez de archivarse allí donde apuntara su columna más genérica. Este es un fallo real que tuvimos que corregir: todo un conjunto de datos de siniestros acabó una vez en operaciones porque una de sus columnas se llamaba &ldquo;estado&rdquo;.
             </p>
@@ -66,7 +66,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Cómo Sabrá Que Ha Funcionado</h3>
+             <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
              </p>

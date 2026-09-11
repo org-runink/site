@@ -366,6 +366,61 @@
     color: var(--ink-2);
   }
 
+  /* The scenario walk-through. A numbered sequence, not the three-across grid
+     .hp-beats uses — the steps are read in order and there are six of them, so a
+     3-column grid would break the sequence across rows and lose the argument.
+     The counter is drawn rather than left to the list marker so it can sit in
+     the margin and take the signal colour without a ::marker rule that Safari
+     still handles inconsistently. */
+  .hp-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+    counter-reset: hp-step;
+  }
+  .hp-step {
+    counter-increment: hp-step;
+    position: relative;
+    padding: 1.25rem 0 1.25rem 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hp-step::before {
+    content: counter(hp-step);
+    position: absolute;
+    left: 0;
+    top: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    color: var(--accent-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .hp-step__title {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .hp-step__body {
+    margin: 0;
+    max-width: 68ch;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+
+  @media print {
+    .hp-steps { border-top-color: #000; }
+    .hp-step { padding: 6pt 0 6pt 22pt; border-bottom-color: #999; break-inside: avoid; }
+    .hp-step::before { top: 6pt; color: #000; }
+    .hp-step__title { font-size: 10pt; }
+    .hp-step__body { font-size: 9pt; }
+  }
+
   .hp-beats {
     display: grid;
     grid-template-columns: minmax(0, 1fr);

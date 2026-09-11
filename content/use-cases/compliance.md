@@ -15,7 +15,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Compliance and emissions reporting</p>
 <p class="text-base text-stone-500 font-medium mb-10">This is a scenario for <strong class="text-stone-300">Runink FACE</strong>, not for the core platform underneath it. That is worth saying plainly, because compliance sounds like a platform concern: the checks described here read FACE's own records of your shipments and reports, and they are part of FACE rather than an add-on to the infrastructure.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Personal details do not reach the logs.</strong> Email addresses, phone numbers, card numbers, national insurance numbers and IP addresses are stripped out of log and diagnostic output before it is written, so the trail a system leaves behind does not become a second copy of the data.</li>
 <li><strong class="text-stone-200">That is a property of the platform, not a report you run &mdash; and it has no tests.</strong> The stripping happens on the logging path underneath every service, at every place a service writes a line. We will also tell you that the redaction function itself carries no test of its own, because a list of what a regular expression is supposed to catch is not evidence that it catches it. Read the list as a description of intent, not as a certification.</li>
@@ -23,7 +23,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Two Reports Nobody Has Time To Build.</h1>
+        <h2 id="two-reports-nobody-has-time-to-build" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Two Reports Nobody Has Time To Build.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Privacy and emissions look like different problems. They are the same problem: records spread across systems that only a person joining them by hand can answer for.
         </p>
@@ -31,7 +31,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A customer's name and address are needed to deliver the parcel. They are not needed on a carrier's dashboard, in a report sent to a partner, or in the copy of the file somebody pulled for a meeting. But the field travels with the record, and it keeps going.
             </p>
@@ -46,7 +46,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 On the privacy side the mechanism is narrower than it is usually sold, and worth stating exactly. Every service writes its logs and diagnostics through a shared redaction step that strips email addresses, phone numbers, card numbers, national insurance numbers, IP and hardware addresses out of the text before it lands, along with named fields — passwords, tokens, secrets, licence keys, webhook URLs — wherever they appear in a structured payload. The point is that operating a system does not quietly create a second copy of the personal data inside it — the place breaches are found late, and the place nobody thinks to look. What it does <em>not</em> do is scan your reports or your dispatch screens, decide a name should not be on one, or tell you who saw it. There is no screen scanner and no exposure finding here; if a page told you otherwise it was describing something that does not exist.
             </p>
@@ -67,7 +67,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+             <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>

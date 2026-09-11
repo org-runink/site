@@ -18,7 +18,7 @@ author: "Runink"
 ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son versant parc à conteneurs. C'est une illustration du mécanisme, pas le compte rendu d'un déploiement. Ce que le logiciel lit ici, ce sont les documents et les images qu'une chaîne du froid produit déjà — le registre d'expédition, la remise, la photographie prise à la porte — au regard de la règle qui régit cet envoi. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Ce qu'est FACE</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Il n'y a aujourd'hui aucune arrivée de capteurs en direct dans FACE, et nous n'allons pas laisser croire le contraire.</strong> Les connecteurs pour les systèmes de capteurs, d'étiquettes, d'entrepôt, de parc et de transport sont des pièces provisoires qui échouent exprès, pour que le raisonnement posé derrière elles puisse s'exercer sur un fichier de données d'amorçage pendant que le vrai chemin se construit. Une excursion de température sur vos propres groupes, ceci ne la lit pas encore.</li>
 <li><strong class="text-stone-200">La caméra du parc est la partie qui est construite.</strong> Une image qui arrive d'une caméra de parc ou d'une caméra infrarouge est vérifiée comme étant une vraie image avant que quoi que ce soit ne la lise, réduite à une taille qu'un modèle peut avaler, et lue par un modèle de vision qui tourne sur du matériel que vous contrôlez. Ce qui revient est une observation écrite, attachée à l'image dont elle a été tirée.</li>
@@ -26,7 +26,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Le Relevé Doit D'abord Arriver.</h1>
+        <h2 id="le-releve-doit-dabord-arriver" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Le Relevé Doit D'abord Arriver.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Le relevé qui condamne un chargement est enregistré des heures avant que quiconque le regarde. Tout le problème est l'écart entre les deux &mdash; et le réduire commence par un chemin du capteur jusqu'au logiciel, qui est justement la pièce que nous n'avons pas construite.
         </p>
@@ -34,7 +34,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Un groupe frigorifique commence à lâcher un mardi soir. Le capteur l'enregistre. Personne ne regarde à cette heure-là, et les données ne sont pas consultées avant l'ouverture du conteneur à l'autre bout.
             </p>
@@ -49,7 +49,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Commençons par la partie qui n'est pas finie, car c'est celle dont dépend tout le reste. Le relevé doit atteindre FACE avant que rien de tout cela ne compte, et aujourd'hui il ne l'atteint pas. Le connecteur pour un système de capteurs, d'étiquettes, d'entrepôt ou de parc est une pièce provisoire qui échoue délibérément, pour que le raisonnement bâti par-dessus tourne à la place sur un fichier de données d'amorçage. Sur une instance ordinaire, sans rien de branché, la file est vide. Elle était autrefois remplie de ces exemples amorcés, présentés comme s'il s'agissait de vos opérations, et cela a été retiré plutôt que maquillé.
             </p>
@@ -64,7 +64,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
+             <h3 id="comment-vous-sauriez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que quelque chose change.
              </p>

@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">Vos enregistrements sont triés selon ce qu'ils sont, pas selon leur provenance.</strong> Deux tables qui parlent d'expéditions relèvent toutes les deux de la logistique, que l'une soit arrivée de votre système d'entrepôt et l'autre sous forme de tableur que quelqu'un envoie par courriel le vendredi.</li>
 <li><strong class="text-stone-200">La carte est dérivée, pas devinée.</strong> Les domaines et les liens entre eux sont établis à partir de la structure de vos propres fichiers, par des règles fixes &mdash; aucun modèle, aucune recherche web, rien ne sort de la maison à cette étape. Les mêmes fichiers produisent toujours la même carte.</li>
@@ -28,7 +28,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Quatre Systèmes. Une Matinée Que Vous N'avez Pas.</h1>
+        <h2 id="quatre-systemes-une-matinee-que-vous-navez-pas" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Quatre Systèmes. Une Matinée Que Vous N'avez Pas.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Rien ne manque. Chaque fait dont vous avez besoin a été enregistré, correctement, par quelqu'un qui faisait son travail. C'est le rapprochement qui n'arrive jamais à temps.
         </p>
@@ -36,7 +36,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Pour répondre à une seule question ordinaire &mdash; pourquoi ce client a-t-il reçu deux livraisons incomplètes en un mois &mdash; quelqu'un ouvre le système de commandes, puis le système d'entrepôt, puis le portail du transporteur, puis un tableur qu'une seule personne tient. Quatre connexions, quatre façons de nommer le même site, quatre idées de ce qu'est une semaine.
             </p>
@@ -54,7 +54,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 La première chose qui se passe est la chose ennuyeuse : vos données sont lues et triées selon les parties de l'activité qu'elles décrivent. Expéditions, stocks, transporteurs, fournisseurs et fret forment un domaine. Factures, provisions et règlements en forment un autre. Les relevés de capteurs un autre. Les véhicules et les conducteurs un autre encore. Les enregistrements sont placés selon ce dont ils parlent, si bien que le même type de fait atterrit au même endroit, qu'il vienne d'un ERP, d'un système d'entrepôt, d'un système de transport ou d'un fichier.
             </p>
@@ -84,7 +84,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
+             <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous n'apportons pas de chiffres ici ; c'est vous qui les apportez. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>

@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">Sus registros se ordenan por lo que son, no por de dónde vinieron.</strong> Dos tablas que hablan de envíos pertenecen las dos a logística, tanto si una llegó de su sistema de almacén como si la otra llegó como una hoja de cálculo que alguien manda por correo los viernes.</li>
 <li><strong class="text-stone-200">El mapa se deriva, no se adivina.</strong> Los dominios y los enlaces entre ellos se calculan a partir de la estructura de sus propios ficheros mediante reglas fijas: ningún modelo, ninguna búsqueda web, nada sale del edificio en ese paso. Los mismos ficheros producen siempre el mismo mapa.</li>
@@ -28,7 +28,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Cuatro Sistemas. Una Mañana Que No Tiene.</h1>
+        <h2 id="cuatro-sistemas-una-manana-que-no-tiene" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Cuatro Sistemas. Una Mañana Que No Tiene.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             No falta nada. Todos los datos que necesita se registraron, correctamente, por alguien que hacía su trabajo. Es el juntarlos lo que nunca llega a tiempo.
         </p>
@@ -36,7 +36,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
+            <h2 id="donde-se-tuerce" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Para responder a una pregunta corriente &mdash; por qué ese cliente recibió dos entregas incompletas en un mes &mdash; alguien abre el sistema de pedidos, luego el de almacén, luego el portal del transportista, y luego una hoja de cálculo que mantiene una sola persona. Cuatro accesos, cuatro maneras de nombrar el mismo centro, cuatro ideas de lo que es una semana.
             </p>
@@ -54,7 +54,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Lo primero que pasa es lo aburrido: sus datos se leen y se ordenan según las partes del negocio que describen. Envíos, existencias, transportistas, proveedores y flete son un área. Facturas, reservas y liquidaciones son otra. Las lecturas de sensores son otra. Vehículos y conductores, otra más. Los registros se colocan por aquello de lo que hablan, de modo que el mismo tipo de dato cae en el mismo sitio venga de un ERP, de un sistema de almacén, de un sistema de transporte o de un fichero.
             </p>
@@ -84,7 +84,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+             <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. No traemos números a esto; los trae usted. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoren.
              </p>

@@ -15,7 +15,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Cenários financeiros e teste de hipóteses</p>
 <p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o Fulfilment Autonomous Claims Engine. O FACE roda sobre a plataforma Runink core, mas o trabalho desta página é do próprio FACE.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">A mudança tem que estar escrita antes de poder ser discutida.</strong> Uma hipótese é enunciada de forma explícita, junto com as regras que ela toca — os pontos de pedido, os prazos de entrega, os compromissos de serviço com os quais o seu negócio já funciona. Quase todo o valor está nesse passo, e é o passo que normalmente se pula.</li>
 <li><strong class="text-stone-200">O que volta é raciocínio, ordenado por importância, com a regra que ele invocou.</strong> Cada consequência fica amarrada à regra específica de que ela decorre, então você pode discordar dela pelo mérito. É um argumento que você pode conferir, não um número para aceitar.</li>
@@ -24,7 +24,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Escreva O Plano Antes De Discuti-lo.</h1>
+        <h2 id="escreva-o-plano-antes-de-discuti-lo" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Escreva O Plano Antes De Discuti-lo.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Quando um porto fecha ou uma fábrica para, você tem mais ou menos um dia para escolher uma rota nova. Os números que resolveriam a questão estão em quatro sistemas, e juntá-los leva mais tempo do que a escolha pode esperar.
         </p>
@@ -32,7 +32,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Uma greve fecha um porto na segunda. Na terça alguém tem que dizer se traz as peças de avião, se segura a linha, ou se embarca por outro porto. A resposta depende de quanto cada opção custa, de quanto tempo cada uma leva, e de quais pedidos ficam em risco de qualquer jeito.
             </p>
@@ -47,7 +47,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Vale ser claro sobre o que isto é, porque a categoria está cheia de ferramentas que são vagas quanto a isso. O motor não roda uma simulação sobre os seus dados de produção e não calcula um resultado. Você enuncia a mudança como uma hipótese e entrega a ele as regras que governam aquilo que você está mudando &mdash; pontos de pedido, prazos de entrega, compromissos de serviço, a premissa de reserva. Ele raciocina sobre essas regras e devolve uma leitura ordenada do que decorre daí, com cada consequência amarrada à regra de que ela saiu.
             </p>
@@ -65,7 +65,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
+             <h3 id="como-voce-saberia-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que algo muda.
              </p>

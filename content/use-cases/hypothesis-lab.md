@@ -15,7 +15,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Financial scenarios and hypothesis testing</p>
 <p class="text-base text-stone-500 font-medium mb-10">This is a scenario for <strong class="text-stone-300">Runink FACE</strong>, the Fulfilment Autonomous Claims Engine. FACE runs on the Runink core platform, but the work on this page is FACE's own.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">The change has to be written down before it can be argued.</strong> A hypothesis is stated explicitly, together with the rules it touches — the reorder points, the lead times, the service commitments your business already runs on. Most of the value is in that step, and it is the step normally skipped.</li>
 <li><strong class="text-stone-200">What comes back is reasoning, ranked, with the rule it invoked.</strong> Each consequence is tied to the specific rule it follows from, so you can disagree with it on the merits. It is an argument you can check, not a number to accept.</li>
@@ -24,7 +24,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Write The Plan Down Before You Argue It.</h1>
+        <h2 id="write-the-plan-down-before-you-argue-it" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Write The Plan Down Before You Argue It.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             When a port shuts or a plant stops, you have about a day to pick a new route. The numbers that would settle it sit in four systems, and pulling them together takes longer than the choice can wait.
         </p>
@@ -32,7 +32,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A strike shuts a port on the Monday. By Tuesday somebody has to say whether to fly the parts in, hold the line, or ship through another port. The answer turns on what each one costs, how long each one takes, and which orders are at risk either way.
             </p>
@@ -47,7 +47,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Be clear about what this is, because the category is full of tools that are vague about it. The engine does not run a simulation over your live data and it does not compute an outcome. You state the change as a hypothesis and hand it the rules that govern the thing you are changing &mdash; reorder points, lead times, service commitments, the reserve assumption. It reasons over those rules and returns a ranked read of what follows, with each consequence tied to the rule it came from.
             </p>
@@ -65,7 +65,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
+             <h3 id="how-you-would-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>

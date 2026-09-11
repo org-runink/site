@@ -14,7 +14,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Insurance, inside the Finance domain</p>
 <p class="text-base text-stone-500 font-medium mb-10">This is a scenario for <strong class="text-stone-300">Runink FACE</strong>, the Fulfilment Autonomous Claims Engine. Insurance is not a separate product or a separate module: FACE types claims, reserves, premiums, deductibles, settlements and underwriting records into its <strong class="text-stone-300">Finance</strong> domain, on the reasoning that a claim is a reserve held against a policy.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">The file is assembled. It is not judged.</strong> The wording, the loss documents, the reserve movements and the authority limit that applies at that value arrive in one place, joined to the claim they belong to.</li>
 <li><strong class="text-stone-200">Every reading says where it came from.</strong> Text lifted out of a document comes back with the file it was read from and the method used to read it, so a figure in the draft can be traced to a page rather than taken on trust. What it does not come back with is a per-figure confidence score &mdash; there is a confidence number on the response and it is a fixed one, which means it tells you nothing, and we would rather say that than let you read it as a quality signal.</li>
@@ -22,7 +22,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">The Gathering Is The Job. The Judgement Should Be.</h1>
+        <h2 id="the-gathering-is-the-job-the-judgement-should-be" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">The Gathering Is The Job. The Judgement Should Be.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             An adjuster's morning goes on finding the wording, the loss report and last quarter's reserve movement. The part that actually needed their training takes ten minutes at the end of it.
         </p>
@@ -30,7 +30,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A claim comes in. The policy wording sits in a document system. The loss report is a PDF somebody emailed on Friday. The reserve history is in the policy administration system. The authority limit that applies to a claim of this size is in a procedure note, and the current version of that note is not obvious. Joining the four is most of the work and none of the skill.
             </p>
@@ -45,7 +45,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Insurance records are recognised as insurance records. A claims extract out of a policy administration system is typed by its vocabulary &mdash; claim, reserve, adjuster, premium, deductible, settlement, payout &mdash; rather than being filed wherever its most generic column happened to point. This is a real failure we had to fix: a whole claims dataset once landed in operations because one of its columns was called &ldquo;status&rdquo;.
             </p>
@@ -66,7 +66,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">How You Will Know It Worked</h3>
+             <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>

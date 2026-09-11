@@ -14,7 +14,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Revisão paralegal e de conformidade</p>
 <p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o Fulfilment Autonomous Claims Engine. O agente que faz este trabalho é escrito com um papel declarado &mdash; <em class="text-stone-300">paralegal e encarregado de conformidade</em> &mdash; e esse papel é o teto do que ele faz, não um enfeite. Ele lê, ele cita, e entrega a leitura para alguém que decide.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Ele acha a cláusula e o registro, e mostra os dois a você.</strong> Nada volta apenas afirmado. Todo achado chega com a passagem de onde foi lido e com o registro contra o qual foi confrontado.</li>
 <li><strong class="text-stone-200">Ele escreve notas, não mudanças.</strong> Foi feito para devolver um próximo passo em linguagem de negócio &mdash; redija esta carta, abra este chamado, escale isto ao encarregado de proteção de dados. É explicitamente proibido de escrever uma correção nos seus sistemas.</li>
@@ -22,7 +22,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Uma Consulta Que Deveria Levar Dez Minutos.</h1>
+        <h2 id="uma-consulta-que-deveria-levar-dez-minutos" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Uma Consulta Que Deveria Levar Dez Minutos.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Alguém pergunta se o contrato permite isso. Um parágrafo em algum lugar resolve. Achar o parágrafo leva um dia e meio, então a pergunta é respondida de memória.
         </p>
@@ -30,7 +30,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A pergunta chega no meio da tarde e nunca é exótica. Podemos mandar estes dados para aquele parceiro? O contrato permite que eles subcontratem o tratamento? O prazo de retenção que estamos praticando é o que nos comprometemos a praticar? Em algum ponto de sessenta páginas há uma cláusula que responde isso sem rodeios.
             </p>
@@ -45,7 +45,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Os documentos são lidos onde já estão: PDFs, arquivos do Word, apresentações num drive compartilhado ou numa pasta SFTP. Planilhas são lidas incluindo as fórmulas, célula por célula, porque em muitas organizações a regra que vale não está no documento de política. Está numa célula.
             </p>
@@ -69,7 +69,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Como Você Vai Saber Que Funcionou</h3>
+             <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>

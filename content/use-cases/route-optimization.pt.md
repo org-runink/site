@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">Uma rota volta como uma distância, uma duração e uma linha no mapa.</strong> Uma origem, um destino e as restrições que você nomeou saem para o provedor de roteirização; o que volta é uma distância de estrada medida e um tempo de viagem, não uma opinião.</li>
 <li><strong class="text-stone-200">Nenhum valor em dinheiro vem anexado, e isso é de propósito.</strong> O provedor de roteirização devolve distância e tempo, e nenhum custo. Então nenhuma economia é impressa ao lado da rota, porque um número que ninguém mediu colocado ao lado de dois que foram medidos é justamente como uma estimativa acaba citada como fato.</li>
@@ -28,7 +28,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Ótimo Às Seis. Não Às Dez.</h1>
+        <h2 id="otimo-as-seis-nao-as-dez" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Ótimo Às Seis. Não Às Dez.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             O plano era bom quando foi montado. Depois uma entrega levou quarenta minutos mais do que devia, uma estrada fechou e um cliente mudou a janela dele. Agora o plano é a melhor resposta a uma pergunta que ninguém está mais fazendo.
         </p>
@@ -36,7 +36,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A roteirização acontece uma vez, na noite anterior ou logo no começo do dia. É a decisão mais bem cuidada do dia, e é tomada com a menor quantidade de informação que alguém vai ter em todo o dia. Tudo o que de fato vai moldar o dia &mdash; a fila no portão, o bloqueio na via, a entrega recusada, o motorista que está uma hora atrasado &mdash; ainda não aconteceu.
             </p>
@@ -54,7 +54,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Pedir uma rota é um pedido pequeno: onde começa, onde termina e as restrições que importam naquele trecho. Isso sai para o provedor de roteirização e volta como uma distância de estrada, um tempo de viagem e a própria linha, de modo que a resposta pode ser desenhada num mapa em vez de descrita numa frase.
             </p>
@@ -78,7 +78,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
+             <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Não temos nenhum próprio para te oferecer. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>
