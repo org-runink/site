@@ -93,63 +93,13 @@ The carriers that handle the next decade of freight well will not be the largest
 
 Every hard-braking event, every engine fault code, every HOS log entry is a signal, and in almost every case it was recorded at the time it happened. The question is how long it then sat unread. A useful first measure: for last year's preventable incidents, how many were preceded by a recorded signal nobody acted on, and how many days passed in between. [Talk to us](/#contact-form) if it would help to work that out.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How can predictive analytics reduce fleet accident rates?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By turning records the fleet already collects into a ranking rather than a stream of alerts. Telematics events, ELD logs and maintenance history are combined so drivers can be ordered by hard braking, speeding and hours-of-service violations over a quarter, and vehicles by fault-code trends. Coaching and shop time then go where the recorded risk is. To test whether the ranking works in your fleet, check where the drivers in last year's preventable accidents sat in the ranking before the event."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the financial impact of a data-driven fleet safety program?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It is measured with three figures the carrier already has: preventable accidents per million miles, the loss runs the insurer prices the renewal on, and CSA percentiles. The cost being avoided is large — the FMCSA puts the average injury crash above $200,000 — but the size of any saving depends on your own loss history and limits. Calculate total cost of risk annually, premiums plus claims paid under the deductible plus the cost of the safety function, and ask your broker which of your numbers moved the last quote."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do ELD mandates and HOS data support predictive safety?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ELD logs are the clearest record of fatigue exposure a fleet holds. Patterns such as regularly running to the edge of the 14-hour window, taking only the minimum 30-minute break, or irregular restart schedules are visible in the log well before a violation, which gives dispatch the chance to move a load rather than explain a violation afterwards."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is data governance important for fleet safety analytics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because a risk score is only as good as the records under it. If two telematics vendors define a hard-braking event differently, or a device stops uploading and nobody notices, scores vary by equipment rather than by driver. The first deliverable of a predictive safety program is therefore an event definition that holds across every provider in the fleet, plus a rule for what happens when a feed goes quiet."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.fmcsa.dot.gov/safety/data-and-statistics" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Federal Motor Carrier Safety Administration (FMCSA)</a> - Large truck and bus crash statistics, CSA methodology, and HOS/ELD regulatory guidance.</li>
-    <li><a href="https://www.nsc.org/road/resources/motor-vehicle-safety-reports" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">National Safety Council (NSC)</a> - Total cost estimates for work-related motor vehicle crashes and injury prevention research.</li>
-    <li><a href="https://truckingresearch.org/category/research" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">American Transportation Research Institute (ATRI)</a> - Operational cost of trucking analysis, driver shortage research, and fleet technology adoption studies.</li>
-    <li><a href="https://csa.fmcsa.dot.gov/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">FMCSA Compliance, Safety, Accountability (CSA) Program</a> - Safety measurement system scores, BASIC categories, and carrier safety fitness determinations.</li>
-  </ul>
-</section>
+- [Federal Motor Carrier Safety Administration (FMCSA)](https://www.fmcsa.dot.gov/safety/data-and-statistics) — Large truck and bus crash statistics, CSA methodology, and HOS/ELD regulatory guidance
+- [National Safety Council (NSC)](https://www.nsc.org/road/resources/motor-vehicle-safety-reports) — Total cost estimates for work-related motor vehicle crashes and injury prevention research
+- [American Transportation Research Institute (ATRI)](https://truckingresearch.org/category/research) — Operational cost of trucking analysis, driver shortage research, and fleet technology adoption studies
+- [FMCSA Compliance, Safety, Accountability (CSA) Program](https://csa.fmcsa.dot.gov/) — Safety measurement system scores, BASIC categories, and carrier safety fitness determinations

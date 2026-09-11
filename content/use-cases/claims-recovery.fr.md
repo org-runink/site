@@ -15,7 +15,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Réclamations fret</p>
 <p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong> &mdash; le Fulfilment Autonomous Claims Engine. Les réclamations ne sont pas une fonction annexe ici. Elles sont le C du nom du produit.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Les papiers sont réunis pour vous, et seulement ceux qui sont réellement là.</strong> La déclaration, le port, le motif du blocage, les documents qui manquent au dossier, le nombre de jours d'immobilisation et les frais journaliers arrivent au même endroit, rattachés à l'envoi auquel ils appartiennent. Pas le tarif en vigueur ce jour-là : FACE ne détient aucune grille tarifaire, aucune table de tarifs et aucun barème de surcharges. Il ne peut donc pas vous dire quel était le tarif, et il ne fera pas semblant.</li>
 <li><strong class="text-stone-200">Les quantités sont confrontées de trois côtés.</strong> Le bon de commande, la facture et le connaissement sont comparés entre eux, et là où ils divergent, le constat nomme la paire et la taille de l'écart : connaissement contre commande, connaissement contre facture. C'est un contrôle d'écarts sur ce que disent les documents, pas un rapprochement avec une bascule ni avec un tarif. Il n'y a pas non plus de relevé de pont-bascule ici.</li>
@@ -23,7 +23,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Des Réclamations Qui Meurent En Silence.</h1>
+        <h2 id="des-reclamations-qui-meurent-en-silence" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Des Réclamations Qui Meurent En Silence.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             La plupart des réclamations ne sont pas des dossiers perdus. Ce sont des dossiers que personne n'a eu la matinée de monter, déposés trop tard ou jamais déposés.
         </p>
@@ -31,7 +31,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Une seule réclamation, cela veut dire retrouver quatre choses : le reçu du transporteur, la quantité notée par le terminal, le tarif en vigueur à la date, et le délai que le transporteur applique. Puis écrire la lettre. C'est une matinée de travail. Alors seules les plus grosses réclamations en obtiennent une.
             </p>
@@ -46,7 +46,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Les contrôles tournent sur vos propres enregistrements, et la file du matin est ce que ces enregistrements disent vraiment, classée par ordre, avec les pièces jointes. Ce n'est pas un tableau de bord où aller chercher. Le corollaire mérite d'être dit, parce que la plupart des produits le cachent : ne branchez rien et la file est vide. Elle ne s'ouvre pas sur des exemples travaillés qui ressemblent à vos lignes. C'est ainsi qu'elle s'est comportée une fois, et cela a été retiré.
             </p>
@@ -61,7 +61,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
+             <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>

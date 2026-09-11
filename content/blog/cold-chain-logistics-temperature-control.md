@@ -105,63 +105,13 @@ Moving from reading afterwards to reading as it arrives is an operations decisio
 
 [Runink FACE](/use-cases/cold-chain-safety/) is built for that reading. It checks sensor data from refrigerated units as the stream arrives. A drift comes out with the unit named, the load on it, the reading that breached, and a corrective dispatch drafted for a person to approve. That is an illustration of a mechanism rather than an account of a deployment — the scenario has not been run against a customer's telemetry, and there are no figures here for what it would save.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a temperature excursion in cold chain logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A temperature excursion is a period during which a temperature-sensitive product is held outside its allowed storage or transport range. It commonly happens at handovers between transport modes, when a cooling unit fails, during long waits at a facility, or with inadequate packaging. Even a short excursion can put the product outside its allowed total exposure and create a compliance problem."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you calculate what a temperature excursion costs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Add five things from your own records for last year's breaches: the wholesale value of the affected goods, the disposal and handling fees, the replacement shipment priced at the expedited rate you actually paid, the hours your quality and compliance teams spent on the investigation, and the chargebacks the customer applied. Divide by the number of breaches. That gives a cost per excursion specific to your products and lanes, which is more useful than any industry average."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does reading sensor data as it arrives reduce spoilage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It moves the decision earlier. A drift checked against the load's own limits on arrival of the reading can be raised while the load can still be moved or the unit repaired. The value of that depends on how long an operation currently takes to act on a recorded breach, which varies widely and is rarely measured — so that is the figure to establish before any projection is credible."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the regulatory requirements for cold chain temperature monitoring?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "WHO cold chain guidelines, FDA 21 CFR Part 211, FSMA and IATA perishable cargo rules all require continuous temperature records, corrective action records, and an auditable chain of custody for temperature-sensitive goods. Failing to produce them can lead to warning letters, consent decrees, import alerts and recalls."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.who.int/publications/i/item/WHO-IVB-15.04" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">World Health Organization — Vaccine Cold Chain Guidelines</a> - WHO requirements for temperature-controlled storage and transport of vaccines and essential medicines.</li>
-    <li><a href="https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/the-global-use-of-medicines-2024" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">IQVIA — Global Use of Medicines Report</a> - Source for the global pharmaceutical spending figure quoted above.</li>
-    <li><a href="https://www.iata.org/en/programs/cargo/perishable-cargo/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">IATA — Perishable Cargo Regulations (PCR)</a> - International rules for handling temperature-sensitive goods in air transport.</li>
-    <li><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/current-good-manufacturing-practice-requirements-combination-products" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">FDA — 21 CFR Part 211 Current Good Manufacturing Practice</a> - US requirements for drug product temperature records and quality systems.</li>
-  </ul>
-</section>
+- [World Health Organization — Vaccine Cold Chain Guidelines](https://www.who.int/publications/i/item/WHO-IVB-15.04) — WHO requirements for temperature-controlled storage and transport of vaccines and essential medicines
+- [IQVIA — Global Use of Medicines Report](https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/the-global-use-of-medicines-2024) — Source for the global pharmaceutical spending figure quoted above
+- [IATA — Perishable Cargo Regulations (PCR)](https://www.iata.org/en/programs/cargo/perishable-cargo/) — International rules for handling temperature-sensitive goods in air transport
+- [FDA — 21 CFR Part 211 Current Good Manufacturing Practice](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/current-good-manufacturing-practice-requirements-combination-products) — US requirements for drug product temperature records and quality systems

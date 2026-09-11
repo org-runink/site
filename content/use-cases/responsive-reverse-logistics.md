@@ -18,7 +18,7 @@ author: "Runink"
 This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its returns and circular-economy side. What follows is what the product is built to do and how it would run against your own records. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">The call is drafted at the scan.</strong> FACE works from four things the dock hands it: the return's id, the barcode, the condition grade the person at the dock wrote down, and the item's value as they type it. It looks nothing up behind those — no order, no warranty, no price file — and it answers at the moment the box lands rather than the afternoon somebody gets to the pen.</li>
 <li><strong class="text-stone-200">The policy is written down, so the same grade always gets the same answer.</strong> Restock, refurbish, recycle, dispose — each condition grade routes to one of them and to one of four destinations spelled out in the code, the same way every time, whoever is on the dock and whatever the queue looks like. A grade it does not recognise is refused rather than filed under its best guess.</li>
@@ -27,7 +27,7 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">A Return Is Worth Most On Day One.</h1>
+        <h2 id="a-return-is-worth-most-on-day-one" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">A Return Is Worth Most On Day One.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Most of what a return loses, it loses while it waits. Not in the repair, not in the freight — in the weeks it sits in a corner of the dock while somebody works out where it should go.
         </p>
@@ -35,7 +35,7 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A box comes back. To decide where it should go, somebody has to know what was in it, whether it is still under warranty, what shape it is in, what it would fetch now, and what a repair would cost. That is four systems and a look in the box.
             </p>
@@ -50,7 +50,7 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 The scan is the moment the work gets done. The condition grade goes in with the return, and a disposition comes back out: straight to the return hub, out for refurbishment, into closed-loop recycling, or to hazardous disposal where the grade calls for it. The useful property is not that a machine decided — it is that the decision is the same one every time. The same grade produces the same route on a quiet Tuesday and on the Monday after Christmas, which is exactly when sorting by eye stops being sorting.
             </p>
@@ -68,7 +68,7 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
+             <h3 id="how-you-would-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>

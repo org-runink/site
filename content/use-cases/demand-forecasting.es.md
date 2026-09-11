@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">La estación y la tendencia se separan.</strong> Su propio histórico se descompone en la tendencia de fondo, la forma estacional que se repite y lo que queda. Lo que queda es donde un giro aparece primero.</li>
 <li><strong class="text-stone-200">La previsión dice qué método la produjo, y por qué ese.</strong> Se prueban modelos que compiten entre sí contra periodos que su histórico ya contiene, y el que predijo mejor esos periodos es el que se usa. La respuesta lleva el nombre del método que ganó.</li>
@@ -28,7 +28,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">La Señal Giró Antes Que El Plan.</h1>
+        <h2 id="la-senal-giro-antes-que-el-plan" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">La Señal Giró Antes Que El Plan.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Una referencia empieza a moverse mucho antes de que se mueva el punto de pedido. El hueco entre esas dos fechas es todo el problema, y normalmente ya está decidido cuando alguien se entera.
         </p>
@@ -36,7 +36,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
+            <h2 id="donde-se-tuerce" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 El plan de demanda se reconstruye por ciclos. Alguien exporta el histórico de ventas, le aplica los supuestos del ciclo anterior, discute las excepciones en una reunión y vuelve a cargar el resultado. Es un trabajo cuidadoso y es un trabajo honrado, y describe un mes que ya ha terminado.
             </p>
@@ -54,7 +54,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Cada serie se desarma antes de proyectarla. La tendencia que hay debajo, la forma estacional que se repite y el residuo — lo que hizo la serie que ninguna de esas dos cosas explica. Un giro se ve primero en el residuo, y por eso el residuo se informa en vez de tirarse.
             </p>
@@ -75,7 +75,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+             <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. No le ofrecemos las nuestras, porque no tenemos las suyas. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
              </p>

@@ -12,7 +12,6 @@ tags: ["Demurrage", "Detention", "Container Tracking", "Free Time", "Port Conges
 robots: index, follow
 ---
 
-<!-- structured Executive Summary -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
 Demurrage is what a terminal charges once your container sits past its free days. Detention is what the carrier charges once you keep its empty box too long. Both run daily, both arrive weeks later on a supplemental invoice, and some of the lines are invalid under the carrier's own tariff. The figure worth having is your own: last year's total, split by cause.
@@ -110,63 +109,13 @@ Every container sitting at a terminal is capital in a queue, and you are paying 
 
 *The first number worth having is your own: total demurrage and detention paid last year, split by cause. [Schedule a consultation](/#contact-form) if it would help to work it out.*
 
-<!-- FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the difference between demurrage and detention fees?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Demurrage is charged when a loaded container stays at the port terminal past the carrier's free time. Detention is charged when you hold the carrier's empty container past the agreed return window after unloading. Demurrage is port-side; detention is inland."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much do demurrage and detention fees cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Container xChange puts the typical cost per container between $500 and $2,000 depending on port and duration, with outliers above $10,000. Your own exposure is the figure that matters: total last year's demurrage and detention invoice lines and split them by cause."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can software reduce demurrage and detention costs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Three separate mechanisms: watching the free time clock so it is seen before it runs out; predicting arrival so drayage and paperwork are scheduled against likely rather than published arrival; and checking invoice lines against the carrier's own tariff so disputable charges are caught inside the dispute window. Which is worth most depends on where your losses come from."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can demurrage and detention invoices be disputed?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Carriers bill for days the terminal was closed, for days a container was under customs examination and exempt under their own tariff, and for free time consumed by vessel delay before the consignee could act. Checking invoice lines against terminal events and the tariff is what finds those, and it has to happen inside the dispute window."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work out last year's total, split by cause.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">UNCTAD Review of Maritime Transport</a> - source for the trade barrier point above.</li>
-    <li><a href="https://www.container-xchange.com/blog/demurrage-and-detention/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Container xChange: demurrage and detention research</a> - source for the per-container figures above.</li>
-    <li><a href="https://www.worldshippingcouncil.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">World Shipping Council</a> - source for the congestion surcharge point above.</li>
-    <li><a href="https://www.fmc.gov/demurrage-detention/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">U.S. Federal Maritime Commission: demurrage and detention guidance</a> - the rules on what counts as reasonable in U.S. trade.</li>
-  </ul>
-</section>
+- [UNCTAD Review of Maritime Transport](https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport) — source for the trade barrier point above
+- [Container xChange: demurrage and detention research](https://www.container-xchange.com/blog/demurrage-and-detention/) — source for the per-container figures above
+- [World Shipping Council](https://www.worldshippingcouncil.org/) — source for the congestion surcharge point above
+- [U.S. Federal Maritime Commission: demurrage and detention guidance](https://www.fmc.gov/demurrage-detention/) — the rules on what counts as reasonable in U.S. trade

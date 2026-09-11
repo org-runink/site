@@ -14,7 +14,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Seguros, dentro do domínio de Finanças</p>
 <p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o Fulfilment Autonomous Claims Engine. Seguros não é um produto separado nem um módulo separado: o FACE tipifica sinistros, reservas, prêmios, franquias, liquidações e registros de subscrição dentro do seu domínio de <strong class="text-stone-300">Finanças</strong>, pelo raciocínio de que um sinistro é uma reserva constituída contra uma apólice.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">O processo é reunido. Ele não é julgado.</strong> As condições, os documentos do sinistro, as movimentações de reserva e o limite de alçada que vale naquele valor chegam num lugar só, ligados ao sinistro a que pertencem.</li>
 <li><strong class="text-stone-200">Cada leitura diz de onde veio.</strong> O texto extraído de um documento volta com o arquivo de onde foi lido e com o método usado para ler, então um número do rascunho pode ser rastreado até uma página, em vez de ser aceito por confiança. O que não volta junto é uma pontuação de confiança por número &mdash; existe um número de confiança na resposta e ele é fixo, o que significa que não diz nada a você, e preferimos dizer isso a deixar que você o leia como sinal de qualidade.</li>
@@ -22,7 +22,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Reunir É O Trabalho. Julgar Deveria Ser.</h1>
+        <h2 id="reunir-e-o-trabalho-julgar-deveria-ser" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Reunir É O Trabalho. Julgar Deveria Ser.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             A manhã de um regulador vai embora procurando as condições da apólice, o relatório do sinistro e a movimentação de reserva do trimestre passado. A parte que de fato exigia a formação dele leva dez minutos no final.
         </p>
@@ -30,7 +30,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Entra um sinistro. As condições da apólice estão num sistema de documentos. O relatório do sinistro é um PDF que alguém mandou por e-mail na sexta. O histórico de reservas está no sistema de administração de apólices. O limite de alçada que vale para um sinistro desse tamanho está numa nota de procedimento, e qual é a versão vigente dessa nota não é óbvio. Juntar as quatro coisas é a maior parte do trabalho e nada do ofício.
             </p>
@@ -45,7 +45,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Registros de seguro são reconhecidos como registros de seguro. Uma extração de sinistros saída de um sistema de administração de apólices é tipificada pelo vocabulário dela &mdash; sinistro, reserva, regulador, prêmio, franquia, liquidação, pagamento &mdash; em vez de ser arquivada onde a coluna mais genérica dela por acaso apontava. Esta é uma falha real que tivemos de corrigir: um conjunto inteiro de dados de sinistros caiu uma vez em operações porque uma das colunas se chamava &ldquo;status&rdquo;.
             </p>
@@ -66,7 +66,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Como Você Vai Saber Que Funcionou</h3>
+             <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>

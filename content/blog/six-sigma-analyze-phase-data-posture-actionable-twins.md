@@ -12,7 +12,6 @@ tags: ["Six Sigma", "Root Cause Analysis", "Operations Actionable Twins", "Runin
 robots: index, follow
 ---
 
-<!-- structured Executive Summary -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
 The Measure phase tells you how often you fail. The Analyze phase asks why. In a freight network the answer usually sits across systems, so the work is to connect them, to make sure a changed data feed cannot corrupt the answer quietly, and to test a fix before it reaches live operations.
@@ -114,61 +113,11 @@ Three capabilities do that work. A check that makes a changed feed visible rathe
 
 Write all three down as behaviours first. Then compare products against them. [Contact our team](/#contact-form) if it would help to work through which of the three your programme is missing.
 
-<!-- FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the primary goal of the Analyze phase in logistics Six Sigma?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "To work back from a defect to the variable that drives it — the lane, the carrier, the facility or the handoff — rather than reporting that a rate moved. The Measure phase says how often you fail; the Analyze phase says why."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does schema drift affect root cause analysis in supply chains?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Schema drift is when a partner changes the shape or meaning of a feed without telling you — a new status code, a different timestamp format. Nothing breaks loudly. The records stop meaning what the analysis assumes, and the exception count moves for the wrong reason."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is an Operations Actionable Twin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A working copy of the network that you can change before changing the real thing. You test a routing rule, an appointment window or a carrier allocation in the copy, see what it does elsewhere in the network, and then apply it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does intent-graph optimisation mean in plain terms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Holding the network as connected things — containers, trucks, items, sites and the handoffs between them — alongside what was supposed to happen. Comparing plan against actual shows where a delay in one place produces a charge in another."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work through the three capabilities above against your own programme.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.asq.org/quality-resources/six-sigma" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">American Society for Quality (ASQ)</a> - the Six Sigma Analyze phase and its methods.</li>
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - practice guidance on digital twins and control towers.</li>
-  </ul>
-</section>
+- [American Society for Quality (ASQ)](https://www.asq.org/quality-resources/six-sigma) — the Six Sigma Analyze phase and its methods
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — practice guidance on digital twins and control towers

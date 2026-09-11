@@ -111,55 +111,13 @@ None of that depends on new software. It depends on three facts, on the day: wha
 
 Runink FACE reads records of that kind across the systems that already hold them, and raises the mismatches as named items for someone to act on. It will not tell you what your peak cost you. That figure is yours to measure, and it is a good first one to have. The [Use Cases](/use-cases/) pages set out the mechanisms, or [Contact Us](/#contact-form).
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How can logistics leaders prepare for the unpredictability of promotional peaks?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By deciding the fallbacks before the peak: which carrier is called when the first declines, which stock crosses the dock instead of going into racking, and where returns are processed when the returns area is full. Preparation is a set of named fallbacks rather than a better forecast."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is strategic cross-docking essential during high-volume retail events?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cross-docking moves stock from the inbound door straight to an outbound trailer, so the pallet is never put into racking and never picked out of it. That removes two handling steps in the week when there is least time for them. It depends on accurate advance shipping notices and on inbound loads being booked to arrive when the outbound trailer is there."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does proactive reverse logistics planning mitigate the cost of peak returns?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By deciding in advance what happens to each type of returned item — back to stock, repair, sell on, or scrap — and giving returns their own space and people for the weeks after the peak. The figure to watch is the number of days between an item coming back and a decision being made on it, because value is lost while it waits."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.logisticsmgmt.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Logistics Management</a> - "The State of Retail Supply Chain Resilience During Peak Seasons."</li>
-    <li><a href="https://www.supplychainbrain.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Supply Chain Brain</a> - "Optimizing Distribution Center Throughput with Advanced Cross-Docking Strategies."</li>
-    <li><a href="https://rla.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Reverse Logistics Association</a> - "The Hidden Cost of Reverse Logistics in E-Commerce and Retail Events."</li>
-    <li><a href="https://www.joc.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Journal of Commerce (JOC)</a> - "Elastic Capacity and Dynamic Routing in Freight Transportation."</li>
-  </ul>
-</section>
+- [Logistics Management](https://www.logisticsmgmt.com/) — "The State of Retail Supply Chain Resilience During Peak Seasons."
+- [Supply Chain Brain](https://www.supplychainbrain.com/) — "Optimizing Distribution Center Throughput with Advanced Cross-Docking Strategies."
+- [Reverse Logistics Association](https://rla.org/) — "The Hidden Cost of Reverse Logistics in E-Commerce and Retail Events."
+- [Journal of Commerce (JOC)](https://www.joc.com/) — "Elastic Capacity and Dynamic Routing in Freight Transportation."

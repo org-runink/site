@@ -127,61 +127,11 @@ An internal score your team argues about is more useful than an external one eve
 
 The firms that do well over the next decade will be the ones honest enough to score themselves today, and disciplined enough to build the plan from what they find.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What are the five levels of supply chain maturity?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Reactive — spreadsheets, firefighting and unmeasured waiting time. Defined — written procedures, part-used systems, manual root-cause work. Managed — settled data flows, rule-based mode choice, cost to serve measured by lane. Integrated — near real-time visibility across suppliers, sites and customers, with exceptions raised before they spread. Autonomous — software makes the routine calls and planning runs continuously."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What dimensions should a supply chain maturity assessment cover?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Six, scored separately: planning and demand sensing, buying and supplier management, logistics execution, systems and data, people, and emissions and compliance. A single overall score hides the imbalance that is actually causing the problem, which is why the result should be read as a heat map rather than a grade."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the most common pitfalls in supply chain maturity assessments?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Scoring yourself kindly with nothing to compare against, comparing yourself with firms that handle different products under different rules, and treating the result as a technology shopping list. The last is the most expensive, because the step from Level 3 to Level 4 needs new roles and incentives more than it needs new software."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does a supply chain maturity assessment take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A consulting-led assessment usually runs six to eight weeks including interviews and analysis. Much of that time is spent gathering facts the organisation's own systems already hold, so a first internal pass — each area scored by the person who owns it — is usually faster and more useful. The areas nobody can score are themselves the most important finding."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ascm.org/topics/scor/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">ASCM (APICS) SCOR Model</a> - The Supply Chain Operations Reference model, with standard process definitions and performance measures end to end.</li>
-    <li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/supply-chain-4-0-the-next-generation-digital-supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">McKinsey Digital Supply Chain Compass</a> - Framework describing the capabilities behind automated supply chain decisions.</li>
-  </ul>
-</section>
+- [ASCM (APICS) SCOR Model](https://www.ascm.org/topics/scor/) — The Supply Chain Operations Reference model, with standard process definitions and performance measures end to end
+- [McKinsey Digital Supply Chain Compass](https://www.mckinsey.com/capabilities/operations/our-insights/supply-chain-4-0-the-next-generation-digital-supply-chain) — Framework describing the capabilities behind automated supply chain decisions

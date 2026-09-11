@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">The season and the trend are pulled apart.</strong> Your own history is decomposed into the underlying trend, the repeating seasonal shape and what is left over. The leftovers are where a turn shows up first.</li>
 <li><strong class="text-stone-200">The forecast says which method produced it, and why that one.</strong> Competing models are tried against periods your history already contains, and the one that predicted those periods best is the one that is used. The answer carries the name of the method that won.</li>
@@ -25,7 +25,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">The Signal Turned Before The Plan Did.</h1>
+        <h2 id="the-signal-turned-before-the-plan-did" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">The Signal Turned Before The Plan Did.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             A line starts moving long before the reorder point moves. The gap between those two dates is the whole problem, and it is usually settled by the time anyone is told.
         </p>
@@ -33,7 +33,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 The demand plan is rebuilt on a cycle. Somebody exports the sales history, applies last cycle's assumptions to it, argues the exceptions in a meeting, and loads the result back in. It is careful work and it is honest work, and it describes a month that has already ended.
             </p>
@@ -51,7 +51,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Each series is taken apart before it is projected. The trend underneath, the seasonal shape that repeats, and the residual — what the series did that neither of those explains. A turn shows in the residual first, which is why the residual is reported rather than discarded.
             </p>
@@ -72,7 +72,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+             <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. We are not offering you ours, because we do not have yours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>

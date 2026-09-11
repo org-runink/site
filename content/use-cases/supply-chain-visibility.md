@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">Your records are sorted by what they are, not by where they came from.</strong> Two tables about shipments both belong to logistics whether one arrived from your warehouse system and the other as a spreadsheet somebody emails on Fridays.</li>
 <li><strong class="text-stone-200">The map is derived, not guessed.</strong> The domains and the joins between them are worked out from the structure of your own files by fixed rules — no model, no web search, nothing leaving the building for that step. The same files always produce the same map.</li>
@@ -25,7 +25,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Four Systems. One Morning You Do Not Have.</h1>
+        <h2 id="four-systems-one-morning-you-do-not-have" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Four Systems. One Morning You Do Not Have.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Nothing is missing. Every fact you need was recorded, correctly, by somebody doing their job. It is the joining that never happens in time.
         </p>
@@ -33,7 +33,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 To answer one ordinary question — why did that customer get a short delivery twice in a month — somebody opens the order system, then the warehouse system, then the carrier's portal, then a spreadsheet that one person maintains. Four logins, four ways of naming the same site, four ideas of what a week is.
             </p>
@@ -51,7 +51,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 The first thing that happens is the boring thing: your data is read and sorted into the parts of a business it describes. Shipments, stock, carriers, suppliers and freight are one area. Invoices, reserves and settlements are another. Sensor readings are another. Vehicles and drivers another again. Records are placed by what they are about, so the same kind of fact lands in the same place whether it arrived from an ERP, a warehouse system, a transport system or a file.
             </p>
@@ -81,7 +81,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+             <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. We are not bringing numbers to this; you are. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>

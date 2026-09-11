@@ -1,0 +1,83 @@
+{{- /*
+  The canonical Organization entity, plus breadcrumbs.
+
+  WHY. Before this, the site emitted 131 copies of a skeletal Organization — name
+  and logo only, no @id, no url, no sameAs — as `Article.publisher`, and no
+  canonical entity anywhere. The one real Organization node lived in
+  content/company.md's body and was deleted at build time by
+  `markup.goldmark.renderer.unsafe = false`, silently. So nothing on the site
+  anchored "Runink" as a resolvable entity, which is the first thing an answer
+  engine looks for before it will cite a source by name.
+
+  One node, one @id, emitted on every page. schema.html's Article.publisher now
+  references it by @id instead of restating name and logo.
+
+  `sameAs` carries only first-party profiles we actually control. CONTENT.md
+  rule 11: a third-party name may be cited, never arranged to imply a
+  relationship. A LinkedIn company page and a GitHub organisation are ours.
+
+  Rule 8: runink.org, never runink.com (not ours) and never www.runink.org (no
+  DNS record). @id and url are hardcoded to the apex on purpose — deriving them
+  from .Site.BaseURL would follow a --baseURL override into a JSON-LD identity,
+  and a local build would then publish localhost as the company's identifier.
+*/ -}}
+{{- $org := "https://runink.org/#organization" -}}
+{{- $site := "https://runink.org/#website" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": {{ $org | jsonify | safeJS }},
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": {{ .Site.Params.description | jsonify | safeJS }},
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ "images/logo.png" | absURL | jsonify | safeJS }}
+      },
+      "email": "paes@runink.org",
+      "sameAs": [
+        {{ with .Site.Params.social.linkedin }}{{ . | jsonify | safeJS }},{{ end }}
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ $site | jsonify | safeJS }},
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": {{ $org | jsonify | safeJS }} },
+      "inLanguage": {{ .Language.Lang | jsonify | safeJS }}
+    }{{ if .Ancestors }},
+    {{/* Breadcrumbs. One of the cheapest citation aids there is: it tells an
+         answer engine where a page sits before it decides whether the page is
+         the authority on anything. .Ancestors is outermost-last, so it is
+         reversed here, and the page itself is appended as the final crumb. */}}
+    {
+      "@type": "BreadcrumbList",
+      "@id": {{ printf "%s#breadcrumb" .Permalink | jsonify | safeJS }},
+      "itemListElement": [
+        {{- $pos := 0 }}
+        {{- range .Ancestors.Reverse }}
+        {{- $pos = add $pos 1 }}
+        {{- if gt $pos 1 }},{{ end }}
+        {
+          "@type": "ListItem",
+          "position": {{ $pos }},
+          "name": {{ (or .LinkTitle .Title | default "Home") | jsonify | safeJS }},
+          "item": {{ .Permalink | jsonify | safeJS }}
+        }
+        {{- end }}
+        {{- $pos = add $pos 1 }},
+        {
+          "@type": "ListItem",
+          "position": {{ $pos }},
+          "name": {{ (or .LinkTitle .Title) | jsonify | safeJS }}
+        }
+      ]
+    }{{ end }}
+  ]
+}
+</script>

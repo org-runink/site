@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">A estação e a tendência são separadas.</strong> O seu próprio histórico é decomposto na tendência de fundo, na forma estacional que se repete e no que sobra. É no que sobra que uma virada aparece primeiro.</li>
 <li><strong class="text-stone-200">A previsão diz qual método a produziu, e por que aquele.</strong> Modelos que competem entre si são testados contra períodos que o seu histórico já contém, e o que previu melhor esses períodos é o que é usado. A resposta leva o nome do método que ganhou.</li>
@@ -28,7 +28,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">O Sinal Virou Antes Do Plano.</h1>
+        <h2 id="o-sinal-virou-antes-do-plano" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">O Sinal Virou Antes Do Plano.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Um item começa a se mover muito antes de o ponto de pedido se mover. O vão entre essas duas datas é o problema todo, e normalmente já está decidido quando alguém é avisado.
         </p>
@@ -36,7 +36,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 O plano de demanda é reconstruído por ciclos. Alguém exporta o histórico de vendas, aplica as premissas do ciclo anterior, discute as exceções numa reunião e carrega o resultado de volta. É um trabalho cuidadoso e é um trabalho honesto, e descreve um mês que já acabou.
             </p>
@@ -54,7 +54,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Cada série é desmontada antes de ser projetada. A tendência por baixo, a forma estacional que se repete e o resíduo — o que a série fez que nenhuma das duas explica. Uma virada aparece primeiro no resíduo, e é por isso que o resíduo é relatado em vez de descartado.
             </p>
@@ -75,7 +75,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
+             <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Não estamos oferecendo os nossos, porque não temos os seus. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>

@@ -134,62 +134,12 @@ The hardest step is the last one: moving from seeing the problem to acting on it
 
 If your programme has stalled at dashboards, the first thing to establish is not which product to buy. It is how long your operation takes today to go from something being recorded to somebody acting on it. Few operations have ever counted it, and it is usually where the cost sits. [Talk to us](/#contact-form) if it would help to work it out.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What are the 4 phases of a supply chain digital transformation roadmap?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Digitize — get records out of paper and spreadsheets into systems. Connect — make the ERP, transport system, warehouse system and carrier feeds share one order record. Analyze — read those records and flag exceptions such as a load sitting too long or a carrier slipping. Automate — let software handle the clear, repeated decisions and send the rest to a person."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do most supply chain digital transformations fail?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Digital programmes fall short more often than not, and the causes are mostly human rather than technical: staff who have reasons not to trust a new system, sponsorship that fades at the first budget review, and no early visible result. The other common cause is skipping a phase — trying to automate decisions on records that are not yet joined up."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How should you measure supply chain digital transformation progress?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pick a few measures that already existed, and record the current figure and its source before changing anything. On-time delivery by lane from the transport system; total logistics cost as a share of revenue from the finance ledger with the charge codes named; safety stock by line with the reason each buffer was set; and order-to-delivery time split between time waiting for an approval and time waiting for a truck."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does a supply chain digital transformation take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on how many systems hold the same record and how much of the work is still on paper, so it is not a figure anyone can give you in advance. A better question is how long each phase takes in your operation, which you can find out by sizing the first one: count the records that are not yet in a system, and the number of places one order is re-typed today."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/digital-supply-chain-transformation" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">McKinsey &amp; Company — Digital Supply Chain Transformation</a> - Source for the 8% figure on scaling digital supply chain work beyond a pilot.</li>
-    <li><a href="https://www.weforum.org/stories/supply-chain-transformation/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">World Economic Forum — Supply Chain Transformation</a> - Global perspectives on supply chain resilience and the case for digitising records.</li>
-    <li><a href="https://www.bcg.com/capabilities/operations/supply-chain-management" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">BCG — Supply Chain Digitization Research</a> - Source for the 70% shortfall rate and the role of change management in adoption.</li>
-  </ul>
-</section>
+- [McKinsey & Company — Digital Supply Chain Transformation](https://www.mckinsey.com/capabilities/operations/our-insights/digital-supply-chain-transformation) — Source for the 8% figure on scaling digital supply chain work beyond a pilot
+- [World Economic Forum — Supply Chain Transformation](https://www.weforum.org/stories/supply-chain-transformation/) — Global perspectives on supply chain resilience and the case for digitising records
+- [BCG — Supply Chain Digitization Research](https://www.bcg.com/capabilities/operations/supply-chain-management) — Source for the 70% shortfall rate and the role of change management in adoption

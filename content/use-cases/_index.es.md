@@ -39,21 +39,6 @@ Todos los trabajos de abajo tienen la misma forma. Los datos que necesita ya est
 
 Así que la reclamación caduca. El contenedor se abre caliente. El pedido sale por avión. No porque alguien decidiera mal, sino porque nadie tuvo tiempo de llegar al punto en el que se podía decidir.
 
-<!-- CALIBRACIÓN — no devuelva la frase sobre la aprobación a su versión
-     absoluta ("nada sale de su empresa antes de que alguien lo apruebe", ni
-     ningún umbral del tipo "todo lo que pase de X espera a una persona"). No
-     hay ninguna barrera global. face/grpc/cmd/compliance_server.go:149-155 lo
-     dice con las palabras de FACE: REQUIRE_HITL "no lo lee ningún código de
-     este repositorio salvo esta función, así que activarlo no exige nada …
-     nada consulta esta variable para forzar el paso de una acción".
-
-     Lo que es cierto, y todo lo que puede afirmarse:
-     twinsService.ExecuteAction (face/grpc/cmd/agent_services.go:6350) exige un
-     almacén configurado, carga una acción YA GUARDADA por su id, se bifurca
-     según req.UserApproval y registra HITL_DECISION_PROCESSED con
-     auditActorFrom(ctx) y la decisión. Es decir: una acción redactada espera
-     en la cola, aprobarla es lo que la envía, y quién aprobó y qué decidió
-     queda en el registro. -->
 
 ## Qué Hace Runink FACE Al Respecto
 

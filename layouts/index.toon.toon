@@ -1,6 +1,6 @@
 {{- $highValueSections := slice "blog" "use-cases" -}}
 {{- $pages := where .Site.RegularPages "Type" "in" $highValueSections -}}
-training_content[{{ len $pages }}]:
+documents[{{ len $pages }}]:
 {{- range $page := $pages }}
   - title: {{ $page.Title | jsonify }}
     permalink: {{ $page.Permalink | jsonify }}

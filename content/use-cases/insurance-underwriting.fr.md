@@ -14,7 +14,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Assurance, au sein du domaine Finance</p>
 <p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong>, le Fulfilment Autonomous Claims Engine. L'assurance n'est ni un produit à part ni un module à part : FACE range les sinistres, les provisions, les primes, les franchises, les règlements et les pièces de souscription dans son domaine <strong class="text-stone-300">Finance</strong>, au motif qu'un sinistre est une provision constituée au titre d'un contrat.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Le dossier est rassemblé. Il n'est pas jugé.</strong> Les termes du contrat, les pièces du sinistre, les mouvements de provision et la limite de délégation applicable à ce montant arrivent au même endroit, rattachés au sinistre auquel ils appartiennent.</li>
 <li><strong class="text-stone-200">Chaque lecture dit d'où elle vient.</strong> Le texte extrait d'un document revient avec le fichier dont il a été lu et la méthode qui l'a lu, de sorte qu'un chiffre du projet se retrouve sur une page au lieu d'être cru sur parole. Ce avec quoi il ne revient pas, c'est un score de confiance par chiffre &mdash; il y a bien un nombre de confiance sur la réponse et il est fixe, ce qui veut dire qu'il ne vous apprend rien, et nous préférons le dire plutôt que de vous laisser le lire comme un signal de qualité.</li>
@@ -22,7 +22,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Rassembler Est Le Métier. Ce Devrait Être Juger.</h1>
+        <h2 id="rassembler-est-le-metier-ce-devrait-etre-juger" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Rassembler Est Le Métier. Ce Devrait Être Juger.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             La matinée d'un gestionnaire part à retrouver les termes du contrat, le rapport de sinistre et le mouvement de provision du trimestre dernier. La partie qui demandait vraiment sa formation prend dix minutes au bout.
         </p>
@@ -30,7 +30,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Un sinistre arrive. Les termes du contrat sont dans une gestion documentaire. Le rapport de sinistre est un PDF que quelqu'un a envoyé par courriel vendredi. L'historique des provisions est dans le système de gestion des contrats. La limite de délégation applicable à un sinistre de cette taille est dans une note de procédure, et la version en vigueur de cette note n'a rien d'évident. Rapprocher ces quatre choses, c'est l'essentiel du travail et rien du métier.
             </p>
@@ -45,7 +45,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Les enregistrements d'assurance sont reconnus comme tels. Un extrait de sinistres sorti d'un système de gestion des contrats est typé par son vocabulaire &mdash; sinistre, provision, gestionnaire, prime, franchise, règlement, indemnisation &mdash; au lieu d'être classé là où pointait sa colonne la plus générique. C'est une panne réelle qu'il a fallu corriger : tout un jeu de données de sinistres a atterri une fois dans les opérations parce qu'une de ses colonnes s'appelait &laquo;&nbsp;statut&nbsp;&raquo;.
             </p>
@@ -66,7 +66,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Comment Vous Saurez Que Cela A Marché</h3>
+             <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>

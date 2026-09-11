@@ -18,7 +18,7 @@ author: "Runink"
 ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son versant conducteur. Ce qui suit est ce que le produit est fait pour faire, et comment il tournerait sur les enregistrements de votre propre flotte. C'est une illustration du mécanisme, pas le compte rendu d'un déploiement. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Ce qu'est FACE</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Le conducteur demande à voix haute et entend la réponse.</strong> Où est l'arrêt suivant, ce que le client a demandé, par quelle porte entrer. Aucun écran à lire et aucune raison de se ranger sur le bas-côté. Chaque réponse de la conversation est synthétisée dans le processus FACE lui-même, à partir d'une voix embarquée dans le binaire, et la parole qui entre va au serveur de modèles que vous faites déjà tourner &mdash; l'unique point d'inférence vers lequel vous pointez FACE, portant un modèle capable d'audio &mdash; et non à une API vocale exploitée par quelqu'un d'autre. Deux nuances, énoncées plutôt qu'enfouies : ce point d'accès est un point que vous configurez et non un refus d'appeler vers l'extérieur inscrit dans le code ; et l'avis d'enregistrement et l'accueil qui ouvrent l'appel sont prononcés par la voix de l'opérateur de téléphonie lui-même, car ils sont lus depuis les instructions d'ouverture de l'appel, avant que le canal vers vos machines ne soit ouvert.</li>
 <li><strong class="text-stone-200">C'est un appel téléphonique, donc cela passe par le réseau téléphonique.</strong> Autant le dire franchement plutôt que de l'enfouir. Le segment entre la cabine et la maison est porté par un opérateur de téléphonie, comme n'importe quel autre appel que passent vos conducteurs. Ce que cet opérateur n'obtient jamais, c'est le texte : la transcription, et le raisonnement qui produit la réponse, se font sur vos machines, et la réponse parlée y est encodée aussi. Il transporte bien cet audio, comme il le doit, et sa propre voix lit l'avis d'enregistrement et l'accueil avant que le canal vers vos machines ne s'ouvre.</li>
@@ -26,7 +26,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Les Mains Sur Le Volant.</h1>
+        <h2 id="les-mains-sur-le-volant" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Les Mains Sur Le Volant.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Un conducteur obligé de lire un écran pour répondre à une question va soit arrêter le camion, soit le lire en roulant. Le premier cas vous coûte l'heure. Le second vous coûte bien davantage, un jour.
         </p>
@@ -34,7 +34,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Un chargement est en retard. Le conducteur le sait une heure avant tout le monde, et le bureau l'apprend en dernier. Pour le dire, il doit se ranger et taper, ou taper en roulant. La plupart des jours, cela attend simplement l'arrêt suivant.
             </p>
@@ -49,7 +49,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Le conducteur parle et FACE répond. Où est mon arrêt suivant. Quelle barrière. C'est demandé à voix haute et cela revient à voix haute, donc les yeux restent sur la route et les mains là où elles étaient. L'appel lui-même est un appel téléphonique ordinaire et passe par un opérateur de téléphonie pour arriver ; le canal audio qui entre dans la maison est authentifié, et tout ce qui se passe après son arrivée se passe sur vos machines. La parole est transformée en texte par le serveur de modèles que vous faites tourner &mdash; le même et unique point d'inférence configurable par lequel raisonne le reste de FACE, portant un modèle capable d'audio, et non une API vocale avec son propre contrat &mdash; et chaque réponse de la conversation est prononcée par un synthétiseur qui tourne dans le même processus que le reste de FACE, à partir d'une voix embarquée dans le binaire. Aucune transcription ne finit dans le compte de quelqu'un d'autre. Deux nuances tiennent dans la même phrase plutôt que dans une note de bas de page. L'avis d'enregistrement et l'accueil qui ouvrent l'appel sont prononcés par la voix de l'opérateur lui-même, car ils sont lus depuis les instructions d'ouverture de l'appel, avant que le canal vers vos machines n'existe. Et le point d'accès de transcription est un point que vous configurez, donc l'endroit où il pointe est une chose à vérifier en revue plutôt qu'une chose qu'un test garantit.
             </p>
@@ -64,7 +64,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
+             <h3 id="comment-vous-sauriez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que quelque chose change.
              </p>

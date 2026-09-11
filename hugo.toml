@@ -48,7 +48,12 @@ enableGitInfo = true
 
 [params]
   disablePostCSS = false
-  description = ""
+  # Body copy, not config: this is the fallback <meta name="description"> and it
+  # reaches a reader as a search result and a shared link, so CONTENT.md rules 1
+  # and 3 govern it. It was "" until now, which made the last step of the
+  # description chain in baseof.html a no-op and shipped an empty description,
+  # og:description and twitter:description on 587 of 722 pages.
+  description = "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control."
   logo = "/images/logo.png"
   googleAnalytics ='G-SEECKDWZNJ'
 
@@ -303,8 +308,8 @@ enableGitInfo = true
     # The whitepapers are where the painkiller claim is actually argued at
     # length, and the index exists and is translated in all four languages.
     [[languages.en.menu.main]]
-      name = "Whitepapers"
-      url = "/blog/whitepapers/"
+      name = "Library"
+      url = "/library/"
       weight = 2
 
     # Industries sits above Use cases deliberately. The site was organised by
@@ -340,11 +345,16 @@ enableGitInfo = true
     # page no longer calls either. /use-cases/ is the real section: the same
     # argument at length, followed by every use case as a card, and it is
     # translated in all four languages.
-    [[languages.en.menu.main]]
-      name = "Use cases"
-      url = "/use-cases/"
-      weight = 4
 
+    # ONE entry over the papers AND the scenarios, pointing at /library/.
+    #
+    # "Whitepapers" and "Use cases" were two headings on one answer to the same
+    # question — what is this for, and how far can I read into it — and a reader
+    # had to open one to find out which was which. /library/ answers it once and
+    # sends them on. Nothing moved: the papers keep /blog/whitepapers/ and the
+    # scenarios keep /use-cases/, with their layouts, URLs and inbound links
+    # intact, so no ranking was spent on this.
+    #
     # There is deliberately no "Blog" entry, in any language.
     #
     # /blog/ and /blog/whitepapers/ are parent and child, so two entries read as
@@ -394,8 +404,8 @@ enableGitInfo = true
       weight = 1
 
     [[languages.fr.menu.main]]
-      name = "Livres blancs"
-      url = "/fr/blog/whitepapers/"
+      name = "Bibliothèque"
+      url = "/fr/library/"
       weight = 2
 
     # English pages, French label. The destinations are the unprefixed paths
@@ -414,10 +424,6 @@ enableGitInfo = true
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
-    [[languages.fr.menu.main]]
-      name = "Cas d'usage"
-      url = "/fr/use-cases/"
-      weight = 4
 
     [[languages.fr.menu.main]]
       name = "Tarifs"
@@ -449,8 +455,8 @@ enableGitInfo = true
       weight = 1
 
     [[languages.es.menu.main]]
-      name = "Informes técnicos"
-      url = "/es/blog/whitepapers/"
+      name = "Biblioteca"
+      url = "/es/library/"
       weight = 2
 
     # English pages, Spanish label — same reasoning as the French block above.
@@ -468,10 +474,6 @@ enableGitInfo = true
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
-    [[languages.es.menu.main]]
-      name = "Casos de uso"
-      url = "/es/use-cases/"
-      weight = 4
 
     [[languages.es.menu.main]]
       name = "Precios"
@@ -502,8 +504,8 @@ enableGitInfo = true
       weight = 1
 
     [[languages.pt.menu.main]]
-      name = "Whitepapers"
-      url = "/pt/blog/whitepapers/"
+      name = "Biblioteca"
+      url = "/pt/library/"
       weight = 2
 
     # English pages, Portuguese label — same reasoning as the French block above.
@@ -521,10 +523,6 @@ enableGitInfo = true
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
-    [[languages.pt.menu.main]]
-      name = "Casos de uso"
-      url = "/pt/use-cases/"
-      weight = 4
 
     [[languages.pt.menu.main]]
       name = "Preços"
@@ -540,8 +538,30 @@ enableGitInfo = true
   isPlainText = true
   isHTML = false
 
+# /llms.txt — the convention answer engines are converging on: one plain-text
+# map of a site, curated rather than crawled, so a model reaching for us gets the
+# four papers and the product page instead of whichever tag page ranked.
+#
+# The raw material already existed and nothing pointed at it. The TOON pipeline
+# above has emitted the full corpus at /index.toon since it was built, with no
+# link to it, no mention in robots.txt, and a format no crawler knows. This is
+# the same idea in the format they do read. robots.txt now names the sitemap, and
+# this file is linked from the homepage head.
+#
+# Plain text, self-hosted, no external request — rule 7 clean. It is body copy
+# like any other page, so rules 1 and 3 govern what it says.
+[mediaTypes."text/llms"]
+  suffixes = ["txt"]
+
+[outputFormats.LLMS]
+  mediaType = "text/llms"
+  baseName = "llms"
+  isPlainText = true
+  isHTML = false
+  permalinkable = false
+
 [outputs]
-  home = ["HTML", "RSS", "TOON"]
+  home = ["HTML", "RSS", "TOON", "LLMS"]
   page = ["HTML", "TOON"]
   section = ["HTML", "RSS", "TOON"]
   taxonomy = ["HTML", "TOON"]

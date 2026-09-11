@@ -127,62 +127,12 @@ A scorecard with weighted measures, a fixed review date and real consequences is
 
 The question is not whether to measure carrier performance. It is what not measuring it costs you in missed deliveries, claims and spot spend. Start with one figure: how long does your operation take, today, to go from a late delivery being recorded to somebody acting on it? Few operations have ever counted it, and it is usually where the cost sits. [Talk to us](/#contact-form) if you want to work that number out together.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a carrier scorecard in logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A carrier scorecard is one report that scores every transport provider against the same measures — on-time pickup and delivery, tender acceptance, claims ratio, billing accuracy, EDI compliance and transit time variability — weighted to the shipper's priorities and reviewed on a fixed schedule. It replaces opinion with a record."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the most important carrier scorecard metrics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "On-time pickup and delivery, tender acceptance, claims ratio and damage rate, billing accuracy, EDI compliance and transit time variability. Most shippers weight on-time delivery and tender acceptance highest, because a refused load pushes freight onto the spot market and a late load reaches the customer. The weights should be set by what hurts your own network most."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often should carrier scorecards be reviewed?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Three levels: a monthly scorecard for day-to-day tracking, a quarterly review for trends by lane and for capacity and billing discussions, and an annual review tied to the contract and the rates."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do carrier scorecards improve transportation performance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Carriers decide where to place capacity and which loads to prioritise, and those decisions favour shippers who measure and communicate expectations. A shared scorecard gives a carrier something specific to aim at, and gives the shipper a documented reason when a lane moves or a contract is not renewed."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://cscmp.org/CSCMP/Educate/Research.aspx" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Source for the share of mid-market shippers running a formal carrier evaluation programme.</li>
-    <li><a href="https://www.trucking.org/economics-and-industry-data" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">American Trucking Associations (ATA)</a> - Freight economics data and cargo claims analysis.</li>
-    <li><a href="https://www.gartner.com/reviews/market/transportation-management-systems" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner TMS Research</a> - Transport system market analysis and the on-time delivery targets quoted above.</li>
-  </ul>
-</section>
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/CSCMP/Educate/Research.aspx) — Source for the share of mid-market shippers running a formal carrier evaluation programme
+- [American Trucking Associations (ATA)](https://www.trucking.org/economics-and-industry-data) — Freight economics data and cargo claims analysis
+- [Gartner TMS Research](https://www.gartner.com/reviews/market/transportation-management-systems) — Transport system market analysis and the on-time delivery targets quoted above

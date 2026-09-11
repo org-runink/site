@@ -1,5 +1,27 @@
-<div class="aeo-direct-answer" itemscope itemtype="https://schema.org/Answer">
-  <div itemprop="text">
-    <strong>Quick Answer:</strong> {{ .Inner | markdownify }}
-  </div>
+{{- /*
+  The short, self-contained answer under a question heading.
+
+  WHAT CHANGED AND WHY. This used to emit a bare `schema.org/Answer` microdata
+  item with no enclosing Question, no acceptedAnswer and no mainEntity. An
+  orphan Answer validates as nothing — no extractor treats it as an answer — so
+  the markup was throwing away a signal the prose had already earned. Worse, the
+  literal string "Quick Answer:" sat INSIDE `itemprop="text"`, so anything that
+  did read it got "Quick Answer: Companies now buy from…" as the answer body.
+
+  The schema now comes from partials/schema-faq.html, which reads the rendered
+  page and pairs each question heading with the answer under it into one real
+  FAQPage. That means one source of truth rather than 47 hand-written JSON-LD
+  blocks in markdown — which, incidentally, is what the site had, and every one
+  of them was deleted at build time by `markup.goldmark.renderer.unsafe = false`
+  without a warning.
+
+  So this file's only job is now the visible answer, and the class names below
+  are the contract that partial matches on. Changing them means changing it.
+
+  `id` gives the answer a fragment to deep-link, which an answer engine will use
+  to cite a specific passage rather than the page.
+*/ -}}
+<div class="aeo-direct-answer" id="answer-{{ .Ordinal }}">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">{{ .Inner | markdownify }}</div>
 </div>

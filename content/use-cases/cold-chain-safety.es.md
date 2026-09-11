@@ -18,7 +18,7 @@ author: "Runink"
 este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su lado del patio. Es una ilustración del mecanismo, no el relato de una implantación. Lo que el software lee aquí es la documentación y las imágenes que una cadena de frío ya produce — el registro del envío, la entrega, la fotografía tomada en la puerta — frente a la norma que rige ese envío. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Qué es FACE</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Hoy no hay ninguna entrada de sensores en vivo hacia FACE, y no vamos a insinuar que la haya.</strong> Los conectores para sistemas de sensores, de etiquetas, de almacén, de patio y de transporte son piezas provisionales que fallan a propósito, para que el razonamiento que va detrás de ellas se pueda ejercitar contra un archivo de datos sembrados mientras se construye el camino de verdad. Una excursión de temperatura en sus propios equipos no es algo que esto lea todavía.</li>
 <li><strong class="text-stone-200">La cámara del patio es la parte que sí está construida.</strong> Un fotograma que llega de una cámara de patio o de infrarrojos se comprueba que sea una imagen de verdad antes de que nada lo lea, se reduce a un tamaño que un modelo pueda tragar, y lo lee un modelo de visión que corre en hardware que usted controla. Lo que vuelve es una observación escrita, atada al fotograma del que se leyó.</li>
@@ -26,7 +26,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">La Lectura Tiene Que Llegar Primero.</h1>
+        <h2 id="la-lectura-tiene-que-llegar-primero" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">La Lectura Tiene Que Llegar Primero.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             La lectura que condena una carga queda registrada horas antes de que alguien la mire. Todo el problema es el hueco entre esas dos cosas &mdash; y cerrarlo empieza por un camino del sensor hasta el software, que es justo la pieza que no hemos construido.
         </p>
@@ -34,7 +34,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
+            <h2 id="donde-se-tuerce" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Un equipo de frío empieza a fallar un martes por la noche. El sensor lo registra. A esa hora no hay nadie mirando, y los datos no se miran hasta que se abre el contenedor al otro extremo.
             </p>
@@ -49,7 +49,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Empecemos por la parte que no está terminada, porque es la parte de la que depende todo lo demás. La lectura tiene que llegar a FACE antes de que nada de esto importe, y hoy no llega. El conector para un sistema de sensores, de etiquetas, de almacén o de patio es una pieza provisional que falla a propósito, para que el razonamiento construido encima corra en su lugar contra un archivo de datos sembrados. En una instalación normal, sin nada conectado, la cola está vacía. Antes se llenaba con esos ejemplos sembrados, presentados como si fueran sus operaciones, y eso se quitó en vez de disimularlo.
             </p>
@@ -64,7 +64,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
+             <h3 id="como-sabria-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto algo cambia.
              </p>

@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">La saison et la tendance sont séparées.</strong> Votre propre historique est décomposé en tendance de fond, forme saisonnière qui se répète, et reste. C'est dans le reste qu'un retournement apparaît d'abord.</li>
 <li><strong class="text-stone-200">La prévision dit quelle méthode l'a produite, et pourquoi celle-là.</strong> Des modèles concurrents sont essayés sur des périodes que votre historique contient déjà, et celui qui a le mieux prédit ces périodes est celui qui est retenu. La réponse porte le nom de la méthode qui a gagné.</li>
@@ -28,7 +28,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Le Signal A Tourné Avant Le Plan.</h1>
+        <h2 id="le-signal-a-tourne-avant-le-plan" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Le Signal A Tourné Avant Le Plan.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Une référence commence à bouger bien avant que le point de commande ne bouge. L'écart entre ces deux dates est tout le problème, et il est d'ordinaire déjà joué quand quelqu'un en est informé.
         </p>
@@ -36,7 +36,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Le plan de demande est reconstruit par cycles. Quelqu'un exporte l'historique des ventes, y applique les hypothèses du cycle précédent, débat des exceptions en réunion, et recharge le résultat. C'est un travail soigné et c'est un travail honnête, et il décrit un mois qui est déjà terminé.
             </p>
@@ -54,7 +54,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque série est démontée avant d'être projetée. La tendance en dessous, la forme saisonnière qui se répète, et le résidu — ce que la série a fait que ni l'une ni l'autre n'explique. Un retournement se voit d'abord dans le résidu, et c'est pourquoi le résidu est rapporté plutôt que jeté.
             </p>
@@ -75,7 +75,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
+             <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous ne vous proposons pas les nôtres, car nous n'avons pas les vôtres. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>

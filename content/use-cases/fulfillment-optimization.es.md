@@ -18,7 +18,7 @@ author: "Runink"
 este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su lado de abastecimiento. Lo que sigue es lo que el producto está hecho para hacer y cómo correría contra sus propios registros. Es una ilustración del mecanismo, no el relato de una implantación. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Qué es FACE</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">El aviso dice qué límite se cruzó, con palabras.</strong> El punto de pedido, el mínimo y el máximo son los que usted ya usa: FACE no se los inventa y no los deduce de un plazo de entrega que nunca ha visto. Lo que devuelve es el límite que se cruzó y el nivel que lo cruzó, escritos, así que el aviso se puede discutir en vez de solo acusar recibo.</li>
 <li><strong class="text-stone-200">La previsión le dice cuánto fiarse de ella.</strong> Cada proyección nombra el modelo &mdash;elegido apartando el tramo más reciente de su propio histórico y volviendo a ajustar cada candidato sobre lo anterior&mdash; y cuántos periodos tuvo para aprender. Cuando el histórico de un artículo no se predice a sí mismo, eso también es uno de los hallazgos.</li>
@@ -26,7 +26,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Deje De Enterarse Demasiado Tarde.</h1>
+        <h2 id="deje-de-enterarse-demasiado-tarde" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Deje De Enterarse Demasiado Tarde.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Un aviso de falta de stock que llega cuando la reserva de seguridad ya se ha ido no es un aviso. Es una factura de flete aéreo con unos días de antelación.
         </p>
@@ -34,7 +34,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
+            <h2 id="donde-se-tuerce" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Casi todas las alertas de stock saltan por un nivel. Cuando la cobertura baja de la raya, se lo dicen. Pero el proveedor sigue necesitando quince días, y esos quince días empiezan cuando se lo dicen, no cuando empezó el problema.
             </p>
@@ -49,7 +49,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 FACE lee su propio histórico de ventas para sacar la temporada y la tendencia que hay debajo, y contrasta la proyección con periodos que no se le mostraron. Esa es la mitad que le dice que un artículo está girando antes de lo que cree el plan.
             </p>
@@ -67,7 +67,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
+             <h3 id="como-sabria-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto algo cambia.
              </p>

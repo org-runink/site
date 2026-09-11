@@ -113,53 +113,12 @@ For improvements to stick, deviations have to be read as they are recorded rathe
 
 The first number to establish is your own: total accessorial spend last year, and what proportion of it anyone has ever checked against the contract. [Contact Runink](/#contact-form) if it would help to work that out.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why do supply chain improvements fail during the Control phase?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because logistics moves faster than the checking. Manual tracking cannot keep pace with daily deviations, so discipline slips and costs like demurrage and detention climb back into the cost to serve without anyone deciding to let them."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a Fulfilment Autonomous Claims Engine (FACE)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Runink FACE, the Fulfilment Autonomous Claims Engine, reads logistics execution records against the agreements that govern them. Where an accessorial charge such as demurrage or detention is not supported by the records, it raises that charge by name and drafts the dispute with the evidence attached. The filing itself waits for approval by the person who signs disputes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does it matter how a finding is delivered?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because a finding buried in a periodic report describes money already spent. What changes behaviour is a finding that arrives as one named item — this container, these free time terms, these records — in a queue a specific person works through, and that leaves the queue once it has been decided rather than reappearing at every review."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Practitioner standards for sustaining DMAIC improvements in logistics operations.</li>
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry definitions for accessorial charges and freight audit practice.</li>
-    <li><a href="https://www.fmc.gov/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Federal Maritime Commission (FMC)</a> - Rules and guidance on demurrage and detention billing practice in ocean freight.</li>
-  </ul>
-</section>
+- [Association for Supply Chain Management (ASCM)](https://www.ascm.org/) — Practitioner standards for sustaining DMAIC improvements in logistics operations
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Industry definitions for accessorial charges and freight audit practice
+- [Federal Maritime Commission (FMC)](https://www.fmc.gov/) — Rules and guidance on demurrage and detention billing practice in ocean freight

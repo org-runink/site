@@ -1,0 +1,114 @@
+{{/*
+  /library/ — one page over two sections that stay where they are.
+
+  It resolves both by path (`site.GetPage`) rather than by being their parent,
+  which is the whole point: the papers keep /blog/whitepapers/ and the scenarios
+  keep /use-cases/, with their own layouts, their own chrome and their own
+  inbound links, and nothing had to be redirected to build this.
+
+  The papers are English-only, so on es/fr/pt this lists the English documents
+  and the page says so in its own front matter rather than hiding them. The
+  scenarios ARE translated, so those resolve per language.
+
+  Register is the shared listing one — partials/list-hero.html and
+  partials/rule-head.html — so arriving here from the homepage is not a change of
+  website. Print rules come from partials/list-print.html via the .rk-list hooks.
+*/}}
+{{ define "main" }}
+{{/* site.GetPage is ALREADY language-scoped, so "/use-cases" resolves to this
+     language's section and a "/es/use-cases" path resolves to nothing. That is
+     the opposite of how the URLs read and it cost a rebuild to notice: the
+     localized pages rendered with the sections silently missing, because
+     `{{ with }}` swallows a nil page without erroring.
+
+     The papers are a second case of the same thing. They exist only in English —
+     the three localized _index files have no child pages — so asking this
+     language's site for them returns an empty section on es/fr/pt. The English
+     site is looked up explicitly and its papers are listed, which is honest:
+     each localized deck says the four documents are published in English. */}}
+{{ $cases := site.GetPage "/use-cases" }}
+{{ $papers := site.GetPage "/blog/whitepapers" }}
+{{ if not (and $papers $papers.Pages) }}
+  {{ range site.Sites }}
+    {{ if eq .Language.Lang "en" }}{{ $papers = .GetPage "/blog/whitepapers" }}{{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="rk-list bg-canvas">
+  {{ partial "list-print.html" . }}
+
+  <div class="rk-list-wrap container mx-auto max-w-[68rem] px-5 md:px-8 py-14 md:py-20">
+
+    {{ partial "list-hero.html" (dict
+      "eyebrow" .Params.eyebrow
+      "title"   (.Params.headline | default .Title)
+      "deck"    .Params.deck
+    ) }}
+
+    {{/* The papers. Resolved by path from the section that owns them, ordered by
+         the weight they already carry, so adding a fifth paper needs no edit
+         here. */}}
+    {{ with $papers }}
+    <section class="mb-14" aria-labelledby="papers-head">
+      {{ partial "rule-head.html" (dict
+        "label" $.Params.papers_label
+        "id"    "papers-head"
+        "meta"  (printf "%d documents" (len .Pages)) ) }}
+      <ul class="list-none m-0 p-0">
+        {{ range .Pages.ByWeight }}
+        <li class="rk-list-card border-b border-rule">
+          <a class="rk-list-url group grid grid-cols-1 md:grid-cols-[13rem_1fr] gap-x-6 gap-y-1 py-5 no-underline" href="{{ .RelPermalink }}">
+            <span class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-signal" translate="no">{{ .Params.product }}</span>
+            <span class="min-w-0">
+              <span class="block font-heading text-lg md:text-xl font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-signal">{{ .Params.headline | default .Title }}</span>
+              {{ with .Params.blurb }}<span class="block mt-1.5 text-ink-2 text-sm leading-relaxed">{{ . }}</span>{{ end }}
+              {{ with .Params.source_pages }}<span class="rk-list-screen block mt-2 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">{{ . }} pages</span>{{ end }}
+            </span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{/* The scenarios, per language. */}}
+    {{ with $cases }}
+    <section class="mb-14" aria-labelledby="cases-head">
+      {{ partial "rule-head.html" (dict
+        "label" $.Params.cases_label
+        "id"    "cases-head"
+        "meta"  (printf "%d scenarios" (len .Pages)) ) }}
+      {{ with $.Params.cases_note }}<p class="mt-0 mb-6 text-ink-2 text-sm leading-relaxed max-w-[62ch]">{{ . }}</p>{{ end }}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {{ range .Pages }}
+        <a class="rk-list-card rk-list-url group flex flex-col bg-sheet border border-rule rounded-xl p-5 no-underline transition-colors duration-200 hover:bg-sunk hover:border-rule-mid" href="{{ .RelPermalink }}">
+          {{ with .Params.badge }}<span class="block mb-2 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-signal">{{ . }}</span>{{ end }}
+          <span class="block font-heading text-base font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-signal">{{ .Title }}</span>
+          {{ with .Description }}<span class="block mt-2 text-ink-2 text-sm leading-relaxed">{{ . }}</span>{{ end }}
+        </a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* The way in to /blog/. Load-bearing — see the note in the front matter. */}}
+    {{ with .Params.more_link_url }}
+    <section aria-labelledby="more-head">
+      {{ partial "rule-head.html" (dict "label" $.Params.more_label "id" "more-head") }}
+      {{ with $.Params.more_text }}<p class="mt-0 mb-4 text-ink-2 text-base leading-relaxed max-w-[62ch]">{{ . }}</p>{{ end }}
+      <p class="m-0">
+        <a class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal no-underline" href="{{ . | relLangURL }}">
+          {{ $.Params.more_link_text }}
+          <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </p>
+    </section>
+    {{ end }}
+
+    <p class="rk-list-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+{{ end }}

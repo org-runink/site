@@ -22,7 +22,7 @@ Um gêmeo digital da cadeia de suprimentos é uma cópia viva de uma operação 
 *   **Decisões autônomas** são o que os fornecedores acrescentam por cima: um software que não apenas avisa, mas calcula o que fazer a respeito.
 *   A parte difícil não é o raciocínio. É a linha de aprovação: quais passos o software pode dar sozinho, e quais uma pessoa com nome precisa assumir porque carregam responsabilidade legal ou comercial.
 
-# 1. De onde vieram os gêmeos digitais
+## 1. De onde vieram os gêmeos digitais
 
 Durante décadas, gestores da cadeia de suprimentos acompanharam mercadorias por uma mistura de painéis, mensagens EDI processadas de madrugada e telefonemas. A visibilidade era o gargalo. À medida que as redes de comércio ficaram mais emaranhadas e a resiliência virou assunto de conselho, simplesmente *ver* um embarque atrasado deixou de bastar. É essa lacuna que os gêmeos digitais são vendidos para preencher.
 
@@ -100,40 +100,3 @@ O que ele não resolve é quem decide. Essa pergunta não desaparece com um soft
 
 *Sobre o que o Runink FACE lê, o que ele redige e onde ele para: [Runink FACE](/products/face/). Para conversar sobre isso contra os seus próprios registros, [fale com a gente](/pt/#contact-form).*
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "O que é um gêmeo digital da cadeia de suprimentos?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Uma cópia viva de uma operação física — ativos, sites ou processos inteiros — mantida atualizada a partir dos dados que essas coisas já reportam. Como a cópia se mantém atual, uma operação pode testar um cenário contra ela em vez de contra a coisa real."
-    }
-  }, {
-    "@type": "Question",
-    "name": "O que as decisões autônomas acrescentam a um gêmeo digital?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Um gêmeo mostra o estado. Um motor de decisão lê esse estado, procura nos registros da própria empresa a regra ou o contrato que se aplica, gera opções, pontua cada uma e propõe uma. Se ele depois age sobre a proposta ou espera uma pessoa com nome aprová-la varia conforme o produto, e é a pergunta a fazer."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Quais são os quatro tipos de gêmeo digital na logística?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Gêmeos de componente, cobrindo uma peça ou sensor; gêmeos de ativo, cobrindo um equipamento inteiro como um contêiner ou veículo; gêmeos de sistema, cobrindo um site como um armazém ou porto; e gêmeos de processo, cobrindo um fluxo ponta a ponta como da compra, passando pela aduana, até a entrega final e as devoluções."
-    }
-  }]
-}
-</script>
-
----
-
-<section class="author-bio mt-12 p-6 bg-sheet rounded-2xl border border-rule">
-  <h2 class="text-2xl font-bold text-signal mb-4">Quem escreveu isto</h2>
-  <p class="text-ink-2">
-    A equipe de operações logísticas da Runink. A Runink constrói software que lê os registros que uma operação logística já mantém — pedidos, faturas de transportadoras, devoluções, processos de sinistro — e redige a ação que uma pessoa com nome depois aprova.
-  </p>
-</section>

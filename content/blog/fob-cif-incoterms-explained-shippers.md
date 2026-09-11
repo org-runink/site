@@ -113,62 +113,12 @@ Either way the discipline is the same. You need to see the cargo, know where you
 
 The practical test is whether anyone in your business can state, for a consignment currently in transit, which Incoterm governs it, where the risk transfer point falls, and whether that point has been passed. In most operations the Incoterm lives in the contract file and the cargo position lives in a carrier portal, and nobody reads the two together until a claim forces it. [Runink FACE](/products/face/) reads records of that kind out of the systems that already hold them and raises the mismatches as named consignments; the [compliance](/use-cases/compliance/) and [supply chain visibility](/use-cases/supply-chain-visibility/) pages set out the mechanism.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the difference between FOB and CIF Incoterms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Under FOB (Free On Board), the buyer takes on risk and cost once the cargo is loaded onto the vessel at the origin port. Under CIF (Cost, Insurance, Freight), the seller pays for freight and insurance to the destination port, but risk still transfers to the buyer at the origin port. So CIF moves the cost of freight and insurance to the seller while the risk stays with the buyer from the moment of loading."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who is responsible for cargo insurance under CIF?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Under CIF the seller must arrange and pay for cargo insurance, but only at the minimum Institute Cargo Clauses (C) level defined by ICC Incoterms 2020. Clause (C) excludes theft, pilferage and water damage. Because the buyer carries the risk from the origin port, a buyer who accepts the minimum is carrying exposures the policy does not cover, and should either negotiate Clause (A) all-risk cover or buy supplemental insurance."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When does risk transfer from seller to buyer under FOB?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Under FOB, risk transfers from seller to buyer the moment the goods are loaded on board the named vessel at the port of shipment. From that point the buyer bears the risk of loss or damage during ocean transit, and is responsible for freight cost, cargo insurance, destination customs clearance and inland transport to the final delivery point."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can supply chain visibility platforms help manage Incoterms risk?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Supply chain visibility platforms read cargo position data from ocean, port, rail and road legs alongside the contractual risk transfer point defined by the Incoterm on that consignment. That lets an operations team see whether liability has shifted, how dwell compares with the free-time allowance, and whether insurance cover matches the leg the cargo is actually on. The figures remain the shipper's to act on; the platform's job is to surface the mismatches by consignment rather than by exception rate."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://iccwbo.org/business-solutions/incoterms-rules/incoterms-2020/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">International Chamber of Commerce (ICC) — Incoterms 2020</a> - The global standard for trade terms governing the sale of goods, defining obligations, costs and risk transfer between buyers and sellers.</li>
-    <li><a href="https://www.wto.org/english/thewto_e/whatis_e/whatis_e.htm" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">World Trade Organization (WTO)</a> - International organization governing rules of trade between nations, and the regulatory framework underpinning global commerce and trade facilitation.</li>
-    <li><a href="https://www.lmalloyds.com/lma/underwriting/marine/JCC/Joint_Cargo" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Institute Cargo Clauses — Lloyd's Market Association</a> - Standard marine cargo insurance clauses (A, B, C) that define the cover levels referenced in CIF and other Incoterms transactions.</li>
-  </ul>
-</section>
+- [International Chamber of Commerce (ICC) — Incoterms 2020](https://iccwbo.org/business-solutions/incoterms-rules/incoterms-2020/) — The global standard for trade terms governing the sale of goods, defining obligations, costs and risk transfer between buyers and sellers
+- [World Trade Organization (WTO)](https://www.wto.org/english/thewto_e/whatis_e/whatis_e.htm) — International organization governing rules of trade between nations, and the regulatory framework underpinning global commerce and trade facilitation
+- [Institute Cargo Clauses — Lloyd's Market Association](https://www.lmalloyds.com/lma/underwriting/marine/JCC/Joint_Cargo) — Standard marine cargo insurance clauses (A, B, C) that define the cover levels referenced in CIF and other Incoterms transactions

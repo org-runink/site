@@ -97,63 +97,13 @@ Mastering the food service supply chain takes more than insulated trailers and f
 
 That is the reading problem Runink FACE works on: comparing records held in separate systems against the rule that governs them, and raising what differs as a named load rather than a spoilage rate. The decision about what to do with a flagged load stays with your quality team. [Get in touch](/#contact-form) if you want to walk the mechanism through against your own reefer and receiving data.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why is cold chain integrity important in food service logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cold chain integrity means a temperature-sensitive product stays inside its specified range at every step: supplier, trailer, warehouse and delivery. Where it does not, the product may be rejected, written off, or unsafe to serve, which is why the record of what the temperature did travels with the load."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does JIT delivery benefit restaurant supply chains?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Just-in-time delivery times the arrival of perishable stock to when the kitchen needs it. The restaurant holds less on site, so less is thrown away and what is served is closer to its delivery date. The holding, sorting and picking move upstream to the distributor."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the biggest challenges to managing perishable shelf life?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The main challenges are time and sequence: hours lost idling in a yard or at a congested dock, and stock picked by arrival date rather than by First-Expire, First-Out (FEFO), which picks by the actual expiry date."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does regulatory compliance affect cold chain operations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Food safety rules set the operating conditions for cold chain work. Under the Food Safety Modernization Act (FSMA) and comparable standards elsewhere, you are expected to keep traceability records, meet hygiene standards, and be able to produce temperature logs showing what the product experienced."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">FDA Food Safety Modernization Act (FSMA)</a> - The regulatory framework and its requirements for preventive food safety and traceability.</li>
-    <li><a href="https://www.supplychainbrain.com/articles/36423-the-future-of-cold-chain-logistics" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">SupplyChainBrain: The Future of Cold Chain Logistics</a> - Analysis of the growing complexity and equipment requirements of temperature-controlled supply chains.</li>
-    <li><a href="https://www.inboundlogistics.com/cms/article/cold-chain-logistics-keeping-it-cool/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Inbound Logistics: Cold Chain Optimization</a> - Practices for reducing temperature excursions and managing multi-stop refrigerated transport.</li>
-    <li><a href="https://www.cscmp.org/store/detail.aspx?id=108" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">CSCMP State of Logistics Report</a> - Annual benchmarking data on logistics performance, transportation costs and warehouse efficiency.</li>
-  </ul>
-</section>
+- [FDA Food Safety Modernization Act (FSMA)](https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma) — The regulatory framework and its requirements for preventive food safety and traceability
+- [SupplyChainBrain: The Future of Cold Chain Logistics](https://www.supplychainbrain.com/articles/36423-the-future-of-cold-chain-logistics) — Analysis of the growing complexity and equipment requirements of temperature-controlled supply chains
+- [Inbound Logistics: Cold Chain Optimization](https://www.inboundlogistics.com/cms/article/cold-chain-logistics-keeping-it-cool/) — Practices for reducing temperature excursions and managing multi-stop refrigerated transport
+- [CSCMP State of Logistics Report](https://www.cscmp.org/store/detail.aspx?id=108) — Annual benchmarking data on logistics performance, transportation costs and warehouse efficiency

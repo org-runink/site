@@ -111,46 +111,8 @@ Software can make the document easier to read across many shipments. It does not
 
 The bill of lading has lasted because it standardises trust between strangers. The friction in it is the part technology can address.
 
-**Runink FACE** works on one part of that friction. The bill's terms and the operational record for the same shipment usually sit in different systems, so the hidden rulebook is rarely read against what actually happened. FACE reads both and raises the consignments where they disagree, for a person to act on. Reading documents is the task; the legal positions stay with your counsel, and the three functions above are still where liability sits.
+**Runink FACE** works on the consequence rather than the document. When a consignment is held because a paper is missing or wrong, the charge starts running that day, and the entry sits in a queue nobody reads end to end. FACE takes the entry records — the hold reason, which documents are outstanding, how many days it has been held, the agreed per-day rate — and produces one item naming the entry, what is missing, and what the hold has cost so far, for a person to approve an action on. The arithmetic is fixed and stated; no model is involved in it. The legal positions stay with your counsel, and the three functions above are still where liability sits.
 
 *Want to look at your own documents? [Book a consultation](/#contact-form).*
 
-<!-- FAQPage schema for search engines -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is a Bill of Lading?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A document used in international trade that does three jobs at once: it is a receipt for the goods as loaded, evidence of the contract to carry them, and a transferable document of title."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the three functions of a Bill of Lading?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Receipt, evidence of contract, and document of title. The receipt records how the goods looked when loaded; the contract function binds the carrier to carry them; the title function lets ownership transfer while the cargo is still at sea."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Why does a Clean Bill of Lading matter?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A clean bill states that the cargo looked sound when loaded. Under the doctrine of estoppel it stops the carrier arguing later that the damage was already there. Issuing one for cargo known to be damaged is fraud under English law and voids the carrier's insurance cover."
-    }
-  }]
-}
-</script>
 
-
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to look at how your own documents and records line up.
-  </p>
-</section>
