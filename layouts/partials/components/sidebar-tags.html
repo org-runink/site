@@ -6,7 +6,7 @@
             {{ $tagCount := .Site.Params.blog.sidebar.tags.count | default 20 }}
             {{ range first $tagCount .Site.Taxonomies.tags.ByCount }}
             <a href="{{ "/tags/" | relLangURL }}{{ .Name | urlize }}"
-                class="text-sm text-stone-400 hover:text-[#ea580c] transition-colors duration-200">
+                class="text-sm text-stone-400 hover:text-signal transition-colors duration-200">
                 #{{ .Name }}
                 <span class="text-stone-600">({{ .Count }})</span>
             </a>

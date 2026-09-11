@@ -1,66 +1,50 @@
+{{/*
+  One term: /categories/supply-chain-strategy/, /tags/demurrage/.
+
+  This is where /blog/ sends almost every link it has, so it has to be the same
+  page as /blog/ in register — a reader who clicked a topic and landed on an 80px
+  orange gradient italic headline over a near-black canvas had, as far as their
+  eye was concerned, left the site. Hero, cards and paging all come from the
+  shared partials now, so there is one register and one place to change it.
+
+  The eyebrow names the kind of term rather than repeating the title, so the chip
+  says "Category" and the headline says which one.
+*/}}
 {{ define "main" }}
-<div class="bg-stone-950 min-h-screen relative overflow-hidden">
-    {{ partial "background-effects.html" . }}
+<div class="rk-list bg-canvas">
+  {{ partial "list-print.html" . }}
 
-    <div class="container mx-auto px-4 py-24 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 flex flex-col items-center">
-                <div class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
-                    {{ .Data.Singular | humanize }}
-                </div>
+  <div class="rk-list-wrap container mx-auto max-w-[68rem] px-5 md:px-8 py-14 md:py-20">
 
-                <h1 class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
-                    {{ .Title | humanize }}
-                </h1>
+    {{ $n := len .Pages }}
+    {{ partial "list-hero.html" (dict
+      "eyebrow" (.Data.Singular | humanize)
+      "title"   (.Title | humanize)
+      "deck"    .Description
+      "meta"    (printf "%d %s" $n (cond (eq $n 1) "article" "articles"))
+    ) }}
 
-                <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mt-6 max-w-3xl">
-                    {{ $count := len .Pages }}
-                    {{ if eq $count 1 }}1 Post{{ else }}{{ $count }} Posts{{ end }}
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {{ $paginator := .Paginate .Pages }}
-                {{ range $paginator.Pages }}
-                {{ partial "post-card.html" . }}
-                {{ end }}
-            </div>
-
-            {{ $paginator := .Paginate .Pages }}
-            {{ if gt $paginator.TotalPages 1 }}
-            <nav class="mt-16 flex justify-between items-center border-t border-stone-800/50 pt-8">
-                <div class="flex space-x-3 items-center">
-                    {{ if $paginator.HasPrev }}
-                    <a href="{{ $paginator.Prev.URL }}"
-                        class="inline-flex items-center px-6 py-3 bg-stone-800 text-stone-300 rounded-full hover:bg-stone-700 hover:text-white transition-colors duration-200 font-medium text-lg">
-                        &larr; Prev
-                    </a>
-                    {{ end }}
-
-                    {{ range $paginator.Pagers }}
-                    {{ if eq . $paginator }}
-                    <span
-                        class="w-12 h-12 flex items-center justify-center bg-[#ea580c] text-white rounded-full text-lg font-medium shadow-[0_0_15px_rgba(234,88,12,0.3)]">
-                        {{ .PageNumber }}
-                    </span>
-                    {{ else }}
-                    <a href="{{ .URL }}"
-                        class="w-12 h-12 flex items-center justify-center bg-stone-100 text-stone-900 rounded-full hover:bg-stone-900 transition-colors duration-200 text-lg font-medium">
-                        {{ .PageNumber }}
-                    </a>
-                    {{ end }}
-                    {{ end }}
-                </div>
-
-                {{ if $paginator.HasNext }}
-                <a href="{{ $paginator.Next.URL }}"
-                    class="inline-flex items-center px-6 py-3 bg-[#ea580c] text-white rounded-full hover:bg-[#ca4708] transition-colors duration-200 font-medium text-lg group shadow-[0_0_20px_rgba(234,88,12,0.2)]">
-                    Next <span class="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
-                </a>
-                {{ end }}
-            </nav>
-            {{ end }}
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+      {{ range (.Paginate .Pages).Pages }}
+      {{ partial "post-card.html" . }}
+      {{ end }}
     </div>
+
+    {{ partial "list-pager.html" (.Paginate .Pages) }}
+
+    <nav class="rk-list-screen mt-12 pt-8 border-t border-rule flex flex-wrap gap-3.5" aria-label="Back to the listings">
+      <a class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-sheet border border-rule text-signal text-xs font-extrabold uppercase tracking-[0.12em] no-underline transition-colors duration-200 hover:bg-signal-wash hover:border-rule-mid"
+         href="{{ "/blog/" | relLangURL }}">
+        All articles
+      </a>
+      <a class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-sheet border border-rule text-signal text-xs font-extrabold uppercase tracking-[0.12em] no-underline transition-colors duration-200 hover:bg-signal-wash hover:border-rule-mid"
+         href="{{ printf "/%s/" .Data.Plural | relLangURL }}">
+        All {{ .Data.Plural }}
+      </a>
+    </nav>
+
+    <p class="rk-list-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
 </div>
 {{ end }}

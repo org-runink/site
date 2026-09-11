@@ -4,11 +4,11 @@
         <!-- Section Title (Matches Pricing Page Styles) -->
         <div class="text-center mb-20 flex flex-col items-center">
             <div
-                class="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-lg border border-[#ca4708]/50 text-[#ca4708] text-[10px] font-black uppercase tracking-[0.2em] bg-[#211F1F]">
+                class="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-lg border border-signal/50 text-signal text-[10px] font-black uppercase tracking-[0.2em] bg-signal-wash">
                 {{ if eq .Page.Language.Lang "pt" }}Exclusivo de Enterprise{{ else if eq .Page.Language.Lang "fr" }}Exclusivité Enterprise{{ else if eq .Page.Language.Lang "es" }}Exclusivo de Enterprise{{ else }}Enterprise Exclusive{{ end }}
             </div>
             <h2
-                class="text-5xl md:text-6xl lg:text-[70px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg leading-[1.1] break-words">
+                class="text-5xl md:text-6xl lg:text-[70px] font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg leading-[1.1] break-words">
                 {{ if eq .Page.Language.Lang "pt" }}Gêmeos Digitais de Operações{{ else if eq .Page.Language.Lang "fr" }}Jumeaux Numériques d'Opérations{{ else if eq .Page.Language.Lang "es" }}Gemelos Digitales de Operaciones{{ else }}Operations Actionable Twins{{ end }}
             </h2>
             <div
@@ -30,10 +30,10 @@
 
             <!-- Digital Paralegals -->
             <div
-                class="bg-[#1b1919] border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-[#29B5E8]/30 transition-colors group flex flex-col h-full">
+                class="bg-sheet border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-signal/50 transition-colors group flex flex-col h-full">
                 <h3
-                    class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-[#29B5E8] transition-colors">
-                    {{ if eq .Page.Language.Lang "pt" }}Paralegais <span class="text-[#29B5E8]">Digitais</span>{{ else if eq .Page.Language.Lang "fr" }}Paralégaux <span class="text-[#29B5E8]">Digitaux</span>{{ else if eq .Page.Language.Lang "es" }}Paralegales <span class="text-[#29B5E8]">Digitales</span>{{ else }}Digital <span class="text-[#29B5E8]">Paralegals</span>{{ end }}</h3>
+                    class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-signal transition-colors">
+                    {{ if eq .Page.Language.Lang "pt" }}Paralegais <span class="text-signal">Digitais</span>{{ else if eq .Page.Language.Lang "fr" }}Paralégaux <span class="text-signal">Digitaux</span>{{ else if eq .Page.Language.Lang "es" }}Paralegales <span class="text-signal">Digitales</span>{{ else }}Digital <span class="text-signal">Paralegals</span>{{ end }}</h3>
                 <p class="text-sm text-stone-400 leading-relaxed mb-8 flex-grow">
                     {{ if eq .Page.Language.Lang "pt" }}
                         Sua equipe jurídica e de conformidade automatizada. Eles ingerem faturas de frete autonomamente, cruzam acordos de SLA e registram instantaneamente contestações irrefutáveis para recuperar margens perdidas de transportadoras sem intervenção manual.
@@ -52,10 +52,10 @@
 
             <!-- Statistical Buyers & Ops -->
             <div
-                class="bg-[#1b1919] border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-[#FF3621]/30 transition-colors group flex flex-col h-full">
+                class="bg-sheet border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-signal/50 transition-colors group flex flex-col h-full">
                 <h3
-                    class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-[#FF3621] transition-colors">
-                    {{ if eq .Page.Language.Lang "pt" }}Compradores <span class="text-[#FF3621]">Estatísticos</span>{{ else if eq .Page.Language.Lang "fr" }}Acheteurs <span class="text-[#FF3621]">Statistiques</span>{{ else if eq .Page.Language.Lang "es" }}Compradores <span class="text-[#FF3621]">Estadísticos</span>{{ else }}Statistical <span class="text-[#FF3621]">Buyers</span>{{ end }}</h3>
+                    class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-signal transition-colors">
+                    {{ if eq .Page.Language.Lang "pt" }}Compradores <span class="text-signal">Estatísticos</span>{{ else if eq .Page.Language.Lang "fr" }}Acheteurs <span class="text-signal">Statistiques</span>{{ else if eq .Page.Language.Lang "es" }}Compradores <span class="text-signal">Estadísticos</span>{{ else }}Statistical <span class="text-signal">Buyers</span>{{ end }}</h3>
                 <p class="text-sm text-stone-400 leading-relaxed mb-8 flex-grow">
                     {{ if eq .Page.Language.Lang "pt" }}
                         Sua unidade de planejamento de demanda autônoma. Eles ingerem de forma inteligente as tendências de mercado e a velocidade de vendas para prever necessidades exatas de estoque, orquestrando dinamicamente a alocação de estoque em toda a sua rede de distribuição.
@@ -74,10 +74,10 @@
 
             <!-- Revenue Operators -->
             <div
-                class="bg-[#1b1919] border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-[#4285F4]/30 transition-colors group flex flex-col h-full">
+                class="bg-sheet border border-stone-800/60 rounded-2xl p-8 shadow-inner hover:border-signal/50 transition-colors group flex flex-col h-full">
                 <h3
-                    class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-[#4285F4] transition-colors">
-                    {{ if eq .Page.Language.Lang "pt" }}Operadores de <span class="text-[#4285F4]">Receita</span>{{ else if eq .Page.Language.Lang "fr" }}Opérateurs de <span class="text-[#4285F4]">Revenus</span>{{ else if eq .Page.Language.Lang "es" }}Operadores de <span class="text-[#4285F4]">Ingresos</span>{{ else }}Revenue <span class="text-[#4285F4]">Operators</span>{{ end }}</h3>
+                    class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4 group-hover:text-signal transition-colors">
+                    {{ if eq .Page.Language.Lang "pt" }}Operadores de <span class="text-signal">Receita</span>{{ else if eq .Page.Language.Lang "fr" }}Opérateurs de <span class="text-signal">Revenus</span>{{ else if eq .Page.Language.Lang "es" }}Operadores de <span class="text-signal">Ingresos</span>{{ else }}Revenue <span class="text-signal">Operators</span>{{ end }}</h3>
                 <p class="text-sm text-stone-400 leading-relaxed mb-8 flex-grow">
                     {{ if eq .Page.Language.Lang "pt" }}
                         Seus auditores financeiros forenses. Eles auditam meticulosamente cada linha de fatura em relação aos contratos negociados com as transportadoras, sinalizando taxas fantasmas automaticamente e executando pagamentos a menor para interromper perdas de margem.

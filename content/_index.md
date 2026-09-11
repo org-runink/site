@@ -22,11 +22,9 @@
 # race, and the last language built wins — that is how /whitepapers/ once
 # shipped pointing at the Portuguese page.
 title: "Runink"
-description: "Held customs entries, claims decided without the evidence already in the file, traffic carried and never rated. The answer is usually already in your own records. Runink reads all of them, and puts one specific proposed action in front of the person who can approve it."
+description: "Held customs entries, claims decided without the evidence already in the file, traffic carried and never rated. The answer is usually already in your own records. Runink FACE reads all of them, and puts one specific proposed action in front of the person who can approve it."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
-accent: "#ea580c"
-
 hero:
   eyebrow: "For operations, finance and compliance"
   line1: "The answer is already in your records."
@@ -59,7 +57,6 @@ industries_columns:
 industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
-    accent: "#ea580c"
     cost: "An entry held at the port for a missing paper while the daily charge runs. A freight claim still inside its filing window that nobody had the morning to assemble."
     owners:
       - "Operations director"
@@ -67,7 +64,6 @@ industries:
       - "Trade compliance"
   - page: "insurance"
     name: "Insurance"
-    accent: "#778fe6"
     cost: "A review threshold raised to clear a backlog, meant to be temporary, never put back and never decided either way. Reserve movements checked by sample because the stream is too long to read."
     owners:
       - "Claims operations"
@@ -75,7 +71,6 @@ industries:
       - "Internal audit"
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
-    accent: "#C8D9A8"
     cost: "A break that grows inside the range you always clear, so no single month escalates and nobody reads the sequence. A supplier contract nobody has opened since signature."
     owners:
       - "Compliance and risk"
@@ -83,7 +78,6 @@ industries:
       - "Finance"
   - page: "telecom"
     name: "Telecom"
-    accent: "#c084fc"
     cost: "A rating change that is right for the promotion and wrong for a legacy plan, too small to move an aggregate. A sweep that returns an error rate when operations needs the accounts by name."
     owners:
       - "Revenue assurance"
@@ -91,12 +85,35 @@ industries:
       - "Finance and procurement"
   - page: "marketing"
     name: "Marketing"
-    accent: "#D4A574"
     cost: "The audit tool knows the site is slow. The content tool does not, so it keeps writing for a page nobody stays on. Every campaign starts again from a blank page."
     owners:
       - "The marketing lead"
       - "Sales"
       - "IT and information security"
+
+# The one block that names the product. It sits here, after the industries and
+# before the reasons, because this is the earliest point the page's own order
+# allows a product name: everything above it is in the buyer's vocabulary, and a
+# reader who has just found their own line in the ledger is exactly where the
+# question "so what is it called" arrives. Until this slot existed the page
+# answered it only in the paper link near the bottom, so a reader could finish
+# the whole page without learning the product's name.
+#
+# It is one heading, one paragraph and one footnote on purpose, and no call to
+# action of its own. Naming the product is not a licence to start describing it
+# — that is the essay this page was rebuilt to get away from, and the depth
+# belongs in /blog/whitepapers/runink-face/.
+#
+# The three translations do not carry this key yet. The layout guards the whole
+# band with `with .Params.product` and the footnote again with `with .note`, so
+# they drop the section rather than render an empty one. They will each need
+# `heading`, `deck` and `note` translated, with "Runink FACE" left as it stands,
+# before the name reaches those locales — and the `description` above, which now
+# names the product where a search result or a shared link will show it.
+product:
+  heading: "The product is Runink FACE"
+  deck: "Runink FACE is the product behind every line above. It reads the records your systems already hold, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. What changes between industries is which records matter and which rule applies; the reading, the drafting and the approval do not."
+  note: "Under the name: agents that read the records and draft the action, a review screen for the person who owns the decision, and the platform underneath that keeps both inside your own network."
 
 why_heading: "Why this is not another dashboard"
 why_intro: "Three things decide whether any of the above is worth your time."
@@ -106,7 +123,7 @@ why:
     body: "A dashboard shows you a number and leaves the work to you. This arrives as one specific proposed action, ranked, with the rule it invoked and the records it cited attached to it."
   - glyph: "approve"
     title: "A named person decides"
-    body: "Nothing leaves your building before somebody approves it. Who approved it, when, and what they changed stays on the record, so the reason can be given later without assembling it again."
+    body: "A finding arrives as a drafted action and waits. Approving it is what sends it, and who approved it, when, and what they changed stays on the record — so the reason can be given later without assembling it again."
   - glyph: "held"
     title: "Your records stay on your machines"
     body: "The files and the reasoning about them run on hardware you control. Nothing is sent to an outside model provider, which is usually the shortest route through a security review."

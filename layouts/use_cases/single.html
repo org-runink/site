@@ -1,3 +1,30 @@
+{{/* ---------------------------------------------------------------------
+     DEAD FILE. NOTHING RENDERS THROUGH THIS, AND "FIXING" THAT WOULD BE A
+     REGRESSION. Read this before renaming the directory.
+
+     The use-case pages set `layout: "use_case"`. Hugo looks that up under the
+     SECTION name, which is `use-cases` with a HYPHEN (the content directory is
+     content/use-cases/). This directory is `use_cases` with an UNDERSCORE, so
+     the lookup has never matched and every page has fallen through to
+     layouts/_default/single.html. layouts/industries/single.html:18-19 already
+     records this.
+
+     The obvious "fix" — renaming this directory to use-cases/ — would make
+     layouts/use-cases/single.html win for all twelve pages, and this file is a
+     strict SUBSET of the default it would displace: no sidebar, no table of
+     contents, no CTA partial, and it reads neither .Params.toc nor .Params.cta.
+     Every use-case page would quietly lose three features, with nothing failing.
+
+     So the current state is the correct one, by accident rather than design.
+     The file is kept rather than deleted because it is the starting point if a
+     use-case-specific layout is ever actually wanted — in which case start by
+     diffing it against _default/single.html, not by renaming the directory.
+
+     One thing a real use-case layout SHOULD do, and neither this nor the default
+     does: render `.Params.product`. Attribution is currently hand-written HTML
+     in each page body, so a writer who forgets the paragraph ships an
+     unattributed page and nothing catches it.
+     --------------------------------------------------------------------- */}}
 {{ define "main" }}
 <div class="bg-stone-950 min-h-screen relative overflow-hidden text-stone-300">
     {{ partial "background-effects.html" . }}
@@ -7,13 +34,13 @@
         <div class="mb-12 flex justify-center w-full">
             <!-- Main Content -->
             <article
-                class="w-full max-w-5xl bg-[#161515] border border-stone-800/80 rounded-[2.5rem] p-8 md:p-16 shadow-2xl relative z-10">
+                class="w-full max-w-5xl bg-sheet border border-stone-800/80 rounded-[2.5rem] p-8 md:p-16 shadow-2xl relative z-10">
                 <header class="mb-8">
                     {{ with .Params.categories }}
                     <div class="mb-4">
                         {{ range . }}
                         <a href="{{ " /categories/" | relLangURL }}{{ . | urlize }}"
-                            class="inline-block px-3 py-1 text-sm font-medium text-primary-600 bg-primary-50 rounded-full hover:bg-primary-100 mr-2">
+                            class="inline-block px-3 py-1 text-sm font-medium text-primary-600 bg-signal-wash rounded-full hover:bg-sunk mr-2">
                             {{ . }}
                         </a>
                         {{ end }}
@@ -21,7 +48,7 @@
                     {{ end }}
 
                     <div
-                        class="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full border border-[#ea580c]/30 text-[#ea580c] text-[10px] font-black uppercase tracking-[0.25em] bg-stone-900/50 shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                        class="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full border border-signal/30 text-signal text-[10px] font-black uppercase tracking-[0.25em] bg-stone-900/50 shadow-[0_0_15px_rgba(234,88,12,0.1)]">
                         Transmission
                     </div>
 
@@ -35,7 +62,7 @@
                 {{ end }}
 
                 <div
-                    class="w-full prose prose-invert prose-stone max-w-none lg:prose-lg prose-headings:text-white prose-p:text-stone-300 prose-li:text-stone-300 prose-strong:text-white prose-a:text-[#ea580c] hover:prose-a:text-[#ca4708]">
+                    class="w-full prose prose-invert prose-stone max-w-none lg:prose-lg prose-headings:text-white prose-p:text-stone-300 prose-li:text-stone-300 prose-strong:text-white prose-a:text-signal hover:prose-a:text-signal">
                     {{ .Content }}
                 </div>
             </article>

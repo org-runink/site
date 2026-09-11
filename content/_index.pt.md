@@ -6,11 +6,9 @@
 # English and hugo.toml already lists them in English in the Portuguese menu.
 # The link goes to the same /industries/... page in every language.
 title: "Runink"
-description: "Declarações retidas na alfândega, sinistros decididos sem a evidência que já estava no processo, tráfego cursado e nunca tarifado. A resposta quase sempre já está nos seus próprios registros. A Runink lê todos eles e coloca uma ação concreta diante de quem pode aprová-la."
+description: "Declarações retidas na alfândega, sinistros decididos sem a evidência que já estava no processo, tráfego cursado e nunca tarifado. A resposta quase sempre já está nos seus próprios registros. A Runink FACE lê todos eles e coloca uma ação concreta diante de quem pode aprová-la."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
-accent: "#ea580c"
-
 hero:
   eyebrow: "Para operações, finanças e conformidade"
   line1: "A resposta já está nos seus registros."
@@ -43,7 +41,6 @@ industries_columns:
 industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
-    accent: "#ea580c"
     cost: "Uma declaração retida no porto por um documento que falta enquanto a diária corre. Uma reclamação de frete ainda dentro do prazo de abertura que ninguém teve a manhã para montar."
     owners:
       - "Diretor de operações"
@@ -51,7 +48,6 @@ industries:
       - "Conformidade aduaneira"
   - page: "insurance"
     name: "Insurance"
-    accent: "#778fe6"
     cost: "Um limite de segunda análise elevado para vencer uma fila, feito para ser temporário, nunca devolvido e nunca decidido. Movimentos de reserva conferidos por amostragem porque o fluxo é longo demais para ler."
     owners:
       - "Operações de sinistros"
@@ -59,7 +55,6 @@ industries:
       - "Auditoria interna"
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
-    accent: "#C8D9A8"
     cost: "Uma diferença que cresce dentro da faixa que sempre se aprova, então nenhum mês escala e ninguém lê a sequência. Um contrato de fornecedor que ninguém reabriu desde a assinatura."
     owners:
       - "Conformidade e riscos"
@@ -67,7 +62,6 @@ industries:
       - "Finanças"
   - page: "telecom"
     name: "Telecom"
-    accent: "#c084fc"
     cost: "Uma mudança de tarifação certa para a promoção e errada para um plano legado, pequena demais para mover um agregado. Uma varredura que devolve uma taxa de erro quando a operação precisa das contas pelo nome."
     owners:
       - "Garantia de receita"
@@ -75,12 +69,27 @@ industries:
       - "Finanças e compras"
   - page: "marketing"
     name: "Marketing"
-    accent: "#D4A574"
     cost: "A ferramenta de auditoria sabe que o site está lento. A de conteúdo não sabe, e segue escrevendo para uma página em que ninguém fica. Cada campanha recomeça do zero."
     owners:
       - "O líder de marketing"
       - "Vendas"
       - "TI e segurança da informação"
+
+# The one block that names the product — the Portuguese counterpart of the
+# `product` key in content/_index.md, in the same place for the same reason:
+# after the industries and before the reasons, because everything above it is in
+# the buyer's vocabulary and a reader who has just found their own line is
+# exactly where "so what is it called" arrives. Until this key existed, the
+# Portuguese page answered that only in the paper link near the bottom.
+#
+# "Runink FACE" is a product name and stays in English. The heading renders
+# uppercase and letterspaced, so it stays short. One heading, one paragraph, one
+# footnote, no call to action of its own — naming the product is not a licence to
+# start describing it; the depth belongs in /blog/whitepapers/runink-face/.
+product:
+  heading: "O produto é o Runink FACE"
+  deck: "O Runink FACE é o produto por trás de cada linha acima. Ele lê os registros que os seus sistemas já guardam, compara cada um com a regra que o governa e coloca uma ação já redigida diante de quem carrega a decisão. O que muda de setor para setor é quais registros importam e qual regra se aplica; a leitura, a redação e a aprovação não mudam."
+  note: "Debaixo do nome: agentes que leem os registros e redigem a ação, uma tela de revisão para quem carrega a decisão, e a plataforma embaixo, que mantém as duas coisas dentro da sua própria rede."
 
 why_heading: "Por que isto não é mais um painel"
 why_intro: "Três coisas decidem se algo acima vale o seu tempo."
@@ -90,7 +99,7 @@ why:
     body: "Um painel mostra um número e deixa o trabalho com você. Aqui chega uma ação proposta específica, priorizada, com a regra invocada e os registros citados anexados a ela."
   - glyph: "approve"
     title: "Quem decide é uma pessoa com nome"
-    body: "Nada sai da sua casa antes de alguém aprovar. Quem aprovou, quando, e o que mudou fica no registro, para que o motivo possa ser dado depois sem remontar tudo de novo."
+    body: "Um achado chega como uma ação redigida, e espera. Aprovar é o que a envia. Quem aprovou, quando, e o que mudou fica no registro, para que o motivo possa ser dado depois sem remontar tudo de novo."
   - glyph: "held"
     title: "Seus registros ficam nas suas máquinas"
     body: "Os arquivos e o raciocínio sobre eles rodam em hardware que você controla. Nada é enviado a um provedor de modelos externo, o que costuma ser o caminho mais curto através de uma revisão de segurança."

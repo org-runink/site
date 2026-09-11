@@ -1,0 +1,130 @@
+import { ClientLogos, Surface } from '@runink/ui';
+import type { ClientLogo } from '@runink/ui';
+
+/*
+ * The repo's `static/images/logos/` wall is theme filler — third-party
+ * trademarks (Kroger, Instituto Vital Brazil) that would read as fabricated
+ * endorsements in a design-system preview — and the capture server only serves
+ * the bundle, so `/images/...` would 404 anyway. These are self-contained SVG
+ * wordmarks for the same fictional operators the component's own `@example`
+ * names, so every cell renders deterministically with no network.
+ *
+ * One tone for all of them, `#8A8178` — a mid warm grey, not the near-white these
+ * stand-ins used to carry. An image cannot rebind with the ground, so the only tone
+ * that works is one that reads on BOTH canvases after `grayscale` and 60% opacity.
+ * See `OnSheet` for the measured result.
+ */
+type Mark = 'block' | 'ring' | 'chevron';
+
+const MARK: Record<Mark, string> = {
+  block: '<rect x="3" y="10" width="22" height="22" rx="6" fill="#8A8178"/>',
+  ring: '<circle cx="14" cy="21" r="9" fill="none" stroke="#8A8178" stroke-width="5"/>',
+  chevron: '<path d="M3 32 L14 10 L25 32 L18.5 32 L14 22 L9.5 32 Z" fill="#8A8178"/>',
+};
+
+function wordmark(name: string, mark: Mark): string {
+  const width = 44 + name.length * 13;
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="42" viewBox="0 0 ${width} 42">` +
+    MARK[mark] +
+    `<text x="36" y="29" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#8A8178">${name}</text>` +
+    '</svg>';
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+
+const logo = (name: string, mark: Mark): ClientLogo => ({ name, logo: wordmark(name, mark) });
+
+/** The four operators the component's `@example` ships with. */
+const CORE: ClientLogo[] = [
+  logo('Northbound Logistics', 'chevron'),
+  logo('Harbor Freight Systems', 'block'),
+  logo('Meridian 3PL', 'ring'),
+  logo('Atlas Customs Brokers', 'block'),
+];
+
+/** Enough marks that the marquee track is visibly longer than the viewport. */
+const WALL: ClientLogo[] = [
+  ...CORE,
+  logo('Cascadia Reefer Lines', 'ring'),
+  logo('Port Valdera Terminals', 'chevron'),
+];
+
+/**
+ * The default: the marquee running. The track is rendered twice and translated
+ * -50%, so the strip is full of logos at any moment the screenshot lands — this
+ * cell is the one that proves the loop has no gap.
+ */
+export function Default() {
+  return <ClientLogos title="Moving freight for operators who cannot wait on IT" logos={WALL} />;
+}
+
+/**
+ * `animate={false}` — the deterministic composition. A short list that fits
+ * gets a centred, wrapping row instead of a scroll, which is the right choice
+ * whenever the wall is not long enough to loop convincingly.
+ */
+export function StaticRow() {
+  return (
+    <ClientLogos
+      title="Trusted at the gate, the terminal and the dock"
+      logos={CORE}
+      animate={false}
+    />
+  );
+}
+
+/**
+ * No `title` — the shipped default heading, over a static three-logo row. The
+ * shortest thing this band can be.
+ */
+export function DefaultHeading() {
+  return <ClientLogos logos={CORE.slice(0, 3)} animate={false} />;
+}
+
+/**
+ * The full six-logo wall held still, so the flattening treatment is readable:
+ * every mark is `grayscale` at 60% opacity and capped at `max-h-6`, which is
+ * what keeps the band reading as texture rather than competing with the
+ * sections either side of it.
+ */
+export function FullWallStatic() {
+  return (
+    <ClientLogos
+      title="Moving freight for operators who cannot wait on IT"
+      logos={WALL}
+      animate={false}
+    />
+  );
+}
+
+/**
+ * `StaticRow` on the sheet ground — held still with `animate={false}` so the screenshot
+ * is deterministic rather than catching the marquee mid-translate. Not one class or prop
+ * differs from it, only `ground`: the band's heading and its flattening treatment
+ * (`grayscale` at 60% opacity) both follow the surface.
+ *
+ * All four marks stay readable here, and that is the point of how they are toned. A
+ * supplied logo is an image, not a token, so it cannot rebind with the ground — these
+ * stand-ins are drawn once at `fill="#8A8178"`, a mid warm grey that sits between the two
+ * canvases rather than being pinned to either. `grayscale` preserves luminance, so they
+ * flatten to about `rgb(130,130,130)`, and the band's 60% opacity composites that to
+ * roughly `rgb(178,177,174)` over the sheet canvas's `rgb(251,247,241)` — near 1.9:1,
+ * which is the flattening doing its job as texture rather than any contrast claim.
+ *
+ * The lesson is still the caller's, just inverted: a wordmark supplied as a single-tone
+ * NEAR-WHITE asset is the one that vanishes here, and nothing downstream can rescue it —
+ * `grayscale` keeps its luminance and the opacity only pushes it closer to the page. A
+ * wall that has to work on both grounds needs marks toned like these, two assets, or a
+ * ground of its own.
+ */
+export function OnSheet() {
+  return (
+    <Surface ground="sheet" tone="canvas" className="p-8">
+      <ClientLogos
+        title="Trusted at the gate, the terminal and the dock"
+        logos={CORE}
+        animate={false}
+      />
+    </Surface>
+  );
+}

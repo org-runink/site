@@ -1,0 +1,63 @@
+{{/* ---------------------------------------------------------------------
+     /use-cases/ — the section page, so its BODY actually renders.
+
+     WHY THIS FILE EXISTS. `content/use-cases/_index.md` sets
+     `layout: "section"`, and nothing matched it: there was no
+     layouts/use-cases/section.html and no layouts/_default/section.html, so
+     Hugo fell through to layouts/_default/list.html — which prints .Title,
+     .Description and an auto-paginated card grid, and **never prints
+     .Content** (grep it: zero occurrences). The whole argument in that file
+     therefore reached no reader at all. It had been invisible for as long as
+     the page has existed; hugo.toml's own comment describes the page as "the
+     same argument at length, followed by every use case as a card", which is
+     what it was supposed to be doing.
+
+     That mattered more than a missing paragraph, because the FACE
+     attribution the section needs — that these scenarios belong to one named
+     product, and that PULSE and CORE are not on the page — lives in exactly
+     that prose. A silently dropped body is the same failure shape as a
+     silently dropped CSS declaration: nothing errors, and the page looks
+     deliberate.
+
+     NO AUTO GRID HERE, ON PURPOSE. _default/list.html appends a paginated
+     grid of every child page. The body of _index.md now carries its own
+     card grids, grouped by scenario domain, covering every child — so
+     rendering both would print each use case twice. If a new use-case page
+     is added, add its card to the body; it will not appear by itself. That
+     is the trade for grouping them by domain instead of listing them flat,
+     and it is why this comment is here rather than in a commit message.
+
+     The header treatment is copied from _default/list.html so the section
+     still looks like the rest of the site. If that file's header changes,
+     this one does not follow automatically.
+     --------------------------------------------------------------------- */}}
+{{ define "main" }}
+<div class="bg-stone-950 min-h-screen relative overflow-hidden">
+    {{ partial "background-effects.html" . }}
+
+    <div class="container mx-auto px-4 py-24 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 flex flex-col items-center">
+                <div
+                    class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-signal/30 text-signal text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
+                    Database
+                </div>
+
+                <h1
+                    class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                    {{ .Title }}
+                </h1>
+
+                {{ with .Description }}
+                <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mt-6 max-w-3xl">{{ . }}</div>
+                {{ end }}
+            </div>
+
+            {{/* The part that was missing. */}}
+            <div class="prose prose-invert prose-stone max-w-none">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

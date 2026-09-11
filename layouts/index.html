@@ -9,18 +9,27 @@
   problem.
 
   So this file is a fixed, short set of slots driven entirely from front matter —
-  a headline, one picture, five industries, three reasons, one next step — and
-  there is deliberately no {{ .Content }} slot to pour an essay into. Depth
-  belongs in /industries/ and /blog/whitepapers/, and the page links to both.
+  a headline, one picture, five industries, the product's name, three reasons,
+  one next step — and there is deliberately no {{ .Content }} slot to pour an
+  essay into. Depth belongs in /industries/ and /blog/whitepapers/, and the page
+  links to both.
 
   The order is the argument: the buyer's problem, then the picture of it, then
-  the five industries in the buyer's own vocabulary, and only then anything at
-  all about how it works. Nothing above the third block names a technology.
+  the five industries in the buyer's own vocabulary, and only then the name of
+  the product and anything at all about how it works. Nothing above the fourth
+  block names a product or a technology.
 
-  There is one fallback. If a locale's front matter has no `hero`, the page
-  falls back to rendering its markdown, so a half-translated file cannot ship an
-  empty homepage in that language. All four locales carry full front matter
-  today; the fallback exists so that stays a choice rather than a requirement.
+  Every block below the hero is guarded on its own front-matter key, which is
+  what lets the four locales hold different sets of slots: a key a locale does
+  not carry renders nothing at all rather than an empty band. `product` is the
+  one key English has and the three translations do not, and that guard is what
+  keeps it invisible there until it is translated.
+
+  There is one further fallback. If a locale's front matter has no `hero`, the
+  page falls back to rendering its markdown, so a half-translated file cannot
+  ship an empty homepage in that language. All four locales carry full front
+  matter today; the fallback exists so that stays a choice rather than a
+  requirement.
 
   Two ids on this page are load-bearing and are asserted by the build check:
   #why-runink, which the header menu links to in every language, and
@@ -32,8 +41,20 @@
      site's own surface, rather than an empty page. */}}
 {{ .Content }}
 {{ else }}
-{{ $accent := .Params.accent | default "#ea580c" }}
-<div class="hp" style="--accent: {{ $accent }};">
+{{/* The homepage has no industry of its own, so it takes the site's single
+     accent. It is a token rather than a literal so it follows the ground.
+
+     This used to inject `--accent`, which home/style.html derived -ink/-wash/
+     -edge from. That stylesheet reads --rk-accent now, so the old property fed
+     nothing — the homepage was shipping a dead attribute. The five industry
+     rows below re-bind --rk-accent with a .rk-cat-* class, which beats this
+     because it is set on the element rather than inherited from it.
+
+     safeCSS is load-bearing, not decoration: Go's contextual escaper runs every
+     style-attribute value through a CSS filter that rejects "(" and ")" and
+     substitutes ZgotmplZ, so an unmarked var() collapses the whole chain. A hex
+     got through for years because a hex has no parentheses. */}}
+<div class="hp" style="--rk-accent: {{ "var(--rk-signal)" | safeCSS }};">
   {{ partial "home/style.html" . }}
 
   <div class="hp-wrap">
@@ -113,13 +134,17 @@
         {{ range . }}
         {{ $name := .name }}
         {{ $url := printf "/industries/%s/" .page }}
-        {{ $acc := .accent | default $accent }}
+        {{/* The category comes from the industry page itself, so the homepage
+             cannot drift from it. It used to carry its own `accent:` hex per
+             row, which quietly became the source of truth whenever the industry
+             page lacked one — five pre-rebrand hues living in a second place. */}}
+        {{ $cat := "" }}
         {{ with site.GetPage (printf "/industries/%s" .page) }}
           {{ $name = .Title }}
           {{ $url = .RelPermalink }}
-          {{ $acc = .Params.accent | default $acc }}
+          {{ $cat = .Params.category }}
         {{ end }}
-        <li class="hp-line hp-accent" style="--accent: {{ $acc }};">
+        <li class="hp-line hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
           <a class="hp-row" href="{{ $url }}">
             <p class="hp-row__name">
               <span class="hp-row__tick" aria-hidden="true"></span>{{ $name }}
@@ -136,7 +161,35 @@
     </section>
     {{ end }}
 
-    {{/* 4. Only now, how it works — and still in the buyer's words. The id is
+    {{/* 4. The name of the thing. This is the earliest point the order above
+         allows one: blocks 1 to 3 are deliberately in the buyer's vocabulary,
+         and a reader who has just found their own line in the ledger is exactly
+         where "so what is it called" arrives. Before this block existed the
+         page named the product only in the paper link at the foot of block 5,
+         so a reader could finish it without learning what to ask for.
+
+         One heading, one paragraph and one footnote, and no call to action of
+         its own — naming the product is not a licence to start describing it,
+         and the page's job is still to start a conversation.
+
+         Guarded with `with`, like every block here, and the heading and the
+         copy live inside the one key so a locale cannot have half of them.
+         The three localised homepages mirror content/_index.md slot for slot
+         and do not carry `product` yet: `with` drops the whole band for them
+         rather than printing an empty rule and heading in three languages. */}}
+    {{ with .Params.product }}
+    <section class="hp-sec" aria-labelledby="product-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="product-heading">{{ .heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      <p class="hp-deck">{{ .deck }}</p>
+      {{ with .note }}<p class="hp-caption">{{ . }}</p>{{ end }}
+    </section>
+    {{ end }}
+
+    {{/* 5. Only now, how it works — and still in the buyer's words. The id is
          the one the header menu links to in all four languages. */}}
     {{ with .Params.why }}
     <section class="hp-sec" id="why-runink" aria-labelledby="why-heading">
@@ -158,10 +211,12 @@
         {{ end }}
       </ul>
 
-      {{/* The one link out to the long version, and the only place on the page
-           a product name appears. It is a single line on purpose: the page's
-           job is to start a conversation, and a second call to action competing
-           with the consultation would cost it that. */}}
+      {{/* The one link out to the long version. It used to be the only place on
+           the page a product name appeared, which is why block 4 exists; now it
+           is where a reader who has been given the name goes for the detail. It
+           is a single line on purpose: the page's job is to start a
+           conversation, and a second call to action competing with the
+           consultation would cost it that. */}}
       {{ with $.Params.paper }}
       <p class="hp-paper">
         <a class="hp-cta-ghost" href="{{ .url }}">{{ .text }}</a>
@@ -171,7 +226,7 @@
     </section>
     {{ end }}
 
-    <!-- 5. One next step -->
+    <!-- 6. One next step -->
     {{ if .Params.contact }}{{ partial "home/contact.html" . }}{{ end }}
 
     {{/* Print only. The printed sheet has no site header on it, so without this

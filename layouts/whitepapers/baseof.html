@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang | default "en" }}" class="h-full" style="color-scheme: dark">
+{{/* data-ground="console" is not decoration: the shared header, footer and
+     consent banner are written in --rk-* tokens, and the deck behind them is
+     dark. Without it they resolve for the light sheet and paint dark ink on a
+     dark page. color-scheme stays too — it governs form controls and
+     scrollbars, which the token system does not reach. */}}
+<html lang="{{ .Site.Language.Lang | default "en" }}" class="h-full" data-ground="console" style="color-scheme: dark">
 
 <head>
     <meta charset="UTF-8">
@@ -97,6 +102,30 @@
     <link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin>
     {{ end }}
     {{ end }}
+
+    {{/* TOKENS — required here even though the whitepapers keep their own
+         register (Fira, the dark deck, whitepaper.css).
+
+         This baseof loads main.css for the shared header, footer and consent
+         banner, and those partials are now written in --rk-* tokens. Without
+         tokens.css every one of their colour declarations resolves to an
+         undefined var(), which CSS drops silently — so the chrome lost its
+         colours on all eight whitepaper pages and the consent banner rendered
+         with no panel at all, its text overlapping the page. Nothing errored.
+         A 14-page sample missed it; the 709-page sweep found it.
+
+         The deck genuinely IS dark, so data-ground on <html> below says
+         "console" — that is the honest declaration, and it makes the shared
+         chrome resolve light-on-dark instead of dark-on-dark. The .wp reading
+         column keeps its own --paper/--deck variables and is untouched by
+         this: it was never on the token system and is not being moved onto it.
+
+         rk-fonts publishes the faces AND asserts the count matches tokens.css.
+         It is idempotent with _default/baseof.html — Hugo publishes an asset
+         once, however many templates ask for it. */}}
+    {{ partial "rk-fonts.html" . }}
+    {{ $tokens := resources.Get "css/tokens.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $tokens.RelPermalink }}">
 
     <!-- Site CSS (header/footer chrome) -->
     {{ if .Site.Params.disablePostCSS }}

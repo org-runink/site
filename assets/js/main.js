@@ -213,3 +213,59 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if (typeof module !== 'undefined' && module.exports) { module.exports = { initParallax, initTabs, initCarousel, initRevealSteps }; }
+
+/* ---------------------------------------------------------------------------
+   GROUND SWITCH
+
+   The preference is applied before first paint by the inline script in
+   layouts/partials/rk-ground-script.html; this only wires the button, so a
+   failure here costs the control, not the chosen ground.
+
+   Reads the CURRENT state from the DOM rather than from storage. The
+   whitepapers set data-ground="console" on <html> themselves, and a reader with
+   no stored preference is genuinely on the console there — asking storage would
+   say "sheet" and the first click would appear to do nothing.
+--------------------------------------------------------------------------- */
+(function () {
+  /* Two of these render — desktop bar and mobile panel — so they are selected
+     by class and BOTH are updated on every change. Wiring only the first (which
+     is what an id would have forced) leaves the mobile control showing a stale
+     icon and the wrong aria-pressed, i.e. lying to a screen reader. */
+  var buttons = [].slice.call(document.querySelectorAll('.rk-ground-toggle'));
+  if (!buttons.length) return;
+  var root = document.documentElement;
+
+  var MOON = 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z';
+  var SUN = 'M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42'
+          + 'M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42';
+
+  function currentGround() {
+    return root.getAttribute('data-ground') === 'console' ? 'console' : 'sheet';
+  }
+
+  function render(ground) {
+    var dark = ground === 'console';
+    var label = dark ? 'Switch to light' : 'Switch to dark';
+    buttons.forEach(function (btn) {
+      /* aria-pressed describes the toggle's own state ("dark is on"); the label
+         describes what pressing it will DO. Those are different sentences and
+         conflating them is the usual bug in these controls. */
+      btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('title', label);
+      var icon = btn.querySelector('.rk-ground-icon');
+      if (icon) icon.innerHTML = '<path d="' + (dark ? SUN : MOON) + '"/>';
+    });
+  }
+
+  render(currentGround());
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var next = currentGround() === 'console' ? 'sheet' : 'console';
+      root.setAttribute('data-ground', next);
+      render(next);
+      try { localStorage.setItem('rk-ground', next); } catch (e) { /* not remembered */ }
+    });
+  });
+})();

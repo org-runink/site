@@ -1,0 +1,63 @@
+{{/*
+  Paging controls for the listing pages.
+
+  Factored out of layouts/_default/list.html and layouts/taxonomy/list.html,
+  which carried two near-identical copies differing only in whether the orange
+  glow shadows were present. Both copies painted the current page number as a
+  filled orange disc and every other one as a grey disc, which is a state carried
+  by colour alone — so on paper, where tokens.css prints both fills white, a
+  reader could not tell which page they were holding. The current page is now
+  `aria-current` AND a darker rule AND the only one that is not a link, so the
+  distinction survives monochrome.
+
+  The context is the PAGINATOR, not the page: the layout has already initialised
+  one over the pages it wants, and the second `.Paginate` call a partial like this
+  would otherwise have to make is the documented way to get a build error. Call it
+  as `{{ partial "list-pager.html" (.Paginate .Pages) }}` — the same arguments, so
+  Hugo returns the cached paginator rather than building a second one.
+
+  The whole nav is inside `.rk-list-screen`, which list-print.html hides — a
+  printed page number is not clickable and the sheet reads as a fragment without
+  an explanation, so paper gets the cards and nothing else.
+*/}}
+{{ $paginator := . }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="rk-list-screen mt-14 pt-8 border-t border-rule flex flex-wrap items-center justify-between gap-4"
+     aria-label="Pagination">
+
+  <ol class="flex flex-wrap items-center gap-2 list-none m-0 p-0">
+    {{ range $paginator.Pagers }}
+    {{ if eq . $paginator }}
+    <li>
+      <span aria-current="page"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-sunk border-2 border-rule-strong text-sm font-extrabold text-ink">
+        {{ .PageNumber }}
+      </span>
+    </li>
+    {{ else }}
+    <li>
+      <a href="{{ .URL }}"
+         class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-sheet border border-rule text-sm font-bold text-ink-2 no-underline transition-colors duration-200 hover:bg-signal-wash hover:border-signal hover:text-ink">
+        {{ .PageNumber }}
+      </a>
+    </li>
+    {{ end }}
+    {{ end }}
+  </ol>
+
+  <div class="flex flex-wrap items-center gap-3">
+    {{ with $paginator.Prev }}
+    <a href="{{ .URL }}"
+       class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-sheet border border-rule text-signal text-xs font-extrabold uppercase tracking-[0.12em] no-underline transition-colors duration-200 hover:bg-signal-wash hover:border-rule-mid">
+      <span aria-hidden="true" class="mr-2">&larr;</span>Previous
+    </a>
+    {{ end }}
+    {{ with $paginator.Next }}
+    <a href="{{ .URL }}"
+       class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-sheet border border-rule text-signal text-xs font-extrabold uppercase tracking-[0.12em] no-underline transition-colors duration-200 hover:bg-signal-wash hover:border-rule-mid">
+      Next<span aria-hidden="true" class="ml-2">&rarr;</span>
+    </a>
+    {{ end }}
+  </div>
+</nav>
+{{ end }}

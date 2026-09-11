@@ -2,7 +2,7 @@
 {{ $distribution := resources.Get "images/landing/distribution.svg" }}
 {{ $trucks := resources.Get "images/landing/trucks.svg" }}
 
-<section class="relative h-screen overflow-hidden bg-stone-900 flex items-center justify-center">
+<section data-ground="console" class="relative h-screen overflow-hidden bg-stone-900 flex items-center justify-center">
   <!-- Parallax Container -->
   <div id="hero-parallax" class="absolute inset-0 w-full h-full">
     <!-- Layer 1: Warehouse (Deepest) -->
@@ -18,7 +18,7 @@
   <!-- Content Overlay -->
   <div class="relative z-20 text-center max-w-5xl px-6 flex flex-col items-center">
     <h1
-      class="text-6xl md:text-7xl lg:text-[100px] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#9f1239] to-[#ea580c] tracking-tighter leading-[0.95] italic uppercase mb-6 drop-shadow-lg max-w-5xl">
+      class="text-6xl md:text-7xl lg:text-[100px] font-black text-transparent bg-clip-text bg-gradient-to-br from-signal to-signal-fill tracking-tighter leading-[0.95] italic uppercase mb-6 drop-shadow-lg max-w-5xl">
       {{ if eq .Page.Language.Lang "pt" }}
         Seu Gêmeo Digital <br />de Operações
       {{ else if eq .Page.Language.Lang "fr" }}
@@ -44,7 +44,7 @@
     </div>
     <div class="flex flex-col items-center gap-4 mt-8">
       <div
-        class="text-[#ea580c] text-[10px] font-mono uppercase tracking-[0.4em] animate-bounce bg-stone-900/50 px-2 py-1 rounded">
+        class="text-signal text-[10px] font-mono uppercase tracking-[0.4em] animate-bounce bg-stone-900/50 px-2 py-1 rounded">
         {{ if eq .Page.Language.Lang "pt" }}Role para Implantar a Instalação{{ else if eq .Page.Language.Lang "fr" }}Faites défiler pour déployer l'installation{{ else if eq .Page.Language.Lang "es" }}Desplácese para desplegar la instalación{{ else }}Scroll to Deploy Facility{{ end }}</div>
     </div>
   </div>
@@ -54,6 +54,6 @@
     class="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-900 pointer-events-none z-10">
   </div>
   <div
-    class="absolute inset-0 bg-gradient-to-t from-[#9f1239]/20 via-transparent pointer-events-none z-10 mix-blend-overlay">
+    class="absolute inset-0 bg-gradient-to-t from-signal-fill/20 via-transparent pointer-events-none z-10 mix-blend-overlay">
   </div>
 </section>

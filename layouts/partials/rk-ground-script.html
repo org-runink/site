@@ -1,0 +1,37 @@
+{{/* ---------------------------------------------------------------------
+     GROUND PREFERENCE — applied before first paint.
+
+     WHY IT IS INLINE AND HERE. The stored preference has to be on <html>
+     before the browser paints anything. Loaded as an external script, or
+     placed at the end of <body>, the page paints on the default ground first
+     and then jumps — a white flash on every navigation for anyone who chose
+     dark, which is worse than not offering the choice. So: one small
+     synchronous script, after tokens.css (so the custom properties exist) and
+     before any content.
+
+     WHAT IT DOES NOT DO. It does not consult prefers-color-scheme. The light
+     sheet is a decision, not a default someone forgot to change: the review of
+     the customer-facing material found the black canvas hard to read and
+     painful to print, and these are pages that get printed and carried into
+     meetings. A visitor whose OS is in dark mode still gets the sheet until
+     they ask for otherwise — and then that choice is remembered.
+
+     It also never *removes* a ground the template set deliberately. The
+     whitepapers declare data-ground="console" on <html> because that deck is
+     genuinely dark; this only overrides it when the reader has expressed a
+     preference of their own.
+     --------------------------------------------------------------------- */}}
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      /* Private mode, blocked storage, disabled cookies: the page still works,
+         it just does not remember. Never let this throw — it runs before the
+         content and an exception here would stop the rest of <head>. */
+    }
+  })();
+</script>

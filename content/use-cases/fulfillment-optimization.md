@@ -2,6 +2,9 @@
 title: "Stock Cover and Supplier Planning"
 description: "Most stockout warnings arrive after the safety stock is already gone, which leaves you paying for air freight. The point is to see it while there is still time to order normally."
 layout: "use_case"
+product: "Runink FACE"
+scenario: "inventory fulfillment"
+standing: "hypothetical"
 badge: "Fulfillment Agent"
 badgeColor: "#ea580c"
 date: "2024-05-20T00:00:00Z"
@@ -11,11 +14,16 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
+<p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Inventory fulfillment</p>
+<p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
+<span class="rk-mark" data-standing="hypothetical">Hypothetical</span> &mdash; this is a <strong class="text-stone-300">Runink FACE</strong> scenario, the fulfilment side of it. What follows is what the product is built to do and how it would run against your own records. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
+</p>
+
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">You are warned while ordering is still cheap.</strong> The warning comes before the safety stock is gone, not after, so the order can go out at the normal rate instead of by air.</li>
-<li><strong class="text-stone-200">The forecast tells you how much to trust it.</strong> Every projection arrives with how closely it fitted your own history and how many periods it had to learn from.</li>
-<li><strong class="text-stone-200">The alternative is already drafted.</strong> A second supplier, a shorter lead time and the price difference arrive together, so the buyer is choosing rather than researching.</li>
+<li><strong class="text-stone-200">The trigger says which bound it crossed, in words.</strong> The reorder point, the minimum and the maximum are the ones you already run &mdash; FACE does not invent them and does not derive them from a lead time it has never seen. What it returns is the bound that was crossed and the level that crossed it, written out, so the warning can be argued with instead of acknowledged.</li>
+<li><strong class="text-stone-200">The forecast says how much to trust it.</strong> Every projection names the model, which was picked by holding back the most recent stretch of your own history and refitting each candidate on what came before it, and how many periods it had to learn from. When a line's history does not predict itself, that is one of the findings too.</li>
+<li><strong class="text-stone-200">The stock trigger does not come with a shortlist, and it is better to say that than to imply one.</strong> The only supplier ranking in FACE sorts names by their public review stars out of a seeded sample file, and what it feeds is a procurement RFP card rather than the stock warning &mdash; where no rated name clears the bar, the field it fills is a literal instruction to go and qualify two or three yourself. On an ordinary instance with nothing connected, nothing ranks alternates for the exposed line: what the trigger returns is the bound, the level that crossed it and the reason, and no supplier list at all. FACE also holds no rate card, so there is no price difference to attach either, and an invented delta would be the most quotable number on the page and the least real.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -34,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 So the choice is a bad one. Pay a premium to fly it in, or tell the customer. Both were decided weeks earlier, by a trend that was visible in your own sales data the whole time.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 The order was late before anybody knew it was late.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -44,19 +52,25 @@ author: "Runink"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Your own sales history is read for the season and the trend under it, and the projection is checked against what actually happened. The warning is timed against the lead time of the supplier who would fill it, so it lands while an ordinary order still solves the problem.
+                FACE reads your own sales history for the season and the trend under it, and checks the projection against periods it was not shown. That is the half that tells you a line is turning earlier than the plan thinks it is.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                It arrives as something to decide, not something to look into. The line, the date cover runs out, the supplier who normally fills it, a second supplier who could fill it sooner, and what the difference costs.
+                The trigger on the stock itself is deliberately dull, and it is worth saying what it is rather than what it sounds like. The reorder point, the floor and the ceiling come from you. FACE compares the level against them and returns the bound it crossed and the level that crossed it in plain words, rather than a colour on a tile. It does not work the threshold out from a supplier lead time — there is no lead-time model in here, and a warning timed against a number the software guessed would be worse than the level alert you already have, because it would look cleverer.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                What arrives is narrower than a sourcing decision, and the gap is the part worth naming. The trigger returns the bound that was crossed, the level that crossed it and the reason, in words. It does not return the supplier who normally fills the line, and it does not return ranked alternates — the one ranking in the product reads review stars out of a seeded sample file and attaches them to a procurement RFP card, not to this. On an instance with your own systems connected there is no shortlist here at all until that path is built, and an empty one is the honest answer rather than a worked example with your name on it. Nor is there a price comparison to be had: FACE has no rate card, no tariff table and no historical rate lookup, so the cost difference between two suppliers is not a thing it can tell you — and a made-up one would be the first number quoted back to you in the meeting.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                The forecasting underneath this is <a href="/use-cases/demand-forecasting/" class="underline decoration-stone-700 hover:text-stone-300">its own FACE scenario</a> &mdash; how a series is read, which model is chosen and what it says when a line is simply not predictable. This page is about the ordering decision that follows from it.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                A named person approves, edits or rejects it, and that sign-off is kept on the record. Approving ends the work rather than starting it: the draft order and the update to your planning system follow from the approval. Safety margins stop being argued by seniority and start being argued from your own numbers.
+                A named person approves, edits or rejects it, and that sign-off is kept on the record. Approving is what sends it on. And where a step in the drafted action has nothing behind it yet — a write into your ERP is the honest example — the response names that step as not executed rather than reporting the whole thing as done. You get told which part of the action happened, which is the difference between a system you can rely on and one you have to go and check. Safety margins can then be argued from your own numbers rather than by seniority.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
+                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">What you spend on rushed freight.</strong> Your accounts payable, filtered for the codes your team uses for air or premium freight. Take a full year, because it is seasonal.</li>
@@ -69,7 +83,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation
         </a>
     </div>

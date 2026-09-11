@@ -1,6 +1,6 @@
 ---
 title: "The Logistics of Food Service: Cold Chain Integrity and JIT Restaurant Delivery"
-description: "Discover how Operations Leaders optimize cold chain logistics, manage strict shelf-life compliance, and implement JIT delivery for food service supply chains."
+description: "How Operations leaders hold temperature through the cold chain, manage shelf life against food safety rules, and run just-in-time delivery to restaurants."
 author: "Runink Logistics Operations Team"
 date: 2026-03-21T11:52:12Z
 draft: false
@@ -12,15 +12,14 @@ tags: ["Cold Chain", "JIT Delivery", "Temperature Control", "Compliance", "Runin
 robots: index, follow
 ---
 
-<!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-The food service supply chain faces immense pressure to maintain uninterrupted cold chain integrity and execute flawless just-in-time (JIT) restaurant deliveries for highly perishable goods. Operations leaders must adopt proactive, data-driven strategies to mitigate temperature excursions, enforce strict shelf-life management, ensure regulatory compliance, and optimize complex routing networks.
+Food service logistics runs on a short clock. Perishable goods have to stay inside their temperature range from supplier to kitchen, arrive inside narrow delivery windows, and be picked by expiry date. The facts needed to manage that are already recorded: reefer temperature logs, warehouse sensor readings, receiving scans and route timestamps. The work is reading them against each other while the product is still sellable.
 {{< /direct-answer >}}
 
-* **Temperature Control is Non-Negotiable:** Continuous monitoring and real-time intervention are required to prevent spoilage and protect brand reputation across the cold chain.
-* **JIT Delivery Demands Precision:** Restaurant supply networks rely on dynamic routing and rapid cross-docking to minimize dwell time and ensure high on-time, in-full (OTIF) performance.
-* **Compliance Drives Process:** Adhering to strict food safety regulations requires comprehensive data governance and automated traceability across every supply chain node.
+* **Temperature is the product.** A load that leaves its range can be rejected or written off, so the reading matters as much as the delivery.
+* **JIT delivery is a timing problem.** Restaurants hold little stock, so they depend on frequent small deliveries, cross-docking and short dock turnaround.
+* **Compliance is a records problem.** Food safety rules ask you to show an unbroken temperature and custody trail for each batch, which means the records have to be kept and readable.
 
 <br>
 
@@ -29,72 +28,75 @@ The food service supply chain faces immense pressure to maintain uninterrupted c
 ## Why Is Cold Chain Integrity the Backbone of Food Service Logistics?
 
 {{< direct-answer >}}
-Cold chain integrity ensures that temperature-sensitive products remain within specified thermal ranges throughout the entire supply chain, preventing spoilage, minimizing waste, and guaranteeing food safety for end consumers. It serves as the foundational infrastructure that protects both product quality and supplier profitability.
+Cold chain integrity means a temperature-sensitive product stays inside its specified range at every step: supplier, trailer, warehouse and delivery. Where it does not, the product may be rejected, written off, or unsafe to serve. That is why the record of what the temperature did travels with the load.
 {{< /direct-answer >}}
 
-For Directors of Cold Chain Operations, managing the movement of perishable goods from farm to fork is a high-stakes endeavor. A single temperature excursion during transit or warehousing can lead to massive product rejections, regulatory fines, and catastrophic damage to brand trust. Unlike ambient freight, cold chain logistics requires specialized refrigerated transport (reefers), sophisticated climate-controlled distribution centers, and relentless vigilance. 
+For a Director of Cold Chain Operations, moving perishable goods from farm to fork leaves little room for error. One temperature excursion in transit or in storage can mean a rejected load, a regulatory finding, and a customer who stops trusting your deliveries. Ambient freight does not work this way. Cold chain work needs refrigerated trailers (reefers), climate-controlled distribution centers, and someone watching the readings.
 
-The complexity deepens when handling multi-temperature shipments within a single trailer—requiring distinct zones for frozen, chilled, and fresh commodities, separated by insulated bulkheads. Maintaining these specific zones while ambient external temperatures fluctuate significantly requires state-of-the-art trailer design and consistent refrigeration unit maintenance. Operations managers must rely on advanced telematics and IoT sensors to monitor ambient trailer conditions and product core temperatures in real-time. When deviations occur, control towers must trigger immediate alerts, allowing dispatchers to reroute freight to the nearest cold storage facility or direct the driver to perform emergency troubleshooting before critical thresholds are breached. Furthermore, analyzing historical temperature data allows organizations to identify recurring problem lanes, problematic carrier partners, or faulty equipment, driving continuous improvement. By prioritizing continuous visibility, logistics leaders can transition from reactive damage control to proactive temperature management, significantly improving fill rates, reducing insurance claims, and safeguarding margins across the board.
+Multi-temperature loads are harder again. One trailer may carry frozen, chilled and fresh goods in separate zones divided by insulated bulkheads. Outside temperatures move through the day and along the route, so the refrigeration unit has to hold each zone while the load on it changes. That depends on sound insulation and bulkheads, and on the reefer unit being serviced on schedule.
+
+Trailer telematics and probe sensors report what the air and the product core are doing. When a reading drifts out of range, somebody has to see it in time to act: divert the load to the nearest cold store, or tell the driver what to check before the product crosses its threshold. Reading the history afterwards is the other half of the job. Pull twelve months of excursion events from your telematics feed and group them by lane, by carrier and by trailer number. The same lanes, carriers and units tend to recur, which tells you where maintenance, training or a different carrier would change the outcome. Your fill rate and your insurance claims file are where that shows up.
 
 ---
 
 ## How Does Just-In-Time (JIT) Delivery Transform Restaurant Supply Chains?
 
 {{< direct-answer >}}
-Just-in-time (JIT) delivery transforms restaurant supply chains by synchronizing the arrival of highly perishable inventory exactly when it is needed, drastically reducing back-of-house storage requirements, minimizing spoilage, and maximizing the freshness of ingredients.
+Just-in-time (JIT) delivery times the arrival of perishable stock to when the kitchen needs it. The restaurant holds less on site, so less is thrown away and what is served is closer to its delivery date. The holding, sorting and picking move upstream to the distributor.
 {{< /direct-answer >}}
 
-In the fast-paced food service industry, physical space is a premium. Restaurants, particularly in high-density urban markets, cannot afford to dedicate extensive square footage to walk-in freezers, coolers, and bulky inventory staging areas. As a result, they depend heavily on their broadline distributors and specialty purveyors for highly frequent, low-volume deliveries. This JIT model places the heavy burden of inventory holding, sorting, and micro-fulfillment orchestration squarely on the shoulders of the upstream supply chain network.
+Space in a restaurant is expensive, especially in dense urban markets. Few operators can give up floor area to walk-in freezers, coolers and staging. So they order often, in small quantities, from broadline distributors and specialty suppliers. The inventory and the sorting stay upstream.
 
-Achieving flawless JIT execution for thousands of restaurant storefronts requires an impeccably synchronized network. Operations teams frequently utilize cross-docking strategies, where inbound bulk shipments of fresh produce or dairy from farms and processing plants are immediately sorted, consolidated, and loaded onto outbound delivery trucks with near-zero dwell time. This rapid turnaround requires seamless integration between the Warehouse Management System (WMS) and the Transportation Management System (TMS) to synchronize inbound arrivals with outbound departure schedules. Any latency in data transfer, misallocation of dock doors, or delays in staging less-than-truckload (LTL) shipments can severely jeopardize the restaurant's daily menu execution. Consequently, supply chain VPs must focus heavily on optimizing terminal velocity, refining dispatch cadences, and improving labor allocation to hit narrow, unforgiving delivery windows with unparalleled OTIF accuracy. Exploring advanced [use cases](/use-cases/) in automated freight orchestration can provide the edge necessary for flawless JIT execution at scale.
+Serving thousands of storefronts that way means the network has to be synchronized. Cross-docking is common: bulk inbound produce or dairy is sorted, consolidated and loaded onto outbound trucks with little or no time in storage. That works when the Warehouse Management System (WMS) and the Transportation Management System (TMS) are working from the same order and timestamp data, so inbound arrivals line up with outbound departures. A delay in that data, a dock door assigned to the wrong trailer, or a less-than-truckload (LTL) shipment staged late, and the restaurant is short an ingredient at service. For a supply chain VP the levers are dock turnaround time, dispatch timing and labor coverage at the hours freight actually moves. Our [use cases](/use-cases/) describe how freight records are read and checked against the plan they were meant to follow.
 
 ---
 
 ## What Are the Biggest Threats to Strict Shelf-Life Management?
 
 {{< direct-answer >}}
-The primary threats to strict shelf-life management include prolonged dwell times at terminal nodes, inefficient inventory rotation practices like failing to adhere to First-Expire, First-Out (FEFO), and supply chain bottlenecks that consume the limited viable lifespan of perishable goods before they reach the consumer.
+The main threats to shelf life are time and sequence: hours lost idling in a yard or at a congested dock, and stock picked in the wrong order. Picking by First-Expire, First-Out (FEFO) and cutting dwell time are what protect the life left on the product when it arrives.
 {{< /direct-answer >}}
 
-Shelf-life management is a relentless race against the biological clock. Fresh produce, live seafood, dairy, and raw meats have inherently volatile life cycles that begin degrading the moment they are harvested or processed. Every hour spent idling in a trailer yard, delayed at a congested loading dock, or sitting in an improperly zoned warehouse represents lost revenue and degraded quality. For food and beverage supply chain managers, maximizing the remaining shelf life upon delivery is a critical performance metric. It directly impacts the customer's ability to serve fresh meals, dictates their waste profile, and ultimately influences contract renewals and vendor scorecards.
+Shelf life is a clock that starts at harvest or processing. Fresh produce, live seafood, dairy and raw meat begin to degrade immediately. Every hour in a trailer yard, at a congested dock or in a badly zoned warehouse comes off the life the customer gets. For a food and beverage supply chain manager, remaining shelf life on arrival is a metric in its own right. It decides what the kitchen can serve, how much the kitchen throws out, and how you score on their vendor scorecard at renewal.
 
-One of the most persistent operational challenges is managing the bullwhip effect in volatile food service demand. Sudden spikes in restaurant foot traffic or unanticipated localized events can rapidly deplete regional distribution centers. Conversely, unexpected lulls can result in overstocking of highly degradable items. To combat this, modern facilities must rigorously enforce First-Expire, First-Out (FEFO) inventory allocation—which tracks actual expiration dates—rather than relying on the traditional, less accurate First-In, First-Out (FIFO) method. Furthermore, minimizing dwell time and accelerating yard throughput—often supported by an integrated, automated Yard Management System (YMS)—prevents loaded reefers from sitting idle under the hot sun, draining fuel to keep temperatures stable. When operational workflows are tightly coupled with the biological lifespan of the freight, organizations can drastically reduce shrinkage, improve sustainability metrics, and enhance overall profitability.
+Demand makes this harder. Restaurant foot traffic moves with weather, local events and the calendar, so a regional distribution center can be drawn down faster than planned or left holding stock that will not keep. Two things help. First, allocate by First-Expire, First-Out (FEFO), which picks by the actual expiry date, rather than First-In, First-Out (FIFO), which picks by arrival date and is not always the same thing. Second, cut yard dwell: a Yard Management System (YMS) that records gate-in, gate-out and dock assignment shows you where loaded reefers are standing and burning fuel to hold temperature. To see whether either change worked, take remaining shelf life at receipt and your shrinkage write-offs for one season, and compare them with the same season a year earlier.
 
 ---
 
 ## How Can Operations Leaders Optimize Routing for Highly Perishable Goods?
 
 {{< direct-answer >}}
-Operations leaders can optimize routing for highly perishable goods by leveraging dynamic, algorithm-driven route planning that accounts for real-time traffic, multi-stop constraints, variable unloading times, and the specific thermal requirements of the cargo.
+Routing for perishable goods is planned around time, not only distance. The plan has to account for current traffic, multiple stops, unloading times that vary by site, and how long each product can sit. It also has to be revised during the day as conditions change.
 {{< /direct-answer >}}
 
-Routing in the food service sector is exponentially more complicated than standard dry van freight distribution. A typical restaurant delivery route may involve ten to fifteen intricate stops in highly congested, dense urban environments. Drivers frequently face the challenge of navigating narrow alleys, avoiding restricted delivery zones, complying with strict municipal noise and idling laws, and accommodating unpredictable, often constrained receiving schedules. For perishable goods with a shelf life measured in days or hours, static, rigid routing plans created days in advance are a recipe for operational failure.
+Food service routing is harder than dry van distribution. A single restaurant route can have ten to fifteen stops in dense city traffic. Drivers deal with narrow alleys, restricted delivery zones, noise and idling rules, and receiving hours set by the kitchen rather than by you. When the product has days or hours of life left, a route fixed days in advance will not survive the day it is driven.
 
-Dynamic route optimization must incorporate hundreds of multi-variable constraints simultaneously. Planners need to sequence deliveries not only geographically for mileage efficiency but also chronologically based on the temperature sensitivity of the cargo and the operational hours of the receiving kitchens. For instance, an unexpected delay at the first drop-off cannot be allowed to compromise the frozen state of the cargo intended for the final stop on the route. By implementing intelligent, algorithmic routing engines, dispatch teams can continuously re-optimize paths based on predictive traffic patterns, real-time weather events, and spontaneous receiving delays. This agility reduces total fleet mileage, lowers diesel consumption, and limits the frequency and duration of open trailer doors exposing sensitive cargo to ambient air. Ultimately, dynamic routing significantly boosts driver productivity while ensuring compliance with stringent food safety parameters.
+Planning has to weigh several constraints at once. Sequence is geographic for mileage, but it is also chronological: the most temperature-sensitive cargo and the earliest receiving windows set the order. A delay at the first drop cannot be allowed to cost you the frozen product on the last drop. Routing that re-sequences during the day, on current traffic, weather and reported receiving delays, keeps one late stop from spreading. It also cuts total miles, diesel burned, and the number and length of door openings that let warm air into the trailer. The figures to watch are miles per stop, fuel per route, and on-time in-full (OTIF) — the share of deliveries that arrive on time and complete — read over a quarter rather than a day.
 
 ---
 
 ## What Role Does Regulatory Compliance Play in Cold Chain Operations?
 
 {{< direct-answer >}}
-Regulatory compliance dictates the stringent operational parameters for cold chain logistics, mandating comprehensive traceability, rigorous hygiene standards, and verifiable temperature logs to meet Food Safety Modernization Act (FSMA) requirements and prevent public health crises.
+Food safety rules set the operating conditions for cold chain work. Under the Food Safety Modernization Act (FSMA) and comparable standards elsewhere, you are expected to keep traceability records, meet hygiene standards, and be able to produce temperature logs showing what the product experienced.
 {{< /direct-answer >}}
 
-The food service supply chain operates under intense and evolving regulatory scrutiny. Comprehensive frameworks like the Food Safety Modernization Act (FSMA) in the United States, along with similar international standards, have decisively shifted the industry's focus from merely responding to foodborne illnesses to actively preventing them. This critical paradigm shift requires logistics providers, distributors, and carriers to maintain an unbroken, highly auditable trail of custody and environmental conditions for every single SKU that moves through their complex network.
+Regulatory attention on food service supply chains keeps growing. FSMA in the United States, and similar standards in other markets, moved the emphasis from responding to foodborne illness to preventing it. For distributors and carriers that means keeping a trail of custody and conditions for every SKU that moves through the network, in a form an auditor can follow.
 
-Compliance is no longer just a legal obligation relegated to a compliance officer; it is a fundamental operational requirement that touches every aspect of the supply chain. Logistics managers must ensure that electronic logging devices (ELDs), trailer telematics, and warehouse temperature sensors are perfectly synchronized to provide immutable proof of thermal adherence from the point of origin (FOB) to the final destination (CIF or direct store delivery). Furthermore, in the unfortunate event of a product recall or contamination event, organizations must possess the capability to execute rapid backward and forward traceability. If contaminated produce is identified, operations teams must be able to isolate the affected batches across the network within minutes, halting further distribution and initiating targeted reverse logistics protocols. Building a proactive culture of compliance through automated reporting and robust data governance not only protects the organization from debilitating financial liabilities and legal exposure but also fortifies its market position as a trusted, reliable partner to the food service sector.
+That is not only the compliance officer's job. Electronic logging devices (ELDs), trailer telematics and warehouse temperature sensors have to carry timestamps that line up, or the temperature record cannot be tied to the load from origin (FOB, where the buyer takes title at the shipping point) to destination (CIF, or direct store delivery). When a recall or a contamination event happens, the question is how quickly you can name the affected batches and everywhere they went — backward to the supplier and forward to every store. That answer comes out of how your batch and lot records are kept, long before anyone asks for it. Written data governance and automated reporting are what make it available on the day.
 
 ---
 
 ## Conclusion
 
 {{< direct-answer >}}
-The future of food service logistics lies in the convergence of predictive intelligence, end-to-end visibility, and automated orchestration, empowering operations leaders to master the complexities of cold chain integrity and deliver flawless JIT performance.
+Cold chain work comes down to three readings per load: what the temperature did, how much shelf life was used, and whether the delivery window was met. All three are usually recorded somewhere. Reading them together, while the product is still sellable, is the part that is usually missing.
 {{< /direct-answer >}}
 
-Mastering the intricacies of the food service supply chain requires more than just insulated trailers and rushed deliveries. It demands a holistic, intelligent approach to managing temperature control, shelf-life volatility, and dynamic routing networks. As the industry continues to evolve, operations leaders who embrace data-driven agility will be the ones who successfully eliminate waste, ensure regulatory compliance, and consistently delight their restaurant partners. By leveraging sophisticated platforms designed for the unique pressures of the cold chain, organizations can transform their logistical challenges into distinct competitive advantages. If you are ready to modernize your cold chain operations and achieve unparalleled OTIF delivery performance, [contact the experts at Runink](/#contact-form) to discover how our intelligent visibility and orchestration solutions can fortify your supply chain.
+Mastering the food service supply chain takes more than insulated trailers and fast deliveries. It takes knowing, per load rather than per month, what the temperature actually did in transit, how much shelf life was consumed on the way, and which delivery window was missed as a result. Those three facts are almost always recorded — by the reefer telemetry, by the receiving scan, by the route log — and almost never read against each other in time to matter.
 
-<!-- GEO Optimization: FAQPage Schema -->
+That is the reading problem Runink FACE works on: comparing records held in separate systems against the rule that governs them, and raising what differs as a named load rather than a spoilage rate. The decision about what to do with a flagged load stays with your quality team. [Get in touch](/#contact-form) if you want to walk the mechanism through against your own reefer and receiving data.
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -105,7 +107,7 @@ Mastering the intricacies of the food service supply chain requires more than ju
       "name": "Why is cold chain integrity important in food service logistics?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cold chain integrity ensures that temperature-sensitive products remain within specified thermal ranges throughout the supply chain, preventing spoilage, minimizing waste, and guaranteeing food safety for end consumers."
+        "text": "Cold chain integrity means a temperature-sensitive product stays inside its specified range at every step: supplier, trailer, warehouse and delivery. Where it does not, the product may be rejected, written off, or unsafe to serve, which is why the record of what the temperature did travels with the load."
       }
     },
     {
@@ -113,7 +115,7 @@ Mastering the intricacies of the food service supply chain requires more than ju
       "name": "How does JIT delivery benefit restaurant supply chains?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Just-in-time delivery synchronizes the arrival of highly perishable inventory exactly when needed, drastically reducing back-of-house storage requirements, minimizing spoilage, and maximizing ingredient freshness."
+        "text": "Just-in-time delivery times the arrival of perishable stock to when the kitchen needs it. The restaurant holds less on site, so less is thrown away and what is served is closer to its delivery date. The holding, sorting and picking move upstream to the distributor."
       }
     },
     {
@@ -121,7 +123,7 @@ Mastering the intricacies of the food service supply chain requires more than ju
       "name": "What are the biggest challenges to managing perishable shelf life?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Primary challenges include prolonged dwell times, inefficient inventory rotation practices like failing to use First-Expire, First-Out (FEFO), and supply chain bottlenecks that consume the limited viable lifespan of the goods."
+        "text": "The main challenges are time and sequence: hours lost idling in a yard or at a congested dock, and stock picked by arrival date rather than by First-Expire, First-Out (FEFO), which picks by the actual expiry date."
       }
     },
     {
@@ -129,7 +131,7 @@ Mastering the intricacies of the food service supply chain requires more than ju
       "name": "How does regulatory compliance affect cold chain operations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Regulatory compliance mandates strict operational parameters, requiring comprehensive traceability, rigorous hygiene standards, and verifiable temperature logs to meet regulations like the Food Safety Modernization Act (FSMA)."
+        "text": "Food safety rules set the operating conditions for cold chain work. Under the Food Safety Modernization Act (FSMA) and comparable standards elsewhere, you are expected to keep traceability records, meet hygiene standards, and be able to produce temperature logs showing what the product experienced."
       }
     }
   ]
@@ -139,19 +141,19 @@ Mastering the intricacies of the food service supply chain requires more than ju
 ---
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
+    <strong>Runink Logistics Operations Team</strong><br>
+    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
   </p>
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations &amp; References</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">FDA Food Safety Modernization Act (FSMA)</a> - Regulatory framework and requirements for proactive food safety and traceability.</li>
-    <li><a href="https://www.supplychainbrain.com/articles/36423-the-future-of-cold-chain-logistics" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">SupplyChainBrain: The Future of Cold Chain Logistics</a> - Analysis on the growing complexities and technological requirements of temperature-controlled supply chains.</li>
-    <li><a href="https://www.inboundlogistics.com/cms/article/cold-chain-logistics-keeping-it-cool/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Inbound Logistics: Cold Chain Optimization</a> - Best practices for mitigating temperature excursions and managing multi-stop refrigerated transport.</li>
-    <li><a href="https://www.cscmp.org/store/detail.aspx?id=108" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">CSCMP State of Logistics Report</a> - Annual benchmarking data on logistics performance, transportation costs, and warehouse efficiency.</li>
+    <li><a href="https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">FDA Food Safety Modernization Act (FSMA)</a> - The regulatory framework and its requirements for preventive food safety and traceability.</li>
+    <li><a href="https://www.supplychainbrain.com/articles/36423-the-future-of-cold-chain-logistics" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">SupplyChainBrain: The Future of Cold Chain Logistics</a> - Analysis of the growing complexity and equipment requirements of temperature-controlled supply chains.</li>
+    <li><a href="https://www.inboundlogistics.com/cms/article/cold-chain-logistics-keeping-it-cool/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Inbound Logistics: Cold Chain Optimization</a> - Practices for reducing temperature excursions and managing multi-stop refrigerated transport.</li>
+    <li><a href="https://www.cscmp.org/store/detail.aspx?id=108" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">CSCMP State of Logistics Report</a> - Annual benchmarking data on logistics performance, transportation costs and warehouse efficiency.</li>
   </ul>
 </section>

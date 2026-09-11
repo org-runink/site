@@ -1,7 +1,10 @@
 ---
 title: "Returns and What to Do With Them"
-description: "A returned item is worth the most on the day it comes back. The call on where it goes — shelf, repair or scrap — is drafted at the scan, with the warranty, the condition and the cost of each route already attached."
+description: "A returned item is worth the most on the day it comes back. The call on where it goes — shelf, refurbishment, recycling or disposal — is drafted at the scan, from a written-down policy that gives the same grade the same answer every time."
 layout: "use_case"
+product: "Runink FACE"
+scenario: "reverse logistics"
+standing: "hypothetical"
 badge: "Circular Economy"
 badgeColor: "#14b8a6"
 date: "2024-05-20T00:00:00Z"
@@ -11,11 +14,17 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
+<p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Reverse logistics</p>
+<p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
+<span class="rk-mark" data-standing="hypothetical">Hypothetical</span> &mdash; this is a <strong class="text-stone-300">Runink FACE</strong> scenario, its returns and circular-economy side. What follows is what the product is built to do and how it would run against your own records. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
+</p>
+
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">The call is made at the scan.</strong> When the item is scanned back in, the warranty, the condition noted in the field and the cost of each route come back with it, joined to the order it came from.</li>
-<li><strong class="text-stone-200">Shelf, repair or scrap, with a cost on each.</strong> What the item is worth now, what a repair would cost, and what the freight to each site would cost, set beside each other rather than judged by eye.</li>
-<li><strong class="text-stone-200">A person makes the call, and it is kept.</strong> The route is drafted, not sent. Somebody named approves, edits or rejects it, and that sign-off stays on the record.</li>
+<li><strong class="text-stone-200">The call is drafted at the scan.</strong> FACE works from four things the dock hands it: the return's id, the barcode, the condition grade the person at the dock wrote down, and the item's value as they type it. It looks nothing up behind those — no order, no warranty, no price file — and it answers at the moment the box lands rather than the afternoon somebody gets to the pen.</li>
+<li><strong class="text-stone-200">The policy is written down, so the same grade always gets the same answer.</strong> Restock, refurbish, recycle, dispose — each condition grade routes to one of them and to one of four destinations spelled out in the code, the same way every time, whoever is on the dock and whatever the queue looks like. A grade it does not recognise is refused rather than filed under its best guess.</li>
+<li><strong class="text-stone-200">There is a recovery figure, and it is arithmetic on a number you typed.</strong> The triage returns an estimated recovery yield and a refurbishment cost, and both are the value the dock entered multiplied by a fraction fixed against the grade: pristine yields 95% of that value and nothing to refurbish, damaged yields 75% and a quarter of it as the repair. Nothing is measured and nothing is looked up. We would rather you knew the multiplier than trusted the dollar sign.</li>
+<li><strong class="text-stone-200">The triage decides nothing on its own.</strong> It answers the screen and stops there: it moves no stock, raises no credit and stores no approval. The person at the dock still makes the call, and nothing in this step can make it for them.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -34,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 So the box waits. It waits in a pen on the dock with the rest of the week's returns, and the pen is sorted when there is a spare afternoon. Meanwhile the customer is waiting on the refund, and the item is quietly getting older and worth less.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#14b8a6] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Every week a return waits, it is worth less than it was.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -44,19 +53,25 @@ author: "Runink"
         <div>
             <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                The scan is the moment the work gets done. The order it came from, the warranty, the notes the driver or the shop wrote down, and what the item sells for today all arrive joined together, on the day the box lands.
+                The scan is the moment the work gets done. The condition grade goes in with the return, and a disposition comes back out: straight to the return hub, out for refurbishment, into closed-loop recycling, or to hazardous disposal where the grade calls for it. The useful property is not that a machine decided — it is that the decision is the same one every time. The same grade produces the same route on a quiet Tuesday and on the Monday after Christmas, which is exactly when sorting by eye stops being sorting.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                What you get back is a route with a cost on it, not a shrug. Straight back on the shelf, out to a repair site, or stripped for parts — each one priced, with the freight to get there and the time it would take shown next to it.
+                A grade it does not recognise comes back as a refusal rather than as a route. That is worth more than it sounds: the failure mode this replaces is a box that got a plausible-looking disposition because something had to go in the field, and nobody downstream could tell that answer apart from a real one.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Money comes back with the disposition, and it is worth knowing exactly what kind of number it is. Alongside the route, the triage returns an estimated recovery yield and a refurbishment cost, and the cockpit prints both as dollar amounts under those two labels. Both are the value somebody typed on the dock multiplied by a fraction fixed against the grade — a pristine item at 95% of that value with nothing to refurbish, a damaged one at 75% with a quarter of it as the repair, and the remaining grades the same shape. No price file is consulted and no resale is observed. The figure is the policy's arithmetic on your own input, and it is worth exactly what that input was worth, which is a thing you can judge and we cannot.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                The destination is the same kind of thing, and here the honest word is unfinished. It is one of four strings written into the code, and two of them name particular sites — a return hub and a refurbishment hub, both in India, with no relationship to any contract of yours. Which facility a grade ought to route to is your decision and your contract; the code does not yet give you anywhere to say so. That is a limitation of what is built today, not a design principle, and it is the first thing an implementation would have to fix.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                The route is drafted, not sent. A named person approves, edits or rejects it, and that sign-off is kept. Approving it ends the work rather than starting it: the move, the refund and the update to your stock record all follow from the same approval.
+                The triage call itself sends nothing. It returns a disposition and stops — no stock record is written, no credit is raised, no approval is stored. Acting on a drafted action is a separate part of FACE, and there the decision is recorded against a named person before anything runs; where a step behind it has no implementation yet, the write into an ERP being the honest example, the response names the step that did not happen instead of reporting the move as complete.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(20,184,166,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#14b8a6] to-[#0f766e] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
+                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Days from the box landing to the call being made.</strong> Take a month of returns. Note when each one was booked in, and when somebody said where it was going. The gap is the whole of it.</li>
@@ -69,7 +84,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#14b8a6] to-[#0f766e] rounded-xl border border-[#14b8a6]/30 hover:shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:-translate-y-1">
+        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation
         </a>
     </div>

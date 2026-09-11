@@ -1,0 +1,26 @@
+{{/*
+  A section head: a short label on a hairline that runs out to the margin.
+
+  Lifted from the homepage (`.hp-head` in partials/home/style.html) and the
+  industry pages, which both use this exact shape, so a listing page divides
+  itself up the same way the pages either side of it do. The mark and the rule
+  are both borders rather than filled boxes, because `border-signal` and
+  `border-rule` are the edge tokens — a fill would be the wrong orange.
+
+  The label is the one place uppercase is used at this altitude, and it is
+  micro-type, not a headline: it names the band, it is not meant to be read as a
+  sentence. Anything long enough to be a sentence belongs in a deck.
+
+  Call it with a dict:
+    label  required  two or three words
+    id     optional  for aria-labelledby on the section around it
+    meta   optional  a count, set at the far right of the rule
+*/}}
+<div class="flex items-center gap-3.5 mb-6">
+  <span class="flex-none w-6 border-t-[3px] border-signal" aria-hidden="true"></span>
+  <h2 {{ with .id }}id="{{ . }}"{{ end }} class="min-w-0 m-0 font-heading text-[0.9375rem] font-extrabold uppercase tracking-[0.12em] text-ink-2">{{ .label }}</h2>
+  <span class="flex-1 border-t border-rule" aria-hidden="true"></span>
+  {{ with .meta }}
+  <span class="flex-none text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">{{ . }}</span>
+  {{ end }}
+</div>

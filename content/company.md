@@ -9,12 +9,12 @@ author: "Lead Data & Cloud Architect"
 {{< section-container class="bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 pt-20 pb-32" >}}
   <div class="text-center">
     <h1 class="text-4xl md:text-5xl font-bold mb-6">The answer is usually already in the records</h1>
-    <p class="text-xl text-[#D9CDB8] mb-16">
+    <p class="text-xl text-ink-2 mb-16">
       A company already records what it bought, what it shipped, what it paid and what went wrong. Runink reads those records and puts an answer in front of the person who has to act on it.
     </p>
     <div class="max-w-3xl mx-auto bg-stone-800/90 rounded-xl shadow-sm p-8">
       <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
-      <p class="text-xl text-[#D9CDB8]">
+      <p class="text-xl text-ink-2">
         Most of what an operations, finance or compliance team needs to decide is sitting in systems it already pays for, in a shape nobody has time to read.
         We connect to those systems, keep the working copy on hardware the customer controls, and show the reasoning behind every answer so the person who signs off can check it.
       </p>
@@ -64,7 +64,7 @@ author: "Lead Data & Cloud Architect"
 ---
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
   <p class="text-stone-300">
     <strong>Lead Data & Cloud Architect</strong><br>
     Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
@@ -72,12 +72,12 @@ author: "Lead Data & Cloud Architect"
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations & References</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Guidelines for processing data at volume.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on automated applications in freight and transportation.</li>
+    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Guidelines for processing data at volume.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
+    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on automated applications in freight and transportation.</li>
   </ul>
 </section>
 
@@ -88,7 +88,7 @@ author: "Lead Data & Cloud Architect"
   "name": "Runink",
   "url": "https://runink.org",
   "logo": "https://runink.org/images/logo.png",
-  "description": "Automated logistics platform specializing in dynamic route optimization, backhaul matching, and supply chain emissions reduction.",
+  "description": "Runink FACE reads the logistics records a business already holds — orders, carrier documents, claim files — compares them against the rules that govern them, and puts a drafted action in front of the person who owns the decision. Runs on infrastructure the customer controls.",
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",

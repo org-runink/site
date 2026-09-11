@@ -1,0 +1,64 @@
+/**
+ * The @runink/ui stylesheet entry.
+ *
+ * Built to dist/runink-ui.css, which the design-sync converter picks up as `cssEntry`
+ * and makes reachable from the synced bundle's styles.css import closure — the only
+ * CSS a rendered design receives.
+ *
+ * Order matters: faces, then the token layer (which binds both grounds), then Tailwind.
+ */
+@import './fonts.css';
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  /*
+   * The canvas and its ink both come from the active ground, so a page inherits a
+   * coherent pair without stating either. `data-ground` defaults to console via
+   * tokens.css's `:root` selector; set `data-ground="sheet"` on any element to flip
+   * that subtree.
+   */
+  body {
+    @apply bg-canvas font-sans text-primary antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer utilities {
+  /*
+   * Carousels and the logo marquee scroll horizontally and must not show a scrollbar.
+   */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  /*
+   * The gradient-clipped text treatment: fiddly enough that repeating the four
+   * utilities at every call site invites drift.
+   */
+  .ri-text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+}

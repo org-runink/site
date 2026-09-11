@@ -1,6 +1,6 @@
 <a href="{{ .Site.BaseURL }}" class="flex items-center space-x-3 group">
     <div
-        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-[#8B9A6E] transition-colors duration-300">
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
         {{ $logo := resources.Get "images/logo.png" }}
         {{ if $logo }}
             {{ partial "image.html" (dict "src" "images/logo.png" "alt" "Runink Logo" "width" "80x80" "class" "object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" "fetchpriority" "high" "context" $) }}

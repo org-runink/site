@@ -6,11 +6,9 @@
 # English and hugo.toml already lists them in English in the French menu. The
 # link goes to the same /industries/... page in every language.
 title: "Runink"
-description: "Une déclaration en douane bloquée, un sinistre tranché sans la pièce qui était déjà au dossier, du trafic acheminé et jamais tarifé. La réponse se trouve presque toujours déjà dans vos propres enregistrements. Runink les lit tous et présente une action précise à la personne qui peut l'approuver."
+description: "Une déclaration en douane bloquée, un sinistre tranché sans la pièce qui était déjà au dossier, du trafic acheminé et jamais tarifé. La réponse se trouve presque toujours déjà dans vos propres enregistrements. Runink FACE les lit tous et présente une action précise à la personne qui peut l'approuver."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
-accent: "#ea580c"
-
 hero:
   eyebrow: "Pour les opérations, la finance et la conformité"
   line1: "La réponse est déjà dans vos enregistrements."
@@ -43,7 +41,6 @@ industries_columns:
 industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
-    accent: "#ea580c"
     cost: "Une déclaration bloquée au port faute d'un document, pendant que les frais journaliers courent. Une réclamation fret encore dans son délai de dépôt que personne n'a eu la matinée pour monter."
     owners:
       - "Directeur des opérations"
@@ -51,7 +48,6 @@ industries:
       - "Conformité douanière"
   - page: "insurance"
     name: "Insurance"
-    accent: "#778fe6"
     cost: "Un seuil de second examen relevé pour résorber un retard, censé être provisoire, jamais rétabli et jamais tranché. Des mouvements de provision vérifiés par sondage parce que le flux est trop long à lire."
     owners:
       - "Opérations sinistres"
@@ -59,7 +55,6 @@ industries:
       - "Audit interne"
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
-    accent: "#C8D9A8"
     cost: "Un écart qui grandit à l'intérieur de la fourchette que l'on valide toujours : aucun mois ne remonte, et personne ne lit la séquence. Un contrat fournisseur que personne n'a rouvert depuis la signature."
     owners:
       - "Conformité et risques"
@@ -67,7 +62,6 @@ industries:
       - "Finance"
   - page: "telecom"
     name: "Telecom"
-    accent: "#c084fc"
     cost: "Un changement de tarification juste pour la promotion et faux pour un forfait hérité, trop petit pour bouger un agrégat. Un balayage qui rend un taux d'erreur quand les opérations ont besoin des comptes nommément."
     owners:
       - "Revenue assurance"
@@ -75,12 +69,27 @@ industries:
       - "Finance et achats"
   - page: "marketing"
     name: "Marketing"
-    accent: "#D4A574"
     cost: "L'outil d'audit sait que le site est lent. L'outil de contenu l'ignore et continue d'écrire pour une page où personne ne reste. Chaque campagne repart d'une page blanche."
     owners:
       - "Le responsable marketing"
       - "Les ventes"
       - "DSI et sécurité de l'information"
+
+# The one block that names the product — the French counterpart of the `product`
+# key in content/_index.md, in the same place for the same reason: after the
+# industries and before the reasons, because everything above it is in the
+# buyer's vocabulary and a reader who has just found their own line is exactly
+# where "so what is it called" arrives. Until this key existed, the French page
+# answered that only in the paper link near the bottom.
+#
+# "Runink FACE" is a product name and stays in English. The heading renders
+# uppercase and letterspaced, so it stays short. One heading, one paragraph, one
+# footnote, no call to action of its own — naming the product is not a licence to
+# start describing it; the depth belongs in /blog/whitepapers/runink-face/.
+product:
+  heading: "Le produit s'appelle Runink FACE"
+  deck: "Runink FACE est le produit derrière chacune des lignes ci-dessus. Il lit les enregistrements que vos systèmes détiennent déjà, compare chacun à la règle qui le gouverne, et présente une action rédigée à la personne qui porte la décision. Ce qui change d'un secteur à l'autre, c'est quels enregistrements comptent et quelle règle s'applique ; la lecture, la rédaction et l'approbation, non."
+  note: "Sous le nom : des agents qui lisent les enregistrements et rédigent l'action, un écran de revue pour la personne qui porte la décision, et la plateforme en dessous, qui garde l'un et l'autre à l'intérieur de votre propre réseau."
 
 why_heading: "Pourquoi ce n'est pas un tableau de bord de plus"
 why_intro: "Trois points décident si tout ce qui précède mérite votre temps."
@@ -90,7 +99,7 @@ why:
     body: "Un tableau de bord vous montre un chiffre et vous laisse le travail. Ici arrive une action proposée précise, hiérarchisée, avec la règle invoquée et les enregistrements cités qui l'accompagnent."
   - glyph: "approve"
     title: "Une personne nommée décide"
-    body: "Rien ne sort de chez vous avant que quelqu'un ne l'approuve. Qui a approuvé, quand, et ce qui a été modifié reste au dossier, pour pouvoir expliquer plus tard sans tout reconstituer."
+    body: "Un constat arrive sous forme d'action rédigée, et il attend. C'est l'approbation qui l'envoie. Qui a approuvé, quand, et ce qui a été modifié reste au dossier, pour pouvoir expliquer plus tard sans tout reconstituer."
   - glyph: "held"
     title: "Vos enregistrements restent sur vos machines"
     body: "Les fichiers et le raisonnement qui porte dessus s'exécutent sur du matériel que vous contrôlez. Rien n'est envoyé à un fournisseur de modèles extérieur, ce qui est en général le chemin le plus court à travers une revue de sécurité."

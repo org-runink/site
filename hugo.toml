@@ -70,9 +70,17 @@ enableGitInfo = true
   [params.cta]
     enable = true
     title = "Runink: Data You Can Trust. Decisions You Can Defend."
-    description = "Your Go-to Hub for for orchestrating secure, testable, and governance-driven data pipelines at scale. Fitting your Cloud, Data Engineering, and advanced analytical initiatives with secure solutions, and cutting-edge compliant technologies."
-    gradient_from = "#3A2F2A"  # Indigo-600
-    gradient_to = "#1A1512"    # Purple-600
+    # This is the CTA band's copy, rendered on every page that includes the partial.
+    # It used to read "Your Go-to Hub for for orchestrating … cutting-edge compliant
+    # technologies" — a doubled "for", and two unfalsifiable claims ("cutting-edge",
+    # "compliant") of exactly the kind the rest of this site was rewritten to remove.
+    # "Compliant" is the worse of the two: FACE is SOC 2-ORIENTED, a self-declared
+    # design intention, not a completed audit.
+    description = "Runink FACE reads the logistics records you already hold, compares them against the rules that govern them, and drafts an action for the person who owns the decision. It runs on infrastructure you control."
+    # The comments below said Indigo-600 / Purple-600. The values are the warm browns
+    # of the FACE palette and always were; the labels came from the vendor theme.
+    gradient_from = "#3A2F2A"
+    gradient_to = "#1A1512"
     gradient_angle = 30
     # /#contact-form, not /#contact. The consultation form on the home page has
     # always rendered with id="contact-form"; nothing has ever rendered
@@ -135,26 +143,53 @@ enableGitInfo = true
         text = "Book your Consultation"
         url = "/#contact-form"
 
-      # Check it out button
+      # There is deliberately no third header button.
       #
-      # This pointed at /demo/ until now. content/demo.md was renamed to
-      # content/face.md in July and the FACE, CORE and PULSE pages then moved
-      # out to subdomains, so /demo/ has 404'd in all four languages ever since
-      # — the button was simply never repointed. /industries/ is where it goes
-      # instead: it is live, and it is the page that lets a visitor check
-      # whether their own operation is one Runink is built around, which is what
-      # this button is for. Unprefixed from every language for the same reason
-      # the Industries menu entry is (see the note in the English menu below).
-      [params.header.buttons.checkItOut]
-        text = "Check it out"
-        url = "/industries/"
+      # A "Check it out" button lived here and pointed at /demo/, which 404'd in
+      # all four languages from the July rename of content/demo.md onward. It was
+      # repointed at /industries/ rather than removed — where the "Industries"
+      # menu entry already went. Two controls to one page is one control and one
+      # distraction, and the redundancy was invisible to anyone reading a single
+      # block. scripts/check-nav-distinct.mjs reads the RENDERED header and fails
+      # on it now, so re-adding a duplicate destination breaks the build rather
+      # than shipping.
 
   # Blog configuration
+  #
+  # `title` and `subtitle` are the h1 and the deck on /blog/, so they are body
+  # copy and CONTENT.md rules 1 and 3 govern them exactly as they would a
+  # paragraph — not config. What they said until the September 2026 rewrite:
+  #
+  #   title    = "Publications, Insights & Expertise"
+  #   subtitle = "Explore whitepapers, real-world use cases, and actionable best
+  #               practices to maximize ROI from your Digital Transformation
+  #               initiatives."
+  #
+  # Four breaches in two lines. "maximize ROI" is named in rule 1 as an invented
+  # figure with the digits filed off. "Actionable best practices" and "Digital
+  # Transformation initiatives" are the register rule 3 rules out — no
+  # non-technical buyer would restate either in their own words. And "Expertise"
+  # claims expertise in a heading rather than letting the four papers below show
+  # it, which is the one thing a heading cannot do for itself.
+  #
+  # What replaced them says what is actually behind the URL and in what order to
+  # read it: four long documents, then shorter pieces on the operational problems
+  # those documents address. The examples in the deck are the homepage's own — a
+  # held entry, a claim still inside its filing window — because those are
+  # problems rather than results, and no figure is attached to any of them.
+  #
+  # `eyebrow` is the small chip above the headline, and the only uppercase line on
+  # the page. It names the audience by job family, which rule 5 asks for.
+  #
+  # All four languages carry their own three strings, per rule 12. The Spanish,
+  # French and Portuguese decks all promised "maximizar el/le/o ROI" and were
+  # struck in the same change as the English one.
   [params.blog]
     enable = true
-    title = "Publications, Insights & Expertise"
-    subtitle = "Explore whitepapers, real-world use cases, and actionable best practices to maximize ROI from your Digital Transformation initiatives."
-    
+    eyebrow = "For operations, supply chain, finance and compliance"
+    title = "Whitepapers, and shorter notes on the same problems."
+    subtitle = "The papers are the long documents: what Runink FACE and Runink PULSE do, and the CORE platform both of them run on. The shorter pieces stay with the problems behind them — a customs entry held for a missing document, a freight claim still inside its filing window, a return that costs more to handle than the goods, a cold chain that has to be proven after the fact."
+
     # Blog CTA configuration
     [params.blog.cta]
       enable = true  # Enable/disable CTA in blog posts
@@ -268,7 +303,7 @@ enableGitInfo = true
     # The whitepapers are where the painkiller claim is actually argued at
     # length, and the index exists and is translated in all four languages.
     [[languages.en.menu.main]]
-      name = "What makes it a painkiller"
+      name = "Whitepapers"
       url = "/blog/whitepapers/"
       weight = 2
 
@@ -310,20 +345,22 @@ enableGitInfo = true
       url = "/use-cases/"
       weight = 4
 
-    # Whitepapers hangs off Blog because that is where the pages live
-    # (content/blog/whitepapers/) and where the blog's own subtitle already
-    # tells readers to look. Same has_submenu mechanism as Industries above —
-    # the parent stays a real link to /blog/, so nothing is hidden behind a
-    # control that needs a pointer.
-    [[languages.en.menu.main]]
-      name = "Blog"
-      url = "/blog/"
-      weight = 5
-      [languages.en.menu.main.params]
-        has_submenu = true
-        submenu = [
-          { name = "Whitepapers", url = "/blog/whitepapers/" },
-        ]
+    # There is deliberately no "Blog" entry, in any language.
+    #
+    # /blog/ and /blog/whitepapers/ are parent and child, so two entries read as
+    # two blog-shaped things and a reader has to open one to find out which is
+    # which. scripts/check-nav-distinct.mjs passes them — the hrefs differ — but
+    # the redundancy is the kind it was written for. The papers are the
+    # substantive material, so the header links them and the shorter pieces hang
+    # off the papers' own index.
+    #
+    # That leaves /blog/ with no chrome link, and there is no footer to fall back
+    # on (params.footer.enable = false, and partials/footer.html is a comment).
+    # CONTENT.md rule 9 is explicit that a page with no inbound link is still
+    # published, so two pages carry the way in on purpose and must keep doing so:
+    # layouts/whitepapers/list.html closes with a band pointing at /blog/, and
+    # every post carries an "All articles" link. linkcheck.go cannot see this —
+    # /blog/ still returns 200 either way — so it is read for, not gated.
 
     [[languages.en.menu.main]]
       name = "Pricing"
@@ -340,13 +377,16 @@ enableGitInfo = true
       text = "Réserver une Consultation"
       url = "/fr/#contact-form"
 
-    [languages.fr.params.header.buttons.checkItOut]
-      text = "Découvrez-le"
-      url = "/industries/"
 
+    # See the note on [params.blog] in the English block: these three strings are
+    # the h1, the deck and the chip on /fr/blog/, so they are body copy. The deck
+    # here promised "maximiser le ROI de vos initiatives de Transformation
+    # Digitale", which is rule 1 in French — rules 1 and 2 have no language
+    # exemption. "Livres blancs" is the label the French menu already uses.
     [languages.fr.params.blog]
-      title = "Publications, Décryptages & Expertise"
-      subtitle = "Explorez nos livres blancs, cas d'usage réels et meilleures pratiques pour maximiser le ROI de vos initiatives de Transformation Digitale."
+      eyebrow = "Pour les opérations, la supply chain, la finance et la conformité"
+      title = "Les livres blancs, et des notes plus courtes sur les mêmes problèmes."
+      subtitle = "Les livres blancs sont les documents longs : ce que font Runink FACE et Runink PULSE, et la plateforme CORE sur laquelle les deux tournent. Les textes plus courts restent sur les problèmes qui les motivent — une déclaration en douane bloquée faute d'un document, une réclamation fret encore dans son délai, un retour qui coûte plus cher à traiter que la marchandise, une chaîne du froid qu'il faut prouver après coup."
 
     [[languages.fr.menu.main]]
       name = "Pourquoi Runink ?"
@@ -354,7 +394,7 @@ enableGitInfo = true
       weight = 1
 
     [[languages.fr.menu.main]]
-      name = "Ce qui nous différencie"
+      name = "Livres blancs"
       url = "/fr/blog/whitepapers/"
       weight = 2
 
@@ -380,16 +420,6 @@ enableGitInfo = true
       weight = 4
 
     [[languages.fr.menu.main]]
-      name = "Blog"
-      url = "/fr/blog/"
-      weight = 5
-      [languages.fr.menu.main.params]
-        has_submenu = true
-        submenu = [
-          { name = "Livres blancs", url = "/fr/blog/whitepapers/" },
-        ]
-
-    [[languages.fr.menu.main]]
       name = "Tarifs"
       url = "/fr/pricing"
       weight = 6
@@ -403,13 +433,15 @@ enableGitInfo = true
       text = "Reserve una Consulta"
       url = "/es/#contact-form"
 
-    [languages.es.params.header.buttons.checkItOut]
-      text = "Descúbrelo"
-      url = "/industries/"
 
+    # Same as the French block above. The old deck promised "maximizar el ROI de
+    # sus iniciativas de Transformación Digital" — rule 1, in Spanish. "Informes
+    # técnicos" is the label the Spanish menu already uses for the papers, so the
+    # headline uses it rather than introducing a second name for them.
     [languages.es.params.blog]
-      title = "Publicaciones, Insights y Especialidad"
-      subtitle = "Explore libros blancos, casos de uso reales y mejores prácticas accionables para maximizar el ROI de sus iniciativas de Transformación Digital."
+      eyebrow = "Para operaciones, cadena de suministro, finanzas y cumplimiento"
+      title = "Los informes técnicos, y notas más breves sobre los mismos problemas."
+      subtitle = "Los informes técnicos son los documentos largos: qué hacen Runink FACE y Runink PULSE, y la plataforma CORE sobre la que funcionan ambos. Los textos más breves se quedan con los problemas que hay detrás — una entrada de aduana retenida por un documento que falta, una reclamación de flete aún dentro de su plazo, una devolución que cuesta más tramitar que la propia mercancía, una cadena de frío que hay que demostrar después."
 
     [[languages.es.menu.main]]
       name = "¿Por qué Runink?"
@@ -417,7 +449,7 @@ enableGitInfo = true
       weight = 1
 
     [[languages.es.menu.main]]
-      name = "Qué nos diferencia"
+      name = "Informes técnicos"
       url = "/es/blog/whitepapers/"
       weight = 2
 
@@ -442,16 +474,6 @@ enableGitInfo = true
       weight = 4
 
     [[languages.es.menu.main]]
-      name = "Blog"
-      url = "/es/blog/"
-      weight = 5
-      [languages.es.menu.main.params]
-        has_submenu = true
-        submenu = [
-          { name = "Libros blancos", url = "/es/blog/whitepapers/" },
-        ]
-
-    [[languages.es.menu.main]]
       name = "Precios"
       url = "/es/pricing"
       weight = 6
@@ -465,13 +487,14 @@ enableGitInfo = true
       text = "Agende uma Consulta"
       url = "/pt/#contact-form"
 
-    [languages.pt.params.header.buttons.checkItOut]
-      text = "Confira"
-      url = "/industries/"
 
+    # Same as the French and Spanish blocks above. The old deck promised
+    # "maximizar o ROI de suas iniciativas de Transformação Digital" — rule 1, in
+    # Portuguese. "Whitepapers" is the label the Portuguese menu already uses.
     [languages.pt.params.blog]
-      title = "Publicações, Insights e Especialização"
-      subtitle = "Explore whitepapers, casos de uso reais e melhores práticas acionáveis para maximizar o ROI de suas iniciativas de Transformação Digital."
+      eyebrow = "Para operações, cadeia de suprimentos, finanças e compliance"
+      title = "Whitepapers, e notas mais curtas sobre os mesmos problemas."
+      subtitle = "Os whitepapers são os documentos longos: o que Runink FACE e Runink PULSE fazem, e a plataforma CORE sobre a qual os dois rodam. Os textos mais curtos ficam com os problemas por trás deles — uma declaração aduaneira retida por falta de um documento, um pedido de indenização de frete ainda dentro do prazo, uma devolução que custa mais para processar do que a mercadoria, uma cadeia de frio que precisa ser comprovada depois."
 
     [[languages.pt.menu.main]]
       name = "Por que Runink?"
@@ -479,7 +502,7 @@ enableGitInfo = true
       weight = 1
 
     [[languages.pt.menu.main]]
-      name = "O que nos diferencia"
+      name = "Whitepapers"
       url = "/pt/blog/whitepapers/"
       weight = 2
 
@@ -502,16 +525,6 @@ enableGitInfo = true
       name = "Casos de uso"
       url = "/pt/use-cases/"
       weight = 4
-
-    [[languages.pt.menu.main]]
-      name = "Blog"
-      url = "/pt/blog/"
-      weight = 5
-      [languages.pt.menu.main.params]
-        has_submenu = true
-        submenu = [
-          { name = "Whitepapers", url = "/pt/blog/whitepapers/" },
-        ]
 
     [[languages.pt.menu.main]]
       name = "Preços"

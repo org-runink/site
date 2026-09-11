@@ -73,11 +73,38 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ $canonicalUrl }}">
 
-    <!-- Fonts -->
+    {{/* FONTS AND TOKENS — self-hosted, no third-party request.
+
+         This used to fetch Inter and Plus Jakarta Sans from Google Fonts. That
+         was a THIRD typeface: not the Fira this repo self-hosts, and not the
+         Figtree the product ships. The pages a customer actually reads were the
+         only surface on none of the company's own faces, and they fetched them
+         from a third party on a site whose selling point is that your data does
+         not leave your building.
+
+         rk-fonts.html publishes the faces AND asserts that the count matches
+         what tokens.css declares — Hugo only writes an asset something asks
+         for, so a face declared and not published 404s silently into a system
+         fallback. That has shipped here before.
+
+         tokens.css must load BEFORE main.css: it defines the --rk-* custom
+         properties on :root, and the Tailwind layer below consumes them. It
+         also sets the default ground, which is `sheet` — the light one. That is
+         deliberate and it is the whole point of this change: a documented review
+         of the customer material found the black canvas hard to read and
+         painful to print, and these are pages that get printed and carried into
+         meetings. The product cockpit stays dark; the marketing sheet does not.
+         A subtree can still opt into dark with data-ground="console". */}}
+    {{ partial "rk-fonts.html" . }}
+    {{ $tokens := resources.Get "css/tokens.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $tokens.RelPermalink }}">
+    {{ partial "rk-ground-script.html" . }}
+
+    {{/* Material Symbols is still remote. It is an icon font, not a brand face,
+         and replacing it is a separate job from the palette — but it is the last
+         third-party font request on the page and worth closing. */}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"></noscript>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
 

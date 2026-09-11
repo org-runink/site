@@ -5,12 +5,12 @@ product: "Runink CORE"
 subtitle: "A joint architecture paper with Logical Leap's Atlas"
 jointly_with: "Logical Leap"
 partner_url: "https://logicalleap.io/atlas"
-description: "A joint architecture paper from Runink and Logical Leap. Atlas watches capital spending as it happens; CORE's assessors read each finding and score it before a person is asked to act. The paper marks, on the pages it names, which half of the design runs and which is drawn."
+description: "A joint architecture paper from Runink and Logical Leap. Atlas watches capital spending as it happens; CORE's assessors read each finding and score it before a person is asked to act. The paper states, on the pages it names, which half of the design runs and which is drawn."
 weight: 40
 date: 2026-09-03T00:00:00Z
-source_pages: 27
+source_pages: 23
 audience: "Executive, finance, operations and risk stakeholders"
-blurb: "Atlas watches a company's capital spending as it happens. CORE's automated assessors read Atlas's findings and score them before a person is asked to act on any of them. This is an architecture paper: it states on pages 12 to 14 exactly which half of the design runs today and which half is drawn, and every claim in it should be read against those pages."
+blurb: "Atlas watches a company's capital spending as it happens. CORE's automated assessors read Atlas's findings and score them before a person is asked to act on any of them. This is an architecture paper: it states on pages 11 to 13 exactly which half of the design runs today and which half is drawn, and every claim in it should be read against those pages."
 deck: |
   Atlas, from Logical Leap, watches a company's capital spending as it happens
   and tells the people responsible what deserves their attention. Runink CORE
@@ -22,10 +22,10 @@ deck: |
   findings and score them before a person is asked to act on any of them.
 
   **Part of that shape is now built, and part of it is drawn. Chapter one and
-  pages 12 to 14 set out exactly which is which, and every claim in this paper
+  pages 11 to 13 set out exactly which is which, and every claim in this paper
   should be read against them.**
 register:
-  - { page: 1,  title: "What this paper is, and which part of it runs", mark: "drawn" }
+  - { page: 1,  title: "What this paper is, and which part of it runs" }
   - { page: 2,  title: "Executive summary" }
   - { page: 3,  page_end: 4, title: "The expensive problem, named before the product" }
   - { page: 5,  title: "Who has this problem, by segment" }
@@ -34,38 +34,38 @@ register:
   - { page: 8,  title: "What the two products do" }
   - { page: 9,  title: "How the two divide the work" }
   - { page: 10, title: "What \"judging\" means, in plain language" }
-  - { page: 11, title: "Why an independent assessor matters" }
-  - { page: 12, title: "What is built: findings in, verdicts back", mark: "runs" }
-  - { page: 13, title: "What is built: how a verdict is reached, and where the line falls", mark: "runs" }
-  - { page: 14, title: "Where the built part stops", mark: "drawn" }
+  - { page: 11, title: "What is built: findings in, verdicts back" }
+  - { page: 12, title: "What is built: how a verdict is reached, and where the line falls" }
+  - { page: 13, title: "Where the built part stops" }
+  - { page: 14, title: "Why an independent assessor matters" }
   - { page: 15, title: "A note on how we name the assessors" }
   - { page: 16, title: "The two-stage adoption path" }
-  - { page: 17, title: "For operations leaders", mark: "hypothetical" }
-  - { page: 18, title: "For finance and procurement", mark: "hypothetical" }
+  - { page: 17, title: "For operations leaders" }
+  - { page: 18, title: "For finance and procurement" }
   - { page: 19, title: "For compliance, risk and security" }
-  - { page: 20, title: "Insurance", mark: "hypothetical" }
-  - { page: 21, title: "Banking and financial services", mark: "hypothetical" }
-  - { page: 22, title: "Telecoms", mark: "hypothetical" }
-  - { page: 23, title: "Marketing", mark: "hypothetical" }
-  - { page: 24, title: "Continuous versus periodic: a comparison" }
-  - { page: 25, title: "What it is worth, computed on your own numbers", mark: "not-measured" }
-  - { page: 26, title: "What the combination is built on, and why that matters commercially", mark: "drawn" }
-  - { page: 27, title: "Who this is for, what adopting it involves, and a straight note on numbers", mark: "not-measured" }
+  - { page: 20, title: "Continuous versus periodic: a comparison" }
+  - { page: 21, title: "What it is worth, computed on your own numbers" }
+  - { page: 22, title: "What the combination is built on, and why that matters commercially" }
+  - { page: 23, title: "Who this is for, what adopting it involves, and a straight note on numbers" }
 ---
 
 ## What this paper is, and which part of it runs
 
-This paper is written jointly by Runink and Logical Leap, so that both engineering teams and
-any interested customer are reading the same description of the same shape. Part of that
-shape is now built. CORE accepts findings from an outside assessment platform, judges each
-one, and hands the verdicts back, and that path has been exercised end to end in automated
-testing. The other direction — CORE reaching into Atlas to collect findings itself or to push
-verdicts into it — is a named way in with nothing written behind it, and it waits on a written
-description from Logical Leap's side of how to call Atlas; Atlas is offered in private beta,
-to selected customers rather than generally, and does not publish such a description, which is
-ordinary for a product at that stage. Pages 12 to 14 set out exactly which is which, and every
-claim in this paper should be read against them. Nothing here is an account of work performed
-for a customer, and nothing in it describes an outcome observed at one.
+**What runs.** CORE accepts findings from an outside assessment platform, judges each one, and
+hands the verdicts back. That path is built, and it has been exercised end to end in automated
+testing. Pages 11 to 13 describe it as it is written, and every claim in this paper should be
+read against them.
+
+**What is drawn.** The other direction — CORE reaching into Atlas to collect findings itself,
+or to push verdicts into it — is a named way in with nothing written behind it. It waits on a
+written description from Logical Leap's side of how to call Atlas; Atlas is offered in private
+beta, to selected customers rather than generally, and does not publish one, which is ordinary
+for a product at that stage.
+
+The paper is written jointly by Runink and Logical Leap, so that both engineering teams and any
+interested customer are reading the same description of the same shape. Nothing in it is an
+account of work performed for a customer, and nothing in it describes an outcome observed at
+one.
 
 ## Executive summary
 
@@ -116,7 +116,7 @@ of every action.
 
 **What of this runs.** The path by which findings reach CORE, are judged, and are read back is
 built and has been exercised in automated testing. The path by which CORE would reach into
-Atlas is a design with nothing written behind it. Pages 12 to 14 draw that line precisely,
+Atlas is a design with nothing written behind it. Pages 11 to 13 draw that line precisely,
 and the rest of this paper is written so the two are never confused.
 
 **The two-stage path.** Stage one is visibility — reading the estate and describing it,
@@ -128,8 +128,6 @@ until a named person approves it. Most organisations should buy stage one,
 run it for a period they choose, and decide about stage two with evidence in hand.
 
 ## The expensive problem, named before the product
-
-Set both products aside for two pages.
 
 ### Money leaves before anybody checks
 
@@ -210,14 +208,12 @@ asked, by people who were doing something else.
 
 Four costs: rules that are believed rather than known, a delay between the decision and the
 review, a review method that cannot see the specific item, and evidence assembled by hand
-after the fact.
+after the fact. They share one cause — the company's own information is sufficient to answer
+all four questions, and nothing is reading it continuously.
 
-They share a single cause. The company's own information is sufficient to answer all four
-questions, and nothing is reading it continuously.
-
-This is the problem the combination of Atlas and CORE is designed to address. Naming it first
-is deliberate: a company that does not have this problem does not need either product, and
-should be able to establish that from the previous two pages without a meeting.
+That is the problem the combination of Atlas and CORE addresses. A company that does not have
+it does not need either product, and should be able to establish that from these two pages
+without a meeting.
 
 ## Who has this problem, by segment
 
@@ -325,7 +321,7 @@ Executive Leadership.
 and whether the reasoning attached to an item is the reasoning they would have written. If
 it is not, nothing else matters.
 
-**To the person who sponsors it:** the method on page 25, run on their own figures. Not a
+**To the person who sponsors it:** the method on page 21, run on their own figures. Not a
 figure from this paper — there is none — but the arithmetic and where each input is read.
 
 **To the person who signs it off:** the refusal. Sign in as somebody who is not on the
@@ -355,9 +351,8 @@ worst one is discovered thirteen weeks after. Every remedy available in week one
 payment, query the invoice, re-scope the project, ask the customer a question — has expired.
 What remains is recovery, which costs more and works less often.
 
-Shortening the interval helps, and every organisation that has tried it has discovered the
-same thing: the cost of review scales with frequency, so a monthly review costs three times a
-quarterly one and still leaves a month.
+Shortening the interval helps, and its cost scales with frequency: a monthly review is three
+times the work of a quarterly one and still leaves a month.
 
 ### Manual review degrades exactly when it matters
 
@@ -371,8 +366,7 @@ depends on somebody having spare time.
 
 ### Written rules drift from enforced rules, silently
 
-The most uncomfortable of the four. A rule implemented in a system is a piece of
-configuration. Configuration changes. It changes during upgrades, during migrations, during
+A rule implemented in a system is a piece of configuration. Configuration changes. It changes during upgrades, during migrations, during
 incident response, and during the ordinary work of clearing a backlog.
 
 Nothing about that change announces itself to the policy document. The policy still says the
@@ -389,8 +383,7 @@ Continuous does not mean faster reporting. It means the evaluation happens at th
 transaction happens, against the rule as it is written, in the system where the data
 originates — so the finding arrives while the decision is still open.
 
-That is the shift Atlas is built to make, and it is the reason the rest of this paper has
-something to describe.
+That is the shift Atlas is built to make.
 
 ## What the two products do
 
@@ -462,8 +455,7 @@ That last discipline is the one this design borrows and applies to Atlas's findi
 
 ## How the two divide the work
 
-The division is simple enough to state in three sentences, and the rest of this section
-explains why each sentence is the right way round.
+Three sentences, and then why each is the right way round.
 
 **Atlas leads on the screens people work in.** The customer's people work in Atlas. Findings
 appear in Atlas. Actions are taken in Atlas. The view across the whole sequence, the ranking,
@@ -474,7 +466,7 @@ and they are what the customer sees.
 that produced it as well as the conclusion it reached — and attach a verdict to it. The
 verdict is one of four words, and it always carries the reason behind it: CORE concurs, it
 dissents, it is unable to judge, or the subject is one it has no business ruling on. This is
-the part that is built; pages 12 to 14 describe it as it is written.
+the part that is built; pages 11 to 13 describe it as it is written.
 
 **CORE runs the arrangement on the customer's own systems.** The machines, the model, the
 connections to the company's own data, the identity, and the record of who did what are
@@ -496,13 +488,11 @@ score, the reasoning and the action all belong in the same view.
 
 ### Why the assessor is separate from the finder
 
-This is the load-bearing decision in the whole design, and it deserves its own section. The
-next two pages are that section.
-
-The short form: a system that produces findings and also rates its own findings has one
-opinion, expressed twice. A system whose findings are read by a separate assessor, built by a
-different team, reasoning with a different method, has two — and the disagreements between
-them are informative.
+A system that produces findings and also rates its own findings has one opinion, expressed
+twice. A system whose findings are read by a separate assessor, built by a different team,
+reasoning with a different method, has two — and the disagreements between them are
+informative. Page 14 sets that argument out in full, after the pages that describe what is
+built.
 
 ### What passes between them
 
@@ -521,7 +511,7 @@ Those pieces exist in the platform, and the arrangement that receives an outside
 platform's findings is now built on CORE's side: findings arrive, verdicts are produced and
 kept against them, and the submitting platform reads them back on the same connection it
 submitted over. What is not built is CORE reaching the other way into Atlas, which waits on a
-written description from Logical Leap of how to call it. Pages 12 to 14 state that boundary
+written description from Logical Leap of how to call it. Pages 11 to 13 state that boundary
 precisely, and a reader who takes nothing else from this paper should take that distinction.
 
 ## What "judging" means, in plain language
@@ -563,76 +553,11 @@ specific remedy with the reasoning for why it is the right remedy. And where the
 belongs to a person, the item is filed under "Needs a human" rather than dressed up as a
 recommendation.
 
-Applying both to a governance finding is what CORE's assessor now does, and pages 12 to 14
+Applying both to a governance finding is what CORE's assessor now does, and pages 11 to 13
 describe the mechanism as it is written. The finding arrives from the assessment platform. The
 assessor reads it, checks the conclusion against the evidence cited, checks the reasoning,
 checks the rule, reaches a verdict, and hands it back with the reasoning and — where relevant
 — the statement that this one needs a person.
-
-## Why an independent assessor matters
-
-### The queue problem
-
-Continuous monitoring works, and the first consequence of it working is a queue.
-
-An organisation that moves from quarterly sampling to continuous evaluation does not get
-fewer findings. It gets many more, earlier, which is the entire point. But a queue in which
-every item carries equal weight is a queue that a person has to read entirely, and reading it
-entirely is the review job that did not scale in the first place.
-
-Ranking by impact helps and Atlas does it. Ranking by confidence is a different question
-altogether, and it is the one that decides how a person spends the first hour. The
-high-impact item that the assessor is confident about and the high-impact item the assessor
-disagrees with are two completely different pieces of work, and they should not look the same
-on arrival.
-
-### The self-assessment problem
-
-A system that scores its own output is measuring itself with its own instrument.
-
-When it is wrong, it is usually wrong in a consistent direction — because the error comes
-from an assumption in how it reads the data, and that same assumption is present in the
-scoring. A rule mis-parsed at detection is mis-parsed at scoring. A field misread as a date
-is misread as a date twice. The confidence score comes back high and the finding is wrong.
-
-An assessor built by a different team, reading the same records independently and reasoning
-with a different method, does not share those assumptions. It will have its own, and they
-will be different ones, and where the two disagree there is something worth a person's
-attention. That disagreement signal does not exist inside a single system, however carefully
-built.
-
-### The evidence problem, solved as a by-product
-
-There is a third reason, and for regulated buyers it may be the largest.
-
-When a finding is produced by one system, assessed by a second, and acted on by a named
-person, the sequence that survives is a complete account: what was observed, what rule was
-applied, what the assessor concluded and why, what score it gave, who saw it, what they
-decided, and when.
-
-CORE records that sequence the way it records everything else — with the time, a sequence
-number, the person by verified identity, the action, the thing acted upon, the outcome, an
-explanatory line and the source address, each record carrying a fingerprint computed over the
-record before it. Given the first record and the last, the ones in between can be confirmed
-to be the ones that were written, in the order they were written.
-
-The consequence is that "show me that this control operated throughout the period, and show
-me the exceptions and how each was handled" stops being an assembly project. The evidence was
-produced as a by-product of doing the work.
-
-### Where the judge declines
-
-An assessor that always produces an answer is quickly ignored, because its confident answers
-and its guesses look identical from the outside.
-
-The design here is that the assessor is permitted — and expected — to say that an item needs
-a person, and to say why. Materiality judgements, relationship judgements, anything turning on
-intent or precedent, anything where the rule is genuinely ambiguous as applied to this
-transaction: these arrive labelled, with the observation written up and the ambiguity named.
-
-That labelling is what makes the rest of the queue trustworthy. When a system distinguishes
-"here is the answer" from "this needs your judgement, and here is what makes it a judgement",
-the first category earns the attention it asks for.
 
 ## What is built: findings in, verdicts back
 
@@ -810,6 +735,33 @@ against Atlas.
 from Logical Leap's side of how to call Atlas. For the field evidence, a first installation —
 which is the thing to ask for before relying on any of this.
 
+## Why an independent assessor matters
+
+Two reasons the assessor is a separate product from the finder, and one property that makes the
+separation worth having.
+
+**A system that scores its own output is measuring itself with its own instrument.** When it is
+wrong it is usually wrong in a consistent direction, because the error comes from an assumption
+in how it reads the data and that same assumption is present in the scoring. A rule mis-parsed
+at detection is mis-parsed at scoring. A field misread as a date is misread as a date twice:
+the confidence score comes back high and the finding is wrong. An assessor built by a different
+team, reading the same records and reasoning with a different method, has its own assumptions
+and they are different ones — so where the two disagree there is something worth a person's
+attention. That disagreement signal does not exist inside a single system, however carefully
+built.
+
+**Ranking by confidence decides how the first hour of the day is spent.** Continuous monitoring
+does not produce fewer findings. It produces many more, earlier, which is the point, and a queue
+in which every item carries equal weight is a queue somebody has to read entirely — the review
+job that did not scale in the first place. Atlas ranks by impact and exposure. The high-impact
+item the assessor is confident about and the high-impact item the assessor disagrees with are
+different pieces of work, and they should not look the same on arrival.
+
+And the queue is readable only because the assessor is allowed to decline. Materiality,
+relationships, intent, precedent, a rule genuinely ambiguous as applied to this transaction:
+these arrive labelled as needing a person, with the observation written up and the ambiguity
+named. That labelling is what earns the concurrences their attention.
+
 ## A note on how we name the assessors
 
 Assessors are easier to explain by the job they do than by the technology they use. "An
@@ -896,6 +848,10 @@ Buying stage two first means making that decision without them.
 
 ## For operations leaders
 
+Read this chapter against pages 11 to 13. The judging path — findings in, verdicts back — is
+built. The ranking, the screens and the tracking of fixes are Atlas's, and Logical Leap's
+description of them is on page 8. The arrangement as a whole is architecture.
+
 ### The question you are answering
 
 Operations leaders are measured on whether the thing that should have happened happened, and
@@ -917,35 +873,14 @@ separate list that is short.
 the records cited, the severity, and the specific action proposed. An item that cannot be
 acted on without a judgement call says so.
 
-**The knowledge stops living in three heads.** The reason most operations functions cannot
-grow their on-call rota is that the reasoning behind each decision is tacit. When the
-observation, the reasoning, the severity and the remedy are written next to each other, a
-wider group can staff the rota, and the escalations that happen are the ones that genuinely
-need the specialist.
-
-### An illustration of the mechanism
-
-This is a hypothetical, offered to show the shape rather than to report an event.
-
-A capital project has an approved plan, a purchase order raised against it, and invoices
-arriving. In week six an invoice arrives that is within tolerance individually but which,
-combined with two earlier ones, takes committed spend past the approved plan for the stage.
-
-The finding is produced at the moment the third invoice lands: the plan says this, the
-commitments total this, the difference is this, and the stage is procure.
-
-The assessor reads it, pulls the three invoices and the purchase order directly, confirms the
-arithmetic, checks that the approval threshold cited is the one that applies at this value,
-and scores the finding as high confidence with the reasoning attached. It notes that the
-recommended action — hold the third invoice pending re-approval — is mechanical, so it is not
-filed as needing a person.
-
-The project manager sees it in Atlas the same day, with the three invoices, the plan, the
-rule and the assessor's reasoning in one view, and holds the invoice.
-
-What changed is timing. The same discrepancy, found at quarter-end, is a variance to explain.
+**The reasoning is written down where the verdict is.** The observation, the rule invoked, the
+records cited, the severity and the proposed action sit next to each other, so the reasoning
+behind a decision is not carried in one person's head.
 
 ## For finance and procurement
+
+Same caution as the previous page: the judging path is built, the lifecycle record and the
+forecasting are Atlas's, and the two working together is architecture.
 
 ### The question you are answering
 
@@ -985,22 +920,6 @@ to do at volume.
 ahead of time. The assessor scores the forecast's reasoning, which matters more for a forecast
 than for an observation, because a forecast cannot be checked against the record — only its
 method can.
-
-### An illustration of the mechanism
-
-Hypothetical, again for shape.
-
-A supplier agreement sets a rate card with volume tiers and a rebate at an annual threshold.
-Invoices arrive monthly, priced at the tier the supplier applies.
-
-The rule-reading assessor extracts the tier structure from the agreement, in plain language,
-with a citation to the clause. The number-checking assessor reads each invoice against
-cumulative volume and reports where the applied tier and the earned tier differ, and where
-the rebate accrual on the books differs from the rebate earned under the agreement.
-
-Neither of these is a hard piece of reasoning. Both are tedious, both are done at volume, and
-both are exactly the kind of work that quietly stops during a busy quarter — which is when
-the volumes that trigger tier changes are largest.
 
 ## For compliance, risk and security
 
@@ -1100,217 +1019,6 @@ A second, independent check applies the same rule to whatever the first one retu
 checks in sequence is deliberate: a single filter that quietly stopped working would fail
 open, and this one fails closed.
 
-## Insurance
-
-Runink's published work is in logistics and operations. What follows describes the mechanism
-generically and illustrates it with hypothetical scenarios. These are illustrations of how
-the arrangement works, not accounts of things that happened.
-
-### The mechanism, stated generically
-
-Every insurance process is a rule applied to a record, producing a decision that must be
-explainable later. Policy wording is a rule. Regulatory obligation is a rule. Delegated
-authority is a rule. A reserving standard is a rule. Each is written down, each is applied to
-a stream of items, and each application is a decision somebody may later ask about.
-
-The arrangement reads the rule, reads the record, compares them at the moment of the
-decision, produces a finding where they differ, has that finding assessed independently, and
-keeps the sequence.
-
-### Where it lands
-
-**Claims handling.** Each claim decision is governed by wording, by authority limits and by
-regulatory obligation. A continuous evaluation asks, at the point of decision: does the
-wording cover this; is the handler within their authority for this value; has the required
-second review occurred; are the supporting documents the ones the procedure requires.
-
-**Reserving and recovery.** Reserve movements follow rules. Reinsurance recoveries follow
-treaty terms. Both are reconciliations between a written instrument and a stream of
-transactions, and both are done periodically today for the same volume reason as everything
-else in this paper.
-
-**Premium, commission and delegated authority.** Where underwriting is delegated, the
-principal remains accountable for decisions taken under the delegation. Reading the
-delegation agreement against the schedules of risks and premiums the agent reports back — the
-bordereaux — is a rules-versus-records comparison.
-
-**Conduct evidence.** Supervisory authorities ask insurers to demonstrate fair outcomes,
-consistently, across a population. That is an evidence problem of the shape described on the
-previous page.
-
-### An illustration
-
-Hypothetical. A claims backlog builds after an event. Handling times lengthen, and the
-organisation temporarily raises the value at which a second review is required, in order to
-clear volume.
-
-The change is made in the workflow configuration. The policy document is not updated, because
-the change is understood to be temporary.
-
-Six months later the temporary change is still in place. Nobody made a decision to keep it;
-nobody made a decision to remove it either.
-
-A standing reconciliation between the written rule and the enforced rule reports this in the
-week it happens: the policy says one threshold, the system enforces another, and here are the
-claims settled in the interval that would have required a second review under the written
-rule. The independent assessor reads the configuration and the policy directly, confirms the
-difference, and — because the question of whether the temporary change should stand is a
-judgement about risk appetite rather than a mechanical correction — files it as an item
-needing a person, with the observation already written up.
-
-The value is not that a machine fixed anything. It is that a decision the organisation
-drifted into becomes a decision the organisation makes.
-
-## Banking and financial services
-
-Illustrations again. Runink's published work is not in banking; what follows describes the
-mechanism and shows its shape.
-
-### The mechanism, stated generically
-
-Banking runs on written rules applied to flows, under an authority that expects the rule to
-be demonstrable. The same three components appear: a rule, a source of record, and a stream
-of items to which the rule applies. The arrangement evaluates continuously, assesses each
-finding independently, and keeps a record that can be checked end to end.
-
-### Where it lands
-
-**Payment instruction integrity.** A change to a payment destination is governed by a
-verification rule. The rule is either enforced in the system, performed by a person following
-a procedure, or neither. Reconciling written against enforced is precisely the exercise
-described on page 16.
-
-**Third-party and vendor risk.** Contracts carry obligations — on service levels, on
-sub-contracting, on data handling, on notification. Reading the contract against the observed
-relationship is a rules-versus-records comparison at volume.
-
-**Model and decision governance.** Where an automated decision affects a customer,
-supervisors expect the decision to be explainable and the governing controls to be
-demonstrable. An arrangement in which each finding carries its reasoning, its assessor's
-independent score, and the identity of the person who acted, produces that explanation as
-part of doing the work.
-
-**Capital programme oversight.** Banks run large change programmes with the same
-plan-to-books sequence as any capital-intensive organisation, and with more scrutiny.
-
-**Fee and interest calculation.** Rate cards, tiers and product terms applied across a
-portfolio; a reconciliation between what the terms say and what was charged.
-
-### An illustration
-
-Hypothetical. A reconciliation break appears between two internal records of the same set of
-transactions. Historically this break is small and is cleared manually at month end by a team
-that knows the usual causes.
-
-Over three months the break grows. Each month's growth is within the range that has been
-cleared before, so no individual month triggers an escalation.
-
-An assessor watching the signal reports that the sequence — three consecutive months of
-growth in the same direction, in a measure that historically oscillates — has not occurred in
-the available history. It has no view on the cause. It says what is unusual, cites the series,
-and files the item as needing a person, because attributing a cause requires knowledge of
-what changed operationally in that period.
-
-The point of the illustration is the division of labour. The machine is good at noticing that
-a pattern is unusual across a volume no person is reading. It is not good at knowing that the
-team changed the way a class of transactions was recorded in month one. The design puts the
-observation in front of the person who knows that.
-
-## Telecoms
-
-### The mechanism, stated generically
-
-Telecoms operators run a named function — revenue assurance — whose entire purpose is to
-confirm that two records agree. Service delivered against service rated. Service rated against
-service billed. Service billed against payment collected. Interconnect traffic against
-interconnect settlement. Device subsidy granted against contract served. Partner activity
-against partner commission.
-
-Every one of those is the arrangement's core shape: a rule, two sources of record, a stream of
-items, and a difference that matters.
-
-The reason revenue assurance exists as a distinct discipline in telecoms and not in most other
-industries is volume. Telecoms passed the point where inspection was possible decades ago and
-built a function around sampling and reconciliation. That is the shape continuous evaluation
-is built for.
-
-### Where it lands
-
-**Rating and billing reconciliation.** Continuous evaluation at the transaction, rather than
-a monthly sweep against a sample.
-
-**Interconnect and partner settlement.** Two parties' records of the same traffic, compared
-against the agreement that governs the rates.
-
-**Network capital programmes.** Site builds, equipment purchases and rollout programmes carry
-the same plan-to-books sequence, across many small sites rather than a few large ones, which
-makes the sampling problem worse rather than better.
-
-**Consent and data handling.** Obligations about what may be done with subscriber data are
-rules applied to flows, and they are exactly the kind of control that must be demonstrable.
-
-### An illustration
-
-A rating rule for a particular bundle is changed to support a new promotion. The change is
-correct for the promotion and incorrect for a small set of legacy subscribers on a similar
-bundle, whose usage now rates differently.
-
-The affected population is small enough that it does not move any monthly aggregate. No
-threshold fires. A sample of a few hundred accounts is unlikely to contain one.
-
-A continuous comparison between the rating output and the terms of each subscriber's plan
-finds the affected accounts individually, because it is looking at each account rather than at
-the total. The assessor confirms, for a handful of them, that the plan terms and the rated
-output genuinely differ, scores the finding, and the remediation is a configuration correction
-and a re-rate rather than a discovered liability.
-
-## Marketing
-
-Marketing is included as a full example because the shape holds exactly, and because
-marketing spend is one of the few large budgets that is routinely committed continuously and
-reviewed periodically.
-
-### The mechanism, stated generically
-
-Media is bought against a plan, through intermediaries, under an agreement with rates and
-fees, subject to rules about placement, brand safety, data use and consent. Performance is
-reported by parties who have an interest in the report. The commitments are numerous and
-individually small.
-
-That is the arrangement's shape with different nouns: a plan, a rule, a source of record, a
-stream of transactions, and a difference worth knowing about.
-
-### Where it lands
-
-**Agency and platform fee validation.** The agreement sets a fee structure. The billing
-applies one. Reading the first against the second is a rules-versus-records comparison.
-
-**Plan versus commitment.** A media plan is approved. Buys are committed against it. The
-sequence is plan, approve, procure, spend — the same five-stage shape Atlas covers for
-capital, applied to a different budget.
-
-**Consent and data-use obligations.** What may be done with a customer record is governed by
-rules that must be demonstrable. This is a control-monitoring problem, not a marketing
-problem, and it lands on the marketing budget.
-
-**Signal watching.** The assessor that watches signals reads streams of ordinary events and
-reports when the combination is unusual for a given account. Runink's marketing product
-already works this shape over a customer's own data.
-
-### An illustration
-
-A sign that a customer may be about to leave. An account reduces usage slightly, its main
-contact changes, a support case is opened and closed without escalation, and a renewal date
-approaches. Each of these events is unremarkable and each sits in a different system.
-
-An assessor reading the combination reports that this pattern, in this segment, has preceded
-non-renewal before. It says what it saw and where each piece came from. It does not claim to
-know the outcome, and because the decision about what to do — a call, a discount, a service
-review, nothing — turns on the relationship, it is filed as needing a person.
-
-The commercial value is a phone call in week one rather than a win-back campaign in month
-four.
-
 ## Continuous versus periodic: a comparison
 
 Both parties use this framing already, and it is the clearest single summary of what the
@@ -1338,28 +1046,19 @@ different questions, and only one of them is the question the supervisor asked.
 
 ## What it is worth, computed on your own numbers
 
-Every buyer asks what the arrangement returns. Both companies have already said, and say
-again on the last page, that the figures in their marketing material are scenario
-illustrations rather than measured customer results. Declining to quote a number is only
-half an answer, and the half that is easy to give.
-
-This chapter is the other half: the arithmetic, with every input named and every input read
-from the reader's own systems. Nothing below carries a value. A finance function can run it
-and get a figure that is theirs, that they can show their working for, and that will survive
-being asked where it came from.
+Every buyer asks what the arrangement returns, and neither company has a customer measurement
+to quote. What follows is the arithmetic instead: every input named, every input read from the
+reader's own systems, and no value anywhere in it. A finance function can run it and get a
+figure that is theirs and that will survive being asked where it came from.
 
 ### First, be precise about what actually moves
 
-Most calculations in this category quietly credit the software with things it does not do.
-
 Continuous evaluation does not make a bad transaction good. It does not improve a supplier's
-terms, and it does not change the rate at which a challenged invoice is conceded. What it
-moves is **the interval between an event and the notice of it** — and, through that interval,
-which remedies are still available at the moment somebody finally looks.
-
-So the value is the difference between the remedy available at today's moment of detection
-and the remedy available at the earlier one. That is a single quantity, and it can be
-measured rather than asserted.
+terms, and it does not change the rate at which a challenged invoice is conceded. What it moves
+is **the interval between an event and the notice of it** — and, through that interval, which
+remedies are still available at the moment somebody finally looks. So the value is the
+difference between the remedy available at today's moment of detection and the remedy available
+at the earlier one. That is a single quantity, and it can be measured rather than asserted.
 
 ### The four inputs, and where each one is read
 
@@ -1404,13 +1103,9 @@ Sum the first two, subtract the third, and divide the annual result by the month
 That quotient is a payback period. This paper does not state one, because both terms belong
 to the reader and neither of them is knowable from here.
 
-In words: the recoverable exposure is inputs one, two and three read together — for each
-class of finding, what accrues per day, multiplied by the number of days the interval would
-shorten by, multiplied by the share where earlier notice changes the decision, summed across
-classes. The assembly saving is input four, adjusted downwards for the part of an evidence
-request that is not assembly at all: the narrative, the review, the meeting. Only the
-assembly part is at stake. Against both sits the cost side, and because stage one is a
-reading exercise its cost side is bounded accordingly.
+The assembly saving is input four, adjusted downwards for the part of an evidence request that
+is not assembly at all — the narrative, the review, the meeting. Only the assembly part is at
+stake. And because stage one is a reading exercise, its cost side is bounded accordingly.
 
 ### Stage one measures the terms stage two needs
 
@@ -1596,16 +1291,11 @@ published figures — including the amounts that appear in its logistics use cas
 in marketing copy describing an illustrative scenario, and the source material hedges them as
 examples.
 
-Neither company is putting a customer result behind a number in this document, so this
-document contains no numbers of that kind at all. The honest statement is this: the impact of
-this arrangement depends on your transaction volume, your rule set, your current review
-frequency and the shape of your estate. It is measurable, and the place to measure it is your
-own deployment, against your own baseline, over a period you choose.
-
-Abstaining is only half an answer, and the easy half. Page 25 gives the other half: the
-arithmetic itself, with each input named and each one read from your own systems, together
-with the five ways the result can come out wrong. Run it on your figures and the number is
-yours rather than ours, which is the only version of it that will survive being questioned.
+So this document carries no numbers of that kind at all. What the arrangement is worth depends
+on your transaction volume, your rule set, your current review frequency and the shape of your
+estate, and it is measurable in your own deployment against your own baseline. Page 21 is the
+arithmetic for doing that, with each input named, each one read from your own systems, and the
+five ways the result can come out wrong.
 
 Both teams would rather be judged on a measurement you take than on a figure we publish.
 
@@ -1618,21 +1308,14 @@ For Atlas and the capital-oversight side: **logicalleap.io/atlas**.
 For CORE, the data-control properties and the assessor design: **paes@runink.org**,
 **runink.org**.
 
-And a closing reminder of what this paper is, stated so that no reader closes it believing
-more runs than does.
+One half of the joint design is built and can be exercised today: an outside assessment
+platform hands CORE its findings, CORE judges each one and keeps the verdict against it, and
+the platform reads the verdicts back. That half was exercised in automated testing, against a
+real assessor program and the real receiving code, and not yet against a live installation at a
+customer. The other half — CORE reaching into Atlas — is a named way in with nothing written
+behind it, waiting on a written description from Logical Leap's side of how to call Atlas.
 
-One half of the joint design is built and can be exercised. An outside assessment platform
-hands CORE its findings, CORE judges each one and keeps the verdict against it, and the
-platform reads the verdicts back. That half has been proven in automated testing, against a
-real assessor program and the real receiving code. It has not been run against a live
-installation at a customer, so what is claimed for it is argued from tests and from a
-measurement of how much room the stored material takes, rather than from watching real
-traffic.
-
-The other half — CORE reaching into Atlas — is a named way in with nothing written behind
-it, and it waits on a written description from Logical Leap's side of how to call Atlas.
-Everything else in this
-paper is architecture: a shape the two companies believe is right, described in the way a
-drawing describes a building. What the paper is for is to let you tell us whether that shape
-fits your organisation before either party builds further against the other.
+Everything else here is architecture, described in the way a drawing describes a building. What
+the paper is for is to let you tell us whether that shape fits your organisation before either
+party builds further against the other.
 

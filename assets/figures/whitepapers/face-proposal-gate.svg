@@ -3,10 +3,21 @@
   "as a gate rather than a pipeline".
 
   So the double rule is the dominant element, not the stages. It runs the full
-  width of the product and there is exactly one way through it: a ring with a
-  tick, straddling the line, which is a named person. Everything above the line
-  is proposal. Nothing below it happened without somebody putting their name
-  to it.
+  width of the product, and the way through it is a ring with a tick straddling
+  the line: a named person. Everything above the line is proposal; what crosses
+  does so because somebody approved it, and their name goes on the record with
+  what they changed.
+
+  WHAT THIS FIGURE MUST NOT BE CAPTIONED AS. This comment used to read "there is
+  exactly one way through it" and "nothing below it happened without somebody
+  putting their name to it" — a blanket guarantee that the code does not make.
+  REQUIRE_HITL is read by no enforcement code in FACE (compliance_server.go:149
+  says so in as many words), so there is no global gate on everything leaving.
+  What is real is the queue: a drafted action waits, ExecuteAction takes an
+  explicit approval, acts only on a stored action, and records the actor. The
+  drawing is fine — the seam it depicts exists. The sentence was the problem, and
+  it is written here rather than in the paper because a figure gets recaptioned
+  by whoever is nearest, from whatever the file says about itself.
 
   The four steps are drawn WITHOUT arrows between them, and without stage
   boxes. They are told apart by how organised the marks are, which is what the

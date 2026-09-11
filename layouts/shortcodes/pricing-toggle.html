@@ -2,12 +2,12 @@
 <section class="py-4">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-center">
-      <div class="inline-flex rounded-full bg-[#161515] p-1.5 border border-stone-800 shadow-inner relative" role="tablist"
+      <div class="inline-flex rounded-full bg-sunk p-1.5 border border-stone-800 shadow-inner relative" role="tablist"
         aria-label="Pricing toggle">
-        <div class="pricing-slider absolute top-1.5 bottom-1.5 left-0 rounded-full bg-[#ea580c] shadow-md transition-all duration-300 pointer-events-none" style="width: 0px; transform: translateX(0);"></div>
+        <div class="pricing-slider absolute top-1.5 bottom-1.5 left-0 rounded-full bg-signal-fill shadow-md transition-all duration-300 pointer-events-none" style="width: 0px; transform: translateX(0);"></div>
         {{ range $i, $opt := $json.options }}
         <button type="button"
-          class="toggle-btn relative z-10 px-6 py-2.5 text-xs font-black uppercase tracking-[0.15em] text-stone-500 rounded-full transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ea580c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#161515]"
+          class="toggle-btn relative z-10 px-6 py-2.5 text-xs font-black uppercase tracking-[0.15em] text-stone-500 rounded-full transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-sunk"
           data-value="{{ $opt.value }}" role="tab" aria-selected="false">
           {{ $opt.label }}
         </button>
@@ -35,7 +35,7 @@
         btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
 
         // Text Colors
-        btn.classList.toggle('text-[#F5F1E8]', isActive);
+        btn.classList.toggle('text-on-fill', isActive);
         btn.classList.toggle('text-stone-500', !isActive);
         btn.classList.toggle('hover:text-stone-300', !isActive);
 

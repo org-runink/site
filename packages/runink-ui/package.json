@@ -1,0 +1,53 @@
+{
+  "name": "@runink/ui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runink design system — React components built on the site's Tailwind token preset, generated from DESIGN.md.",
+  "license": "MIT",
+  "type": "module",
+  "module": "dist/index.es.js",
+  "main": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js"
+    },
+    "./styles.css": "./dist/runink-ui.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "gen:tokens": "node scripts/gen-tokens.mjs",
+    "extract:face": "node scripts/extract-face-ramp.mjs",
+    "check:face": "node scripts/check-face-parity.mjs",
+    "check:alpha": "node scripts/check-alpha-utilities.mjs",
+    "check": "npm run check:face && npm run check:contrast && npm run check:alpha && npm run check:usage && npm run check:collapsed && npm run check:previews",
+    "check:collapsed": "node scripts/check-collapsed-states.mjs",
+    "build:types": "tsc -p tsconfig.json",
+    "build:js": "esbuild src/index.ts --bundle --format=esm --jsx=automatic --external:react --external:react-dom --external:react/jsx-runtime --outfile=dist/index.es.js",
+    "build:css": "tailwindcss -i src/styles.css -o dist/runink-ui.css",
+    "build": "npm run gen:tokens && npm run build:types && npm run build:js && npm run build:css",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "check:previews": "tsc -p tsconfig.previews.json",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "check:usage": "node scripts/check-usage.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "autoprefixer": "^10.4.16",
+    "esbuild": "^0.28.0",
+    "js-yaml": "^4.1.0",
+    "postcss": "^8.4.31",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "$comment": [
+    "The web↔FACE mapping, and the only place the rename lives.",
+    "",
+    "`face` is the exact Dart field name in runink_theme.dart, so drift is detectable",
+    "(check-face-parity.mjs). `web` is a SEMANTIC ROLE — hues are deliberately not in",
+    "the name, so a palette re-tune does not force a rename across 54 components.",
+    "",
+    "`positions` is the load-bearing field. Each entry becomes a key in exactly those",
+    "Tailwind theme palettes and no others, which is what makes misuse fail to compile",
+    "rather than fail to be legible: a fill has no textColor entry, so `text-fill-success`",
+    "does not exist. FACE enforces the same rule with a test suite; the web enforces it",
+    "with the type of the utility.",
+    "",
+    "Tiers are the WCAG floors, which is why they are stable:",
+    "  fill — no foreground position at all. Below 3:1 as ink on its own surfaces.",
+    "  mark — ≥3:1. Borders, rings, icons. Never text.",
+    "  ink  — ≥4.5:1 as text on all four surfaces of its ramp."
+  ],
+
+  "surfaces": [
+    {
+      "web": "canvas",
+      "face": "backgroundDark",
+      "tier": "fill",
+      "positions": ["backgroundColor", "gradientColorStops", "ringOffsetColor"],
+      "why": "The page. Warm near-black on console, warm paper on sheet. The FACE name is misleading on the web (it is *light* in the sheet ramp) which is exactly why the web name is a role."
+    },
+    {
+      "web": "surface",
+      "face": "surfaceDark",
+      "tier": "fill",
+      "positions": ["backgroundColor", "gradientColorStops", "ringOffsetColor"],
+      "why": "The default card. NOTE: in the sheet ramp this goes *lighter* than the canvas (#FFFDFA on #FBF7F1) while surface-raised and surface-well go darker — so these four are NOT a depth ladder and must not be renamed raised-1/2/3."
+    },
+    {
+      "web": "surface-raised",
+      "face": "surfaceElevated",
+      "tier": "fill",
+      "positions": ["backgroundColor", "gradientColorStops", "ringOffsetColor"],
+      "why": "The warm/tan panel. FACE's GlassCard fill."
+    },
+    {
+      "web": "surface-well",
+      "face": "surfaceHighlight",
+      "tier": "fill",
+      "positions": ["backgroundColor", "gradientColorStops", "ringOffsetColor"],
+      "why": "The most-contrasted surface."
+    },
+    {
+      "web": "hairline",
+      "face": "surfaceHighlight",
+      "tier": "separator",
+      "positions": ["borderColor", "divideColor", "outlineColor"],
+      "why": "surfaceHighlight under a second name because the border rule differs from the surface rule. Valid over canvas/surface/surface-raised only — over surface-well it is the same value, so the border vanishes. Use `edge` there.",
+      "notOver": ["surface-well"]
+    },
+    {
+      "web": "edge",
+      "derived": "ink @ 0.40 console / 0.55 sheet",
+      "tier": "mark",
+      "positions": ["borderColor", "divideColor", "ringColor", "outlineColor"],
+      "why": "FACE has no ≥3:1 boundary token; origin/main did (--rk-rule-strong). Expressed as an alpha on textPrimary rather than a new hex, so it survives a FACE re-tune. Measured 3.41/3.38/3.31/3.15 console, 3.46/3.50/3.40/3.25 sheet."
+    }
+  ],
+
+  "inks": [
+    {
+      "web": "primary",
+      "face": "textPrimary",
+      "tier": "ink",
+      "positions": ["textColor", "borderColor", "fill", "stroke", "caretColor", "textDecorationColor"],
+      "why": "Titles and body. `text-primary` is a TEXT ROLE — there is no `primary` colour family any more and one must not be reintroduced."
+    },
+    {
+      "web": "secondary",
+      "face": "textSecondary",
+      "tier": "ink",
+      "positions": ["textColor", "placeholderColor"],
+      "bakedAlpha": true,
+      "why": "Labels and secondary text. Carries a real alpha that DIFFERS per ramp on purpose (0x99 console, 0xB3 sheet) — dark ink on a light ground needs more opacity for the same ratio. Because the alpha is baked, the Tailwind /NN modifier does nothing useful here; check-usage.mjs bans it."
+    },
+    {
+      "web": "ink-accent",
+      "face": "technicalOrangeLight",
+      "tier": "ink",
+      "positions": ["textColor", "borderColor", "ringColor", "fill", "stroke"],
+      "why": "The compliant accent ink. Its SHEET value (#8B4024) is DARK — this token is not 'a lighter orange'. Not inkable by on-accent."
+    },
+    {
+      "web": "ink-success",
+      "face": "oliveInk",
+      "tier": "ink",
+      "positions": ["textColor", "borderColor", "ringColor", "fill", "stroke"],
+      "why": "The ONLY olive that may carry text or a small mark."
+    },
+    {
+      "web": "ink-provenance",
+      "face": "wineProvenanceLight",
+      "tier": "ink",
+      "positions": ["textColor", "borderColor", "ringColor", "fill", "stroke"],
+      "why": "The provenance hue as ink — AI-generated tag, BLOCKED verdict, anomaly count."
+    },
+    {
+      "web": "ink-ice",
+      "face": "markIce",
+      "tier": "ink",
+      "positions": ["textColor", "borderColor", "fill", "stroke"],
+      "why": "One of FACE's two cool mark families."
+    },
+    {
+      "web": "ink-violet",
+      "face": "markViolet",
+      "tier": "ink",
+      "positions": ["textColor", "borderColor", "fill", "stroke"],
+      "why": "The second cool mark family."
+    }
+  ],
+
+  "fills": [
+    {
+      "web": "fill-accent",
+      "face": "technicalOrange",
+      "tier": "mark",
+      "positions": ["backgroundColor", "borderColor", "ringColor", "outlineColor", "fill", "stroke", "gradientColorStops", "boxShadowColor"],
+      "pairInk": "on-accent",
+      "wash": 0.15,
+      "why": "Primary accent (terracotta). A mark, NOT text: in the sheet ramp it measures 3.62/3.81/3.39/3.02 on the four surfaces, under the 4.5 text floor. Focus rings over surface-well in the sheet ramp sit at 3.02 — zero headroom, so pair with a 1px ink offset."
+    },
+    {
+      "web": "fill-accent-deep",
+      "face": "technicalOrangeMuted",
+      "tier": "fill",
+      "positions": ["backgroundColor", "gradientColorStops", "boxShadowColor"],
+      "neverInkOn": ["console"],
+      "wash": 0.15,
+      "why": "A FILL. Never ink — 2.97/2.69/2.55/2.20 as a foreground on the console surfaces, below even the 3:1 mark floor. Keeps its own wash tone so a critical/high severity chip stays distinct from an accent-washed one.",
+      "invariant": true
+    },
+    {
+      "web": "accent-lift",
+      "face": "brandGradientTop",
+      "tier": "fill",
+      "positions": ["gradientColorStops"],
+      "why": "Top stop of the brand gradient, split off from technicalOrangeLight on purpose so the ink could darken without flattening the gradient."
+    },
+    {
+      "web": "fill-success",
+      "face": "oliveSuccess",
+      "tier": "fill",
+      "positions": ["backgroundColor", "gradientColorStops", "boxShadowColor"],
+      "pairInk": "on-success",
+      "wash": 0.15,
+      "why": "Success (olive) — a fill. Sets the wash-alpha ceiling: the light olive pair measures 4.64 at 0.15 and 4.44 at 0.18.",
+      "invariant": true
+    },
+    {
+      "web": "fill-success-glow",
+      "face": "oliveGlow",
+      "tier": "fill",
+      "positions": ["backgroundColor", "gradientColorStops", "boxShadowColor"],
+      "why": "Info/secondary olive; the default GlassCard glow. A fill."
+    },
+    {
+      "web": "fill-provenance",
+      "face": "wineProvenance",
+      "tier": "fill",
+      "positions": ["backgroundColor", "gradientColorStops", "boxShadowColor"],
+      "pairInk": "on-provenance",
+      "wash": 0.15,
+      "why": "Secondary (wine) — a fill. FACE is explicit that Reject is wine, not red; do not respecify it as red.",
+      "invariant": true
+    }
+  ],
+
+  "onFills": [
+    {
+      "web": "on-accent",
+      "face": "onAccent",
+      "tier": "ink",
+      "positions": ["textColor", "fill"],
+      "validOn": ["fill-accent"],
+      "why": "The ink for anything ON a technicalOrange fill. Near-black in BOTH ramps — the one token that does not flip. NOT valid on ink-accent (2.44).",
+      "invariant": true
+    },
+    {
+      "web": "on-success",
+      "const": "#FFF2EBE3",
+      "faceConst": "RuninkColors.onOlive",
+      "tier": "ink",
+      "positions": ["textColor", "fill"],
+      "validOn": ["fill-success"],
+      "why": "Solid olive fill + family ink would be 1.00:1 in the sheet ramp (oliveInk == oliveSuccess there). This closes that. 6.17 in both ramps. A plain const because the fill it inks does not flip."
+    },
+    {
+      "web": "on-provenance",
+      "const": "#FFF2EBE3",
+      "faceConst": "ColorScheme.onSecondary",
+      "tier": "ink",
+      "positions": ["textColor", "fill"],
+      "validOn": ["fill-provenance"],
+      "why": "8.02 on the wine fill."
+    }
+  ],
+
+  "severity": {
+    "$comment": [
+      "Its own family, disjoint from every brand name. FACE: 'do not colour a status",
+      "with accent/olive/wine.' There is deliberately NO solid severity fill — all five",
+      "bands share one wash, because a wash at 0.15 carries only 15% of the difference",
+      "between two tones, which is how five 'different' chips once ended up 1.047:1 apart.",
+      "",
+      "Colour is NOT sufficient here and the component API must enforce it: adjacent bands",
+      "cannot be pushed past ~1.17:1 in this ramp, so every severity indicator also carries",
+      "a glyph or the word. A bare text-ink-severity-* span is a usage-checker finding."
+    ],
+    "wash": {
+      "web": "fill-severity",
+      "face": "severityWash",
+      "tier": "fill",
+      "positions": ["backgroundColor"],
+      "why": "A FILL. Never ink. The ONE shared ground for every severity chip."
+    },
+    "bands": [
+      { "web": "ink-severity-critical", "face": "severityCritical", "tier": "ink", "positions": ["textColor", "fill", "stroke"] },
+      { "web": "ink-severity-high", "face": "severityHigh", "tier": "ink", "positions": ["textColor", "fill", "stroke"] },
+      { "web": "ink-severity-medium", "face": "severityMedium", "tier": "ink", "positions": ["textColor", "fill", "stroke"] },
+      { "web": "ink-severity-low", "face": "severityLow", "tier": "ink", "positions": ["textColor", "fill", "stroke"] },
+      { "web": "ink-severity-ok", "face": "severityOk", "tier": "ink", "positions": ["textColor", "fill", "stroke"] }
+    ],
+    "knownCollisions": [
+      "console severityHigh is dE 0.045 from ink-accent",
+      "console severityCritical is dE 0.058 from ink-provenance",
+      "A severity mark beside an accent or provenance mark will not read as a different family on hue alone. The glyph disambiguates."
+    ]
+  }
+}

@@ -1,18 +1,19 @@
 {{ define "main" }}
-{{- /* Legend definitions for the standing marks. Each says what the MARK
-       means as a matter of the document's method. */ -}}
-{{- $legend := dict
-  "runs"         "Built, and exercised end to end in automated testing."
-  "drawn"        "Architecture. The paper marks where this line falls, on the pages it names."
-  "hypothetical" "An illustration of the mechanism, not an account of an event."
-  "first-party"  "Runink's own use of the product, offered as that and not as a customer case study."
-  "self-declared" "Stated in the paper's own words, with controls mapped and self-declared."
-  "not-measured" "The paper puts no number here. It says where the number is measured instead."
--}}
-{{- $used := slice -}}
-{{- range .Params.register -}}
-  {{- with .mark -}}{{- if not (in $used .) -}}{{- $used = $used | append . -}}{{- end -}}{{- end -}}
-{{- end -}}
+{{- /* The standing-mark legend used to live here — a dict defining `runs`,
+       `drawn`, `hypothetical`, `first-party`, `self-declared` and
+       `not-measured`, collected off the register and rendered as a key above
+       the contents rail.
+
+       It is gone because the marks are gone (CONTENT.md rule 4, inverted
+       11 September 2026). The papers no longer label the footing of a claim;
+       they no longer carry claims that need labelling. Speculative chapters
+       were deleted rather than badged, and the two footings worth stating —
+       this is our own account, this is not an external audit — are now said in
+       the documents' own sentences, which is where they read better anyway.
+
+       Deleted rather than left guarded. With no `mark:` key in any front
+       matter the block emitted nothing, and a template that renders a system
+       the content no longer uses is a trap for whoever reads it next. */ -}}
 
 <div class="wp">
   <header class="wp-hero">
@@ -37,19 +38,6 @@
       </div>
     </div>
 
-    {{ with $used }}
-    <div class="wp-legend">
-      <p class="wp-legend-title wp-util">How this document marks its own claims</p>
-      <ul class="wp-legend-list">
-        {{ range . }}
-        <li>
-          <span class="wp-mark" data-mark="{{ . }}"><dfn>{{ . | replaceRE "-" " " }}</dfn></span>
-          <span>{{ index $legend . }}</span>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
   </header>
 
   <div class="wp-body">
@@ -74,9 +62,6 @@
             <a href="#{{ anchorize .title }}">
               <span class="wp-reg-page" aria-hidden="true">{{ .page }}{{ with .page_end }}&ndash;{{ . }}{{ end }}</span>
               <span class="wp-reg-title">{{ .title }}<span class="wp-sr">, page {{ .page }}{{ with .page_end }} to {{ . }}{{ end }}</span></span>
-              {{ with .mark }}
-              <span class="wp-mark wp-reg-mark" data-mark="{{ . }}">{{ . | replaceRE "-" " " }}</span>
-              {{ end }}
             </a>
           </li>
           {{ end }}

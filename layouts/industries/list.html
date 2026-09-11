@@ -8,8 +8,15 @@
   one from here is not a change of surface.
 */}}
 {{ define "main" }}
-{{ $accent := .Params.accent | default "#ea580c" }}
-<div class="ind" style="--accent: {{ $accent }};">
+{{/* The section page has no category of its own, so it takes the site's single
+     accent — as a token, so it follows the ground rather than freezing one
+     literal orange. Each industry in the list below re-binds --rk-accent for
+     itself with a .rk-cat-* class, which wins over this because it is set on
+     the element rather than inherited from it.
+
+     safeCSS is required, not cosmetic: Go's style-attribute filter rejects
+     parentheses and turns an unmarked var() into the literal ZgotmplZ. */}}
+<div class="ind" style="--rk-accent: {{ "var(--rk-signal)" | safeCSS }};">
   {{ partial "industries-style.html" . }}
 
   <div class="ind-wrap">
@@ -28,7 +35,7 @@
       </div>
       <ul class="ind-grid2">
         {{ range .Pages.ByWeight }}
-        <li class="ind-accent" style="--accent: {{ .Params.accent | default $accent }};">
+        <li class="ind-accent{{ with .Params.category }} rk-cat-{{ . }}{{ end }}">
           <a class="ind-pick" href="{{ .RelPermalink }}">
             <h2>{{ .Title }}</h2>
             <p>{{ .Params.card | default .Params.deck }}</p>

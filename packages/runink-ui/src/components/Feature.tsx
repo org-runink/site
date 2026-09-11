@@ -1,0 +1,166 @@
+import { cx } from '../lib/cx';
+import { safeHref } from '../lib/safeHref';
+import { Button } from './Button';
+
+/**
+ * Accent for the feature's eyebrow pill. The Hugo shortcode took a free-form
+ * `badgeColor` hex (defaulting to `#5573df`, the vendor theme's indigo — a hue this
+ * palette has nothing in); this fixes it to a closed set of tones so the pill and its
+ * glow are token-driven.
+ *
+ * Five rungs, loudest last: `primary` is the quiet accent wash, `sage` the pale
+ * olive wash, `green` the full-strength olive fill under its glow, `orange` the
+ * solid accent, and `tan` the warm neutral well.
+ */
+export type FeatureBadgeTone = 'primary' | 'sage' | 'green' | 'orange' | 'tan';
+
+/*
+ * Two rules hold this map together.
+ *
+ * A SOLID FILL CARRIES ITS PAIRED INK. `green` and `orange` used to read
+ * `bg-fill-success text-primary` / `bg-fill-accent text-primary`, and `primary`
+ * inverts between grounds while both fills have a single value — so the pill was
+ * light-on-olive on console and dark-on-olive (2.5:1) on the sheet. `on-success`
+ * and `on-accent` exist precisely to be the fixed ink on a fixed fill.
+ *
+ * TWO OLIVES, TWO RUNGS. `sage` and `green` were the same colour, differing only
+ * by `shadow-lg` — a size, not a hue. The palette has one olive ink and one olive
+ * fill, so the honest distinction is the rung: `sage` takes the 15% wash with
+ * `ink-success` (the pairing `Badge`'s `sage` also carries, so the two agree), and
+ * `green` takes the full-strength fill, which is where `remap.json` sends the retired
+ * `bg-brand-green`.
+ */
+const BADGE_TONES: Record<FeatureBadgeTone, string> = {
+  primary: 'bg-fill-accent-wash text-ink-accent shadow-lg',
+  sage: 'bg-fill-success-wash text-ink-success shadow-lg',
+  green: 'bg-fill-success text-on-success shadow-glow-success',
+  orange: 'bg-fill-accent text-on-accent',
+  tan: 'bg-surface-well text-primary shadow-lg',
+};
+
+export interface FeatureProps {
+  /** Feature heading. */
+  title: string;
+  /** A paragraph of supporting copy under the heading. */
+  description: string;
+  /** Eyebrow pill above the heading. Omit it and no pill renders. */
+  badge?: string;
+  /** Accent for the pill and its glow. Defaults to `primary`. */
+  badgeTone?: FeatureBadgeTone;
+  /** Screenshot or illustration for the other half of the row. */
+  image?: string;
+  /** Alt text for `image`. Defaults to `title`, as the shortcode did. */
+  imageAlt?: string;
+  /**
+   * Checked capability list between the copy and the button. The Hugo shortcode
+   * took these as a comma-separated string; an array is the honest shape here.
+   */
+  features?: string[];
+  /** Call-to-action label. Defaults to `Learn More`. */
+  buttonText?: string;
+  /** Call-to-action target. Defaults to `#`, which is also where a rejected URL lands. */
+  buttonLink?: string;
+  /**
+   * Which half the image occupies. Defaults to `right`. Alternate it down a page
+   * of features to get the zig-zag the site uses.
+   */
+  imagePosition?: 'left' | 'right';
+  className?: string;
+}
+
+/**
+ * A full-width feature row: copy column (pill, heading, checklist, CTA) beside an image.
+ *
+ * The workhorse of the long-scroll product pages, designed to be stacked inside
+ * `FeaturesSection`, which supplies the generous `space-y-32` rhythm between
+ * rows. Alternate `imagePosition` between consecutive rows for the zig-zag.
+ *
+ * Single column below `lg`, where the image always follows the copy regardless of
+ * `imagePosition` — a left-hand image only makes sense once the row is two
+ * columns wide.
+ *
+ * Paints no panel of its own, so it takes whatever `Surface` is behind it and follows
+ * that ground.
+ *
+ * @example
+ * <Feature
+ *   badge="IoT-Edge Telemetry"
+ *   badgeTone="sage"
+ *   title="The Autonomous Cold Chain Guard"
+ *   description="Static temperature monitors register failures after they occur. The Cold Chain Sentinel subscribes to live container telematics and reroutes cargo before it spoils."
+ *   image="/images/face/posture.png"
+ *   features={[
+ *     'Real-time subscriptions to reefer telematics',
+ *     'Predictive compressor degradation alerts',
+ *     'Automatic reroute to alternative port power-plugs',
+ *   ]}
+ *   buttonText="Read the use case"
+ *   buttonLink="/use-cases/cold-chain-safety/"
+ *   imagePosition="left"
+ * />
+ */
+export function Feature({
+  title,
+  description,
+  badge,
+  badgeTone = 'primary',
+  image,
+  imageAlt,
+  features,
+  buttonText = 'Learn More',
+  buttonLink = '#',
+  imagePosition = 'right',
+  className,
+}: FeatureProps) {
+  const imageLeft = imagePosition === 'left';
+
+  const picture = image ? (
+    <div className={imageLeft ? 'order-2 lg:order-1' : undefined}>
+      <img src={image} alt={imageAlt ?? title} className="w-full rounded-chip shadow-xl" />
+    </div>
+  ) : null;
+
+  return (
+    <div className={cx('grid items-center gap-12 lg:grid-cols-2', className)}>
+      {imageLeft && picture}
+
+      <div className={cx('space-y-6', imageLeft && 'order-1 lg:order-2')}>
+        {badge && (
+          <div
+            className={cx('inline-block rounded-full px-4 py-2 font-medium', BADGE_TONES[badgeTone])}
+          >
+            {badge}
+          </div>
+        )}
+        <h3 className="text-2xl font-bold text-primary md:text-3xl">{title}</h3>
+        <p className="text-lg text-secondary">{description}</p>
+        {features && features.length > 0 && (
+          <ul className="space-y-4">
+            {features.map((feature) => (
+              <li key={feature} className="flex items-center space-x-3">
+                <svg
+                  className="h-5 w-5 flex-shrink-0 text-ink-accent"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  />
+                </svg>
+                <span className="text-primary">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        <Button variant="secondary" href={safeHref(buttonLink) ?? '#'} className="rounded-full">
+          {buttonText}
+        </Button>
+      </div>
+
+      {!imageLeft && picture}
+    </div>
+  );
+}

@@ -6,10 +6,24 @@
    inside .wp, and no .wp rule leaks out of it, so there is no specificity
    fight between the section and the site.
 
-   Palette is derived entirely from DESIGN.md. It leads with the sage/olive
-   ramp (brand_accents.green / dark_green / light_sage), which the rest of the
-   site under-uses, and keeps dark_orange for links so the section still reads
-   as Runink.
+   PROVENANCE, CORRECTED. This used to say "Palette is derived entirely from
+   DESIGN.md" and cite token names — brand_accents.green / dark_green /
+   light_sage, and eleven more against the per-value comments below. **Those
+   names no longer exist.** They belonged to the YAML frontmatter of the
+   bot-authored DESIGN.md (da8c7f1), which b6024cb deleted when it replaced that
+   file with the hand-written visual identity; every one returns zero hits today.
+   The per-value citations further down are the same vintage and are equally
+   dangling — they are left in place only because they still record WHICH value
+   was chosen and roughly why, which is worth more than a blank line.
+
+   The values themselves are literals and are meant to be, for now: DESIGN.md §8
+   and §11 both record that repointing this stylesheet at the tokens is the next
+   pass and that the identity commit deliberately did not touch it. So the values
+   are not wrong — the claim that they were derived was. Do not resurrect a token
+   name from git history; that vocabulary was deleted, not renamed.
+
+   It leads with the sage/olive ramp, which the rest of the site under-uses, and
+   keeps the deep orange for links so the section still reads as Runink.
 
    Type is the Fira superfamily, self-hosted from assets/fonts. No request
    leaves the origin to render these pages.
@@ -980,6 +994,35 @@
 .wp-card:hover .wp-card-read { color: #f97a3d; }
 
 /* a short note under the list — used for the localised index pages */
+/* The band that points at the shorter pieces. It exists because the header no
+   longer carries a "Blog" entry next to "Whitepapers" — the two read as the
+   same thing — so this page and the posts themselves are what keep /blog/
+   reachable. It sits between the paper cards and the language note, so it
+   carries only top padding; .wp-note below still owns the bottom of the page. */
+.wp-more {
+  /* 72rem, not the 78rem .wp-note uses: this band sits directly under the paper
+     cards and has to start on the same vertical line as they do. .wp-list is
+     72rem, and at a wide viewport the 6rem difference is visible as a step. */
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+.wp-more-label {
+  color: var(--on-deck-2);
+  margin: 0 0 0.5rem;
+}
+.wp-more-text {
+  color: var(--on-deck-2);
+  max-width: 56ch;
+  line-height: 1.65;
+  margin: 0 0 0.75rem;
+}
+.wp-more-link {
+  color: var(--link-deck);
+  text-decoration: none;
+}
+.wp-more-link:hover { text-decoration: underline; }
+
 .wp-note {
   max-width: 78rem;
   margin: 0 auto;

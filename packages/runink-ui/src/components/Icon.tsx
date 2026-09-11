@@ -1,0 +1,320 @@
+import type { ReactElement, SVGProps } from 'react';
+import { cx } from '../lib/cx';
+
+/**
+ * Every icon the Runink design system ships, ported 1:1 from the Hugo
+ * `partials/icons.html` registry. Aliases from that registry are preserved so
+ * content written against either spelling keeps working.
+ */
+export type IconName =
+  | 'academic-cap'
+  | 'adjustments-vertical'
+  | 'analytics'
+  | 'arrow-path'
+  | 'arrow-right'
+  | 'attribution'
+  | 'bolt'
+  | 'book-open'
+  | 'calendar'
+  | 'chart'
+  | 'chart-bar'
+  | 'check'
+  | 'check-circle'
+  | 'chevron-down'
+  | 'circle-stack'
+  | 'clipboard-document-list'
+  | 'clipboard-list'
+  | 'code-bracket-square'
+  | 'collection'
+  | 'command-line'
+  | 'cpu-chip'
+  | 'cube-transparent'
+  | 'currency-dollar'
+  | 'eye'
+  | 'globe-alt'
+  | 'hand-thumb-up'
+  | 'light-bulb'
+  | 'lightbulb'
+  | 'lock-stack'
+  | 'magnifying-glass'
+  | 'map'
+  | 'menu'
+  | 'pencil'
+  | 'puzzle-piece'
+  | 'rocket-launch'
+  | 'scale'
+  | 'search'
+  | 'server-stack'
+  | 'shield-check'
+  | 'tag'
+  | 'user'
+  | 'user-group'
+  | 'users';
+
+const S = {
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+  strokeWidth: 2,
+} as const;
+
+/** Canonical name for each alias pair in the Hugo registry. */
+const ALIASES: Partial<Record<IconName, IconName>> = {
+  lightbulb: 'light-bulb',
+  users: 'user-group',
+  analytics: 'chart-bar',
+  chart: 'chart-bar',
+  check: 'check-circle',
+  search: 'magnifying-glass',
+  'clipboard-list': 'clipboard-document-list',
+};
+
+const PATHS: Record<string, ReactElement> = {
+  'light-bulb': (
+    <>
+      <path
+        {...S}
+        d="M12 2.25a7.5 7.5 0 00-3.75 14.062V18a1.5 1.5 0 001.5 1.5h4.5A1.5 1.5 0 0015.75 18v-1.688A7.5 7.5 0 0012 2.25z"
+      />
+      <path {...S} d="M9.75 21h4.5" />
+    </>
+  ),
+  'user-group': (
+    <>
+      <path {...S} d="M15 9a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path {...S} d="M3 19.5a6 6 0 0118 0" />
+    </>
+  ),
+  eye: (
+    <>
+      <path {...S} d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12s-3.75 6.75-9.75 6.75S2.25 12 2.25 12z" />
+      <path {...S} d="M15 12a3 3 0 10-6 0 3 3 0 006 0z" />
+    </>
+  ),
+  'chart-bar': <path {...S} d="M3 19.5h18M6 16.5v-6m6 6v-10.5m6 10.5v-3.75" />,
+  tag: (
+    <>
+      <path
+        {...S}
+        d="M9.568 3.75H6.75a3 3 0 00-3 3v2.818a3 3 0 00.879 2.121l7.364 7.364a3 3 0 004.243 0l2.121-2.121a3 3 0 000-4.243L11.69 4.629A3 3 0 009.568 3.75z"
+      />
+      <path {...S} d="M7.5 7.5h.007" />
+    </>
+  ),
+  'check-circle': (
+    <>
+      <circle cx="12" cy="12" r="9" strokeWidth={2} />
+      <path {...S} d="M8.25 12.75l2.25 2.25 5.25-5.25" />
+    </>
+  ),
+  'magnifying-glass': (
+    <>
+      <circle cx="10.5" cy="10.5" r="6" strokeWidth={2} />
+      <path {...S} d="M21 21l-4.5-4.5" />
+    </>
+  ),
+  'globe-alt': (
+    <>
+      <circle cx="12" cy="12" r="9" strokeWidth={2} />
+      <path {...S} d="M3 12h18M12 3c3 3.75 3 13.5 0 18M8.25 5.25a13.5 13.5 0 017.5 0M15.75 18.75a13.5 13.5 0 01-7.5 0" />
+    </>
+  ),
+  'shield-check': (
+    <>
+      <path {...S} d="M12 3.75l7.5 2.25v6.75A9.75 9.75 0 0112 21.75 9.75 9.75 0 014.5 12.75V6l7.5-2.25z" />
+      <path {...S} d="M9.75 12.75l1.5 1.5 3.5-3.5" />
+    </>
+  ),
+  'clipboard-document-list': (
+    <>
+      <path
+        {...S}
+        d="M9 4.5h6m-5.25-1.5h4.5A1.5 1.5 0 0115.75 4.5H18a1.5 1.5 0 011.5 1.5v12A1.5 1.5 0 0118 19.5H6a1.5 1.5 0 01-1.5-1.5v-12A1.5 1.5 0 016 4.5h2.25A1.5 1.5 0 019 3z"
+      />
+      <path {...S} d="M9 9.75h6M9 12.75h6M9 15.75h3" />
+    </>
+  ),
+  'cpu-chip': (
+    <>
+      <rect x="7.5" y="7.5" width="9" height="9" rx="2" strokeWidth={2} />
+      <path
+        {...S}
+        d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M5.25 5.25l2.121 2.121M16.629 16.629l2.121 2.121M18.75 5.25l-2.121 2.121M7.371 16.629l-2.121 2.121"
+      />
+    </>
+  ),
+  'cube-transparent': (
+    <>
+      <path {...S} d="M12 3l7.5 4.5V16.5L12 21 4.5 16.5V7.5L12 3z" />
+      <path {...S} d="M12 3v18M4.5 7.5l7.5 4.5 7.5-4.5" />
+    </>
+  ),
+  'rocket-launch': (
+    <>
+      <path {...S} d="M14.25 3.75c3 1.5 6 5.25 4.5 9.75-2.25-1.5-4.5-1.5-6.75 0-1.5-2.25-1.5-4.5 0-6.75z" />
+      <path {...S} d="M9.75 14.25L6 18l1.5-3.75 2.25-2.25M9 21l3.75-3.75" />
+    </>
+  ),
+  'arrow-path': (
+    <>
+      <path {...S} d="M3 12a9 9 0 0115.364-6M21 12a9 9 0 01-15.364 6" />
+      <path {...S} d="M7.5 6.75h4.5V2.25M16.5 17.25H12v4.5" />
+    </>
+  ),
+  'code-bracket-square': (
+    <>
+      <rect x="3.75" y="3.75" width="16.5" height="16.5" rx="2" strokeWidth={2} />
+      <path {...S} d="M10 9l-2 3 2 3M14 9l2 3-2 3" />
+    </>
+  ),
+  'server-stack': (
+    <>
+      <rect x="3.75" y="4.5" width="16.5" height="4.5" rx="1.5" strokeWidth={2} />
+      <rect x="3.75" y="9.75" width="16.5" height="4.5" rx="1.5" strokeWidth={2} />
+      <rect x="3.75" y="15" width="16.5" height="4.5" rx="1.5" strokeWidth={2} />
+      <path {...S} d="M6.75 6.75h.01M6.75 12h.01M6.75 17.25h.01" />
+    </>
+  ),
+  'circle-stack': (
+    <>
+      <ellipse cx="12" cy="6" rx="7.5" ry="3" strokeWidth={2} />
+      <path {...S} d="M4.5 9c0 1.657 3.357 3 7.5 3s7.5-1.343 7.5-3M4.5 12c0 1.657 3.357 3 7.5 3s7.5-1.343 7.5-3" />
+    </>
+  ),
+  'lock-stack': (
+    <>
+      <rect x="5.25" y="10.5" width="13.5" height="9" rx="2" strokeWidth={2} />
+      <path {...S} d="M8.25 10.5V8.25a3.75 3.75 0 117.5 0V10.5" />
+    </>
+  ),
+  collection: (
+    <>
+      <rect x="3.75" y="4.5" width="6.5" height="6.5" rx="1.5" strokeWidth={2} />
+      <rect x="13.75" y="4.5" width="6.5" height="6.5" rx="1.5" strokeWidth={2} />
+      <rect x="3.75" y="13" width="6.5" height="6.5" rx="1.5" strokeWidth={2} />
+      <rect x="13.75" y="13" width="6.5" height="6.5" rx="1.5" strokeWidth={2} />
+    </>
+  ),
+  map: (
+    <>
+      <path
+        {...S}
+        d="M9 20l-5.447-2.724A2 2 0 013 15.447V5.618A2 2 0 014.447 3.6L9 5.5l6-2 5.447 2.724A2 2 0 0121 7.382v9.829a2 2 0 01-1.447 1.918L15 17.5l-6 2z"
+      />
+      <path {...S} d="M9 5.5v14M15 3.5v14" />
+    </>
+  ),
+  pencil: (
+    <>
+      <path {...S} d="M16.862 3.487l3.651 3.651a1.5 1.5 0 010 2.121l-9.9 9.9L6 20l.841-4.613 9.9-9.9a1.5 1.5 0 012.121 0z" />
+      <path {...S} d="M15.75 5.25l3 3" />
+    </>
+  ),
+  'adjustments-vertical': (
+    <path {...S} d="M6 3v18M6 8.5h4.5M6 8.5H1.5M12 3v18M12 15.5h4.5M12 15.5H7.5M18 3v18M18 11.5h4.5M18 11.5h-4.5" />
+  ),
+  scale: <path {...S} d="M12 3v18M6 6l-3 6h6l-3-6zm12 0l-3 6h6l-3-6zM6 21h12" />,
+  'command-line': (
+    <>
+      <path {...S} d="M4.5 6.75h15a1.5 1.5 0 011.5 1.5v7.5a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-7.5a1.5 1.5 0 011.5-1.5z" />
+      <path {...S} d="M7.5 12l3 3M10.5 9l-3 3M13.5 15h3" />
+    </>
+  ),
+  'hand-thumb-up': (
+    <path
+      {...S}
+      d="M7.5 21h9a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25h-4.09l.6-3.75A1.5 1.5 0 0011.52 3l-4.02 6v12z"
+    />
+  ),
+  'academic-cap': (
+    <path
+      {...S}
+      d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.499 5.24 50.534 50.534 0 00-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
+    />
+  ),
+  'puzzle-piece': (
+    <path
+      {...S}
+      d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.638 1.638 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.638 1.638 0 00-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.959.401v0c.31 0 .555-.26.532-.57a48.039 48.039 0 01-.642-5.056c-1.518-.19-3.057-.309-4.616-.354a.64.64 0 00-.657.643v0z"
+    />
+  ),
+  attribution: <path {...S} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />,
+  // The CTA arrow. Inlined in hero.html and the cta partial rather than going
+  // through the icons registry, so it was missing from the ported set.
+  'arrow-right': <path {...S} d="M13 7l5 5m0 0l-5 5m5-5H6" />,
+  bolt: <path {...S} d="M13 10V3L4 14h7v7l9-11h-7z" />,
+  'currency-dollar': (
+    <path
+      {...S}
+      d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
+  ),
+  menu: <path {...S} d="M4 6h16M4 12h16M4 18h16" />,
+  /*
+   * The blog-metadata trio. These live in the Hugo blog partials as inline SVG
+   * rather than in `partials/icons.html`, so they were missing from the ported
+   * registry — but a design agent reaching for a date or byline glyph needs them
+   * named.
+   */
+  calendar: <path {...S} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />,
+  user: <path {...S} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />,
+  'book-open': (
+    <path
+      {...S}
+      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+    />
+  ),
+  'chevron-down': <path {...S} d="M19 9l-7 7-7-7" />,
+};
+
+/** Shown for an unrecognised name, matching the Hugo registry's fallback. */
+const FALLBACK = (
+  <>
+    <circle cx="12" cy="12" r="9" strokeWidth={2} />
+    <path {...S} d="M12 8v8M8 12h8" />
+  </>
+);
+
+export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
+  /** Which icon to draw. Unknown names render the plus-in-circle fallback. */
+  name: IconName;
+  /**
+   * Tailwind size utilities. Defaults to `w-6 h-6`, the registry's default.
+   * Pass e.g. `"w-12 h-12"` for the large treatment the card components use, or
+   * `"w-5 h-5"` for the small inline treatment the hero CTA uses.
+   */
+  className?: string;
+}
+
+/**
+ * Does the caller's `className` already set the icon's box?
+ *
+ * `cx` only controls *class order*, and Tailwind emits `w-5` before `w-6`, so a
+ * caller asking for `w-5 h-5` would silently lose to the default. Dropping the
+ * default whenever a width/height/size utility is supplied is what makes the
+ * documented override actually work, at any scale value and behind any variant.
+ */
+const SIZED = /(?:^|[\s:])!?(?:[hw]-|size-)/;
+
+/**
+ * A single-colour line icon from the Runink registry.
+ *
+ * Icons inherit colour from `currentColor`, so set the colour on the icon or any
+ * ancestor with a text utility — `text-ink-success`, `text-primary`, and so on.
+ * This is what makes the group-hover colour transitions in Card and FeatureCard
+ * work without the icon knowing anything about them.
+ */
+export function Icon({ name, className, ...rest }: IconProps) {
+  const key = ALIASES[name] ?? name;
+  return (
+    <svg
+      className={cx(!(className && SIZED.test(className)) && 'w-6 h-6', className)}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      {...rest}
+    >
+      {PATHS[key] ?? FALLBACK}
+    </svg>
+  );
+}

@@ -1,0 +1,54 @@
+{
+  "$comment": [
+    "Web-only values. Everything here is either derived from a FACE token (so it",
+    "survives a FACE re-tune automatically) or is a non-colour scale FACE owns but",
+    "does not express as a Flutter colour. Each carries the reason it has the value",
+    "it has, because an unexplained number is how #ca4708 survived long enough to be",
+    "published at 4.22:1."
+  ],
+
+  "alpha": {
+    "wash": {
+      "value": 0.15,
+      "face": "RuninkColors.chipWashAlpha",
+      "why": "A CEILING, not a default. Olive sets it: the light olive pair measures 4.64 at 0.15 and 4.44 at 0.18. Exposed only as named -wash tokens, never as Tailwind's /NN, so the number cannot be re-opened at a call site."
+    },
+    "edge": {
+      "console": 0.4,
+      "sheet": 0.55,
+      "over": "ink",
+      "why": "The ≥3:1 boundary FACE has no token for. Measured over the four surfaces of each ramp: console 3.41/3.38/3.31/3.15, sheet 3.46/3.50/3.40/3.25. At 0.35/0.50 the sheet ramp fails at 2.86 on surface-well, which is why these are the values."
+    }
+  },
+
+  "borderRadius": {
+    "$why": "FACE's scale (CardThemeData + GlassmorphismProperties). Retires the ported rounded-card 2rem / rounded-large 2.5rem, which came in with the Saasify theme. Note FACE's own practice drifts — the mode across 289 circular(N) call sites is 12 — so 18 is the theme's intent rather than its habit.",
+    "badge": "6px",
+    "chip": "12px",
+    "card": "18px",
+    "pill": "24px"
+  },
+
+  "boxShadow": {
+    "$why": "FACE: 'Elevation 0 everywhere. Depth is an opaque warm surface plus a hairline, not blur.' origin/main independently killed the same thing ('a glow means nothing on paper and reads as a games console'). The four neon-* shadows the port invented are retired with no replacement. The ONE surviving glow is GlassCard's, and it is opt-in rather than a card default.",
+    "glow-success": "0 0 24px 2px rgb(var(--rk-fill-success-ch) / 0.30)",
+    "glow-accent": "0 0 24px 2px rgb(var(--rk-fill-accent-ch) / 0.30)"
+  },
+
+  "animation": {
+    "$why": "Colourless transforms and opacity carry over unchanged. cta-pulse does NOT — its keyframes hardcoded rgba(234,88,12,…), the retired Saasify orange, so it must reference the accent channel or it will pulse a dead colour forever. This is the one animation with a colour inside it and it is easy to miss, because the value lives in a keyframes object rather than in the colour map.",
+    "keep": ["marquee", "testimonials-scroll", "pulse-slow"],
+    "recolour": ["cta-pulse"]
+  },
+
+  "retired": {
+    "$why": "Named so nobody restores them from git history thinking they were decisions.",
+    "primary-50..950": "hugo-saasify-theme vendor filler, laundered into DESIGN.md by a bot commit. primary-950 (#0f1330) was additionally INVENTED by the port to satisfy 38 references that the discarded rename had itself created.",
+    "secondary-50..900": "Stock Tailwind purple from the same vendor preset. It was doing four separate jobs — muted text, card borders, icon gradients, focus rings — each of which now has a named, measured token.",
+    "brand-sage-dark": "#A8B88B, invented by the port as a hover accent. FACE expresses hover/selection as the accent border, not a fourth green.",
+    "brand-copper": "#B87333, invented. Its job was the hero halo's warm stop, which is accent-lift.",
+    "brand-ink-raised": "#211F1F, invented to name a surface written three ways in layouts. Has a real home now: surface-raised.",
+    "neon-orange / neon-green / neon-red / neon-orange-strong": "A glow aesthetic both FACE and origin/main retired independently.",
+    "rounded-card / rounded-large": "2rem / 2.5rem, Saasify-era. Replaced by the FACE radius scale."
+  }
+}

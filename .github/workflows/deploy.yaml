@@ -63,6 +63,110 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # The design system's colour contract, checked before anything is built.
+      #
+      # These three scripts are deliberately zero-dependency -- node built-ins
+      # only, reading committed JSON -- so they need no install step of their
+      # own and cannot be skipped by a lockfile problem. They run BEFORE the
+      # builds because a palette that fails here produces a site that looks
+      # entirely plausible: every failure mode they catch is invisible in a
+      # screenshot of the dark ground, which was this system's only ground
+      # until the FACE migration.
+      #
+      # check:contrast -- 208 assertions over both ramps: every ink clears
+      #   4.5:1 on all four surfaces, every mark clears 3:1, every fill still
+      #   FAILS as ink (asserted as a negative, the way FACE does it), the chip
+      #   wash ceiling still bites at .18, and the severity ramp stays ordered
+      #   and perceptually separable. Alpha tokens are composited over their
+      #   real backdrop first -- a ratio against the bare token would be a lie.
+      # check:usage -- catches what the type system cannot: a solid fill
+      #   carrying a generic ink, raw hex, text-white, retired token names, and
+      #   var(--x) naming a property the token layer does not define (an
+      #   undefined var invalidates its whole declaration and CSS drops it
+      #   silently, so the rule renders nothing rather than rendering wrong).
+      #
+      # NOT here: check:alpha, the third gate. It reads the package's compiled
+      # packages/runink-ui/dist/runink-ui.css, which is gitignored and is not
+      # produced by this workflow -- `pnpm run build` above compiles the SITE's
+      # Tailwind (themes/.../main.css -> static/css/style.css) from a config
+      # that does not glob packages/runink-ui/src, so the package's utilities
+      # never appear in it. Running check:alpha against that file would find
+      # none of the classes it is looking for and report a vacuous pass, which
+      # is worse than not running it. It stays a package-level gate
+      # (`npm run check` in packages/runink-ui) until the package is built in
+      # CI. Do not "fix" this by pointing --css at static/css/style.css.
+      - name: Check design token contrast and usage
+        run: |
+          node packages/runink-ui/scripts/check-contrast.mjs
+          node packages/runink-ui/scripts/check-usage.mjs
+
+      # Content-side guards, added after a fact-audit against the FACE codebase
+      # found claims the code does not support — including seven product names
+      # announced as shipped that exist in no repository, and a fabricated case
+      # study labelled "real-world". Both rules below cover failures that were
+      # caught by people reading pages rather than by any check, and both ship
+      # silently: nothing errors, the page renders, the claim is simply false.
+      #
+      # check-content-doctrine enforces two things:
+      #   - every use-case page names its product in front matter. Without it a
+      #     reader cannot tell FACE from PULSE from the platform, and takes the
+      #     whole set as one product's track record.
+      #   - no savings figure is attributed to Runink. There is no producer for
+      #     one: savings_summary_test.go records that all four derived sources
+      #     were invented multipliers and were deleted. Third-party statistics
+      #     about the problem domain are deliberately NOT flagged — the rule
+      #     wants Runink as the subject of the verb, and carries its own
+      #     positive and negative controls.
+      - name: Check content doctrine (source)
+        run: node scripts/check-content-doctrine.mjs
+
+      # Site-side palette guards, added when the marketing site moved from the
+      # black canvas onto FACE's two-ground token system. All three cover
+      # failures that render without erroring, which is the only reason they
+      # need to be machine-checked at all:
+      #
+      #   check-token-channels — every colour exists twice in tokens.css, as a
+      #     hex and as an "R G B" channel triplet, because Tailwind's /NN alpha
+      #     modifier cannot substitute into a bare var() and silently DROPS the
+      #     declaration. 252 utilities on this site use an alpha modifier. A
+      #     channel that drifts from its hex is a colour that is almost right,
+      #     which nobody notices. Asserts the two forms agree, in every ground.
+      #
+      #   check-token-contrast — every ink clears 4.5:1 on every surface of its
+      #     ground, not just on the canvas. The ink tiers were originally solved
+      #     against --rk-ground alone and --rk-text-3 shipped at 4.39:1 on
+      #     --rk-sunk, below AA, on every card caption. Four rungs were re-solved
+      #     against the worst surface; this stops them drifting back.
+      #
+      #   check-dead-states — a hover whose colour resolves to the same token as
+      #     its own base. Eleven rungs now collapse onto three or four tokens, so
+      #     `border-stone-800 hover:border-stone-700` can become a hover that
+      #     paints what is already there. It compiles, it has a :hover rule, and
+      #     a screenshot of either state looks correct.
+      #   check-token-syntax — tokens.css shipped a @media print block that had
+      #     been DEAD for months behind an unbalanced comment: a comment closed
+      #     early, ~28 lines of prose sat outside any comment, and CSS error
+      #     recovery ate the prose as a selector prelude up to the next `{` —
+      #     which was the rule blacking out the palette for paper. Category
+      #     accents printed in colour at ~2.4:1 under a comment that read
+      #     "Verified on paper, not assumed." CSS never fails, so only a checker
+      #     finds this.
+      #   gen-contrast-proof --check — the /design/ specimen's swatch and
+      #     contrast-proof tables are generated from tokens.css into
+      #     data/contrast_proof.json. They used to be hand-written, and after
+      #     the palette moved to FACE they still asserted #F2801F as the signal
+      #     and #101A22 as the ground — measured ratios for colours that existed
+      #     nowhere, on the one page whose job is to be the authority on what
+      #     the tokens are. --check re-derives and fails if the committed file
+      #     has drifted, and fails if any pair is below its floor.
+      - name: Check palette tokens and interaction states
+        run: |
+          node scripts/gen-contrast-proof.mjs --check
+          node scripts/check-token-syntax.mjs
+          node scripts/check-token-channels.mjs
+          node scripts/check-token-contrast.mjs
+          node scripts/check-dead-states.mjs
+
       - name: Build Tailwind CSS
         run: pnpm run build
 
@@ -91,6 +195,47 @@ jobs:
       # content/tests/ now, and this step is what keeps the next set from
       # reaching gh-pages. It runs on pull_request too, so a regression fails
       # its PR rather than the deploy.
+      # The same script again, in rendered mode, against what was actually built.
+      #
+      # THIS IS THE ONE THAT CATCHES THINGS. An adversarial sweep of the corrected
+      # site found survivors in alt text, a JSON-LD Organization description, a
+      # meta description, a front-matter title, an <h2>, a shortcode parameter,
+      # hugo.toml and three untouched translations — and in NOT ONE of the places
+      # the source-mode check above looks. Its blind spots were structural:
+      # English-only, content/-only, markdown-only. Every survivor lived in
+      # exactly those gaps.
+      #
+      # Running against docs/ closes all three at once: every language, every
+      # string that reaches a reader or a crawler, whatever produced it. It found
+      # a phantom product name still shipping after two prose passes had been
+      # over the same file.
+      - name: Check content doctrine (rendered output)
+        run: node scripts/check-content-doctrine.mjs --rendered docs
+
+      # Same reasoning as the rendered doctrine check above: some failures only
+      # exist after Hugo has run. ZgotmplZ is the one that prompted this — Go's
+      # contextual escaper runs every value interpolated into a style attribute
+      # through a CSS filter that REJECTS PARENTHESES, so `var(--rk-sunk)` is
+      # replaced by the literal string ZgotmplZ and the declaration dies. A hex
+      # passed for years; the trap only sprang when the colours became tokens.
+      # Hugo exits 0, the page renders, the background is simply gone. The fix
+      # at the call site is `| safeCSS`.
+      - name: Check rendered output
+        run: node scripts/check-rendered-output.mjs docs
+
+      # Two navigation controls pointing at the same page is one control and one
+      # distraction, and the redundancy is invisible to anyone reading one config
+      # block at a time. The header had grown two exact duplicates this way: a
+      # "Check it out" button repointed at /industries/ where the "Industries"
+      # entry already went, and a "What makes it a painkiller" entry sharing
+      # /blog/whitepapers/ with the "Whitepapers" entry. Both were reasonable
+      # individual edits; the redundancy only existed in the aggregate.
+      #
+      # Reads the RENDERED header, so it also catches a duplicate introduced by a
+      # template rather than by hugo.toml.
+      - name: Check navigation destinations are distinct
+        run: node scripts/check-nav-distinct.mjs docs
+
       - name: Guard published output
         run: |
           set -euo pipefail

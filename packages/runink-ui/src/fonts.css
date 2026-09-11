@@ -1,0 +1,39 @@
+/**
+ * Runink's typeface, self-hosted.
+ *
+ * Figtree is FACE's bundled face (`face/flutter/pubspec.yaml` declares
+ * `fonts/Figtree.ttf`; `google_fonts` is deliberately not a dependency there, so
+ * nothing in the app fetches a font at runtime). The web now matches that.
+ *
+ * This replaces a Google Fonts `@import` for Inter + Plus Jakarta Sans. That import
+ * was added to clear a `[FONT_MISSING]` validator warning, which was the wrong trade:
+ * a company whose argument is that your material should not go to a third party
+ * should not request its typeface from one on every page load. The site's own rebrand
+ * commit makes the same point in the same words.
+ *
+ * BOTH FACES ARE VARIABLE, AND BOTH DEFAULT TO LIGHT (wght 300..900, default 300,
+ * usWeightClass 300). The `font-weight: 300 900` range below is load-bearing: omit it
+ * and the browser pins every weight to the 300 default, so the entire site renders
+ * Light and nothing reports an error.
+ *
+ * Licence: SIL Open Font Licence 1.1 — see fonts/LICENCE.md.
+ * Upright sourced from face/flutter/fonts/Figtree.ttf; italic from the upstream
+ * Google Fonts OFL release (the upright has no italic axis and italicAngle 0, so
+ * without it browsers synthesise an oblique).
+ */
+
+@font-face {
+  font-family: 'Figtree Rk';
+  src: url('../fonts/Figtree-var.woff2') format('woff2-variations');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree Rk';
+  src: url('../fonts/Figtree-Italic-var.woff2') format('woff2-variations');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}

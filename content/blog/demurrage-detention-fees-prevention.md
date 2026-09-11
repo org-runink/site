@@ -1,6 +1,6 @@
 ---
 title: "Demurrage and Detention Fees — The Silent Margin Killer and How to Fight Back"
-description: "Demurrage and detention fees drain $5B+ annually from global supply chains. Learn how AI-driven container visibility and automated dispute resolution cut costs by 40-60%."
+description: "Where demurrage and detention charges actually come from, which invoice lines are disputable under the carrier's own tariff, and why the dispute window closes before most finance teams see the invoice."
 author: "Runink Logistics Operations Team"
 date: 2026-06-05T16:22:42Z
 draft: false
@@ -12,15 +12,15 @@ tags: ["Demurrage", "Detention", "Container Tracking", "Free Time", "Port Conges
 robots: index, follow
 ---
 
-<!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
+<!-- structured Executive Summary -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-Demurrage and detention fees are among the largest hidden costs in global logistics, costing the industry over $5 billion annually. These charges accumulate when containers sit idle at port (demurrage) or when equipment is held beyond the carrier's allocated free time inland (detention), and they are largely preventable with proactive container visibility and automated dispute workflows.
+Demurrage is what a terminal charges once your container sits past its free days. Detention is what the carrier charges once you keep its empty box too long. Both run daily, both arrive weeks later on a supplemental invoice, and some of the lines are invalid under the carrier's own tariff. The figure worth having is your own: last year's total, split by cause.
 {{< /direct-answer >}}
 
-* **Demurrage (port-side) and detention (inland) are distinct charges that compound rapidly — often exceeding the freight rate itself within days of the free time expiry.**
-* **Root causes include port congestion, documentation bottlenecks, customs holds, and poor container tracking — not operational negligence.**
-* **AI-driven visibility platforms and automated dispute resolution consistently recover 40-60% of these charges, turning a silent margin killer into a controllable line item.**
+* **Two charges, two clocks.** Demurrage runs at the port. Detention runs inland, on the equipment.
+* **The usual causes are structural, not careless.** Port congestion, paperwork, customs holds, and not knowing where the box is.
+* **Some lines are disputable.** Terminal closures, customs examinations, vessel delay before you could act. What share that is for you is a number only your own invoices can give, and almost nobody has counted it.
 
 <br>
 
@@ -29,84 +29,88 @@ Demurrage and detention fees are among the largest hidden costs in global logist
 ## What Are Demurrage and Detention Fees, and Why Do They Matter?
 
 {{< direct-answer >}}
-Demurrage is the charge levied when a loaded container remains at a port terminal beyond its allotted free time. Detention is the fee assessed when a shipper or consignee retains the carrier's empty container beyond the agreed return window after unstuffing. Together, they represent the single largest category of unplanned freight costs for importers and exporters globally.
+Demurrage is charged when a loaded container stays at the terminal past its free time. Detention is charged when you hold the carrier's empty container past the agreed return window after unloading. Demurrage is port-side. Detention is inland. Together they are the largest category of unplanned freight cost for most importers.
 {{< /direct-answer >}}
 
-The distinction is straightforward but critical. **Demurrage** starts the moment a container is discharged from the vessel and sits on the terminal without being collected. Carriers typically grant two to seven days of free time, depending on the trade lane and tariff. After that window closes, charges escalate on a tiered schedule — often starting at $75–$150 per container per day and climbing to $300+ after the first week.
+The difference is simple and worth getting right.
 
-**Detention** picks up where the physical container leaves the port. Once a consignee gates out a loaded box, the clock starts on returning that empty unit to the carrier's designated depot. Miss that window, and detention charges apply at comparable daily rates.
+**Demurrage** starts when the container comes off the vessel and sits at the terminal uncollected. How much free time you get is set by the carrier's tariff, and it varies by lane and contract. After that, the daily rate steps up on a published tier schedule. Look up the tariff for the lane you use most; the tiers are in it.
 
-For a CFO reviewing quarterly freight spend, these line items rarely appear in the original rate agreement. They surface weeks later on supplemental invoices, buried in adjustment codes that most AP teams lack the context to challenge. The result is a slow, silent erosion of margin that compounds across hundreds or thousands of containers per quarter.
+**Detention** starts when you take the loaded box off the terminal. The clock is on returning the empty unit to the depot. Miss that and detention applies at a daily rate, again set by tariff.
+
+For a CFO reading quarterly freight spend, neither appears in the rate agreement. They arrive weeks later on supplemental invoices, under adjustment codes that the accounts payable team has no context to challenge. So they get paid.
 
 ---
 
 ## Why Do Demurrage and Detention Costs Spiral Out of Control?
 
 {{< direct-answer >}}
-Demurrage and detention costs spiral because of systemic inefficiencies — port congestion, documentation delays, customs holds, and fragmented container tracking — not because of shipper negligence. The lack of real-time visibility into container status and free time windows means most organizations only discover charges after they are already incurred.
+Because the causes sit outside the shipper's control and the information arrives late. Congestion, paperwork, customs holds and split container tracking all push boxes past their free time, and most organisations find out after the clock has already run.
 {{< /direct-answer >}}
 
-The mechanics of these fees are designed to incentivize fluid cargo movement, but the modern supply chain is anything but fluid. Several structural factors conspire to push containers past their free time:
+The charges exist to keep cargo moving. The supply chain they are applied to does not move smoothly. Four things push containers past free time.
 
-**Port congestion and terminal bottlenecks.** When vessels bunch at anchor or terminals operate at 90%+ utilization — common across major gateways from Los Angeles to Rotterdam to Shanghai — drayage appointments slip, and containers dwell for days beyond the discharge window. The shipper pays the demurrage even when the delay is entirely port-side.
+**Congestion.** When vessels bunch and terminals run full, drayage appointments slip and boxes sit. The shipper pays even when the delay is entirely on the terminal's side.
 
-**Documentation and customs clearance delays.** A single missing phytosanitary certificate, an ISF filing error, or a discrepancy between the commercial invoice and the bill of lading can trigger a customs hold. While the paperwork gets sorted, demurrage accrues. In high-volume import operations, these documentation gaps are not exceptions — they are a statistical certainty.
+**Paperwork and customs.** One missing certificate, a filing error, or a mismatch between the invoice and the bill of lading can trigger a hold. Demurrage runs while it is sorted out. At volume these are not exceptions; they happen every week.
 
-**Fragmented container tracking.** Most shippers rely on carrier websites, freight forwarder updates, and manual spreadsheets to track container status. By the time a logistics coordinator discovers that a container has been sitting at the terminal for five days, three of those days are already billable. Without a unified view of container events, dwell time, and free time countdowns, the organization is perpetually reactive.
+**Split container tracking.** Most shippers track boxes across carrier websites, forwarder emails and a spreadsheet. By the time a coordinator sees that a container has sat five days, three of those days are billable.
 
-**Carrier free time policies and invoice opacity.** Free time allocations vary by carrier, trade lane, terminal, and even contract tier. Supplemental demurrage invoices often arrive 30–60 days after the event, referencing container numbers without the operational context needed to validate or dispute them. Many organizations simply pay because the cost of investigating exceeds the individual charge — a calculus that collapses at scale.
+**Invoice opacity.** Free time varies by carrier, lane, terminal and contract tier. The supplemental invoice arrives weeks after the event, listing container numbers with no operational context. Many companies pay because checking one charge costs more than the charge. That logic holds per invoice and fails across a year of them.
 
-*Related: See how our [Supply Chain Visibility Module](/use-cases/) provides real-time container event tracking to prevent dwell time overruns.*
+*Related: how freight charges can be read against the contract and the operational record — see our [use cases](/use-cases/).*
 
 ---
 
 ## How Large Is the Global Financial Impact of Demurrage and Detention?
 
 {{< direct-answer >}}
-Global demurrage and detention charges exceed $5 billion annually according to industry estimates, with individual large-volume importers facing $2–$10 million per year in avoidable fees. The UNCTAD Review of Maritime Transport identifies these charges as a material barrier to trade competitiveness, particularly for developing economies.
+Large enough that UNCTAD's Review of Maritime Transport treats these charges as a barrier to trade competitiveness, particularly for developing economies. Per container, Container xChange puts the typical cost between $500 and $2,000 depending on port and duration. Your own exposure is a different number, and it is the one that matters.
 {{< /direct-answer >}}
 
-The numbers are staggering. According to research by **Container xChange**, the average demurrage and detention cost per container ranges from $500 to $2,000 depending on the port and duration, with outlier cases exceeding $10,000 for a single box stuck in congested corridors. Multiply that across the roughly 800 million container movements annually, and the aggregate cost to global trade becomes clear.
+Research by **Container xChange** puts the average demurrage and detention cost per container between $500 and $2,000, depending on port and duration, with outliers above $10,000 for a single box caught in a congested corridor.
 
-For mid-market importers moving 500–2,000 TEUs per year, demurrage and detention typically represents 3–8% of total freight spend — a figure that rarely appears in the RFP or carrier negotiation but shows up with certainty in the P&L. For enterprise shippers managing tens of thousands of containers, these charges can exceed the cost of an entire logistics team.
+The **UNCTAD Review of Maritime Transport** treats these charges as a material barrier to trade competitiveness, and notes the weight falls hardest on developing economies.
 
-The **World Shipping Council** has documented the cascading effect: when carriers impose congestion surcharges on top of demurrage, the effective per-diem cost of a stalled container can double. And because these fees are classified as accessorial charges rather than freight, they often fall outside the scope of freight audit programs entirely.
+The **World Shipping Council** has documented how congestion surcharges stack on top of demurrage, so the effective daily cost of a stalled box is higher than the tariff line suggests.
+
+Now the number that decides anything. Pull last year's accessorial invoices and total the demurrage and detention lines. Then split that total by cause: congestion, customs, paperwork, late collection. Most operations have never done this, which is why the charge is treated as weather rather than as a cost with owners.
 
 ---
 
-## How Can AI-Driven Visibility and Automated Dispute Resolution Cut These Costs?
+## How Can Better Visibility and Dispute Handling Cut These Costs?
 
 {{< direct-answer >}}
-AI-driven container visibility platforms reduce demurrage and detention exposure by 40-60% through three mechanisms: real-time free time monitoring that triggers proactive intervention, predictive ETA models that align drayage and documentation workflows with actual vessel arrivals, and automated dispute engines that identify invalid charges and generate carrier-ready dispute packages.
+Three separate mechanisms. Watch the free time clock, so it is seen before it runs out. Predict arrival, so drayage and paperwork are scheduled against likely arrival rather than published arrival. Check invoices against the tariff, so a disputable line is caught inside its window. Which one is worth most depends on where your losses actually come from.
 {{< /direct-answer >}}
 
-The most effective defense against demurrage and detention is **not** negotiating longer free time — it is eliminating the information gaps that cause containers to overstay. This requires three capabilities working in concert:
+The best defence is not negotiating longer free time. It is closing the information gaps that let boxes overstay. Three capabilities, and they are not the same thing.
 
-**Real-time free time countdown and alerting.** By ingesting terminal events, carrier milestones, and gate transactions into a single container visibility layer, operations teams gain a live countdown of remaining free time for every container in their portfolio. Automated alerts at 48-hour, 24-hour, and zero-hour thresholds give dispatchers the lead time to prioritize pickups before charges begin.
+**Watch the clock.** Pull terminal events, carrier milestones and gate transactions into one view, and you have a live countdown of free time per container. Alerts at two days, one day and zero give dispatch time to reprioritise a pickup before charges start.
 
-**Predictive vessel ETA and documentation readiness.** AI models trained on historical port call data, weather patterns, and terminal productivity can predict actual vessel arrival within a six-hour window — far tighter than the carrier's published ETA. This allows customs brokers to pre-clear documentation and drayage providers to schedule appointments against realistic timelines rather than optimistic schedules.
+**Predict arrival.** A model trained on past port calls, weather and terminal productivity can estimate arrival differently from the carrier's published time. That lets brokers pre-clear paperwork and drayage book against a realistic date. Treat the prediction as a model output: compare predicted against actual for a month before scheduling against it.
 
-**Automated dispute identification and resolution.** Not every demurrage invoice is valid. Carriers frequently charge for days when the terminal was closed, when the container was under customs examination (and therefore exempt under the carrier's own tariff), or when vessel delays consumed free time before the consignee had any opportunity to act. An automated dispute engine cross-references invoice line items against terminal event data, free time agreements, and exemption rules to flag recoverable charges and generate dispute packages with supporting documentation.
+**Check the invoice.** Not every charge is valid. Carriers bill for days the terminal was closed, for days a box was under customs examination and exempt under their own tariff, and for free time consumed by vessel delay before the consignee could act. Checking invoice lines against terminal events, the free time terms and the exemption rules is what finds those, and it has to happen inside the dispute window stated in the tariff.
 
-Consider a real-world scenario: a consumer goods importer moving 3,000 TEUs annually through the Port of Savannah was paying $1.8 million per year in combined demurrage and detention. After deploying an AI-driven visibility platform, the organization achieved three outcomes within six months — a 52% reduction in per-container dwell time through proactive dispatch, successful dispute recovery of $340,000 in invalid charges from the prior twelve months, and a renegotiated free time allocation based on data showing consistent sub-three-day pickup performance.
+Note what each one does and does not do. The countdown prevents charges that were about to start. The prediction improves the odds that a pickup lines up with the box being available. The invoice check recovers only charges the records show were invalid; it does not negotiate, and it will not recover a valid charge. A programme sold as one percentage saving is hiding which of the three it is doing.
 
-*Learn more about how our [Freight Finance Analytics](/use-cases/) quantify and recover hidden accessorial costs.*
+*The [Runink FACE use cases](/use-cases/) set out how accessorial charges are read against the contract and the operational record, and what is handed to a person to decide.*
 
 ---
 
 ## Conclusion
 
 {{< direct-answer >}}
-Demurrage and detention fees are not an unavoidable cost of doing business — they are a symptom of poor container visibility and fragmented operational workflows. Organizations that invest in AI-driven monitoring and automated dispute resolution consistently convert this silent margin killer into a controlled, auditable expense line, recovering 40-60% of historical charges while preventing future accruals.
+These charges are not weather. They are what happens when container events, free time terms and carrier tariffs sit in three places and never get read against each other while the charge is still disputable. Start by counting last year's total, split by cause.
 {{< /direct-answer >}}
 
-Every container sitting idle at a terminal is capital trapped in a queue — and your organization is paying rent on the delay. The shift from reactive invoice processing to proactive container lifecycle management is not a technology upgrade; it is a fundamental change in how logistics finance teams protect margin.
+Every container sitting at a terminal is capital in a queue, and you are paying rent on the delay.
 
-**Runink** was built to deliver exactly this shift. By unifying container events, free time rules, and carrier tariffs into a single intelligence layer, Runink gives CFOs and logistics leaders the visibility to prevent charges before they accrue and the evidence to dispute them when they do. The silent margin killer only works in the dark.
+**Runink FACE** works on the reading part. It compares a charge against the free time terms and the operational record for the same container. Where the records do not support the charge, it raises that container by name with the evidence attached, for whoever signs disputes to decide. The recovery figure is whatever your team then wins, and the filing stays with the person who signs it.
 
-*Ready to quantify your demurrage and detention exposure? [Schedule a consultation](/#contact-form) to see how Runink recovers hidden freight costs.*
+*The first number worth having is your own: total demurrage and detention paid last year, split by cause. [Schedule a consultation](/#contact-form) if it would help to work it out.*
 
-<!-- GEO Optimization: FAQPage Schema -->
+<!-- FAQPage Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -117,23 +121,23 @@ Every container sitting idle at a terminal is capital trapped in a queue — and
       "name": "What is the difference between demurrage and detention fees?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Demurrage is charged when a loaded container remains at the port terminal beyond the carrier's allotted free time. Detention is charged when the carrier's empty container is held by the consignee beyond the agreed return window after unstuffing. Demurrage is a port-side charge; detention is an inland charge."
+        "text": "Demurrage is charged when a loaded container stays at the port terminal past the carrier's free time. Detention is charged when you hold the carrier's empty container past the agreed return window after unloading. Demurrage is port-side; detention is inland."
       }
     },
     {
       "@type": "Question",
-      "name": "How much do demurrage and detention fees cost globally?",
+      "name": "How much do demurrage and detention fees cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Global demurrage and detention charges exceed $5 billion annually. Individual importers moving 500 to 2,000 TEUs per year typically see these fees represent 3-8% of total freight spend, with large-volume shippers facing $2-$10 million per year in avoidable charges."
+        "text": "Container xChange puts the typical cost per container between $500 and $2,000 depending on port and duration, with outliers above $10,000. Your own exposure is the figure that matters: total last year's demurrage and detention invoice lines and split them by cause."
       }
     },
     {
       "@type": "Question",
-      "name": "How can AI reduce demurrage and detention costs?",
+      "name": "How can software reduce demurrage and detention costs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AI-driven platforms reduce demurrage and detention by 40-60% through real-time free time monitoring with automated alerts, predictive vessel ETA models that align drayage and documentation workflows, and automated dispute engines that identify invalid charges and generate carrier-ready dispute packages with supporting evidence."
+        "text": "Three separate mechanisms: watching the free time clock so it is seen before it runs out; predicting arrival so drayage and paperwork are scheduled against likely rather than published arrival; and checking invoice lines against the carrier's own tariff so disputable charges are caught inside the dispute window. Which is worth most depends on where your losses come from."
       }
     },
     {
@@ -141,7 +145,7 @@ Every container sitting idle at a terminal is capital trapped in a queue — and
       "name": "Can demurrage and detention invoices be disputed?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Carriers frequently charge for days when terminals were closed, when containers were under customs examination and exempt under the carrier's tariff, or when vessel delays consumed free time before the consignee could act. Automated dispute resolution platforms cross-reference invoices against terminal data and exemption rules to recover invalid charges."
+        "text": "Yes. Carriers bill for days the terminal was closed, for days a container was under customs examination and exempt under their own tariff, and for free time consumed by vessel delay before the consignee could act. Checking invoice lines against terminal events and the tariff is what finds those, and it has to happen inside the dispute window."
       }
     }
   ]
@@ -151,19 +155,18 @@ Every container sitting idle at a terminal is capital trapped in a queue — and
 ---
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
+    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work out last year's total, split by cause.
   </p>
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations &amp; References</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">UNCTAD Review of Maritime Transport</a> - Comprehensive annual report on global shipping trends, port performance, and trade cost barriers including demurrage and detention.</li>
-    <li><a href="https://www.container-xchange.com/blog/demurrage-and-detention/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Container xChange: Demurrage &amp; Detention Research</a> - Industry benchmarking data on per-container demurrage and detention costs across major global trade lanes.</li>
-    <li><a href="https://www.worldshippingcouncil.org/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">World Shipping Council</a> - Liner shipping industry body providing policy analysis on container equipment charges and terminal congestion dynamics.</li>
-    <li><a href="https://www.fmc.gov/demurrage-detention/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">U.S. Federal Maritime Commission: Demurrage &amp; Detention Guidance</a> - Regulatory framework and interpretive rules governing the reasonableness of demurrage and detention practices in U.S. trade.</li>
+    <li><a href="https://unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">UNCTAD Review of Maritime Transport</a> - source for the trade barrier point above.</li>
+    <li><a href="https://www.container-xchange.com/blog/demurrage-and-detention/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Container xChange: demurrage and detention research</a> - source for the per-container figures above.</li>
+    <li><a href="https://www.worldshippingcouncil.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">World Shipping Council</a> - source for the congestion surcharge point above.</li>
+    <li><a href="https://www.fmc.gov/demurrage-detention/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">U.S. Federal Maritime Commission: demurrage and detention guidance</a> - the rules on what counts as reasonable in U.S. trade.</li>
   </ul>
 </section>

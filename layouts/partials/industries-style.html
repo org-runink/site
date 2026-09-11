@@ -12,63 +12,85 @@
   WHY THE SECTION IS LIGHT. The review of the customer-facing material said the
   black canvas makes the information hard to read and painful to print, and that
   these pages should be visual and easy to skim. So the industry pages are set on
-  a near-white canvas with one deep navy band, and the whole page is built out of
-  ruled lines: a measure is a label and a line you write on. The site header
-  above stays dark, so the page still sits inside the site.
+  a near-white sheet and the whole page is built out of ruled lines: a measure is
+  a label and a line you write on. That decision is now the whole site's, so the
+  header above is light too — this section no longer sits inside a dark shell.
 
-  Every colour is a DESIGN.md token:
-    canvas/sheet/rule  surface.gray_50 / white / gray_200
-    tint/deep/deep-2   primary.50 / primary.900 / primary.700
-    ink/ink-2          text.gray_900 / text.gray_600
-    accent             per-page, from front matter
+  PROVENANCE. This partial used to hold its palette as literals, and said so at
+  length: the DESIGN.md token names it had once cited (surface.gray_50,
+  primary.50/700/900, text.gray_900, text.gray_600) had been deleted with the
+  bot-authored file they came from, and DESIGN.md §8 and §11 recorded that
+  repointing this partial at real tokens was "the next pass".
 
-  The per-industry accent arrives as --accent on the wrapper. Two of the five
-  accents are pale (light sage, tan) and would vanish on a white sheet, so
-  nothing that has to be legible uses the raw accent: --accent-ink mixes it
-  toward primary.900, which keeps every industry distinguishable while holding a
-  contrast ratio comfortably past 4.5:1 on white whatever the accent is. Rules
-  that use color-mix() declare a flat fallback first, so a browser without
-  color-mix() keeps a legible navy rather than dropping the declaration.
+  THIS IS THAT PASS. Every colour below now comes from assets/css/tokens.css,
+  which carries Runink FACE's palette — the company-wide one — and defines each
+  colour twice: once for the light ground (`sheet`, the default) and once for the
+  dark one (`console`). A token resolves to whichever ground its subtree is in,
+  so one rule serves both and nothing here is stuck at a value chosen for a black
+  page. The two literals DESIGN.md had specifically rejected are gone with it:
+  #1b2456 (the navy it called generic on screen and muddy on a mono laser) and
+  #ea580c for logistics (§2 — logistics now wears --rk-cat-logistics-ink, which
+  is outside the orange band the accent reserves).
+
+    canvas/sheet/rule  --rk-ground / --rk-sheet / --rk-rule
+    deep/ink/ink-2     --rk-text-1 / --rk-text / --rk-text-2
+    accent             --rk-accent, bound per category by tokens.css
+
+  The page keeps its own short names for these because the figures in
+  partials/industries/*.html paint with them; they are aliases now, not values.
+
+  THE ACCENT. It is no longer mixed toward anything. tokens.css holds five
+  category inks, one per industry, each solved to measure AA or better on every
+  ground of its mode — so the raw value is legible as text and needs no darkening
+  step, which is what the old mix-toward-navy existed to provide. A page exposes
+  its category by carrying the matching `.rk-cat-*` class; --rk-accent then
+  resolves to that industry's ink on a light ground and to its lift on a dark
+  one, without this file naming any industry. Anything the reader can CLICK uses
+  --rk-signal instead: the accent says which industry this is, signal says what
+  is actionable, and tokens.css keeps the two out of each other's hue band on
+  purpose.
 
   The print rules at the foot are global on purpose. This partial only ships on
   industry pages, so hiding the fixed site header there cannot affect any other
   page — and a fixed header reprinted on every sheet is exactly what the review
-  complained about.
+  complained about. They are also much shorter than they were: tokens.css §6
+  re-binds the whole palette to ink on white for print, so only the handful of
+  rules that deliberately change WEIGHT or structure on paper survive here.
 
-  Type is Inter and Plus Jakarta Sans, already loaded site-wide. Nothing here
-  adds a request.
+  Type comes from the tokens too. This partial used to name Inter and Plus
+  Jakarta Sans and claim they were loaded site-wide; neither is loaded any more —
+  baseof.html stopped fetching them from Google Fonts — so both names were
+  resolving to system-ui. The faces the site actually publishes are behind
+  --rk-font-body and --rk-font-display.
 */}}
 <style>
   .ind {
-    --canvas: #f9fafb;
-    --sheet: #ffffff;
-    --rule: #e5e7eb;
-    --tint: #eef1fc;
-    --deep: #1b2456;
-    --deep-2: #3548ab;
-    --ink: #111827;
-    --ink-2: #4b5563;
+    /* Aliases onto the ground-aware tokens, not values. Both the rules below and
+       the figures in partials/industries/*.html paint with these names. */
+    --canvas: var(--rk-ground);
+    --sheet: var(--rk-sheet);
+    --rule: var(--rk-rule);
+    --deep: var(--rk-text-1);
+    --ink: var(--rk-text);
+    --ink-2: var(--rk-text-2);
 
-    --accent: #ea580c;
-    --accent-ink: #1b2456;
-    --accent-ink: color-mix(in srgb, var(--accent) 45%, #1b2456);
-    --accent-wash: #eef1fc;
-    --accent-wash: color-mix(in srgb, var(--accent) 12%, #ffffff);
-    --accent-edge: #1b2456;
-    --accent-edge: color-mix(in srgb, var(--accent) 52%, #1b2456);
+    /* The industry's own colour. Raw, because each category ink is already
+       solved for contrast on every ground of its mode — see tokens.css §2. */
+    --accent-ink: var(--rk-accent);
+    --accent-edge: var(--rk-accent);
+    --accent-wash: color-mix(in srgb, var(--rk-accent) 10%, var(--rk-sheet));
 
-    --write-line: #a5aab2;
-    --write-line: color-mix(in srgb, var(--ink-2) 52%, #ffffff);
+    /* the line the reader writes on: a boundary, so it has to hold 3:1 */
+    --write-line: var(--rk-rule-strong);
 
     /* keep in step with .ind-accent below */
 
     /* the grey the artwork uses for material the reader already holds — one
        step darker than a hairline, so it survives a greyscale print */
-    --art-mute: #ccd0d7;
-    --art-mute: color-mix(in srgb, var(--ink-2) 30%, #ffffff);
+    --art-mute: var(--rk-rule-mid);
 
-    --font-body: Inter, system-ui, -apple-system, sans-serif;
-    --font-display: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+    --font-body: var(--rk-font-body);
+    --font-display: var(--rk-font-display);
 
     background-color: var(--canvas);
     color: var(--ink-2);
@@ -76,20 +98,25 @@
     min-height: 100vh;
   }
 
-  /* Setting --accent further down the tree is not enough on its own: the three
-     derived colours above are resolved once, where they are declared, and what
-     descendants inherit is the resolved value rather than the recipe. Anywhere a
-     second industry's accent is set on a child — the cards on the overview, the
-     links to the other industries — this class has to be set with it, so the
-     derived colours are worked out again against the new accent. Keep the two
-     blocks identical. */
+  /* Setting a second category further down the tree is not enough on its own:
+     the derived colours above are resolved once, where they are declared, and
+     what descendants inherit is the resolved value rather than the recipe.
+     Anywhere a second industry's accent is set on a child — the cards on the
+     overview, the links to the other industries — this class has to be set with
+     it (tokens.css calls the same shape .rk-rederive), so the derived colours
+     are worked out again against the new accent. Keep the two blocks identical.
+
+     The wash is written out rather than taken from --rk-accent-wash for the same
+     reason: that token is derived on the ground element, so it holds the PAGE's
+     wash, not this line's. The recipe is tokens.css's own. It is not guarded by a
+     flat fallback any more — this file used to declare one before every
+     color-mix() and it never did anything, because a custom property accepts any
+     value at parse time, so the second declaration always wins and the fallback
+     is only ever shadowed. tokens.css mixes its own washes unguarded. */
   .ind-accent {
-    --accent-ink: #1b2456;
-    --accent-ink: color-mix(in srgb, var(--accent) 45%, #1b2456);
-    --accent-wash: #eef1fc;
-    --accent-wash: color-mix(in srgb, var(--accent) 12%, #ffffff);
-    --accent-edge: #1b2456;
-    --accent-edge: color-mix(in srgb, var(--accent) 52%, #1b2456);
+    --accent-ink: var(--rk-accent);
+    --accent-edge: var(--rk-accent);
+    --accent-wash: color-mix(in srgb, var(--rk-accent) 10%, var(--rk-sheet));
   }
 
   /* ---- shell ------------------------------------------------------------ */
@@ -107,10 +134,10 @@
   /* `:not([class])` is load-bearing, not tidiness.
 
      As `.ind a` this rule was specificity (0,1,1) and beat `.ind-cta`
-     (0,1,0), so the primary call to action inherited the sheet's dark body
-     ink instead of its own `#ffffff` — dark text on a dark accent fill. The
-     button rendered live on all five industry pages as a solid coloured
-     rectangle with no readable label. Nothing catches this: the markup is
+     (0,1,0), so the primary call to action inherited the sheet's body ink
+     instead of the ink its own fill is measured against. The button rendered
+     live on all five industry pages as a solid coloured rectangle with no
+     readable label. Nothing catches this: the markup is
      correct, the colour is declared, the contrast checker never sees the
      element because the label is the same colour as what is behind it, and
      the ghost button beside it looks fine.
@@ -120,10 +147,13 @@
   .ind a:not([class]) { color: inherit; }
 
   /* The base stylesheet defines no focus ring, and the UA default is weak on a
-     near-white sheet, so the section states its own. */
+     near-white sheet, so the section states its own. tokens.css has one, but it
+     is scoped to `[data-ground] a:focus-visible` and nothing in this site's
+     markup carries a data-ground attribute — the sheet ground comes from :root
+     — so that rule never matches here. --rk-focus is the colour it would use. */
   .ind a:focus-visible,
   .ind button:focus-visible {
-    outline: 2px solid var(--accent-edge);
+    outline: 2px solid var(--rk-focus);
     outline-offset: 3px;
     border-radius: 0.375rem;
   }
@@ -361,21 +391,47 @@
     color: var(--ink-2);
   }
 
-  /* ---- outcomes: the one dark band on the page -------------------------- */
+  /* ---- outcomes: the one band the page sets apart -----------------------
+
+     This was the one dark band: a navy fill with white text and four rgba-white
+     hairlines on top of it. It is now written entirely in the same tokens as the
+     rest of the page, on --rk-sunk — the recessed plate. That reads as its own
+     block on the light sheet, and it is the ONE block here that would still be
+     right if the band were inverted again: put data-ground="console" on the
+     section in layouts/industries/single.html and every rule below flips to the
+     dark register by itself, because --rk-sunk, --rk-text-2 and --rk-accent are
+     each defined twice. Nothing here needs editing for that; the attribute goes
+     on the markup, which is not this file's to change.
+
+     The three `.ind-band .ind-head__*` overrides that used to invert the section
+     head are gone for the same reason: the head already paints in --rk-text-2,
+     --rk-rule and --rk-accent, and all three follow the ground.
+
+     The block re-declares the page's alias names, which is what makes that claim
+     true rather than hopeful: a var() inside a custom property is resolved where
+     it is DECLARED, so the --ink-2 inherited from .ind holds the PAGE ground's
+     ink and would stay dark inside an inverted band. Re-stating them here is a
+     no-op on the sheet and the whole difference on the console.
+  ---------------------------------------------------------------------- */
 
   .ind-band {
-    background-color: var(--deep);
+    --sheet: var(--rk-sheet);
+    --rule: var(--rk-rule);
+    --deep: var(--rk-text-1);
+    --ink: var(--rk-text);
+    --ink-2: var(--rk-text-2);
+    --accent-ink: var(--rk-accent);
+    --accent-edge: var(--rk-accent);
+    --accent-wash: color-mix(in srgb, var(--rk-accent) 10%, var(--rk-sheet));
+
+    background-color: var(--rk-sunk);
     border-radius: 1rem;
     padding: 2rem 1.5rem;
-    color: #ffffff;
+    color: var(--ink-2);
   }
   @media (min-width: 768px) {
     .ind-band { padding: 2.75rem 2.5rem; }
   }
-
-  .ind-band .ind-head__label { color: rgba(255, 255, 255, 0.72); }
-  .ind-band .ind-head__rule { background-color: rgba(255, 255, 255, 0.22); }
-  .ind-band .ind-head__mark { background-color: var(--accent); }
 
   .ind-band__list {
     list-style: none;
@@ -387,10 +443,10 @@
     display: flex;
     gap: 0.875rem;
     padding: 0.9375rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    border-top: 1px solid var(--rk-rule-mid);
     font-size: 0.9375rem;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--ink-2);
     min-width: 0;
   }
   .ind-band__item:first-child { border-top: 0; padding-top: 0; }
@@ -398,7 +454,7 @@
   .ind-band__tick {
     flex: none;
     margin-top: 0.1875rem;
-    color: var(--accent);
+    color: var(--accent-edge);
   }
 
   /* ---- measures: a sheet of measures with a line for the reader's own
@@ -421,9 +477,12 @@
     text-align: left;
   }
 
+  /* The column heads sit on the heaviest rule the system has — the edge of the
+     field, not a separator between rows. --deep is an ink and this is a border,
+     so it takes the boundary token rather than the text one. */
   .ind-measures thead th {
     padding: 1rem 1.5rem 0.75rem 0;
-    border-bottom: 2px solid var(--deep);
+    border-bottom: 2px solid var(--rk-rule-strong);
     font-size: 0.625rem;
     font-weight: 800;
     letter-spacing: 0.18em;
@@ -561,10 +620,13 @@
      drawings floating in white. Both use the same viewBox, so the line around
      "your machines" is drawn at exactly the same size in both — which is what
      makes the one difference between them legible. */
+  /* It is a recessed surface, and the palette has a token for that — it used to
+     be painted in the page canvas, which is the colour of what is BEHIND the card
+     rather than of a well inside it. */
   .ind-found__plate {
     margin: -1.5rem -1.5rem 1.375rem;
     padding: 1.25rem 1.5rem;
-    background-color: var(--canvas);
+    background-color: var(--rk-sunk);
     border-bottom: 1px solid var(--rule);
   }
 
@@ -798,7 +860,10 @@
     text-underline-offset: 3px;
     transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .ind-lead__links a:hover { color: var(--accent-ink); }
+  /* Signal, not the accent: on a page whose category is the accent, hovering a
+     link would otherwise land on --rk-accent, and on the overview — which has no
+     category — --rk-accent IS --rk-text, so the hover would change nothing. */
+  .ind-lead__links a:hover { color: var(--rk-signal); }
 
   /* ---- next step -------------------------------------------------------- */
 
@@ -838,6 +903,12 @@
     gap: 0.875rem;
   }
 
+  /* The two buttons are the only things on the page a reader can act on, so they
+     are the page's one use of SIGNAL rather than of the industry accent: the
+     accent says which industry this is, signal says what is actionable, and the
+     palette keeps the two in different hue bands so a category can never read as
+     a button. The fill and the ink on it are different tokens — the orange that
+     carries a label is not the orange that is a label. */
   .ind-cta,
   .ind-cta-ghost {
     display: inline-flex;
@@ -850,23 +921,35 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
-    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* The hover fill goes LIGHTER, which looks wrong on a light page and is not a
+     choice: tokens.css measures it. The ink on the fill is the one token FACE
+     does not flip, so darkening the button on hover takes its label below AA
+     exactly when the pointer is on it. filter: brightness(1.15) used to do this
+     job and could not — it is unmeasured, and on a dark ground it lightened a
+     fill that was already light. */
   .ind-cta {
-    background-color: var(--accent-ink);
-    color: #ffffff;
-    border: 1px solid var(--accent-ink);
+    background-color: var(--rk-signal-fill);
+    color: var(--rk-on-signal-fill);
+    border: 1px solid var(--rk-signal-fill);
   }
-  .ind-cta:hover { filter: brightness(1.15); }
+  .ind-cta:hover {
+    background-color: var(--rk-signal-fill-hover);
+    border-color: var(--rk-signal-fill-hover);
+  }
 
   .ind-cta-ghost {
     background-color: transparent;
-    color: var(--accent-ink);
+    color: var(--rk-signal);
     border: 1px solid var(--rule);
   }
-  .ind-cta-ghost:hover { background-color: var(--accent-wash); }
+  .ind-cta-ghost:hover {
+    background-color: var(--rk-signal-wash);
+    border-color: var(--rk-rule-mid);
+  }
 
   .ind-note {
     margin: 1.25rem 0 0;
@@ -941,13 +1024,15 @@
     color: var(--ink-2);
   }
 
+  /* The card's own "go" line is the affordance, so it reads in signal like the
+     buttons do, while the card's top edge stays the industry's accent. */
   .ind-pick__go {
     margin-top: auto;
     font-size: 0.6875rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--accent-ink);
+    color: var(--rk-signal);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -973,7 +1058,7 @@
   @media print {
     @page { margin: 14mm 12mm; }
 
-    html, body { background: #ffffff !important; }
+    html, body { background: var(--rk-ground) !important; }
 
     /* The fixed header, the consent banner and the trust strip are screen
        furniture. A fixed element reprints on every sheet. */
@@ -983,20 +1068,22 @@
     [aria-label="Trust and Compliance Details"] { display: none !important; }
     body > .pt-20 { padding-top: 0 !important; }
 
-    .ind {
-      background: #ffffff !important;
-      color: #000000;
-      --canvas: #ffffff;
-      --sheet: #ffffff;
-      --rule: #9a9a9a;
-      --ink: #000000;
-      --ink-2: #1f1f1f;
-      --deep: #000000;
-      --accent-ink: #000000;
-      --accent-edge: #000000;
-      --accent-wash: #ffffff;
-      --write-line: #666666;
-      --art-mute: #a8a8a8;
+    /* tokens.css §6 re-binds the whole palette for paper — white grounds, black
+       ink, grey-to-black rules — and the names above are aliases onto it, so
+       they collapse with it and the long list of per-variable print values this
+       block used to hold is gone. Two exceptions, both because a mix and a ramp
+       rung behave differently from a flat value on paper:
+
+       the wash is mixed from the accent against the sheet, and mixing black into
+       white gives a grey box where a washed footing should read as bare paper;
+
+       --art-mute is one rung darker than a hairline on screen, and that rung
+       prints dark enough to compete with the ink it is meant to sit behind. On
+       paper it takes the hairline itself. */
+    .ind,
+    .ind-accent {
+      --accent-wash: var(--rk-sheet);
+      --art-mute: var(--rk-rule);
     }
 
     .ind-wrap { max-width: none; padding: 0; }
@@ -1007,10 +1094,11 @@
 
     .ind-h1 { font-size: 22pt; max-width: none; }
     .ind-deck { font-size: 11pt; max-width: none; }
+    /* On screen the eyebrow is a washed chip with one accented edge; on paper the
+       wash is gone, so it needs a full box to still read as a chip. */
     .ind-eyebrow {
-      background: #ffffff !important;
-      border: 1px solid #000000;
-      color: #000000;
+      border: 1px solid var(--rk-rule-strong);
+      color: var(--rk-text);
       padding: 2pt 5pt;
     }
 
@@ -1043,9 +1131,14 @@
     .ind-lead__bio p { margin-bottom: 7pt; max-width: none; }
     .ind-lead__creds { gap: 8pt 14pt; padding: 4pt 0 11pt; }
     .ind-lead__verify { margin: 0 -12pt; padding: 8pt 12pt 9pt; }
-    .ind-head__mark { background: #000000 !important; }
-    .ind-head__label { color: #000000; }
-    .ind-head__rule { background: #000000 !important; }
+    /* Nothing on paper is carried by colour alone, so the section head's mark
+       and rule go to the boundary token, which tokens.css prints as black. These
+       are stated rather than left to the accent: the accent reaches black on
+       paper through a re-binding of the category primitives, and that is one
+       indirection too many to rely on for the page's loudest furniture. */
+    .ind-head__mark { background: var(--rk-rule-strong) !important; }
+    .ind-head__label { color: var(--rk-text); }
+    .ind-head__rule { background: var(--rk-rule-strong) !important; }
 
     /* Keep every block whole on one sheet, and never orphan a heading. */
     .ind-figure,
@@ -1073,24 +1166,23 @@
       break-inside: avoid; page-break-inside: avoid;
     }
 
-    /* The one dark band inverts to ink on white so it does not swallow a
-       cartridge, and keeps a rule so it still reads as its own block. */
+    /* The band's plate collapses to bare paper with the rest of the palette, so
+       all that is left to do here is give it back an edge — without one it stops
+       reading as its own block — and to keep the tick legible if the section is
+       ever inverted on screen. */
     .ind-band {
-      background: #ffffff !important;
-      color: #000000;
-      border: 1px solid #000000;
+      border: 1px solid var(--rk-rule-strong);
       border-radius: 0;
       padding: 12pt;
     }
-    .ind-band .ind-head__label,
-    .ind-band__item { color: #000000; }
-    .ind-band__item { border-top-color: #bdbdbd; }
-    .ind-band .ind-head__rule,
-    .ind-band .ind-head__mark { background: #000000 !important; }
-    .ind-band__tick { color: #000000; }
+    .ind-band__item {
+      color: var(--rk-text);
+      border-top-color: var(--rk-rule);
+    }
+    .ind-band__tick { color: var(--rk-text); }
 
     .ind-figure, .ind-problem, .ind-found, .ind-sheet, .ind-next, .ind-pick {
-      border-color: #000000;
+      border-color: var(--rk-rule-strong);
       box-shadow: none;
       border-radius: 0;
     }
@@ -1116,58 +1208,48 @@
     .ind-measures tbody td::before { content: none; }
     .ind-measures tbody td + td { margin-top: 0; }
     .ind-measures tbody th,
-    .ind-measures tbody td { border-bottom: 1px solid #bdbdbd; padding-right: 14pt; }
+    .ind-measures tbody td { border-bottom: 1px solid var(--rk-rule); padding-right: 14pt; }
     .ind-measures tbody td:last-child { padding-right: 0; }
 
-    .ind-measures thead th { border-bottom-color: #000000; color: #000000; }
-    .ind-measures tbody th { color: #000000; }
+    .ind-measures thead th { color: var(--rk-text); }
+    .ind-measures tbody th { color: var(--rk-text); }
     .ind-measures tbody th,
     .ind-measures tbody td { padding-top: 8pt; padding-bottom: 8pt; }
 
     /* The writing line is the reason these pages get printed. Keep it dark
        enough to write over and long enough to write on. */
     .ind-blank { height: 19pt; border-bottom-width: 1.2pt; }
-    .ind-blank::before { background: #000000 !important; height: 2.5pt; }
+    .ind-blank::before { background: var(--rk-rule-strong) !important; height: 2.5pt; }
 
-    .ind-found__felt {
-      background: #ffffff !important;
-      border-top: 1px solid #000000;
-    }
-    .ind-found__felt dt { color: #000000; }
+    .ind-found__felt { border-top: 1px solid var(--rk-rule-strong); }
+    .ind-found__felt dt { color: var(--rk-text); }
 
     /* The monogram tile is a screen device; on paper it would print as a grey
        box for no reason. Drop the tile, keep the drawn mark. */
     .ind-lead__mark {
-      background: #ffffff !important;
-      color: #000000;
+      color: var(--rk-text);
       width: auto;
       height: auto;
       border-radius: 0;
     }
-    .ind-lead__name, .ind-lead__cred-key, .ind-lead__bio p:first-child { color: #000000; }
-    .ind-lead__role, .ind-lead__verify-label { color: #000000; }
-    .ind-lead__cred { border-top-color: #000000; }
+    .ind-lead__name, .ind-lead__cred-key, .ind-lead__bio p:first-child { color: var(--rk-text); }
+    .ind-lead__role, .ind-lead__verify-label { color: var(--rk-text); }
+    .ind-lead__cred { border-top-color: var(--rk-rule-strong); }
     /* Underlines survive greyscale where a coloured link does not, and
        a[href]::after is suppressed site-wide, so the printed sheet keeps the
        handles themselves — which is the whole point of this strip on paper. */
-    .ind-lead__verify {
-      background: #ffffff !important;
-      border-top: 1px solid #000000;
-    }
+    .ind-lead__verify { border-top: 1px solid var(--rk-rule-strong); }
     .ind-lead__links a {
-      color: #000000;
-      text-decoration-color: #000000;
+      color: var(--rk-text);
+      text-decoration-color: var(--rk-rule-strong);
     }
 
     .ind-figure__art, .ind-found__art { max-width: 100%; }
-    .ind-found__plate {
-      background: #ffffff !important;
-      border-bottom-color: #000000;
-    }
-    .ind-figure__beat { border-top-color: #000000; }
-    .ind-figure__beat b { color: #000000; }
+    .ind-found__plate { border-bottom-color: var(--rk-rule-strong); }
+    .ind-figure__beat { border-top-color: var(--rk-rule-strong); }
+    .ind-figure__beat b { color: var(--rk-text); }
 
-    .ind-note { color: #000000; }
+    .ind-note { color: var(--rk-text); }
 
     a[href]::after { content: ""; }
   }
