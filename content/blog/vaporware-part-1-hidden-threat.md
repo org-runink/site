@@ -1,6 +1,7 @@
 ---
 title: "The Hidden Threat: Unmasking the Dangers of Vaporware in Supply Chain Management (SCM)"
 author: "Runink Logistics Operations Team"
+featured_image: "/images/blog/vaporware_scm_lowpoly_1781932181179.png"
 date: 2026-06-20T08:28:51Z
 draft: false
 description: "Part of the 6-part series on the dangers of SCM Vaporware."

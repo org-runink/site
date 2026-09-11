@@ -1,6 +1,7 @@
 ---
 title: "Spotting the Illusion: How to Identify Vaporware in SCM Vendor Pitches"
 author: "Runink Logistics Operations Team"
+featured_image: "/images/blog/vaporware_scm_spotting_1781932633450.png"
 date: 2026-06-20T08:28:51Z
 draft: false
 description: "Part of the 6-part series on the dangers of SCM Vaporware."

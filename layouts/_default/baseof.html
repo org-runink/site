@@ -58,7 +58,19 @@
         {{ if eq $img.MediaType.SubType "svg" }}
           {{ $seoImage = $img.Permalink }}
         {{ else }}
-          {{ $seoImage = ($img.Resize "1200x630 webp").Permalink }}
+          {{/* Fill, not Resize. Hugo's own docs: "If you specify both width and
+                       height... the image will be non-proportionally scaled (stretched or
+                       squashed)." Every source here is a 1024x1024 square, so Resize
+                       "1200x630" was squashing the artwork vertically and shipping the
+                       distorted result as the og:image, the twitter:image and
+                       Article.image on 46 posts. Fill crops to the frame instead, which
+                       loses edges but never lies about the shape.
+          
+                       1200x675 rather than 1200x630: Google documents 16x9 for a large
+                       Discover image, and 1200x630 is 1.90:1 — a social-card ratio that
+                       predates Discover. 675 is the true 16x9 height at 1200 wide, clears
+                       the 1200px minimum, and is still fine as an og:image. */}}
+          {{ $seoImage = ($img.Fill "1200x675 webp").Permalink }}
         {{ end }}
       {{ else }}
         {{ $seoImage = . | absURL }}

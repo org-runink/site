@@ -1,6 +1,7 @@
 ---
 title: "Operational Paralysis: When Phantom SCM Software Breaks the Supply Chain"
 author: "Runink Logistics Operations Team"
+featured_image: "/images/blog/vaporware_scm_operational_1781932654453.png"
 date: 2026-06-20T08:28:51Z
 draft: false
 description: "Part of the 6-part series on the dangers of SCM Vaporware."

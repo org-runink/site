@@ -62,11 +62,11 @@
 {
   "@context": "https://schema.org",
   "@type": "ImageObject",
-  "url": {{ $finalUrl | absURL | jsonify }}
+  "url": {{ $finalUrl | absURL | jsonify | safeJS }}
   {{ with $finalWidth }}, "width": {{ . }}{{ end }}
   {{ with $finalHeight }}, "height": {{ . }}{{ end }}
-  {{ with $caption }}, "caption": {{ . | jsonify }}, "description": {{ . | jsonify }}{{ end }}
-  {{ with $creator }}, "creator": { "@type": "Person", "name": {{ . | jsonify }} }{{ end }}
-  {{ with $license }}, "copyrightNotice": {{ . | jsonify }}{{ end }}
+  {{ with $caption }}, "caption": {{ . | jsonify | safeJS }}, "description": {{ . | jsonify | safeJS }}{{ end }}
+  {{ with $creator }}, "creator": { "@type": "Person", "name": {{ . | jsonify | safeJS }} }{{ end }}
+  {{ with $license }}, "copyrightNotice": {{ . | jsonify | safeJS }}{{ end }}
 }
 </script>
