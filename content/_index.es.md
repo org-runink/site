@@ -14,6 +14,11 @@ hero:
   line1: "Usted se entera cuando"
   line2: "ya es tarde para reclamar."
   deck: "Un contenedor espera porque un documento está mal. El cargo empieza ese mismo día. Su versión de eso ya está escrita en algún sitio."
+  stance_label: "Nuestra postura"
+  stance:
+    - "Una acción que el software toma por su cuenta no deja a nadie a quien preguntar después."
+    - "Así que este redacta, y espera."
+    - "La aprobación es el registro: un nombre, una hora y el motivo por el que se envió, juntos."
   cta_primary: "Encuentre su sector"
   cta_secondary: "Agende una consulta"
 

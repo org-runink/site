@@ -220,6 +220,74 @@
   .hp-hero { margin-bottom: 3rem; }
   @media (min-width: 768px) { .hp-hero { margin-bottom: 3.5rem; } }
 
+  /* Two columns only from 1024px. The stance is three short lines and the lede
+     is a headline that has to stay on two lines, so squeezing both into a
+     tablet width would cost the headline its break — which is where the whole
+     hero's rhythm lives. Below that it stacks and reads as the hero's last
+     word. */
+  @media (min-width: 1024px) {
+    .hp-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.72fr);
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .hp-hero__lede { min-width: 0; }
+  }
+
+  /* A ruled margin note, not a card. A box here would read as a callout that
+     the page is quoting from somewhere else; the rule says it is the page
+     speaking in its own voice, and it is the same hairline the ledger and the
+     section heads use. */
+  .hp-stance {
+    margin: 2.5rem 0 0;
+    padding: 1.1rem 0 0;
+    border-top: 2px solid var(--rk-rule-strong);
+    max-width: 44ch;
+  }
+  @media (min-width: 1024px) {
+    .hp-stance { margin-top: 0.5rem; padding-top: 1.25rem; max-width: none; }
+  }
+  .hp-stance__label {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .hp-stance__line {
+    margin: 0 0 0.7rem;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .hp-stance__line:last-child { margin-bottom: 0; }
+
+  @media print {
+    /* Beside the hero on paper too: the sheet is wider than it is tall in the
+       places this matters, and the stance is the one thing on the leave-behind
+       that is an opinion. */
+    .hp-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.72fr);
+      gap: 18pt;
+      align-items: start;
+    }
+    .hp-stance {
+      margin: 0;
+      padding-top: 6pt;
+      border-top-color: #000;
+      max-width: none;
+      break-inside: avoid;
+    }
+    .hp-stance__label { font-size: 7.5pt; margin-bottom: 5pt; color: #000; }
+    .hp-stance__line { font-size: 9pt; margin-bottom: 4pt; }
+  }
+
   .hp-eyebrow {
     display: inline-block;
     padding: 0.375rem 0.75rem;
@@ -711,7 +779,19 @@
        The ledger rows print the same way. */
     .hp-more { margin-top: 8pt; }
     .hp-more__link { color: #000; border-bottom-color: #000; font-size: 8pt; }
-    .hp-more__link::after { content: " (runink.org" attr(href) ")"; font-weight: 400; letter-spacing: 0; text-transform: none; }
+    /* `[href]` is not decoration and must not be tidied away. The last rule in
+       this print block is `a[href]::after { content: "" }`, which strips the
+       destination off every link on the sheet; at (0,1,1) it outranks a bare
+       class, so `.hp-more__link::after` lost and this line printed with no URL
+       on it at all. With the attribute this is (0,2,1) and wins — the same
+       shape, and for the same reason, as .hp-lead__link[href^="http"] above.
+       Found by reading the printed sheet, not the stylesheet. */
+    .hp-more__link[href]::after {
+      content: " (runink.org" attr(href) ")";
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
     .hp-more__link span { display: none; }
   }
 

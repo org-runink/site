@@ -30,6 +30,11 @@ hero:
   line1: "You find out when"
   line2: "it is too late to argue."
   deck: "A container sits because one form is wrong. The charge starts that day. Your version of that is already written down somewhere."
+  stance_label: "Where we stand"
+  stance:
+    - "An action software takes on its own leaves nobody to ask afterwards."
+    - "So this one drafts, and waits."
+    - "The approval is the record: a name, a time, and the reason it was sent, kept together."
   cta_primary: "Find your industry"
   cta_secondary: "Book a consultation"
 

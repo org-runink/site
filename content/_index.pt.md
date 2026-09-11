@@ -14,6 +14,11 @@ hero:
   line1: "Você descobre quando"
   line2: "já é tarde para contestar."
   deck: "Um contêiner fica parado porque um documento está errado. A diária começa nesse mesmo dia. A sua versão disso já está escrita em algum lugar."
+  stance_label: "Onde ficamos"
+  stance:
+    - "Uma ação que o software toma por conta própria não deixa ninguém a quem perguntar depois."
+    - "Então este redige, e espera."
+    - "A aprovação é o registro: um nome, uma hora e o motivo do envio, guardados juntos."
   cta_primary: "Encontre o seu setor"
   cta_secondary: "Agende uma conversa"
 

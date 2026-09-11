@@ -61,18 +61,46 @@
 
     {{ $h := .Params.hero }}
 
-    <!-- 1. The buyer's problem, in one sentence -->
+    {{/* 1. The buyer's problem, in one sentence — and beside it, the one claim
+         on this page somebody could disagree with.
+
+         WHY THE STANCE IS HERE AND NOT LOWER. Everything below the hero argues
+         that the software is careful. None of it says what this company thinks,
+         and a page with no position is a page a reader has no reason to trust
+         over the next one. The test a stance has to pass is that its opposite
+         is a position somebody actually holds — and "software should act
+         without waiting for a person" is what most of this market is selling,
+         so this is a real disagreement rather than a value nobody would oppose.
+
+         It is also what fixes the hero's shape. At desktop the headline, deck
+         and buttons occupy the left 55% and the right 45% was empty, so the
+         first screen of the site read as unfinished. Below 1024px it stacks
+         under the buttons, where it reads as a closing line to the hero rather
+         than as an aside.
+
+         It states a design position in the present tense, which is the safe
+         side of rule 2: what the software does and why, never what it is
+         missing. "This one drafts, and waits" is conduct. */}}
     <header class="hp-hero">
-      <p class="hp-eyebrow">{{ $h.eyebrow }}</p>
-      <h1 class="hp-h1">
-        {{ $h.line1 }}
-        <span class="hp-h1__b">{{ $h.line2 }}</span>
-      </h1>
-      <p class="hp-deck">{{ $h.deck }}</p>
-      <div class="hp-actions">
-        <a class="hp-cta" href="{{ "/industries/" | relURL }}">{{ $h.cta_primary }}</a>
-        <a class="hp-cta-ghost" href="#contact-form">{{ $h.cta_secondary }}</a>
+      <div class="hp-hero__lede">
+        <p class="hp-eyebrow">{{ $h.eyebrow }}</p>
+        <h1 class="hp-h1">
+          {{ $h.line1 }}
+          <span class="hp-h1__b">{{ $h.line2 }}</span>
+        </h1>
+        <p class="hp-deck">{{ $h.deck }}</p>
+        <div class="hp-actions">
+          <a class="hp-cta" href="{{ "/industries/" | relURL }}">{{ $h.cta_primary }}</a>
+          <a class="hp-cta-ghost" href="#contact-form">{{ $h.cta_secondary }}</a>
+        </div>
       </div>
+
+      {{ with $h.stance }}
+      <aside class="hp-stance" aria-label="{{ $h.stance_label }}">
+        <p class="hp-stance__label">{{ $h.stance_label }}</p>
+        {{ range . }}<p class="hp-stance__line">{{ . }}</p>{{ end }}
+      </aside>
+      {{ end }}
     </header>
 
     {{/* 2. The picture of the problem. Two panels of the same field of records:

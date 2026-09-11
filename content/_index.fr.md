@@ -14,6 +14,11 @@ hero:
   line1: "Vous l'apprenez quand"
   line2: "il est trop tard pour contester."
   deck: "Un conteneur attend parce qu'un document est faux. Les frais courent dès ce jour-là. Votre version de cela est déjà écrite quelque part."
+  stance_label: "Notre position"
+  stance:
+    - "Une action que le logiciel prend de lui-même ne laisse personne à qui demander ensuite."
+    - "Alors celui-ci rédige, et attend."
+    - "L'approbation est la trace : un nom, une heure et la raison de l'envoi, gardés ensemble."
   cta_primary: "Trouvez votre secteur"
   cta_secondary: "Prendre rendez-vous"
 
