@@ -10,8 +10,6 @@ featured_image: /images/blog/automated-semantic-layer-data-observability.png
 canonical: https://runink.org/blog/automated-semantic-layer-data-observability
 ---
 
-# One View of a Shipment, Built From the Events You Already Receive
-
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
 Every carrier, terminal and warehouse sends data its own way. A shared view means giving those events one shape and one set of names, so a delay in one system can be read against a commitment in another. The part that decides whether anyone trusts it: each number keeps the records it came from.
@@ -204,38 +202,4 @@ So pick the measure your last meeting argued about. Write down what it means, wh
 
 *For what Runink FACE does with the records it reads, and where it stops: [Runink FACE →](/products/face/)*
 
-<!-- FAQPage schema for search engines -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What does one shared view of freight data mean?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "One agreed name and definition for each thing you measure, fed by the events your systems already send, with the link from every figure back to the records behind it. Dwell time then means the same thing in the yard report and the board pack."
-    }
-  }]
-}
-</script>
 
-
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work through one measure against your own records.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: analytics</a> - vendor guidance on data handling.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: supply chain analytics</a> - vendor guidance on freight data.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: supply chain technology research</a> - analyst view of the market.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation and Logistics</a> - academic research on freight.</li>
-  </ul>
-</section>

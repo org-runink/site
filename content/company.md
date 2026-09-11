@@ -3,7 +3,7 @@ title: "About Runink"
 layout: "company"
 description: "What Runink is for: reading the records a company already keeps, and turning them into decisions its own people can defend."
 date: "2024-05-20T00:00:00Z"
-author: "Lead Data & Cloud Architect"
+author: "Runink"
 ---
 
 {{< section-container class="bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 pt-20 pb-32" >}}
@@ -24,37 +24,40 @@ author: "Lead Data & Cloud Architect"
 
 {{< section-container class="py-20 bg-stone-900" >}}
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Our Core Values</h2>
+    <h2 class="text-3xl font-bold text-center mb-4">How we build it</h2>
+    <p class="text-xl text-ink-2 text-center max-w-3xl mx-auto mb-12">
+      Six rules the software follows. Each one is a thing you can ask us to show you in a running system, which is the only reason they are worth putting on a page.
+    </p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {{< value-card 
-          title="Operational Intelligence"
-          icon="lightbulb"
-          description="We believe logistics should think for itself. Every workflow we design learns, predicts, and adapts with purpose."
-      >}}
-      {{< value-card 
-          title="Transparency in Motion"
-          icon="adjustments-vertical"
-          description="We build systems that reveal—not obscure—how data flows, decisions are made, and operations evolve."
-      >}}
-      {{< value-card 
-          title="Human + Machine Collaboration"
+      {{< value-card
+          title="A person signs, and is named"
           icon="users"
-          description="Our automation amplifies human judgment. We design tools that help people focus on strategy, not maintenance."
+          description="The software drafts the action and stops. It waits in a queue until somebody approves, edits or rejects it, and the record keeps who that was. In claims, customs and payment the act carries liability, and liability does not transfer to software."
       >}}
-      {{< value-card 
-          title="Sustainable Growth"
-          icon="rocket-launch"
-          description="Efficiency and responsibility go hand-in-hand. We help companies reduce waste, energy use, and operational drag."
+      {{< value-card
+          title="It shows its working"
+          icon="magnifying-glass"
+          description="Every draft arrives with the rule it applied and the records it read. You can disagree with it on the evidence rather than on trust."
       >}}
-      {{< value-card 
-          title="Innovation by Design"
+      {{< value-card
+          title="It says when it does not know"
+          icon="light-bulb"
+          description="Not measured is a separate answer from zero, and the software stores it as one, with the reason. A check it could not run reports that it could not run it, rather than passing."
+      >}}
+      {{< value-card
+          title="It names the step it skipped"
+          icon="clipboard-document-list"
+          description="When part of a job does not happen, the result says which part and why. Software that reports success for work it did not do is the failure we designed hardest against."
+      >}}
+      {{< value-card
+          title="Your records stay on your hardware"
           icon="scale"
-          description="From data mesh architectures to decision assistance systems, we turn complexity into clarity through design-led engineering."
+          description="The models run on machines you control. Nothing is sent to an outside model provider — and that is enforced by a check that refuses the code, not by a setting somebody has to remember."
       >}}
-      {{< value-card 
-          title="Customer-Centric Excellence"
+      {{< value-card
+          title="We do not claim certifications"
           icon="hand-thumb-up"
-          description="We measure our success through the outcomes we enable—speed, reliability, and resilience for every client."
+          description="We have not been audited against SOC 2 or ISO 27001 by anyone. The software is built against those frameworks and it will tell you what it checked; it will not tell you it is certified, because it is not."
       >}}
     </div>
   </div>
@@ -62,25 +65,6 @@ author: "Lead Data & Cloud Architect"
 
 
 ---
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Subject Matter Expert (SME) in AWS Data Analytics, AWS Certified Developer, and Google Cloud Professional Certified in Data Engineering and Advanced Analytics. With over a decade of experience in building resilient, high-throughput cloud architectures, data pipelines, and automated logistics solutions.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations & References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Guidelines for processing data at volume.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Advanced methodologies for automated logistics.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Industry standard research on supply chain tech.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on automated applications in freight and transportation.</li>
-  </ul>
-</section>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

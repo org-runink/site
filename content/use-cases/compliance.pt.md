@@ -16,7 +16,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Conformidade e relatório de emissões</p>
 <p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, e não da plataforma que está por baixo dele. Vale dizer isso sem rodeios, porque conformidade soa como assunto de plataforma: as conferências descritas aqui leem os registros que o FACE guarda dos seus embarques e dos seus relatórios, e fazem parte do FACE em vez de serem um acréscimo à infraestrutura.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Os dados pessoais não chegam aos logs.</strong> Endereços de e-mail, telefones, números de cartão, números de identificação nacional e endereços IP são retirados do que vai para os logs e para os diagnósticos antes de ser escrito, então o rastro que um sistema deixa ao rodar não se torna uma segunda cópia dos dados.</li>
 <li><strong class="text-stone-200">Isso é uma propriedade da plataforma, não um relatório que você roda &mdash; e não tem teste nenhum.</strong> A remoção acontece no caminho de escrita por baixo de cada serviço, em todo lugar em que um serviço escreve uma linha. Também vamos te dizer que a própria função de remoção não tem teste algum, porque uma lista do que uma expressão regular deveria pegar não é prova de que ela pega. Leia a lista como descrição de intenção, não como certificação.</li>
@@ -24,7 +24,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Dois Relatórios Que Ninguém Tem Tempo De Montar.</h1>
+        <h2 id="dois-relatorios-que-ninguem-tem-tempo-de-montar" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Dois Relatórios Que Ninguém Tem Tempo De Montar.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Privacidade e emissões parecem problemas diferentes. São o mesmo problema: registros espalhados por sistemas que só uma pessoa juntando tudo à mão consegue responder.
         </p>
@@ -32,7 +32,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 O nome e o endereço do cliente são necessários para entregar a encomenda. Não são necessários no painel de uma transportadora, num relatório enviado a um parceiro, nem na cópia do arquivo que alguém baixou para uma reunião. Mas o campo viaja junto com o registro, e segue viajando.
             </p>
@@ -47,7 +47,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 No lado da privacidade, o mecanismo é mais estreito do que costuma ser vendido, e vale dizer com exatidão. Todo serviço escreve os seus logs e diagnósticos por meio de uma etapa de remoção compartilhada, que tira do texto os endereços de e-mail, os telefones, os números de cartão, os números de identificação nacional e os endereços IP e de hardware antes de o texto cair em algum lugar, junto com campos nomeados — senhas, tokens, segredos, chaves de licença, URLs de webhook — onde quer que apareçam num conteúdo estruturado. O ponto é que operar um sistema não cria em silêncio uma segunda cópia dos dados pessoais que estão dentro dele: o lugar onde vazamentos são descobertos tarde, e o lugar onde ninguém pensa em olhar. O que ele <em>não</em> faz é conferir os seus relatórios ou as suas telas de expedição, decidir que um nome não deveria estar numa delas, ou dizer quem viu. Não há aqui conferência de tela nem achado de exposição; se alguma página te disse o contrário, ela estava descrevendo algo que não existe.
             </p>
@@ -68,7 +68,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
+             <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>

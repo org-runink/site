@@ -91,6 +91,25 @@ product:
   deck: "Runink FACE est le produit derrière chacune des lignes ci-dessus. Il lit les enregistrements que vos systèmes détiennent déjà, compare chacun à la règle qui le gouverne, et présente une action rédigée à la personne qui porte la décision. Ce qui change d'un secteur à l'autre, c'est quels enregistrements comptent et quelle règle s'applique ; la lecture, la rédaction et l'approbation, non."
   note: "Sous le nom : des agents qui lisent les enregistrements et rédigent l'action, un écran de revue pour la personne qui porte la décision, et la plateforme en dessous, qui garde l'un et l'autre à l'intérieur de votre propre réseau."
 
+# Un seul cas, de bout en bout. Voir le commentaire de content/_index.md : chaque
+# chiffre ici appartient au lecteur, pas à nous, et rien dans ce bloc ne dit que
+# le logiciel dépose, dédouane, classe ou calcule quoi que ce soit.
+scenario_heading: "Une déclaration, de la retenue à la décision"
+scenario_intro: "Un conteneur est retenu au port. Voici tout ce que le logiciel en fait, dans l'ordre, sans rien omettre du milieu."
+scenario_note: "Chaque chiffre de cette séquence est le vôtre. Le tarif journalier est celui de votre accord, les droits sont ceux de votre déclaration, et les jours sont comptés à partir de vos propres enregistrements. Rien n'est estimé, et là où un chiffre ne peut pas être établi à partir de ce que vous avez fourni, le champ reste vide plutôt que rempli au jugé."
+scenario:
+  - step: "La retenue apparaît"
+    body: "Une déclaration revient retenue, sous examen ou immobilisée, et le nombre de jours de retenue dépasse zéro. Cette combinaison est tout le test — c'est une règle fixe, pas une appréciation, et elle s'applique à toutes les déclarations et non à celles que quelqu'un a pensé à vérifier."
+  - step: "Le coût est compté, pas estimé"
+    body: "Les jours de retenue, multipliés par le tarif journalier de surestarie de votre propre accord. C'est toute l'arithmétique. C'est le chiffre qui court déjà pendant que la déclaration attend dans une file que personne ne lit en entier."
+  - step: "Le document manquant est nommé"
+    body: "Le motif de la retenue et les documents en attente sortent de l'enregistrement de la déclaration et sont inscrits sur l'élément, de sorte que la personne qui le reprend ne commence pas par chercher ce qui ne va pas."
+  - step: "Le responsable est vérifié"
+    body: "Séparément, les déclarations sont lues à la recherche d'un importateur officiel vide, rempli avec le destinataire, ou portant un texte de remplissage saisi une fois. Celles-là portent des droits et des taxes sans personne pour en répondre, et elles sont levées comme élément distinct avec le montant en jeu."
+  - step: "Les deux ne sont jamais additionnés"
+    body: "La surestarie d'une déclaration retenue et les droits d'une déclaration sans responsable ne sont pas le même argent, et les compter comme un seul chiffre est la façon la plus courante de gonfler ce genre de total. Ils restent séparés, délibérément, et un test échoue s'ils venaient à se confondre."
+  - step: "Une personne nommée décide"
+    body: "L'élément attend. C'est l'approbation qui envoie quelque chose, et qui a approuvé, quand, et ce qui a été modifié est consigné. Si une partie de ce qui a été rédigé n'a pas pu être exécutée, le résultat nomme cette partie au lieu d'annoncer une réussite."
 why_heading: "Pourquoi ce n'est pas un tableau de bord de plus"
 why_intro: "Trois points décident si tout ce qui précède mérite votre temps."
 why:

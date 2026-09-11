@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">Una ruta vuelve como una distancia, una duración y una línea en el mapa.</strong> Un origen, un destino y las restricciones que usted ha nombrado salen hacia el proveedor de rutas; lo que vuelve es una distancia de carretera medida y un tiempo de viaje, no una opinión.</li>
 <li><strong class="text-stone-200">No se le adjunta dinero, y es a propósito.</strong> El proveedor de rutas devuelve distancia y tiempo, y ningún coste. Así que no se imprime ningún ahorro al lado de la ruta, porque una cifra que nadie ha medido puesta junto a dos que sí se midieron es la manera en que una estimación acaba citada como un hecho.</li>
@@ -28,7 +28,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Óptimo A Las Seis. No A Las Diez.</h1>
+        <h2 id="optimo-a-las-seis-no-a-las-diez" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Óptimo A Las Seis. No A Las Diez.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             El plan era bueno cuando se construyó. Luego una entrega tardó cuarenta minutos más de lo que debía, se cortó una carretera y un cliente movió su ventana. Ahora el plan es la mejor respuesta a una pregunta que ya nadie hace.
         </p>
@@ -36,7 +36,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
+            <h2 id="donde-se-tuerce" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 La ruta se calcula una vez, la noche antes o a primera hora. Es la decisión más cuidada del día, y se toma con la menor información que nadie vaya a tener en toda la jornada. Todo lo que de verdad va a dar forma al día &mdash; la cola en la puerta, el corte de carretera, la entrega rechazada, el conductor que va una hora por detrás &mdash; todavía no ha pasado.
             </p>
@@ -54,7 +54,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Pedir una ruta es una petición pequeña: dónde empieza, dónde acaba y las restricciones que importan en ese tramo. Eso sale hacia el proveedor de rutas y vuelve como una distancia de carretera, un tiempo de viaje y la línea misma, de modo que la respuesta se puede dibujar en un mapa en vez de describirla en una frase.
             </p>
@@ -78,7 +78,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+             <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. No tenemos ninguna propia que ofrecerle. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoren.
              </p>

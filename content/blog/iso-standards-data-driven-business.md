@@ -24,8 +24,6 @@ Six ISO standards cover the ground a data-driven business has to cover. ISO 8000
 
 ---
 
-# Building Reliable, Secure, and Privacy‑Centric Data Foundations with ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001, and ISO 27701
-
 Most companies now run on data. Forecasts, pricing, customer contact and product decisions all draw on it. Data is only worth what its accuracy, its security and its provenance are worth. One breach, one privacy complaint or one bad dataset and the work stops while people argue about whether the numbers can be trusted.
 
 Six internationally recognized standards divide that problem into parts: **ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001 and ISO 27701**. This post says what each one asks of you, and how they fit together.
@@ -216,52 +214,3 @@ Data now sits behind most of what a company decides, so the question customers a
 Taken together, they amount to a plain claim you can make and support: you know where your data came from, who can reach it, what decides things with it, and what happens when somebody asks you to delete it.
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Why is ISO 8000 important for data-driven businesses?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "ISO 8000 sets requirements for data quality management and master data exchange. It defines quality in four terms — accuracy, completeness, consistency and timeliness — so a company can agree what good data means, measure its own records against that definition, and fix the source rather than the report."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How does ISO 27000 protect data-driven enterprises?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The ISO 27000 family describes an Information Security Management System: how to identify security risks, rate them, decide what to do about each one, and review those decisions on a schedule, across people and process as well as technology. ISO 27001 is the part an organization certifies against."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What role does ISO 42001 play in data governance?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "ISO 42001 is the management system standard for artificial intelligence. It asks who is accountable for a model, what it was trained on, how bias and drift are tested for, and how the system is monitored once it is live — so the governance question is about what a model is allowed to decide, not about the mathematics."
-    }
-  }]
-}
-</script>
-
-
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations & References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Reference guidance for analytics architecture on AWS.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Google Cloud's published supply chain analytics patterns.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Supply Chain Research</a> - Analyst research on supply chain technology.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on freight and transportation.</li>
-  </ul>
-</section>

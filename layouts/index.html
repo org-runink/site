@@ -189,6 +189,32 @@
     </section>
     {{ end }}
 
+    {{/* 4b. One case, walked end to end. The ledger above names the problem in a
+         line and the block above names the product; this is the only place on the
+         page where a reader sees the whole of what happens to one record, in
+         order. It is an ordered list on purpose — the sequence is the argument,
+         and an ordered list is also the one shape an answer engine reliably
+         extracts as steps. */}}
+    {{ with .Params.scenario }}
+    <section class="hp-sec" aria-labelledby="scenario-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="scenario-heading">{{ $.Params.scenario_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.scenario_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <ol class="hp-steps">
+        {{ range . }}
+        <li class="hp-step">
+          <h3 class="hp-step__title">{{ .step }}</h3>
+          <p class="hp-step__body">{{ .body }}</p>
+        </li>
+        {{ end }}
+      </ol>
+      {{ with $.Params.scenario_note }}<p class="hp-caption">{{ . }}</p>{{ end }}
+    </section>
+    {{ end }}
+
     {{/* 5. Only now, how it works — and still in the buyer's words. The id is
          the one the header menu links to in all four languages. */}}
     {{ with .Params.why }}

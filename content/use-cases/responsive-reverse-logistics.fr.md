@@ -4,7 +4,6 @@ description: "Un article retourné vaut le plus le jour où il revient. La déci
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reverse logistics"
-standing: "hypothetical"
 badge: "Économie Circulaire"
 badgeColor: "#14b8a6"
 date: "2024-05-20T00:00:00Z"
@@ -16,10 +15,10 @@ author: "Runink"
 
 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Logistique inverse</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
-<span class="rk-mark" data-standing="hypothetical">Hypothétique</span> &mdash; ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son versant retours et économie circulaire. Ce qui suit est ce que le produit est fait pour faire, et comment il tournerait sur vos propres enregistrements. C'est une illustration du mécanisme, pas le compte rendu d'un déploiement. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Ce qu'est FACE</a>.
+ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son versant retours et économie circulaire. Ce qui suit est ce que le produit est fait pour faire, et comment il tournerait sur vos propres enregistrements. C'est une illustration du mécanisme, pas le compte rendu d'un déploiement. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Ce qu'est FACE</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">La décision est rédigée au scan.</strong> FACE travaille sur quatre choses que le quai lui donne : l'identifiant du retour, le code-barres, la note d'état que la personne au quai a inscrite, et la valeur de l'article telle qu'elle la saisit. Il ne va rien chercher derrière &mdash; ni la commande, ni la garantie, ni un fichier de prix &mdash; et il répond au moment où le colis arrive, non l'après-midi où quelqu'un se rend enfin au parc.</li>
 <li><strong class="text-stone-200">La politique est écrite, donc la même note d'état reçoit toujours la même réponse.</strong> Remettre en rayon, reconditionner, recycler, éliminer : chaque note d'état mène à l'une de ces voies et à l'une de quatre destinations inscrites dans le code, de la même façon chaque fois, quelle que soit la personne au quai et quelle que soit la file. Une note qu'il ne reconnaît pas est refusée plutôt que rangée sous sa meilleure supposition.</li>
@@ -28,7 +27,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Un Retour Vaut Le Plus Le Premier Jour.</h1>
+        <h2 id="un-retour-vaut-le-plus-le-premier-jour" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Un Retour Vaut Le Plus Le Premier Jour.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             L'essentiel de ce qu'un retour perd, il le perd en attendant. Pas dans la réparation, pas dans le transport : dans les semaines qu'il passe dans un coin du quai pendant que quelqu'un cherche où il devrait aller.
         </p>
@@ -36,7 +35,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Un colis revient. Pour décider où il doit aller, quelqu'un doit savoir ce qu'il contenait, s'il est encore sous garantie, dans quel état il est, ce qu'il rapporterait maintenant et ce que coûterait une réparation. Cela fait quatre systèmes et un coup d'œil dans le colis.
             </p>
@@ -51,7 +50,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Le scan est le moment où le travail se fait. La note d'état entre avec le retour, et une orientation en sort : directement au centre de retours, en reconditionnement, en recyclage en boucle fermée, ou en élimination de déchets dangereux là où la note l'exige. La propriété utile n'est pas qu'une machine ait décidé &mdash; c'est que la décision est la même chaque fois. La même note d'état produit la même orientation un mardi calme et le lundi après Noël, c'est-à-dire précisément au moment où trier à l'œil cesse d'être trier.
             </p>
@@ -69,7 +68,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
+             <h3 id="comment-vous-sauriez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que quelque chose change.
              </p>

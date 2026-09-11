@@ -12,7 +12,6 @@ tags: ["Warehouse Slotting", "Pick Path Optimization", "Warehouse Efficiency", "
 robots: index, follow
 ---
 
-<!-- structured Executive Summary -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
 Slotting is where each item is stored — which aisle, which height, which zone. It decides how far a picker walks on every order. In most warehouses it was set once at opening and has drifted since, because new items go wherever there is space. The figure to measure first is your own average travel distance per pick line.
@@ -118,65 +117,14 @@ Slotting is not glamorous. No robots, no autonomous vehicles. It decides whether
 
 The operations leaders pulling ahead treat it as continuous work rather than a project. If the layout has not been reviewed in a year, the order pattern it was built for has already moved.
 
-Gartner's warehouse technology research treats intelligent slotting as one of the capabilities that separates stronger operations. Before any of that matters, get two figures of your own: average travel distance per pick line last quarter, and the date of your last slotting review. If the second is more than a year ago, measure the first before you buy anything. [Talk to us](/#contact-form) if it would help to work it out.
-
-<!-- FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is warehouse slotting optimization?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Deciding where each item is stored — which aisle, which height, which zone — based on how often it is picked, its size and weight, and what it is ordered with. The aim is fewer steps for the same orders, and safer handling of heavy items."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure whether slotting is costing you?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Measure your own average travel distance per pick line from your warehouse system's task records, and have a supervisor time travel as a share of pick time on one shift. Research from Georgia Tech's Supply Chain and Logistics Institute finds travel is the largest single component of pick time in manual and semi-automated warehouses, but how much of yours it is depends on your building."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often should a warehouse be re-slotted?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Continuously, in small batches, rather than in an annual move event. A full re-slot has to be scheduled, and by the time it is scheduled the order pattern it was planned against has moved. What you need is a ranked list of moves short enough to finish in one shift."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the main slotting methods used in warehouses?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Four: by pick frequency, so fast movers sit in easy positions; by affinity, so items ordered together sit near each other; by ergonomics, so heavy or awkward items sit at safe heights; and by zone, so each area is optimised for how it is picked. Strong operations layer all four rather than choosing one."
-      }
-    }
-  ]
-}
-</script>
+Before any vendor comparison matters, get two figures of your own: average travel distance per pick line last quarter, and the date of your last slotting review. If the second is more than a year ago, measure the first before you buy anything. [Talk to us](/#contact-form) if it would help to work it out.
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work out your own travel distance per pick line.
-  </p>
-</section>
+---
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.werc.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">WERC</a> - benchmarking on warehouse labour productivity and slotting.</li>
-    <li><a href="https://www.scl.gatech.edu" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Georgia Tech Supply Chain and Logistics Institute</a> - source for the travel time finding quoted above.</li>
-    <li><a href="https://www.mhi.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Material Handling Industry (MHI)</a> - guidance on ergonomic warehouse design.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: warehouse technology research</a> - analyst view of slotting capability.</li>
-  </ul>
-</section>
+## Sources
+
+- [WERC](https://www.werc.org) — benchmarking on warehouse labour productivity and slotting
+- [Georgia Tech Supply Chain and Logistics Institute](https://www.scl.gatech.edu) — source for the travel time finding quoted above
+- [Material Handling Industry (MHI)](https://www.mhi.org) — guidance on ergonomic warehouse design

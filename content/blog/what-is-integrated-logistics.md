@@ -10,8 +10,6 @@ featured_image: /images/blog/what-is-integrated-logistics.png
 canonical: https://runink.org/blog/what-is-integrated-logistics
 ---
 
-# What Is Integrated Logistics? A Helpful Explanation
-
 Most supply chains are run by several teams who each hold part of the picture. *Integrated logistics* is the name for managing the whole flow — goods, information and services — as one process instead of several. This post explains what that means in practice, what it changes, and where to start.
 
 ## Executive Summary: Key Takeaways
@@ -139,50 +137,12 @@ The practical starting point is narrower than a strategy. Pick the two handover 
 
 *If it would help to work through where those handovers are in your operation, [get in touch](/#contact-form).*
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is integrated logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Integrated logistics is the coordinated management of every supply chain function — procurement, transport, warehousing and inventory — as one process rather than several. The systems involved share one agreed set of records, so a change in one function is visible in the others."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the benefits of integrated logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Duplicated handling and part-empty loads come out of the cost base. Delivery dates become more predictable because problems are found earlier. Fewer manual re-entries mean fewer errors. And managers can see the whole flow rather than the part their own system covers."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the key components of an integrated logistics strategy?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Five: procurement coordination, transport management (TMS), warehousing and inventory control (WMS), the information systems that join them together, and reverse logistics for returns and waste."
-    }
-  }]
-}
-</script>
-
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+---
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for logistics and supply chain terms.</li>
-    <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Competency frameworks and practitioner standards for supply chain planning.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on freight and transportation.</li>
-  </ul>
-</section>
+## Sources
+
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Industry glossary and definitions for logistics and supply chain terms
+- [Association for Supply Chain Management (ASCM)](https://www.ascm.org/) — Competency frameworks and practitioner standards for supply chain planning

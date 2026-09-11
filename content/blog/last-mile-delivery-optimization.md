@@ -67,7 +67,7 @@ Routes are planned the night before on historical averages, so they cannot accou
 
 A route planned at 6pm yesterday looks efficient on paper. It meets today's road closure and falls apart.
 
-According to McKinsey research on logistics productivity, drivers spend 40–60% of their shift in transit rather than delivering. That is the gap the planning is fighting.
+Most of a driver's shift is spent in transit rather than delivering, and the exact share is something your telematics already knows. Pull last month: wheels-turning time against time at the stop. That ratio is the gap the planning is fighting, and it is worth having your own figure before anyone sells you an improvement to it.
 
 Driver shortage makes every inefficiency worse. Recruitment is hard across North America and Europe, and turnover is high in dense urban markets. If you cannot add people, the only lever left is using the hours you have better.
 
@@ -83,7 +83,7 @@ Live re-routing re-orders the remaining stops when something changes, so the pla
 
 Live re-routing is not faster planning. It is planning again during the day. A road closes, so the remaining stops are re-ordered. A customer says they will be out, so the slot moves.
 
-McKinsey estimates that AI-driven route planning can improve delivery density by 15–20% and reduce fuel costs by up to 20%.
+Improvements are claimed for this, in percentages, by everyone selling routing software. Treat all of them as unmeasured until the measurement is yours: stops per route and fuel per drop, for one depot, for the month before and the month after. Those two numbers are in your own telematics and fuel-card data, and they settle the question for your network rather than for somebody's average.
 
 PUDO points attack a different cost. A parcel sent to a staffed collection point cannot fail because nobody was home — someone is always there to sign for it. Drops also cluster: one stop serves many parcels. For retailers with high return rates, the same points take returns back.
 
@@ -119,62 +119,12 @@ But the levers are not exotic. Live re-routing, collection points and volume pro
 
 So the question for whoever runs delivery operations is which lever touches their actual cost. That turns on one figure most operations have never worked out: how many deliveries needed a second attempt last quarter, and what each of those second journeys cost. A failed first attempt is two journeys, and it is usually the largest recoverable item in the last mile. [Talk to us](/#contact-form) if it would help to work that number out.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why is last-mile delivery the most expensive part of the supply chain?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Capgemini Research Institute puts last-mile delivery at up to 53% of total shipping costs. It has the most stops, the lowest vehicle utilisation and the most exposure to congestion and failed attempts. A single consolidated load becomes dozens or hundreds of separate doorstep drops, each with its own traffic, parking and access problems."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does dynamic route optimization reduce last-mile delivery costs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It re-orders the remaining stops when conditions change during the day, instead of following a plan built the night before on historical averages. McKinsey estimates that AI-driven route planning can improve delivery density by 15-20% and reduce fuel costs by up to 20%. What it is worth in a given operation depends on that operation's own cost per attempt, which is the figure to establish first."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a PUDO network and how does it reduce failed deliveries?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A PUDO (pick-up/drop-off) network is a set of staffed collection points — lockers, shops, post offices — where customers collect their parcels. It removes the customer-not-home failure entirely, because staff are there to receive the parcel. It also groups many parcels into one stop and gives customers somewhere to hand returns back."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does predictive delivery intelligence improve last-mile operations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It uses an operation's own delivery history to flag the drops most likely to fail while the parcel is still in the depot, so it can be sent to a collection point or given a confirmed window instead. The same history supports volume projection by area a few days ahead, so vans and shifts can be arranged before a spike rather than during it."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.capgemini.com/insights/research-library/the-last-mile-delivery-challenge/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Capgemini Research Institute — The Last-Mile Delivery Challenge</a> - Research on last-mile delivery economics, consumer expectations, and the 53% cost share of total shipping expenditure.</li>
-    <li><a href="https://www.mckinsey.com/industries/travel-logistics-and-infrastructure/our-insights/how-customer-demands-are-reshaping-last-mile-delivery" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">McKinsey &amp; Company — How Customer Demands Are Reshaping Last-Mile Delivery</a> - Source for the driver transit-time share and the route planning density and fuel figures quoted above.</li>
-    <li><a href="https://www.weforum.org/reports/the-future-of-the-last-mile-ecosystem/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">World Economic Forum — The Future of the Last-Mile Ecosystem</a> - Source for the urban delivery traffic and CO₂ projections to 2030.</li>
-  </ul>
-</section>
+- [Capgemini Research Institute — The Last-Mile Delivery Challenge](https://www.capgemini.com/insights/research-library/the-last-mile-delivery-challenge/) — Research on last-mile delivery economics, consumer expectations, and the 53% cost share of total shipping expenditure
+- [McKinsey & Company — How Customer Demands Are Reshaping Last-Mile Delivery](https://www.mckinsey.com/industries/travel-logistics-and-infrastructure/our-insights/how-customer-demands-are-reshaping-last-mile-delivery) — Source for the driver transit-time share and the route planning density and fuel figures quoted above
+- [World Economic Forum — The Future of the Last-Mile Ecosystem](https://www.weforum.org/reports/the-future-of-the-last-mile-ecosystem/) — Source for the urban delivery traffic and CO₂ projections to 2030

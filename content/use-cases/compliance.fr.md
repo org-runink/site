@@ -15,7 +15,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Conformité et bilan des émissions</p>
 <p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong>, et non pour la plateforme qui se trouve dessous. Cela vaut d'être dit franchement, car la conformité a tout l'air d'un sujet de plateforme : les contrôles décrits ici lisent les enregistrements que FACE tient de vos envois et de vos rapports, et ils font partie de FACE au lieu d'être une option ajoutée à l'infrastructure.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Les données personnelles n'atteignent pas les journaux.</strong> Les adresses e-mail, les numéros de téléphone, les numéros de carte, les numéros de sécurité sociale et les adresses IP sont retirés des journaux et des sorties de diagnostic avant qu'ils soient écrits. La trace qu'un système laisse derrière lui ne devient donc pas une deuxième copie des données.</li>
 <li><strong class="text-stone-200">C'est une propriété de la plateforme, pas un rapport que vous lancez &mdash; et elle n'a aucun test.</strong> Le masquage a lieu sur le chemin d'écriture sous chaque service, à chaque endroit où un service écrit une ligne. Nous vous dirons aussi que la fonction de masquage elle-même ne porte aucun test propre, car la liste de ce qu'une expression régulière est censée attraper ne prouve pas qu'elle l'attrape. Lisez la liste comme une description d'intention, et non comme une certification.</li>
@@ -23,7 +23,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Deux Rapports Que Personne N'a Le Temps De Monter.</h1>
+        <h2 id="deux-rapports-que-personne-na-le-temps-de-monter" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Deux Rapports Que Personne N'a Le Temps De Monter.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             La protection des données et les émissions ont l'air de deux sujets différents. C'est le même : des enregistrements éparpillés dans plusieurs systèmes. Seule une personne qui les rapproche à la main peut en répondre.
         </p>
@@ -31,7 +31,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Le nom et l'adresse d'un client servent à livrer le colis. Ils ne servent pas sur le tableau de bord d'un transporteur, dans un rapport envoyé à un partenaire, ni dans la copie du fichier que quelqu'un a tirée pour une réunion. Mais le champ voyage avec l'enregistrement, et il continue son chemin.
             </p>
@@ -46,7 +46,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Du côté de la protection des données, le mécanisme est plus étroit qu'on ne le vend d'ordinaire, et il mérite d'être dit exactement. Chaque service écrit ses journaux et ses diagnostics à travers une étape de masquage partagée, qui retire du texte les adresses e-mail, les numéros de téléphone, les numéros de carte, les numéros de sécurité sociale, les adresses IP et les adresses matérielles avant qu'il n'atterrisse, ainsi que des champs nommés &mdash; mots de passe, jetons, secrets, clés de licence, URL de webhook &mdash; partout où ils apparaissent dans une charge structurée. L'idée est que faire tourner un système ne crée pas en silence une deuxième copie des données personnelles qu'il contient : l'endroit où les fuites se découvrent tard, et l'endroit où personne ne pense à regarder. Ce qu'il ne fait <em>pas</em> : relire vos rapports ou vos écrans d'expédition, décider qu'un nom ne devrait pas y figurer, ou vous dire qui l'a vu. Il n'y a ici ni relecture d'écran ni constat d'exposition ; si une page vous a dit le contraire, elle décrivait quelque chose qui n'existe pas.
             </p>
@@ -67,7 +67,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
+             <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>

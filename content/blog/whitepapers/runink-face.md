@@ -599,19 +599,16 @@ does not run a model of your operation, and it does not compute an outcome.
 Searching the public web widens what the argument can draw on; it does not
 turn the argument into a measurement.
 
-The reasoning arrives with two structured blocks, and they look like
-measurements. A **causal block** takes the variables you supplied, chains them
-in the order you listed them, applies a fixed effect size along each link, and
-reports what a ten per cent move in each one does to the rest — the chain is
-the one you asserted by listing them in that order, an input rather than a
-discovery, and the code says so at the line that builds it. A **belief block**
-discretises your variables into low, medium and high against fixed probability
-tables and reports a posterior and a Bayes factor; the hypothesis is posed
-with a fixed prior and fixed likelihoods, so the Bayes factor it prints is the
-same number every time. It restates your own assumptions in probabilistic
-form. It is not evidence about your business.
+The reasoning arrives with two structured blocks that look like measurements
+and are not. Both are built from the variables you supplied, in the order you
+supplied them, against fixed weightings — so what they return is your own
+assumption written out formally, not a finding about your business. They are
+there because a structured argument is easier to disagree with than a
+paragraph, which is the whole point of the lab.
 
-Saying that costs nothing, because the value was never in those numbers.
+Saying that costs nothing, because the value was never in those numbers. It is
+in the question being written down, the answer arriving with its sources
+attached, and both being there to look at afterwards.
 
 ## Fetch Center and Maturity Center
 

@@ -12,7 +12,6 @@ tags: ["SOPs", "Standard Operating Procedures", "Warehouse Management", "Process
 robots: index, follow
 ---
 
-<!-- structured Executive Summary -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
 A Standard Operating Procedure is the written version of how one task is done. Receiving, put-away, picking, packing, shipping, cycle counting, returns. Most warehouses run these from memory instead, which works until the person with the memory leaves. Writing them down gives you a standard to train to and a baseline to measure against.
@@ -136,63 +135,13 @@ Starting does not need a programme. It needs someone to write down what your bes
 
 So begin with the count: how many of your core tasks have a current written procedure with a named owner. [Talk to us](/#contact-form) if you want to work through which of your procedures could be reconstructed from what your systems already log.
 
-<!-- FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What are Standard Operating Procedures (SOPs) in warehouse operations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Written step-by-step instructions for a single task — receiving, put-away, picking, packing, shipping, cycle counting, returns — specific enough that two people following them produce the same result, on any shift."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do SOPs matter for warehouse safety and compliance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because the risky tasks need a written method: powered truck checks, dock work, manual lifting, lockout/tagout. And because facilities under ISO 9001, FDA cGMP or customs-bonded rules must show documented process control. A current procedure with a named owner is evidence; shared memory is not."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can software help create and manage warehouse SOPs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Two uses hold up: drafting a procedure from what the records show staff actually do, and comparing later work against the written standard so a skipped scan or out-of-sequence put-away surfaces the same day. A third — correlating procedure variants with throughput or safety outcomes — should be treated as a hypothesis, because shift experience confounds it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the SOP lifecycle in a warehouse environment?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Five stages: draft from observation of the task done well, review with supervisors and the associates who do it, train everyone who touches it, audit whether it is followed and whether it produces the expected result, and revise when either answer is no."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work through which procedures your records could draft for you.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.osha.gov/warehousing" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">OSHA warehousing safety guidance</a> - federal rules on material handling and powered trucks.</li>
-    <li><a href="https://www.werc.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">WERC</a> - benchmarking data on warehouse performance measures.</li>
-    <li><a href="https://www.ascm.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">APICS / ASCM</a> - standards for operations management and process documentation.</li>
-    <li><a href="https://www.iso.org/iso-9001-quality-management.html" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">ISO 9001</a> - the quality standard that requires documented process control.</li>
-  </ul>
-</section>
+- [OSHA warehousing safety guidance](https://www.osha.gov/warehousing) — federal rules on material handling and powered trucks
+- [WERC](https://www.werc.org) — benchmarking data on warehouse performance measures
+- [APICS / ASCM](https://www.ascm.org) — standards for operations management and process documentation
+- [ISO 9001](https://www.iso.org/iso-9001-quality-management.html) — the quality standard that requires documented process control

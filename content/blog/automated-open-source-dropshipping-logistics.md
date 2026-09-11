@@ -24,8 +24,6 @@ A dropshipping operation runs on other people's stock and other people's trucks.
 
 ---
 
-# Automated Systems and Open-Source Tools in Dropshipping
-
 Dropshipping means coordinating parts you do not own. Several suppliers. Stock levels that move hourly. Shipping routes. Customers asking where their parcel is.
 
 Manual processes fall behind in predictable places. Stock counts go stale. A supplier slips and nobody notices until a customer writes in. This post covers what automation reads, what it can decide, and what should stay with a person.
@@ -96,58 +94,3 @@ The warehouse gets the same list. Nobody reconstructs the story at 4pm.
 
 That is the whole claim for this kind of automation: the reading and the drafting happen early, and the decisions that cost money still belong to a person. Before buying any of it, check one thing in your own operation — how you currently find out that a supplier is running late, and how long that takes.
 
-<!-- FAQPage schema for search engines -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How do automated decision systems help a dropshipping operation?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "They read live records — stock, dispatch times, tracking, road data — and surface what needs attention early: a supplier running late, an order that can no longer meet its date. Decisions that change cost or a customer promise should still be approved by a person."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What is the Model Context Protocol (MCP)?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "MCP is an open standard for connecting a model to external tools and data sources. Instead of a custom integration per system, it gives one common way for the model to fetch live business data such as orders, stock levels and tracking status."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Why read live records instead of relying on the model?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Because an answer about an order should come from the order record. When it does, you can log which records were read and check the answer. When it does not, you are trusting a sentence with nothing behind it."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Why use Openrouteservice for e-commerce routing?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Openrouteservice is open route planning software built on OpenStreetMap data. You can host it yourself, which avoids per-call licence costs, and you can add your own depots and access rules. The trade-off is that you maintain it, and map data quality varies by region."
-    }
-  }]
-}
-</script>
-
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work through which of these decisions should stay with a person.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: analytics</a> - vendor guidance on data handling.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: supply chain analytics</a> - vendor guidance on freight data.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: supply chain technology research</a> - analyst view of the market.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation and Logistics</a> - academic research on freight.</li>
-  </ul>
-</section>

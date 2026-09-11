@@ -94,63 +94,12 @@ The "endless aisle" is now a baseline expectation rather than a differentiator, 
 
 Runink FACE works on the fulfillment side of this: it reads order, inventory and carrier records out of the systems that already hold them, compares each one against the rule that governs it, and puts a drafted action in front of the person who can approve it. No action is taken without that approval. [Contact the Runink team](/#contact-form) if you want to walk through the mechanism against your own order flow.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why is Distributed Order Management Critical for the Endless Aisle?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Distributed Order Management (DOM) decides where each order is filled. It reads current stock at every location — stores, DCs and vendor drop-ship partners — and picks the one with the lowest cost to serve that can still meet the delivery date promised to the customer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How Does Real-Time Inventory Visibility Prevent Fulfillment Failures?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An endless aisle fails when the website promises a unit that cannot be picked. Keeping the inventory count current closes the gap between what is offered and what is on the shelf, which is what protects the on-time in-full (OTIF) score and the cancellation rate."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What Role Does Cross-Docking Play in Omnichannel Velocity?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cross-docking moves inbound freight from the receiving dock to an outbound lane without putting it into storage first. Skipping putaway and later picking shortens the time between a pallet arriving and a carton leaving, and it keeps trailers and dock doors turning."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How Do Operations Leaders Optimize the Cost of Omnichannel Logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Operations leaders work the cost down in three places: the freight terms they buy on, the shipments they consolidate, and the port-to-warehouse moves they plan ahead instead of expediting. The aim is that the cost of offering the endless aisle does not take the margin out of the product."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Definitions for On-Time In-Full (OTIF) and omnichannel fulfillment metrics.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - Analysis of Distributed Order Management (DOM) systems in retail.</li>
-    <li><a href="https://www.joc.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Journal of Commerce (JOC)</a> - Practices for reducing demurrage, drayage friction and the effects of port congestion.</li>
-    <li><a href="https://www.inboundlogistics.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Inbound Logistics</a> - Case studies on cross-docking and on reducing yard dwell times with linked YMS and WMS records.</li>
-  </ul>
-</section>
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Definitions for On-Time In-Full (OTIF) and omnichannel fulfillment metrics
+- [Journal of Commerce (JOC)](https://www.joc.com/) — Practices for reducing demurrage, drayage friction and the effects of port congestion
+- [Inbound Logistics](https://www.inboundlogistics.com/) — Case studies on cross-docking and on reducing yard dwell times with linked YMS and WMS records

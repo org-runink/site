@@ -117,61 +117,12 @@ The economics are not subtle: an hour a pallet spends in storage is an hour that
 
 Before evaluating tools for it, establish two figures for your own operation: average dock-to-dock handover time, and the proportion of inbound loads whose actual arrival fell outside the appointment window last quarter. Neither is hard to extract, both are usually unknown, and together they tell you whether cross-docking is a scheduling problem or a carrier problem in your network. The [Runink FACE use cases](/use-cases/) describe how records of that kind are read and compared.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is cross-docking in logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cross-docking means receiving inbound goods at a distribution centre, sorting or consolidating them on the floor, and shipping them out again — usually the same day — without putting them away. The building works as a place freight passes through rather than a place it waits, which removes the storage cost and the handling either side of it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between pre-distributed and post-distributed cross-docking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In pre-distributed cross-docking the supplier has already allocated and labelled goods for their final destination, so little handling is needed at the dock. In post-distributed cross-docking the goods arrive in bulk and are sorted and allocated at the facility against current orders. The second is more flexible and needs current inventory data and faster sortation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the operational requirements for successful cross-docking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dock scheduling precise enough to pair inbound and outbound trailers; advance notice of what is arriving and when, including reliable ASNs and arrival estimates; carriers who keep their appointments; and sortation staffed for the hour it happens in."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does software add to a cross-dock operation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Three things: arrival estimates based on actual carrier performance rather than the booked slot; matching of inbound shipments to open outbound orders at a scale no planner could do by hand; and working out the downstream effects of a disruption before they land. Whether the software then acts on its own or hands a proposal to a supervisor is the question to ask the vendor."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for cross-docking and distribution centre terms.</li>
-    <li><a href="https://www.scl.gatech.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Georgia Tech Supply Chain &amp; Logistics Institute</a> - Research on warehouse design, facility layout and material flow.</li>
-    <li><a href="https://www.werc.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Warehousing Education and Research Council (WERC)</a> - Benchmarking studies on distribution centre productivity and dock-to-stock cycle times.</li>
-  </ul>
-</section>
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Industry glossary and definitions for cross-docking and distribution centre terms
+- [Georgia Tech Supply Chain & Logistics Institute](https://www.scl.gatech.edu/) — Research on warehouse design, facility layout and material flow
+- [Warehousing Education and Research Council (WERC)](https://www.werc.org/) — Benchmarking studies on distribution centre productivity and dock-to-stock cycle times

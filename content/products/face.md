@@ -13,20 +13,6 @@ badge: "FACE"
 # --rk-cat-logistics-ink / --rk-cat-logistics-lift. Not a literal.
 ---
 
-<!--
-  hero_image removed, not replaced. It was /images/face/overview.png: a
-  screenshot of "Today's Posture Radar" in which all five business dimensions
-  read 85/100 — a constant, not a measurement — beside "Confidence: 6/10" and
-  an opportunity naming a demo-seed table (Entities.bill_of_materials). Those
-  screens are served from the *_mock.json seeds behind demoSeedEnabled(); a
-  standard instance derives nothing from them. Putting them on the flagship
-  page presented seeded figures as a customer's own operation, and did it in
-  the one form a reader cannot discount — a screenshot. The hero shortcode
-  guards the image with `{{ if $hero_image }}`, so omitting it renders.
-
-  Nothing has been drawn to replace it. There is no honest screenshot of a
-  populated queue, because on a standard instance the queue is empty.
--->
 {{< hero
     headline="Your operation already wrote down what went wrong."
     sub_headline="**Runink FACE** is Runink's main product: the Fulfilment Autonomous Claims Engine, built for logistics and the claims, returns and compliance work that hangs off it. It reads the records you already hold, works out what the combined picture means, and drafts the action for a named person to approve."
@@ -90,7 +76,6 @@ FACE is the product that reads all of it, and it is the one this company is buil
 
 <div class="max-w-7xl mx-auto px-4 space-y-32">
 
-<!-- GROUP 1: THE FORWARD FLOW -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
     <div>
         <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">1. The forward flow</div>
@@ -108,42 +93,11 @@ FACE is the product that reads all of it, and it is the one this company is buil
     </div>
     <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-signal-fill to-signal-fill-hover opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
-        <!--
-          Alt text corrected. It used to read "The cockpit, with drafted actions
-          queued for approval", which the screenshot contradicts: saved
-          hypotheses, active rules and the action queue all read "No items".
-          That is not a bad screenshot, it is the accurate one — a standard
-          instance derives nothing and shows an empty queue — so the caption now
-          says what is on the screen instead of what a buyer would like to see.
-        -->
         {{< figure src="/images/face/cockpit.png" alt="The cockpit's evidence panel: citations, saved hypotheses, active rules and the action queue, each named and each stated as empty on an instance with nothing connected" class="relative rounded-lg shadow-2xl border border-white/10" >}}
     </div>
 </div>
 
-<!-- GROUP 2: WHEN IT GOES WRONG -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-    <!--
-      Figure removed: /images/face/posture.png. Two separate problems, either of
-      which is disqualifying.
-
-      (1) It is not this. The screenshot is the AI Posture Center — table counts,
-      lineage coverage, data freshness, "13 tables with low confidence", runbooks
-      to "regenerate vector embeddings" and "prevent RAG contamination". That is
-      platform and data-quality observability, not reactive logistics, and the
-      alt text ("Incidents arriving as a named list rather than a wall of alerts")
-      described something the picture does not show. A mislabelled real
-      screenshot is worse than mislabelled prose, because a reader treats it as
-      evidence.
-
-      (2) It carries six scored percentages across the top and a panel claiming
-      an expected improvement in answer accuracy. The site does not put numbers
-      on product pages, and it particularly does not put a claimed impact on
-      one. Deliberately not quoting the figures here: a comment ships in the
-      HTML, and re-typing them would put them back on the page in source.
-
-      Not replaced. The block below stands on its own and the grid renders with
-      one column.
-    -->
     <div class="order-1 md:order-2 md:col-span-2">
         <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">2. When it goes wrong</div>
         <h3 class="text-4xl font-bold text-white mb-6">The exception arrives named.</h3>
@@ -160,7 +114,6 @@ FACE is the product that reads all of it, and it is the one this company is buil
     </div>
 </div>
 
-<!-- GROUP 3: SHOWING YOUR REASONING -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
     <div>
         <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">3. Before you commit, and after you are asked</div>
@@ -176,56 +129,11 @@ FACE is the product that reads all of it, and it is the one this company is buil
             <li><span class="text-signal font-bold block mb-1">Paralegal and compliance</span> <span class="text-slate-300">A compliance agent whose stated role is paralegal. It reads policy documents, the rules extracted from your own procedures, and the system's own logs; it cites the rule and the records behind a finding; and it drafts the functional remediation — the letter, the ticket, the notification. It reads and cites. A person decides.</span></li>
         </ul>
     </div>
-    <!--
-      Figure removed: /images/face/hypothesis.png. It is the Hypothesis Lab
-      showing "PROJECTED IMPACT" as six percentage tiles — revenue impact, gross
-      margin, operating-expense efficiency, risk probability, churn probability,
-      market capture — a prediction-confidence dial, and a red panel headed
-      STRATEGIC RECOMMENDATION telling the reader risk exposure is too high.
-      Figures not quoted here on purpose; a comment ships in the HTML.
-
-      Every one of those is a number produced by a language model over a demo
-      seed, and the panel presents them as a decision. That is the exact thing
-      the bullet beside this comment says the product does not do, contradicted
-      by a screenshot two inches away — and a reader believes the screenshot.
-      The subject line also names a seed table (supply_marts.conformed_dim_
-      entities_bill_of_materials), so it is not a customer's operation either.
-
-      Not replaced.
-    -->
 </div>
 
-<!-- THE APPROVAL SEAM -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-    <!--
-      Figure removed: /images/face/rules.png. It is the Rules Studio on a tenant
-      whose badge reads "sf_demo", and its header line is
-      a bracketed summary quoting a monthly recovery figure in dollars and a
-      compliance percentage, above a list of "Value Capture Opportunities" each
-      priced at a dollar value per month. The literals are not repeated here,
-      because a comment ships in the HTML.
-
-      Currency presented as money Runink recovers is the one thing this material
-      may never carry. It is not a figure we have declined to publish; it is a
-      figure with no producer. FACE's own test file records that every derived
-      savings source was an invented rate and deletes all four
-      (grpc/cmd/savings_summary_test.go). Leaving the screenshot up would have
-      kept publishing the deleted numbers as a picture.
-
-      Not replaced.
-    -->
     <div class="order-1 md:order-2 md:col-span-2">
         <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">The seam</div>
-        <!--
-          Heading narrowed. It read "Nothing leaves with nobody's name on it",
-          which is the blanket-gate version of the approval claim and is not
-          true: REQUIRE_HITL is read by nothing in FACE except the function that
-          reports it (grpc/cmd/compliance_server.go), so it gates nothing. What
-          IS true is the queue: a drafted action sits until ExecuteAction is
-          called with an approval, and the decision is recorded with the actor.
-          Say that, and not the absolute. A control that cannot fire is worse
-          than none, because it answers "is this handled?" with a confident yes.
-        -->
         <h3 class="text-4xl font-bold text-white mb-6">The drafted action waits. Approving is what sends it.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
@@ -241,7 +149,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
         <ul class="space-y-6 mt-8">
             <li><span class="text-signal font-bold block mb-1">Your procedures, written down once</span> <span class="text-slate-300">The rules you already work to — the day you stop waiting on a carrier, the duplicate purchase order, the vendor request with nothing behind it — are stated once and checked against every record rather than remembered by whoever is on shift.</span></li>
             <li><span class="text-signal font-bold block mb-1">Why it fired, on which records</span> <span class="text-slate-300">Afterwards you can open a finding and read the rule, the records underneath it and the reasoning that joined them. A drafted letter nobody can check is not worth signing.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Documents arrive as documents</span> <span class="text-slate-300">The bill of lading, the customs paper, the carrier's receipt, the claim file. They are read and turned into records that can be cited, which is the part that makes the draft checkable.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Documents arrive as documents</span> <span class="text-ink-2">A spreadsheet is read properly — the cells, the formulas behind them, the named ranges and the macros — because that is where the working usually is. A scanned page is transcribed by a model running on your own hardware, and where a page comes back unusable the result says so instead of returning a confident blank.</span></li>
             <li><span class="text-signal font-bold block mb-1">Could not check is an answer</span> <span class="text-slate-300">Where a check could not run — nothing to read, an answer that came back unusable — the result is <em>unable to assess</em>, written out in words as not a finding that the thing is compliant. Zero and nobody-measured are kept as different values on purpose, and a connection nobody has contacted is never reported as verified. An assessor whose confident answers and whose blanks look the same is worth nothing by the second week.</span></li>
         </ul>
     </div>
@@ -264,19 +172,6 @@ FACE is the product that reads all of it, and it is the one this company is buil
             <p class="text-slate-300">The order files, the customs papers, the sensor readings and the reasoning about them run on hardware you control. The model FACE reasons with is one you run yourself: there is no third-party model dependency anywhere in it and exactly one inference endpoint, which is the one you point it at. That is how it is built rather than a switch somebody could leave off — though it is an architectural property, not a machine-enforced one, and we would rather you heard that from us than found it.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <!--
-              Narrowed. This card used to say the page "is read directly with an
-              ordinary browser" and imply the question never leaves — "Asking a
-              search company about a consignee tells it who you are checking",
-              set against what FACE does. But the shared engine
-              (web/metasearch/metasearch.go:29) puts the query to DuckDuckGo's
-              public HTML endpoint and then fetches the result pages itself. A
-              search engine does see the query. What is genuinely different is
-              that there is no vendor account, no API key and no per-question
-              bill, so nobody accumulates a searchable history of your questions
-              filed under your company's name — which is the part a security
-              review actually turns on. Claim that; do not claim the absolute.
-            -->
             <h3 class="text-2xl font-bold text-white mb-4">Open-web research with no account attached to it</h3>
             <p class="text-slate-300">When an answer needs the open web — a carrier's standing, a customs ruling, a published tariff, a consignee you are unsure about — FACE runs the search from your own infrastructure through a public search endpoint, then fetches and reads the pages itself, and the extracted page comes attached to the finding. The search engine sees the query, as it would from any browser. What does not happen is the part that matters commercially: there is no vendor account, no API key and no per-question bill, so no supplier is building a history of the names your company has been asking about, filed under your company.</p>
         </div>

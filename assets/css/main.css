@@ -179,9 +179,15 @@
       @apply my-6 p-6 border-l-4 border-signal bg-sunk rounded-r-lg text-ink-2;
   }
 
-  .aeo-direct-answer strong {
+  /* Was `.aeo-direct-answer strong`, which styled whatever strong tag happened
+     to be first — the "Quick Answer:" label lived inside the answer text. The
+     label is now its own element, so this targets it rather than guessing. */
+  .aeo-direct-answer__label {
       @apply text-signal font-bold block mb-2 text-lg;
   }
+
+  .aeo-direct-answer__text > :first-child { @apply mt-0; }
+  .aeo-direct-answer__text > :last-child { @apply mb-0; }
 }
 
 @keyframes testimonials-scroll {

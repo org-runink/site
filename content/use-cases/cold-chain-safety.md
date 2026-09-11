@@ -1,10 +1,9 @@
 ---
 title: "Cold Chain and Yard Safety"
-description: "A container drifts warm overnight and the reading sits in your sensor data until somebody opens the door. The yard camera side of this is built; the sensor path into the software is not, and the page says so."
+description: "A container drifts warm overnight and nobody opens the door until morning. What the yard camera already sees, read against the handover record and the paperwork the consignment travels with."
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"
-standing: "hypothetical"
 badge: "IoT Sentinel"
 badgeColor: "#3b82f6"
 date: "2024-05-20T00:00:00Z"
@@ -16,10 +15,10 @@ author: "Runink"
 
 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Reactive logistics</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
-<span class="rk-mark" data-standing="hypothetical">Hypothetical</span> &mdash; this is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard-facing end. Half of what follows is built and half of it is not, and the page says which is which rather than describing the whole thing in the present tense. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
+This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard-facing end. It is an illustration of the mechanism, not an account of a deployment. What the software reads here is the paperwork and the images a cold chain already produces — the consignment record, the handover, the photograph taken at the door — against the rule that governs the shipment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">There is no live sensor feed into FACE today, and we are not going to imply there is.</strong> The connectors for sensor, tag, warehouse, yard and transport systems are placeholders that fail on purpose, so the reasoning behind them can be exercised against a seeded file while the real path is built. A temperature excursion on your own units is not something this reads yet.</li>
 <li><strong class="text-stone-200">The yard camera is the part that is built.</strong> A frame arriving from a yard or infrared camera is checked to be an actual image before anything reads it, reduced to a size a model can take, and read by a vision model running on hardware you control. What comes back is a written observation tied to the frame it was read from.</li>
@@ -27,7 +26,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">The Reading Has To Arrive First.</h1>
+        <h2 id="the-reading-has-to-arrive-first" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">The Reading Has To Arrive First.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             The reading that condemns a load is recorded hours before anybody looks at it. The whole problem is the gap between the two &mdash; and closing it starts with a sensor path into the software, which is the piece we have not built.
         </p>
@@ -35,7 +34,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A cooling unit starts to fail on a Tuesday night. The sensor records it. Nobody is watching at that hour, and the data is not looked at until the container is opened at the far end.
             </p>
@@ -50,7 +49,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Start with the part that is not finished, because it is the part the rest of this depends on. The reading has to reach FACE before any of it matters, and today it does not. The connector for a sensor, tag, warehouse or yard system is a placeholder that fails deliberately, so that the reasoning built on top of it runs against a seeded file instead. On an ordinary instance with nothing connected, the queue is empty. It used to be filled with those seeded examples, presented as though they were your operations, and that was removed rather than dressed up.
             </p>
@@ -65,7 +64,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
+             <h3 id="how-you-would-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>

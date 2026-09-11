@@ -41,7 +41,7 @@ The third-party logistics market in North America alone exceeds $300 billion, ac
 
 **No service targets.** Without agreed targets for on-time-in-full, waiting time, damage and claims — and a consequence for missing them — there is no way to hold a provider to anything once the first year is over.
 
-These are not edge cases. CSCMP research consistently shows that nearly half of third-party logistics relationships are renegotiated or ended within the first two years.
+These are not edge cases. Count your own: list the third-party logistics relationships you have signed in the last five years and mark which were renegotiated or ended inside two. Most operations find the share uncomfortable, and it is a better number than any published average because it is about your contracts and your selection process.
 
 ---
 
@@ -117,55 +117,13 @@ And before you issue it, answer one question internally: can you state your own 
 
 The right logistics partner is out there. Your RFP just has to be good enough to find them.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What are the most common reasons logistics RFPs fail?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A vague scope with no lane detail or current volumes, scoring that weights price over capability, silence on how the provider's systems will exchange data with yours, and no service targets with consequences attached. The result is proposals that cannot be compared and arrangements that get renegotiated early."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should a logistics RFP include to attract the right 3PL partner?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Six sections: who you are and what you ship with real volumes and order profiles; the services and lanes in scope with delivery terms; what your systems need, including which EDI messages and interfaces; service levels with money attached both ways; the same work priced as cost-plus, fixed and gain-share; and a dated plan for moving the work across."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How should logistics RFP replies be scored?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Write the weights and the scoring rule for each question before the replies arrive, then score each reply against the rule and keep the working. Compare the prices against your own cost per unit by lane for last year rather than against a market index you cannot inspect. Taking the scope from the systems that moved last year's freight, rather than from recollection, removes the most common cause of mid-contract disputes."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.3plogistics.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Armstrong &amp; Associates</a> - Source for the North American third-party logistics market size quoted above.</li>
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Research on how long third-party logistics relationships last, and the annual State of Logistics reports.</li>
-    <li><a href="https://www.gartner.com/reviews/market/transportation-management-systems" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Magic Quadrant for TMS/WMS</a> - Vendor reviews for transport and warehouse systems, used when building a shortlist.</li>
-    <li><a href="https://www.cips.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Chartered Institute of Procurement &amp; Supply (CIPS)</a> - Procurement standards covering RFP design, supplier evaluation and sourcing.</li>
-  </ul>
-</section>
+- [Armstrong & Associates](https://www.3plogistics.com/) — Source for the North American third-party logistics market size quoted above
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Research on how long third-party logistics relationships last, and the annual State of Logistics reports
+- [Gartner Magic Quadrant for TMS/WMS](https://www.gartner.com/reviews/market/transportation-management-systems) — Vendor reviews for transport and warehouse systems, used when building a shortlist
+- [Chartered Institute of Procurement & Supply (CIPS)](https://www.cips.org/) — Procurement standards covering RFP design, supplier evaluation and sourcing

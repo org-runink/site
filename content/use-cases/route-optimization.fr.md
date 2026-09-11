@@ -11,7 +11,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">Un itinéraire revient sous la forme d'une distance, d'une durée et d'un tracé sur la carte.</strong> Un départ, une arrivée et les contraintes que vous avez nommées partent vers le fournisseur de calcul d'itinéraire ; ce qui revient est une distance routière mesurée et un temps de parcours, pas un avis.</li>
 <li><strong class="text-stone-200">Aucun montant n'y est attaché, et c'est volontaire.</strong> Le fournisseur d'itinéraire renvoie une distance et une durée, et aucun coût. Donc aucune économie n'est imprimée à côté de l'itinéraire, car un chiffre que personne n'a mesuré posé à côté de deux chiffres mesurés, c'est exactement ainsi qu'une estimation finit citée comme un fait.</li>
@@ -28,7 +28,7 @@ author: "Runink"
 </p>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Optimal À Six Heures. Plus À Dix.</h1>
+        <h2 id="optimal-a-six-heures-plus-a-dix" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Optimal À Six Heures. Plus À Dix.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Le plan était bon au moment où il a été construit. Puis une livraison a pris quarante minutes de trop, une route a fermé, et un client a déplacé son créneau. Le plan est désormais la meilleure réponse à une question que plus personne ne pose.
         </p>
@@ -36,7 +36,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Le calcul de tournée a lieu une fois, la veille au soir ou à la première heure. C'est la décision la plus soignée de la journée, et elle est prise avec le moins d'informations que quiconque aura de toute la journée. Tout ce qui va réellement façonner la journée &mdash; la file à la barrière, la route coupée, la livraison refusée, le conducteur qui a une heure de retard &mdash; n'est pas encore arrivé.
             </p>
@@ -54,7 +54,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Demander un itinéraire est une petite requête : où il commence, où il finit, et les contraintes qui comptent sur ce segment. Cela part vers le fournisseur d'itinéraire et revient sous la forme d'une distance routière, d'un temps de parcours et du tracé lui-même, de sorte que la réponse peut être dessinée sur une carte au lieu d'être décrite en une phrase.
             </p>
@@ -78,7 +78,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
+             <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous n'en avons aucun à nous à vous proposer. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>

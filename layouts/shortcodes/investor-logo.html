@@ -1,7 +1,0 @@
-<div class="investor-logo p-6 flex items-center justify-center">
-    {{ if .Get "image" }}
-    {{ partial "image.html" (dict "src" (.Get "image") "alt" (.Get "name") "class" "max-h-12 grayscale hover:grayscale-0 transition-all duration-300" "context" $.Page) }}
-    {{ else }}
-    <div class="text-xl font-bold text-stone-400">{{ .Get "name" }}</div>
-    {{ end }}
-</div>

@@ -39,20 +39,6 @@ Todas as frentes abaixo têm o mesmo formato. Os dados de que você precisa já 
 
 Então a contestação vence. O contêiner é aberto quente. O pedido sai de avião. Não porque alguém decidiu mal, mas porque ninguém teve tempo de chegar ao ponto em que dava para decidir.
 
-<!-- CALIBRAGEM — não devolva a frase sobre a aprovação à versão absoluta
-     ("nada sai da sua empresa antes de alguém aprovar", nem qualquer limite do
-     tipo "tudo acima de X espera por uma pessoa"). Não existe barreira global.
-     face/grpc/cmd/compliance_server.go:149-155 diz isso nas palavras do próprio
-     FACE: REQUIRE_HITL "não é lido por nenhum código deste repositório além
-     desta função, então ligá-lo não exige nada … nada consulta esta variável
-     para forçar uma ação a passar por ela".
-
-     O que é verdade, e tudo o que pode ser afirmado:
-     twinsService.ExecuteAction (face/grpc/cmd/agent_services.go:6350) exige um
-     repositório configurado, carrega uma ação JÁ GRAVADA pelo id, decide a
-     partir de req.UserApproval e grava HITL_DECISION_PROCESSED com
-     auditActorFrom(ctx) e a decisão. Ou seja: uma ação redigida espera na fila,
-     aprovar é o que a envia, e quem aprovou e o que decidiu fica no registro. -->
 
 ## O Que O Runink FACE Faz A Respeito
 

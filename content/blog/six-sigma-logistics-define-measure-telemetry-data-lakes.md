@@ -93,63 +93,12 @@ Lean Six Sigma has not dated. The tools used to run it have. For operations and 
 
 Putting the records in one place closes the gaps left by separate systems, but only if the definitions travel with the data. Start by writing down, for your own network, how "on time" and "in full" are computed in each source system today, and where those definitions differ. That document is usually the real deliverable of the Measure phase. [Contact the Runink team](/#contact-form) if it would help to work through it.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why Do Traditional Six Sigma Implementations Fail in Modern Logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because the Measure phase runs on numbers pulled by hand from systems that do not agree with each other. A baseline built that way is out of date when it lands, and nobody can say by how much, so the improvement project stalls in an argument about the data rather than the process."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How Can Global Telemetry Data Lakes Transform the Define Phase?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A data lake is one place that keeps every system's raw records, unsummarized. With those records available, the Define phase can name a defect in terms any team can check: which lane, which stage, which measure, over which period. That is what makes a critical-to-quality measure verifiable rather than anecdotal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What Role Does Clean Data Ingestion Play in the Measure Phase?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Measure phase needs records that mean the same thing across sources. Ingestion is where units are reconciled, timestamps are put on one clock, and missing fields are named rather than filled in. Process capability computed on unreconciled records is precise and wrong, because the variance may be coming from vendor formats rather than from the process."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does data lake integration have to solve for logistics telemetry?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Three things: extracting telemetry from the WMS, TMS and ERP systems that hold it; normalizing records whose field meanings differ by carrier and facility; and keeping the result current enough that a baseline computed this week is still true next week. The third is the hardest, because it is an ongoing operating commitment rather than a one-off build. The test of any ingestion layer is what it does when two sources disagree about the same event — a disagreement should surface as a named record to resolve, not be absorbed into the baseline as variance."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ascm.org/ascm-insights/supply-chain-data-analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">ASCM - Association for Supply Chain Management</a> - Building operational baselines from supply chain data and telemetry.</li>
-    <li><a href="https://cscmp.org/CSCMP/Educate/Supply_Chain_Management_Definitions.aspx" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Foundational metrics and process capability definitions for global freight networks.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain/insights/supply-chain-technology" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - The role of cloud data lakes, Snowflake, and Databricks in logistics reporting.</li>
-    <li><a href="https://mitsloan.mit.edu/faculty/academic-groups/operations-management/about-us" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Sloan School of Management</a> - Applying Lean Six Sigma principles to multi-node intermodal logistics operations.</li>
-  </ul>
-</section>
+- [ASCM - Association for Supply Chain Management](https://www.ascm.org/ascm-insights/supply-chain-data-analytics/) — Building operational baselines from supply chain data and telemetry
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/CSCMP/Educate/Supply_Chain_Management_Definitions.aspx) — Foundational metrics and process capability definitions for global freight networks
+- [MIT Sloan School of Management](https://mitsloan.mit.edu/faculty/academic-groups/operations-management/about-us) — Applying Lean Six Sigma principles to multi-node intermodal logistics operations

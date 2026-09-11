@@ -4,7 +4,6 @@ description: "Most stockout warnings arrive after the safety stock is already go
 layout: "use_case"
 product: "Runink FACE"
 scenario: "inventory fulfillment"
-standing: "hypothetical"
 badge: "Fulfillment Agent"
 badgeColor: "#ea580c"
 date: "2024-05-20T00:00:00Z"
@@ -16,10 +15,10 @@ author: "Runink"
 
 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Inventory fulfillment</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
-<span class="rk-mark" data-standing="hypothetical">Hypothetical</span> &mdash; this is a <strong class="text-stone-300">Runink FACE</strong> scenario, the fulfilment side of it. What follows is what the product is built to do and how it would run against your own records. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
+This is a <strong class="text-stone-300">Runink FACE</strong> scenario, the fulfilment side of it. What follows is what the product is built to do and how it would run against your own records. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">The trigger says which bound it crossed, in words.</strong> The reorder point, the minimum and the maximum are the ones you already run &mdash; FACE does not invent them and does not derive them from a lead time it has never seen. What it returns is the bound that was crossed and the level that crossed it, written out, so the warning can be argued with instead of acknowledged.</li>
 <li><strong class="text-stone-200">The forecast says how much to trust it.</strong> Every projection names the model, which was picked by holding back the most recent stretch of your own history and refitting each candidate on what came before it, and how many periods it had to learn from. When a line's history does not predict itself, that is one of the findings too.</li>
@@ -27,7 +26,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Stop Finding Out Too Late.</h1>
+        <h2 id="stop-finding-out-too-late" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Stop Finding Out Too Late.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             A stockout warning that arrives after the safety stock is gone is not a warning. It is a bill for air freight with a few days' notice.
         </p>
@@ -35,7 +34,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Most stock alerts fire on a level. When cover drops below the line, you are told. But the supplier still needs a fortnight, and the fortnight started when you were told, not when the trouble began.
             </p>
@@ -50,7 +49,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 FACE reads your own sales history for the season and the trend under it, and checks the projection against periods it was not shown. That is the half that tells you a line is turning earlier than the plan thinks it is.
             </p>
@@ -68,7 +67,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
+             <h3 id="how-you-would-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>

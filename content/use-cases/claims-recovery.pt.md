@@ -16,7 +16,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Contestações de frete</p>
 <p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong> &mdash; o Fulfilment Autonomous Claims Engine. Contestação não é um recurso lateral aqui. É o C do nome do produto.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">A papelada é reunida para você, e só as partes que de fato estão lá.</strong> A declaração, o porto, o motivo da retenção, os documentos que faltam no processo, os dias que a carga está parada e a cobrança por dia chegam num lugar só, ligados ao embarque a que pertencem. Não a tarifa que valia no dia: o FACE não guarda tabela de frete, nem tabela de tarifas, nem tabela de taxas acessórias, então não pode dizer qual era a tarifa e não vai fingir que pode.</li>
 <li><strong class="text-stone-200">As quantidades são conferidas de três lados.</strong> O pedido de compra, a nota fiscal e o conhecimento de embarque são comparados entre si, e onde divergem o achado nomeia o par e o tamanho da diferença: conhecimento contra pedido, conhecimento contra nota. Isso é uma conferência de divergências sobre o que os documentos dizem, não um acerto contra uma balança nem contra uma tarifa. Aqui também não há leitura de balança rodoviária.</li>
@@ -24,7 +24,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Contestações Que Perdem O Prazo Em Silêncio.</h1>
+        <h2 id="contestacoes-que-perdem-o-prazo-em-silencio" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Contestações Que Perdem O Prazo Em Silêncio.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             A maior parte das contestações não é perdida na discussão. São contestações que ninguém teve a manhã para montar, registradas tarde demais ou nunca registradas.
         </p>
@@ -32,7 +32,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Uma contestação exige achar o recibo da transportadora, a quantidade que o terminal anotou, a tarifa que valia na data e o prazo que a transportadora usa. Depois, exige escrever a carta. Isso é uma manhã de trabalho. Por isso só as maiores contestações ganham uma.
             </p>
@@ -47,7 +47,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 As conferências rodam contra os seus próprios registros, e a fila da manhã é o que esses registros de fato dizem, em ordem de prioridade, com os documentos anexados. Não é mais um painel para você ir procurar. O que vem junto vale ser dito, porque quase todo produto esconde: se você não conecta nada, a fila fica vazia. Ela não abre com exemplos prontos que parecem as suas rotas. Foi assim que ela se comportou uma vez, e isso foi retirado.
             </p>
@@ -62,7 +62,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
+             <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>

@@ -141,25 +141,12 @@
     "@type": "Person",
     "name": {{ .Params.author | default .Site.Params.author | default .Site.Title | jsonify | safeJS }}
   },
-  "publisher": {
-    "@type": "Organization",
-    "name": {{ .Site.Title | jsonify | safeJS }},
-    "logo": {
-      "@type": "ImageObject",
-      {{ $logoUrl := .Site.Params.logo }}
-      {{ $logoImg := resources.Get $logoUrl }}
-      {{ if $logoImg }}
-        {{ if eq $logoImg.MediaType.SubType "svg" }}
-          "url": {{ $logoImg.Permalink | jsonify | safeJS }}
-        {{ else }}
-          {{ $optLogo := $logoImg.Resize "512x512 webp" }}
-          "url": {{ $optLogo.Permalink | jsonify | safeJS }}
-        {{ end }}
-      {{ else }}
-        "url": {{ $logoUrl | absURL | jsonify | safeJS }}
-      {{ end }}
-    }
-  }
+  {{/* Reference the canonical Organization by @id rather than restating name
+       and logo here. This block used to emit a skeletal Organization on every
+       one of 131 Article pages, none of which carried an @id or a url, so none
+       of them resolved to an entity. partials/schema-org.html now emits the one
+       real node on every page and this points at it. */}}
+  "publisher": { "@id": "https://runink.org/#organization" }
 }
 </script>
 {{ else if .IsNode }}

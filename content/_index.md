@@ -115,6 +115,42 @@ product:
   deck: "Runink FACE is the product behind every line above. It reads the records your systems already hold, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. What changes between industries is which records matter and which rule applies; the reading, the drafting and the approval do not."
   note: "Under the name: agents that read the records and draft the action, a review screen for the person who owns the decision, and the platform underneath that keeps both inside your own network."
 
+# A single scenario, walked end to end.
+#
+# WHY THIS BLOCK EXISTS. The hero names a held customs entry in one clause and the
+# industry ledger names it again in one line, and neither shows what actually
+# happens. A reader who is deciding whether to spend half an hour on a call needs
+# one concrete case, in their own vocabulary, with the arithmetic visible.
+#
+# WHY CUSTOMS AND NOT SOMETHING ELSE. Because it is the case where what the
+# software does is entirely deterministic and can be described exactly. The two
+# artifacts behind this — the held-entry card and the importer-of-record card —
+# are derived by fixed rules with no model involved at any step, so every line
+# below can be defended from the code rather than from a demo.
+#
+# WHAT IS DELIBERATELY NOT HERE. No figure, no rate, no saving, and no
+# percentage: rule 1. Every number on this block is one the READER supplies from
+# their own entry and their own tariff — the per-day rate is the one on their
+# agreement, the duty is the one on their entry. And nothing here says the
+# software files, clears, classifies or calculates anything, because it does
+# none of those and the page describes what is there and stops (rule 2).
+scenario_heading: "One entry, from held to decided"
+scenario_intro: "A container is held at the port. This is the whole of what the software does about it, in order, with nothing left out of the middle."
+scenario_note: "Every figure in that sequence is one of yours. The daily rate is the one in your agreement, the duty is the one on your entry, and the days are counted from your own records. Nothing is estimated, and where a figure cannot be worked out from what you supplied, the field is left empty rather than filled with a guess."
+scenario:
+  - step: "The hold shows up"
+    body: "An entry comes back held, under examination or detained, and the count of days it has been held is above zero. That combination is the whole test — it is a fixed rule, not a judgement, and it runs against every entry rather than the ones somebody thought to check."
+  - step: "The cost is counted, not estimated"
+    body: "The days it has been held, multiplied by the per-day demurrage rate in your own agreement. That is the arithmetic in full. It is the figure that is already accruing while the entry sits in a queue nobody reads end to end."
+  - step: "The missing paper is named"
+    body: "The reason for the hold and the documents outstanding against it come off the entry record and are stated on the item, so the person who picks it up is not starting by finding out what is wrong."
+  - step: "The accountable party is checked"
+    body: "Separately, entries are read for an importer of record that is blank, or filled in with the consignee, or with a placeholder somebody typed once. Those carry duty and tax with nobody accountable for them, and they are raised as their own item with the amount at stake attached."
+  - step: "The two are never added together"
+    body: "Demurrage on a held entry and duty on an unattributed one are different money, and counting them as one number is the commonest way this sort of total gets inflated. They stay separate, deliberately, and there is a test that fails if they ever merge."
+  - step: "A named person decides"
+    body: "The item waits. Approving it is what sends anything, and who approved it, when, and what they changed is written down. If part of what was drafted could not be carried out, the result names that part rather than reporting success."
+
 why_heading: "Why this is not another dashboard"
 why_intro: "Three things decide whether any of the above is worth your time."
 why:

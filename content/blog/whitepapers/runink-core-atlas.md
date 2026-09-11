@@ -5,7 +5,7 @@ product: "Runink CORE"
 subtitle: "A joint architecture paper with Logical Leap's Atlas"
 jointly_with: "Logical Leap"
 partner_url: "https://logicalleap.io/atlas"
-description: "A joint architecture paper from Runink and Logical Leap. Atlas watches capital spending as it happens; CORE's assessors read each finding and score it before a person is asked to act. The paper states, on the pages it names, which half of the design runs and which is drawn."
+description: "A joint architecture paper from Runink and Logical Leap. Atlas watches capital spending as it happens; CORE's assessors read each finding and score it before a person is asked to act. It is an architecture paper: the receiving path is built and exercised in automated testing, and the paper says so on the pages that describe it."
 weight: 40
 date: 2026-09-03T00:00:00Z
 source_pages: 23

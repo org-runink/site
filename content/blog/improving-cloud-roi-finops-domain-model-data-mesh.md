@@ -21,7 +21,7 @@ A department can only say what its technology spend bought if one named team own
 
 ---
 
-# Tying Technology Spend to Freight Output
+## Tying Technology Spend to Freight Output
 
 Most logistics businesses can say what they spent on cloud last quarter. Far fewer can say which part of the operation spent it, or what moved as a result. The gap is not a reporting problem. It is an ownership problem, and it is fixable with plain controls rather than new software.
 
@@ -71,50 +71,10 @@ Three things become answerable, and none of them needs an estimate:
 
 The measure to establish first is narrow, and it is one your own systems can answer this quarter: what proportion of last month's cloud bill can be attributed to a named area of the business, and what proportion landed in "unallocated"? That second number is the honest size of the problem. It moves down as tags, owners and budgets go in, and it moves for a reason you can point at.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How does domain ownership improve cloud cost measurement?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "It gives each cost a named owner. When one team owns an area of the business along with its data and its cloud resources, that team can see its own bill and answer for it. Costs stop being a central allocation that nobody believes."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the three phases of the FinOps framework?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The FinOps Foundation defines three phases: inform, which makes spend visible to the people who cause it; optimize, which acts on what the visibility shows; and operate, which runs the practice as a routine rather than a project."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Which cloud controls should a department start with?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Four: cost allocation tagging, a budget with alerts that reach the owner, chargeback or showback so the cost lands with the area that caused it, and a short monthly report in the same format each time. Tagging comes first, because the other three read from it."
-    }
-  }]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.finops.org/framework/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">FinOps Foundation: the FinOps Framework</a> - The inform, optimize and operate phases, in the Foundation's own words.</li>
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics</a> - Reference guidance for analytics workloads.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Supply Chain Solutions</a> - Vendor documentation on supply chain analytics.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on freight and transportation.</li>
-  </ul>
-</section>
+- [FinOps Foundation: the FinOps Framework](https://www.finops.org/framework/) — The inform, optimize and operate phases, in the Foundation's own words

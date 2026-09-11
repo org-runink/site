@@ -14,7 +14,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Revue juridique et conformité</p>
 <p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong>, le Fulfilment Autonomous Claims Engine. L'agent qui fait ce travail est écrit pour un rôle déclaré &mdash; <em class="text-stone-300">assistant juridique et responsable conformité</em> &mdash; et ce rôle est le plafond de ce qu'il fait, pas un ornement. Il lit, il cite, et il remet la lecture à quelqu'un qui décide.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Il trouve la clause et l'enregistrement, et vous montre les deux.</strong> Rien ne revient simplement affirmé. Chaque constat arrive avec le passage dont il a été lu et l'enregistrement auquel il a été confronté.</li>
 <li><strong class="text-stone-200">Il écrit des notes, pas des modifications.</strong> Il est fait pour rendre une prochaine étape en langage métier &mdash; rédigez cette lettre, ouvrez ce ticket, remontez ceci au délégué à la protection des données. Il lui est explicitement interdit d'écrire un correctif dans vos systèmes.</li>
@@ -22,7 +22,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Une Recherche Qui Devrait Prendre Dix Minutes.</h1>
+        <h2 id="une-recherche-qui-devrait-prendre-dix-minutes" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Une Recherche Qui Devrait Prendre Dix Minutes.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Quelqu'un demande si l'accord permet ceci. Un paragraphe quelque part tranche la question. Trouver le paragraphe prend un jour et demi, alors on répond de mémoire.
         </p>
@@ -30,7 +30,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 La question arrive en milieu d'après-midi et elle n'a jamais rien d'exotique. Peut-on envoyer ces données à ce partenaire. Le contrat lui permet-il de sous-traiter le traitement. La durée de conservation que nous appliquons est-elle celle à laquelle nous nous sommes engagés. Quelque part dans soixante pages, il y a une clause qui y répond sans détour.
             </p>
@@ -45,7 +45,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Les documents sont lus là où ils se trouvent déjà : PDF, fichiers Word, présentations sur un disque partagé ou un dépôt SFTP. Les tableurs sont lus avec leurs formules, cellule par cellule, parce que dans un très grand nombre d'organisations la règle qui s'applique n'est pas du tout dans le document de politique. Elle est dans une cellule.
             </p>
@@ -69,7 +69,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Comment Vous Saurez Que Cela A Marché</h3>
+             <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>

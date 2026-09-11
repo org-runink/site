@@ -1,6 +1,6 @@
 ---
 title: "Procurement Spend Analytics — Why You Can't Manage What You Can't See"
-description: "The Hackett Group puts procurement's direct visibility at 60-70% of enterprise spend, which leaves 30-40% in shadow. What spend analytics reads: maverick purchasing, contract leakage and price variance between business units."
+description: "Most procurement functions can see less of enterprise spend than they think, and the rest is where off-contract buying lives. How to measure your own share, and what spend analytics reads: maverick purchasing, contract leakage and price variance between business units."
 author: "Runink Logistics Operations Team"
 date: 2026-02-22T05:54:14Z
 draft: false
@@ -14,7 +14,7 @@ robots: index, follow
 
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-The Hackett Group's procurement research puts most functions' direct visibility at 60–70% of total enterprise spend. The other 30–40% sits in shadow, and that is where off-contract buying, contract non-compliance and duplicated supplier relationships live. Spend analytics is the work of consolidating purchasing data and classifying every transaction, so a category manager can compare what was paid against what was agreed.
+Most procurement functions can see rather less of enterprise spend than they assume, and the remainder sits in shadow — which is where off-contract buying, contract non-compliance and duplicated supplier relationships live. Your own share is a division you can do from the general ledger: spend you can attribute to a category and a contract, over total spend, for a full financial year. Published benchmarks for this vary so widely that only your own figure is worth acting on. Spend analytics is the work of consolidating purchasing data and classifying every transaction, so a category manager can compare what was paid against what was agreed.
 {{< /direct-answer >}}
 
 * **Purchase orders split across several systems, inconsistent commodity codes and unexamined tail spend stop a CPO from knowing where the money goes.**
@@ -31,7 +31,7 @@ The Hackett Group's procurement research puts most functions' direct visibility 
 Spend blindness comes from fragmented data. Purchase orders sit in more than one ERP system, P-Card transactions sit in a banking platform, services spend sits in departmental budgets, and some indirect categories never pass through procurement at all. Without one consolidated view, the CPO is sourcing on incomplete data.
 {{< /direct-answer >}}
 
-The uncomfortable position for most Chief Procurement Officers is this. The organization is spending money in places, with suppliers, and at prices that procurement has never examined. The Hackett Group's procurement research puts direct visibility at 60–70% of total enterprise spend, even in mature functions. The remaining 30–40% sits in shadow: off-contract purchases, tail spend split across hundreds of low-value suppliers, and services categories that were never brought under procurement governance.
+The uncomfortable position for most Chief Procurement Officers is this. The organization is spending money in places, with suppliers, and at prices that procurement has never examined. Even in mature functions, the share of enterprise spend that can be attributed to a category and a contract is smaller than the organisation assumes. The remainder sits in shadow: off-contract purchases, tail spend split across hundreds of low-value suppliers, and services categories that were never brought under procurement governance.
 
 The cause is not a lack of effort. It is where the data lives. Many mid-market enterprises run more than one PO system across business units and geographies. Each one codes commodities differently. One division files packaging materials under MRO, another under direct materials, a third under facilities. P-Card spend flows through a banking platform procurement never touches. Consulting and professional services get approved at department level, with no central contract file.
 
@@ -67,7 +67,7 @@ Four measures matter: addressable spend ratio, contract utilization rate, suppli
 
 Dashboard counts — total POs raised, average cycle time — say little about whether procurement is working. The measures that matter size the gap between the negotiated price and the paid price.
 
-**Addressable spend ratio.** What share of total enterprise spend is under active procurement management? Gartner's procurement technology research puts the strongest performers at 80–85% of total spend through formal procurement channels. Your own figure is the sum of spend you can attribute to a category and a contract, divided by total spend in the general ledger, for a full financial year. Every point of unaddressed spend is spend nobody negotiated.
+**Addressable spend ratio.** What share of total enterprise spend is under active procurement management? Your figure is the sum of spend you can attribute to a category and a contract, divided by total spend in the general ledger, for a full financial year. Track it against itself quarter on quarter rather than against a published benchmark — every point of unaddressed spend is spend nobody negotiated, whatever anyone else's ratio is.
 
 **Contract utilization rate.** Procurement commits volume and gets preferred pricing in return, but business units have to buy against the agreement for that to mean anything. The measure is the share of a category's addressable spend that was bought on a negotiated contract, taken from the PO file and the contract repository for the same period. Whatever is left went off-contract: higher prices, suppliers nobody approved, and none of the agreed terms.
 
@@ -117,63 +117,12 @@ Treating spend analytics as a one-off data clean-up gives you a view that decays
 
 Start with a figure rather than a tool: what percentage of last year's spend can you currently attribute to a category and a contract without manual work? Most functions discover the answer is lower than they assumed, and it sets the honest baseline for everything that follows. [Start a conversation with our team](/#contact-form) if you want to work it out.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is procurement spend analytics and why does it matter for CPOs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Procurement spend analytics is the work of consolidating, classifying and analyzing all purchasing data across an organization, so it is clear where money is spent, with which suppliers, and under what terms. It matters because The Hackett Group's procurement research puts most functions' direct visibility at 60-70% of total enterprise spend, leaving 30-40% in shadow where off-contract purchasing, contract non-compliance and duplicated supplier relationships sit. What an organization finds in that shadow spend depends on its own data, and is not knowable until the data has been consolidated and classified."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the four stages of spend analytics maturity?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The four stages are: (1) visibility, consolidating all spend data into one classified view; (2) analysis, looking at one category at a time to compare prices paid, contract utilization and supplier concentration; (3) optimization, running sourcing events and reducing the supply base on the basis of that view; and (4) continuous checking, where the same tests run against every transaction as it arrives and inside the requisition workflow, so compliance is tested at the point of purchase."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does machine classification of spend differ from traditional BI tools?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Traditional BI tools need data that has already been cleaned and classified, and a query written by hand for each question. Machine classification categorizes transactions against a standard code set on the first pass, normalizes supplier names across systems so several spellings of the same supplier resolve to one entity, and finds unusual patterns without someone first writing the rule that describes them — price drift on a category, purchases approved just under an approval threshold, or a supplier changing when it invoices. First-pass accuracy depends on how clean the source descriptions are, so any vendor's headline accuracy figure is a claim about their test data rather than about your ledger."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What key metrics should procurement leaders track with spend analytics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Four measures: addressable spend ratio, the share of total spend under active procurement management, which Gartner's procurement technology research puts at 80-85% for the strongest performers; contract utilization rate, the share of a category's addressable spend bought on a negotiated contract, taken from the PO file and the contract repository; supplier concentration, dependency on the top suppliers weighed against negotiating position; and price variance, the spread between the highest and lowest price paid for the same commodity code across business units over twelve months of invoices."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.thehackettgroup.com/research/procurement/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">The Hackett Group — Procurement Research &amp; Benchmarking</a> - Benchmark data on spend analytics maturity and on how much of total enterprise spend procurement functions can see directly.</li>
-    <li><a href="https://www.cips.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Chartered Institute of Procurement &amp; Supply (CIPS)</a> - Frameworks and professional standards for procurement maturity, spend classification code sets and category management.</li>
-    <li><a href="https://www.deloitte.com/global/en/services/consulting/research/cpo-survey.html" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Deloitte Global CPO Survey</a> - Annual survey of Chief Procurement Officers reporting that only 46% rate their spend visibility as good or excellent, with data on digital procurement adoption, cost reduction targets and sourcing maturity.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain/research/procurement-technology" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner — Procurement Technology Research</a> - Analysis of procurement technology platforms and addressable spend benchmarks, putting the strongest performers at 80–85% of total spend through formal procurement channels.</li>
-  </ul>
-</section>
+- [The Hackett Group — Procurement Research & Benchmarking](https://www.thehackettgroup.com/research/procurement/) — Benchmark data on spend analytics maturity and on how much of total enterprise spend procurement functions can see directly
+- [Chartered Institute of Procurement & Supply (CIPS)](https://www.cips.org) — Frameworks and professional standards for procurement maturity, spend classification code sets and category management
+- [Deloitte Global CPO Survey](https://www.deloitte.com/global/en/services/consulting/research/cpo-survey.html) — Annual survey of Chief Procurement Officers reporting that only 46% rate their spend visibility as good or excellent, with data on digital procurement adoption, cost reduction targets and sourcing maturity

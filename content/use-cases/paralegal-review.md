@@ -14,7 +14,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Paralegal and compliance review</p>
 <p class="text-base text-stone-500 font-medium mb-10">This is a scenario for <strong class="text-stone-300">Runink FACE</strong>, the Fulfilment Autonomous Claims Engine. The agent doing this work is written to a stated role &mdash; <em class="text-stone-300">paralegal and compliance officer</em> &mdash; and that role is the ceiling on what it does, not a flourish. It reads, it cites, and it hands the reading to somebody who decides.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">It finds the clause and the record, and shows you both.</strong> Nothing comes back asserted. Every finding arrives with the passage it was read from and the record it was held against.</li>
 <li><strong class="text-stone-200">It writes notes, not changes.</strong> It is built to hand back a next step in business language &mdash; draft this letter, raise this ticket, escalate this to the data protection officer. It is explicitly forbidden from writing a fix into your systems.</li>
@@ -22,7 +22,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">A Lookup That Should Take Ten Minutes.</h1>
+        <h2 id="a-lookup-that-should-take-ten-minutes" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">A Lookup That Should Take Ten Minutes.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Somebody asks whether the agreement permits this. A paragraph somewhere settles it. Finding the paragraph takes a day and a half, so the question gets answered from memory.
         </p>
@@ -30,7 +30,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 The question arrives mid-afternoon and it is never exotic. Can we send this data to that partner. Does the contract allow them to sub-contract the handling. Is the retention period we are running the one we committed to. Somewhere in sixty pages there is a clause that answers it outright.
             </p>
@@ -45,7 +45,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 The documents are read where they already sit: PDFs, Word files, decks on a shared drive or an SFTP drop. Spreadsheets are read including their formulas, cell by cell, because in a great many organisations the operative rule is not in the policy document at all. It is in a cell.
             </p>
@@ -69,7 +69,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">How You Will Know It Worked</h3>
+             <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>

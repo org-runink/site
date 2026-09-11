@@ -4,7 +4,6 @@ description: "Quien sabe que una carga va tarde es justo el que no puede escribi
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"
-standing: "hypothetical"
 badge: "Despacho por Voz con IA"
 badgeColor: "#f59e0b"
 date: "2024-05-20T00:00:00Z"
@@ -16,10 +15,10 @@ author: "Runink"
 
 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Logística reactiva, cara al conductor</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
-<span class="rk-mark" data-standing="hypothetical">Hipotético</span> &mdash; este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su extremo de cara al conductor. Lo que sigue es lo que el producto está hecho para hacer y cómo correría contra los registros de su propia flota. Es una ilustración del mecanismo, no el relato de una implantación. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Qué es FACE</a>.
+este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su extremo de cara al conductor. Lo que sigue es lo que el producto está hecho para hacer y cómo correría contra los registros de su propia flota. Es una ilustración del mecanismo, no el relato de una implantación. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Qué es FACE</a>.
 </p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
+<h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">El conductor pregunta en voz alta y oye la respuesta.</strong> Dónde está la próxima parada, qué pidió el cliente, por qué puerta entrar. Ninguna pantalla que leer y ningún motivo para echarse a un lado. Cada respuesta de la conversación se sintetiza dentro del propio proceso de FACE, con una voz embebida en el binario, y el habla que entra va al servidor de modelos que usted ya corre &mdash; el único extremo de inferencia al que apunta FACE, con un modelo capaz de audio &mdash; y no a una API de voz que opere otro. Dos matices, dichos y no enterrados: ese extremo es uno que usted configura, no una negativa a llamar fuera escrita en el código, y el aviso de grabación y el saludo que abren la llamada se pronuncian con la voz del propio proveedor de telefonía, porque se leen de las instrucciones de arranque de la llamada antes de que el canal hacia sus máquinas esté abierto.</li>
 <li><strong class="text-stone-200">Es una llamada de teléfono, así que va por la red telefónica.</strong> Conviene decirlo claro en vez de enterrarlo. El tramo entre la cabina y el edificio lo lleva un proveedor de telefonía, igual que cualquier otra llamada que hagan sus conductores. Lo que ese proveedor nunca recibe es el texto: la transcripción, y el razonamiento que produce la respuesta, ocurren en sus máquinas, y la respuesta hablada también se codifica ahí. Sí transporta ese audio, como no puede ser de otro modo, y su propia voz lee el aviso de grabación y el saludo antes de que el canal hacia sus máquinas se abra.</li>
@@ -27,7 +26,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Las Manos En El Volante.</h1>
+        <h2 id="las-manos-en-el-volante" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Las Manos En El Volante.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Un conductor que tiene que leer una pantalla para responder a una pregunta o detiene el camión o la lee en marcha. Lo primero le cuesta la hora. Lo segundo le cuesta mucho más, un día.
         </p>
@@ -35,7 +34,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
+            <h2 id="donde-se-tuerce" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Dónde Se Tuerce</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Una carga va tarde. El conductor lo sabe una hora antes que nadie, y la oficina se entera la última. Para contarlo, el conductor tiene que pararse y escribir, o escribir en marcha. La mayoría de los días simplemente espera a la siguiente parada.
             </p>
@@ -50,7 +49,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 El conductor habla y FACE responde. Dónde está mi próxima parada. Qué puerta. Se pregunta en voz alta y vuelve en voz alta, así que los ojos se quedan en la carretera y las manos donde estaban. La llamada en sí es una llamada de teléfono corriente y viaja sobre un proveedor de telefonía para llegar; el canal de audio que entra en el edificio está autenticado, y todo lo que ocurre después de que llega ocurre en sus máquinas. El habla la convierte en texto el servidor de modelos que usted corre &mdash; el mismo y único extremo de inferencia configurable por el que razona el resto de FACE, con un modelo capaz de audio, y no una API de voz con su propio contrato &mdash; y cada respuesta de la conversación la pronuncia un sintetizador que corre en el mismo proceso que el resto de FACE, con una voz embebida en el binario. Ninguna transcripción acaba en la cuenta de otro. Dos matices van en la misma frase y no en una nota al pie. El aviso de grabación y el saludo que abren la llamada se pronuncian con la voz del propio proveedor, porque se leen de las instrucciones de arranque de la llamada antes de que el canal hacia su edificio exista. Y el extremo de transcripción es uno que usted configura, así que a dónde apunta es algo que se comprueba en una revisión y no algo que garantice un test.
             </p>
@@ -65,7 +64,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
+             <h3 id="como-sabria-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto algo cambia.
              </p>

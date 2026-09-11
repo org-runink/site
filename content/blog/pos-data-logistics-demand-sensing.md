@@ -109,54 +109,11 @@ Supply chain resilience is not only a matter of moving boxes faster. Reacting to
 
 Demand forecasting from POS and order history is one of the kinds of work Runink FACE does: it reads the records you already hold, produces a forecast at the level you ask for, and shows the records the forecast was built from. What it does not do is act on that forecast by itself — each proposed replenishment or reposition goes to a named person to approve, edit or reject. [Contact our logistics team](/#contact-form) if you want to see the mechanism against your own POS feed.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is demand sensing in logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Demand sensing uses current signals, such as Point-of-Sale (POS) transactions, to estimate short-term demand over days and weeks. It does not replace a traditional forecast built from historical trends; it answers the shorter question of what has changed since that forecast was made, and what should move because of it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does POS data improve supply chain planning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Store-level POS data shows planners what actually left the shelf, and when. Read next to stock on hand and freight in transit, it lets replenishment follow consumption rather than a fixed calendar, which is what moves a network from pushing product to stores toward pulling it through on what sold."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can AI optimize inventory positioning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Models read large, high-frequency sales feeds and separate movement from ordinary variation, then revise the short-term picture for the planner to review. With a short-term signal in hand, freight can be consolidated into FTL loads and staged at a regional cross-dock before the order arrives, rather than expedited afterwards."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations & References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Standards and practices in demand planning and logistics execution.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - Analysis of the move from traditional forecasting to demand sensing.</li>
-    <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Research on how current inventory records affect OTIF and fill rate.</li>
-  </ul>
-</section>
+- [Council of Supply Chain Management Professionals (CSCMP)](https://www.cscmp.org/) — Standards and practices in demand planning and logistics execution
+- [Association for Supply Chain Management (ASCM)](https://www.ascm.org/) — Research on how current inventory records affect OTIF and fill rate

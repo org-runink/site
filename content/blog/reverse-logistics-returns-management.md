@@ -124,62 +124,13 @@ That takes three things: a record for every return, a rule at every disposition 
 
 If your returns operation is still running on spreadsheets and gut decisions, [we should talk](/#contact-form). The first figure worth establishing is how many days elapse between a return arriving and a disposition decision being recorded against it — and how many returns currently have no recorded decision at all.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How large is the retail returns problem?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The National Retail Federation put total US merchandise returns at about $890 billion in 2024, and reports online return rates running higher than in-store rates. The figure that matters to an individual operation is its own return rate by category over the last four quarters, which is held in its order system."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is disposition in reverse logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Disposition is the decision about what happens to a returned item: resell as new, resell as open-box, refurbish and re-list, liquidate, recycle or donate. It is the decision that determines how much of the item's value comes back, which is why the delay before it is made matters as much as the decision itself."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does better data improve returns management?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By allowing the disposition decision to be made at intake, against current stock, demand by channel and the cost to refurbish, rather than weeks later. Forecasting return volumes puts the labour in place for the week they arrive, and feeding return reasons back to buying and product design reduces the next quarter's volume."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does it cost to process a return?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on the item, the channel and how quickly it is graded, and the cost is spread across return freight, inspection and repackaging labour, the space it occupies while it waits, and any markdown or write-off. To establish it, take one month of returns and total those five lines against them. Most operations have never done this, which is why the figure is usually unknown."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://nrf.com/research-insights" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">National Retail Federation — research and insights</a> - Source of the $890 billion 2024 US returns figure and the annual consumer returns survey.</li>
-    <li><a href="https://www.ellenmacarthurfoundation.org/topics/fashion/overview" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Ellen MacArthur Foundation — Circular Economy in Fashion &amp; Textiles</a> - Source of the textile waste figure quoted above, plus circular design principles and EPR policy developments.</li>
-    <li><a href="https://www.census.gov/retail/ecommerce.html" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">U.S. Census Bureau — Quarterly Retail E-Commerce Sales</a> - Official data on e-commerce share of retail sales.</li>
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for reverse logistics terms.</li>
-  </ul>
-</section>
+- [National Retail Federation — research and insights](https://nrf.com/research-insights) — Source of the $890 billion 2024 US returns figure and the annual consumer returns survey
+- [Ellen MacArthur Foundation — Circular Economy in Fashion & Textiles](https://www.ellenmacarthurfoundation.org/topics/fashion/overview) — Source of the textile waste figure quoted above, plus circular design principles and EPR policy developments
+- [U.S. Census Bureau — Quarterly Retail E-Commerce Sales](https://www.census.gov/retail/ecommerce.html) — Official data on e-commerce share of retail sales
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Industry glossary and definitions for reverse logistics terms

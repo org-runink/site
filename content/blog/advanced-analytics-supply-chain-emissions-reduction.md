@@ -10,8 +10,6 @@ featured_image: /images/blog/advanced-analytics-supply-chain-emissions-reduction
 canonical: https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction
 ---
 
-# Emissions, Waste and the Cost of Reading Supply Chain Records Late
-
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
 Most avoidable supply chain emissions are the exhaust of operational lateness. An expedite gets booked because a signal was read a week after it was written down. A half-empty truck goes out to recover a missed window. A refrigerated container runs on a generator while it waits for drayage, the short truck move between port and warehouse. The levers that address all three are reading and scheduling levers rather than fleet levers, which is why they are available without capital expenditure.
@@ -143,55 +141,3 @@ Two measurements are worth more than any vendor comparison at this stage. First,
   </div>
 </section>
 
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations & References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Guidelines for processing larger data volumes.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Methods for automating logistics decisions.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Research on supply chain technology.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on analytics in freight and transportation.</li>
-  </ul>
-</section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do analytics help find opportunities to reduce Scope 3 supply chain emissions?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Under the GHG Protocol, Scope 1 covers the fuel you burn yourself, Scope 2 the energy you buy, and Scope 3 everything else in the chain — emissions at your suppliers, carriers and customers. Scope 3 is the hard one to account for because the records are scattered: PDF carrier reports, supplier spreadsheets with different column names, telematics exports in several formats. Most of the work is reading those records into one place and agreeing what each field means, so that fuel, distance and weight can be compared across carriers. Once they can be, the questions are ordinary operational ones. Which lanes run repeated LTL (less-than-truckload) shipments that could combine into one FTL (full-truckload) run? Which air freight moves had transit times that ocean or rail would have met? The answer comes back as named lanes and shipments rather than as a network-wide score, which is what makes it actionable and what makes it checkable."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What moves emissions work from reporting to something operations can act on?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Reporting tells you what last quarter's emissions were. Acting on them means the same records reach the person making a routing or sourcing decision while that decision is still open. When a port delay forces a route change, a reporting tool records the extra fuel afterwards. Reading the same feeds on the day lets someone compare the route options, each with its distance and travel time, before the truck rolls. Choosing a lower-emission carrier, or a supplier running on renewable power, then becomes a normal procurement decision made with the figures attached. The commitment stays with a person: booking freight and placing orders are contractual acts, and they should be approved by somebody who can answer for them."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does auditable carbon accounting require from your data?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Carbon accounting joins records that were never designed to be joined: fuel use from telematics, distance from the TMS, and emission factors published by outside bodies. Before the arithmetic, the definitions have to be agreed. 'Gallons of diesel burned by Carrier A' has to map to the Scope 3 transportation category you report under, and weight and distance have to mean the same thing for every carrier. Write those mappings down, and keep every figure traceable back to the record it came from. That is what lets you answer an auditor's question about a single line rather than about a total. As ESG disclosure rules tighten, that traceability is also what you need when a disclosure is challenged instead of simply filed."
-      }
-    }
-  ]
-}
-</script>

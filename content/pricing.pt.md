@@ -3,7 +3,7 @@ title: "Preços"
 description: "Você paga pelo número de pessoas que usam o Runink. Cada pessoa já vem com uma cota de capacidade de computação incluída, então usar mais não aumenta a conta."
 layout: "pricing"
 date: "2024-05-20T00:00:00Z"
-author: "Arquiteto Líder de Dados e Nuvem"
+author: "Runink"
 ---
 
 <div class="max-w-3xl mx-auto text-center mb-4">
@@ -154,8 +154,6 @@ author: "Arquiteto Líder de Dados e Nuvem"
 ---
 
 
-
-<!-- Seção de FAQ gerada para E-A-T & GEO -->
 <section class="faq-section mt-16 p-8 bg-sunk rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
   <div class="flex items-center gap-4 mb-8">
     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-signal-fill to-signal-fill-hover flex items-center justify-center shadow-lg">
@@ -177,23 +175,4 @@ author: "Arquiteto Líder de Dados e Nuvem"
       <p class="text-stone-400 leading-relaxed">Para uma máquina que você controla, e é lá que eles ficam. Os documentos, os registros e o raciocínio sobre eles rodam em hardware dentro do seu perímetro, e nada é enviado a um provedor de modelos externo. Isso importa tanto no comercial quanto no técnico. A pergunta que trava esse tipo de compra costuma ser alguma versão de "para onde vão as nossas informações", e aqui a resposta é curta o bastante para passar por um questionário de compras. Na Lite e na Dedicada a máquina é operada por nós; na Enterprise ela é sua. Em nenhum dos dois casos há um terceiro no caminho guardando os seus dados.</p>
     </div>
   </div>
-</section>
-
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Sobre o Autor</h2>
-  <p class="text-stone-300">
-    <strong>Arquiteto Líder de Dados e Nuvem</strong><br>
-    Especialista no assunto (SME) em AWS Data Analytics, AWS Certified Developer e Google Cloud Professional Certified em Engenharia de Dados e Análise Avançada. Com mais de uma década de experiência na construção de arquiteturas de nuvem resilientes e de alto rendimento, pipelines de dados e soluções de logística automatizada.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Citações e Referências do Setor</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Diretrizes completas para o processamento de dados em larga escala.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Metodologias avançadas para logística automatizada.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Pesquisa de referência do setor sobre tecnologia para a cadeia de suprimentos.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Pesquisa acadêmica sobre aplicações analíticas em frete e transporte.</li>
-  </ul>
 </section>

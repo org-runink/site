@@ -23,8 +23,6 @@ Automation can only be trusted as far as the data under it can be trusted. That 
 
 ---
 
-# Secure and Ethical Automated Systems in Logistics: Why Information Security Is Key
-
 Automation is now doing ordinary work in ordinary businesses: drafting documents, reading records, sorting exceptions. It also brings risks that are new in kind. An automated system can produce a wrong answer confidently, expose data it should not have seen, or be used to impersonate someone. In logistics, where one wrong instruction moves physical goods, those risks are operational rather than theoretical.
 
 The useful news is that most of the defence is familiar. Strong information security practice is what makes automation safe to rely on. Below: what regulators are doing, which security controls matter most, what they mean for a logistics operation, and how to put them in place.
@@ -107,50 +105,12 @@ In practice it means three things. Make automation security a board-level item. 
 
 So take your own projects, existing or planned, and ask of each: do we know where the data came from, who can use this, what personal data it touches, and how we would explain an individual answer? Where the answer is no, that is the work. It is also the part that makes the rest worth having.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Why is information security important for ethical automation?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Because an automated system can only be trusted as far as its data can be trusted. Security controls keep inputs from being altered, keep the wrong people out, protect personal data, and leave a record of how an answer was reached. Without them, an automated decision cannot be defended."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How can logistics companies protect against digital fraud and impersonation?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Lock down the data that would make a convincing fake possible, monitor for unusual access, and require a second channel for any instruction that moves goods or money. Agree a verification protocol in advance, such as a codeword for calls that start a transaction, and train staff to expect impersonation attempts."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the best practices for securing automation in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Name an owner, build security and privacy in from the start, keep input data clean and versioned with a record of where each input came from, add defences for fraud and synthetic media, train the people who use the system, and track changing regulation."
-    }
-  }]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ncsc.gov.uk/collection/supply-chain-security" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">UK National Cyber Security Centre — Supply Chain Security</a> - Government guidance on assessing and managing supplier risk.</li>
-    <li><a href="https://www.nist.gov/cyberframework" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">NIST Cybersecurity Framework</a> - The reference framework for identifying, protecting, detecting, responding and recovering.</li>
-    <li><a href="https://gdpr-info.eu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">GDPR, full text</a> - The data protection rules referenced above, including the data minimisation principle.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on freight and transportation.</li>
-  </ul>
-</section>
+- [UK National Cyber Security Centre — Supply Chain Security](https://www.ncsc.gov.uk/collection/supply-chain-security) — Government guidance on assessing and managing supplier risk
+- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) — The reference framework for identifying, protecting, detecting, responding and recovering
+- [GDPR, full text](https://gdpr-info.eu/) — The data protection rules referenced above, including the data minimisation principle

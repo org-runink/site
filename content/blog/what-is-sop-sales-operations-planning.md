@@ -113,62 +113,12 @@ Companies that progress up the maturity stages share one trait: they fix the rec
 
 The first diagnostic is free and unwelcome: at your last S&OP meeting, how much of the time went on reconciling numbers rather than deciding anything? [Get in touch](/#contact-form) if it would help to work through what that reconciliation is costing.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is S&OP (Sales and Operations Planning)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A monthly planning process that brings demand forecasts, supply capacity, inventory targets and financial plans into one agreed plan. It runs in five steps: gather the data, plan demand, plan supply, reconcile the two before the meeting, then decide. The horizon is typically one to two years, rolling."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do most S&OP implementations underperform?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Four reasons: data split across sales, procurement, logistics and finance; spreadsheets used as the joining tissue between planning systems; no agreed definition per figure, so the meeting argues about numbers rather than decisions; and no senior owner to hold functions to the agreed plan."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between S&OP and S&OE?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "S&OP runs monthly over a rolling one-to-two-year horizon and deals with trade-offs such as capacity and sourcing. S&OE, Sales and Operations Execution, runs daily or weekly inside the current period and deals with what is happening now: a demand spike, a missed delivery, a congested port. Both need the same agreed records."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What has to be true before planning software helps S&OP?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Four things: every function works from the same figures, with one agreed definition each and the source records reachable; a scenario can be re-run between meetings rather than only before one; the demand signal is refreshed more often than monthly; and execution variance is visible against the plan it deviated from."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.gartner.com/en/supply-chain/topics/sales-and-operations-planning" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner — Sales and Operations Planning</a> - The maturity model referred to above, in its publisher's own words.</li>
-    <li><a href="https://www.ascm.org/topics/s-and-op/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">APICS / ASCM — S&amp;OP</a> - Standard definitions and competency frameworks for Sales &amp; Operations Planning.</li>
-    <li><a href="https://www.oliverwight.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Oliver Wight</a> - Originators of the S&amp;OP process and its extension into Integrated Business Planning.</li>
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for the planning terms used above.</li>
-  </ul>
-</section>
+- [APICS / ASCM — S&OP](https://www.ascm.org/topics/s-and-op/) — Standard definitions and competency frameworks for Sales & Operations Planning
+- [Oliver Wight](https://www.oliverwight.com/) — Originators of the S&OP process and its extension into Integrated Business Planning
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Industry glossary and definitions for the planning terms used above

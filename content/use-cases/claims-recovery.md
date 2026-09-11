@@ -15,7 +15,7 @@ author: "Runink"
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Freight claims</p>
 <p class="text-base text-stone-500 font-medium mb-10">This is a scenario for <strong class="text-stone-300">Runink FACE</strong> &mdash; the Fulfilment Autonomous Claims Engine. Claims are not a side feature here. They are the C in the product's name.</p>
 
-<h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
+<h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">The paperwork is gathered for you, and only the parts that are really there.</strong> The entry, the port, the reason it is held, the documents that are missing, the days it has been held and the per-day charge arrive in one place, joined to the shipment they belong to. Not the rate that applied on the date: FACE holds no rate card, no tariff table and no accessorial schedule, so it cannot tell you what the rate was and will not pretend to.</li>
 <li><strong class="text-stone-200">Quantities are checked three ways.</strong> The purchase order, the invoice and the bill of lading are compared against each other, and where they disagree the finding names the pair and the size of the gap &mdash; bill of lading against order, bill of lading against invoice. That is a discrepancy check on what the documents say, not a reconciliation against a scale or a rate: there is no weighbridge feed here either.</li>
@@ -23,7 +23,7 @@ author: "Runink"
 </ul>
 
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Claims That Expire Quietly.</h1>
+        <h2 id="claims-that-expire-quietly" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Claims That Expire Quietly.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
             Most claims are not lost arguments. They are claims nobody had the morning to assemble, filed too late or never filed at all.
         </p>
@@ -31,7 +31,7 @@ author: "Runink"
 
     <div class="flex flex-col gap-12 mb-20">
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
+            <h2 id="where-it-goes-wrong" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Where It Goes Wrong</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 One claim means finding the carrier's receipt, the quantity the terminal recorded, the rate that applied on the date, and the deadline the carrier works to. Then it means writing the letter. That is a morning's work, so only the largest claims get one.
             </p>
@@ -46,7 +46,7 @@ author: "Runink"
             </p>
         </div>
         <div>
-            <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Checks run against your own records, and the queue in the morning is what those records actually say, ranked, with the records attached — not a dashboard for you to go looking through. The corollary is worth stating because most products hide it: connect nothing and the queue is empty. It does not open on worked examples that read like your lanes. That was how it behaved once, and it was taken out.
             </p>
@@ -61,7 +61,7 @@ author: "Runink"
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+             <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>
@@ -76,7 +76,6 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Standing: hypothetical &mdash; not measured</p>
         <p class="text-base text-stone-500 font-medium">
             The claim and the port hold above are drawn to show the shape of the work. They are not accounts of a customer engagement. We publish no recovery rates, no amounts recovered and no customer names, because we have not measured them on your records or anyone else's &mdash; and a recovery rate from somebody else's lanes would tell you nothing about yours anyway.
         </p>
