@@ -213,6 +213,10 @@
              rendered for the shortcodes inside it to have run, and JSON-LD is
              position-independent. */}}
         {{ if .IsPage }}{{ partial "schema-faq.html" . }}{{ end }}
+
+        {{/* Only where a purchasable thing is described and its price is
+             already published on the page. */}}
+        {{ if eq .Layout "pricing" }}{{ partial "schema-product.html" . }}{{ end }}
         {{ partial "trust-signals.html" . }}
     </div>
 
