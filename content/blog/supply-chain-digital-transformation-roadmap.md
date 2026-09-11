@@ -18,7 +18,7 @@ Four phases, in order: digitize the records, connect the systems, read what they
 {{< /direct-answer >}}
 
 * **Digitize, connect, analyze, automate.** Each phase needs the one before it. You cannot read data you have not joined up, and you cannot join up records that are still on paper.
-* **People and process decide the outcome, not the product choice.** BCG research puts the failure rate of digital programmes at 70%, and the causes are mostly human.
+* **People and process decide the outcome, not the product choice.** A high shortfall rate for digital programmes is widely quoted; the part worth acting on is that the causes are mostly human.
 * **Pick the measure before the phase starts.** Name the figure, say where in your own systems it lives, and record it before you change anything. A phase with no baseline cannot be shown to have worked.
 
 <br>
@@ -35,7 +35,7 @@ Every supply chain and IT leader has heard the pitch: buy AI, save millions, run
 
 The floor tells a different story. Buyers are still matching purchase orders in Excel. A site manager checks three systems to confirm one stock count. A transport planner phones a carrier for an arrival time that a system should already hold.
 
-That gap between the boardroom slide and the warehouse floor is where these programmes die. McKinsey estimates that only 8% of companies have scaled digital supply chain work beyond a pilot.
+That gap between the boardroom slide and the warehouse floor is where these programmes die. Far more of this work stalls at the pilot than is ever scaled past it, which is the pattern to plan against.
 
 The cause is not a shortage of products to buy. It is the absence of an order of work, where each step is small enough to finish and each one can be shown to have worked.
 
@@ -93,7 +93,7 @@ This is where software starts doing the routine deciding: picking the carrier on
 Because the people who have to use the new system have reasons not to. A supervisor who has run the floor on experience for fifteen years is being asked to trust a screen. A transport manager who earned their carrier rates on the phone is being asked to accept a suggested route. Neither is unreasonable, and neither is solved by a better product.
 {{< /direct-answer >}}
 
-BCG research shows that 70% of digital programmes fall short of what they set out to do, and the causes are mostly human rather than technical.
+Digital programmes fall short more often than not — you will have seen the percentages, and we are not going to add another one we cannot source. The pattern behind them is consistent and is the useful part: the causes are mostly human rather than technical.
 
 Three things tend to separate the programmes that hold from the ones that fade. Visible sponsorship, so the work does not get traded away at the first budget review. Training that makes the new way genuinely easier than the old way, not merely mandatory. And an early, small result people can see — not a forecast of one.
 
@@ -152,7 +152,7 @@ If your programme has stalled at dashboards, the first thing to establish is not
       "name": "Why do most supply chain digital transformations fail?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BCG research puts the shortfall rate for digital programmes at 70%, and the causes are mostly human rather than technical: staff who have reasons not to trust a new system, sponsorship that fades at the first budget review, and no early visible result. The other common cause is skipping a phase — trying to automate decisions on records that are not yet joined up."
+        "text": "Digital programmes fall short more often than not, and the causes are mostly human rather than technical: staff who have reasons not to trust a new system, sponsorship that fades at the first budget review, and no early visible result. The other common cause is skipping a phase — trying to automate decisions on records that are not yet joined up."
       }
     },
     {

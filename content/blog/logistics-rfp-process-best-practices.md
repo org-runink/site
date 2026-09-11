@@ -41,7 +41,7 @@ The third-party logistics market in North America alone exceeds $300 billion, ac
 
 **No service targets.** Without agreed targets for on-time-in-full, waiting time, damage and claims — and a consequence for missing them — there is no way to hold a provider to anything once the first year is over.
 
-These are not edge cases. CSCMP research consistently shows that nearly half of third-party logistics relationships are renegotiated or ended within the first two years.
+These are not edge cases. Count your own: list the third-party logistics relationships you have signed in the last five years and mark which were renegotiated or ended inside two. Most operations find the share uncomfortable, and it is a better number than any published average because it is about your contracts and your selection process.
 
 ---
 

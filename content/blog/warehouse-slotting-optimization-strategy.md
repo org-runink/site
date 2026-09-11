@@ -118,7 +118,7 @@ Slotting is not glamorous. No robots, no autonomous vehicles. It decides whether
 
 The operations leaders pulling ahead treat it as continuous work rather than a project. If the layout has not been reviewed in a year, the order pattern it was built for has already moved.
 
-Gartner's warehouse technology research treats intelligent slotting as one of the capabilities that separates stronger operations. Before any of that matters, get two figures of your own: average travel distance per pick line last quarter, and the date of your last slotting review. If the second is more than a year ago, measure the first before you buy anything. [Talk to us](/#contact-form) if it would help to work it out.
+Before any vendor comparison matters, get two figures of your own: average travel distance per pick line last quarter, and the date of your last slotting review. If the second is more than a year ago, measure the first before you buy anything. [Talk to us](/#contact-form) if it would help to work it out.
 
 <!-- FAQPage Schema -->
 <script type="application/ld+json">

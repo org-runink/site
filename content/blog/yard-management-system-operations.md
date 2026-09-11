@@ -51,7 +51,7 @@ None of these is hypothetical. They are line items, just not in the same place.
 
 **Detention and demurrage.** The most visible one. Free time runs out quickly when a truck sits in a queue because nobody knows which door is about to open. Check the detention rate in your own carrier contracts, multiply by the hours you were billed for last quarter, and you have the figure. CSCMP's annual State of Logistics report has identified detention as one of the fastest-growing cost categories in domestic freight.
 
-**Idle dock doors.** A site without a YMS usually cannot say how much of its door capacity it actually uses, because nobody records when a door was free. Gartner's supply chain research finds that top-quartile operators reach 80% or better on dock utilisation, and that they get there by managing the yard as an asset rather than as a car park. The first step is measuring it: log when each door was occupied for a fortnight, by hand if you have to.
+**Idle dock doors.** A site without a YMS usually cannot say how much of its door capacity it actually uses, because nobody records when a door was free. Operations that do well on this manage the yard as an asset rather than as a car park, and a utilisation target is meaningless until you know your own starting point. The first step is measuring it: log when each door was occupied for a fortnight, by hand if you have to.
 
 **Safety.** Unauthorised trailer moves, reversing into an occupied door, and people walking where vehicles are moving all become more likely when nobody knows what is where. Those incidents carry direct costs in compensation and indirect costs in downtime. Both belong in the business case, and both are usually left out.
 

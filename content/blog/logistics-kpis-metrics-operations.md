@@ -50,13 +50,13 @@ Where your figure lives: your transport system's delivery records against the ag
 
 Order cycle time is the elapsed time from order receipt to delivery. It covers order handling, picking, packing, transit and the last mile.
 
-McKinsey's operations research reports that companies in the top quartile for order cycle time see 20–30% higher customer retention than median performers. Where your figure lives: order timestamps in your planning system and delivery timestamps in your transport system. Break it into stages, because creep usually hides in dock dwell or order release rather than in transit. Which way it should move: down, and a stage at a time.
+Order cycle time is the measure most often linked to whether a customer stays, and the link is worth testing on your own book rather than taking on trust: rank last year's accounts by their median cycle time and see how retention differs across the ranking. Where your figure lives: order timestamps in your planning system and delivery timestamps in your transport system. Break it into stages, because creep usually hides in dock dwell or order release rather than in transit. Which way it should move: down, and a stage at a time.
 
 ## 3. Perfect Order Rate — The Measure That Finds the Weak Link
 
 Perfect Order Rate is the share of orders delivered on time, complete, undamaged, and with correct paperwork. Any one failure marks the whole order imperfect, which is why it sits below every individual measure.
 
-CSCMP data puts the cross-industry average at roughly 90%. Where your figure lives: you will have to join four sources — delivery records, pick accuracy, claims, and invoice corrections. That join is the work. Which way it should move: up, and the first pass usually shows one of the four components doing most of the damage.
+There is no cross-industry average worth quoting here — the measure is defined differently by almost everyone who reports it, which makes a benchmark comparison meaningless before you have defined your own. Where your figure lives: you will have to join four sources — delivery records, pick accuracy, claims, and invoice corrections. That join is the work. Which way it should move: up, and the first pass usually shows one of the four components doing most of the damage.
 
 ## 4. Freight Cost per Unit Shipped — The Cost Guardrail
 
@@ -145,7 +145,7 @@ If you cannot, it is a scoreboard, however often it refreshes.
       "name": "What is a good benchmark for Perfect Order Rate in logistics?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CSCMP data puts the cross-industry average at roughly 90%. Because the measure is compound — on time, complete, undamaged, correctly documented — the more useful number for your own operation is which of those four components accounts for most of your failures."
+        "text": "Published cross-industry averages are not comparable, because the measure is defined differently by almost everyone who reports it. Because it is compound — on time, complete, undamaged, correctly documented — the useful number for your own operation is which of those four components accounts for most of your failures."
       }
     },
     {

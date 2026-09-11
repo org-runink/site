@@ -67,7 +67,7 @@ Routes are planned the night before on historical averages, so they cannot accou
 
 A route planned at 6pm yesterday looks efficient on paper. It meets today's road closure and falls apart.
 
-According to McKinsey research on logistics productivity, drivers spend 40–60% of their shift in transit rather than delivering. That is the gap the planning is fighting.
+Most of a driver's shift is spent in transit rather than delivering, and the exact share is something your telematics already knows. Pull last month: wheels-turning time against time at the stop. That ratio is the gap the planning is fighting, and it is worth having your own figure before anyone sells you an improvement to it.
 
 Driver shortage makes every inefficiency worse. Recruitment is hard across North America and Europe, and turnover is high in dense urban markets. If you cannot add people, the only lever left is using the hours you have better.
 
@@ -83,7 +83,7 @@ Live re-routing re-orders the remaining stops when something changes, so the pla
 
 Live re-routing is not faster planning. It is planning again during the day. A road closes, so the remaining stops are re-ordered. A customer says they will be out, so the slot moves.
 
-McKinsey estimates that AI-driven route planning can improve delivery density by 15–20% and reduce fuel costs by up to 20%.
+Improvements are claimed for this, in percentages, by everyone selling routing software. Treat all of them as unmeasured until the measurement is yours: stops per route and fuel per drop, for one depot, for the month before and the month after. Those two numbers are in your own telematics and fuel-card data, and they settle the question for your network rather than for somebody's average.
 
 PUDO points attack a different cost. A parcel sent to a staffed collection point cannot fail because nobody was home — someone is always there to sign for it. Drops also cluster: one stop serves many parcels. For retailers with high return rates, the same points take returns back.
 
@@ -137,7 +137,7 @@ So the question for whoever runs delivery operations is which lever touches thei
       "name": "How does dynamic route optimization reduce last-mile delivery costs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It re-orders the remaining stops when conditions change during the day, instead of following a plan built the night before on historical averages. McKinsey estimates that AI-driven route planning can improve delivery density by 15-20% and reduce fuel costs by up to 20%. What it is worth in a given operation depends on that operation's own cost per attempt, which is the figure to establish first."
+        "text": "It re-orders the remaining stops when conditions change during the day, instead of following a plan built the night before on historical averages. Improvements are widely claimed for this in percentages; what it is worth in a given operation depends on that operation's own cost per attempt, stops per route and fuel per drop, which are the figures to establish first and which its own telematics already holds."
       }
     },
     {

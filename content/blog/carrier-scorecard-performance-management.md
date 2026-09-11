@@ -35,7 +35,7 @@ If you run thirty carriers, or a hundred, you know the problem.
 
 The account manager at your third-largest carrier says service is excellent. Your dock supervisors disagree. Accounts payable flags billing errors every cycle. Customer service is fielding complaints about a lane you thought was fine. Everyone has a view. Nobody has the record.
 
-That gap is what a scorecard closes. According to the Council of Supply Chain Management Professionals, fewer than 40% of mid-market shippers run a formal carrier evaluation programme, even though carrier performance is the largest single variable in whether an order arrives on time and in full.
+That gap is what a scorecard closes. Whether your own operation has one is a question you can answer in a minute: ask whoever awards the freight how last quarter's carriers ranked, and see whether the answer arrives as a document or as an opinion. Carrier performance is the largest single variable in whether an order arrives on time and in full, and it is routinely the one managed on recollection.
 
 The cost of not having one is quiet. Weak carriers keep lanes they should lose. Strong ones get nothing for it, and no reason to favour your freight when capacity is short. Rate talks happen with no performance record on the table. A scorecard does not fix a carrier. It makes the conversation that might possible.
 
@@ -49,7 +49,7 @@ On-time pickup, on-time delivery, claims ratio, damage rate, tender acceptance, 
 
 Each measure here earns its place by answering one question.
 
-**On-time pickup and on-time delivery.** The basic ones. Did the carrier do the thing you hired it for, inside the agreed window? Gartner's transport-system research puts the target among the strongest shippers at 95% or better, with the best carriers above 97%.
+**On-time pickup and on-time delivery.** The basic ones. Did the carrier do the thing you hired it for, inside the agreed window? Set the target from your own contracts and your own last four quarters rather than from a published benchmark — the figure only means something once you have fixed how a late pickup is recorded, and that definition varies more between operations than the performance does.
 
 **Tender acceptance.** When you offer a load, does the carrier take it? A carrier that turns down a third of your loads is a backup option described as a primary one. Every refusal pushes you towards the spot market, where you pay the day's price rather than your contracted one. This matters most in peak weeks.
 

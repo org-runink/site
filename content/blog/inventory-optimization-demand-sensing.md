@@ -62,7 +62,7 @@ A forecast works on a frozen window. Moving averages and similar methods do well
 
 Sensing closes that gap with signals that arrive continuously. Till data shows what shoppers actually bought before the orders flow through. Weather moves demand for anything temperature-sensitive. Carrier arrival feeds show where your inbound stock really is. Search and social trends flag a shift — a viral mention, a competitor recall — before it shows up in orders.
 
-Gartner's research on demand sensing reports that short-term sensing cuts forecast error by 30–40% at the weekly SKU-location level, compared with traditional statistical methods.
+Reductions in forecast error are claimed for demand sensing, and the claims are not comparable with each other because error is measured differently in each. The test that settles it for you is a backtest: hold out the last eight weeks, run both methods forward over them, and compare each against what actually sold at the weekly SKU-location level. That is a week of work and it answers the question for your own demand rather than for somebody's sample.
 
 The change for the team is a cadence change. Monthly set-and-forget becomes a weekly loop: signal, check, adjust.
 
@@ -96,7 +96,7 @@ Most inventory teams are not short of data. They are short of a way to read it t
 
 The warehouse system holds what is on hand. The transport system tracks what is inbound. The planning system holds orders and the plan. The web store reports what sold an hour ago. Each holds a piece. None holds the position.
 
-McKinsey's work on working capital reports reductions of 20–50% in inventory-related working capital where demand sensing and inventory optimisation are put together, with matching gains in the cash conversion cycle.
+Where demand sensing and inventory optimisation are put together, the money shows up as inventory-related working capital and in the cash conversion cycle. Both are already on your balance sheet, so the honest way to size the opportunity is to record them before you change anything and read them again two quarters later — not to apply somebody else's percentage to your own inventory.
 
 Pulling the pieces together is what [Runink FACE](/products/face/) does. It reads till feeds, carrier milestone events, warehouse capacity records and supplier performance history out of the systems that already hold them, and produces a forecast at the SKU-location level with the records behind it attached. A proposed change to a safety stock level, a reorder point or an allocation arrives as a draft for the planner who owns that SKU to approve, edit or reject. The planner applies it, because a safety stock change is a decision about cash.
 
@@ -127,7 +127,7 @@ So start with one figure. How many days pass in your operation between a sell-th
       "name": "What is demand sensing and how does it differ from demand forecasting?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A forecast projects sales history forward over weeks or months. Demand sensing reads signals that arrive daily — till data, weather, carrier arrival times, promotion calendars — and adjusts stock positions within days. Gartner's research on demand sensing reports a 30-40% reduction in forecast error at the weekly SKU-location level compared with traditional statistical methods."
+        "text": "A forecast projects sales history forward over weeks or months. Demand sensing reads signals that arrive daily — till data, weather, carrier arrival times, promotion calendars — and adjusts stock positions within days. Reductions in forecast error are claimed for it and are not comparable between vendors, because error is measured differently in each; a hold-out backtest at the weekly SKU-location level settles it for a given operation."
       }
     },
     {
