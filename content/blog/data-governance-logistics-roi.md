@@ -20,8 +20,6 @@ Automated routing and sourcing tools read your records. If the records disagree,
 * **Bad data costs in specific places.** Duplicate supplier records. Two spellings of the same site. A stock figure from last night used for a promise made now.
 * **The return is measurable, but not by us.** The figures live in your ticket queue, your invoice file and your stock records. Start there.
 
-# Data Governance in Automated Logistics and Procurement
-
 ## Why do dispatch systems struggle with the data they are given?
 
 {{< direct-answer >}}
@@ -119,41 +117,3 @@ So put the decisions in the plan rather than in a later phase. Where data from s
 
 Start small enough to finish. One measure, the four decisions, a named owner, and a count of the hours it gives back in a month. A result like that is worth more to the next business case than any figure in a vendor deck.
 
-<!-- FAQPage schema for search engines -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Why does data governance matter for automation in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Because automated tools act on records without pausing at a suspect one. A planner queries an odd address; a scheduler does not. Governance is the set of decisions — what each field means, which system is the source, who owns it, how fresh it must be — that makes the tool's answer checkable."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How do you measure the return on data governance?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "In your own systems, not from a published figure. Count the hours spent each month making two reports agree, the share of active suppliers with a complete record, the gap between planned and actual cost on your top lanes, and the findings in your last audit. Those four are the baseline any change should move."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What do automated tools and drones need from the data underneath them?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Current records with agreed meanings: where vehicles are, which roads are open, which appointments are set, which suppliers are certified. A sourcing tool reading duplicate supplier records produces a confident, wrong shortlist, and nothing in the output shows that."
-    }
-  }]
-}
-</script>
-
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to pick one measure and work through the four decisions on it.
-  </p>
-</section>

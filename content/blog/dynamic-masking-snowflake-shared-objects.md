@@ -128,36 +128,3 @@ Start with one partner and one question: what can they read today that they do n
 
 The answer is usually recoverable in an afternoon, and it is the only version of this argument that comes with evidence. Partner trust and customs readiness follow from the same list.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why does controlled data sharing matter in 3PL operations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A carrier or 3PL needs the address, the appointment and the load to do the job. It does not need your negotiated rate or your end customer's personal details. Controlled sharing means deciding which fields each partner reads, and keeping a record of that decision."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should a shipper measure before changing how it shares data?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Two figures, both already in your own systems: how many separate partner feeds your team maintains, and how many partners hold live access with no current load. Both are countable today and both are the baseline any change should move."
-      }
-    }
-  ]
-}
-</script>
-
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work through the questions in this post against your own operation.
-  </p>
-</section>

@@ -22,7 +22,7 @@ A supply chain digital twin is a live copy of a physical operation, kept current
 *   **Autonomous decisions** are what vendors add on top: software that does not just warn you, but works out what to do about it.
 *   The hard part is not the reasoning. It is the approval line: which steps software may take on its own, and which ones a named person has to own because they carry legal or commercial liability.
 
-# 1. Where Digital Twins Came From
+## 1. Where Digital Twins Came From
 
 For decades, supply chain managers have tracked goods through a mix of dashboards, overnight EDI messages and phone calls. Visibility was the bottleneck. As trade networks got more tangled and resilience became a board-level subject, simply *seeing* a delayed shipment stopped being enough. That gap is what digital twins are sold to fill.
 
@@ -100,47 +100,10 @@ What it does not settle is who decides. That question does not go away with bett
 
 *For what Runink FACE reads, what it drafts, and where it stops: [Runink FACE](/products/face/). To talk it through against your own records, [get in touch](/#contact-form).*
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is a supply chain digital twin?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A live copy of a physical operation — assets, sites or whole processes — kept current from the data those things already report. Because the copy stays current, an operation can test a scenario against it rather than against the real thing."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What do autonomous decisions add to a digital twin?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A twin shows the state. A decision engine reads that state, searches the company's own records for the rule or contract that applies, generates options, scores them and proposes one. Whether it then acts on the proposal or waits for a named person to approve it differs by product, and is the question to ask."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What are the four kinds of digital twin in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Component twins, covering one part or sensor; asset twins, covering a whole piece of equipment such as a container or vehicle; system twins, covering a site such as a warehouse or port; and process twins, covering an end-to-end flow such as buying through customs to final delivery and returns."
-    }
-  }]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for the logistics terms used above.</li>
-  </ul>
-</section>
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Industry glossary and definitions for the logistics terms used above

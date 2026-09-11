@@ -24,7 +24,7 @@ Digital twins are sold at three levels: a picture of what is happening, an advis
 
 ---
 
-# 1. The Three Levels of Digital Twin Maturity
+## 1. The Three Levels of Digital Twin Maturity
 
 "Digital twin" covers a wide range of things. Some are a map with vehicles on it. Some reason about the operation. A buyer comparing two products described with the same phrase is often comparing two different categories, so it is worth separating them.
 
@@ -120,48 +120,11 @@ The logistics networks of the 2010s were built on the idea that people needed be
 
 So the useful reading of a maturity model is not "how far up the scale can we get". It is "how much of the reading and reasoning can come off a person's desk while the decision stays on it". That is the line Runink FACE is built to. It is a design choice, not a stage to be passed through later.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What are the three levels of digital twin maturity in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "First, a picture: a current view of the operation drawn from the data it already reports. Second, an adviser: it reads patterns and suggests a recovery plan when something breaks. Third, a system that acts: it works out a response to an unplanned situation and carries it out directly in the order or transport system."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What does a digital twin need in order to work?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Records that are complete, current and consistent enough to reason over. A twin fed with late or contradictory records still produces an answer, which is the danger. Data quality is the first piece of work on this subject rather than the last."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How do digital twins relate to supply chain emissions?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Through the routing decision. Testing mode shifts and consolidation before the vehicles move means the emissions consequence is part of the choice rather than something counted afterwards. A mile that is not driven empty does not burn the fuel, which is the mechanism behind most reported Scope 3 reductions in transport."
-    }
-  }]
-}
-</script>
-
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+---
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://ghgprotocol.org/corporate-value-chain-scope-3-standard" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">GHG Protocol — Scope 3 Standard</a> - The standard that defines the Scope 3 categories referred to above.</li>
-  </ul>
-</section>
+## Sources
+
+- [GHG Protocol — Scope 3 Standard](https://ghgprotocol.org/corporate-value-chain-scope-3-standard) — The standard that defines the Scope 3 categories referred to above

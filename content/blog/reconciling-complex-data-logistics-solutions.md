@@ -23,8 +23,6 @@ An automated system with gaps in what it can see will fill them in, confidently.
 
 ---
 
-# Reconciling Complex Logistics Data Safely: Methods for Data Reliability
-
 ## What Is a Data Discrepancy?
 
 {{< direct-answer >}}
@@ -118,54 +116,10 @@ Automated systems are useful across logistics — forecasting, routing, stock, h
 
 None of this is magic. It is ordinary data quality and validation work, applied to automation. What it buys is not confidence in a recommendation but the ability to check one: every output traceable to the records that produced it, so a discrepancy can be told apart from a finding by someone who reads both. That property is worth asking for explicitly in any evaluation, because it is what makes an automated recommendation arguable rather than merely presented.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What are data discrepancies in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Answers that look right and are not. They happen when an automated system cannot see the records it needed and fills the gap from what it has. In logistics that shows up as a forecast nobody can trace or a route that ignores a real constraint."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How does query expansion reduce wrong answers?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "By rewriting the question into several related forms before searching, so the search finds the relevant records even when they are worded differently. With the right records in front of it, the system has no gap to fill."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What is an embedding adapter?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A small adjustment to how a search translates words into numbers, trained on your own records. It aligns your wording — product codes, site names, supply terminology — with how your data is actually written, so a query lands on the right record instead of a near miss."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Why does model tuning matter for supply chain automation?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Because a general model does not know your lanes, your seasonality or your constraints. Training it further on your own order history, route logs and procedures means it recognises your patterns rather than reaching for a generic one. It costs more than the other methods, so it usually comes last."
-    }
-  }]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">NIST AI Risk Management Framework</a> - Reference framework for identifying and managing the risks described above, including unreliable output.</li>
-  </ul>
-</section>
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — Reference framework for identifying and managing the risks described above, including unreliable output

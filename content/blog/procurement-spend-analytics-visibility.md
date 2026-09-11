@@ -117,62 +117,12 @@ Treating spend analytics as a one-off data clean-up gives you a view that decays
 
 Start with a figure rather than a tool: what percentage of last year's spend can you currently attribute to a category and a contract without manual work? Most functions discover the answer is lower than they assumed, and it sets the honest baseline for everything that follows. [Start a conversation with our team](/#contact-form) if you want to work it out.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is procurement spend analytics and why does it matter for CPOs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Procurement spend analytics is the work of consolidating, classifying and analyzing all purchasing data across an organization, so it is clear where money is spent, with which suppliers, and under what terms. It matters because most procurement functions can attribute rather less of enterprise spend to a category and a contract than they assume, and the remainder sits in shadow where off-contract purchasing, contract non-compliance and duplicated supplier relationships sit. What an organization finds in that shadow spend depends on its own data, and is not knowable until the data has been consolidated and classified."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the four stages of spend analytics maturity?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The four stages are: (1) visibility, consolidating all spend data into one classified view; (2) analysis, looking at one category at a time to compare prices paid, contract utilization and supplier concentration; (3) optimization, running sourcing events and reducing the supply base on the basis of that view; and (4) continuous checking, where the same tests run against every transaction as it arrives and inside the requisition workflow, so compliance is tested at the point of purchase."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does machine classification of spend differ from traditional BI tools?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Traditional BI tools need data that has already been cleaned and classified, and a query written by hand for each question. Machine classification categorizes transactions against a standard code set on the first pass, normalizes supplier names across systems so several spellings of the same supplier resolve to one entity, and finds unusual patterns without someone first writing the rule that describes them — price drift on a category, purchases approved just under an approval threshold, or a supplier changing when it invoices. First-pass accuracy depends on how clean the source descriptions are, so any vendor's headline accuracy figure is a claim about their test data rather than about your ledger."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What key metrics should procurement leaders track with spend analytics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Four measures: addressable spend ratio, the share of total spend under active procurement management, tracked against itself quarter on quarter rather than against a published benchmark; contract utilization rate, the share of a category's addressable spend bought on a negotiated contract, taken from the PO file and the contract repository; supplier concentration, dependency on the top suppliers weighed against negotiating position; and price variance, the spread between the highest and lowest price paid for the same commodity code across business units over twelve months of invoices."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.thehackettgroup.com/research/procurement/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">The Hackett Group — Procurement Research &amp; Benchmarking</a> - Benchmark data on spend analytics maturity and on how much of total enterprise spend procurement functions can see directly.</li>
-    <li><a href="https://www.cips.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Chartered Institute of Procurement &amp; Supply (CIPS)</a> - Frameworks and professional standards for procurement maturity, spend classification code sets and category management.</li>
-    <li><a href="https://www.deloitte.com/global/en/services/consulting/research/cpo-survey.html" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Deloitte Global CPO Survey</a> - Annual survey of Chief Procurement Officers reporting that only 46% rate their spend visibility as good or excellent, with data on digital procurement adoption, cost reduction targets and sourcing maturity.</li>
-  </ul>
-</section>
+- [The Hackett Group — Procurement Research & Benchmarking](https://www.thehackettgroup.com/research/procurement/) — Benchmark data on spend analytics maturity and on how much of total enterprise spend procurement functions can see directly
+- [Chartered Institute of Procurement & Supply (CIPS)](https://www.cips.org) — Frameworks and professional standards for procurement maturity, spend classification code sets and category management
+- [Deloitte Global CPO Survey](https://www.deloitte.com/global/en/services/consulting/research/cpo-survey.html) — Annual survey of Chief Procurement Officers reporting that only 46% rate their spend visibility as good or excellent, with data on digital procurement adoption, cost reduction targets and sourcing maturity

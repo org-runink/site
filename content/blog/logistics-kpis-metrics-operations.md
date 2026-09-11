@@ -12,7 +12,6 @@ tags: ["KPIs", "Logistics Metrics", "OTIF", "Perfect Order Rate", "Operations", 
 robots: index, follow
 ---
 
-<!-- structured Executive Summary -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
 Ten measures cover most of what an operations team needs to see: service, speed, cost, capacity, cash, receiving, damage, emissions and carrier performance. For each one, this post says what it measures, which system holds your figure, and which way it should move. Where a published benchmark exists it is named and linked. Where one does not, your own trailing history is the target.
@@ -126,63 +125,13 @@ Audit your current dashboard against these ten. Then ask one question of each nu
 
 If you cannot, it is a scoreboard, however often it refreshes.
 
-<!-- FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the most important logistics KPI for operations leaders?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "OTIF — on-time in-full — because it is the measure your customer applies to you, and large retail programmes charge back against it. It should be read by SKU and lane rather than as one blended figure, and alongside Perfect Order Rate and Order Cycle Time."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a good benchmark for Perfect Order Rate in logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Published cross-industry averages are not comparable, because the measure is defined differently by almost everyone who reports it. Because it is compound — on time, complete, undamaged, correctly documented — the useful number for your own operation is which of those four components accounts for most of your failures."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should automation do for KPI tracking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Read the records your reports already read, compare each against the rule that governs it, and return a named exception: this lane, this carrier, this facility. Setting what counts as acceptable stays with the operations team."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is dock-to-stock time and why does it matter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The time between a trailer arriving and the stock being available to pick. It is often uncounted, and while it runs long it inflates safety stock and distorts stock accuracy. Your figure is the gap between the gate-in record and the put-away confirmation."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work through which of these ten you can currently trace to records.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">APICS / ASCM</a> - source for the inventory turnover figures quoted above.</li>
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">CSCMP</a> - source for the Perfect Order Rate average quoted above.</li>
-    <li><a href="https://www.mckinsey.com/capabilities/operations/our-insights" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">McKinsey and Company, Operations Practice</a> - source for the order cycle time figure quoted above.</li>
-    <li><a href="https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">European Commission: Corporate Sustainability Reporting Directive</a> - the rules behind the emissions measure.</li>
-  </ul>
-</section>
+- [APICS / ASCM](https://www.ascm.org/) — source for the inventory turnover figures quoted above
+- [CSCMP](https://cscmp.org/) — source for the Perfect Order Rate average quoted above
+- [McKinsey and Company, Operations Practice](https://www.mckinsey.com/capabilities/operations/our-insights) — source for the order cycle time figure quoted above
+- [European Commission: Corporate Sustainability Reporting Directive](https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en) — the rules behind the emissions measure

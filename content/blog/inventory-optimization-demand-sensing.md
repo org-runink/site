@@ -12,7 +12,6 @@ tags: ["Inventory Optimization", "Demand Sensing", "Safety Stock", "Fill Rate", 
 robots: index, follow
 ---
 
-<!-- structured Executive Summary -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
 Fixed safety stock, a quarterly plan and a replenishment spreadsheet all assume demand holds still. Demand sensing uses signals that arrive daily — till data, carrier arrival times, weather, promotions — to adjust stock positions while there is still time to act. The levers are the same ones you have today. What changes is how current the signal behind each decision is.
@@ -116,62 +115,12 @@ The cost of leaving it alone is countable: cash sitting in stock, fill rates sli
 
 So start with one figure. How many days pass in your operation between a sell-through signal being recorded and a replenishment parameter changing because of it? [Get in touch](/#contact-form) if it would help to work that number out together.
 
-<!-- FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is demand sensing and how does it differ from demand forecasting?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A forecast projects sales history forward over weeks or months. Demand sensing reads signals that arrive daily — till data, weather, carrier arrival times, promotion calendars — and adjusts stock positions within days. Reductions in forecast error are claimed for it and are not comparable between vendors, because error is measured differently in each; a hold-out backtest at the weekly SKU-location level settles it for a given operation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you measure whether inventory optimization is working?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Count the days between a sell-through signal being recorded in your systems and a replenishment parameter changing because of it, over a quarter. Then count how many parameters nobody has reviewed this year. Both figures come from your own records and both should fall."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is ABC/XYZ inventory segmentation and why does it matter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It ranks items twice: once by the value they contribute, once by how erratic their demand is. The point is to stop applying one service target to everything. A high-value, predictable item can run lean; a low-value, erratic one may be better ordered in than stocked."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the bullwhip effect and how does it cause inventory distortion?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A small change in demand at the till becomes a larger order to the distribution centre, and a larger one again to the supplier, because each tier adds its own caution. The result is alternating gluts and shortages that a fixed safety stock formula cannot correct."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work out the signal-to-decision delay in your own operation.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ascm.org/topics/inventory-management/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">APICS / ASCM inventory management body of knowledge</a> - frameworks for segmentation, order quantity and safety stock.</li>
-    <li><a href="https://www.ihlservices.com/product/inventory-distortion/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">IHL Group inventory distortion study</a> - source for the $1.8 trillion figure quoted above.</li>
-    <li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/working-capital-management" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">McKinsey: working capital management</a> - source for the working capital figure quoted above.</li>
-  </ul>
-</section>
+- [APICS / ASCM inventory management body of knowledge](https://www.ascm.org/topics/inventory-management/) — frameworks for segmentation, order quantity and safety stock
+- [IHL Group inventory distortion study](https://www.ihlservices.com/product/inventory-distortion/) — source for the $1.8 trillion figure quoted above
+- [McKinsey: working capital management](https://www.mckinsey.com/capabilities/operations/our-insights/working-capital-management) — source for the working capital figure quoted above

@@ -10,8 +10,6 @@ featured_image: /images/blog/telemetry-data-reconciliation-domain-modeling.png
 canonical: https://runink.org/blog/telemetry-data-reconciliation-domain-modeling
 ---
 
-# When Two Systems Disagree, Which One Is Wrong?
-
 ## Executive Summary: Key Takeaways
 *   **The daily chore.** Someone exports two reports, lines them up in a spreadsheet, and tries to explain the gap. That person is usually your best analyst.
 *   **Most gaps are not errors.** A feed arrived late. A partner sends totals once a night. Until you can tell that apart from a real fault, every gap gets the same alarm.
@@ -81,42 +79,4 @@ Pick the measure that caused the last argument. Write down its sources, the fres
 
 Count two things at the end of the month: how many gaps had an expected cause, and how long it took to explain the rest. Those two numbers tell you whether to do the next measure. They are also the only figures in this argument that are actually yours.
 
-<!-- FAQPage schema for search engines -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Why do two systems report different numbers for the same day?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Usually because they send data differently. One reports each event as it happens; the other sends one total at the end of the night. A gap between them during the day is the shape of the feed, not an error. Telling that apart from a real fault needs a record of how fresh each feed should be."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What should a data check record for each measure?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Four things: where the number comes from, how fresh it should be, what it must add up to, and who is called when it does not. With those written down, an alert can name the late feed and its owner instead of reporting that two totals differ."
-    }
-  }, {
-    "@type": "Question",
-    "name": "When is this not worth doing?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "When the data sits in systems you cannot export from, when retention rules limit what you may keep, or when several departments write to the same records and none of them owns the rule. Ownership is the one to settle first."
-    }
-  }]
-}
-</script>
 
-
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to work through one measure against your own feeds.
-  </p>
-</section>

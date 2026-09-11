@@ -30,25 +30,6 @@ Every job below has the same shape. The facts you need are already recorded some
 
 So the claim expires. The container is opened warm. The order goes out by air. Not because anyone made a bad call, but because nobody had the time to reach the point where a call could be made.
 
-<!-- CALIBRATION — do not strengthen the approval claim below back into a global
-     guarantee ("nothing leaves your business before someone approves it", or any
-     "anything over X waits for a person" threshold). There is no global gate.
-     face/grpc/cmd/compliance_server.go:149-155 says so in FACE's own words:
-     REQUIRE_HITL "is read by no code in this repo except this function, so
-     setting it requires nothing … nothing consults this variable to force an
-     action through it."
-
-     What is true, and all that may be claimed: twinsService.ExecuteAction
-     (face/grpc/cmd/agent_services.go:6350) requires a configured store, loads a
-     STORED action by id, branches on req.UserApproval, and records
-     HITL_DECISION_PROCESSED with auditActorFrom(ctx) and the decision. So: a
-     drafted action waits in the queue, approving it is what sends it, and who
-     approved and what they decided goes on the record. The same function's
-     header comment is emphatic that work which is not implemented is reported as
-     not done rather than as success — which is why the prose says that too.
-
-     FACE's CLAUDE.md: "a control that cannot fire is worse than none, because it
-     answers 'is this handled?' with a confident yes." -->
 
 ## What Runink FACE Does About It
 

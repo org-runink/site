@@ -13,8 +13,7 @@ Runink provides access to its platform under the **Dedicated License** (comprisi
 ### 2. Capacity Units (Compute Usage)
 Operations executed by the Runink platform—including Data Ingestion, Advanced Analytical Processing, and Automated Workflows—consume **Capacity Units (CUs)**.
 *   **Capacity Unit Calculation:** Usage is calculated by tracking compute resources (e.g., CPU and memory utilization) during execution, rounded up per 60-second window.
-*   **Allocations & Overage:** Each customer environment includes a base monthly allocation of Capacity Units from the Dedicated Platform Instance, plus additional CUs contributed per active User Seat. CUs are pooled across all users in the organization. If your organization exceeds its monthly pooled compute limit, operations pause until additional capacity is purchased or the billing cycle resets. <!-- "Fuel Canister" was named here as the top-up product. No such SKU exists: the string returns zero hits across billing/ and core/. Naming a product that does not exist is bad anywhere; doing it in the commercial terms, where a customer is being told what they would have to buy to resume service, is worse. Do not reintroduce a product name here without a matching entry in billing/plans.go. -->
-
+*   **Allocations & Overage:** Each customer environment includes a base monthly allocation of Capacity Units from the Dedicated Platform Instance, plus additional CUs contributed per active User Seat. CUs are pooled across all users in the organization. If your organization exceeds its monthly pooled compute limit, operations pause until additional capacity is purchased or the billing cycle resets.
 ### 3. Outcome-Based Success Fees
 Certain autonomous execution features available under the **Dedicated License** and **Enterprise** tiers are subject to performance-based variable fees:
 *   **Auto-Provisioning:** Billed at a 3% commission on auto-provisioned purchase orders.

@@ -103,61 +103,11 @@ A worthwhile first step, before any product decision: your average gate-to-gate 
 
 If your detention bill is rising, your doors sit idle at the wrong times, and your yard drivers navigate by memory, the question is not whether you need a YMS. It is how many more quarters of that you want to pay for first.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a Yard Management System (YMS)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A Yard Management System records every trailer, truck and dock door movement in a distribution centre's yard: the gate arrival, the staging spot, the dock assignment, each move and the departure. It replaces radio calls, whiteboards and spreadsheet dock schedules with one record, a gate check-in and a trailer location anyone can look up."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you work out what a blind yard costs in detention?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Take the detention and demurrage rates from your own carrier contracts, then the hours you were actually billed for last quarter, and multiply. Both are already recorded — the rates in the contract, the hours on the invoices. That figure is specific to your site and your contracts, and it is more useful than any industry average."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does yard prediction go beyond basic YMS tracking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Three things sit on top of basic tracking: expected congestion, worked out from the yard's own arrival and waiting history; a suggested order for moving waiting trailers, ranked by delivery commitment and how close each carrier is to the end of its free time; and flagging what nobody noticed, such as a trailer that has not moved in days or a door that consistently runs long. Whether a suggested order is applied automatically or confirmed by a supervisor is a governance decision, not a technical one."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What size facility needs a Yard Management System?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on pain rather than size: a busy gate, more dock doors than one person can watch, and a recurring detention bill. A site whose yard is managed on a whiteboard, a radio and a spreadsheet updated twice a shift already has the case, whatever its square footage."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Annual State of Logistics Report, which identifies detention and demurrage as fast-growing freight cost categories.</li>
-    <li><a href="https://www.osha.gov/warehousing" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">OSHA Warehousing &amp; Distribution Safety Standards</a> - Federal guidance on powered industrial trucks, keeping people and vehicles apart, and yard safety.</li>
-  </ul>
-</section>
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Annual State of Logistics Report, which identifies detention and demurrage as fast-growing freight cost categories
+- [OSHA Warehousing & Distribution Safety Standards](https://www.osha.gov/warehousing) — Federal guidance on powered industrial trucks, keeping people and vehicles apart, and yard safety

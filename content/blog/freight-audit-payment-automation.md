@@ -111,53 +111,11 @@ Moving from a sample to reading every invoice does not produce an estimate. It p
 
 [Runink FACE](/products/face/) reads every invoice line against the contract that governs it and drafts the dispute where the two do not agree — then hands the draft to whoever signs disputes, because a dispute is a commercial communication and not a notification. Start by establishing one figure of your own: what proportion of last year's freight invoices was checked against the contract by anyone at all. [Start a conversation with our team](/#contact-form) if it would help to work it out.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much do companies typically overpay carriers due to freight billing errors?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "There is no reliable published figure for this, and what any individual shipper is overpaying depends on its own contracts and its own invoices. It is not knowable until those invoices have been compared with the rates that govern them. The discrepancies to look for are rate mismatches, duplicate invoices, incorrect accessorial charges and fuel surcharge miscalculations. One month of invoices checked by hand gives a shipper its own rate."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the main stages of the freight audit and payment process?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The freight audit process has five stages: invoice capture and normalization, which turns carrier invoices in many formats into one structure; rate validation, which checks charges against contracted tariffs; duplicate detection, which finds resubmitted or overlapping invoices; GL coding and cost allocation, which puts each charge on the right account; and payment execution, which manages carrier payments and remittance."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does automated freight audit change cost recovery?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Automated freight audit compares every invoice line against the rate in the contract that governs it, rather than drawing a sample as a manual team must. Models detect billing that sits outside the usual pattern, matching finds duplicate charges across different invoice numbers and dates, and GL coding follows shipment attributes rather than manual entry. What an organization recovers depends on what is actually wrong with its own invoices, which is not knowable before they have been read."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://cscmp.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Research on duplicate payment frequency, freight payment practice and transportation cost management frameworks.</li>
-    <li><a href="https://www.gartner.com/en/documents/transportation-management-systems" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner — Transportation Management Systems Magic Quadrant</a> - Analysis of TMS platform capabilities, including anomaly detection, freight audit integration and billing validation.</li>
-  </ul>
-</section>
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org) — Research on duplicate payment frequency, freight payment practice and transportation cost management frameworks
+- [Gartner — Transportation Management Systems Magic Quadrant](https://www.gartner.com/en/documents/transportation-management-systems) — Analysis of TMS platform capabilities, including anomaly detection, freight audit integration and billing validation

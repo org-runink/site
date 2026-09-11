@@ -116,11 +116,3 @@ The bill of lading has lasted because it standardises trust between strangers. T
 *Want to look at your own documents? [Book a consultation](/#contact-form).*
 
 
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to look at how your own documents and records line up.
-  </p>
-</section>

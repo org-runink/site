@@ -154,8 +154,6 @@ author: "Runink"
 ---
 
 
-
-<!-- Sección FAQ generada para el E-A-T & GEO -->
 <section class="faq-section mt-16 p-8 bg-sunk rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
   <div class="flex items-center gap-4 mb-8">
     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-signal-fill to-signal-fill-hover flex items-center justify-center shadow-lg">

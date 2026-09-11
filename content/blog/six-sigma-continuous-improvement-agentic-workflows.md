@@ -104,54 +104,12 @@ The part worth buying now is the continuous reading and the drafted proposal. Th
 
 [Contact Runink](/#contact-form) if you want to go through where that line would fall in your own operation.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why is DMAIC struggling in modern supply chains?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Traditional DMAIC works on a batch of historical data and a review meeting. Carrier capacity, dwell times and port congestion change faster than that cycle turns, so by the time a problem such as a demurrage spike or an FTL capacity drop has been analyzed and fixed by hand, the situation it described has already moved on."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does it mean to split agents by domain?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It means giving each agent a narrow remit — one reads inventory records, another telemetry, another the data's own quality — so that what each reads, and what it may assert, can be stated and checked. It is an architectural choice rather than a product."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should a governance console for agentic workflows show?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Next to every proposed action: the reasoning that produced it, the specific records that triggered it, and a means of rejecting it before it takes effect. Changes to the objective parameters the agents optimize against should be recorded with who made them and when, because those are the most consequential and least audited edits to a system of this kind."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Runink Logistics Operations Team</strong><br>
-    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Continuous improvement practice and automated operations.</li>
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Freight telemetry and shipment visibility practice.</li>
-    <li><a href="https://mitsloan.mit.edu/faculty/academic-groups/operations-management" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Sloan Operations Management</a> - Evaluating specialist AI agents in complex logistics networks.</li>
-  </ul>
-</section>
+- [Association for Supply Chain Management (ASCM)](https://www.ascm.org/) — Continuous improvement practice and automated operations
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Freight telemetry and shipment visibility practice
+- [MIT Sloan Operations Management](https://mitsloan.mit.edu/faculty/academic-groups/operations-management) — Evaluating specialist AI agents in complex logistics networks

@@ -97,61 +97,11 @@ If your continuous improvement programme is full of findings and short of change
 
 Runink FACE runs on hardware the operation owns. That is a property of how it is installed, not a separate feature. The [supply chain visibility use cases](/use-cases/) set out what it reads and what it hands to a person to decide. [Contact our operations team](/#contact-form) if you want to go through how it is deployed.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How Does Autonomous Optimization Drive the Six Sigma 'Improve' Phase?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It shortens the gap between finding a fault and testing a fix. Six Sigma's Improve phase asks you to change the process and measure the result. Software can run that comparison against current data rather than last quarter's report, so more fixes get tried."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why are Isolated Compute Environments Critical for Supply Chain IT?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because a test running beside the live system competes with it for resources, and the systems the warehouse floor depends on cannot be allowed to slow down. Running the test on separate machines keeps those systems free, and keeps rate tables and allocation rules inside the firm's own network."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does deployment friction affect which Six Sigma improvements get tested?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The experiments that happen are the ones that can be set up while they still matter. If standing up a separate environment takes months, the Improve phase shrinks to whatever fits in a spreadsheet. That favours cheap-to-set-up ideas over valuable ones, and the programme's own reporting cannot see the bias."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How Do Auto-scaling Managed Instances Handle Peak Freight Volumes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "They add machines as data volume rises and release them as it falls, so you neither crawl during peak nor pay year-round for idle capacity. Size them against the series that actually spike — exception and telematics data during a disruption — rather than against shipment count."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ascm.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - DMAIC and Six Sigma method applied to logistics networks.</li>
-    <li><a href="https://cscmp.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - The cost of demurrage and slow systems in peak season freight.</li>
-  </ul>
-</section>
+- [Association for Supply Chain Management (ASCM)](https://www.ascm.org) — DMAIC and Six Sigma method applied to logistics networks
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org) — The cost of demurrage and slow systems in peak season freight

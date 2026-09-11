@@ -118,70 +118,13 @@ The look of a store is powerful, and it depends entirely on the unglamorous mech
 
 One measure makes the rest of this concrete: for your last promotion, how many stores received the planogram-compliant pallet on the day the display was due to go live, and how many did not. Almost nobody counts it, and it is the single figure that tells you whether merchandising and replenishment are actually synchronised. [Contact our team](/#contact-form) if it would help to work it out.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why is the Disconnect Between Visual Merchandising and Supply Chain Costly?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because shelves empty during the promotions that have the most eyes on them. When store plans are built without checking warehouse and transport capacity, the result is short fill rates and expedited freight a few days after launch."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How Does Warehouse Slotting Impact Store-Level Planogram Execution?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Slotting decides how fast and how accurately a store order gets picked. When the distribution centre mirrors store layouts, picking takes fewer steps and what arrives can go straight to the shelf instead of being sorted in the stockroom first."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "In What Ways Do Pallet Building Strategies Improve Last-Mile Delivery Efficiency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pallets built to match store aisles unload faster, because nothing has to be sorted twice. That shortens the time the vehicle spends at the dock, which is what drives driver detention, and it puts stock on the shelf during trading hours."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How Can Operations Teams Synchronize Replenishment with Store Layouts?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By working out the stock depth and the delivery slot at the same time as the display is designed, from the fixture size and the expected sell-through, and by booking delivery slots against the store's own labour schedule."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What Role Does Predictive Analytics Play in Minimizing Dwell Time and Stockouts?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It moves stock into position before demand arrives rather than after. The measure it should move is On-Time In-Full, read per promotion: did the full assortment arrive at each store on the day the display was due to go live?"
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.inboundlogistics.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Inbound Logistics</a> - Trade coverage of retail replenishment and distribution practice.</li>
-    <li><a href="https://www.supplychaindive.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Supply Chain Dive</a> - Trade coverage of warehouse slotting and retail fulfilment.</li>
-    <li><a href="https://www.werc.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Warehousing Education and Research Council (WERC)</a> - Benchmarking studies on distribution centre productivity and dock-to-stock cycle times.</li>
-    <li><a href="https://hbr.org/topic/subject/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Harvard Business Review — Supply Chain</a> - Management research and commentary on supply chain decisions.</li>
-  </ul>
-</section>
+- [Inbound Logistics](https://www.inboundlogistics.com/) — Trade coverage of retail replenishment and distribution practice
+- [Supply Chain Dive](https://www.supplychaindive.com/) — Trade coverage of warehouse slotting and retail fulfilment
+- [Warehousing Education and Research Council (WERC)](https://www.werc.org/) — Benchmarking studies on distribution centre productivity and dock-to-stock cycle times
+- [Harvard Business Review — Supply Chain](https://hbr.org/topic/subject/supply-chain) — Management research and commentary on supply chain decisions

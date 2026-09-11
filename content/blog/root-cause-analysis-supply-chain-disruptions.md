@@ -130,62 +130,13 @@ The 5 Whys for a single thread. Fishbone for a wide search. Pareto for deciding 
 
 The difference between organisations that solve a problem once and ones that solve it repeatedly is not talent. It is tooling and discipline. A reasonable first measure, before any tool is bought: count how many working days your last three investigations spent waiting for data from another department. That figure is the size of the problem, and it belongs to your operation. [Get in touch](/#contact-form) if it would help to work through it.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is root cause analysis in supply chain management?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A structured way of tracing a recurring disruption — a late delivery, a write-off, an OTIF miss — past its visible symptom to the cause that keeps producing it. The methods commonly used in supply chain are the 5 Whys, Fishbone or Ishikawa diagrams, Pareto analysis and Fault Tree Analysis."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the 5 Whys method apply to supply chain disruptions?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You ask why repeatedly until you reach a cause that, if fixed, would stop the problem recurring. Late fulfilment might run through slow pick waves, labour taken by inbound receiving, several suppliers delivering the same morning, and end at buying and dock scheduling not sharing appointment data."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What slows root cause analysis down in logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Getting the data. One investigation may need records from the transport system, the yard, the carrier and the warehouse calendar, each owned by a different department. Reading those records together removes the waiting; working out which difference is the root cause is still the analyst's judgement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between Fishbone diagrams and Fault Tree Analysis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A Fishbone diagram sorts possible causes into six branches — people, process, technology, materials, environment, measurement — so the search covers the whole field. Fault Tree Analysis uses AND and OR logic to model failures that need several independent things to go wrong at once. Fishbone is for exploring; Fault Tree is for compound failures."
-      }
-    }
-  ]
-}
-</script>
+---
 
 ---
 
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
-  <p class="text-stone-300">
-    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
-  </p>
-</section>
+## Sources
 
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://asq.org/quality-resources/root-cause-analysis" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">ASQ — Root Cause Analysis Resources</a> - The American Society for Quality's own descriptions of the 5 Whys and Fishbone methods.</li>
-    <li><a href="https://www.ascm.org/topics/continuous-improvement/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">ASCM (APICS) — Continuous Improvement</a> - Practitioner standards for continuous improvement in supply chain operations.</li>
-    <li><a href="https://sloanreview.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Sloan Management Review</a> - Management research on supply chain resilience and operational problem-solving.</li>
-    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for the logistics measures used above.</li>
-  </ul>
-</section>
+- [ASQ — Root Cause Analysis Resources](https://asq.org/quality-resources/root-cause-analysis) — The American Society for Quality's own descriptions of the 5 Whys and Fishbone methods
+- [ASCM (APICS) — Continuous Improvement](https://www.ascm.org/topics/continuous-improvement/) — Practitioner standards for continuous improvement in supply chain operations
+- [MIT Sloan Management Review](https://sloanreview.mit.edu/) — Management research on supply chain resilience and operational problem-solving
+- [Council of Supply Chain Management Professionals (CSCMP)](https://cscmp.org/) — Industry glossary and definitions for the logistics measures used above

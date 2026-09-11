@@ -39,22 +39,6 @@ Tous les sujets ci-dessous ont la même forme. Les faits dont vous avez besoin s
 
 Alors la réclamation expire. Le conteneur est ouvert trop chaud. La commande part par avion. Non pas parce que quelqu'un a mal jugé, mais parce que personne n'a eu le temps d'arriver au point où l'on peut juger.
 
-<!-- CALIBRAGE — ne ramenez pas la phrase sur l'approbation à sa version
-     absolue ("rien ne quitte votre entreprise avant que quelqu'un l'ait
-     approuvé", ni aucun seuil du type "tout ce qui dépasse X attend une
-     personne"). Il n'existe aucune barrière globale.
-     face/grpc/cmd/compliance_server.go:149-155 le dit dans les mots de FACE :
-     REQUIRE_HITL "n'est lu par aucun code de ce dépôt en dehors de cette
-     fonction, donc l'activer n'exige rien … rien ne consulte cette variable
-     pour forcer le passage d'une action".
-
-     Ce qui est vrai, et tout ce qui peut être affirmé :
-     twinsService.ExecuteAction (face/grpc/cmd/agent_services.go:6350) exige un
-     magasin configuré, charge une action DÉJÀ ENREGISTRÉE par son id, se
-     branche sur req.UserApproval et consigne HITL_DECISION_PROCESSED avec
-     auditActorFrom(ctx) et la décision. Donc : une action rédigée attend dans
-     la file, l'approuver est ce qui l'envoie, et qui a approuvé et ce qui a été
-     décidé reste au dossier. -->
 
 ## Ce Que Runink FACE En Fait
 

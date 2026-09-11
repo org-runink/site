@@ -20,7 +20,6 @@ A modal shift decision is a comparison. For one consignment, on one lane, you we
 *   **The cost of re-planning is the real constraint.** Most operations have the data to re-run the decision at midday. What they do not have is the hours to re-plan a day by hand.
 
 ---
-# Modal Shift and Route Optimization in Rail-Road Networks
 
 Where rail meets road, capacity goes to waste and costs rise. Trailers wait. Slots go unfilled. Recent disruption on key sea routes has also made the choice a continuity question, not only a cost one: if one route closes, what else can carry the load?
 
@@ -144,41 +143,3 @@ Two places to start. Measure waiting time at the handover, because it decides wh
 
 Both are measurement jobs before they are software jobs. If you cannot state your handover waiting time or your landed cost per consignment today, those two numbers are the first thing to produce. They belong to your operation, not to any vendor.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is a modal shift in logistics?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Modal shift means moving freight from one transport mode to another, such as road to rail. The comparison is made per consignment against landed cost, transit time, reliability and emissions, and it only holds for the lane and the day it was made for."
-    }
-  }, {
-    "@type": "Question",
-    "name": "What does a route optimization request return?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "A route request takes a start, an end and the limits that apply to that leg, and returns a measured road distance, a travel time and the route line. Runink FACE's route capability returns those three values and does not attach a cost or a saving to them, because the routing provider does not return one."
-    }
-  }, {
-    "@type": "Question",
-    "name": "How can better data improve rail-truck interchange efficiency?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Start by measuring it. Waiting time at the handover between rail and road is rarely recorded by either party, so it is argued about rather than managed. Once it is measured per hub and per time slot, a planner can choose a different hub or a different slot on current figures instead of on last month's invoice."
-    }
-  }]
-}
-</script>
-
----
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
-  <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers, freight data systems, and automated logistics tooling.
-  </p>
-</section>
