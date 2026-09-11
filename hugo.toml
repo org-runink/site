@@ -404,6 +404,23 @@ enableGitInfo = true
     label = "Français"
     weight = 2
 
+    # The end-of-page CTA band, per language.
+    #
+    # Without these overrides the band inherited [params.cta] wholesale, so every
+    # localised use-case page — 36 of them, plus one Portuguese post — closed with
+    # an English heading, an English button, and a link to `/#contact-form`: the
+    # ENGLISH homepage. A reader who had just finished a French page was sent to a
+    # page they could not read, away from the French form that sits one scroll
+    # down on /fr/. Three quarters of the localised long-form surface terminated
+    # in the wrong language. CONTENT.md rule 12: every rule applies per language.
+    [languages.fr.params.cta]
+      enable = true
+      title = "Runink : des données fiables. Des décisions défendables."
+      description = "Runink FACE lit les enregistrements logistiques que vous détenez déjà, les compare aux règles qui les régissent et rédige une action pour la personne qui décide. Le tout sur une infrastructure que vous contrôlez."
+      [languages.fr.params.cta.primary_button]
+        text = "Réserver une consultation"
+        url = "/fr/#contact-form"
+
     [languages.fr.params.header.buttons.getStarted]
       text = "Réserver une Consultation"
       url = "/fr/#contact-form"
@@ -456,6 +473,15 @@ enableGitInfo = true
     label = "Español"
     weight = 3
 
+    # See the note on [languages.fr.params.cta] above.
+    [languages.es.params.cta]
+      enable = true
+      title = "Runink: datos en los que confiar. Decisiones que puede defender."
+      description = "Runink FACE lee los registros logísticos que usted ya guarda, los compara con las normas que los rigen y redacta una acción para quien toma la decisión. Todo sobre una infraestructura que usted controla."
+      [languages.es.params.cta.primary_button]
+        text = "Reserve una consulta"
+        url = "/es/#contact-form"
+
     [languages.es.params.header.buttons.getStarted]
       text = "Reserve una Consulta"
       url = "/es/#contact-form"
@@ -505,6 +531,15 @@ enableGitInfo = true
     locale = "pt-br"
     label = "Português"
     weight = 4
+
+    # See the note on [languages.fr.params.cta] above.
+    [languages.pt.params.cta]
+      enable = true
+      title = "Runink: dados em que confiar. Decisões que você pode defender."
+      description = "O Runink FACE lê os registros logísticos que você já mantém, compara cada um com a regra que o rege e redige uma ação para quem decide. Tudo em uma infraestrutura que você controla."
+      [languages.pt.params.cta.primary_button]
+        text = "Agende uma consulta"
+        url = "/pt/#contact-form"
 
     [languages.pt.params.header.buttons.getStarted]
       text = "Agende uma Consulta"
