@@ -168,15 +168,26 @@
          page named the product only in the paper link at the foot of block 5,
          so a reader could finish it without learning what to ask for.
 
-         One heading, one paragraph and one footnote, and no call to action of
-         its own — naming the product is not a licence to start describing it,
-         and the page's job is still to start a conversation.
+         It was a heading, a paragraph and a footnote, and it was the thinnest
+         band on the page — the footnote listed three parts in one sentence and
+         the reader was told the product's name and then given nothing to do
+         with it. The three parts are now three parts, and the sentence that
+         summarised them is gone rather than kept alongside: the same content at
+         two resolutions is how a long page gets padded.
+
+         AND IT NOW LINKS OUT. The original note here argued against a call to
+         action, on the grounds that naming the product is not a licence to
+         start describing it. That held while the page had one exit; what it
+         produced was a reader who learns the name on the homepage and cannot
+         reach the page about it. /products/face/ carries fourteen inbound links
+         and not one of them was from here. It is a text link rather than a
+         button on purpose — the consultation is still the page's one call to
+         action and a second button would cost it that.
 
          Guarded with `with`, like every block here, and the heading and the
-         copy live inside the one key so a locale cannot have half of them.
-         The three localised homepages mirror content/_index.md slot for slot
-         and do not carry `product` yet: `with` drops the whole band for them
-         rather than printing an empty rule and heading in three languages. */}}
+         copy live inside the one key so a locale cannot have half of them. All
+         four locales carry `product` today; the guard is what keeps that a
+         choice rather than a requirement. */}}
     {{ with .Params.product }}
     <section class="hp-sec" aria-labelledby="product-heading">
       <div class="hp-head">
@@ -185,7 +196,37 @@
         <span class="hp-head__rule" aria-hidden="true"></span>
       </div>
       <p class="hp-deck">{{ .deck }}</p>
-      {{ with .note }}<p class="hp-caption">{{ . }}</p>{{ end }}
+
+      {{ with .parts }}
+      <ul class="hp-parts">
+        {{ range . }}
+        <li class="hp-part">
+          <h3 class="hp-part__name">{{ .name }}</h3>
+          <p class="hp-part__body">{{ .body }}</p>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      {{/* The link only appears where its destination exists IN THIS LANGUAGE.
+           site.GetPage is scoped to the current language's site, so on es, fr
+           and pt it returns nothing for /products/face — that page has no
+           translation — and the whole line drops.
+
+           `relURL` would have been the wrong tool and would have hidden this:
+           it prefixes a path with the language directory whether or not
+           anything is there, so /es/ would have carried a live-looking link to
+           the English page. That is the defect that put 37 localised CTA bands
+           on the English homepage, and it does not get reintroduced one band at
+           a time. The href comes off the page Hugo found, so it cannot point at
+           a page that is not there. */}}
+      {{ with .more }}
+      {{ with site.GetPage .url }}
+      <p class="hp-more">
+        <a class="hp-more__link" href="{{ .RelPermalink }}">{{ $.Params.product.more.text }} <span aria-hidden="true">&rarr;</span></a>
+      </p>
+      {{ end }}
+      {{ end }}
     </section>
     {{ end }}
 

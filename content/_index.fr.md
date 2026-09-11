@@ -89,7 +89,19 @@ industries:
 product:
   heading: "Le produit s'appelle Runink FACE"
   deck: "Runink FACE est le produit derrière chacune des lignes ci-dessus. Il lit les enregistrements que vos systèmes détiennent déjà, compare chacun à la règle qui le gouverne, et présente une action rédigée à la personne qui porte la décision. Ce qui change d'un secteur à l'autre, c'est quels enregistrements comptent et quelle règle s'applique ; la lecture, la rédaction et l'approbation, non."
-  note: "Sous le nom : des agents qui lisent les enregistrements et rédigent l'action, un écran de revue pour la personne qui porte la décision, et la plateforme en dessous, qui garde l'un et l'autre à l'intérieur de votre propre réseau."
+  parts:
+    - name: "Les agents qui lisent"
+      body: "Ils s'exécutent sur l'ensemble des enregistrements, pas sur un échantillon, au rythme que vous fixez. Chacun compare ce que dit un enregistrement à la règle qui le régit, et il en sort un élément auquel sont attachées la règle invoquée et les pièces citées."
+    - name: "L'écran où il attend"
+      body: "Une seule file, classée, de ce que quelqu'un doit trancher. C'est l'approbation qui envoie quoi que ce soit, et qui a approuvé, quand, et ce qui a été modifié reste au dossier."
+    - name: "Où il se place"
+      body: "Il lit dans les systèmes que vous exploitez déjà — le système de commandes, les enregistrements du transporteur, les dossiers de sinistre — et les laisse tels quels. Ce qu'il ajoute, c'est un enregistrement par décision : ce qui a été trouvé, quelle règle, quelles pièces, et qui l'a validé."
+  # Traduit et en attente. Le lien ne s'affiche que là où sa destination existe
+  # dans cette langue, et /products/face/ n'a pas encore de traduction : sur /fr/
+  # la ligne disparaît entièrement plutôt que de mener à une page en anglais.
+  more:
+    text: "Ce que FACE lit, et ce qu'il produit"
+    url: "/products/face/"
 
 # Un seul cas, de bout en bout. Voir le commentaire de content/_index.md : chaque
 # chiffre ici appartient au lecteur, pas à nous, et rien dans ce bloc ne dit que

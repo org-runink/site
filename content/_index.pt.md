@@ -89,7 +89,19 @@ industries:
 product:
   heading: "O produto é o Runink FACE"
   deck: "O Runink FACE é o produto por trás de cada linha acima. Ele lê os registros que os seus sistemas já guardam, compara cada um com a regra que o governa e coloca uma ação já redigida diante de quem carrega a decisão. O que muda de setor para setor é quais registros importam e qual regra se aplica; a leitura, a redação e a aprovação não mudam."
-  note: "Debaixo do nome: agentes que leem os registros e redigem a ação, uma tela de revisão para quem carrega a decisão, e a plataforma embaixo, que mantém as duas coisas dentro da sua própria rede."
+  parts:
+    - name: "Os agentes que leem"
+      body: "Eles rodam sobre todos os registros, não sobre uma amostra, na periodicidade que você definir. Cada um compara o que um registro diz com a regra que o rege, e o que sai é um item com a regra invocada e os registros citados anexados."
+    - name: "A tela onde ele espera"
+      body: "Uma fila só, ordenada, com o que alguém precisa decidir. Aprovar é o que envia qualquer coisa, e quem aprovou, quando, e o que mudou fica no registro."
+    - name: "Onde ele fica"
+      body: "Ele lê dos sistemas que você já opera — o sistema de pedidos, os registros da transportadora, os processos de sinistro — e os deixa como estão. O que ele acrescenta é um registro por decisão: o que foi encontrado, qual regra, quais registros e quem aprovou."
+  # Traduzido e à espera. O link só aparece onde o destino existe neste idioma,
+  # e /products/face/ ainda não tem tradução: em /pt/ a linha inteira some em
+  # vez de levar o leitor a uma página em inglês.
+  more:
+    text: "O que o FACE lê, e o que ele produz"
+    url: "/products/face/"
 
 # Um único caso, do início ao fim. Ver o comentário em content/_index.md: cada
 # número aqui é do leitor, não nosso, e nada neste bloco diz que o software

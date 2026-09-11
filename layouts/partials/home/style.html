@@ -644,6 +644,77 @@
     .hp-proof__gloss { font-size: 8pt; }
   }
 
+  /* ---- the product, in three parts --------------------------------------
+
+     Three columns from 768px, one below. The same grammar as .hp-beats
+     immediately below this — a rule across the top and no box around each
+     part — because these two blocks do the same job at different points in
+     the page and giving them different furniture would read as two systems. */
+  .hp-parts {
+    list-style: none;
+    margin: 1.75rem 0 0;
+    padding: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 768px) {
+    .hp-parts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
+  }
+  .hp-part { min-width: 0; }
+  .hp-part__name {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .hp-part__body {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* The one exit from this block. Text, not a button: the consultation is the
+     page's single call to action and a second filled button here would compete
+     with it. Same shape as the ledger's row link, so it reads as the page's own
+     way of saying "there is more of this through here". */
+  .hp-more { margin: 1.5rem 0 0; }
+  .hp-more__link {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-edge);
+    padding-bottom: 2px;
+  }
+  .hp-more__link:hover { color: var(--deep); border-bottom-color: var(--deep); }
+
+  @media print {
+    .hp-parts {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10pt;
+      margin-top: 9pt;
+      padding-top: 8pt;
+      border-top-color: #000;
+    }
+    .hp-part { break-inside: avoid; }
+    .hp-part__name { font-size: 9.5pt; }
+    .hp-part__body { font-size: 8.5pt; }
+    /* On paper the link cannot be followed, so it carries its destination.
+       The ledger rows print the same way. */
+    .hp-more { margin-top: 8pt; }
+    .hp-more__link { color: #000; border-bottom-color: #000; font-size: 8pt; }
+    .hp-more__link::after { content: " (runink.org" attr(href) ")"; font-weight: 400; letter-spacing: 0; text-transform: none; }
+    .hp-more__link span { display: none; }
+  }
+
   .hp-beats {
     display: grid;
     grid-template-columns: minmax(0, 1fr);

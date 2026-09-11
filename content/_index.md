@@ -113,7 +113,16 @@ industries:
 product:
   heading: "The product is Runink FACE"
   deck: "Runink FACE is the product behind every line above. It reads the records your systems already hold, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. What changes between industries is which records matter and which rule applies; the reading, the drafting and the approval do not."
-  note: "Under the name: agents that read the records and draft the action, a review screen for the person who owns the decision, and the platform underneath that keeps both inside your own network."
+  parts:
+    - name: "The agents that read"
+      body: "They run against every record rather than a sample, on a schedule you set. Each one compares what a record says against the rule that governs it, and what comes out is one item with the rule it invoked and the records it cited attached to it."
+    - name: "The screen where it waits"
+      body: "One queue, ranked, of things somebody has to decide. Approving is what sends anything, and who approved it, when, and what they changed stays on the record."
+    - name: "Where it sits"
+      body: "It reads from the systems you already run — the order system, the carrier records, the claim files — and leaves them as they are. What it adds is one record for each decision: what was found, which rule, which records, and who signed it off."
+  more:
+    text: "What FACE reads, and what it produces"
+    url: "/products/face/"
 
 # A single scenario, walked end to end.
 #
