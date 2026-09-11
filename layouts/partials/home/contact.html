@@ -94,7 +94,42 @@
         <button class="hp-submit" type="submit">{{ $c.submit }}</button>
         <p class="hp-note">{{ $c.note }}</p>
       </form>
-      <script>window.submitted = false;</script>
+      <script>
+        window.submitted = false;
+
+        /* The listing pages link here as /?about=The+whitepapers#contact-form,
+           and this is what that value is for: the message box opens already
+           saying which page the reader came from, so they do not have to start
+           by explaining it. The question above the box is "what is the problem
+           you are trying to solve", and they had already answered it by
+           choosing the page they were on.
+
+           IT GOES IN A BOX THE READER IS LOOKING AT, and nowhere else. The
+           obvious way to do this is a hidden field, and it is the wrong way:
+           the line under the submit button says "We use what you send here to
+           reply to you and for nothing else", and a covert field contradicts a
+           promise printed on the page. Everything carried is visible, editable,
+           and deletable. Nothing is recorded about the visit itself.
+
+           Guarded on the box being empty so a value can never overwrite
+           something typed, and wrapped because a malformed query string throws
+           on decode and would take the rest of this file with it. */
+        (function () {
+          try {
+            var about = new URLSearchParams(window.location.search).get('about');
+            if (!about) return;
+            var box = document.getElementById('entry.1065046570');
+            if (!box || box.value) return;
+            /* jsonify THEN safeJS. jsonify already produces a complete JS
+               string literal, quotes included; without safeJS the contextual
+               escaper treats that literal as a value and quotes it a second
+               time, so the box opens with "About: " visible around the words.
+               Same double-encoding that faq.html, howto.html and image.html
+               each had. */
+            box.value = {{ ($c.about_prefix | default "About: ") | jsonify | safeJS }} + about + '\n\n';
+          } catch (e) { /* no prefill; the form is unaffected */ }
+        })();
+      </script>
     </div>
 
   </div>

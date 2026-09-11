@@ -25,12 +25,19 @@ description: "As frentes operacionais para as quais o Runink FACE foi feito. Em 
 # Markdown links in the body are NOT rewritten by Hugo (there is no
 # render-link hook), so they carry an explicit /pt/ prefix by hand.
 #
-# KNOWN ISSUE — as in the English file: layout "section" has no match, so this
-# page falls through to layouts/_default/list.html, which prints the title and
-# the description and then an automatic card grid of the child pages, and never
-# prints .Content. Until that is fixed, the attribution that actually reaches a
-# reader is the title and description above.
+# O corpo abaixo aparece. Já houve um tempo em que não: `layout: "section"`
+# não casava com nenhum template e a página caía em
+# layouts/_default/list.html, que nunca imprime .Content.
+# layouts/use-cases/section.html existe agora e o renderiza.
 layout: "section"
+next:
+  label: "Um próximo passo"
+  title: "Traga uma rota, uma transportadora ou um mês de devoluções."
+  body: "Meia hora, com quem carrega o problema na sala, e percorremos esse exemplo do início ao fim. Se os prejuízos que você carrega não têm o formato dos descritos aqui, nós falamos."
+  cta: "Agendar uma conversa"
+  note: "O formulário abre com os cenários já indicados, então você não começa explicando de onde veio."
+  about: "Os cenários"
+
 ---
 
 ## O Problema De Que O Runink FACE Parte
@@ -169,9 +176,5 @@ Nenhum dos cenários abaixo é resultado de cliente. Eles são **traçados**: es
 >}}
 
 {{< /card-grid >}}
-
-## Veja Se Serve Para Você
-
-Traga uma rota, uma transportadora ou um mês de devoluções. Uma conversa curta costuma bastar para saber se as perdas que você carrega têm o formato das que estão descritas aqui.
 
 A Runink PULSE, o produto de análise de mercado, e a plataforma CORE sobre a qual o FACE roda são tratadas nos [papers delas](/pt/blog/whitepapers/). Elas não estão nesta página, e nenhuma das frentes acima é resultado que pertença a uma das duas.

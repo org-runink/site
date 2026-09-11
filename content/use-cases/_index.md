@@ -12,16 +12,24 @@ product: "Runink FACE"
 # Do not state a count in the title or description. The set grows; the previous
 # version said "Seven" in three places and was wrong the moment a page was added.
 description: "The operational jobs Runink FACE is built for. In each one the evidence is already in your systems and nobody has the hours to join it up, and each one ends with a person approving a drafted action rather than reading another dashboard."
-# KNOWN ISSUE — the body below does not currently render. `layout: "section"` has
-# no match (there is no layouts/use-cases/section.html and no
-# layouts/_default/section.html), so this page falls through to
-# layouts/_default/list.html, which prints .Title and .Description and then an
-# automatic card grid of the child pages — it never prints .Content. hugo.toml
-# line 305 describes the intent as "the same argument at length, followed by
-# every use case as a card", so the prose is meant to be read. Fixing it is a
-# layout change, which is not this file's business; until it is fixed, the
-# attribution that actually reaches a reader is the title and description above.
+# The body below renders. It did not once: `layout: "section"` matched nothing,
+# so the page fell through to layouts/_default/list.html, which prints .Title,
+# .Description and an automatic card grid and never prints .Content — the whole
+# argument in this file reached no reader at all. layouts/use-cases/section.html
+# exists now and renders it, and that file's own header carries the history.
+#
+# Left as a note rather than deleted because this file is the one that chooses
+# `layout: "section"`, and the next person to change that line needs to know a
+# matching template is what makes the prose visible.
 layout: "section"
+next:
+  label: "One next step"
+  title: "Bring one lane, one carrier, or one month of returns."
+  body: "Half an hour, with whoever owns the problem in the room, and we walk that one example end to end. If the losses you carry are not the shape of the ones described here, we will say so."
+  cta: "Book a consultation"
+  note: "The form opens with the scenarios already named, so you are not starting by explaining where you came from."
+  about: "The scenarios"
+
 ---
 
 ## The Problem Runink FACE Is Built Around
@@ -160,9 +168,5 @@ None of the scenarios below is a customer result. They are **drawn** — written
 >}}
 
 {{< /card-grid >}}
-
-## See Whether It Fits
-
-Bring one lane, one carrier, or one month of returns. A short conversation is usually enough to tell whether the losses you carry are the shape of the ones described here.
 
 Runink PULSE, the market-analysis product, and the CORE platform FACE runs on are covered in [their own papers](/blog/whitepapers/). They are not on this page, and none of the jobs above is a result belonging to either of them.

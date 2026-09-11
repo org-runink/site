@@ -65,5 +65,11 @@
     <div class="wp-note-inner">{{ . | markdownify }}</div>
   </div>
   {{ end }}
+
+  {{/* .wp has no container of its own — every band on this page carries its own
+       max-width and gutter (.wp-list, .wp-more, .wp-note all do). Without one
+       the plate runs to both edges of the window while the cards above it stop
+       at 72rem. .wp-band is that constraint and nothing else. */}}
+  <div class="wp-band">{{ partial "next-step.html" . }}</div>
 </div>
 {{ end }}

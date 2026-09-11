@@ -220,3 +220,32 @@
 .cta-pulse {
   animation: cta-pulse 2s infinite;
 }
+
+/* The listing pages' closing ask. A printed sheet cannot be clicked, so the
+   button prints as its words and the plate loses its fill — the same treatment
+   partials/list-print.html gives the cards above it. */
+@media print {
+  .rk-next {
+    background: none !important;
+    border-color: #999 !important;
+    padding: 8pt 0 0 !important;
+    border-width: 1px 0 0 !important;
+    border-radius: 0 !important;
+    break-inside: avoid;
+  }
+  .rk-next a {
+    background: none !important;
+    color: #000 !important;
+    padding: 0 !important;
+    text-decoration: underline;
+  }
+  /* Non-breaking spaces around the dash, not ordinary ones: the button's own
+     letter-spacing eats a leading space in generated content, so the printed
+     line came out "BOOK A CONSULTATION— runink.org". */
+  .rk-next a::after {
+    content: "\00a0\2014\00a0runink.org";
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+}

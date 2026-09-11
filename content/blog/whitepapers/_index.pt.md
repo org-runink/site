@@ -32,4 +32,12 @@ note: |
   Os quatro documentos são publicados em inglês. Os links acima levam à versão
   completa em inglês. Para uma conversa em português, escreva para
   [paes@runink.org](mailto:paes@runink.org).
+next:
+  label: "Um próximo passo"
+  title: "Você leu o mecanismo. O próximo passo é um seu."
+  body: "Traga uma rota, um sinistro ou um mês de faturas. Meia hora, com quem carrega o problema na sala, e percorremos esse exemplo do início ao fim. Se os prejuízos que você carrega não têm o formato que estes documentos descrevem, nós falamos."
+  cta: "Agendar uma conversa"
+  note: "O formulário abre com os documentos já indicados, então você não começa explicando de onde veio."
+  about: "Os documentos"
+
 ---

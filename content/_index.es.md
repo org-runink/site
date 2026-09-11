@@ -191,6 +191,7 @@ contact:
     - { value: "Web Search", text: "Búsqueda web" }
     - { value: "Event", text: "Un evento" }
     - { value: "Other", text: "Otro" }
+  about_prefix: "Sobre: "
   message_label: "¿Qué problema intenta resolver?"
   message_placeholder: "Basta con un ejemplo: una entrada retenida, un siniestro, una conciliación que lleva una semana."
   submit: "Enviar mensaje"

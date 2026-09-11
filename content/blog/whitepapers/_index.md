@@ -71,4 +71,12 @@ deck: |
   that arrangement runs today. We have not been audited against SOC 2 or ISO
   27001 by anyone, and the papers say that in their own sentences rather than in
   a footnote.
+next:
+  label: "One next step"
+  title: "You have read the mechanism. The next step is one of yours."
+  body: "Bring one lane, one claim, or one month of invoices. Half an hour, with whoever owns the problem in the room, and we walk that one example end to end. If the losses you carry are not the shape these papers describe, we will say so."
+  cta: "Book a consultation"
+  note: "The form opens with the papers already named, so you are not starting by explaining where you came from."
+  about: "The whitepapers"
+
 ---

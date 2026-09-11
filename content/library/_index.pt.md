@@ -16,4 +16,12 @@ more_label: "Textos mais curtos"
 more_text: "Várias dezenas de textos sobre os problemas operacionais por trás dos documentos acima — uma entrada aduaneira retida por falta de um documento, um sinistro de frete ainda dentro do prazo, uma devolução que custa mais para tratar do que a mercadoria."
 more_link_text: "Todos os artigos"
 more_link_url: "/pt/blog/"
+next:
+  label: "Um próximo passo"
+  title: "É mais fácil responder sobre um registro seu do que ler mais uma página."
+  body: "Traga uma rota, um sinistro ou um mês de faturas. Meia hora, com quem carrega o problema na sala, e percorremos esse exemplo do início ao fim. Se não for o formato que isto resolve, nós falamos."
+  cta: "Agendar uma conversa"
+  note: "O formulário abre com a biblioteca já indicada, então você não começa explicando de onde veio."
+  about: "A biblioteca"
+
 ---

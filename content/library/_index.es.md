@@ -16,4 +16,12 @@ more_label: "Notas más breves"
 more_text: "Varias decenas de textos sobre los problemas operativos que hay detrás de los documentos de arriba: una entrada en aduana retenida por un documento que falta, una reclamación de flete todavía dentro de su plazo, una devolución que cuesta más gestionar que la mercancía."
 more_link_text: "Todos los artículos"
 more_link_url: "/es/blog/"
+next:
+  label: "Un paso más"
+  title: "Es más fácil responder sobre un registro suyo que leer otra página."
+  body: "Traiga una ruta, una reclamación o un mes de facturas. Media hora, con quien lleva el problema en la sala, y recorremos ese ejemplo de principio a fin. Si no tiene la forma de lo que esto resuelve, se lo diremos."
+  cta: "Reservar una consulta"
+  note: "El formulario se abre con la biblioteca ya indicada, así que no empieza explicando de dónde viene."
+  about: "La biblioteca"
+
 ---

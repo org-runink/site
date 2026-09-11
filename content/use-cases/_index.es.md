@@ -25,12 +25,19 @@ description: "Los trabajos operativos para los que está hecho Runink FACE. En t
 # Markdown links in the body are NOT rewritten by Hugo (there is no
 # render-link hook), so they carry an explicit /es/ prefix by hand.
 #
-# KNOWN ISSUE — as in the English file: layout "section" has no match, so this
-# page falls through to layouts/_default/list.html, which prints the title and
-# the description and then an automatic card grid of the child pages, and never
-# prints .Content. Until that is fixed, the attribution that actually reaches a
-# reader is the title and description above.
+# El cuerpo de abajo sí se muestra. Hubo un momento en que no: `layout:
+# "section"` no coincidía con ninguna plantilla y la página caía en
+# layouts/_default/list.html, que nunca imprime .Content.
+# layouts/use-cases/section.html existe ahora y lo muestra.
 layout: "section"
+next:
+  label: "Un paso más"
+  title: "Traiga una ruta, un transportista o un mes de devoluciones."
+  body: "Media hora, con quien lleva el problema en la sala, y recorremos ese ejemplo de principio a fin. Si las pérdidas que usted carga no tienen la forma de las descritas aquí, se lo diremos."
+  cta: "Reservar una consulta"
+  note: "El formulario se abre con los escenarios ya indicados, así que no empieza explicando de dónde viene."
+  about: "Los escenarios"
+
 ---
 
 ## El Problema Del Que Parte Runink FACE
@@ -169,9 +176,5 @@ Ninguno de los escenarios de abajo es un resultado de cliente. Están **trazados
 >}}
 
 {{< /card-grid >}}
-
-## Vea Si Le Encaja
-
-Traiga una ruta, un transportista o un mes de devoluciones. Una conversación corta suele bastar para saber si las pérdidas que usted carga tienen la forma de las que se describen aquí.
 
 Runink PULSE, el producto de análisis de mercado, y la plataforma CORE sobre la que corre FACE se tratan en [sus propios informes](/es/blog/whitepapers/). No están en esta página, y ninguno de los trabajos de arriba es un resultado que pertenezca a ninguno de los dos.

@@ -251,6 +251,7 @@ contact:
     - { value: "Web Search", text: "Web search" }
     - { value: "Event", text: "An event" }
     - { value: "Other", text: "Other" }
+  about_prefix: "About: "
   message_label: "What is the problem you are trying to solve?"
   message_placeholder: "One example is enough — a held entry, a claim, a reconciliation that takes a week."
   submit: "Send message"

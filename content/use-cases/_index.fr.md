@@ -25,12 +25,19 @@ description: "Les sujets opérationnels pour lesquels Runink FACE est fait. Dans
 # Markdown links in the body are NOT rewritten by Hugo (there is no
 # render-link hook), so they carry an explicit /fr/ prefix by hand.
 #
-# KNOWN ISSUE — as in the English file: layout "section" has no match, so this
-# page falls through to layouts/_default/list.html, which prints the title and
-# the description and then an automatic card grid of the child pages, and never
-# prints .Content. Until that is fixed, the attribution that actually reaches a
-# reader is the title and description above.
+# Le corps ci-dessous s'affiche. Il ne s'affichait pas autrefois : `layout:
+# "section"` ne correspondait à aucun gabarit et la page retombait sur
+# layouts/_default/list.html, qui n'imprime jamais .Content.
+# layouts/use-cases/section.html existe désormais et l'affiche.
 layout: "section"
+next:
+  label: "Une étape de plus"
+  title: "Apportez une ligne, un transporteur ou un mois de retours."
+  body: "Une demi-heure, avec la personne qui porte le problème dans la pièce, et nous déroulons cet exemple-là de bout en bout. Si les pertes que vous portez n'ont pas la forme de celles décrites ici, nous vous le dirons."
+  cta: "Réserver un entretien"
+  note: "Le formulaire s'ouvre avec les scénarios déjà nommés : vous ne commencez pas par expliquer d'où vous venez."
+  about: "Les scénarios"
+
 ---
 
 ## Le Problème Dont Part Runink FACE
@@ -169,9 +176,5 @@ Aucun des scénarios ci-dessous n'est un résultat client. Ils sont **esquissés
 >}}
 
 {{< /card-grid >}}
-
-## Voir Si Cela Vous Convient
-
-Apportez une ligne, un transporteur, ou un mois de retours. Une courte conversation suffit en général à dire si les pertes que vous portez ont la forme de celles décrites ici.
 
 Runink PULSE, le produit d'analyse de marché, et la plateforme CORE sur laquelle tourne FACE sont traités dans [leurs propres livres blancs](/fr/blog/whitepapers/). Ils ne sont pas sur cette page, et aucun des sujets ci-dessus n'est un résultat qui appartiendrait à l'un ou à l'autre.

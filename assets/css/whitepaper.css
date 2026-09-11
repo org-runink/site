@@ -999,6 +999,15 @@
    same thing — so this page and the posts themselves are what keep /blog/
    reachable. It sits between the paper cards and the language note, so it
    carries only top padding; .wp-note below still owns the bottom of the page. */
+/* Container for a band that brings its own box — currently only the closing
+   ask from partials/next-step.html. Same 72rem and same gutter as .wp-list, so
+   the plate starts on the vertical line the paper cards start on. */
+.wp-band {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
 .wp-more {
   /* 72rem, not the 78rem .wp-note uses: this band sits directly under the paper
      cards and has to start on the same vertical line as they do. .wp-list is

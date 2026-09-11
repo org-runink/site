@@ -8,4 +8,12 @@
 # Digital" con sus propias palabras.
 title: "Notas más breves"
 description: "Textos sobre los problemas operativos que hay detrás de nuestros documentos extensos: una entrada en aduana retenida, una reclamación de flete dentro de plazo, una devolución que cuesta más que la mercancía."
+next:
+  label: "Un paso más"
+  title: "Los artículos tratan del problema. Una llamada trata del suyo."
+  body: "Traiga una ruta, una reclamación o un mes de facturas. Media hora, con quien lleva el problema en la sala, y recorremos ese ejemplo de principio a fin. Si no tiene la forma de lo que esto resuelve, se lo diremos."
+  cta: "Reservar una consulta"
+  note: "El formulario se abre con los artículos ya indicados, así que no empieza explicando de dónde viene."
+  about: "Los artículos"
+
 ---
