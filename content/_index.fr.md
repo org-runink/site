@@ -6,14 +6,14 @@
 # English and hugo.toml already lists them in English in the French menu. The
 # link goes to the same /industries/... page in every language.
 title: "Runink"
-description: "Une déclaration en douane bloquée, un sinistre tranché sans la pièce qui était déjà au dossier, du trafic acheminé et jamais tarifé. La réponse se trouve presque toujours déjà dans vos propres enregistrements. Runink FACE les lit tous et présente une action précise à la personne qui peut l'approuver."
+description: "Vous l'apprenez quand il est trop tard pour contester. Un conteneur attend parce qu'un document est faux et les frais courent dès ce jour-là. Runink FACE lit les enregistrements que vos systèmes détiennent déjà, compare chacun à la règle qui le régit et place une action rédigée devant la personne qui décide."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
-  eyebrow: "Pour les opérations, la finance et la conformité"
-  line1: "La réponse est déjà dans vos enregistrements."
-  line2: "Personne n'a jamais eu le temps de tous les lire."
-  deck: "Une déclaration en douane bloquée faute d'un document, pendant que les frais courent. Un sinistre tranché sans la pièce qui était déjà au dossier. Du trafic acheminé et jamais tarifé. Dans chaque cas, cela a d'abord été écrit quelque part — puis lu par sondage, tard, ou pas du tout."
+  eyebrow: "Opérations, finance, conformité"
+  line1: "Vous l'apprenez quand"
+  line2: "il est trop tard pour contester."
+  deck: "Un conteneur attend parce qu'un document est faux. Les frais courent dès ce jour-là. Votre version de cela est déjà écrite quelque part."
   cta_primary: "Trouvez votre secteur"
   cta_secondary: "Prendre rendez-vous"
 

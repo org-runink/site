@@ -50,7 +50,7 @@ Una acción propuesta espera en esa cola como un registro más. Aprobarla es el 
 
 Fíjese en lo que eso es y en lo que no es. Es una cola cuyos elementos se mueven porque los movió una persona con nombre, y un registro de quién los movió; no una barrera en algún punto del sistema que inspeccione todo lo demás que hace su empresa. Cuando parte de una acción redactada no se puede llevar a cabo, lo que vuelve lo dice en lugar de darla por hecha.
 
-Aprobar está pensado para terminar el trabajo, no para empezarlo. El mensaje, el plazo y la actualización de su sistema de registro se derivan de la aprobación. Más tarde, cuando alguien pregunte por qué se presentó una reclamación o por qué se retuvo una entrada, la respuesta sale del registro.
+Aprobar está pensado para terminar el trabajo, no para empezarlo. La respuesta nombra lo que salió y lo que no: un conector de correo sin configurar vuelve como un paso omitido, con su motivo, en cada respuesta. Más tarde, cuando alguien pregunte por qué se presentó una reclamación o por qué se retuvo una entrada, la respuesta sale del registro.
 
 ## Dos Cosas Que Conviene Saber De Entrada
 

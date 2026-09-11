@@ -6,14 +6,14 @@
 # English and hugo.toml already lists them in English in the Spanish menu. The
 # link goes to the same /industries/... page in every language.
 title: "Runink"
-description: "Entradas aduaneras retenidas, siniestros resueltos sin la evidencia que ya estaba en el expediente, tráfico cursado y nunca tarificado. La respuesta suele estar ya en sus propios registros. Runink FACE los lee todos y pone una acción concreta delante de la persona que puede aprobarla."
+description: "Usted se entera cuando ya es tarde para reclamar. Un contenedor espera porque un documento está mal y el cargo empieza ese mismo día. Runink FACE lee los registros que sus sistemas ya guardan, compara cada uno con la norma que lo rige y pone una acción redactada delante de quien decide."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
-  eyebrow: "Para operaciones, finanzas y cumplimiento"
-  line1: "La respuesta ya está en sus registros."
-  line2: "Nunca hubo tiempo de leerlos todos."
-  deck: "Una entrada aduanera retenida por un documento que falta mientras corre el cargo diario. Un siniestro resuelto sin la evidencia que ya estaba en el expediente. Tráfico cursado y nunca tarificado. En todos los casos quedó escrito en algún sitio primero, y después se leyó por muestreo, tarde, o no se leyó."
+  eyebrow: "Operaciones, finanzas, cumplimiento"
+  line1: "Usted se entera cuando"
+  line2: "ya es tarde para reclamar."
+  deck: "Un contenedor espera porque un documento está mal. El cargo empieza ese mismo día. Su versión de eso ya está escrita en algún sitio."
   cta_primary: "Encuentre su sector"
   cta_secondary: "Agende una consulta"
 

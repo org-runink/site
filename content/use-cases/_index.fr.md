@@ -50,7 +50,7 @@ Une action proposée attend dans cette file comme un enregistrement à part enti
 
 Voyez ce que cela est et ce que cela n'est pas. C'est une file dont les éléments bougent parce qu'une personne nommée les a bougés, et un relevé de qui les a bougés — pas un verrou posé quelque part dans le système qui inspecterait tout le reste de ce que fait votre entreprise. Quand une partie d'une action rédigée ne peut pas être exécutée, ce qui revient le dit au lieu de la donner pour faite.
 
-Approuver est censé terminer le travail plutôt que le commencer. Le message, le délai et la mise à jour de votre système de gestion découlent de l'approbation. Plus tard, quand on demande pourquoi une réclamation a été déposée ou pourquoi une déclaration a été retenue, la réponse vient du dossier.
+Approuver est censé terminer le travail plutôt que le commencer. La réponse nomme ce qui est parti et ce qui ne l'est pas : un connecteur de messagerie non configuré revient comme une étape ignorée, avec son motif, à chaque réponse. Plus tard, quand on demande pourquoi une réclamation a été déposée ou pourquoi une déclaration a été retenue, la réponse vient du dossier.
 
 ## Deux Choses À Savoir D'Emblée
 

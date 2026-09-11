@@ -6,14 +6,14 @@
 # English and hugo.toml already lists them in English in the Portuguese menu.
 # The link goes to the same /industries/... page in every language.
 title: "Runink"
-description: "Declarações retidas na alfândega, sinistros decididos sem a evidência que já estava no processo, tráfego cursado e nunca tarifado. A resposta quase sempre já está nos seus próprios registros. A Runink FACE lê todos eles e coloca uma ação concreta diante de quem pode aprová-la."
+description: "Você descobre quando já é tarde para contestar. Um contêiner fica parado porque um documento está errado e a diária começa nesse mesmo dia. O Runink FACE lê os registros que os seus sistemas já guardam, compara cada um com a regra que o rege e coloca uma ação redigida diante de quem decide."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
-  eyebrow: "Para operações, finanças e conformidade"
-  line1: "A resposta já está nos seus registros."
-  line2: "Nunca houve tempo de ler todos eles."
-  deck: "Uma declaração retida por um documento que falta enquanto a diária corre. Um sinistro decidido sem a evidência que já estava no processo. Tráfego cursado e nunca tarifado. Em todos os casos aquilo foi escrito em algum lugar primeiro — e depois lido por amostragem, tarde, ou não lido."
+  eyebrow: "Operações, finanças, conformidade"
+  line1: "Você descobre quando"
+  line2: "já é tarde para contestar."
+  deck: "Um contêiner fica parado porque um documento está errado. A diária começa nesse mesmo dia. A sua versão disso já está escrita em algum lugar."
   cta_primary: "Encontre o seu setor"
   cta_secondary: "Agende uma conversa"
 

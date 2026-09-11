@@ -59,8 +59,17 @@
       {{ else if $isRead }}
       <rect x="{{ $x }}" y="{{ $y }}" width="16" height="7" rx="3.5" style="fill:var(--deep)"/>
       {{ else }}
+      {{/* stroke-width 1.6, not 1.1. The figure's whole argument is "13 of 144",
+           and the 131 unread pills are the 144. Inside .hp-field's padding on a
+           390px phone the SVG renders at roughly 0.70x of the 440-unit viewBox,
+           so 1.1 units landed at about 0.77 CSS px — sub-pixel, antialiased
+           toward nothing on a 1x screen, leaving the panel reading as "13 marks
+           on an empty card". 1.6 clears one device pixel at that scale and is
+           still visibly lighter than the 1.7 used for the odd-one-out ring.
+           Print was never affected; the print sheet is where the contrast has
+           always read correctly, which is what made this easy to miss. */}}
       <rect x="{{ add $x 0.6 }}" y="{{ add $y 0.6 }}" width="14.8" height="5.8" rx="2.9"
-            style="fill:none;stroke:var(--art-mute);stroke-width:1.1"/>
+            style="fill:none;stroke:var(--art-mute);stroke-width:1.6"/>
       {{ end }}
     {{ end }}
   {{ end }}

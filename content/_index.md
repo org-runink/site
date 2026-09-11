@@ -22,14 +22,14 @@
 # race, and the last language built wins — that is how /whitepapers/ once
 # shipped pointing at the Portuguese page.
 title: "Runink"
-description: "Held customs entries, claims decided without the evidence already in the file, traffic carried and never rated. The answer is usually already in your own records. Runink FACE reads all of them, and puts one specific proposed action in front of the person who can approve it."
+description: "You find out when it is too late to argue. A container sits because one form is wrong and the charge starts that day. Runink FACE reads the records your systems already hold, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
-  eyebrow: "For operations, finance and compliance"
-  line1: "The answer is already in your records."
-  line2: "There was never time to read all of them."
-  deck: "A customs entry held for a missing paper while the charge runs. A claim decided without the evidence that was already in the file. Traffic carried and never rated. In every case it was written down somewhere first — and then read by sample, late, or not at all."
+  eyebrow: "Operations, finance, compliance"
+  line1: "You find out when"
+  line2: "it is too late to argue."
+  deck: "A container sits because one form is wrong. The charge starts that day. Your version of that is already written down somewhere."
   cta_primary: "Find your industry"
   cta_secondary: "Book a consultation"
 
