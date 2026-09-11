@@ -26,10 +26,10 @@ description: "You find out when it is too late to argue. A container sits becaus
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
-  eyebrow: "Operations, finance, compliance"
+  eyebrow: "Supply chain, fulfilment, claims and underwriting"
   line1: "You find out when"
   line2: "it is too late to argue."
-  deck: "A container sits because one form is wrong. The charge starts that day. Your version of that is already written down somewhere."
+  deck: "A reefer drifts warm overnight. A return sits ungraded while its value falls. A claim runs out its filing window. Every one of them was written down somewhere before it cost you anything."
   stance_label: "Where we stand"
   stance:
     - "An action software takes on its own leaves nobody to ask afterwards."
@@ -37,6 +37,48 @@ hero:
     - "The approval is the record: a name, a time, and the reason it was sent, kept together."
   cta_primary: "Find your industry"
   cta_secondary: "Book a consultation"
+
+
+# The six jobs, named the way an operations team names them.
+#
+# WHY THIS BLOCK EXISTS AND WHY IT IS THIS HIGH. The hero is a hook and the
+# industries ledger further down answers "who has this problem". Neither answers
+# the question a supply-chain reader asks in the first fifteen seconds, which is
+# "is this pointed at anything I recognise". Before this block the page went from
+# a sentence about arguing straight to an abstract figure, and a reader scanning
+# for cold chain or returns or claims found nothing to catch on.
+#
+# It is a DIFFERENT AXIS from the industries ledger, not a second copy of it.
+# Industries are who; these are what. Logistics & Supply Chain is one row down
+# there and six rows up here.
+#
+# EVERY ROW LINKS TO A PAGE THAT ALREADY EXISTS and describes the mechanism. The
+# copy here is the loss in the reader's own vocabulary, taken from that page's
+# own description, so the band cannot drift from what the page goes on to say.
+# Nothing here claims a capability: each line is a sentence about the reader's
+# week, not about the software.
+domains_heading: "Six jobs it is pointed at"
+domains_intro: "Named the way an operations team names them. Each one opens onto the mechanism rather than a brochure."
+domains_cta: "See how"
+domains:
+  - page: "cold-chain-safety"
+    name: "Cold chain"
+    line: "A container drifts warm overnight and nobody opens the door until morning."
+  - page: "responsive-reverse-logistics"
+    name: "Reverse logistics"
+    line: "A return is worth the most on the day it comes back, and the grading call waits."
+  - page: "route-optimization"
+    name: "Reactive logistics"
+    line: "The plan that was right at six in the morning is wrong by ten, and nobody re-runs it."
+  - page: "demand-forecasting"
+    name: "Demand and fulfilment"
+    line: "A line starts moving weeks before the reorder point does, and the plan catches up after the stockout."
+  - page: "insurance-underwriting"
+    name: "Underwriting"
+    line: "The wording, the loss report, the reserve history and the authority limit sit in four places."
+  - page: "claims-recovery"
+    name: "Claims and disputes"
+    line: "A claim expires because assembling one takes a morning nobody had that week."
 
 figure:
   today_label: "How it is read today"

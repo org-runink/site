@@ -10,10 +10,10 @@ description: "Você descobre quando já é tarde para contestar. Um contêiner f
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
-  eyebrow: "Operações, finanças, conformidade"
+  eyebrow: "Cadeia de suprimentos, fulfillment, sinistros e subscrição"
   line1: "Você descobre quando"
   line2: "já é tarde para contestar."
-  deck: "Um contêiner fica parado porque um documento está errado. A diária começa nesse mesmo dia. A sua versão disso já está escrita em algum lugar."
+  deck: "Um contêiner refrigerado esquenta durante a noite. Uma devolução espera sem classificação enquanto perde valor. Um sinistro esgota o prazo de abertura. Todos estavam escritos em algum lugar antes de custar qualquer coisa."
   stance_label: "Onde ficamos"
   stance:
     - "Uma ação que o software toma por conta própria não deixa ninguém a quem perguntar depois."
@@ -21,6 +21,48 @@ hero:
     - "A aprovação é o registro: um nome, uma hora e o motivo do envio, guardados juntos."
   cta_primary: "Encontre o seu setor"
   cta_secondary: "Agende uma conversa"
+
+
+# The six jobs, named the way an operations team names them.
+#
+# WHY THIS BLOCK EXISTS AND WHY IT IS THIS HIGH. The hero is a hook and the
+# industries ledger further down answers "who has this problem". Neither answers
+# the question a supply-chain reader asks in the first fifteen seconds, which is
+# "is this pointed at anything I recognise". Before this block the page went from
+# a sentence about arguing straight to an abstract figure, and a reader scanning
+# for cold chain or returns or claims found nothing to catch on.
+#
+# It is a DIFFERENT AXIS from the industries ledger, not a second copy of it.
+# Industries are who; these are what. Logistics & Supply Chain is one row down
+# there and six rows up here.
+#
+# EVERY ROW LINKS TO A PAGE THAT ALREADY EXISTS and describes the mechanism. The
+# copy here is the loss in the reader's own vocabulary, taken from that page's
+# own description, so the band cannot drift from what the page goes on to say.
+# Nothing here claims a capability: each line is a sentence about the reader's
+# week, not about the software.
+domains_heading: "Seis frentes em que ele atua"
+domains_intro: "Com os nomes que uma equipe de operações usa. Cada uma abre o mecanismo, não um folheto."
+domains_cta: "Ver como"
+domains:
+  - page: "cold-chain-safety"
+    name: "Cadeia do frio"
+    line: "Um contêiner esquenta durante a noite e ninguém abre a porta até de manhã."
+  - page: "responsive-reverse-logistics"
+    name: "Logística reversa"
+    line: "Uma devolução vale mais no dia em que volta, e a decisão de classificar espera."
+  - page: "route-optimization"
+    name: "Logística reativa"
+    line: "O plano que servia às seis da manhã não serve às dez, e ninguém roda de novo."
+  - page: "demand-forecasting"
+    name: "Demanda e fulfillment"
+    line: "Uma linha começa a se mexer semanas antes do ponto de pedido, e o plano chega depois da ruptura."
+  - page: "insurance-underwriting"
+    name: "Subscrição"
+    line: "A apólice, o laudo, o histórico de reservas e o limite de alçada estão em quatro lugares."
+  - page: "claims-recovery"
+    name: "Sinistros e disputas"
+    line: "Um sinistro vence porque montar um leva uma manhã que ninguém teve naquela semana."
 
 figure:
   today_label: "Como se lê hoje"
