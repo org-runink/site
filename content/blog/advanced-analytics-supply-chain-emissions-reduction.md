@@ -118,26 +118,25 @@ Two measurements are worth more than any vendor comparison at this stage. First,
 
 ---
 
-<section class="faq-section mt-16 p-8 bg-sunk rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
-  <div class="flex items-center gap-4 mb-8">
-    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-signal-fill to-signal-fill-hover flex items-center justify-center shadow-lg">
-      <span class="material-symbols-outlined text-white">help_center</span>
-    </div>
-    <h2 class="text-3xl font-black text-white uppercase italic tracking-tight m-0">Frequently Asked Questions</h2>
-  </div>
-  <div class="space-y-6">
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">How do analytics help find opportunities to reduce Scope 3 supply chain emissions?</h3>
-      <p class="text-stone-400 leading-relaxed">Under the GHG Protocol, Scope 1 covers the fuel you burn yourself, Scope 2 the energy you buy, and Scope 3 everything else in the chain — emissions at your suppliers, carriers and customers. Scope 3 is the hard one to account for because the records are scattered: PDF carrier reports, supplier spreadsheets with different column names, telematics exports in several formats. Most of the work is reading those records into one place and agreeing what each field means, so that fuel, distance and weight can be compared across carriers. Once they can be, the questions are ordinary operational ones. Which lanes run repeated LTL (less-than-truckload) shipments that could combine into one FTL (full-truckload) run? Which air freight moves had transit times that ocean or rail would have met? The answer comes back as named lanes and shipments rather than as a network-wide score, which is what makes it actionable and what makes it checkable.</p>
-    </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">What moves emissions work from reporting to something operations can act on?</h3>
-      <p class="text-stone-400 leading-relaxed">Reporting tells you what last quarter's emissions were. Acting on them means the same records reach the person making a routing or sourcing decision while that decision is still open. When a port delay forces a route change, a reporting tool records the extra fuel afterwards. Reading the same feeds on the day lets someone compare the route options, each with its distance and travel time, before the truck rolls. Choosing a lower-emission carrier, or a supplier running on renewable power, then becomes a normal procurement decision made with the figures attached. The commitment stays with a person: booking freight and placing orders are contractual acts, and they should be approved by somebody who can answer for them.</p>
-    </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">What does auditable carbon accounting require from your data?</h3>
-      <p class="text-stone-400 leading-relaxed">Carbon accounting joins records that were never designed to be joined: fuel use from telematics, distance from the TMS, and emission factors published by outside bodies. Before the arithmetic, the definitions have to be agreed. "Gallons of diesel burned by Carrier A" has to map to the Scope 3 transportation category you report under, and weight and distance have to mean the same thing for every carrier. Write those mappings down, and keep every figure traceable back to the record it came from. That is what lets you answer an auditor's question about a single line rather than about a total. As ESG disclosure rules tighten, that traceability is also what you need when a disclosure is challenged instead of simply filed.</p>
-    </div>
-  </div>
-</section>
+---
+
+## Questions this raises
+
+### How do analytics help find opportunities to reduce Scope 3 supply chain emissions?
+
+{{< direct-answer >}}
+Under the GHG Protocol, Scope 1 covers the fuel you burn yourself, Scope 2 the energy you buy, and Scope 3 everything else in the chain — emissions at your suppliers, carriers and customers. Scope 3 is the hard one to account for because the records are scattered: PDF carrier reports, supplier spreadsheets with different column names, telematics exports in several formats. Most of the work is reading those records into one place and agreeing what each field means, so that fuel, distance and weight can be compared across carriers. Once they can be, the questions are ordinary operational ones. Which lanes run repeated LTL (less-than-truckload) shipments that could combine into one FTL (full-truckload) run? Which air freight moves had transit times that ocean or rail would have met? The answer comes back as named lanes and shipments rather than as a network-wide score, which is what makes it actionable and what makes it checkable.
+{{< /direct-answer >}}
+
+### What moves emissions work from reporting to something operations can act on?
+
+{{< direct-answer >}}
+Reporting tells you what last quarter's emissions were. Acting on them means the same records reach the person making a routing or sourcing decision while that decision is still open. When a port delay forces a route change, a reporting tool records the extra fuel afterwards. Reading the same feeds on the day lets someone compare the route options, each with its distance and travel time, before the truck rolls. Choosing a lower-emission carrier, or a supplier running on renewable power, then becomes a normal procurement decision made with the figures attached. The commitment stays with a person: booking freight and placing orders are contractual acts, and they should be approved by somebody who can answer for them.
+{{< /direct-answer >}}
+
+### What does auditable carbon accounting require from your data?
+
+{{< direct-answer >}}
+Carbon accounting joins records that were never designed to be joined: fuel use from telematics, distance from the TMS, and emission factors published by outside bodies. Before the arithmetic, the definitions have to be agreed. "Gallons of diesel burned by Carrier A" has to map to the Scope 3 transportation category you report under, and weight and distance have to mean the same thing for every carrier. Write those mappings down, and keep every figure traceable back to the record it came from. That is what lets you answer an auditor's question about a single line rather than about a total. As ESG disclosure rules tighten, that traceability is also what you need when a disclosure is challenged instead of simply filed.
+{{< /direct-answer >}}
 

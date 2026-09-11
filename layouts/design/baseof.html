@@ -4,11 +4,13 @@
 
      Two reasons, both load-bearing:
 
-     1. _default/baseof.html requests Inter, Plus Jakarta Sans and Material
-        Symbols from fonts.googleapis.com on every page. The whole point of
-        this identity is that nothing is fetched from a third party. A
-        specimen served over four external requests would be arguing against
-        itself, and it would also not be showing the real faces.
+     1. It has to show the real faces. This specimen is the authority on what
+        the type IS, so it loads the self-hosted faces directly rather than
+        inheriting whatever the shared shell happens to load. (Historically the
+        shared shell also fetched Inter, Plus Jakarta Sans and Material Symbols
+        from fonts.googleapis.com, which a specimen could not honestly sit on
+        top of. Those requests are gone from the site entirely; this reason now
+        stands on the faces alone.)
 
      2. It keeps the diff off the shared shell. The header, homepage and site
         audit are being worked on in parallel; nothing here touches them.

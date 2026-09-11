@@ -1,0 +1,66 @@
+{{- /*
+  SoftwareApplication + Offer, emitted only where real prices are published.
+
+  WHY THIS IS ALLOWED. CONTENT.md rule 1 forbids invented figures and explicitly
+  permits real published prices — "saying what a plan costs is not claiming a
+  result". The numbers below are read out of the pricing page's own
+  {{< pricing-table-1 >}} data rather than restated here, so they cannot drift
+  from what the page shows a reader. If the page changes, this changes with it.
+
+  WHY ONLY TWO PAGES. It is keyed on `layout: pricing` and on products/face.md,
+  because those are the only two pages that describe a purchasable thing. A
+  SoftwareApplication node on a blog post would be an entity claim about an
+  article.
+
+  The Enterprise tier is priced with the customer and carries no figure, so it is
+  emitted without a price rather than with a guessed one — the same discipline as
+  everywhere else on this site. An Offer with no price is valid; an Offer with an
+  invented one is a lie in a machine-readable format, which is worse than in
+  prose because nothing reads it sceptically.
+*/ -}}
+{{- $tiers := slice -}}
+{{- $raw := .RawContent -}}
+{{- range findRESubmatch `"name"\s*:\s*"([^"]+)"[\s\S]{0,400}?"price_monthly"\s*:\s*"([^"]+)"[\s\S]{0,200}?"price_yearly"\s*:\s*"([^"]+)"` $raw -}}
+  {{- $name := index . 1 -}}
+  {{- $monthly := index . 2 -}}
+  {{- $yearly := index . 3 -}}
+  {{- $tiers = $tiers | append (dict "name" $name "monthly" $monthly "yearly" $yearly) -}}
+{{- end -}}
+{{- with $tiers }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": {{ printf "%s#software" $.Permalink | jsonify | safeJS }},
+  "name": "Runink FACE",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Logistics and supply chain operations",
+  "operatingSystem": "Runs on infrastructure the customer controls",
+  "publisher": { "@id": "https://runink.org/#organization" },
+  "isPartOf": { "@id": "https://runink.org/#website" },
+  "url": {{ "products/face/" | absURL | jsonify | safeJS }},
+  "offers": [
+    {{- $first := true }}
+    {{- range . }}
+    {{- $num := (replaceRE `[^0-9.]` "" .monthly) }}
+    {{- if not $first }},{{ end }}{{ $first = false }}
+    {
+      "@type": "Offer",
+      "name": {{ .name | jsonify | safeJS }},
+      "category": "seat licence"
+      {{- if $num -}}
+      ,
+      "price": {{ $num | jsonify | safeJS }},
+      "priceCurrency": "USD",
+      "unitText": "per person, per month",
+      "availability": "https://schema.org/InStock"
+      {{- else -}}
+      ,
+      "description": "Priced with the customer."
+      {{- end }}
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end -}}

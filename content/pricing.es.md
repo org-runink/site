@@ -152,27 +152,3 @@ author: "Runink"
 
 
 ---
-
-
-<section class="faq-section mt-16 p-8 bg-sunk rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
-  <div class="flex items-center gap-4 mb-8">
-    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-signal-fill to-signal-fill-hover flex items-center justify-center shadow-lg">
-      <span class="material-symbols-outlined text-white">help_center</span>
-    </div>
-    <h2 class="text-3xl font-black text-white uppercase italic tracking-tight m-0">Preguntas Frecuentes</h2>
-  </div>
-  <div class="space-y-6">
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">¿Qué debemos presupuestar además de la licencia?</h3>
-      <p class="text-stone-400 leading-relaxed">La licencia es una línea del coste. Antes de firmar, ponga cifras a cuatro más. Primero, conectar Runink a los sistemas que ya usa: el sistema financiero, el de transporte o almacén, y el lugar donde viven sus documentos. Segundo, mover el histórico que quiere que lea. Tercero, las horas que su propia gente dedica a aprenderlo y a cambiar la forma de trabajar, que suele ser la línea que se olvida. Cuarto, las máquinas. Con las licencias Lite y Dedicada son nuestras; con Enterprise son suyas, y conviene poner precio al hardware y a las personas que lo mantienen. Lo que no debería tener que presupuestar es una factura que se mueve según cuánto usa el software su equipo. Ese es el sentido de cobrar por puesto.</p>
-    </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">¿Cómo se fija el precio si tenemos que alojarlo nosotros?</h3>
-      <p class="text-stone-400 leading-relaxed">Eso es la licencia Enterprise, y el precio se acuerda con usted en lugar de salir de una lista. Cubre despliegues en sus propias instalaciones, incluidas sedes mantenidas por completo fuera de la red, y máquinas colocadas cerca de donde ocurre el trabajo. Lo que la gente suele querer por escrito son los niveles de servicio, quién puede ver qué, y el registro que se guarda de quién hizo qué. Traiga la restricción que lo motiva —el regulador, la cláusula del contrato o la revisión de seguridad que se atasca una y otra vez— y la conversación empieza por ahí en lugar de por una lista de funciones.</p>
-    </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
-      <h3 class="text-xl font-bold text-stone-200 mb-4">¿A dónde van nuestros datos?</h3>
-      <p class="text-stone-400 leading-relaxed">A una máquina que usted controla, y ahí se quedan. Los documentos, los registros y el razonamiento sobre ellos se ejecutan en hardware dentro de su perímetro, y nada se envía a un proveedor de modelos externo. Esto importa tanto en lo comercial como en lo técnico. La pregunta que atasca estas compras suele ser alguna versión de «a dónde va nuestra información», y aquí la respuesta es lo bastante corta como para superar un cuestionario de compras. Con Lite y Dedicada la máquina la operamos nosotros; con Enterprise es suya. En ninguno de los dos casos hay un tercero en el camino guardando sus datos.</p>
-    </div>
-  </div>
-</section>
