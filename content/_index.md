@@ -58,7 +58,7 @@ hero:
 # Nothing here claims a capability: each line is a sentence about the reader's
 # week, not about the software.
 domains_heading: "Six jobs it is pointed at"
-domains_intro: "Named the way an operations team names them. Each one opens onto the mechanism rather than a brochure."
+domains_intro: "Named the way an operations team names them. Open the one that reads like your week and it walks the whole job, start to finish."
 domains_cta: "See how"
 domains:
   - page: "cold-chain-safety"
@@ -79,6 +79,47 @@ domains:
   - page: "claims-recovery"
     name: "Claims and disputes"
     line: "A claim expires because assembling one takes a morning nobody had that week."
+
+# Where it shows up in the operating numbers.
+#
+# WHY THIS BLOCK EXISTS. The page told a reader what happens in their week and
+# what the software does about it, and never once named the line on which any of
+# it costs money. An operations director can recognise a warm reefer and still
+# not have a reason to forward the page to a finance director.
+#
+# HOW IT STAYS INSIDE RULE 1. It names a measure and says where in the reader's
+# own systems to find it, and it puts no number on anything. That is the exact
+# permission rule 1 grants and the exact line it draws: naming demurrage is a
+# neutral domain fact; asserting what you would save is not. Every "where yours
+# is" points at a document the reader already owns — a carrier invoice, a
+# write-off account, a credit note — so the figure that ends the sentence is
+# theirs and is checkable the same afternoon.
+#
+# The five lines map onto the six jobs above: cold chain, reverse, reactive,
+# demand and fulfilment, and the claims/underwriting pair share the last row
+# because they share the file.
+opex_heading: "Where it shows up in your operating numbers"
+opex_intro: "No figure here is ours to give you. Each of these is a line you already carry, with what drives it and where to find your own number for it. If a page tells you what you will save, it is guessing about an operation it has never seen."
+opex_col_line: "The line"
+opex_col_driver: "What drives it"
+opex_col_where: "Where yours is"
+opex:
+  - line: "Demurrage and detention"
+    driver: "A container sitting on a hold that nobody has joined to the document it is waiting for, while free time runs out."
+    where: "The accessorial lines on the carrier invoice, against the free-time clock on the entry."
+  - line: "Spoilage and rejected loads"
+    driver: "A temperature excursion that nobody saw until the door was opened, by which time the consignee decides what it is worth."
+    where: "The write-off account, and the credits raised against rejected deliveries."
+  - line: "Returns handling, and the recovery a delay costs you"
+    driver: "A grading call that waits. The item is worth the most on the day it comes back and less on every day after it."
+    where: "Cost per return, against the difference between the recovery you took and the one available on day one."
+  - line: "Expedite freight and stockout"
+    driver: "A plan that caught up after the fact, so the fix had to be bought at short notice."
+    where: "Premium freight as a share of the lane, and the service credits raised against the misses."
+  - line: "Claim leakage, and the hours to assemble one"
+    driver: "A filing window that ran out while the evidence sat in four systems, and a file that takes a morning to put together."
+    where: "Claims filed against claims available, and adjuster or paralegal hours per file."
+opex_note: "Bring one of these and one month of the records behind it. That is enough to tell whether the losses you carry are the shape this addresses, and it is the only honest way either of us finds out."
 
 figure:
   today_label: "How it is read today"
@@ -190,25 +231,25 @@ product:
 # agreement, the duty is the one on their entry. And nothing here says the
 # software files, clears, classifies or calculates anything, because it does
 # none of those and the page describes what is there and stops (rule 2).
-scenario_heading: "Two cases, from signal to decision"
-scenario_intro: "One where no model is involved at any step, and one where a model reads a photograph and you can see exactly where its answer stops being taken on trust. Both are the whole of what the software does, in order, with nothing left out of the middle."
-scenario_note: "The two are deliberately different in kind. The first is fixed arithmetic over your own records and there is no model anywhere in it. The second puts a model at one step and one only — reading a picture, which is the thing a model is genuinely good at — and everything after it is the document, the rule and the person. Where a figure cannot be worked out from what you supplied, the field is left empty rather than filled with a guess."
-scenario_label: "A held entry — no model at any step"
+scenario_heading: "Two of them, walked end to end"
+scenario_intro: "A container held at the port, and a reefer that drifted warm at the door. Each one from the moment it happens to the moment somebody acts on it, in order, with the middle left in."
+scenario_note: "Both end the same way: a named person with the evidence already assembled in front of them, on the day it still counts. The first is arithmetic over your own records. The second reads a photograph and then does the same thing with the answer. Every figure in either one is yours — the daily rate from your agreement, the duty from your entry, the days from your own records."
+scenario_label: "A container held at the port, from hold to cleared"
 scenario:
   - step: "The hold shows up"
     body: "An entry comes back held, under examination or detained, and the count of days it has been held is above zero. That combination is the whole test — it is a fixed rule, not a judgement, and it runs against every entry rather than the ones somebody thought to check."
-  - step: "The cost is counted, not estimated"
+  - step: "The cost is counted from your own rate"
     body: "The days it has been held, multiplied by the per-day demurrage rate in your own agreement. That is the arithmetic in full. It is the figure that is already accruing while the entry sits in a queue nobody reads end to end."
   - step: "The missing paper is named"
     body: "The reason for the hold and the documents outstanding against it come off the entry record and are stated on the item, so the person who picks it up is not starting by finding out what is wrong."
   - step: "The accountable party is checked"
     body: "Separately, entries are read for an importer of record that is blank, or filled in with the consignee, or with a placeholder somebody typed once. Those carry duty and tax with nobody accountable for them, and they are raised as their own item with the amount at stake attached."
-  - step: "The two are never added together"
+  - step: "Every pound is counted once"
     body: "Demurrage on a held entry and duty on an unattributed one are different money, and counting them as one number is the commonest way this sort of total gets inflated. They stay separate, deliberately, and there is a test that fails if they ever merge."
   - step: "A named person decides"
     body: "The item waits. Approving it is what sends anything, and who approved it, when, and what they changed is written down. If part of what was drafted could not be carried out, the result names that part rather than reporting success."
 
-scenario_b_label: "A cold-chain door — a model at one step, and only one"
+scenario_b_label: "A reefer that drifted warm, from the door to a filed claim"
 scenario_b:
   - step: "The frame arrives"
     body: "A photograph taken on a handheld at the door, or a still pulled off a yard camera. Before anything reads it, it is checked to be an image: the header is decoded on its own, the format has to be one of two, and the size is capped both in bytes and in pixels. A PDF, a video container or raw bytes are refused at that step."
@@ -218,13 +259,13 @@ scenario_b:
     body: "The consignment record, the handover, and the condition the documents say the load should be in. The observation is set against what was already written down rather than against a threshold somebody picked."
   - step: "What differs comes out named"
     body: "The pallet, the crate, the container door — named, in the words a person would use. A severity score cannot be argued with in front of a carrier. A named part of a named consignment can."
-  - step: "A cue stays a request"
+  - step: "The call reaches the person who owns it"
     body: "A cue can be broadcast to whatever is subscribed to the yard's event stream, and the record keeps it as what it is: requested. What happens next is somebody's decision, and the record says so rather than implying a movement was stopped."
   - step: "A named person decides"
     body: "The item waits, exactly as the held entry does. Approving it is what sends anything, and who approved it, when, and what they changed is written down."
 
-why_heading: "Why this is not another dashboard"
-why_intro: "Three things decide whether any of the above is worth your time."
+why_heading: "What changes in the week"
+why_intro: "Three changes, and they are the ones that move the lines above."
 why:
   - glyph: "finding"
     title: "You get the finding, not the data"
@@ -241,45 +282,6 @@ paper:
   url: "/blog/whitepapers/runink-face/"
   note: "The long version: what it reads, what it produces, who approves it and where it runs."
 
-# What it does when it does not know.
-#
-# WHY THIS BLOCK EXISTS. Every block above this one describes the software
-# working. A buyer deciding whether they could put a drafted document in front
-# of a carrier, an insurer or a customs broker is not asking about that case —
-# they are asking what arrives when a record is unreadable, a connector is
-# unconfigured, or the model overreaches. That is the question this page could
-# not answer at all, and it is the one the whole argument rests on.
-#
-# EVERY `says:` VALUE IS A REAL STRING FROM THE SOURCE, not a summary of one.
-# In order: domain_analysis_server.go:166-168 (with the two %s placeholders
-# shown as an ellipsis), the not_executed contract at face.proto:966-983,
-# claims.go:95, and the test name at standard_instance_empty_queue_test.go:27.
-# If one of them is reworded in the code it must be reworded here or dropped —
-# a quotation that has drifted is worse than no quotation.
-#
-# WHAT IS DELIBERATELY NOT HERE. `erp:not_implemented` is the vivid skip token
-# and it is the wrong one to print: it names a capability that is absent, which
-# is rule 2. `email:no_google_connector` makes the identical point about a
-# connector the customer has not configured. The macro-inspection line
-# (extractors/excel.go:104) was drafted into this block and cut for the same
-# reason — extractVBA is unimplemented, so quoting it advertises the gap
-# rather than the discipline.
-#
-# AND NOTHING HERE INVITES THE READER TO GO AND LOOK. Fourteen of the fifteen
-# repositories are private; `site` is the only public one. "Read the code" would
-# be an instruction a reader cannot follow, which is the exact defect this
-# section is about. The note offers the file on the call instead, which is true
-# and is also the most specific reason to book one that this page has.
-proof_heading: "What it does when it does not know"
-proof_intro: "Everything above is the software working. The answer that decides whether you could put its output in front of a carrier or a broker is a different one: what arrives when a record cannot be read, or a system cannot be reached. Four of those, in the words it prints."
-proof:
-  - when: "The check could not run"
-    body: "If the records behind a control cannot be read, that is not a pass and it is not a fail. It is a third answer, and it goes to the audit log in these words rather than only to a screen. At three in the morning nobody is watching the screen."
-    says: "This is NOT a finding that … is compliant."
-  - when: "The model claimed too much"
-    body: "Every sentence the drafting model writes is read before any of it reaches a document, and a claim to be certified is cut out whole. A rule that lives only in the instructions is a request. This one is in the code, and the attempt is kept, because a model that keeps reaching is something you want to be told about."
-    says: "[claim removed: this agent may not assert a compliance or certification status]"
-proof_note: "Those are lines from the source, not a description of it. The code is not public, so the offer is the plain one: name the one you want to see and we will open the file with you on the call. It is also why a fresh install opens on an empty queue rather than on worked examples: nothing to read yet is an answer, and there is a test whose only job is to keep it that way."
 
 contact:
   heading: "Bring one lane, one claim, or one month of invoices."

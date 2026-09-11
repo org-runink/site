@@ -42,7 +42,7 @@ hero:
 # Nothing here claims a capability: each line is a sentence about the reader's
 # week, not about the software.
 domains_heading: "Six tâches visées"
-domains_intro: "Nommées comme une équipe d'exploitation les nomme. Chacune ouvre sur le mécanisme et non sur une plaquette."
+domains_intro: "Nommées comme une équipe d'exploitation les nomme. Ouvrez celle qui ressemble à votre semaine : elle déroule le travail entier, du début à la fin."
 domains_cta: "Voir comment"
 domains:
   - page: "cold-chain-safety"
@@ -63,6 +63,32 @@ domains:
   - page: "claims-recovery"
     name: "Sinistres et litiges"
     line: "Un sinistre expire parce que le monter prend une matinée que personne n'avait cette semaine-là."
+
+
+# Traducción / traduction / tradução de opex_*. Ver content/_index.md:
+# nombra una medida y dónde encontrarla, y no pone ninguna cifra (regla 1).
+opex_heading: "Où cela apparaît dans vos chiffres d'exploitation"
+opex_intro: "Aucun chiffre ici ne nous appartient. Chacune de ces lignes est une ligne que vous portez déjà, avec ce qui la fait bouger et où trouver votre propre chiffre. Une page qui vous annonce ce que vous allez économiser devine, à propos d'une exploitation qu'elle n'a jamais vue."
+opex_col_line: "La ligne"
+opex_col_driver: "Ce qui la fait bouger"
+opex_col_where: "Où est la vôtre"
+opex:
+  - line: "Surestaries et détention"
+    driver: "Un conteneur retenu pour un document que personne n'a rapproché de lui, pendant que les jours francs s'épuisent."
+    where: "Les lignes d'accessoriaux sur la facture du transporteur, face au compteur de jours francs de la déclaration."
+  - line: "Casse et chargements refusés"
+    driver: "Un écart de température que personne n'a vu avant l'ouverture de la porte, et c'est alors le destinataire qui décide de la valeur."
+    where: "Le compte de pertes, et les avoirs émis pour livraisons refusées."
+  - line: "Traitement des retours, et ce que le délai vous coûte"
+    driver: "Une décision de classement qui attend. L'article vaut le plus le jour de son retour et moins chaque jour ensuite."
+    where: "Le coût par retour, face à l'écart entre ce que vous avez récupéré et ce qui était disponible au premier jour."
+  - line: "Fret express et rupture"
+    driver: "Un plan qui a rattrapé après coup, donc le correctif a dû être acheté dans l'urgence."
+    where: "Le fret express en part de la ligne, et les avoirs pour service non tenu."
+  - line: "Fuite de sinistres, et les heures pour en monter un"
+    driver: "Un délai de déclaration épuisé pendant que les pièces étaient dans quatre systèmes, et un dossier qui prend une matinée."
+    where: "Sinistres déclarés face aux sinistres ouvrables, et heures d'expert ou de juriste par dossier."
+opex_note: "Apportez l'une de ces lignes et un mois des enregistrements qui sont derrière. Cela suffit à dire si les pertes que vous portez ont la forme de celles que cela traite, et c'est la seule façon honnête pour l'un comme pour l'autre de le savoir."
 
 figure:
   today_label: "Comment on le lit aujourd'hui"
@@ -153,25 +179,25 @@ product:
 # Un seul cas, de bout en bout. Voir le commentaire de content/_index.md : chaque
 # chiffre ici appartient au lecteur, pas à nous, et rien dans ce bloc ne dit que
 # le logiciel dépose, dédouane, classe ou calcule quoi que ce soit.
-scenario_heading: "Deux cas, du signal à la décision"
-scenario_intro: "L'un où aucun modèle n'intervient à aucune étape, l'autre où un modèle lit une photographie et où vous voyez exactement où sa réponse cesse d'être prise pour argent comptant. Les deux sont tout ce que fait le logiciel, dans l'ordre, sans rien omettre du milieu."
-scenario_note: "Les deux diffèrent à dessein. Le premier est de l'arithmétique fixe sur vos propres enregistrements et il n'y a de modèle nulle part dedans. Le second place un modèle à une étape et à une seule — lire une image, ce pour quoi un modèle est réellement bon — et tout ce qui suit est le document, la règle et la personne. Là où un chiffre ne peut pas être établi à partir de ce que vous avez fourni, le champ reste vide plutôt que rempli au jugé."
-scenario_label: "Une déclaration retenue — aucun modèle, à aucune étape"
+scenario_heading: "Deux d’entre eux, de bout en bout"
+scenario_intro: "Un conteneur retenu au port, et un frigorifique qui s'est réchauffé à la porte. Chacun depuis l'instant où il se produit jusqu'à celui où quelqu'un agit, dans l'ordre, le milieu compris."
+scenario_note: "Les deux finissent pareil : une personne nommée avec les pièces déjà rassemblées devant elle, le jour où cela compte encore. Le premier est de l'arithmétique sur vos propres enregistrements. Le second lit une photographie puis fait la même chose avec la réponse. Chaque chiffre des deux est le vôtre : le tarif journalier de votre accord, les droits de votre déclaration, les jours de vos propres enregistrements."
+scenario_label: "Un conteneur retenu au port, de la retenue à la mainlevée"
 scenario:
   - step: "La retenue apparaît"
     body: "Une déclaration revient retenue, sous examen ou immobilisée, et le nombre de jours de retenue dépasse zéro. Cette combinaison est tout le test — c'est une règle fixe, pas une appréciation, et elle s'applique à toutes les déclarations et non à celles que quelqu'un a pensé à vérifier."
-  - step: "Le coût est compté, pas estimé"
+  - step: "Le coût est compté sur votre propre tarif"
     body: "Les jours de retenue, multipliés par le tarif journalier de surestarie de votre propre accord. C'est toute l'arithmétique. C'est le chiffre qui court déjà pendant que la déclaration attend dans une file que personne ne lit en entier."
   - step: "Le document manquant est nommé"
     body: "Le motif de la retenue et les documents en attente sortent de l'enregistrement de la déclaration et sont inscrits sur l'élément, de sorte que la personne qui le reprend ne commence pas par chercher ce qui ne va pas."
   - step: "Le responsable est vérifié"
     body: "Séparément, les déclarations sont lues à la recherche d'un importateur officiel vide, rempli avec le destinataire, ou portant un texte de remplissage saisi une fois. Celles-là portent des droits et des taxes sans personne pour en répondre, et elles sont levées comme élément distinct avec le montant en jeu."
-  - step: "Les deux ne sont jamais additionnés"
+  - step: "Chaque euro est compté une fois"
     body: "La surestarie d'une déclaration retenue et les droits d'une déclaration sans responsable ne sont pas le même argent, et les compter comme un seul chiffre est la façon la plus courante de gonfler ce genre de total. Ils restent séparés, délibérément, et un test échoue s'ils venaient à se confondre."
   - step: "Une personne nommée décide"
     body: "L'élément attend. C'est l'approbation qui envoie quelque chose, et qui a approuvé, quand, et ce qui a été modifié est consigné. Si une partie de ce qui a été rédigé n'a pas pu être exécutée, le résultat nomme cette partie au lieu d'annoncer une réussite."
 
-scenario_b_label: "Une porte de froid — un modèle à une étape, et à une seule"
+scenario_b_label: "Un frigorifique réchauffé, de la porte au sinistre déclaré"
 scenario_b:
   - step: "L'image arrive"
     body: "Une photo prise sur un terminal à la porte, ou une vue extraite d'une caméra de parc. Avant que quoi que ce soit ne la lise, on vérifie que c'est une image : l'en-tête est décodé seul, le format doit être l'un des deux, et la taille est plafonnée en octets comme en pixels. Un PDF, un conteneur vidéo ou des octets bruts sont refusés à cette étape."
@@ -181,12 +207,12 @@ scenario_b:
     body: "L'enregistrement de l'expédition, la remise, et l'état dans lequel les documents disent que la charge devrait être. L'observation est confrontée à ce qui était déjà écrit plutôt qu'à un seuil choisi par quelqu'un."
   - step: "Ce qui diffère sort nommé"
     body: "La palette, la caisse, la porte du conteneur — nommées, dans les mots qu'une personne emploierait. On ne discute pas d'un score de gravité devant un transporteur. D'une partie nommée d'une expédition nommée, si."
-  - step: "Un signal reste une demande"
+  - step: "Le signal parvient à la personne qui en répond"
     body: "Un signal peut être diffusé à ce qui est abonné au flux d'événements du parc, et le dossier le garde pour ce qu'il est : demandé. Ce qui suit relève de la décision de quelqu'un, et le dossier le dit plutôt que de laisser croire qu'un mouvement a été arrêté."
   - step: "Une personne nommée décide"
     body: "L'élément attend, exactement comme la déclaration retenue. C'est l'approbation qui envoie quoi que ce soit, et qui a approuvé, quand, et ce qui a été modifié est consigné."
-why_heading: "Pourquoi ce n'est pas un tableau de bord de plus"
-why_intro: "Trois points décident si tout ce qui précède mérite votre temps."
+why_heading: "Ce qui change dans la semaine"
+why_intro: "Trois changements, et ce sont ceux qui font bouger les lignes ci-dessus."
 why:
   - glyph: "finding"
     title: "Vous recevez le constat, pas les données"
@@ -207,18 +233,6 @@ paper:
 # traduites : ce sont des chaînes littérales du code source, et une citation
 # traduite n'est plus une citation. La ligne qui les suit dit ce qu'elles
 # signifient.
-proof_heading: "Ce qu'il fait quand il ne sait pas"
-proof_intro: "Tout ce qui précède montre le logiciel qui fonctionne. La réponse qui décide si vous pourriez présenter ce qu'il produit à un transporteur ou à un commissionnaire en douane est une autre : ce qui arrive quand un enregistrement est illisible, ou qu'un système reste hors d'atteinte. En voici quatre, dans les mots qu'il imprime."
-proof:
-  - when: "Le contrôle n'a pas pu s'exécuter"
-    body: "Si les enregistrements qui fondent un contrôle sont illisibles, ce n'est ni un succès ni un échec. C'est une troisième réponse, et elle part dans le journal d'audit avec ces mots, pas seulement à l'écran. À trois heures du matin, personne ne regarde l'écran."
-    says: "This is NOT a finding that … is compliant."
-    gloss: "« Ceci n'est PAS une conclusion selon laquelle … est conforme. »"
-  - when: "Le modèle en a trop dit"
-    body: "Chaque phrase que le modèle écrit est relue avant que quoi que ce soit atteigne un document, et toute affirmation d'être certifié est retirée entièrement. Une règle qui ne vit que dans les consignes est une demande. Celle-ci est dans le code, et la tentative est conservée, parce qu'un modèle qui insiste est une chose que vous voulez qu'on vous dise."
-    says: "[claim removed: this agent may not assert a compliance or certification status]"
-    gloss: "« [affirmation retirée : cet agent ne peut pas affirmer un statut de conformité ou de certification] »"
-proof_note: "Ce sont des lignes du code source, pas une description. Le code n'est pas public : l'offre est donc la plus simple, nommez celle que vous voulez voir et nous ouvrons le fichier avec vous pendant l'appel. C'est aussi pourquoi une installation neuve s'ouvre sur une file vide plutôt que sur des exemples préparés : n'avoir encore rien à lire est une réponse, et un test n'a pas d'autre rôle que de le maintenir."
 
 contact:
   heading: "Apportez une ligne, un sinistre, ou un mois de factures."

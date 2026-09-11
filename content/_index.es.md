@@ -42,7 +42,7 @@ hero:
 # Nothing here claims a capability: each line is a sentence about the reader's
 # week, not about the software.
 domains_heading: "Seis trabajos a los que apunta"
-domains_intro: "Con los nombres que les da un equipo de operaciones. Cada uno abre el mecanismo, no un folleto."
+domains_intro: "Con los nombres que les da un equipo de operaciones. Abra el que se parece a su semana y recorre el trabajo entero, de principio a fin."
 domains_cta: "Ver cómo"
 domains:
   - page: "cold-chain-safety"
@@ -63,6 +63,32 @@ domains:
   - page: "claims-recovery"
     name: "Reclamaciones y disputas"
     line: "Una reclamación caduca porque montarla lleva una mañana que nadie tuvo esa semana."
+
+
+# Traducción / traduction / tradução de opex_*. Ver content/_index.md:
+# nombra una medida y dónde encontrarla, y no pone ninguna cifra (regla 1).
+opex_heading: "Dónde aparece en sus números de operación"
+opex_intro: "Ninguna cifra de aquí nos corresponde a nosotros. Cada una de estas es una línea que usted ya carga, con lo que la mueve y dónde encontrar su propio número. Una página que le dice cuánto va a ahorrar está adivinando sobre una operación que nunca ha visto."
+opex_col_line: "La línea"
+opex_col_driver: "Qué la mueve"
+opex_col_where: "Dónde está la suya"
+opex:
+  - line: "Demoras y detención"
+    driver: "Un contenedor retenido por un documento que nadie ha juntado con él, mientras se acaba el tiempo libre."
+    where: "Las líneas de recargos en la factura del transportista, contra el reloj de tiempo libre de la entrada."
+  - line: "Merma y cargas rechazadas"
+    driver: "Una excursión de temperatura que nadie vio hasta abrir la puerta, y para entonces decide el destinatario lo que vale."
+    where: "La cuenta de pérdidas, y los abonos emitidos por entregas rechazadas."
+  - line: "Gestión de devoluciones, y lo que la demora le cuesta"
+    driver: "Una decisión de clasificación que espera. El artículo vale lo máximo el día que vuelve y menos cada día después."
+    where: "Coste por devolución, contra la diferencia entre lo que recuperó y lo que había disponible el primer día."
+  - line: "Flete urgente y rotura de stock"
+    driver: "Un plan que llegó tarde, así que el arreglo hubo que comprarlo con prisa."
+    where: "El flete urgente como porcentaje de la ruta, y los abonos por incumplimiento de servicio."
+  - line: "Fuga de reclamaciones, y las horas de montar una"
+    driver: "Un plazo de presentación agotado mientras la prueba estaba en cuatro sistemas, y un expediente que lleva una mañana."
+    where: "Reclamaciones presentadas frente a reclamaciones disponibles, y horas de perito o de abogado por expediente."
+opex_note: "Traiga una de estas y un mes de los registros que hay detrás. Con eso basta para saber si las pérdidas que usted carga tienen la forma de lo que esto resuelve, y es la única manera honesta de que cualquiera de los dos lo averigüe."
 
 figure:
   today_label: "Cómo se lee hoy"
@@ -153,25 +179,25 @@ product:
 # Un solo caso, de principio a fin. Ver el comentario de content/_index.md: cada
 # cifra que aparece aquí es del lector, no nuestra, y nada en este bloque dice
 # que el software presente, despache, clasifique ni calcule nada.
-scenario_heading: "Dos casos, de la señal a la decisión"
-scenario_intro: "Uno en el que no interviene ningún modelo en ningún paso, y otro en el que un modelo lee una fotografía y usted ve exactamente dónde deja de darse por buena su respuesta. Los dos son todo lo que hace el software, en orden y sin saltarse nada del medio."
-scenario_note: "Los dos son distintos a propósito. El primero es aritmética fija sobre sus propios registros y no hay ningún modelo en él. El segundo pone un modelo en un paso y solo en uno — leer una imagen, que es en lo que un modelo es realmente bueno — y todo lo que viene después es el documento, la norma y la persona. Donde una cifra no puede deducirse de lo que usted aportó, el campo se deja vacío en lugar de rellenarse a ojo."
-scenario_label: "Una entrada retenida — ningún modelo en ningún paso"
+scenario_heading: "Dos de ellos, de principio a fin"
+scenario_intro: "Un contenedor retenido en el puerto, y un refrigerado que se calentó en la puerta. Cada uno desde el momento en que ocurre hasta el momento en que alguien actúa, en orden y con el medio incluido."
+scenario_note: "Los dos acaban igual: una persona con nombre y la prueba ya montada delante, el día en que todavía sirve. El primero es aritmética sobre sus propios registros. El segundo lee una fotografía y luego hace lo mismo con la respuesta. Cada cifra de los dos es suya: la tarifa diaria de su acuerdo, el arancel de su entrada, los días de sus propios registros."
+scenario_label: "Un contenedor retenido en el puerto, de la retención al despacho"
 scenario:
   - step: "Aparece la retención"
     body: "Una entrada vuelve como retenida, en examen o detenida, y el número de días retenida es mayor que cero. Esa combinación es toda la prueba — es una regla fija, no un criterio, y se aplica a todas las entradas y no solo a las que alguien pensó en revisar."
-  - step: "El coste se cuenta, no se estima"
+  - step: "El coste se cuenta con su propia tarifa"
     body: "Los días que lleva retenida, multiplicados por la tarifa diaria de demora de su propio acuerdo. Esa es toda la aritmética. Es la cifra que ya está corriendo mientras la entrada espera en una cola que nadie lee entera."
   - step: "Se nombra el documento que falta"
     body: "El motivo de la retención y los documentos pendientes salen del registro de la entrada y quedan escritos en el elemento, de modo que quien lo recoge no empieza por averiguar qué va mal."
   - step: "Se comprueba quién responde"
     body: "Por separado, las entradas se leen buscando un importador registrado en blanco, relleno con el consignatario, o con un marcador de posición que alguien tecleó una vez. Esas llevan arancel e impuestos sin nadie que responda por ellos, y se levantan como elemento propio con el importe en juego adjunto."
-  - step: "Las dos cifras nunca se suman"
+  - step: "Cada euro se cuenta una vez"
     body: "La demora de una entrada retenida y el arancel de una sin responsable son dinero distinto, y contarlos como una sola cifra es la forma más común de inflar este tipo de total. Se mantienen separados, deliberadamente, y hay una prueba que falla si alguna vez se juntan."
   - step: "Decide una persona con nombre"
     body: "El elemento espera. Aprobarlo es lo que envía algo, y queda escrito quién lo aprobó, cuándo y qué cambió. Si parte de lo redactado no pudo ejecutarse, el resultado nombra esa parte en lugar de informar de un éxito."
 
-scenario_b_label: "Una puerta de frío — un modelo en un paso, y solo en uno"
+scenario_b_label: "Un refrigerado que se calentó, de la puerta a la reclamación presentada"
 scenario_b:
   - step: "Llega la imagen"
     body: "Una foto hecha con un terminal en la puerta, o un fotograma sacado de una cámara del patio. Antes de que nada la lea, se comprueba que sea una imagen: se descodifica la cabecera por separado, el formato tiene que ser uno de dos, y el tamaño se limita en bytes y en píxeles. Un PDF, un contenedor de vídeo o bytes sueltos se rechazan en ese paso."
@@ -181,12 +207,12 @@ scenario_b:
     body: "El registro del envío, la entrega y el estado en el que los documentos dicen que debería ir la carga. La observación se contrasta con lo que ya estaba escrito, no con un umbral que alguien eligió."
   - step: "Lo que difiere sale con nombre"
     body: "El palé, la caja, la puerta del contenedor — con nombre, en las palabras que usaría una persona. Con una puntuación de gravedad no se discute delante de un transportista. Con una parte concreta de un envío concreto, sí."
-  - step: "Un aviso sigue siendo una petición"
+  - step: "El aviso llega a quien responde por ello"
     body: "Un aviso puede difundirse a lo que esté suscrito al flujo de eventos del patio, y el registro lo guarda como lo que es: solicitado. Lo que pase después lo decide alguien, y el registro lo dice así en lugar de dar a entender que se detuvo un movimiento."
   - step: "Decide una persona con nombre"
     body: "El elemento espera, igual que la entrada retenida. Aprobarlo es lo que envía algo, y quién aprobó, cuándo y qué cambió queda escrito."
-why_heading: "Por qué esto no es otro panel de control"
-why_intro: "Tres cosas deciden si algo de lo anterior merece su tiempo."
+why_heading: "Qué cambia en la semana"
+why_intro: "Tres cambios, y son los que mueven las líneas de arriba."
 why:
   - glyph: "finding"
     title: "Recibe el hallazgo, no los datos"
@@ -206,18 +232,6 @@ paper:
 # Traducción de proof_* en content/_index.md. Los valores `says:` NO se
 # traducen: son cadenas literales del código fuente, y una cita traducida deja
 # de ser una cita. La línea que las acompaña explica qué dicen.
-proof_heading: "Qué hace cuando no lo sabe"
-proof_intro: "Todo lo anterior es el software funcionando. La respuesta que decide si usted podría poner lo que produce delante de un transportista o de un agente de aduanas es otra: qué llega cuando un registro no se puede leer, o cuando no se alcanza un sistema. Cuatro de esas respuestas, en las palabras exactas que imprime."
-proof:
-  - when: "La comprobación no pudo ejecutarse"
-    body: "Si no se pueden leer los registros que sustentan un control, eso no es un aprobado y tampoco es un suspenso. Es una tercera respuesta, y va al registro de auditoría con estas palabras, no solo a una pantalla. A las tres de la mañana nadie mira la pantalla."
-    says: "This is NOT a finding that … is compliant."
-    gloss: "«Esto NO es una conclusión de que … cumple.»"
-  - when: "El modelo afirmó de más"
-    body: "Cada frase que escribe el modelo se lee antes de que nada llegue a un documento, y una afirmación de estar certificado se recorta entera. Una norma que solo vive en las instrucciones es una petición. Esta está en el código, y el intento se guarda, porque un modelo que insiste es algo que usted querrá saber."
-    says: "[claim removed: this agent may not assert a compliance or certification status]"
-    gloss: "«[afirmación retirada: este agente no puede declarar una situación de cumplimiento o certificación]»"
-proof_note: "Son líneas del código fuente, no una descripción de él. El código no es público, así que la oferta es la sencilla: díganos cuál quiere ver y abrimos el archivo con usted en la llamada. Es también la razón por la que una instalación nueva abre con la cola vacía y no con ejemplos preparados: que todavía no haya nada que leer es una respuesta, y hay una prueba cuya única tarea es mantenerlo así."
 
 contact:
   heading: "Traiga una ruta, un siniestro o un mes de facturas."
