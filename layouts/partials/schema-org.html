@@ -33,10 +33,29 @@
       "name": "Runink",
       "url": "https://runink.org/",
       "description": {{ .Site.Params.description | jsonify | safeJS }},
+      {{/* Resolved through resources.Get so the URL is one Hugo has actually
+           published, not one built by string concatenation.
+
+           `"images/logo.png" | absURL` produced https://runink.org/images/logo.png
+           on every one of ~1,100 pages, and that URL is a 404: the file lives in
+           assets/, which Hugo publishes only when a template asks for it, and
+           nothing asked. absURL does not check — it formats. So the Organization
+           carried a broken `logo` sitewide, which is a required property for
+           Google's Organization handling, and no check here could see it because
+           linkcheck.go reads href and src attributes rather than JSON-LD.
+
+           The fingerprinted name is NOT hardcoded: it changes whenever the source
+           image does. `with` means that if the asset ever moves, the property is
+           omitted rather than asserted and wrong. An absent logo is a gap; a
+           broken one is a claim. */}}
+      {{ with resources.Get "images/logo.png" }}
       "logo": {
         "@type": "ImageObject",
-        "url": {{ "images/logo.png" | absURL | jsonify | safeJS }}
+        "url": {{ .Permalink | jsonify | safeJS }},
+        "width": {{ .Width }},
+        "height": {{ .Height }}
       },
+      {{ end }}
       "email": "paes@runink.org",
       "sameAs": [
         {{ with .Site.Params.social.linkedin }}{{ . | jsonify | safeJS }},{{ end }}
