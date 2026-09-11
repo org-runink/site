@@ -38,7 +38,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 The same is true at the port. An entry is held for a missing paper, and a daily charge starts running. The notice arrives with everything else from overnight, and by the time someone joins the hold to the invoice, the charge has been running for days.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#7c3aed] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 None of this is about judgement. It is a gathering problem.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -60,8 +60,8 @@ author: "Runink"
                 Approving is what sends it. And where a step behind the approval has no implementation yet — the write back into your system of record is the real example — the response names that step as not executed instead of reporting the whole action as done, so nobody finds out in three weeks that the filing never left. Later, why a claim was filed is answered from the record rather than from memory.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(124,58,237,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#7c3aed] to-[#5b21b6] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>
@@ -83,7 +83,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#7c3aed] to-[#5b21b6] rounded-xl border border-[#7c3aed]/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:-translate-y-1">
+        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation
         </a>
     </div>

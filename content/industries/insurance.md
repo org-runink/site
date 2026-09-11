@@ -23,7 +23,12 @@ description: "Claims decisioning, reserving and reinsurance recovery, delegated 
 # actually described here.
 product: "Runink FACE"
 weight: 20
-accent: "#778fe6"
+# category: binds this page to the palette's category tokens via the
+# .rk-cat-* class the layout emits. It replaces an `accent:` hex, which
+# went dead when the stylesheets moved to --rk-accent: the hex was still
+# injected into a style attribute that nothing read any more. A class can
+# follow the ground; a literal cannot.
+category: "insurance"
 card: "Runink FACE — claims decisioning, reserving and recovery, delegated authority, and the evidence a supervisor asks for."
 headline: "The rule is written down. The question is whether it is the one being applied."
 deck: "Policy wording is a rule. So is a regulatory obligation, a delegated authority agreement, an internal limit. Each one is enforced in a system, performed by a person following a procedure, or neither — and which of the three tends to surface only when somebody goes looking. This page is Runink FACE, whose Finance domain models a claim as a reserve against a policy."

@@ -65,7 +65,7 @@ author: "Runink"
                 Aprobar el paso redactado es lo que lo envía. Rechazarlo también queda registrado, que es la parte que pierden casi todos los sistemas. Y donde el paso tiene un tramo sin nada implementado detrás &mdash;una escritura en un sistema de gestión de pólizas, por ejemplo&mdash; la respuesta nombra ese tramo como no ejecutado en vez de dar la acción por hecha, así que el expediente nunca muestra como dado un paso que solo se había aprobado. Meses después, <em class="text-stone-300">quién decidió esto y con qué base</em> se responde desde el expediente y no desde el recuerdo que alguien tenga de un martes.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
@@ -96,7 +96,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal); color: var(--rk-text-on-signal);">
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Reserve una consulta
         </a>
     </div>

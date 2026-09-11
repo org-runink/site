@@ -43,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 No meio da manhã o plano já derivou, e todos na mesa de despacho sabem disso. O que se faz a respeito é remendar: trocar duas entregas de ordem, empurrar uma para amanhã, ligar para um motorista. Sensato, local, e ninguém consegue dizer se o dia remendado é melhor ou pior do que o que sairia de recalcular tudo de novo.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Rodar de novo é de graça. Replanejar à mão não é, então nunca se roda de novo.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
@@ -77,8 +77,8 @@ author: "Runink"
                 Aprovar é o que manda, e o motivo fica no registro para quem perguntar em três meses por que um caminhão foi por ali. Mais uma honestidade sobre isso, do tipo em que esta página é construída: onde uma etapa por trás da aprovação não tem nada implementado atrás dela &mdash; a gravação no seu sistema de transporte é o exemplo real &mdash;, a resposta nomeia essa etapa como não executada, em vez de devolver um sucesso que cobre a ação inteira. Aprovado e feito são duas palavras diferentes aqui, e é o software que te diz qual das duas ele conseguiu.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Não temos nenhum próprio para te oferecer. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>
@@ -93,7 +93,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Agende uma conversa
         </a>
     </div>

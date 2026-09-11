@@ -65,7 +65,7 @@ author: "Runink"
                 C'est la validation de l'étape rédigée qui l'envoie. Le refus est consigné aussi, et c'est la partie que la plupart des systèmes perdent. Et là où l'étape a une branche derrière laquelle rien n'est implémenté &mdash; une écriture dans un système de gestion des contrats, par exemple &mdash; la réponse nomme cette branche comme non exécutée au lieu de déclarer l'action faite, si bien que le dossier ne montre jamais comme accomplie une étape qui n'avait été que validée. Des mois plus tard, <em class="text-stone-300">qui a décidé cela, et sur quelle base</em> se lit au dossier plutôt que dans le souvenir qu'une personne garde d'un mardi.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
@@ -96,7 +96,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal); color: var(--rk-text-on-signal);">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Réserver une consultation
         </a>
     </div>

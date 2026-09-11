@@ -43,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Alors le colis attend. Il attend dans un parc sur le quai avec le reste des retours de la semaine, et le parc est trié quand il y a une après-midi de libre. Pendant ce temps le client attend son remboursement, et l'article vieillit en silence et vaut moins.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#14b8a6] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Chaque semaine qu'un retour attend, il vaut moins qu'avant.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -68,8 +68,8 @@ author: "Runink"
                 L'appel de triage, lui, n'envoie rien. Il renvoie une orientation et s'arrête : aucun registre de stock n'est écrit, aucun avoir n'est émis, aucune validation n'est conservée. Agir sur une action rédigée relève d'une autre partie de FACE, et là la décision est enregistrée au nom d'une personne avant que quoi que ce soit ne s'exécute ; et là où une étape derrière elle n'a pas encore d'implémentation, l'écriture dans un ERP en étant l'exemple honnête, la réponse nomme l'étape qui n'a pas eu lieu au lieu de déclarer le mouvement accompli.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(20,184,166,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#14b8a6] to-[#0f766e] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que quelque chose change.
              </p>
@@ -84,7 +84,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#14b8a6] to-[#0f766e] rounded-xl border border-[#14b8a6]/30 hover:shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:-translate-y-1">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Réserver une consultation
         </a>
     </div>

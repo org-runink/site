@@ -1,0 +1,90 @@
+{{/*
+  Print rules for the listing pages.
+
+  CONTENT.md rule 6 requires every customer-facing page to print, and the four
+  list layouts had no print rules at all — /blog/ was a near-black canvas with a
+  gradient headline, which prints as a black sheet with a blank space where the
+  headline was. The colours are no longer this block's problem: tokens.css §6
+  re-binds the whole palette for paper, and these pages are painted entirely in
+  tokens, so they arrive as black ink on white on their own. What is left is the
+  furniture the palette cannot reach.
+
+  Scoped to `.rk-list`, which is the wrapper class on each list layout, except
+  for the three site-chrome selectors that have to be global because the chrome
+  is outside this subtree — the same three partials/home/style.html unsets, for
+  the same reason: baseof.html wraps the header in a fixed positioned div, and a
+  fixed element reprints on every single sheet.
+
+  Verify by generating a PDF and looking at the sheets. Reading this file is not
+  verifying it.
+*/}}
+<style>
+  @media print {
+    @page { margin: 14mm 12mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-list { padding: 0 !important; }
+    .rk-list-wrap { max-width: none !important; padding: 0 !important; }
+
+    /* A printed page cannot be clicked, so the paging controls, the topic chips
+       and the repeated "read article" line carry nothing on paper. The titles
+       below print their own destination instead. */
+    .rk-list-screen { display: none !important; }
+
+    /* Nothing clipped and nothing broken across a sheet. A card is a unit: half
+       a summary at the foot of a page is worse than a short page. */
+    .rk-list-card {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      border-color: var(--rk-rule-strong);
+      box-shadow: none !important;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .rk-list-card img { max-height: 32mm; object-fit: cover; }
+
+    .rk-list-head { break-after: avoid; page-break-after: avoid; }
+
+    /* Links that matter keep their destination, or the reader is holding a page
+       of underlined words. Only the title links and the paper rows — not every
+       anchor on the page, which would double the sheet count. */
+    .rk-list-url[href]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--rk-text-2);
+      /* Two of the links this sits on are grid containers (the paper rows), and
+         a ::before/::after of a grid container becomes a grid ITEM — without
+         this the URL is placed in the next free cell, which on a paper-width
+         sheet is under the product label rather than after the title. Ignored
+         everywhere else. */
+      grid-column: 1 / -1;
+    }
+
+    /* A printed button is a shape nobody can press, so the two at the foot of
+       the page flatten to plain text and keep only their destination, which the
+       rule above prints for them. The same move partials/home/style.html makes
+       for the one call to action it does not hide. */
+    .rk-list-button {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+
+    /* The sheet has no site header on it, so without this a printed listing
+       says nothing about where it came from. */
+    .rk-list-mark { display: block !important; }
+  }
+</style>

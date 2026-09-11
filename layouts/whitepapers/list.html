@@ -38,13 +38,6 @@
       </div>
       <div class="wp-card-meta">
         <span class="wp-util">{{ .Params.source_pages }} pages &middot; {{ len .Params.register }} chapters</span>
-        {{- $used := slice -}}
-        {{- range .Params.register -}}
-          {{- with .mark -}}{{- if not (in $used .) -}}{{- $used = $used | append . -}}{{- end -}}{{- end -}}
-        {{- end -}}
-        {{ range $used }}
-        <span class="wp-mark" data-mark="{{ . }}">{{ . | replaceRE "-" " " }}</span>
-        {{ end }}
         <span class="wp-card-read wp-util" aria-hidden="true">Read &rarr;</span>
       </div>
     </a>

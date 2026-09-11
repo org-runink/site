@@ -68,7 +68,7 @@ author: "Runink"
                 Duas pequenas honestidades sobre o registro. Dados pessoais com padrão reconhecível &mdash; endereços de e-mail, números de telefone, números de cartão, números de inscrição na previdência social, endereços IP &mdash; são retirados dos logs e da saída de diagnóstico antes de serem gravados, então o ato de investigar não cria em silêncio uma nova exposição. Nomes e endereços de rua não estão nessa lista, porque não têm padrão para casar, e a etapa de mascaramento não carrega nenhum teste próprio; tome-a pelo que ela foi feita para fazer, e não como garantia. E quando um conjunto de dados não pôde ser lido de jeito nenhum, o registro diz que a conformidade <em class="text-stone-300">não foi avaliada</em>, que de propósito não é a mesma entrada que uma avaliação que rodou e falhou. Juntar essas duas faria &ldquo;a conferência voltou limpa&rdquo; e &ldquo;a conferência nunca aconteceu&rdquo; parecerem idênticas, e elas pedem respostas diferentes de pessoas diferentes.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
@@ -102,7 +102,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal); color: var(--rk-text-on-signal);">
+        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Agende uma conversa
         </a>
     </div>

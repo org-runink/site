@@ -43,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 So the box waits. It waits in a pen on the dock with the rest of the week's returns, and the pen is sorted when there is a spare afternoon. Meanwhile the customer is waiting on the refund, and the item is quietly getting older and worth less.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#14b8a6] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Every week a return waits, it is worth less than it was.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -68,8 +68,8 @@ author: "Runink"
                 The triage call itself sends nothing. It returns a disposition and stops — no stock record is written, no credit is raised, no approval is stored. Acting on a drafted action is a separate part of FACE, and there the decision is recorded against a named person before anything runs; where a step behind it has no implementation yet, the write into an ERP being the honest example, the response names the step that did not happen instead of reporting the move as complete.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(20,184,166,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#14b8a6] to-[#0f766e] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>
@@ -84,7 +84,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#14b8a6] to-[#0f766e] rounded-xl border border-[#14b8a6]/30 hover:shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:-translate-y-1">
+        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation
         </a>
     </div>

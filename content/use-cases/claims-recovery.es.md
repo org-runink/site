@@ -38,7 +38,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 En el puerto pasa lo mismo. Retienen una entrada por un papel que falta, y empieza a correr un cargo diario. El aviso llega con todo lo demás de la noche, y cuando alguien une esa retención a la factura, el cargo lleva días corriendo.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#7c3aed] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Nada de esto es cuestión de criterio. Es un problema de reunir papeles.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -60,8 +60,8 @@ author: "Runink"
                 Aprobarla es lo que la envía. Y donde un paso detrás de la aprobación todavía no tiene implementación &mdash;la escritura de vuelta en su sistema de registro es el ejemplo real&mdash; la respuesta nombra ese paso como no ejecutado en vez de dar la acción entera por hecha, así que nadie se entera tres semanas después de que la presentación nunca salió. Más tarde, por qué se presentó una reclamación se responde desde el registro y no desde la memoria.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(124,58,237,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#7c3aed] to-[#5b21b6] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
              </p>
@@ -83,7 +83,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#7c3aed] to-[#5b21b6] rounded-xl border border-[#7c3aed]/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:-translate-y-1">
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta
         </a>
     </div>

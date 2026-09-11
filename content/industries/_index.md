@@ -16,7 +16,6 @@ cascade:
 # and the last language built wins — /whitepapers/ shipped pointing at the
 # Portuguese page that way. Nothing has ever linked to another path for this
 # section, so there is nothing to keep resolving and no reason to take the risk.
-accent: "#ea580c"
 headline: "Find your operation, not our product names."
 # The deck now carries the attribution, because the layout has no slot for it
 # and the page previously had none at all: it said "the five industries Runink

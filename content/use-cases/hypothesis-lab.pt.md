@@ -39,7 +39,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Então alguém monta uma planilha. Leva dois dias. Ela carrega uma única versão dos fatos, se apoia em números digitados à mão, e é jogada fora assim que a decisão é tomada. Na próxima vez que isso acontecer, o trabalho começa outra vez do zero.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ec4899] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 O plano não é a parte difícil. Ter os números em tempo é.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 A execução não escolhe para você. Ela coloca as opções em fila. Quando alguém escolhe uma e manda para que se aja, a opção escolhida e o nome dessa pessoa ficam anotados juntos, então a pergunta que vem seis meses depois é respondida a partir do arquivo, e não a partir da reunião.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(236,72,153,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#be185d] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que algo muda.
              </p>
@@ -87,7 +87,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ec4899] to-[#be185d] rounded-xl border border-[#ec4899]/30 hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] hover:-translate-y-1">
+        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Agende uma conversa
         </a>
     </div>

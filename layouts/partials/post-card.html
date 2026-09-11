@@ -1,3 +1,38 @@
+{{/*
+  The card used by every listing: /blog/, /categories/*, /tags/*.
+
+  WHAT CHANGED, AND WHY. It used to open with the category set as a pill filled
+  with a left-to-right gradient from `signal-fill` to `signal-fill-hover`. Three
+  problems, in order of seriousness. On paper that pill disappears — tokens.css
+  §6 prints both fill tokens as white — so the category was carried by colour
+  alone and CONTENT.md rule 6 says colour is never the only channel. A gradient
+  fill is also the loudest thing on a page whose headings are quiet dark ink, so
+  each card shouted a taxonomy term at the reader before its own title. And the
+  category is metadata, not a badge: the whitepaper cards set the same
+  information as a plain micro-label, and that is what this now does.
+
+  The rest is the same restraint: tokens throughout so one card works on both
+  grounds, a hover that moves the surface and the rule rather than lifting and
+  zooming the card, and the title in `text-ink` at sentence case.
+
+  HEADING LEVEL. Called with a bare page the title is an `h2`, which is right on
+  /categories/x/ where the cards sit directly under the page's `h1`. /blog/ puts
+  its cards inside category sections that are themselves `h2`, so it passes
+  `(dict "page" . "level" 3)` and gets a correctly nested outline. The bare-page
+  form is kept working because three other layouts and the vendored theme call it
+  that way.
+
+  The classes prefixed `rk-list-` are hooks for partials/list-print.html and
+  carry no screen styling.
+*/}}
+{{ $p := . }}
+{{ $level := 2 }}
+{{ if reflect.IsMap . }}
+  {{ $p = .page }}
+  {{ with .level }}{{ $level = . }}{{ end }}
+{{ end }}
+
+{{ with $p }}
 {{ $link := .RelPermalink }}
 {{ $title := .Title }}
 {{ $categories := .Params.categories | default .Params.tags }}
@@ -7,68 +42,61 @@
 {{ $readingTime := .ReadingTime }}
 
 <article
-    class="group bg-stone-800 rounded-2xl shadow-lg border border-stone-700 overflow-hidden hover:shadow-2xl hover:shadow-[#8B9A6E]/10 hover:border-[#8B9A6E]/50 transition-all duration-300 hover:-translate-y-1">
+    class="rk-list-card group flex flex-col bg-sheet border border-rule rounded-xl overflow-hidden transition-colors duration-200 hover:bg-sunk hover:border-rule-mid">
+    {{/* The image repeats the title link, so it is taken out of the tab order
+         rather than making every card two stops. `context` is the page and must
+         stay the page: partials/image.html reaches for `.context.Resources` to
+         find a page bundle's own image, and when this partial is called with a
+         dict `$` is that dict and the lookup silently falls through to the
+         global resource. */}}
     {{ with .Params.featured_image }}
-    <a href="{{ $link }}" class="block w-full h-56 overflow-hidden relative">
-        {{ partial "image.html" (dict "src" . "alt" $title "class" "object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" "loading" "lazy" "context" $) }}
+    <a href="{{ $link }}" class="block w-full h-48 overflow-hidden border-b border-rule" tabindex="-1" aria-hidden="true">
+        {{ partial "image.html" (dict "src" . "alt" $title "class" "object-cover w-full h-full" "loading" "lazy" "context" $p) }}
     </a>
     {{ end }}
 
-    <div class="p-6 flex flex-col h-full">
-        <!-- Category Badge -->
-        {{ with $categories }}
-        <div class="mb-4">
+    <div class="flex flex-col flex-1 p-5 md:p-6">
+
+        {{/* Category and date on one quiet line. The category is a label, not a
+             badge: it keeps its own ink so it still reads as a classification on
+             a monochrome print, where the accent resolves to black. */}}
+        <p class="flex flex-wrap items-center gap-x-2 gap-y-1 m-0 mb-3 text-[0.6875rem] font-bold uppercase tracking-[0.14em]">
+            {{ with $categories }}
             {{ range first 1 . }}
-            <span
-                class="inline-block px-3 py-1 text-xs font-bold tracking-wider text-white uppercase bg-gradient-to-r from-[#8B9A6E] to-[#D4A574] rounded-full shadow-sm">
-                {{ . }}
-            </span>
+            <span class="text-signal">{{ . }}</span>
+            <span class="text-ink-3" aria-hidden="true">&middot;</span>
             {{ end }}
-        </div>
-        {{ end }}
-        <!-- Date -->
-        <div class="flex items-center text-xs text-[#F5F1E8] mb-3 font-medium tracking-wide">
-            <svg class="w-4 h-4 mr-1.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-            <time datetime="{{ $date.Format " 2006-01-02" }}">
-                {{ $date.Format "January 2, 2006" }}
-            </time>
-        </div>
-
-        <!-- Title -->
-        <h2
-            class="text-xl md:text-2xl font-bold mb-3 text-white group-hover:text-[#8B9A6E] transition-colors duration-200 leading-tight">
-            <a href="{{ $link }}">
-                {{ $title }}
-            </a>
-        </h2>
-
-        <!-- Description -->
-        <p class="text-slate-400 mb-6 leading-relaxed text-sm md:text-base">
-            {{ with $desc }}
-            {{ . }}
-            {{ else }}
-            {{ $summary }}
             {{ end }}
+            <time class="text-ink-3" datetime="{{ $date.Format "2006-01-02" }}">{{ $date.Format "2 January 2006" }}</time>
         </p>
 
-        <!-- Footer -->
-        <div class="mt-auto pt-6 border-t border-stone-700/50 flex items-center justify-between">
-            <a href="{{ $link }}"
-                class="inline-flex items-center text-sm font-bold text-white group-hover:text-[#8B9A6E] transition-colors">
-                Read Article
-                <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
-                    </path>
-                </svg>
-            </a>
+        {{/* The tag is built with printf rather than written as `<h{{ $level }}`.
+             Hugo's html/template cannot compute an output context for an action
+             inside a tag NAME and fails the build on it, so the level has to be
+             interpolated into a string and marked safe. */}}
+        {{ $hClass := "m-0 mb-2.5 font-heading text-lg md:text-xl font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-signal" }}
+        {{ printf `<h%d class=%q>` $level $hClass | safeHTML }}
+            <a class="rk-list-url no-underline" href="{{ $link }}">{{ $title }}</a>
+        {{ printf `</h%d>` $level | safeHTML }}
 
-            <span class="text-xs text-slate-500 font-medium">
+        <p class="m-0 text-ink-2 text-sm leading-relaxed">
+            {{ with $desc }}{{ . }}{{ else }}{{ $summary }}{{ end }}
+        </p>
+
+        {{/* Screen only. On paper the title above already prints its URL, so a
+             second link to the same place and a reading estimate nobody can act
+             on are just ink. */}}
+        <div class="rk-list-screen mt-auto pt-5 flex items-center justify-between gap-3">
+            <span class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal">
+                Read
+                <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </span>
+            <span class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">
                 {{ $readingTime }} min read
             </span>
         </div>
     </div>
 </article>
+{{ end }}

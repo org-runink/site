@@ -19,7 +19,12 @@ description: "Weeks-long turnaround, a stack that does not talk to itself, and e
 # later layout can surface it the way layouts/whitepapers/ already does.
 product: "Runink PULSE"
 weight: 50
-accent: "#D4A574"
+# category: binds this page to the palette's category tokens via the
+# .rk-cat-* class the layout emits. It replaces an `accent:` hex, which
+# went dead when the stylesheets moved to --rk-accent: the hex was still
+# injected into a style attribute that nothing read any more. A class can
+# follow the ground; a literal cannot.
+category: "marketing"
 # The card now leads with the product name, as every card in this section does,
 # so the switchboard page answers "which product is this?" before the click.
 card: "Runink PULSE — a stack that does not talk to itself, weeks-long turnaround, and effort that never compounds."

@@ -68,7 +68,7 @@ author: "Runink"
                 Two small honesties in the record. Patterned personal details &mdash; email addresses, phone numbers, card numbers, national insurance numbers, IP addresses &mdash; are stripped out of logs and diagnostic output before they are written, so the act of investigating does not quietly create a new exposure. Names and street addresses are not in that list, because they have no pattern to match on, and the redaction step carries no test of its own; take it as what it is built to do rather than as a guarantee. And when a dataset could not be read at all, the record says compliance was <em class="text-stone-300">not assessed</em>, which is deliberately not the same entry as an assessment that ran and failed. Collapsing those two would make &ldquo;the check came back clean&rdquo; and &ldquo;the check never happened&rdquo; look identical, and they need different answers from different people.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
@@ -102,7 +102,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal); color: var(--rk-text-on-signal);">
+        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Book a consultation
         </a>
     </div>

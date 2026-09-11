@@ -1,5 +1,11 @@
 {{ define "main" }}
-<article class="feature-page" style="--badge-color: {{ .Params.badgeColor }}">
+{{/* --badge-color had no default, so a page without badgeColor in front matter
+     emitted `--badge-color:` empty and both rules below became invalid at
+     computed-value time — an unstyled badge and no hero wash. content/products/
+     face.md has already dropped the key, so that case is live. Default is the
+     site accent as a token. safeCSS because Go's style-attribute filter rejects
+     parentheses and would emit ZgotmplZ for a var(). */}}
+<article class="feature-page" style="--badge-color: {{ .Params.badgeColor | default "var(--rk-signal)" | safeCSS }}">
     <!-- Hero Section -->
     <div class="relative isolate overflow-hidden">
         <style>
@@ -8,7 +14,7 @@
                 color: var(--badge-color);
             }
             .gradient-bg {
-                background-image: linear-gradient(180deg, color-mix(in srgb, var(--badge-color) 5%, white), white);
+                background-image: linear-gradient(180deg, color-mix(in srgb, var(--badge-color) 5%, var(--rk-ground)), var(--rk-ground));
             }
         </style>
         <div class="absolute inset-x-0 top-0 h-96 gradient-bg opacity-75"></div>
@@ -23,7 +29,7 @@
                     </div>
                     {{ end }}
                     <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">{{ .Title }}</h1>
-                    <p class="mt-6 text-lg leading-8 text-[#D9CDB8]">{{ .Description }}</p>
+                    <p class="mt-6 text-lg leading-8 text-ink-2">{{ .Description }}</p>
                 </div>
             </div>
         </div>
@@ -40,7 +46,7 @@
                     <dt class="text-lg font-semibold leading-7 text-white">
                         {{ .title }}
                     </dt>
-                    <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-[#D9CDB8]">
+                    <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-ink-2">
                         <p class="flex-auto">{{ .description }}</p>
                     </dd>
                 </div>
@@ -59,7 +65,7 @@
         <div class="bg-stone-950 -mx-6 px-6 py-24 sm:py-32">
             <div class="mx-auto max-w-2xl lg:text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Interested? Reach out!</h2>
-                <p class="mt-6 text-lg leading-8 text-[#D9CDB8]">{{ .Params.demo.description }}</p>
+                <p class="mt-6 text-lg leading-8 text-ink-2">{{ .Params.demo.description }}</p>
             </div>
 
         </div>

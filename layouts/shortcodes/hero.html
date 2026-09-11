@@ -37,7 +37,19 @@
 {{ $sectionClass := "relative overflow-hidden py-24 md:py-32" }}
 {{ if not $gradient_from }}{{ $sectionClass = printf "%s bg-stone-900" $sectionClass }}{{ end }}
 
-<section class="{{ $sectionClass }}"{{ if $gradient_from }} style="background:linear-gradient({{ $gradient_angle }}deg,{{ $gradient_from }},{{ $gradient_to | default $gradient_from }})"{{ end }}>
+{{/* safeCSS here is load-bearing, not decoration. Go's contextual escaper runs
+     every value interpolated into a style attribute through its CSS filter, and
+     that filter rejects parentheses — so `var(--rk-sunk)` is replaced wholesale
+     by the string ZgotmplZ and the declaration dies. A hex passed for years
+     because a hex has no parentheses, which is precisely why the trap only
+     sprang once these colours became tokens. The build stays green and the
+     gradient simply vanishes; scripts/check-rendered-output.mjs now fails on
+     ZgotmplZ so it cannot happen quietly again. */}}
+{{ $gradStyle := "" }}
+{{ if $gradient_from }}
+  {{ $gradStyle = printf "background:linear-gradient(%sdeg,%s,%s)" $gradient_angle $gradient_from ($gradient_to | default $gradient_from) }}
+{{ end }}
+<section class="{{ $sectionClass }}"{{ with $gradStyle }} style="{{ . | safeCSS }}"{{ end }}>
 
     {{/* The grid-texture layer that sat here pointed at `/images/grid.svg`,
          which exists in neither static/ nor assets/ — so it has never rendered,
@@ -45,10 +57,17 @@
          that still costs a compositing layer and a blend mode. The ported React
          component dropped it for the same reason; this keeps the two in step. */}}
 
+    {{/* The photo layer used `mix-blend-overlay opacity-30`, which was tuned to
+         darken a picture behind white text on a black band. The band is on the
+         light sheet now and the headline resolves to dark ink, so overlay blending
+         pushes the mid-tones the WRONG way — it deepens the photo under ink that
+         is no longer light. Plain opacity plus a sheet-coloured scrim instead:
+         the picture stays readable as a picture and the ink keeps its ground. */}}
     {{ if $background_image }}
-    <div class="absolute inset-0 mix-blend-overlay opacity-30">
+    <div class="absolute inset-0 opacity-20">
         {{ partial "image.html" (dict "src" $background_image "alt" "Background" "fetchpriority" "high" "class" "w-full h-full object-cover" "context" $.Page) }}
     </div>
+    <div class="absolute inset-0 bg-canvas/70 pointer-events-none"></div>
     {{ end }}
 
     <div class="container relative z-10">
@@ -58,7 +77,7 @@
             <div class="lg:col-span-6 space-y-8 relative">
                 <!-- Glow behind text -->
                 <div
-                    class="absolute -top-20 -left-20 w-64 h-64 bg-[#8B9A6E]/20 rounded-full blur-[100px] pointer-events-none opacity-50">
+                    class="absolute -top-20 -left-20 w-64 h-64 bg-signal-fill/20 rounded-full blur-[100px] pointer-events-none opacity-50">
                 </div>
 
                 <h1 class="{{ $headlineSize }} font-bold leading-normal text-white tracking-normal drop-shadow-xl">
@@ -66,14 +85,14 @@
                 </h1>
 
                 <p
-                    class="{{ $subheadSize }} text-[#F5F1E8] leading-relaxed drop-shadow-md border-l-4 border-[#8B9A6E] pl-6">
+                    class="{{ $subheadSize }} text-ink-2 leading-relaxed drop-shadow-md border-l-4 border-signal pl-6">
                     {{ $sub_headline | replaceRE "(?i)<script" "&lt;script" | replaceRE "(?i)</script>" "&lt;/script&gt;" | replaceRE "(?i)\\s+on[a-zA-Z]+\\s*=" " data-blocked=" | replaceRE "(?i)\\bon([a-zA-Z]+)\\s*=" "data-blocked-on$1=" | replaceRE "(?i)javascript:" "blocked:" | markdownify | replaceRE "(?s)^<p>(.*?)</p>\\n?$" "$1" | safeHTML }}
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-5 pt-4">
                     {{ if and $primary_button_text $primary_button_url }}
                     <a href="{{ $primary_button_url | relURL }}"
-                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full hover:from-blue-500 hover:to-blue-400 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1">
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-on-fill transition-all duration-200 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-full hover:from-signal-fill-hover hover:to-signal-fill hover:shadow-lg hover:shadow-signal/30 hover:-translate-y-1">
                         {{ $primary_button_text }}
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -83,7 +102,7 @@
                     {{ end }}
                     {{ if and $secondary_button_text $secondary_button_url }}
                     <a href="{{ $secondary_button_url | relURL }}"
-                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-blue-100 transition-all duration-200 bg-stone-800/50 border-2 border-blue-500/50 rounded-full hover:bg-blue-600/20 hover:text-white hover:border-blue-400 hover:-translate-y-1 backdrop-blur-sm">
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-ink-2 transition-all duration-200 bg-stone-800/50 border-2 border-signal/50 rounded-full hover:bg-signal-fill/10 hover:text-ink hover:border-signal hover:-translate-y-1 backdrop-blur-sm">
                         {{ $secondary_button_text }}
                     </a>
                     {{ end }}
@@ -96,7 +115,7 @@
                 <div
                     class="relative z-10 transform transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2">
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-[#5F6F3E] to-[#B87333] rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200">
+                        class="absolute -inset-1 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200">
                     </div>
                     {{ partial "image.html" (dict "src" $hero_image "alt" "Hero Image" "fetchpriority" "high" "class" "relative w-full rounded-xl shadow-2xl border border-stone-700/50 bg-stone-900/50 backdrop-blur-xl" "context" $.Page) }}
 
@@ -109,7 +128,7 @@
 
                 <!-- Background Orbs -->
                 <div
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#8B9A6E]/15 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-signal-fill/15 rounded-full blur-[100px] -z-10 animate-pulse-slow">
                 </div>
             </div>
         </div>

@@ -39,7 +39,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Alors quelqu'un monte un tableur. Cela prend deux jours. Il tient une seule version des événements, il repose sur des chiffres tapés à la main, et il est jeté dès que la décision est prise. La prochaine fois que cela arrive, le travail repart de zéro.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ec4899] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Ce n'est pas le plan qui est difficile. C'est d'avoir les chiffres à temps.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 L'exécution ne choisit pas pour vous. Elle met les options en rang. Quand quelqu'un en choisit une et la transmet pour qu'on agisse, l'option retenue et son nom sont consignés ensemble, de sorte que la question posée six mois plus tard se répond depuis le dossier et non depuis la réunion.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(236,72,153,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#be185d] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que quelque chose change.
              </p>
@@ -87,7 +87,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ec4899] to-[#be185d] rounded-xl border border-[#ec4899]/30 hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] hover:-translate-y-1">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Réserver une consultation
         </a>
     </div>

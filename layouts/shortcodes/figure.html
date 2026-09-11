@@ -6,7 +6,7 @@
 <figure class="my-8">
     {{ partial "image.html" (dict "src" $src "alt" $alt "class" (printf "%s rounded-lg shadow-lg" $class) "loading" "lazy" "context" $.Page) }}
     {{ with $caption }}
-        <figcaption class="mt-2 text-center text-sm text-[#D9CDB8]">
+        <figcaption class="mt-2 text-center text-sm text-ink-3">
             {{ . | markdownify }}
         </figcaption>
     {{ end }}

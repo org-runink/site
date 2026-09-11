@@ -42,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A esas alturas la pregunta ya ha cambiado. Ya no es &laquo;¿podemos salvar esta carga?&raquo;, es &laquo;¿quién la paga?&raquo;. Esa pregunta es mucho más cara, y es la única que queda.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#3b82f6] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 La lectura estuvo ahí todo el tiempo. Nadie la estaba leyendo.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 Donde hay algo sobre lo que actuar, espera como un movimiento redactado, y una persona con nombre lo aprueba, lo edita o lo rechaza, y el visto bueno queda anotado. Aprobar es lo que lo envía. Y donde un paso de ese movimiento no tiene nada detrás — una escritura en un sistema de patio o de transporte, por ejemplo — la respuesta nombra el paso que no ocurrió en vez de informar de un éxito, así que &laquo;aprobado&raquo; y &laquo;hecho&raquo; siguen siendo dos palabras distintas.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(59,130,246,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#2563eb] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto algo cambia.
              </p>
@@ -81,7 +81,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#3b82f6] to-[#2563eb] rounded-xl border border-[#3b82f6]/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:-translate-y-1">
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta
         </a>
     </div>

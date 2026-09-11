@@ -115,19 +115,39 @@ if a change to `readability.go` moves them, the change is wrong.
 The other languages are not scored — Flesch is calibrated on English and returns
 nonsense elsewhere. Translations are governed by rules 1, 2 and 12 instead.
 
-## 4. Say where a claim stands
+## 4. If it needs a caveat, it does not go on the site
 
-Where a document makes claims of different footing, mark them in the document's own
-words: `runs`, `drawn`, `hypothetical`, `not measured`, `first-party`, `self-declared`.
+**Changed 11 September 2026.** This rule used to require the opposite, and the history
+matters because the reasoning is easy to get backwards.
 
-Use marks only where the footing genuinely differs. The CORE paper carries three and the
-Atlas paper twelve, and that contrast is itself information; marking everything says
-nothing.
+The whitepapers carried footing marks — `runs`, `drawn`, `hypothetical`, `not measured`,
+`first-party`, `self-declared` — one per section, so a reader could see which claims were
+built and which were imagined. They were introduced after an audit found fabricated
+material on this site, and they did their job: they made the speculation visible.
 
-Anything marked illustrative, hypothetical or self-declared in a source **must not be
-restated as fact** anywhere downstream — not in a summary, not in a meta description, not
-in a social card. Runink's own use of its products may be cited only when labelled as
-exactly that.
+They are gone now, and **not because the honesty requirement relaxed.** The owner's
+instruction: *"We do not sell lies, but no need to point out studies and analysis over our
+assumptions."* A marked assumption is still an assumption taking up a page a buyer is
+reading. The apparatus was treating the symptom.
+
+So the rule inverts. Do not label the footing of a claim — **do not publish a claim whose
+footing needs labelling.**
+
+- If a passage would need `hypothetical`, delete it. An invented worked example is not
+  evidence, and unlabelled it reads as a case study. If the mechanism inside it is worth
+  explaining, explain the mechanism in plain prose and drop the scenario.
+- If a passage would need `not measured`, remove the number. Say where the reader measures
+  it in their own systems instead (rule 1).
+- If a passage would need `self-declared` or `first-party`, keep the substance and carry
+  the footing in ordinary sentences: "we have not been audited against X; here is what we
+  do", "in our own use". That is not hedging — it is the fact, and a sentence states it
+  better than a badge.
+- Anything that would have been marked `runs` or `drawn` needs no mark at all. State it
+  plainly. Hedging something that genuinely works is its own kind of dishonesty and is
+  part of why the papers stopped holding a reader.
+
+The test is unchanged and is the only one that matters: **could you defend this sentence
+from the code?** If not, it does not ship — with or without a label.
 
 ## 5. Qualify, do not educate
 

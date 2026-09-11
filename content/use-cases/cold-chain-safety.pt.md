@@ -42,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Nessa altura a pergunta já mudou. Não é mais &ldquo;dá para salvar esta carga&rdquo;, é &ldquo;quem paga por ela&rdquo;. Essa pergunta é muito mais cara, e é a única que sobrou.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#3b82f6] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 A leitura estava lá o tempo todo. Ninguém estava lendo.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 Onde há algo sobre o que agir, aquilo espera como um movimento redigido, e uma pessoa com nome aprova, edita ou recusa, e o aval fica anotado. Aprovar é o que envia. E onde um passo desse movimento não tem nada por trás — uma escrita num sistema de pátio ou de transporte, por exemplo — a resposta nomeia o passo que não aconteceu em vez de relatar sucesso, então &ldquo;aprovado&rdquo; e &ldquo;feito&rdquo; seguem sendo duas palavras diferentes.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(59,130,246,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#2563eb] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que algo muda.
              </p>
@@ -81,7 +81,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#3b82f6] to-[#2563eb] rounded-xl border border-[#3b82f6]/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:-translate-y-1">
+        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Agende uma conversa
         </a>
     </div>

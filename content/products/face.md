@@ -35,8 +35,8 @@ badge: "FACE"
     secondary_button_text="Read the FACE paper"
     secondary_button_url="/blog/whitepapers/runink-face/"
     size="normal"
-    gradient-from="#3A2F2A"
-    gradient-to="#1A1512"
+    gradient-from="var(--rk-sunk)"
+    gradient-to="var(--rk-ground)"
     gradient-angle="135"
 >}}
 
@@ -47,11 +47,11 @@ badge: "FACE"
 What FACE is, and what it is not.
 </h2>
 
-<p class="text-xl text-[#F5F1E8] leading-relaxed">
+<p class="text-xl text-ink-2 leading-relaxed">
 An entry held at the port for a missing paper while the daily charge runs. A pallet that came back and was never graded. A freight claim still inside its filing window that nobody had the morning to assemble. A reefer drifting warm overnight. In every case it was written down first, in a system you already run, and then read late, by sample, or not at all.
 </p>
 
-<p class="text-xl text-[#F5F1E8] leading-relaxed">
+<p class="text-xl text-ink-2 leading-relaxed">
 FACE is the product that reads all of it, and it is the one this company is built around. Everything described on this page is FACE. The two names you will see elsewhere on this site are not.
 </p>
 </div>
@@ -85,7 +85,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
 
 <div class="max-w-4xl mx-auto px-4 mb-20">
 <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">Nine kinds of work, in three groups your operation already recognises.</h2>
-<p class="text-xl text-[#D9CDB8] leading-relaxed">What is coming and how it moves. What happens when it goes wrong. And being able to show, afterwards, why you did what you did.</p>
+<p class="text-xl text-ink-2 leading-relaxed">What is coming and how it moves. What happens when it goes wrong. And being able to show, afterwards, why you did what you did.</p>
 </div>
 
 <div class="max-w-7xl mx-auto px-4 space-y-32">
@@ -93,7 +93,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
 <!-- GROUP 1: THE FORWARD FLOW -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
     <div>
-        <div class="inline-block px-3 py-1 rounded bg-[#5F6F3E]/30 text-[#C8D9A8] font-bold mb-4 tracking-wide">1. The forward flow</div>
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">1. The forward flow</div>
         <h3 class="text-4xl font-bold text-white mb-6">Plan it, hold it, move it.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
@@ -101,13 +101,13 @@ FACE is the product that reads all of it, and it is the one this company is buil
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-[#C8D9A8] font-bold block mb-1">Demand forecasting</span> <span class="text-slate-300">Your own order history is read as a series and put through the same sequence a statistician would run by hand: describe it, test whether it is stationary, look at the autocorrelation, then fit both a decomposition and an ARIMA and pick between them by backtest. What comes back names the model that won, quotes the stationarity test it was chosen against, and lists the points that did not fit. Under five observations it declines and says so rather than drawing a line through them. The planner argues from a stated method, not from seniority.</span></li>
-            <li><span class="text-[#C8D9A8] font-bold block mb-1">Inventory fulfilment</span> <span class="text-slate-300">Stock, inventory and fulfilment records are read from the systems that actually hold them — your database, your warehouse platform, your ERP, your spreadsheets, your object storage — and set against the lines you have already promised, so a cover problem surfaces while ordering is still ordinary and has not yet become air freight. Every one of those reads is read-only, and structurally so: the query is checked character by character before it is sent, so a connection cannot become a way to write to your system of record. The F in FACE is fulfilment.</span></li>
-            <li><span class="text-[#C8D9A8] font-bold block mb-1">Route optimisation</span> <span class="text-slate-300">A lane is put to the routing service you configure, and the distance and duration it returns come back attached to the request. If no routing service is configured, or routing returns nothing, the answer is the word unavailable — not an empty card with the fields blank, which is what a dispatcher would otherwise read as a measured route of zero. Refusing that particular answer is the whole of the work here.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Demand forecasting</span> <span class="text-slate-300">Your own order history is read as a series and put through the same sequence a statistician would run by hand: describe it, test whether it is stationary, look at the autocorrelation, then fit both a decomposition and an ARIMA and pick between them by backtest. What comes back names the model that won, quotes the stationarity test it was chosen against, and lists the points that did not fit. Under five observations it declines and says so rather than drawing a line through them. The planner argues from a stated method, not from seniority.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Inventory fulfilment</span> <span class="text-slate-300">Stock, inventory and fulfilment records are read from the systems that actually hold them — your database, your warehouse platform, your ERP, your spreadsheets, your object storage — and set against the lines you have already promised, so a cover problem surfaces while ordering is still ordinary and has not yet become air freight. Every one of those reads is read-only, and structurally so: the query is checked character by character before it is sent, so a connection cannot become a way to write to your system of record. The F in FACE is fulfilment.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Route optimisation</span> <span class="text-slate-300">A lane is put to the routing service you configure, and the distance and duration it returns come back attached to the request. If no routing service is configured, or routing returns nothing, the answer is the word unavailable — not an empty card with the fields blank, which is what a dispatcher would otherwise read as a measured route of zero. Refusing that particular answer is the whole of the work here.</span></li>
         </ul>
     </div>
     <div class="relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-[#5F6F3E] to-[#8B9A6E] opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
+        <div class="absolute -inset-1 bg-gradient-to-r from-signal-fill to-signal-fill-hover opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
         <!--
           Alt text corrected. It used to read "The cockpit, with drafted actions
           queued for approval", which the screenshot contradicts: saved
@@ -145,7 +145,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
       one column.
     -->
     <div class="order-1 md:order-2 md:col-span-2">
-        <div class="inline-block px-3 py-1 rounded bg-[#D4A574]/30 text-[#FFE5B4] font-bold mb-4 tracking-wide">2. When it goes wrong</div>
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">2. When it goes wrong</div>
         <h3 class="text-4xl font-bold text-white mb-6">The exception arrives named.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
@@ -153,9 +153,9 @@ FACE is the product that reads all of it, and it is the one this company is buil
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-[#FFE5B4] font-bold block mb-1">Reactive logistics</span> <span class="text-slate-300">A frame reaches FACE one of three ways: a photograph taken on a handheld at the dock, text an edge device has already read off a label, or the address of a video feed you point it at. It is graded for what was damaged and where — the pallet, the crate, the container door, named, not reduced to a severity score. A cue can then be raised to the operating picture everyone is watching, and it says exactly what it is: a cue <em>requested</em>, broadcast to whoever is subscribed. It is not an instruction to a crane or a camera, because nothing here is wired to one, and a sensor type FACE does not recognise is refused rather than quietly filed as a camera.</span></li>
-            <li><span class="text-[#FFE5B4] font-bold block mb-1">Reverse logistics</span> <span class="text-slate-300">A return is triaged on its own record: what came back, what condition it is in, and which disposition it belongs in. Returns are a dedicated path, because the cost of a return is decided in the hour somebody grades it.</span></li>
-            <li><span class="text-[#FFE5B4] font-bold block mb-1">Insurance underwriting and claims</span> <span class="text-slate-300">Claims, reserves, premiums, deductibles and settlements are records FACE reads and types like any other: a claim is a reserve against a policy. It assembles the file and drafts the action. It does not decide the underwriting — an adjuster does, on the file FACE put in front of them.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Reactive logistics</span> <span class="text-slate-300">A frame reaches FACE one of three ways: a photograph taken on a handheld at the dock, text an edge device has already read off a label, or the address of a video feed you point it at. It is graded for what was damaged and where — the pallet, the crate, the container door, named, not reduced to a severity score. A cue can then be raised to the operating picture everyone is watching, and it says exactly what it is: a cue <em>requested</em>, broadcast to whoever is subscribed. It is not an instruction to a crane or a camera, because nothing here is wired to one, and a sensor type FACE does not recognise is refused rather than quietly filed as a camera.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Reverse logistics</span> <span class="text-slate-300">A return is triaged on its own record: what came back, what condition it is in, and which disposition it belongs in. Returns are a dedicated path, because the cost of a return is decided in the hour somebody grades it.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Insurance underwriting and claims</span> <span class="text-slate-300">Claims, reserves, premiums, deductibles and settlements are records FACE reads and types like any other: a claim is a reserve against a policy. It assembles the file and drafts the action. It does not decide the underwriting — an adjuster does, on the file FACE put in front of them.</span></li>
         </ul>
     </div>
 </div>
@@ -163,7 +163,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
 <!-- GROUP 3: SHOWING YOUR REASONING -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
     <div>
-        <div class="inline-block px-3 py-1 rounded bg-[#B87333]/30 text-[#FFCC99] font-bold mb-4 tracking-wide">3. Before you commit, and after you are asked</div>
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">3. Before you commit, and after you are asked</div>
         <h3 class="text-4xl font-bold text-white mb-6">Being able to show the reasoning.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
@@ -171,9 +171,9 @@ FACE is the product that reads all of it, and it is the one this company is buil
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-[#FFCC99] font-bold block mb-1">Supply chain management</span> <span class="text-slate-300">The relationships between your orders, suppliers, sites and shipments are built into one graph, so the operation can be read across systems that were never joined to each other. The twins take that picture and keep it current as the records change.</span></li>
-            <li><span class="text-[#FFCC99] font-bold block mb-1">Financial scenarios and hypothesis testing</span> <span class="text-slate-300">A change is stated as a hypothesis — a lane a week late, a supplier dropped, a different reserve assumption — together with the rules it touches. What comes back is the case laid out: which rules the change collides with, in what order they bite, and each consequence tied to the rule it follows from. It is reasoning you can argue with rather than a number to accept, it executes nothing, and the decision stays with the person accountable for it.</span></li>
-            <li><span class="text-[#FFCC99] font-bold block mb-1">Paralegal and compliance</span> <span class="text-slate-300">A compliance agent whose stated role is paralegal. It reads policy documents, the rules extracted from your own procedures, and the system's own logs; it cites the rule and the records behind a finding; and it drafts the functional remediation — the letter, the ticket, the notification. It reads and cites. A person decides.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Supply chain management</span> <span class="text-slate-300">The relationships between your orders, suppliers, sites and shipments are built into one graph, so the operation can be read across systems that were never joined to each other. The twins take that picture and keep it current as the records change.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Financial scenarios and hypothesis testing</span> <span class="text-slate-300">A change is stated as a hypothesis — a lane a week late, a supplier dropped, a different reserve assumption — together with the rules it touches. What comes back is the case laid out: which rules the change collides with, in what order they bite, and each consequence tied to the rule it follows from. It is reasoning you can argue with rather than a number to accept, it executes nothing, and the decision stays with the person accountable for it.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Paralegal and compliance</span> <span class="text-slate-300">A compliance agent whose stated role is paralegal. It reads policy documents, the rules extracted from your own procedures, and the system's own logs; it cites the rule and the records behind a finding; and it drafts the functional remediation — the letter, the ticket, the notification. It reads and cites. A person decides.</span></li>
         </ul>
     </div>
     <!--
@@ -215,7 +215,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
       Not replaced.
     -->
     <div class="order-1 md:order-2 md:col-span-2">
-        <div class="inline-block px-3 py-1 rounded bg-[#8B9A6E]/30 text-[#C8D9A8] font-bold mb-4 tracking-wide">The seam</div>
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">The seam</div>
         <!--
           Heading narrowed. It read "Nothing leaves with nobody's name on it",
           which is the blanket-gate version of the approval claim and is not
@@ -239,10 +239,10 @@ FACE is the product that reads all of it, and it is the one this company is buil
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-[#C8D9A8] font-bold block mb-1">Your procedures, written down once</span> <span class="text-slate-300">The rules you already work to — the day you stop waiting on a carrier, the duplicate purchase order, the vendor request with nothing behind it — are stated once and checked against every record rather than remembered by whoever is on shift.</span></li>
-            <li><span class="text-[#C8D9A8] font-bold block mb-1">Why it fired, on which records</span> <span class="text-slate-300">Afterwards you can open a finding and read the rule, the records underneath it and the reasoning that joined them. A drafted letter nobody can check is not worth signing.</span></li>
-            <li><span class="text-[#C8D9A8] font-bold block mb-1">Documents arrive as documents</span> <span class="text-slate-300">The bill of lading, the customs paper, the carrier's receipt, the claim file. They are read and turned into records that can be cited, which is the part that makes the draft checkable.</span></li>
-            <li><span class="text-[#C8D9A8] font-bold block mb-1">Could not check is an answer</span> <span class="text-slate-300">Where a check could not run — nothing to read, an answer that came back unusable — the result is <em>unable to assess</em>, written out in words as not a finding that the thing is compliant. Zero and nobody-measured are kept as different values on purpose, and a connection nobody has contacted is never reported as verified. An assessor whose confident answers and whose blanks look the same is worth nothing by the second week.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Your procedures, written down once</span> <span class="text-slate-300">The rules you already work to — the day you stop waiting on a carrier, the duplicate purchase order, the vendor request with nothing behind it — are stated once and checked against every record rather than remembered by whoever is on shift.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Why it fired, on which records</span> <span class="text-slate-300">Afterwards you can open a finding and read the rule, the records underneath it and the reasoning that joined them. A drafted letter nobody can check is not worth signing.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Documents arrive as documents</span> <span class="text-slate-300">The bill of lading, the customs paper, the carrier's receipt, the claim file. They are read and turned into records that can be cited, which is the part that makes the draft checkable.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Could not check is an answer</span> <span class="text-slate-300">Where a check could not run — nothing to read, an answer that came back unusable — the result is <em>unable to assess</em>, written out in words as not a finding that the thing is compliant. Zero and nobody-measured are kept as different values on purpose, and a connection nobody has contacted is never reported as verified. An assessor whose confident answers and whose blanks look the same is worth nothing by the second week.</span></li>
         </ul>
     </div>
 </div>
@@ -255,15 +255,15 @@ FACE is the product that reads all of it, and it is the one this company is buil
 <div class="max-w-5xl mx-auto px-4">
     <div class="mb-16 max-w-3xl">
         <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">Where it runs, and who can see it</h2>
-        <p class="text-xl text-[#D9CDB8] leading-relaxed">This is usually the first question from information security and the last one to get a straight answer. These are properties of how FACE is built, not results anybody is reporting.</p>
+        <p class="text-xl text-ink-2 leading-relaxed">This is usually the first question from information security and the last one to get a straight answer. These are properties of how FACE is built, not results anybody is reporting.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white/5 p-8 rounded-xl border border-white/10">
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">Your records stay on your machines</h3>
             <p class="text-slate-300">The order files, the customs papers, the sensor readings and the reasoning about them run on hardware you control. The model FACE reasons with is one you run yourself: there is no third-party model dependency anywhere in it and exactly one inference endpoint, which is the one you point it at. That is how it is built rather than a switch somebody could leave off — though it is an architectural property, not a machine-enforced one, and we would rather you heard that from us than found it.</p>
         </div>
-        <div class="bg-white/5 p-8 rounded-xl border border-white/10">
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <!--
               Narrowed. This card used to say the page "is read directly with an
               ordinary browser" and imply the question never leaves — "Asking a
@@ -280,7 +280,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
             <h3 class="text-2xl font-bold text-white mb-4">Open-web research with no account attached to it</h3>
             <p class="text-slate-300">When an answer needs the open web — a carrier's standing, a customs ruling, a published tariff, a consignee you are unsure about — FACE runs the search from your own infrastructure through a public search endpoint, then fetches and reads the pages itself, and the extracted page comes attached to the finding. The search engine sees the query, as it would from any browser. What does not happen is the part that matters commercially: there is no vendor account, no API key and no per-question bill, so no supplier is building a history of the names your company has been asking about, filed under your company.</p>
         </div>
-        <div class="bg-white/5 p-8 rounded-xl border border-white/10">
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">On Runink core, inside your boundary</h3>
             <p class="text-slate-300">FACE runs on Runink core, the platform underneath it. Services identify themselves to each other on every call and hold nothing long-lived. The cockpit your team uses is the same boundary your auditors are given.</p>
         </div>
@@ -290,11 +290,11 @@ FACE is the product that reads all of it, and it is the one this company is buil
 
 {{< section-container class="py-16" >}}
 <div class="max-w-3xl mx-auto px-4">
-    <div class="border-l-4 border-[#8B9A6E] pl-6 space-y-4">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-[#C8D9A8]">Drawn — not a measured result</p>
+    <div class="border-l-4 border-signal pl-6 space-y-4">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-signal">Drawn — not a measured result</p>
         <h2 class="text-2xl font-bold text-white">What this page deliberately does not say.</h2>
         <p class="text-lg text-slate-300 leading-relaxed">
-            There is no figure on it, no customer named, and no outcome claimed. Everything above describes what FACE reads, what it produces and who approves it, drawn from the records these systems hold — not an account of what happened at somebody else's company. The figures that matter belong to you: each <a href="/industries/" class="text-[#ea580c] underline decoration-[#ea580c]/40 hover:decoration-[#ea580c]">industry page</a> carries the measures to write your own against, and a baseline stops being recoverable the moment things start improving. Write yours down first.
+            There is no figure on it, no customer named, and no outcome claimed. Everything above describes what FACE reads, what it produces and who approves it, drawn from the records these systems hold — not an account of what happened at somebody else's company. The figures that matter belong to you: each <a href="/industries/" class="text-signal underline decoration-signal/40 hover:decoration-signal">industry page</a> carries the measures to write your own against, and a baseline stops being recoverable the moment things start improving. Write yours down first.
         </p>
     </div>
 </div>

@@ -16,25 +16,44 @@
   different shape rather than a different paragraph. Depth lives in /industries/
   and in the whitepapers.
 
-  PALETTE. Identical tokens to layouts/partials/industries-style.html, so this
-  page reads as the front door of that section rather than as a different site:
-    canvas/sheet/rule  surface.gray_50 / white / gray_200
-    tint/deep          primary.50 / primary.900
-    ink/ink-2          text.gray_900 / text.gray_600
-    accent             per row, taken from each industry page's front matter
-  As there, nothing that must be legible uses the raw accent — two of the five
-  are pale enough to vanish on white — so --accent-ink mixes it toward
-  primary.900. Every color-mix() declares a flat navy fallback first.
+  That finding is no longer this page's alone: it is why the whole marketing site
+  is light. The sheet is now the default ground in assets/css/tokens.css, the
+  header above is light with it, and the dark register is kept for the product
+  cockpit. This page was the first argument for it and is no longer the exception
+  to anything — so nothing here needs to fight the shell it sits in, and the
+  print rules at the foot are what they always were: the same sheet, on paper.
 
-  TYPE. Body is Inter, already loaded site-wide, matching the Industries pages.
-  The display face is Fira Sans Condensed Heavy, self-hosted from assets/fonts
-  and already used by the whitepapers, so it adds no request to any other origin
-  and ties the front door to the deepest material on the site. It is used with
-  restraint — the headline, the section labels, the five industry names — and
-  nowhere else. It is chosen for one practical reason as well as one aesthetic
-  one: the review asked for plain business language, plain business language is
-  long, and a condensed face lets a whole plain sentence be the headline without
-  breaking into five lines.
+  PALETTE. The tokens in assets/css/tokens.css, which is Runink FACE's palette —
+  the same one the product uses. The page keeps its own short names because the
+  artwork partials paint with them, but they are aliases now, not values:
+    canvas/sheet/rule  --rk-ground / --rk-sheet / --rk-rule
+    deep/ink/ink-2     --rk-text-1 / --rk-text / --rk-text-2
+    accent             --rk-signal, and --rk-accent inside a ledger line
+  The six DESIGN.md names this block used to cite (surface.gray_50, primary.50,
+  primary.900, text.gray_900, text.gray_600) never existed in the file it named
+  them from; they went with the bot-authored DESIGN.md that coined them. Every
+  colour below is a real token, resolved against whichever ground it is in.
+
+  The accent is no longer mixed toward anything. This page has no industry of its
+  own, so its accent is SIGNAL — the site's one orange, the colour of a thing you
+  can act on. Each line of the ledger does name an industry, so a line re-derives
+  the accent from --rk-accent, which tokens.css binds per category; those five
+  inks are each solved for contrast, so the old mix-toward-navy that kept the two
+  pale ones legible has nothing left to do.
+
+  TYPE. Body comes from --rk-font-body: this block used to say Inter, "already
+  loaded site-wide", and that stopped being true when baseof.html stopped
+  fetching Google Fonts — the name was resolving to system-ui on the page a buyer
+  reads first. The display face is Fira Sans Condensed Heavy, self-hosted from
+  assets/fonts and also used by the whitepapers, so it adds no request to any
+  other origin and ties the front door to the deepest material on the site. It is
+  used with restraint — the headline, the section labels, the five industry names
+  — and nowhere else. It is chosen for one practical reason as well as one
+  aesthetic one: the review asked for plain business language, plain business
+  language is long, and a condensed face lets a whole plain sentence be the
+  headline without breaking into five lines. Note that it is a face the token
+  system does not carry: --rk-font-display is Figtree, which has no condensed
+  axis, so this page keeps publishing its own.
 
   Adding another self-hosted face here means adding it to $faces below, or Hugo
   will never write the file to public/ and the @font-face will silently 404.
@@ -59,49 +78,56 @@
   {{ end }}
 
   .hp {
-    --canvas: #f9fafb;
-    --sheet: #ffffff;
-    --rule: #e5e7eb;
-    --tint: #eef1fc;
-    --deep: #1b2456;
-    --ink: #111827;
-    --ink-2: #4b5563;
+    /* Aliases onto the ground-aware tokens, not values. The rules below and the
+       artwork in partials/home/*.html both paint with these names. */
+    --canvas: var(--rk-ground);
+    --sheet: var(--rk-sheet);
+    --rule: var(--rk-rule);
+    --deep: var(--rk-text-1);
+    --ink: var(--rk-text);
+    --ink-2: var(--rk-text-2);
 
-    --accent: #ea580c;
-    --accent-ink: #1b2456;
-    --accent-ink: color-mix(in srgb, var(--accent) 45%, #1b2456);
-    --accent-wash: #eef1fc;
-    --accent-wash: color-mix(in srgb, var(--accent) 12%, #ffffff);
-    --accent-edge: #1b2456;
-    --accent-edge: color-mix(in srgb, var(--accent) 52%, #1b2456);
+    /* The page's accent is signal: it has no industry of its own, and signal is
+       the colour of something a reader can act on. A ledger line overrides this
+       with its industry's, in .hp-accent below. */
+    --accent-ink: var(--rk-signal);
+    --accent-edge: var(--rk-signal);
+    --accent-wash: var(--rk-signal-wash);
 
-    --write-line: #a5aab2;
-    --write-line: color-mix(in srgb, var(--ink-2) 52%, #ffffff);
+    /* the line the reader writes on: a boundary, so it has to hold 3:1 */
+    --write-line: var(--rk-rule-strong);
 
     /* the grey the artwork uses for a record nobody has read — one step darker
        than a hairline, so it survives a greyscale print */
-    --art-mute: #ccd0d7;
-    --art-mute: color-mix(in srgb, var(--ink-2) 30%, #ffffff);
+    --art-mute: var(--rk-rule-mid);
 
-    --font-body: Inter, system-ui, -apple-system, sans-serif;
-    --font-display: 'Fira Cond Hp', 'Fira Sans Condensed', 'Inter Tight', Inter, system-ui, sans-serif;
+    --font-body: var(--rk-font-body);
+    --font-display: 'Fira Cond Hp', 'Fira Sans Condensed', var(--rk-font-display);
 
     background-color: var(--canvas);
     color: var(--ink-2);
     font-family: var(--font-body);
   }
 
-  /* The three derived colours above are resolved once, where they are declared;
-     descendants inherit the resolved value, not the recipe. Every row of the
-     ledger sets its own --accent, so each one has to re-derive them. Keep this
-     block identical to the one above. */
+  /* One line of the ledger is the one place on this page that names an industry,
+     so it wears that industry's accent instead of signal. tokens.css binds
+     --rk-accent from the .rk-cat-* class the line carries.
+
+     It has to be re-derived rather than inherited: a var() in a custom property
+     is resolved where it is DECLARED, so what descendants inherit from .hp is the
+     resolved colour, not the recipe. tokens.css calls the same shape .rk-rederive.
+
+     The wash is written out rather than taken from --rk-accent-wash for the same
+     reason: that token is derived on the ground element, so it holds the PAGE's
+     wash and not this line's. The recipe is tokens.css's own. It is not guarded by
+     a flat fallback any more — this file used to declare one before every
+     color-mix() and it never did anything, because a custom property accepts any
+     value at parse time, so the second declaration always wins and the fallback is
+     only ever shadowed. tokens.css mixes its own washes unguarded. */
   .hp-accent {
-    --accent-ink: #1b2456;
-    --accent-ink: color-mix(in srgb, var(--accent) 45%, #1b2456);
-    --accent-wash: #eef1fc;
-    --accent-wash: color-mix(in srgb, var(--accent) 12%, #ffffff);
-    --accent-edge: #1b2456;
-    --accent-edge: color-mix(in srgb, var(--accent) 52%, #1b2456);
+    --accent-ink: var(--rk-accent);
+    --accent-edge: var(--rk-accent);
+    --accent-wash: color-mix(in srgb, var(--rk-accent) 10%, var(--rk-sheet));
   }
 
   /* ---- shell ------------------------------------------------------------ */
@@ -117,18 +143,21 @@
 
   /* Links take the ink of whatever they sit in. `:not([class])` matters: with a
      bare `.hp a` the rule is one specificity step above every single-class
-     button rule below it, so it silently repainted the white text on the two
-     solid call-to-action buttons and made both of them unreadable. */
+     button rule below it, so it silently repainted the label on the two solid
+     call-to-action buttons and made both of them unreadable. */
   .hp a:not([class]) { color: inherit; }
 
   /* The base stylesheet defines no focus ring and the UA default is weak on a
-     near-white sheet, so the page states its own. */
+     near-white sheet, so the page states its own. tokens.css has one, but it is
+     scoped to `[data-ground] a:focus-visible` and nothing in this site's markup
+     carries a data-ground attribute — the sheet ground comes from :root — so
+     that rule never matches here. --rk-focus is the colour it would use. */
   .hp a:focus-visible,
   .hp button:focus-visible,
   .hp input:focus-visible,
   .hp select:focus-visible,
   .hp textarea:focus-visible {
-    outline: 2px solid var(--accent-edge);
+    outline: 2px solid var(--rk-focus);
     outline-offset: 3px;
     border-radius: 0.375rem;
   }
@@ -250,23 +279,36 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
-    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* A filled shape takes the FILL token, and the label on it takes the ink that
+     fill is measured against — which is not the same orange as the accent that
+     is itself a colour of text. The hover fill goes LIGHTER, which looks wrong on
+     a light page and is not a choice: the ink on the fill is the one token FACE
+     does not flip, so darkening the button would take its label below AA exactly
+     when the pointer is on it. filter: brightness(1.15) used to do this and could
+     not — it is unmeasured, and it lightened whatever it was handed. */
   .hp-cta {
-    background-color: var(--accent-ink);
-    color: #ffffff;
-    border: 1px solid var(--accent-ink);
+    background-color: var(--rk-signal-fill);
+    color: var(--rk-on-signal-fill);
+    border: 1px solid var(--rk-signal-fill);
   }
-  .hp-cta:hover { filter: brightness(1.15); }
+  .hp-cta:hover {
+    background-color: var(--rk-signal-fill-hover);
+    border-color: var(--rk-signal-fill-hover);
+  }
 
   .hp-cta-ghost {
     background-color: var(--sheet);
-    color: var(--accent-ink);
+    color: var(--rk-signal);
     border: 1px solid var(--rule);
   }
-  .hp-cta-ghost:hover { background-color: var(--accent-wash); }
+  .hp-cta-ghost:hover {
+    background-color: var(--rk-signal-wash);
+    border-color: var(--rk-rule-mid);
+  }
 
   /* ---- the figure ------------------------------------------------------- */
 
@@ -365,11 +407,13 @@
 
   /* ---- the ledger: five industries as five lines of one instrument ------ */
 
+  /* The top of the instrument is the edge of the field, not a separator between
+     rows, so it takes the boundary token rather than an ink. */
   .hp-ledger {
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 2px solid var(--deep);
+    border-top: 2px solid var(--rk-rule-strong);
   }
 
   .hp-ledger__head {
@@ -470,6 +514,8 @@
     background-color: var(--accent-edge);
   }
 
+  /* Signal, not the line's industry accent: the rest of the row says which
+     industry this is, and this line is the part that says it is a link. */
   .hp-row__go {
     grid-column: 1 / -1;
     margin: 0.25rem 0 0;
@@ -477,7 +523,7 @@
     font-weight: 800;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--accent-ink);
+    color: var(--rk-signal);
   }
   /* On a wide screen it belongs under the industry name, in its own column.
      Spanning the full row there pushes every line a third taller and breaks the
@@ -514,10 +560,13 @@
     overflow: hidden;
   }
 
+  /* The plate under the artwork is a recessed surface, which the palette has a
+     token for — it used to be painted in the page canvas, which is the colour of
+     what is BEHIND the card rather than of a well inside it. */
   .hp-why__plate {
     margin: -1.5rem -1.5rem 1.375rem;
     padding: 1.25rem 1.5rem;
-    background-color: var(--canvas);
+    background-color: var(--rk-sunk);
     border-bottom: 1px solid var(--rule);
   }
 
@@ -643,7 +692,7 @@
     transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .hp-input:hover { border-bottom-color: var(--accent-edge); }
-  .hp-input::placeholder { color: #9ca3af; }
+  .hp-input::placeholder { color: var(--rk-text-3); }
   textarea.hp-input { resize: vertical; min-height: 6.5rem; }
 
   .hp-submit {
@@ -653,19 +702,23 @@
     width: 100%;
     margin-top: 0.5rem;
     padding: 0.9375rem 1.75rem;
-    border: 1px solid var(--accent-ink);
+    border: 1px solid var(--rk-signal-fill);
     border-radius: 0.5rem;
-    background-color: var(--accent-ink);
-    color: #ffffff;
+    background-color: var(--rk-signal-fill);
+    color: var(--rk-on-signal-fill);
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     cursor: pointer;
-    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .hp-submit:hover { filter: brightness(1.15); }
+  .hp-submit:hover {
+    background-color: var(--rk-signal-fill-hover);
+    border-color: var(--rk-signal-fill-hover);
+  }
 
   /* One link out to the long version, kept to a single quiet line so it cannot
      turn into a second call to action competing with the consultation. */
@@ -731,7 +784,7 @@
   @media print {
     @page { margin: 14mm 12mm; }
 
-    html, body { background: #ffffff !important; }
+    html, body { background: var(--rk-ground) !important; }
 
     body > .fixed,
     #consent-banner,
@@ -739,20 +792,22 @@
     [aria-label="Trust and Compliance Details"] { display: none !important; }
     body > .pt-20 { padding-top: 0 !important; }
 
-    .hp {
-      background: #ffffff !important;
-      color: #000000;
-      --canvas: #ffffff;
-      --sheet: #ffffff;
-      --rule: #9a9a9a;
-      --ink: #000000;
-      --ink-2: #1f1f1f;
-      --deep: #000000;
-      --accent-ink: #000000;
-      --accent-edge: #000000;
-      --accent-wash: #ffffff;
-      --write-line: #666666;
-      --art-mute: #a8a8a8;
+    /* tokens.css §6 re-binds the whole palette for paper — white grounds, black
+       ink, grey-to-black rules — and the names at the top of this file are
+       aliases onto it, so they collapse with it and the list of print values this
+       block used to hold is gone. Two exceptions, both because a mix and a ramp
+       rung behave differently from a flat value on paper:
+
+       the wash is mixed from the accent against the sheet, and mixing black into
+       white gives a grey box where a washed footing should read as bare paper;
+
+       --art-mute is one rung darker than a hairline on screen, and that rung
+       prints dark enough to compete with the ink it is meant to sit behind. On
+       paper it takes the hairline itself. */
+    .hp,
+    .hp-accent {
+      --accent-wash: var(--rk-sheet);
+      --art-mute: var(--rk-rule);
     }
 
     .hp-wrap { max-width: none; padding: 0; }
@@ -774,15 +829,16 @@
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #000000;
+      color: var(--rk-text);
     }
 
     .hp-h1 { font-size: 26pt; max-width: none; }
     .hp-deck { font-size: 11pt; max-width: none; margin-bottom: 10pt; }
+    /* On screen the eyebrow is a washed chip with one accented edge; on paper the
+       wash is gone, so it needs a full box to still read as a chip. */
     .hp-eyebrow {
-      background: #ffffff !important;
-      border: 1px solid #000000;
-      color: #000000;
+      border: 1px solid var(--rk-rule-strong);
+      color: var(--rk-text);
       padding: 2pt 5pt;
       margin-bottom: 9pt;
     }
@@ -807,11 +863,16 @@
     .hp-contact__deck { margin-bottom: 0; max-width: none; }
     .hp-book { padding: 9pt 11pt; }
 
-    .hp-head__mark { background: #000000 !important; }
-    .hp-head__label, .hp-row__owner { color: #000000; }
-    .hp-head__rule { background: #000000 !important; }
-    .hp-row__tick { background: #000000 !important; }
-    .hp-row__owner span::before { background: #000000 !important; }
+    /* Nothing on paper is carried by colour alone, so every accented mark goes to
+       the boundary token, which tokens.css prints as black. These are stated
+       rather than left to the accent: the accent reaches black on paper through a
+       re-binding of the signal and category primitives, and that is one
+       indirection too many to rely on for the page's loudest furniture. */
+    .hp-head__mark { background: var(--rk-rule-strong) !important; }
+    .hp-head__label, .hp-row__owner { color: var(--rk-text); }
+    .hp-head__rule { background: var(--rk-rule-strong) !important; }
+    .hp-row__tick { background: var(--rk-rule-strong) !important; }
+    .hp-row__owner span::before { background: var(--rk-rule-strong) !important; }
 
     /* At print width the ledger would otherwise fall to the stacked layout,
        where the three columns stop being a comparison. Put the grid back. */
@@ -842,22 +903,20 @@
       padding: 0;
       border: 0;
       background: none !important;
-      color: #000000;
+      color: var(--rk-text);
       font-size: 9pt;
       letter-spacing: 0.1em;
     }
     .hp-book p { margin-bottom: 0; }
-    .hp-field__label { border-bottom-color: #000000; color: #000000; }
-    .hp-beat { border-top-color: #000000; }
-    .hp-beat b { color: #000000; }
+    .hp-field__label { border-bottom-color: var(--rk-rule-strong); color: var(--rk-text); }
+    .hp-beat { border-top-color: var(--rk-rule-strong); }
+    .hp-beat b { color: var(--rk-text); }
 
     .hp-field, .hp-why__item, .hp-contact, .hp-book, .hp-why__plate {
-      border-color: #000000;
+      border-color: var(--rk-rule-strong);
       box-shadow: none;
       border-radius: 0;
     }
-    .hp-why__plate { background: #ffffff !important; }
-    .hp-book { background: #ffffff !important; }
 
     /* Keep every block whole on one sheet, and never orphan a heading. */
     .hp-field, .hp-why__item, .hp-row, .hp-contact,

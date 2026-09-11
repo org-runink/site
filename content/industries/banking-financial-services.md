@@ -31,7 +31,12 @@ description: "Payment instruction integrity, third-party risk, decision governan
 # travels with the copy that was derived from it.
 product: "Runink CORE + Atlas"
 weight: 30
-accent: "#C8D9A8"
+# category: binds this page to the palette's category tokens via the
+# .rk-cat-* class the layout emits. It replaces an `accent:` hex, which
+# went dead when the stylesheets moved to --rk-accent: the hex was still
+# injected into a style attribute that nothing read any more. A class can
+# follow the ground; a literal cannot.
+category: "banking"
 card: "Runink CORE with Logical Leap's Atlas — payment instruction integrity, third-party risk, decision governance and the evidence a supervisor asks for. An architecture, not a product on our price list."
 headline: "You are not asked whether the control exists. You are asked to show that it operated."
 deck: "Payment instruction changes, credit decisions, fee calculations, transaction monitoring, model governance, third-party risk. Every one is a written rule applied to a flow, under an authority that expects the rule to be demonstrable rather than asserted. Read this page as an architecture rather than a product: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap, and the illustrations below are hypothetical. Nothing here has been run at a bank."

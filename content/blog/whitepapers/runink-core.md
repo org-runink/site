@@ -6,7 +6,7 @@ subtitle: "The operations layer for companies that keep their own data"
 description: "A whitepaper for executive, technology and risk stakeholders. What Runink CORE is for, who needs it, what it does, and what adopting it involves."
 weight: 20
 date: 2026-09-03T00:00:00Z
-source_pages: 22
+source_pages: 21
 audience: "Executive, technology and risk stakeholders"
 blurb: "The layer beneath a company's software that runs it, shows a named person what is happening across all of it from one screen, holds the connections that software uses to reach the company's own information, and carries changes from written to running."
 deck: |
@@ -30,14 +30,13 @@ register:
   - { page: 11, title: "How it works, part six: governing the estate" }
   - { page: 12, title: "How it works, part seven: getting changes made" }
   - { page: 13, title: "The console, screen by screen" }
-  - { page: 14, title: "What a working day looks like", mark: "hypothetical" }
-  - { page: 15, title: "What it is built on, and why that matters commercially" }
-  - { page: 16, title: "Who CORE is for" }
-  - { page: 17, title: "What adopting CORE involves" }
-  - { page: 18, title: "The commercial model" }
-  - { page: 19, title: "What it is worth, computed on your own numbers", mark: "not-measured" }
-  - { page: 20, page_end: 21, title: "Answers to the questions we are usually asked" }
-  - { page: 22, title: "The next step" }
+  - { page: 14, title: "What it is built on, and why that matters commercially" }
+  - { page: 15, title: "Who CORE is for" }
+  - { page: 16, title: "What adopting CORE involves" }
+  - { page: 17, title: "The commercial model" }
+  - { page: 18, title: "What it is worth, computed on your own numbers" }
+  - { page: 19, page_end: 20, title: "Answers to the questions we are usually asked" }
+  - { page: 21, title: "The next step" }
 ---
 
 ## Executive summary
@@ -107,10 +106,10 @@ customer reports that something is slow, finding out whether it is slow, and whe
 longer than fixing it. The evidence is spread across tools that do not agree on vocabulary,
 and half of the tools show a zero when what they mean is that they did not manage to look.
 
-That last point is worth dwelling on. A dashboard that renders an unread figure as zero is
-worse than no dashboard, because it converts a failure to observe into a confident statement
-that nothing is happening. Decisions get made on it. Capacity that was never measured gets
-reported as headroom. Work that was never counted gets reported as idle.
+A dashboard that renders an unread figure as zero is worse than no dashboard, because it
+converts a failure to observe into a confident statement that nothing is happening. Decisions
+get made on it. Capacity that was never measured gets reported as headroom. Work that was
+never counted gets reported as idle.
 
 ### The second cost: every new thing rebuilds the same plumbing
 
@@ -233,16 +232,16 @@ recorded against them.
 
 The links to a company's own systems live in one place, described in one vocabulary, with
 their credentials held separately from their settings and encrypted with a key that is itself
-encrypted. This is covered in full on pages 11 and 12.
+encrypted. This is covered in full on pages 10 and 11.
 
 ### It provides one place to look
 
-One screen, described on pages 9, 10 and 14, answers the health, the placement, the cost, the
+One screen, described on pages 7, 9 and 13, answers the health, the placement, the cost, the
 recent history and the current worry list for everything at once.
 
 ### It provides a way to get changes made
 
-A roster of automated helpers, described on page 13, covers the repetitive parts of turning
+A roster of automated helpers, described on page 12, covers the repetitive parts of turning
 an intention into running software: reviewing a proposed change, drafting a correction from
 that review, sorting an incoming report, diagnosing a failed build, sweeping for risky
 dependencies, checking claimed controls against actual ones, and working a longer coding task
@@ -260,11 +259,10 @@ workstation: both applications and the server halves behind them, the shared mod
 consoles and the full security arrangement, running directly on the machine. Nothing has to
 be packaged up first, and the everyday commands do not ask for administrator rights.
 
-This matters more than it sounds. It means an evaluation costs nothing and needs no
-procurement. It means a developer's local setup is the same shape as production rather than a
-simplified imitation of it, so a thing that works locally is far more likely to work when
-deployed. And it means a sales conversation can be followed by a working system on the
-prospect's own laptop the same afternoon.
+So an evaluation costs nothing and needs no procurement. A developer's local setup is the
+same shape as production rather than a simplified imitation of it, so what works locally is
+far more likely to work when deployed. And a sales conversation can be followed by a working
+system on the prospect's own laptop the same afternoon.
 
 Naming one application instead of both runs only that one. One more command stops everything.
 
@@ -712,84 +710,6 @@ picker on the frame rather than set at installation.
 The console is available in a browser and as an Android application, so the deployment list
 and the worry list are legible from a phone.
 
-## What a working day looks like
-
-### 08:40 — the first look
-
-The person on duty opens one screen. Fourteen of fifteen services healthy; the fifteenth
-names itself. Nine deployments, eight ready, one expiring in three hours. Spending on
-computing capacity by initiative, unchanged from yesterday. Helper runs overnight: eleven,
-ten succeeded, one failed and recovered in nineteen minutes.
-
-Every panel says when it was measured. Nothing is guessed at.
-
-This is the part that used to take forty minutes across six tools, and used to end with a
-private note of which numbers not to trust.
-
-### 09:15 — the worry list
-
-The Measures screen has two items.
-
-The first is amber: the issuing authority's validity window is getting short. The remedy is
-named, the reasoning is given, the severity is medium. It becomes a scheduled task for
-Thursday.
-
-The second is filed under "Needs a human". Two machines are reserved in two different ways
-and the reservation styles do not agree with each other. CORE states the observation and
-declines to choose, because choosing is a policy decision about how the estate is organised.
-It goes to the architecture discussion on Friday with the observation already written up.
-
-### 10:30 — a request from sales
-
-A prospect wants to see the product on Thursday with their own kind of data.
-
-The requester fills a form: the application, a customer name, the initiative the cost belongs
-to, an owner, and a life of two hours. Minutes later the request carries the address and the
-expiry time. It is the sample-data variant, so a connection can be created and worked with
-straight away.
-
-Nobody opened a ticket with the platform team. The cost is already attributed to the sales
-initiative and will appear in this month's figures under that heading. Two hours later it is
-gone, and the request closes itself.
-
-### 12:00 — a new connection
-
-The finance team wants their analytical warehouse connected.
-
-The catalogue states which settings that kind of system takes and which credential fields it
-expects, so the form is filled correctly the first time. The credential goes in once and is
-stored separately from the settings, encrypted.
-
-The person doing it is on the permitted list, so the change goes through. It is recorded
-against their name, with the time, the thing acted on, the outcome and the source. Three
-months from now, when somebody asks who connected finance, the answer takes ten seconds.
-
-### 14:20 — a change to the software
-
-A developer proposes a change. The reviewer reads it and posts what it found. One finding is
-serious, so the fixer opens a draft correction alongside it. The developer reads both,
-accepts one and argues with the other in a comment.
-
-Nothing went into the software on its own. A person made every decision. What the automation
-removed was the forty minutes of first-pass reading that had to happen before the decision
-could be made.
-
-### 16:45 — the question from legal
-
-Legal is preparing a response and needs to know every change to the claims-system connection
-in the last quarter, with names.
-
-It is a query. The answer includes two changes and one refused attempt, each with a person, a
-time and a reason. The refused attempt turns out to be the interesting one, and the
-conversation it starts is short, because everyone is looking at the same record.
-
-### 18:00 — nothing
-
-The demonstration deployment is gone. The review environment for the closed proposal is gone.
-The overnight schedules are set and the helpers that may publish have been armed by name.
-
-Nobody has to remember to turn anything off.
-
 ## What it is built on, and why that matters commercially
 
 Every property in this section is a description of how CORE is built. Each one has a
@@ -896,10 +816,9 @@ under whose account" without asking three people, CORE turns that into a screen.
 
 ### Who owns it, who sponsors it, and who signs it off
 
-Those four descriptions are of companies. What follows is about people, because a purchase of
-this kind involves three of them and they are almost never the same person. The commonest way
-a promising evaluation dies is that the case is made to one of the three in the language of
-another.
+Those four descriptions are of companies. A purchase of this kind involves three people who
+are almost never the same person, and the commonest way a promising evaluation dies is that
+the case is made to one of the three in the language of another.
 
 **The person who feels it** carries the estate in their head and is interrupted all day
 because of it. They can describe the problem better than anyone and are usually too busy to
@@ -919,7 +838,7 @@ a question they will personally be held to, which is why they ask it the way the
 | **An inherited estate** | The operations lead who cannot answer "what reaches this system" | The operations or technology director | Internal audit and the security lead |
 
 The third row carries the exception worth naming. In a company that sells software, the
-largest term in the method on page 19 is not engineering time. It is the length of a security
+largest term in the method on page 18 is not engineering time. It is the length of a security
 review and the deals that stall inside one. That term lands on the commercial lead's number,
 which frequently makes the commercial lead the real sponsor even though the purchase looks
 technical from the outside. An evaluation run entirely inside engineering will measure the
@@ -930,14 +849,14 @@ smaller half of the benefit and conclude, reasonably, that it is smaller.
 - **The operations lead** looks at the Measures screen and asks whether the remedies are the
   ones they would have written.
 - **The security lead** looks at the attribution rule, the permitted-changer list, the record
-  format, and where the model runs. The specific thing to do is on page 17: try to change a
+  format, and where the model runs. The specific thing to do is on page 16: try to change a
   connection as somebody not on the list, and read the record the refusal leaves.
 - **The finance lead** looks at computing capacity attributed by initiative and by team, and
   at the expiry rules that keep idle capacity from accumulating.
 - **The engineering lead** looks at the helper roster, the arming rule, and at how long it
   takes to have the whole thing running on a laptop.
 - **The commercial lead** looks at what running everything on your own machines does to the
-  length of a security review, and runs the fifth input of the method on page 19 before
+  length of a security review, and runs the fifth input of the method on page 18 before
   anybody else runs the other four.
 
 Each of those five can reach their own answer in an afternoon, on their own hardware, without
@@ -1087,41 +1006,29 @@ out whether CORE is right for you is a figure you can state in advance.
 
 ## What it is worth, computed on your own numbers
 
-This paper puts no return figure in front of you. It cannot: the figure
-depends on how many applications you run, how many people understand them, how
-often you are asked to prove something, and how long your last security review
-took. All four are yours and none of them is knowable from here.
+The figure depends on how many applications you run, how many people understand
+them, how often you are asked to prove something, and how long your last
+security review took. All four are yours. Here is the arithmetic instead, with
+each input named and each one read from something you already have.
 
-Abstaining is only half an answer, though, and it is the easy half. What
-follows is the arithmetic itself, with each input named and each one read from
-something you already have. There is no value anywhere in it. Run it on your
-own figures and you get a number you can show your working for — which is more
-than any figure printed in a vendor's document has ever been able to offer.
-
-### Be precise about what actually changes
-
-Most calculations of this kind quietly credit the software with things it does
-not do, and the resulting figure collapses under the first serious question.
+### What actually changes
 
 CORE does not make your applications better. It does not reduce the number of
 things you run or change what any of them does. What it changes is **how many
 times the same five things get built, watched and governed** — somewhere to
 run, an identity, a way to reach company data, a way to be watched, a way to be
 changed — and **how much of your specialists' week is spent on work only they
-can do.**
-
-Those two, plus one commercial effect that is larger than either and harder to
-see, are what the method below measures.
+can do.** Those two, plus one commercial effect larger than either, are what
+the method below measures.
 
 ### Five inputs, and where each is read
 
 **One — what foundations cost you per launch.** Take your last two things that
 shipped. For each, the elapsed calendar from the decision to build to the first
 customer seeing it, and inside that, the portion spent on sign-in, secrets,
-data connections, somewhere to run, and something watching it. Your engineering
-lead can usually produce this from memory to within a week, and the sprint
+data connections, somewhere to run, and something watching it. The sprint
 record will settle it. Then multiply by how many further applications your plan
-actually contains. That last multiplier is the one people forget, and it is
+actually contains — that last multiplier is the one people forget, and it is
 where most of the figure lives.
 
 **Two — the specialist tax.** For each person who is the only one who
@@ -1161,16 +1068,15 @@ your commercial lead can produce in an afternoon.
 | Add | **Assurance overhead removed** | Person-days on evidence per request × requests per year × loaded cost |
 | Add | **Capacity no longer running unwatched** | Idle environments × monthly cost each |
 | Add | **Pipeline effect** | Stalled or lost opportunities × value each × the share the data answer unblocks |
-| Subtract | **Cost side** | Seats × the published price on page 18 + the machines you already run |
+| Subtract | **Cost side** | Seats × the published price on page 17 + the machines you already run |
 
-Sum the five, subtract the sixth, divide the annual result by the monthly cost,
-and the quotient is a payback period in months. This paper does not state it,
-because every term in it is yours.
+Sum the five, subtract the sixth, and divide the annual result by the monthly
+cost. The quotient is a payback period in months, and every term in it is yours.
 
 The cost side is the one term you can price today without measuring anything:
-the per-seat price is published on page 18, and the machines are ones you
-already own. That is deliberate. A cost side that can only be discovered
-through a sales process is a cost side designed not to be compared.
+the per-seat price is published on page 17, and the machines are ones you
+already own. A cost side that can only be discovered through a sales process is
+a cost side designed not to be compared.
 
 ### Four ways the answer comes out wrong
 
@@ -1178,16 +1084,15 @@ through a sales process is a cost side designed not to be compared.
 second application would have reused the first one's sign-in regardless, that
 saving was already yours. Count only what genuinely gets rebuilt.
 
-**Treating returned specialist hours as cash.** They are not. They are capacity
-that moves to something else, and they are only worth something if there is a
-something else worth doing. If the answer is that the person would simply be
-less busy, say so and value it at nothing.
+**Treating returned specialist hours as cash.** They are capacity that moves to
+something else, and they are worth something only if there is a something else
+worth doing. If the person would simply be less busy, value it at nothing.
 
 **Assuming a security review shortens to nothing.** It does not. It shortens
 because one question — where does our information go — has a one-sentence
 answer instead of a negotiation. The rest of the questionnaire is unchanged.
-Use the measured share of review time that question actually consumed in your
-last three reviews.
+Use the share of review time that question actually consumed in your last three
+reviews.
 
 **Comparing across a period when something else changed.** A quarter that also
 carried a reorganisation, a platform migration or a new hire is not a clean
@@ -1198,12 +1103,8 @@ comparison. Choose a period in which this is the change.
 Four numbers, written down in the first week: the specialist tally, the
 person-days on your most recent evidence request, the current count of running
 environments with a last-used date against each, and the current median length
-of a security review.
-
-All four become unrecoverable once CORE is running, because the thing that
-would tell you is now the thing that changed. Ten minutes in week one is the
-difference between a defensible figure in month six and an argument nobody
-can settle.
+of a security review. All four become unrecoverable once CORE is running,
+because the thing that would tell you is now the thing that changed.
 
 ## Answers to the questions we are usually asked
 
@@ -1309,7 +1210,7 @@ sign-in arrangement and the list of addresses permitted to use it; and one polic
 who may change a data connection. The sponsor is usually whoever carries the consequence of
 the estate not being understood: in most companies the engineering or technology lead, and in
 companies that sell software, frequently the commercial lead, because the security-review term
-in the method on page 19 lands on their number rather than anybody else's.
+in the method on page 18 lands on their number rather than anybody else's.
 
 **Can a company without a large platform team run this?**
 Yes, and the operating model assumes it. One named owner plus the console is sufficient for

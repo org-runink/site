@@ -26,9 +26,26 @@
   cannot draw them, because goldmark.renderer.unsafe is false.
 */}}
 {{ define "main" }}
-{{ $accent := .Params.accent | default "#ea580c" }}
+{{/* THE ACCENT COMES FROM A CLASS, NOT AN INLINE PROPERTY.
+
+     This injected `style="--accent: <hex from front matter>"`. When the
+     stylesheets moved onto the token system they began reading --rk-accent, and
+     nothing read the injected value any more — so every industry page shipped a
+     dead attribute and rendered its accents in plain ink.
+
+     tokens.css binds --rk-accent from `.rk-cat-<name>`, and binds it TWICE:
+     once for the sheet, once under [data-ground='console']. That is the whole
+     reason this is a class. An inline custom property is one frozen value; a
+     class resolves to the right value for whichever ground the page is on.
+
+     A page with no `category` falls back to the site's single accent, still as
+     a token rather than a literal so it follows the ground too. safeCSS there
+     is required, not cosmetic: Go's contextual escaper filters style-attribute
+     values and rejects parentheses, so an unmarked var() is emitted as the
+     literal string ZgotmplZ and takes the whole accent chain with it. */}}
+{{ $cat := .Params.category }}
 {{ $section := .Site.GetPage "/industries" }}
-<div class="ind" style="--accent: {{ $accent }};">
+<div class="ind{{ with $cat }} rk-cat-{{ . }}{{ end }}"{{ if not $cat }} style="--rk-accent: {{ "var(--rk-signal)" | safeCSS }};"{{ end }}>
   {{ partial "industries-style.html" . }}
 
   <div class="ind-wrap">
@@ -265,8 +282,7 @@
         {{ range .Pages.ByWeight }}
         {{ if ne .RelPermalink $.RelPermalink }}
         <li>
-          <a class="ind-chip ind-accent" href="{{ .RelPermalink }}"
-             style="--accent: {{ .Params.accent | default "#ea580c" }};">{{ .Title }}</a>
+          <a class="ind-chip ind-accent{{ with .Params.category }} rk-cat-{{ . }}{{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
         {{ end }}
         {{ end }}

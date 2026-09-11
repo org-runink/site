@@ -7,14 +7,23 @@
     @apply scroll-smooth;
   }
   
-  /* Dark-mode-first limbic canvas (DESIGN.md): deep stone-950 background, soft
-     stone-300 body text; headings are bright white for max contrast. */
+  /* The marketing sheet is LIGHT. This said "dark-mode-first limbic canvas"
+     and cited DESIGN.md, but the site's own review of the customer-facing
+     material had already reached the opposite conclusion — the black canvas was
+     hard to read and painful to print, and these are pages that get printed and
+     carried into meetings. layouts/partials/home/style.html records that
+     finding, and the homepage had already gone near-white on its own, which is
+     how the site ended up with a light homepage sitting on a black body.
+
+     bg-canvas/text-ink-2 resolve through --rk-*, so this one rule follows the
+     ground: a subtree that sets data-ground="console" goes dark without
+     changing a class. The product cockpit stays dark; the sheet does not. */
   body {
-    @apply font-sans bg-stone-950 text-stone-300 antialiased;
+    @apply font-sans bg-canvas text-ink-2 antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold text-white;
+    @apply font-heading font-bold text-ink;
   }
 }
 
@@ -162,12 +171,16 @@
       animation-play-state: paused;
   }
 
+  /* The last two literal oranges on the site. They were invisible to the
+     class-level sweep because they live in @apply inside a component rule
+     rather than in any template, and the rendered audit is what found them:
+     `.aeo-direct-answer strong` measured 3.51:1 on the light sheet. */
   .aeo-direct-answer {
-      @apply my-6 p-6 border-l-4 border-[#ea580c] bg-stone-900 rounded-r-lg text-stone-200;
+      @apply my-6 p-6 border-l-4 border-signal bg-sunk rounded-r-lg text-ink-2;
   }
 
   .aeo-direct-answer strong {
-      @apply text-[#ea580c] font-bold block mb-2 text-lg;
+      @apply text-signal font-bold block mb-2 text-lg;
   }
 }
 

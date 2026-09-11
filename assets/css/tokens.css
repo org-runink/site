@@ -46,6 +46,28 @@
    once.
 --------------------------------------------------------------------------- */
 
+/* Figtree — the reading and display face, matching Runink FACE.
+
+   TWO VARIABLE FILES, AND THE WEIGHT RANGE IS LOAD-BEARING. Figtree's default
+   instance is Light (300). A `font-weight: 400` declaration here would pin every
+   weight in the system to Light — headings included — and it would not look
+   broken, it would look thin. The `300 900` range is what makes font-black
+   actually black. Do not "tidy" it to a single value. */
+@font-face {
+  font-family: 'Figtree Rk';
+  src: url('../fonts/Figtree-var.woff2') format('woff2-variations');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Figtree Rk';
+  src: url('../fonts/Figtree-Italic-var.woff2') format('woff2-variations');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Fira Sans Rk';
   src: url('../fonts/FiraSans-Book.woff2') format('woff2');
@@ -108,33 +130,119 @@
 --------------------------------------------------------------------------- */
 
 :root {
-  /* -- neutral: a blue-black document ink, hue ~205, low chroma -------------
-     Chosen over the previous indigo (#1b2456, bottom of a violet-leaning
-     ramp) because this material is printed and photocopied. Blue-black is
-     what a document is written in; it separates from black on screen and
-     survives a mono laser printer, which indigo does not. --------------- */
-  --rk-n-000: #FFFFFF;
-  --rk-n-050: #F2F5F7;
-  --rk-n-100: #E6ECEF;
-  --rk-n-200: #D2DADF;
-  --rk-n-300: #B6C2CA;
-  --rk-n-400: #8C9BA6;
-  --rk-n-450: #76838B;
-  --rk-n-500: #647680;
-  --rk-n-600: #546570;
-  --rk-n-700: #3A4A55;
-  --rk-n-750: #2C3B46;
-  --rk-n-800: #18242D;
-  --rk-n-900: #101A22;
-  --rk-n-950: #0A1015;
+  /* -- neutral: FACE's warm ramp ------------------------------------------
+     RE-VALUED 2026-09-10, from a blue-black document ink to Runink FACE's own
+     warm ramp, because FACE's palette is now the company-wide one and the site
+     was the last thing still on a different set of values. DESIGN.md §8 and
+     §11 already called this "the next pass"; this is it.
+
+     Six of these fourteen rungs ARE FACE's, verbatim: 000/050/100/200 are its
+     four sheet surfaces and 950 is its console canvas. The rest are derived,
+     and not by eye — each constrained rung was SOLVED for the luminance its
+     floor demands and then placed on FACE's own hue:
+
+       450  rule-strong  >= 3.0:1 on the sheet ground   (measures 3.11)
+       600  text-3       >= 4.5:1                        (measures 4.70)
+       700  text-2       >= 7.0:1                        (measures 7.29)
+       900  text        >= 12.0:1                        (measures 12.54)
+
+     The unconstrained rungs interpolate between their solved neighbours in
+     OKLab rather than sRGB — sRGB drifts the hue through the mid-tones and
+     gives you a ramp with warm ends and a grey middle. Chroma tapers toward
+     both ends, which is what stops the lightest rungs reading as beige.
+
+     The ramp is monotone by construction and was verified so; if it were not,
+     "one step darker" would stop meaning anything. Re-run the generator and
+     the contrast table before changing any value here — the four solved rungs
+     have no slack, and two of them failed on the first attempt. --------- */
+  --rk-n-000: #FFFDFA;   /* FACE sheet surface   */
+  --rk-n-050: #FBF7F1;   /* FACE sheet canvas    */
+  --rk-n-100: #F6EFE4;   /* FACE sheet raised    */
+  --rk-n-200: #EDE2D3;   /* FACE sheet well      */
+  --rk-n-300: #C2BBB0;
+  --rk-n-400: #ABA397;   /* solved: 4.64:1 on console --rk-sheet (n-800) */
+  --rk-n-450: #90877B;   /* solved: 3.10:1 on sheet --rk-sunk (n-100) */
+  --rk-n-500: #8C8376;   /* solved: 3.10:1 on console --rk-sheet (n-800) */
+  --rk-n-600: #746A5E;   /* solved: 4.64:1 on sheet --rk-sunk (n-100) */
+  --rk-n-700: #5A5145;   /* solved: 7.29:1 on 050 */
+  --rk-n-750: #4B4338;
+  --rk-n-800: #3F382D;
+  --rk-n-900: #352E25;   /* solved: 12.54:1 on 050 */
+  --rk-n-950: #1A1614;   /* FACE console canvas  */
+
+  /* -- the same ramp as channel triplets -----------------------------------
+     WHY THIS EXISTS, and why it is not redundant. Tailwind's alpha modifier
+     (`bg-sheet/50`) works by substituting an <alpha-value> placeholder into
+     the colour value. A bare `var(--rk-sheet)` has nowhere to put it, so
+     Tailwind DROPS THE DECLARATION — no error, no warning, the class simply
+     compiles to nothing. This repo has 252 alpha-modified colour utilities
+     (`border-stone-800/50` alone appears 77 times), so binding the Tailwind
+     palette to the hex tokens above would silently delete a quarter of the
+     borders on the site and leave a build that still looks plausible.
+
+     So the palette binds to these instead, as `rgb(var(--rk-x-ch) / <alpha-value>)`.
+     Channels cannot carry their own alpha, which is exactly why they compose.
+
+     These MUST stay in lockstep with the hex rungs above — a drifted channel
+     is a colour that is almost right, which is harder to see than one that is
+     wrong. scripts/check-token-channels.mjs asserts every rung matches and
+     that each ground block binds the same rung in both forms; it runs in CI. */
+  --rk-n-000-ch: 255 253 250;
+  --rk-n-050-ch: 251 247 241;
+  --rk-n-100-ch: 246 239 228;
+  --rk-n-200-ch: 237 226 211;
+  --rk-n-300-ch: 194 187 176;
+  --rk-n-400-ch: 171 163 151;
+  --rk-n-450-ch: 144 135 123;
+  --rk-n-500-ch: 140 131 118;
+  --rk-n-600-ch: 116 106  94;
+  --rk-n-700-ch:  90  81  69;
+  --rk-n-750-ch:  75  67  56;
+  --rk-n-800-ch:  63  56  45;
+  --rk-n-900-ch:  53  46  37;
+  --rk-n-950-ch:  26  22  20;
 
   /* -- signal: one orange, two bindings ------------------------------------
      Runink's orange, held at a value that measures. The published
      brand_accents.dark_orange #ca4708 is 4.76:1 on white but only 4.22:1 on
      the whitepaper's own paper (#F5F1E8) and on primary.50 (#eef1fc) — under
-     AA on the two grounds it most often sat on. These two replace it. */
-  --rk-signal-ink:  #A8400A; /* on light: 6.17 / 5.64 / 5.18 across the sheet grounds */
-  --rk-signal-lift: #F2801F; /* on dark:  6.61 / 5.93 / 7.18 across the console grounds */
+     AA on the two grounds it most often sat on.
+
+     RE-VALUED 2026-09-10 onto FACE's technicalOrangeLight, the token FACE
+     already uses for exactly this job: the accent that may carry text. The
+     previous pair (#A8400A / #F2801F) measured fine and was NOT wrong — it was
+     simply a second orange. Two oranges four degrees apart, each correct on its
+     own terms, is how a company ends up unable to say what its colour is.
+
+     These are inks, not fills. FACE's technicalOrange (#C4693B sheet /
+     #D9764E console) is the FILL for a button or a band; putting text on it
+     needs onAccent (#1A1614), which is near-black in BOTH registers and is the
+     one token in FACE that deliberately does not flip. ------------------- */
+  --rk-signal-ink:  #8B4024; /* FACE technicalOrangeLight, sheet:   6.89:1 on --rk-n-050 */
+  --rk-signal-lift: #E89B75; /* FACE technicalOrangeLight, console: 8.02:1 on --rk-n-950 */
+  --rk-signal-fill-sheet:   #C4693B; /* FACE technicalOrange, sheet   — fill only */
+  --rk-signal-fill-console: #D9764E; /* FACE technicalOrange, console — fill only */
+  --rk-on-signal-fill:      #1A1614; /* FACE onAccent — near-black in both registers */
+
+  /* The hover fill goes LIGHTER, which is counter-intuitive on a light page and
+     is not a style choice -- it is forced by the ink. onAccent (#1A1614) is the
+     one token FACE does not flip, so it has to stay legible on whatever the
+     button becomes. Measured against it:
+
+         #C4693B  base, sheet      4.65:1     #D9764E  hover, sheet    5.69:1
+         #D9764E  base, console    5.69:1     #E89B75  hover, console  8.02:1
+         #9E4A2A  the darker one   2.97:1  <- fails
+
+     Darkening the fill on hover is the obvious move and it takes the ink below
+     AA, so the button becomes harder to read exactly when the pointer is on it.
+     Lifting keeps every state above 4.5:1. No new values are introduced here:
+     each ground's hover fill is the other ground's base fill. */
+
+  --rk-signal-ink-ch:  139  64  36;
+  --rk-signal-lift-ch: 232 155 117;
+  --rk-signal-fill-sheet-ch:   196 105  59;
+  --rk-signal-fill-console-ch: 217 118  78;
+  --rk-on-signal-fill-ch:       26  22  20;
 
   /* -- category: five industries, two bindings each -------------------------
      Each measures AA or better on all three grounds of its mode, so the raw
@@ -164,8 +272,28 @@
      SaaS hero; Sans Book is the reading face because it was drawn for
      legibility at small sizes on poor screens; Code is the utility face
      because standing marks and figures need a fixed advance. */
-  --rk-font-display: 'Fira Cond Rk', 'Fira Sans Rk', ui-sans-serif, system-ui, sans-serif;
-  --rk-font-body:    'Fira Sans Rk', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* RE-VALUED 2026-09-10 to Figtree, the face Runink FACE bundles and ships.
+     The site was on Inter + Plus Jakarta Sans from Google Fonts, which was
+     neither this file's Fira nor the product's Figtree — a third typeface, on
+     the pages customers actually read, fetched from a third party.
+
+     WHAT THIS COSTS, stated because it is a real loss and not a free swap.
+     Figtree has no condensed axis. DESIGN.md §3 made Fira Sans Condensed the
+     display face deliberately — "the density of a title block on a technical
+     drawing rather than the roundness of a SaaS hero" — and §9's lockup
+     specifies it. That silhouette is gone from the marketing pages.
+
+     The whitepapers keep Fira. layouts/whitepapers/baseof.html publishes its
+     own six faces and is untouched here: it is a document register where the
+     condensed display face is doing structural work, and switching it is a
+     separate decision from making the marketing site match the product. That
+     does leave two typefaces in the building, which is the thing this change
+     was meant to reduce — flagged rather than hidden.
+
+     Mono stays Fira Code: Figtree has no monospace, and standing marks and
+     figures need a fixed advance (§3, §7). ---------------------------- */
+  --rk-font-display: 'Figtree Rk', ui-sans-serif, system-ui, sans-serif;
+  --rk-font-body:    'Figtree Rk', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --rk-font-util:    'Fira Code Rk', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* -- size ----------------------------------------------------------------
@@ -278,16 +406,48 @@
   --rk-sunk:   var(--rk-n-100);      /* a recessed surface: a plate under art */
 
   --rk-rule:        var(--rk-n-200); /* hairline. Separation, not a boundary. */
+  --rk-rule-mid:    var(--rk-n-300); /* the middle tier. Exists because without
+                                        it a hover that lifts a border one step
+                                        lands on the same token and the state
+                                        becomes invisible -- which is how this
+                                        file shipped .card:hover painting the
+                                        identical colour as .card. */
   --rk-rule-strong: var(--rk-n-450); /* a boundary you could tab to. >= 3:1 on
                                         all three grounds. */
 
   --rk-text:   var(--rk-n-900);      /* headings, primary text */
+  --rk-text-1: var(--rk-n-800);      /* strong body. Added because the site uses
+                                        FIVE levels of text emphasis (white, and
+                                        stone 200/300/400/500) and three tokens
+                                        cannot hold five without two of them
+                                        becoming the same colour -- which turns
+                                        `text-stone-300 hover:text-white` into a
+                                        hover that does nothing. */
   --rk-text-2: var(--rk-n-700);      /* body */
   --rk-text-3: var(--rk-n-600);      /* labels, captions, secondary */
   --rk-text-on-signal: var(--rk-n-000);
 
   --rk-signal: var(--rk-signal-ink);
   --rk-signal-wash: color-mix(in srgb, var(--rk-signal-ink) 8%, var(--rk-n-000));
+
+  /* The channel form of everything above, same rung for same rung. The
+     Tailwind palette reads these; check-token-channels.mjs asserts the pairing. */
+  --rk-ground-ch: var(--rk-n-050-ch);
+  --rk-sheet-ch:  var(--rk-n-000-ch);
+  --rk-sunk-ch:   var(--rk-n-100-ch);
+  --rk-rule-ch:        var(--rk-n-200-ch);
+  --rk-rule-mid-ch:    var(--rk-n-300-ch);
+  --rk-rule-strong-ch: var(--rk-n-450-ch);
+  --rk-text-ch:   var(--rk-n-900-ch);
+  --rk-text-1-ch: var(--rk-n-800-ch);
+  --rk-text-2-ch: var(--rk-n-700-ch);
+  --rk-text-3-ch: var(--rk-n-600-ch);
+  --rk-text-on-signal-ch: var(--rk-n-000-ch);
+  --rk-signal-ch: var(--rk-signal-ink-ch);
+  --rk-signal-fill:       var(--rk-signal-fill-sheet);
+  --rk-signal-fill-hover: var(--rk-signal-fill-console);
+  --rk-signal-fill-ch: var(--rk-signal-fill-sheet-ch);
+  --rk-signal-fill-hover-ch: var(--rk-signal-fill-console-ch);
 
   /* A page with no category has no category colour. Set --rk-accent from the
      page's own front matter; everything below re-derives from it. */
@@ -306,18 +466,50 @@
   --rk-sunk:   var(--rk-n-950);
 
   --rk-rule:        var(--rk-n-750);
+  --rk-rule-mid:    var(--rk-n-700);
   --rk-rule-strong: var(--rk-n-500);
 
   --rk-text:   var(--rk-n-050);
+  --rk-text-1: var(--rk-n-200);
   --rk-text-2: var(--rk-n-300);
   --rk-text-3: var(--rk-n-400);
   --rk-text-on-signal: var(--rk-n-950);
 
   --rk-signal: var(--rk-signal-lift);
-  --rk-signal-wash: color-mix(in srgb, var(--rk-signal-lift) 14%, var(--rk-n-900));
+  /* 8%, not 14%. The console wash mixes a LIGHT orange into a dark ground, so
+     a bigger percentage lifts the surface toward the inks rather than away from
+     them: at 14% `text-3` measured 4.14:1 on it and `rule-strong` 2.76:1, both
+     under their floors, on the featured pricing card and the eyebrow chips.
+     8% is also what the sheet wash uses, and it lands both grounds on the same
+     ratios (4.62:1 and 3.09:1) — one number, symmetric behaviour. */
+  --rk-signal-wash: color-mix(in srgb, var(--rk-signal-lift) 8%, var(--rk-n-900));
+
+  --rk-ground-ch: var(--rk-n-900-ch);
+  --rk-sheet-ch:  var(--rk-n-800-ch);
+  --rk-sunk-ch:   var(--rk-n-950-ch);
+  --rk-rule-ch:        var(--rk-n-750-ch);
+  --rk-rule-mid-ch:    var(--rk-n-700-ch);
+  --rk-rule-strong-ch: var(--rk-n-500-ch);
+  --rk-text-ch:   var(--rk-n-050-ch);
+  --rk-text-1-ch: var(--rk-n-200-ch);
+  --rk-text-2-ch: var(--rk-n-300-ch);
+  --rk-text-3-ch: var(--rk-n-400-ch);
+  --rk-text-on-signal-ch: var(--rk-n-950-ch);
+  --rk-signal-ch: var(--rk-signal-lift-ch);
+  --rk-signal-fill:       var(--rk-signal-fill-console);
+  --rk-signal-fill-hover: var(--rk-signal-lift);
+  --rk-signal-fill-ch: var(--rk-signal-fill-console-ch);
+  --rk-signal-fill-hover-ch: var(--rk-signal-lift-ch);
 
   --rk-accent: var(--rk-text);
-  --rk-accent-wash: color-mix(in srgb, var(--rk-accent) 16%, var(--rk-sheet));
+  /* Mixed into --rk-sunk, not --rk-sheet. On the dark ground the category
+     accents are LIGHT, so tinting a mid-dark surface with them pulls the
+     surface toward the ink: over --rk-sheet the accent measured 3.25-3.96:1 on
+     its own wash for all five categories, and no percentage fixed it — at 5%
+     insurance still only reached 3.80:1. Over --rk-sunk every category clears
+     4.96:1 at the full 16%. It is also the right shape: on a dark page a tinted
+     panel is recessed, not raised. */
+  --rk-accent-wash: color-mix(in srgb, var(--rk-accent) 16%, var(--rk-sunk));
   --rk-accent-edge: var(--rk-accent);
 
   --rk-focus: var(--rk-signal);
@@ -496,13 +688,35 @@
     --rk-sheet: #FFFFFF;
     --rk-sunk: #FFFFFF;
     --rk-rule: #9A9A9A;
+    --rk-rule-mid: #6A6A6A;
     --rk-rule-strong: #000000;
     --rk-text: #000000;
+    --rk-text-1: #0F0F0F;
     --rk-text-2: #1F1F1F;
     --rk-text-3: #3A3A3A;
     --rk-text-on-signal: #FFFFFF;
     --rk-signal: #000000;
     --rk-signal-wash: #FFFFFF;
+
+    /* The channel form collapses too, or every alpha-modified utility on the
+       page keeps its screen colour and prints a grey wash over the ink. */
+    --rk-ground-ch: 255 255 255;
+    --rk-sheet-ch:  255 255 255;
+    --rk-sunk-ch:   255 255 255;
+    --rk-rule-ch:        154 154 154;
+    --rk-rule-mid-ch:    106 106 106;
+    --rk-rule-strong-ch:   0   0   0;
+    --rk-text-ch:     0   0   0;
+    --rk-text-1-ch:  15  15  15;
+    --rk-text-2-ch:  31  31  31;
+    --rk-text-3-ch:  58  58  58;
+    --rk-text-on-signal-ch: 255 255 255;
+    --rk-signal-ch:      0   0   0;
+    --rk-signal-fill: #FFFFFF;
+    --rk-signal-fill-hover: #FFFFFF;
+    --rk-signal-fill-ch: 255 255 255;
+    --rk-signal-fill-hover-ch: 255 255 255;
+
     --rk-accent: #000000;
     --rk-accent-wash: #FFFFFF;
     --rk-accent-edge: #000000;
@@ -512,39 +726,40 @@
     --rk-r-4: 0;
   }
 
-  /* The category classes set --rk-accent on a DESCENDANT, so the block above
-     — which binds it on the ground element — never reaches them, and a page
-     printed from the console would put its light category accents on white
-     paper at around 2.4:1. They have to be re-bound where they are set. */
-     The category classes set --rk-accent on a DESCENDANT of the ground, so
-     the block above never reaches them: a page printed from the console would
-     put its light category accents on white paper at about 2.4:1.
+  /* THIS BLOCK WAS DEAD UNTIL 2026-09-10, and the comment above it claimed
+     "Verified on paper, not assumed."
 
-     Overriding --rk-accent again here does not fix it. `.rk-cat-marketing`
-     is bound by `[data-ground='console'] .rk-cat-marketing`, and trying to
-     outrank that turns into a specificity contest that is fragile and, in
-     practice, does not hold.
+     Three drafts of this note had been merged without deleting the delimiters
+     between them: the first comment closed, and the next ~28 lines of prose sat
+     OUTSIDE any comment, with two more stray close-delimiters among them. CSS error recovery
+     does not discard that — it treats the prose as a selector prelude and keeps
+     consuming until the next `{`, which is the `:root:root` below. So the whole
+     print blackout was parsed as declarations of a garbage selector that
+     matches nothing, and every category accent and the signal printed in colour
+     at roughly 2.4:1 on paper. No error, no warning, and a build that looked
+     fine. scripts/check-token-syntax.mjs now fails on an unbalanced comment.
 
-     So the override happens one level down instead. `.rk-cat-*` sets
-     --rk-accent to var(--rk-cat-*-lift), and a var() is resolved where it is
-     USED, against whatever the element has inherited. Blacking out the
-     PRIMITIVES on :root therefore turns every binding black without competing
-     with any of them. Same for signal.
+     WHAT THE BLOCK IS FOR. The category classes set --rk-accent on a DESCENDANT
+     of the ground element, so the @media print block above — which binds tokens
+     on the ground itself — never reaches them.
 
-     This deliberately does not touch the literal hex values on the specimen's
-     swatch chips: there, the colour is the subject of the page, not its
-     livery, so it should still print in colour. */
-     Written as `:root:root` with !important, which looks like overkill and is
-     not. A plain `:root` here — later in the file, same specificity, inside
-     the media query — does NOT reliably win: built both minified and not, the
-     industry worksheet's accent segment still came out olive on paper. The
-     doubled selector raises specificity to (0,2,0) so it cannot lose to any
-     `:root` rule, and gives the declaration distinct selector text so no
-     minifier can fold it into the global `:root` block. There is exactly one
-     correct value for these on paper, so the declaration says so.
+     Overriding --rk-accent again here does not fix it either: `.rk-cat-marketing`
+     is bound by `[data-ground='console'] .rk-cat-marketing`, and out-ranking
+     that is a specificity contest that does not reliably hold.
 
-     Verified on paper, not assumed: with this in place the worksheet's accent
-     segment, the approval seam and the console band all come out black. */
+     So the override happens one level down. `.rk-cat-*` sets --rk-accent to
+     var(--rk-cat-*-lift), and a var() resolves where it is USED, against what
+     the element inherited. Blacking out the PRIMITIVES on :root therefore turns
+     every binding black without competing with any of them. Same for signal.
+
+     `:root:root` rather than `:root` is deliberate: it raises specificity to
+     (0,2,0) so it cannot lose to a plain `:root` rule, and gives the declaration
+     distinct selector text so a minifier cannot fold it into the global :root
+     block.
+
+     This deliberately does not touch the literal hex swatches on the /design/
+     specimen: there the colour is the subject of the page, not its livery, so
+     it should still print in colour. */
   :root:root {
     --rk-signal-ink: #000000 !important;
     --rk-signal-lift: #000000 !important;

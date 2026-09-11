@@ -43,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Então a caixa espera. Espera numa gaiola na doca com o resto das devoluções da semana, e a gaiola é separada quando sobra uma tarde. Nesse meio-tempo o cliente espera o reembolso, e o item vai ficando mais velho e valendo menos, em silêncio.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#14b8a6] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Cada semana que uma devolução espera, ela vale menos do que valia.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -68,8 +68,8 @@ author: "Runink"
                 A chamada de triagem, por si só, não envia nada. Ela devolve uma destinação e para: nenhum registro de estoque é escrito, nenhum crédito é emitido, nenhuma aprovação é guardada. Agir sobre uma ação redigida é outra parte do FACE, e lá a decisão fica registrada no nome de uma pessoa antes de qualquer coisa rodar; e onde uma etapa atrás disso ainda não tem implementação, sendo a gravação em um ERP o exemplo honesto, a resposta nomeia a etapa que não aconteceu, em vez de dar a movimentação por concluída.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(20,184,166,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#14b8a6] to-[#0f766e] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que qualquer coisa muda.
              </p>
@@ -84,7 +84,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#14b8a6] to-[#0f766e] rounded-xl border border-[#14b8a6]/30 hover:shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:-translate-y-1">
+        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Agende uma conversa
         </a>
     </div>

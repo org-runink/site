@@ -6,7 +6,7 @@ subtitle: "Prescriptive Unified Lead & Social Engine"
 description: "A whitepaper for executives, marketing leaders and the people who sign off on where company data goes. One application your own team operates, on hardware you control."
 weight: 30
 date: 2026-09-03T00:00:00Z
-source_pages: 25
+source_pages: 23
 audience: "Executives, marketing leaders, and the people who sign off on where company data goes"
 blurb: "One application a marketing team operates directly. It audits your website and social presence, researches your market, prospects the public web for leads, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft with a status and an approve against it, on channels that stay disarmed until you arm them."
 deck: |
@@ -27,17 +27,15 @@ register:
   - { page: 10, title: "Create: one brief, every channel" }
   - { page: 11, title: "Retain: keeping what you fought to win" }
   - { page: 12, title: "The console, screen by screen" }
-  - { page: 13, title: "What a working month looks like — weeks one and two", mark: "hypothetical" }
-  - { page: 14, title: "What a working month looks like — weeks three and four", mark: "hypothetical" }
-  - { page: 15, title: "What it is built on, and why that matters commercially" }
-  - { page: 16, title: "Runink runs its own marketing on PULSE", mark: "first-party" }
-  - { page: 17, title: "Who owns it, who sponsors it, and who signs it off" }
-  - { page: 18, title: "Who PULSE is for" }
-  - { page: 19, page_end: 20, title: "The questions a buyer asks" }
-  - { page: 21, title: "What adopting PULSE involves" }
-  - { page: 22, title: "Commercial model" }
-  - { page: 23, page_end: 24, title: "What it is worth, computed on your own numbers", mark: "not-measured" }
-  - { page: 25, title: "The next step" }
+  - { page: 13, title: "What it is built on, and why that matters commercially" }
+  - { page: 14, title: "Runink runs its own marketing on PULSE" }
+  - { page: 15, title: "Who owns it, who sponsors it, and who signs it off" }
+  - { page: 16, title: "Who PULSE is for" }
+  - { page: 17, page_end: 18, title: "The questions a buyer asks" }
+  - { page: 19, title: "What adopting PULSE involves" }
+  - { page: 20, title: "Commercial model" }
+  - { page: 21, page_end: 22, title: "What it is worth, computed on your own numbers" }
+  - { page: 23, title: "The next step" }
 ---
 
 ## Summary
@@ -59,9 +57,11 @@ from you — what marketers call the funnel. It maps customer journeys, runs str
 
 Two properties separate it from the alternatives.
 
-The first is that nothing publishes without a person approving it. Every draft — a post, a
-cold email, a whitepaper, a call script — is staged for review with an explicit approve or
-reject. The system proposes; a named person decides.
+The first is that every publishing channel is disarmed until you arm it. Every draft — a post,
+a cold email, a whitepaper, a call script — is staged with an explicit status and an approve
+and a reject against it, and a channel that has not been armed publishes nothing whatever
+status a piece carries. Page 18 says exactly where the line between those two controls falls,
+including the part most vendors leave out.
 
 The second is where the work happens. The reasoning that does the writing and the analysis
 runs on hardware you control, on your own premises or on your own group of machines. Your
@@ -102,19 +102,17 @@ customer records, your positioning history or your pipeline writes from your web
 their own experience of your sector. That produces competent, forgettable copy. It is not
 their fault. They were never given the material that would make it specific.
 
-**And the effort does not compound.** Every campaign starts from a blank page because
-nothing that was learned in the last one was written down anywhere the next one could read
-it.
+**And the effort does not compound.** Every campaign starts from a blank page, because nothing
+learned in the last one was written down where the next one could read it.
 
 ## What the fragmentation actually costs
 
 The cost shows up in four places.
 
-**The time it takes.** The gap between deciding to say something and having it published is
-the single most expensive number in a marketing function. It determines whether you can react
-to a competitor's announcement, a regulatory change, or a seasonal spike. When that gap is
-three weeks, you are not running a marketing function; you are running a publishing
-schedule set in advance and defended against reality.
+**The time it takes.** The gap between deciding to say something and having it published
+decides whether you can react to a competitor's announcement, a regulatory change or a
+seasonal spike at all. At three weeks, the schedule is set in advance and held to whatever the
+market then does.
 
 **Coverage.** A company that can produce one piece of material a week produces roughly fifty
 a year. Spread across a website, a blog, four social channels, an email list and the library
@@ -201,7 +199,7 @@ control that actually decides whether anything leaves is separate and blunter: *
 publishing channel is disarmed unless it has been explicitly armed**, by a global switch
 narrowed by a per-channel one, with the resolved answer for each channel printed when the
 application starts. A channel that is off cannot publish, whatever status a piece carries.
-Page 20 says exactly where that line falls, including the part most vendors would leave out.
+Page 18 says exactly where that line falls, including the part most vendors would leave out.
 
 **You watch the work happen.** Research and copy stream into the screen as they are
 produced, rather than appearing as a wall of text after a wait. If a direction is wrong,
@@ -418,78 +416,6 @@ a meeting room with a poor connection keeps working.
 The interface is available in English, Spanish, French and Portuguese, with a language
 picker in Settings.
 
-## What a working month looks like — weeks one and two
-
-The following is the shape of a normal month once PULSE is in place. It assumes one
-marketing lead and one part-time contributor.
-
-**Week one, Monday morning: the read.** The lead opens Site Audit and runs the company
-website. The result comes back on one page: the nine scores, the business diagnosis, and
-market research for the sector. Three of them are strong, two are weak.
-The ranked recommendations name specific pages and specific fixes. Several are applied from
-the audit screen in the same sitting.
-
-**Week one, Monday afternoon: the plan.** With the diagnosis in hand, Content Strategy
-produces the channel plan and the strategy planner produces a dated 30-day schedule: which
-pieces publish, on which channel, in which week. The lead edits it — moves two items, cuts
-one, adds a webinar — and the month has a shape by the end of the day.
-
-**Week one, Tuesday and Wednesday: the anchor piece.** The month's anchor is a whitepaper
-on the subject Content Gaps identified as the largest unaddressed question in the market.
-The brief goes into Studio. The document streams into the screen. The lead reads it as it
-is written, redirects the second section, and has a full draft to review by the end of
-Tuesday. Wednesday is editing — a person's judgement applied to a complete draft rather
-than a person's week spent producing one.
-
-**Week one, Thursday: one document becomes many.** The approved whitepaper becomes the source
-for the rest of the month's material aimed at people who are new to you: a set of LinkedIn
-posts, two short videos, an infographic, a podcast episode and an email sequence. All of them
-carry the same argument because all of them came from the same source. Each lands in the
-Approval queue.
-
-**Week one, Friday: review and schedule.** The lead works the Approval queue. Some pieces
-go through, some come back. Approved material is scheduled through Publishing, spread
-across the month.
-
-**Week two: prospecting.** The lead describes the target niche and PULSE returns matching
-companies from the public web, each with a drafted email, call script and direct message
-drawn from that company's own situation. The lead reviews the drafts, discards the ones
-that miss, approves the rest, and the leads land in the pipeline board and synchronise to
-HubSpot. Sales starts calling. The part-time contributor spends two afternoons on
-partnership outreach drafted from the competitor and guest-opportunity research.
-
-## What a working month looks like — weeks three and four
-
-**Week three: publishing runs itself, attention goes to relationships.** The scheduled
-material publishes on the calendar set in week one. The lead's time goes to Follow-up
-instead. The 30-day cycle planner shows which accounts are due a check-in. Two accounts
-have a falling evolution score. Customer 360 shows what each of those accounts has actually
-engaged with, and the journey map suggests the next touch. Both get a specific,
-non-generic contact rather than a "just checking in" email.
-
-**Week three, midweek: the market moves.** A competitor announces something. Market
-research surfaces it the same day. The lead briefs a response post that afternoon, reviews
-it, approves it, and it publishes the following morning. The elapsed time from the
-competitor's announcement to a published response is under twenty-four hours. Under the
-previous arrangement it was a brief to an agency and a three-week wait — which usually
-meant it was not written at all.
-
-**Week four: reading the numbers.** Metrics shows impressions, clicks and conversions by
-channel with a written reading of what changed. Impact Analytics shows which pieces did the
-work. The forward view from the Analytics data flags a seasonal peak six weeks out, which
-means the material for it gets briefed in the coming cycle rather than being assembled
-during the peak itself.
-
-**Week four, Friday: the next cycle.** Content Gaps is re-run against the current
-competitive picture. The next anchor subject is chosen from it. The 30-day plan for the
-following month is produced, edited, and agreed. The cycle closes.
-
-**What changed.** The count of pieces produced went up substantially, because production
-stopped being the constraint. The lead's time moved from producing material to deciding
-about it. The response time to a market event dropped from weeks to a day. And every
-judgement made along the way — the rejections, the feedback on research results, the edits
-— stayed in the system rather than leaving with whoever made it.
-
 ## What it is built on, and why that matters commercially
 
 PULSE is built to run on machines you own rather than on somebody else's. That has five
@@ -531,15 +457,17 @@ layer as the request passes through. What the specialists are allowed to be aske
 against fixed written rules — the same input always gets the same answer, and each specialist
 has its own set — and those rules are mapped to the OWASP Top 10 for large language model
 applications, the published industry list of the ten commonest ways systems of this kind are
-attacked. And anything with consequences waits for a person: the system drafts, and a named
-person approves, before anything is sent or published.
+attacked. And no channel carries anything out of the building until somebody arms it: drafts
+wait in a review queue with a status against them, and a channel nobody has armed sends
+nothing, whatever status a draft carries.
 
 ## Runink runs its own marketing on PULSE
 
-The most direct evidence available for a marketing product is whether its vendor uses it.
+The most direct evidence available for a marketing product is whether its vendor uses it. What
+follows is our own use of PULSE, offered as that rather than as a customer's result.
 
 Runink's own public presence runs on PULSE. PULSE owns the store of files behind
-www.runink.org — the marketing pages, the blog and the path a visitor takes to leave their
+runink.org — the marketing pages, the blog and the path a visitor takes to leave their
 details — and the content work that feeds it. The site and search audits, the content
 production, and the social and lead-generation work for that presence are performed by
 PULSE's own specialists, on Runink's own hardware.
@@ -548,18 +476,12 @@ The observable state of that presence: 55 published long-form articles, alongsid
 pricing, use-case and company pages, with material published in English, Spanish and
 French.
 
-This matters for two reasons beyond the obvious one.
+Two things follow. The nine audit measures are not an abstract framework — they are the scores
+Runink watches on its own pages. And the multilingual publishing path is exercised rather than
+claimed: producing the same argument for three language markets is a specific, awkward piece of
+work, and that presence is it being done.
 
-First, it means the audit measures are the ones being applied to a site whose owner cares
-about the result. The nine scores are not an abstract framework; they are the
-scores Runink watches on its own pages.
-
-Second, it means the multilingual publishing path is exercised rather than claimed.
-Producing the same argument for three language markets is a specific, awkward piece of
-work, and the presence demonstrates it being done.
-
-This is a first-party reference. It is not a customer case study and it is not offered as
-one. What it establishes is that the product is used for the work it is sold for, by people
+What this establishes is that the product is used for the work it is sold for, by the people
 who have to live with the result.
 
 ## Who owns it, who sponsors it, and who signs it off
@@ -599,7 +521,7 @@ response time to a competitor's announcement drops from three weeks to a day, an
 what that is worth" is the same fact in the sponsor's language.
 
 And in three of the six rows **the person who signs it off is asking about data**, not about
-marketing. That conversation has one answer, it is on page 6 and page 15, and it is worth
+marketing. That conversation has one answer, it is on page 6 and page 13, and it is worth
 having early. Bringing a security lead in at the end converts a short conversation into a
 long one held under deadline pressure.
 
@@ -808,21 +730,21 @@ useful comes out.
 
 ### Can a small marketing team run this without technical help?
 
-Yes, and the core case on page 18 assumes exactly that: one to five people in marketing.
+Yes, and the core case on page 16 assumes exactly that: one to five people in marketing.
 
 The operator is a marketing person, not an engineer. Connections are configured in the
 console. Briefs are written in ordinary language. The roster of specialists the assistant
 hands work to is something you configure from a screen rather than something you infer, so
 the division of labour is deliberate.
 
-The honest framing, repeated from page 21, is that the technical part is the small part. What
+The honest framing, repeated from page 19, is that the technical part is the small part. What
 determines whether adoption succeeds is a change in working habit — the team's centre of
 gravity moving from producing material to deciding about it — and that is a management
 question rather than a technical one.
 
 ### Why should we trust what it produces?
 
-You should not, on trust. You should run the two-step test on page 25 and look at the output
+You should not, on trust. You should run the two-step test on page 23 and look at the output
 with your own name notionally on it, because that is the only judgement that matters for
 material you will publish.
 
@@ -831,7 +753,7 @@ measures beneath it and then into the individual checks, so a number is always t
 what was actually examined. Generation streams as it happens, so a wrong direction is visible
 while it is being taken. Every piece carries an explicit status and an explicit approve or
 reject, and every publishing channel is disarmed until somebody arms it — with the honest
-boundary between those two controls set out on page 20 rather than blurred. And the
+boundary between those two controls set out on page 18 rather than blurred. And the
 weightings behind the scoring are settings you can read, which means you can disagree with
 them specifically rather than in general.
 
@@ -902,9 +824,8 @@ What you use is visible in the console rather than arriving as a surprise. The B
 screen shows which plan you are on, how many people are licensed and how many Compute Units
 have been used, and lets you set a budget for them.
 
-The structural point about the economics is worth restating, because it is what changes
-behaviour. The cost is a function of the capacity you run, not of how much work you put
-through it. Under a per-word or per-generation arrangement, every additional draft is a
+The economics are what changes behaviour. The cost is a function of the capacity you run, not
+of how much work you put through it. Under a per-word or per-generation arrangement, every additional draft is a
 decision with a price attached, and teams ration accordingly — one angle per campaign, one
 language, one format. When the marginal cost of an additional draft is the electricity to
 produce it, the rationing stops, and the second angle, the third language and the fourth
@@ -912,26 +833,19 @@ format become ordinary.
 
 ## What it is worth, computed on your own numbers
 
-This paper puts no return figure in front of you. It cannot: the figure depends on what you
-currently pay for material, how much of it you produce, how long you take to respond to
-something, and what a deal is worth to you. All four are yours.
-
-Abstaining is only half an answer, though, and the easy half. What follows is the arithmetic,
-with every input named and every one read from an invoice, a calendar or a system you already
-have. There is no value anywhere in it. Run it on your figures and the result is yours —
-which is more than any number printed in a vendor's document has ever been.
+There is no return figure here, because the figure depends on what you currently pay for
+material, how much of it you produce, how long you take to respond to something, and what a
+deal is worth to you. All four are yours. What follows is the arithmetic instead: every input
+named, every one read from an invoice, a calendar or a system you already have, and no value
+anywhere in it. Run it on your figures and the result is yours.
 
 ### Be exact about what actually moves
 
-Most calculations in this category quietly credit the software with things it does not do,
-and the figure falls apart the first time a finance director looks at it properly.
-
-PULSE does not make your market larger, and it does not make a bad offer good. What it moves
-is **the cost and the elapsed time of producing a piece of material** — and, through those
-two, how much you produce, how quickly you can respond, and how many things it becomes
-reasonable to try.
-
-Everything below measures those.
+PULSE does not make your market larger and it does not make a bad offer good. What it moves is
+**the cost and the elapsed time of producing a piece of material** — and, through those two,
+how much you produce, how quickly you can respond, and how many things it becomes reasonable
+to try. Everything below measures those, and a calculation that credits the software with more
+than that falls apart the first time a finance director reads it.
 
 ### Six inputs, and where each one is read
 
@@ -982,21 +896,15 @@ a payback period in months. This paper does not state one, because every term be
 
 ### The caution on the second line, stated plainly
 
-The second line is where this kind of calculation usually becomes fiction, and it deserves to
-be said rather than buried.
-
 **More material is not automatically worth more.** Doubling output doubles value only if the
 additional pieces reach somebody and do something. If your constraint was never production —
-if you already publish everything you have to say, and the problem is that you have nothing
-to say — then the second line is zero and PULSE is solving a problem you do not have. Page 18
-says the same thing from the other direction: this fits less well where marketing already has
-its own production capacity.
+if you already publish everything you have to say — then the second line is zero and PULSE is
+solving a problem you do not have. Page 16 says the same thing from the other direction.
 
-The honest way to value the second line is to price the additional pieces at what the
-*existing* pieces measurably produce, taken from your own analytics rather than from a
-benchmark. If you cannot measure what an existing piece produces, set the second line to zero
-and make the case on the other three. It will usually still hold, and a case that holds
-without its weakest term is a much stronger case to take into a room.
+Price the additional pieces at what the *existing* pieces measurably produce, read from your
+own analytics rather than from a benchmark. If you cannot measure what an existing piece
+produces, set the second line to zero and make the case on the other three. It usually still
+holds, and a case that holds without its weakest term is the stronger one to take into a room.
 
 ### Four more ways the answer comes out wrong
 
@@ -1025,9 +933,8 @@ months, median decision-to-publication days, the coverage table by channel, and 
 share of sales time spent on unqualified leads.
 
 All five become unrecoverable once the working rhythm changes, because the thing that would
-tell you is now the thing that changed. Twenty minutes in week one is the difference between
-a defensible figure at the end of the first quarter and an argument about whether it felt
-better.
+tell you is now the thing that changed. Twenty minutes in week one is the difference between a
+defensible figure at the end of the quarter and an argument about whether it felt better.
 
 ## The next step
 

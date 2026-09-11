@@ -9,8 +9,6 @@ title: "Runink"
 description: "Une déclaration en douane bloquée, un sinistre tranché sans la pièce qui était déjà au dossier, du trafic acheminé et jamais tarifé. La réponse se trouve presque toujours déjà dans vos propres enregistrements. Runink FACE les lit tous et présente une action précise à la personne qui peut l'approuver."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
-accent: "#ea580c"
-
 hero:
   eyebrow: "Pour les opérations, la finance et la conformité"
   line1: "La réponse est déjà dans vos enregistrements."
@@ -43,7 +41,6 @@ industries_columns:
 industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
-    accent: "#ea580c"
     cost: "Une déclaration bloquée au port faute d'un document, pendant que les frais journaliers courent. Une réclamation fret encore dans son délai de dépôt que personne n'a eu la matinée pour monter."
     owners:
       - "Directeur des opérations"
@@ -51,7 +48,6 @@ industries:
       - "Conformité douanière"
   - page: "insurance"
     name: "Insurance"
-    accent: "#778fe6"
     cost: "Un seuil de second examen relevé pour résorber un retard, censé être provisoire, jamais rétabli et jamais tranché. Des mouvements de provision vérifiés par sondage parce que le flux est trop long à lire."
     owners:
       - "Opérations sinistres"
@@ -59,7 +55,6 @@ industries:
       - "Audit interne"
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
-    accent: "#C8D9A8"
     cost: "Un écart qui grandit à l'intérieur de la fourchette que l'on valide toujours : aucun mois ne remonte, et personne ne lit la séquence. Un contrat fournisseur que personne n'a rouvert depuis la signature."
     owners:
       - "Conformité et risques"
@@ -67,7 +62,6 @@ industries:
       - "Finance"
   - page: "telecom"
     name: "Telecom"
-    accent: "#c084fc"
     cost: "Un changement de tarification juste pour la promotion et faux pour un forfait hérité, trop petit pour bouger un agrégat. Un balayage qui rend un taux d'erreur quand les opérations ont besoin des comptes nommément."
     owners:
       - "Revenue assurance"
@@ -75,7 +69,6 @@ industries:
       - "Finance et achats"
   - page: "marketing"
     name: "Marketing"
-    accent: "#D4A574"
     cost: "L'outil d'audit sait que le site est lent. L'outil de contenu l'ignore et continue d'écrire pour une page où personne ne reste. Chaque campagne repart d'une page blanche."
     owners:
       - "Le responsable marketing"

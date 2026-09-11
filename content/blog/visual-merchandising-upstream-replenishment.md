@@ -1,6 +1,6 @@
 ---
 title: "Visual Merchandising & Upstream Replenishment: The Logistics of Shelf Availability"
-description: "Discover how aligning visual merchandising with upstream replenishment, warehouse slotting, and delivery schedules ensures high on-shelf availability for retail."
+description: "How aligning visual merchandising with upstream replenishment, warehouse slotting and delivery schedules decides whether a display stays stocked."
 author: "Runink Logistics Operations Team"
 date: 2026-05-02T07:57:56Z
 draft: false
@@ -12,16 +12,15 @@ tags: ["Visual Merchandising", "Replenishment", "Warehouse Slotting", "Runink"]
 robots: index, follow
 ---
 
-<!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-The true success of visual merchandising relies on robust upstream replenishment capabilities and seamless supply chain integration. By synchronizing store-level planograms with warehouse slotting, optimized pallet building, and synchronized last-mile delivery schedules, retail operations leaders can drastically improve on-shelf availability and mitigate costly stockouts.
+A display only works if the supply chain behind it can keep it full. That means the store plan, the warehouse layout, the way pallets are built and the delivery schedule all have to agree with each other. Where they do not, the shelf empties first and the reason sits three steps upstream.
 {{< /direct-answer >}}
 
-* **Bridge the Departmental Divide:** Merchandising and supply chain teams often operate in silos, leading to out-of-stocks when promotions launch without adequate inventory positioned upstream.
-* **Warehouse Slotting is Crucial:** Aligning distribution center layout and picking strategies with retail planograms reduces handling time and speeds up store-level restocking.
-* **Pallet Building Dictates Store Efficiency:** Retail-ready pallets sorted by aisle minimize dwell time at the loading dock and reduce labor costs on the shop floor.
-* **Predictive Visibility Ensures OTIF:** Leveraging data to anticipate demand fluctuations improves On-Time In-Full metrics, guaranteeing that visual displays are fully supported by backend logistics.
+* **Bridge the departmental divide:** merchandising and supply chain teams often work separately, so a promotion launches before the stock behind it is in position.
+* **Warehouse slotting matters:** when the distribution centre is laid out against the store plan, picking takes less handling and restocking takes less time on the floor.
+* **Pallet building decides store labour:** a pallet sorted by aisle can be rolled straight to the floor. A mixed pallet has to be broken down in the stockroom first.
+* **Forecasting supports OTIF:** On-Time In-Full is the measure that tells you whether the display was supported. Read it per promotion, not as a monthly average.
 
 <br>
 
@@ -30,94 +29,95 @@ The true success of visual merchandising relies on robust upstream replenishment
 ## Why is the Disconnect Between Visual Merchandising and Supply Chain Costly?
 
 {{< direct-answer >}}
-A disconnect between visual merchandising and the supply chain leads to empty shelves during high-visibility promotions, eroding customer trust and revenue. When planograms are developed without consulting warehouse and transport capabilities, operations teams struggle with suboptimal fill rates and expedited freight costs.
+When merchandising and the supply chain plan separately, shelves empty during the promotions that have the most eyes on them. Store plans built without checking warehouse and transport capacity turn into short fill rates and expedited freight a few days later.
 {{< /direct-answer >}}
 
-For VPs of Operations and Retail Merchandising Directors, the scenario is painfully familiar: a multi-million-dollar marketing campaign launches alongside an intricate, beautifully designed store display. Yet, within forty-eight hours, the most critical SKUs are out of stock. The display sits empty, not because of a lack of consumer interest, but because the upstream replenishment strategy failed to support the forecasted velocity. 
+For a VP of Operations or a Merchandising Director, the pattern is familiar. A campaign launches. The display goes up. Within two days the best-selling lines on it are out of stock. The display sits empty — not for want of shoppers, but because the replenishment plan did not support the rate the display was selling at.
 
-Visual merchandising focuses on aesthetics, customer flow, and product positioning. However, the operational reality is that a perfectly designed endcap means nothing if the distribution center (DC) cannot replenish it at the necessary cadence. When merchandising and logistics operate in isolation, the results are detrimental to both the top and bottom lines. Misaligned lead times result in emergency Less-Than-Truckload (LTL) shipments, drastically increasing transportation spend. Furthermore, poor coordination often leads to inventory bottlenecks, where products sit in cross-docking facilities, accumulating demurrage and detention charges instead of driving sales on the floor.
+Visual merchandising is about what the customer sees. The operational reality is that a well-designed endcap means nothing if the distribution centre cannot refill it often enough. When the two teams plan separately, the costs show up in two places. Misaligned lead times force emergency part-load shipments, which cost more per unit than planned freight. Poor coordination leaves stock sitting in cross-dock facilities, where it accrues demurrage and detention — the charges a carrier or terminal levies for holding equipment past its free time — instead of selling.
 
-To solve this, retail leaders must bridge the gap between frontend aesthetics and backend execution. This requires a fundamental shift in how promotional inventory is managed. Upstream replenishment must be factored into the initial stages of visual merchandising planning. Operations leaders need granular visibility into inbound freight schedules, ensuring that supplier lead times align with the rollout of new store layouts. By integrating the Warehouse Management System (WMS) with merchandising platforms, supply chain executives can ensure that the logistical reality matches the promotional ambition. Without this integration, the cost of failure mounts rapidly. Expedited shipping cuts directly into gross margins, while mismanaged inventory at the store level leads to shrink and obsolescence. Operations teams must advocate for a seat at the table during seasonal planning sessions, emphasizing that visual success is inherently linked to logistics performance.
+The fix is procedural before it is technical. Replenishment has to be part of the merchandising plan, not a consequence of it. Operations needs to see inbound freight schedules against the rollout dates for new layouts. Where the warehouse system and the merchandising system can read each other, that comparison is routine. Where they cannot, somebody does it by hand or nobody does it at all. The practical ask is a seat at the seasonal planning table, with the inbound schedule in hand.
 
 ---
 
 ## How Does Warehouse Slotting Impact Store-Level Planogram Execution?
 
 {{< direct-answer >}}
-Warehouse slotting directly impacts store-level planogram execution by dictating the speed and accuracy of order fulfillment. When the distribution center is organized to mirror store layouts, picking efficiency increases, labor costs decrease, and shelves are replenished much faster.
+Slotting decides how fast and how accurately a store order gets picked. When the distribution centre is organised to mirror store layouts, picking takes fewer steps, and what arrives can go straight to the shelf.
 {{< /direct-answer >}}
 
-The journey to perfect on-shelf availability begins long before a truck arrives at the store's receiving bay; it starts within the aisles of the distribution center. Warehouse slotting—the strategic placement of inventory within a facility—is often viewed purely through the lens of DC efficiency. However, for operations executives driving retail success, slotting is a critical enabler of store-level merchandising.
+On-shelf availability starts in the distribution centre, not at the receiving bay. Slotting — where each item is placed inside the building — is usually judged on picking productivity alone. For a retail operation it also decides what the store has to do on arrival.
 
-Consider the operational strain when a DC picks a store replenishment order without regard for the destination's planogram. Associates pick fast-moving promotional items alongside heavy, bulky everyday goods, tossing them onto pallets haphazardly. When this mixed pallet arrives at the store, retail associates spend hours breaking it down, sorting items by aisle, and navigating a congested stockroom. This inefficiency directly impacts the customer experience, as products remain trapped in the backroom instead of filling gaps on the shelf.
+Consider what happens when a DC picks a store order without regard for the store's layout. Fast-moving promotional lines get picked alongside heavy everyday goods and stacked in whatever order they came. At the store, associates spend hours breaking the pallet down and sorting by aisle in a crowded stockroom. The product is in the building but not on the shelf.
 
-By syncing WMS slotting logic with retail planograms, operations teams can revolutionize the replenishment process. Fast-moving items featured in seasonal displays should be slotted in high-velocity pick zones near the shipping docks. More importantly, picking sequences can be orchestrated to group products by their ultimate location in the store. This seamless handshake between the warehouse and the retail floor reduces handling touches, minimizes product damage, and accelerates the time-to-shelf.
+Slotting against the store plan changes that. Lines featured in seasonal displays sit in fast pick zones near the outbound doors. Better still, the pick sequence can group products by where they will end up in the store. That cuts handling touches, reduces damage, and shortens the time between the truck arriving and the shelf being full.
 
-Furthermore, dynamic slotting capabilities allow the supply chain to adapt as merchandising strategies evolve. When a new product line is introduced or an endcap is rotated, the WMS should automatically adjust pick paths and storage locations to reflect the updated demand profile. This level of agility ensures that upstream logistics continually support the fluid nature of retail visual merchandising. Beyond simply grouping items, advanced operations utilize historical data to predict which promotional items are most likely to be replenished simultaneously. By co-locating these complementary SKUs within the DC, operators drastically cut down travel time for warehouse associates. This optimized workflow is critical when dealing with seasonal spikes, where the volume of outbound store orders can easily overwhelm a statically slotted distribution center.
+Slotting also has to move when merchandising moves. A new line or a rotated endcap changes the demand profile, and the pick paths should change with it. Operations that go further use their own history to spot which promotional lines tend to be replenished together, and store them near each other. That matters most in a peak, when the volume of store orders is the thing a fixed layout cannot absorb.
 
 ---
 
 ## In What Ways Do Pallet Building Strategies Improve Last-Mile Delivery Efficiency?
 
 {{< direct-answer >}}
-Strategic pallet building improves last-mile delivery by configuring loads that align with specific store aisles and layouts. Aisle-ready pallets reduce unloading and sorting times at the store, minimizing dwell time and ensuring drivers can complete more deliveries per shift.
+Pallets built to match store aisles unload faster, because nothing has to be sorted twice. That shortens the time the vehicle spends at the dock and the time the stock spends in the stockroom.
 {{< /direct-answer >}}
 
-The transition from the distribution center to the retail environment is one of the most critical, yet vulnerable, segments of the supply chain. In the context of visual merchandising, the way a pallet is built dictates how quickly an empty display can be restocked. Traditional palletization focuses on maximizing cube utilization—cramming as much product as possible onto a standard 48x40 pallet to optimize Full Truckload (FTL) shipments. While this reduces linehaul transportation costs, it frequently shifts the labor burden to the store, creating bottlenecks at the loading dock.
+The step from distribution centre to store is where the most value is lost. How a pallet is built decides how quickly an empty display can be refilled.
 
-Forward-thinking Operations VPs are pivoting towards "aisle-ready" or "retail-ready" pallet building. In this model, the WMS and Transportation Management System (TMS) collaborate to construct pallets that mirror the physical layout of the destination store. Products destined for the front-of-house promotional displays are grouped together, separate from standard grocery or apparel replenishments. 
+Traditional palletising fills the cube — as much product as possible on a standard pallet, to fill the trailer. That lowers the linehaul cost and moves the labour to the store, where someone has to take it apart.
 
-This strategic approach to palletization drastically reduces dwell time for delivery vehicles. When drivers drop off aisle-ready pallets, store associates can immediately roll them to the corresponding section of the floor, bypassing the backroom entirely. This rapid turnaround is essential for maintaining high fill rates during peak shopping hours. 
+The alternative is the "aisle-ready" or "retail-ready" pallet. The warehouse system and the transport system build the pallet to match the destination store's layout. Lines for the promotional display are grouped together, separate from the routine replenishment.
 
-Moreover, intelligent pallet building considers the physical constraints of the receiving location. For urban stores with limited dock space and strict delivery windows, pallets must be engineered for swift unloading using pallet jacks rather than forklifts. By optimizing the physical configuration of the freight, logistics teams can ensure smoother handoffs, reducing driver detention and maximizing the efficiency of the entire last-mile network. For a deeper dive into optimizing urban freight, explore our [advanced logistics use cases](/use-cases/). Implementing these retail-ready strategies often involves sophisticated load planning software that factors in weight distribution, crushability, and aisle sequencing simultaneously. While this adds a layer of complexity upstream, the return on investment at the store level is immense. Labor hours previously spent breaking down generic pallets can be reallocated to customer-facing activities, enhancing the overall shopping experience.
+The gain is at the dock. An aisle-ready pallet can be rolled to the right part of the floor without a stop in the stockroom. That shortens the vehicle's time at the dock, which is what drives driver detention, and it puts stock on the shelf during trading hours rather than after them.
+
+Pallet building also has to respect the receiving site. An urban store with one dock and a tight delivery window needs pallets a pallet jack can move, not ones that need a forklift. Load planning software can weigh crushability, weight distribution and aisle sequence at the same time. It adds work upstream and removes work at every store. For more on urban freight, see our [advanced logistics use cases](/use-cases/).
 
 ---
 
 ## How Can Operations Teams Synchronize Replenishment with Store Layouts?
 
 {{< direct-answer >}}
-Operations teams can synchronize replenishment with store layouts by establishing a unified data ecosystem that connects merchandising forecasts with supply chain execution systems. This ensures that inventory flows align perfectly with promotional calendars and physical shelf space constraints.
+By making the store plan and the supply plan one conversation instead of two. When a display is designed, the stock depth it needs and the delivery slot it needs should be worked out at the same time, from the fixture size and the expected sell-through.
 {{< /direct-answer >}}
 
-Achieving true synchronization between upstream replenishment and visual merchandising requires more than just communication; it demands structural integration across the enterprise. Too often, merchandising decisions are made based on aesthetic appeal and historical sales data, while the logistics network is left to react to the resulting demand spikes. This reactive posture leads to expedited shipping costs and volatile inventory levels.
+Real synchronisation is structural, not a matter of better communication. Today, merchandising decides on look and past sales, and the network reacts to whatever demand follows. Reacting costs more: expedited freight, and stock levels that swing.
 
-To break this cycle, operations leaders must establish a framework where planogram generation and supply chain planning occur simultaneously. When a merchandising director designs a new display, the system should automatically calculate the required inventory depth based on the physical dimensions of the fixture and the forecasted sales velocity. This data must seamlessly flow into the supply chain planning systems, triggering purchase orders and adjusting safety stock parameters at the regional distribution centers.
+Break the cycle by planning both at once. When a merchandising director designs a display, the required stock depth should fall out of the fixture size and the expected sell-through rate. That number then drives the purchase orders and the safety stock at the regional distribution centres — the same week, not the following month.
 
-This synchronization extends to the physical movement of goods. Delivery schedules must be tightly orchestrated to coincide with the labor availability at the store level. Dropping off three pallets of promotional inventory on a Friday afternoon when the store is packed with customers and short on stockroom staff is a recipe for disaster. By utilizing an advanced Yard Management System (YMS) and integrating it with store labor scheduling tools, operations can ensure that freight arrives exactly when the team is ready to receive and merchandise it.
+It applies to the physical delivery too. Arrival times have to match the labour available at the store. Three pallets of promotional stock dropped on a Friday afternoon, with a full shop floor and a short-staffed stockroom, is stock that will not be merchandised that day. Booking delivery slots against the store's own labour schedule is an unglamorous fix and a reliable one.
 
-Furthermore, this alignment allows for more sophisticated inventory strategies, such as cross-docking. High-volume promotional goods can be shipped directly from the manufacturer to a cross-dock facility, where they are immediately sorted and loaded onto outbound store delivery trucks, bypassing the DC's storage racks entirely. This reduces handling costs and significantly accelerates the speed to market, ensuring that visual displays are consistently fully stocked. Communication loops must also be established to relay real-time store-level inventory data back to the supply chain planners. If a particular merchandising display is driving unprecedented sales velocity, upstream systems must automatically trigger expedited replenishment workflows. Conversely, if a promotion underperforms, automated alerts can pause inbound shipments, preventing backroom clutter and the subsequent need for heavy markdowns.
+Cross-docking helps where volume is high and predictable: promotional goods ship from the manufacturer to a cross-dock, are sorted onto store vehicles, and never enter storage racks. That removes one handling step and some days.
+
+The loop has to run the other way as well. If a display is selling faster than planned, the replenishment plan should hear about it from store sales data rather than from an empty shelf. If it is selling slower, inbound shipments should be pausable — otherwise the stockroom fills up and the markdowns follow.
 
 ---
 
 ## What Role Does Predictive Analytics Play in Minimizing Dwell Time and Stockouts?
 
 {{< direct-answer >}}
-Predictive analytics minimizes dwell time and stockouts by analyzing historical data, market trends, and real-time supply chain constraints to forecast demand spikes accurately. This allows logistics teams to proactively position inventory and schedule transport, maintaining perfect On-Time In-Full (OTIF) performance.
+Forecasting is what moves stock into position before the demand arrives rather than after. The measure it should move is On-Time In-Full, read per promotion: did the full assortment arrive at each store on the day the display was due to go live?
 {{< /direct-answer >}}
 
-In the fast-paced retail environment, reacting to an empty shelf is a lost battle. The customer has already experienced the disappointment, and the revenue opportunity has vanished. To safeguard the investment made in visual merchandising, operations leaders are increasingly relying on AI-driven platforms and predictive analytics to stay ahead of the curve.
+Reacting to an empty shelf is already too late. The customer has been disappointed and the sale has gone. That is why operations teams put effort into forecasting what a display will sell before it goes up.
 
-Predictive visibility transforms the supply chain from a reactive cost center into a proactive strategic asset. By analyzing vast datasets—including point-of-sale information, weather patterns, local events, and historical promotional performance—advanced algorithms can predict precisely when and where a specific SKU will experience a surge in demand. This intelligence allows logistics managers to dynamically adjust safety stock levels at regional nodes, ensuring that the right product is always within striking distance of the retail store.
+Forecasting uses what the business already records: till data, past promotional performance, the local calendar, the weather. The output is a view of where a line is likely to sell faster than its replenishment cycle assumes, which is a reason to hold stock closer to those stores. It is a planning input, not a guarantee — a forecast that cannot be argued with is not a forecast, it is an instruction.
 
-Beyond demand forecasting, predictive analytics is instrumental in anticipating and mitigating logistical bottlenecks. A robust intelligence platform can monitor port congestion, carrier capacity constraints, and potential weather disruptions, alerting supply chain teams to potential delays before they impact store replenishment. If an inbound container of seasonal merchandise is delayed, the system can automatically trigger contingency plans, such as shifting inventory from a neighboring DC or expediting a domestic LTL shipment.
+The same reading applies to the inbound side. Port congestion, carrier capacity and weather are all knowable before they bite. When an inbound container of seasonal stock slips, the useful output is a named list of the stores whose displays depend on it, early enough to move stock from a neighbouring DC.
 
-This level of proactive management directly impacts key performance indicators like On-Time In-Full (OTIF) deliveries. By guaranteeing that the full promotional assortment arrives exactly when expected, operations teams empower store associates to execute planograms flawlessly. The result is a seamless shopping experience for the consumer, maximized return on merchandising investments, and a highly resilient retail supply chain. In an era where supply chain volatility is the norm, relying on static replenishment models is a liability. Operations leaders who leverage predictive intelligence not only safeguard their visual merchandising initiatives but also transform their logistics operations into a competitive advantage. The ability to foresee disruptions and dynamically route inventory ensures that the promise made by the storefront is consistently fulfilled by the supply chain.
+The measure to hold all of this against is On-Time In-Full. Read it per promotion rather than as a monthly average, because the monthly average hides exactly the weeks that mattered.
 
 ---
 
 ## Conclusion
 
 {{< direct-answer >}}
-Bridging the gap between visual merchandising and supply chain logistics is essential for maintaining high shelf availability. By aligning warehouse operations and delivery schedules with store layouts, retail leaders can eliminate stockouts and maximize operational efficiency.
+A display is a promise, and the supply chain keeps it or breaks it. Aligning warehouse layout, pallet building and delivery slots with the store plan is what makes the promise keepable. One measure tells you where you stand: how many stores got the right pallet on the day the display went live.
 {{< /direct-answer >}}
 
-The visual appeal of a retail environment is undeniably powerful, but its impact is entirely dependent on the unglamorous, complex mechanics of the upstream supply chain. A meticulously crafted display is ultimately a promise to the consumer—a promise that the logistics network must fulfill. For Operations VPs and Merchandising Directors, the path forward requires breaking down departmental silos and integrating planogram execution with warehouse slotting, strategic pallet building, and synchronized delivery schedules. 
-
-By prioritizing these logistical elements, retail organizations can dramatically reduce backroom congestion, lower handling costs, and ensure that their shelves remain fully stocked during critical promotional periods. The transition from reactive replenishment to a proactive, synchronized supply chain is the key to surviving and thriving in modern retail. 
+The look of a store is powerful, and it depends entirely on the unglamorous mechanics upstream. A carefully built display is a promise to the shopper, and the supply chain either keeps it or does not. For Operations VPs and Merchandising Directors, that means planning store execution, warehouse slotting, pallet building and delivery slots as one piece of work rather than four.
 
 One measure makes the rest of this concrete: for your last promotion, how many stores received the planogram-compliant pallet on the day the display was due to go live, and how many did not. Almost nobody counts it, and it is the single figure that tells you whether merchandising and replenishment are actually synchronised. [Contact our team](/#contact-form) if it would help to work it out.
 
-<!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -128,7 +128,7 @@ One measure makes the rest of this concrete: for your last promotion, how many s
       "name": "Why is the Disconnect Between Visual Merchandising and Supply Chain Costly?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A disconnect between visual merchandising and the supply chain leads to empty shelves during high-visibility promotions, eroding customer trust and revenue. When planograms are developed without consulting warehouse and transport capabilities, operations teams struggle with suboptimal fill rates and expedited freight costs."
+        "text": "Because shelves empty during the promotions that have the most eyes on them. When store plans are built without checking warehouse and transport capacity, the result is short fill rates and expedited freight a few days after launch."
       }
     },
     {
@@ -136,7 +136,7 @@ One measure makes the rest of this concrete: for your last promotion, how many s
       "name": "How Does Warehouse Slotting Impact Store-Level Planogram Execution?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Warehouse slotting directly impacts store-level planogram execution by dictating the speed and accuracy of order fulfillment. When the distribution center is organized to mirror store layouts, picking efficiency increases, labor costs decrease, and shelves are replenished much faster."
+        "text": "Slotting decides how fast and how accurately a store order gets picked. When the distribution centre mirrors store layouts, picking takes fewer steps and what arrives can go straight to the shelf instead of being sorted in the stockroom first."
       }
     },
     {
@@ -144,7 +144,7 @@ One measure makes the rest of this concrete: for your last promotion, how many s
       "name": "In What Ways Do Pallet Building Strategies Improve Last-Mile Delivery Efficiency?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Strategic pallet building improves last-mile delivery by configuring loads that align with specific store aisles and layouts. Aisle-ready pallets reduce unloading and sorting times at the store, minimizing dwell time and ensuring drivers can complete more deliveries per shift."
+        "text": "Pallets built to match store aisles unload faster, because nothing has to be sorted twice. That shortens the time the vehicle spends at the dock, which is what drives driver detention, and it puts stock on the shelf during trading hours."
       }
     },
     {
@@ -152,7 +152,7 @@ One measure makes the rest of this concrete: for your last promotion, how many s
       "name": "How Can Operations Teams Synchronize Replenishment with Store Layouts?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Operations teams can synchronize replenishment with store layouts by establishing a unified data ecosystem that connects merchandising forecasts with supply chain execution systems. This ensures that inventory flows align perfectly with promotional calendars and physical shelf space constraints."
+        "text": "By working out the stock depth and the delivery slot at the same time as the display is designed, from the fixture size and the expected sell-through, and by booking delivery slots against the store's own labour schedule."
       }
     },
     {
@@ -160,7 +160,7 @@ One measure makes the rest of this concrete: for your last promotion, how many s
       "name": "What Role Does Predictive Analytics Play in Minimizing Dwell Time and Stockouts?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Predictive analytics minimizes dwell time and stockouts by analyzing historical data, market trends, and real-time supply chain constraints to forecast demand spikes accurately. This allows logistics teams to proactively position inventory and schedule transport, maintaining perfect On-Time In-Full (OTIF) performance."
+        "text": "It moves stock into position before demand arrives rather than after. The measure it should move is On-Time In-Full, read per promotion: did the full assortment arrive at each store on the day the display was due to go live?"
       }
     }
   ]
@@ -170,19 +170,18 @@ One measure makes the rest of this concrete: for your last promotion, how many s
 ---
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
   <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
+    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
   </p>
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations &amp; References</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.inboundlogistics.com/cms/article/the-art-of-retail-replenishment/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Inbound Logistics</a> - The Art and Science of Retail Replenishment Strategies.</li>
-    <li><a href="https://www.supplychaindive.com/news/warehouse-slotting-efficiency-retail/600123/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Supply Chain Dive</a> - Why dynamic warehouse slotting is crucial for modern retail fulfillment.</li>
-    <li><a href="https://www.wsj.com/articles/logistics-report-retail-inventory-management-11624567890" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">The Wall Street Journal</a> - Logistics Report: Bridging the Gap Between Inventory Management and Store Displays.</li>
-    <li><a href="https://hbr.org/2021/09/how-ai-is-optimizing-the-supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Harvard Business Review</a> - How Predictive Analytics and AI Are Optimizing Supply Chain Resilience.</li>
+    <li><a href="https://www.inboundlogistics.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Inbound Logistics</a> - Trade coverage of retail replenishment and distribution practice.</li>
+    <li><a href="https://www.supplychaindive.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Supply Chain Dive</a> - Trade coverage of warehouse slotting and retail fulfilment.</li>
+    <li><a href="https://www.werc.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Warehousing Education and Research Council (WERC)</a> - Benchmarking studies on distribution centre productivity and dock-to-stock cycle times.</li>
+    <li><a href="https://hbr.org/topic/subject/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Harvard Business Review — Supply Chain</a> - Management research and commentary on supply chain decisions.</li>
   </ul>
 </section>

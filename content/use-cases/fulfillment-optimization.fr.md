@@ -42,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Le choix est donc mauvais. Payer cher pour le faire venir par avion, ou le dire au client. Les deux se sont joués des semaines plus tôt, sur une tendance qui était visible tout du long dans vos propres ventes.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 La commande était en retard avant que personne ne le sache.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -67,8 +67,8 @@ author: "Runink"
                 Une personne nommée valide, corrige ou rejette, et son accord reste au dossier. C'est la validation qui l'envoie plus loin. Et là où une étape de l'action rédigée n'a encore rien derrière elle &mdash; l'écriture dans votre ERP en est l'exemple honnête &mdash; la réponse nomme cette étape comme non exécutée au lieu de déclarer l'ensemble fait. On vous dit quelle partie de l'action a eu lieu, et c'est la différence entre un système sur lequel on s'appuie et un système qu'il faut aller vérifier. Les marges de sécurité peuvent alors se discuter à partir de vos propres chiffres plutôt qu'à l'ancienneté.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que quelque chose change.
              </p>
@@ -83,7 +83,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Réserver une consultation
         </a>
     </div>

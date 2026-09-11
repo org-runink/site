@@ -6,13 +6,19 @@
 
 {{ $baseClass := "reveal-step opacity-20 translate-y-4 transition-all duration-700 ease-out mb-5 px-6 py-5 rounded-2xl border flex flex-col md:flex-row items-start md:items-center justify-between group relative cursor-default w-full overflow-hidden gap-4" }}
 
-{{ $monitorClass := "border-[#65793e]/30 bg-[#65793e]/5 shadow-[0_0_20px_rgba(101,121,62,0.2),inset_0_0_15px_rgba(101,121,62,0.1)] hover:shadow-[0_0_35px_rgba(101,121,62,0.4),inset_0_0_25px_rgba(101,121,62,0.2)] hover:bg-[#65793e]/10 hover:border-[#65793e]/50" }}
-{{ $monitorBadgeClass := "bg-[#65793e]/10 border-[#65793e]/30 text-[#65793e] shadow-[0_0_15px_rgba(101,121,62,0.15)] group-hover:bg-[#65793e]/20" }}
-{{ $monitorTitleColor := "#65793e" }}
+{{/* Two tracks, ONE accent. These were an olive card and a crimson card, and the
+     pair only ever said "this is the other list" by hue — on a palette with a
+     single accent that distinction has to be carried by something else, so it is
+     carried by emphasis: the monitor track is the accented one, the cockpit
+     track is the quiet neutral one. The neon glows are gone with the black page;
+     a glow means nothing on the printed sheet these pages are carried into. */}}
+{{ $monitorClass := "border-signal bg-signal-wash hover:bg-signal-fill/10 hover:border-signal-fill" }}
+{{ $monitorBadgeClass := "bg-signal-wash border-signal text-signal group-hover:bg-signal-fill/20" }}
+{{ $monitorTitleColor := "var(--rk-signal)" }}
 
-{{ $cockpitClass := "border-[#991b1b]/30 bg-[#991b1b]/5 shadow-[0_0_20px_rgba(153,27,27,0.2),inset_0_0_15px_rgba(153,27,27,0.1)] hover:shadow-[0_0_35px_rgba(153,27,27,0.4),inset_0_0_25px_rgba(153,27,27,0.2)] hover:bg-[#991b1b]/10 hover:border-[#991b1b]/50" }}
-{{ $cockpitBadgeClass := "bg-[#991b1b]/10 border-[#991b1b]/30 text-[#991b1b] shadow-[0_0_15px_rgba(153,27,27,0.2)] group-hover:bg-[#991b1b]/20" }}
-{{ $cockpitTitleColor := "#991b1b" }}
+{{ $cockpitClass := "border-rule bg-sunk hover:bg-sheet hover:border-rule-strong" }}
+{{ $cockpitBadgeClass := "bg-sheet border-rule-mid text-ink-2 group-hover:bg-sunk" }}
+{{ $cockpitTitleColor := "var(--rk-text)" }}
 
 {{ $activeClass := "" }}
 {{ $activeBadgeClass := "" }}
@@ -32,7 +38,7 @@
     <div class="flex-grow z-10 relative pl-2 lg:pl-3 pr-2 text-sm md:text-base leading-relaxed">
         {{ if $hasParts }}
         <strong class="font-bold text-lg md:text-xl block lg:inline lg:mr-2 tracking-tight"
-            style="color: {{ $activeTitleColor }};">{{ $title }}</strong>
+            style="color: {{ $activeTitleColor | safeCSS }};">{{ $title }}</strong>
         <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">{{ $desc }}</span>
         {{ else }}
         <span class="text-stone-300 group-hover:text-stone-200 transition-colors duration-500">{{ $desc }}</span>

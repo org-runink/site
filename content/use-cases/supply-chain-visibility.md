@@ -43,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 It can be done. It takes a morning, and it is done by the one analyst who knows which column in which export means what. So it gets done for the monthly review, and it gets done when something has already gone badly enough to warrant a morning.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 The picture is always assembled after the point where it would have been useful.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
@@ -83,8 +83,8 @@ author: "Runink"
                 What arrives at a person is a short ranked list of proposed actions with the records attached, not a diagram to admire. A named person approves, edits or rejects each one, and that sign-off is kept. Approving is what sends it, and a decided item leaves the queue instead of coming back round next time somebody opens the board. Where a step behind the approval has no implementation yet, the response names that step as not executed rather than reporting the action as complete — so the board shows what was decided and separately what was actually carried out. It all runs on machines you own.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. We are not bringing numbers to this; you are. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>
@@ -99,7 +99,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation
         </a>
     </div>

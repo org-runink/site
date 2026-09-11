@@ -1,6 +1,6 @@
 ---
 title: "What Is S&OP (Sales & Operations Planning) and Why Do Most Companies Get It Wrong?"
-description: "Learn what S&OP really is, the 5-step planning cycle, why 70%+ of implementations underperform, and how AI-powered data foundations make S&OP actually work."
+description: "What S&OP actually is, the five-step cycle, the four reasons implementations underperform, and the data work that has to happen first."
 author: "Runink Logistics Operations Team"
 date: 2026-03-08T16:16:22Z
 draft: false
@@ -12,15 +12,14 @@ tags: ["S&OP", "Sales and Operations Planning", "Demand Planning", "Supply Plann
 robots: index, follow
 ---
 
-<!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-Sales and Operations Planning (S&OP) is a cross-functional decision engine that aligns demand, supply, and financial plans on a rolling horizon — yet more than 70% of implementations underperform because organizations treat it as a monthly meeting rather than a disciplined, data-driven process. Success requires breaking down functional silos, replacing spreadsheet dependence with one agreed set of figures, and being able to re-run a scenario between meetings rather than only inside them.
+Sales and Operations Planning aligns the demand plan, the supply plan and the financial plan on a rolling horizon. Most implementations underperform because the organisation runs it as a monthly meeting instead of a process: the functions arrive with different numbers, the scenarios are built by hand, and nobody can re-run one between meetings. Fixing the records comes before fixing the meeting.
 {{< /direct-answer >}}
 
-* **S&OP follows a structured 5-step monthly cycle — data gathering, demand planning, supply planning, pre-S&OP reconciliation, and executive S&OP — but most companies collapse these steps into a single slide review.**
-* **The primary failure modes are siloed data across sales, procurement, and logistics; spreadsheet dependence that prevents scenario agility; and lack of executive sponsorship to enforce cross-functional accountability.**
-* **AI-powered platforms provide the data foundation that makes S&OP actionable — integrating real-time demand signals, automating scenario planning, and delivering unified visibility across the entire supply chain.**
+* **S&OP is a five-step monthly cycle** — gather the data, plan demand, plan supply, reconcile before the meeting, then decide in the meeting. Most companies collapse all five into one slide review.
+* **The failure modes are consistent:** data split across sales, procurement and logistics; spreadsheets as the joining tissue; no agreed set of figures; and no senior owner to enforce the decision.
+* **The measurable symptom:** how much of the meeting is spent agreeing what the numbers are, rather than deciding anything. That proportion is the diagnostic.
 
 <br>
 
@@ -29,92 +28,91 @@ Sales and Operations Planning (S&OP) is a cross-functional decision engine that 
 ## What Is S&OP and How Does the 5-Step Cycle Actually Work?
 
 {{< direct-answer >}}
-S&OP is a monthly integrated planning process that synchronizes demand forecasts, supply capacity, inventory targets, and financial plans into a single consensus operating plan. The five steps — data gathering, demand planning, supply planning, pre-S&OP reconciliation, and executive S&OP — are designed to surface trade-offs early so leadership can make informed decisions rather than react to surprises.
+S&OP is a monthly planning process that brings demand forecasts, supply capacity, inventory targets and financial plans into one agreed plan. The five steps — gather data, plan demand, plan supply, reconcile, decide — exist to surface trade-offs early, so leadership chooses between options instead of reacting to surprises.
 {{< /direct-answer >}}
 
-Sales and Operations Planning is not a meeting. It is a structured decision-making process that forces alignment between commercial ambitions and operational reality. When it works, it is the single most powerful planning discipline in supply chain management. When it does not — and for most companies, it does not — it is a monthly ritual that produces slides no one acts on.
+S&OP is not a meeting. It is a process that forces commercial ambition and operational reality into the same room. Done properly it is the most useful planning discipline in supply chain management. Done as a monthly ritual, it produces slides nobody acts on.
 
-The five steps of the S&OP cycle, originally codified by Oliver Wight and refined through decades of APICS/ASCM practitioner experience, are sequential and interdependent:
+The five steps were codified by Oliver Wight and refined through APICS/ASCM practice. They run in order, and each depends on the one before.
 
-**Step 1: Data Gathering.** Cleanse and consolidate actuals — shipments, bookings, inventory positions, open orders, supplier lead times, and financial results. This is where most processes already start to break. If your demand data lives in a CRM, your inventory data lives in an ERP, and your logistics data lives in a TMS, you are reconciling three versions of the truth before the planning even begins.
+**Step 1: Gather the data.** Consolidate the actuals — shipments, bookings, stock positions, open orders, supplier lead times, financial results. Most processes break here. If demand data lives in a CRM, stock in an ERP and transport in a TMS, you are reconciling three versions of events before planning starts.
 
-**Step 2: Demand Planning.** Generate an unconstrained demand forecast using statistical baselines adjusted for market intelligence, promotional calendars, new product introductions, and customer commitments. The output is a consensus demand plan that represents what the business expects to sell — not what it hopes to sell.
+**Step 2: Plan demand.** Produce an unconstrained forecast: a statistical baseline adjusted for what the commercial team knows about promotions, launches and committed customers. The output is what the business expects to sell, not what it hopes to.
 
-**Step 3: Supply Planning.** Evaluate whether manufacturing capacity, supplier availability, warehousing throughput, and transportation networks can support the demand plan. Identify constraints, capacity gaps, and lead-time risks. Propose supply alternatives — overtime, alternate sourcing, safety stock adjustments, modal shifts — with cost implications attached.
+**Step 3: Plan supply.** Work out whether manufacturing, suppliers, warehousing and transport can support that demand. Name the constraints and the lead-time risks. Put the alternatives on the table — overtime, a second source, more safety stock, a mode shift — with the cost of each attached.
 
-**Step 4: Pre-S&OP Reconciliation.** This is the step most companies skip or trivialize. Cross-functional leaders from sales, operations, finance, and procurement review the gaps between the demand plan and the supply plan. They do not resolve every issue — they frame the trade-off decisions and prepare recommendations for executive review. Without rigorous pre-S&OP, the executive meeting becomes a data dump rather than a decision forum.
+**Step 4: Reconcile before the meeting.** This is the step most companies skip. Leaders from sales, operations, finance and procurement go through the gaps between the demand plan and the supply plan. They do not settle everything; they frame the decisions and prepare recommendations. Without it, the executive meeting becomes a data dump.
 
-**Step 5: Executive S&OP.** Senior leadership reviews the reconciled plan, resolves escalated trade-offs, approves the consensus operating plan, and authorizes resource commitments. This is a decision meeting, not a review meeting. The output is a single, cross-functional plan that finance, sales, and operations all execute against.
+**Step 5: Decide.** Senior leadership reviews the reconciled plan, settles the escalated trade-offs, approves the plan and commits the resources. It is a decision meeting, not a review meeting. The output is one plan that finance, sales and operations all work to.
 
 ---
 
-## Why Do More Than 70% of S&OP Implementations Underperform?
+## Why Do So Many S&OP Implementations Underperform?
 
 {{< direct-answer >}}
-Most S&OP implementations fail not because the process is flawed, but because organizations lack the data infrastructure, cross-functional discipline, and executive commitment to execute it properly. Gartner's S&OP Maturity Model shows that the majority of companies remain stuck at Stage 1 or Stage 2 — reactive and functionally siloed — never reaching the integrated or externally collaborative stages where S&OP delivers transformational value.
+Not because the process is wrong, but because the records, the discipline or the sponsorship are missing. Gartner's S&OP maturity model describes the progression from reactive and siloed planning to integrated and externally collaborative planning; the earlier stages are where the data problems sit.
 {{< /direct-answer >}}
 
-The failure pattern is remarkably consistent across industries and company sizes. Four root causes account for the vast majority of underperforming S&OP programs:
+The pattern repeats across industries and company sizes. Four causes account for most of it.
 
-**Siloed data across functions.** Sales owns the pipeline in a CRM. Procurement tracks supplier commitments in spreadsheets or a separate sourcing platform. Logistics manages capacity in a TMS. Finance runs its own forecast in a planning tool that talks to none of the above. When these data sets cannot be unified in real time, every step of the S&OP cycle starts with a reconciliation exercise that consumes the time that should be spent on analysis and decision-making.
+**Data split across functions.** Sales owns the pipeline in a CRM. Procurement tracks supplier commitments in spreadsheets or a sourcing tool. Logistics holds capacity in a TMS. Finance runs its own forecast somewhere that talks to none of them. When those cannot be brought together quickly, every step of the cycle starts with a reconciliation exercise, and the reconciliation eats the time meant for analysis.
 
-**Spreadsheet dependence.** McKinsey research on supply chain planning maturity consistently finds that even large enterprises rely on spreadsheets as the connective tissue between planning systems. Spreadsheets cannot run probabilistic scenarios at speed, they cannot ingest real-time signals, and they introduce version-control risk that erodes trust in the numbers. When the demand planner and the supply planner show up to pre-S&OP with conflicting spreadsheets, the meeting stalls.
+**Spreadsheets as the joining tissue.** Even large companies end up moving figures between planning systems by hand. Spreadsheets cannot run a range of scenarios quickly, cannot take in a fresh signal, and leave no reliable record of which version is current. When the demand planner and the supply planner arrive with different files, the meeting stalls on arithmetic.
 
-**No single source of truth.** Without an integrated data layer that all functions trust, S&OP devolves into a debate about whose numbers are right — not what the numbers mean. This is the fundamental infrastructure gap. You cannot run a cross-functional planning process on fragmented, batch-updated data.
+**No agreed set of figures.** Without one definition per figure that every function accepts, S&OP becomes an argument about whose number is right rather than what the number means. This is the structural problem underneath the other three.
 
-**Lack of executive sponsorship.** S&OP requires a senior leader — typically the VP of Supply Chain or the COO — who owns the process, enforces participation, and holds functions accountable to the consensus plan. Without that sponsorship, functional leaders treat S&OP as optional, skip meetings, send delegates without decision authority, and revert to their own plans the moment they leave the room.
+**No senior owner.** S&OP needs a leader — usually the VP of Supply Chain or the COO — who owns the process, insists on attendance and holds functions to the agreed plan. Without that, functional leaders treat it as optional, send delegates who cannot decide, and go back to their own plans afterwards.
 
 ---
 
 ## What Is the Difference Between S&OP and S&OE?
 
 {{< direct-answer >}}
-S&OP operates on a monthly cycle with a 12–24 month rolling horizon, focused on strategic and tactical trade-offs. S&OE (Sales and Operations Execution) operates on a daily or weekly cycle within the current planning period, focused on sensing demand shifts and adjusting execution in real time to stay aligned with the S&OP plan.
+S&OP runs monthly over a rolling horizon of one to two years and deals with trade-offs: capacity, sourcing, pre-positioning. S&OE — Sales and Operations Execution — runs daily or weekly inside the current period and deals with what is happening now: a demand spike, a missed delivery, a congested port.
 {{< /direct-answer >}}
 
-This distinction matters because many organizations conflate the two — and end up doing neither well.
+The distinction matters because organisations that conflate the two end up doing neither.
 
-S&OP is about shaping the future. It answers questions like: Can we support a 15% demand increase in Q3 with current warehouse capacity? Should we pre-position safety stock ahead of a tariff change? Do we need to secure additional FTL contract capacity for peak season?
+S&OP shapes the future. It answers questions like: can we support the demand increase sales is forecasting for Q3 with the warehouse capacity we have? Should we pre-position stock ahead of a tariff change? Do we need more contracted truckload capacity for peak?
 
-S&OE is about managing the present. It answers questions like: Demand for SKU-4217 spiked 40% this week against forecast — do we expedite a production run or pull from safety stock? A key supplier just missed a delivery window — which customer orders do we prioritize? A port congestion event is delaying inbound containers — do we reroute to an alternate port or absorb the dwell time?
+S&OE manages the present. It answers: this item is selling well above forecast this week — do we expedite a production run or pull from safety stock? A supplier has missed a window — which customer orders take priority? Inbound containers are stuck at a congested port — reroute, or absorb the delay?
 
-Without effective S&OE, even a well-built S&OP plan degrades within the first week of execution. Without effective S&OP, S&OE operators are making tactical decisions in a strategic vacuum. The two processes are complementary, and both require the same foundational capability: real-time, cross-functional data visibility.
+Without S&OE, a good S&OP plan decays in the first week of the month. Without S&OP, S&OE decisions are made with no view of what they cost later. Both need the same foundation: records the functions agree on, current enough to act on.
 
 ---
 
-## How Do AI-Powered Platforms Make S&OP Actually Work?
+## What Has to Be True Before Software Helps?
 
 {{< direct-answer >}}
-The root causes of S&OP failure are in the data layer, not the planning algorithm: functions arrive with different numbers for the same thing, the scenarios are built by hand so there are only ever three of them, and the demand signal in the pack is weeks old by the time the meeting reviews it.
+The causes of S&OP failure sit in the records, not in the planning algorithm: functions arrive with different numbers for the same thing, the scenarios are built by hand so there are only ever three of them, and the demand signal in the pack is weeks old by the time the meeting reviews it.
 {{< /direct-answer >}}
 
-The technology conversation around S&OP has historically been about planning software — APS (Advanced Planning Systems), IBP (Integrated Business Planning) suites, and demand sensing tools. But the hardest problem in S&OP is not the planning algorithm. It is the data layer underneath it.
+The technology conversation about S&OP is usually about planning suites — advanced planning systems, integrated business planning, demand sensing. But the hard problem is not the algorithm. It is the state of the data underneath it. Four things have to be true.
 
-**Unified visibility across sales, procurement, and logistics.** The prize is modest to describe and hard to achieve: every function working from the same shipment status, the same inventory positions and the same supplier lead-time actuals, so the pre-S&OP meeting argues about decisions instead of about whose number is right. Worth being precise about what "unified" has to mean here — not one warehouse containing copies of everything, but one agreed definition per figure, with the source records reachable when somebody disputes it.
+**The functions work from the same figures.** The prize is modest to describe and hard to achieve: the same shipment status, the same stock positions and the same supplier lead-time actuals in every function's hands, so the reconciliation meeting argues about decisions instead of about whose number is right. Worth being precise about what that has to mean — not one warehouse holding copies of everything, but one agreed definition per figure, with the source records reachable when somebody disputes it.
 
-**Automated scenario planning.** Instead of a demand planner manually building three scenarios in a spreadsheet, AI-driven platforms generate probabilistic demand ranges, simulate supply constraints across multiple variables simultaneously, and quantify the financial impact of each scenario. When the executive S&OP session convenes, leadership is choosing between costed alternatives — not debating assumptions.
+**A scenario can be re-run between meetings.** If building a scenario takes a planner two days, there will only ever be three of them, and they will be the three somebody thought of first. The value is in being able to ask a fourth question the morning after the meeting.
 
-**Real-time demand signals.** Traditional S&OP updates demand assumptions once a month. By the time the plan is approved, it is already two to three weeks stale. AI-powered platforms continuously ingest point-of-sale data, order pipeline changes, booking trends, and external market signals, ensuring the demand picture reflects reality, not last month's snapshot.
+**The demand signal is current.** A monthly refresh means the plan is weeks old when it is approved. Till data, order pipeline changes and booking trends are all available more often than monthly, and using them is mostly a question of plumbing rather than prediction.
 
-**S&OE integration.** The same data foundation that powers monthly S&OP also drives daily and weekly S&OE cycles. When execution deviates from plan — and it always does — the platform surfaces the variance, quantifies the downstream impact, and recommends corrective actions before the deviation becomes a customer-facing miss.
+**Execution feeds back.** When the month deviates from plan — and it does — the variance should be visible against the plan it deviated from, early enough to matter to the next cycle.
 
 ---
 
 ## Conclusion
 
 {{< direct-answer >}}
-S&OP is the most important planning process in supply chain management — but only when it operates as a disciplined, data-driven decision engine rather than a monthly slide review. The difference between S&OP that delivers measurable business outcomes and S&OP that wastes leadership's time comes down to data infrastructure, cross-functional accountability, and the analytical horsepower to turn plans into decisions.
+S&OP works when it runs as a process rather than a meeting, and that depends on records the functions agree on, the ability to re-run a scenario, and someone senior who owns the decision. The first diagnostic is how much of your last meeting went on agreeing the numbers.
 {{< /direct-answer >}}
 
-If your S&OP meetings end without clear decisions, if your demand and supply planners spend more time reconciling data than analyzing trade-offs, or if your executive team rubber-stamps a plan they do not fully trust — the problem is not the process. It is the foundation the process runs on.
+If your S&OP meetings end without decisions, if the planners spend more time reconciling data than weighing trade-offs, or if the executive team signs off a plan it does not quite believe — the process is not the problem. The foundation under it is.
 
-Companies that mature beyond Stage 2 on Gartner's S&OP Maturity Model share a common trait: they invest in the data infrastructure that makes cross-functional planning possible at speed. That means replacing fragmented, batch-updated data with a unified, real-time operational layer that every function can trust.
+Companies that progress up the maturity stages share one trait: they fix the records first. That means replacing hand-moved, fragmented figures with one agreed definition per figure and a way to get back to the source.
 
 [Demand forecasting](/use-cases/demand-forecasting/) is one of the kinds of work Runink FACE does: it reads the order and sell-through history you already hold, produces a forecast at the level you ask for, and shows the records it was built from so a planner can argue with it rather than accept it. That is one input to an S&OP process, not a replacement for one — the cross-functional discipline is the part no software supplies.
 
 The first diagnostic is free and unwelcome: at your last S&OP meeting, how much of the time went on reconciling numbers rather than deciding anything? [Get in touch](/#contact-form) if it would help to work through what that reconciliation is costing.
 
-<!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -125,15 +123,15 @@ The first diagnostic is free and unwelcome: at your last S&OP meeting, how much 
       "name": "What is S&OP (Sales and Operations Planning)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "S&OP is a monthly integrated planning process that synchronizes demand forecasts, supply capacity, inventory targets, and financial plans into a single consensus operating plan. It follows a 5-step cycle: data gathering, demand planning, supply planning, pre-S&OP reconciliation, and executive S&OP. The goal is to align commercial ambitions with operational reality so leadership can make informed trade-off decisions on a rolling 12-24 month horizon."
+        "text": "A monthly planning process that brings demand forecasts, supply capacity, inventory targets and financial plans into one agreed plan. It runs in five steps: gather the data, plan demand, plan supply, reconcile the two before the meeting, then decide. The horizon is typically one to two years, rolling."
       }
     },
     {
       "@type": "Question",
-      "name": "Why do most S&OP implementations fail?",
+      "name": "Why do most S&OP implementations underperform?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "More than 70% of S&OP implementations underperform due to four primary root causes: siloed data across sales, procurement, and logistics functions; spreadsheet dependence that prevents scenario agility and introduces version-control risk; no single source of truth that all functions trust; and lack of executive sponsorship to enforce cross-functional participation and accountability to the consensus plan."
+        "text": "Four reasons: data split across sales, procurement, logistics and finance; spreadsheets used as the joining tissue between planning systems; no agreed definition per figure, so the meeting argues about numbers rather than decisions; and no senior owner to hold functions to the agreed plan."
       }
     },
     {
@@ -141,15 +139,15 @@ The first diagnostic is free and unwelcome: at your last S&OP meeting, how much 
       "name": "What is the difference between S&OP and S&OE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "S&OP (Sales and Operations Planning) operates on a monthly cycle with a 12-24 month rolling horizon, focused on strategic and tactical trade-offs such as capacity investments and sourcing decisions. S&OE (Sales and Operations Execution) operates on a daily or weekly cycle within the current planning period, focused on sensing real-time demand shifts and adjusting execution to stay aligned with the S&OP plan. Both processes are complementary and require cross-functional data visibility."
+        "text": "S&OP runs monthly over a rolling one-to-two-year horizon and deals with trade-offs such as capacity and sourcing. S&OE, Sales and Operations Execution, runs daily or weekly inside the current period and deals with what is happening now: a demand spike, a missed delivery, a congested port. Both need the same agreed records."
       }
     },
     {
       "@type": "Question",
-      "name": "How does AI improve the S&OP process?",
+      "name": "What has to be true before planning software helps S&OP?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AI-powered platforms improve S&OP by unifying fragmented data sources into a single source of truth, automating probabilistic scenario planning to replace manual spreadsheet analysis, ingesting real-time demand signals instead of relying on monthly snapshots, and integrating S&OE execution feedback so plans stay grounded in operational reality. This eliminates the data reconciliation burden and lets planning teams focus on decisions rather than data disputes."
+        "text": "Four things: every function works from the same figures, with one agreed definition each and the source records reachable; a scenario can be re-run between meetings rather than only before one; the demand signal is refreshed more often than monthly; and execution variance is visible against the plan it deviated from."
       }
     }
   ]
@@ -159,19 +157,18 @@ The first diagnostic is free and unwelcome: at your last S&OP meeting, how much 
 ---
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
   <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
+    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
   </p>
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations &amp; References</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.gartner.com/en/supply-chain/topics/sales-and-operations-planning" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner S&amp;OP Maturity Model</a> - Framework for assessing S&amp;OP process maturity across five stages, from reactive and siloed to externally collaborative and profit-optimized planning.</li>
-    <li><a href="https://www.ascm.org/topics/s-and-op/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">APICS / ASCM Body of Knowledge</a> - Industry-standard definitions, competency frameworks, and best practices for Sales &amp; Operations Planning within the broader supply chain management discipline.</li>
-    <li><a href="https://www.oliverwight.com/integrated-business-planning" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Oliver Wight Integrated Business Planning</a> - The original architects of the S&amp;OP process and its evolution into Integrated Business Planning (IBP), connecting strategic plans with operational execution and financial performance.</li>
-    <li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/supply-chain-4-0" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">McKinsey Supply Chain Planning Research</a> - Research on next-generation supply chain planning capabilities, including AI-driven demand sensing, autonomous planning, and the digital transformation of S&amp;OP processes.</li>
+    <li><a href="https://www.gartner.com/en/supply-chain/topics/sales-and-operations-planning" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner — Sales and Operations Planning</a> - The maturity model referred to above, in its publisher's own words.</li>
+    <li><a href="https://www.ascm.org/topics/s-and-op/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">APICS / ASCM — S&amp;OP</a> - Standard definitions and competency frameworks for Sales &amp; Operations Planning.</li>
+    <li><a href="https://www.oliverwight.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Oliver Wight</a> - Originators of the S&amp;OP process and its extension into Integrated Business Planning.</li>
+    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for the planning terms used above.</li>
   </ul>
 </section>

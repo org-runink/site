@@ -42,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Dans l'autre sens, c'est pareil. La régulation a un changement à passer et doit appeler tout le monde pour le poser, un camion après l'autre, en espérant que chacun puisse décrocher. La moitié des appels tombent sur la messagerie et sont refaits vingt minutes plus tard.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#f59e0b] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Celui qui sait le premier est celui qui ne peut pas taper.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 Un refus de plus, parce que c'est le genre qu'on cache d'habitude. Ailleurs dans FACE, vous pouvez joindre un mémo vocal à un fil, et cette pièce jointe n'est pas transcrite. Plutôt que de laisser le modèle improviser autour, il est dit franchement au modèle qu'une pièce jointe audio est arrivée, que son contenu est inconnu, et qu'il ne doit pas deviner ce qui a été dit &mdash; et il reçoit pour consigne de vous dire que l'audio n'a pas été traité. Un système qui ne peut pas entendre quelque chose et qui le dit vaut plus qu'un système qui comble le trou.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(245,158,11,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#b45309] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que quelque chose change.
              </p>
@@ -80,7 +80,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#f59e0b] to-[#b45309] rounded-xl border border-[#f59e0b]/30 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:-translate-y-1">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Réserver une consultation
         </a>
     </div>

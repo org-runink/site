@@ -21,7 +21,15 @@
      paint are preloaded: the reading face and the display face.
      --------------------------------------------------------------------- */}}
 
+{{/* Figtree first: it is the reading and display face for the marketing pages
+     now, matching Runink FACE. Two variable files cover 300-900 in both styles,
+     which is why this list did not grow by eight. Fira stays because the
+     whitepapers are a document register that still uses it, and because Figtree
+     has no monospace — standing marks and figures need Fira Code's fixed
+     advance. */}}
 {{ $faces := slice
+    "fonts/Figtree-var.woff2"
+    "fonts/Figtree-Italic-var.woff2"
     "fonts/FiraSans-Book.woff2"
     "fonts/FiraSans-BookItalic.woff2"
     "fonts/FiraSans-Medium.woff2"
@@ -31,8 +39,12 @@
     "fonts/FiraCode-Regular.woff2"
     "fonts/FiraCode-Medium.woff2" }}
 
+{{/* Only the faces needed for first paint. Figtree upright is now the reading
+     face on every marketing page, so it replaces Fira Book here; the condensed
+     display face is preloaded only where it is still the display face, which is
+     the whitepapers, and those publish their own. */}}
 {{ $preload := slice
-    "fonts/FiraSans-Book.woff2"
+    "fonts/Figtree-var.woff2"
     "fonts/FiraSansCondensed-Heavy.woff2" }}
 
 {{/* The count assertion this file's header promises.

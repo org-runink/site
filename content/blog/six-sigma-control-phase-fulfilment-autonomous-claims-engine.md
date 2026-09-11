@@ -12,15 +12,14 @@ tags: ["Six Sigma", "FACE", "Demurrage", "Automation", "Runink"]
 robots: index, follow
 ---
 
-<!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-The "Control" phase of Six Sigma initiatives frequently fails in logistics because organizations rely on monthly audits over a sample rather than on continuous reading. Runink FACE — the Fulfilment Autonomous Claims Engine — reads every accessorial charge against the agreement governing it and drafts the dispute where the records do not support the charge. The draft goes to whoever signs disputes: the reading is automated, the decision is not.
+The "Control" phase of Six Sigma work fails in logistics because the checking is done monthly, over a sample. Runink FACE — the Fulfilment Autonomous Claims Engine — reads every accessorial charge against the agreement governing it, and drafts the dispute where the records do not support the charge. The draft goes to whoever signs disputes: the reading is automated, the decision is not.
 {{< /direct-answer >}}
 
-* **The Control Phase Challenge:** Without automated systems, carefully engineered supply chain improvements degrade over time, leading to unexpected accessorial charges and margin erosion.
-* **Automated Dispute Resolution:** The Fulfilment Autonomous Claims Engine (FACE) instantly audits carrier invoices and automatically files disputes for invalid demurrage and detention fees.
-* **Proactive Margin Protection:** Real-time exception alerts routed directly to MS Teams and WhatsApp empower finance and operations leaders to address deviations immediately, securing the financial gains achieved during Six Sigma projects.
+* **Why Control slips:** improvements that were designed carefully are checked casually. Accessorial charges creep back in because nobody reads them all.
+* **What automated reading changes:** every charge gets compared against the contracted terms and the operational timestamps for the same movement, rather than a sample at month end.
+* **Where it stops:** the dispute is drafted, with the evidence attached, and waits for a named person to approve, edit or reject it. Filing is a commercial act and stays with your people.
 
 <br>
 
@@ -29,14 +28,16 @@ The "Control" phase of Six Sigma initiatives frequently fails in logistics becau
 ## Why Do Supply Chain Improvements Fail During the Control Phase?
 
 {{< direct-answer >}}
-Supply chain improvements often fail during the Six Sigma Control phase because logistics operations are highly dynamic, and manual tracking mechanisms cannot keep pace with real-time operational deviations. Without continuous, automated oversight, process discipline erodes, allowing hidden costs like demurrage, detention, and drayage accessorials to quietly inflate the cost to serve.
+Because logistics moves faster than the checking. Manual tracking cannot keep up with daily deviations, so process discipline slips, and costs like demurrage, detention and drayage accessorials climb back into the cost to serve without anyone deciding to let them.
 {{< /direct-answer >}}
 
-For a Director of Finance or a Supply Chain Controller, successfully executing the Define, Measure, Analyze, Improve, and Control (DMAIC) cycle is a monumental achievement. Cross-functional teams spend months analyzing data, renegotiating carrier contracts, and optimizing distribution networks to reduce freight spend and improve On-Time In-Full (OTIF) performance. Yet, industry data consistently shows that a large percentage of these hard-won operational improvements degrade significantly within eighteen months. The root cause rarely lies in the "Improve" phase; it almost always points to a systemic failure in "Control."
+For a Director of Finance or a Supply Chain Controller, getting through Define, Measure, Analyze, Improve and Control is real work. Teams spend months on the analysis, renegotiate carrier contracts and redesign lanes to bring freight spend down and On-Time In-Full up. Then the gains fade. The cause is rarely the Improve phase. It is almost always Control.
 
-In the complex ecosystem of global freight, "Control" cannot be sustained through monthly spreadsheet audits or backward-looking quarterly business reviews. By the time a supply chain finance team identifies a spike in terminal dwell times, port congestion impacts, or an influx of accessorial charges, the financial damage is already done. Carriers have invoiced the charges, the margins for that quarter have shrunk, and the organization is forced to play a defensive, reactionary role. 
+You can check whether it has happened to you. Take the savings case from your last programme, and read the same lines for the most recent quarter. If nobody has, that is the finding.
 
-The volatility of modern logistics—exacerbated by unpredictable terminal capacity, fluctuating drayage availability, and unexpected customs holds—requires a control mechanism that is as dynamic as the environment it monitors. When organizations rely on manual intervention to monitor adherence to new processes, they inevitably experience a regression to the mean. Maintaining strict process controls requires a digital infrastructure capable of continuously auditing every shipment, comparing actual performance against established baselines, and instantly flagging any deviation from the optimized state.
+Control cannot be sustained by a monthly spreadsheet review or a quarterly business review. By the time a finance team spots a rise in terminal dwell or a wave of accessorial charges, the money has gone. The charges are invoiced, the quarter's margin is set, and the only move left is defensive.
+
+Freight is volatile — terminal capacity, chassis availability, customs holds — so the control has to run at the same speed as the thing it controls. When the check depends on somebody remembering to do it, performance drifts back towards where it started. Holding a process in control means reading every shipment against the agreed baseline and flagging the ones that differ, as they happen.
 
 ---
 
@@ -46,57 +47,57 @@ The volatility of modern logistics—exacerbated by unpredictable terminal capac
 Runink FACE — the Fulfilment Autonomous Claims Engine — reads logistics execution records against the agreements that govern them. Where an accessorial charge such as demurrage or detention is not supported by the records, it raises that charge by name and drafts the dispute with the evidence attached. The filing itself waits for the person who signs disputes.
 {{< /direct-answer >}}
 
-To truly sustain Six Sigma improvements, Supply Chain Controllers are increasingly turning to advanced AI-enabled systems designed to enforce compliance autonomously. At the forefront of this shift is the Fulfilment Autonomous Claims Engine (FACE). Rather than waiting for human auditors to sift through hundreds of carrier invoices at the end of the month, FACE acts as a continuous, vigilant gatekeeper for your logistics spend.
+Start with the charge itself. When a container lands at a port, or a full trailer reaches a cross-dock, free time starts running. Delays caused by the terminal, by chassis shortages or by the carrier still end up as demurrage and detention on the shipper's invoice. Demurrage is the charge for cargo sitting past its free time; detention is the charge for holding the equipment.
 
-When a container arrives at a port or a Full Truckload (FTL) reaches a cross-docking facility, the clock begins ticking on free time. Often, delays caused by the terminal, lack of chassis availability, or carrier-side issues result in unfair demurrage and detention charges being passed down to the shipper. Historically, disputing these charges required a logistics analyst to manually gather terminal gate-out timestamps, GPS coordinates, WMS check-in logs, and delivery receipts, cross-reference them against the specific Service Level Agreement (SLA), and draft a formal dispute. This process is so labor-intensive that many finance departments simply write off these charges as the "cost of doing business," effectively abandoning the cost-saving controls established during their Six Sigma initiatives.
+Disputing one has always meant an analyst assembling gate-out timestamps, GPS positions, warehouse check-in logs and delivery receipts, reading them against the contract, and writing the dispute. It takes hours per charge. That is why many finance departments write these off as the cost of doing business — and why the savings from the last improvement programme quietly reverse.
 
-Runink FACE changes where the effort goes. It reads the milestone records an operation already holds and, when an invoice carries a demurrage or detention charge, compares that charge against the contracted free time and the operational timestamps for the same container. Where the records do not support the charge — a port closure, or a container gated out inside the allowable window — FACE assembles the documentation and drafts the dispute.
+Runink FACE changes where the effort goes. It reads the milestone records an operation already holds. When an invoice carries a demurrage or detention charge, it compares that charge against the contracted free time and the operational timestamps for the same container. Where the records do not support the charge — a port closure, or a container gated out inside the window — it assembles the documentation and drafts the dispute.
 
-What it does not do is file it. The draft goes to whoever signs disputes, who approves, edits or rejects it. That boundary is deliberate: a dispute is a commercial communication to a carrier you have to keep working with, and an incorrect one costs more than the charge. Nor does FACE predict what a dispute programme will recover. The recoverable amount depends on which of your charges are genuinely unsupported, and that is a figure only your own invoices establish.
+What it does not do is file it. The draft goes to whoever signs disputes, who approves, edits or rejects it. That boundary is deliberate: a dispute is a commercial message to a carrier you have to keep working with, and a wrong one costs more than the charge. Nor does FACE predict what a dispute programme will recover. What you can recover depends on which of your charges are genuinely unsupported, and only your own invoices establish that.
 
 ---
 
 ## How Can Supply Chain Controllers Maintain Sustainable Cost Reductions?
 
 {{< direct-answer >}}
-Supply Chain Controllers can maintain sustainable cost reductions by shifting from retrospective financial auditing to real-time, proactive enforcement of contracted rates and service levels. By utilizing automated systems to monitor every logistical transaction, finance leaders can guarantee that process deviations are corrected before they result in margin erosion.
+By moving the check from after the invoice to the point of execution. Enforcing the agreed rates and routing rules as shipments happen is what keeps negotiated savings in the accounts, rather than finding out weeks later that they did not arrive.
 {{< /direct-answer >}}
 
-Sustaining cost reductions requires a fundamental shift in how supply chain finance operates. The traditional model is highly reactive: wait for the invoice, approve the charges, and perform a post-mortem analysis weeks later to figure out why freight spend exceeded the budget. This approach is fundamentally incompatible with the principles of the Six Sigma Control phase, which demands immediate corrective action when a process strays from its defined limits.
+The traditional rhythm is reactive: the invoice arrives, the charges are approved, and someone works out weeks later why freight spend was over budget. That is the opposite of what a Control phase asks for, which is a correction as soon as the process strays.
 
-To maintain sustainable cost reductions, the focus must shift to proactive margin protection. This means enforcing compliance at the point of execution. When a vendor consistently ships via Less-Than-Truckload (LTL) instead of consolidating into the required FTL routing guide, or when a drayage provider repeatedly incurs pre-pull charges, these deviations must be identified instantly. 
+The shift is to check at execution. When a vendor ships part-load instead of consolidating to the agreed routing, or a drayage provider keeps adding pre-pull charges, those are visible on the day. Read then, they are a conversation. Read at month end, they are a write-off.
 
-An automated control system acts as the digital enforcer of your Six Sigma parameters. By continuously reconciling operational realities against financial agreements, Supply Chain Controllers can ensure that negotiated savings actually materialize on the profit and loss (P&L) statement. This level of rigorous, automated oversight transforms the finance department from a historical reporting function into a strategic partner capable of actively steering supply chain performance and locking in long-term efficiency gains.
-
-Furthermore, integrating cost tracking with daily operational workflows creates a culture of accountability. When logistics teams know that every accessorial charge is systematically reviewed and every routing guide deviation is logged, there is a natural alignment toward disciplined execution. Continuous compliance becomes the default state rather than an aspirational goal.
+That is what makes negotiated savings show up in the accounts. It also changes behaviour across the operation: when every accessorial charge is read and every routing deviation is logged, compliance becomes the default rather than the aspiration. Not because anyone is being policed, but because the deviation is visible to the person who caused it.
 
 ---
 
-## Why Are Real-Time Alerts Critical for Margin Protection?
+## Why Does It Matter How a Finding Reaches Someone?
 
 {{< direct-answer >}}
-Real-time alerts are critical because they deliver actionable intelligence to the right stakeholders at the exact moment a process deviates from its control limits. Utilizing integrations like MS Teams Webhooks and WhatsApp ensures that operations and finance teams can intervene immediately to prevent imminent accessorial charges or operational bottlenecks.
+Because a finding in a monthly report describes money already spent. What changes an outcome is a finding that arrives as one named item, with the records behind it, in front of the person who can act on it — and that leaves the list once it has been decided.
 {{< /direct-answer >}}
 
-Information decay is the enemy of supply chain control. The value of identifying a delayed shipment or an impending demurrage charge drops precipitously with every hour that passes. For a Director of Finance or a Supply Chain Controller, having access to an executive dashboard is useful for strategic planning, but it is insufficient for tactical, day-to-day margin protection. To keep a process in control, alerts must find the user, rather than the user having to hunt for the alert.
+Information decays. The value of knowing about a delayed shipment or an approaching demurrage charge drops by the hour. An executive dashboard is useful for planning and useless for this. To hold a process in control, the finding has to find the person.
 
-This is why the delivery channel matters as much as the detection. A finding that lands in a report somebody opens on Thursday is a finding about something that has already cost money. FACE raises each finding as a named item in a queue a person works through, rather than as a line in a periodic report.
+So the delivery matters as much as the detection. A finding that lands in a report somebody opens on Thursday is a finding about something that has already cost money. FACE raises each finding as a named item in a queue a person works through, rather than as a line in a periodic report.
 
-Take a container with twenty-four hours of free time remaining at a congested terminal. What is useful is not that the condition exists — a TMS report would say that — but that it arrives as one item, identified by container, with the free time terms it is measured against and the records behind it, in front of the coordinator who can move it. Once that item has been decided it leaves the queue, rather than reappearing every time somebody looks at the report. That property is duller than real-time alerting and it is the one that determines whether anything actually gets closed.
+Take a container with a day of free time left at a congested terminal. The useful thing is not that the condition exists — a transport system report would say that — but that it arrives as one item, identified by container, with the free time terms it is measured against and the records behind it, in front of the coordinator who can move it. Once decided, it leaves the queue instead of reappearing every time somebody runs the report. That property is duller than real-time alerting, and it is the one that determines whether anything gets closed.
 
 ---
 
-## What is the Measurable Financial Impact of Automated Claims Management?
+## What is the Financial Case for Reading Every Charge?
 
 {{< direct-answer >}}
-Automated claims management delivers measurable financial impact by directly recovering invalid accessorial charges, significantly reducing the administrative overhead of manual invoice auditing, and preventing future margin leakage through strict enforcement of carrier service level agreements.
+It has three parts, and only one of them is a recovery. Some share of invoiced accessorials is not supported by the record, but what that share is in your operation is unknown until someone reads your invoices. The hours spent assembling evidence come down. And you end up with a per-carrier history that is evidence at the next renegotiation.
 {{< /direct-answer >}}
 
-The goal of the Six Sigma Control phase is financial predictability. The honest statement of the financial case for automated claims work is narrower than the usual one, and it has two parts. First, a share of accessorial charges invoiced by carriers and forwarders is not supported by the operational record — that is well established in the trade, and it is why dispute functions exist at all. Second, what that share is in your operation is unknown until somebody reads your own invoices against your own records, and nobody can quote it to you in advance. Any supplier offering a recovery percentage before seeing your data is describing somebody else's invoices.
+The goal of the Control phase is predictability. The honest financial case for automated claims work is narrower than the usual one, and it has three parts.
 
-Beyond direct cost recovery, automated claims management drastically reduces administrative burden. The hours previously spent by logistics analysts and accounts payable clerks hunting down gate receipts, decoding complex tariff schedules, and exchanging endless emails with carrier representatives can be reallocated to high-value analytical tasks. This efficiency gain not only lowers the cost of the finance and operations functions but also accelerates the dispute resolution timeline, improving cash flow and reducing Days Sales Outstanding (DSO) complexities.
+First, some share of accessorial charges invoiced by carriers and forwarders is not supported by the operational record. That is well established in the trade, and it is why dispute functions exist at all. What that share is in your operation is unknown until somebody reads your own invoices against your own records. Any supplier quoting a recovery percentage before seeing your data is describing someone else's invoices.
 
-There is a third benefit that is easier to verify than either of the first two: the record itself. A dispute programme that reads every charge leaves behind a per-carrier history of how often that carrier's charges were unsupported. At the next contract renegotiation that history is evidence rather than recollection, and it is the same artefact whether or not any disputes were won.
+Second, the administrative load falls. The hours analysts and accounts payable clerks spend chasing gate receipts, decoding tariff schedules and emailing carrier representatives go down when the evidence is assembled for them. That time goes somewhere more useful, and disputes get raised while they are still in their window.
+
+Third — and this is the part that is easiest to verify — you end up with a record. A programme that reads every charge leaves behind a per-carrier history of how often that carrier's charges were unsupported. At the next renegotiation that history is evidence rather than recollection, and you have it whether or not any individual dispute was won.
 
 ---
 
@@ -106,13 +107,12 @@ There is a third benefit that is easier to verify than either of the first two: 
 Sustaining Six Sigma gains means replacing periodic sampling with continuous reading. Runink FACE reads every charge against the agreement governing it and drafts the dispute where the records do not support it — then hands the draft to a named person. The reading is automated; the decision is not.
 {{< /direct-answer >}}
 
-The Control phase should not be the graveyard of supply chain optimization efforts; it should be the robust foundation upon which long-term profitability is built. For Directors of Finance and Supply Chain Controllers, relying on retrospective audits and manual interventions is no longer a viable strategy for protecting margins in a volatile global logistics market. 
+The Control phase should not be where supply chain improvement goes to die. For Directors of Finance and Supply Chain Controllers, retrospective audits are no longer enough to hold a margin in a volatile freight market.
 
-For process improvements to stick, deviations have to be read as they are recorded rather than at the end of the month. [Runink FACE](/products/face/) does the reading and the drafting; the filing, the short-pay and the carrier conversation stay with your people, because those are the parts that carry commercial consequences.
+For improvements to stick, deviations have to be read as they are recorded rather than at month end. [Runink FACE](/products/face/) does the reading and the drafting. The filing, the short-pay and the carrier conversation stay with your people, because those are the parts that carry commercial consequences.
 
 The first number to establish is your own: total accessorial spend last year, and what proportion of it anyone has ever checked against the contract. [Contact Runink](/#contact-form) if it would help to work that out.
 
-<!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -123,7 +123,7 @@ The first number to establish is your own: total accessorial spend last year, an
       "name": "Why do supply chain improvements fail during the Control phase?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Supply chain improvements often fail during the Six Sigma Control phase because logistics operations are highly dynamic, and manual tracking mechanisms cannot keep pace with real-time operational deviations. Without continuous oversight, processes erode, allowing hidden costs like demurrage and detention to inflate."
+        "text": "Because logistics moves faster than the checking. Manual tracking cannot keep pace with daily deviations, so discipline slips and costs like demurrage and detention climb back into the cost to serve without anyone deciding to let them."
       }
     },
     {
@@ -149,18 +149,17 @@ The first number to establish is your own: total accessorial spend last year, an
 ---
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Who wrote this</h2>
   <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
+    The Runink logistics operations team. Runink builds software that reads the records a logistics operation already holds — orders, carrier invoices, returns, claim files — and drafts the action a named person then approves.
   </p>
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations &amp; References</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.ascm.org/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Best practices for sustaining Six Sigma DMAIC improvements in global logistics operations.</li>
-    <li><a href="https://cscmp.org/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Research on minimizing accessorial charges and optimizing freight audit and payment processes.</li>
-    <li><a href="https://www.fmc.gov/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Federal Maritime Commission (FMC)</a> - Guidelines and regulatory frameworks concerning fair demurrage and detention billing practices in ocean freight.</li>
+    <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Practitioner standards for sustaining DMAIC improvements in logistics operations.</li>
+    <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry definitions for accessorial charges and freight audit practice.</li>
+    <li><a href="https://www.fmc.gov/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Federal Maritime Commission (FMC)</a> - Rules and guidance on demurrage and detention billing practice in ocean freight.</li>
   </ul>
 </section>

@@ -1,69 +1,220 @@
+{{/*
+  /blog/ — the library page.
+
+  WHAT THIS PAGE IS FOR, which is the thing it previously failed to say. There
+  are two kinds of document behind this URL and they are not the same weight:
+  four long whitepapers, which are the substantive material and which the header
+  nav now links directly, and several dozen short pieces on the operational
+  problems those papers address. A reader should be able to tell that apart
+  within one screen, and should never have to discover the papers by noticing
+  that "Whitepapers" happens to be the third most populous category. So the
+  papers get a named band of their own, immediately under the deck, and they are
+  taken OUT of the category sections below so they are not listed twice.
+
+  THE ORDER. Hero, then the papers, then the topics as chips, then the four most
+  populous topics opened up three cards each, then a way to see all of them. It
+  narrows: what this is, the deep end, the shallow end, everything.
+
+  REGISTER. Type and colour come from partials/list-hero.html and
+  partials/rule-head.html, which are the homepage's own shapes. This page used to
+  open with an 80px orange gradient headline, uppercase and italic, over a
+  near-black canvas, with the deck set in all-caps letterspaced bold — a
+  treatment nothing else on the marketing site uses. Quiet dark ink on the light
+  sheet is what a visitor has already seen on the homepage and the industry
+  pages, so arriving here is no longer a change of website.
+
+  Every colour is a token, so the markup follows the light/dark ground switch
+  rather than freezing the values the old black canvas needed. partials/
+  background-effects.html is gone from this page with the canvas it was drawn
+  for: its own note calls it a black-page device.
+
+  THE COPY in the hero lives in `params.blog.title` and `params.blog.subtitle` in
+  hugo.toml, per language — config strings printed as visible prose, so
+  CONTENT.md rules 1 and 3 govern them exactly as they would a paragraph. The
+  previous pair promised "actionable best practices to maximize ROI from your
+  Digital Transformation initiatives", which rule 1 names as an invented figure
+  with the digits filed off, and claimed "Expertise" in the headline rather than
+  showing any.
+*/}}
 {{ define "main" }}
-<div class="bg-stone-950 min-h-screen relative overflow-hidden">
-    {{ partial "background-effects.html" . }}
 
-    <div class="container mx-auto px-4 py-24 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 flex flex-col items-center">
-                <div class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-[#ea580c]/30 text-[#ea580c] text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
-                    Transmission
-                </div>
+{{/* The papers are published in English only, and the section index is a child
+     of this one. Reach the English translation for the list so a localised
+     /blog/ still shows the four documents instead of an empty band — the same
+     move layouts/whitepapers/list.html makes, for the same reason. The link
+     goes to the reader's own language index, which exists in all four. */}}
+{{ $wp := site.GetPage "/blog/whitepapers" }}
+{{ $papers := slice }}
+{{ $wpLink := "" }}
+{{ with $wp }}
+  {{ $wpLink = .RelPermalink }}
+  {{ $en := . }}
+  {{ range .AllTranslations }}{{ if eq .Language.Lang "en" }}{{ $en = . }}{{ end }}{{ end }}
+  {{ $papers = sort $en.Pages "Weight" }}
+{{ end }}
 
-                <h1 class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
-                    {{ .Site.Params.blog.title | default "Field Intelligence" }}
-                </h1>
+{{/* Whitepapers are a category too — content/blog/whitepapers/_index.md
+     cascades one onto each paper so they appear in the blog's taxonomy at all.
+     They have their own band above, so they are filtered out of the sections
+     below; without this they arrive third by count and the page lists the same
+     four documents twice. */}}
+{{ $cats := slice }}
+{{ range .Site.Taxonomies.categories.ByCount }}
+  {{ if ne (lower .Page.Title) "whitepapers" }}
+    {{ $cats = $cats | append . }}
+  {{ end }}
+{{ end }}
 
-                {{ with .Site.Params.blog.subtitle }}
-                <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mt-6 max-w-3xl">{{ . }}</div>
-                {{ end }}
-                
-                <!-- Category Pills (Show all categories here compactly) -->
-                <div class="flex flex-wrap justify-center gap-3 mt-12">
-                    {{ range .Site.Taxonomies.categories.ByCount }}
-                    {{ if gt .Count 1 }}
-                    <a href="{{ .Page.RelPermalink }}" class="px-4 py-2 rounded-full border border-stone-800 bg-stone-900 text-stone-400 hover:text-white hover:border-[#ea580c] transition-colors text-sm">
-                        {{ .Page.Title }} <span class="opacity-50 ml-1">({{ .Count }})</span>
-                    </a>
-                    {{ end }}
-                    {{ end }}
-                </div>
+<div class="rk-list bg-canvas">
+  {{ partial "list-print.html" . }}
+
+  <div class="rk-list-wrap container mx-auto max-w-[68rem] px-5 md:px-8 py-14 md:py-20">
+
+    {{/* Read through a `with` rather than reaching for
+         `.Site.Params.blog.subtitle` directly: a locale that has no
+         [params.blog] table at all would otherwise fail the build on a nil
+         lookup rather than fall back. All four carry one today; this keeps a
+         fifth language from being a broken build. */}}
+    {{ $eyebrow := "" }}
+    {{ $headline := .Title }}
+    {{ $deck := "" }}
+    {{ with .Site.Params.blog }}
+      {{ with .eyebrow }}{{ $eyebrow = . }}{{ end }}
+      {{ with .title }}{{ $headline = . }}{{ end }}
+      {{ with .subtitle }}{{ $deck = . }}{{ end }}
+    {{ end }}
+
+    {{ partial "list-hero.html" (dict "eyebrow" $eyebrow "title" $headline "deck" $deck) }}
+
+    {{/* 1. The substantive documents, named, with the product each one is about
+           and how long it is. A reader who only ever reads one thing on this
+           site should be reading one of these four. */}}
+    {{ with $papers }}
+    <section class="mb-14 md:mb-20" aria-labelledby="papers-heading">
+      <div class="rk-list-head">
+        {{ partial "rule-head.html" (dict "label" "Start with a paper" "id" "papers-heading" "meta" (printf "%d documents" (len .))) }}
+      </div>
+
+      <ul class="list-none m-0 p-0 border-t-2 border-rule-strong">
+        {{ range . }}
+        <li class="rk-list-card border-b border-rule">
+          <a class="rk-list-url group grid gap-x-6 gap-y-1.5 md:grid-cols-[12rem_minmax(0,1fr)] items-baseline no-underline border-l-[3px] border-transparent py-5 px-3 transition-colors duration-200 hover:bg-signal-wash hover:border-signal"
+             href="{{ .RelPermalink }}">
+            <p class="m-0 text-[0.75rem] font-extrabold uppercase tracking-[0.14em] text-ink-2">
+              <span translate="no">{{ .Params.product }}</span>
+              {{ with .Params.jointly_with }}
+              <span class="text-ink-3">with <span translate="no">{{ . }}</span></span>
+              {{ end }}
+            </p>
+            <div class="min-w-0">
+              <p class="m-0 font-heading text-lg md:text-xl font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-signal">
+                {{ .Params.headline | default .Title }}
+              </p>
+              {{ with .Params.subtitle }}
+              <p class="mt-1 mb-0 text-ink-2 text-sm leading-relaxed">{{ . }}</p>
+              {{ end }}
+              {{ with .Params.source_pages }}
+              <p class="mt-2 mb-0 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">{{ . }} pages</p>
+              {{ end }}
             </div>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
 
-            <div class="space-y-24 mt-16">
-                <!-- Show only the top 4 most popular categories as full sections -->
-                {{ range first 4 .Site.Taxonomies.categories.ByCount }}
-                {{ $categoryPages := .Pages }}
-                <div class="category-section">
-                    <div class="flex justify-between items-end border-b border-stone-800/50 pb-4 mb-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white capitalize">{{ .Page.Title }}</h2>
-                        <span class="text-stone-500 font-mono text-sm">{{ .Count }} Posts</span>
-                    </div>
+      {{/* Screen only: the four rows above already print their own destinations,
+           so on paper this is a third link to the same place. */}}
+      {{ with $wpLink }}
+      <p class="rk-list-screen mt-4 mb-0 text-sm">
+        <a class="font-bold text-signal underline decoration-signal decoration-1 underline-offset-4 hover:no-underline" href="{{ . }}">
+          All {{ len $papers }} papers, with their chapter lists &rarr;
+        </a>
+      </p>
+      {{ end }}
+    </section>
+    {{ end }}
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {{ range first 3 $categoryPages }}
-                            {{ partial "post-card.html" . }}
-                        {{ end }}
-                    </div>
+    {{/* 2. The topics, as one compact row. Only those with more than one article
+           behind them: a chip that leads to a page with a single item on it
+           costs a click and tells a reader nothing about what is here. */}}
+    {{ with $cats }}
+    <section class="rk-list-screen mb-14 md:mb-20" aria-labelledby="topics-heading">
+      <div class="rk-list-head">
+        {{ partial "rule-head.html" (dict "label" "Browse by topic" "id" "topics-heading") }}
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {{ range . }}
+        {{ if gt .Count 1 }}
+        <a href="{{ .Page.RelPermalink }}"
+           class="inline-flex items-baseline gap-1.5 px-3 py-1.5 rounded-full bg-sheet border border-rule text-sm text-ink-2 no-underline transition-colors duration-200 hover:bg-signal-wash hover:border-signal hover:text-ink">
+          {{ .Page.Title }}
+          <span class="text-xs text-ink-3">{{ .Count }}</span>
+        </a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
 
-                    {{ if gt .Count 3 }}
-                    <div class="mt-8 text-center">
-                        <a href="{{ .Page.RelPermalink }}"
-                            class="inline-flex items-center px-8 py-3 border border-[#ea580c]/50 text-[#ea580c] rounded-full hover:bg-[#ea580c] hover:text-white transition-all duration-300 font-medium text-lg shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)]">
-                            View all {{ .Count }} posts in {{ .Page.Title }} &rarr;
-                        </a>
-                    </div>
-                    {{ end }}
-                </div>
-                {{ end }}
-            </div>
-            
-            <div class="mt-24 text-center border-t border-stone-800/50 pt-16">
-                 <h3 class="text-2xl font-bold text-white mb-6">Looking for something specific?</h3>
-                 <a href="/categories" class="inline-flex items-center px-8 py-4 bg-stone-800 text-white rounded-full hover:bg-[#ea580c] transition-colors font-bold text-lg">
-                     Browse All Categories &rarr;
-                 </a>
-            </div>
+    {{/* 3. The four most populous topics, opened up. Three articles each is
+           enough to show what a topic covers without turning the page into the
+           index of everything, which is what /categories/ is for. */}}
+    <div class="space-y-14 md:space-y-20">
+      {{ range first 4 $cats }}
+      <section class="category-section" aria-labelledby="cat-{{ .Page.Title | urlize }}">
+        <div class="rk-list-head flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-rule pb-3 mb-7">
+          <h2 id="cat-{{ .Page.Title | urlize }}" class="m-0 font-heading text-xl md:text-2xl font-bold text-ink">{{ .Page.Title }}</h2>
+          <span class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">
+            {{ .Count }} {{ if eq .Count 1 }}article{{ else }}articles{{ end }}
+          </span>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {{ range first 3 .Pages }}
+            {{ partial "post-card.html" (dict "page" . "level" 3) }}
+          {{ end }}
+        </div>
+
+        {{ if gt .Count 3 }}
+        <p class="rk-list-screen mt-6 mb-0 text-sm">
+          <a class="font-bold text-signal underline decoration-signal decoration-1 underline-offset-4 hover:no-underline" href="{{ .Page.RelPermalink }}">
+            All {{ .Count }} in {{ .Page.Title }} &rarr;
+          </a>
+        </p>
+        {{ end }}
+      </section>
+      {{ end }}
     </div>
+
+    {{/* 4. Everything else. The index names every topic with a count beside it,
+           which is a better answer than a search box this site does not have. */}}
+    <section class="mt-14 md:mt-20 pt-10 border-t border-rule" aria-labelledby="more-heading">
+      <h2 id="more-heading" class="m-0 mb-3 font-heading text-xl md:text-2xl font-bold text-ink">Looking for a topic that is not above?</h2>
+      <p class="m-0 mb-6 max-w-[62ch] text-ink-2 leading-relaxed">
+        Every article carries its own topics, and the index lists all of them with a count beside each one. The papers are the place to start if you want the mechanism rather than the problem.
+      </p>
+      {{/* These two are the only buttons on the page that survive into print —
+           they are the two destinations a reader holding the sheet would want,
+           so list-print.html flattens them to plain text and prints the URL
+           after each rather than hiding them with the rest of the furniture. */}}
+      <div class="flex flex-wrap gap-3.5">
+        <a class="rk-list-button rk-list-url inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-sheet border border-rule text-signal text-xs font-extrabold uppercase tracking-[0.12em] no-underline transition-colors duration-200 hover:bg-signal-wash hover:border-rule-mid"
+           href="{{ "/categories/" | relLangURL }}">
+          All topics
+        </a>
+        {{ with $wpLink }}
+        <a class="rk-list-button rk-list-url inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-signal-fill text-on-fill text-xs font-extrabold uppercase tracking-[0.12em] no-underline transition-colors duration-200 hover:bg-signal-fill-hover"
+           href="{{ . }}">
+          The whitepapers
+        </a>
+        {{ end }}
+      </div>
+    </section>
+
+    {{/* Print only. A printed sheet carries no site header, so without this a
+         leave-behind says nothing about where it came from. */}}
+    <p class="rk-list-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
 </div>
 {{ end }}

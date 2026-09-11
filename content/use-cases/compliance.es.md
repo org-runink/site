@@ -38,7 +38,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Nadie planea esto. Pasa porque la forma más corta de responder una pregunta es exportar lo que uno tiene, y lo que uno tiene lleva dentro los datos personales.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#10b981] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 No se puede proteger lo que no se ve salir.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -66,8 +66,8 @@ author: "Runink"
                 El registro también mantiene separadas las dos respuestas que la gente suele juntar. &laquo;Esto se revisó y no había nada&raquo; y &laquo;esto no se pudo leer, así que nunca se revisó&raquo; quedan anotadas como cosas distintas. La segunda es el hallazgo que una auditoría busca de verdad, y es la que una marca verde se traga de normal.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(16,185,129,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#059669] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
              </p>
@@ -92,7 +92,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#10b981] to-[#059669] rounded-xl border border-[#10b981]/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:-translate-y-1">
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta
         </a>
     </div>

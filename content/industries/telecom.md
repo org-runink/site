@@ -18,7 +18,12 @@ description: "Revenue assurance, rating and billing, interconnect settlement, ne
 # `hypothetical`; the copy derived from it now carries that mark too.
 product: "Runink CORE + Atlas"
 weight: 40
-accent: "#c084fc"
+# category: binds this page to the palette's category tokens via the
+# .rk-cat-* class the layout emits. It replaces an `accent:` hex, which
+# went dead when the stylesheets moved to --rk-accent: the hex was still
+# injected into a style attribute that nothing read any more. A class can
+# follow the ground; a literal cannot.
+category: "telecom"
 card: "Runink CORE with Logical Leap's Atlas — revenue assurance, rating and billing, interconnect settlement, and rollout across many small sites. An architecture, not a product on our price list."
 headline: "Revenue assurance exists because the volume defeated inspection."
 deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples. Read this page as an architecture: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap, and the illustrations are hypothetical. No operator has run it."

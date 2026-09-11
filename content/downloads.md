@@ -13,7 +13,7 @@ date: "2026-08-11T00:00:00Z"
 {{< section-container class="bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 pt-20 pb-16" >}}
   <div class="text-center max-w-3xl mx-auto">
     <h1 class="text-4xl md:text-5xl font-bold mb-6">Downloads</h1>
-    <p class="text-xl text-[#D9CDB8]">
+    <p class="text-xl text-ink-2">
       Take Runink FACE with you, or run the platform on your own hardware.
     </p>
   </div>
@@ -33,14 +33,15 @@ date: "2026-08-11T00:00:00Z"
       where your data is processed and who can see it.
     </p>
 
-    <!-- NOTE: the inline hexes below (#7c3aed, #ea580c, #10b981) are the
-         pre-migration vendor palette, not brand colours, and DESIGN.md forbids
-         pages writing colour literals at all. They are left untouched here
-         because recolouring is the migration's job, not this pass's. -->
+    <!-- NOTE: these three cards used to carry the pre-migration vendor palette
+         as inline hexes (#7c3aed, #ea580c, #10b981) — three colours standing in
+         for "three different things". The site has ONE accent now, so the
+         eyebrows and the buttons all resolve through the signal tokens and the
+         distinction is carried by the copy and the card widths instead. -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
     <div class="md:col-span-3 h-full bg-stone-800 p-8 rounded-lg shadow-lg border border-stone-700 flex flex-col">
-      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3" style="color:#7c3aed">Runink FACE — the product — Android</div>
+      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink FACE — the product — Android</div>
       <h3 class="text-2xl font-bold text-white mb-3">Operations, in your pocket</h3>
       <p class="text-stone-400 mb-8 flex-1 max-w-3xl">
         The cockpit for Runink FACE: the ranked queue of proposed actions, the records
@@ -48,14 +49,13 @@ date: "2026-08-11T00:00:00Z"
         access — install it directly. It is not signed for the Play Store.
       </p>
       <a href="https://github.com/org-runink/site/releases/download/face-android/app-debug.apk"
-         class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide text-white transition-colors"
-         style="background-color:#7c3aed">
+         class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide bg-signal-fill hover:bg-signal-fill-hover text-on-fill transition-colors">
         Download APK
       </a>
     </div>
 
     <div class="md:col-span-2 h-full bg-stone-800 p-8 rounded-lg shadow-lg border border-stone-700 flex flex-col">
-      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3" style="color:#ea580c">Runink PULSE — a separate product — Android</div>
+      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink PULSE — a separate product — Android</div>
       <h3 class="text-2xl font-bold text-white mb-3">Run your agency from the field</h3>
       <p class="text-stone-400 mb-8 flex-1">
         Market analysis and marketing work, with the same review-and-approve step in
@@ -65,14 +65,13 @@ date: "2026-08-11T00:00:00Z"
         for the Play Store.
       </p>
       <a href="https://github.com/org-runink/site/releases/download/pulse-android/app-release.apk"
-         class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide text-white transition-colors"
-         style="background-color:#ea580c">
+         class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide bg-signal-fill hover:bg-signal-fill-hover text-on-fill transition-colors">
         Download APK
       </a>
     </div>
 
     <div class="h-full bg-stone-800 p-8 rounded-lg shadow-lg border border-stone-700 flex flex-col">
-      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3" style="color:#10b981">The platform — not a product</div>
+      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">The platform — not a product</div>
       <h3 class="text-2xl font-bold text-white mb-3">Runink CORE on your own box</h3>
       <p class="text-stone-400 mb-8 flex-1">
         The data-sovereign appliance image: the layer FACE and PULSE run on, so that
@@ -80,8 +79,7 @@ date: "2026-08-11T00:00:00Z"
         per deployment, not offered as a public download.
       </p>
       <a href="/#contact"
-         class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide text-white transition-colors"
-         style="background-color:#10b981">
+         class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide bg-signal-fill hover:bg-signal-fill-hover text-on-fill transition-colors">
         Request Access
       </a>
     </div>

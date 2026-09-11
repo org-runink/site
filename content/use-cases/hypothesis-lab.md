@@ -39,7 +39,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 So somebody builds a spreadsheet. It takes two days. It holds one version of events, it rests on numbers typed by hand, and it is thrown away once the call is made. The next time this happens, the work starts again from nothing.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ec4899] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 The plan is not the hard part. Getting the numbers in time is.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 The run does not pick for you. It puts the options in a row. When somebody does pick one and send it on to be acted on, the option they chose and their name go on the record together, so the question six months later is answered from the file rather than from the meeting.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(236,72,153,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#be185d] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>
@@ -87,7 +87,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ec4899] to-[#be185d] rounded-xl border border-[#ec4899]/30 hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] hover:-translate-y-1">
+        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation
         </a>
     </div>

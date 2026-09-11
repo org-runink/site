@@ -42,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 By then the question has changed. It is no longer "can we save this load", it is "who pays for it". That is a much more expensive question, and it is the only one left.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#3b82f6] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 The reading was there all along. Nobody was reading it.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 Where there is something to act on, it waits as a drafted move, and a named person approves, edits or rejects it with the sign-off kept on the record. Approving is what sends it. And where a step in that move has nothing behind it — a write into a yard or transport system, for instance — the response names the step that did not happen instead of reporting success, so "approved" and "done" stay two different words.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(59,130,246,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#2563eb] mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.
              </p>
@@ -81,7 +81,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#3b82f6] to-[#2563eb] rounded-xl border border-[#3b82f6]/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:-translate-y-1">
+        <a href="/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation
         </a>
     </div>

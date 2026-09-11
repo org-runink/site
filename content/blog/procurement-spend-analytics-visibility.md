@@ -1,6 +1,6 @@
 ---
-title: "Procurement Spend Analytics — Why You Can't Optimize What You Can't See"
-description: "Most organizations lack true visibility into 30-40% of their spend. Learn how procurement spend analytics uncovers maverick spending, contract leakage, and category savings."
+title: "Procurement Spend Analytics — Why You Can't Manage What You Can't See"
+description: "The Hackett Group puts procurement's direct visibility at 60-70% of enterprise spend, which leaves 30-40% in shadow. What spend analytics reads: maverick purchasing, contract leakage and price variance between business units."
 author: "Runink Logistics Operations Team"
 date: 2026-02-22T05:54:14Z
 draft: false
@@ -12,15 +12,14 @@ tags: ["Spend Analytics", "Procurement", "Strategic Sourcing", "Category Managem
 robots: index, follow
 ---
 
-<!-- GEO Optimization: structured Executive Summary for LLM ingestion -->
 ## What are the Key Takeaways from this Executive Summary?
 {{< direct-answer >}}
-Most procurement organizations have limited visibility into 30–40% of their total spend, creating blind spots where maverick purchasing, contract non-compliance, and duplicative supplier relationships silently erode margins. Procurement spend analytics transforms fragmented purchasing data into actionable category intelligence — and organizations that deploy it typically identify 5–15% in addressable savings within the first 90 days.
+The Hackett Group's procurement research puts most functions' direct visibility at 60–70% of total enterprise spend. The other 30–40% sits in shadow, and that is where off-contract buying, contract non-compliance and duplicated supplier relationships live. Spend analytics is the work of consolidating purchasing data and classifying every transaction, so a category manager can compare what was paid against what was agreed.
 {{< /direct-answer >}}
 
-* **Fragmented PO systems, inconsistent commodity taxonomies, and tail spend opacity prevent CPOs from knowing where money actually goes.**
-* **A structured spend analytics maturity path — from visibility through orchestration — turns procurement from a cost center into a strategic margin lever.**
-* **Machine classification of spend changes what is practical: every transaction can be categorised and compared against its contract, rather than a sample being reviewed after the quarter closes.**
+* **Purchase orders split across several systems, inconsistent commodity codes and unexamined tail spend stop a CPO from knowing where the money goes.**
+* **Spend analytics maturity runs in four stages, from a consolidated view through to checking compliance at the point of purchase.**
+* **Machine classification changes what is practical: every transaction can be categorized and compared against its contract, rather than a sample being reviewed after the quarter closes.**
 
 <br>
 
@@ -29,96 +28,95 @@ Most procurement organizations have limited visibility into 30–40% of their to
 ## Why Do Most Procurement Organizations Operate Blind?
 
 {{< direct-answer >}}
-Procurement spend blindness results from data fragmentation — purchase orders scattered across multiple ERP instances, P-Card transactions in separate banking platforms, services spend buried in departmental budgets, and indirect categories that bypass formal procurement channels entirely. Without unified data, CPOs are making sourcing decisions based on incomplete intelligence.
+Spend blindness comes from fragmented data. Purchase orders sit in more than one ERP system, P-Card transactions sit in a banking platform, services spend sits in departmental budgets, and some indirect categories never pass through procurement at all. Without one consolidated view, the CPO is sourcing on incomplete data.
 {{< /direct-answer >}}
 
-The uncomfortable reality for most Chief Procurement Officers is this: the organization is spending money in places, with suppliers, and at price points that procurement has never examined. Hackett Group research consistently shows that even mature procurement functions have direct visibility into only 60–70% of total enterprise spend. The remaining 30–40% sits in shadow — off-contract purchases, tail spend fragmented across hundreds of low-value suppliers, and services categories that were never brought under procurement governance.
+The uncomfortable position for most Chief Procurement Officers is this. The organization is spending money in places, with suppliers, and at prices that procurement has never examined. The Hackett Group's procurement research puts direct visibility at 60–70% of total enterprise spend, even in mature functions. The remaining 30–40% sits in shadow: off-contract purchases, tail spend split across hundreds of low-value suppliers, and services categories that were never brought under procurement governance.
 
-The root cause is not a lack of effort. It is a data architecture problem. A typical mid-market enterprise operates three to five PO systems across business units and geographies. Each system uses different commodity classification schemes — one division codes "packaging materials" under MRO, another under direct materials, a third under facilities. P-Card spend flows through banking platforms that procurement never touches. Consulting and professional services are approved at the departmental level with no centralized contract repository.
+The cause is not a lack of effort. It is where the data lives. Many mid-market enterprises run more than one PO system across business units and geographies. Each one codes commodities differently. One division files packaging materials under MRO, another under direct materials, a third under facilities. P-Card spend flows through a banking platform procurement never touches. Consulting and professional services get approved at department level, with no central contract file.
 
-This fragmentation makes it impossible to answer the most basic strategic questions: How much do we actually spend with this supplier across all divisions? Are we compliant with the rates negotiated in our master service agreement? Do we have twelve separate suppliers providing the same commodity that could be consolidated into two?
+That fragmentation makes the basic questions unanswerable. How much do we spend with this supplier across every division? Are we paying the rates in our master service agreement? Are several suppliers providing the same commodity where one or two would do?
 
 Without those answers, strategic sourcing is guesswork.
 
 ---
 
-## What Is the Spend Analytics Maturity Model That Leading CPOs Follow?
+## What Does the Spend Analytics Maturity Model Look Like?
 
 {{< direct-answer >}}
-Leading procurement organizations progress through four stages of spend analytics maturity: visibility (knowing where money goes), analysis (understanding why it goes there), optimization (actively reducing cost and risk), and orchestration (automating procurement intelligence across the enterprise in real time).
+Spend analytics maturity runs through four stages: visibility, which is knowing where the money goes; analysis, which is understanding why it goes there; optimization, which is acting to reduce cost and risk; and continuous checking, where compliance is tested at the point of purchase rather than after the quarter closes.
 {{< /direct-answer >}}
 
-The journey from fragmented spend data to procurement intelligence follows a well-defined maturity path. The Chartered Institute of Procurement and Supply (CIPS) frameworks and Deloitte's Global CPO Survey both reinforce that organizations attempting to skip stages — jumping to optimization without foundational visibility — consistently fail.
+The route from fragmented spend data to a usable category view is well documented. The Chartered Institute of Procurement and Supply (CIPS) frameworks and Deloitte's Global CPO Survey both make the same point: functions that skip a stage, and go to optimization without the foundation of visibility, do not get there.
 
-**Stage 1: Visibility.** The foundation. All purchase orders, invoices, P-Card transactions, and services contracts are consolidated into a single spend cube. Every transaction is classified to a standard taxonomy — UNSPSC or an enterprise-specific hierarchy — and enriched with supplier master data. At this stage, the CPO can finally answer: "What did we spend, with whom, and in which category?" Most organizations underestimate this stage. Deloitte's CPO Survey reports that **only 46% of procurement leaders** rate their spend visibility as "good" or "excellent," meaning more than half are making strategic decisions on incomplete data.
+**Stage 1: Visibility.** The foundation. Purchase orders, invoices, P-Card transactions and services contracts are consolidated into one data set — procurement often calls it a spend cube. Every transaction is classified to a standard code set, either UNSPSC or an internal hierarchy, and matched to supplier master data. At this point the CPO can answer the first question: what did we spend, with whom, and in which category? Most functions underestimate this stage. Deloitte's CPO Survey reports that **only 46% of procurement leaders** rate their spend visibility as good or excellent, which means more than half are deciding on incomplete data.
 
-**Stage 2: Analysis.** With clean, classified data, procurement teams perform category-level deep dives. They identify price variance across business units buying the same commodity, measure contract utilization rates against negotiated volumes, and quantify supplier concentration risk. This is where the first wave of savings materializes — consolidation opportunities, renegotiation targets, and maverick spend that can be redirected to preferred suppliers.
+**Stage 2: Analysis.** With classified data, category teams can look at one category at a time. They compare prices paid by different business units for the same commodity, measure how much spend went through negotiated agreements, and see how dependent the organization is on a few suppliers. This is where the first consolidation and renegotiation candidates appear, along with the off-contract spend that can be moved to preferred suppliers.
 
-**Stage 3: Optimization.** Analysis informs action. Category managers execute strategic sourcing events informed by complete spend intelligence. Contract terms are benchmarked against market indices. Tail spend is aggregated into managed programs. Supplier rationalization reduces the supply base without introducing single-source risk.
+**Stage 3: Optimization.** Analysis informs action. Category managers run sourcing events with a full view of the spend. Contract terms are compared against market indices. Tail spend is gathered into managed programs. The supply base is reduced without creating single-source exposure.
 
-**Stage 4: Orchestration.** The most mature state. Spend analytics runs continuously, not as a quarterly exercise. AI models flag anomalies in real time — a business unit purchasing off-contract, a supplier invoicing above agreed rates, a category trending 15% above budget. Procurement intelligence is embedded into requisition workflows, so compliance is enforced at the point of purchase, not discovered after the fact.
+**Stage 4: Continuous checking.** The most mature stage. Spend is reviewed as transactions arrive, not once a quarter. The checks that a category manager would run by hand — is this business unit buying off-contract, is this supplier invoicing above the agreed rate, is this category running ahead of its budget — run against every transaction instead of a sample. The same checks sit inside the requisition workflow, so compliance is tested when the purchase is raised rather than discovered afterwards.
 
 ---
 
-## Which Metrics Separate World-Class Procurement from the Rest?
+## Which Metrics Show Whether Procurement Is Working?
 
 {{< direct-answer >}}
-The metrics that drive procurement performance include addressable spend ratio, contract utilization rate, supplier concentration risk, and price variance across business units. These indicators expose the gap between negotiated value and realized value — where most procurement savings actually hide.
+Four measures matter: addressable spend ratio, contract utilization rate, supplier concentration, and price variance between business units. Each one exposes the gap between what procurement negotiated and what the organization actually paid.
 {{< /direct-answer >}}
 
-Dashboard vanity metrics — total PO count, average cycle time — tell CPOs very little about procurement effectiveness. The metrics that matter measure the gap between what procurement negotiated and what the organization actually paid:
+Dashboard counts — total POs raised, average cycle time — say little about whether procurement is working. The measures that matter size the gap between the negotiated price and the paid price.
 
-**Addressable Spend Ratio.** What percentage of total enterprise spend is under active procurement management? Gartner's procurement technology research indicates that best-in-class organizations manage 80–85% of total spend through formal procurement channels. Most organizations sit at 55–65%. Every percentage point of unaddressed spend represents savings left unrealized.
+**Addressable spend ratio.** What share of total enterprise spend is under active procurement management? Gartner's procurement technology research puts the strongest performers at 80–85% of total spend through formal procurement channels. Your own figure is the sum of spend you can attribute to a category and a contract, divided by total spend in the general ledger, for a full financial year. Every point of unaddressed spend is spend nobody negotiated.
 
-**Contract Utilization Rate.** Procurement negotiates volume commitments and preferred pricing, but do business units actually buy against those contracts? A 70% contract utilization rate means 30% of addressable spend is leaking to off-contract purchases — at higher prices, with unapproved suppliers, and without negotiated terms and conditions.
+**Contract utilization rate.** Procurement commits volume and gets preferred pricing in return, but business units have to buy against the agreement for that to mean anything. The measure is the share of a category's addressable spend that was bought on a negotiated contract, taken from the PO file and the contract repository for the same period. Whatever is left went off-contract: higher prices, suppliers nobody approved, and none of the agreed terms.
 
-**Supplier Concentration Risk.** How dependent is the organization on its top ten suppliers? Supplier concentration is a dual-edged metric. Too concentrated creates supply continuity risk. Too fragmented destroys leverage. The optimal balance depends on category strategy, but visibility into concentration is non-negotiable for any CPO managing supply risk.
+**Supplier concentration.** How dependent is the organization on its top ten suppliers? This one cuts both ways. Too concentrated and supply continuity is at risk. Too fragmented and each negotiation starts from a weaker position. The right balance depends on the category, but a CPO managing supply risk has to be able to see where the balance currently sits.
 
-**Price Variance.** Are different business units paying different prices for identical commodities? Price variance analysis across divisions, plants, and geographies is where spend analytics consistently uncovers the largest savings opportunities. It is not uncommon to find 15–25% price variance on the same SKU purchased by two divisions from the same supplier under different local agreements.
+**Price variance.** Are two business units paying different prices for the same thing? Take one commodity code, list every price paid for it over the last twelve months from the invoice file, and group by division, plant and country. The spread between the highest and lowest price on the same item from the same supplier is the figure, and it is the one a renegotiation is argued on. It should narrow as divisions move onto a common agreement.
 
 ---
 
-## Why Do Organizations Identify 5–15% Savings in the First 90 Days?
+## Why Does the First Pass Over Consolidated Spend Data Find Waste Quickly?
 
 {{< direct-answer >}}
-Initial spend analytics deployments surface savings quickly because the low-hanging fruit — duplicate suppliers, off-contract purchasing, price inconsistencies, and misclassified tail spend — has been invisible for years. These are not theoretical opportunities; they are existing cost leaks that become immediately actionable once data is consolidated and classified.
+The first pass finds things because the data has never been looked at together. Duplicate suppliers, off-contract purchasing, inconsistent prices and misclassified tail spend are not new problems. They are existing spend that no single report has ever shown on one page, which is why consolidating and classifying it makes them visible at once.
 {{< /direct-answer >}}
 
-The 5–15% savings figure is not aspirational marketing. Hackett Group procurement benchmarks consistently validate this range for organizations deploying structured spend analytics for the first time. The savings materialize quickly because they are not new efficiencies — they are existing waste that was simply invisible.
+Nothing in the first pass is a new efficiency. It is existing spend, already committed, that was split across systems in a way that kept it out of view. Consolidating and classifying it does not change the spend. It changes who can see it.
 
-The most common quick wins include: **supplier consolidation** where five vendors providing the same indirect commodity are reduced to two, unlocking volume discounts; **contract compliance enforcement** where maverick spend is redirected to preferred suppliers with negotiated rates; **duplicate payment identification** where overlapping invoices across PO systems are caught before payment; and **tail spend aggregation** where hundreds of low-value, unmanaged purchases are brought into catalog-based procurement programs.
+The common candidates are familiar ones. **Supplier consolidation**, where several suppliers provide the same indirect commodity and the volume could go to fewer of them at the price that volume earns. **Contract compliance**, where off-contract spend is redirected to suppliers that already have negotiated rates. **Duplicate payments**, where the same invoice was paid twice because it arrived through two PO systems. **Tail spend**, where hundreds of small unmanaged purchases are moved into a catalogue.
 
-These are not multi-year transformation initiatives. They are 30-to-90-day actions that require only one thing the organization previously lacked: visibility.
+None of these take a multi-year program. They take one thing the function did not previously have: the spend in one place, classified.
 
 ---
 
-## How Does AI-Powered Spend Analytics Go Beyond Traditional BI?
+## How Does Machine Classification Go Beyond Traditional BI?
 
 {{< direct-answer >}}
-Traditional BI tools require clean, pre-classified data and manual query construction, which is why analysts in most procurement functions spend the majority of their time preparing data rather than analysing it. Machine classification changes what is feasible: spend can be categorised without a pre-built taxonomy, and anomalies can be found across millions of transactions without someone first writing the rule that describes them.
+Traditional BI tools need data that is already clean and classified, and a query written by hand for each question. Machine classification changes what is feasible: spend can be categorized without a pre-built taxonomy, and unusual patterns can be found across millions of transactions without someone first writing the rule that describes them.
 {{< /direct-answer >}}
 
-The limitation of traditional business intelligence in procurement is not visualization — it is data preparation. Building a spend cube in a conventional BI platform requires months of manual classification, taxonomy mapping, and supplier normalization. By the time the dashboard is live, the data is stale and the underlying classification is already degrading as new suppliers and categories emerge.
+The limit of conventional business intelligence in procurement is not the charts. It is the preparation. Building a spend cube in a BI platform means months of manual classification, code mapping and supplier name clean-up. By the time the dashboard is live the data is old, and the classification is already drifting as new suppliers and categories arrive.
 
-Machine classification changes the shape of the work. Transactions are classified against a standard taxonomy on first pass rather than mapped by hand, and supplier names are normalised across systems — matching "IBM Corp," "International Business Machines," and "IBM Consulting" to a single entity without a manual crosswalk. First-pass accuracy varies by how clean the source descriptions are, so treat any vendor's headline accuracy figure as a claim about their test corpus rather than about your ledger, and ask to see it run on a sample of yours.
+Machine classification changes the shape of that work. Transactions are classified against a standard code set on the first pass rather than mapped by hand. Supplier names are normalized across systems, so "IBM Corp", "International Business Machines" and "IBM Consulting" resolve to one entity without anyone building a crosswalk. First-pass accuracy depends on how clean the source descriptions are. Treat any vendor's headline accuracy figure as a claim about their test data rather than about your ledger, and ask to see it run on a sample of yours.
 
-More critically, AI detects patterns that no analyst would think to query. A gradual 8% price drift on a commodity category over six months. A business unit consistently approving purchases just below the threshold that triggers procurement review. A supplier shifting invoice timing to avoid quarterly spend audits. These are the savings opportunities that traditional BI tools, built on static queries and predefined reports, structurally cannot surface.
+It also finds patterns nobody would have written a query for. A price on one category drifting upward month by month. A business unit approving purchases just under the threshold that triggers procurement review. A supplier changing when it invoices so the charges fall outside the quarterly audit. A static report only answers the question it was built to answer, so these stay out of view.
 
 ---
 
 ## Conclusion
 
 {{< direct-answer >}}
-Procurement spend analytics is not an IT project or a reporting upgrade — it is the foundation of every strategic sourcing decision, every supplier negotiation, and every cost optimization initiative. Without visibility, procurement operates on assumptions. With it, procurement becomes a competitive weapon.
+Spend analytics is not a reporting upgrade. It is the data every sourcing decision and every supplier negotiation rests on. Without it, procurement decides on assumptions about its own spend.
 {{< /direct-answer >}}
 
-The CPO's mandate has expanded far beyond cost reduction. Today's procurement leaders own supplier risk management, ESG compliance across the supply base, working capital optimization, and strategic category development. None of these objectives are achievable without complete, accurate, continuously updated spend intelligence.
+The CPO's job is no longer only cost. It now covers supplier risk, ESG compliance across the supply base, working capital, and category strategy. Each of those needs spend data that is complete, classified and current.
 
-The organizations that treat spend analytics as a one-time data cleanup project will always lag behind. The ones that embed AI-driven spend intelligence into their procurement operating model — classifying every transaction, flagging every anomaly, and surfacing every savings opportunity in real time — will consistently outperform on cost, risk, and supplier value.
+Treating spend analytics as a one-off data clean-up gives you a view that decays from the day it lands. Classifying transactions as they arrive, and testing them against the contract that governs them, keeps the view usable for the next negotiation rather than the last one.
 
 Start with a figure rather than a tool: what percentage of last year's spend can you currently attribute to a category and a contract without manual work? Most functions discover the answer is lower than they assumed, and it sets the honest baseline for everything that follows. [Start a conversation with our team](/#contact-form) if you want to work it out.
 
-<!-- GEO Optimization: FAQPage Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -129,7 +127,7 @@ Start with a figure rather than a tool: what percentage of last year's spend can
       "name": "What is procurement spend analytics and why does it matter for CPOs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Procurement spend analytics is the process of consolidating, classifying, and analyzing all purchasing data across an organization to provide complete visibility into where money is spent, with which suppliers, and under what terms. It matters because most organizations lack visibility into 30–40% of their total spend, creating blind spots where maverick purchasing, contract non-compliance, and duplicative supplier relationships erode margins. Organizations deploying spend analytics typically identify 5–15% in addressable savings within the first 90 days."
+        "text": "Procurement spend analytics is the work of consolidating, classifying and analyzing all purchasing data across an organization, so it is clear where money is spent, with which suppliers, and under what terms. It matters because The Hackett Group's procurement research puts most functions' direct visibility at 60-70% of total enterprise spend, leaving 30-40% in shadow where off-contract purchasing, contract non-compliance and duplicated supplier relationships sit. What an organization finds in that shadow spend depends on its own data, and is not knowable until the data has been consolidated and classified."
       }
     },
     {
@@ -137,15 +135,15 @@ Start with a figure rather than a tool: what percentage of last year's spend can
       "name": "What are the four stages of spend analytics maturity?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The four stages of spend analytics maturity are: (1) Visibility — consolidating all spend data into a single classified view; (2) Analysis — performing category deep dives to identify price variance, contract utilization gaps, and supplier concentration risk; (3) Optimization — executing strategic sourcing events and supplier rationalization based on spend intelligence; and (4) Orchestration — embedding AI-driven spend analytics into real-time procurement workflows so compliance is enforced at the point of purchase."
+        "text": "The four stages are: (1) visibility, consolidating all spend data into one classified view; (2) analysis, looking at one category at a time to compare prices paid, contract utilization and supplier concentration; (3) optimization, running sourcing events and reducing the supply base on the basis of that view; and (4) continuous checking, where the same tests run against every transaction as it arrives and inside the requisition workflow, so compliance is tested at the point of purchase."
       }
     },
     {
       "@type": "Question",
-      "name": "How does AI-powered spend analytics differ from traditional BI tools?",
+      "name": "How does machine classification of spend differ from traditional BI tools?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Traditional BI tools require clean, pre-classified data and manual query construction, meaning analysts spend 60–70% of their time preparing data. AI-powered spend analytics platforms automate spend classification with 90–95% accuracy using machine learning, normalize supplier names across systems using natural language processing, and detect spending anomalies and savings opportunities without predefined rules — surfacing patterns like gradual price drift and threshold-gaming that static dashboards cannot reveal."
+        "text": "Traditional BI tools need data that has already been cleaned and classified, and a query written by hand for each question. Machine classification categorizes transactions against a standard code set on the first pass, normalizes supplier names across systems so several spellings of the same supplier resolve to one entity, and finds unusual patterns without someone first writing the rule that describes them — price drift on a category, purchases approved just under an approval threshold, or a supplier changing when it invoices. First-pass accuracy depends on how clean the source descriptions are, so any vendor's headline accuracy figure is a claim about their test data rather than about your ledger."
       }
     },
     {
@@ -153,7 +151,7 @@ Start with a figure rather than a tool: what percentage of last year's spend can
       "name": "What key metrics should procurement leaders track with spend analytics?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The most impactful procurement metrics are: addressable spend ratio (percentage of spend under active procurement management, with best-in-class at 80–85%), contract utilization rate (how much spend flows through negotiated agreements versus off-contract purchases), supplier concentration risk (dependency on top suppliers balanced against leverage), and price variance (differences in pricing for identical commodities across business units, which commonly reveals 15–25% variance)."
+        "text": "Four measures: addressable spend ratio, the share of total spend under active procurement management, which Gartner's procurement technology research puts at 80-85% for the strongest performers; contract utilization rate, the share of a category's addressable spend bought on a negotiated contract, taken from the PO file and the contract repository; supplier concentration, dependency on the top suppliers weighed against negotiating position; and price variance, the spread between the highest and lowest price paid for the same commodity code across business units over twelve months of invoices."
       }
     }
   ]
@@ -163,19 +161,19 @@ Start with a figure rather than a tool: what percentage of last year's spend can
 ---
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">About the Author</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">About the Author</h2>
   <p class="text-stone-300">
-    <strong>Lead Logistics Operations Architect</strong><br>
-    Subject Matter Expert in Supply Chain Visibility, Freight Analytics, and Data Governance. With over a decade of experience in building resilient logistics control towers and automated supply chain solutions.
+    <strong>Runink Logistics Operations Team</strong><br>
+    We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
   </p>
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Industry Citations &amp; References</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.thehackettgroup.com/research/procurement/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">The Hackett Group — Procurement Research &amp; Benchmarking</a> - Industry benchmark data on spend analytics maturity, addressable spend ratios, and validated savings ranges for first-time spend analytics deployments across enterprise procurement organizations.</li>
-    <li><a href="https://www.cips.org" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Chartered Institute of Procurement &amp; Supply (CIPS)</a> - Frameworks and professional standards for procurement maturity, spend classification taxonomies, and category management best practices referenced by procurement leaders globally.</li>
-    <li><a href="https://www.deloitte.com/global/en/services/consulting/research/cpo-survey.html" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Deloitte Global CPO Survey</a> - Annual survey of Chief Procurement Officers reporting that only 46% rate their spend visibility as good or excellent, with data on digital procurement adoption, cost reduction targets, and strategic sourcing maturity.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain/research/procurement-technology" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner — Procurement Technology Research</a> - Analysis of procurement technology platforms, AI-driven spend analytics capabilities, and addressable spend benchmarks indicating best-in-class organizations manage 80–85% of total spend through formal channels.</li>
+    <li><a href="https://www.thehackettgroup.com/research/procurement/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">The Hackett Group — Procurement Research &amp; Benchmarking</a> - Benchmark data on spend analytics maturity and on how much of total enterprise spend procurement functions can see directly.</li>
+    <li><a href="https://www.cips.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Chartered Institute of Procurement &amp; Supply (CIPS)</a> - Frameworks and professional standards for procurement maturity, spend classification code sets and category management.</li>
+    <li><a href="https://www.deloitte.com/global/en/services/consulting/research/cpo-survey.html" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Deloitte Global CPO Survey</a> - Annual survey of Chief Procurement Officers reporting that only 46% rate their spend visibility as good or excellent, with data on digital procurement adoption, cost reduction targets and sourcing maturity.</li>
+    <li><a href="https://www.gartner.com/en/supply-chain/research/procurement-technology" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner — Procurement Technology Research</a> - Analysis of procurement technology platforms and addressable spend benchmarks, putting the strongest performers at 80–85% of total spend through formal procurement channels.</li>
   </ul>
 </section>

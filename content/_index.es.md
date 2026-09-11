@@ -9,8 +9,6 @@ title: "Runink"
 description: "Entradas aduaneras retenidas, siniestros resueltos sin la evidencia que ya estaba en el expediente, tráfico cursado y nunca tarificado. La respuesta suele estar ya en sus propios registros. Runink FACE los lee todos y pone una acción concreta delante de la persona que puede aprobarla."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
-accent: "#ea580c"
-
 hero:
   eyebrow: "Para operaciones, finanzas y cumplimiento"
   line1: "La respuesta ya está en sus registros."
@@ -43,7 +41,6 @@ industries_columns:
 industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
-    accent: "#ea580c"
     cost: "Una entrada retenida en el puerto por un documento que falta mientras corre el cargo diario. Una reclamación de flete todavía dentro de su plazo de presentación que nadie tuvo la mañana para armar."
     owners:
       - "Director de operaciones"
@@ -51,7 +48,6 @@ industries:
       - "Cumplimiento aduanero"
   - page: "insurance"
     name: "Insurance"
-    accent: "#778fe6"
     cost: "Un umbral de revisión elevado para vaciar una cola, pensado como provisional, nunca devuelto y nunca decidido. Movimientos de reserva revisados por muestreo porque el flujo es demasiado largo para leerlo."
     owners:
       - "Operaciones de siniestros"
@@ -59,7 +55,6 @@ industries:
       - "Auditoría interna"
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
-    accent: "#C8D9A8"
     cost: "Una diferencia que crece dentro del rango que siempre se aprueba, así que ningún mes escala y nadie lee la secuencia. Un contrato de proveedor que nadie ha vuelto a abrir desde la firma."
     owners:
       - "Cumplimiento y riesgos"
@@ -67,7 +62,6 @@ industries:
       - "Finanzas"
   - page: "telecom"
     name: "Telecom"
-    accent: "#c084fc"
     cost: "Un cambio de tarificación correcto para la promoción y equivocado para un plan heredado, demasiado pequeño para mover un agregado. Un barrido que devuelve una tasa de error cuando operaciones necesita las cuentas por nombre."
     owners:
       - "Aseguramiento de ingresos"
@@ -75,7 +69,6 @@ industries:
       - "Finanzas y compras"
   - page: "marketing"
     name: "Marketing"
-    accent: "#D4A574"
     cost: "La herramienta de auditoría sabe que el sitio es lento. La de contenido no, así que sigue escribiendo para una página en la que nadie se queda. Cada campaña vuelve a empezar en blanco."
     owners:
       - "Responsable de marketing"

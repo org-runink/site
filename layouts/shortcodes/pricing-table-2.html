@@ -5,7 +5,7 @@
         <div class="mx-auto max-w-screen-md text-center mb-12">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{{ . }}</h2>
             {{ with $data.description }}
-            <p class="mb-5 font-light text-[#D9CDB8] sm:text-xl">{{ . }}</p>
+            <p class="mb-5 font-light text-ink-2 sm:text-xl">{{ . }}</p>
             {{ end }}
         </div>
         {{ end }}
@@ -13,18 +13,18 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {{ range $index, $plan := $data.plans }}
             <div
-                class="relative flex flex-col p-8 {{ if $plan.featured }}bg-gradient-to-br from-amber-950 via-stone-900 to-neutral-950 border-[#D4A574]{{ else }}bg-stone-800 border-stone-700{{ end }} border rounded-2xl shadow-xl transform hover:-translate-y-2 transition duration-300 {{ if not $plan.featured }}shadow-stone-900/50{{ end }}">
+                class="relative flex flex-col p-8 {{ if $plan.featured }}bg-signal-wash border-signal{{ else }}bg-stone-800 border-stone-700{{ end }} border rounded-2xl shadow-xl transform hover:-translate-y-2 transition duration-300 {{ if not $plan.featured }}shadow-stone-900/50{{ end }}">
                 {{ if $plan.featured }}
                 <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span
-                        class="bg-gradient-to-r from-[#5F6F3E] to-[#B87333] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">Most
+                        class="bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">Most
                         Popular</span>
                 </div>
                 {{ end }}
 
                 <div class="mb-6">
                     <h3 class="text-2xl font-bold text-white">{{ $plan.name }}</h3>
-                    <p class="mt-2 text-[#D9CDB8]">{{ $plan.description }}</p>
+                    <p class="mt-2 text-ink-2">{{ $plan.description }}</p>
                 </div>
 
                 <div class="mb-6">
@@ -38,19 +38,19 @@
                 <ul class="mb-10 space-y-4 flex-grow">
                     {{ range $plan.features }}
                     <li class="flex items-center">
-                        <svg class="w-5 h-5 {{ if $plan.featured }}text-[#8B9A6E]{{ else }}text-[#D4A574]{{ end }} mr-3"
+                        <svg class="w-5 h-5 {{ if $plan.featured }}text-signal{{ else }}text-ink-3{{ end }} mr-3"
                             fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="text-[#F5F1E8] font-medium">{{ . }}</span>
+                        <span class="text-ink font-medium">{{ . }}</span>
                     </li>
                     {{ end }}
                 </ul>
 
                 <a href="{{ $plan.button.url | relURL }}"
-                    class="text-center w-full px-6 py-4 rounded-full font-bold uppercase tracking-wider text-sm transition-all duration-300 {{ if $plan.featured }}bg-primary-600 text-white hover:bg-primary-700 shadow-lg hover:shadow-[#8B9A6E]/50{{ else }}bg-stone-700 text-white hover:bg-stone-600 border border-stone-600{{ end }}">
+                    class="text-center w-full px-6 py-4 rounded-full font-bold uppercase tracking-wider text-sm transition-all duration-300 {{ if $plan.featured }}bg-signal-fill text-on-fill hover:bg-signal-fill-hover shadow-lg hover:shadow-signal/50{{ else }}bg-stone-700 text-white hover:bg-stone-600 border border-stone-600{{ end }}">
                     {{ $plan.button.text }}
                 </a>
             </div>

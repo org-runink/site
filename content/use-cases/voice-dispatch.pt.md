@@ -42,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 No sentido inverso funciona igual. A mesa tem uma mudança e precisa ligar para todos para encaixá-la, um caminhão por vez, esperando que cada um consiga atender. Metade das ligações cai na caixa postal e é refeita vinte minutos depois.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#f59e0b] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Quem sabe primeiro é quem não pode digitar.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 Mais uma recusa, porque é do tipo que normalmente fica escondido. Em outras partes do FACE você pode anexar um recado de voz a uma conversa, e esse anexo não é transcrito. Em vez de deixar o modelo improvisar em volta, é dito ao modelo sem rodeios que um anexo de áudio chegou, que o conteúdo dele é desconhecido e que ele não deve chutar o que foi dito &mdash; e ele é instruído a te avisar que o áudio não foi processado. Um sistema que não consegue ouvir algo e diz isso vale mais do que um que preenche o buraco.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(245,158,11,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#b45309] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que qualquer coisa muda.
              </p>
@@ -80,7 +80,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#f59e0b] to-[#b45309] rounded-xl border border-[#f59e0b]/30 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:-translate-y-1">
+        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Agende uma conversa
         </a>
     </div>

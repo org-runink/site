@@ -93,8 +93,8 @@ This ROI model assumes a mid-sized enterprise logistics operation processing 50,
 **Conclusion:** The implementation of LLM-based freight document auditing presents a compelling, high-yield opportunity. Beyond the immediate financial returns through labor reduction and increased claim recovery, the system enables faster payment cycles, improved carrier relationships, and highly scalable operations.
 
 <style>
-  .cta-wrapper { margin-top: 3rem; padding: 1.5rem; background-color: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
-  .cta-title { margin-bottom: 1rem; font-weight: bold; font-size: 1.25rem; color: #0f172a; }
+  .cta-wrapper { margin-top: 3rem; padding: 1.5rem; background-color: var(--rk-sunk); border-radius: 8px; border: 1px solid var(--rk-rule); text-align: center; }
+  .cta-title { margin-bottom: 1rem; font-weight: bold; font-size: 1.25rem; color: var(--rk-text); }
   .cta-html-only { display: block; }
   .cta-pdf-only { display: none; }
   @media print {
@@ -107,11 +107,11 @@ This ROI model assumes a mid-sized enterprise logistics operation processing 50,
   <p class="cta-title">Ready to automate your operations?</p>
 
   <div class="cta-html-only">
-    <a href="https://forge.runink.app/download" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #0f172a; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">Download the Forge App</a>
+    <a href="https://forge.runink.app/download" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill); text-decoration: none; border-radius: 6px; font-weight: 500;">Download the Forge App</a>
   </div>
 
   <div class="cta-pdf-only">
-    <p style="margin-bottom: 1rem; color: #475569;">Scan the QR code below or visit <strong>https://forge.runink.app/download</strong> to download the Forge App.</p>
+    <p style="margin-bottom: 1rem; color: var(--rk-text-2);">Scan the QR code below or visit <strong>https://forge.runink.app/download</strong> to download the Forge App.</p>
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://forge.runink.app/download" alt="QR Code to Download Forge App" width="150" height="150" style="margin: 0 auto;">
   </div>
 </div>

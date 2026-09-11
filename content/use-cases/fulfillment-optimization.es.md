@@ -42,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Así que la elección es mala. Pagar de más por traerlo en avión, o decírselo al cliente. Las dos se decidieron semanas antes, por una tendencia que estuvo a la vista todo el tiempo en sus propios datos de venta.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 El pedido ya iba tarde antes de que nadie supiera que iba tarde.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -67,8 +67,8 @@ author: "Runink"
                 Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa firma queda en el registro. Aprobar es lo que lo manda adelante. Y donde un paso de la acción redactada todavía no tiene nada detrás &mdash;la escritura en su ERP es el ejemplo honesto&mdash; la respuesta nombra ese paso como no ejecutado en vez de dar la cosa entera por hecha. Se le dice qué parte de la acción ocurrió, que es la diferencia entre un sistema del que puede fiarse y uno que tiene que ir a comprobar. Los márgenes de seguridad se pueden entonces discutir con sus propios números y no por rango.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto algo cambia.
              </p>
@@ -83,7 +83,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta
         </a>
     </div>

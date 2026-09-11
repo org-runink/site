@@ -9,8 +9,6 @@ title: "Runink"
 description: "Declarações retidas na alfândega, sinistros decididos sem a evidência que já estava no processo, tráfego cursado e nunca tarifado. A resposta quase sempre já está nos seus próprios registros. A Runink FACE lê todos eles e coloca uma ação concreta diante de quem pode aprová-la."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
-accent: "#ea580c"
-
 hero:
   eyebrow: "Para operações, finanças e conformidade"
   line1: "A resposta já está nos seus registros."
@@ -43,7 +41,6 @@ industries_columns:
 industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
-    accent: "#ea580c"
     cost: "Uma declaração retida no porto por um documento que falta enquanto a diária corre. Uma reclamação de frete ainda dentro do prazo de abertura que ninguém teve a manhã para montar."
     owners:
       - "Diretor de operações"
@@ -51,7 +48,6 @@ industries:
       - "Conformidade aduaneira"
   - page: "insurance"
     name: "Insurance"
-    accent: "#778fe6"
     cost: "Um limite de segunda análise elevado para vencer uma fila, feito para ser temporário, nunca devolvido e nunca decidido. Movimentos de reserva conferidos por amostragem porque o fluxo é longo demais para ler."
     owners:
       - "Operações de sinistros"
@@ -59,7 +55,6 @@ industries:
       - "Auditoria interna"
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
-    accent: "#C8D9A8"
     cost: "Uma diferença que cresce dentro da faixa que sempre se aprova, então nenhum mês escala e ninguém lê a sequência. Um contrato de fornecedor que ninguém reabriu desde a assinatura."
     owners:
       - "Conformidade e riscos"
@@ -67,7 +62,6 @@ industries:
       - "Finanças"
   - page: "telecom"
     name: "Telecom"
-    accent: "#c084fc"
     cost: "Uma mudança de tarifação certa para a promoção e errada para um plano legado, pequena demais para mover um agregado. Uma varredura que devolve uma taxa de erro quando a operação precisa das contas pelo nome."
     owners:
       - "Garantia de receita"
@@ -75,7 +69,6 @@ industries:
       - "Finanças e compras"
   - page: "marketing"
     name: "Marketing"
-    accent: "#D4A574"
     cost: "A ferramenta de auditoria sabe que o site está lento. A de conteúdo não sabe, e segue escrevendo para uma página em que ninguém fica. Cada campanha recomeça do zero."
     owners:
       - "O líder de marketing"

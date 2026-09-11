@@ -43,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Se puede hacer. Cuesta una mañana, y la hace el único analista que sabe qué columna de qué extracción significa qué. Así que se hace para la revisión mensual, y se hace cuando algo ya ha salido lo bastante mal para merecer una mañana.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 La foto siempre se monta pasado el punto en el que habría servido de algo.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
@@ -83,8 +83,8 @@ author: "Runink"
                 Lo que llega a una persona es una lista corta y ordenada de acciones propuestas con los registros adjuntos, no un diagrama que admirar. Una persona con nombre aprueba, edita o rechaza cada una, y esa firma se guarda. Aprobar es lo que lo manda, y un elemento decidido sale de la cola en vez de volver a dar la vuelta la próxima vez que alguien abre el tablero. Donde un paso detrás de la aprobación todavía no tiene implementación, la respuesta nombra ese paso como no ejecutado en vez de dar la acción por completa, así que el tablero muestra qué se decidió y, por separado, qué se llevó a cabo de verdad. Todo corre en máquinas suyas.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. No traemos números a esto; los trae usted. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoren.
              </p>
@@ -99,7 +99,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta
         </a>
     </div>

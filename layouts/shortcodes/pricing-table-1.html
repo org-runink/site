@@ -25,29 +25,29 @@
             {{ $isOrangePrice := eq .price_color "orange" }}
             {{ $isSolidButton := eq .button.style "solid" }}
 
-            {{ $cardClasses := `border-stone-800 bg-[#161515]` }}
-            {{ if $isOrangePill }}{{ $cardClasses = `border-[#ca4708]/30 bg-[#1a1716]` }}{{ end }}
+            {{ $cardClasses := `border-stone-800 bg-sheet` }}
+            {{ if $isOrangePill }}{{ $cardClasses = `border-signal/30 bg-signal-wash` }}{{ end }}
 
             {{ $pillClasses := `border-stone-800 text-stone-500` }}
-            {{ if $isOrangePill }}{{ $pillClasses = `border-[#ca4708]/50 text-[#ca4708]` }}{{ end }}
+            {{ if $isOrangePill }}{{ $pillClasses = `border-signal/50 text-signal` }}{{ end }}
 
             {{ $headerClasses := `text-white` }}
-            {{ if $isOrangePill }}{{ $headerClasses = `text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b]
-            to-[#ea580c]` }}{{ end }}
+            {{ if $isOrangePill }}{{ $headerClasses = `text-transparent bg-clip-text bg-gradient-to-r from-signal
+            to-signal-fill` }}{{ end }}
 
             {{ $priceClasses := `text-white` }}
-            {{ if $isOrangePrice }}{{ $priceClasses = `text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b]
-            to-[#ea580c]` }}{{ end }}
+            {{ if $isOrangePrice }}{{ $priceClasses = `text-transparent bg-clip-text bg-gradient-to-r from-signal
+            to-signal-fill` }}{{ end }}
 
             {{ $iconClasses := `text-stone-400` }}
-            {{ if $isOrangePill }}{{ $iconClasses = `text-[#ea580c]` }}{{ end }}
+            {{ if $isOrangePill }}{{ $iconClasses = `text-signal` }}{{ end }}
 
             {{ $checkClasses := `text-stone-700` }}
-            {{ if $isOrangePill }}{{ $checkClasses = `text-[#ca4708]` }}{{ end }}
+            {{ if $isOrangePill }}{{ $checkClasses = `text-signal` }}{{ end }}
 
-            {{ $btnClasses := `bg-[#211F1F] text-stone-400 border border-stone-800 hover:border-stone-600
+            {{ $btnClasses := `bg-sunk text-stone-400 border border-stone-800 hover:border-stone-600
             hover:text-white` }}
-            {{ if $isSolidButton }}{{ $btnClasses = `bg-gradient-to-r from-[#ea580c] to-[#ca4708] text-white
+            {{ if $isSolidButton }}{{ $btnClasses = `bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill
             hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1` }}{{ end }}
 
             <div class="w-full">
@@ -100,7 +100,7 @@
 
                         <!-- Inner Box Info -->
                         <div
-                            class="w-full bg-[#1b1919] border border-stone-800/60 rounded-2xl p-6 mb-12 text-left shadow-inner flex flex-col">
+                            class="w-full bg-sunk border border-stone-800/60 rounded-2xl p-6 mb-12 text-left shadow-inner flex flex-col">
                             <div
                                 class="flex items-center gap-4 {{ if .outcome_strategies }}mb-6 pb-6 border-b border-stone-800/60{{ end }}">
                                 <div
@@ -148,7 +148,7 @@
                                         d="M5 13l4 4L19 7" />
                                 </svg>
                                 <span
-                                    class="ml-4 text-[10px] font-bold text-stone-400/80 tracking-widest uppercase leading-snug">{{
+                                    class="ml-4 text-[10px] font-bold text-ink-2 tracking-widest uppercase leading-snug">{{
                                     trim $cleanFeature " " }}</span>
                             </li>
                             {{ end }}

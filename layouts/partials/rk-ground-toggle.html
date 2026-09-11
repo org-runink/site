@@ -1,0 +1,49 @@
+{{/* ---------------------------------------------------------------------
+     The ground switch.
+
+     One button, not a three-way control with a "system" option: the sheet is a
+     deliberate choice for this material rather than a default, so "follow the
+     OS" is not a state this site has. The button answers one question — do you
+     want this dark? — and remembers the answer.
+
+     ACCESSIBILITY. It is a real <button>, so it is focusable and operable from
+     the keyboard for free. aria-pressed carries the state, which is what makes
+     a toggle announce as "pressed"/"not pressed" rather than as a link whose
+     effect a screen reader user has to infer. The label is on the button and
+     updates with the state; the two icons are aria-hidden because the label
+     already says it and announcing "sun" adds nothing.
+
+     Only one icon is in the DOM at a time, chosen in script, rather than both
+     with one hidden by CSS — a hidden icon is still read by some assistive
+     tech when it is not properly inert, and this keeps the accessible name
+     exactly one string.
+
+     It shows the ground you will GET, not the one you are on: on the sheet it
+     offers the moon. That is the convention users expect from an action
+     control, and the label says it in words either way.
+
+     NOT RENDERED ON THE WHITEPAPERS. That deck is dark on its own terms —
+     whitepaper.css paints the .wp reading column from its own --paper/--deck
+     variables and does not read the token ground at all. A switch there could
+     only flip the surrounding chrome, leaving light navigation around a dark
+     document: precisely the mismatch that shipped when those pages were missing
+     the token layer. A control that cannot do what it says is worse than no
+     control, so the whitepapers keep their fixed ground and do not offer one.
+
+     A CLASS, NOT AN ID. This partial is rendered twice — once in the desktop
+     bar and once in the mobile panel — so an id would be duplicated, which is
+     invalid and means getElementById wires only the first. Both are kept in
+     sync by the handler.
+     --------------------------------------------------------------------- */}}
+{{ if ne .Type "whitepapers" }}
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+{{ end }}

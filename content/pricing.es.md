@@ -156,23 +156,23 @@ author: "Lead Data & Cloud Architect"
 
 
 <!-- Sección FAQ generada para el E-A-T & GEO -->
-<section class="faq-section mt-16 p-8 bg-[#1b1919] rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
+<section class="faq-section mt-16 p-8 bg-sunk rounded-3xl border border-stone-800/80 shadow-2xl relative z-10">
   <div class="flex items-center gap-4 mb-8">
-    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ea580c] to-[#ca4708] flex items-center justify-center shadow-lg">
+    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-signal-fill to-signal-fill-hover flex items-center justify-center shadow-lg">
       <span class="material-symbols-outlined text-white">help_center</span>
     </div>
     <h2 class="text-3xl font-black text-white uppercase italic tracking-tight m-0">Preguntas Frecuentes</h2>
   </div>
   <div class="space-y-6">
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
+    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">¿Qué debemos presupuestar además de la licencia?</h3>
       <p class="text-stone-400 leading-relaxed">La licencia es una línea del coste. Antes de firmar, ponga cifras a cuatro más. Primero, conectar Runink a los sistemas que ya usa: el sistema financiero, el de transporte o almacén, y el lugar donde viven sus documentos. Segundo, mover el histórico que quiere que lea. Tercero, las horas que su propia gente dedica a aprenderlo y a cambiar la forma de trabajar, que suele ser la línea que se olvida. Cuarto, las máquinas. Con las licencias Lite y Dedicada son nuestras; con Enterprise son suyas, y conviene poner precio al hardware y a las personas que lo mantienen. Lo que no debería tener que presupuestar es una factura que se mueve según cuánto usa el software su equipo. Ese es el sentido de cobrar por puesto.</p>
     </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
+    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">¿Cómo se fija el precio si tenemos que alojarlo nosotros?</h3>
       <p class="text-stone-400 leading-relaxed">Eso es la licencia Enterprise, y el precio se acuerda con usted en lugar de salir de una lista. Cubre despliegues en sus propias instalaciones, incluidas sedes mantenidas por completo fuera de la red, y máquinas colocadas cerca de donde ocurre el trabajo. Lo que la gente suele querer por escrito son los niveles de servicio, quién puede ver qué, y el registro que se guarda de quién hizo qué. Traiga la restricción que lo motiva —el regulador, la cláusula del contrato o la revisión de seguridad que se atasca una y otra vez— y la conversación empieza por ahí en lugar de por una lista de funciones.</p>
     </div>
-    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-[#ea580c]/30 transition-colors">
+    <div class="faq-item p-6 bg-stone-900 rounded-xl border border-stone-800/50 hover:border-signal/30 transition-colors">
       <h3 class="text-xl font-bold text-stone-200 mb-4">¿A dónde van nuestros datos?</h3>
       <p class="text-stone-400 leading-relaxed">A una máquina que usted controla, y ahí se quedan. Los documentos, los registros y el razonamiento sobre ellos se ejecutan en hardware dentro de su perímetro, y nada se envía a un proveedor de modelos externo. Esto importa tanto en lo comercial como en lo técnico. La pregunta que atasca estas compras suele ser alguna versión de «a dónde va nuestra información», y aquí la respuesta es lo bastante corta como para superar un cuestionario de compras. Con Lite y Dedicada la máquina la operamos nosotros; con Enterprise es suya. En ninguno de los dos casos hay un tercero en el camino guardando sus datos.</p>
     </div>
@@ -181,7 +181,7 @@ author: "Lead Data & Cloud Architect"
 
 
 <section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Sobre el Autor</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Sobre el Autor</h2>
   <p class="text-stone-300">
     <strong>Lead Data & Cloud Architect</strong><br>
     Experto en la materia (SME) en AWS Data Analytics, AWS Certified Developer y Google Cloud Professional Certified en Ingeniería de Datos y Analítica Avanzada. Con más de una década de experiencia construyendo arquitecturas de nube resilientes y de alto rendimiento, canalizaciones de datos y soluciones logísticas automatizadas.
@@ -189,11 +189,11 @@ author: "Lead Data & Cloud Architect"
 </section>
 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-[#ea580c] mb-4">Citas y Referencias del Sector</h2>
+  <h2 class="text-2xl font-bold text-signal mb-4">Citas y Referencias del Sector</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Guías completas para el procesamiento de datos a gran escala.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Metodologías avanzadas para la logística automatizada.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Investigación de referencia del sector sobre tecnología para la cadena de suministro.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-[#ea580c] hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Investigación académica sobre aplicaciones analíticas en transporte y carga.</li>
+    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Guías completas para el procesamiento de datos a gran escala.</li>
+    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Metodologías avanzadas para la logística automatizada.</li>
+    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Investigación de referencia del sector sobre tecnología para la cadena de suministro.</li>
+    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Investigación académica sobre aplicaciones analíticas en transporte y carga.</li>
   </ul>
 </section>

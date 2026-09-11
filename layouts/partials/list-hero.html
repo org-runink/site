@@ -1,0 +1,48 @@
+{{/*
+  The hero for every listing page on the site — /blog/, /categories/, /tags/ and
+  any term page under them.
+
+  WHY IT EXISTS. The four list layouts each carried their own copy of the same
+  hero: an 80px orange gradient headline, uppercase, italic, centred, over a
+  near-black canvas, with the deck set in all-caps letterspaced bold. Nothing
+  else on the marketing site looks like that. The homepage and the industry
+  pages are quiet dark ink on a light sheet, sentence case, left aligned, and
+  they are what a visitor sees before they ever reach a listing — so the blog
+  read as a different website. Four copies also meant four places to fix, which
+  is why the orange italic survived two restyles.
+
+  THE REGISTER, and it is deliberately the homepage's. Type comes from
+  layouts/partials/home/style.html: one small uppercase chip for the eyebrow,
+  then the headline in `text-ink` at sentence case with a tight leading, then the
+  deck at reading size in `text-ink-2` and capped at 62ch. Uppercase is used
+  once, on the chip, because an all-caps line is slow to read at any length and
+  CONTENT.md rule 6 wants these pages legible on paper as well as on screen.
+
+  There is no gradient and no `bg-clip-text` anywhere here, and that is a print
+  rule rather than a taste: CONTENT.md rule 6 notes that gradient text can print
+  as nothing at all, and the old headline was exactly that shape.
+
+  Colour is tokens only, so one markup works on both grounds — the site now has
+  a light/dark switch and a literal hex cannot follow it.
+
+  Call it with a dict:
+    eyebrow  optional  the small chip above the headline, usually the audience
+    title    required  a sentence, in sentence case
+    deck     optional  one or two sentences of plain prose
+    meta     optional  a short count line under the deck ("12 articles")
+*/}}
+<header class="mb-10 md:mb-14">
+  {{ with .eyebrow }}
+  <p class="inline-block mb-5 px-3 py-1.5 rounded bg-signal-wash border-l-[3px] border-signal text-signal text-[0.6875rem] font-extrabold uppercase tracking-[0.18em]">{{ . }}</p>
+  {{ end }}
+
+  <h1 class="font-heading font-extrabold text-ink text-[2rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.05] tracking-[-0.01em] max-w-[26ch] mt-0 mb-4">{{ .title }}</h1>
+
+  {{ with .deck }}
+  <p class="text-ink-2 text-base md:text-lg leading-[1.65] max-w-[62ch] m-0">{{ . }}</p>
+  {{ end }}
+
+  {{ with .meta }}
+  <p class="mt-5 mb-0 text-ink-3 text-xs font-semibold uppercase tracking-[0.14em]">{{ . }}</p>
+  {{ end }}
+</header>

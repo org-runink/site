@@ -101,22 +101,11 @@
 
     <h3 class="sp-h3">Neutral ramp</h3>
     <ul class="sp-swatches">
-      {{ range slice
-        (dict "n" "--rk-n-000" "h" "#FFFFFF" "r" "sheet: a raised surface")
-        (dict "n" "--rk-n-050" "h" "#F2F5F7" "r" "sheet: canvas / console: text")
-        (dict "n" "--rk-n-100" "h" "#E6ECEF" "r" "sheet: recessed surface")
-        (dict "n" "--rk-n-200" "h" "#D2DADF" "r" "sheet: hairline")
-        (dict "n" "--rk-n-300" "h" "#B6C2CA" "r" "console: body text")
-        (dict "n" "--rk-n-400" "h" "#8C9BA6" "r" "console: labels, captions")
-        (dict "n" "--rk-n-450" "h" "#76838B" "r" "sheet: boundary rule")
-        (dict "n" "--rk-n-500" "h" "#647680" "r" "console: boundary rule")
-        (dict "n" "--rk-n-600" "h" "#546570" "r" "sheet: labels, captions")
-        (dict "n" "--rk-n-700" "h" "#3A4A55" "r" "sheet: body text")
-        (dict "n" "--rk-n-750" "h" "#2C3B46" "r" "console: hairline")
-        (dict "n" "--rk-n-800" "h" "#18242D" "r" "console: raised surface")
-        (dict "n" "--rk-n-900" "h" "#101A22" "r" "sheet: text / console: canvas")
-        (dict "n" "--rk-n-950" "h" "#0A1015" "r" "console: recessed surface")
-      }}
+        {{/* GENERATED from tokens.css — see data/contrast_proof.json. Each
+             rung's role is read out of the ground blocks rather than written
+             here, so it cannot describe a binding that no longer exists. The
+             hand-written version documented the pre-FACE blue-black ramp. */}}
+        {{ range site.Data.contrast_proof.ramp }}
       <li class="sp-swatch">
         <div class="sp-swatch__chip" style="background: {{ .h }}"></div>
         <div class="sp-swatch__body">
@@ -137,10 +126,8 @@
       (<code>#eef1fc</code>) — under AA on the two grounds it most often sat on.
     </p>
     <ul class="sp-swatches">
-      {{ range slice
-        (dict "n" "--rk-signal-ink" "h" "#A8400A" "r" "sheet ground. 6.17:1 on white, 5.64:1 on canvas, 5.18:1 on recessed.")
-        (dict "n" "--rk-signal-lift" "h" "#F2801F" "r" "console ground. 6.61:1 on canvas, 5.93:1 on raised, 7.18:1 on recessed.")
-      }}
+        {{/* GENERATED — the ratios are measured at build time, not typed. */}}
+        {{ range site.Data.contrast_proof.signal }}
       <li class="sp-swatch">
         <div class="sp-swatch__chip" style="background: {{ .h }}"></div>
         <div class="sp-swatch__body">
@@ -205,54 +192,39 @@
           </tr>
         </thead>
         <tbody>
-        {{ range slice
-          (dict "f" "#101A22" "fn" "text"        "b" "#FFFFFF" "bn" "sheet"   "r" "17.60" "g" "AAA")
-          (dict "f" "#101A22" "fn" "text"        "b" "#F2F5F7" "bn" "ground"  "r" "16.08" "g" "AAA")
-          (dict "f" "#101A22" "fn" "text"        "b" "#E6ECEF" "bn" "sunk"    "r" "14.76" "g" "AAA")
-          (dict "f" "#3A4A55" "fn" "text-2"      "b" "#FFFFFF" "bn" "sheet"   "r" "9.17"  "g" "AAA")
-          (dict "f" "#3A4A55" "fn" "text-2"      "b" "#F2F5F7" "bn" "ground"  "r" "8.37"  "g" "AAA")
-          (dict "f" "#3A4A55" "fn" "text-2"      "b" "#E6ECEF" "bn" "sunk"    "r" "7.69"  "g" "AAA")
-          (dict "f" "#546570" "fn" "text-3"      "b" "#FFFFFF" "bn" "sheet"   "r" "6.05"  "g" "AA")
-          (dict "f" "#546570" "fn" "text-3"      "b" "#F2F5F7" "bn" "ground"  "r" "5.52"  "g" "AA")
-          (dict "f" "#546570" "fn" "text-3"      "b" "#E6ECEF" "bn" "sunk"    "r" "5.07"  "g" "AA")
-          (dict "f" "#A8400A" "fn" "signal"      "b" "#FFFFFF" "bn" "sheet"   "r" "6.17"  "g" "AA")
-          (dict "f" "#A8400A" "fn" "signal"      "b" "#F2F5F7" "bn" "ground"  "r" "5.64"  "g" "AA")
-          (dict "f" "#A8400A" "fn" "signal"      "b" "#E6ECEF" "bn" "sunk"    "r" "5.18"  "g" "AA")
-          (dict "f" "#76838B" "fn" "rule-strong" "b" "#FFFFFF" "bn" "sheet"   "r" "3.90"  "g" "AA non-text")
-          (dict "f" "#76838B" "fn" "rule-strong" "b" "#F2F5F7" "bn" "ground"  "r" "3.56"  "g" "AA non-text")
-          (dict "f" "#76838B" "fn" "rule-strong" "b" "#E6ECEF" "bn" "sunk"    "r" "3.27"  "g" "AA non-text")
-          (dict "f" "#0F6F73" "fn" "cat logistics" "b" "#FFFFFF" "bn" "sheet" "r" "5.93"  "g" "AA")
-          (dict "f" "#0F6F73" "fn" "cat logistics" "b" "#E6ECEF" "bn" "sunk"  "r" "4.97"  "g" "AA")
-          (dict "f" "#5847B8" "fn" "cat insurance" "b" "#FFFFFF" "bn" "sheet" "r" "6.98"  "g" "AA")
-          (dict "f" "#5847B8" "fn" "cat insurance" "b" "#E6ECEF" "bn" "sunk"  "r" "5.85"  "g" "AA")
-          (dict "f" "#5A6B31" "fn" "cat banking"   "b" "#FFFFFF" "bn" "sheet" "r" "5.86"  "g" "AA")
-          (dict "f" "#5A6B31" "fn" "cat banking"   "b" "#E6ECEF" "bn" "sunk"  "r" "4.92"  "g" "AA")
-          (dict "f" "#1D5480" "fn" "cat telecom"   "b" "#FFFFFF" "bn" "sheet" "r" "7.98"  "g" "AAA")
-          (dict "f" "#1D5480" "fn" "cat telecom"   "b" "#E6ECEF" "bn" "sunk"  "r" "6.69"  "g" "AA")
-          (dict "f" "#A03A5E" "fn" "cat marketing" "b" "#FFFFFF" "bn" "sheet" "r" "6.44"  "g" "AA")
-          (dict "f" "#A03A5E" "fn" "cat marketing" "b" "#E6ECEF" "bn" "sunk"  "r" "5.40"  "g" "AA")
-          (dict "f" "#F2F5F7" "fn" "text"        "b" "#101A22" "bn" "console ground" "r" "16.08" "g" "AAA")
-          (dict "f" "#F2F5F7" "fn" "text"        "b" "#18242D" "bn" "console sheet"  "r" "14.43" "g" "AAA")
-          (dict "f" "#B6C2CA" "fn" "text-2"      "b" "#101A22" "bn" "console ground" "r" "9.69"  "g" "AAA")
-          (dict "f" "#B6C2CA" "fn" "text-2"      "b" "#18242D" "bn" "console sheet"  "r" "8.70"  "g" "AAA")
-          (dict "f" "#8C9BA6" "fn" "text-3"      "b" "#101A22" "bn" "console ground" "r" "6.17"  "g" "AA")
-          (dict "f" "#8C9BA6" "fn" "text-3"      "b" "#18242D" "bn" "console sheet"  "r" "5.53"  "g" "AA")
-          (dict "f" "#F2801F" "fn" "signal"      "b" "#101A22" "bn" "console ground" "r" "6.61"  "g" "AA")
-          (dict "f" "#F2801F" "fn" "signal"      "b" "#18242D" "bn" "console sheet"  "r" "5.93"  "g" "AA")
-          (dict "f" "#647680" "fn" "rule-strong" "b" "#101A22" "bn" "console ground" "r" "3.73"  "g" "AA non-text")
-          (dict "f" "#647680" "fn" "rule-strong" "b" "#18242D" "bn" "console sheet"  "r" "3.34"  "g" "AA non-text")
-          (dict "f" "#4FB3B3" "fn" "cat logistics" "b" "#101A22" "bn" "console ground" "r" "7.07" "g" "AAA")
-          (dict "f" "#9B8CF0" "fn" "cat insurance" "b" "#101A22" "bn" "console ground" "r" "6.21" "g" "AA")
-          (dict "f" "#A3B96A" "fn" "cat banking"   "b" "#101A22" "bn" "console ground" "r" "8.14" "g" "AAA")
-          (dict "f" "#5FA8DC" "fn" "cat telecom"   "b" "#101A22" "bn" "console ground" "r" "6.81" "g" "AA")
-          (dict "f" "#E4809C" "fn" "cat marketing" "b" "#101A22" "bn" "console ground" "r" "6.59" "g" "AA")
-        }}
+        {{/* GENERATED — the rows come from data/contrast_proof.json, which
+             scripts/gen-contrast-proof.mjs derives from assets/css/tokens.css.
+
+             This was a hand-written list of 46 hexes and ratios. After the
+             palette moved to FACE it still asserted `#F2801F` as the signal and
+             `#101A22` as the ground — measured ratios for colours that existed
+             nowhere, on the one page whose whole job is to be the authority on
+             what the tokens are. A proof table that can drift from the thing it
+             proves is worse than none, because it looks checked. CI runs the
+             generator with --check. */}}
+        {{ range site.Data.contrast_proof.rows }}
           <tr>
             <th scope="row" class="sp-mono">{{ .f }} <span class="sp-grade">{{ .fn }}</span></th>
             <td class="sp-mono">{{ .b }} <span class="sp-grade">{{ .bn }}</span></td>
             <td class="sp-num">{{ .r }}:1</td>
             <td><span class="sp-grade">{{ .g }}</span></td>
-            <td><span class="sp-proof" style="background: {{ .b }}; color: {{ .f }}">Sample text</span></td>
+            {{/* A MARK IS NOT TEXT, so it is not demonstrated as text. The
+                 mark tier's floor is 3:1 — correct for a boundary you can see,
+                 wrong for a word. Rendering `rule-strong` as "Sample text" made
+                 this page assert, in its own proof column, six examples of text
+                 at ~3.2:1, and the rendered-contrast audit flagged all six —
+                 correctly. Marks now show as what they are: a rule on its
+                 ground. safeCSS because Go's style-attribute filter rejects
+                 parentheses and these values may be var() one day. */}}
+            <td>
+              {{ if eq .tier "mark" }}
+              <span class="sp-proof" style="background: {{ .b | safeCSS }}" aria-label="{{ .fn }} rule on {{ .bn }}">
+                <span style="display:block;height:3px;width:5rem;background: {{ .f | safeCSS }}"></span>
+              </span>
+              {{ else }}
+              <span class="sp-proof" style="background: {{ .b | safeCSS }}; color: {{ .f | safeCSS }}">Sample text</span>
+              {{ end }}
+            </td>
           </tr>
         {{ end }}
         </tbody>

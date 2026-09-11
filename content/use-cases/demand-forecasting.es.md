@@ -43,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Mientras tanto, una referencia gira. No de forma dramática — un pico estacional que llega antes, una promoción que se mantuvo después de que la promoción acabara, una región que bajó un escalón sin ruido y se quedó ahí. Ninguna de esas cosas cruza un umbral, porque el nivel sigue dentro de la banda. Solo se ven cuando se separa la estación de la tendencia, y nadie tiene la tarde libre para hacer eso referencia por referencia.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 La previsión ya estaba equivocada semanas antes de que se acabara el stock.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
@@ -74,8 +74,8 @@ author: "Runink"
                 Lo que llega a una persona es un solo elemento: esta referencia, el giro, el método que hay detrás, los periodos sobre los que se probó y un cambio redactado para el plan. Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa decisión queda anotada. Aprobar es lo que lo envía — y donde un paso que hay detrás no tiene nada implementado todavía, siendo una escritura en su sistema de planificación el ejemplo honrado, la respuesta nombra ese paso como no ejecutado en vez de informar del cambio como hecho. La decisión y la ejecución se anotan como dos hechos distintos, porque lo son. Corre en máquinas suyas, y el histórico no sale nunca de ellas.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. No le ofrecemos las nuestras, porque no tenemos las suyas. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
              </p>
@@ -90,7 +90,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta
         </a>
     </div>

@@ -25,8 +25,6 @@ title: "Runink"
 description: "Held customs entries, claims decided without the evidence already in the file, traffic carried and never rated. The answer is usually already in your own records. Runink FACE reads all of them, and puts one specific proposed action in front of the person who can approve it."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
-accent: "#ea580c"
-
 hero:
   eyebrow: "For operations, finance and compliance"
   line1: "The answer is already in your records."
@@ -59,7 +57,6 @@ industries_columns:
 industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
-    accent: "#ea580c"
     cost: "An entry held at the port for a missing paper while the daily charge runs. A freight claim still inside its filing window that nobody had the morning to assemble."
     owners:
       - "Operations director"
@@ -67,7 +64,6 @@ industries:
       - "Trade compliance"
   - page: "insurance"
     name: "Insurance"
-    accent: "#778fe6"
     cost: "A review threshold raised to clear a backlog, meant to be temporary, never put back and never decided either way. Reserve movements checked by sample because the stream is too long to read."
     owners:
       - "Claims operations"
@@ -75,7 +71,6 @@ industries:
       - "Internal audit"
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
-    accent: "#C8D9A8"
     cost: "A break that grows inside the range you always clear, so no single month escalates and nobody reads the sequence. A supplier contract nobody has opened since signature."
     owners:
       - "Compliance and risk"
@@ -83,7 +78,6 @@ industries:
       - "Finance"
   - page: "telecom"
     name: "Telecom"
-    accent: "#c084fc"
     cost: "A rating change that is right for the promotion and wrong for a legacy plan, too small to move an aggregate. A sweep that returns an error rate when operations needs the accounts by name."
     owners:
       - "Revenue assurance"
@@ -91,7 +85,6 @@ industries:
       - "Finance and procurement"
   - page: "marketing"
     name: "Marketing"
-    accent: "#D4A574"
     cost: "The audit tool knows the site is slow. The content tool does not, so it keeps writing for a page nobody stays on. Every campaign starts again from a blank page."
     owners:
       - "The marketing lead"

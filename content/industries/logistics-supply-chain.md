@@ -10,7 +10,12 @@ description: "Held customs entries, freight claims that expire unfiled, cold cha
 # arrangement described on the banking and telecom pages.
 product: "Runink FACE"
 weight: 10
-accent: "#ea580c"
+# category: binds this page to the palette's category tokens via the
+# .rk-cat-* class the layout emits. It replaces an `accent:` hex, which
+# went dead when the stylesheets moved to --rk-accent: the hex was still
+# injected into a style attribute that nothing read any more. A class can
+# follow the ground; a literal cannot.
+category: "logistics"
 card: "Runink FACE — held entries, expiring claims, cold chain and demand that grew on the way up the chain."
 headline: "The evidence of your next loss is already in your systems."
 deck: "An entry held for a missing paper while the port charge runs. A refrigerated load drifting warm overnight. A claim still inside its filing window. All recorded somewhere already, and nobody with the hours to assemble it. This page is Runink FACE, the product this company is built around."

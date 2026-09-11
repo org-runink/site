@@ -39,7 +39,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 No porto é igual. A carga fica parada por um papel que falta, e uma cobrança diária começa a correr. O aviso chega junto com todo o resto da madrugada. Quando alguém liga essa parada à fatura, a cobrança já corre há dias.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#7c3aed] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Nada disso é questão de julgamento. É um problema de reunir as coisas.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -61,8 +61,8 @@ author: "Runink"
                 Aprovar é o que envia. E onde uma etapa atrás da aprovação ainda não tem implementação &mdash; a gravação de volta no seu sistema de registro é o exemplo real &mdash; a resposta nomeia essa etapa como não executada, em vez de dar a ação inteira por concluída. Assim ninguém descobre três semanas depois que o registro nunca saiu. Depois, por que uma contestação foi registrada se responde pelo registro, e não pela memória de alguém.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(124,58,237,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#7c3aed] to-[#5b21b6] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>
@@ -84,7 +84,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#7c3aed] to-[#5b21b6] rounded-xl border border-[#7c3aed]/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:-translate-y-1">
+        <a href="/pt/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Agende uma conversa
         </a>
     </div>

@@ -4,7 +4,7 @@
         <div class="mx-auto max-w-screen-md text-center mb-12">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{{ $data.title }}</h2>
             {{ with $data.description }}
-            <p class="mb-5 font-light text-[#D9CDB8] sm:text-xl">{{ . }}</p>
+            <p class="mb-5 font-light text-ink-2 sm:text-xl">{{ . }}</p>
             {{ end }}
         </div>
 
@@ -21,14 +21,14 @@
                              content.style.gridTemplateRows = isExpanded ? '1fr' : '0fr';
                              this.querySelector('svg').classList.toggle('rotate-180')">
                     <span class="text-lg font-medium text-white">{{ .question }}</span>
-                    <svg class="w-5 h-5 text-[#D9CDB8] transform transition-transform duration-200" fill="none"
+                    <svg class="w-5 h-5 text-ink-3 transform transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div class="grid transition-all duration-300 ease-in-out border-stone-700" style="grid-template-rows: 0fr;">
                     <div class="overflow-hidden">
-                        <div class="p-6 prose prose-invert max-w-none text-[#F5F1E8] border-t border-stone-700">
+                        <div class="p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
                             {{ .answer | markdownify }}
                         </div>
                     </div>

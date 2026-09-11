@@ -43,7 +43,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Pendant ce temps, une référence tourne. Pas de façon spectaculaire — un pic saisonnier qui arrive tôt, une promotion qui a tenu après l'arrêt de la promotion, une région qui est descendue d'un cran sans bruit et y est restée. Aucune de ces choses ne franchit un seuil, car le niveau reste dans la bande. Elles ne deviennent visibles qu'en séparant la saison de la tendance, et personne n'a l'après-midi qu'il faut pour le faire référence par référence.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#ea580c] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 La prévision était fausse des semaines avant la rupture de stock.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
@@ -74,8 +74,8 @@ author: "Runink"
                 Ce qui parvient à une personne est un seul élément : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et une modification rédigée du plan. Une personne nommée l'approuve, la modifie ou la refuse, et cette décision reste au dossier. C'est l'approbation qui l'envoie — et là où une étape derrière n'a encore rien d'implémenté, une écriture dans votre système de planification étant l'exemple honnête, la réponse nomme cette étape comme non exécutée au lieu de rapporter la modification comme faite. La décision et l'exécution sont consignées comme deux faits distincts, parce qu'ils le sont. Cela tourne sur des machines qui vous appartiennent, et l'historique ne les quitte jamais.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(234,88,12,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ea580c] to-[#ca4708] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous ne vous proposons pas les nôtres, car nous n'avons pas les vôtres. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>
@@ -90,7 +90,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#ea580c] to-[#ca4708] rounded-xl border border-[#ea580c]/30 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:-translate-y-1">
+        <a href="/fr/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Réserver une consultation
         </a>
     </div>

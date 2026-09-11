@@ -42,7 +42,7 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Al revés funciona igual. La mesa tiene un cambio y tiene que ir llamando para colocarlo, camión por camión, esperando que cada uno pueda coger el teléfono. La mitad de las llamadas van al buzón y se vuelven a hacer veinte minutos después.
             </p>
-            <p class="text-lg text-stone-400 font-medium font-semibold text-[#f59e0b] tracking-wide font-bold text-sm">
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
                 Quien se entera primero es el que no puede escribir.
             </p>
             <p class="text-lg text-stone-400 font-medium">
@@ -64,8 +64,8 @@ author: "Runink"
                 Una negativa más, porque es del tipo que suele esconderse. En otras partes de FACE se puede adjuntar una nota de voz a un hilo, y ese adjunto no se transcribe. En vez de dejar que el modelo improvise alrededor, se le dice al modelo sin rodeos que ha llegado un adjunto de audio, que su contenido es desconocido y que no debe suponer qué se dijo; y se le indica que le diga a usted que el audio no se procesó. Un sistema que no puede oír algo y lo dice vale más que uno que rellena el hueco.
             </p>
         </div>
-        <div class="bg-[#1b1919] p-8 rounded-2xl border border-stone-800/80 shadow-[0_0_20px_rgba(245,158,11,0.05)] shadow-2xl">
-             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#b45309] mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
+        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+             <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto algo cambia.
              </p>
@@ -80,7 +80,7 @@ author: "Runink"
     </div>
 
     <div class="text-center">
-        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-white text-white drop-shadow-md transition-all duration-300 bg-gradient-to-r from-[#f59e0b] to-[#b45309] rounded-xl border border-[#f59e0b]/30 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:-translate-y-1">
+        <a href="/es/#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta
         </a>
     </div>
