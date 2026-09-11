@@ -1,6 +1,6 @@
 ---
 title: "Cold Chain and Yard Safety"
-description: "A container drifts warm overnight and the reading sits in your sensor data until somebody opens the door. The yard camera side of this is built; the sensor path into the software is not, and the page says so."
+description: "A container drifts warm overnight and nobody opens the door until morning. What the yard camera already sees, read against the handover record and the paperwork the consignment travels with."
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"

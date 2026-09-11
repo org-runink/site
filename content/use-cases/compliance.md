@@ -1,6 +1,6 @@
 ---
 title: "Customer Data Privacy and Emissions Reporting"
-description: "Operating a system quietly writes personal data into its own logs, and the emissions report takes a quarter to assemble. Here is exactly what the software does about each, including the parts it does not do."
+description: "Operating a system quietly writes personal data into its own logs, and the emissions report takes a quarter to assemble. What the software reads for each, what it hands to the person accountable, and where a check it could not run says so."
 layout: "use_case"
 badge: "Compliance Auditor"
 badgeColor: "#10b981"

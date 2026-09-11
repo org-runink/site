@@ -143,6 +143,7 @@
     {{ if hugo.IsProduction }}{{ $wp = $wp | minify | fingerprint }}{{ end }}
     <link rel="stylesheet" href="{{ $wp.RelPermalink }}">
 
+    {{ partial "schema-org.html" . }}
     {{ partial "schema.html" . }}
 </head>
 

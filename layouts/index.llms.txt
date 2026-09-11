@@ -1,0 +1,81 @@
+{{- /*
+  /llms.txt — a curated map of this site for models that answer questions about it.
+
+  WHY IT IS CURATED AND NOT A DUMP. The site has 993 English pages, and 566 of
+  them are tag and category term pages. A crawler left to its own devices reaches
+  for whichever of those ranked, and answers out of a list of article titles. This
+  file names the handful of pages that actually carry an argument, in the order a
+  person should read them, so a model reaching for us gets the papers and the
+  product page instead.
+
+  It is body copy. CONTENT.md rules 1 and 3 apply to every line: no invented
+  figures, no vague quantifiers, and a non-technical buyer has to be able to
+  restate it. The summaries below come from each page's own `description`, which
+  has already been through that pass.
+
+  Self-hosted plain text, no external request — rule 7.
+*/ -}}
+# Runink
+
+> {{ .Site.Params.description | default "Runink FACE reads the logistics records a business already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on infrastructure the customer controls." }}
+
+Runink builds three things. **Runink FACE** is the product: it reads records a
+logistics or finance operation already holds, compares each against the rule that
+governs it, and drafts an action for a named person to approve. **Runink PULSE**
+is a separate product, for market analysis and marketing. **Runink CORE** is not a
+product — it is the platform both run on, which is the answer to where data is
+processed and who can see it.
+
+Two things are true of all of it and are worth knowing before reading further.
+Every drafted action waits for a named person; approving it is what sends it, and
+who approved it is recorded. And the models run on hardware the customer
+controls — nothing is sent to an outside model provider.
+
+We have not been audited against SOC 2, ISO 27001 or any other framework by an
+external auditor. The software is built against them and will tell you what it
+checked; it does not claim a certification it does not hold. There are no
+published customer results, case studies or return-on-investment figures on this
+site, and that is deliberate — where a number would go, the pages name the
+measure and say where to find it in your own systems instead.
+
+## The long documents
+
+{{ with site.GetPage "/blog/whitepapers" }}{{ range .Pages.ByWeight }}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Params.blurb }}{{ . }}{{ else }}{{ .Description }}{{ end }}
+{{- end }}{{ end }}
+
+## The product
+
+- [Runink FACE]({{ "products/face/" | absURL }}): what it reads, what it drafts, and where it stops.
+- [Pricing]({{ "pricing/" | absURL }}): seats and a compute allowance, with the prices published.
+
+## Where it fits
+
+{{ with site.GetPage "/industries" }}{{ range .Pages.ByWeight }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}{{ end }}
+
+## Worked scenarios
+
+{{ with site.GetPage "/use-cases" }}{{ range .Pages }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}{{ end }}
+
+## Shorter pieces
+
+Several dozen articles on the operational problems behind the documents above —
+held customs entries, freight claims inside their filing window, returns that cost
+more to handle than the goods, demurrage, cross-docking, cold chain, procurement
+visibility. Index: [{{ "blog/" | absURL }}]({{ "blog/" | absURL }})
+
+## Other languages
+
+Spanish, French and Portuguese cover the homepage, the product and pricing pages
+and the twelve scenario pages. The articles and the four papers are English only.
+{{ range site.Home.AllTranslations }}{{ if ne .Language.Lang "en" }}
+- {{ .Language.LanguageName }}: {{ .Permalink }}
+{{- end }}{{ end }}
+
+## Contact
+
+Write to paes@runink.org, or use the form at {{ "#contact-form" | absURL }}.

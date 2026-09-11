@@ -15,9 +15,35 @@
     {{ $seoTitle := default (printf "%s | %s" .Title .Site.Title) .Params.seo_title }}
     {{ if .IsHome }}{{ $seoTitle = default .Site.Title .Params.seo_title }}{{ end }}
     
-    {{ $seoDescription := default .Summary .Description }}
-    {{ $seoDescription = default $seoDescription .Params.seo_description }}
-    {{ $seoDescription = default .Site.Params.description $seoDescription }}
+    {{/* The description chain, and it was broken in two places at once.
+
+         `.Summary` is HTML, and it was going into a content="" attribute
+         unplainified and untruncated — so a page without its own description got
+         markup and an unbounded string. And the last line's fallback was
+         `default .Site.Params.description`, with params.description set to ""
+         in hugo.toml, which is a no-op: 587 of 722 rendered pages shipped
+         `<meta name="description" content="">`, and because the same variable
+         feeds og:description and twitter:description, every social card and
+         every LLM crawler preview was empty too.
+
+         Taxonomy and term pages are the bulk of those 587 and have neither a
+         description nor a summary, so they get a sentence built from what they
+         actually are. It is body copy — a crawler and a person both read it —
+         so CONTENT.md rules 1 and 3 apply to the strings below. */}}
+    {{ $seoDescription := "" }}
+    {{ with .Description }}{{ $seoDescription = . }}{{ end }}
+    {{ with .Params.seo_description }}{{ $seoDescription = . }}{{ end }}
+    {{ if not $seoDescription }}
+      {{ if eq .Kind "term" }}
+        {{ $seoDescription = printf "Articles from Runink on %s, for operations, supply chain, finance and compliance teams." .Title }}
+      {{ else if eq .Kind "taxonomy" }}
+        {{ $seoDescription = printf "Every %s Runink writes about, for operations, supply chain, finance and compliance teams." (lower .Title) }}
+      {{ else }}
+        {{ with .Summary }}{{ $seoDescription = . | plainify | htmlUnescape | chomp }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if not $seoDescription }}{{ $seoDescription = .Site.Params.description }}{{ end }}
+    {{ $seoDescription = $seoDescription | plainify | htmlUnescape | chomp | truncate 300 }}
     
     {{ $canonicalUrl := default .Permalink .Params.canonicalUrl }}
 
@@ -72,6 +98,26 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ $canonicalUrl }}">
+
+    {{/* hreflang. The site has four languages and had none of this in the head,
+         so the four variants of a page competed with each other instead of
+         consolidating. The per-language sitemaps already carry xhtml:link
+         alternates, which is a partial signal for Google and no signal at all
+         for a crawler that only reads HTML.
+
+         x-default points at English, which is what an unmatched visitor should
+         get: it is the only language in which the articles and the four papers
+         exist. Guarded on .IsTranslated so single-language pages emit nothing
+         rather than a self-referential pair. */}}
+    {{ if .IsTranslated }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+    {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+    {{ end }}
+    {{ $en := "" }}
+    {{ if eq $.Language.Lang "en" }}{{ $en = $.Permalink }}{{ else }}{{ range $.Translations }}{{ if eq .Language.Lang "en" }}{{ $en = .Permalink }}{{ end }}{{ end }}{{ end }}
+    {{ with $en }}<link rel="alternate" hreflang="x-default" href="{{ . }}">{{ end }}
+    {{ end }}
 
     {{/* FONTS AND TOKENS — self-hosted, no third-party request.
 
@@ -132,6 +178,7 @@
     {{ end }}
 
     <!-- JSON-LD Schema -->
+    {{ partial "schema-org.html" . }}
     {{ partial "schema.html" . }}
 </head>
 

@@ -1,0 +1,61 @@
+# runink.org
+#
+# Runink FACE reads the logistics records a business already holds, compares each
+# against the rule that governs it, and drafts an action for a named person to
+# approve. https://runink.org/products/face/
+
+Sitemap: https://runink.org/sitemap.xml
+
+# Everything below is one decision stated twice: crawlers that answer questions
+# are welcome, and the things that are not pages are not offered to them.
+#
+# Why allow the answer engines at all. This site's whole argument is that a buyer
+# should be able to check a claim rather than take it on trust, and the papers and
+# use-case pages are written to be read that way. A model that can quote them is
+# doing the thing the pages were written for. We publish nothing here we would not
+# say to somebody's face, which is the only sound basis for this decision — a
+# robots.txt is a request, not a control, and treating it as a control is how
+# people end up surprised.
+
+User-agent: *
+Allow: /
+Disallow: /tests/
+Disallow: /igo-demo/
+
+# Named explicitly rather than left to the wildcard, so the decision is on the
+# record and a later reader does not have to infer it from silence.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /

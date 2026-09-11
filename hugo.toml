@@ -48,7 +48,12 @@ enableGitInfo = true
 
 [params]
   disablePostCSS = false
-  description = ""
+  # Body copy, not config: this is the fallback <meta name="description"> and it
+  # reaches a reader as a search result and a shared link, so CONTENT.md rules 1
+  # and 3 govern it. It was "" until now, which made the last step of the
+  # description chain in baseof.html a no-op and shipped an empty description,
+  # og:description and twitter:description on 587 of 722 pages.
+  description = "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control."
   logo = "/images/logo.png"
   googleAnalytics ='G-SEECKDWZNJ'
 
@@ -540,8 +545,30 @@ enableGitInfo = true
   isPlainText = true
   isHTML = false
 
+# /llms.txt — the convention answer engines are converging on: one plain-text
+# map of a site, curated rather than crawled, so a model reaching for us gets the
+# four papers and the product page instead of whichever tag page ranked.
+#
+# The raw material already existed and nothing pointed at it. The TOON pipeline
+# above has emitted the full corpus at /index.toon since it was built, with no
+# link to it, no mention in robots.txt, and a format no crawler knows. This is
+# the same idea in the format they do read. robots.txt now names the sitemap, and
+# this file is linked from the homepage head.
+#
+# Plain text, self-hosted, no external request — rule 7 clean. It is body copy
+# like any other page, so rules 1 and 3 govern what it says.
+[mediaTypes."text/llms"]
+  suffixes = ["txt"]
+
+[outputFormats.LLMS]
+  mediaType = "text/llms"
+  baseName = "llms"
+  isPlainText = true
+  isHTML = false
+  permalinkable = false
+
 [outputs]
-  home = ["HTML", "RSS", "TOON"]
+  home = ["HTML", "RSS", "TOON", "LLMS"]
   page = ["HTML", "TOON"]
   section = ["HTML", "RSS", "TOON"]
   taxonomy = ["HTML", "TOON"]
