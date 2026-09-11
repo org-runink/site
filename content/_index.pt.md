@@ -111,9 +111,10 @@ product:
 # Um único caso, do início ao fim. Ver o comentário em content/_index.md: cada
 # número aqui é do leitor, não nosso, e nada neste bloco diz que o software
 # registra, desembaraça, classifica ou calcula qualquer coisa.
-scenario_heading: "Uma declaração, de retida a decidida"
-scenario_intro: "Um contêiner fica retido no porto. Isto é tudo o que o software faz a respeito, em ordem, sem pular nada do meio."
-scenario_note: "Cada número dessa sequência é seu. A diária é a do seu próprio acordo, o imposto é o da sua declaração, e os dias são contados a partir dos seus próprios registros. Nada é estimado, e onde um número não pode ser obtido a partir do que você forneceu, o campo fica vazio em vez de preenchido no chute."
+scenario_heading: "Dois casos, do sinal à decisão"
+scenario_intro: "Um em que nenhum modelo entra em nenhum passo, e outro em que um modelo lê uma fotografia e você vê exatamente onde a resposta dele deixa de ser aceita no escuro. Os dois são tudo o que o software faz, em ordem, sem pular nada do meio."
+scenario_note: "Os dois são diferentes de propósito. O primeiro é aritmética fixa sobre os seus próprios registros e não há modelo nenhum nele. O segundo põe um modelo em um passo e só em um — ler uma imagem, que é aquilo em que um modelo é realmente bom — e tudo o que vem depois é o documento, a regra e a pessoa. Onde um número não pode ser obtido a partir do que você forneceu, o campo fica vazio em vez de preenchido no chute."
+scenario_label: "Uma declaração retida — nenhum modelo, em passo nenhum"
 scenario:
   - step: "A retenção aparece"
     body: "Uma declaração volta como retida, em exame ou detida, e a contagem de dias retida está acima de zero. Essa combinação é o teste inteiro — é uma regra fixa, não um julgamento, e roda contra todas as declarações e não só contra as que alguém lembrou de conferir."
@@ -127,6 +128,21 @@ scenario:
     body: "A sobrestadia de uma declaração retida e o imposto de uma sem responsável são dinheiros diferentes, e contá-los como um número só é a forma mais comum de inflar esse tipo de total. Ficam separados, de propósito, e há um teste que falha se algum dia se juntarem."
   - step: "Uma pessoa com nome decide"
     body: "O item espera. Aprovar é o que envia qualquer coisa, e quem aprovou, quando, e o que mudou fica registrado. Se parte do que foi redigido não pôde ser executada, o resultado nomeia essa parte em vez de relatar sucesso."
+
+scenario_b_label: "Uma porta de frio — um modelo em um passo, e só em um"
+scenario_b:
+  - step: "A imagem chega"
+    body: "Uma foto tirada num coletor na porta, ou um quadro puxado de uma câmera do pátio. Antes de qualquer coisa lê-la, verifica-se que é uma imagem: o cabeçalho é decodificado sozinho, o formato tem de ser um de dois, e o tamanho é limitado em bytes e em pixels. Um PDF, um contêiner de vídeo ou bytes soltos são recusados nesse passo."
+  - step: "Um modelo a lê, no seu hardware"
+    body: "O quadro é reduzido a um tamanho que o modelo consegue receber e lido por um modelo de visão rodando em máquinas que você controla. O que volta é uma observação escrita, presa ao quadro exato de onde foi lida, de modo que a frase e a prova dela não se separam."
+  - step: "O papel é lido ao lado"
+    body: "O registro da carga, a entrega e a condição em que os documentos dizem que ela deveria estar. A observação é posta contra o que já estava escrito, e não contra um limite que alguém escolheu."
+  - step: "O que difere sai com nome"
+    body: "O palete, a caixa, a porta do contêiner — com nome, nas palavras que uma pessoa usaria. Não se discute uma nota de gravidade diante de uma transportadora. Uma parte com nome de uma carga com nome, sim."
+  - step: "Um aviso continua sendo um pedido"
+    body: "Um aviso pode ser transmitido para o que estiver inscrito no fluxo de eventos do pátio, e o registro o guarda como o que ele é: solicitado. O que vem depois é decisão de alguém, e o registro diz isso em vez de dar a entender que um movimento foi interrompido."
+  - step: "Uma pessoa com nome decide"
+    body: "O item espera, igual à declaração retida. Aprovar é o que envia qualquer coisa, e quem aprovou, quando, e o que mudou fica escrito."
 why_heading: "Por que isto não é mais um painel"
 why_intro: "Três coisas decidem se algo acima vale o seu tempo."
 why:

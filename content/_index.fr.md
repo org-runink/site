@@ -111,9 +111,10 @@ product:
 # Un seul cas, de bout en bout. Voir le commentaire de content/_index.md : chaque
 # chiffre ici appartient au lecteur, pas à nous, et rien dans ce bloc ne dit que
 # le logiciel dépose, dédouane, classe ou calcule quoi que ce soit.
-scenario_heading: "Une déclaration, de la retenue à la décision"
-scenario_intro: "Un conteneur est retenu au port. Voici tout ce que le logiciel en fait, dans l'ordre, sans rien omettre du milieu."
-scenario_note: "Chaque chiffre de cette séquence est le vôtre. Le tarif journalier est celui de votre accord, les droits sont ceux de votre déclaration, et les jours sont comptés à partir de vos propres enregistrements. Rien n'est estimé, et là où un chiffre ne peut pas être établi à partir de ce que vous avez fourni, le champ reste vide plutôt que rempli au jugé."
+scenario_heading: "Deux cas, du signal à la décision"
+scenario_intro: "L'un où aucun modèle n'intervient à aucune étape, l'autre où un modèle lit une photographie et où vous voyez exactement où sa réponse cesse d'être prise pour argent comptant. Les deux sont tout ce que fait le logiciel, dans l'ordre, sans rien omettre du milieu."
+scenario_note: "Les deux diffèrent à dessein. Le premier est de l'arithmétique fixe sur vos propres enregistrements et il n'y a de modèle nulle part dedans. Le second place un modèle à une étape et à une seule — lire une image, ce pour quoi un modèle est réellement bon — et tout ce qui suit est le document, la règle et la personne. Là où un chiffre ne peut pas être établi à partir de ce que vous avez fourni, le champ reste vide plutôt que rempli au jugé."
+scenario_label: "Une déclaration retenue — aucun modèle, à aucune étape"
 scenario:
   - step: "La retenue apparaît"
     body: "Une déclaration revient retenue, sous examen ou immobilisée, et le nombre de jours de retenue dépasse zéro. Cette combinaison est tout le test — c'est une règle fixe, pas une appréciation, et elle s'applique à toutes les déclarations et non à celles que quelqu'un a pensé à vérifier."
@@ -127,6 +128,21 @@ scenario:
     body: "La surestarie d'une déclaration retenue et les droits d'une déclaration sans responsable ne sont pas le même argent, et les compter comme un seul chiffre est la façon la plus courante de gonfler ce genre de total. Ils restent séparés, délibérément, et un test échoue s'ils venaient à se confondre."
   - step: "Une personne nommée décide"
     body: "L'élément attend. C'est l'approbation qui envoie quelque chose, et qui a approuvé, quand, et ce qui a été modifié est consigné. Si une partie de ce qui a été rédigé n'a pas pu être exécutée, le résultat nomme cette partie au lieu d'annoncer une réussite."
+
+scenario_b_label: "Une porte de froid — un modèle à une étape, et à une seule"
+scenario_b:
+  - step: "L'image arrive"
+    body: "Une photo prise sur un terminal à la porte, ou une vue extraite d'une caméra de parc. Avant que quoi que ce soit ne la lise, on vérifie que c'est une image : l'en-tête est décodé seul, le format doit être l'un des deux, et la taille est plafonnée en octets comme en pixels. Un PDF, un conteneur vidéo ou des octets bruts sont refusés à cette étape."
+  - step: "Un modèle la lit, sur votre matériel"
+    body: "L'image est réduite à une taille que le modèle peut prendre et lue par un modèle de vision qui tourne sur des machines que vous contrôlez. Ce qui revient est une observation écrite, rattachée à l'image exacte dont elle est tirée, de sorte que la phrase et sa preuve ne se séparent pas."
+  - step: "Les papiers sont lus à côté"
+    body: "L'enregistrement de l'expédition, la remise, et l'état dans lequel les documents disent que la charge devrait être. L'observation est confrontée à ce qui était déjà écrit plutôt qu'à un seuil choisi par quelqu'un."
+  - step: "Ce qui diffère sort nommé"
+    body: "La palette, la caisse, la porte du conteneur — nommées, dans les mots qu'une personne emploierait. On ne discute pas d'un score de gravité devant un transporteur. D'une partie nommée d'une expédition nommée, si."
+  - step: "Un signal reste une demande"
+    body: "Un signal peut être diffusé à ce qui est abonné au flux d'événements du parc, et le dossier le garde pour ce qu'il est : demandé. Ce qui suit relève de la décision de quelqu'un, et le dossier le dit plutôt que de laisser croire qu'un mouvement a été arrêté."
+  - step: "Une personne nommée décide"
+    body: "L'élément attend, exactement comme la déclaration retenue. C'est l'approbation qui envoie quoi que ce soit, et qui a approuvé, quand, et ce qui a été modifié est consigné."
 why_heading: "Pourquoi ce n'est pas un tableau de bord de plus"
 why_intro: "Trois points décident si tout ce qui précède mérite votre temps."
 why:

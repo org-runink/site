@@ -562,6 +562,36 @@
     .hp-lead__id { break-after: avoid; }
   }
 
+  /* The label over each of the two worked cases. Not a heading element: the
+     section already has one and these are two halves of the same argument, not
+     two sections. It takes the utility face and the accent so it reads as an
+     instrument label rather than as a title competing with the h2 above it. */
+  .hp-steps__label {
+    margin: 1.75rem 0 0.75rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .hp-steps__label--b { margin-top: 2.5rem; }
+
+  @media print {
+    /* break-after: avoid so a case label can never print alone at the foot of
+       a sheet with its steps overleaf. It labels the list; separated from it,
+       it labels nothing and the reader has to turn back to find out which of
+       the two cases they are reading. */
+    .hp-steps__label {
+      margin: 10pt 0 5pt;
+      font-size: 8pt;
+      color: #000;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+    .hp-steps__label--b { margin-top: 14pt; }
+  }
+
   .hp-steps {
     list-style: none;
     margin: 0;

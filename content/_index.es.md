@@ -111,9 +111,10 @@ product:
 # Un solo caso, de principio a fin. Ver el comentario de content/_index.md: cada
 # cifra que aparece aquí es del lector, no nuestra, y nada en este bloque dice
 # que el software presente, despache, clasifique ni calcule nada.
-scenario_heading: "Una entrada, de retenida a resuelta"
-scenario_intro: "Un contenedor queda retenido en el puerto. Esto es todo lo que el software hace al respecto, en orden y sin saltarse nada del medio."
-scenario_note: "Cada cifra de esa secuencia es suya. La tarifa diaria es la de su propio acuerdo, el arancel es el de su entrada, y los días se cuentan desde sus propios registros. Nada se estima, y donde una cifra no puede deducirse de lo que usted aportó, el campo se deja vacío en lugar de rellenarse a ojo."
+scenario_heading: "Dos casos, de la señal a la decisión"
+scenario_intro: "Uno en el que no interviene ningún modelo en ningún paso, y otro en el que un modelo lee una fotografía y usted ve exactamente dónde deja de darse por buena su respuesta. Los dos son todo lo que hace el software, en orden y sin saltarse nada del medio."
+scenario_note: "Los dos son distintos a propósito. El primero es aritmética fija sobre sus propios registros y no hay ningún modelo en él. El segundo pone un modelo en un paso y solo en uno — leer una imagen, que es en lo que un modelo es realmente bueno — y todo lo que viene después es el documento, la norma y la persona. Donde una cifra no puede deducirse de lo que usted aportó, el campo se deja vacío en lugar de rellenarse a ojo."
+scenario_label: "Una entrada retenida — ningún modelo en ningún paso"
 scenario:
   - step: "Aparece la retención"
     body: "Una entrada vuelve como retenida, en examen o detenida, y el número de días retenida es mayor que cero. Esa combinación es toda la prueba — es una regla fija, no un criterio, y se aplica a todas las entradas y no solo a las que alguien pensó en revisar."
@@ -127,6 +128,21 @@ scenario:
     body: "La demora de una entrada retenida y el arancel de una sin responsable son dinero distinto, y contarlos como una sola cifra es la forma más común de inflar este tipo de total. Se mantienen separados, deliberadamente, y hay una prueba que falla si alguna vez se juntan."
   - step: "Decide una persona con nombre"
     body: "El elemento espera. Aprobarlo es lo que envía algo, y queda escrito quién lo aprobó, cuándo y qué cambió. Si parte de lo redactado no pudo ejecutarse, el resultado nombra esa parte en lugar de informar de un éxito."
+
+scenario_b_label: "Una puerta de frío — un modelo en un paso, y solo en uno"
+scenario_b:
+  - step: "Llega la imagen"
+    body: "Una foto hecha con un terminal en la puerta, o un fotograma sacado de una cámara del patio. Antes de que nada la lea, se comprueba que sea una imagen: se descodifica la cabecera por separado, el formato tiene que ser uno de dos, y el tamaño se limita en bytes y en píxeles. Un PDF, un contenedor de vídeo o bytes sueltos se rechazan en ese paso."
+  - step: "Un modelo la lee, en su propio hardware"
+    body: "El fotograma se reduce a un tamaño que el modelo pueda tomar y lo lee un modelo de visión que corre en máquinas que usted controla. Lo que vuelve es una observación escrita, atada al fotograma exacto del que se leyó, de modo que la frase y su prueba no se separan."
+  - step: "El papeleo se lee al lado"
+    body: "El registro del envío, la entrega y el estado en el que los documentos dicen que debería ir la carga. La observación se contrasta con lo que ya estaba escrito, no con un umbral que alguien eligió."
+  - step: "Lo que difiere sale con nombre"
+    body: "El palé, la caja, la puerta del contenedor — con nombre, en las palabras que usaría una persona. Con una puntuación de gravedad no se discute delante de un transportista. Con una parte concreta de un envío concreto, sí."
+  - step: "Un aviso sigue siendo una petición"
+    body: "Un aviso puede difundirse a lo que esté suscrito al flujo de eventos del patio, y el registro lo guarda como lo que es: solicitado. Lo que pase después lo decide alguien, y el registro lo dice así en lugar de dar a entender que se detuvo un movimiento."
+  - step: "Decide una persona con nombre"
+    body: "El elemento espera, igual que la entrada retenida. Aprobarlo es lo que envía algo, y quién aprobó, cuándo y qué cambió queda escrito."
 why_heading: "Por qué esto no es otro panel de control"
 why_intro: "Tres cosas deciden si algo de lo anterior merece su tiempo."
 why:

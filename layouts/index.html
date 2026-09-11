@@ -272,6 +272,32 @@
         <span class="hp-head__rule" aria-hidden="true"></span>
       </div>
       {{ with $.Params.scenario_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+
+      {{/* TWO CASES, AND THE PAIRING IS THE ARGUMENT.
+
+           The customs case was chosen for this block because it is entirely
+           deterministic — the note in content/_index.md says so — and it is
+           still the right one to lead with. The cold-chain case earns its place
+           by being different in kind rather than by being a second example:
+           there is a model in it, at exactly one step, and the reader can see
+           where its answer stops being taken on trust.
+
+           A page with only the first says nothing about how this company uses a
+           model. A page with only the second is every other vendor's page. The
+           two together say where the line is, which is the whole position.
+
+           WHAT THE COLD-CHAIN STEPS MAY DESCRIBE. The vision path only. There is
+           no live sensor feed into FACE — every telemetry connector resolves to
+           a dummy that forces fallback, and no ingest message carries a
+           temperature field — so nothing here mentions reading a reefer's
+           temperature. /use-cases/cold-chain-safety/ states that outright and has
+           done since the claims pass. What IS built is committed and checkable:
+           face/grpc/internal/extractors/cctv/frame_validation.go decodes the
+           header on its own, caps the frame at 12 MiB and 40 megapixels, and
+           accepts two formats so that nothing else reaches the model;
+           frame_downscale.go reduces it. Those are the first two steps and they
+           are described from that code, not from the use-case page. */}}
+      {{ with $.Params.scenario_label }}<p class="hp-steps__label">{{ . }}</p>{{ end }}
       <ol class="hp-steps">
         {{ range . }}
         <li class="hp-step">
@@ -280,6 +306,19 @@
         </li>
         {{ end }}
       </ol>
+
+      {{ with $.Params.scenario_b }}
+      {{ with $.Params.scenario_b_label }}<p class="hp-steps__label hp-steps__label--b">{{ . }}</p>{{ end }}
+      <ol class="hp-steps">
+        {{ range . }}
+        <li class="hp-step">
+          <h3 class="hp-step__title">{{ .step }}</h3>
+          <p class="hp-step__body">{{ .body }}</p>
+        </li>
+        {{ end }}
+      </ol>
+      {{ end }}
+
       {{ with $.Params.scenario_note }}<p class="hp-caption">{{ . }}</p>{{ end }}
     </section>
     {{ end }}
