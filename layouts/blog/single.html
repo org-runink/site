@@ -55,11 +55,37 @@
 
   <div class="rk-post-wrap container mx-auto max-w-[48rem] px-5 md:px-8 py-14 md:py-20">
 
+    {{/* THE META LINE LEADS WITH THE REVISION, NOT THE PUBLICATION.
+
+         Every one of the 53 posts on this site was last changed at least 30 days
+         after it was published — the median gap is 139 days — because the claims
+         pass rewrote them all. The page was already telling Google
+         `"dateModified": "2026-09-11"` in its JSON-LD and putting the same value
+         in the sitemap's lastmod, while showing the reader "15 March 2026" and
+         nothing else. A visitor saw a site untouched since the spring; a crawler
+         saw one revised today.
+
+         Surfacing it is the consistent move rather than a generous one. If we
+         are willing to assert dateModified to a search engine we should be
+         willing to print it, and if the value is wrong then it is wrong in the
+         structured data too — where nobody can see it. Printing it makes the
+         claim falsifiable, which is the argument this whole site runs on.
+
+         30 days, because a few days after publication is the editing tail of
+         publishing rather than a later revision. Both dates are shown: the
+         revision is the useful one and the publication is the honest one, and
+         dropping either would be a different and worse claim. */}}
+    {{ $meta := printf "%s · %d min read" (.Date.Format "2 January 2006") .ReadingTime }}
+    {{ if and (not .Lastmod.IsZero) (not .Date.IsZero) (gt (div (.Lastmod.Sub .Date).Hours 24.0) 30.0) }}
+      {{ $meta = printf "Updated %s · first published %s · %d min read"
+            (.Lastmod.Format "2 January 2006") (.Date.Format "2 January 2006") .ReadingTime }}
+    {{ end }}
+
     {{ partial "list-hero.html" (dict
       "eyebrow" $eyebrow
       "title"   .Title
       "deck"    .Description
-      "meta"    (printf "%s · %d min read" (.Date.Format "2 January 2006") .ReadingTime)
+      "meta"    $meta
     ) }}
 
     {{ with .Params.author }}
