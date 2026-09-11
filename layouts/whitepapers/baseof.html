@@ -89,7 +89,27 @@
     {{ with .Site.Params.twitter }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
     {{ with $seoImage }}<meta name="twitter:image" content="{{ . }}">{{ end }}
 
-    <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
+    {{/* A 32px icon and a 180px touch icon, not one 536x658 PNG.
+
+         favicon.png was 544,254 bytes and was fetched on every page: measured at
+         64% of a cold homepage load (834 KB total, 531 KB of it this file). It
+         cost no render time — Chrome fetches it at low priority after paint — so
+         nothing on the performance path complained. It cost two thirds of every
+         visitor's bytes, on every page, forever. There were two more copies behind it. The site's own
+         favicon.ico was a byte-identical duplicate of the same PNG, and deleting
+         it uncovered the THEME's, at
+         themes/hugo-saasify-theme/static/images/favicon.ico — 791,996 bytes,
+         larger still, which Hugo merges into the build. Browsers request
+         /favicon.ico whether or not a link element names it, so removing ours
+         alone would have made this worse. static/images/favicon.ico is now a
+         real 16/32 ICO shadowing the theme's at the same path.
+
+         1,336,250 bytes of icon became 44,503.
+
+         Both are deleted. These two are generated from the same artwork, squared
+         on its own centre first so the mark is not distorted by the downscale. */}}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32.png" | relURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
 
     {{/* ------------------------------------------------------------------
@@ -194,7 +214,17 @@
     </div>
 
     <div class="pt-20" id="wp-main" tabindex="-1">
-        {{ block "main" . }}{{ end }}
+        {{/* A real <main> landmark. `block "main"` is a Hugo template name, not
+     HTML — there was no <main> element on any indexable page, so every
+     document opened with ~7 KB of fixed header chrome and nothing told a
+     boilerplate remover where the argument starts. readability.go already
+     strips that chrome before scoring, because "the header and footer are
+     the same words on 1100 pages"; the markup never said so. Answer engines
+     convert HTML to Markdown before reading, and Google's AI guidance asks
+     for a page where visitors can distinguish main content from the rest. */}}
+<main id="content">
+{{ block "main" . }}{{ end }}
+</main>
 
         {{/* After the content block, not in <head>: .Content has to have been
              rendered for the shortcodes inside it to have run, and JSON-LD is

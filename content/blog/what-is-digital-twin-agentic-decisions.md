@@ -3,7 +3,7 @@ title: "What Is a Digital Twin? How Autonomous Decisions Are Reshaping the Suppl
 author: "Runink Logistics Operations Team"
 date: 2026-05-22T21:40:59Z
 draft: false
-featured_image: "/images/blog/digital-twin-autonomous-decisions.png"
+featured_image: "/images/blog/digital-twin-agentic-decisions.png"
 canonical: https://runink.org/blog/digital-twin-autonomous-decisions
 description: "What a supply chain digital twin is, the four kinds it comes in, and where the line falls between software that reasons about a disruption and software that acts on it."
 slug: digital-twin-autonomous-decisions

@@ -40,7 +40,7 @@
 
     {{ with .Params.featured_image }}
     <div class="rk-post-figure mb-10 overflow-hidden rounded-xl border border-rule">
-      {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-auto" "loading" "lazy" "context" $) }}
+      {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-auto" "loading" "eager" "fetchpriority" "high" "context" $) }}
     </div>
     {{ end }}
 

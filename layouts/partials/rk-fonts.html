@@ -43,9 +43,27 @@
      face on every marketing page, so it replaces Fira Book here; the condensed
      display face is preloaded only where it is still the display face, which is
      the whitepapers, and those publish their own. */}}
-{{ $preload := slice
-    "fonts/Figtree-var.woff2"
-    "fonts/FiraSansCondensed-Heavy.woff2" }}
+{{/* The condensed display face is preloaded only where it is actually drawn.
+
+     This file's header has always said it is preloaded "only where it is still
+     the display face, which is the whitepapers" — and the slice was
+     unconditional, so every page got it. Measured against production: the face
+     is fetched on every page at HIGH priority on the critical path, and
+     document.fonts shows it rasterised on the homepage and on whitepapers and
+     NOT on a blog post, an industry page or /products/face/. Thirty kilobytes,
+     downloaded first, never drawn, on exactly the pages search traffic lands on.
+
+     The homepage is in the condition as well as the whitepapers because
+     partials/home/style.html declares 'Fira Cond Hp' from the same file, which
+     the original comment did not account for.
+
+     $faces below is untouched — every declared face is still published, so the
+     count assertion this file is built around still holds. This changes which
+     of them get a <link rel="preload">, not which exist. */}}
+{{ $preload := slice "fonts/Figtree-var.woff2" }}
+{{ if or .IsHome (eq .Section "whitepapers") }}
+  {{ $preload = $preload | append "fonts/FiraSansCondensed-Heavy.woff2" }}
+{{ end }}
 
 {{/* The count assertion this file's header promises.
 
