@@ -71,7 +71,25 @@
     <!-- Meta Tags -->
     <meta name="description" content="{{ $seoDescription }}">
     <meta name="author" content="{{ .Site.Params.author | default .Site.Title }}">
-    <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index, follow{{ end }}">
+    {{/* max-image-preview:large is what makes a page eligible for Google Discover
+         and for a large image in a search result. Google documents it as the
+         control on preview size; without it the preview is restricted to a
+         thumbnail, and Discover is a card surface built around a large image —
+         so omitting it is closer to opting out than to leaving a default.
+
+         max-snippet:-1 and max-video-preview:-1 remove the text and video
+         preview caps for the same reason: this site wants to be quoted, and a
+         truncated snippet is a worse answer with our name on it.
+
+         Appended only to indexable pages. A page that sets its own `robots` —
+         /design/ and /igo-demo/ are noindex — keeps exactly what it asked for,
+         because attaching preview directives to a page we do not want indexed
+         is noise at best and contradictory at worst. */}}
+    {{ $robots := .Params.robots | default "index, follow" }}
+    {{ if not (strings.Contains (lower $robots) "noindex") }}
+      {{ $robots = printf "%s, max-image-preview:large, max-snippet:-1, max-video-preview:-1" $robots }}
+    {{ end }}
+    <meta name="robots" content="{{ $robots }}">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{ $seoTitle }}">
