@@ -103,6 +103,49 @@
       {{ end }}
     </header>
 
+    {{/* 1b. The six jobs, in the reader's vocabulary.
+
+         THE FIRST FIFTEEN SECONDS. The hero is a hook and the industries ledger
+         is "who has this problem". Neither answers the one a supply-chain reader
+         asks immediately — "is this pointed at anything I recognise" — and
+         before this the page went from a sentence about arguing straight to an
+         abstract figure. Somebody scanning for cold chain, returns or claims had
+         nothing to catch on until the ledger, three screens down.
+
+         A DIFFERENT AXIS from the industries ledger below, not a second copy.
+         Industries are who; these are what. Logistics & Supply Chain is one row
+         down there and six rows up here.
+
+         Each row resolves its own title and URL from the use-case page, the way
+         the ledger resolves the industry pages, so a renamed or moved page
+         cannot leave a dead row behind. The front-matter `name` is the label a
+         reader scans for and stays authoritative — "Cold chain" reads faster
+         than "Cold Chain and Yard Safety" — but the LINK comes from the page. */}}
+    {{ with .Params.domains }}
+    <section class="hp-sec hp-dom-sec" aria-labelledby="domains-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="domains-heading">{{ $.Params.domains_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.domains_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <ul class="hp-dom">
+        {{ range . }}
+        {{ $p := site.GetPage (printf "/use-cases/%s" .page) }}
+        {{ if $p }}
+        <li class="hp-dom__item">
+          <a class="hp-dom__link" href="{{ $p.RelPermalink }}">
+            <h3 class="hp-dom__name">{{ .name }}</h3>
+            <p class="hp-dom__line">{{ .line }}</p>
+            <span class="hp-dom__go">{{ $.Params.domains_cta }} <span aria-hidden="true">&rarr;</span></span>
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
     {{/* 2. The picture of the problem. Two panels of the same field of records:
          one where a sample is read, one where all of it is. It is placed before
          any explanation on purpose — the review asked for visuals a business

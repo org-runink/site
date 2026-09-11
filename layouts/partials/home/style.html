@@ -566,6 +566,92 @@
      section already has one and these are two halves of the same argument, not
      two sections. It takes the utility face and the accent so it reads as an
      instrument label rather than as a title competing with the h2 above it. */
+  /* ---- the six jobs ------------------------------------------------------
+
+     Three columns from 1024px, two from 640, one below. Six rows read as a
+     scannable set at three across; at two they still pair; at one they are a
+     list, which is what a phone wants.
+
+     A whole card is the link, not a word inside it — this block exists to be
+     scanned and tapped, and a 44px row beats a 17px anchor on a phone. The
+     hover moves the ground rather than underlining, so nothing here competes
+     with the two call-to-action buttons in the hero above it. */
+  .hp-dom {
+    list-style: none;
+    margin: 0;
+    padding: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 640px) { .hp-dom { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; } }
+  @media (min-width: 1024px) { .hp-dom { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+  .hp-dom__item { min-width: 0; }
+  .hp-dom__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.1rem 1.15rem 1rem;
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color .18s, border-color .18s;
+  }
+  .hp-dom__link:hover {
+    background: var(--accent-wash);
+    border-color: var(--accent-edge);
+  }
+  .hp-dom__name {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .hp-dom__line {
+    margin: 0 0 0.9rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .hp-dom__go {
+    margin-top: auto;
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+
+  @media print {
+    /* Two columns on paper and no boxes: a grid of outlined cards prints as a
+       grid of empty rectangles with words in them. The rule between rows is
+       what the sheet needs. */
+    .hp-dom {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 14pt;
+      padding-top: 8pt;
+      border-top-color: #000;
+    }
+    .hp-dom__item { break-inside: avoid; }
+    .hp-dom__link {
+      padding: 6pt 0;
+      background: none;
+      border: 0;
+      border-bottom: 1px solid #999;
+      border-radius: 0;
+    }
+    .hp-dom__name { font-size: 9.5pt; }
+    .hp-dom__line { font-size: 8.5pt; margin-bottom: 0; }
+    .hp-dom__go { display: none; }
+  }
+
   .hp-steps__label {
     margin: 1.75rem 0 0.75rem;
     font-family: var(--font-display);
