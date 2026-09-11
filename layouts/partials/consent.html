@@ -19,7 +19,12 @@
     const consentBanner = document.getElementById('consent-banner');
     const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
     const now = Date.now();
-    const ttl = 300 * 1000; // 300 seconds in milliseconds
+    // 180 days. This was `300 * 1000` — five MINUTES — so the banner came back
+    // five minutes after a visitor accepted it, on every page, forever. On a
+    // phone it is a fixed bottom sheet about 185px tall, a quarter of a 390x844
+    // viewport, so the cost was not only the nagging: it ate the fold of every
+    // page for every returning reader.
+    const ttl = 180 * 24 * 60 * 60 * 1000;
 
     if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
         consentBanner.style.display = '';

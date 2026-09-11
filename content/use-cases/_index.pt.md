@@ -50,7 +50,7 @@ Uma ação proposta espera nessa fila como um registro próprio. Aprovar é o pa
 
 Repare no que isso é e no que não é. É uma fila cujos itens andam porque uma pessoa com nome os fez andar, e um registro de quem os fez andar — não uma trava em algum ponto do sistema inspecionando todo o resto do que a sua empresa faz. Quando parte de uma ação redigida não pode ser executada, o que volta diz isso em vez de dar a ação por feita.
 
-Aprovar é para encerrar o trabalho, não para começá-lo. A mensagem, o prazo e a atualização do seu sistema de registro decorrem da aprovação. Mais tarde, quando alguém perguntar por que uma contestação foi registrada ou por que uma declaração ficou retida, a resposta sai do registro.
+Aprovar é para encerrar o trabalho, não para começá-lo. A resposta nomeia o que saiu e o que não saiu: um conector de e-mail não configurado volta como uma etapa pulada, com o motivo, em toda resposta. Mais tarde, quando alguém perguntar por que uma contestação foi registrada ou por que uma declaração ficou retida, a resposta sai do registro.
 
 ## Duas Coisas Que Vale Saber De Saída
 

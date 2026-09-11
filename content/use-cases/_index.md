@@ -41,7 +41,7 @@ A proposed action waits in that queue as a record of its own. Approving it is th
 
 Note what that is and is not. It is a queue whose items move because a named person moved them, and a record of who moved them — not a blanket gate somewhere in the system that inspects everything else your business does. Where part of a drafted action cannot be carried out, what comes back says so rather than reporting it done.
 
-Approving is designed to end the work rather than start it. The message, the deadline and the update to your system of record all follow from the approval. Later, when someone asks why a claim was filed or an entry was held, the answer comes from the record.
+Approving is designed to end the work rather than start it. The reply names what went and what did not — a mail connector that is not configured comes back as a named skipped step, with its reason, on every reply. Later, when someone asks why a claim was filed or an entry was held, the answer comes from the record.
 
 ## Two Things Worth Knowing Up Front
 
