@@ -833,6 +833,76 @@
    FOOT — where the document ends
    ========================================================================= */
 
+/* The closing ask at the foot of a paper. Deliberately NOT a boxed plate: on
+   these pages a bordered box is what a pull-quote and a table use, and the ask
+   is the document speaking rather than a thing quoted inside it. It takes the
+   same rule-above treatment as .wp-foot immediately below, so the two read as
+   one closing movement rather than two panels.
+
+   78rem and a 1.5rem gutter, matching .wp-foot and .wp-note — .wp has no
+   container of its own and every band here carries its own. */
+.wp-ask {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+.wp-ask-inner {
+  border-top: 1px solid var(--deck-3);
+  padding-top: 2rem;
+  max-width: 62ch;
+}
+.wp-ask-label {
+  color: var(--on-deck-2);
+  margin-bottom: 0.75rem;
+}
+.wp-ask-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: var(--on-deck);
+}
+.wp-ask-body {
+  margin: 0 0 1.5rem;
+  color: var(--on-deck-2);
+  line-height: 1.7;
+}
+/* --link-deck, NOT --runs. --runs is the standing-mark green: it means "this
+   half of the design runs today", and it is the one colour on these pages that
+   already carries a meaning about the argument. A button wearing it reads as a
+   claim about the product rather than as a thing to press. --link-deck is the
+   orange every other action on the deck ground uses.
+
+   Dark ink on the orange rather than white: #ea580c against --deck (#1c1917)
+   measures 5.08:1, and against white it is 3.68:1, which is under AA. */
+.wp-ask-cta {
+  display: inline-block;
+  background: var(--link-deck);
+  color: var(--deck);
+  font-weight: 700;
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  border: 0;
+}
+.wp-ask-cta:hover { filter: brightness(1.08); }
+
+@media print {
+  /* A printed paper cannot be clicked, so the button becomes its words and
+     carries the address to type. The rule stays: it is what separates the ask
+     from the last page of the argument. */
+  .wp-ask { padding-bottom: 12pt; break-inside: avoid; }
+  .wp-ask-inner { border-top-color: #9a9a9a; padding-top: 10pt; max-width: none; }
+  .wp-ask-title { font-size: 12pt; }
+  .wp-ask-body { font-size: 9pt; margin-bottom: 6pt; }
+  .wp-ask-cta {
+    background: none;
+    color: #000;
+    padding: 0;
+    text-decoration: underline;
+  }
+  .wp-ask-cta::after { content: "\00a0\2014\00a0runink.org"; text-decoration: none; }
+}
+
 .wp-foot {
   max-width: 78rem;
   margin: 0 auto;
@@ -999,6 +1069,15 @@
    same thing — so this page and the posts themselves are what keep /blog/
    reachable. It sits between the paper cards and the language note, so it
    carries only top padding; .wp-note below still owns the bottom of the page. */
+/* Container for a band that brings its own box — currently only the closing
+   ask from partials/next-step.html. Same 72rem and same gutter as .wp-list, so
+   the plate starts on the vertical line the paper cards start on. */
+.wp-band {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
 .wp-more {
   /* 72rem, not the 78rem .wp-note uses: this band sits directly under the paper
      cards and has to start on the same vertical line as they do. .wp-list is
@@ -1166,6 +1245,8 @@
 
   /* -- stack: cover, contents, document ------------------------------------ */
 
+  .wp-ask,
+  .wp-band,
   .wp-hero,
   .wp-body,
   .wp-foot,

@@ -203,13 +203,22 @@
           All topics
         </a>
         {{ with $wpLink }}
-        <a class="rk-list-button rk-list-url inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-signal-fill text-on-fill text-xs font-extrabold uppercase tracking-[0.12em] no-underline transition-colors duration-200 hover:bg-signal-fill-hover"
+        {{/* Ghost, not filled. It was the filled signal button, which was the
+             right weight while it was the strongest thing on the page — and
+             stopped being right the moment the closing ask below it arrived
+             wearing the same fill. On this site a filled signal button is the
+             thing to act on, and a page with two of them has none. This is a
+             sideways move into more reading, so it takes the same treatment as
+             "All topics" beside it and the ask keeps the fill. */}}
+        <a class="rk-list-button rk-list-url inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-sheet border border-rule text-signal text-xs font-extrabold uppercase tracking-[0.12em] no-underline transition-colors duration-200 hover:bg-signal-wash hover:border-rule-mid"
            href="{{ . }}">
           The whitepapers
         </a>
         {{ end }}
       </div>
     </section>
+
+    {{ partial "next-step.html" . }}
 
     {{/* Print only. A printed sheet carries no site header, so without this a
          leave-behind says nothing about where it came from. */}}

@@ -1,6 +1,7 @@
 ---
 title: "Building Genuine Resilience: Choosing Proven SCM Technologies Over Vaporware"
 author: "Runink Logistics Operations Team"
+featured_image: "/images/blog/vaporware_scm_resilience_1781932673542.png"
 date: 2026-06-20T08:28:51Z
 draft: false
 description: "Part of the 6-part series on the dangers of SCM Vaporware."

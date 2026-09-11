@@ -51,7 +51,7 @@ and is part of this standard. A statement about a **product's gaps** is not.
 Verify, do not assume:
 
 ```
-cd /home/me/Documents/pulse/grpc && go run ./internal/openbias/cmd/disclosurecheck FILE...
+cd ~/Documents/org-runink/pulse/grpc && go run ./internal/openbias/cmd/disclosurecheck FILE...
 ```
 
 Run it on **both** the markdown source and the rendered HTML. Neither alone is complete,
@@ -70,7 +70,7 @@ cannot tell whose gap it is reading. Read the hit, then decide.
 This standard is written to pass the guard, and a change to it should keep passing:
 
 ```
-cd /home/me/Documents/pulse/grpc && go run ./internal/openbias/cmd/disclosurecheck <repo>/CONTENT.md
+cd ~/Documents/org-runink/pulse/grpc && go run ./internal/openbias/cmd/disclosurecheck <repo>/CONTENT.md
 ```
 
 ## 3. Plain language, measured
@@ -277,10 +277,52 @@ same claim.
 ```
 cd <repo root>
 rm -rf public && hugo --gc --destination public   # confirm the page count, not the exit code
-go run linkcheck.go public                        # rule 8
-go run readability.go -min 45 public              # rule 3
-cd /home/me/Documents/pulse/grpc && \
+
+go run linkcheck.go public                        # rule 8 — paths AND fragments
+go run readability.go -min 45 public              # rule 3 — floor 45
+
+node scripts/check-content-doctrine.mjs           # and again with --rendered public
+node scripts/check-rendered-output.mjs public
+node scripts/check-nav-distinct.mjs public
+node scripts/check-token-contrast.mjs
+node scripts/check-token-syntax.mjs
+node scripts/check-token-channels.mjs
+node scripts/check-dead-states.mjs
+
+./check-whitepaper-mirrors.sh                     # the four papers vs ../pitch-decks/
+
+cd ../pulse/grpc && \
   go run ./internal/openbias/cmd/disclosurecheck <source .md> <rendered .html>   # rule 2
 ```
+
+Everything above `check-whitepaper-mirrors.sh` also runs in `.github/workflows/
+deploy.yaml`. **That one cannot**, and the reason is worth knowing rather than
+rediscovering: it compares each paper against a mirror in `../pitch-decks/`,
+which is a sibling directory on a developer's machine and is not part of this
+repository — so a CI checkout has nothing to compare against.
+
+That is how the four mirrors came to drift by hundreds of paragraphs without
+anything going red. A check that only runs when somebody remembers it is a check
+that runs after the damage. **If you edit a paper under
+`content/blog/whitepapers/`, run it before you commit.** It exits 0 when every
+mirror is faithful and names the drifting paragraphs when one is not.
+
+Note its two blind spots. The first is stated in its own header: it compares in
+a single direction. Every paragraph of the site source must appear in the
+mirror, but text that exists *only* in the mirror is reported as a
+furniture-line count rather than as an error — so it catches a chapter added
+here and not carried over, and it does not catch a claim struck here and left in
+the document a salesperson hands to a prospect.
+
+The second is worse and is not stated anywhere: **a mirror's cover block is
+outside every check there is.** The cover is bespoke print furniture — it has no
+counterpart in the site source, so nothing compares it to anything, and a
+paragraph comparison skips it by construction. On 11 September 2026 all four
+covers were drifted and two were wrong in ways that would have embarrassed
+somebody in a meeting: the FACE cover carried a deck the site had rewritten, and
+the CORE cover promised the reader a chapter — *"how a working day changes once
+it is in place"* — that had been struck from the paper it introduces. Both would
+have shipped. **When you touch a paper, read its mirror's cover with your own
+eyes.**
 
 Rules 1, 4, 5, 6, 9, 10, 11 and 12 have no tool. They are read for.

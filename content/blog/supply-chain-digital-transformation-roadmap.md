@@ -140,6 +140,16 @@ If your programme has stalled at dashboards, the first thing to establish is not
 
 ## Sources
 
-- [McKinsey & Company — Digital Supply Chain Transformation](https://www.mckinsey.com/capabilities/operations/our-insights/digital-supply-chain-transformation) — Source for the 8% figure on scaling digital supply chain work beyond a pilot
+<!-- Two of these three used to read "Source for the 8% figure" and "Source for
+     the 70% shortfall rate". Both figures were struck from the body in the
+     claims pass and the annotations were not — so the references section went
+     on attributing two statistics to McKinsey and to BCG that the article does
+     not make anywhere. A reader who follows a citation to find a number that
+     is not there has been given a reason to distrust every other line.
+
+     Both links are to capability pages rather than to a titled, dated report,
+     which is the reason the figures came out in the first place. They stay as
+     background reading and the annotations now say that is what they are. -->
+- [McKinsey & Company — Digital Supply Chain Transformation](https://www.mckinsey.com/capabilities/operations/our-insights/digital-supply-chain-transformation) — Background reading on why digital supply chain work stalls after the pilot
 - [World Economic Forum — Supply Chain Transformation](https://www.weforum.org/stories/supply-chain-transformation/) — Global perspectives on supply chain resilience and the case for digitising records
-- [BCG — Supply Chain Digitization Research](https://www.bcg.com/capabilities/operations/supply-chain-management) — Source for the 70% shortfall rate and the role of change management in adoption
+- [BCG — Supply Chain Digitization Research](https://www.bcg.com/capabilities/operations/supply-chain-management) — Background reading on change management as the constraint on adoption

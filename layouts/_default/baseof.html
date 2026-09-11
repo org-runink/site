@@ -58,7 +58,19 @@
         {{ if eq $img.MediaType.SubType "svg" }}
           {{ $seoImage = $img.Permalink }}
         {{ else }}
-          {{ $seoImage = ($img.Resize "1200x630 webp").Permalink }}
+          {{/* Fill, not Resize. Hugo's own docs: "If you specify both width and
+                       height... the image will be non-proportionally scaled (stretched or
+                       squashed)." Every source here is a 1024x1024 square, so Resize
+                       "1200x630" was squashing the artwork vertically and shipping the
+                       distorted result as the og:image, the twitter:image and
+                       Article.image on 46 posts. Fill crops to the frame instead, which
+                       loses edges but never lies about the shape.
+          
+                       1200x675 rather than 1200x630: Google documents 16x9 for a large
+                       Discover image, and 1200x630 is 1.90:1 — a social-card ratio that
+                       predates Discover. 675 is the true 16x9 height at 1200 wide, clears
+                       the 1200px minimum, and is still fine as an og:image. */}}
+          {{ $seoImage = ($img.Fill "1200x675 webp").Permalink }}
         {{ end }}
       {{ else }}
         {{ $seoImage = . | absURL }}
@@ -71,7 +83,54 @@
     <!-- Meta Tags -->
     <meta name="description" content="{{ $seoDescription }}">
     <meta name="author" content="{{ .Site.Params.author | default .Site.Title }}">
-    <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index, follow{{ end }}">
+    {{/* max-image-preview:large is what makes a page eligible for Google Discover
+         and for a large image in a search result. Google documents it as the
+         control on preview size; without it the preview is restricted to a
+         thumbnail, and Discover is a card surface built around a large image —
+         so omitting it is closer to opting out than to leaving a default.
+
+         max-snippet:-1 and max-video-preview:-1 remove the text and video
+         preview caps for the same reason: this site wants to be quoted, and a
+         truncated snippet is a worse answer with our name on it.
+
+         Appended only to indexable pages. A page that sets its own `robots` —
+         /design/ and /igo-demo/ are noindex — keeps exactly what it asked for,
+         because attaching preview directives to a page we do not want indexed
+         is noise at best and contradictory at worst. */}}
+    {{/* TAXONOMY TERMS AND LISTS ARE noindex, follow.
+
+         Measured, not assumed: 270 of the 356 URLs in the English sitemap were
+         /tags/ and /categories/ pages — 76% of everything this site asked
+         Google to crawl was a list of article titles. They score 17 to 43 on
+         readability.go against a floor of 45, and they score badly for the
+         right reason: a page whose body is fourteen headlines is not prose and
+         was never meant to be read as an argument. Most carry 127 to 160 words,
+         nearly all of them duplicated from the articles they point at.
+
+         For a site that wants to rank on Discover, that is the whole problem in
+         one number: crawl budget and topical authority spread over 270
+         near-duplicate listings instead of 52 articles, 48 use cases, 5
+         industry pages and 4 papers.
+
+         `follow`, not `nofollow`, and this distinction is the whole of the
+         change being safe: the links out of these pages still count, so the
+         articles keep everything the taxonomy was passing them. What stops is
+         the listing competing with them in the index.
+
+         They stay in the site and stay useful — /blog/ links "Browse by topic"
+         and "All topics", and a reader following those gets exactly what they
+         always got. This is about what a search engine is told, not about what
+         a person can reach. It is also why they are not deleted: rule 9 is
+         about pages nobody can reach, and these are reachable by design.
+
+         An individual term page can still opt back in by setting `robots` in
+         its own front matter, the same way /design/ opts out. */}}
+    {{ $isTaxonomy := or (eq .Kind "taxonomy") (eq .Kind "term") }}
+    {{ $robots := .Params.robots | default (cond $isTaxonomy "noindex, follow" "index, follow") }}
+    {{ if not (strings.Contains (lower $robots) "noindex") }}
+      {{ $robots = printf "%s, max-image-preview:large, max-snippet:-1, max-video-preview:-1" $robots }}
+    {{ end }}
+    <meta name="robots" content="{{ $robots }}">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{ $seoTitle }}">

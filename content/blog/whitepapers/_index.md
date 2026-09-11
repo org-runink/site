@@ -71,4 +71,24 @@ deck: |
   that arrangement runs today. We have not been audited against SOC 2 or ISO
   27001 by anyone, and the papers say that in their own sentences rather than in
   a footnote.
+next:
+  label: "One next step"
+  title: "You have read the mechanism. The next step is one of yours."
+  body: "Bring one lane, one claim, or one month of invoices. Half an hour, with whoever owns the problem in the room, and we walk that one example end to end. If the losses you carry are not the shape these papers describe, we will say so."
+  cta: "Book a consultation"
+  note: "The form opens with the papers already named, so you are not starting by explaining where you came from."
+  about: "The whitepapers"
+
+# The same ask, worded for ONE paper rather than for the shelf, and deliberately
+# short. Every paper already closes with its own chapter making the case for a
+# first step — "bring one export, then connect one system, then decide" — so a
+# band repeating that argument under it would be the same content at a lower
+# resolution, which is how a long document turns into a padded one. This is the
+# door, not a second argument: a line and a button. It carries no `body`, and
+# layouts/whitepapers/single.html renders that field only when it is there.
+next_paper:
+  label: "One next step"
+  title: "Half an hour, and we read one of your own exports with you."
+  cta: "Book a consultation"
+
 ---

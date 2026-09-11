@@ -36,15 +36,34 @@
         const acceptBtn = document.getElementById('accept-cookies');
         const rejectBtn = document.getElementById('reject-cookies');
 
+        // The gtag('consent', …) calls are what make these buttons mean
+        // anything. partials/google-analytics.html defaults every signal to
+        // denied before it configures the tag, so until one of these fires the
+        // page is loaded but not measured. Writing localStorage alone — which is
+        // all this did before — changed nothing at all.
+        //
+        // `gtag` is defined in <head> by that partial, but only in production
+        // and only when a measurement id is set, so guard the call rather than
+        // throwing on a local build.
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
         acceptBtn.addEventListener('click', function() {
             localStorage.setItem('cookieConsent', 'accepted');
             localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
             consentBanner.style.display = 'none';
         });
 
         rejectBtn.addEventListener('click', function() {
             localStorage.setItem('cookieConsent', 'rejected');
             localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
             consentBanner.style.display = 'none';
         });
     });

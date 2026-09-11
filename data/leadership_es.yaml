@@ -1,0 +1,44 @@
+# Spanish rendering of data/leadership.yaml.
+#
+# The English file is the source and its header carries the rules this inherits:
+# only things a reader can check, no sentence promising a financial outcome, one
+# person because there is one person, and no portrait. Nothing is added here that
+# is not in the English.
+#
+# It exists because the block now renders on the homepage as well as the five
+# industry pages, and CONTENT.md rule 12 is explicit that a translation is a page
+# rather than a copy — an English founder biography on a Spanish page is the same
+# claim, unread. The industry pages remain English-only and keep using
+# data/leadership.yaml.
+#
+# The verify links are deliberately untranslated: a URL and an address are the
+# same in every language, and that block's whole job is to be checkable.
+
+label: "Con quién trabajaría"
+intro: "Runink está dirigida por su fundador. La persona que está en la primera reunión es la que diseñó aquello de lo que se habla."
+
+name: "Dan Paes"
+role: "Director ejecutivo y fundador técnico"
+
+bio:
+  - "Dan Paes ha pasado más de veinte años dentro de empresas ajenas, dirigiendo programas de transformación digital y de modernización a gran escala para organizaciones globales. Del tipo largo: lo que se sustituye es aquello sobre lo que el negocio está funcionando esa misma mañana, y el trabajo se juzga por si algo se rompió."
+  - "Fundó Runink y la dirige como director ejecutivo. Fundador técnico es la mitad más útil de ese título: fija la arquitectura y trabaja en el código, así que quien responde a una pregunta de arquitectura en una primera reunión es quien decidió la respuesta, y la distancia entre una pregunta y un cambio es corta."
+  - "Es también la razón por la que la plataforma tiene la forma que tiene. Se ejecuta sobre hardware que controla el cliente, y el razonamiento sobre sus datos se queda ahí. Esa es la manera más cara de construirlo y cierra la vía cómoda, que es el tipo de decisión que tiene que resolver quien es dueño de la arquitectura en lugar de dejarla donde pueda cederse en silencio."
+  - "Es Embajador de FINOS. FINOS es la Fintech Open Source Foundation, parte de la Linux Foundation, y el trabajo allí es la interoperabilidad entre instituciones que comparten un mercado pero no su infraestructura y nunca sus datos. Es el mismo problema al que apunta esta plataforma, discutido en abierto, delante de gente que lo dice cuando está mal."
+
+credentials:
+  - key: "Más de 20 años"
+    line: "Transformación digital y modernización a gran escala para grandes empresas."
+  - key: "Director ejecutivo y fundador técnico"
+    line: "Runink. Fija la arquitectura y escribe código en ella."
+  - key: "Embajador de FINOS"
+    line: "Fintech Open Source Foundation, un proyecto de la Linux Foundation. Interoperabilidad de código abierto, en público."
+
+verify_label: "Compruebe cualquiera de estos datos"
+verify:
+  - text: "linkedin.com/in/danspaes"
+    url: "https://www.linkedin.com/in/danspaes/"
+  - text: "finos.org"
+    url: "https://www.finos.org/"
+  - text: "paes@runink.org"
+    url: "mailto:paes@runink.org"

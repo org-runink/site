@@ -1,0 +1,51 @@
+{{/*
+  The door at the foot of a listing page.
+
+  WHY IT EXISTS. /library/, /blog/, /blog/whitepapers/ and /use-cases/ are the
+  four pages a reader reaches by choosing to go deeper, and every one of them
+  ended by sending the reader sideways into more reading. /use-cases/ was the
+  sharpest version: it closes with "Bring one lane, one carrier, or one month of
+  returns. A short conversation is usually enough" — an invitation with no door
+  on it. The highest-intent pages on the site had the thinnest exit.
+
+  WHY IT DOES NOT POINT AT /#contact-form. That link is how 429 of 433 pages
+  convert, and it costs the reader a full page load, a scroll past the whole
+  homepage, and the context they arrived with. They then meet a box asking what
+  problem they are trying to solve — a question they had already answered by
+  choosing this page. So the link carries ?about=, and partials/home/contact.html
+  puts that value into the message box as editable text the reader can see and
+  delete.
+
+  VISIBLE, NOT HIDDEN. The obvious way to do this is a hidden form field, and it
+  is the wrong way. The form says, under its own submit button, "We use what you
+  send here to reply to you and for nothing else." A covert field contradicts a
+  promise printed on the page, on a site whose argument is that you should not
+  have to take a claim on trust. Rule 10 says never publish the mechanics of how
+  the site treats the reader; the answer to that is not to have mechanics worth
+  hiding. What is carried is a short phrase in the reader's own language, in a
+  box they are looking at.
+
+  `about` is front matter per page and per language, so it is a label somebody
+  wrote rather than a URL scraped at runtime.
+
+  Tailwind utilities rather than a stylesheet: the four hosts are utility-class
+  pages bound to the token alias layer, and adding a scoped <style> here would
+  put a second CSS path on pages that already agree.
+*/}}
+{{ $n := .Params.next }}
+{{ with $n }}
+{{/* relLangURL prefixes the language directory, so /es/ gets its own homepage
+     and its own form rather than the English one. urlquery is not optional: an
+     unescaped label with an ampersand or a space in it truncates the value. */}}
+{{ $url := printf "/?about=%s#contact-form" (urlquery .about) | relLangURL }}
+<section class="mt-12 md:mt-16" aria-labelledby="next-step-head">
+  {{ partial "rule-head.html" (dict "label" .label "id" "next-step-head") }}
+  <div class="rk-next border border-rule bg-sheet rounded-xl p-6 md:p-8">
+    <h3 class="mt-0 mb-3 font-heading text-xl md:text-2xl font-bold leading-tight text-ink">{{ .title }}</h3>
+    <p class="mt-0 mb-6 text-ink-2 text-base leading-relaxed max-w-[62ch]">{{ .body }}</p>
+    <a class="inline-flex items-center bg-signal-fill text-on-fill no-underline rounded-lg px-5 py-3 font-heading text-xs font-extrabold uppercase tracking-[0.12em] hover:bg-signal-fill-hover transition-colors"
+       href="{{ $url }}">{{ .cta }}</a>
+    {{ with .note }}<p class="mt-4 mb-0 text-ink-2 text-sm leading-relaxed max-w-[62ch]">{{ . }}</p>{{ end }}
+  </div>
+</section>
+{{ end }}

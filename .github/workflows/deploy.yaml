@@ -38,6 +38,15 @@ jobs:
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         with:
           submodules: recursive
+          # Full history, because hugo.toml sets enableGitInfo and maps
+          # frontmatter lastmod to :git; a shallow clone gives Hugo no commit
+          # dates and it falls back to file mtime.
+          #
+          # This line was already here. An earlier commit in this series added a
+          # SECOND copy of it and claimed in its message that CI had been doing a
+          # shallow clone — it never was. The real cause of every page carrying
+          # the same dateModified was the missing [frontmatter] lastmod mapping
+          # in hugo.toml, which is the half that actually changed anything.
           fetch-depth: 0
 
       - name: Update submodule

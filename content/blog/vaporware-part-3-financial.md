@@ -1,6 +1,7 @@
 ---
 title: "The Financial Sinkhole: Calculating the True Cost of SCM Vaporware"
 author: "Runink Logistics Operations Team"
+featured_image: "/images/blog/vaporware_scm_financial_1781932644446.png"
 date: 2026-06-20T08:28:51Z
 draft: false
 description: "Part of the 6-part series on the dangers of SCM Vaporware."

@@ -14,6 +14,11 @@ hero:
   line1: "Vous l'apprenez quand"
   line2: "il est trop tard pour contester."
   deck: "Un conteneur attend parce qu'un document est faux. Les frais courent dès ce jour-là. Votre version de cela est déjà écrite quelque part."
+  stance_label: "Notre position"
+  stance:
+    - "Une action que le logiciel prend de lui-même ne laisse personne à qui demander ensuite."
+    - "Alors celui-ci rédige, et attend."
+    - "L'approbation est la trace : un nom, une heure et la raison de l'envoi, gardés ensemble."
   cta_primary: "Trouvez votre secteur"
   cta_secondary: "Prendre rendez-vous"
 
@@ -89,7 +94,19 @@ industries:
 product:
   heading: "Le produit s'appelle Runink FACE"
   deck: "Runink FACE est le produit derrière chacune des lignes ci-dessus. Il lit les enregistrements que vos systèmes détiennent déjà, compare chacun à la règle qui le gouverne, et présente une action rédigée à la personne qui porte la décision. Ce qui change d'un secteur à l'autre, c'est quels enregistrements comptent et quelle règle s'applique ; la lecture, la rédaction et l'approbation, non."
-  note: "Sous le nom : des agents qui lisent les enregistrements et rédigent l'action, un écran de revue pour la personne qui porte la décision, et la plateforme en dessous, qui garde l'un et l'autre à l'intérieur de votre propre réseau."
+  parts:
+    - name: "Les agents qui lisent"
+      body: "Ils s'exécutent sur l'ensemble des enregistrements, pas sur un échantillon, au rythme que vous fixez. Chacun compare ce que dit un enregistrement à la règle qui le régit, et il en sort un élément auquel sont attachées la règle invoquée et les pièces citées."
+    - name: "L'écran où il attend"
+      body: "Une seule file, classée, de ce que quelqu'un doit trancher. C'est l'approbation qui envoie quoi que ce soit, et qui a approuvé, quand, et ce qui a été modifié reste au dossier."
+    - name: "Où il se place"
+      body: "Il lit dans les systèmes que vous exploitez déjà — le système de commandes, les enregistrements du transporteur, les dossiers de sinistre — et les laisse tels quels. Ce qu'il ajoute, c'est un enregistrement par décision : ce qui a été trouvé, quelle règle, quelles pièces, et qui l'a validé."
+  # Traduit et en attente. Le lien ne s'affiche que là où sa destination existe
+  # dans cette langue, et /products/face/ n'a pas encore de traduction : sur /fr/
+  # la ligne disparaît entièrement plutôt que de mener à une page en anglais.
+  more:
+    text: "Ce que FACE lit, et ce qu'il produit"
+    url: "/products/face/"
 
 # Un seul cas, de bout en bout. Voir le commentaire de content/_index.md : chaque
 # chiffre ici appartient au lecteur, pas à nous, et rien dans ce bloc ne dit que
@@ -128,6 +145,31 @@ paper:
   url: "/blog/whitepapers/runink-face/"
   note: "La version longue : ce qui est lu, ce qui est produit, qui approuve et où cela s'exécute."
 
+# Traduction de proof_* dans content/_index.md. Les valeurs `says:` ne sont PAS
+# traduites : ce sont des chaînes littérales du code source, et une citation
+# traduite n'est plus une citation. La ligne qui les suit dit ce qu'elles
+# signifient.
+proof_heading: "Ce qu'il fait quand il ne sait pas"
+proof_intro: "Tout ce qui précède montre le logiciel qui fonctionne. La réponse qui décide si vous pourriez présenter ce qu'il produit à un transporteur ou à un commissionnaire en douane est une autre : ce qui arrive quand un enregistrement est illisible, ou qu'un système reste hors d'atteinte. En voici quatre, dans les mots qu'il imprime."
+proof:
+  - when: "Le contrôle n'a pas pu s'exécuter"
+    body: "Si les enregistrements qui fondent un contrôle sont illisibles, ce n'est ni un succès ni un échec. C'est une troisième réponse, et elle part dans le journal d'audit avec ces mots, pas seulement à l'écran. À trois heures du matin, personne ne regarde l'écran."
+    says: "This is NOT a finding that … is compliant."
+    gloss: "« Ceci n'est PAS une conclusion selon laquelle … est conforme. »"
+  - when: "L'étape n'a pas eu lieu"
+    body: "Une action approuvée qui n'a pas pu atteindre l'un de vos systèmes ne revient pas comme faite, et pas davantage comme une erreur générique. Elle nomme l'étape qui n'a pas tourné, de sorte que vous réparez une connexion au lieu de chercher une panne."
+    says: "email:no_google_connector"
+    gloss: "« courriel : pas de connecteur Google »"
+  - when: "Le modèle en a trop dit"
+    body: "Chaque phrase que le modèle écrit est relue avant que quoi que ce soit atteigne un document, et toute affirmation d'être certifié est retirée entièrement. Une règle qui ne vit que dans les consignes est une demande. Celle-ci est dans le code, et la tentative est conservée, parce qu'un modèle qui insiste est une chose que vous voulez qu'on vous dise."
+    says: "[claim removed: this agent may not assert a compliance or certification status]"
+    gloss: "« [affirmation retirée : cet agent ne peut pas affirmer un statut de conformité ou de certification] »"
+  - when: "Rien n'est encore connecté"
+    body: "Le jour de l'installation, avant d'être pointé vers l'un de vos systèmes, la première chose qu'il vous montre, c'est rien du tout. Une file vide est la réponse honnête quand il n'y a encore rien à lire, et un test n'a pas d'autre rôle que de le maintenir ainsi."
+    says: "TestStandardInstanceDerivesNoActionCards"
+    gloss: "« une instance standard ne dérive aucune carte d'action »"
+proof_note: "Ce sont des lignes du code source, pas une description. Le code n'est pas public : l'offre est donc la plus simple, nommez celle que vous voulez voir et nous ouvrons le fichier avec vous pendant l'appel."
+
 contact:
   heading: "Apportez une ligne, un sinistre, ou un mois de factures."
   deck: "Une courte conversation suffit en général à dire si les pertes que vous portez ont la forme de ce que cela traite. Si ce n'est pas le cas, nous vous le dirons."
@@ -150,6 +192,7 @@ contact:
     - { value: "Web Search", text: "Recherche web" }
     - { value: "Event", text: "Un événement" }
     - { value: "Other", text: "Autre" }
+  about_prefix: "À propos de : "
   message_label: "Quel problème cherchez-vous à résoudre ?"
   message_placeholder: "Un exemple suffit : une déclaration bloquée, un sinistre, un rapprochement qui prend une semaine."
   submit: "Envoyer le message"

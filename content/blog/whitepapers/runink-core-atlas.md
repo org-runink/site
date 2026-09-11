@@ -1,6 +1,10 @@
 ---
 title: "Runink CORE and Atlas — Continuous oversight, with a second opinion on every finding"
 headline: "Continuous oversight, with a second opinion on every finding."
+# The label the closing ask carries into the contact form, so an enquiry
+# arrives naming the paper it came from. `product:` is not usable for this —
+# two of the four papers are both "Runink CORE".
+next_about: "The CORE and Atlas paper"
 product: "Runink CORE"
 subtitle: "A joint architecture paper with Logical Leap's Atlas"
 jointly_with: "Logical Leap"

@@ -68,3 +68,8 @@ verify:
     url: "https://www.finos.org/"
   - text: "paes@runink.org"
     url: "mailto:paes@runink.org"
+
+# The label on the link out to /company/, rendered by
+# layouts/partials/home/leadership.html. The three translated files carry no
+# more_text and no /company/ translation exists, so nothing renders there.
+more_text: "How we build it"

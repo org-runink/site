@@ -35,4 +35,20 @@ note: |
   Les quatre documents sont publiés en anglais. Les liens ci-dessus mènent à la
   version anglaise complète. Pour un échange en français, écrivez à
   [paes@runink.org](mailto:paes@runink.org).
+next:
+  label: "Une étape de plus"
+  title: "Vous avez lu le mécanisme. L'étape suivante est l'une des vôtres."
+  body: "Apportez une ligne, un sinistre ou un mois de factures. Une demi-heure, avec la personne qui porte le problème dans la pièce, et nous déroulons cet exemple-là de bout en bout. Si les pertes que vous portez n'ont pas la forme décrite dans ces documents, nous vous le dirons."
+  cta: "Réserver un entretien"
+  note: "Le formulaire s'ouvre avec les documents déjà nommés : vous ne commencez pas par expliquer d'où vous venez."
+  about: "Les documents"
+
+# Le même appel, rédigé pour UN document et volontairement bref : chaque
+# document se termine déjà par son propre chapitre. Ceci est la porte, pas
+# l'argument.
+next_paper:
+  label: "Une étape de plus"
+  title: "Une demi-heure, et nous lisons avec vous l’un de vos propres exports."
+  cta: "Réserver un entretien"
+
 ---

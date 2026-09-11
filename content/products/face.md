@@ -2,6 +2,10 @@
 title: "Runink FACE"
 description: "Runink's main product. It reads the orders, carrier records, sensor feeds and claim files you already hold, works out what the combined picture means, and puts one drafted action in front of the person who can approve it."
 layout: "landing"
+# /products/ is this page's alias, not a page of its own — see
+# content/products/_index.md for why the section index is not rendered.
+aliases:
+  - /products/
 badge: "FACE"
 # badgeColor removed, not re-pointed. It held #7c3aed, a pre-migration vendor
 # violet that is not a Runink colour (DESIGN.md §2: colour has exactly two jobs,
@@ -227,6 +231,10 @@ FACE is the product that reads all of it, and it is the one this company is buil
         {
             "question": "Where does our data go?",
             "answer": "Onto hardware you control. The files and the reasoning about them stay inside your boundary, and the language model FACE reasons with is one you run yourself rather than a third-party API — there is no third-party model dependency in the codebase and exactly one inference endpoint, the one you configure. Two honest edges to that. It is an architectural property rather than a machine-enforced one: no build step blocks an outside model client from being added, so it is a thing to check in a code review rather than a thing a test guarantees. And two paths deliberately do reach outside, because they have to: a route request goes to the routing service you configure, and open-web research puts a query to a public search endpoint. Neither carries your records. Ask us to walk the boundary with you rather than taking the sentence."
+        },
+        {
+            "question": "Is there anything we can put in someone's hands today?",
+            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly. The sovereign server image is on the same page and is request-access, because it is the platform underneath rather than an app."
         },
         {
             "question": "What does it cost?",

@@ -1,0 +1,145 @@
+{{/*
+  Who you would be working with — on the homepage.
+
+  WHY THIS EXISTS AS A SECOND RENDER. data/leadership.yaml has carried this copy
+  since the industry pages were written, and it has reached exactly five pages of
+  the site. It is the only place on runink.org where a person is named, and for a
+  company whose argument is that you should not have to take a claim on trust,
+  the absence of a human on the page a stranger actually lands on was the largest
+  gap in the brand.
+
+  WHY HERE RATHER THAN ON /company/. The industries partial's own note explains
+  the placement rule it follows: confidence is built, then the ask is made, in
+  that order, on a page a buyer reads to the end. It also argues against putting
+  this on the industries OVERVIEW, because that page is a switchboard and "a
+  reader who has not yet read the pitch has nothing to weigh a founder biography
+  against."
+
+  The homepage is not a switchboard — it IS the pitch. A reader who has reached
+  this point has been through the problem, the ledger, the product, one worked
+  scenario and the three reasons it is not a dashboard. So this sits immediately
+  before the contact block, which is the same position the industry pages give
+  it, arrived at by the same argument. /company/ was rejected there for a reason
+  that still holds: nothing on this site links to it.
+
+  ONE SOURCE. The copy is data/leadership.yaml and nothing here adds to it. That
+  file's header sets out what may go in — "only things a reader can check for
+  themselves" — and records that the source biography carried exactly one
+  sentence promising a financial outcome, which was removed and may not be
+  restated in other words. This render inherits all of that by not having copy of
+  its own.
+
+  NO PORTRAIT, DELIBERATELY. There is no photograph of him in the repository and
+  the site makes no external requests, so there is nothing to show. The plate
+  carries the same drawn monogram the industry pages use — two letterforms and a
+  baseline at the stroke weight of the ruled lines around it, so it reads as part
+  of the page's grammar rather than as an avatar that failed to load.
+  static/images/team.jpg is a stock crowd shot and would imply a headcount this
+  company does not have.
+
+  The hp- classes are the homepage's own; the industry pages keep their ind-
+  ones. Both stylesheets are inlined and scoped, which is the existing pattern —
+  see the note in DESIGN.md about the two CSS paths only agreeing when inlined.
+
+  FOUR LANGUAGES, FOUR FILES. data/leadership.yaml is English and is what the
+  five industry pages read; the homepage renders in all four, so es/fr/pt get
+  their own file. CONTENT.md rule 12: a translation is a page, not a copy, and an
+  English founder biography sitting on the Spanish homepage is the same claim,
+  unread.
+
+  There is deliberately NO fallback to English. If a language file is missing the
+  block does not render in that language, because a silent fall-through to
+  English is precisely the defect rule 12 describes and it would not show up in
+  any check — the page would still build, still return 200, and still be wrong.
+  An absent section is at least visible.
+
+  The verify links are not translated. A URL and an address are the same in every
+  language and that block's only job is to be checkable.
+*/}}
+{{ $lead := cond (eq site.Language.Lang "en")
+                 site.Data.leadership
+                 (index site.Data (printf "leadership_%s" site.Language.Lang)) }}
+{{ with $lead }}
+<section class="hp-sec hp-lead" aria-labelledby="leadership-heading">
+  <div class="hp-head">
+    <span class="hp-head__mark" aria-hidden="true"></span>
+    <h2 class="hp-head__label" id="leadership-heading">{{ .label }}</h2>
+    <span class="hp-head__rule" aria-hidden="true"></span>
+  </div>
+  {{ with .intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+
+  <div class="hp-lead__plate">
+
+    <div class="hp-lead__id">
+      <span class="hp-lead__mark" aria-hidden="true">
+        <svg viewBox="0 0 96 96" width="56" height="56" fill="none" role="presentation">
+          <path d="M22 24 V 68 M22 24 H 34 A 22 22 0 0 1 34 68 H 22"
+                stroke="currentColor" stroke-width="5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M60 24 V 68 M60 24 H 68 A 13 13 0 0 1 68 50 H 60"
+                stroke="currentColor" stroke-width="5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 80 H 82" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round"/>
+        </svg>
+      </span>
+      <div class="hp-lead__names">
+        <h3 class="hp-lead__name">{{ .name }}</h3>
+        <p class="hp-lead__role">{{ .role }}</p>
+      </div>
+    </div>
+
+    {{ with .bio }}
+    <div class="hp-lead__bio">
+      {{ range . }}<p>{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
+
+    {{ with .credentials }}
+    <ul class="hp-lead__creds">
+      {{ range . }}
+      <li class="hp-lead__cred">
+        <p class="hp-lead__cred-key">{{ .key }}</p>
+        <p class="hp-lead__cred-line">{{ .line }}</p>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    {{/* Ends by handing over the means to check it — the same move the measures
+         table makes. Plain links: no badge script, no remote avatar, nothing
+         that would put a request to another host on the page (rule 7). */}}
+    {{ with .verify }}
+    <div class="hp-lead__verify">
+      <p class="hp-lead__verify-label">{{ $lead.verify_label | default "Check any of it" }}</p>
+      <ul class="hp-lead__links">
+        {{ range . }}
+        <li>
+          <a class="hp-lead__link" href="{{ .url }}"
+             {{ if not (hasPrefix .url "mailto:") }}rel="noopener noreferrer"{{ end }}>{{ .text }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{/* The way in to /company/, which is the longer version of the same
+         argument — six rules the software follows, each one a thing you can ask
+         to be shown. It carried no inbound link in a 433-page build, which
+         CONTENT.md rule 9 names as a failure mode in its own words, and rule 9
+         names this page specifically.
+
+         Resolved through site.GetPage rather than written as a path, so it
+         appears only where the destination exists in that language. /company/ is
+         English-only, so the three translations render nothing here rather than
+         a live-looking link to an English page. Same rule as the homepage's
+         product link. */}}
+    {{ with site.GetPage "/company" }}
+    <p class="hp-lead__more">
+      <a class="hp-lead__more-link" href="{{ .RelPermalink }}">{{ $lead.more_text | default .Title }} <span aria-hidden="true">&rarr;</span></a>
+    </p>
+    {{ end }}
+
+  </div>
+</section>
+{{ end }}

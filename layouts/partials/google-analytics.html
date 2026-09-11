@@ -1,10 +1,60 @@
 {{ if and hugo.IsProduction .Site.Params.googleAnalytics }}
+{{/*
+  CONSENT MODE, AND WHY IT IS HERE RATHER THAN IN THE BANNER.
+
+  This partial used to call `gtag('config', …)` immediately, in <head>, on every
+  page. The consent banner renders at the FOOT of the document, several hundred
+  lines later, and nothing anywhere read the `cookieConsent` value it wrote. So a
+  visitor who clicked "Reject Non-Essential" had already been measured before the
+  banner appeared, and stayed measured afterwards — the button set a string in
+  localStorage and changed nothing else.
+
+  Three reasons that mattered more here than it would elsewhere:
+
+    - The banner told the reader otherwise. "By clicking Accept All, you consent
+      to our use of cookies" implies a path where they do not.
+    - CONTENT.md rule 7 permits exactly one third-party script, described in the
+      rule's own words as "the site-wide CONSENT-GATED analytics". The rule was
+      describing something that did not exist.
+    - This site's argument is that a buyer should not have to take a claim on
+      trust. A security-minded reader — the buyer these pages are written for —
+      can open devtools and watch the reject button not reject.
+
+  Consent Mode v2 defaults everything to denied BEFORE the config call, so the
+  tag loads but stores nothing and sends no measurement until a decision exists.
+  A stored "accepted" from a previous visit is re-applied here, because the
+  banner does not render for a visitor who has already answered.
+
+  Only analytics_storage is ever granted. There is no advertising on this site,
+  so the ad_* signals stay denied permanently rather than being granted along
+  with everything else.
+*/}}
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    /* Private windows and blocked site data throw on access. Denied is the
+       correct outcome there, so there is nothing to do. */
+  }
+
   gtag('js', new Date());
   gtag('config', '{{ .Site.Params.googleAnalytics }}');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
 {{ end }}

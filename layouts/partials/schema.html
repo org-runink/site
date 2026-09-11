@@ -72,7 +72,9 @@
         "width": {{ $img.Width | default 1200 }},
         "height": {{ $img.Height | default 630 }}
         {{ else }}
-        {{ $optimized := $img.Resize "1200x630 webp" }}
+        {{/* Fill, not Resize — see the note in layouts/_default/baseof.html.
+             Resize with both dimensions squashes a square source. */}}
+        {{ $optimized := $img.Fill "1200x675 webp" }}
         "url": {{ $optimized.Permalink | jsonify | safeJS }},
         "width": {{ $optimized.Width }},
         "height": {{ $optimized.Height }}
@@ -137,10 +139,25 @@
   ],
   {{ end }}
 
-  "author": {
+  {{/* AUTHOR TYPE. Every post on this site is bylined to a team — "Runink
+       Logistics Operations Team", and its Portuguese equivalent — not to an
+       individual. Typing a collective as schema.org/Person is a contradiction:
+       Google's Article guidance is explicit that Person is for people and
+       Organization is for organizations, and a Person node with no `url` and no
+       `sameAs` identifies nobody in any case.
+
+       So a team byline resolves to the canonical Organization node rather than
+       inventing a person. If a post is ever bylined to a named individual, that
+       name is emitted as a Person and should carry a `url` to an author page —
+       which is the honest way to earn the authorship signal, rather than typing
+       a department as a human. CONTENT.md rule 11 makes the same point in prose:
+       name the author, or let the company own the page. */}}
+  {{ $authorName := .Params.author | default .Site.Params.author | default .Site.Title }}
+  {{ $isTeam := or (strings.Contains (lower $authorName) "team") (strings.Contains (lower $authorName) "equipe") }}
+  "author": {{ if or $isTeam (eq $authorName .Site.Title) }}{ "@id": "https://runink.org/#organization" }{{ else }}{
     "@type": "Person",
-    "name": {{ .Params.author | default .Site.Params.author | default .Site.Title | jsonify | safeJS }}
-  },
+    "name": {{ $authorName | jsonify | safeJS }}
+  }{{ end }},
   {{/* Reference the canonical Organization by @id rather than restating name
        and logo here. This block used to emit a skeletal Organization on every
        one of 131 Article pages, none of which carried an @id or a url, so none

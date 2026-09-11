@@ -14,6 +14,11 @@ hero:
   line1: "Usted se entera cuando"
   line2: "ya es tarde para reclamar."
   deck: "Un contenedor espera porque un documento está mal. El cargo empieza ese mismo día. Su versión de eso ya está escrita en algún sitio."
+  stance_label: "Nuestra postura"
+  stance:
+    - "Una acción que el software toma por su cuenta no deja a nadie a quien preguntar después."
+    - "Así que este redacta, y espera."
+    - "La aprobación es el registro: un nombre, una hora y el motivo por el que se envió, juntos."
   cta_primary: "Encuentre su sector"
   cta_secondary: "Agende una consulta"
 
@@ -89,7 +94,19 @@ industries:
 product:
   heading: "El producto es Runink FACE"
   deck: "Runink FACE es el producto que está detrás de cada línea de arriba. Lee los registros que sus sistemas ya guardan, compara cada uno con la regla que lo gobierna y pone una acción redactada delante de la persona que tiene la decisión a su cargo. Lo que cambia de un sector a otro es qué registros importan y qué regla aplica; la lectura, la redacción y la aprobación no cambian."
-  note: "Debajo del nombre: agentes que leen los registros y redactan la acción, una pantalla de revisión para quien tiene la decisión a su cargo, y la plataforma que mantiene ambas cosas dentro de su propia red."
+  parts:
+    - name: "Los agentes que leen"
+      body: "Se ejecutan sobre todos los registros, no sobre una muestra, con la periodicidad que usted fije. Cada uno compara lo que dice un registro con la norma que lo rige, y lo que sale es un elemento con la norma invocada y los registros citados adjuntos."
+    - name: "La pantalla donde espera"
+      body: "Una sola cola, ordenada por prioridad, con lo que alguien tiene que decidir. Aprobar es lo que envía algo, y quién aprobó, cuándo y qué cambió queda en el registro."
+    - name: "Dónde se sitúa"
+      body: "Lee de los sistemas que usted ya opera — el sistema de pedidos, los registros del transportista, los expedientes de reclamación — y los deja como están. Lo que añade es un registro por cada decisión: qué se encontró, qué norma, qué registros y quién lo aprobó."
+  # Traducido y a la espera. El enlace solo se muestra donde existe su destino
+  # en este idioma, y /products/face/ todavía no tiene traducción: en /es/ la
+  # línea entera desaparece en lugar de llevar al lector a una página en inglés.
+  more:
+    text: "Qué lee FACE y qué produce"
+    url: "/products/face/"
 
 # Un solo caso, de principio a fin. Ver el comentario de content/_index.md: cada
 # cifra que aparece aquí es del lector, no nuestra, y nada en este bloque dice
@@ -128,6 +145,30 @@ paper:
   url: "/blog/whitepapers/runink-face/"
   note: "La versión larga: qué lee, qué produce, quién lo aprueba y dónde se ejecuta."
 
+# Traducción de proof_* en content/_index.md. Los valores `says:` NO se
+# traducen: son cadenas literales del código fuente, y una cita traducida deja
+# de ser una cita. La línea que las acompaña explica qué dicen.
+proof_heading: "Qué hace cuando no lo sabe"
+proof_intro: "Todo lo anterior es el software funcionando. La respuesta que decide si usted podría poner lo que produce delante de un transportista o de un agente de aduanas es otra: qué llega cuando un registro no se puede leer, o cuando no se alcanza un sistema. Cuatro de esas respuestas, en las palabras exactas que imprime."
+proof:
+  - when: "La comprobación no pudo ejecutarse"
+    body: "Si no se pueden leer los registros que sustentan un control, eso no es un aprobado y tampoco es un suspenso. Es una tercera respuesta, y va al registro de auditoría con estas palabras, no solo a una pantalla. A las tres de la mañana nadie mira la pantalla."
+    says: "This is NOT a finding that … is compliant."
+    gloss: "«Esto NO es una conclusión de que … cumple.»"
+  - when: "El paso no se llegó a dar"
+    body: "Una acción aprobada que no consiguió llegar a uno de sus sistemas no vuelve como hecha, y tampoco vuelve como un error genérico. Nombra el paso que no se ejecutó, así usted arregla una conexión en lugar de buscar una avería."
+    says: "email:no_google_connector"
+    gloss: "«correo: no hay conector de Google»"
+  - when: "El modelo afirmó de más"
+    body: "Cada frase que escribe el modelo se lee antes de que nada llegue a un documento, y una afirmación de estar certificado se recorta entera. Una norma que solo vive en las instrucciones es una petición. Esta está en el código, y el intento se guarda, porque un modelo que insiste es algo que usted querrá saber."
+    says: "[claim removed: this agent may not assert a compliance or certification status]"
+    gloss: "«[afirmación retirada: este agente no puede declarar una situación de cumplimiento o certificación]»"
+  - when: "Todavía no hay nada conectado"
+    body: "El día en que se instala, antes de apuntar a ninguno de sus sistemas, lo primero que le enseña es nada. Una cola vacía es la respuesta honesta cuando todavía no hay nada que leer, y hay una prueba cuya única tarea es mantenerlo así."
+    says: "TestStandardInstanceDerivesNoActionCards"
+    gloss: "«una instancia estándar no deriva ninguna tarjeta de acción»"
+proof_note: "Son líneas del código fuente, no una descripción de él. El código no es público, así que la oferta es la sencilla: díganos cuál quiere ver y abrimos el archivo con usted en la llamada."
+
 contact:
   heading: "Traiga una ruta, un siniestro o un mes de facturas."
   deck: "Una conversación corta suele bastar para saber si las pérdidas que carga tienen la forma de lo que esto resuelve. Si no la tienen, se lo diremos."
@@ -150,6 +191,7 @@ contact:
     - { value: "Web Search", text: "Búsqueda web" }
     - { value: "Event", text: "Un evento" }
     - { value: "Other", text: "Otro" }
+  about_prefix: "Sobre: "
   message_label: "¿Qué problema intenta resolver?"
   message_placeholder: "Basta con un ejemplo: una entrada retenida, un siniestro, una conciliación que lleva una semana."
   submit: "Enviar mensaje"
