@@ -170,7 +170,6 @@ So start with one figure. How many days pass in your operation between a sell-th
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.gartner.com/en/supply-chain/topics/demand-sensing" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: demand sensing research</a> - source for the forecast error figure quoted above.</li>
     <li><a href="https://www.ascm.org/topics/inventory-management/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">APICS / ASCM inventory management body of knowledge</a> - frameworks for segmentation, order quantity and safety stock.</li>
     <li><a href="https://www.ihlservices.com/product/inventory-distortion/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">IHL Group inventory distortion study</a> - source for the $1.8 trillion figure quoted above.</li>
     <li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/working-capital-management" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">McKinsey: working capital management</a> - source for the working capital figure quoted above.</li>

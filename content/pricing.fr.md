@@ -3,7 +3,7 @@ title: "Tarifs"
 description: "Vous payez pour le nombre de personnes qui utilisent Runink. Chaque personne inclut une dotation de capacité de calcul, donc l'utiliser davantage n'augmente pas la facture."
 layout: "pricing"
 date: "2024-05-20T00:00:00Z"
-author: "Lead Data & Cloud Architect"
+author: "Runink"
 ---
 
 <div class="max-w-3xl mx-auto text-center mb-4">
@@ -177,23 +177,4 @@ author: "Lead Data & Cloud Architect"
       <p class="text-stone-400 leading-relaxed">Sur une machine que vous contrôlez, et elles y restent. Les documents, les enregistrements et le raisonnement qui porte sur eux s'exécutent tous sur du matériel situé à l'intérieur de votre périmètre, et rien n'est envoyé à un fournisseur de modèles extérieur. Cela compte autant sur le plan commercial que technique. La question qui bloque ces achats est presque toujours une version de « où vont nos informations », et la réponse est ici assez courte pour passer un questionnaire d'achat. Avec Lite et Dédiée, la machine est une machine que nous exploitons ; avec Enterprise, elle vous appartient. Dans aucun des deux cas il n'y a un tiers sur le chemin qui détient vos données.</p>
     </div>
   </div>
-</section>
-
-
-<section class="author-bio mt-12 p-6 bg-stone-900 rounded-2xl border border-stone-800">
-  <h2 class="text-2xl font-bold text-signal mb-4">À Propos de l'Auteur</h2>
-  <p class="text-stone-300">
-    <strong>Lead Data & Cloud Architect</strong><br>
-    Expert en la matière (SME) en AWS Data Analytics, AWS Certified Developer et Google Cloud Professional certifié en Data Engineering et Advanced Analytics. Avec plus d'une décennie d'expérience dans la construction d'architectures cloud résilientes et à haut débit, de pipelines de données et de solutions logistiques automatisées.
-  </p>
-</section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Citations & Références de l'Industrie</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Directives complètes pour le traitement de données à grande échelle.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Méthodologies avancées pour la logistique automatisée.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Recherche de référence du secteur sur la technologie de la chaîne d'approvisionnement.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Recherche académique sur les applications analytiques dans le fret et le transport.</li>
-  </ul>
 </section>

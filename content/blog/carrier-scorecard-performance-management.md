@@ -183,7 +183,6 @@ The question is not whether to measure carrier performance. It is what not measu
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://cscmp.org/CSCMP/Educate/Research.aspx" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Source for the share of mid-market shippers running a formal carrier evaluation programme.</li>
     <li><a href="https://www.trucking.org/economics-and-industry-data" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">American Trucking Associations (ATA)</a> - Freight economics data and cargo claims analysis.</li>
-    <li><a href="https://ctl.mit.edu/research/freightlab" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT FreightLab</a> - Research on transit time variability and freight network performance.</li>
     <li><a href="https://www.gartner.com/reviews/market/transportation-management-systems" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner TMS Research</a> - Transport system market analysis and the on-time delivery targets quoted above.</li>
   </ul>
 </section>

@@ -169,7 +169,6 @@ The practical test is whether anyone in your business can state, for a consignme
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://iccwbo.org/business-solutions/incoterms-rules/incoterms-2020/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">International Chamber of Commerce (ICC) — Incoterms 2020</a> - The global standard for trade terms governing the sale of goods, defining obligations, costs and risk transfer between buyers and sellers.</li>
     <li><a href="https://www.wto.org/english/thewto_e/whatis_e/whatis_e.htm" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">World Trade Organization (WTO)</a> - International organization governing rules of trade between nations, and the regulatory framework underpinning global commerce and trade facilitation.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research center covering supply chain management, logistics and freight transportation.</li>
     <li><a href="https://www.lmalloyds.com/lma/underwriting/marine/JCC/Joint_Cargo" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Institute Cargo Clauses — Lloyd's Market Association</a> - Standard marine cargo insurance clauses (A, B, C) that define the cover levels referenced in CIF and other Incoterms transactions.</li>
   </ul>
 </section>

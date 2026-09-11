@@ -156,7 +156,6 @@ Demand forecasting from POS and order history is one of the kinds of work Runink
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations & References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://www.cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Standards and practices in demand planning and logistics execution.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - Analysis of the move from traditional forecasting to demand sensing.</li>
     <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Research on how current inventory records affect OTIF and fill rate.</li>
   </ul>
 </section>

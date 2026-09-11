@@ -4,7 +4,6 @@ description: "Um contêiner esquenta durante a noite e a leitura fica nos seus d
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"
-standing: "hypothetical"
 badge: "Sentinela IoT"
 badgeColor: "#3b82f6"
 date: "2024-05-20T00:00:00Z"
@@ -16,7 +15,7 @@ author: "Runink"
 
 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Logística reativa</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
-<span class="rk-mark" data-standing="hypothetical">Hipotético</span> &mdash; este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o lado de pátio dele. Metade do que vem a seguir está construída e metade não está, e a página diz qual é qual em vez de descrever tudo no presente. É uma ilustração do mecanismo, não o relato de uma implantação. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">O que é o FACE</a>.
+este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o lado de pátio dele. É uma ilustração do mecanismo, não o relato de uma implantação. O que o software lê aqui são os documentos e as imagens que uma cadeia de frio já produz — o registro da remessa, a entrega, a fotografia tirada na porta — diante da regra que rege esse envio. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">O que é o FACE</a>.
 </p>
 
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>

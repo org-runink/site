@@ -163,7 +163,5 @@ So the useful reading of a maturity model is not "how far up the scale can we ge
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://ghgprotocol.org/corporate-value-chain-scope-3-standard" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">GHG Protocol — Scope 3 Standard</a> - The standard that defines the Scope 3 categories referred to above.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Supply Chain Solutions</a> - Vendor documentation on supply chain data and analytics.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on freight and transportation.</li>
   </ul>
 </section>

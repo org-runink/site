@@ -80,7 +80,6 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Standing: hypothetical &mdash; not measured</p>
         <p class="text-base text-stone-500 font-medium">
             The port closure above is drawn to show the shape of the work. It is not an account of a customer engagement, and nothing on this page is a measured result. Runink publishes no ROI figures, no percentages and no customer names &mdash; not because they would be unflattering, but because we have not measured them and saying so is cheaper than being caught.
         </p>

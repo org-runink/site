@@ -152,7 +152,6 @@ Runink FACE runs on hardware the operation owns. That is a property of how it is
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://www.ascm.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - DMAIC and Six Sigma method applied to logistics networks.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - Separating planning workloads from warehouse and transport systems.</li>
     <li><a href="https://cscmp.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - The cost of demurrage and slow systems in peak season freight.</li>
   </ul>
 </section>

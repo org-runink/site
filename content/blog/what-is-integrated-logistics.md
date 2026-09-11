@@ -183,6 +183,5 @@ The practical starting point is narrower than a strategy. Pick the two handover 
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for logistics and supply chain terms.</li>
     <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Competency frameworks and practitioner standards for supply chain planning.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on freight and transportation.</li>
   </ul>
 </section>

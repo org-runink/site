@@ -181,9 +181,7 @@ The firms that do well over the next decade will be the ones honest enough to sc
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.gartner.com/en/supply-chain/topics/supply-chain-maturity" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Maturity Model</a> - Framework for scoring supply chain capability across five stages, used for executive benchmarking and planning.</li>
     <li><a href="https://www.ascm.org/topics/scor/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">ASCM (APICS) SCOR Model</a> - The Supply Chain Operations Reference model, with standard process definitions and performance measures end to end.</li>
     <li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/supply-chain-4-0-the-next-generation-digital-supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">McKinsey Digital Supply Chain Compass</a> - Framework describing the capabilities behind automated supply chain decisions.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on supply chain benchmarking, resilience and operational performance.</li>
   </ul>
 </section>

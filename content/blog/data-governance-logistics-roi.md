@@ -157,13 +157,3 @@ Start small enough to finish. One measure, the four decisions, a named owner, an
     Written by the Runink team. <a href="/#contact-form" class="text-signal hover:underline">Get in touch</a> if you want to pick one measure and work through the four decisions on it.
   </p>
 </section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: analytics</a> - vendor guidance on data handling.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: supply chain analytics</a> - vendor guidance on freight data.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: supply chain technology research</a> - analyst view of the market.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation and Logistics</a> - academic research on freight.</li>
-  </ul>
-</section>

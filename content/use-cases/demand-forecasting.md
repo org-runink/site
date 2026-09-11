@@ -19,9 +19,6 @@ author: "Runink"
 </ul>
 
 <p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Hypothetical
-    </span>
     <span class="block mt-3 text-sm text-stone-500 font-medium">
         This page describes a mechanism and the shape of a working week, not an event that happened. It is an illustration, and no part of it has been run against a customer's data. Nothing here is measured, and there are no figures for what it returns.
     </span>

@@ -4,7 +4,6 @@ description: "Un artículo devuelto vale lo máximo el día en que vuelve. La de
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reverse logistics"
-standing: "hypothetical"
 badge: "Economía Circular"
 badgeColor: "#14b8a6"
 date: "2024-05-20T00:00:00Z"
@@ -16,7 +15,7 @@ author: "Runink"
 
 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Logística inversa</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
-<span class="rk-mark" data-standing="hypothetical">Hipotético</span> &mdash; este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su lado de devoluciones y economía circular. Lo que sigue es lo que el producto está hecho para hacer y cómo correría contra sus propios registros. Es una ilustración del mecanismo, no el relato de una implantación. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Qué es FACE</a>.
+este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su lado de devoluciones y economía circular. Lo que sigue es lo que el producto está hecho para hacer y cómo correría contra sus propios registros. Es una ilustración del mecanismo, no el relato de una implantación. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Qué es FACE</a>.
 </p>
 
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>

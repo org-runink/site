@@ -167,8 +167,5 @@ None of this is magic. It is ordinary data quality and validation work, applied 
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">NIST AI Risk Management Framework</a> - Reference framework for identifying and managing the risks described above, including unreliable output.</li>
-    <li><a href="https://aws.amazon.com/architecture/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center</a> - Reference architectures for data and analytics workloads.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Supply Chain Solutions</a> - Vendor documentation on supply chain data and analytics.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on freight and transportation.</li>
   </ul>
 </section>

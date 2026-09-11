@@ -177,6 +177,5 @@ Gartner's warehouse technology research treats intelligent slotting as one of th
     <li><a href="https://www.werc.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">WERC</a> - benchmarking on warehouse labour productivity and slotting.</li>
     <li><a href="https://www.scl.gatech.edu" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Georgia Tech Supply Chain and Logistics Institute</a> - source for the travel time finding quoted above.</li>
     <li><a href="https://www.mhi.org" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Material Handling Industry (MHI)</a> - guidance on ergonomic warehouse design.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: warehouse technology research</a> - analyst view of slotting capability.</li>
   </ul>
 </section>

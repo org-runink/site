@@ -149,7 +149,6 @@ Putting the records in one place closes the gaps left by separate systems, but o
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://www.ascm.org/ascm-insights/supply-chain-data-analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">ASCM - Association for Supply Chain Management</a> - Building operational baselines from supply chain data and telemetry.</li>
     <li><a href="https://cscmp.org/CSCMP/Educate/Supply_Chain_Management_Definitions.aspx" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Foundational metrics and process capability definitions for global freight networks.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain/insights/supply-chain-technology" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - The role of cloud data lakes, Snowflake, and Databricks in logistics reporting.</li>
     <li><a href="https://mitsloan.mit.edu/faculty/academic-groups/operations-management/about-us" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Sloan School of Management</a> - Applying Lean Six Sigma principles to multi-node intermodal logistics operations.</li>
   </ul>
 </section>

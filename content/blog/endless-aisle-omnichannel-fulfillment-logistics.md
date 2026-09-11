@@ -149,7 +149,6 @@ Runink FACE works on the fulfillment side of this: it reads order, inventory and
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Definitions for On-Time In-Full (OTIF) and omnichannel fulfillment metrics.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - Analysis of Distributed Order Management (DOM) systems in retail.</li>
     <li><a href="https://www.joc.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Journal of Commerce (JOC)</a> - Practices for reducing demurrage, drayage friction and the effects of port congestion.</li>
     <li><a href="https://www.inboundlogistics.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Inbound Logistics</a> - Case studies on cross-docking and on reducing yard dwell times with linked YMS and WMS records.</li>
   </ul>

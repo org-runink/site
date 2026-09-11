@@ -151,6 +151,5 @@ So take your own projects, existing or planned, and ask of each: do we know wher
     <li><a href="https://www.ncsc.gov.uk/collection/supply-chain-security" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">UK National Cyber Security Centre — Supply Chain Security</a> - Government guidance on assessing and managing supplier risk.</li>
     <li><a href="https://www.nist.gov/cyberframework" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">NIST Cybersecurity Framework</a> - The reference framework for identifying, protecting, detecting, responding and recovering.</li>
     <li><a href="https://gdpr-info.eu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">GDPR, full text</a> - The data protection rules referenced above, including the data minimisation principle.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on freight and transportation.</li>
   </ul>
 </section>

@@ -169,7 +169,6 @@ Write all three down as behaviours first. Then compare products against them. [C
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://www.asq.org/quality-resources/six-sigma" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">American Society for Quality (ASQ)</a> - the Six Sigma Analyze phase and its methods.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: supply chain research</a> - analyst view of split data and freight analytics.</li>
     <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - practice guidance on digital twins and control towers.</li>
   </ul>
 </section>

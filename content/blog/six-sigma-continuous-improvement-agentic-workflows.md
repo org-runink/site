@@ -152,7 +152,6 @@ The part worth buying now is the continuous reading and the drafted proposal. Th
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://www.ascm.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Association for Supply Chain Management (ASCM)</a> - Continuous improvement practice and automated operations.</li>
     <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Freight telemetry and shipment visibility practice.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - The move from reactive analytics to prescriptive agentic workflows.</li>
     <li><a href="https://mitsloan.mit.edu/faculty/academic-groups/operations-management" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Sloan Operations Management</a> - Evaluating specialist AI agents in complex logistics networks.</li>
   </ul>
 </section>

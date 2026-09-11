@@ -166,7 +166,6 @@ The first diagnostic is free and unwelcome: at your last S&OP meeting, how much 
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.gartner.com/en/supply-chain/topics/sales-and-operations-planning" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner — Sales and Operations Planning</a> - The maturity model referred to above, in its publisher's own words.</li>
     <li><a href="https://www.ascm.org/topics/s-and-op/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">APICS / ASCM — S&amp;OP</a> - Standard definitions and competency frameworks for Sales &amp; Operations Planning.</li>
     <li><a href="https://www.oliverwight.com/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Oliver Wight</a> - Originators of the S&amp;OP process and its extension into Integrated Business Planning.</li>
     <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Industry glossary and definitions for the planning terms used above.</li>

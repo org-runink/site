@@ -466,23 +466,25 @@ nothing, whatever status a draft carries.
 The most direct evidence available for a marketing product is whether its vendor uses it. What
 follows is our own use of PULSE, offered as that rather than as a customer's result.
 
-Runink's own public presence runs on PULSE. PULSE owns the store of files behind
-runink.org — the marketing pages, the blog and the path a visitor takes to leave their
-details — and the content work that feeds it. The site and search audits, the content
-production, and the social and lead-generation work for that presence are performed by
-PULSE's own specialists, on Runink's own hardware.
+PULSE does the content work behind runink.org: the site and search audits, the writing,
+and the social and lead-generation work, run by PULSE's own specialists on Runink's own
+hardware against the model that runs there. It is worth being exact about the boundary,
+because the obvious reading of that sentence is wrong: runink.org is a static site kept in
+git and published to GitHub Pages by a build job. PULSE produces the material; it does not
+host the result, and we are not going to describe a public marketing site as something it
+keeps for us.
 
-The observable state of that presence: 55 published long-form articles, alongside product,
-pricing, use-case and company pages, with material published in English, Spanish and
-French.
+The observable state of that presence, counted from the build rather than estimated: 52
+long-form articles in English, and one in Portuguese. Twelve use-case pages, the pricing
+page and the homepage exist in all four languages; the articles, the four papers and the
+five industry pages are English only.
 
-Two things follow. The nine audit measures are not an abstract framework — they are the scores
-Runink watches on its own pages. And the multilingual publishing path is exercised rather than
-claimed: producing the same argument for three language markets is a specific, awkward piece of
-work, and that presence is it being done.
-
-What this establishes is that the product is used for the work it is sold for, by the people
-who have to live with the result.
+One thing follows from that and one does not. The nine audit measures are not an abstract
+framework — they are the scores Runink watches on its own pages, which is the reason they
+are nine rather than a rounder number. The multilingual claim does not follow: the
+translated surface is the product and pricing pages, not the article stream, and a
+publishing path that has produced one translated article is not a path that has been
+exercised.
 
 ## Who owns it, who sponsors it, and who signs it off
 

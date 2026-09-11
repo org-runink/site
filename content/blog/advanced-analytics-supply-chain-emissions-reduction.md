@@ -152,17 +152,6 @@ Two measurements are worth more than any vendor comparison at this stage. First,
     We write about supply chain visibility, freight analytics and data governance: the measures operations and finance teams are held to, and where the numbers behind them come from.
   </p>
 </section>
-
-<section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
-  <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations & References</h2>
-  <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics Best Practices</a> - Guidelines for processing larger data volumes.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Advanced Analytics for Supply Chain Optimization</a> - Methods for automating logistics decisions.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner: Top Strategic Technology Trends in Logistics</a> - Research on supply chain technology.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation & Logistics</a> - Academic research on analytics in freight and transportation.</li>
-  </ul>
-</section>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

@@ -189,7 +189,6 @@ If your programme has stalled at dashboards, the first thing to establish is not
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/digital-supply-chain-transformation" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">McKinsey &amp; Company — Digital Supply Chain Transformation</a> - Source for the 8% figure on scaling digital supply chain work beyond a pilot.</li>
-    <li><a href="https://www.gartner.com/en/supply-chain/topics/supply-chain-technology" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner — Supply Chain Technology Trends</a> - Analysis of technology adoption patterns in supply chain, including automated planning and control tower maturity models.</li>
     <li><a href="https://www.weforum.org/stories/supply-chain-transformation/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">World Economic Forum — Supply Chain Transformation</a> - Global perspectives on supply chain resilience and the case for digitising records.</li>
     <li><a href="https://www.bcg.com/capabilities/operations/supply-chain-management" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">BCG — Supply Chain Digitization Research</a> - Source for the 70% shortfall rate and the role of change management in adoption.</li>
   </ul>

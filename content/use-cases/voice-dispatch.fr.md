@@ -4,7 +4,6 @@ description: "Celui qui sait qu'un chargement est en retard est justement celui 
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"
-standing: "hypothetical"
 badge: "Régulation Vocale par IA"
 badgeColor: "#f59e0b"
 date: "2024-05-20T00:00:00Z"
@@ -16,7 +15,7 @@ author: "Runink"
 
 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Logistique réactive, côté conducteur</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
-<span class="rk-mark" data-standing="hypothetical">Hypothétique</span> &mdash; ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son versant conducteur. Ce qui suit est ce que le produit est fait pour faire, et comment il tournerait sur les enregistrements de votre propre flotte. C'est une illustration du mécanisme, pas le compte rendu d'un déploiement. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Ce qu'est FACE</a>.
+ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son versant conducteur. Ce qui suit est ce que le produit est fait pour faire, et comment il tournerait sur les enregistrements de votre propre flotte. C'est une illustration du mécanisme, pas le compte rendu d'un déploiement. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">Ce qu'est FACE</a>.
 </p>
 
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>

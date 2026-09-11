@@ -113,8 +113,5 @@ The measure to establish first is narrow, and it is one your own systems can ans
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
     <li><a href="https://www.finops.org/framework/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">FinOps Foundation: the FinOps Framework</a> - The inform, optimize and operate phases, in the Foundation's own words.</li>
-    <li><a href="https://aws.amazon.com/architecture/analytics/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">AWS Architecture Center: Data Analytics</a> - Reference guidance for analytics workloads.</li>
-    <li><a href="https://cloud.google.com/solutions/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Google Cloud: Supply Chain Solutions</a> - Vendor documentation on supply chain analytics.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Academic research on freight and transportation.</li>
   </ul>
 </section>

@@ -76,7 +76,6 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Standing: hypothetical &mdash; not measured</p>
         <p class="text-base text-stone-500 font-medium">
             The claim and the port hold above are drawn to show the shape of the work. They are not accounts of a customer engagement. We publish no recovery rates, no amounts recovered and no customer names, because we have not measured them on your records or anyone else's &mdash; and a recovery rate from somebody else's lanes would tell you nothing about yours anyway.
         </p>

@@ -157,8 +157,6 @@ If your detention bill is rising, your doors sit idle at the wrong times, and yo
 <section class="citations mt-8 p-6 bg-stone-900/50 rounded-2xl border border-stone-800/50">
   <h2 class="text-2xl font-bold text-signal mb-4">Industry Citations &amp; References</h2>
   <ul class="list-decimal pl-6 text-stone-400 space-y-2">
-    <li><a href="https://www.gartner.com/en/supply-chain" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Gartner Supply Chain Research</a> - Source for the top-quartile dock utilisation figure quoted above.</li>
-    <li><a href="https://ctl.mit.edu/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">MIT Center for Transportation &amp; Logistics</a> - Research on modelling sites as live digital copies, and on freight network analysis.</li>
     <li><a href="https://cscmp.org/" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">Council of Supply Chain Management Professionals (CSCMP)</a> - Annual State of Logistics Report, which identifies detention and demurrage as fast-growing freight cost categories.</li>
     <li><a href="https://www.osha.gov/warehousing" class="text-signal hover:underline" rel="noopener noreferrer" target="_blank">OSHA Warehousing &amp; Distribution Safety Standards</a> - Federal guidance on powered industrial trucks, keeping people and vehicles apart, and yard safety.</li>
   </ul>

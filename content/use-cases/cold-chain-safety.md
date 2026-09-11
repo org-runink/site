@@ -4,7 +4,6 @@ description: "A container drifts warm overnight and the reading sits in your sen
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"
-standing: "hypothetical"
 badge: "IoT Sentinel"
 badgeColor: "#3b82f6"
 date: "2024-05-20T00:00:00Z"
@@ -16,7 +15,7 @@ author: "Runink"
 
 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Reactive logistics</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
-<span class="rk-mark" data-standing="hypothetical">Hypothetical</span> &mdash; this is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard-facing end. Half of what follows is built and half of it is not, and the page says which is which rather than describing the whole thing in the present tense. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
+This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard-facing end. It is an illustration of the mechanism, not an account of a deployment. What the software reads here is the paperwork and the images a cold chain already produces — the consignment record, the handover, the photograph taken at the door — against the rule that governs the shipment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
 </p>
 
 <h2 class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
