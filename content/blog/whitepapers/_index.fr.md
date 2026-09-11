@@ -21,9 +21,16 @@ deck: |
   le logiciel examine, ce qu'il produit, qui l'approuve, et où tout cela
   s'exécute.
 
-  **Chaque document signale ses propres affirmations là où le fondement
-  change** — ce qui fonctionne aujourd'hui, ce qui relève de l'illustration
-  plutôt que du relevé, et ce qui décrit une architecture.
+  Là où un document décrit quelque chose que nous avons construit, il le dit
+  clairement. Là où il décrit un accord avec le produit d'une autre entreprise,
+  il dit quelle moitié de cet accord fonctionne aujourd'hui. Personne ne nous a
+  audités au regard de SOC 2 ou d'ISO 27001, et les documents le disent dans
+  leurs propres phrases plutôt qu'en note de bas de page.
+more:
+  label: "Textes plus courts"
+  text: "Les documents sont les textes longs. Les plus courts restent sur les problèmes qui les motivent : une entrée en douane retenue faute d'un document, une réclamation de fret encore dans son délai de dépôt, un retour qui coûte plus cher à traiter que la marchandise."
+  link_text: "Tous les articles"
+  link_url: "/fr/blog/"
 note: |
   Les quatre documents sont publiés en anglais. Les liens ci-dessus mènent à la
   version anglaise complète. Pour un échange en français, écrivez à

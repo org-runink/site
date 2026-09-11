@@ -994,6 +994,35 @@
 .wp-card:hover .wp-card-read { color: #f97a3d; }
 
 /* a short note under the list — used for the localised index pages */
+/* The band that points at the shorter pieces. It exists because the header no
+   longer carries a "Blog" entry next to "Whitepapers" — the two read as the
+   same thing — so this page and the posts themselves are what keep /blog/
+   reachable. It sits between the paper cards and the language note, so it
+   carries only top padding; .wp-note below still owns the bottom of the page. */
+.wp-more {
+  /* 72rem, not the 78rem .wp-note uses: this band sits directly under the paper
+     cards and has to start on the same vertical line as they do. .wp-list is
+     72rem, and at a wide viewport the 6rem difference is visible as a step. */
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+.wp-more-label {
+  color: var(--on-deck-2);
+  margin: 0 0 0.5rem;
+}
+.wp-more-text {
+  color: var(--on-deck-2);
+  max-width: 56ch;
+  line-height: 1.65;
+  margin: 0 0 0.75rem;
+}
+.wp-more-link {
+  color: var(--link-deck);
+  text-decoration: none;
+}
+.wp-more-link:hover { text-decoration: underline; }
+
 .wp-note {
   max-width: 78rem;
   margin: 0 auto;

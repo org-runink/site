@@ -1,9 +1,10 @@
 ---
 title: "Whitepapers"
-# This section lives under content/blog/ so it sits inside the Blog, which is
-# what the header nav actually links to — a top-level /whitepapers/ was
-# reachable only by direct link. The blog's own subtitle in hugo.toml already
-# says "Explore whitepapers…", so this is where a reader is told to look.
+# This section lives under content/blog/ because the papers ARE the substantive
+# end of the blog and share its category system. The header links this page
+# directly and no longer carries a separate "Blog" entry, so this page is now
+# the way in to the shorter pieces as well — see `more` below, and the note in
+# hugo.toml where that entry used to be.
 #
 # `type` is what keeps the design. Hugo resolves layouts by TYPE, and the
 # section here is now "blog": without this the four papers would render through
@@ -35,6 +36,14 @@ cascade:
 # It shipped pointing at the Portuguese index for exactly this reason.
 aliases:
   - /whitepapers/
+# The header has no "Blog" entry any more, so this is what keeps /blog/ reachable
+# from the site chrome. CONTENT.md rule 9: a page with no inbound link is still
+# published. Per-language, because rule 12 makes every translation its own page.
+more:
+  label: "Shorter pieces"
+  text: "The papers are the long documents. The shorter pieces stay with the problems behind them — a customs entry held for a missing document, a freight claim still inside its filing window, a return that costs more to handle than the goods."
+  link_text: "All articles"
+  link_url: "/blog/"
 headline: "Papers that open with what can be proven."
 # FACE first, and named as the product: it is the flagship, it is `weight: 10`,
 # and it is what the list sorts to the top. CORE is named as the platform the
@@ -57,8 +66,9 @@ deck: |
   these papers explain instead is the mechanism: what the software looks at,
   what it produces, who approves it, and where it all runs.
 
-  **Each paper marks its own claims wherever the footing changes** — where
-  something runs, where a passage is an illustration rather than a record, and
-  where the paper is describing architecture. The marks are the papers' own
-  words, and they are used only where the footing genuinely differs.
+  Where a paper describes something we have built, it says so plainly. Where it
+  describes an arrangement with another company's product, it says which half of
+  that arrangement runs today. We have not been audited against SOC 2 or ISO
+  27001 by anyone, and the papers say that in their own sentences rather than in
+  a footnote.
 ---

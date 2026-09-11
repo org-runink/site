@@ -345,15 +345,22 @@ enableGitInfo = true
       url = "/use-cases/"
       weight = 4
 
-    # Whitepapers hangs off Blog because that is where the pages live
-    # (content/blog/whitepapers/) and where the blog's own subtitle already
-    # tells readers to look. Same has_submenu mechanism as Industries above —
-    # the parent stays a real link to /blog/, so nothing is hidden behind a
-    # control that needs a pointer.
-    [[languages.en.menu.main]]
-      name = "Blog"
-      url = "/blog/"
-      weight = 5
+    # There is deliberately no "Blog" entry, in any language.
+    #
+    # /blog/ and /blog/whitepapers/ are parent and child, so two entries read as
+    # two blog-shaped things and a reader has to open one to find out which is
+    # which. scripts/check-nav-distinct.mjs passes them — the hrefs differ — but
+    # the redundancy is the kind it was written for. The papers are the
+    # substantive material, so the header links them and the shorter pieces hang
+    # off the papers' own index.
+    #
+    # That leaves /blog/ with no chrome link, and there is no footer to fall back
+    # on (params.footer.enable = false, and partials/footer.html is a comment).
+    # CONTENT.md rule 9 is explicit that a page with no inbound link is still
+    # published, so two pages carry the way in on purpose and must keep doing so:
+    # layouts/whitepapers/list.html closes with a band pointing at /blog/, and
+    # every post carries an "All articles" link. linkcheck.go cannot see this —
+    # /blog/ still returns 200 either way — so it is read for, not gated.
 
     [[languages.en.menu.main]]
       name = "Pricing"
@@ -413,11 +420,6 @@ enableGitInfo = true
       weight = 4
 
     [[languages.fr.menu.main]]
-      name = "Blog"
-      url = "/fr/blog/"
-      weight = 5
-
-    [[languages.fr.menu.main]]
       name = "Tarifs"
       url = "/fr/pricing"
       weight = 6
@@ -472,11 +474,6 @@ enableGitInfo = true
       weight = 4
 
     [[languages.es.menu.main]]
-      name = "Blog"
-      url = "/es/blog/"
-      weight = 5
-
-    [[languages.es.menu.main]]
       name = "Precios"
       url = "/es/pricing"
       weight = 6
@@ -528,11 +525,6 @@ enableGitInfo = true
       name = "Casos de uso"
       url = "/pt/use-cases/"
       weight = 4
-
-    [[languages.pt.menu.main]]
-      name = "Blog"
-      url = "/pt/blog/"
-      weight = 5
 
     [[languages.pt.menu.main]]
       name = "Preços"

@@ -20,9 +20,15 @@ deck: |
   inversión. Lo que explican es el mecanismo: qué mira el software, qué
   produce, quién lo aprueba y dónde se ejecuta todo.
 
-  **Cada documento marca sus propias afirmaciones allí donde cambia el
-  fundamento** — lo que funciona hoy, lo que es una ilustración y no un
-  registro, y lo que es una descripción de arquitectura.
+  Donde un documento describe algo que hemos construido, lo dice con claridad.
+  Donde describe un acuerdo con el producto de otra empresa, dice qué mitad de
+  ese acuerdo funciona hoy. Nadie nos ha auditado contra SOC 2 ni ISO 27001, y
+  los documentos lo dicen en sus propias frases, no en una nota al pie.
+more:
+  label: "Textos más breves"
+  text: "Los documentos son los textos largos. Los más breves se quedan con los problemas que hay detrás: una entrada en aduana retenida por un documento que falta, una reclamación de flete todavía dentro de su plazo, una devolución que cuesta más gestionar que la mercancía."
+  link_text: "Todos los artículos"
+  link_url: "/es/blog/"
 note: |
   Los cuatro documentos se publican en inglés. Los enlaces de arriba llevan a
   la versión inglesa completa. Para una conversación en español, escriba a

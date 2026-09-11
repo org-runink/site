@@ -44,6 +44,22 @@
     {{ end }}
   </div>
 
+  {{/* The way in to the shorter pieces. The header used to carry a "Blog" entry
+       alongside "Whitepapers" and the two read as the same thing, so the entry
+       is gone — which leaves /blog/ with no chrome link at all, and there is no
+       footer on this site. CONTENT.md rule 9: a page with no inbound link is
+       still published. This band is one of the two places that now carry it
+       (the other is every post's "All articles" line), so it is not decoration
+       and should not be removed without putting the link somewhere else. Copy
+       is per-language front matter, per rule 12. */}}
+  {{ with .Params.more }}
+  <nav class="wp-more" aria-labelledby="wp-more-head">
+    <p class="wp-more-label wp-util" id="wp-more-head">{{ .label }}</p>
+    <p class="wp-more-text">{{ .text }}</p>
+    <a class="wp-more-link wp-util" href="{{ .link_url }}">{{ .link_text }} &rarr;</a>
+  </nav>
+  {{ end }}
+
   {{ with .Params.note }}
   <div class="wp-note">
     <div class="wp-note-inner">{{ . | markdownify }}</div>
