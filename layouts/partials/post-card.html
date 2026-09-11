@@ -38,6 +38,21 @@
 {{ $categories := .Params.categories | default .Params.tags }}
 {{ $desc := .Description }}
 {{ $summary := .Summary }}
+{{/* DELIBERATELY THE PUBLICATION DATE, NOT THE REVISION DATE.
+
+     The post page leads with the revision — see the note in
+     layouts/blog/single.html for why. A card must not. Every one of these 53
+     posts was rewritten by the same claims pass on the same day, so showing the
+     revision here prints "Updated 11 September 2026" on all 53 cards at once.
+     That is true and it is still the wrong thing to publish: identical on every
+     card it reads as a month of writing that did not happen, and it replaces
+     the one date that distinguishes the posts and orders the list with one that
+     does neither.
+
+     Using a true fact to manufacture an impression is the move this site exists
+     to argue against, and an index that looks busier than the blog is would be
+     the clearest possible case of it. The honest fix for a stale index is to
+     publish something. */}}
 {{ $date := .Date }}
 {{ $readingTime := .ReadingTime }}
 
