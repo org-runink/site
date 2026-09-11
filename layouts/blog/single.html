@@ -1,0 +1,162 @@
+{{/*
+  A blog post.
+
+  WHY THIS FILE EXISTS. There was no layouts/blog/single.html, so every post fell
+  through to layouts/_default/single.html — and that file was the only reader-
+  facing page the restyle never reached. /blog/ was rewritten onto the shared
+  listing register; its posts were not, so clicking a card was a change of
+  website, which is the exact thing partials/list-hero.html was written to stop.
+
+  What the post page was carrying: a `bg-stone-950` wrapper, the
+  background-effects partial (a black-canvas device whose vignette is now a
+  gradient between a colour and itself), a hard-coded eyebrow reading
+  "Transmission", an 80px gradient-clipped uppercase italic headline, a
+  `rounded-[2.5rem]` shadowed card, a neon glow with a pre-rebrand hex in it, and
+  a sidebar painted in `stone` and `slate` — a third colour vocabulary, and
+  `slate` is not in the token alias map at all.
+
+  Worth being precise about what was actually wrong, because it is not what it
+  looks like: the Tailwind alias layer already re-points `bg-stone-950` at the
+  ground token and gives `prose-invert` the same values as `prose`, so the page
+  was not rendering black. The COLOURS followed the system. The shapes, the
+  register and the print behaviour never got the pass.
+
+  THE REGISTER is the one the listing pages and the homepage share —
+  partials/list-hero.html for the head, partials/rule-head.html to divide, quiet
+  dark ink on the light sheet, sentence case, left aligned, one uppercase chip.
+  There is no gradient and no bg-clip-text here, and that is a print rule rather
+  than a taste: CONTENT.md rule 6 notes gradient text can print as nothing at
+  all, which is what the old headline did.
+
+  THE EYEBROW is the post's own first category. The old one said "Transmission"
+  on every post, which is the word layouts/_default/list.html deleted for saying
+  nothing a visitor could use. A category is true, is different per post, and is
+  the same thing the cards on /blog/ put in that position.
+
+  NO SIDEBAR. It held Recent / Categories / Tags in its own colour vocabulary
+  and pushed the reading column narrow. The same navigation now sits at the foot
+  as a strip of the listing's own cards, which reuses partials/post-card.html
+  instead of maintaining a second card design, and reads after the article
+  rather than competing with it.
+
+  The classes prefixed `rk-post-` are hooks for partials/post-print.html and
+  carry no screen styling.
+*/}}
+{{ define "main" }}
+{{/* Categories first, tags as the fallback — the same order partials/post-card.html
+     uses, so a post's chip on /blog/ and its chip on its own page are the same
+     word. Many posts carry only tags, and an empty chip is worse than a tag. */}}
+{{ $terms := .Params.categories | default .Params.tags }}
+{{ $eyebrow := "" }}
+{{ with $terms }}{{ $eyebrow = index . 0 }}{{ end }}
+
+<div class="rk-post bg-canvas">
+  {{ partial "post-print.html" . }}
+
+  <div class="rk-post-wrap container mx-auto max-w-[48rem] px-5 md:px-8 py-14 md:py-20">
+
+    {{ partial "list-hero.html" (dict
+      "eyebrow" $eyebrow
+      "title"   .Title
+      "deck"    .Description
+      "meta"    (printf "%s · %d min read" (.Date.Format "2 January 2006") .ReadingTime)
+    ) }}
+
+    {{ with .Params.author }}
+    <p class="-mt-6 mb-10 text-ink-3 text-sm">{{ . }}</p>
+    {{ end }}
+
+    {{ with .Params.featured_image }}
+    <div class="rk-post-figure mb-10 overflow-hidden rounded-xl border border-rule">
+      {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-auto" "loading" "lazy" "context" $) }}
+    </div>
+    {{ end }}
+
+    {{/* The table of contents is screen furniture — on paper the reader can see
+         the headings by turning the sheet. */}}
+    {{/* `len .TableOfContents > 30` was the old test and it is wrong: a page whose
+         headings are hand-rolled HTML rather than markdown gets an EMPTY
+         `<nav id="TableOfContents"></nav>`, which is 41 characters and passes.
+         That shipped an empty bordered box titled "On this page" on every
+         use-case page. Test for an actual entry instead. */}}
+    {{ if and (ne .Params.toc false) (strings.Contains .TableOfContents "<li>") }}
+    <nav class="rk-post-screen mb-10 p-5 md:p-6 bg-sunk border border-rule rounded-xl" aria-labelledby="toc-head">
+      <h2 id="toc-head" class="m-0 mb-3 font-heading text-[0.6875rem] font-extrabold uppercase tracking-[0.16em] text-ink-3">On this page</h2>
+      <div class="prose prose-sm max-w-none prose-a:text-ink-2 hover:prose-a:text-signal prose-ul:my-0 prose-li:my-1">
+        {{ .TableOfContents }}
+      </div>
+    </nav>
+    {{ end }}
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.tags }}
+    <p class="rk-post-screen mt-10 mb-0 flex flex-wrap items-center gap-2">
+      {{ range . }}
+      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">{{ . }}</a>
+      {{ end }}
+    </p>
+    {{ end }}
+
+    {{/* Previous and next in the section. Both arms are guarded — a post at
+         either end of the section renders one side, not an empty box. */}}
+    {{ if or .PrevInSection .NextInSection }}
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More articles">
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">{{ .Title }}</span>
+      </a>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}" class="group no-underline sm:text-right sm:col-start-2">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Next</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </nav>
+    {{ end }}
+
+    {{/* Three more from this post's own first category, then the way back to
+         everything. This is also what keeps /blog/ reachable: the header no
+         longer carries a Blog entry, and CONTENT.md rule 9 is explicit that a
+         page with no inbound link is still published. */}}
+    {{ with $eyebrow }}
+    {{ $pool := where $.Site.RegularPages "Section" "blog" }}
+    {{ $related := where $pool ".Params.categories" "intersect" (slice .) }}
+    {{ if not $related }}{{ $related = where $pool ".Params.tags" "intersect" (slice .) }}{{ end }}
+    {{ $related = where $related "Permalink" "!=" $.Permalink | first 3 }}
+    {{ with $related }}
+    <section class="rk-post-screen mt-14" aria-labelledby="related-head">
+      {{ partial "rule-head.html" (dict "label" (printf "More on %s" $eyebrow) "id" "related-head") }}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {{ range . }}
+        {{ partial "post-card.html" (dict "page" . "level" 3) }}
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+    {{ end }}
+
+    <p class="rk-post-screen mt-10 mb-0">
+      <a href="{{ "/blog/" | relLangURL }}"
+         class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal no-underline">
+        All articles
+        <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </p>
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+
+{{ if .Site.Params.blog.cta.enable }}
+{{ partial "components/cta.html" . }}
+{{ end }}
+{{ end }}

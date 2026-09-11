@@ -1,111 +1,90 @@
+{{/*
+  The fallback single page: any page without a layout of its own.
+
+  It is NOT a blog post — layouts/blog/single.html is. What actually renders here
+  today is the twelve use-case pages in four languages, which set
+  `layout: "use_case"` and resolve to this file, plus /igo-demo/. Read the
+  docblock in layouts/use_cases/single.html before assuming otherwise; that file
+  is dead and looks like it should not be.
+
+  This page used to carry the same treatment the restyle removed from /blog/: a
+  `bg-stone-950` wrapper, the background-effects partial, a hard-coded eyebrow
+  reading "Transmission", an 80px gradient-clipped uppercase italic headline, a
+  `rounded-[2.5rem]` shadowed card, a neon glow with a pre-rebrand hex in it, and
+  a sidebar in a third colour vocabulary. All of it went to 49 pages.
+
+  It now goes through partials/list-hero.html and partials/post-print.html, which
+  is the same register layouts/blog/single.html and the listing pages use, so
+  there is one place to change it rather than four. The two differences from a
+  blog post are deliberate: no related strip, because "more in this category"
+  means nothing outside the blog, and the eyebrow comes from `product` front
+  matter where a page has it — a use-case page saying "Runink FACE" is the
+  attribution HANDOFF-product-attribution.md asked these pages to carry.
+*/}}
 {{ define "main" }}
-<div class="bg-stone-950 min-h-screen relative overflow-hidden text-stone-300">
-    {{ partial "background-effects.html" . }}
+{{ $terms := .Params.categories | default .Params.tags }}
+{{ $eyebrow := .Params.product }}
+{{ if not $eyebrow }}{{ with $terms }}{{ $eyebrow = index . 0 }}{{ end }}{{ end }}
 
-    <div class="container mx-auto px-4 py-24 relative z-10">
-        <!-- Two Column Layout for Content and Sidebar -->
-        <div class="flex flex-col lg:flex-row gap-8 mb-12">
-            <!-- Main Content -->
-            <article
-                class="flex-1 w-full bg-sheet border border-stone-800/80 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative z-10 overflow-hidden">
-                <header class="mb-8">
-                    {{ with .Params.categories }}
-                    <div class="mb-4">
-                        {{ range . }}
-                        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"
-                            class="inline-block px-3 py-1 text-sm font-medium text-primary-600 bg-signal-wash rounded-full hover:bg-sunk mr-2">
-                            {{ . }}
-                        </a>
-                        {{ end }}
-                    </div>
-                    {{ end }}
+<div class="rk-post bg-canvas">
+  {{ partial "post-print.html" . }}
 
-                    <div
-                        class="inline-flex items-center justify-center px-4 py-1 mb-6 rounded-lg border border-signal/30 text-signal text-xs font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
-                        Transmission
-                    </div>
-                    <h1
-                        class="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg leading-[1]">
-                        {{ .Title }}
-                    </h1>
+  <div class="rk-post-wrap container mx-auto max-w-[52rem] px-5 md:px-8 py-14 md:py-20">
 
-                    {{ partial "post-meta.html" . }}
-                </header>
+    {{ partial "list-hero.html" (dict
+      "eyebrow" $eyebrow
+      "title"   .Title
+      "deck"    .Description
+      "meta"    (cond .Date.IsZero "" (printf "%s · %d min read" (.Date.Format "2 January 2006") .ReadingTime))
+    ) }}
 
-                {{ with .Params.featured_image }}
-                <div class="mb-8">
-                    {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-auto rounded-lg" "loading" "lazy" "context" $) }}
-                </div>
-                {{ end }}
-
-
-                {{ if and (gt (len .TableOfContents) 30) (ne .Params.toc false) }}
-                <aside class="toc-container mb-8 p-6 bg-stone-900 rounded-xl border border-stone-800">
-                    <h2 class="text-xl font-bold text-stone-200 mb-4 uppercase tracking-wider text-sm">Table of Contents</h2>
-                    <div class="prose prose-sm prose-invert prose-stone prose-a:text-signal hover:prose-a:text-signal">
-                        {{ .TableOfContents }}
-                    </div>
-                </aside>
-                {{ end }}
-
-                <div
-                    class="w-full prose prose-invert prose-stone max-w-none lg:prose-lg prose-headings:text-white prose-p:text-stone-300 prose-li:text-stone-300 prose-strong:text-white prose-a:text-signal hover:prose-a:text-signal">
-                    {{ .Content }}
-                </div>
-
-            </article>
-
-            <!-- Sidebar -->
-            <aside class="lg:w-80 xl:w-96">
-                {{ partial "sidebar.html" . }}
-            </aside>
-        </div>
-
-        <!-- Full-width Navigation Section -->
-        <nav class="border-t border-stone-800 mt-12 pt-8">
-            <div class="flex justify-between items-center">
-                {{ with .PrevInSection }}
-                <a href="{{ .RelPermalink }}" class="group flex items-center">
-                    <svg class="w-5 h-5 mr-3 text-stone-500 group-hover:text-signal transition-colors" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                    </svg>
-                    <div>
-                        <div class="text-xs text-stone-500 uppercase tracking-widest font-bold mb-1">Previous Post</div>
-                        <div class="font-medium text-stone-300 group-hover:text-signal transition-colors">{{ .Title
-                            }}</div>
-                    </div>
-                </a>
-                {{ else }}
-                <div></div>
-                {{ end }}
-
-                {{ with .NextInSection }}
-                <a href="{{ .RelPermalink }}" class="group flex items-center text-right">
-                    <div>
-                        <div class="text-xs text-stone-500 uppercase tracking-widest font-bold mb-1">Next Post</div>
-                        <div class="font-medium text-stone-300 group-hover:text-signal transition-colors">{{ .Title
-                            }}</div>
-                    </div>
-                    <svg class="w-5 h-5 ml-3 text-stone-500 group-hover:text-signal transition-colors" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-                {{ else }}
-                <div></div>
-                {{ end }}
-            </div>
-        </nav>
-
-        <!-- Full-width CTA Section -->
-        {{ if and .Site.Params.blog.cta.enable .Site.Params.cta.enable }}
-        <div class="mt-16">
-            {{ partial "components/cta.html" . }}
-        </div>
-        {{ end }}
+    {{ with .Params.featured_image }}
+    <div class="rk-post-figure mb-10 overflow-hidden rounded-xl border border-rule">
+      {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-auto" "loading" "lazy" "context" $) }}
     </div>
+    {{ end }}
+
+    {{/* `len .TableOfContents > 30` was the old test and it is wrong: a page whose
+         headings are hand-rolled HTML rather than markdown gets an EMPTY
+         `<nav id="TableOfContents"></nav>`, which is 41 characters and passes.
+         That shipped an empty bordered box titled "On this page" on every
+         use-case page. Test for an actual entry instead. */}}
+    {{ if and (ne .Params.toc false) (strings.Contains .TableOfContents "<li>") }}
+    <nav class="rk-post-screen mb-10 p-5 md:p-6 bg-sunk border border-rule rounded-xl" aria-labelledby="toc-head">
+      <h2 id="toc-head" class="m-0 mb-3 font-heading text-[0.6875rem] font-extrabold uppercase tracking-[0.16em] text-ink-3">On this page</h2>
+      <div class="prose prose-sm max-w-none prose-a:text-ink-2 hover:prose-a:text-signal prose-ul:my-0 prose-li:my-1">
+        {{ .TableOfContents }}
+      </div>
+    </nav>
+    {{ end }}
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      {{ .Content }}
+    </div>
+
+    {{ if or .PrevInSection .NextInSection }}
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More in this section">
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">{{ .Title }}</span>
+      </a>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}" class="group no-underline sm:text-right sm:col-start-2">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Next</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </nav>
+    {{ end }}
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
 </div>
+
+{{ if and .Site.Params.blog.cta.enable .Site.Params.cta.enable }}
+{{ partial "components/cta.html" . }}
+{{ end }}
 {{ end }}

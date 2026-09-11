@@ -1,0 +1,139 @@
+{{/*
+  Print rules for an article page — a blog post or any page rendering through
+  _default/single.html.
+
+  Written for CONTENT.md rule 6. Until now the post page had no print rules at
+  all, which is the worst of the three states: the site-wide layout wraps the
+  header in a fixed-position div, so a fixed element reprints on every single
+  sheet, and the headline was gradient-clipped text, which a browser drops along
+  with the background it is clipped to. An executive printing one of these got
+  the navigation five times and a blank space where the title should be.
+
+  The colours are not this block's problem. tokens.css §6 re-binds the whole
+  palette for paper and this page is painted in tokens, so it arrives as black
+  ink on white on its own. What is left is the furniture the palette cannot
+  reach, and the links, which have to keep their destinations or the reader is
+  holding a page of underlined words.
+
+  Scoped to `.rk-post` except for the site-chrome selectors, which have to be
+  global because the chrome sits outside this subtree — the same three that
+  partials/list-print.html and partials/home/style.html unset, for the same
+  reason.
+
+  Verify by generating a PDF and looking at the sheets. Reading this file is not
+  verifying it.
+*/}}
+<style>
+  @media print {
+    @page { margin: 16mm 14mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-post { padding: 0 !important; }
+    .rk-post-wrap { max-width: none !important; padding: 0 !important; }
+
+    /* Nothing on paper can be clicked, so the prev/next rail, the related
+       strip and the closing call to action carry nothing. The article itself
+       is what was printed. */
+    .rk-post-screen { display: none !important; }
+
+    /* A heading stranded at the foot of a sheet with its paragraph overleaf is
+       the commonest printing defect in long prose, and it is one line to fix. */
+    .rk-post-body :is(h2, h3, h4) { break-after: avoid; page-break-after: avoid; }
+    .rk-post-body :is(p, li, blockquote) { orphans: 3; widows: 3; }
+    .rk-post-body pre,
+    .rk-post-body blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+    /* Long tables break freely at the wrapper, hold each row whole, and repeat
+       their header — `break-inside: avoid` on a block taller than a page pushes
+       the whole thing over and leaves the current sheet blank (DESIGN.md §10). */
+    .rk-post-body table { break-inside: auto; }
+    .rk-post-body thead { display: table-header-group; }
+    .rk-post-body tr { break-inside: avoid; page-break-inside: avoid; }
+
+    /* Scoped to .rk-post, not .rk-post-body: the featured image sits ABOVE the
+       prose wrapper, so a body-scoped rule missed the one image on the page that
+       is big enough to matter and it took half a sheet. Capped well under a page
+       so the head and the image share the first sheet — DESIGN.md §10: a block
+       taller than a page that may not break is pushed whole to the next sheet
+       and leaves the current one blank, which is exactly what happened here. */
+    /* The figure's frame is a screen device. Left on, it prints as an empty
+       bordered box beside the capped image, because the wrapper stays full
+       width while the image inside it shrinks. */
+    .rk-post-figure {
+      width: fit-content;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .rk-post img {
+      max-width: 100% !important;
+      max-height: 62mm;
+      width: auto;
+      object-fit: contain;
+      break-inside: avoid;
+    }
+
+    /* Links inside the prose keep their destination. Scoped to the body, not to
+       every anchor on the page, or the sheet count doubles. Bare fragments and
+       mailto links print nothing extra — a fragment is meaningless on paper and
+       a mailto already reads as an address. */
+    .rk-post-body a[href^="/"]::after { content: " (runink.org" attr(href) ")"; }
+    .rk-post-body a[href^="http"]::after { content: " (" attr(href) ")"; }
+    .rk-post-body a[href^="/"]::after,
+    .rk-post-body a[href^="http"]::after {
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      word-break: break-all;
+      color: var(--rk-text-2);
+    }
+
+    /* The closing call to action is a rounded card with a shadow, a blurred
+       gradient halo and a button. On paper it took a whole extra sheet to print
+       a shape nobody can press. It is flattened rather than hidden, because the
+       one thing on it that survives — where to get in touch — is worth carrying
+       into a meeting. Same move partials/home/style.html makes for its own.
+       Global rather than .rk-post-scoped: the partial is a sibling of the
+       article, not a child of it. */
+    .cta-section { margin: 8mm 0 0 !important; break-inside: avoid; }
+    .cta-section .container > div {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .cta-section .absolute { display: none !important; }
+    .cta-section h2 { font-size: 12pt !important; margin-bottom: 2mm !important; }
+    .cta-section p { font-size: 10pt !important; margin-bottom: 2mm !important; }
+    .cta-section a {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+    .cta-section a[href^="/"]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* The sheet carries no site header, so without this a printed article says
+       nothing about where it came from. */
+    .rk-post-mark { display: block !important; }
+  }
+</style>
