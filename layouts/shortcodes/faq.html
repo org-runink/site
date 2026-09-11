@@ -45,7 +45,15 @@
   {{ $question := dict "@type" "Question" "name" .question "acceptedAnswer" $answer }}
   {{ $mainEntity = $mainEntity | append $question }}
 {{ end }}
+{{/* `| safeJS | safeHTML` double-encoded this. jsonify already returns JSON;
+     marking it safeJS and then piping THAT through safeHTML re-encoded it as a
+     JSON string, so every page using this shortcode emitted
+     `"{\"@context\":\"https://schema.org\",..."` — a quoted string literal, not
+     an object. It parses as a str, which means the FAQPage schema on the four
+     pricing pages and products/face has never been valid and no consumer has
+     ever read it as a FAQ. safeJS alone is the whole job. Checked by parsing
+     the rendered output, which is the only way this class of bug shows up. */}}
 {{ $schema := dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $mainEntity }}
 <script type="application/ld+json">
-{{ $schema | jsonify | safeJS | safeHTML }}
+{{ $schema | jsonify | safeJS }}
 </script>

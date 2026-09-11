@@ -146,13 +146,24 @@
     <link rel="stylesheet" href="{{ $tokens.RelPermalink }}">
     {{ partial "rk-ground-script.html" . }}
 
-    {{/* Material Symbols is still remote. It is an icon font, not a brand face,
-         and replacing it is a separate job from the palette — but it is the last
-         third-party font request on the page and worth closing. */}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"></noscript>
+    {{/* NO THIRD-PARTY FONT REQUEST. Every face is self-hosted from assets/fonts
+         via partials/rk-fonts.html, and CONTENT.md rule 7 is why: a company
+         arguing that your records should not be sent to third parties cannot
+         fetch its typeface from one, and two preconnects to Google on every page
+         is the most quotable inconsistency a security-minded buyer could find.
+
+         What used to be here was Material Symbols — preconnect, preload and a
+         noscript stylesheet, on all 426 rendered pages. It was used by exactly
+         ZERO of them. The two call sites were a shortcode with no callers
+         (shortcodes/landing-scenario.html) and a `help_center` glyph inside raw
+         HTML that `unsafe = false` has been swallowing for as long as it has
+         been there. Measured before deleting: 426 pages requesting it, 0 pages
+         rendering a glyph from it.
+
+         If an icon is needed later, the site already draws its own inline SVG
+         (partials/home/glyph.html, the arrows in the listing partials). Adding a
+         remote icon font back would reopen the rule 7 breach for something the
+         page can already do. */}}
 
     <!-- Main CSS -->
     {{ if .Site.Params.disablePostCSS }}
