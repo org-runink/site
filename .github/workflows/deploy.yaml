@@ -129,6 +129,14 @@ jobs:
       - name: Check content doctrine (source)
         run: node scripts/check-content-doctrine.mjs
 
+      # Template syntax in a content BODY is not a comment, it is text.
+      # A 1,213-character reviewer note shipped to /company/ this way on
+      # 11 Sep 2026 and was found by an external audit, not by CI. It is
+      # valid markdown, it does not break the build and it does not 404,
+      # so nothing else here was ever going to see it.
+      - name: Guard against template syntax in content bodies
+        run: node scripts/check-content-template-syntax.mjs
+
       # Site-side palette guards, added when the marketing site moved from the
       # black canvas onto FACE's two-ground token system. All three cover
       # failures that render without erroring, which is the only reason they

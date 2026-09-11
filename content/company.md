@@ -4,6 +4,26 @@ layout: "company"
 description: "What Runink is for: reading the records a company already keeps, and turning them into decisions its own people can defend."
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
+# WHY THE SOVEREIGNTY CARD IS WORDED THE WAY IT IS.
+#
+# It used to read "and that is enforced by a check that refuses the code, not by
+# a setting somebody has to remember." That is not supportable for FACE, and the
+# site already said the opposite elsewhere: the FAQ on /products/face/ calls it
+# "an architectural property rather than a machine-enforced one".
+#
+# Checked rather than assumed: workstation/guardrails/forbidden.txt is a 33-line
+# denylist enforced by a per-repo pre-commit hook plus a CI workflow in core and
+# pulse. face has neither in CI. So the product page was right and this page was
+# overclaiming, on the one sentence a security-minded buyer is most likely to
+# test.
+#
+# THIS NOTE LIVES IN FRONT MATTER FOR A REASON. It was first written as a
+# {{ /* ... */ }} Go template comment in the body, which is a layouts construct:
+# Hugo does not evaluate template syntax inside a content file, so all 1,213
+# characters of it rendered as visible body copy and shipped to production —
+# breaking rule 10 (never publish the mechanics) and rule 2 (never state what the
+# product lacks) in one paragraph, on a page robots.txt explicitly opens to
+# GPTBot, ClaudeBot, PerplexityBot and CCBot. In content/, notes go here.
 ---
 
 {{< section-container class="bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 pt-20 pb-32" >}}
@@ -49,24 +69,6 @@ author: "Runink"
           icon="clipboard-document-list"
           description="When part of a job does not happen, the result says which part and why. Software that reports success for work it did not do is the failure we designed hardest against."
       >}}
-      {{/* The second sentence used to read "and that is enforced by a check that
-           refuses the code, not by a setting somebody has to remember." That is
-           not supportable for FACE and the site already said so somewhere else:
-           the FAQ on /products/face/ states in its own words that this is "an
-           architectural property rather than a machine-enforced one" and that
-           "no build step blocks an outside model client from being added".
-
-           Checked rather than assumed. workstation/guardrails/forbidden.txt is a
-           33-line denylist, and its enforcement is a per-repo pre-commit hook
-           plus a CI workflow in core and pulse (core/.github/workflows/
-           sovereignty.yml, pulse/.github/workflows/sovereignty.yml). face has
-           neither in CI — only a local hook on one machine, which is not a
-           property of the repository and does not exist for any other clone.
-
-           So the two pages contradicted each other on the load-bearing
-           sovereignty claim, which is the single most quotable inconsistency a
-           security-minded buyer could find on this site. This card now says what
-           the product page says. */}}
       {{< value-card
           title="Your records stay on your hardware"
           icon="scale"

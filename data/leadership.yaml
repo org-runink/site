@@ -64,8 +64,13 @@ verify_label: "Check any of it"
 verify:
   - text: "linkedin.com/in/danspaes"
     url: "https://www.linkedin.com/in/danspaes/"
-  - text: "finos.org"
-    url: "https://www.finos.org/"
+  # The ambassador page, not the homepage. This block's whole job is to hand
+  # the reader the means to check the claim, and finos.org/ says nothing about
+  # Dan Paes. The ambassador roster names him, gives his role and his city, and
+  # carries the same linkedin.com/in/danspaes URL this file does — so it is the
+  # one page that actually verifies what the biography above asserts.
+  - text: "finos.org/ambassador-program"
+    url: "https://www.finos.org/ambassador-program"
   - text: "paes@runink.org"
     url: "mailto:paes@runink.org"
 
