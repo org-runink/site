@@ -50,6 +50,37 @@ You do not have to build the whole chain. Write the one service you need now. Ad
 
 Because the protocol is plain and public, a service can sit beside the tools you already have. The Python data libraries most teams already use need no change to be called this way.
 
+### How the modules divide the work
+
+Before the code, the shape. Four modules, each with one job, and the rule that
+decides when one hands over to the next. This is the part worth getting right
+first, because it is what lets you add, test and replace a step on its own later.
+
+{{< howto >}}
+{
+  "name": "How to build a small A2A workflow for supply chain analytics",
+  "description": "An analytics workflow built from small single-purpose services that talk over the open A2A protocol, so each step can be added, tested and replaced on its own.",
+  "step": [
+    {
+      "name": "Configure the router module",
+      "text": "Start with the module that receives the question, for example *what is the transit delay on Route 4*. Its only job is to decide which other module should answer."
+    },
+    {
+      "name": "Add the simple answer module",
+      "text": "Connect a small local script or database query to the router. Send plain data lookups and simple totals here, because they do not need a model to answer them."
+    },
+    {
+      "name": "Add the reasoning module",
+      "text": "Connect a larger model for the questions the simple module cannot answer. Read its output before trusting it, and check what leaves your network when you call it."
+    },
+    {
+      "name": "Define the handoff rules",
+      "text": "Write down when one module passes a question to the next. If the simple module cannot answer with confidence, it should hand the question on rather than guess."
+    }
+  ]
+}
+{{< /howto >}}
+
 ### Building a small workflow: a step-by-step guide
 
 Here is a short worked example: pull customer reviews, score the sentiment, write a summary.
