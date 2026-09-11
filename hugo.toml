@@ -395,7 +395,7 @@ enableGitInfo = true
 
     [[languages.en.menu.main]]
       name = "Pricing"
-      url = "/pricing"
+      url = "/pricing/"
       weight = 6
 
 

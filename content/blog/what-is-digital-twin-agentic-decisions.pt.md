@@ -3,7 +3,7 @@ title: "O que é um Gêmeo Digital? Como Decisões Autônomas estão Remodelando
 author: "Equipe de Operações Logísticas da Runink"
 date: 2026-05-23T21:21:26Z
 draft: false
-featured_image: "/images/blog/digital-twin-autonomous-decisions.png"
+featured_image: "/images/blog/digital-twin-agentic-decisions.png"
 canonical: https://runink.org/pt/blog/gemeo-digital-decisoes-autonomas
 description: "O que é um gêmeo digital da cadeia de suprimentos, os quatro tipos que existem, e onde fica a linha entre um software que raciocina sobre uma interrupção e um software que age sobre ela."
 slug: gemeo-digital-decisoes-autonomas
