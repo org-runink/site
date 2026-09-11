@@ -146,6 +146,50 @@
     </section>
     {{ end }}
 
+    {{/* 1c. Where it shows up in the operating numbers.
+
+         THE MISSING HALF OF THE STORY. The page went from "here is your week" to
+         "here is what the software does" without ever naming the line any of it
+         costs money on. An operations director could recognise every row above
+         and still have nothing to forward to a finance director.
+
+         RULE 1 IS THE WHOLE DESIGN OF THIS BLOCK. It names a measure and says
+         where in the reader's own systems to find it, and it puts no number
+         anywhere. That is precisely the permission rule 1 grants and precisely
+         the line it draws: naming demurrage is a neutral domain fact; asserting
+         what you would save is not. Every "where yours is" points at a document
+         the reader already owns — a carrier invoice, a write-off account, a
+         credit note — so the figure at the end of the sentence is theirs.
+
+         If a column ever acquires a number, this block has broken its own
+         promise in its own intro, which is the first place to look. */}}
+    {{ with .Params.opex }}
+    <section class="hp-sec hp-opex-sec" aria-labelledby="opex-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="opex-heading">{{ $.Params.opex_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.opex_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+
+      <div class="hp-opex__head" aria-hidden="true">
+        <span>{{ $.Params.opex_col_line }}</span>
+        <span>{{ $.Params.opex_col_driver }}</span>
+        <span>{{ $.Params.opex_col_where }}</span>
+      </div>
+      <ul class="hp-opex">
+        {{ range . }}
+        <li class="hp-opex__row">
+          <p class="hp-opex__line">{{ .line }}</p>
+          <p class="hp-opex__driver">{{ .driver }}</p>
+          <p class="hp-opex__where">{{ .where }}</p>
+        </li>
+        {{ end }}
+      </ul>
+      {{ with $.Params.opex_note }}<p class="hp-caption">{{ . }}</p>{{ end }}
+    </section>
+    {{ end }}
+
     {{/* 2. The picture of the problem. Two panels of the same field of records:
          one where a sample is read, one where all of it is. It is placed before
          any explanation on purpose — the review asked for visuals a business
@@ -171,65 +215,6 @@
       </ol>
       <figcaption class="hp-caption">{{ .caption }}</figcaption>
     </figure>
-    {{ end }}
-
-    {{/* 3. The five industries, as five lines of one instrument rather than as
-         five cards. /industries/ is already the card switchboard; repeating it
-         here would make one of the two pages redundant. Read down, the five
-         lines say that this is one shape of problem seen five ways, and the
-         third column tells a reader whose job it is — the review asked for
-         exactly that, by name.
-
-         Title, link and accent are read from the industry page itself wherever
-         one exists, so they cannot drift from the section; the front-matter
-         values are the fallback that keeps the block intact on the localised
-         sites, where the industry pages do not exist as translations. */}}
-    {{ with .Params.industries }}
-    <section class="hp-sec" aria-labelledby="industries-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="industries-heading">{{ $.Params.industries_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.industries_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-
-      {{ with $.Params.industries_columns }}
-      <div class="hp-ledger__head" aria-hidden="true">
-        <span>{{ .name }}</span>
-        <span>{{ .cost }}</span>
-        <span>{{ .owner }}</span>
-      </div>
-      {{ end }}
-
-      <ul class="hp-ledger">
-        {{ range . }}
-        {{ $name := .name }}
-        {{ $url := printf "/industries/%s/" .page }}
-        {{/* The category comes from the industry page itself, so the homepage
-             cannot drift from it. It used to carry its own `accent:` hex per
-             row, which quietly became the source of truth whenever the industry
-             page lacked one — five pre-rebrand hues living in a second place. */}}
-        {{ $cat := "" }}
-        {{ with site.GetPage (printf "/industries/%s" .page) }}
-          {{ $name = .Title }}
-          {{ $url = .RelPermalink }}
-          {{ $cat = .Params.category }}
-        {{ end }}
-        <li class="hp-line hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
-          <a class="hp-row" href="{{ $url }}">
-            <p class="hp-row__name">
-              <span class="hp-row__tick" aria-hidden="true"></span>{{ $name }}
-            </p>
-            <p class="hp-row__cost">{{ .cost }}</p>
-            <p class="hp-row__owner">
-              {{ range .owners }}<span>{{ . }}</span>{{ end }}
-            </p>
-            <p class="hp-row__go">{{ $.Params.industries_cta }} <span aria-hidden="true">&rarr;</span></p>
-          </a>
-        </li>
-        {{ end }}
-      </ul>
-    </section>
     {{ end }}
 
     {{/* 4. The name of the thing. This is the earliest point the order above
@@ -403,18 +388,76 @@
     </section>
     {{ end }}
 
-    {{/* 5b. The answer to the question the four blocks above cannot answer.
-         Everything up to here is the software working; a buyer who is weighing
-         whether they could put its output in front of a carrier or a broker is
-         asking the other question, and this is the only place the page answers
-         it. It sits after `why` rather than before it because it is evidence for
-         the three claims `why` makes, and evidence read before the claim is just
-         detail.
+    {{/* 7. The five industries — moved BELOW the logistics story.
 
-         Its own partial, unlike the blocks above, because the quotations need
-         markup the front matter cannot carry: <code> for the string, <figure>
-         and <figcaption> for the gloss the localised pages put under it. */}}
-    {{ partial "home/proof.html" . }}
+         It used to sit third, between the picture of the problem and the name
+         of the product, which put Banking, Telecom and Marketing in the middle
+         of a narrative written for shippers, fulfilment, underwriting and
+         claims. The reader following that story was interrupted by three
+         verticals they do not work in.
+
+         It answers "who else carries this shape of problem", which is a
+         question worth answering AFTER the shape has been shown rather than
+         during. The five industry pages keep their inbound link either way.
+
+         Originally: The five industries, as five lines of one instrument rather than as
+         five cards. /industries/ is already the card switchboard; repeating it
+         here would make one of the two pages redundant. Read down, the five
+         lines say that this is one shape of problem seen five ways, and the
+         third column tells a reader whose job it is — the review asked for
+         exactly that, by name.
+
+         Title, link and accent are read from the industry page itself wherever
+         one exists, so they cannot drift from the section; the front-matter
+         values are the fallback that keeps the block intact on the localised
+         sites, where the industry pages do not exist as translations. */}}
+    {{ with .Params.industries }}
+    <section class="hp-sec" aria-labelledby="industries-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="industries-heading">{{ $.Params.industries_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.industries_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+
+      {{ with $.Params.industries_columns }}
+      <div class="hp-ledger__head" aria-hidden="true">
+        <span>{{ .name }}</span>
+        <span>{{ .cost }}</span>
+        <span>{{ .owner }}</span>
+      </div>
+      {{ end }}
+
+      <ul class="hp-ledger">
+        {{ range . }}
+        {{ $name := .name }}
+        {{ $url := printf "/industries/%s/" .page }}
+        {{/* The category comes from the industry page itself, so the homepage
+             cannot drift from it. It used to carry its own `accent:` hex per
+             row, which quietly became the source of truth whenever the industry
+             page lacked one — five pre-rebrand hues living in a second place. */}}
+        {{ $cat := "" }}
+        {{ with site.GetPage (printf "/industries/%s" .page) }}
+          {{ $name = .Title }}
+          {{ $url = .RelPermalink }}
+          {{ $cat = .Params.category }}
+        {{ end }}
+        <li class="hp-line hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
+          <a class="hp-row" href="{{ $url }}">
+            <p class="hp-row__name">
+              <span class="hp-row__tick" aria-hidden="true"></span>{{ $name }}
+            </p>
+            <p class="hp-row__cost">{{ .cost }}</p>
+            <p class="hp-row__owner">
+              {{ range .owners }}<span>{{ . }}</span>{{ end }}
+            </p>
+            <p class="hp-row__go">{{ $.Params.industries_cta }} <span aria-hidden="true">&rarr;</span></p>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
 
     {{/* 6. Who you would be working with. Confidence, then the ask — the same
          order the industry pages use, and for the same reason. It goes last

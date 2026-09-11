@@ -42,7 +42,7 @@ hero:
 # Nothing here claims a capability: each line is a sentence about the reader's
 # week, not about the software.
 domains_heading: "Seis frentes em que ele atua"
-domains_intro: "Com os nomes que uma equipe de operações usa. Cada uma abre o mecanismo, não um folheto."
+domains_intro: "Com os nomes que uma equipe de operações usa. Abra a que se parece com a sua semana e ela percorre o trabalho inteiro, do começo ao fim."
 domains_cta: "Ver como"
 domains:
   - page: "cold-chain-safety"
@@ -63,6 +63,32 @@ domains:
   - page: "claims-recovery"
     name: "Sinistros e disputas"
     line: "Um sinistro vence porque montar um leva uma manhã que ninguém teve naquela semana."
+
+
+# Traducción / traduction / tradução de opex_*. Ver content/_index.md:
+# nombra una medida y dónde encontrarla, y no pone ninguna cifra (regla 1).
+opex_heading: "Onde isso aparece nos seus números de operação"
+opex_intro: "Nenhum número aqui é nosso para dar. Cada uma destas é uma linha que você já carrega, com o que a movimenta e onde achar o seu próprio número. Uma página que diz quanto você vai economizar está chutando sobre uma operação que nunca viu."
+opex_col_line: "A linha"
+opex_col_driver: "O que a movimenta"
+opex_col_where: "Onde está a sua"
+opex:
+  - line: "Demurrage e detenção"
+    driver: "Um contêiner parado por um documento que ninguém juntou a ele, enquanto o free time acaba."
+    where: "As linhas de acessórios na fatura da transportadora, contra o relógio de free time da declaração."
+  - line: "Perda de produto e cargas recusadas"
+    driver: "Uma excursão de temperatura que ninguém viu até abrirem a porta, e aí quem decide o valor é o destinatário."
+    where: "A conta de perdas, e os créditos emitidos por entregas recusadas."
+  - line: "Custo de devoluções, e o que o atraso custa"
+    driver: "Uma decisão de classificação que espera. O item vale mais no dia em que volta e menos a cada dia depois."
+    where: "Custo por devolução, contra a diferença entre o que você recuperou e o que havia no primeiro dia."
+  - line: "Frete expresso e ruptura"
+    driver: "Um plano que chegou depois, então o conserto teve de ser comprado em cima da hora."
+    where: "Frete expresso como parcela da rota, e os créditos por serviço não cumprido."
+  - line: "Vazamento de sinistros, e as horas para montar um"
+    driver: "Um prazo de abertura vencido enquanto a prova estava em quatro sistemas, e um processo que leva uma manhã."
+    where: "Sinistros abertos contra sinistros disponíveis, e horas de regulador ou de jurídico por processo."
+opex_note: "Traga uma destas e um mês dos registros por trás dela. Isso basta para saber se os prejuízos que você carrega têm o formato do que isto resolve, e é a única forma honesta de qualquer um de nós descobrir."
 
 figure:
   today_label: "Como se lê hoje"
@@ -153,25 +179,25 @@ product:
 # Um único caso, do início ao fim. Ver o comentário em content/_index.md: cada
 # número aqui é do leitor, não nosso, e nada neste bloco diz que o software
 # registra, desembaraça, classifica ou calcula qualquer coisa.
-scenario_heading: "Dois casos, do sinal à decisão"
-scenario_intro: "Um em que nenhum modelo entra em nenhum passo, e outro em que um modelo lê uma fotografia e você vê exatamente onde a resposta dele deixa de ser aceita no escuro. Os dois são tudo o que o software faz, em ordem, sem pular nada do meio."
-scenario_note: "Os dois são diferentes de propósito. O primeiro é aritmética fixa sobre os seus próprios registros e não há modelo nenhum nele. O segundo põe um modelo em um passo e só em um — ler uma imagem, que é aquilo em que um modelo é realmente bom — e tudo o que vem depois é o documento, a regra e a pessoa. Onde um número não pode ser obtido a partir do que você forneceu, o campo fica vazio em vez de preenchido no chute."
-scenario_label: "Uma declaração retida — nenhum modelo, em passo nenhum"
+scenario_heading: "Dois deles, do início ao fim"
+scenario_intro: "Um contêiner retido no porto, e um refrigerado que esquentou na porta. Cada um desde o momento em que acontece até o momento em que alguém age, em ordem e com o meio incluído."
+scenario_note: "Os dois terminam igual: uma pessoa com nome e a prova já montada na frente dela, no dia em que ainda vale. O primeiro é aritmética sobre os seus próprios registros. O segundo lê uma fotografia e depois faz a mesma coisa com a resposta. Cada número dos dois é seu: a diária do seu acordo, o imposto da sua declaração, os dias dos seus próprios registros."
+scenario_label: "Um contêiner retido no porto, da retenção ao desembaraço"
 scenario:
   - step: "A retenção aparece"
     body: "Uma declaração volta como retida, em exame ou detida, e a contagem de dias retida está acima de zero. Essa combinação é o teste inteiro — é uma regra fixa, não um julgamento, e roda contra todas as declarações e não só contra as que alguém lembrou de conferir."
-  - step: "O custo é contado, não estimado"
+  - step: "O custo é contado pela sua própria diária"
     body: "Os dias que ficou retida, multiplicados pela diária de sobrestadia do seu próprio acordo. Essa é a aritmética inteira. É o número que já está correndo enquanto a declaração espera numa fila que ninguém lê por completo."
   - step: "O documento que falta é nomeado"
     body: "O motivo da retenção e os documentos pendentes saem do registro da declaração e ficam escritos no item, de modo que quem o pega não começa descobrindo o que está errado."
   - step: "Verifica-se quem responde"
     body: "Separadamente, as declarações são lidas em busca de um importador de registro em branco, preenchido com o consignatário, ou com um texto provisório que alguém digitou uma vez. Essas carregam imposto e tributo sem ninguém respondendo por eles, e são levantadas como item próprio com o valor em jogo anexado."
-  - step: "Os dois nunca são somados"
+  - step: "Cada real é contado uma vez"
     body: "A sobrestadia de uma declaração retida e o imposto de uma sem responsável são dinheiros diferentes, e contá-los como um número só é a forma mais comum de inflar esse tipo de total. Ficam separados, de propósito, e há um teste que falha se algum dia se juntarem."
   - step: "Uma pessoa com nome decide"
     body: "O item espera. Aprovar é o que envia qualquer coisa, e quem aprovou, quando, e o que mudou fica registrado. Se parte do que foi redigido não pôde ser executada, o resultado nomeia essa parte em vez de relatar sucesso."
 
-scenario_b_label: "Uma porta de frio — um modelo em um passo, e só em um"
+scenario_b_label: "Um refrigerado que esquentou, da porta ao sinistro aberto"
 scenario_b:
   - step: "A imagem chega"
     body: "Uma foto tirada num coletor na porta, ou um quadro puxado de uma câmera do pátio. Antes de qualquer coisa lê-la, verifica-se que é uma imagem: o cabeçalho é decodificado sozinho, o formato tem de ser um de dois, e o tamanho é limitado em bytes e em pixels. Um PDF, um contêiner de vídeo ou bytes soltos são recusados nesse passo."
@@ -181,12 +207,12 @@ scenario_b:
     body: "O registro da carga, a entrega e a condição em que os documentos dizem que ela deveria estar. A observação é posta contra o que já estava escrito, e não contra um limite que alguém escolheu."
   - step: "O que difere sai com nome"
     body: "O palete, a caixa, a porta do contêiner — com nome, nas palavras que uma pessoa usaria. Não se discute uma nota de gravidade diante de uma transportadora. Uma parte com nome de uma carga com nome, sim."
-  - step: "Um aviso continua sendo um pedido"
+  - step: "O aviso chega a quem responde por ele"
     body: "Um aviso pode ser transmitido para o que estiver inscrito no fluxo de eventos do pátio, e o registro o guarda como o que ele é: solicitado. O que vem depois é decisão de alguém, e o registro diz isso em vez de dar a entender que um movimento foi interrompido."
   - step: "Uma pessoa com nome decide"
     body: "O item espera, igual à declaração retida. Aprovar é o que envia qualquer coisa, e quem aprovou, quando, e o que mudou fica escrito."
-why_heading: "Por que isto não é mais um painel"
-why_intro: "Três coisas decidem se algo acima vale o seu tempo."
+why_heading: "O que muda na semana"
+why_intro: "Três mudanças, e são as que movem as linhas acima."
 why:
   - glyph: "finding"
     title: "Você recebe o achado, não os dados"
@@ -206,18 +232,6 @@ paper:
 # Tradução de proof_* em content/_index.md. Os valores `says:` NÃO são
 # traduzidos: são cadeias literais do código-fonte, e uma citação traduzida
 # deixa de ser uma citação. A linha seguinte diz o que elas significam.
-proof_heading: "O que ele faz quando não sabe"
-proof_intro: "Tudo acima é o software funcionando. A resposta que decide se você poderia colocar o que ele produz diante de uma transportadora ou de um despachante é outra: o que chega quando um registro não pode ser lido, ou quando um sistema não é alcançado. Quatro dessas respostas, nas palavras que ele imprime."
-proof:
-  - when: "A verificação não pôde rodar"
-    body: "Se os registros por trás de um controle não podem ser lidos, isso não é aprovação e também não é reprovação. É uma terceira resposta, e vai para o log de auditoria com estas palavras, não só para uma tela. Às três da manhã ninguém está olhando a tela."
-    says: "This is NOT a finding that … is compliant."
-    gloss: "“Isto NÃO é uma conclusão de que … está em conformidade.”"
-  - when: "O modelo afirmou demais"
-    body: "Cada frase que o modelo escreve é lida antes que qualquer coisa chegue a um documento, e uma afirmação de estar certificado é cortada inteira. Uma regra que só existe nas instruções é um pedido. Esta está no código, e a tentativa fica registrada, porque um modelo que insiste é algo que você vai querer saber."
-    says: "[claim removed: this agent may not assert a compliance or certification status]"
-    gloss: "“[afirmação removida: este agente não pode declarar situação de conformidade ou certificação]”"
-proof_note: "São linhas do código-fonte, não uma descrição dele. O código não é público, então a oferta é a simples: diga qual você quer ver e abrimos o arquivo com você na chamada. É também por isso que uma instalação nova abre com a fila vazia e não com exemplos prontos: ainda não haver o que ler é uma resposta, e existe um teste cuja única função é manter isso assim."
 
 contact:
   heading: "Traga uma rota, um sinistro, ou um mês de faturas."
