@@ -197,6 +197,11 @@
     <!-- Main Content -->
     <div class="pt-20">
         {{ block "main" . }}{{ end }}
+
+        {{/* After the content block, not in <head>: .Content has to have been
+             rendered for the shortcodes inside it to have run, and JSON-LD is
+             position-independent. */}}
+        {{ if .IsPage }}{{ partial "schema-faq.html" . }}{{ end }}
         {{ partial "trust-signals.html" . }}
     </div>
 

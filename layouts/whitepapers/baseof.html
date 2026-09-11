@@ -163,6 +163,11 @@
 
     <div class="pt-20" id="wp-main" tabindex="-1">
         {{ block "main" . }}{{ end }}
+
+        {{/* After the content block, not in <head>: .Content has to have been
+             rendered for the shortcodes inside it to have run, and JSON-LD is
+             position-independent. */}}
+        {{ if .IsPage }}{{ partial "schema-faq.html" . }}{{ end }}
     </div>
 
     {{/* Same call the site's own _default/baseof.html makes, so this section

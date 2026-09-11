@@ -1,0 +1,83 @@
+{{- /*
+  A real FAQPage, derived from the page that was actually rendered.
+
+  THE PROBLEM THIS REPLACES. 47 content files hand-wrote `<script
+  type="application/ld+json">` FAQPage blocks in markdown body. `hugo.toml` sets
+  `markup.goldmark.renderer.unsafe = false` and silences the corresponding
+  warning, so every one of them rendered as the literal string
+  `<!-- raw HTML omitted -->`. Only 5 of 709 pages carried a FAQPage, all via the
+  faq shortcode. ~46 posts' worth of question-and-answer schema was dead code
+  that nobody could see was dead.
+
+  Flipping `unsafe` to true would have fixed it and shipped two other things with
+  it: every other piece of raw HTML in markdown, and ~24 authoring comments of
+  the form `<!-- GEO Optimization: targeting ... -->`, which CONTENT.md rule 10
+  rules out — never publish the mechanics of how the site treats the reader.
+
+  So the schema is derived instead. The blog already follows a strong pattern:
+  `## A question?` immediately followed by `{{< direct-answer >}}`. That pairing
+  is the FAQ; it just was not being stated in a form a machine reads. This reads
+  the rendered HTML back and states it.
+
+  WHY IT READS .Content RATHER THAN FRONT MATTER. The pairs already exist in the
+  prose, in the right order, in 46 files. Asking authors to restate them in front
+  matter would be a second copy to drift, and drift is exactly how the site ended
+  up with 47 blocks nobody knew were dead.
+
+  THE CONTRACT. shortcodes/direct-answer.html emits
+  `.aeo-direct-answer__text`, and headings carry ids from Goldmark. Both are
+  matched below; changing either means changing this.
+
+  Emitted after the content block in baseof, not in <head>, because .Content has
+  to have been rendered for the shortcodes inside it to have run. JSON-LD is
+  position-independent, so this costs nothing.
+
+  Rule 1 applies to what ends up in here as much as to the visible page: this
+  restates the page's own words, so anything untrue in the prose is untrue twice.
+*/ -}}
+{{- $content := .Content -}}
+{{- $pairs := slice -}}
+{{- /* The heading text is `[^<]*`, not `.*?`. With `(?s)` a lazy dot still
+       crosses tags, so `.*?</h2>` happily matched a LATER heading's close tag and
+       swallowed an entire section into one question. Confining the capture to a
+       run without `<` pins each match to a single heading. */ -}}
+{{- $re := `(?s)<h([23])[^>]*id="([^"]*)"[^>]*>([^<]*)</h[23]>\s*<div class="aeo-direct-answer" id="([^"]*)">\s*<p class="aeo-direct-answer__label">[^<]*</p>\s*<div class="aeo-direct-answer__text">(.*?)</div>\s*</div>` -}}
+{{- range $m := findRESubmatch $re $content -}}
+  {{- $q := index $m 3 | plainify | htmlUnescape | chomp -}}
+  {{- $a := index $m 5 | plainify | htmlUnescape | chomp -}}
+  {{- /* Only headings that are actually questions. 70 of the 289 pairs this
+         found first time were statements — "Conclusion", "A worked example: the
+         journey of the Ukrainian corn" — because a direct-answer block sits under
+         plenty of headings that are not questions. A FAQPage whose Question.name
+         is "Conclusion" is worse than no FAQPage: it either fails validation or
+         surfaces as a nonsense question-and-answer pair with our name on it. */ -}}
+  {{- if and (hasSuffix $q "?") (and (gt (len $q) 8) (gt (len $a) 24)) -}}
+    {{- $pairs = $pairs | append (dict "q" $q "a" $a "anchor" (index $m 2)) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $pairs }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": {{ printf "%s#faq" $.Permalink | jsonify | safeJS }},
+  "isPartOf": { "@id": "https://runink.org/#website" },
+  "publisher": { "@id": "https://runink.org/#organization" },
+  "inLanguage": {{ $.Language.Lang | jsonify | safeJS }},
+  "mainEntity": [
+    {{- range $i, $p := . }}
+    {{- if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $p.q | jsonify | safeJS }},
+      "url": {{ printf "%s#%s" $.Permalink $p.anchor | jsonify | safeJS }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $p.a | jsonify | safeJS }}
+      }
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end -}}
