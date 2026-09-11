@@ -79,4 +79,16 @@ next:
   note: "The form opens with the papers already named, so you are not starting by explaining where you came from."
   about: "The whitepapers"
 
+# The same ask, worded for ONE paper rather than for the shelf, and deliberately
+# short. Every paper already closes with its own chapter making the case for a
+# first step — "bring one export, then connect one system, then decide" — so a
+# band repeating that argument under it would be the same content at a lower
+# resolution, which is how a long document turns into a padded one. This is the
+# door, not a second argument: a line and a button. It carries no `body`, and
+# layouts/whitepapers/single.html renders that field only when it is there.
+next_paper:
+  label: "One next step"
+  title: "Half an hour, and we read one of your own exports with you."
+  cta: "Book a consultation"
+
 ---

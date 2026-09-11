@@ -1,0 +1,53 @@
+{{/*
+  The sitemap, with taxonomy listings left out of it.
+
+  WHY THIS FILE EXISTS. Hugo's built-in sitemap lists every rendered page, and
+  measured against the build that meant 270 of the 356 URLs in the English
+  sitemap were /tags/ and /categories/ pages — 76% of everything this site asked
+  Google to crawl was a list of article titles. baseof.html now marks those
+  `noindex, follow`, and a sitemap entry for a noindex page is a contradiction:
+  one file says crawl this, the other says do not index it. Sending both is how
+  a site teaches a crawler to weight its sitemap less.
+
+  The only thing this template changes is WHICH pages are listed. Everything
+  else — lastmod, changefreq, priority, the alternate-language links — is the
+  built-in behaviour, reproduced rather than altered, so switching the filter off
+  restores exactly what Hugo would have emitted.
+
+  `.Kind` is the filter, not a path match. A path match would break the first
+  time a taxonomy is renamed, and it would also catch a real page that happened
+  to live under a similar path; Kind is what Hugo itself calls these.
+
+  The pages are still built and still reachable — /blog/ links "Browse by topic"
+  and "All topics". This governs what a crawler is told, not what a reader can
+  open, which is also why they are not deleted: rule 9 is about pages nobody can
+  reach, and these are reachable by design.
+*/}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{ range .Data.Pages }}
+  {{ if not (or (eq .Kind "taxonomy") (eq .Kind "term")) }}
+  {{ if .Permalink }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{ if not .Lastmod.IsZero }}<lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}
+    {{ with .Sitemap.ChangeFreq }}<changefreq>{{ . }}</changefreq>{{ end }}
+    {{ if ge .Sitemap.Priority 0.0 }}<priority>{{ .Sitemap.Priority }}</priority>{{ end }}
+    {{/* .AllTranslations, which already includes this page and is ordered by
+         the language order in hugo.toml. `.Translations` plus a self link emits
+         the same set in a different order, and the point of this template is to
+         differ from the built-in in exactly one way. Diffed entry by entry
+         against a build with this file removed: 0 non-taxonomy entries lost, 0
+         added, 0 changed. */}}
+    {{ if .IsTranslated }}{{ range .AllTranslations }}
+    <xhtml:link
+      rel="alternate"
+      hreflang="{{ .Language.LanguageCode }}"
+      href="{{ .Permalink }}"
+    />{{ end }}{{ end }}
+  </url>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+</urlset>

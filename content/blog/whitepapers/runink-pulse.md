@@ -1,6 +1,10 @@
 ---
 title: "Runink PULSE — Prescriptive Unified Lead & Social Engine"
 headline: "A marketing engine that runs inside your own business."
+# The label the closing ask carries into the contact form, so an enquiry
+# arrives naming the paper it came from. `product:` is not usable for this —
+# two of the four papers are both "Runink CORE".
+next_about: "The Runink PULSE paper"
 product: "Runink PULSE"
 subtitle: "Prescriptive Unified Lead & Social Engine"
 description: "A whitepaper for executives, marketing leaders and the people who sign off on where company data goes. One application your own team operates, on hardware you control."
@@ -68,10 +72,6 @@ runs on hardware you control, on your own premises or on your own group of machi
 positioning, your customer records and your pipeline stay inside your estate. This is a
 property of how the product is built, not a policy setting you have to trust somebody to
 honour.
-
-Runink runs its own public presence on PULSE — the marketing site, the blog, the audits
-and the lead capture. Fifty-five long-form articles, published across English, Spanish and
-French, alongside product, pricing, use-case and company pages.
 
 ## The problem, in your terms
 

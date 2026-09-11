@@ -1,6 +1,10 @@
 ---
 title: "Runink CORE — The operations layer for companies that keep their own data"
 headline: "One operations layer, on hardware you already own."
+# The label the closing ask carries into the contact form, so an enquiry
+# arrives naming the paper it came from. `product:` is not usable for this —
+# two of the four papers are both "Runink CORE".
+next_about: "The Runink CORE paper"
 product: "Runink CORE"
 subtitle: "The operations layer for companies that keep their own data"
 description: "A whitepaper for executive, technology and risk stakeholders. What Runink CORE is for, who needs it, what it does, and what adopting it involves."

@@ -99,6 +99,37 @@
     </article>
   </div>
 
+  {{/* The door at the foot of the paper.
+
+       A paper is the deepest commitment a reader on this site makes, and until
+       now the only thing at the end of one was the mailto in the footer below.
+       A mailto is a real exit and it is the weakest one available: it opens a
+       mail client, loses the paper the reader was holding, and nothing on our
+       side ever learns which paper produced the enquiry.
+
+       The copy is inherited from the section index — content/blog/whitepapers/
+       _index.md carries the same `next:` block the listing pages use — so there
+       is one place to edit it and it is already per-language. Only `about` is
+       overridden, from this paper's own `next_about`, because the enquiry should
+       name the paper rather than the shelf. `product:` could not do that job:
+       two of the four papers are both "Runink CORE".
+
+       Same ?about= mechanism as partials/next-step.html, and the same reason
+       for it — see that file's header for why the value is visible rather than
+       hidden. */}}
+  {{ with .Parent }}{{ with (or .Params.next_paper .Params.next) }}
+  {{ $about := $.Params.next_about | default $.Params.product }}
+  {{ $url := printf "/?about=%s#contact-form" (urlquery $about) | relLangURL }}
+  <section class="wp-ask" aria-labelledby="wp-ask-head">
+    <div class="wp-ask-inner">
+      <p class="wp-ask-label wp-util" id="wp-ask-head">{{ .label }}</p>
+      <h2 class="wp-ask-title">{{ .title }}</h2>
+      {{ with .body }}<p class="wp-ask-body">{{ . }}</p>{{ end }}
+      <a class="wp-ask-cta wp-util" href="{{ $url }}">{{ .cta }}</a>
+    </div>
+  </section>
+  {{ end }}{{ end }}
+
   <footer class="wp-foot">
     <div class="wp-foot-inner">
       <div>

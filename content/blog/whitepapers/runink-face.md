@@ -1,6 +1,10 @@
 ---
 title: "Runink FACE — Fulfilment Autonomous Claims Engine"
 headline: "The evidence of your next loss is already in your systems."
+# The label the closing ask carries into the contact form, so an enquiry
+# arrives naming the paper it came from. `product:` is not usable for this —
+# two of the four papers are both "Runink CORE".
+next_about: "The Runink FACE paper"
 product: "Runink FACE"
 subtitle: "Fulfilment Autonomous Claims Engine"
 description: "A whitepaper for operations, finance and supply-chain leadership. How Runink FACE reads your operational data, works out what is going wrong, and drafts the fix for a named person to approve."

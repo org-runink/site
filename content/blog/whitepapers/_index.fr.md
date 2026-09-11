@@ -43,4 +43,12 @@ next:
   note: "Le formulaire s'ouvre avec les documents déjà nommés : vous ne commencez pas par expliquer d'où vous venez."
   about: "Les documents"
 
+# Le même appel, rédigé pour UN document et volontairement bref : chaque
+# document se termine déjà par son propre chapitre. Ceci est la porte, pas
+# l'argument.
+next_paper:
+  label: "Une étape de plus"
+  title: "Une demi-heure, et nous lisons avec vous l’un de vos propres exports."
+  cta: "Réserver un entretien"
+
 ---

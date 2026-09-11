@@ -40,4 +40,11 @@ next:
   note: "O formulário abre com os documentos já indicados, então você não começa explicando de onde veio."
   about: "Os documentos"
 
+# A mesma chamada, redigida para UM documento e de propósito curta: cada
+# documento já fecha com o seu próprio capítulo. Isto é a porta, não o argumento.
+next_paper:
+  label: "Um próximo passo"
+  title: "Meia hora, e lemos com você uma das suas próprias exportações."
+  cta: "Agendar uma conversa"
+
 ---
