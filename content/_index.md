@@ -169,6 +169,52 @@ paper:
   url: "/blog/whitepapers/runink-face/"
   note: "The long version: what it reads, what it produces, who approves it and where it runs."
 
+# What it does when it does not know.
+#
+# WHY THIS BLOCK EXISTS. Every block above this one describes the software
+# working. A buyer deciding whether they could put a drafted document in front
+# of a carrier, an insurer or a customs broker is not asking about that case —
+# they are asking what arrives when a record is unreadable, a connector is
+# unconfigured, or the model overreaches. That is the question this page could
+# not answer at all, and it is the one the whole argument rests on.
+#
+# EVERY `says:` VALUE IS A REAL STRING FROM THE SOURCE, not a summary of one.
+# In order: domain_analysis_server.go:166-168 (with the two %s placeholders
+# shown as an ellipsis), the not_executed contract at face.proto:966-983,
+# claims.go:95, and the test name at standard_instance_empty_queue_test.go:27.
+# If one of them is reworded in the code it must be reworded here or dropped —
+# a quotation that has drifted is worse than no quotation.
+#
+# WHAT IS DELIBERATELY NOT HERE. `erp:not_implemented` is the vivid skip token
+# and it is the wrong one to print: it names a capability that is absent, which
+# is rule 2. `email:no_google_connector` makes the identical point about a
+# connector the customer has not configured. The macro-inspection line
+# (extractors/excel.go:104) was drafted into this block and cut for the same
+# reason — extractVBA is unimplemented, so quoting it advertises the gap
+# rather than the discipline.
+#
+# AND NOTHING HERE INVITES THE READER TO GO AND LOOK. Fourteen of the fifteen
+# repositories are private; `site` is the only public one. "Read the code" would
+# be an instruction a reader cannot follow, which is the exact defect this
+# section is about. The note offers the file on the call instead, which is true
+# and is also the most specific reason to book one that this page has.
+proof_heading: "What it does when it does not know"
+proof_intro: "Everything above is the software working. The answer that decides whether you could put its output in front of a carrier or a broker is a different one: what arrives when a record cannot be read, or a system cannot be reached. Four of those, in the words it prints."
+proof:
+  - when: "The check could not run"
+    body: "If the records behind a control cannot be read, that is not a pass and it is not a fail. It is a third answer, and it goes to the audit log in these words rather than only to a screen. At three in the morning nobody is watching the screen."
+    says: "This is NOT a finding that … is compliant."
+  - when: "The step did not happen"
+    body: "An approved action that could not reach one of your systems does not come back as done, and it does not come back as a plain error either. It names the step that did not run, so you are fixing one connection rather than hunting a fault."
+    says: "email:no_google_connector"
+  - when: "The model claimed too much"
+    body: "Every sentence the drafting model writes is read before any of it reaches a document, and a claim to be certified is cut out whole. A rule that lives only in the instructions is a request. This one is in the code, and the attempt is kept, because a model that keeps reaching is something you want to be told about."
+    says: "[claim removed: this agent may not assert a compliance or certification status]"
+  - when: "Nothing is connected yet"
+    body: "On the day it is installed, before it has been pointed at one of your systems, the first thing it shows you is nothing at all. An empty queue is the honest answer when there is nothing yet to read, and there is a test whose only job is to keep it that way."
+    says: "TestStandardInstanceDerivesNoActionCards"
+proof_note: "Those are lines from the source, not a description of it. The code is not public, so the offer is the plain one: name the one you want to see and we will open the file with you on the call."
+
 contact:
   heading: "Bring one lane, one claim, or one month of invoices."
   deck: "A short conversation is usually enough to tell whether the losses you carry are the shape this addresses. If they are not, we will say so."

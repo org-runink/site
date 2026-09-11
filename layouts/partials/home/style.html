@@ -372,6 +372,128 @@
      The counter is drawn rather than left to the list marker so it can sit in
      the margin and take the signal colour without a ::marker rule that Safari
      still handles inconsistently. */
+  /* Who you would be working with.
+     The plate is a ruled card rather than a tinted one: the section's grammar is
+     hairlines and ink, and a filled panel here would read as a testimonial box —
+     which is the one thing this block must not look like, since it is a fact
+     sheet with links rather than a quote. */
+  .hp-lead__plate {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.75rem;
+  }
+  .hp-lead__id {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hp-lead__mark {
+    flex: none;
+    display: inline-flex;
+    color: var(--accent-ink);
+  }
+  .hp-lead__name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .hp-lead__role {
+    margin: 0.25rem 0 0;
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+  }
+  .hp-lead__bio p {
+    margin: 0 0 0.875rem;
+    max-width: 68ch;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .hp-lead__bio p:last-child { margin-bottom: 0; }
+
+  /* The three claims, pulled out of the prose so the set reads straight down.
+     Same grammar as the ledger: a label, then where it comes from. */
+  .hp-lead__creds {
+    list-style: none;
+    margin: 1.75rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+  .hp-lead__cred-key {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-ink);
+  }
+  .hp-lead__cred-line {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .hp-lead__verify {
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  .hp-lead__verify-label {
+    margin: 0 0 0.625rem;
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-3, var(--ink-2));
+  }
+  .hp-lead__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+  .hp-lead__link {
+    font-size: 0.9375rem;
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hp-lead__link:hover { border-bottom-color: currentColor; }
+
+  @media (min-width: 640px) {
+    .hp-lead__creds { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+  }
+
+  @media print {
+    .hp-lead__plate,
+    .hp-lead__creds,
+    .hp-lead__verify { border-color: #999; }
+    .hp-lead__mark { color: #000; }
+    /* A printed link is a dead word unless it carries where it goes. */
+    .hp-lead__link[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; }
+    .hp-lead__link[href^="mailto:"]::after { content: ""; }
+    /* NOT `.hp-lead { break-inside: avoid }`. The plate is a full sheet tall,
+       so an atomic one cannot fit in whatever is left of the page it starts on
+       and moves whole to the next — which printed a sheet that was four fifths
+       empty. It may split; what may not split is a heading from the line under
+       it, or a credential from its key. */
+    .hp-lead__id,
+    .hp-lead__cred,
+    .hp-lead__verify { break-inside: avoid; }
+    .hp-lead__id { break-after: avoid; }
+  }
+
   .hp-steps {
     list-style: none;
     margin: 0;
@@ -419,6 +541,107 @@
     .hp-step::before { top: 6pt; color: #000; }
     .hp-step__title { font-size: 10pt; }
     .hp-step__body { font-size: 9pt; }
+  }
+
+  /* ---- what it does when it does not know -------------------------------
+
+     Four plates. Two columns from 768px, because four full-width rows would add
+     four screens to a page that is already long, and each plate is short enough
+     to read as a unit.
+
+     The quotation is the point of the block, so it is the only thing here that
+     changes ground: a sheet-coloured inset with a signal rule down its left
+     edge, in the utility face. It has to read as something the software printed
+     rather than something we wrote, and a different ground plus a fixed-width
+     face is how the rest of the site already says that.
+
+     No `overflow-x: auto` on the plate. The longest quotation is 72 characters
+     and it is allowed to wrap — a scroll container would hide the end of the
+     sentence on a phone, which for a quotation is the same as truncating it. */
+  .hp-proof {
+    list-style: none;
+    margin: 0;
+    padding: 1.75rem 0 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 768px) {
+    .hp-proof {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.25rem 2.5rem;
+    }
+  }
+  /* Column, with the body growing: grid stretches every item to the row's
+     height, so a flexible body pushes each quotation to the same y as the one
+     beside it. Without it the two plates in a row start wherever their prose
+     happened to end, and four plates at four different heights read as four
+     unrelated things rather than as one instrument. */
+  .hp-proof__item {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .hp-proof__when {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .hp-proof__body {
+    flex: 1 1 auto;
+    margin: 0 0 0.9rem;
+    max-width: 62ch;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .hp-proof__quote {
+    margin: 0;
+    background: var(--sheet);
+    border-left: 2px solid var(--accent-edge);
+    padding: 0.7rem 0.85rem;
+  }
+  .hp-proof__says {
+    display: block;
+    font-family: var(--rk-font-util);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--deep);
+    /* A quotation may break mid-token: these are colon-and-underscore strings
+       with no spaces in them, and on a 320px viewport `email:no_google_connector`
+       is wider than the plate. */
+    overflow-wrap: anywhere;
+  }
+  .hp-proof__gloss {
+    margin: 0.45rem 0 0;
+    font-size: 0.78125rem;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+
+  @media print {
+    /* One column on paper. Two columns of 62ch do not fit a sheet, and the
+       quotations are the part that has to survive a photocopier, so they keep
+       their rule and lose their ground — a grey fill prints as mud. */
+    .hp-proof {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8pt;
+      border-top-color: #000;
+      padding-top: 8pt;
+    }
+    .hp-proof__item { break-inside: avoid; }
+    .hp-proof__when { font-size: 10pt; }
+    .hp-proof__body { font-size: 9pt; margin-bottom: 4pt; max-width: none; }
+    .hp-proof__quote {
+      background: none;
+      border-left: 1.5pt solid #000;
+      padding: 2pt 0 2pt 6pt;
+    }
+    .hp-proof__says { font-size: 8.5pt; color: #000; }
+    .hp-proof__gloss { font-size: 8pt; }
   }
 
   .hp-beats {

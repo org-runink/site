@@ -1,0 +1,62 @@
+{{/*
+  What it does when it does not know.
+
+  WHY THIS BLOCK EXISTS. Every section above this one shows the software
+  working. That is the easy half and every competitor has it. The question a
+  buyer actually has to answer before they could put a drafted document in front
+  of a carrier, an insurer or a broker is the other one: what arrives when a
+  record cannot be read, a system cannot be reached, or the model overreaches.
+  The page had no answer to that at all, and it is the question the whole
+  argument rests on — a tool that quietly fills a gap with a plausible figure is
+  worse than no tool, because the gap could have been filled before filing and
+  an invented figure gets the whole submission challenged.
+
+  THE `says` VALUES ARE QUOTATIONS. Each one is a literal string from the
+  source, not a paraphrase of one, and content/_index.md records which file and
+  line each came from. They are rendered in <code> and in the utility face for
+  the same reason: a reader should be able to see that this is the software's
+  own wording rather than ours. If one of them is reworded in the code it gets
+  reworded here or dropped — a quotation that has drifted is worse than none.
+
+  WHY THE QUOTATIONS ARE NOT TRANSLATED. The software prints English. A Spanish
+  reader shown a Spanish sentence in a code box would be looking at a claim
+  about what the product says, not at what it says. So the three localised
+  homepages carry the English string and a `gloss:` line under it giving the
+  sense in their own language. That is the same decision the leadership partial
+  makes about a URL and an email address.
+
+  WHAT IS DELIBERATELY NOT HERE. No invitation to go and read the code. Fourteen
+  of the fifteen repositories are private and this one is the exception, so
+  "see for yourself" would be an instruction a reader cannot follow — which is
+  the precise failure this section is about. The note under the list offers the
+  file on the call instead. That is true, and it is the most specific reason to
+  book one anywhere on this page.
+*/}}
+{{ with .Params.proof }}
+<section class="hp-sec hp-proof-sec" aria-labelledby="proof-heading">
+  <div class="hp-head">
+    <span class="hp-head__mark" aria-hidden="true"></span>
+    <h2 class="hp-head__label" id="proof-heading">{{ $.Params.proof_heading }}</h2>
+    <span class="hp-head__rule" aria-hidden="true"></span>
+  </div>
+  {{ with $.Params.proof_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+
+  <ul class="hp-proof">
+    {{ range . }}
+    <li class="hp-proof__item">
+      <h3 class="hp-proof__when">{{ .when }}</h3>
+      <p class="hp-proof__body">{{ .body }}</p>
+      {{/* <figure>/<figcaption> rather than a bare <p>: the gloss is a caption
+           on the quotation, and on the three localised pages it is the only
+           part of this plate the reader can read. */}}
+      <figure class="hp-proof__quote">
+        <code class="hp-proof__says" lang="en">{{ .says }}</code>
+        {{ with .gloss }}<figcaption class="hp-proof__gloss">{{ . }}</figcaption>{{ end }}
+      </figure>
+    </li>
+    {{ end }}
+  </ul>
+
+  {{ with $.Params.proof_note }}<p class="hp-caption">{{ . }}</p>{{ end }}
+</section>
+{{ end }}

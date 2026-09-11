@@ -128,6 +128,30 @@ paper:
   url: "/blog/whitepapers/runink-face/"
   note: "A versão longa: o que é lido, o que é produzido, quem aprova e onde roda."
 
+# Tradução de proof_* em content/_index.md. Os valores `says:` NÃO são
+# traduzidos: são cadeias literais do código-fonte, e uma citação traduzida
+# deixa de ser uma citação. A linha seguinte diz o que elas significam.
+proof_heading: "O que ele faz quando não sabe"
+proof_intro: "Tudo acima é o software funcionando. A resposta que decide se você poderia colocar o que ele produz diante de uma transportadora ou de um despachante é outra: o que chega quando um registro não pode ser lido, ou quando um sistema não é alcançado. Quatro dessas respostas, nas palavras que ele imprime."
+proof:
+  - when: "A verificação não pôde rodar"
+    body: "Se os registros por trás de um controle não podem ser lidos, isso não é aprovação e também não é reprovação. É uma terceira resposta, e vai para o log de auditoria com estas palavras, não só para uma tela. Às três da manhã ninguém está olhando a tela."
+    says: "This is NOT a finding that … is compliant."
+    gloss: "“Isto NÃO é uma conclusão de que … está em conformidade.”"
+  - when: "O passo não aconteceu"
+    body: "Uma ação aprovada que não conseguiu alcançar um dos seus sistemas não volta como feita, e também não volta como um erro genérico. Ela nomeia o passo que não rodou, de modo que você conserta uma conexão em vez de caçar um defeito."
+    says: "email:no_google_connector"
+    gloss: "“e-mail: sem conector do Google”"
+  - when: "O modelo afirmou demais"
+    body: "Cada frase que o modelo escreve é lida antes que qualquer coisa chegue a um documento, e uma afirmação de estar certificado é cortada inteira. Uma regra que só existe nas instruções é um pedido. Esta está no código, e a tentativa fica registrada, porque um modelo que insiste é algo que você vai querer saber."
+    says: "[claim removed: this agent may not assert a compliance or certification status]"
+    gloss: "“[afirmação removida: este agente não pode declarar situação de conformidade ou certificação]”"
+  - when: "Ainda não há nada conectado"
+    body: "No dia em que é instalado, antes de ser apontado para qualquer um dos seus sistemas, a primeira coisa que ele mostra é nada. Uma fila vazia é a resposta honesta quando ainda não há o que ler, e existe um teste cuja única função é manter isso assim."
+    says: "TestStandardInstanceDerivesNoActionCards"
+    gloss: "“uma instância padrão não deriva nenhum cartão de ação”"
+proof_note: "São linhas do código-fonte, não uma descrição dele. O código não é público, então a oferta é a simples: diga qual você quer ver e abrimos o arquivo com você na chamada."
+
 contact:
   heading: "Traga uma rota, um sinistro, ou um mês de faturas."
   deck: "Uma conversa curta costuma bastar para dizer se as perdas que você carrega têm a forma do que isto resolve. Se não tiverem, nós dizemos."

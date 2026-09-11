@@ -252,7 +252,26 @@
     </section>
     {{ end }}
 
-    <!-- 6. One next step -->
+    {{/* 5b. The answer to the question the four blocks above cannot answer.
+         Everything up to here is the software working; a buyer who is weighing
+         whether they could put its output in front of a carrier or a broker is
+         asking the other question, and this is the only place the page answers
+         it. It sits after `why` rather than before it because it is evidence for
+         the three claims `why` makes, and evidence read before the claim is just
+         detail.
+
+         Its own partial, unlike the blocks above, because the quotations need
+         markup the front matter cannot carry: <code> for the string, <figure>
+         and <figcaption> for the gloss the localised pages put under it. */}}
+    {{ partial "home/proof.html" . }}
+
+    {{/* 6. Who you would be working with. Confidence, then the ask — the same
+         order the industry pages use, and for the same reason. It goes last
+         because a founder biography is only worth anything to a reader who has
+         already read the argument it is vouching for. */}}
+    {{ partial "home/leadership.html" . }}
+
+    <!-- 7. One next step -->
     {{ if .Params.contact }}{{ partial "home/contact.html" . }}{{ end }}
 
     {{/* Print only. The printed sheet has no site header on it, so without this

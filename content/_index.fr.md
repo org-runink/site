@@ -128,6 +128,31 @@ paper:
   url: "/blog/whitepapers/runink-face/"
   note: "La version longue : ce qui est lu, ce qui est produit, qui approuve et où cela s'exécute."
 
+# Traduction de proof_* dans content/_index.md. Les valeurs `says:` ne sont PAS
+# traduites : ce sont des chaînes littérales du code source, et une citation
+# traduite n'est plus une citation. La ligne qui les suit dit ce qu'elles
+# signifient.
+proof_heading: "Ce qu'il fait quand il ne sait pas"
+proof_intro: "Tout ce qui précède montre le logiciel qui fonctionne. La réponse qui décide si vous pourriez présenter ce qu'il produit à un transporteur ou à un commissionnaire en douane est une autre : ce qui arrive quand un enregistrement est illisible, ou qu'un système reste hors d'atteinte. En voici quatre, dans les mots qu'il imprime."
+proof:
+  - when: "Le contrôle n'a pas pu s'exécuter"
+    body: "Si les enregistrements qui fondent un contrôle sont illisibles, ce n'est ni un succès ni un échec. C'est une troisième réponse, et elle part dans le journal d'audit avec ces mots, pas seulement à l'écran. À trois heures du matin, personne ne regarde l'écran."
+    says: "This is NOT a finding that … is compliant."
+    gloss: "« Ceci n'est PAS une conclusion selon laquelle … est conforme. »"
+  - when: "L'étape n'a pas eu lieu"
+    body: "Une action approuvée qui n'a pas pu atteindre l'un de vos systèmes ne revient pas comme faite, et pas davantage comme une erreur générique. Elle nomme l'étape qui n'a pas tourné, de sorte que vous réparez une connexion au lieu de chercher une panne."
+    says: "email:no_google_connector"
+    gloss: "« courriel : pas de connecteur Google »"
+  - when: "Le modèle en a trop dit"
+    body: "Chaque phrase que le modèle écrit est relue avant que quoi que ce soit atteigne un document, et toute affirmation d'être certifié est retirée entièrement. Une règle qui ne vit que dans les consignes est une demande. Celle-ci est dans le code, et la tentative est conservée, parce qu'un modèle qui insiste est une chose que vous voulez qu'on vous dise."
+    says: "[claim removed: this agent may not assert a compliance or certification status]"
+    gloss: "« [affirmation retirée : cet agent ne peut pas affirmer un statut de conformité ou de certification] »"
+  - when: "Rien n'est encore connecté"
+    body: "Le jour de l'installation, avant d'être pointé vers l'un de vos systèmes, la première chose qu'il vous montre, c'est rien du tout. Une file vide est la réponse honnête quand il n'y a encore rien à lire, et un test n'a pas d'autre rôle que de le maintenir ainsi."
+    says: "TestStandardInstanceDerivesNoActionCards"
+    gloss: "« une instance standard ne dérive aucune carte d'action »"
+proof_note: "Ce sont des lignes du code source, pas une description. Le code n'est pas public : l'offre est donc la plus simple, nommez celle que vous voulez voir et nous ouvrons le fichier avec vous pendant l'appel."
+
 contact:
   heading: "Apportez une ligne, un sinistre, ou un mois de factures."
   deck: "Une courte conversation suffit en général à dire si les pertes que vous portez ont la forme de ce que cela traite. Si ce n'est pas le cas, nous vous le dirons."
