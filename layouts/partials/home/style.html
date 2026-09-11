@@ -626,6 +626,38 @@
      No `overflow-x: auto` on the plate. The longest quotation is 72 characters
      and it is allowed to wrap — a scroll container would hide the end of the
      sentence on a phone, which for a quotation is the same as truncating it. */
+  /* The way out of the leadership plate to /company/. Same shape as .hp-more
+     under the product band — a text link, because the consultation is the
+     page's one call to action. */
+  .hp-lead__more { margin: 1.25rem 0 0; }
+  .hp-lead__more-link {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-edge);
+    padding-bottom: 2px;
+  }
+  .hp-lead__more-link:hover { color: var(--deep); border-bottom-color: var(--deep); }
+
+  @media print {
+    .hp-lead__more { margin-top: 8pt; }
+    /* `[href]` for the same reason .hp-more__link needs it: the blanket
+       `a[href]::after { content: "" }` at the foot of the print block is
+       (0,1,1) and beats a bare class. */
+    .hp-lead__more-link { color: #000; border-bottom-color: #000; font-size: 8pt; }
+    .hp-lead__more-link[href]::after {
+      content: "\00a0(runink.org" attr(href) ")";
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .hp-lead__more-link span { display: none; }
+  }
+
   .hp-proof {
     list-style: none;
     margin: 0;

@@ -49,10 +49,28 @@ author: "Runink"
           icon="clipboard-document-list"
           description="When part of a job does not happen, the result says which part and why. Software that reports success for work it did not do is the failure we designed hardest against."
       >}}
+      {{/* The second sentence used to read "and that is enforced by a check that
+           refuses the code, not by a setting somebody has to remember." That is
+           not supportable for FACE and the site already said so somewhere else:
+           the FAQ on /products/face/ states in its own words that this is "an
+           architectural property rather than a machine-enforced one" and that
+           "no build step blocks an outside model client from being added".
+
+           Checked rather than assumed. workstation/guardrails/forbidden.txt is a
+           33-line denylist, and its enforcement is a per-repo pre-commit hook
+           plus a CI workflow in core and pulse (core/.github/workflows/
+           sovereignty.yml, pulse/.github/workflows/sovereignty.yml). face has
+           neither in CI — only a local hook on one machine, which is not a
+           property of the repository and does not exist for any other clone.
+
+           So the two pages contradicted each other on the load-bearing
+           sovereignty claim, which is the single most quotable inconsistency a
+           security-minded buyer could find on this site. This card now says what
+           the product page says. */}}
       {{< value-card
           title="Your records stay on your hardware"
           icon="scale"
-          description="The models run on machines you control. Nothing is sent to an outside model provider — and that is enforced by a check that refuses the code, not by a setting somebody has to remember."
+          description="The models run on machines you control, and there is one inference endpoint: the one you configure. The reasoning about your files happens where your files are. That is how it is built rather than a switch somebody sets, so ask us to walk the boundary with you rather than taking the sentence."
       >}}
       {{< value-card
           title="We do not claim certifications"

@@ -123,6 +123,23 @@
     </div>
     {{ end }}
 
+    {{/* The way in to /company/, which is the longer version of the same
+         argument — six rules the software follows, each one a thing you can ask
+         to be shown. It carried no inbound link in a 433-page build, which
+         CONTENT.md rule 9 names as a failure mode in its own words, and rule 9
+         names this page specifically.
+
+         Resolved through site.GetPage rather than written as a path, so it
+         appears only where the destination exists in that language. /company/ is
+         English-only, so the three translations render nothing here rather than
+         a live-looking link to an English page. Same rule as the homepage's
+         product link. */}}
+    {{ with site.GetPage "/company" }}
+    <p class="hp-lead__more">
+      <a class="hp-lead__more-link" href="{{ .RelPermalink }}">{{ $lead.more_text | default .Title }} <span aria-hidden="true">&rarr;</span></a>
+    </p>
+    {{ end }}
+
   </div>
 </section>
 {{ end }}

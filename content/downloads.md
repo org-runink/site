@@ -24,8 +24,8 @@ date: "2026-08-11T00:00:00Z"
 
     <p class="text-stone-400 mb-10 max-w-3xl">
       Three separate things live on this page. <strong class="text-stone-200">Runink FACE</strong>
-      is the product — autonomous logistics, with a named person approving every
-      action. <strong class="text-stone-200">Runink PULSE</strong> is a different
+      is the product. It reads your logistics records on its own and drafts the
+      action; a named person approves it. <strong class="text-stone-200">Runink PULSE</strong> is a different
       product for market analysis and marketing, listed here because it ships an
       app too, not because it is part of FACE. The
       <strong class="text-stone-200">sovereign server image</strong> is neither: it
