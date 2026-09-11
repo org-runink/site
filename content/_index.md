@@ -148,9 +148,10 @@ product:
 # agreement, the duty is the one on their entry. And nothing here says the
 # software files, clears, classifies or calculates anything, because it does
 # none of those and the page describes what is there and stops (rule 2).
-scenario_heading: "One entry, from held to decided"
-scenario_intro: "A container is held at the port. This is the whole of what the software does about it, in order, with nothing left out of the middle."
-scenario_note: "Every figure in that sequence is one of yours. The daily rate is the one in your agreement, the duty is the one on your entry, and the days are counted from your own records. Nothing is estimated, and where a figure cannot be worked out from what you supplied, the field is left empty rather than filled with a guess."
+scenario_heading: "Two cases, from signal to decision"
+scenario_intro: "One where no model is involved at any step, and one where a model reads a photograph and you can see exactly where its answer stops being taken on trust. Both are the whole of what the software does, in order, with nothing left out of the middle."
+scenario_note: "The two are deliberately different in kind. The first is fixed arithmetic over your own records and there is no model anywhere in it. The second puts a model at one step and one only — reading a picture, which is the thing a model is genuinely good at — and everything after it is the document, the rule and the person. Where a figure cannot be worked out from what you supplied, the field is left empty rather than filled with a guess."
+scenario_label: "A held entry — no model at any step"
 scenario:
   - step: "The hold shows up"
     body: "An entry comes back held, under examination or detained, and the count of days it has been held is above zero. That combination is the whole test — it is a fixed rule, not a judgement, and it runs against every entry rather than the ones somebody thought to check."
@@ -164,6 +165,21 @@ scenario:
     body: "Demurrage on a held entry and duty on an unattributed one are different money, and counting them as one number is the commonest way this sort of total gets inflated. They stay separate, deliberately, and there is a test that fails if they ever merge."
   - step: "A named person decides"
     body: "The item waits. Approving it is what sends anything, and who approved it, when, and what they changed is written down. If part of what was drafted could not be carried out, the result names that part rather than reporting success."
+
+scenario_b_label: "A cold-chain door — a model at one step, and only one"
+scenario_b:
+  - step: "The frame arrives"
+    body: "A photograph taken on a handheld at the door, or a still pulled off a yard camera. Before anything reads it, it is checked to be an image: the header is decoded on its own, the format has to be one of two, and the size is capped both in bytes and in pixels. A PDF, a video container or raw bytes are refused at that step."
+  - step: "A model reads it, on your hardware"
+    body: "The frame is reduced to a size the model can take and read by a vision model running on machines you control. What comes back is a written observation tied to the exact frame it was read from, so the sentence and the evidence for it stay together."
+  - step: "The paperwork is read beside it"
+    body: "The consignment record, the handover, and the condition the documents say the load should be in. The observation is set against what was already written down rather than against a threshold somebody picked."
+  - step: "What differs comes out named"
+    body: "The pallet, the crate, the container door — named, in the words a person would use. A severity score cannot be argued with in front of a carrier. A named part of a named consignment can."
+  - step: "A cue stays a request"
+    body: "A cue can be broadcast to whatever is subscribed to the yard's event stream, and the record keeps it as what it is: requested. What happens next is somebody's decision, and the record says so rather than implying a movement was stopped."
+  - step: "A named person decides"
+    body: "The item waits, exactly as the held entry does. Approving it is what sends anything, and who approved it, when, and what they changed is written down."
 
 why_heading: "Why this is not another dashboard"
 why_intro: "Three things decide whether any of the above is worth your time."
