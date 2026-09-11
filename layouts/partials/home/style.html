@@ -728,9 +728,20 @@
     line-height: 1.65;
     color: var(--ink-2);
   }
+  /* A RECESSED surface, not a raised one. This was var(--sheet), which is the
+     raised plane — and a raised plane is the wrong metaphor for a quotation
+     anyway. Measured, because the eye is a bad judge at this range: on the dark
+     ground --sheet stands off the page at 1.16:1 and --sunk at 1.34:1. Neither
+     is much, which is the honest reading; a quarter more separation is still the
+     difference between a plate and a slightly different patch of nothing, and
+     the accent rule was doing the whole job alone.
+
+     Checked on both grounds rather than one. The first version of this block was
+     designed and screenshotted on the sheet ground only, and on a phone in dark
+     mode the plates read as flat panels of error text. */
   .hp-proof__quote {
     margin: 0;
-    background: var(--sheet);
+    background: var(--rk-sunk);
     border-left: 2px solid var(--accent-edge);
     padding: 0.7rem 0.85rem;
   }

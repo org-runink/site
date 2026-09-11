@@ -234,16 +234,10 @@ proof:
   - when: "The check could not run"
     body: "If the records behind a control cannot be read, that is not a pass and it is not a fail. It is a third answer, and it goes to the audit log in these words rather than only to a screen. At three in the morning nobody is watching the screen."
     says: "This is NOT a finding that … is compliant."
-  - when: "The step did not happen"
-    body: "An approved action that could not reach one of your systems does not come back as done, and it does not come back as a plain error either. It names the step that did not run, so you are fixing one connection rather than hunting a fault."
-    says: "email:no_google_connector"
   - when: "The model claimed too much"
     body: "Every sentence the drafting model writes is read before any of it reaches a document, and a claim to be certified is cut out whole. A rule that lives only in the instructions is a request. This one is in the code, and the attempt is kept, because a model that keeps reaching is something you want to be told about."
     says: "[claim removed: this agent may not assert a compliance or certification status]"
-  - when: "Nothing is connected yet"
-    body: "On the day it is installed, before it has been pointed at one of your systems, the first thing it shows you is nothing at all. An empty queue is the honest answer when there is nothing yet to read, and there is a test whose only job is to keep it that way."
-    says: "TestStandardInstanceDerivesNoActionCards"
-proof_note: "Those are lines from the source, not a description of it. The code is not public, so the offer is the plain one: name the one you want to see and we will open the file with you on the call."
+proof_note: "Those are lines from the source, not a description of it. The code is not public, so the offer is the plain one: name the one you want to see and we will open the file with you on the call. It is also why a fresh install opens on an empty queue rather than on worked examples: nothing to read yet is an answer, and there is a test whose only job is to keep it that way."
 
 contact:
   heading: "Bring one lane, one claim, or one month of invoices."
