@@ -171,40 +171,61 @@
   .hp-sec { margin-bottom: 3.5rem; }
   @media (min-width: 768px) { .hp-sec { margin-bottom: 5rem; } }
 
+  /* A SECTION HEAD AT SECTION-HEAD SCALE.
+
+     This was 0.9375rem uppercase tracked — which is --rk-t-label, the token
+     DESIGN.md reserves for "eyebrows, chips, table heads". Every section on the
+     page was therefore announced in the same size as a column head, so a reader
+     scrolling had one 60px headline at the top and then four thousand pixels
+     with no typographic event in them. The page read as one long document
+     because nothing in it was allowed to be bigger than anything else.
+
+     --rk-t-2 is 2.25rem display 800 and its stated job is "Section head". The
+     system already had the answer; the homepage was not using it. DESIGN.md §3:
+     "Hierarchy is scale and rule." Both are here and neither is colour, which is
+     the same section's next sentence.
+
+     The three parts now stack instead of sitting on one line: the accent mark
+     above, the head, the hairline under. max-width is in ch and deliberately
+     narrow — "display stacks narrow and dense, the tight condensed headline
+     block is the page's silhouette" — so a long head breaks into two or three
+     lines rather than running to the margin. That is the shape, not a defect.
+
+     It stays under .hp-h1's clamp at every viewport, so the hero is still the
+     one display line on the page. */
   .hp-head {
-    display: flex;
-    align-items: center;
-    gap: 0.875rem;
+    display: block;
     margin: 0 0 1.5rem;
   }
 
   .hp-head__mark {
-    flex: none;
-    width: 1.5rem;
+    display: block;
+    width: 2.25rem;
     height: 3px;
     border-radius: 2px;
     background-color: var(--accent-edge);
+    margin-bottom: 1rem;
   }
 
-  /* Must be allowed to shrink and wrap, or the longest heading sits at its full
-     single-line width and puts a horizontal scrollbar on the whole page at
-     360px. */
   .hp-head__label {
-    flex: 0 1 auto;
-    min-width: 0;
+    display: block;
     font-family: var(--font-display);
-    font-size: 0.9375rem;
+    font-size: clamp(1.625rem, 3.2vw, 2.25rem);
     font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-2);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--ink);
     margin: 0;
+    max-width: 22ch;
   }
 
   .hp-head__rule {
-    flex: 1 1 auto;
+    display: block;
+    width: 100%;
     height: 1px;
     background-color: var(--rule);
+    margin-top: 1.25rem;
   }
 
   .hp-intro {
@@ -576,6 +597,54 @@
      scanned and tapped, and a 44px row beats a 17px anchor on a phone. The
      hover moves the ground rather than underlining, so nothing here competes
      with the two call-to-action buttons in the hero above it. */
+  /* ---- banded sections: depth by a change of ground ----------------------
+
+     DESIGN.md §6, on elevation: "Everything else expresses depth with a rule and
+     a change of ground, because that is the part that survives being printed."
+     Two shadows exist and they are for things that genuinely float. This is the
+     sanctioned device and the page was not using it — every section sat on the
+     same canvas, so nine sections had one visual weight between them.
+
+     Two sections are banded, and only two. They are the ones a reader is asked
+     to stop and work through: the operating lines, and the two cases walked end
+     to end. Banding more would make the alternation itself the rhythm, which is
+     wallpaper rather than emphasis.
+
+     An INSET band at radius 12px, not a full-bleed one. --rk-r-4 is 12px and
+     DESIGN.md names it "bands" in as many words; nothing on this site goes
+     above it. A full-bleed band would also have to break out of .hp-wrap's
+     max-width, which is a layout change for a decorative gain.
+
+     The band takes --rk-sheet, the raised surface, so it reads as material laid
+     ON the page rather than cut into it. On paper it loses the fill and keeps a
+     hairline: a grey box prints as mud, and the ground change is the one part
+     of this that does not survive a photocopier. */
+  .hp-band {
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 0.75rem;
+    padding: 2rem 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .hp-band { padding: 2.75rem 2.5rem; }
+  }
+  /* The head's own bottom rule would sit a hairline inside a bordered box and
+     read as a mistake, so inside a band the head keeps its mark and loses its
+     rule. */
+  .hp-band .hp-head__rule { display: none; }
+  .hp-band .hp-head { margin-bottom: 1.25rem; }
+
+  @media print {
+    .hp-band {
+      background: none;
+      border: 0;
+      border-top: 1.5pt solid #000;
+      border-radius: 0;
+      padding: 8pt 0 0;
+    }
+    .hp-band .hp-head__rule { display: block; }
+  }
+
   /* ---- where it shows up in the operating numbers -----------------------
 
      Three columns of one instrument, the same grammar as the industries ledger:
@@ -1397,7 +1466,18 @@
        re-binding of the signal and category primitives, and that is one
        indirection too many to rely on for the page's loudest furniture. */
     .hp-head__mark { background: var(--rk-rule-strong) !important; }
-    .hp-head__label, .hp-row__owner { color: var(--rk-text); }
+    /* On paper the head comes back down: a 36px section head costs a third of
+       a sheet and the leave-behind is seven of them. 13pt keeps the jump
+       over 9pt body without spending the page on it. */
+    .hp-head__label {
+      color: var(--rk-text);
+      font-size: 13pt;
+      letter-spacing: 0;
+      max-width: none;
+    }
+    .hp-head__mark { margin-bottom: 5pt; width: 16pt; height: 2pt; }
+    .hp-head__rule { margin-top: 6pt; }
+    .hp-row__owner { color: var(--rk-text); }
     .hp-head__rule { background: var(--rk-rule-strong) !important; }
     .hp-row__tick { background: var(--rk-rule-strong) !important; }
     .hp-row__owner span::before { background: var(--rk-rule-strong) !important; }
