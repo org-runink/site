@@ -240,6 +240,63 @@ jobs:
       - name: Check rendered output
         run: node scripts/check-rendered-output.mjs docs
 
+      # Rule 3 of CONTENT.md, the plain-language floor. That document has listed
+      # this in "the check, end to end" since it was written, and said in the
+      # same breath that everything in that list also runs here. It did not.
+      # Flesch reading ease over body copy with the chrome stripped -- the
+      # header and footer are the same words on 715 pages, and scoring them
+      # scores the navigation rather than the argument.
+      #
+      # WHAT -exclude IS NOT. Every page is still measured and still printed in
+      # this log with its score; the flag decides only which rows may break the
+      # build, and every ungated row is marked "~" so the list of what is not
+      # enforced sits in front of whoever reads the run. The floor is NOT
+      # lowered to fit the worst page: 45 is the number CONTENT.md states, the
+      # worst GATED page today is /blog/procurement-spend-analytics-visibility/
+      # at 49.3, and those 4.3 points are the headroom a regression must cross.
+      # 86 of the 200 pages with body copy are gated.
+      #
+      # Two unrelated reasons share that one list. They are not the same reason
+      # and the difference is the whole judgement:
+      #
+      #   /tags/ /categories/ -- the measurement is INVALID here, not failing.
+      #     These are generated listings. Their "sentences" are link titles
+      #     terminated by </li>, so the score measures title vocabulary (~2.2
+      #     syllables a word, no connective prose) and nothing anyone reads as
+      #     an argument. /tags/ scores 19.3 and always will, however well the
+      #     site is written. They also carry `noindex, follow` and appear
+      #     nowhere in en/sitemap.xml, so nobody arrives at one from search.
+      #
+      #   /es/ /fr/ /pt/ -- CONTENT.md rule 3 ALREADY says the other languages
+      #     are not scored, because Flesch is calibrated on English and returns
+      #     nonsense elsewhere; translations are governed by rules 1, 2 and 12
+      #     instead. The tool was measuring them anyway, against the rule it
+      #     implements. The trailing slash is load-bearing: "/es/" is the
+      #     Spanish site and does not match an English page whose name merely
+      #     starts with those letters.
+      #
+      #   /license/ /privacy/ -- NEITHER of the above. This is a waiver, and a
+      #     waiver of real debt. Both are indexed English prose, both are in
+      #     en/sitemap.xml, and this site's own /luna-privacy/ scores 61.6 --
+      #     which is the proof that a policy page clears 45 when somebody
+      #     writes one in plain language. These two score 21.4 and 26.5 because
+      #     nobody has. They are named here so the gate can start protecting
+      #     the other 86 pages now, rather than waiting on a content rewrite
+      #     that is not this workflow's to do. Rewrite them and delete them
+      #     from this line. Do not add a third page to it without an argument
+      #     of the same kind.
+      #
+      # Nothing here reaches the network -- and the STEP cannot either. There
+      # is no go.mod anywhere in this repo and both Go files are stdlib-only
+      # `//go:build ignore` scripts, so GOTOOLCHAIN=local (never fetch another
+      # Go) and GOPROXY=off (never reach a module proxy) cost nothing and close
+      # the only two ways `go run` could dial out.
+      - name: Check plain-language floor
+        env:
+          GOTOOLCHAIN: local
+          GOPROXY: "off"
+        run: go run readability.go -min 45 -exclude /tags/,/categories/,/es/,/fr/,/pt/,/license/,/privacy/ docs
+
       # Two navigation controls pointing at the same page is one control and one
       # distraction, and the redundancy is invisible to anyone reading one config
       # block at a time. The header had grown two exact duplicates this way: a
@@ -252,6 +309,38 @@ jobs:
       # template rather than by hugo.toml.
       - name: Check navigation destinations are distinct
         run: node scripts/check-nav-distinct.mjs docs
+
+      # Rule 8 of CONTENT.md, and the other gate that document promised and this
+      # file never had. check-nav-distinct above asks whether two nav entries
+      # go to the SAME page; this asks whether a nav entry goes to ANY page.
+      #
+      # Both halves, because a browser checks both and a build checks neither:
+      # the path has to exist in what was just built, and a link carrying a
+      # "#fragment" has to land on a page that really renders an element with
+      # that id. Hugo does not resolve fragments, so a dead one leaves the
+      # build green -- the anchor is well-formed, the server returns 200, the
+      # page scrolls nowhere and nothing anywhere says a word. Four of the
+      # seven header links on runink.org were dead this way for weeks.
+      #
+      # It is here because of 12 Sep 2026: a nav change pointed 136 rendered
+      # links at three pages that were never built, every check in this file
+      # passed, and it was caught only because somebody ran this by hand. With
+      # the workflow as it stood it would have shipped to gh-pages.
+      #
+      # Chrome only -- header nav, dropdowns, header/footer buttons, language
+      # switcher -- which is the blast radius that justifies a hard gate: one
+      # wrong entry in hugo.toml breaks the same link on all 715 pages at once.
+      # Body copy is deliberately NOT gated; an editorial typo in one blog post
+      # belongs in review, not across the whole deploy. Run `go run
+      # linkcheck.go --all docs` by hand for that.
+      #
+      # External links are listed, never fetched, so this needs no network; the
+      # pinned Go env above the readability step explains the two variables.
+      - name: Check internal links and fragments resolve
+        env:
+          GOTOOLCHAIN: local
+          GOPROXY: "off"
+        run: go run linkcheck.go docs
 
       - name: Guard published output
         run: |
