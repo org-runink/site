@@ -1,4 +1,116 @@
 {{ define "main" }}
+{{/*
+  THE HEADLINE IS A SOLID FILL, NOT A GRADIENT, AND THAT IS A PRINT FIX.
+
+  It used to be `text-transparent bg-clip-text bg-gradient-to-r from-signal-fill
+  to-signal-fill-hover`: the ink of the word PRICING was a background, and the
+  glyphs were holes punched in it. Browsers drop backgrounds when printing by
+  default, so the H1 of the page an executive prints and carries into a meeting
+  came out as nothing at all — a blank band above "Transparent Pricing Models".
+
+  HANDOFF-restyle-decisions.md §A4 names this exact construct, and CONTENT.md
+  rule 6 says colour may never be the only channel. layouts/_default/company.html
+  had already solved it and its header says so while noting that /pricing/ still
+  had the bug; this is that fix, done the same way — the same weight, size and
+  italic, with `text-signal` as a solid fill. tokens.css re-values `--rk-signal`
+  to #000000 inside @media print, so on paper the line lands as solid black ink
+  rather than as an absence.
+
+  `drop-shadow-lg` went with it. A drop shadow under display type is a device
+  for a black canvas; the page has been on the light sheet since the restyle,
+  and the shadow contributes nothing on screen and nothing on paper.
+
+  THE PRINT RULE BELOW. The scenarios section in content/pricing.{md,es,fr,pt.md}
+  is a block of links, and CONTENT.md rule 6 asks that links which matter keep
+  their destination on paper — otherwise the reader is holding a page of
+  underlined words. There is no site-wide rule for that (assets/css/main.css
+  does it per-component, for .rk-next), so the section carries its own, scoped
+  to .rk-domains so it cannot reach the header, the footer or the FAQ.
+*/}}
+{{/*
+  THE SECOND PRINT RULE IS THE FIXED HEADER, and it is here for the same
+  reason. CONTENT.md rule 6 names it in as many words: "no fixed-position
+  chrome, which otherwise reprints on every sheet. The site-wide layout wraps
+  the header in <div class='fixed top-0 left-0 right-0 z-50'>, so a print rule
+  has to unset it." Nothing unsets it, so a printed /pricing/ carried the mark,
+  the word Runink and a hamburger button across the top of all fifteen sheets.
+
+  This belongs in assets/css/main.css as one rule for all 700 pages, and it is
+  page-local only because this change is not allowed to touch that file. It is
+  print-only and idempotent: a site-wide fix landing later sets the same
+  property to the same value.
+*/}}
+<style>
+  @media print {
+    .rk-domains a[href^="/"]::after {
+      content: " \2014 runink.org" attr(href);
+      font-style: normal;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    /* Two elements, not one: the wrapper is `position: fixed` and so is the
+       <header> inside it, and they are not parent and child — a
+       .mobile-menu-wrapper sits between them. Unsetting only the wrapper
+       leaves the header pinned and the band reprints exactly as before, which
+       is what the first attempt at this rule did. */
+    body > div.fixed,
+    body > div.fixed header.fixed {
+      position: static !important;
+    }
+
+    /* CONTENT.md rule 6: "nothing clipped by overflow". A licence card is
+       taller than a sheet of A4, so it always crosses a page boundary, and
+       `overflow: hidden` — which exists to keep the card's fill inside its
+       2.5rem radius on screen — turns that boundary into a guillotine. A print
+       of this page came out with the Lite card blank and the Dedicated card
+       reduced to its name: no prices, no rows, no checklist. Nothing reported
+       it, because on screen the cards are perfect. */
+    .rk-plan {
+      overflow: visible !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      break-inside: avoid;
+    }
+
+    /* And then it has to FIT. At A4 with 12mm margins the printable column is
+       about 1032px tall and a licence card measured 1053 — 21px too tall to
+       ever sit on one sheet, so `break-inside: avoid` was unsatisfiable and
+       every card broke anyway, one of them across its own name. The card's
+       32px screen padding is the slack: 12pt on each side brings a card to
+       roughly 1000px, and all three then print whole, one to a sheet. */
+    .rk-plan > div {
+      padding: 12pt !important;
+    }
+
+    /* The last 20px came off the two 48px gaps inside the card — under the
+       strategy panel and under the checklist. Left alone, the card cleared the
+       page by so little that its call to action was pushed onto a sheet of its
+       own, which is how "START WITH LITE" came to be page five. */
+    .rk-plan .mb-12 {
+      margin-bottom: 16pt !important;
+    }
+  }
+</style>
+{{/*
+  THE EYEBROW AND THE DECK ARE TRANSLATED HERE, AND WERE NOT.
+
+  Both were hardcoded English inside the template, so /es/pricing/, /fr/pricing/
+  and /pt/pricing/ each opened on "Investment" and "Transparent Pricing Models"
+  while every other word on the page was in the reader's language. CONTENT.md
+  rule 12 has no language exemption, and a string a reader can see is a string a
+  reader can see whether it came from a content file or a layout.
+
+  They stay in the template rather than moving to front matter because they are
+  furniture — the same two lines on all four pricing pages — and moving them
+  would mean four content files that can drift apart. Any further language
+  inherits English until its row is added.
+*/}}
+{{ $eyebrow := "Investment" }}
+{{ $deck := "Transparent Pricing Models" }}
+{{ if eq .Language.Lang "es" }}{{ $eyebrow = "Inversión" }}{{ $deck = "Modelos de precios transparentes" }}{{ end }}
+{{ if eq .Language.Lang "fr" }}{{ $eyebrow = "Investissement" }}{{ $deck = "Des tarifs transparents" }}{{ end }}
+{{ if eq .Language.Lang "pt" }}{{ $eyebrow = "Investimento" }}{{ $deck = "Modelos de preços transparentes" }}{{ end }}
 <div class="bg-stone-950 min-h-screen relative overflow-hidden">
     {{ partial "background-effects.html" . }}
 
@@ -6,14 +118,14 @@
         <div class="text-center mb-16 flex flex-col items-center">
             <div
                 class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-signal/30 text-signal text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
-                Investment
+                {{ $eyebrow }}
             </div>
             <h1
-                class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
+                class="text-6xl md:text-7xl lg:text-[80px] font-black text-signal mb-2 tracking-tighter uppercase italic leading-[0.9]">
                 {{ .Title }}
             </h1>
             <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mb-10 mt-6 max-w-3xl">
-                Transparent Pricing Models
+                {{ $deck }}
             </div>
         </div>
         <div class="!max-w-none text-slate-300">
