@@ -53,8 +53,19 @@
       <rect x="{{ sub $x 4 }}" y="{{ sub $y 4 }}" width="24" height="15" rx="7.5"
             style="fill:none;stroke:var(--accent-edge);stroke-width:1.4"/>
         {{ else }}
+      {{/* stroke-width 2.4, not 1.7. An exception that was never sampled was
+           drawn at 1.7 — the same weight as the 1.6 hairline every ordinary
+           unread record uses — so the one mark carrying half the argument was
+           indistinguishable from the hundred around it. This panel's whole
+           second sentence is "the records that differ are already in the
+           field"; if the reader cannot see them there, only the caption is
+           making that point and the picture is not.
+
+           It stays HOLLOW, because hollow means nobody read it and that is the
+           fact. What changes is only that it is unmistakably a different KIND
+           of mark from its neighbours, which is what it is. */}}
       <rect x="{{ add $x 0.6 }}" y="{{ add $y 0.6 }}" width="14.8" height="5.8" rx="2.9"
-            style="fill:none;stroke:var(--accent-edge);stroke-width:1.7"/>
+            style="fill:none;stroke:var(--accent-edge);stroke-width:2.4"/>
         {{ end }}
       {{ else if $isRead }}
       <rect x="{{ $x }}" y="{{ $y }}" width="16" height="7" rx="3.5" style="fill:var(--deep)"/>
