@@ -697,28 +697,52 @@ customer.
 telemetry records and system configuration, each stated in plain English and
 naming the source it came from.
 
-**Predictive maintenance.** When a piece of equipment is likely to need
-attention, and what kind, worked out from its sensor readings, its
-maintenance history and its vehicle-tracking data.
+**Equipment condition.** Where a feed states its own alarm or replacement
+threshold for a channel — a vibration alarm on a drive motor, the percentage
+a battery is replaced below — a straight line through the first and last
+reading gives the moment that stated number would be reached. Both readings
+are printed on the card, so the arithmetic can be redone by hand. Where the
+feed states no such number, no card is raised: a vibration figure that rose
+against nothing is a reading rather than an exception. What the card reports
+is the moment a straight line meets a number somebody else stated, and it
+says that in those words rather than dressing it as a probability.
 
 **Reverse logistics.** Returns, warranty claims, refurbishment and the
 decisions that keep material in use rather than in a skip.
 
 **Sensor readings.** Actions derived from measurement records —
-temperature, humidity, vibration, location, speed, fuel, engine
-diagnostics — covering refrigerated-cargo integrity, vehicle monitoring,
-and dangerous-goods and weight compliance. Read the next paragraph with it,
-because the word *live* is load-bearing and this paper is not claiming it.
+temperature, return-air temperature, setpoint, humidity, door state,
+vibration, fuel, battery and position — covering refrigerated-cargo
+integrity, vehicle monitoring, and dangerous-goods and weight compliance.
 
-**What there is no path for.** FACE has **no live sensor or telemetry
-integration**, and no connector for a warehouse, transport, order or yard
-management system as such. Those system types exist in the connection
-registry and resolve to a placeholder that deliberately fails, so that the
-bundled example telemetry can be read during a demonstration. The readings
-this agent works on have to arrive the way everything else does — as a table
-in a database you connect, or an export your monitoring platform already
-produces. That is a real path and a common one. It is not a sensor feed, and
-an operator should not be told it is.
+**Where those readings come from.** FACE reads the wires itself. It
+subscribes to an MQTT broker, the message bus that pallet probes, reefer
+controllers and dock sensors publish to. It runs inventory rounds against
+RFID readers in LLRP, the readers' own protocol. It reads a fixed-probe
+gateway register by register over Modbus-TCP. It reads a telematics account
+— your vehicle-tracking provider — through that provider's own interface,
+Samsara and Geotab, and a tracker's position sentences in the NMEA format
+road and marine trackers emit.
+
+All five land in one record: what was measured, by which device, at what
+instant, one metric, one value, one unit, and the band the source itself
+stated for that channel. The band is what makes a breach arguable, so it is
+never assumed. A Samsara reefer's alarm high and low arrive as that band and
+the record names the two fields they came from. Where a feed states no band,
+the readings stand and nothing is called a breach.
+
+A vehicle-tracking account is asked for position, engine state and odometer,
+and — where a reefer package sits on that account — return air, setpoint,
+alarm high and low, humidity, fuel, battery and door. Eight metric names
+carry every reading that path produces: position, temperature, return-air
+temperature, setpoint, humidity, door, fuel and battery. Odometer and
+ignition travel beside a position as text for a person to read, and no
+calculation is done on them.
+
+The other route is the one everything else uses: the export your monitoring
+platform already produces, or the table it already writes to. Both are real,
+and which one you take is a question about your own estate rather than about
+the software.
 
 **Route Twin.** An origin-to-destination road journey, with distance,
 duration and the route line itself, obtained from the routing provider you
@@ -795,8 +819,9 @@ scheduled transit, the loads affected and the underlying cause where the
 record names one. Where the cause is not recorded, the card says *not
 recorded* rather than supplying a likely one.
 
-**Maintenance.** Equipment identifier, how likely a failure is, what kind of
-failure and the intervention.
+**Maintenance.** Equipment identifier, the limit the feed states for that
+channel, when a straight line through the readings reaches it, the
+intervention, and what stops running if nobody makes it.
 
 **Route.** An origin-to-destination journey with distance, duration and the
 route line. No cost, and no saving.
@@ -1176,18 +1201,37 @@ Web pages, read by a browser the platform drives itself. Documents and
 images, with the text read out of scans and photographs. Source-code
 repositories. Live video from camera feeds.
 
-### What is deliberately not on that list
+### Logistics systems of record
 
-No warehouse, transport, order or yard management system, and no sensor or
-RFID feed. Those types can be named in a connection and they resolve to a
-placeholder that fails on purpose, so that bundled example data can be read
-during a demonstration. They are absent from the list above because listing
-them would be the single most misleading line this paper could contain.
+Order, warehouse, transport, yard and inventory management systems, read
+over the interface each one publishes, with an address and a credential you
+issue. Each type reads what belongs to it: orders from an order system,
+stock from a warehouse or inventory system, shipments from a transport
+system, appointments from a yard system, and receipts from a single
+warehouse.
 
-The honest path for that material is the third door described later: the
-export your warehouse or telemetry platform already produces, or the table it
-already writes to. That works, it is common, and it does not need a connector
-with a logo on it.
+The rows come back carrying the vendor's own field names and the vendor's
+own values. Nothing is renamed into a house schema on the way in, because
+software that decided what an order really looks like would be inventing
+your records rather than reading them.
+
+### Sensor and telemetry sources
+
+A sensor bus, by subscribing to the MQTT broker your probes and reefer
+controllers already publish to. RFID readers, in LLRP, the readers' own
+protocol. A fixed-probe gateway over Modbus-TCP — the temperature stems in a
+cold room, the humidity, shock and door channels wired onto the same rail —
+read register by register. Vehicle tracking, through the provider's own
+interface: Samsara and Geotab. A tracker's position sentences, in the NMEA
+format road and marine trackers emit.
+
+Each of those arrives in the record described earlier: one metric, one
+value, one unit, and the band the source itself stated.
+
+The third door described later stays open beside all of it: the export your
+warehouse or telemetry platform already produces, or the table it already
+writes to. It needs no credential to a device and no change window, and it
+is a working connection this week.
 
 ### Four properties worth noting
 
