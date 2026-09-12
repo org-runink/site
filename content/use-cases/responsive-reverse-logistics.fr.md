@@ -67,6 +67,17 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
                 L'appel de triage, lui, n'envoie rien. Il renvoie une orientation et s'arrête : aucun registre de stock n'est écrit, aucun avoir n'est émis, aucune validation n'est conservée. Agir sur une action rédigée relève d'une autre partie de FACE, et là la décision est enregistrée au nom d'une personne avant que quoi que ce soit ne s'exécute ; et là où une étape derrière elle n'a pas encore d'implémentation, l'écriture dans un ERP en étant l'exemple honnête, la réponse nomme l'étape qui n'a pas eu lieu au lieu de déclarer le mouvement accompli.
             </p>
         </div>
+        <div>
+            <h2 id="qui-s-en-occupe" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qui S'En Occupe</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois bureaux, et ce que chacun a sur les bras aujourd'hui.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le responsable du quai de retours.</strong> Aujourd'hui il inscrit la note d'état et saisit la valeur, puis le colis rejoint le parc avec le reste de la semaine. Ce qui change, c'est que la note qu'il a inscrite est l'entrée d'une réponse au scan : une voie, un chiffre de récupération et un chiffre de réparation, le colis encore entre ses mains. Une note que la politique ne reconnaît pas revient comme un refus, donc un colis douteux a l'air douteux.</li>
+                <li><strong class="text-stone-200">Directeur des opérations.</strong> Aujourd'hui le tri se fait à l'œil et par habitude, l'après-midi où il y en a une. De la bonne marchandise part à la casse parce que la file était longue. Ce qui change, c'est que la même note produit la même voie un mardi calme et le lundi après Noël, si bien que la seule variation qui reste est dans la notation &mdash; et cela, on peut le former, l'échantillonner et l'auditer.</li>
+                <li><strong class="text-stone-200">Finance.</strong> Aujourd'hui l'avoir est émis des semaines après le retour de la marchandise, et ce que vous avez récupéré face à la valeur à laquelle elle était inscrite est un chiffre que personne ne sait décomposer. Ce qui change, c'est que le rendement de récupération et le coût de reconditionnement sont annoncés comme de l'arithmétique sur la valeur saisie au quai. Vous pouvez discuter l'entrée, qui est la seule partie qui mérite de l'être.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-sauriez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -81,6 +92,39 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez un mois de retours et vos avoirs.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions D'un Quai De Retours",
+  "description": "Ce que l'on demande avant de parler d'un contrat.",
+  "questions": [
+    {
+      "question": "Que lui faut-il de nos systèmes pour noter un retour ?",
+      "answer": "Quatre choses, et le quai les a déjà toutes les quatre : l'identifiant du retour, le code-barres, la note d'état que la personne au quai a inscrite, et la valeur de l'article telle qu'elle la saisit. Le triage travaille là-dessus et sur la politique écrite à côté. C'est pourquoi le premier colis peut être noté dès le premier jour, et non une fois le système de commandes, le fichier des garanties et le fichier de prix raccordés les uns aux autres."
+    },
+    {
+      "question": "Qui décide vraiment où va le colis ?",
+      "answer": "La personne au quai. Le triage répond à l'écran et s'arrête là, et la décision lui appartient toujours. Agir sur une action rédigée est une autre partie de FACE, et là la décision est enregistrée au nom d'une personne désignée avant que quoi que ce soit ne s'exécute."
+    },
+    {
+      "question": "Que se passe-t-il quand la note d'état n'est pas reconnue ?",
+      "answer": "Elle revient comme un refus et non comme une voie. Cela vaut plus que cela n'en a l'air. La défaillance que cela remplace, c'est un colis qui a reçu une destination d'apparence plausible parce qu'il fallait bien remplir le champ, et personne en aval ne pouvait distinguer cette réponse d'une vraie."
+    },
+    {
+      "question": "Le chiffre de récupération est-il un prix de marché ?",
+      "answer": "C'est de l'arithmétique, et mieux vaut le savoir que se fier au signe dollar. Le rendement de récupération estimé et le coût de reconditionnement sont la valeur saisie par votre quai, multipliée par une fraction fixée selon la note : un article impeccable à 95% de cette valeur et rien en reconditionnement, un article endommagé à 75% avec un quart en réparation. Jugez le chiffre en jugeant la valeur qui a été saisie."
+    },
+    {
+      "question": "Et si nos enregistrements ne peuvent pas quitter le bâtiment ?",
+      "answer": "Alors rien de tout cela ne change. Le triage est une politique écrite et de l'arithmétique sur quatre champs saisis au quai, et il tourne là où vous faites tourner FACE, sur des machines qui sont à vous."
+    },
+    {
+      "question": "Comment saurions-nous si cela a servi à quelque chose ?",
+      "answer": "Par quatre de vos propres chiffres, notés avant que rien ne change. Les jours entre l'arrivée du colis et la décision prise. Ce que vous avez récupéré, rapporté à la valeur à laquelle la marchandise était inscrite. Où sont allés les retours, répartis entre rayon, réparation et casse, et combien de ceux partis à la casse étaient encore sous garantie. Et les jours entre l'ouverture du retour et l'avoir arrivé chez le client."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

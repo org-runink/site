@@ -77,6 +77,17 @@ author: "Runink"
                 Approving is what sends it, and the reason stays on the record for whoever asks in three months why a truck went that way. One more honesty about that, of the kind this page is built on: where a step behind the approval has nothing implemented behind it — the write into your transport system is the real example — the answer names that step as not executed rather than returning a success that covers the whole action. Approved and done are two different words here, and the software is the one that tells you which it managed.
             </p>
         </div>
+        <div>
+            <h2 id="who-owns-this" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Who Owns This</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Three desks, and what each of them is holding today.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">The transport planner.</strong> Today the plan is built the night before or first thing, which makes it the most carefully made decision of the day and the one made with the least information. What changes is that a single leg can be asked about on its own terms &mdash; one origin, one destination, the constraints that matter on it &mdash; and the answer is a measured road distance and a travel time from the routing provider you connected.</li>
+                <li><strong class="text-stone-200">The dispatch desk.</strong> Today the day gets patched: swap two drops, push one to tomorrow, ring a driver. Sensible and local, and nobody can say what the patch cost. What changes is that a leg comes back as a distance and a duration that were actually returned, so two people on the desk are arguing about the same two numbers.</li>
+                <li><strong class="text-stone-200">Operations director.</strong> Today the drift leaves the building as overtime, a second trip, a missed window and fuel, each landing in a different budget and none of them labelled with the reason. What changes is that no money is printed beside a route, because the provider returns none &mdash; so a figure that was measured and a figure that was guessed never sit on the same line pretending to be the same kind of thing.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -91,6 +102,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Bring a month of planned-against-actual leg data for one depot.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions A Transport Desk Asks",
+  "description": "What comes up before anybody talks about a contract.",
+  "questions": [
+    {
+      "question": "What does it need in order to return a route?",
+      "answer": "One origin, one destination and the constraints you name on that leg. Those go to the routing provider you connected, and come back as a measured road distance, a travel time and the route line itself &mdash; so the answer can be drawn rather than described in a sentence."
+    },
+    {
+      "question": "Why is there no cost or saving beside the route?",
+      "answer": "Because the routing provider returns a distance and a time and no cost. A figure nobody measured, sitting beside two that were, is how an estimate gets quoted back to you as a fact. Rule-of-thumb estimates exist elsewhere in the product and are deliberately not copied onto a measured route."
+    },
+    {
+      "question": "What happens when the route cannot be worked out?",
+      "answer": "The answer is that it is unavailable, in those words. No routing credential on the connection, or a provider that returns nothing, comes back as unavailable rather than as an answer with the fields left empty. A blank field on a screen reads as a measurement, and that is the worse failure of the two."
+    },
+    {
+      "question": "Where does the routing credential live?",
+      "answer": "On the connection that was configured for routing, not in an environment variable baked into a server. It is something you set up, can see and can revoke per connection, which is what makes it auditable."
+    },
+    {
+      "question": "Who signs off a change to the day?",
+      "answer": "A named person on the desk. A change is proposed, never imposed: it is approved, edited or rejected, and rejecting is recorded as a decision rather than as silence. Approving is what sends it, and the reason stays on the record for whoever asks in three months why a truck went that way."
+    },
+    {
+      "question": "How does the driver find out?",
+      "answer": "That is a separate job and a separate page. A driver can ask and be answered out loud with their hands on the wheel, described in [talking to drivers without a screen](/use-cases/voice-dispatch/). The call leaves a transcript rather than an acceptance, and the desk still owns the change."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

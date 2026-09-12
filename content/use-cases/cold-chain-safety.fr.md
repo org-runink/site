@@ -63,6 +63,17 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
                 Là où il y a quelque chose sur quoi agir, cela attend sous forme de mouvement rédigé, et une personne nommée l'approuve, le modifie ou le refuse, le visa restant au dossier. C'est l'approbation qui l'envoie. Et là où une étape de ce mouvement n'a rien derrière elle — une écriture dans un système de parc ou de transport, par exemple — la réponse nomme l'étape qui n'a pas eu lieu au lieu de rapporter un succès, de sorte que &laquo;&nbsp;approuvé&nbsp;&raquo; et &laquo;&nbsp;fait&nbsp;&raquo; restent deux mots différents.
             </p>
         </div>
+        <div>
+            <h2 id="qui-s-en-occupe" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qui S'En Occupe</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois bureaux, et ce que chacun a sur les bras aujourd'hui.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le chef de parc.</strong> Aujourd'hui les règles sur les marchandises qui peuvent voisiner sont connues, écrites, et vérifiées par une personne qui fait aussi quatre autres choses. Ce qui change, c'est que les images que les caméras du parc enregistrent déjà sont lues, et que ce qui revient est une observation écrite rattachée à l'image dont elle sort &mdash; quelque chose qu'on peut ouvrir et contester, pas une ligne dans un cahier.</li>
+                <li><strong class="text-stone-200">Conformité et risques.</strong> Aujourd'hui un constat sur la séparation des marchandises existe si quelqu'un passait par là. Ce qui change, c'est qu'une consigne peut être déposée sur le flux d'événements du parc pour tout ce qui l'écoute, et que le mouvement qui suit est rédigé et attend qu'une personne désignée l'approuve, le modifie ou le refuse. La validation est conservée avec l'image qui l'a déclenchée.</li>
+                <li><strong class="text-stone-200">Informatique et sécurité de l'information.</strong> Aujourd'hui un produit caméra revient à demander à quel service extérieur les images du parc sont envoyées pour être décrites. Ce qui change, c'est que l'image est validée comme image réelle et lue par un modèle de vision sur du matériel que vous contrôlez, si bien que la revue porte sur des machines que vous exploitez déjà.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-sauriez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -78,6 +89,39 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez votre compte de pertes et une journée d'enregistrement des caméras du parc.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions D'une Équipe De Parc",
+  "description": "Ce que l'on demande avant de parler d'un contrat.",
+  "questions": [
+    {
+      "question": "Que lit réellement le volet caméra ?",
+      "answer": "Une image venant d'une caméra de parc ou d'une caméra infrarouge. On vérifie que c'est bien une image avant que quoi que ce soit ne la lise, on la réduit à une taille qu'un modèle peut prendre, et elle est lue par un modèle de vision tournant sur du matériel que vous contrôlez. Ce qui revient est une observation écrite, attachée à l'image dont elle a été tirée."
+    },
+    {
+      "question": "Les images quittent-elles le site ?",
+      "answer": "La lecture a lieu là où les images se trouvent déjà. L'image est traitée sur votre propre matériel et décrite là, et l'observation revient rattachée à cette image. Le parc est lu par des machines qui sont déjà dans le parc."
+    },
+    {
+      "question": "S'il voit quelque chose, arrête-t-il le portique ?",
+      "answer": "Il diffuse une consigne &mdash; oriente cette caméra, suspends ces mouvements &mdash; vers tout ce qui est abonné au flux d'événements du parc. La consigne est une demande, et le code ne la présentera pas comme un mouvement arrêté. Ce qui transforme une consigne en mouvement, c'est une personne désignée qui approuve l'action rédigée."
+    },
+    {
+      "question": "Qui valide une action qu'il rédige ?",
+      "answer": "Une personne désignée, dont l'approbation, la modification ou le refus reste au dossier. C'est l'approbation qui envoie. Et là où une étape derrière cette approbation n'a encore rien d'implémenté &mdash; une écriture dans un système de parc ou de transport en est l'exemple honnête &mdash; la réponse nomme l'étape qui n'a pas eu lieu, de sorte qu'approuvé et fait restent deux mots différents."
+    },
+    {
+      "question": "Que se passe-t-il quand la lecture est fausse ?",
+      "answer": "Toute observation revient rattachée à l'image dont elle a été tirée, si bien que celui qui la lit peut ouvrir la photo et la contester. Rien ne bouge sur une observation seule : le mouvement est rédigé et attend une personne."
+    },
+    {
+      "question": "Qu'apporter à une première conversation ?",
+      "answer": "Votre compte de pertes et une journée d'enregistrement des caméras du parc. Apportez un décompte de plus avec eux : combien de caméras il y a dans le parc, et combien d'heures de ce qu'elles enregistrent sont un jour regardées par une personne. Cet écart est l'espace dans lequel travaille le volet caméra."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

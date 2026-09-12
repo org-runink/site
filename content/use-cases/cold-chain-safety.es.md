@@ -63,6 +63,17 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
                 Donde hay algo sobre lo que actuar, espera como un movimiento redactado, y una persona con nombre lo aprueba, lo edita o lo rechaza, y el visto bueno queda anotado. Aprobar es lo que lo envía. Y donde un paso de ese movimiento no tiene nada detrás — una escritura en un sistema de patio o de transporte, por ejemplo — la respuesta nombra el paso que no ocurrió en vez de informar de un éxito, así que &laquo;aprobado&raquo; y &laquo;hecho&raquo; siguen siendo dos palabras distintas.
             </p>
         </div>
+        <div>
+            <h2 id="quien-se-encarga-de-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quién Se Encarga De Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres mesas, y lo que cada una tiene hoy encima.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">El supervisor del patio.</strong> Hoy las reglas sobre qué mercancías pueden estar cerca de cuáles se conocen, están escritas y las comprueba una persona que además está haciendo otras cuatro cosas. Lo que cambia es que los fotogramas que las cámaras del patio ya graban se leen, y lo que vuelve es una observación escrita unida al fotograma del que salió &mdash; algo que se puede abrir y rebatir, y no una línea en un cuaderno.</li>
+                <li><strong class="text-stone-200">Cumplimiento y riesgo.</strong> Hoy un hallazgo sobre separación de mercancías existe si alguien pasaba por allí. Lo que cambia es que se puede poner un aviso en el flujo de eventos del patio para lo que esté escuchando, y el movimiento que sigue se redacta y espera a que una persona concreta lo apruebe, lo edite o lo rechace. La firma se guarda junto al fotograma que lo originó.</li>
+                <li><strong class="text-stone-200">TI y seguridad de la información.</strong> Hoy un producto de cámaras significa preguntar a qué servicio ajeno se están enviando las imágenes del patio para que las describa. Lo que cambia es que el fotograma se valida como imagen real y lo lee un modelo de visión en hardware que usted controla, así que la revisión trata de máquinas que ya tiene en marcha.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabria-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -78,6 +89,39 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga su cuenta de bajas y un día de grabación de las cámaras del patio.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Preguntas De Un Equipo De Patio",
+  "description": "Lo que se pregunta antes de hablar de un contrato.",
+  "questions": [
+    {
+      "question": "¿Qué lee en realidad el lado de las cámaras?",
+      "answer": "Un fotograma de una cámara de patio o de infrarrojos. Se comprueba que sea una imagen real antes de que nada la lea, se reduce a un tamaño que un modelo pueda tomar, y lo lee un modelo de visión que se ejecuta en hardware que usted controla. Lo que vuelve es una observación escrita atada al fotograma del que se leyó."
+    },
+    {
+      "question": "¿Salen las imágenes del recinto?",
+      "answer": "La lectura ocurre donde ya están las imágenes. El fotograma se trata en su propio hardware y allí se describe, y la observación vuelve unida a ese fotograma. El patio lo leen máquinas que ya están en el patio."
+    },
+    {
+      "question": "Si ve algo, ¿detiene la grúa?",
+      "answer": "Emite un aviso &mdash; gire esa cámara, detenga esos movimientos &mdash; hacia todo lo que esté suscrito al flujo de eventos del patio. El aviso es una petición, y el código no lo dará por un movimiento detenido. Lo que convierte un aviso en un movimiento es una persona concreta que aprueba la acción redactada."
+    },
+    {
+      "question": "¿Quién firma una acción que redacta?",
+      "answer": "Una persona concreta, cuya aprobación, edición o rechazo queda en el registro. Aprobar es lo que la envía. Y donde un paso detrás de esa aprobación todavía no tiene nada implementado &mdash; una escritura en un sistema de patio o de transporte es el ejemplo honesto &mdash; la respuesta nombra el paso que no ocurrió, de modo que aprobado y hecho siguen siendo dos palabras distintas."
+    },
+    {
+      "question": "¿Qué pasa cuando la lectura es errónea?",
+      "answer": "Toda observación vuelve unida al fotograma del que se leyó, así que quien la lee puede abrir la imagen y rebatirla. Nada se mueve por una observación sola: el movimiento se redacta y espera a una persona."
+    },
+    {
+      "question": "¿Qué deberíamos traer a una primera conversación?",
+      "answer": "Su cuenta de mermas y un día de grabación de las cámaras del patio. Traiga con ellas un recuento más: cuántas cámaras hay en el patio, y cuántas horas de lo que graban las mira alguna vez una persona. Ese hueco es el espacio en el que trabaja el lado de las cámaras."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

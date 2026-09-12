@@ -78,6 +78,17 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
                 Un refus de plus, parce que c'est le genre qu'on cache d'habitude. Ailleurs dans FACE, vous pouvez joindre un mémo vocal à un fil, et cette pièce jointe n'est pas transcrite. Plutôt que de laisser le modèle improviser autour, il est dit franchement au modèle qu'une pièce jointe audio est arrivée, que son contenu est inconnu, et qu'il ne doit pas deviner ce qui a été dit &mdash; et il reçoit pour consigne de vous dire que l'audio n'a pas été traité. Un système qui ne peut pas entendre quelque chose et qui le dit vaut plus qu'un système qui comble le trou.
             </p>
         </div>
+        <div>
+            <h2 id="qui-s-en-occupe" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qui S'En Occupe</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois bureaux, et ce que chacun a sur les bras aujourd'hui.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le bureau de répartition.</strong> Aujourd'hui un changement veut dire appeler un camion après l'autre en espérant que chacun puisse décrocher, et la moitié des appels tombent sur la messagerie et sont refaits vingt minutes plus tard. Ce qui change, c'est qu'un chauffeur peut demander et obtenir une réponse à voix haute, et que l'appel s'écrit tout seul. Le bureau fait toujours le changement ; il cesse d'être le seul chemin par lequel un fait peut voyager.</li>
+                <li><strong class="text-stone-200">Le chef de dépôt.</strong> Aujourd'hui la journée est rédigée à la fin, de mémoire, quand elle l'est, et l'heure perdue à un portail est celle qu'on ne facture jamais. Ce qui change, c'est que les deux côtés de la conversation vont au journal d'appels au fil de l'eau, si bien que l'heure au portail est consignée au portail.</li>
+                <li><strong class="text-stone-200">Informatique et sécurité de l'information.</strong> Aujourd'hui un produit vocal revient à demander dans quel compte tiers finit la transcription. Ce qui change, c'est que la parole est transformée en texte par le serveur de modèles que vous exploitez déjà, et que chaque réponse conversationnelle est prononcée dans le processus FACE lui-même, à partir d'une voix embarquée dans le binaire. Le segment téléphonique est porté par un opérateur, comme n'importe quel appel, et l'annonce d'enregistrement et l'accueil sont lus avec la voix de cet opérateur avant que le canal vers vos machines soit ouvert.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-sauriez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -92,6 +103,39 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez un dépôt et une semaine de données de géolocalisation des véhicules.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions D'un Responsable De Flotte",
+  "description": "Ce que l'on demande avant de parler d'un contrat.",
+  "questions": [
+    {
+      "question": "Que doit faire le chauffeur ?",
+      "answer": "Passer un appel téléphonique ordinaire et demander à voix haute. Où est le prochain arrêt, quel portail, ce que le client a demandé. La réponse revient à voix haute, donc il n'y a pas d'écran à lire ni de raison de s'arrêter."
+    },
+    {
+      "question": "Qui porte l'audio, et qui voit le texte ?",
+      "answer": "Le segment entre la cabine et le bâtiment est porté par un opérateur télécom, comme n'importe quel autre appel que passent vos chauffeurs, et il transporte cet audio parce qu'il le faut bien. Le texte est une autre affaire : la transcription et le raisonnement qui produit la réponse ont lieu sur vos machines, sur le serveur de modèles que vous exploitez déjà, et la réponse parlée y est encodée aussi."
+    },
+    {
+      "question": "Que se passe-t-il quand un chauffeur dit quelque chose d'urgent ?",
+      "answer": "Six mots sont surveillés, au téléphone comme sur les messages WhatsApp ou SMS entrants : <em>urgent</em>, <em>asap</em>, <em>emergency</em>, <em>broken</em>, <em>failing</em> et <em>late</em>. Une correspondance change le ton de la réponse de l'agent et envoie la phrase même de l'appelant au numéro de responsable que vous avez configuré. Côté texte, un message qui a correspondu et n'a atteint personne est écrit dans le journal en le disant, plutôt que de passer pour traité."
+    },
+    {
+      "question": "Que laisse l'appel derrière lui ?",
+      "answer": "La conversation elle-même, écrite au fil de l'eau : chaque tour de parole, qui l'a dit, et l'appel auquel il appartient. L'heure au portail est consignée au portail plutôt que reconstituée à six heures. Quelqu'un de désigné au bureau la lit et fait le changement, ce qui maintient une phrase dite et une livraison modifiée comme deux événements distincts."
+    },
+    {
+      "question": "Quelle voix le chauffeur entend-il en premier ?",
+      "answer": "Celle de l'opérateur télécom. L'annonce d'enregistrement et l'accueil qui ouvrent l'appel sont lus depuis les instructions d'établissement d'appel, avant que le canal vers votre bâtiment soit ouvert. Toute réponse conversationnelle ensuite est prononcée à partir d'une voix embarquée dans le binaire de FACE, dans le même processus que le reste."
+    },
+    {
+      "question": "Qu'apporter à une première conversation ?",
+      "answer": "Un dépôt et une semaine de données de suivi des véhicules. Deux de vos chiffres vont avec : les minutes entre le moment où un problème survient et celui où le bureau l'apprend, échantillonnées sur un mois de tournées en retard, et la part du temps d'attente aux portails que vous facturez aujourd'hui."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

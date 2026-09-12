@@ -63,6 +63,17 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard
                 Where there is something to act on, it waits as a drafted move, and a named person approves, edits or rejects it with the sign-off kept on the record. Approving is what sends it. And where a step in that move has nothing behind it — a write into a yard or transport system, for instance — the response names the step that did not happen instead of reporting success, so "approved" and "done" stay two different words.
             </p>
         </div>
+        <div>
+            <h2 id="who-owns-this" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Who Owns This</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Three desks, and what each of them is holding today.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">The yard supervisor.</strong> Today the rules about which goods may sit near which are known, written down, and checked by a person who is also doing four other things. What changes is that the frames the yard cameras already record get read, and what comes back is a written observation attached to the frame it came from &mdash; a thing you can open and disagree with, rather than a line in a book.</li>
+                <li><strong class="text-stone-200">Compliance and risk.</strong> Today a segregation finding exists if somebody happened to walk past. What changes is that a cue can be put on the yard event stream for whatever is watching it, and the move that follows is drafted and waits for a named person to approve, edit or reject it. The sign-off is kept with the frame that started it.</li>
+                <li><strong class="text-stone-200">IT and information security.</strong> Today a camera product means asking whose service the yard footage is being sent to in order to be described. What changes is that the frame is validated as a real image and read by a vision model on hardware you control, so the review is about machines you already run.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-would-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -78,6 +89,39 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Bring your write-off account and a day of yard camera footage.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions A Yard Team Asks",
+  "description": "What comes up before anybody talks about a contract.",
+  "questions": [
+    {
+      "question": "What does the camera side actually read?",
+      "answer": "A frame from a yard or infrared camera. It is checked to be a real image before anything reads it, reduced to a size a model can take, and read by a vision model running on hardware you control. What comes back is a written observation tied to the frame it was read from."
+    },
+    {
+      "question": "Does the footage leave the site?",
+      "answer": "The reading happens where the footage already is. The frame is handled on your own hardware and described there, and the observation comes back attached to that frame. The yard is read by machines that are already in the yard."
+    },
+    {
+      "question": "If it sees something, does it stop the crane?",
+      "answer": "It broadcasts a cue &mdash; slew that camera, hold those moves &mdash; to whatever is subscribed to the yard event stream. The cue is a request, and the code will not report it as a move that was stopped. What turns a cue into a move is a named person approving the drafted action."
+    },
+    {
+      "question": "Who signs off an action it drafts?",
+      "answer": "A named person, whose approval, edit or rejection is kept on the record. Approving is what sends it. And where a step behind that approval has nothing implemented yet &mdash; a write into a yard or transport system is the honest example &mdash; the response names the step that did not happen, so approved and done stay two different words."
+    },
+    {
+      "question": "What happens when the reading is wrong?",
+      "answer": "Every observation comes back attached to the frame it was read from, so whoever reads it can open the picture and argue with it. Nothing moves on an observation by itself; the move is drafted and waits for a person."
+    },
+    {
+      "question": "What should we bring to a first conversation?",
+      "answer": "Your write-off account and a day of yard camera footage. Bring one more count with them: how many cameras are in the yard, and how many hours of what they record is ever looked at by a person. That gap is the space the camera side works in."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

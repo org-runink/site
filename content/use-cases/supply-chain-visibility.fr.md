@@ -83,6 +83,17 @@ author: "Runink"
                 Ce qui arrive à une personne est une courte liste classée d'actions proposées avec les enregistrements joints, pas un diagramme à admirer. Une personne nommée valide, corrige ou rejette chacune, et cet accord est conservé. C'est la validation qui l'envoie, et un élément tranché quitte la file au lieu de revenir au tour suivant quand quelqu'un ouvre le tableau. Là où une étape derrière la validation n'a pas encore d'implémentation, la réponse nomme cette étape comme non exécutée au lieu de déclarer l'action terminée &mdash; le tableau montre donc ce qui a été décidé et, séparément, ce qui a réellement été fait. Tout tourne sur des machines qui vous appartiennent.
             </p>
         </div>
+        <div>
+            <h2 id="qui-s-en-occupe" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qui S'En Occupe</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois bureaux, et ce que chacun a sur les bras aujourd'hui.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le directeur supply chain.</strong> Aujourd'hui l'image est assemblée pour la revue mensuelle, ou une fois que quelque chose a assez mal tourné pour mériter une matinée. Ce qui change, c'est que le même ensemble de faits se trouve derrière la question et derrière la réponse, si bien qu'une décision se discute depuis un seul endroit et non depuis trois exports.</li>
+                <li><strong class="text-stone-200">Le responsable d'exploitation.</strong> Aujourd'hui une question ordinaire, ce sont quatre connexions, quatre façons de nommer le même site et quatre idées de ce qu'est une semaine. Ce qui change, c'est que les enregistrements sont classés selon ce dont ils parlent, si bien que le même type de fait atterrit au même endroit qu'il vienne d'un ERP, d'un système d'entrepôt, d'un système de transport ou d'un tableur que quelqu'un envoie le vendredi.</li>
+                <li><strong class="text-stone-200">L'analyste sur qui tout le monde compte.</strong> Aujourd'hui la correspondance entre un code de site dans un système et un nom de dépôt dans un autre n'est écrite nulle part. Elle est retenue, et pendant que cette personne est en congé la question ne peut pas être traitée. Ce qui change, c'est que la carte est dérivée de la structure de vos propres fichiers par des règles fixes, donc c'est quelque chose que n'importe qui peut redériver et vérifier.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -97,6 +108,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez un mois d'exports des systèmes que vous voudriez vraiment voir rapprochés, dans le format où ils sortent.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions D'une Équipe D'exploitation",
+  "description": "Ce que l'on demande avant de parler d'un contrat.",
+  "questions": [
+    {
+      "question": "Comment la carte est-elle établie ?",
+      "answer": "À partir de la structure de vos propres fichiers, par des règles fixes. Aucun modèle n'est interrogé, aucune recherche ne sort et rien ne traverse le réseau à cette étape, si bien que les mêmes fichiers produisent toujours la même carte. Un modèle est utilisé ensuite pour ajouter un commentaire, et ce qu'il ajoute est clairement le commentaire et non la structure."
+    },
+    {
+      "question": "Que deviennent les tables qui n'entrent nulle part ?",
+      "answer": "Elles sont classées selon ce qu'est la source. Un export d'entrepôt, de parc, de transport ou de gestion des commandes, c'est de la logistique. Un flux de capteurs ou d'étiquettes, c'est de la télémétrie. Un système de sinistres, c'est de la finance. La règle existe pour que la moitié inconfortable d'un parc applicatif soit nommée, au lieu d'être balayée dans un tiroir appelé divers et plus jamais mentionnée."
+    },
+    {
+      "question": "Que dit-il d'un domaine qu'il n'a pas pu évaluer ?",
+      "answer": "Qu'il n'a pas été évalué, et pourquoi, en ces termes. Nous n'avons pas regardé et nous avons regardé et tout va bien sont deux phrases différentes, et une pastille de couleur sur un tableau de bord ne sait pas les distinguer. Prendre l'une pour l'autre est précisément la défaillance que cela est écrit pour éviter."
+    },
+    {
+      "question": "Pouvons-nous l'interroger avec nos propres mots ?",
+      "answer": "Oui, dans le vocabulaire que vous employez déjà, restreint aux domaines que vous regardez, avec la carte et les règles reconnues derrière la réponse. Vous obtenez le raisonnement en plus de la réponse. Tout cela tourne sur des machines qui sont à vous."
+    },
+    {
+      "question": "Qu'est-ce qui arrive à une personne au bout du compte ?",
+      "answer": "Une courte liste classée d'actions proposées avec les enregistrements joints, pas un schéma à admirer. Une personne désignée approuve, modifie ou refuse chacune, et la validation est conservée. Un élément tranché quitte la file au lieu de revenir la prochaine fois que quelqu'un ouvre le tableau, et là où une étape derrière une approbation n'a pas encore d'implémentation, la réponse nomme cette étape au lieu de donner l'action pour terminée."
+    },
+    {
+      "question": "Qu'apporter à une première conversation ?",
+      "answer": "Un mois d'exports des systèmes que vous voudriez réellement voir rapprochés, dans le format dans lequel ils sortent. Apportez une chose de plus : une question inter-systèmes ordinaire qu'on vous a posée le mois dernier, et un décompte honnête du nombre de personnes dans le bâtiment qui auraient pu y répondre."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

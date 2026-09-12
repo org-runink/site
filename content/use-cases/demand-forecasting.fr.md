@@ -74,6 +74,17 @@ author: "Runink"
                 Ce qui parvient à une personne est un seul élément : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et une modification rédigée du plan. Une personne nommée l'approuve, la modifie ou la refuse, et cette décision reste au dossier. C'est l'approbation qui l'envoie — et là où une étape derrière n'a encore rien d'implémenté, une écriture dans votre système de planification étant l'exemple honnête, la réponse nomme cette étape comme non exécutée au lieu de rapporter la modification comme faite. La décision et l'exécution sont consignées comme deux faits distincts, parce qu'ils le sont. Cela tourne sur des machines qui vous appartiennent, et l'historique ne les quitte jamais.
             </p>
         </div>
+        <div>
+            <h2 id="qui-s-en-occupe" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qui S'En Occupe</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois bureaux, et ce que chacun a sur les bras aujourd'hui.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le planificateur de la demande.</strong> Aujourd'hui il exporte l'historique des ventes, lui applique les hypothèses du cycle précédent, débat des exceptions et recharge le résultat. C'est un travail soigneux, et il décrit un mois déjà terminé. Ce qui change, c'est que chaque série est d'abord décomposée &mdash; la tendance, la forme saisonnière qui se répète, et le résidu où un retournement apparaît &mdash; et que la projection arrive avec le nom de la méthode qui l'a produite.</li>
+                <li><strong class="text-stone-200">Le responsable du S&amp;OP</strong>, la réunion où le plan est arrêté. Aujourd'hui cette réunion débat des exceptions sans rien sur la table qui dise jusqu'où la prévision peut être crue. Ce qui change, c'est que le calcul est montré : la statistique de test à côté du seuil auquel elle a été comparée, le fait que la série ait dû être différenciée, et sur combien de périodes la méthode gagnante a été notée.</li>
+                <li><strong class="text-stone-200">Le planificateur des approvisionnements.</strong> Aujourd'hui cela lui arrive comme l'urgence de quelqu'un d'autre, des semaines après le retournement de la série. Ce qui change, c'est qu'un seul élément arrive à une personne : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et un changement de plan rédigé.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -88,6 +99,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez une année d'historique hebdomadaire pour une famille de produits, et votre erreur de prévision actuelle par référence.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions D'un Planificateur De La Demande",
+  "description": "Ce que l'on demande avant de parler d'un contrat.",
+  "questions": [
+    {
+      "question": "Comment choisit-il une méthode de prévision ?",
+      "answer": "Par mise en concurrence, sur votre propre historique. Une décomposition saisonnière et un modèle autorégressif classique produisent chacun une prévision, et tous deux sont notés en remontant l'horloge et en leur demandant de prédire des périodes que votre historique contient déjà. Celui qui a le mieux prédit ces périodes est celui que vous recevez, et il arrive étiqueté de son nom. Quand aucun ne tient, une méthode de repli simple est utilisée et la réponse dit que c'est un repli."
+    },
+    {
+      "question": "Que devient une référence qu'il ne peut pas prévoir ?",
+      "answer": "Elle revient en disant qu'il n'y a pas assez de périodes pour la modéliser. C'est une réponse plus utile qu'une droite tracée sur quatre points, et elle vous remet la liste des références que vous pilotez au jugement plutôt qu'à la prévision &mdash; et cette liste mérite d'être écrite avant que quoi que ce soit d'autre change."
+    },
+    {
+      "question": "Notre historique de ventes quitte-t-il le bâtiment ?",
+      "answer": "Cela tourne sur des machines qui sont à vous, et l'historique ne les quitte jamais. La décomposition, le test de stabilité, l'ajustement des modèles et la notation se font tous là."
+    },
+    {
+      "question": "Qui change le plan ?",
+      "answer": "Une personne désignée. Le constat arrive sous forme d'un changement rédigé, à approuver, modifier ou refuser, et cette décision reste au dossier. C'est l'approbation qui l'envoie, et là où une étape derrière elle n'a encore rien d'implémenté &mdash; une écriture dans votre système de planification en est l'exemple honnête &mdash; la réponse nomme cette étape comme non exécutée. La décision et l'exécution sont enregistrées comme deux faits distincts, parce qu'elles le sont."
+    },
+    {
+      "question": "Pourquoi le résidu est-il rapporté plutôt qu'écarté ?",
+      "answer": "Parce qu'un retournement apparaît d'abord dans le résidu. Une série est décomposée en trois morceaux : la tendance qui la sous-tend, la forme saisonnière qui se répète, et le résidu, c'est-à-dire ce que la série a fait et que ni l'un ni l'autre n'explique. Un pic qui arrive en avance, une promotion qui a tenu après la fin de la promotion, une région qui a discrètement baissé d'un cran et y est restée : aucune de ces choses ne franchit un seuil, et toutes sont dans ce troisième morceau."
+    },
+    {
+      "question": "Qu'apporter à une première conversation ?",
+      "answer": "Une année d'historique hebdomadaire pour une famille de produits, et votre erreur de prévision actuelle par référence. Une année entière plutôt qu'une saison, parce que les références saisonnières et les références régulières échouent différemment et qu'une fenêtre courte en cache une des deux."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

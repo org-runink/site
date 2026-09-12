@@ -83,6 +83,17 @@ author: "Runink"
                 O que chega a uma pessoa é uma lista curta e ordenada de ações propostas com os registros anexados, não um diagrama para admirar. Uma pessoa com nome aprova, edita ou recusa cada uma, e esse aval é guardado. Aprovar é o que manda adiante, e um item decidido sai da fila em vez de voltar na próxima vez que alguém abre o quadro. Onde uma etapa por trás da aprovação ainda não tem implementação, a resposta nomeia essa etapa como não executada, em vez de dar a ação por concluída &mdash; então o quadro mostra o que foi decidido e, separadamente, o que de fato foi executado. Tudo roda em máquinas que são suas.
             </p>
         </div>
+        <div>
+            <h2 id="quem-cuida-disso" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quem Cuida Disso</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três mesas, e o que cada uma tem na mão hoje.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O diretor de cadeia de suprimentos.</strong> Hoje o retrato é montado para a revisão mensal, ou depois que alguma coisa deu errado o bastante para valer uma manhã. O que muda é que o mesmo conjunto de fatos está por trás da pergunta e por trás da resposta, então uma decisão é discutida a partir de um lugar só e não de três exportações.</li>
+                <li><strong class="text-stone-200">O gerente de operações.</strong> Hoje uma pergunta comum são quatro logins, quatro jeitos de nomear o mesmo local e quatro ideias do que é uma semana. O que muda é que os registros são colocados pelo assunto de que tratam, então o mesmo tipo de fato cai no mesmo lugar venha de um ERP, de um sistema de armazém, de um sistema de transporte ou de uma planilha que alguém manda às sextas.</li>
+                <li><strong class="text-stone-200">O analista de quem todo mundo depende.</strong> Hoje a correspondência entre um código de local num sistema e o nome de um depósito em outro não está escrita em lugar nenhum. Ela é lembrada, e enquanto essa pessoa está de férias a pergunta não tem como ser respondida. O que muda é que o mapa é derivado da estrutura dos seus próprios arquivos por regras fixas, então é algo que qualquer um consegue derivar de novo e conferir.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -97,6 +108,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traga um mês de extrações dos sistemas que você de fato gostaria de ver juntos, no formato em que eles saírem.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Perguntas De Uma Equipe De Operações",
+  "description": "O que se pergunta antes de alguém falar em contrato.",
+  "questions": [
+    {
+      "question": "Como o mapa é montado?",
+      "answer": "A partir da estrutura dos seus próprios arquivos, por regras fixas. Nenhum modelo é consultado, nenhuma busca sai e nada atravessa a rede nessa etapa, então os mesmos arquivos produzem o mesmo mapa sempre. Depois um modelo é usado para acrescentar comentário, e o que ele acrescenta é claramente o comentário e não a estrutura."
+    },
+    {
+      "question": "O que acontece com as tabelas que não encaixam em lugar nenhum?",
+      "answer": "Elas são colocadas pelo que a fonte é. Um extrato de armazém, de pátio, de transporte ou de gestão de pedidos é logística. Um fluxo de sensores ou etiquetas é telemetria. Um sistema de sinistros é finanças. A regra existe para que a metade incômoda de um parque de sistemas seja nomeada, em vez de varrida para uma gaveta chamada outros e nunca mais mencionada."
+    },
+    {
+      "question": "O que ele diz sobre uma área que não conseguiu avaliar?",
+      "answer": "Que não foi avaliada, e por quê, com essas palavras. Não olhamos e olhamos e está tudo bem são duas frases diferentes, e uma cor de status num painel não sabe diferenciá-las. Tomar uma pela outra é exatamente a falha que isso foi escrito para evitar."
+    },
+    {
+      "question": "Dá para perguntar com as nossas próprias palavras?",
+      "answer": "Dá, no vocabulário que você já usa, limitado às áreas que estiver olhando, com o mapa e as regras reconhecidas por trás da resposta. Você recebe o raciocínio além da resposta. Tudo isso roda em máquinas suas."
+    },
+    {
+      "question": "O que chega a uma pessoa no fim?",
+      "answer": "Uma lista curta e ordenada de ações propostas com os registros anexados, e não um diagrama para admirar. Uma pessoa nomeada aprova, edita ou recusa cada uma e a assinatura fica guardada. Um item decidido sai da fila em vez de voltar na próxima vez que alguém abrir o quadro, e onde uma etapa por trás de uma aprovação ainda não tem implementação a resposta nomeia aquela etapa em vez de dar a ação por completa."
+    },
+    {
+      "question": "O que devemos levar para uma primeira conversa?",
+      "answer": "Um mês de extrações dos sistemas que você de fato gostaria de ver juntos, no formato em que eles saírem. Leve mais uma coisa: uma pergunta comum entre sistemas que fizeram a você no mês passado, e uma contagem honesta de quantas pessoas no prédio teriam conseguido respondê-la."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

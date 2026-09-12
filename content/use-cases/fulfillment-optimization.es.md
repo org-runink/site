@@ -66,6 +66,17 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
                 Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa firma queda en el registro. Aprobar es lo que lo manda adelante. Y donde un paso de la acción redactada todavía no tiene nada detrás &mdash;la escritura en su ERP es el ejemplo honesto&mdash; la respuesta nombra ese paso como no ejecutado en vez de dar la cosa entera por hecha. Se le dice qué parte de la acción ocurrió, que es la diferencia entre un sistema del que puede fiarse y uno que tiene que ir a comprobar. Los márgenes de seguridad se pueden entonces discutir con sus propios números y no por rango.
             </p>
         </div>
+        <div>
+            <h2 id="quien-se-encarga-de-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quién Se Encarga De Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres mesas, y lo que cada una tiene hoy encima.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Responsable de planificación.</strong> Hoy la alerta salta sobre un nivel, y el proveedor sigue necesitando quince días que empiezan cuando a usted se lo dijeron y no cuando empezó el problema. Lo que cambia es que la proyección que hay debajo de la decisión se contrasta contra periodos que no se le mostraron, y el disparador dice qué límite se cruzó y con qué nivel, en palabras.</li>
+                <li><strong class="text-stone-200">Finanzas y compras.</strong> Hoy el coste de enterarse tarde sale como flete urgente, archivado bajo códigos que nadie vuelve a leer. Lo que cambia es que el aviso llega como un límite, un nivel y un motivo, y no como un color en un recuadro, así que la conversación sobre el pedido trata de un número que alguien puede comprobar.</li>
+                <li><strong class="text-stone-200">Director de operaciones.</strong> Hoy cada etapa de la cadena redondea a caja completa y añade un margen de seguridad, y ese crecimiento vive repartido en cuatro sistemas donde ninguno lo enseña entero. Lo que cambia es que los márgenes de seguridad se discuten con sus propias cifras y no por antigüedad.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabria-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -80,6 +91,39 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga un año de una familia de producto y sus códigos de flete urgente.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Preguntas De Un Equipo De Planificación",
+  "description": "Lo que se pregunta antes de hablar de un contrato.",
+  "questions": [
+    {
+      "question": "¿De dónde salen los umbrales?",
+      "answer": "De usted. El punto de pedido, el mínimo y el máximo son los que ya utiliza. FACE compara el nivel con ellos y devuelve el límite que se cruzó y el nivel que lo cruzó. El umbral sigue siendo suyo a propósito: un aviso calculado contra un plazo de entrega que el software hubiera supuesto parecería más listo que la alerta de nivel que ya tiene, y valdría menos."
+    },
+    {
+      "question": "¿Qué devuelve exactamente el disparador?",
+      "answer": "El límite que se cruzó, el nivel que lo cruzó y el motivo, escritos en palabras en vez de mostrados como un color en un recuadro. Eso es todo, y está escrito así para que el aviso se pueda discutir en lugar de acusar recibo."
+    },
+    {
+      "question": "¿Cuánto podemos fiarnos de la previsión que hay debajo?",
+      "answer": "Cada proyección nombra el modelo que la produjo y cuántos periodos tuvo para aprender. El modelo se eligió reservando el tramo más reciente de su propia historia y reajustando cada candidato sobre lo anterior. Cuando la historia de una referencia no se predice a sí misma, eso también es uno de los hallazgos."
+    },
+    {
+      "question": "¿Quién firma el pedido que redacta?",
+      "answer": "Una persona concreta lo aprueba, lo edita o lo rechaza, y esa firma queda en el registro. Aprobar es lo que lo envía. Donde un paso de la acción redactada todavía no tiene nada detrás &mdash; una escritura en su ERP es el ejemplo honesto &mdash; la respuesta nombra ese paso como no ejecutado en vez de dar el conjunto por hecho, así que a usted se le dice qué parte de la acción ocurrió."
+    },
+    {
+      "question": "¿Dónde está la previsión en sí?",
+      "answer": "En su propio escenario. Cómo se lee una serie, qué modelo se elige y qué dice cuando una referencia sencillamente no es predecible se describe en [previsión de demanda](/es/use-cases/demand-forecasting/). Esta página es la decisión de pedido que se deriva de aquello, y se mantienen separadas porque las discuten personas distintas."
+    },
+    {
+      "question": "¿Qué deberíamos traer a una primera conversación?",
+      "answer": "Un año de una familia de producto, y los códigos que su equipo usa para flete aéreo o urgente. Un año entero y no un trimestre, porque el coste de enterarse tarde es estacional y un trimestre le favorecerá o le condenará al azar."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

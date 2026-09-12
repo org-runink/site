@@ -67,6 +67,17 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
                 A chamada de triagem, por si só, não envia nada. Ela devolve uma destinação e para: nenhum registro de estoque é escrito, nenhum crédito é emitido, nenhuma aprovação é guardada. Agir sobre uma ação redigida é outra parte do FACE, e lá a decisão fica registrada no nome de uma pessoa antes de qualquer coisa rodar; e onde uma etapa atrás disso ainda não tem implementação, sendo a gravação em um ERP o exemplo honesto, a resposta nomeia a etapa que não aconteceu, em vez de dar a movimentação por concluída.
             </p>
         </div>
+        <div>
+            <h2 id="quem-cuida-disso" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quem Cuida Disso</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três mesas, e o que cada uma tem na mão hoje.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O supervisor da doca de devoluções.</strong> Hoje ele anota a classificação de estado e digita o valor, e depois a caixa entra na gaiola com o resto da semana. O que muda é que a classificação que ele anotou é a entrada de uma resposta na leitura: uma saída, uma cifra de recuperação e uma cifra de reparo, com a caixa ainda na mão dele. Uma classificação que a política não reconhece volta como recusa, então uma caixa duvidosa parece duvidosa.</li>
+                <li><strong class="text-stone-200">Diretor de operações.</strong> Hoje a triagem é feita a olho e por hábito, na tarde em que houver uma. Mercadoria boa vai para o descarte porque a fila estava grande. O que muda é que a mesma classificação produz a mesma saída numa terça-feira calma e na segunda depois do Natal, de modo que a única variação que sobra está na classificação em si &mdash; e isso dá para treinar, amostrar e auditar.</li>
+                <li><strong class="text-stone-200">Financeiro.</strong> Hoje o crédito é emitido semanas depois de a mercadoria voltar, e o que você recuperou contra o valor pelo qual ela estava registrada é uma cifra que ninguém consegue abrir. O que muda é que o rendimento de recuperação e o custo de recondicionamento são declarados como aritmética sobre o valor que a doca digitou. Você pode discutir a entrada, que é a parte que vale discutir.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-saberia-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -81,6 +92,39 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traga um mês de devoluções e as suas notas de crédito.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Perguntas De Uma Doca De Devoluções",
+  "description": "O que se pergunta antes de alguém falar em contrato.",
+  "questions": [
+    {
+      "question": "O que ele precisa dos nossos sistemas para classificar uma devolução?",
+      "answer": "Quatro coisas, e a doca já tem as quatro: o identificador da devolução, o código de barras, a classificação de estado que a pessoa na doca anotou e o valor do item como ela o digita. A triagem trabalha com isso e com a política escrita ao lado. É por isso que a primeira caixa pode ser classificada no primeiro dia, e não depois de o sistema de pedidos, o arquivo de garantias e a tabela de preços terem sido ligados uns aos outros."
+    },
+    {
+      "question": "Quem decide para onde a caixa vai de verdade?",
+      "answer": "A pessoa na doca. A triagem responde à tela e para ali, e a decisão continua sendo dela. Agir sobre uma ação redigida é outra parte do FACE, e lá a decisão fica registrada no nome de uma pessoa antes de qualquer coisa rodar."
+    },
+    {
+      "question": "O que acontece quando a classificação não é reconhecida?",
+      "answer": "Ela volta como recusa e não como saída. Isso vale mais do que parece. A falha que isso substitui é uma caixa que recebeu um destino de aparência plausível porque alguma coisa tinha que ir no campo, e ninguém adiante conseguia distinguir aquela resposta de uma de verdade."
+    },
+    {
+      "question": "A cifra de recuperação é um preço de mercado?",
+      "answer": "É aritmética, e é melhor saber disso do que confiar no sinal de dólar. O rendimento de recuperação estimado e o custo de recondicionamento são o valor que a sua doca digitou, multiplicado por uma fração fixa conforme a classificação: um item impecável a 95% desse valor e nada de recondicionamento, um danificado a 75% com um quarto como reparo. Julgue a cifra julgando o valor que foi informado."
+    },
+    {
+      "question": "E se os nossos registros não puderem sair do prédio?",
+      "answer": "Então nada disso muda. A triagem é uma política escrita e aritmética sobre quatro campos que a doca digita, e roda onde você roda o FACE, em máquinas suas."
+    },
+    {
+      "question": "Como saberíamos se adiantou alguma coisa?",
+      "answer": "Por quatro cifras suas, anotadas antes de qualquer coisa mudar. Os dias entre a caixa chegar e a decisão ser tomada. O que você recuperou, como proporção do valor pelo qual a mercadoria estava registrada. Para onde as devoluções foram, divididas entre prateleira, reparo e descarte, e quantas das descartadas ainda estavam na garantia. E os dias entre a devolução ser aberta e o crédito chegar ao cliente."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

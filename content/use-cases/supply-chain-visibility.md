@@ -80,6 +80,17 @@ author: "Runink"
                 What arrives at a person is a short ranked list of proposed actions with the records attached, not a diagram to admire. A named person approves, edits or rejects each one, and that sign-off is kept. Approving is what sends it, and a decided item leaves the queue instead of coming back round next time somebody opens the board. Where a step behind the approval has no implementation yet, the response names that step as not executed rather than reporting the action as complete — so the board shows what was decided and separately what was actually carried out. It all runs on machines you own.
             </p>
         </div>
+        <div>
+            <h2 id="who-owns-this" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Who Owns This</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Three desks, and what each of them is holding today.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">The supply chain director.</strong> Today the picture gets assembled for the monthly review, or once something has gone badly enough to be worth a morning. What changes is that the same set of facts sits behind the question and behind the answer, so a decision is argued from one place rather than from three exports.</li>
+                <li><strong class="text-stone-200">The operations manager.</strong> Today one ordinary question means four logins, four ways of naming the same site and four ideas of what a week is. What changes is that records are placed by what they are about, so the same kind of fact lands in the same place whether it came from an ERP, a warehouse system, a transport system or a spreadsheet somebody emails on Fridays.</li>
+                <li><strong class="text-stone-200">The analyst everybody relies on.</strong> Today the mapping between a site code in one system and a depot name in another is not written down anywhere. It is remembered, and while that person is on leave the question cannot be answered at all. What changes is that the map is derived from the structure of your own files by fixed rules, so it is something anyone can re-derive and check.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -94,6 +105,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Bring one month of extracts from the systems you would actually want joined, in whatever format they come out in.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions An Operations Team Asks",
+  "description": "What comes up before anybody talks about a contract.",
+  "questions": [
+    {
+      "question": "How is the map worked out?",
+      "answer": "From the structure of your own files, by fixed rules. No model is asked, no search goes out and nothing crosses the network for that step, so the same files produce the same map every time. A model is used afterwards to add commentary, and what it adds is clearly the commentary rather than the structure."
+    },
+    {
+      "question": "What happens to the tables that do not fit anywhere?",
+      "answer": "They are placed by what the source is instead. A warehouse, yard, transport or order-management extract is logistics. A sensor or tag feed is telemetry. A claims system is finance. The rule exists so that the awkward half of an estate gets named, rather than swept into a bucket called other and never mentioned again."
+    },
+    {
+      "question": "What does it say about an area it could not assess?",
+      "answer": "That it was not assessed, and why, in those words. We did not look and we looked and it is fine are two different sentences, and a status colour on a dashboard cannot tell them apart. Marking one as the other is the failure this is written to avoid."
+    },
+    {
+      "question": "Can we ask it questions in our own words?",
+      "answer": "Yes, in the vocabulary you already use, narrowed to whichever areas you are looking at, with the map and the recognised rules behind the answer. You get the reasoning as well as the reply. It all runs on machines you own."
+    },
+    {
+      "question": "What reaches a person at the end of it?",
+      "answer": "A short ranked list of proposed actions with the records attached, rather than a diagram to admire. A named person approves, edits or rejects each one and the sign-off is kept. A decided item leaves the queue instead of coming back round the next time somebody opens the board, and where a step behind an approval has no implementation yet the response names that step rather than reporting the action as complete."
+    },
+    {
+      "question": "What should we bring to a first conversation?",
+      "answer": "One month of extracts from the systems you would actually want joined, in whatever format they come out in. Bring one more thing with them: an ordinary cross-system question you were asked last month, and an honest count of how many people in the building could have answered it."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

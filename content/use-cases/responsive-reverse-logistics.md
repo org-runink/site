@@ -67,6 +67,17 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
                 The triage call itself sends nothing. It returns a disposition and stops — no stock record is written, no credit is raised, no approval is stored. Acting on a drafted action is a separate part of FACE, and there the decision is recorded against a named person before anything runs; where a step behind it has no implementation yet, the write into an ERP being the honest example, the response names the step that did not happen instead of reporting the move as complete.
             </p>
         </div>
+        <div>
+            <h2 id="who-owns-this" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Who Owns This</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Three desks, and what each of them is holding today.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">The returns dock supervisor.</strong> They write the condition grade and they type the value, and then the box joins the pen with the rest of the week. What changes is that the grade they wrote is the input to an answer at the scan: a route, a recovery figure and a repair figure, while the box is still in their hands. A grade the policy does not recognise comes back as a refusal, so a doubtful box looks doubtful.</li>
+                <li><strong class="text-stone-200">Operations director.</strong> Today the sorting is done by eye and by habit, on the afternoon there is one. Good stock goes for scrap because the queue was long. What changes is that the same grade produces the same route on a quiet Tuesday and on the Monday after Christmas, so the only variation left is in the grading &mdash; which is a thing you can train, sample and audit.</li>
+                <li><strong class="text-stone-200">Finance.</strong> Today the credit note is raised weeks after the goods came back, and what you recovered against what the goods were carried at is a figure nobody can break down. What changes is that the recovery yield and the refurbishment cost are stated as arithmetic on the value the dock typed. You can argue with the input, which is the part worth arguing with.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-would-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -81,6 +92,39 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Bring one month of returns and your credit notes.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions A Returns Desk Asks",
+  "description": "What comes up before anybody talks about a contract.",
+  "questions": [
+    {
+      "question": "What does it need from our systems before it can grade a return?",
+      "answer": "Four things, and the dock already has all four: the return's id, the barcode, the condition grade the person at the dock wrote down, and the item's value as they type it. The triage works from those and from the policy written down beside them. That is why the first box can be graded on the first day, rather than after the order system, the warranty file and the price list have been joined to each other."
+    },
+    {
+      "question": "Who decides where the box actually goes?",
+      "answer": "The person at the dock. The triage answers the screen and stops there, and the call remains theirs to make. Acting on a drafted action is a separate part of FACE, and there the decision is recorded against a named person before anything runs."
+    },
+    {
+      "question": "What happens when the grade is one it does not recognise?",
+      "answer": "It comes back as a refusal rather than as a route. That is worth more than it sounds. The failure this replaces is a box that got a plausible-looking disposition because something had to go in the field, and nobody downstream could tell that answer apart from a real one."
+    },
+    {
+      "question": "Is the recovery figure a market price?",
+      "answer": "It is arithmetic, and it is better to know that than to trust the dollar sign. The estimated recovery yield and the refurbishment cost are the value your dock typed, multiplied by a fraction fixed against the grade &mdash; a pristine item at 95% of that value with nothing to refurbish, a damaged one at 75% with a quarter of it as the repair. Judge the figure by judging the value that was entered."
+    },
+    {
+      "question": "What if our records cannot leave the building?",
+      "answer": "Then nothing about this changes. The triage is a written-down policy and arithmetic on four fields the dock types, and it runs where you run FACE, on machines you own."
+    },
+    {
+      "question": "How would we tell whether it made any difference?",
+      "answer": "Four of your own figures, written down before anything changes. Days from the box landing to the call being made. What you got back, as a share of what the goods were carried at. Where the returns went, split between shelf, repair and scrap, and how many of the scrapped ones were still under warranty. And days from the return being raised to the credit reaching the customer."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

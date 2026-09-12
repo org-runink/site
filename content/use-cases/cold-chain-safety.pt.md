@@ -63,6 +63,17 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
                 Onde há algo sobre o que agir, aquilo espera como um movimento redigido, e uma pessoa com nome aprova, edita ou recusa, e o aval fica anotado. Aprovar é o que envia. E onde um passo desse movimento não tem nada por trás — uma escrita num sistema de pátio ou de transporte, por exemplo — a resposta nomeia o passo que não aconteceu em vez de relatar sucesso, então &ldquo;aprovado&rdquo; e &ldquo;feito&rdquo; seguem sendo duas palavras diferentes.
             </p>
         </div>
+        <div>
+            <h2 id="quem-cuida-disso" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quem Cuida Disso</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três mesas, e o que cada uma tem na mão hoje.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O supervisor do pátio.</strong> Hoje as regras sobre quais mercadorias podem ficar perto de quais são conhecidas, estão escritas e são conferidas por uma pessoa que também está fazendo outras quatro coisas. O que muda é que os quadros que as câmeras do pátio já gravam passam a ser lidos, e o que volta é uma observação escrita presa ao quadro de onde saiu &mdash; algo que dá para abrir e contestar, e não uma linha num caderno.</li>
+                <li><strong class="text-stone-200">Conformidade e risco.</strong> Hoje um achado sobre separação de mercadorias existe se alguém estava passando por ali. O que muda é que um aviso pode ser colocado no fluxo de eventos do pátio para o que estiver escutando, e o movimento que vem depois é redigido e espera uma pessoa nomeada aprovar, editar ou recusar. A assinatura fica guardada junto com o quadro que a originou.</li>
+                <li><strong class="text-stone-200">TI e segurança da informação.</strong> Hoje um produto de câmeras significa perguntar para qual serviço de terceiros as imagens do pátio estão sendo enviadas para serem descritas. O que muda é que o quadro é validado como imagem real e lido por um modelo de visão em hardware que você controla, então a revisão trata de máquinas que você já opera.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-saberia-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -78,6 +89,39 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traga a sua conta de baixas e um dia de gravação das câmeras do pátio.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Perguntas De Uma Equipe De Pátio",
+  "description": "O que se pergunta antes de alguém falar em contrato.",
+  "questions": [
+    {
+      "question": "O que o lado das câmeras lê de verdade?",
+      "answer": "Um quadro de uma câmera de pátio ou infravermelha. Confere-se que é uma imagem de verdade antes de qualquer coisa lê-la, reduz-se a um tamanho que um modelo consiga receber, e um modelo de visão rodando em hardware que você controla faz a leitura. O que volta é uma observação escrita, presa ao quadro de onde foi lida."
+    },
+    {
+      "question": "As imagens saem do local?",
+      "answer": "A leitura acontece onde as imagens já estão. O quadro é tratado no seu próprio hardware e descrito ali, e a observação volta presa àquele quadro. O pátio é lido por máquinas que já estão no pátio."
+    },
+    {
+      "question": "Se ele vir alguma coisa, para o guindaste?",
+      "answer": "Ele emite um aviso &mdash; gire aquela câmera, segure aqueles movimentos &mdash; para tudo o que estiver inscrito no fluxo de eventos do pátio. O aviso é um pedido, e o código não vai apresentá-lo como um movimento interrompido. O que transforma um aviso em movimento é uma pessoa nomeada aprovando a ação redigida."
+    },
+    {
+      "question": "Quem assina uma ação que ele redige?",
+      "answer": "Uma pessoa nomeada, cuja aprovação, edição ou recusa fica no registro. Aprovar é o que envia. E onde uma etapa por trás dessa aprovação ainda não tem nada implementado &mdash; uma escrita num sistema de pátio ou de transporte é o exemplo honesto &mdash; a resposta nomeia a etapa que não aconteceu, de modo que aprovado e feito continuam sendo duas palavras diferentes."
+    },
+    {
+      "question": "O que acontece quando a leitura está errada?",
+      "answer": "Toda observação volta presa ao quadro de onde foi lida, então quem a lê pode abrir a imagem e contestá-la. Nada se move por causa de uma observação sozinha: o movimento é redigido e espera uma pessoa."
+    },
+    {
+      "question": "O que devemos levar para uma primeira conversa?",
+      "answer": "A sua conta de perdas e um dia de gravação das câmeras do pátio. Leve mais uma contagem junto: quantas câmeras existem no pátio, e quantas horas do que elas gravam alguma vez são olhadas por uma pessoa. Essa distância é o espaço em que o lado das câmeras trabalha."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

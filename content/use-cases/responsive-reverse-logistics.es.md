@@ -67,6 +67,17 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
                 La llamada de triaje, por sí misma, no envía nada. Devuelve un destino y se detiene: no se escribe ningún registro de existencias, no se emite ningún abono, no se guarda ninguna aprobación. Actuar sobre una acción redactada es otra parte de FACE, y allí la decisión queda registrada a nombre de una persona antes de que nada se ejecute; y donde un paso detrás de ella todavía no tiene implementación, siendo la escritura en un ERP el ejemplo honesto, la respuesta nombra el paso que no ocurrió en vez de dar el movimiento por completado.
             </p>
         </div>
+        <div>
+            <h2 id="quien-se-encarga-de-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quién Se Encarga De Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres mesas, y lo que cada una tiene hoy encima.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">El responsable del muelle de devoluciones.</strong> Hoy anota el grado de estado y teclea el valor, y luego la caja se une al apartado con el resto de la semana. Lo que cambia es que el grado que anotó es la entrada de una respuesta en el escaneo: una ruta, una cifra de recuperación y una cifra de reparación, con la caja todavía en sus manos. Un grado que la política no reconoce vuelve como un rechazo, así que una caja dudosa parece dudosa.</li>
+                <li><strong class="text-stone-200">Director de operaciones.</strong> Hoy la clasificación se hace a ojo y por costumbre, la tarde que la hay. Mercancía buena se va al desguace porque la cola era larga. Lo que cambia es que el mismo grado produce la misma ruta un martes tranquilo y el lunes después de Navidad, de modo que la única variación que queda está en la calificación &mdash; y eso es algo que se puede formar, muestrear y auditar.</li>
+                <li><strong class="text-stone-200">Finanzas.</strong> Hoy el abono se emite semanas después de que la mercancía volviera, y lo que se recuperó frente a lo que la mercancía estaba valorada en libros es una cifra que nadie puede desglosar. Lo que cambia es que el rendimiento de recuperación y el coste de reacondicionamiento se declaran como aritmética sobre el valor que tecleó el muelle. Usted puede discutir la entrada, que es la parte que merece discusión.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabria-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -81,6 +92,39 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga un mes de devoluciones y sus notas de crédito.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Preguntas De Un Muelle De Devoluciones",
+  "description": "Lo que se pregunta antes de hablar de un contrato.",
+  "questions": [
+    {
+      "question": "¿Qué necesita de nuestros sistemas para calificar una devolución?",
+      "answer": "Cuatro cosas, y el muelle ya tiene las cuatro: el identificador de la devolución, el código de barras, el grado de estado que anotó la persona del muelle y el valor del artículo tal como ella lo teclea. El triaje trabaja con eso y con la política escrita al lado. Por eso la primera caja puede calificarse el primer día, y no después de haber unido entre sí el sistema de pedidos, el fichero de garantías y la lista de precios."
+    },
+    {
+      "question": "¿Quién decide a dónde va la caja de verdad?",
+      "answer": "La persona del muelle. El triaje contesta a la pantalla y ahí se detiene, y la decisión sigue siendo suya. Actuar sobre una acción redactada es otra parte de FACE, y allí la decisión queda registrada a nombre de una persona concreta antes de que se ejecute nada."
+    },
+    {
+      "question": "¿Qué pasa cuando el grado es uno que no reconoce?",
+      "answer": "Vuelve como un rechazo y no como una ruta. Eso vale más de lo que suena. El fallo que esto sustituye es una caja que recibió un destino de apariencia plausible porque había que poner algo en el campo, y nadie aguas abajo podía distinguir esa respuesta de una de verdad."
+    },
+    {
+      "question": "¿La cifra de recuperación es un precio de mercado?",
+      "answer": "Es aritmética, y más vale saberlo que fiarse del signo de dólar. El rendimiento de recuperación estimado y el coste de reacondicionamiento son el valor que tecleó su muelle multiplicado por una fracción fija según el grado: un artículo impecable al 95% de ese valor y nada de reacondicionamiento, uno dañado al 75% con una cuarta parte como reparación. Juzgue la cifra juzgando el valor que se introdujo."
+    },
+    {
+      "question": "¿Y si nuestros registros no pueden salir del edificio?",
+      "answer": "Entonces nada de esto cambia. El triaje es una política escrita y aritmética sobre cuatro campos que teclea el muelle, y se ejecuta donde usted ejecuta FACE, en máquinas suyas."
+    },
+    {
+      "question": "¿Cómo sabríamos si ha servido de algo?",
+      "answer": "Con cuatro cifras suyas, anotadas antes de que nada cambie. Días desde que la caja aterriza hasta que se toma la decisión. Lo que recuperó, como proporción de lo que la mercancía estaba valorada en libros. A dónde fueron las devoluciones, repartidas entre estantería, reparación y desguace, y cuántas de las desguazadas seguían en garantía. Y los días desde que se abre la devolución hasta que el abono llega al cliente."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

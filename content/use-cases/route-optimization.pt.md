@@ -77,6 +77,17 @@ author: "Runink"
                 Aprovar é o que manda, e o motivo fica no registro para quem perguntar em três meses por que um caminhão foi por ali. Mais uma honestidade sobre isso, do tipo em que esta página é construída: onde uma etapa por trás da aprovação não tem nada implementado atrás dela &mdash; a gravação no seu sistema de transporte é o exemplo real &mdash;, a resposta nomeia essa etapa como não executada, em vez de devolver um sucesso que cobre a ação inteira. Aprovado e feito são duas palavras diferentes aqui, e é o software que te diz qual das duas ele conseguiu.
             </p>
         </div>
+        <div>
+            <h2 id="quem-cuida-disso" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quem Cuida Disso</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três mesas, e o que cada uma tem na mão hoje.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O planejador de transporte.</strong> Hoje o plano é montado na noite anterior ou logo cedo, o que faz dele a decisão mais bem cuidada do dia e a que é tomada com menos informação. O que muda é que dá para perguntar por um trecho sozinho, nos termos dele &mdash; uma origem, um destino, as restrições que contam ali &mdash; e a resposta é uma distância rodoviária medida e um tempo de viagem, vindos do provedor de roteirização que você conectou.</li>
+                <li><strong class="text-stone-200">A mesa de expedição.</strong> Hoje o dia é remendado: trocar duas entregas, empurrar uma para amanhã, ligar para um motorista. Sensato, local, e ninguém sabe dizer quanto o remendo custou. O que muda é que um trecho volta como uma distância e uma duração que de fato foram devolvidas, então duas pessoas na mesa discutem os mesmos dois números.</li>
+                <li><strong class="text-stone-200">Diretor de operações.</strong> Hoje o desvio sai do prédio como hora extra, uma segunda viagem, uma janela perdida e combustível, cada coisa caindo num orçamento diferente e nenhuma delas etiquetada com o motivo. O que muda é que nenhum dinheiro é impresso ao lado de uma rota, porque o provedor não devolve nenhum &mdash; assim uma cifra medida e uma cifra chutada nunca se sentam na mesma linha fingindo ser a mesma coisa.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -91,6 +102,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traga um mês de dados de trecho, planejado contra realizado, de uma base só.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Perguntas De Uma Mesa De Transporte",
+  "description": "O que se pergunta antes de alguém falar em contrato.",
+  "questions": [
+    {
+      "question": "O que ele precisa para devolver uma rota?",
+      "answer": "Uma origem, um destino e as restrições que você nomear naquele trecho. Isso vai para o provedor de roteirização que você conectou, e volta como uma distância rodoviária medida, um tempo de viagem e o próprio traçado da rota, de modo que a resposta pode ser desenhada em vez de descrita numa frase."
+    },
+    {
+      "question": "Por que não há custo nem economia ao lado da rota?",
+      "answer": "Porque o provedor de roteirização devolve uma distância e um tempo, e nenhum custo. Uma cifra que ninguém mediu, sentada ao lado de duas que foram medidas, é como uma estimativa acaba sendo citada de volta para você como fato. Estimativas de regra de bolso existem em outras partes do produto e de propósito não são copiadas para cima de uma rota medida."
+    },
+    {
+      "question": "O que acontece quando a rota não pode ser calculada?",
+      "answer": "A resposta é que está indisponível, com essas palavras. Uma conexão sem credencial de roteirização, ou um provedor que não devolve nada, volta como indisponível e não como uma resposta com os campos em branco. Um campo em branco numa tela é lido como uma medição, e essa é a pior das duas falhas."
+    },
+    {
+      "question": "Onde fica a credencial de roteirização?",
+      "answer": "Na conexão que foi configurada para roteirização, não numa variável de ambiente cravada num servidor. É algo que você configura, consegue ver e consegue revogar por conexão, que é o que a torna auditável."
+    },
+    {
+      "question": "Quem assina uma mudança no dia?",
+      "answer": "Uma pessoa nomeada na mesa. Uma mudança é proposta, nunca imposta: ela é aprovada, editada ou recusada, e recusar fica registrado como decisão e não como silêncio. Aprovar é o que envia, e o motivo fica no registro para quem perguntar daqui a três meses por que um caminhão foi por ali."
+    },
+    {
+      "question": "Como o motorista fica sabendo?",
+      "answer": "Esse é outro trabalho e outra página. Um motorista pode perguntar e ser respondido em voz alta, com as mãos no volante, como descrito em [falar com motoristas sem tela](/pt/use-cases/voice-dispatch/). A ligação deixa uma transcrição e não uma aceitação, e a mudança continua sendo da mesa."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

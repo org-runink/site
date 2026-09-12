@@ -66,6 +66,17 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
                 Une personne nommée valide, corrige ou rejette, et son accord reste au dossier. C'est la validation qui l'envoie plus loin. Et là où une étape de l'action rédigée n'a encore rien derrière elle &mdash; l'écriture dans votre ERP en est l'exemple honnête &mdash; la réponse nomme cette étape comme non exécutée au lieu de déclarer l'ensemble fait. On vous dit quelle partie de l'action a eu lieu, et c'est la différence entre un système sur lequel on s'appuie et un système qu'il faut aller vérifier. Les marges de sécurité peuvent alors se discuter à partir de vos propres chiffres plutôt qu'à l'ancienneté.
             </p>
         </div>
+        <div>
+            <h2 id="qui-s-en-occupe" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qui S'En Occupe</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois bureaux, et ce que chacun a sur les bras aujourd'hui.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Responsable de la planification.</strong> Aujourd'hui l'alerte se déclenche sur un niveau, et le fournisseur a toujours besoin de quinze jours qui commencent le jour où on vous l'a dit, pas le jour où l'ennui a commencé. Ce qui change, c'est que la projection sous la décision est vérifiée contre des périodes qu'on ne lui a pas montrées, et que le déclencheur dit quelle borne a été franchie et par quel niveau, en toutes lettres.</li>
+                <li><strong class="text-stone-200">Finance et achats.</strong> Aujourd'hui le coût d'apprendre tard sort en fret express, classé sous des codes que personne ne relit. Ce qui change, c'est que l'avertissement arrive sous forme d'une borne, d'un niveau et d'une raison, et non d'une couleur sur une tuile, si bien que la conversation sur la commande porte sur un nombre que quelqu'un peut vérifier.</li>
+                <li><strong class="text-stone-200">Directeur des opérations.</strong> Aujourd'hui chaque étape de la chaîne arrondit au carton complet et ajoute une marge de sécurité, et cette croissance vit répartie sur quatre systèmes dont aucun ne la montre entière. Ce qui change, c'est que les marges de sécurité se discutent à partir de vos propres chiffres plutôt qu'à l'ancienneté.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-sauriez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -80,6 +91,39 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez une année d'une famille de produits et vos codes de fret express.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions D'une Équipe De Planification",
+  "description": "Ce que l'on demande avant de parler d'un contrat.",
+  "questions": [
+    {
+      "question": "D'où viennent les seuils ?",
+      "answer": "De vous. Le point de commande, le plancher et le plafond sont ceux que vous utilisez déjà. FACE compare le niveau à ces bornes et renvoie celle qui a été franchie et le niveau qui l'a franchie. Le seuil reste le vôtre délibérément : un avertissement calé sur un délai d'approvisionnement que le logiciel aurait deviné aurait l'air plus malin que l'alerte de niveau dont vous disposez déjà, et vaudrait moins."
+    },
+    {
+      "question": "Que renvoie exactement le déclencheur ?",
+      "answer": "La borne franchie, le niveau qui l'a franchie et la raison, écrits en toutes lettres plutôt que montrés comme une couleur sur une tuile. C'est tout, et c'est écrit ainsi pour que l'avertissement puisse être discuté au lieu d'être simplement accusé réception."
+    },
+    {
+      "question": "Quelle confiance accorder à la prévision qui est dessous ?",
+      "answer": "Chaque projection nomme le modèle qui l'a produite et le nombre de périodes dont il a disposé pour apprendre. Le modèle a été choisi en mettant de côté la portion la plus récente de votre propre historique et en réajustant chaque candidat sur ce qui précédait. Quand l'historique d'une référence ne se prédit pas lui-même, c'est aussi l'un des constats."
+    },
+    {
+      "question": "Qui valide la commande qu'il rédige ?",
+      "answer": "Une personne désignée l'approuve, la modifie ou la refuse, et cette validation reste au dossier. C'est l'approbation qui l'envoie. Là où une étape de l'action rédigée n'a encore rien derrière elle &mdash; une écriture dans votre ERP en est l'exemple honnête &mdash; la réponse nomme cette étape comme non exécutée au lieu de donner l'ensemble pour fait, si bien qu'on vous dit quelle partie de l'action a eu lieu."
+    },
+    {
+      "question": "Où se trouve la prévision elle-même ?",
+      "answer": "Dans son propre scénario. Comment une série est lue, quel modèle est choisi et ce qu'il dit lorsqu'une référence n'est tout simplement pas prévisible est décrit dans [la prévision de la demande](/fr/use-cases/demand-forecasting/). Cette page-ci est la décision de commande qui en découle, et les deux sont tenues séparées parce que ce ne sont pas les mêmes personnes qui en débattent."
+    },
+    {
+      "question": "Qu'apporter à une première conversation ?",
+      "answer": "Une année d'une famille de produits, et les codes que votre équipe utilise pour le fret aérien ou express. Une année entière plutôt qu'un trimestre, parce que le coût d'apprendre tard est saisonnier et qu'un trimestre vous flattera ou vous accablera au hasard."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

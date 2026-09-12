@@ -77,6 +77,17 @@ author: "Runink"
                 Aprobar es lo que lo manda, y el motivo se queda en el registro para quien pregunte dentro de tres meses por qué un camión fue por ahí. Una honestidad más sobre eso, del tipo sobre el que está construida esta página: donde un paso detrás de la aprobación no tiene nada implementado por debajo &mdash; la escritura en su sistema de transporte es el ejemplo real &mdash;, la respuesta nombra ese paso como no ejecutado en vez de devolver un éxito que cubra la acción entera. Aprobado y hecho son aquí dos palabras distintas, y es el software el que le dice cuál de las dos consiguió.
             </p>
         </div>
+        <div>
+            <h2 id="quien-se-encarga-de-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quién Se Encarga De Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres mesas, y lo que cada una tiene hoy encima.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">El planificador de transporte.</strong> Hoy el plan se construye la noche antes o a primera hora, lo que lo convierte en la decisión más cuidada del día y en la que se toma con menos información. Lo que cambia es que se puede preguntar por un solo tramo en sus propios términos &mdash; un origen, un destino, las restricciones que cuentan en él &mdash; y la respuesta es una distancia por carretera medida y un tiempo de viaje del proveedor de rutas que usted conectó.</li>
+                <li><strong class="text-stone-200">La mesa de expediciones.</strong> Hoy la jornada se parchea: intercambiar dos entregas, pasar una a mañana, llamar a un conductor. Sensato y local, y nadie puede decir qué costó el parche. Lo que cambia es que un tramo vuelve como una distancia y una duración que de verdad se devolvieron, así que dos personas en la mesa discuten sobre los mismos dos números.</li>
+                <li><strong class="text-stone-200">Director de operaciones.</strong> Hoy la desviación sale del edificio como horas extra, un segundo viaje, una ventana perdida y combustible, cada cosa cayendo en un presupuesto distinto y ninguna etiquetada con el motivo. Lo que cambia es que junto a una ruta no se imprime dinero, porque el proveedor no devuelve ninguno &mdash; así que una cifra medida y una cifra supuesta nunca se sientan en la misma línea fingiendo ser lo mismo.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -91,6 +102,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga un mes de datos de tramos, planificado contra real, de una sola base.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Preguntas De Una Mesa De Transporte",
+  "description": "Lo que se pregunta antes de hablar de un contrato.",
+  "questions": [
+    {
+      "question": "¿Qué necesita para devolver una ruta?",
+      "answer": "Un origen, un destino y las restricciones que usted nombre en ese tramo. Eso va al proveedor de rutas que conectó, y vuelve como una distancia por carretera medida, un tiempo de viaje y el propio trazado de la ruta, de modo que la respuesta se puede dibujar en vez de describirse en una frase."
+    },
+    {
+      "question": "¿Por qué no hay coste ni ahorro junto a la ruta?",
+      "answer": "Porque el proveedor de rutas devuelve una distancia y un tiempo, y ningún coste. Una cifra que nadie midió, sentada al lado de dos que sí, es la forma en que una estimación acaba citada de vuelta como un hecho. En otras partes del producto existen estimaciones a ojo, y deliberadamente no se copian sobre una ruta medida."
+    },
+    {
+      "question": "¿Qué pasa cuando no se puede calcular la ruta?",
+      "answer": "La respuesta es que no está disponible, con esas palabras. Una conexión sin credencial de rutas, o un proveedor que no devuelve nada, vuelve como no disponible y no como una respuesta con los campos vacíos. Un campo en blanco en una pantalla se lee como una medición, y ese es el peor fallo de los dos."
+    },
+    {
+      "question": "¿Dónde vive la credencial de rutas?",
+      "answer": "En la conexión que se configuró para rutas, no en una variable de entorno incrustada en un servidor. Es algo que usted configura, puede ver y puede revocar por conexión, que es lo que la hace auditable."
+    },
+    {
+      "question": "¿Quién firma un cambio en la jornada?",
+      "answer": "Una persona concreta de la mesa. Un cambio se propone, nunca se impone: se aprueba, se edita o se rechaza, y rechazar queda registrado como una decisión y no como un silencio. Aprobar es lo que lo envía, y el motivo queda en el registro para quien pregunte dentro de tres meses por qué un camión fue por ahí."
+    },
+    {
+      "question": "¿Cómo se entera el conductor?",
+      "answer": "Ese es otro trabajo y otra página. Un conductor puede preguntar y recibir respuesta en voz alta con las manos en el volante, como se describe en [hablar con los conductores sin pantalla](/es/use-cases/voice-dispatch/). La llamada deja una transcripción y no una aceptación, y el cambio sigue siendo de la mesa."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

@@ -78,6 +78,17 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, the driv
                 One more refusal, because it is the kind that usually gets hidden. Elsewhere in FACE you can attach a voice memo to a thread, and that attachment is not transcribed. Rather than letting the model improvise around it, the model is told outright that an audio attachment arrived, that its contents are unknown, and that it must not guess at what was said — and it is instructed to tell you the audio was not processed. A system that cannot hear something and says so is worth more than one that fills the gap in.
             </p>
         </div>
+        <div>
+            <h2 id="who-owns-this" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Who Owns This</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Three desks, and what each of them is holding today.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">The dispatch desk.</strong> Today a change means ringing round one truck at a time and hoping each one can pick up, and half the calls go to voicemail and get made again twenty minutes later. What changes is that a driver can ask and be answered out loud, and the call writes itself down. The desk still makes the change; it stops being the only route a fact can travel.</li>
+                <li><strong class="text-stone-200">The depot manager.</strong> Today the day is written up at the end of it, from memory, if it gets written up at all, and the hour lost at a gate is the one you never bill for. What changes is that both sides of the conversation go to the call log as they happen, so the hour at the gate is on the record at the gate.</li>
+                <li><strong class="text-stone-200">IT and information security.</strong> Today a voice product means asking whose account the transcript ends up in. What changes is that the speech is turned into text by the model server you already run, and every conversational reply is spoken inside the FACE process from a voice embedded in the binary. The phone leg is carried by a telephony provider, as any call is, and the recording notice and greeting are read in that provider&rsquo;s voice before the socket into your machines is open.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-would-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -92,6 +103,39 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, the driv
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Bring one depot and a week of vehicle tracking data.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions A Fleet Manager Asks",
+  "description": "What comes up before anybody talks about a contract.",
+  "questions": [
+    {
+      "question": "What does the driver have to do?",
+      "answer": "Make an ordinary phone call and ask out loud. Where the next stop is, which gate, what the customer asked for. The answer comes back out loud, so there is no screen to read and no reason to pull over."
+    },
+    {
+      "question": "Who carries the audio, and who sees the text?",
+      "answer": "The leg between the cab and the building is carried by a telephony provider, the same as any other call your drivers make, and it carries that audio because it has to. The text is a different matter: the transcription and the reasoning that produces the answer happen on your machines, on the model server you already run, and the spoken reply is encoded there too."
+    },
+    {
+      "question": "What happens when a driver says something urgent?",
+      "answer": "Six words are watched, on the phone and on inbound WhatsApp or SMS alike: urgent, asap, emergency, broken, failing and late. A match changes how the agent answers and sends the caller&rsquo;s own sentence to the manager number you configured. On the text side, a message that matched and reached nobody is written to the log saying so, rather than passing as handled."
+    },
+    {
+      "question": "What does the call leave behind?",
+      "answer": "The conversation itself, written down as it happens: each turn, who said it, and the call it belongs to. The hour at the gate is recorded at the gate rather than reconstructed at six o&rsquo;clock. Somebody named on the desk reads it and makes the change, which is what keeps a spoken sentence and a changed delivery two separate events."
+    },
+    {
+      "question": "Whose voice does the driver hear first?",
+      "answer": "The telephony provider&rsquo;s. The recording notice and the greeting that open the call are read from the call-setup instructions, before the socket into your building is open. Every conversational reply after that is spoken from a voice embedded in the FACE binary, in the same process as the rest of it."
+    },
+    {
+      "question": "What should we bring to a first conversation?",
+      "answer": "One depot and a week of vehicle tracking data. Two of your own figures go with it: the minutes between a problem happening and the desk knowing, sampled over a month of late runs, and how much of the waiting time at gates you currently bill."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
