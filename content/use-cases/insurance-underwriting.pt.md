@@ -45,6 +45,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quem-e-isto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quem É Isto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três mesas que respondem por um processo que não tiveram tempo de ler inteiro.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Operações de sinistros: o regulador e quem responde por sinistros.</strong> O que chega hoje é um processo em pedaços: as condições num gerenciador de documentos, o relatório do sinistro no e-mail de sexta, o histórico de reservas no sistema de apólices, e um limite de alçada escrito numa nota de procedimento cuja versão vigente não é óbvia. O que muda é que essas quatro peças chegam ligadas ao sinistro, com um próximo passo redigido e a leitura que o sustenta, de modo que os dez minutos que pediam a formação dessa pessoa não são os últimos dez minutos da manhã.</li>
+                <li><strong class="text-stone-200">O responsável pela subscrição que delegou a alçada.</strong> O que chega hoje é um borderô mensal do agente, e lê-lo contra o que o acordo de delegação de fato permite é um trabalho de regras contra registros num volume que nenhuma equipe termina. O que muda é que as condições que você escreveu são confrontadas com o borderô que lhe mandaram, e cada ponto em que os dois se separam é nomeado, citando a cláusula e o registro.</li>
+                <li><strong class="text-stone-200">Conformidade e riscos, e auditoria interna.</strong> O que chega hoje é uma pergunta sobre uma decisão de meses atrás, respondida reconstruindo-a em vários sistemas. O que muda é que aprovações e recusas ficam guardadas conforme acontecem, com quem decidiu e o que mudou &mdash; e que o limite de alçada documentado pode ser posto ao lado do limite configurado, que é a comparação que acha o patamar elevado durante um acúmulo e nunca devolvido ao lugar.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Registros de seguro são reconhecidos como registros de seguro. Uma extração de sinistros saída de um sistema de administração de apólices é tipificada pelo vocabulário dela &mdash; sinistro, reserva, regulador, prêmio, franquia, liquidação, pagamento &mdash; em vez de ser arquivada onde a coluna mais genérica dela por acaso apontava. Esta é uma falha real que tivemos de corrigir: um conjunto inteiro de dados de sinistros caiu uma vez em operações porque uma das colunas se chamava &ldquo;status&rdquo;.
@@ -94,7 +105,44 @@ author: "Runink"
             Nada aqui é uma aprovação, uma autorização ou uma certificação de coisa alguma. O software lê registros e redige; ele não detém nenhuma alçada delegada, não é um agente regulado, e usá-lo não cumpre nenhuma obrigação em seu nome. Onde uma decisão precisa ser tomada por uma pessoa com alçada para tomá-la, é essa pessoa que a toma, e o registro diz quem ela era.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "O Que Uma Seguradora Pergunta Antes De Comprar",
+  "description": "O que ele lê, quem decide e o que ele não pretende ser.",
+  "questions": [
+    {
+      "question": "O que ele precisa de um processo de sinistro?",
+      "answer": "As condições da apólice, os documentos do sinistro, as movimentações de reserva e o limite de alçada que vale naquele valor &mdash; lidos onde já estão. Um PDF num SFTP, um arquivo Word num drive compartilhado, um extrato do sistema de apólices, a planilha cujas fórmulas implementam em silêncio uma regra de tarifa que ninguém escreveu. As fórmulas são lidas célula a célula, não só os valores que elas mostram naquele dia.<br><br>Um extrato de sinistros é reconhecido como dado de sinistro pelo vocabulário dele &mdash; sinistro, reserva, regulador, prêmio, franquia, liquidação, pagamento &mdash; em vez de ser arquivado onde apontava a coluna mais genérica."
+    },
+    {
+      "question": "Quem decide sobre um processo?",
+      "answer": "Quem subscreve ou quem responde por sinistros. O que o software produz é um processo reunido e um próximo passo proposto, com a leitura em que ele se apoia anexada. Uma pessoa aprova, reescreve ou descarta, e o nome dela fica no registro ao lado do que decidiu.<br><br>As recusas ficam guardadas com o mesmo cuidado das aprovações, que é a metade que a maioria dos sistemas perde. E onde uma ramificação de um passo aprovado não foi cumprida &mdash; uma gravação no sistema de apólices, por exemplo &mdash; a resposta nomeia essa ramificação como não executada em vez de dar a ação por concluída, de modo que o processo nunca mostra como dado um passo que estava apenas aprovado."
+    },
+    {
+      "question": "Como conferimos um número que aparece num rascunho?",
+      "answer": "Seguindo ele de volta. O texto extraído de um documento volta com o arquivo de onde foi lido e o método que o leu, então um número do rascunho leva a uma página de um documento, e não a uma caixa-preta.<br><br>Uma coisa que preferimos que você ouça de nós a descobrir depois: a extração devolve um único número de confiança por lote, e esse número é constante. É o mesmo se todas as páginas saíram limpas ou se todas saíram ruins. Portanto não é sinal de qualidade e não deveria ser mostrado a um analista como se fosse. Leia a extração como tendo achado a página para você. Ler a página continua sendo trabalho de uma pessoa."
+    },
+    {
+      "question": "O que acontece quando as condições e o processo divergem?",
+      "answer": "O achado diz isso sempre no mesmo formato: isto é o que o documento diz, isto é o que o processo mostra, e aqui é onde os dois se separam. As condições cobrem este caso? Os documentos que o procedimento exige estavam mesmo no processo? Quem tratou ficou dentro da alçada que vale naquele valor?<br><br>Os dois lados são citados, então a primeira pergunta na revisão é sobre o caso e não sobre de onde vieram os números. E a comparação vale o que valer a regra que você deu: ele está lendo as suas cláusulas e os seus procedimentos, não uma biblioteca de direito de seguros."
+    },
+    {
+      "question": "Nós delegamos a subscrição. O que ele faz com os borderôs?",
+      "answer": "Ele confronta o acordo de delegação com os borderôs que o agente devolve, que é uma comparação de regras contra registros num volume que é exatamente a razão de essa leitura ser feita por amostragem hoje. Cada divergência volta nomeando a cláusula e o registro de onde foi lida, e espera por uma pessoa.<br><br>A responsabilidade não se move porque a decisão se moveu. Você continua respondendo pelo que foi decidido sob o acordo, e o que muda é quanto do borderô é de fato lido antes de você ter de responder."
+    },
+    {
+      "question": "Usar isto cumpre uma obrigação regulatória?",
+      "answer": "As obrigações ficam com as pessoas e as empresas que as têm. O software lê registros, compara com as regras que você deu e redige; uma pessoa com alçada para decidir decide, e o registro diz quem ela era.<br><br>Sobre frameworks a precisão é a mesma, porque essa distinção é a que importa numa conversa com o supervisor. Apontar o software para um framework significa que ele recebeu aquele texto para ler e comparar. Não é uma declaração de que a Runink tenha certificação sob SOC 2, ISO 27001, ISO 42001 ou qualquer outra, e nenhuma página nossa diz o contrário. Um fornecedor descuidado com essa distinção num folheto será descuidado numa auditoria, e quem ficaria com o apontamento é você."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Agende uma conversa

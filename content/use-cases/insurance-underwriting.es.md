@@ -45,6 +45,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quien-es-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quién Es Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres escritorios que responden por un expediente que no tuvieron tiempo de leer entero.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Operaciones de siniestros: el perito y quien lleva siniestros.</strong> Lo que llega hoy es un expediente en pedazos: las condiciones en un gestor documental, el informe del siniestro en el correo del viernes, el historial de reservas en el sistema de pólizas y un límite de autorización escrito en una nota de procedimiento cuya versión vigente no es evidente. Lo que cambia es que esas cuatro cosas llegan unidas al siniestro, con un siguiente paso redactado y la lectura que lo sostiene, así que los diez minutos que pedían su formación no son los últimos diez minutos de la mañana.</li>
+                <li><strong class="text-stone-200">El responsable de suscripción que delegó la autoridad.</strong> Lo que llega hoy es un listado mensual del agente, y leerlo frente a lo que el acuerdo de delegación permite de verdad es un trabajo de reglas contra registros a un volumen que ningún equipo termina. Lo que cambia es que las condiciones que usted escribió se confrontan con el listado que le mandaron, y cada punto en el que los dos se separan se nombra citando la cláusula y el registro.</li>
+                <li><strong class="text-stone-200">Cumplimiento y riesgos, y auditoría interna.</strong> Lo que llega hoy es una pregunta sobre una decisión de hace meses, contestada reconstruyéndola entre varios sistemas. Lo que cambia es que las aprobaciones y los rechazos se guardan según ocurren, con quién decidió y qué cambió &mdash; y que el límite de autorización documentado se puede poner al lado del límite configurado, que es la comparación que encuentra el umbral subido durante un atasco y nunca devuelto a su sitio.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Los registros de seguros se reconocen como registros de seguros. Una extracción de siniestros salida de un sistema de gestión de pólizas se tipifica por su vocabulario &mdash; siniestro, reserva, perito, prima, franquicia, liquidación, pago &mdash; en vez de archivarse allí donde apuntara su columna más genérica. Este es un fallo real que tuvimos que corregir: todo un conjunto de datos de siniestros acabó una vez en operaciones porque una de sus columnas se llamaba &ldquo;estado&rdquo;.
@@ -94,7 +105,44 @@ author: "Runink"
             Nada de lo que hay aquí es una aprobación, una autorización ni una certificación de nada. El software lee registros y redacta; no ostenta ninguna facultad delegada, no es un sujeto regulado, y usarlo no cumple una obligación en su nombre. Donde una decisión tiene que tomarla una persona con facultad para tomarla, la toma esa persona y el registro dice quién era.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Lo Que Una Aseguradora Pregunta Antes De Comprar",
+  "description": "Qué lee, quién decide y qué no pretende ser.",
+  "questions": [
+    {
+      "question": "¿Qué necesita de un expediente de siniestro?",
+      "answer": "Las condiciones, los documentos del siniestro, los movimientos de reserva y el límite de autorización que se aplica a ese importe, leídos donde ya están. Un PDF en un buzón SFTP, un archivo de Word en una unidad compartida, un extracto del sistema de pólizas, la hoja de cálculo cuyas fórmulas implementan en silencio una regla de tarifa que nadie ha escrito. Las fórmulas se leen celda por celda, no solo los valores que muestran ese día.<br><br>Un extracto de siniestros se reconoce como datos de siniestros por su propio vocabulario &mdash; siniestro, reserva, perito, prima, franquicia, liquidación, pago &mdash; en vez de archivarse donde apunte su columna más genérica."
+    },
+    {
+      "question": "¿Quién decide sobre un expediente?",
+      "answer": "Quien suscribe o quien lleva siniestros. Lo que produce el software es un expediente reunido y un siguiente paso propuesto, con la lectura en la que se apoya adjunta. Una persona lo aprueba, lo reescribe o lo tira, y su nombre queda en el registro junto a lo que decidió.<br><br>Los rechazos se guardan con el mismo cuidado que las aprobaciones, que es la mitad que la mayoría de los sistemas pierde. Y donde una rama de un paso aprobado no se ha llevado a cabo &mdash; una escritura en el sistema de pólizas, por ejemplo &mdash; la respuesta nombra esa rama como no ejecutada en vez de dar la acción por hecha, así que el expediente nunca muestra como dado un paso que solo estaba aprobado."
+    },
+    {
+      "question": "¿Cómo comprobamos una cifra que aparece en un borrador?",
+      "answer": "Siguiéndola hacia atrás. El texto extraído de un documento vuelve con el archivo del que se leyó y el método que se usó, así que una cifra del borrador lleva a una página de un documento y no a una caja negra.<br><br>Una cosa que preferimos que oiga de nosotros antes que descubrirla después: la extracción devuelve un único número de confianza por lote, y ese número es constante. Es el mismo tanto si todas las páginas salieron limpias como si todas salieron mal, así que no es una señal de calidad y no debería enseñarse a un tramitador como si lo fuera. Lea la extracción como que le ha encontrado la página. Leer la página sigue siendo cosa de una persona."
+    },
+    {
+      "question": "¿Qué pasa cuando las condiciones y el expediente no coinciden?",
+      "answer": "El hallazgo lo dice con la misma forma siempre: esto dice el documento, esto muestra el expediente, y aquí es donde los dos se separan. ¿Cubren las condiciones este caso? ¿Estaban de verdad en el expediente los documentos que exige el procedimiento? ¿Se mantuvo el tramitador dentro de la autorización que aplica a ese importe?<br><br>Se citan los dos lados, así que la primera pregunta en la revisión es sobre el caso y no sobre de dónde salieron los números. Y la comparación vale lo que valga la regla que usted le dio: está leyendo sus cláusulas y sus procedimientos, no una biblioteca de derecho de seguros."
+    },
+    {
+      "question": "Delegamos la suscripción. ¿Qué hace con los listados?",
+      "answer": "Confronta el acuerdo de delegación con los listados que el agente devuelve, que es una comparación de reglas contra registros a un volumen que es justo la razón por la que hoy esa lectura se hace por muestreo. Cada desacuerdo vuelve nombrando la cláusula y el registro del que se leyó, y espera a una persona.<br><br>La responsabilidad no se mueve porque se haya movido la decisión. Usted sigue respondiendo por lo que se decidió bajo el acuerdo, y lo que cambia es cuánto del listado se lee de verdad antes de que le toque responder."
+    },
+    {
+      "question": "¿Usar esto cumple una obligación regulatoria?",
+      "answer": "Las obligaciones se quedan con las personas y las entidades que las tienen. El software lee registros, los compara con las reglas que usted le dio y redacta; una persona con facultad para tomar la decisión la toma, y el registro dice quién era.<br><br>Con los marcos conviene ser igual de preciso, porque esa distinción es la que importa en una conversación con el supervisor. Apuntar el software a un marco significa que se le dio ese texto para leerlo y comparar contra él. No es una declaración de que Runink tenga una certificación bajo SOC 2, ISO 27001, ISO 42001 ni ninguna otra, y ninguna página nuestra dice lo contrario. Un proveedor descuidado con esa distinción en un folleto lo será también en una auditoría, y el hallazgo lo tendría usted."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Reserve una consulta

@@ -46,6 +46,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quien-es-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quién Es Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Un mismo problema de reunir papeles, que llega a tres escritorios de tres maneras distintas.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Operaciones de reclamaciones.</strong> Lo que llega hoy es un registro del transportista, un plazo de presentación y una mañana buscando todo lo demás, que es la razón por la que solo los sucesos más grandes acaban en una reclamación escrita. Lo que cambia es el principio del día. La lista son los casos que sus propios registros sostienen, ordenados, cada uno con el envío, los documentos y la diferencia de cantidad, y la carta ya redactada para que una persona la juzgue.</li>
+                <li><strong class="text-stone-200">Cumplimiento aduanero.</strong> Lo que llega hoy es un aviso de retención en el montón de la noche, y el cargo diario lleva días corriendo cuando alguien une por fin la retención con la factura. Lo que cambia es el momento y lo completo. La entrada, el motivo que dio la terminal y los papeles que faltan en el expediente llegan juntos, el mismo día en que se registra la retención.</li>
+                <li><strong class="text-stone-200">Director financiero.</strong> Lo que llega hoy es una línea de demoras en las cuentas por pagar que nadie puede atribuir a una decisión. Lo que cambia es lo que significa la cifra. El cargo que sí era evitable se muestra aparte del arancel que se debía igual, y cada reclamación que sale lleva el nombre de quien la aprobó.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Las comprobaciones corren contra sus propios registros, y la lista de la mañana es lo que esos registros dicen de verdad, ordenada y con los documentos ya adjuntos. No es un panel por el que usted tenga que ir buscando. El corolario merece decirse, porque casi todos los productos lo esconden: si no conecta nada, la lista está vacía. No se abre con ejemplos preparados que parecen sus rutas. Así se comportó una vez, y se quitó.
@@ -81,7 +92,44 @@ author: "Runink"
             La reclamación y la retención en puerto de arriba están dibujadas para mostrar la forma del trabajo. No son el relato de un trabajo con un cliente. No publicamos tasas de recuperación, ni importes recuperados, ni nombres de clientes, porque no los hemos medido sobre sus registros ni sobre los de nadie &mdash; y una tasa de recuperación sacada de las rutas de otro no le diría nada de las suyas.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Lo Que Un Equipo De Reclamaciones Pregunta Primero",
+  "description": "Qué lee, quién firma y qué muestra el expediente un año después.",
+  "questions": [
+    {
+      "question": "¿Qué necesita de nuestros expedientes para hacer esto?",
+      "answer": "Los registros que usted ya tiene, leídos donde ya están. Para una reclamación de transporte eso significa el registro del transportista sobre lo que salió mal, y el pedido de compra, la factura y el conocimiento de embarque del mismo envío. Para un cargo de puerto significa la entrada, el aviso de retención y el motivo que dio la terminal, los documentos que faltan en el expediente y el cargo por día que figura en la propia entrada.<br><br>Nada se vuelve a teclear y nada tiene que cargarse en un sistema nuevo. La consecuencia merece decirse claro, porque casi todos los productos la esconden: si usted no conecta nada, la lista de la mañana está vacía, porque la lista se hace con lo que dicen sus registros y con nada más."
+    },
+    {
+      "question": "¿Quién firma una reclamación que el software redacta?",
+      "answer": "Una persona con nombre de su equipo. El caso llega armado &mdash; la entrada, la retención, los documentos que faltan en el expediente, la diferencia de cantidad si la hay &mdash; con la carta ya escrita, y entonces espera. Alguien la lee, la edita o la rechaza. Aprobar es lo que la envía al transportista.<br><br>Esa firma queda en el registro junto a lo que se decidió, y un rechazo se anota con el mismo cuidado que una aprobación. El nombre que lleva la reclamación es el de la persona que la leyó."
+    },
+    {
+      "question": "¿Qué pasa cuando se equivoca, o cuando no puede saberlo?",
+      "answer": "Usted se entera antes que el transportista, porque lo que produce llega a quien revisa y no a la otra parte. Cada hallazgo lleva los registros con los que se construyó &mdash; qué dos documentos no coinciden y en cuánto, la retención y el motivo que declaró la terminal &mdash; así que quien revisa juzga el caso contra la evidencia en vez de aceptar una conclusión por confianza. Rechazar un caso es un desenlace normal, con un registro normal.<br><br>Donde no puede saberlo, lo dice en vez de rellenar el hueco. Una cifra que no puede sacar de sus propios registros no se imprime como estimación, y donde un paso detrás de una aprobación no se ha llevado a cabo, la respuesta nombra ese paso como no ejecutado en vez de dar la acción entera por hecha. Nadie se entera tres semanas después de que la presentación nunca salió."
+    },
+    {
+      "question": "¿Cómo se calcula la exposición del puerto?",
+      "answer": "Los días de retención, multiplicados por el cargo diario que figura en la entrada, y nada más. El arancel se deja fuera a propósito. El arancel se debe se mueva la caja hoy o la semana que viene, así que sumarlo inflaría la exposición por el valor de una factura que nadie evitó.<br><br>Lo que se le muestra es el cargo que sí era evitable. Es una cifra más pequeña que la que imprime la mayoría de las herramientas, y es la que vale la pena llevar a un transportista."
+    },
+    {
+      "question": "¿Qué ve un auditor después?",
+      "answer": "La entrada y la retención con el motivo que dio la terminal, los documentos que faltaban en el expediente, la diferencia entre el pedido, la factura y el conocimiento de embarque, la carta tal como se redactó, y la persona que la aprobó o la rechazó y cuándo.<br><br>Así que la pregunta de un año después &mdash; por qué se presentó esta reclamación y con qué lectura &mdash; se responde desde el registro y no desde la memoria de una mala semana."
+    },
+    {
+      "question": "¿Y si nuestros expedientes no pueden salir del edificio?",
+      "answer": "Entonces no salen. El razonamiento corre en máquinas que usted controla, y el modelo con el que razona es uno que usted mismo ejecuta, no un servicio que opera otro. Sus registros de embarque, sus facturas y su correspondencia se leen donde ya viven, y la lectura ocurre de su lado de la frontera.<br><br>Así está construido el software, no es un ajuste que se enciende, de modo que es una propiedad que su propia revisión de seguridad puede examinar. Pídanos recorrer esa frontera con usted en vez de dar por buena una frase en una página web."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta

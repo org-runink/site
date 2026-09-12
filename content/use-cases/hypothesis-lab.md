@@ -47,6 +47,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="who-this-is-for" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Who This Is For</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Three people in the same room on the Tuesday, arguing from three different sets of numbers.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Operations director.</strong> What lands today is a port shut on Monday and a call to make by Tuesday, with the figures that would settle it sitting in four systems. What changes is what you walk into the meeting holding: the change written down as a plain statement, the rules it runs into, and the order in which they bite.</li>
+                <li><strong class="text-stone-200">Head of planning.</strong> What lands today is a plan argued from reorder points, lead times and service commitments that live in three people's heads, which is how two of them spend an hour discovering they were describing different plans. What changes is the order of the work. The assumptions are written down before the argument rather than reconstructed after it, and each consequence names the rule it follows from, so a colleague can disagree with it on the merits.</li>
+                <li><strong class="text-stone-200">Chief financial officer.</strong> What lands today is a premium freight line in the payables that nobody can attach to the decision that caused it. What changes is that the option somebody chose and the name of the person who chose it are kept together, so the question six months later is answered from the file rather than from the meeting.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Be clear about what this is, because the category is full of tools that are vague about it. The engine does not run a simulation over your live data and it does not compute an outcome. You state the change as a hypothesis and hand it the rules that govern the thing you are changing &mdash; reorder points, lead times, service commitments, the reserve assumption. It reasons over those rules and returns a ranked read of what follows, with each consequence tied to the rule it came from.
@@ -84,7 +95,44 @@ author: "Runink"
             The port closure above is drawn to show the shape of the work. It is not an account of a customer engagement, and nothing on this page is a measured result. Runink publishes no ROI figures, no percentages and no customer names &mdash; not because they would be unflattering, but because we have not measured them and saying so is cheaper than being caught.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Questions To Ask Before The Next Bad Monday",
+  "description": "What you hand it, what it hands back, and who is still making the call.",
+  "questions": [
+    {
+      "question": "What do we have to give it?",
+      "answer": "Two things. The change, stated as a plain hypothesis — we ship through Rotterdam instead, we drop this supplier, we let this lane run a week late. And the rules that govern the thing you are changing: the reorder points, the lead times, the service commitments, the reserve assumption your business already runs on.<br><br>Writing those down is the step that gets skipped, and much of the value is in it. Two people can argue a plan for an hour and turn out to have been describing different plans, which only becomes visible once the assumptions are on paper."
+    },
+    {
+      "question": "Is this a forecast, or a simulation of our operation?",
+      "answer": "It is an argument you can check. You hand it the change and the rules, and it reasons over those rules and returns a ranked read of what follows, with each consequence tied to the rule it came from.<br><br>That is a different kind of output from a projection, and the difference is the whole point. A number presented as a decision moves the judgement from somebody accountable to a piece of software that is not. What this puts in front of the room is the case laid out: which rules the change collides with, in what order they bite, and what somebody would have to believe for the plan to hold."
+    },
+    {
+      "question": "Does it touch the systems we run the business on?",
+      "answer": "It reasons over the rules you handed it, and it does that on your own hardware. The plant, the warehouse and the accounts keep running on their systems, untouched by the exercise — an experiment inside the live system is not an experiment, which is why nobody sensible runs one.<br><br>The other half of that is discretion. The scenario you are considering — which supplier you might drop, which lane you might cut — is exactly the kind of thing you would not want discussed outside the building, and the reasoning happens where you can see it."
+    },
+    {
+      "question": "What does it do when the rules we gave it do not settle the question?",
+      "answer": "It names what somebody would have to believe for the plan to hold, and hands that back as the finding. That is the honest output when the rules run out: the belief the plan rests on, stated in a sentence, so the room can argue about the belief rather than about a spreadsheet.<br><br>It restates your assumptions and follows them through. It does not discover an assumption you never gave it, and a consequence it returns is only as good as the rule it was drawn from — which is why every consequence names its rule."
+    },
+    {
+      "question": "Who picks, and what does the record show afterwards?",
+      "answer": "The person accountable picks. The run puts the options in a row rather than choosing between them, and the choosing is where the responsibility belongs.<br><br>When somebody does pick one and send it on to be acted on, the option they chose and their name go on the record together. So the question six months later — why did we fly the parts in instead of waiting — is answered out of the file rather than out of somebody's memory of a meeting."
+    },
+    {
+      "question": "Can we push it until the plan breaks?",
+      "answer": "That is one of the better uses of it. Run the lane a week late. Take the second source away. Let a chilled load drift warm. State the rough version as the hypothesis and see which rules it hits first.<br><br>A plan that only holds when the week goes well will fall over in front of you, on a morning when finding that out costs nothing. The alternative is finding it out at the quarter end, when it costs whatever it costs."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation

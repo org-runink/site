@@ -45,6 +45,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quien-es-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quién Es Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres personas a las que se les pide estar seguras, y a las que se les da día y medio para estarlo.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">El paralegal o el analista de contratos.</strong> Lo que llega hoy es la pregunta de media tarde &mdash; ¿podemos mandar estos datos a ese socio?, ¿pueden subcontratar el tratamiento? &mdash; y una pila de acuerdos en los que un párrafo lo resuelve. Lo que cambia es adónde se va el día. El pasaje y el registro contra el que se confrontó llegan juntos y citados, y el trabajo que queda es leerlos y decir qué significan.</li>
+                <li><strong class="text-stone-200">Cumplimiento y riesgos, y quien responde por el marco normativo.</strong> Lo que llega hoy es una regla que usted cree que está en un contrato y que en realidad está en una hoja de cálculo que alguien montó hace cuatro años y dejó corriendo. Lo que cambia es que la regla escrita y la regla que de verdad se aplica se ponen una al lado de la otra, con el documento y el registro nombrados, así que la conversación empieza en la diferencia y no en la búsqueda.</li>
+                <li><strong class="text-stone-200">Auditoría interna.</strong> Lo que llega hoy es la pregunta de si la comprobación se hizo, y una respuesta honesta de &ldquo;probablemente&rdquo;. Lo que cambia es que una comprobación que corrió y no encontró nada y una comprobación que no se pudo hacer quedan escritas como entradas distintas, cada una con quién la leyó y qué decidió. La segunda es la que una auditoría anda buscando de verdad.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Los documentos se leen donde ya están: PDF, archivos de Word, presentaciones en una unidad compartida o en un buzón SFTP. Las hojas de cálculo se leen incluidas sus fórmulas, celda por celda, porque en muchísimas organizaciones la regla operativa no está en el documento de política. Está en una celda.
@@ -100,7 +111,44 @@ author: "Runink"
             El rol con el que está escrito el agente es paralegal y responsable de cumplimiento, y el trabajo que hace es leer, estructurar y citar. No ostenta ninguna condición profesional, no ejerce ningún criterio en el que usted tenga derecho a confiar, y no es un sustituto de una persona cualificada. Una persona con nombre lee lo que encontró, decide, y esa decisión queda en el registro.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Lo Que Un Equipo Legal Y De Cumplimiento Pregunta Primero",
+  "description": "Qué lee, qué devuelve y dónde se queda el juicio.",
+  "questions": [
+    {
+      "question": "¿Qué lee, y dónde lo lee?",
+      "answer": "Sus propios documentos, donde ya están: acuerdos y sus adendas, políticas, notas de procedimiento, PDF, archivos de Word y presentaciones en una unidad compartida o en un buzón SFTP. Las hojas de cálculo se leen incluyendo sus fórmulas, celda por celda, porque en muchísimas organizaciones la regla que de verdad se aplica no está en el documento de política. Está en una celda.<br><br>Lo que vuelve de una lectura nombra el archivo del que salió, así que una cita lleva a una página y no a una afirmación."
+    },
+    {
+      "question": "¿Lo que produce es asesoramiento jurídico?",
+      "answer": "Es una cita y una comparación, y la lee una persona que decide qué significa. Lo que vuelve es el pasaje de su propio documento puesto al lado del registro o de la configuración contra la que se confrontó, y el punto en el que los dos se separan.<br><br>Nada de lo que produce es asesoramiento jurídico, y no sustituye a su paralegal, a su responsable de cumplimiento ni a su abogado. No ostenta condición profesional alguna ni autoridad propia. Lo estrecho que cambia es el viaje fuera de casa por una consulta que siempre se pudo responder dentro: la lectura es del software, el juicio es de la persona cualificada, y es su decisión la que queda en el registro, bajo su nombre."
+    },
+    {
+      "question": "¿Puede arreglar lo que encuentra?",
+      "answer": "Escribe el siguiente paso para que lo dé una persona, en lenguaje de negocio: redactar esta carta, abrir este ticket al equipo de datos, escalar esto al responsable que lo lleva. Eso es una restricción dura en cómo está escrito el agente &mdash; devuelve una remediación funcional en vez de un cambio en sus sistemas.<br><br>El valor práctico de eso es quién acaba con la pluma en la mano. Un hallazgo que llega como un paso escrito va a alguien que puede pesarlo contra todo lo demás que es cierto esa semana, en vez de llegar como una modificación que alguien tiene que descubrir y deshacer."
+    },
+    {
+      "question": "¿Qué hace cuando no puede comprobar algo?",
+      "answer": "Anota que no pudo, con esas palabras, y lo mantiene aparte de un resultado limpio. Hay tres maneras de llegar ahí &mdash; no volvió nada, lo que volvió no se pudo leer, lo que volvió estaba vacío &mdash; y la redacción que produce dice sin rodeos que eso no es un hallazgo de que el área cumple.<br><br>Tratar esas dos cosas como una sola entrada es cómo &ldquo;la comprobación salió limpia&rdquo; y &ldquo;la comprobación nunca se hizo&rdquo; acaban pareciendo iguales en un panel. Piden respuestas distintas de personas distintas, así que se escriben como cosas distintas."
+    },
+    {
+      "question": "Trabajamos con un marco normativo. ¿Una ejecución limpia significa que cumplimos?",
+      "answer": "Una ejecución limpia es una comparación, no un veredicto, y la distinción merece precisión. Usted apunta el software al marco con el que ya trabaja su gente &mdash; protección de datos, tarjetas de pago, seguridad de la información, información de contratos de seguro, sus propias normas internas &mdash; y lo que devuelve es una cita y una comparación contra ese texto.<br><br>Si usted cumple una obligación es un juicio, y se queda con su responsable de cumplimiento, su delegado de protección de datos y su auditor. Nombrar un marco aquí tampoco dice nada sobre la posición de Runink: no es una afirmación de que Runink tenga una certificación bajo SOC&nbsp;2, ISO 27001, ISO 42001 ni ningún otro esquema. Preferimos que lo oiga de nosotros antes que de alguien leyéndole nuestra propia copia."
+    },
+    {
+      "question": "¿Qué le podemos enseñar a un auditor el año que viene?",
+      "answer": "El pasaje que se leyó y el archivo del que salió, el registro o la configuración contra la que se confrontó, la diferencia entre ambos, el paso que se escribió, y la persona que lo leyó, qué decidió y cuándo.<br><br>Esa es la diferencia entre evidencia y recuerdo. Un control que usted afirma que se comprueba con regularidad solo es demostrable si puede producir el trabajo de un mes concreto, y ese trabajo queda guardado según se hace, no montado después."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Reserve una consulta

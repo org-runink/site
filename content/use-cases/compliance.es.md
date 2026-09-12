@@ -46,6 +46,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quien-es-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quién Es Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Dos informes, tres escritorios, y la misma pregunta debajo de ambos: ¿puede usted enseñar su trabajo?
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">El delegado de protección de datos, y cumplimiento y riesgos.</strong> Lo que llega hoy es el nombre y la dirección de un cliente que hicieron falta una vez para entregar un paquete y llevan viajando con el registro desde entonces &mdash; a una exportación, a un informe para un socio, a un archivo de registro técnico que nadie lee hasta que algo ha salido mal. Lo que cambia es dónde se detiene el rastro. Los datos personales se quitan de los registros y los diagnósticos antes de que se escriban, en el camino por debajo de cada servicio y no en un informe que alguien se acuerde de ejecutar.</li>
+                <li><strong class="text-stone-200">TI y seguridad de la información.</strong> Lo que llega hoy es una pregunta que solo se contesta contando: cuáles de sus servicios escriben registros de aplicación, y cuáles de esos pasan lo que escriben por algún borrado antes de guardarlo o enviarlo. Lo que cambia es que la respuesta es una propiedad de cómo está construido el software, descrita en frases corrientes que usted puede contrastar en una revisión de código, así que la conversación de seguridad es una descripción y no una negociación.</li>
+                <li><strong class="text-stone-200">Auditoría interna, y quien responde por el informe.</strong> Lo que llega hoy es una petición de explicar por qué una cifra es la que es, meses después de que quien la montó se haya ido. Lo que cambia es que el método viaja con la cifra en la misma frase, y que una comprobación que no se pudo hacer queda escrita como entrada propia en vez de pasar en silencio por un resultado limpio.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Del lado de la privacidad, el mecanismo es más estrecho de lo que suele venderse, y conviene decirlo con exactitud. Cada servicio escribe sus registros y sus diagnósticos a través de un paso de borrado compartido que quita del texto las direcciones de correo, los teléfonos, los números de tarjeta, los números de la seguridad social y las direcciones IP y de hardware antes de que el texto aterrice, junto con campos con nombre —contraseñas, tókenes, secretos, claves de licencia, direcciones de webhook— donde quiera que aparezcan en un contenido estructurado. La idea es que operar un sistema no cree en silencio una segunda copia de los datos personales que hay dentro: el sitio donde las filtraciones se descubren tarde, y el sitio donde a nadie se le ocurre mirar. Lo que <em>no</em> hace es revisar sus informes ni sus pantallas de reparto, decidir que un nombre no debería estar en una, ni decirle quién lo vio. Aquí no hay revisión de pantallas ni hallazgo de exposición; si una página le dijo otra cosa, estaba describiendo algo que no existe.
@@ -90,7 +101,44 @@ author: "Runink"
             Dos cosas que esta página no afirma. FACE está <strong class="text-stone-300">orientado a SOC&nbsp;2</strong>, que es una intención de diseño que declaramos nosotros mismos: no es una auditoría terminada y no es una certificación. Y nada de lo que hay aquí le hace cumplir con nada. El software encuentra el registro, muestra la regla contra la que se leyó y entrega las dos cosas a la persona que responde. Si usted cumple una obligación es un juicio que se queda con su responsable de cumplimiento, su delegado de protección de datos y su auditor, y le estaríamos mintiendo si le sugiriéramos otra cosa.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Lo Que Un Responsable De Cumplimiento Pregunta Primero",
+  "description": "Qué hace de verdad la parte de privacidad, de qué está hecha la cifra de emisiones y qué no afirma esta página.",
+  "questions": [
+    {
+      "question": "¿Qué impide que los datos personales lleguen a nuestros registros técnicos?",
+      "answer": "Un único paso de borrado, situado en el camino de escritura por debajo de cada servicio y no en una herramienta que alguien ejecuta después. Todos los servicios escriben sus registros y diagnósticos a través de él, y quita del texto las direcciones de correo, los teléfonos, los números de tarjeta, los números de la seguridad social y las direcciones de red y de equipo antes de que la línea se guarde. También se van campos con nombre &mdash; contraseñas, tokens, secretos, claves de licencia, direcciones de webhook &mdash; allí donde aparezcan en una estructura de datos.<br><br>El orden interno es deliberado: los números de tarjeta se reconocen antes que los teléfonos, para que un patrón de teléfono no se trague una tarjeta. Lea esa lista como una descripción de lo que ese paso está construido para atrapar. Es una descripción del mecanismo, no un certificado, y preferimos que lo oiga en esos términos."
+    },
+    {
+      "question": "¿Esto revisa nuestros paneles y exportaciones en busca de datos personales expuestos?",
+      "answer": "El mecanismo es más estrecho de lo que se suele vender la categoría, y merece decirse exactamente qué es. Trabaja sobre lo que sus propios sistemas escriben acerca de sí mismos: registros técnicos, diagnósticos y las estructuras de datos que los acompañan, limpiados a la salida para que hacer funcionar un sistema no cree en silencio un segundo almacén de los datos personales que hay dentro. Ahí es donde las brechas se descubren tarde y donde nadie piensa en mirar.<br><br>Lo que usted compra aquí es que ese rastro esté limpio por construcción, en cada sitio donde un servicio escribe una línea. Decidir quién debería poder ver la dirección de un cliente en una pantalla que ve un socio es una cuestión de política sobre sus propios sistemas, y se queda con las personas que los llevan."
+    },
+    {
+      "question": "¿De qué está hecha en realidad la cifra de emisiones?",
+      "answer": "Un único factor de transporte por carretera publicado &mdash; del pozo a la rueda, para un camión pesado diésel &mdash; multiplicado por una distancia de ruta tomada de los datos de rutas en vez de modelada, y anualizada sobre un número declarado de días laborables. El método viaja con la cifra en la misma frase, así que un auditor lee el supuesto en el mismo momento en que lee el número.<br><br>Conviene ser claro con los bordes, porque la categoría no lo es. Es transporte por carretera: el mar y el aire quedan fuera. Una ruta cuya distancia nunca se midió no da nada en vez de dar una suposición. Y las distancias que hay hoy detrás de la tarjeta salen de un archivo de muestra, así que lo que usted mira es el método enseñado y no una lectura de sus propias rutas. Aquí hubo una vez además una tasa de reducción &mdash; la parte en que se decía que una ruta cambiada recortaba emisiones, sin fuente ninguna &mdash; y se borró, con una prueba cuyo único trabajo es fallar si alguien vuelve a poner una."
+    },
+    {
+      "question": "¿Qué pasa cuando una comprobación no se pudo hacer?",
+      "answer": "Queda escrita como entrada propia: el cumplimiento no fue evaluado, con esas palabras, deliberadamente apartada de una evaluación que sí corrió y no encontró nada. Una cantidad que nadie midió se guarda como no medida y con un motivo, en vez de redondearse a cero.<br><br>Juntar las dos en una sola marca verde es cómo &ldquo;lo comprobamos y no había nada&rdquo; y &ldquo;no pudimos leer esto, así que nunca se comprobó&rdquo; acaban pareciendo iguales en un informe. La segunda es el hallazgo que una auditoría busca de verdad, y es el que suele desaparecer."
+    },
+    {
+      "question": "Un regulador pregunta quién vio la dirección de un cliente. ¿Quién responde?",
+      "answer": "Responde usted, desde el registro y no desde la memoria. Las dos mitades de esta página guardan su propio trabajo &mdash; qué se leyó, contra qué regla se leyó, qué se encontró, quién lo miró y cuándo &mdash; así que contestar a una pregunta del supervisor es recuperación y no un proyecto de reconstrucción entre cuatro sistemas.<br><br>La persona responsable sigue siendo la suya. Lo que cambia es cuánto tarda en poder contestar, y si la respuesta se apoya en documentos o en el recuerdo que alguien tiene de un martes."
+    },
+    {
+      "question": "¿Algo de esto nos hace conformes, o certifica algo?",
+      "answer": "El cumplimiento es un juicio, y se queda con quien lo tiene. Lo que hace el software es encontrar el registro, enseñar la regla contra la que se leyó y entregar los dos a la persona responsable &mdash; su responsable de cumplimiento, su delegado de protección de datos, su auditor. Si la obligación se cumple lo deciden ellos, y le estaríamos mintiendo si sugiriéramos otra cosa.<br><br>La misma distinción vale para nosotros. La propia postura de FACE es orientada a SOC&nbsp;2, que es una intención de diseño que declaramos nosotros mismos: no es una auditoría terminada, y no es una afirmación de que Runink tenga una certificación bajo SOC&nbsp;2, ISO 27001, ISO 42001 ni ningún otro esquema. Allí donde esa diferencia le importe, pídanos el documento de postura en vez de quedarse con una palabra de una página web."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta

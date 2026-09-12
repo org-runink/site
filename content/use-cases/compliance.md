@@ -46,6 +46,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="who-this-is-for" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Who This Is For</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Two reports, three desks, and the same question underneath both: can you show your working.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">The data protection officer, and compliance and risk.</strong> What lands today is a customer's name and address that were needed once to deliver a parcel and have been travelling with the record ever since &mdash; into an export, a partner report, a log file nobody reads until something has gone wrong. What changes is where the trail stops. Personal details are stripped out of log and diagnostic output before it is written, on the path underneath every service rather than in a report somebody remembers to run.</li>
+                <li><strong class="text-stone-200">IT and information security.</strong> What lands today is a question you can answer only by counting: which of your services write application logs, and which of those put the output through any redaction at all before it is stored or shipped. What changes is that the answer is a property of how the software is built, described in ordinary sentences you can hold a code review against, so the security conversation is a description rather than a negotiation.</li>
+                <li><strong class="text-stone-200">Internal audit, and whoever answers for the report.</strong> What lands today is a request to explain why a figure is what it is, months after the person who assembled it moved on. What changes is that the method travels with the figure in the same sentence, and that a check which could not run is written down as its own entry rather than passing quietly as a clean result.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 On the privacy side the mechanism is narrower than it is usually sold, and worth stating exactly. Every service writes its logs and diagnostics through a shared redaction step that strips email addresses, phone numbers, card numbers, national insurance numbers, IP and hardware addresses out of the text before it lands, along with named fields — passwords, tokens, secrets, licence keys, webhook URLs — wherever they appear in a structured payload. The point is that operating a system does not quietly create a second copy of the personal data inside it — the place breaches are found late, and the place nobody thinks to look. What it does <em>not</em> do is scan your reports or your dispatch screens, decide a name should not be on one, or tell you who saw it. There is no screen scanner and no exposure finding here; if a page told you otherwise it was describing something that does not exist.
@@ -89,7 +100,44 @@ author: "Runink"
             Two things this page is not claiming. FACE is <strong class="text-stone-300">SOC&nbsp;2&ndash;oriented</strong>, which is a design intention we declare ourselves &mdash; it is not a completed audit and it is not a certification. And nothing here makes you compliant with anything. The software finds the record, shows the rule it was read against, and hands both to the person who is accountable. Whether you meet an obligation is a judgement that stays with your compliance officer, your DPO and your auditor, and we would be lying to you if we suggested otherwise.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Questions A Compliance Officer Asks First",
+  "description": "What the privacy half actually does, what the emissions figure is made of, and what this page is not claiming.",
+  "questions": [
+    {
+      "question": "What keeps personal details out of our logs?",
+      "answer": "One redaction step, sitting on the logging path underneath every service rather than in a tool somebody runs afterwards. Every service writes its logs and diagnostics through it, and it strips email addresses, phone numbers, card numbers, national insurance numbers, and network and hardware addresses out of the text before it lands. Named fields go too — passwords, tokens, secrets, licence keys, webhook URLs — wherever they appear in a structured payload.<br><br>The ordering inside it is deliberate: card numbers are matched before phone numbers, so a phone pattern cannot swallow a card. Read that list as a description of what the step is built to catch. It is a description of the mechanism, not a certificate, and we would rather you heard it in those terms."
+    },
+    {
+      "question": "Does this scan our dashboards and exports for exposed personal data?",
+      "answer": "The mechanism is narrower than the category is usually sold, and it is worth stating exactly what it is. It works on what your own systems write down about themselves: logs, diagnostics and the structured payloads that go with them, cleaned on the way out so that operating a system does not quietly create a second store of the personal data inside it. That is where breaches are found late and where nobody thinks to look.<br><br>What you are buying here is that trail being clean by construction, at every place a service writes a line. Deciding who should be able to see a customer's address on a partner-facing screen is a policy question about your own systems, and it stays with the people who own those systems."
+    },
+    {
+      "question": "What is the emissions figure actually made of?",
+      "answer": "One published road-freight factor — well-to-wheel, for a diesel heavy-goods vehicle — multiplied by a lane distance taken from the routing data rather than modelled, and annualised over a stated number of working days. The method travels with the figure in the same sentence, so an auditor reads the assumption at the moment they read the number.<br><br>Be clear about the edges of that, because the category is not. It is road freight: sea and air are outside it. A lane whose distance was never measured yields nothing rather than a guess. And the lane distances behind the card today come from a sample file, so what you are looking at is the method shown rather than a reading of your own lanes. There was once an abatement rate here as well — a share by which a changed lane was said to cut emissions, sourced to nothing — and it was deleted, with a test whose only job is to fail if anybody puts one back."
+    },
+    {
+      "question": "What happens when a check could not run?",
+      "answer": "It is written down as its own entry: compliance was not assessed, in those words, kept deliberately apart from an assessment that ran and found nothing. A quantity nobody measured is held as unmeasured with a reason rather than rounded to zero.<br><br>Collapsing those into one green tick is how &ldquo;we checked this and found nothing&rdquo; and &ldquo;we could not read this, so it was never checked&rdquo; come to look identical in a report. The second is the finding an audit is actually looking for, and it is the one that usually gets swallowed."
+    },
+    {
+      "question": "A regulator asks who saw a customer's address. Who answers?",
+      "answer": "You do, from the record rather than from memory. Both halves of this page keep their own working — what was read, what rule it was read against, what was found, who looked at it and when — so the answer to a supervisory question is retrieval rather than a reconstruction project across four systems.<br><br>The person accountable is still yours. What changes is how long it takes them to be able to answer, and whether the answer rests on documents or on somebody's recollection of a Tuesday."
+    },
+    {
+      "question": "Does any of this make us compliant, or certify anything?",
+      "answer": "Compliance is a judgement, and it stays with the people who hold it. What the software does is find the record, show the rule it was read against, and hand both to the person who is accountable — your compliance officer, your data protection officer, your auditor. Whether the obligation is met is theirs to decide, and we would be lying to you if we suggested otherwise.<br><br>The same distinction applies to us. FACE's own posture is SOC 2–oriented, which is a design intention we declare ourselves: it is not a completed audit, and it is not a statement that Runink holds a certification under SOC 2, ISO 27001, ISO 42001 or any other scheme. Where that difference matters to you, ask us for the posture document rather than taking a word off a web page."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Book a consultation

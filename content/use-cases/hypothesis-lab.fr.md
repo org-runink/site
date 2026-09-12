@@ -47,6 +47,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="a-qui-cela-s-adresse" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">À Qui Cela S'adresse</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois personnes dans la même salle le mardi, qui argumentent à partir de trois jeux de chiffres différents.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Directeur des opérations.</strong> Ce qui arrive aujourd'hui, c'est un port fermé le lundi et une décision à prendre pour le mardi, avec les chiffres qui trancheraient répartis dans quatre systèmes. Ce qui change, c'est ce que vous emportez en réunion : le changement écrit en une phrase claire, les règles qu'il heurte, et l'ordre dans lequel elles mordent.</li>
+                <li><strong class="text-stone-200">Responsable de la planification.</strong> Ce qui arrive aujourd'hui, c'est un plan discuté à partir de points de commande, de délais et d'engagements de service qui vivent dans la tête de trois personnes &mdash; d'où l'heure que deux d'entre elles passent à découvrir qu'elles décrivaient deux plans différents. Ce qui change, c'est l'ordre du travail. Les hypothèses sont écrites avant la discussion plutôt que reconstituées après, et chaque conséquence nomme la règle dont elle découle, si bien qu'un collègue peut la contester sur le fond.</li>
+                <li><strong class="text-stone-200">Directeur financier.</strong> Ce qui arrive aujourd'hui, c'est une ligne de fret urgent dans les comptes fournisseurs que personne ne rattache à la décision qui l'a causée. Ce qui change, c'est que l'option choisie et le nom de la personne qui l'a choisie sont conservés ensemble, si bien que la question posée six mois plus tard se lit au dossier et non dans la réunion.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Soyons clairs sur ce que c'est, car la catégorie est pleine d'outils qui restent vagues là-dessus. Le moteur ne fait pas tourner une simulation sur vos données de production et il ne calcule pas un résultat. Vous énoncez le changement comme une hypothèse et vous lui remettez les règles qui gouvernent ce que vous changez &mdash; points de commande, délais, engagements de service, l'hypothèse de réserve. Il raisonne sur ces règles et renvoie une lecture classée de ce qui en découle, chaque conséquence étant rattachée à la règle d'où elle vient.
@@ -85,7 +96,44 @@ author: "Runink"
             La fermeture de port décrite ci-dessus est dessinée pour montrer la forme du travail. Ce n'est pas le compte rendu d'une mission chez un client, et rien sur cette page n'est un résultat mesuré. Runink ne publie aucun chiffre de retour sur investissement, aucun pourcentage et aucun nom de client &mdash; non pas parce qu'ils seraient peu flatteurs, mais parce que nous ne les avons pas mesurés, et le dire coûte moins cher que de se faire prendre.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Les Questions À Poser Avant Le Prochain Mauvais Lundi",
+  "description": "Ce que vous lui donnez, ce qu'il vous rend, et qui décide toujours.",
+  "questions": [
+    {
+      "question": "Que devons-nous lui donner ?",
+      "answer": "Deux choses. Le changement, énoncé comme une hypothèse claire : nous passons par Rotterdam, nous abandonnons ce fournisseur, nous laissons cette ligne partir avec une semaine de retard. Et les règles qui gouvernent ce que vous changez : les points de commande, les délais, les engagements de service, l'hypothèse de provision sur lesquels votre activité tourne déjà.<br><br>Les écrire est l'étape que tout le monde saute, et une grande part de la valeur est là. Deux personnes peuvent discuter un plan pendant une heure et découvrir qu'elles décrivaient deux plans différents, ce qui n'apparaît qu'une fois les hypothèses sur le papier."
+    },
+    {
+      "question": "Est-ce une prévision, ou une simulation de notre exploitation ?",
+      "answer": "C'est un argument que vous pouvez vérifier. Vous lui donnez le changement et les règles, il raisonne sur ces règles et rend une lecture classée de ce qui en découle, chaque conséquence rattachée à la règle dont elle vient.<br><br>C'est une sortie d'une autre nature qu'une projection, et la différence est tout l'intérêt. Un nombre présenté comme une décision déplace le jugement d'une personne responsable vers un logiciel qui ne l'est pas. Ce que cela met devant la salle, c'est le dossier déplié : quelles règles le changement heurte, dans quel ordre elles mordent, et ce qu'il faudrait croire pour que le plan tienne."
+    },
+    {
+      "question": "Est-ce que cela touche les systèmes sur lesquels tourne l'entreprise ?",
+      "answer": "Il raisonne sur les règles que vous lui avez remises, et il le fait sur votre propre matériel. L'usine, l'entrepôt et la comptabilité continuent de tourner sur leurs systèmes, que l'exercice ne touche pas : une expérience à l'intérieur du système vivant n'est pas une expérience, et c'est pourquoi personne de sensé n'en fait.<br><br>L'autre moitié, c'est la discrétion. Le scénario que vous envisagez &mdash; quel fournisseur vous pourriez lâcher, quelle ligne vous pourriez couper &mdash; est précisément ce dont vous ne voudriez pas qu'on parle à l'extérieur, et le raisonnement a lieu là où vous le voyez."
+    },
+    {
+      "question": "Que fait-il quand les règles que nous lui avons données ne tranchent pas ?",
+      "answer": "Il nomme ce qu'il faudrait croire pour que le plan tienne, et rend cela comme constat. C'est la sortie honnête quand les règles s'arrêtent : la croyance sur laquelle repose le plan, dite en une phrase, pour que la salle discute de la croyance et non d'un tableur.<br><br>Il reformule vos hypothèses et les suit jusqu'au bout. Il ne découvre pas une hypothèse que vous ne lui avez jamais donnée, et une conséquence qu'il rend ne vaut que ce que vaut la règle dont elle est tirée &mdash; raison pour laquelle chaque conséquence nomme sa règle."
+    },
+    {
+      "question": "Qui choisit, et que montre le dossier ensuite ?",
+      "answer": "La personne responsable choisit. L'exécution met les options en rang plutôt que de trancher entre elles, et c'est dans le choix que réside la responsabilité.<br><br>Quand quelqu'un en retient une et l'envoie pour exécution, l'option retenue et son nom restent ensemble au dossier. La question posée six mois plus tard &mdash; pourquoi avons-nous fait venir les pièces par avion au lieu d'attendre &mdash; se lit donc au dossier et non dans le souvenir d'une réunion."
+    },
+    {
+      "question": "Peut-on pousser jusqu'à ce que le plan casse ?",
+      "answer": "C'est l'un de ses meilleurs usages. Faites partir la ligne avec une semaine de retard. Retirez la deuxième source. Laissez une charge sous température dériver. Énoncez la version dure comme hypothèse et regardez quelles règles elle heurte en premier.<br><br>Un plan qui ne tient que si la semaine se passe bien s'écroulera devant vous, un matin où l'apprendre ne coûte rien. L'autre solution est de l'apprendre à la clôture du trimestre, quand cela coûte ce que cela coûte."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Réserver une consultation
