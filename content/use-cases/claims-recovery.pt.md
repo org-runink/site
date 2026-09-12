@@ -47,6 +47,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quem-e-isto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quem É Isto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Um mesmo problema de juntar papéis, que chega a três mesas de três formas diferentes.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Operações de contestações.</strong> O que chega hoje é um registro da transportadora, um prazo de abertura e uma manhã atrás do resto &mdash; por isso só os maiores eventos viram contestação escrita. O que muda é o começo do dia. A fila são os casos que os seus próprios registros sustentam, em ordem, cada um com o embarque, os documentos e a divergência de quantidade, e a carta já redigida para uma pessoa julgar.</li>
+                <li><strong class="text-stone-200">Conformidade aduaneira.</strong> O que chega hoje é um aviso de retenção na pilha da madrugada, e a cobrança diária já corre há dias quando alguém finalmente liga a retenção à fatura. O que muda é o momento e o quanto vem completo. A declaração, o motivo que o terminal deu e os papéis que faltam no processo chegam juntos, no dia em que a retenção é registrada.</li>
+                <li><strong class="text-stone-200">Diretor financeiro.</strong> O que chega hoje é uma linha de sobrestadia no contas a pagar que ninguém consegue ligar a uma decisão. O que muda é o que a cifra significa. A cobrança que era evitável aparece separada do imposto que era devido de qualquer jeito, e cada contestação que sai leva o nome de quem a aprovou.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 As conferências rodam contra os seus próprios registros, e a fila da manhã é o que esses registros de fato dizem, em ordem de prioridade, com os documentos anexados. Não é mais um painel para você ir procurar. O que vem junto vale ser dito, porque quase todo produto esconde: se você não conecta nada, a fila fica vazia. Ela não abre com exemplos prontos que parecem as suas rotas. Foi assim que ela se comportou uma vez, e isso foi retirado.
@@ -82,7 +93,44 @@ author: "Runink"
             A contestação e a retenção no porto acima são desenhadas para mostrar a forma do trabalho. Não são o relato de um trabalho com cliente. Não publicamos taxas de recuperação, nem valores recuperados, nem nomes de clientes, porque não medimos nada disso nos seus registros nem nos de ninguém &mdash; e uma taxa de recuperação tirada das rotas de outro não diria nada sobre as suas.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "O Que Um Time De Contestações Pergunta Primeiro",
+  "description": "O que ele lê, quem assina e o que o processo mostra um ano depois.",
+  "questions": [
+    {
+      "question": "O que ele precisa dos nossos processos para fazer isso?",
+      "answer": "Os registros que você já tem, lidos onde já estão. Para uma contestação de frete isso quer dizer o registro da transportadora sobre o que deu errado, mais o pedido de compra, a fatura e o conhecimento de embarque do mesmo embarque. Para uma cobrança de porto quer dizer a declaração, o aviso de retenção e o motivo que o terminal deu, os documentos que faltam no processo, e a cobrança por dia que consta na própria declaração.<br><br>Nada é redigitado e nada precisa ser carregado em um sistema novo. A consequência vale ser dita com clareza, porque quase todo produto esconde: se você não conecta nada, a fila da manhã fica vazia, porque a fila é feita do que os seus registros dizem e de mais nada."
+    },
+    {
+      "question": "Quem assina uma contestação que ele redige?",
+      "answer": "Uma pessoa com nome, do seu time. O caso chega pronto &mdash; a declaração, a retenção, os documentos que faltam no processo, a divergência de quantidade se houver &mdash; com a carta já escrita, e então espera. Alguém lê, edita ou rejeita. Aprovar é o que envia para a transportadora.<br><br>Essa assinatura fica no registro ao lado do que foi decidido, e uma rejeição é anotada com o mesmo cuidado de uma aprovação. O nome na contestação é o nome de quem a leu."
+    },
+    {
+      "question": "O que acontece quando ele erra, ou quando não dá para saber?",
+      "answer": "Você descobre antes da transportadora, porque o que ele produz chega a quem revisa e não à outra parte. Todo achado carrega os registros com que foi montado &mdash; quais dois documentos divergem e em quanto, a retenção e o motivo declarado pelo terminal &mdash; de modo que quem revisa julga o caso contra a evidência em vez de aceitar uma conclusão na confiança. Rejeitar um caso é um desfecho comum, com um registro comum.<br><br>Onde não dá para saber, ele diz isso em vez de preencher o vazio. Uma cifra que ele não consegue tirar dos seus próprios registros não é impressa como estimativa, e onde uma etapa atrás de uma aprovação não foi cumprida, a resposta nomeia essa etapa como não executada em vez de dar a ação inteira por concluída. Ninguém descobre três semanas depois que o registro nunca saiu."
+    },
+    {
+      "question": "Como a exposição do porto é calculada?",
+      "answer": "Os dias parados, multiplicados pela cobrança diária que consta na declaração, e nada mais. O imposto fica de fora de propósito. O imposto é devido saindo o contêiner hoje ou na semana que vem, então somá-lo inflaria a exposição pelo valor de uma conta que ninguém evitou.<br><br>O que se mostra a você é a cobrança que era evitável. É uma cifra menor do que a que a maioria das ferramentas imprime, e é a que vale levar a uma transportadora."
+    },
+    {
+      "question": "O que um auditor vê depois?",
+      "answer": "A declaração e a retenção com o motivo que o terminal deu, os documentos que faltavam no processo, a diferença entre o pedido, a fatura e o conhecimento de embarque, a carta como foi redigida, e a pessoa que aprovou ou rejeitou, com a data.<br><br>Assim a pergunta de um ano depois &mdash; por que esta contestação foi registrada, e com que leitura &mdash; se responde pelo registro, e não pela memória de uma semana ruim."
+    },
+    {
+      "question": "E se os nossos arquivos não puderem sair do prédio?",
+      "answer": "Então não saem. O raciocínio roda em máquinas que você controla, e o modelo com que ele raciocina é um que você mesmo executa, não um serviço operado por outra pessoa. Os seus registros de embarque, as suas faturas e a sua correspondência são lidos onde já vivem, e a leitura acontece do seu lado da fronteira.<br><br>É assim que o software é construído, não é uma chave que se liga, de modo que é uma propriedade que a sua própria revisão de segurança pode examinar. Peça para percorrermos essa fronteira com você, em vez de aceitar uma frase numa página web."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Agende uma conversa

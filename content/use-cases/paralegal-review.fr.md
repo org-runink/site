@@ -45,6 +45,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="a-qui-cela-s-adresse" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">À Qui Cela S'adresse</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois personnes à qui l'on demande d'être sûres, et à qui l'on donne un jour et demi pour l'être.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le juriste ou l'analyste contrats.</strong> Ce qui arrive aujourd'hui, c'est la question du milieu d'après-midi &mdash; peut-on envoyer ces données à ce partenaire, peuvent-ils sous-traiter le traitement &mdash; et une pile d'accords dans lesquels un paragraphe tranche. Ce qui change, c'est où passe la journée. Le passage et l'enregistrement auquel il a été confronté arrivent ensemble, cités, et ce qui reste à faire est de les lire et de dire ce qu'ils veulent dire.</li>
+                <li><strong class="text-stone-200">Conformité et risques, et le responsable du référentiel.</strong> Ce qui arrive aujourd'hui, c'est une règle que vous croyez dans un contrat et qui se trouve en fait dans un tableur monté il y a quatre ans et laissé en service. Ce qui change, c'est que la règle telle qu'écrite et la règle telle qu'appliquée sont posées côte à côte, document et enregistrement nommés, si bien que la conversation commence à l'écart et non à la recherche.</li>
+                <li><strong class="text-stone-200">Audit interne.</strong> Ce qui arrive aujourd'hui, c'est la question de savoir si le contrôle a eu lieu, et une réponse honnête en &laquo;&nbsp;probablement&nbsp;&raquo;. Ce qui change, c'est qu'un contrôle qui a tourné sans rien trouver et un contrôle qui n'a pas pu tourner sont écrits comme deux entrées distinctes, chacune portant qui l'a lue et ce qui a été décidé. La seconde est celle qu'un audit cherche vraiment.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Les documents sont lus là où ils se trouvent déjà : PDF, fichiers Word, présentations sur un disque partagé ou un dépôt SFTP. Les tableurs sont lus avec leurs formules, cellule par cellule, parce que dans un très grand nombre d'organisations la règle qui s'applique n'est pas du tout dans le document de politique. Elle est dans une cellule.
@@ -100,7 +111,44 @@ author: "Runink"
             Le rôle pour lequel l'agent est écrit est assistant juridique et responsable conformité, et le travail qu'il fait est de lire, structurer et citer. Il ne détient aucun statut professionnel, il n'exerce aucun jugement sur lequel vous seriez en droit de vous appuyer, et il ne remplace pas une personne qualifiée. Une personne nommée lit ce qu'il a trouvé, décide, et cette décision reste au dossier.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Les Questions Qu'une Équipe Juridique Et Conformité Pose D'abord",
+  "description": "Ce qu'il lit, ce qu'il rend, et où reste le jugement.",
+  "questions": [
+    {
+      "question": "Que lit-il, et où le lit-il ?",
+      "answer": "Vos propres documents, là où ils sont déjà : accords et avenants, politiques, notes de procédure, PDF, fichiers Word et présentations sur un disque partagé ou un dépôt SFTP. Les tableurs sont lus formules comprises, cellule par cellule, parce que dans bien des organisations la règle réellement appliquée n'est pas dans le document de politique. Elle est dans une cellule.<br><br>Ce qui revient d'une lecture nomme le fichier dont il provient, de sorte qu'une citation mène à une page plutôt qu'à une affirmation."
+    },
+    {
+      "question": "Ce qu'il produit est-il un conseil juridique ?",
+      "answer": "C'est une citation et une comparaison, lues par une personne qui décide de ce qu'elles veulent dire. Ce qui revient, c'est le passage de votre propre document posé à côté de l'enregistrement ou de la configuration auquel il a été confronté, et le point où les deux se séparent.<br><br>Rien de ce qu'il produit n'est un conseil juridique, et cela ne remplace ni votre juriste, ni votre responsable conformité, ni votre avocat. Il n'a aucune qualité professionnelle ni autorité propre. Ce qu'il change, précisément, c'est le recours à l'extérieur pour une recherche qui pouvait toujours se faire en interne : la lecture est celle du logiciel, le jugement est celui de la personne qualifiée, et c'est sa décision qui reste au dossier, sous son nom."
+    },
+    {
+      "question": "Peut-il corriger ce qu'il trouve ?",
+      "answer": "Il écrit la prochaine étape pour qu'une personne la prenne, en langage métier : rédiger cette lettre, ouvrir ce ticket auprès de l'équipe données, remonter ceci au responsable concerné. C'est une contrainte dure dans la manière dont l'agent est écrit &mdash; il rend une remédiation fonctionnelle plutôt qu'une modification de vos systèmes.<br><br>L'intérêt pratique, c'est de savoir qui tient la plume au bout du compte. Un constat qui arrive sous forme d'étape écrite va à quelqu'un qui peut le peser au regard de tout ce qui est vrai cette semaine-là, au lieu d'arriver comme une modification qu'il faut découvrir puis défaire."
+    },
+    {
+      "question": "Que fait-il quand il ne peut pas contrôler quelque chose ?",
+      "answer": "Il inscrit qu'il n'a pas pu, en ces termes, et le tient à part d'un résultat propre. Il y a trois façons d'y arriver &mdash; rien n'est revenu, ce qui est revenu n'a pas pu être lu, ce qui est revenu était vide &mdash; et la formulation produite dit franchement que ce n'est pas un constat de conformité du domaine.<br><br>Traiter ces deux choses comme une seule entrée, c'est ainsi que &laquo;&nbsp;le contrôle est ressorti propre&nbsp;&raquo; et &laquo;&nbsp;le contrôle n'a jamais eu lieu&nbsp;&raquo; finissent par se ressembler sur un tableau de bord. Elles appellent des réponses différentes de personnes différentes, donc elles sont écrites comme deux choses différentes."
+    },
+    {
+      "question": "Nous travaillons avec un référentiel. Une exécution propre veut-elle dire que nous y sommes conformes ?",
+      "answer": "Une exécution propre est une comparaison, pas un verdict, et la distinction mérite d'être exacte. Vous pointez le logiciel vers le référentiel avec lequel vos équipes travaillent déjà &mdash; protection des données, cartes de paiement, sécurité de l'information, information des contrats d'assurance, vos propres normes internes &mdash; et ce qu'il rend est une citation et une comparaison au regard de ce texte.<br><br>Savoir si vous satisfaites une obligation est un jugement, et il reste chez votre responsable conformité, votre délégué à la protection des données et votre auditeur. Nommer un référentiel ici ne dit rien non plus de la position de Runink : ce n'est pas une affirmation selon laquelle Runink détiendrait une certification au titre de SOC&nbsp;2, d'ISO 27001, d'ISO 42001 ou d'un autre schéma. Nous préférons que vous l'entendiez de nous plutôt que de quelqu'un qui vous relit notre propre texte."
+    },
+    {
+      "question": "Que pourrons-nous montrer à un auditeur l'an prochain ?",
+      "answer": "Le passage lu et le fichier dont il provient, l'enregistrement ou la configuration auquel il a été confronté, l'écart entre les deux, l'étape écrite, et la personne qui l'a lue, ce qu'elle a décidé et quand.<br><br>C'est la différence entre une preuve et un souvenir. Un contrôle dont vous affirmez qu'il est fait régulièrement n'est démontrable que si vous pouvez produire le travail d'un mois précis, et ce travail est conservé au fil de l'eau plutôt que reconstitué après coup."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Réserver une consultation

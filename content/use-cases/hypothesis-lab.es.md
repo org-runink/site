@@ -47,6 +47,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quien-es-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quién Es Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres personas en la misma sala el martes, discutiendo desde tres juegos de números distintos.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Director de operaciones.</strong> Lo que llega hoy es un puerto cerrado el lunes y una decisión para el martes, con las cifras que la resolverían repartidas en cuatro sistemas. Lo que cambia es lo que usted lleva a la reunión: el cambio escrito como una frase clara, las reglas con las que choca, y el orden en que le van a doler.</li>
+                <li><strong class="text-stone-200">Responsable de planificación.</strong> Lo que llega hoy es un plan discutido a partir de puntos de pedido, plazos de entrega y compromisos de servicio que viven en la cabeza de tres personas, que es como dos de ellas pasan una hora descubriendo que describían planes distintos. Lo que cambia es el orden del trabajo. Los supuestos se escriben antes de la discusión y no se reconstruyen después, y cada consecuencia nombra la regla de la que se sigue, así que un colega puede discutirla por el fondo.</li>
+                <li><strong class="text-stone-200">Director financiero.</strong> Lo que llega hoy es una línea de transporte urgente en las cuentas por pagar que nadie puede atar a la decisión que la causó. Lo que cambia es que la opción que alguien eligió y el nombre de quien la eligió se guardan juntos, así que la pregunta de dentro de seis meses se responde desde el archivo y no desde la reunión.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Conviene ser claros sobre qué es esto, porque la categoría está llena de herramientas que son vagas al respecto. El motor no ejecuta una simulación sobre sus datos en producción y no calcula un resultado. Usted enuncia el cambio como una hipótesis y le entrega las reglas que gobiernan lo que está cambiando &mdash; puntos de pedido, plazos de entrega, compromisos de servicio, el supuesto de reserva. Razona sobre esas reglas y devuelve una lectura ordenada de lo que se sigue, con cada consecuencia atada a la regla de la que salió.
@@ -85,7 +96,44 @@ author: "Runink"
             El cierre de puerto de arriba está dibujado para mostrar la forma del trabajo. No es el relato de un trabajo con un cliente, y nada de esta página es un resultado medido. Runink no publica cifras de retorno de la inversión, ni porcentajes, ni nombres de clientes &mdash; no porque quedaran mal, sino porque no los hemos medido, y decirlo sale más barato que que nos pillen.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Preguntas Para Antes Del Próximo Lunes Malo",
+  "description": "Qué le entrega usted, qué le devuelve y quién sigue tomando la decisión.",
+  "questions": [
+    {
+      "question": "¿Qué tenemos que darle?",
+      "answer": "Dos cosas. El cambio, planteado como una hipótesis clara: enviamos por Róterdam, dejamos a este proveedor, dejamos que esta ruta llegue una semana tarde. Y las reglas que gobiernan lo que usted está cambiando: los puntos de pedido, los plazos de entrega, los compromisos de servicio, el supuesto de reserva con los que ya funciona su negocio.<br><br>Escribir eso es el paso que se salta todo el mundo, y buena parte del valor está ahí. Dos personas pueden discutir un plan durante una hora y resultar que describían planes distintos, lo que solo se ve cuando los supuestos están en papel."
+    },
+    {
+      "question": "¿Esto es una previsión, o una simulación de nuestra operación?",
+      "answer": "Es un argumento que usted puede comprobar. Le entrega el cambio y las reglas, y el motor razona sobre esas reglas y devuelve una lectura ordenada de lo que se sigue, con cada consecuencia atada a la regla de la que salió.<br><br>Eso es una clase de salida distinta de una proyección, y la diferencia es justo el punto. Un número presentado como una decisión traslada el juicio de alguien responsable a un programa que no lo es. Lo que esto pone delante de la sala es el caso desplegado: con qué reglas choca el cambio, en qué orden le van a doler, y qué tendría que creer alguien para que el plan se sostenga."
+    },
+    {
+      "question": "¿Toca los sistemas con los que funciona el negocio?",
+      "answer": "Razona sobre las reglas que usted le entregó, y lo hace en su propio hardware. La planta, el almacén y la contabilidad siguen funcionando sobre sus sistemas, sin que el ejercicio los roce: un experimento dentro del sistema vivo no es un experimento, y por eso nadie sensato lo hace.<br><br>La otra mitad de eso es la discreción. El escenario que usted está considerando &mdash; a qué proveedor podría dejar, qué ruta podría cortar &mdash; es exactamente lo que no querría que se hablara fuera del edificio, y el razonamiento ocurre donde usted lo ve."
+    },
+    {
+      "question": "¿Qué hace cuando las reglas que le dimos no resuelven la pregunta?",
+      "answer": "Nombra qué tendría que creer alguien para que el plan se sostenga, y devuelve eso como el hallazgo. Esa es la salida honesta cuando las reglas se acaban: la creencia sobre la que descansa el plan, dicha en una frase, para que la sala discuta la creencia y no una hoja de cálculo.<br><br>Replantea sus supuestos y los sigue hasta el final. No descubre un supuesto que usted nunca le dio, y una consecuencia que devuelve vale lo que valga la regla de la que se sacó &mdash; por eso cada consecuencia nombra su regla."
+    },
+    {
+      "question": "¿Quién elige, y qué muestra el registro después?",
+      "answer": "Elige la persona responsable. La ejecución pone las opciones en fila en vez de elegir entre ellas, y elegir es donde vive la responsabilidad.<br><br>Cuando alguien sí elige una y la manda a ejecutar, la opción elegida y su nombre quedan juntos en el registro. Así que la pregunta de dentro de seis meses &mdash; por qué trajimos las piezas en avión en vez de esperar &mdash; se responde desde el archivo y no desde el recuerdo de una reunión."
+    },
+    {
+      "question": "¿Podemos apretar hasta que el plan se rompa?",
+      "answer": "Es uno de sus mejores usos. Haga que la ruta llegue una semana tarde. Quite la segunda fuente. Deje que una carga refrigerada se caliente. Plantee la versión dura como hipótesis y vea con qué reglas choca primero.<br><br>Un plan que solo se sostiene cuando la semana va bien se cae delante de usted, en una mañana en la que enterarse no cuesta nada. La alternativa es enterarse al cierre del trimestre, cuando cuesta lo que cueste."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Reserve una consulta

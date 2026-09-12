@@ -45,6 +45,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quem-e-isto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quem É Isto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três pessoas a quem se pede certeza, e a quem se dá um dia e meio para tê-la.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O paralegal ou o analista de contratos.</strong> O que chega hoje é a pergunta do meio da tarde &mdash; podemos mandar estes dados para aquele parceiro, eles podem subcontratar o tratamento &mdash; e uma pilha de acordos em que um parágrafo resolve. O que muda é para onde vai o dia. O trecho e o registro contra o qual ele foi confrontado chegam juntos e citados, e o que sobra é lê-los e dizer o que significam.</li>
+                <li><strong class="text-stone-200">Conformidade e riscos, e quem responde pelo referencial.</strong> O que chega hoje é uma regra que você acredita estar num contrato e que na verdade está numa planilha que alguém montou há quatro anos e deixou rodando. O que muda é que a regra como está escrita e a regra como está operando ficam lado a lado, com o documento e o registro nomeados, então a conversa começa na diferença e não na procura.</li>
+                <li><strong class="text-stone-200">Auditoria interna.</strong> O que chega hoje é a pergunta sobre se a conferência foi feita, e uma resposta honesta de &ldquo;provavelmente&rdquo;. O que muda é que uma conferência que rodou e não achou nada e uma conferência que não pôde rodar ficam escritas como entradas diferentes, cada uma com quem a leu e o que decidiu. A segunda é a que uma auditoria está de fato procurando.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Os documentos são lidos onde já estão: PDFs, arquivos do Word, apresentações num drive compartilhado ou numa pasta SFTP. Planilhas são lidas incluindo as fórmulas, célula por célula, porque em muitas organizações a regra que vale não está no documento de política. Está numa célula.
@@ -100,7 +111,44 @@ author: "Runink"
             O papel com que o agente é escrito é paralegal e encarregado de conformidade, e o trabalho que ele faz é ler, estruturar e citar. Ele não tem nenhuma habilitação profissional, não exerce nenhum julgamento em que você tenha direito de confiar, e não substitui uma pessoa qualificada. Uma pessoa com nome lê o que ele achou, decide, e essa decisão fica no registro.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "O Que Um Time Jurídico E De Conformidade Pergunta Primeiro",
+  "description": "O que ele lê, o que devolve e onde fica o julgamento.",
+  "questions": [
+    {
+      "question": "O que ele lê, e onde lê?",
+      "answer": "Os seus próprios documentos, onde já estão: acordos e aditivos, políticas, notas de procedimento, PDFs, arquivos Word e apresentações num drive compartilhado ou num SFTP. As planilhas são lidas com as fórmulas, célula a célula, porque em muitíssimas organizações a regra que de fato vale não está no documento de política. Está numa célula.<br><br>O que volta de uma leitura nomeia o arquivo de onde veio, então uma citação leva a uma página em vez de a uma afirmação."
+    },
+    {
+      "question": "O que ele produz é orientação jurídica?",
+      "answer": "É uma citação e uma comparação, e quem lê é uma pessoa que decide o que aquilo significa. O que volta é o trecho do seu próprio documento posto ao lado do registro ou da configuração contra o qual foi confrontado, e o ponto em que os dois se separam.<br><br>Nada do que ele produz é orientação jurídica, e ele não substitui o seu paralegal, o seu responsável por conformidade nem o seu advogado. Não tem condição profissional nem autoridade própria. O que ele muda, de forma estreita, é a ida para fora por uma consulta que sempre pôde ser respondida dentro de casa: a leitura é do software, o julgamento é da pessoa qualificada, e é a decisão dela que fica no registro, com o nome dela."
+    },
+    {
+      "question": "Ele consegue corrigir o que encontra?",
+      "answer": "Ele escreve o próximo passo para uma pessoa dar, em linguagem de negócio: redigir esta carta, abrir este chamado com o time de dados, escalar isto para quem responde pelo assunto. Isso é uma restrição dura em como o agente foi escrito &mdash; ele devolve uma remediação funcional em vez de uma mudança nos seus sistemas.<br><br>O valor prático disso é quem fica com a caneta. Um achado que chega como um passo escrito vai para alguém que consegue pesá-lo contra tudo o mais que é verdade naquela semana, em vez de chegar como uma alteração que alguém precisa descobrir e desfazer."
+    },
+    {
+      "question": "O que ele faz quando não consegue conferir algo?",
+      "answer": "Ele anota que não conseguiu, com essas palavras, e mantém isso separado de um resultado limpo. Há três formas de chegar ali &mdash; nada voltou, o que voltou não pôde ser lido, o que voltou estava vazio &mdash; e o texto que ele produz diz sem rodeios que isso não é um achado de que a área está em conformidade.<br><br>Tratar essas duas coisas como uma entrada só é como &ldquo;a conferência voltou limpa&rdquo; e &ldquo;a conferência nunca aconteceu&rdquo; acabam parecendo iguais num painel. Elas pedem respostas diferentes de pessoas diferentes, então ficam escritas como coisas diferentes."
+    },
+    {
+      "question": "Trabalhamos com um referencial. Uma execução limpa quer dizer que estamos em conformidade?",
+      "answer": "Uma execução limpa é uma comparação, não um veredicto, e a distinção merece exatidão. Você aponta o software para o referencial com que o seu pessoal já trabalha &mdash; proteção de dados, cartões de pagamento, segurança da informação, informação de contratos de seguro, as suas próprias normas internas &mdash; e o que ele devolve é uma citação e uma comparação contra aquele texto.<br><br>Se você cumpre uma obrigação é um julgamento, e ele fica com o seu responsável por conformidade, o seu encarregado de proteção de dados e o seu auditor. Nomear um referencial aqui também não diz nada sobre a posição da Runink: não é uma afirmação de que a Runink tenha certificação sob SOC&nbsp;2, ISO 27001, ISO 42001 ou qualquer outro esquema. Preferimos que você ouça isso de nós do que de alguém lendo o nosso próprio texto de volta para você."
+    },
+    {
+      "question": "O que poderemos mostrar a um auditor no ano que vem?",
+      "answer": "O trecho que foi lido e o arquivo de onde veio, o registro ou a configuração contra o qual foi confrontado, a diferença entre os dois, o passo que foi escrito, e a pessoa que leu, o que ela decidiu e quando.<br><br>Essa é a diferença entre evidência e lembrança. Um controle que você afirma conferir com regularidade só é demonstrável se você conseguir produzir o trabalho de um mês específico, e esse trabalho fica guardado conforme é feito, não montado depois."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Agende uma conversa

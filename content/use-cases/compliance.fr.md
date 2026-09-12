@@ -46,6 +46,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="a-qui-cela-s-adresse" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">À Qui Cela S'adresse</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Deux rapports, trois bureaux, et la même question sous les deux : pouvez-vous montrer votre travail ?
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le délégué à la protection des données, et conformité et risques.</strong> Ce qui arrive aujourd'hui, c'est le nom et l'adresse d'un client, nécessaires une fois pour livrer un colis et qui voyagent avec l'enregistrement depuis &mdash; jusque dans un export, un rapport partenaire, un fichier de journal que personne ne lit avant que quelque chose ait mal tourné. Ce qui change, c'est là où la trace s'arrête. Les données personnelles sont retirées des journaux et des sorties de diagnostic avant qu'ils soient écrits, sur le chemin sous chaque service plutôt que dans un rapport que quelqu'un pense à lancer.</li>
+                <li><strong class="text-stone-200">DSI et sécurité de l'information.</strong> Ce qui arrive aujourd'hui, c'est une question à laquelle on ne répond qu'en comptant : lesquels de vos services écrivent des journaux applicatifs, et lesquels de ceux-là font passer leur sortie par un masquage quelconque avant de la stocker ou de l'expédier. Ce qui change, c'est que la réponse est une propriété de la manière dont le logiciel est construit, décrite en phrases ordinaires que vous pouvez confronter à une revue de code : la conversation sécurité devient une description plutôt qu'une négociation.</li>
+                <li><strong class="text-stone-200">Audit interne, et celui qui répond du rapport.</strong> Ce qui arrive aujourd'hui, c'est une demande d'expliquer pourquoi un chiffre est ce qu'il est, des mois après le départ de la personne qui l'a assemblé. Ce qui change, c'est que la méthode voyage avec le chiffre dans la même phrase, et qu'un contrôle qui n'a pas pu tourner est écrit comme une entrée à part plutôt que de passer discrètement pour un résultat propre.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Du côté de la protection des données, le mécanisme est plus étroit qu'on ne le vend d'ordinaire, et il mérite d'être dit exactement. Chaque service écrit ses journaux et ses diagnostics à travers une étape de masquage partagée, qui retire du texte les adresses e-mail, les numéros de téléphone, les numéros de carte, les numéros de sécurité sociale, les adresses IP et les adresses matérielles avant qu'il n'atterrisse, ainsi que des champs nommés &mdash; mots de passe, jetons, secrets, clés de licence, URL de webhook &mdash; partout où ils apparaissent dans une charge structurée. L'idée est que faire tourner un système ne crée pas en silence une deuxième copie des données personnelles qu'il contient : l'endroit où les fuites se découvrent tard, et l'endroit où personne ne pense à regarder. Ce qu'il ne fait <em>pas</em> : relire vos rapports ou vos écrans d'expédition, décider qu'un nom ne devrait pas y figurer, ou vous dire qui l'a vu. Il n'y a ici ni relecture d'écran ni constat d'exposition ; si une page vous a dit le contraire, elle décrivait quelque chose qui n'existe pas.
@@ -90,7 +101,44 @@ author: "Runink"
             Deux choses que cette page ne prétend pas. FACE est <strong class="text-stone-300">orienté SOC&nbsp;2</strong>, ce qui est une intention de conception que nous déclarons nous-mêmes : ce n'est pas un audit achevé et ce n'est pas une certification. Et rien ici ne vous met en conformité avec quoi que ce soit. Le logiciel trouve l'enregistrement, montre la règle à laquelle il a été confronté, et remet les deux à la personne qui en répond. Savoir si vous satisfaites une obligation est un jugement qui reste chez votre responsable conformité, votre DPO et votre auditeur, et nous vous mentirions en laissant croire autre chose.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Les Questions Qu'un Responsable Conformité Pose D'abord",
+  "description": "Ce que fait vraiment la partie confidentialité, de quoi est fait le chiffre d'émissions, et ce que cette page n'affirme pas.",
+  "questions": [
+    {
+      "question": "Qu'est-ce qui empêche les données personnelles d'atteindre nos journaux ?",
+      "answer": "Une seule étape de masquage, posée sur le chemin d'écriture sous chaque service plutôt que dans un outil lancé après coup. Tous les services écrivent leurs journaux et leurs diagnostics à travers elle, et elle retire du texte les adresses e-mail, les numéros de téléphone, les numéros de carte, les numéros de sécurité sociale et les adresses réseau et matérielles avant que la ligne n'atterrisse. Des champs nommés partent aussi &mdash; mots de passe, jetons, secrets, clés de licence, URL de webhook &mdash; partout où ils apparaissent dans une structure de données.<br><br>L'ordre interne est délibéré : les numéros de carte sont reconnus avant les numéros de téléphone, pour qu'un motif de téléphone n'avale pas une carte. Lisez cette liste comme la description de ce que l'étape est construite pour attraper. C'est une description du mécanisme, pas un certificat, et nous préférons que vous l'entendiez dans ces termes."
+    },
+    {
+      "question": "Est-ce que cela inspecte nos tableaux de bord et nos exports à la recherche de données personnelles exposées ?",
+      "answer": "Le mécanisme est plus étroit que ce que la catégorie vend d'ordinaire, et il vaut la peine de dire exactement ce qu'il est. Il porte sur ce que vos propres systèmes écrivent à leur sujet : journaux, diagnostics et structures de données qui vont avec, nettoyés en sortie pour qu'exploiter un système ne crée pas discrètement un second stock des données personnelles qu'il contient. C'est là que les fuites sont découvertes tard et là où personne ne pense à regarder.<br><br>Ce que vous achetez ici, c'est que cette trace soit propre par construction, à chaque endroit où un service écrit une ligne. Décider qui devrait pouvoir voir l'adresse d'un client sur un écran destiné à un partenaire est une question de politique portant sur vos propres systèmes, et elle reste chez ceux qui les exploitent."
+    },
+    {
+      "question": "De quoi est vraiment fait le chiffre d'émissions ?",
+      "answer": "Un seul facteur publié de transport routier &mdash; du puits à la roue, pour un poids lourd diesel &mdash; multiplié par une distance de ligne prise dans les données d'itinéraire plutôt que modélisée, et annualisée sur un nombre déclaré de jours ouvrés. La méthode voyage avec le chiffre dans la même phrase, si bien qu'un auditeur lit l'hypothèse au moment où il lit le nombre.<br><br>Soyez au clair sur les bords, car la catégorie ne l'est pas. C'est du transport routier : la mer et l'air sont en dehors. Une ligne dont la distance n'a jamais été mesurée ne donne rien plutôt qu'une supposition. Et les distances derrière la carte proviennent aujourd'hui d'un fichier d'échantillon : ce que vous regardez est donc la méthode montrée et non une lecture de vos propres lignes. Il y a eu ici un taux de réduction en plus &mdash; la part dont une ligne modifiée était censée réduire les émissions, sourcée à rien &mdash; et il a été supprimé, avec un test dont le seul travail est d'échouer si quelqu'un en remet un."
+    },
+    {
+      "question": "Que se passe-t-il quand un contrôle n'a pas pu tourner ?",
+      "answer": "Il est écrit comme une entrée à part : la conformité n'a pas été évaluée, en ces termes, délibérément tenue à l'écart d'une évaluation qui a tourné sans rien trouver. Une quantité que personne n'a mesurée est conservée comme non mesurée, avec un motif, plutôt qu'arrondie à zéro.<br><br>Fondre les deux dans une seule coche verte, c'est ainsi que &laquo;&nbsp;nous avons vérifié et il n'y avait rien&nbsp;&raquo; et &laquo;&nbsp;nous n'avons pas pu lire ceci, donc rien n'a été vérifié&nbsp;&raquo; finissent par se ressembler dans un rapport. La seconde est le constat qu'un audit cherche vraiment, et c'est celui qui disparaît d'habitude."
+    },
+    {
+      "question": "Un régulateur demande qui a vu l'adresse d'un client. Qui répond ?",
+      "answer": "Vous, à partir du dossier et non de la mémoire. Les deux moitiés de cette page conservent leur propre travail &mdash; ce qui a été lu, au regard de quelle règle, ce qui a été trouvé, qui l'a regardé et quand &mdash; si bien que répondre à une demande du superviseur relève de la recherche documentaire et non d'un projet de reconstitution à travers quatre systèmes.<br><br>La personne responsable reste la vôtre. Ce qui change, c'est le temps qu'il lui faut pour pouvoir répondre, et si la réponse repose sur des documents ou sur le souvenir qu'a quelqu'un d'un mardi."
+    },
+    {
+      "question": "Est-ce que tout cela nous rend conformes, ou certifie quoi que ce soit ?",
+      "answer": "La conformité est un jugement, et il reste chez ceux qui le portent. Ce que fait le logiciel, c'est trouver l'enregistrement, montrer la règle au regard de laquelle il a été lu, et remettre les deux à la personne responsable &mdash; votre responsable conformité, votre délégué à la protection des données, votre auditeur. C'est à eux de décider si l'obligation est satisfaite, et nous vous mentirions en suggérant autre chose.<br><br>La même distinction vaut pour nous. La posture propre de FACE est orientée SOC&nbsp;2, une intention de conception que nous déclarons nous-mêmes : ce n'est pas un audit achevé, et ce n'est pas une affirmation selon laquelle Runink détiendrait une certification au titre de SOC&nbsp;2, d'ISO 27001, d'ISO 42001 ou d'un autre schéma. Là où cette différence compte pour vous, demandez-nous le document de posture plutôt que de vous fier à un mot sur une page web."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Réserver une consultation

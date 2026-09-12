@@ -47,6 +47,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="para-quem-e-isto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quem É Isto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Dois relatórios, três mesas, e a mesma pergunta debaixo dos dois: você consegue mostrar a sua conta?
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O encarregado de proteção de dados, e conformidade e riscos.</strong> O que chega hoje é o nome e o endereço de um cliente, que foram necessários uma vez para entregar uma encomenda e viajam com o registro desde então &mdash; para uma exportação, um relatório de parceiro, um arquivo de log que ninguém lê até algo dar errado. O que muda é onde o rastro para. Os dados pessoais são retirados dos logs e dos diagnósticos antes de serem escritos, no caminho por baixo de cada serviço e não num relatório que alguém lembra de rodar.</li>
+                <li><strong class="text-stone-200">TI e segurança da informação.</strong> O que chega hoje é uma pergunta que só se responde contando: quais dos seus serviços escrevem logs de aplicação, e quais deles passam o que escrevem por alguma remoção antes de guardar ou enviar. O que muda é que a resposta é uma propriedade de como o software foi construído, descrita em frases comuns que você pode confrontar numa revisão de código &mdash; então a conversa de segurança vira uma descrição, e não uma negociação.</li>
+                <li><strong class="text-stone-200">Auditoria interna, e quem responde pelo relatório.</strong> O que chega hoje é um pedido para explicar por que um número é o que é, meses depois de quem o montou ter saído. O que muda é que o método viaja com o número na mesma frase, e que uma conferência que não pôde rodar fica escrita como entrada própria em vez de passar caladamente por um resultado limpo.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 No lado da privacidade, o mecanismo é mais estreito do que costuma ser vendido, e vale dizer com exatidão. Todo serviço escreve os seus logs e diagnósticos por meio de uma etapa de remoção compartilhada, que tira do texto os endereços de e-mail, os telefones, os números de cartão, os números de identificação nacional e os endereços IP e de hardware antes de o texto cair em algum lugar, junto com campos nomeados — senhas, tokens, segredos, chaves de licença, URLs de webhook — onde quer que apareçam num conteúdo estruturado. O ponto é que operar um sistema não cria em silêncio uma segunda cópia dos dados pessoais que estão dentro dele: o lugar onde vazamentos são descobertos tarde, e o lugar onde ninguém pensa em olhar. O que ele <em>não</em> faz é conferir os seus relatórios ou as suas telas de expedição, decidir que um nome não deveria estar numa delas, ou dizer quem viu. Não há aqui conferência de tela nem achado de exposição; se alguma página te disse o contrário, ela estava descrevendo algo que não existe.
@@ -91,7 +102,44 @@ author: "Runink"
             Duas coisas que esta página não afirma. O FACE é <strong class="text-stone-300">orientado a SOC&nbsp;2</strong>, o que é uma intenção de projeto que nós mesmos declaramos: não é auditoria concluída e não é certificação. E nada aqui deixa você em conformidade com coisa alguma. O software acha o registro, mostra a regra contra a qual ele foi lido, e entrega os dois à pessoa que responde por isso. Se você cumpre uma obrigação é um julgamento que fica com o seu responsável de conformidade, o seu encarregado de dados e o seu auditor, e estaríamos mentindo para você se sugeríssemos outra coisa.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "O Que Um Responsável Por Conformidade Pergunta Primeiro",
+  "description": "O que a parte de privacidade realmente faz, de que é feito o número de emissões, e o que esta página não afirma.",
+  "questions": [
+    {
+      "question": "O que impede que dados pessoais cheguem aos nossos logs?",
+      "answer": "Um único passo de remoção, colocado no caminho de escrita por baixo de cada serviço e não numa ferramenta que alguém roda depois. Todo serviço escreve os seus logs e diagnósticos através dele, e ele tira do texto endereços de e-mail, telefones, números de cartão, números de identificação nacional e endereços de rede e de equipamento antes de a linha ser gravada. Campos nomeados também saem &mdash; senhas, tokens, segredos, chaves de licença, URLs de webhook &mdash; onde quer que apareçam numa estrutura de dados.<br><br>A ordem interna é proposital: números de cartão são reconhecidos antes de telefones, para que um padrão de telefone não engula um cartão. Leia essa lista como uma descrição do que o passo foi construído para pegar. É uma descrição do mecanismo, não um certificado, e preferimos que você ouça nesses termos."
+    },
+    {
+      "question": "Isto varre os nossos painéis e exportações atrás de dados pessoais expostos?",
+      "answer": "O mecanismo é mais estreito do que a categoria costuma ser vendida, e vale dizer exatamente o que ele é. Ele trabalha sobre o que os seus próprios sistemas escrevem a respeito de si mesmos: logs, diagnósticos e as estruturas de dados que vão junto, limpos na saída para que operar um sistema não crie caladamente um segundo depósito dos dados pessoais que existem dentro dele. É ali que vazamentos são descobertos tarde e onde ninguém pensa em olhar.<br><br>O que você compra aqui é esse rastro sair limpo por construção, em todo lugar em que um serviço escreve uma linha. Decidir quem deveria poder ver o endereço de um cliente numa tela que um parceiro vê é uma questão de política sobre os seus próprios sistemas, e fica com quem responde por eles."
+    },
+    {
+      "question": "De que é feito, de fato, o número de emissões?",
+      "answer": "Um único fator publicado de transporte rodoviário &mdash; do poço à roda, para um caminhão pesado a diesel &mdash; multiplicado por uma distância de rota tirada dos dados de rota em vez de modelada, e anualizada sobre um número declarado de dias úteis. O método viaja com o número na mesma frase, então um auditor lê a premissa no mesmo momento em que lê o número.<br><br>Seja claro sobre as bordas, porque a categoria não é. É transporte rodoviário: mar e ar ficam de fora. Uma rota cuja distância nunca foi medida não devolve nada, em vez de devolver um palpite. E as distâncias que hoje estão atrás do cartão vêm de um arquivo de amostra, então o que você está olhando é o método mostrado, e não uma leitura das suas próprias rotas. Aqui também já houve uma taxa de redução &mdash; a parcela em que se dizia que uma rota alterada cortava emissões, sem fonte nenhuma &mdash; e ela foi apagada, com um teste cujo único trabalho é falhar se alguém puser outra."
+    },
+    {
+      "question": "O que acontece quando uma conferência não pôde rodar?",
+      "answer": "Fica escrita como entrada própria: a conformidade não foi avaliada, com essas palavras, mantida de propósito separada de uma avaliação que rodou e não achou nada. Uma quantidade que ninguém mediu fica guardada como não medida e com um motivo, em vez de arredondada para zero.<br><br>Juntar as duas num único sinal verde é como &ldquo;conferimos isto e não havia nada&rdquo; e &ldquo;não conseguimos ler isto, então nunca foi conferido&rdquo; acabam parecendo iguais num relatório. A segunda é o achado que uma auditoria realmente procura, e é a que costuma sumir."
+    },
+    {
+      "question": "Um regulador pergunta quem viu o endereço de um cliente. Quem responde?",
+      "answer": "Você, a partir do registro e não da memória. As duas metades desta página guardam a própria conta &mdash; o que foi lido, contra que regra foi lido, o que foi achado, quem olhou e quando &mdash; então responder a um pedido do supervisor é busca no arquivo, não um projeto de reconstrução em quatro sistemas.<br><br>A pessoa responsável continua sendo a sua. O que muda é quanto tempo ela leva para conseguir responder, e se a resposta se apoia em documentos ou na lembrança que alguém tem de uma terça-feira."
+    },
+    {
+      "question": "Algo disto nos torna conformes, ou certifica alguma coisa?",
+      "answer": "Conformidade é um julgamento, e ele fica com quem o carrega. O que o software faz é achar o registro, mostrar a regra contra a qual ele foi lido e entregar os dois à pessoa responsável &mdash; o seu responsável por conformidade, o seu encarregado de proteção de dados, o seu auditor. Se a obrigação foi cumprida é decisão deles, e estaríamos mentindo para você se sugeríssemos outra coisa.<br><br>A mesma distinção vale para nós. A postura própria do FACE é orientada a SOC&nbsp;2, que é uma intenção de projeto que declaramos nós mesmos: não é uma auditoria concluída, e não é uma afirmação de que a Runink tenha certificação sob SOC&nbsp;2, ISO 27001, ISO 42001 ou qualquer outro esquema. Onde essa diferença importa para você, peça o documento de postura em vez de levar uma palavra tirada de uma página na web."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
             Agende uma conversa

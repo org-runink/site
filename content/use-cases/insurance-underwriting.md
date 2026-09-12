@@ -45,6 +45,17 @@ author: "Runink"
             </p>
         </div>
         <div>
+            <h2 id="who-this-is-for" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Who This Is For</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Three desks that answer for a file they did not have time to read in full.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Claims operations &mdash; the adjuster and the claims lead.</strong> What lands today is a file in pieces: the wording in a document system, the loss report in Friday's mail, the reserve history in the policy administration system, and an authority limit written in a procedure note whose current version is not obvious. What changes is that those four arrive joined to the claim, with one drafted next step and the reading behind it, so the ten minutes that needed their training are not the last ten minutes of the morning.</li>
+                <li><strong class="text-stone-200">The underwriting manager who delegated authority.</strong> What lands today is a monthly schedule from the agent, and reading it against what the delegation agreement actually permits is a rules-against-records job at a volume no team gets through. What changes is that the terms you wrote are held against the schedule you were sent, and each place the two part company is named with the clause and the record both cited.</li>
+                <li><strong class="text-stone-200">Compliance and risk, and internal audit.</strong> What lands today is a question about a decision taken months ago, answered by reconstructing it across several systems. What changes is that approvals and refusals are both kept as they happen, carrying who decided and what they changed &mdash; and that the authority limit as documented can be set beside the limit as configured, which is the comparison that finds the threshold raised during a backlog and never put back.</li>
+            </ul>
+        </div>
+        <div>
             <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Insurance records are recognised as insurance records. A claims extract out of a policy administration system is typed by its vocabulary &mdash; claim, reserve, adjuster, premium, deductible, settlement, payout &mdash; rather than being filed wherever its most generic column happened to point. This is a real failure we had to fix: a whole claims dataset once landed in operations because one of its columns was called &ldquo;status&rdquo;.
@@ -94,7 +105,44 @@ author: "Runink"
             Nothing here is an approval, an authorisation or a certification of anything. The software reads records and drafts; it holds no delegated authority, it is not a regulated actor, and using it does not satisfy an obligation on your behalf. Where a decision must be made by a person with authority to make it, that person makes it and the record says who they were.
         </p>
     </div>
+</div>
+{{< /section-container >}}
 
+{{< faq >}}
+{
+  "title": "Questions An Insurer Asks Before Buying",
+  "description": "What it reads, who decides, and what it does not claim to be.",
+  "questions": [
+    {
+      "question": "What does it need from a claim file?",
+      "answer": "The wording, the loss documents, the reserve movements and the authority limit that applies at that value — read where they already sit. A PDF on an SFTP drop, a Word file on a shared drive, an extract from the policy administration system, the spreadsheet whose formulas quietly implement a rate rule nobody has written down. The formulas are read cell by cell, not just the values they happen to be showing that day.<br><br>A claims extract is recognised as claims data by its own vocabulary — claim, reserve, adjuster, premium, deductible, settlement, payout — rather than filed wherever its most generic column happened to point."
+    },
+    {
+      "question": "Who makes the decision on a file?",
+      "answer": "An underwriter or a claims lead. What the software produces is an assembled file and one proposed next step, with the reading it rests on attached. A person approves it, rewrites it or throws it out, and their name stays on the record beside what they decided.<br><br>Refusals are kept as carefully as approvals, which is the half most systems lose. Where a leg of an approved step has not been carried out — a write into a policy administration system, say — the reply names that leg as not executed rather than reporting the action as done, so the file never shows a step as taken when it was only approved."
+    },
+    {
+      "question": "How do we check a figure that appears in a draft?",
+      "answer": "Follow it back. Text lifted out of a document comes back with the file it was read from and the method used to read it, so a figure in a draft leads to a page in a document rather than to a black box.<br><br>One thing to hear from us rather than discover later: the extraction returns a single confidence number for a batch, and that number is a constant. It is the same whether every page came out cleanly or every page came out badly, so it is not a quality signal and should never be shown to a handler as one. Read the extraction as having found the page for you. A person still reads the page."
+    },
+    {
+      "question": "What happens when the wording and the file disagree?",
+      "answer": "The finding says so in the same shape every time: here is what the document says, here is what the file shows, here is the point where the two part company. Does the wording cover this. Were the documents the procedure requires actually in the file. Was the handler inside the authority that applies at that value.<br><br>Both sides are cited, so the first question in review is about the case rather than about where the numbers came from. And the comparison is only as good as the rule you gave it: it is reading your clauses and your procedures, not a library of insurance law."
+    },
+    {
+      "question": "We delegate underwriting. What does it do with the schedules?",
+      "answer": "It holds the delegation agreement against the schedules the agent sends back, which is a rules-against-records comparison at a volume that is exactly why the reading gets sampled today. Each disagreement comes back naming the clause and the record it was read from, and it waits for a person.<br><br>The accountability does not move because the decision did. You still answer for what was decided under the agreement, and what this changes is how much of the schedule actually gets read before you have to."
+    },
+    {
+      "question": "Does using this satisfy a regulatory obligation?",
+      "answer": "Obligations stay with the people and the firms that hold them. The software reads records, compares them against the rules you gave it, and drafts; a person with the authority to make the decision makes it, and the record says who they were.<br><br>Be precise about frameworks too, because the distinction is the one that matters in a supervisory conversation. Pointing the software at a framework means it was given that text to read and compare against. It is not a statement that Runink holds a certification under SOC 2, ISO 27001, ISO 42001 or anything else, and no page of ours says otherwise. A vendor careless about that distinction in a brochure will be careless about it in an audit, and you would be the one holding the finding."
+    }
+  ]
+}
+{{< /faq >}}
+
+{{< section-container class="py-12" >}}
+<div class="max-w-5xl mx-auto px-4">
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill);">
             Book a consultation
