@@ -121,9 +121,76 @@ enableGitInfo = true
     linkedin = "https://www.linkedin.com/company/runink"
   
   # Footer Configuration
+  #
+  # THESE ARE BODY COPY, NOT CONFIG. Every string below is printed as visible
+  # prose at the foot of all 1,158 rendered pages, which is more readers than any
+  # single page on this site will ever have. CONTENT.md rule 9 says so in as many
+  # words ("Config strings are body copy"), so rules 1 and 3 govern them exactly
+  # as they would a paragraph, and rule 12 means each of the four languages
+  # carries its own set — the fr/es/pt overrides are in their own language blocks
+  # below, beside the [languages.XX.params.cta] and [...params.blog] overrides
+  # that exist for the same reason.
+  #
+  # WHY THIS WENT FROM false TO true. `enable = false` was paired with a
+  # 40-character partial — "<!-- Footer removed for landing page -->" — so the
+  # switch was not a switch: nothing read it, and nothing would have rendered if
+  # anything had. The result was a site where document.querySelector('footer')
+  # returned null on every page, every page ended in 60-190px of bare background,
+  # and /blog/, /company/, /license/ and /privacy/ had no chrome route at all.
+  # The flag is now real: layouts/partials/footer.html reads it and renders
+  # nothing when it is false.
+  #
+  # THE LABELS ARE REUSED, NOT REINVENTED. Where a destination already has a name
+  # in this file or in its own front matter, the footer uses that exact name in
+  # that exact language — "Bibliothèque"/"Biblioteca" from the menus,
+  # "Livres blancs"/"Libros blancos" from content/blog/whitepapers/_index.*.md,
+  # "Tous les articles"/"Todos los artículos" from content/library/_index.*.md,
+  # "Écrivez-nous"/"Escríbanos" from the contact form's own form_title. A second
+  # name for a page a reader has already met under the first is a second page as
+  # far as they are concerned.
+  #
+  # NO LANGUAGE SWITCHER, AND `languages` IS A POINTER RATHER THAN A CONTROL.
+  # Both baseof.html files call the footer through `partialCached` with no
+  # variant, and that is measurably per-language but NOT per-page: a probe build
+  # rendered .Title into the footer and got one frozen title per language on all
+  # 1,158 pages. A footer switcher therefore cannot resolve .AllTranslations for
+  # the page the reader is on — it could only offer the four language homes,
+  # which is a different destination from the one the header's flags give for the
+  # same click. The header is `position: fixed`, so its switcher is on screen at
+  # the foot of the longest page anyway. One correct control beats one correct
+  # and one approximate.
+  #
+  # The sentence is worded so it is true on every page it appears on. "This page
+  # is also in Français…" would be false on the ~900 English-only pages, and the
+  # footer cannot tell which it is on.
   [params.footer]
-    enable = false
-  
+    enable = true
+
+    label = "Site footer"
+
+    contact_label = "Contact"
+    contact_link = "Write to us"
+
+    explore = "Explore"
+    reading = "Reading"
+    company = "Company"
+
+    industries = "Industries"
+    pricing = "Pricing"
+    downloads = "Downloads"
+
+    library = "Library"
+    whitepapers = "Whitepapers"
+    cases = "Worked scenarios"
+    articles = "All articles"
+
+    about = "About Runink"
+    license = "License"
+    privacy = "Privacy policy"
+
+    languages = "Languages: English, Français, Español, Português — choose one in the bar at the top of the page."
+    rights = "All rights reserved."
+
   [params.header]
     # Header background and border styles (optional)
     background = "bg-stone-900/90 backdrop-blur-sm"
@@ -456,6 +523,42 @@ enableGitInfo = true
       title = "Les livres blancs, et des notes plus courtes sur les mêmes problèmes."
       subtitle = "Les livres blancs sont les documents longs : ce que font Runink FACE et Runink PULSE, et la plateforme CORE sur laquelle les deux tournent. Les textes plus courts restent sur les problèmes qui les motivent — une déclaration en douane bloquée faute d'un document, une réclamation fret encore dans son délai, un retour qui coûte plus cher à traiter que la marchandise, une chaîne du froid qu'il faut prouver après coup."
 
+    # See the note on [params.footer] in the English block: these are body copy at
+    # the foot of every French page, and rule 12 gives them no exemption.
+    #
+    # "Bibliothèque", "Secteurs" and "Tarifs" are the names the French menu below
+    # already uses; "Livres blancs" is the French section's own title;
+    # "Tous les articles" is content/library/_index.fr.md's own link text; and
+    # "Écrivez-nous" is the contact form's own form_title on /fr/. Reusing them is
+    # the point — a second French name for a page the reader has already met
+    # under the first reads as a second page.
+    #
+    # /industries/, /company/, /license/, /privacy/ and /downloads/ exist in
+    # English only, and the footer links them from every language at their
+    # unprefixed paths — the same decision, for the same reason, that the
+    # "Secteurs" menu entry below already records: a /fr/privacy/ link would 404,
+    # and a French reader with no privacy link at all is worse than one who
+    # reaches an English page.
+    [languages.fr.params.footer]
+      label = "Pied de page"
+      contact_label = "Contact"
+      contact_link = "Écrivez-nous"
+      explore = "Explorer"
+      reading = "Lectures"
+      company = "Entreprise"
+      industries = "Secteurs"
+      pricing = "Tarifs"
+      downloads = "Téléchargements"
+      library = "Bibliothèque"
+      whitepapers = "Livres blancs"
+      cases = "Scénarios concrets"
+      articles = "Tous les articles"
+      about = "À propos de Runink"
+      license = "Licence"
+      privacy = "Politique de confidentialité"
+      languages = "Langues : English, Français, Español, Português — à choisir dans la barre en haut de la page."
+      rights = "Tous droits réservés."
+
     [[languages.fr.menu.main]]
       name = "Pourquoi Runink ?"
       url = "/fr/#why-runink"
@@ -536,6 +639,30 @@ enableGitInfo = true
       title = "Los informes técnicos, y notas más breves sobre los mismos problemas."
       subtitle = "Los informes técnicos son los documentos largos: qué hacen Runink FACE y Runink PULSE, y la plataforma CORE sobre la que funcionan ambos. Los textos más breves se quedan con los problemas que hay detrás — una entrada de aduana retenida por un documento que falta, una reclamación de flete aún dentro de su plazo, una devolución que cuesta más tramitar que la propia mercancía, una cadena de frío que hay que demostrar después."
 
+    # Same as the French block above. "Biblioteca", "Sectores" and "Precios" come
+    # from the Spanish menu below, "Libros blancos" from
+    # content/blog/whitepapers/_index.es.md, "Todos los artículos" from
+    # content/library/_index.es.md, "Escríbanos" from the contact form on /es/.
+    [languages.es.params.footer]
+      label = "Pie de página"
+      contact_label = "Contacto"
+      contact_link = "Escríbanos"
+      explore = "Explorar"
+      reading = "Lecturas"
+      company = "Empresa"
+      industries = "Sectores"
+      pricing = "Precios"
+      downloads = "Descargas"
+      library = "Biblioteca"
+      whitepapers = "Libros blancos"
+      cases = "Escenarios de trabajo"
+      articles = "Todos los artículos"
+      about = "Sobre Runink"
+      license = "Licencia"
+      privacy = "Política de privacidad"
+      languages = "Idiomas: English, Français, Español, Português — elija uno en la barra superior de la página."
+      rights = "Todos los derechos reservados."
+
     [[languages.es.menu.main]]
       name = "¿Por qué Runink?"
       url = "/es/#why-runink"
@@ -613,6 +740,31 @@ enableGitInfo = true
       eyebrow = "Para operações, cadeia de suprimentos, finanças e compliance"
       title = "Whitepapers, e notas mais curtas sobre os mesmos problemas."
       subtitle = "Os whitepapers são os documentos longos: o que Runink FACE e Runink PULSE fazem, e a plataforma CORE sobre a qual os dois rodam. Os textos mais curtos ficam com os problemas por trás deles — uma declaração aduaneira retida por falta de um documento, um pedido de indenização de frete ainda dentro do prazo, uma devolução que custa mais para processar do que a mercadoria, uma cadeia de frio que precisa ser comprovada depois."
+
+    # Same as the French and Spanish blocks above. "Biblioteca", "Setores" and
+    # "Preços" come from the Portuguese menu below, "Whitepapers" is the name
+    # content/blog/whitepapers/_index.pt.md keeps in Portuguese,
+    # "Todos os artigos" comes from content/library/_index.pt.md, and
+    # "Escreva para nós" from the contact form on /pt/.
+    [languages.pt.params.footer]
+      label = "Rodapé"
+      contact_label = "Contato"
+      contact_link = "Escreva para nós"
+      explore = "Explorar"
+      reading = "Leituras"
+      company = "Empresa"
+      industries = "Setores"
+      pricing = "Preços"
+      downloads = "Downloads"
+      library = "Biblioteca"
+      whitepapers = "Whitepapers"
+      cases = "Cenários de trabalho"
+      articles = "Todos os artigos"
+      about = "Sobre a Runink"
+      license = "Licença"
+      privacy = "Política de privacidade"
+      languages = "Idiomas: English, Français, Español, Português — escolha um na barra no topo da página."
+      rights = "Todos os direitos reservados."
 
     [[languages.pt.menu.main]]
       name = "Por que Runink?"
