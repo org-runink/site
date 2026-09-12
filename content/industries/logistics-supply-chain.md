@@ -71,6 +71,78 @@ outcomes:
   - "Where a check could not run, the answer is that it could not run — written out as not a finding that the thing is compliant. A quantity nobody measured is kept as unmeasured with a reason rather than rounded to zero, and a connection nobody has contacted is never reported as verified."
   - "Later, why a claim was filed or an entry held is answered from the record."
 
+# THE COVERAGE BLOCK — the named jobs, and the page that sets each one out.
+#
+# WHY IT EXISTS. Nothing on this page told a reader that reverse logistics, cold
+# chain, routing, stock cover, demand, freight claims and the reporting jobs
+# each already have a page of their own. The scenarios were written; the route
+# from this page to them was not, so an operations director could read the whole
+# page without learning how much of their week is already covered.
+#
+# WHAT IS IN IT, AND WHAT IS DELIBERATELY NOT. Ten of the twelve scenario pages
+# describe logistics work and are listed. The two that do not — underwriting and
+# contract review — are listed on the insurance page instead. A page earns a
+# place here by being this industry's work, not by making the list longer.
+#
+# Judgements worth recording, because the next person will re-open them:
+#   * cold chain is named the way content/use-cases/cold-chain-safety.md names
+#     itself — the yard frame read against the handover record. Nothing here
+#     says live telemetry, because that page does not.
+#   * compliance is listed for both halves it actually carries, personal detail
+#     kept out of log output and a road lane's emissions figure, stated as the
+#     method that produces them.
+#   * the emissions, routing and forecasting lines each describe a mechanism and
+#     no result. Every figure on this page belongs to the reader, and that rule
+#     does not stop at the measures sheet.
+#
+# RENDERING, AND THE NAME. The keys are `coverage_*` because that is what
+# content/use-cases/_index.md already calls the same idea — a heading, an intro,
+# and a list of named jobs — and one vocabulary across the two files is worth
+# more than a key that reads better alone. The one difference is the item: the
+# use-cases index names a child of its own section by slug and reads that page's
+# title at render time, while an industry page points into another section, so
+# each item carries the path itself. A path is also the form linkcheck can see
+# once an anchor is rendered from it.
+#
+# layouts/industries/single.html has one slot per block and does not have one
+# for this yet, so these three keys are inert until it does — the same state
+# `product:` is in on content/industries/marketing.md. Every url below resolves
+# to a page that builds today; that was checked against the 0.147.3 build the
+# deploy pins, not against the local Hugo.
+coverage_heading: "The jobs this covers"
+coverage_intro: "Each one has a page of its own: what it reads, what it hands to a person, and how you would know it worked."
+coverage:
+  - name: "Reverse logistics — returns, and what to do with them"
+    line: "Where a return goes — shelf, refurbishment, recycling or disposal — drafted at the scan, from a policy written down so that the same grade gets the same answer every time."
+    url: "/use-cases/responsive-reverse-logistics/"
+  - name: "Cold chain, and what the yard camera already sees"
+    line: "A frame from a yard or infrared camera, checked to be an image and read by a vision model on hardware you control, against the handover record and the paperwork the load travels with."
+    url: "/use-cases/cold-chain-safety/"
+  - name: "Route planning that keeps up with the day"
+    line: "The plan that was right at six in the morning is not right by ten, and nobody re-runs it because re-running it means planning a day by hand. This is about making the second run cost nothing."
+    url: "/use-cases/route-optimization/"
+  - name: "Stock cover and supplier planning"
+    line: "Seeing a stockout while there is still time to order normally, rather than after the safety stock has gone and the difference is being paid in air freight."
+    url: "/use-cases/fulfillment-optimization/"
+  - name: "Demand forecasting"
+    line: "A line starts moving weeks before the reorder point does. Reading that turn out of your own order history while it is still a forecasting problem."
+    url: "/use-cases/demand-forecasting/"
+  - name: "Freight claims and port charges"
+    line: "The entry, the hold, the reason, the documents missing from the file, the days held and the per-day charge, gathered and joined, so a reviewer is left judging whether the case holds."
+    url: "/use-cases/claims-recovery/"
+  - name: "Seeing the whole chain, not your end of it"
+    line: "Each supplier, carrier and warehouse holds one piece of the picture, in its own format. The picture itself is not held anywhere, and assembling it is the morning nobody has."
+    url: "/use-cases/supply-chain-visibility/"
+  - name: "Hands-free dispatch, for drivers without a screen"
+    line: "The person who knows a load is late is driving. Asking and answering out loud puts the fact on the record while the truck keeps moving, and the desk still makes the change."
+    url: "/use-cases/voice-dispatch/"
+  - name: "Testing a plan before you commit to it"
+    line: "A port shuts and you have a day to pick a new route. State the change and the rules it touches — reorder points, lead times, service commitments — and read back which rules it collides with, in what order."
+    url: "/use-cases/hypothesis-lab/"
+  - name: "Customer data privacy and emissions reporting"
+    line: "Personal details stripped out of log and diagnostic output before it is written, and a lane's emissions worked out from one published road factor and the distance, with the method written on the figure."
+    url: "/use-cases/compliance/"
+
 measures_heading: "How you will know it worked"
 measures_intro: "Every figure below is yours, not ours. Write down where you stand today — the baseline stops being recoverable the moment things improve."
 measures:
