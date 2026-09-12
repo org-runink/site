@@ -1,1 +1,307 @@
-<!-- Footer removed for landing page -->
+{{/* ===========================================================================
+     THE SITE FOOTER.
+
+     WHAT WAS HERE. Forty characters — "<!-- Footer removed for landing page -->"
+     — since whenever the vendor theme's footer was ripped out. Both baseof files
+     called it, so `document.querySelector('footer')` returned null on every one
+     of the 1,158 rendered pages, every page ended in 60-190px of bare background
+     below its last element, and the one page on the site with a bottom was
+     /blog/whitepapers/runink-face/, which hand-rolls its own `footer.wp-foot`.
+
+     It also cost the site four pages. CONTENT.md rule 9 — "a page with no inbound
+     link is still published" — names /company/ by name, and /blog/, /license/ and
+     /privacy/ were in the same state: real pages, in the sitemap, crawled, with
+     no chrome route to them. hugo.toml's own menu comment records the workaround
+     ("that leaves /blog/ with no chrome link, and there is no footer to fall back
+     on"), where two body-copy links carry the way in on purpose. They still do;
+     they are no longer the only way.
+
+     -----------------------------------------------------------------------
+     THE ONE CONSTRAINT THAT SHAPES EVERYTHING BELOW: THIS PARTIAL IS CACHED,
+     AND THE CACHE IS PER LANGUAGE, NOT PER PAGE.
+
+     Both call sites are `partialCached "footer" .` with no variant —
+     layouts/_default/baseof.html and layouts/whitepapers/baseof.html — and
+     neither is this change's to edit. Measured rather than assumed: a probe
+     build that rendered .Language.Lang and .Title into this file got the right
+     language on every page and ONE FROZEN TITLE PER LANGUAGE across all 1,158 of
+     them (English took a blog post's title, Spanish took "Tags").
+
+     So this partial may read .Site and .Language. It may NOT read anything
+     belonging to the current page — no .Title, no .RelPermalink, no
+     .AllTranslations, no "you are here" state. Two consequences are visible in
+     what follows and are deliberate, not omissions:
+
+       1. The contact link is the plain language-qualified /#contact-form, not
+          the ?about= form that partials/contact-url.html builds. That partial
+          needs the page's own title and would silently carry one page's title
+          onto all 1,158.
+
+       2. There is no language switcher. It could only offer the four language
+          HOMES, because resolving this page's own translation needs the page.
+          The header's flags give the translated page for the same click, and
+          the header is `position: fixed` — it is on screen at the foot of the
+          longest page on the site. One correct control beats one correct
+          control and one approximate one, so the footer carries a sentence
+          naming the four languages and pointing at the control that works.
+
+     If a later change makes the footer page-aware, both call sites need a
+     variant key and this note needs deleting. Do not add page state without it.
+     -----------------------------------------------------------------------
+
+     WHAT IS DELIBERATELY NOT IN IT. No newsletter box — there is no list to join.
+     No social icons: static/images/social/ holds six unreferenced SVGs, and the
+     only two profiles this site asserts as its own are LinkedIn and GitHub in
+     partials/schema-org.html's `sameAs`. GitHub answers 200; LinkedIn answers 999
+     to anything that is not a browser, which is not confirmation of anything. A
+     link that may be dead, on every page, buys nothing that the JSON-LD is not
+     already saying to the only audience that reads it. No customer counts, no
+     badges, no "trusted by" — CONTENT.md rule 1, and partials/trust-signals.html
+     already records why the certification-badge branch was deleted rather than
+     left available for the first page that set one line of front matter.
+
+     COLOUR. DESIGN.md §2: colour has two jobs, signal ("a person can act here")
+     and category. The footer has no category. It gets exactly one signal: the
+     contact link, which is the only thing in here that is an action rather than
+     a route. The routes are set in ink, which is also what the header nav does —
+     twenty orange links at the foot of the page would outrank the page's own
+     call to action, and chrome navigation has never been the signal's job.
+     Everything else is carried the way the system says to carry it: "Standing is
+     fill. Emphasis is weight. Hierarchy is scale and rule."
+
+     RADIUS. Nothing in here is a box, so nothing in here has a corner — which is
+     as well, because assets/css/main.css redefines `.rounded-lg` to 2rem inside
+     `@layer utilities`, nearly three times DESIGN.md §6's 12px ceiling. Do not
+     reach for that class here.
+
+     PRINT — the decision, stated, per CONTENT.md rule 6. THE NAVIGATION DOES NOT
+     PRINT; ONE IDENTIFICATION LINE DOES.
+
+     A footer is chrome: readability.go strips it before scoring for exactly that
+     reason ("the header and footer are the same words on 1100 pages"), and the
+     three print partials on this site already unset the header, the consent
+     banner and the mobile menu on paper. Fifteen underlined nav words on a sheet
+     nobody can click is the "page of underlined words" rule 6 warns about. But a
+     sheet with no provenance is the worse failure — these pages are printed and
+     carried into meetings, and a photocopy has to say what it is and where it
+     came from. So on paper the columns collapse to one line naming the company,
+     the site and the address to reply to, in plain text: no anchor, so there is
+     no destination that has to be printed after it.
+
+     The rules live here rather than in partials/list-print.html or
+     post-print.html because the footer is on every page and those are not:
+     /pricing/, /company/, /license/ and /privacy/ pull in neither.
+     =========================================================================== */}}
+
+{{- $f := .Site.Params.footer -}}
+{{- if $f.enable -}}
+
+{{/* EVERY DESTINATION IS ASKED FOR RATHER THAN SPELLED OUT, and that is not
+     fussiness — it is the only version of this that cannot go stale.
+
+     Eleven pages, two different translation states. /library/, /pricing/,
+     /blog/, /blog/whitepapers/ and /use-cases/ exist in all four languages;
+     /industries/, /downloads/, /license/ and /privacy/ exist in English only,
+     and hugo.toml's "Secteurs" menu entry already settles how to treat that —
+     English page, reader's-language label, at the path the page actually has,
+     because a /fr/privacy/ link would 404 and a French reader with no privacy
+     link at all is worse than one who lands on an English page.
+
+     The trouble with writing that split into the template is that it is a
+     snapshot. It moved WHILE THIS FILE WAS BEING WRITTEN: /company/ was
+     English-only at the start of the session and had fr, es and pt translations
+     an hour later. A hardcoded `"/company/" | relURL` would have quietly kept
+     sending French readers to the English page for as long as nobody reread this
+     line, and nothing would have failed — linkcheck.go cannot see a link that
+     resolves to the wrong-language page.
+
+     So each path is resolved through .Site.GetPage, which answers for the
+     language this footer is being rendered for: the translated page when one
+     exists, nil when it does not. The literal below is the fallback, and it is
+     the English path, which is where every one of these pages lives. Add a
+     translation and the footer follows it on the next build; delete one and the
+     footer falls back instead of 404ing. */}}
+{{- $contact := "/#contact-form" | relLangURL -}}
+{{- $s := newScratch -}}
+{{- range $key, $path := (dict
+      "industries" "/industries"
+      "pricing"    "/pricing"
+      "downloads"  "/downloads"
+      "library"    "/library"
+      "papers"     "/blog/whitepapers"
+      "cases"      "/use-cases"
+      "articles"   "/blog"
+      "about"      "/company"
+      "license"    "/license"
+      "privacy"    "/privacy") -}}
+  {{- $u := printf "%s/" $path | relURL -}}
+  {{- with $.Site.GetPage $path }}{{ $u = .RelPermalink }}{{ end -}}
+  {{- $s.Set $key $u -}}
+{{- end -}}
+
+{{/* mt-auto, and it is load-bearing rather than tidy. <body> is
+     `min-h-screen flex flex-col` and the content wrapper above it has no
+     flex-grow, so on a short page — /license/, a one-paragraph term page — the
+     footer sits where the content stopped and leaves the canvas bare beneath it.
+     That bare strip IS the defect this file was opened for. An auto top margin on
+     the last in-flow flex child resolves to zero when the page is long and eats
+     the free space when it is not, which is the whole fix and costs one class. */}}
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="{{ $f.label }}">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      {{/* Full width on a phone, a quarter at 1440. The wordmark is text rather
+           than the logo partial: partials/logo.html links to .Site.BaseURL — the
+           ENGLISH home, absolutely — and the header already carries that control
+           on screen at all times. A mark that is identification rather than a
+           control does not need to be a link. */}}
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        {{/* No id on this one, unlike the three below: it labels a pair of
+             links rather than a <nav>, so there is nothing to point an
+             aria-labelledby at, and an id nothing references is a question
+             somebody has to answer later. */}}
+        <h2 class="rk-label mt-6 mb-2">{{ $f.contact_label }}</h2>
+        <ul class="m-0 list-none p-0">
+          {{/* The one signal in the footer. /#contact-form is where 429 of 433
+               pages already convert; this is the same door, language-qualified,
+               without the ?about= the cache forbids. */}}
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="{{ $contact }}">{{ $f.contact_link }}</a></li>
+          {{/* The address partials/schema-org.html already publishes as this
+               organisation's `email` on every page, and the one contact route
+               that still works on a printed sheet. */}}
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">{{ $f.explore }}</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "industries" }}">{{ $f.industries }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "pricing" }}">{{ $f.pricing }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "downloads" }}">{{ $f.downloads }}</a></li>
+        </ul>
+      </nav>
+
+      {{/* Library first and the two halves under it, in that order, because that
+           is the hierarchy: content/library/_index.md is the single answer to
+           "what is this for and how far can I read into it", and the papers and
+           the scenarios are what it sends a reader to. /blog/ closes the column
+           because it is the shallowest end of the same shelf — and because until
+           now it had no chrome link at all. */}}
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">{{ $f.reading }}</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "library" }}">{{ $f.library }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "papers" }}">{{ $f.whitepapers }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "cases" }}">{{ $f.cases }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "articles" }}">{{ $f.articles }}</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">{{ $f.company }}</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "about" }}">{{ $f.about }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "license" }}">{{ $f.license }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "privacy" }}">{{ $f.privacy }}</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  {{/* The rule runs to the margin, not to the text column: DESIGN.md §7 — "the
+       line is not decoration: it is the edge of a field". */}}
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      {{/* now.Format rather than a literal: a hardcoded year is wrong from
+           1 January and nothing fails when it is. */}}
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; {{ now.Format "2006" }} Runink. {{ $f.rights }}</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">{{ $f.languages }}</p>
+
+      {{/* Paper only — see the print note at the top of this file. Plain text,
+           no anchor, so there is no destination to print after it. */}}
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; {{ now.Format "2006" }} Runink</p>
+    </div>
+  </div>
+
+  <style>
+    /* Focus, stated here rather than inherited. tokens.css binds its focus ring
+       as `[data-ground] a:focus-visible`, and <html> carries no data-ground
+       attribute until the reader touches the light/dark switch — so on a first
+       visit these links would fall back to the UA default ring. The token is
+       defined on bare :root, so naming it here costs nothing and works on both
+       grounds and before any preference exists. */
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+    /* Same reason partials/header.html carries this block: the reduced-motion
+       rule in tokens.css is scoped to `[data-ground] *` and does not reach a page
+       that has never had the attribute set. */
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+      /* The same three selectors partials/home/style.html, list-print.html and
+         post-print.html each unset, restated here because the footer is on every
+         page and those three are not — and because without them the footer does
+         not print, it prints UNDERNEATH something. Measured: a PDF of /license/,
+         which renders through _default/simple.html and pulls in no print partial
+         at all, put the fixed header across the identification line on the last
+         sheet and the consent banner across the bottom of it. baseof.html wraps
+         the header in `position: fixed`, so it reprints on every sheet of a
+         seven-page /pricing/ as well.
+
+         Deliberately NOT the fourth line those partials carry — `body > .pt-20
+         { padding-top: 0 }`. That one is about where a page's content starts on
+         paper, which belongs to whoever owns that page's print rules, and the
+         footer is legible without it. */
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+      /* The decision, in CSS. Routes go; provenance stays. */
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+      /* mt-auto is what stops a short page ending in bare canvas on screen, and
+         on paper it is free space inside a `min-h-screen` body that could push
+         this line onto a sheet of its own. A fixed rule of space instead.
+
+         A `body { display: block; min-height: 0 }` rule was written here as well,
+         on the theory that Chrome fragments a flex container across sheets
+         badly, and then deleted: PDFs of twelve pages — the four with no print
+         partial, the four listings, the home page, a post, an industry page and
+         a term page — came out at identical sheet counts with it and without it.
+         DESIGN.md §10 is explicit that print behaviour has to be printed and
+         looked at rather than reasoned about, and that cuts both ways. A rule
+         that changes nothing is a comment that will be believed. */
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+{{- end -}}
