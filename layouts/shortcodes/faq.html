@@ -8,32 +8,73 @@
             {{ end }}
         </div>
 
+        {{/* A <details>, not a button plus a script.
+
+             WHAT WAS HERE AND WHY IT NEVER OPENED. A `<button aria-expanded>`
+             next to a `display:grid` panel pinned at `grid-template-rows: 0fr`,
+             with an inline onclick flipping the track to `1fr`. Two things were
+             wrong with it, and only one of them was the JavaScript.
+
+             1. The ternary was inverted. `isExpanded` was read BEFORE the
+                attribute was flipped and then used un-negated, so click one set
+                `aria-expanded="true"` and the height to `0fr` — open to a
+                screen reader, shut on screen, and the two states stayed
+                crossed for every click after.
+
+             2. `0fr` NEVER REACHED THE BROWSER. Hugo's HTML minifier rewrites
+                CSS inside `style` attributes, and it normalises a zero length
+                by dropping the unit — `grid-template-rows: 0fr` shipped as
+                `grid-template-rows: 0px`. Collapsed, the two look identical, so
+                nothing caught it. They are not identical to a transition:
+                `0fr -> 1fr` interpolates and `0px -> 1fr` cannot, so the
+                `transition-all` this markup was built around had, in the
+                shipped page, nothing it could animate. The technique depended
+                on a value the build pipeline was free to rewrite and did.
+
+             So the row was one inverted boolean away from working and one
+             minifier pass away from breaking again, for six copies of five
+             lines of inline JS per page. `<details>` needs none of it: native,
+             no JavaScript, keyboard-operable and screen-reader-announced for
+             free, no inline style for the minifier to touch, and it is what
+             layouts/index.html already uses for the industry rows.
+
+             The open/shut state is the `open` attribute, which is what the
+             accessibility tree reads — so there is no `aria-expanded` to keep
+             in sync and no `aria-controls` to point at the body, because the
+             body IS the summary's own subtree. Adding either would restate in
+             ARIA what the element already says, and give it a second chance to
+             disagree with itself.
+
+             `.rk-faq` in assets/css/main.css carries the marker removal, the
+             chevron, the focus ring, the open animation, and THE PRINT RULE —
+             see there: collapsed answers used to print as nothing at all,
+             which is rule 6.
+
+             THE HOVER IS `signal-wash`, NOT `stone-700`. The button carried
+             `hover:bg-stone-700` inside a `bg-stone-800` card, and since the
+             scale was rebound per position both rungs resolve to `--rk-sunk`
+             — the hover repainted the surface its own colour. It read as a
+             live affordance in the markup, in the compiled CSS and in a
+             screenshot of either state, and it had none.
+             scripts/check-dead-states.mjs exists to catch exactly this and
+             could not, because it pairs a variant with a base on the SAME
+             element and the base was on the parent card. */}}
         <div class="space-y-6">
             {{ range $data.questions }}
-            <div
-                class="border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
-                <button
-                    class="w-full flex justify-between items-center p-6 text-left hover:bg-stone-700 transition-colors duration-200 focus:outline-none"
-                    aria-expanded="false"
-                    onclick="const content = this.nextElementSibling;
-                             const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                             this.setAttribute('aria-expanded', !isExpanded);
-                             content.style.gridTemplateRows = isExpanded ? '1fr' : '0fr';
-                             this.querySelector('svg').classList.toggle('rotate-180')">
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
                     <span class="text-lg font-medium text-white">{{ .question }}</span>
-                    <svg class="w-5 h-5 text-ink-3 transform transition-transform duration-200" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
-                </button>
-                <div class="grid transition-all duration-300 ease-in-out border-stone-700" style="grid-template-rows: 0fr;">
-                    <div class="overflow-hidden">
-                        <div class="p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
-                            {{ .answer | markdownify }}
-                        </div>
-                    </div>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    {{ .answer | markdownify }}
                 </div>
-            </div>
+            </details>
             {{ end }}
         </div>
     </div>

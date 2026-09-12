@@ -190,6 +190,136 @@
   .aeo-direct-answer__text > :last-child { @apply mb-0; }
 }
 
+/* ---------------------------------------------------------------------------
+   FAQ DISCLOSURE  (layouts/shortcodes/faq.html)
+
+   The shortcode is a plain <details>/<summary>. Everything the old
+   button-plus-inline-onclick did in JavaScript is done here in CSS, against
+   the `open` attribute the browser maintains itself.
+   --------------------------------------------------------------------------- */
+
+/* The default disclosure triangle, removed three ways because three engines
+   draw it three ways. `display:flex` on the summary already suppresses it in
+   Chromium; Firefox needs `list-style`, and Safari needs the -webkit marker. */
+.rk-faq__q {
+  list-style: none;
+}
+
+.rk-faq__q::marker,
+.rk-faq__q::-webkit-details-marker {
+  display: none;
+  content: "";
+}
+
+/* The chevron turns on `open` rather than on a class toggled by script. */
+.rk-faq__chev {
+  transition: transform 200ms ease-in-out;
+}
+
+.rk-faq[open] > .rk-faq__q .rk-faq__chev {
+  transform: rotate(180deg);
+}
+
+/* The markup this replaced carried `focus:outline-none` on the button and put
+   nothing back, so the only keyboard affordance on six controls was whatever
+   the hover colour happened to reveal. A summary is focusable by default; give
+   it a ring that is actually visible against stone-800. */
+.rk-faq__q:focus-visible {
+  /* The raw token, not `theme('colors.signal')`: the Tailwind colours resolve
+     to `rgb(var(--rk-signal-ch) / <alpha-value>)`, and `theme()` would paste
+     that placeholder straight into the declaration and void it. */
+  outline: 2px solid var(--rk-signal);
+  outline-offset: -4px;
+}
+
+/* Open/close animation, as progressive enhancement and nothing more.
+
+   `::details-content` plus `interpolate-size` is how a <details> animates
+   without JavaScript. Both are recent; where either is missing the @supports
+   test fails, or the pseudo-element makes the selector invalid and the rule is
+   dropped, and the disclosure simply snaps open — which is the correct
+   behaviour to degrade to. Nothing about the answer being reachable depends on
+   this block.
+
+   The transition is written as longhands on purpose. `transition-behavior:
+   allow-discrete` inside the shorthand is exactly the kind of value a CSS
+   minifier is entitled to reorder, and the bug this whole shortcode was
+   rewritten for was a minifier rewriting a value that looked inert. */
+@supports (interpolate-size: allow-keywords) {
+  .rk-faq {
+    interpolate-size: allow-keywords;
+  }
+
+  .rk-faq::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition-property: block-size, content-visibility;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+
+  .rk-faq[open]::details-content {
+    block-size: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-faq__chev,
+  .rk-faq::details-content {
+    transition: none;
+  }
+}
+
+/* EVERY ANSWER PRINTS, OPEN OR NOT.
+
+   The version this replaced printed six questions and not one answer: the
+   panel was `grid-template-rows: 0px` inside `overflow: hidden`, so whatever
+   the reader had not clicked was simply absent from the paper. A sheet that
+   says something different from the screen it was taken from is the failure
+   rule 6 exists against, and these are pages that get printed and carried into
+   meetings.
+
+   Same three declarations as the industry rows in partials/home/style.html,
+   and for the same reason: older engines hide the non-summary children with
+   `display: none`, current Chrome and Safari hide `::details-content` with
+   `content-visibility`, which `display` does not reach. The chevron goes too —
+   on paper it points at an interaction that is not available, and the question
+   already reads as a heading without it. */
+@media print {
+  .rk-faq::details-content {
+    content-visibility: visible !important;
+    block-size: auto !important;
+  }
+
+  .rk-faq:not([open]) > *:not(summary) {
+    display: block !important;
+  }
+
+  .rk-faq > summary {
+    display: block;
+    list-style: none;
+  }
+
+  .rk-faq > summary::marker,
+  .rk-faq > summary::-webkit-details-marker {
+    display: none;
+    content: "";
+  }
+
+  .rk-faq__chev {
+    display: none !important;
+  }
+
+  /* `overflow: hidden` on the card is a screen concern — it keeps the summary
+     hover fill inside the 2rem radius. On paper it is a clip waiting to eat a
+     long answer at a page boundary. */
+  .rk-faq {
+    overflow: visible !important;
+    break-inside: avoid;
+  }
+}
+
 @keyframes testimonials-scroll {
     from {
         transform: translateX(0);
