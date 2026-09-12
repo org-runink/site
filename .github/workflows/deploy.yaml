@@ -275,16 +275,14 @@ jobs:
       #     Spanish site and does not match an English page whose name merely
       #     starts with those letters.
       #
-      #   /license/ /privacy/ -- NEITHER of the above. This is a waiver, and a
-      #     waiver of real debt. Both are indexed English prose, both are in
-      #     en/sitemap.xml, and this site's own /luna-privacy/ scores 61.6 --
-      #     which is the proof that a policy page clears 45 when somebody
-      #     writes one in plain language. These two score 21.4 and 26.5 because
-      #     nobody has. They are named here so the gate can start protecting
-      #     the other 86 pages now, rather than waiting on a content rewrite
-      #     that is not this workflow's to do. Rewrite them and delete them
-      #     from this line. Do not add a third page to it without an argument
-      #     of the same kind.
+      # /license/ and /privacy/ WERE on this line, as an explicitly labelled
+      # waiver of real debt: indexed English prose scoring 21.4 and 26.5, waived
+      # so the gate could start protecting the other 86 pages rather than wait
+      # on a rewrite. The note said "rewrite them and delete them from this
+      # line." They were rewritten -- 54.2 and 63.9 -- so the line is deleted.
+      # That is the only way a waiver here is allowed to end. Do not add a third
+      # page to it without an argument of the same kind, and do not add one
+      # back without a date and a name.
       #
       # Nothing here reaches the network -- and the STEP cannot either. There
       # is no go.mod anywhere in this repo and both Go files are stdlib-only
@@ -295,7 +293,7 @@ jobs:
         env:
           GOTOOLCHAIN: local
           GOPROXY: "off"
-        run: go run readability.go -min 45 -exclude /tags/,/categories/,/es/,/fr/,/pt/,/license/,/privacy/ docs
+        run: go run readability.go -min 45 -exclude /tags/,/categories/,/es/,/fr/,/pt/ docs
 
       # Two navigation controls pointing at the same page is one control and one
       # distraction, and the redundancy is invisible to anyone reading one config

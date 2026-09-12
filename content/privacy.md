@@ -1,71 +1,80 @@
 ---
 title: "Privacy Policy"
 layout: "simple"
+# Plain-language pass, rule 3. Every category collected, every use, every
+# right, every named framework and every contact route from the prior version
+# is kept; only the wording is plainer. Nothing was added: the policy is still
+# silent on retention periods, legal bases and the names of third parties.
 ---
 
 ## Introduction
 
-At Runink, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.
+At Runink, we take your privacy seriously. This policy explains how we collect, use, disclose and safeguard your data when you use our service.
 
 ---
 
----
-
-## Information We Collect
+## What We Collect
 
 ### Personal Information
 
-* **Account Information:** Name, email address, and authentication credentials.
-* **Billing Information:** Payment details and transaction history for platform subscriptions.
-* **Communication Preferences:** Your settings for notifications and support.
+*   **Your account.** Your name, your email address, and the credentials you sign in with.
+*   **Your billing.** Payment details, and the history of what you have paid for platform subscriptions.
+*   **Your preferences.** How you want us to reach you about alerts and support.
 
 ### Operational Data (Logistics & Supply Chain)
 
-To provide our core services, we collect and process business-critical data, including but not limited to:
+We collect and process your business-critical data so that we can provide our core services. The list below is a guide, not a closed set.
 
-* **Procurement Data:** Purchase orders, vendor details, and procurement logs.
-* **Logistics Data:** Shipment tracking, inventory levels, and carrier performance metrics.
-* **Financial Data:** Invoice details, payment records, and claims documentation for recovery workflows.
+*   **Procurement.** Purchase orders, vendor details, and procurement logs.
+*   **Logistics.** Shipment tracking, inventory levels, and how each carrier performs.
+*   **Financial.** Invoice details, payment records, and the claims documents that recovery workflows need.
 
-### Automatically Collected Information
+### What We Collect Automatically
 
-* **Usage Metrics:** Data Units (DU) processed and Compute Units (CU) utilized.
-* **Device & Network:** IP addresses, browser type, and device identifiers.
-* **Cookies:** For session management and preference tracking.
+*   **Usage.** Data Units (DU) processed, and Compute Units (CU) used.
+*   **Device and network.** IP addresses, browser type, and device identifiers.
+*   **Cookies.** To hold your session and to keep your settings.
 
 ---
 
-## How We Use Your Information
+## How We Use It
 
-We use the collected information to power the Runink Ecosystem:
+We use what we collect to run the Runink Ecosystem.
 
-* **Service Delivery & Automation**
-  * Processing low-latency data streams for operational visibility.
-  * executing autonomous workflows (e.g., Auto-Provisioning, Claims Recovery).
-* **Advanced Analysis & Operational Intelligence**
-  * **Model Training:** Refining our anomaly detection and decisioning models. **Note:** we never train shared models on your proprietary data. The models that reason over your material run on hardware you control, and your material is not sent to an outside model provider. We map our controls to the SOC 2, ISO 27001 and ISO 42001 frameworks, and that mapping is our own statement rather than a certification issued by an auditor.
-  * **Operations Models:** Powering systems that detect risks and recommend actions.
-* **Billing & Analytics**
-  * Calculating usage charges (Data/Compute Units) and success fees.
-  * Analyzing platform performance to optimize latency and throughput.
-* **Transactional Communication**
-  * Sending alerts, reports, and recovery status updates.
+### To run the service
+
+*   We process low-latency data streams, so that you can see what your operations are doing.
+*   We run autonomous workflows for you, such as Auto-Provisioning and Claims Recovery.
+
+### To analyze it, and to act on it
+
+*   **Model Training.** We use it to refine two kinds of model: the ones that detect anomalies, and the ones that make decisions. **Note:** we never train shared models on your proprietary data. The models that reason over your material run on hardware you control. Your material is not sent to an outside model provider. We map our controls to the SOC 2, ISO 27001 and ISO 42001 frameworks. That mapping is our own statement. It is not a certification issued by an auditor.
+*   **Operations Models.** We use it to power the systems that detect risks and recommend actions.
+
+### To bill you, and to tune the platform
+
+*   We work out your usage charges, in Data Units and Compute Units, and your success fees.
+*   We study how the platform performs, so that we can improve latency and throughput.
+
+### To write to you
+
+*   We send you alerts, reports, and news of where a recovery stands.
 
 ---
 
 ## Data Security
 
-We implement appropriate technical and organizational security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure.
+We put appropriate technical and organizational security measures in place to protect your personal information. But no way of sending data over the Internet is 100% secure.
 
 ---
 
 ## Third-Party Services
 
-We may employ third-party companies and individuals to:
+We may bring in third-party companies and people to:
 
-* Facilitate our service
-* Provide service-related services
-* Assist in analyzing service usage
+*   Help us run our service
+*   Do work that goes with our service
+*   Help us study how our service is used
 
 ---
 
@@ -73,25 +82,25 @@ We may employ third-party companies and individuals to:
 
 You have the right to:
 
-* **Access** your personal data
-* **Correct** inaccurate data
-* **Request deletion** of your data
-* **Object** to data processing
-* **Export** your data
+*   **Access** — ask to see your personal data.
+*   **Correct** — ask us to fix data that is wrong.
+*   **Request deletion** — ask us to delete your data.
+*   **Object** — object to how we process your data.
+*   **Export** — ask for a copy of your data to take with you.
 
 ---
 
 ## Changes to This Policy
 
-We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+We may update this policy from time to time. We will tell you about a change by posting the new policy on this page and by updating the "Last Updated" date below.
 
 ---
 
 ## Contact Us
 
-If you have questions about this Privacy Policy, please contact us at:
+Do you have a question about this policy? Here is how to reach us.
 
-* **Email:** privacy@runink.org
-* **Mailing Address:** Please contact us via email for our current mailing address.
+*   **Email:** privacy@runink.org
+*   **Mailing Address:** Email us to ask for our current mailing address.
 
 *Last Updated: January 2026*

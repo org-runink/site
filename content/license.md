@@ -1,29 +1,59 @@
 ---
 title: "License"
 layout: "simple"
+# Plain-language pass, rule 3. Every obligation, right, fee, tier name and
+# defined term from the prior version is kept; only the wording is plainer.
 ---
 
 ## Runink Commercial License
 
-Runink is a proprietary platform. Your access and usage are governed by the Runink Commercial Subscription Agreement.
+Runink is a proprietary platform. Your access and your use of it are governed by the Runink Commercial Subscription Agreement.
 
 ### 1. Platform Subscription (SaaS)
-Runink provides access to its platform under the **Dedicated License** (comprising a Dedicated Platform Instance subscription and individual User Seats) and **Enterprise & On-Premises** tiers. This subscription grants you a non-exclusive, non-transferable right to use the platform and its designated features during the subscription term.
+
+Runink gives you access to the platform under two tiers.
+
+*   The **Dedicated License**. It has two parts: a Dedicated Platform Instance subscription, and individual User Seats.
+*   **Enterprise & On-Premises**.
+
+Your subscription grants you the right to use the platform and its designated features. You hold that right for the length of the subscription term. The right is **non-exclusive** and it is **non-transferable**.
 
 ### 2. Capacity Units (Compute Usage)
-Operations executed by the Runink platform—including Data Ingestion, Advanced Analytical Processing, and Automated Workflows—consume **Capacity Units (CUs)**.
-*   **Capacity Unit Calculation:** Usage is calculated by tracking compute resources (e.g., CPU and memory utilization) during execution, rounded up per 60-second window.
-*   **Allocations & Overage:** Each customer environment includes a base monthly allocation of Capacity Units from the Dedicated Platform Instance, plus additional CUs contributed per active User Seat. CUs are pooled across all users in the organization. If your organization exceeds its monthly pooled compute limit, operations pause until additional capacity is purchased or the billing cycle resets.
+
+Work that the platform runs for you spends **Capacity Units (CUs)**. That work includes Data Ingestion, Advanced Analytical Processing, and Automated Workflows.
+
+**How we count a CU.** We track the compute resources your work uses while it runs. CPU and memory use are two of the things we track. We round that up per 60-second window.
+
+**What you get, and what happens when it runs out.**
+
+*   Each customer environment comes with a base monthly amount of CUs. That base comes with the Dedicated Platform Instance.
+*   Each active User Seat adds more CUs on top of that base.
+*   The CUs are pooled. Everyone in your organization draws on the same pool.
+*   Go past the monthly pooled compute limit and the work pauses. It starts again when you buy more capacity, or when the billing cycle resets.
+
 ### 3. Outcome-Based Success Fees
-Certain autonomous execution features available under the **Dedicated License** and **Enterprise** tiers are subject to performance-based variable fees:
-*   **Auto-Provisioning:** Billed at a 3% commission on auto-provisioned purchase orders.
-*   **Claims & Revenue Recovery:** Billed as a success fee (20% of recovered funds). We only win when you win.
+
+Some autonomous execution features carry a performance-based variable fee. You get those features in the **Dedicated License** and **Enterprise** tiers.
+
+*   **Auto-Provisioning.** We bill a 3% commission on auto-provisioned purchase orders.
+*   **Claims & Revenue Recovery.** We bill a success fee. It is 20% of recovered funds. We only win when you win.
 
 ### 4. Enterprise & On-Premises Deployments
-Customers on the **Enterprise** tier are granted rights to utilize Air-Gapped Deployment, Bring Your Own Runner (BYOR), and physical on-premises options. You maintain absolute data sovereignty when deploying within your private or physical infrastructure.
+
+The **Enterprise** tier grants you the right to use all three of these:
+
+*   Air-Gapped Deployment
+*   Bring Your Own Runner (BYOR)
+*   Physical on-premises options
+
+Deploy inside your private or physical infrastructure and you keep absolute data sovereignty.
 
 ### 5. Ownership
-Runink retains all ownership and intellectual property rights to the platform, including the orchestration algorithms and base optimization models. You retain full and exclusive ownership of your customer data and proprietary operational rules.
+
+Runink owns the platform. We keep every ownership and intellectual property right in it, and that covers the orchestration algorithms and the base optimization models.
+
+You own your customer data and your proprietary operational rules. That ownership is full, and it is yours alone.
 
 ### 6. Contact
-For questions regarding licensing or custom enterprise agreements, please reach out to [sales](/#contact).
+
+Have a question about licensing? Want a custom enterprise agreement? Ask [sales](/#contact).
