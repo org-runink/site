@@ -96,6 +96,62 @@ var (
 	entityRe   = regexp.MustCompile(`&(#\d+|#x[0-9a-fA-F]+|[a-zA-Z]+);`)
 )
 
+// dropIDs names elements that ARE site chrome but are not chrome ELEMENTS.
+//
+// The tool drops header/footer/nav because a reader does not read navigation as
+// prose. The consent banner is the same kind of text — a fixed notice repeated
+// on every page — but it is a plain <div>, so it was being scored as body copy
+// on all 718 pages. Chrome counted as prose does not just add noise: this banner
+// is deliberately written in short plain sentences, so it RAISED every page's
+// score, and the site's readability numbers were mildly flattered by the one
+// paragraph the tool most clearly means to exclude. It also moved the "pages
+// measured" count, because a page whose only prose was the banner cleared the
+// word-count floor.
+var dropIDs = []string{"consent-banner"}
+
+// dropElementByID removes an element and everything inside it, INCLUDING nested
+// elements of the same name. A regex cannot do this: RE2 has no recursion, so a
+// non-greedy match stops at the first </div> rather than the matching one, and a
+// greedy one runs to the last </div> on the page. Both are wrong here, because
+// the banner is a <div> containing <div>s.
+//
+// An unclosed element returns the input unchanged rather than truncating it: a
+// malformed page should measure badly, not measure as empty.
+func dropElementByID(s, id string) string {
+	open := regexp.MustCompile(`(?is)<([a-z][a-z0-9]*)\b[^>]*\bid="` + regexp.QuoteMeta(id) + `"`)
+	for {
+		loc := open.FindStringSubmatchIndex(s)
+		if loc == nil {
+			return s
+		}
+		tag := strings.ToLower(s[loc[2]:loc[3]])
+		openRe := regexp.MustCompile(`(?is)<` + tag + `\b`)
+		closeRe := regexp.MustCompile(`(?is)</` + tag + `\s*>`)
+		depth, pos, end := 1, loc[1], -1
+		for depth > 0 {
+			o := openRe.FindStringIndex(s[pos:])
+			c := closeRe.FindStringIndex(s[pos:])
+			if c == nil {
+				break // unclosed
+			}
+			if o != nil && o[0] < c[0] {
+				depth++
+				pos += o[1]
+				continue
+			}
+			depth--
+			pos += c[1]
+			if depth == 0 {
+				end = pos
+			}
+		}
+		if end < 0 {
+			return s
+		}
+		s = s[:loc[0]] + " " + s[end:]
+	}
+}
+
 func dropPairs(tags ...string) []*regexp.Regexp {
 	out := make([]*regexp.Regexp, 0, len(tags))
 	for _, t := range tags {
@@ -107,6 +163,9 @@ func dropPairs(tags ...string) []*regexp.Regexp {
 // bodyText reduces a rendered page to the prose a reader actually reads.
 func bodyText(html string) string {
 	s := html
+	for _, id := range dropIDs {
+		s = dropElementByID(s, id)
+	}
 	// Repeat: the drops nest, and one pass leaves the inner ones behind.
 	for i := 0; i < 4; i++ {
 		before := s
