@@ -1,5 +1,6 @@
 {{/* ---------------------------------------------------------------------
-     /use-cases/ — the section page, so its BODY actually renders.
+     /use-cases/ — the section page, so its BODY actually renders, and so the
+     twelve scenarios are visible before a reader has scrolled.
 
      WHY THIS FILE EXISTS. `content/use-cases/_index.md` sets
      `layout: "section"`, and nothing matched it: there was no
@@ -7,59 +8,237 @@
      Hugo fell through to layouts/_default/list.html — which prints .Title,
      .Description and an auto-paginated card grid, and **never prints
      .Content** (grep it: zero occurrences). The whole argument in that file
-     therefore reached no reader at all. It had been invisible for as long as
-     the page has existed; hugo.toml's own comment describes the page as "the
-     same argument at length, followed by every use case as a card", which is
-     what it was supposed to be doing.
+     therefore reached no reader at all.
 
-     That mattered more than a missing paragraph, because the FACE
-     attribution the section needs — that these scenarios belong to one named
-     product, and that PULSE and CORE are not on the page — lives in exactly
-     that prose. A silently dropped body is the same failure shape as a
-     silently dropped CSS declaration: nothing errors, and the page looks
-     deliberate.
+     That mattered more than a missing paragraph, because the FACE attribution
+     the section needs — that these scenarios belong to one named product, and
+     that PULSE and CORE are not on the page — lives in exactly that prose.
 
-     NO AUTO GRID HERE, ON PURPOSE. _default/list.html appends a paginated
-     grid of every child page. The body of _index.md now carries its own
-     card grids, grouped by scenario domain, covering every child — so
-     rendering both would print each use case twice. If a new use-case page
-     is added, add its card to the body; it will not appear by itself. That
-     is the trade for grouping them by domain instead of listing them flat,
-     and it is why this comment is here rather than in a commit message.
+     WHAT CHANGED, AND WHY IT IS A REWRITE RATHER THAN A PATCH. The first
+     version of this file rendered the body inside `max-w-7xl` with
+     `prose max-w-none`, which set 16px body copy 1248px wide. Measured in a
+     browser against the page's own font that is about 175 characters per
+     line, for six paragraphs in a row — roughly triple a readable measure,
+     and `--rk-measure-body` in tokens.css has said 66ch the whole time. The
+     deck under the headline was `uppercase tracking-[0.15em]`, which is
+     micro-type treatment applied to five lines of sentence-length prose. The
+     headline was an 80px gradient italic uppercase line, the treatment
+     partials/list-hero.html was written to remove from the listing pages.
 
-     The header treatment is copied from _default/list.html so the section
-     still looks like the rest of the site. If that file's header changes,
-     this one does not follow automatically.
+     Below that sat five identical `card-grid` shortcodes: twelve cards of
+     equal width, equal height, each with a 40px rounded tile and a small
+     monochrome icon. Twelve equal cells is the opposite of hierarchy — the
+     reader gets four groups of three rectangles and no indication that the
+     groups mean anything. The owner's complaint was that the site never shows
+     what it covers, and the coverage was all on this page, 3,000px down it,
+     flattened into furniture.
+
+     So: the hero goes through partials/list-hero.html like every other
+     listing page (sentence case, plain deck, no gradient — which is also
+     CONTENT.md rule 6, since gradient text can print as nothing at all), the
+     coverage moves ABOVE the argument, and the argument gets a column.
+
+     THE COVERAGE BLOCK IS DRIVEN FROM FRONT MATTER, NOT FROM SHORTCODES IN
+     THE BODY. `groups` in _index.md carries the band label, the one-line deck
+     and, per item, the page slug and the short name that names the domain.
+     Everything else — the link and the line under the name — is read off the
+     child page itself, so the words under each name are the page's own title
+     in the reader's own language, and a retitled page cannot drift from its
+     own index entry.
+
+     NOTHING IS SILENTLY DROPPED. The previous version's comment warned that a
+     new use-case page would simply not appear, because every card was
+     hand-written in the body. That trap is closed here: any child page not
+     named in `groups` is collected and rendered under `groups_other_label`
+     rather than vanishing. If that band ever appears on the page, the fix is
+     to file the new page into a group, not to style the band.
+
+     HIERARCHY IS SCALE AND RULE, per DESIGN.md §2 — the same move
+     layouts/index.html makes for the operating-numbers bands, which were a
+     four-column table until the sector became a small label, the cost line
+     became the display line, and the supporting facts dropped underneath.
+     Three sizes here: band label (micro, uppercase, on a hairline that runs
+     to the margin), group head, item name, page title. No card, no tile, no
+     icon, no box. Colour does its two jobs only: signal appears on an item
+     when the pointer or focus is on it, because that is the one thing on the
+     row a person can act on.
+
+     PRINT. The wrapper carries the `rk-list*` class names on purpose — that
+     is what partials/list-print.html is scoped to, so this page inherits the
+     listing print rules (fixed chrome unset, margins, the runink.org mark)
+     instead of carrying a second copy. `rk-list-url` on the item links is
+     what prints each destination after its name.
      --------------------------------------------------------------------- */}}
 {{ define "main" }}
-<div class="bg-stone-950 min-h-screen relative overflow-hidden">
-    {{ partial "background-effects.html" . }}
 
-    <div class="container mx-auto px-4 py-24 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 flex flex-col items-center">
-                <div
-                    class="inline-flex items-center justify-center px-6 py-2 mb-6 rounded-lg border border-signal/30 text-signal text-sm md:text-base font-black uppercase tracking-[0.25em] bg-stone-900/50 backdrop-blur shadow-[0_0_15px_rgba(234,88,12,0.1)]">
-                    Database
-                </div>
+{{/* Slug → child page, so `groups` can name a page without knowing its URL and
+     without a site.GetPage lookup that could cross a language boundary.
+     .Pages is already this language's pages, so .Title below is translated.
+     path.Base on a RelPermalink ("/es/use-cases/cold-chain-safety/") gives the
+     slug without depending on .File, which is nil for a generated page. */}}
+{{ $bySlug := dict }}
+{{ range .Pages }}
+  {{ $bySlug = merge $bySlug (dict (path.Base .RelPermalink) .) }}
+{{ end }}
 
-                <h1
-                    class="text-6xl md:text-7xl lg:text-[80px] font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-2 tracking-tighter uppercase italic drop-shadow-lg leading-[0.9]">
-                    {{ .Title }}
-                </h1>
+{{/* Every slug the groups claim, so the leftovers can be found afterwards. */}}
+{{ $claimed := slice }}
+{{ range .Params.groups }}
+  {{ range .items }}
+    {{ $claimed = $claimed | append .page }}
+  {{ end }}
+{{ end }}
 
-                {{ with .Description }}
-                <div class="text-stone-500 font-bold uppercase tracking-[0.15em] text-lg md:text-xl mt-6 max-w-3xl">{{ . }}</div>
+<div class="rk-list rk-uc bg-canvas">
+  {{ partial "list-print.html" . }}
+
+  <div class="rk-list-wrap container mx-auto max-w-[68rem] px-5 md:px-8 py-14 md:py-20">
+
+    {{ partial "list-hero.html" (dict
+      "eyebrow" .Params.product
+      "title"   .Title
+      "deck"    .Description
+    ) }}
+
+    {{/* ---- What this covers -------------------------------------------
+         Above the argument, deliberately. A reader who wants to know whether
+         their problem is on the list should not have to read the thesis
+         first, and the thesis reads better once they know it is.
+
+         The count comes from len .Pages rather than from a word in front
+         matter. CONTENT.md rule 1 allows a count of the site's own structure,
+         and the note at the top of _index.md records why it must be computed:
+         a previous version wrote "Seven" into three places and was wrong the
+         moment a page was added. */}}
+    {{ with .Params.groups }}
+    {{ $n := len $.Pages }}
+    <section class="mb-14 md:mb-20" aria-labelledby="coverage-head">
+
+      {{ partial "rule-head.html" (dict
+        "label" $.Params.coverage_heading
+        "id"    "coverage-head"
+        "meta"  (cond (eq $n 0) "" (printf "%d %s" $n $.Params.coverage_meta))
+      ) }}
+
+      {{ with $.Params.coverage_intro }}
+      <p class="mt-0 mb-9 text-ink-2 text-base leading-[1.65] max-w-[62ch]">{{ . }}</p>
+      {{ end }}
+
+      {{/* Two columns at desktop so all four bands and all twelve names are
+           in one screen, which is the whole point of moving them up here.
+           One column below md — four short bands read fine stacked on a
+           phone, and a 2-up grid at 390px would set the names two words to a
+           line. */}}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 md:gap-y-12">
+
+        {{ range . }}
+        <div class="rk-uc-group">
+          {{/* The heavier rule is the band edge; the hairlines below are the
+               rows. `border-stone-500` resolves to --rk-rule-strong through
+               the position mapping in tailwind.config.js — see the census
+               comment at the top of that file. */}}
+          <div class="border-t-2 border-stone-500 pt-4">
+            <h3 class="m-0 font-heading text-[1.25rem] md:text-[1.375rem] font-extrabold leading-tight tracking-[-0.01em] text-ink">{{ .label }}</h3>
+            {{ with .deck }}
+            <p class="mt-2 mb-0 text-ink-2 text-[0.9375rem] leading-[1.6] max-w-[48ch]">{{ . }}</p>
+            {{ end }}
+          </div>
+
+          {{/* The name is the scan layer — the domain, in the words the owner
+               of that problem would use. The line under it is the child
+               page's OWN title, which on most of these pages is a statement
+               of the problem rather than a label ("Your adjusters spend the
+               day gathering, not deciding"). Two sizes, 17px over 13px, and
+               the rule between rows does the separating that a card border
+               used to do.
+
+               ON THE PAGES WHERE THE TITLE ALREADY IS THE DOMAIN, THE SECOND
+               LINE IS DROPPED. "Cold Chain and Yard Safety", "Stock Cover and
+               Supplier Planning" and "Freight Claims and Port Charges" are
+               their own short names, so printing the name and the title
+               together set the same words twice at two sizes — which reads as
+               a rendering fault rather than as a hierarchy. Compared lowercase
+               so a Title Case heading matches a sentence-case label. */}}
+          <ul class="mt-5 mb-0 pl-0 list-none">
+            {{ range .items }}
+            {{ $name := .name }}
+            {{ with index $bySlug .page }}
+            <li class="border-t border-rule">
+              <a href="{{ .RelPermalink }}" class="rk-list-url group block no-underline py-3.5">
+                <span class="block font-heading text-[1.0625rem] font-bold leading-snug text-ink transition-colors duration-200 group-hover:text-signal group-focus-visible:text-signal">{{ $name }}</span>
+                {{ if ne (lower $name) (lower .Title) }}
+                <span class="block mt-1 text-[0.8125rem] leading-[1.45] text-ink-3">{{ .Title }}</span>
                 {{ end }}
-            </div>
-
-            {{/* The part that was missing. */}}
-            <div class="prose prose-invert prose-stone max-w-none">
-                {{ .Content }}
-            </div>
-
-            {{ partial "next-step.html" . }}
+              </a>
+            </li>
+            {{ end }}
+            {{ end }}
+          </ul>
         </div>
+        {{ end }}
+
+        {{/* Anything not filed into a group. Normally renders nothing. It is
+             here so that adding a use-case page and forgetting to file it
+             shows up on the page as an unsorted band, rather than as a page
+             that exists, is in the sitemap, and is linked from nowhere —
+             which is the failure CONTENT.md rule 9 is about. */}}
+        {{ $leftover := slice }}
+        {{ range $.Pages }}
+          {{ if not (in $claimed (path.Base .RelPermalink)) }}
+            {{ $leftover = $leftover | append . }}
+          {{ end }}
+        {{ end }}
+        {{ with $leftover }}
+        <div class="rk-uc-group">
+          <div class="border-t-2 border-stone-500 pt-4">
+            <h3 class="m-0 font-heading text-[1.25rem] md:text-[1.375rem] font-extrabold leading-tight tracking-[-0.01em] text-ink">{{ $.Params.groups_other_label }}</h3>
+          </div>
+          <ul class="mt-5 mb-0 pl-0 list-none">
+            {{ range . }}
+            <li class="border-t border-rule">
+              <a href="{{ .RelPermalink }}" class="rk-list-url group block no-underline py-3.5">
+                <span class="block font-heading text-[1.0625rem] font-bold leading-snug text-ink transition-colors duration-200 group-hover:text-signal group-focus-visible:text-signal">{{ .Title }}</span>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* ---- The argument, in a column ----------------------------------
+         THE COLUMN IS THE DEFECT THIS REWRITE EXISTS TO FIX. This was
+         `prose max-w-none` inside `max-w-7xl`: 16px body copy set 1248px
+         wide, which measures about 175 characters per line in the page's own
+         font, for six paragraphs in a row. It is now bound to the site's own
+         --rk-measure-body, so it tracks the token rather than restating it —
+         the same variable assets/css/specimen.css sets a body column with.
+
+         MEASURED, because the token's name and the token's effect are not the
+         same number and the next person should not have to rediscover that.
+         --rk-measure-body is `66ch`, and CSS `ch` is the width of the ZERO
+         glyph, not of an average character. Figtree's zero is 0.64em, so 66ch
+         resolves to 761.5px here, and 761.5px of 18px Figtree is about 94
+         typographic characters — not 66. That is the site's own standard and
+         within 7px of the `max-w-[48rem]` the single templates use, so this
+         page is consistent with the rest of the site; it is worth knowing
+         that the standard itself reads wider than its name suggests.
+
+         `prose-invert` is gone with the width: the palette resolves through
+         [data-ground] now, so one class set has to work on the light sheet
+         and the dark console both, and inverting a second time on a page that
+         already re-binds its tokens paints light ink on a light ground. */}}
+    <div class="rk-list-body prose max-w-[var(--rk-measure-body)] lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      {{ .Content }}
     </div>
+
+    {{ partial "next-step.html" . }}
+
+    <p class="rk-list-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
 </div>
 {{ end }}

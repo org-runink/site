@@ -1,35 +1,62 @@
 ---
 title: "À Quoi Sert Runink FACE"
-# French mirror of content/use-cases/_index.md — read that file first.
-#
-# This section is Runink FACE's scenarios and nothing else. Runink PULSE
-# (market analysis) is a separate product with its own material, and CORE is the
-# platform underneath both; neither of their capabilities may be listed here,
-# because a reader who cannot tell which product does which job reads the whole
-# set as one product's track record. The previous version of this file was
-# titled "À Quoi Sert Runink" and named no product at all.
 product: "Runink FACE"
-# Do not state a count in the title or the description. This file said "Sept" in
-# three places and was wrong the moment a page was added. The set keeps growing;
-# the English file states no number either.
 description: "Les sujets opérationnels pour lesquels Runink FACE est fait. Dans chacun, les faits sont déjà dans vos systèmes et personne n'a les heures pour les rassembler, et chacun se termine par une personne qui approuve une action rédigée, pas par un tableau de bord de plus."
-# CARD LINKS STAY UNPREFIXED. layouts/shortcodes/card.html passes every relative
-# link through relLangURL, so "/use-cases/compliance/" written here renders as
-# "/fr/use-cases/compliance/"; writing "/fr/..." would render "/fr/fr/...".
-# The consequence is that a card in this file can only point at a page that
-# exists in French. Every page in this section is now translated, so this index
-# carries the same cards in the same four groups as the English one. If a new
-# English page appears before its French translation, leave its card out rather
-# than link a page that is not there.
-#
-# Markdown links in the body are NOT rewritten by Hugo (there is no
-# render-link hook), so they carry an explicit /fr/ prefix by hand.
-#
-# Le corps ci-dessous s'affiche. Il ne s'affichait pas autrefois : `layout:
-# "section"` ne correspondait à aucun gabarit et la page retombait sur
-# layouts/_default/list.html, qui n'imprime jamais .Content.
-# layouts/use-cases/section.html existe désormais et l'affiche.
 layout: "section"
+
+# The coverage index lives in front matter so layouts/use-cases/section.html can
+# render it ABOVE the argument with real hierarchy. It used to be five card-grid
+# shortcodes in the body: twelve cards of equal width and height under 3,000px of
+# full-bleed prose, which cannot show that the groups mean anything.
+#
+# CONTENT.md rule 12: this is a page, not a copy. The group labels and the short
+# names here are this language's own wording, and the line rendered under each
+# name is read off that language's child page at render time.
+#
+# `name` is the short domain label a reader scans. Do not state a count anywhere
+# — the number beside the heading is computed from len .Pages in the template.
+coverage_heading: "Ce que cela couvre"
+coverage_meta: "cas"
+coverage_intro: "Ils sont regroupés selon le moment où le problème surgit dans l'exploitation : avant de vous engager sur un plan, pendant que le travail avance, après qu'un incident a eu lieu, et quand on vous demande des preuves."
+groups_other_label: "Également ici"
+groups:
+  - label: "Prévoir ce dont vous aurez besoin"
+    deck: "Avant de vous engager. Ce que le trimestre prochain va demander, la couverture dont vous disposez, et ce qu'un changement coûterait."
+    items:
+      - page: "demand-forecasting"
+        name: "Prévision de la demande"
+      - page: "fulfillment-optimization"
+        name: "Couverture de stock et plan d'approvisionnement"
+      - page: "hypothesis-lab"
+        name: "Éprouver un changement avant de s'y engager"
+  - label: "Acheminer la marchandise"
+    deck: "Le travail déjà en cours. La tournée, la vue sur toute la chaîne, et le conducteur qui a les mains sur le volant."
+    items:
+      - page: "route-optimization"
+        name: "Plan de tournée"
+      - page: "supply-chain-visibility"
+        name: "Visibilité de la chaîne logistique"
+      - page: "voice-dispatch"
+        name: "Répartition vocale pour les conducteurs"
+  - label: "Quand quelque chose va de travers"
+    deck: "Après coup. Un conteneur qui s'est réchauffé, un retour posé sur le quai, une réclamation dont le délai court."
+    items:
+      - page: "cold-chain-safety"
+        name: "Chaîne du froid et sécurité du parc"
+      - page: "responsive-reverse-logistics"
+        name: "Retours et logistique inverse"
+      - page: "claims-recovery"
+        name: "Réclamations fret et frais de port"
+  - label: "Papier, règle et preuve"
+    deck: "Quand on vous demande des preuves. Le dossier de sinistre, la clause qui s'applique, le rapport."
+    items:
+      - page: "insurance-underwriting"
+        name: "Souscription et dossiers de sinistre"
+      - page: "paralegal-review"
+        name: "Revue de contrats et d'obligations"
+      - page: "compliance"
+        name: "Données personnelles et émissions"
+
 next:
   label: "Une étape de plus"
   title: "Apportez une ligne, un transporteur ou un mois de retours."
@@ -39,13 +66,11 @@ next:
   about: "Les scénarios"
 
 ---
-
 ## Le Problème Dont Part Runink FACE
 
-Tous les sujets ci-dessous ont la même forme. Les faits dont vous avez besoin sont déjà enregistrés quelque part dans votre entreprise. Ils sont dans quatre systèmes, sous quatre formats, et les rassembler prend une matinée que personne n'a.
+Tous les sujets ci-dessus ont la même forme. Les faits dont vous avez besoin sont déjà enregistrés quelque part dans votre entreprise. Ils sont dans quatre systèmes, sous quatre formats, et les rassembler prend une matinée que personne n'a.
 
 Alors la réclamation expire. Le conteneur est ouvert trop chaud. La commande part par avion. Non pas parce que quelqu'un a mal jugé, mais parce que personne n'a eu le temps d'arriver au point où l'on peut juger.
-
 
 ## Ce Que Runink FACE En Fait
 
@@ -67,114 +92,6 @@ Approuver est censé terminer le travail plutôt que le commencer. La réponse n
 
 ## Où En Sont Ces Scénarios
 
-Aucun des scénarios ci-dessous n'est un résultat client. Ils sont **esquissés** : écrits à partir de ce que le logiciel est fait pour faire, dans le vocabulaire des gens qui portent le problème, et jamais passés sur les données d'un client. Rien n'est mesuré, et chaque page le dit pour son compte. Il n'y a ici aucune étude de cas et aucun chiffre, parce que les chiffres seraient les nôtres et que ceux qui comptent sont les vôtres.
-
-## Prévoir Ce Dont Vous Aurez Besoin
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Prévision de la demande"
-    icon="chart-bar"
-    link="/use-cases/demand-forecasting/"
-    description="Ce dont vous aurez besoin le trimestre prochain est contenu dans ce que vous avez vendu l'an dernier. Le lire dans votre propre historique est un travail pour lequel personne n'a la matinée."
->}}
-
-{{< card
-    title="Couverture de stock et plan d'approvisionnement"
-    icon="cube-transparent"
-    link="/use-cases/fulfillment-optimization/"
-    description="Une alerte de rupture qui arrive après la fonte du stock de sécurité, c'est une facture d'avion avec quelques jours de préavis."
->}}
-
-{{< card
-    title="Éprouver un changement avant de s'y engager"
-    icon="light-bulb"
-    link="/use-cases/hypothesis-lab/"
-    description="Chiffrez ce que coûte un déroutement avant de dépenser l'argent, sur vos propres chiffres plutôt que sur ceux d'un fournisseur."
->}}
-
-{{< /card-grid >}}
-
-## Acheminer La Marchandise
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Un plan de tournée qui suit la journée"
-    icon="globe-alt"
-    link="/use-cases/route-optimization/"
-    description="La tournée la moins chère lundi n'est pas la moins chère jeudi. La replanifier à la main est la raison pour laquelle elle n'est planifiée qu'une fois."
->}}
-
-{{< card
-    title="Voir toute la chaîne, pas seulement votre bout"
-    icon="eye"
-    link="/use-cases/supply-chain-visibility/"
-    description="Chaque fournisseur, transporteur et entrepôt détient une pièce du tableau. Le tableau lui-même n'est détenu nulle part."
->}}
-
-{{< card
-    title="Répartition vocale pour les conducteurs"
-    icon="map"
-    link="/use-cases/voice-dispatch/"
-    description="Un conducteur qui doit se ranger pour lire un écran, soit il s'arrête, soit il ne le lit pas. Ni l'un ni l'autre n'était le but."
->}}
-
-{{< /card-grid >}}
-
-## Quand Quelque Chose Va De Travers
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Chaîne du froid et sécurité du parc"
-    icon="shield-check"
-    link="/use-cases/cold-chain-safety/"
-    description="Le relevé qui condamne un chargement est enregistré des heures avant que quiconque le regarde. Tout le problème est l'écart entre les deux."
->}}
-
-{{< card
-    title="Les retours et ce qu'ils valent encore"
-    icon="arrow-path"
-    link="/use-cases/responsive-reverse-logistics/"
-    description="Un retour posé sur un quai est du fonds de roulement que personne n'a compté. Ce qu'il vaut dépend de la vitesse à laquelle il est jugé."
->}}
-
-{{< card
-    title="Réclamations fret et frais de port"
-    icon="currency-dollar"
-    link="/use-cases/claims-recovery/"
-    description="Les réclamations expirent parce qu'en monter une prend une matinée. Le reçu, le poids, le tarif et le délai arrivent déjà rassemblés."
->}}
-
-{{< /card-grid >}}
-
-## Papier, Règle Et Preuve
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Dossiers de souscription et de sinistre"
-    icon="clipboard-document-list"
-    link="/use-cases/insurance-underwriting/"
-    description="Un sinistre est une provision sur un contrat, et le dossier qui le règle arrive sous forme de documents. La lecture est rédigée pour vous ; la décision reste chez le souscripteur."
->}}
-
-{{< card
-    title="Revue de contrats et d'obligations"
-    icon="magnifying-glass"
-    link="/use-cases/paralegal-review/"
-    description="La clause qui compte est dans un contrat que personne n'a rouvert. Elle est lue et citée pour vous, et une personne décide de ce qu'elle veut dire."
->}}
-
-{{< card
-    title="Données personnelles des clients et bilan des émissions"
-    icon="scale"
-    link="/use-cases/compliance/"
-    description="Des données personnelles atteignent des écrans qui ne devraient pas les montrer, et le bilan des émissions prend un trimestre. Les deux sont des travaux de rapprochement."
->}}
-
-{{< /card-grid >}}
+Aucun des scénarios ci-dessus n'est un résultat client. Ils sont écrits à partir de ce que le logiciel est fait pour faire, dans le vocabulaire des gens qui portent le problème, et ils n'ont jamais été passés sur les données d'un client. Il n'y a ici aucune étude de cas et aucun chiffre, parce que les chiffres seraient les nôtres et que ceux qui comptent sont les vôtres.
 
 Runink PULSE, le produit d'analyse de marché, et la plateforme CORE sur laquelle tourne FACE sont traités dans [leurs propres livres blancs](/fr/blog/whitepapers/). Ils ne sont pas sur cette page, et aucun des sujets ci-dessus n'est un résultat qui appartiendrait à l'un ou à l'autre.
