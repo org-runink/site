@@ -23,50 +23,31 @@ hero:
   cta_secondary: "Agende uma conversa"
 
 
-# The six jobs, named the way an operations team names them.
-#
-# WHY THIS BLOCK EXISTS AND WHY IT IS THIS HIGH. The hero is a hook and the
-# industries ledger further down answers "who has this problem". Neither answers
-# the question a supply-chain reader asks in the first fifteen seconds, which is
-# "is this pointed at anything I recognise". Before this block the page went from
-# a sentence about arguing straight to an abstract figure, and a reader scanning
-# for cold chain or returns or claims found nothing to catch on.
-#
-# It is a DIFFERENT AXIS from the industries ledger, not a second copy of it.
-# Industries are who; these are what. Logistics & Supply Chain is one row down
-# there and six rows up here.
-#
-# EVERY ROW LINKS TO A PAGE THAT ALREADY EXISTS and describes the mechanism. The
-# copy here is the loss in the reader's own vocabulary, taken from that page's
-# own description, so the band cannot drift from what the page goes on to say.
-# Nothing here claims a capability: each line is a sentence about the reader's
-# week, not about the software.
-domains_heading: "Seis frentes em que ele atua"
-domains_intro: "Com os nomes que uma equipe de operações usa. Abra a que se parece com a sua semana e ela percorre o trabalho inteiro, do começo ao fim."
-domains_cta: "Ver como"
-domains:
-  - page: "cold-chain-safety"
-    name: "Cadeia do frio"
-    line: "Um contêiner esquenta durante a noite e ninguém abre a porta até de manhã."
-  - page: "responsive-reverse-logistics"
-    name: "Logística reversa"
-    line: "Uma devolução vale mais no dia em que volta, e a decisão de classificar espera."
-  - page: "route-optimization"
-    name: "Logística reativa"
-    line: "O plano que servia às seis da manhã não serve às dez, e ninguém roda de novo."
-  - page: "demand-forecasting"
-    name: "Demanda e fulfillment"
-    line: "Uma linha começa a se mexer semanas antes do ponto de pedido, e o plano chega depois da ruptura."
-  - page: "insurance-underwriting"
-    name: "Subscrição"
-    line: "A apólice, o laudo, o histórico de reservas e o limite de alçada estão em quatro lugares."
-  - page: "claims-recovery"
-    name: "Sinistros e disputas"
-    line: "Um sinistro vence porque montar um leva uma manhã que ninguém teve naquela semana."
+# Ver content/_index.md.
+flow_heading: "Uma carga, quatro momentos, seis formas de perder dinheiro nela"
+flow_intro: "Não são seis produtos. É a mesma falha — um registro escrito e lido tarde demais — pega nos quatro pontos da vida de uma carga em que ela custa outra coisa."
+flow:
+  - when: "Antes de embarcar"
+    jobs:
+      - name: "Demanda e fulfillment"
+        line: "Uma linha começa a se mexer semanas antes do ponto de pedido, e o plano chega depois da ruptura."
+  - when: "Em trânsito"
+    jobs:
+      - name: "Cadeia do frio"
+        line: "Um contêiner esquenta durante a noite e ninguém abre a porta até de manhã."
+      - name: "Logística reativa"
+        line: "O plano que servia às seis da manhã não serve às dez, e ninguém roda de novo."
+  - when: "Quando volta"
+    jobs:
+      - name: "Logística reversa"
+        line: "Uma devolução vale mais no dia em que volta, e a decisão de classificar espera."
+  - when: "Quando o dinheiro se mexe"
+    jobs:
+      - name: "Sinistros e disputas"
+        line: "Um sinistro vence porque montar um leva uma manhã que ninguém teve naquela semana."
+      - name: "Subscrição"
+        line: "A apólice, o laudo, o histórico de reservas e o limite de alçada estão em quatro lugares."
 
-
-# Traducción / traduction / tradução de opex_*. Ver content/_index.md:
-# nombra una medida y dónde encontrarla, y no pone ninguna cifra (regla 1).
 opex_heading: "Onde isso aparece nos seus números de operação"
 opex_intro: "Nenhum número aqui é nosso para dar. Cada uma destas é uma linha que você já carrega, com o que a movimenta e onde achar o seu próprio número. Uma página que diz quanto você vai economizar está chutando sobre uma operação que nunca viu."
 opex_col_line: "A linha"

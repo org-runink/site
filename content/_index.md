@@ -39,65 +39,49 @@ hero:
   cta_secondary: "Book a consultation"
 
 
-# The six jobs, named the way an operations team names them.
+# One load, four moments, six losses — this replaced a grid of six cards.
 #
-# WHY THIS BLOCK EXISTS AND WHY IT IS THIS HIGH. The hero is a hook and the
-# industries ledger further down answers "who has this problem". Neither answers
-# the question a supply-chain reader asks in the first fifteen seconds, which is
-# "is this pointed at anything I recognise". Before this block the page went from
-# a sentence about arguing straight to an abstract figure, and a reader scanning
-# for cold chain or returns or claims found nothing to catch on.
+# WHY THE CARDS WENT. Six boxes with a "see how" link each made the landing page
+# a switchboard into /use-cases/, and every one of those pages already carries
+# between seven and fourteen inbound links from the blog and the use-case index.
+# The page was spending its most valuable band forwarding the reader elsewhere,
+# and saying six separate things while it did.
 #
-# It is a DIFFERENT AXIS from the industries ledger, not a second copy of it.
-# Industries are who; these are what. Logistics & Supply Chain is one row down
-# there and six rows up here.
+# WHAT REPLACED IT SAYS SOMETHING THE CARDS COULD NOT. Six boxes assert six
+# products. A load's life with the losses marked on it asserts what is actually
+# true and what the whole argument rests on: one failure — a record written down
+# and read too late — showing up at four points where it costs something
+# different. Two of the four moments carry two jobs, which is why the composition
+# is asymmetric. That is the shape of the problem, not a layout decision.
 #
-# EVERY ROW LINKS TO A PAGE THAT ALREADY EXISTS and describes the mechanism. The
-# copy here is the loss in the reader's own vocabulary, taken from that page's
-# own description, so the band cannot drift from what the page goes on to say.
-# Nothing here claims a capability: each line is a sentence about the reader's
-# week, not about the software.
-domains_heading: "Six jobs it is pointed at"
-domains_intro: "Named the way an operations team names them. Open the one that reads like your week and it walks the whole job, start to finish."
-domains_cta: "See how"
-domains:
-  - page: "cold-chain-safety"
-    name: "Cold chain"
-    line: "A container drifts warm overnight and nobody opens the door until morning."
-  - page: "responsive-reverse-logistics"
-    name: "Reverse logistics"
-    line: "A return is worth the most on the day it comes back, and the grading call waits."
-  - page: "route-optimization"
-    name: "Reactive logistics"
-    line: "The plan that was right at six in the morning is wrong by ten, and nobody re-runs it."
-  - page: "demand-forecasting"
-    name: "Demand and fulfilment"
-    line: "A line starts moving weeks before the reorder point does, and the plan catches up after the stockout."
-  - page: "insurance-underwriting"
-    name: "Underwriting"
-    line: "The wording, the loss report, the reserve history and the authority limit sit in four places."
-  - page: "claims-recovery"
-    name: "Claims and disputes"
-    line: "A claim expires because assembling one takes a morning nobody had that week."
+# NO LINKS IN IT, DELIBERATELY, and nothing is orphaned by that: rule 9 was
+# checked before the change and every use-case page keeps its inbound links
+# elsewhere. A landing page that hands the reader off before it has made its case
+# has not made its case.
+flow_heading: "One load, four moments, six ways to lose money on it"
+flow_intro: "These are not six products. They are the same failure — a record written down and read too late — caught at the four points in a load's life where it costs something different."
+flow:
+  - when: "Before it ships"
+    jobs:
+      - name: "Demand and fulfilment"
+        line: "A line starts moving weeks before the reorder point does, and the plan catches up after the stockout."
+  - when: "In transit"
+    jobs:
+      - name: "Cold chain"
+        line: "A container drifts warm overnight and nobody opens the door until morning."
+      - name: "Reactive logistics"
+        line: "The plan that was right at six in the morning is wrong by ten, and nobody re-runs it."
+  - when: "After it comes back"
+    jobs:
+      - name: "Reverse logistics"
+        line: "A return is worth the most on the day it comes back, and the grading call waits."
+  - when: "When the money moves"
+    jobs:
+      - name: "Claims and disputes"
+        line: "A claim expires because assembling one takes a morning nobody had that week."
+      - name: "Underwriting"
+        line: "The wording, the loss report, the reserve history and the authority limit sit in four places."
 
-# Where it shows up in the operating numbers.
-#
-# WHY THIS BLOCK EXISTS. The page told a reader what happens in their week and
-# what the software does about it, and never once named the line on which any of
-# it costs money. An operations director can recognise a warm reefer and still
-# not have a reason to forward the page to a finance director.
-#
-# HOW IT STAYS INSIDE RULE 1. It names a measure and says where in the reader's
-# own systems to find it, and it puts no number on anything. That is the exact
-# permission rule 1 grants and the exact line it draws: naming demurrage is a
-# neutral domain fact; asserting what you would save is not. Every "where yours
-# is" points at a document the reader already owns — a carrier invoice, a
-# write-off account, a credit note — so the figure that ends the sentence is
-# theirs and is checkable the same afternoon.
-#
-# The five lines map onto the six jobs above: cold chain, reverse, reactive,
-# demand and fulfilment, and the claims/underwriting pair share the last row
-# because they share the file.
 opex_heading: "Where it shows up in your operating numbers"
 opex_intro: "No figure here is ours to give you. Each of these is a line you already carry, with what drives it and where to find your own number for it. If a page tells you what you will save, it is guessing about an operation it has never seen."
 opex_col_line: "The line"
