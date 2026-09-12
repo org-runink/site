@@ -21,6 +21,7 @@
  *   - the ink that sits ON a fill clears 4.5:1 against that fill
  */
 import { readFile } from 'node:fs/promises';
+import { waived, CONTRAST_WAIVERS } from './contrast-waivers.mjs';
 
 const src = await readFile(new URL('../assets/css/tokens.css', import.meta.url), 'utf8');
 
@@ -218,6 +219,44 @@ for (const ground of ['sheet', 'console']) {
   }
 }
 
+/* ---- the CATEGORY accents on the GROUND'S OWN SURFACES ---------------------
+   The loop above measures each category accent on its own --rk-accent-wash,
+   which is the callout background. It is not the only thing a category accent
+   is painted on. layouts/partials/industries-style.html binds
+   `--accent-ink: var(--rk-accent)` and uses `var(--rk-sheet)` as a background
+   in six places, so the accent is ALSO text on a plain raised card — a surface
+   neither checker looked at. gen-contrast-proof.mjs measured these against
+   --rk-ground alone; this file measured them against the wash alone; the sheet
+   sat in the gap between the two and three accents were under AA on it.
+
+   So: every surface of each ground, worst one wins, exactly as the inks are
+   held since --rk-text-3 shipped at 4.39:1 on --rk-sunk. Known failures are
+   enumerated in scripts/contrast-waivers.mjs with a date and a ratio — they
+   report but do not gate, and everything else does. */
+const waivedRows = [];
+for (const ground of ['sheet', 'console']) {
+  const surfaces = SURFACES.map((sn) => [sn, hexOf(sn, ground)]).filter(([, h]) => h);
+  for (const cat of CATS) {
+    const accent = hexOf(ground === 'console' ? `rk-cat-${cat}-lift` : `rk-cat-${cat}-ink`, ground);
+    if (!accent) continue;
+    let worst = Infinity, worstOn = null;
+    for (const [sn, bg] of surfaces) {
+      const r = ratio(accent, bg);
+      if (r < worst) { worst = r; worstOn = sn; }
+      if (r >= 4.5) continue;
+      const { covered, waiver, deepened } = waived(ground, cat, sn, r);
+      if (covered) {
+        waivedRows.push(`${ground}: cat ${cat} (${accent}) is ${r.toFixed(2)}:1 on ${sn} (${bg}) — waived ${waiver.since}, granted at ${waiver.ratio}:1`);
+      } else if (deepened) {
+        fails.push(`${ground}: cat ${cat} (${accent}) is ${r.toFixed(2)}:1 on ${sn} (${bg}) — WORSE than the ${waiver.ratio}:1 its waiver was granted for`);
+      } else {
+        fails.push(`${ground}: cat ${cat} (${accent}) is ${r.toFixed(2)}:1 on ${sn} (${bg}) — below 4.5`);
+      }
+    }
+    rows.push([ground, 'cat-surf', `cat ${cat}`, accent, worstOn, worst, 4.5]);
+  }
+}
+
 const w = (s, n) => String(s).padEnd(n);
 console.log(`\n${w('ground', 9)}${w('tier', 9)}${w('token', 24)}${w('value', 10)}${w('worst on', 16)}ratio   floor`);
 for (const [g, t, n, v, on, r, f] of rows) {
@@ -225,9 +264,19 @@ for (const [g, t, n, v, on, r, f] of rows) {
   console.log(`${ok ? ' ' : '✗'}${w(g, 8)}${w(t, 9)}${w(n, 24)}${w(v, 10)}${w(on, 16)}${r.toFixed(2).padStart(5)}   ${f}`);
 }
 
+/* Printed whether or not anything failed: a waiver nobody sees is a hole. */
+if (waivedRows.length) {
+  console.warn(`\ncheck-token-contrast: ${waivedRows.length} pair(s) below floor, REPORTED NOT GATED`);
+  for (const r of waivedRows) console.warn(`  ~ ${r}`);
+  console.warn(`  See scripts/contrast-waivers.mjs for why, and what removes them.`);
+}
+
 if (fails.length) {
   console.error(`\ncheck-token-contrast: ${fails.length} failure(s)\n`);
   for (const f of fails) console.error(`  ✗ ${f}`);
   process.exit(1);
 }
-console.log(`\ncheck-token-contrast: ok — every ink clears 4.5:1 on every surface of its ground, every mark and fill 3:1, every on-fill ink 4.5:1`);
+const waivedNote = waivedRows.length
+  ? ` — with ${waivedRows.length} waived pair(s) reported above`
+  : '';
+console.log(`\ncheck-token-contrast: ok — every ink clears 4.5:1 on every surface of its ground, every category accent too, every mark and fill 3:1, every on-fill ink 4.5:1${waivedNote}`);

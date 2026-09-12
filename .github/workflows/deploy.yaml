@@ -176,6 +176,32 @@ jobs:
       #     nowhere, on the one page whose job is to be the authority on what
       #     the tokens are. --check re-derives and fails if the committed file
       #     has drifted, and fails if any pair is below its floor.
+      #   check-design-doc — DESIGN.md calls itself the source of truth and was
+      #     not one. tokens.css was re-valued onto FACE's warm ramp and Figtree
+      #     on 2026-09-10; the doc was not, and for two days it published
+      #     fourteen dead ramp hexes, two dead signal hexes, a contrast table
+      #     measured against a ground that no longer existed, and a display face
+      #     the token layer had stopped offering. Nothing could catch it: a
+      #     stale document renders perfectly. Scoped to where the doc states a
+      #     token AND its value in a table — which is where a reader copies a
+      #     value out of — so the prose stays free to quote a dead colour while
+      #     explaining why it moved. Against the pre-correction DESIGN.md it
+      #     reports 28 disagreements; against the current one, none.
+      #
+      # ON THE THREE WAIVED PAIRS, so a green run is not mistaken for a clean
+      # palette. As of 2026-09-12 three category accents measure below the 4.5:1
+      # text floor on the console ground's raised surface --rk-sheet (#3F382D):
+      # insurance 4.08:1, marketing 4.33:1, telecom 4.47:1. Both checks above
+      # now MEASURE that surface — neither did before, which is why it was
+      # missed — and both print the three pairs on every run, but neither gates
+      # on them. The fix is three new accent values and the palette is the
+      # design owner's to re-solve; gating first would redden main for every
+      # unrelated PR until somebody picked three hexes under time pressure. The
+      # waiver is enumerated, dated and pinned to the measured ratio in
+      # scripts/contrast-waivers.mjs: a fourth pair below floor fails, and so
+      # does any of these three getting worse. Same shape as the -exclude
+      # waiver on the readability step below. Re-solve the three accents,
+      # delete the entries, regenerate the proof table.
       - name: Check palette tokens and interaction states
         run: |
           node scripts/gen-contrast-proof.mjs --check
@@ -183,6 +209,7 @@ jobs:
           node scripts/check-token-channels.mjs
           node scripts/check-token-contrast.mjs
           node scripts/check-dead-states.mjs
+          node scripts/check-design-doc.mjs
 
       - name: Build Tailwind CSS
         run: pnpm run build
@@ -291,11 +318,25 @@ jobs:
       # `//go:build ignore` scripts, so GOTOOLCHAIN=local (never fetch another
       # Go) and GOPROXY=off (never reach a module proxy) cost nothing and close
       # the only two ways `go run` could dial out.
+      #
+      # -banned-fatal is the OTHER half of rule 3, and until 2026-09-12 it was
+      # reported and nothing else: every page printed its own `BANNED:` suffix
+      # and the run still exited 0, so the banned list was documentation with no
+      # gate under it. The corpus is clean — all 715 rendered pages, not just
+      # the 200 scored, were checked before this was turned on — so switching it
+      # on costs nothing today and stops the first regression rather than the
+      # eleventh.
+      #
+      # -exclude does NOT widen to it. That list waives the FLESCH FLOOR, and
+      # none of its three reasons is a reason to permit "leverage": a policy
+      # page may be dense prose without being marketing copy, and a taxonomy
+      # listing whose score is meaningless still has a readable title. So an
+      # excluded page is ungated on its score and still gated on its vocabulary.
       - name: Check plain-language floor
         env:
           GOTOOLCHAIN: local
           GOPROXY: "off"
-        run: go run readability.go -min 45 -exclude /tags/,/categories/,/es/,/fr/,/pt/,/license/,/privacy/ docs
+        run: go run readability.go -min 45 -banned-fatal -exclude /tags/,/categories/,/es/,/fr/,/pt/,/license/,/privacy/ docs
 
       # Two navigation controls pointing at the same page is one control and one
       # distraction, and the redundancy is invisible to anyone reading one config

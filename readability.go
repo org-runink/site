@@ -9,6 +9,32 @@
 //	go run readability.go -min 45 public     # exit 1 below a floor
 //	go run readability.go -min 45 -exclude /tags/,/es/ public
 //	                                         # …but do not gate on those paths
+//	go run readability.go -banned-fatal public
+//	                                         # exit 1 on any rule-3 banned word
+//
+// # What -banned-fatal does
+//
+// The banned list below IS rule 3 of CONTENT.md, and until this flag existed it
+// was reported and nothing more: every page printed its own `BANNED:` suffix
+// and the process still exited 0, so the rule was documentation rather than a
+// gate. With -banned-fatal a page carrying one fails the run and is named on
+// stderr with the word and its count.
+//
+// Without the flag the output is byte-identical to before it — the rows, the
+// `BANNED:` suffixes and the summary line are untouched — so turning it off
+// restores the old reporting exactly.
+//
+// -exclude does NOT widen to this. That list waives the FLESCH FLOOR, for three
+// separate reasons (an invalid measurement on generated listings, a rule that
+// never covered the translations, and one labelled waiver of real debt on
+// /license/ and /privacy/). None of them is a reason to permit "leverage": a
+// policy page may be dense prose without being marketing copy. So an excluded
+// page is still gated on vocabulary, and only its score is ungated.
+//
+// The blind spot, stated rather than hidden: banned words are detected only on
+// the pages this tool scores, which is those over ~120 words. On 12 Sep 2026
+// the other 515 rendered pages were checked by hand and carry none either, but
+// a banned word added to a page under that floor would not be caught here.
 //
 // # What -exclude does, and does not, do
 //
@@ -184,6 +210,7 @@ func main() {
 	root := "public"
 	min := math.Inf(-1)
 	var excludes []string
+	bannedFatal := false
 	args := os.Args[1:]
 	for i := 0; i < len(args); i++ {
 		switch args[i] {
@@ -192,6 +219,8 @@ func main() {
 				fmt.Sscanf(args[i+1], "%f", &min)
 				i++
 			}
+		case "-banned-fatal", "--banned-fatal":
+			bannedFatal = true
 		case "-exclude", "--exclude":
 			if i+1 < len(args) {
 				for _, p := range strings.Split(args[i+1], ",") {
@@ -243,6 +272,10 @@ func main() {
 
 	sort.Slice(scores, func(i, j int) bool { return scores[i].flesch < scores[j].flesch })
 	below, ungated, gated := 0, 0, 0
+	// Pages carrying a rule-3 banned word, in report order. Collected whether or
+	// not -banned-fatal is set, so the count in the summary is the truth either
+	// way; only the exit code depends on the flag.
+	var dirty []string
 	for _, s := range scores {
 		if !s.excluded {
 			gated++
@@ -267,6 +300,7 @@ func main() {
 		fmt.Printf("%s %6.1f  %5dw %4ds  %s", flag, s.flesch, s.words, s.sentences, s.path)
 		if len(b) > 0 {
 			fmt.Printf("   BANNED: %s", strings.Join(b, " "))
+			dirty = append(dirty, fmt.Sprintf("%s   %s", s.path, strings.Join(b, " ")))
 		}
 		fmt.Println()
 	}
@@ -284,8 +318,21 @@ func main() {
 			fmt.Fprintf(os.Stderr, "; %d more below it under -exclude (marked ~, reported not gated)", ungated)
 		}
 	}
+	// Only printed under the flag, so the default output stays byte-identical.
+	if bannedFatal {
+		fmt.Fprintf(os.Stderr, ", %d carrying a banned word", len(dirty))
+	}
 	fmt.Fprintln(os.Stderr)
-	if below > 0 {
+
+	if bannedFatal && len(dirty) > 0 {
+		fmt.Fprintf(os.Stderr, "\nreadability: CONTENT.md rule 3 — %d page(s) carry a banned word\n", len(dirty))
+		for _, d := range dirty {
+			fmt.Fprintf(os.Stderr, "  ✗ %s\n", d)
+		}
+		fmt.Fprintln(os.Stderr, "\n  Rule 3 bans these outright. Say the plain thing instead; there is no\n  waiver list for vocabulary, and -exclude does not cover it.")
+	}
+
+	if below > 0 || (bannedFatal && len(dirty) > 0) {
 		os.Exit(1)
 	}
 }
