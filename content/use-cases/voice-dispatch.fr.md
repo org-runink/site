@@ -89,7 +89,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
                 <li><strong class="text-stone-200">Informatique et sécurité de l'information.</strong> Aujourd'hui un produit vocal revient à demander dans quel compte tiers finit la transcription. Ce qui change, c'est que la parole est transformée en texte par le serveur de modèles que vous exploitez déjà, et que chaque réponse conversationnelle est prononcée dans le processus FACE lui-même, à partir d'une voix embarquée dans le binaire. Le segment téléphonique est porté par un opérateur, comme n'importe quel appel, et l'annonce d'enregistrement et l'accueil sont lus avec la voix de cet opérateur avant que le canal vers vos machines soit ouvert.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-sauriez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Sauriez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que quelque chose change.

@@ -78,7 +78,7 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
                 <li><strong class="text-stone-200">Finance.</strong> Today the credit note is raised weeks after the goods came back, and what you recovered against what the goods were carried at is a figure nobody can break down. What changes is that the recovery yield and the refurbishment cost are stated as arithmetic on the value the dock typed. You can argue with the input, which is the part worth arguing with.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-would-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Would Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment anything changes.

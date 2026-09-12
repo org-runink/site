@@ -94,7 +94,7 @@ author: "Runink"
                 <li><strong class="text-stone-200">El analista del que todos dependen.</strong> Hoy la correspondencia entre un código de centro en un sistema y el nombre de una delegación en otro no está escrita en ninguna parte. Se recuerda, y mientras esa persona está de vacaciones la pregunta no se puede responder. Lo que cambia es que el mapa se deriva de la estructura de sus propios ficheros mediante reglas fijas, así que es algo que cualquiera puede volver a derivar y comprobar.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. No traemos números a esto; los trae usted. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoren.

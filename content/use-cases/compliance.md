@@ -77,7 +77,7 @@ author: "Runink"
                 The record also keeps apart the two answers people usually run together. &ldquo;We checked this and found nothing&rdquo; and &ldquo;we could not read this, so it was never checked&rdquo; are written down as different things. The second one is the finding an audit is actually looking for, and it is the one a green tick normally swallows.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.

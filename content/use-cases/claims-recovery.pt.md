@@ -72,7 +72,7 @@ author: "Runink"
                 Aprovar é o que envia. E onde uma etapa atrás da aprovação ainda não tem implementação &mdash; a gravação de volta no seu sistema de registro é o exemplo real &mdash; a resposta nomeia essa etapa como não executada, em vez de dar a ação inteira por concluída. Assim ninguém descobre três semanas depois que o registro nunca saiu. Depois, por que uma contestação foi registrada se responde pelo registro, e não pela memória de alguém.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.

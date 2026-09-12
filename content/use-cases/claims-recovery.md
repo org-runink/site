@@ -71,7 +71,7 @@ author: "Runink"
                 Approving is what sends it. And where a step behind the approval has no implementation yet — the write back into your system of record is the real example — the response names that step as not executed instead of reporting the whole action as done, so nobody finds out in three weeks that the filing never left. Later, why a claim was filed is answered from the record rather than from memory.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.

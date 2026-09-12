@@ -75,7 +75,7 @@ author: "Runink"
                 A execução não escolhe para você. Ela coloca as opções em fila. Quando alguém escolhe uma e manda para que se aja, a opção escolhida e o nome dessa pessoa ficam anotados juntos, então a pergunta que vem seis meses depois é respondida a partir do arquivo, e não a partir da reunião.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-saberia-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que algo muda.

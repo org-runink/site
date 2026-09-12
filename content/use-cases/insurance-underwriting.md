@@ -76,7 +76,7 @@ author: "Runink"
                 Approving the drafted step is what sends it. Declining it is recorded too, which is the part most systems lose. And where the step has a leg with nothing implemented behind it — a write into a policy administration system, say — the response names that leg as not executed rather than reporting the action as done, so the file never shows a step as taken that was only approved. Months later, <em class="text-stone-300">who decided this, and on what basis</em> is answered out of the file rather than out of somebody's memory of a Tuesday.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.

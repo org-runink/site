@@ -71,7 +71,7 @@ author: "Runink"
                 C'est la validation qui envoie. Et là où une étape derrière la validation n'a pas encore d'implémentation &mdash; l'écriture en retour dans votre système de référence en est l'exemple réel &mdash; la réponse nomme cette étape comme non exécutée au lieu de déclarer toute l'action faite. Personne n'apprend donc trois semaines plus tard que le dépôt n'est jamais parti. Plus tard, la raison d'un dépôt se lit au dossier. Pas dans les souvenirs de quelqu'un.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.

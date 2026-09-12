@@ -269,7 +269,9 @@
   .ind-figure {
     background-color: var(--sheet);
     border: 1px solid var(--rule);
-    border-radius: 0.875rem;
+    /* The figure rung — tokens.css names --rk-r-3 "cards, figures". Was
+       0.875rem/14px, over DESIGN.md §6's 12px ceiling and off the ladder. */
+    border-radius: var(--rk-r-3);
     padding: 1.5rem 1.25rem 1.25rem;
     margin-bottom: 3.5rem;
   }
@@ -425,7 +427,9 @@
     --accent-wash: color-mix(in srgb, var(--rk-accent) 10%, var(--rk-sheet));
 
     background-color: var(--rk-sunk);
-    border-radius: 1rem;
+    /* The band rung, and the one element on this page that earns it: a
+       full-width block that changes ground. Was 1rem/16px. */
+    border-radius: var(--rk-r-4);
     padding: 2rem 1.5rem;
     color: var(--ink-2);
   }
@@ -463,7 +467,9 @@
   .ind-sheet {
     background-color: var(--sheet);
     border: 1px solid var(--rule);
-    border-radius: 0.875rem;
+    /* Same rung as the figure above: a bordered sheet holding content, not a
+       band. Was 0.875rem/14px. */
+    border-radius: var(--rk-r-3);
     padding: 0.5rem 1.25rem 1rem;
     overflow-x: auto;
   }
@@ -609,7 +615,8 @@
     flex-direction: column;
     background-color: var(--sheet);
     border: 1px solid var(--rule);
-    border-radius: 0.875rem;
+    /* A card in a pair, so the card rung. Was 0.875rem/14px. */
+    border-radius: var(--rk-r-3);
     padding: 1.5rem 1.5rem 0;
     min-width: 0;
     overflow: hidden;
@@ -698,7 +705,10 @@
     background-color: var(--sheet);
     border: 1px solid var(--rule);
     border-top: 3px solid var(--accent-edge);
-    border-radius: 0 0 0.875rem 0.875rem;
+    /* The card rung, not the band rung, for the reason the note above gives:
+       this is the problem cards' plate set to the width of the page, so it
+       keeps the cards' corner. Was 0.875rem/14px. */
+    border-radius: 0 0 var(--rk-r-3) var(--rk-r-3);
     padding: 1.5rem 1.5rem 0;
     overflow: hidden;
   }
@@ -871,7 +881,9 @@
     background-color: var(--sheet);
     border: 1px solid var(--rule);
     border-top: 4px solid var(--accent-edge);
-    border-radius: 0 0 1rem 1rem;
+    /* The closing band, and the same shape .hp-contact takes on the homepage,
+       so the same rung. Was 1rem/16px. */
+    border-radius: 0 0 var(--rk-r-4) var(--rk-r-4);
     padding: 2rem 1.5rem;
     margin-bottom: 3.5rem;
   }

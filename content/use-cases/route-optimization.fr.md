@@ -88,7 +88,7 @@ author: "Runink"
                 <li><strong class="text-stone-200">Directeur des opérations.</strong> Aujourd'hui la dérive sort du bâtiment en heures supplémentaires, en second passage, en créneau manqué et en carburant, chaque chose tombant dans un budget différent et aucune n'étant étiquetée avec sa raison. Ce qui change, c'est qu'aucun montant n'est imprimé à côté d'un itinéraire, parce que le fournisseur n'en renvoie aucun &mdash; ainsi un chiffre mesuré et un chiffre supposé ne s'assoient jamais sur la même ligne en prétendant être de même nature.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous n'en avons aucun à nous à vous proposer. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.

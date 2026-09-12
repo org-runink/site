@@ -107,14 +107,15 @@
                 {{/* `rk-plan` is a hook for one print rule and nothing else —
                      see the @media print block in layouts/_default/pricing.html.
                      `overflow-hidden` here is a screen concern (it keeps the
-                     card's fill inside a 2.5rem radius) and on paper it is a
+                     card's fill inside the card corner — `rounded-lg`, 8px,
+                     down from 2.5rem) and on paper it is a
                      clip that eats a card at a page boundary: measured, a print
                      of this page lost the whole Lite card and most of Dedicated,
                      names and prices included, because both straddled a break.
                      assets/css/main.css already carries exactly this fix for
                      `.rk-faq`, with the same reasoning in its own comment. */}}
                 <div
-                    class="rk-plan h-full flex flex-col rounded-[2.5rem] border shadow-2xl relative overflow-hidden transition-all duration-300 {{ $cardClasses }}">
+                    class="rk-plan h-full flex flex-col rounded-lg border shadow-2xl relative overflow-hidden transition-all duration-300 {{ $cardClasses }}">
                     <div class="p-8 lg:p-12 flex flex-col flex-grow items-center text-center">
 
                         <!-- Pill -->
@@ -162,7 +163,7 @@
 
                         <!-- Inner Box Info -->
                         <div
-                            class="w-full bg-sunk border border-stone-800/60 rounded-2xl p-6 mb-12 text-left shadow-inner flex flex-col">
+                            class="w-full bg-sunk border border-stone-800/60 rounded p-6 mb-12 text-left shadow-inner flex flex-col">
                             <div
                                 class="flex items-center gap-4 {{ if .outcome_strategies }}mb-6 pb-6 border-b border-stone-800/60{{ end }}">
                                 <div

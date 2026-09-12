@@ -94,7 +94,7 @@ author: "Runink"
                 <li><strong class="text-stone-200">L'analyste sur qui tout le monde compte.</strong> Aujourd'hui la correspondance entre un code de site dans un système et un nom de dépôt dans un autre n'est écrite nulle part. Elle est retenue, et pendant que cette personne est en congé la question ne peut pas être traitée. Ce qui change, c'est que la carte est dérivée de la structure de vos propres fichiers par des règles fixes, donc c'est quelque chose que n'importe qui peut redériver et vérifier.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous n'apportons pas de chiffres ici ; c'est vous qui les apportez. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.

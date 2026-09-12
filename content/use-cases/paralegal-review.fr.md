@@ -79,7 +79,7 @@ author: "Runink"
                 Deux petites honnêtetés au dossier. Les données personnelles à motif régulier &mdash; adresses de courriel, numéros de téléphone, numéros de carte, numéros de sécurité sociale, adresses IP &mdash; sont retirées des journaux et des sorties de diagnostic avant leur écriture, de sorte que le fait d'enquêter ne crée pas en silence une nouvelle exposition. Les noms et les adresses postales ne sont pas dans cette liste, parce qu'ils n'ont aucun motif sur lequel s'accrocher, et l'étape de masquage ne porte aucun test qui lui soit propre ; prenez-la pour ce qu'elle est faite pour faire, pas pour une garantie. Et quand un jeu de données n'a pas pu être lu du tout, le dossier dit que la conformité <em class="text-stone-300">n'a pas été évaluée</em>, ce qui n'est volontairement pas la même entrée qu'une évaluation qui a tourné et a échoué. Confondre les deux rendrait &laquo;&nbsp;le contrôle est revenu propre&nbsp;&raquo; et &laquo;&nbsp;le contrôle n'a jamais eu lieu&nbsp;&raquo; identiques, alors qu'ils appellent des réponses différentes de personnes différentes.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.

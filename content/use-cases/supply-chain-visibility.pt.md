@@ -94,7 +94,7 @@ author: "Runink"
                 <li><strong class="text-stone-200">O analista de quem todo mundo depende.</strong> Hoje a correspondência entre um código de local num sistema e o nome de um depósito em outro não está escrita em lugar nenhum. Ela é lembrada, e enquanto essa pessoa está de férias a pergunta não tem como ser respondida. O que muda é que o mapa é derivado da estrutura dos seus próprios arquivos por regras fixas, então é algo que qualquer um consegue derivar de novo e conferir.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Não somos nós que trazemos números para isto; é você. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.

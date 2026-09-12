@@ -85,7 +85,7 @@ author: "Runink"
                 <li><strong class="text-stone-200">O planejador de suprimentos.</strong> Hoje isso chega até ele como a emergência de outra pessoa, semanas depois de a série virar. O que muda é que chega um item só a uma pessoa: este item, a virada, o método por trás, os períodos sobre os quais foi testado, e uma mudança de plano redigida.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Não estamos oferecendo os nossos, porque não temos os seus. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.

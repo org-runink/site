@@ -78,7 +78,7 @@ author: "Runink"
                 O registro também mantém separadas as duas respostas que as pessoas costumam misturar. &ldquo;Conferimos isso e não achamos nada&rdquo; e &ldquo;não conseguimos ler isso, então nunca foi conferido&rdquo; ficam anotadas como coisas diferentes. A segunda é o achado que uma auditoria de fato procura, e é a que um visto verde normalmente engole.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.

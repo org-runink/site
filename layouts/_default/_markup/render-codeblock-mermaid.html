@@ -2,7 +2,11 @@
   .mermaid-wrapper {
     width: 100%;
     height: 600px;
-    border-radius: 1rem;
+    /* The band rung. Was 1rem/16px, over DESIGN.md §6's 12px ceiling. Nothing
+       in the built site renders this wrapper today, so the rest of the block —
+       the literal #0c0a09, the pre-rebrand orange, the two glows DESIGN.md §6
+       says are gone — is left for a pass that takes the whole file. */
+    border-radius: var(--rk-r-4);
     overflow: hidden;
     background-color: #0c0a09;
     border: 1px solid rgba(234, 88, 12, 0.2);

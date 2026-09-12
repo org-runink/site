@@ -69,9 +69,16 @@
     @apply py-16 md:py-24;
   }
 
+  /* 2rem — 32px, against DESIGN.md §6's 12px ceiling — and separate from the
+     `.rounded-lg` override above, which is why removing that one did not reach
+     it. It is also not what it looked like: no element in the built site
+     carries a bare `card` class, so this rule has been shipping in the
+     stylesheet on 439 pages and matching nothing. Re-valued rather than
+     deleted, so whatever reaches for it next lands on `--rk-r-3`, the 8px card
+     rung, instead of on the corner of a consumer app. */
   .card {
     @apply bg-stone-900 border border-stone-800 p-6 transition duration-200 hover:border-stone-700;
-    border-radius: 2rem;
+    border-radius: var(--rk-r-3);
   }
 
   .nav-link {
@@ -316,8 +323,9 @@
   }
 
   /* `overflow: hidden` on the card is a screen concern — it keeps the summary
-     hover fill inside the 2rem radius. On paper it is a clip waiting to eat a
-     long answer at a page boundary. */
+     hover fill inside the card's radius (`rounded-lg`, 8px; it was 2rem until
+     the utility override that made it so was removed). On paper it is a clip
+     waiting to eat a long answer at a page boundary. */
   .rk-faq {
     overflow: visible !important;
     break-inside: avoid;

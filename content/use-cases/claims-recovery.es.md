@@ -71,7 +71,7 @@ author: "Runink"
                 Aprobarla es lo que la envía. Y donde un paso detrás de la aprobación todavía no tiene implementación &mdash;la escritura de vuelta en su sistema de registro es el ejemplo real&mdash; la respuesta nombra ese paso como no ejecutado en vez de dar la acción entera por hecha, así que nadie se entera tres semanas después de que la presentación nunca salió. Más tarde, por qué se presentó una reclamación se responde desde el registro y no desde la memoria.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.

@@ -79,7 +79,7 @@ author: "Runink"
                 Dos pequeñas honestidades sobre el registro. Los datos personales con patrón &mdash; direcciones de correo, números de teléfono, números de tarjeta, números de la seguridad social, direcciones IP &mdash; se eliminan de los registros y de la salida de diagnóstico antes de escribirse, así que el acto de investigar no crea en silencio una nueva exposición. Los nombres y las direcciones postales no están en esa lista, porque no tienen patrón con el que coincidir, y el paso de eliminación no lleva ninguna prueba propia; tómelo por lo que está construido para hacer y no por una garantía. Y cuando un conjunto de datos no se pudo leer en absoluto, el registro dice que el cumplimiento <em class="text-stone-300">no se evaluó</em>, que a propósito no es la misma entrada que una evaluación que corrió y falló. Juntar esas dos haría que &ldquo;la comprobación salió limpia&rdquo; y &ldquo;la comprobación nunca ocurrió&rdquo; parecieran idénticas, y necesitan respuestas distintas de personas distintas.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.

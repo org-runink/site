@@ -89,7 +89,7 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
                 <li><strong class="text-stone-200">TI e segurança da informação.</strong> Hoje um produto de voz significa perguntar em qual conta de terceiros a transcrição vai parar. O que muda é que a fala é transformada em texto pelo servidor de modelos que você já opera, e cada resposta de conversa é pronunciada dentro do próprio processo do FACE, a partir de uma voz embutida no binário. O trecho telefônico é carregado por uma operadora, como em qualquer ligação, e o aviso de gravação e a saudação são lidos com a voz dessa operadora antes de o canal para as suas máquinas estar aberto.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-saberia-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que qualquer coisa muda.

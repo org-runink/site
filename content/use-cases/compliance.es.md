@@ -77,7 +77,7 @@ author: "Runink"
                 El registro también mantiene separadas las dos respuestas que la gente suele juntar. &laquo;Esto se revisó y no había nada&raquo; y &laquo;esto no se pudo leer, así que nunca se revisó&raquo; quedan anotadas como cosas distintas. La segunda es el hallazgo que una auditoría busca de verdad, y es la que una marca verde se traga de normal.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.

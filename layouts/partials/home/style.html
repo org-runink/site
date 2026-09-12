@@ -501,7 +501,10 @@
   .hp-field {
     background-color: var(--sheet);
     border: 1px solid var(--rule);
-    border-radius: 0.875rem;
+    /* The figure rung. 0.875rem was 14px, over DESIGN.md §6's 12px ceiling by
+       two — and off the rung ladder entirely, which is how it survived: it was
+       close enough to 12px that nobody read it as a 40px-era value. */
+    border-radius: var(--rk-r-3);
     padding: 1.5rem 1.25rem 1.375rem;
     margin-bottom: 3.5rem;
   }
@@ -1424,7 +1427,9 @@
     flex-direction: column;
     background-color: var(--sheet);
     border: 1px solid var(--rule);
-    border-radius: 0.875rem;
+    /* A card in a grid of three, so the card rung — not the band rung the
+       contact plate below takes. Was 0.875rem/14px. */
+    border-radius: var(--rk-r-3);
     padding: 1.5rem 1.5rem 1.625rem;
     min-width: 0;
     overflow: hidden;
@@ -1471,7 +1476,10 @@
     background-color: var(--sheet);
     border: 1px solid var(--rule);
     border-top: 4px solid var(--accent-edge);
-    border-radius: 0 0 1rem 1rem;
+    /* A full-width closing band, so the band rung — the largest the system
+       has. Was 1rem/16px, four over the ceiling. The top corners stay square:
+       the accent edge is a cut, not a curve. */
+    border-radius: 0 0 var(--rk-r-4) var(--rk-r-4);
     padding: 2rem 1.5rem;
   }
   @media (min-width: 768px) {

@@ -88,7 +88,7 @@ author: "Runink"
                 <li><strong class="text-stone-200">Operations director.</strong> Today the drift leaves the building as overtime, a second trip, a missed window and fuel, each landing in a different budget and none of them labelled with the reason. What changes is that no money is printed beside a route, because the provider returns none &mdash; so a figure that was measured and a figure that was guessed never sit on the same line pretending to be the same kind of thing.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. We have none of our own to offer you. Write down where you stand today, because the baseline is gone for good the moment things improve.

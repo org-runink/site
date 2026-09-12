@@ -76,7 +76,7 @@ author: "Runink"
                 Aprovar o passo redigido é o que o envia. Recusar também fica registrado, que é a parte que quase todo sistema perde. E onde o passo tem um trecho sem nada implementado atrás &mdash; uma gravação num sistema de administração de apólices, digamos &mdash; a resposta nomeia esse trecho como não executado, em vez de dar a ação por concluída, então o processo nunca mostra como dado um passo que só havia sido aprovado. Meses depois, <em class="text-stone-300">quem decidiu isso, e com que base</em> se responde pelo processo, e não pela lembrança que alguém tem de uma terça-feira.
             </p>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-stone-200 mb-4 tracking-tighter uppercase italic">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.

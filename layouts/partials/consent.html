@@ -1,7 +1,7 @@
 <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
     <div class="mb-4 md:mb-0 max-w-3xl">
         <p class="text-sm">
-            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Accept All". We keep your answer for 180 days.
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
             Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
         </p>
     </div>
@@ -9,8 +9,15 @@
         <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
             Reject Non-Essential
         </button>
+        {{/* NOT "Accept All". Accepting grants one signal, analytics_storage,
+             and nothing else: partials/google-analytics.html defaults the four
+             ad_* signals to denied and setConsent() below never touches them,
+             so there is no "all" for this button to accept. The label said
+             more than the button does, in the same direction the sentence
+             above said more than the site does before it was corrected. It now
+             names the one thing it turns on, in the sentence's own word. */}}
         <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
-            Accept All
+            Allow Counting
         </button>
     </div>
 </div>

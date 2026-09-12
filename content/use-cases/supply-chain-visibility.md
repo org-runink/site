@@ -91,7 +91,7 @@ author: "Runink"
                 <li><strong class="text-stone-200">The analyst everybody relies on.</strong> Today the mapping between a site code in one system and a depot name in another is not written down anywhere. It is remembered, and while that person is on leave the question cannot be answered at all. What changes is that the map is derived from the structure of your own files by fixed rules, so it is something anyone can re-derive and check.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Every figure below is yours, not ours. We are not bringing numbers to this; you are. Write down where you stand today, because the baseline is gone for good the moment things improve.

@@ -77,7 +77,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
                 <li><strong class="text-stone-200">Director de operaciones.</strong> Hoy cada etapa de la cadena redondea a caja completa y añade un margen de seguridad, y ese crecimiento vive repartido en cuatro sistemas donde ninguno lo enseña entero. Lo que cambia es que los márgenes de seguridad se discuten con sus propias cifras y no por antigüedad.</li>
             </ul>
         </div>
-        <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabria-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
                 Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto algo cambia.
