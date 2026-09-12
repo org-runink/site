@@ -250,9 +250,36 @@
     {
       "f": "#0F6F73",
       "fn": "cat logistics",
+      "b": "#FFFDFA",
+      "bn": "sheet",
+      "r": "5.84",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#0F6F73",
+      "fn": "cat logistics",
       "b": "#FBF7F1",
       "bn": "ground",
       "r": "5.56",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#0F6F73",
+      "fn": "cat logistics",
+      "b": "#F6EFE4",
+      "bn": "sunk",
+      "r": "5.19",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5847B8",
+      "fn": "cat insurance",
+      "b": "#FFFDFA",
+      "bn": "sheet",
+      "r": "6.87",
       "g": "AA",
       "tier": "ink"
     },
@@ -266,12 +293,48 @@
       "tier": "ink"
     },
     {
+      "f": "#5847B8",
+      "fn": "cat insurance",
+      "b": "#F6EFE4",
+      "bn": "sunk",
+      "r": "6.11",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5A6B31",
+      "fn": "cat banking",
+      "b": "#FFFDFA",
+      "bn": "sheet",
+      "r": "5.77",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
       "f": "#5A6B31",
       "fn": "cat banking",
       "b": "#FBF7F1",
       "bn": "ground",
       "r": "5.49",
       "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5A6B31",
+      "fn": "cat banking",
+      "b": "#F6EFE4",
+      "bn": "sunk",
+      "r": "5.13",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#1D5480",
+      "fn": "cat telecom",
+      "b": "#FFFDFA",
+      "bn": "sheet",
+      "r": "7.86",
+      "g": "AAA",
       "tier": "ink"
     },
     {
@@ -284,11 +347,38 @@
       "tier": "ink"
     },
     {
+      "f": "#1D5480",
+      "fn": "cat telecom",
+      "b": "#F6EFE4",
+      "bn": "sunk",
+      "r": "6.99",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#A03A5E",
+      "fn": "cat marketing",
+      "b": "#FFFDFA",
+      "bn": "sheet",
+      "r": "6.34",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
       "f": "#A03A5E",
       "fn": "cat marketing",
       "b": "#FBF7F1",
       "bn": "ground",
       "r": "6.03",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#A03A5E",
+      "fn": "cat marketing",
+      "b": "#F6EFE4",
+      "bn": "sunk",
+      "r": "5.64",
       "g": "AA",
       "tier": "ink"
     },
@@ -457,10 +547,37 @@
     {
       "f": "#4FB3B3",
       "fn": "cat logistics",
+      "b": "#3F382D",
+      "bn": "console sheet",
+      "r": "4.65",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#4FB3B3",
+      "fn": "cat logistics",
       "b": "#352E25",
       "bn": "console ground",
       "r": "5.37",
       "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#4FB3B3",
+      "fn": "cat logistics",
+      "b": "#1A1614",
+      "bn": "console sunk",
+      "r": "7.21",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#9B8CF0",
+      "fn": "cat insurance",
+      "b": "#3F382D",
+      "bn": "console sheet",
+      "r": "4.08",
+      "g": "FAILS (waived)",
       "tier": "ink"
     },
     {
@@ -469,6 +586,24 @@
       "b": "#352E25",
       "bn": "console ground",
       "r": "4.72",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#9B8CF0",
+      "fn": "cat insurance",
+      "b": "#1A1614",
+      "bn": "console sunk",
+      "r": "6.33",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#A3B96A",
+      "fn": "cat banking",
+      "b": "#3F382D",
+      "bn": "console sheet",
+      "r": "5.35",
       "g": "AA",
       "tier": "ink"
     },
@@ -482,6 +617,24 @@
       "tier": "ink"
     },
     {
+      "f": "#A3B96A",
+      "fn": "cat banking",
+      "b": "#1A1614",
+      "bn": "console sunk",
+      "r": "8.30",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5FA8DC",
+      "fn": "cat telecom",
+      "b": "#3F382D",
+      "bn": "console sheet",
+      "r": "4.47",
+      "g": "FAILS (waived)",
+      "tier": "ink"
+    },
+    {
       "f": "#5FA8DC",
       "fn": "cat telecom",
       "b": "#352E25",
@@ -491,11 +644,38 @@
       "tier": "ink"
     },
     {
+      "f": "#5FA8DC",
+      "fn": "cat telecom",
+      "b": "#1A1614",
+      "bn": "console sunk",
+      "r": "6.95",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#E4809C",
+      "fn": "cat marketing",
+      "b": "#3F382D",
+      "bn": "console sheet",
+      "r": "4.33",
+      "g": "FAILS (waived)",
+      "tier": "ink"
+    },
+    {
       "f": "#E4809C",
       "fn": "cat marketing",
       "b": "#352E25",
       "bn": "console ground",
       "r": "5.01",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#E4809C",
+      "fn": "cat marketing",
+      "b": "#1A1614",
+      "bn": "console sunk",
+      "r": "6.73",
       "g": "AA",
       "tier": "ink"
     }
