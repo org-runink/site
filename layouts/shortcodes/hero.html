@@ -91,7 +91,7 @@
 
                 <div class="flex flex-col sm:flex-row gap-5 pt-4">
                     {{ if and $primary_button_text $primary_button_url }}
-                    <a href="{{ $primary_button_url | relURL }}"
+                    <a href="{{ partial "contact-url.html" (dict "url" $primary_button_url "page" $.Page) | default ($primary_button_url | relURL) }}"
                         class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-on-fill transition-all duration-200 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-full hover:from-signal-fill-hover hover:to-signal-fill hover:shadow-lg hover:shadow-signal/30 hover:-translate-y-1">
                         {{ $primary_button_text }}
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
