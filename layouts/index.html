@@ -103,46 +103,49 @@
       {{ end }}
     </header>
 
-    {{/* 1b. The six jobs, in the reader's vocabulary.
+    {{/* 1b. One load, four moments, six losses.
 
-         THE FIRST FIFTEEN SECONDS. The hero is a hook and the industries ledger
-         is "who has this problem". Neither answers the one a supply-chain reader
-         asks immediately — "is this pointed at anything I recognise" — and
-         before this the page went from a sentence about arguing straight to an
-         abstract figure. Somebody scanning for cold chain, returns or claims had
-         nothing to catch on until the ledger, three screens down.
+         THIS REPLACED A GRID OF SIX CARDS, and the reason is worth keeping. Six
+         boxes with a "see how" link each turned the most valuable band on the
+         page into a switchboard — and every page it forwarded to already carried
+         between seven and fourteen inbound links from the blog and the use-case
+         index, so it was not even earning its keep as navigation.
 
-         A DIFFERENT AXIS from the industries ledger below, not a second copy.
-         Industries are who; these are what. Logistics & Supply Chain is one row
-         down there and six rows up here.
+         What it says now is something the cards could not. Six boxes assert six
+         products. A load's life with the losses marked along it asserts the
+         thing the whole argument rests on: ONE failure, a record written down
+         and read too late, showing up at four points where it costs something
+         different. Two of the four moments carry two jobs, which is why this is
+         asymmetric — that is the shape of the problem, not a layout.
 
-         Each row resolves its own title and URL from the use-case page, the way
-         the ledger resolves the industry pages, so a renamed or moved page
-         cannot leave a dead row behind. The front-matter `name` is the label a
-         reader scans for and stays authoritative — "Cold chain" reads faster
-         than "Cold Chain and Yard Safety" — but the LINK comes from the page. */}}
-    {{ with .Params.domains }}
-    <section class="hp-sec hp-dom-sec" aria-labelledby="domains-heading">
+         NO LINKS IN IT. Rule 9 was checked before the cards came out; nothing is
+         orphaned. A landing page that hands the reader off before it has made
+         its case has not made its case.
+
+         The spine is a rule on the list, not artwork: a drawn line cannot
+         reflow, and this has to become vertical on a phone. DESIGN.md §6 —
+         depth is a rule and a change of ground. */}}
+    {{ with .Params.flow }}
+    <section class="hp-sec hp-flow-sec" aria-labelledby="flow-heading">
       <div class="hp-head">
         <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="domains-heading">{{ $.Params.domains_heading }}</h2>
+        <h2 class="hp-head__label" id="flow-heading">{{ $.Params.flow_heading }}</h2>
         <span class="hp-head__rule" aria-hidden="true"></span>
       </div>
-      {{ with $.Params.domains_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      <ul class="hp-dom">
+      {{ with $.Params.flow_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <ol class="hp-flow">
         {{ range . }}
-        {{ $p := site.GetPage (printf "/use-cases/%s" .page) }}
-        {{ if $p }}
-        <li class="hp-dom__item">
-          <a class="hp-dom__link" href="{{ $p.RelPermalink }}">
-            <h3 class="hp-dom__name">{{ .name }}</h3>
-            <p class="hp-dom__line">{{ .line }}</p>
-            <span class="hp-dom__go">{{ $.Params.domains_cta }} <span aria-hidden="true">&rarr;</span></span>
-          </a>
+        <li class="hp-flow__stage">
+          <p class="hp-flow__when"><span class="hp-flow__node" aria-hidden="true"></span>{{ .when }}</p>
+          {{ range .jobs }}
+          <div class="hp-flow__job">
+            <h3 class="hp-flow__name">{{ .name }}</h3>
+            <p class="hp-flow__line">{{ .line }}</p>
+          </div>
+          {{ end }}
         </li>
         {{ end }}
-        {{ end }}
-      </ul>
+      </ol>
     </section>
     {{ end }}
 

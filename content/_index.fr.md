@@ -23,50 +23,31 @@ hero:
   cta_secondary: "Prendre rendez-vous"
 
 
-# The six jobs, named the way an operations team names them.
-#
-# WHY THIS BLOCK EXISTS AND WHY IT IS THIS HIGH. The hero is a hook and the
-# industries ledger further down answers "who has this problem". Neither answers
-# the question a supply-chain reader asks in the first fifteen seconds, which is
-# "is this pointed at anything I recognise". Before this block the page went from
-# a sentence about arguing straight to an abstract figure, and a reader scanning
-# for cold chain or returns or claims found nothing to catch on.
-#
-# It is a DIFFERENT AXIS from the industries ledger, not a second copy of it.
-# Industries are who; these are what. Logistics & Supply Chain is one row down
-# there and six rows up here.
-#
-# EVERY ROW LINKS TO A PAGE THAT ALREADY EXISTS and describes the mechanism. The
-# copy here is the loss in the reader's own vocabulary, taken from that page's
-# own description, so the band cannot drift from what the page goes on to say.
-# Nothing here claims a capability: each line is a sentence about the reader's
-# week, not about the software.
-domains_heading: "Six tâches visées"
-domains_intro: "Nommées comme une équipe d'exploitation les nomme. Ouvrez celle qui ressemble à votre semaine : elle déroule le travail entier, du début à la fin."
-domains_cta: "Voir comment"
-domains:
-  - page: "cold-chain-safety"
-    name: "Chaîne du froid"
-    line: "Un conteneur se réchauffe dans la nuit et personne n'ouvre la porte avant le matin."
-  - page: "responsive-reverse-logistics"
-    name: "Logistique inverse"
-    line: "Un retour vaut le plus le jour où il revient, et la décision de classement attend."
-  - page: "route-optimization"
-    name: "Logistique réactive"
-    line: "Le plan qui était bon à six heures ne l'est plus à dix, et personne ne le relance."
-  - page: "demand-forecasting"
-    name: "Demande et exécution"
-    line: "Une ligne bouge des semaines avant le point de commande, et le plan rattrape après la rupture."
-  - page: "insurance-underwriting"
-    name: "Souscription"
-    line: "Les conditions, le rapport de sinistre, l'historique de réserves et la limite d'engagement sont à quatre endroits."
-  - page: "claims-recovery"
-    name: "Sinistres et litiges"
-    line: "Un sinistre expire parce que le monter prend une matinée que personne n'avait cette semaine-là."
+# Ver content/_index.md.
+flow_heading: "Un chargement, quatre moments, six façons d'y perdre de l'argent"
+flow_intro: "Ce ne sont pas six produits. C'est la même défaillance — un enregistrement écrit puis lu trop tard — saisie aux quatre points de la vie d'un chargement où elle coûte autre chose."
+flow:
+  - when: "Avant l'expédition"
+    jobs:
+      - name: "Demande et exécution"
+        line: "Une ligne bouge des semaines avant le point de commande, et le plan rattrape après la rupture."
+  - when: "En transit"
+    jobs:
+      - name: "Chaîne du froid"
+        line: "Un conteneur se réchauffe dans la nuit et personne n'ouvre la porte avant le matin."
+      - name: "Logistique réactive"
+        line: "Le plan qui était bon à six heures ne l'est plus à dix, et personne ne le relance."
+  - when: "Au retour"
+    jobs:
+      - name: "Logistique inverse"
+        line: "Un retour vaut le plus le jour où il revient, et la décision de classement attend."
+  - when: "Quand l'argent bouge"
+    jobs:
+      - name: "Sinistres et litiges"
+        line: "Un sinistre expire parce que le monter prend une matinée que personne n'avait cette semaine-là."
+      - name: "Souscription"
+        line: "Les conditions, le rapport de sinistre, l'historique de réserves et la limite d'engagement sont à quatre endroits."
 
-
-# Traducción / traduction / tradução de opex_*. Ver content/_index.md:
-# nombra una medida y dónde encontrarla, y no pone ninguna cifra (regla 1).
 opex_heading: "Où cela apparaît dans vos chiffres d'exploitation"
 opex_intro: "Aucun chiffre ici ne nous appartient. Chacune de ces lignes est une ligne que vous portez déjà, avec ce qui la fait bouger et où trouver votre propre chiffre. Une page qui vous annonce ce que vous allez économiser devine, à propos d'une exploitation qu'elle n'a jamais vue."
 opex_col_line: "La ligne"

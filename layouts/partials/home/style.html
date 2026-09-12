@@ -587,16 +587,7 @@
      section already has one and these are two halves of the same argument, not
      two sections. It takes the utility face and the accent so it reads as an
      instrument label rather than as a title competing with the h2 above it. */
-  /* ---- the six jobs ------------------------------------------------------
 
-     Three columns from 1024px, two from 640, one below. Six rows read as a
-     scannable set at three across; at two they still pair; at one they are a
-     list, which is what a phone wants.
-
-     A whole card is the link, not a word inside it — this block exists to be
-     scanned and tapped, and a 44px row beats a 17px anchor on a phone. The
-     hover moves the ground rather than underlining, so nothing here competes
-     with the two call-to-action buttons in the hero above it. */
   /* ---- banded sections: depth by a change of ground ----------------------
 
      DESIGN.md §6, on elevation: "Everything else expresses depth with a rule and
@@ -643,6 +634,109 @@
       padding: 8pt 0 0;
     }
     .hp-band .hp-head__rule { display: block; }
+  }
+
+  /* ---- one load, four moments ---------------------------------------------
+
+     A timeline, and the spine is a BORDER on the list rather than drawn artwork,
+     because a drawn line cannot reflow and this has to turn vertical on a phone.
+     DESIGN.md §6: depth is a rule and a change of ground. Both here, no colour
+     beyond the node, which is the accent doing its one job — marking the point
+     where somebody can act.
+
+     Four moments across at 900px, stacked below. Two of them carry two jobs, so
+     the columns are deliberately NOT equal: a grid of four equal columns would
+     make the pairs look cramped next to two half-empty neighbours. align-items
+     start lets each column be its own height. */
+  .hp-flow {
+    list-style: none;
+    margin: 0;
+    padding: 1.75rem 0 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    counter-reset: hp-flow;
+  }
+  @media (min-width: 900px) {
+    .hp-flow {
+      grid-template-columns: 0.85fr 1.15fr 0.85fr 1.15fr;
+      gap: 0 2rem;
+      align-items: start;
+      /* the spine: one rule across the top of the whole row */
+      border-top: 2px solid var(--rk-rule-strong);
+      padding-top: 0;
+    }
+  }
+
+  .hp-flow__stage {
+    counter-increment: hp-flow;
+    min-width: 0;
+    position: relative;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    border-left: 2px solid var(--rk-rule-strong);
+  }
+  @media (min-width: 900px) {
+    .hp-flow__stage { padding: 1.5rem 0 0; border-left: 0; }
+  }
+
+  .hp-flow__when {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  /* The node sits ON the spine. On the stacked layout the spine is the left
+     border, so the node is pulled out over it; across, it hangs off the top. */
+  .hp-flow__node {
+    flex: none;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--accent-edge);
+    margin-left: -1.8rem;
+  }
+  @media (min-width: 900px) {
+    .hp-flow__node { margin-left: 0; margin-top: -1.8rem; }
+  }
+
+  .hp-flow__job + .hp-flow__job { margin-top: 1.25rem; }
+  .hp-flow__name {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .hp-flow__line {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  @media print {
+    /* Four across on paper as well as on screen. Two columns cost half a sheet
+       here and the stages are short enough to hold at a quarter of the width;
+       the alternative was an eighth sheet for a section that fits in a quarter
+       of one. */
+    .hp-flow {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0 10pt;
+      padding-top: 8pt;
+      border-top: 1.5pt solid #000;
+    }
+    .hp-flow__stage { padding: 8pt 0 0; border-left: 0; break-inside: avoid; }
+    .hp-flow__node { display: none; }
+    .hp-flow__when { font-size: 7.5pt; margin-bottom: 5pt; color: #000; }
+    .hp-flow__name { font-size: 9.5pt; }
+    .hp-flow__line { font-size: 8.5pt; }
   }
 
   /* ---- where it shows up in the operating numbers -----------------------
@@ -728,80 +822,10 @@
     .hp-opex__driver, .hp-opex__where { font-size: 8pt; }
   }
 
-  .hp-dom {
-    list-style: none;
-    margin: 0;
-    padding: 1.5rem 0 0;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.75rem;
-    border-top: 1px solid var(--rule);
-  }
-  @media (min-width: 640px) { .hp-dom { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; } }
-  @media (min-width: 1024px) { .hp-dom { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-
-  .hp-dom__item { min-width: 0; }
-  .hp-dom__link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1.1rem 1.15rem 1rem;
-    background: var(--sheet);
-    border: 1px solid var(--rule);
-    border-radius: 0.75rem;
-    text-decoration: none;
-    color: inherit;
-    transition: background-color .18s, border-color .18s;
-  }
-  .hp-dom__link:hover {
-    background: var(--accent-wash);
-    border-color: var(--accent-edge);
-  }
-  .hp-dom__name {
-    margin: 0 0 0.4rem;
-    font-family: var(--font-display);
-    font-size: 1.0625rem;
-    font-weight: 700;
-    line-height: 1.25;
-    color: var(--ink);
-  }
-  .hp-dom__line {
-    margin: 0 0 0.9rem;
-    font-size: 0.9375rem;
-    line-height: 1.55;
-    color: var(--ink-2);
-  }
-  .hp-dom__go {
-    margin-top: auto;
-    font-family: var(--font-display);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent-ink);
-  }
-
   @media print {
     /* Two columns on paper and no boxes: a grid of outlined cards prints as a
        grid of empty rectangles with words in them. The rule between rows is
        what the sheet needs. */
-    .hp-dom {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 14pt;
-      padding-top: 8pt;
-      border-top-color: #000;
-    }
-    .hp-dom__item { break-inside: avoid; }
-    .hp-dom__link {
-      padding: 6pt 0;
-      background: none;
-      border: 0;
-      border-bottom: 1px solid #999;
-      border-radius: 0;
-    }
-    .hp-dom__name { font-size: 9.5pt; }
-    .hp-dom__line { font-size: 8.5pt; margin-bottom: 0; }
-    .hp-dom__go { display: none; }
   }
 
   .hp-steps__label {
@@ -878,7 +902,6 @@
     .hp-step__title { font-size: 10pt; }
     .hp-step__body { font-size: 9pt; }
   }
-
 
   /* ---- the product, in three parts --------------------------------------
 
