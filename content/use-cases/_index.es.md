@@ -1,35 +1,62 @@
 ---
 title: "Para Qué Está Hecho Runink FACE"
-# Spanish mirror of content/use-cases/_index.md — read that file first.
-#
-# This section is Runink FACE's scenarios and nothing else. Runink PULSE
-# (market analysis) is a separate product with its own material, and CORE is the
-# platform underneath both; neither of their capabilities may be listed here,
-# because a reader who cannot tell which product does which job reads the whole
-# set as one product's track record. The previous version of this file was
-# titled "Para Qué Usa La Gente Runink" and named no product at all.
 product: "Runink FACE"
-# Do not state a count in the title or the description. This file said "Siete"
-# in three places and was wrong the moment a page was added. The set keeps
-# growing; the English file states no number either.
 description: "Los trabajos operativos para los que está hecho Runink FACE. En todos ellos la evidencia ya está en sus sistemas y nadie tiene las horas para juntarla, y todos acaban con una persona aprobando una acción redactada, no leyendo otro panel."
-# CARD LINKS STAY UNPREFIXED. layouts/shortcodes/card.html passes every relative
-# link through relLangURL, so "/use-cases/compliance/" written here renders as
-# "/es/use-cases/compliance/"; writing "/es/..." would render "/es/es/...".
-# The consequence is that a card in this file can only point at a page that
-# exists in Spanish. Every page in this section is now translated, so this index
-# carries the same cards in the same four groups as the English one. If a new
-# English page appears before its Spanish translation, leave its card out rather
-# than link a page that is not there.
-#
-# Markdown links in the body are NOT rewritten by Hugo (there is no
-# render-link hook), so they carry an explicit /es/ prefix by hand.
-#
-# El cuerpo de abajo sí se muestra. Hubo un momento en que no: `layout:
-# "section"` no coincidía con ninguna plantilla y la página caía en
-# layouts/_default/list.html, que nunca imprime .Content.
-# layouts/use-cases/section.html existe ahora y lo muestra.
 layout: "section"
+
+# The coverage index lives in front matter so layouts/use-cases/section.html can
+# render it ABOVE the argument with real hierarchy. It used to be five card-grid
+# shortcodes in the body: twelve cards of equal width and height under 3,000px of
+# full-bleed prose, which cannot show that the groups mean anything.
+#
+# CONTENT.md rule 12: this is a page, not a copy. The group labels and the short
+# names here are this language's own wording, and the line rendered under each
+# name is read off that language's child page at render time.
+#
+# `name` is the short domain label a reader scans. Do not state a count anywhere
+# — the number beside the heading is computed from len .Pages in the template.
+coverage_heading: "Qué cubre"
+coverage_meta: "trabajos"
+coverage_intro: "Están agrupados por el momento de la operación en que aparece el problema: antes de comprometerse con un plan, con el trabajo ya en marcha, después de que algo haya salido mal, y cuando alguien le pide pruebas."
+groups_other_label: "También aquí"
+groups:
+  - label: "Planificar lo que va a necesitar"
+    deck: "Antes de comprometerse. Qué va a pedir el próximo trimestre, qué cobertura tiene y cuánto costaría un cambio si lo hiciera."
+    items:
+      - page: "demand-forecasting"
+        name: "Previsión de demanda"
+      - page: "fulfillment-optimization"
+        name: "Cobertura de stock y planificación con proveedores"
+      - page: "hypothesis-lab"
+        name: "Poner a prueba un cambio antes de comprometerse"
+  - label: "Mover la carga"
+    deck: "Con el trabajo ya en marcha. La ruta, la imagen de toda la cadena y el conductor que lleva las manos en el volante."
+    items:
+      - page: "route-optimization"
+        name: "Planificación de rutas"
+      - page: "supply-chain-visibility"
+        name: "Visibilidad de la cadena de suministro"
+      - page: "voice-dispatch"
+        name: "Reparto por voz para conductores"
+  - label: "Cuando algo sale mal"
+    deck: "Después del hecho. Un contenedor que se ha calentado, una devolución parada en el muelle, una reclamación con el plazo corriendo."
+    items:
+      - page: "cold-chain-safety"
+        name: "Cadena de frío y seguridad en el patio"
+      - page: "responsive-reverse-logistics"
+        name: "Devoluciones y logística inversa"
+      - page: "claims-recovery"
+        name: "Reclamaciones de transporte y cargos de puerto"
+  - label: "Papel, normativa y prueba"
+    deck: "Cuando alguien le pide pruebas. El expediente del siniestro, la cláusula que manda, el informe."
+    items:
+      - page: "insurance-underwriting"
+        name: "Suscripción y expedientes de siniestro"
+      - page: "paralegal-review"
+        name: "Revisión de contratos y obligaciones"
+      - page: "compliance"
+        name: "Datos personales y emisiones"
+
 next:
   label: "Un paso más"
   title: "Traiga una ruta, un transportista o un mes de devoluciones."
@@ -39,13 +66,11 @@ next:
   about: "Los escenarios"
 
 ---
-
 ## El Problema Del Que Parte Runink FACE
 
-Todos los trabajos de abajo tienen la misma forma. Los datos que necesita ya están registrados en algún punto de su negocio. Están en cuatro sistemas, en cuatro formatos, y juntarlos cuesta una mañana que nadie tiene.
+Todos los trabajos de arriba tienen la misma forma. Los datos que necesita ya están registrados en algún punto de su negocio. Están en cuatro sistemas, en cuatro formatos, y juntarlos cuesta una mañana que nadie tiene.
 
 Así que la reclamación caduca. El contenedor se abre caliente. El pedido sale por avión. No porque alguien decidiera mal, sino porque nadie tuvo tiempo de llegar al punto en el que se podía decidir.
-
 
 ## Qué Hace Runink FACE Al Respecto
 
@@ -67,114 +92,6 @@ Aprobar está pensado para terminar el trabajo, no para empezarlo. La respuesta 
 
 ## En Qué Punto Están Estos Escenarios
 
-Ninguno de los escenarios de abajo es un resultado de cliente. Están **trazados**: escritos a partir de lo que el software está hecho para hacer, en el vocabulario de quien tiene el problema a su cargo, y no ejecutados contra los datos de ningún cliente. Ninguno está medido, y cada página lo dice por su cuenta. Aquí no hay ningún caso de éxito ni ninguna cifra, porque las cifras serían nuestras y las que importan son las suyas.
-
-## Planificar Lo Que Va A Necesitar
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Previsión de demanda"
-    icon="chart-bar"
-    link="/use-cases/demand-forecasting/"
-    description="Lo que va a necesitar el trimestre que viene está implícito en lo que vendió el año pasado. Leer eso en su propio historial es un trabajo para el que nadie tiene la mañana."
->}}
-
-{{< card
-    title="Cobertura de stock y planificación con proveedores"
-    icon="cube-transparent"
-    link="/use-cases/fulfillment-optimization/"
-    description="Un aviso de rotura que llega cuando el stock de seguridad ya se ha ido es una factura de avión con pocos días de margen."
->}}
-
-{{< card
-    title="Poner a prueba un cambio antes de comprometerse"
-    icon="light-bulb"
-    link="/use-cases/hypothesis-lab/"
-    description="Calcule lo que cuesta un cambio de ruta antes de gastar el dinero, contra sus propios números y no contra los de un proveedor."
->}}
-
-{{< /card-grid >}}
-
-## Mover La Carga
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Planificación de rutas que sigue el ritmo del día"
-    icon="globe-alt"
-    link="/use-cases/route-optimization/"
-    description="La ruta más barata el lunes no es la más barata el jueves. Volver a planificarla a mano es la razón de que se planifique una sola vez."
->}}
-
-{{< card
-    title="Ver la cadena entera, no solo su extremo"
-    icon="eye"
-    link="/use-cases/supply-chain-visibility/"
-    description="Cada proveedor, transportista y almacén tiene una pieza de la foto. La foto en sí no está en ninguna parte."
->}}
-
-{{< card
-    title="Reparto por voz para conductores"
-    icon="map"
-    link="/use-cases/voice-dispatch/"
-    description="Un conductor que tiene que parar para leer una pantalla, o para o no la lee. Ninguna de las dos cosas es lo que usted quería."
->}}
-
-{{< /card-grid >}}
-
-## Cuando Algo Sale Mal
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Cadena de frío y seguridad en el patio"
-    icon="shield-check"
-    link="/use-cases/cold-chain-safety/"
-    description="La lectura que condena una carga se registra horas antes de que alguien la mire. Todo el problema es el hueco entre las dos cosas."
->}}
-
-{{< card
-    title="Devoluciones y lo que todavía valen"
-    icon="arrow-path"
-    link="/use-cases/responsive-reverse-logistics/"
-    description="Una devolución parada en una bahía es circulante que nadie ha contado. Lo que vale depende de lo rápido que se juzgue."
->}}
-
-{{< card
-    title="Reclamaciones de transporte y cargos de puerto"
-    icon="currency-dollar"
-    link="/use-cases/claims-recovery/"
-    description="Las reclamaciones caducan porque montar una cuesta una mañana. El recibo, el peso, la tarifa y el plazo llegan ya reunidos."
->}}
-
-{{< /card-grid >}}
-
-## Papel, Normativa Y Prueba
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Expedientes de suscripción y de siniestro"
-    icon="clipboard-document-list"
-    link="/use-cases/insurance-underwriting/"
-    description="Un siniestro es una reserva contra una póliza, y el expediente que lo liquida llega en forma de documentos. La lectura se le redacta; la decisión se queda con quien suscribe."
->}}
-
-{{< card
-    title="Revisión de contratos y obligaciones"
-    icon="magnifying-glass"
-    link="/use-cases/paralegal-review/"
-    description="La cláusula que importa está en un contrato que nadie ha vuelto a abrir. Se lee y se cita por usted, y una persona decide qué significa."
->}}
-
-{{< card
-    title="Datos personales de clientes e informes de emisiones"
-    icon="scale"
-    link="/use-cases/compliance/"
-    description="Los datos personales llegan a pantallas que no deberían mostrarlos, y el informe de emisiones cuesta un trimestre. Los dos son trabajos de juntar registros."
->}}
-
-{{< /card-grid >}}
+Ninguno de los escenarios de arriba es un resultado de cliente. Están escritos a partir de lo que el software está hecho para hacer, en el vocabulario de quien tiene el problema a su cargo, y no se han ejecutado contra los datos de ningún cliente. Aquí no hay ningún caso de éxito ni ninguna cifra, porque las cifras serían nuestras y las que importan son las suyas.
 
 Runink PULSE, el producto de análisis de mercado, y la plataforma CORE sobre la que corre FACE se tratan en [sus propios informes](/es/blog/whitepapers/). No están en esta página, y ninguno de los trabajos de arriba es un resultado que pertenezca a ninguno de los dos.

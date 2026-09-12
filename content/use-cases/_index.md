@@ -11,6 +11,8 @@ title: "What Runink FACE Is Built For"
 product: "Runink FACE"
 # Do not state a count in the title or description. The set grows; the previous
 # version said "Seven" in three places and was wrong the moment a page was added.
+# The count beside the coverage heading is computed from len .Pages in
+# layouts/use-cases/section.html for exactly that reason — it cannot go stale.
 description: "The operational jobs Runink FACE is built for. In each one the evidence is already in your systems and nobody has the hours to join it up, and each one ends with a person approving a drafted action rather than reading another dashboard."
 # The body below renders. It did not once: `layout: "section"` matched nothing,
 # so the page fell through to layouts/_default/list.html, which prints .Title,
@@ -22,6 +24,77 @@ description: "The operational jobs Runink FACE is built for. In each one the evi
 # `layout: "section"`, and the next person to change that line needs to know a
 # matching template is what makes the prose visible.
 layout: "section"
+
+# ---------------------------------------------------------------------------
+# THE COVERAGE INDEX.
+#
+# This used to be five `card-grid` shortcodes in the body: twelve cards of equal
+# width and height, each with a rounded tile and a small icon, sitting under
+# 3,000px of full-bleed prose. Twelve equal cells cannot show that the groups
+# mean anything, and the groups are the only thing on the page that answers
+# "does this cover my problem".
+#
+# It lives in front matter now so that the template can render it above the
+# argument with real hierarchy, and so that adding a use-case page is one line
+# here rather than a hand-written card. A page left out of `groups` is not
+# dropped — section.html collects it under `groups_other_label`.
+#
+# THE GROUPING IS THE PAGES' OWN, not a taxonomy laid over them. Every child
+# page has the same four-part shape — "In Short", a hook, "Where It Goes Wrong",
+# "What Happens Instead" — and the hook says when in the operation the problem
+# lands. "The Signal Turned Before The Plan Did", "Stop Finding Out Too Late"
+# and "Write The Plan Down Before You Argue It" are three statements about the
+# same moment, which is before anything has been committed to. "Optimal At Six.
+# Not At Ten." and "Hands On The Wheel." are the day already running. "A Return
+# Is Worth Most On Day One" and "Claims That Expire Quietly" are the aftermath.
+# "The Gathering Is The Job" and "A Lookup That Should Take Ten Minutes" are
+# somebody having to produce the file.
+#
+# `name` is the short domain label a reader scans. The line printed under it is
+# the child page's own `title`, read off the page at render time, so it is that
+# page's own words in that reader's own language and cannot drift.
+coverage_heading: "What this covers"
+coverage_meta: "jobs"
+coverage_intro: "They are grouped by when in the operation the problem turns up: before you commit to a plan, while the work is moving, after something has gone wrong, and when someone asks you to prove it."
+groups_other_label: "Also here"
+groups:
+  - label: "Planning what you will need"
+    deck: "Before you commit. What next quarter will ask for, what cover you are holding, and what a change would cost if you made it."
+    items:
+      - page: "demand-forecasting"
+        name: "Demand forecasting"
+      - page: "fulfillment-optimization"
+        name: "Stock cover and supplier planning"
+      - page: "hypothesis-lab"
+        name: "Testing a change before you commit"
+  - label: "Moving it"
+    deck: "While the work is moving. The route, the picture across the whole chain, and the driver whose hands are on the wheel."
+    items:
+      - page: "route-optimization"
+        name: "Route planning"
+      - page: "supply-chain-visibility"
+        name: "Supply chain visibility"
+      - page: "voice-dispatch"
+        name: "Hands-free dispatch for drivers"
+  - label: "When something goes wrong"
+    deck: "After the event. A container that drifted warm, a return sitting on the dock, a claim with a deadline running."
+    items:
+      - page: "cold-chain-safety"
+        name: "Cold chain and yard safety"
+      - page: "responsive-reverse-logistics"
+        name: "Returns and reverse logistics"
+      - page: "claims-recovery"
+        name: "Freight claims and port charges"
+  - label: "Paper, policy and proof"
+    deck: "When someone asks you to prove it. The claim file, the clause that governs, the report."
+    items:
+      - page: "insurance-underwriting"
+        name: "Underwriting and claim files"
+      - page: "paralegal-review"
+        name: "Contract and obligation review"
+      - page: "compliance"
+        name: "Privacy and emissions"
+
 next:
   label: "One next step"
   title: "Bring one lane, one carrier, or one month of returns."
@@ -34,10 +107,9 @@ next:
 
 ## The Problem Runink FACE Is Built Around
 
-Every job below has the same shape. The facts you need are already recorded somewhere in your business. They sit in four systems, in four formats, and joining them up takes a morning that nobody has.
+Every job above has the same shape. The facts you need are already recorded somewhere in your business. They sit in four systems, in four formats, and joining them up takes a morning that nobody has.
 
 So the claim expires. The container is opened warm. The order goes out by air. Not because anyone made a bad call, but because nobody had the time to reach the point where a call could be made.
-
 
 ## What Runink FACE Does About It
 
@@ -59,114 +131,6 @@ Approving is designed to end the work rather than start it. The reply names what
 
 ## Where These Scenarios Stand
 
-None of the scenarios below is a customer result. They are **drawn** — written from what the software is built to do, in the vocabulary of the people who own the problem, and not run against any customer's data. Each page says so on its own terms. Nothing here is a case study, and there are no figures in it, because the figures would be ours and the ones that matter are yours.
-
-## Planning What You Will Need
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Demand forecasting"
-    icon="chart-bar"
-    link="/use-cases/demand-forecasting"
-    description="What you will need next quarter is implied by what you sold last year. Reading that out of your own history is a job nobody has the morning for."
->}}
-
-{{< card
-    title="Stock cover and supplier planning"
-    icon="cube-transparent"
-    link="/use-cases/fulfillment-optimization"
-    description="A stockout warning that arrives after the safety stock is gone is a bill for air freight with a few days' notice."
->}}
-
-{{< card
-    title="Testing a change before you commit to it"
-    icon="light-bulb"
-    link="/use-cases/hypothesis-lab"
-    description="Work out what rerouting costs before you spend the money, against your own numbers rather than a supplier's."
->}}
-
-{{< /card-grid >}}
-
-## Moving It
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Route planning that keeps up with the day"
-    icon="globe-alt"
-    link="/use-cases/route-optimization"
-    description="The cheapest route on Monday is not the cheapest one on Thursday. Re-planning it by hand is why it gets planned once."
->}}
-
-{{< card
-    title="Seeing the whole chain, not your end of it"
-    icon="eye"
-    link="/use-cases/supply-chain-visibility"
-    description="Each supplier, carrier and warehouse holds one piece of the picture. The picture itself is not held anywhere."
->}}
-
-{{< card
-    title="Hands-free dispatch for drivers"
-    icon="map"
-    link="/use-cases/voice-dispatch"
-    description="A driver who has to pull over to read a screen either stops or does not read it. Neither is what you wanted."
->}}
-
-{{< /card-grid >}}
-
-## When Something Goes Wrong
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Cold chain and yard safety"
-    icon="shield-check"
-    link="/use-cases/cold-chain-safety"
-    description="The reading that condemns a load is recorded hours before anybody looks at it. The whole problem is the gap between the two."
->}}
-
-{{< card
-    title="Returns and what they are still worth"
-    icon="arrow-path"
-    link="/use-cases/responsive-reverse-logistics"
-    description="A return sitting in a bay is working capital nobody has counted. What it is worth depends on how fast it is judged."
->}}
-
-{{< card
-    title="Freight claims and port charges"
-    icon="currency-dollar"
-    link="/use-cases/claims-recovery"
-    description="Claims expire because assembling one takes a morning. The receipt, the weight, the rate and the deadline arrive already gathered."
->}}
-
-{{< /card-grid >}}
-
-## Paper, Policy and Proof
-
-{{< card-grid cols="3" >}}
-
-{{< card
-    title="Underwriting and claim files"
-    icon="clipboard-document-list"
-    link="/use-cases/insurance-underwriting"
-    description="A claim is a reserve against a policy, and the file that settles it arrives as documents. The reading is drafted for you; the decision stays with the underwriter."
->}}
-
-{{< card
-    title="Contract and obligation review"
-    icon="magnifying-glass"
-    link="/use-cases/paralegal-review"
-    description="The clause that matters is in a contract nobody has reopened. It gets read and cited for you, and a person decides what it means."
->}}
-
-{{< card
-    title="Customer data privacy and emissions reporting"
-    icon="scale"
-    link="/use-cases/compliance"
-    description="Personal details reach screens that should never show them, and the emissions report takes a quarter to build. Both are joining jobs."
->}}
-
-{{< /card-grid >}}
+None of the scenarios above is a customer result. They are written from what the software is built to do, in the vocabulary of the people who own the problem, and they have not been run against any customer's data. Nothing here is a case study, and there are no figures in it, because the figures would be ours and the ones that matter are yours.
 
 Runink PULSE, the market-analysis product, and the CORE platform FACE runs on are covered in [their own papers](/blog/whitepapers/). They are not on this page, and none of the jobs above is a result belonging to either of them.
