@@ -106,5 +106,5 @@ cta_text: "Book a consultation"
 paper:
   text: "Read the PULSE paper"
   url: "/blog/whitepapers/runink-pulse/"
-  note: "Runink PULSE is the product behind this page, and it is a different product from Runink FACE — nothing described above is a FACE capability, and nothing on the FACE pages is a PULSE one. Runink's own website and the content work behind it run on PULSE; that is a first-party claim, offered as exactly that and not as a customer result. The paper carries no case studies, no customer names and no return-on-investment figures."
+  note: "Runink PULSE is the product behind this page, and it is a different product from Runink FACE — nothing described above is a FACE capability, and nothing on the FACE pages is a PULSE one. The paper carries no case studies, no customer names and no return-on-investment figures."
 ---

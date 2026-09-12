@@ -89,6 +89,18 @@
           <span class="hp-h1__b">{{ $h.line2 }}</span>
         </h1>
         <p class="hp-deck">{{ $h.deck }}</p>
+        {{/* The product name now lives HERE rather than in a band four
+             screens down. It used to be section 4, on the argument that
+             blocks 1 to 3 are in the buyer's vocabulary and a reader who
+             has found their own line is exactly where "so what is it
+             called" arrives. That held while the page opened on one
+             industry's problem. It does not hold now: a reader who lands
+             from insurance or telecom needs the name and the one-sentence
+             mechanism before they will scroll at all.
+
+             markdownify because the product name is bold in the source and
+             a name is the one thing on this line that should be. */}}
+        {{ with $h.product_line }}<p class="hp-product-line">{{ . | markdownify }}</p>{{ end }}
         <div class="hp-actions">
           <a class="hp-cta" href="{{ "/industries/" | relURL }}">{{ $h.cta_primary }}</a>
           <a class="hp-cta-ghost" href="#contact-form">{{ $h.cta_secondary }}</a>
@@ -102,52 +114,6 @@
       </aside>
       {{ end }}
     </header>
-
-    {{/* 1b. One load, four moments, six losses.
-
-         THIS REPLACED A GRID OF SIX CARDS, and the reason is worth keeping. Six
-         boxes with a "see how" link each turned the most valuable band on the
-         page into a switchboard — and every page it forwarded to already carried
-         between seven and fourteen inbound links from the blog and the use-case
-         index, so it was not even earning its keep as navigation.
-
-         What it says now is something the cards could not. Six boxes assert six
-         products. A load's life with the losses marked along it asserts the
-         thing the whole argument rests on: ONE failure, a record written down
-         and read too late, showing up at four points where it costs something
-         different. Two of the four moments carry two jobs, which is why this is
-         asymmetric — that is the shape of the problem, not a layout.
-
-         NO LINKS IN IT. Rule 9 was checked before the cards came out; nothing is
-         orphaned. A landing page that hands the reader off before it has made
-         its case has not made its case.
-
-         The spine is a rule on the list, not artwork: a drawn line cannot
-         reflow, and this has to become vertical on a phone. DESIGN.md §6 —
-         depth is a rule and a change of ground. */}}
-    {{ with .Params.flow }}
-    <section class="hp-sec hp-flow-sec" aria-labelledby="flow-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="flow-heading">{{ $.Params.flow_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.flow_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      <ol class="hp-flow">
-        {{ range . }}
-        <li class="hp-flow__stage">
-          <p class="hp-flow__when"><span class="hp-flow__node" aria-hidden="true"></span>{{ .when }}</p>
-          {{ range .jobs }}
-          <div class="hp-flow__job">
-            <h3 class="hp-flow__name">{{ .name }}</h3>
-            <p class="hp-flow__line">{{ .line }}</p>
-          </div>
-          {{ end }}
-        </li>
-        {{ end }}
-      </ol>
-    </section>
-    {{ end }}
 
     {{/* 1c. Where it shows up in the operating numbers.
 
@@ -218,140 +184,6 @@
       </ol>
       <figcaption class="hp-caption">{{ .caption }}</figcaption>
     </figure>
-    {{ end }}
-
-    {{/* 4. The name of the thing. This is the earliest point the order above
-         allows one: blocks 1 to 3 are deliberately in the buyer's vocabulary,
-         and a reader who has just found their own line in the ledger is exactly
-         where "so what is it called" arrives. Before this block existed the
-         page named the product only in the paper link at the foot of block 5,
-         so a reader could finish it without learning what to ask for.
-
-         It was a heading, a paragraph and a footnote, and it was the thinnest
-         band on the page — the footnote listed three parts in one sentence and
-         the reader was told the product's name and then given nothing to do
-         with it. The three parts are now three parts, and the sentence that
-         summarised them is gone rather than kept alongside: the same content at
-         two resolutions is how a long page gets padded.
-
-         AND IT NOW LINKS OUT. The original note here argued against a call to
-         action, on the grounds that naming the product is not a licence to
-         start describing it. That held while the page had one exit; what it
-         produced was a reader who learns the name on the homepage and cannot
-         reach the page about it. /products/face/ carries fourteen inbound links
-         and not one of them was from here. It is a text link rather than a
-         button on purpose — the consultation is still the page's one call to
-         action and a second button would cost it that.
-
-         Guarded with `with`, like every block here, and the heading and the
-         copy live inside the one key so a locale cannot have half of them. All
-         four locales carry `product` today; the guard is what keeps that a
-         choice rather than a requirement. */}}
-    {{ with .Params.product }}
-    <section class="hp-sec" aria-labelledby="product-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="product-heading">{{ .heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      <p class="hp-deck">{{ .deck }}</p>
-
-      {{ with .parts }}
-      <ul class="hp-parts">
-        {{ range . }}
-        <li class="hp-part">
-          <h3 class="hp-part__name">{{ .name }}</h3>
-          <p class="hp-part__body">{{ .body }}</p>
-        </li>
-        {{ end }}
-      </ul>
-      {{ end }}
-
-      {{/* The link only appears where its destination exists IN THIS LANGUAGE.
-           site.GetPage is scoped to the current language's site, so on es, fr
-           and pt it returns nothing for /products/face — that page has no
-           translation — and the whole line drops.
-
-           `relURL` would have been the wrong tool and would have hidden this:
-           it prefixes a path with the language directory whether or not
-           anything is there, so /es/ would have carried a live-looking link to
-           the English page. That is the defect that put 37 localised CTA bands
-           on the English homepage, and it does not get reintroduced one band at
-           a time. The href comes off the page Hugo found, so it cannot point at
-           a page that is not there. */}}
-      {{ with .more }}
-      {{ with site.GetPage .url }}
-      <p class="hp-more">
-        <a class="hp-more__link" href="{{ .RelPermalink }}">{{ $.Params.product.more.text }} <span aria-hidden="true">&rarr;</span></a>
-      </p>
-      {{ end }}
-      {{ end }}
-    </section>
-    {{ end }}
-
-    {{/* 4b. One case, walked end to end. The ledger above names the problem in a
-         line and the block above names the product; this is the only place on the
-         page where a reader sees the whole of what happens to one record, in
-         order. It is an ordered list on purpose — the sequence is the argument,
-         and an ordered list is also the one shape an answer engine reliably
-         extracts as steps. */}}
-    {{ with .Params.scenario }}
-    <section class="hp-sec hp-band" aria-labelledby="scenario-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="scenario-heading">{{ $.Params.scenario_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.scenario_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-
-      {{/* TWO CASES, AND THE PAIRING IS THE ARGUMENT.
-
-           The customs case was chosen for this block because it is entirely
-           deterministic — the note in content/_index.md says so — and it is
-           still the right one to lead with. The cold-chain case earns its place
-           by being different in kind rather than by being a second example:
-           there is a model in it, at exactly one step, and the reader can see
-           where its answer stops being taken on trust.
-
-           A page with only the first says nothing about how this company uses a
-           model. A page with only the second is every other vendor's page. The
-           two together say where the line is, which is the whole position.
-
-           WHAT THE COLD-CHAIN STEPS MAY DESCRIBE. The vision path only. There is
-           no live sensor feed into FACE — every telemetry connector resolves to
-           a dummy that forces fallback, and no ingest message carries a
-           temperature field — so nothing here mentions reading a reefer's
-           temperature. /use-cases/cold-chain-safety/ states that outright and has
-           done since the claims pass. What IS built is committed and checkable:
-           face/grpc/internal/extractors/cctv/frame_validation.go decodes the
-           header on its own, caps the frame at 12 MiB and 40 megapixels, and
-           accepts two formats so that nothing else reaches the model;
-           frame_downscale.go reduces it. Those are the first two steps and they
-           are described from that code, not from the use-case page. */}}
-      {{ with $.Params.scenario_label }}<p class="hp-steps__label">{{ . }}</p>{{ end }}
-      <ol class="hp-steps">
-        {{ range . }}
-        <li class="hp-step">
-          <h3 class="hp-step__title">{{ .step }}</h3>
-          <p class="hp-step__body">{{ .body }}</p>
-        </li>
-        {{ end }}
-      </ol>
-
-      {{ with $.Params.scenario_b }}
-      {{ with $.Params.scenario_b_label }}<p class="hp-steps__label hp-steps__label--b">{{ . }}</p>{{ end }}
-      <ol class="hp-steps">
-        {{ range . }}
-        <li class="hp-step">
-          <h3 class="hp-step__title">{{ .step }}</h3>
-          <p class="hp-step__body">{{ .body }}</p>
-        </li>
-        {{ end }}
-      </ol>
-      {{ end }}
-
-      {{ with $.Params.scenario_note }}<p class="hp-caption">{{ . }}</p>{{ end }}
-    </section>
     {{ end }}
 
     {{/* 5. Only now, how it works — and still in the buyer's words. The id is
@@ -445,28 +277,141 @@
           {{ $url = .RelPermalink }}
           {{ $cat = .Params.category }}
         {{ end }}
+        {{/* Each row OPENS rather than navigating away. The flow that used to
+             run across the page and the two walkthroughs under it were both
+             about one industry, so they live inside that industry's row now,
+             and every other industry gets the same shape.
+
+             <details>, not a script. It is native, it needs no JavaScript, it is
+             keyboard-operable and screen-reader-announced for free, and the
+             print rule below forces every one of them open — a collapsed
+             section prints as nothing, and content that silently vanishes from
+             the leave-behind is the failure mode this site's doctrine is built
+             against.
+
+             The link to the industry page moves INSIDE the open body. A summary
+             that both expands and navigates is two actions on one control. */}}
         <li class="hp-line hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
-          <a class="hp-row" href="{{ $url }}">
-            <p class="hp-row__name">
-              <span class="hp-row__tick" aria-hidden="true"></span>{{ $name }}
-            </p>
-            <p class="hp-row__cost">{{ .cost }}</p>
-            <p class="hp-row__owner">
-              {{ range .owners }}<span>{{ . }}</span>{{ end }}
-            </p>
-            <p class="hp-row__go">{{ $.Params.industries_cta }} <span aria-hidden="true">&rarr;</span></p>
-          </a>
+          <details class="hp-ind">
+            <summary class="hp-row">
+              <p class="hp-row__name">
+                <span class="hp-row__tick" aria-hidden="true"></span>{{ $name }}
+              </p>
+              <p class="hp-row__cost">{{ .cost }}</p>
+              <p class="hp-row__owner">
+                {{ range .owners }}<span>{{ . }}</span>{{ end }}
+              </p>
+              <p class="hp-row__go" aria-hidden="true">{{ $.Params.industries_open }}</p>
+            </summary>
+
+            <div class="hp-ind__body">
+              {{ with .flow }}
+              <ol class="hp-flow hp-flow--{{ len . }}">
+                {{ range . }}
+                <li class="hp-flow__stage">
+                  <p class="hp-flow__when"><span class="hp-flow__node" aria-hidden="true"></span>{{ .when }}</p>
+                  {{ range .jobs }}
+                  <div class="hp-flow__job">
+                    <h4 class="hp-flow__name">{{ .name }}</h4>
+                    <p class="hp-flow__line">{{ .line }}</p>
+                  </div>
+                  {{ end }}
+                </li>
+                {{ end }}
+              </ol>
+              {{ end }}
+
+              {{ range .cases }}
+              <p class="hp-steps__label hp-steps__label--b">{{ .label }}</p>
+              <ol class="hp-steps">
+                {{ range .steps }}
+                <li class="hp-step">
+                  <h4 class="hp-step__title">{{ .step }}</h4>
+                  <p class="hp-step__body">{{ .body }}</p>
+                </li>
+                {{ end }}
+              </ol>
+              {{ end }}
+
+              <p class="hp-more">
+                <a class="hp-more__link" href="{{ $url }}">{{ $.Params.industries_cta }} <span aria-hidden="true">&rarr;</span></a>
+              </p>
+            </div>
+          </details>
         </li>
         {{ end }}
       </ul>
     </section>
     {{ end }}
 
-    {{/* 6. Who you would be working with. Confidence, then the ask — the same
-         order the industry pages use, and for the same reason. It goes last
-         because a founder biography is only worth anything to a reader who has
-         already read the argument it is vouching for. */}}
-    {{ partial "home/leadership.html" . }}
+    {{/* 8. The other products, and the way through to who builds them.
+
+         THIS REPLACED THE LEADERSHIP BLOCK, and that has a cost worth writing
+         down: data/leadership.yaml was the only place on this site where a
+         person is named, and an outside audit called a resolvable founder the
+         highest-leverage credibility item this company has.
+
+         He is one click away rather than gone, and the last row here is what
+         carries him. That row is load-bearing for a second reason as well:
+         /company/ had exactly one inbound link in a 433-page build and this was
+         it. Take the row out and rule 9 breaks on the page rule 9 names.
+
+         Title, URL and page count are resolved from each paper rather than
+         repeated, so a renamed or moved paper cannot leave a wrong number or a
+         dead row behind. The front-matter `name` stays authoritative as the
+         scannable label. */}}
+    {{ with .Params.products }}
+    <section class="hp-sec hp-prod-sec" aria-labelledby="products-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="products-heading">{{ $.Params.products_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.products_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <ul class="hp-prod">
+        {{ range . }}
+        {{/* The papers are written in English and have no translations, so on
+             /es/, /fr/ and /pt/ `site.GetPage` returns nothing and the card
+             silently disappears. Before this fallback existed, all three
+             translated homepages rendered this band as a heading and an intro
+             over an empty list — a section that announces four products and
+             then shows none.
+
+             Falling back to the default-language site is the honest fix only
+             because the card says so: `products_lang_note` puts the paper's
+             language on the link itself, so a reader knows what they are
+             opening before they open it rather than after. Where the note is
+             absent (English) nothing is added. */}}
+        {{ $path := printf "/blog/whitepapers/%s" .paper }}
+        {{ $p := site.GetPage $path }}
+        {{ if not $p }}{{ $p = (index hugo.Sites 0).GetPage $path }}{{ end }}
+        {{ if $p }}
+        {{ $foreign := ne $p.Language.Lang site.Language.Lang }}
+        <li class="hp-prod__item">
+          <a class="hp-prod__link" href="{{ $p.RelPermalink }}"{{ if $foreign }} hreflang="{{ $p.Language.Lang }}"{{ end }}>
+            <h3 class="hp-prod__name">{{ .name }}</h3>
+            <p class="hp-prod__sub">{{ .sub }}</p>
+            <p class="hp-prod__line">{{ .line }}</p>
+            <span class="hp-prod__go">
+              {{ $.Params.products_cta }}{{ with $p.Params.source_pages }} &middot; {{ . }} {{ $.Params.products_pages_word | default "pages" }}{{ end }}{{ if $foreign }}{{ with $.Params.products_lang_note }} &middot; {{ . }}{{ end }}{{ end }}
+              <span aria-hidden="true">&rarr;</span>
+            </span>
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+      {{ with $.Params.products_more_url }}
+      {{ $more := site.GetPage . }}
+      {{ if not $more }}{{ $more = (index hugo.Sites 0).GetPage . }}{{ end }}
+      {{ with $more }}
+      <p class="hp-more">
+        <a class="hp-more__link" href="{{ .RelPermalink }}"{{ if ne .Language.Lang site.Language.Lang }} hreflang="{{ .Language.Lang }}"{{ end }}>{{ $.Params.products_more_text }} <span aria-hidden="true">&rarr;</span></a>
+      </p>
+      {{ end }}
+      {{ end }}
+    </section>
+    {{ end }}
 
     <!-- 7. One next step -->
     {{ if .Params.contact }}{{ partial "home/contact.html" . }}{{ end }}
