@@ -81,38 +81,74 @@
          It states a design position in the present tense, which is the safe
          side of rule 2: what the software does and why, never what it is
          missing. "This one drafts, and waits" is conduct. */}}
+    {{/* Three siblings, not two, and that is for the phone. In source order a
+         reader on a 390px screen gets the eyebrow and the headline, then the
+         picture that makes the claim, then the argument and the buttons — which
+         is the sequence the page wants and the one it could not have while the
+         figure was a single block after everything else. At 1024px and up the
+         grid puts head and body in the left column and spans the figure down
+         the right, so the desktop reading order is unchanged. */}}
     <header class="hp-hero">
-      <div class="hp-hero__lede">
+      <div class="hp-hero__head">
         <p class="hp-eyebrow">{{ $h.eyebrow }}</p>
         <h1 class="hp-h1">
           {{ $h.line1 }}
           <span class="hp-h1__b">{{ $h.line2 }}</span>
         </h1>
-        <p class="hp-deck">{{ $h.deck }}</p>
-        {{/* The product name now lives HERE rather than in a band four
-             screens down. It used to be section 4, on the argument that
-             blocks 1 to 3 are in the buyer's vocabulary and a reader who
-             has found their own line is exactly where "so what is it
-             called" arrives. That held while the page opened on one
-             industry's problem. It does not hold now: a reader who lands
-             from insurance or telecom needs the name and the one-sentence
-             mechanism before they will scroll at all.
+      </div>
 
-             markdownify because the product name is bold in the source and
-             a name is the one thing on this line that should be. */}}
+      {{/* THE FIELD, AT THE SIZE THE ARGUMENT DESERVES.
+
+           What was here before: the stance, three sentences, in a column 45% of
+           the viewport wide and 660px tall. The docblock above says the stance
+           was put here to fix an empty right half. It did not. At 1440 the
+           sentences ended 320px short of the bottom of their own column, and
+           that gap sat exactly where the eye lands after the headline — so the
+           first screen of the site was a wall of prose with a hole in it. On a
+           phone it was worse: the whole fold was type, with nothing to look at.
+
+           The figure was four screens down, boxed in a card, at a third of the
+           width it needed. It is the one picture this company owns: the same
+           field of records twice, mark for mark, unread and then read. It makes
+           the entire argument in about half a second without a word, which is
+           what a hero is for and what no paragraph here was managing.
+
+           The stance did not go; it became the caption. Those three sentences
+           are the one claim on this page somebody could disagree with, and they
+           read better under the picture they describe than beside a headline
+           they do not.
+
+           The sweep is the argument, not decoration. It travels left to right
+           across a field that does not otherwise move: no marks appear, none
+           are added, the same records go from unread to read as the read passes
+           over them. prefers-reduced-motion gets the finished state with no
+           sweep at all, and print gets it too — see the @media blocks in
+           home/style.html. */}}
+      <figure class="hp-hero__fig">
+        {{ with $h.fig_label }}<figcaption class="hp-hero__fig-label">{{ . }}</figcaption>{{ end }}
+        <div class="hp-hero__fig-frame">
+          {{ partial "home/field-figure.html" (dict "variant" "both") }}
+        </div>
+        {{ with $h.stance }}
+        <div class="hp-hero__stance" aria-label="{{ $h.stance_label }}">
+          {{ range . }}<p class="hp-hero__stance-line">{{ . }}</p>{{ end }}
+        </div>
+        {{ end }}
+      </figure>
+
+      <div class="hp-hero__body">
+        <p class="hp-deck">{{ $h.deck }}</p>
+        {{/* The product name lives here rather than in a band four screens
+             down: a reader landing from insurance or telecom needs the name and
+             the one-sentence mechanism before they will scroll at all.
+             markdownify because the name is bold in the source, and a name is
+             the one thing on this line that should be. */}}
         {{ with $h.product_line }}<p class="hp-product-line">{{ . | markdownify }}</p>{{ end }}
         <div class="hp-actions">
           <a class="hp-cta" href="{{ "/industries/" | relURL }}">{{ $h.cta_primary }}</a>
           <a class="hp-cta-ghost" href="#contact-form">{{ $h.cta_secondary }}</a>
         </div>
       </div>
-
-      {{ with $h.stance }}
-      <aside class="hp-stance" aria-label="{{ $h.stance_label }}">
-        <p class="hp-stance__label">{{ $h.stance_label }}</p>
-        {{ range . }}<p class="hp-stance__line">{{ . }}</p>{{ end }}
-      </aside>
-      {{ end }}
     </header>
 
     {{/* 1c. Where it shows up in the operating numbers.
@@ -141,14 +177,45 @@
       </div>
       {{ with $.Params.opex_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
 
+      {{/* ONE LINE PER INDUSTRY, AND THAT IS THE WHOLE POINT OF THE SECTION.
+
+           Every row here used to be logistics: demurrage, reefer spoilage,
+           returns, expedite freight, claim leakage. The eyebrow four lines above
+           names five industries and this table — the one headed "where it shows
+           up in your operating numbers" — answered for one of them. A reader who
+           came for insurance or telecom scrolled to the section that promised
+           their numbers and found containers, which is a worse outcome than not
+           claiming the industry at all.
+
+           The industry is named in text on every row, which is both the honest
+           way to do it and the condition DESIGN.md §2 puts on category colour:
+           "a category colour is never legible on its own; the industry is always
+           named in text beside it." The mark is that colour, and five different
+           marks down one table is the aggregation made visible — five domains,
+           one shape, one ledger.
+
+           Marketing says in its own driver that it is PULSE and not FACE. It is
+           the one row on this page whose product differs from the hero's, and a
+           reader should not have to work that out. */}}
       <div class="hp-opex__head" aria-hidden="true">
+        <span>{{ $.Params.opex_col_industry }}</span>
         <span>{{ $.Params.opex_col_line }}</span>
         <span>{{ $.Params.opex_col_driver }}</span>
         <span>{{ $.Params.opex_col_where }}</span>
       </div>
       <ul class="hp-opex">
         {{ range . }}
-        <li class="hp-opex__row">
+        {{/* The hue comes off the industry page's own `category`, the same
+             single source the ledger below uses. Deriving it from the slug here
+             instead would be the "five hues living in a second place" that the
+             ledger's own docblock warns about. The LABEL stays in front matter,
+             because the industry pages are English-only and /es/ still has to
+             name the sector in Spanish. */}}
+        {{ $cat := "" }}
+        {{ with site.GetPage (printf "/industries/%s" .page) }}{{ $cat = .Params.category }}{{ end }}
+        {{ if not $cat }}{{ with (index site.Sites 0).GetPage (printf "/industries/%s" .page) }}{{ $cat = .Params.category }}{{ end }}{{ end }}
+        <li class="hp-opex__row hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
+          <p class="hp-opex__ind"><span class="hp-opex__tick" aria-hidden="true"></span>{{ .industry }}</p>
           <p class="hp-opex__line">{{ .line }}</p>
           <p class="hp-opex__driver">{{ .driver }}</p>
           <p class="hp-opex__where">{{ .where }}</p>
@@ -276,6 +343,17 @@
           {{ $name = .Title }}
           {{ $url = .RelPermalink }}
           {{ $cat = .Params.category }}
+        {{ end }}
+        {{/* The industry pages are English-only, so on /es/, /fr/ and /pt/ this
+             lookup found nothing and every row in this ledger rendered with no
+             category mark at all — five identical grey rows where English gets
+             five colours. Nothing caught it: the markup is valid, the rows
+             render, and the only symptom is a colour that is not there. The
+             name and the link stay with the current-language lookup, because
+             those legitimately differ; only the hue falls back, and a hue does
+             not need translating. */}}
+        {{ if not $cat }}
+          {{ with (index site.Sites 0).GetPage (printf "/industries/%s" .page) }}{{ $cat = .Params.category }}{{ end }}
         {{ end }}
         {{/* Each row OPENS rather than navigating away. The flow that used to
              run across the page and the two walkthroughs under it were both
