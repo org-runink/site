@@ -157,6 +157,46 @@
     </section>
     {{ end }}
 
+    {{/* WHAT THIS INDUSTRY'S PAGES ACTUALLY COVER, AND WHERE TO READ EACH.
+
+         There are twelve use-case pages on this site and, until this slot
+         existed, no industry page linked to one. A reader who recognised their
+         own week in the rows above had no way to get from "a reefer drifted
+         warm" to the page that explains what happens next, and the site's own
+         coverage was invisible from the page most likely to be entered on.
+
+         The block is content, not template: which jobs belong to an industry is
+         an editorial judgement, and a wrong mapping here is a claim that this
+         software does something for a buyer that it does not. Marketing,
+         banking and telecom carry no `coverage` and that is deliberate — every
+         use-case page is Runink FACE, marketing is PULSE, and banking and
+         telecom are the CORE-and-Atlas arrangement. Linking any of them from
+         those three pages is the exact conflation their own front-matter notes
+         exist to prevent. `with` means those pages render nothing rather than
+         an empty heading.
+
+         The name is the link. Everything else on this page is escaped strings
+         from front matter, which is why the block sat inert in the content
+         files before this: there was no slot that could produce an anchor. */}}
+    {{ with .Params.coverage }}
+    <section class="ind-sec" aria-labelledby="coverage-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="coverage-heading">{{ $.Params.coverage_heading | default "The jobs this covers" }}</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.coverage_intro }}<p class="ind-intro">{{ . }}</p>{{ end }}
+      <ul class="ind-grid2">
+        {{ range . }}
+        <li class="ind-problem">
+          <h3><a href="{{ .url | relLangURL }}">{{ .name }}</a></h3>
+          <p>{{ .line }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
     {{/* How this industry measures success.
 
          There are no figures in this block and there will not be. The numbers

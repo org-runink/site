@@ -77,6 +77,54 @@ outcomes:
   - "A drafted action waits in the queue until a named person approves, edits or rejects it, and that decision is recorded as an event carrying the actor. A connection to your claims data cannot be created without its credentials — they are written first, so a half-made connection does not exist to be used later."
   - "Where a check could not run, the result says so in those words: not a finding that the thing is compliant. A quantity nobody measured is held as unmeasured with a reason rather than rounded to zero, and a connection nobody has contacted is never reported as verified. For a function whose product is evidence, being told what was not checked is worth more than a clean-looking pass."
 
+# THE COVERAGE BLOCK — the named jobs, and the page that sets each one out.
+#
+# WHY IT EXISTS. This page argues a mechanism — rules as written against rules
+# as applied — and named no job a claims or compliance reader could open and
+# read in full. Three of the twelve scenario pages are insurance work, and a
+# reader had no way to reach them from here.
+#
+# WHY THREE AND NOT MORE, which is the part to leave written down:
+#   * freight claims and port charges is a shipper recovering from a carrier.
+#     It is not subrogation, and putting it here because this page has a
+#     subrogation measure on it would be an industry fit argued from a shared
+#     word. It stays on the logistics page.
+#   * testing a plan before you commit to it reasons over reorder points, lead
+#     times and service commitments. Those are supply chain rules, and the page
+#     says so itself.
+#   * customer data privacy is listed for the half that is an insurer's:
+#     personal detail kept out of the logs a system writes. That is the same
+#     redaction pass this page's first foundation already names, and this is
+#     where a reader goes to read it in full. The other half of that page is a
+#     road lane's emissions figure, which belongs to logistics.
+#
+# RENDERING, AND THE NAME. The keys are `coverage_*` because that is what
+# content/use-cases/_index.md already calls the same idea — a heading, an intro,
+# and a list of named jobs — and one vocabulary across the two files is worth
+# more than a key that reads better alone. The one difference is the item: the
+# use-cases index names a child of its own section by slug and reads that page's
+# title at render time, while an industry page points into another section, so
+# each item carries the path itself. A path is also the form linkcheck can see
+# once an anchor is rendered from it.
+#
+# layouts/industries/single.html has one slot per block and does not have one
+# for this yet, so these three keys are inert until it does — the same state
+# `product:` is in on content/industries/marketing.md. Every url below resolves
+# to a page that builds today; that was checked against the 0.147.3 build the
+# deploy pins, not against the local Hugo.
+coverage_heading: "The jobs this covers"
+coverage_intro: "Each one has a page of its own: what it reads, what it hands to a person, and how you would know it worked."
+coverage:
+  - name: "Underwriting and claim files"
+    line: "The policy wording, the loss report, the reserve history and the authority limit for a claim that size arrive joined, with a drafted next step and the reading it rests on. The underwriter still decides."
+    url: "/use-cases/insurance-underwriting/"
+  - name: "Contract and obligation review"
+    line: "Which clause governs this, and who checked. The clause and the record arrive together, cited — and could not check is kept as an entry of its own rather than folded into a green tick."
+    url: "/use-cases/paralegal-review/"
+  - name: "Customer data privacy"
+    line: "Email addresses, telephone and card numbers, national identification numbers and network addresses stripped out of log and diagnostic output before it is written, so the trail a system leaves does not become a second copy of a claimant's file."
+    url: "/use-cases/compliance/"
+
 measures_heading: "How you will know it worked"
 measures_intro: "These figures are yours, not ours. Write down where each stands today, and over what period, before anything changes — once it moves, the baseline is gone."
 measures:
