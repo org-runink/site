@@ -246,16 +246,28 @@
          any explanation on purpose — the review asked for visuals a business
          reader can take in without being walked through them. */}}
     {{ with .Params.figure }}
+    {{/* THE ARTWORK IS GONE FROM HERE, BECAUSE IT IS NOW IN THE HERO.
+
+         This block used to carry the field twice, side by side, labelled "how
+         it is read today" and "how Runink reads it". That was the right place
+         for it while the fold was a wall of prose. It is not any more: the hero
+         shows the same 144 marks going from unread to read, so a reader who has
+         scrolled this far has already had the argument made, and meeting the
+         identical grid again four screens down reads as a page repeating itself
+         rather than building.
+
+         The two labels and their notes stay, because they are the before and
+         after in words and they say something the picture cannot: that a sample
+         is read AND the rest is assumed to look like it. Losing the artwork
+         costs this section nothing it was not already saying twice. */}}
     <figure class="hp-field">
       <div class="hp-field__panels">
         <div class="hp-field__panel">
           <p class="hp-field__label">{{ .today_label }}</p>
-          {{ partial "home/field-figure.html" (dict "variant" "today") }}
           <p class="hp-field__note">{{ .today_note }}</p>
         </div>
         <div class="hp-field__panel hp-field__panel--now">
           <p class="hp-field__label">{{ .read_label }}</p>
-          {{ partial "home/field-figure.html" (dict "variant" "read") }}
           <p class="hp-field__note">{{ .read_note }}</p>
         </div>
       </div>
