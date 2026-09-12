@@ -1,7 +1,53 @@
 {{ define "main" }}
-<article class="post">
-    <!-- Hero section will be rendered by the hero shortcode -->
-    {{ .Content }}
+{{/*
+  /company/ opened with nothing. This template was an <article class="post">
+  wrapper and a comment saying the hero would be rendered by a shortcode, which
+  no longer happened — so the page began with a centred h1 inside a gradient box
+  written inline in the content file, in a vocabulary (bg-stone-900 gradients,
+  floating rounded cards, everything centred) that no other page on the site
+  still uses. Next to /pricing/ it read as a different product's website.
 
-</article>
+  It now opens the way /pricing/ does: the blueprint ground, a bordered signal
+  pill, one very large uppercase italic display line, and a tracked deck under
+  it. Same devices, same rhythm, so the two pages read as the same company.
+
+  ONE DELIBERATE DIFFERENCE FROM /pricing/, AND IT IS NOT A TASTE CHOICE.
+  /pricing/ sets its headline with `text-transparent bg-clip-text` over a
+  gradient. Browsers drop backgrounds when printing by default, and a headline
+  whose ink IS a background prints as nothing at all — HANDOFF-restyle-decisions
+  §A4 names this exact construct, and CONTENT.md rule 6 says colour may never be
+  the only channel. So this one is a solid signal fill: the same weight, size and
+  italic, and it survives a sheet of paper. /pricing/ still has the bug.
+
+  The eyebrow, line and deck come from front matter rather than being hardcoded
+  like /pricing/'s "Investment", because this page carries them in a language
+  that will need translating.
+*/}}
+<div class="bg-canvas min-h-screen relative overflow-hidden">
+  {{ partial "background-effects.html" . }}
+
+  <div class="container mx-auto px-4 py-20 md:py-24 relative z-10">
+    <header class="max-w-5xl">
+      {{ with .Params.eyebrow }}
+      <p class="inline-flex items-center px-5 py-2 mb-7 rounded-lg border border-signal/40 text-signal text-xs md:text-sm font-black uppercase tracking-[0.22em]">
+        {{ . }}
+      </p>
+      {{ end }}
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-signal uppercase italic tracking-tighter leading-[0.92] mb-6">
+        {{ .Params.hero_line | default .Title }}
+      </h1>
+      {{ with .Params.hero_deck }}
+      <p class="text-lg md:text-xl text-ink-2 max-w-3xl leading-relaxed">{{ . }}</p>
+      {{ end }}
+    </header>
+  </div>
+
+  <div class="container mx-auto px-4 pb-8 relative z-10">
+    {{ .Content }}
+  </div>
+
+  <div class="container mx-auto px-4 pb-20 relative z-10">
+    {{ partial "next-step.html" . }}
+  </div>
+</div>
 {{ end }}

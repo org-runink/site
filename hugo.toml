@@ -398,6 +398,26 @@ enableGitInfo = true
       url = "/pricing/"
       weight = 6
 
+    # Company, weight 7 — after Pricing, which is where an "about us" belongs in
+    # a nav a buyer reads left to right. It is here because /company/ had exactly
+    # one inbound link in the whole 715-page build (the homepage products band),
+    # and CONTENT.md rule 9 names that page by name for this defect: "a page with
+    # no inbound link is still published." A page worth writing is worth
+    # reaching.
+    #
+    # ALL FOUR POINT AT /company/, INCLUDING THE THREE TRANSLATED NAVS. There is
+    # no content/company.<lang>.md, so /fr/company/, /es/company/ and /pt/company/
+    # do not exist: the first version of this entry pointed at them and produced
+    # 136 links to pages that are not in the build. That returns 200 and goes
+    # nowhere, which is the failure linkcheck exists for — and linkcheck is not
+    # in CI, so it would have shipped. Sending a translated reader to the English
+    # page is what the whitepaper cards already do; translating this page is the
+    # real fix and is not done.
+    [[languages.en.menu.main]]
+      name = "Company"
+      url = "/company/"
+      weight = 7
+
 
   [languages.fr]
     locale = "fr-fr"
@@ -468,6 +488,26 @@ enableGitInfo = true
       url = "/fr/pricing"
       weight = 6
 
+    # Company, weight 7 — after Pricing, which is where an "about us" belongs in
+    # a nav a buyer reads left to right. It is here because /company/ had exactly
+    # one inbound link in the whole 715-page build (the homepage products band),
+    # and CONTENT.md rule 9 names that page by name for this defect: "a page with
+    # no inbound link is still published." A page worth writing is worth
+    # reaching.
+    #
+    # ALL FOUR POINT AT /company/, INCLUDING THE THREE TRANSLATED NAVS. There is
+    # no content/company.<lang>.md, so /fr/company/, /es/company/ and /pt/company/
+    # do not exist: the first version of this entry pointed at them and produced
+    # 136 links to pages that are not in the build. That returns 200 and goes
+    # nowhere, which is the failure linkcheck exists for — and linkcheck is not
+    # in CI, so it would have shipped. Sending a translated reader to the English
+    # page is what the whitepaper cards already do; translating this page is the
+    # real fix and is not done.
+    [[languages.fr.menu.main]]
+      name = "Entreprise"
+      url = "/company/"
+      weight = 7
+
   [languages.es]
     locale = "es-es"
     label = "Español"
@@ -527,6 +567,26 @@ enableGitInfo = true
       url = "/es/pricing"
       weight = 6
 
+    # Company, weight 7 — after Pricing, which is where an "about us" belongs in
+    # a nav a buyer reads left to right. It is here because /company/ had exactly
+    # one inbound link in the whole 715-page build (the homepage products band),
+    # and CONTENT.md rule 9 names that page by name for this defect: "a page with
+    # no inbound link is still published." A page worth writing is worth
+    # reaching.
+    #
+    # ALL FOUR POINT AT /company/, INCLUDING THE THREE TRANSLATED NAVS. There is
+    # no content/company.<lang>.md, so /fr/company/, /es/company/ and /pt/company/
+    # do not exist: the first version of this entry pointed at them and produced
+    # 136 links to pages that are not in the build. That returns 200 and goes
+    # nowhere, which is the failure linkcheck exists for — and linkcheck is not
+    # in CI, so it would have shipped. Sending a translated reader to the English
+    # page is what the whitepaper cards already do; translating this page is the
+    # real fix and is not done.
+    [[languages.es.menu.main]]
+      name = "Empresa"
+      url = "/company/"
+      weight = 7
+
   [languages.pt]
     locale = "pt-br"
     label = "Português"
@@ -584,6 +644,26 @@ enableGitInfo = true
       name = "Preços"
       url = "/pt/pricing"
       weight = 6
+
+    # Company, weight 7 — after Pricing, which is where an "about us" belongs in
+    # a nav a buyer reads left to right. It is here because /company/ had exactly
+    # one inbound link in the whole 715-page build (the homepage products band),
+    # and CONTENT.md rule 9 names that page by name for this defect: "a page with
+    # no inbound link is still published." A page worth writing is worth
+    # reaching.
+    #
+    # ALL FOUR POINT AT /company/, INCLUDING THE THREE TRANSLATED NAVS. There is
+    # no content/company.<lang>.md, so /fr/company/, /es/company/ and /pt/company/
+    # do not exist: the first version of this entry pointed at them and produced
+    # 136 links to pages that are not in the build. That returns 200 and goes
+    # nowhere, which is the failure linkcheck exists for — and linkcheck is not
+    # in CI, so it would have shipped. Sending a translated reader to the English
+    # page is what the whitepaper cards already do; translating this page is the
+    # real fix and is not done.
+    [[languages.pt.menu.main]]
+      name = "Empresa"
+      url = "/company/"
+      weight = 7
 
 [mediaTypes."application/toon"]
   suffixes = ["toon"]

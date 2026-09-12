@@ -2,6 +2,22 @@
 title: "About Runink"
 layout: "company"
 description: "What Runink is for: reading the records a company already keeps, and turning them into decisions its own people can defend."
+# The hero moved out of the body and into the layout, so this page opens the way
+# /pricing/ does instead of with a centred h1 in a gradient box. Copy is the same
+# copy; only where it is rendered changed.
+eyebrow: "The company"
+hero_line: "The answer is usually already in the records"
+hero_deck: "A company already records what it bought, what it shipped, what it paid and what went wrong. Runink reads those records and puts an answer in front of the person who has to act on it."
+# The page ended on nothing. layouts/_default/company.html calls next-step.html,
+# which renders only when a page carries `next`, so /company/ closed on ~300px of
+# bare background with no way out of it. Same band the four listing pages use, so
+# the exit is the one a reader has already met elsewhere on the site.
+next:
+  label: "One next step"
+  title: "The rules above are things you can ask us to show you."
+  body: "Bring one lane, one claim, or one month of invoices. Half an hour, with whoever owns the problem in the room, and we walk that one example end to end. If the losses you carry are not the shape this addresses, we will say so."
+  cta: "Book a consultation"
+  about: "The company page"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 # WHY THE SOVEREIGNTY CARD IS WORDED THE WAY IT IS.
@@ -26,26 +42,22 @@ author: "Runink"
 # GPTBot, ClaudeBot, PerplexityBot and CCBot. In content/, notes go here.
 ---
 
-{{< section-container class="bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 pt-20 pb-32" >}}
-  <div class="text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">The answer is usually already in the records</h1>
-    <p class="text-xl text-ink-2 mb-16">
-      A company already records what it bought, what it shipped, what it paid and what went wrong. Runink reads those records and puts an answer in front of the person who has to act on it.
+{{< section-container class="pt-4 pb-20" >}}
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">What we are for</p>
+    <p class="text-2xl md:text-3xl leading-snug text-ink">
+      Most of what an operations, finance or compliance team needs to decide is sitting in systems it already pays for, in a shape nobody has time to read.
     </p>
-    <div class="max-w-3xl mx-auto bg-stone-800/90 rounded-xl shadow-sm p-8">
-      <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
-      <p class="text-xl text-ink-2">
-        Most of what an operations, finance or compliance team needs to decide is sitting in systems it already pays for, in a shape nobody has time to read.
-        We connect to those systems, keep the working copy on hardware the customer controls, and show the reasoning behind every answer so the person who signs off can check it.
-      </p>
-    </div>
+    <p class="text-lg text-ink-2 mt-6 max-w-3xl">
+      We connect to those systems, keep the working copy on hardware the customer controls, and show the reasoning behind every answer so the person who signs off can check it.
+    </p>
   </div>
 {{< /section-container >}}
 
 {{< section-container class="py-20 bg-stone-900" >}}
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-4">How we build it</h2>
-    <p class="text-xl text-ink-2 text-center max-w-3xl mx-auto mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">How we build it</h2>
+    <p class="text-xl text-ink-2 max-w-3xl mb-12">
       Six rules the software follows. Each one is a thing you can ask us to show you in a running system, which is the only reason they are worth putting on a page.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
