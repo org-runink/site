@@ -41,11 +41,34 @@ author: "Runink"
     "That is the whole shape of it. The bill follows your headcount, not your usage, so a team that finds heavy use for Runink does not open a new line item that grows with it. What the work is comes first, though, because that is the part a price is worth arguing about."
   ],
   "eyebrow": "The work",
-  "heading": "Where it is put to work",
+  "heading": "Operations Actionable Twins",
   "lead": [
     "These are the operational jobs Runink FACE is built for. In each one the evidence is already in your systems and nobody has the hours to join it up. Each one ends with a person approving a drafted action rather than reading another dashboard.",
     "They are grouped by when in the operation the problem turns up. Each opens onto the page that explains it: what it reads, what it drafts, and the measures to write your own figures against."
   ],
+  "personas": {
+    "eyebrow": "Enterprise Exclusive",
+    "cards": [
+      {
+        "name": "Digital",
+        "accent": "Paralegals",
+        "body": "Your automated legal and compliance team. They autonomously ingest freight bills, cross-reference SLA agreements, and instantly file irrefutable claims to recover lost margins from carriers without manual intervention.",
+        "focus": "Focus: Claims & Recovery"
+      },
+      {
+        "name": "Statistical",
+        "accent": "Buyers",
+        "body": "Your autonomous demand planning unit. They intelligently ingest market trends and sales velocity to predict exact stock needs, dynamically orchestrating inventory allocation across your entire distribution network.",
+        "focus": "Focus: Inventory & Fulfilment"
+      },
+      {
+        "name": "Revenue",
+        "accent": "Operators",
+        "body": "Your forensic financial auditors. They meticulously audit every invoice line against your negotiated carrier contracts, automatically flagging ghost fees and executing Short-Pays to halt margin leakage.",
+        "focus": "Focus: Finance & Reconciliation"
+      }
+    ]
+  },
   "groups": [
     {
       "label": "Planning what you will need",
@@ -187,7 +210,6 @@ author: "Runink"
 }
 {{< /pricing-table-1 >}}
 
-{{< enterprise-a2a >}}
 
 {{< faq >}}
 {

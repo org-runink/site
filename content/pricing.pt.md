@@ -24,11 +24,34 @@ author: "Runink"
     "É toda a lógica. A conta acompanha o seu quadro de pessoal, não o seu uso, de modo que uma equipe que encontre muito uso para o Runink não abre uma linha de custo que cresce junto. Mas o trabalho vem primeiro, porque é a parte sobre a qual vale a pena discutir um preço."
   ],
   "eyebrow": "O trabalho",
-  "heading": "Onde ele é posto a trabalhar",
+  "heading": "Gêmeos Digitais de Operações",
   "lead": [
     "Estes são os trabalhos operacionais para os quais o Runink FACE foi feito. Em cada um, as evidências já estão nos seus sistemas e ninguém tem as horas para juntá-las. E cada um termina com uma pessoa aprovando uma ação redigida, não lendo mais um painel.",
     "Estão agrupados pelo momento da operação em que o problema aparece. Cada um abre a página que o explica: o que ele lê, o que ele redige, e as medidas para escrever os seus próprios números."
   ],
+  "personas": {
+    "eyebrow": "Exclusivo de Enterprise",
+    "cards": [
+      {
+        "name": "Paralegais",
+        "accent": "Digitais",
+        "body": "Sua equipe jurídica e de conformidade automatizada. Eles ingerem faturas de frete autonomamente, cruzam acordos de SLA e registram instantaneamente contestações irrefutáveis para recuperar margens perdidas de transportadoras sem intervenção manual.",
+        "focus": "Foco: Contestações e Recuperação"
+      },
+      {
+        "name": "Compradores",
+        "accent": "Estatísticos",
+        "body": "Sua unidade de planejamento de demanda autônoma. Eles ingerem de forma inteligente as tendências de mercado e a velocidade de vendas para prever necessidades exatas de estoque, orquestrando dinamicamente a alocação de estoque em toda a sua rede de distribuição.",
+        "focus": "Foco: Estoque e Atendimento"
+      },
+      {
+        "name": "Operadores de",
+        "accent": "Receita",
+        "body": "Seus auditores financeiros forenses. Eles auditam meticulosamente cada linha de fatura em relação aos contratos negociados com as transportadoras, sinalizando taxas fantasmas automaticamente e executando pagamentos a menor para interromper perdas de margem.",
+        "focus": "Foco: Finanças e Reconciliação"
+      }
+    ]
+  },
   "groups": [
     {
       "label": "Planejar o que você vai precisar",
@@ -170,7 +193,6 @@ author: "Runink"
 }
 {{< /pricing-table-1 >}}
 
-{{< enterprise-a2a >}}
 
 {{< faq >}}
 {

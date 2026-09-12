@@ -51,6 +51,53 @@
         <p class="text-lg text-stone-400 font-medium leading-relaxed max-w-3xl mb-4 last:mb-12">{{ . }}</p>
         {{ end }}
 
+        {{/* THE THREE TWINS, merged in from the separate band that used to sit
+             below this one under its own heading.
+
+             They were the same subject told twice: that band named the twins
+             and this one named the jobs they do, and a reader met "Operations
+             Actionable Twins" and "Where it is put to work" as two different
+             offers half a page apart. One section, one heading, the twins and
+             then the jobs they are put to.
+
+             THE MERGE FIXED A PRINT BUG BY REMOVING IT. The old band set its
+             title with `text-transparent bg-clip-text` over a gradient, which
+             browsers drop when printing, so that heading printed as nothing at
+             all — CONTENT.md rule 6 and HANDOFF-restyle-decisions §A4 name that
+             exact construct, and layouts/_default/company.html's own comment
+             says "/pricing/ still has the bug". It does not now: this section's
+             heading has always been a solid fill, and the gradient one is gone
+             with the band it belonged to.
+
+             The copy is moved VERBATIM, all four languages, from the shortcode
+             that used to hold it — it was written as four inline language
+             conditionals per string, which is the pattern CONTENT.md rule 12
+             exists to discourage, so it now comes off the page's own front
+             matter like everything else in this band. Nothing was retranslated.
+
+             The eyebrow stays attached to these three cards and is NOT promoted
+             to the section, because "Enterprise Exclusive" is true of the twins
+             and is not a claim anyone has made about the scenarios below. */}}
+        {{ with $data.personas }}
+        <div class="mt-12">
+            {{ with .eyebrow }}
+            <p class="text-[10px] font-black uppercase tracking-[0.25em] text-signal mb-6">{{ . }}</p>
+            {{ end }}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {{ range .cards }}
+                <div
+                    class="bg-sheet border border-stone-800 rounded-lg p-8 shadow-lg flex flex-col h-full break-inside-avoid">
+                    <h3 class="text-2xl break-words font-black italic tracking-tighter uppercase text-white mb-4">
+                        {{ .name }} <span class="text-signal">{{ .accent }}</span></h3>
+                    <p class="text-sm text-stone-400 leading-relaxed mb-8 flex-grow">{{ .body }}</p>
+                    <div class="text-[10px] font-black text-stone-500 tracking-[0.2em] uppercase mt-auto">{{ .focus }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+
         {{/* THE LINE UNDER EACH LINK IS READ OFF THE PAGE, not written here.
              Each item gives a slug and the short domain label a reader scans;
              the sentence beneath is the first sentence of that page's own

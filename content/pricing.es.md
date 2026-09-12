@@ -24,11 +24,34 @@ author: "Runink"
     "Esa es toda la lógica. La factura sigue a su plantilla, no a su uso, de modo que un equipo que le encuentre mucho uso a Runink no abre una partida de gasto que crece con él. Pero primero va el trabajo, porque es la parte sobre la que merece la pena discutir un precio."
   ],
   "eyebrow": "El trabajo",
-  "heading": "Dónde se pone a trabajar",
+  "heading": "Gemelos Digitales de Operaciones",
   "lead": [
     "Estos son los trabajos operativos para los que está hecho Runink FACE. En cada uno, las pruebas ya están en sus sistemas y nadie tiene las horas para juntarlas. Y cada uno termina con una persona aprobando una acción redactada, no leyendo otro panel.",
     "Están agrupados por el momento de la operación en que aparece el problema. Cada uno abre la página que lo explica: qué lee, qué redacta y con qué medidas escribir sus propias cifras."
   ],
+  "personas": {
+    "eyebrow": "Exclusivo de Enterprise",
+    "cards": [
+      {
+        "name": "Paralegales",
+        "accent": "Digitales",
+        "body": "Su equipo legal y de cumplimiento automatizado. Ingieren de forma autónoma las facturas de transporte, cotejan los acuerdos de nivel de servicio (SLA) y presentan instantáneamente reclamaciones irrefutables para recuperar los márgenes perdidos de los transportistas sin intervención manual.",
+        "focus": "Foco: Reclamaciones y Recuperación"
+      },
+      {
+        "name": "Compradores",
+        "accent": "Estadísticos",
+        "body": "Su unidad de planificación de demanda autónoma. Analizan de manera inteligente las tendencias del mercado y la velocidad de ventas para predecir las necesidades exactas de stock, orquestando dinámicamente la asignación de inventario en toda su red de distribución.",
+        "focus": "Foco: Inventario y Cumplimiento"
+      },
+      {
+        "name": "Operadores de",
+        "accent": "Ingresos",
+        "body": "Sus auditores financieros forenses. Auditan meticulosamente cada línea de factura contra sus contratos de transporte negociados, marcando tarifas fantasmas automáticamente y ejecutando retenciones de pago para detener la pérdida de margen.",
+        "focus": "Foco: Finanzas y Reconciliación"
+      }
+    ]
+  },
   "groups": [
     {
       "label": "Planificar lo que va a necesitar",
@@ -170,7 +193,6 @@ author: "Runink"
 }
 {{< /pricing-table-1 >}}
 
-{{< enterprise-a2a >}}
 
 {{< faq >}}
 {

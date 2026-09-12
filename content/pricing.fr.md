@@ -24,11 +24,34 @@ author: "Runink"
     "C'est toute la logique. La facture suit votre effectif, pas votre usage : une équipe qui trouve à Runink un usage intensif n'ouvre pas une ligne de dépense qui grandit avec lui. Mais le travail passe d'abord, parce que c'est la partie sur laquelle un prix mérite d'être discuté."
   ],
   "eyebrow": "Le travail",
-  "heading": "Où il est mis au travail",
+  "heading": "Jumeaux Numériques d'Opérations",
   "lead": [
     "Voici les tâches d'exploitation pour lesquelles Runink FACE est construit. Dans chacune, les éléments sont déjà dans vos systèmes et personne n'a les heures pour les rassembler. Et chacune se termine par une personne qui approuve une action rédigée, pas par un tableau de bord de plus.",
     "Elles sont regroupées selon le moment où le problème surgit dans l'exploitation. Chacune ouvre la page qui l'explique : ce qu'elle lit, ce qu'elle rédige, et les mesures à partir desquelles écrire vos propres chiffres."
   ],
+  "personas": {
+    "eyebrow": "Exclusivité Enterprise",
+    "cards": [
+      {
+        "name": "Paralégaux",
+        "accent": "Digitaux",
+        "body": "Votre équipe juridique et de conformité automatisée. Ils ingèrent les factures de transport de façon autonome, comparent les accords de niveau de service (SLA) et déposent instantanément des réclamations irréfutables pour récupérer les marges perdues auprès des transporteurs, sans intervention manuelle.",
+        "focus": "Focus : Litiges et Récupération"
+      },
+      {
+        "name": "Acheteurs",
+        "accent": "Statistiques",
+        "body": "Votre unité autonome de planification de la demande. Ils analysent intelligemment les tendances du marché et la vitesse des ventes pour prédire les besoins exacts de stockage, orchestrant de manière dynamique la répartition des stocks sur l'ensemble de votre réseau.",
+        "focus": "Focus : Stock et Exécution"
+      },
+      {
+        "name": "Opérateurs de",
+        "accent": "Revenus",
+        "body": "Vos auditeurs financiers légaux. Ils auditent méticuleusement chaque ligne de facture par rapport à vos contrats de transport négociés, signalent automatiquement les frais indus et exécutent des retenues de paiement pour stopper les fuites de marge.",
+        "focus": "Focus : Finance et Réconciliation"
+      }
+    ]
+  },
   "groups": [
     {
       "label": "Prévoir ce dont vous aurez besoin",
@@ -170,7 +193,6 @@ author: "Runink"
 }
 {{< /pricing-table-1 >}}
 
-{{< enterprise-a2a >}}
 
 {{< faq >}}
 {
