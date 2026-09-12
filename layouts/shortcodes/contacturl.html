@@ -1,0 +1,19 @@
+{{- /*
+  The contact URL, for a link written as raw HTML inside a content file.
+
+  WHY IT IS NEEDED AT ALL. layouts/_default/_markup/render-link.html attaches
+  ?about= to every link written in Markdown, but Goldmark passes raw HTML
+  through untouched, so a hand-written <a href="/#contact"> in a content file is
+  invisible to the hook. Thirteen of those exist, and they are not minor: they
+  are the large "Book a consultation" button at the foot of every use-case page,
+  which is the most prominent control on the highest-intent pages on the site.
+
+  Used inside the attribute itself — href="{{< contacturl >}}" — because Hugo
+  expands shortcodes in the content source before Goldmark sees it, so the URL
+  lands in the attribute verbatim. check-content-template-syntax.mjs allows the
+  angle-bracket form for exactly this reason; it is template ACTIONS in content
+  that render as visible text, not shortcodes.
+
+  Takes the target as an optional first argument, defaulting to /#contact.
+*/ -}}
+{{- partial "contact-url.html" (dict "url" (.Get 0 | default "/#contact") "page" .Page) -}}

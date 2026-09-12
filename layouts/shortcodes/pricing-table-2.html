@@ -49,7 +49,7 @@
                     {{ end }}
                 </ul>
 
-                <a href="{{ $plan.button.url | relURL }}"
+                <a href="{{ partial "contact-url.html" (dict "url" $plan.button.url "page" $.Page) | default ($plan.button.url | relURL) }}"
                     class="text-center w-full px-6 py-4 rounded-full font-bold uppercase tracking-wider text-sm transition-all duration-300 {{ if $plan.featured }}bg-signal-fill text-on-fill hover:bg-signal-fill-hover shadow-lg hover:shadow-signal/50{{ else }}bg-stone-700 text-white hover:bg-stone-600 border border-stone-600{{ end }}">
                     {{ $plan.button.text }}
                 </a>
