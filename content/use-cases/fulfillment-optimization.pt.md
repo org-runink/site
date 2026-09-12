@@ -66,6 +66,17 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
                 Uma pessoa com nome aprova, edita ou recusa, e esse aval fica no registro. Aprovar é o que manda adiante. E onde uma etapa da ação redigida ainda não tem nada atrás dela &mdash; a gravação no seu ERP é o exemplo honesto &mdash; a resposta nomeia essa etapa como não executada, em vez de dar a coisa inteira por concluída. Você é informado de qual parte da ação aconteceu, e é isso que separa um sistema em que se confia de um sistema que é preciso ir conferir. As margens de segurança passam então a ser discutidas pelos seus próprios números, e não por hierarquia.
             </p>
         </div>
+        <div>
+            <h2 id="quem-cuida-disso" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quem Cuida Disso</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três mesas, e o que cada uma tem na mão hoje.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Responsável pelo planejamento.</strong> Hoje o alerta dispara sobre um nível, e o fornecedor continua precisando de quinze dias que começam quando avisaram você, e não quando o problema começou. O que muda é que a projeção por baixo da decisão é conferida contra períodos que não foram mostrados a ela, e o gatilho diz qual limite foi cruzado e por qual nível, por extenso.</li>
+                <li><strong class="text-stone-200">Financeiro e compras.</strong> Hoje o custo de descobrir tarde sai como frete urgente, arquivado sob códigos que ninguém relê. O que muda é que o aviso chega como um limite, um nível e um motivo, e não como uma cor num quadrinho, então a conversa sobre o pedido é sobre um número que alguém consegue conferir.</li>
+                <li><strong class="text-stone-200">Diretor de operações.</strong> Hoje cada etapa da cadeia arredonda para a caixa cheia e acrescenta uma margem de segurança, e esse crescimento vive espalhado por quatro sistemas em que nenhum o mostra inteiro. O que muda é que as margens de segurança passam a ser discutidas a partir dos seus próprios números e não por antiguidade.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-saberia-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Saberia Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -80,6 +91,39 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traga um ano de uma família de produtos e os seus códigos de frete de urgência.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Perguntas De Uma Equipe De Planejamento",
+  "description": "O que se pergunta antes de alguém falar em contrato.",
+  "questions": [
+    {
+      "question": "De onde vêm os limites?",
+      "answer": "De você. O ponto de pedido, o piso e o teto são os que você já usa. O FACE compara o nível com eles e devolve o limite que foi cruzado e o nível que o cruzou. O limite continua sendo seu de propósito: um aviso calibrado contra um prazo de entrega que o software tivesse chutado pareceria mais esperto do que o alerta de nível que você já tem, e valeria menos."
+    },
+    {
+      "question": "O que exatamente o gatilho devolve?",
+      "answer": "O limite que foi cruzado, o nível que o cruzou e o motivo, escritos por extenso em vez de mostrados como uma cor num quadrinho. É isso, e está escrito assim para que o aviso possa ser discutido em vez de apenas recebido."
+    },
+    {
+      "question": "Quanto dá para confiar na previsão que está por baixo?",
+      "answer": "Toda projeção nomeia o modelo que a produziu e quantos períodos ele teve para aprender. O modelo foi escolhido separando o trecho mais recente do seu próprio histórico e reajustando cada candidato sobre o que vinha antes. Quando o histórico de um item não prevê a si mesmo, isso também é um dos achados."
+    },
+    {
+      "question": "Quem assina o pedido que ele redige?",
+      "answer": "Uma pessoa nomeada aprova, edita ou recusa, e essa assinatura fica no registro. Aprovar é o que envia adiante. Onde uma etapa da ação redigida ainda não tem nada por trás &mdash; uma escrita no seu ERP é o exemplo honesto &mdash; a resposta nomeia aquela etapa como não executada em vez de dar o conjunto por feito, então você fica sabendo qual parte da ação aconteceu."
+    },
+    {
+      "question": "Onde está a previsão em si?",
+      "answer": "No cenário dela. Como uma série é lida, qual modelo é escolhido e o que ele diz quando um item simplesmente não é previsível está descrito em [previsão de demanda](/pt/use-cases/demand-forecasting/). Esta página é a decisão de compra que vem depois disso, e as duas ficam separadas porque quem discute cada uma é gente diferente."
+    },
+    {
+      "question": "O que devemos levar para uma primeira conversa?",
+      "answer": "Um ano de uma família de produtos, e os códigos que a sua equipe usa para frete aéreo ou urgente. Um ano inteiro e não um trimestre, porque o custo de descobrir tarde é sazonal e um trimestre vai favorecer ou condenar você ao acaso."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

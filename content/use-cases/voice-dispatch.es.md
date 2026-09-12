@@ -78,6 +78,17 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
                 Una negativa más, porque es del tipo que suele esconderse. En otras partes de FACE se puede adjuntar una nota de voz a un hilo, y ese adjunto no se transcribe. En vez de dejar que el modelo improvise alrededor, se le dice al modelo sin rodeos que ha llegado un adjunto de audio, que su contenido es desconocido y que no debe suponer qué se dijo; y se le indica que le diga a usted que el audio no se procesó. Un sistema que no puede oír algo y lo dice vale más que uno que rellena el hueco.
             </p>
         </div>
+        <div>
+            <h2 id="quien-se-encarga-de-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quién Se Encarga De Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres mesas, y lo que cada una tiene hoy encima.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">La mesa de expediciones.</strong> Hoy un cambio significa llamar a un camión detrás de otro esperando que cada uno pueda descolgar, y la mitad de las llamadas van al buzón y se repiten veinte minutos después. Lo que cambia es que un conductor puede preguntar y recibir respuesta en voz alta, y la llamada se escribe sola. La mesa sigue haciendo el cambio; deja de ser el único camino por el que puede viajar un dato.</li>
+                <li><strong class="text-stone-200">El jefe de delegación.</strong> Hoy la jornada se redacta al final, de memoria, si es que se redacta, y la hora perdida en una puerta es la que nunca se factura. Lo que cambia es que los dos lados de la conversación van al registro de llamadas según ocurren, así que la hora en la puerta queda registrada en la puerta.</li>
+                <li><strong class="text-stone-200">TI y seguridad de la información.</strong> Hoy un producto de voz significa preguntar en qué cuenta ajena acaba la transcripción. Lo que cambia es que el habla la convierte en texto el servidor de modelos que usted ya ejecuta, y cada respuesta conversacional la pronuncia un sintetizador dentro del propio proceso de FACE, con una voz incrustada en el binario. El tramo telefónico lo lleva un operador, como en cualquier llamada, y el aviso de grabación y el saludo se leen con la voz de ese operador antes de que esté abierto el canal hacia sus máquinas.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabria-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabría Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -92,6 +103,39 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga una base y una semana de datos de seguimiento de vehículos.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Preguntas De Un Jefe De Flota",
+  "description": "Lo que se pregunta antes de hablar de un contrato.",
+  "questions": [
+    {
+      "question": "¿Qué tiene que hacer el conductor?",
+      "answer": "Hacer una llamada de teléfono corriente y preguntar en voz alta. Dónde está la próxima parada, qué puerta, qué pidió el cliente. La respuesta vuelve en voz alta, así que no hay pantalla que leer ni motivo para parar."
+    },
+    {
+      "question": "¿Quién lleva el audio y quién ve el texto?",
+      "answer": "El tramo entre la cabina y el edificio lo lleva un operador de telefonía, igual que cualquier otra llamada que hagan sus conductores, y transporta ese audio porque no puede ser de otro modo. El texto es otra cosa: la transcripción y el razonamiento que produce la respuesta ocurren en sus máquinas, en el servidor de modelos que ya ejecuta, y la respuesta hablada se codifica también allí."
+    },
+    {
+      "question": "¿Qué pasa cuando un conductor dice algo urgente?",
+      "answer": "Se vigilan seis palabras, en el teléfono y en los mensajes entrantes de WhatsApp o SMS por igual: <em>urgent</em>, <em>asap</em>, <em>emergency</em>, <em>broken</em>, <em>failing</em> y <em>late</em>. Una coincidencia cambia el tono con el que responde el agente y envía la frase del propio interlocutor al número de responsable que usted configuró. En el lado de texto, un mensaje que coincidió y no llegó a nadie se escribe en el registro diciéndolo, en vez de pasar por atendido."
+    },
+    {
+      "question": "¿Qué deja la llamada?",
+      "answer": "La conversación misma, escrita según ocurre: cada turno, quién lo dijo y la llamada a la que pertenece. La hora en la puerta queda registrada en la puerta y no reconstruida a las seis. Alguien con nombre en la mesa la lee y hace el cambio, que es lo que mantiene una frase dicha y una entrega modificada como dos hechos separados."
+    },
+    {
+      "question": "¿Qué voz oye primero el conductor?",
+      "answer": "La del operador de telefonía. El aviso de grabación y el saludo que abren la llamada se leen de las instrucciones de establecimiento, antes de que esté abierto el canal hacia su edificio. Toda respuesta conversacional posterior se pronuncia con una voz incrustada en el binario de FACE, en el mismo proceso que el resto."
+    },
+    {
+      "question": "¿Qué deberíamos traer a una primera conversación?",
+      "answer": "Una delegación y una semana de datos de seguimiento de vehículos. Con ellos van dos cifras suyas: los minutos entre que pasa un problema y la oficina se entera, muestreados sobre un mes de rutas con retraso, y cuánto del tiempo de espera en puertas factura hoy."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

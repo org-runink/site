@@ -83,6 +83,17 @@ author: "Runink"
                 Lo que llega a una persona es una lista corta y ordenada de acciones propuestas con los registros adjuntos, no un diagrama que admirar. Una persona con nombre aprueba, edita o rechaza cada una, y esa firma se guarda. Aprobar es lo que lo manda, y un elemento decidido sale de la cola en vez de volver a dar la vuelta la próxima vez que alguien abre el tablero. Donde un paso detrás de la aprobación todavía no tiene implementación, la respuesta nombra ese paso como no ejecutado en vez de dar la acción por completa, así que el tablero muestra qué se decidió y, por separado, qué se llevó a cabo de verdad. Todo corre en máquinas suyas.
             </p>
         </div>
+        <div>
+            <h2 id="quien-se-encarga-de-esto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quién Se Encarga De Esto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Tres mesas, y lo que cada una tiene hoy encima.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">El director de cadena de suministro.</strong> Hoy la fotografía se monta para la revisión mensual, o cuando algo ha ido lo bastante mal como para merecer una mañana. Lo que cambia es que el mismo conjunto de hechos está detrás de la pregunta y detrás de la respuesta, así que una decisión se discute desde un solo sitio y no desde tres exportaciones.</li>
+                <li><strong class="text-stone-200">El jefe de operaciones.</strong> Hoy una pregunta corriente son cuatro accesos, cuatro maneras de nombrar el mismo centro y cuatro ideas de qué es una semana. Lo que cambia es que los registros se colocan por lo que tratan, así que el mismo tipo de hecho aterriza en el mismo sitio venga de un ERP, de un sistema de almacén, de un sistema de transporte o de una hoja de cálculo que alguien envía los viernes.</li>
+                <li><strong class="text-stone-200">El analista del que todos dependen.</strong> Hoy la correspondencia entre un código de centro en un sistema y el nombre de una delegación en otro no está escrita en ninguna parte. Se recuerda, y mientras esa persona está de vacaciones la pregunta no se puede responder. Lo que cambia es que el mapa se deriva de la estructura de sus propios ficheros mediante reglas fijas, así que es algo que cualquiera puede volver a derivar y comprobar.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -97,6 +108,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traiga un mes de extracciones de los sistemas que de verdad querría ver unidos, en el formato en el que salgan.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Preguntas De Un Equipo De Operaciones",
+  "description": "Lo que se pregunta antes de hablar de un contrato.",
+  "questions": [
+    {
+      "question": "¿Cómo se elabora el mapa?",
+      "answer": "A partir de la estructura de sus propios ficheros, mediante reglas fijas. No se consulta ningún modelo, no sale ninguna búsqueda y nada cruza la red en ese paso, así que los mismos ficheros producen el mismo mapa siempre. Después se usa un modelo para añadir comentario, y lo que añade es claramente el comentario y no la estructura."
+    },
+    {
+      "question": "¿Qué pasa con las tablas que no encajan en ningún sitio?",
+      "answer": "Se colocan por lo que es la fuente. Un extracto de almacén, de patio, de transporte o de gestión de pedidos es logística. Un flujo de sensores o etiquetas es telemetría. Un sistema de siniestros es finanzas. La regla existe para que la mitad incómoda de un parque de sistemas quede nombrada, en vez de barrida a un cajón llamado otros y no mencionada nunca más."
+    },
+    {
+      "question": "¿Qué dice de un área que no ha podido evaluar?",
+      "answer": "Que no fue evaluada, y por qué, con esas palabras. No hemos mirado y hemos mirado y está bien son dos frases distintas, y un color de estado en un cuadro de mando no sabe distinguirlas. Confundir una con otra es el fallo que esto está escrito para evitar."
+    },
+    {
+      "question": "¿Podemos preguntarle cosas con nuestras propias palabras?",
+      "answer": "Sí, con el vocabulario que ya utiliza, acotado a las áreas que esté mirando, y con el mapa y las reglas reconocidas detrás de la respuesta. Recibe el razonamiento además de la respuesta. Todo se ejecuta en máquinas suyas."
+    },
+    {
+      "question": "¿Qué le llega a una persona al final?",
+      "answer": "Una lista corta y ordenada de acciones propuestas con los registros adjuntos, no un diagrama para admirar. Una persona concreta aprueba, edita o rechaza cada una y la firma se guarda. Un elemento decidido sale de la cola en vez de volver la próxima vez que alguien abre el tablero, y donde un paso posterior a una aprobación aún no tiene implementación la respuesta nombra ese paso en vez de dar la acción por completa."
+    },
+    {
+      "question": "¿Qué deberíamos traer a una primera conversación?",
+      "answer": "Un mes de extracciones de los sistemas que de verdad querría ver unidos, en el formato en que salgan. Traiga una cosa más: una pregunta corriente entre sistemas que le hicieran el mes pasado, y un recuento honesto de cuántas personas del edificio habrían podido responderla."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

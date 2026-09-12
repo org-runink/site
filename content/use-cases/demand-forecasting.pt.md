@@ -74,6 +74,17 @@ author: "Runink"
                 O que chega a uma pessoa é uma coisa só: este item, a virada, o método por trás dela, os períodos sobre os quais foi testada, e uma mudança redigida no plano. Uma pessoa com nome aprova, edita ou recusa, e essa decisão fica anotada. Aprovar é o que envia — e onde um passo por trás disso ainda não tem nada implementado, sendo uma escrita no seu sistema de planejamento o exemplo honesto, a resposta nomeia esse passo como não executado em vez de relatar a mudança como feita. A decisão e a execução são anotadas como dois fatos diferentes, porque são. Roda em máquinas suas, e o histórico nunca sai delas.
             </p>
         </div>
+        <div>
+            <h2 id="quem-cuida-disso" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quem Cuida Disso</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três mesas, e o que cada uma tem na mão hoje.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O planejador de demanda.</strong> Hoje ele exporta o histórico de vendas, aplica as premissas do ciclo anterior, discute as exceções e carrega o resultado de volta. É trabalho cuidadoso, e descreve um mês que já acabou. O que muda é que cada série é desmontada antes &mdash; a tendência, o desenho sazonal que se repete e o resíduo onde uma virada aparece &mdash; e a projeção chega com o nome do método que a produziu.</li>
+                <li><strong class="text-stone-200">O responsável pelo S&amp;OP</strong>, a reunião em que o plano é fechado. Hoje essa reunião discute exceções sem nada em cima da mesa que diga até onde a previsão pode ser levada a sério. O que muda é que a conta é mostrada: a estatística do teste ao lado do limiar com que foi comparada, se a série precisou ser diferenciada, e sobre quantos períodos o método vencedor foi pontuado.</li>
+                <li><strong class="text-stone-200">O planejador de suprimentos.</strong> Hoje isso chega até ele como a emergência de outra pessoa, semanas depois de a série virar. O que muda é que chega um item só a uma pessoa: este item, a virada, o método por trás, os períodos sobre os quais foi testado, e uma mudança de plano redigida.</li>
+            </ul>
+        </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
@@ -88,6 +99,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traga um ano de histórico semanal de uma família de produtos, e o seu erro de previsão atual por item.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Perguntas De Um Planejador De Demanda",
+  "description": "O que se pergunta antes de alguém falar em contrato.",
+  "questions": [
+    {
+      "question": "Como ele escolhe um método de previsão?",
+      "answer": "Por disputa, sobre o seu próprio histórico. Uma decomposição sazonal e um modelo autorregressivo clássico produzem cada um uma previsão, e os dois são pontuados voltando o relógio e pedindo que prevejam períodos que o seu histórico já contém. O que melhor previu aqueles períodos é o que você recebe, e ele chega etiquetado com qual foi. Quando nenhum se sustenta, usa-se um método de reserva simples e a resposta diz que é de reserva."
+    },
+    {
+      "question": "O que acontece com um item que ele não consegue prever?",
+      "answer": "Ele volta dizendo que não há períodos suficientes para modelá-lo. Essa é uma resposta mais útil do que uma reta traçada sobre quatro pontos, e entrega a você a lista de itens que são conduzidos por julgamento e não por previsão &mdash; e essa lista vale a pena escrever antes de qualquer outra coisa mudar."
+    },
+    {
+      "question": "O nosso histórico de vendas sai do prédio?",
+      "answer": "Roda em máquinas suas, e o histórico nunca sai delas. A decomposição, o teste de estabilidade, o ajuste dos modelos e a pontuação acontecem todos ali."
+    },
+    {
+      "question": "Quem muda o plano?",
+      "answer": "Uma pessoa nomeada. O achado chega como uma mudança redigida para alguém aprovar, editar ou recusar, e essa decisão fica no registro. Aprovar é o que envia, e onde uma etapa por trás ainda não tem nada implementado &mdash; uma escrita no seu sistema de planejamento é o exemplo honesto &mdash; a resposta nomeia aquela etapa como não executada. A decisão e a execução ficam registradas como dois fatos diferentes, porque são."
+    },
+    {
+      "question": "Por que o resíduo é reportado em vez de descartado?",
+      "answer": "Porque uma virada aparece primeiro no resíduo. Uma série é desmontada em três pedaços: a tendência por baixo dela, o desenho sazonal que se repete, e o resíduo, que é o que a série fez e nenhum dos outros dois explica. Um pico que chega adiantado, uma promoção que se sustentou depois de a promoção acabar, uma região que desceu um degrau em silêncio e ficou ali: nenhuma dessas coisas cruza um limiar, e todas estão nesse terceiro pedaço."
+    },
+    {
+      "question": "O que devemos levar para uma primeira conversa?",
+      "answer": "Um ano de histórico semanal de uma família de produtos, e o seu erro de previsão atual por item. Um ano inteiro e não uma temporada, porque os itens sazonais e os itens estáveis falham de jeitos diferentes e uma janela curta esconde um dos dois."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">

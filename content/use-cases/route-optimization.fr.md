@@ -59,10 +59,10 @@ author: "Runink"
                 Demander un itinéraire est une petite requête : où il commence, où il finit, et les contraintes qui comptent sur ce segment. Cela part vers le fournisseur d'itinéraire et revient sous la forme d'une distance routière, d'un temps de parcours et du tracé lui-même, de sorte que la réponse peut être dessinée sur une carte au lieu d'être décrite en une phrase.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Comme la requête est petite, le second calcul coûte aussi peu que le premier. C'est tout l'enjeu. La question cesse d'être &laquo;&nbsp;est-ce que cela vaut la peine de replanifier la journée&nbsp;&raquo; et devient &laquo;&nbsp;à quoi ressemble l'itinéraire maintenant&nbsp;&raquo;, une question qu'on peut se permettre de reposer après le déjeuner.
+                Comme la requête est petite, la reposer une seconde fois coûte à peu près ce qu'a coûté la première. La question cesse d'être « vaut-il la peine de replanifier la journée » pour devenir « de quoi a l'air l'itinéraire maintenant » : une question que vous pouvez lui poser aussi souvent que la journée change.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Ce qui arrive sur le tableau est une fiche, pas un onglet de carte : ce segment, son départ et son arrivée, la distance et la durée qui ont réellement été renvoyées. Elle attend dans une file de choses à décider, à côté de tout ce que la journée a fait remonter, et une fois tranchée elle quitte cette file au lieu de réapparaître la prochaine fois que quelqu'un regarde.
+                Ce qui revient est le segment sur lequel vous avez interrogé : son départ et son arrivée, la distance et la durée que le fournisseur a réellement renvoyées, et le tracé que suit l'itinéraire. C'est la réponse à une question que vous avez posée, et c'est pourquoi elle arrive quand vous demandez plutôt que d'apparaître d'elle-même.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Deux refus sont intégrés, et ce sont eux qui donnent une raison de faire confiance au reste. Aucune économie n'est imprimée sur la fiche, parce que le fournisseur d'itinéraire n'en renvoie aucune : des estimations maison au doigt mouillé existent ailleurs dans le produit et ne sont délibérément pas recopiées sur un itinéraire mesuré. Et s'il n'y a pas d'identifiant d'itinéraire sur cette connexion, ou si le fournisseur ne renvoie aucun itinéraire, la réponse est que c'est indisponible. Pas une fiche aux champs vides. Un champ vide à l'écran se lit comme une mesure, et c'est une défaillance plus grave qu'une erreur honnête.
@@ -76,6 +76,17 @@ author: "Runink"
             <p class="text-lg text-stone-400 font-medium">
                 C'est la validation qui l'envoie, et le motif reste au dossier pour celui qui demandera dans trois mois pourquoi un camion est passé par là. Une honnêteté de plus à ce sujet, du genre sur lequel cette page est bâtie : là où une étape derrière la validation n'a rien d'implémenté derrière elle &mdash; l'écriture dans votre système de transport en est l'exemple réel &mdash;, la réponse nomme cette étape comme non exécutée au lieu de renvoyer un succès qui couvrirait l'action entière. Validé et fait sont ici deux mots différents, et c'est le logiciel qui vous dit lequel des deux il a réussi.
             </p>
+        </div>
+        <div>
+            <h2 id="qui-s-en-occupe" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qui S'En Occupe</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois bureaux, et ce que chacun a sur les bras aujourd'hui.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le planificateur transport.</strong> Aujourd'hui le plan est bâti la veille au soir ou à la première heure, ce qui en fait la décision la plus soignée de la journée et celle qui est prise avec le moins d'informations. Ce qui change, c'est qu'un seul segment peut être interrogé pour lui-même &mdash; un départ, une arrivée, les contraintes qui comptent dessus &mdash; et que la réponse est une distance routière mesurée et un temps de parcours, venus du fournisseur d'itinéraire que vous avez raccordé.</li>
+                <li><strong class="text-stone-200">Le bureau de répartition.</strong> Aujourd'hui la journée se rafistole : échanger deux livraisons, en repousser une à demain, appeler un chauffeur. Sensé, local, et personne ne peut dire ce que le rafistolage a coûté. Ce qui change, c'est qu'un segment revient sous forme d'une distance et d'une durée réellement renvoyées, si bien que deux personnes au bureau discutent des deux mêmes nombres.</li>
+                <li><strong class="text-stone-200">Directeur des opérations.</strong> Aujourd'hui la dérive sort du bâtiment en heures supplémentaires, en second passage, en créneau manqué et en carburant, chaque chose tombant dans un budget différent et aucune n'étant étiquetée avec sa raison. Ce qui change, c'est qu'aucun montant n'est imprimé à côté d'un itinéraire, parce que le fournisseur n'en renvoie aucun &mdash; ainsi un chiffre mesuré et un chiffre supposé ne s'assoient jamais sur la même ligne en prétendant être de même nature.</li>
+            </ul>
         </div>
         <div class="bg-sheet p-8 rounded-2xl border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
@@ -91,6 +102,39 @@ author: "Runink"
              <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez un mois de données prévu-contre-réalisé par segment, pour un seul dépôt.</p>
         </div>
     </div>
+
+{{< faq >}}
+{
+  "title": "Questions D'un Bureau D'exploitation",
+  "description": "Ce que l'on demande avant de parler d'un contrat.",
+  "questions": [
+    {
+      "question": "Que lui faut-il pour renvoyer un itinéraire ?",
+      "answer": "Un départ, une arrivée et les contraintes que vous nommez sur ce segment. Cela part vers le fournisseur d'itinéraire que vous avez raccordé, et revient sous forme d'une distance routière mesurée, d'un temps de parcours et du tracé lui-même, de sorte que la réponse peut être dessinée au lieu d'être décrite en une phrase."
+    },
+    {
+      "question": "Pourquoi n'y a-t-il ni coût ni économie à côté de l'itinéraire ?",
+      "answer": "Parce que le fournisseur d'itinéraire renvoie une distance et une durée, et aucun coût. Un chiffre que personne n'a mesuré, posé à côté de deux qui l'ont été, c'est ainsi qu'une estimation vous est ensuite citée comme un fait. Des estimations au jugé existent ailleurs dans le produit et ne sont délibérément pas recopiées sur un itinéraire mesuré."
+    },
+    {
+      "question": "Que se passe-t-il quand l'itinéraire ne peut pas être calculé ?",
+      "answer": "La réponse est qu'il est indisponible, en ces termes. Une connexion sans identifiant de calcul d'itinéraire, ou un fournisseur qui ne renvoie rien, revient comme indisponible et non comme une réponse aux champs vides. Un champ vide sur un écran se lit comme une mesure, et c'est la pire des deux défaillances."
+    },
+    {
+      "question": "Où vit l'identifiant de calcul d'itinéraire ?",
+      "answer": "Sur la connexion qui a été configurée pour cela, pas dans une variable d'environnement figée dans un serveur. C'est quelque chose que vous mettez en place, que vous pouvez voir et que vous pouvez révoquer connexion par connexion, ce qui le rend auditable."
+    },
+    {
+      "question": "Qui valide un changement dans la journée ?",
+      "answer": "Une personne désignée au bureau. Un changement est proposé, jamais imposé : il est approuvé, modifié ou refusé, et refuser est enregistré comme une décision et non comme un silence. C'est l'approbation qui envoie, et la raison reste au dossier pour qui demandera dans trois mois pourquoi un camion est passé par là."
+    },
+    {
+      "question": "Comment le chauffeur l'apprend-il ?",
+      "answer": "C'est un autre travail et une autre page. Un chauffeur peut demander et obtenir une réponse à voix haute, les mains sur le volant, comme décrit dans [parler aux chauffeurs sans écran](/fr/use-cases/voice-dispatch/). L'appel laisse une transcription et non une acceptation, et le changement reste au bureau."
+    }
+  ]
+}
+{{< /faq >}}
 
     <div class="text-center">
         <a href="{{< contacturl >}}" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
