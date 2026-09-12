@@ -28,9 +28,13 @@
 }
 
 @layer utilities {
-  .rounded-lg {
-    border-radius: 2rem;
-  }
+  /* `.rounded-lg` was redefined here to 2rem. It is a Tailwind utility, so the
+     override was global: every `rounded-lg` on the site — 439 of 718 rendered
+     pages — computed to 32px, nearly three times DESIGN.md §6's 12px ceiling,
+     and it took the `@apply rounded-lg` component rules below with it. Deleted
+     rather than re-valued: the utility's own 0.5rem is `--rk-r-3`, the 8px card
+     radius the system already specifies, so there is nothing left to say here.
+     A surface that wants a different corner names a radius token. */
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   .hide-scrollbar::-webkit-scrollbar {

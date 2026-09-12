@@ -22,7 +22,13 @@
 {{ $markSvg := `<svg viewBox="0 0 2000 2397" fill="currentColor" role="img" aria-label="Runink"><use href="#rk-mark"/></svg>` }}
 {{ $markSm := `<svg viewBox="290 0 1710 1360" fill="currentColor" role="img" aria-label="Runink"><use href="#rk-mark-sm"/></svg>` }}
 
-<header class="sp-mast">
+{{/* The three demo links in "Actions and links" below are href="#top" — they
+     have to point somewhere so the button and link styles can be seen in their
+     real resting, hover and focus states, and "#" alone is not a target. This
+     is the element they name: the masthead, the top of the specimen. Without
+     the id they returned 200 and scrolled nowhere, which is the exact failure
+     linkcheck.go --all exists to catch. */}}
+<header class="sp-mast" id="top">
   <div class="sp-wrap">
     <div class="sp-lockup">
       {{/* The small variant, because the lockup mark is 36px and the rule this

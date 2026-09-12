@@ -69,10 +69,11 @@
      Everything else is carried the way the system says to carry it: "Standing is
      fill. Emphasis is weight. Hierarchy is scale and rule."
 
-     RADIUS. Nothing in here is a box, so nothing in here has a corner — which is
-     as well, because assets/css/main.css redefines `.rounded-lg` to 2rem inside
-     `@layer utilities`, nearly three times DESIGN.md §6's 12px ceiling. Do not
-     reach for that class here.
+     RADIUS. Nothing in here is a box, so nothing in here has a corner. The
+     warning that stood here — that assets/css/main.css redefined `.rounded-lg`
+     to 2rem inside `@layer utilities`, nearly three times DESIGN.md §6's 12px
+     ceiling — is spent. That override is gone and the class carries its own
+     0.5rem again, which is `--rk-r-3`, the card radius.
 
      PRINT — the decision, stated, per CONTENT.md rule 6. THE NAVIGATION DOES NOT
      PRINT; ONE IDENTIFICATION LINE DOES.
