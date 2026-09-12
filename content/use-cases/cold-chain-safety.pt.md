@@ -1,6 +1,6 @@
 ---
 title: "Cadeia de Frio e Segurança no Pátio"
-description: "Um contêiner esquenta durante a noite e a leitura fica nos seus dados de sensores até alguém abrir a porta. O lado das câmeras do pátio está construído; o caminho do sensor até o software não está, e esta página diz isso."
+description: "Um contêiner esquenta durante a noite e ninguém abre a porta até de manhã. O que a câmera do pátio já vê, lido contra o registro de entrega e a papelada que viaja com a carga."
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"

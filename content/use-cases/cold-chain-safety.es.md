@@ -1,6 +1,6 @@
 ---
 title: "Cadena de Frío y Seguridad en el Patio"
-description: "Un contenedor se calienta durante la noche y la lectura se queda en sus datos de sensores hasta que alguien abre la puerta. El lado de las cámaras del patio está construido; el camino del sensor hasta el software no lo está, y esta página lo dice."
+description: "Un contenedor se calienta durante la noche y nadie abre la puerta hasta la mañana. Lo que la cámara del patio ya ve, leído contra el registro de entrega y el papeleo que viaja con la mercancía."
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"

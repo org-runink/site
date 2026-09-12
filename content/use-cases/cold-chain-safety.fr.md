@@ -1,6 +1,6 @@
 ---
 title: "Chaîne du Froid et Sécurité du Parc"
-description: "Un conteneur se réchauffe pendant la nuit et le relevé reste dans vos données de capteurs jusqu'à ce que quelqu'un ouvre la porte. Le versant caméras du parc est construit ; le chemin du capteur jusqu'au logiciel ne l'est pas, et la page le dit."
+description: "Un conteneur se réchauffe pendant la nuit et personne n'ouvre la porte avant le matin. Ce que la caméra du parc voit déjà, lu au regard du bon de transfert et des papiers qui accompagnent l'envoi."
 layout: "use_case"
 product: "Runink FACE"
 scenario: "reactive logistics"
