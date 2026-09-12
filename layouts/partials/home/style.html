@@ -1097,13 +1097,31 @@
     min-width: 0;
   }
 
+  /* The category mark, which is the ONE place colour is permitted on this page
+     besides the signal.
+
+     DESIGN.md §2 gives colour exactly two jobs, and the second is category —
+     "which industry or product this is", with five inks tuned to clear 4.5:1 on
+     both grounds. On this page that job was being done by an 8px square you have
+     to look for. The one sanctioned use of colour on the homepage was the least
+     visible thing in the block.
+
+     It is a bar now rather than a dot: 3px wide, the full height of the row's
+     first line, set in the gutter. Same ink, same token, same rule — it just
+     occupies enough of the row to be seen from a scroll, which is what a
+     category mark is for. §2's own condition still holds and is what makes this
+     safe: "a category colour is never legible on its own; the industry is always
+     named in text beside it." The name is right there.
+
+     On paper it goes to the strong rule with everything else, because five
+     category hues print as five indistinguishable greys. */
   .hp-row__tick {
     flex: none;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 1px;
+    width: 3px;
+    height: 1.15em;
+    border-radius: 1.5px;
     background-color: var(--accent-edge);
-    transform: translateY(-0.15em);
+    transform: translateY(0.08em);
   }
 
   .hp-row__cost {
