@@ -38,6 +38,7 @@ package main
 
 import (
 	"fmt"
+	"html"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -255,10 +256,20 @@ func chrome(html string) string {
 	return b.String()
 }
 
-func hrefs(html string) []string {
+// hrefs pulls every href out of a region, decoded the way a browser decodes it.
+//
+// THE UNESCAPE IS LOAD-BEARING. This reads the HTML with a regex, so what comes
+// back is the raw attribute text — entities and all. Hugo writes a "+" in a URL
+// attribute as "&#43;", and that entity contains a "#", so internal() split the
+// link there and reported a fragment of "43;Chain+Logistics#contact-form" on a
+// link that is perfectly good. Worse than the noise: the same bug hides a real
+// dead fragment behind a bogus one, in the checker whose entire job is to catch
+// dead fragments. A browser decodes the attribute before parsing the URL, so
+// this does too.
+func hrefs(htmlText string) []string {
 	var out []string
-	for _, m := range hrefRe.FindAllStringSubmatch(html, -1) {
-		out = append(out, unquote(m[1]))
+	for _, m := range hrefRe.FindAllStringSubmatch(htmlText, -1) {
+		out = append(out, html.UnescapeString(unquote(m[1])))
 	}
 	return out
 }

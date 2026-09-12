@@ -63,7 +63,7 @@
                         {{ end }}
 
                         {{ with $headerConfig.buttons.getStarted }}
-                        <a href="{{ .url | default " #" }}"
+                        <a href="{{ partial "contact-url.html" (dict "url" (.url | default "#") "page" $) }}"
                             class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5{{ end }}">
                             {{ .text | default "Get Started" }}
                         </a>
@@ -161,7 +161,7 @@
                     {{ end }}
 
                     {{ with $headerConfig.buttons.getStarted }}
-                    <a href="{{ .url | default " #" }}"
+                    <a href="{{ partial "contact-url.html" (dict "url" (.url | default "#") "page" $) }}"
                         class="{{ with .mobileClass }}{{ . }}{{ else }}block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]{{ end }}">
                         {{ .text | default "Get Started" }}
                     </a>
