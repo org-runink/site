@@ -1,0 +1,55 @@
+{{/*
+  Every link written in Markdown.
+
+  WHY THIS FILE EXISTS AT ALL, GIVEN THE COST. Overriding this hook takes over
+  link rendering on all 994 pages, so it earns its place by doing exactly one
+  thing and reproducing Hugo's default for everything else.
+
+  The one thing: 31 links written by hand in article and page copy point at
+  /#contact or /#contact-form — "Contact the Runink team", "Book a consultation",
+  "reach out to sales". They are the highest-intent click on a page, because the
+  reader got to paragraph fifteen before making it, and they were the last links
+  still throwing away the page they were made on. partials/contact-url.html
+  attaches it, the same way the header and the CTA band now do. A link pointing
+  anywhere else comes back from that partial unchanged.
+
+  A RENDER HOOK REACHES MARKDOWN ONLY. Raw <a href="/#contact"> written inside a
+  content file is passed through by Goldmark untouched and is not affected here —
+  13 of those remain, mostly the large button at the foot of the use-case pages.
+  They want converting to a partial rather than patching, which is a separate job.
+
+  THE RESOLUTION STEP IS NOT DECORATION, AND LEAVING IT OUT BREAKS LINKS. Hugo's
+  built-in hook resolves a destination against the site's pages and emits the
+  page's RelPermalink, so `[…](/privacy)` written without a trailing slash ships
+  as `/privacy/`. A hook that just echoes .Destination silently drops that: the
+  first version of this file turned `/privacy/` back into `/privacy` on the Luna
+  privacy page, which costs a redirect at best. GetPage below restores it, and the
+  query and fragment are re-attached afterwards because RelPermalink carries
+  neither.
+
+  AND RESOLUTION ONLY APPLIES TO THIS SITE'S OWN PATHS. urls.Parse("https://cscmp.org/")
+  reports a Path of "/", and GetPage "/" is the home page — so the second version
+  of this file rewrote every external citation link in the corpus, cscmp.org,
+  ascm.org, gdpr-info.eu and the rest, to point at the Runink homepage, and did
+  the same to both mailto: addresses. The scheme/host test is what keeps
+  resolution to destinations that are actually ours.
+
+  Verified by diffing the whole built site against a build without this file, as
+  a set of hrefs per page rather than as lines: the only hrefs that may differ
+  are the contact ones. Anything else in that diff is a regression in this file,
+  not an improvement. Both bugs above were found that way and neither would have
+  failed a check.
+*/}}
+{{- $u := urls.Parse .Destination -}}
+{{- $href := .Destination -}}
+{{- if and (not $u.Scheme) (not $u.Host) $u.Path -}}
+{{- with .Page -}}
+  {{- with .GetPage $u.Path -}}
+    {{- $href = .RelPermalink -}}
+    {{- with $u.RawQuery }}{{ $href = printf "%s?%s" $href . }}{{ end -}}
+    {{- with $u.Fragment }}{{ $href = printf "%s#%s" $href . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- $href = partial "contact-url.html" (dict "url" $href "page" .Page) -}}
+<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
