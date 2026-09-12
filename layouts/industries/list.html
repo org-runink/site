@@ -52,7 +52,7 @@
       <h2 id="next-heading">{{ .Params.next_heading | default "Not sure which one is you?" }}</h2>
       <p>{{ .Params.next_body }}</p>
       <div class="ind-actions">
-        <a class="ind-cta" href="{{ "/#contact" | relLangURL }}">
+        <a class="ind-cta" href="{{ partial "contact-url.html" (dict "url" "/#contact" "page" .) }}">
           {{ .Params.cta_text | default "Book a consultation" }}
         </a>
       </div>

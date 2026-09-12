@@ -1,0 +1,79 @@
+{{/*
+  One contact link, carrying the page the reader is leaving.
+
+  WHAT IT IS FOR. partials/next-step.html put ?about= on the four listing pages
+  and whitepapers/single.html put it on the four papers. That is 20 of the 436
+  pages that convert; the other 416 still send the reader to a bare /#contact-form
+  — a full page load, a scroll past the whole homepage, and the loss of the
+  context they arrived with. They then meet a box asking what problem they are
+  trying to solve, which they had already answered by choosing the page they were
+  reading. This partial closes that gap everywhere the site links to its own form.
+
+  VISIBLE, NOT HIDDEN — the whole argument is in next-step.html's header and is
+  not repeated here. The short version: the line under the submit button says
+  "We use what you send here to reply to you and for nothing else", so a hidden
+  field carrying the source page would contradict a promise printed on the page.
+  What travels is a phrase the reader can see in their own address bar, arrives
+  as editable text in a box they are looking at, and can delete.
+
+  WHERE THE VALUE COMES FROM, in order:
+    next_about  the paper's own curated label. First, so a paper's header button
+                and its in-page button name the same thing — whitepapers/single.html
+                uses this key, and two of the four papers would otherwise both
+                say "Runink CORE".
+    about       a curated label on any other page.
+    .Title      the page's own heading. next-step.html's docblock asks for "a
+                label somebody wrote rather than a URL scraped at runtime", and a
+                title is exactly that: it is what the reader was just reading, in
+                the language they were reading it in. Curating 416 of them by
+                hand would not make the box read better.
+
+  WHAT IT LEAVES ALONE:
+    - Any URL that is not this site's own contact anchor. The header's configured
+      URL is rewritten only when it actually points at the form.
+    - The homepage. The reader is already on the page the form sits on, so
+      "About: Runink" is noise in the box rather than context.
+    - A page with no title. Nothing is invented to fill the field.
+
+  IT RETURNS, RATHER THAN PRINTS, AND THAT IS NOT A STYLE CHOICE. A partial that
+  prints its result hands back rendered HTML, which Hugo then escapes a second
+  time in the href — the "+" urlquery writes for a space came out as
+  "&amp;#43;", decoding to the literal text "&#43;" and putting that in the
+  reader's message box instead of a space. safeURL inside the partial does not
+  survive that, because the marking is lost when the output is captured as a
+  string. `return` hands back the typed value itself, so safeURL holds. Same
+  double-encoding family as jsonify-without-safeJS in home/contact.html.
+  Marking it is safe: the only caller-supplied part is the label, and urlquery
+  has already escaped it.
+
+  Call with: (dict "url" $someUrl "page" $page) — returns a URL.
+*/}}
+{{- $url := .url -}}
+{{- $page := .page -}}
+{{- $frag := "" -}}
+{{- if in $url "#contact-form" -}}
+  {{- $frag = "contact-form" -}}
+{{- else if in $url "#contact" -}}
+  {{- $frag = "contact" -}}
+{{- end -}}
+{{- $about := "" -}}
+{{- if and $frag $page (not $page.IsHome) -}}
+  {{- $about = or $page.Params.next_about $page.Params.about $page.Title -}}
+{{- end -}}
+{{/* Rebuilt from "/" rather than appended to the configured URL: hugo.toml
+     already language-qualifies these (the French header points at
+     /fr/#contact-form), and relLangURL would prefix that a second time.
+     urlquery is not optional — an unescaped label with a space or an ampersand
+     in it truncates the value at the first one.
+
+     %20 rather than the "+" urlquery writes for a space. "+" only means a space
+     in form-encoded bodies; in a query string it is a literal plus that readers
+     see in their address bar, and Hugo escapes it into the href as "&#43;",
+     which put a bare "#" inside the URL and made linkcheck read the fragment as
+     "43;Chain...". A label with a real "+" in it is untouched: urlquery has
+     already written that as %2B before this runs. */}}
+{{- $out := $url -}}
+{{- if $about -}}
+  {{- $out = printf "/?about=%s#%s" (replace (urlquery $about) "+" "%20") $frag | relLangURL -}}
+{{- end -}}
+{{- return ($out | safeURL) -}}
