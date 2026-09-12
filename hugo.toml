@@ -1,5 +1,6 @@
 ignoreLogs = ['warning-goldmark-raw-html']
 baseURL = "https://runink.org/"
+enableRobotsTXT = true
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 title = "Runink"

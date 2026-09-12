@@ -13,7 +13,7 @@
 
     <!-- SEO Variables -->
     {{ $seoTitle := default (printf "%s | %s" .Title .Site.Title) .Params.seo_title }}
-    {{ if .IsHome }}{{ $seoTitle = default .Site.Title .Params.seo_title }}{{ end }}
+    {{ if .IsHome }}{{ $seoTitle = default .Title .Params.seo_title }}{{ end }}
     
     {{/* The description chain, and it was broken in two places at once.
 
