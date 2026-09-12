@@ -14,4 +14,8 @@
     "gradient_angle" (.Get "gradient-angle")
 }}
 
-{{ partial "components/cta" (dict "Site" .Site "Params" (dict "cta" $params "enable" true)) }}
+{{/* "Page" so the band's button can name the page the reader is leaving. The
+     partial is otherwise handed a synthetic dict with no page in it, and the
+     shortcode path was the one place a "Book your Consultation" still landed on
+     a bare /#contact-form. */}}
+{{ partial "components/cta" (dict "Site" .Site "Page" .Page "Params" (dict "cta" $params "enable" true)) }}
