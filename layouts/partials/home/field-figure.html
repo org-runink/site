@@ -30,7 +30,13 @@
 
   Call with: (dict "variant" "today") or (dict "variant" "read").
 */}}
+{{/* variant "both" renders BOTH states as two groups in one <svg>, so the hero
+     can wipe from one to the other. The field is identical mark for mark
+     between them — that is the whole argument and it is what makes a wipe
+     legible rather than decorative: nothing moves, nothing is added, the same
+     records simply go from unread to read as the sweep passes. */}}
 {{ $variant := .variant | default "today" }}
+{{ $layers := cond (eq $variant "both") (slice "today" "read") (slice $variant) }}
 {{/* 13 scattered indices into a 16 x 9 field — the sample. Deliberately not a
      stripe or a block: a sample is scattered, and a contiguous highlighted
      rectangle would read as a region of the business rather than a sample. */}}
@@ -39,7 +45,10 @@
 {{ $odd := slice 27 71 118 }}
 
 <svg class="hp-field__art" viewBox="0 0 440 234" role="img" preserveAspectRatio="xMidYMid meet"
-     aria-label="{{ if eq $variant "read" }}The same field of records, with every record filled in to show it has been read, and the three that differ marked and ringed so they can be dealt with by name.{{ else }}A field of records held in the systems you already run. Only a scattered handful are filled in to show they were read. Three records that differ are already sitting in the field, unread.{{ end }}">
+     aria-label="{{ if eq $variant "both" }}A field of records held in the systems you already run. Every one of them is read against the rule that governs it, and the three that differ are marked so they can be dealt with by name.{{ else if eq $variant "read" }}The same field of records, with every record filled in to show it has been read, and the three that differ marked and ringed so they can be dealt with by name.{{ else }}A field of records held in the systems you already run. Only a scattered handful are filled in to show they were read. Three records that differ are already sitting in the field, unread.{{ end }}">
+  {{ range $layer := $layers }}
+  {{ $variant := $layer }}
+  {{ if eq (len $layers) 2 }}<g class="hp-fld hp-fld--{{ $layer }}">{{ end }}
   {{ range $j := seq 0 8 }}
     {{ range $i := seq 0 15 }}
       {{ $n := add (mul $j 16) $i }}
@@ -83,5 +92,7 @@
             style="fill:none;stroke:var(--art-mute);stroke-width:1.6"/>
       {{ end }}
     {{ end }}
+  {{ end }}
+  {{ if eq (len $layers) 2 }}</g>{{ end }}
   {{ end }}
 </svg>

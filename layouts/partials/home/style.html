@@ -241,72 +241,143 @@
   .hp-hero { margin-bottom: 3rem; }
   @media (min-width: 768px) { .hp-hero { margin-bottom: 3.5rem; } }
 
-  /* Two columns only from 1024px. The stance is three short lines and the lede
-     is a headline that has to stay on two lines, so squeezing both into a
-     tablet width would cost the headline its break — which is where the whole
-     hero's rhythm lives. Below that it stacks and reads as the hero's last
-     word. */
+  /* Two columns from 1024px. The ratio moved from 1.05/0.72 to 1/0.92: the
+     right column used to hold three sentences and 320px of nothing, and now it
+     holds the field, which wants width more than the headline does. align-items
+     centre rather than start, because the figure is the thing the headline is
+     talking about and they should read as one object rather than two stacked
+     blocks that happen to share a row. */
   @media (min-width: 1024px) {
     .hp-hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.72fr);
-      gap: 3.5rem;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+      grid-template-rows: auto auto;
+      gap: 0 3.25rem;
+      align-items: center;
     }
+    /* Named placement rather than source order, because the phone needs the
+       figure between the headline and the argument and the desktop needs it
+       beside both. Head and body stack in the left column; the figure spans
+       them. */
+    .hp-hero__head { grid-column: 1; grid-row: 1; align-self: end; }
+    .hp-hero__body { grid-column: 1; grid-row: 2; align-self: start; }
+    .hp-hero__fig  { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    /* The headline holds two lines here and nowhere else is that negotiable:
+       "it is too late to argue" breaking after "to" strands one word on a line
+       of its own and the hero loses the beat it is built on. 1.12/0.88 is the
+       narrowest the left column goes before that happens at 1024px, which is
+       also why the h1 gets its own ceiling just below. */
     .hp-hero__lede { min-width: 0; }
   }
 
-  /* A ruled margin note, not a card. A box here would read as a callout that
-     the page is quoting from somewhere else; the rule says it is the page
-     speaking in its own voice, and it is the same hairline the ledger and the
-     section heads use. */
-  .hp-stance {
-    margin: 2.5rem 0 0;
-    padding: 1.1rem 0 0;
-    border-top: 2px solid var(--rk-rule-strong);
-    max-width: 44ch;
-  }
-  @media (min-width: 1024px) {
-    .hp-stance { margin-top: 0.5rem; padding-top: 1.25rem; max-width: none; }
-  }
-  .hp-stance__label {
-    margin: 0 0 0.85rem;
-    font-family: var(--font-display);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+  /* THE FIELD.
+
+     On a phone it sits between the deck and the buttons rather than under
+     everything, because the phone fold was the worst version of this page: all
+     type, nothing to look at, and a cookie banner over the bottom third. Order
+     is set on .hp-hero__lede's children at that width — see below. */
+  .hp-hero__fig { margin: 2.25rem 0 0; }
+  @media (min-width: 1024px) { .hp-hero__fig { margin: 0; } }
+
+  .hp-hero__fig-label {
+    margin: 0 0 0.9rem;
+    font-family: var(--rk-font-util, ui-monospace, monospace);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--accent-ink);
+    color: var(--ink-2);
   }
-  .hp-stance__line {
-    margin: 0 0 0.7rem;
+
+  /* A rule over the field, not a box around it. Same hairline the ledger and
+     the section heads use — §6's "a rule and a change of ground", and the
+     reason the figure reads as part of the page rather than as an image the
+     page has pasted in. */
+  .hp-hero__fig-frame {
+    border-top: 2px solid var(--rk-rule-strong);
+    padding-top: 1.35rem;
+  }
+  .hp-hero__fig-frame .hp-field__art { width: 100%; height: auto; display: block; }
+
+  /* THE SWEEP.
+
+     Both states of the field are in one <svg>: .hp-fld--today underneath,
+     .hp-fld--read clipped to nothing on top. The clip opens left to right, so
+     the same records go from unread to read as a read passes over them. Nothing
+     moves, nothing appears, nothing is added — which is the point. A figure
+     that animated by sliding marks in would be claiming something the software
+     does not do.
+
+     1.5s, and it runs once. The sweep is an argument, and an argument that
+     repeats is an ornament. */
+  /* THE RESTING STATE IS "READ", AND THE SWEEP IS THE EXCEPTION. That order
+     matters and the other way round is a bug. Writing the clip on the base rule
+     and opening it with `forwards` means the resting state is clip-to-nothing:
+     anything that does not run the animation — print, which runs none at all,
+     an engine without animatable clip-path, a failed stylesheet — shows the
+     field unread, under a label that says it was read. So the keyframe carries
+     the clip in its `from`, `both` holds it only while the animation exists,
+     and every path that skips the animation lands on the finished state.
+
+     Duration is well past --rk-dur-3 (320ms, "entrance") on purpose: this is not
+     a control settling, it is a read crossing 144 records, and at 320ms it is a
+     flicker rather than a sweep. --rk-ease is the token easing and it is an
+     ease-out with no overshoot — DESIGN.md §6's "land, not bounce". */
+  .hp-fld--read { animation: hp-read 1.5s var(--rk-ease, cubic-bezier(.2,0,0,1)) .35s both; }
+  @keyframes hp-read {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0 0 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hp-fld--read { animation: none; }
+  }
+
+  /* The stance, as the figure's caption. It was a margin note beside the
+     headline; it is three sentences about what the picture above it means, and
+     it reads as a caption because that is what it always was. */
+  .hp-hero__stance {
+    margin: 1.35rem 0 0;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--rule);
+  }
+  .hp-hero__stance-line {
+    margin: 0 0 0.55rem;
     font-family: var(--font-display);
-    font-size: 1.0625rem;
+    font-size: 0.9375rem;
     font-weight: 500;
     line-height: 1.45;
-    color: var(--ink);
+    color: var(--ink-2);
   }
-  .hp-stance__line:last-child { margin-bottom: 0; }
+  .hp-hero__stance-line:first-child { color: var(--ink); }
+  .hp-hero__stance-line:last-child { margin-bottom: 0; }
 
   @media print {
-    /* Beside the hero on paper too: the sheet is wider than it is tall in the
-       places this matters, and the stance is the one thing on the leave-behind
-       that is an opinion. */
+    /* Beside the hero on paper too, and the sweep never happens: the read state
+       is simply the state, which is what a sheet should carry. */
     .hp-hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.72fr);
-      gap: 18pt;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+      grid-template-rows: auto auto;
+      gap: 0 18pt;
       align-items: start;
     }
-    .hp-stance {
-      margin: 0;
-      padding-top: 6pt;
-      border-top-color: #000;
-      max-width: none;
-      break-inside: avoid;
-    }
-    .hp-stance__label { font-size: 7.5pt; margin-bottom: 5pt; color: #000; }
-    .hp-stance__line { font-size: 9pt; margin-bottom: 4pt; }
+    .hp-hero__head { grid-column: 1; grid-row: 1; }
+    .hp-hero__body { grid-column: 1; grid-row: 2; }
+    .hp-hero__fig  { grid-column: 2; grid-row: 1 / span 2; }
+    /* An explicit ceiling on paper. The screen figure is width:100% of a column
+       that can be most of a wide window; a sheet is 186mm of usable width and
+       the artwork would otherwise take a third of it in height. DESIGN.md's
+       trap also applies — break-inside: avoid on a block taller than a page
+       pushes the whole block to the next sheet and leaves this one blank — so
+       the cap is what makes the avoid below safe rather than harmful. */
+    .hp-hero__fig { margin: 0; break-inside: avoid; }
+    .hp-hero__fig-frame .hp-field__art { max-width: 78mm; }
+    .hp-hero__fig-label { font-size: 7.5pt; margin-bottom: 5pt; color: #000; }
+    .hp-hero__fig-frame { border-top-color: #000; padding-top: 7pt; }
+    .hp-fld--read { animation: none; }
+    .hp-hero__stance { margin-top: 7pt; padding-top: 6pt; border-top-color: #000; }
+    .hp-hero__stance-line { font-size: 9pt; margin-bottom: 4pt; color: #000; }
   }
 
   .hp-eyebrow {
@@ -335,6 +406,13 @@
     color: var(--ink);
     margin: 0 0 1.375rem;
     max-width: 24ch;
+  }
+  /* Between 1024 and 1320 the lede column is narrow enough that 5.6vw pushes
+     the second line to three. The viewport is wide but the COLUMN is not, and
+     vw does not know that. This is the one place the type scale is clamped to
+     the column rather than to the window. */
+  @media (min-width: 1024px) and (max-width: 1319px) {
+    .hp-h1 { font-size: clamp(2.125rem, 4.1vw, 3.25rem); }
   }
 
   .hp-h1__b {
@@ -877,11 +955,40 @@
   @media (min-width: 768px) {
     .hp-opex__head,
     .hp-opex__row {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr) minmax(0, 1.2fr);
-      gap: 1.75rem;
+      grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.9fr) minmax(0, 1.25fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
       align-items: start;
     }
   }
+
+  /* The industry, named, with its own category mark. Five different marks down
+     one table is what turns five separate problems into one ledger — and the
+     name beside the mark is the condition §2 puts on using category colour at
+     all. The tick is the same 3px bar the industries ledger uses, so the two
+     tables read as the same instrument. */
+  .hp-opex__ind {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  /* The bar sits on the ROW, not beside the label. A 3px tick against a 13px
+     word is technically the category mark and practically invisible: at that
+     size five different hues down a table read as one grey column, which is the
+     opposite of the point. Run down the whole row and it is the first thing the
+     eye gets — five domains, one ledger — while still being a mark, not a fill.
+     Same 3px weight and same token the industries ledger uses below. */
+  .hp-opex__row {
+    border-left: 3px solid var(--accent-edge);
+    padding-left: 1rem;
+  }
+  .hp-opex__head { padding-left: calc(1rem + 3px); }
+  .hp-opex__tick { display: none; }
   .hp-opex__head {
     display: none;
     padding: 0 0 0.6rem;
@@ -927,14 +1034,34 @@
   .hp-opex__where { color: var(--ink); }
 
   @media print {
-    .hp-opex__head { display: grid; border-bottom-color: #000; font-size: 7.5pt; padding-bottom: 4pt; }
-    .hp-opex { border-top: 0; }
+    /* The column heads were stacking on paper: the print block put `display:
+       grid` back but not `grid-template-columns`, and the three-column template
+       lives only inside the 768px query, which a sheet does not match. One
+       column, three labels, three lines — and the table under them in four.
+       Pre-existing; found by printing the sheet and looking at it. */
+    .hp-opex__head,
     .hp-opex__row {
-      padding: 6pt 0;
+      display: grid;
+      grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.9fr) minmax(0, 1.25fr) minmax(0, 1.1fr);
+      gap: 10pt;
+      align-items: start;
+    }
+    .hp-opex__head { border-bottom-color: #000; font-size: 7.5pt; padding-bottom: 4pt; }
+    .hp-opex__ind { font-size: 9pt; }
+    .hp-opex__tick { background-color: #000 !important; }
+    .hp-opex { border-top: 0; }
+    /* Four columns, not three, and the padding keeps its left inset — this rule
+       is later in the block than the shared one above, so whatever it omits it
+       overrides. Left at three, the "where yours is" column wrapped onto a
+       fourth grid row underneath the industry name and the table stopped being
+       a comparison on paper. */
+    .hp-opex__row {
+      padding: 6pt 0 6pt 10pt;
       border-bottom-color: #999;
+      border-left-color: #000;
       break-inside: avoid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr) minmax(0, 1.2fr);
-      gap: 12pt;
+      grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.9fr) minmax(0, 1.25fr) minmax(0, 1.1fr);
+      gap: 10pt;
     }
     .hp-opex__line { font-size: 9pt; }
     .hp-opex__driver, .hp-opex__where { font-size: 8pt; }
