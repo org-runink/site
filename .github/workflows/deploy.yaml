@@ -381,6 +381,19 @@ jobs:
           GOPROXY: "off"
         run: go run linkcheck.go docs
 
+      # The other direction, and it is a different property. linkcheck proves
+      # every link has a target; this proves every target has a link. A site
+      # passes one and fails the other completely: /company/ was written,
+      # translated, styled and shipped with nothing anywhere pointing at it,
+      # returning 200 the whole time with linkcheck green. Demonstrated by
+      # mutation rather than argued -- deleting every href to /pricing/ from the
+      # built site leaves all 16,560 internal links resolving and linkcheck
+      # reporting OK, and only this step notices the pricing page has come off
+      # the site. CONTENT.md rule 9: "A page with no inbound link is still
+      # published."
+      - name: Check every page is reachable from another page
+        run: node scripts/check-orphan-pages.mjs docs
+
       - name: Guard published output
         run: |
           set -euo pipefail

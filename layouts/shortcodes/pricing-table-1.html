@@ -1,4 +1,65 @@
 {{ $json := .Inner | transform.Unmarshal }}
+{{/*
+  TWO FIXES LIVE IN THIS FILE. The plans themselves are untouched — what they
+  are, what they cost and what tells them apart is set in the content files.
+
+  1. THE THREE COLUMNS NOW LINE UP.
+     Measured at 1440 before the fix: "WHAT SETS THE BILL" sat at y=1161 in
+     Lite and Dedicated and at y=1137 in Enterprise, and that 24px carried
+     down every row after it, so the one thing the layout exists for — reading
+     a row across three cards — did not work.
+
+     TWO SEPARATE CAUSES, both about a line box rather than about content.
+
+     a) The price. A numeric price is `text-6xl lg:text-7xl leading-none`, so
+        its line box is 72px at lg. "CUSTOM" is set smaller to fit, and
+        `leading-tight` was meant to hold the height — but `lg:text-5xl` is a
+        font-size utility that also sets `line-height: 1`, and it lands inside
+        the lg media query, after the unprefixed `leading-tight`. The tight
+        leading never applied at lg, the box came out at 48px, and the 24px
+        difference was the whole of the offset. The leading is now given at the
+        same breakpoint as the size, in absolute terms: 3.75rem then 4.5rem,
+        the exact line boxes of text-6xl/leading-none and text-7xl/leading-none.
+        Both prices now occupy the same height and the smaller word sits
+        optically centred in it.
+
+     b) The strategy rows. A one-line value and a two-line value differ by 16px,
+        so the last row of a card could push its checklist down relative to its
+        neighbours even once (a) was fixed. `min-h-[2rem]` is two lines of
+        text-xs — a floor, not a cap, so a longer string in another language
+        still wraps as far as it needs to.
+
+  2. ONE CARD IS MARKED, AND IT IS MARKED ONCE.
+     The signal hue was doing two contradictory jobs. It emphasised the middle
+     card's pill, heading, price, icon and tick marks, while the two cards
+     either side sat on `bg-sheet` — which, on the light ground this site has
+     used since the restyle, is the *brighter* panel. So the colour said "take
+     the middle one" and the brightness said "take an outer one".
+
+     DESIGN.md §2 settles it rather than taste: signal "is never used for
+     emphasis, never for decoration, never for a heading. An orange thing on a
+     Runink page is always something you can do." A licence name is not
+     something you can do; the button under it is. So every emphasis use of
+     signal is gone from this file and the marked card keeps exactly two
+     devices, both sanctioned: a change of ground (`bg-signal-wash` with a
+     signal edge — DESIGN.md §6, "a rule and a change of ground", the device
+     that survives being printed) and the one filled call to action.
+
+     That also removed two more `text-transparent bg-clip-text` constructs —
+     the heading and the price — which printed as nothing at all, exactly as
+     the page's H1 did. HANDOFF-restyle-decisions.md §A4; CONTENT.md rule 6.
+
+     `price_color` in the content JSON is now inert. It is left in place
+     because these files are also the record of what each plan is, and a key
+     that no longer paints anything is better than a silent edit to a plan.
+
+  NOT DONE HERE, DELIBERATELY: no card is given a word like "recommended" or
+  "most popular". Either would be a claim about how customers choose, and there
+  is nothing to support one. The cards already say who each licence is for in
+  words — "FOR TEAMS OF 1 TO 9 PEOPLE", "FOR 10 PEOPLE AND UP" — and the FAQ
+  below answers "which licence fits us" in a paragraph. That is the channel
+  that survives a monochrome printer.
+*/}}
 <section class="py-16 relative z-10">
     <style>
         .price-yearly,
@@ -21,29 +82,20 @@
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {{ range $json.plans }}
-            {{ $isOrangePill := eq .pill_color "orange" }}
-            {{ $isOrangePrice := eq .price_color "orange" }}
+            {{/* One switch, not three. `pill_color: "orange"` is the mark. */}}
+            {{ $isMarked := eq .pill_color "orange" }}
             {{ $isSolidButton := eq .button.style "solid" }}
 
             {{ $cardClasses := `border-stone-800 bg-sheet` }}
-            {{ if $isOrangePill }}{{ $cardClasses = `border-signal/30 bg-signal-wash` }}{{ end }}
+            {{ if $isMarked }}{{ $cardClasses = `border-signal/30 bg-signal-wash` }}{{ end }}
 
+            {{/* Text is text on every card: a name, a price and a tick are not
+                 things you can click, so none of them is signal. */}}
             {{ $pillClasses := `border-stone-800 text-stone-500` }}
-            {{ if $isOrangePill }}{{ $pillClasses = `border-signal/50 text-signal` }}{{ end }}
-
             {{ $headerClasses := `text-white` }}
-            {{ if $isOrangePill }}{{ $headerClasses = `text-transparent bg-clip-text bg-gradient-to-r from-signal
-            to-signal-fill` }}{{ end }}
-
             {{ $priceClasses := `text-white` }}
-            {{ if $isOrangePrice }}{{ $priceClasses = `text-transparent bg-clip-text bg-gradient-to-r from-signal
-            to-signal-fill` }}{{ end }}
-
             {{ $iconClasses := `text-stone-400` }}
-            {{ if $isOrangePill }}{{ $iconClasses = `text-signal` }}{{ end }}
-
             {{ $checkClasses := `text-stone-700` }}
-            {{ if $isOrangePill }}{{ $checkClasses = `text-signal` }}{{ end }}
 
             {{ $btnClasses := `bg-sunk text-stone-400 border border-stone-800 hover:border-stone-600
             hover:text-white` }}
@@ -52,8 +104,17 @@
 
             <div class="w-full">
                 <!-- Outer card container -->
+                {{/* `rk-plan` is a hook for one print rule and nothing else —
+                     see the @media print block in layouts/_default/pricing.html.
+                     `overflow-hidden` here is a screen concern (it keeps the
+                     card's fill inside a 2.5rem radius) and on paper it is a
+                     clip that eats a card at a page boundary: measured, a print
+                     of this page lost the whole Lite card and most of Dedicated,
+                     names and prices included, because both straddled a break.
+                     assets/css/main.css already carries exactly this fix for
+                     `.rk-faq`, with the same reasoning in its own comment. */}}
                 <div
-                    class="h-full flex flex-col rounded-[2.5rem] border shadow-2xl relative overflow-hidden transition-all duration-300 {{ $cardClasses }}">
+                    class="rk-plan h-full flex flex-col rounded-[2.5rem] border shadow-2xl relative overflow-hidden transition-all duration-300 {{ $cardClasses }}">
                     <div class="p-8 lg:p-12 flex flex-col flex-grow items-center text-center">
 
                         <!-- Pill -->
@@ -76,7 +137,8 @@
                         <!-- Price -->
                         {{ $isCustom := eq .price_monthly "CUSTOM" }}
                         {{ $priceSizeClass := `text-6xl lg:text-7xl leading-none` }}
-                        {{ if $isCustom }}{{ $priceSizeClass = `text-4xl lg:text-5xl leading-tight` }}{{ end
+                        {{ if $isCustom }}{{ $priceSizeClass = `text-4xl lg:text-5xl leading-[3.75rem]
+                        lg:leading-[4.5rem]` }}{{ end
                         }}
                         <div class="mb-4 w-full flex flex-wrap items-baseline justify-center">
                             <span
@@ -124,7 +186,8 @@
                                         class="text-[10px] font-black text-stone-500 tracking-[0.2em] mb-1.5 uppercase">
                                         {{ .label
                                         }}</div>
-                                    <div class="text-xs font-bold text-stone-300 italic tracking-normal">{{ .value }}
+                                    <div class="text-xs font-bold text-stone-300 italic tracking-normal min-h-[2rem]">{{
+                                        .value }}
                                     </div>
                                 </div>
                                 {{ end }}
