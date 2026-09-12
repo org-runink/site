@@ -472,14 +472,12 @@ enableGitInfo = true
     # no inbound link is still published." A page worth writing is worth
     # reaching.
     #
-    # ALL FOUR POINT AT /company/, INCLUDING THE THREE TRANSLATED NAVS. There is
-    # no content/company.<lang>.md, so /fr/company/, /es/company/ and /pt/company/
-    # do not exist: the first version of this entry pointed at them and produced
-    # 136 links to pages that are not in the build. That returns 200 and goes
-    # nowhere, which is the failure linkcheck exists for — and linkcheck is not
-    # in CI, so it would have shipped. Sending a translated reader to the English
-    # page is what the whitepaper cards already do; translating this page is the
-    # real fix and is not done.
+    # EACH LANGUAGE POINTS AT ITS OWN PAGE. These three pointed at /company/ for
+    # a while, because content/company.{es,fr,pt}.md did not exist and an entry
+    # aimed at a page that is not in the build returns 200 and goes nowhere —
+    # which linkcheck caught by hand before it shipped, and now catches in CI.
+    # Sending a translated reader to an English page was a stand-in, not a
+    # design: the pages exist, so the stand-in is gone.
     [[languages.en.menu.main]]
       name = "Company"
       url = "/company/"
@@ -598,17 +596,15 @@ enableGitInfo = true
     # no inbound link is still published." A page worth writing is worth
     # reaching.
     #
-    # ALL FOUR POINT AT /company/, INCLUDING THE THREE TRANSLATED NAVS. There is
-    # no content/company.<lang>.md, so /fr/company/, /es/company/ and /pt/company/
-    # do not exist: the first version of this entry pointed at them and produced
-    # 136 links to pages that are not in the build. That returns 200 and goes
-    # nowhere, which is the failure linkcheck exists for — and linkcheck is not
-    # in CI, so it would have shipped. Sending a translated reader to the English
-    # page is what the whitepaper cards already do; translating this page is the
-    # real fix and is not done.
+    # EACH LANGUAGE POINTS AT ITS OWN PAGE. These three pointed at /company/ for
+    # a while, because content/company.{es,fr,pt}.md did not exist and an entry
+    # aimed at a page that is not in the build returns 200 and goes nowhere —
+    # which linkcheck caught by hand before it shipped, and now catches in CI.
+    # Sending a translated reader to an English page was a stand-in, not a
+    # design: the pages exist, so the stand-in is gone.
     [[languages.fr.menu.main]]
       name = "Entreprise"
-      url = "/company/"
+      url = "/fr/company/"
       weight = 7
 
   [languages.es]
@@ -701,17 +697,15 @@ enableGitInfo = true
     # no inbound link is still published." A page worth writing is worth
     # reaching.
     #
-    # ALL FOUR POINT AT /company/, INCLUDING THE THREE TRANSLATED NAVS. There is
-    # no content/company.<lang>.md, so /fr/company/, /es/company/ and /pt/company/
-    # do not exist: the first version of this entry pointed at them and produced
-    # 136 links to pages that are not in the build. That returns 200 and goes
-    # nowhere, which is the failure linkcheck exists for — and linkcheck is not
-    # in CI, so it would have shipped. Sending a translated reader to the English
-    # page is what the whitepaper cards already do; translating this page is the
-    # real fix and is not done.
+    # EACH LANGUAGE POINTS AT ITS OWN PAGE. These three pointed at /company/ for
+    # a while, because content/company.{es,fr,pt}.md did not exist and an entry
+    # aimed at a page that is not in the build returns 200 and goes nowhere —
+    # which linkcheck caught by hand before it shipped, and now catches in CI.
+    # Sending a translated reader to an English page was a stand-in, not a
+    # design: the pages exist, so the stand-in is gone.
     [[languages.es.menu.main]]
       name = "Empresa"
-      url = "/company/"
+      url = "/es/company/"
       weight = 7
 
   [languages.pt]
@@ -804,17 +798,15 @@ enableGitInfo = true
     # no inbound link is still published." A page worth writing is worth
     # reaching.
     #
-    # ALL FOUR POINT AT /company/, INCLUDING THE THREE TRANSLATED NAVS. There is
-    # no content/company.<lang>.md, so /fr/company/, /es/company/ and /pt/company/
-    # do not exist: the first version of this entry pointed at them and produced
-    # 136 links to pages that are not in the build. That returns 200 and goes
-    # nowhere, which is the failure linkcheck exists for — and linkcheck is not
-    # in CI, so it would have shipped. Sending a translated reader to the English
-    # page is what the whitepaper cards already do; translating this page is the
-    # real fix and is not done.
+    # EACH LANGUAGE POINTS AT ITS OWN PAGE. These three pointed at /company/ for
+    # a while, because content/company.{es,fr,pt}.md did not exist and an entry
+    # aimed at a page that is not in the build returns 200 and goes nowhere —
+    # which linkcheck caught by hand before it shipped, and now catches in CI.
+    # Sending a translated reader to an English page was a stand-in, not a
+    # design: the pages exist, so the stand-in is gone.
     [[languages.pt.menu.main]]
       name = "Empresa"
-      url = "/company/"
+      url = "/pt/company/"
       weight = 7
 
 [mediaTypes."application/toon"]
