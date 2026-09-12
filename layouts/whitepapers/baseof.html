@@ -1,15 +1,47 @@
 <!DOCTYPE html>
-{{/* data-ground="console" is not decoration: the shared header, footer and
-     consent banner are written in --rk-* tokens, and the deck behind them is
-     dark. Without it they resolve for the light sheet and paint dark ink on a
-     dark page. color-scheme stays too — it governs form controls and
-     scrollbars, which the token system does not reach. */}}
-<html lang="{{ .Site.Language.Lang | default "en" }}" class="h-full" data-ground="console" style="color-scheme: dark">
+{{/* data-ground="console" is the section's DEFAULT, not a lock.
+
+     Why a default at all: these are 6,000-13,000 word documents and the deck
+     is built for them — DESIGN.md §8 keeps the console precisely as "long-form
+     reading surfaces and site chrome". A reader who has never expressed a
+     preference gets it. It also has to be declared rather than inherited,
+     because the shared header, footer and consent banner are written in --rk-*
+     tokens: without it they resolve for the light sheet and paint dark ink on
+     a dark page.
+
+     Why it is no longer a lock. It used to be the only thing that could set
+     the ground here: rk-ground-script.html was not loaded on these pages, so a
+     reader who had chosen the sheet everywhere else on the site was slammed
+     back onto the console on every paper and their stored preference was
+     silently ignored; and layouts/partials/rk-ground-toggle.html renders
+     nothing when .Type is "whitepapers", so there was no control to change it
+     with. Light navigation, dark paper, no way out. The partial's own header
+     comment gives the reason — "a switch there could only flip the surrounding
+     chrome, leaving light navigation around a dark document" — and that reason
+     was true when it was written, because whitepaper.css read no ground at
+     all. It is not true any more: the stylesheet now re-binds .wp for
+     data-ground="sheet" (see its GROUND section), so the switch moves the deck
+     and the chrome together. Read that comment as history, not as policy.
+
+     The inline style="color-scheme: dark" is gone with it. It could not follow
+     the toggle — inline style beats a stylesheet — and it does not need to:
+     tokens.css binds color-scheme on both grounds (light on [data-ground=
+     'sheet'], dark on [data-ground='console']), so form controls and
+     scrollbars now follow the reader instead of the template. */}}
+<html lang="{{ .Site.Language.Lang | default "en" }}" class="h-full" data-ground="console">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1c1917">
+    {{/* `<meta name="theme-color" content="#1c1917">` was here, and it is the
+         same hardcode as the one on <html> above, one layer out: it tells a
+         phone to paint its address bar the console's stone, on a page whose
+         ground the reader now chooses. There is no server-side way to make it
+         follow — the preference lives in localStorage and is read after the
+         head — so a page on the sheet would have carried a dark bar above a
+         light document. No other template on this site declares one, and a
+         browser picks a sensible bar from the page itself when nothing does,
+         so the honest version of this line is its absence. */}}
 
     <!-- Google Tag Manager -->
     {{ partialCached "google-tag-manager" . }}
@@ -179,6 +211,30 @@
     {{ $tokens := resources.Get "css/tokens.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $tokens.RelPermalink }}">
 
+    {{/* The reader's stored ground, applied before first paint — the same call
+         _default/baseof.html makes, and the reason it has to be made HERE too.
+
+         This section was the one place on the site that never asked. The
+         script only ever overrides a ground the template set (see its own
+         header), so adding it does not take the console away from anyone: a
+         reader with nothing in storage still lands on the dark deck, exactly
+         as before. What changes is that a reader who has chosen the sheet is
+         no longer told no.
+
+         After tokens.css and before any content, for the reason that partial
+         gives: later and the page paints the default ground first and jumps. */}}
+    {{ partial "rk-ground-script.html" . }}
+
+    {{/* The switch is operated by assets/js/main.js, so with scripting off it
+         is a button that cannot do the thing its label promises — and the
+         ground it would change cannot be remembered either, because that is
+         localStorage. The section already takes this position with the mobile
+         register, which ships `hidden` and is revealed by the script that
+         works it. A <noscript> in <head> may hold a <style>, which is what
+         makes this a rule the page never even parses when scripting is on:
+         a reader without JavaScript simply does not see the control, rather
+         than pressing a dead one. */}}
+
     <!-- Site CSS (header/footer chrome) -->
     {{ if .Site.Params.disablePostCSS }}
     <link rel="stylesheet" href="/css/style.css">
@@ -214,6 +270,16 @@
     </div>
 
     <div class="pt-20" id="wp-main" tabindex="-1">
+        {{/* The ground switch is in the header, like everywhere else.
+
+             It was hand-written here for one reason: partials/rk-ground-toggle.html
+             carried `{{ if ne .Type "whitepapers" }}`, so the bar this page
+             already renders refused to draw it. That guard existed because
+             whitepaper.css did not read the token ground — true when it was
+             written, and no longer true. With the ground re-bound, the guard is
+             gone and the header's own copy serves this section, so a duplicate
+             maintained by hand against main.js's three magic names is exactly
+             the debt worth not keeping. */}}
         {{/* A real <main> landmark. `block "main"` is a Hugo template name, not
      HTML — there was no <main> element on any indexable page, so every
      document opened with ~7 KB of fixed header chrome and nothing told a

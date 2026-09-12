@@ -115,6 +115,16 @@
   --display: 'Fira Cond Wp', 'Fira Sans Wp', ui-sans-serif, system-ui, sans-serif;
   --util: 'Fira Code Wp', ui-monospace, SFMono-Regular, Menlo, monospace;
 
+  /* A fenced code block is a dark inset ON the sheet — it reads its colours
+     from the deck pair today, which is only correct while the deck is dark.
+     Naming the pair separately is what lets the sheet ground move the deck
+     out from under the chrome without turning the code blocks inside the
+     document light-on-light. Declared as var(--deck)/var(--on-deck) rather
+     than as literals so the print block, which re-points those two to white
+     and black, still reaches the code blocks with no extra rule. */
+  --code-bg: var(--deck);
+  --code-ink: var(--on-deck);
+
   --measure: 34rem;
   --rail-w: 17.5rem;
 
@@ -124,6 +134,114 @@
   -webkit-font-smoothing: antialiased;
   font-variant-ligatures: none;
 }
+
+/* =========================================================================
+   GROUNDS — the same section, read on either one
+   =========================================================================
+
+   The block above is the CONSOLE, and it stays the section's default: these
+   are 6,000-13,000 word documents and the dark deck is built for them
+   (DESIGN.md §8 keeps the console for exactly this). What follows is the same
+   section on the SHEET, for the reader who has already told the site they want
+   the light ground.
+
+   WHY THIS FILE HAD TO CHANGE AT ALL. The switch in the header refuses to
+   render here, and its comment gives the reason: whitepaper.css "does not read
+   the token ground at all", so a switch could only have flipped the shared
+   chrome and left light navigation around a dark document. That was an
+   accurate description of this file. It stops being true here.
+
+   WHAT MOVES AND WHAT DOES NOT. Only the DECK moves. --paper stays #F5F1E8 on
+   both grounds, so the reading column — which is where the words are, and the
+   only part of the page a reader spends an hour inside — is byte-identical in
+   either ground, and every ink ratio measured against it further up this file
+   stays valid without being re-measured. On the sheet the deck simply becomes
+   the paper: the document stops being a lit rectangle floating on darkness and
+   becomes the page, which is what every other light page on this site is.
+
+   MEASURED ON THE NEW DECK (#F5F1E8), same pairs as the console's:
+     --on-deck-hi  #1c1917  15.51:1   hero and card headings
+     --on-deck     #44403c   9.11:1   hero deck, card body, foot
+     --on-deck-2   #57534e   6.77:1   eyebrows, register, labels (10-11px)
+     --runs-lift   #5F6F3E   4.86:1   hero subtitle, card subtitle, current
+     --link-deck   #b83f07   4.97:1   foot links, the closing ask
+     --drawn       #8a6636   4.62:1   the framing tone, if a mark returns
+   The lifted console values are not reused: they are LIFTS, chosen to clear AA
+   on a dark surface, and every one of them fails on paper (--runs-lift's own
+   #C8D9A8 measures 1.4:1 there). Each falls back to its ink-side twin, which
+   this file already carries and already measured on the sheet.
+
+   The index card is the one surface that is not the deck: it resting on
+   --deck-2 #FFFFFF (17.49 / 10.27 / 7.63 / 5.48 / 5.60 for the same five) and
+   deepening to #F8F4EB on hover (15.93 / 9.36 / 6.95 / 5.00 / 5.10). Both
+   clear AA for the 11px utility lettering they carry, which is the tightest
+   type on either surface.
+
+   SCREEN ONLY, and deliberately. Print re-points these same properties at the
+   foot of this file and must keep winning whatever the reader chose; scoping
+   the ground to @media screen means the printed page is bit-for-bit what it
+   was before this block existed, rather than depending on which selector is
+   more specific. Rule 6 of CONTENT.md is not something to leave to a
+   specificity contest.
+   ========================================================================= */
+
+@media screen {
+  [data-ground='sheet'] .wp {
+    /* surfaces — the deck becomes the paper it used to carry */
+    --deck: #F5F1E8;
+    --deck-2: #FFFFFF;       /* the one raised surface: index cards, the
+                                mobile register button */
+    --deck-3: #D9CDB8;       /* = --rule. A hairline on paper is the beige
+                                accent, not stone 700. */
+
+    /* ink — each lift falls back to the ink-side twin measured above */
+    --on-deck: #44403c;      /* = --ink-2 */
+    --on-deck-2: #57534e;    /* = --ink-3 */
+    --on-deck-hi: #1c1917;   /* = --ink */
+    --runs-lift: #5F6F3E;    /* = --runs */
+    --drawn: #8a6636;
+    --link-deck: #b83f07;    /* = --link */
+
+    /* The code blocks do NOT follow the deck. They are a dark inset on the
+       sheet and they look and measure the same on either ground, so they keep
+       the console's pair rather than inheriting a light one and vanishing. */
+    --code-bg: #1c1917;
+    --code-ink: #d6d3d1;
+  }
+
+  /* The sheet is no longer a card: it is the same colour as the deck it sits
+     on, so the shadow has nothing to cast and a 0.7-alpha black drop under a
+     cream page reads as a bruise. The radius goes with it — a rounded corner
+     on a surface with no edge is a corner nobody can see. */
+  [data-ground='sheet'] .wp-sheet {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* #2f2b29 is a console value: on paper the card would go black on hover.
+     White resting, warm on hover — the same direction of travel the console
+     has (the surface moves toward the ink), at the same magnitude. */
+  [data-ground='sheet'] .wp-card:hover {
+    background: #F8F4EB;
+  }
+
+  /* #f97a3d is the orange lifted for a dark card and measures 2.36:1 on a
+     white one. The call to action takes the section's paper orange, which is
+     4.97:1 on the sheet and 5.10:1 on the card's hover surface — both clear
+     AA at the 11px this line is set in. */
+  [data-ground='sheet'] .wp-card-meta .wp-card-read,
+  [data-ground='sheet'] .wp-card:hover .wp-card-read {
+    color: var(--link-deck);
+  }
+
+  /* The underline under a foot link is the console orange at 35%. It follows
+     the link's own colour onto the sheet, or it prints as a pale stripe under
+     a dark orange word. */
+  [data-ground='sheet'] .wp-foot a {
+    border-bottom-color: rgba(184, 63, 7, 0.35);
+  }
+}
+
 
 /* main.css sets html{scroll-behavior:smooth} unconditionally. Undo it for
    readers who asked not to be moved. */
@@ -757,8 +875,8 @@
   font-family: var(--util);
   font-size: 0.8125rem;
   line-height: 1.6;
-  background: var(--deck);
-  color: var(--on-deck);
+  background: var(--code-bg);
+  color: var(--code-ink);
   padding: 1.25rem;
   border-radius: 0.375rem;
   overflow-x: auto;
@@ -1183,9 +1301,12 @@
     margin: 16mm 20mm 18mm;
   }
 
-  /* The document element carries style="color-scheme: dark" inline. Inline
-     style loses to !important, and it has to: left alone, the printed canvas
-     comes out dark. */
+  /* The document element used to carry style="color-scheme: dark" inline, and
+     this needed !important to out-rank it. The inline style is gone — the
+     ground now decides color-scheme, and the reader now decides the ground —
+     but the declaration stays, because [data-ground='console'] is still what
+     most readers print from and it still asks the browser for a dark canvas.
+     Neither ground may reach the paper. */
   html {
     color-scheme: light !important;
     background: #fff !important;

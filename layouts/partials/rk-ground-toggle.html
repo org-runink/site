@@ -28,14 +28,22 @@
      only flip the surrounding chrome, leaving light navigation around a dark
      document: precisely the mismatch that shipped when those pages were missing
      the token layer. A control that cannot do what it says is worse than no
-     control, so the whitepapers keep their fixed ground and do not offer one.
+     control, so the whitepapers kept their fixed ground and did not offer one.
+
+     THAT IS NO LONGER TRUE, AND THE GUARD IS GONE WITH IT. whitepaper.css
+     always carried a full ink-side palette, because the reading column has
+     always been a light sheet laid on a dark deck; only the deck-side names
+     were dark-only, and each already had an ink-side twin in the same file.
+     Re-binding about a dozen custom properties under [data-ground='sheet'] was
+     the whole job. The section now honours a stored preference like every
+     other page, so the control does exactly what it says and this partial
+     serves it like anything else.
 
      A CLASS, NOT AN ID. This partial is rendered twice — once in the desktop
      bar and once in the mobile panel — so an id would be duplicated, which is
      invalid and means getElementById wires only the first. Both are kept in
      sync by the handler.
      --------------------------------------------------------------------- */}}
-{{ if ne .Type "whitepapers" }}
 <button type="button"
         class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
         aria-pressed="false"
@@ -46,4 +54,3 @@
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
   </svg>
 </button>
-{{ end }}
