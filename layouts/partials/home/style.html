@@ -946,125 +946,112 @@
      On paper and below 768px it stacks, and the column heads are dropped rather
      than repeated per row: a three-word label above a stacked list is furniture
      that costs a line each time. */
-  .hp-opex__head,
-  .hp-opex__row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.35rem;
-  }
-  @media (min-width: 768px) {
-    .hp-opex__head,
-    .hp-opex__row {
-      grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.9fr) minmax(0, 1.25fr) minmax(0, 1.1fr);
-      gap: 1.5rem;
-      align-items: start;
-    }
+  .hp-opex { list-style: none; margin: 0; padding: 0; }
+
+  /* A BAND PER INDUSTRY, NOT A ROW IN A TABLE.
+
+     Scale and rule carry the hierarchy here, which is what DESIGN.md §2 hands
+     you when it says colour may not: the cost line is the display line of the
+     band, the sector is a quiet label above it in its own category ink, and the
+     two supporting facts sit underneath at body weight. In the table this
+     replaced, all four of those were the same size in four columns of equal
+     width, so the one line a reader came for had no more weight than the prose
+     explaining it. */
+  .hp-opex__band { padding: 1.75rem 0 1.5rem; }
+  .hp-opex__band:first-child { padding-top: 1.25rem; }
+
+  /* The category, full width, as the band's own rule. It replaces both the 3px
+     row edge and the hairline between rows: one line that separates and says
+     which domain at the same time, which is the "rule and a change of ground"
+     §6 asks for rather than a second device stacked on the first. */
+  .hp-opex__rule {
+    display: block;
+    height: 3px;
+    border-radius: 1px;
+    background-color: var(--accent-edge);
+    margin-bottom: 1.1rem;
   }
 
-  /* The industry, named, with its own category mark. Five different marks down
-     one table is what turns five separate problems into one ledger — and the
-     name beside the mark is the condition §2 puts on using category colour at
-     all. The tick is the same 3px bar the industries ledger uses, so the two
-     tables read as the same instrument. */
   .hp-opex__ind {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin: 0;
+    margin: 0 0 0.55rem;
+    font-family: var(--rk-font-util, ui-monospace, monospace);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-ink, var(--ink-2));
+  }
+
+  /* The money. clamp so it is a display line on a laptop and still a heading on
+     a phone; 30ch keeps it to two lines at the top of the scale. */
+  .hp-opex__line {
+    margin: 0 0 1.1rem;
     font-family: var(--font-display);
-    font-size: 0.8125rem;
-    font-weight: 700;
-    line-height: 1.35;
+    font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
     color: var(--ink);
+    max-width: 30ch;
   }
-  /* The bar sits on the ROW, not beside the label. A 3px tick against a 13px
-     word is technically the category mark and practically invisible: at that
-     size five different hues down a table read as one grey column, which is the
-     opposite of the point. Run down the whole row and it is the first thing the
-     eye gets — five domains, one ledger — while still being a mark, not a fill.
-     Same 3px weight and same token the industries ledger uses below. */
-  .hp-opex__row {
-    border-left: 3px solid var(--accent-edge);
-    padding-left: 1rem;
+
+  .hp-opex__facts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
+  @media (min-width: 768px) {
+    .hp-opex__facts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; }
   }
-  .hp-opex__head { padding-left: calc(1rem + 3px); }
-  .hp-opex__tick { display: none; }
-  .hp-opex__head {
-    display: none;
-    padding: 0 0 0.6rem;
-    border-bottom: 2px solid var(--rk-rule-strong);
+  /* From 1100px the facts sit beside the cost line rather than under it, so a
+     band is one screen-line of reading instead of three. Below that the line
+     needs the full measure and the facts go under. */
+  @media (min-width: 1100px) {
+    .hp-opex__band {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+      grid-template-rows: auto auto auto;
+      column-gap: 3rem;
+      align-items: start;
+    }
+    /* Every child placed. Leaving the sector to auto-placement dropped it
+       underneath the cost line, which reads as a caption on the wrong thing:
+       the label says which domain you are about to read about, so it goes
+       first. */
+    .hp-opex__rule  { grid-column: 1 / -1; grid-row: 1; }
+    .hp-opex__ind   { grid-column: 1; grid-row: 2; }
+    .hp-opex__line  { grid-column: 1; grid-row: 3; margin-bottom: 0; }
+    .hp-opex__facts { grid-column: 2; grid-row: 2 / span 2; gap: 1.75rem; }
+  }
+
+  .hp-opex__fact-label {
+    margin: 0 0 0.4rem;
     font-family: var(--font-display);
     font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ink-2);
+    color: var(--ink-3, var(--ink-2));
   }
-  @media (min-width: 768px) { .hp-opex__head { display: grid; } }
-
-  .hp-opex {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-top: 2px solid var(--rk-rule-strong);
-  }
-  @media (min-width: 768px) { .hp-opex { border-top: 0; } }
-
-  .hp-opex__row {
-    padding: 1.15rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .hp-opex__line {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: 1.0625rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--ink);
-  }
-  .hp-opex__driver,
-  .hp-opex__where {
+  .hp-opex__fact-body {
     margin: 0;
     font-size: 0.9375rem;
-    line-height: 1.6;
+    line-height: 1.55;
     color: var(--ink-2);
   }
-  /* The instruction takes the accent, because it is the only thing on the row
-     the reader is being asked to go and do. */
+  /* Where the reader's own number is, is the one thing here they are being
+     asked to go and do, so it keeps full ink. */
   .hp-opex__where { color: var(--ink); }
 
   @media print {
-    /* The column heads were stacking on paper: the print block put `display:
-       grid` back but not `grid-template-columns`, and the three-column template
-       lives only inside the 768px query, which a sheet does not match. One
-       column, three labels, three lines — and the table under them in four.
-       Pre-existing; found by printing the sheet and looking at it. */
-    .hp-opex__head,
-    .hp-opex__row {
-      display: grid;
-      grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.9fr) minmax(0, 1.25fr) minmax(0, 1.1fr);
-      gap: 10pt;
-      align-items: start;
-    }
-    .hp-opex__head { border-bottom-color: #000; font-size: 7.5pt; padding-bottom: 4pt; }
-    .hp-opex__ind { font-size: 9pt; }
-    .hp-opex__tick { background-color: #000 !important; }
+    /* The bands print as bands. No grid to restore and no column heads to put
+       back — the sheet gets the same rule, label, line, facts order the screen
+       does, tightened to pt. The rule stays black rather than trying to carry a
+       category on paper, which DESIGN.md's trap §10 says not to rely on. */
+    .hp-opex__band { padding: 8pt 0 7pt; break-inside: avoid; display: block; }
+    .hp-opex__rule { background-color: #000 !important; height: 1.5pt; margin-bottom: 5pt; }
+    .hp-opex__ind { font-size: 7.5pt; margin-bottom: 3pt; color: #000; }
+    .hp-opex__line { font-size: 12pt; margin-bottom: 5pt; max-width: none; }
+    .hp-opex__facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; }
+    .hp-opex__fact-label { font-size: 7pt; margin-bottom: 2pt; }
+    .hp-opex__fact-body { font-size: 8pt; }
     .hp-opex { border-top: 0; }
-    /* Four columns, not three, and the padding keeps its left inset — this rule
-       is later in the block than the shared one above, so whatever it omits it
-       overrides. Left at three, the "where yours is" column wrapped onto a
-       fourth grid row underneath the industry name and the table stopped being
-       a comparison on paper. */
-    .hp-opex__row {
-      padding: 6pt 0 6pt 10pt;
-      border-bottom-color: #999;
-      border-left-color: #000;
-      break-inside: avoid;
-      grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.9fr) minmax(0, 1.25fr) minmax(0, 1.1fr);
-      gap: 10pt;
-    }
-    .hp-opex__line { font-size: 9pt; }
-    .hp-opex__driver, .hp-opex__where { font-size: 8pt; }
   }
 
   @media print {

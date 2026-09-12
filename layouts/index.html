@@ -197,28 +197,43 @@
            Marketing says in its own driver that it is PULSE and not FACE. It is
            the one row on this page whose product differs from the hero's, and a
            reader should not have to work that out. */}}
-      <div class="hp-opex__head" aria-hidden="true">
-        <span>{{ $.Params.opex_col_industry }}</span>
-        <span>{{ $.Params.opex_col_line }}</span>
-        <span>{{ $.Params.opex_col_driver }}</span>
-        <span>{{ $.Params.opex_col_where }}</span>
-      </div>
+      {{/* NOT A TABLE ANY MORE, AND THE COLUMN HEADS ARE GONE WITH IT.
+
+           This was four columns with a header row, which is a spreadsheet: it
+           reads left to right, gives every cell the same weight, and buries the
+           one line a reader came for. The money is the cost line — "demurrage,
+           detention and the claims that expire" — and in a table it was set at
+           the same size as the prose explaining it.
+
+           Each industry is a band now. The sector is a small tracked label in
+           its own category ink, the cost line is the display line of the band,
+           and the two supporting facts sit under it as a quiet pair. Same
+           information, same five domains, same colours; the difference is that
+           scale and rule are doing the hierarchy, which is what DESIGN.md §2
+           says to use them for, instead of a grid of equal cells.
+
+           The full-width rule above each band carries the category rather than
+           a 3px edge on a row. Five of them down the section is the spread
+           across domains, stated as the page's own furniture. */}}
       <ul class="hp-opex">
         {{ range . }}
-        {{/* The hue comes off the industry page's own `category`, the same
-             single source the ledger below uses. Deriving it from the slug here
-             instead would be the "five hues living in a second place" that the
-             ledger's own docblock warns about. The LABEL stays in front matter,
-             because the industry pages are English-only and /es/ still has to
-             name the sector in Spanish. */}}
         {{ $cat := "" }}
         {{ with site.GetPage (printf "/industries/%s" .page) }}{{ $cat = .Params.category }}{{ end }}
         {{ if not $cat }}{{ with (index site.Sites 0).GetPage (printf "/industries/%s" .page) }}{{ $cat = .Params.category }}{{ end }}{{ end }}
-        <li class="hp-opex__row hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
-          <p class="hp-opex__ind"><span class="hp-opex__tick" aria-hidden="true"></span>{{ .industry }}</p>
-          <p class="hp-opex__line">{{ .line }}</p>
-          <p class="hp-opex__driver">{{ .driver }}</p>
-          <p class="hp-opex__where">{{ .where }}</p>
+        <li class="hp-opex__band hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
+          <span class="hp-opex__rule" aria-hidden="true"></span>
+          <p class="hp-opex__ind">{{ .industry }}</p>
+          <h3 class="hp-opex__line">{{ .line }}</h3>
+          <div class="hp-opex__facts">
+            <div class="hp-opex__fact">
+              <p class="hp-opex__fact-label">{{ $.Params.opex_col_driver }}</p>
+              <p class="hp-opex__fact-body">{{ .driver }}</p>
+            </div>
+            <div class="hp-opex__fact">
+              <p class="hp-opex__fact-label">{{ $.Params.opex_col_where }}</p>
+              <p class="hp-opex__fact-body hp-opex__where">{{ .where }}</p>
+            </div>
+          </div>
         </li>
         {{ end }}
       </ul>
