@@ -350,6 +350,25 @@
     margin: 0 0 2rem;
   }
 
+  /* The product line, in the hero. One sentence naming the thing and what it
+     does, between the deck and the buttons. It carries the deck's measure and a
+     rule above it so it reads as a separate register from the hook rather than
+     as a fourth sentence of it. */
+  .hp-product-line {
+    max-width: 58ch;
+    margin: 1.5rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .hp-product-line strong { color: var(--ink); font-weight: 700; }
+
+  @media print {
+    .hp-product-line { font-size: 9.5pt; margin-top: 8pt; padding-top: 6pt; max-width: none; }
+  }
+
   .hp-actions {
     display: flex;
     flex-wrap: wrap;
@@ -588,6 +607,93 @@
      two sections. It takes the utility face and the accent so it reads as an
      instrument label rather than as a title competing with the h2 above it. */
 
+  /* ---- the other products -------------------------------------------------
+
+     Two columns from 768, one below. Four papers, so two rows of two rather than
+     a four-across strip that would squeeze each one to a caption. Whole card is
+     the link, same as the flow rows were: this block exists to be tapped. */
+  .hp-prod {
+    list-style: none;
+    margin: 0;
+    padding: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 768px) { .hp-prod { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; } }
+
+  .hp-prod__item { min-width: 0; }
+  .hp-prod__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.25rem 1.35rem 1.15rem;
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color .18s, border-color .18s;
+  }
+  .hp-prod__link:hover { background: var(--accent-wash); border-color: var(--accent-edge); }
+
+  .hp-prod__name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.1875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .hp-prod__sub {
+    margin: 0.2rem 0 0.7rem;
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--accent-ink);
+  }
+  .hp-prod__line {
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .hp-prod__go {
+    margin-top: auto;
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+
+  @media print {
+    .hp-prod {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 14pt;
+      padding-top: 8pt;
+      border-top-color: #000;
+    }
+    .hp-prod__item { break-inside: avoid; }
+    .hp-prod__link {
+      padding: 6pt 0;
+      background: none;
+      border: 0;
+      border-bottom: 1px solid #999;
+      border-radius: 0;
+    }
+    .hp-prod__name { font-size: 9.5pt; }
+    .hp-prod__sub { font-size: 8pt; color: #000; margin-bottom: 3pt; }
+    .hp-prod__line { font-size: 8.5pt; margin-bottom: 0; }
+    /* The page count is the one part of the label worth printing — it tells a
+       reader holding the sheet what they are committing to. */
+    .hp-prod__go { font-size: 7.5pt; color: #000; margin-top: 3pt; }
+    .hp-prod__go span { display: none; }
+  }
+
   /* ---- banded sections: depth by a change of ground ----------------------
 
      DESIGN.md §6, on elevation: "Everything else expresses depth with a rule and
@@ -658,14 +764,26 @@
     counter-reset: hp-flow;
   }
   @media (min-width: 900px) {
+    /* The column count follows the number of moments the industry actually has,
+       which is why the modifier is written by the template rather than fixed
+       here. A fixed four killed the other four industries: three moments in a
+       four-column grid came out as two narrow columns, one wide one, and a hole
+       where the fourth would have been — read as a row with something missing
+       from it rather than a row of three.
+
+       Four is the uneven one on purpose. Only logistics has four moments, and
+       two of those carry two jobs each; equal quarters would leave the
+       single-job columns looking half empty beside the pairs. */
     .hp-flow {
-      grid-template-columns: 0.85fr 1.15fr 0.85fr 1.15fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0 2rem;
       align-items: start;
       /* the spine: one rule across the top of the whole row */
       border-top: 2px solid var(--rk-rule-strong);
       padding-top: 0;
     }
+    .hp-flow--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hp-flow--4 { grid-template-columns: 0.85fr 1.15fr 0.85fr 1.15fr; }
   }
 
   .hp-flow__stage {
@@ -1458,6 +1576,30 @@
     .hp-book .hp-cta,
     .hp-form,
     .hp-done { display: none !important; }
+
+    /* THE INDUSTRY ROWS OPEN ON PAPER, ALL OF THEM.
+
+       On screen each industry is a <details>, and a reader opens the one that
+       is theirs. A printed sheet has no such reader: whatever is collapsed at
+       the moment the print is taken would come out as five headings with none
+       of the work behind them. That is not a smaller sheet, it is a sheet that
+       says something different from the screen it was taken from, and it is the
+       exact failure rule 6 exists against.
+
+       It takes three declarations because three engines hide the body three
+       ways. Older engines set `display: none` on the non-summary children;
+       current Chrome and Safari hide `::details-content` with
+       `content-visibility`, which `display` does not reach. The marker goes
+       too: a disclosure triangle on paper points at an interaction that is not
+       available, and the row already reads as a heading without it. */
+    .hp-ind::details-content {
+      content-visibility: visible !important;
+      block-size: auto !important;
+    }
+    .hp-ind:not([open]) > *:not(summary) { display: block !important; }
+    .hp-ind > summary { display: block; list-style: none; }
+    .hp-ind > summary::marker,
+    .hp-ind > summary::-webkit-details-marker { display: none; content: ""; }
 
     .hp-mark {
       display: block;
