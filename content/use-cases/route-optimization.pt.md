@@ -59,10 +59,10 @@ author: "Runink"
                 Pedir uma rota é um pedido pequeno: onde começa, onde termina e as restrições que importam naquele trecho. Isso sai para o provedor de roteirização e volta como uma distância de estrada, um tempo de viagem e a própria linha, de modo que a resposta pode ser desenhada num mapa em vez de descrita numa frase.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Como o pedido é pequeno, a segunda rodada é tão barata quanto a primeira. É esse o ponto todo. A pergunta deixa de ser &ldquo;vale a pena replanejar o dia&rdquo; e passa a ser &ldquo;como está a rota agora&rdquo;, que é uma pergunta que você pode se permitir fazer outra vez depois do almoço.
+                Como o pedido é pequeno, fazê-lo uma segunda vez custa mais ou menos o que custou a primeira. A pergunta deixa de ser “vale a pena replanejar o dia” e passa a ser “como está a rota agora”: uma que você pode fazer tantas vezes quantas o dia mudar.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                O que chega ao quadro é um cartão, não uma aba de mapa: este trecho, a origem e o destino dele, a distância e a duração que de fato foram devolvidas. Ele espera numa fila de coisas a decidir junto com tudo o mais que o dia trouxe, e uma vez decidido sai dessa fila em vez de reaparecer na próxima vez que alguém olhar.
+                O que volta é o trecho sobre o qual você perguntou: a origem e o destino dele, a distância e a duração que o fornecedor de fato devolveu, e a linha que a rota segue. É a resposta a uma pergunta que você fez, e por isso chega quando você pergunta em vez de aparecer sozinha.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Duas recusas estão embutidas, e são elas a razão para confiar no resto. Nenhuma economia é impressa no cartão, porque o provedor de roteirização não devolve nenhuma: estimativas internas de regra de bolso existem em outras partes do produto e de propósito não são copiadas para cima de uma rota medida. E se não houver credencial de roteirização naquela conexão, ou se o provedor não devolver rota alguma, a resposta é que está indisponível. Não um cartão com os campos em branco. Um campo em branco numa tela é lido como uma medição, e essa é uma falha pior do que um erro honesto.

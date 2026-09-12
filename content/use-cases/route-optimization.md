@@ -15,7 +15,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
 <li><strong class="text-stone-200">A route comes back as a distance, a duration and a line on the map.</strong> An origin, a destination and the constraints you named go out to the routing provider; what comes back is a measured road distance and a travel time, not an opinion.</li>
 <li><strong class="text-stone-200">No money is attached to it, on purpose.</strong> The routing provider returns distance and time and no cost. So no saving is printed next to the route, because a figure nobody measured sitting beside two that were is how an estimate gets quoted as a fact.</li>
-<li><strong class="text-stone-200">When it could not be worked out, it says so.</strong> No routing credential on the connection, or a provider that returns nothing, comes back as unavailable. It does not come back as a route card with the fields left empty, which on a screen is indistinguishable from a good answer.</li>
+<li><strong class="text-stone-200">When it could not be worked out, it says so.</strong> No routing credential on the connection, or a provider that returns nothing, comes back as unavailable. It comes back saying so, rather than with the fields left empty, which on a screen is indistinguishable from a good answer.</li>
 </ul>
 
 <p class="mb-12">
@@ -23,7 +23,7 @@ author: "Runink"
         <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Drawn
     </span>
     <span class="block mt-3 text-sm text-stone-500 font-medium">
-        This page marks where the line falls. The routing call, the card it produces and the refusal to guess a cost are in the product. The working day around them is an illustration of the mechanism, not an account of an event: it has not been run against a customer's fleet, and there are no figures here for distance, time or money saved.
+        This page marks where the line falls. The routing call, the answer it returns and the refusal to guess a cost are in the product. The working day around them is an illustration of the mechanism, not an account of an event: it has not been run against a customer's fleet, and there are no figures here for distance, time or money saved.
     </span>
 </p>
 
@@ -59,13 +59,13 @@ author: "Runink"
                 Asking for a route is one small request: where it starts, where it ends, and the constraints that matter on this leg. That goes out to the routing provider and comes back as a road distance, a travel time and the line itself, so the answer can be drawn on a map rather than described in a sentence.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Because the request is small, the second run is as cheap as the first. That is the whole point. The question stops being "is it worth re-planning the day" and becomes "what does the route look like now", which is a question you can afford to ask again after lunch.
+                The request is small, so asking a second time costs about what asking the first time cost. The question stops being "is it worth re-planning the day" and becomes "what does the route look like now" — one you can put to it as often as the day changes.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                What lands on the board is a card, not a map tab: this leg, its origin and destination, the distance and the duration that were actually returned. It waits in a queue of things to decide alongside everything else the day has thrown up, and once it has been decided it leaves that queue instead of reappearing the next time somebody looks.
+                What comes back is the leg you asked about: its origin and destination, the distance and the duration the provider actually returned, and the line the route follows. It is an answer to a question you put, which is why it arrives when you ask rather than appearing on its own.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Two refusals are built in, and they are the reason to trust the rest. There is no saving printed on the card, because the routing provider does not return one — internal rule-of-thumb estimates exist elsewhere in the product and are deliberately not copied onto a measured route. And if there is no routing credential on that connection, or the provider returns no route at all, the answer is that it is unavailable. Not a card with blank fields. A blank field on a screen reads as a measurement, and that is a worse failure than an honest error.
+                Two refusals are built in, and they are the reason to trust the rest. No saving is printed beside the route, because the routing provider does not return one — internal rule-of-thumb estimates exist elsewhere in the product and are deliberately not copied onto a measured route. And if there is no routing credential on that connection, or the provider returns no route at all, the answer is that it is unavailable. Not an answer with blank fields. A blank field on a screen reads as a measurement, and that is a worse failure than an honest error.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 The credential belongs to the connection, not to the machine. Routing is reached with the key attached to the connection that was configured for it, so the grounding is something you set up, can see and can revoke per connection. It is not an environment variable baked into a server that nobody can audit.

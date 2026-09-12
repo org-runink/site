@@ -59,10 +59,10 @@ author: "Runink"
                 Pedir una ruta es una petición pequeña: dónde empieza, dónde acaba y las restricciones que importan en ese tramo. Eso sale hacia el proveedor de rutas y vuelve como una distancia de carretera, un tiempo de viaje y la línea misma, de modo que la respuesta se puede dibujar en un mapa en vez de describirla en una frase.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Como la petición es pequeña, la segunda pasada es tan barata como la primera. En eso está todo. La pregunta deja de ser &laquo;&iquest;merece la pena replanificar el día?&raquo; y pasa a ser &laquo;&iquest;cómo es la ruta ahora?&raquo;, que es una pregunta que se puede permitir volver a hacer después de comer.
+                Como la petición es pequeña, pedirla una segunda vez cuesta más o menos lo que costó la primera. La pregunta deja de ser «vale la pena replanificar el día» y pasa a ser «cómo está la ruta ahora»: una que puede hacerle tantas veces como cambie el día.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Lo que aterriza en el tablero es una tarjeta, no una pestaña de mapa: este tramo, su origen y su destino, la distancia y la duración que de verdad se devolvieron. Espera en una cola de cosas por decidir junto a todo lo demás que haya traído el día, y una vez decidida sale de esa cola en vez de reaparecer la próxima vez que alguien mire.
+                Lo que vuelve es el tramo por el que preguntó: su origen y su destino, la distancia y la duración que el proveedor devolvió de verdad, y la línea que sigue la ruta. Es la respuesta a una pregunta que usted hizo, y por eso llega cuando pregunta en lugar de aparecer sola.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Hay dos negativas incorporadas, y son la razón para fiarse del resto. En la tarjeta no se imprime ningún ahorro, porque el proveedor de rutas no devuelve ninguno: en otras partes del producto existen estimaciones internas a ojo, y deliberadamente no se copian sobre una ruta medida. Y si en esa conexión no hay credencial de rutas, o el proveedor no devuelve ruta alguna, la respuesta es que no está disponible. No una tarjeta con los campos en blanco. Un campo en blanco en una pantalla se lee como una medición, y eso es un fallo peor que un error honesto.
