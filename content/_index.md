@@ -233,8 +233,8 @@ industries:
     cases:
       - label: "A rating change wrong for one legacy plan, from the first wrongly rated call to an approved re-rate"
         steps:
-          - step: "Every rated record is read"
-            body: "Each account's rated output is read against that subscriber's own plan terms, record by record rather than as a monthly sweep over a sample. The population tested is the population, so the promotion's rate landing on a legacy plan comes out as named accounts rather than as an estimated error rate."
+          - step: "The rating is read against the plan"
+            body: "Each account's rated output is read against that subscriber's own plan terms, and the comparison is per record rather than a monthly sweep over a sample. What comes back is the accounts by name, which is what a re-rate needs, rather than an error rate, which is what a report needs."
           - step: "The finding carries its evidence"
             body: "Before anything goes to a model, the finding is checked: complete enough to read, carrying evidence, with at least one piece of that evidence readable, about the account it names rather than something next to it, and dated recently enough to say something about now. Evidence that only writes the claim out a second time ends the matter there. Each check that fires states its own reason in a sentence a person reads."
           - step: "The rate is recomputed from counts"

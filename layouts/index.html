@@ -381,10 +381,14 @@
              because the card says so: `products_lang_note` puts the paper's
              language on the link itself, so a reader knows what they are
              opening before they open it rather than after. Where the note is
-             absent (English) nothing is added. */}}
+             absent (English) nothing is added.
+
+             `site.Sites` rather than `hugo.Sites`: this repo's CI pins Hugo
+             0.147.3 and `hugo.Sites` did not exist until 0.156, so the newer
+             spelling builds locally and fails the deploy. */}}
         {{ $path := printf "/blog/whitepapers/%s" .paper }}
         {{ $p := site.GetPage $path }}
-        {{ if not $p }}{{ $p = (index hugo.Sites 0).GetPage $path }}{{ end }}
+        {{ if not $p }}{{ $p = (index site.Sites 0).GetPage $path }}{{ end }}
         {{ if $p }}
         {{ $foreign := ne $p.Language.Lang site.Language.Lang }}
         <li class="hp-prod__item">
@@ -403,7 +407,7 @@
       </ul>
       {{ with $.Params.products_more_url }}
       {{ $more := site.GetPage . }}
-      {{ if not $more }}{{ $more = (index hugo.Sites 0).GetPage . }}{{ end }}
+      {{ if not $more }}{{ $more = (index site.Sites 0).GetPage . }}{{ end }}
       {{ with $more }}
       <p class="hp-more">
         <a class="hp-more__link" href="{{ .RelPermalink }}"{{ if ne .Language.Lang site.Language.Lang }} hreflang="{{ .Language.Lang }}"{{ end }}>{{ $.Params.products_more_text }} <span aria-hidden="true">&rarr;</span></a>

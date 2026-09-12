@@ -217,8 +217,8 @@ industries:
     cases:
       - label: "Un cambio de tarificación equivocado para un plan heredado, de la primera llamada mal tarificada a una retarificación aprobada"
         steps:
-          - step: "Se lee cada registro tarificado"
-            body: "La salida tarificada de cada cuenta se lee contra las condiciones del propio plan de ese abonado, registro a registro y no como un barrido mensual sobre una muestra. La población examinada es la población, así que la tarifa de la promoción aplicada a un plan heredado sale como cuentas con nombre y no como una tasa de error estimada."
+          - step: "La tarificación se lee contra el plan"
+            body: "La salida tarificada de cada cuenta se lee contra las condiciones del propio plan de ese abonado, y la comparación es registro a registro y no un barrido mensual sobre una muestra. Lo que vuelve son las cuentas con nombre, que es lo que necesita una retarificación, y no una tasa de error, que es lo que necesita un informe."
           - step: "El hallazgo lleva su prueba"
             body: "Antes de que nada llegue a un modelo, el hallazgo se comprueba: completo para poder leerse, con prueba adjunta, con al menos una pieza de esa prueba legible, sobre la cuenta que nombra y no sobre algo contiguo, y con fecha lo bastante reciente para decir algo del presente. Una prueba que solo repite la afirmación termina ahí el asunto. Cada comprobación que salta escribe su propio motivo en una frase que una persona lee."
           - step: "La tarifa se recalcula"

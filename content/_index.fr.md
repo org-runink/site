@@ -217,8 +217,8 @@ industries:
     cases:
       - label: "Un changement de tarification faux pour un forfait hérité, du premier appel mal tarifé à une retarification approuvée"
         steps:
-          - step: "Chaque enregistrement tarifé est lu"
-            body: "La sortie tarifée de chaque compte est lue face aux conditions du forfait de cet abonné, enregistrement par enregistrement et non comme un balayage mensuel sur un échantillon. La population testée est la population, donc le tarif de la promotion appliqué à un forfait hérité ressort en comptes nommés plutôt qu'en taux d'erreur estimé."
+          - step: "La tarification est lue face au forfait"
+            body: "La sortie tarifée de chaque compte est lue face aux conditions du forfait de cet abonné, et la comparaison se fait enregistrement par enregistrement plutôt que par un balayage mensuel sur un échantillon. Ce qui revient, ce sont les comptes nommés, ce dont une retarification a besoin, plutôt qu'un taux d'erreur, ce dont un rapport a besoin."
           - step: "Le constat porte ses pièces"
             body: "Avant que quoi que ce soit n'aille à un modèle, le constat est contrôlé : assez complet pour être lu, accompagné de pièces, avec au moins une pièce lisible, portant sur le compte qu'il nomme et non sur quelque chose d'à côté, et daté d'assez près pour dire quelque chose du présent. Une pièce qui ne fait que réécrire l'affirmation clôt l'affaire là. Chaque contrôle qui se déclenche écrit son propre motif dans une phrase qu'une personne lit."
           - step: "Le taux est recalculé"

@@ -217,8 +217,8 @@ industries:
     cases:
       - label: "Uma mudança de tarifação errada para um plano legado, da primeira chamada mal tarifada a uma retarifação aprovada"
         steps:
-          - step: "Cada registro tarifado é lido"
-            body: "A saída tarifada de cada conta é lida contra as condições do plano daquele assinante, registro a registro e não como uma varredura mensal sobre uma amostra. A população testada é a população, então a tarifa da promoção aplicada a um plano legado sai como contas com nome, e não como uma taxa de erro estimada."
+          - step: "A tarifação é lida contra o plano"
+            body: "A saída tarifada de cada conta é lida contra as condições do plano daquele assinante, e a comparação é registro a registro, e não uma varredura mensal sobre uma amostra. O que volta são as contas com nome, que é o que uma retarifação precisa, e não uma taxa de erro, que é o que um relatório precisa."
           - step: "O achado carrega a sua prova"
             body: "Antes que qualquer coisa chegue a um modelo, o achado é conferido: completo o bastante para ser lido, com prova junto, com pelo menos uma peça dessa prova legível, sobre a conta que ele nomeia e não sobre algo ao lado, e datado perto o bastante para dizer algo do presente. Uma prova que só reescreve a afirmação encerra o assunto ali. Cada conferência que dispara escreve o próprio motivo numa frase que uma pessoa lê."
           - step: "A taxa é recalculada pelas contagens"
