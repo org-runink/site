@@ -7,6 +7,20 @@
 //	go run readability.go docs               # ./docs, which is what CI builds
 //	go run readability.go public/pricing     # one page, or one subtree
 //	go run readability.go -min 45 public     # exit 1 below a floor
+//	go run readability.go -min 45 -exclude /tags/,/es/ public
+//	                                         # …but do not gate on those paths
+//
+// # What -exclude does, and does not, do
+//
+// Excluded pages are still measured and still PRINTED, marked "~" rather than
+// "!" — the report stays complete and only the gate narrows. A floor that
+// hides the pages it cannot hold is a floor nobody can audit, and the point of
+// this tool is the number, not the exit code.
+//
+// Prefixes match each page's path relative to the built-site root, so "/tags/"
+// means the taxonomy tree and "/es/" means the Spanish site. If an -exclude
+// list leaves nothing gated the run exits 2 instead of reporting a pass: a
+// gate with nothing behind it is worse than no gate, because it looks green.
 //
 // # What it measures
 //
@@ -127,6 +141,8 @@ func syllables(w string) int {
 
 type score struct {
 	path      string
+	rel       string // path relative to the built-site root, e.g. /tags/index.html
+	excluded  bool   // measured and reported, but not gated
 	flesch    float64
 	words     int
 	sentences int
@@ -167,12 +183,22 @@ func measure(path, html string) score {
 func main() {
 	root := "public"
 	min := math.Inf(-1)
+	var excludes []string
 	args := os.Args[1:]
 	for i := 0; i < len(args); i++ {
 		switch args[i] {
 		case "-min", "--min":
 			if i+1 < len(args) {
 				fmt.Sscanf(args[i+1], "%f", &min)
+				i++
+			}
+		case "-exclude", "--exclude":
+			if i+1 < len(args) {
+				for _, p := range strings.Split(args[i+1], ",") {
+					if p = strings.TrimSpace(p); p != "" {
+						excludes = append(excludes, p)
+					}
+				}
 				i++
 			}
 		default:
@@ -190,6 +216,16 @@ func main() {
 			return err
 		}
 		s := measure(p, string(b))
+		s.rel = "/" + filepath.ToSlash(p)
+		if r, relErr := filepath.Rel(root, p); relErr == nil {
+			s.rel = "/" + filepath.ToSlash(r)
+		}
+		for _, x := range excludes {
+			if strings.HasPrefix(s.rel, x) {
+				s.excluded = true
+				break
+			}
+		}
 		// Under ~120 words the score is noise: a tag page, a redirect stub.
 		if s.words >= 120 {
 			scores = append(scores, s)
@@ -206,10 +242,21 @@ func main() {
 	}
 
 	sort.Slice(scores, func(i, j int) bool { return scores[i].flesch < scores[j].flesch })
-	below := 0
+	below, ungated, gated := 0, 0, 0
 	for _, s := range scores {
+		if !s.excluded {
+			gated++
+		}
+		// "~" marks every row the gate does not hold, passing or not, so the
+		// report says at a glance what is enforced rather than only what broke.
 		flag := " "
-		if s.flesch < min {
+		switch {
+		case s.excluded:
+			flag = "~"
+			if s.flesch < min {
+				ungated++
+			}
+		case s.flesch < min:
 			flag, below = "!", below+1
 		}
 		var b []string
@@ -223,9 +270,19 @@ func main() {
 		}
 		fmt.Println()
 	}
+	// An -exclude list that swallowed the whole site would report a clean pass
+	// with nothing behind it. Refuse it the way an empty tree is refused above.
+	if len(excludes) > 0 && gated == 0 {
+		fmt.Fprintf(os.Stderr, "readability: -exclude %s leaves no page gated — that is a vacuous pass, not a pass\n", strings.Join(excludes, ","))
+		os.Exit(2)
+	}
+
 	fmt.Fprintf(os.Stderr, "\n%d pages measured", len(scores))
 	if !math.IsInf(min, -1) {
-		fmt.Fprintf(os.Stderr, ", %d below %.0f", below, min)
+		fmt.Fprintf(os.Stderr, ", %d of %d gated below %.0f", below, gated, min)
+		if ungated > 0 {
+			fmt.Fprintf(os.Stderr, "; %d more below it under -exclude (marked ~, reported not gated)", ungated)
+		}
 	}
 	fmt.Fprintln(os.Stderr)
 	if below > 0 {

@@ -82,47 +82,84 @@ click this" were the same colour.
 
 ### The faces
 
-**Fira** — Fira Sans, Fira Sans Condensed and Fira Code. One superfamily, three jobs.
+**Figtree and Fira Code.** Two families, three jobs.
 
 | Role | Face | Weights | Token |
 |---|---|---|---|
-| Display, headings | Fira Sans Condensed | 600, 800 | `--rk-font-display` |
-| Reading, interface | Fira Sans | 400, 400*i*, 500, 600 | `--rk-font-body` |
+| Display, headings | Figtree | 600, 800 | `--rk-font-display` |
+| Reading, interface | Figtree | 400, 400*i*, 500, 600 | `--rk-font-body` |
 | Standings, figures | Fira Code | 400, 500 | `--rk-font-util` |
 
-**Source and licence.** Subset and converted to WOFF2 from the locally installed
-`ttf-fira-sans 1:4.301-3` and `ttf-fira-code 6.2-4`. Both are under the **SIL Open
-Font License 1.1**, confirmed in `/usr/share/licenses/ttf-fira-sans/OFL.txt` and
-`/usr/share/licenses/ttf-fira-code/LICENSE`. The OFL permits redistribution,
+Figtree ships as one variable file per style, `wght` 300–900. The range is
+load-bearing. Figtree's default instance is Light, so a single `font-weight` on the
+`@font-face` would pin the whole system to Light — headings included — and it would
+not look broken, it would look thin.
+
+**Re-valued 2026-09-10.** Display and reading were Fira Sans Condensed and Fira Sans.
+They are now Figtree, the face Runink FACE bundles and ships. The site was on Inter
+and Plus Jakarta Sans from `fonts.googleapis.com`, which was neither this file's Fira
+nor the product's Figtree — a third typeface, on the pages customers actually read,
+fetched from a third party by a company whose argument is that your material does not
+leave your building. Moving to the product's own face closes both at once.
+
+**What that costs, stated because it is a real loss and not a free swap.** Figtree has
+no condensed axis. The condensed display face was chosen for the density of a title
+block on a technical drawing rather than the roundness of a SaaS hero, and that
+silhouette is gone from the token layer. Two surfaces re-add it for themselves rather
+than lose it: `layouts/partials/home/style.html` declares `'Fira Cond Hp'` from the
+same vendored file, and `layouts/whitepapers/baseof.html` publishes its own six Fira
+faces. That leaves two typefaces in the building, which is the thing the change was
+meant to reduce — recorded here rather than hidden.
+
+**Mono stays Fira Code.** Figtree has no monospace, and standing marks and figures
+need a fixed advance.
+
+**Source and licence.** Ten files, 279 KB total, all served from this origin. Both
+families are under the **SIL Open Font License 1.1**, which permits redistribution,
 modification (including subsetting) and web embedding; it forbids selling the fonts
-alone and requires the copyright notice, which is carried in
-`assets/fonts/LICENCE.md`. Eight files, 222 KB total, served from this origin.
+alone and requires the copyright notice to travel with them.
+
+- **Figtree** — copyright 2022 The Figtree Project Authors. The upright is converted
+  from `face/flutter/fonts/Figtree.ttf`, the file the FACE Flutter app bundles, so the
+  web and the product render the identical face. The italic is the upstream Google
+  Fonts OFL release, because FACE's bundled upright has no italic axis and both
+  Flutter and the browser were synthesising an oblique. Notice and provenance in
+  `packages/runink-ui/fonts/LICENCE.md`.
+- **Fira Code** — copyright 2014, The Fira Code Project Authors. Subset and converted
+  to WOFF2 from the locally installed `ttf-fira-code 6.2-4`, licence confirmed in
+  `/usr/share/licenses/ttf-fira-code/LICENSE`. Notice in `assets/fonts/LICENCE.md`.
+- **Fira Sans and Fira Sans Condensed** — copyright 2014, Mozilla Foundation and
+  Telefónica S.A., drawn by Erik Spiekermann and Ralph du Carrois. Still vendored and
+  still published, because the whitepapers and the homepage's display face use them.
+  Same subsetting and the same licence, from `ttf-fira-sans 1:4.301-3`.
 
 **Why this and not the alternatives.**
 
-- Not **Inter + Plus Jakarta Sans**, which the site loads today. It is the single
-  most common SaaS pairing, and it is fetched from `fonts.googleapis.com` on every
-  page — a company whose entire argument is that your material should not be sent to
-  a third party, requesting its typeface from one on every page load. Whatever the
-  identity was going to be, that had to go.
+- Not **Inter + Plus Jakarta Sans**. It is the single most common SaaS pairing, and it
+  was fetched from `fonts.googleapis.com` on every page — a company whose entire
+  argument is that your material should not be sent to a third party, requesting its
+  typeface from one on every page load. Whatever the identity was going to be, that
+  had to go.
 - Not **IBM Plex**, which is the reflexive answer for "serious, open-source,
   sovereign" and is consequently everywhere in this market.
+- Figtree is what the product already renders in. One face across the cockpit and the
+  marketing pages is the typographic form of the product's own claim: surfaces drawn
+  to different briefs, made to read as one voice. The site was the last thing on a
+  different set of values, in colour and in type both.
 - Fira was drawn for Mozilla's Firefox OS — an attempt to build a phone platform not
-  owned by Google or Apple. The typeface of a self-owned platform. That is the face's
-  actual provenance, not a story retrofitted onto it.
-- Spiekermann drew Fira Sans for legibility at small sizes on poor screens. That is
-  also the condition of a printed measures table and an 11px standing mark.
-- A superfamily is the typographic form of the product's own claim: faces drawn to
-  different briefs, made to read as one voice.
-- Five of the eight faces were already vendored for the whitepapers and already
-  proven to publish. Two were added (Fira Sans Medium 500, Fira Code Medium 500) to
-  give labels and standing marks a rung between Book and SemiBold.
+  owned by Google or Apple. The typeface of a self-owned platform. That is why it
+  stays where it is still doing structural work rather than being deleted, and why
+  Fira Code remains the utility face: Spiekermann drew Fira for legibility at small
+  sizes on poor screens, which is the condition of a printed measures table and an
+  11px standing mark.
 
-**Character coverage.** The subset is Latin-1 plus punctuation, currency,
-super/subscripts, arrows and the geometric shapes, which fully covers the site's
-English, Spanish, French and Portuguese content (ç, ã, õ, é, ñ, ê, ô are all in
-`U+00A0–U+00FF`). `U+0178` (Ÿ) was added for French proper names; it was missing from
-the original whitepaper subset.
+**Character coverage.** Figtree carries 391 codepoints and covers the site's English,
+Spanish, French and Portuguese content in full, including every diacritic those
+locales use. The Fira subset is Latin-1 plus punctuation, currency, super/subscripts,
+arrows and the geometric shapes, which covers the same four (ç, ã, õ, é, ñ, ê, ô are
+all in `U+00A0–U+00FF`). `U+0178` (Ÿ) was added to it for French proper names and
+`U+25A0–U+25A1` (■ □) so a standing mark is expressible in plain text; both were
+missing from the original whitepaper subset.
 
 ### Scale
 
@@ -132,7 +169,7 @@ single geometric series gives you either mush at the bottom or timidity at the t
 
 | Token | Size | Face | Job |
 |---|---|---|---|
-| `--rk-t-display` | 4rem / 64px | display 800 | The one display line on a page. Condensed Heavy only. |
+| `--rk-t-display` | 4rem / 64px | display 800 | The one display line on a page. Weight 800 only. |
 | `--rk-t-1` | 3rem / 48px | display 800 | Page title. |
 | `--rk-t-2` | 2.25rem / 36px | display 800 | Section head. |
 | `--rk-t-3` | 1.75rem / 28px | display 600 | Subsection. |
@@ -152,8 +189,9 @@ Tracking: `--rk-tr-display` −0.02em, `--rk-tr-head` −0.01em, `--rk-tr-body` 
 `--rk-tr-label` 0.1em, `--rk-tr-mark` 0.16em.
 
 Measure: `--rk-measure-head` 18ch (display stacks narrow and dense — the tight
-condensed headline block is the page's silhouette), `--rk-measure-lead` 52ch,
-`--rk-measure-body` 66ch.
+headline block is the page's silhouette; on the two surfaces that still draw a
+condensed face it is tighter still), `--rk-measure-lead` 52ch, `--rk-measure-body`
+66ch.
 
 ---
 
@@ -166,39 +204,86 @@ is the sheet's canvas and the console's text; `--rk-n-900` is the sheet's text a
 the console's canvas. A component written against the semantic names works on both
 grounds without being written twice.
 
-The hue is a blue-black around 205°, low chroma — document ink. It replaces the
-previous `primary` ramp, which ran to a periwinkle `#5573df` and bottomed out at a
+**Re-valued 2026-09-10.** The ramp was a blue-black document ink around 205°. It is
+now Runink FACE's warm ramp, because FACE's palette is the company-wide one and the
+site was the last thing still on a different set of values. Five of the fourteen rungs
+are FACE's verbatim — `000`/`050`/`100`/`200` are its four sheet surfaces, `950` is
+its console canvas. The rest are derived, and not by eye: each constrained rung was
+solved for the luminance its floor demands and then placed on FACE's own hue.
+
+| Rung | Solved as | Against | Measured |
+|---|---|---|---|
+| `--rk-n-400` | console `text-3` | console raised surface | 4.64:1 |
+| `--rk-n-450` | sheet `rule-strong` | sheet recessed surface | 3.10:1 |
+| `--rk-n-500` | console `rule-strong` | console raised surface | 3.10:1 |
+| `--rk-n-600` | sheet `text-3` | sheet recessed surface | 4.64:1 |
+| `--rk-n-700` | sheet `text-2` | sheet canvas | 7.29:1 |
+| `--rk-n-900` | sheet `text` | sheet canvas | 12.54:1 |
+
+Each was solved against the surface that constrains it, which is not the same surface
+for all six; §5 carries every pair on every ground, measured. The eight unconstrained
+rungs interpolate between their solved neighbours in OKLab rather than sRGB — sRGB
+drifts the hue through the mid-tones and leaves a ramp with warm ends and a grey
+middle. Chroma tapers toward both ends, which is what stops the lightest rungs reading
+as beige. The ramp is monotone by construction and was verified so; if it were not,
+"one step darker" would stop meaning anything.
+
+The ramp before this one ran to a periwinkle `#5573df` and bottomed out at a
 violet-leaning `#1b2456`. The problem was never "navy"; it was *that* navy: a
 blue-violet that reads as generic SaaS on screen and muddies on a mono laser printer.
-Blue-black is what a document that gets printed is written in.
+The blue-black that replaced it was not wrong either — it was simply a second neutral,
+and a company that cannot say what its grey is has the same problem as one that cannot
+say what its orange is.
 
 | Token | Hex | Role |
 |---|---|---|
-| `--rk-n-000` | `#FFFFFF` | sheet: raised surface |
-| `--rk-n-050` | `#F2F5F7` | sheet: canvas · console: text |
-| `--rk-n-100` | `#E6ECEF` | sheet: recessed surface |
-| `--rk-n-200` | `#D2DADF` | sheet: hairline |
-| `--rk-n-300` | `#B6C2CA` | console: body text |
-| `--rk-n-400` | `#8C9BA6` | console: labels, captions |
-| `--rk-n-450` | `#76838B` | sheet: boundary rule |
-| `--rk-n-500` | `#647680` | console: boundary rule |
-| `--rk-n-600` | `#546570` | sheet: labels, captions |
-| `--rk-n-700` | `#3A4A55` | sheet: body text |
-| `--rk-n-750` | `#2C3B46` | console: hairline |
-| `--rk-n-800` | `#18242D` | console: raised surface |
-| `--rk-n-900` | `#101A22` | sheet: text · console: canvas |
-| `--rk-n-950` | `#0A1015` | console: recessed surface |
+| `--rk-n-000` | `#FFFDFA` | sheet: raised surface, ink on the signal |
+| `--rk-n-050` | `#FBF7F1` | sheet: canvas · console: text |
+| `--rk-n-100` | `#F6EFE4` | sheet: recessed surface |
+| `--rk-n-200` | `#EDE2D3` | sheet: hairline · console: strong text |
+| `--rk-n-300` | `#C2BBB0` | sheet: mid rule · console: body text |
+| `--rk-n-400` | `#ABA397` | console: labels, captions |
+| `--rk-n-450` | `#90877B` | sheet: boundary rule |
+| `--rk-n-500` | `#8C8376` | console: boundary rule |
+| `--rk-n-600` | `#746A5E` | sheet: labels, captions |
+| `--rk-n-700` | `#5A5145` | sheet: body text · console: mid rule |
+| `--rk-n-750` | `#4B4338` | console: hairline |
+| `--rk-n-800` | `#3F382D` | sheet: strong text · console: raised surface |
+| `--rk-n-900` | `#352E25` | sheet: text · console: canvas |
+| `--rk-n-950` | `#1A1614` | console: recessed surface, ink on the signal |
+
+The roles in that table are not a second copy of the ground blocks — `/design/` derives
+them from the bindings in `tokens.css`, so a rung that stops being the hairline stops
+being described as one without anybody remembering to say so.
 
 ### Signal
 
-Runink's orange, held at two values that measure.
+Runink's orange. Two inks that measure, and two fills that carry text.
 
-| Token | Hex | Ground |
+| Token | Hex | Job |
 |---|---|---|
-| `--rk-signal-ink` | `#A8400A` | sheet |
-| `--rk-signal-lift` | `#F2801F` | console |
+| `--rk-signal-ink` | `#8B4024` | sheet: the ink. Links, focus, the seam. |
+| `--rk-signal-lift` | `#E89B75` | console: the ink. |
+| `--rk-signal-fill-sheet` | `#C4693B` | sheet: the fill. A button, a band. |
+| `--rk-signal-fill-console` | `#D9764E` | console: the fill. |
+| `--rk-on-signal-fill` | `#1A1614` | the ink **on** a fill. Near-black in both registers. |
 
-**On the defect in the palette this replaces.** `brand_accents.dark_orange`
+**Re-valued 2026-09-10** onto FACE's `technicalOrangeLight`, the token FACE already
+uses for exactly this job: the accent that may carry text. The previous pair
+(`#A8400A` / `#F2801F`) measured fine and was **not** wrong — it was simply a second
+orange. Two oranges four degrees apart, each correct on its own terms, is how a
+company ends up unable to say what its colour is.
+
+**The hover fill goes lighter**, which is counter-intuitive on a light page and is not
+a style choice — it is forced by the ink. `--rk-on-signal-fill` is the one token FACE
+deliberately does not flip, so it has to stay legible on whatever the button becomes.
+Against it: `#C4693B` is 4.65:1, `#D9764E` is 5.69:1, `#E89B75` is 8.02:1, and the
+obvious darker step `#9E4A2A` is 2.97:1 — a fail. Darkening on hover makes the button
+harder to read exactly when the pointer is on it. Lifting keeps every state above
+4.5:1, and introduces no new values: each ground's hover fill is the other ground's
+base fill.
+
+**On the defect in the palette all of this replaces.** `brand_accents.dark_orange`
 `#ca4708` was published as usable. Measured: **4.76:1 on white** and **4.55:1 on
 `gray_50`** — those pass. But **4.22:1 on `#F5F1E8`**, the whitepaper's own paper,
 and **4.22:1 on `#eef1fc`**, `primary.50` — the two grounds it most often sat on.
@@ -208,10 +293,10 @@ value ever being corrected.
 
 ### Category
 
-Five industries, two bindings each. Every value measures AA or better on all three
-grounds of its mode, so the raw accent is legible as text and needs no darkening
-step. `--rk-accent` defaults to the ink colour: **a page with no category has no
-category colour.**
+Five industries, two bindings each. Each is solved to carry text on its ground's
+canvas, so the raw accent is legible as text and needs no darkening step.
+`--rk-accent` defaults to `--rk-text`: **a page with no category has no category
+colour.**
 
 | Industry | Sheet | Console | Note |
 |---|---|---|---|
@@ -222,10 +307,33 @@ category colour.**
 | Marketing | `#A03A5E` | `#E4809C` | Replaces `#D4A574`, too pale and too near signal. |
 
 Four of five are corrections to the accent the section already used. Only logistics
-genuinely moves, and it moves for a stated reason.
+genuinely moves, and it moves for a stated reason. These five values did not change
+when the neutral ramp did; they were solved against the grounds, and the grounds moved
+under them, so §5 is where to read what they measure now.
 
-Applying these means one line of front matter per page in `content/industries/`.
-That is a later pass, not this one — this pass defines the contract.
+**Three of them are under 4.5:1 on one surface, and it is recorded here rather than
+quietly rounded up.** On the console's raised surface (`--rk-sheet`, `#3F382D`)
+insurance measures 4.08:1, marketing 4.33:1 and telecom 4.47:1. On the console canvas
+and the recessed surface all five clear AA, and on every sheet surface all five clear
+AA with room. The generated proof measures categories on the canvas only, so these
+three are outside what CI looks at — see §5.
+
+A page binds its category with one line of front matter, `category: "logistics"`, and
+the layout emits the matching `.rk-cat-*` class; all five pages in
+`content/industries/` carry it. Setting the accent as a hex in front matter is dead —
+the stylesheets read `--rk-accent`, so a hex there sets a value nothing consumes.
+
+Two washes derive from the accent rather than being separate values. On the sheet
+`--rk-accent-wash` is the accent at 10% over `--rk-sheet`; on the console it is 16%
+over `--rk-sunk`, not over `--rk-sheet`, because on a dark page the accents are light
+and tinting a mid-dark surface with them pulls the surface toward the ink — over
+`--rk-sheet` the accents measured 3.25–3.96:1 on their own wash and no percentage
+fixed it. Over `--rk-sunk` every category clears 4.96:1 at the full 16%. It is also
+the right shape: on a dark page a tinted panel is recessed, not raised.
+`--rk-signal-wash` is 8% on both grounds — at 14% the console wash lifted the surface
+far enough that `text-3` fell to 4.14:1 and `rule-strong` to 2.76:1 on it. Because a
+wash resolves where it is declared, any element that sets a second category deeper in
+the tree carries `.rk-rederive` or its wash stays the ancestor's.
 
 ---
 
@@ -236,40 +344,66 @@ sanctioned.** Text pairs meet WCAG 2.1 AA (4.5:1); rules and boundaries meet the
 non-text minimum. The specimen at `/design/` renders each pair beside its number, so
 the claim and the thing it describes cannot drift apart.
 
+**These numbers are generated, not typed.** `scripts/gen-contrast-proof.mjs` reads
+`assets/css/tokens.css`, follows each semantic through its ground binding, measures,
+and writes `data/contrast_proof.json`, which the specimen renders. `--check` re-derives
+the file and fails CI if it differs. The table below is that file. It exists because
+the hand-written version survived the palette moving to FACE and went on asserting
+ratios for `#F2801F` as the signal and `#101A22` as the ground — colours that no
+longer existed anywhere — on the one page whose job is to be the authority. A proof
+table that can drift from the thing it proves is worse than no proof table, because it
+looks checked.
+
 ### Sheet ground
 
-| Foreground | `#FFFFFF` sheet | `#F2F5F7` canvas | `#E6ECEF` sunk |
+| Foreground | `#FFFDFA` raised | `#FBF7F1` canvas | `#F6EFE4` recessed |
 |---|---|---|---|
-| `--rk-text` `#101A22` | 17.60:1 AAA | 16.08:1 AAA | 14.76:1 AAA |
-| `--rk-text-2` `#3A4A55` | 9.17:1 AAA | 8.37:1 AAA | 7.69:1 AAA |
-| `--rk-text-3` `#546570` | 6.05:1 AA | 5.52:1 AA | 5.07:1 AA |
-| `--rk-signal` `#A8400A` | 6.17:1 AA | 5.64:1 AA | 5.18:1 AA |
-| `--rk-rule-strong` `#76838B` | 3.90:1 AA non-text | 3.56:1 AA non-text | 3.27:1 AA non-text |
-| cat logistics `#0F6F73` | 5.93:1 AA | 5.42:1 AA | 4.97:1 AA |
-| cat insurance `#5847B8` | 6.98:1 AA | 6.38:1 AA | 5.85:1 AA |
-| cat banking `#5A6B31` | 5.86:1 AA | 5.35:1 AA | 4.92:1 AA |
-| cat telecom `#1D5480` | 7.98:1 AAA | 7.29:1 AAA | 6.69:1 AA |
-| cat marketing `#A03A5E` | 6.44:1 AA | 5.88:1 AA | 5.40:1 AA |
+| `--rk-text` `#352E25` | 13.18:1 AAA | 12.54:1 AAA | 11.72:1 AAA |
+| `--rk-text-1` `#3F382D` | 11.40:1 AAA | 10.84:1 AAA | 10.13:1 AAA |
+| `--rk-text-2` `#5A5145` | 7.67:1 AAA | 7.29:1 AAA | 6.82:1 AA |
+| `--rk-text-3` `#746A5E` | 5.22:1 AA | 4.96:1 AA | 4.64:1 AA |
+| `--rk-signal` `#8B4024` | 7.24:1 AAA | 6.89:1 AA | 6.44:1 AA |
+| `--rk-rule-strong` `#90877B` | 3.48:1 AA non-text | 3.31:1 AA non-text | 3.10:1 AA non-text |
+| cat logistics `#0F6F73` | — | 5.56:1 AA | — |
+| cat insurance `#5847B8` | — | 6.54:1 AA | — |
+| cat banking `#5A6B31` | — | 5.49:1 AA | — |
+| cat telecom `#1D5480` | — | 7.48:1 AAA | — |
+| cat marketing `#A03A5E` | — | 6.03:1 AA | — |
 
 ### Console ground
 
-| Foreground | `#101A22` canvas | `#18242D` raised | `#0A1015` sunk |
+| Foreground | `#3F382D` raised | `#352E25` canvas | `#1A1614` recessed |
 |---|---|---|---|
-| `--rk-text` `#F2F5F7` | 16.08:1 AAA | 14.43:1 AAA | 17.47:1 AAA |
-| `--rk-text-2` `#B6C2CA` | 9.69:1 AAA | 8.70:1 AAA | 10.53:1 AAA |
-| `--rk-text-3` `#8C9BA6` | 6.17:1 AA | 5.53:1 AA | 6.70:1 AA |
-| `--rk-signal` `#F2801F` | 6.61:1 AA | 5.93:1 AA | 7.18:1 AAA |
-| `--rk-rule-strong` `#647680` | 3.73:1 AA non-text | 3.34:1 AA non-text | — |
-| cat logistics `#4FB3B3` | 7.07:1 AAA | 6.34:1 AA | 7.68:1 AAA |
-| cat insurance `#9B8CF0` | 6.21:1 AA | 5.57:1 AA | 6.74:1 AA |
-| cat banking `#A3B96A` | 8.14:1 AAA | 7.30:1 AAA | 8.84:1 AAA |
-| cat telecom `#5FA8DC` | 6.81:1 AA | 6.11:1 AA | 7.40:1 AAA |
-| cat marketing `#E4809C` | 6.59:1 AA | 5.92:1 AA | 7.17:1 AAA |
+| `--rk-text` `#FBF7F1` | 10.84:1 AAA | 12.54:1 AAA | 16.83:1 AAA |
+| `--rk-text-1` `#EDE2D3` | 9.05:1 AAA | 10.47:1 AAA | 14.05:1 AAA |
+| `--rk-text-2` `#C2BBB0` | 6.08:1 AA | 7.03:1 AAA | 9.44:1 AAA |
+| `--rk-text-3` `#ABA397` | 4.64:1 AA | 5.37:1 AA | 7.20:1 AAA |
+| `--rk-signal` `#E89B75` | 5.17:1 AA | 5.98:1 AA | 8.02:1 AAA |
+| `--rk-rule-strong` `#8C8376` | 3.10:1 AA non-text | 3.58:1 AA non-text | 4.81:1 AA non-text |
+| cat logistics `#4FB3B3` | — | 5.37:1 AA | — |
+| cat insurance `#9B8CF0` | — | 4.72:1 AA | — |
+| cat banking `#A3B96A` | — | 6.19:1 AA | — |
+| cat telecom `#5FA8DC` | — | 5.18:1 AA | — |
+| cat marketing `#E4809C` | — | 5.01:1 AA | — |
 
-**`--rk-rule` is not in this table and that is correct.** `#D2DADF` is 1.42:1 on
-white. It is a hairline: separation between things that are already separate, never
-the only thing communicating a boundary. Anything a reader has to perceive as an edge
-uses `--rk-rule-strong`.
+**The category rows cover the canvas only, and that is a gap, not a decision.** The
+generator measures each category against `--rk-ground` and stops there, so the three
+console pairs that fall under AA — insurance 4.08:1, marketing 4.33:1 and telecom
+4.47:1 on the raised surface — are outside what `--check` looks at. Every other
+foreground in the system is measured on all three surfaces of its ground. Closing that
+is a change to the generator, not to this file.
+
+**`--rk-rule` is not in this table and that is correct.** `#EDE2D3` is 1.26:1 on the
+sheet's raised surface and `#4B4338` is 1.38:1 on the console canvas. It is a
+hairline: separation between things that are already separate, never the only thing
+communicating a boundary. Anything a reader has to perceive as an edge uses
+`--rk-rule-strong`.
+
+**`--rk-rule-mid` is not in it either, for the same reason.** `#C2BBB0` is 1.88:1 on
+the sheet's raised surface, `#5A5145` is 1.72:1 on the console canvas. It exists
+because without a middle tier a hover that lifts a border one step lands on the token
+it started from and the state becomes invisible — which is how this system shipped
+`.card:hover` painting the identical colour as `.card`. It is a step, not a boundary.
 
 ---
 
@@ -302,7 +436,12 @@ Two shadows, and they are for things that genuinely float — a menu, a dialog.
 Everything else expresses depth with **a rule and a change of ground**, because that
 is the part that survives being printed. The previous system's `neon_orange` and
 `neon_green` glows are gone: a glow means nothing on paper and reads as a games
-console rather than a control record.
+console rather than a control record. Both go to `none` under `@media print`.
+
+Both are still tinted `rgba(16, 26, 34, …)`, the blue-black the neutral ramp used
+before 2026-09-10. It was not re-valued with the ramp. At 4% and 6% alpha it is
+barely a colour, which is why nobody saw it, but it is a cool shadow over a warm ramp
+and it is the one value in this file that did not move when everything around it did.
 
 ### Motion
 
@@ -361,14 +500,24 @@ often in the same week. Two brands would make the same company look like two ven
 
 The argument for keeping the console rather than collapsing everything to light: the
 whitepaper surface is purpose-built for a 12,000-word document and is the better
-reading environment for it, and the site header is already dark. Deleting it would
-cost something real and buy consistency that the token layer already provides.
+reading environment for it, and the product cockpit is dark. Deleting it would cost
+something real and buy consistency that the token layer already provides.
+
+The default has since been settled the other way round. The sheet is the default
+ground in `tokens.css` and the marketing site is light, header included — a review of
+the customer-facing material found the black canvas hard to read and painful to print,
+and these are pages that get printed and carried into meetings. The console is where
+it earns its place: the whitepapers, and any subtree that opts in.
 
 What changes, and what does not:
 
-- The console's ground moves from warm stone (`#1c1917`) to the blue-black ramp, so
-  both registers sit on one hue axis. **The dark mode is the ink at full strength;
-  the light mode is the ink at 6%.**
+- The console's ground moves from warm stone (`#1c1917`) to the ramp's own dark end,
+  so both registers sit on one hue axis. That axis is warm again as of 2026-09-10, and
+  the console canvas is now `#352E25` — close enough to the stone it replaced that the
+  whitepaper register lost nothing by the move, which was not true of the blue-black
+  in between. **The dark mode and the light mode are the same ramp read from opposite
+  ends**, not a tint of one another: the sheet's four lightest rungs are FACE's own
+  surface values, not the ink at a percentage.
 - The whitepaper's light "paper sheet" inside the console survives as a treatment.
   Its warm `#F5F1E8` is the one value that does not come from the ramp; it is a
   reading surface, and if it is kept it should be kept deliberately, with its own
@@ -379,9 +528,14 @@ What changes, and what does not:
   legible accent set, a measured palette, and print rules it no longer has to carry
   itself.
 
-`assets/css/whitepaper.css` and `layouts/partials/industries-style.html` still hold
-their own values. Repointing them at the tokens is the next pass; this one does not
-touch them.
+`layouts/partials/industries-style.html` has been repointed: every colour in it now
+resolves through `--rk-*`, and the two literals this file specifically rejected went
+with it — `#1b2456`, and `#ea580c` for logistics. They survive there only as named
+history inside a comment.
+
+`assets/css/whitepaper.css` has not. It still carries its own literal values —
+eighty-seven of them, and no `--rk-*` at all — including the warm paper sheet
+`#F5F1E8`. That is the last stylesheet on its own palette.
 
 ---
 
@@ -416,10 +570,20 @@ Treatment:
   standard practice for a mark at small sizes, not a redesign — the drawing is
   identical, only the crop differs. Always set inside a container (tile, circle), so
   the crop reads as a bleed rather than a broken silhouette.
-- **Lockup**: mark, then the wordmark in Fira Sans Condensed SemiBold at
-  `--rk-t-4`, with `--rk-s-3` between them. The wordmark is not redrawn.
-- **Favicon**: the small variant. The current `favicon.png` is a 536×658, 544 KB
-  non-square PNG — replacing it is a wiring change for a later pass.
+- **Lockup**: mark, then the wordmark at `--rk-t-4`, with `--rk-s-3` between them. The
+  wordmark is not redrawn. It is set in Fira Sans Condensed SemiBold, named here as a
+  literal rather than as `--rk-font-display`, because since 2026-09-10 that token
+  resolves to Figtree and Figtree has no condensed axis (§3). The face is still
+  vendored and still published, so the lockup costs no new request — but it is now one
+  of the three places the condensed face survives by being asked for by name.
+- **Favicon**: the small variant, and it is wired. `favicon.png` was a 536×658,
+  544 KB non-square PNG fetched on every page; it and a byte-identical `favicon.ico`
+  are gone, along with the theme's own 792 KB `favicon.ico` that deleting ours
+  uncovered — browsers request `/favicon.ico` whether or not a link element names it,
+  so removing ours alone would have made it worse. What ships now is a 32px PNG, a
+  real 16/32 ICO shadowing the theme's at the same path, and a 180px touch icon, all
+  generated from the same artwork squared on its own centre first so the mark is not
+  distorted by the downscale. 1,336,250 bytes of icon became 44,503.
 
 The specimen shows both variants at 16, 24, 32, 64 and 128px, on both grounds and in
 print, so the claim above can be checked rather than believed.
@@ -434,9 +598,12 @@ Things that have already cost time here. Read before changing the token file.
 count — Hugo does not parse CSS looking for `url()`. Four of the whitepapers' six
 faces 404'd in production for exactly this reason, silently falling back to a system
 face with no build error and no visible break in a screenshot. `tokens.css` declares
-eight faces; `layouts/partials/rk-fonts.html` publishes eight and `errorf`s if a file
-is missing. **Adding a face means editing both.** Verify with
-`ls public/fonts/` — not by assuming.
+ten faces; `layouts/partials/rk-fonts.html` publishes ten, counts the `url()`s in
+`tokens.css` and `errorf`s if the two numbers differ or if a listed file is missing.
+**Adding a face means editing both.** Verify with `ls public/fonts/` — not by
+assuming. The count is read off the `src` url rather than the `@font-face` token,
+because the header comment in `tokens.css` contains the literal string and would
+inflate it by one.
 
 **Go's `html/template` silently destroys interpolated custom properties in a `style`
 attribute.** `style="width: var({{ .token }})"` is rewritten to `var(ZgotmplZ)` and
@@ -455,6 +622,28 @@ against minified and unminified builds, and against `:root`, `:root:root` and
 `!important`. **A component that must change on paper states its print value itself.**
 Print it and look.
 
+**An unbalanced comment in `tokens.css` swallows the block after it, silently.** Three
+drafts of one note were merged without deleting the delimiters between them: the first
+comment closed, about 28 lines of prose sat outside any comment, and two more stray
+close-delimiters sat among them. CSS error recovery does not discard that — it reads
+the prose as a selector prelude and keeps consuming until the next `{`. The entire
+print blackout was parsed as declarations of a garbage selector matching nothing, so
+every category accent and the signal printed in colour at roughly 2.4:1 on paper, for
+months, with no error and a build that looked fine. `scripts/check-token-syntax.mjs`
+now fails on an unbalanced comment.
+
+**A bare `var()` colour makes Tailwind delete the declaration.** The alpha modifier
+(`bg-sheet/50`) works by substituting an `<alpha-value>` placeholder into the colour,
+and a bare `var(--rk-sheet)` has nowhere to put it — so Tailwind drops the utility
+with no error and no warning. This repo has 252 alpha-modified colour utilities
+(`border-stone-800/50` alone appears 77 times), which is a quarter of the borders on
+the site vanishing into a build that still looks plausible. Every rung therefore
+exists twice: as a hex and as a channel triplet, bound as
+`rgb(var(--rk-x-ch) / <alpha-value>)`. The two forms must stay in lockstep — a drifted
+channel is a colour that is almost right, which is harder to see than one that is
+wrong — and `scripts/check-token-channels.mjs` asserts every rung matches and that each
+ground block binds the same rung in both forms.
+
 **`break-inside: avoid` on a block taller than a page does not keep it together.** It
 pushes the whole block to the next page and leaves the current one blank. Long tables
 break freely at the wrapper, hold each *row* whole, and repeat `thead` with
@@ -467,18 +656,51 @@ to black. Printing a palette as a row of black squares demonstrates nothing.
 
 ---
 
-## 11. What this pass did not do
+## 11. What has landed, and what has not
 
-Deliberately, so the next pass has a clean edge to work from:
+This section used to say "what this pass did not do" and list four things held back so
+the next pass had a clean edge. All four have since been done. It is kept, retitled,
+because the useful thing about it was never the list — it was having one place that
+says where the system actually reaches.
 
-- No page was restyled. `layouts/partials/header.html`, the homepage, the blog and
-  `content/` are untouched.
-- `assets/css/whitepaper.css` and `layouts/partials/industries-style.html` still
-  carry their own literal values. Repointing them at the tokens is mechanical and is
-  the obvious next step.
-- `layouts/_default/baseof.html` still requests Inter, Plus Jakarta Sans and Material
-  Symbols from `fonts.googleapis.com`. Removing those three requests and wiring
-  `rk-fonts.html` in their place is a one-file change, but it restyles every page at
-  once, so it belongs to a pass that can look at every page.
-- The five category accents are defined but not applied; applying them is one line of
-  front matter per industry page.
+**Landed.**
+
+- **Pages are restyled.** The homepage carries about 1,800 lines of its own CSS in
+  `layouts/partials/home/style.html`: a near-white sheet, five blocks, every block a
+  different shape rather than a different paragraph. `assets/css/main.css` sets `body`
+  to `bg-canvas text-ink-2`, and `tailwind.config.js` rebinds the `stone-*`, `slate`,
+  `gray`, `neutral` and `zinc` scales onto `--rk-*` per rung, which is how 2,432
+  `stone-*` class references and a dark header landed on the light sheet without being
+  edited one at a time. One class set now works on both grounds.
+- **No third-party font request.** `layouts/_default/baseof.html` no longer fetches
+  Inter, Plus Jakarta Sans or Material Symbols from `fonts.googleapis.com`;
+  `rk-fonts.html` publishes the self-hosted faces in their place, and asserts its own
+  count against `tokens.css` (§10).
+- **`layouts/partials/industries-style.html` is repointed.** Every colour in it
+  resolves through `--rk-*`.
+- **The category accents are applied.** All five pages in `content/industries/` carry
+  `category:` front matter and the layout emits the matching `.rk-cat-*` class.
+- **The contrast table is generated.** §5 is no longer typed by hand; the specimen and
+  this file both read what the generator measured.
+
+**Not landed.**
+
+- `assets/css/whitepaper.css` is the last stylesheet on its own palette — 87 literal
+  hex values, no `--rk-*`, including the warm paper sheet `#F5F1E8`. It is the one
+  place the identity is still two sets of numbers.
+- `layouts/partials/logo.html` still uses `images/logo.png` in a rounded tile. The
+  traced SVGs in `assets/images/brand/` exist and are correct (§9); nothing consumes
+  them yet, so the tile is still a workaround for a background the raster will not
+  give up.
+- The contrast generator measures category accents against `--rk-ground` only, which
+  is why three console pairs are under AA and uncaught (§4, §5).
+- The two elevation shadows are still tinted with the pre-2026-09-10 blue-black (§6).
+- `scripts/check-design-doc.mjs` is written but not wired. It fails when a token and a
+  value stated together in a table here disagree with `tokens.css` — run against the
+  version of this file that preceded the 2026-09-10 reconciliation it reports 28
+  disagreements, including both re-valued faces and every ramp and signal hex. It
+  belongs beside the other token checks in `.github/workflows/deploy.yaml`; adding it
+  there is one line, and that file has another owner this week.
+- That check reads tables, not prose. It would not have caught "no page was restyled",
+  which was false for weeks. Values in this file can now be held to the token file;
+  claims about the repo still cannot, and are checked by reading.

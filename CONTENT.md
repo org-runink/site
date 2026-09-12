@@ -93,6 +93,10 @@ Flesch reading ease is the check, and the site carries its own meter:
 hugo --gc --destination public
 go run readability.go public          # every page, worst first, with banned words
 go run readability.go -min 45 public  # exit 1 below the floor
+
+# what .github/workflows/deploy.yaml runs, against its own docs/ build:
+go run readability.go -min 45 \
+  -exclude /tags/,/categories/,/es/,/fr/,/pt/,/license/,/privacy/ docs
 ```
 
 It strips the site chrome first, because the header and footer are the same words on
@@ -114,6 +118,35 @@ if a change to `readability.go` moves them, the change is wrong.
 
 The other languages are not scored — Flesch is calibrated on English and returns
 nonsense elsewhere. Translations are governed by rules 1, 2 and 12 instead.
+
+**What the gate holds, and what it does not.** The floor became a build gate on
+12 September 2026; until then this section described a check that nothing ran. It gates 86
+of the 200 pages carrying enough body copy to score, and the worst of those is
+`/blog/procurement-spend-analytics-visibility/` at 49.3 — so a page has 4.3 points to fall
+before it breaks the build. `-exclude` does not lower the floor: every page is still
+measured and still printed with its score, and every ungated row is marked `~`, so what is
+not enforced is visible in the run rather than hidden inside a flag. Three groups sit
+behind that flag, for two quite different reasons:
+
+- `/tags/`, `/categories/` — **the measurement is invalid here, not failing.** These are
+  generated listings whose sentences are link titles terminated by `</li>`, so the score
+  measures title vocabulary and nothing anybody reads as an argument. `/tags/` scores 19.3
+  and always will, however well the site is written. They are `noindex` and are in no
+  sitemap.
+- `/es/`, `/fr/`, `/pt/` — the paragraph above already says these are not scored. The tool
+  had been scoring them anyway, against the rule it implements.
+- `/license/`, `/privacy/` — **neither of the above. This is a waiver of real debt.** Both
+  are indexed English prose, both are in the sitemap, and this site's own `/luna-privacy/`
+  scores 61.6 — which is the proof that a policy page clears 45 when somebody writes one in
+  plain language. These two score 21.4 and 26.5 because nobody has. They are named in the
+  workflow so the gate can protect the other 86 pages now instead of waiting on a rewrite.
+  Rewrite them and delete them from that line; do not add a third page to it without an
+  argument of the same kind.
+
+**The banned-word list is reported, not enforced.** `readability.go` prints `BANNED:`
+beside any page carrying one, and exits on the floor alone — so a reintroduced "leverage"
+ships green. The corpus is clean today, zero hits across 200 pages, which is the only
+reason this is a note rather than an incident. Read the `BANNED:` column.
 
 ## 4. If it needs a caveat, it does not go on the site
 
@@ -202,6 +235,13 @@ go run linkcheck.go public        # site chrome, which is what CI gates on
 go run linkcheck.go --all public  # body copy too; run this by hand
 ```
 
+CI runs `go run linkcheck.go docs` against its own build, as of 12 September 2026. Before
+that this section described a gate that did not exist: a nav change pointing 136 rendered
+links at three pages that were never built passed every step in the workflow, and was
+caught only because somebody ran this by hand. Chrome-only is deliberate — one wrong entry
+in `hugo.toml` breaks the same link on all 715 pages, which is worth stopping a deploy for;
+an editorial typo in one blog post is not.
+
 One hostname: **`runink.org`**. Not `runink.com`, which is not ours, and not
 `www.runink.org`, which has no DNS record — a canonical URL or a JSON-LD `url` pointing
 at either sends a crawler nowhere. `linkcheck.go` never leaves the site, so it cannot see
@@ -279,7 +319,10 @@ cd <repo root>
 rm -rf public && hugo --gc --destination public   # confirm the page count, not the exit code
 
 go run linkcheck.go public                        # rule 8 — paths AND fragments
-go run readability.go -min 45 public              # rule 3 — floor 45
+go run readability.go public                      # rule 3 — every page, worst first
+go run readability.go -min 45 \
+  -exclude /tags/,/categories/,/es/,/fr/,/pt/,/license/,/privacy/ public
+                                                  # rule 3 — the gate CI runs
 
 node scripts/check-content-doctrine.mjs           # and again with --rendered public
 node scripts/check-rendered-output.mjs public
@@ -296,7 +339,14 @@ cd ../pulse/grpc && \
 ```
 
 Everything above `check-whitepaper-mirrors.sh` also runs in `.github/workflows/
-deploy.yaml`. **That one cannot**, and the reason is worth knowing rather than
+deploy.yaml`, against its `docs/` build rather than `public/`. **That sentence was false
+until 12 September 2026.** `linkcheck.go` and `readability.go` were listed here as part of
+the suite and appeared in no workflow step, so rules 8 and 3 were enforced by whoever
+remembered to run them — which is how a nav entry pointing at three pages that do not
+exist got to within one hand-run command of shipping. Both are steps now: "Check internal
+links and fragments resolve" and "Check plain-language floor".
+
+**`check-whitepaper-mirrors.sh` still cannot**, and the reason is worth knowing rather than
 rediscovering: it compares each paper against a mirror in `../pitch-decks/`,
 which is a sibling directory on a developer's machine and is not part of this
 repository — so a CI checkout has nothing to compare against.
@@ -326,3 +376,17 @@ have shipped. **When you touch a paper, read its mirror's cover with your own
 eyes.**
 
 Rules 1, 4, 5, 6, 9, 10, 11 and 12 have no tool. They are read for.
+
+The tooled rules are not fully tooled either, and the gaps are where things ship:
+
+- **Rule 2** has `disclosurecheck`, and it runs on a developer's machine only — it lives in
+  `../pulse/grpc`, which a CI checkout of this repo does not have. It wants both the source
+  and the rendered file, and it false-positives on posts describing the customer's own
+  problem, so it needs a reader at both ends.
+- **Rule 3** gates the floor, on English non-taxonomy pages. Its banned-word list is printed
+  and not enforced, and the translations are not scored at all.
+- **Rule 8** gates paths and fragments in the site chrome. Body copy is reported only, under
+  `--all`. The one-hostname half is checked by nothing — grep for it.
+- **Rule 13** is the one that says why this list matters: none of the above looks at a page.
+  A CSS specificity collision rendered a live CTA as a blank rectangle with every check
+  green.
