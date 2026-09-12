@@ -9,6 +9,12 @@ At Runink, we take your privacy seriously. This Privacy Policy explains how we c
 
 ---
 
+## Other Runink Apps
+
+The Luna mobile app is published separately and handles a different kind of
+data. It is covered by [the Luna privacy policy](/luna-privacy/), not by this
+one.
+
 ---
 
 ## Information We Collect
