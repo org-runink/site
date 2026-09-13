@@ -43,6 +43,21 @@
      is required, not cosmetic: Go's contextual escaper filters style-attribute
      values and rejects parentheses, so an unmarked var() is emitted as the
      literal string ZgotmplZ and takes the whole accent chain with it. */}}
+{{/* THE SECTION'S FURNITURE, IN THE READER'S LANGUAGE.
+
+     Every heading, column head and figure caption on this page used to be an
+     English string written into this template. That was invisible while the
+     industries section was English only — and it stopped being true the moment a
+     translated industry page existed: /fr/industries/marketing/ rendered French
+     front matter inside "Where the decision happens", "The measure", "Your figure
+     today" and "Who you would be working with". Rule 12 does not exempt chrome.
+
+     The strings come from `params.ui` per language in hugo.toml, which is the
+     mechanism this site already uses for the footer, the blog listing and the
+     call to action. The English default stays beside each use, so a key nobody
+     has translated yet degrades to English rather than to nothing — and so this
+     template still reads as prose. */}}
+{{ $ui := site.Params.ui | default dict }}
 {{ $cat := .Params.category }}
 {{ $section := .Site.GetPage "/industries" }}
 <div class="ind{{ with $cat }} rk-cat-{{ . }}{{ end }}"{{ if not $cat }} style="--rk-accent: {{ "var(--rk-signal)" | safeCSS }};"{{ end }}>
@@ -69,13 +84,13 @@
     <figure class="ind-figure">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label">Where the decision happens</h2>
+        <h2 class="ind-head__label">{{ $ui.where_decision | default "Where the decision happens" }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
       {{ partial "industries/decision-figure.html" . }}
       <ol class="ind-figure__beats">
-        <li class="ind-figure__beat"><b>Records you already keep</b>Spread across the systems you already run.</li>
-        <li class="ind-figure__beat"><b>One finding, with its evidence</b>Drawn together into a single proposed action.</li>
+        <li class="ind-figure__beat"><b>{{ $ui.beat_records | default "Records you already keep" }}</b>{{ $ui.beat_records_line | default "Spread across the systems you already run." }}</li>
+        <li class="ind-figure__beat"><b>{{ $ui.beat_finding | default "One finding, with its evidence" }}</b>{{ $ui.beat_finding_line | default "Drawn together into a single proposed action." }}</li>
         {{/* "and nothing goes out before they do" was a blanket guarantee, and it
              was not true. `REQUIRE_HITL` is read by no enforcement code in FACE —
              its own source says so — so there is no global gate on everything
@@ -84,8 +99,8 @@
              the approver's name is recorded with what they changed. Narrower, and
              checkable. A control that cannot fire is worse than none, because it
              answers "is this handled?" with a confident yes. */}}
-        <li class="ind-figure__beat"><b>A person approves it</b>The drafted action waits; approving is what sends it, under their name.</li>
-        <li class="ind-figure__beat"><b>The work goes out</b>And the reason stays on the record.</li>
+        <li class="ind-figure__beat"><b>{{ $ui.beat_approve | default "A person approves it" }}</b>{{ $ui.beat_approve_line | default "The drafted action waits; approving is what sends it, under their name." }}</li>
+        <li class="ind-figure__beat"><b>{{ $ui.beat_out | default "The work goes out" }}</b>{{ $ui.beat_out_line | default "And the reason stays on the record." }}</li>
       </ol>
     </figure>
 
@@ -94,7 +109,7 @@
     <section class="ind-sec" aria-labelledby="problems-heading">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label" id="problems-heading">{{ $.Params.problems_heading | default "Where it goes wrong" }}</h2>
+        <h2 class="ind-head__label" id="problems-heading">{{ $.Params.problems_heading | default ($ui.problems_heading | default "Where it goes wrong") }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
       <ul class="ind-grid2">
@@ -115,7 +130,7 @@
     <section class="ind-sec" aria-labelledby="owners-heading">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label" id="owners-heading">{{ $.Params.owners_heading | default "Who owns this" }}</h2>
+        <h2 class="ind-head__label" id="owners-heading">{{ $.Params.owners_heading | default ($ui.owners_heading | default "Who owns this") }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
       {{ with $.Params.owners_intro }}<p class="ind-intro">{{ . }}</p>{{ end }}
@@ -137,7 +152,7 @@
     <section class="ind-sec ind-band" aria-labelledby="outcomes-heading">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label" id="outcomes-heading">{{ $.Params.outcomes_heading | default "What changes" }}</h2>
+        <h2 class="ind-head__label" id="outcomes-heading">{{ $.Params.outcomes_heading | default ($ui.outcomes_heading | default "What changes") }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
       <ul class="ind-band__list">
@@ -191,10 +206,10 @@
     <section class="ind-sec" aria-labelledby="worked-heading">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label" id="worked-heading">{{ $.Params.worked_heading | default "Worked through, end to end" }}</h2>
+        <h2 class="ind-head__label" id="worked-heading">{{ $.Params.worked_heading | default ($ui.worked_heading | default "Worked through, end to end") }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
-      <p class="ind-intro">{{ $.Params.worked_intro | default "When in the operation each of these lands, and then the scenarios themselves — each one walked from the record that starts it to the person who approves what is done about it." }}</p>
+      <p class="ind-intro">{{ $.Params.worked_intro | default ($ui.worked_intro | default "When in the operation each of these lands, and then the scenarios themselves — each one walked from the record that starts it to the person who approves what is done about it.") }}</p>
       {{ partial "shared/worked-case.html" (dict "flow" .flow "cases" .cases) }}
     </section>
     {{ end }}
@@ -225,7 +240,7 @@
     <section class="ind-sec" aria-labelledby="coverage-heading">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label" id="coverage-heading">{{ $.Params.coverage_heading | default "The jobs this covers" }}</h2>
+        <h2 class="ind-head__label" id="coverage-heading">{{ $.Params.coverage_heading | default ($ui.coverage_heading | default "The jobs this covers") }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
       {{ with $.Params.coverage_intro }}<p class="ind-intro">{{ . }}</p>{{ end }}
@@ -255,7 +270,7 @@
     <section class="ind-sec" aria-labelledby="measures-heading">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label" id="measures-heading">{{ $.Params.measures_heading | default "How you will know it worked" }}</h2>
+        <h2 class="ind-head__label" id="measures-heading">{{ $.Params.measures_heading | default ($ui.measures_heading | default "How you will know it worked") }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
       {{ with $.Params.measures_intro }}<p class="ind-intro">{{ . }}</p>{{ end }}
@@ -263,16 +278,16 @@
         <table class="ind-measures">
           <thead>
             <tr>
-              <th scope="col">The measure</th>
-              <th scope="col" class="ind-col-today">Your figure today</th>
-              <th scope="col">What moves it</th>
+              <th scope="col">{{ $ui.col_measure | default "The measure" }}</th>
+              <th scope="col" class="ind-col-today">{{ $ui.col_today | default "Your figure today" }}</th>
+              <th scope="col">{{ $ui.col_moves | default "What moves it" }}</th>
             </tr>
           </thead>
           <tbody>
             {{ range . }}
             <tr>
               <th scope="row">{{ .metric }}</th>
-              <td class="ind-col-today" data-label="Your figure today">
+              <td class="ind-col-today" data-label="{{ $ui.col_today | default "Your figure today" }}">
                 <span class="ind-blank" aria-hidden="true"></span>
                 <span class="ind-source">{{ .today }}</span>
               </td>
@@ -300,7 +315,7 @@
     <section class="ind-sec" aria-labelledby="foundations-heading">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label" id="foundations-heading">{{ $.Params.foundations_heading | default "Two things that make the above possible" }}</h2>
+        <h2 class="ind-head__label" id="foundations-heading">{{ $.Params.foundations_heading | default ($ui.foundations_heading | default "Two things that make the above possible") }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
       <ul class="ind-pair">
@@ -343,27 +358,27 @@
     <section class="ind-sec ind-who" aria-labelledby="who-heading">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
-        <h2 class="ind-head__label" id="who-heading">{{ $.Params.who_heading | default "Who you would be working with" }}</h2>
+        <h2 class="ind-head__label" id="who-heading">{{ $.Params.who_heading | default ($ui.who_heading | default "Who you would be working with") }}</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
-      <p class="ind-intro">{{ $.Params.who_line | default "Runink is founder-led. The person in the first meeting is the person who designed the thing being discussed — his track record, what he does here, and the means to check any of it are on the company page." }}</p>
+      <p class="ind-intro">{{ $.Params.who_line | default ($ui.who_line | default "Runink is founder-led. The person in the first meeting is the person who designed the thing being discussed — his track record, what he does here, and the means to check any of it are on the company page.") }}</p>
       {{/* NOT .ind-more. That class is display:none !important on paper — it
            carries the back link, the other-industries nav and the buttons, which
            are screen furniture — and the printed sheet came back with this
            paragraph and no way out of it. Read off the PDF, not the stylesheet. */}}
       <p class="ind-who__go">
-        <a class="ind-who__link" href="{{ .RelPermalink }}">{{ $.Params.who_cta | default "Who runs it, and how it is built" }} <span aria-hidden="true">&rarr;</span></a>
+        <a class="ind-who__link" href="{{ .RelPermalink }}">{{ $.Params.who_cta | default ($ui.who_cta | default "Who runs it, and how it is built") }} <span aria-hidden="true">&rarr;</span></a>
       </p>
     </section>
     {{ end }}
 
     <!-- One next step -->
     <section class="ind-next" aria-labelledby="next-heading">
-      <h2 id="next-heading">{{ .Params.next_heading | default "See whether it fits" }}</h2>
+      <h2 id="next-heading">{{ .Params.next_heading | default ($ui.next_heading | default "See whether it fits") }}</h2>
       <p>{{ .Params.next_body }}</p>
       <div class="ind-actions">
         <a class="ind-cta" href="{{ partial "contact-url.html" (dict "url" "/#contact" "page" .) }}">
-          {{ .Params.cta_text | default "Book a consultation" }}
+          {{ .Params.cta_text | default ($ui.cta_book | default "Book a consultation") }}
         </a>
         {{ with .Params.paper }}
         <a class="ind-cta-ghost" href="{{ .url }}">{{ .text }}</a>
@@ -374,7 +389,7 @@
 
     <!-- The other industries, so a mis-landed reader self-selects -->
     {{ with $section }}
-    <nav class="ind-more" aria-label="Other industries">
+    <nav class="ind-more" aria-label="{{ $ui.other_industries | default "Other industries" }}">
       <div class="ind-head">
         <span class="ind-head__mark" aria-hidden="true"></span>
         <p class="ind-head__label">Other industries</p>

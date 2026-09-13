@@ -20,6 +20,9 @@ deck: |
   inversión. Lo que explican es el mecanismo: qué mira el software, qué
   produce, quién lo aprueba y dónde se ejecuta todo.
 
+  Los cuatro documentos están escritos en inglés. Las páginas de este sitio
+  están en español; los documentos largos todavía no lo están.
+
   Donde un documento describe algo que hemos construido, lo dice con claridad.
   Donde describe un acuerdo con el producto de otra empresa, dice qué mitad de
   ese acuerdo funciona hoy. Nadie nos ha auditado contra SOC 2 ni ISO 27001, y

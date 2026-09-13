@@ -558,7 +558,12 @@
     letter-spacing: 0.08em;
     fill: var(--rk-text-3);
   }
+  /* Right-anchored, because the word changes length with the language: READING,
+     LEYENDO, LECTURE, LENDO. Anchored at the right edge it cannot run past it,
+     and the template places the dot back from that edge by the label's own
+     measured width. */
   .hp-pipe__live-label { font-size: 9.5px; letter-spacing: 0.16em; }
+  .hp-pipe__live-label--end { text-anchor: end; }
   .hp-pipe__live { fill: var(--rk-signal); }
 
   /* The stage labels are the section's own three beats, set as the labels they
@@ -580,11 +585,14 @@
     stroke-width: 1;
   }
   .hp-pipe__kind { fill: var(--rk-signal-wash); }
+  /* Centred in its chip: the three-letter codes are all the same width, but
+     centring means a chip never looks hung off one side if one ever is not. */
   .hp-pipe__kind-label {
     font-family: var(--rk-font-util);
     font-size: 8.5px;
     font-weight: 600;
     letter-spacing: 0.08em;
+    text-anchor: middle;
     fill: var(--rk-signal);
   }
   .hp-pipe__file {

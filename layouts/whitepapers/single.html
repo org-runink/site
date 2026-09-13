@@ -41,15 +41,28 @@
   </header>
 
   <div class="wp-body">
+    {{/* THE WHOLE RAIL IS GUARDED ON THE REGISTER, not just the counts inside it.
+
+         `len` on a param the page does not carry raises "reflect: call of
+         reflect.Value.Type on zero Value", which is a render failure rather than
+         an empty string — one paper added without a register stopped the entire
+         site from building, twice: once here and once on the listing card.
+
+         Guarding only the number would leave a chapter rail with no chapters, a
+         contents toggle that opens onto nothing and a heading that says
+         "Register". A paper without one gets no rail, and the sheet beside it
+         widens into the space, which is the right answer for a document that has
+         no chapters to jump between. */}}
+    {{ with .Params.register }}
     <nav class="wp-rail" aria-labelledby="register-heading">
       <p class="wp-rail-head wp-util" id="register-heading">
-        Register &mdash; {{ len .Params.register }} chapters, {{ .Params.source_pages }} pages
+        Register &mdash; {{ len . }} {{ site.Params.ui.chapters | default "chapters" }}{{ with $.Params.source_pages }}, {{ . }} {{ site.Params.ui.pages | default "pages" }}{{ end }}
       </p>
 
       {{/* Hidden until the script that operates it has loaded, so a reader
            without JavaScript gets the full list rather than a dead button. */}}
       <button type="button" class="wp-rail-toggle" aria-expanded="false" aria-controls="register-panel" hidden>
-        <span>Contents &mdash; {{ len .Params.register }} chapters</span>
+        <span>{{ site.Params.ui.contents | default "Contents" }} &mdash; {{ len . }} {{ site.Params.ui.chapters | default "chapters" }}</span>
         <svg class="wp-rail-toggle-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
           <path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -57,7 +70,7 @@
 
       <div class="wp-rail-panel" id="register-panel">
         <ol class="wp-reg">
-          {{ range .Params.register }}
+          {{ range . }}
           <li>
             <a href="#{{ anchorize .title }}">
               <span class="wp-reg-page" aria-hidden="true">{{ .page }}{{ with .page_end }}&ndash;{{ . }}{{ end }}</span>
@@ -68,6 +81,7 @@
         </ol>
       </div>
     </nav>
+    {{ end }}
 
     <article class="wp-sheet" id="document">
       <div class="wp-doc">

@@ -16,6 +16,9 @@ deck: |
   données sont traitées et qui peut les voir. Le quatrième est un document
   d'architecture conjoint avec Atlas, de Logical Leap.
 
+  Les quatre documents sont rédigés en anglais. Les pages de ce site sont en
+  français ; les documents longs ne le sont pas encore.
+
   Ils ne contiennent ni études de cas, ni noms de clients, ni chiffres de
   retour sur investissement. Ce qu'ils expliquent, c'est le mécanisme : ce que
   le logiciel examine, ce qu'il produit, qui l'approuve, et où tout cela

@@ -61,6 +61,15 @@ opex:
 opex_note: "Apportez l'une de ces lignes et un mois des enregistrements qui sont derrière. Cela suffit à dire si les pertes que vous portez ont la forme de celles que cela traite, et c'est la seule façon honnête pour l'un comme pour l'autre de le savoir."
 
 figure:
+  console:
+    title: "runink face · lecture"
+    live: "LECTURE"
+    states: ["LU", "COMPARÉ", "LU", "EN ATTENTE"]
+    rule_name: "La règle qui le régit"
+    rule_terms: ["CONDITIONS DU CONTRAT", "SEUIL", "LIMITE D'ENGAGEMENT"]
+    gate_name: "Action rédigée · attend un nom"
+    acts: ["APPROUVER", "MODIFIER", "REJETER"]
+    alt: "Les enregistrements que vos systèmes détiennent déjà sont lus un par un au regard de la règle qui les régit, et ce qui diffère arrive sous la forme d'une action rédigée qui attend qu'une personne nommée l'approuve, la modifie ou la rejette."
   today_label: "Comment on le lit aujourd'hui"
   today_note: "Le volume a eu raison du contrôle : on lit un échantillon et on suppose que le reste lui ressemble. Les enregistrements qui divergent sont déjà dans le champ."
   read_label: "Comment Runink le lit"

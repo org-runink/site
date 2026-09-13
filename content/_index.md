@@ -77,6 +77,19 @@ opex:
 opex_note: "Bring one of these and one month of the records behind it. That is enough to tell whether the losses you carry are the shape this addresses, and it is the only honest way either of us finds out."
 
 figure:
+  console:
+    # THE CONSOLE FIGURE'S OWN WORDS. Every locale carries this block; the
+    # template's English defaults exist only so a half-translated file cannot
+    # render a broken picture. No number may appear here — the figure is subject
+    # to the no-figures rule at the head of this file exactly as the prose is.
+    title: "runink face · reading"
+    live: "READING"
+    states: ["READ", "COMPARED", "READ", "QUEUED"]
+    rule_name: "The rule that governs it"
+    rule_terms: ["POLICY WORDING", "THRESHOLD", "AUTHORITY LIMIT"]
+    gate_name: "Drafted action · waits for a name"
+    acts: ["APPROVE", "EDIT", "REJECT"]
+    alt: "Records held in the systems you already run are read one by one against the rule that governs them, and what differs arrives as a drafted action that waits for a named person to approve, edit or reject it."
   today_label: "How it is read today"
   today_note: "Volume defeated inspection, so a sample is read and the rest is assumed to look like it. The records that differ are already in the field."
   read_label: "How Runink reads it"

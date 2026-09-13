@@ -46,9 +46,48 @@
 {{ $b2 := index $beats 1 }}
 {{ $b3 := index $beats 2 }}
 
+{{/* THE CONSOLE'S OWN WORDS, AND THIS IS RULE 12 RATHER THAN TIDINESS.
+
+     The first version of this figure had its labels written into the template,
+     so /es/, /fr/ and /pt/ all rendered a picture captioned "runink face ·
+     reading", "The rule that governs it" and "APPROVE · EDIT · REJECT" in
+     English — on the one block of those pages a reader looks at before reading
+     anything. Translations are pages, not copies.
+
+     The English strings here are DEFAULTS, so a locale that has not translated
+     the block yet still renders a complete figure rather than a broken one. All
+     four carry `figure.console` today. */}}
+{{ $c := $f.console | default dict }}
+{{ $title := $c.title | default "runink face · reading" }}
+{{ $live := $c.live | default "READING" }}
+{{ $states := $c.states | default (slice "READ" "COMPARED" "READ" "QUEUED") }}
+{{ $ruleName := $c.rule_name | default "The rule that governs it" }}
+{{ $ruleTerms := $c.rule_terms | default (slice "POLICY WORDING" "THRESHOLD" "AUTHORITY LIMIT") }}
+{{ $gateName := $c.gate_name | default "Drafted action · waits for a name" }}
+{{ $acts := $c.acts | default (slice "APPROVE" "EDIT" "REJECT") }}
+{{ $alt := $c.alt | default "Records held in the systems you already run are read one by one against the rule that governs them, and what differs arrives as a drafted action that waits for a named person to approve, edit or reject it." }}
+
+{{/* The four records. The file names are the one thing in here that is NOT
+     translated: a file on a customer's system is not renamed by the language of
+     the page describing it. The state beside each one is the locale's word. */}}
+{{ $rows := slice
+  (dict "kind" "BOL" "file" "bill_of_lading_MSKU4419.pdf" "y" 90)
+  (dict "kind" "ENT" "file" "entry_summary_7501.xml" "y" 136)
+  (dict "kind" "RFR" "file" "reefer_log_overnight.json" "y" 182)
+  (dict "kind" "CLM" "file" "claim_file_0934.json" "y" 228) }}
+
+{{/* MEASURED, NOT FIXED. "APPROVE", "APROBAR" and "APPROUVER" are three widths,
+     and a chip sized for the first clips the third. Both the chips and the live
+     label are set in the utility face, which is monospaced, so a character count
+     is an accurate width: about 6.5px a character at 9px with 0.12em of
+     tracking, and about 7.2px at 9.5px with 0.16em. That is the whole reason
+     these two are computed here rather than written into the markup. */}}
+{{ $liveW := mul (len $live) 7.2 }}
+{{ $liveDotX := sub (sub 612 $liveW) 14 }}
+
 <svg class="hp-pipe" viewBox="0 0 640 496" role="img" preserveAspectRatio="xMidYMid meet"
      data-motion="pipeline"
-     aria-label="{{ $b1.title }}. {{ $b2.title }}. {{ $b3.title }}. Records held in the systems you already run are read one by one against the rule that governs them, and what differs arrives as a drafted action that waits for a named person to approve, edit or reject it.">
+     aria-label="{{ $b1.title }}. {{ $b2.title }}. {{ $b3.title }}. {{ $alt }}">
 
   {{/* The console shell. A rule and a change of ground, not a shadow: DESIGN.md
        6 gives elevation to things that genuinely float, and this is a panel. */}}
@@ -57,44 +96,25 @@
   <circle class="hp-pipe__dot" cx="26" cy="23" r="4.5"/>
   <circle class="hp-pipe__dot" cx="44" cy="23" r="4.5"/>
   <circle class="hp-pipe__dot" cx="62" cy="23" r="4.5"/>
-  <text class="hp-pipe__title" x="86" y="27">runink face · reading</text>
-  <circle class="hp-pipe__live" cx="546" cy="23" r="4"/>
-  <text class="hp-pipe__live-label" x="558" y="27">READING</text>
+  <text class="hp-pipe__title" x="86" y="27">{{ $title }}</text>
+  <circle class="hp-pipe__live" cx="{{ $liveDotX }}" cy="23" r="4"/>
+  <text class="hp-pipe__live-label hp-pipe__live-label--end" x="612" y="27">{{ $live }}</text>
 
   {{/* 1. The records already exist. */}}
   <text class="hp-pipe__stage" x="28" y="76">{{ $b1.title }}</text>
 
   <g class="hp-pipe__rows">
-    <g class="hp-pipe__row" data-row="0">
-      <rect x="28" y="90" width="584" height="38" rx="8"/>
-      <rect class="hp-pipe__kind" x="40" y="101" width="34" height="16" rx="4"/>
-      <text class="hp-pipe__kind-label" x="47" y="113">BOL</text>
-      <text class="hp-pipe__file" x="86" y="114">bill_of_lading_MSKU4419.pdf</text>
-      <text class="hp-pipe__state" x="600" y="113">READ</text>
+    {{ range $i, $r := $rows }}
+    {{/* The fourth row is cut by the panel edge on purpose: the field does not
+         end here, it goes on past the bottom of what is drawn. */}}
+    <g class="hp-pipe__row{{ if eq $i 3 }} hp-pipe__row--cut{{ end }}" data-row="{{ $i }}">
+      <rect x="28" y="{{ $r.y }}" width="584" height="38" rx="8"/>
+      <rect class="hp-pipe__kind" x="40" y="{{ add $r.y 11 }}" width="34" height="16" rx="4"/>
+      <text class="hp-pipe__kind-label" x="57" y="{{ add $r.y 23 }}">{{ $r.kind }}</text>
+      <text class="hp-pipe__file" x="86" y="{{ add $r.y 24 }}">{{ $r.file }}</text>
+      <text class="hp-pipe__state" x="600" y="{{ add $r.y 23 }}">{{ index $states $i }}</text>
     </g>
-    <g class="hp-pipe__row" data-row="1">
-      <rect x="28" y="136" width="584" height="38" rx="8"/>
-      <rect class="hp-pipe__kind" x="40" y="147" width="34" height="16" rx="4"/>
-      <text class="hp-pipe__kind-label" x="45" y="159">ENT</text>
-      <text class="hp-pipe__file" x="86" y="160">entry_summary_7501.xml</text>
-      <text class="hp-pipe__state" x="600" y="159">COMPARED</text>
-    </g>
-    <g class="hp-pipe__row" data-row="2">
-      <rect x="28" y="182" width="584" height="38" rx="8"/>
-      <rect class="hp-pipe__kind" x="40" y="193" width="34" height="16" rx="4"/>
-      <text class="hp-pipe__kind-label" x="46" y="205">RFR</text>
-      <text class="hp-pipe__file" x="86" y="206">reefer_log_overnight.json</text>
-      <text class="hp-pipe__state" x="600" y="205">READ</text>
-    </g>
-    {{/* The fourth row is clipped by the panel edge on purpose: the field does
-         not end here, it goes on past the bottom of what is drawn. */}}
-    <g class="hp-pipe__row hp-pipe__row--cut" data-row="3">
-      <rect x="28" y="228" width="584" height="38" rx="8"/>
-      <rect class="hp-pipe__kind" x="40" y="239" width="34" height="16" rx="4"/>
-      <text class="hp-pipe__kind-label" x="47" y="251">CLM</text>
-      <text class="hp-pipe__file" x="86" y="252">claim_file_0934.json</text>
-      <text class="hp-pipe__state" x="600" y="251">QUEUED</text>
-    </g>
+    {{ end }}
   </g>
 
   {{/* The read pass: a hairline that travels down the rows once per cycle, the
@@ -116,10 +136,8 @@
   <text class="hp-pipe__stage" x="28" y="296">{{ $b2.title }}</text>
   <g class="hp-pipe__node">
     <rect x="28" y="306" width="584" height="62" rx="10"/>
-    <text class="hp-pipe__node-name" x="52" y="332">The rule that governs it</text>
-    <text class="hp-pipe__node-line" x="52" y="352">
-      <tspan class="hp-pipe__tick" data-tick="0">POLICY WORDING</tspan><tspan class="hp-pipe__sep"> · </tspan><tspan class="hp-pipe__tick" data-tick="1">THRESHOLD</tspan><tspan class="hp-pipe__sep"> · </tspan><tspan class="hp-pipe__tick" data-tick="2">AUTHORITY LIMIT</tspan>
-    </text>
+    <text class="hp-pipe__node-name" x="52" y="332">{{ $ruleName }}</text>
+    <text class="hp-pipe__node-line" x="52" y="352">{{ range $i, $t := $ruleTerms }}{{ if $i }}<tspan class="hp-pipe__sep"> · </tspan>{{ end }}<tspan class="hp-pipe__tick" data-tick="{{ $i }}">{{ $t }}</tspan>{{ end }}</text>
     {{/* Four bars that rise as the comparison runs. No scale and no axis: they
          are a light that says work is happening, not a measurement. */}}
     <g class="hp-pipe__meter">
@@ -138,20 +156,19 @@
     {{/* .rk-seam, drawn: the 2px signal rule between what the software proposed
          and what a named person decided. DESIGN.md 7. */}}
     <line class="hp-pipe__seam" x1="28" y1="445" x2="612" y2="445"/>
-    <text class="hp-pipe__gate-name" x="52" y="432">Drafted action · waits for a name</text>
+    <text class="hp-pipe__gate-name" x="52" y="432">{{ $gateName }}</text>
     <g class="hp-pipe__acts">
-      <g class="hp-pipe__act" data-act="0">
-        <rect x="52" y="456" width="92" height="20" rx="4"/>
-        <text x="98" y="470">APPROVE</text>
+      {{/* $x carries the running left edge, so a longer word moves the ones
+           after it along instead of being overlapped by them. */}}
+      {{ $x := 52.0 }}
+      {{ range $i, $a := $acts }}
+      {{ $w := add (mul (len $a) 6.5) 26.0 }}
+      <g class="hp-pipe__act" data-act="{{ $i }}">
+        <rect x="{{ $x }}" y="456" width="{{ $w }}" height="20" rx="4"/>
+        <text x="{{ add $x (div $w 2) }}" y="470">{{ $a }}</text>
       </g>
-      <g class="hp-pipe__act" data-act="1">
-        <rect x="154" y="456" width="64" height="20" rx="4"/>
-        <text x="186" y="470">EDIT</text>
-      </g>
-      <g class="hp-pipe__act" data-act="2">
-        <rect x="228" y="456" width="76" height="20" rx="4"/>
-        <text x="266" y="470">REJECT</text>
-      </g>
+      {{ $x = add $x (add $w 10.0) }}
+      {{ end }}
     </g>
     <rect class="hp-pipe__caret" x="588" y="458" width="8" height="16" rx="1"/>
   </g>

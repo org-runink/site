@@ -278,6 +278,69 @@ enableGitInfo = true
   # All four languages carry their own three strings, per rule 12. The Spanish,
   # French and Portuguese decks all promised "maximizar el/le/o ROI" and were
   # struck in the same change as the English one.
+  # ---- THE SECTION FURNITURE THAT USED TO BE WRITTEN INTO THE TEMPLATES -------
+  #
+  # Headings, column heads, figure captions and the two whitepaper counters. They
+  # lived as English literals in layouts/industries/single.html, its boundary
+  # figure, and the whitepaper list and single templates — which was invisible
+  # while the industries section was English only.
+  #
+  # It stopped being invisible the moment a translated industry page existed:
+  # /fr/industries/marketing/ rendered French front matter inside "Where the
+  # decision happens", "The measure", "Your figure today", "Your machines" and
+  # "Who you would be working with". Rule 12 gives chrome no exemption, and the
+  # listings had the same leak on all three locales — "30 pages 26 chapters" and
+  # "Read →" on /es/, /fr/ and /pt/.
+  #
+  # Each template keeps its English string as the `default`, so a key nobody has
+  # translated degrades to English rather than to an empty heading.
+  [params.ui]
+    where_decision = "Where the decision happens"
+    beat_records = "Records you already keep"
+    beat_records_line = "Spread across the systems you already run."
+    beat_finding = "One finding, with its evidence"
+    beat_finding_line = "Drawn together into a single proposed action."
+    beat_approve = "A person approves it"
+    beat_approve_line = "The drafted action waits; approving is what sends it, under their name."
+    beat_out = "The work goes out"
+    beat_out_line = "And the reason stays on the record."
+    problems_heading = "Where it goes wrong"
+    owners_heading = "Who owns this"
+    outcomes_heading = "What changes"
+    coverage_heading = "The jobs this covers"
+    worked_heading = "Worked through, end to end"
+    worked_intro = "When in the operation each of these lands, and then the scenarios themselves — each one walked from the record that starts it to the person who approves what is done about it."
+    measures_heading = "How you will know it worked"
+    col_measure = "The measure"
+    col_today = "Your figure today"
+    col_moves = "What moves it"
+    foundations_heading = "Two things that make the above possible"
+    fig_your_machines = "Your machines"
+    fig_open_web = "The open web"
+    who_heading = "Who you would be working with"
+    who_line = "Runink is founder-led. The person in the first meeting is the person who designed the thing being discussed — his track record, what he does here, and the means to check any of it are on the company page."
+    who_cta = "Who runs it, and how it is built"
+    next_heading = "See whether it fits"
+    cta_book = "Book a consultation"
+    other_industries = "Other industries"
+    pages = "pages"
+    chapters = "chapters"
+    contents = "Contents"
+    read = "Read"
+    skip_to_paper = "Skip to the paper"
+    # The consent banner is body copy on every page of every language — rule 12
+    # names it, and it was English on all three translated sites.
+    consent_body = """We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days."""
+    consent_read = "Read our"
+    consent_policy = "Privacy Policy"
+    consent_more = "for more information."
+    consent_reject = "Reject Non-Essential"
+    consent_accept = "Allow Counting"
+    start_with_paper = "Start with a paper"
+    documents = "documents"
+    with = "with"
+    with_cap = "With"
+
   [params.blog]
     enable = true
     eyebrow = "For operations, supply chain, finance and compliance"
@@ -608,6 +671,53 @@ enableGitInfo = true
       url = "/fr/company/"
       weight = 7
 
+    # See the note on [params.ui] in the English block. These are the headings of
+    # /fr/industries/*/ and the counters on /fr/blog/whitepapers/.
+    [languages.fr.params.ui]
+      where_decision = "Où la décision se prend"
+      beat_records = "Les enregistrements que vous tenez déjà"
+      beat_records_line = "Répartis dans les systèmes que vous faites déjà tourner."
+      beat_finding = "Un constat, avec ses preuves"
+      beat_finding_line = "Réunis en une seule action proposée."
+      beat_approve = "Une personne l'approuve"
+      beat_approve_line = "L'action rédigée attend ; l'approuver est ce qui l'envoie, sous son nom."
+      beat_out = "Le travail part"
+      beat_out_line = "Et la raison reste consignée."
+      problems_heading = "Là où cela dérape"
+      owners_heading = "Qui en répond"
+      outcomes_heading = "Ce qui change"
+      coverage_heading = "Les tâches que cela couvre"
+      worked_heading = "Déroulé de bout en bout"
+      worked_intro = "À quel moment de l'exploitation chacune de ces tâches se pose, puis les situations elles-mêmes — chacune suivie depuis le document qui la déclenche jusqu'à la personne qui approuve ce qu'on en fait."
+      measures_heading = "Comment vous saurez que cela a marché"
+      col_measure = "La mesure"
+      col_today = "Votre chiffre aujourd'hui"
+      col_moves = "Ce qui le fait bouger"
+      foundations_heading = "Deux choses qui rendent tout cela possible"
+      fig_your_machines = "Vos machines"
+      fig_open_web = "Le web ouvert"
+      who_heading = "Avec qui vous travailleriez"
+      who_line = "Runink est dirigée par son fondateur. La personne présente au premier rendez-vous est celle qui a conçu ce dont il est question — son parcours, ce qu'il fait ici et de quoi vérifier tout cela sont sur la page de l'entreprise."
+      who_cta = "Qui la dirige, et comment elle est construite"
+      next_heading = "Voir si cela vous correspond"
+      cta_book = "Réserver un échange"
+      other_industries = "Autres secteurs"
+      pages = "pages"
+      chapters = "chapitres"
+      contents = "Sommaire"
+      read = "Lire"
+      skip_to_paper = "Aller au document"
+      consent_body = """Nous utilisons des cookies pour compter les visites et voir quelles pages sont lues. Il n'y a pas de publicité ici : rien ne sert à vous cibler ni à changer ce que vous voyez. Rien n'est compté tant que vous n'avez pas choisi « Autoriser le comptage ». Nous gardons votre réponse pendant 180 jours."""
+      consent_read = "Lisez notre"
+      consent_policy = "politique de confidentialité"
+      consent_more = "pour en savoir plus."
+      consent_reject = "Refuser le non-essentiel"
+      consent_accept = "Autoriser le comptage"
+      start_with_paper = "Commencez par un livre blanc"
+      documents = "documents"
+      with = "avec"
+      with_cap = "Avec"
+
   [languages.es]
     locale = "es-es"
     label = "Español"
@@ -708,6 +818,52 @@ enableGitInfo = true
       name = "Empresa"
       url = "/es/company/"
       weight = 7
+
+    # See the note on [params.ui] in the English block.
+    [languages.es.params.ui]
+      where_decision = "Dónde se toma la decisión"
+      beat_records = "Registros que ya guarda"
+      beat_records_line = "Repartidos por los sistemas que ya hace funcionar."
+      beat_finding = "Un hallazgo, con sus pruebas"
+      beat_finding_line = "Reunidos en una sola acción propuesta."
+      beat_approve = "Una persona lo aprueba"
+      beat_approve_line = "La acción redactada espera; aprobarla es lo que la envía, a su nombre."
+      beat_out = "El trabajo sale"
+      beat_out_line = "Y el motivo queda escrito."
+      problems_heading = "Dónde se tuerce"
+      owners_heading = "Quién responde por esto"
+      outcomes_heading = "Qué cambia"
+      coverage_heading = "Los trabajos que cubre"
+      worked_heading = "Recorrido de principio a fin"
+      worked_intro = "En qué momento de la operación cae cada uno de estos trabajos, y después los escenarios mismos — cada uno recorrido desde el registro que lo inicia hasta la persona que aprueba lo que se hace con él."
+      measures_heading = "Cómo sabrá que ha funcionado"
+      col_measure = "La medida"
+      col_today = "Su cifra de hoy"
+      col_moves = "Qué la mueve"
+      foundations_heading = "Dos cosas que hacen posible lo anterior"
+      fig_your_machines = "Sus máquinas"
+      fig_open_web = "La web abierta"
+      who_heading = "Con quién trabajaría"
+      who_line = "Runink está dirigida por su fundador. La persona que está en la primera reunión es la que diseñó aquello de lo que se habla — su trayectoria, lo que hace aquí y cómo comprobar cualquiera de las dos cosas están en la página de la empresa."
+      who_cta = "Quién la dirige, y cómo se construye"
+      next_heading = "Vea si le encaja"
+      cta_book = "Reservar una conversación"
+      other_industries = "Otros sectores"
+      pages = "páginas"
+      chapters = "capítulos"
+      contents = "Índice"
+      read = "Leer"
+      skip_to_paper = "Ir al documento"
+      consent_body = """Usamos cookies para contar visitas y ver qué páginas se leen. Aquí no hay publicidad, así que nada se usa para perfilarle ni para cambiar lo que ve. No se cuenta nada hasta que elija «Permitir el conteo». Guardamos su respuesta durante 180 días."""
+      consent_read = "Lea nuestra"
+      consent_policy = "política de privacidad"
+      consent_more = "para más información."
+      consent_reject = "Rechazar lo no esencial"
+      consent_accept = "Permitir el conteo"
+      start_with_paper = "Empiece por un informe"
+      documents = "documentos"
+      with = "con"
+      with_cap = "Con"
 
   [languages.pt]
     locale = "pt-br"
@@ -847,3 +1003,49 @@ enableGitInfo = true
   section = ["HTML", "RSS", "TOON"]
   taxonomy = ["HTML", "TOON"]
   term = ["HTML", "RSS", "TOON"]
+    # See the note on [params.ui] in the English block.
+    [languages.pt.params.ui]
+      where_decision = "Onde a decisão acontece"
+      beat_records = "Registros que você já guarda"
+      beat_records_line = "Espalhados pelos sistemas que você já opera."
+      beat_finding = "Uma constatação, com as provas dela"
+      beat_finding_line = "Reunidas em uma única ação proposta."
+      beat_approve = "Uma pessoa aprova"
+      beat_approve_line = "A ação redigida espera; aprovar é o que envia, no nome dela."
+      beat_out = "O trabalho sai"
+      beat_out_line = "E o motivo fica no registro."
+      problems_heading = "Onde isso dá errado"
+      owners_heading = "Quem responde por isso"
+      outcomes_heading = "O que muda"
+      coverage_heading = "Os trabalhos que isso cobre"
+      worked_heading = "Percorrido de ponta a ponta"
+      worked_intro = "Em que momento da operação cada um desses trabalhos cai, e depois os cenários em si — cada um percorrido do registro que o inicia até a pessoa que aprova o que se faz com ele."
+      measures_heading = "Como você vai saber que funcionou"
+      col_measure = "A medida"
+      col_today = "O seu número hoje"
+      col_moves = "O que mexe nele"
+      foundations_heading = "Duas coisas que tornam o acima possível"
+      fig_your_machines = "As suas máquinas"
+      fig_open_web = "A web aberta"
+      who_heading = "Com quem você trabalharia"
+      who_line = "A Runink é dirigida pelo fundador. A pessoa na primeira reunião é a que desenhou aquilo que está em discussão — a trajetória dele, o que ele faz aqui e como conferir qualquer uma das duas coisas estão na página da empresa."
+      who_cta = "Quem dirige, e como é construído"
+      next_heading = "Veja se serve para você"
+      cta_book = "Marcar uma conversa"
+      other_industries = "Outros setores"
+      pages = "páginas"
+      chapters = "capítulos"
+      contents = "Sumário"
+      read = "Ler"
+      skip_to_paper = "Ir para o documento"
+      consent_body = """Usamos cookies para contar visitas e ver quais páginas são lidas. Não há anúncios aqui, então nada é usado para direcionar nada a você nem para mudar o que você vê. Nada é contado até você escolher "Permitir a contagem". Guardamos a sua resposta por 180 dias."""
+      consent_read = "Leia a nossa"
+      consent_policy = "política de privacidade"
+      consent_more = "para mais informações."
+      consent_reject = "Recusar o não essencial"
+      consent_accept = "Permitir a contagem"
+      start_with_paper = "Comece por um documento"
+      documents = "documentos"
+      with = "com"
+      with_cap = "Com"
+

@@ -19,6 +19,9 @@
   Call with: (dict "variant" "held") or (dict "variant" "reach").
 */}}
 {{ $variant := .variant | default "held" }}
+{{/* The two labels inside the drawing come from params.ui per language, like the
+     rest of this section's furniture — a French page had them in English. */}}
+{{ $ui := site.Params.ui | default dict }}
 <svg class="ind-found__art" data-motion="draw" viewBox="0 0 268 134" role="img" preserveAspectRatio="xMidYMid meet"
      aria-label="{{ if eq $variant "reach" }}One line drawn around the machines you own. The material and the working stay inside it, and a single arm reaches out from your own side to the open web and brings back what it read.{{ else }}One line drawn around the machines you own, with the material and the working both inside it and nothing crossing the line.{{ end }}">
 
@@ -62,9 +65,9 @@
   {{ end }}
 
   <text x="80" y="125" text-anchor="middle" font-size="11" font-weight="600"
-        style="fill:var(--ink-2)">Your machines</text>
+        style="fill:var(--ink-2)">{{ $ui.fig_your_machines | default "Your machines" }}</text>
   {{ if eq $variant "reach" }}
   <text x="228" y="125" text-anchor="middle" font-size="11" font-weight="600"
-        style="fill:var(--ink-2)">The open web</text>
+        style="fill:var(--ink-2)">{{ $ui.fig_open_web | default "The open web" }}</text>
   {{ end }}
 </svg>

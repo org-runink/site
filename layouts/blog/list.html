@@ -92,7 +92,7 @@
     {{ with $papers }}
     <section class="mb-14 md:mb-20" aria-labelledby="papers-heading">
       <div class="rk-list-head">
-        {{ partial "rule-head.html" (dict "label" "Start with a paper" "id" "papers-heading" "meta" (printf "%d documents" (len .))) }}
+        {{ partial "rule-head.html" (dict "label" (site.Params.ui.start_with_paper | default "Start with a paper") "id" "papers-heading" "meta" (printf "%d %s" (len .) (site.Params.ui.documents | default "documents"))) }}
       </div>
 
       <ul class="list-none m-0 p-0 border-t-2 border-rule-strong">
@@ -103,7 +103,7 @@
             <p class="m-0 text-[0.75rem] font-extrabold uppercase tracking-[0.14em] text-ink-2">
               <span translate="no">{{ .Params.product }}</span>
               {{ with .Params.jointly_with }}
-              <span class="text-ink-3">with <span translate="no">{{ . }}</span></span>
+              <span class="text-ink-3">{{ site.Params.ui.with | default "with" }} <span translate="no">{{ . }}</span></span>
               {{ end }}
             </p>
             <div class="min-w-0">
@@ -114,7 +114,7 @@
               <p class="mt-1 mb-0 text-ink-2 text-sm leading-relaxed">{{ . }}</p>
               {{ end }}
               {{ with .Params.source_pages }}
-              <p class="mt-2 mb-0 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">{{ . }} pages</p>
+              <p class="mt-2 mb-0 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">{{ . }} {{ site.Params.ui.pages | default "pages" }}</p>
               {{ end }}
             </div>
           </a>

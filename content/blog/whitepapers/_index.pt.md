@@ -15,6 +15,9 @@ deck: |
   a resposta honesta a onde os seus dados são processados e quem pode vê-los.
   O quarto é um documento conjunto de arquitetura com o Atlas, da Logical Leap.
 
+  Os quatro documentos estão escritos em inglês. As páginas deste site estão em
+  português; os documentos longos ainda não estão.
+
   Não trazem estudos de caso, nomes de clientes nem números de retorno sobre o
   investimento. O que explicam é o mecanismo: o que o software examina, o que
   produz, quem aprova e onde tudo isso roda.

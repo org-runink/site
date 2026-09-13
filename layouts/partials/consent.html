@@ -1,13 +1,14 @@
 <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
     <div class="mb-4 md:mb-0 max-w-3xl">
         <p class="text-sm">
-            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
-            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+            {{- $ui := site.Params.ui | default dict -}}
+            {{ $ui.consent_body | default `We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.` }}
+            {{ $ui.consent_read | default "Read our" }} <a href="{{ "/privacy/" | relLangURL }}" class="text-stone-100 hover:text-primary-400 underline">{{ $ui.consent_policy | default "Privacy Policy" }}</a> {{ $ui.consent_more | default "for more information." }}
         </p>
     </div>
     <div class="flex space-x-4">
         <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
-            Reject Non-Essential
+            {{ site.Params.ui.consent_reject | default "Reject Non-Essential" }}
         </button>
         {{/* NOT "Accept All". Accepting grants one signal, analytics_storage,
              and nothing else: partials/google-analytics.html defaults the four
@@ -17,7 +18,7 @@
              above said more than the site does before it was corrected. It now
              names the one thing it turns on, in the sentence's own word. */}}
         <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
-            Allow Counting
+            {{ site.Params.ui.consent_accept | default "Allow Counting" }}
         </button>
     </div>
 </div>

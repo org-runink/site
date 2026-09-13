@@ -61,6 +61,15 @@ opex:
 opex_note: "Traga uma destas e um mês dos registros por trás dela. Isso basta para saber se os prejuízos que você carrega têm o formato do que isto resolve, e é a única forma honesta de qualquer um de nós descobrir."
 
 figure:
+  console:
+    title: "runink face · lendo"
+    live: "LENDO"
+    states: ["LIDO", "COMPARADO", "LIDO", "NA FILA"]
+    rule_name: "A regra que governa isso"
+    rule_terms: ["TEXTO DA APÓLICE", "LIMITE", "ALÇADA"]
+    gate_name: "Ação redigida · espera um nome"
+    acts: ["APROVAR", "EDITAR", "REJEITAR"]
+    alt: "Os registros que os seus sistemas já guardam são lidos um a um contra a regra que os governa, e o que difere chega como uma ação redigida que espera uma pessoa com nome aprovar, editar ou rejeitar."
   today_label: "Como se lê hoje"
   today_note: "O volume venceu a inspeção, então lê-se uma amostra e supõe-se que o resto se pareça com ela. Os registros que divergem já estão no campo."
   read_label: "Como a Runink lê"

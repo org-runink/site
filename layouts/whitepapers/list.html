@@ -29,7 +29,7 @@
           <span translate="no">{{ .Params.product }}</span>
           {{ with .Params.jointly_with }}
           <span aria-hidden="true">/</span>
-          <span>With <span translate="no">{{ . }}</span></span>
+          <span>{{ site.Params.ui.with_cap | default "With" }} <span translate="no">{{ . }}</span></span>
           {{ end }}
         </p>
         <h2>{{ .Params.headline | default .Title }}</h2>
@@ -37,8 +37,24 @@
         <p>{{ .Params.blurb }}</p>
       </div>
       <div class="wp-card-meta">
-        <span class="wp-util">{{ .Params.source_pages }} pages &middot; {{ len .Params.register }} chapters</span>
-        <span class="wp-card-read wp-util" aria-hidden="true">Read &rarr;</span>
+        {{/* GUARDED, BECAUSE AN OPTIONAL PARAM MUST NOT BE ABLE TO FAIL A BUILD.
+             `len` on a param a page does not carry is not an empty string — it
+             is `reflect: call of reflect.Value.Type on zero Value`, and it took
+             down the whole render: "failed to render pages: render of
+             /content/blog/whitepapers/_index.md failed". One paper added without
+             a register, and every page on the site stops building.
+
+             Each half now states only what the page actually carries. A paper
+             with no register prints its page count and no chapter count, which
+             is the truth about that paper, rather than a zero — and a zero would
+             be worse than nothing here, since "0 chapters" is a claim about a
+             document that has some. */}}
+        <span class="wp-util">
+          {{- $ui := site.Params.ui | default dict -}}
+          {{- with .Params.source_pages }}{{ . }} {{ $ui.pages | default "pages" }}{{ end -}}
+          {{- with .Params.register }}{{ with $.Params.source_pages }} &middot; {{ end }}{{ len . }} {{ $ui.chapters | default "chapters" }}{{ end -}}
+        </span>
+        <span class="wp-card-read wp-util" aria-hidden="true">{{ site.Params.ui.read | default "Read" }} &rarr;</span>
       </div>
     </a>
     {{ end }}

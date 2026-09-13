@@ -279,7 +279,7 @@
 
     {{/* First focusable element on the page, ahead of the site header's own
          nav, so it can actually do its job on a 12,000-word document. */}}
-    <a class="wp-skip" href="#wp-main">Skip to the paper</a>
+    <a class="wp-skip" href="#wp-main">{{ site.Params.ui.skip_to_paper | default "Skip to the paper" }}</a>
 
     <div class="fixed top-0 left-0 right-0 z-50">
         {{ partial "header.html" . }}
