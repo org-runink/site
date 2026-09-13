@@ -86,6 +86,7 @@ industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
     cost: "Una entrada retenida en el puerto por un documento que falta mientras corre el cargo diario. Una reclamación de flete todavía dentro de su plazo de presentación que nadie tuvo la mañana para armar."
+    reads: "Cada entrada se compara con la regla que la gobierna — retenida, en examen o detenida, con los días que lleva retenida por encima de cero — así que una retención llega como una entrada con nombre y con el cargo contado con su propia tarifa."
     owners:
       - "Director de operaciones"
       - "Director financiero"
@@ -143,6 +144,7 @@ industries:
   - page: "insurance"
     name: "Insurance"
     cost: "Un umbral de revisión elevado para vaciar una cola, pensado como provisional, nunca devuelto y nunca decidido. Movimientos de reserva revisados por muestreo porque el flujo es demasiado largo para leerlo."
+    reads: "La cifra que fija la segunda revisión se lee del propio condicionado y se compara con la que aplicó el flujo de trabajo, así que un expediente revisado con el umbral equivocado vuelve con nombre y no por muestreo."
     owners:
       - "Operaciones de siniestros"
       - "Cumplimiento y riesgos"
@@ -176,6 +178,7 @@ industries:
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
     cost: "Una diferencia que crece dentro del rango que siempre se aprueba, así que ningún mes escala y nadie lee la secuencia. Un contrato de proveedor que nadie ha vuelto a abrir desde la firma."
+    reads: "Cada diferencia se lee contra la secuencia que forman sus propios meses y no contra el rango en el que cabe, así que un movimiento que se aprueba todos los meses deja de desaparecer en el agregado."
     owners:
       - "Cumplimiento y riesgos"
       - "Auditoría interna"
@@ -209,6 +212,7 @@ industries:
   - page: "telecom"
     name: "Telecom"
     cost: "Un cambio de tarificación correcto para la promoción y equivocado para un plan heredado, demasiado pequeño para mover un agregado. Un barrido que devuelve una tasa de error cuando operaciones necesita las cuentas por nombre."
+    reads: "La salida tarificada de cada cuenta se lee contra las condiciones del propio plan de ese abonado, registro a registro y no como un barrido mensual sobre una muestra."
     owners:
       - "Aseguramiento de ingresos"
       - "Liquidación de interconexión"
@@ -242,6 +246,7 @@ industries:
   - page: "marketing"
     name: "Marketing"
     cost: "La herramienta de auditoría sabe que el sitio es lento. La de contenido no, así que sigue escribiendo para una página en la que nadie se queda. Cada campaña vuelve a empezar en blanco."
+    reads: "Su sitio y los canales en los que publica se leen primero, así que el siguiente encargo parte de donde usted está de verdad y no de una página en blanco."
     owners:
       - "Responsable de marketing"
       - "Ventas"

@@ -86,6 +86,7 @@ industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
     cost: "Une déclaration bloquée au port faute d'un document, pendant que les frais journaliers courent. Une réclamation fret encore dans son délai de dépôt que personne n'a eu la matinée pour monter."
+    reads: "Chaque déclaration est comparée à la règle qui la gouverne — retenue, sous examen ou immobilisée, avec un nombre de jours de retenue supérieur à zéro — de sorte qu'une retenue arrive comme une déclaration nommée, avec les frais comptés sur votre propre tarif."
     owners:
       - "Directeur des opérations"
       - "Directeur financier"
@@ -143,6 +144,7 @@ industries:
   - page: "insurance"
     name: "Insurance"
     cost: "Un seuil de second examen relevé pour résorber un retard, censé être provisoire, jamais rétabli et jamais tranché. Des mouvements de provision vérifiés par sondage parce que le flux est trop long à lire."
+    reads: "Le chiffre à partir duquel un sinistre exige un second examen est extrait des conditions du contrat elles-mêmes et comparé à ce que l'outil a appliqué, de sorte qu'un dossier examiné sur le mauvais seuil revient nommé plutôt que vérifié par sondage."
     owners:
       - "Opérations sinistres"
       - "Conformité et risques"
@@ -176,6 +178,7 @@ industries:
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
     cost: "Un écart qui grandit à l'intérieur de la fourchette que l'on valide toujours : aucun mois ne remonte, et personne ne lit la séquence. Un contrat fournisseur que personne n'a rouvert depuis la signature."
+    reads: "Chaque écart est lu face à la suite que ses propres mois dessinent plutôt qu'à la fourchette dans laquelle il tient, de sorte qu'un mouvement validé tous les mois cesse de disparaître dans l'agrégat."
     owners:
       - "Conformité et risques"
       - "Audit interne"
@@ -209,6 +212,7 @@ industries:
   - page: "telecom"
     name: "Telecom"
     cost: "Un changement de tarification juste pour la promotion et faux pour un forfait hérité, trop petit pour bouger un agrégat. Un balayage qui rend un taux d'erreur quand les opérations ont besoin des comptes nommément."
+    reads: "La sortie tarifée de chaque compte est lue face aux conditions du forfait de cet abonné, enregistrement par enregistrement plutôt que par un balayage mensuel sur un échantillon."
     owners:
       - "Revenue assurance"
       - "Règlement d'interconnexion"
@@ -242,6 +246,7 @@ industries:
   - page: "marketing"
     name: "Marketing"
     cost: "L'outil d'audit sait que le site est lent. L'outil de contenu l'ignore et continue d'écrire pour une page où personne ne reste. Chaque campagne repart d'une page blanche."
+    reads: "Votre site et les canaux sur lesquels vous publiez sont lus d'abord, de sorte que le brief suivant part de là où vous en êtes réellement plutôt que d'une page blanche."
     owners:
       - "Le responsable marketing"
       - "Les ventes"

@@ -86,6 +86,7 @@ industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
     cost: "Uma declaração retida no porto por um documento que falta enquanto a diária corre. Uma reclamação de frete ainda dentro do prazo de abertura que ninguém teve a manhã para montar."
+    reads: "Cada declaração é comparada com a regra que a rege — retida, em exame ou detida, com a contagem de dias retida acima de zero — então uma retenção chega como uma declaração com nome e com o custo contado pela sua própria diária."
     owners:
       - "Diretor de operações"
       - "Diretor financeiro"
@@ -143,6 +144,7 @@ industries:
   - page: "insurance"
     name: "Insurance"
     cost: "Um limite de segunda análise elevado para vencer uma fila, feito para ser temporário, nunca devolvido e nunca decidido. Movimentos de reserva conferidos por amostragem porque o fluxo é longo demais para ler."
+    reads: "O valor a partir do qual um sinistro precisa de segunda análise é extraído do próprio documento da apólice e comparado com o limite que o sistema de fato aplicou, então um sinistro analisado pelo limite errado volta com nome em vez de conferido por amostragem."
     owners:
       - "Operações de sinistros"
       - "Conformidade e riscos"
@@ -176,6 +178,7 @@ industries:
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
     cost: "Uma diferença que cresce dentro da faixa que sempre se aprova, então nenhum mês escala e ninguém lê a sequência. Um contrato de fornecedor que ninguém reabriu desde a assinatura."
+    reads: "Cada diferença é lida contra a sequência que os seus próprios meses formam, e não contra a faixa em que ela cabe, então um movimento aprovado todo mês deixa de desaparecer no agregado."
     owners:
       - "Conformidade e riscos"
       - "Auditoria interna"
@@ -209,6 +212,7 @@ industries:
   - page: "telecom"
     name: "Telecom"
     cost: "Uma mudança de tarifação certa para a promoção e errada para um plano legado, pequena demais para mover um agregado. Uma varredura que devolve uma taxa de erro quando a operação precisa das contas pelo nome."
+    reads: "A saída tarifada de cada conta é lida contra as condições do plano daquele assinante, registro a registro e não como uma varredura mensal sobre uma amostra."
     owners:
       - "Garantia de receita"
       - "Liquidação de interconexão"
@@ -242,6 +246,7 @@ industries:
   - page: "marketing"
     name: "Marketing"
     cost: "A ferramenta de auditoria sabe que o site está lento. A de conteúdo não sabe, e segue escrevendo para uma página em que ninguém fica. Cada campanha recomeça do zero."
+    reads: "O seu site e os canais em que publica são lidos primeiro, então o briefing seguinte começa de onde você está de fato, e não da página em branco."
     owners:
       - "O líder de marketing"
       - "Vendas"

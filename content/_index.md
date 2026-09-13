@@ -102,6 +102,7 @@ industries:
   - page: "logistics-supply-chain"
     name: "Logistics & Supply Chain"
     cost: "An entry held at the port for a missing paper while the daily charge runs. A freight claim still inside its filing window that nobody had the morning to assemble."
+    reads: "Every entry is compared against the rule that governs it — held, under examination or detained, with days held above zero — so a hold arrives as a named entry with the charge counted from your own rate."
     owners:
       - "Operations director"
       - "Chief financial officer"
@@ -159,6 +160,7 @@ industries:
   - page: "insurance"
     name: "Insurance"
     cost: "A review threshold raised to clear a backlog, meant to be temporary, never put back and never decided either way. Reserve movements checked by sample because the stream is too long to read."
+    reads: "The figure that sets a second review is read out of the policy wording itself and compared against what the workflow applied, so a file reviewed on the wrong threshold comes back named rather than sampled."
     owners:
       - "Claims operations"
       - "Compliance and risk"
@@ -192,6 +194,7 @@ industries:
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
     cost: "A break that grows inside the range you always clear, so no single month escalates and nobody reads the sequence. A supplier contract nobody has opened since signature."
+    reads: "Each break is read against the sequence its own months make rather than the range it sits inside, so a movement that clears every month stops disappearing into the aggregate."
     owners:
       - "Compliance and risk"
       - "Internal audit"
@@ -225,6 +228,7 @@ industries:
   - page: "telecom"
     name: "Telecom"
     cost: "A rating change that is right for the promotion and wrong for a legacy plan, too small to move an aggregate. A sweep that returns an error rate when operations needs the accounts by name."
+    reads: "Each account's rated output is read against that subscriber's own plan terms, record by record rather than as a monthly sweep over a sample."
     owners:
       - "Revenue assurance"
       - "Interconnect settlement"
@@ -258,6 +262,7 @@ industries:
   - page: "marketing"
     name: "Marketing"
     cost: "The audit tool knows the site is slow. The content tool does not, so it keeps writing for a page nobody stays on. Every campaign starts again from a blank page."
+    reads: "Your site and the channels you publish on are read first, so the next brief starts from where you actually stand instead of from a blank page."
     owners:
       - "The marketing lead"
       - "Sales"

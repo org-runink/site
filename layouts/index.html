@@ -168,78 +168,21 @@
 
          If a column ever acquires a number, this block has broken its own
          promise in its own intro, which is the first place to look. */}}
-    {{ with .Params.opex }}
-    <section class="hp-sec hp-band hp-opex-sec" aria-labelledby="opex-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="opex-heading">{{ $.Params.opex_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.opex_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+    {{/* THE OPERATING-NUMBERS LINES AND THE BEFORE/AFTER PAIR ARE NOT HERE ANY
+         MORE. They were a five-row band and a two-panel figure, both sitting
+         between the hero and the industries, and both were the same five
+         industries told a third and fourth time: a reader met Logistics as a
+         cost line here, as a before/after there, and as a row further down, and
+         had to hold the three together themselves.
 
-      {{/* ONE LINE PER INDUSTRY, AND THAT IS THE WHOLE POINT OF THE SECTION.
-
-           Every row here used to be logistics: demurrage, reefer spoilage,
-           returns, expedite freight, claim leakage. The eyebrow four lines above
-           names five industries and this table — the one headed "where it shows
-           up in your operating numbers" — answered for one of them. A reader who
-           came for insurance or telecom scrolled to the section that promised
-           their numbers and found containers, which is a worse outcome than not
-           claiming the industry at all.
-
-           The industry is named in text on every row, which is both the honest
-           way to do it and the condition DESIGN.md §2 puts on category colour:
-           "a category colour is never legible on its own; the industry is always
-           named in text beside it." The mark is that colour, and five different
-           marks down one table is the aggregation made visible — five domains,
-           one shape, one ledger.
-
-           Marketing says in its own driver that it is PULSE and not FACE. It is
-           the one row on this page whose product differs from the hero's, and a
-           reader should not have to work that out. */}}
-      {{/* NOT A TABLE ANY MORE, AND THE COLUMN HEADS ARE GONE WITH IT.
-
-           This was four columns with a header row, which is a spreadsheet: it
-           reads left to right, gives every cell the same weight, and buries the
-           one line a reader came for. The money is the cost line — "demurrage,
-           detention and the claims that expire" — and in a table it was set at
-           the same size as the prose explaining it.
-
-           Each industry is a band now. The sector is a small tracked label in
-           its own category ink, the cost line is the display line of the band,
-           and the two supporting facts sit under it as a quiet pair. Same
-           information, same five domains, same colours; the difference is that
-           scale and rule are doing the hierarchy, which is what DESIGN.md §2
-           says to use them for, instead of a grid of equal cells.
-
-           The full-width rule above each band carries the category rather than
-           a 3px edge on a row. Five of them down the section is the spread
-           across domains, stated as the page's own furniture. */}}
-      <ul class="hp-opex">
-        {{ range . }}
-        {{ $cat := "" }}
-        {{ with site.GetPage (printf "/industries/%s" .page) }}{{ $cat = .Params.category }}{{ end }}
-        {{ if not $cat }}{{ with (index site.Sites 0).GetPage (printf "/industries/%s" .page) }}{{ $cat = .Params.category }}{{ end }}{{ end }}
-        <li class="hp-opex__band hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
-          <span class="hp-opex__rule" aria-hidden="true"></span>
-          <p class="hp-opex__ind">{{ .industry }}</p>
-          <h3 class="hp-opex__line">{{ .line }}</h3>
-          <div class="hp-opex__facts">
-            <div class="hp-opex__fact">
-              <p class="hp-opex__fact-label">{{ $.Params.opex_col_driver }}</p>
-              <p class="hp-opex__fact-body">{{ .driver }}</p>
-            </div>
-            <div class="hp-opex__fact">
-              <p class="hp-opex__fact-label">{{ $.Params.opex_col_where }}</p>
-              <p class="hp-opex__fact-body hp-opex__where">{{ .where }}</p>
-            </div>
-          </div>
-        </li>
-        {{ end }}
-      </ul>
-      {{ with $.Params.opex_note }}<p class="hp-caption">{{ . }}</p>{{ end }}
-    </section>
-    {{ end }}
+         They now open inside each industry's own row, where the scenario that
+         explains them already is. One industry, one place: how it is read
+         today, how Runink reads it, and the line it shows up on in your own
+         numbers — followed by the flow and the worked case that were already
+         there. Nothing was rewritten to do it; the copy is the same copy, read
+         off the same `opex` entries, joined to the industry by its page slug.
+         The labels come from `figure` and `opex_heading`, so all four languages
+         keep the words they already had. */}}
 
     {{/* 2. The picture of the problem. Two panels of the same field of records:
          one where a sample is read, one where all of it is. It is placed before
@@ -261,16 +204,6 @@
          is read AND the rest is assumed to look like it. Losing the artwork
          costs this section nothing it was not already saying twice. */}}
     <figure class="hp-field">
-      <div class="hp-field__panels">
-        <div class="hp-field__panel">
-          <p class="hp-field__label">{{ .today_label }}</p>
-          <p class="hp-field__note">{{ .today_note }}</p>
-        </div>
-        <div class="hp-field__panel hp-field__panel--now">
-          <p class="hp-field__label">{{ .read_label }}</p>
-          <p class="hp-field__note">{{ .read_note }}</p>
-        </div>
-      </div>
       <ol class="hp-beats">
         {{ range .beats }}
         <li class="hp-beat"><b>{{ .title }}</b>{{ .body }}</li>
@@ -410,6 +343,53 @@
             </summary>
 
             <div class="hp-ind__body">
+              {{/* This industry's own before/after and its own operating line,
+                   joined to the `opex` entry by page slug. Reusing the labels
+                   from `figure` and `opex_heading` rather than writing new ones
+                   is what keeps es/fr/pt reading correctly without a single new
+                   translated string for the headings. */}}
+              {{ $slug := .page }}
+              {{ $reads := .reads }}
+              {{ $ox := false }}
+              {{ range $.Params.opex }}{{ if eq .page $slug }}{{ $ox = . }}{{ end }}{{ end }}
+              {{ with $f := $.Params.figure }}
+              <div class="hp-field__panels hp-ind__read">
+                <div class="hp-field__panel">
+                  <p class="hp-field__label">{{ $f.today_label }}</p>
+                  <p class="hp-field__note">{{ with $ox }}{{ .driver }}{{ end }}</p>
+                </div>
+                <div class="hp-field__panel hp-field__panel--now">
+                  <p class="hp-field__label">{{ $f.read_label }}</p>
+                  <p class="hp-field__note">{{ $reads }}</p>
+                </div>
+              </div>
+              {{ end }}
+
+              {{/* The band markup and its classes are the ones the standalone
+                   section used, deliberately: those rules are already
+                   print-aware and already pass the token gates, so reusing them
+                   keeps one design for this device instead of leaving ~100
+                   lines of .hp-opex CSS shipped on every homepage with nothing
+                   emitting it. The DRIVER column is dropped here and only the
+                   line and the reader's own source remain — the driver is the
+                   "how it is read today" panel directly above, and printing it
+                   twice in one row would read as the page repeating itself. */}}
+              {{ with $ox }}
+              <p class="hp-steps__label">{{ $.Params.opex_heading }}</p>
+              <ul class="hp-opex">
+                <li class="hp-opex__band">
+                  <span class="hp-opex__rule" aria-hidden="true"></span>
+                  <h4 class="hp-opex__line">{{ .line }}</h4>
+                  <div class="hp-opex__facts">
+                    <div>
+                      <p class="hp-opex__fact-label">{{ $.Params.opex_col_where }}</p>
+                      <p class="hp-opex__fact-body hp-opex__where">{{ .where }}</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              {{ end }}
+
               {{ with .flow }}
               <ol class="hp-flow hp-flow--{{ len . }}">
                 {{ range . }}
