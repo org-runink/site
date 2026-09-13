@@ -1,0 +1,226 @@
+{{/*
+  THE WORKED CASE — one device, rendered identically on the homepage and on the
+  five industry pages.
+
+  WHAT IT IS. Two blocks that always travel together: the MOMENTS strip (when in
+  an operation each job happens, and which jobs sit at that moment), and the
+  WORKED CASES under it (a named scenario, walked from the record that starts it
+  to the person who approves what is done about it).
+
+  WHY IT IS SHARED RATHER THAN COPIED. The homepage ledger and the industry page
+  are the same argument at two depths, and a buyer meets them in that order: they
+  open Logistics on the homepage, read the cases, click "See the fit", and land on
+  the industry page. Two implementations of one device is two chances for the
+  landing page and the page it lands on to describe the same industry differently
+  — different scenario names, different order, different furniture — which is
+  exactly what a reader reads as two products.
+
+  So the markup lives in shared/worked-case.html, the rules live here, and the
+  DATA lives in one place too: the homepage front matter, which the industry page
+  reads back through site.GetPage. Neither page owns a second copy of anything.
+
+  THE CLASS PREFIX IS rk-, NOT hp- OR ind-. DESIGN.md 7 gives rk- to shapes every
+  page needs identical; hp- is the homepage's own furniture and ind- is the
+  industries section's. This device is now in the first category, so it takes the
+  first prefix. These rules moved here out of partials/home/style.html unchanged
+  apart from that rename.
+
+  INCLUDED, NOT LINKED. Both callers inline their CSS inside one <style> element
+  for the reasons their own headers set out, so this partial emits rules and no
+  <style> tag of its own, and each family includes it once.
+
+  IT PAINTS WITH THE ALIASES, NOT WITH TOKENS DIRECTLY: --ink, --ink-2, --rule,
+  --accent-edge, --accent-ink, --rk-rule-strong, --font-display. Both .hp and
+  .ind define that same set on themselves, which is what lets one rule set sit on
+  two grounds and take each page's own accent — the industry page's category
+  colour on /industries/insurance/, signal on the homepage row that has none.
+*/}}
+  /* ---- one load, four moments ---------------------------------------------
+
+     A timeline, and the spine is a BORDER on the list rather than drawn artwork,
+     because a drawn line cannot reflow and this has to turn vertical on a phone.
+     DESIGN.md §6: depth is a rule and a change of ground. Both here, no colour
+     beyond the node, which is the accent doing its one job — marking the point
+     where somebody can act.
+
+     Four moments across at 900px, stacked below. Two of them carry two jobs, so
+     the columns are deliberately NOT equal: a grid of four equal columns would
+     make the pairs look cramped next to two half-empty neighbours. align-items
+     start lets each column be its own height. */
+  .rk-flow {
+    list-style: none;
+    margin: 0;
+    padding: 1.75rem 0 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    counter-reset: rk-flow;
+  }
+  @media (min-width: 900px) {
+    /* The column count follows the number of moments the industry actually has,
+       which is why the modifier is written by the template rather than fixed
+       here. A fixed four killed the other four industries: three moments in a
+       four-column grid came out as two narrow columns, one wide one, and a hole
+       where the fourth would have been — read as a row with something missing
+       from it rather than a row of three.
+
+       Four is the uneven one on purpose. Only logistics has four moments, and
+       two of those carry two jobs each; equal quarters would leave the
+       single-job columns looking half empty beside the pairs. */
+    .rk-flow {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 2rem;
+      align-items: start;
+      /* the spine: one rule across the top of the whole row */
+      border-top: 2px solid var(--rk-rule-strong);
+      padding-top: 0;
+    }
+    .rk-flow--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .rk-flow--4 { grid-template-columns: 0.85fr 1.15fr 0.85fr 1.15fr; }
+  }
+
+  .rk-flow__stage {
+    counter-increment: rk-flow;
+    min-width: 0;
+    position: relative;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    border-left: 2px solid var(--rk-rule-strong);
+  }
+  @media (min-width: 900px) {
+    .rk-flow__stage { padding: 1.5rem 0 0; border-left: 0; }
+  }
+
+  .rk-flow__when {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  /* The node sits ON the spine. On the stacked layout the spine is the left
+     border, so the node is pulled out over it; across, it hangs off the top. */
+  .rk-flow__node {
+    flex: none;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--accent-edge);
+    margin-left: -1.8rem;
+  }
+  @media (min-width: 900px) {
+    .rk-flow__node { margin-left: 0; margin-top: -1.8rem; }
+  }
+
+  .rk-flow__job + .rk-flow__job { margin-top: 1.25rem; }
+  .rk-flow__name {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .rk-flow__line {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  @media print {
+    /* Four across on paper as well as on screen. Two columns cost half a sheet
+       here and the stages are short enough to hold at a quarter of the width;
+       the alternative was an eighth sheet for a section that fits in a quarter
+       of one. */
+    .rk-flow {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0 10pt;
+      padding-top: 8pt;
+      border-top: 1.5pt solid #000;
+    }
+    .rk-flow__stage { padding: 8pt 0 0; border-left: 0; break-inside: avoid; }
+    .rk-flow__node { display: none; }
+    .rk-flow__when { font-size: 7.5pt; margin-bottom: 5pt; color: #000; }
+    .rk-flow__name { font-size: 9.5pt; }
+    .rk-flow__line { font-size: 8.5pt; }
+  }
+
+  .rk-steps__label {
+    margin: 1.75rem 0 0.75rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .rk-steps__label--b { margin-top: 2.5rem; }
+
+  @media print {
+    /* break-after: avoid so a case label can never print alone at the foot of
+       a sheet with its steps overleaf. It labels the list; separated from it,
+       it labels nothing and the reader has to turn back to find out which of
+       the two cases they are reading. */
+    .rk-steps__label {
+      margin: 10pt 0 5pt;
+      font-size: 8pt;
+      color: #000;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+    .rk-steps__label--b { margin-top: 14pt; }
+  }
+
+  .rk-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+    counter-reset: rk-step;
+  }
+  .rk-step {
+    counter-increment: rk-step;
+    position: relative;
+    padding: 1.25rem 0 1.25rem 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .rk-step::before {
+    content: counter(rk-step);
+    position: absolute;
+    left: 0;
+    top: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    color: var(--accent-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .rk-step__title {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .rk-step__body {
+    margin: 0;
+    max-width: 68ch;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+
+  @media print {
+    .rk-steps { border-top-color: #000; }
+    .rk-step { padding: 6pt 0 6pt 22pt; border-bottom-color: #999; break-inside: avoid; }
+    .rk-step::before { top: 6pt; color: #000; }
+    .rk-step__title { font-size: 10pt; }
+    .rk-step__body { font-size: 9pt; }
+  }

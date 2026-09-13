@@ -1,0 +1,52 @@
+{{/*
+  THE WORKED CASE — the markup half. See shared/worked-case-style.html for what
+  this device is and why it is shared rather than copied onto each page family.
+
+  CALL IT WITH A DICT, not with the page:
+
+      {{ partial "shared/worked-case.html" (dict "flow" $e.flow "cases" $e.cases) }}
+
+  Both keys are optional and each block renders only when its data exists, so an
+  industry that has moments and no worked case yet renders the moments and
+  nothing else — rather than an empty heading, which is the failure the callers
+  would otherwise each have to guard against on their own.
+
+  THE MOMENTS GRID COUNTS ITS OWN COLUMNS. `rk-flow--{{ len }}` is written here
+  because the column widths follow how many moments the industry actually has:
+  three is the default, two and four have their own rules, and five would fall
+  back to the three-column grid and print as a row with a hole in it. That is a
+  constraint on the DATA, and it is stated in the stylesheet next to the rule
+  that enforces it.
+
+  NO HEADINGS OF ITS OWN. The homepage renders this inside an open ledger row,
+  where a section heading would be the third heading in a stack; the industry
+  page renders it as two proper sections with ind- furniture. So the caller
+  supplies the surroundings and this supplies the device.
+*/}}
+{{ with .flow }}
+<ol class="rk-flow rk-flow--{{ len . }}">
+  {{ range . }}
+  <li class="rk-flow__stage">
+    <p class="rk-flow__when"><span class="rk-flow__node" aria-hidden="true"></span>{{ .when }}</p>
+    {{ range .jobs }}
+    <div class="rk-flow__job">
+      <h4 class="rk-flow__name">{{ .name }}</h4>
+      <p class="rk-flow__line">{{ .line }}</p>
+    </div>
+    {{ end }}
+  </li>
+  {{ end }}
+</ol>
+{{ end }}
+
+{{ range .cases }}
+<p class="rk-steps__label rk-steps__label--b">{{ .label }}</p>
+<ol class="rk-steps">
+  {{ range .steps }}
+  <li class="rk-step">
+    <h4 class="rk-step__title">{{ .step }}</h4>
+    <p class="rk-step__body">{{ .body }}</p>
+  </li>
+  {{ end }}
+</ol>
+{{ end }}

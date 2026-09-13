@@ -36,12 +36,22 @@ author: "Runink"
 
 {{< section-container class="pt-4 pb-20" >}}
   <div class="max-w-4xl">
-    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">À quoi nous servons</p>
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">Notre mission</p>
     <p class="text-2xl md:text-3xl leading-snug text-ink">
       L'essentiel de ce qu'une équipe d'exploitation, de finance ou de conformité doit trancher se trouve déjà dans des systèmes qu'elle paie, sous une forme que personne n'a le temps de lire.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
       Nous nous connectons à ces systèmes, gardons la copie de travail sur des machines que le client contrôle, et montrons le raisonnement derrière chaque réponse pour que la personne qui signe puisse le vérifier.
+    </p>
+  </div>
+
+  <div class="max-w-4xl mt-16 border-t border-rule pt-10">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">Notre vision</p>
+    <p class="text-2xl md:text-3xl leading-snug text-ink">
+      Un travail où le logiciel lit et où une personne décide — et où la trace de tout cela est assez complète pour être remise à un auditeur, à un régulateur ou à une contrepartie sans avoir à la préparer.
+    </p>
+    <p class="text-lg text-ink-2 mt-6 max-w-3xl">
+      C'est ce vers quoi nous construisons, et non ce que nous prétendons avoir achevé. C'est pourquoi chaque réponse arrive comme un projet qui attend un nom, pourquoi un contrôle qui n'a pas pu être exécuté le dit au lieu de passer, et pourquoi le raisonnement sur les enregistrements d'un client se fait sur les machines de ce client.
     </p>
   </div>
 {{< /section-container >}}

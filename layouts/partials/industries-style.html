@@ -693,184 +693,20 @@
     color: var(--ink);
   }
 
-  /* ---- leadership: the last block before the ask ------------------------
+  /* ---- who is behind it ------------------------------------------------
 
-     Built entirely out of grammar already on the page, so it lands as the
-     closing panel of this document rather than as a bolted-on "team" section:
-     the plate is the accent-topped sheet the problem cards use, the credential
-     strip is the ruled-beat row from the figure at the top, and the checkable
-     handles sit on the same washed footing as a foundation card's "what you
-     would notice". Nothing new is introduced except the nameplate.
+     What is left of the leadership block: a heading, one sentence, and a way to
+     the page that carries the biography. The plate, the nameplate, the credential
+     strip and the verify links moved to /company/ along with the render — see
+     partials/company/leadership.html for why company facts stopped being repeated
+     on five pages about held containers and rating errors.
 
-     There is one person and no photograph of him, so the plate is set to read
-     at the width of the page rather than as a card in an empty grid — a lone
-     portrait tile surrounded by white space is what makes a single name look
-     like a gap where three should be. Full width, prose, and a strip of three
-     facts underneath instead.
-  ------------------------------------------------------------------------ */
+     The link keeps the grammar the verify handles had: ink, underlined in the
+     industry's accent, signal on hover rather than the accent — on the overview
+     --rk-accent IS --rk-text, so an accent hover would change nothing. */
 
-  .ind-lead__plate {
-    background-color: var(--sheet);
-    border: 1px solid var(--rule);
-    border-top: 3px solid var(--accent-edge);
-    /* The card rung, not the band rung, for the reason the note above gives:
-       this is the problem cards' plate set to the width of the page, so it
-       keeps the cards' corner. Was 0.875rem/14px. */
-    border-radius: 0 0 var(--rk-r-3) var(--rk-r-3);
-    padding: 1.5rem 1.5rem 0;
-    overflow: hidden;
-  }
-  @media (min-width: 768px) {
-    .ind-lead__plate { padding: 2rem 2rem 0; }
-  }
-
-  /* nameplate */
-
-  .ind-lead__id {
-    display: flex;
-    align-items: center;
-    gap: 1.125rem;
-    padding-bottom: 1.375rem;
-    border-bottom: 1px solid var(--rule);
-    min-width: 0;
-  }
-
-  /* The monogram, not an avatar. It is stroked in the accent so it belongs to
-     this page's industry, and it sits on the washed tile the section uses for
-     anything the reader is meant to read as a label rather than as content. */
-  .ind-lead__mark {
-    flex: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 0.625rem;
-    background-color: var(--accent-wash);
-    color: var(--accent-ink);
-  }
-  .ind-lead__mark svg { width: 2.5rem; height: 2.5rem; }
-  @media (min-width: 768px) {
-    .ind-lead__mark { width: 4.25rem; height: 4.25rem; }
-    .ind-lead__mark svg { width: 3rem; height: 3rem; }
-  }
-
-  .ind-lead__names { min-width: 0; }
-
-  .ind-lead__name {
-    font-family: var(--font-display);
-    font-size: clamp(1.25rem, 2.6vw, 1.625rem);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.018em;
-    color: var(--ink);
-    margin: 0 0 0.375rem;
-  }
-
-  .ind-lead__role {
-    margin: 0;
-    font-size: 0.6875rem;
-    font-weight: 800;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent-ink);
-  }
-
-  /* prose */
-
-  .ind-lead__bio { padding: 1.5rem 0 0.375rem; }
-
-  .ind-lead__bio p {
-    max-width: 68ch;
-    margin: 0 0 1rem;
+  .ind-who__link {
     font-size: 0.9375rem;
-    line-height: 1.7;
-    color: var(--ink-2);
-  }
-
-  /* The opening line carries the whole of the track record, so it is set a step
-     up and in the darker ink — the one thing a reader who stops here has read. */
-  .ind-lead__bio p:first-child {
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    color: var(--ink);
-  }
-
-  /* the three facts, read straight down without reading the prose */
-
-  .ind-lead__creds {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem 1.75rem;
-    list-style: none;
-    margin: 0;
-    padding: 0.625rem 0 1.75rem;
-  }
-  @media (min-width: 700px) {
-    .ind-lead__creds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  }
-
-  .ind-lead__cred {
-    border-top: 2px solid var(--rule);
-    padding-top: 0.6875rem;
-    min-width: 0;
-  }
-  .ind-lead__cred:first-child { border-top-color: var(--accent-edge); }
-
-  .ind-lead__cred-key {
-    margin: 0 0 0.25rem;
-    font-family: var(--font-display);
-    font-size: 0.9375rem;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    color: var(--deep);
-  }
-
-  .ind-lead__cred-line {
-    margin: 0;
-    font-size: 0.8125rem;
-    line-height: 1.55;
-    color: var(--ink-2);
-  }
-
-  /* the means to check it, on the same washed footing a foundation card uses */
-
-  .ind-lead__verify {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.5rem 1.25rem;
-    margin: 0 -1.5rem;
-    padding: 1.125rem 1.5rem 1.25rem;
-    background-color: var(--accent-wash);
-    border-top: 2px solid var(--accent-edge);
-  }
-  @media (min-width: 768px) {
-    .ind-lead__verify { margin: 0 -2rem; padding: 1.125rem 2rem 1.25rem; }
-  }
-
-  .ind-lead__verify-label {
-    margin: 0;
-    font-size: 0.625rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent-ink);
-  }
-
-  .ind-lead__links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.375rem 1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    min-width: 0;
-  }
-
-  .ind-lead__links a {
-    font-size: 0.875rem;
     font-weight: 600;
     color: var(--ink);
     text-decoration: underline;
@@ -878,10 +714,13 @@
     text-underline-offset: 3px;
     transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  /* Signal, not the accent: on a page whose category is the accent, hovering a
-     link would otherwise land on --rk-accent, and on the overview — which has no
-     category — --rk-accent IS --rk-text, so the hover would change nothing. */
-  .ind-lead__links a:hover { color: var(--rk-signal); }
+  .ind-who__link:hover { color: var(--rk-signal); }
+
+  .ind-who__go {
+    margin: 1.5rem 0 0;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
 
   /* ---- next step -------------------------------------------------------- */
 
@@ -1145,12 +984,6 @@
     .ind-next { padding: 12pt; }
     .ind-next p { margin-bottom: 7pt; max-width: none; }
     .ind-next p:last-child { margin-bottom: 0; }
-    .ind-lead__plate { padding: 11pt 12pt 0; }
-    .ind-lead__id { padding-bottom: 9pt; }
-    .ind-lead__bio { padding: 10pt 0 2pt; }
-    .ind-lead__bio p { margin-bottom: 7pt; max-width: none; }
-    .ind-lead__creds { gap: 8pt 14pt; padding: 4pt 0 11pt; }
-    .ind-lead__verify { margin: 0 -12pt; padding: 8pt 12pt 9pt; }
     /* Nothing on paper is carried by colour alone, so the section head's mark
        and rule go to the boundary token, which tokens.css prints as black. These
        are stated rather than left to the accent: the accent reaches black on
@@ -1166,19 +999,8 @@
     .ind-role,
     .ind-found,
     .ind-band__item,
-    .ind-lead__cred,
-    .ind-lead__bio p,
-    .ind-lead__verify,
     .ind-measures tbody tr { break-inside: avoid; page-break-inside: avoid; }
 
-    /* The leadership plate is the one block deliberately allowed to break: it
-       is four paragraphs plus a strip, so forcing it whole would push the
-       entire panel to a fresh sheet and leave the bottom of the previous one
-       empty. Its parts are kept whole individually above, and the nameplate is
-       not allowed to be the last thing on a sheet with the biography starting
-       on the next one. */
-    .ind-lead__id { break-after: avoid; page-break-after: avoid; }
-    .ind-lead__creds { break-before: avoid; page-break-before: avoid; }
     /* A heading must not be the last thing on a sheet, and the sentence that
        explains a block must not be cut in half by the page edge. */
     .ind-head, .ind-intro {
@@ -1244,24 +1066,17 @@
     .ind-found__felt { border-top: 1px solid var(--rk-rule-strong); }
     .ind-found__felt dt { color: var(--rk-text); }
 
-    /* The monogram tile is a screen device; on paper it would print as a grey
-       box for no reason. Drop the tile, keep the drawn mark. */
-    .ind-lead__mark {
-      color: var(--rk-text);
-      width: auto;
-      height: auto;
-      border-radius: 0;
-    }
-    .ind-lead__name, .ind-lead__cred-key, .ind-lead__bio p:first-child { color: var(--rk-text); }
-    .ind-lead__role, .ind-lead__verify-label { color: var(--rk-text); }
-    .ind-lead__cred { border-top-color: var(--rk-rule-strong); }
-    /* Underlines survive greyscale where a coloured link does not, and
-       a[href]::after is suppressed site-wide, so the printed sheet keeps the
-       handles themselves — which is the whole point of this strip on paper. */
-    .ind-lead__verify { border-top: 1px solid var(--rk-rule-strong); }
-    .ind-lead__links a {
-      color: var(--rk-text);
-      text-decoration-color: var(--rk-rule-strong);
+    /* The one link this sheet has out of itself keeps its destination.
+       `a[href]::after { content: "" }` at the foot of this block strips every URL
+       on the page and outranks a bare class at (0,1,1); with the attribute this
+       is (0,2,1) and wins. Without it the printed sheet says "who runs it" and
+       gives the reader no way to go and look. */
+    .ind-who__go { margin-top: 8pt; padding-top: 8pt; border-top-color: var(--rk-rule-strong); }
+    .ind-who__link { color: var(--rk-text); text-decoration-color: var(--rk-rule-strong); }
+    .ind-who__link[href]::after {
+      content: " (runink.org" attr(href) ")";
+      font-weight: 400;
+      font-size: 8.5pt;
     }
 
     .ind-figure__art, .ind-found__art { max-width: 100%; }
@@ -1273,4 +1088,18 @@
 
     a[href]::after { content: ""; }
   }
+
+  /* ---- the worked case ---------------------------------------------------
+
+     The moments strip and the worked cases, shared with the home page rather
+     than reimplemented here: one device, one source of data, so the ledger row
+     a buyer opens and the page it links to cannot describe an industry two ways.
+     The rules paint with --ink, --rule, --accent-edge and --font-display, which
+     .ind defines above exactly as .hp does — so this section's per-industry
+     accent flows into them without a line of its own.
+
+     safeCSS is required rather than tidy: inside <style> Go's contextual escaper
+     treats a partial's return value as a CSS value and emits ZgotmplZ for the
+     whole block, which fails silently as a page with unstyled markup. */
+  {{ partial "shared/worked-case-style.html" . | safeCSS }}
 </style>

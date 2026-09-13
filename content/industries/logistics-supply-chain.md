@@ -38,10 +38,15 @@ owners:
     line: "You find out before your customer does, and the fix is drafted when you do."
   - role: "Chief financial officer"
     line: "Recoveries stop being a heroic effort and become a pipeline you can read."
-  - role: "Head of planning"
-    line: "Safety margins are argued from your own numbers, not by seniority."
+  # Trade compliance sits third because the first three roles on this list are
+  # the three the home page's ledger row shows for this industry — it takes
+  # `first 3` from here so the two pages cannot name the same job differently.
+  # The row's cost line is a held entry and an expiring claim, and this is the
+  # desk that owns both.
   - role: "Trade compliance"
     line: "A held entry arrives with the reason, the papers that release it and the charge accruing."
+  - role: "Head of planning"
+    line: "Safety margins are argued from your own numbers, not by seniority."
   - role: "Chief information officer"
     line: "A shorter security review, because the data stays on your machines."
 

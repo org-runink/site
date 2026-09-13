@@ -1,0 +1,110 @@
+{{/*
+  Who you would be working with — ON /company/, which is where it belongs.
+
+  WHERE IT CAME FROM. This block rendered at the foot of all five industry pages
+  and, in a second implementation, on the homepage. Both were placed there on the
+  same argument: confidence is built, then the ask is made, on a page a buyer
+  reads to the end — and /company/ was ruled out because nothing on the site
+  linked to it. That was true when it was written and is not true now: the
+  homepage products block links to /company/ by its last row, and the five
+  industry pages each carry a line to it where this block used to sit. So the
+  reason for the dispersal has gone, and company facts — who runs it, what it is
+  for, where it is going — are on the company page rather than five copies deep
+  inside pages about held containers and rating errors.
+
+  ONE RENDER, NOT THREE. layouts/partials/home/leadership.html and
+  layouts/partials/industries/leadership.html are both deleted; this is the only
+  place the biography is drawn, and data/leadership.yaml is still the only place
+  it is written. That file's header governs what may go in it — "only things a
+  reader can check for themselves" — and records the one sentence, promising a
+  financial outcome, that was struck from the source biography and may not come
+  back in other words. Nothing here adds copy of its own.
+
+  FOUR LANGUAGES. /company/ exists in all four, so the lookup takes
+  data/leadership_<lang>.yaml where one exists and the English file otherwise —
+  the same lookup the deleted homepage render used. A locale therefore gets the
+  translated biography or the English one, never an empty section.
+
+  UTILITY CLASSES, NOT hp- OR ind-. Those two stylesheets are inlined on their
+  own page families and neither is loaded here. /company/ is built from the
+  site's Tailwind vocabulary, the same one /pricing/ and next-step.html use, so
+  this block is written in it and needs no stylesheet of its own.
+
+  NO PORTRAIT, DELIBERATELY. There is no photograph of him in this repository and
+  the site makes no external requests, so there is nothing to show. The plate
+  carries a drawn monogram — two letterforms and a baseline in currentColor, so
+  it prints as ink and reads as a mark rather than as an avatar that failed to
+  load. static/images/team.jpg is a stock crowd shot and would imply a headcount
+  this company does not have.
+
+  ONE PERSON, DELIBERATELY, and the data file says why: there is one name because
+  there is one name. No advisor row and no placeholder cards.
+*/}}
+{{ $lead := site.Data.leadership }}
+{{ with (index site.Data (printf "leadership_%s" site.Language.Lang)) }}{{ $lead = . }}{{ end }}
+{{ with $lead }}
+<section class="max-w-6xl mx-auto pt-4 pb-16" aria-labelledby="leadership-heading">
+  <h2 id="leadership-heading" class="text-3xl md:text-4xl font-bold mb-4">{{ .label }}</h2>
+  {{ with .intro }}<p class="text-xl text-ink-2 max-w-3xl mb-10">{{ . }}</p>{{ end }}
+
+  <div class="border border-rule bg-sheet rounded-xl p-6 md:p-10">
+
+    <div class="flex items-center gap-5 mb-8">
+      <span class="text-signal shrink-0" aria-hidden="true">
+        <svg viewBox="0 0 96 96" width="60" height="60" fill="none" role="presentation">
+          <path d="M22 24 V 68 M22 24 H 34 A 22 22 0 0 1 34 68 H 22"
+                stroke="currentColor" stroke-width="5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M60 24 V 68 M60 24 H 68 A 13 13 0 0 1 68 50 H 60"
+                stroke="currentColor" stroke-width="5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 80 H 82" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round"/>
+        </svg>
+      </span>
+      <div>
+        <h3 class="text-2xl md:text-3xl font-bold text-ink mb-1">{{ .name }}</h3>
+        <p class="text-sm font-black uppercase tracking-[0.18em] text-signal">{{ .role }}</p>
+      </div>
+    </div>
+
+    {{ with .bio }}
+    <div class="max-w-[68ch] space-y-4 mb-10">
+      {{ range . }}<p class="text-base leading-relaxed text-ink-2">{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
+
+    {{/* The three claims pulled out of the prose, each a fact with somewhere it
+         can be looked up — the same grammar the industry pages' measures table
+         uses: the label, then where it comes from. */}}
+    {{ with .credentials }}
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 list-none pl-0">
+      {{ range . }}
+      <li class="border-t border-rule pt-4">
+        <p class="text-base font-bold text-ink mb-1">{{ .key }}</p>
+        <p class="text-sm leading-relaxed text-ink-2">{{ .line }}</p>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    {{/* Ending by handing over the means to check it. Plain links: no badge
+         script, no remote avatar, nothing that puts a request to another host on
+         the page. */}}
+    {{ with .verify }}
+    <div>
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">{{ $lead.verify_label | default "Check any of it" }}</p>
+      <ul class="flex flex-wrap gap-x-8 gap-y-2 list-none pl-0">
+        {{ range . }}
+        <li>
+          <a class="text-signal underline underline-offset-4" href="{{ .url }}"
+             {{ if not (hasPrefix .url "mailto:") }}rel="noopener noreferrer"{{ end }}>{{ .text }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+  </div>
+</section>
+{{ end }}

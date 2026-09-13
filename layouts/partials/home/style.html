@@ -566,127 +566,12 @@
      The counter is drawn rather than left to the list marker so it can sit in
      the margin and take the signal colour without a ::marker rule that Safari
      still handles inconsistently. */
-  /* Who you would be working with.
-     The plate is a ruled card rather than a tinted one: the section's grammar is
-     hairlines and ink, and a filled panel here would read as a testimonial box —
-     which is the one thing this block must not look like, since it is a fact
-     sheet with links rather than a quote. */
-  .hp-lead__plate {
-    border-top: 1px solid var(--rule);
-    padding-top: 1.75rem;
-  }
-  .hp-lead__id {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .hp-lead__mark {
-    flex: none;
-    display: inline-flex;
-    color: var(--accent-ink);
-  }
-  .hp-lead__name {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: 1.375rem;
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--ink);
-  }
-  .hp-lead__role {
-    margin: 0.25rem 0 0;
-    font-size: 0.9375rem;
-    color: var(--ink-2);
-  }
-  .hp-lead__bio p {
-    margin: 0 0 0.875rem;
-    max-width: 68ch;
-    line-height: 1.65;
-    color: var(--ink-2);
-  }
-  .hp-lead__bio p:last-child { margin-bottom: 0; }
+  /* The founder block's rules were here, and they go with the render that used
+     them. partials/home/leadership.html drew it immediately above the contact
+     block until the products block took that slot, so the rules have been dead
+     since. The copy has one render now, on /company/, in the site's utility
+     classes — see partials/company/leadership.html. */
 
-  /* The three claims, pulled out of the prose so the set reads straight down.
-     Same grammar as the ledger: a label, then where it comes from. */
-  .hp-lead__creds {
-    list-style: none;
-    margin: 1.75rem 0 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
-    border-top: 1px solid var(--rule);
-    padding-top: 1.5rem;
-  }
-  .hp-lead__cred-key {
-    margin: 0 0 0.25rem;
-    font-family: var(--font-display);
-    font-size: 0.8125rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--accent-ink);
-  }
-  .hp-lead__cred-line {
-    margin: 0;
-    font-size: 0.9375rem;
-    line-height: 1.55;
-    color: var(--ink-2);
-  }
-
-  .hp-lead__verify {
-    margin-top: 1.75rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--rule);
-  }
-  .hp-lead__verify-label {
-    margin: 0 0 0.625rem;
-    font-family: var(--font-display);
-    font-size: 0.6875rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--ink-3, var(--ink-2));
-  }
-  .hp-lead__links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
-  }
-  .hp-lead__link {
-    font-size: 0.9375rem;
-    color: var(--accent-ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-  }
-  .hp-lead__link:hover { border-bottom-color: currentColor; }
-
-  @media (min-width: 640px) {
-    .hp-lead__creds { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
-  }
-
-  @media print {
-    .hp-lead__plate,
-    .hp-lead__creds,
-    .hp-lead__verify { border-color: #999; }
-    .hp-lead__mark { color: #000; }
-    /* A printed link is a dead word unless it carries where it goes. */
-    .hp-lead__link[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; }
-    .hp-lead__link[href^="mailto:"]::after { content: ""; }
-    /* NOT `.hp-lead { break-inside: avoid }`. The plate is a full sheet tall,
-       so an atomic one cannot fit in whatever is left of the page it starts on
-       and moves whole to the next — which printed a sheet that was four fifths
-       empty. It may split; what may not split is a heading from the line under
-       it, or a credential from its key. */
-    .hp-lead__id,
-    .hp-lead__cred,
-    .hp-lead__verify { break-inside: avoid; }
-    .hp-lead__id { break-after: avoid; }
-  }
 
   /* The label over each of the two worked cases. Not a heading element: the
      section already has one and these are two halves of the same argument, not
@@ -828,120 +713,14 @@
     .hp-band .hp-head__rule { display: block; }
   }
 
-  /* ---- one load, four moments ---------------------------------------------
+  /* ---- the worked case: the moments strip, and the cases under it -------
 
-     A timeline, and the spine is a BORDER on the list rather than drawn artwork,
-     because a drawn line cannot reflow and this has to turn vertical on a phone.
-     DESIGN.md §6: depth is a rule and a change of ground. Both here, no colour
-     beyond the node, which is the accent doing its one job — marking the point
-     where somebody can act.
-
-     Four moments across at 900px, stacked below. Two of them carry two jobs, so
-     the columns are deliberately NOT equal: a grid of four equal columns would
-     make the pairs look cramped next to two half-empty neighbours. align-items
-     start lets each column be its own height. */
-  .hp-flow {
-    list-style: none;
-    margin: 0;
-    padding: 1.75rem 0 0;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-    counter-reset: hp-flow;
-  }
-  @media (min-width: 900px) {
-    /* The column count follows the number of moments the industry actually has,
-       which is why the modifier is written by the template rather than fixed
-       here. A fixed four killed the other four industries: three moments in a
-       four-column grid came out as two narrow columns, one wide one, and a hole
-       where the fourth would have been — read as a row with something missing
-       from it rather than a row of three.
-
-       Four is the uneven one on purpose. Only logistics has four moments, and
-       two of those carry two jobs each; equal quarters would leave the
-       single-job columns looking half empty beside the pairs. */
-    .hp-flow {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0 2rem;
-      align-items: start;
-      /* the spine: one rule across the top of the whole row */
-      border-top: 2px solid var(--rk-rule-strong);
-      padding-top: 0;
-    }
-    .hp-flow--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .hp-flow--4 { grid-template-columns: 0.85fr 1.15fr 0.85fr 1.15fr; }
-  }
-
-  .hp-flow__stage {
-    counter-increment: hp-flow;
-    min-width: 0;
-    position: relative;
-    padding: 1.5rem 0 1.5rem 1.5rem;
-    border-left: 2px solid var(--rk-rule-strong);
-  }
-  @media (min-width: 900px) {
-    .hp-flow__stage { padding: 1.5rem 0 0; border-left: 0; }
-  }
-
-  .hp-flow__when {
-    margin: 0 0 1rem;
-    font-family: var(--font-display);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-2);
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-  /* The node sits ON the spine. On the stacked layout the spine is the left
-     border, so the node is pulled out over it; across, it hangs off the top. */
-  .hp-flow__node {
-    flex: none;
-    width: 0.6rem;
-    height: 0.6rem;
-    border-radius: 50%;
-    background: var(--accent-edge);
-    margin-left: -1.8rem;
-  }
-  @media (min-width: 900px) {
-    .hp-flow__node { margin-left: 0; margin-top: -1.8rem; }
-  }
-
-  .hp-flow__job + .hp-flow__job { margin-top: 1.25rem; }
-  .hp-flow__name {
-    margin: 0 0 0.35rem;
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1.25;
-    color: var(--ink);
-  }
-  .hp-flow__line {
-    margin: 0;
-    font-size: 0.9375rem;
-    line-height: 1.55;
-    color: var(--ink-2);
-  }
-
-  @media print {
-    /* Four across on paper as well as on screen. Two columns cost half a sheet
-       here and the stages are short enough to hold at a quarter of the width;
-       the alternative was an eighth sheet for a section that fits in a quarter
-       of one. */
-    .hp-flow {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0 10pt;
-      padding-top: 8pt;
-      border-top: 1.5pt solid #000;
-    }
-    .hp-flow__stage { padding: 8pt 0 0; border-left: 0; break-inside: avoid; }
-    .hp-flow__node { display: none; }
-    .hp-flow__when { font-size: 7.5pt; margin-bottom: 5pt; color: #000; }
-    .hp-flow__name { font-size: 9.5pt; }
-    .hp-flow__line { font-size: 8.5pt; }
-  }
+     MOVED OUT, AND DELIBERATELY NOT COPIED BACK. These rules (.rk-flow, .rk-steps
+     and .rk-step, formerly .hp-*) now live in partials/shared/worked-case-style.html
+     and are included below, because the five industry pages render the same device
+     from the same data. Two copies of it would be two chances for the ledger row a
+     buyer opens and the page that row links to describe one industry differently.
+     Edit them there; the markup is partials/shared/worked-case.html. */
 
   /* ---- where it shows up in the operating numbers -----------------------
 
@@ -1068,81 +847,6 @@
        what the sheet needs. */
   }
 
-  .hp-steps__label {
-    margin: 1.75rem 0 0.75rem;
-    font-family: var(--font-display);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent-ink);
-  }
-  .hp-steps__label--b { margin-top: 2.5rem; }
-
-  @media print {
-    /* break-after: avoid so a case label can never print alone at the foot of
-       a sheet with its steps overleaf. It labels the list; separated from it,
-       it labels nothing and the reader has to turn back to find out which of
-       the two cases they are reading. */
-    .hp-steps__label {
-      margin: 10pt 0 5pt;
-      font-size: 8pt;
-      color: #000;
-      break-after: avoid;
-      page-break-after: avoid;
-    }
-    .hp-steps__label--b { margin-top: 14pt; }
-  }
-
-  .hp-steps {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid var(--rule);
-    counter-reset: hp-step;
-  }
-  .hp-step {
-    counter-increment: hp-step;
-    position: relative;
-    padding: 1.25rem 0 1.25rem 3rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .hp-step::before {
-    content: counter(hp-step);
-    position: absolute;
-    left: 0;
-    top: 1.25rem;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 0.8125rem;
-    line-height: 1.4;
-    letter-spacing: 0.04em;
-    color: var(--accent-ink);
-    font-variant-numeric: tabular-nums;
-  }
-  .hp-step__title {
-    margin: 0 0 0.35rem;
-    font-family: var(--font-display);
-    font-size: 1.0625rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--ink);
-  }
-  .hp-step__body {
-    margin: 0;
-    max-width: 68ch;
-    line-height: 1.65;
-    color: var(--ink-2);
-  }
-
-  @media print {
-    .hp-steps { border-top-color: #000; }
-    .hp-step { padding: 6pt 0 6pt 22pt; border-bottom-color: #999; break-inside: avoid; }
-    .hp-step::before { top: 6pt; color: #000; }
-    .hp-step__title { font-size: 10pt; }
-    .hp-step__body { font-size: 9pt; }
-  }
-
   /* ---- the product, in three parts --------------------------------------
 
      Three columns from 768px, one below. The same grammar as .hp-beats
@@ -1215,7 +919,8 @@
        destination off every link on the sheet; at (0,1,1) it outranks a bare
        class, so `.hp-more__link::after` lost and this line printed with no URL
        on it at all. With the attribute this is (0,2,1) and wins — the same
-       shape, and for the same reason, as .hp-lead__link[href^="http"] above.
+       shape, and for the same reason, as the founder block's verify links
+       used before they moved to /company/.
        Found by reading the printed sheet, not the stylesheet. */
     .hp-more__link[href]::after {
       content: " (runink.org" attr(href) ")";
@@ -1846,4 +1551,12 @@
 
     a[href]::after { content: ""; }
   }
+
+  {{/* safeCSS is required, not cosmetic: this is inside a <style> element, so
+       Go's contextual escaper treats the partial's return value as a CSS value
+       and rewrites the whole block to the literal string ZgotmplZ — which is
+       how the first version of this include shipped a homepage with no moments
+       strip and no worked-case rules at all, silently. Same trap the industry
+       template documents for its accent attribute. */}}
+  {{ partial "shared/worked-case-style.html" . | safeCSS }}
 </style>

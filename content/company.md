@@ -44,12 +44,22 @@ author: "Runink"
 
 {{< section-container class="pt-4 pb-20" >}}
   <div class="max-w-4xl">
-    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">What we are for</p>
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">Our mission</p>
     <p class="text-2xl md:text-3xl leading-snug text-ink">
       Most of what an operations, finance or compliance team needs to decide is sitting in systems it already pays for, in a shape nobody has time to read.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
       We connect to those systems, keep the working copy on hardware the customer controls, and show the reasoning behind every answer so the person who signs off can check it.
+    </p>
+  </div>
+
+  <div class="max-w-4xl mt-16 border-t border-rule pt-10">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">Our vision</p>
+    <p class="text-2xl md:text-3xl leading-snug text-ink">
+      Work where the software does the reading and a person does the deciding — and the record of that is complete enough to hand to an auditor, a regulator or a counterparty without preparing it first.
+    </p>
+    <p class="text-lg text-ink-2 mt-6 max-w-3xl">
+      That is what we are building towards rather than something we claim to have finished. It is why every answer arrives as a draft that waits for a name, why a check that could not run says so instead of passing, and why the reasoning about a customer's records happens on the customer's own machines.
     </p>
   </div>
 {{< /section-container >}}

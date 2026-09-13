@@ -157,6 +157,49 @@
     </section>
     {{ end }}
 
+    {{/* THE SAME DEVICE THE HOME PAGE OPENS ON THIS INDUSTRY, FROM THE SAME DATA.
+
+         The ledger row a buyer opens on the home page ends with "See the fit",
+         and it lands here. Until this slot existed, the two pages described one
+         industry in two vocabularies: the row walked named scenarios — a customs
+         hold, a reefer, an equipment limit — and this page went from outcomes to
+         a jobs index with different names for the same work, so the page a reader
+         arrived at did not obviously continue the page they left.
+
+         NOTHING IS COPIED TO GET THAT. `flow` and `cases` live once, in the home
+         page's front matter, and are read back from it here by slug; the markup
+         and the rules are partials/shared/worked-case.html and its stylesheet.
+         There is no second copy of a scenario to drift, and an edit to a case
+         lands on both pages in the same build.
+
+         WHY THE HOME PAGE IS THE SOURCE rather than this page. The device renders
+         on all four languages of the home page and the industries section is
+         English only, so the data has to live where every language can reach it.
+         Reversing it would mean es/fr/pt lose the cases or carry a third copy.
+
+         It renders nothing where an industry carries neither key, rather than an
+         empty heading — the same guard `coverage` below uses. */}}
+    {{ $slug := .File.ContentBaseName }}
+    {{ $entry := false }}
+    {{ with site.GetPage "/" }}
+      {{ range .Params.industries }}
+        {{ if eq .page $slug }}{{ $entry = . }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ with $entry }}
+    {{ if or .flow .cases }}
+    <section class="ind-sec" aria-labelledby="worked-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="worked-heading">{{ $.Params.worked_heading | default "Worked through, end to end" }}</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      <p class="ind-intro">{{ $.Params.worked_intro | default "When in the operation each of these lands, and then the scenarios themselves — each one walked from the record that starts it to the person who approves what is done about it." }}</p>
+      {{ partial "shared/worked-case.html" (dict "flow" .flow "cases" .cases) }}
+    </section>
+    {{ end }}
+    {{ end }}
+
     {{/* WHAT THIS INDUSTRY'S PAGES ACTUALLY COVER, AND WHERE TO READ EACH.
 
          There are twelve use-case pages on this site and, until this slot
@@ -280,20 +323,39 @@
     </section>
     {{ end }}
 
-    {{/* Who is behind it — the last block before the ask.
+    {{/* Who is behind it — a line out, not the biography itself.
 
-         The review of this material said to consider ending with the
-         leadership team and their relevant experience, to build confidence.
-         This is that block, and its position is the argument: everything above
-         has described what the platform does and how the reader would measure
-         it, and the sentence directly below asks for a meeting. The person
-         goes between the two.
+         This slot used to render the whole founder block: the nameplate, four
+         paragraphs, three credentials and the links to check them, identically on
+         all five industry pages. The argument for putting it here was that
+         confidence should be built immediately before the ask, and that /company/
+         was a page nothing linked to. The first half still holds and is why a line
+         survives in this position. The second half does not: /company/ is linked
+         from the homepage and now from all five of these pages, which is what this
+         line is.
 
-         Not driven from front matter, unlike every other block on this page:
-         it is identical on all five industry pages, so it reads from
-         data/leadership.yaml instead. See the partial for why it lives here
-         rather than on /company/ or on the overview. */}}
-    {{ partial "industries/leadership.html" . }}
+         Company facts belong to the company page. A biography repeated five times
+         inside pages about held containers, rating errors and reserve movements is
+         the same fact maintained in five places a reader does not go looking for
+         it, and it pushed the one next step this page exists to make a sheet
+         further down. */}}
+    {{ with site.GetPage "/company" }}
+    <section class="ind-sec ind-who" aria-labelledby="who-heading">
+      <div class="ind-head">
+        <span class="ind-head__mark" aria-hidden="true"></span>
+        <h2 class="ind-head__label" id="who-heading">{{ $.Params.who_heading | default "Who you would be working with" }}</h2>
+        <span class="ind-head__rule" aria-hidden="true"></span>
+      </div>
+      <p class="ind-intro">{{ $.Params.who_line | default "Runink is founder-led. The person in the first meeting is the person who designed the thing being discussed — his track record, what he does here, and the means to check any of it are on the company page." }}</p>
+      {{/* NOT .ind-more. That class is display:none !important on paper — it
+           carries the back link, the other-industries nav and the buttons, which
+           are screen furniture — and the printed sheet came back with this
+           paragraph and no way out of it. Read off the PDF, not the stylesheet. */}}
+      <p class="ind-who__go">
+        <a class="ind-who__link" href="{{ .RelPermalink }}">{{ $.Params.who_cta | default "Who runs it, and how it is built" }} <span aria-hidden="true">&rarr;</span></a>
+      </p>
+    </section>
+    {{ end }}
 
     <!-- One next step -->
     <section class="ind-next" aria-labelledby="next-heading">

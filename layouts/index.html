@@ -299,10 +299,23 @@
              row, which quietly became the source of truth whenever the industry
              page lacked one — five pre-rebrand hues living in a second place. */}}
         {{ $cat := "" }}
+        {{/* The owners come from the industry page for the same reason the
+             category does: both pages name the roles whose week this changes,
+             and two lists meant one saying "Internal audit" while the other said
+             "Internal audit and control testing" for the same job. The ledger
+             column holds three, so it takes the first three the industry page
+             states and the order is that page's. `owners` in this front matter
+             stays as the fallback the localised sites render — see below. */}}
+        {{ $owners := .owners }}
         {{ with site.GetPage (printf "/industries/%s" .page) }}
           {{ $name = .Title }}
           {{ $url = .RelPermalink }}
           {{ $cat = .Params.category }}
+          {{ with .Params.owners }}
+            {{ $roles := slice }}
+            {{ range first 3 . }}{{ $roles = $roles | append .role }}{{ end }}
+            {{ with $roles }}{{ $owners = . }}{{ end }}
+          {{ end }}
         {{ end }}
         {{/* The industry pages are English-only, so on /es/, /fr/ and /pt/ this
              lookup found nothing and every row in this ledger rendered with no
@@ -337,7 +350,7 @@
               </p>
               <p class="hp-row__cost">{{ .cost }}</p>
               <p class="hp-row__owner">
-                {{ range .owners }}<span>{{ . }}</span>{{ end }}
+                {{ range $owners }}<span>{{ . }}</span>{{ end }}
               </p>
               <p class="hp-row__go" aria-hidden="true">{{ $.Params.industries_open }}</p>
             </summary>
@@ -375,7 +388,7 @@
                    "how it is read today" panel directly above, and printing it
                    twice in one row would read as the page repeating itself. */}}
               {{ with $ox }}
-              <p class="hp-steps__label">{{ $.Params.opex_heading }}</p>
+              <p class="rk-steps__label">{{ $.Params.opex_heading }}</p>
               <ul class="hp-opex">
                 <li class="hp-opex__band">
                   <span class="hp-opex__rule" aria-hidden="true"></span>
@@ -390,33 +403,11 @@
               </ul>
               {{ end }}
 
-              {{ with .flow }}
-              <ol class="hp-flow hp-flow--{{ len . }}">
-                {{ range . }}
-                <li class="hp-flow__stage">
-                  <p class="hp-flow__when"><span class="hp-flow__node" aria-hidden="true"></span>{{ .when }}</p>
-                  {{ range .jobs }}
-                  <div class="hp-flow__job">
-                    <h4 class="hp-flow__name">{{ .name }}</h4>
-                    <p class="hp-flow__line">{{ .line }}</p>
-                  </div>
-                  {{ end }}
-                </li>
-                {{ end }}
-              </ol>
-              {{ end }}
-
-              {{ range .cases }}
-              <p class="hp-steps__label hp-steps__label--b">{{ .label }}</p>
-              <ol class="hp-steps">
-                {{ range .steps }}
-                <li class="hp-step">
-                  <h4 class="hp-step__title">{{ .step }}</h4>
-                  <p class="hp-step__body">{{ .body }}</p>
-                </li>
-                {{ end }}
-              </ol>
-              {{ end }}
+              {{/* The moments and the worked cases, through the partial the five
+                   industry pages render from this same front matter. The row a
+                   reader opens here and the page behind "See the fit" are one
+                   device reading one source — see shared/worked-case-style.html. */}}
+              {{ partial "shared/worked-case.html" (dict "flow" .flow "cases" .cases) }}
 
               <p class="hp-more">
                 <a class="hp-more__link" href="{{ $url }}">{{ $.Params.industries_cta }} <span aria-hidden="true">&rarr;</span></a>

@@ -46,6 +46,13 @@
     {{ .Content }}
   </div>
 
+  {{/* Who runs it, before the ask — the position the industry pages used to give
+       this block, now on the page that owns company facts. See
+       partials/company/leadership.html for why it moved off those five pages. */}}
+  <div class="container mx-auto px-4 pb-8 relative z-10">
+    {{ partial "company/leadership.html" . }}
+  </div>
+
   <div class="container mx-auto px-4 pb-20 relative z-10">
     {{ partial "next-step.html" . }}
   </div>

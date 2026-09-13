@@ -36,12 +36,22 @@ author: "Runink"
 
 {{< section-container class="pt-4 pb-20" >}}
   <div class="max-w-4xl">
-    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">Para que servimos</p>
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">Nossa missão</p>
     <p class="text-2xl md:text-3xl leading-snug text-ink">
       Quase tudo o que uma equipe de operações, finanças ou conformidade precisa para decidir está em sistemas que ela já paga, num formato que ninguém tem tempo de ler.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
       Nós nos conectamos a esses sistemas, mantemos a cópia de trabalho em máquinas que o cliente controla e mostramos o raciocínio por trás de cada resposta, para que quem assina possa conferir.
+    </p>
+  </div>
+
+  <div class="max-w-4xl mt-16 border-t border-rule pt-10">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">Nossa visão</p>
+    <p class="text-2xl md:text-3xl leading-snug text-ink">
+      Um trabalho em que o software lê e uma pessoa decide — e em que o registro disso é completo o bastante para ser entregue a um auditor, a um regulador ou a uma contraparte sem preparo nenhum.
+    </p>
+    <p class="text-lg text-ink-2 mt-6 max-w-3xl">
+      É para onde construímos, não algo que digamos ter terminado. É por isso que cada resposta chega como um rascunho que espera um nome, que uma verificação que não pôde rodar diz isso em vez de passar, e que o raciocínio sobre os registros de um cliente acontece nas máquinas daquele cliente.
     </p>
   </div>
 {{< /section-container >}}
