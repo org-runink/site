@@ -75,7 +75,7 @@ figure:
   caption: "Cuánto tarda su operación desde que algo queda registrado hasta que alguien actúa sobre ello es un número que conviene tener. Muy pocas operaciones lo han contado. Ese intervalo suele ser donde está el coste, y es una buena primera cosa que medir juntos."
 
 industries_heading: "Cinco sectores, una misma forma de problema"
-industries_intro: "Encuentre la línea que se parece a su semana. Cada una abre una página escrita para ese sector, con las medidas sobre las que anotar sus propias cifras."
+industries_intro: "Encuentre la línea que se parece a su semana. Cada una se abre sobre los escenarios que ese sector vive de verdad — la cadena de frío, una declaración aduanera, el límite de una máquina, un expediente de siniestro, una cláusula — y cada uno se recorre desde el registro que lo inicia hasta la persona que aprueba lo que se hace con él."
 industries_open: "Abrir"
 industries_cta: "Ver si encaja"
 industries_columns:
@@ -96,12 +96,16 @@ industries:
         jobs:
           - name: "Demanda y suministro"
             line: "Una línea empieza a moverse semanas antes que el punto de pedido, y el plan llega después de la rotura."
+          - name: "Límites de las máquinas"
+            line: "La cámara, la cinta y la carretilla anotan todo el día lo que hacen, y alguien lo lee cuando la carga ya es la prueba."
       - when: "En tránsito"
         jobs:
           - name: "Cadena de frío"
             line: "Un contenedor se calienta de noche y nadie abre la puerta hasta la mañana."
           - name: "Logística reactiva"
             line: "El plan que era bueno a las seis de la mañana ya no lo es a las diez, y nadie lo vuelve a correr."
+          - name: "Declaración aduanera"
+            line: "La caja está parada en la frontera y la declaración con la que se presentó es otra historia en otro sistema."
       - when: "Cuando vuelve"
         jobs:
           - name: "Logística inversa"
@@ -113,7 +117,7 @@ industries:
           - name: "Suscripción"
             line: "El condicionado, el informe de siniestro, el histórico de reservas y el límite de autoridad están en cuatro sitios."
     cases:
-      - label: "Un contenedor retenido en el puerto, de la retención al despacho"
+      - label: "Retención aduanera · Un contenedor retenido en el puerto, de la retención al despacho"
         steps:
           - step: "Aparece la retención"
             body: "Una entrada vuelve como retenida, en examen o detenida, y el número de días retenida es mayor que cero. Esa combinación es toda la prueba — es una regla fija, no un criterio, y se aplica a todas las entradas y no solo a las que alguien pensó en revisar."
@@ -127,7 +131,7 @@ industries:
             body: "La demora de una entrada retenida y el arancel de una sin responsable son dinero distinto, y contarlos como una sola cifra es la forma más común de inflar este tipo de total. Se mantienen separados, deliberadamente, y hay una prueba que falla si alguna vez se juntan."
           - step: "Decide una persona con nombre"
             body: "El elemento espera. Aprobarlo es lo que envía algo, y queda escrito quién lo aprobó, cuándo y qué cambió. Si parte de lo redactado no pudo ejecutarse, el resultado nombra esa parte en lugar de informar de un éxito."
-      - label: "Un refrigerado que se calentó, de la puerta a la reclamación presentada"
+      - label: "Cadena de frío · Un refrigerado que se calentó, de la puerta a la reclamación presentada"
         steps:
           - step: "Llega la imagen"
             body: "Una foto hecha con un terminal en la puerta, o un fotograma sacado de una cámara del patio. Antes de que nada la lea, se comprueba que sea una imagen: se descodifica la cabecera por separado, el formato tiene que ser uno de dos, y el tamaño se limita en bytes y en píxeles. Un PDF, un contenedor de vídeo o bytes sueltos se rechazan en ese paso."
@@ -141,6 +145,32 @@ industries:
             body: "Un aviso puede difundirse a lo que esté suscrito al flujo de eventos del patio, y el registro lo guarda como lo que es: solicitado. Lo que pase después lo decide alguien, y el registro lo dice así en lugar de dar a entender que se detuvo un movimiento."
           - step: "Decide una persona con nombre"
             body: "El elemento espera, igual que la entrada retenida. Aprobarlo es lo que envía algo, y quién aprobó, cuándo y qué cambió queda escrito."
+      - label: "Declaración aduanera · Un manifiesto rechazado, de la presentación al papel que nombró"
+        steps:
+          - step: "Se lee la presentación, no el despacho"
+            body: "Una entrada puede estar parada en la frontera con un manifiesto que la autoridad aceptó, y una presentación puede estar rechazada mientras la caja sigue moviéndose. Retenida es un estado de despacho y rechazada es un estado de presentación. Cada uno se lee donde está escrito, y ninguno se lee nunca como el otro."
+          - step: "El código viaja tal como se escribió"
+            body: "El código de excepción que llevaba el rechazo llega palabra por palabra, con el manifiesto al que pertenece, el puerto donde se presentó y quién lo presentó. Su agente de aduanas recibe la referencia que puede citar, y no la paráfrasis que alguien hizo de ella."
+          - step: "Cada documento que falta sale en su propia línea"
+            body: "Cada documento que la presentación señaló como pendiente sale como elemento propio, con el registro del que se leyó. Qué falta y de quién depende es lo primero que aparece, en lugar de ser lo que alguien deduce después."
+          - step: "El silencio se escribe como silencio"
+            body: "Cuando los registros no dicen qué contestó la presentación, eso se levanta como hallazgo propio. Leer el estado de despacho como estado de presentación afirmaría una presentación que nadie declaró, y no se hace: una entrada puede estar retenida con su manifiesto aceptado."
+          - step: "La demora se cuenta una vez"
+            body: "La demora que corre en esa entrada ya la cuenta el elemento de la entrada retenida de arriba, así que aquí viaja como importe en juego y no como un segundo cargo. Una demora contada dos veces es la forma más común de inflar un total, y hay una prueba que falla si las dos se juntan."
+          - step: "Decide una persona con nombre"
+            body: "Lo que sale es el documento que se enseña a un agente de aduanas o a una autoridad portuaria, y sale cuando alguien lo aprueba. Quién lo aprobó, cuándo y qué cambió se queda con él."
+      - label: "Límites de las máquinas · Una máquina que se acerca al límite que su propio registro declara"
+        steps:
+          - step: "Un límite que nadie declaró no es un límite"
+            body: "La cifra contra la que se compara una lectura se lee del propio registro de la máquina: una temperatura de alarma, un punto de disparo, un nivel de sustitución. Cuando el registro solo dice a qué valor funcionaba la máquina cuando estaba sana, la desviación se informa y no se proyecta nada contra ella, porque un valor sano de referencia no es un punto en el que algo falle."
+          - step: "Las lecturas se comparan en orden"
+            body: "La primera lectura de la ventana, la última, cuántas eran comparables y a qué distancia está la última del límite declarado. Cada cifra lleva la lectura de la que salió, así que su técnico comprueba la aritmética contra el registro en vez de fiarse de ella."
+          - step: "La recta que las une es aritmética, no un pronóstico"
+            body: "Cuando las lecturas lo permiten, una recta entre la primera y la última dice cuándo llegaría al límite declarado a ese ritmo. Eso describe dos lecturas, y cada documento de este tipo lo dice en su propia cara."
+          - step: "Sin probabilidad, sin confianza, sin vida restante"
+            body: "Ninguna de las tres está en el documento, y eso es estructural y no una cuestión de redacción: no hay campo donde ponerlas. Una puntuación de fallo ajustada a un puñado de lecturas se lee como una medición y no lo es. Vale más un número que un planificador puede recalcular que uno seguro que no puede."
+          - step: "Una persona con nombre programa el trabajo"
+            body: "El elemento llega a mantenimiento con la máquina, el canal, el límite declarado y las lecturas que hay detrás. Aprobar es lo que abre la orden, y quién aprobó, cuándo y qué cambió queda en el registro."
   - page: "insurance"
     name: "Insurance"
     cost: "Un umbral de revisión elevado para vaciar una cola, pensado como provisional, nunca devuelto y nunca decidido. Movimientos de reserva revisados por muestreo porque el flujo es demasiado largo para leerlo."
@@ -154,6 +184,12 @@ industries:
         jobs:
           - name: "Suscripción delegada"
             line: "Usted sigue respondiendo por lo que se decide bajo el acuerdo, y los informes que el agente devuelve hay que leerlos contra él."
+      - when: "cuando se notifica un siniestro"
+        jobs:
+          - name: "Peritación de la carga"
+            line: "Lo que se perdió, en qué condiciones viajaba y lo que la cobertura declara que vale están en el expediente, en el registro del envío y en el condicionado, y alguien junta los tres a mano."
+          - name: "Cláusulas y plazos"
+            line: "Un párrafo resuelve la pregunta y una fecha decide si todavía merece la pena hacerla, y encontrar los dos lleva una tarde."
       - when: "mientras el expediente está abierto"
         jobs:
           - name: "Segunda revisión"
@@ -163,7 +199,7 @@ industries:
           - name: "Reservas y recobros"
             line: "Los términos del tratado fijan lo que se puede recobrar, y si una pérdida se presentó bajo los correctos es una lectura del tratado contra el expediente."
     cases:
-      - label: "Un umbral de segunda revisión, de subido en el flujo de trabajo a decidido por escrito"
+      - label: "Deriva normativa · Un umbral de segunda revisión, de subido en el flujo de trabajo a decidido por escrito"
         steps:
           - step: "Se lee el condicionado"
             body: "La cláusula que fija el importe a partir del cual un siniestro necesita segunda revisión se extrae del documento de póliza. Vuelve enunciada en lenguaje llano, con el documento del que se leyó nombrado al lado."
@@ -175,6 +211,30 @@ industries:
             body: "Lleva la observación, la regla que invocó, los registros que citó, una gravedad y una acción propuesta concreta. Este depende del apetito de riesgo — si el umbral subido es el que ahora quiere — así que espera, con la ambigüedad nombrada y el informe ya redactado."
           - step: "Decide una persona con nombre"
             body: "Alguien aprueba, edita o rechaza la acción redactada, y esa decisión queda registrada como un evento que lleva quién la tomó. Tanto si el condicionado se actualiza a la cifra nueva como si el flujo vuelve a la antigua, la observación, la regla, los registros y la aprobación quedan guardados según se hace el trabajo. Cuando un auditor pregunta qué hizo ese control, responder es recuperar."
+      - label: "Suscripción de carga · Un expediente de siniestro montado para quien tiene que decidir"
+        steps:
+          - step: "El expediente se monta con los registros, no con el relato"
+            body: "Lo que los registros dicen que faltó, lo que dicen que se dañó, en qué envío viajaba y lo que la cobertura declara que vale. Cada cifra se cita en el momento en que se lee, así que el suscriptor abre un documento en lugar de cuatro sistemas."
+          - step: "La franquicia se declara y nunca se resta"
+            body: "Restarla de la pérdida produce una cifra recuperable, y esa aritmética solo significa algo cuando alguien ha decidido que la póliza responde. Esa decisión es del suscriptor, así que la cifra se deja donde él pueda tomarla."
+          - step: "Las condiciones que impone la cobertura se auditan aparte"
+            body: "Una banda de temperatura, un estándar de embalaje, una ruta de seguridad — cada una leída contra los registros que la cumplieron o no. La auditoría nunca lee la pérdida y el expediente nunca lee la auditoría. Juntar las dos en un párrafo compone una defensa de cobertura, y componerla es acto del suscriptor y no del software."
+          - step: "No haber podido mirar no es no haber encontrado nada"
+            body: "Una condición de la que los registros no dicen nada vuelve como no evidenciada, nunca como cumplida. Una banda escrita en una unidad no se compara con una sonda que registra en otra, porque convertir inventa una precisión que los registros nunca tuvieron. Una reclamación rechazada sobre una condición supuesta la paga el asegurado, que nunca sabe por qué."
+          - step: "Decide con nombre quien tiene la autoridad"
+            body: "Aquí no se vincula, ni se liquida, ni se rechaza nada. La peritación y la auditoría se enlazan al mismo envío, llegan juntas y esperan a la persona que manda en el expediente."
+      - label: "Revisión jurídica · La cláusula que lo gobierna, y el registro contra el que se contrastó"
+        steps:
+          - step: "La pregunta es la de siempre"
+            body: "Si pueden subcontratar esto. Si el plazo de conservación que aplicamos es el que nos comprometimos a aplicar. En algún punto del acuerdo hay un párrafo que lo resuelve, y encontrarlo es todo el coste."
+          - step: "El pasaje vuelve con el registro al lado"
+            body: "La cláusula se lee del documento y se expresa en lenguaje llano, con el documento del que salió nombrado. La regla tal como se aplica se lee donde se aplica. Las dos llegan una junto a la otra, así que la conversación empieza en la diferencia y no en la búsqueda."
+          - step: "La fecha la calcula una regla con nombre, y se niega a adivinar"
+            body: "Un plazo de aviso o una ventana de presentación se calcula desde una fecha del registro mediante una regla que cita la norma de la que viene, y dice desde qué hecho contó: el día en que la mercancía llegó, o el día en que debió llegar. Cuando el registro no trae una fecha utilizable, no se produce ninguna: el elemento lo dice y lleva la advertencia en su lugar."
+          - step: "Revisado y limpio y no se pudo revisar son entradas distintas"
+            body: "Casi todas las herramientas muestran las dos como un visto. Aquí la segunda es un estado propio, con el motivo escrito en una frase: no volvió nada, lo que volvió no se pudo leer, lo que volvió estaba vacío. Es justo la entrada que una auditoría busca."
+          - step: "Devuelve una nota, y el criterio sigue siendo suyo"
+            body: "Lo que vuelve es un paso siguiente en lenguaje de negocio: redactar esta carta, abrir este ticket, llevárselo al responsable del marco. La lectura es del software. Decidir qué significa es de la persona, y su nombre queda en el registro que lo dice."
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
     cost: "Una diferencia que crece dentro del rango que siempre se aprueba, así que ningún mes escala y nadie lee la secuencia. Un contrato de proveedor que nadie ha vuelto a abrir desde la firma."
@@ -197,7 +257,7 @@ industries:
           - name: "Tarifas aplicadas"
             line: "Tramos, umbrales y condiciones de producto convierten la comisión en una conciliación entre lo que dicen las condiciones y lo que se cobró."
     cases:
-      - label: "Una diferencia de conciliación, de una racha de meses aprobados a una decisión registrada"
+      - label: "Partidas abiertas · Una diferencia de conciliación, de una racha de meses aprobados a una decisión registrada"
         steps:
           - step: "El mes se aprueba como siempre"
             body: "El movimiento entra dentro del rango que ya se ha aprobado antes. Se aprueba igual que el mes anterior, y por sí solo se lee como aquel mes."
@@ -209,6 +269,16 @@ industries:
             body: "El caso espera en una cola, con la serie que cita ya adjunta. Aprobarlo, corregirlo o rechazarlo es su decisión, y la causa la escribe ella: nombrarla exige a alguien que sepa qué cambió en la operación ese mes."
           - step: "El registro responde a la siguiente petición"
             body: "Quién decidió, cuándo, qué citó y qué cambió quedan juntos, y cada entrada va encadenada con la anterior, de modo que un cambio posterior en el registro se nota. Cuando pregunta el supervisor o la auditoría interna, la respuesta se lee en lugar de volver a montarse."
+      - label: "Obligaciones de proveedores · Los niveles de servicio que el contrato ya tarifa, contra lo que se prestó"
+        steps:
+          - step: "Las obligaciones se leen del acuerdo"
+            body: "Niveles de servicio, subcontratación, tratamiento de datos, notificación. Cada una vuelve expresada en lenguaje llano con la cláusula de la que se leyó, así que lo que usted firmó se puede leer sin abrir el expediente."
+          - step: "Lo prestado se lee donde está registrado"
+            body: "Los registros de lo que el proveedor prestó de verdad se leen donde ya están, y se contrastan con el nivel que fija el acuerdo. La comparación va elemento por elemento y no por muestra, así que un incumplimiento llega con nombre y no como porcentaje."
+          - step: "Un incumplimiento que el contrato ya tarifa llega con ese precio"
+            body: "Cuando el acuerdo fija una penalización por el incumplimiento, la cifra es la propia aritmética del acuerdo sobre los incumplimientos confirmados. Es dinero ya debido bajo un documento que ambas partes firmaron, y no una reclamación inventada encima de él."
+          - step: "Decide con nombre qué se reclama"
+            body: "Si la penalización se reclama, se perdona o se plantea en la próxima revisión es una decisión comercial, y sigue siéndolo. El elemento espera con la cláusula, los registros y la aritmética adjuntos, y la aprobación guarda quién decidió y por qué."
   - page: "telecom"
     name: "Telecom"
     cost: "Un cambio de tarificación correcto para la promoción y equivocado para un plan heredado, demasiado pequeño para mover un agregado. Un barrido que devuelve una tasa de error cuando operaciones necesita las cuentas por nombre."
@@ -231,7 +301,7 @@ industries:
           - name: "Despliegue de red"
             line: "El gasto aprobado, las órdenes de compra, el equipo recibido y los sitios que ya cursan tráfico solo quedan uno al lado del otro cuando alguien arma esa vista a mano, y dentro de ella pasa inadvertido un sitio que recibió el equipo y nunca se puso en servicio."
     cases:
-      - label: "Un cambio de tarificación equivocado para un plan heredado, de la primera llamada mal tarificada a una retarificación aprobada"
+      - label: "Aseguramiento de ingresos · Un cambio de tarificación equivocado para un plan heredado, de la primera llamada mal tarificada a una retarificación aprobada"
         steps:
           - step: "La tarificación se lee contra el plan"
             body: "La salida tarificada de cada cuenta se lee contra las condiciones del propio plan de ese abonado, y la comparación es registro a registro y no un barrido mensual sobre una muestra. Lo que vuelve son las cuentas con nombre, que es lo que necesita una retarificación, y no una tasa de error, que es lo que necesita un informe."
@@ -243,6 +313,16 @@ industries:
             body: "El juicio corre con una credencial distinta de la del envío, y qué credencial lleva un mensaje lo decide la puerta por la que entró, no un campo que rellena quien lo manda. El veredicto «no se puede juzgar» es una respuesta por derecho propio: llega con su motivo escrito al lado y pasa a una persona, igual que un desacuerdo."
           - step: "Aseguramiento de ingresos aprueba la retarificación"
             body: "El elemento espera con la cuenta nombrada, las condiciones del plan contra las que se leyó y los registros de los que salió. Aprobar es lo que envía algo, y quién aprobó, cuándo y qué cambió queda en el registro. El remedio es una corrección de configuración y una retarificación, hecha mientras una retarificación todavía lo arregla."
+      - label: "Liquidación de interconexión · Dos registros del mismo tráfico que no coinciden"
+        steps:
+          - step: "Los dos lados se leen contra el acuerdo"
+            body: "Su registro del tráfico, el registro que la contraparte tiene del mismo tráfico y el acuerdo que fija las tarifas. La lectura ocurre mientras ambos lados conservan el detalle, y no al cierre del ciclo, cuando uno de los dos ya no lo tiene."
+          - step: "Una discrepancia nunca se promedia"
+            body: "Dos lecturas del mismo tráfico que difieren vuelven como no se puede juzgar, con las dos cifras y el sitio del que salió cada una. Partir la diferencia produce una tercera cifra que ninguna de las partes observó, y en una liquidación esa cifra no la puede defender ninguno."
+          - step: "No se puede juzgar es una respuesta, con su motivo al lado"
+            body: "Sin prueba, una prueba que solo repite la afirmación, una prueba sobre otra cuenta, una prueba demasiado vieja para decir algo del presente: cada una termina ahí, escribe su propio motivo en una frase que una persona lee, y va a una persona."
+          - step: "Una persona con nombre lo lleva a la contraparte"
+            body: "El elemento lleva el período, los dos registros y la tarifa que fija el acuerdo. Aprobar es lo que lo envía, y lo que se citó y lo que se cambió quedan en el registro para que el ciclo siguiente empiece desde ahí."
   - page: "marketing"
     name: "Marketing"
     cost: "La herramienta de auditoría sabe que el sitio es lento. La de contenido no, así que sigue escribiendo para una página en la que nadie se queda. Cada campaña vuelve a empezar en blanco."
@@ -265,7 +345,7 @@ industries:
           - name: "Hacer seguimiento"
             line: "Su sistema de clientes sabe que un lead dejó de responder en la tercera semana; el programador de publicaciones no."
     cases:
-      - label: "Una página donde nadie se queda, de la auditoría que la encuentra a un borrador aprobado"
+      - label: "Auditoría del sitio · Una página donde nadie se queda, de la auditoría que la encuentra a un borrador aprobado"
         steps:
           - step: "La auditoría lee su sitio"
             body: "Usted trae su sitio web y los canales en los que publica. Leerlos y decirle dónde está es lo primero que hace Runink PULSE. Lo que encuentra vuelve ordenado por prioridad y se aplica desde la misma pantalla."
@@ -277,6 +357,16 @@ industries:
             body: "Borrador, pendiente de revisión, aprobada, rechazada, publicada, archivada. Esos son los estados que PULSE mantiene, así que ve lo que está esperándole y lo que salió de verdad."
           - step: "Una persona con nombre aprueba"
             body: "Cada borrador —entrada, informe, correo en frío, guion de llamada— llega a una cola de revisión con un aprobar y un rechazar. Aprobar es un paso que da una persona con nombre, no un trámite que el sistema hace por ella."
+      - label: "Seguimiento de leads · Un contacto que se apagó en la tercera semana"
+        steps:
+          - step: "Quien dice que se apagó es el registro del cliente"
+            body: "El contacto, la etapa a la que llegó y el día en que se movió por última vez se leen del sistema de clientes en el que el equipo ya trabaja, y no de una segunda lista que alguien mantiene al lado."
+          - step: "La empresa se investiga antes de escribir nada"
+            body: "Runink PULSE lee primero lo que es público sobre esa empresa, así que lo que redacta parte de lo que encontró y no de una plantilla con un nombre metido dentro."
+          - step: "El seguimiento vuelve escrito para esa empresa"
+            body: "Un correo en frío, un guion de llamada y un mensaje directo por empresa, y los contactos se sincronizan de vuelta al sistema de clientes, de modo que ventas sigue trabajando donde ya trabaja."
+          - step: "Lo envía una persona con nombre"
+            body: "Cada borrador cae en una cola de revisión con aprobar y rechazar, y lleva un estado visible mientras espera. Aprobar es un paso que da alguien, y no un trámite que el sistema hace por él."
 
 why_heading: "Qué cambia en la semana"
 why_intro: "Tres cambios, y son los que mueven las líneas de arriba."

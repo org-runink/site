@@ -75,7 +75,7 @@ figure:
   caption: "Le délai, chez vous, entre le moment où une chose est enregistrée et celui où quelqu'un agit dessus est un chiffre qui mérite d'être connu. Très peu d'organisations l'ont mesuré. C'est en général là que se loge le coût, et c'est une bonne première chose à mesurer ensemble."
 
 industries_heading: "Cinq secteurs, une même forme de problème"
-industries_intro: "Trouvez la ligne qui ressemble à votre semaine. Chacune ouvre sur une page écrite pour ce secteur, avec les mesures en face desquelles inscrire vos propres chiffres."
+industries_intro: "Trouvez la ligne qui ressemble à votre semaine. Chacune s'ouvre sur les situations que ce secteur vit vraiment — la chaîne du froid, une déclaration en douane, la limite d'une machine, un dossier de sinistre, une clause — et chacune est suivie depuis le document qui la déclenche jusqu'à la personne qui approuve ce qu'on en fait."
 industries_open: "Ouvrir"
 industries_cta: "Voir si cela correspond"
 industries_columns:
@@ -96,12 +96,16 @@ industries:
         jobs:
           - name: "Demande et exécution"
             line: "Une ligne bouge des semaines avant le point de commande, et le plan rattrape après la rupture."
+          - name: "Limites des machines"
+            line: "Le groupe froid, le convoyeur et le chariot notent toute la journée ce qu'ils font, et quelqu'un le lit une fois que la marchandise est la preuve."
       - when: "En transit"
         jobs:
           - name: "Chaîne du froid"
             line: "Un conteneur se réchauffe dans la nuit et personne n'ouvre la porte avant le matin."
           - name: "Logistique réactive"
             line: "Le plan qui était bon à six heures ne l'est plus à dix, et personne ne le relance."
+          - name: "Déclaration en douane"
+            line: "Le conteneur est arrêté à la frontière et la déclaration sous laquelle il a été présenté est une autre histoire, dans un autre système."
       - when: "Au retour"
         jobs:
           - name: "Logistique inverse"
@@ -113,7 +117,7 @@ industries:
           - name: "Souscription"
             line: "Les conditions, le rapport de sinistre, l'historique de réserves et la limite d'engagement sont à quatre endroits."
     cases:
-      - label: "Un conteneur retenu au port, de la retenue à la mainlevée"
+      - label: "Retenue en douane · Un conteneur retenu au port, de la retenue à la mainlevée"
         steps:
           - step: "La retenue apparaît"
             body: "Une déclaration revient retenue, sous examen ou immobilisée, et le nombre de jours de retenue dépasse zéro. Cette combinaison est tout le test — c'est une règle fixe, pas une appréciation, et elle s'applique à toutes les déclarations et non à celles que quelqu'un a pensé à vérifier."
@@ -127,7 +131,7 @@ industries:
             body: "La surestarie d'une déclaration retenue et les droits d'une déclaration sans responsable ne sont pas le même argent, et les compter comme un seul chiffre est la façon la plus courante de gonfler ce genre de total. Ils restent séparés, délibérément, et un test échoue s'ils venaient à se confondre."
           - step: "Une personne nommée décide"
             body: "L'élément attend. C'est l'approbation qui envoie quelque chose, et qui a approuvé, quand, et ce qui a été modifié est consigné. Si une partie de ce qui a été rédigé n'a pas pu être exécutée, le résultat nomme cette partie au lieu d'annoncer une réussite."
-      - label: "Un frigorifique réchauffé, de la porte au sinistre déclaré"
+      - label: "Chaîne du froid · Un frigorifique réchauffé, de la porte au sinistre déclaré"
         steps:
           - step: "L'image arrive"
             body: "Une photo prise sur un terminal à la porte, ou une vue extraite d'une caméra de parc. Avant que quoi que ce soit ne la lise, on vérifie que c'est une image : l'en-tête est décodé seul, le format doit être l'un des deux, et la taille est plafonnée en octets comme en pixels. Un PDF, un conteneur vidéo ou des octets bruts sont refusés à cette étape."
@@ -141,6 +145,32 @@ industries:
             body: "Un signal peut être diffusé à ce qui est abonné au flux d'événements du parc, et le dossier le garde pour ce qu'il est : demandé. Ce qui suit relève de la décision de quelqu'un, et le dossier le dit plutôt que de laisser croire qu'un mouvement a été arrêté."
           - step: "Une personne nommée décide"
             body: "L'élément attend, exactement comme la déclaration retenue. C'est l'approbation qui envoie quoi que ce soit, et qui a approuvé, quand, et ce qui a été modifié est consigné."
+      - label: "Déclaration en douane · Un manifeste rejeté, du dépôt au document qu'il a nommé"
+        steps:
+          - step: "On lit le dépôt, pas la mainlevée"
+            body: "Un conteneur peut être arrêté à la frontière avec un manifeste que l'autorité a accepté, et un dépôt peut être rejeté alors que la marchandise roule encore. Retenu est un état de dédouanement, rejeté est un état de dépôt. Chacun est lu là où il est écrit, et jamais l'un pour l'autre."
+          - step: "Le code repart tel qu'il a été écrit"
+            body: "Le code d'exception que portait le rejet arrive mot pour mot, avec le manifeste auquel il se rattache, le port où il a été déposé et qui l'a déposé. Votre commissionnaire reçoit la référence à citer, et non la reformulation qu'on en a faite."
+          - step: "Chaque document manquant sort sur sa propre ligne"
+            body: "Chaque document que le dépôt a signalé comme manquant sort comme un élément à part, avec l'enregistrement dont il a été lu. Ce qui manque et à qui cela revient est la première chose sur la page, au lieu d'être ce que quelqu'un en déduit."
+          - step: "Le silence est écrit comme un silence"
+            body: "Là où les enregistrements ne disent pas ce que le dépôt a donné, cela devient un constat à part entière. Lire l'état de dédouanement comme un état de dépôt affirmerait un dépôt que personne n'a déclaré, donc cela n'est jamais fait : un conteneur peut être retenu avec son manifeste accepté."
+          - step: "Le retard est compté une fois"
+            body: "Les surestaries qui courent sur ce conteneur sont déjà comptées par l'élément de retenue ci-dessus ; ici elles circulent comme montant en jeu et non comme une seconde charge. Un retard compté deux fois est la façon la plus courante de gonfler un total, et un test échoue si les deux se confondent."
+          - step: "Une personne nommée décide"
+            body: "Ce qui part est le document que l'on présente à un commissionnaire ou à une autorité portuaire, et il part quand quelqu'un l'approuve. Qui l'a approuvé, quand, et ce qu'il a changé restent avec lui."
+      - label: "Limites des machines · Une machine qui dérive vers la limite que son propre relevé déclare"
+        steps:
+          - step: "Une limite que personne n'a déclarée n'est pas une limite"
+            body: "Le chiffre auquel une mesure est comparée est lu dans le relevé de la machine elle-même : une température d'alarme, un point de déclenchement, un seuil de remplacement. Là où le relevé dit seulement à quelle valeur la machine tournait quand elle était saine, la dérive est signalée et rien n'est projeté contre elle, car une valeur de référence saine n'est pas un point où quelque chose casse."
+          - step: "Les mesures sont comparées dans l'ordre"
+            body: "La première mesure de la fenêtre, la dernière, combien étaient comparables, et la distance qui sépare la dernière de la limite déclarée. Chaque chiffre porte la mesure d'où il vient, si bien que votre technicien vérifie le calcul contre le relevé au lieu de le croire."
+          - step: "La droite tracée entre elles est un calcul, pas une prévision"
+            body: "Là où les mesures le permettent, une droite entre la première et la dernière dit quand elle atteindrait la limite déclarée à ce rythme. C'est la description de deux mesures, et chaque document de ce type le dit sur sa propre face."
+          - step: "Ni probabilité, ni confiance, ni durée de vie restante"
+            body: "Aucune des trois n'est sur le document, et c'est structurel plutôt qu'une affaire de formulation : il n'existe pas de champ pour les recevoir. Un score de panne ajusté sur une poignée de mesures se lit comme une mesure alors qu'il n'en est pas une. Un chiffre qu'un planificateur peut recalculer vaut mieux qu'un chiffre sûr de lui qu'il ne peut pas."
+          - step: "Une personne nommée planifie l'intervention"
+            body: "L'élément arrive à la maintenance avec la machine, la voie de mesure, la limite déclarée et les mesures qui la portent. Approuver est ce qui ouvre l'ordre de travail, et qui a approuvé, quand, et ce qu'il a changé restent consignés."
   - page: "insurance"
     name: "Insurance"
     cost: "Un seuil de second examen relevé pour résorber un retard, censé être provisoire, jamais rétabli et jamais tranché. Des mouvements de provision vérifiés par sondage parce que le flux est trop long à lire."
@@ -154,6 +184,12 @@ industries:
         jobs:
           - name: "Souscription déléguée"
             line: "Vous répondez toujours de ce qui est décidé au titre de l'accord, et les rapports que l'agent renvoie doivent être lus au regard de celui-ci."
+      - when: "quand un sinistre est déclaré"
+        jobs:
+          - name: "Expertise de la marchandise"
+            line: "Ce qui a été perdu, dans quelles conditions il voyageait et ce que la garantie déclare qu'il vaut sont dans le dossier, dans l'enregistrement de l'expédition et dans le contrat, et quelqu'un réunit les trois à la main."
+          - name: "Clauses et délais"
+            line: "Un paragraphe tranche la question et une date décide s'il vaut encore la peine de la poser, et retrouver les deux prend un après-midi."
       - when: "quand le dossier est ouvert"
         jobs:
           - name: "Second examen"
@@ -163,7 +199,7 @@ industries:
           - name: "Réserves et recours"
             line: "Les termes du traité fixent ce que vous pouvez récupérer, et savoir si un sinistre a été présenté sous les bons relève d'une lecture du traité face au dossier."
     cases:
-      - label: "Un seuil de second examen, du relèvement dans l'outil à la décision consignée"
+      - label: "Dérive du contrôle · Un seuil de second examen, du relèvement dans l'outil à la décision consignée"
         steps:
           - step: "Les conditions du contrat sont lues"
             body: "La clause qui fixe le montant à partir duquel un sinistre exige un second examen est extraite du document de police. Elle revient énoncée en français simple, avec le document dont elle a été tirée nommé à côté."
@@ -175,6 +211,30 @@ industries:
             body: "Il porte l'observation, la règle invoquée, les enregistrements cités, une gravité et une action proposée précise. Celui-ci dépend de l'appétit au risque — si le seuil relevé est celui que vous voulez désormais — alors il attend, l'ambiguïté nommée et la rédaction déjà faite."
           - step: "Une personne nommée décide"
             body: "Quelqu'un approuve, modifie ou rejette l'action rédigée, et cette décision est consignée comme un événement portant son auteur. Que les conditions soient mises à jour au nouveau chiffre ou que l'outil revienne à l'ancien, l'observation, la règle, les enregistrements et l'approbation sont conservés au fil du travail. Quand un auditeur demande ce que ce contrôle a fait, répondre consiste à retrouver."
+      - label: "Souscription marchandises · Un dossier de sinistre monté pour celui qui doit décider"
+        steps:
+          - step: "Le dossier est monté sur les enregistrements, pas sur le récit"
+            body: "Ce que les enregistrements disent manquant, ce qu'ils disent endommagé, sur quelle expédition la marchandise voyageait, et ce que la garantie déclare qu'elle vaut. Chaque chiffre est cité au moment où il est lu, si bien que le souscripteur ouvre un document au lieu de quatre systèmes."
+          - step: "La franchise est énoncée et jamais déduite"
+            body: "La retirer du sinistre produit un montant recouvrable, et ce calcul ne veut dire quelque chose qu'une fois que quelqu'un a décidé que la police répond. Cette décision appartient au souscripteur, donc le chiffre est laissé là où il peut la prendre."
+          - step: "Les conditions que pose la garantie sont auditées à part"
+            body: "Une plage de température, une norme d'emballage, un itinéraire sécurisé — chacune lue face aux enregistrements qui l'ont tenue ou non. L'audit ne lit jamais le sinistre et le dossier ne lit jamais l'audit. Réunir les deux dans un paragraphe compose un moyen de défense sur la garantie, et le composer relève du souscripteur, pas du logiciel."
+          - step: "N'avoir pas pu regarder n'est pas n'avoir rien trouvé"
+            body: "Une condition dont les enregistrements ne disent rien revient comme non établie, jamais comme tenue. Une plage écrite dans une unité n'est pas comparée à une sonde qui enregistre dans une autre, car convertir invente une précision que les enregistrements n'ont jamais eue. Un sinistre refusé sur une condition supposée est payé par l'assuré, qui n'apprend jamais pourquoi."
+          - step: "La personne qui a l'autorité décide"
+            body: "Rien ici n'engage, ne règle ni ne refuse. L'expertise et l'audit se rattachent à la même expédition, arrivent ensemble, et attendent la personne qui a la main sur le dossier."
+      - label: "Revue juridique · La clause qui tranche, et l'enregistrement auquel elle a été confrontée"
+        steps:
+          - step: "La question est la question ordinaire"
+            body: "Peuvent-ils sous-traiter ceci. La durée de conservation que nous appliquons est-elle celle que nous avons promise. Quelque part dans l'accord, un paragraphe tranche, et le retrouver est tout le coût."
+          - step: "Le passage revient avec l'enregistrement à côté"
+            body: "La clause est lue dans le document et énoncée en langage clair, avec le document dont elle vient nommé. La règle telle qu'elle tourne est lue là où elle tourne. Les deux arrivent côte à côte, si bien que la conversation commence à l'écart et non à la recherche."
+          - step: "Une date est calculée par une règle nommée, et refuse de deviner"
+            body: "Un délai de réclamation ou une fenêtre de dépôt est calculé depuis une date de l'enregistrement par une règle qui cite le texte dont elle vient, et elle dit de quel événement elle est partie : le jour où la marchandise est arrivée, ou le jour où elle aurait dû. Là où l'enregistrement ne porte aucune date exploitable, aucune date n'est produite : l'élément le dit et porte l'avertissement à la place."
+          - step: "Vérifié et conforme et n'a pas pu être vérifié sont deux entrées"
+            body: "La plupart des outils montrent les deux comme une coche. Ici la seconde est un état à part entière, avec la raison écrite en une phrase : rien n'est revenu, ce qui est revenu n'a pas pu être lu, ce qui est revenu était vide. C'est exactement l'entrée qu'un audit cherche."
+          - step: "Il rend une note, et le jugement reste le vôtre"
+            body: "Ce qui revient est une étape suivante en langage métier : rédiger cette lettre, ouvrir ce ticket, porter ceci au responsable du dispositif. La lecture est celle du logiciel. Décider de ce qu'elle veut dire est celle de la personne, et son nom reste sur l'enregistrement qui le dit."
   - page: "banking-financial-services"
     name: "Banking & Financial Services"
     cost: "Un écart qui grandit à l'intérieur de la fourchette que l'on valide toujours : aucun mois ne remonte, et personne ne lit la séquence. Un contrat fournisseur que personne n'a rouvert depuis la signature."
@@ -197,7 +257,7 @@ industries:
           - name: "Grille tarifaire"
             line: "Paliers, seuils et conditions de produit font de la commission un rapprochement entre ce que disent les conditions et ce qui a été facturé."
     cases:
-      - label: "Un écart de rapprochement, d'une série de mois validés à une décision consignée"
+      - label: "Postes ouverts · Un écart de rapprochement, d'une série de mois validés à une décision consignée"
         steps:
           - step: "Le mois passe comme d'habitude"
             body: "Le mouvement tient dans la fourchette déjà validée auparavant. Il est validé comme le mois précédent, et pris seul il se lit comme ce mois-là."
@@ -209,6 +269,16 @@ industries:
             body: "L'élément attend dans une file, la série qu'il cite déjà jointe. L'approuver, le corriger ou le rejeter est sa décision, et la cause, c'est elle qui l'écrit : la nommer demande quelqu'un qui sait ce qui a changé dans l'exploitation ce mois-là."
           - step: "Le dossier répond à la demande suivante"
             body: "Qui a décidé, quand, ce qui a été cité et ce qui a été modifié restent ensemble, chaque entrée chaînée à la précédente, de sorte qu'une modification ultérieure du dossier se voit. Quand le superviseur ou l'audit interne pose la question, la réponse se lit au lieu d'être remontée."
+      - label: "Obligations fournisseurs · Les niveaux de service que le contrat chiffre déjà, face à ce qui a été livré"
+        steps:
+          - step: "Les obligations sont lues dans l'accord"
+            body: "Niveaux de service, sous-traitance, traitement des données, notification. Chacune revient énoncée en langage clair avec la clause dont elle a été lue, si bien que ce que vous avez signé se lit sans ouvrir le dossier."
+          - step: "Ce qui a été livré est lu là où c'est enregistré"
+            body: "Les enregistrements de ce que le fournisseur a réellement livré sont lus là où ils se trouvent déjà, et confrontés au niveau que l'accord fixe. La comparaison va élément par élément plutôt que par échantillon, si bien qu'un manquement arrive nommé et non en pourcentage."
+          - step: "Un manquement que le contrat chiffre déjà porte ce chiffre"
+            body: "Là où l'accord prévoit un avoir pour le manquement, le montant est le calcul de l'accord lui-même sur les manquements confirmés. C'est de l'argent déjà dû au titre d'un document que les deux parties ont signé, et non une réclamation inventée par-dessus."
+          - step: "Une personne nommée décide de ce qui est demandé"
+            body: "Réclamer l'avoir, y renoncer ou l'inscrire à la prochaine revue est une décision commerciale, et elle le reste. L'élément attend avec la clause, les enregistrements et le calcul joints, et l'approbation garde qui a décidé et pourquoi."
   - page: "telecom"
     name: "Telecom"
     cost: "Un changement de tarification juste pour la promotion et faux pour un forfait hérité, trop petit pour bouger un agrégat. Un balayage qui rend un taux d'erreur quand les opérations ont besoin des comptes nommément."
@@ -231,7 +301,7 @@ industries:
           - name: "Déploiement du réseau"
             line: "Les dépenses approuvées, les bons de commande, les équipements reçus et les sites qui portent du trafic ne se retrouvent côte à côte que lorsque quelqu'un monte cette vue à la main, et un site livré puis jamais mis en service y passe inaperçu."
     cases:
-      - label: "Un changement de tarification faux pour un forfait hérité, du premier appel mal tarifé à une retarification approuvée"
+      - label: "Assurance revenus · Un changement de tarification faux pour un forfait hérité, du premier appel mal tarifé à une retarification approuvée"
         steps:
           - step: "La tarification est lue face au forfait"
             body: "La sortie tarifée de chaque compte est lue face aux conditions du forfait de cet abonné, et la comparaison se fait enregistrement par enregistrement plutôt que par un balayage mensuel sur un échantillon. Ce qui revient, ce sont les comptes nommés, ce dont une retarification a besoin, plutôt qu'un taux d'erreur, ce dont un rapport a besoin."
@@ -243,6 +313,16 @@ industries:
             body: "Le jugement s'exécute sur une habilitation différente de celle du dépôt, et l'habilitation que porte un message est déterminée par la porte à laquelle il est arrivé, pas par un champ que l'expéditeur remplit. Un verdict « impossible à juger » est une réponse à part entière : il arrive avec son motif inscrit à côté et passe à une personne, exactement comme un désaccord."
           - step: "Revenue assurance approuve la retarification"
             body: "L'élément attend avec le compte nommé, les conditions de forfait face auxquelles il a été lu, et les enregistrements dont il vient. C'est l'approbation qui envoie quoi que ce soit, et qui a approuvé, quand, et ce qui a été modifié reste au dossier. Le remède est une correction de paramétrage et une retarification, faite tant qu'une retarification répare encore."
+      - label: "Règlement d'interconnexion · Deux enregistrements du même trafic qui ne concordent pas"
+        steps:
+          - step: "Les deux côtés sont lus face à l'accord"
+            body: "Votre enregistrement du trafic, l'enregistrement que la contrepartie a du même trafic, et l'accord qui fixe les tarifs. La lecture a lieu tant que les deux côtés gardent le détail, et non à la clôture du cycle, quand l'un des deux ne l'a plus."
+          - step: "Un désaccord n'est jamais moyenné"
+            body: "Deux lectures du même trafic qui diffèrent reviennent comme impossible de trancher, avec les deux chiffres et l'endroit d'où chacun a été lu. Couper la poire en deux produit un troisième chiffre qu'aucune des parties n'a observé, et dans un règlement ce chiffre n'est défendable par personne."
+          - step: "Impossible de trancher est une réponse, avec sa raison à côté"
+            body: "Aucune preuve, une preuve qui ne fait que réécrire l'affirmation, une preuve sur un autre compte, une preuve trop ancienne pour dire quoi que ce soit du présent : chacune arrête là, écrit sa propre raison en une phrase qu'une personne lit, et part vers une personne."
+          - step: "Une personne nommée le porte à la contrepartie"
+            body: "L'élément porte la période, les deux enregistrements et le tarif que l'accord fixe. Approuver est ce qui l'envoie, et ce qui a été cité et ce qui a été changé restent consignés pour que le cycle suivant en parte."
   - page: "marketing"
     name: "Marketing"
     cost: "L'outil d'audit sait que le site est lent. L'outil de contenu l'ignore et continue d'écrire pour une page où personne ne reste. Chaque campagne repart d'une page blanche."
@@ -265,7 +345,7 @@ industries:
           - name: "Relancer"
             line: "Votre système client sait qu'un lead s'est tu à la troisième semaine ; l'outil de programmation, non."
     cases:
-      - label: "Une page où personne ne reste, de l'audit qui la trouve à un brouillon approuvé"
+      - label: "Audit du site · Une page où personne ne reste, de l'audit qui la trouve à un brouillon approuvé"
         steps:
           - step: "L'audit lit votre site"
             body: "Vous apportez votre site et les canaux sur lesquels vous publiez. Les lire et vous dire où vous en êtes est la première chose que fait Runink PULSE. Ce qu'il trouve revient classé, et s'applique depuis le même écran."
@@ -277,6 +357,16 @@ industries:
             body: "Brouillon, en attente de relecture, approuvée, rejetée, publiée, archivée. Ce sont les états que PULSE tient, donc vous voyez ce qui vous attend et ce qui est réellement sorti."
           - step: "Une personne nommée approuve"
             body: "Chaque brouillon — article, livre blanc, e-mail à froid, script d'appel — arrive dans une file de relecture avec un approuver et un rejeter. Approuver est un geste que pose une personne nommée, et non une formalité que le système accomplit à sa place."
+      - label: "Relance commerciale · Un contact qui s'est tu en troisième semaine"
+        steps:
+          - step: "C'est la fiche client qui dit qu'il s'est tu"
+            body: "Le contact, l'étape qu'il a atteinte et le jour où il a bougé pour la dernière fois sont lus dans le système client où l'équipe travaille déjà, et non dans une seconde liste tenue à côté."
+          - step: "L'entreprise est étudiée avant qu'une ligne soit écrite"
+            body: "Runink PULSE lit d'abord ce qui est public sur cette entreprise, si bien que ce qu'il rédige part de ce qu'il a trouvé et non d'un modèle où l'on a glissé un nom."
+          - step: "La relance revient écrite pour cette entreprise-là"
+            body: "Un courriel de prospection, un script d'appel et un message direct par entreprise, et les contacts se synchronisent vers le système client, si bien que la vente continue de travailler là où elle travaille déjà."
+          - step: "Une personne nommée l'envoie"
+            body: "Chaque brouillon arrive dans une file de relecture avec un approuver et un rejeter, et porte un statut visible pendant qu'il attend. Approuver est une étape que quelqu'un prend, et non une formalité que le système accomplit à sa place."
 
 why_heading: "Ce qui change dans la semaine"
 why_intro: "Trois changements, et ce sont ceux qui font bouger les lignes ci-dessus."
