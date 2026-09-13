@@ -1,0 +1,158 @@
+{{/*
+  THE READING, DRAWN — the homepage's second picture, and the animated one.
+
+  WHAT IT SHOWS, AND WHY IT IS THIS AND NOT A PRODUCT SHOT. The three beats in
+  `figure.beats` are the whole argument of the section it sits in: the records
+  already exist, every one of them is read, a person decides what happens. They
+  were three sentences with nothing to look at since the field moved up into the
+  hero. This draws them — records arriving, the rule passing over them, and a
+  drafted action that stops and waits for a name.
+
+  THE LAST PANEL IS THE PART A COMPETITOR'S DIAGRAM DOES NOT HAVE, and it is
+  drawn largest for that reason. The console vocabulary in this sort of figure
+  usually ends at an automatic write: a ledger row appears, the machine has acted,
+  nobody is in it. This one ends at a proposal that has not happened yet, with
+  approve, edit and reject unpressed, because that is what the product does and
+  the homepage's stance block says so in words directly above. The 2px signal rule
+  between the two halves is .rk-seam from DESIGN.md 7 — the one large use of
+  signal in the system, and the only thing on this page it may be.
+
+  EVERY LABEL IS A WORD THE SOFTWARE ACTUALLY USES. Read, compared, queued, held;
+  the rule that governs it; approve, edit, reject. There is NO number anywhere in
+  this artwork, deliberately — not a count of records, not a rate, not a duration.
+  The page's front matter carries the same prohibition and says why: the figures
+  belong to the reader. A console that counts things it has found would be an
+  invented figure with a monospace face on.
+
+  The file names are ordinary artefacts of the domains this page names — a bill of
+  lading, an entry summary, a reefer log, a claim file. They are what the records
+  are called, not a claim about anyone's data.
+
+  IT IS COMPLETE WITHOUT JAVASCRIPT. Everything is drawn in its finished state and
+  nothing here is hidden by an attribute: the animation in assets/js/motion.js
+  sets the starting state itself, at run time, and only after it has checked that
+  motion is wanted. A reader with no JS, a reader who asked for reduced motion and
+  a printed sheet all get this same finished picture — which is the rule the hero
+  sweep already follows.
+
+  SIZED IN THE VIEWBOX, NOT IN PIXELS. One coordinate system, scaled by CSS, so
+  the type inside holds its proportions at every width. It stops being legible
+  below about 320px of rendered width, which is why the frame around it has a
+  min-width floor rather than letting it shrink into a phone gutter.
+*/}}
+{{ $f := .figure }}
+{{ $beats := $f.beats }}
+{{ $b1 := index $beats 0 }}
+{{ $b2 := index $beats 1 }}
+{{ $b3 := index $beats 2 }}
+
+<svg class="hp-pipe" viewBox="0 0 640 496" role="img" preserveAspectRatio="xMidYMid meet"
+     data-motion="pipeline"
+     aria-label="{{ $b1.title }}. {{ $b2.title }}. {{ $b3.title }}. Records held in the systems you already run are read one by one against the rule that governs them, and what differs arrives as a drafted action that waits for a named person to approve, edit or reject it.">
+
+  {{/* The console shell. A rule and a change of ground, not a shadow: DESIGN.md
+       6 gives elevation to things that genuinely float, and this is a panel. */}}
+  <rect class="hp-pipe__shell" x="1" y="1" width="638" height="494" rx="12"/>
+  <line class="hp-pipe__bar" x1="1" y1="44" x2="639" y2="44"/>
+  <circle class="hp-pipe__dot" cx="26" cy="23" r="4.5"/>
+  <circle class="hp-pipe__dot" cx="44" cy="23" r="4.5"/>
+  <circle class="hp-pipe__dot" cx="62" cy="23" r="4.5"/>
+  <text class="hp-pipe__title" x="86" y="27">runink face · reading</text>
+  <circle class="hp-pipe__live" cx="546" cy="23" r="4"/>
+  <text class="hp-pipe__live-label" x="558" y="27">READING</text>
+
+  {{/* 1. The records already exist. */}}
+  <text class="hp-pipe__stage" x="28" y="76">{{ $b1.title }}</text>
+
+  <g class="hp-pipe__rows">
+    <g class="hp-pipe__row" data-row="0">
+      <rect x="28" y="90" width="584" height="38" rx="8"/>
+      <rect class="hp-pipe__kind" x="40" y="101" width="34" height="16" rx="4"/>
+      <text class="hp-pipe__kind-label" x="47" y="113">BOL</text>
+      <text class="hp-pipe__file" x="86" y="114">bill_of_lading_MSKU4419.pdf</text>
+      <text class="hp-pipe__state" x="600" y="113">READ</text>
+    </g>
+    <g class="hp-pipe__row" data-row="1">
+      <rect x="28" y="136" width="584" height="38" rx="8"/>
+      <rect class="hp-pipe__kind" x="40" y="147" width="34" height="16" rx="4"/>
+      <text class="hp-pipe__kind-label" x="45" y="159">ENT</text>
+      <text class="hp-pipe__file" x="86" y="160">entry_summary_7501.xml</text>
+      <text class="hp-pipe__state" x="600" y="159">COMPARED</text>
+    </g>
+    <g class="hp-pipe__row" data-row="2">
+      <rect x="28" y="182" width="584" height="38" rx="8"/>
+      <rect class="hp-pipe__kind" x="40" y="193" width="34" height="16" rx="4"/>
+      <text class="hp-pipe__kind-label" x="46" y="205">RFR</text>
+      <text class="hp-pipe__file" x="86" y="206">reefer_log_overnight.json</text>
+      <text class="hp-pipe__state" x="600" y="205">READ</text>
+    </g>
+    {{/* The fourth row is clipped by the panel edge on purpose: the field does
+         not end here, it goes on past the bottom of what is drawn. */}}
+    <g class="hp-pipe__row hp-pipe__row--cut" data-row="3">
+      <rect x="28" y="228" width="584" height="38" rx="8"/>
+      <rect class="hp-pipe__kind" x="40" y="239" width="34" height="16" rx="4"/>
+      <text class="hp-pipe__kind-label" x="47" y="251">CLM</text>
+      <text class="hp-pipe__file" x="86" y="252">claim_file_0934.json</text>
+      <text class="hp-pipe__state" x="600" y="251">QUEUED</text>
+    </g>
+  </g>
+
+  {{/* The read pass: a hairline that travels down the rows once per cycle, the
+       same gesture as the hero's sweep and the same meaning.
+
+       opacity="0" AS A PRESENTATION ATTRIBUTE, NOT A CSS RULE, and it is the one
+       thing in this figure that starts invisible. Two reasons, both specific.
+       It carries no meaning — the aria-label does not mention it and the figure
+       says the same thing without it — so hiding it costs a reader nothing,
+       whereas a hairline parked under a heading with no animation to explain it
+       reads as a stray rule, which is what a printed sheet and a reduced-motion
+       screen were getting. And it has to be an ATTRIBUTE: a CSS `opacity: 0`
+       outranks the presentation attribute anime.js writes when it animates an
+       SVG element, so the rule would have pinned it invisible for everyone. */}}
+  <rect class="hp-pipe__scan" x="28" y="90" width="584" height="2" rx="1" opacity="0"/>
+
+  {{/* 2. Every one of them is read — against the rule that governs it. */}}
+  <path class="hp-pipe__link" d="M320 268 V 292"/>
+  <text class="hp-pipe__stage" x="28" y="296">{{ $b2.title }}</text>
+  <g class="hp-pipe__node">
+    <rect x="28" y="306" width="584" height="62" rx="10"/>
+    <text class="hp-pipe__node-name" x="52" y="332">The rule that governs it</text>
+    <text class="hp-pipe__node-line" x="52" y="352">
+      <tspan class="hp-pipe__tick" data-tick="0">POLICY WORDING</tspan><tspan class="hp-pipe__sep"> · </tspan><tspan class="hp-pipe__tick" data-tick="1">THRESHOLD</tspan><tspan class="hp-pipe__sep"> · </tspan><tspan class="hp-pipe__tick" data-tick="2">AUTHORITY LIMIT</tspan>
+    </text>
+    {{/* Four bars that rise as the comparison runs. No scale and no axis: they
+         are a light that says work is happening, not a measurement. */}}
+    <g class="hp-pipe__meter">
+      <rect data-bar="0" x="548" y="326" width="6" height="20" rx="2"/>
+      <rect data-bar="1" x="560" y="322" width="6" height="24" rx="2"/>
+      <rect data-bar="2" x="572" y="330" width="6" height="16" rx="2"/>
+      <rect data-bar="3" x="584" y="318" width="6" height="28" rx="2"/>
+    </g>
+  </g>
+
+  {{/* 3. A person decides what happens. */}}
+  <path class="hp-pipe__link" d="M320 368 V 392"/>
+  <text class="hp-pipe__stage" x="28" y="396">{{ $b3.title }}</text>
+  <g class="hp-pipe__gate">
+    <rect x="28" y="406" width="584" height="78" rx="10"/>
+    {{/* .rk-seam, drawn: the 2px signal rule between what the software proposed
+         and what a named person decided. DESIGN.md 7. */}}
+    <line class="hp-pipe__seam" x1="28" y1="445" x2="612" y2="445"/>
+    <text class="hp-pipe__gate-name" x="52" y="432">Drafted action · waits for a name</text>
+    <g class="hp-pipe__acts">
+      <g class="hp-pipe__act" data-act="0">
+        <rect x="52" y="456" width="92" height="20" rx="4"/>
+        <text x="98" y="470">APPROVE</text>
+      </g>
+      <g class="hp-pipe__act" data-act="1">
+        <rect x="154" y="456" width="64" height="20" rx="4"/>
+        <text x="186" y="470">EDIT</text>
+      </g>
+      <g class="hp-pipe__act" data-act="2">
+        <rect x="228" y="456" width="76" height="20" rx="4"/>
+        <text x="266" y="470">REJECT</text>
+      </g>
+    </g>
+    <rect class="hp-pipe__caret" x="588" y="458" width="8" height="16" rx="1"/>
+  </g>
+</svg>

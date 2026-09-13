@@ -1,0 +1,24 @@
+{{/*
+  The motion bundle, emitted only where there is something to animate.
+
+  NOT IN baseof.html, DELIBERATELY. assets/js/main.js is built there and goes on
+  all 718 pages; this bundle carries anime.js with it and belongs on the two page
+  families that have a figure to move — the home page and an industry page. A
+  whitepaper is 12,000 words of reading surface and has no business paying for an
+  animation library to render it.
+
+  BUILT, NOT LINKED. js.Build is esbuild: it follows the import into
+  assets/js/vendor/anime.esm.min.js, bundles the two into one fingerprinted file
+  served from this origin, and minifies it in production. Nothing is fetched from
+  a CDN at render time — CONTENT.md rule 7 — and the version that ships is the one
+  committed to this repository rather than whatever a CDN resolves a range to on
+  the morning somebody loads the page.
+
+  `defer`, and the module is inert until DOMContentLoaded in any case. Nothing on
+  the page waits for it and nothing on the page is missing if it never arrives:
+  every figure it touches is already drawn in its finished state. See the head of
+  assets/js/motion.js for the four rules that keeps true.
+*/}}
+{{ $motion := resources.Get "js/motion.js" | js.Build (dict "minify" hugo.IsProduction "target" "es2018") }}
+{{ if hugo.IsProduction }}{{ $motion = $motion | fingerprint }}{{ end }}
+<script src="{{ $motion.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $motion.Data.Integrity }}"{{ end }} defer></script>

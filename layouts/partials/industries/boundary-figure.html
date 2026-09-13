@@ -19,7 +19,7 @@
   Call with: (dict "variant" "held") or (dict "variant" "reach").
 */}}
 {{ $variant := .variant | default "held" }}
-<svg class="ind-found__art" viewBox="0 0 268 134" role="img" preserveAspectRatio="xMidYMid meet"
+<svg class="ind-found__art" data-motion="draw" viewBox="0 0 268 134" role="img" preserveAspectRatio="xMidYMid meet"
      aria-label="{{ if eq $variant "reach" }}One line drawn around the machines you own. The material and the working stay inside it, and a single arm reaches out from your own side to the open web and brings back what it read.{{ else }}One line drawn around the machines you own, with the material and the working both inside it and nothing crossing the line.{{ end }}">
 
   {{ if eq $variant "reach" }}

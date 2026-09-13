@@ -517,6 +517,170 @@
     .hp-field { padding: 2rem 2rem 1.75rem; margin-bottom: 5rem; }
   }
 
+  /* ---- the reading, drawn -------------------------------------------------
+
+     The console figure, in the same section as the three beats it draws. It is
+     the one block on this light page that sets data-ground="console", which is
+     the documented way to ask for the dark register (DESIGN.md 8): the tokens
+     re-bind inside the frame and every colour below follows — including on
+     paper, where tokens.css already binds the console ground to white and black.
+
+     IT PAINTS WITH --rk-* DIRECTLY, NOT WITH THE PAGE'S ALIASES. .hp declares
+     --ink, --rule and the rest as var(--rk-…), and a custom property is
+     substituted where it is DECLARED: --ink computes to the SHEET's ink on .hp
+     and inherits into this frame already resolved. Using --ink here would paint
+     light-page ink on a dark panel and the type would vanish. That is the reason
+     for every var(--rk-text) below where the rest of this file says var(--ink).
+
+     No glow and no shadow. DESIGN.md 6 sends both to none on paper and calls a
+     glow a games console rather than a control record; depth here is a rule and
+     a change of ground, which is what the figure is built from anyway. */
+
+  .hp-pipe__frame {
+    margin: 0 0 1.75rem;
+    border-radius: var(--rk-r-3);
+    overflow: hidden;
+  }
+
+  .hp-pipe {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .hp-pipe__shell { fill: var(--rk-ground); stroke: var(--rk-rule); stroke-width: 1; }
+  .hp-pipe__bar { stroke: var(--rk-rule); stroke-width: 1; }
+  .hp-pipe__dot { fill: var(--rk-rule-mid); }
+  .hp-pipe__title,
+  .hp-pipe__live-label {
+    font-family: var(--rk-font-util);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    fill: var(--rk-text-3);
+  }
+  .hp-pipe__live-label { font-size: 9.5px; letter-spacing: 0.16em; }
+  .hp-pipe__live { fill: var(--rk-signal); }
+
+  /* The stage labels are the section's own three beats, set as the labels they
+     are rather than as a second heading level inside a picture. */
+  .hp-pipe__stage {
+    font-family: var(--rk-font-util);
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    fill: var(--rk-text-3);
+  }
+
+  /* A record. Sunk ground inside a raised panel, so the rows read as what the
+     shell holds rather than as more panels stacked on it. */
+  .hp-pipe__row > rect:first-child {
+    fill: var(--rk-sunk);
+    stroke: var(--rk-rule);
+    stroke-width: 1;
+  }
+  .hp-pipe__kind { fill: var(--rk-signal-wash); }
+  .hp-pipe__kind-label {
+    font-family: var(--rk-font-util);
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    fill: var(--rk-signal);
+  }
+  .hp-pipe__file {
+    font-family: var(--rk-font-util);
+    font-size: 12.5px;
+    fill: var(--rk-text-1);
+  }
+  .hp-pipe__state {
+    font-family: var(--rk-font-util);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-anchor: end;
+    fill: var(--rk-text-3);
+  }
+  /* The field does not end at the fourth row; it fades because there is more of
+     it, not because that record matters less. */
+  .hp-pipe__row--cut { opacity: 0.4; }
+
+  .hp-pipe__scan { fill: var(--rk-signal); }
+
+  .hp-pipe__link {
+    fill: none;
+    stroke: var(--rk-rule-strong);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+
+  .hp-pipe__node > rect:first-child,
+  .hp-pipe__gate > rect:first-child {
+    fill: var(--rk-sheet);
+    stroke: var(--rk-rule);
+    stroke-width: 1;
+  }
+  .hp-pipe__node-name,
+  .hp-pipe__gate-name {
+    font-family: var(--rk-font-display);
+    font-size: 15px;
+    font-weight: 700;
+    fill: var(--rk-text);
+  }
+  .hp-pipe__node-line {
+    font-family: var(--rk-font-util);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    fill: var(--rk-text-3);
+  }
+  .hp-pipe__meter rect {
+    fill: var(--rk-signal);
+    transform-box: fill-box;
+    transform-origin: bottom;
+  }
+
+  /* THE SEAM. DESIGN.md 7: a 2px signal rule dividing what the software proposed
+     from what a named person decided, and the only thing on this page allowed to
+     be one. */
+  .hp-pipe__seam { stroke: var(--rk-signal); stroke-width: 2; }
+
+  .hp-pipe__act rect { fill: none; stroke: var(--rk-rule-mid); stroke-width: 1; }
+  .hp-pipe__act text {
+    font-family: var(--rk-font-util);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-anchor: middle;
+    fill: var(--rk-text-2);
+  }
+  .hp-pipe__caret { fill: var(--rk-signal); }
+
+  @media (max-width: 520px) {
+    /* The type inside is sized in the viewBox, so below roughly 320px of
+       rendered width the smallest labels stop being readable. The frame keeps
+       the figure at a width it survives and scrolls it instead of shrinking it
+       into illegibility — the one horizontal scroller a diagram is allowed. */
+    .hp-pipe__frame { overflow-x: auto; }
+    .hp-pipe { min-width: 460px; }
+  }
+
+  @media print {
+    /* tokens.css re-binds the console ground to white and black for print, so
+       the figure re-inks itself. What is left is the places where colour alone
+       was carrying something: the signal marks go to black, and the fills that
+       separated a row from the shell become rules, because a printer drops
+       backgrounds and would otherwise leave the rows invisible. */
+    .hp-pipe__frame { overflow: visible; break-inside: avoid; }
+    .hp-pipe { min-width: 0; max-width: 100%; }
+    .hp-pipe__live,
+    .hp-pipe__caret,
+    .hp-pipe__meter rect,
+    .hp-pipe__kind-label { fill: #000; }
+    .hp-pipe__kind { fill: none; stroke: #999; stroke-width: 1; }
+    .hp-pipe__seam { stroke: #000; }
+    .hp-pipe__shell,
+    .hp-pipe__row > rect:first-child,
+    .hp-pipe__node > rect:first-child,
+    .hp-pipe__gate > rect:first-child { fill: none; stroke: #999; }
+  }
+
   .hp-field__panels {
     display: grid;
     grid-template-columns: minmax(0, 1fr);

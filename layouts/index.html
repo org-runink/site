@@ -204,6 +204,26 @@
          is read AND the rest is assumed to look like it. Losing the artwork
          costs this section nothing it was not already saying twice. */}}
     <figure class="hp-field">
+      {{/* THE ARTWORK CAME BACK, AS THE OTHER PICTURE.
+
+           The note above records why the field left this block: the hero shows
+           the same marks and meeting them twice read as repetition. What this
+           section was left with was three sentences and a caption, in the one
+           slot on the page that had been carrying a picture.
+
+           This is a different picture making a different half of the argument.
+           The hero says the whole field is read; this says what happens to a
+           record once it has been — the rule it is compared against, and the
+           drafted action that stops and waits for a name. The three stage labels
+           ARE `figure.beats`, read from the same front matter as the list under
+           it, so the picture and the prose cannot drift apart.
+
+           It animates, on the terms set out in assets/js/motion.js: the markup
+           below is the finished state, the script sets the starting state at run
+           time, and reduced motion, no JavaScript and paper all get this. */}}
+      <div class="hp-pipe__frame" data-ground="console">
+        {{ partial "home/pipeline-figure.html" (dict "figure" .) }}
+      </div>
       <ol class="hp-beats">
         {{ range .beats }}
         <li class="hp-beat"><b>{{ .title }}</b>{{ .body }}</li>
@@ -223,7 +243,10 @@
         <span class="hp-head__rule" aria-hidden="true"></span>
       </div>
       {{ with $.Params.why_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      <ul class="hp-why">
+      {{/* The three cards land in order the first time they are scrolled to.
+           Enhancement only: they are rendered here in full and the attribute
+           does nothing without JavaScript, with reduced motion, or on paper. */}}
+      <ul class="hp-why" data-motion="reveal">
         {{ range . }}
         <li class="hp-why__item">
           <div class="hp-why__plate">
@@ -503,4 +526,11 @@
   </div>
 </div>
 {{ end }}
+{{/* The motion bundle. Deferred, and emitted here rather than in baseof.html
+     because it carries anime.js and only two page families have anything to
+     animate. INSIDE the define block: content after the final {{ end }} of a
+     template that uses define becomes the page's own body and replaces the base
+     template entirely — the home page rendered as 185 bytes of script tag the
+     first time this was put there. */}}
+{{ partial "motion.html" . }}
 {{ end }}

@@ -18,13 +18,20 @@
   constraint on the DATA, and it is stated in the stylesheet next to the rule
   that enforces it.
 
+  data-motion="reveal" IS AN ENHANCEMENT AND NOTHING MORE. Both lists are fully
+  rendered here; assets/js/motion.js sets a starting state at run time and lands
+  them in reading order the first time they are scrolled to — left to right for
+  the moments, top to bottom for the steps. With no JavaScript, with reduced
+  motion, or on paper, the attribute does nothing at all and the lists are simply
+  there.
+
   NO HEADINGS OF ITS OWN. The homepage renders this inside an open ledger row,
   where a section heading would be the third heading in a stack; the industry
   page renders it as two proper sections with ind- furniture. So the caller
   supplies the surroundings and this supplies the device.
 */}}
 {{ with .flow }}
-<ol class="rk-flow rk-flow--{{ len . }}">
+<ol class="rk-flow rk-flow--{{ len . }}" data-motion="reveal">
   {{ range . }}
   <li class="rk-flow__stage">
     <p class="rk-flow__when"><span class="rk-flow__node" aria-hidden="true"></span>{{ .when }}</p>
@@ -41,7 +48,7 @@
 
 {{ range .cases }}
 <p class="rk-steps__label rk-steps__label--b">{{ .label }}</p>
-<ol class="rk-steps">
+<ol class="rk-steps" data-motion="reveal">
   {{ range .steps }}
   <li class="rk-step">
     <h4 class="rk-step__title">{{ .step }}</h4>
