@@ -23,6 +23,17 @@
 # shipped pointing at the Portuguese page.
 title: "Runink"
 description: "You find out when it is too late to argue. A container sits because one form is wrong and the charge starts that day. Runink FACE reads the records your systems already hold, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision."
+# THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
+#
+# `ground: console` puts data-ground on <html>, which re-binds every --rk-*
+# token to the dark end of the same ramp — one identity, two registers
+# (DESIGN.md 8), not a second palette. The rest of the site keeps the sheet.
+#
+# It is a default, not a lock: a reader who has used the switch in the header
+# has their choice stored, and rk-ground-script.html overwrites this attribute
+# with it before first paint. The printed sheet is unaffected either way —
+# tokens.css binds the console ground to white and black under @media print.
+ground: "console"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
@@ -102,6 +113,23 @@ figure:
     - title: "A person decides what happens"
       body: "Each finding arrives with the rule it broke, the records behind it and a drafted action, for someone to approve, edit or reject."
   caption: "How long it takes in your operation between something being recorded and somebody acting on it is a number worth having. Few operations have ever counted it. That gap is usually where the cost sits, and it is a good first thing to measure together."
+
+# THE CONSTELLATION — the band between the hero and the ledger.
+#
+# It draws the systems a company already runs and the lines between them, with
+# one reader in the middle. Five named systems, one per industry, in the same
+# five hues the ledger rows carry. No number appears in it, for the reason
+# stated at the head of this file: the figures belong to the reader.
+constellation:
+  label: "Your systems, read together"
+  intro: "Each of these already holds part of the answer, and none of them holds all of it. Runink FACE reads them against the rules that govern them, so a difference arrives as one item with the records behind it rather than as four screens somebody has to reconcile."
+  nodes: ["TMS", "CLAIMS", "LEDGER", "RATING", "CHANNELS"]
+  hub: "READ TOGETHER"
+  legend:
+    - "The systems you already run"
+    - "Records that arrive from outside them"
+    - "One reader, and the rule it reads against"
+  alt: "The systems a company already runs — its transport system, its claim files, its ledger, its rating configuration and the channels it publishes on — drawn as points joined by lines to one reader in the middle, which reads all of them against the rules that govern them."
 
 industries_heading: "Five industries, one shape of problem"
 industries_intro: "Find the line that reads like your week. Each one opens on the scenarios that industry actually runs — cold chain, a customs filing, an equipment limit, a loss file, a clause — each worked from the record that starts it to the person who approves what is done about it."

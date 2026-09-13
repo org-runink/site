@@ -1,12 +1,13 @@
 /*
   The motion layer.
 
-  WHAT IT IS FOR. Three devices on this site carry the argument in a picture —
-  the reading pipeline on the home page, the two figures on an industry page, and
-  the moments strip and worked cases that both pages share. They were static. This
-  gives them the one gesture each is actually about: records arriving, a rule
-  passing over them, a drafted action that stops; a decision boundary drawing
-  itself; a row of moments landing in sequence.
+  WHAT IT IS FOR. Four devices on this site carry the argument in a picture —
+  the constellation behind the home page's hero, the reading pipeline under it,
+  the two figures on an industry page, and the moments strip and worked cases
+  that both pages share. They were static. This gives them the one gesture each
+  is actually about: a sky with depth in it; records arriving, a rule passing over
+  them, a drafted action that stops; a decision boundary drawing itself; a row of
+  moments landing in sequence.
 
   THE RULES THIS FILE OBEYS, ALL FOUR OF THEM LOAD-BEARING:
 
@@ -209,6 +210,96 @@ function revealChildren(root) {
   });
 }
 
+/* ── 4. The sky, and the parallax in it ──────────────────────────────────────
+
+   Each layer of the constellation carries a `data-depth`, and each translates
+   against the scroll at that rate: dust barely moves, the web moves a little,
+   the hub and its labels move most. That difference is the whole effect — a
+   single layer moving is a sliding picture, three at different rates is depth.
+
+   IT IS WRITTEN ON A rAF, NOT ON THE SCROLL EVENT. A scroll handler that writes
+   a transform runs on every scroll tick and lands the write in the middle of the
+   browser's own frame; this records the offset on scroll and writes once per
+   frame, which is the difference between a smooth parallax and a page that
+   stutters on a trackpad. It also stops scheduling frames as soon as the sky is
+   off screen, because the one thing worse than a stutter is a stutter nobody can
+   see the reason for.
+
+   translate3d, deliberately: it keeps the layer on the compositor, and the whole
+   point of this effect is that it costs nothing to paint. */
+function sky(root) {
+  const layers = utils.$('[data-depth]', root);
+  if (!layers.length) return;
+
+  const depths = layers.map((el) => parseFloat(el.dataset.depth) || 0);
+  let onScreen = true;
+  let queued = false;
+
+  /* THE OFFSET IS THE ELEMENT'S OWN POSITION, NOT window.scrollY, and the
+     difference is the whole correctness of this. Keyed to absolute scroll, a
+     layer translates by scrollY × depth — which is a few pixels for a drawing at
+     the top of the page and six hundred for the same drawing two screens down.
+     The constellation band was rendered with its named nodes pushed clean off
+     the bottom of its own frame, leaving dust and two hairlines.
+
+     Measuring from the middle of the viewport instead gives every instance the
+     same small range around wherever it sits: zero as it passes the centre of
+     the screen, and a clamped maximum either side of that. */
+  const RANGE = 220;
+  const write = (shift) => {
+    queued = false;
+    layers.forEach((el, i) => {
+      el.style.transform = `translate3d(0, ${(shift * depths[i]).toFixed(2)}px, 0)`;
+    });
+  };
+  const read = () => {
+    if (queued || !onScreen) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      const r = root.getBoundingClientRect();
+      const middle = (r.top + r.height / 2) - window.innerHeight / 2;
+      write(Math.max(-RANGE, Math.min(RANGE, middle)));
+    });
+  };
+
+  window.addEventListener('scroll', read, { passive: true });
+  window.addEventListener('resize', read, { passive: true });
+  read();
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { onScreen = entry.isIntersecting; });
+      if (onScreen) read();
+    }, { threshold: 0 }).observe(root);
+  }
+
+  /* The hub reads, once every few seconds: one ring out from the centre and
+     gone. Everything else in the sky is still, so this is the only thing moving
+     when the page is not being scrolled — which is the point of it. */
+  const pulse = utils.$('.hp-sky__hub-pulse', root)[0];
+  if (pulse) {
+    utils.set(pulse, { opacity: 0 });
+    animate(pulse, {
+      r: [{ to: 42, duration: 0 }, { to: 108, duration: 2600, ease: 'out(3)' }],
+      opacity: [{ to: 0.5, duration: 200 }, { to: 0, duration: 2400, ease: 'out(2)' }],
+      loop: true,
+      loopDelay: 2600,
+    });
+  }
+
+  /* A handful of the far dust breathes, on its own slow cycle. Not all of it:
+     a field where every point pulses reads as static rather than as sky. */
+  const dust = utils.$('.hp-sky__far circle', root).filter((_, i) => i % 6 === 0);
+  if (dust.length) {
+    animate(dust, {
+      opacity: [{ to: 0.18, duration: 1800 }, { to: 0.62, duration: 1800 }],
+      loop: true,
+      ease: 'inOutQuad',
+      delay: stagger(420),
+    });
+  }
+}
+
 /* ── wiring ──────────────────────────────────────────────────────────────── */
 
 function start() {
@@ -221,6 +312,10 @@ function start() {
 
   document.querySelectorAll('[data-motion="reveal"]').forEach((el) => {
     onFirstSight(el, () => revealChildren(el));
+  });
+
+  document.querySelectorAll('[data-motion="parallax"]').forEach((el) => {
+    sky(el);
   });
 
   document.querySelectorAll('[data-motion="pipeline"]').forEach((el) => {

@@ -7,6 +7,17 @@
 # link goes to the same /industries/... page in every language.
 title: "Runink"
 description: "Vous l'apprenez quand il est trop tard pour contester. Un conteneur attend parce qu'un document est faux et les frais courent dès ce jour-là. Runink FACE lit les enregistrements que vos systèmes détiennent déjà, compare chacun à la règle qui le régit et place une action rédigée devant la personne qui décide."
+# THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
+#
+# `ground: console` puts data-ground on <html>, which re-binds every --rk-*
+# token to the dark end of the same ramp — one identity, two registers
+# (DESIGN.md 8), not a second palette. The rest of the site keeps the sheet.
+#
+# It is a default, not a lock: a reader who has used the switch in the header
+# has their choice stored, and rk-ground-script.html overwrites this attribute
+# with it before first paint. The printed sheet is unaffected either way —
+# tokens.css binds the console ground to white and black under @media print.
+ground: "console"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
@@ -82,6 +93,17 @@ figure:
     - title: "Une personne décide de la suite"
       body: "Chaque constat arrive avec la règle enfreinte, les enregistrements qui l'étayent et une action rédigée, pour que quelqu'un l'approuve, la corrige ou la refuse."
   caption: "Le délai, chez vous, entre le moment où une chose est enregistrée et celui où quelqu'un agit dessus est un chiffre qui mérite d'être connu. Très peu d'organisations l'ont mesuré. C'est en général là que se loge le coût, et c'est une bonne première chose à mesurer ensemble."
+
+constellation:
+  label: "Vos systèmes, lus ensemble"
+  intro: "Chacun d'eux détient déjà une partie de la réponse, et aucun ne la détient entière. Runink FACE les lit au regard des règles qui les régissent, si bien qu'un écart arrive comme un élément accompagné de ses enregistrements plutôt que comme quatre écrans que quelqu'un doit rapprocher."
+  nodes: ["TMS", "SINISTRES", "COMPTABILITÉ", "TARIFICATION", "CANAUX"]
+  hub: "LUS ENSEMBLE"
+  legend:
+    - "Les systèmes que vous faites déjà tourner"
+    - "Les enregistrements qui arrivent d'ailleurs"
+    - "Un lecteur, et la règle au regard de laquelle il lit"
+  alt: "Les systèmes qu'une entreprise fait déjà tourner — son système de transport, ses dossiers de sinistres, sa comptabilité, sa configuration de tarification et les canaux sur lesquels elle publie — dessinés comme des points reliés par des lignes à un lecteur au centre, qui les lit tous au regard des règles qui les régissent."
 
 industries_heading: "Cinq secteurs, une même forme de problème"
 industries_intro: "Trouvez la ligne qui ressemble à votre semaine. Chacune s'ouvre sur les situations que ce secteur vit vraiment — la chaîne du froid, une déclaration en douane, la limite d'une machine, un dossier de sinistre, une clause — et chacune est suivie depuis le document qui la déclenche jusqu'à la personne qui approuve ce qu'on en fait."

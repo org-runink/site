@@ -7,6 +7,17 @@
 # The link goes to the same /industries/... page in every language.
 title: "Runink"
 description: "Você descobre quando já é tarde para contestar. Um contêiner fica parado porque um documento está errado e a diária começa nesse mesmo dia. O Runink FACE lê os registros que os seus sistemas já guardam, compara cada um com a regra que o rege e coloca uma ação redigida diante de quem decide."
+# THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
+#
+# `ground: console` puts data-ground on <html>, which re-binds every --rk-*
+# token to the dark end of the same ramp — one identity, two registers
+# (DESIGN.md 8), not a second palette. The rest of the site keeps the sheet.
+#
+# It is a default, not a lock: a reader who has used the switch in the header
+# has their choice stored, and rk-ground-script.html overwrites this attribute
+# with it before first paint. The printed sheet is unaffected either way —
+# tokens.css binds the console ground to white and black under @media print.
+ground: "console"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
@@ -82,6 +93,17 @@ figure:
     - title: "Uma pessoa decide o que acontece"
       body: "Cada achado chega com a regra que foi quebrada, os registros que o sustentam e uma ação já redigida, para alguém aprovar, corrigir ou recusar."
   caption: "Quanto tempo passa, na sua operação, entre algo ser registrado e alguém agir sobre isso é um número que vale ter. Pouquíssimas operações chegaram a contá-lo. Esse intervalo costuma ser onde o custo está, e é uma boa primeira coisa para medir junto."
+
+constellation:
+  label: "Os seus sistemas, lidos juntos"
+  intro: "Cada um deles já guarda uma parte da resposta, e nenhum guarda a resposta inteira. O Runink FACE lê todos eles contra as regras que os governam, então uma diferença chega como um item com os registros por trás, e não como quatro telas que alguém precisa conciliar."
+  nodes: ["TMS", "SINISTROS", "CONTABILIDADE", "TARIFAÇÃO", "CANAIS"]
+  hub: "LIDOS JUNTOS"
+  legend:
+    - "Os sistemas que você já opera"
+    - "Registros que chegam de fora deles"
+    - "Um leitor, e a regra contra a qual ele lê"
+  alt: "Os sistemas que uma empresa já opera — o sistema de transporte, os processos de sinistro, a contabilidade, a configuração de tarifação e os canais em que publica — desenhados como pontos ligados por linhas a um leitor no centro, que lê todos eles contra as regras que os governam."
 
 industries_heading: "Cinco setores, uma mesma forma de problema"
 industries_intro: "Encontre a linha que se parece com a sua semana. Cada uma abre sobre os cenários que aquele setor vive de verdade — a cadeia do frio, uma declaração aduaneira, o limite de uma máquina, um processo de sinistro, uma cláusula — e cada um é percorrido do registro que o inicia até a pessoa que aprova o que se faz com ele."

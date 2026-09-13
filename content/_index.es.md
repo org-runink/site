@@ -7,6 +7,17 @@
 # link goes to the same /industries/... page in every language.
 title: "Runink"
 description: "Usted se entera cuando ya es tarde para reclamar. Un contenedor espera porque un documento está mal y el cargo empieza ese mismo día. Runink FACE lee los registros que sus sistemas ya guardan, compara cada uno con la norma que lo rige y pone una acción redactada delante de quien decide."
+# THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
+#
+# `ground: console` puts data-ground on <html>, which re-binds every --rk-*
+# token to the dark end of the same ramp — one identity, two registers
+# (DESIGN.md 8), not a second palette. The rest of the site keeps the sheet.
+#
+# It is a default, not a lock: a reader who has used the switch in the header
+# has their choice stored, and rk-ground-script.html overwrites this attribute
+# with it before first paint. The printed sheet is unaffected either way —
+# tokens.css binds the console ground to white and black under @media print.
+ground: "console"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
@@ -82,6 +93,17 @@ figure:
     - title: "Una persona decide qué pasa"
       body: "Cada hallazgo llega con la regla que incumplió, los registros que lo sustentan y una acción redactada, para que alguien la apruebe, la corrija o la rechace."
   caption: "Cuánto tarda su operación desde que algo queda registrado hasta que alguien actúa sobre ello es un número que conviene tener. Muy pocas operaciones lo han contado. Ese intervalo suele ser donde está el coste, y es una buena primera cosa que medir juntos."
+
+constellation:
+  label: "Sus sistemas, leídos juntos"
+  intro: "Cada uno de ellos ya guarda una parte de la respuesta, y ninguno la guarda entera. Runink FACE los lee contra las reglas que los gobiernan, de modo que una diferencia llega como un elemento con los registros detrás en lugar de como cuatro pantallas que alguien tiene que cuadrar."
+  nodes: ["TMS", "SINIESTROS", "CONTABILIDAD", "TARIFICACIÓN", "CANALES"]
+  hub: "LEÍDOS JUNTOS"
+  legend:
+    - "Los sistemas que ya hace funcionar"
+    - "Registros que llegan desde fuera de ellos"
+    - "Un lector, y la regla contra la que lee"
+  alt: "Los sistemas que una empresa ya hace funcionar — su sistema de transporte, sus expedientes de siniestros, su contabilidad, su configuración de tarificación y los canales en los que publica — dibujados como puntos unidos por líneas a un lector en el centro, que los lee todos contra las reglas que los gobiernan."
 
 industries_heading: "Cinco sectores, una misma forma de problema"
 industries_intro: "Encuentre la línea que se parece a su semana. Cada una se abre sobre los escenarios que ese sector vive de verdad — la cadena de frío, una declaración aduanera, el límite de una máquina, un expediente de siniestro, una cláusula — y cada uno se recorre desde el registro que lo inicia hasta la persona que aprueba lo que se hace con él."

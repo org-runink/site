@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang | default " en" }}" class="h-full">
+{{/* GROUND. A page may declare its own with `ground: "console"` in front
+     matter, exactly as the whitepapers section declares one on its own baseof.
+     It is a DEFAULT, not a lock: partials/rk-ground-script.html runs below and
+     overwrites this attribute when the reader has stored a preference of their
+     own, so the switch in the header still works on a page that asked to be
+     dark. The site's default is unchanged and is still the light sheet, which
+     is what every page without this key gets. */}}
+<html lang="{{ .Site.Language.Lang | default " en" }}" class="h-full"{{ with .Params.ground }} data-ground="{{ . }}"{{ end }}>
 
 <head>
     <meta charset="UTF-8">

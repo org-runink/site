@@ -88,6 +88,16 @@
          figure was a single block after everything else. At 1024px and up the
          grid puts head and body in the left column and spans the figure down
          the right, so the desktop reading order is unchanged. */}}
+    {{/* THE SKY. A constellation of the systems a customer already runs, drawn
+         behind the hero and parallaxed against the scroll — see
+         partials/home/constellation.html for what it draws and why it is in our
+         own tokens rather than the reference's navy and lime. It is decoration:
+         aria-hidden, dropped in print, and skipped entirely under reduced
+         motion, so nothing on this page depends on it. */}}
+    <div class="hp-sky" aria-hidden="true">
+      {{ partial "home/constellation.html" (dict "variant" "sky") }}
+    </div>
+
     <header class="hp-hero">
       <div class="hp-hero__head">
         <p class="hp-eyebrow">{{ $h.eyebrow }}</p>
@@ -296,6 +306,38 @@
          one exists, so they cannot drift from the section; the front-matter
          values are the fallback that keeps the block intact on the localised
          sites, where the industry pages do not exist as translations. */}}
+    {{/* 6b. THE CONSTELLATION — the systems, before the industries that run them.
+
+         It sits here rather than behind the hero, where it started: a labelled
+         diagram under body copy is a competition a reader has to decide to
+         ignore, and the labels landed across the headline. In its own band it is
+         a picture with a caption, which is what it was always drawing.
+
+         The five named systems take the five industry hues, so a reader meets
+         the colours here and then meets them again as the ledger rows directly
+         below — the band is the bridge into that section rather than a break
+         before it. */}}
+    {{ with .Params.constellation }}
+    <section class="hp-sec hp-const" aria-labelledby="constellation-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="constellation-heading">{{ .label }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with .intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <div class="hp-const__frame">
+        {{ partial "home/constellation.html" (dict "variant" "figure" "copy" .) }}
+      </div>
+      {{ with .legend }}
+      <ul class="hp-const__legend">
+        {{ range $i, $l := . }}
+        <li class="hp-const__key hp-const__key--{{ $i }}"><span aria-hidden="true"></span>{{ $l }}</li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </section>
+    {{ end }}
+
     {{ with .Params.industries }}
     <section class="hp-sec" aria-labelledby="industries-heading">
       <div class="hp-head">

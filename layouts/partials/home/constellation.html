@@ -1,0 +1,96 @@
+{{/*
+  THE CONSTELLATION — the systems a customer already runs, and the lines between
+  them. Two variants, and they exist because one drawing cannot do both jobs.
+
+    "sky"     the atmosphere behind the hero: dust and hairlines, NO labels and
+              no hub. Decoration, aria-hidden, and deliberately too quiet to
+              compete with a headline. A labelled diagram behind body copy is a
+              competition a reader has to decide to ignore, which is what the
+              first version of this did.
+
+    "figure"  the picture, full width, in its own band: the named systems, the
+              hub that reads them, and a legend. This is the one that carries
+              meaning, so this is the one with the aria-label.
+
+  DRAWN IN OUR OWN TOKENS, NOT THE REFERENCE'S PALETTE. The image this follows is
+  navy with lime and cyan; this is the warm ramp read from its dark end, with
+  signal on the hub and the five industry hues on the five named systems — the
+  same five tokens.css binds for the ledger rows downpage. That is DESIGN.md 8's
+  "one identity, two registers"; the alternative was a second palette living on
+  one page, with none of the measured pairs applying to it.
+
+  THE DEPTHS ARE THE PARALLAX. `data-depth` is read by assets/js/motion.js, which
+  translates each layer against the scroll at its own rate: dust barely moves, the
+  web moves a little, the named layer moves most. With no JavaScript the layers
+  sit where they are drawn and the composition still reads.
+
+  NO NUMBERS, in a drawing exactly as in prose.
+*/}}
+{{ $variant := .variant | default "figure" }}
+{{ $c := .copy | default dict }}
+{{ $nodes := $c.nodes | default (slice "TMS" "CLAIMS" "LEDGER" "RATING" "CHANNELS") }}
+{{ $cats := slice "logistics" "insurance" "banking" "telecom" "marketing" }}
+{{ $pos := slice
+  (dict "x" 1076 "y" 232) (dict "x" 1148 "y" 470) (dict "x" 372 "y" 560)
+  (dict "x" 300  "y" 300) (dict "x" 720  "y" 118) }}
+
+<svg class="hp-sky__art hp-sky__art--{{ $variant }}"
+     viewBox="0 70 1440 620" preserveAspectRatio="xMidYMid {{ if eq $variant "sky" }}slice{{ else }}meet{{ end }}"
+     data-motion="parallax"
+     {{ if eq $variant "sky" }}aria-hidden="true" focusable="false"{{ else }}role="img" aria-label="{{ $c.alt | default "The systems a company already runs — its transport system, its claim files, its ledger, its rating configuration and the channels it publishes on — drawn as points joined by lines to one reader in the middle, which reads all of them against the rules that govern them." }}"{{ end }}>
+
+  {{/* ---- far: dust ---- */}}
+  <g class="hp-sky__far" data-depth="0.06">
+    {{ range $i := seq 0 47 }}
+      {{ $x := mod (add (mul $i 137) 61) 1440 }}
+      {{ $y := mod (add (mul $i 229) 43) 760 }}
+      <circle cx="{{ $x }}" cy="{{ $y }}" r="{{ if eq (mod $i 5) 0 }}1.6{{ else }}1{{ end }}"/>
+    {{ end }}
+  </g>
+
+  {{/* ---- mid: the web. The lines are what this is about, so they are drawn
+       before the things they join and left quieter than them. ---- */}}
+  <g class="hp-sky__web" data-depth="0.16">
+    <path d="M300 300 L720 380 L1076 232 M720 380 L1148 470 M720 380 L372 560 M720 380 L720 118
+             M300 300 L720 118 M1076 232 L1148 470 M372 560 L1148 470 M300 300 L372 560"/>
+    <path class="hp-sky__web--dotted"
+          d="M180 190 L300 300 M1290 180 L1076 232 M150 620 L372 560 M1300 610 L1148 470
+             M720 660 L720 380"/>
+  </g>
+
+  {{ if eq $variant "figure" }}
+  {{/* ---- near: the named systems, and the reader in the middle ---- */}}
+  <g class="hp-sky__near" data-depth="0.3">
+
+    {{ range $i, $label := $nodes }}
+    {{ $p := index $pos $i }}
+    <g class="hp-sky__node rk-cat-{{ index $cats $i }}">
+      <circle class="hp-sky__halo" cx="{{ $p.x }}" cy="{{ $p.y }}" r="13"/>
+      <circle class="hp-sky__dot" cx="{{ $p.x }}" cy="{{ $p.y }}" r="6"/>
+      <text class="hp-sky__label{{ if gt $p.x 900 }} hp-sky__label--l{{ end }}"
+            x="{{ if gt $p.x 900 }}{{ add $p.x 18 }}{{ else }}{{ sub $p.x 18 }}{{ end }}"
+            y="{{ add $p.y 5 }}">{{ $label }}</text>
+    </g>
+    {{ end }}
+
+    {{/* The unnamed corners: records that arrive from outside the systems named
+         here — a document photographed at a gate, a frame off a yard camera. */}}
+    {{ range $p := slice (dict "x" 180 "y" 190) (dict "x" 1290 "y" 180) (dict "x" 150 "y" 620) (dict "x" 1300 "y" 610) }}
+    <g class="hp-sky__mote">
+      <circle cx="{{ $p.x }}" cy="{{ $p.y }}" r="9"/>
+      <circle class="hp-sky__mote-core" cx="{{ $p.x }}" cy="{{ $p.y }}" r="2.5"/>
+    </g>
+    {{ end }}
+
+    {{/* The hub. Signal, because it is the one thing here that acts — and a ring
+         rather than a disc, because the product does not close over a record, it
+         reads it. */}}
+    <g class="hp-sky__hub">
+      <circle class="hp-sky__hub-ring" cx="720" cy="380" r="42"/>
+      <circle class="hp-sky__hub-core" cx="720" cy="380" r="7"/>
+      <circle class="hp-sky__hub-pulse" cx="720" cy="380" r="42"/>
+      {{ with $c.hub }}<text class="hp-sky__hub-label" x="720" y="452">{{ . }}</text>{{ end }}
+    </g>
+  </g>
+  {{ end }}
+</svg>

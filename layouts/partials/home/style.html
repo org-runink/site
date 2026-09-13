@@ -82,9 +82,18 @@
   }
   {{ end }}
 
+  [data-ground='console'] .hp { --canvas: var(--rk-sunk); }
+
   .hp {
     /* Aliases onto the ground-aware tokens, not values. The rules below and the
        artwork in partials/home/*.html both paint with these names. */
+    /* THE PAGE GROUND DROPS A RUNG ON THE CONSOLE. On the sheet the canvas is
+       the ramp's own ground and panels sit on it as sheets. Read from the dark
+       end, `ground` is the same value the console figure paints its own slots
+       with, so the card, the ledger rows and the page were three names for one
+       colour and every edge on the page disappeared. `sunk` puts the page one
+       rung below everything it holds, which is what gives the dark page its
+       depth without a single shadow. */
     --canvas: var(--rk-ground);
     --sheet: var(--rk-sheet);
     --rule: var(--rk-rule);
@@ -424,6 +433,13 @@
     display: block;
     color: var(--ink-2);
   }
+  /* ON THE CONSOLE THE TWO-TONE HEADLINE NEEDS A SHORTER STEP. --ink-2 is one
+     rung below the ink on either ground, but the same rung reads as a much
+     bigger drop against a dark ground than against a light one: the second line
+     came back looking like a caption rather than half a headline. It takes the
+     rung between instead, so the two-tone still reads and both lines are a
+     headline. */
+  [data-ground='console'] .hp-h1__b { color: var(--rk-text-1); }
 
   .hp-deck {
     font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
@@ -517,6 +533,237 @@
     .hp-field { padding: 2rem 2rem 1.75rem; margin-bottom: 5rem; }
   }
 
+  /* ---- the sky: the page's ground, drawn --------------------------------
+
+     A constellation of the systems a customer already runs, sitting behind the
+     hero and fading out under the prose. It is decoration — the markup says so
+     with aria-hidden — which is what licenses it to be dropped entirely on
+     paper and under reduced motion.
+
+     THE LAYERS ARE ABSOLUTE AND THE WRAPPER CLIPS THEM. `overflow: hidden` on
+     the wrapper is what keeps a parallax translation from growing the document
+     sideways; `pointer-events: none` is what keeps a decorative SVG from eating
+     a click meant for the headline behind it.
+
+     IT IS DRAWN ON THE CONSOLE GROUND ONLY. On the sheet — which a reader gets
+     by using the switch in the header — the whole thing is hidden rather than
+     re-inked: a constellation is a dark-sky device, and the same drawing on a
+     near-white page reads as dirt on the paper rather than as depth. */
+
+  /* :not(.hp-sky) on the rule above is load-bearing. Written as a bare
+     `.hp-wrap > *` it matched the sky too, overrode `position: absolute` with
+     `relative`, and put the background into the document flow — the hero was
+     pushed a full screen down the page by its own backdrop. */
+  .hp-sky {
+    position: absolute;
+    z-index: 0;
+    inset: 0 0 auto;
+    /* SHORTER THAN THE HERO ON PURPOSE. At full hero height the web ran behind
+       the deck and the product line, and a hairline crossing a sentence costs
+       that sentence contrast for no gain — the atmosphere is wanted at the top
+       of the page, not under the copy. It ends above the first paragraph and
+       fades out before it. */
+    height: min(62vh, 660px);
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hp-sky__art {
+    position: absolute;
+    inset: -8% -4%;
+    width: 108%;
+    height: 116%;
+    display: block;
+    /* Behind the page, and quiet. At full strength the web crossed the headline
+       and the labels read as words a reader had to decide to ignore — which is
+       what a background must never make them do. The band below carries the same
+       drawing at full strength, where it is the subject rather than the ground. */
+    opacity: 0.34;
+  }
+
+  /* THE STACKING, WHICH IS NOT OPTIONAL. .hp-sky is absolute and the blocks
+     below it are static, so without this the constellation paints OVER the hero
+     copy and over the console figure — the hub ring was drawn across a record
+     row, which is exactly the sort of thing that looks like a rendering bug
+     rather than a background. Every direct child of the page gets its own
+     stacking context above the sky. */
+  /* The sky is a child of .hp-wrap, not of .hp — and every sibling it has is
+     STATIC, so without this the positioned sky paints above all of them: the
+     fade at its bottom edge was drawn over the product line and the two buttons,
+     which came out looking like a half-loaded page. Positioned content beats
+     unpositioned content whatever the z-index says, so the siblings have to be
+     positioned too. */
+  .hp-wrap > *:not(.hp-sky),
+  .hp > *:not(.hp-sky) { position: relative; z-index: 1; }
+
+  /* The vignette. Two washes rather than one: a warm lift under the hub, and a
+     fade to the page ground at the bottom edge so the drawing ends without a
+     seam. mask-image would be cleaner and is not reliable enough across the
+     browsers this site still gets, so it is drawn as a gradient. */
+  .hp-sky::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      /* A scrim over the column the copy sits in. The headline is the one thing
+         on this page that may not be competed with, and a constellation behind
+         type is a competition unless the ground under the type is clean. */
+      radial-gradient(46% 46% at 28% 52%, var(--canvas) 0%, transparent 76%),
+      /* A warm lift under the hub, well away from the text. */
+      radial-gradient(52% 42% at 62% 26%, var(--rk-signal-wash) 0%, transparent 74%),
+      /* And out to the page ground at the bottom edge, so the sky ends without
+         a seam across the middle of a section. */
+      linear-gradient(to bottom, transparent 30%, var(--canvas) 88%);
+  }
+
+  .hp-sky__far circle { fill: var(--rk-rule-mid); opacity: 0.55; }
+
+  .hp-sky__web path {
+    fill: none;
+    stroke: var(--rk-rule-strong);
+    stroke-width: 1;
+    stroke-linecap: round;
+    opacity: 0.5;
+  }
+  /* In the band the lines ARE the argument — "each of these already holds part
+     of the answer" — so they carry more weight there than they do behind the
+     hero, where the same lines are only atmosphere. */
+  .hp-const__frame .hp-sky__web path { opacity: 0.85; }
+  .hp-const__frame .hp-sky__far circle { opacity: 0.75; }
+  .hp-sky__web .hp-sky__web--dotted {
+    stroke: var(--rk-rule-mid);
+    stroke-dasharray: 2 7;
+  }
+
+  /* A named node takes its industry's hue from tokens.css — the same five the
+     ledger rows carry — and the halo is the only soft edge on this page, kept
+     at a few per cent so it reads as light rather than as a glow. DESIGN.md 6
+     sends glows to none on paper; this one is gone there with everything else. */
+  .hp-sky__halo { fill: var(--rk-accent); opacity: 0.18; }
+  .hp-sky__dot { fill: var(--rk-accent); }
+  .hp-sky__hub-label {
+    font-family: var(--rk-font-util);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-anchor: middle;
+    fill: var(--rk-signal);
+  }
+
+  .hp-sky__label {
+    font-family: var(--rk-font-util);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-anchor: end;
+    fill: var(--rk-text-2);
+  }
+  /* The nodes on the right of the drawing take their label on the right, so no
+     label ever crosses the web it belongs to. */
+  .hp-sky__label--l { text-anchor: start; }
+
+  .hp-sky__mote circle { fill: var(--rk-rule-mid); opacity: 0.3; }
+  .hp-sky__mote-core { fill: var(--rk-text-3) !important; opacity: 0.8 !important; }
+
+  .hp-sky__hub-ring {
+    fill: none;
+    stroke: var(--rk-signal);
+    stroke-width: 2;
+    opacity: 0.9;
+  }
+  .hp-sky__hub-core { fill: var(--rk-signal); }
+  /* The pulse is the hub reading: one ring, expanding and fading, driven from
+     motion.js. It rests invisible, as a presentation attribute rather than a
+     rule, for the reason the pipeline's scan line does — a CSS opacity would
+     outrank what anime writes and pin it hidden. */
+  .hp-sky__hub-pulse { fill: none; stroke: var(--rk-signal); stroke-width: 1.5; }
+
+  /* On the sheet the drawing has no ground to sit on, so it goes. */
+  [data-ground='sheet'] .hp-sky,
+  :root:not([data-ground='console']) .hp-sky { display: none; }
+
+  @media (max-width: 760px) {
+    /* At phone width the labels would sit under the headline rather than beside
+       it, so the sky keeps the web and loses the words. */
+    .hp-sky { height: 78vh; }
+    .hp-sky__label { display: none; }
+  }
+
+  @media print {
+    /* Decoration, and paper is the one place this site's material is read
+       end to end. It does not print. */
+    .hp-sky { display: none !important; }
+  }
+
+  /* ---- the constellation band ---------------------------------------------
+
+     The sky's figure variant, given a band of its own between the hero and the
+     ledger. The frame is the page's own ground rather than a panel: this is a
+     drawing on the night, not a card with a picture in it, and a border around
+     it would make the second thing. */
+
+  .hp-const__frame {
+    position: relative;
+    margin: 0.5rem 0 1.5rem;
+    overflow: hidden;
+    border-radius: var(--rk-r-3);
+  }
+  .hp-const__frame .hp-sky__art {
+    position: static;
+    width: 100%;
+    height: auto;
+    inset: auto;
+    opacity: 1;
+  }
+
+  /* The legend, in the grammar the rest of the page uses for a key: a mark, a
+     label, and no box. Three entries, wrapping to one column on a phone. */
+  .hp-const__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid var(--rule);
+  }
+  .hp-const__key {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: var(--rk-font-util);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  /* Three marks, three shapes — not three colours. DESIGN.md 10: colour is never
+     the only channel, and this key is the first thing that would break that rule
+     if it were a row of coloured dots. A filled square is a system you run, a
+     hollow dot is a record from outside it, a ring is the reader. */
+  .hp-const__key span {
+    flex: none;
+    width: 0.625rem;
+    height: 0.625rem;
+  }
+  .hp-const__key--0 span { background: var(--accent-edge); }
+  .hp-const__key--1 span { border: 1px solid var(--rk-rule-strong); border-radius: 50%; }
+  .hp-const__key--2 span { border: 1.5px solid var(--rk-signal); border-radius: 50%; }
+
+  @media print {
+    /* The band prints: it is a figure with a caption, and the legend is what
+       makes it readable without colour. The drawing re-inks itself from the
+       token bindings like everything else on the console ground. */
+    .hp-const__frame { break-inside: avoid; }
+    .hp-const__legend { border-top-color: #000; }
+    .hp-const__key { color: #000; }
+    .hp-const__key--0 span { background: #000; }
+    .hp-const__key--1 span,
+    .hp-const__key--2 span { border-color: #000; }
+  }
+
   /* ---- the reading, drawn -------------------------------------------------
 
      The console figure, in the same section as the three beats it draws. It is
@@ -548,7 +795,14 @@
     height: auto;
   }
 
-  .hp-pipe__shell { fill: var(--rk-ground); stroke: var(--rk-rule); stroke-width: 1; }
+  /* THE PANEL IS LIGHTER THAN THE PAGE, AND THE SLOTS INSIDE IT ARE DARKER.
+     The frame forces data-ground="console" whatever the page is on, so these
+     three are always the console's own three grounds: sheet for the panel, ground
+     for what it holds, sunk for the record rows inside that. It used to paint the
+     shell in --rk-ground, which was invisible the moment the page itself went
+     dark — the card and the page were the same colour and the figure lost its
+     edge. */
+  .hp-pipe__shell { fill: var(--rk-sheet); stroke: var(--rk-rule-mid); stroke-width: 1; }
   .hp-pipe__bar { stroke: var(--rk-rule); stroke-width: 1; }
   .hp-pipe__dot { fill: var(--rk-rule-mid); }
   .hp-pipe__title,
@@ -581,6 +835,7 @@
      shell holds rather than as more panels stacked on it. */
   .hp-pipe__row > rect:first-child {
     fill: var(--rk-sunk);
+    /* the slot, one rung below what holds it */
     stroke: var(--rk-rule);
     stroke-width: 1;
   }
@@ -622,7 +877,7 @@
 
   .hp-pipe__node > rect:first-child,
   .hp-pipe__gate > rect:first-child {
-    fill: var(--rk-sheet);
+    fill: var(--rk-ground);
     stroke: var(--rk-rule);
     stroke-width: 1;
   }
@@ -667,6 +922,35 @@
        into illegibility — the one horizontal scroller a diagram is allowed. */
     .hp-pipe__frame { overflow-x: auto; }
     .hp-pipe { min-width: 460px; }
+  }
+
+  @media print {
+    /* WHAT IS ANIMATED MUST PRINT WHOLE, AND THIS IS NOT BELT AND BRACES.
+       assets/js/motion.js sets a starting state at run time and animates back —
+       an opacity and a transform, written inline on the element. A reader who
+       prints while the cycle is between beats prints those inline values, and
+       the first sheet came back with the rule panel and the decision panel drawn
+       as empty boxes: labels above them, nothing inside.
+
+       !important is the point of these rules. An inline style beats a class, and
+       inline is exactly what an animation writes; nothing else on this sheet
+       overrides anything, and this has to. */
+    .hp-pipe__row,
+    .hp-pipe__node,
+    .hp-pipe__gate,
+    .hp-pipe__act,
+    .hp-pipe__tick,
+    .hp-pipe__meter rect,
+    .hp-why__item {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    /* Except the row the panel cuts off, which is faded by intent rather than by
+       an animation and stays that way on paper. */
+    .hp-pipe__row--cut { opacity: 0.45 !important; }
+    /* The caret and the scan are moving parts with nothing to say when still. */
+    .hp-pipe__caret,
+    .hp-pipe__scan { opacity: 0 !important; }
   }
 
   @media print {

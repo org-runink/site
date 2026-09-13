@@ -224,3 +224,18 @@
     .rk-step__title { font-size: 10pt; }
     .rk-step__body { font-size: 9pt; }
   }
+
+  @media print {
+    /* The moments and the steps are revealed by assets/js/motion.js, which sets
+       opacity and a transform inline before animating them back. A sheet printed
+       while that is in flight prints the inline values — a heading over an empty
+       column. !important because inline is what has to be beaten, and a printed
+       page that silently loses content is the failure this site's doctrine is
+       built against. */
+    .rk-flow__stage,
+    .rk-flow__job,
+    .rk-step {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
