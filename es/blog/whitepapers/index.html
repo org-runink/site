@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+
+<html lang="es" class="h-full" data-ground="console">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    <title>Libros blancos | Runink</title>
+
+    <meta name="description" content="Documentos extensos sobre Runink FACE, sobre Runink PULSE — un producto distinto — y sobre la plataforma CORE en la que corren los dos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación.">
+    <meta name="author" content="Runink">
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta property="og:title" content="Libros blancos | Runink">
+    <meta property="og:description" content="Documentos extensos sobre Runink FACE, sobre Runink PULSE — un producto distinto — y sobre la plataforma CORE en la que corren los dos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/es/blog/whitepapers/">
+    <meta property="og:site_name" content="Runink">
+    <meta property="og:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Libros blancos | Runink">
+    <meta name="twitter:description" content="Documentos extensos sobre Runink FACE, sobre Runink PULSE — un producto distinto — y sobre la plataforma CORE en la que corren los dos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación.">
+    
+    <meta name="twitter:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="canonical" href="https://runink.org/es/blog/whitepapers/">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSans-Book.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSansCondensed-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+
+    
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/whitepaper.min.2f99212768da1aa490bf165a10b9d166ffc165758d4f843a773427e851c33477.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "es"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/es/blog/whitepapers/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Notas más breves",
+          "item": "https://runink.org/es/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Libros blancos"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Libros blancos",
+  "url": "https://runink.org/es/blog/whitepapers/",
+  "description": "Documentos extensos sobre Runink FACE, sobre Runink PULSE — un producto distinto — y sobre la plataforma CORE en la que corren los dos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación.",
+
+  
+  
+
+  
+
+  
+  "about": []
+  
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+
+    
+    <a class="wp-skip" href="#wp-main">Skip to the paper</a>
+
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/es/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">¿Por qué Runink?</a>
+                    
+                    
+                    
+                    <a href="/es/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Biblioteca</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Sectores
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/es/pricing"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Precios</a>
+                    
+                    
+                    
+                    <a href="/es/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Empresa</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/es/?about=Libros%20blancos#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Reserve una Consulta
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/blog/whitepapers/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/fr/blog/whitepapers/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/es/blog/whitepapers/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/pt/blog/whitepapers/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/es/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">¿Por qué Runink?</a>
+                
+                
+                
+                <a href="/es/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Biblioteca</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Sectores</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/es/pricing"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Precios</a>
+                
+                
+                
+                <a href="/es/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Empresa</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/es/?about=Libros%20blancos#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Reserve una Consulta
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/blog/whitepapers/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/fr/blog/whitepapers/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/es/blog/whitepapers/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/pt/blog/whitepapers/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    <div class="pt-20" id="wp-main" tabindex="-1">
+        
+        
+<main id="content">
+<div class="wp">
+  <header class="wp-index-hero">
+    <p class="wp-hero-eyebrow wp-util">
+      <span>Runink</span>
+      <span aria-hidden="true">/</span>
+      <span>Whitepapers</span>
+    </p>
+    <div class="wp-hero-title"><h1>Documentos que empiezan por lo que puede demostrarse.</h1></div>
+    <div class="wp-hero-side">
+      <div class="wp-hero-deck"><p>Cuatro documentos extensos. <strong>Runink FACE</strong> es el producto del que trata el
+primero. <strong>Runink PULSE</strong> es un producto distinto, de análisis de mercado y
+marketing, y su documento describe su propio trabajo, no el de FACE.
+<strong>Runink CORE</strong> no es un producto: es la plataforma sobre la que corren los
+dos, y es la respuesta honesta a dónde se procesan sus datos y quién puede
+verlos. El cuarto es un documento conjunto de arquitectura con Atlas, de
+Logical Leap.</p>
+<p>No contienen casos de cliente, ni nombres, ni cifras de retorno de la
+inversión. Lo que explican es el mecanismo: qué mira el software, qué
+produce, quién lo aprueba y dónde se ejecuta todo.</p>
+<p>Donde un documento describe algo que hemos construido, lo dice con claridad.
+Donde describe un acuerdo con el producto de otra empresa, dice qué mitad de
+ese acuerdo funciona hoy. Nadie nos ha auditado contra SOC 2 ni ISO 27001, y
+los documentos lo dicen en sus propias frases, no en una nota al pie.</p>
+</div>
+    </div>
+  </header>
+
+  <div class="wp-list">
+    
+    <a class="wp-card" href="/blog/whitepapers/runink-face/">
+      <div>
+        <p class="wp-card-eyebrow wp-util">
+          <span translate="no">Runink FACE</span>
+          
+        </p>
+        <h2>The evidence of your next loss is already in your systems.</h2>
+        <p class="wp-card-sub">Fulfilment Autonomous Claims Engine</p>
+        <p>Scattered across a dozen systems that were never designed to talk to each other. FACE assembles it, works out what the combined picture means, and produces a specific, reviewable recommendation with the underlying records attached — for a named person to approve.</p>
+      </div>
+      <div class="wp-card-meta">
+        <span class="wp-util">30 pages &middot; 26 chapters</span>
+        <span class="wp-card-read wp-util" aria-hidden="true">Read &rarr;</span>
+      </div>
+    </a>
+    
+    <a class="wp-card" href="/blog/whitepapers/runink-core/">
+      <div>
+        <p class="wp-card-eyebrow wp-util">
+          <span translate="no">Runink CORE</span>
+          
+        </p>
+        <h2>One operations layer, on hardware you already own.</h2>
+        <p class="wp-card-sub">The operations layer for companies that keep their own data</p>
+        <p>The layer beneath a company&#39;s software that runs it, shows a named person what is happening across all of it from one screen, holds the connections that software uses to reach the company&#39;s own information, and carries changes from written to running.</p>
+      </div>
+      <div class="wp-card-meta">
+        <span class="wp-util">21 pages &middot; 19 chapters</span>
+        <span class="wp-card-read wp-util" aria-hidden="true">Read &rarr;</span>
+      </div>
+    </a>
+    
+    <a class="wp-card" href="/blog/whitepapers/runink-pulse/">
+      <div>
+        <p class="wp-card-eyebrow wp-util">
+          <span translate="no">Runink PULSE</span>
+          
+        </p>
+        <h2>A marketing engine that runs inside your own business.</h2>
+        <p class="wp-card-sub">Prescriptive Unified Lead &amp; Social Engine</p>
+        <p>One application a marketing team operates directly. It audits your website and social presence, researches your market, prospects the public web for leads, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft with a status and an approve against it, on channels that stay disarmed until you arm them.</p>
+      </div>
+      <div class="wp-card-meta">
+        <span class="wp-util">23 pages &middot; 19 chapters</span>
+        <span class="wp-card-read wp-util" aria-hidden="true">Read &rarr;</span>
+      </div>
+    </a>
+    
+    <a class="wp-card" href="/blog/whitepapers/runink-core-atlas/">
+      <div>
+        <p class="wp-card-eyebrow wp-util">
+          <span translate="no">Runink CORE</span>
+          
+          <span aria-hidden="true">/</span>
+          <span>With <span translate="no">Logical Leap</span></span>
+          
+        </p>
+        <h2>Continuous oversight, with a second opinion on every finding.</h2>
+        <p class="wp-card-sub">A joint architecture paper with Logical Leap&#39;s Atlas</p>
+        <p>Atlas watches a company&#39;s capital spending as it happens. CORE&#39;s automated assessors read Atlas&#39;s findings and score them before a person is asked to act on any of them. This is an architecture paper: it states on pages 11 to 13 exactly which half of the design runs today and which half is drawn, and every claim in it should be read against those pages.</p>
+      </div>
+      <div class="wp-card-meta">
+        <span class="wp-util">23 pages &middot; 22 chapters</span>
+        <span class="wp-card-read wp-util" aria-hidden="true">Read &rarr;</span>
+      </div>
+    </a>
+    
+  </div>
+
+  
+  
+  <nav class="wp-more" aria-labelledby="wp-more-head">
+    <p class="wp-more-label wp-util" id="wp-more-head">Textos más breves</p>
+    <p class="wp-more-text">Los documentos son los textos largos. Los más breves se quedan con los problemas que hay detrás: una entrada en aduana retenida por un documento que falta, una reclamación de flete todavía dentro de su plazo, una devolución que cuesta más gestionar que la mercancía.</p>
+    <a class="wp-more-link wp-util" href="/es/blog/">Todos los artículos &rarr;</a>
+  </nav>
+  
+
+  
+  <div class="wp-note">
+    <div class="wp-note-inner">Los cuatro documentos se publican en inglés. Los enlaces de arriba llevan a
+la versión inglesa completa. Para una conversación en español, escriba a
+<a href="mailto:paes@runink.org">paes@runink.org</a>.</div>
+  </div>
+  
+
+  
+  <div class="wp-band">
+
+
+
+
+<section class="mt-12 md:mt-16" aria-labelledby="next-step-head">
+  
+<div class="flex items-center gap-3.5 mb-6">
+  <span class="flex-none w-6 border-t-[3px] border-signal" aria-hidden="true"></span>
+  <h2 id="next-step-head" class="min-w-0 m-0 font-heading text-[0.9375rem] font-extrabold uppercase tracking-[0.12em] text-ink-2">Un paso más</h2>
+  <span class="flex-1 border-t border-rule" aria-hidden="true"></span>
+  
+</div>
+
+  <div class="rk-next border border-rule bg-sheet rounded-xl p-6 md:p-8">
+    <h3 class="mt-0 mb-3 font-heading text-xl md:text-2xl font-bold leading-tight text-ink">Ya ha leído el mecanismo. El siguiente paso es uno suyo.</h3>
+    <p class="mt-0 mb-6 text-ink-2 text-base leading-relaxed max-w-[62ch]">Traiga una ruta, una reclamación o un mes de facturas. Media hora, con quien lleva el problema en la sala, y recorremos ese ejemplo de principio a fin. Si las pérdidas que usted carga no tienen la forma que describen estos documentos, se lo diremos.</p>
+    <a class="inline-flex items-center bg-signal-fill text-on-fill no-underline rounded-lg px-5 py-3 font-heading text-xs font-extrabold uppercase tracking-[0.12em] hover:bg-signal-fill-hover transition-colors"
+       href="/es/?about=Los&#43;documentos#contact-form">Reservar una consulta</a>
+    <p class="mt-4 mb-0 text-ink-2 text-sm leading-relaxed max-w-[62ch]">El formulario se abre con los documentos ya indicados, así que no empieza explicando de dónde viene.</p>
+  </div>
+</section>
+
+</div>
+</div>
+
+</main>
+
+        
+        
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Pie de página">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contacto</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/es/#contact-form">Escríbanos</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explorar</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Sectores</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/es/pricing/">Precios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Descargas</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Lecturas</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/es/library/">Biblioteca</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/es/blog/whitepapers/">Libros blancos</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/es/use-cases/">Escenarios de trabajo</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/es/blog/">Todos los artículos</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Empresa</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/es/company/">Sobre Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">Licencia</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Política de privacidad</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. Todos los derechos reservados.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Idiomas: English, Français, Español, Português — elija uno en la barra superior de la página.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    <script src="/js/main.js" defer></script>
+    
+</body>
+
+</html>

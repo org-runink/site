@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="pt" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    <title>Privacidade dos Dados do Cliente e Relatório de Emissões | Runink</title>
+
+    
+    <meta name="description" content="Operar um sistema escreve dados pessoais nos próprios logs sem ninguém notar, e o relatório de emissões leva um trimestre para ficar pronto. Aqui está exatamente o que o software faz com cada um dos dois, inclusive as partes que ele não faz.">
+    <meta name="author" content="Runink">
+    
+    
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    
+    <meta property="og:title" content="Privacidade dos Dados do Cliente e Relatório de Emissões | Runink">
+    <meta property="og:description" content="Operar um sistema escreve dados pessoais nos próprios logs sem ninguém notar, e o relatório de emissões leva um trimestre para ficar pronto. Aqui está exatamente o que o software faz com cada um dos dois, inclusive as partes que ele não faz.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/pt/use-cases/compliance/">
+    <meta property="og:site_name" content="Runink">
+    
+    <meta property="og:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacidade dos Dados do Cliente e Relatório de Emissões | Runink">
+    <meta name="twitter:description" content="Operar um sistema escreve dados pessoais nos próprios logs sem ninguém notar, e o relatório de emissões leva um trimestre para ficar pronto. Aqui está exatamente o que o software faz com cada um dos dois, inclusive as partes que ele não faz.">
+    
+    
+    <meta name="twitter:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/pt/use-cases/compliance/">
+
+    
+    
+    <link rel="alternate" hreflang="pt" href="https://runink.org/pt/use-cases/compliance/">
+    
+    <link rel="alternate" hreflang="en" href="https://runink.org/use-cases/compliance/">
+    
+    <link rel="alternate" hreflang="fr" href="https://runink.org/fr/use-cases/compliance/">
+    
+    <link rel="alternate" hreflang="es" href="https://runink.org/es/use-cases/compliance/">
+    
+    
+    
+    <link rel="alternate" hreflang="x-default" href="https://runink.org/use-cases/compliance/">
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "pt"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/pt/use-cases/compliance/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Para Que Serve O Runink FACE",
+          "item": "https://runink.org/pt/use-cases/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Privacidade dos Dados do Cliente e Relatório de Emissões"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/pt/use-cases/compliance/"
+  },
+  "headline": "Privacidade dos Dados do Cliente e Relatório de Emissões",
+  "description": "Operar um sistema escreve dados pessoais nos próprios logs sem ninguém notar, e o relatório de emissões leva um trimestre para ficar pronto. Aqui está exatamente o que o software faz com cada um dos dois, inclusive as partes que ele não faz.",
+  
+  
+  "datePublished": "2024-05-20T00:00:00Z",
+  "dateModified": "2026-09-12T19:43:17-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/pt/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Por que Runink?</a>
+                    
+                    
+                    
+                    <a href="/pt/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Biblioteca</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Setores
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pt/pricing"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Preços</a>
+                    
+                    
+                    
+                    <a href="/pt/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Empresa</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/pt/?about=Privacidade%20dos%20Dados%20do%20Cliente%20e%20Relat%C3%B3rio%20de%20Emiss%C3%B5es#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Agende uma Consulta
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/use-cases/compliance/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/fr/use-cases/compliance/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/es/use-cases/compliance/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/pt/use-cases/compliance/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/pt/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Por que Runink?</a>
+                
+                
+                
+                <a href="/pt/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Biblioteca</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Setores</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pt/pricing"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Preços</a>
+                
+                
+                
+                <a href="/pt/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Empresa</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/pt/?about=Privacidade%20dos%20Dados%20do%20Cliente%20e%20Relat%C3%B3rio%20de%20Emiss%C3%B5es#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Agende uma Consulta
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/use-cases/compliance/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/fr/use-cases/compliance/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/es/use-cases/compliance/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/pt/use-cases/compliance/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+
+
+
+
+
+<div class="rk-post bg-canvas">
+  
+<style>
+  @media print {
+    @page { margin: 16mm 14mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-post { padding: 0 !important; }
+    .rk-post-wrap { max-width: none !important; padding: 0 !important; }
+
+     
+    .rk-post-screen { display: none !important; }
+
+     
+    .rk-post-body :is(h2, h3, h4) { break-after: avoid; page-break-after: avoid; }
+    .rk-post-body :is(p, li, blockquote) { orphans: 3; widows: 3; }
+    .rk-post-body pre,
+    .rk-post-body blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+     
+    .rk-post-body table { break-inside: auto; }
+    .rk-post-body thead { display: table-header-group; }
+    .rk-post-body tr { break-inside: avoid; page-break-inside: avoid; }
+
+     
+     
+    .rk-post-figure {
+      width: fit-content;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .rk-post img {
+      max-width: 100% !important;
+      max-height: 62mm;
+      width: auto;
+      object-fit: contain;
+      break-inside: avoid;
+    }
+
+     
+    .rk-post-body a[href^="/"]::after { content: " (runink.org" attr(href) ")"; }
+    .rk-post-body a[href^="http"]::after { content: " (" attr(href) ")"; }
+    .rk-post-body a[href^="/"]::after,
+    .rk-post-body a[href^="http"]::after {
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      word-break: break-all;
+      color: var(--rk-text-2);
+    }
+
+     
+    .cta-section { margin: 8mm 0 0 !important; break-inside: avoid; }
+    .cta-section .container > div {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .cta-section .absolute { display: none !important; }
+    .cta-section h2 { font-size: 12pt !important; margin-bottom: 2mm !important; }
+    .cta-section p { font-size: 10pt !important; margin-bottom: 2mm !important; }
+    .cta-section a {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+    .cta-section a[href^="/"]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+     
+    .rk-post-mark { display: block !important; }
+  }
+</style>
+
+
+  <div class="rk-post-wrap container mx-auto max-w-[52rem] px-5 md:px-8 py-14 md:py-20">
+
+    
+<header class="mb-10 md:mb-14">
+  
+  <p class="inline-block mb-5 px-3 py-1.5 rounded bg-signal-wash border-l-[3px] border-signal text-signal text-[0.6875rem] font-extrabold uppercase tracking-[0.18em]">Runink FACE</p>
+  
+
+  <h1 class="font-heading font-extrabold text-ink text-[2rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.05] tracking-[-0.01em] max-w-[26ch] mt-0 mb-4">Privacidade dos Dados do Cliente e Relatório de Emissões</h1>
+
+  
+  <p class="text-ink-2 text-base md:text-lg leading-[1.65] max-w-[62ch] m-0">Operar um sistema escreve dados pessoais nos próprios logs sem ninguém notar, e o relatório de emissões leva um trimestre para ficar pronto. Aqui está exatamente o que o software faz com cada um dos dois, inclusive as partes que ele não faz.</p>
+  
+
+  
+  <p class="mt-5 mb-0 text-ink-3 text-xs font-semibold uppercase tracking-[0.14em]">20 May 2024 · 13 min read</p>
+  
+</header>
+
+
+    
+
+    
+    
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      <section class="py-8">
+    <div class="container mx-auto px-4">
+        
+<div class="max-w-5xl mx-auto px-4">
+
+<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Conformidade e relatório de emissões</p>
+<p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, e não da plataforma que está por baixo dele. Vale dizer isso sem rodeios, porque conformidade soa como assunto de plataforma: as conferências descritas aqui leem os registros que o FACE guarda dos seus embarques e dos seus relatórios, e fazem parte do FACE em vez de serem um acréscimo à infraestrutura.</p>
+
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
+<li><strong class="text-stone-200">Os dados pessoais não chegam aos logs.</strong> Endereços de e-mail, telefones, números de cartão, números de identificação nacional e endereços IP são retirados do que vai para os logs e para os diagnósticos antes de ser escrito, então o rastro que um sistema deixa ao rodar não se torna uma segunda cópia dos dados.</li>
+<li><strong class="text-stone-200">Isso é uma propriedade da plataforma, não um relatório que você roda &mdash; e não tem teste nenhum.</strong> A remoção acontece no caminho de escrita por baixo de cada serviço, em todo lugar em que um serviço escreve uma linha. Também vamos te dizer que a própria função de remoção não tem teste algum, porque uma lista do que uma expressão regular deveria pegar não é prova de que ela pega. Leia a lista como descrição de intenção, não como certificação.</li>
+<li><strong class="text-stone-200">O número de emissões é um fator rodoviário publicado vezes uma distância de rota &mdash; e hoje o cartão é só de demonstração.</strong> Não pesos, não modais, não um modelo. Um único fator do poço à roda, para um caminhão pesado a diesel, aplicado às distâncias de rota que estão nos dados de rota, com o método escrito em cima do número. Hoje esses dados de rota são um arquivo de amostra semeado, então uma instância conectada não mostra cartão de emissões nenhum. Mar e ar não entram, e onde não há dado de distância o cartão não aparece, em vez de aparecer com uma estimativa no lugar.</li>
+</ul>
+
+    <div class="text-center mb-16">
+        <h2 id="dois-relatorios-que-ninguem-tem-tempo-de-montar" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Dois Relatórios Que Ninguém Tem Tempo De Montar.</h2>
+        <p class="text-xl text-stone-400 font-bold leading-relaxed">
+            Privacidade e emissões parecem problemas diferentes. São o mesmo problema: registros espalhados por sistemas que só uma pessoa juntando tudo à mão consegue responder.
+        </p>
+    </div>
+
+    <div class="flex flex-col gap-12 mb-20">
+        <div>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                O nome e o endereço do cliente são necessários para entregar a encomenda. Não são necessários no painel de uma transportadora, num relatório enviado a um parceiro, nem na cópia do arquivo que alguém baixou para uma reunião. Mas o campo viaja junto com o registro, e segue viajando.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Ninguém planeja isso. Acontece porque o caminho mais curto para responder a uma pergunta é exportar o que você tem, e o que você tem ainda traz os dados pessoais dentro.
+            </p>
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
+                Você não consegue proteger o que não vê saindo.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                O relatório de emissões tem o mesmo formato. Os números de que você precisa — quanto foi movido, por qual distância, por qual meio — estão todos nos seus próprios registros de embarque. Só que estão em vários sistemas, em vários formatos, e juntar tudo consome um trimestre do ano de alguém.
+            </p>
+        </div>
+        <div>
+            <h2 id="para-quem-e-isto" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Para Quem É Isto</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Dois relatórios, três mesas, e a mesma pergunta debaixo dos dois: você consegue mostrar a sua conta?
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O encarregado de proteção de dados, e conformidade e riscos.</strong> O que chega hoje é o nome e o endereço de um cliente, que foram necessários uma vez para entregar uma encomenda e viajam com o registro desde então &mdash; para uma exportação, um relatório de parceiro, um arquivo de log que ninguém lê até algo dar errado. O que muda é onde o rastro para. Os dados pessoais são retirados dos logs e dos diagnósticos antes de serem escritos, no caminho por baixo de cada serviço e não num relatório que alguém lembra de rodar.</li>
+                <li><strong class="text-stone-200">TI e segurança da informação.</strong> O que chega hoje é uma pergunta que só se responde contando: quais dos seus serviços escrevem logs de aplicação, e quais deles passam o que escrevem por alguma remoção antes de guardar ou enviar. O que muda é que a resposta é uma propriedade de como o software foi construído, descrita em frases comuns que você pode confrontar numa revisão de código &mdash; então a conversa de segurança vira uma descrição, e não uma negociação.</li>
+                <li><strong class="text-stone-200">Auditoria interna, e quem responde pelo relatório.</strong> O que chega hoje é um pedido para explicar por que um número é o que é, meses depois de quem o montou ter saído. O que muda é que o método viaja com o número na mesma frase, e que uma conferência que não pôde rodar fica escrita como entrada própria em vez de passar caladamente por um resultado limpo.</li>
+            </ul>
+        </div>
+        <div>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                No lado da privacidade, o mecanismo é mais estreito do que costuma ser vendido, e vale dizer com exatidão. Todo serviço escreve os seus logs e diagnósticos por meio de uma etapa de remoção compartilhada, que tira do texto os endereços de e-mail, os telefones, os números de cartão, os números de identificação nacional e os endereços IP e de hardware antes de o texto cair em algum lugar, junto com campos nomeados — senhas, tokens, segredos, chaves de licença, URLs de webhook — onde quer que apareçam num conteúdo estruturado. O ponto é que operar um sistema não cria em silêncio uma segunda cópia dos dados pessoais que estão dentro dele: o lugar onde vazamentos são descobertos tarde, e o lugar onde ninguém pensa em olhar. O que ele <em>não</em> faz é conferir os seus relatórios ou as suas telas de expedição, decidir que um nome não deveria estar numa delas, ou dizer quem viu. Não há aqui conferência de tela nem achado de exposição; se alguma página te disse o contrário, ela estava descrevendo algo que não existe.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                E há uma coisa que não vamos deixar uma lista de tópicos esconder. Essa remoção não tem teste próprio. A ordem interna é cuidadosa — números de cartão são procurados antes de telefones, para que o padrão de telefone não engula um cartão — e ela é chamada de todo serviço que escreve uma linha, mas ninguém escreveu um teste que prove que ela pega o que diz pegar. Uma regra sem conferência é um comentário. Preferimos que você ouça isso de nós a encontrar numa pasta de <em>due diligence</em>.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Nas emissões, é preciso ser exato sobre do que o número é feito, porque a categoria não é. É um único fator publicado de transporte rodoviário — do poço à roda, para um caminhão pesado a diesel — multiplicado por uma distância de rota tirada dos dados de rota em vez de modelada, e anualizado sobre um número declarado de dias úteis. O método viaja junto com o número, na mesma frase, para que um auditor leia a premissa no mesmo momento em que lê o número. O que não é: um modelo de peso e modal. Mar e ar não estão dentro, e uma rota cuja distância nunca foi medida não dá nada em vez de dar um chute. E é, hoje, um cartão só de demonstração: as distâncias de rota que ele multiplica são lidas de um arquivo de amostra semeado, atrás da mesma chave que acende o selo de dados de demonstração. Uma instância sem nada conectado não produz cartão de emissões, em vez de produzir um exemplo pronto com o seu nome em cima, e numa instância com os seus próprios sistemas conectados o cartão continua ausente até que esse caminho seja construído.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                Aqui havia também uma taxa de redução: uma parcela pela qual uma rota mudada supostamente cortava emissões, apresentada como bem estabelecida e sem fonte nenhuma. Foi apagada, e agora existe um teste cujo único trabalho é falhar se alguém recolocar uma taxa de redução. Uma distância e um fator não sustentam um contrafactual, e o jeito mais barato de manter isso verdadeiro foi tornar essa ausência exigível em vez de confiá-la à memória.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Os dois guardam registro do próprio trabalho. Quando um auditor pergunta por que um número é aquele, ou quando um órgão regulador pergunta quem viu o endereço de um cliente, a resposta vem do registro, e não da memória de quem montou a planilha.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                O registro também mantém separadas as duas respostas que as pessoas costumam misturar. &ldquo;Conferimos isso e não achamos nada&rdquo; e &ldquo;não conseguimos ler isso, então nunca foi conferido&rdquo; ficam anotadas como coisas diferentes. A segunda é o achado que uma auditoria de fato procura, e é a que um visto verde normalmente engole.
+            </p>
+        </div>
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
+             <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
+             <p class="text-lg text-stone-400 font-medium mb-6">
+                Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
+             </p>
+             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Dias de trabalho no seu ciclo de relatórios.</strong> Pergunte a quem monta o relatório de emissões quantos dias levou no ano passado, e quantos desses dias foram gastos achando números em vez de conferi-los.</li>
+                <li><strong class="text-stone-200">Quanto do relatório você consegue comprovar.</strong> Conte a parte dos seus números que chega a um registro de embarque que você pode apontar, contra a parte que se apoia numa estimativa que hoje ninguém sabe defender.</li>
+                <li><strong class="text-stone-200">Onde os dados pessoais de fato estão.</strong> Pegue uma amostra dos relatórios e das telas que os seus parceiros e transportadoras veem. Conte quantos trazem um nome, um telefone ou um endereço. A maior parte das equipes nunca contou isso.</li>
+                <li><strong class="text-stone-200">Quanto dos seus próprios logs passa por alguma remoção.</strong> Conte os serviços que escrevem logs de aplicação, e depois conte aqueles cuja saída passa por alguma etapa de remoção antes de ser guardada ou enviada a um provedor de logs. Essa é a linha de base de que a metade de privacidade desta página fala, e é a que a maior parte das equipes consegue levantar numa tarde e preferiria não levantar.</li>
+             </ul>
+             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traga o relatório do ano passado e uma amostra das telas que os parceiros veem.</p>
+        </div>
+    </div>
+
+    <div class="border-l-2 border-stone-700 pl-5 mb-16">
+        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Situação: hipotético &mdash; não medido; postura de conformidade declarada por nós</p>
+        <p class="text-base text-stone-500 font-medium mb-4">
+            As exposições e o ciclo de relatórios acima são desenhados para mostrar a forma do trabalho. Não são o relato de um trabalho com cliente, e nada nesta página é resultado medido.
+        </p>
+        <p class="text-base text-stone-500 font-medium">
+            Duas coisas que esta página não afirma. O FACE é <strong class="text-stone-300">orientado a SOC&nbsp;2</strong>, o que é uma intenção de projeto que nós mesmos declaramos: não é auditoria concluída e não é certificação. E nada aqui deixa você em conformidade com coisa alguma. O software acha o registro, mostra a regra contra a qual ele foi lido, e entrega os dois à pessoa que responde por isso. Se você cumpre uma obrigação é um julgamento que fica com o seu responsável de conformidade, o seu encarregado de dados e o seu auditor, e estaríamos mentindo para você se sugeríssemos outra coisa.
+        </p>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+<section class="bg-stone-900">
+    <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-12">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">O Que Um Responsável Por Conformidade Pergunta Primeiro</h2>
+            
+            <p class="mb-5 font-light text-ink-2 sm:text-xl">O que a parte de privacidade realmente faz, de que é feito o número de emissões, e o que esta página não afirma.</p>
+            
+        </div>
+
+        
+        <div class="space-y-6">
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">O que impede que dados pessoais cheguem aos nossos logs?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Um único passo de remoção, colocado no caminho de escrita por baixo de cada serviço e não numa ferramenta que alguém roda depois. Todo serviço escreve os seus logs e diagnósticos através dele, e ele tira do texto endereços de e-mail, telefones, números de cartão, números de identificação nacional e endereços de rede e de equipamento antes de a linha ser gravada. Campos nomeados também saem — senhas, tokens, segredos, chaves de licença, URLs de webhook — onde quer que apareçam numa estrutura de dados.<!-- raw HTML omitted --><!-- raw HTML omitted -->A ordem interna é proposital: números de cartão são reconhecidos antes de telefones, para que um padrão de telefone não engula um cartão. Leia essa lista como uma descrição do que o passo foi construído para pegar. É uma descrição do mecanismo, não um certificado, e preferimos que você ouça nesses termos.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Isto varre os nossos painéis e exportações atrás de dados pessoais expostos?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    O mecanismo é mais estreito do que a categoria costuma ser vendida, e vale dizer exatamente o que ele é. Ele trabalha sobre o que os seus próprios sistemas escrevem a respeito de si mesmos: logs, diagnósticos e as estruturas de dados que vão junto, limpos na saída para que operar um sistema não crie caladamente um segundo depósito dos dados pessoais que existem dentro dele. É ali que vazamentos são descobertos tarde e onde ninguém pensa em olhar.<!-- raw HTML omitted --><!-- raw HTML omitted -->O que você compra aqui é esse rastro sair limpo por construção, em todo lugar em que um serviço escreve uma linha. Decidir quem deveria poder ver o endereço de um cliente numa tela que um parceiro vê é uma questão de política sobre os seus próprios sistemas, e fica com quem responde por eles.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">De que é feito, de fato, o número de emissões?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Um único fator publicado de transporte rodoviário — do poço à roda, para um caminhão pesado a diesel — multiplicado por uma distância de rota tirada dos dados de rota em vez de modelada, e anualizada sobre um número declarado de dias úteis. O método viaja com o número na mesma frase, então um auditor lê a premissa no mesmo momento em que lê o número.<!-- raw HTML omitted --><!-- raw HTML omitted -->Seja claro sobre as bordas, porque a categoria não é. É transporte rodoviário: mar e ar ficam de fora. Uma rota cuja distância nunca foi medida não devolve nada, em vez de devolver um palpite. E as distâncias que hoje estão atrás do cartão vêm de um arquivo de amostra, então o que você está olhando é o método mostrado, e não uma leitura das suas próprias rotas. Aqui também já houve uma taxa de redução — a parcela em que se dizia que uma rota alterada cortava emissões, sem fonte nenhuma — e ela foi apagada, com um teste cujo único trabalho é falhar se alguém puser outra.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">O que acontece quando uma conferência não pôde rodar?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Fica escrita como entrada própria: a conformidade não foi avaliada, com essas palavras, mantida de propósito separada de uma avaliação que rodou e não achou nada. Uma quantidade que ninguém mediu fica guardada como não medida e com um motivo, em vez de arredondada para zero.<!-- raw HTML omitted --><!-- raw HTML omitted -->Juntar as duas num único sinal verde é como “conferimos isto e não havia nada” e “não conseguimos ler isto, então nunca foi conferido” acabam parecendo iguais num relatório. A segunda é o achado que uma auditoria realmente procura, e é a que costuma sumir.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Um regulador pergunta quem viu o endereço de um cliente. Quem responde?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Você, a partir do registro e não da memória. As duas metades desta página guardam a própria conta — o que foi lido, contra que regra foi lido, o que foi achado, quem olhou e quando — então responder a um pedido do supervisor é busca no arquivo, não um projeto de reconstrução em quatro sistemas.<!-- raw HTML omitted --><!-- raw HTML omitted -->A pessoa responsável continua sendo a sua. O que muda é quanto tempo ela leva para conseguir responder, e se a resposta se apoia em documentos ou na lembrança que alguém tem de uma terça-feira.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Algo disto nos torna conformes, ou certifica alguma coisa?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Conformidade é um julgamento, e ele fica com quem o carrega. O que o software faz é achar o registro, mostrar a regra contra a qual ele foi lido e entregar os dois à pessoa responsável — o seu responsável por conformidade, o seu encarregado de proteção de dados, o seu auditor. Se a obrigação foi cumprida é decisão deles, e estaríamos mentindo para você se sugeríssemos outra coisa.<!-- raw HTML omitted --><!-- raw HTML omitted -->A mesma distinção vale para nós. A postura própria do FACE é orientada a SOC 2, que é uma intenção de projeto que declaramos nós mesmos: não é uma auditoria concluída, e não é uma afirmação de que a Runink tenha certificação sob SOC 2, ISO 27001, ISO 42001 ou qualquer outro esquema. Onde essa diferença importa para você, peça o documento de postura em vez de levar uma palavra tirada de uma página na web.
+                </div>
+            </details>
+            
+        </div>
+    </div>
+</section>
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Um único passo de remoção, colocado no caminho de escrita por baixo de cada serviço e não numa ferramenta que alguém roda depois. Todo serviço escreve os seus logs e diagnósticos através dele, e ele tira do texto endereços de e-mail, telefones, números de cartão, números de identificação nacional e endereços de rede e de equipamento antes de a linha ser gravada. Campos nomeados também saem — senhas, tokens, segredos, chaves de licença, URLs de webhook — onde quer que apareçam numa estrutura de dados.A ordem interna é proposital: números de cartão são reconhecidos antes de telefones, para que um padrão de telefone não engula um cartão. Leia essa lista como uma descrição do que o passo foi construído para pegar. É uma descrição do mecanismo, não um certificado, e preferimos que você ouça nesses termos."},"name":"O que impede que dados pessoais cheguem aos nossos logs?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"O mecanismo é mais estreito do que a categoria costuma ser vendida, e vale dizer exatamente o que ele é. Ele trabalha sobre o que os seus próprios sistemas escrevem a respeito de si mesmos: logs, diagnósticos e as estruturas de dados que vão junto, limpos na saída para que operar um sistema não crie caladamente um segundo depósito dos dados pessoais que existem dentro dele. É ali que vazamentos são descobertos tarde e onde ninguém pensa em olhar.O que você compra aqui é esse rastro sair limpo por construção, em todo lugar em que um serviço escreve uma linha. Decidir quem deveria poder ver o endereço de um cliente numa tela que um parceiro vê é uma questão de política sobre os seus próprios sistemas, e fica com quem responde por eles."},"name":"Isto varre os nossos painéis e exportações atrás de dados pessoais expostos?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Um único fator publicado de transporte rodoviário — do poço à roda, para um caminhão pesado a diesel — multiplicado por uma distância de rota tirada dos dados de rota em vez de modelada, e anualizada sobre um número declarado de dias úteis. O método viaja com o número na mesma frase, então um auditor lê a premissa no mesmo momento em que lê o número.Seja claro sobre as bordas, porque a categoria não é. É transporte rodoviário: mar e ar ficam de fora. Uma rota cuja distância nunca foi medida não devolve nada, em vez de devolver um palpite. E as distâncias que hoje estão atrás do cartão vêm de um arquivo de amostra, então o que você está olhando é o método mostrado, e não uma leitura das suas próprias rotas. Aqui também já houve uma taxa de redução — a parcela em que se dizia que uma rota alterada cortava emissões, sem fonte nenhuma — e ela foi apagada, com um teste cujo único trabalho é falhar se alguém puser outra."},"name":"De que é feito, de fato, o número de emissões?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Fica escrita como entrada própria: a conformidade não foi avaliada, com essas palavras, mantida de propósito separada de uma avaliação que rodou e não achou nada. Uma quantidade que ninguém mediu fica guardada como não medida e com um motivo, em vez de arredondada para zero.Juntar as duas num único sinal verde é como “conferimos isto e não havia nada” e “não conseguimos ler isto, então nunca foi conferido” acabam parecendo iguais num relatório. A segunda é o achado que uma auditoria realmente procura, e é a que costuma sumir."},"name":"O que acontece quando uma conferência não pôde rodar?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Você, a partir do registro e não da memória. As duas metades desta página guardam a própria conta — o que foi lido, contra que regra foi lido, o que foi achado, quem olhou e quando — então responder a um pedido do supervisor é busca no arquivo, não um projeto de reconstrução em quatro sistemas.A pessoa responsável continua sendo a sua. O que muda é quanto tempo ela leva para conseguir responder, e se a resposta se apoia em documentos ou na lembrança que alguém tem de uma terça-feira."},"name":"Um regulador pergunta quem viu o endereço de um cliente. Quem responde?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Conformidade é um julgamento, e ele fica com quem o carrega. O que o software faz é achar o registro, mostrar a regra contra a qual ele foi lido e entregar os dois à pessoa responsável — o seu responsável por conformidade, o seu encarregado de proteção de dados, o seu auditor. Se a obrigação foi cumprida é decisão deles, e estaríamos mentindo para você se sugeríssemos outra coisa.A mesma distinção vale para nós. A postura própria do FACE é orientada a SOC 2, que é uma intenção de projeto que declaramos nós mesmos: não é uma auditoria concluída, e não é uma afirmação de que a Runink tenha certificação sob SOC 2, ISO 27001, ISO 42001 ou qualquer outro esquema. Onde essa diferença importa para você, peça o documento de postura em vez de levar uma palavra tirada de uma página na web."},"name":"Algo disto nos torna conformes, ou certifica alguma coisa?"}]}
+</script>
+
+<section class="py-12">
+    <div class="container mx-auto px-4">
+        
+<div class="max-w-5xl mx-auto px-4">
+    <div class="text-center">
+        <a href="/pt/?about=Privacidade%20dos%20Dados%20do%20Cliente%20e%20Relat%C3%B3rio%20de%20Emiss%C3%B5es#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
+            Agende uma conversa
+        </a>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+    </div>
+
+    
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More in this section">
+      
+      <a href="/pt/use-cases/paralegal-review/" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Qual Cláusula Rege Isso, e Quem Conferiu</span>
+      </a>
+      
+      
+      <a href="/pt/use-cases/supply-chain-visibility/" class="group no-underline sm:text-right sm:col-start-2">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Next</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">O Retrato Que Ninguém Tem Tempo de Montar</span>
+      </a>
+      
+    </nav>
+    
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<section class="cta-section my-24">
+    <div class="container">
+        <div
+            class="relative rounded-xl p-8 md:p-16 bg-stone-800/40 border border-stone-700 backdrop-blur shadow-2xl overflow-hidden group">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-signal-fill-hover to-signal-fill opacity-20 blur transition duration-1000 group-hover:opacity-40 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Runink: dados em que confiar. Decisões que você pode defender.</h2>
+                <p class="text-xl md:text-2xl text-ink-2 mb-10 max-w-2xl mx-auto leading-relaxed">O Runink FACE lê os registros logísticos que você já mantém, compara cada um com a regra que o rege e redige uma ação para quem decide. Tudo em uma infraestrutura que você controla.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    
+                    
+                    <a href="/pt/?about=Privacidade%20dos%20Dados%20do%20Cliente%20e%20Relat%C3%B3rio%20de%20Emiss%C3%B5es#contact-form"
+                        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-signal hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
+                        Agende uma consulta <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+        
+        
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Rodapé">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contato</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/pt/#contact-form">Escreva para nós</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explorar</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Setores</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/pricing/">Preços</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Leituras</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/library/">Biblioteca</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/use-cases/">Cenários de trabalho</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/blog/">Todos os artigos</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Empresa</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/company/">Sobre a Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">Licença</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Política de privacidade</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. Todos os direitos reservados.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Idiomas: English, Français, Español, Português — escolha um na barra no topo da página.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>

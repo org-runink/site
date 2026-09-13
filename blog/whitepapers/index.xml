@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Whitepapers on Runink</title>
+    <link>https://runink.org/blog/whitepapers/</link>
+    <description>Recent content in Whitepapers on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://runink.org/blog/whitepapers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Runink FACE — Fulfilment Autonomous Claims Engine</title>
+      <link>https://runink.org/blog/whitepapers/runink-face/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-face/</guid>
+      <description>&lt;h2 id=&#34;what-this-document-is&#34;&gt;What this document is&lt;/h2&gt;&lt;p&gt;This is a description of a working product, written for the person who has&#xA;to decide whether to buy it.&lt;/p&gt;&#xA;&lt;p&gt;It contains no case studies, no customer names and no return-on-investment&#xA;figures. Those are easy to write and impossible to check. What it explains&#xA;instead is the mechanism: what the software looks at, what it produces, who&#xA;approves it, and where it all runs.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-this-document-refuses-to-claim-and-why-that-is-the-product&#34;&gt;What this document refuses to claim, and why that is the product&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;FACE does not publish a figure for what it saves you, and it cannot.&lt;/strong&gt;&#xA;Four places in the software once produced such a figure, and each one was a&#xA;made-up multiplier applied to a real number: spend times a constant, distance&#xA;times an invented rate per kilometre, a reserve times a fraction, unused&#xA;capacity times a fraction. All four were deleted, and the test that now&#xA;stands in their place asserts that the software&amp;rsquo;s derived savings total is&#xA;&lt;strong&gt;zero&lt;/strong&gt; — because no rate in the codebase can honestly turn a distance, a&#xA;spend or a reserve into a saving, and a board built out of invented rates is&#xA;worse than an empty one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink CORE — The operations layer for companies that keep their own data</title>
+      <link>https://runink.org/blog/whitepapers/runink-core/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-core/</guid>
+      <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive summary&lt;/h2&gt;&lt;p&gt;Most companies now run more software than any one person can hold in their head. The&#xA;applications came from different places and different years. Each one has its own way of&#xA;being started, its own way of being watched, its own way of being changed, and its own idea&#xA;of who is allowed to touch the information it reads. When something goes wrong at four in&#xA;the morning, the first hour is spent working out where to look.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink PULSE — Prescriptive Unified Lead &amp; Social Engine</title>
+      <link>https://runink.org/blog/whitepapers/runink-pulse/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-pulse/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&lt;p&gt;Most companies smaller than the very largest run marketing as a patchwork. There is an agency&#xA;on retainer for the work nobody in-house has time for. There is a tool for scheduling posts,&#xA;a CRM holding the customer records, a screen of website statistics, a design tool and a&#xA;writing assistant, each holding a different fragment of what the company knows about itself.&#xA;And increasingly there is a habit — often undeclared — of pasting positioning notes, customer&#xA;lists and pipeline detail into text generators owned by somebody else.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink CORE and Atlas — Continuous oversight, with a second opinion on every finding</title>
+      <link>https://runink.org/blog/whitepapers/runink-core-atlas/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-core-atlas/</guid>
+      <description>&lt;h2 id=&#34;what-this-paper-is-and-which-part-of-it-runs&#34;&gt;What this paper is, and which part of it runs&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;What runs.&lt;/strong&gt; CORE accepts findings from an outside assessment platform, judges each one, and&#xA;hands the verdicts back. That path is built, and it has been exercised end to end in automated&#xA;testing. Pages 11 to 13 describe it as it is written, and every claim in this paper should be&#xA;read against them.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is drawn.&lt;/strong&gt; The other direction — CORE reaching into Atlas to collect findings itself,&#xA;or to push verdicts into it — is a named way in with nothing written behind it. It waits on a&#xA;written description from Logical Leap&amp;rsquo;s side of how to call Atlas; Atlas is offered in private&#xA;beta, to selected customers rather than generally, and does not publish one, which is ordinary&#xA;for a product at that stage.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

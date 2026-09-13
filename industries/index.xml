@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Industries on Runink</title>
+    <link>https://runink.org/industries/</link>
+    <description>Recent content in Industries on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 12 Sep 2026 12:47:05 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/industries/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logistics &amp; Supply Chain</title>
+      <link>https://runink.org/industries/logistics-supply-chain/</link>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/industries/logistics-supply-chain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Insurance</title>
+      <link>https://runink.org/industries/insurance/</link>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/industries/insurance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Banking &amp; Financial Services</title>
+      <link>https://runink.org/industries/banking-financial-services/</link>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/industries/banking-financial-services/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Telecom</title>
+      <link>https://runink.org/industries/telecom/</link>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/industries/telecom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Marketing</title>
+      <link>https://runink.org/industries/marketing/</link>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/industries/marketing/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

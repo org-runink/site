@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-full" data-ground="console">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    <title>Runink FACE — Fulfilment Autonomous Claims Engine | Runink</title>
+
+    <meta name="description" content="A whitepaper for operations, finance and supply-chain leadership. How Runink FACE reads your operational data, works out what is going wrong, and drafts the fix for a named person to approve.">
+    <meta name="author" content="Runink">
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta property="og:title" content="Runink FACE — Fulfilment Autonomous Claims Engine | Runink">
+    <meta property="og:description" content="A whitepaper for operations, finance and supply-chain leadership. How Runink FACE reads your operational data, works out what is going wrong, and drafts the fix for a named person to approve.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/whitepapers/runink-face/">
+    <meta property="og:site_name" content="Runink">
+    <meta property="og:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Runink FACE — Fulfilment Autonomous Claims Engine | Runink">
+    <meta name="twitter:description" content="A whitepaper for operations, finance and supply-chain leadership. How Runink FACE reads your operational data, works out what is going wrong, and drafts the fix for a named person to approve.">
+    
+    <meta name="twitter:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="canonical" href="https://runink.org/blog/whitepapers/runink-face/">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSans-Book.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSansCondensed-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+
+    
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/whitepaper.min.2f99212768da1aa490bf165a10b9d166ffc165758d4f843a773427e851c33477.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/blog/whitepapers/runink-face/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Shorter notes",
+          "item": "https://runink.org/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Whitepapers",
+          "item": "https://runink.org/blog/whitepapers/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  4 ,
+          "name": "Runink FACE — Fulfilment Autonomous Claims Engine"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/blog/whitepapers/runink-face/"
+  },
+  "headline": "Runink FACE — Fulfilment Autonomous Claims Engine",
+  "description": "A whitepaper for operations, finance and supply-chain leadership. How Runink FACE reads your operational data, works out what is going wrong, and drafts the fix for a named person to approve.",
+  
+  
+  "datePublished": "2026-09-03T00:00:00Z",
+  "dateModified": "2026-09-12T12:51:09-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+
+    
+    <a class="wp-skip" href="#wp-main">Skip to the paper</a>
+
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=The%20Runink%20FACE%20paper#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=The%20Runink%20FACE%20paper#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    <div class="pt-20" id="wp-main" tabindex="-1">
+        
+        
+<main id="content">
+<div class="wp">
+  <header class="wp-hero">
+    <p class="wp-hero-eyebrow wp-util">
+      <span translate="no">Runink FACE</span>
+      <span aria-hidden="true">/</span>
+      <span>Whitepaper</span>
+      
+    </p>
+
+    <div class="wp-hero-title">
+      <h1>The evidence of your next loss is already in your systems.</h1>
+      <p class="wp-hero-sub">Fulfilment Autonomous Claims Engine</p>
+    </div>
+
+    <div class="wp-hero-side">
+      <div class="wp-hero-deck">
+        <p>Runink FACE reads your operational data, works out what is going wrong,
+and drafts the fix — the order to hold, the reroute, the declaration, the
+claim — for a named person to approve.</p>
+<p><strong>A drafted action waits. Approving it is what sends it, and the approver&rsquo;s
+name goes on the record.</strong></p>
+
+      </div>
+    </div>
+
+  </header>
+
+  <div class="wp-body">
+    <nav class="wp-rail" aria-labelledby="register-heading">
+      <p class="wp-rail-head wp-util" id="register-heading">
+        Register &mdash; 26 chapters, 30 pages
+      </p>
+
+      
+      <button type="button" class="wp-rail-toggle" aria-expanded="false" aria-controls="register-panel" hidden>
+        <span>Contents &mdash; 26 chapters</span>
+        <svg class="wp-rail-toggle-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+          <path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="wp-rail-panel" id="register-panel">
+        <ol class="wp-reg">
+          
+          <li>
+            <a href="#what-this-document-is">
+              <span class="wp-reg-page" aria-hidden="true">2</span>
+              <span class="wp-reg-title">What this document is<span class="wp-sr">, page 2</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-problem-in-your-terms">
+              <span class="wp-reg-page" aria-hidden="true">3</span>
+              <span class="wp-reg-title">The problem, in your terms<span class="wp-sr">, page 3</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#who-has-this-problem">
+              <span class="wp-reg-page" aria-hidden="true">4</span>
+              <span class="wp-reg-title">Who has this problem<span class="wp-sr">, page 4</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#who-owns-it-who-sponsors-it-and-who-signs-it-off">
+              <span class="wp-reg-page" aria-hidden="true">5</span>
+              <span class="wp-reg-title">Who owns it, who sponsors it, and who signs it off<span class="wp-sr">, page 5</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-the-problem-costs">
+              <span class="wp-reg-page" aria-hidden="true">6</span>
+              <span class="wp-reg-title">What the problem costs<span class="wp-sr">, page 6</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-face-does-about-it">
+              <span class="wp-reg-page" aria-hidden="true">7</span>
+              <span class="wp-reg-title">What FACE does about it<span class="wp-sr">, page 7</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#how-it-works-in-four-steps">
+              <span class="wp-reg-page" aria-hidden="true">8</span>
+              <span class="wp-reg-title">How it works, in four steps<span class="wp-sr">, page 8</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#rules-recon-what-you-think-you-enforce">
+              <span class="wp-reg-page" aria-hidden="true">9</span>
+              <span class="wp-reg-title">Rules Recon: what you think you enforce<span class="wp-sr">, page 9</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#actionable-twins-one-queue-ranked">
+              <span class="wp-reg-page" aria-hidden="true">10</span>
+              <span class="wp-reg-title">Actionable Twins: one queue, ranked<span class="wp-sr">, page 10</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#hypothesis-lab-state-it-before-you-commit">
+              <span class="wp-reg-page" aria-hidden="true">11</span>
+              <span class="wp-reg-title">Hypothesis Lab: state it before you commit<span class="wp-sr">, page 11</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#fetch-center-and-maturity-center">
+              <span class="wp-reg-page" aria-hidden="true">12</span>
+              <span class="wp-reg-title">Fetch Center and Maturity Center<span class="wp-sr">, page 12</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-the-analysis-actually-covers">
+              <span class="wp-reg-page" aria-hidden="true">13</span>
+              <span class="wp-reg-title">What the analysis actually covers<span class="wp-sr">, page 13</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-the-queue-is-made-of">
+              <span class="wp-reg-page" aria-hidden="true">14</span>
+              <span class="wp-reg-title">What the queue is made of<span class="wp-sr">, page 14</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-numbers-are-computed-or-they-are-absent">
+              <span class="wp-reg-page" aria-hidden="true">15</span>
+              <span class="wp-reg-title">The numbers are computed, or they are absent<span class="wp-sr">, page 15</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#reaching-it-from-where-the-work-happens">
+              <span class="wp-reg-page" aria-hidden="true">16</span>
+              <span class="wp-reg-title">Reaching it from where the work happens<span class="wp-sr">, page 16</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#where-it-runs-and-why-that-is-a-commercial-matter">
+              <span class="wp-reg-page" aria-hidden="true">17</span>
+              <span class="wp-reg-title">Where it runs, and why that is a commercial matter<span class="wp-sr">, page 17</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#how-control-is-kept">
+              <span class="wp-reg-page" aria-hidden="true">18</span>
+              <span class="wp-reg-title">How control is kept<span class="wp-sr">, page 18</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#compliance-posture">
+              <span class="wp-reg-page" aria-hidden="true">19</span>
+              <span class="wp-reg-title">Compliance posture<span class="wp-sr">, page 19</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-it-connects-to">
+              <span class="wp-reg-page" aria-hidden="true">20</span>
+              <span class="wp-reg-title">What it connects to<span class="wp-sr">, page 20</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-questions-a-buyer-asks">
+              <span class="wp-reg-page" aria-hidden="true">21&ndash;23</span>
+              <span class="wp-reg-title">The questions a buyer asks<span class="wp-sr">, page 21 to 23</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#who-this-is-for">
+              <span class="wp-reg-page" aria-hidden="true">24</span>
+              <span class="wp-reg-title">Who this is for<span class="wp-sr">, page 24</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-it-is-worth-computed-on-your-own-numbers">
+              <span class="wp-reg-page" aria-hidden="true">25&ndash;26</span>
+              <span class="wp-reg-title">What it is worth, computed on your own numbers<span class="wp-sr">, page 25 to 26</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-adopting-it-involves">
+              <span class="wp-reg-page" aria-hidden="true">27</span>
+              <span class="wp-reg-title">What adopting it involves<span class="wp-sr">, page 27</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-commercial-shape">
+              <span class="wp-reg-page" aria-hidden="true">28</span>
+              <span class="wp-reg-title">The commercial shape<span class="wp-sr">, page 28</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-argument-in-one-page">
+              <span class="wp-reg-page" aria-hidden="true">29</span>
+              <span class="wp-reg-title">The argument in one page<span class="wp-sr">, page 29</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-next-step">
+              <span class="wp-reg-page" aria-hidden="true">30</span>
+              <span class="wp-reg-title">The next step<span class="wp-sr">, page 30</span></span>
+            </a>
+          </li>
+          
+        </ol>
+      </div>
+    </nav>
+
+    <article class="wp-sheet" id="document">
+      <div class="wp-doc">
+        
+        <h2 id="what-this-document-is">What this document is</h2><p>This is a description of a working product, written for the person who has
+to decide whether to buy it.</p>
+<p>It contains no case studies, no customer names and no return-on-investment
+figures. Those are easy to write and impossible to check. What it explains
+instead is the mechanism: what the software looks at, what it produces, who
+approves it, and where it all runs.</p>
+<h3 id="what-this-document-refuses-to-claim-and-why-that-is-the-product">What this document refuses to claim, and why that is the product</h3><p><strong>FACE does not publish a figure for what it saves you, and it cannot.</strong>
+Four places in the software once produced such a figure, and each one was a
+made-up multiplier applied to a real number: spend times a constant, distance
+times an invented rate per kilometre, a reserve times a fraction, unused
+capacity times a fraction. All four were deleted, and the test that now
+stands in their place asserts that the software&rsquo;s derived savings total is
+<strong>zero</strong> — because no rate in the codebase can honestly turn a distance, a
+spend or a reserve into a saving, and a board built out of invented rates is
+worse than an empty one.</p>
+<p>Where a quantity is calculated, the method is named. Where it is not
+calculated, the software carries the absence as a typed state with a reason
+attached — not as a zero, and not as a plausible number. Two sentences from
+the codebase explain the discipline better than any feature list:</p>
+<blockquote>
+<p><strong>A rule with no check is a comment.</strong></p>
+<p><strong>A test a comment can satisfy certifies the exact condition it exists to
+detect.</strong></p></blockquote>
+<p>Ask every vendor in this category which of their numbers is an arithmetic
+result and which is a constant somebody chose, and watch how long the answer
+takes.</p>
+<p>A note on the name. The <em>claims</em> in Fulfilment Autonomous Claims Engine is
+where the product started, and recovering money you are owed is still one of
+the things it does best, because a recovery is the easiest kind of result to
+check — either the money arrives or it does not. It is one case among
+several, and the chapters that follow give the others the same room: demand
+that grows as it travels up the chain, customs and the papers that go with a
+shipment, what stock to hold and where, returns, and disruptions handled
+while they are still happening.</p>
+<h3 id="the-short-version">The short version</h3><p>Your business systems already contain the evidence of every loss you are
+about to take. The container drifting warm at two in the morning. The
+customs entry with a missing document and a daily port charge running. The
+order that grew by a third at every stage on its way up the chain, so the
+factory built for a demand that never existed. The returned item sent for
+scrap that was worth refurbishing. The claim that expired unfiled.</p>
+<p>The evidence is there. It is scattered across a dozen systems that were
+never designed to talk to each other, and nobody has the hours to
+assemble it.</p>
+<p>FACE assembles it. It connects to the systems you already run, works out
+what the combined picture means, and produces a specific, reviewable
+recommendation with the underlying records attached. A person reads it,
+approves or rejects it, and the decision is recorded against the
+recommendation with their name on it.</p>
+<p>That is the whole product. Everything that follows is detail about how
+well it does it, and where it runs.</p>
+<h2 id="the-problem-in-your-terms">The problem, in your terms</h2><p>Ask an operations director what their systems tell them, and you will get
+a version of this answer: <em>plenty, and too late.</em></p>
+<p>The reporting layer of a modern supply chain is not short of information.
+There are dashboards. There are weekly packs. There is a data warehouse
+that someone spent two years and a great deal of money filling.</p>
+<p>What there is not, is a mechanism that turns any of it into a decision
+before the cost is already incurred.</p>
+<h3 id="three-shapes-the-failure-takes">Three shapes the failure takes</h3><p><strong>You find out afterwards.</strong> A refrigerated container drifts out of its
+temperature range on a Thursday night. The reading is there in the sensor
+data. Nobody is reading sensor data at 2am. The cargo is written off on
+arrival, and the loss is discovered by the finance team a fortnight later,
+in a reconciliation.</p>
+<p><strong>You find out, and nobody acts.</strong> A customs entry is held at the port for
+a missing document. Somebody receives that notification. It joins four
+hundred other notifications. The port&rsquo;s daily charge runs for eleven days
+before a human connects the hold to the document to the invoice.</p>
+<p><strong>You never find out at all.</strong> A pattern nobody was looking for — a short-paid
+freight invoice, a claim inside its filing window, an order quantity that
+has quietly doubled at each stage on its way upstream — simply passes. No
+alert fires, because nothing was configured to look for it. The cost never
+appears in a report, because a cost you never identified has no line item.</p>
+<h3 id="why-more-reporting-has-not-fixed-it">Why more reporting has not fixed it</h3><p>Every one of these is a <em>decision</em> problem wearing a <em>data</em> problem&rsquo;s
+clothes. The information existed. What was absent was somebody with the
+time to assemble it, the authority to act on it, and the evidence to
+justify acting.</p>
+<p>Adding another dashboard adds another thing nobody has time to read.</p>
+<h2 id="who-has-this-problem">Who has this problem</h2><p>The problem is structural, not managerial. It appears wherever three
+conditions meet.</p>
+<p><strong>One: the operation spans systems that were bought separately.</strong>
+A warehouse system, a transport system, an accounting ledger, a
+customer-relationship system, a spreadsheet that one person maintains.
+Each is correct on its own. The loss lives in the space between them,
+where no single system has the whole picture.</p>
+<p><strong>Two: the volume exceeds the attention available.</strong>
+Exceptions arrive faster than people can read them. The team is not
+careless; it is outnumbered. During a seasonal peak the ratio gets worse
+precisely when the value at stake gets higher.</p>
+<p><strong>Three: the money is recoverable but only inside a window.</strong>
+Claims expire. Disputes have deadlines. Port charges accrue daily. An
+order placed on a forecast that has already turned cannot be unplaced. A
+finding that arrives a month late is not a finding, it is a post-mortem.</p>
+<h3 id="where-these-conditions-concentrate">Where these conditions concentrate</h3><ul>
+<li><strong>Freight forwarders and third-party logistics providers</strong>, where margin
+is thin and the difference between a good year and a bad one is the
+proportion of claims actually filed.</li>
+<li><strong>Manufacturers with international inbound flows</strong>, where a customs hold
+and a shipment with nobody named as legally answerable for the
+declaration turn into duty owed and the daily cost of a container
+sitting still.</li>
+<li><strong>Manufacturers and wholesalers replenishing through several stages</strong>,
+where a shop orders from a depot, the depot from a plant and the plant
+from its suppliers, and a small change at the customer end arrives at the
+far end of that sequence much larger than it started.</li>
+<li><strong>Food, pharmaceutical and chemical distributors</strong>, where a temperature
+breach is not a data point but a destroyed consignment and a regulatory
+conversation.</li>
+<li><strong>Retailers and distributors with high return volumes</strong>, where the
+decision on a returned item — restock, refurbish, recycle — is made by
+whoever is on the receiving dock that morning.</li>
+<li><strong>Any operation carrying an environmental or emissions reporting
+obligation</strong>, where the figures have to be defensible and the assembly of
+them consumes weeks.</li>
+</ul>
+<p>If your operation has all three conditions, you are already paying for
+this problem. The only question is whether the payment appears anywhere
+you can see it.</p>
+<h2 id="who-owns-it-who-sponsors-it-and-who-signs-it-off">Who owns it, who sponsors it, and who signs it off</h2><p>The previous page describes operations. This one describes people, because
+every purchase of this kind involves three of them and they are hardly ever
+the same person.</p>
+<p><strong>The person who feels it</strong> lives with the problem daily and can describe it
+without being asked twice. They are usually too junior to buy and too busy
+to be in the room, and their description is the most accurate one available
+anywhere in the building.</p>
+<p><strong>The person who sponsors it</strong> carries the budget and the consequence. They
+meet the problem as a figure in a monthly pack rather than as a lost
+afternoon, which is why the case has to reach them in their own units.</p>
+<p><strong>The person who signs it off</strong> can stop the purchase and cannot start it.
+Security, risk, compliance and data protection sit here. They are not
+obstacles. They are answering a question they will personally be held to.</p>
+<p>The commonest way a promising evaluation dies is that the case is made to
+one of the three in the language of another. So the table below names all
+three for each of the problems this paper works through later.</p>
+<div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>The problem</th>
+          <th>Feels it daily</th>
+          <th>Sponsors it</th>
+          <th>Signs it off</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Money you are owed</strong> — claims unfiled, invoices undisputed</td>
+          <td>The claims clerk and the freight-audit analyst assembling cases by hand</td>
+          <td>The finance director</td>
+          <td>Finance control, and technology for the data connection</td>
+      </tr>
+      <tr>
+          <td><strong>Customs and the papers</strong> — held entries, duty, nobody named as answerable</td>
+          <td>The customs broker and the trade-compliance officer</td>
+          <td>The supply-chain director</td>
+          <td>Trade compliance, and legal where a declaration is involved</td>
+      </tr>
+      <tr>
+          <td><strong>Demand that grows upstream</strong> — safety margins nobody owns</td>
+          <td>The demand planner and the production scheduler</td>
+          <td>The head of planning, or the operations director</td>
+          <td>Planning governance; finance where stock is committed</td>
+      </tr>
+      <tr>
+          <td><strong>Refrigerated cargo and sensor readings</strong></td>
+          <td>The control-tower operator on the night shift</td>
+          <td>The operations director</td>
+          <td>Quality and food safety; the regulator-facing function</td>
+      </tr>
+      <tr>
+          <td><strong>Returns and warranty recovery</strong></td>
+          <td>The receiving-dock supervisor and the returns clerk</td>
+          <td>The head of after-sales, or the category manager</td>
+          <td>Finance for credit notes; quality for disposition rules</td>
+      </tr>
+      <tr>
+          <td><strong>Disruption in progress</strong></td>
+          <td>The duty operations manager</td>
+          <td>The operations director</td>
+          <td>Customer-facing account management</td>
+      </tr>
+      <tr>
+          <td><strong>Rules you believe you enforce</strong></td>
+          <td>The internal auditor and the process owner</td>
+          <td>The head of compliance or risk</td>
+          <td>The external auditor, and the security lead</td>
+      </tr>
+      <tr>
+          <td><strong>Emissions and environmental reporting</strong></td>
+          <td>Whoever assembles the figures, usually as an addition to their real job</td>
+          <td>The sustainability lead, or the chief financial officer</td>
+          <td>Assurance, external verification, and the audit committee</td>
+      </tr>
+  </tbody></table></div>
+<p>Two patterns in that table are worth naming, because they decide how an
+evaluation should be run.</p>
+<p><strong>The sponsor is rarely the operations director alone.</strong> In five of the eight
+rows the money sits with finance. An operations director who wants this and
+cannot show a finance director the arithmetic will get a polite delay rather
+than a refusal, which is harder to work with.</p>
+<p><strong>The person who signs it off is almost always asking about data.</strong> Not
+about features. Where the material is processed, who else can read it,
+whether it leaves the building. That is one conversation, it recurs in every
+row, and the chapters on where it runs and how control is kept exist to end
+it in a single sitting.</p>
+<h3 id="who-should-be-in-the-first-meeting">Who should be in the first meeting</h3><p>One person who feels it, from the problem you most want solved. One person
+who can approve spending against it. And the security lead, early rather
+than late — because bringing them in at the end turns a short conversation
+into a long one held under time pressure.</p>
+<h2 id="what-the-problem-costs">What the problem costs</h2><p>The size of this is specific to your operation and is measured inside your own
+installation. Its <em>shape</em> is consistent across operations of this kind, and it
+has four parts.</p>
+<p><strong>Losses taken.</strong> Spoiled cargo, penalty fees, port and carrier charges for
+time, duty on entries nobody managed correctly, stock built or bought for
+demand that did not arrive. These appear in the accounts, usually classified
+as a cost of doing business.</p>
+<p><strong>Recoveries missed.</strong> Claims not filed. Invoices not disputed. Overcharges
+not challenged. These do not appear in the accounts at all, which is why they
+persist for years. There is no line item called <em>money we were entitled to
+and did not ask for</em>.</p>
+<p><strong>Attention consumed.</strong> Skilled people spending their week assembling
+evidence by hand — pulling the carrier&rsquo;s receipt for a shipment, matching it
+to a weighbridge reading, finding the rate schedule, drafting the dispute.
+Expensive work performed at clerical speed, and the reason the recoveries are
+missed: the assembly costs more than most individual claims are worth, so
+only the large ones get filed.</p>
+<p><strong>Trust spent.</strong> Each failure a customer experiences before you do is a
+withdrawal from the relationship. A customer does not leave because of one
+spoiled load; they leave because they learned about it from their own
+customer and concluded you were not watching. The mechanism that catches an
+exception early is the same mechanism that lets you tell them first.</p>
+<h2 id="what-face-does-about-it">What FACE does about it</h2><p>FACE produces one thing, repeatedly, and everything else in the product
+exists to make that one thing good.</p>
+<p>It is called a <strong>Decision Artifact</strong>.</p>
+<h3 id="what-a-decision-artifact-is">What a Decision Artifact is</h3><p>A Decision Artifact is a named, reviewable recommendation that carries the
+records it was derived from.</p>
+<p>It is not a paragraph of prose, and it is not an alert. It is a specific
+proposed action, stated as an action, with the evidence attached and a
+severity band.</p>
+<p>A claims artifact, for instance, is a typed record carrying a claim
+reference, a status, the amount in dispute as it was read out of your own
+documents, the reasoning for recovery, and the source records behind each
+step — with an approve, a reject and an edit against it.</p>
+<p>What it does <strong>not</strong> carry is a figure for what Runink recovered or saved
+you. That field does not exist on the wire any more, in any of the four
+places it once did. This paper declines to print a specimen artifact with
+numbers in it for the same reason: a reader treats a worked example as a
+screenshot, and a screenshot of a figure nothing computes is the exact thing
+the deletion was for.</p>
+<p>The operator can see why. Every artifact shows the reasoning steps and the
+source records that produced it, so the review is a review of evidence
+rather than an act of faith in a machine.</p>
+<h3 id="what-happens-on-approval-stated-exactly">What happens on approval, stated exactly</h3><p>Approval is the point at which the decision is committed and the work the
+action requires can be sent. What that means in practice is narrower than
+the category usually implies, and the software is precise about it rather
+than reassuring.</p>
+<p>Approving an artifact records the decision, with the name of the person who
+gave it, as its own audited event. That much always happens. What happens
+next depends on the follow-through the action carries:</p>
+<ul>
+<li><strong>Correspondence</strong> — the email to the carrier or the customer — is sent
+through a workplace account you have connected. If no such account is
+connected, nothing is sent.</li>
+<li><strong>A calendar entry</strong> for a filing deadline and <strong>an update written back
+into your system of record</strong> are drafted but <strong>not carried out</strong>. There is
+no write path into an ERP in the product today.</li>
+</ul>
+<p>The reason to put that in a whitepaper is the mechanism that reports it.
+Every approval response carries two things: whether the decision was
+recorded, and a list of the steps that did <strong>not</strong> happen, each as a named
+token — <em>no workplace account connected</em>, <em>not implemented</em>. They are
+present on every response, including a partial run where the email went and
+the system update did not. The software tells you which half ran.</p>
+<p>Six months later, when someone asks why a claim was filed or why an order
+was held, the answer is in the artifact — including the part of it that the
+software never actually performed.</p>
+<h3 id="why-this-shape">Why this shape</h3><p>Because it is the shape a decision already has in your business. Somebody
+proposes, somebody with authority approves, and the record of both
+survives. FACE does the proposing at a volume no team could match, and
+leaves the approving where it belongs.</p>
+<h2 id="how-it-works-in-four-steps">How it works, in four steps</h2><p>The product runs one loop, continuously: <strong>fetch, extract, reason,
+recommend.</strong></p>
+<p><span class="wp-figure" role="figure" aria-label="Read it as a gate rather than a pipeline. Everything above the line is a proposal; the ring is a named person approving, and the two sheets below it are the decision and the execution kept apart.">
+  <span class="wp-figure__art" aria-hidden="true"><!--
+  FACE paper — the four-step loop, drawn as the chapter asks it to be read:
+  "as a gate rather than a pipeline".
+
+  So the double rule is the dominant element, not the stages. It runs the full
+  width of the product, and the way through it is a ring with a tick straddling
+  the line: a named person. Everything above the line is proposal; what crosses
+  does so because somebody approved it, and their name goes on the record with
+  what they changed.
+
+  WHAT THIS FIGURE MUST NOT BE CAPTIONED AS. This comment used to read "there is
+  exactly one way through it" and "nothing below it happened without somebody
+  putting their name to it" — a blanket guarantee that the code does not make.
+  REQUIRE_HITL is read by no enforcement code in FACE (compliance_server.go:149
+  says so in as many words), so there is no global gate on everything leaving.
+  What is real is the queue: a drafted action waits, ExecuteAction takes an
+  explicit approval, acts only on a stored action, and records the actor. The
+  drawing is fine — the seam it depicts exists. The sentence was the problem, and
+  it is written here rather than in the paper because a figure gets recaptioned
+  by whoever is nearest, from whatever the file says about itself.
+
+  The four steps are drawn WITHOUT arrows between them, and without stage
+  boxes. They are told apart by how organised the marks are, which is what the
+  steps actually do to the material:
+
+    fetch    — the one-way arrow from your systems, which stay outside the line
+    extract  — the same marks, now aligned in columns with the links drawn
+    reason   — quantities as measured bars, and language as a separate shape
+               with a clear gap between them, because they are kept apart
+    recommend— a ranked queue: ordered, decreasing, each item with its evidence
+
+  Your systems sit OUTSIDE the double line and the return path never crosses
+  it. It leaves below the line, runs left past where the line begins, and comes
+  back up on the outside. A line that crossed the rule anywhere except through
+  the ring would say the opposite of what the chapter says.
+
+  Below the line the work and the record are separate objects, and the record
+  is two sheets with a visible gap: the decision and the execution are kept
+  apart. Only the upper one carries a name mark.
+
+  No text inside the artwork; at 360px the viewBox scales to about a third.
+  Every var() carries a literal fallback so the file still reads correctly when
+  opened on its own, outside the page that defines the tokens.
+-->
+<svg viewBox="0 0 1000 296" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- your systems: bought separately, never designed to be read together -->
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="8"   y="24"  width="64" height="20" rx="4"/>
+    <rect x="86"  y="30"  width="54" height="24" rx="4"/>
+    <rect x="18"  y="58"  width="44" height="18" rx="4"/>
+    <rect x="74"  y="66"  width="68" height="22" rx="4"/>
+    <rect x="8"   y="92"  width="58" height="20" rx="4"/>
+    <rect x="78"  y="100" width="50" height="18" rx="4"/>
+    <rect x="26"  y="126" width="74" height="20" rx="4"/>
+  </g>
+
+  <!-- fetch: read-only, one way -->
+  <path d="M178,60 H236" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
+  <polygon points="252,60 234,52 234,68" style="fill:var(--ink,#1c1917)"/>
+
+  <!-- extract: grouped, split, and the links drawn -->
+  <g style="fill:var(--ink-3,#57534e);fill-opacity:0.85">
+    <rect x="236" y="36"  width="66" height="10" rx="5"/>
+    <rect x="236" y="58"  width="52" height="10" rx="5"/>
+    <rect x="236" y="80"  width="66" height="10" rx="5"/>
+    <rect x="236" y="102" width="44" height="10" rx="5"/>
+    <rect x="236" y="124" width="60" height="10" rx="5"/>
+    <rect x="318" y="46"  width="58" height="10" rx="5"/>
+    <rect x="318" y="72"  width="46" height="10" rx="5"/>
+    <rect x="318" y="98"  width="58" height="10" rx="5"/>
+    <rect x="318" y="124" width="40" height="10" rx="5"/>
+  </g>
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.3;stroke-opacity:0.55">
+    <path d="M304,41 L318,51"/>
+    <path d="M290,63 L318,77"/>
+    <path d="M304,85 L318,51"/>
+    <path d="M282,107 L318,103"/>
+    <path d="M298,129 L318,129"/>
+    <path d="M304,85 L318,103"/>
+  </g>
+
+  <!-- reason: quantities computed, language kept apart from them -->
+  <g style="fill:var(--ink-3,#57534e)">
+    <rect x="420" y="44"  width="92" height="11" rx="5.5"/>
+    <rect x="420" y="66"  width="70" height="11" rx="5.5"/>
+    <rect x="420" y="88"  width="84" height="11" rx="5.5"/>
+    <rect x="420" y="110" width="58" height="11" rx="5.5"/>
+    <rect x="420" y="132" width="74" height="11" rx="5.5"/>
+  </g>
+  <path d="M416,152 H520" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:1.8;stroke-linecap:round"/>
+
+  <rect x="534" y="50" width="44" height="104" rx="22"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.2"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="545" y="72"  width="22" height="7" rx="3.5"/>
+    <rect x="545" y="92"  width="22" height="7" rx="3.5"/>
+    <rect x="545" y="112" width="22" height="7" rx="3.5"/>
+  </g>
+
+  <!-- recommend: one ranked queue, each proposal carrying its evidence.
+       The evidence tags sit at the RIGHT end of each bar, so they step down
+       with the ranking and leave the left side clear for the convergence. -->
+  <rect x="664" y="30" width="228" height="14" rx="7" style="fill:var(--ink,#1c1917)"/>
+  <g style="fill:var(--ink-3,#57534e);fill-opacity:0.8">
+    <rect x="664" y="54"  width="206" height="14" rx="7"/>
+    <rect x="664" y="78"  width="184" height="14" rx="7"/>
+    <rect x="664" y="102" width="162" height="14" rx="7"/>
+    <rect x="664" y="126" width="140" height="14" rx="7"/>
+    <rect x="664" y="150" width="118" height="14" rx="7"/>
+  </g>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="900" y="30"  width="14" height="14" rx="3"/>
+    <rect x="878" y="54"  width="14" height="14" rx="3"/>
+    <rect x="856" y="78"  width="14" height="14" rx="3"/>
+    <rect x="834" y="102" width="14" height="14" rx="3"/>
+    <rect x="812" y="126" width="14" height="14" rx="3"/>
+    <rect x="790" y="150" width="14" height="14" rx="3"/>
+  </g>
+
+  <!-- the whole queue arrives at a person: a convergence, not a container.
+       An earlier version routed one line around the outside of the queue and
+       it read as a border drawn round it rather than as anything arriving. -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-linecap:round">
+    <path d="M664,37  C 628,37  600,84  606,158" style="stroke-width:1.9"/>
+    <path d="M664,61  C 632,61  602,98  606,158" style="stroke-width:1.8"/>
+    <path d="M664,85  C 636,85  604,114 606,158" style="stroke-width:1.7"/>
+    <path d="M664,109 C 640,109 604,130 606,158" style="stroke-width:1.6"/>
+    <path d="M664,133 C 644,133 606,143 606,158" style="stroke-width:1.5"/>
+    <path d="M664,157 C 648,157 614,153 606,158" style="stroke-width:1.4"/>
+  </g>
+
+  <!-- the gate: nothing crosses it that a named person did not sign -->
+  <g style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.6">
+    <path d="M210,184 H992"/>
+    <path d="M210,191 H992"/>
+  </g>
+
+  <circle cx="600" cy="187" r="30"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--runs,#5F6F3E);stroke-width:3"/>
+  <path d="M587,187 L597,197 L615,175"
+        style="fill:none;stroke:var(--runs,#5F6F3E);stroke-width:3.6;stroke-linecap:round;stroke-linejoin:round"/>
+
+  <!-- what follows from the approval -->
+  <path d="M600,217 V250" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.4"/>
+  <path d="M600,250 H736" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.4;stroke-linecap:round"/>
+
+  <!-- the work goes out -->
+  <rect x="736" y="226" width="144" height="46" rx="7" style="fill:var(--ink,#1c1917)"/>
+  <g style="fill:var(--paper,#F5F1E8);fill-opacity:0.55">
+    <rect x="752" y="238" width="84" height="6" rx="3"/>
+    <rect x="752" y="252" width="56" height="6" rx="3"/>
+  </g>
+
+  <!-- the decision is recorded, and the execution separately from it -->
+  <path d="M626,196 C 740,208 840,208 906,212"
+        style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.8"/>
+  <path d="M880,262 H906" style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.8"/>
+
+  <rect x="906" y="200" width="80" height="34" rx="5"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2"/>
+  <circle cx="920" cy="211" r="4.5" style="fill:var(--runs,#5F6F3E)"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="932" y="208" width="42" height="6" rx="3"/>
+    <rect x="918" y="222" width="56" height="6" rx="3"/>
+  </g>
+
+  <rect x="906" y="246" width="80" height="34" rx="5"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="918" y="256" width="50" height="6" rx="3"/>
+    <rect x="918" y="268" width="38" height="6" rx="3"/>
+  </g>
+
+  <!-- and the drafts an approved action requires go back to your systems,
+       leaving below the line and returning outside it -->
+  <path d="M600,250 C 520,250 450,276 300,276 H208 Q196,276 196,264 V132 Q196,120 184,120"
+        style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2;stroke-linecap:round;stroke-linejoin:round"/>
+  <polygon points="170,120 188,112 188,128" style="fill:var(--ink-3,#57534e)"/>
+</svg>
+</span>
+  <span class="wp-figure__caption">Read it as a gate rather than a pipeline. Everything above the line is a proposal; the ring is a named person approving, and the two sheets below it are the decision and the execution kept apart.</span>
+  <span class="wp-sr">A double rule runs the width of the picture, and there is exactly one way through it: a ring with a tick in it, which is a named person. Above the line, your systems sit outside the rule as a scatter of blocks of different sizes, and a single one-way arrow reads from them. The four steps are told apart by how organised the marks become rather than by boxes or arrows: scattered, then aligned in columns with the links between them drawn, then measured bars kept a clear distance from a separate rounded shape for language, then a ranked queue of bars of decreasing length, each with its own small evidence tag. One strand leaves the queue and arrives at the ring. Below the line, the work goes out as a solid block, and the record is two sheets with a gap between them, only the upper one carrying a name mark. A last line leaves below the rule, runs left past where the rule begins, and comes back up outside it into your systems.</span>
+</span></p>
+<p>Read it as a gate rather than a pipeline. Everything above the double line
+is proposal: the system reads your systems without changing them, assembles
+what it read, computes the quantities, and files a ranked list of things it
+thinks should happen. A drafted action sits there and does nothing;
+approving it is the act that sends it, the approver is named, and <strong>what
+they decided is recorded separately from what was actually carried out</strong> —
+which is the part of this picture worth arguing about, and the subject of a
+later chapter.</p>
+<h3 id="fetch">Fetch</h3><p>FACE connects to the systems you already run and samples them. The
+connection is tested at the moment it is created, so a misconfigured
+connection is caught at setup rather than discovered as silence three weeks
+later.</p>
+<p>Connections are managed in one place, and questions can be set to run on a
+recurring interval rather than being asked by hand each time.</p>
+<h3 id="extract">Extract</h3><p>Raw operational data is not usable as evidence in the state it arrives.
+FACE groups related records together, breaks documents into short passages
+that can each be quoted on their own, and files everything into a search
+index that holds your organisation&rsquo;s records and nobody else&rsquo;s.</p>
+<p>Two things happen in this step that are worth spelling out, because the
+rest of the product leans on them.</p>
+<p><strong>It works out what each table is about.</strong> Not which system it came from —
+what it <em>means</em>. Shipments, money, sensor readings, vehicles, workflow
+states, rules, customers, products, people. It reads that from the column
+names, and where the columns are ambiguous, from the name of the source
+itself. So an orders table from a warehouse system and an orders table
+from a sales system land in the right part of the business, without anyone
+maintaining a mapping.</p>
+<p><strong>It draws the links between them.</strong> The result is best pictured as a
+mindmap of your operation: your data falls into communities — everything to
+do with shipments here, everything to do with money there — and the lines
+between those communities are the real relationships. This carrier, that
+lane, this shipment, that invoice, that claim. Five systems become one
+connected picture, and a question can travel along the lines: from a claim
+to the shipment it came from, to the lane it ran on, to the other
+shipments on that lane last quarter.</p>
+<p>The point of the whole step is quotation. Every later claim the system
+makes points back at the specific record that supports it.</p>
+<h3 id="reason">Reason</h3><p>A set of analysis agents works over the assembled data. An agent here is
+simply a program with one defined job and one defined kind of output —
+claims, compliance, finance, fulfilment, maintenance, returns, sensor
+readings, routing, documentation, images, voice.</p>
+<p>They work in a visible loop: consider, act, look at the result, consider
+again, for a bounded number of steps. The intermediate steps appear on the
+screen as they happen, so a running job is legible rather than a spinner.</p>
+<h3 id="recommend">Recommend</h3><p>The output is Decision Artifacts, filed into a ranked queue under one of
+seven categories: compliance, finance, operations, sales-and-operations
+planning, savings, sustainability and procurement.</p>
+<p>Each run leaves a step-by-step record that can be replayed and inspected
+afterwards. If you want to know how the system reached a conclusion in
+March, you open March&rsquo;s record and walk it.</p>
+<h2 id="rules-recon-what-you-think-you-enforce">Rules Recon: what you think you enforce</h2><p>Most businesses have two rulebooks. The one written down, and the one
+running.</p>
+<p>The written one lives in a standard operating procedure, a policy document,
+a contract schedule. The running one lives in the systems: in a validation
+somebody added in 2019, in a workflow condition, in a threshold nobody
+remembers setting.</p>
+<p>They are never the same rulebook. <strong>Rules Recon</strong> — a reconnaissance of the
+rules — shows you the difference.</p>
+<h3 id="the-four-states">The four states</h3><p>FACE reads the rules your policies describe, reads the logic actually
+present in your systems and data, and sorts every rule into one of four
+states.</p>
+<p><strong>Aligned.</strong> The policy says it, the systems do it. No action needed.</p>
+<p><strong>Drift.</strong> The policy says it and the systems do something adjacent. The
+threshold moved, the exception list grew, the tolerance loosened. Nobody
+decided this; it accumulated.</p>
+<p><strong>Shadow.</strong> Logic is running in production that no policy describes. Somebody
+built it, it works, and it is now load-bearing. It has never been reviewed,
+because nobody knows it is there.</p>
+<p><strong>Missing.</strong> The policy describes a control that nothing in the operation
+performs. The rule exists in the document and nowhere else.</p>
+<h3 id="why-this-is-usually-the-first-thing-customers-look-at">Why this is usually the first thing customers look at</h3><p>Because it is the cheapest question in the building and nobody can answer
+it. An auditor asks whether you enforce a control. The honest answer is
+usually <em>we believe so</em>. Rules Recon converts that into a list, with each
+rule stated in plain English and naming the source it was read out of —
+data, document, telemetry record or system configuration.</p>
+<p>Shadow rules are the ones that surprise people. They are the reason the
+system behaves in ways the policy cannot explain.</p>
+<h2 id="actionable-twins-one-queue-ranked">Actionable Twins: one queue, ranked</h2><p>Findings are worthless if they arrive in seven different places.</p>
+<p><strong>Actionable Twins</strong> is the single queue. The name is worth a sentence: each
+entry is a working copy of one real thing in your operation — a shipment, a
+return, a customs entry, a piece of equipment — carrying what the system
+knows about it and what it proposes doing. A twin of the thing, and one you
+can act on rather than only look at.</p>
+<p>Every agent&rsquo;s output — compliance, finance, operations, planning, savings,
+sustainability, procurement — consolidates into that one ranked list, each
+entry carrying a severity band and whatever quantities its own card type is
+defined to hold.</p>
+<h3 id="what-an-operator-does-here">What an operator does here</h3><p>They work down the list. For each entry: read the recommendation, read the
+evidence, approve, edit or reject.</p>
+<p>Decisions are recorded against the card with the actor&rsquo;s name, and approved
+and rejected are the only two terminal states the server writes. Financial
+actions are gathered on a separate board that splits what has been
+identified from what an operator has actually committed to — two figures
+that must differ while anything is still pending, or the split is decorative.</p>
+<p>Both figures are sums of amounts that came out of your own records. Neither
+is a Runink estimate of your recovery, and with nothing but the software&rsquo;s
+own derivations behind it the identified total is zero, by test.</p>
+<h3 id="a-note-on-what-the-queue-starts-with">A note on what the queue starts with</h3><p>A standard installation starts <strong>empty</strong>, and this is worth saying plainly
+because it is the opposite of how the category demonstrates itself.</p>
+<p>The routines that populate the queue from bundled example data are gated
+behind a demonstration setting, and every file they read is a seed file.
+With that setting off — which is how a real instance runs — the queue
+derives nothing until your own connections and your own questions put
+something in it. The cockpit carries a chip that states which kind of
+instance you are looking at: a demonstration serving prepared rows, or your
+own. The deployment always knew; the surface used not to say.</p>
+<p>So a populated screen on somebody else&rsquo;s laptop tells you about the screen.
+Insist on a queue filled from a credential you issued.</p>
+<h3 id="why-the-ranking-matters-more-than-it-sounds">Why the ranking matters more than it sounds</h3><p>An operations team&rsquo;s real constraint is not information, it is the order in
+which they spend the day. A queue ranked by severity and by the value the
+underlying records state makes that ordering a property of the system rather
+than a judgement each person makes independently every morning.</p>
+<p>It also makes the day&rsquo;s work measurable. What was in the queue, what was
+approved, and what the approved items were worth according to the documents
+behind them — those are three questions with answers, which is not the
+normal condition of exception management.</p>
+<h3 id="what-the-human-gate-actually-is">What the human gate actually is</h3><p>A drafted action waits in the queue and does nothing. The approval call takes
+the approver&rsquo;s decision, acts only on a stored action, and writes an audited
+decision event naming the actor. Approving is the act that sends. Edits are
+recorded with the name of the person who made them.</p>
+<p>What is <strong>not</strong> true, and is claimed by most products of this kind: a single
+blanket switch that gates everything leaving the building. FACE had a
+setting that read like one. It was consulted by nothing, so setting it
+achieved nothing — and the approval guard that stood in the execution path
+was keyed to a field no part of the software ever populated, so its condition
+could never become true. Both were removed rather than left standing, on a
+principle stated in the codebase and repeated here because it is the whole
+argument: <em>a control that cannot fire is worse than none, because it answers
+&ldquo;is this handled?&rdquo; with a confident yes.</em></p>
+<p>The value of autonomy here is in the drafting, the evidence assembly and
+the ranking — the expensive, slow, skilled work. The judgement stays with
+the person accountable for it.</p>
+<h2 id="hypothesis-lab-state-it-before-you-commit">Hypothesis Lab: state it before you commit</h2><p>Some decisions are too large to make from a queue. Consolidating a lane.
+Changing a sourcing pattern. Moving stock ahead of a season. Cutting a safety
+margin that may be doing more harm than good. Being wrong is expensive and
+being slow is also expensive, which is the worst combination a management team
+faces.</p>
+<p><strong>Hypothesis Lab</strong> is where those are written down and argued before they are
+committed. You state the change in ordinary words, and you hand it the <strong>rules
+that govern the thing you are changing</strong> — the reorder points, the lead times,
+the service commitments, the reserve assumptions — together with the variables
+you think matter and the order you think they act in. That material, plus the
+map of the domains and relationships drawn from your connected systems, plus
+public market research where the scenario concerns a market question, is
+assembled into one body of context and reasoned over. What comes back is a
+ranked set of consequences, each tied to the rule it follows from.</p>
+<p>You can also make it rough on purpose. Run a lane a week late. Take the second
+source away. A plan that only holds when the week goes well falls over here,
+while it still costs nothing to find out.</p>
+<h3 id="where-the-value-is">Where the value is</h3><p><strong>In the writing down.</strong> Stating the hypothesis forces the assumptions into
+the open: which variables, in what order, against which rules, with what
+effect assumed. That is the step teams skip, and it is the reason two people
+can argue for an hour and discover they were discussing different plans.</p>
+<p><strong>In the consequence being attributable.</strong> Each item that comes back names the
+rule it collides with, so you can disagree with it on the merits and point at
+the rule while you do. An argument you can check is a different object from a
+number you have to accept.</p>
+<p><strong>In the promotion being a recorded act.</strong> A scenario does not become an
+action because somebody senior liked it. It becomes an action when somebody
+named moves it into the queue and approves it, and both facts go on the record
+together. The lab puts the options in a row; the room picks one — and the
+record of why a structural decision was taken exists at the moment it was
+taken, which is exactly the record a meeting does not leave.</p>
+<h3 id="where-the-line-falls">Where the line falls</h3><p><strong>The lab is not a simulation.</strong> It does not take a copy of your records, it
+does not run a model of your operation, and it does not compute an outcome.
+Searching the public web widens what the argument can draw on; it does not
+turn the argument into a measurement.</p>
+<p>The reasoning arrives with two structured blocks that look like measurements
+and are not. Both are built from the variables you supplied, in the order you
+supplied them, against fixed weightings — so what they return is your own
+assumption written out formally, not a finding about your business. They are
+there because a structured argument is easier to disagree with than a
+paragraph, which is the whole point of the lab.</p>
+<p>Saying that costs nothing, because the value was never in those numbers. It is
+in the question being written down, the answer arriving with its sources
+attached, and both being there to look at afterwards.</p>
+<h2 id="fetch-center-and-maturity-center">Fetch Center and Maturity Center</h2><h3 id="fetch-center--where-the-questions-live">Fetch Center — where the questions live</h3><p>Fetch Center is the front door to your connected systems.</p>
+<p>Connections are created, tested and managed here. Recurring questions are
+defined here and run on a schedule you set — created, activated, paused or
+deleted from the screen, without an engineer.</p>
+<p>Each run leaves a step-by-step record you can replay. That is the
+difference between an answer and an answer that survives an audit: you can
+go back and see the run, the sources it touched, and the steps it took.</p>
+<p>An operator can also skip the connection entirely and upload a file
+directly. A set of agents — posture, rules, documentation, compliance,
+finance, routing — read it and stream their findings back as they are
+written. Two limits are worth knowing before you judge that path on its
+output. It reads <strong>delimited text</strong> — comma- or tab-separated exports, plain
+text — as text; a binary workbook or a PDF is passed through as a sample
+rather than parsed into rows. And what comes back is <strong>prose from a language
+model, not arithmetic</strong>: if a dollar figure appears in it, that figure was
+composed rather than calculated, which is precisely the distinction the
+chapter on quantities is about. Treat the upload path as a fast read on
+whether the material is legible to the system, not as a finding you can take
+to a carrier.</p>
+<h3 id="maturity-center--the-direction-of-travel">Maturity Center — the direction of travel</h3><p>A single finding is an event. A trend in findings is a management signal.</p>
+<p>Maturity Center tracks how the operation is doing over time and produces a
+phased plan from where it is now to where it intends to be.
+That plan arrives as a Decision Artifact like any other: reviewable,
+evidenced, approvable.</p>
+<p>One property of it is worth naming, because it is the kind of thing that only
+gets built after it has gone wrong once. <strong>The model enriches the posture; it
+does not produce it.</strong> The domains, grades and risk checks are derived
+deterministically from the shape of your data, in milliseconds, and the
+language model is then asked to add commentary on top. The two passes are
+ordered so that a reasoning plane which is saturated, slow or refusing
+outright cannot stop the measured posture from being served — an earlier
+arrangement put the deterministic pass behind the model call, and a busy
+machine produced an empty Maturity Center while a complete assessment sat one
+function away.</p>
+<h3 id="why-both-exist">Why both exist</h3><p>Fetch Center answers <em>what is happening this week</em>. Maturity Center answers
+<em>are we getting better</em>. Operations teams need the first daily. Boards ask
+for the second quarterly, and usually receive an opinion instead of an
+answer.</p>
+<h2 id="what-the-analysis-actually-covers">What the analysis actually covers</h2><p>FACE runs a set of distinct analysis agents. Each has a defined output.
+This is the list, in plain terms.</p>
+<p><strong>Claims.</strong> Identifying that money is owed — to you or by you — and
+assembling the case for it, including the audit and recovery steps that
+case has to pass through.</p>
+<p><strong>Finance.</strong> Sorting transactions and spend into categories, with a
+confidence score attached to each; spotting amounts that do not fit your
+own normal ranges; actions on cash, money owed to you and money you owe;
+and the three cost questions finance teams ask — what a thing costs to own
+over its life, what each activity in the business actually consumes, and
+what it costs to serve a given customer or lane.</p>
+<p><strong>Compliance.</strong> How your operation stands against the control frameworks
+that apply to it, environmental narratives, and emissions tracking across
+the three standard reporting scopes — what you burn directly, what you buy
+as energy, and what happens up and down your chain — with fixes stated in
+business terms rather than technical ones.</p>
+<p><strong>Fulfilment.</strong> Sourcing, supply and the steps that get an order to a
+customer.</p>
+<p><strong>Rules Recon.</strong> Business and governance rules read out of data, documents,
+telemetry records and system configuration, each stated in plain English and
+naming the source it came from.</p>
+<p><strong>Equipment condition.</strong> Where a feed states its own alarm or replacement
+threshold for a channel — a vibration alarm on a drive motor, the percentage
+a battery is replaced below — a straight line through the first and last
+reading gives the moment that stated number would be reached. Both readings
+are printed on the card, so the arithmetic can be redone by hand. Where the
+feed states no such number, no card is raised: a vibration figure that rose
+against nothing is a reading rather than an exception. What the card reports
+is the moment a straight line meets a number somebody else stated, and it
+says that in those words rather than dressing it as a probability.</p>
+<p><strong>Reverse logistics.</strong> Returns, warranty claims, refurbishment and the
+decisions that keep material in use rather than in a skip.</p>
+<p><strong>Sensor readings.</strong> Actions derived from measurement records —
+temperature, return-air temperature, setpoint, humidity, door state,
+vibration, fuel, battery and position — covering refrigerated-cargo
+integrity, vehicle monitoring, and dangerous-goods and weight compliance.</p>
+<p><strong>Where those readings come from.</strong> FACE reads the wires itself. It
+subscribes to an MQTT broker, the message bus that pallet probes, reefer
+controllers and dock sensors publish to. It runs inventory rounds against
+RFID readers in LLRP, the readers&rsquo; own protocol. It reads a fixed-probe
+gateway register by register over Modbus-TCP. It reads a telematics account
+— your vehicle-tracking provider — through that provider&rsquo;s own interface,
+Samsara and Geotab, and a tracker&rsquo;s position sentences in the NMEA format
+road and marine trackers emit.</p>
+<p>All five land in one record: what was measured, by which device, at what
+instant, one metric, one value, one unit, and the band the source itself
+stated for that channel. The band is what makes a breach arguable, so it is
+never assumed. A Samsara reefer&rsquo;s alarm high and low arrive as that band and
+the record names the two fields they came from. Where a feed states no band,
+the readings stand and nothing is called a breach.</p>
+<p>A vehicle-tracking account is asked for position, engine state and odometer,
+and — where a reefer package sits on that account — return air, setpoint,
+alarm high and low, humidity, fuel, battery and door. Eight metric names
+carry every reading that path produces: position, temperature, return-air
+temperature, setpoint, humidity, door, fuel and battery. Odometer and
+ignition travel beside a position as text for a person to read, and no
+calculation is done on them.</p>
+<p>The other route is the one everything else uses: the export your monitoring
+platform already produces, or the table it already writes to. Both are real,
+and which one you take is a question about your own estate rather than about
+the software.</p>
+<p><strong>Route Twin.</strong> An origin-to-destination road journey, with distance,
+duration and the route line itself, obtained from the routing provider you
+connect. It carries <strong>no cost and no saving</strong>: the routing provider returns
+no cost, nothing else in the product can compute one, and the field is left
+empty rather than filled with an estimate. Where no routing provider is
+connected, the call reports itself unavailable — it used to return an empty
+card that a client could not tell apart from a successful optimisation, which
+painted a savings panel with nothing in it. Journeys across more than one
+form of transport are not modelled.</p>
+<p><strong>Documentation.</strong> The formal trade and shipping papers a consignment
+travels with, including customs declarations.</p>
+<p><strong>Vision.</strong> Grading physical damage and spotting anomalies from video and
+still images of transport hubs, airports and infrastructure.</p>
+<p><strong>Voice.</strong> Spoken commands, answered hands-free and routed with the
+speaker&rsquo;s location taken into account.</p>
+<p><strong>Hypothesis.</strong> Business decision scenarios argued against the rules you
+supply and the mindmap of your connected data, with public market research
+added where the scenario calls for it. See the chapter on the lab for what
+this does and does not compute.</p>
+<p><strong>Twins.</strong> The action cards themselves, with the approve and reject flows
+and the drafts an approved action requires.</p>
+<h2 id="what-the-queue-is-made-of">What the queue is made of</h2><p>Decision Artifacts are typed cards. The type determines what the card shows,
+so a person reviewing one sees the fields that decision actually needs.</p>
+<p>What follows is the list of card types the software defines and the fields each
+one carries. It is not a claim that a fresh installation produces all of them:
+the earlier note on the empty queue applies, and what you see depends on what
+you have connected and what you have asked.</p>
+<p>One rule runs through the whole list. <strong>Where a field would hold a figure
+that nothing in the product can compute, the field is empty.</strong> Several of
+these card types used to carry one — a consolidation saving, a per-kilometre
+route saving, a percentage of spend, an abatement rate, a cover cost per
+unit — and each was a constant somebody picked. They are gone, and they
+cannot come back by the side door: a saved card is compared field by field
+against what today&rsquo;s derivations produce for the same identifier, and any
+number the current software no longer computes is stripped before the card
+reaches a screen. Deleting the arithmetic was not enough on its own, because
+yesterday&rsquo;s snapshot still had the figure in it.</p>
+<p><strong>Customs clearance.</strong> A held entry with the port, the reason it is held,
+the specific documents that would release it, days held and the port
+charges accruing.</p>
+<p><strong>Importer of record.</strong> An entry with nobody named as the party legally
+answerable for the declaration and the duty, carrying its tariff
+classification and the duty at stake.</p>
+<p><strong>Cold chain.</strong> A refrigerated asset that went outside its temperature
+range, the product at risk, the value of the load as the record states it,
+and the corrective dispatch action. The value is read off the consignment
+record, not estimated by the software.</p>
+<p><strong>Claims.</strong> Claim number, status, the amount in dispute and the reasoning for
+recovery.</p>
+<p><strong>Freight forwarding.</strong> A lane where separate bookings could be combined,
+with the bookings, how full the trailers ran on average and the current
+spend. No figure for the saving available — the rate that used to produce one
+was invented.</p>
+<p><strong>Cross-border trucking.</strong> A crossing where trucks are waiting longer than
+booked, with the crossing, the carrier, the wait measured against the
+scheduled transit, the loads affected and the underlying cause where the
+record names one. Where the cause is not recorded, the card says <em>not
+recorded</em> rather than supplying a likely one.</p>
+<p><strong>Maintenance.</strong> Equipment identifier, the limit the feed states for that
+channel, when a straight line through the readings reaches it, the
+intervention, and what stops running if nobody makes it.</p>
+<p><strong>Route.</strong> An origin-to-destination journey with distance, duration and the
+route line. No cost, and no saving.</p>
+<p><strong>Emissions.</strong> Daily and annualised freight CO₂e and the worst-emitting lane,
+derived deterministically from lane distances against published emission
+factors, with the factor and the basis stated on the card so the figure can
+be audited. The abatement percentage the card once carried has been removed:
+the footprint was calculated, but the proportion of it you could avoid was a
+round number nobody measured.</p>
+<p><strong>Spend analysis.</strong> Total spend, the largest categories and a recommendation
+for combining purchases. No savings figure: the one that used to appear was a
+fixed fraction of the spend.</p>
+<p><strong>Sales-and-operations planning.</strong> How well the forecast has matched
+history, the stock positions behind it, and a planning recommendation.</p>
+<p><strong>Fulfilment.</strong> Order status, estimated delivery and the issue to resolve.</p>
+<p><strong>Reverse logistics.</strong> Return identifier, the condition the item arrived in,
+where the refund stands, and what should be done with the item.</p>
+<p><strong>Reactive logistics.</strong> A disruption that has already happened, the orders
+it affects and a plan to resolve it.</p>
+<p><strong>Request for proposal.</strong> Draft content, evaluation criteria and candidate
+vendors.</p>
+<p><strong>Transformation plan.</strong> A phased path from where the operation is now to
+where it intends to be.</p>
+<p><strong>Email draft, calendar invite and system update.</strong> The concrete
+follow-through an approved action needs, drafted with its details filled in.
+Of the three, only the email is sent by the software, and only through a
+workplace account you have connected; the other two are drafted and reported
+as not executed. That is stated again here rather than once, because a reader
+who skims a card list is exactly the reader who would otherwise assume all
+three land.</p>
+<h2 id="the-numbers-are-computed-or-they-are-absent">The numbers are computed, or they are absent</h2><p>There is a failure mode in this category of product that a careful buyer
+should ask every vendor about: language models are fluent, and fluency
+produces confident numbers that were never calculated.</p>
+<p>FACE separates the two jobs. The language model handles language —
+reading documents, explaining findings, drafting correspondence. Quantities
+are produced by long-established statistical methods, which calculate
+rather than compose.</p>
+<p>And there is a third case, which most products in this category do not have
+and which is the one worth pressing on: <strong>the quantity that could not be
+produced at all.</strong> A fluent system rounds that to zero. A careful one makes
+the absence representable, and FACE does it four separate times as typed
+fields on the wire rather than as a greyed-out box in a user interface.</p>
+<ul>
+<li>A health response carries a <strong>list of the fields this build does not
+measure</strong>, because without it there is no way to tell a measured zero from
+nobody having measured. Several values on that screen were once derived from
+a goroutine count and served alongside two that were real, with nothing to
+tell them apart.</li>
+<li>A usage response carries an <strong>unmeasured reason</strong>, for the same argument
+made in the codebase in one line: <em>absence has to be representable, not
+rounded to zero.</em> Zeroing a fabricated charge removed the lie but not the
+ambiguity, because a never-measured quantity still arrived looking like a
+measured nothing.</li>
+<li>A compliance assessment has a third verdict, <strong>unable to assess</strong>, with the
+reason attached and spoken text that says outright that this is <em>not</em> a
+finding of compliance.</li>
+<li>The cockpit&rsquo;s provenance marker carries <strong>failed</strong> as a member of the type
+rather than as a hidden badge, so every place in the interface that
+switches on provenance is forced by the compiler to say what it does with
+it.</li>
+</ul>
+<p>One consequence is commercial rather than technical, and it is the sentence
+from the codebase that a finance director should be shown: <strong>never bill on
+unmeasured usage.</strong> Where the metering for a quantity is not wired, the charge
+is nothing — not a plausible figure derived from something adjacent. An
+earlier version of that path produced a fabricated amount from invented
+processor-seconds and handed it to a payment provider, masked only by an
+allowance being larger than the invention.</p>
+<h3 id="what-does-the-computing">What does the computing</h3><p><strong>Separating a history into its underlying direction and its repeating
+seasonal pattern</strong>, and reporting what neither of those explains — which is
+where the surprises are. The method is chosen by testing candidates against
+periods that have already happened, so its accuracy is quoted from the
+record rather than asserted.</p>
+<p><strong>Grouping records that resemble each other</strong>, run over your own data,
+without being told in advance how many groups to expect or where to draw
+the boundaries.</p>
+<p><strong>Ranking those groups</strong> by how complete, fresh and relevant they are to the
+question and the part of the business it concerns, so the most useful
+material comes up first.</p>
+<p><strong>Exact-match search folded into meaning-based search</strong>, so a search for a
+specific part number or claim reference finds it, and a search for a
+described situation — <em>shipments delayed at the northern crossing</em> — finds
+that too.</p>
+<p><strong>Summaries of how a set of numbers is spread</strong> — the middle, the range, how
+tightly clustered or how scattered.</p>
+<p><strong>Working out what caused what</strong>, rather than what merely happened
+alongside what. This is the step that turns a correlation into a finding
+somebody can act on.</p>
+<p><strong>Grouping your data into communities and drawing the lines between them</strong>,
+the way a mindmap does. Carrier, lane, shipment, invoice, claim stop being
+rows in five systems and become one connected picture.</p>
+<p><strong>Listing the ways a process can fail</strong>, scoring each by how bad it would
+be, how likely it is and how easily it would be noticed, and flagging
+service commitments that are being missed.</p>
+<p><strong>Locating the damage in an image</strong>, which is what makes an assessment
+specific to a place on an object rather than a general impression.</p>
+<h3 id="why-to-care">Why to care</h3><p>Because it changes what a finding is worth in an argument. A figure that
+came out of a method tested against your own history can be defended to a
+carrier, an auditor or a board. One that came out of a sentence cannot.</p>
+<p>And because the same discipline is what decides whether a product of this kind
+is still trusted in month three. Around seventy test files in this codebase
+exist for no purpose other than to stop the software asserting something it
+did not establish — that a consensus surface was unauthenticated, that a
+simulator&rsquo;s output could be mistaken for evidence that a claim was filed, that
+an empty result was being served as a finding of nothing. They are not feature
+tests. They are the reason the chapters above can be checked.</p>
+<h2 id="reaching-it-from-where-the-work-happens">Reaching it from where the work happens</h2><p>Operations do not happen at a desk. The product is reachable from the
+places the work actually occurs.</p>
+<p><strong>Voice.</strong> A live voice agent, so an operator or driver can ask and instruct
+hands-free. Both the listening and the speaking run on your own machines.</p>
+<p><strong>Phone messaging.</strong> A WhatsApp and SMS channel reaches the same agents
+from an ordinary phone, with no application to install on a driver&rsquo;s
+device.</p>
+<p><strong>Cameras.</strong> Live camera feeds or captured images are examined for damage
+and anomalies at transport hubs, airports and infrastructure, with the
+results appearing on the operator&rsquo;s screen as they are produced. Damage
+grading becomes a record rather than an argument between two parties'
+recollections.</p>
+<p><strong>Documents.</strong> Uploads are routed automatically by what they are — text
+pulled out of documents, tables pulled out of spreadsheets, structure
+pulled out of source repositories. The person uploading does not choose a
+route; they upload the file.</p>
+<p><strong>Direct file analysis.</strong> A delimited export can be read on its own, without
+a connection being configured first, and several agents comment on it as the
+text streams back. What comes back is prose rather than calculated
+quantities — see the Fetch Center chapter for the limits, which are worth
+knowing before you judge the product on that path.</p>
+<p><strong>Four languages.</strong> The operator interface ships in English, Spanish,
+French and Portuguese, which matters for any operation whose warehouse
+staff and head office do not share a first language.</p>
+<h3 id="the-common-property">The common property</h3><p>All of these reach the same agents, produce the same kind of artifact, and
+land in the same queue. There is one place where work is reviewed and
+approved, regardless of which door it came in through.</p>
+<h2 id="where-it-runs-and-why-that-is-a-commercial-matter">Where it runs, and why that is a commercial matter</h2><p>FACE runs on hardware you control.</p>
+<p>The reasoning that reads your operational data is performed by the
+platform&rsquo;s own reasoning software, running on your own machines. Your
+logistics data, your contracts, your customer records and your claims
+correspondence are processed where they already sit.</p>
+<h3 id="three-consequences-a-buyer-should-weigh">Three consequences a buyer should weigh</h3><p><strong>The data question stops being a negotiation.</strong> Much of every enterprise
+purchase cycle for analytical software is spent establishing where data goes
+and who else can see it. When the analysis runs on your own hardware, that
+conversation is a description rather than a negotiation, because the answer
+is <em>here</em>.</p>
+<p><strong>The cost does not scale with how much you use it.</strong> Because the reasoning
+runs on machines you already own, the cost of asking another question is
+the cost of the electricity. That changes behaviour: teams ask the small
+questions, and the small questions are where the recoveries hide. Usage
+priced per query teaches people to ration their curiosity.</p>
+<p><strong>It survives your suppliers.</strong> A system whose reasoning happens on your own
+hardware does not change its terms, its pricing or its availability because
+a third party revised a policy.</p>
+<h3 id="the-shape-of-an-installation">The shape of an installation</h3><p>The same software runs on a single workstation for evaluation, and on one
+server or a small group of them inside your own walls for production.
+There is no managed cloud database in the middle.</p>
+<p>Where no specialist graphics hardware is available, the reasoning runs on
+ordinary processors at a steadier pace — which suits work that runs in
+batches overnight, which is what claims, reconciliation, planning and
+compliance actually are. The overnight run is the natural rhythm of this
+product, and an overnight run has all night.</p>
+<h3 id="records-and-continuity">Records and continuity</h3><p>The system&rsquo;s own operating records — connections, schedules, artifacts,
+approvals — are held in a small database that lives with the software.
+It is copied continuously to file storage you control, and restored
+automatically when the system starts. Keeping that consistent is the
+platform&rsquo;s job rather than a task on somebody&rsquo;s list.</p>
+<h2 id="how-control-is-kept">How control is kept</h2><p>Autonomy is only sellable to a risk committee if the controls around it are
+specific. These are the controls.</p>
+<h3 id="the-person-stays-in-command-and-here-is-the-precise-extent-of-it">The person stays in command, and here is the precise extent of it</h3><p>The system proposes. A drafted action waits in the queue and does nothing on
+its own. Approving it is the act that sends it, the approval is recorded
+against the artifact as an audited event naming the actor, and an edit is
+recorded with the name of whoever made it.</p>
+<p>Two things are worth stating in the same breath, because a risk committee
+will ask and because the reassuring version of this claim is the one FACE
+deliberately withdrew.</p>
+<p><strong>There is no single blanket gate on everything that leaves.</strong> There was a
+setting that read like one; nothing consulted it, so setting it achieved
+nothing, and it has been taken out rather than left in a document as a
+control. <em>A rule with no check is a comment.</em></p>
+<p><strong>What the gate is instead is structural.</strong> Of the three kinds of
+follow-through an approved action can carry, only correspondence is actually
+dispatched by FACE, and only through an account you connected. The other two
+are drafted and reported as not carried out, by name, on every response. A
+system with no write path into your ledger cannot write to your ledger by
+mistake, and that is a stronger guarantee than a switch.</p>
+<h3 id="identity-between-components">Identity between components</h3><p>The parts of the system prove who they are to each other on every exchange,
+using credentials that are short-lived, issued fresh and replaced on a
+cycle. Those credentials come from an authority the installation runs
+itself.</p>
+<h3 id="guarding-the-inputs">Guarding the inputs</h3><p>Text arriving from outside is checked before it reaches the reasoning step,
+so that a document or a message cannot smuggle in an instruction of its
+own. Database queries are checked on every connection before they run.</p>
+<h3 id="credentials-at-rest">Credentials at rest</h3><p>Credentials stored locally are held under restrictive filesystem
+permissions — directories at 0700, files at 0600 — so they are reachable
+only by the account that owns them.</p>
+<h3 id="the-audit-record">The audit record</h3><p>Audit events are recorded as structured entries with a defined type rather
+than as free text, which means they can be queried rather than read.
+Personal identifiers inside them are replaced with a one-way code.</p>
+<h3 id="redaction-with-the-calibration-it-deserves">Redaction, with the calibration it deserves</h3><p>A redaction layer masks email addresses, payment card numbers, telephone
+numbers, national insurance and social security numbers, network and hardware
+addresses, and the contents of fields named as passwords, licence keys,
+secrets, tokens, webhooks and one-time codes. It is called at more than thirty
+points where material crosses a boundary, and the ordering inside it is
+deliberate: card numbers are matched before telephone numbers, because a
+telephone pattern applied first will swallow a card number and report it as
+masked.</p>
+<p>What should be said in the same paragraph, and is not said by anybody else in
+this category: <strong>that layer has no automated test coverage.</strong> It is
+implemented, it is wired in, and no test asserts that it masks what it claims
+to mask. This paper will describe what it does and will not describe it as
+verified, because one of those two sentences is checkable and the other is a
+promise. A buyer entitled to hold us to a control should ask for the test
+before they ask for the feature.</p>
+<h3 id="who-sees-what">Who sees what</h3><p>Membership is explicit. An operator sees only the installations they are
+entitled to see. Entitlements carry an expiry, so access granted for a
+project ends with the project rather than persisting for years. An
+unidentified caller sees nothing at all.</p>
+<p>Sign-in uses multi-factor authentication.</p>
+<h3 id="separation-between-customers">Separation between customers</h3><p>The search index behind every answer holds one organisation&rsquo;s records and
+is queried only for that organisation. The evidence behind an answer comes
+from the organisation that asked the question.</p>
+<h2 id="compliance-posture">Compliance posture</h2><p>Two separate things, and vendors in this category routinely blur them.</p>
+<h3 id="faces-own-posture">FACE&rsquo;s own posture</h3><p><strong>Runink FACE has not been audited against SOC 2 by an external auditor.</strong>
+What exists is our own account of it: the SOC 2 criteria mapped against the
+controls described in this paper, with those controls declared by us.
+<em>SOC 2-oriented, with controls mapped and self-declared</em> is the wording Runink
+uses internally, in its documentation and in its sales material, without
+variation, and it is the wording to hold us to.</p>
+<p>The controls themselves are the ones in the previous chapter — the approval
+record, the short-lived credentials between components, the redaction layer,
+the structured audit entries, the expiring entitlements — and each is a thing a
+reviewer can exercise on their own installation rather than take on a
+certificate.</p>
+<h3 id="what-the-compliance-agent-does">What the compliance agent does</h3><p>Separately from the product&rsquo;s own posture, the compliance agent examines
+<em>your</em> operation against control frameworks, reporting each finding as
+pass, fail or warning.</p>
+<p>The frameworks it assesses against include PCI-DSS, SOC 2, HIPAA,
+ISO 27001, ISO 31000, ISO 42001, LGPD, GDPR and IFRS 17.</p>
+<p>That is a statement about what the agent examines in your systems, and not a
+statement that Runink FACE holds a certification under any of them. A vendor
+careless about that distinction in a whitepaper will be careless about it in an
+audit, and you will be the one holding the finding.</p>
+<h3 id="the-reporting-side">The reporting side</h3><p>For environmental obligations specifically, the compliance agent produces
+emissions tracking across the three standard reporting scopes — what you
+burn directly, what you buy as energy, and what happens up and down your
+chain — and emissions artifacts state the method used to reach the figure.
+A number that arrives with its method attached is a number that can be
+defended.</p>
+<h2 id="what-it-connects-to">What it connects to</h2><p>FACE reads the systems you already run. The connections cover the
+following.</p>
+<h3 id="data-platforms-and-databases">Data platforms and databases</h3><p>Snowflake, Databricks, PostgreSQL, MySQL and Google BigQuery.</p>
+<h3 id="business-systems">Business systems</h3><p>SAP, Microsoft Dynamics 365, Salesforce, HubSpot, ServiceNow and Guidewire.</p>
+<h3 id="documents-files-and-storage">Documents, files and storage</h3><p>Microsoft SharePoint, Excel and Parquet files, and file storage on
+Amazon S3, Google Cloud Storage or Azure Blob Storage.</p>
+<h3 id="workplace-sources">Workplace sources</h3><p>Google Workspace — Docs, Drive, Sheets, Gmail, Maps routing and Analytics.</p>
+<h3 id="everything-that-is-not-a-neat-table">Everything that is not a neat table</h3><p>Web pages, read by a browser the platform drives itself. Documents and
+images, with the text read out of scans and photographs. Source-code
+repositories. Live video from camera feeds.</p>
+<h3 id="logistics-systems-of-record">Logistics systems of record</h3><p>Order, warehouse, transport, yard and inventory management systems, read
+over the interface each one publishes, with an address and a credential you
+issue. Each type reads what belongs to it: orders from an order system,
+stock from a warehouse or inventory system, shipments from a transport
+system, appointments from a yard system, and receipts from a single
+warehouse.</p>
+<p>The rows come back carrying the vendor&rsquo;s own field names and the vendor&rsquo;s
+own values. Nothing is renamed into a house schema on the way in, because
+software that decided what an order really looks like would be inventing
+your records rather than reading them.</p>
+<h3 id="sensor-and-telemetry-sources">Sensor and telemetry sources</h3><p>A sensor bus, by subscribing to the MQTT broker your probes and reefer
+controllers already publish to. RFID readers, in LLRP, the readers&rsquo; own
+protocol. A fixed-probe gateway over Modbus-TCP — the temperature stems in a
+cold room, the humidity, shock and door channels wired onto the same rail —
+read register by register. Vehicle tracking, through the provider&rsquo;s own
+interface: Samsara and Geotab. A tracker&rsquo;s position sentences, in the NMEA
+format road and marine trackers emit.</p>
+<p>Each of those arrives in the record described earlier: one metric, one
+value, one unit, and the band the source itself stated.</p>
+<p>The third door described later stays open beside all of it: the export your
+warehouse or telemetry platform already produces, or the table it already
+writes to. It needs no credential to a device and no change window, and it
+is a working connection this week.</p>
+<h3 id="four-properties-worth-noting">Four properties worth noting</h3><p><strong>Connections are tested at the moment they are created.</strong> A connection that
+will not work says so there and then, in front of the person creating it.
+The answer is not a yes or a no — it distinguishes a live round trip to your
+system, a configuration stored without a live check being available for that
+source type, a source type the software does not know, a connection that no
+longer exists, and a failure to read the connection record at all. Five
+distinguishable answers, because four of them used to arrive as the same
+one.</p>
+<p><strong>A connector refuses rather than pretends.</strong> Where a check cannot genuinely
+be performed it says so instead of passing. The reasoning is recorded at the
+line that does it, and it generalises to the whole product: returning success
+would make the screen print <em>connectivity verified</em> for a system nobody
+contacted. An empty source must read as empty and an unconfigured one as
+unconfigured; those are different sentences and a product that renders them
+identically is one you will stop trusting.</p>
+<p><strong>A connection without credentials cannot exist.</strong> The credentials are written
+before the connection record, so a failure at that step leaves no row —
+rather than a connection that looks configured and cannot authenticate.</p>
+<p><strong>Nothing is replaced.</strong> FACE reads the systems you have. It does not ask
+you to migrate off your transport system, your warehouse system or your
+ledger. The value is in the space between those systems, which means the
+systems have to stay where they are for the value to exist.</p>
+<h3 id="working-across-systems">Working across systems</h3><p>Where an operation already runs its own analytical infrastructure, work can
+be sent to it directly — including a path that executes inside Snowflake,
+and the setting up of Databricks clusters and jobs — so the analysis runs
+close to the data rather than moving the data to the analysis.</p>
+<h2 id="the-questions-a-buyer-asks">The questions a buyer asks</h2><p>These are the questions that actually come up, in roughly the order they
+come up in. The answers are descriptions of how the product behaves rather
+than assurances, because a description can be checked in an afternoon on
+your own hardware and an assurance cannot.</p>
+<h3 id="does-it-need-us-to-train-it-first">Does it need us to train it first?</h3><p>No. There is no training step, and there is nothing for you to label.</p>
+<p>The reasoning runs on a model held as a set of weight files on your own
+machine. Those files are the same on your first day and on your five
+hundredth. You can confirm that yourself by comparing them, which is a more
+useful kind of assurance than a sentence in a contract.</p>
+<p>What makes the output specific to your business is not training but
+<strong>reading at the moment of the question</strong>. Your documents, your records and
+your policies are indexed on your own machine. When a question is asked, the
+passages that bear on it are retrieved and placed in front of the model as
+part of the question, with the source of each passage travelling alongside
+it. That is why every finding can name the record it came from: the record
+was in the question, rather than remembered from somewhere else.</p>
+<p>It is also why removing a document removes its influence completely. There
+is nothing left behind in a set of weights.</p>
+<h3 id="how-does-it-get-better-over-time-then">How does it get better over time, then?</h3><p>Four ways, none of which involves changing the model.</p>
+<p><strong>The material it can reach grows.</strong> Each system you connect and each
+document you index widens what a question can be answered from. Because the
+losses live between systems, the second connection makes the first one more
+useful rather than merely adding to it.</p>
+<p><strong>Your decisions are kept and they win.</strong> Approvals and rejections are
+recorded against the artifact, and a recorded decision overrides a freshly
+derived recommendation rather than being overwritten by it. Reject a class
+of finding and it stops coming back as though nobody had looked at it.</p>
+<p><strong>The quantitative methods are chosen by testing, not by preference.</strong> For
+forecasting, two candidate methods are fitted to the earlier part of your own
+history, asked to predict the part that was held back, and scored on how far
+each one missed. The one that missed by less is the one used, and both scores
+travel with the answer. So the accuracy of a forecast is quoted from your own
+record rather than asserted.</p>
+<p><strong>The weightings are yours to set.</strong> How findings are scored and ranked is
+held as settings rather than buried in the software, so the balance can be
+tuned to what your operation actually cares about, and changed again when
+that changes.</p>
+<h3 id="what-happens-when-it-cannot-work-something-out">What happens when it cannot work something out?</h3><p>This is the question worth pressing hardest on, with us and with everybody
+else, because the failure that costs you money is not a wrong answer. It is
+a confident answer where there should have been none.</p>
+<p><strong>There is a third verdict, and it is a real one.</strong> An assessment can come
+back as <em>unable to assess</em>, carrying the reason it could not. That state is
+kept distinct from a pass and distinct from a fail, all the way to the
+screen, where it has its own colour and its own symbol rather than borrowing
+either. The wording is deliberate and it is worth quoting: an item that
+could not be assessed says so, and says explicitly that this is not a
+finding that the thing is compliant. Those two sentences are not the same
+sentence, and a system that lets them look the same on a screen is one you
+will stop trusting within a month.</p>
+<p><strong>A missing source is recorded as missing.</strong> Where a measure depends on data
+that could not be read, the measure is set aside and the remaining ones are
+re-balanced around it, rather than being scored as zero. A source that was
+never read cannot quietly depress a result and be mistaken for a finding.</p>
+<p><strong>&ldquo;There is not enough data here&rdquo; must be sayable — and it is.</strong> This one is
+worth the detail, because getting it wrong is subtle and the wrong version is
+the obvious version.</p>
+<p>Filler is removed: where an analysis produces a real recommendation <em>and</em> a
+&ldquo;review the inputs and re-run&rdquo; line, the filler is stripped, because a queue
+padded with non-decisions moves the work back to the person it was meant to
+help. That rule is right, and it still stands.</p>
+<p>But it used to be applied unconditionally. So an analysis whose only honest
+output was <em>no data was returned for the requested lanes</em> was deleted
+entirely — and deleting it looked identical to the model having failed to
+produce anything parseable, which sent the caller down the substitution path,
+which on a standard instance substitutes nothing. The live behaviour was:
+delete the true answer, replace it with an empty one, show a blank screen.
+Worse than either outcome on its own.</p>
+<p>It now survives. An answer that consists only of <em>not enough data</em> reaches you
+as that answer, and is distinguishable from a failure to answer at all.</p>
+<p><strong>Where the software does act on its own, confidence is a gate.</strong> There is
+one place in the product where something is carried out without a person
+reading it first, and it is not your operation — it is the installation
+repairing itself: restarting a worker, tripping a breaker, rolling back,
+scaling, notifying. That path has two independent checks. A remediation plan
+below a stated confidence floor is <strong>recorded and not applied</strong>, and the verb
+it proposes must be one of a named, permitted set, so a plan outside that set
+stops there however confident it is. There is also a single setting that
+narrows it back to one event type without a redeploy, because the first thing
+anyone wants during an incident caused by automation is a way to stop the
+automation.</p>
+<p>It is worth saying why that paragraph is in a whitepaper. Self-healing here
+was once wired, logged and metered — and structurally incapable of acting,
+because the only event that could reach the reasoner was one nothing emitted.
+It reported a capability it did not have, which is the same defect as a
+savings figure derived from a constant, wearing different clothes.</p>
+<p><strong>Instructions to do the wrong thing are refused before any reasoning
+happens.</strong> An instruction to forge a tariff code, fake a delivery term,
+falsify a packing list, alter a commercial invoice, ignore a weighbridge
+reading that disagrees with a manifest, skip a customs check, invent weather
+to support a claim, override a cold-chain excursion or restate an emissions
+figure is refused at the door. It is refused by a fixed written rule rather
+than by the model&rsquo;s judgement, which means the same input always produces
+the same refusal, the refusal names the rule it broke, and the attempt
+leaves an audit record. A rule the reasoning could talk itself out of would
+not be a rule.</p>
+<p><strong>Pressure is reported as pressure.</strong> When the machines are busy, the answer
+is that capacity is saturated and to try shortly — not an empty result that
+reads like a finding of nothing. An empty answer that looks like an answer
+is the most expensive failure this class of software has, and it is worth
+asking every vendor how they avoid it.</p>
+<h3 id="how-does-it-work-with-sap-oracle-and-the-rest-of-what-we-run">How does it work with SAP, Oracle and the rest of what we run?</h3><p>Three doors, and which one a system uses depends on the system rather than
+on us.</p>
+<p><strong>A direct read.</strong> Where a system offers a database or a query interface,
+FACE connects with the vendor&rsquo;s own driver, using an account you issue, and
+reads it in place. Every statement is checked before it is allowed to run,
+and only statements that read are permitted to execute — that is enforced by
+a validator that inspects the statement, not by a convention that everyone
+agrees to follow. It walks the statement character by character rather than
+relying on a set of patterns applied in the right order, and the identifier
+rules are tight enough to be awkward on purpose — a double hyphen is rejected
+inside an identifier so that a source named <code>analytics-db</code> stays legal while
+something named to truncate a statement does not.</p>
+<p>And it documents its own limit in the file that implements it: a statement
+that unions a second table into a legitimate read passes every check in it.
+A read-only account on your side and a validator on ours is two locks on the
+same door, which is the right number — and the validator is the weaker of
+the two, which is why the account is not optional. A vendor who tells you
+their query guard is sufficient on its own has either not read it or is
+hoping you will not.</p>
+<p><strong>Through the system&rsquo;s own service interface.</strong> Business applications that
+publish a service interface are read through it, with credentials you issue
+and can revoke, in the same read-only posture.</p>
+<p><strong>Through a file you already produce.</strong> This is the answer for everything
+else, and it is a stronger answer than it first sounds. Almost every system
+of record in a large operation already emits a scheduled extract: a nightly
+export, a monthly workbook, a file landing in storage you own. FACE reads
+those directly — comma- and tab-separated files, the common structured
+formats, spreadsheets and columnar files — streaming them rather than
+loading them whole, so a large export does not have to fit in memory to be
+read.</p>
+<p>The reason to take that third door seriously is timing. An extract you
+already produce is a working connection this week. It does not wait on an
+integration project, a vendor conversation or a change window, and the
+finding it produces is real enough to decide on.</p>
+<p>Underneath all three sits one principle that is worth stating on its own.
+<strong>FACE reads. It does not replace.</strong> You are not asked to migrate off your
+transport system, your warehouse system or your ledger — and you must not
+be, because the value on offer lives in the space between those systems, and
+that space only exists while they stay where they are.</p>
+<h3 id="what-actually-happens-to-our-systems-when-somebody-approves-something">What actually happens to our systems when somebody approves something?</h3><p>Almost nothing, and the mechanism that tells you so is the best single answer
+in this document.</p>
+<p>What happens to your systems on approval is: <strong>the correspondence is sent, if
+you have connected an account for it, and nothing else is written anywhere.</strong>
+The calendar entry is drafted and not created. The update your system of
+record needs is drafted as a specific instruction with its details filled in,
+and is not applied — there is no write path into an ERP in the product today.</p>
+<p>The reason to lead with that rather than bury it is the contract on the way
+back. <strong>Every response to an approval carries two separate facts.</strong> Whether
+the decision was recorded — which it is, even when nothing could be executed.
+And a list of the steps that did <em>not</em> run, each as a named token: <em>no
+workplace account connected</em>, <em>not implemented</em>. Both fields are set on every
+response, including a partial run where the email went and the system update
+did not, because a partial run is a real outcome and reporting the skips only
+when everything was skipped would hide it behind a success.</p>
+<p>Before that existed, &ldquo;approved, recorded, but nothing was executable&rdquo; left the
+server as a bare failure, byte-identical to a genuine one. A client could not
+tell them apart, so both of its sensible reactions were wrong: it retried a
+decision that had already been recorded, then gave up on it, and it showed the
+operator an error for a state change that had really happened.</p>
+<p><strong>The decision and the execution are recorded separately.</strong> What a person
+decided is recorded as a decision with their name on it. What ran is recorded
+as having run, and a reference is minted only where something really did. An
+approval never reads as though something happened downstream when it did not.</p>
+<p>That distinction sounds like a technicality until the first time somebody
+asks, six months later, whether an action was taken. A record that conflates
+the two answers that question wrongly and confidently.</p>
+<h3 id="where-does-our-data-live-and-is-it-used-to-train-anything">Where does our data live, and is it used to train anything?</h3><p><strong>It lives on your machines.</strong> Records, files, the search index behind every
+answer, the credentials, and the authority that issues the platform&rsquo;s
+internal credentials are all held on hardware you control. There is no
+managed database run by somebody else holding your operational data. The
+system&rsquo;s own working records are kept in a small database beside the
+software and copied continuously into file storage you own, so the backup
+surface is one thing you already control rather than several you do not.</p>
+<p><strong>It is not used to train anything.</strong> No customer material is sent anywhere
+to be trained on, and there is no account with an outside model provider for
+it to be sent to. The architecture is the reason: there is no third-party
+model client anywhere in the software, and exactly one configurable inference
+endpoint, which points at a model server the installation runs itself.</p>
+<p>Now the calibration, because this is the claim a vendor is most tempted to
+overstate and the one a security reviewer is most entitled to test. <strong>In FACE
+today that property is architectural and verifiable by inspection — it is not
+yet checked by a machine on every change.</strong> The repository&rsquo;s commit-time checks
+validate agent definitions, not imports, so nothing would currently stop a
+future contributor adding such a dependency except review. A sibling product
+in the same organisation does run that scan in its build, which is how we know
+what the check looks like and what it costs; it is not yet wired here.</p>
+<p>We would rather write that paragraph than the one that claims a control we
+have not built. <em>A test a comment can satisfy certifies the exact condition it
+exists to detect</em> — and a whitepaper is a comment. Ask for the build log.</p>
+<p><strong>One organisation&rsquo;s material cannot surface in another&rsquo;s answer.</strong> The
+search behind every answer is filtered by organisation before anything is
+ranked, so another organisation&rsquo;s material is never a candidate rather than
+being a candidate that is discarded later. A second, independent check
+applies the same rule to whatever the first returns. Two checks in sequence
+is deliberate: a single filter that quietly stopped working would fail open,
+and this arrangement fails closed.</p>
+<p><strong>Confidential material is protected in transit and in the record.</strong> The
+parts of the system prove who they are to each other on every exchange,
+using credentials that are short-lived, issued with a fresh key each time
+and replaced on a cycle well before they could expire, from an authority
+your installation runs itself. Credentials for your systems are held in
+their own files, separately from the settings of the connection they belong
+to, readable only by the account that owns them — so the settings can be
+reviewed by an architect who is not entitled to the password. Audit records
+are structured entries with a defined type rather than free text, and
+personal identifiers inside them are replaced with a one-way code that still
+lets records be grouped but cannot be read back.</p>
+<h3 id="does-it-need-special-hardware-or-special-equipment-to-capture-data">Does it need special hardware, or special equipment to capture data?</h3><p>No to both, and the second one surprises people.</p>
+<p><strong>For the reasoning</strong>, ordinary processors are enough. A specialist graphics
+card is used where one is present and is not required where one is not. Work
+that runs on ordinary processors runs at a steadier pace, which suits
+overnight batches — and claims, reconciliation, planning and compliance are
+overnight batch work by nature. An overnight run has all night.</p>
+<p><strong>For measurement and capture</strong>, nothing new is installed anywhere. Camera
+work reads the feeds your existing cameras already publish, over the
+ordinary streaming protocols, including cameras on a private network where
+cameras normally live. There is no capture card, no proprietary camera and
+no vendor-specific device driver.</p>
+<p>Sensor and telemetry readings arrive the same way everything else does —
+as records from the systems that already collect them. Your refrigeration
+monitoring, your vehicle tracking and your weighbridge already write their
+readings somewhere. FACE reads that somewhere. It does not ask you to
+re-instrument your operation, and an offer to sell you sensors alongside
+software should always be examined closely.</p>
+<h3 id="how-long-does-it-take-and-what-do-you-need-from-us">How long does it take, and what do you need from us?</h3><p>The sequence matters more than any duration, because the duration depends
+almost entirely on how quickly your side can produce a credential.</p>
+<div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>You bring</th>
+          <th>What happens</th>
+          <th>What you get</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>One file: a spreadsheet of invoices, a folder of correspondence</td>
+          <td>Analysed directly, with no connection configured first</td>
+          <td>Findings on your own data, in the same session</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>One credential, read-only, to the system holding the money</td>
+          <td>Connection created and tested on the screen; a recurring question set to run overnight</td>
+          <td>A populated queue the following morning</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Machines and a sign-in arrangement</td>
+          <td>The same software on your hardware, installed once and maintained after</td>
+          <td>The steady state</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>The second system and the third</td>
+          <td>Each connection makes the previous ones more useful</td>
+          <td>Compounding, not waiting for completeness</td>
+      </tr>
+  </tbody></table></div>
+<p>In words: you can have a finding on your own data before any connection
+exists, because a file can be analysed on its own. You can have a populated
+queue the morning after one credential arrives. Everything after that is
+widening, and widening pays immediately rather than at the end.</p>
+<p><strong>What we need from you</strong> is short, and it is worth having ready before the
+first conversation rather than assembling it during the third.</p>
+<ul>
+<li><strong>Machines you control</strong>, with room for the model. Ordinary processors are
+supported.</li>
+<li><strong>One read-only credential</strong> for the system you want read first. Read-only
+is the right posture and we would rather you insisted on it.</li>
+<li><strong>A sign-in arrangement</strong>: your company identity provider or an
+administrator account, and the list of addresses permitted to sign in.
+Both are checked at start-up. Sign-in that is configured but has an empty
+list of permitted addresses lets nobody in rather than everybody, which is
+the behaviour you want and the opposite of the common default.</li>
+<li><strong>A decision about who may change a data connection.</strong> This is the one
+policy decision that has to be made explicitly, and it is far better made
+in week one than in month six.</li>
+<li><strong>A named owner.</strong> One person, not a team.</li>
+</ul>
+<p><strong>What we do not need</strong> is a data migration, a warehouse project, a change
+to your systems of record, or a period of labelling before anything works.</p>
+<h3 id="can-a-company-without-a-large-technology-team-run-this">Can a company without a large technology team run this?</h3><p>Yes, and the design assumes it.</p>
+<p>The person who operates FACE day to day is an operator, not an engineer.
+Connections are created and tested from the screen. Schedules are created,
+paused and deleted from the screen. Questions are asked in ordinary
+language. The skill that reviewing an artifact actually requires is a domain
+skill — knowing whether a claim holds, whether a safety margin is sensible —
+which is exactly the skill the people who would use it already have and the
+one an engineer would not.</p>
+<p>The installation itself is declared once and maintained automatically
+afterwards. It grows by adding a machine rather than by being rebuilt: a new
+machine joins an existing installation and starts taking work, and capacity
+for the reasoning is added the same way.</p>
+<p>The honest shape of the requirement is one named owner plus the screen. If
+your operation has somebody who already owns a system of record and is
+comfortable being accountable for one more, you have the person.</p>
+<h3 id="why-should-we-trust-what-it-recommends">Why should we trust what it recommends?</h3><p>Not because it is confident. Confidence is the cheapest thing a system like
+this produces and it should be discounted accordingly.</p>
+<p>Four reasons, each of which you can check rather than accept.</p>
+<p><strong>The evidence is attached.</strong> Every artifact carries the records it was
+derived from and the steps that produced it. The review is a review of
+evidence, so a reviewer who disagrees can point at the specific record
+rather than at a feeling.</p>
+<p><strong>The quantities were calculated, not composed.</strong> Forecasting, grouping,
+cause-and-effect and statistical summary are performed by long-established
+methods that calculate. The model handles language: reading documents,
+explaining findings, drafting correspondence. A figure produced by a method
+tested against your own history can be defended to a carrier, an auditor or
+a board. A figure produced by a fluent sentence cannot, and the two are
+indistinguishable on a screen unless the product keeps them apart.</p>
+<p><strong>The run can be replayed.</strong> Each run leaves a step-by-step record that can
+be reopened and walked afterwards. If you want to know how a conclusion was
+reached in March, you open March.</p>
+<p><strong>It is allowed to decline.</strong> The verdicts above — unable to assess, with
+the reason — are the reason the confident answers are worth something. A
+system whose guesses and whose findings look identical from the outside gets
+ignored within a month, and deserves to be.</p>
+<p>And underneath all four: <strong>a drafted action waits until a named person
+approves it, and there is almost nothing the software can do to your systems
+even then.</strong> The autonomy is in the assembly, the drafting and the ranking —
+the slow, skilled, expensive work. The judgement stays with the person
+accountable for it, their name stays on the record, and what the software did
+not do is on the record beside it.</p>
+<h2 id="who-this-is-for">Who this is for</h2><h3 id="the-operations-director">The operations director</h3><p>You are measured on exceptions that reach the customer. FACE turns your
+inbox of alerts into a ranked queue of drafted decisions, and moves your
+team from chasing to approving. The specific promise: you find out before
+your customer does, and you have the fix in front of you when you do.</p>
+<h3 id="the-chief-financial-officer">The chief financial officer</h3><p>You are carrying losses classified as a cost of doing business, and
+recoveries that never appear because they were never identified. FACE
+produces claims with the evidence assembled and the reasoning stated, and
+keeps what has been identified separate from what has been approved. The
+specific promise: recoveries become a managed pipeline rather than an
+occasional heroic effort — with every amount on it traceable to one of your
+own documents, and no Runink estimate of your recovery anywhere on the
+screen.</p>
+<h3 id="the-head-of-planning">The head of planning</h3><p>You are forecasting from history in a spreadsheet and absorbing the
+consequences of everybody else&rsquo;s rounding. FACE forecasts from your own
+records, states how well the forecast fits, reads stock positions as they
+are actually recorded, and shows how far an order swing grows between one
+stage of the chain and the next. The specific promise: the argument about
+safety margins is settled with your own numbers rather than seniority.</p>
+<h3 id="the-head-of-compliance-or-risk">The head of compliance or risk</h3><p>You are asked whether controls are enforced and you answer from belief.
+Rules Recon converts that into a list with four states and a named source
+per rule. The compliance agent reports how you stand against the frameworks
+that apply to you, with each finding marked pass, fail or warning. The
+specific promise: the answer to <em>do we enforce this</em> becomes a document
+rather than a conversation.</p>
+<h3 id="the-chief-information-officer">The chief information officer</h3><p>You are being asked to approve another system that wants a copy of the
+company&rsquo;s operational data. This one runs on your hardware, reads the
+systems you already own, replaces none of them, and its internal
+components prove who they are to each other with short-lived credentials
+that are replaced on a cycle. The specific promise: the question your review
+opens with has a one-sentence answer, because the data does not go anywhere.</p>
+<h3 id="the-chief-executive">The chief executive</h3><p>You want the operation to catch its own problems and you want the
+improvement to be visible. Maturity Center tracks how the operation is
+doing over time and produces the phased plan; the financial board shows what
+was identified and what was approved. The specific promise: operational
+improvement becomes something you can read, quarter over quarter — and the
+figure you read will be smaller and more defensible than the one a competing
+vendor will show you, for a reason this paper states outright in its first
+chapter.</p>
+<h2 id="what-it-is-worth-computed-on-your-own-numbers">What it is worth, computed on your own numbers</h2><p>Here is the arithmetic, with every input named and read out of systems you
+already own. Run it on your own figures and the result is yours — something you
+can show your working for when a finance director asks where it came from.</p>
+<p><strong>This is a spreadsheet you build, not a screen in the product.</strong> FACE does not
+compute your payback period, and no part of it produces a figure for what
+Runink saved you.</p>
+<h3 id="what-the-mechanism-actually-moves">What the mechanism actually moves</h3><p>FACE does not improve your carrier contracts. It does not raise the rate at
+which a challenged invoice is conceded, and it does not make a weak claim
+strong. What it changes is <strong>the cost of assembling a case</strong> — and through
+that, which cases are worth assembling at all.</p>
+<p>Today, assembling one claim takes a skilled person most of a morning: find the
+carrier&rsquo;s receipt, match it to the weighbridge reading, find the rate that
+applied on that date, check the filing deadline, draft the letter. If the
+average case is worth less than that morning, only the largest cases get filed
+and the rest expire quietly. Nobody can fix that by trying harder, because
+trying harder does not change the arithmetic. Move the assembly cost and the
+threshold moves with it.</p>
+<h3 id="six-inputs-and-where-each-one-is-read">Six inputs, and where each one is read</h3><p><strong>One — what one case costs to assemble.</strong> Have one experienced person time
+themselves assembling five cases chosen at random rather than chosen as
+examples. Take the median, and multiply by that person&rsquo;s fully loaded hourly
+cost. This is the number that decides everything else, and almost nobody has
+measured it.</p>
+<p><strong>Two — the value below which filing loses money.</strong> Input one divided by the
+share of filed claims you actually recover. That quotient is your break-even,
+and most operations have been enforcing it implicitly for years without ever
+stating it.</p>
+<p><strong>Three — how many eligible events fall below that threshold.</strong> Take one lane,
+one carrier or one month, and have somebody assemble every event that was
+<em>eligible</em> to be claimed rather than the ones that were. Count how many fall
+below input two. That population is what is currently being left, and its
+ratio to the ones you did file scales to the whole book.</p>
+<p><strong>Four — the recovery you would expect on that population.</strong> Its median value,
+times a recovery rate <em>lower</em> than the one you achieve today. Small claims get
+argued less hard by everyone, including you, and the counterparty knows it.
+Applying your best rate to your smallest cases is the commonest way this
+figure gets inflated.</p>
+<p><strong>Five — what the exceptions you take actually cost.</strong> From the ledger, last
+four quarters, by category: port and terminal charges for time, spoilage and
+product written off, expedited freight, duty adjustments, penalties.</p>
+<p><strong>Six — how long you currently take to find out.</strong> For each category in input
+five, the date of the underlying event and the date somebody first acted on
+it. The median difference is your detection interval. Then how much the cost
+grows per day inside it: a port charge runs daily, a spoiling container has a
+window measured in hours, a duty error on a repeating entry recurs monthly.</p>
+<h3 id="how-they-combine">How they combine</h3><div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>What it is</th>
+          <th>How you get it</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Add</td>
+          <td><strong>Recovery now addressable</strong></td>
+          <td>Eligible events below the threshold × the median value of those events × the expected recovery rate on them</td>
+      </tr>
+      <tr>
+          <td>Add</td>
+          <td><strong>Losses avoided</strong></td>
+          <td>What a category costs per day it runs × the days the interval would shorten by × the share where acting earlier changes the outcome</td>
+      </tr>
+      <tr>
+          <td>Subtract</td>
+          <td><strong>Cost side</strong></td>
+          <td>Seats + the machines you already run + the named owner&rsquo;s time + the work of connecting each system</td>
+      </tr>
+      <tr>
+          <td><strong>=</strong></td>
+          <td><strong>The payback period, in months, in your numbers</strong></td>
+          <td>The annual benefit ÷ the monthly cost</td>
+      </tr>
+  </tbody></table></div>
+<p>This paper does not state that period, because both of its terms belong to you
+and neither is knowable from here.</p>
+<h3 id="three-ways-the-answer-comes-out-wrong">Three ways the answer comes out wrong</h3><p><strong>Counting the same money twice.</strong> A port charge avoided and a credit
+recovered from the carrier for the same delay are one benefit, not two.
+Reconcile the categories before you sum them.</p>
+<p><strong>Using a denominator produced by the process that misses things.</strong> If the
+count of eligible events comes from the system that already fails to notice
+them, you have measured what you catch and called it what exists. Input three
+has to come from a manual inspection of some period, however short.</p>
+<p><strong>Assuming earlier always changes the outcome.</strong> It does not. Some findings
+are information: the container was already lost, the invoice was correct after
+all. Take a sample of last year&rsquo;s incidents and ask the people who worked them
+whether a different action was available in the first hour. The share where
+the answer is yes is the only share the mechanism can act on, and a
+calculation that assumes it is everything will not be believed twice.</p>
+<h3 id="record-the-baseline-before-you-connect-anything">Record the baseline before you connect anything</h3><p>Four numbers, written down in the first week and before a single connection is
+configured: the median assembly time per case, the count of claims filed last
+quarter, the median detection interval by category, and the last four quarters
+of charges, write-offs and expedited freight from the ledger. All four become
+unrecoverable once the mechanism is running, because the thing that would tell
+you is now the thing that changed.</p>
+<h3 id="the-cheapest-version-of-this-test">The cheapest version of this test</h3><p>Take one month of freight invoices. Have a person assemble every disputable
+case by hand, and record how long it took and what it was worth. Then run the
+same month through FACE and compare three things: what it found that the
+person did not, what the person found that it did not, and how long each took.
+That is a measurement, on your data, and it fits in a week.</p>
+<h2 id="what-adopting-it-involves">What adopting it involves</h2><h3 id="evaluation-runs-on-a-laptop">Evaluation runs on a laptop</h3><p>The same software that runs in production runs as it is on a single
+workstation. An evaluation does not require infrastructure to be set up
+first, and it does not require a data migration.</p>
+<p>The fastest first read comes from uploading a delimited export — freight
+invoices, two years of monthly order quantities — and having the agents
+comment on it directly, before any connection is configured. Take that for
+what it is: a same-afternoon check that your material is legible to the
+system, returned as prose. The findings worth arguing with come from the first
+connection, because that is where the quantities start being calculated.</p>
+<h3 id="connections-come-next-one-at-a-time">Connections come next, one at a time</h3><p>Connect the system where the money is. For most operations that is the
+freight or claims data, because that is where recoverable value
+concentrates. Test the connection, run a question, read the artifacts.</p>
+<p>Add the second system when the first has produced something worth acting
+on. The value compounds as more of your systems are connected — because the
+losses live between systems, each additional connection makes the previous
+ones more useful — but it does not wait for completeness.</p>
+<h3 id="then-it-runs-on-a-schedule">Then it runs on a schedule</h3><p>Recurring questions run overnight on an interval you set. The queue is
+populated when the team arrives. This is the steady state, and it is where
+the product stops being a project and becomes part of the day.</p>
+<h3 id="production-sits-inside-your-own-walls">Production sits inside your own walls</h3><p>Production is the same software on one server or a small group of them,
+inside your own environment. Installations are declared once and maintained
+automatically thereafter.</p>
+<h3 id="what-it-asks-of-your-people">What it asks of your people</h3><p>An operator, not an engineer. Connections are created and tested from the
+screen. Schedules are created, activated, paused and deleted from the
+screen. Questions are asked in plain language. Reviewing artifacts is a
+domain skill — knowing whether a claim holds, whether a safety margin is
+sensible — not a technical one.</p>
+<h2 id="the-commercial-shape">The commercial shape</h2><h3 id="how-the-product-is-licensed">How the product is licensed</h3><p>Each organisation holds its own entitlement record, carrying a subscription
+tier and a seat count. Licences are generated, validated and activated
+through the product itself.</p>
+<h3 id="how-consumption-is-seen">How consumption is seen</h3><p>There is a usage view, and an operator can set a budget against it, which is
+what makes consumption a decision rather than a discovery at the end of a month.
+Because the reasoning runs on your own machines, it is a view of your own
+capacity rather than a meter you are billed against per question.</p>
+<p>Where a quantity on that view has not been sampled, the response carries the
+reason it is absent rather than a zero that reads as a measured nothing — which
+is the rule the codebase states in four words and a finance director should be
+shown: <strong>never bill on unmeasured usage.</strong> A charge is raised from a
+measurement or it is not raised.</p>
+<h3 id="what-is-included-in-the-operator-experience">What is included in the operator experience</h3><p>Beyond the six main destinations, the interface provides a side panel for
+the recurring work — voice, and the compliance, finance and operations
+fixes, today&rsquo;s instruction, the drafts waiting to go out, and the camera
+connection — a view of what the agents are currently working on, progress
+shown as each run proceeds, step-by-step records you can replay, and a
+support console.</p>
+<h3 id="working-alongside-your-other-systems">Working alongside your other systems</h3><p>Agents can be reached by other agents, and the platform offers its own
+tools to other software through the open standard that has grown up for
+exactly that. In practice this means FACE can be a participant in a wider
+automation setup rather than an island in it.</p>
+<h3 id="face-within-runink">FACE within Runink</h3><p>FACE is one of two Runink products. The other is PULSE, a digital-marketing
+engine built the same way. Both sit on a shared platform called CORE, which
+is what makes the installation, identity and separation properties described
+in this document consistent across them.</p>
+<h2 id="the-argument-in-one-page">The argument in one page</h2><p><strong>The evidence of your next loss already exists in your systems.</strong>
+Scattered across platforms that were bought separately and never designed
+to be read together.</p>
+<p><strong>Assembling it by hand costs more than most individual losses are worth.</strong>
+Which is why only the largest problems get worked, and the rest — the
+expired claim, the amplified order, the mis-sorted return — pass quietly.</p>
+<p><strong>FACE does the assembly.</strong> It connects to the systems you run, ties what it
+reads to your own records, works over the combined picture, and produces a
+specific recommendation with the evidence attached.</p>
+<p><strong>It is one mechanism, not a feature list.</strong> The same loop answers a customs
+hold, a demand swing that grows upstream, a return on a dock, a disruption
+in progress and a claim inside its filing window.</p>
+<p><strong>A person decides.</strong> A drafted action waits; approving it is what sends it;
+the approver and their edits go on the record. The autonomy is in the drafting
+and the ranking. And the gate is structural rather than a setting: of the
+follow-through an approved action carries, only correspondence is dispatched
+by FACE at all, and every response names the steps that did not run.</p>
+<p><strong>The numbers are computed, or they are absent.</strong> Forecasting, grouping,
+cause-and-effect and statistical analysis produce the quantities, and the
+method is named. Where a quantity cannot be produced, the absence is a typed
+state with a reason attached rather than a zero or a plausible figure.</p>
+<p><strong>There is no Runink figure for what you save.</strong> Four places in the software
+once produced one, each from a constant somebody chose, and all four were
+deleted — with a test that now asserts the derived total is zero. That refusal
+is checkable, it is the hardest thing in this document to fake, and it is the
+reason to believe the rest of it.</p>
+<p><strong>It runs on your hardware.</strong> Your operational data is processed where it
+already sits. The question a security review opens with — where does our
+material go — has a one-sentence answer, the cost of asking a question does not
+scale with curiosity, and the arrangement does not depend on a third party&rsquo;s
+terms.</p>
+<p><strong>It has not been audited against SOC 2.</strong> The posture is SOC 2-oriented, with
+controls mapped and self-declared — stated in exactly those words, here and
+everywhere else, and every control in it is one you can exercise yourself.</p>
+<p><strong>The output is a queue, ranked.</strong> Which turns exception management from an
+inbox into a measurable process with a beginning, a decision and a recorded
+outcome. It starts empty, and it fills from your connections rather than from
+ours.</p>
+<h2 id="the-next-step">The next step</h2><p>The right first step is small and specific.</p>
+<h3 id="bring-one-export">Bring one export</h3><p>Freight invoices as a comma-separated export. Two years of monthly order
+quantities for one product line. A month of temperature readings from your
+monitoring platform, in whatever table or file it already writes them to.</p>
+<p>FACE reads a delimited export directly, without a connection being configured
+first, and the agents comment on it in the same sitting. That is a read on
+legibility, not a set of Decision Artifacts, and this paper would rather tell
+you that now than have you conclude it in the meeting.</p>
+<h3 id="then-connect-one-system--this-is-the-real-first-step">Then connect one system — this is the real first step</h3><p>The one holding the money, or the one holding the order history. Test the
+connection, define a recurring question, and let it run overnight. The
+following morning there is a queue, and it holds what your own records
+support.</p>
+<p>The queue will be shorter than a demonstration&rsquo;s. That is the product working.</p>
+<h3 id="then-decide">Then decide</h3><p>By that point the argument is no longer about the software. It is about
+the specific value sitting in your specific queue, and whether the people
+who would work that queue want it.</p>
+<p>That is the correct basis for the decision, and it is the one this product
+is built to be judged on.</p>
+
+      </div>
+    </article>
+  </div>
+
+  
+  
+  
+  
+  <section class="wp-ask" aria-labelledby="wp-ask-head">
+    <div class="wp-ask-inner">
+      <p class="wp-ask-label wp-util" id="wp-ask-head">One next step</p>
+      <h2 class="wp-ask-title">Half an hour, and we read one of your own exports with you.</h2>
+      
+      <a class="wp-ask-cta wp-util" href="/?about=The&#43;Runink&#43;FACE&#43;paper#contact-form">Book a consultation</a>
+    </div>
+  </section>
+  
+
+  <footer class="wp-foot">
+    <div class="wp-foot-inner">
+      <div>
+        <p class="wp-foot-label wp-util">Talk to us</p>
+        <p>
+          <a href="mailto:paes@runink.org">paes@runink.org</a><br>
+          <a href="https://runink.org">runink.org</a>
+          
+        </p>
+      </div>
+      <div>
+        <p class="wp-foot-label wp-util">Other papers</p>
+        <p>
+          
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-core/">Runink CORE &mdash; The operations layer for companies that keep their own data</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-pulse/">Runink PULSE &mdash; Prescriptive Unified Lead &amp; Social Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-core-atlas/">Runink CORE &mdash; A joint architecture paper with Logical Leap&#39;s Atlas</a><br>
+          
+          
+          <a class="wp-next" href="/blog/whitepapers/">All whitepapers</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</main>
+
+        
+        
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    <script src="/js/main.js" defer></script>
+    
+
+
+<script src="/js/whitepaper.min.089b451a059ffeca5cb82bef0ed777334066c0824c36939ca6e85b22c205dcf8.js" defer></script>
+
+</body>
+
+</html>

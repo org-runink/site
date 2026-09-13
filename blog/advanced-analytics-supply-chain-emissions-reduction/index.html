@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    <title>Emissions, Waste and the Cost of Reading Supply Chain Records Late | Runink</title>
+
+    
+    <meta name="description" content="Where supply chain emissions actually come from in a wholesale network — empty miles, buffer inventory, expedites and dwell — and why the reduction levers available without capital expenditure are all reading problems rather than routing problems.">
+    <meta name="author" content="Runink">
+    
+    
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    
+    <meta property="og:title" content="Emissions, Waste and the Cost of Reading Supply Chain Records Late | Runink">
+    <meta property="og:description" content="Where supply chain emissions actually come from in a wholesale network — empty miles, buffer inventory, expedites and dwell — and why the reduction levers available without capital expenditure are all reading problems rather than routing problems.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/">
+    <meta property="og:site_name" content="Runink">
+    
+    <meta property="og:image" content="https://runink.org/images/blog/advanced-analytics-supply-chain-emissions-reduction_hu_d23e92ae04be37fb.webp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Emissions, Waste and the Cost of Reading Supply Chain Records Late | Runink">
+    <meta name="twitter:description" content="Where supply chain emissions actually come from in a wholesale network — empty miles, buffer inventory, expedites and dwell — and why the reduction levers available without capital expenditure are all reading problems rather than routing problems.">
+    
+    
+    <meta name="twitter:image" content="https://runink.org/images/blog/advanced-analytics-supply-chain-emissions-reduction_hu_d23e92ae04be37fb.webp">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/">
+
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Shorter notes",
+          "item": "https://runink.org/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Emissions, Waste and the Cost of Reading Supply Chain Records Late"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/"
+  },
+  "headline": "Emissions, Waste and the Cost of Reading Supply Chain Records Late",
+  "description": "Where supply chain emissions actually come from in a wholesale network — empty miles, buffer inventory, expedites and dwell — and why the reduction levers available without capital expenditure are all reading problems rather than routing problems.",
+  
+  
+    
+    
+      "image": {
+        "@type": "ImageObject",
+        
+        
+        
+        "url": "https://runink.org/images/blog/advanced-analytics-supply-chain-emissions-reduction_hu_d23e92ae04be37fb.webp",
+        "width":  1200 ,
+        "height":  675 
+        
+        
+      },
+    
+  
+  "datePublished": "2026-06-06T02:16:21Z",
+  "dateModified": "2026-09-11T07:07:18-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=Emissions%2C%20Waste%20and%20the%20Cost%20of%20Reading%20Supply%20Chain%20Records%20Late#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=Emissions%2C%20Waste%20and%20the%20Cost%20of%20Reading%20Supply%20Chain%20Records%20Late#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+
+
+
+
+
+
+<div class="rk-post bg-canvas">
+  
+<style>
+  @media print {
+    @page { margin: 16mm 14mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-post { padding: 0 !important; }
+    .rk-post-wrap { max-width: none !important; padding: 0 !important; }
+
+     
+    .rk-post-screen { display: none !important; }
+
+     
+    .rk-post-body :is(h2, h3, h4) { break-after: avoid; page-break-after: avoid; }
+    .rk-post-body :is(p, li, blockquote) { orphans: 3; widows: 3; }
+    .rk-post-body pre,
+    .rk-post-body blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+     
+    .rk-post-body table { break-inside: auto; }
+    .rk-post-body thead { display: table-header-group; }
+    .rk-post-body tr { break-inside: avoid; page-break-inside: avoid; }
+
+     
+     
+    .rk-post-figure {
+      width: fit-content;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .rk-post img {
+      max-width: 100% !important;
+      max-height: 62mm;
+      width: auto;
+      object-fit: contain;
+      break-inside: avoid;
+    }
+
+     
+    .rk-post-body a[href^="/"]::after { content: " (runink.org" attr(href) ")"; }
+    .rk-post-body a[href^="http"]::after { content: " (" attr(href) ")"; }
+    .rk-post-body a[href^="/"]::after,
+    .rk-post-body a[href^="http"]::after {
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      word-break: break-all;
+      color: var(--rk-text-2);
+    }
+
+     
+    .cta-section { margin: 8mm 0 0 !important; break-inside: avoid; }
+    .cta-section .container > div {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .cta-section .absolute { display: none !important; }
+    .cta-section h2 { font-size: 12pt !important; margin-bottom: 2mm !important; }
+    .cta-section p { font-size: 10pt !important; margin-bottom: 2mm !important; }
+    .cta-section a {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+    .cta-section a[href^="/"]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+     
+    .rk-post-mark { display: block !important; }
+  }
+</style>
+
+
+  <div class="rk-post-wrap container mx-auto max-w-[48rem] px-5 md:px-8 py-14 md:py-20">
+
+    
+    
+    
+      
+    
+
+    
+<header class="mb-10 md:mb-14">
+  
+  <p class="inline-block mb-5 px-3 py-1.5 rounded bg-signal-wash border-l-[3px] border-signal text-signal text-[0.6875rem] font-extrabold uppercase tracking-[0.18em]">Model Context Protocol</p>
+  
+
+  <h1 class="font-heading font-extrabold text-ink text-[2rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.05] tracking-[-0.01em] max-w-[26ch] mt-0 mb-4">Emissions, Waste and the Cost of Reading Supply Chain Records Late</h1>
+
+  
+  <p class="text-ink-2 text-base md:text-lg leading-[1.65] max-w-[62ch] m-0">Where supply chain emissions actually come from in a wholesale network — empty miles, buffer inventory, expedites and dwell — and why the reduction levers available without capital expenditure are all reading problems rather than routing problems.</p>
+  
+
+  
+  <p class="mt-5 mb-0 text-ink-3 text-xs font-semibold uppercase tracking-[0.14em]">Updated 11 September 2026 · first published 6 June 2026 · 17 min read</p>
+  
+</header>
+
+
+    
+    <p class="-mt-6 mb-10 text-ink-3 text-sm">Runink Logistics Operations Team</p>
+    
+
+    
+    <div class="rk-post-figure mb-10 overflow-hidden rounded-xl border border-rule">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/blog/advanced-analytics-supply-chain-emissions-reduction_hu_124048280bd7e9d2.webp" alt="Emissions, Waste and the Cost of Reading Supply Chain Records Late" class="w-full h-auto" width="800" height="800" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/blog/advanced-analytics-supply-chain-emissions-reduction_hu_124048280bd7e9d2.webp"
+  , "width":  800 
+  , "height":  800 
+  
+  
+  
+}
+</script>
+
+    </div>
+    
+
+    
+    
+    
+    <nav class="rk-post-screen mb-10 p-5 md:p-6 bg-sunk border border-rule rounded-xl" aria-labelledby="toc-head">
+      <h2 id="toc-head" class="m-0 mb-3 font-heading text-[0.6875rem] font-extrabold uppercase tracking-[0.16em] text-ink-3">On this page</h2>
+      <div class="prose prose-sm max-w-none prose-a:text-ink-2 hover:prose-a:text-signal prose-ul:my-0 prose-li:my-1">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-the-key-takeaways-from-this-executive-summary">What are the Key Takeaways from this Executive Summary?</a></li>
+    <li><a href="#how-does-connecting-advanced-systems-to-the-supply-chain-nervous-system-tms-oms-mrp-mes-impact-your-strategy">How Does Connecting Advanced Systems to the Supply Chain Nervous System (TMS, OMS, MRP, MES) Impact Your Strategy?</a></li>
+    <li><a href="#how-does-smarter-demand-forecasting-with-advanced-analytics-impact-your-strategy">How Does Smarter Demand Forecasting with Advanced Analytics Impact Your Strategy?</a></li>
+    <li><a href="#how-does-automated-transportation-routing-in-real-time-impact-your-strategy">How Does Automated Transportation Routing in Real Time Impact Your Strategy?</a></li>
+    <li><a href="#how-does-dynamic-response-to-supply-chain-disruptions-impact-your-strategy">How Does Dynamic Response to Supply Chain Disruptions Impact Your Strategy?</a></li>
+    <li><a href="#how-does-case-example-montreals-port-congestion-and-how-automation-could-help-impact-your-strategy">How Does Case Example: Montreal’s Port Congestion and How Automation Could Help Impact Your Strategy?</a></li>
+    <li><a href="#business-value-and-next-steps">Business Value and Next Steps</a></li>
+    <li><a href="#questions-this-raises">Questions this raises</a>
+      <ul>
+        <li><a href="#how-do-analytics-help-find-opportunities-to-reduce-scope-3-supply-chain-emissions">How do analytics help find opportunities to reduce Scope 3 supply chain emissions?</a></li>
+        <li><a href="#what-moves-emissions-work-from-reporting-to-something-operations-can-act-on">What moves emissions work from reporting to something operations can act on?</a></li>
+        <li><a href="#what-does-auditable-carbon-accounting-require-from-your-data">What does auditable carbon accounting require from your data?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </nav>
+    
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      <h2 id="what-are-the-key-takeaways-from-this-executive-summary">What are the Key Takeaways from this Executive Summary?</h2>
+<div class="aeo-direct-answer" id="answer-0">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Most avoidable supply chain emissions are the exhaust of operational lateness. An expedite gets booked because a signal was read a week after it was written down. A half-empty truck goes out to recover a missed window. A refrigerated container runs on a generator while it waits for drayage, the short truck move between port and warehouse. The levers that address all three are reading and scheduling levers rather than fleet levers, which is why they are available without capital expenditure.</div>
+</div>
+
+<ul>
+<li><strong>Access is the premise, not the benefit.</strong> Software can only act on the order, shipment and production records you already hold, and only as fast as it is allowed to read them.</li>
+<li><strong>Forecasting and routing are different problems.</strong> One reduces over-production and rush freight. The other reduces miles driven. Conflating them is how an emissions program ends up unable to say which change produced which result.</li>
+<li><strong>No supplier can give you the figure.</strong> The size of the opportunity depends on your own baseline, and in most operations that baseline has never been measured.</li>
+</ul>
+<h2 id="how-does-connecting-advanced-systems-to-the-supply-chain-nervous-system-tms-oms-mrp-mes-impact-your-strategy">How Does Connecting Advanced Systems to the Supply Chain Nervous System (TMS, OMS, MRP, MES) Impact Your Strategy?</h2>
+<div class="aeo-direct-answer" id="answer-1">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Model Context Protocol (MCP) is an emerging standard for connecting software to the systems that already run your operation: the TMS, OMS, MRP and MES. It gives that software one defined way to read records and to call a limited set of actions, with authentication, role permissions and a log of what was read or changed. The point is not autonomy. The point is that a recommendation arrives while the decision is still open, and that you can see which records it came from.</div>
+</div>
+
+<p>Software that reads your operating systems directly is more useful than software you paste spreadsheets into. MCP is one way to make that connection a standard one rather than a bespoke one. It defines how a program queries data, and how it calls an action it has been given permission to call, under the same authentication and role rules a person would be subject to.</p>
+<p><strong>The four systems that hold the records:</strong></p>
+<ul>
+<li><strong>Transportation Management System (TMS):</strong> manages freight, fleet and carrier work. It holds shipments in transit, truck positions and delivery estimates. Reading it shows where loads are sitting and which windows are about to be missed.</li>
+<li><strong>Order Management System (OMS):</strong> holds customer orders and fulfillment status. Order volumes and patterns are the main input to a demand forecast, and the OMS is where a changed priority or a revised delivery date has to land.</li>
+<li><strong>Manufacturing Resource Planning (MRP):</strong> plans production and purchasing. It holds production plans, inventory levels and supplier lead times. When a forecast moves or a supply delay appears, the re-order points and the build schedule are what need revisiting.</li>
+<li><strong>Manufacturing Execution System (MES):</strong> tracks the factory floor — machine status, output rates, quality results. A line running slow is visible here first, and it is visible here before it becomes a missed truck in the TMS.</li>
+</ul>
+<p><strong>Why a standard interface matters:</strong> the alternative is a custom connection per system, each one breaking on its own schedule. A standard interface separates reading data from taking action, so read access can be broad while the list of actions stays short and named. It also leaves a record of what the software looked at and what it changed, which is what makes a recommendation reviewable after the fact.</p>
+<h2 id="how-does-smarter-demand-forecasting-with-advanced-analytics-impact-your-strategy">How Does Smarter Demand Forecasting with Advanced Analytics Impact Your Strategy?</h2>
+<div class="aeo-direct-answer" id="answer-2">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Forecasting runs on records you already hold: sales history, order patterns, production plans, and outside factors like weather or a known seasonal peak. Software can assemble them faster than a planner can by hand, and can show the comparable periods each figure was drawn from. The planner still owns the number. Where the forecast sits closer to real demand, you build less that nobody buys and you book fewer rush shipments to cover what you got wrong.</div>
+</div>
+
+<p>Demand forecasting is the foundation of an efficient supply chain, and volatility is what makes it hard. Software can widen the inputs: sales history, current order flow, and unstructured material such as weather or a supplier notice. Running several supply-and-demand scenarios rather than one is how a planner sees the range instead of a single line.</p>
+<p><strong>Grounding a forecast in your own rules:</strong> a forecast is only usable if it respects the constraints the operation actually works under. Those constraints are written down somewhere — standard operating procedures, planning formulas, business rules such as <em>&ldquo;perishable goods must ship within 2 days of production&rdquo;</em>. Reading them alongside the history is what keeps the output inside what the operation can do.</p>
+<p>For a new beverage product, that means pulling comparable launches and seasonal patterns out of the OMS history, and the internal guidance on safety stock. The output is a forecast with those comparables attached, so the planner can see what it was built on and argue with it. That is the useful form: a starting point a planner refines, not a number they are asked to trust. Assembling that evidence by hand is a day of work, and assembling it by query is not — which matters mainly because it lets the planner revisit the forecast when conditions change, instead of once a cycle.</p>
+<p><strong>Emissions Impact:</strong> forecasting touches emissions through two specific costs. The first is the last-minute expedite — air freight or a half-empty truck booked to recover a date. The second is waste, meaning goods produced and then unsold or spoiled. Both are recorded in your own systems: expedite charges on carrier invoices, write-offs in the GL. Where production and inventory sit closer to real demand, deliveries can be batched and runs planned, and those two line items are where the change shows up. DHL&rsquo;s sustainability roadmap describes forecasting models in the same terms, as a way to provide &ldquo;needs-based provision of resources and help prevent bottlenecks&rdquo;.</p>
+<h2 id="how-does-automated-transportation-routing-in-real-time-impact-your-strategy">How Does Automated Transportation Routing in Real Time Impact Your Strategy?</h2>
+<div class="aeo-direct-answer" id="answer-3">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Routing software reads your TMS alongside traffic, weather and driver-hours data, then proposes changes: a detour around a closure, two part-full loads combined, a long haul moved from road to rail. Each option should carry the distance and travel time it implies, so a dispatcher can compare them on the conditions as they are now. Rail carries less carbon per ton-mile than road, so the same comparison is where a modal shift becomes visible.</div>
+</div>
+
+<p>Transportation is often the largest source of a retailer&rsquo;s supply chain emissions. It is also the part of the network where a decision can be revised during the day, which is why routing gets attention first. Useful routing software reads the TMS and adds outside data: traffic history, current weather, fuel costs, driver schedules. It also has to respect the constraints — hours-of-service rules for drivers, cold-chain requirements for food — or its suggestions cannot be used.</p>
+<p><strong>Re-routing during the day:</strong> a fleet is running to grocery stores in Toronto and a highway closes. Software reading the TMS and a live traffic feed can flag the affected loads by name and lay out the alternatives. A longer route with free-flowing traffic may beat a shorter one spent idling. What a dispatcher needs in order to choose is the measured distance and travel time for each option, side by side, on current conditions. A fuel-saving percentage attached to that choice is a different kind of number — modelled rather than measured — and mixing the two on one screen is how a model output ends up quoted as a measurement.</p>
+<p>Load consolidation is the other lever. If one truck is part-empty and another is nearby with compatible stops, combining them is a decision someone can make in minutes once they can see both. DHL Freight describes using algorithms for load building and route planning to reduce traffic volume and emissions in delivery. The mechanism is ordinary: fuller trucks and less backtracking mean fewer miles for the same drops.</p>
+<p><strong>Carrying your own policies into the routing:</strong> if the fleet includes electric trucks, the rule that they take city-center routes belongs in the routing, not in a policy document nobody opens at dispatch. The same is true of a standing option to shift a long haul to rail, which needs its cost and transit-time implications shown next to it. Putting those rules where the daily decision is made is what connects dispatch to a carbon target, rather than leaving the two in separate reports. Route and load changes need no new equipment, which is why they tend to be attempted before fleet electrification.</p>
+<h2 id="how-does-dynamic-response-to-supply-chain-disruptions-impact-your-strategy">How Does Dynamic Response to Supply Chain Disruptions Impact Your Strategy?</h2>
+<div class="aeo-direct-answer" id="answer-4">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Disruptions are recorded somewhere before anyone acts on them: a port delay warning in the TMS, a line stoppage in the MES, a refused drayage booking. Software reading those feeds together can raise the affected orders by name and draft the response — a production re-sequence, a re-booked carrier, a revised delivery date. A person still commits it. The gain is the draft and the earlier notice, not the removal of the decision.</div>
+</div>
+
+<p>A delayed shipment, a surge in orders, a machine breakdown, a strike: these are the normal condition, not the exception. What makes them expensive is that they are handled in silos. Transportation managers work the truck problem, planners work the supplier problem, and neither sees the other&rsquo;s records until the invoice arrives.</p>
+<p><strong>Sensing and alerts:</strong> the signals are already there. The TMS carries a port delay warning. The MES shows a line stopped. A news feed reports a flood on a rail line. Read together, and checked against the contingency plans the company has already written, those signals produce a specific alert rather than a general worry: <em>&ldquo;Storm forecast likely to close the Port of New Orleans. Consider re-routing the next three shipments through Montreal, or holding departure rather than sitting at a closed port.&rdquo;</em> The value is the notice, not the prediction.</p>
+<p><strong>Proposed actions and coordination:</strong> beyond alerting, the useful output is a drafted action with the records behind it. If a key ingredient is delayed, that means a proposed production re-sequence — which products to run instead, and what it does to the schedule — put in front of the planner who owns it. If a last-mile carrier falls through, it means a proposed re-book against the pre-approved list, with the revised delivery times spelled out, for someone to confirm.</p>
+<p>Where the line falls is worth stating plainly, because vendors in this category usually do not. Re-sequencing production, pausing an order line and re-booking a carrier are all commitments. They cost money, they change what a customer has been promised, and somebody has to answer for them afterwards. Drafting them automatically is the gain. Dispatching them automatically moves the accountability to a system that cannot hold it.</p>
+<p><strong>Writing down what worked:</strong> the post-mortem is the part most operations skip. What was tried during the last trucker strike, what it cost, and what the team would do differently belong in a written playbook attached to the scenario, not in one manager&rsquo;s memory. Shifting freight pickup to off-peak hours or moving long hauls to rail are the sort of entries that go in it. A playbook anyone can look up is what shortens the response the second time, and it is also what keeps the stopgaps — emergency air freight, half-empty trucks overnight — from being the only option left.</p>
+<h2 id="how-does-case-example-montreals-port-congestion-and-how-automation-could-help-impact-your-strategy">How Does Case Example: Montreal’s Port Congestion and How Automation Could Help Impact Your Strategy?</h2>
+<div class="aeo-direct-answer" id="answer-5">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Published accounts of the 2023 drayage shortage at the Port of Montreal describe a constraint that was visible in operating records before it showed up on invoices. This is a reading of other people&rsquo;s published account, not a Runink deployment and not a Runink result. It is used here to show which records existed, when they existed, and what reading them together on the day would have put in front of a planner.</div>
+</div>
+
+<p>Consider a published account from Canada rather than anything of ours. In 2023, importers hit <strong>logistics snarls at the Port of Montreal</strong> caused by a shortage of truck drivers available for drayage, the short container move between port and warehouse. Canada was short over <strong>28,000 drivers in 2023</strong>, and the gap is projected to exceed 55,000 by 2026. At Montreal the effect was concrete: one Toronto-based electronics wholesaler had container pickups delayed for days after ocean arrival because no trucks were available. Product launches slipped, storage charges at the port accumulated, and customer service spent the week apologising. With perishable goods the bill is larger — the Canadian produce sector reported a <strong>9% increase in food spoilage during transport in 2023</strong> on the back of the driver shortage. Each of those outcomes carries energy with it: reefers running generators for days awaiting pickup, and recovery trucks sent part-loaded from other cities.</p>
+<p><strong>What earlier reading would have changed:</strong> the congestion was visible in records before it was visible in invoices. Truck turn times at the terminal were lengthening and drayage bookings were being refused. Both facts were written down at the time. What nobody had was a reason to read them together while there was still a decision to make.</p>
+<p>Software reading those records continuously would have surfaced the same thing as a named set of containers at risk rather than as a port-wide average. The options at that point — book rail to Toronto, accept the dwell, route through a different port — are options a planner already knows. What changes is that the choice gets made on the Tuesday instead of discovered on the invoice.</p>
+<p>Two things such a system should not do. It should not book the rail slot on its own, because committing freight to a carrier is a contractual act. And it should not print a dollar figure next to the recommendation. The saving depends on the rate you can actually get, the dwell you would actually have incurred and the emissions factor you apply, none of which the software measured. A recommendation carrying an invented money figure is harder to audit than one carrying none.</p>
+<p>On the <strong>last-mile side</strong> in Toronto, the same reading applies to a duller problem. Big cities bring traffic and tight delivery windows. Checking delivery addresses against current traffic and city access rules produces a better drop sequence for the day. If downtown runs are behind because of a road closure, a revised arrival estimate can be drafted for the affected customers and sent once someone approves it. A delivery promise is a commercial commitment. Automating the apology is not the same as automating the arithmetic behind it. Off-peak delivery for non-urgent goods is a separate lever, supported on both congestion and emissions grounds. The measurable win in the last mile is usually duller than the sustainability framing suggests: fewer failed first attempts, because a failed attempt is two journeys.</p>
+<p>The Montreal-Toronto account shows where the value of reading records earlier actually sits. It sits in notice and coordination rather than in any single optimization. The congestion, the driver shortage and the lengthening turn times were all recorded before they became costs.</p>
+<h2 id="business-value-and-next-steps">Business Value and Next Steps</h2>
+<div class="aeo-direct-answer" id="answer-6">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">The business case does not rest on a headline reduction percentage. It rests on two much duller quantities, both of which belong to your operation: how many days pass between something being recorded and somebody acting on it, and what that gap costs in expedites, dwell and rework. Establish those first. Any emissions benefit follows from closing the gap rather than from the software.</div>
+</div>
+
+<p>Published 2030 reduction pledges vary by company, and the accounting boundary behind them varies even more. The levers available without capital expenditure are the same ones listed above: fewer empty miles, fuller trucks and containers, less buffer inventory, and faster responses to disruption. What no published material supports is a single percentage that a given operation will achieve. Treat any vendor&rsquo;s headline reduction figure as a claim about somebody else&rsquo;s network.</p>
+<p>So the honest version of the business case has two sides. The efficiency gains are real, and they lower operating cost as well as emissions. Their size in your operation is unknown until you measure your own baseline, and no supplier can tell you what it is.</p>
+<p><strong>For the executive sponsor:</strong> this is a narrow application, not automation for its own sake. Software reads the records your operation already keeps, applies the rules your operation already has, and puts the result in front of the person who owns the decision while the decision is open. The outcomes to watch are concrete ones you can find in your own ledgers: lead times, the count of expedites, fuel spend, and an emissions figure whose inputs you can trace. Start narrow — one region, one lever such as routing — and widen it once the team trusts what it is reading. Permission controls and an access log are what let Compliance sign off on that.</p>
+<p><strong>For the technical owner:</strong> this sits on top of the existing systems rather than replacing them. The software queries data read-only and calls a short, named list of actions. The work starts with the data flows that matter: the order feed from the OMS, shipment status from the TMS. Then name the decision points where a recommendation would be useful, such as whether to approve an expedited shipment. Those become the first connections. Feed quality decides everything downstream: a recommendation is only as good as the timeliness of the records behind it, so the freshness of each feed is worth measuring before anything is built on it.</p>
+<p>In summary, the work is to read records that already exist across domains that do not currently read each other — transportation, order management and production — and to do it while there is still a decision to make. That is an unglamorous framing of the opportunity, and it is the accurate one. None of it requires new technology, and none of it produces a reduction figure anybody can quote you in advance.</p>
+<p>Two measurements are worth more than any vendor comparison at this stage. First, the elapsed time in your operation between something being recorded and somebody acting on it. Second, your expedite and dwell spend for the last four quarters, split by the reason each one was incurred. Both belong to you, both come from records you already hold, and together they tell you whether there is an emissions program here at all.</p>
+<hr>
+<hr>
+<h2 id="questions-this-raises">Questions this raises</h2>
+<h3 id="how-do-analytics-help-find-opportunities-to-reduce-scope-3-supply-chain-emissions">How do analytics help find opportunities to reduce Scope 3 supply chain emissions?</h3>
+<div class="aeo-direct-answer" id="answer-7">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Under the GHG Protocol, Scope 1 covers the fuel you burn yourself, Scope 2 the energy you buy, and Scope 3 everything else in the chain — emissions at your suppliers, carriers and customers. Scope 3 is the hard one to account for because the records are scattered: PDF carrier reports, supplier spreadsheets with different column names, telematics exports in several formats. Most of the work is reading those records into one place and agreeing what each field means, so that fuel, distance and weight can be compared across carriers. Once they can be, the questions are ordinary operational ones. Which lanes run repeated LTL (less-than-truckload) shipments that could combine into one FTL (full-truckload) run? Which air freight moves had transit times that ocean or rail would have met? The answer comes back as named lanes and shipments rather than as a network-wide score, which is what makes it actionable and what makes it checkable.</div>
+</div>
+
+<h3 id="what-moves-emissions-work-from-reporting-to-something-operations-can-act-on">What moves emissions work from reporting to something operations can act on?</h3>
+<div class="aeo-direct-answer" id="answer-8">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Reporting tells you what last quarter&rsquo;s emissions were. Acting on them means the same records reach the person making a routing or sourcing decision while that decision is still open. When a port delay forces a route change, a reporting tool records the extra fuel afterwards. Reading the same feeds on the day lets someone compare the route options, each with its distance and travel time, before the truck rolls. Choosing a lower-emission carrier, or a supplier running on renewable power, then becomes a normal procurement decision made with the figures attached. The commitment stays with a person: booking freight and placing orders are contractual acts, and they should be approved by somebody who can answer for them.</div>
+</div>
+
+<h3 id="what-does-auditable-carbon-accounting-require-from-your-data">What does auditable carbon accounting require from your data?</h3>
+<div class="aeo-direct-answer" id="answer-9">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Carbon accounting joins records that were never designed to be joined: fuel use from telematics, distance from the TMS, and emission factors published by outside bodies. Before the arithmetic, the definitions have to be agreed. &ldquo;Gallons of diesel burned by Carrier A&rdquo; has to map to the Scope 3 transportation category you report under, and weight and distance have to mean the same thing for every carrier. Write those mappings down, and keep every figure traceable back to the record it came from. That is what lets you answer an auditor&rsquo;s question about a single line rather than about a total. As ESG disclosure rules tighten, that traceability is also what you need when a disclosure is challenged instead of simply filed.</div>
+</div>
+
+
+    </div>
+
+    
+    <p class="rk-post-screen mt-10 mb-0 flex flex-wrap items-center gap-2">
+      
+      <a href="/tags/model-context-protocol"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Model Context Protocol</a>
+      
+      <a href="/tags/emissions-reduction"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">emissions reduction</a>
+      
+      <a href="/tags/supply-chain-automation"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">supply chain automation</a>
+      
+      <a href="/tags/tms"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">TMS</a>
+      
+      <a href="/tags/oms"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">OMS</a>
+      
+      <a href="/tags/mrp"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">MRP</a>
+      
+      <a href="/tags/mes"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">MES</a>
+      
+      <a href="/tags/logistics-optimization"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">logistics optimization</a>
+      
+      <a href="/tags/database-forecasting"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">database forecasting</a>
+      
+      <a href="/tags/demand-forecasting"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">demand forecasting</a>
+      
+      <a href="/tags/wholesale-logistics"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">wholesale logistics</a>
+      
+      <a href="/tags/sustainability"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">sustainability</a>
+      
+      <a href="/tags/workflow-orchestration"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">workflow orchestration</a>
+      
+      <a href="/tags/food-and-beverage"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">food and beverage</a>
+      
+      <a href="/tags/canadian-supply-chain"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Canadian supply chain</a>
+      
+      <a href="/tags/u.s.-wholesale"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">U.S. wholesale</a>
+      
+      <a href="/tags/retail-logistics"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">retail logistics</a>
+      
+    </p>
+    
+
+    
+    
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More articles">
+      
+      <a href="/blog/demurrage-detention-fees-prevention/" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Demurrage and Detention Fees — The Silent Margin Killer and How to Fight Back</span>
+      </a>
+      
+      
+      <a href="/blog/cold-chain-logistics-temperature-control/" class="group no-underline sm:text-right sm:col-start-2">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Next</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Cold Chain Logistics — Why Temperature Excursions Cost More Than You Think</span>
+      </a>
+      
+    </nav>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <p class="rk-post-screen mt-10 mb-0">
+      <a href="/blog/"
+         class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal no-underline">
+        All articles
+        <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </p>
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<section class="cta-section my-24">
+    <div class="container">
+        <div
+            class="relative rounded-xl p-8 md:p-16 bg-stone-800/40 border border-stone-700 backdrop-blur shadow-2xl overflow-hidden group">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-signal-fill-hover to-signal-fill opacity-20 blur transition duration-1000 group-hover:opacity-40 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Runink: Data You Can Trust. Decisions You Can Defend.</h2>
+                <p class="text-xl md:text-2xl text-ink-2 mb-10 max-w-2xl mx-auto leading-relaxed">Runink FACE reads the logistics records you already hold, compares them against the rules that govern them, and drafts an action for the person who owns the decision. It runs on infrastructure you control.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    
+                    
+                    <a href="/?about=Emissions%2C%20Waste%20and%20the%20Cost%20of%20Reading%20Supply%20Chain%20Records%20Late#contact-form"
+                        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-signal hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
+                        Book your Consultation <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+        
+        
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#faq",
+  "isPartOf": { "@id": "https://runink.org/#website" },
+  "publisher": { "@id": "https://runink.org/#organization" },
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the Key Takeaways from this Executive Summary?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#what-are-the-key-takeaways-from-this-executive-summary",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most avoidable supply chain emissions are the exhaust of operational lateness. An expedite gets booked because a signal was read a week after it was written down. A half-empty truck goes out to recover a missed window. A refrigerated container runs on a generator while it waits for drayage, the short truck move between port and warehouse. The levers that address all three are reading and scheduling levers rather than fleet levers, which is why they are available without capital expenditure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Does Connecting Advanced Systems to the Supply Chain Nervous System (TMS, OMS, MRP, MES) Impact Your Strategy?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#how-does-connecting-advanced-systems-to-the-supply-chain-nervous-system-tms-oms-mrp-mes-impact-your-strategy",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Model Context Protocol (MCP) is an emerging standard for connecting software to the systems that already run your operation: the TMS, OMS, MRP and MES. It gives that software one defined way to read records and to call a limited set of actions, with authentication, role permissions and a log of what was read or changed. The point is not autonomy. The point is that a recommendation arrives while the decision is still open, and that you can see which records it came from."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Does Smarter Demand Forecasting with Advanced Analytics Impact Your Strategy?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#how-does-smarter-demand-forecasting-with-advanced-analytics-impact-your-strategy",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Forecasting runs on records you already hold: sales history, order patterns, production plans, and outside factors like weather or a known seasonal peak. Software can assemble them faster than a planner can by hand, and can show the comparable periods each figure was drawn from. The planner still owns the number. Where the forecast sits closer to real demand, you build less that nobody buys and you book fewer rush shipments to cover what you got wrong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Does Automated Transportation Routing in Real Time Impact Your Strategy?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#how-does-automated-transportation-routing-in-real-time-impact-your-strategy",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Routing software reads your TMS alongside traffic, weather and driver-hours data, then proposes changes: a detour around a closure, two part-full loads combined, a long haul moved from road to rail. Each option should carry the distance and travel time it implies, so a dispatcher can compare them on the conditions as they are now. Rail carries less carbon per ton-mile than road, so the same comparison is where a modal shift becomes visible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Does Dynamic Response to Supply Chain Disruptions Impact Your Strategy?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#how-does-dynamic-response-to-supply-chain-disruptions-impact-your-strategy",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Disruptions are recorded somewhere before anyone acts on them: a port delay warning in the TMS, a line stoppage in the MES, a refused drayage booking. Software reading those feeds together can raise the affected orders by name and draft the response — a production re-sequence, a re-booked carrier, a revised delivery date. A person still commits it. The gain is the draft and the earlier notice, not the removal of the decision."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Does Case Example: Montreal’s Port Congestion and How Automation Could Help Impact Your Strategy?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#how-does-case-example-montreals-port-congestion-and-how-automation-could-help-impact-your-strategy",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Published accounts of the 2023 drayage shortage at the Port of Montreal describe a constraint that was visible in operating records before it showed up on invoices. This is a reading of other people’s published account, not a Runink deployment and not a Runink result. It is used here to show which records existed, when they existed, and what reading them together on the day would have put in front of a planner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do analytics help find opportunities to reduce Scope 3 supply chain emissions?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#how-do-analytics-help-find-opportunities-to-reduce-scope-3-supply-chain-emissions",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the GHG Protocol, Scope 1 covers the fuel you burn yourself, Scope 2 the energy you buy, and Scope 3 everything else in the chain — emissions at your suppliers, carriers and customers. Scope 3 is the hard one to account for because the records are scattered: PDF carrier reports, supplier spreadsheets with different column names, telematics exports in several formats. Most of the work is reading those records into one place and agreeing what each field means, so that fuel, distance and weight can be compared across carriers. Once they can be, the questions are ordinary operational ones. Which lanes run repeated LTL (less-than-truckload) shipments that could combine into one FTL (full-truckload) run? Which air freight moves had transit times that ocean or rail would have met? The answer comes back as named lanes and shipments rather than as a network-wide score, which is what makes it actionable and what makes it checkable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What moves emissions work from reporting to something operations can act on?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#what-moves-emissions-work-from-reporting-to-something-operations-can-act-on",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reporting tells you what last quarter’s emissions were. Acting on them means the same records reach the person making a routing or sourcing decision while that decision is still open. When a port delay forces a route change, a reporting tool records the extra fuel afterwards. Reading the same feeds on the day lets someone compare the route options, each with its distance and travel time, before the truck rolls. Choosing a lower-emission carrier, or a supplier running on renewable power, then becomes a normal procurement decision made with the figures attached. The commitment stays with a person: booking freight and placing orders are contractual acts, and they should be approved by somebody who can answer for them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does auditable carbon accounting require from your data?",
+      "url": "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/#what-does-auditable-carbon-accounting-require-from-your-data",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Carbon accounting joins records that were never designed to be joined: fuel use from telematics, distance from the TMS, and emission factors published by outside bodies. Before the arithmetic, the definitions have to be agreed. “Gallons of diesel burned by Carrier A” has to map to the Scope 3 transportation category you report under, and weight and distance have to mean the same thing for every carrier. Write those mappings down, and keep every figure traceable back to the record it came from. That is what lets you answer an auditor’s question about a single line rather than about a total. As ESG disclosure rules tighten, that traceability is also what you need when a disclosure is challenged instead of simply filed."
+      }
+    }
+  ]
+}
+</script>
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>

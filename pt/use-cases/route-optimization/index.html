@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="pt" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    <title>Recalcular a Rota Depois Que o Dia Mudou | Runink</title>
+
+    
+    <meta name="description" content="O plano que era ótimo às seis da manhã já não é às dez. Ninguém roda de novo, porque rodar de novo significa replanejar um dia à mão. A ideia é que a segunda rodada não custe nada.">
+    <meta name="author" content="Runink">
+    
+    
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    
+    <meta property="og:title" content="Recalcular a Rota Depois Que o Dia Mudou | Runink">
+    <meta property="og:description" content="O plano que era ótimo às seis da manhã já não é às dez. Ninguém roda de novo, porque rodar de novo significa replanejar um dia à mão. A ideia é que a segunda rodada não custe nada.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/pt/use-cases/route-optimization/">
+    <meta property="og:site_name" content="Runink">
+    
+    <meta property="og:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recalcular a Rota Depois Que o Dia Mudou | Runink">
+    <meta name="twitter:description" content="O plano que era ótimo às seis da manhã já não é às dez. Ninguém roda de novo, porque rodar de novo significa replanejar um dia à mão. A ideia é que a segunda rodada não custe nada.">
+    
+    
+    <meta name="twitter:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/pt/use-cases/route-optimization/">
+
+    
+    
+    <link rel="alternate" hreflang="pt" href="https://runink.org/pt/use-cases/route-optimization/">
+    
+    <link rel="alternate" hreflang="en" href="https://runink.org/use-cases/route-optimization/">
+    
+    <link rel="alternate" hreflang="fr" href="https://runink.org/fr/use-cases/route-optimization/">
+    
+    <link rel="alternate" hreflang="es" href="https://runink.org/es/use-cases/route-optimization/">
+    
+    
+    
+    <link rel="alternate" hreflang="x-default" href="https://runink.org/use-cases/route-optimization/">
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "pt"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/pt/use-cases/route-optimization/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Para Que Serve O Runink FACE",
+          "item": "https://runink.org/pt/use-cases/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Recalcular a Rota Depois Que o Dia Mudou"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/pt/use-cases/route-optimization/"
+  },
+  "headline": "Recalcular a Rota Depois Que o Dia Mudou",
+  "description": "O plano que era ótimo às seis da manhã já não é às dez. Ninguém roda de novo, porque rodar de novo significa replanejar um dia à mão. A ideia é que a segunda rodada não custe nada.",
+  
+  
+  "datePublished": "2024-05-20T00:00:00Z",
+  "dateModified": "2026-09-12T19:43:17-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/pt/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Por que Runink?</a>
+                    
+                    
+                    
+                    <a href="/pt/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Biblioteca</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Setores
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pt/pricing"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Preços</a>
+                    
+                    
+                    
+                    <a href="/pt/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Empresa</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/pt/?about=Recalcular%20a%20Rota%20Depois%20Que%20o%20Dia%20Mudou#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Agende uma Consulta
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/use-cases/route-optimization/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/fr/use-cases/route-optimization/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/es/use-cases/route-optimization/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/pt/use-cases/route-optimization/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/pt/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Por que Runink?</a>
+                
+                
+                
+                <a href="/pt/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Biblioteca</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Setores</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pt/pricing"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Preços</a>
+                
+                
+                
+                <a href="/pt/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Empresa</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/pt/?about=Recalcular%20a%20Rota%20Depois%20Que%20o%20Dia%20Mudou#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Agende uma Consulta
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/use-cases/route-optimization/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/fr/use-cases/route-optimization/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/es/use-cases/route-optimization/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/pt/use-cases/route-optimization/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+
+
+
+
+
+<div class="rk-post bg-canvas">
+  
+<style>
+  @media print {
+    @page { margin: 16mm 14mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-post { padding: 0 !important; }
+    .rk-post-wrap { max-width: none !important; padding: 0 !important; }
+
+     
+    .rk-post-screen { display: none !important; }
+
+     
+    .rk-post-body :is(h2, h3, h4) { break-after: avoid; page-break-after: avoid; }
+    .rk-post-body :is(p, li, blockquote) { orphans: 3; widows: 3; }
+    .rk-post-body pre,
+    .rk-post-body blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+     
+    .rk-post-body table { break-inside: auto; }
+    .rk-post-body thead { display: table-header-group; }
+    .rk-post-body tr { break-inside: avoid; page-break-inside: avoid; }
+
+     
+     
+    .rk-post-figure {
+      width: fit-content;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .rk-post img {
+      max-width: 100% !important;
+      max-height: 62mm;
+      width: auto;
+      object-fit: contain;
+      break-inside: avoid;
+    }
+
+     
+    .rk-post-body a[href^="/"]::after { content: " (runink.org" attr(href) ")"; }
+    .rk-post-body a[href^="http"]::after { content: " (" attr(href) ")"; }
+    .rk-post-body a[href^="/"]::after,
+    .rk-post-body a[href^="http"]::after {
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      word-break: break-all;
+      color: var(--rk-text-2);
+    }
+
+     
+    .cta-section { margin: 8mm 0 0 !important; break-inside: avoid; }
+    .cta-section .container > div {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .cta-section .absolute { display: none !important; }
+    .cta-section h2 { font-size: 12pt !important; margin-bottom: 2mm !important; }
+    .cta-section p { font-size: 10pt !important; margin-bottom: 2mm !important; }
+    .cta-section a {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+    .cta-section a[href^="/"]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+     
+    .rk-post-mark { display: block !important; }
+  }
+</style>
+
+
+  <div class="rk-post-wrap container mx-auto max-w-[52rem] px-5 md:px-8 py-14 md:py-20">
+
+    
+<header class="mb-10 md:mb-14">
+  
+  <p class="inline-block mb-5 px-3 py-1.5 rounded bg-signal-wash border-l-[3px] border-signal text-signal text-[0.6875rem] font-extrabold uppercase tracking-[0.18em]">Runink FACE</p>
+  
+
+  <h1 class="font-heading font-extrabold text-ink text-[2rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.05] tracking-[-0.01em] max-w-[26ch] mt-0 mb-4">Recalcular a Rota Depois Que o Dia Mudou</h1>
+
+  
+  <p class="text-ink-2 text-base md:text-lg leading-[1.65] max-w-[62ch] m-0">O plano que era ótimo às seis da manhã já não é às dez. Ninguém roda de novo, porque rodar de novo significa replanejar um dia à mão. A ideia é que a segunda rodada não custe nada.</p>
+  
+
+  
+  <p class="mt-5 mb-0 text-ink-3 text-xs font-semibold uppercase tracking-[0.14em]">20 May 2024 · 9 min read</p>
+  
+</header>
+
+
+    
+
+    
+    
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      <section class="py-8">
+    <div class="container mx-auto px-4">
+        
+<div class="max-w-5xl mx-auto px-4">
+
+<h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<li><strong class="text-stone-200">Uma rota volta como uma distância, uma duração e uma linha no mapa.</strong> Uma origem, um destino e as restrições que você nomeou saem para o provedor de roteirização; o que volta é uma distância de estrada medida e um tempo de viagem, não uma opinião.</li>
+<li><strong class="text-stone-200">Nenhum valor em dinheiro vem anexado, e isso é de propósito.</strong> O provedor de roteirização devolve distância e tempo, e nenhum custo. Então nenhuma economia é impressa ao lado da rota, porque um número que ninguém mediu colocado ao lado de dois que foram medidos é justamente como uma estimativa acaba citada como fato.</li>
+<li><strong class="text-stone-200">Quando não foi possível calcular, ele diz isso.</strong> Uma conexão sem credencial de roteirização, ou um provedor que não devolve nada, volta como indisponível. Não volta como um cartão de rota com os campos em branco, o que numa tela é indistinguível de uma boa resposta.</li>
+</ul>
+
+<p class="mb-12">
+    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
+        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Traçado
+    </span>
+    <span class="block mt-3 text-sm text-stone-500 font-medium">
+        Esta página marca onde cai a linha. A chamada de roteirização, o cartão que ela produz e a recusa a chutar um custo estão no produto. O dia de trabalho em volta deles é uma ilustração do mecanismo, não o relato de um acontecimento: não rodou contra a frota de um cliente, e aqui não há número nenhum de distância, de tempo ou de dinheiro economizado.
+    </span>
+</p>
+
+    <div class="text-center mb-16">
+        <h2 id="otimo-as-seis-nao-as-dez" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Ótimo Às Seis. Não Às Dez.</h2>
+        <p class="text-xl text-stone-400 font-bold leading-relaxed">
+            O plano era bom quando foi montado. Depois uma entrega levou quarenta minutos mais do que devia, uma estrada fechou e um cliente mudou a janela dele. Agora o plano é a melhor resposta a uma pergunta que ninguém está mais fazendo.
+        </p>
+    </div>
+
+    <div class="flex flex-col gap-12 mb-20">
+        <div>
+            <h2 id="onde-isso-da-errado" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Onde Isso Dá Errado</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                A roteirização acontece uma vez, na noite anterior ou logo no começo do dia. É a decisão mais bem cuidada do dia, e é tomada com a menor quantidade de informação que alguém vai ter em todo o dia. Tudo o que de fato vai moldar o dia &mdash; a fila no portão, o bloqueio na via, a entrega recusada, o motorista que está uma hora atrasado &mdash; ainda não aconteceu.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                No meio da manhã o plano já derivou, e todos na mesa de despacho sabem disso. O que se faz a respeito é remendar: trocar duas entregas de ordem, empurrar uma para amanhã, ligar para um motorista. Sensato, local, e ninguém consegue dizer se o dia remendado é melhor ou pior do que o que sairia de recalcular tudo de novo.
+            </p>
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
+                Rodar de novo é de graça. Replanejar à mão não é, então nunca se roda de novo.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                E o custo da deriva nunca é escrito em lugar nenhum. Ele sai como hora extra, como janela perdida, como segunda viagem, como combustível. Cada uma dessas coisas cai em um orçamento diferente, e nenhuma delas vem etiquetada com o motivo.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                Isso é do planejador de transporte e de quem estiver na mesa de despacho naquele dia. É deles exatamente na hora em que têm menos.
+            </p>
+        </div>
+        <div>
+            <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Pedir uma rota é um pedido pequeno: onde começa, onde termina e as restrições que importam naquele trecho. Isso sai para o provedor de roteirização e volta como uma distância de estrada, um tempo de viagem e a própria linha, de modo que a resposta pode ser desenhada num mapa em vez de descrita numa frase.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Como o pedido é pequeno, fazê-lo uma segunda vez custa mais ou menos o que custou a primeira. A pergunta deixa de ser “vale a pena replanejar o dia” e passa a ser “como está a rota agora”: uma que você pode fazer tantas vezes quantas o dia mudar.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                O que volta é o trecho sobre o qual você perguntou: a origem e o destino dele, a distância e a duração que o fornecedor de fato devolveu, e a linha que a rota segue. É a resposta a uma pergunta que você fez, e por isso chega quando você pergunta em vez de aparecer sozinha.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Duas recusas estão embutidas, e são elas a razão para confiar no resto. Nenhuma economia é impressa no cartão, porque o provedor de roteirização não devolve nenhuma: estimativas internas de regra de bolso existem em outras partes do produto e de propósito não são copiadas para cima de uma rota medida. E se não houver credencial de roteirização naquela conexão, ou se o provedor não devolver rota alguma, a resposta é que está indisponível. Não um cartão com os campos em branco. Um campo em branco numa tela é lido como uma medição, e essa é uma falha pior do que um erro honesto.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                A credencial pertence à conexão, não à máquina. A roteirização é alcançada com a chave presa à conexão que foi configurada para isso, então a amarração é algo que você monta, enxerga e pode revogar conexão por conexão. Não é uma variável de ambiente enterrada num servidor que ninguém consegue auditar.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Uma mudança é proposta, nunca imposta. Uma pessoa com nome na mesa aprova, edita ou recusa, e recusar fica registrado como uma decisão, e não como silêncio. Avisar o motorista é outro trabalho e outra página &mdash; um motorista pode perguntar e ser respondido em voz alta com as mãos no volante, em <a href="/pt/use-cases/voice-dispatch">falar com os motoristas sem tela</a> &mdash;, embora a ligação deixe uma transcrição e não um aceite, e a mudança continue sendo da mesa. E se a pergunta for maior do que um trecho &mdash; um fornecedor abandonado, uma rota deixada de lado por uma temporada &mdash;, o caso pode ser exposto primeiro contra as regras com que ele colide, em <a href="/pt/use-cases/hypothesis-lab">testar um plano antes de se comprometer com ele</a>.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                Aprovar é o que manda, e o motivo fica no registro para quem perguntar em três meses por que um caminhão foi por ali. Mais uma honestidade sobre isso, do tipo em que esta página é construída: onde uma etapa por trás da aprovação não tem nada implementado atrás dela &mdash; a gravação no seu sistema de transporte é o exemplo real &mdash;, a resposta nomeia essa etapa como não executada, em vez de devolver um sucesso que cobre a ação inteira. Aprovado e feito são duas palavras diferentes aqui, e é o software que te diz qual das duas ele conseguiu.
+            </p>
+        </div>
+        <div>
+            <h2 id="quem-cuida-disso" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Quem Cuida Disso</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Três mesas, e o que cada uma tem na mão hoje.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">O planejador de transporte.</strong> Hoje o plano é montado na noite anterior ou logo cedo, o que faz dele a decisão mais bem cuidada do dia e a que é tomada com menos informação. O que muda é que dá para perguntar por um trecho sozinho, nos termos dele &mdash; uma origem, um destino, as restrições que contam ali &mdash; e a resposta é uma distância rodoviária medida e um tempo de viagem, vindos do provedor de roteirização que você conectou.</li>
+                <li><strong class="text-stone-200">A mesa de expedição.</strong> Hoje o dia é remendado: trocar duas entregas, empurrar uma para amanhã, ligar para um motorista. Sensato, local, e ninguém sabe dizer quanto o remendo custou. O que muda é que um trecho volta como uma distância e uma duração que de fato foram devolvidas, então duas pessoas na mesa discutem os mesmos dois números.</li>
+                <li><strong class="text-stone-200">Diretor de operações.</strong> Hoje o desvio sai do prédio como hora extra, uma segunda viagem, uma janela perdida e combustível, cada coisa caindo num orçamento diferente e nenhuma delas etiquetada com o motivo. O que muda é que nenhum dinheiro é impresso ao lado de uma rota, porque o provedor não devolve nenhum &mdash; assim uma cifra medida e uma cifra chutada nunca se sentam na mesma linha fingindo ser a mesma coisa.</li>
+            </ul>
+        </div>
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
+             <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
+             <p class="text-lg text-stone-400 font-medium mb-6">
+                Todo número abaixo é seu, não nosso. Não temos nenhum próprio para te oferecer. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
+             </p>
+             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Com que frequência uma rota é recalculada depois do despacho.</strong> A resposta mais honesta é nunca. Pegue um mês e conte os dias em que o plano foi recalculado em vez de remendado. É esse o número em que tudo isso se apoia.</li>
+                <li><strong class="text-stone-200">Planejado contra realizado, trecho por trecho.</strong> Do seu sistema de transporte: a distância e o tempo que o plano assumiu, contra a distância e o tempo que o veículo registrou. Mantenha por trecho, não por dia &mdash; um dia que fecha na média está escondendo dois trechos que não fecharam.</li>
+                <li><strong class="text-stone-200">Janelas perdidas, e quais delas eram evitáveis.</strong> Dos seus registros de entrega. Separe as que foram perdidas antes de o caminhão sair das que foram perdidas durante o dia. O segundo grupo é o que isso toca.</li>
+                <li><strong class="text-stone-200">Hora extra de motorista e segundas viagens, por base.</strong> Da folha de pagamento e do seu log de despacho. São os dois lugares por onde a deriva sai do prédio, e em geral ficam arquivados onde ninguém os liga à roteirização.</li>
+             </ul>
+             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Traga um mês de dados de trecho, planejado contra realizado, de uma base só.</p>
+        </div>
+    </div>
+
+
+<section class="bg-stone-900">
+    <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-12">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Perguntas De Uma Mesa De Transporte</h2>
+            
+            <p class="mb-5 font-light text-ink-2 sm:text-xl">O que se pergunta antes de alguém falar em contrato.</p>
+            
+        </div>
+
+        
+        <div class="space-y-6">
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">O que ele precisa para devolver uma rota?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Uma origem, um destino e as restrições que você nomear naquele trecho. Isso vai para o provedor de roteirização que você conectou, e volta como uma distância rodoviária medida, um tempo de viagem e o próprio traçado da rota, de modo que a resposta pode ser desenhada em vez de descrita numa frase.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Por que não há custo nem economia ao lado da rota?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Porque o provedor de roteirização devolve uma distância e um tempo, e nenhum custo. Uma cifra que ninguém mediu, sentada ao lado de duas que foram medidas, é como uma estimativa acaba sendo citada de volta para você como fato. Estimativas de regra de bolso existem em outras partes do produto e de propósito não são copiadas para cima de uma rota medida.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">O que acontece quando a rota não pode ser calculada?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    A resposta é que está indisponível, com essas palavras. Uma conexão sem credencial de roteirização, ou um provedor que não devolve nada, volta como indisponível e não como uma resposta com os campos em branco. Um campo em branco numa tela é lido como uma medição, e essa é a pior das duas falhas.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Onde fica a credencial de roteirização?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Na conexão que foi configurada para roteirização, não numa variável de ambiente cravada num servidor. É algo que você configura, consegue ver e consegue revogar por conexão, que é o que a torna auditável.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Quem assina uma mudança no dia?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Uma pessoa nomeada na mesa. Uma mudança é proposta, nunca imposta: ela é aprovada, editada ou recusada, e recusar fica registrado como decisão e não como silêncio. Aprovar é o que envia, e o motivo fica no registro para quem perguntar daqui a três meses por que um caminhão foi por ali.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Como o motorista fica sabendo?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Esse é outro trabalho e outra página. Um motorista pode perguntar e ser respondido em voz alta, com as mãos no volante, como descrito em <a href="/pt/use-cases/voice-dispatch/">falar com motoristas sem tela</a>. A ligação deixa uma transcrição e não uma aceitação, e a mudança continua sendo da mesa.
+                </div>
+            </details>
+            
+        </div>
+    </div>
+</section>
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Uma origem, um destino e as restrições que você nomear naquele trecho. Isso vai para o provedor de roteirização que você conectou, e volta como uma distância rodoviária medida, um tempo de viagem e o próprio traçado da rota, de modo que a resposta pode ser desenhada em vez de descrita numa frase."},"name":"O que ele precisa para devolver uma rota?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Porque o provedor de roteirização devolve uma distância e um tempo, e nenhum custo. Uma cifra que ninguém mediu, sentada ao lado de duas que foram medidas, é como uma estimativa acaba sendo citada de volta para você como fato. Estimativas de regra de bolso existem em outras partes do produto e de propósito não são copiadas para cima de uma rota medida."},"name":"Por que não há custo nem economia ao lado da rota?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"A resposta é que está indisponível, com essas palavras. Uma conexão sem credencial de roteirização, ou um provedor que não devolve nada, volta como indisponível e não como uma resposta com os campos em branco. Um campo em branco numa tela é lido como uma medição, e essa é a pior das duas falhas."},"name":"O que acontece quando a rota não pode ser calculada?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Na conexão que foi configurada para roteirização, não numa variável de ambiente cravada num servidor. É algo que você configura, consegue ver e consegue revogar por conexão, que é o que a torna auditável."},"name":"Onde fica a credencial de roteirização?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Uma pessoa nomeada na mesa. Uma mudança é proposta, nunca imposta: ela é aprovada, editada ou recusada, e recusar fica registrado como decisão e não como silêncio. Aprovar é o que envia, e o motivo fica no registro para quem perguntar daqui a três meses por que um caminhão foi por ali."},"name":"Quem assina uma mudança no dia?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Esse é outro trabalho e outra página. Um motorista pode perguntar e ser respondido em voz alta, com as mãos no volante, como descrito em falar com motoristas sem tela. A ligação deixa uma transcrição e não uma aceitação, e a mudança continua sendo da mesa."},"name":"Como o motorista fica sabendo?"}]}
+</script>
+
+
+    <div class="text-center">
+        <a href="/pt/?about=Recalcular%20a%20Rota%20Depois%20Que%20o%20Dia%20Mudou#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
+            Agende uma conversa
+        </a>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+    </div>
+
+    
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More in this section">
+      
+      <a href="/pt/use-cases/insurance-underwriting/" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Seus Reguladores Passam o Dia Reunindo Papéis, Não Decidindo</span>
+      </a>
+      
+      
+      <a href="/pt/use-cases/demand-forecasting/" class="group no-underline sm:text-right sm:col-start-2">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Next</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Quando a Demanda Vira Antes do Plano</span>
+      </a>
+      
+    </nav>
+    
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<section class="cta-section my-24">
+    <div class="container">
+        <div
+            class="relative rounded-xl p-8 md:p-16 bg-stone-800/40 border border-stone-700 backdrop-blur shadow-2xl overflow-hidden group">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-signal-fill-hover to-signal-fill opacity-20 blur transition duration-1000 group-hover:opacity-40 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Runink: dados em que confiar. Decisões que você pode defender.</h2>
+                <p class="text-xl md:text-2xl text-ink-2 mb-10 max-w-2xl mx-auto leading-relaxed">O Runink FACE lê os registros logísticos que você já mantém, compara cada um com a regra que o rege e redige uma ação para quem decide. Tudo em uma infraestrutura que você controla.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    
+                    
+                    <a href="/pt/?about=Recalcular%20a%20Rota%20Depois%20Que%20o%20Dia%20Mudou#contact-form"
+                        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-signal hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
+                        Agende uma consulta <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+        
+        
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Rodapé">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contato</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/pt/#contact-form">Escreva para nós</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explorar</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Setores</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/pricing/">Preços</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Leituras</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/library/">Biblioteca</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/use-cases/">Cenários de trabalho</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/blog/">Todos os artigos</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Empresa</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/company/">Sobre a Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">Licença</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Política de privacidade</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. Todos os direitos reservados.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Idiomas: English, Français, Español, Português — escolha um na barra no topo da página.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>

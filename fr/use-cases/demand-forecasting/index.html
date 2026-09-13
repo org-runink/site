@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    <title>Quand la Demande Tourne Avant le Plan | Runink</title>
+
+    
+    <meta name="description" content="Une référence commence à bouger des semaines avant le point de commande. Le temps que le plan rattrape, la couverture est partie, et la différence se paie en fret aérien. Il s&#39;agit de lire le retournement tant que c&#39;est encore un problème de prévision.">
+    <meta name="author" content="Runink">
+    
+    
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    
+    <meta property="og:title" content="Quand la Demande Tourne Avant le Plan | Runink">
+    <meta property="og:description" content="Une référence commence à bouger des semaines avant le point de commande. Le temps que le plan rattrape, la couverture est partie, et la différence se paie en fret aérien. Il s&#39;agit de lire le retournement tant que c&#39;est encore un problème de prévision.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/fr/use-cases/demand-forecasting/">
+    <meta property="og:site_name" content="Runink">
+    
+    <meta property="og:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quand la Demande Tourne Avant le Plan | Runink">
+    <meta name="twitter:description" content="Une référence commence à bouger des semaines avant le point de commande. Le temps que le plan rattrape, la couverture est partie, et la différence se paie en fret aérien. Il s&#39;agit de lire le retournement tant que c&#39;est encore un problème de prévision.">
+    
+    
+    <meta name="twitter:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/fr/use-cases/demand-forecasting/">
+
+    
+    
+    <link rel="alternate" hreflang="fr" href="https://runink.org/fr/use-cases/demand-forecasting/">
+    
+    <link rel="alternate" hreflang="en" href="https://runink.org/use-cases/demand-forecasting/">
+    
+    <link rel="alternate" hreflang="es" href="https://runink.org/es/use-cases/demand-forecasting/">
+    
+    <link rel="alternate" hreflang="pt" href="https://runink.org/pt/use-cases/demand-forecasting/">
+    
+    
+    
+    <link rel="alternate" hreflang="x-default" href="https://runink.org/use-cases/demand-forecasting/">
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "fr"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/fr/use-cases/demand-forecasting/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "À Quoi Sert Runink FACE",
+          "item": "https://runink.org/fr/use-cases/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Quand la Demande Tourne Avant le Plan"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/fr/use-cases/demand-forecasting/"
+  },
+  "headline": "Quand la Demande Tourne Avant le Plan",
+  "description": "Une référence commence à bouger des semaines avant le point de commande. Le temps que le plan rattrape, la couverture est partie, et la différence se paie en fret aérien. Il s'agit de lire le retournement tant que c'est encore un problème de prévision.",
+  
+  
+  "datePublished": "2024-05-20T00:00:00Z",
+  "dateModified": "2026-09-12T19:43:17-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/fr/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pourquoi Runink ?</a>
+                    
+                    
+                    
+                    <a href="/fr/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Bibliothèque</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Secteurs
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/fr/pricing"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Tarifs</a>
+                    
+                    
+                    
+                    <a href="/fr/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Entreprise</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/fr/?about=Quand%20la%20Demande%20Tourne%20Avant%20le%20Plan#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Réserver une Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/use-cases/demand-forecasting/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/fr/use-cases/demand-forecasting/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/es/use-cases/demand-forecasting/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/pt/use-cases/demand-forecasting/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/fr/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pourquoi Runink ?</a>
+                
+                
+                
+                <a href="/fr/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Bibliothèque</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Secteurs</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/fr/pricing"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Tarifs</a>
+                
+                
+                
+                <a href="/fr/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Entreprise</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/fr/?about=Quand%20la%20Demande%20Tourne%20Avant%20le%20Plan#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Réserver une Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/use-cases/demand-forecasting/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/fr/use-cases/demand-forecasting/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/es/use-cases/demand-forecasting/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/pt/use-cases/demand-forecasting/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+
+
+
+
+
+<div class="rk-post bg-canvas">
+  
+<style>
+  @media print {
+    @page { margin: 16mm 14mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-post { padding: 0 !important; }
+    .rk-post-wrap { max-width: none !important; padding: 0 !important; }
+
+     
+    .rk-post-screen { display: none !important; }
+
+     
+    .rk-post-body :is(h2, h3, h4) { break-after: avoid; page-break-after: avoid; }
+    .rk-post-body :is(p, li, blockquote) { orphans: 3; widows: 3; }
+    .rk-post-body pre,
+    .rk-post-body blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+     
+    .rk-post-body table { break-inside: auto; }
+    .rk-post-body thead { display: table-header-group; }
+    .rk-post-body tr { break-inside: avoid; page-break-inside: avoid; }
+
+     
+     
+    .rk-post-figure {
+      width: fit-content;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .rk-post img {
+      max-width: 100% !important;
+      max-height: 62mm;
+      width: auto;
+      object-fit: contain;
+      break-inside: avoid;
+    }
+
+     
+    .rk-post-body a[href^="/"]::after { content: " (runink.org" attr(href) ")"; }
+    .rk-post-body a[href^="http"]::after { content: " (" attr(href) ")"; }
+    .rk-post-body a[href^="/"]::after,
+    .rk-post-body a[href^="http"]::after {
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      word-break: break-all;
+      color: var(--rk-text-2);
+    }
+
+     
+    .cta-section { margin: 8mm 0 0 !important; break-inside: avoid; }
+    .cta-section .container > div {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .cta-section .absolute { display: none !important; }
+    .cta-section h2 { font-size: 12pt !important; margin-bottom: 2mm !important; }
+    .cta-section p { font-size: 10pt !important; margin-bottom: 2mm !important; }
+    .cta-section a {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+    .cta-section a[href^="/"]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+     
+    .rk-post-mark { display: block !important; }
+  }
+</style>
+
+
+  <div class="rk-post-wrap container mx-auto max-w-[52rem] px-5 md:px-8 py-14 md:py-20">
+
+    
+<header class="mb-10 md:mb-14">
+  
+  <p class="inline-block mb-5 px-3 py-1.5 rounded bg-signal-wash border-l-[3px] border-signal text-signal text-[0.6875rem] font-extrabold uppercase tracking-[0.18em]">Runink FACE</p>
+  
+
+  <h1 class="font-heading font-extrabold text-ink text-[2rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.05] tracking-[-0.01em] max-w-[26ch] mt-0 mb-4">Quand la Demande Tourne Avant le Plan</h1>
+
+  
+  <p class="text-ink-2 text-base md:text-lg leading-[1.65] max-w-[62ch] m-0">Une référence commence à bouger des semaines avant le point de commande. Le temps que le plan rattrape, la couverture est partie, et la différence se paie en fret aérien. Il s&#39;agit de lire le retournement tant que c&#39;est encore un problème de prévision.</p>
+  
+
+  
+  <p class="mt-5 mb-0 text-ink-3 text-xs font-semibold uppercase tracking-[0.14em]">20 May 2024 · 9 min read</p>
+  
+</header>
+
+
+    
+
+    
+    
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      <section class="py-8">
+    <div class="container mx-auto px-4">
+        
+<div class="max-w-5xl mx-auto px-4">
+
+<h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<li><strong class="text-stone-200">La saison et la tendance sont séparées.</strong> Votre propre historique est décomposé en tendance de fond, forme saisonnière qui se répète, et reste. C'est dans le reste qu'un retournement apparaît d'abord.</li>
+<li><strong class="text-stone-200">La prévision dit quelle méthode l'a produite, et pourquoi celle-là.</strong> Des modèles concurrents sont essayés sur des périodes que votre historique contient déjà, et celui qui a le mieux prédit ces périodes est celui qui est retenu. La réponse porte le nom de la méthode qui a gagné.</li>
+<li><strong class="text-stone-200">Une série qu'il ne peut pas ajuster est refusée, et non ajustée quand même.</strong> Trop peu de périodes, ou aucun modèle qui tienne, et la réponse le dit. Elle ne revient pas sous forme de courbe d'allure assurée avec rien dessous.</li>
+</ul>
+
+<p class="mb-12">
+    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
+        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Hypothétique
+    </span>
+    <span class="block mt-3 text-sm text-stone-500 font-medium">
+        Cette page décrit un mécanisme et la forme d'une semaine de travail, pas un événement qui a eu lieu. C'est une illustration, et aucune partie n'en a été exécutée sur les données d'un client. Rien ici n'est mesuré, et il n'existe aucun chiffre sur ce qu'elle renvoie.
+    </span>
+</p>
+
+    <div class="text-center mb-16">
+        <h2 id="le-signal-a-tourne-avant-le-plan" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Le Signal A Tourné Avant Le Plan.</h2>
+        <p class="text-xl text-stone-400 font-bold leading-relaxed">
+            Une référence commence à bouger bien avant que le point de commande ne bouge. L'écart entre ces deux dates est tout le problème, et il est d'ordinaire déjà joué quand quelqu'un en est informé.
+        </p>
+    </div>
+
+    <div class="flex flex-col gap-12 mb-20">
+        <div>
+            <h2 id="ou-cela-derape" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Où Cela Dérape</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Le plan de demande est reconstruit par cycles. Quelqu'un exporte l'historique des ventes, y applique les hypothèses du cycle précédent, débat des exceptions en réunion, et recharge le résultat. C'est un travail soigné et c'est un travail honnête, et il décrit un mois qui est déjà terminé.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Pendant ce temps, une référence tourne. Pas de façon spectaculaire — un pic saisonnier qui arrive tôt, une promotion qui a tenu après l'arrêt de la promotion, une région qui est descendue d'un cran sans bruit et y est restée. Aucune de ces choses ne franchit un seuil, car le niveau reste dans la bande. Elles ne deviennent visibles qu'en séparant la saison de la tendance, et personne n'a l'après-midi qu'il faut pour le faire référence par référence.
+            </p>
+            <p class="text-lg text-stone-400 font-medium font-semibold text-signal tracking-wide font-bold text-sm">
+                La prévision était fausse des semaines avant la rupture de stock.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Il y a une version pire. Un planificateur qui s'est déjà fait prendre cesse de croire le chiffre et porte du stock en trop partout, ce qui est cher et invisible. Un planificateur qui ne s'est pas encore fait prendre le croit entièrement, et l'apprend d'un seul coup. Ni l'un ni l'autre n'a reçu quoi que ce soit qui disait à quel point la prévision était fiable, donc tous deux devinaient à propos d'une devinette.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                C'est le problème du planificateur de la demande et celui du responsable S&amp;OP, et il arrive chez le planificateur approvisionnement comme l'urgence de quelqu'un d'autre.
+            </p>
+        </div>
+        <div>
+            <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Chaque série est démontée avant d'être projetée. La tendance en dessous, la forme saisonnière qui se répète, et le résidu — ce que la série a fait que ni l'une ni l'autre n'explique. Un retournement se voit d'abord dans le résidu, et c'est pourquoi le résidu est rapporté plutôt que jeté.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                La série est aussi testée, d'abord, pour savoir si elle est assez stable pour être modélisée : le test est nommé et la statistique est affichée à côté du seuil auquel elle a été comparée. Si elle dérive, elle est différenciée avant tout ajustement, et le fait qu'il ait fallu le faire est énoncé. On ne vous demande pas de prendre la projection pour argent comptant ; on vous montre le calcul qui a conduit à la projeter ainsi.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Ensuite, plus d'une méthode est essayée. Une décomposition saisonnière et un modèle autorégressif classique produisent chacun une prévision, et les deux sont notés en remontant l'horloge et en leur demandant de prédire des périodes que votre propre historique contient déjà. Celui qui a le mieux prédit ces périodes est celui que vous recevez, et il arrive étiqueté avec son nom et avec le fait qu'il a été choisi de cette façon. Quand aucun ne tient, une méthode de repli simple est utilisée, et la réponse dit que c'est un repli.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Une série avec trop peu d'historique est refusée. Elle revient en disant qu'il n'y a pas assez de périodes pour modéliser, ce qui est une réponse plus utile qu'une courbe tracée à travers quatre points.
+            </p>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Ceci est le signal, pas la réponse. Quoi commander, quelle couverture tenir et quel fournisseur peut encore tenir la date, c'est le travail suivant, et il est décrit dans <a href="/fr/use-cases/fulfillment-optimization/">couverture de stock et plan d'approvisionnement</a>. La prévision dit que la référence a tourné et avec quelle confiance ; l'approvisionnement décide quoi en faire. Les tenir séparés est délibéré, car les deux sont débattus par des personnes différentes.
+            </p>
+            <p class="text-lg text-stone-400 font-medium">
+                Ce qui parvient à une personne est un seul élément : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et une modification rédigée du plan. Une personne nommée l'approuve, la modifie ou la refuse, et cette décision reste au dossier. C'est l'approbation qui l'envoie — et là où une étape derrière n'a encore rien d'implémenté, une écriture dans votre système de planification étant l'exemple honnête, la réponse nomme cette étape comme non exécutée au lieu de rapporter la modification comme faite. La décision et l'exécution sont consignées comme deux faits distincts, parce qu'ils le sont. Cela tourne sur des machines qui vous appartiennent, et l'historique ne les quitte jamais.
+            </p>
+        </div>
+        <div>
+            <h2 id="qui-s-en-occupe" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qui S'En Occupe</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Trois bureaux, et ce que chacun a sur les bras aujourd'hui.
+            </p>
+            <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">Le planificateur de la demande.</strong> Aujourd'hui il exporte l'historique des ventes, lui applique les hypothèses du cycle précédent, débat des exceptions et recharge le résultat. C'est un travail soigneux, et il décrit un mois déjà terminé. Ce qui change, c'est que chaque série est d'abord décomposée &mdash; la tendance, la forme saisonnière qui se répète, et le résidu où un retournement apparaît &mdash; et que la projection arrive avec le nom de la méthode qui l'a produite.</li>
+                <li><strong class="text-stone-200">Le responsable du S&amp;OP</strong>, la réunion où le plan est arrêté. Aujourd'hui cette réunion débat des exceptions sans rien sur la table qui dise jusqu'où la prévision peut être crue. Ce qui change, c'est que le calcul est montré : la statistique de test à côté du seuil auquel elle a été comparée, le fait que la série ait dû être différenciée, et sur combien de périodes la méthode gagnante a été notée.</li>
+                <li><strong class="text-stone-200">Le planificateur des approvisionnements.</strong> Aujourd'hui cela lui arrive comme l'urgence de quelqu'un d'autre, des semaines après le retournement de la série. Ce qui change, c'est qu'un seul élément arrive à une personne : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et un changement de plan rédigé.</li>
+            </ul>
+        </div>
+        <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
+             <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
+             <p class="text-lg text-stone-400 font-medium mb-6">
+                Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous ne vous proposons pas les nôtres, car nous n'avons pas les vôtres. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
+             </p>
+             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
+                <li><strong class="text-stone-200">L'erreur de prévision, par référence, face à ce qui s'est réellement vendu.</strong> Sortie de votre système de planification. Prenez une année entière, car les références saisonnières et les références régulières échouent différemment. Le but n'est pas que l'erreur baisse. Le but est qu'elle soit énoncée par référence au lieu d'être moyennée en un seul chiffre rassurant.</li>
+                <li><strong class="text-stone-200">Combien de périodes passent entre le retournement d'une référence et le changement du plan.</strong> Choisissez une poignée de références qui ont mal tourné l'an dernier. Trouvez la semaine où la série a réellement tourné, puis la semaine où le plan a été révisé. Cet écart, c'est à cela que tout ceci sert.</li>
+                <li><strong class="text-stone-200">Combien de références sont prévues à la main, et par qui.</strong> La plupart des équipes ont un ensemble de références qu'une seule personne porte dans sa tête. Comptez-les. C'est votre risque de concentration, et c'est d'ordinaire une nouvelle pour quelqu'un.</li>
+                <li><strong class="text-stone-200">Quelles références vous n'avez pas pu prévoir du tout.</strong> Références nouvelles, historiques courts, références remplacées en cours d'année. Écrivez la liste avant de commencer, car un système qui admet ne pas savoir prévoir celles-là n'est un progrès que si vous saviez lesquelles c'étaient.</li>
+             </ul>
+             <p class="text-sm text-stone-500 font-bold uppercase tracking-widest text-xs mt-6 text-center">Apportez une année d'historique hebdomadaire pour une famille de produits, et votre erreur de prévision actuelle par référence.</p>
+        </div>
+    </div>
+
+
+<section class="bg-stone-900">
+    <div class="py-16 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-12">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Questions D&#39;un Planificateur De La Demande</h2>
+            
+            <p class="mb-5 font-light text-ink-2 sm:text-xl">Ce que l&#39;on demande avant de parler d&#39;un contrat.</p>
+            
+        </div>
+
+        
+        <div class="space-y-6">
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Comment choisit-il une méthode de prévision ?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Par mise en concurrence, sur votre propre historique. Une décomposition saisonnière et un modèle autorégressif classique produisent chacun une prévision, et tous deux sont notés en remontant l&rsquo;horloge et en leur demandant de prédire des périodes que votre historique contient déjà. Celui qui a le mieux prédit ces périodes est celui que vous recevez, et il arrive étiqueté de son nom. Quand aucun ne tient, une méthode de repli simple est utilisée et la réponse dit que c&rsquo;est un repli.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Que devient une référence qu&#39;il ne peut pas prévoir ?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Elle revient en disant qu&rsquo;il n&rsquo;y a pas assez de périodes pour la modéliser. C&rsquo;est une réponse plus utile qu&rsquo;une droite tracée sur quatre points, et elle vous remet la liste des références que vous pilotez au jugement plutôt qu&rsquo;à la prévision — et cette liste mérite d&rsquo;être écrite avant que quoi que ce soit d&rsquo;autre change.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Notre historique de ventes quitte-t-il le bâtiment ?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Cela tourne sur des machines qui sont à vous, et l&rsquo;historique ne les quitte jamais. La décomposition, le test de stabilité, l&rsquo;ajustement des modèles et la notation se font tous là.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Qui change le plan ?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Une personne désignée. Le constat arrive sous forme d&rsquo;un changement rédigé, à approuver, modifier ou refuser, et cette décision reste au dossier. C&rsquo;est l&rsquo;approbation qui l&rsquo;envoie, et là où une étape derrière elle n&rsquo;a encore rien d&rsquo;implémenté — une écriture dans votre système de planification en est l&rsquo;exemple honnête — la réponse nomme cette étape comme non exécutée. La décision et l&rsquo;exécution sont enregistrées comme deux faits distincts, parce qu&rsquo;elles le sont.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Pourquoi le résidu est-il rapporté plutôt qu&#39;écarté ?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Parce qu&rsquo;un retournement apparaît d&rsquo;abord dans le résidu. Une série est décomposée en trois morceaux : la tendance qui la sous-tend, la forme saisonnière qui se répète, et le résidu, c&rsquo;est-à-dire ce que la série a fait et que ni l&rsquo;un ni l&rsquo;autre n&rsquo;explique. Un pic qui arrive en avance, une promotion qui a tenu après la fin de la promotion, une région qui a discrètement baissé d&rsquo;un cran et y est restée : aucune de ces choses ne franchit un seuil, et toutes sont dans ce troisième morceau.
+                </div>
+            </details>
+            
+            <details
+                class="rk-faq border border-stone-700 rounded-lg overflow-hidden bg-stone-800 shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <summary
+                    class="rk-faq__q flex justify-between items-center gap-4 p-6 text-left cursor-pointer hover:bg-signal-wash transition-colors duration-200">
+                    <span class="text-lg font-medium text-white">Qu&#39;apporter à une première conversation ?</span>
+                    <svg class="rk-faq__chev w-5 h-5 shrink-0 text-ink-3" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="rk-faq__a p-6 prose prose-invert max-w-none text-ink-2 border-t border-stone-700">
+                    Une année d&rsquo;historique hebdomadaire pour une famille de produits, et votre erreur de prévision actuelle par référence. Une année entière plutôt qu&rsquo;une saison, parce que les références saisonnières et les références régulières échouent différemment et qu&rsquo;une fenêtre courte en cache une des deux.
+                </div>
+            </details>
+            
+        </div>
+    </div>
+</section>
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Par mise en concurrence, sur votre propre historique. Une décomposition saisonnière et un modèle autorégressif classique produisent chacun une prévision, et tous deux sont notés en remontant l\u0026rsquo;horloge et en leur demandant de prédire des périodes que votre historique contient déjà. Celui qui a le mieux prédit ces périodes est celui que vous recevez, et il arrive étiqueté de son nom. Quand aucun ne tient, une méthode de repli simple est utilisée et la réponse dit que c\u0026rsquo;est un repli."},"name":"Comment choisit-il une méthode de prévision ?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Elle revient en disant qu\u0026rsquo;il n\u0026rsquo;y a pas assez de périodes pour la modéliser. C\u0026rsquo;est une réponse plus utile qu\u0026rsquo;une droite tracée sur quatre points, et elle vous remet la liste des références que vous pilotez au jugement plutôt qu\u0026rsquo;à la prévision — et cette liste mérite d\u0026rsquo;être écrite avant que quoi que ce soit d\u0026rsquo;autre change."},"name":"Que devient une référence qu'il ne peut pas prévoir ?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Cela tourne sur des machines qui sont à vous, et l\u0026rsquo;historique ne les quitte jamais. La décomposition, le test de stabilité, l\u0026rsquo;ajustement des modèles et la notation se font tous là."},"name":"Notre historique de ventes quitte-t-il le bâtiment ?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Une personne désignée. Le constat arrive sous forme d\u0026rsquo;un changement rédigé, à approuver, modifier ou refuser, et cette décision reste au dossier. C\u0026rsquo;est l\u0026rsquo;approbation qui l\u0026rsquo;envoie, et là où une étape derrière elle n\u0026rsquo;a encore rien d\u0026rsquo;implémenté — une écriture dans votre système de planification en est l\u0026rsquo;exemple honnête — la réponse nomme cette étape comme non exécutée. La décision et l\u0026rsquo;exécution sont enregistrées comme deux faits distincts, parce qu\u0026rsquo;elles le sont."},"name":"Qui change le plan ?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Parce qu\u0026rsquo;un retournement apparaît d\u0026rsquo;abord dans le résidu. Une série est décomposée en trois morceaux : la tendance qui la sous-tend, la forme saisonnière qui se répète, et le résidu, c\u0026rsquo;est-à-dire ce que la série a fait et que ni l\u0026rsquo;un ni l\u0026rsquo;autre n\u0026rsquo;explique. Un pic qui arrive en avance, une promotion qui a tenu après la fin de la promotion, une région qui a discrètement baissé d\u0026rsquo;un cran et y est restée : aucune de ces choses ne franchit un seuil, et toutes sont dans ce troisième morceau."},"name":"Pourquoi le résidu est-il rapporté plutôt qu'écarté ?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Une année d\u0026rsquo;historique hebdomadaire pour une famille de produits, et votre erreur de prévision actuelle par référence. Une année entière plutôt qu\u0026rsquo;une saison, parce que les références saisonnières et les références régulières échouent différemment et qu\u0026rsquo;une fenêtre courte en cache une des deux."},"name":"Qu'apporter à une première conversation ?"}]}
+</script>
+
+
+    <div class="text-center">
+        <a href="/fr/?about=Quand%20la%20Demande%20Tourne%20Avant%20le%20Plan#contact" class="inline-flex items-center justify-center px-10 py-5 text-xs font-black uppercase tracking-widest !text-on-fill text-on-fill drop-shadow-md transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-xl border border-signal/30 hover:shadow-2xl hover:-translate-y-1">
+            Réserver une consultation
+        </a>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+    </div>
+
+    
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More in this section">
+      
+      <a href="/fr/use-cases/paralegal-review/" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Quelle Clause Régit Cela, Et Qui A Vérifié</span>
+      </a>
+      
+      
+      <a href="/fr/use-cases/voice-dispatch/" class="group no-underline sm:text-right sm:col-start-2">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Next</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Parler aux Conducteurs sans Écran</span>
+      </a>
+      
+    </nav>
+    
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<section class="cta-section my-24">
+    <div class="container">
+        <div
+            class="relative rounded-xl p-8 md:p-16 bg-stone-800/40 border border-stone-700 backdrop-blur shadow-2xl overflow-hidden group">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-signal-fill-hover to-signal-fill opacity-20 blur transition duration-1000 group-hover:opacity-40 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Runink : des données fiables. Des décisions défendables.</h2>
+                <p class="text-xl md:text-2xl text-ink-2 mb-10 max-w-2xl mx-auto leading-relaxed">Runink FACE lit les enregistrements logistiques que vous détenez déjà, les compare aux règles qui les régissent et rédige une action pour la personne qui décide. Le tout sur une infrastructure que vous contrôlez.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    
+                    
+                    <a href="/fr/?about=Quand%20la%20Demande%20Tourne%20Avant%20le%20Plan#contact-form"
+                        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-signal hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
+                        Réserver une consultation <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+        
+        
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Pied de page">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/fr/#contact-form">Écrivez-nous</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explorer</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Secteurs</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/fr/pricing/">Tarifs</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Téléchargements</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Lectures</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/fr/library/">Bibliothèque</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/fr/blog/whitepapers/">Livres blancs</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/fr/use-cases/">Scénarios concrets</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/fr/blog/">Tous les articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Entreprise</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/fr/company/">À propos de Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">Licence</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Politique de confidentialité</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. Tous droits réservés.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Langues : English, Français, Español, Português — à choisir dans la barre en haut de la page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>

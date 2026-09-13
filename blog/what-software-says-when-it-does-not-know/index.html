@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    <title>How to Evaluate Supply Chain AI: Ask What It Says When It Does Not Know | Runink</title>
+
+    
+    <meta name="description" content="A dashboard cannot show you the difference between a measured zero and a number nobody measured. Both render as 0. Four questions that separate software that knows from software that is guessing.">
+    <meta name="author" content="Runink">
+    
+    
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    
+    <meta property="og:title" content="How to Evaluate Supply Chain AI: Ask What It Says When It Does Not Know | Runink">
+    <meta property="og:description" content="A dashboard cannot show you the difference between a measured zero and a number nobody measured. Both render as 0. Four questions that separate software that knows from software that is guessing.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/what-software-says-when-it-does-not-know/">
+    <meta property="og:site_name" content="Runink">
+    
+    <meta property="og:image" content="https://runink.org/images/blog/measured-and-unmeasured-zero_hu_4ba3e2a1cc3fb1d6.webp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Evaluate Supply Chain AI: Ask What It Says When It Does Not Know | Runink">
+    <meta name="twitter:description" content="A dashboard cannot show you the difference between a measured zero and a number nobody measured. Both render as 0. Four questions that separate software that knows from software that is guessing.">
+    
+    
+    <meta name="twitter:image" content="https://runink.org/images/blog/measured-and-unmeasured-zero_hu_4ba3e2a1cc3fb1d6.webp">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/blog/what-software-says-when-it-does-not-know/">
+
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/blog/what-software-says-when-it-does-not-know/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Shorter notes",
+          "item": "https://runink.org/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "How to Evaluate Supply Chain AI: Ask What It Says When It Does Not Know"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/blog/what-software-says-when-it-does-not-know/"
+  },
+  "headline": "How to Evaluate Supply Chain AI: Ask What It Says When It Does Not Know",
+  "description": "A dashboard cannot show you the difference between a measured zero and a number nobody measured. Both render as 0. Four questions that separate software that knows from software that is guessing.",
+  
+  
+    
+    
+      "image": {
+        "@type": "ImageObject",
+        
+        
+        
+        "url": "https://runink.org/images/blog/measured-and-unmeasured-zero_hu_4ba3e2a1cc3fb1d6.webp",
+        "width":  1200 ,
+        "height":  675 
+        
+        
+      },
+    
+  
+  "datePublished": "2026-09-11T09:00:00Z",
+  "dateModified": "2026-09-11T16:10:01-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=How%20to%20Evaluate%20Supply%20Chain%20AI%3A%20Ask%20What%20It%20Says%20When%20It%20Does%20Not%20Know#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=How%20to%20Evaluate%20Supply%20Chain%20AI%3A%20Ask%20What%20It%20Says%20When%20It%20Does%20Not%20Know#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+
+
+
+
+
+
+<div class="rk-post bg-canvas">
+  
+<style>
+  @media print {
+    @page { margin: 16mm 14mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-post { padding: 0 !important; }
+    .rk-post-wrap { max-width: none !important; padding: 0 !important; }
+
+     
+    .rk-post-screen { display: none !important; }
+
+     
+    .rk-post-body :is(h2, h3, h4) { break-after: avoid; page-break-after: avoid; }
+    .rk-post-body :is(p, li, blockquote) { orphans: 3; widows: 3; }
+    .rk-post-body pre,
+    .rk-post-body blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+     
+    .rk-post-body table { break-inside: auto; }
+    .rk-post-body thead { display: table-header-group; }
+    .rk-post-body tr { break-inside: avoid; page-break-inside: avoid; }
+
+     
+     
+    .rk-post-figure {
+      width: fit-content;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .rk-post img {
+      max-width: 100% !important;
+      max-height: 62mm;
+      width: auto;
+      object-fit: contain;
+      break-inside: avoid;
+    }
+
+     
+    .rk-post-body a[href^="/"]::after { content: " (runink.org" attr(href) ")"; }
+    .rk-post-body a[href^="http"]::after { content: " (" attr(href) ")"; }
+    .rk-post-body a[href^="/"]::after,
+    .rk-post-body a[href^="http"]::after {
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      word-break: break-all;
+      color: var(--rk-text-2);
+    }
+
+     
+    .cta-section { margin: 8mm 0 0 !important; break-inside: avoid; }
+    .cta-section .container > div {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .cta-section .absolute { display: none !important; }
+    .cta-section h2 { font-size: 12pt !important; margin-bottom: 2mm !important; }
+    .cta-section p { font-size: 10pt !important; margin-bottom: 2mm !important; }
+    .cta-section a {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+    .cta-section a[href^="/"]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+     
+    .rk-post-mark { display: block !important; }
+  }
+</style>
+
+
+  <div class="rk-post-wrap container mx-auto max-w-[48rem] px-5 md:px-8 py-14 md:py-20">
+
+    
+    
+    
+
+    
+<header class="mb-10 md:mb-14">
+  
+  <p class="inline-block mb-5 px-3 py-1.5 rounded bg-signal-wash border-l-[3px] border-signal text-signal text-[0.6875rem] font-extrabold uppercase tracking-[0.18em]">Supply Chain Strategy</p>
+  
+
+  <h1 class="font-heading font-extrabold text-ink text-[2rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.05] tracking-[-0.01em] max-w-[26ch] mt-0 mb-4">How to Evaluate Supply Chain AI: Ask What It Says When It Does Not Know</h1>
+
+  
+  <p class="text-ink-2 text-base md:text-lg leading-[1.65] max-w-[62ch] m-0">A dashboard cannot show you the difference between a measured zero and a number nobody measured. Both render as 0. Four questions that separate software that knows from software that is guessing.</p>
+  
+
+  
+  <p class="mt-5 mb-0 text-ink-3 text-xs font-semibold uppercase tracking-[0.14em]">11 September 2026 · 8 min read</p>
+  
+</header>
+
+
+    
+    <p class="-mt-6 mb-10 text-ink-3 text-sm">Runink Logistics Operations Team</p>
+    
+
+    
+    <div class="rk-post-figure mb-10 overflow-hidden rounded-xl border border-rule">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/blog/measured-and-unmeasured-zero_hu_797923735dafbb78.webp" alt="How to Evaluate Supply Chain AI: Ask What It Says When It Does Not Know" class="w-full h-auto" width="800" height="450" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/blog/measured-and-unmeasured-zero_hu_797923735dafbb78.webp"
+  , "width":  800 
+  , "height":  450 
+  
+  
+  
+}
+</script>
+
+    </div>
+    
+
+    
+    
+    
+    <nav class="rk-post-screen mb-10 p-5 md:p-6 bg-sunk border border-rule rounded-xl" aria-labelledby="toc-head">
+      <h2 id="toc-head" class="m-0 mb-3 font-heading text-[0.6875rem] font-extrabold uppercase tracking-[0.16em] text-ink-3">On this page</h2>
+      <div class="prose prose-sm max-w-none prose-a:text-ink-2 hover:prose-a:text-signal prose-ul:my-0 prose-li:my-1">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-the-fastest-way-to-test-a-supply-chain-software-claim">What is the fastest way to test a supply chain software claim?</a></li>
+    <li><a href="#why-does-a-zero-on-a-screen-not-mean-zero">Why does a zero on a screen not mean zero?</a></li>
+    <li><a href="#what-are-the-four-answers-that-look-like-knowledge-but-are-not">What are the four answers that look like knowledge but are not?</a>
+      <ul>
+        <li><a href="#the-zero-nobody-measured">The zero nobody measured</a></li>
+        <li><a href="#the-connection-that-was-never-tested">The connection that was never tested</a></li>
+        <li><a href="#the-action-that-reported-success">The action that reported success</a></li>
+        <li><a href="#the-check-that-could-not-run">The check that could not run</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-does-this-matter-more-with-ai-than-it-did-with-reporting">Why does this matter more with AI than it did with reporting?</a></li>
+    <li><a href="#what-should-i-ask-a-vendor-in-the-room">What should I ask a vendor, in the room?</a></li>
+    <li><a href="#is-this-not-just-asking-for-error-handling">Is this not just asking for error handling?</a></li>
+    <li><a href="#how-does-this-change-what-we-buy">How does this change what we buy?</a></li>
+    <li><a href="#frequently-asked-questions">Frequently asked questions</a>
+      <ul>
+        <li><a href="#is-a-blank-field-better-than-a-zero">Is a blank field better than a zero?</a></li>
+        <li><a href="#our-vendor-says-this-is-an-edge-case-is-it">Our vendor says this is an edge case. Is it?</a></li>
+        <li><a href="#can-we-test-this-after-we-have-bought">Can we test this after we have bought?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </nav>
+    
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      <h2 id="what-is-the-fastest-way-to-test-a-supply-chain-software-claim">What is the fastest way to test a supply chain software claim?</h2>
+<div class="aeo-direct-answer" id="answer-0">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Ask what the system does when it cannot answer. Every vendor can show you the case where their software knows. Almost none can show you the case where it does not, and that is the case you will meet on a bad morning. A system that reports a confident zero for a quantity nobody measured will do the same thing to you in front of a carrier, an auditor or a customs broker.</div>
+</div>
+
+<p>A note on method: there are no figures in this article. We have no survey to cite, and a number invented to make the point would be the same trick the article is about.</p>
+<p>Buyers have got better at the demo. They ask for a live test on their own data. They ask what happens at volume. Those are good questions and they are now common enough that most vendors have an answer ready.</p>
+<p>There is a question almost nobody asks, and it is the one that separates a working system from a convincing one.</p>
+<p><strong>What does it say when it does not know?</strong></p>
+<h2 id="why-does-a-zero-on-a-screen-not-mean-zero">Why does a zero on a screen not mean zero?</h2>
+<div class="aeo-direct-answer" id="answer-1">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Because a screen has one way to draw two different facts. A measured zero means somebody looked and found nothing. An unmeasured zero means nobody looked. Both print as 0, in the same font, in the same box, and the reader has no way to tell them apart.</div>
+</div>
+
+<p>Consider a panel showing your error rate for the last hour. It says 0.</p>
+<p>There are two worlds behind that. In one, the software read every record and found no errors. In the other, nothing was instrumented, the field was never populated, and the panel is rendering a default.</p>
+<p>You are looking at the same character in both worlds.</p>
+<p>This is not a hypothetical failure. It is what an empty field does by default in most systems: it becomes a zero somewhere between the database and the screen, and from that point on it is indistinguishable from a reading.</p>
+<p>The cost is not the wrong number. The cost is the confidence. Nobody escalates a zero.</p>
+<h2 id="what-are-the-four-answers-that-look-like-knowledge-but-are-not">What are the four answers that look like knowledge but are not?</h2>
+<div class="aeo-direct-answer" id="answer-2">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">A zero that was never measured. A green tick for a connection nobody dialled. A success for work that did not run. And a pass for a check that could not run at all. Each one looks like a result and each one is the absence of a result wearing a result&rsquo;s clothes.</div>
+</div>
+
+<p>They are worth naming separately, because they fail in different places and the remedy is different in each.</p>
+<h3 id="the-zero-nobody-measured">The zero nobody measured</h3>
+<p>Covered above. The tell is that the field is never blank and never in doubt. Software that can say &ldquo;not measured&rdquo; has had to be built to say it; software that always shows a number has not.</p>
+<h3 id="the-connection-that-was-never-tested">The connection that was never tested</h3>
+<p>A settings page shows a green tick beside an integration. Ask what the tick means. Often it means the record was saved, not that anything was contacted.</p>
+<p>There is a real difference between &ldquo;we saved your credentials&rdquo;, &ldquo;we reached the host&rdquo;, &ldquo;we authenticated&rdquo;, &ldquo;we read a row&rdquo;, and &ldquo;we cannot test this kind of source&rdquo;. A green tick collapses five answers into one, and four of them are not the one you assumed.</p>
+<h3 id="the-action-that-reported-success">The action that reported success</h3>
+<p>An automated step comes back green. Ask what green covers.</p>
+<p>If a job was supposed to send a notice, update a record and write to a ledger, and only the first happened, a single success flag has hidden two failures. What you want back is not a boolean. It is a list of the steps that did not happen, each one named.</p>
+<h3 id="the-check-that-could-not-run">The check that could not run</h3>
+<p>This is the most expensive of the four, because it happens inside compliance and audit work where the answer gets filed.</p>
+<p>If a control cannot be evaluated — the data was unreadable, the source was empty, the export never arrived — there are three honest answers, not two. Pass. Fail. And <em>could not be assessed.</em> Software that only has two will quietly file the third as one of the first two, and an unassessable control that reports as a pass is worse than no report at all. You now have a document saying you checked.</p>
+<h2 id="why-does-this-matter-more-with-ai-than-it-did-with-reporting">Why does this matter more with AI than it did with reporting?</h2>
+<div class="aeo-direct-answer" id="answer-3">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Because a language model always produces an answer. A spreadsheet leaves a cell blank when it has nothing. A model fills it with a fluent sentence in the same tone as the sentences that were correct. Absence of knowledge does not look like absence, so the reader has lost the cue they were relying on.</div>
+</div>
+
+<p>For thirty years the tell for missing data was visual. A gap. A dash. A cell you had to click into.</p>
+<p>That cue is gone. Ask a model about a shipment it has no record of and you get a paragraph, in the house style, at the same confidence as the paragraph about the shipment it does have a record of.</p>
+<p>This is why the question has moved from a nice-to-have to the first thing to ask. The failure mode is no longer silence. It is fluency.</p>
+<p>And in claims, customs and freight audit the difference is not academic. A gap can be filled before you file. An invented figure gets the whole submission challenged, and the challenge lands on the parts that were true as well.</p>
+<h2 id="what-should-i-ask-a-vendor-in-the-room">What should I ask a vendor, in the room?</h2>
+<div class="aeo-direct-answer" id="answer-4">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Ask for the empty case, not the full one. Show me a field the system did not measure. Disconnect a source and run it in front of me. Show me a compliance check that could not run. And show me what the system returns when half an action completed. Four requests, all answerable in a demo, and none of them flattering to answer badly.</div>
+</div>
+
+<p>These work because they cannot be prepared for with a slide.</p>
+<p><strong>Show me a field this build does not measure, and show me the screen.</strong> You are looking for a sentence where a number would be. If every field always has a value, ask how they know the meter is running.</p>
+<p><strong>Disconnect one source and run it again.</strong> Not a story about what would happen. Do it. A system that is honest about absence behaves differently with a source missing; a system that is not looks exactly the same, which is the problem.</p>
+<p><strong>Show me a control that could not be assessed.</strong> Ask to read the words it files. If those words do not make clear that this is not a finding of compliance, the report is worse than nothing, because somebody will later treat it as evidence.</p>
+<p><strong>Show me a partially completed action.</strong> Approve something that cannot fully execute. Ask what comes back. You want the step named. &ldquo;Failed&rdquo; is not enough; it tells you to retry without telling you whether retrying is safe.</p>
+<h2 id="is-this-not-just-asking-for-error-handling">Is this not just asking for error handling?</h2>
+<div class="aeo-direct-answer" id="answer-5">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">No. Error handling is what a system does when something goes wrong. This is what a system does when nothing goes wrong and it simply does not have the answer. Those are different code paths, and the second one is the one that gets skipped, because nothing is visibly broken when it is missing.</div>
+</div>
+
+<p>An error is loud. Somebody notices, files a ticket, and it gets fixed.</p>
+<p>An unmeasured value is quiet. It renders. The page loads. Nobody is paged. It fails the first time somebody makes a decision on it, which may be months later and in a meeting where the software is not present to be questioned.</p>
+<p>That is why it survives procurement. Nothing in a normal evaluation touches it.</p>
+<h2 id="how-does-this-change-what-we-buy">How does this change what we buy?</h2>
+<div class="aeo-direct-answer" id="answer-6">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">It moves one question to the front of the list. Not &ldquo;what can it do&rdquo; but &ldquo;what does it do when it cannot&rdquo;. The first question is answered by every vendor in the market. The second is answered by very few, and the answer is hard to fake in a live session.</div>
+</div>
+
+<p>None of this requires you to become technical. Every one of the four requests above is something you can watch happen on a screen and judge with your own eyes.</p>
+<p>And it reframes the conversation in a way that is useful to you even if you buy nothing. You will learn more about a vendor from five minutes of the empty case than from an hour of the happy path, because the happy path is the part they have rehearsed.</p>
+<p>The software we build is designed around this idea, and we would rather be asked these four questions than not. But the questions are not ours and they work on anybody.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="is-a-blank-field-better-than-a-zero">Is a blank field better than a zero?</h3>
+<p>Only if the blank is deliberate and explained. A blank that means &ldquo;not measured&rdquo; is honest; a blank that means the page failed to load is a different problem wearing the same clothes. What you want is a short sentence in place of the number, saying which it is.</p>
+<h3 id="our-vendor-says-this-is-an-edge-case-is-it">Our vendor says this is an edge case. Is it?</h3>
+<p>The empty case is not an edge case in logistics. Sources go down, exports arrive late, a field the integration expects is not populated by the team that owns it. The question is whether the software treats that as an ordinary Tuesday or as an exception it was not designed for.</p>
+<h3 id="can-we-test-this-after-we-have-bought">Can we test this after we have bought?</h3>
+<p>You can, and it is worth doing either way. But it is far cheaper before, because after the purchase the finding becomes a change request rather than a reason not to sign.</p>
+
+    </div>
+
+    
+    <p class="rk-post-screen mt-10 mb-0 flex flex-wrap items-center gap-2">
+      
+      <a href="/tags/vaporware"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Vaporware</a>
+      
+      <a href="/tags/scm"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">SCM</a>
+      
+      <a href="/tags/procurement"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Procurement</a>
+      
+      <a href="/tags/runink"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Runink</a>
+      
+    </p>
+    
+
+    
+    
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More articles">
+      
+      <a href="/blog/vaporware-part-6-resilience/" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Building Genuine Resilience: Choosing Proven SCM Technologies Over Vaporware</span>
+      </a>
+      
+      
+    </nav>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    <section class="rk-post-screen mt-14" aria-labelledby="related-head">
+      
+<div class="flex items-center gap-3.5 mb-6">
+  <span class="flex-none w-6 border-t-[3px] border-signal" aria-hidden="true"></span>
+  <h2 id="related-head" class="min-w-0 m-0 font-heading text-[0.9375rem] font-extrabold uppercase tracking-[0.12em] text-ink-2">More on Supply Chain Strategy</h2>
+  <span class="flex-1 border-t border-rule" aria-hidden="true"></span>
+  
+</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<article
+    class="rk-list-card group flex flex-col bg-sheet border border-rule rounded-xl overflow-hidden transition-colors duration-200 hover:bg-sunk hover:border-rule-mid">
+    
+    
+    <a href="/blog/vaporware-part-6-resilience/" class="block w-full h-48 overflow-hidden border-b border-rule" tabindex="-1" aria-hidden="true">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/blog/vaporware_scm_resilience_1781932673542_hu_af2e7020787b4bfc.webp" alt="Building Genuine Resilience: Choosing Proven SCM Technologies Over Vaporware" class="object-cover w-full h-full" width="800" height="800" loading="lazy" fetchpriority="auto">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/blog/vaporware_scm_resilience_1781932673542_hu_af2e7020787b4bfc.webp"
+  , "width":  800 
+  , "height":  800 
+  
+  
+  
+}
+</script>
+
+    </a>
+    
+
+    <div class="flex flex-col flex-1 p-5 md:p-6">
+
+        
+        <p class="flex flex-wrap items-center gap-x-2 gap-y-1 m-0 mb-3 text-[0.6875rem] font-bold uppercase tracking-[0.14em]">
+            
+            
+            <span class="text-signal">Supply Chain Strategy</span>
+            <span class="text-ink-3" aria-hidden="true">&middot;</span>
+            
+            
+            <time class="text-ink-3" datetime="2026-06-20">20 June 2026</time>
+        </p>
+
+        
+        
+        <h3 class="m-0 mb-2.5 font-heading text-lg md:text-xl font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-signal">
+            <a class="rk-list-url no-underline" href="/blog/vaporware-part-6-resilience/">Building Genuine Resilience: Choosing Proven SCM Technologies Over Vaporware</a>
+        </h3>
+
+        <p class="m-0 text-ink-2 text-sm leading-relaxed">
+            Part of the 6-part series on the dangers of SCM Vaporware.
+        </p>
+
+        
+        <div class="rk-list-screen mt-auto pt-5 flex items-center justify-between gap-3">
+            <span class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal">
+                Read
+                <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </span>
+            <span class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">
+                6 min read
+            </span>
+        </div>
+    </div>
+</article>
+
+
+        
+        
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<article
+    class="rk-list-card group flex flex-col bg-sheet border border-rule rounded-xl overflow-hidden transition-colors duration-200 hover:bg-sunk hover:border-rule-mid">
+    
+    
+    <a href="/blog/vaporware-part-5-legal/" class="block w-full h-48 overflow-hidden border-b border-rule" tabindex="-1" aria-hidden="true">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/blog/vaporware_scm_legal_1781932663337_hu_77e82644629c3f43.webp" alt="Legal Recourse and Contractual Armor: Defending Against SCM Vaporware" class="object-cover w-full h-full" width="800" height="800" loading="lazy" fetchpriority="auto">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/blog/vaporware_scm_legal_1781932663337_hu_77e82644629c3f43.webp"
+  , "width":  800 
+  , "height":  800 
+  
+  
+  
+}
+</script>
+
+    </a>
+    
+
+    <div class="flex flex-col flex-1 p-5 md:p-6">
+
+        
+        <p class="flex flex-wrap items-center gap-x-2 gap-y-1 m-0 mb-3 text-[0.6875rem] font-bold uppercase tracking-[0.14em]">
+            
+            
+            <span class="text-signal">Supply Chain Strategy</span>
+            <span class="text-ink-3" aria-hidden="true">&middot;</span>
+            
+            
+            <time class="text-ink-3" datetime="2026-06-20">20 June 2026</time>
+        </p>
+
+        
+        
+        <h3 class="m-0 mb-2.5 font-heading text-lg md:text-xl font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-signal">
+            <a class="rk-list-url no-underline" href="/blog/vaporware-part-5-legal/">Legal Recourse and Contractual Armor: Defending Against SCM Vaporware</a>
+        </h3>
+
+        <p class="m-0 text-ink-2 text-sm leading-relaxed">
+            Part of the 6-part series on the dangers of SCM Vaporware.
+        </p>
+
+        
+        <div class="rk-list-screen mt-auto pt-5 flex items-center justify-between gap-3">
+            <span class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal">
+                Read
+                <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </span>
+            <span class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">
+                6 min read
+            </span>
+        </div>
+    </div>
+</article>
+
+
+        
+        
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<article
+    class="rk-list-card group flex flex-col bg-sheet border border-rule rounded-xl overflow-hidden transition-colors duration-200 hover:bg-sunk hover:border-rule-mid">
+    
+    
+    <a href="/blog/vaporware-part-4-operational/" class="block w-full h-48 overflow-hidden border-b border-rule" tabindex="-1" aria-hidden="true">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/blog/vaporware_scm_operational_1781932654453_hu_4a15524f8c899a4d.webp" alt="Operational Paralysis: When Phantom SCM Software Breaks the Supply Chain" class="object-cover w-full h-full" width="800" height="800" loading="lazy" fetchpriority="auto">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/blog/vaporware_scm_operational_1781932654453_hu_4a15524f8c899a4d.webp"
+  , "width":  800 
+  , "height":  800 
+  
+  
+  
+}
+</script>
+
+    </a>
+    
+
+    <div class="flex flex-col flex-1 p-5 md:p-6">
+
+        
+        <p class="flex flex-wrap items-center gap-x-2 gap-y-1 m-0 mb-3 text-[0.6875rem] font-bold uppercase tracking-[0.14em]">
+            
+            
+            <span class="text-signal">Supply Chain Strategy</span>
+            <span class="text-ink-3" aria-hidden="true">&middot;</span>
+            
+            
+            <time class="text-ink-3" datetime="2026-06-20">20 June 2026</time>
+        </p>
+
+        
+        
+        <h3 class="m-0 mb-2.5 font-heading text-lg md:text-xl font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-signal">
+            <a class="rk-list-url no-underline" href="/blog/vaporware-part-4-operational/">Operational Paralysis: When Phantom SCM Software Breaks the Supply Chain</a>
+        </h3>
+
+        <p class="m-0 text-ink-2 text-sm leading-relaxed">
+            Part of the 6-part series on the dangers of SCM Vaporware.
+        </p>
+
+        
+        <div class="rk-list-screen mt-auto pt-5 flex items-center justify-between gap-3">
+            <span class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal">
+                Read
+                <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </span>
+            <span class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">
+                5 min read
+            </span>
+        </div>
+    </div>
+</article>
+
+
+        
+      </div>
+    </section>
+    
+    
+
+    <p class="rk-post-screen mt-10 mb-0">
+      <a href="/blog/"
+         class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal no-underline">
+        All articles
+        <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </p>
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<section class="cta-section my-24">
+    <div class="container">
+        <div
+            class="relative rounded-xl p-8 md:p-16 bg-stone-800/40 border border-stone-700 backdrop-blur shadow-2xl overflow-hidden group">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-signal-fill-hover to-signal-fill opacity-20 blur transition duration-1000 group-hover:opacity-40 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Runink: Data You Can Trust. Decisions You Can Defend.</h2>
+                <p class="text-xl md:text-2xl text-ink-2 mb-10 max-w-2xl mx-auto leading-relaxed">Runink FACE reads the logistics records you already hold, compares them against the rules that govern them, and drafts an action for the person who owns the decision. It runs on infrastructure you control.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    
+                    
+                    <a href="/?about=How%20to%20Evaluate%20Supply%20Chain%20AI%3A%20Ask%20What%20It%20Says%20When%20It%20Does%20Not%20Know#contact-form"
+                        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-signal hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
+                        Book your Consultation <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+        
+        
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://runink.org/blog/what-software-says-when-it-does-not-know/#faq",
+  "isPartOf": { "@id": "https://runink.org/#website" },
+  "publisher": { "@id": "https://runink.org/#organization" },
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the fastest way to test a supply chain software claim?",
+      "url": "https://runink.org/blog/what-software-says-when-it-does-not-know/#what-is-the-fastest-way-to-test-a-supply-chain-software-claim",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask what the system does when it cannot answer. Every vendor can show you the case where their software knows. Almost none can show you the case where it does not, and that is the case you will meet on a bad morning. A system that reports a confident zero for a quantity nobody measured will do the same thing to you in front of a carrier, an auditor or a customs broker."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a zero on a screen not mean zero?",
+      "url": "https://runink.org/blog/what-software-says-when-it-does-not-know/#why-does-a-zero-on-a-screen-not-mean-zero",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because a screen has one way to draw two different facts. A measured zero means somebody looked and found nothing. An unmeasured zero means nobody looked. Both print as 0, in the same font, in the same box, and the reader has no way to tell them apart."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the four answers that look like knowledge but are not?",
+      "url": "https://runink.org/blog/what-software-says-when-it-does-not-know/#what-are-the-four-answers-that-look-like-knowledge-but-are-not",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A zero that was never measured. A green tick for a connection nobody dialled. A success for work that did not run. And a pass for a check that could not run at all. Each one looks like a result and each one is the absence of a result wearing a result’s clothes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does this matter more with AI than it did with reporting?",
+      "url": "https://runink.org/blog/what-software-says-when-it-does-not-know/#why-does-this-matter-more-with-ai-than-it-did-with-reporting",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because a language model always produces an answer. A spreadsheet leaves a cell blank when it has nothing. A model fills it with a fluent sentence in the same tone as the sentences that were correct. Absence of knowledge does not look like absence, so the reader has lost the cue they were relying on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I ask a vendor, in the room?",
+      "url": "https://runink.org/blog/what-software-says-when-it-does-not-know/#what-should-i-ask-a-vendor-in-the-room",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask for the empty case, not the full one. Show me a field the system did not measure. Disconnect a source and run it in front of me. Show me a compliance check that could not run. And show me what the system returns when half an action completed. Four requests, all answerable in a demo, and none of them flattering to answer badly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this not just asking for error handling?",
+      "url": "https://runink.org/blog/what-software-says-when-it-does-not-know/#is-this-not-just-asking-for-error-handling",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Error handling is what a system does when something goes wrong. This is what a system does when nothing goes wrong and it simply does not have the answer. Those are different code paths, and the second one is the one that gets skipped, because nothing is visibly broken when it is missing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does this change what we buy?",
+      "url": "https://runink.org/blog/what-software-says-when-it-does-not-know/#how-does-this-change-what-we-buy",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It moves one question to the front of the list. Not “what can it do” but “what does it do when it cannot”. The first question is answered by every vendor in the market. The second is answered by very few, and the answer is hard to fake in a live session."
+      }
+    }
+  ]
+}
+</script>
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>

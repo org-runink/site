@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "What Is S\u0026OP (Sales \u0026 Operations Planning) and Why Do Most Companies Get It Wrong?"
+    permalink: "https://runink.org/blog/what-is-sop-sales-operations-planning/"
+    date: "2026-03-08T16:16:22Z"
+    description: "What S\u0026OP actually is, the five-step cycle, the four reasons implementations underperform, and the data work that has to happen first."
+  - title: "Inventory Optimization Beyond Safety Stock — How Demand Sensing Is Replacing Guesswork"
+    permalink: "https://runink.org/blog/inventory-optimization-demand-sensing/"
+    date: "2026-02-28T06:20:29Z"
+    description: "Static safety stock formulas age badly in volatile demand. What demand sensing is, which levers an inventory team actually has, and the first figure to measure in your own operation."

@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    <title>Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics | Runink</title>
+
+    
+    <meta name="description" content="How telematics, ELD and maintenance records are used to rank driver risk and schedule repairs before a breakdown — and which of your own numbers to measure the program against.">
+    <meta name="author" content="Runink">
+    
+    
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    
+    <meta property="og:title" content="Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics | Runink">
+    <meta property="og:description" content="How telematics, ELD and maintenance records are used to rank driver risk and schedule repairs before a breakdown — and which of your own numbers to measure the program against.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/fleet-safety-risk-management/">
+    <meta property="og:site_name" content="Runink">
+    
+    <meta property="og:image" content="https://runink.org/images/blog/fleet-safety-risk-management-header_hu_283eec1116c78244.webp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics | Runink">
+    <meta name="twitter:description" content="How telematics, ELD and maintenance records are used to rank driver risk and schedule repairs before a breakdown — and which of your own numbers to measure the program against.">
+    
+    
+    <meta name="twitter:image" content="https://runink.org/images/blog/fleet-safety-risk-management-header_hu_283eec1116c78244.webp">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/blog/fleet-safety-risk-management/">
+
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/blog/fleet-safety-risk-management/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Shorter notes",
+          "item": "https://runink.org/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/blog/fleet-safety-risk-management/"
+  },
+  "headline": "Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics",
+  "description": "How telematics, ELD and maintenance records are used to rank driver risk and schedule repairs before a breakdown — and which of your own numbers to measure the program against.",
+  
+  
+    
+    
+      "image": {
+        "@type": "ImageObject",
+        
+        
+        
+        "url": "https://runink.org/images/blog/fleet-safety-risk-management-header_hu_283eec1116c78244.webp",
+        "width":  1200 ,
+        "height":  675 
+        
+        
+      },
+    
+  
+  "datePublished": "2026-03-15T14:45:31Z",
+  "dateModified": "2026-09-11T06:45:10-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=Fleet%20Safety%20and%20Risk%20Management%20%E2%80%94%20Preventing%20Accidents%20Before%20They%20Happen%20with%20Predictive%20Analytics#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=Fleet%20Safety%20and%20Risk%20Management%20%E2%80%94%20Preventing%20Accidents%20Before%20They%20Happen%20with%20Predictive%20Analytics#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+
+
+
+
+
+
+<div class="rk-post bg-canvas">
+  
+<style>
+  @media print {
+    @page { margin: 16mm 14mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-post { padding: 0 !important; }
+    .rk-post-wrap { max-width: none !important; padding: 0 !important; }
+
+     
+    .rk-post-screen { display: none !important; }
+
+     
+    .rk-post-body :is(h2, h3, h4) { break-after: avoid; page-break-after: avoid; }
+    .rk-post-body :is(p, li, blockquote) { orphans: 3; widows: 3; }
+    .rk-post-body pre,
+    .rk-post-body blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+     
+    .rk-post-body table { break-inside: auto; }
+    .rk-post-body thead { display: table-header-group; }
+    .rk-post-body tr { break-inside: avoid; page-break-inside: avoid; }
+
+     
+     
+    .rk-post-figure {
+      width: fit-content;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .rk-post img {
+      max-width: 100% !important;
+      max-height: 62mm;
+      width: auto;
+      object-fit: contain;
+      break-inside: avoid;
+    }
+
+     
+    .rk-post-body a[href^="/"]::after { content: " (runink.org" attr(href) ")"; }
+    .rk-post-body a[href^="http"]::after { content: " (" attr(href) ")"; }
+    .rk-post-body a[href^="/"]::after,
+    .rk-post-body a[href^="http"]::after {
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      word-break: break-all;
+      color: var(--rk-text-2);
+    }
+
+     
+    .cta-section { margin: 8mm 0 0 !important; break-inside: avoid; }
+    .cta-section .container > div {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .cta-section .absolute { display: none !important; }
+    .cta-section h2 { font-size: 12pt !important; margin-bottom: 2mm !important; }
+    .cta-section p { font-size: 10pt !important; margin-bottom: 2mm !important; }
+    .cta-section a {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+    .cta-section a[href^="/"]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+     
+    .rk-post-mark { display: block !important; }
+  }
+</style>
+
+
+  <div class="rk-post-wrap container mx-auto max-w-[48rem] px-5 md:px-8 py-14 md:py-20">
+
+    
+    
+    
+      
+    
+
+    
+<header class="mb-10 md:mb-14">
+  
+  <p class="inline-block mb-5 px-3 py-1.5 rounded bg-signal-wash border-l-[3px] border-signal text-signal text-[0.6875rem] font-extrabold uppercase tracking-[0.18em]">Fleet Operations</p>
+  
+
+  <h1 class="font-heading font-extrabold text-ink text-[2rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.05] tracking-[-0.01em] max-w-[26ch] mt-0 mb-4">Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics</h1>
+
+  
+  <p class="text-ink-2 text-base md:text-lg leading-[1.65] max-w-[62ch] m-0">How telematics, ELD and maintenance records are used to rank driver risk and schedule repairs before a breakdown — and which of your own numbers to measure the program against.</p>
+  
+
+  
+  <p class="mt-5 mb-0 text-ink-3 text-xs font-semibold uppercase tracking-[0.14em]">Updated 11 September 2026 · first published 15 March 2026 · 9 min read</p>
+  
+</header>
+
+
+    
+    <p class="-mt-6 mb-10 text-ink-3 text-sm">Runink Logistics Operations Team</p>
+    
+
+    
+    <div class="rk-post-figure mb-10 overflow-hidden rounded-xl border border-rule">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/blog/fleet-safety-risk-management-header_hu_26ffe156d2d6b1a.webp" alt="Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics" class="w-full h-auto" width="800" height="800" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/blog/fleet-safety-risk-management-header_hu_26ffe156d2d6b1a.webp"
+  , "width":  800 
+  , "height":  800 
+  
+  
+  
+}
+</script>
+
+    </div>
+    
+
+    
+    
+    
+    <nav class="rk-post-screen mb-10 p-5 md:p-6 bg-sunk border border-rule rounded-xl" aria-labelledby="toc-head">
+      <h2 id="toc-head" class="m-0 mb-3 font-heading text-[0.6875rem] font-extrabold uppercase tracking-[0.16em] text-ink-3">On this page</h2>
+      <div class="prose prose-sm max-w-none prose-a:text-ink-2 hover:prose-a:text-signal prose-ul:my-0 prose-li:my-1">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-the-key-takeaways-from-this-executive-summary">What are the Key Takeaways from this Executive Summary?</a></li>
+    <li><a href="#why-are-reactive-safety-programs-failing-fleet-operators">Why Are Reactive Safety Programs Failing Fleet Operators?</a></li>
+    <li><a href="#what-does-predictive-fleet-safety-actually-look-like-in-practice">What Does Predictive Fleet Safety Actually Look Like in Practice?</a></li>
+    <li><a href="#how-does-predictive-safety-impact-the-bottom-line">How Does Predictive Safety Impact the Bottom Line?</a></li>
+    <li><a href="#what-role-does-data-governance-play-in-fleet-safety-programs">What Role Does Data Governance Play in Fleet Safety Programs?</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+      </div>
+    </nav>
+    
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      <h2 id="what-are-the-key-takeaways-from-this-executive-summary">What are the Key Takeaways from this Executive Summary?</h2>
+<div class="aeo-direct-answer" id="answer-0">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Fleet safety is a financial and liability question before it is a compliance one. The records that would tell you where the next claim is coming from already exist: telematics events, ELD (electronic logging device) logs, maintenance work orders and your insurer&rsquo;s loss runs. The work is reading them in time to act, and measuring the program against your own preventable-accident rate and your own renewal, not against somebody else&rsquo;s figures.</div>
+</div>
+
+<ul>
+<li><strong>Reactive safety programs pay late.</strong> Post-incident reporting means the first time a pattern is discussed is after the claim. Meanwhile CSA scores (Compliance, Safety, Accountability — the public FMCSA scores shippers check), premiums and litigation exposure all move in the same direction.</li>
+<li><strong>Telematics becomes useful when it is ranked.</strong> A single hard-braking alert tells you nothing. Drivers ordered by hard braking, speeding and HOS (hours of service) violations over a quarter tell you where coaching time should go.</li>
+<li><strong>Measure it with your own numbers.</strong> Pull your preventable-accident count per million miles for the last four quarters, and your loss runs — the claims history your insurer issues — for the same period. Those are the two figures a renewal is priced on, and they are the two to watch.</li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="why-are-reactive-safety-programs-failing-fleet-operators">Why Are Reactive Safety Programs Failing Fleet Operators?</h2>
+<div class="aeo-direct-answer" id="answer-1">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Reactive programs act after the damage: after the report is filed, after the premium increase arrives, after a driver is lost. The cost of a crash is also much larger than the repair invoice, so the gap between the event and the response is expensive in ways the maintenance budget never shows.</div>
+</div>
+
+<p>According to the Federal Motor Carrier Safety Administration, the average cost of a large-truck crash involving an injury now exceeds $200,000 once medical costs, legal fees, downtime and lost cargo are counted, and a fatal crash runs past $3.6 million. Those are the averages. Above them sit the cases trucking lawyers call nuclear verdicts — jury awards far larger than the economic damages the case appeared to involve. Your own exposure to that tail is not a published statistic; it is the limit on your primary policy, the excess layers above it, and what your last three years of loss runs say about the claims that went to litigation.</p>
+<p>Most safety programs still run on a lag. Incident reports are filed days later. Coaching happens quarterly if it happens. Maintenance follows fixed manufacturer intervals rather than the condition of the vehicle. All of that produces an explanation of the last accident rather than a warning about the next one.</p>
+<p>For Fleet Safety Managers and Risk and Compliance Directors, the pressure comes from several directions at once. CSA scores are public and shippers read them. Underwriters have less appetite for trucking risk than they did. And HOS rules, the ELD mandate and clearinghouse requirements all ask for a level of visibility that a spreadsheet and a filing cabinet cannot give.</p>
+<hr>
+<h2 id="what-does-predictive-fleet-safety-actually-look-like-in-practice">What Does Predictive Fleet Safety Actually Look Like in Practice?</h2>
+<div class="aeo-direct-answer" id="answer-2">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">It is three ordinary things done continuously: ranking drivers by recorded behavior rather than reacting to single alerts, trending vehicle fault data against the work orders that followed it, and reading ELD logs for fatigue patterns before they become violations. All three use records the fleet already collects.</div>
+</div>
+
+<p>The shift from reactive to predictive starts with putting the records together. Most fleets already produce plenty: GPS positions, hard-braking and speeding events, engine fault codes, HOS logs, fuel burn, tire pressures. Data is not the scarce thing. The scarce thing is one view of it, because it sits in the TMS, in the ELD provider&rsquo;s portal, in the telematics platform and in the maintenance system, each with its own driver and vehicle identifiers.</p>
+<p>Once it is in one place, three kinds of reading become possible.</p>
+<p><strong>Driver behavior ranking.</strong> Instead of treating each hard-braking event as an alert, score each driver over a period — a quarter is usually long enough to be stable and short enough to act on. Combine the events you already record: late-shift speeding, lane departures, following distance, HOS violations. Then rank. The ranking is the product, because it tells you which ten drivers to spend coaching time on this month rather than spreading the same hour across the whole roster. To check whether the ranking means anything in your fleet, take last year&rsquo;s preventable accidents — the ones your own review process judged avoidable — and look at where those drivers sat in the ranking before the event.</p>
+<p><strong>Mechanical failure prediction.</strong> Engine fault codes, oil pressure trends, brake wear and coolant temperature are not random, and your maintenance system already holds the history. The measure to establish is the lead time: for each unplanned roadside breakdown in the last twelve months, how many days earlier did the first related fault code appear, and was anyone looking? That number tells you what a condition-based schedule could realistically convert from a roadside event into a shop visit. The American Transportation Research Institute has consistently found vehicle maintenance to be a top-three operational cost for carriers; the gap between a planned repair and the same repair done on the hard shoulder is visible in your own work orders, with the tow, the lost load and the hotel on the unplanned ones.</p>
+<p><strong>HOS and compliance risk.</strong> ELD data is filed because it is required, but it is also the clearest record of fatigue exposure you have. Drivers who regularly run to the edge of their 14-hour window, take only the minimum 30-minute break, or show irregular restart patterns are visible in the log weeks before a violation. Reading those patterns as the logs arrive gives dispatch the chance to move a load rather than explain a violation afterwards. Whether those patterns precede incidents in your fleet specifically is testable: compare the log patterns of the drivers in last year&rsquo;s accident file against the rest of the roster.</p>
+<hr>
+<h2 id="how-does-predictive-safety-impact-the-bottom-line">How Does Predictive Safety Impact the Bottom Line?</h2>
+<div class="aeo-direct-answer" id="answer-3">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Through three numbers you can already pull: preventable accidents per million miles, the loss runs your insurer prices the renewal on, and your CSA percentiles. Safety work moves the first, the first moves the second over a policy period or two, and the third is what shippers see during procurement.</div>
+</div>
+
+<p>Underwriters no longer rate a fleet mainly on size and years in operation. They ask for telematics data, CSA scores, driver turnover and maintenance compliance records. A fleet that arrives at renewal with four quarters of its own figures, a documented coaching process and evidence of which drivers were coached is having a different conversation from one that arrives with assurances. What the figures earn is not something this post can put a number on — it depends on your loss history, your limits and the market that year. What you can do is ask your broker which of your numbers moved the quote last time, and track those.</p>
+<p>The National Safety Council estimates that work-related motor vehicle crashes cost the United States more than $75 billion a year once wage and productivity losses, medical costs and administration are counted. For a single carrier, the equivalent figure has a name: total cost of risk — premiums, plus deductibles and the claims you pay under them, plus the cost of running the safety function. It is worth calculating annually, because premium alone hides the deductible layer where better driver selection shows up first.</p>
+<p>Two more places where the same records pay. When another party caused the crash, your insurer pursues their insurer to recover what it paid out — subrogation — and the telematics and video records from that vehicle are the evidence that makes recovery straightforward rather than contested. And a clean CSA profile is read by enterprise shippers during procurement, so it shows up in lane awards as well as in premiums.</p>
+<hr>
+<h2 id="what-role-does-data-governance-play-in-fleet-safety-programs">What Role Does Data Governance Play in Fleet Safety Programs?</h2>
+<div class="aeo-direct-answer" id="answer-4">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">A risk score is only as good as the records under it. If two telematics vendors define a hard-braking event differently, or a device stops uploading and nobody notices, the scores vary by equipment rather than by driver — and nobody can tell which.</div>
+</div>
+
+<p>Devices are calibrated differently, ELD uploads arrive late, maintenance records have gaps. Each of those introduces differences that look like driver behavior. So a fleet safety manager starting this work needs three things written down: one event definition per event type that holds across every provider in the fleet, a refresh expectation for each feed, and validation rules that flag a record as suspect before it reaches a score.</p>
+<p>The awkward implication is that the first deliverable of a predictive safety program is not a model. It is that event taxonomy, plus a rule for what happens when a device&rsquo;s uploads stop. Programs that skip this produce models whose accuracy varies by vendor, which is indistinguishable from accuracy varying by driver — and that is a conclusion no safety manager should be asked to act on.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<div class="aeo-direct-answer" id="answer-5">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Fleet safety is a financial exercise as much as a compliance one. The records that show where the next claim is likely to come from already exist in the telematics, ELD and maintenance systems; the question is how long they sit unread.</div>
+</div>
+
+<p>The carriers that handle the next decade of freight well will not be the largest or the cheapest. They will be the ones that can say, at renewal, which drivers and which vehicles they intervened on and why, and show the figures either side of it.</p>
+<p>Every hard-braking event, every engine fault code, every HOS log entry is a signal, and in almost every case it was recorded at the time it happened. The question is how long it then sat unread. A useful first measure: for last year&rsquo;s preventable incidents, how many were preceded by a recorded signal nobody acted on, and how many days passed in between. <a href="/?about=Fleet%20Safety%20and%20Risk%20Management%20%E2%80%94%20Preventing%20Accidents%20Before%20They%20Happen%20with%20Predictive%20Analytics#contact-form">Talk to us</a> if it would help to work that out.</p>
+<hr>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://www.fmcsa.dot.gov/safety/data-and-statistics">Federal Motor Carrier Safety Administration (FMCSA)</a> — Large truck and bus crash statistics, CSA methodology, and HOS/ELD regulatory guidance</li>
+<li><a href="https://www.nsc.org/road/resources/motor-vehicle-safety-reports">National Safety Council (NSC)</a> — Total cost estimates for work-related motor vehicle crashes and injury prevention research</li>
+<li><a href="https://truckingresearch.org/category/research">American Transportation Research Institute (ATRI)</a> — Operational cost of trucking analysis, driver shortage research, and fleet technology adoption studies</li>
+<li><a href="https://csa.fmcsa.dot.gov/">FMCSA Compliance, Safety, Accountability (CSA) Program</a> — Safety measurement system scores, BASIC categories, and carrier safety fitness determinations</li>
+</ul>
+
+    </div>
+
+    
+    <p class="rk-post-screen mt-10 mb-0 flex flex-wrap items-center gap-2">
+      
+      <a href="/tags/fleet-safety"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Fleet Safety</a>
+      
+      <a href="/tags/predictive-maintenance"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Predictive Maintenance</a>
+      
+      <a href="/tags/telematics"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Telematics</a>
+      
+      <a href="/tags/eld"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">ELD</a>
+      
+      <a href="/tags/insurance"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Insurance</a>
+      
+      <a href="/tags/runink"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Runink</a>
+      
+    </p>
+    
+
+    
+    
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More articles">
+      
+      <a href="/blog/securing-third-party-logistics-data-sharing/" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Sharing Freight Data With 3PLs Without Giving Away Your Rates</span>
+      </a>
+      
+      
+      <a href="/blog/reconciling-complex-data-logistics-solutions/" class="group no-underline sm:text-right sm:col-start-2">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Next</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Reconciling Complex Logistics Data Safely: Methods for Data Reliability</span>
+      </a>
+      
+    </nav>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <p class="rk-post-screen mt-10 mb-0">
+      <a href="/blog/"
+         class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal no-underline">
+        All articles
+        <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </p>
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<section class="cta-section my-24">
+    <div class="container">
+        <div
+            class="relative rounded-xl p-8 md:p-16 bg-stone-800/40 border border-stone-700 backdrop-blur shadow-2xl overflow-hidden group">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-signal-fill-hover to-signal-fill opacity-20 blur transition duration-1000 group-hover:opacity-40 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Runink: Data You Can Trust. Decisions You Can Defend.</h2>
+                <p class="text-xl md:text-2xl text-ink-2 mb-10 max-w-2xl mx-auto leading-relaxed">Runink FACE reads the logistics records you already hold, compares them against the rules that govern them, and drafts an action for the person who owns the decision. It runs on infrastructure you control.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    
+                    
+                    <a href="/?about=Fleet%20Safety%20and%20Risk%20Management%20%E2%80%94%20Preventing%20Accidents%20Before%20They%20Happen%20with%20Predictive%20Analytics#contact-form"
+                        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-signal hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
+                        Book your Consultation <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+        
+        
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://runink.org/blog/fleet-safety-risk-management/#faq",
+  "isPartOf": { "@id": "https://runink.org/#website" },
+  "publisher": { "@id": "https://runink.org/#organization" },
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the Key Takeaways from this Executive Summary?",
+      "url": "https://runink.org/blog/fleet-safety-risk-management/#what-are-the-key-takeaways-from-this-executive-summary",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fleet safety is a financial and liability question before it is a compliance one. The records that would tell you where the next claim is coming from already exist: telematics events, ELD (electronic logging device) logs, maintenance work orders and your insurer’s loss runs. The work is reading them in time to act, and measuring the program against your own preventable-accident rate and your own renewal, not against somebody else’s figures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why Are Reactive Safety Programs Failing Fleet Operators?",
+      "url": "https://runink.org/blog/fleet-safety-risk-management/#why-are-reactive-safety-programs-failing-fleet-operators",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reactive programs act after the damage: after the report is filed, after the premium increase arrives, after a driver is lost. The cost of a crash is also much larger than the repair invoice, so the gap between the event and the response is expensive in ways the maintenance budget never shows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Does Predictive Fleet Safety Actually Look Like in Practice?",
+      "url": "https://runink.org/blog/fleet-safety-risk-management/#what-does-predictive-fleet-safety-actually-look-like-in-practice",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is three ordinary things done continuously: ranking drivers by recorded behavior rather than reacting to single alerts, trending vehicle fault data against the work orders that followed it, and reading ELD logs for fatigue patterns before they become violations. All three use records the fleet already collects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Does Predictive Safety Impact the Bottom Line?",
+      "url": "https://runink.org/blog/fleet-safety-risk-management/#how-does-predictive-safety-impact-the-bottom-line",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through three numbers you can already pull: preventable accidents per million miles, the loss runs your insurer prices the renewal on, and your CSA percentiles. Safety work moves the first, the first moves the second over a policy period or two, and the third is what shippers see during procurement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Role Does Data Governance Play in Fleet Safety Programs?",
+      "url": "https://runink.org/blog/fleet-safety-risk-management/#what-role-does-data-governance-play-in-fleet-safety-programs",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A risk score is only as good as the records under it. If two telematics vendors define a hard-braking event differently, or a device stops uploading and nobody notices, the scores vary by equipment rather than by driver — and nobody can tell which."
+      }
+    }
+  ]
+}
+</script>
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>

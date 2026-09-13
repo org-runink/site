@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Runink</title>
+    <link>https://runink.org/tags/automation/</link>
+    <description>Recent content in Automation on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 12:09:31 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Supply Chain Digital Transformation Roadmap — From Spreadsheets to Autonomous Operations</title>
+      <link>https://runink.org/blog/supply-chain-digital-transformation-roadmap/</link>
+      <pubDate>Thu, 30 Apr 2026 05:34:13 +0000</pubDate>
+      <guid>https://runink.org/blog/supply-chain-digital-transformation-roadmap/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Four phases, in order: digitize the records, connect the systems, read what they say, then let software act on the clear cases. Skipping a phase is what breaks these programmes. The larger risk is not the technology but the people — a programme that cannot show a result to its sponsor loses the sponsor.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Digitize, connect, analyze, automate.&lt;/strong&gt; Each phase needs the one before it. You cannot read data you have not joined up, and you cannot join up records that are still on paper.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;People and process decide the outcome, not the product choice.&lt;/strong&gt; A high shortfall rate for digital programmes is widely quoted; the part worth acting on is that the causes are mostly human.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pick the measure before the phase starts.&lt;/strong&gt; Name the figure, say where in your own systems it lives, and record it before you change anything. A phase with no baseline cannot be shown to have worked.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-do-most-supply-chain-digital-transformations-stall&#34;&gt;Why Do Most Supply Chain Digital Transformations Stall?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sustaining Six Sigma &#39;Control&#39; via Fulfilment Autonomous Claims Engine</title>
+      <link>https://runink.org/blog/six-sigma-control-phase-fulfilment-autonomous-claims-engine/</link>
+      <pubDate>Wed, 25 Feb 2026 18:35:52 +0000</pubDate>
+      <guid>https://runink.org/blog/six-sigma-control-phase-fulfilment-autonomous-claims-engine/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;The &amp;ldquo;Control&amp;rdquo; phase of Six Sigma work fails in logistics because the checking is done monthly, over a sample. Runink FACE — the Fulfilment Autonomous Claims Engine — reads every accessorial charge against the agreement governing it, and drafts the dispute where the records do not support the charge. The draft goes to whoever signs disputes: the reading is automated, the decision is not.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Why Control slips:&lt;/strong&gt; improvements that were designed carefully are checked casually. Accessorial charges creep back in because nobody reads them all.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;What automated reading changes:&lt;/strong&gt; every charge gets compared against the contracted terms and the operational timestamps for the same movement, rather than a sample at month end.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Where it stops:&lt;/strong&gt; the dispute is drafted, with the evidence attached, and waits for a named person to approve, edit or reject it. Filing is a commercial act and stays with your people.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-do-supply-chain-improvements-fail-during-the-control-phase&#34;&gt;Why Do Supply Chain Improvements Fail During the Control Phase?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

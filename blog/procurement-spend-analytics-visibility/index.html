@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    
+    <title>Procurement Spend Analytics — Why You Can&#39;t Manage What You Can&#39;t See | Runink</title>
+
+    
+    <meta name="description" content="Most procurement functions can see less of enterprise spend than they think, and the rest is where off-contract buying lives. How to measure your own share, and what spend analytics reads: maverick purchasing, contract leakage and price variance between business units.">
+    <meta name="author" content="Runink">
+    
+    
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    
+    <meta property="og:title" content="Procurement Spend Analytics — Why You Can&#39;t Manage What You Can&#39;t See | Runink">
+    <meta property="og:description" content="Most procurement functions can see less of enterprise spend than they think, and the rest is where off-contract buying lives. How to measure your own share, and what spend analytics reads: maverick purchasing, contract leakage and price variance between business units.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/procurement-spend-analytics-visibility/">
+    <meta property="og:site_name" content="Runink">
+    
+    <meta property="og:image" content="https://runink.org/images/blog/procurement-spend-analytics-visibility-header_hu_cc65b47fd5372867.webp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Procurement Spend Analytics — Why You Can&#39;t Manage What You Can&#39;t See | Runink">
+    <meta name="twitter:description" content="Most procurement functions can see less of enterprise spend than they think, and the rest is where off-contract buying lives. How to measure your own share, and what spend analytics reads: maverick purchasing, contract leakage and price variance between business units.">
+    
+    
+    <meta name="twitter:image" content="https://runink.org/images/blog/procurement-spend-analytics-visibility-header_hu_cc65b47fd5372867.webp">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    <link rel="canonical" href="https://runink.org/blog/procurement-spend-analytics-visibility/">
+
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.dae9517d4d1054da27d70a3e8546b33cb4e4b555fc8805c9d0bf0dd233381e2a.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.c01d15bb93dc0ba223dd72932d88eef48738ac895e319809a5b7a68242a13b38.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/blog/procurement-spend-analytics-visibility/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Shorter notes",
+          "item": "https://runink.org/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Procurement Spend Analytics — Why You Can't Manage What You Can't See"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/blog/procurement-spend-analytics-visibility/"
+  },
+  "headline": "Procurement Spend Analytics — Why You Can't Manage What You Can't See",
+  "description": "Most procurement functions can see less of enterprise spend than they think, and the rest is where off-contract buying lives. How to measure your own share, and what spend analytics reads: maverick purchasing, contract leakage and price variance between business units.",
+  
+  
+    
+    
+      "image": {
+        "@type": "ImageObject",
+        
+        
+        
+        "url": "https://runink.org/images/blog/procurement-spend-analytics-visibility-header_hu_cc65b47fd5372867.webp",
+        "width":  1200 ,
+        "height":  675 
+        
+        
+      },
+    
+  
+  "datePublished": "2026-02-22T05:54:14Z",
+  "dateModified": "2026-09-11T06:45:10-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=Procurement%20Spend%20Analytics%20%E2%80%94%20Why%20You%20Can%27t%20Manage%20What%20You%20Can%27t%20See#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=Procurement%20Spend%20Analytics%20%E2%80%94%20Why%20You%20Can%27t%20Manage%20What%20You%20Can%27t%20See#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+
+
+
+
+
+
+<div class="rk-post bg-canvas">
+  
+<style>
+  @media print {
+    @page { margin: 16mm 14mm; }
+
+    body > .fixed,
+    #consent-banner,
+    .mobile-menu-wrapper,
+    [aria-label="Trust and Compliance Details"] { display: none !important; }
+    body > .pt-20 { padding-top: 0 !important; }
+
+    .rk-post { padding: 0 !important; }
+    .rk-post-wrap { max-width: none !important; padding: 0 !important; }
+
+     
+    .rk-post-screen { display: none !important; }
+
+     
+    .rk-post-body :is(h2, h3, h4) { break-after: avoid; page-break-after: avoid; }
+    .rk-post-body :is(p, li, blockquote) { orphans: 3; widows: 3; }
+    .rk-post-body pre,
+    .rk-post-body blockquote { break-inside: avoid; page-break-inside: avoid; }
+
+     
+    .rk-post-body table { break-inside: auto; }
+    .rk-post-body thead { display: table-header-group; }
+    .rk-post-body tr { break-inside: avoid; page-break-inside: avoid; }
+
+     
+     
+    .rk-post-figure {
+      width: fit-content;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .rk-post img {
+      max-width: 100% !important;
+      max-height: 62mm;
+      width: auto;
+      object-fit: contain;
+      break-inside: avoid;
+    }
+
+     
+    .rk-post-body a[href^="/"]::after { content: " (runink.org" attr(href) ")"; }
+    .rk-post-body a[href^="http"]::after { content: " (" attr(href) ")"; }
+    .rk-post-body a[href^="/"]::after,
+    .rk-post-body a[href^="http"]::after {
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      word-break: break-all;
+      color: var(--rk-text-2);
+    }
+
+     
+    .cta-section { margin: 8mm 0 0 !important; break-inside: avoid; }
+    .cta-section .container > div {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+    .cta-section .absolute { display: none !important; }
+    .cta-section h2 { font-size: 12pt !important; margin-bottom: 2mm !important; }
+    .cta-section p { font-size: 10pt !important; margin-bottom: 2mm !important; }
+    .cta-section a {
+      display: inline !important;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      color: var(--rk-text) !important;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+    }
+    .cta-section a[href^="/"]::after {
+      content: " (runink.org" attr(href) ")";
+      font-size: 8pt;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+     
+    .rk-post-mark { display: block !important; }
+  }
+</style>
+
+
+  <div class="rk-post-wrap container mx-auto max-w-[48rem] px-5 md:px-8 py-14 md:py-20">
+
+    
+    
+    
+      
+    
+
+    
+<header class="mb-10 md:mb-14">
+  
+  <p class="inline-block mb-5 px-3 py-1.5 rounded bg-signal-wash border-l-[3px] border-signal text-signal text-[0.6875rem] font-extrabold uppercase tracking-[0.18em]">Procurement</p>
+  
+
+  <h1 class="font-heading font-extrabold text-ink text-[2rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.05] tracking-[-0.01em] max-w-[26ch] mt-0 mb-4">Procurement Spend Analytics — Why You Can&#39;t Manage What You Can&#39;t See</h1>
+
+  
+  <p class="text-ink-2 text-base md:text-lg leading-[1.65] max-w-[62ch] m-0">Most procurement functions can see less of enterprise spend than they think, and the rest is where off-contract buying lives. How to measure your own share, and what spend analytics reads: maverick purchasing, contract leakage and price variance between business units.</p>
+  
+
+  
+  <p class="mt-5 mb-0 text-ink-3 text-xs font-semibold uppercase tracking-[0.14em]">Updated 11 September 2026 · first published 22 February 2026 · 10 min read</p>
+  
+</header>
+
+
+    
+    <p class="-mt-6 mb-10 text-ink-3 text-sm">Runink Logistics Operations Team</p>
+    
+
+    
+    <div class="rk-post-figure mb-10 overflow-hidden rounded-xl border border-rule">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/blog/procurement-spend-analytics-visibility-header_hu_b166e3e88dac76ab.webp" alt="Procurement Spend Analytics — Why You Can&#39;t Manage What You Can&#39;t See" class="w-full h-auto" width="800" height="800" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/blog/procurement-spend-analytics-visibility-header_hu_b166e3e88dac76ab.webp"
+  , "width":  800 
+  , "height":  800 
+  
+  
+  
+}
+</script>
+
+    </div>
+    
+
+    
+    
+    
+    <nav class="rk-post-screen mb-10 p-5 md:p-6 bg-sunk border border-rule rounded-xl" aria-labelledby="toc-head">
+      <h2 id="toc-head" class="m-0 mb-3 font-heading text-[0.6875rem] font-extrabold uppercase tracking-[0.16em] text-ink-3">On this page</h2>
+      <div class="prose prose-sm max-w-none prose-a:text-ink-2 hover:prose-a:text-signal prose-ul:my-0 prose-li:my-1">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-the-key-takeaways-from-this-executive-summary">What are the Key Takeaways from this Executive Summary?</a></li>
+    <li><a href="#why-do-most-procurement-organizations-operate-blind">Why Do Most Procurement Organizations Operate Blind?</a></li>
+    <li><a href="#what-does-the-spend-analytics-maturity-model-look-like">What Does the Spend Analytics Maturity Model Look Like?</a></li>
+    <li><a href="#which-metrics-show-whether-procurement-is-working">Which Metrics Show Whether Procurement Is Working?</a></li>
+    <li><a href="#why-does-the-first-pass-over-consolidated-spend-data-find-waste-quickly">Why Does the First Pass Over Consolidated Spend Data Find Waste Quickly?</a></li>
+    <li><a href="#how-does-machine-classification-go-beyond-traditional-bi">How Does Machine Classification Go Beyond Traditional BI?</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+      </div>
+    </nav>
+    
+
+    <div class="rk-post-body prose max-w-none lg:prose-lg prose-headings:font-heading prose-a:text-signal">
+      <h2 id="what-are-the-key-takeaways-from-this-executive-summary">What are the Key Takeaways from this Executive Summary?</h2>
+<div class="aeo-direct-answer" id="answer-0">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Most procurement functions can see rather less of enterprise spend than they assume, and the remainder sits in shadow — which is where off-contract buying, contract non-compliance and duplicated supplier relationships live. Your own share is a division you can do from the general ledger: spend you can attribute to a category and a contract, over total spend, for a full financial year. Published benchmarks for this vary so widely that only your own figure is worth acting on. Spend analytics is the work of consolidating purchasing data and classifying every transaction, so a category manager can compare what was paid against what was agreed.</div>
+</div>
+
+<ul>
+<li><strong>Purchase orders split across several systems, inconsistent commodity codes and unexamined tail spend stop a CPO from knowing where the money goes.</strong></li>
+<li><strong>Spend analytics maturity runs in four stages, from a consolidated view through to checking compliance at the point of purchase.</strong></li>
+<li><strong>Machine classification changes what is practical: every transaction can be categorized and compared against its contract, rather than a sample being reviewed after the quarter closes.</strong></li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="why-do-most-procurement-organizations-operate-blind">Why Do Most Procurement Organizations Operate Blind?</h2>
+<div class="aeo-direct-answer" id="answer-1">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Spend blindness comes from fragmented data. Purchase orders sit in more than one ERP system, P-Card transactions sit in a banking platform, services spend sits in departmental budgets, and some indirect categories never pass through procurement at all. Without one consolidated view, the CPO is sourcing on incomplete data.</div>
+</div>
+
+<p>The uncomfortable position for most Chief Procurement Officers is this. The organization is spending money in places, with suppliers, and at prices that procurement has never examined. Even in mature functions, the share of enterprise spend that can be attributed to a category and a contract is smaller than the organisation assumes. The remainder sits in shadow: off-contract purchases, tail spend split across hundreds of low-value suppliers, and services categories that were never brought under procurement governance.</p>
+<p>The cause is not a lack of effort. It is where the data lives. Many mid-market enterprises run more than one PO system across business units and geographies. Each one codes commodities differently. One division files packaging materials under MRO, another under direct materials, a third under facilities. P-Card spend flows through a banking platform procurement never touches. Consulting and professional services get approved at department level, with no central contract file.</p>
+<p>That fragmentation makes the basic questions unanswerable. How much do we spend with this supplier across every division? Are we paying the rates in our master service agreement? Are several suppliers providing the same commodity where one or two would do?</p>
+<p>Without those answers, strategic sourcing is guesswork.</p>
+<hr>
+<h2 id="what-does-the-spend-analytics-maturity-model-look-like">What Does the Spend Analytics Maturity Model Look Like?</h2>
+<div class="aeo-direct-answer" id="answer-2">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Spend analytics maturity runs through four stages: visibility, which is knowing where the money goes; analysis, which is understanding why it goes there; optimization, which is acting to reduce cost and risk; and continuous checking, where compliance is tested at the point of purchase rather than after the quarter closes.</div>
+</div>
+
+<p>The route from fragmented spend data to a usable category view is well documented. The Chartered Institute of Procurement and Supply (CIPS) frameworks and Deloitte&rsquo;s Global CPO Survey both make the same point: functions that skip a stage, and go to optimization without the foundation of visibility, do not get there.</p>
+<p><strong>Stage 1: Visibility.</strong> The foundation. Purchase orders, invoices, P-Card transactions and services contracts are consolidated into one data set — procurement often calls it a spend cube. Every transaction is classified to a standard code set, either UNSPSC or an internal hierarchy, and matched to supplier master data. At this point the CPO can answer the first question: what did we spend, with whom, and in which category? Most functions underestimate this stage. Deloitte&rsquo;s CPO Survey reports that <strong>only 46% of procurement leaders</strong> rate their spend visibility as good or excellent, which means more than half are deciding on incomplete data.</p>
+<p><strong>Stage 2: Analysis.</strong> With classified data, category teams can look at one category at a time. They compare prices paid by different business units for the same commodity, measure how much spend went through negotiated agreements, and see how dependent the organization is on a few suppliers. This is where the first consolidation and renegotiation candidates appear, along with the off-contract spend that can be moved to preferred suppliers.</p>
+<p><strong>Stage 3: Optimization.</strong> Analysis informs action. Category managers run sourcing events with a full view of the spend. Contract terms are compared against market indices. Tail spend is gathered into managed programs. The supply base is reduced without creating single-source exposure.</p>
+<p><strong>Stage 4: Continuous checking.</strong> The most mature stage. Spend is reviewed as transactions arrive, not once a quarter. The checks that a category manager would run by hand — is this business unit buying off-contract, is this supplier invoicing above the agreed rate, is this category running ahead of its budget — run against every transaction instead of a sample. The same checks sit inside the requisition workflow, so compliance is tested when the purchase is raised rather than discovered afterwards.</p>
+<hr>
+<h2 id="which-metrics-show-whether-procurement-is-working">Which Metrics Show Whether Procurement Is Working?</h2>
+<div class="aeo-direct-answer" id="answer-3">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Four measures matter: addressable spend ratio, contract utilization rate, supplier concentration, and price variance between business units. Each one exposes the gap between what procurement negotiated and what the organization actually paid.</div>
+</div>
+
+<p>Dashboard counts — total POs raised, average cycle time — say little about whether procurement is working. The measures that matter size the gap between the negotiated price and the paid price.</p>
+<p><strong>Addressable spend ratio.</strong> What share of total enterprise spend is under active procurement management? Your figure is the sum of spend you can attribute to a category and a contract, divided by total spend in the general ledger, for a full financial year. Track it against itself quarter on quarter rather than against a published benchmark — every point of unaddressed spend is spend nobody negotiated, whatever anyone else&rsquo;s ratio is.</p>
+<p><strong>Contract utilization rate.</strong> Procurement commits volume and gets preferred pricing in return, but business units have to buy against the agreement for that to mean anything. The measure is the share of a category&rsquo;s addressable spend that was bought on a negotiated contract, taken from the PO file and the contract repository for the same period. Whatever is left went off-contract: higher prices, suppliers nobody approved, and none of the agreed terms.</p>
+<p><strong>Supplier concentration.</strong> How dependent is the organization on its top ten suppliers? This one cuts both ways. Too concentrated and supply continuity is at risk. Too fragmented and each negotiation starts from a weaker position. The right balance depends on the category, but a CPO managing supply risk has to be able to see where the balance currently sits.</p>
+<p><strong>Price variance.</strong> Are two business units paying different prices for the same thing? Take one commodity code, list every price paid for it over the last twelve months from the invoice file, and group by division, plant and country. The spread between the highest and lowest price on the same item from the same supplier is the figure, and it is the one a renegotiation is argued on. It should narrow as divisions move onto a common agreement.</p>
+<hr>
+<h2 id="why-does-the-first-pass-over-consolidated-spend-data-find-waste-quickly">Why Does the First Pass Over Consolidated Spend Data Find Waste Quickly?</h2>
+<div class="aeo-direct-answer" id="answer-4">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">The first pass finds things because the data has never been looked at together. Duplicate suppliers, off-contract purchasing, inconsistent prices and misclassified tail spend are not new problems. They are existing spend that no single report has ever shown on one page, which is why consolidating and classifying it makes them visible at once.</div>
+</div>
+
+<p>Nothing in the first pass is a new efficiency. It is existing spend, already committed, that was split across systems in a way that kept it out of view. Consolidating and classifying it does not change the spend. It changes who can see it.</p>
+<p>The common candidates are familiar ones. <strong>Supplier consolidation</strong>, where several suppliers provide the same indirect commodity and the volume could go to fewer of them at the price that volume earns. <strong>Contract compliance</strong>, where off-contract spend is redirected to suppliers that already have negotiated rates. <strong>Duplicate payments</strong>, where the same invoice was paid twice because it arrived through two PO systems. <strong>Tail spend</strong>, where hundreds of small unmanaged purchases are moved into a catalogue.</p>
+<p>None of these take a multi-year program. They take one thing the function did not previously have: the spend in one place, classified.</p>
+<hr>
+<h2 id="how-does-machine-classification-go-beyond-traditional-bi">How Does Machine Classification Go Beyond Traditional BI?</h2>
+<div class="aeo-direct-answer" id="answer-5">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Traditional BI tools need data that is already clean and classified, and a query written by hand for each question. Machine classification changes what is feasible: spend can be categorized without a pre-built taxonomy, and unusual patterns can be found across millions of transactions without someone first writing the rule that describes them.</div>
+</div>
+
+<p>The limit of conventional business intelligence in procurement is not the charts. It is the preparation. Building a spend cube in a BI platform means months of manual classification, code mapping and supplier name clean-up. By the time the dashboard is live the data is old, and the classification is already drifting as new suppliers and categories arrive.</p>
+<p>Machine classification changes the shape of that work. Transactions are classified against a standard code set on the first pass rather than mapped by hand. Supplier names are normalized across systems, so &ldquo;IBM Corp&rdquo;, &ldquo;International Business Machines&rdquo; and &ldquo;IBM Consulting&rdquo; resolve to one entity without anyone building a crosswalk. First-pass accuracy depends on how clean the source descriptions are. Treat any vendor&rsquo;s headline accuracy figure as a claim about their test data rather than about your ledger, and ask to see it run on a sample of yours.</p>
+<p>It also finds patterns nobody would have written a query for. A price on one category drifting upward month by month. A business unit approving purchases just under the threshold that triggers procurement review. A supplier changing when it invoices so the charges fall outside the quarterly audit. A static report only answers the question it was built to answer, so these stay out of view.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<div class="aeo-direct-answer" id="answer-6">
+  <p class="aeo-direct-answer__label">Quick answer</p>
+  <div class="aeo-direct-answer__text">Spend analytics is not a reporting upgrade. It is the data every sourcing decision and every supplier negotiation rests on. Without it, procurement decides on assumptions about its own spend.</div>
+</div>
+
+<p>The CPO&rsquo;s job is no longer only cost. It now covers supplier risk, ESG compliance across the supply base, working capital, and category strategy. Each of those needs spend data that is complete, classified and current.</p>
+<p>Treating spend analytics as a one-off data clean-up gives you a view that decays from the day it lands. Classifying transactions as they arrive, and testing them against the contract that governs them, keeps the view usable for the next negotiation rather than the last one.</p>
+<p>Start with a figure rather than a tool: what percentage of last year&rsquo;s spend can you currently attribute to a category and a contract without manual work? Most functions discover the answer is lower than they assumed, and it sets the honest baseline for everything that follows. <a href="/?about=Procurement%20Spend%20Analytics%20%E2%80%94%20Why%20You%20Can%27t%20Manage%20What%20You%20Can%27t%20See#contact-form">Start a conversation with our team</a> if you want to work it out.</p>
+<hr>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://www.thehackettgroup.com/research/procurement/">The Hackett Group — Procurement Research &amp; Benchmarking</a> — Benchmark data on spend analytics maturity and on how much of total enterprise spend procurement functions can see directly</li>
+<li><a href="https://www.cips.org">Chartered Institute of Procurement &amp; Supply (CIPS)</a> — Frameworks and professional standards for procurement maturity, spend classification code sets and category management</li>
+<li><a href="https://www.deloitte.com/global/en/services/consulting/research/cpo-survey.html">Deloitte Global CPO Survey</a> — Annual survey of Chief Procurement Officers reporting that only 46% rate their spend visibility as good or excellent, with data on digital procurement adoption, cost reduction targets and sourcing maturity</li>
+</ul>
+
+    </div>
+
+    
+    <p class="rk-post-screen mt-10 mb-0 flex flex-wrap items-center gap-2">
+      
+      <a href="/tags/spend-analytics"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Spend Analytics</a>
+      
+      <a href="/tags/procurement"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Procurement</a>
+      
+      <a href="/tags/strategic-sourcing"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Strategic Sourcing</a>
+      
+      <a href="/tags/category-management"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Category Management</a>
+      
+      <a href="/tags/cost-optimization"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Cost Optimization</a>
+      
+      <a href="/tags/runink"
+         class="px-2.5 py-1 rounded border border-rule text-ink-2 text-xs font-semibold no-underline transition-colors duration-200 hover:bg-sunk hover:text-ink">Runink</a>
+      
+    </p>
+    
+
+    
+    
+    <nav class="rk-post-screen mt-14 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-5" aria-label="More articles">
+      
+      <a href="/blog/automated-semantic-layer-data-observability/" class="group no-underline">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Previous</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Overcoming Data Silos for Complete Global Freight Visibility</span>
+      </a>
+      
+      
+      <a href="/blog/supply-chain-maturity-assessment-guide/" class="group no-underline sm:text-right sm:col-start-2">
+        <span class="block mb-1.5 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">Next</span>
+        <span class="block font-heading font-bold text-ink leading-snug transition-colors duration-200 group-hover:text-signal">Supply Chain Maturity Assessment — How to Benchmark Your Operations and Build a Transformation Roadmap</span>
+      </a>
+      
+    </nav>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    <section class="rk-post-screen mt-14" aria-labelledby="related-head">
+      
+<div class="flex items-center gap-3.5 mb-6">
+  <span class="flex-none w-6 border-t-[3px] border-signal" aria-hidden="true"></span>
+  <h2 id="related-head" class="min-w-0 m-0 font-heading text-[0.9375rem] font-extrabold uppercase tracking-[0.12em] text-ink-2">More on Procurement</h2>
+  <span class="flex-1 border-t border-rule" aria-hidden="true"></span>
+  
+</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<article
+    class="rk-list-card group flex flex-col bg-sheet border border-rule rounded-xl overflow-hidden transition-colors duration-200 hover:bg-sunk hover:border-rule-mid">
+    
+    
+    <a href="/blog/logistics-rfp-process-best-practices/" class="block w-full h-48 overflow-hidden border-b border-rule" tabindex="-1" aria-hidden="true">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/blog/logistics-rfp-process-best-practices-header_hu_caa2d087bb6088a.webp" alt="How to Write a Logistics RFP That Actually Gets You the Right Partner" class="object-cover w-full h-full" width="800" height="800" loading="lazy" fetchpriority="auto">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/blog/logistics-rfp-process-best-practices-header_hu_caa2d087bb6088a.webp"
+  , "width":  800 
+  , "height":  800 
+  
+  
+  
+}
+</script>
+
+    </a>
+    
+
+    <div class="flex flex-col flex-1 p-5 md:p-6">
+
+        
+        <p class="flex flex-wrap items-center gap-x-2 gap-y-1 m-0 mb-3 text-[0.6875rem] font-bold uppercase tracking-[0.14em]">
+            
+            
+            <span class="text-signal">Procurement</span>
+            <span class="text-ink-3" aria-hidden="true">&middot;</span>
+            
+            
+            <time class="text-ink-3" datetime="2026-05-31">31 May 2026</time>
+        </p>
+
+        
+        
+        <h3 class="m-0 mb-2.5 font-heading text-lg md:text-xl font-bold leading-tight text-ink transition-colors duration-200 group-hover:text-signal">
+            <a class="rk-list-url no-underline" href="/blog/logistics-rfp-process-best-practices/">How to Write a Logistics RFP That Actually Gets You the Right Partner</a>
+        </h3>
+
+        <p class="m-0 text-ink-2 text-sm leading-relaxed">
+            A practical framework for logistics RFPs — an RFP is a request for proposal — covering scope, service levels, pricing models, and how to score the replies against your own numbers.
+        </p>
+
+        
+        <div class="rk-list-screen mt-auto pt-5 flex items-center justify-between gap-3">
+            <span class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal">
+                Read
+                <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </span>
+            <span class="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-ink-3">
+                8 min read
+            </span>
+        </div>
+    </div>
+</article>
+
+
+        
+      </div>
+    </section>
+    
+    
+
+    <p class="rk-post-screen mt-10 mb-0">
+      <a href="/blog/"
+         class="inline-flex items-center text-xs font-extrabold uppercase tracking-[0.12em] text-signal no-underline">
+        All articles
+        <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </p>
+
+    <p class="rk-post-mark hidden mt-8 mb-0 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-ink">runink.org</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<section class="cta-section my-24">
+    <div class="container">
+        <div
+            class="relative rounded-xl p-8 md:p-16 bg-stone-800/40 border border-stone-700 backdrop-blur shadow-2xl overflow-hidden group">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-signal-fill-hover to-signal-fill opacity-20 blur transition duration-1000 group-hover:opacity-40 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Runink: Data You Can Trust. Decisions You Can Defend.</h2>
+                <p class="text-xl md:text-2xl text-ink-2 mb-10 max-w-2xl mx-auto leading-relaxed">Runink FACE reads the logistics records you already hold, compares them against the rules that govern them, and drafts an action for the person who owns the decision. It runs on infrastructure you control.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    
+                    
+                    <a href="/?about=Procurement%20Spend%20Analytics%20%E2%80%94%20Why%20You%20Can%27t%20Manage%20What%20You%20Can%27t%20See#contact-form"
+                        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-black tracking-widest uppercase text-white transition-all duration-300 bg-stone-900 rounded border border-stone-700 hover:border-signal hover:-translate-y-1 shadow-[0_0_15px_rgba(234,88,12,0.1)] hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] cta-pulse">
+                        Book your Consultation <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+        
+        
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://runink.org/blog/procurement-spend-analytics-visibility/#faq",
+  "isPartOf": { "@id": "https://runink.org/#website" },
+  "publisher": { "@id": "https://runink.org/#organization" },
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the Key Takeaways from this Executive Summary?",
+      "url": "https://runink.org/blog/procurement-spend-analytics-visibility/#what-are-the-key-takeaways-from-this-executive-summary",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most procurement functions can see rather less of enterprise spend than they assume, and the remainder sits in shadow — which is where off-contract buying, contract non-compliance and duplicated supplier relationships live. Your own share is a division you can do from the general ledger: spend you can attribute to a category and a contract, over total spend, for a full financial year. Published benchmarks for this vary so widely that only your own figure is worth acting on. Spend analytics is the work of consolidating purchasing data and classifying every transaction, so a category manager can compare what was paid against what was agreed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why Do Most Procurement Organizations Operate Blind?",
+      "url": "https://runink.org/blog/procurement-spend-analytics-visibility/#why-do-most-procurement-organizations-operate-blind",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spend blindness comes from fragmented data. Purchase orders sit in more than one ERP system, P-Card transactions sit in a banking platform, services spend sits in departmental budgets, and some indirect categories never pass through procurement at all. Without one consolidated view, the CPO is sourcing on incomplete data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Does the Spend Analytics Maturity Model Look Like?",
+      "url": "https://runink.org/blog/procurement-spend-analytics-visibility/#what-does-the-spend-analytics-maturity-model-look-like",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spend analytics maturity runs through four stages: visibility, which is knowing where the money goes; analysis, which is understanding why it goes there; optimization, which is acting to reduce cost and risk; and continuous checking, where compliance is tested at the point of purchase rather than after the quarter closes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Metrics Show Whether Procurement Is Working?",
+      "url": "https://runink.org/blog/procurement-spend-analytics-visibility/#which-metrics-show-whether-procurement-is-working",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four measures matter: addressable spend ratio, contract utilization rate, supplier concentration, and price variance between business units. Each one exposes the gap between what procurement negotiated and what the organization actually paid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why Does the First Pass Over Consolidated Spend Data Find Waste Quickly?",
+      "url": "https://runink.org/blog/procurement-spend-analytics-visibility/#why-does-the-first-pass-over-consolidated-spend-data-find-waste-quickly",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first pass finds things because the data has never been looked at together. Duplicate suppliers, off-contract purchasing, inconsistent prices and misclassified tail spend are not new problems. They are existing spend that no single report has ever shown on one page, which is why consolidating and classifying it makes them visible at once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Does Machine Classification Go Beyond Traditional BI?",
+      "url": "https://runink.org/blog/procurement-spend-analytics-visibility/#how-does-machine-classification-go-beyond-traditional-bi",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional BI tools need data that is already clean and classified, and a query written by hand for each question. Machine classification changes what is feasible: spend can be categorized without a pre-built taxonomy, and unusual patterns can be found across millions of transactions without someone first writing the rule that describes them."
+      }
+    }
+  ]
+}
+</script>
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">
+            We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': granted ? 'granted' : 'denied'
+                });
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+</body>
+
+</html>
