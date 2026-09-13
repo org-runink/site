@@ -622,14 +622,14 @@
   .hp-sky__web path {
     fill: none;
     stroke: var(--rk-rule-strong);
-    stroke-width: 1;
+    stroke-width: 1.25;
     stroke-linecap: round;
     opacity: 0.5;
   }
   /* In the band the lines ARE the argument — "each of these already holds part
      of the answer" — so they carry more weight there than they do behind the
      hero, where the same lines are only atmosphere. */
-  .hp-const__frame .hp-sky__web path { opacity: 0.85; }
+  .hp-const__frame .hp-sky__web path { opacity: 1; }
   .hp-const__frame .hp-sky__far circle { opacity: 0.75; }
   .hp-sky__web .hp-sky__web--dotted {
     stroke: var(--rk-rule-mid);
@@ -644,7 +644,7 @@
   .hp-sky__dot { fill: var(--rk-accent); }
   .hp-sky__hub-label {
     font-family: var(--rk-font-util);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-anchor: middle;
@@ -656,12 +656,63 @@
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.16em;
-    text-anchor: end;
-    fill: var(--rk-text-2);
+    fill: var(--rk-text-1);
   }
   /* The nodes on the right of the drawing take their label on the right, so no
      label ever crosses the web it belongs to. */
-  .hp-sky__label--l { text-anchor: start; }
+  /* The label side is written per node in the markup, because which side a
+     label may sit on depends on where its node is on the ring — a label on the
+     inside would cross the spoke it belongs to. */
+
+  /* The bead riding an edge: a diamond, which is the one shape on this drawing
+     that is neither a system nor a reader — it is the record moving between
+     them. */
+  .hp-sky__bead { fill: var(--rk-rule-strong); opacity: 0.8; }
+
+  /* A spoke is what READS; the ring is what an operation already joins. The
+     spokes are brighter for that reason and it is the only hierarchy in the web. */
+  .hp-sky__spoke { stroke: var(--rk-rule-strong) !important; opacity: 0.75; }
+
+  .hp-sky__eyebrow rect { fill: var(--rk-signal); }
+  .hp-sky__eyebrow text {
+    font-family: var(--rk-font-util);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    fill: var(--rk-signal);
+  }
+
+  /* A system every industry runs takes ink rather than borrowing a category
+     colour it has no claim to. */
+  .hp-sky__node--plain .hp-sky__dot { fill: var(--rk-text-2); }
+  .hp-sky__node--plain .hp-sky__halo { fill: var(--rk-text-2); opacity: 0.12; }
+
+  /* The corners: a record arriving from outside every system on the ring. Drawn
+     hollow, because nothing here holds it yet. */
+  .hp-sky__spur-ring {
+    fill: none;
+    stroke: var(--rk-rule-strong);
+    stroke-width: 1;
+    stroke-dasharray: 3 4;
+  }
+  .hp-sky__spur-core { fill: var(--rk-text-3); }
+  .hp-sky__spur-label {
+    font-family: var(--rk-font-util);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    fill: var(--rk-text-3);
+  }
+
+  /* The hub tile, and the seam through it: the 2px signal rule dividing what the
+     software proposed from what a named person decided. DESIGN.md 7 gives that
+     rule one use in the system and this is the drawing of it. */
+  /* THE TILE IS THE BRIGHTEST THING IN THE DRAWING, and it should be: it is the
+     one point everything else is joined to. Ink rather than a panel colour —
+     a tile in --rk-sheet was a dark box on a dark page and the composition had
+     no centre. The seam through it is the signal rule, which is the only mark in
+     this system allowed to mean "what was proposed, and what a person decided". */
+  .hp-sky__hub-tile { fill: var(--rk-text-1); stroke: none; }
+  .hp-sky__hub-seam { fill: var(--rk-signal); }
 
   .hp-sky__mote circle { fill: var(--rk-rule-mid); opacity: 0.3; }
   .hp-sky__mote-core { fill: var(--rk-text-3) !important; opacity: 0.8 !important; }
@@ -757,6 +808,10 @@
        makes it readable without colour. The drawing re-inks itself from the
        token bindings like everything else on the console ground. */
     .hp-const__frame { break-inside: avoid; }
+    /* On paper the tile re-inks to near-black, so the seam has to be the paper
+       showing through rather than a colour on top of it. Reversed here for that
+       reason, and it is the only inversion on the sheet. */
+    .hp-sky__hub-seam { fill: #FFFFFF; }
     .hp-const__legend { border-top-color: #000; }
     .hp-const__key { color: #000; }
     .hp-const__key--0 span { background: #000; }

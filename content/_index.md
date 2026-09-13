@@ -123,7 +123,9 @@ figure:
 constellation:
   label: "Your systems, read together"
   intro: "Each of these already holds part of the answer, and none of them holds all of it. Runink FACE reads them against the rules that govern them, so a difference arrives as one item with the records behind it rather than as four screens somebody has to reconcile."
-  nodes: ["TMS", "CLAIMS", "LEDGER", "RATING", "CHANNELS"]
+  eyebrow: "THE LINES ARE THE WORK"
+  nodes: ["TMS", "ERP", "TRACKING", "CLAIMS", "LEDGER", "RATING", "CHANNELS"]
+  spurs: ["GATE", "CAMERA", "EMAIL", "PORTAL"]
   hub: "READ TOGETHER"
   legend:
     - "The systems you already run"

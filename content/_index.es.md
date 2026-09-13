@@ -97,7 +97,9 @@ figure:
 constellation:
   label: "Sus sistemas, leídos juntos"
   intro: "Cada uno de ellos ya guarda una parte de la respuesta, y ninguno la guarda entera. Runink FACE los lee contra las reglas que los gobiernan, de modo que una diferencia llega como un elemento con los registros detrás en lugar de como cuatro pantallas que alguien tiene que cuadrar."
-  nodes: ["TMS", "SINIESTROS", "CONTABILIDAD", "TARIFICACIÓN", "CANALES"]
+  eyebrow: "LAS LÍNEAS SON EL TRABAJO"
+  nodes: ["TMS", "ERP", "SEGUIMIENTO", "SINIESTROS", "CONTABILIDAD", "TARIFICACIÓN", "CANALES"]
+  spurs: ["PUERTA", "CÁMARA", "CORREO", "PORTAL"]
   hub: "LEÍDOS JUNTOS"
   legend:
     - "Los sistemas que ya hace funcionar"

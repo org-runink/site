@@ -97,7 +97,9 @@ figure:
 constellation:
   label: "Vos systèmes, lus ensemble"
   intro: "Chacun d'eux détient déjà une partie de la réponse, et aucun ne la détient entière. Runink FACE les lit au regard des règles qui les régissent, si bien qu'un écart arrive comme un élément accompagné de ses enregistrements plutôt que comme quatre écrans que quelqu'un doit rapprocher."
-  nodes: ["TMS", "SINISTRES", "COMPTABILITÉ", "TARIFICATION", "CANAUX"]
+  eyebrow: "LES LIGNES SONT LE TRAVAIL"
+  nodes: ["TMS", "ERP", "SUIVI", "SINISTRES", "COMPTABILITÉ", "TARIFICATION", "CANAUX"]
+  spurs: ["PORTAIL D'ENTRÉE", "CAMÉRA", "COURRIEL", "PORTAIL"]
   hub: "LUS ENSEMBLE"
   legend:
     - "Les systèmes que vous faites déjà tourner"
