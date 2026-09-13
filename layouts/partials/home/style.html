@@ -1,13 +1,18 @@
 {{/*
   Scoped styles for the homepage.
 
-  Inlined rather than added to assets/css/main.css for the same reason the
-  Industries section inlines its own: the site has two CSS paths — the PostCSS
-  pipeline over assets/css/main.css, and the pre-compiled static/css/style.css
-  used when params.disablePostCSS is true, which is generated from the THEME's
-  main.css and would never see a rule added to ours. Inlining is the only place
-  both paths agree, which is why every rule this page needs is here and why it
-  uses its own `hp-` classes throughout rather than Tailwind utilities.
+  Inlined rather than added to assets/css/main.css, and the reason has CHANGED.
+
+  It used to be that the site had two CSS paths and inlining was the only place
+  they agreed — the second being a pre-compiled static/css/style.css generated
+  from the THEME's main.css, which never saw a rule of ours. That path is gone
+  and the artifact is deleted; see layouts/_default/baseof.html for what it was
+  still serving.
+
+  The practice stays on its own merits: these rules are scoped to one page, the
+  `hp-` classes keep them out of the global utility space, and every rule this
+  page needs is here rather than split across two files. It is no longer forced,
+  so a rule that genuinely belongs to the whole site may move to main.css.
 
   WHY THE PAGE IS LIGHT, AND WHY IT IS SHORT. The review of the customer-facing
   material found the black canvas hard to read and painful to print, and found

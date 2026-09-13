@@ -129,6 +129,28 @@ jobs:
       - name: Check content doctrine (source)
         run: node scripts/check-content-doctrine.mjs
 
+      # .jules/herald.md has said since 2024-05-07 that disablePostCSS is "a
+      # temporary local workaround only" which "must NOT be committed to the
+      # repository, as it will break production styling". Nothing enforced it.
+      #
+      # It is a fair local flag -- it lets a build without PostCSS pass -- and it
+      # used to fall back to a pre-compiled static/css/style.css generated from
+      # the THEME's main.css, so committing it did not degrade the site, it
+      # served a different one a whole design system behind. That artifact is
+      # deleted and the branch now emits no stylesheet at all, so the failure is
+      # obvious rather than plausible. This keeps the flag from reaching main in
+      # the first place, which is what the note asked for.
+      - name: Guard the local-only PostCSS flag
+        run: |
+          set -euo pipefail
+          if grep -Eq '^[[:space:]]*disablePostCSS[[:space:]]*=[[:space:]]*true' hugo.toml; then
+            echo "hugo.toml commits disablePostCSS = true."
+            echo "That flag is a LOCAL workaround for building without PostCSS."
+            echo "Committed, it ships a site with no stylesheet. See .jules/herald.md."
+            exit 1
+          fi
+          echo "disablePostCSS: not set true in hugo.toml"
+
       # Template syntax in a content BODY is not a comment, it is text.
       # A 1,213-character reviewer note shipped to /company/ this way on
       # 11 Sep 2026 and was found by an external audit, not by CI. It is

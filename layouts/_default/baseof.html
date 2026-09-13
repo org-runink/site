@@ -246,7 +246,23 @@
 
     <!-- Main CSS -->
     {{ if .Site.Params.disablePostCSS }}
-    <link rel="stylesheet" href="/css/style.css?v={{ now.Unix }}">
+    {{/* NO PRE-COMPILED FALLBACK. This branch used to serve
+         static/css/style.css, a 137 KB artifact GENERATED FROM THE THEME's
+         main.css — so it never saw a single rule from ours, and by the time it
+         was deleted it still carried `.rounded-lg{border-radius:2rem}` (the
+         global override removed in 3054a6b6), rounded-2xl, rounded-3xl and a
+         pre-rebrand blue. Setting this flag did not degrade the site, it
+         silently served a different one, a whole design system behind.
+
+         .jules/herald.md records what the flag is actually for: a LOCAL
+         workaround so a build without PostCSS can pass, "a temporary local
+         workaround only" that "must NOT be committed... as it will break
+         production styling." That is a fair use, and it is served better by an
+         obviously unstyled page than by a plausible wrong one — you cannot
+         mistake this for the real site, which is the entire point. CI never
+         sets the flag (it installs node and pnpm and runs the pipeline), so no
+         deploy has ever taken this branch. */}}
+    <!-- No stylesheet: built with disablePostCSS, which is a local-only flag. -->
     {{ else }}
     {{ $css := resources.Get "css/main.css" }}
     {{ $css = $css | css.PostCSS }}

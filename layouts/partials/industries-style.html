@@ -1,13 +1,21 @@
 {{/*
   Scoped styles for the Industries section.
 
-  Deliberately inlined rather than added to assets/css/main.css. The site has two
-  CSS paths — the PostCSS pipeline over assets/css/main.css (what CI builds) and
-  the pre-compiled static/css/style.css used when params.disablePostCSS is true,
-  which is generated from the THEME's main.css and would never see a rule added
-  to ours. Inlining is the only place both paths agree. For the same reason the
-  section uses its own `ind-` classes throughout rather than Tailwind utilities:
-  every rule a page needs is in this file, so both paths render it identically.
+  Deliberately inlined rather than added to assets/css/main.css, and the reason
+  has CHANGED — read this before assuming the old one still holds.
+
+  It used to be that the site had two CSS paths, and inlining was the only place
+  they agreed: the PostCSS pipeline over assets/css/main.css, and a pre-compiled
+  static/css/style.css generated from the THEME's main.css, which would never see
+  a rule added to ours. That second path is gone; the artifact it served was a
+  whole design system behind and is deleted.
+
+  What survives the reason is the practice, on its own merits: these rules are
+  scoped to one section, the `ind-` classes keep them out of the global utility
+  space, and every rule this section needs is in this file rather than spread
+  between here and main.css. That is worth keeping. It is no longer FORCED,
+  so a future editor is free to move a rule into main.css if it genuinely
+  belongs to the whole site.
 
   WHY THE SECTION IS LIGHT. The review of the customer-facing material said the
   black canvas makes the information hard to read and painful to print, and that
