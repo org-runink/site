@@ -27,6 +27,39 @@
   NO NUMBERS, in a drawing exactly as in prose.
 */}}
 {{ $variant := .variant | default "figure" }}
+
+{{/* THE MARK, INLINED. assets/images/brand/runink-mark.svg is a single path on
+     currentColor, so the hub carries the real mark rather than a drawn stand-in.
+     It is nested as its own <svg> with the mark's viewBox, which is what scales
+     it into the tile without touching the outer coordinate system; the wrapper
+     and the <title> are stripped, because a nested title would announce a second
+     name inside a figure that already has an aria-label.
+
+     resources.Get, not a file read: it goes through the asset pipeline, so it is
+     one build-time inline and no request leaves the page (CONTENT.md rule 7). */}}
+{{ $markInner := "" }}
+{{ with resources.Get "images/brand/runink-mark-small.svg" }}
+  {{ $markInner = .Content
+      | replaceRE `(?s)^.*?<svg[^>]*>` ""
+      | replaceRE `(?s)</svg>\s*$` ""
+      | replaceRE `(?s)<title[^>]*>.*?</title>` "" }}
+{{ end }}
+
+{{/* One glyph per system, drawn on a 24-unit grid in the same stroke weight as
+     the site's icon set. They are what a reader recognises before they read the
+     label: a truck is a transport system whatever it is called locally. */}}
+{{ $icons := dict
+  "tms"      "M3 7h10v8H3zM13 10h4l3 3v2h-7zM7 18a1.6 1.6 0 100-3.2A1.6 1.6 0 007 18zM17 18a1.6 1.6 0 100-3.2A1.6 1.6 0 0017 18z"
+  "erp"      "M5 6.5c0-1.4 3.1-2.5 7-2.5s7 1.1 7 2.5-3.1 2.5-7 2.5S5 7.9 5 6.5zM5 6.5v11c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-11M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"
+  "tracking" "M12 21s6.5-6.1 6.5-10.4A6.5 6.5 0 105.5 10.6C5.5 14.9 12 21 12 21zM12 12.6a2.4 2.4 0 100-4.8 2.4 2.4 0 000 4.8z"
+  "claims"   "M13 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V9zM13 3v6h6M9 13h6M9 17h4"
+  "ledger"   "M4 5a2 2 0 012-2h11a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2zM4 8h15M9 3v18M12 12h4M12 16h4"
+  "rating"   "M3 18c3-9 5-9 7 0s4 9 7 0M3 6v.01M21 6v.01"
+  "channels" "M4 9h3l7-4v14l-7-4H4zM18 8a5 5 0 010 8"
+  "gate"     "M4 7V5h4M20 7V5h-4M4 17v2h4M20 17v2h-4M4 12h16"
+  "camera"   "M4 8h3l1.5-2h7L17 8h3v11H4zM12 16.5a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4z"
+  "email"    "M4 6h16v12H4zM4 7l8 6 8-6"
+  "portal"   "M12 21a9 9 0 100-18 9 9 0 000 18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" }}
 {{ $c := .copy | default dict }}
 {{ $names := $c.nodes | default (slice "TMS" "ERP" "TRACKING" "CLAIMS" "LEDGER" "RATING" "CHANNELS") }}
 {{ $spurNames := $c.spurs | default (slice "GATE" "CAMERA" "EMAIL" "PORTAL") }}
@@ -35,24 +68,24 @@
      and the category hue it takes. `none` is a system every industry runs, and
      it stays in ink rather than borrowing a colour it has no claim to. */}}
 {{ $ring := slice
-  (dict "x" 1000 "y" 250 "anchor" "start" "dx" 18  "dy" -14 "cat" "logistics")
-  (dict "x" 1128 "y" 400 "anchor" "start" "dx" 20  "dy" 5   "cat" "")
-  (dict "x" 1000 "y" 552 "anchor" "start" "dx" 18  "dy" 22  "cat" "")
-  (dict "x" 720  "y" 610 "anchor" "middle" "dx" 0  "dy" 32  "cat" "insurance")
-  (dict "x" 440  "y" 552 "anchor" "end"   "dx" -18 "dy" 22  "cat" "banking")
-  (dict "x" 312  "y" 400 "anchor" "end"   "dx" -20 "dy" 5   "cat" "telecom")
-  (dict "x" 440  "y" 250 "anchor" "end"   "dx" -18 "dy" -14 "cat" "marketing") }}
+  (dict "x" 1000 "y" 250 "anchor" "start" "dx" 30  "dy" 5  "cat" "logistics" "icon" "tms")
+  (dict "x" 1128 "y" 400 "anchor" "start" "dx" 30  "dy" 5   "cat" "" "icon" "erp")
+  (dict "x" 1000 "y" 552 "anchor" "start" "dx" 30  "dy" 5  "cat" "" "icon" "tracking")
+  (dict "x" 720  "y" 610 "anchor" "middle" "dx" 0  "dy" 46  "cat" "insurance" "icon" "claims")
+  (dict "x" 440  "y" 552 "anchor" "end"   "dx" -30 "dy" 5  "cat" "banking" "icon" "ledger")
+  (dict "x" 312  "y" 400 "anchor" "end"   "dx" -30 "dy" 5   "cat" "telecom" "icon" "rating")
+  (dict "x" 440  "y" 250 "anchor" "end"   "dx" -30 "dy" 5  "cat" "marketing" "icon" "channels") }}
 
 {{/* The four corners records arrive from that no system on the ring holds. */}}
 {{ $spurs := slice
-  (dict "x" 132 "y" 150 "to" 6 "anchor" "start" "dx" 0 "dy" 34)
-  (dict "x" 1308 "y" 150 "to" 0 "anchor" "end"  "dx" 0 "dy" 34)
-  (dict "x" 132 "y" 650 "to" 4 "anchor" "start" "dx" 0 "dy" 34)
-  (dict "x" 1308 "y" 650 "to" 2 "anchor" "end"  "dx" 0 "dy" 34) }}
+  (dict "x" 132 "y" 150 "to" 6 "dy" 40 "icon" "gate")
+  (dict "x" 1308 "y" 150 "to" 0 "dy" 40 "icon" "camera")
+  (dict "x" 132 "y" 650 "to" 4 "dy" 40 "icon" "email")
+  (dict "x" 1308 "y" 650 "to" 2 "dy" 40 "icon" "portal") }}
 
 <svg class="hp-sky__art hp-sky__art--{{ $variant }}"
      viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid {{ if eq $variant "sky" }}slice{{ else }}meet{{ end }}"
-     data-motion="parallax"
+     data-motion="parallax" {{ if eq $variant "sky" }}data-parallax="page"{{ end }}
      {{ if eq $variant "sky" }}aria-hidden="true" focusable="false"{{ else }}role="img" aria-label="{{ $c.alt | default "The systems a company already runs, drawn as named points joined to each other and to one reader in the middle, with dashed lines out to the places records arrive from outside those systems." }}"{{ end }}>
 
   {{/* ---- far: dust ---- */}}
@@ -102,8 +135,13 @@
 
     {{ range $i, $p := $ring }}
     <g class="hp-sky__node{{ with $p.cat }} rk-cat-{{ . }}{{ end }}{{ if not $p.cat }} hp-sky__node--plain{{ end }}">
-      <circle class="hp-sky__halo" cx="{{ $p.x }}" cy="{{ $p.y }}" r="14"/>
-      <circle class="hp-sky__dot" cx="{{ $p.x }}" cy="{{ $p.y }}" r="6"/>
+      {{/* A tile with the system's own glyph in it, rather than a dot. A reader
+           recognises a truck before they read "TMS", and the label is then
+           confirmation rather than the only way in. */}}
+      <rect class="hp-sky__tile" x="{{ sub $p.x 20 }}" y="{{ sub $p.y 20 }}" width="40" height="40" rx="11"/>
+      <svg class="hp-sky__icon" x="{{ sub $p.x 11 }}" y="{{ sub $p.y 11 }}" width="22" height="22" viewBox="0 0 24 24">
+        <path d="{{ index $icons $p.icon }}"/>
+      </svg>
       <text class="hp-sky__label" style="text-anchor: {{ $p.anchor }}"
             x="{{ add $p.x $p.dx }}" y="{{ add $p.y $p.dy }}">{{ index $names $i }}</text>
     </g>
@@ -111,8 +149,10 @@
 
     {{ range $i, $s := $spurs }}
     <g class="hp-sky__spur">
-      <circle class="hp-sky__spur-ring" cx="{{ $s.x }}" cy="{{ $s.y }}" r="13"/>
-      <circle class="hp-sky__spur-core" cx="{{ $s.x }}" cy="{{ $s.y }}" r="3"/>
+      <circle class="hp-sky__spur-ring" cx="{{ $s.x }}" cy="{{ $s.y }}" r="20"/>
+      <svg class="hp-sky__icon hp-sky__icon--spur" x="{{ sub $s.x 10 }}" y="{{ sub $s.y 10 }}" width="20" height="20" viewBox="0 0 24 24">
+        <path d="{{ index $icons $s.icon }}"/>
+      </svg>
       <text class="hp-sky__spur-label" style="text-anchor: middle"
             x="{{ $s.x }}" y="{{ add $s.y $s.dy }}">{{ index $spurNames $i }}</text>
     </g>
@@ -127,6 +167,9 @@
       <circle class="hp-sky__hub-ring" cx="720" cy="400" r="60"/>
       <rect class="hp-sky__hub-tile" x="678" y="358" width="84" height="84" rx="22"/>
       <rect class="hp-sky__hub-seam" x="678" y="398" width="84" height="3"/>
+      {{ with $markInner }}
+      <svg class="hp-sky__hub-mark" x="686" y="366" width="68" height="54" viewBox="290 0 1710 1360">{{ . | safeHTML }}</svg>
+      {{ end }}
       {{ with $c.hub }}<text class="hp-sky__hub-label" x="720" y="486">{{ . }}</text>{{ end }}
     </g>
   </g>

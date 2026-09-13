@@ -555,15 +555,18 @@
      `relative`, and put the background into the document flow — the hero was
      pushed a full screen down the page by its own backdrop. */
   .hp-sky {
-    position: absolute;
+    /* FIXED, AND THAT IS THE PARALLAX. Pinned to the viewport with its layers
+       translated against the scroll, the backdrop travels the whole landing page
+       instead of ending with the hero — dust barely moving, the web drifting,
+       the whole thing sliding under the content as it passes. An absolute sky
+       stopped at the fold and the rest of the page had a flat ground.
+
+       The cost is that it now sits behind EVERY block rather than behind one, so
+       the scrim below does more work and the art is quieter than it was. */
+    position: fixed;
     z-index: 0;
-    inset: 0 0 auto;
-    /* SHORTER THAN THE HERO ON PURPOSE. At full hero height the web ran behind
-       the deck and the product line, and a hairline crossing a sentence costs
-       that sentence contrast for no gain — the atmosphere is wanted at the top
-       of the page, not under the copy. It ends above the first paragraph and
-       fades out before it. */
-    height: min(62vh, 660px);
+    inset: 0;
+    height: 100vh;
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
@@ -579,7 +582,7 @@
        and the labels read as words a reader had to decide to ignore — which is
        what a background must never make them do. The band below carries the same
        drawing at full strength, where it is the subject rather than the ground. */
-    opacity: 0.34;
+    opacity: 0.26;
   }
 
   /* THE STACKING, WHICH IS NOT OPTIONAL. .hp-sky is absolute and the blocks
@@ -609,12 +612,15 @@
       /* A scrim over the column the copy sits in. The headline is the one thing
          on this page that may not be competed with, and a constellation behind
          type is a competition unless the ground under the type is clean. */
-      radial-gradient(46% 46% at 28% 52%, var(--canvas) 0%, transparent 76%),
-      /* A warm lift under the hub, well away from the text. */
-      radial-gradient(52% 42% at 62% 26%, var(--rk-signal-wash) 0%, transparent 74%),
-      /* And out to the page ground at the bottom edge, so the sky ends without
-         a seam across the middle of a section. */
-      linear-gradient(to bottom, transparent 30%, var(--canvas) 88%);
+      radial-gradient(50% 54% at 30% 50%, var(--canvas) 0%, transparent 78%),
+      /* A warm lift under the hub, away from the text. */
+      radial-gradient(52% 42% at 66% 24%, var(--rk-signal-wash) 0%, transparent 74%),
+      /* And the ground itself at a wash over everything, so a fixed backdrop
+         behind ten screens of prose never reaches the contrast the copy needs. */
+      linear-gradient(to bottom,
+        color-mix(in srgb, var(--canvas) 55%, transparent) 0%,
+        color-mix(in srgb, var(--canvas) 82%, transparent) 60%,
+        var(--canvas) 100%);
   }
 
   .hp-sky__far circle { fill: var(--rk-rule-mid); opacity: 0.55; }
@@ -642,6 +648,36 @@
      sends glows to none on paper; this one is gone there with everything else. */
   .hp-sky__halo { fill: var(--rk-accent); opacity: 0.18; }
   .hp-sky__dot { fill: var(--rk-accent); }
+
+  /* A SYSTEM IS A TILE WITH ITS OWN GLYPH IN IT. A reader recognises a truck
+     before they read "TMS", which is the difference between a diagram somebody
+     has to decode and one they can take in — and it is what the reference does
+     with its own marks. The tile is the category hue at a wash, the glyph and
+     the edge are the hue itself. */
+  .hp-sky__tile {
+    fill: color-mix(in srgb, var(--rk-accent) 16%, transparent);
+    stroke: var(--rk-accent);
+    stroke-width: 1.25;
+  }
+  .hp-sky__icon path {
+    fill: none;
+    stroke: var(--rk-accent);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .hp-sky__node--plain .hp-sky__tile {
+    fill: color-mix(in srgb, var(--rk-text-2) 12%, transparent);
+    stroke: var(--rk-text-2);
+  }
+  .hp-sky__node--plain .hp-sky__icon path { stroke: var(--rk-text-2); }
+  /* The corners hold nothing yet, so their glyph is ink and their ring is
+     dashed — the same distinction the legend draws in three shapes. */
+  .hp-sky__icon--spur path { stroke: var(--rk-text-3); stroke-width: 1.4; }
+
+  /* The mark itself, on the hub tile: the tile is ink, so the mark is the page
+     showing through it. */
+  .hp-sky__hub-mark { color: var(--rk-sunk); }
   .hp-sky__hub-label {
     font-family: var(--rk-font-util);
     font-size: 13px;
@@ -695,7 +731,6 @@
     stroke-width: 1;
     stroke-dasharray: 3 4;
   }
-  .hp-sky__spur-core { fill: var(--rk-text-3); }
   .hp-sky__spur-label {
     font-family: var(--rk-font-util);
     font-size: 12px;

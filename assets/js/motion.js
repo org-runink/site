@@ -246,6 +246,14 @@ function sky(root) {
      same small range around wherever it sits: zero as it passes the centre of
      the screen, and a clamped maximum either side of that. */
   const RANGE = 220;
+  const PAGE_RANGE = 900;
+  /* A FIXED BACKDROP IS MEASURED DIFFERENTLY FROM AN IN-FLOW FIGURE, and it has
+     to be: position:fixed means getBoundingClientRect() returns the same numbers
+     at every scroll position, so the element-relative measurement below would
+     hold a page-wide sky perfectly still. The page backdrop therefore takes the
+     scroll itself — which is the classic parallax and the only place in this file
+     window.scrollY is the right input. */
+  const isPage = root.dataset.parallax === 'page';
   const write = (shift) => {
     queued = false;
     layers.forEach((el, i) => {
@@ -256,6 +264,16 @@ function sky(root) {
     if (queued || !onScreen) return;
     queued = true;
     requestAnimationFrame(() => {
+      if (isPage) {
+        /* Clamped, like the in-flow case and for the same reason in reverse:
+           unclamped, the web layer translates by scroll × depth and is seven
+           hundred pixels down the page by the third screen — the backdrop drifts
+           out of its own frame and the rest of the page is left with bare dust.
+           A ceiling keeps the drift legible and the composition present. */
+        const y = window.scrollY || window.pageYOffset || 0;
+        write(Math.min(y, PAGE_RANGE));
+        return;
+      }
       const r = root.getBoundingClientRect();
       const middle = (r.top + r.height / 2) - window.innerHeight / 2;
       write(Math.max(-RANGE, Math.min(RANGE, middle)));
@@ -266,7 +284,7 @@ function sky(root) {
   window.addEventListener('resize', read, { passive: true });
   read();
 
-  if ('IntersectionObserver' in window) {
+  if (!isPage && 'IntersectionObserver' in window) {
     new IntersectionObserver((entries) => {
       entries.forEach((entry) => { onScreen = entry.isIntersecting; });
       if (onScreen) read();
