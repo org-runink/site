@@ -53,11 +53,31 @@
         // `gtag` is defined in <head> by that partial, but only in production
         // and only when a measurement id is set, so guard the call rather than
         // throwing on a local build.
+        // THE GRANT HAS TO RESEND THE PAGE VIEW, and this is the whole reason
+        // the property read zero.
+        //
+        // The tag is configured in <head> with every signal denied, so the
+        // page_view for the page a visitor lands on goes out as a cookieless
+        // ping — gcs=G100, not counted as a user or a session. Clicking
+        // "Allow Counting" then updates consent and sends NOTHING, because
+        // gtag does not replay a page_view it has already dispatched. So the
+        // one page where a new visitor actually consents was never measured,
+        // and for a site where most visits are a single page, that is almost
+        // all of them.
+        //
+        // Measured, not assumed: a returning visitor with a stored decision
+        // reports gcs=G101 with event=page_view and counts normally, while the
+        // visit where consent was given produced no request at all after the
+        // click.
+        //
+        // Only on grant. A rejection sends nothing, which is the point of it.
         function setConsent(granted) {
-            if (typeof gtag === 'function') {
-                gtag('consent', 'update', {
-                    'analytics_storage': granted ? 'granted' : 'denied'
-                });
+            if (typeof gtag !== 'function') return;
+            gtag('consent', 'update', {
+                'analytics_storage': granted ? 'granted' : 'denied'
+            });
+            if (granted) {
+                gtag('event', 'page_view');
             }
         }
 
