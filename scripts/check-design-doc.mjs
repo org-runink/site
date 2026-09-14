@@ -88,8 +88,21 @@ const bind = (block) => {
   }
   return m;
 };
+/* THE SELECTORS ARE FOUND BY THEIR ATTRIBUTE, NOT BY THE WHOLE SELECTOR TEXT.
+
+   These were written as the literal strings ":root,\n[data-ground='sheet']" and
+   "[data-ground='console']", which quietly stopped matching the moment the
+   default ground moved to the console on 2026-09-14 and the selectors became
+   "[data-ground='sheet']" and ":root:not([data-ground]),\n[data-ground='console']".
+   A block that is not found binds nothing, every sheet value resolved to "no
+   hex", and this check failed a deploy by reporting six correct rows of DESIGN.md
+   as disagreeing with tokens.css.
+
+   Keyed on the attribute selector alone, the lookup survives whatever else is
+   stacked in front of it — which is the thing that actually identifies a ground
+   block. */
 const B = {
-  sheet: bind(blockOf(":root,\n[data-ground='sheet']")),
+  sheet: bind(blockOf("[data-ground='sheet']")),
   console: bind(blockOf("[data-ground='console']")),
 };
 

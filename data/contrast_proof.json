@@ -4,27 +4,27 @@
     {
       "n": "--rk-n-000",
       "h": "#FFFDFA",
-      "r": "sheet: raised surface, ink on the signal"
+      "r": "interpolated — no semantic binds it directly"
     },
     {
       "n": "--rk-n-050",
       "h": "#FBF7F1",
-      "r": "sheet: canvas / console: text"
+      "r": "console: text"
     },
     {
       "n": "--rk-n-100",
       "h": "#F6EFE4",
-      "r": "sheet: recessed surface"
+      "r": "interpolated — no semantic binds it directly"
     },
     {
       "n": "--rk-n-200",
       "h": "#EDE2D3",
-      "r": "sheet: hairline / console: strong text"
+      "r": "console: strong text"
     },
     {
       "n": "--rk-n-300",
       "h": "#C2BBB0",
-      "r": "sheet: mid rule / console: body text"
+      "r": "console: body text"
     },
     {
       "n": "--rk-n-400",
@@ -34,7 +34,7 @@
     {
       "n": "--rk-n-450",
       "h": "#90877B",
-      "r": "sheet: boundary rule"
+      "r": "interpolated — no semantic binds it directly"
     },
     {
       "n": "--rk-n-500",
@@ -44,12 +44,12 @@
     {
       "n": "--rk-n-600",
       "h": "#746A5E",
-      "r": "sheet: labels, captions"
+      "r": "interpolated — no semantic binds it directly"
     },
     {
       "n": "--rk-n-700",
       "h": "#5A5145",
-      "r": "sheet: body text / console: mid rule"
+      "r": "console: mid rule"
     },
     {
       "n": "--rk-n-750",
@@ -59,12 +59,12 @@
     {
       "n": "--rk-n-800",
       "h": "#3F382D",
-      "r": "sheet: strong text / console: raised surface"
+      "r": "console: raised surface"
     },
     {
       "n": "--rk-n-900",
       "h": "#352E25",
-      "r": "sheet: text / console: canvas"
+      "r": "console: canvas"
     },
     {
       "n": "--rk-n-950",
@@ -76,7 +76,7 @@
     {
       "n": "--rk-signal-ink",
       "h": "#8B4024",
-      "r": "sheet ground. 7.24:1 on sheet, 6.89:1 on ground, 6.44:1 on sunk."
+      "r": "sheet ground. 7.35:1 on sheet, 7.35:1 on ground, 7.35:1 on sunk."
     },
     {
       "n": "--rk-signal-lift",
@@ -86,299 +86,299 @@
   ],
   "rows": [
     {
-      "f": "#352E25",
+      "f": "#000000",
       "fn": "text",
-      "b": "#FFFDFA",
+      "b": "#FFFFFF",
       "bn": "sheet",
-      "r": "13.18",
+      "r": "21.00",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#352E25",
+      "f": "#000000",
       "fn": "text",
-      "b": "#FBF7F1",
+      "b": "#FFFFFF",
       "bn": "ground",
-      "r": "12.54",
+      "r": "21.00",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#352E25",
+      "f": "#000000",
       "fn": "text",
-      "b": "#F6EFE4",
+      "b": "#FFFFFF",
       "bn": "sunk",
-      "r": "11.72",
+      "r": "21.00",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#3F382D",
+      "f": "#0F0F0F",
       "fn": "text-1",
-      "b": "#FFFDFA",
+      "b": "#FFFFFF",
       "bn": "sheet",
-      "r": "11.40",
+      "r": "19.17",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#3F382D",
+      "f": "#0F0F0F",
       "fn": "text-1",
-      "b": "#FBF7F1",
+      "b": "#FFFFFF",
       "bn": "ground",
-      "r": "10.84",
+      "r": "19.17",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#3F382D",
+      "f": "#0F0F0F",
       "fn": "text-1",
-      "b": "#F6EFE4",
+      "b": "#FFFFFF",
       "bn": "sunk",
-      "r": "10.13",
+      "r": "19.17",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#5A5145",
+      "f": "#1F1F1F",
       "fn": "text-2",
-      "b": "#FFFDFA",
+      "b": "#FFFFFF",
       "bn": "sheet",
-      "r": "7.67",
+      "r": "16.48",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#5A5145",
+      "f": "#1F1F1F",
       "fn": "text-2",
-      "b": "#FBF7F1",
+      "b": "#FFFFFF",
       "bn": "ground",
-      "r": "7.29",
+      "r": "16.48",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#5A5145",
+      "f": "#1F1F1F",
       "fn": "text-2",
-      "b": "#F6EFE4",
+      "b": "#FFFFFF",
       "bn": "sunk",
-      "r": "6.82",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#746A5E",
-      "fn": "text-3",
-      "b": "#FFFDFA",
-      "bn": "sheet",
-      "r": "5.22",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#746A5E",
-      "fn": "text-3",
-      "b": "#FBF7F1",
-      "bn": "ground",
-      "r": "4.96",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#746A5E",
-      "fn": "text-3",
-      "b": "#F6EFE4",
-      "bn": "sunk",
-      "r": "4.64",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#8B4024",
-      "fn": "signal",
-      "b": "#FFFDFA",
-      "bn": "sheet",
-      "r": "7.24",
+      "r": "16.48",
       "g": "AAA",
       "tier": "ink"
     },
     {
-      "f": "#8B4024",
-      "fn": "signal",
-      "b": "#FBF7F1",
+      "f": "#3A3A3A",
+      "fn": "text-3",
+      "b": "#FFFFFF",
+      "bn": "sheet",
+      "r": "11.37",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#3A3A3A",
+      "fn": "text-3",
+      "b": "#FFFFFF",
       "bn": "ground",
-      "r": "6.89",
+      "r": "11.37",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#3A3A3A",
+      "fn": "text-3",
+      "b": "#FFFFFF",
+      "bn": "sunk",
+      "r": "11.37",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#000000",
+      "fn": "signal",
+      "b": "#FFFFFF",
+      "bn": "sheet",
+      "r": "21.00",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#000000",
+      "fn": "signal",
+      "b": "#FFFFFF",
+      "bn": "ground",
+      "r": "21.00",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#000000",
+      "fn": "signal",
+      "b": "#FFFFFF",
+      "bn": "sunk",
+      "r": "21.00",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#000000",
+      "fn": "rule-strong",
+      "b": "#FFFFFF",
+      "bn": "sheet",
+      "r": "21.00",
+      "g": "AA non-text",
+      "tier": "mark"
+    },
+    {
+      "f": "#000000",
+      "fn": "rule-strong",
+      "b": "#FFFFFF",
+      "bn": "ground",
+      "r": "21.00",
+      "g": "AA non-text",
+      "tier": "mark"
+    },
+    {
+      "f": "#000000",
+      "fn": "rule-strong",
+      "b": "#FFFFFF",
+      "bn": "sunk",
+      "r": "21.00",
+      "g": "AA non-text",
+      "tier": "mark"
+    },
+    {
+      "f": "#0F6F73",
+      "fn": "cat logistics",
+      "b": "#FFFFFF",
+      "bn": "sheet",
+      "r": "5.93",
       "g": "AA",
       "tier": "ink"
     },
     {
-      "f": "#8B4024",
-      "fn": "signal",
-      "b": "#F6EFE4",
+      "f": "#0F6F73",
+      "fn": "cat logistics",
+      "b": "#FFFFFF",
+      "bn": "ground",
+      "r": "5.93",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#0F6F73",
+      "fn": "cat logistics",
+      "b": "#FFFFFF",
       "bn": "sunk",
+      "r": "5.93",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5847B8",
+      "fn": "cat insurance",
+      "b": "#FFFFFF",
+      "bn": "sheet",
+      "r": "6.98",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5847B8",
+      "fn": "cat insurance",
+      "b": "#FFFFFF",
+      "bn": "ground",
+      "r": "6.98",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5847B8",
+      "fn": "cat insurance",
+      "b": "#FFFFFF",
+      "bn": "sunk",
+      "r": "6.98",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5A6B31",
+      "fn": "cat banking",
+      "b": "#FFFFFF",
+      "bn": "sheet",
+      "r": "5.86",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5A6B31",
+      "fn": "cat banking",
+      "b": "#FFFFFF",
+      "bn": "ground",
+      "r": "5.86",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#5A6B31",
+      "fn": "cat banking",
+      "b": "#FFFFFF",
+      "bn": "sunk",
+      "r": "5.86",
+      "g": "AA",
+      "tier": "ink"
+    },
+    {
+      "f": "#1D5480",
+      "fn": "cat telecom",
+      "b": "#FFFFFF",
+      "bn": "sheet",
+      "r": "7.98",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#1D5480",
+      "fn": "cat telecom",
+      "b": "#FFFFFF",
+      "bn": "ground",
+      "r": "7.98",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#1D5480",
+      "fn": "cat telecom",
+      "b": "#FFFFFF",
+      "bn": "sunk",
+      "r": "7.98",
+      "g": "AAA",
+      "tier": "ink"
+    },
+    {
+      "f": "#A03A5E",
+      "fn": "cat marketing",
+      "b": "#FFFFFF",
+      "bn": "sheet",
       "r": "6.44",
       "g": "AA",
       "tier": "ink"
     },
     {
-      "f": "#90877B",
-      "fn": "rule-strong",
-      "b": "#FFFDFA",
-      "bn": "sheet",
-      "r": "3.48",
-      "g": "AA non-text",
-      "tier": "mark"
-    },
-    {
-      "f": "#90877B",
-      "fn": "rule-strong",
-      "b": "#FBF7F1",
+      "f": "#A03A5E",
+      "fn": "cat marketing",
+      "b": "#FFFFFF",
       "bn": "ground",
-      "r": "3.31",
-      "g": "AA non-text",
-      "tier": "mark"
-    },
-    {
-      "f": "#90877B",
-      "fn": "rule-strong",
-      "b": "#F6EFE4",
-      "bn": "sunk",
-      "r": "3.10",
-      "g": "AA non-text",
-      "tier": "mark"
-    },
-    {
-      "f": "#0F6F73",
-      "fn": "cat logistics",
-      "b": "#FFFDFA",
-      "bn": "sheet",
-      "r": "5.84",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#0F6F73",
-      "fn": "cat logistics",
-      "b": "#FBF7F1",
-      "bn": "ground",
-      "r": "5.56",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#0F6F73",
-      "fn": "cat logistics",
-      "b": "#F6EFE4",
-      "bn": "sunk",
-      "r": "5.19",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#5847B8",
-      "fn": "cat insurance",
-      "b": "#FFFDFA",
-      "bn": "sheet",
-      "r": "6.87",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#5847B8",
-      "fn": "cat insurance",
-      "b": "#FBF7F1",
-      "bn": "ground",
-      "r": "6.54",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#5847B8",
-      "fn": "cat insurance",
-      "b": "#F6EFE4",
-      "bn": "sunk",
-      "r": "6.11",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#5A6B31",
-      "fn": "cat banking",
-      "b": "#FFFDFA",
-      "bn": "sheet",
-      "r": "5.77",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#5A6B31",
-      "fn": "cat banking",
-      "b": "#FBF7F1",
-      "bn": "ground",
-      "r": "5.49",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#5A6B31",
-      "fn": "cat banking",
-      "b": "#F6EFE4",
-      "bn": "sunk",
-      "r": "5.13",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#1D5480",
-      "fn": "cat telecom",
-      "b": "#FFFDFA",
-      "bn": "sheet",
-      "r": "7.86",
-      "g": "AAA",
-      "tier": "ink"
-    },
-    {
-      "f": "#1D5480",
-      "fn": "cat telecom",
-      "b": "#FBF7F1",
-      "bn": "ground",
-      "r": "7.48",
-      "g": "AAA",
-      "tier": "ink"
-    },
-    {
-      "f": "#1D5480",
-      "fn": "cat telecom",
-      "b": "#F6EFE4",
-      "bn": "sunk",
-      "r": "6.99",
+      "r": "6.44",
       "g": "AA",
       "tier": "ink"
     },
     {
       "f": "#A03A5E",
       "fn": "cat marketing",
-      "b": "#FFFDFA",
-      "bn": "sheet",
-      "r": "6.34",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#A03A5E",
-      "fn": "cat marketing",
-      "b": "#FBF7F1",
-      "bn": "ground",
-      "r": "6.03",
-      "g": "AA",
-      "tier": "ink"
-    },
-    {
-      "f": "#A03A5E",
-      "fn": "cat marketing",
-      "b": "#F6EFE4",
+      "b": "#FFFFFF",
       "bn": "sunk",
-      "r": "5.64",
+      "r": "6.44",
       "g": "AA",
       "tier": "ink"
     },
