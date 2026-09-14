@@ -1,0 +1,5 @@
+section_context[1]:
+  - title: "Modal Shift and Route Optimization in Rail-Road Networks"
+    permalink: "https://runink.org/blog/runink-modal-shift-optimization/"
+    date: "2026-06-15T10:07:34Z"
+    description: "How a rail-versus-road comparison is actually made, where rail-truck handovers break down, and what a routing engine can and cannot tell you."

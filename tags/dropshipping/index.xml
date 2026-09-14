@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dropshipping on Runink</title>
+    <link>https://runink.org/tags/dropshipping/</link>
+    <description>Recent content in Dropshipping on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/dropshipping/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Automated Decision Systems and Open-Source Tools Optimize Dropshipping Logistics</title>
+      <link>https://runink.org/blog/automated-open-source-dropshipping-logistics/</link>
+      <pubDate>Thu, 26 Feb 2026 09:24:58 +0000</pubDate>
+      <guid>https://runink.org/blog/automated-open-source-dropshipping-logistics/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;A dropshipping operation runs on other people&amp;rsquo;s stock and other people&amp;rsquo;s trucks. Automation helps only where it reads live data: current stock, current tracking, current road conditions. Two open pieces make that practical — a standard way to connect a model to your own systems, and open map data you can host yourself. Neither removes the need to decide who signs off on a change.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;A model is only as current as what it can read.&lt;/strong&gt; Connected to your order and stock records, it answers from today. Without that, it guesses.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Model Context Protocol (MCP):&lt;/strong&gt; an open standard for connecting a model to tools and databases, so it can fetch live order, stock and tracking data.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Openrouteservice and OpenStreetMap:&lt;/strong&gt; open routing and map data you can run on your own servers, with no per-call licence.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The thing to check:&lt;/strong&gt; can you see which records an answer was based on? If not, you cannot audit it.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Dropshipping means coordinating parts you do not own. Several suppliers. Stock levels that move hourly. Shipping routes. Customers asking where their parcel is.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
