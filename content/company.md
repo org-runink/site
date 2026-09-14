@@ -70,7 +70,7 @@ author: "Runink"
     <p class="text-xl text-ink-2 max-w-3xl mb-12">
       Six rules the software follows. Each one is a thing you can ask us to show you in a running system, which is the only reason they are worth putting on a page.
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-motion="reveal">
       {{< value-card
           title="A person signs, and is named"
           icon="users"

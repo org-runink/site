@@ -33,7 +33,7 @@
         <h2 class="ind-head__label" id="pick-heading">Pick the one that reads like your week</h2>
         <span class="ind-head__rule" aria-hidden="true"></span>
       </div>
-      <ul class="ind-grid2">
+      <ul class="ind-grid2" data-motion="reveal">
         {{ range .Pages.ByWeight }}
         <li class="ind-accent{{ with .Params.category }} rk-cat-{{ . }}{{ end }}">
           <a class="ind-pick" href="{{ .RelPermalink }}">

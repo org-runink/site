@@ -335,6 +335,13 @@
     {{ $js := resources.Get "js/main.js" | js.Build (dict "Minify" hugo.IsProduction) }}
     <script src="{{ $js.RelPermalink }}" defer></script>
     {{ block "scripts" . }}{{ end }}
+    {{/* The motion bundle. This deck has its own baseof, so the site-wide include
+         in _default/baseof.html does not reach it — which is why the papers were
+         the one family with no motion at all. The reading surface itself is left
+         alone deliberately: an entrance on every paragraph of a twelve-thousand
+         word document is noise, not polish. The chapter rail is the one thing
+         here that animates. */}}
+    {{ partial "motion.html" . }}
 </body>
 
 </html>

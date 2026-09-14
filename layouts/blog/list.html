@@ -95,7 +95,7 @@
         {{ partial "rule-head.html" (dict "label" (site.Params.ui.start_with_paper | default "Start with a paper") "id" "papers-heading" "meta" (printf "%d %s" (len .) (site.Params.ui.documents | default "documents"))) }}
       </div>
 
-      <ul class="list-none m-0 p-0 border-t-2 border-rule-strong">
+      <ul class="list-none m-0 p-0 border-t-2 border-rule-strong" data-motion="reveal">
         {{ range . }}
         <li class="rk-list-card border-b border-rule">
           <a class="rk-list-url group grid gap-x-6 gap-y-1.5 md:grid-cols-[12rem_minmax(0,1fr)] items-baseline no-underline border-l-[3px] border-transparent py-5 px-3 transition-colors duration-200 hover:bg-signal-wash hover:border-signal"
@@ -169,7 +169,7 @@
           </span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" data-motion="reveal">
           {{ range first 3 .Pages }}
             {{ partial "post-card.html" (dict "page" . "level" 3) }}
           {{ end }}

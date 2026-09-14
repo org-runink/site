@@ -62,7 +62,7 @@ author: "Runink"
     <p class="text-xl text-ink-2 text-center max-w-3xl mx-auto mb-12">
       Seis regras que o software segue. Cada uma é algo que você pode nos pedir para mostrar num sistema em funcionamento, que é a única razão pela qual elas merecem estar numa página.
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-motion="reveal">
       {{< value-card
           title="Uma pessoa assina, e o nome dela fica"
           icon="users"

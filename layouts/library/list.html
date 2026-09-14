@@ -54,7 +54,7 @@
         "label" $.Params.papers_label
         "id"    "papers-head"
         "meta"  (printf "%d documents" (len .Pages)) ) }}
-      <ul class="list-none m-0 p-0">
+      <ul class="list-none m-0 p-0" data-motion="reveal">
         {{ range .Pages.ByWeight }}
         <li class="rk-list-card border-b border-rule">
           <a class="rk-list-url group grid grid-cols-1 md:grid-cols-[13rem_1fr] gap-x-6 gap-y-1 py-5 no-underline" href="{{ .RelPermalink }}">
@@ -79,7 +79,7 @@
         "id"    "cases-head"
         "meta"  (printf "%d scenarios" (len .Pages)) ) }}
       {{ with $.Params.cases_note }}<p class="mt-0 mb-6 text-ink-2 text-sm leading-relaxed max-w-[62ch]">{{ . }}</p>{{ end }}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" data-motion="reveal">
         {{ range .Pages }}
         <a class="rk-list-card rk-list-url group flex flex-col bg-sheet border border-rule rounded-xl p-5 no-underline transition-colors duration-200 hover:bg-sunk hover:border-rule-mid" href="{{ .RelPermalink }}">
           {{ with .Params.badge }}<span class="block mb-2 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-signal">{{ . }}</span>{{ end }}

@@ -62,7 +62,7 @@ author: "Runink"
     <p class="text-xl text-ink-2 text-center max-w-3xl mx-auto mb-12">
       Seis reglas que el software cumple. Cada una es algo que usted puede pedirnos que le enseñemos en un sistema en marcha, que es la única razón por la que merecen estar en una página.
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-motion="reveal">
       {{< value-card
           title="Firma una persona, y su nombre queda"
           icon="users"

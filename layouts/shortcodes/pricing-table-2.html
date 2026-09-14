@@ -83,7 +83,7 @@
             {{ with .eyebrow }}
             <p class="text-[10px] font-black uppercase tracking-[0.25em] text-signal mb-6">{{ . }}</p>
             {{ end }}
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-motion="reveal">
                 {{ range .cards }}
                 <div
                     class="bg-sheet border border-stone-800 rounded-lg p-8 shadow-lg flex flex-col h-full break-inside-avoid">

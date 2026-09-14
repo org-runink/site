@@ -58,7 +58,7 @@ const DUR_ENTER = 320;
 /* Runs `fn` the first time `el` is at least a quarter on screen, then forgets it.
    One observer per element is cheaper to reason about than a shared one holding a
    map, and there are never more than a dozen of these on a page. */
-function onFirstSight(el, fn, threshold = 0.25) {
+function onFirstSight(el, fn, opts = {}) {
   if (!('IntersectionObserver' in window)) { fn(); return; }
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -66,7 +66,19 @@ function onFirstSight(el, fn, threshold = 0.25) {
       io.disconnect();
       fn();
     });
-  }, { threshold });
+  }, {
+    /* THRESHOLD 0, NOT A FRACTION, and a margin instead.
+
+       This asked for 25% of the element to be on screen, which a container
+       taller than four viewports can never reach — so the entrance on the blog
+       listing, the library listing and every long step list simply never fired,
+       on a page that was reported as having no animations at all. A fraction is
+       a trap on anything that can be tall; "any of it is visible, and a little
+       past the bottom edge" is the thing actually meant. */
+    threshold: 0,
+    rootMargin: '0px 0px -8% 0px',
+    ...opts,
+  });
   io.observe(el);
 }
 
@@ -221,7 +233,12 @@ function drawFigure(root) {
    one effect that touches text, and it is the shortest: 320ms and eight pixels,
    which is an entrance, not a performance. */
 function revealChildren(root) {
-  const items = utils.$(root.dataset.motionItems || ':scope > *', root);
+  /* The element's own children, taken from the DOM rather than matched with
+     ':scope > *' — one fewer selector that can quietly return nothing, on the
+     effect whose whole failure mode is returning nothing quietly. */
+  const items = root.dataset.motionItems
+    ? utils.$(root.dataset.motionItems, root)
+    : Array.from(root.children);
   if (!items.length) return;
   utils.set(items, { opacity: 0, translateY: 8 });
   animate(items, {
@@ -385,7 +402,7 @@ function start() {
           io.disconnect();
           start();
         });
-      }, { threshold: 0.2 });
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
       io.observe(el);
     } else {
       start();

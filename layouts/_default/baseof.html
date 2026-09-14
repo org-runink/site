@@ -340,6 +340,19 @@
     <!-- Main JS -->
     {{ $js := resources.Get "js/main.js" | js.Build (dict "Minify" hugo.IsProduction) }}
     <script src="{{ $js.RelPermalink }}" defer></script>
+
+    {{/* THE MOTION BUNDLE, SITE-WIDE. It was emitted by the home page and the
+         industry template only, on the argument that a reading surface has no
+         business paying for an animation library — which was true while those
+         were the only two families with anything to animate, and stopped being
+         true when the listings, the pricing page, the company page and the
+         use-case pages got their own entrances.
+
+         It is deferred, and it does nothing at all on a page with no
+         [data-motion] target: the file's own guards see an empty query and
+         return. The cost of that on a page that does not use it is one cached,
+         deferred request. */}}
+    {{ partial "motion.html" . }}
 </body>
 
 </html>

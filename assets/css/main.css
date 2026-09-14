@@ -391,3 +391,30 @@
     font-weight: 400;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   WHAT IS ANIMATED MUST PRINT WHOLE — the site-wide half of a rule that used to
+   be written twice, once for the home page's figures and once for the shared
+   worked case.
+
+   assets/js/motion.js reveals a container's children by setting opacity and a
+   transform INLINE and animating them back. A reader who prints while that is in
+   flight prints those inline values, and the sheet comes back with a heading over
+   an empty column. That failure was found on the home page's console figure and
+   fixed there; the moment the motion bundle went site-wide — the listings, the
+   pricing and company pages, the use-case pages, the paper's chapter rail — the
+   same hole opened on every one of them.
+
+   !important is the whole point: an inline style beats a class, and inline is
+   exactly what an animation writes.
+
+   It is scoped to the attribute rather than to any page's classes, so a block
+   that gains `data-motion` tomorrow is covered the day it ships.
+--------------------------------------------------------------------------- */
+@media print {
+  [data-motion="reveal"] > *,
+  [data-motion="reveal"] [data-motion-item] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

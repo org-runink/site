@@ -1,5 +1,14 @@
+{{/* data-motion="reveal" lands this section's own children in reading order the
+     first time it is scrolled to — the entrance the use-case pages, /company/ and
+     everything else built from this shortcode had none of, because the motion
+     bundle used to be emitted on two page families only.
+
+     It is an enhancement and nothing else: the section is fully rendered here,
+     assets/js/motion.js sets the starting state at the moment it plays, and with
+     no JavaScript, with reduced motion, or on paper the attribute does nothing at
+     all. See the four rules at the head of that file. */}}
 <section class="{{ .Get "class" }}"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4" data-motion="reveal">
         {{ .Inner }}
     </div>
 </section>
