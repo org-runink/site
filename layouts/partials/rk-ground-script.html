@@ -9,12 +9,15 @@
      synchronous script, after tokens.css (so the custom properties exist) and
      before any content.
 
-     WHAT IT DOES NOT DO. It does not consult prefers-color-scheme. The light
-     sheet is a decision, not a default someone forgot to change: the review of
-     the customer-facing material found the black canvas hard to read and
-     painful to print, and these are pages that get printed and carried into
-     meetings. A visitor whose OS is in dark mode still gets the sheet until
-     they ask for otherwise — and then that choice is remembered.
+     WHAT IT DOES NOT DO. It does not consult prefers-color-scheme. The ground
+     is a decision rather than a default someone forgot to change — it is the
+     console as of 2026-09-14, and tokens.css 3b records why it moved there from
+     the sheet. A visitor whose OS is in light mode still gets the console until
+     they ask for otherwise, and then that choice is remembered.
+
+     The printed sheet is unaffected either way: tokens.css binds both grounds to
+     white and black under @media print, which is what let the ground move at all
+     without reopening the argument about pages being carried into meetings.
 
      It also never *removes* a ground the template set deliberately. The
      whitepapers declare data-ground="console" on <html> because that deck is

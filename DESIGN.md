@@ -503,11 +503,29 @@ whitepaper surface is purpose-built for a 12,000-word document and is the better
 reading environment for it, and the product cockpit is dark. Deleting it would cost
 something real and buy consistency that the token layer already provides.
 
-The default has since been settled the other way round. The sheet is the default
-ground in `tokens.css` and the marketing site is light, header included — a review of
-the customer-facing material found the black canvas hard to read and painful to print,
-and these are pages that get printed and carried into meetings. The console is where
-it earns its place: the whitepapers, and any subtree that opts in.
+The default has been settled twice, and the second time is the one in force.
+
+First, away from the console: a review of the customer-facing material found the black
+canvas hard to read and painful to print, so the sheet became the default and the
+console was kept for the whitepapers and for any subtree that opted in.
+
+**Then back, on 2026-09-14.** The landing page was moved to the console on the owner's
+instruction, with a constellation behind it — and every other marketing page stayed on
+the sheet. Clicking from the home page to Industries, or to Pricing, threw the whole
+screen from `#352E25` to `#FBF7F1` and back on every navigation. Measured on production:
+`rgb(53,46,37)` on the home page against `rgb(251,247,241)` on all five pages the header
+links to. One ground for the site is the fix, and the console is the one the landing
+page had already been given.
+
+What has NOT changed is the reason the sheet won the first argument. Printing is still
+the test these pages have to pass, and they pass it on either ground: the print block in
+`tokens.css` binds both grounds to white and black, so a console page comes off the
+sheet as ink on paper. That is the property that made this reversible at all. The other
+half is the reader's: the switch in the header still stores a preference, and a stored
+preference beats the site default before first paint.
+
+A page or subtree that genuinely wants the light register asks for it —
+`data-ground="sheet"`, which `layouts/design/baseof.html` already does.
 
 What changes, and what does not:
 

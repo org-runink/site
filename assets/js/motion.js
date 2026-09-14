@@ -102,20 +102,43 @@ function pipeline(root) {
 
   if (!rows.length || !node || !gate) return null;
 
-  /* The starting state, set here rather than in the stylesheet — see rule 1 at
-     the head of this file. */
-  utils.set(rows, { opacity: 0, translateY: 10 });
-  utils.set([node, gate], { opacity: 0, translateY: 8 });
-  utils.set(ticks, { opacity: 0.35 });
-  utils.set(acts, { opacity: 0 });
-  utils.set([scan, caret], { opacity: 0 });
-  utils.set(bars, { scaleY: 0.35 });
   const drawnLinks = links.map((l) => svg.createDrawable(l));
   const drawnSeam = seam ? svg.createDrawable(seam) : null;
-  utils.set(drawnLinks, { draw: '0 0' });
-  if (drawnSeam) utils.set(drawnSeam, { draw: '0 0' });
 
-  const tl = createTimeline({ loop: true, autoplay: false, defaults: { ease: EASE } });
+  /* THE STARTING STATE IS SET AT THE MOMENT OF PLAYING, NOT AT LOAD, and the
+     difference is the whole of rule 1 at the head of this file.
+
+     Set at load, the figure sat at opacity 0 from the moment the script ran
+     until an IntersectionObserver decided it was on screen — so a reader who
+     did not scroll to it, or whose browser never fired the observer, was looking
+     at an empty console card on a live page. Measured on production, not
+     reasoned about: rows, rule and gate all read 0.00 for fourteen seconds.
+
+     Deferred to the play trigger, the figure is simply itself until the instant
+     it is about to animate, which is the only arrangement where "nothing here is
+     load-bearing for meaning" is actually true. */
+  const arm = () => {
+    utils.set(rows, { opacity: 0, translateY: 10 });
+    utils.set([node, gate], { opacity: 0, translateY: 8 });
+    utils.set(ticks, { opacity: 0.35 });
+    utils.set(acts, { opacity: 0 });
+    utils.set([scan, caret], { opacity: 0 });
+    utils.set(bars, { scaleY: 0.35 });
+    utils.set(drawnLinks, { draw: '0 0' });
+    if (drawnSeam) utils.set(drawnSeam, { draw: '0 0' });
+  };
+
+  /* IT RUNS ONCE AND HOLDS, and that is a correction rather than a preference.
+
+     This used to loop, and the loop ended by fading the rows, the rule and the
+     decision panel to nothing before starting again — so every eight seconds the
+     whole figure blanked and rebuilt itself. On a page that is not an animation,
+     it is a flash, and it is what a reader sitting on this page actually saw.
+
+     What keeps moving afterwards is small and local: the live dot, and the caret
+     on the unpressed approve. Those say the reading has not stopped. A figure
+     that rebuilds itself says the page is broken. */
+  const tl = createTimeline({ autoplay: false, defaults: { ease: EASE } });
 
   tl
     /* The records already exist — they arrive, they do not appear. */
@@ -144,10 +167,10 @@ function pipeline(root) {
        while nothing happens, which is the argument. */
     .add(caret, {
       opacity: [{ to: 1, duration: 60 }, { to: 1, duration: 460 }, { to: 0, duration: 60 }, { to: 0, duration: 460 }],
-      loop: 4,
+      loop: true,
     }, 3600)
-    /* Out, and round again. */
-    .add([rows, node, gate, acts], { opacity: 0, duration: DUR_TRANS }, 8200);
+    /* And it stays. Nothing after this beat removes anything. */
+    ;
 
   /* The seam draws across before the actions exist: the line between what was
      proposed and what somebody decides is the thing being pointed at. It is
@@ -166,7 +189,7 @@ function pipeline(root) {
     });
   }
 
-  return tl;
+  return { tl, arm };
 }
 
 /* ── 2. Line-drawing for the industry figures ────────────────────────────────
@@ -310,7 +333,10 @@ function sky(root) {
   const dust = utils.$('.hp-sky__far circle', root).filter((_, i) => i % 6 === 0);
   if (dust.length) {
     animate(dust, {
-      opacity: [{ to: 0.18, duration: 1800 }, { to: 0.62, duration: 1800 }],
+      /* A narrower range than it had. 0.18 to 0.62 on a field of points reads as
+         blinking rather than as sky, and it was part of what made this page feel
+         like it was flashing. */
+      opacity: [{ to: 0.38, duration: 2600 }, { to: 0.62, duration: 2600 }],
       loop: true,
       ease: 'inOutQuad',
       delay: stagger(420),
@@ -337,25 +363,33 @@ function start() {
   });
 
   document.querySelectorAll('[data-motion="pipeline"]').forEach((el) => {
-    const tl = pipeline(el);
-    if (!tl) return;
+    const made = pipeline(el);
+    if (!made) return;
+    const { tl, arm } = made;
 
-    /* Rule 3: it runs while it is being looked at, and not otherwise. */
-    let onScreen = false;
-    const sync = () => {
-      if (onScreen && !document.hidden) tl.play();
-      else tl.pause();
+    /* Armed and played once, the first time it is on screen. Before that the
+       figure is untouched; after it, it holds its finished state and only the
+       live dot and the caret keep moving — so leaving the page and coming back
+       does not restart anything, and nothing blanks. */
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      arm();
+      tl.play();
     };
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver((entries) => {
-        entries.forEach((entry) => { onScreen = entry.isIntersecting; });
-        sync();
-      }, { threshold: 0.2 }).observe(el);
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          io.disconnect();
+          start();
+        });
+      }, { threshold: 0.2 });
+      io.observe(el);
     } else {
-      onScreen = true;
-      sync();
+      start();
     }
-    document.addEventListener('visibilitychange', sync);
   });
 }
 

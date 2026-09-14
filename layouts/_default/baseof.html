@@ -221,12 +221,11 @@
 
          tokens.css must load BEFORE main.css: it defines the --rk-* custom
          properties on :root, and the Tailwind layer below consumes them. It
-         also sets the default ground, which is `sheet` — the light one. That is
-         deliberate and it is the whole point of this change: a documented review
-         of the customer material found the black canvas hard to read and
-         painful to print, and these are pages that get printed and carried into
-         meetings. The product cockpit stays dark; the marketing sheet does not.
-         A subtree can still opt into dark with data-ground="console". */}}
+         also sets the default ground. That is the CONSOLE as of 2026-09-14 —
+         see tokens.css 3b for why it moved, and for the measurement that moved
+         it. A page or a subtree can still ask for the other register with
+         data-ground="sheet", a reader's stored preference beats both, and the
+         printed sheet is ink on white on either. */}}
     {{ partial "rk-fonts.html" . }}
     {{ $tokens := resources.Get "css/tokens.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $tokens.RelPermalink }}">

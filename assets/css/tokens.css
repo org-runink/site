@@ -394,10 +394,29 @@
 
 /* ---------------------------------------------------------------------------
    3b. SEMANTICS — ground-dependent. These are the names a page uses.
-   Sheet is the default. Console is opt-in via data-ground="console".
+
+   THE CONSOLE IS THE DEFAULT AS OF 2026-09-14, and the sheet is now the opt-in.
+   This reverses what this file said since the rebrand, so the reason is here
+   rather than in a commit message:
+
+   The landing page was moved to the console on the owner's instruction, with a
+   constellation behind it. Every other marketing page stayed on the sheet — so
+   clicking from the home page to Industries, or to Pricing, threw the whole
+   screen from #352E25 to #FBF7F1 and back. That is what "the website keeps
+   flashing" turned out to be, and it was measured on production rather than
+   guessed: body background rgb(53,46,37) on the home page against rgb(251,247,241)
+   on all five of the pages the header links to.
+
+   One ground for the site is the fix. Both registers still exist and the ramp is
+   still read from one end or the other (DESIGN.md 8) — what changed is which end
+   a page gets when it says nothing. The reader's own choice still wins over both:
+   partials/rk-ground-script.html applies a stored preference before first paint,
+   and the switch in the header is unchanged.
+
+   The print block at the foot of this file binds BOTH grounds to white and black,
+   so nothing about the printed sheet changes.
 --------------------------------------------------------------------------- */
 
-:root,
 [data-ground='sheet'] {
   color-scheme: light;
 
@@ -458,6 +477,19 @@
   --rk-focus: var(--rk-signal);
 }
 
+/* `:root:not([data-ground])`, NOT a bare `:root`, and the difference is whether
+   the switch in the header works at all.
+
+   A bare `:root` is (0,1,0) and so is `[data-ground='sheet']`, and this block
+   comes after that one — so on <html data-ground="sheet"> the two tied and the
+   later one won: a reader who asked for the light sheet got the console anyway.
+   Caught by setting the preference and reading the computed background, which is
+   the only way to catch a specificity tie.
+
+   Scoped to "no ground asked for", the two blocks are mutually exclusive: this
+   one dresses a page that says nothing, the sheet block dresses a page — or a
+   reader — that asked for light. */
+:root:not([data-ground]),
 [data-ground='console'] {
   color-scheme: dark;
 
