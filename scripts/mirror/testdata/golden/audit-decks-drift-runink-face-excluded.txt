@@ -1,0 +1,7 @@
+runink-face: site 8 paras, mirror 9 paras
+  site -> mirror MISSING : 8  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 7  (stale prose still in the handout, excl. cover + furniture)
+
+--- cover block: mirror paragraphs 0..0 ---
+  FURNITURE <div style="page-break-after: always;"></div>
+  FURNITURE ## Page 2 — Stale chapter
