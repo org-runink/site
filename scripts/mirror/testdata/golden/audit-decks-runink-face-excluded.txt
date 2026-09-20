@@ -1,0 +1,16 @@
+runink-face: site 8 paras, mirror 17 paras
+  site -> mirror MISSING : 0  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 2  (stale prose still in the handout, excl. cover + furniture)
+
+--- cover block: mirror paragraphs 0..5 ---
+  COVER    # Runink FACE
+  COVER    Deck paragraph one.
+  COVER    Deck paragraph two.
+  COVER    Runink
+paes@runink.org
+  COVER    <div style="page-break-after: always;"></div>
+  FURNITURE ## Page 2 — What this paper is, and which part of it runs
+  FURNITURE <div style="page-break-after: always;"></div>
+  FURNITURE ## Page 3 — Alpha chapter
+  FURNITURE <div style="page-break-after: always;"></div>
+  FURNITURE ## Pages 4–5 — Beta chapter
