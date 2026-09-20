@@ -1,0 +1,28 @@
+runink-core-atlas: site 8 paras, mirror 16 paras
+  site -> mirror MISSING : 7  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 11  (stale prose still in the handout, excl. cover + furniture)
+
+--- 11 paragraph(s) in the MIRROR but not the SITE ---
+
+[1] # Runink CORE and Atlas
+
+[2] ### Headline for the fixture
+
+[3] **A whitepaper for the fixture audience**
+
+[4] Deck paragraph one.
+
+[5] Deck paragraph two.
+
+[6] Deck paragraph three.
+
+[7] Deck paragraph four.
+
+[8] Stale opening prose that must not survive.
+
+[9] Runink · runink.org
+Logical Leap · logicalleap.example
+
+[10] ## Stale chapter
+
+[11] Stale prose that must not survive.

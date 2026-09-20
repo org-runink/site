@@ -22,19 +22,45 @@ does not. It only runs when somebody remembers.
 **If you change a paper under `content/blog/whitepapers/`, re-run its rebuild
 script and then the checks below.**
 
+## Building them
+
+These are Go, in their own module — a `go.mod` at the repo root would make the
+whole Hugo tree look like a Go module to tooling, and the root-level helpers
+(`serve.go`, `linkcheck.go`, `readability.go`) are deliberately `//go:build
+ignore` single-file `go run` scripts with no module at all. Stdlib only.
+
+Because the module is under `scripts/mirror`, `go run ./scripts/mirror/cmd/...`
+from the repo root does not work, and `go run -C scripts/mirror` changes the
+program's working directory too — which breaks the repo-relative paths every one
+of these expects. So build once, then run the binaries **from the repo root**:
+
+    go build -C scripts/mirror -o ~/.cache/rk-mirror/ ./cmd/...
+    ~/.cache/rk-mirror/rebuild-runink-core
+    ~/.cache/rk-mirror/mirror-audit runink-face --excluded
+
+`~/.cache`, not the repo and not `/tmp`. Tests: `go test ./...` from
+`scripts/mirror`.
+
 ## The scripts
 
-    python3 scripts/mirror/rebuild-<paper>.py     # rewrite one mirror from its source
+    ~/.cache/rk-mirror/rebuild-<paper>        # rewrite one mirror from its source
+    ~/.cache/rk-mirror/rebuild-<paper> --dry-run   # core, face, core-atlas only
 
-Run from the repo root. `MIRROR_DIR` overrides `../pitch-decks`. Each script
-keeps its paper's cover verbatim, regenerates the body from the site source, and
-re-applies that paper's own print furniture. Every one refuses to write if a site
-paragraph would be lost or the register disagrees with the body's chapters — so
-a failure is safe, and each is idempotent: re-running reproduces its own output
-byte for byte.
+Run from the repo root. `MIRROR_DIR` overrides `../pitch-decks`. Each keeps its
+paper's cover verbatim, regenerates the body from the site source, and re-applies
+that paper's own print furniture. Every one refuses to write if a site paragraph
+would be lost or the register disagrees with the body's chapters — so a failure
+is safe, and each is idempotent: re-running reproduces its own output byte for
+byte. `go test` pins that idempotence, on fixtures always and on the real
+mirrors when `../pitch-decks` is present.
 
-**No two papers share a convention**, which is why there is a script each rather
-than one loop:
+**No two papers share a convention**, which is why there is a program each
+rather than one loop. That survived the port to Go deliberately: the four differ
+in how the cover is found (first `## `, first page-break div, a literal
+`*Page 1 — Cover*` marker, a fixed sixteen-line slice), how the colophon is
+found, whether there is validation before writing, whether the file ends in a
+newline, and whether a chapter is folded into the cover. A single rebuilder with
+a per-paper config struct would have needed a branch at every one of those.
 
 | paper | furniture |
 | --- | --- |
@@ -51,20 +77,27 @@ so every one of those references pointed at the wrong sheet.
 
 ## The checks
 
-    ./check-whitepaper-mirrors.sh                 # shipped; one direction only
-    python3 scripts/mirror/mirror-audit.py <paper>            # both directions
-    python3 scripts/mirror/mirror-audit.py <paper> --missing  # site-only paragraphs
-    python3 scripts/mirror/mirror-audit.py <paper> --orphan   # mirror-only paragraphs
-    python3 scripts/mirror/mirror-audit.py <paper> --excluded # what was treated as furniture
-    python3 scripts/mirror/mirror-verify.py                   # structural, all four
+    ./check-whitepaper-mirrors.sh                        # shipped; one direction only
+    ~/.cache/rk-mirror/mirror-audit <paper>              # both directions
+    ~/.cache/rk-mirror/mirror-audit <paper> --missing    # site-only paragraphs
+    ~/.cache/rk-mirror/mirror-audit <paper> --orphan     # mirror-only paragraphs
+    ~/.cache/rk-mirror/mirror-audit <paper> --excluded   # what was treated as furniture
+    ~/.cache/rk-mirror/mirror-verify                     # structural, all four
 
-`mirror-audit.py` exists because the shipped check compares in one direction, so
+`mirror-audit` exists because the shipped check compares in one direction, so
 a claim struck from the site and left in a mirror is invisible to it. Read
 `--excluded` rather than trusting a zero: everything it hides is a place this
 tool can be wrong in the direction that matters.
 
-`mirror-verify.py` catches what a paragraph comparison cannot — a chapter
+`mirror-verify` catches what a paragraph comparison cannot — a chapter
 duplicated, a cover lost, a figure line altered, a file that collapsed.
+
+`--excluded` has a defect of its own, carried over from the Python and named in
+`audit.go`: its COVER lines were meant to be folded onto one line before being
+cut to 100 characters, and are not, because the Python's `[[:space:]]` is not a
+character class Python's `re` understands. They print raw, newlines and all.
+Fixing it is a real improvement and a separate change — it alters the output for
+every paper, so it wants its own commit and its own reading.
 
 ## The blind spot none of them cover
 

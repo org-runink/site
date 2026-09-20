@@ -1,0 +1,5 @@
+runink-core: site 8 paras, mirror 14 paras
+  site -> mirror MISSING : 0  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 0  (stale prose still in the handout, excl. cover + furniture)
+
+--- 0 paragraph(s) in the MIRROR but not the SITE ---
