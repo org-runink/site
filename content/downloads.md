@@ -6,7 +6,7 @@ layout: "company"
 # image is the CORE platform both of them run on rather than a third product.
 # The previous version set the three side by side in one row of equal cards,
 # which read as one product family with three equal members.
-description: "Get the Runink FACE app for Android, the separate Runink PULSE app, or request access to the sovereign server image the platform runs on."
+description: "Get the Runink FACE app for Android, the separate Runink PULSE app, or request access to the Runink River Sovereignty Server (RIVER), the server image the platform runs on."
 date: "2026-08-11T00:00:00Z"
 ---
 
@@ -28,8 +28,8 @@ date: "2026-08-11T00:00:00Z"
       action; a named person approves it. <strong class="text-stone-200">Runink PULSE</strong> is a different
       product for market analysis and marketing, listed here because it ships an
       app too, not because it is part of FACE. The
-      <strong class="text-stone-200">sovereign server image</strong> is neither: it
-      is the Runink CORE platform the two products run on, which is the answer to
+      <strong class="text-stone-200">Runink River Sovereignty Server (RIVER)</strong> is neither: it
+      is the server image carrying Runink CORE, the platform the two products run on, which is the answer to
       where your data is processed and who can see it.
     </p>
 
@@ -72,9 +72,9 @@ date: "2026-08-11T00:00:00Z"
 
     <div class="h-full bg-stone-800 p-8 rounded-lg shadow-lg border border-stone-700 flex flex-col">
       <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">The platform — not a product</div>
-      <h3 class="text-2xl font-bold text-white mb-3">Runink CORE on your own box</h3>
+      <h3 class="text-2xl font-bold text-white mb-3">Runink River Sovereignty Server (RIVER)</h3>
       <p class="text-stone-400 mb-8 flex-1">
-        The data-sovereign appliance image: the layer FACE and PULSE run on, so that
+        The server image that puts Runink CORE on your own box: the layer FACE and PULSE run on, so that
         your data and the reasoning over it never leave hardware you own. Provisioned
         per deployment, not offered as a public download.
       </p>
