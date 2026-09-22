@@ -234,7 +234,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
         },
         {
             "question": "Is there anything we can put in someone's hands today?",
-            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly. The sovereign server image is on the same page and is request-access, because it is the platform underneath rather than an app."
+            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly. The sovereign server image, the Runink River Sovereignty Server (RIVER), is on the same page and is request-access, because it is the platform underneath rather than an app."
         },
         {
             "question": "What does it cost?",
