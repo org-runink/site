@@ -1,0 +1,22 @@
+# Org-wide security gate: secret scan, workflow security lint, credential
+# checks and dependency review, reported as ONE status check,
+# "gatekeeper / gatekeeper", for the branch rule to require.
+# Checks, inputs and allowlisting: https://github.com/org-runink/.github
+name: gatekeeper
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: gatekeeper-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gatekeeper:
+    permissions:
+      contents: read
+    uses: org-runink/.github/.github/workflows/gatekeeper.yml@51313707c0e350b9710151208fc59139f5d3aabc # main
