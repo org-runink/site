@@ -84,12 +84,19 @@ image: "/images/brand/river-og.png"
       herding dog from the Runink mark, riding a log raft down the river.
     </p>
     <p class="text-lg text-ink-2 leading-relaxed mb-4">
-      <strong class="text-white">How you may use it.</strong> The mascot and the names
-      Runink and RIVER are Runink trademarks. They are not under an open-source licence.
-      You may show the mascot unchanged when you write or talk about RIVER or Runink.
-      Do not recolour or redraw it, do not use it for another product, and do not use it
-      in a way that suggests Runink backs you. For anything else, ask us first.
+      <!-- Terms summarise LicenseRef-Runink-Trademark as published in the river
+           repository (LICENSES/LicenseRef-Runink-Trademark.txt). Grant nothing here
+           that text does not grant. The owner may later choose a CNCF-style
+           press-use clause; until then, use needs written permission. -->
+      <strong class="text-white">Terms of use.</strong> The mascot is a Runink brand
+      asset. "Runink" and the Runink logo are Runink trademarks. All rights reserved:
+      no licence is granted to copy, change or share these files, or to use the marks,
+      except as part of unchanged RIVER releases built and published by Runink, or with
+      Runink's written permission. The licences that cover the rest of RIVER do
+      not apply to them. To ask for permission,
+      <a href="{{< contacturl >}}" class="text-signal underline decoration-signal/40 hover:decoration-signal">write to us</a>.
     </p>
+    <p class="text-sm font-bold uppercase tracking-[0.2em] text-signal mb-3">For press and partners with permission</p>
     <ul class="text-lg text-ink-2 leading-relaxed space-y-2">
       <li><a href="/images/brand/river-mascot.svg" download class="text-signal underline decoration-signal/40 hover:decoration-signal">River mascot, SVG</a> (4 KB, any size)</li>
       <li><a href="/images/brand/river-og.png" download class="text-signal underline decoration-signal/40 hover:decoration-signal">Share card, PNG</a> (1200 × 675)</li>
