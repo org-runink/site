@@ -77,6 +77,7 @@ date: "2026-08-11T00:00:00Z"
         The server image that puts Runink CORE on your own box: the layer FACE and PULSE run on, so that
         your data and the reasoning over it never leave hardware you own. Provisioned
         per deployment, not offered as a public download.
+        <a href="/river/" class="underline">More about RIVER</a>.
       </p>
       <a href="{{< contacturl >}}"
          class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide bg-signal-fill hover:bg-signal-fill-hover text-on-fill transition-colors">
