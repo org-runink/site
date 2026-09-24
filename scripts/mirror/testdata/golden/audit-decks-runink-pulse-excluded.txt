@@ -1,0 +1,16 @@
+runink-pulse: site 8 paras, mirror 17 paras
+  site -> mirror MISSING : 0  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 0  (stale prose still in the handout, excl. cover + furniture)
+
+--- cover block: mirror paragraphs 0..6 ---
+  COVER    # Runink PULSE
+  COVER    Cover blurb for the fixture.
+  COVER    *Page 1 — Cover*
+  COVER    ## Contents
+  COVER    - **Page 1** — Cover
+- **Page 2** — Contents
+- **Page 2** — What this paper is, and which part of it
+  COVER    *Page 2 — Contents*
+  FURNITURE *Page 2 — What this paper is, and which part of it runs*
+  FURNITURE *Page 3 — Alpha chapter*
+  FURNITURE *Pages 4–5 — Beta chapter*

@@ -1,0 +1,21 @@
+runink-face: site 8 paras, mirror 9 paras
+  site -> mirror MISSING : 8  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 7  (stale prose still in the handout, excl. cover + furniture)
+
+--- 8 paragraph(s) in the SITE but not the MIRROR ---
+
+[1] ## What this paper is, and which part of it runs
+
+[2] Opening prose for the fixture.
+
+[3] ## Alpha chapter
+
+[4] Alpha prose one.
+
+[5] ![alt text](figures/whitepapers/fixture.svg "Caption")
+
+[6] Alpha prose two.
+
+[7] ## Beta chapter
+
+[8] Beta prose.
