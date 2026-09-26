@@ -527,9 +527,26 @@
              `site.Sites` rather than `hugo.Sites`: this repo's CI pins Hugo
              0.147.3 and `hugo.Sites` did not exist until 0.156, so the newer
              spelling builds locally and fails the deploy. */}}
-        {{ $path := printf "/blog/whitepapers/%s" .paper }}
-        {{ $p := site.GetPage $path }}
-        {{ if not $p }}{{ $p = (index site.Sites 0).GetPage $path }}{{ end }}
+        {{/* A PRODUCT PAGE, WHEN THERE IS ONE, IS WHAT THE CARD OPENS.
+             `page` names it (/products/face, /products/core, /products/pulse,
+             /river); the paper is one click further, from the product page's own
+             "Read the detail" block. A card with no `page` — the joint CORE and
+             Atlas paper — still opens its paper, with the page count, as before.
+             A card may have a page and no paper (Runink River has no paper).
+             The product pages are English only, so the same default-language
+             fallback and language note apply to them as to the papers. */}}
+        {{ $p := false }}
+        {{ $isPage := false }}
+        {{ with .page }}
+          {{ $p = site.GetPage . }}
+          {{ if not $p }}{{ $p = (index site.Sites 0).GetPage . }}{{ end }}
+          {{ if $p }}{{ $isPage = true }}{{ end }}
+        {{ end }}
+        {{ if and (not $p) .paper }}
+          {{ $path := printf "/blog/whitepapers/%s" .paper }}
+          {{ $p = site.GetPage $path }}
+          {{ if not $p }}{{ $p = (index site.Sites 0).GetPage $path }}{{ end }}
+        {{ end }}
         {{ if $p }}
         {{ $foreign := ne $p.Language.Lang site.Language.Lang }}
         <li class="hp-prod__item">
@@ -538,7 +555,7 @@
             <p class="hp-prod__sub">{{ .sub }}</p>
             <p class="hp-prod__line">{{ .line }}</p>
             <span class="hp-prod__go">
-              {{ $.Params.products_cta }}{{ with $p.Params.source_pages }} &middot; {{ . }} {{ $.Params.products_pages_word | default "pages" }}{{ end }}{{ if $foreign }}{{ with $.Params.products_lang_note }} &middot; {{ . }}{{ end }}{{ end }}
+              {{ if $isPage }}{{ $.Params.products_page_cta | default "See the product" }}{{ else }}{{ $.Params.products_cta }}{{ with $p.Params.source_pages }} &middot; {{ . }} {{ $.Params.products_pages_word | default "pages" }}{{ end }}{{ end }}{{ if $foreign }}{{ with $.Params.products_lang_note }} &middot; {{ . }}{{ end }}{{ end }}
               <span aria-hidden="true">&rarr;</span>
             </span>
           </a>
