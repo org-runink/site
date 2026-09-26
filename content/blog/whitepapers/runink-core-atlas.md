@@ -9,20 +9,20 @@ product: "Runink CORE"
 subtitle: "A joint paper with Logical Leap's Atlas"
 jointly_with: "Logical Leap"
 partner_url: "https://logicalleap.io/atlas"
-description: "A joint paper from Runink and Logical Leap. CORE's Intelligence pages bring Atlas's oversight screens into CORE and fill them with the company's own data. This paper walks through each page: the question it answers, who uses it, and why it is worth having. It then shows how the rest of CORE backs the work with a second opinion, a record nobody can quietly edit, and a person who approves."
+description: "A joint paper from Runink and Logical Leap. CORE's Intelligence pages bring Atlas's oversight screens into CORE and fill them with the company's own data. This paper walks through each Atlas page: the question it answers, who uses it, and why it is worth having. It then shows how the rest of CORE backs the work with a second opinion, a record nobody can quietly edit, and a person who approves."
 weight: 40
 date: 2026-09-26T00:00:00Z
 source_pages: 22
 audience: "Finance, project, data, operations, audit, risk and compliance leaders"
-blurb: "Atlas, from Logical Leap, is a set of screens for watching capital spending and data quality. CORE runs those screens as its Intelligence pages, on the company's own hardware and the company's own data. This paper goes through each page in turn, then shows how the rest of CORE adds a second opinion, a record in which any edit shows, and a person's approval before anything changes."
+blurb: "Atlas, from Logical Leap, is a set of screens for watching capital spending and data quality. CORE runs those screens as its Intelligence pages, on the company's own hardware and the company's own data. This paper goes through each Atlas page in turn, then shows how the rest of CORE adds a second opinion, a record in which any edit shows, and a person's approval before anything changes."
 deck: |
   Atlas, from Logical Leap, is a set of screens for watching capital spending
   and the quality of the data behind it. Runink CORE runs software on machines
   a company owns, with a language model the company runs itself and a record
   of every change and who made it.
 
-  CORE's **Intelligence** pages are Atlas's screens, brought into CORE and fed
-  with the company's own records. This paper walks through each one: the
+  CORE's **Intelligence** pages bring Atlas's screens into CORE and feed them
+  with the company's own records. This paper walks through each Atlas page: the
   question it answers, the person who uses it, what it lets them do, and why
   that is worth having. Then it shows how the rest of CORE backs the work: a
   second, independent opinion on submitted findings, a record that anyone
@@ -286,7 +286,9 @@ pages. Changing anything, such as loading a feed, approving a rule change or pre
 button that reaches a company system, needs a named person on the right list. Every
 attempt to change something is recorded, refusals included.
 
-The chapters below follow the order of the menu.
+The chapters below follow the order of the menu. They cover the Atlas pages, and the
+Resolve and Deploy lineage pages that sit beside them. The Data audit page is described in
+the [Runink CORE paper](/blog/whitepapers/runink-core/#data-audit).
 
 ## The three dashboards: Analyst, CFO and PMO
 
