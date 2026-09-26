@@ -25,7 +25,7 @@ title: "Library"
 # link is still published. linkcheck.go cannot see this class of breakage.
 type: library
 layout: list
-description: "Four long documents on what Runink FACE, PULSE and CORE do, twelve worked scenarios, and shorter notes on the operational problems behind them."
+description: "Long documents on what Runink FACE, PULSE and CORE do, twelve worked scenarios, and shorter notes on the operational problems behind them."
 eyebrow: "For operations, supply chain, finance and compliance"
 headline: "Everything we have written down, in the order to read it."
 deck: "Start with a scenario if you want to know whether this fits your week, or with a paper if you want the mechanism in full. The scenarios are short and name the records involved; the papers are long and say where every claim stands."

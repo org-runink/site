@@ -6,26 +6,28 @@ title: "Libros blancos"
 # matter is per-file, so the English one does not cover these.
 type: whitepapers
 headline: "Documentos que empiezan por lo que puede demostrarse."
-description: "Documentos extensos sobre Runink FACE, sobre Runink PULSE — un producto distinto — y sobre la plataforma CORE en la que corren los dos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación."
+description: "Documentos extensos sobre Runink FACE, Runink PULSE y Runink CORE, tres productos distintos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación."
 deck: |
-  Cuatro documentos extensos. **Runink FACE** es el producto del que trata el
-  primero. **Runink PULSE** es un producto distinto, de análisis de mercado y
+  Documentos extensos, cada uno sobre un producto de Runink o sobre un acuerdo
+  con un socio. Los primeros tratan de **Runink FACE**. **Runink PULSE** es un producto distinto, de análisis de mercado y
   marketing, y su documento describe su propio trabajo, no el de FACE.
-  **Runink CORE** no es un producto: es la plataforma sobre la que corren los
-  dos, y es la respuesta honesta a dónde se procesan sus datos y quién puede
-  verlos. El cuarto es un documento conjunto de arquitectura con Atlas, de
-  Logical Leap.
+  **Runink CORE** es un producto por derecho propio, que se vende por separado.
+  Es la capa de operaciones que usted ejecuta en su propio hardware para
+  mantener en orden sus aplicaciones de Runink y sus propios datos, y la
+  respuesta honesta a dónde se procesan sus datos y quién puede verlos. Su
+  documento es donde este sitio lo describe. Los documentos conjuntos con Logical Leap tratan de las pantallas
+  de supervisión de Atlas, que funcionan dentro de CORE.
 
   No contienen casos de cliente, ni nombres, ni cifras de retorno de la
   inversión. Lo que explican es el mecanismo: qué mira el software, qué
   produce, quién lo aprueba y dónde se ejecuta todo.
 
-  Los cuatro documentos están escritos en inglés. Las páginas de este sitio
+  Los documentos están escritos en inglés. Las páginas de este sitio
   están en español; los documentos largos todavía no lo están.
 
   Donde un documento describe algo que hemos construido, lo dice con claridad.
-  Donde describe un acuerdo con el producto de otra empresa, dice qué mitad de
-  ese acuerdo funciona hoy. Nadie nos ha auditado contra SOC 2 ni ISO 27001, y
+  Donde describe un acuerdo con el producto de otra empresa, dice qué parte de
+  ese acuerdo es nuestra. Nadie nos ha auditado contra SOC 2 ni ISO 27001, y
   los documentos lo dicen en sus propias frases, no en una nota al pie.
 more:
   label: "Textos más breves"
@@ -33,7 +35,7 @@ more:
   link_text: "Todos los artículos"
   link_url: "/es/blog/"
 note: |
-  Los cuatro documentos se publican en inglés. Los enlaces de arriba llevan a
+  Los documentos se publican en inglés. Los enlaces de arriba llevan a
   la versión inglesa completa. Para una conversación en español, escriba a
   [paes@runink.org](mailto:paes@runink.org).
 next:

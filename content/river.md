@@ -36,7 +36,7 @@ image: "/images/brand/river-og.png"
       on a machine you own. Runink FACE and Runink PULSE run on core. Runink River is what core runs on.
     </p>
     <p class="text-lg text-ink-2 leading-relaxed">
-      It is not a product you buy on its own. It is the answer to a plain question:
+      It is not a product for sale. It is the answer to a plain question:
       where does my data sit, and who can read it? With Runink River, the answer is your own
       hardware, and the people you let in.
     </p>

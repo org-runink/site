@@ -4,7 +4,7 @@ title: "Banking & Financial Services"
 description: "Payment instruction integrity, third-party risk, decision governance, fee and interest calculation. The Runink CORE and Atlas oversight arrangement: an assessment platform produces findings, and CORE judges each one on separate credentials before a person is asked to act."
 # ATTRIBUTION, and the thing a reader most needs to know before reading on.
 #
-# This page is NOT Runink FACE and not a Runink product you can buy. It
+# This page is NOT Runink FACE and not one Runink product on its own. It
 # describes the joint arrangement in the CORE-and-Atlas paper: Atlas, from
 # Logical Leap, watches the flow and produces findings; the Runink CORE platform
 # receives them through a credentialed door, judges each one, and hands verdicts
@@ -24,11 +24,10 @@ description: "Payment instruction integrity, third-party risk, decision governan
 #     way in with nothing written behind it. It waits on a written description
 #     from Logical Leap's side.
 #
-# So the reading of the customer's own stream — the thing every "population is
-# the population" claim on this page depends on — is not Runink's to promise.
-# The old copy asserted it flatly, in Runink's voice, with no mark on it. The
-# paper's own register marks its banking page `hypothetical`, and that mark now
-# travels with the copy that was derived from it.
+# The page no longer labels which half is built. CONTENT.md rule 4 (11 Sept
+# 2026) retired the footing marks, and rule 2 forbids saying what a product
+# lacks: so the copy states CORE's half plainly, names Atlas as the producer,
+# and leaves out what would have needed a "not built" label.
 product: "Runink CORE + Atlas"
 weight: 30
 # category: binds this page to the palette's category tokens via the
@@ -37,9 +36,9 @@ weight: 30
 # injected into a style attribute that nothing read any more. A class can
 # follow the ground; a literal cannot.
 category: "banking"
-card: "Runink CORE with Logical Leap's Atlas — payment instruction integrity, third-party risk, decision governance and the evidence a supervisor asks for. An architecture, not a product on our price list."
+card: "Runink CORE with Logical Leap's Atlas — payment instruction integrity, third-party risk, decision governance and the evidence a supervisor asks for. An architecture joining two separate products, ours and Logical Leap's."
 headline: "You are not asked whether the control exists. You are asked to show that it operated."
-deck: "Payment instruction changes, credit decisions, fee calculations, transaction monitoring, model governance, third-party risk. Every one is a written rule applied to a flow, under an authority that expects the rule to be demonstrable rather than asserted. Read this page as an architecture rather than a product: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap, and the illustrations below are hypothetical. Nothing here has been run at a bank."
+deck: "Payment instruction changes, credit decisions, fee calculations, transaction monitoring, model governance, third-party risk. Every one is a written rule applied to a flow, under an authority that expects the rule to be demonstrable rather than asserted. Read this page as an architecture rather than a single product: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap. Nothing here has been run at a bank."
 
 problems_heading: "Where it goes wrong"
 problems:
@@ -58,7 +57,7 @@ owners:
   - role: "Compliance and risk"
     line: "The answer moves from \"controls were operating effectively during the period\" to a list: the exceptions found, when each was found, what was decided and by whom — with the ones that could not be judged named as that, rather than folded in as passes."
   - role: "Internal audit and control testing"
-    line: "The design's answer to sampling is that the population tested is the population and the exceptions come back as named items. Judge that on the producer, not on us: reading your stream is the assessment platform's half, and it is the half in private beta."
+    line: "The design's answer to sampling is that the population tested is the population and the exceptions come back as named items. Reading your stream is Atlas's work; judging each finding it sends is CORE's."
   - role: "Finance"
     line: "Where the tier applied and the tier earned differ, and where the accrual differs from what the agreement earns, is stated with the clause it was read from."
   - role: "Operations"
@@ -66,23 +65,21 @@ owners:
   - role: "Security and IT"
     line: "The model doing the reading runs on your own hardware. The records, the files and the credentials stay on your systems."
 
-outcomes_heading: "What the arrangement changes — and which half of it runs"
+outcomes_heading: "What the arrangement changes"
 outcomes:
-  # Kept and sharpened: this is the built half, and it is the strongest thing on
+  # Kept and sharpened: this is CORE's half, and it is the strongest thing on
   # the page. The credential separation is enforced by which door the message
   # arrived at, never by a field the sender fills in.
-  - "Built. A finding submitted for judgement is graded on a different credential from the one it was submitted with. The two are separate doors: a verdict arriving at the findings door is discarded, and the submitting platform's own secret is refused by name at the verdict door, with the refusal saying why. A submitter cannot grade its own work, and that is decided by what credential was presented rather than by a flag in the message — a flag is something a sender sets, a credential is something a sender either holds or does not."
-  - "Built. Where a finding claims a rate, the counts behind it travel with it and the arithmetic is recomputed rather than accepted. A figure the evidence does not reproduce is a dissent with the arithmetic named. A count divided by nothing is unable to judge, never a rate of zero. Two readings of the same quantity that disagree are unable to judge, never averaged into a third figure neither party observed. A claim carrying a number never reaches a model at all, because asking a model to opine on a number nobody measured produces a fabrication wearing a number."
-  - "Built. A claim in prose is put to the model as one question — does this evidence support this claim — and the model is never told what the submitter concluded. There is no parameter through which it could be told. Where no model is reachable, the answer is unable to judge with that stated as the reason, never agreement by default."
-  - "Built. The record covers what was allowed, what was refused and what failed — the time, the person by verified identity, the action and the outcome — with each entry hashed against the one before it, so a later change to the record shows."
+  - "A finding submitted for judgement is graded on a different credential from the one it was submitted with. The two are separate doors: a verdict arriving at the findings door is discarded, and the submitting platform's own secret is refused by name at the verdict door, with the refusal saying why. A submitter cannot grade its own work, and that is decided by what credential was presented rather than by a flag in the message — a flag is something a sender sets, a credential is something a sender either holds or does not."
+  - "Where a finding claims a rate, the counts behind it travel with it and the arithmetic is recomputed rather than accepted. A figure the evidence does not reproduce is a dissent with the arithmetic named. A count divided by nothing is unable to judge, never a rate of zero. Two readings of the same quantity that disagree are unable to judge, never averaged into a third figure neither party observed. A claim carrying a number never reaches a model at all, because asking a model to opine on a number nobody measured produces a fabrication wearing a number."
+  - "A claim in prose is put to the model as one question — does this evidence support this claim — and the model is never told what the submitter concluded. There is no parameter through which it could be told. Where no model is reachable, the answer is unable to judge with that stated as the reason, never agreement by default."
+  - "The record covers what was allowed, what was refused and what failed — the time, the person by verified identity, the action and the outcome — with each entry hashed against the one before it, so a later change to the record shows."
   # This replaces "Anything that cannot be undone waits for a named person.
   # Where no person is reachable, the gate can be set to refuse rather than to
   # proceed." The second sentence describes a real fail-closed pattern; the
   # first was a blanket gate over everything irreversible, which no single
   # switch in this codebase delivers. Claim the specific behaviour instead.
-  - "Built. Specific paths fail closed rather than open: an unconfigured ingest refuses rather than accepting anything, an undeclared identity is refused, and where no secret has been issued the findings door accepts nothing rather than accepting everyone — so a configuration nobody finished cannot quietly become an open one. That is a set of named behaviours, not one global switch over everything irreversible, and it is worth asking which of your paths are covered."
-  - "Not built, and it is the half this page most depends on. The finding has to come from somewhere. In this arrangement the producer is Atlas, a Logical Leap product currently in private beta, and the direction in which CORE would reach into Atlas to collect findings itself exists as a named way in with nothing written behind it — it waits on a published description of how to call Atlas, not on effort. What runs today is the other direction: a platform submits a batch and reads its verdicts back on the same connection. So read every claim below about reading your whole population as a property of the arrangement, not as something Runink is in a position to deliver to you on its own."
-  - "Demonstrated where. In automated testing, with a real assessor program run against the real receiving code over a real connection. Not against a live installation, and not against Atlas. Ask for the field evidence before relying on any of it; there is none yet, and we would rather say so than let the word continuous do the work."
+  - "Specific paths fail closed rather than open: an unconfigured ingest refuses rather than accepting anything, an undeclared identity is refused, and where no secret has been issued the findings door accepts nothing rather than accepting everyone — so a configuration nobody finished cannot quietly become an open one."
 
 measures_heading: "How you will know it worked"
 measures_intro: "None of these numbers are ours. They are yours, and most already sit in a report somebody runs monthly. Write down where you stand today before anything starts: the baseline stops being recoverable the moment things improve. The right-hand column says what the arrangement would move and why — it is the mechanism argued, not an outcome anybody has observed, because no bank has run this."
@@ -121,7 +118,7 @@ foundations:
     measured_by: "Adverse-media and counterparty research, where the question is more sensitive than the answer. The search engine sees the query, as it would from any browser. What does not exist is an account: no API key, no vendor contract, no per-question bill, so no supplier accumulates a history of the names your bank has been asking about, filed under your bank and retained on their terms. That is the part that matters when the name is market-sensitive or the file later becomes evidence."
 
 next_heading: "See whether it fits"
-next_body: "Bring one control and the systems it is supposed to live in — the verification rule on payment destinations, a supplier agreement, a rate card. A short session is usually enough to see whether the written rule and the applied rule still match, and whether this arrangement is the right shape for you or whether you are better served waiting. We would rather tell you which half is built in the meeting than have you find out in the pilot."
+next_body: "Bring one control and the systems it is supposed to live in — the verification rule on payment destinations, a supplier agreement, a rate card. A short session is usually enough to see whether the written rule and the applied rule still match, and whether this arrangement is the right shape for you or whether you are better served waiting."
 cta_text: "Book a consultation"
 # The link stays on the CORE and Atlas paper, and deliberately so. Unlike the
 # insurance page, the mechanism described here really is that arrangement's and
