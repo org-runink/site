@@ -128,10 +128,9 @@ cta_text: "Book a consultation"
 # not FACE's: two doors on separate credentials, eight deterministic gates,
 # recomputed arithmetic, unable-to-judge as a first-class verdict. Repointing it
 # at the FACE paper would have sent a banking reader to a logistics product.
-# What the paper does that this page did not is state on its own pages 12 to 14
-# which half runs — so the note now sends the reader to those pages by number.
+# The note sends the reader to the paper's chapter on what judging means.
 paper:
   text: "Read the CORE and Atlas paper"
   url: "/blog/whitepapers/runink-core-atlas/"
-  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the eight checks it passes before anything reaches a model, how the arithmetic is recomputed, and how a second judgement is formed on a separate credential. Read pages 12 to 14 first — they state exactly which half is built and which is drawn, and every other claim in the paper should be held against them. No case studies, no customer names, no return-on-investment figures, and no bank has run this."
+  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how the arithmetic is recomputed, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names, no return-on-investment figures, and no bank has run this."
 ---
