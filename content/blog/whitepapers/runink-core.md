@@ -10,7 +10,7 @@ subtitle: "The operations layer for companies that keep their own data"
 description: "What Runink CORE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx, Intelligence and FORGE, page by page, with the business value of each and what adopting it involves."
 weight: 20
 date: 2026-09-26T00:00:00Z
-source_pages: 22
+source_pages: 23
 audience: "Executive, technology, data and risk stakeholders"
 blurb: "The operations layer a company runs on its own machines. One console shows whether the platform is healthy and your changes shipped, what your AI models and agents are allowed to do, what your data holds and where spending goes wrong, and turns a written brief into a working application with a person approving each step."
 deck: |
@@ -35,14 +35,15 @@ register:
   - { page: 6,  page_end: 8, title: "DevEx: is the platform running, and did our changes ship" }
   - { page: 9,  page_end: 11, title: "DataEx: can our models and agents be trusted" }
   - { page: 12, page_end: 13, title: "Intelligence: what our data holds, and where it goes wrong" }
-  - { page: 14, title: "FORGE: from a written brief to a working application" }
-  - { page: 15, title: "On every screen" }
-  - { page: 16, title: "What it is built on, and why that matters commercially" }
-  - { page: 17, title: "Who CORE is for" }
-  - { page: 18, title: "What adopting CORE involves" }
-  - { page: 19, title: "The commercial model" }
-  - { page: 20, page_end: 21, title: "Answers to the questions we are usually asked" }
-  - { page: 22, title: "The next step" }
+  - { page: 14, title: "Resolve: what is in your data, and how it connects" }
+  - { page: 15, title: "FORGE: from a written brief to a working application" }
+  - { page: 16, title: "On every screen" }
+  - { page: 17, title: "What it is built on, and why that matters commercially" }
+  - { page: 18, title: "Who CORE is for" }
+  - { page: 19, title: "What adopting CORE involves" }
+  - { page: 20, title: "The commercial model" }
+  - { page: 21, page_end: 22, title: "Answers to the questions we are usually asked" }
+  - { page: 23, title: "The next step" }
 ---
 
 ## Executive summary
@@ -253,25 +254,30 @@ broke". This page names the hop. It also shows the security lead exactly which
 doors lead to which services, from a live reading rather than a diagram drawn
 last year.
 
-### Cluster › Runners
+### Platform audit
 
-**The question.** What reaches our data sources on CORE's behalf, and is it
-healthy?
+**The question.** Does the platform pass its checks today?
 
-**Who uses it.** Platform engineers and the security lead.
+**Who uses it.** The engineering lead, the security lead and the compliance
+officer.
 
-**What it shows.** A runner is the worker that reaches out to a company data
-source when an administrator asks it to. The built-in runner is listed first:
-what it is doing now, what it last did, how long it has been up, and which data
-connections are tied to it. Its health is measured on the runner itself, never
-by contacting a data source. Connections tied to a runner nobody holds are
-listed on their own. An administrator can enrol a further runner with a
-one-time ticket, and can revoke a runner or its access token, each after a
-confirmation that says what will happen.
+**What it shows.** Each part of the console has an audit page of its own: an
+assessment, not a log. The Audit chain records who did what; an audit page
+says whether things pass. This one gives a single verdict over the platform's
+checks, each read from a page the console already has: whether the Audit
+chain is intact, whether the running services are ready, whether what is
+running matches what was written down, whether the standing health check is
+watching, the latest code, dependency and compliance reviews, the compliance
+controls, and whether the assessment helpers have run. A check that could not
+be read goes into one short list of what was not measured, with the reason,
+and the verdict says how many were left out. It is never counted as a pass.
+From here a person can re-check the Audit chain, or start a review through a
+playbook the company has already written, after a confirmation. Past reviews
+are listed underneath.
 
-**Why it matters.** The security lead can see every worker allowed to touch
-company data, what each one is tied to, and who can add or remove one. Checking
-their health never touches the data itself.
+**Why it matters.** "Are we in good shape?" gets one answer with its evidence,
+instead of a tour of ten pages. And because an unread check is named rather
+than hidden, a green verdict means everything was looked at.
 
 ### GitOps
 
@@ -401,7 +407,9 @@ order of severity, with the evidence attached.
 DataEx is short for data experience. These pages are about the AI inside the
 platform: which models run, which agents use them, what those agents are allowed
 to do, and whether their findings hold up. An agent here means an automated
-helper that reads material and proposes or takes a step.
+helper that reads material and proposes or takes a step. DataEx is also where
+the connections to company systems, and the runners that reach them, are
+created and looked after.
 
 ### Model cards
 
@@ -456,6 +464,55 @@ with its reason.
 **Why it matters.** Because the models run on the company's own hardware, using
 them more does not open a bill that grows with every question. This page shows
 where that capacity goes, so sizing is a reading, not a guess.
+
+### Connections
+
+**The question.** Which of our systems does CORE know how to reach, and who may
+change that?
+
+**Who uses it.** The head of data, platform engineers and the security lead.
+
+**What it shows.** Every connection to a company system, one row each: what
+kind of system it is, whether its credentials are in place, which runner
+reaches it and that runner's state, and when it was last tested. This is the
+one place a connection is created, changed, re-keyed, tested or removed; the
+other pages that need one open the same dialog. Creating one takes three
+steps: choose the kind of system and fill in its form, choose the runner that
+will reach it, then review, test and save. The test asks one question, whether
+the system answers, and only after a confirmation. Credentials are held apart
+from the settings and are never shown back once saved. Removing a connection
+names every other connection that shares its credentials first. Nothing on the
+page reaches a system when it opens.
+
+**Why it matters.** When each application reaches company systems its own way,
+the same warehouse ends up connected several times, under several accounts.
+One list, one dialog and one record turn "what reaches our finance warehouse,
+and under whose account?" into a screen. Only people on an explicit list may
+change a connection, and every attempt, refusals included, is recorded.
+
+### Runners
+
+**The question.** What reaches our data sources on CORE's behalf, and is it
+healthy?
+
+**Who uses it.** Platform engineers and the security lead.
+
+**What it shows.** A runner is the worker that reaches out to a company data
+source when an administrator asks it to. The Runink-managed runner is listed
+first and cannot be revoked. A company can also add runners of its own, on its
+own network: an administrator gives each one a name and an address, and the
+runner uses a one-time ticket to obtain its certificate. CORE then connects to
+it at that address, and both ends prove who they are before anything moves.
+For each runner the page shows whether it is connected, when it was last seen,
+its version, when its certificate expires and how much work it has in hand.
+Its health is measured on the runner itself, never by contacting a data
+source. An administrator can connect to a runner now, issue a new ticket,
+change its address or revoke it, each after a confirmation that says what will
+happen.
+
+**Why it matters.** The security lead can see every worker allowed to touch
+company data, where it runs, and who can add or remove one. Checking their
+health never touches the data itself.
 
 ### Trust › Harness
 
@@ -528,6 +585,26 @@ console's own sign-in is set up.
 often without an obvious error. This page shows the expiry before it arrives,
 and a single verdict replaces comparing fingerprints by eye.
 
+### Model & agent audit
+
+**The question.** Do our models and agents pass their checks today?
+
+**Who uses it.** The head of data, the risk officer and the compliance officer.
+
+**What it shows.** The same shape as the Platform audit, for the AI: one
+verdict over whether each model's health matches its model card, whether each
+application's agents are covered by written rules for their answers, the
+autonomy settings, the open findings on the Harness, and the independent
+judgements. What could not be read is listed with its reason, never counted
+as a pass. A person can start the independent assessor through an existing
+playbook, after a confirmation; acting on a finding stays on the Harness,
+which the page links to. The assessor's past runs and the actions taken on
+findings are listed underneath.
+
+**Why it matters.** When a board or a regulator asks whether the company's AI
+is under control, the answer is one page, built from the same readings the
+detailed pages show.
+
 ### Judgements
 
 **The question.** Does an independent assessor agree with the findings we have
@@ -549,9 +626,11 @@ The joint paper on CORE and Atlas describes how that assessor reaches a verdict.
 ## Intelligence: what our data holds, and where it goes wrong
 
 The Intelligence pages look outward, at the company's own data and spending.
-They are the Atlas oversight pages, built with our partner Logical Leap, running
-inside CORE on CORE's own data. Every figure on them is computed from the
-company's own records and feeds, or shown as absent with the reason.
+Most of them are the Atlas oversight pages, built with our partner Logical Leap,
+running inside CORE on CORE's own data. Resolve, which reads the structure of
+the company's systems, is a Runink capability that CORE shares with FACE.
+Every figure on these pages is computed from the company's own records and
+feeds, or shown as absent with the reason.
 
 This section summarises each page. The joint paper,
 [Runink CORE and Atlas](/blog/whitepapers/runink-core-atlas/), covers them in
@@ -642,7 +721,10 @@ the problems in it?
 **Who uses it.** Data stewards, the head of data and the compliance officer.
 
 **What it shows.** *Lineage* draws the path from each source system to the
-reports built on it, with the trouble spots marked. *Remediation* is the queue
+reports built on it, with the trouble spots marked. It also shows the
+relationships Resolve read from the systems themselves: the keys a source
+declares between its tables, the domains that span more than one source, and
+which datasets are read and written. *Remediation* is the queue
 of proposed fixes. For capital findings a person can approve, test or dismiss
 each one, and every decision is kept as an audit trail. An approved fix is a
 recorded decision; the change itself is made at the source system.
@@ -650,23 +732,62 @@ recorded decision; the change itself is made at the source system.
 **Why it matters.** People trust a report more when they can see where its
 numbers came from. And every fix decision has a name and a reason attached.
 
-### Sources, Resolve and Settings
+### Resolve
 
-**The question.** Which systems may CORE read, and what do they hold?
+**The question.** What is actually in our systems, and how does it all connect?
+
+**Who uses it.** The head of data, data stewards and the security lead.
+
+**What it shows.** Resolve reads the structure of the company's systems when an
+administrator asks it to, and draws them as one map of business domains and the
+links between them. It has its own chapter after this one, because several
+other pages are built on what it reads.
+
+**Why it matters.** Lineage, the data-quality checks and the personal-data
+checks all start from what Resolve recorded, so the map a steward reads and
+the checks an auditor reads describe the same estate.
+
+### Sources and Settings
+
+**The question.** Which systems may CORE read, and who may change that?
 
 **Who uses it.** The head of data and the security lead.
 
-**What it shows.** *Sources* lists the systems CORE is allowed to read from, and
-lets an administrator add one. *Resolve* is the map of the data estate: what
-each source holds, how they line up, and how they are used. CORE reaches a
-source only when an administrator asks it to, reads without changing anything,
-and keeps descriptions of the data rather than copies of it. *Settings* holds
-the workspace choices for the Intelligence pages, stored on the server and
-recorded.
+**What it shows.** *Sources* shows one card for each system CORE is connected
+to: the business domain it was grouped into, whether it answered when last
+checked, and a switch that grants it to the Intelligence workspace. Granting
+records a permission without reaching the system. Connections themselves are
+created and changed on DataEx › Connections, and each card links there.
+*Settings* holds the workspace choices for the Intelligence pages, stored on
+the server and recorded.
 
 **Why it matters.** The security lead can answer "what reaches this system, and
-on whose say-so" from a screen. Reading only when asked, and keeping
-descriptions rather than copies, keeps the company's data where it already is.
+on whose say-so" from a screen.
+
+### Data audit
+
+**The question.** Does our data pass its checks today, and can we check it
+again now?
+
+**Who uses it.** The head of data, data stewards and the security lead.
+
+**What it shows.** One verdict over the data checks: whether each source
+answered its last test, whether the estate has been mapped, where what a
+source declares disagrees with what its data shows, the data-quality score for
+capital spending, and the data-governance findings. What could not be read is
+listed with its reason. From here an administrator can run an audit, each one
+an action CORE already has: test a source, explore it, read its access
+patterns, map the estate, or pull a capital-spending feed. Every run is
+confirmed first and recorded. This is also where the runner for an audit is
+chosen: Runink managed by default, or one of the company's own registered
+runners. The choice travels with the request and is kept in the record. A
+person can also start the data-governance helper through an existing
+playbook. Past map runs, capital-spending scans and data-governance runs are
+listed underneath.
+
+**Why it matters.** A steward can re-check the data on demand, from one page,
+and a security lead can see exactly what each audit reached and which runner
+it named.
 
 ### Deploy lineage
 
@@ -682,6 +803,117 @@ software releases, not data; data lineage has its own page above.
 
 **Why it matters.** "Is my fix live?" is one of the most asked questions in any
 engineering team. This page answers it without a message to the platform team.
+
+## Resolve: what is in your data, and how it connects
+
+Most companies believe they have an inventory of their data, and on
+inspection do not. The list was drawn once, by hand, and the systems moved on
+without it. Resolve builds that inventory from the systems themselves, when an
+administrator asks, and keeps nothing a security reviewer would object to.
+
+Resolve is one capability that Runink CORE and Runink FACE share: the same
+page, doing the same work, in both products. In CORE it sits in the menu under
+Intelligence › Resolve.
+
+### What it lets you do
+
+There are four actions. Each one is started by a named administrator, and
+each asks for a confirmation that says what will be reached and what will be
+kept.
+
+- **Test** a source: does it answer?
+- **Explore** a source, to record its structure: its datasets and columns, the
+  type each column is declared as, the keys that link its tables, and row
+  counts where the source states them. It also records which columns the
+  source itself marks as personal data, and whether it masks them. Where the
+  source can count them, Explore notes how many values in a column are empty
+  and how many are different.
+- **Read access patterns** over a window the administrator chooses: how many
+  times each dataset was read and written, and by how many distinct accounts.
+  These are counts. The accounts are never named.
+- **Map the estate** — the estate being every system that holds company data.
+  The map covers the sources granted to the Intelligence workspace, or every
+  source Resolve can read when none are granted.
+
+### How the map is made
+
+**It works out what each dataset is about.** Not which system it came from,
+but what it *means*: customers, orders, payments, products, staff. It reads
+that from the names of the tables and columns. So a customer table in the
+billing system and a customer table in the support system land in the same
+business domain, without anyone keeping a mapping by hand.
+
+**It draws the links, and says what each one rests on.** The result is best
+pictured as a mindmap of the company's data: datasets fall into domains, and
+the lines between them are the real relationships. Every line is marked with
+its evidence. It was *declared* by the source, as a key the system itself
+defines. Or it was *inferred*, from a declared key, from shared vocabulary or
+from matching values. Or it is a *guess*, such as two rare columns with the
+same name and nothing declared, and it is called a guess. There is no
+confidence score to blur the three together.
+
+**It puts what it could not read first.** A source that did not answer, or a
+view it had no permission to see, is listed at the top with the reason the
+source gave. Datasets that fit no domain are listed on their own, rather than
+forced into one.
+
+**It compares what is declared with what is there.** Where a source declares
+a relationship and its data contradicts it, that is *drift*. Where the data
+shows a relationship nothing declares, that is *shadow*. Where a declared key
+points at something that is not in the estate, that is *missing*.
+
+**The map is worked out by rules, not written by a model.** The domains, the
+links and the comparisons come from fixed rules applied to names, declared
+keys and counts. The same estate gives the same map every time, and a busy or
+unavailable language model cannot change it or hold it up.
+
+### What it keeps, and when it reaches a system
+
+Resolve keeps structure and counts only. No cell value, sample row, smallest
+or largest value, account name or credential is kept or shown. A credential
+is opened for one call and then dropped. Every call only reads, and each has a
+time limit.
+
+Opening the page reaches nothing. The page shows what the last action
+recorded, and only the four actions reach a source — never a timer, and never
+a page load. Each action names its runner, the worker described under
+DataEx › Runners: the one the administrator chose for that action, or the one
+the source is set to use. Every action is written to the Audit chain with its
+outcome, and refusals are written too.
+
+### What it feeds
+
+**Lineage.** When an action finishes, the relationships it read go onto the
+Lineage page: the keys a source declares between its tables, the domains that
+span more than one source, and which datasets were read and written.
+
+**The data-governance checks.** CORE's data-governance helper assesses data
+quality and personal-data exposure from what Explore and Read access patterns
+recorded. On quality, it flags a column declared as never empty that holds
+empty values, and a table with no declared primary key. On personal data, it
+flags columns whose name and declared type mark them as likely personal data
+and that carry no mask from the source, and such columns when more than ten
+distinct accounts read them. Findings name the column, never a value in it.
+These checks are rules, with no model involved, and they appear on Reviews
+under data governance. A source nobody has explored is reported as not yet
+explored, never as clean.
+
+### Where the value is
+
+**In an inventory that is read, not remembered.** The map comes from the
+systems as they are today, on request, so it does not age the way a diagram
+does.
+
+**In evidence that is named.** A steward can tell a key the source declared
+from a link the map inferred, and both from a guess, before relying on any of
+them.
+
+**In one reading behind several pages.** The map, the lineage and the
+governance checks all start from the same recorded description, so they
+cannot quietly disagree about what the estate holds.
+
+**In a short security review.** The security lead can read, on screen,
+exactly what was reached, by whom, on which runner, and what was kept.
 
 ## FORGE: from a written brief to a working application
 
@@ -872,7 +1104,7 @@ a question the next step assumes.
 | --- | --- | --- | --- |
 | 1 | One workstation | Run the whole platform on it with one command | Whether the screens can be trusted: which ones say they did not measure something |
 | 2 | Machines you own and your sign-in arrangement | Put the platform on them with one command, in the same shape | Nothing new. Same screens, more room |
-| 3 | One data source you would like to stop worrying about | Add it on Sources, and read what Resolve shows about it | Whether CORE reads your data the way your security lead needs |
+| 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what Resolve shows about it | Whether CORE reads your data the way your security lead needs |
 | 4 | Somebody outside the platform team | Have them request a deployment, and watch it expire | Whether useful work happens without the platform team in the loop |
 | 5 | One code repository | Switch on one helper and watch it before arming it | Whether the helpers save real time, judged on what they would have published |
 
@@ -891,7 +1123,8 @@ things that change are size and who has access.
 
 ### Step three: connect one real data source
 
-Choose one system and add it as a source. Read what CORE learned about it. Then
+Choose one system and add it on DataEx › Connections. Explore it in Resolve
+and read what CORE kept about it: structure and counts, and no values. Then
 sign in as someone who is not on the permitted list and try to change it. Read
 the record the refusal leaves in the Audit chain. That is the interaction to show
 your security lead.

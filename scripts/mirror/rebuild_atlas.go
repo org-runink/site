@@ -28,6 +28,11 @@ import (
 	"strings"
 )
 
+// atlasLegacyFold is how chapter one was titled when it was first folded into
+// the cover; a mirror older than the current site source still starts its fold
+// with it.
+const atlasLegacyFold = "**What this paper is, and which part of it runs.**"
+
 // AtlasPaper is the name the mirror prints in its own page markers.
 const AtlasPaper = "Runink CORE and Atlas"
 
@@ -122,7 +127,23 @@ func BuildAtlas(site, orig string) (text string, totalPages, chapterCount int, e
 	if old[0] != "# "+AtlasPaper {
 		return "", 0, 0, fmt.Errorf("unexpected first line in the mirror")
 	}
-	titleBlock := strings.Join(old[0:16], "\n") // H1, headline, audience, rule, deck x2
+	// The title block (H1, headline, audience, rule, deck) is everything above
+	// the folded chapter one, found by content. It used to be a fixed
+	// sixteen-line slice, which broke the moment the deck changed length.
+	foldAt := -1
+	foldHead := "**" + chapters[0].Heading + ".**"
+	for i, l := range old {
+		if strings.HasPrefix(l, foldHead) || strings.HasPrefix(l, atlasLegacyFold) {
+			foldAt = i
+			break
+		}
+	}
+	if foldAt < 1 {
+		return "", 0, 0, fmt.Errorf("the folded chapter one is not where it was")
+	}
+	// Less the one blank line that separates it from the fold, which the join
+	// below puts back: the slice the fixed offset took, byte for byte.
+	titleBlock := strings.Join(old[0:foldAt-1], "\n")
 
 	// Anchored on content, not on a line offset. old[30:32] worked against the
 	// pre-sync file and silently stopped pointing at the contacts once the
@@ -143,9 +164,6 @@ func BuildAtlas(site, orig string) (text string, totalPages, chapterCount int, e
 		end = len(old)
 	}
 	contacts := strings.Join(old[ci:end], "\n") // Runink / Logical Leap contact lines
-	if !strings.HasPrefix(old[17], "**What this paper is, and which part of it runs.**") {
-		return "", 0, 0, fmt.Errorf("the folded chapter one is not where it was")
-	}
 	if len(old) < 3 {
 		return "", 0, 0, fmt.Errorf("the closing colophon moved")
 	}
