@@ -463,19 +463,29 @@ paper:
 # from each whitepaper's own source_pages, and the layout resolves the title and
 # URL from the page itself rather than repeating them, so a renamed or moved
 # paper cannot leave a wrong number or a dead row behind.
+#
+# `page` (2026-09-26): a product with its own page opens that page, and the paper
+# is one click further, from the page's "Read the detail" block. Runink River has a
+# page and no paper; the joint CORE and Atlas paper has no page and still opens the
+# paper. `sub` carries the meaning of a product name where one is defined (FACE,
+# PULSE, RIVER), in English in every language; CORE's is a description instead.
 products_heading: "Runink products you may have heard of"
-products_intro: "Three products and one joint paper. Each one is a long document that explains the mechanism rather than a brochure — what the software looks at, what it produces, who approves it, and where it runs."
+products_intro: "Four products, each with its own page, and one joint paper. The pages say what each product is; the papers behind them explain the mechanism: what the software looks at, what it produces, who approves it, and where it runs."
 products_cta: "Read the paper"
+products_page_cta: "See the product"
 products:
-  - paper: "runink-face"
+  - page: "/products/face"
+    paper: "runink-face"
     name: "Runink FACE"
     sub: "Fulfilment Autonomous Claims Engine"
     line: "The one this page is about. Held entries, claims still inside their window, cold chain read after the write-off, demand that grew on the way up the chain."
-  - paper: "runink-pulse"
+  - page: "/products/pulse"
+    paper: "runink-pulse"
     name: "Runink PULSE"
     sub: "Prescriptive Unified Lead & Social Engine"
     line: "A separate product, not a FACE feature. The audit, the research, the prospecting and the material a marketing team publishes, on one application the team operates directly."
-  - paper: "runink-core"
+  - page: "/products/core"
+    paper: "runink-core"
     name: "Runink CORE"
     sub: "The operations layer, on hardware you own"
     line: "A product in its own right, sold separately. It is the answer to where your data is processed and who can see it, which is the question every other page here eventually arrives at."
@@ -483,6 +493,10 @@ products:
     name: "Runink CORE and Atlas"
     sub: "A joint paper with Logical Leap"
     line: "Atlas's oversight screens, running inside CORE on your own data, with a second opinion built in for the findings an outside platform submits. Written with Logical Leap rather than about them."
+  - page: "/river"
+    name: "Runink River"
+    sub: "Raft-Integrated Validated Event Runtime"
+    line: "A developer workstation on s6: KDE Plasma, an encrypted ZFS root, a default-deny firewall and a graphical installer, for data and AI work on hardware you own."
 products_more_text: "How we build it, and who"
 products_more_url: "/company"
 

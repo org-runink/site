@@ -1,0 +1,51 @@
+{{/*
+  /products/ — the product switchboard (content/products/_index.md). One card per
+  product, in the product-page design (assets/css/product.css, scoped to .rp). The
+  cards are front matter, not a range over the section, so /river/ (which lives at the
+  site root) can sit beside the three pages under /products/, and the order is the one
+  the file sets.
+*/}}
+{{ define "main" }}
+{{- $css := resources.Get "css/product.css" | minify | fingerprint -}}
+{{- $pf := resources.Get "fonts/PlayfairDisplay-Italic-var.woff2" -}}
+{{- $dog := resources.Get "images/brand/runink-dog-head.svg" -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+<style>
+@font-face{font-family:"Playfair Rp";src:url("{{ $pf.RelPermalink }}") format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
+.rp{--rp-dog:url("{{ $dog.RelPermalink }}")}
+</style>
+<div class="rp">
+  <section class="rp-hero rp-hero-short" aria-labelledby="rp-hero-title">
+    <div class="rp-index-head">
+      <p class="rp-lockup"><span class="rp-dog" aria-hidden="true"></span><span>Runink</span></p>
+      <h1 id="rp-hero-title" class="rp-title">{{ .Title }}</h1>
+      {{ with .Params.intro }}<p class="rp-sub">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+  <section class="rp-index">
+    <ul class="rp-index-list">
+      {{ range .Params.items }}
+      <li>
+        <a class="rp-paper rp-index-card" href="{{ .url | relURL }}" data-print="{{ .url | absURL }}">
+          <span class="rp-index-name">
+            {{ with .logo }}<img class="rp-logo" src="{{ . | relURL }}" alt="" width="44" height="44">{{ else }}<span class="rp-dog" aria-hidden="true"></span>{{ end }}
+            <b>{{ .name }}</b>
+          </span>
+          <small class="rp-index-meaning">{{ .meaning }}</small>
+          <span>{{ .line }}</span>
+          <em>See {{ .name }} &rarr;</em>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  <section class="rp-final">
+    <h2>Not sure which one fits?</h2>
+    <p>Tell us what is costing you, in your own words, and we will say which product addresses it, or that none does.</p>
+    <p class="rp-tagline">Data You Can Trust. Decisions You Can Defend.</p>
+    {{ $href := partial "contact-url.html" (dict "url" "/#contact" "page" .) }}
+    <div class="rp-cta rp-cta-center"><a class="rp-btn rp-btn-primary" href="{{ $href }}" data-print="{{ $href | absURL }}">Book a consultation</a></div>
+  </section>
+  <p class="rp-print-mark">runink.org{{ .RelPermalink }}</p>
+</div>
+{{ end }}

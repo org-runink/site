@@ -27,6 +27,16 @@ Licensed under the SIL Open Font License, Version 1.1 — https://scripts.sil.or
 
 Files: `FiraCode-Regular.woff2`, `FiraCode-Medium.woff2`
 
+## Playfair Display Italic
+
+Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display).
+Licensed under the SIL Open Font License, Version 1.1 — https://scripts.sil.org/OFL
+
+File: `PlayfairDisplay-Italic-var.woff2` (latin subset, variable weight 400–700), from the
+owner's 2026-09-26 brand pack. Used only by the product pages (`layouts/_default/product.html`,
+`layouts/products/list.html`), which publish and declare it themselves, so it is outside the
+count `partials/rk-fonts.html` asserts against `tokens.css`.
+
 ## Licence terms relied on
 
 The OFL permits redistribution, modification (subsetting counts) and embedding in a
