@@ -9,11 +9,13 @@ description: "Runink River is the Runink sovereignty server: the server image th
 # cropped at both sides; a 1200x675 one passes through without a crop. The PNG
 # itself stays downloadable from the brand-assets block below.
 #
-# How it was made, so it can be made again: the mascot SVG rendered at 520px
-# with rsvg-convert, composited onto a 1200x675 #fdf5e6 ground with magick,
+# How it was made, so it can be made again: the mascot SVG (M2) rendered at
+# 520px with rsvg-convert, composited at +40+77 onto a 1200x675 #fdf5e6 ground
+# with magick,
 # "Runink River" set in Fira Sans Condensed SemiBold (the wordmark face,
-# DESIGN.md §9) and "The Runink sovereignty server" in Fira Sans Condensed Book, then
-# quantised to a 64-colour PNG8. About 16 KB.
+# DESIGN.md §9; 104pt, baseline +572+374), a #f4978e rule at 574,404-880,416, and
+# "The Runink sovereignty server" in Fira Sans Condensed Book (38pt, +572+472),
+# then quantised to a 64-colour PNG8. About 25 KB.
 image: "/images/brand/river-og.png"
 # Why this page exists. Runink River had one card on /downloads/ and no page of its
 # own, so the mascot had nowhere to live. This page is linked from that card;
@@ -40,12 +42,12 @@ image: "/images/brand/river-og.png"
     </p>
   </div>
   <figure class="md:col-span-2 flex flex-col items-center">
-    <div class="rounded-full bg-ink/5 border border-ink/10 p-8 md:p-10">
-      <img src="/images/brand/river-mascot.svg" width="320" height="320"
-           alt="The Runink River mascot: a cream, line-drawn herding dog standing on a raft of three logs, floating on a pale blue river."
-           class="w-56 h-56 md:w-72 md:h-72">
+    <div class="rounded-full bg-ink/5 border border-ink/10 p-6 md:p-8">
+      <img src="/images/brand/river-mascot.svg" width="208" height="208"
+           alt="The Runink River mascot: a brown-and-white cartoon puppy grinning over a raft of three logs, floating on a pale blue river."
+           class="w-40 h-40 md:w-52 md:h-52">
     </div>
-    <figcaption class="mt-4 text-sm text-ink-2">The Runink River dog: the Runink herding dog on a raft.</figcaption>
+    <figcaption class="mt-4 text-sm text-ink-2">The Runink River pup: the Runink herding dog as a puppy, on a raft.</figcaption>
   </figure>
 </div>
 {{< /section-container >}}
@@ -81,7 +83,8 @@ image: "/images/brand/river-og.png"
     <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">Brand assets</h2>
     <p class="text-lg text-ink-2 leading-relaxed mb-4">
       The Runink River dog is the mascot for Runink River and the people who build on it. It is the
-      herding dog from the Runink mark, riding a log raft down the river.
+      herding dog from the Runink mark as a brown-and-white puppy, grinning over the
+      front of a log raft on its way down the river.
     </p>
     <p class="text-lg text-ink-2 leading-relaxed mb-4">
       <!-- Terms summarise LicenseRef-Runink-Trademark as published in the river
@@ -98,14 +101,15 @@ image: "/images/brand/river-og.png"
     </p>
     <p class="text-sm font-bold uppercase tracking-[0.2em] text-signal mb-3">For press and partners with permission</p>
     <ul class="text-lg text-ink-2 leading-relaxed space-y-2">
-      <li><a href="/images/brand/river-mascot.svg" download class="text-signal underline decoration-signal/40 hover:decoration-signal">Runink River mascot, SVG</a> (4 KB, any size)</li>
+      <li><a href="/images/brand/river-mascot.svg" download class="text-signal underline decoration-signal/40 hover:decoration-signal">Runink River mascot, SVG</a> (6 KB, any size)</li>
+      <li><a href="/images/brand/river-mascot.png" download class="text-signal underline decoration-signal/40 hover:decoration-signal">Runink River mascot, PNG</a> (512 × 512, transparent)</li>
       <li><a href="/images/brand/river-og.png" download class="text-signal underline decoration-signal/40 hover:decoration-signal">Share card, PNG</a> (1200 × 675)</li>
     </ul>
   </div>
   <div class="grid grid-cols-2 gap-4" aria-hidden="true">
     <div class="rk-swatch-print rounded-xl p-4" style="background:#fdf5e6"><img src="/images/brand/river-mascot.svg" width="160" height="160" alt="" class="w-full h-auto"></div>
     <div class="rk-swatch-print rounded-xl p-4" style="background:#1d2b3a"><img src="/images/brand/river-mascot.svg" width="160" height="160" alt="" class="w-full h-auto"></div>
-    <p class="col-span-2 text-sm text-ink-2">On light and on dark. The cream fill and the dark outline carry it on either.</p>
+    <p class="col-span-2 text-sm text-ink-2">On light and on dark. The dark outline and the cream and brown fills carry it on either.</p>
   </div>
 </div>
 {{< /section-container >}}
