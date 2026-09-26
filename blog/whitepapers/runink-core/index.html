@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-full" data-ground="console">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    <title>Runink CORE — The operations layer for companies that keep their own data | Runink</title>
+
+    <meta name="description" content="What Runink CORE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx, Intelligence and FORGE, page by page, with the business value of each and what adopting it involves.">
+    <meta name="author" content="Runink">
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta property="og:title" content="Runink CORE — The operations layer for companies that keep their own data | Runink">
+    <meta property="og:description" content="What Runink CORE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx, Intelligence and FORGE, page by page, with the business value of each and what adopting it involves.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/whitepapers/runink-core/">
+    <meta property="og:site_name" content="Runink">
+    <meta property="og:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Runink CORE — The operations layer for companies that keep their own data | Runink">
+    <meta name="twitter:description" content="What Runink CORE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx, Intelligence and FORGE, page by page, with the business value of each and what adopting it involves.">
+    
+    <meta name="twitter:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="canonical" href="https://runink.org/blog/whitepapers/runink-core/">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSans-Book.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSansCondensed-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.670a95826064ac262ed90ed522e7e64c2f9361f5f0349a2d36e0a094039b0a63.css">
+
+    
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/main.min.93ab0ffc4a9ee30fd4284fc4b6b3e4f7d3fae2747789c2e18890b8e9358f8816.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/whitepaper.min.2f99212768da1aa490bf165a10b9d166ffc165758d4f843a773427e851c33477.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/blog/whitepapers/runink-core/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Shorter notes",
+          "item": "https://runink.org/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Whitepapers",
+          "item": "https://runink.org/blog/whitepapers/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  4 ,
+          "name": "Runink CORE — The operations layer for companies that keep their own data"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/blog/whitepapers/runink-core/"
+  },
+  "headline": "Runink CORE — The operations layer for companies that keep their own data",
+  "description": "What Runink CORE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx, Intelligence and FORGE, page by page, with the business value of each and what adopting it involves.",
+  
+  
+  "datePublished": "2026-09-26T00:00:00Z",
+  "dateModified": "2026-09-26T13:06:48-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+
+    
+    <a class="wp-skip" href="#wp-main">Skip to the paper</a>
+
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=The%20Runink%20CORE%20paper#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=The%20Runink%20CORE%20paper#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    <div class="pt-20" id="wp-main" tabindex="-1">
+        
+        
+<main id="content">
+<div class="wp">
+  <header class="wp-hero">
+    <p class="wp-hero-eyebrow wp-util">
+      <span translate="no">Runink CORE</span>
+      <span aria-hidden="true">/</span>
+      <span>Whitepaper</span>
+      
+    </p>
+
+    <div class="wp-hero-title">
+      <h1>Run your software, your AI and your data on your own machines, and see all of it from one screen.</h1>
+      <p class="wp-hero-sub">The operations layer for companies that keep their own data</p>
+    </div>
+
+    <div class="wp-hero-side">
+      <div class="wp-hero-deck">
+        <p><strong>Runink CORE is the operations layer a company runs on machines it owns.</strong>
+It keeps the company&rsquo;s software healthy, governs the AI models and agents
+that work inside it, watches the company&rsquo;s own data, and turns a written
+brief into a working application. Its AI model runs on those same machines.
+No outside AI service is called.</p>
+<p>It is for companies whose information has to stay under their own control,
+and whose small technical team looks after more software than any one
+person can hold in their head.</p>
+<p><strong>One console, five parts: Overview, DevEx, DataEx, Intelligence and FORGE.
+This paper walks through every page of it.</strong> To see it on your own
+hardware, <a href="/#contact">book a consultation</a>.</p>
+
+      </div>
+    </div>
+
+  </header>
+
+  <div class="wp-body">
+    
+    
+    <nav class="wp-rail" aria-labelledby="register-heading">
+      <p class="wp-rail-head wp-util" id="register-heading">
+        Register &mdash; 16 chapters, 23 pages
+      </p>
+
+      
+      <button type="button" class="wp-rail-toggle" aria-expanded="false" aria-controls="register-panel" hidden>
+        <span>Contents &mdash; 16 chapters</span>
+        <svg class="wp-rail-toggle-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+          <path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="wp-rail-panel" id="register-panel">
+        <ol class="wp-reg" data-motion="reveal">
+          
+          <li>
+            <a href="#executive-summary">
+              <span class="wp-reg-page" aria-hidden="true">2</span>
+              <span class="wp-reg-title">Executive summary<span class="wp-sr">, page 2</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#why-a-company-that-keeps-its-own-data-needs-this">
+              <span class="wp-reg-page" aria-hidden="true">3</span>
+              <span class="wp-reg-title">Why a company that keeps its own data needs this<span class="wp-sr">, page 3</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#how-the-console-is-arranged">
+              <span class="wp-reg-page" aria-hidden="true">4</span>
+              <span class="wp-reg-title">How the console is arranged<span class="wp-sr">, page 4</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#overview-is-anything-wrong-and-where-do-i-go-next">
+              <span class="wp-reg-page" aria-hidden="true">5</span>
+              <span class="wp-reg-title">Overview: is anything wrong, and where do I go next<span class="wp-sr">, page 5</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#devex-is-the-platform-running-and-did-our-changes-ship">
+              <span class="wp-reg-page" aria-hidden="true">6&ndash;8</span>
+              <span class="wp-reg-title">DevEx: is the platform running, and did our changes ship<span class="wp-sr">, page 6 to 8</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#dataex-can-our-models-and-agents-be-trusted">
+              <span class="wp-reg-page" aria-hidden="true">9&ndash;11</span>
+              <span class="wp-reg-title">DataEx: can our models and agents be trusted<span class="wp-sr">, page 9 to 11</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#intelligence-what-our-data-holds-and-where-it-goes-wrong">
+              <span class="wp-reg-page" aria-hidden="true">12&ndash;13</span>
+              <span class="wp-reg-title">Intelligence: what our data holds, and where it goes wrong<span class="wp-sr">, page 12 to 13</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#resolve-what-is-in-your-data-and-how-it-connects">
+              <span class="wp-reg-page" aria-hidden="true">14</span>
+              <span class="wp-reg-title">Resolve: what is in your data, and how it connects<span class="wp-sr">, page 14</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#forge-from-a-written-brief-to-a-working-application">
+              <span class="wp-reg-page" aria-hidden="true">15</span>
+              <span class="wp-reg-title">FORGE: from a written brief to a working application<span class="wp-sr">, page 15</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#on-every-screen">
+              <span class="wp-reg-page" aria-hidden="true">16</span>
+              <span class="wp-reg-title">On every screen<span class="wp-sr">, page 16</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-it-is-built-on-and-why-that-matters-commercially">
+              <span class="wp-reg-page" aria-hidden="true">17</span>
+              <span class="wp-reg-title">What it is built on, and why that matters commercially<span class="wp-sr">, page 17</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#who-core-is-for">
+              <span class="wp-reg-page" aria-hidden="true">18</span>
+              <span class="wp-reg-title">Who CORE is for<span class="wp-sr">, page 18</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-adopting-core-involves">
+              <span class="wp-reg-page" aria-hidden="true">19</span>
+              <span class="wp-reg-title">What adopting CORE involves<span class="wp-sr">, page 19</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-commercial-model">
+              <span class="wp-reg-page" aria-hidden="true">20</span>
+              <span class="wp-reg-title">The commercial model<span class="wp-sr">, page 20</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#answers-to-the-questions-we-are-usually-asked">
+              <span class="wp-reg-page" aria-hidden="true">21&ndash;22</span>
+              <span class="wp-reg-title">Answers to the questions we are usually asked<span class="wp-sr">, page 21 to 22</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-next-step">
+              <span class="wp-reg-page" aria-hidden="true">23</span>
+              <span class="wp-reg-title">The next step<span class="wp-sr">, page 23</span></span>
+            </a>
+          </li>
+          
+        </ol>
+      </div>
+    </nav>
+    
+
+    <article class="wp-sheet" id="document">
+      <div class="wp-doc">
+        
+        <h2 id="executive-summary">Executive summary</h2><p>Runink CORE is the layer beneath a company&rsquo;s software. It runs that software on
+machines the company owns. It shows one person, on one screen, what is happening
+across all of it. It keeps a record of every change a person makes, and anyone
+signed in can check that the record is intact.</p>
+<p>It also runs the company&rsquo;s own AI. The language model CORE uses — the kind of
+system that reads and writes plain English — runs on the company&rsquo;s hardware. The
+automated helpers that review changes, sort reports and check rules use that
+model too. Nothing is sent to an outside AI service. That one fact turns a
+security review from a negotiation into a description.</p>
+<p>CORE is a product in its own right, sold separately. Runink FACE and Runink
+PULSE are distinct products that work together with it: where a company runs
+them, CORE is the layer they run on.</p>
+<p>CORE&rsquo;s console is split into five parts. Each answers one question.</p>
+<ul>
+<li><strong>Overview</strong> — is anything wrong, and where do I go next?</li>
+<li><strong>DevEx</strong>, short for developer experience — is the platform running as it
+should, and did our changes ship?</li>
+<li><strong>DataEx</strong>, short for data experience — what are our AI models and agents,
+what are they allowed to do, and can their work be trusted?</li>
+<li><strong>Intelligence</strong> — what does our data hold, how good is it, and where are
+spending or controls going wrong?</li>
+<li><strong>FORGE</strong> — how do we turn a written brief into a working application, with a
+person approving each step?</li>
+</ul>
+<p>Three habits run through every page.</p>
+<p><strong>It says what it knows and what it does not.</strong> A figure the console could not
+read is shown as not known. It is never drawn as a zero. A screen that says
+&ldquo;nothing happened&rdquo; when it means &ldquo;I did not look&rdquo; is worse than no screen,
+because people make decisions on it.</p>
+<p><strong>It asks before it acts.</strong> The automated helpers propose. A person approves.
+Nothing is filed, changed or published on the company&rsquo;s behalf until someone
+with the right to decide has said yes.</p>
+<p><strong>It keeps a second opinion.</strong> Where a finding matters, an independent assessor
+reads the evidence behind it before a person is asked to act. It can agree,
+disagree or say it was unable to judge, and it never passes off the third as
+the first.</p>
+<p>The rest of this paper takes each part of the console in turn: what question
+each page answers, who in the company uses it, what it shows, and why that is
+worth something.</p>
+<h2 id="why-a-company-that-keeps-its-own-data-needs-this">Why a company that keeps its own data needs this</h2><p>Most companies now run more software than any one person understands. It came
+from different teams, vendors and years. Each piece has its own way of being
+started, watched and changed, and its own idea of who may touch the company&rsquo;s
+information.</p>
+<p>That arrangement has three costs, and different people pay them.</p>
+<h3 id="nobody-has-the-whole-picture">Nobody has the whole picture</h3><p>The person on duty has a screen for each system and no screen for all of them.
+When a customer says something is slow, finding out where takes longer than
+fixing it. Half the tools show a zero when they mean they could not look. So
+capacity nobody measured gets reported as spare, and work nobody counted gets
+reported as idle.</p>
+<h3 id="every-new-thing-rebuilds-the-same-foundations">Every new thing rebuilds the same foundations</h3><p>Each new application needs sign-in, somewhere to keep its secrets, a way to
+reach company data, somewhere to run, something watching it, and a way to be
+updated. None of that is what the team set out to build. All of it has been
+built before, in the same building. The calendar fills with work no customer
+sees.</p>
+<h3 id="your-data-leaves-the-building">Your data leaves the building</h3><p>The quick way to add AI to software is to send the material to somebody else&rsquo;s
+service and read back the answer. That is a fast route to a demonstration and a
+slow route to a contract. Once real customer records, contracts or claims are
+involved, a security review asks where the information goes, who else can see
+it, and what happens to it after. If the design sends it out, the honest answer
+stalls the deal.</p>
+<h3 id="what-core-changes">What CORE changes</h3><p>CORE provides the common foundations once, for every application: somewhere to
+run, one way to prove identity, a way to reach company data, one place to look,
+and a way to get changes made. And it does all of it on the company&rsquo;s own
+machines, with the company&rsquo;s own model. The security question then has a short
+answer that holds up: the information goes to a machine you own, and stays
+there.</p>
+<h2 id="how-the-console-is-arranged">How the console is arranged</h2><p>The console has a menu down its left side. The menu is grouped by the question
+each group answers, so a person goes to the part that matches the question they
+have. Some groups have small headings inside them, such as <em>Cluster</em> or
+<em>Trust</em>, to keep related pages together.</p>
+<div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>Part</th>
+          <th>The question it answers</th>
+          <th>Who reaches for it first</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Overview</strong></td>
+          <td>Is anything wrong, and where do I go next?</td>
+          <td>Anyone on duty; the operations lead</td>
+      </tr>
+      <tr>
+          <td><strong>DevEx</strong></td>
+          <td>Is the platform running as it should, and did our changes ship?</td>
+          <td>Platform engineers, the engineering lead, the security lead</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx</strong></td>
+          <td>What are our models and agents, what may they do, and can we trust their work?</td>
+          <td>The head of data, the risk and compliance officers, the security lead</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence</strong></td>
+          <td>What does our data hold, how good is it, and where is money or control slipping?</td>
+          <td>The finance lead, the portfolio office, data stewards, analysts</td>
+      </tr>
+      <tr>
+          <td><strong>FORGE</strong></td>
+          <td>How do we turn a brief into a working application, with a person approving each step?</td>
+          <td>Product owners and the engineering lead</td>
+      </tr>
+  </tbody></table></div>
+<p>Every page opens the same way: one status line with a single verdict, a
+headline, where the reading came from and when it was taken. The detail sits
+underneath. When a source could not be read, the status line says so and gives
+the reason, rather than showing a colour that implies a verdict.</p>
+<p>The same menu is on every screen. The console works in a browser on a desktop
+and at phone width, and it speaks English, Spanish, French and Portuguese.</p>
+<h2 id="overview-is-anything-wrong-and-where-do-i-go-next">Overview: is anything wrong, and where do I go next</h2><p><strong>The question.</strong> Is anything wrong right now, and which page do I open next?</p>
+<p><strong>Who uses it.</strong> Whoever is on duty, the operations lead at the start of the
+day, and any manager who wants the state of things in one look.</p>
+<p><strong>What it shows.</strong> A strip of headline readings: how many customer and team
+deployments are ready, how many of the platform&rsquo;s services are healthy, how many
+times the automated helpers ran in the last week, and how often they succeeded.
+Below that, a <em>Needs attention</em> list of open findings, worst first, each linking
+to the page where it can be dealt with. Then the most recent helper runs, and
+one line for each part of the platform — services, deployments and the AI
+models — each a link to its own page.</p>
+<p>At the foot of the page is <strong>Ask CORE</strong>, an assistant. A person types, or
+speaks, a request in plain language: list what exists, tell me the state of that
+one, create a deployment of this application for this team. The assistant
+carries out the request with the same controls a person would use, and shows
+each step it took. Only people with the right to create deployments can have it
+create one.</p>
+<p><strong>Why it matters.</strong> The first hour of a problem is usually spent working out
+where to look. This page removes that hour. It also stops the most common
+dashboard lie: an unread source here is shown as unread, never as &ldquo;all clear&rdquo;.
+And because the assistant shows its working, a new team member can do a real
+task on their first day and see exactly what it involved.</p>
+<h2 id="devex-is-the-platform-running-and-did-our-changes-ship">DevEx: is the platform running, and did our changes ship</h2><p>DevEx is short for developer experience. These are the pages for the people who
+run the platform and change it. They answer two questions: is everything
+running as intended, and did the change we made actually reach production?</p>
+<h3 id="cluster--namespaces">Cluster › Namespaces</h3><p><strong>The question.</strong> Is my service working, and if not, where does it break?</p>
+<p><strong>Who uses it.</strong> Platform engineers and whoever is on duty.</p>
+<p><strong>What it shows.</strong> A namespace is a named, walled-off area of the platform where
+one service or one team&rsquo;s work runs. For each one, the page gives a verdict and
+a one-sentence reason. Under it sit the running parts, recent warnings and
+resource limits, each described first by what it means for serving customers
+and only then by its technical name. A second tab, <em>Nodes &amp; placement</em>, lists
+each machine: whether it is available, whether it is set aside for one
+application, how much processing power and memory it has, how much is already
+claimed, and what is running on it.</p>
+<p><strong>Why it matters.</strong> &ldquo;Why is this slow&rdquo; and &ldquo;why is this not running&rdquo; get a
+written answer instead of an investigation. And because every raw fact is
+explained in plain terms, more people can safely take a turn on duty.</p>
+<h3 id="cluster--instances">Cluster › Instances</h3><p><strong>The question.</strong> What deployments exist, who are they for, and when do they
+end?</p>
+<p><strong>Who uses it.</strong> The operations lead, the finance lead, and team leads who
+requested a deployment.</p>
+<p><strong>What it shows.</strong> One row per deployment for a customer or a team: which
+application, which team, what role, what state, whether it is ready, how much
+computing capacity it is allowed, and when its lease runs out. A deployment
+whose lease has ended is marked plainly, and one whose lease is close is
+flagged. Opening a row shows the full record. Deployments are created from a
+request — the assistant on Overview can take one — and carry an owner and an
+expiry from the start.</p>
+<p><strong>Why it matters.</strong> Idle environments stop running for months because nobody
+remembered them. Each deployment has an end date and a named owner, so its cost
+has somebody to belong to, and removing it is the platform&rsquo;s job rather than a
+person&rsquo;s.</p>
+<h3 id="cluster--routing">Cluster › Routing</h3><p><strong>The question.</strong> Can people reach each of our web addresses, and where does a
+request actually go?</p>
+<p><strong>Who uses it.</strong> Platform engineers and the security lead.</p>
+<p><strong>What it shows.</strong> For each web address, the path a request takes, read left to
+right: the front door that receives it, the service behind that door, how many
+copies of the service are ready, and the program that finally answers. Each
+route opens with a verdict and a reason. A route the console only read from the
+written configuration is marked <em>declared</em>, and is never shown as serving until
+the console has seen it serve.</p>
+<p><strong>Why it matters.</strong> When a site is down, the question is always &ldquo;which hop
+broke&rdquo;. This page names the hop. It also shows the security lead exactly which
+doors lead to which services, from a live reading rather than a diagram drawn
+last year.</p>
+<h3 id="platform-audit">Platform audit</h3><p><strong>The question.</strong> Does the platform pass its checks today?</p>
+<p><strong>Who uses it.</strong> The engineering lead, the security lead and the compliance
+officer.</p>
+<p><strong>What it shows.</strong> Each part of the console has an audit page of its own: an
+assessment, not a log. The Audit chain records who did what; an audit page
+says whether things pass. This one gives a single verdict over the platform&rsquo;s
+checks, each read from a page the console already has: whether the Audit
+chain is intact, whether the running services are ready, whether what is
+running matches what was written down, whether the standing health check is
+watching, the latest code, dependency and compliance reviews, the compliance
+controls, and whether the assessment helpers have run. A check that could not
+be read goes into one short list of what was not measured, with the reason,
+and the verdict says how many were left out. It is never counted as a pass.
+From here a person can re-check the Audit chain, or start a review through a
+playbook the company has already written, after a confirmation. Past reviews
+are listed underneath.</p>
+<p><strong>Why it matters.</strong> &ldquo;Are we in good shape?&rdquo; gets one answer with its evidence,
+instead of a tour of ten pages. And because an unread check is named rather
+than hidden, a green verdict means everything was looked at.</p>
+<h3 id="gitops">GitOps</h3><p><strong>The question.</strong> Does what is running match what we wrote down?</p>
+<p><strong>Who uses it.</strong> Platform engineers and the engineering lead.</p>
+<p><strong>What it shows.</strong> GitOps is the practice of writing down the intended state of
+every application in a code repository and letting the platform make the
+running state match it. This page lists every managed application and whether
+it has caught up: in step with what was written, and healthy. If an update
+failed, the reason is on that row.</p>
+<p><strong>Why it matters.</strong> &ldquo;What is actually running, and which change produced it&rdquo; is
+a question every audit and every incident asks. This page answers it for every
+application at once.</p>
+<h3 id="audit-chain">Audit chain</h3><p><strong>The question.</strong> Who did what, when, and has the record been tampered with?</p>
+<p><strong>Who uses it.</strong> The security lead, internal audit and the compliance officer.</p>
+<p><strong>What it shows.</strong> Every action a person takes in the console is recorded: the
+time, a sequence number, the person, the action, the thing acted on, the outcome
+— succeeded, refused or failed — a line of detail, and where the request came
+from. Refused attempts are recorded as well as the ones that went through. Each
+record carries a fingerprint worked out from the record before it, so the
+records form a chain. The page opens on a check: press <em>Verify now</em> and the
+console walks the chain link by link and names the first record that was
+edited, removed, inserted or moved. Anyone signed in can run that check, even
+people who are not allowed to read the records themselves.</p>
+<p><strong>Why it matters.</strong> &ldquo;Show me every change to this, who made it and on whose
+authority&rdquo; becomes a lookup, not a project. The evidence is collected as the
+work happens, not pieced together afterwards. And the refused attempts, which
+are often the most telling part of an incident, exist because something wrote
+them down at the time.</p>
+<h3 id="session-admins">Session admins</h3><p><strong>The question.</strong> Who may read the full audit trail and end other people&rsquo;s
+sessions?</p>
+<p><strong>Who uses it.</strong> The security lead and the platform owner.</p>
+<p><strong>What it shows.</strong> The list of session administrators for this installation.
+Only people already on the list can see it or change it. The console will not
+accept an empty list, since nobody could then put anyone back. Every change to
+the list is recorded before it is made.</p>
+<p><strong>Why it matters.</strong> The people who can see everything are a short, named list
+that lives with the installation. When someone leaves, removing them is one
+edit, and the record of what they did stays attributed to them.</p>
+<h3 id="doctor">Doctor</h3><p><strong>The question.</strong> Is the standing health check still watching?</p>
+<p><strong>Who uses it.</strong> Platform engineers and the operations lead.</p>
+<p><strong>What it shows.</strong> The doctor is a health check that runs on its own schedule,
+apart from the machines it watches, so it keeps watching when they fail. The
+page says which of four states it is in — watching, paused by hand, not set up,
+or unknown because the console could not read it — and keeps those apart. It
+shows the schedule, the recent runs and the item where the doctor reports what
+it found.</p>
+<p><strong>Why it matters.</strong> A health check that was quietly paused looks exactly like a
+healthy, quiet one. This page makes the difference visible, so the check that is
+meant to catch failures does not fail silently itself.</p>
+<h3 id="metrics">Metrics</h3><p><strong>The question.</strong> Are the platform&rsquo;s services ready, and is the console itself
+well?</p>
+<p><strong>Who uses it.</strong> Platform engineers.</p>
+<p><strong>What it shows.</strong> How many of the platform&rsquo;s services are ready, the console&rsquo;s
+own working readings such as memory in use and time since it started, and a
+plain list of what is not measured, shown as gaps rather than as zeros.</p>
+<p><strong>Why it matters.</strong> A number on this page can be used for a decision because the
+page never fills a gap with a guess.</p>
+<h3 id="agent-runs--runs">Agent runs › Runs</h3><p><strong>The question.</strong> What did the automated helpers do, and did their work reach
+anyone?</p>
+<p><strong>Who uses it.</strong> The engineering lead and platform engineers.</p>
+<p><strong>What it shows.</strong> Every run each helper made, whether it was scheduled or set
+off by an event, and whether it landed. A tab called <em>Schedules &amp; arming</em> shows
+when each helper runs, whether it is allowed to publish its work, and what its
+last run delivered. A helper publishes only after a person has armed it, and
+until then it runs and reports what it would have done. A run that finished
+&ldquo;green&rdquo; but put nothing in front of a person is flagged, not shown as a
+success. A third tab lists the longer coding sessions.</p>
+<p><strong>Why it matters.</strong> A team can watch a helper for a week and read what it would
+have produced before any of it reaches a colleague. And a helper that has been
+succeeding without delivering anything is caught, instead of looking fine for
+months.</p>
+<h3 id="agent-runs--reviews">Agent runs › Reviews</h3><p><strong>The question.</strong> What did each review find?</p>
+<p><strong>Who uses it.</strong> The engineering lead, the security lead and the compliance
+officer.</p>
+<p><strong>What it shows.</strong> One card for each kind of review the platform runs, such as
+code review, dependency risk, compliance and data governance. Each card gives
+the latest verdict, when it last ran, the trend and what triggers it. Opening a
+card shows the runs in progress and past runs, and a run&rsquo;s findings sorted by
+severity, with the evidence and a link for each. A run whose findings were not
+kept says so.</p>
+<p><strong>Why it matters.</strong> Reviews that run on a schedule are only worth something if
+somebody reads the results. This puts every review&rsquo;s findings in one place, in
+order of severity, with the evidence attached.</p>
+<h2 id="dataex-can-our-models-and-agents-be-trusted">DataEx: can our models and agents be trusted</h2><p>DataEx is short for data experience. These pages are about the AI inside the
+platform: which models run, which agents use them, what those agents are allowed
+to do, and whether their findings hold up. An agent here means an automated
+helper that reads material and proposes or takes a step. DataEx is also where
+the connections to company systems, and the runners that reach them, are
+created and looked after.</p>
+<h3 id="model-cards">Model cards</h3><p><strong>The question.</strong> Which AI models are we running, where did they come from, and
+are they running what we think they are?</p>
+<p><strong>Who uses it.</strong> The head of data, the risk officer and the security lead.</p>
+<p><strong>What it shows.</strong> One card per model in service. A model card is a short,
+standard record of a model: where it came from, the exact version and its
+fingerprint, its licence, what it is intended for, its known limits, and the
+evidence from testing it. Beside the card sits what is actually running. The
+health mark is green only when the two agree.</p>
+<p><strong>Why it matters.</strong> When a regulator, a customer or your own board asks which AI
+you use and why, the answer is on one page, and it is checked against what is
+live rather than copied from a document.</p>
+<h3 id="agents">Agents</h3><p><strong>The question.</strong> Which agents exist, which model does each use, and what is
+each allowed to do?</p>
+<p><strong>Who uses it.</strong> The head of data, the risk officer and the engineering lead.</p>
+<p><strong>What it shows.</strong> Every agent CORE knows about, each fact shown once. CORE&rsquo;s
+own agents appear with their purpose, whether they are switched on, which model
+they use, and the limits they work under. The agents inside the Runink
+applications appear with their health, their model, and the written rules each
+one applies to its answers. Agents the company registers itself appear too. At
+the top, once for the whole page, is the boundary: who may arm agents, how much
+agents may do on their own, and the hard limits that bind them, with links to
+the pages that set each one.</p>
+<p><strong>Why it matters.</strong> Most companies adopting AI cannot say how many agents they
+have or what each is allowed to do. This page is that inventory, kept current by
+the platform rather than by a spreadsheet.</p>
+<h3 id="inference">Inference</h3><p><strong>The question.</strong> How are our models being used, and by whom?</p>
+<p><strong>Who uses it.</strong> The head of data, the finance lead and platform engineers.</p>
+<p><strong>What it shows.</strong> Inference is the act of running a model to get an answer. The
+page shows the model router — the single entrance every application and agent
+uses to reach a model — and the model cards again, beside usage: how much text
+each application&rsquo;s agents have sent through the models, and the computing
+capacity allocated to each deployment. Anything not measured is shown as a gap
+with its reason.</p>
+<p><strong>Why it matters.</strong> Because the models run on the company&rsquo;s own hardware, using
+them more does not open a bill that grows with every question. This page shows
+where that capacity goes, so sizing is a reading, not a guess.</p>
+<h3 id="connections">Connections</h3><p><strong>The question.</strong> Which of our systems does CORE know how to reach, and who may
+change that?</p>
+<p><strong>Who uses it.</strong> The head of data, platform engineers and the security lead.</p>
+<p><strong>What it shows.</strong> Every connection to a company system, one row each: what
+kind of system it is, whether its credentials are in place, which runner
+reaches it and that runner&rsquo;s state, and when it was last tested. This is the
+one place a connection is created, changed, re-keyed, tested or removed; the
+other pages that need one open the same dialog. Creating one takes three
+steps: choose the kind of system and fill in its form, choose the runner that
+will reach it, then review, test and save. The test asks one question, whether
+the system answers, and only after a confirmation. Credentials are held apart
+from the settings and are never shown back once saved. Removing a connection
+names every other connection that shares its credentials first. Nothing on the
+page reaches a system when it opens.</p>
+<p><strong>Why it matters.</strong> When each application reaches company systems its own way,
+the same warehouse ends up connected several times, under several accounts.
+One list, one dialog and one record turn &ldquo;what reaches our finance warehouse,
+and under whose account?&rdquo; into a screen. Only people on an explicit list may
+change a connection, and every attempt, refusals included, is recorded.</p>
+<h3 id="runners">Runners</h3><p><strong>The question.</strong> What reaches our data sources on CORE&rsquo;s behalf, and is it
+healthy?</p>
+<p><strong>Who uses it.</strong> Platform engineers and the security lead.</p>
+<p><strong>What it shows.</strong> A runner is the worker that reaches out to a company data
+source when an administrator asks it to. The Runink-managed runner is listed
+first and cannot be revoked. A company can also add runners of its own, on its
+own network: an administrator gives each one a name and an address, and the
+runner uses a one-time ticket to obtain its certificate. CORE then connects to
+it at that address, and both ends prove who they are before anything moves.
+For each runner the page shows whether it is connected, when it was last seen,
+its version, when its certificate expires and how much work it has in hand.
+Its health is measured on the runner itself, never by contacting a data
+source. An administrator can connect to a runner now, issue a new ticket,
+change its address or revoke it, each after a confirmation that says what will
+happen.</p>
+<p><strong>Why it matters.</strong> The security lead can see every worker allowed to touch
+company data, where it runs, and who can add or remove one. Checking their
+health never touches the data itself.</p>
+<h3 id="trust--harness">Trust › Harness</h3><p><strong>The question.</strong> What is wrong, and what can CORE do about it?</p>
+<p><strong>Who uses it.</strong> The operations lead, the security lead and the compliance
+officer.</p>
+<p><strong>What it shows.</strong> Findings about risk and compliance, each with its evidence
+and a proposed remedy. Under each finding are only the actions CORE can really
+take: start a named helper, file a tracking item, or acknowledge the finding.
+Every action is confirmed first, then written to the audit chain before it
+happens, and its result is shown in place. An action the console cannot take
+here is shown greyed out with the reason, rather than hidden.</p>
+<p><strong>Why it matters.</strong> Operations know-how usually lives in a few heads. Here the
+remedy sits next to the reading, so the knowledge belongs to the company rather
+than to whoever is on call, and a wider group can take a turn on duty.</p>
+<h3 id="trust--guardrails--autonomy">Trust › Guardrails &amp; autonomy</h3><p><strong>The question.</strong> How much may the platform do on its own?</p>
+<p><strong>Who uses it.</strong> The security lead, the risk officer and the platform owner.</p>
+<p><strong>What it shows.</strong> The kinds of action the Harness can take, each with its level
+of autonomy and any overrides for particular areas. Every kind starts with a
+person approving each act. Above those settings sit hard limits that no setting
+can pass. Each kind also shows its recent activity, read from the audit chain.</p>
+<p><strong>Why it matters.</strong> Autonomy becomes a dial the company sets, kind by kind, and
+can read back at any time. It is a written setting with a record behind it, not
+a decision made once at installation and forgotten.</p>
+<h3 id="trust--policy--rebac">Trust › Policy &amp; ReBAC</h3><p><strong>The question.</strong> Who may do which kind of thing on this console?</p>
+<p><strong>Who uses it.</strong> The security lead and internal audit.</p>
+<p><strong>What it shows.</strong> ReBAC stands for relationship-based access control: rules
+about who may act on what. The page lists the named groups of people allowed to
+sign in, to arm agents, to change data connections, to make changes on the
+Intelligence pages, and to end other people&rsquo;s sessions. For each list it shows
+how many people are on it, what happens if it is left empty, and whether <em>you</em>
+are on it — never who else is. It also shows the access granted inside each
+deployment.</p>
+<p><strong>Why it matters.</strong> Being signed in and being allowed are two different things.
+Plenty of people should be able to see that a connection to the finance
+warehouse exists. Far fewer should be able to change it. This page makes that
+difference readable.</p>
+<h3 id="trust--secrets--pki">Trust › Secrets &amp; PKI</h3><p><strong>The question.</strong> Does every part of the platform trust the same authority, and
+for how much longer?</p>
+<p><strong>Who uses it.</strong> The security lead and platform engineers.</p>
+<p><strong>What it shows.</strong> Every service inside the platform proves who it is to every
+other service before any information moves, using short-lived certificates from
+one shared authority. PKI is the name for that system of certificates. The page
+gives one verdict — does every part agree on the same authority — then the
+authority&rsquo;s fingerprint, its validity window and the time left. If any part is
+out of line, the repair is stated above the evidence. It also shows how the
+console&rsquo;s own sign-in is set up.</p>
+<p><strong>Why it matters.</strong> An expired certificate stops services talking to each other,
+often without an obvious error. This page shows the expiry before it arrives,
+and a single verdict replaces comparing fingerprints by eye.</p>
+<h3 id="model--agent-audit">Model &amp; agent audit</h3><p><strong>The question.</strong> Do our models and agents pass their checks today?</p>
+<p><strong>Who uses it.</strong> The head of data, the risk officer and the compliance officer.</p>
+<p><strong>What it shows.</strong> The same shape as the Platform audit, for the AI: one
+verdict over whether each model&rsquo;s health matches its model card, whether each
+application&rsquo;s agents are covered by written rules for their answers, the
+autonomy settings, the open findings on the Harness, and the independent
+judgements. What could not be read is listed with its reason, never counted
+as a pass. A person can start the independent assessor through an existing
+playbook, after a confirmation; acting on a finding stays on the Harness,
+which the page links to. The assessor&rsquo;s past runs and the actions taken on
+findings are listed underneath.</p>
+<p><strong>Why it matters.</strong> When a board or a regulator asks whether the company&rsquo;s AI
+is under control, the answer is one page, built from the same readings the
+detailed pages show.</p>
+<h3 id="judgements">Judgements</h3><p><strong>The question.</strong> Does an independent assessor agree with the findings we have
+been handed?</p>
+<p><strong>Who uses it.</strong> The risk officer, the compliance officer and internal audit.</p>
+<p><strong>What it shows.</strong> Findings sent in by an outside assessment platform, each with
+CORE&rsquo;s own verdict: agree, disagree, or unable to judge, each on its own line and
+never blended into a score. &ldquo;Nothing was sent in&rdquo; and &ldquo;never judged&rdquo; are said in
+those words, and never read as agreement. The page also lists the assessor&rsquo;s
+recent runs.</p>
+<p><strong>Why it matters.</strong> A finding checked by the same system that raised it is not
+checked. A second, separate reading before a person acts means people spend
+their time on findings that hold up, and can see which ones were not assessed.
+The joint paper on CORE and Atlas describes how that assessor reaches a verdict.</p>
+<h2 id="intelligence-what-our-data-holds-and-where-it-goes-wrong">Intelligence: what our data holds, and where it goes wrong</h2><p>The Intelligence pages look outward, at the company&rsquo;s own data and spending.
+Most of them are the Atlas oversight pages, built with our partner Logical Leap,
+running inside CORE on CORE&rsquo;s own data. Resolve, which reads the structure of
+the company&rsquo;s systems, is a Runink capability that CORE shares with FACE.
+Every figure on these pages is computed from the company&rsquo;s own records and
+feeds, or shown as absent with the reason.</p>
+<p>This section summarises each page. The joint paper,
+<a href="/blog/whitepapers/runink-core-atlas/">Runink CORE and Atlas</a>, covers them in
+depth.</p>
+<h3 id="the-three-dashboards-analyst-cfo-and-pmo">The three dashboards: Analyst, CFO and PMO</h3><p><strong>The question.</strong> Where does our capital spending stand, from my seat?</p>
+<p><strong>Who uses it.</strong> The capital governance analyst, the chief financial officer and
+the director of the portfolio or programme office.</p>
+<p><strong>What it shows.</strong> Three views of the same information. The <em>Analyst dashboard</em>
+shows how ready projects are and what needs checking. The <em>CFO dashboard</em> shows
+the financial summary: approved budget, requests and spending. The <em>PMO
+dashboard</em> shows the portfolio, where a project maps to an initiative the
+platform already tracks.</p>
+<p><strong>Why it matters.</strong> Finance and the programme office argue from the same figures,
+worked out the same way, rather than reconciling two spreadsheets first.</p>
+<h3 id="dq-overview-and-progress">DQ overview and Progress</h3><p><strong>The question.</strong> How good is our data, and is it getting better?</p>
+<p><strong>Who uses it.</strong> Data stewards and the head of data.</p>
+<p><strong>What it shows.</strong> DQ stands for data quality. The <em>DQ overview</em> summarises the
+data sources, the business rules checked against them, and the open issues. The
+<em>Progress</em> page compares recent data governance checks over time, so a steward
+can see whether open issues are falling.</p>
+<p><strong>Why it matters.</strong> Data quality stops being an opinion. It becomes a list of
+issues that goes down, or does not, with each check kept.</p>
+<h3 id="capex-monitor-and-capex-lineage">CapEx monitor and CapEx lineage</h3><p><strong>The question.</strong> Does our spending match what was requested and planned?</p>
+<p><strong>Who uses it.</strong> The capital governance analyst and the finance lead.</p>
+<p><strong>What it shows.</strong> CapEx means capital expenditure. The <em>CapEx monitor</em> takes the
+three feeds a company uploads — the plan, the requests and the spending — and
+checks them against each other with a published rule book, in one view. <em>CapEx
+lineage</em> traces any finding back and forth along that chain: from spending, to
+the approval, to the plan.</p>
+<p><strong>Why it matters.</strong> Money that leaves before anyone checks is the costly kind.
+Checking as the feeds arrive, rather than at the quarterly review, moves the
+check closer to the decision.</p>
+<h3 id="perspectives">Perspectives</h3><p><strong>The question.</strong> Who cares about capital governance, and what does each of
+them need?</p>
+<p><strong>Who uses it.</strong> Anyone setting up the practice, and the executives it serves.</p>
+<p><strong>What it shows.</strong> A framework page: the stakeholders who read capital
+governance and what each one focuses on.</p>
+<p><strong>Why it matters.</strong> It gives a new programme a shared map of whose questions it
+has to answer.</p>
+<h3 id="business-rules-and-orchestrator-playbooks">Business rules and Orchestrator (playbooks)</h3><p><strong>The question.</strong> Which rules do we enforce, and what happens when one fails?</p>
+<p><strong>Who uses it.</strong> The compliance officer, rule owners and the head of data.</p>
+<p><strong>What it shows.</strong> <em>Business rules</em> lists the capital rule book: each rule&rsquo;s
+status, effect, owner and findings. A change to a rule is proposed by one person
+and approved by another. The same page shows whether the rules built into the
+software still match the policy that was signed off. <em>Orchestrator</em> is where
+playbooks are written: a playbook is a set of steps that runs when a finding
+appears, such as starting a named helper. A playbook can be drafted from the
+rules that fail most often, and then edited by a person.</p>
+<p><strong>Why it matters.</strong> Written rules drift from enforced rules quietly. Two people
+on every rule change, and a standing check that code matches policy, make that
+drift visible.</p>
+<h3 id="lineage-and-remediation">Lineage and Remediation</h3><p><strong>The question.</strong> Where does this data come from, and what are we doing about
+the problems in it?</p>
+<p><strong>Who uses it.</strong> Data stewards, the head of data and the compliance officer.</p>
+<p><strong>What it shows.</strong> <em>Lineage</em> draws the path from each source system to the
+reports built on it, with the trouble spots marked. It also shows the
+relationships Resolve read from the systems themselves: the keys a source
+declares between its tables, the domains that span more than one source, and
+which datasets are read and written. <em>Remediation</em> is the queue
+of proposed fixes. For capital findings a person can approve, test or dismiss
+each one, and every decision is kept as an audit trail. An approved fix is a
+recorded decision; the change itself is made at the source system.</p>
+<p><strong>Why it matters.</strong> People trust a report more when they can see where its
+numbers came from. And every fix decision has a name and a reason attached.</p>
+<h3 id="resolve">Resolve</h3><p><strong>The question.</strong> What is actually in our systems, and how does it all connect?</p>
+<p><strong>Who uses it.</strong> The head of data, data stewards and the security lead.</p>
+<p><strong>What it shows.</strong> Resolve reads the structure of the company&rsquo;s systems when an
+administrator asks it to, and draws them as one map of business domains and the
+links between them. It has its own chapter after this one, because several
+other pages are built on what it reads.</p>
+<p><strong>Why it matters.</strong> Lineage, the data-quality checks and the personal-data
+checks all start from what Resolve recorded, so the map a steward reads and
+the checks an auditor reads describe the same estate.</p>
+<h3 id="sources-and-settings">Sources and Settings</h3><p><strong>The question.</strong> Which systems may CORE read, and who may change that?</p>
+<p><strong>Who uses it.</strong> The head of data and the security lead.</p>
+<p><strong>What it shows.</strong> <em>Sources</em> shows one card for each system CORE is connected
+to: the business domain it was grouped into, whether it answered when last
+checked, and a switch that grants it to the Intelligence workspace. Granting
+records a permission without reaching the system. Connections themselves are
+created and changed on DataEx › Connections, and each card links there.
+<em>Settings</em> holds the workspace choices for the Intelligence pages, stored on
+the server and recorded.</p>
+<p><strong>Why it matters.</strong> The security lead can answer &ldquo;what reaches this system, and
+on whose say-so&rdquo; from a screen.</p>
+<h3 id="data-audit">Data audit</h3><p><strong>The question.</strong> Does our data pass its checks today, and can we check it
+again now?</p>
+<p><strong>Who uses it.</strong> The head of data, data stewards and the security lead.</p>
+<p><strong>What it shows.</strong> One verdict over the data checks: whether each source
+answered its last test, whether the estate has been mapped, where what a
+source declares disagrees with what its data shows, the data-quality score for
+capital spending, and the data-governance findings. What could not be read is
+listed with its reason. From here an administrator can run an audit, each one
+an action CORE already has: test a source, explore it, read its access
+patterns, map the estate, or pull a capital-spending feed. Every run is
+confirmed first and recorded. This is also where the runner for an audit is
+chosen: Runink managed by default, or one of the company&rsquo;s own registered
+runners. The choice travels with the request and is kept in the record. A
+person can also start the data-governance helper through an existing
+playbook. Past map runs, capital-spending scans and data-governance runs are
+listed underneath.</p>
+<p><strong>Why it matters.</strong> A steward can re-check the data on demand, from one page,
+and a security lead can see exactly what each audit reached and which runner
+it named.</p>
+<h3 id="deploy-lineage">Deploy lineage</h3><p><strong>The question.</strong> Did my change ship?</p>
+<p><strong>Who uses it.</strong> Developers and the engineering lead.</p>
+<p><strong>What it shows.</strong> For each change, the stages it passed through: merged,
+reviewed by the helpers, built, stored, rolled out and running. A stage that
+could not be measured is shown as a gap. A change the platform does not
+recognise is shown as unmeasured, never as &ldquo;did not ship&rdquo;. This is about
+software releases, not data; data lineage has its own page above.</p>
+<p><strong>Why it matters.</strong> &ldquo;Is my fix live?&rdquo; is one of the most asked questions in any
+engineering team. This page answers it without a message to the platform team.</p>
+<h2 id="resolve-what-is-in-your-data-and-how-it-connects">Resolve: what is in your data, and how it connects</h2><p>Most companies believe they have an inventory of their data, and on
+inspection do not. The list was drawn once, by hand, and the systems moved on
+without it. Resolve builds that inventory from the systems themselves, when an
+administrator asks, and keeps nothing a security reviewer would object to.</p>
+<p>Resolve is one capability that Runink CORE and Runink FACE share: the same
+page, doing the same work, in both products. In CORE it sits in the menu under
+Intelligence › Resolve.</p>
+<h3 id="what-it-lets-you-do">What it lets you do</h3><p>There are four actions. Each one is started by a named administrator, and
+each asks for a confirmation that says what will be reached and what will be
+kept.</p>
+<ul>
+<li><strong>Test</strong> a source: does it answer?</li>
+<li><strong>Explore</strong> a source, to record its structure: its datasets and columns, the
+type each column is declared as, the keys that link its tables, and row
+counts where the source states them. It also records which columns the
+source itself marks as personal data, and whether it masks them. Where the
+source can count them, Explore notes how many values in a column are empty
+and how many are different.</li>
+<li><strong>Read access patterns</strong> over a window the administrator chooses: how many
+times each dataset was read and written, and by how many distinct accounts.
+These are counts. The accounts are never named.</li>
+<li><strong>Map the estate</strong> — the estate being every system that holds company data.
+The map covers the sources granted to the Intelligence workspace, or every
+source Resolve can read when none are granted.</li>
+</ul>
+<h3 id="how-the-map-is-made">How the map is made</h3><p><strong>It works out what each dataset is about.</strong> Not which system it came from,
+but what it <em>means</em>: customers, orders, payments, products, staff. It reads
+that from the names of the tables and columns. So a customer table in the
+billing system and a customer table in the support system land in the same
+business domain, without anyone keeping a mapping by hand.</p>
+<p><strong>It draws the links, and says what each one rests on.</strong> The result is best
+pictured as a mindmap of the company&rsquo;s data: datasets fall into domains, and
+the lines between them are the real relationships. Every line is marked with
+its evidence. It was <em>declared</em> by the source, as a key the system itself
+defines. Or it was <em>inferred</em>, from a declared key, from shared vocabulary or
+from matching values. Or it is a <em>guess</em>, such as two rare columns with the
+same name and nothing declared, and it is called a guess. There is no
+confidence score to blur the three together.</p>
+<p><strong>It puts what it could not read first.</strong> A source that did not answer, or a
+view it had no permission to see, is listed at the top with the reason the
+source gave. Datasets that fit no domain are listed on their own, rather than
+forced into one.</p>
+<p><strong>It compares what is declared with what is there.</strong> Where a source declares
+a relationship and its data contradicts it, that is <em>drift</em>. Where the data
+shows a relationship nothing declares, that is <em>shadow</em>. Where a declared key
+points at something that is not in the estate, that is <em>missing</em>.</p>
+<p><strong>The map is worked out by rules, not written by a model.</strong> The domains, the
+links and the comparisons come from fixed rules applied to names, declared
+keys and counts. The same estate gives the same map every time, and a busy or
+unavailable language model cannot change it or hold it up.</p>
+<h3 id="what-it-keeps-and-when-it-reaches-a-system">What it keeps, and when it reaches a system</h3><p>Resolve keeps structure and counts only. No cell value, sample row, smallest
+or largest value, account name or credential is kept or shown. A credential
+is opened for one call and then dropped. Every call only reads, and each has a
+time limit.</p>
+<p>Opening the page reaches nothing. The page shows what the last action
+recorded, and only the four actions reach a source — never a timer, and never
+a page load. Each action names its runner, the worker described under
+DataEx › Runners: the one the administrator chose for that action, or the one
+the source is set to use. Every action is written to the Audit chain with its
+outcome, and refusals are written too.</p>
+<h3 id="what-it-feeds">What it feeds</h3><p><strong>Lineage.</strong> When an action finishes, the relationships it read go onto the
+Lineage page: the keys a source declares between its tables, the domains that
+span more than one source, and which datasets were read and written.</p>
+<p><strong>The data-governance checks.</strong> CORE&rsquo;s data-governance helper assesses data
+quality and personal-data exposure from what Explore and Read access patterns
+recorded. On quality, it flags a column declared as never empty that holds
+empty values, and a table with no declared primary key. On personal data, it
+flags columns whose name and declared type mark them as likely personal data
+and that carry no mask from the source, and such columns when more than ten
+distinct accounts read them. Findings name the column, never a value in it.
+These checks are rules, with no model involved, and they appear on Reviews
+under data governance. A source nobody has explored is reported as not yet
+explored, never as clean.</p>
+<h3 id="where-the-value-is">Where the value is</h3><p><strong>In an inventory that is read, not remembered.</strong> The map comes from the
+systems as they are today, on request, so it does not age the way a diagram
+does.</p>
+<p><strong>In evidence that is named.</strong> A steward can tell a key the source declared
+from a link the map inferred, and both from a guess, before relying on any of
+them.</p>
+<p><strong>In one reading behind several pages.</strong> The map, the lineage and the
+governance checks all start from the same recorded description, so they
+cannot quietly disagree about what the estate holds.</p>
+<p><strong>In a short security review.</strong> The security lead can read, on screen,
+exactly what was reached, by whom, on which runner, and what was kept.</p>
+<h2 id="forge-from-a-written-brief-to-a-working-application">FORGE: from a written brief to a working application</h2><p>FORGE is Runink&rsquo;s studio for making new software. It builds web applications and
+pipelines — a pipeline here is a set of steps that moves and prepares data on a
+schedule. It is served inside CORE, under CORE&rsquo;s sign-in, as its own part of the
+menu.</p>
+<h3 id="studio">Studio</h3><p><strong>The question.</strong> How do we turn an idea into working software without handing
+control to a machine?</p>
+<p><strong>Who uses it.</strong> Product owners, team leads and the engineering lead.</p>
+<p><strong>What it shows.</strong> A person describes what they want in plain words. The
+company&rsquo;s own AI model proposes the steps on a canvas. Nothing is filed until
+the person approves. An approved brief goes, word for word, to coding agents as
+a work item, and the result comes back as a change for people to review.</p>
+<p><strong>Why it matters.</strong> The distance from &ldquo;we need a small tool for this&rdquo; to a first
+working version gets shorter, and every step is visible and approved. The brief
+never leaves the company&rsquo;s hardware.</p>
+<h3 id="applications">Applications</h3><p><strong>The question.</strong> What has FORGE made, and how far has each one got?</p>
+<p><strong>Who uses it.</strong> Product owners and the engineering lead.</p>
+<p><strong>What it shows.</strong> A read-only list of what FORGE has made, with the stages each
+one has passed: the brief, the agent working on it, and the build. A short form
+lets a person name a new web application or pipeline and say what it should do.
+It then opens the Studio with the brief filled in. The Studio never sends it on
+its own; the person pressing send is the approval.</p>
+<p><strong>Why it matters.</strong> Anyone can see the state of every request without asking
+the team that builds it. And there is one path for a brief to enter, with a
+person&rsquo;s approval at the door.</p>
+<h2 id="on-every-screen">On every screen</h2><p><strong>Account</strong>, at the foot of the menu, shows who is signed in and their active
+sessions. A person can log out, or sign out everywhere at once. It also shows
+the connection to the company&rsquo;s code repositories and which repositories the
+platform manages.</p>
+<p><strong>Language</strong> is chosen from the console itself: English, Spanish, French or
+Portuguese.</p>
+<p><strong>Sign-in</strong> is the company&rsquo;s own. People sign in with a company identity, access
+can be limited to a named list, and everything a person does in the console is
+recorded against their name.</p>
+<h2 id="what-it-is-built-on-and-why-that-matters-commercially">What it is built on, and why that matters commercially</h2><p>Each property in this section describes how CORE is built. Each has a commercial
+result, and the result is the reason to care.</p>
+<h3 id="the-model-is-yours">The model is yours</h3><p>CORE runs its own language model on the company&rsquo;s own hardware. The assistant,
+the automated helpers, the coding sessions and the FORGE studio all use it. No
+outside AI service is called, and no outside account is needed. A published list
+of outside AI libraries and their web addresses is checked against every change
+to the software, and a change that brings one in is stopped.</p>
+<p><strong>The result:</strong> the question that stalls these deals — where does our
+information go — has a one-sentence answer. It goes to a machine you own and
+stays there. That answer opens doors to buyers who are otherwise closed: the
+regulated insurer, the public body, and the company whose contracts confine its
+customers&rsquo; data.</p>
+<p><strong>A second result is the shape of the cost.</strong> The model runs on hardware the
+company already owns, so the cost of asking does not rise with every question.
+Budgeting becomes a capacity decision made once, not a usage bill read every
+month.</p>
+<h3 id="everything-else-is-yours-too">Everything else is yours too</h3><p>Records, files, the authority that issues the platform&rsquo;s certificates, and the
+secrets are all held on the company&rsquo;s own machines. No outside database run by
+somebody else holds company information.</p>
+<p><strong>The result:</strong> the boundary is real. One outside service holding company data
+would make the whole claim conditional, and a claim with an exception in it does
+not survive a procurement questionnaire.</p>
+<h3 id="it-runs-the-same-way-everywhere">It runs the same way everywhere</h3><p>One command brings up the whole platform on a single workstation. One command
+puts it onto the machines a company owns. The arrangement is the same shape in
+both places.</p>
+<p><strong>The result:</strong> a shorter evaluation. A prospect can run the real thing on their
+own hardware, without procurement and without a cut-down demo version. What they
+evaluate is what they buy.</p>
+<h3 id="it-removes-what-it-created">It removes what it created</h3><p>Deployments carry a lease and an owner. When the lease ends, the platform
+removes them.</p>
+<p><strong>The result:</strong> the running cost stays tied to use. Capacity sized for a peak
+that happened once does not keep running because removing it is nobody&rsquo;s job.</p>
+<h3 id="it-records-what-it-does-and-checks-its-own-record">It records what it does, and checks its own record</h3><p>Every console action is recorded with the person&rsquo;s name, and the chain of
+records can be verified by anyone signed in.</p>
+<p><strong>The result:</strong> assurance becomes a by-product of the work rather than a
+project. The cost of answering who did what, when and why is paid by the system
+as it runs.</p>
+<h2 id="who-core-is-for">Who CORE is for</h2><h3 id="the-company-that-runs-several-applications-with-a-small-platform-team">The company that runs several applications with a small platform team</h3><p>If a handful of people keep everything running, and each is the only one who
+understands part of it, CORE helps from the first week. One screen, remedies
+written next to the readings, and helpers that take the repetitive work.</p>
+<p>The sign of fit: your operations knowledge lives mostly in people&rsquo;s heads, and
+only a few names can staff the on-call rota.</p>
+<h3 id="the-company-whose-data-cannot-leave">The company whose data cannot leave</h3><p>Regulated finance, insurance, healthcare, public bodies, and any company under a
+contract that confines its customers&rsquo; records. For these buyers, running
+everything on their own machines is the condition of the conversation.</p>
+<p>The sign of fit: a promising evaluation has ended at the question &ldquo;and where
+does that run?&rdquo;</p>
+<h3 id="the-company-adopting-ai-that-has-to-answer-for-it">The company adopting AI that has to answer for it</h3><p>If your board, a regulator or a customer asks which AI you use, what it may do
+and who checked its work, the DataEx pages are the answer: model cards checked
+against what is live, an inventory of agents with their limits, and an
+independent second opinion on findings.</p>
+<p>The sign of fit: nobody in the company can list every AI agent in use today.</p>
+<h3 id="the-finance-and-data-leaders-who-need-one-version-of-the-truth">The finance and data leaders who need one version of the truth</h3><p>If capital spending is checked at the quarterly review, and data quality is
+argued rather than measured, the Intelligence pages put both on a screen that
+finance, the programme office and data stewards share.</p>
+<p>The sign of fit: two teams bring two different numbers to the same meeting.</p>
+<h3 id="who-feels-it-who-sponsors-it-and-who-signs-it-off">Who feels it, who sponsors it, and who signs it off</h3><p>A purchase like this involves three people who are almost never the same
+person. A promising evaluation often dies because the case is made to one of
+them in the language of another.</p>
+<div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Feels it daily</th>
+          <th>Sponsors it</th>
+          <th>Signs it off</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Several applications, small platform team</strong></td>
+          <td>The people on the on-call rota</td>
+          <td>The engineering or technology lead</td>
+          <td>The security lead</td>
+      </tr>
+      <tr>
+          <td><strong>Data that cannot leave</strong></td>
+          <td>Whoever answers the residency question each time it is asked</td>
+          <td>The executive who answers to the regulator</td>
+          <td>Compliance, data protection and the security lead</td>
+      </tr>
+      <tr>
+          <td><strong>AI that has to answer for itself</strong></td>
+          <td>The head of data</td>
+          <td>The chief risk or technology officer</td>
+          <td>Compliance and internal audit</td>
+      </tr>
+      <tr>
+          <td><strong>One version of the truth</strong></td>
+          <td>Analysts and data stewards</td>
+          <td>The chief financial officer</td>
+          <td>Internal audit</td>
+      </tr>
+  </tbody></table></div>
+<h3 id="what-each-one-should-look-at">What each one should look at</h3><ul>
+<li><strong>The operations lead</strong> opens Overview and the Harness, and asks whether the
+remedies are the ones they would have written.</li>
+<li><strong>The security lead</strong> opens the Audit chain and presses <em>Verify now</em>, then
+reads Policy &amp; ReBAC and Secrets &amp; PKI, and checks where the model runs.</li>
+<li><strong>The head of data</strong> opens Model cards and Agents, and asks whether that is
+the inventory they would give a regulator.</li>
+<li><strong>The finance lead</strong> opens the CFO dashboard and Instances, and looks at how
+spending and computing capacity are tied to initiatives and owners.</li>
+<li><strong>The engineering lead</strong> opens Runs, Reviews and Deploy lineage, and watches
+one helper for a week before arming it.</li>
+</ul>
+<p>Each can reach their own answer on their own hardware, without committing to
+anything.</p>
+<h2 id="what-adopting-core-involves">What adopting CORE involves</h2><p>Five steps, in this order. Each one is worth doing on its own, and each answers
+a question the next step assumes.</p>
+<div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>What you bring</th>
+          <th>The step</th>
+          <th>What it settles</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>One workstation</td>
+          <td>Run the whole platform on it with one command</td>
+          <td>Whether the screens can be trusted: which ones say they did not measure something</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Machines you own and your sign-in arrangement</td>
+          <td>Put the platform on them with one command, in the same shape</td>
+          <td>Nothing new. Same screens, more room</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>One data source you would like to stop worrying about</td>
+          <td>Add it on DataEx › Connections, and read what Resolve shows about it</td>
+          <td>Whether CORE reads your data the way your security lead needs</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Somebody outside the platform team</td>
+          <td>Have them request a deployment, and watch it expire</td>
+          <td>Whether useful work happens without the platform team in the loop</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>One code repository</td>
+          <td>Switch on one helper and watch it before arming it</td>
+          <td>Whether the helpers save real time, judged on what they would have published</td>
+      </tr>
+  </tbody></table></div>
+<h3 id="step-one-run-it-on-one-machine">Step one: run it on one machine</h3><p>Download the control tool and run one command. The whole platform comes up on
+the workstation: the applications, the model, the console and the full security
+arrangement. Look at Overview, the Harness and the Audit chain first. Together
+they show the honesty rule, the remedy habit and the record, which are what set
+CORE apart from a dashboard.</p>
+<h3 id="step-two-put-it-on-machines-you-own">Step two: put it on machines you own</h3><p>One command sets up the machines and installs the platform. From here the only
+things that change are size and who has access.</p>
+<h3 id="step-three-connect-one-real-data-source">Step three: connect one real data source</h3><p>Choose one system and add it on DataEx › Connections. Explore it in Resolve
+and read what CORE kept about it: structure and counts, and no values. Then
+sign in as someone who is not on the permitted list and try to change it. Read
+the record the refusal leaves in the Audit chain. That is the interaction to show
+your security lead.</p>
+<h3 id="step-four-have-someone-else-request-a-deployment">Step four: have someone else request a deployment</h3><p>Ask someone outside the platform team to request one. It arrives with an owner,
+an initiative for its cost, and a lease. Watch it remove itself when the lease
+ends.</p>
+<h3 id="step-five-switch-on-the-helpers-one-at-a-time">Step five: switch on the helpers, one at a time</h3><p>Start with the reviewer on one repository. Read what it would have said. Then
+arm it. Add the others in the order that matches your pain: report sorting if
+your inbound queue is the problem, the dependency sweep if outdated components
+are, the compliance check if written rules and real controls have drifted apart.</p>
+<h3 id="what-you-need-on-your-side">What you need on your side</h3><ul>
+<li>Machines you control, with room for the model. Ordinary processors work;
+specialist accelerator chips are used where they are present.</li>
+<li>One named person to own the platform. The operating model is built so that one
+owner and the console are enough for ordinary running.</li>
+<li>Your sign-in arrangement and the list of people allowed in.</li>
+<li>A decision about who may change data connections and who may arm agents. These
+are the policy decisions CORE asks you to make explicitly, and they are best
+made in the first week.</li>
+</ul>
+<h3 id="how-to-see-the-value-in-your-own-records">How to see the value in your own records</h3><p>Write down four readings in the first week, before anything changes, because
+they cannot be recovered once CORE is running:</p>
+<ul>
+<li><strong>Specialist time.</strong> For each person who is the only one who understands part
+of your estate, have them tally for one week the requests nobody else could
+answer. This should fall as Overview, Instances and the assistant take the
+routine questions.</li>
+<li><strong>Evidence effort.</strong> The person-days your most recent audit or security
+questionnaire took to answer &ldquo;who did what, and on whose authority&rdquo;. This
+should fall because the Audit chain collects that evidence as the work
+happens.</li>
+<li><strong>Forgotten capacity.</strong> The environments running today, each with the date it
+was last used. This should fall because every deployment now carries a lease.</li>
+<li><strong>Security review length.</strong> From your sales records, how long your recent
+security reviews ran from first questionnaire to sign-off. This should shorten
+because the question of where information goes has a short answer.</li>
+</ul>
+<h2 id="the-commercial-model">The commercial model</h2><p>Runink publishes its prices on the <a href="/pricing/">pricing page</a>. You pay for the
+number of people who use the platform, and each person comes with an allowance
+of computing capacity included. The console counts that allowance in its own
+unit, so what you have and what you have used are stated in the same terms.</p>
+<p>There are three levels: a shared level for a first team, a dedicated level for a
+company running its estate on CORE, and an enterprise level for deployments you
+host yourself on your own premises.</p>
+<p>Two things follow from charging per person with capacity included.</p>
+<p><strong>Using the software more does not cost more.</strong> The model runs on the company&rsquo;s
+own hardware, so a team that finds heavy use for the assistant, the helpers or
+FORGE is not billed by the question.</p>
+<p><strong>Capacity is tied to a purpose.</strong> Every deployment carries an initiative and an
+owner from the moment it is requested, so a finance conversation and an
+engineering conversation can use the same figure.</p>
+<h2 id="answers-to-the-questions-we-are-usually-asked">Answers to the questions we are usually asked</h2><p><strong>Where does our information go?</strong>
+To machines you own. The model, the records, the files and the certificate
+authority all run on your hardware. No outside service is called for AI.</p>
+<p><strong>Is our material used to train anything?</strong>
+No. Nothing is sent out to be trained on, and there is no account with an
+outside model provider for it to be sent to. What makes an answer specific to
+you is that your own material is indexed on your machines and the relevant parts
+are placed into the question when it is asked. Deleting a document removes its
+influence completely, because nothing is left behind in the model.</p>
+<p><strong>Do the automated helpers change anything without us?</strong>
+No. Each helper has its own switch. Each publishes only after a person has armed
+it. The Harness takes an action only after a person confirms it, and records it
+before it happens. FORGE files nothing until a person presses send.</p>
+<p><strong>Who can change a connection to one of our systems?</strong>
+Only people on the list shown in Policy &amp; ReBAC. Everyone else is refused, and
+the refusal is recorded in the Audit chain with their name.</p>
+<p><strong>How do we know the record has not been altered?</strong>
+Open the Audit chain and press <em>Verify now</em>. The console walks every record and
+names the first one that was edited, removed, inserted or moved.</p>
+<p><strong>How do we know what is actually running?</strong>
+GitOps shows, for every managed application, whether what is running matches
+what was written down. Deploy lineage shows whether a given change reached
+production.</p>
+<p><strong>Which AI models do you use?</strong>
+Model cards list each one: where it came from, its exact version, its licence,
+its intended use and the evidence from testing it, checked against what is live.</p>
+<p><strong>Why should we trust a finding?</strong>
+Because you can check it. Every reading carries the moment it was taken and a
+plain sentence explaining it. Remedies carry their reasoning. The assistant
+shows each step it took. And an independent assessor gives its own verdict on
+findings, and says when it was unable to judge rather than agreeing by default.</p>
+<p><strong>What happens when it cannot work something out?</strong>
+It says so, and that is a distinct state. A figure that could not be read is
+shown as not known. An assessment that could not be completed says so, and says
+that this is not the same as a clean result.</p>
+<p><strong>Can we try it without buying anything?</strong>
+Yes. One downloaded file and one command run the whole platform on a
+workstation.</p>
+<p><strong>Does it need special hardware?</strong>
+No. Ordinary processors work, and accelerator chips are used where present. What
+a machine needs is room for the model, and the Model cards and Inference pages
+show how much is reserved and used, so sizing is a reading.</p>
+<p><strong>Can a company without a large platform team run it?</strong>
+Yes, and the operating model assumes it. One named owner and the console are
+enough for ordinary running. Deployments come from a request and remove
+themselves when their lease ends.</p>
+<p><strong>How does it grow as we grow?</strong>
+By adding machines. A new machine joins the installation and starts taking
+work, and the Namespaces page shows what landed where. A machine can be set
+aside for one application so its work does not compete with anything else.</p>
+<p><strong>What do we need to decide before starting?</strong>
+Who may change data connections, and who may arm agents. Everything else can be
+decided as you go.</p>
+<h2 id="the-next-step">The next step</h2><p>The most useful thing to do with this paper is to see CORE running.</p>
+<p>CORE runs on one machine, from one downloaded file, with one command. There is
+no environment to set up for you and nothing to sign before you see it work. The
+version on your workstation is the version that runs on your machines.</p>
+<p><strong>In an afternoon,</strong> open Overview and notice which readings say they have not
+been measured. Open the Harness and read a remedy. Open the Audit chain and press
+<em>Verify now</em>.</p>
+<p><strong>In a day,</strong> add one real data source. Try to change it as somebody who is not
+on the permitted list, and read the record that refusal leaves.</p>
+<p><strong>In a week,</strong> put it on machines you own. Have somebody outside the platform
+team request a deployment and watch it expire. Switch on one helper and read
+what it would have published.</p>
+<p>At the end of that week you will have your own answers, from your own hardware,
+in your own words. That is the basis on which we would like to be judged.</p>
+<h3 id="talk-to-us">Talk to us</h3><p>To see CORE on your own hardware, or to talk about your estate,
+<a href="/?about=The%20Runink%20CORE%20paper#contact">book a consultation</a> at runink.org/#contact, or write to
+<a href="mailto:paes@runink.org">paes@runink.org</a>.</p>
+
+      </div>
+    </article>
+  </div>
+
+  
+  
+  
+  
+  <section class="wp-ask" aria-labelledby="wp-ask-head">
+    <div class="wp-ask-inner">
+      <p class="wp-ask-label wp-util" id="wp-ask-head">One next step</p>
+      <h2 class="wp-ask-title">Half an hour, and we read one of your own exports with you.</h2>
+      
+      <a class="wp-ask-cta wp-util" href="/?about=The&#43;Runink&#43;CORE&#43;paper#contact-form">Book a consultation</a>
+    </div>
+  </section>
+  
+
+  <footer class="wp-foot">
+    <div class="wp-foot-inner">
+      <div>
+        <p class="wp-foot-label wp-util">Talk to us</p>
+        <p>
+          <a href="mailto:paes@runink.org">paes@runink.org</a><br>
+          <a href="https://runink.org">runink.org</a>
+          
+        </p>
+      </div>
+      <div>
+        <p class="wp-foot-label wp-util">Other papers</p>
+        <p>
+          
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-face/">Runink FACE &mdash; Fulfilment Autonomous Claims Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-face-logistics/">Runink FACE &mdash; Fulfilment Autonomous Claims Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-core-atlas-banking/">Runink CORE &mdash; Four banking problems, and the console pages that answer them</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-pulse/">Runink PULSE &mdash; Prescriptive Unified Lead &amp; Social Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-core-atlas/">Runink CORE &mdash; A joint paper with Logical Leap&#39;s Atlas</a><br>
+          
+          
+          <a class="wp-next" href="/blog/whitepapers/">All whitepapers</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</main>
+
+        
+        
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose &#34;Allow Counting&#34;. We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag !== 'function') return;
+            gtag('consent', 'update', {
+                'analytics_storage': granted ? 'granted' : 'denied'
+            });
+            if (granted) {
+                gtag('event', 'page_view');
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    <script src="/js/main.js" defer></script>
+    
+
+
+<script src="/js/whitepaper.min.089b451a059ffeca5cb82bef0ed777334066c0824c36939ca6e85b22c205dcf8.js" defer></script>
+
+    
+    
+
+
+<script src="/js/motion.27f06c26d9e54528daa49660a0af947edc690620d0240b682e3a90138640ae15.js" integrity="sha256-J/BsJtnlRSjapJZgoK&#43;UftxpBiDQJAtoLjqQE4ZArhU=" defer></script>
+
+</body>
+
+</html>

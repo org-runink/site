@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Downloads"
+    permalink: "https://runink.org/downloads/"
+    date: "2026-08-11T00:00:00Z"
+    category: "page"
+    description: "Get the Runink FACE app for Android, the separate Runink PULSE app, or request access to the Runink Server image, which puts Runink CORE on hardware you own."
+    content: " Downloads Take Runink FACE with you, or run the platform on your own hardware. Three separate things live on this page. Runink FACE is our main product. It reads your logistics records on its own and drafts the action; a named person approves it. Runink PULSE is a different product for market analysis and marketing, listed here because it ships an app too, not because it is part of FACE. The Runink Server image is neither: it is the server image carrying Runink CORE, a separate product in its own right, which is the answer to where your data is processed and who can see it. Runink FACE — the product — Android Operations, in your pocket The cockpit for Runink FACE: the ranked queue of proposed actions, the records behind each one, and the approve or reject. A debug-signed build for early access — install it directly. It is not signed for the Play Store. Download APK Runink PULSE — a separate product — Android Run your agency from the field Market analysis and marketing work, with the same review-and-approve step in front of the material it drafts. A different product from FACE, with its own paper. A debug-signed build for early access — install it directly. It is not signed for the Play Store. Download APK Runink Server — the server image Runink Server The Runink Server image puts Runink CORE on your own box: the layer FACE and PULSE run on, so that your data and the reasoning over it never leave hardware you own. Provisioned per deployment, not offered as a public download. It is built on Runink River, the developer workstation. Request Access "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

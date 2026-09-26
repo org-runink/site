@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Whitepapers on Runink</title>
+    <link>https://runink.org/categories/whitepapers/</link>
+    <description>Recent content in Whitepapers on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 26 Sep 2026 13:06:48 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/categories/whitepapers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Runink FACE — Fulfilment Autonomous Claims Engine</title>
+      <link>https://runink.org/blog/whitepapers/runink-face/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-face/</guid>
+      <description>&lt;h2 id=&#34;what-this-document-is&#34;&gt;What this document is&lt;/h2&gt;&lt;p&gt;This is a description of a working product, written for the person who has&#xA;to decide whether to buy it.&lt;/p&gt;&#xA;&lt;p&gt;It contains no case studies, no customer names and no return-on-investment&#xA;figures. Those are easy to write and impossible to check. What it explains&#xA;instead is the mechanism: what the software looks at, what it produces, who&#xA;approves it, and where it all runs.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-this-document-refuses-to-claim-and-why-that-is-the-product&#34;&gt;What this document refuses to claim, and why that is the product&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;FACE does not publish a figure for what it saves you, and it cannot.&lt;/strong&gt;&#xA;Four places in the software once produced such a figure, and each one was a&#xA;made-up multiplier applied to a real number: spend times a constant, distance&#xA;times an invented rate per kilometre, a reserve times a fraction, unused&#xA;capacity times a fraction. All four were deleted, and the test that now&#xA;stands in their place asserts that the software&amp;rsquo;s derived savings total is&#xA;&lt;strong&gt;zero&lt;/strong&gt; — because no rate in the codebase can honestly turn a distance, a&#xA;spend or a reserve into a saving, and a board built out of invented rates is&#xA;worse than an empty one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink FACE — Logistics &amp; Supply Chain Whitepaper</title>
+      <link>https://runink.org/blog/whitepapers/runink-face-logistics/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-face-logistics/</guid>
+      <description>&lt;h2 id=&#34;what-this-document-is&#34;&gt;What this document is&lt;/h2&gt;&lt;p&gt;This is a description of a working product, written for the person who has&#xA;to decide whether to buy it.&lt;/p&gt;&#xA;&lt;p&gt;It contains no case studies, no customer names and no return-on-investment&#xA;figures. Those are easy to write and impossible to check. What it explains&#xA;instead is the mechanism: what the software looks at, what it produces, who&#xA;approves it, and where it all runs.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-this-document-refuses-to-claim-and-why-that-is-the-product&#34;&gt;What this document refuses to claim, and why that is the product&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;FACE does not publish a figure for what it saves you, and it cannot.&lt;/strong&gt;&#xA;Four places in the software once produced such a figure, and each one was a&#xA;made-up multiplier applied to a real number: spend times a constant, distance&#xA;times an invented rate per kilometre, a reserve times a fraction, unused&#xA;capacity times a fraction. All four were deleted, and the test that now&#xA;stands in their place asserts that the software&amp;rsquo;s derived savings total is&#xA;&lt;strong&gt;zero&lt;/strong&gt; — because no rate in the codebase can honestly turn a distance, a&#xA;spend or a reserve into a saving, and a board built out of invented rates is&#xA;worse than an empty one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink CORE — The operations layer for companies that keep their own data</title>
+      <link>https://runink.org/blog/whitepapers/runink-core/</link>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-core/</guid>
+      <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive summary&lt;/h2&gt;&lt;p&gt;Runink CORE is the layer beneath a company&amp;rsquo;s software. It runs that software on&#xA;machines the company owns. It shows one person, on one screen, what is happening&#xA;across all of it. It keeps a record of every change a person makes, and anyone&#xA;signed in can check that the record is intact.&lt;/p&gt;&#xA;&lt;p&gt;It also runs the company&amp;rsquo;s own AI. The language model CORE uses — the kind of&#xA;system that reads and writes plain English — runs on the company&amp;rsquo;s hardware. The&#xA;automated helpers that review changes, sort reports and check rules use that&#xA;model too. Nothing is sent to an outside AI service. That one fact turns a&#xA;security review from a negotiation into a description.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink CORE and Atlas for Banking</title>
+      <link>https://runink.org/blog/whitepapers/runink-core-atlas-banking/</link>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-core-atlas-banking/</guid>
+      <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive summary&lt;/h2&gt;&lt;p&gt;A bank does not fail an examination because it lacked a control. It fails because it&#xA;cannot show that the control ran, on which items, what it found, and who decided what to do&#xA;about it. The evidence exists somewhere. It is spread across the payment system, the&#xA;supplier file, the model inventory, the finance ledger and a shared drive, and it is&#xA;assembled by hand when somebody asks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink PULSE — Prescriptive Unified Lead &amp; Social Engine</title>
+      <link>https://runink.org/blog/whitepapers/runink-pulse/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-pulse/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&lt;p&gt;Most companies smaller than the very largest run marketing as a patchwork. There is an agency&#xA;on retainer for the work nobody in-house has time for. There is a tool for scheduling posts,&#xA;a CRM holding the customer records, a screen of website statistics, a design tool and a&#xA;writing assistant, each holding a different fragment of what the company knows about itself.&#xA;And increasingly there is a habit — often undeclared — of pasting positioning notes, customer&#xA;lists and pipeline detail into text generators owned by somebody else.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink CORE and Atlas — Continuous oversight, with a second opinion built in</title>
+      <link>https://runink.org/blog/whitepapers/runink-core-atlas/</link>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-core-atlas/</guid>
+      <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive summary&lt;/h2&gt;&lt;p&gt;Companies find their most expensive mistakes late.&lt;/p&gt;&#xA;&lt;p&gt;A capital project runs over budget, and the overrun shows up in the quarter-end pack. A&#xA;supplier bills against a purchase order that nobody checked again, and the gap surfaces in&#xA;an audit sample months later. A rule everyone thinks is enforced was switched off during a&#xA;system upgrade, and nobody notices until a regulator asks for proof.&lt;/p&gt;&#xA;&lt;p&gt;None of these is a failure of intelligence. Each is a failure of timing. The facts needed&#xA;for a better decision were already in a system the company owned, before the money was&#xA;committed. What was missing was somebody reading them at the moment it mattered.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

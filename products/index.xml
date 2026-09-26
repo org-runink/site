@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Runink products on Runink</title>
+    <link>https://runink.org/products/</link>
+    <description>Recent content in Runink products on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://runink.org/products/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Runink CORE</title>
+      <link>https://runink.org/products/core/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/products/core/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Runink FACE</title>
+      <link>https://runink.org/products/face/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/products/face/</guid>
+      <description>&lt;section class=&#34;relative overflow-hidden py-24 md:py-32&#34; style=&#34;background:linear-gradient(135deg,var(--rk-sunk),var(--rk-ground))&#34;&gt;&#xA;&#xA;    &#xA;&#xA;    &#xA;    &#xA;&#xA;    &lt;div class=&#34;container relative z-10&#34;&gt;&#xA;        &lt;div class=&#34;grid lg:grid-cols-12 gap-12 items-center&#34;&gt;&#xA;&#xA;            &#xA;            &lt;div class=&#34;lg:col-span-6 space-y-8 relative&#34;&gt;&#xA;                &#xA;                &lt;div&#xA;                    class=&#34;absolute -top-20 -left-20 w-64 h-64 bg-signal-fill/20 rounded-full blur-[100px] pointer-events-none opacity-50&#34;&gt;&#xA;                &lt;/div&gt;&#xA;&#xA;                &lt;h1 class=&#34;text-4xl md:text-5xl lg:text-6xl font-bold leading-normal text-white tracking-normal drop-shadow-xl&#34;&gt;&#xA;                    Your operation already wrote down what went wrong.&#xA;                &lt;/h1&gt;&#xA;&#xA;                &lt;p&#xA;                    class=&#34;text-xl text-ink-2 leading-relaxed drop-shadow-md border-l-4 border-signal pl-6&#34;&gt;&#xA;                    &lt;strong&gt;Runink FACE&lt;/strong&gt; is Runink&amp;rsquo;s main product: the Fulfilment Autonomous Claims Engine, built for logistics and the claims, returns and compliance work that hangs off it. It reads the records you already hold, works out what the combined picture means, and drafts the action for a named person to approve.&#xA;                &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink PULSE</title>
+      <link>https://runink.org/products/pulse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/products/pulse/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

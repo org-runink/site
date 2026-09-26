@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Healthcare Supply Chain on Runink</title>
+    <link>https://runink.org/tags/healthcare-supply-chain/</link>
+    <description>Recent content in Healthcare Supply Chain on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/healthcare-supply-chain/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reconciling Complex Logistics Data Safely: Methods for Data Reliability</title>
+      <link>https://runink.org/blog/reconciling-complex-data-logistics-solutions/</link>
+      <pubDate>Sun, 15 Mar 2026 15:11:52 +0000</pubDate>
+      <guid>https://runink.org/blog/reconciling-complex-data-logistics-solutions/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;An automated system with gaps in what it can see will fill them in, confidently. Four methods reduce that. Ask the question in more ways, so the search finds the right records. Sort what comes back, so the best records are used. Teach the search your own product and site codes. And tune the model on your own history. All four do the same job: keep the answer tied to a record somebody can check.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data discrepancies&lt;/strong&gt; are answers that look right and are not, produced when a system cannot see the records it needed and fills the gap instead.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Query expansion&lt;/strong&gt; means asking the question several ways, so the search finds the right records rather than none.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Reranking&lt;/strong&gt; means sorting what the search returned, so the answer is built on the most relevant records and not the first ones.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Embedding adapters&lt;/strong&gt; teach the search your own vocabulary — your product codes, your site names — so a query lands on the right record.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Model tuning&lt;/strong&gt; trains the system on your own history, so it recognises your patterns instead of generic ones.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-is-a-data-discrepancy&#34;&gt;What Is a Data Discrepancy?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

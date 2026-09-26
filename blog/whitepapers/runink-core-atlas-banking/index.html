@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-full" data-ground="console">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    <title>Runink CORE and Atlas for Banking | Runink</title>
+
+    <meta name="description" content="How a bank&#39;s payments, third-party risk, model risk, audit, finance and security teams use the Runink CORE console on four problems: payment instruction integrity, third-party risk, decision governance, and fee and interest calculation.">
+    <meta name="author" content="Runink">
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta property="og:title" content="Runink CORE and Atlas for Banking | Runink">
+    <meta property="og:description" content="How a bank&#39;s payments, third-party risk, model risk, audit, finance and security teams use the Runink CORE console on four problems: payment instruction integrity, third-party risk, decision governance, and fee and interest calculation.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/whitepapers/runink-core-atlas-banking/">
+    <meta property="og:site_name" content="Runink">
+    <meta property="og:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Runink CORE and Atlas for Banking | Runink">
+    <meta name="twitter:description" content="How a bank&#39;s payments, third-party risk, model risk, audit, finance and security teams use the Runink CORE console on four problems: payment instruction integrity, third-party risk, decision governance, and fee and interest calculation.">
+    
+    <meta name="twitter:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="canonical" href="https://runink.org/blog/whitepapers/runink-core-atlas-banking/">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSans-Book.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSansCondensed-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.670a95826064ac262ed90ed522e7e64c2f9361f5f0349a2d36e0a094039b0a63.css">
+
+    
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/main.min.93ab0ffc4a9ee30fd4284fc4b6b3e4f7d3fae2747789c2e18890b8e9358f8816.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/whitepaper.min.2f99212768da1aa490bf165a10b9d166ffc165758d4f843a773427e851c33477.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/blog/whitepapers/runink-core-atlas-banking/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Shorter notes",
+          "item": "https://runink.org/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Whitepapers",
+          "item": "https://runink.org/blog/whitepapers/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  4 ,
+          "name": "Runink CORE and Atlas for Banking"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/blog/whitepapers/runink-core-atlas-banking/"
+  },
+  "headline": "Runink CORE and Atlas for Banking",
+  "description": "How a bank's payments, third-party risk, model risk, audit, finance and security teams use the Runink CORE console on four problems: payment instruction integrity, third-party risk, decision governance, and fee and interest calculation.",
+  
+  
+  "datePublished": "2026-09-26T00:00:00Z",
+  "dateModified": "2026-09-26T13:06:48-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+
+    
+    <a class="wp-skip" href="#wp-main">Skip to the paper</a>
+
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=The%20CORE%20and%20Atlas%20banking%20paper#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=The%20CORE%20and%20Atlas%20banking%20paper#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    <div class="pt-20" id="wp-main" tabindex="-1">
+        
+        
+<main id="content">
+<div class="wp">
+  <header class="wp-hero">
+    <p class="wp-hero-eyebrow wp-util">
+      <span translate="no">Runink CORE</span>
+      <span aria-hidden="true">/</span>
+      <span>Whitepaper</span>
+      
+    </p>
+
+    <div class="wp-hero-title">
+      <h1>You are not asked whether the control exists. You are asked to show that it operated.</h1>
+      <p class="wp-hero-sub">Four banking problems, and the console pages that answer them</p>
+    </div>
+
+    <div class="wp-hero-side">
+      <div class="wp-hero-deck">
+        <p>Payment instructions, suppliers, automated decisions, fees and interest.
+Each is a written rule applied to a flow of work, under a supervisor who
+expects the rule to be shown working rather than described.</p>
+<p>This paper takes those four problems in turn. For each one it names the
+person who owns it, the Runink CORE console pages that person would open,
+and what each page puts in front of them.</p>
+<p><strong>CORE runs on hardware the bank owns, and so does the AI model it reasons
+with.</strong></p>
+
+      </div>
+    </div>
+
+  </header>
+
+  <div class="wp-body">
+    
+    
+    <nav class="wp-rail" aria-labelledby="register-heading">
+      <p class="wp-rail-head wp-util" id="register-heading">
+        Register &mdash; 8 chapters
+      </p>
+
+      
+      <button type="button" class="wp-rail-toggle" aria-expanded="false" aria-controls="register-panel" hidden>
+        <span>Contents &mdash; 8 chapters</span>
+        <svg class="wp-rail-toggle-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+          <path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="wp-rail-panel" id="register-panel">
+        <ol class="wp-reg" data-motion="reveal">
+          
+          <li>
+            <a href="#executive-summary">
+              <span class="wp-reg-page" aria-hidden="true">1</span>
+              <span class="wp-reg-title">Executive summary<span class="wp-sr">, page 1</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#how-the-console-is-laid-out">
+              <span class="wp-reg-page" aria-hidden="true">2</span>
+              <span class="wp-reg-title">How the console is laid out<span class="wp-sr">, page 2</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#payment-instruction-integrity">
+              <span class="wp-reg-page" aria-hidden="true">3</span>
+              <span class="wp-reg-title">Payment instruction integrity<span class="wp-sr">, page 3</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#third-party-risk">
+              <span class="wp-reg-page" aria-hidden="true">4</span>
+              <span class="wp-reg-title">Third-party risk<span class="wp-sr">, page 4</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#decision-governance">
+              <span class="wp-reg-page" aria-hidden="true">5</span>
+              <span class="wp-reg-title">Decision governance<span class="wp-sr">, page 5</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#fee-and-interest-calculation">
+              <span class="wp-reg-page" aria-hidden="true">6</span>
+              <span class="wp-reg-title">Fee and interest calculation<span class="wp-sr">, page 6</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-internal-audit-and-the-ciso-hold-across-all-four">
+              <span class="wp-reg-page" aria-hidden="true">7</span>
+              <span class="wp-reg-title">What Internal Audit and the CISO hold across all four<span class="wp-sr">, page 7</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#where-to-go-from-here">
+              <span class="wp-reg-page" aria-hidden="true">8</span>
+              <span class="wp-reg-title">Where to go from here<span class="wp-sr">, page 8</span></span>
+            </a>
+          </li>
+          
+        </ol>
+      </div>
+    </nav>
+    
+
+    <article class="wp-sheet" id="document">
+      <div class="wp-doc">
+        
+        <h2 id="executive-summary">Executive summary</h2><p>A bank does not fail an examination because it lacked a control. It fails because it
+cannot show that the control ran, on which items, what it found, and who decided what to do
+about it. The evidence exists somewhere. It is spread across the payment system, the
+supplier file, the model inventory, the finance ledger and a shared drive, and it is
+assembled by hand when somebody asks.</p>
+<p>Runink CORE is the operations layer a company runs on its own hardware to keep its software
+and its data healthy, governed and explainable. Its console is where a bank&rsquo;s people would
+look at that evidence in one place, act on it, and leave a record of what they did.</p>
+<p>This paper does not describe CORE in general. The
+<a href="/blog/whitepapers/runink-core/">Runink CORE paper</a> does that. It takes four problems a bank
+already owns and, for each one, walks through the console pages the owner would open:</p>
+<ul>
+<li><strong>Payment instruction integrity</strong>, owned by Payments Operations: does every payment
+trace back to an approval, and would we know if one did not?</li>
+<li><strong>Third-party risk</strong>, owned by Third-Party Risk: which suppliers touch which of our
+systems and data, and what do we know about the AI we have bought?</li>
+<li><strong>Decision governance</strong>, owned by Model Risk: what are our models and automated agents,
+what are they allowed to do, and who approved each change to the rules they apply?</li>
+<li><strong>Fee and interest calculation</strong>, owned by Finance and Product Control: when somebody
+says a rate was applied wrongly, can we check the arithmetic before we act on it?</li>
+</ul>
+<p>Internal Audit and the CISO appear in all four, so a short chapter near the end covers what
+they hold across the whole console.</p>
+<p>Three properties run through every page described here.</p>
+<p><strong>Nothing is shown as known when it is not.</strong> A figure the console could not measure is
+drawn as absent, with the reason, and never as a zero. A dashboard that shows zero when it
+means &ldquo;we did not look&rdquo; turns a failure to observe into a confident statement, and
+decisions get made on it.</p>
+<p><strong>Nobody grades their own work.</strong> A change to a business rule is proposed by one person and
+decided by another. A finding submitted for judgement is judged by an assessor that the
+submitter cannot speak for.</p>
+<p><strong>Every change leaves a record that can be checked.</strong> Each change a person makes in the
+console is written to an audit chain in which any later edit shows, and anyone signed in can
+check that chain from end to end.</p>
+<h2 id="how-the-console-is-laid-out">How the console is laid out</h2><p>The console has a left-hand menu grouped into categories. Each category answers one
+question, and knowing the question tells a reader where to look.</p>
+<div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>Category</th>
+          <th>The question it answers</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Overview</strong></td>
+          <td>Is anything wrong right now, and where do I go next?</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence</strong></td>
+          <td>What does our data estate hold, how good is it, and where are spending or controls going wrong?</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx</strong> (data experience)</td>
+          <td>What are our AI models and agents, what may they do, and can their work be trusted?</td>
+      </tr>
+      <tr>
+          <td><strong>DevEx</strong> (developer experience)</td>
+          <td>Is the platform running as intended, and did our changes ship?</td>
+      </tr>
+  </tbody></table></div>
+<p>Intelligence carries the Atlas oversight pages, built with Logical Leap, alongside CORE&rsquo;s own
+pages for mapping the data estate. The
+<a href="/blog/whitepapers/runink-core-atlas/">CORE and Atlas paper</a> explains that arrangement in
+depth.</p>
+<h3 id="where-findings-come-from">Where findings come from</h3><p>A finding is a statement that something is wrong, with the evidence behind it. In the pages
+below, findings reach a person from three places.</p>
+<ol>
+<li><strong>The spending rule book.</strong> CORE checks a company&rsquo;s capital plan, its capital requests
+and its spend against a book of approval controls. Every spend line must carry an
+approval that points to a real request. A purchase order must not be dated before its
+approval. Spend above the approved amount, beyond the margin the rule sets, needs a
+second approver. A request must name its supplier. The feeds are uploaded, or pulled
+from a registered source, and in both cases a person previews them before they are
+committed.</li>
+<li><strong>Governance reviews of the bank&rsquo;s own sources.</strong> CORE reviews each registered data
+source against governance and risk controls and publishes what it finds. Where it
+cannot assess something, it says so for that source, with the reason, rather than
+guessing.</li>
+<li><strong>Findings an assessment platform submits for judgement.</strong> A platform the bank runs can
+send its findings to CORE through a dedicated, credentialed door. CORE forms its own
+verdict on each one. The chapter on decision governance explains how.</li>
+</ol>
+<h2 id="payment-instruction-integrity">Payment instruction integrity</h2><p><strong>Who owns it:</strong> Payments Operations, with Internal Audit testing the control and Finance
+owning the ledger.</p>
+<p>A payment is a written rule applied to money leaving the bank. It should follow an
+approval. The approval should come before the order. A payment above what was approved
+should have a second signature. And a change to where money goes should be verified before
+it is used.</p>
+<p>The trouble is rarely that the rule is missing. It is that nobody can say, for a given
+month, whether the rule was applied to every payment or only to the ones somebody looked
+at. Testing is done on a sample, after the fact, for the same reason every control in a
+bank is sampled: volume.</p>
+<h3 id="what-payments-operations-would-open">What Payments Operations would open</h3><div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>Page</th>
+          <th>What it gives them</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Intelligence › Sources</strong></td>
+          <td>The systems CORE is allowed to read, one card each: the payment system, the supplier file, the ledger. Each card says whether the source was reachable when last checked, or that it has not been checked. Each system is added and changed on DataEx › Connections, where its credentials are held apart from its settings and encrypted, and where changes can be limited to a named list of administrators.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Resolve</strong></td>
+          <td>What those systems actually hold. On an administrator&rsquo;s explicit action, Resolve tests each connection, explores its structure (tables, columns, types and declared keys) and counts how many distinct accounts use each dataset. It keeps the structure and the counts. It never keeps customer values, sample rows or the names of the accounts. This is how Payments Operations learns which systems hold payee details before anyone claims a control covers them.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › CapEx monitor</strong></td>
+          <td>The spending rule book run over every line of the plan, request and spend feeds the bank has loaded, not over a sample. Each finding names the rule, the record and the remedy the rule book gives.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › CapEx lineage</strong></td>
+          <td>Any finding traced along its chain: this payment, the approval it cites, the plan line that approval belongs to. A payment with no approval behind it shows as an orphan.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › CFO dashboard</strong></td>
+          <td>Planned, approved and actual spend side by side, and a risk summary that totals spend without authorisation and spend beyond its approval. A figure the feeds cannot answer is drawn with its reason, not as zero.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Analyst dashboard</strong></td>
+          <td>The same feeds from the working analyst&rsquo;s side: open findings by severity, and a health scorecard where an area with nothing to measure reads &ldquo;not assessed&rdquo; rather than green.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Remediation</strong></td>
+          <td>The queue of findings, each with the rule book&rsquo;s remedy. A person can dry-run a fix against a copy of the feeds to see the before and after, then approve it or dismiss it. The decision is made by the rule&rsquo;s owner or an administrator, never by the person who proposed it. An approved fix is recorded as a decision and applied in the source system, and the finding clears on the next load.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Judgements</strong></td>
+          <td>Where the bank&rsquo;s own monitoring raises a finding, such as a payee&rsquo;s bank details changed without call-back, the finding can be submitted with its evidence and CORE returns its own verdict. More on this under decision governance.</td>
+      </tr>
+      <tr>
+          <td><strong>DevEx › Audit chain</strong></td>
+          <td>Every approval, dismissal and change of rule owner, with the person, the time and the outcome.</td>
+      </tr>
+  </tbody></table></div>
+<h3 id="what-changes-and-why">What changes, and why</h3><p>The control stops being a sample and becomes the population. Every line in every feed that
+is loaded is checked against the rule book, so the question &ldquo;was the rule applied to every
+payment this month?&rdquo; has a list for an answer: the lines that passed, the lines that did
+not, and what was decided about each.</p>
+<p>Detection moves closer to the payment. Today a payment released without a matching
+approval is usually found at the next audit sample. Here it is found when the feed it sits
+in is next loaded.</p>
+<p>The fix is recorded where the auditor will look for it. The decision to approve or dismiss
+a remedy, and the name of the person who made it, is in the decision log and in the audit
+chain, not in an email thread.</p>
+<h3 id="your-baseline">Your baseline</h3><p>Find these before anything changes, because the starting point is lost once things
+improve.</p>
+<ul>
+<li><strong>Payments released without a matching approval</strong> found in your last two audit or
+control-testing cycles. Your internal audit workpapers hold the count and the sample size.</li>
+<li><strong>Days from payment to detection</strong> for each of those. Take the payment date from the
+payment system and the date the item first appears in your issue register.</li>
+<li><strong>Payments above their approved amount with no second signature</strong>, from your accounts
+payable exception report for the last quarter.</li>
+</ul>
+<p>All three should move down, and for a stated reason: each line is checked when it is
+loaded, rather than when a sample happens to include it.</p>
+<h2 id="third-party-risk">Third-party risk</h2><p><strong>Who owns it:</strong> Third-Party Risk, with the CISO and Procurement.</p>
+<p>Rules on the oversight of outside providers ask a bank to know which suppliers it depends
+on, what those suppliers can reach, and what happens if one fails. The EU&rsquo;s Digital
+Operational Resilience Act (DORA), for example, sets out how financial firms should manage
+the risk of the technology providers they rely on.</p>
+<p>In practice the supplier inventory, the vendor master and the list of systems each supplier
+can reach are kept in different places by different teams. And every AI tool a bank buys
+adds a new third party: the vendor, and often the vendor&rsquo;s own model provider behind it.</p>
+<h3 id="what-third-party-risk-would-open">What Third-Party Risk would open</h3><div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>Page</th>
+          <th>What it gives them</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Intelligence › CapEx monitor</strong></td>
+          <td>Spend and requests checked against the rule book, including the rule that a request must name its supplier and the rule that spend must match the type of item that was planned. A request to pay nobody in particular shows up as a finding.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Resolve</strong></td>
+          <td>The estate grouped into business domains, with every link between datasets marked as declared by the source, inferred from the data, or named as a guess. It also shows where what a source declares about itself disagrees with what its data shows. For a supplier question such as &ldquo;which datasets could this provider&rsquo;s systems read?&rdquo;, this is where the answer starts.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Lineage</strong></td>
+          <td>Where data moves: from each registered source, through the application that extracts it, to where it lands. A link is drawn only where movement was observed, never guessed, and governance findings sit on the nodes they concern.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Model cards</strong></td>
+          <td>The AI inside CORE, described the way a supplier review asks: where the model came from, its licence, its intended use, its known limits and the evidence for them, beside what is actually running. The health mark is green only when the two agree.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Policy &amp; ReBAC</strong></td>
+          <td>The access lists for each kind of privileged change, such as changing a data connection or ending someone else&rsquo;s session, how many people are on each, and whether you are one of them.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Secrets &amp; PKI</strong></td>
+          <td>The certificate authority that vouches for each of the platform&rsquo;s internal services, and the console&rsquo;s own sign-in settings.</td>
+      </tr>
+      <tr>
+          <td><strong>DevEx › Audit chain</strong></td>
+          <td>Every connection added, changed or removed, and every attempt that was refused, with the person and the time.</td>
+      </tr>
+  </tbody></table></div>
+<h3 id="what-changes-and-why-1">What changes, and why</h3><p>The AI stops being a third party. CORE&rsquo;s model runs on the bank&rsquo;s own hardware. There is no
+outside AI service in the path, so no payment record, supplier contract or draft finding is
+sent to one to be read. A third-party review of CORE&rsquo;s AI becomes a review of software the
+bank runs, described by its model card, rather than a negotiation over another company&rsquo;s
+data handling.</p>
+<p>The supplier question gets a structural answer. Resolve and Lineage show which systems hold
+which data and where it moves, from what was observed. That is the map a third-party review
+needs, and it is built from the systems themselves rather than from a questionnaire.</p>
+<p>A request with no named supplier stops being invisible. It becomes a finding with an owner and
+a decision recorded against it.</p>
+<h3 id="your-baseline-1">Your baseline</h3><ul>
+<li><strong>Time to answer &ldquo;which of our systems can this supplier reach?&rdquo;</strong> for the last supplier
+review that asked it. Your third-party risk case file holds the request and response dates.</li>
+<li><strong>Purchase requests with no named supplier</strong>, or with a supplier missing from the vendor
+master, from last quarter&rsquo;s procurement data.</li>
+<li><strong>Length of your last third-party review of an AI tool</strong>, from intake to sign-off, in your
+third-party risk system.</li>
+</ul>
+<p>The first and third should move down because the evidence is produced by the platform
+rather than gathered from the vendor. The second should move down because each line is
+checked on every load.</p>
+<h2 id="decision-governance">Decision governance</h2><p><strong>Who owns it:</strong> Model Risk, with Internal Audit and the CISO.</p>
+<p>Supervisors expect a bank to keep an inventory of its models, to know what each one is for
+and where it falls short, and to control changes to the rules they apply. Automated agents
+add a harder question: not just what the model says, but what the agent is allowed to do
+with it, and who switched it on.</p>
+<p>The weak point is usually the change, not the model. A threshold is moved, a rule is
+relaxed, a new agent is enabled, and the approval sits in a ticket or an email. When a
+supervisor asks who approved it, the answer has to be rebuilt.</p>
+<h3 id="what-model-risk-would-open">What Model Risk would open</h3><div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>Page</th>
+          <th>What it gives them</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>DataEx › Model cards</strong></td>
+          <td>The model inventory for CORE&rsquo;s own AI: one card per model tier, with its source, licence, intended use, known limits and evidence, beside what is running now.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Agents</strong></td>
+          <td>Every automated agent CORE knows, each fact stated once: what it is, whether it is switched on, which model it uses, what gate it must pass and how much it may do on its own.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Guardrails &amp; autonomy</strong></td>
+          <td>Each class of action the Harness can take, set to off or to wait for a person, with overrides per business domain and hard limits above them. Every class starts with a person in the loop. Recent activity for each class is read from the audit chain.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Harness</strong></td>
+          <td>Findings about the platform&rsquo;s own risk and compliance, each with a proposed remedy and only the actions CORE can really take: start a named automated agent, file a tracking issue, or acknowledge. Each act is confirmed, then written to the audit chain before it happens.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Judgements</strong></td>
+          <td>The independent second opinion. It is described in full below.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Business rules</strong></td>
+          <td>The rule book, with a named owner and a status for every rule. A change is proposed by one person and decided by the rule&rsquo;s owner or an administrator, never by the proposer. A rule not yet approved still runs, but its findings are shown as a dry run and kept out of every score, and the scores say which rules they leave out. A rejected rule produces nothing.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Playbooks</strong></td>
+          <td>Step-by-step responses to findings, such as &ldquo;start this reviewer, then wait for this approver&rdquo;. A playbook is switched on by an administrator who did not write it, and an approval step is decided by its named approver, never by the person who started the run.</td>
+      </tr>
+      <tr>
+          <td><strong>DevEx › Reviews</strong></td>
+          <td>What each review the platform runs has found, whether code, risk, compliance, data quality, data consistency or maturity, with its history and its findings by severity and evidence.</td>
+      </tr>
+  </tbody></table></div>
+<h3 id="how-a-judgement-is-formed">How a judgement is formed</h3><p>A judgement answers one question: does the evidence behind this finding carry its claim?</p>
+<p><strong>The submitter cannot grade itself.</strong> Findings arrive through one door, on the submitting
+platform&rsquo;s credential, and any verdict sent with them is thrown away. Verdicts enter
+through a second door, on a different credential. That separation is decided by which
+credential was presented, not by a field in the message that a sender could fill in.</p>
+<p><strong>Numbers are checked with arithmetic, not opinion.</strong> Where a finding claims a rate, the
+counts behind it travel with it, and CORE works the rate out again. If the counts do not
+give the claimed figure, the verdict is a disagreement, with the arithmetic shown. A count
+divided by nothing is &ldquo;unable to judge&rdquo;, never a rate of zero. A claim that carries a number
+never reaches the AI model at all.</p>
+<p><strong>The model is never told what the submitter concluded.</strong> A claim in words is put to the
+model as one question, with the evidence. The submitter&rsquo;s own conclusion is joined back on
+afterwards, so the model cannot simply agree with it. If the model cannot be reached, the
+verdict is &ldquo;unable to judge&rdquo;, with that stated as the reason.</p>
+<p><strong>The verdicts are words, not a score.</strong> Each finding gets one: agrees, disagrees, unable to
+judge, or outside what CORE can assess. &ldquo;Unable to judge&rdquo; is never counted as agreement,
+and &ldquo;nothing has been submitted&rdquo; is said as that, never as a clean result.</p>
+<h3 id="what-changes-and-why-2">What changes, and why</h3><p>Self-approval is refused rather than discouraged. The console will not let the person who
+proposed a rule change, or a remedy, decide it. That turns a policy statement into a
+property of the system that an auditor can test.</p>
+<p>The change history already exists when the supervisor asks. The proposal, the decision, the
+decider and the time are in the decision log and in the audit chain, written when the
+change was made.</p>
+<p>A second opinion arrives before a person acts. A finding from an assessment platform
+reaches the bank&rsquo;s people with CORE&rsquo;s own verdict beside it, including the ones CORE could
+not judge, named as such.</p>
+<h3 id="your-baseline-2">Your baseline</h3><ul>
+<li><strong>Rule and threshold changes in the last year where the proposer and the approver were
+the same person.</strong> Your change management system or model change log holds both names.</li>
+<li><strong>Time to answer a supervisor&rsquo;s &ldquo;who approved this change?&rdquo;</strong>, for the last time it was
+asked. Your regulatory correspondence file holds the dates.</li>
+<li><strong>Share of models and automated tools in your inventory with an intended use and known
+limits written down.</strong> Your model inventory holds it.</li>
+</ul>
+<p>The first should fall to nothing, because the console refuses the combination. The second
+should move down because the record is written at the time of the decision.</p>
+<h2 id="fee-and-interest-calculation">Fee and interest calculation</h2><p><strong>Who owns it:</strong> Finance and Product Control, with Compliance for customer outcomes.</p>
+<p>Tiers, thresholds, product terms and rate cards are rules applied across a whole portfolio.
+Checking that what was charged matches what the terms say is a reconciliation, and it is
+done periodically, for the same reason as everything else in this paper: volume.</p>
+<p>When a check does find a problem, the next risk is acting on a figure that is wrong. A
+finding that says &ldquo;this share of accounts was charged at the wrong tier&rdquo; can start a
+customer remediation programme. If the arithmetic behind it does not hold, the bank pays
+twice: once for the error it fixed and once for the error it made.</p>
+<h3 id="what-finance-and-product-control-would-open">What Finance and Product Control would open</h3><div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>Page</th>
+          <th>What it gives them</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>DataEx › Judgements</strong></td>
+          <td>For each rate claimed in a finding, the claim worked out again from the counts it carries. A figure the evidence does not reproduce comes back as a disagreement with the arithmetic named.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Resolve</strong></td>
+          <td>Which registered systems hold the rate tables and product terms, what their structure is, and how many distinct accounts use each one. Where what a source declares about itself disagrees with what its data shows, that is listed.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Lineage</strong></td>
+          <td>Where rate data moves after it leaves its source, drawn only from observed movement, so Product Control can see which applications take data from the system that holds the rate card they reconcile against.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › DQ overview</strong></td>
+          <td>The data-quality score for the spending feeds the bank has loaded, beside the latest governance review of each registered source, including the systems that hold rate tables. A count that could not be read is left out of the summary rather than written as zero.</td>
+      </tr>
+      <tr>
+          <td><strong>Intelligence › Business rules</strong></td>
+          <td>Who owns each rule, what state it is in, and every proposed and decided change to its threshold. A figure never quietly changes meaning, because the scores name every rule they leave out.</td>
+      </tr>
+      <tr>
+          <td><strong>DevEx › Audit chain</strong></td>
+          <td>Every decision taken in the console, so a remediation decision can be traced to a person and a time.</td>
+      </tr>
+  </tbody></table></div>
+<h3 id="what-changes-and-why-3">What changes, and why</h3><p>The figure is checked before it is acted on. The arithmetic in a finding is recomputed from
+its own evidence, so a rate that does not hold is caught before it becomes a remediation
+programme, and a rate that cannot be computed is named as that rather than reported as zero.</p>
+<p>The source is known before the reconciliation starts. Resolve and Lineage show where the
+rate tables live and what reads them, so a reconciliation can be run against the table the
+charging system actually uses.</p>
+<p>Thresholds stop drifting silently. A threshold change is a proposal with a decision, a
+decider and a date, and the scores say which rules were in or out when they were computed.</p>
+<h3 id="your-baseline-3">Your baseline</h3><ul>
+<li><strong>Fee and interest breaks found by Product Control</strong> over the last four quarters, and how
+many were cleared with no cause recorded. Your reconciliation break report holds both.</li>
+<li><strong>Customer remediation cases opened for fee or interest errors</strong>, and how many were later
+re-scoped because the first figure was wrong. Your complaints and remediation register
+holds them.</li>
+<li><strong>Time to reproduce the figure in a finding</strong>, from the day it is raised to the day
+Finance agrees the number, for your last few findings. Your issue register holds the dates.</li>
+</ul>
+<p>The second and third should move down, because the arithmetic is checked on arrival rather
+than argued afterwards.</p>
+<h2 id="what-internal-audit-and-the-ciso-hold-across-all-four">What Internal Audit and the CISO hold across all four</h2><p>Internal Audit and the CISO do not own one of the four problems. They own the question of
+whether the answers can be trusted. Three DevEx pages and one DataEx page serve them in
+every chapter above.</p>
+<div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>Page</th>
+          <th>What it gives them</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>DevEx › Audit chain</strong></td>
+          <td>Every privileged change in the console, whether it was allowed, refused or failed, with the person, the time, the action and the outcome. Each entry carries a fingerprint computed over the one before it, so a later edit to any entry shows. &ldquo;Verify now&rdquo; walks the whole chain link by link and says where a break is. Anyone signed in can run that check, even a person who is not allowed to read the entries themselves.</td>
+      </tr>
+      <tr>
+          <td><strong>DevEx › Session admins</strong></td>
+          <td>The short list of people who may read the full audit trail and end another person&rsquo;s session. The list cannot be emptied, since nobody could then undo it, and every change to it is recorded before it takes effect.</td>
+      </tr>
+      <tr>
+          <td><strong>DevEx › Reviews</strong></td>
+          <td>The history of every review the platform runs, with findings by severity and the evidence for each, so a reviewer can see what was found and when without asking.</td>
+      </tr>
+      <tr>
+          <td><strong>DataEx › Policy &amp; ReBAC</strong></td>
+          <td>For each kind of privileged change, how many people may make it, and whether the reader is one of them.</td>
+      </tr>
+  </tbody></table></div>
+<p>Two points matter most to these readers.</p>
+<p><strong>The record is written as the work happens.</strong> An evidence pack built after the event
+describes a decision. A record written at the time of the decision is the decision. The
+audit chain and the decision logs are the second kind.</p>
+<p><strong>The record is held by the bank.</strong> CORE and its AI model run on hardware the bank owns.
+The audit chain, the findings, the verdicts and the credentials stay on the bank&rsquo;s systems.</p>
+<p>We have not been audited against SOX, DORA or any other banking regulation. What this paper
+describes is what the console does, and a bank&rsquo;s own control framework decides what that
+evidence is worth to it.</p>
+<h2 id="where-to-go-from-here">Where to go from here</h2><p>This paper is deliberately narrow. For depth, two longer papers sit behind it.</p>
+<ul>
+<li>The <a href="/blog/whitepapers/runink-core/">Runink CORE paper</a> covers the whole platform: how it
+runs the software, holds the data connections, governs who may touch them and carries
+changes from written to running. It is at runink.org/blog/whitepapers/runink-core/.</li>
+<li>The <a href="/blog/whitepapers/runink-core-atlas/">CORE and Atlas paper</a>, written with Logical
+Leap, covers the oversight arrangement: what a finding contains, how it is checked, and
+why an independent assessor matters. It is at runink.org/blog/whitepapers/runink-core-atlas/.</li>
+</ul>
+<p>The quickest test of fit is one control. Bring the approval rule on supplier payments, a
+supplier agreement, or a rate card, together with the person who owns it. In a short
+session we can open the console pages in this paper against that one example, and you can
+judge whether the evidence it produces is the evidence your supervisor asks for.</p>
+
+      </div>
+    </article>
+  </div>
+
+  
+  
+  
+  
+  <section class="wp-ask" aria-labelledby="wp-ask-head">
+    <div class="wp-ask-inner">
+      <p class="wp-ask-label wp-util" id="wp-ask-head">One next step</p>
+      <h2 class="wp-ask-title">Half an hour, and we read one of your own exports with you.</h2>
+      
+      <a class="wp-ask-cta wp-util" href="/?about=The&#43;CORE&#43;and&#43;Atlas&#43;banking&#43;paper#contact-form">Book a consultation</a>
+    </div>
+  </section>
+  
+
+  <footer class="wp-foot">
+    <div class="wp-foot-inner">
+      <div>
+        <p class="wp-foot-label wp-util">Talk to us</p>
+        <p>
+          <a href="mailto:paes@runink.org">paes@runink.org</a><br>
+          <a href="https://runink.org">runink.org</a>
+          
+        </p>
+      </div>
+      <div>
+        <p class="wp-foot-label wp-util">Other papers</p>
+        <p>
+          
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-face/">Runink FACE &mdash; Fulfilment Autonomous Claims Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-face-logistics/">Runink FACE &mdash; Fulfilment Autonomous Claims Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-core/">Runink CORE &mdash; The operations layer for companies that keep their own data</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-pulse/">Runink PULSE &mdash; Prescriptive Unified Lead &amp; Social Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-core-atlas/">Runink CORE &mdash; A joint paper with Logical Leap&#39;s Atlas</a><br>
+          
+          
+          <a class="wp-next" href="/blog/whitepapers/">All whitepapers</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</main>
+
+        
+        
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose &#34;Allow Counting&#34;. We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag !== 'function') return;
+            gtag('consent', 'update', {
+                'analytics_storage': granted ? 'granted' : 'denied'
+            });
+            if (granted) {
+                gtag('event', 'page_view');
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    <script src="/js/main.js" defer></script>
+    
+
+
+<script src="/js/whitepaper.min.089b451a059ffeca5cb82bef0ed777334066c0824c36939ca6e85b22c205dcf8.js" defer></script>
+
+    
+    
+
+
+<script src="/js/motion.27f06c26d9e54528daa49660a0af947edc690620d0240b682e3a90138640ae15.js" integrity="sha256-J/BsJtnlRSjapJZgoK&#43;UftxpBiDQJAtoLjqQE4ZArhU=" defer></script>
+
+</body>
+
+</html>

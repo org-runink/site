@@ -1,0 +1,13 @@
+section_context[3]:
+  - title: "Runink CORE"
+    permalink: "https://runink.org/products/core/"
+    date: "0001-01-01T00:00:00Z"
+    description: "Runink CORE is the operations layer a company runs on machines it owns. One console shows whether your software is healthy, what your AI models and agents may do, what your data holds, and turns a written brief into a working application."
+  - title: "Runink FACE"
+    permalink: "https://runink.org/products/face/"
+    date: "0001-01-01T00:00:00Z"
+    description: "Runink's main product. It reads the orders, carrier records, sensor feeds and claim files you already hold, works out what the combined picture means, and puts one drafted action in front of the person who can approve it."
+  - title: "Runink PULSE"
+    permalink: "https://runink.org/products/pulse/"
+    date: "0001-01-01T00:00:00Z"
+    description: "Runink PULSE is one marketing application your own team operates: it audits your site and social presence, researches your market, finds leads and writes the material, with every channel off until you turn it on and the reasoning on hardware you control."

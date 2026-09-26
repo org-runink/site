@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Runink CORE"
+    permalink: "https://runink.org/products/core/"
+    date: "0001-01-01T00:00:00Z"
+    category: "products"
+    description: "Runink CORE is the operations layer a company runs on machines it owns. One console shows whether your software is healthy, what your AI models and agents may do, what your data holds, and turns a written brief into a working application."
+    content: ""
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:

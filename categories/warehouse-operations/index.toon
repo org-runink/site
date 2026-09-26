@@ -1,0 +1,13 @@
+section_context[3]:
+  - title: "Standard Operating Procedures (SOPs) in Warehouse and Logistics — Why They Matter More Than You Think"
+    permalink: "https://runink.org/blog/warehouse-sop-standard-operating-procedures/"
+    date: "2026-05-24T12:14:12Z"
+    description: "What a warehouse SOP is, why undocumented process is a single point of failure, how to write one people follow, and what software can honestly do with them."
+  - title: "Cross-Docking Operations — How to Cut Storage Time and Speed Up Fulfillment"
+    permalink: "https://runink.org/blog/cross-docking-operations-efficiency/"
+    date: "2026-04-09T10:02:43Z"
+    description: "What cross-docking is, the three models, what an operation needs before it can run one, and which two figures tell you whether yours is ready."
+  - title: "Warehouse Slotting Optimization — The Overlooked Strategy Behind Picking Productivity"
+    permalink: "https://runink.org/blog/warehouse-slotting-optimization-strategy/"
+    date: "2026-03-10T22:17:47Z"
+    description: "Slotting decides how far your pickers walk. Why it decays, the four methods that work, how to re-slot without shutting down, and the figure to measure first."

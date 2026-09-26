@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-full" data-ground="console">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+
+    <title>Runink CORE and Atlas — Continuous oversight, with a second opinion built in | Runink</title>
+
+    <meta name="description" content="A joint paper from Runink and Logical Leap. CORE&#39;s Intelligence pages bring Atlas&#39;s oversight screens into CORE and fill them with the company&#39;s own data. This paper walks through each Atlas page: the question it answers, who uses it, and why it is worth having. It then shows how the rest of CORE backs the work with a second opinion, a record nobody can quietly edit, and a person who approves.">
+    <meta name="author" content="Runink">
+    
+    
+    
+      
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta property="og:title" content="Runink CORE and Atlas — Continuous oversight, with a second opinion built in | Runink">
+    <meta property="og:description" content="A joint paper from Runink and Logical Leap. CORE&#39;s Intelligence pages bring Atlas&#39;s oversight screens into CORE and fill them with the company&#39;s own data. This paper walks through each Atlas page: the question it answers, who uses it, and why it is worth having. It then shows how the rest of CORE backs the work with a second opinion, a record nobody can quietly edit, and a person who approves.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://runink.org/blog/whitepapers/runink-core-atlas/">
+    <meta property="og:site_name" content="Runink">
+    <meta property="og:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Runink CORE and Atlas — Continuous oversight, with a second opinion built in | Runink">
+    <meta name="twitter:description" content="A joint paper from Runink and Logical Leap. CORE&#39;s Intelligence pages bring Atlas&#39;s oversight screens into CORE and fill them with the company&#39;s own data. This paper walks through each Atlas page: the question it answers, who uses it, and why it is worth having. It then shows how the rest of CORE backs the work with a second opinion, a record nobody can quietly edit, and a person who approves.">
+    
+    <meta name="twitter:image" content="https://runink.org/images/logo_hu_8b335d05a046cf36.webp">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="canonical" href="https://runink.org/blog/whitepapers/runink-core-atlas/">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSans-Book.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+    
+    <link rel="preload" href="/fonts/FiraSansCondensed-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.670a95826064ac262ed90ed522e7e64c2f9361f5f0349a2d36e0a094039b0a63.css">
+
+    
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/main.min.93ab0ffc4a9ee30fd4284fc4b6b3e4f7d3fae2747789c2e18890b8e9358f8816.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/whitepaper.min.2f99212768da1aa490bf165a10b9d166ffc165758d4f843a773427e851c33477.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      "description": "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/blog/whitepapers/runink-core-atlas/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Shorter notes",
+          "item": "https://runink.org/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Whitepapers",
+          "item": "https://runink.org/blog/whitepapers/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  4 ,
+          "name": "Runink CORE and Atlas — Continuous oversight, with a second opinion built in"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://runink.org/blog/whitepapers/runink-core-atlas/"
+  },
+  "headline": "Runink CORE and Atlas — Continuous oversight, with a second opinion built in",
+  "description": "A joint paper from Runink and Logical Leap. CORE's Intelligence pages bring Atlas's oversight screens into CORE and fill them with the company's own data. This paper walks through each Atlas page: the question it answers, who uses it, and why it is worth having. It then shows how the rest of CORE backs the work with a second opinion, a record nobody can quietly edit, and a person who approves.",
+  
+  
+  "datePublished": "2026-09-26T00:00:00Z",
+  "dateModified": "2026-09-26T13:06:48-04:00",
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  "author": { "@id": "https://runink.org/#organization" },
+  
+  "publisher": { "@id": "https://runink.org/#organization" }
+}
+</script>
+
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+
+    
+    <a class="wp-skip" href="#wp-main">Skip to the paper</a>
+
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=The%20CORE%20and%20Atlas%20paper#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" style="" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=The%20CORE%20and%20Atlas%20paper#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    <div class="pt-20" id="wp-main" tabindex="-1">
+        
+        
+<main id="content">
+<div class="wp">
+  <header class="wp-hero">
+    <p class="wp-hero-eyebrow wp-util">
+      <span translate="no">Runink CORE</span>
+      <span aria-hidden="true">/</span>
+      <span>Whitepaper</span>
+      
+      <span aria-hidden="true">/</span>
+      <span>With <span translate="no">Logical Leap</span></span>
+      
+    </p>
+
+    <div class="wp-hero-title">
+      <h1>Continuous oversight, with a second opinion built in.</h1>
+      <p class="wp-hero-sub">A joint paper with Logical Leap&#39;s Atlas</p>
+    </div>
+
+    <div class="wp-hero-side">
+      <div class="wp-hero-deck">
+        <p>Atlas, from Logical Leap, is a set of screens for watching capital spending
+and the quality of the data behind it. Runink CORE runs software on machines
+a company owns, with a language model the company runs itself and a record
+of every change and who made it.</p>
+<p>CORE&rsquo;s <strong>Intelligence</strong> pages bring Atlas&rsquo;s screens into CORE and feed them
+with the company&rsquo;s own records. This paper walks through each Atlas page: the
+question it answers, the person who uses it, what it lets them do, and why
+that is worth having. Then it shows how the rest of CORE backs the work: a
+second, independent opinion on submitted findings, a record that anyone
+signed in can check, and a person who approves before a rule or a fix
+changes.</p>
+
+      </div>
+    </div>
+
+  </header>
+
+  <div class="wp-body">
+    
+    
+    <nav class="wp-rail" aria-labelledby="register-heading">
+      <p class="wp-rail-head wp-util" id="register-heading">
+        Register &mdash; 22 chapters, 22 pages
+      </p>
+
+      
+      <button type="button" class="wp-rail-toggle" aria-expanded="false" aria-controls="register-panel" hidden>
+        <span>Contents &mdash; 22 chapters</span>
+        <svg class="wp-rail-toggle-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+          <path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="wp-rail-panel" id="register-panel">
+        <ol class="wp-reg" data-motion="reveal">
+          
+          <li>
+            <a href="#executive-summary">
+              <span class="wp-reg-page" aria-hidden="true">1</span>
+              <span class="wp-reg-title">Executive summary<span class="wp-sr">, page 1</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-expensive-problem-named-before-the-product">
+              <span class="wp-reg-page" aria-hidden="true">2</span>
+              <span class="wp-reg-title">The expensive problem, named before the product<span class="wp-sr">, page 2</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#who-has-this-problem-and-who-owns-it">
+              <span class="wp-reg-page" aria-hidden="true">3</span>
+              <span class="wp-reg-title">Who has this problem, and who owns it<span class="wp-sr">, page 3</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#why-periodic-review-fails">
+              <span class="wp-reg-page" aria-hidden="true">4</span>
+              <span class="wp-reg-title">Why periodic review fails<span class="wp-sr">, page 4</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-the-two-companies-bring">
+              <span class="wp-reg-page" aria-hidden="true">5</span>
+              <span class="wp-reg-title">What the two companies bring<span class="wp-sr">, page 5</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#how-to-read-the-intelligence-pages">
+              <span class="wp-reg-page" aria-hidden="true">6</span>
+              <span class="wp-reg-title">How to read the Intelligence pages<span class="wp-sr">, page 6</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-three-dashboards-analyst-cfo-and-pmo">
+              <span class="wp-reg-page" aria-hidden="true">7</span>
+              <span class="wp-reg-title">The three dashboards: Analyst, CFO and PMO<span class="wp-sr">, page 7</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#dq-overview-the-state-of-data-quality-on-one-page">
+              <span class="wp-reg-page" aria-hidden="true">8</span>
+              <span class="wp-reg-title">DQ overview: the state of data quality on one page<span class="wp-sr">, page 8</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#capex-monitor-and-capex-lineage">
+              <span class="wp-reg-page" aria-hidden="true">9</span>
+              <span class="wp-reg-title">CapEx monitor and CapEx lineage<span class="wp-sr">, page 9</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#perspectives-who-reads-what">
+              <span class="wp-reg-page" aria-hidden="true">10</span>
+              <span class="wp-reg-title">Perspectives: who reads what<span class="wp-sr">, page 10</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#business-rules-a-change-takes-two-people">
+              <span class="wp-reg-page" aria-hidden="true">11</span>
+              <span class="wp-reg-title">Business rules: a change takes two people<span class="wp-sr">, page 11</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#orchestrator-playbooks-that-run-on-agreed-terms">
+              <span class="wp-reg-page" aria-hidden="true">12</span>
+              <span class="wp-reg-title">Orchestrator: playbooks that run on agreed terms<span class="wp-sr">, page 12</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#lineage-remediation-and-progress">
+              <span class="wp-reg-page" aria-hidden="true">13</span>
+              <span class="wp-reg-title">Lineage, Remediation and Progress<span class="wp-sr">, page 13</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#sources-and-resolve-reaching-your-systems-on-purpose">
+              <span class="wp-reg-page" aria-hidden="true">14</span>
+              <span class="wp-reg-title">Sources and Resolve: reaching your systems on purpose<span class="wp-sr">, page 14</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#settings-and-deploy-lineage">
+              <span class="wp-reg-page" aria-hidden="true">15</span>
+              <span class="wp-reg-title">Settings and Deploy lineage<span class="wp-sr">, page 15</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#the-second-opinion-what-judging-means">
+              <span class="wp-reg-page" aria-hidden="true">16</span>
+              <span class="wp-reg-title">The second opinion: what judging means<span class="wp-sr">, page 16</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#how-the-rest-of-core-supports-the-oversight-story">
+              <span class="wp-reg-page" aria-hidden="true">17</span>
+              <span class="wp-reg-title">How the rest of CORE supports the oversight story<span class="wp-sr">, page 17</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#for-finance-operations-and-compliance-leaders">
+              <span class="wp-reg-page" aria-hidden="true">18</span>
+              <span class="wp-reg-title">For finance, operations and compliance leaders<span class="wp-sr">, page 18</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#continuous-versus-periodic-a-comparison">
+              <span class="wp-reg-page" aria-hidden="true">19</span>
+              <span class="wp-reg-title">Continuous versus periodic: a comparison<span class="wp-sr">, page 19</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-it-is-worth-computed-on-your-own-numbers">
+              <span class="wp-reg-page" aria-hidden="true">20</span>
+              <span class="wp-reg-title">What it is worth, computed on your own numbers<span class="wp-sr">, page 20</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#what-it-is-built-on-and-why-that-matters">
+              <span class="wp-reg-page" aria-hidden="true">21</span>
+              <span class="wp-reg-title">What it is built on, and why that matters<span class="wp-sr">, page 21</span></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#who-this-is-for-and-the-next-step">
+              <span class="wp-reg-page" aria-hidden="true">22</span>
+              <span class="wp-reg-title">Who this is for, and the next step<span class="wp-sr">, page 22</span></span>
+            </a>
+          </li>
+          
+        </ol>
+      </div>
+    </nav>
+    
+
+    <article class="wp-sheet" id="document">
+      <div class="wp-doc">
+        
+        <h2 id="executive-summary">Executive summary</h2><p>Companies find their most expensive mistakes late.</p>
+<p>A capital project runs over budget, and the overrun shows up in the quarter-end pack. A
+supplier bills against a purchase order that nobody checked again, and the gap surfaces in
+an audit sample months later. A rule everyone thinks is enforced was switched off during a
+system upgrade, and nobody notices until a regulator asks for proof.</p>
+<p>None of these is a failure of intelligence. Each is a failure of timing. The facts needed
+for a better decision were already in a system the company owned, before the money was
+committed. What was missing was somebody reading them at the moment it mattered.</p>
+<p>Nobody was reading because there is too much to read. A review team cannot inspect every
+transaction, record and settings change. So review became sampling, sampling became
+periodic, and periodic became the thing that happens after the decision.</p>
+<p><strong>Atlas is built for the timing.</strong> Atlas is software from Logical Leap that watches
+capital spending and the quality of the data behind it. It checks each record against the
+rules a company has written down, ranks what it finds by what is at stake, and keeps an
+unbroken trail from the original plan to the money spent.</p>
+<p><strong>CORE runs it on the company&rsquo;s own ground.</strong> CORE&rsquo;s Intelligence pages are Atlas&rsquo;s
+screens and Atlas&rsquo;s capital-spending rule book, running inside CORE on the company&rsquo;s own
+hardware. Every figure on those pages is computed from the company&rsquo;s own records. Nothing
+is sample data, and a figure that cannot be computed says so, with the reason, instead of
+showing a zero.</p>
+<p><strong>CORE adds the second opinion.</strong> Oversight creates a queue the moment it works. CORE
+does three things so the queue can be trusted:</p>
+<ul>
+<li>An independent assessor reads each finding an outside assessment platform submits, and
+states whether the evidence carries it. When it cannot tell, it says so.</li>
+<li>No rule change, fix, or playbook goes live on one person&rsquo;s say-so. The person who
+proposes it can never be the person who approves it.</li>
+<li>Every change a person makes in the console lands in a record where each entry is tied
+to the one before. Anyone signed in can check that the record is whole.</li>
+</ul>
+<p>The rest of this paper takes the Intelligence pages one at a time. For each, it names the
+question the page answers, the job title that uses it, what it shows and lets that person
+do, and the way it saves money or effort.</p>
+<h2 id="the-expensive-problem-named-before-the-product">The expensive problem, named before the product</h2><h3 id="money-leaves-before-anybody-checks">Money leaves before anybody checks</h3><p>Every company has rules about how money is committed. A purchase above a set amount needs
+an approval. A supplier must be on an approved list. A request must match the plan it came
+from. A capital item must be booked as a long-lived asset, not written off as a running
+cost. Spending above the approved amount needs a second approver.</p>
+<p>These rules exist. They are written down. Somebody was paid to write them.</p>
+<p>The rules are enforced in one of three places: in the software, by a person following a
+procedure, or nowhere. Most companies cannot say which of the three applies to a given
+rule. The rule was written in a policy. A project team built it into a system and moved
+on. The system was upgraded twice. Nobody read the policy against the settings afterwards.</p>
+<p>So there is a set of rules a company believes it enforces, and a different set it actually
+enforces, and no easy way to see the difference.</p>
+<h3 id="the-gap-between-the-decision-and-the-review">The gap between the decision and the review</h3><p>The second cost is timing.</p>
+<p>Think of the ordinary steps of a capital project. A plan is written. A request is approved.
+A purchase order is raised. Invoices arrive. The finished thing goes on the books. Each step
+is a chance for things to drift: a request that no longer matches the plan, an approval
+granted before anyone looked, a purchase order dated before its approval, spending above
+what was approved.</p>
+<p>Review happens at the end. By then the money is spent, the supplier is paid, and the fix is
+a recovery effort rather than a decision not to go ahead. Recovery is slower and less
+certain, and it takes senior time that a question asked early would not have taken.</p>
+<h3 id="the-review-team-cannot-keep-up">The review team cannot keep up</h3><p>The third cost is the one that makes the first two permanent.</p>
+<p>An internal audit or data-quality team works by sampling. It picks a sound number of items,
+tests them well, and reports. That is a good way to estimate a rate. It is not a way to
+catch one bad transaction, because that transaction is almost never in the sample.</p>
+<h3 id="the-evidence-problem">The evidence problem</h3><p>The fourth cost does not look like a loss. It looks like overhead.</p>
+<p>Regulated companies must show, on request, that a control worked throughout a period. The
+usual way is to build the evidence after the request. Somebody pulls extracts from several
+systems, matches them by hand, writes a story, and attaches screenshots. It takes weeks. It
+is done again next quarter, and again for the next framework, and the second round does not
+make the third one shorter.</p>
+<h3 id="what-the-four-have-in-common">What the four have in common</h3><p>Rules that are believed rather than known. A delay between decision and review. A review
+method that cannot see the single item. Evidence built by hand after the fact. They share
+one cause: the company&rsquo;s own records could answer all four questions, and nothing is
+reading them as they change.</p>
+<h2 id="who-has-this-problem-and-who-owns-it">Who has this problem, and who owns it</h2><p>The pattern appears wherever three things meet: many small decisions that commit money,
+written rules about those decisions, and a review team sized for sampling.</p>
+<p><strong>Capital-intensive companies</strong> feel it most. Utilities, manufacturers, property
+developers, transport operators, hospital groups, mining and energy firms all run the same
+steps: plan, approve, buy, spend, and book the asset. The amounts are large, the chain is
+long, and the pieces sit in different systems. This is where Atlas&rsquo;s rule book is aimed,
+and Logical Leap names its audiences directly: Finance, the project management office,
+Procurement, Engineering, Internal Audit and Executive Leadership.</p>
+<p><strong>Any company that must show a control worked</strong> feels it too. Anyone who answers to an
+auditor, a regulator, a certification body or a large customer&rsquo;s security team faces the
+same question. For them, continuous review is not about speed. It is the difference
+between building evidence and already having it.</p>
+<h3 id="three-people-rarely-the-same-one">Three people, rarely the same one</h3><p>A purchase like this involves three people, and they are almost never the same person.</p>
+<p><strong>The person who feels it</strong> lives with the problem every day. They are usually too junior
+to buy and too busy to be in the room, and their account is the most accurate one there
+is.</p>
+<p><strong>The person who sponsors it</strong> holds the budget and the consequence. They see the problem
+as a number in a report, so the case must be made in their units.</p>
+<p><strong>The person who signs it off</strong> can stop the purchase but cannot start it. Security, risk,
+audit and data protection sit here. They are answering a question they will personally be
+held to.</p>
+<div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th>Setting</th>
+          <th>Feels it daily</th>
+          <th>Sponsors it</th>
+          <th>Signs it off</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Capital projects</strong></td>
+          <td>The project office and the accountants matching commitments to plan</td>
+          <td>The finance director</td>
+          <td>Internal audit, and IT for the data connections</td>
+      </tr>
+      <tr>
+          <td><strong>Any regulated body</strong></td>
+          <td>Whoever builds the evidence, usually on top of their real job</td>
+          <td>The executive who answers the regulator</td>
+          <td>The security lead and the external auditor</td>
+      </tr>
+  </tbody></table></div>
+<p>The most common way a good evaluation dies is that the case is made to one of the three in
+the language of another. The Intelligence pages are split by audience for this reason, as
+the chapters that follow show.</p>
+<h2 id="why-periodic-review-fails">Why periodic review fails</h2><p>&ldquo;We already have controls&rdquo; is the most common and most reasonable objection to everything
+in this paper. So it is worth being exact.</p>
+<p><strong>Sampling answers a different question.</strong> A sample tells you how often a group of items
+goes wrong. It cannot tell you which items went wrong, and it was never meant to. For an
+auditor&rsquo;s conclusion, a rate is the right answer. For an operating decision, such as
+whether this payment should go out, a rate is no answer at all.</p>
+<p><strong>The gap is where the loss lives.</strong> If review is quarterly, most findings arrive long
+after the event. Every remedy open in the first week, such as holding a payment or querying
+a request, has expired. What remains is recovery.</p>
+<p><strong>Manual review slips when it matters most.</strong> Review is done by people with other jobs.
+At year end, during a large project or a system move, review is the work that slips. That
+is exactly when the risk of error is highest.</p>
+<p><strong>Written rules drift from enforced rules, quietly.</strong> A rule built into a system is a
+setting. Settings change during upgrades, moves and the ordinary work of clearing a
+backlog. The policy still says the rule is enforced. The system no longer enforces it.</p>
+<p><strong>What continuous means.</strong> Continuous does not mean faster reporting. It means each record
+is checked against the rule when it arrives, so the finding lands while the decision is
+still open.</p>
+<h2 id="what-the-two-companies-bring">What the two companies bring</h2><h3 id="atlas-from-logical-leap">Atlas, from Logical Leap</h3><p>Atlas is software that watches capital spending: money a company spends on lasting things
+such as buildings, plant, equipment and large projects. Logical Leap describes its purpose
+plainly: continuous oversight of every capital investment, stopping money leaking away at
+the point where it leaves.</p>
+<p>Logical Leap describes six capabilities:</p>
+<ul>
+<li><strong>Continuous intelligence</strong>: every transaction checked as it happens.</li>
+<li><strong>Anomaly detection</strong>: spotting unusual spend and policy breaches.</li>
+<li><strong>Risk ranking</strong>: ordering issues by impact and exposure.</li>
+<li><strong>Predictive insight</strong>: warning of overruns and delays before they land.</li>
+<li><strong>Guided remediation</strong>: recommending actions and tracking them to close.</li>
+<li><strong>Complete lineage</strong>: an unbroken trail from the original plan to the books.</li>
+</ul>
+<p>Logical Leap arranges access to Atlas through a walkthrough with its team.</p>
+<h3 id="runink-core">Runink CORE</h3><p>CORE is the layer a company runs on its own hardware to keep its software and its data
+healthy, governed and explainable. Its console sorts the work into categories. The two
+that matter most here are:</p>
+<ul>
+<li><strong>Intelligence</strong>: what the company&rsquo;s data holds, how good it is, and where spending or
+controls are going wrong. These are the Atlas pages.</li>
+<li><strong>DataEx</strong> (short for data experience): what the company&rsquo;s AI models and agents are,
+what they may do, and whether their work can be trusted.</li>
+</ul>
+<p>Beside them sit <strong>Overview</strong>, the front door, and <strong>DevEx</strong> (developer experience), which
+covers whether the platform is running and whether changes shipped. The main CORE paper
+covers every category: <a href="/blog/whitepapers/runink-core/">Runink CORE — the operations layer for companies that keep their
+own data</a>.</p>
+<h3 id="how-the-two-fit-together">How the two fit together</h3><p>Logical Leap designed Atlas&rsquo;s screens and its capital-spending rule book for the people
+who do this work every day. CORE runs both inside its console, on the company&rsquo;s own
+machines, under CORE&rsquo;s sign-in, and against the company&rsquo;s own records.</p>
+<p>That split is deliberate. Capital oversight has its own vocabulary: plan, approve,
+procure, spend, capitalise; commitment, variance, lead time, Go-Live. Logical Leap built
+its screens around that vocabulary, and a general-purpose screen would make the work
+harder. CORE contributes what sits underneath: the machines, the model, the connections to
+the company&rsquo;s systems, the named people who may change things, and the record of who did.</p>
+<h2 id="how-to-read-the-intelligence-pages">How to read the Intelligence pages</h2><p>Every Intelligence page follows three rules, and a reader who knows them can trust what
+they see.</p>
+<p><strong>Every figure is the company&rsquo;s own.</strong> There is no sample data on these pages. Each figure is
+computed by CORE from records the company has loaded or connected.</p>
+<p><strong>Not measured is never shown as zero.</strong> When a figure cannot be computed, the page shows
+the reason in its place. An empty dataset has no quality score, not a score of zero. A
+division by nothing is not a variance. The page also says where each figure came from and
+when it was read, so &ldquo;we could not look&rdquo; never reads as &ldquo;all clear&rdquo;.</p>
+<p><strong>Reading is open, changing is named.</strong> Anyone admitted to the console can read these
+pages. Changing anything, such as loading a feed, approving a rule change or pressing a
+button that reaches a company system, needs a named person on the right list. Every
+attempt to change something is recorded, refusals included.</p>
+<p>The chapters below follow the order of the menu. They cover the Atlas pages, and the
+Resolve and Deploy lineage pages that sit beside them. The Data audit page is described in
+the <a href="/blog/whitepapers/runink-core/#data-audit">Runink CORE paper</a>.</p>
+<h2 id="the-three-dashboards-analyst-cfo-and-pmo">The three dashboards: Analyst, CFO and PMO</h2><p>Three dashboards open the category, one for each person who owns a part of the problem.
+Each one is a summary that points to the page where the work is done.</p>
+<h3 id="analyst-dashboard">Analyst dashboard</h3><p><strong>The question it answers.</strong> Is this capital programme ready for its Go-Live date, and
+what stands in the way?</p>
+<p><strong>Who uses it.</strong> The capital governance analyst, and the project controller who works
+beside them.</p>
+<p><strong>What it shows.</strong> A strip of headline figures: readiness for Go-Live, the data-quality
+score, the planned budget, the approved amount, actual spend, the variance between them,
+open findings and critical risks. Below it:</p>
+<ul>
+<li>a health scorecard across budget, procurement, schedule, data quality, compliance and
+vendors, where an area with no basis to judge is marked &ldquo;not assessed&rdquo;, never green;</li>
+<li>a Go-Live readiness gauge and the parts it is built from;</li>
+<li>where each item stands in its life, from plan to spend;</li>
+<li>findings by severity and by rule, with an exception queue;</li>
+<li>long-lead items, and whether each purchase leaves enough lead time before Go-Live;</li>
+<li>data quality by dimension, with the top issues;</li>
+<li>the open backlog of fixes, and what CORE&rsquo;s agents have been doing.</li>
+</ul>
+<p><strong>Why it is worth having.</strong> The analyst&rsquo;s week today is spent building this picture from
+several systems. Here it is built for them from the records, and every tile links to the
+page that explains it. The time goes to the items that need a decision rather than to
+assembling the list.</p>
+<h3 id="cfo-dashboard">CFO dashboard</h3><p><strong>The question it answers.</strong> Where is capital going, and is any of it going where it
+should not?</p>
+<p><strong>Who uses it.</strong> The chief financial officer, the finance director, and the controller who
+prepares their pack.</p>
+<p><strong>What it shows.</strong> The approved budget, approved requests, actual spend and the budget
+that remains. Spend by category. Two risk lines that matter most to finance: spending with
+no valid approval behind it, and spending above the approved amount. A control
+effectiveness view that shows each control area&rsquo;s score and the rules it is built from. A
+separate section, marked as CORE&rsquo;s own, shows CORE&rsquo;s compliance controls and an estimate of
+the machine capacity each initiative uses, labelled as an estimate.</p>
+<p><strong>Why it is worth having.</strong> Unapproved and over-approved spend are the two lines a finance
+leader most wants to see early, and least wants to hear about from an auditor. Here they
+are computed from the spend records as they are loaded. The control view links each score
+to its rules, so a question about a weak area goes straight to the rule that caused it.</p>
+<h3 id="pmo-dashboard">PMO dashboard</h3><p><strong>The question it answers.</strong> Across the portfolio, which initiatives are on track and
+which are at risk?</p>
+<p><strong>Who uses it.</strong> The director of the project management office (PMO).</p>
+<p><strong>What it shows.</strong> The page treats each of CORE&rsquo;s initiatives as a project, and says so on
+screen. It counts active initiatives, those on track, and those at risk, judged from
+whether the software each initiative runs is healthy. It shows the trend of open
+data-governance findings over time, and a governance scorecard: each open risk CORE has
+found, how severe it is, and the fix CORE proposes, or a plain statement that it needs a
+person.</p>
+<p><strong>Why it is worth having.</strong> A portfolio status built from status reports is only as fresh
+as the last report. This one is read from the running system each time the page opens. The
+PMO director sees the same facts as the people doing the work, at the same moment.</p>
+<h2 id="dq-overview-the-state-of-data-quality-on-one-page">DQ overview: the state of data quality on one page</h2><p><strong>The question it answers.</strong> How good is our data, what is wrong with it right now, and is
+it getting better or worse?</p>
+<p><strong>Who uses it.</strong> The head of data quality, data stewards, and the chief data officer.</p>
+<p><strong>What it shows.</strong> A data-quality (DQ) score for the capital-spending records, with its
+formula on screen: records with no finding, divided by all records. An active issues list
+from CORE&rsquo;s most recent data-governance review. A trend over the past week. Quality by
+dimension. A header sentence written from real counts: how many connections are
+registered, when the last review ran, and how many review runs there have been. A count
+that could not be read is left out of the sentence rather than written as zero.</p>
+<p>The page only says the data is &ldquo;live&rdquo; when at least one source was actually read.</p>
+<p><strong>Why it is worth having.</strong> Data-quality reports are often one number with no way to see
+behind it. Here the formula sits beside the score, and every issue links to its source. A
+steward can show a doubting colleague exactly how the number was reached, which is what
+makes the number worth acting on.</p>
+<h2 id="capex-monitor-and-capex-lineage">CapEx monitor and CapEx lineage</h2><p>These two pages are the heart of the Atlas rule book. CapEx is short for capital
+expenditure: money spent on long-lived assets.</p>
+<h3 id="capex-monitor">CapEx monitor</h3><p><strong>The question it answers.</strong> Which of our capital plan, request and spend records break
+our rules, and how badly?</p>
+<p><strong>Who uses it.</strong> The capital governance analyst, the finance controller, and Procurement.</p>
+<p><strong>What it lets you do.</strong> The page works on three sets of records: the capital plan, the
+capital requests, and the spend. A named administrator loads each one, either as a file or
+by pulling it from a registered company system. Loading is in three steps. The file is
+checked first. Then a preview shows what would change, finding by finding, before anything
+is written. Only then does a person commit it. Each commit is recorded as a scan, so the
+history is kept.</p>
+<p>The rule book checks each record. The checks include:</p>
+<ul>
+<li>items with a missing or duplicated identifier, a vague description, or the wrong type or
+category;</li>
+<li>low-value items classed as capital;</li>
+<li>purchase dates that do not leave enough lead time before Go-Live;</li>
+<li>requests that point to no plan item, or plan items with no request;</li>
+<li>requests with no approval or no vendor, or raised after the planned purchase date;</li>
+<li>approvals granted too soon after the request to have been a real review;</li>
+<li>request amounts that stray from the plan;</li>
+<li>spend with no approval behind it, or a purchase order dated before its approval;</li>
+<li>spend above the approved amount that needs a second approver;</li>
+<li>spend classed differently from the plan;</li>
+<li>dates that cannot be read, which would otherwise let a record slip past every date rule.</li>
+</ul>
+<p>Each finding carries its severity, the record it concerns, and the fix the rule book
+recommends. The page groups findings by rule, by severity and by theme, and shows how
+purchases line up against the Go-Live date. An administrator sets that date on this page.</p>
+<p><strong>Why it is worth having.</strong> Every check here is one a review team would run by hand on a
+sample. Here it runs on every record, every time the records are loaded. The preview step
+means nobody learns what a new file did only after it is live.</p>
+<h3 id="capex-lineage">CapEx lineage</h3><p><strong>The question it answers.</strong> Where did this finding come from, and what else does it
+touch?</p>
+<p><strong>Who uses it.</strong> Internal audit, and the project controller tracing a problem.</p>
+<p><strong>What it shows.</strong> Pick a finding from the queue. The page traces it along its chain: the
+spend, the request that approved it, and the plan item behind that. It shows the findings
+upstream and downstream of it on the same chain, and the money at stake, including any
+spend above what was approved.</p>
+<p><strong>Why it is worth having.</strong> &ldquo;Where did this cost come from?&rdquo; is usually answered by
+asking four people. Here it is answered by following the chain. An auditor sees in one view
+whether a spending problem began at the plan, at the approval, or at the purchase, which
+decides who fixes it.</p>
+<h2 id="perspectives-who-reads-what">Perspectives: who reads what</h2><p><strong>The question it answers.</strong> Who in the company cares about capital governance, and what
+does each of them care about?</p>
+<p><strong>Who uses it.</strong> Anyone setting up the practice, and anyone explaining it to a new
+colleague.</p>
+<p><strong>What it shows.</strong> A framework, not data: one card per audience, each with a short focus.</p>
+<ul>
+<li><strong>Finance</strong>: budget integrity, capitalisation and cash flow.</li>
+<li><strong>Internal Audit</strong>: controls and audit evidence.</li>
+<li><strong>Procurement</strong>: vendor governance and purchase order workflows.</li>
+<li><strong>Engineering and Operations</strong>: equipment readiness for Go-Live.</li>
+<li><strong>Security and Cyber</strong>: identity, access and AI safety.</li>
+<li><strong>Compliance</strong>: regulatory adherence and evidence.</li>
+<li><strong>Executive Leadership</strong>: portfolio health and capital efficiency.</li>
+<li><strong>AI and Agentic Governance</strong>: automated work that can be explained and that keeps a
+person in the loop.</li>
+</ul>
+<p><strong>Why it is worth having.</strong> The same finding means different things to Finance and to
+Engineering. A shared map of who reads what helps a team route each finding to the person
+who can act on it, and helps a sponsor see that the practice serves more than one
+department.</p>
+<h2 id="business-rules-a-change-takes-two-people">Business rules: a change takes two people</h2><p><strong>The question it answers.</strong> Which rules are we enforcing, who owns each one, and who
+agreed to change it?</p>
+<p><strong>Who uses it.</strong> Rule owners in Finance and Procurement, the head of internal controls, and
+internal audit.</p>
+<p><strong>What it shows.</strong> Every rule in the rule book, with its status, its owner, how many
+findings it has raised, and any open change. Each rule also shows its effect, read from
+CORE and not guessed: whether it is scored, running as a dry run, or not evaluated. A dry
+run and a scored rule never look alike.</p>
+<p><strong>What it lets you do.</strong> Anyone signed in may propose a change to a rule&rsquo;s status or
+threshold, and must give a reason. The change is then decided by the rule&rsquo;s owner or an
+administrator, and never by the person who proposed it. This is the four-eyes rule, and
+CORE enforces it itself; the page simply mirrors it by greying out the approve button on
+your own proposal. An administrator assigns owners.</p>
+<p>Status is not decoration. A rejected rule raises no findings. A rule still in draft or
+awaiting approval raises findings marked as a dry run, and those are kept out of every
+total, dashboard and scan, with the rule named as left out. Once approved, a new threshold
+feeds the rule book.</p>
+<p><strong>Why it is worth having.</strong> Rules drift because one person can change a setting and
+nobody sees it. Here no rule changes on one person&rsquo;s word, the reason is written down,
+and the decision lands in the audit record. When an auditor asks who agreed to loosen a
+threshold, and why, the answer is a page, not a search.</p>
+<h2 id="orchestrator-playbooks-that-run-on-agreed-terms">Orchestrator: playbooks that run on agreed terms</h2><p>The menu calls this page Orchestrator. What it holds is playbooks: short, written routines
+that say what should happen when something is found.</p>
+<p><strong>The question it answers.</strong> When a certain kind of finding appears, what happens next,
+and who agreed to it?</p>
+<p><strong>Who uses it.</strong> The head of data governance, the controls lead, and the operations
+manager who owns the follow-up.</p>
+<p><strong>What it lets you do.</strong> A playbook has triggers and steps. A trigger can be a person
+pressing Run, a schedule, a report from one of CORE&rsquo;s agents, or a new scan of capital
+records. For example: run this when the data-governance agent reports a failing control,
+or when a capital scan finds critical issues. The steps can:</p>
+<ul>
+<li>start one of CORE&rsquo;s agents, such as data governance, compliance, dependency risk, the
+independent assessor, or the curator that writes release notes;</li>
+<li>run a new capital scan;</li>
+<li>wait for a named person&rsquo;s approval;</li>
+<li>post a notice.</li>
+</ul>
+<p>A playbook can also be drafted from the rules that are failing most, as a starting point
+for a person to edit.</p>
+<p>The controls are strict. A playbook goes live only when an administrator who neither wrote
+it nor last edited it activates it. An approval step can be decided by its named approver
+or an administrator, and never by the person who started the run. Editing a live playbook
+sends it back to draft. No step calls a model or edits the company&rsquo;s records. A step
+that waits on an agent and hears nothing by its deadline is marked
+as timed out, never assumed to have worked. Guards stop one playbook setting off another
+in a loop, and each skip is recorded with its reason.</p>
+<p>Each playbook shows its recent runs, step by step, and a success rate measured from runs
+that finished.</p>
+<p><strong>Why it is worth having.</strong> Follow-up is where findings stall. A playbook turns &ldquo;somebody
+should look at this&rdquo; into a written routine that starts on its own, waits for a person
+where it should, and leaves a record of every step. The second-person rule means the
+routine itself was agreed by two people before it ran.</p>
+<h2 id="lineage-remediation-and-progress">Lineage, Remediation and Progress</h2><h3 id="lineage">Lineage</h3><p><strong>The question it answers.</strong> Where does our data come from, where does it go, and where
+along the way is its quality weak?</p>
+<p><strong>Who uses it.</strong> The data architect and data stewards.</p>
+<p><strong>What it shows.</strong> A map from source systems, through the applications that take data from
+them, to where the data lands. Sources are the ones registered in CORE. Links are drawn
+only where CORE observed them: where an application reported data moving, or where
+Resolve read a relationship from the systems themselves, such as a key a source declares
+between two tables or a dataset the source&rsquo;s own access log shows being read. A declared
+source and an observed flow are drawn differently, so a reader never mistakes a plan
+for a fact. Beside the map sit the quality hotspots: for each source, its failing
+controls and its warnings from the latest review.</p>
+<p><strong>Why it is worth having.</strong> When a report is wrong, the first question is which source fed
+it. A map built from observed movement answers that faster than a diagram drawn once and
+never updated.</p>
+<h3 id="remediation">Remediation</h3><p><strong>The question it answers.</strong> What should we fix, what would the fix change, and who agreed
+to it?</p>
+<p><strong>Who uses it.</strong> Finance operations, data owners, and rule owners.</p>
+<p><strong>What it lets you do.</strong> The page opens on the capital-spending fix queue, filtered by
+state and severity. For a fix that can be worked out exactly, a dry run shows the record
+before and after, which findings the fix would close, and which it would open. The dry run
+works on a copy and writes nothing.</p>
+<p>A fix is then approved or dismissed, with a note, by the rule&rsquo;s owner or an administrator.
+An approval is a recorded decision: the fix is made in the source system, and the finding
+clears on the next load. The decision log is the audit trail. Below the capital queue sits
+CORE&rsquo;s wider list of findings from its own reviews and compliance checks.</p>
+<p><strong>Why it is worth having.</strong> A fix that opens two new problems is worse than no fix. The dry
+run shows that before anyone touches a source system. The recorded decision means the
+question &ldquo;who approved this change to the records?&rdquo; always has an answer.</p>
+<h3 id="progress">Progress</h3><p><strong>The question it answers.</strong> Are we getting better?</p>
+<p><strong>Who uses it.</strong> The chief data officer, the head of internal audit, and whoever reports to
+an audit committee.</p>
+<p><strong>What it shows.</strong> The history of CORE&rsquo;s data-governance reviews, with open findings over
+time. The history of capital scans: for each load, the quality score, records failed,
+findings opened and closed since the previous load, counts by severity, and scores by
+dimension. CORE&rsquo;s view of data and AI maturity. The runs of CORE&rsquo;s review agents. The
+history can be exported with one click.</p>
+<p><strong>Why it is worth having.</strong> A board asks whether things are improving. The usual answer is
+a story. This page answers with the record of every scan, and a scan that could not read
+its data shows as a gap in the line, not a drop to zero.</p>
+<h2 id="sources-and-resolve-reaching-your-systems-on-purpose">Sources and Resolve: reaching your systems on purpose</h2><p>These two pages are where CORE meets the company&rsquo;s own systems. Both follow one principle:
+nothing reaches a company system unless a named administrator pressed a button and
+confirmed it.</p>
+<h3 id="sources">Sources</h3><p><strong>The question it answers.</strong> Which of our systems may the Intelligence pages use, and what
+state is each one in?</p>
+<p><strong>Who uses it.</strong> The IT lead or data platform owner, and the security reviewer.</p>
+<p><strong>What it lets you do.</strong> One card for each system registered in CORE. Each card has a switch
+that grants that system to the Intelligence workspace; granting records a permission and
+reaches nothing. The card shows the business domain the system was grouped into, whether
+its credentials are in place, and whether it answered when last checked — or that it has
+not been checked, which is never shown as down. A grant whose system has since been
+removed is shown as missing, with a way to revoke it. The page also carries the catalogue
+of the kinds of system CORE can connect to.</p>
+<p>The systems themselves are created, edited, re-keyed, tested and removed in one place,
+<strong>DataEx › Connections</strong>, and each card links there. A new connection is a three-step
+dialog: choose the kind of system and fill in its form, choose the runner that will reach
+it, then review, test and save. Credentials are held apart from the settings, so the
+settings can be reviewed by people who may not see the credentials, and they are never
+shown back once saved. Only people on an explicit list may change a connection, and every
+attempt, allowed or refused, is recorded.</p>
+<p><strong>Why it is worth having.</strong> When each application reaches the company&rsquo;s systems its own
+way, the same warehouse ends up connected several times, under several accounts, with
+several people each thinking somebody else looks after it. One list of connections, one
+catalogue and one record turn &ldquo;what reaches our finance warehouse, and under whose
+account?&rdquo; into a screen, and the grant switch keeps &ldquo;CORE knows about it&rdquo; apart from &ldquo;these
+pages may use it&rdquo;.</p>
+<h3 id="resolve">Resolve</h3><p><strong>The question it answers.</strong> What is actually in our systems, how is it organised, and how
+is it used?</p>
+<p><strong>Who uses it.</strong> The data platform owner, the data architect and data stewards.</p>
+<p>Resolve is one capability that Runink CORE and Runink FACE share: the same page, doing the
+same work, in both products.</p>
+<p><strong>What it lets you do.</strong> Resolve is the one place CORE reaches into a company system, and
+only when an administrator presses a button and confirms it. The confirmation says what
+will be reached and what will be kept. There are four actions:</p>
+<ul>
+<li><strong>Test</strong> a connection: does the source answer?</li>
+<li><strong>Explore</strong> a source, to record its structure: its datasets and columns, the type each
+column is declared as, the keys between its tables, row counts where the source states
+them, and which columns the source itself marks as personal data and whether it masks
+them.</li>
+<li><strong>Read access patterns</strong> over a window the administrator chooses: how many times each
+dataset was read and written, and by how many distinct accounts. Counts, never names.</li>
+<li><strong>Map the estate</strong>: group datasets into business domains by what they mean, and draw the
+links between them. Every link is marked as declared by the source, inferred from the
+data, or a guess, and there is no confidence score anywhere on the page. What could not
+be read is listed first, with the source&rsquo;s own reason. The map also names <em>drift</em> (a
+declared relationship the data contradicts), <em>shadow</em> (a relationship the data shows and
+nothing declares) and <em>missing</em> (a declared key whose target is not in the estate).</li>
+</ul>
+<p>Every call is read-only and time-limited. CORE keeps structure and counts. It never keeps
+a cell value, a sample row, a smallest or largest value, or the name of a person or
+account. A credential is opened for one call and dropped. Opening the page reaches
+nothing; only the four actions do. Each action names the runner chosen for it, and every
+action is recorded, refusals included.</p>
+<p><strong>What it feeds.</strong> What Resolve reads does not stay on its own page:</p>
+<ul>
+<li><strong>Lineage</strong> shows the relationships Resolve observed: declared keys between tables,
+domains that span more than one source, and which datasets are read and written.</li>
+<li><strong>CORE&rsquo;s data-governance checks</strong> assess data quality and personal-data exposure from
+what Explore and Read access patterns recorded. A column declared as never empty that
+holds empty values is flagged, as is a table with no declared primary key. So is a column
+whose name and declared type mark it as likely personal data and that carries no mask
+from the source, and such a column when more than ten distinct accounts read it. The
+checks are rules, with no model involved. Their findings name columns, never values, and
+appear in CORE&rsquo;s data-governance review. A source nobody has explored is reported as not
+yet explored, never as clean.</li>
+</ul>
+<p><strong>Why it is worth having.</strong> Most companies believe they have an inventory of their data,
+and on inspection do not. Resolve builds one from the systems themselves, on request, and
+keeps nothing a security reviewer would object to. Because the lineage and the governance
+checks start from the same recorded description, the map a steward reads and the findings
+an auditor reads describe the same estate. The reviewer can read on screen exactly what
+was reached and what was kept.</p>
+<h2 id="settings-and-deploy-lineage">Settings and Deploy lineage</h2><h3 id="settings">Settings</h3><p><strong>The question it answers.</strong> How is the Intelligence workspace set up, and is setup
+complete?</p>
+<p><strong>Who uses it.</strong> The administrator who runs the workspace.</p>
+<p><strong>What it lets you do.</strong> Choose the rule engine that supplies the rule book; CORE&rsquo;s own
+capital-spending engine is the one that runs here, and the page shows how many rules it
+holds. Walk through setup: find agents, grant sources, connect the rule engine, confirm.
+The checklist is checked against what exists now, not against what was once ticked, and
+the page shows who completed setup and when. Reset the workspace, with a required note;
+the page states exactly what a reset clears and what it keeps. A reset clears the agents
+in the workspace, the granted sources, the engine choice and the record that setup was
+completed. Capital feeds, scan history, rule changes and decisions, the list of agents and
+CORE&rsquo;s list of connections are all kept. Every change on this page is for an
+administrator, and is recorded.</p>
+<p>The page also shows, read-only, two related settings kept elsewhere: the latest check of
+the business rules against the written policy, and the code repositories CORE&rsquo;s own agents
+work on, which are changed on the Account page.</p>
+<p><strong>Why it is worth having.</strong> Setup that is checked against reality cannot drift into a list
+of boxes somebody once ticked. A reset that says what it keeps cannot wipe the history an
+auditor will later ask for.</p>
+<h3 id="deploy-lineage">Deploy lineage</h3><p><strong>The question it answers.</strong> Did my change ship?</p>
+<p><strong>Who uses it.</strong> The engineering lead and the release manager. It sits here because
+Intelligence is where CORE answers questions about what it knows; it is about software
+releases, not data lineage.</p>
+<p><strong>What it shows.</strong> Paste the identifier of a change. For each piece of software it touched,
+the page shows whether it was merged, reviewed by CORE&rsquo;s agents, built, stored, rolled out
+and running. A stage CORE did not measure is shown as a hole, and a change CORE does not
+know is shown as not measured, never as &ldquo;did not ship&rdquo;.</p>
+<p><strong>Why it is worth having.</strong> &ldquo;Is the fix live?&rdquo; is asked in every incident. A page that
+answers it from the release record, stage by stage, saves the round of messages it
+usually takes.</p>
+<h2 id="the-second-opinion-what-judging-means">The second opinion: what judging means</h2><p>A system that produces findings and also rates them has one opinion, expressed twice. A
+finding read by a separate assessor, reasoning a different way, gets two, and where they
+disagree there is something worth a person&rsquo;s attention.</p>
+<p>CORE has such an assessor, called the judge. It reads findings that an outside assessment
+platform submits to CORE, and states for each whether the evidence carries it. Its results
+are on the DataEx › Judgements page.</p>
+<h3 id="it-is-not-a-second-search">It is not a second search</h3><p>A judge does not look for findings. It reads one somebody else produced and asks a narrow
+question: does the evidence cited carry the claim?</p>
+<h3 id="two-doors-and-the-door-decides">Two doors, and the door decides</h3><p>Findings come in through one door, opened by a secret issued to the submitting platform.
+Verdicts go in through another, opened by a different credential that belongs to CORE&rsquo;s
+judge.</p>
+<p>A verdict that arrives at the findings door is thrown away. The submitting platform&rsquo;s secret
+is refused by name at the verdict door. <strong>A platform that submits findings cannot grade
+its own work, and the rule rests on which credential was shown, never on a field the
+sender fills in.</strong> Where no secret has been issued, the findings door accepts nothing.</p>
+<h3 id="two-vocabularies-kept-apart">Two vocabularies, kept apart</h3><p>CORE&rsquo;s verdict is one of four. It <strong>concurs</strong>. It <strong>dissents</strong>. It is <strong>unable to judge</strong>.
+Or the subject is <strong>out of scope</strong>: not one CORE has standing to rule on.</p>
+<p>What the submitter concluded about its own finding is kept apart: it asserted the claim,
+refuted it, or could not tell. Merging the two is how &ldquo;CORE concurred&rdquo; comes to mean &ldquo;the
+submitter said so and nobody checked.&rdquo; So CORE refuses the merge.</p>
+<h3 id="checks-come-first-and-numbers-are-recomputed">Checks come first, and numbers are recomputed</h3><p>Before anything reaches a model, a fixed series of checks runs in order. The finding must
+be complete enough to read. There must be evidence, and it must be readable. It must be
+about the same subject. It must not be the claim written out again. Evidence with a date
+must be recent enough to speak to the present. Each check that fires ends the matter and
+states its reason in a sentence.</p>
+<p>A claim that carries a number is settled by arithmetic and never reaches a model. Where a
+finding claims a rate, CORE divides the raw counts again itself. A figure the submitter&rsquo;s
+own evidence does not reproduce is a dissent, with the arithmetic named. A count divided by
+nothing is unable to judge, never a rate of zero.</p>
+<h3 id="the-model-is-asked-one-question-and-never-told-the-answer">The model is asked one question, and never told the answer</h3><p>Only a claim in prose reaches CORE&rsquo;s model, running on the company&rsquo;s own hardware. It is
+asked one question: does this evidence support this claim? It is never told what the
+submitter concluded, and the software gives it no way to be told. The step from &ldquo;the
+evidence supports this&rdquo; to &ldquo;CORE concurs&rdquo; happens afterwards, in code. So the model can
+neither rubber-stamp the submitter nor contradict it by reflex.</p>
+<p>Where no model is reachable, the answer is unable to judge, with that as the reason. Never
+agreement by default.</p>
+<p><span class="wp-figure" role="figure" aria-label="Two doors in one wall. A finding comes in through the first; the verdict goes back out through the second, which a different credential opens.">
+  <span class="wp-figure__art" aria-hidden="true"><!--
+  Atlas paper — "The whole built path, on one page".
+
+  What it draws, and what it deliberately refuses to draw:
+
+    - It is two doors in one wall, not a pipeline. The wall is CORE's edge.
+      A finding comes in through the upper door and the verdict goes back out
+      through the lower one, and the two doors are drawn with DIFFERENT marks
+      (a filled lozenge, a hollow ring) because they are opened by different
+      credentials. That is the commercial fact in the chapter; a single arrow
+      would have lost it.
+
+    - The eight checks are a comb, not eight boxes. Three findings enter it;
+      two stop at a tooth, each stop marked by a square and a riser to its own
+      small sheet, because a check that fires ends the matter there WITH ITS
+      OWN REASON. Showing only the survivor would have drawn a funnel that
+      never rejects anything.
+
+    - The model is a rounded pill, which is the same glyph the FACE paper uses
+      for language handled by the model. One strand goes into it and one comes
+      out: a single question. The dashed strand that stops short of it is the
+      load-bearing detail of the whole figure — the submitter's own conclusion
+      is drawn reaching toward the model and not arriving, because there is
+      nothing there for it to agree with.
+
+    - The upper branch is a sum with a rule under it: arithmetic the reader
+      performs on the raw counts, nowhere near a model.
+
+  Colour discipline: this figure uses --runs and never --drawn. In this paper
+  those two words are the standing marks for "this runs" and "this is drawn but
+  not built", and the chapter is titled "the whole BUILT path". Painting any
+  part of it in the drawn tan would contradict the register in the margin.
+
+  No text inside the artwork: at 360px the viewBox scales to about a third.
+  Every var() carries a literal fallback so the file still reads correctly when
+  it is opened on its own, outside the page that defines the tokens.
+-->
+<svg viewBox="0 0 1000 272" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ATLAS: transactions as they happen, and the one that produced a finding -->
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="8"   y="28"  width="84" height="8" rx="4"/>
+    <rect x="102" y="28"  width="52" height="8" rx="4"/>
+    <rect x="24"  y="54"  width="62" height="8" rx="4"/>
+    <rect x="96"  y="54"  width="74" height="8" rx="4"/>
+    <rect x="8"   y="80"  width="96" height="8" rx="4"/>
+    <rect x="114" y="80"  width="48" height="8" rx="4"/>
+    <rect x="24"  y="140" width="72" height="8" rx="4"/>
+    <rect x="106" y="140" width="58" height="8" rx="4"/>
+    <rect x="8"   y="166" width="88" height="8" rx="4"/>
+    <rect x="106" y="166" width="52" height="8" rx="4"/>
+    <rect x="30"  y="192" width="60" height="8" rx="4"/>
+    <rect x="100" y="192" width="70" height="8" rx="4"/>
+  </g>
+
+  <!-- the one that produced a finding, at the moment of the transaction -->
+  <g style="fill:var(--ink,#1c1917)">
+    <rect x="8"   y="106" width="96" height="8" rx="4"/>
+    <rect x="114" y="106" width="56" height="8" rx="4"/>
+  </g>
+
+  <!-- three findings arriving at the door -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-linecap:round">
+    <path d="M176,110 C 210,110 214,100 250,100" style="stroke-width:1.7;stroke-opacity:0.7"/>
+    <path d="M176,110 C 212,110 216,118 250,118" style="stroke-width:2.2"/>
+    <path d="M176,110 C 210,110 214,136 250,136" style="stroke-width:1.7;stroke-opacity:0.7"/>
+  </g>
+
+  <!-- the wall: CORE's edge, with a gap at each door -->
+  <g style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2">
+    <path d="M250,8 V92"/>
+    <path d="M250,144 V216"/>
+    <path d="M250,252 V268"/>
+  </g>
+
+  <!-- findings door: opened by the submitter's own secret -->
+  <rect x="243" y="111" width="14" height="14" rx="2"
+        transform="rotate(45 250 118)"
+        style="fill:var(--runs,#5F6F3E)"/>
+
+  <!-- verdict door: opened by a different credential -->
+  <circle cx="250" cy="234" r="8"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--runs,#5F6F3E);stroke-width:2.6"/>
+
+  <!-- eight checks, run in order -->
+  <g style="fill:var(--ink-3,#57534e)">
+    <rect x="300" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="326" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="352" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="378" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="404" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="430" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="456" y="92" width="5" height="52" rx="2.5"/>
+    <rect x="482" y="92" width="5" height="52" rx="2.5"/>
+  </g>
+
+  <!-- two of the three stop at a tooth; the third goes through -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-linecap:round">
+    <path d="M250,100 H352" style="stroke-width:1.7;stroke-opacity:0.75"/>
+    <path d="M250,136 H456" style="stroke-width:1.7;stroke-opacity:0.75"/>
+    <path d="M250,118 H540" style="stroke-width:2.2"/>
+  </g>
+
+  <!-- and each stop states its own reason -->
+  <g style="fill:var(--ink,#1c1917)">
+    <rect x="348" y="95"  width="10" height="10" rx="2"/>
+    <rect x="452" y="131" width="10" height="10" rx="2"/>
+  </g>
+  <g style="fill:none;stroke:var(--ink,#1c1917);stroke-width:1.8">
+    <path d="M353,93 V70"/>
+    <path d="M457,143 V166"/>
+  </g>
+  <g style="fill:var(--paper,#F5F1E8);stroke:var(--ink-3,#57534e);stroke-width:1.4">
+    <rect x="331" y="40"  width="44" height="30" rx="4"/>
+    <rect x="435" y="166" width="44" height="30" rx="4"/>
+  </g>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="339" y="48"  width="28" height="4" rx="2"/>
+    <rect x="339" y="57"  width="20" height="4" rx="2"/>
+    <rect x="443" y="174" width="28" height="4" rx="2"/>
+    <rect x="443" y="183" width="20" height="4" rx="2"/>
+  </g>
+
+  <!-- what survives forks: does the claim carry a number? -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2.2;stroke-linecap:round">
+    <path d="M540,118 C 566,118 566,76 594,76"/>
+    <path d="M540,118 C 566,118 574,182 612,182"/>
+  </g>
+
+  <!-- a number: CORE divides the raw counts again itself -->
+  <g style="fill:var(--ink-3,#57534e)">
+    <rect x="600" y="46" width="86" height="7" rx="3.5"/>
+    <rect x="600" y="60" width="64" height="7" rx="3.5"/>
+    <rect x="600" y="74" width="76" height="7" rx="3.5"/>
+  </g>
+  <path d="M594,92 H704" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2"/>
+  <rect x="600" y="100" width="52" height="7" rx="3.5" style="fill:var(--runs,#5F6F3E)"/>
+
+  <!-- prose: one question put to the model -->
+  <rect x="612" y="148" width="50" height="68" rx="25"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.2"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="626" y="164" width="22" height="6" rx="3"/>
+    <rect x="626" y="179" width="22" height="6" rx="3"/>
+    <rect x="626" y="194" width="22" height="6" rx="3"/>
+  </g>
+
+  <!-- and what it is never told: the submitter's own conclusion, stopping short -->
+  <path d="M540,118 C 574,118 578,196 594,202" stroke-dasharray="6 6"
+        style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.9;stroke-opacity:0.85"/>
+  <path d="M600,184 V222"
+        style="fill:none;stroke:var(--ink,#1c1917);stroke-width:3;stroke-linecap:round"/>
+
+  <!-- a verdict, with its reason, kept against the finding -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2.2;stroke-linecap:round">
+    <path d="M710,76  C 742,76  746,118 778,118"/>
+    <path d="M666,182 C 714,182 744,124 778,118"/>
+  </g>
+  <rect x="792" y="94" width="180" height="76" rx="8"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--rule,#D9CDB8);stroke-width:1.6"/>
+  <rect x="780" y="82" width="180" height="76" rx="8"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.2"/>
+  <rect x="796" y="98" width="46" height="8" rx="4" style="fill:var(--runs,#5F6F3E)"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="796" y="118" width="130" height="7" rx="3.5"/>
+    <rect x="796" y="133" width="104" height="7" rx="3.5"/>
+  </g>
+
+  <!-- read back out, through the other door -->
+  <path d="M870,158 V234 H262"
+        style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/>
+  <path d="M238,234 H222" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
+  <polygon points="196,234 214,226 214,242" style="fill:var(--ink,#1c1917)"/>
+</svg>
+</span>
+  <span class="wp-figure__caption">Two doors in one wall. A finding comes in through the first; the verdict goes back out through the second, which a different credential opens.</span>
+  <span class="wp-sr">On the left, transactions as they happen, and the one that produced a finding. The finding crosses CORE&rsquo;s edge through the findings door, opened by the submitting platform&rsquo;s own secret. Inside, it passes a series of checks run in order, drawn as a comb; two of the three findings shown stop at a check, and each stop carries its own reason. What survives forks. A claim carrying a number goes to a sum CORE performs itself on the raw counts. A claim in prose goes to a single ring, one question put to the model, and a second strand, what the submitter concluded, is drawn reaching towards that ring and stopping short of it. Both branches arrive at a verdict kept against the finding, which leaves through a second door lower down the same wall, opened by a different credential.</span>
+</span></p>
+<h3 id="why-unable-to-judge-matters">Why unable to judge matters</h3><p>No evidence, evidence that only repeats the claim, evidence about something else, evidence
+too old, an unreadable reply, a submitter who also could not tell: each ends in unable to
+judge, with the reason beside it.</p>
+<p>An assessor whose confident answers and whose guesses look the same is soon ignored. Keeping them apart is what makes a concurrence worth reading. The submitting platform
+reads the verdicts back on the same connection it used to submit, and a signed-in person
+reads them on the Judgements page.</p>
+<h2 id="how-the-rest-of-core-supports-the-oversight-story">How the rest of CORE supports the oversight story</h2><p>The Intelligence pages say what is wrong. Four other parts of CORE say whether to believe
+it, who may act on it, and what happened afterwards. Each is covered in full in the <a href="/blog/whitepapers/runink-core/">main
+CORE paper</a>; here is what each adds to oversight.</p>
+<p><strong>DataEx › Judgements: the second opinion.</strong> This page shows the latest batch of submitted
+findings, each with CORE&rsquo;s verdict, and the history of the judge&rsquo;s runs. Verdicts are four
+words on four lines, never a score. &ldquo;Nothing submitted&rdquo; and &ldquo;never judged&rdquo; are said in
+those words, never shown as agreement. A reviewer sees at a glance which findings an
+independent assessor backed, which it disputed, and which still need a person.</p>
+<p><strong>DataEx › Trust: Harness, Guardrails and Policy.</strong> The Harness lists what CORE has found
+wrong, worst first, each with its evidence and a proposed fix. From there a person can
+start an agent, file an issue, or acknowledge the finding. Guardrails &amp; autonomy sets, for
+each of those actions, whether it is switched off or waits for a person&rsquo;s click, and every
+action starts at a person&rsquo;s click. Hard limits drawn from rules CORE already enforces keep
+some findings at a person&rsquo;s click whatever the setting, and every change to a level is
+written to the audit record before it takes effect. The Policy page shows who may do what:
+which named lists of people are in force, and your own standing on each.</p>
+<p><strong>DevEx › Audit chain: a record in which any edit shows.</strong> Every change a person makes in the
+console is recorded with the time, the person, the action, what it touched and the
+outcome. Each record is tied to the one before it, so a record removed or altered breaks
+the chain. The page opens with a Verify now check that walks the chain link by link, and
+anyone signed in can run it, even a person not allowed to read the records themselves.
+Refused attempts are recorded too. In an incident review, the refusals are often the more
+telling half.</p>
+<p><strong>DataEx › Agents: who does the work.</strong> This page lists every agent CORE knows, each fact
+once: CORE&rsquo;s own agents, the agents inside the company&rsquo;s Runink applications, and a
+register of the company&rsquo;s other agents. For each it shows the model it uses, its limits,
+the screening rules applied to what it writes, and whether it is reporting. The register of
+other agents is a list of facts only; CORE never calls, polls or sends data to an agent on
+it. An auditor asking &ldquo;what automated workers touch our data, and under what limits?&rdquo; gets
+one page as the answer.</p>
+<h2 id="for-finance-operations-and-compliance-leaders">For finance, operations and compliance leaders</h2><h3 id="for-finance-and-procurement">For finance and procurement</h3><p>Finance is asked to state what was committed, what was spent and what went on the books,
+and to be right. Procurement is asked to confirm that what was bought was bought on the
+terms agreed. Both are questions of matching records that ought to agree.</p>
+<p>Start at the <strong>CFO dashboard</strong> for unapproved and over-approved spend. Follow a line into
+<strong>CapEx lineage</strong> to see where it began. Use <strong>Business rules</strong> to see who owns each
+check, and <strong>Remediation</strong> to approve a fix with a dry run in front of you. <strong>Sources</strong>
+answers which systems the figures came from and under whose account.</p>
+<h3 id="for-operations-and-project-leaders">For operations and project leaders</h3><p>Operations leaders are judged on whether the plan happened, and how soon a departure was
+noticed.</p>
+<p>The <strong>Analyst dashboard</strong> shows readiness for Go-Live and the long-lead purchases that
+threaten it. The <strong>PMO dashboard</strong> shows which initiatives are at risk. <strong>Playbooks</strong>
+turn a recurring finding into a routine that starts itself and waits for a person where it
+should.</p>
+<h3 id="for-compliance-risk-and-security">For compliance, risk and security</h3><p>You are not asked whether controls exist. You are asked to show they worked, throughout a
+period, and what happened when they did not.</p>
+<p><strong>Every record is checked, not a sample.</strong> The rule book runs on every record at every
+load, so the exceptions are named items rather than an estimated rate.</p>
+<p><strong>Each exception carries its handling.</strong> The finding, the rule, the dry run, the decision,
+who made it and when. That sequence is the evidence, written as the work happens.</p>
+<p><strong>The record can be checked end to end.</strong> The <strong>Audit chain</strong> proves the record is whole,
+and anyone signed in can run the check.</p>
+<p><strong>Two people for every change that matters.</strong> Rule changes, fix decisions, playbook
+activation and playbook approvals all need a second person, and CORE enforces it.</p>
+<p><strong>Nothing reaches your systems by accident.</strong> Only an administrator&rsquo;s confirmed action
+reaches a source, and only to read. A security reviewer can test this in an afternoon:
+sign in as somebody not on the list, try to change a source, watch the refusal by name, and
+read the record it left.</p>
+<p><strong>Is our material used to train a model?</strong> No. The model is a set of files read from disk
+on the company&rsquo;s own machine. There is no training step, no step that sends material out
+to be trained on, and no account with a model provider for it to go to. A published list
+of outside AI libraries and their addresses is checked against the source before every
+change is accepted, and a change that added one would be refused.</p>
+<h2 id="continuous-versus-periodic-a-comparison">Continuous versus periodic: a comparison</h2><div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Periodic, manual review</th>
+          <th>The Intelligence pages, with CORE behind them</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Records examined</strong></td>
+          <td>A sample, chosen to estimate a rate</td>
+          <td>Every record, at every load</td>
+      </tr>
+      <tr>
+          <td><strong>When a finding appears</strong></td>
+          <td>After the period closes</td>
+          <td>When the records are loaded, while the decision is open</td>
+      </tr>
+      <tr>
+          <td><strong>What a finding tells you</strong></td>
+          <td>That the group goes wrong at some rate</td>
+          <td>That this record breaks this rule, in this way</td>
+      </tr>
+      <tr>
+          <td><strong>Remedy open</strong></td>
+          <td>Recovery</td>
+          <td>A decision: hold, query, re-approve or go ahead</td>
+      </tr>
+      <tr>
+          <td><strong>Changing a rule</strong></td>
+          <td>One person edits a setting</td>
+          <td>Proposed with a reason, decided by a second person, recorded</td>
+      </tr>
+      <tr>
+          <td><strong>Approving a fix</strong></td>
+          <td>Made directly in the source</td>
+          <td>Dry run first, then a recorded decision by the rule owner</td>
+      </tr>
+      <tr>
+          <td><strong>A figure nobody could measure</strong></td>
+          <td>Often shown as zero</td>
+          <td>Shown as not measured, with the reason</td>
+      </tr>
+      <tr>
+          <td><strong>Confidence in a submitted finding</strong></td>
+          <td>Worked out again by each reader</td>
+          <td>An independent verdict, with its reason</td>
+      </tr>
+      <tr>
+          <td><strong>Evidence for an auditor</strong></td>
+          <td>Built by hand after the request</td>
+          <td>Written as the work happens, checkable end to end</td>
+      </tr>
+      <tr>
+          <td><strong>Under pressure</strong></td>
+          <td>Slips when the company is busiest</td>
+          <td>Runs at every load, whatever the workload</td>
+      </tr>
+      <tr>
+          <td><strong>What the company can say</strong></td>
+          <td>Controls operated during the period</td>
+          <td>Here is every exception, when it was found, what was decided, and by whom</td>
+      </tr>
+  </tbody></table></div>
+<p>The last row is the one that matters to a regulated buyer. The two statements are not a
+stronger and weaker version of one claim. They answer different questions, and only one
+of them is the question the regulator asked.</p>
+<h2 id="what-it-is-worth-computed-on-your-own-numbers">What it is worth, computed on your own numbers</h2><p>Every buyer asks what this returns. Neither company has a customer measurement to quote,
+so what follows is the method instead: every input named, every input read from your own
+systems, and no value anywhere in it.</p>
+<h3 id="what-actually-moves">What actually moves</h3><p>Checking every record does not make a bad transaction good, and it does not improve a
+supplier&rsquo;s terms. What it moves is <strong>the gap between an event and the notice of it</strong>, and
+through that gap, which remedies are still open when somebody looks. The value is the
+difference between the remedy open at today&rsquo;s moment of discovery and the remedy open at
+the earlier one.</p>
+<h3 id="the-four-inputs-and-where-to-read-each">The four inputs, and where to read each</h3><p><strong>One: your present gap.</strong> Take the last four quarters of findings from your review team:
+audit exceptions, control failures, reconciliation breaks, invoice disputes. For each,
+note the date of the event and the date it was first recorded as found. The middle value of
+those gaps is your present gap.</p>
+<p><strong>Two: what grows inside the gap.</strong> For each kind of finding, the amount that grows while
+nobody looks: a charge that keeps running, a commitment still being drawn on, an
+overpayment that repeats each month. Read it from the ledger. Record nothing for the kinds
+that do not grow. A one-off overpayment does not grow, and treating it as if it did is the
+most common way this sum gets inflated.</p>
+<p><strong>Three: the share where earlier notice would have changed the decision.</strong> Ask the people
+who worked last year&rsquo;s findings: had this arrived in the week of the event, was a different
+action open, and would we have taken it? The honest answer is often no. Only the &ldquo;yes&rdquo;
+share counts.</p>
+<p><strong>Four: what building evidence costs you.</strong> Count the evidence requests answered in the
+last four quarters. For each, count the person-days spent and who spent them. Then count
+how many of those days made the next request shorter.</p>
+<h3 id="how-they-combine">How they combine</h3><div class="wp-scroll"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>What it is</th>
+          <th>How you get it</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Add</td>
+          <td><strong>Exposure you can recover</strong></td>
+          <td>What grows per day for each kind of finding × the days the gap would shrink by × the share where earlier notice changes the decision</td>
+      </tr>
+      <tr>
+          <td>Add</td>
+          <td><strong>Evidence saving</strong></td>
+          <td>Person-days on evidence requests per year × the part of that work that is assembly</td>
+      </tr>
+      <tr>
+          <td>Subtract</td>
+          <td><strong>Cost</strong></td>
+          <td>Licences + machine capacity + the named owner&rsquo;s time + connecting the systems read</td>
+      </tr>
+  </tbody></table></div>
+<p>Add the first two, subtract the third, and divide the yearly result by the monthly cost.
+That gives a payback period. This paper does not state one, because both sides belong to
+you.</p>
+<h3 id="what-would-make-the-answer-wrong">What would make the answer wrong</h3><p><strong>Counting the same money twice.</strong> A charge avoided and a credit recovered on the same item
+are one benefit.</p>
+<p><strong>Crediting a decision nobody would have taken.</strong> Input three exists to stop this.</p>
+<p><strong>Using a denominator from the process that misses things.</strong> If the count of findings comes
+from the same sampling you are trying to replace, you measure the sample and call it the
+whole.</p>
+<p><strong>Comparing across a period when something else changed.</strong> Choose a period in which this is
+the only change.</p>
+<p><strong>Assuming the gap closes to nothing.</strong> It closes to how often records are loaded plus the
+time a person takes to read the queue. Use a reading time measured in your own first
+weeks.</p>
+<h3 id="record-the-starting-point-before-anything-is-connected">Record the starting point before anything is connected</h3><p>Write down three things in the first week: your present gap, the person-days spent on the
+most recent evidence request, and how many findings a period produces today. Once the
+pages are running, the thing that would tell you is the thing that changed. Both companies
+would rather be judged on that measurement than on any figure either one publishes.</p>
+<h2 id="what-it-is-built-on-and-why-that-matters">What it is built on, and why that matters</h2><h3 id="the-reasoning-runs-on-your-hardware">The reasoning runs on your hardware</h3><p>CORE runs its own model on machines the company owns. The judge and every agent that uses
+a model are served by it. No outside service is called for reasoning.</p>
+<p><strong>So the security review becomes a description.</strong> The question that stalls these
+evaluations, &ldquo;where does our information go?&rdquo;, has a short answer: to a machine you own,
+and it stays there.</p>
+<p><strong>And the cost has a different shape.</strong> Because the model runs on the company&rsquo;s hardware,
+the cost of reasoning does not rise with each item examined. That matters here, because the
+point is to examine every record rather than a sample. Budgeting becomes a question of
+capacity, settled once, rather than a bill that grows every month.</p>
+<h3 id="the-records-stay-there-too">The records stay there too</h3><p>The capital records, rule decisions, playbooks, the audit record and the console&rsquo;s own data
+are held on the company&rsquo;s own systems and encrypted there. There is no outside database
+holding company information.</p>
+<h3 id="every-change-has-a-name-on-it">Every change has a name on it</h3><p>Reading is open to anyone admitted. Every change needs a named person on the right list,
+and with no sign-in configured, a change is refused outright, because there would be nobody
+to attribute it to. Every attempt is recorded, including refusals.</p>
+<p><strong>So assurance costs what the work costs.</strong> Being able to say who did what, when and why is
+paid for by the system as it works, not by a person building evidence after the question.</p>
+<h2 id="who-this-is-for-and-the-next-step">Who this is for, and the next step</h2><h3 id="who-it-is-for">Who it is for</h3><p><strong>The company whose written rules and enforced rules have drifted.</strong> The test: pick a rule
+you are sure about, and try to find out, without asking the person who built the system,
+whether software enforces it, a person does, or neither does. If that takes more than an
+afternoon, this is the problem the Intelligence pages address.</p>
+<p><strong>The company whose review team samples what it cannot inspect.</strong> The test: ask your
+review team what share of transactions it examines.</p>
+<p><strong>The company that builds evidence by hand.</strong> The test: count the weeks your last evidence
+request took, and how many of them made the next one shorter.</p>
+<p><strong>The company whose information cannot leave its own systems.</strong> For these buyers, where the
+model runs is not a preference. It is the condition for the conversation to happen at all.</p>
+<p><strong>Who evaluates it, and what each looks at.</strong> The finance lead looks at the CFO dashboard
+and CapEx lineage. The project lead looks at the Analyst and PMO dashboards. The data lead
+looks at the DQ overview, Lineage and Resolve. The compliance lead looks at Business rules,
+Remediation and the Audit chain. The security lead looks at Sources, Resolve, the refusals,
+and where the model runs.</p>
+<h3 id="a-note-on-numbers">A note on numbers</h3><p>This paper carries no outcome figures of any kind: no savings, no percentages, no
+payback. What the pages are worth depends on your volume, your rules, how often you review
+today and the shape of your systems. It can be measured in your own setting against your
+own starting point, and the chapter on worth sets out how.</p>
+<h3 id="the-next-step">The next step</h3><p>Name one rule you believe is enforced and one set of capital records you match by hand.
+Those two become the first test: load the records, read the findings, and see whether the
+rule does what you think.</p>
+<p>Two conversations, in either order.</p>
+<p>For Atlas and the capital-oversight side: <strong>logicalleap.io/atlas</strong>.</p>
+<p>For CORE, where it runs, and the second opinion: <strong><a href="mailto:paes@runink.org">paes@runink.org</a></strong>, <strong>runink.org</strong>.</p>
+
+      </div>
+    </article>
+  </div>
+
+  
+  
+  
+  
+  <section class="wp-ask" aria-labelledby="wp-ask-head">
+    <div class="wp-ask-inner">
+      <p class="wp-ask-label wp-util" id="wp-ask-head">One next step</p>
+      <h2 class="wp-ask-title">Half an hour, and we read one of your own exports with you.</h2>
+      
+      <a class="wp-ask-cta wp-util" href="/?about=The&#43;CORE&#43;and&#43;Atlas&#43;paper#contact-form">Book a consultation</a>
+    </div>
+  </section>
+  
+
+  <footer class="wp-foot">
+    <div class="wp-foot-inner">
+      <div>
+        <p class="wp-foot-label wp-util">Talk to us</p>
+        <p>
+          <a href="mailto:paes@runink.org">paes@runink.org</a><br>
+          <a href="https://runink.org">runink.org</a>
+          <br><a href="https://logicalleap.io/atlas">Logical Leap</a>
+        </p>
+      </div>
+      <div>
+        <p class="wp-foot-label wp-util">Other papers</p>
+        <p>
+          
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-face/">Runink FACE &mdash; Fulfilment Autonomous Claims Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-face-logistics/">Runink FACE &mdash; Fulfilment Autonomous Claims Engine</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-core/">Runink CORE &mdash; The operations layer for companies that keep their own data</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-core-atlas-banking/">Runink CORE &mdash; Four banking problems, and the console pages that answer them</a><br>
+          
+          <a class="wp-next" href="/blog/whitepapers/runink-pulse/">Runink PULSE &mdash; Prescriptive Unified Lead &amp; Social Engine</a><br>
+          
+          
+          <a class="wp-next" href="/blog/whitepapers/">All whitepapers</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</main>
+
+        
+        
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose &#34;Allow Counting&#34;. We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag !== 'function') return;
+            gtag('consent', 'update', {
+                'analytics_storage': granted ? 'granted' : 'denied'
+            });
+            if (granted) {
+                gtag('event', 'page_view');
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    <script src="/js/main.js" defer></script>
+    
+
+
+<script src="/js/whitepaper.min.089b451a059ffeca5cb82bef0ed777334066c0824c36939ca6e85b22c205dcf8.js" defer></script>
+
+    
+    
+
+
+<script src="/js/motion.27f06c26d9e54528daa49660a0af947edc690620d0240b682e3a90138640ae15.js" integrity="sha256-J/BsJtnlRSjapJZgoK&#43;UftxpBiDQJAtoLjqQE4ZArhU=" defer></script>
+
+</body>
+
+</html>

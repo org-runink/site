@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Observability on Runink</title>
+    <link>https://runink.org/tags/data-observability/</link>
+    <description>Recent content in Data Observability on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/data-observability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Turning Noisy Fleet Telemetry into Actionable Dispatch Insights</title>
+      <link>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</link>
+      <pubDate>Sat, 09 May 2026 00:15:18 +0000</pubDate>
+      <guid>https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/</guid>
+      <description>&lt;h2 id=&#34;executive-summary-key-takeaways&#34;&gt;Executive Summary: Key Takeaways&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;The daily chore.&lt;/strong&gt; Someone exports two reports, lines them up in a spreadsheet, and tries to explain the gap. That person is usually your best analyst.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Most gaps are not errors.&lt;/strong&gt; A feed arrived late. A partner sends totals once a night. Until you can tell that apart from a real fault, every gap gets the same alarm.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The fix is boring.&lt;/strong&gt; Write down, per measure, where it comes from, how fresh it should be, and who is called when it is not. Then stop alerting on the gaps that are expected.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;why-does-this-cost-so-much-time&#34;&gt;Why does this cost so much time?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Overcoming Data Silos for Complete Global Freight Visibility</title>
+      <link>https://runink.org/blog/automated-semantic-layer-data-observability/</link>
+      <pubDate>Sat, 21 Feb 2026 13:16:42 +0000</pubDate>
+      <guid>https://runink.org/blog/automated-semantic-layer-data-observability/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Every carrier, terminal and warehouse sends data its own way. A shared view means giving those events one shape and one set of names, so a delay in one system can be read against a commitment in another. The part that decides whether anyone trusts it: each number keeps the records it came from.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Your systems already send the events. The gap is agreeing what they mean.&lt;/li&gt;&#xA;&lt;li&gt;One set of names per measure is what lets two systems be compared at all.&lt;/li&gt;&#xA;&lt;li&gt;A number you cannot trace back to records is a scoreboard, not a fact.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-does-one-shared-view-actually-mean&#34;&gt;What does &amp;ldquo;one shared view&amp;rdquo; actually mean?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
