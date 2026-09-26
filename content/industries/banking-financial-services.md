@@ -120,14 +120,14 @@ foundations:
 next_heading: "See whether it fits"
 next_body: "Bring one control and the systems it is supposed to live in — the verification rule on payment destinations, a supplier agreement, a rate card. A short session is usually enough to see whether the written rule and the applied rule still match, and whether this arrangement is the right shape for you or whether you are better served waiting."
 cta_text: "Book a consultation"
-# The link stays on a CORE and Atlas paper, and deliberately so. Unlike the
+# The link stays on the CORE and Atlas paper, and deliberately so. Unlike the
 # insurance page, the mechanism described here really is that arrangement's and
 # not FACE's: two doors on separate credentials, eight deterministic gates,
 # recomputed arithmetic, unable-to-judge as a first-class verdict. Repointing it
 # at the FACE paper would have sent a banking reader to a logistics product.
-# It now points at the banking paper, which is the long version of THIS page.
+# The note sends the reader to the paper's chapter on what judging means.
 paper:
-  text: "Read the CORE and Atlas banking paper"
-  url: "/blog/whitepapers/runink-core-atlas-banking/"
-  note: "The long version of this page: how Runink CORE judges each finding Atlas sends, on a separate credential, before a person is asked to act. No case studies, no customer names, no return-on-investment figures, and no bank has run this."
+  text: "Read the CORE and Atlas paper"
+  url: "/blog/whitepapers/runink-core-atlas/"
+  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how the arithmetic is recomputed, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names, no return-on-investment figures, and no bank has run this."
 ---

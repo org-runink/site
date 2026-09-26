@@ -73,7 +73,7 @@ visibility. Index: [{{ "blog/" | absURL }}]({{ "blog/" | absURL }})
 ## Other languages
 
 Spanish, French and Portuguese cover the homepage, the product and pricing pages
-and the twelve scenario pages. The articles and the four papers are English only.
+and the twelve scenario pages. The articles and the papers are English only.
 {{ range site.Home.AllTranslations }}{{ if ne .Language.Lang "en" }}
 - {{ .Language.LanguageName }}: {{ .Permalink }}
 {{- end }}{{ end }}

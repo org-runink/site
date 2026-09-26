@@ -8,18 +8,18 @@ type: whitepapers
 headline: "Des documents qui commencent par ce qui peut être prouvé."
 description: "Documents détaillés sur Runink FACE, Runink PULSE et Runink CORE, trois produits distincts. Pas d'études de cas, pas de noms de clients, pas de chiffres de retour sur investissement : le mécanisme, et sur quoi repose chaque affirmation."
 deck: |
-  Quatre documents détaillés. **Runink FACE** est le produit dont traite le
-  premier. **Runink PULSE** est un produit différent, d'analyse de marché et de
+  Des documents détaillés, chacun consacré à un produit Runink ou à un accord
+  avec un partenaire. Les premiers portent sur **Runink FACE**. **Runink PULSE** est un produit différent, d'analyse de marché et de
   marketing, et son document décrit son propre travail, pas celui de FACE.
   **Runink CORE** est un produit à part entière, vendu séparément. C'est la
   couche d'exploitation que vous faites tourner sur votre propre matériel pour
   tenir en ordre vos applications Runink et vos propres données, et la réponse
   honnête à la question de savoir où vos données sont traitées et qui peut les
-  voir. Son document est l'endroit où ce site le décrit. Le quatrième est un document
-  commun avec Logical Leap sur les écrans de surveillance d'Atlas, qui
+  voir. Son document est l'endroit où ce site le décrit. Les documents communs
+  avec Logical Leap portent sur les écrans de surveillance d'Atlas, qui
   fonctionnent dans CORE.
 
-  Les quatre documents sont rédigés en anglais. Les pages de ce site sont en
+  Les documents sont rédigés en anglais. Les pages de ce site sont en
   français ; les documents longs ne le sont pas encore.
 
   Ils ne contiennent ni études de cas, ni noms de clients, ni chiffres de
@@ -38,7 +38,7 @@ more:
   link_text: "Tous les articles"
   link_url: "/fr/blog/"
 note: |
-  Les quatre documents sont publiés en anglais. Les liens ci-dessus mènent à la
+  Les documents sont publiés en anglais. Les liens ci-dessus mènent à la
   version anglaise complète. Pour un échange en français, écrivez à
   [paes@runink.org](mailto:paes@runink.org).
 next:

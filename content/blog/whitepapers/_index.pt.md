@@ -8,17 +8,17 @@ type: whitepapers
 headline: "Documentos que começam pelo que pode ser comprovado."
 description: "Documentos extensos sobre o Runink FACE, o Runink PULSE e o Runink CORE, três produtos distintos. Sem estudos de caso, sem nomes de clientes e sem números de retorno: o mecanismo, e onde cada afirmação se apoia."
 deck: |
-  Quatro documentos extensos. O **Runink FACE** é o produto de que trata o
-  primeiro. O **Runink PULSE** é um produto diferente, de análise de mercado e
+  Documentos extensos, cada um sobre um produto da Runink ou sobre um acordo
+  com um parceiro. Os primeiros tratam do **Runink FACE**. O **Runink PULSE** é um produto diferente, de análise de mercado e
   marketing, e o documento dele descreve o próprio trabalho, não o do FACE.
   O **Runink CORE** é um produto por si só, vendido separadamente. É a camada
   de operações que você roda no seu próprio hardware para manter em ordem os
   seus aplicativos Runink e os seus próprios dados, e a resposta honesta a onde
   os seus dados são processados e quem pode vê-los. O documento dele é onde
-  este site o descreve. O quarto é um documento conjunto com a Logical Leap sobre as telas de
-  supervisão do Atlas, que rodam dentro do CORE.
+  este site o descreve. Os documentos conjuntos com a Logical Leap tratam das telas
+  de supervisão do Atlas, que rodam dentro do CORE.
 
-  Os quatro documentos estão escritos em inglês. As páginas deste site estão em
+  Os documentos estão escritos em inglês. As páginas deste site estão em
   português; os documentos longos ainda não estão.
 
   Não trazem estudos de caso, nomes de clientes nem números de retorno sobre o
@@ -35,7 +35,7 @@ more:
   link_text: "Todos os artigos"
   link_url: "/pt/blog/"
 note: |
-  Os quatro documentos são publicados em inglês. Os links acima levam à versão
+  Os documentos são publicados em inglês. Os links acima levam à versão
   completa em inglês. Para uma conversa em português, escreva para
   [paes@runink.org](mailto:paes@runink.org).
 next:

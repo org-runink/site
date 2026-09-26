@@ -7,7 +7,7 @@ title: "Whitepapers"
 # hugo.toml where that entry used to be.
 #
 # `type` is what keeps the design. Hugo resolves layouts by TYPE, and the
-# section here is now "blog": without this the four papers would render through
+# section here is now "blog": without this the papers would render through
 # layouts/blog/ and lose the register, the marks and the paper sheet. The
 # cascade applies it to every child; the explicit one on this line is for this
 # index page itself, which a cascade does not reach.
@@ -16,7 +16,7 @@ type: whitepapers
 # this override the section index picked up its own category and rendered as a
 # fifth card inside /categories/whitepapers/ — titled "Whitepapers", 0 min
 # read, linking to the list the reader is already on. An empty list here wins
-# over the cascade and keeps the taxonomy to the four actual documents.
+# over the cascade and keeps the taxonomy to the actual documents.
 categories: []
 cascade:
   type: whitepapers
@@ -53,14 +53,15 @@ headline: "Papers that open with what can be proven."
 # The wording once said CORE was "not a product"; that was wrong.
 description: "Long-form documents on Runink FACE, Runink PULSE and Runink CORE, three separate products. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
 deck: |
-  Four long-form documents. **Runink FACE** is the product the first of them is
-  about. **Runink PULSE** is a different product, for market analysis and
+  Long-form documents, each about one Runink product or about an arrangement
+  with a partner. The ones at the top are about **Runink FACE**. **Runink PULSE** is a different product, for market analysis and
   marketing, and its paper describes its own work rather than FACE's.
   **Runink CORE** is a product in its own right, sold separately. It is the
   operations layer you run on your own hardware to keep your Runink
   applications and your own data in order, and the honest answer to where your
   data is processed and who can see it. Its paper is where this site describes
-  it. The fourth is a joint paper with Logical Leap on Atlas's oversight screens, which run inside CORE.
+  it. The joint papers with Logical Leap cover Atlas's oversight screens, which
+  run inside CORE.
 
   They carry no case studies, no customer names and no return-on-investment
   figures. Those things are easy to write and impossible to check, and a buyer
