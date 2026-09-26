@@ -543,9 +543,12 @@ along the way is its quality weak?
 
 **What it shows.** A map from source systems, through the applications that take data from
 them, to where the data lands. Sources are the ones registered in CORE. Links are drawn
-only where CORE saw data actually move. A declared source and an observed flow are drawn
-differently, so a reader never mistakes a plan for a fact. Beside the map sit the quality
-hotspots: for each source, its failing controls and its warnings from the latest review.
+only where CORE observed them: where an application reported data moving, or where
+Resolve read a relationship from the systems themselves, such as a key a source declares
+between two tables or a dataset the source's own access log shows being read. A declared
+source and an observed flow are drawn differently, so a reader never mistakes a plan
+for a fact. Beside the map sit the quality hotspots: for each source, its failing
+controls and its warnings from the latest review.
 
 **Why it is worth having.** When a report is wrong, the first question is which source fed
 it. A map built from observed movement answers that faster than a diagram drawn once and
@@ -623,28 +626,54 @@ record turn "what reaches our finance warehouse, and under whose account?" into 
 **The question it answers.** What is actually in our systems, how is it organised, and how
 is it used?
 
-**Who uses it.** The data platform owner and the data architect.
+**Who uses it.** The data platform owner, the data architect and data stewards.
+
+Resolve is one capability that Runink CORE and Runink FACE share: the same page, doing the
+same work, in both products.
 
 **What it lets you do.** Resolve is the one place CORE reaches into a company system, and
 only when an administrator presses a button and confirms it. The confirmation says what
 will be reached and what will be kept. There are four actions:
 
-- **Test** a connection.
-- **Explore** a source, to record its structure: its tables and fields, and counts.
-- **Read access patterns** over a window the administrator chooses: how often each
-  dataset is used.
-- **Map the estate**: group datasets into business domains, show how they link, list the
-  datasets that belong nowhere yet, and show what each source adds.
+- **Test** a connection: does the source answer?
+- **Explore** a source, to record its structure: its datasets and columns, the type each
+  column is declared as, the keys between its tables, row counts where the source states
+  them, and which columns the source itself marks as personal data and whether it masks
+  them.
+- **Read access patterns** over a window the administrator chooses: how many times each
+  dataset was read and written, and by how many distinct accounts. Counts, never names.
+- **Map the estate**: group datasets into business domains by what they mean, and draw the
+  links between them. Every link is marked as declared by the source, inferred from the
+  data, or a guess, and there is no confidence score anywhere on the page. What could not
+  be read is listed first, with the source's own reason. The map also names *drift* (a
+  declared relationship the data contradicts), *shadow* (a relationship the data shows and
+  nothing declares) and *missing* (a declared key whose target is not in the estate).
 
 Every call is read-only and time-limited. CORE keeps structure and counts. It never keeps
-a cell value, a sample row, or the name of a person or account. A credential is opened for
-one call and dropped. A link CORE inferred is drawn dotted and never styled like one the
-source declared, and there is no confidence score anywhere on the page.
+a cell value, a sample row, a smallest or largest value, or the name of a person or
+account. A credential is opened for one call and dropped. Opening the page reaches
+nothing; only the four actions do. Each action names the runner chosen for it, and every
+action is recorded, refusals included.
+
+**What it feeds.** What Resolve reads does not stay on its own page:
+
+- **Lineage** shows the relationships Resolve observed: declared keys between tables,
+  domains that span more than one source, and which datasets are read and written.
+- **CORE's data-governance checks** assess data quality and personal-data exposure from
+  what Explore and Read access patterns recorded. A column declared as never empty that
+  holds empty values is flagged, as is a table with no declared primary key. So is a column
+  whose name and declared type mark it as likely personal data and that carries no mask
+  from the source, and such a column when more than ten distinct accounts read it. The
+  checks are rules, with no model involved. Their findings name columns, never values, and
+  appear in CORE's data-governance review. A source nobody has explored is reported as not
+  yet explored, never as clean.
 
 **Why it is worth having.** Most companies believe they have an inventory of their data,
 and on inspection do not. Resolve builds one from the systems themselves, on request, and
-keeps nothing a security reviewer would object to. The reviewer can read on screen exactly
-what was reached and what was kept.
+keeps nothing a security reviewer would object to. Because the lineage and the governance
+checks start from the same recorded description, the map a steward reads and the findings
+an auditor reads describe the same estate. The reviewer can read on screen exactly what
+was reached and what was kept.
 
 ## Settings and Deploy lineage
 
