@@ -19,12 +19,12 @@
 
 > {{ .Site.Params.description | default "Runink FACE reads the logistics records a business already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on infrastructure the customer controls." }}
 
-Runink builds three things. **Runink FACE** is the product: it reads records a
+Runink sells separate products, each on its own. **Runink FACE** reads records a
 logistics or finance operation already holds, compares each against the rule that
 governs it, and drafts an action for a named person to approve. **Runink PULSE**
-is a separate product, for market analysis and marketing. **Runink CORE** is not a
-product — it is the platform both run on, which is the answer to where data is
-processed and who can see it.
+is for market analysis and marketing. **Runink CORE** is the operations layer a
+company runs on its own hardware to keep its Runink applications and its own data
+in order, which is the answer to where data is processed and who can see it.
 
 Two things are true of all of it and are worth knowing before reading further.
 Every drafted action waits for a named person; approving it is what sends it, and
@@ -44,10 +44,12 @@ measure and say where to find it in your own systems instead.
 - [{{ .Title }}]({{ .Permalink }}): {{ with .Params.blurb }}{{ . }}{{ else }}{{ .Description }}{{ end }}
 {{- end }}{{ end }}
 
-## The product
+## The products
 
 - [Runink FACE]({{ "products/face/" | absURL }}): what it reads, what it drafts, and where it stops.
-- [Pricing]({{ "pricing/" | absURL }}): seats and a compute allowance, with the prices published.
+- [Runink FACE pricing]({{ "pricing/" | absURL }}): seats and a compute allowance, with the prices published.
+- [Runink PULSE]({{ "blog/whitepapers/runink-pulse/" | absURL }}): the long document on what it does.
+- [Runink CORE]({{ "blog/whitepapers/runink-core/" | absURL }}): the long document that is its product home.
 
 ## Where it fits
 

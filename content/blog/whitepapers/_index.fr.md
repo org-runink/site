@@ -6,15 +6,18 @@ title: "Livres blancs"
 # matter is per-file, so the English one does not cover these.
 type: whitepapers
 headline: "Des documents qui commencent par ce qui peut être prouvé."
-description: "Documents détaillés sur Runink FACE, sur Runink PULSE — un produit distinct — et sur la plateforme CORE sur laquelle les deux reposent. Pas d'études de cas, pas de noms de clients, pas de chiffres de retour sur investissement : le mécanisme, et sur quoi repose chaque affirmation."
+description: "Documents détaillés sur Runink FACE, Runink PULSE et Runink CORE, trois produits distincts. Pas d'études de cas, pas de noms de clients, pas de chiffres de retour sur investissement : le mécanisme, et sur quoi repose chaque affirmation."
 deck: |
   Quatre documents détaillés. **Runink FACE** est le produit dont traite le
   premier. **Runink PULSE** est un produit différent, d'analyse de marché et de
   marketing, et son document décrit son propre travail, pas celui de FACE.
-  **Runink CORE** n'est pas un produit : c'est la plateforme sur laquelle les
-  deux reposent, et c'est la réponse honnête à la question de savoir où vos
-  données sont traitées et qui peut les voir. Le quatrième est un document
-  d'architecture conjoint avec Atlas, de Logical Leap.
+  **Runink CORE** est un produit à part entière, vendu séparément. C'est la
+  couche d'exploitation que vous faites tourner sur votre propre matériel pour
+  tenir en ordre vos applications Runink et vos propres données, et la réponse
+  honnête à la question de savoir où vos données sont traitées et qui peut les
+  voir. Son document est l'endroit où ce site le décrit. Le quatrième est un document
+  commun avec Logical Leap sur les écrans de surveillance d'Atlas, qui
+  fonctionnent dans CORE.
 
   Les quatre documents sont rédigés en anglais. Les pages de ce site sont en
   français ; les documents longs ne le sont pas encore.
@@ -26,7 +29,7 @@ deck: |
 
   Là où un document décrit quelque chose que nous avons construit, il le dit
   clairement. Là où il décrit un accord avec le produit d'une autre entreprise,
-  il dit quelle moitié de cet accord fonctionne aujourd'hui. Personne ne nous a
+  il dit quelle partie de cet accord est la nôtre. Personne ne nous a
   audités au regard de SOC 2 ou d'ISO 27001, et les documents le disent dans
   leurs propres phrases plutôt qu'en note de bas de page.
 more:

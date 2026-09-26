@@ -3,10 +3,11 @@ title: "Downloads"
 layout: "company"
 # Order is the attribution here. Runink FACE is the flagship and leads the page;
 # Runink PULSE is a separate product, not a FACE companion app; and the server
-# image is the CORE platform both of them run on rather than a third product.
+# image, Runink River, is not a product at all: it carries Runink CORE, which is
+# a third product sold on its own (the owner, 26 September 2026).
 # The previous version set the three side by side in one row of equal cards,
 # which read as one product family with three equal members.
-description: "Get the Runink FACE app for Android, the separate Runink PULSE app, or request access to Runink River, the sovereignty server image the platform runs on."
+description: "Get the Runink FACE app for Android, the separate Runink PULSE app, or request access to Runink River, the server image that puts Runink CORE on hardware you own."
 date: "2026-08-11T00:00:00Z"
 ---
 
@@ -24,12 +25,12 @@ date: "2026-08-11T00:00:00Z"
 
     <p class="text-stone-400 mb-10 max-w-3xl">
       Three separate things live on this page. <strong class="text-stone-200">Runink FACE</strong>
-      is the product. It reads your logistics records on its own and drafts the
+      is our main product. It reads your logistics records on its own and drafts the
       action; a named person approves it. <strong class="text-stone-200">Runink PULSE</strong> is a different
       product for market analysis and marketing, listed here because it ships an
       app too, not because it is part of FACE. The
       <strong class="text-stone-200">Runink River Sovereignty Server</strong> is neither: it
-      is the server image carrying Runink CORE, the platform the two products run on, which is the answer to
+      is the server image carrying Runink CORE, a separate product in its own right, which is the answer to
       where your data is processed and who can see it.
     </p>
 
@@ -71,7 +72,7 @@ date: "2026-08-11T00:00:00Z"
     </div>
 
     <div class="h-full bg-stone-800 p-8 rounded-lg shadow-lg border border-stone-700 flex flex-col">
-      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">The platform — not a product</div>
+      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink River — the server image</div>
       <h3 class="text-2xl font-bold text-white mb-3">Runink River</h3>
       <p class="text-stone-400 mb-8 flex-1">
         The Runink River Sovereignty Server is the server image that puts Runink CORE on your own box: the layer FACE and PULSE run on, so that

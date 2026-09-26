@@ -2,7 +2,7 @@
 title: "What Runink FACE Is Built For"
 # This section is Runink FACE's scenarios and nothing else. FACE is the flagship.
 # Runink PULSE (market analysis) is a separate product with its own material, and
-# CORE is the platform underneath both — neither of their capabilities may be
+# CORE is a third, separate product — neither of their capabilities may be
 # listed here, because a reader who cannot tell which product does which job
 # reads the whole set as one product's track record.
 #
