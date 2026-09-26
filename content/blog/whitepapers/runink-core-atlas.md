@@ -692,11 +692,19 @@ complete?
 **Who uses it.** The administrator who runs the workspace.
 
 **What it lets you do.** Choose the rule engine that supplies the rule book; CORE's own
-capital-spending engine is the one that runs here. Walk through setup: find agents, grant
-sources, connect the rule engine, confirm. The checklist is checked against what exists
-now, not against what was once ticked. Reset the workspace, with a required note; the page
-states exactly what a reset clears and what it keeps. Capital records, scan history, rule
-decisions and CORE's list of sources are all kept.
+capital-spending engine is the one that runs here, and the page shows how many rules it
+holds. Walk through setup: find agents, grant sources, connect the rule engine, confirm.
+The checklist is checked against what exists now, not against what was once ticked, and
+the page shows who completed setup and when. Reset the workspace, with a required note;
+the page states exactly what a reset clears and what it keeps. A reset clears the agents
+in the workspace, the granted sources, the engine choice and the record that setup was
+completed. Capital feeds, scan history, rule changes and decisions, the list of agents and
+CORE's list of connections are all kept. Every change on this page is for an
+administrator, and is recorded.
+
+The page also shows, read-only, two related settings kept elsewhere: the latest check of
+the business rules against the written policy, and the code repositories CORE's own agents
+work on, which are changed on the Account page.
 
 **Why it is worth having.** Setup that is checked against reality cannot drift into a list
 of boxes somebody once ticked. A reset that says what it keeps cannot wipe the history an

@@ -254,6 +254,31 @@ broke". This page names the hop. It also shows the security lead exactly which
 doors lead to which services, from a live reading rather than a diagram drawn
 last year.
 
+### Platform audit
+
+**The question.** Does the platform pass its checks today?
+
+**Who uses it.** The engineering lead, the security lead and the compliance
+officer.
+
+**What it shows.** Each part of the console has an audit page of its own: an
+assessment, not a log. The Audit chain records who did what; an audit page
+says whether things pass. This one gives a single verdict over the platform's
+checks, each read from a page the console already has: whether the Audit
+chain is intact, whether the running services are ready, whether what is
+running matches what was written down, whether the standing health check is
+watching, the latest code, dependency and compliance reviews, the compliance
+controls, and whether the assessment helpers have run. A check that could not
+be read goes into one short list of what was not measured, with the reason,
+and the verdict says how many were left out. It is never counted as a pass.
+From here a person can re-check the Audit chain, or start a review through a
+playbook the company has already written, after a confirmation. Past reviews
+are listed underneath.
+
+**Why it matters.** "Are we in good shape?" gets one answer with its evidence,
+instead of a tour of ten pages. And because an unread check is named rather
+than hidden, a green verdict means everything was looked at.
+
 ### GitOps
 
 **The question.** Does what is running match what we wrote down?
@@ -560,6 +585,26 @@ console's own sign-in is set up.
 often without an obvious error. This page shows the expiry before it arrives,
 and a single verdict replaces comparing fingerprints by eye.
 
+### Model & agent audit
+
+**The question.** Do our models and agents pass their checks today?
+
+**Who uses it.** The head of data, the risk officer and the compliance officer.
+
+**What it shows.** The same shape as the Platform audit, for the AI: one
+verdict over whether each model's health matches its model card, whether each
+application's agents are covered by written rules for their answers, the
+autonomy settings, the open findings on the Harness, and the independent
+judgements. What could not be read is listed with its reason, never counted
+as a pass. A person can start the independent assessor through an existing
+playbook, after a confirmation; acting on a finding stays on the Harness,
+which the page links to. The assessor's past runs and the actions taken on
+findings are listed underneath.
+
+**Why it matters.** When a board or a regulator asks whether the company's AI
+is under control, the answer is one page, built from the same readings the
+detailed pages show.
+
 ### Judgements
 
 **The question.** Does an independent assessor agree with the findings we have
@@ -718,6 +763,31 @@ the server and recorded.
 
 **Why it matters.** The security lead can answer "what reaches this system, and
 on whose say-so" from a screen.
+
+### Data audit
+
+**The question.** Does our data pass its checks today, and can we check it
+again now?
+
+**Who uses it.** The head of data, data stewards and the security lead.
+
+**What it shows.** One verdict over the data checks: whether each source
+answered its last test, whether the estate has been mapped, where what a
+source declares disagrees with what its data shows, the data-quality score for
+capital spending, and the data-governance findings. What could not be read is
+listed with its reason. From here an administrator can run an audit, each one
+an action CORE already has: test a source, explore it, read its access
+patterns, map the estate, or pull a capital-spending feed. Every run is
+confirmed first and recorded. This is also where the runner for an audit is
+chosen: Runink managed by default, or one of the company's own registered
+runners. The choice travels with the request and is kept in the record. A
+person can also start the data-governance helper through an existing
+playbook. Past map runs, capital-spending scans and data-governance runs are
+listed underneath.
+
+**Why it matters.** A steward can re-check the data on demand, from one page,
+and a security lead can see exactly what each audit reached and which runner
+it named.
 
 ### Deploy lineage
 
