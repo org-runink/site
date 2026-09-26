@@ -600,26 +600,33 @@ confirmed it.
 
 ### Sources
 
-**The question it answers.** Which of our systems does CORE know about, and who may change
-that?
+**The question it answers.** Which of our systems may the Intelligence pages use, and what
+state is each one in?
 
 **Who uses it.** The IT lead or data platform owner, and the security reviewer.
 
-**What it lets you do.** Add a source, edit it, rotate its credentials, or remove it.
-Credentials are held apart from the settings, so the settings can be reviewed by people who
-may not see the credentials. A catalogue states what each kind of system needs before
-anyone fills in a form. Each source has a switch that grants it to the Intelligence
-workspace; granting records a permission and reaches nothing. Testing a connection is a
-separate action, for an administrator, after a confirmation.
+**What it lets you do.** One card for each system registered in CORE. Each card has a switch
+that grants that system to the Intelligence workspace; granting records a permission and
+reaches nothing. The card shows the business domain the system was grouped into, whether
+its credentials are in place, and whether it answered when last checked — or that it has
+not been checked, which is never shown as down. A grant whose system has since been
+removed is shown as missing, with a way to revoke it. The page also carries the catalogue
+of the kinds of system CORE can connect to.
 
-A source cannot be added, changed or removed by anyone CORE cannot name, and the people
-allowed to make those changes are on an explicit list. Every attempt, allowed or refused,
-is recorded.
+The systems themselves are created, edited, re-keyed, tested and removed in one place,
+**DataEx › Connections**, and each card links there. A new connection is a three-step
+dialog: choose the kind of system and fill in its form, choose the runner that will reach
+it, then review, test and save. Credentials are held apart from the settings, so the
+settings can be reviewed by people who may not see the credentials, and they are never
+shown back once saved. Only people on an explicit list may change a connection, and every
+attempt, allowed or refused, is recorded.
 
 **Why it is worth having.** When each application reaches the company's systems its own
 way, the same warehouse ends up connected several times, under several accounts, with
-several people each thinking somebody else looks after it. One list, one catalogue and one
-record turn "what reaches our finance warehouse, and under whose account?" into a screen.
+several people each thinking somebody else looks after it. One list of connections, one
+catalogue and one record turn "what reaches our finance warehouse, and under whose
+account?" into a screen, and the grant switch keeps "CORE knows about it" apart from "these
+pages may use it".
 
 ### Resolve
 

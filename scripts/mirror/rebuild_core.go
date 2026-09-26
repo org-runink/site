@@ -28,9 +28,9 @@ package mirror
 //
 // Because almost nothing above is shared. CORE takes its cover from the first
 // "## " in the old mirror; FACE takes it from the first page-break div, PULSE
-// from a literal "*Page 1 — Cover*" marker, ATLAS from a fixed sixteen-line
-// slice. CORE finds its colophon by scanning backwards for the last non-footer
-// paragraph; ATLAS reads the third line from the end; FACE keeps a whole
+// from a literal "*Page 1 — Cover*" marker, ATLAS from the line its folded
+// chapter one starts on. CORE finds its colophon by scanning backwards for the
+// last non-footer paragraph; ATLAS reads the third line from the end; FACE keeps a whole
 // "### Contact" block; PULSE has none. CORE collapses runs of blank lines at
 // the end and PULSE writes no trailing newline at all. Those are four
 // different algorithms wearing the same job title, and a single function with

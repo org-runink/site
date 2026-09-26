@@ -254,26 +254,6 @@ broke". This page names the hop. It also shows the security lead exactly which
 doors lead to which services, from a live reading rather than a diagram drawn
 last year.
 
-### Cluster › Runners
-
-**The question.** What reaches our data sources on CORE's behalf, and is it
-healthy?
-
-**Who uses it.** Platform engineers and the security lead.
-
-**What it shows.** A runner is the worker that reaches out to a company data
-source when an administrator asks it to. The built-in runner is listed first:
-what it is doing now, what it last did, how long it has been up, and which data
-connections are tied to it. Its health is measured on the runner itself, never
-by contacting a data source. Connections tied to a runner nobody holds are
-listed on their own. An administrator can enrol a further runner with a
-one-time ticket, and can revoke a runner or its access token, each after a
-confirmation that says what will happen.
-
-**Why it matters.** The security lead can see every worker allowed to touch
-company data, what each one is tied to, and who can add or remove one. Checking
-their health never touches the data itself.
-
 ### GitOps
 
 **The question.** Does what is running match what we wrote down?
@@ -402,7 +382,9 @@ order of severity, with the evidence attached.
 DataEx is short for data experience. These pages are about the AI inside the
 platform: which models run, which agents use them, what those agents are allowed
 to do, and whether their findings hold up. An agent here means an automated
-helper that reads material and proposes or takes a step.
+helper that reads material and proposes or takes a step. DataEx is also where
+the connections to company systems, and the runners that reach them, are
+created and looked after.
 
 ### Model cards
 
@@ -457,6 +439,55 @@ with its reason.
 **Why it matters.** Because the models run on the company's own hardware, using
 them more does not open a bill that grows with every question. This page shows
 where that capacity goes, so sizing is a reading, not a guess.
+
+### Connections
+
+**The question.** Which of our systems does CORE know how to reach, and who may
+change that?
+
+**Who uses it.** The head of data, platform engineers and the security lead.
+
+**What it shows.** Every connection to a company system, one row each: what
+kind of system it is, whether its credentials are in place, which runner
+reaches it and that runner's state, and when it was last tested. This is the
+one place a connection is created, changed, re-keyed, tested or removed; the
+other pages that need one open the same dialog. Creating one takes three
+steps: choose the kind of system and fill in its form, choose the runner that
+will reach it, then review, test and save. The test asks one question, whether
+the system answers, and only after a confirmation. Credentials are held apart
+from the settings and are never shown back once saved. Removing a connection
+names every other connection that shares its credentials first. Nothing on the
+page reaches a system when it opens.
+
+**Why it matters.** When each application reaches company systems its own way,
+the same warehouse ends up connected several times, under several accounts.
+One list, one dialog and one record turn "what reaches our finance warehouse,
+and under whose account?" into a screen. Only people on an explicit list may
+change a connection, and every attempt, refusals included, is recorded.
+
+### Runners
+
+**The question.** What reaches our data sources on CORE's behalf, and is it
+healthy?
+
+**Who uses it.** Platform engineers and the security lead.
+
+**What it shows.** A runner is the worker that reaches out to a company data
+source when an administrator asks it to. The Runink-managed runner is listed
+first and cannot be revoked. A company can also add runners of its own, on its
+own network: an administrator gives each one a name and an address, and the
+runner uses a one-time ticket to obtain its certificate. CORE then connects to
+it at that address, and both ends prove who they are before anything moves.
+For each runner the page shows whether it is connected, when it was last seen,
+its version, when its certificate expires and how much work it has in hand.
+Its health is measured on the runner itself, never by contacting a data
+source. An administrator can connect to a runner now, issue a new ticket,
+change its address or revoke it, each after a confirmation that says what will
+happen.
+
+**Why it matters.** The security lead can see every worker allowed to touch
+company data, where it runs, and who can add or remove one. Checking their
+health never touches the data itself.
 
 ### Trust › Harness
 
@@ -677,9 +708,11 @@ the checks an auditor reads describe the same estate.
 
 **Who uses it.** The head of data and the security lead.
 
-**What it shows.** *Sources* lists the systems CORE is allowed to read from, and
-lets an administrator add one. Each source can be granted to the Intelligence
-workspace, and granting records a permission without reaching the system.
+**What it shows.** *Sources* shows one card for each system CORE is connected
+to: the business domain it was grouped into, whether it answered when last
+checked, and a switch that grants it to the Intelligence workspace. Granting
+records a permission without reaching the system. Connections themselves are
+created and changed on DataEx › Connections, and each card links there.
 *Settings* holds the workspace choices for the Intelligence pages, stored on
 the server and recorded.
 
@@ -774,7 +807,7 @@ time limit.
 Opening the page reaches nothing. The page shows what the last action
 recorded, and only the four actions reach a source — never a timer, and never
 a page load. Each action names its runner, the worker described under
-Cluster › Runners: the one the administrator chose for that action, or the one
+DataEx › Runners: the one the administrator chose for that action, or the one
 the source is set to use. Every action is written to the Audit chain with its
 outcome, and refusals are written too.
 
@@ -1001,7 +1034,7 @@ a question the next step assumes.
 | --- | --- | --- | --- |
 | 1 | One workstation | Run the whole platform on it with one command | Whether the screens can be trusted: which ones say they did not measure something |
 | 2 | Machines you own and your sign-in arrangement | Put the platform on them with one command, in the same shape | Nothing new. Same screens, more room |
-| 3 | One data source you would like to stop worrying about | Add it on Sources, and read what Resolve shows about it | Whether CORE reads your data the way your security lead needs |
+| 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what Resolve shows about it | Whether CORE reads your data the way your security lead needs |
 | 4 | Somebody outside the platform team | Have them request a deployment, and watch it expire | Whether useful work happens without the platform team in the loop |
 | 5 | One code repository | Switch on one helper and watch it before arming it | Whether the helpers save real time, judged on what they would have published |
 
@@ -1020,8 +1053,8 @@ things that change are size and who has access.
 
 ### Step three: connect one real data source
 
-Choose one system and add it as a source. Explore it in Resolve and read what
-CORE kept about it: structure and counts, and no values. Then
+Choose one system and add it on DataEx › Connections. Explore it in Resolve
+and read what CORE kept about it: structure and counts, and no values. Then
 sign in as someone who is not on the permitted list and try to change it. Read
 the record the refusal leaves in the Audit chain. That is the interaction to show
 your security lead.

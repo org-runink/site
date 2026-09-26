@@ -57,7 +57,7 @@ mirrors when `../pitch-decks` is present.
 **No two papers share a convention**, which is why there is a program each
 rather than one loop. That survived the port to Go deliberately: the four differ
 in how the cover is found (first `## `, first page-break div, a literal
-`*Page 1 — Cover*` marker, a fixed sixteen-line slice), how the colophon is
+`*Page 1 — Cover*` marker, the line the folded chapter one starts on), how the colophon is
 found, whether there is validation before writing, whether the file ends in a
 newline, and whether a chapter is folded into the cover. A single rebuilder with
 a per-paper config struct would have needed a branch at every one of those.
