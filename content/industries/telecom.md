@@ -104,10 +104,9 @@ cta_text: "Book a consultation"
 # mechanism here genuinely is that arrangement's and not FACE's — FACE has no
 # rating, mediation or interconnect capability of any kind — so repointing this
 # at the FACE paper would send a revenue-assurance reader to a logistics
-# product. The note now sends them to pages 12 to 14, where the paper states
-# which half runs.
+# product. The note sends them to the paper's chapter on what judging means.
 paper:
   text: "Read the CORE and Atlas paper"
   url: "/blog/whitepapers/runink-core-atlas/"
-  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how a rate is recomputed rather than accepted, and how a second judgement is formed on a separate credential. Start at pages 12 to 14, which say exactly which half is built and which is drawn. No case studies, no customer names, no return-on-investment figures, and no operator has run it."
+  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how a rate is recomputed rather than accepted, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names, no return-on-investment figures, and no operator has run it."
 ---
