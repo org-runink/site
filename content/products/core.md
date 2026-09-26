@@ -12,15 +12,15 @@ next_about: "Runink CORE"
 # screen, so the hero carries the console's five parts as type instead of an invented
 # picture of a screen.
 #
-# The name is shown without an expansion: CORE's product copy on this site defines
-# none, and none is invented here.
+# The name is spelled out as the core README defines it: Control · Orchestration ·
+# Resilience · Enforcement (owner, 2026-09-26: every product name spelled out).
 #
 # English only, like /river/ and /downloads/, so no translation is left behind; the
 # homepage card that links here falls back to this page on /es/, /fr/ and /pt/ and
 # says the page is in English.
 image: "/images/products/core-og.jpg"
 rp:
-  lockup: "The operations layer, on hardware you own"
+  lockup: "CORE · Control · Orchestration · Resilience · Enforcement"
   title: "Your software, your AI and your data, on machines you own."
   promise: "**Runink CORE** keeps your company's software healthy, governs the AI models and agents that work inside it, watches your own data, and turns a written brief into a working application. Its AI model runs on those same machines. No outside AI service is called."
   cta:

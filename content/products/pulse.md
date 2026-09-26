@@ -7,10 +7,8 @@ next_about: "Runink PULSE"
 # runink-pulse.md, and the pulse repository's README. Nothing on this page goes
 # beyond what the paper says. If the paper changes, change this page with it.
 #
-# The name is shown without an expansion on this page (owner, 2026-09-26: only
-# FACE, LUNA and RIVER are spelled out). The PULSE paper's title and the pulse
-# README do carry one, Prescriptive Unified Lead & Social Engine; that conflict is
-# raised in the PR rather than settled here.
+# The name is spelled out as the PULSE paper's title and the pulse README define
+# it: Prescriptive Unified Lead & Social Engine (owner, 2026-09-26).
 #
 # No screenshot. The screenshots in the pulse repository show an older interface
 # filled with a real third party's profiles and photographs, which cannot go on a
@@ -22,7 +20,7 @@ next_about: "Runink PULSE"
 # says the page is in English.
 image: "/images/products/pulse-og.jpg"
 rp:
-  lockup: "Market analysis and marketing, on your own machines"
+  lockup: "PULSE · Prescriptive Unified Lead & Social Engine"
   title: "A marketing engine that runs inside your own business."
   promise: "**Runink PULSE** replaces the marketing patchwork with one application your own team operates. It audits your website and social presence, researches your market, finds the companies worth talking to, and writes the material, all from one shared understanding of your business."
   cta:
