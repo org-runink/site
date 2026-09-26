@@ -443,7 +443,7 @@ products:
   - page: "/products/core"
     paper: "runink-core"
     name: "Runink CORE"
-    sub: "A camada de operações, no seu próprio hardware"
+    sub: "Control · Orchestration · Resilience · Enforcement"
     line: "Um produto por si só, vendido separadamente. É a resposta para onde os seus dados são processados e quem pode vê-los, que é a pergunta a que toda outra página daqui acaba chegando."
   - paper: "runink-core-atlas"
     name: "Runink CORE e Atlas"

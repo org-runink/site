@@ -444,7 +444,7 @@ products:
   - page: "/products/core"
     paper: "runink-core"
     name: "Runink CORE"
-    sub: "La couche d'exploitation, sur votre propre matériel"
+    sub: "Control · Orchestration · Resilience · Enforcement"
     line: "Un produit à part entière, vendu séparément. C'est la réponse à la question de savoir où vos données sont traitées et qui peut les voir, la question à laquelle toutes les autres pages d'ici finissent par arriver."
   - paper: "runink-core-atlas"
     name: "Runink CORE et Atlas"

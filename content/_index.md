@@ -467,8 +467,8 @@ paper:
 # `page` (2026-09-26): a product with its own page opens that page, and the paper
 # is one click further, from the page's "Read the detail" block. Runink River has a
 # page and no paper; the joint CORE and Atlas paper has no page and still opens the
-# paper. `sub` carries the meaning of a product name where one is defined (FACE,
-# PULSE, RIVER), in English in every language; CORE's is a description instead.
+# paper. `sub` carries the meaning of each product name (FACE, PULSE, CORE, RIVER), in
+# English in every language.
 products_heading: "Runink products you may have heard of"
 products_intro: "Four products, each with its own page, and one joint paper. The pages say what each product is; the papers behind them explain the mechanism: what the software looks at, what it produces, who approves it, and where it runs."
 products_cta: "Read the paper"
@@ -487,7 +487,7 @@ products:
   - page: "/products/core"
     paper: "runink-core"
     name: "Runink CORE"
-    sub: "The operations layer, on hardware you own"
+    sub: "Control · Orchestration · Resilience · Enforcement"
     line: "A product in its own right, sold separately. It is the answer to where your data is processed and who can see it, which is the question every other page here eventually arrives at."
   - paper: "runink-core-atlas"
     name: "Runink CORE and Atlas"
