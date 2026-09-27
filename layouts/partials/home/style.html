@@ -1141,6 +1141,8 @@
   @media (min-width: 768px) { .hp-prod { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; } }
 
   .hp-prod__item { min-width: 0; }
+  /* An odd card out takes the full row rather than leaving a hole beside it. */
+  @media (min-width: 768px) { .hp-prod__item:last-child:nth-child(odd) { grid-column: 1 / -1; } }
   .hp-prod__link {
     display: flex;
     flex-direction: column;

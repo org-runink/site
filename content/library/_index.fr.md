@@ -5,7 +5,7 @@ title: "Bibliothèque"
 # the link to /blog/ directly. Per CONTENT.md rule 12 this is a page, not a copy.
 type: library
 layout: list
-description: "Quatre documents détaillés sur ce que font Runink FACE, PULSE et CORE, douze scénarios concrets, et des textes plus courts sur les problèmes opérationnels qui les motivent."
+description: "Des documents détaillés sur ce que font Runink FACE, PULSE et CORE, douze scénarios concrets, et des textes plus courts sur les problèmes opérationnels qui les motivent."
 eyebrow: "Pour les opérations, la chaîne d'approvisionnement, la finance et la conformité"
 headline: "Tout ce que nous avons écrit, dans l'ordre où le lire."
 deck: "Commencez par un scénario si vous voulez savoir si cela correspond à votre semaine, ou par un document si vous voulez le mécanisme en entier. Les scénarios sont courts et nomment les enregistrements concernés ; les documents sont longs et disent sur quoi repose chaque affirmation. Les quatre documents sont publiés en anglais."

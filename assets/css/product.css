@@ -1,0 +1,269 @@
+/* ── Product pages (layouts/_default/product.html) ─────────────────────────────────────────
+   One scoped stylesheet for /river/, /products/core/ and /products/pulse/. It is the
+   design the owner approved for the Runink River landing page (river repo, docs/hugo-site,
+   layouts/landing.html + assets/css/custom.css), ported and recoloured to the owner's
+   2026-09-26 brand: dark-first #212121 grounds, sage #C0CC7C as the one action colour,
+   Playfair Display Italic for one display line, Figtree body, Fira Code mono, and the
+   dog-head silhouette as the logo.
+
+   WHY THESE PAGES DO NOT USE tokens.css COLOURS. The rest of runink.org is still on the
+   warm palette DESIGN.md §4 describes. Moving the whole site to the new brand is an open
+   owner decision; until it is taken, these three pages carry the new palette on their own,
+   inside .rp, so nothing here can reach another page. Every class is prefixed rp- and every
+   custom property --rp-, so neither can collide with the site's rk-/hp-/Tailwind names.
+   What DESIGN.md says about craft still holds here: measured contrast, self-hosted faces,
+   print as ink on white, colour never the only channel, reduced motion honoured.
+
+   Measured contrast (WCAG 2.1), dark ground: ink #E4E2D8 on #212121 12.4:1; ink-2
+   #C6C7B5 on #212121 9.4:1 and on the card #36383A 6.9:1; muted #A6A799 on the card
+   4.8:1; sage #C0CC7C on #212121 9.3:1, and #212121 on sage 9.3:1. Light ground: accent
+   #5F6528 on #F4F3EE 5.6:1 and on #EAE9E2 5.1:1; #FFFFFF on #5F6528 6.2:1; muted #5E5F57
+   on #EAE9E2 5.3:1. The brand board's own muted (#717168, 3.3:1 on #212121) and light
+   accent (#6E7A2E, 4.2:1 on #F4F3EE) are under 4.5:1 as text, so they are used here only
+   where nothing has to be read. */
+
+.rp {
+  --rp-bg: #212121; --rp-panel: #2c2e30; --rp-card: #36383a;
+  --rp-ink: #e4e2d8; --rp-ink-2: #c6c7b5; --rp-muted: #a6a799;
+  --rp-rule: #45474a; --rp-edge: #6b6d66;
+  --rp-accent: #c0cc7c; --rp-on-accent: #212121; --rp-accent-hover: #d0da97;
+  /* The hero and the closing band are always dark, in both registers, like the
+     approved template: they sit on the river-lines ground. */
+  --rp-hero-a: #1a1a1a; --rp-hero-b: #262829; --rp-hero-ink: #e4e2d8; --rp-hero-ink-2: #c6c7b5;
+  --rp-strand: #717168; --rp-lit: #c0cc7c; --rp-term: #171818; --rp-term-ink: #e4e2d8;
+  --rp-font: "Figtree Rk", "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --rp-mono: "Fira Code Rk", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --rp-display: "Playfair Rp", "Playfair Display", Georgia, serif;
+  background: var(--rp-bg); color: var(--rp-ink); font-family: var(--rp-font);
+  display: flex; flex-direction: column; overflow-x: clip;
+}
+/* The site's header switch sets data-ground on <html>. "sheet" is its light register. */
+[data-ground='sheet'] .rp {
+  --rp-bg: #f4f3ee; --rp-panel: #eae9e2; --rp-card: #ffffff;
+  --rp-ink: #212121; --rp-ink-2: #3e3f3a; --rp-muted: #5e5f57;
+  --rp-rule: #d6d5cc; --rp-edge: #8a8b7e;
+  --rp-accent: #5f6528; --rp-on-accent: #ffffff; --rp-accent-hover: #4e5320;
+}
+.rp h1, .rp h2, .rp h3 { text-wrap: balance; margin: 0; letter-spacing: -0.015em; font-family: var(--rp-font); }
+.rp p { margin: 0; }
+.rp code { font-family: var(--rp-mono); font-size: 0.88em; background: none; padding: 0; color: inherit; }
+.rp section { padding-inline: 20px; }
+.rp a { text-underline-offset: 3px; }
+.rp-center { text-align: center; }
+.rp-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rp-accent); }
+
+/* The logo. The dog head is one file (assets/images/brand/runink-dog-head.svg) used as a
+   mask, so it takes the colour of whatever it sits on and is fetched once per visit. */
+.rp-dog { display: inline-block; width: 1em; height: 1.186em; background: currentColor;
+  -webkit-mask: var(--rp-dog) center / contain no-repeat; mask: var(--rp-dog) center / contain no-repeat;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; flex: none; }
+
+/* hero */
+.rp-hero {
+  position: relative; isolation: isolate; color: var(--rp-hero-ink);
+  background: radial-gradient(120% 90% at 85% 10%, #33362c 0%, transparent 55%),
+              linear-gradient(170deg, var(--rp-hero-a), var(--rp-hero-b));
+  padding-block: clamp(48px, 8vw, 96px) clamp(56px, 8vw, 110px);
+}
+.rp-flow { position: absolute; inset: auto 0 0 0; width: 100%; height: 34%; z-index: -1; opacity: 0.85; pointer-events: none; }
+.rp-strand { stroke: var(--rp-strand); stroke-width: 1.4; opacity: 0.55; }
+.rp-strand-lit { stroke: var(--rp-lit); stroke-width: 2.4; opacity: 1; stroke-dasharray: 14 10; animation: rp-flow 6s linear infinite; }
+@keyframes rp-flow { to { stroke-dashoffset: -240; } }
+.rp-hero-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
+.rp-hero-copy { display: flex; flex-direction: column; gap: 22px; }
+.rp-lockup { display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; font-weight: 700; color: var(--rp-hero-ink); letter-spacing: 0; }
+.rp-lockup .rp-dog { font-size: 34px; color: var(--rp-hero-ink); }
+.rp-lockup small { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rp-lit); }
+.rp-title { font-size: clamp(2.3rem, 5.6vw, 4.2rem); line-height: 1.04; font-weight: 800; color: #f4f3ee; }
+.rp-title code { font-weight: 600; color: var(--rp-lit); background: rgba(192, 204, 124, 0.12); padding: 0 0.18em; border-radius: 0.16em; font-size: 0.92em; }
+.rp-sub { font-size: clamp(1.02rem, 1.6vw, 1.2rem); line-height: 1.6; color: var(--rp-hero-ink-2); max-width: 60ch; }
+.rp-sub code { color: var(--rp-hero-ink); }
+.rp-sub strong { color: var(--rp-hero-ink); }
+.rp-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.rp-cta-center { justify-content: center; }
+.rp-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease; }
+.rp-btn:hover { transform: translateY(-1px); }
+.rp-btn:focus-visible, .rp-card:focus-visible, .rp-link:focus-visible, .rp-paper:focus-visible { outline: 3px solid var(--rp-lit); outline-offset: 3px; }
+/* The primary button sits on the dark hero and the dark closing band only, so it always
+   takes the dark-register sage, in both registers. */
+.rp-btn-primary { background: #c0cc7c; color: #212121; box-shadow: 0 10px 30px -12px rgba(192, 204, 124, 0.55); }
+.rp-btn-primary:hover { background: #d0da97; color: #212121; }
+.rp-btn-ghost { color: var(--rp-hero-ink); border: 1px solid #6b6d66; background: rgba(255, 255, 255, 0.03); }
+.rp-btn-ghost:hover { border-color: var(--rp-hero-ink); color: var(--rp-hero-ink); }
+.rp-fine { font-size: 0.85rem; color: #a6a799; }
+
+/* screenshots in window frames */
+.rp-shot-stack { position: relative; margin: 0; min-height: clamp(240px, 30vw, 420px); }
+.rp-window { border-radius: 14px; overflow: hidden; background: #111; border: 1px solid #45474a; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7); }
+.rp-window img { display: block; width: 100%; height: auto; }
+.rp-window-bar, .rp-term-bar { display: flex; align-items: center; gap: 7px; padding: 9px 12px; background: #2c2e30; border-bottom: 1px solid #45474a; }
+.rp-window-bar i, .rp-term-bar i { width: 10px; height: 10px; border-radius: 50%; background: #55574f; }
+.rp-window-bar i:first-child, .rp-term-bar i:first-child { background: #c0cc7c; }
+.rp-window-bar span, .rp-term-bar span { margin-left: 8px; font-size: 0.75rem; color: #a6a799; font-family: var(--rp-mono); }
+.rp-window-back { width: 92%; }
+.rp-window-front { position: absolute; width: 62%; right: -2%; bottom: -10%; }
+.rp-shot-one { margin: 0; }
+
+/* When a product has no screenshot to show, the hero's right-hand side is the mark and the
+   product's parts, set as type. Nothing here imitates a screen. */
+.rp-plate { margin: 0; position: relative; border-radius: 20px; border: 1px solid #45474a; background: linear-gradient(160deg, #2c2e30, #1c1d1d); padding: clamp(24px, 3.5vw, 40px); display: flex; flex-direction: column; gap: 22px; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7); }
+.rp-plate-head { display: flex; align-items: center; gap: 16px; }
+.rp-plate-head .rp-dog { font-size: 56px; color: #e4e2d8; }
+.rp-plate-name { font-size: 1.6rem; font-weight: 800; color: #f4f3ee; line-height: 1.1; }
+.rp-plate-name small { display: block; font-size: 0.8rem; font-weight: 600; color: #a6a799; margin-top: 4px; letter-spacing: 0; }
+.rp-plate-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: #45474a; border: 1px solid #45474a; border-radius: 12px; overflow: hidden; }
+.rp-plate-list li { background: #242526; padding: 12px 16px; display: grid; grid-template-columns: minmax(0, 9.5em) minmax(0, 1fr); gap: 14px; align-items: baseline; }
+.rp-plate-list b { font-family: var(--rp-mono); font-weight: 500; font-size: 0.84rem; color: #c0cc7c; }
+.rp-plate-list span { font-size: 0.92rem; color: #c6c7b5; line-height: 1.45; }
+.rp-plate-foot { font-family: var(--rp-display); font-style: italic; font-size: 1.15rem; color: #e4e2d8; }
+
+/* mission + facts */
+.rp-mission { padding-block: clamp(48px, 7vw, 80px) 12px; }
+.rp-mission p { max-width: 920px; margin: 0 auto; text-align: center; font-size: clamp(1.5rem, 3.2vw, 2.4rem); font-weight: 700; line-height: 1.25; color: var(--rp-ink); }
+.rp-mission em { font-family: var(--rp-display); font-style: italic; font-weight: 600; color: var(--rp-accent); }
+.rp .rp-facts { max-width: 1100px; width: calc(100% - 40px); margin-inline: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rp-rule); border: 1px solid var(--rp-rule); border-radius: 16px; overflow: hidden; margin-block: 36px 24px; padding: 0; }
+.rp-fact { background: var(--rp-bg); padding: 22px 20px; display: flex; flex-direction: column; gap: 6px; }
+.rp-fact b { font-family: var(--rp-mono); font-weight: 500; font-size: clamp(1.15rem, 2.2vw, 1.55rem); color: var(--rp-ink); }
+.rp-fact span { font-size: 0.92rem; color: var(--rp-muted); line-height: 1.45; }
+
+/* split feature */
+.rp-split { max-width: 1180px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(48px, 7vw, 88px); }
+.rp-split-copy { display: flex; flex-direction: column; gap: 14px; }
+.rp-split-copy h2, .rp-features h2, .rp-steps h2, .rp-papers h2, .rp-final h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 800; line-height: 1.12; color: var(--rp-ink); }
+.rp-split-copy p { color: var(--rp-ink-2); font-size: 1.06rem; line-height: 1.65; max-width: 58ch; }
+.rp-split-list { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.rp-split-list li { position: relative; padding-left: 22px; color: var(--rp-ink-2); line-height: 1.55; }
+.rp-split-list li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 9px; height: 9px; border: 2px solid var(--rp-accent); border-radius: 2px; }
+.rp-split-list b { color: var(--rp-ink); }
+.rp-link { color: var(--rp-accent); font-weight: 700; text-decoration: none; width: max-content; max-width: 100%; }
+.rp-link:hover { text-decoration: underline; }
+.rp-split-media { min-width: 0; }
+
+/* feature grid */
+.rp-features { padding-block: clamp(44px, 6vw, 80px); background: var(--rp-panel); border-block: 1px solid var(--rp-rule); }
+.rp-features h2 { margin-bottom: 12px; }
+.rp .rp-intro { max-width: 62ch; margin: 0 auto 36px; text-align: center; color: var(--rp-ink-2); font-size: 1.06rem; line-height: 1.6; }
+.rp-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.rp-card { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 16px; background: var(--rp-bg); border: 1px solid var(--rp-rule); color: inherit; text-decoration: none; }
+a.rp-card { transition: border-color 0.15s ease, transform 0.15s ease; }
+a.rp-card:hover { border-color: var(--rp-accent); transform: translateY(-2px); }
+.rp-card-k { font-family: var(--rp-mono); font-size: 0.78rem; color: var(--rp-accent); letter-spacing: 0.04em; }
+.rp-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--rp-ink); }
+.rp-card p { color: var(--rp-ink-2); font-size: 0.98rem; line-height: 1.6; }
+.rp-card p code { color: var(--rp-ink); }
+
+/* steps + terminal */
+.rp-steps { padding-block: clamp(48px, 7vw, 88px); max-width: 1180px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; gap: 32px; }
+.rp .rp-steps .rp-intro { margin-bottom: 0; }
+.rp-step-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--rp-cols, 3), minmax(0, 1fr)); gap: 16px; }
+.rp-step-list li { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-top: 3px solid var(--rp-accent); background: var(--rp-panel); border-radius: 0 0 14px 14px; }
+.rp-step-n { font-family: var(--rp-mono); font-weight: 500; font-size: 1.5rem; color: var(--rp-accent); line-height: 1; }
+.rp-step-list h3 { font-size: 1.15rem; font-weight: 700; color: var(--rp-ink); }
+.rp-step-list p { color: var(--rp-ink-2); font-size: 0.98rem; line-height: 1.6; }
+.rp-term { border-radius: 14px; overflow: hidden; background: var(--rp-term); border: 1px solid #45474a; }
+.rp-term pre { margin: 0; padding: 18px 20px; overflow-x: auto; background: transparent; }
+.rp-term code { font-family: var(--rp-mono); color: var(--rp-term-ink); font-size: 0.92rem; line-height: 1.7; white-space: pre; }
+.rp-prompt { color: var(--rp-lit); user-select: none; margin-right: 0.6em; }
+
+/* related papers */
+.rp-papers { padding-block: 0 clamp(48px, 7vw, 88px); max-width: 1180px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; gap: 24px; }
+.rp-paper-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
+.rp-paper { display: flex; flex-direction: column; gap: 8px; height: 100%; padding: 22px 24px; border-radius: 16px; border: 1px solid var(--rp-edge); color: inherit; text-decoration: none; transition: border-color 0.15s ease; }
+.rp-paper:hover { border-color: var(--rp-accent); }
+.rp-paper b { font-size: 1.1rem; color: var(--rp-ink); }
+.rp-paper span { color: var(--rp-ink-2); line-height: 1.55; }
+.rp-paper em { font-style: normal; font-weight: 700; color: var(--rp-accent); margin-top: auto; padding-top: 6px; }
+
+/* closing */
+.rp-final { text-align: center; padding-block: clamp(56px, 8vw, 100px); display: flex; flex-direction: column; align-items: center; gap: 18px; color: var(--rp-hero-ink);
+  background: radial-gradient(90% 120% at 50% 110%, #33362c 0%, transparent 60%), linear-gradient(0deg, var(--rp-hero-a), var(--rp-hero-b)); position: relative; isolation: isolate; }
+.rp-final .rp-dog { font-size: 44px; color: #e4e2d8; }
+.rp-final h2 { color: #f4f3ee; }
+.rp-final p { color: var(--rp-hero-ink-2); max-width: 58ch; font-size: 1.06rem; line-height: 1.6; }
+.rp-final .rp-tagline { font-family: var(--rp-display); font-style: italic; font-size: clamp(1.3rem, 2.6vw, 1.8rem); color: #c0cc7c; max-width: none; }
+.rp-print-mark { display: none; }
+
+@media (max-width: 960px) {
+  .rp-hero-inner, .rp-split { grid-template-columns: minmax(0, 1fr); }
+  .rp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rp .rp-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rp-step-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rp-shot-stack { margin-bottom: 48px; }
+}
+@media (max-width: 620px) {
+  .rp-grid, .rp-step-list { grid-template-columns: minmax(0, 1fr); }
+  .rp-window-front { width: 70%; }
+  .rp-plate-list li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .rp .rp-facts { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rp-strand-lit { animation: none; }
+  .rp-btn, .rp-card, .rp-paper { transition: none; }
+  .rp-btn:hover, a.rp-card:hover { transform: none; }
+}
+
+/* PRINT (CONTENT.md rule 6): ink on white, no fixed chrome, nothing clipped, and the
+   destination of every link that matters printed after it. The site header is a fixed
+   wrapper that would reprint on every sheet, so it is dropped on these pages. */
+@media print {
+  body:has(.rp) > .fixed, body:has(.rp) footer, body:has(.rp) #consent-banner { display: none !important; }
+  body:has(.rp) > .pt-20 { padding-top: 0 !important; }
+  html:has(.rp), body:has(.rp), body:has(.rp) > .pt-20 { background: #fff !important; }
+  .rp-window, .rp-plate, .rp-term, .rp .rp-facts { break-inside: avoid; }
+  .rp, [data-ground='sheet'] .rp {
+    --rp-bg: #fff; --rp-panel: #fff; --rp-card: #fff; --rp-ink: #000; --rp-ink-2: #222; --rp-muted: #444;
+    --rp-rule: #999; --rp-edge: #666; --rp-accent: #000; --rp-hero-ink: #000; --rp-hero-ink-2: #222;
+    --rp-lit: #000; --rp-term: #fff; --rp-term-ink: #000;
+    background: #fff; color: #000; overflow: visible;
+  }
+  .rp-hero, .rp-final, .rp-features { background: #fff !important; border-color: #999; }
+  .rp-title, .rp-final h2, .rp-plate-name, .rp-lockup, .rp-plate-foot, .rp-final .rp-tagline { color: #000 !important; }
+  .rp-title code { background: none; color: #000; }
+  .rp-flow, .rp-hero .rp-cta, .rp-fine { display: none; }
+  .rp-hero-inner, .rp-split { grid-template-columns: minmax(0, 1fr); }
+  .rp-shot-stack { min-height: 0; }
+  .rp-window-front { position: static; width: 70%; margin-top: 12px; }
+  .rp-window, .rp-plate { box-shadow: none; border-color: #999; }
+  .rp-plate { background: #fff; }
+  .rp-plate-list, .rp-plate-list li { background: #fff; }
+  .rp-plate-list b, .rp-plate-list span, .rp-sub, .rp-sub code, .rp-sub strong { color: #000 !important; }
+  .rp-dog, .rp-plate-head .rp-dog, .rp-final .rp-dog, .rp-lockup .rp-dog { color: #000 !important; background: #000; }
+  .rp-lockup small { color: #000; }
+  .rp-window-bar, .rp-term-bar { background: #fff; border-color: #999; }
+  .rp-window-bar i, .rp-term-bar i { background: #fff !important; border: 1px solid #666; }
+  .rp-term pre { white-space: pre-wrap; overflow: visible; }
+  .rp-term code { white-space: pre-wrap; word-break: break-all; }
+  .rp-btn { border: 1px solid #000 !important; background: #fff !important; color: #000 !important; box-shadow: none; min-height: 0; padding: 6px 12px; }
+  .rp-card, .rp-paper, .rp-step-list li, .rp-fact { break-inside: avoid; background: #fff; }
+  .rp-step-list li { border-top-color: #000; }
+  .rp-split-list li::before { border-color: #000; }
+  .rp a.rp-card::after, .rp a.rp-paper::after, .rp a.rp-link::after, .rp-final a.rp-btn::after { content: " (" attr(data-print) ")"; font-size: 0.8em; font-weight: 400; color: #333; word-break: break-all; }
+  .rp-print-mark { display: block; text-align: center; font-size: 0.85rem; color: #000; padding: 12px; }
+}
+
+/* A product with its own mark (Runink River's raft roundel, which carries its own cream
+   ground, navy line and teal water) shows it as drawn, at the size the dog head takes. */
+.rp-logo { display: block; flex: none; width: 44px; height: 44px; }
+.rp-lockup .rp-logo { width: 48px; height: 48px; }
+.rp-plate-head .rp-logo { width: 72px; height: 72px; }
+.rp-final .rp-logo { width: 64px; height: 64px; }
+
+/* /products/ — the switchboard (layouts/products/list.html). */
+.rp-hero-short { padding-block: clamp(40px, 6vw, 72px); }
+.rp-index-head { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.rp-index { padding-block: clamp(40px, 6vw, 72px); max-width: 1180px; margin: 0 auto; width: 100%; }
+.rp-index-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.rp-index-card { gap: 10px; padding: 26px; background: var(--rp-panel); }
+.rp-index-name { display: flex; align-items: center; gap: 14px; }
+.rp-index-name .rp-dog { font-size: 36px; color: var(--rp-ink); }
+.rp-index-name b { font-size: 1.4rem; }
+.rp-index-meaning { font-family: var(--rp-mono); font-size: 0.8rem; color: var(--rp-accent); }
+@media (max-width: 760px) { .rp-index-list { grid-template-columns: minmax(0, 1fr); } }
+@media print { .rp-index-card { background: #fff; } .rp-index-name .rp-dog { background: #000; } }
+
+/* A split with no screenshot: the list becomes the right-hand column, as cards. */
+.rp-split-text { align-items: start; }
+.rp .rp-split-cards { margin: 0; gap: 12px; }
+.rp-split-cards li { padding: 18px 20px 18px 44px; background: var(--rp-panel); border: 1px solid var(--rp-rule); border-radius: 14px; }
+.rp-split-cards li::before { left: 20px; top: 1.45em; }
+@media print { .rp-split-cards li { background: #fff; } }

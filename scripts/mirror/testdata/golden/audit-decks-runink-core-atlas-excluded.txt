@@ -1,0 +1,20 @@
+runink-core-atlas: site 8 paras, mirror 20 paras
+  site -> mirror MISSING : 0  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 0  (stale prose still in the handout, excl. cover + furniture)
+
+--- cover block: mirror paragraphs 0..11 ---
+  COVER    # Runink CORE and Atlas
+  COVER    ### Headline for the fixture
+  COVER    **A whitepaper for the fixture audience**
+  COVER    Deck paragraph one.
+  COVER    Deck paragraph two.
+  COVER    Deck paragraph three.
+  COVER    Deck paragraph four.
+  COVER    **What this paper is, and which part of it runs.**
+  COVER    Opening prose for the fixture.
+  COVER    Runink · runink.org
+Logical Leap · logicalleap.example
+  COVER    *Runink CORE and Atlas — page 2 of 5*
+  FURNITURE *Runink CORE and Atlas — page 3 of 5*
+  COLOPHON  *Runink CORE and Atlas. Continuous oversight of the fixture.*
+  FURNITURE *Runink CORE and Atlas — page 5 of 5*

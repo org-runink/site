@@ -1,0 +1,13 @@
+runink-core: site 8 paras, mirror 7 paras
+  site -> mirror MISSING : 8  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 4  (stale prose still in the handout, excl. cover + furniture)
+
+--- 4 paragraph(s) in the MIRROR but not the SITE ---
+
+[1] # Runink CORE
+
+[2] ## Stale chapter
+
+[3] Stale prose that must not survive.
+
+[4] *Runink CORE. The closing colophon.*

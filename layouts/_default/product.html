@@ -1,0 +1,216 @@
+{{/*
+  PRODUCT PAGES — /river/, /products/core/, /products/pulse/ (front matter `layout: "product"`).
+
+  A fixed set of slots driven by the `rp:` map in front matter, like the homepage: a
+  page cannot grow into an essay because there is no {{ .Content }} slot to pour one
+  into. Depth lives in the whitepapers (and, for Runink River, its documentation), and
+  every page links to them.
+
+  The design is the Runink River landing page the owner approved (river repo,
+  docs/hugo-site), ported and recoloured to the 2026-09-26 brand. Styles are scoped in
+  assets/css/product.css — read its header for why these pages carry their own palette.
+  The site header and footer are kept.
+
+  Slots, all optional except the hero:
+    rp.logo          optional: a product that has its own mark (Runink River's raft
+                     roundel) sets its path here, and it replaces the Runink dog head
+                     in the lockup, the plate and the closing band (BRAND.md, two logos)
+    rp.lockup        the small line beside the logo (e.g. the meaning of the name)
+    rp.eyebrow       fallback when there is no lockup
+    rp.title         the h1; markdownify, so `code` renders as the sage chip
+    rp.promise       the one-sentence promise under it; markdownify
+    rp.cta           [{text, url, style: primary|ghost}] — a url containing #contact goes
+                     through partials/contact-url.html, so the enquiry names this page
+    rp.fine          one quiet line under the buttons
+    rp.shots         1 or 2 real screenshots [{src, w, h, alt, bar}]; two are stacked
+    rp.plate         when there is no screenshot: {name, sub, rows:[{k, v}], foot}
+    rp.mission       the one big line; markdownify, *em* is the Playfair display line
+    rp.facts         [{k, v}] — four facts in mono
+    rp.split         {eyebrow, heading, body, list:[...], link:{text,url}, shot:{...}}
+    rp.features      {id, heading, intro, items:[{k, title, body, url}]}
+    rp.steps         {heading, intro, items:[{title, body}], term:{bar, lines:[...]}}
+    rp.papers        {heading, items:[{url, title, note, cta}]}
+    rp.final         {heading, body, tagline: true, cta:[...]}
+
+  PRINT: every link that matters carries data-print with its absolute URL, and the
+  stylesheet prints it after the anchor (CONTENT.md rule 6).
+*/}}
+{{ define "main" }}
+{{- $rp := .Params.rp -}}
+{{- $mark := partial "product/mark.html" (dict "logo" $rp.logo) -}}
+{{- $page := . -}}
+{{- $css := resources.Get "css/product.css" | minify | fingerprint -}}
+{{- $pf := resources.Get "fonts/PlayfairDisplay-Italic-var.woff2" -}}
+{{- $dog := resources.Get "images/brand/runink-dog-head.svg" -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+<link rel="preload" href="{{ $pf.RelPermalink }}" as="font" type="font/woff2" crossorigin>
+{{/* The display face is declared here rather than in tokens.css on purpose:
+     partials/rk-fonts.html asserts that tokens.css declares exactly the faces it
+     publishes, and this face belongs to these pages only. resources.Get above is what
+     makes Hugo publish the file (DESIGN.md §10: a @font-face alone publishes nothing). */}}
+<style>
+@font-face{font-family:"Playfair Rp";src:url("{{ $pf.RelPermalink }}") format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
+.rp{--rp-dog:url("{{ $dog.RelPermalink }}")}
+</style>
+
+
+
+
+<div class="rp">
+
+<section class="rp-hero" aria-labelledby="rp-hero-title">
+  <svg class="rp-flow" viewBox="0 0 1600 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g fill="none" stroke-linecap="round">
+      <path class="rp-strand" d="M-40 360 C 260 300, 520 330, 800 380 S 1320 440, 1640 330" />
+      <path class="rp-strand" d="M-40 400 C 300 350, 560 380, 820 420 S 1300 470, 1640 380" />
+      <path class="rp-strand" d="M-40 440 C 280 400, 600 430, 860 460 S 1340 500, 1640 420" />
+      <path class="rp-strand" d="M-40 480 C 320 450, 620 470, 880 500 S 1320 530, 1640 470" />
+      <path class="rp-strand" d="M-40 320 C 240 270, 540 300, 780 340 S 1300 400, 1640 290" />
+      <path class="rp-strand rp-strand-lit" d="M-40 420 C 300 370, 580 400, 840 440 S 1320 480, 1640 400" />
+    </g>
+  </svg>
+
+  <div class="rp-hero-inner">
+    <div class="rp-hero-copy">
+      {{ with $rp.lockup }}
+      <p class="rp-lockup">{{ $mark }}<span>{{ $page.Title }}<small>{{ . }}</small></span></p>
+      {{ else }}{{ with $rp.eyebrow }}<p class="rp-eyebrow">{{ . }}</p>{{ end }}{{ end }}
+      <h1 id="rp-hero-title" class="rp-title">{{ $rp.title | markdownify }}</h1>
+      <p class="rp-sub">{{ $rp.promise | markdownify }}</p>
+      {{ with $rp.cta }}{{ partial "rp-cta.html" (dict "cta" . "page" $page) }}{{ end }}
+      {{ with $rp.fine }}<p class="rp-fine">{{ . }}</p>{{ end }}
+    </div>
+
+    {{ with $rp.shots }}
+      {{ if gt (len .) 1 }}
+      <figure class="rp-shot-stack" aria-label="Screenshots of {{ $page.Title }}">
+        {{ partial "rp-shot.html" (dict "shot" (index . 0) "class" "rp-window-back" "loading" "eager") }}
+        {{ partial "rp-shot.html" (dict "shot" (index . 1) "class" "rp-window-front" "loading" "eager") }}
+      </figure>
+      {{ else }}
+      <figure class="rp-shot-one">{{ partial "rp-shot.html" (dict "shot" (index . 0) "loading" "eager") }}</figure>
+      {{ end }}
+    {{ else }}{{ with $rp.plate }}
+      <figure class="rp-plate" aria-label="{{ .name }} at a glance">
+        <div class="rp-plate-head">
+          {{ $mark }}
+          <p class="rp-plate-name">{{ .name }}{{ with .sub }}<small>{{ . }}</small>{{ end }}</p>
+        </div>
+        <ul class="rp-plate-list">
+          {{ range .rows }}<li><b>{{ .k }}</b><span>{{ .v }}</span></li>{{ end }}
+        </ul>
+        {{ with .foot }}<figcaption class="rp-plate-foot">{{ . }}</figcaption>{{ end }}
+      </figure>
+    {{ end }}{{ end }}
+  </div>
+</section>
+
+{{ with $rp.mission }}
+<section class="rp-mission">
+  <p>{{ . | markdownify }}</p>
+</section>
+{{ end }}
+
+{{ with $rp.facts }}
+<section class="rp-facts" aria-label="{{ $page.Title }} at a glance">
+  {{ range . }}<div class="rp-fact"><b>{{ .k }}</b><span>{{ .v }}</span></div>{{ end }}
+</section>
+{{ end }}
+{{ with $rp.split }}
+{{/* With a screenshot, the copy and its list sit left of the picture. Without one,
+     the list itself is the right-hand column, so the section has no empty half. */}}
+{{ $list := "" }}{{ with .list }}{{ $list = . }}{{ end }}
+<section class="rp-split{{ if not .shot }} rp-split-text{{ end }}"{{ with .id }} id="{{ . }}"{{ end }}>
+  <div class="rp-split-copy">
+    {{ with .eyebrow }}<span class="rp-eyebrow">{{ . }}</span>{{ end }}
+    <h2>{{ .heading }}</h2>
+    {{ range .body }}<p>{{ . | markdownify }}</p>{{ end }}
+    {{ if and $list .shot }}<ul class="rp-split-list">{{ range $list }}<li>{{ . | markdownify }}</li>{{ end }}</ul>{{ end }}
+    {{ with .link }}{{ $href := partial "product/href.html" (dict "url" .url "page" $page) }}<a class="rp-link" href="{{ $href }}" data-print="{{ $href | absURL }}">{{ .text }} &rarr;</a>{{ end }}
+  </div>
+  {{ with .shot }}
+  <div class="rp-split-media">{{ partial "rp-shot.html" (dict "shot" .) }}</div>
+  {{ else }}{{ with $list }}
+  <ul class="rp-split-list rp-split-cards">{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+  {{ end }}{{ end }}
+</section>
+{{ end }}
+
+{{ with $rp.features }}
+<section class="rp-features"{{ with .id }} id="{{ . }}"{{ end }} aria-labelledby="rp-features-title">
+  <h2 id="rp-features-title" class="rp-center">{{ .heading }}</h2>
+  {{ with .intro }}<p class="rp-intro">{{ . | markdownify }}</p>{{ end }}
+  <div class="rp-grid">
+    {{ range .items }}
+    {{ if .url }}{{ $href := partial "product/href.html" (dict "url" .url "page" $page) }}
+    <a class="rp-card" href="{{ $href }}" data-print="{{ $href | absURL }}">
+    {{ else }}<div class="rp-card">{{ end }}
+      <span class="rp-card-k">{{ .k }}</span>
+      <h3>{{ .title }}</h3>
+      <p>{{ .body | markdownify }}</p>
+    {{ if .url }}</a>{{ else }}</div>{{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with $rp.steps }}
+<section class="rp-steps" aria-labelledby="rp-steps-title">
+  <h2 id="rp-steps-title" class="rp-center">{{ .heading }}</h2>
+  {{ with .intro }}<p class="rp-intro">{{ . | markdownify }}</p>{{ end }}
+  <ol class="rp-step-list" style="--rp-cols: {{ len .items | default 3 }}">
+    {{ range $i, $s := .items }}<li><span class="rp-step-n" aria-hidden="true">{{ add $i 1 }}</span><h3>{{ $s.title }}</h3><p>{{ $s.body | markdownify }}</p></li>{{ end }}
+  </ol>
+  {{ with .term }}
+  <div class="rp-term" role="group" aria-label="{{ .bar }}">
+    <div class="rp-term-bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ .bar }}</span></div>
+    <pre><code>{{ range $i, $l := .lines }}{{ if $i }}
+{{ end }}<span class="rp-prompt">$</span>{{ $l }}{{ end }}</code></pre>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
+
+{{ with $rp.papers }}
+<section class="rp-papers" aria-labelledby="rp-papers-title">
+  <h2 id="rp-papers-title">{{ .heading }}</h2>
+  <ul class="rp-paper-list">
+    {{ range .items }}
+    {{ $href := partial "product/href.html" (dict "url" .url "page" $page) }}
+    <li><a class="rp-paper" href="{{ $href }}" data-print="{{ $href | absURL }}"><b>{{ .title }}</b><span>{{ .note }}</span><em>{{ .cta | default "Read it" }} &rarr;</em></a></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with $rp.final }}
+<section class="rp-final">
+  {{ $mark }}
+  <h2>{{ .heading }}</h2>
+  {{ with .body }}<p>{{ . | markdownify }}</p>{{ end }}
+  {{ if .tagline }}<p class="rp-tagline">Data You Can Trust. Decisions You Can Defend.</p>{{ end }}
+  {{ with .cta }}{{ partial "rp-cta.html" (dict "cta" . "page" $page "class" "rp-cta-center") }}{{ end }}
+</section>
+{{ end }}
+
+<p class="rp-print-mark">runink.org{{ $page.RelPermalink }}</p>
+</div>
+{{ end }}
+
+{{- define "partials/rp-shot.html" -}}
+<div class="rp-window{{ with .class }} {{ . }}{{ end }}">
+  <div class="rp-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ .shot.bar }}</span></div>
+  <img src="{{ .shot.src | relURL }}" width="{{ .shot.w }}" height="{{ .shot.h }}" alt="{{ .shot.alt }}" loading="{{ .loading | default "lazy" }}" decoding="async">
+</div>
+{{- end -}}
+
+{{- define "partials/rp-cta.html" -}}
+{{- $page := .page -}}
+<div class="rp-cta{{ with .class }} {{ . }}{{ end }}">
+  {{- range .cta }}
+  {{- $href := partial "product/href.html" (dict "url" .url "page" $page) }}
+  <a class="rp-btn rp-btn-{{ .style | default "primary" }}" href="{{ $href }}" data-print="{{ $href | absURL }}">{{ .text }}</a>
+  {{- end }}
+</div>
+{{- end -}}
+

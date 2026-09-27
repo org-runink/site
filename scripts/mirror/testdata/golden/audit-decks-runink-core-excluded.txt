@@ -1,0 +1,11 @@
+runink-core: site 8 paras, mirror 14 paras
+  site -> mirror MISSING : 0  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 0  (stale prose still in the handout, excl. cover + furniture)
+
+--- cover block: mirror paragraphs 0..2 ---
+  COVER    # Runink CORE
+  COVER    *Runink CORE — page 1 of 5*
+  FURNITURE *Runink CORE — page 2 of 5*
+  FURNITURE *Runink CORE — page 3 of 5*
+  COLOPHON  *Runink CORE. The closing colophon.*
+  FURNITURE *Runink CORE — page 5 of 5*

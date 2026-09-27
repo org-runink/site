@@ -1,0 +1,20 @@
+runink-face: site 8 paras, mirror 9 paras
+  site -> mirror MISSING : 8  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 7  (stale prose still in the handout, excl. cover + furniture)
+
+--- 7 paragraph(s) in the MIRROR but not the SITE ---
+
+[1] # Runink FACE
+
+[2] Deck paragraph one.
+
+[3] Deck paragraph two.
+
+[4] Runink
+paes@runink.org
+
+[5] Stale prose that must not survive.
+
+[6] ### Contact
+
+[7] Runink · runink.org

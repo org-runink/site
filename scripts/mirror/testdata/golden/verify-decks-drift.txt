@@ -1,0 +1,19 @@
+FAIL runink-face        3 chapters, no backup to compare
+       - chapter heading missing: "What this paper is, and which part of it runs"
+       - chapter heading missing: "Alpha chapter"
+       - chapter heading missing: "Beta chapter"
+       - figure line differs: source ['![alt text](figures/whitepapers/fixture.svg "Caption")'] vs mirror []
+FAIL runink-core        3 chapters, no backup to compare
+       - chapter heading missing: "What this paper is, and which part of it runs"
+       - chapter heading missing: "Alpha chapter"
+       - chapter heading missing: "Beta chapter"
+       - figure line differs: source ['![alt text](figures/whitepapers/fixture.svg "Caption")'] vs mirror []
+FAIL runink-pulse       3 chapters, no backup to compare
+       - chapter heading missing: "What this paper is, and which part of it runs"
+       - chapter heading missing: "Alpha chapter"
+       - chapter heading missing: "Beta chapter"
+       - figure line differs: source ['![alt text](figures/whitepapers/fixture.svg "Caption")'] vs mirror []
+FAIL runink-core-atlas  3 chapters, no backup to compare
+       - chapter heading missing: "Alpha chapter"
+       - chapter heading missing: "Beta chapter"
+       - figure line differs: source ['![alt text](figures/whitepapers/fixture.svg "Caption")'] vs mirror []

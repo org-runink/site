@@ -1,0 +1,12 @@
+{{- /* A link on a product page (layouts/_default/product.html). A URL pointing at the
+     homepage contact form goes through contact-url.html, so the enquiry names the page
+     it came from; anything else is made site-relative. Call with (dict "url" "page"). */ -}}
+{{- $out := "" -}}
+{{- if in .url "#contact" -}}
+  {{- $out = partial "contact-url.html" (dict "url" .url "page" .page) -}}
+{{- else if hasPrefix .url "#" -}}
+  {{- $out = .url | safeURL -}}
+{{- else -}}
+  {{- $out = .url | relURL | safeURL -}}
+{{- end -}}
+{{- return $out -}}

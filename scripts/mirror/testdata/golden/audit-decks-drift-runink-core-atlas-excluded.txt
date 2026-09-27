@@ -1,0 +1,9 @@
+runink-core-atlas: site 8 paras, mirror 16 paras
+  site -> mirror MISSING : 7  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 11  (stale prose still in the handout, excl. cover + furniture)
+
+--- cover block: mirror paragraphs 0..0 ---
+  FURNITURE *Runink CORE and Atlas — page 2 of 99*
+  FURNITURE *Runink CORE and Atlas — page 9 of 99*
+  COLOPHON  *Runink CORE and Atlas. Continuous oversight of the fixture.*
+  FURNITURE *Runink CORE and Atlas — page 99 of 99*

@@ -3,7 +3,14 @@
         <p class="text-sm">
             {{- $ui := site.Params.ui | default dict -}}
             {{ $ui.consent_body | default `We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose "Allow Counting". We keep your answer for 180 days.` }}
-            {{ $ui.consent_read | default "Read our" }} <a href="{{ "/privacy/" | relLangURL }}" class="text-stone-100 hover:text-primary-400 underline">{{ $ui.consent_policy | default "Privacy Policy" }}</a> {{ $ui.consent_more | default "for more information." }}
+            {{- /* /privacy/ exists in English only. relLangURL built /fr/privacy/,
+                 /es/privacy/ and /pt/privacy/, none of which exist, so the banner
+                 linked every translated page to a 404. Resolved the way footer.html
+                 resolves it: the translated page when there is one, else the
+                 English path, which is where the page lives. */ -}}
+            {{- $privacy := "/privacy/" | relURL -}}
+            {{- with site.GetPage "/privacy" }}{{ $privacy = .RelPermalink }}{{ end }}
+            {{ $ui.consent_read | default "Read our" }} <a href="{{ $privacy }}" class="text-stone-100 hover:text-primary-400 underline">{{ $ui.consent_policy | default "Privacy Policy" }}</a> {{ $ui.consent_more | default "for more information." }}
         </p>
     </div>
     <div class="flex space-x-4">

@@ -3,7 +3,7 @@ date: 2026-09-07T00:00:00Z
 title: "Telecom"
 description: "Revenue assurance, rating and billing, interconnect settlement, network capital programmes. The Runink CORE and Atlas oversight arrangement applied to two records that ought to agree, at the transaction."
 # Same attribution as the banking page, and for the same reason. This is the
-# Runink CORE and Atlas arrangement, not Runink FACE and not a product on our
+# Runink CORE and Atlas arrangement, not Runink FACE and not one product on our
 # price list. There is nothing in FACE that touches mediation, rating,
 # interconnect settlement or subscriber plan terms — no connector, no domain —
 # so this page could only ever have been the platform arrangement, and it said
@@ -14,8 +14,8 @@ description: "Revenue assurance, rating and billing, interconnect settlement, ne
 # as verdicts through a second door on a different credential. The producing
 # half — reading every rated record against that subscriber's plan terms — is
 # the assessment platform's, and that platform (Atlas, from Logical Leap) is in
-# private beta. The whitepaper's own register marks its telecoms page
-# `hypothetical`; the copy derived from it now carries that mark too.
+# private beta. The page states CORE's half plainly and no longer labels which
+# half is built: CONTENT.md rules 2 and 4.
 product: "Runink CORE + Atlas"
 weight: 40
 # category: binds this page to the palette's category tokens via the
@@ -24,9 +24,9 @@ weight: 40
 # injected into a style attribute that nothing read any more. A class can
 # follow the ground; a literal cannot.
 category: "telecom"
-card: "Runink CORE with Logical Leap's Atlas — revenue assurance, rating and billing, interconnect settlement, and rollout across many small sites. An architecture, not a product on our price list."
+card: "Runink CORE with Logical Leap's Atlas — revenue assurance, rating and billing, interconnect settlement, and rollout across many small sites. An architecture joining two separate products, ours and Logical Leap's."
 headline: "Revenue assurance exists because the volume defeated inspection."
-deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples. Read this page as an architecture: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap, and the illustrations are hypothetical. No operator has run it."
+deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples. Read this page as an architecture: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap. No operator has run it."
 
 problems_heading: "Where it goes wrong"
 problems:
@@ -53,18 +53,16 @@ owners:
   - role: "Engineering and IT"
     line: "Reasoning runs on your own hardware; records and credentials stay on your systems."
 
-outcomes_heading: "What the arrangement changes — and which half of it runs"
+outcomes_heading: "What the arrangement changes"
 outcomes:
-  - "The design's central claim. The population tested is the population, so exceptions come back as named accounts a re-rate can still fix, rather than as an estimated error rate. Be clear whose half that is: reading every rated record against that subscriber's own plan terms is the assessment platform's work, and that platform is a partner's product in private beta. It is the reason to judge this page on the arrangement rather than on a Runink deliverable."
-  - "Built. Each finding that reaches CORE is gated deterministically before anything is put to a model: it must be complete enough to read, it must carry evidence, at least one piece must be readable, it must be about the subject of the finding rather than something adjacent, it must not be the claim written out a second time, and dated evidence must be recent enough to say something about the present. Each gate that fires ends the matter and states its own reason in a sentence a person reads."
-  - "Built. A finding claiming a rate is settled by arithmetic on the raw counts, recomputed rather than accepted, and never goes near a model. A count divided by nothing is unable to judge, never a rate of zero. Two readings of the same traffic that disagree are unable to judge, never averaged into a third figure neither party observed — which for interconnect is the whole argument."
-  - "Built. The judging happens on a different credential from the submitting, enforced by which door the message arrived at rather than by a field the sender fills in. A submitter cannot grade its own work."
-  - "Built. Unable to judge is a verdict in its own right and never renders as agreement. No evidence, evidence that only restates the claim, evidence about a different subject, evidence past the staleness horizon, an unreadable answer, or a submitter who could not determine the matter either: each ends there, with the reason written next to it, and goes to a person. An assessor whose confident answers and whose guesses look identical is ignored within a week, and this is the discipline that stops that."
-  - "Not built. The direction in which CORE would reach into the assessment platform to collect findings itself is a named way in with nothing written behind it, waiting on a published description of how to call it. What runs is the other direction: a platform submits a batch and reads its verdicts back on the same connection."
-  - "Demonstrated where. In automated testing, with a real assessor program against the real receiving code over a real connection. Not against a live installation and not against Atlas. There is no field evidence, and it is the thing to ask for before relying on any of this."
+  - "The population tested is the population, so exceptions come back as named accounts a re-rate can still fix, rather than as an estimated error rate. Reading every rated record against that subscriber's own plan terms is Atlas's work; judging each finding it sends is CORE's."
+  - "Each finding that reaches CORE is gated deterministically before anything is put to a model: it must be complete enough to read, it must carry evidence, at least one piece must be readable, it must be about the subject of the finding rather than something adjacent, it must not be the claim written out a second time, and dated evidence must be recent enough to say something about the present. Each gate that fires ends the matter and states its own reason in a sentence a person reads."
+  - "A finding claiming a rate is settled by arithmetic on the raw counts, recomputed rather than accepted, and never goes near a model. A count divided by nothing is unable to judge, never a rate of zero. Two readings of the same traffic that disagree are unable to judge, never averaged into a third figure neither party observed — which for interconnect is the whole argument."
+  - "The judging happens on a different credential from the submitting, enforced by which door the message arrived at rather than by a field the sender fills in. A submitter cannot grade its own work."
+  - "Unable to judge is a verdict in its own right and never renders as agreement. No evidence, evidence that only restates the claim, evidence about a different subject, evidence past the staleness horizon, an unreadable answer, or a submitter who could not determine the matter either: each ends there, with the reason written next to it, and goes to a person. An assessor whose confident answers and whose guesses look identical is ignored within a week, and this is the discipline that stops that."
 
 measures_heading: "How you will know it worked"
-measures_intro: "The figures below are yours, not ours. Write down where you stand today, before anything changes — a baseline stops being recoverable once things start improving. The right-hand column is the mechanism argued, not an outcome observed: no operator has run this arrangement, and the half that reads your stream belongs to a partner's product in private beta."
+measures_intro: "The figures below are yours, not ours. Write down where you stand today, before anything changes — a baseline stops being recoverable once things start improving. The right-hand column is the mechanism argued, not an outcome observed: no operator has run this arrangement."
 measures:
   - metric: "Rating accuracy, and the usage it under-bills"
     today: "The rating error rate revenue assurance reports upward, and the sample size and month behind it. Then a month of mediated usage against what billing charged."
@@ -104,10 +102,9 @@ cta_text: "Book a consultation"
 # mechanism here genuinely is that arrangement's and not FACE's — FACE has no
 # rating, mediation or interconnect capability of any kind — so repointing this
 # at the FACE paper would send a revenue-assurance reader to a logistics
-# product. The note now sends them to pages 12 to 14, where the paper states
-# which half runs.
+# product. The note sends them to the paper's chapter on what judging means.
 paper:
   text: "Read the CORE and Atlas paper"
   url: "/blog/whitepapers/runink-core-atlas/"
-  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how a rate is recomputed rather than accepted, and how a second judgement is formed on a separate credential. Start at pages 12 to 14, which say exactly which half is built and which is drawn. No case studies, no customer names, no return-on-investment figures, and no operator has run it."
+  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how a rate is recomputed rather than accepted, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names, no return-on-investment figures, and no operator has run it."
 ---

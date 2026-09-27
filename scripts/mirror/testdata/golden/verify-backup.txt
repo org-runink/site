@@ -1,0 +1,5 @@
+ok   runink-face        3 chapters, 700 -> 534 bytes (-24%)
+ok   runink-core        3 chapters, 300 -> 413 bytes (+37%)
+FAIL runink-pulse       3 chapters, 5000 -> 661 bytes (-87%)
+       - lost more than 60% of the file: 5000 -> 661 bytes (-87%)
+ok   runink-core-atlas  3 chapters, no backup to compare

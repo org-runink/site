@@ -345,7 +345,7 @@ enableGitInfo = true
     enable = true
     eyebrow = "For operations, supply chain, finance and compliance"
     title = "Whitepapers, and shorter notes on the same problems."
-    subtitle = "The papers are the long documents: what Runink FACE and Runink PULSE do, and the CORE platform both of them run on. The shorter pieces stay with the problems behind them — a customs entry held for a missing document, a freight claim still inside its filing window, a return that costs more to handle than the goods, a cold chain that has to be proven after the fact."
+    subtitle = "The papers are the long documents: what Runink FACE, Runink PULSE and Runink CORE do, three separate products. The shorter pieces stay with the problems behind them — a customs entry held for a missing document, a freight claim still inside its filing window, a return that costs more to handle than the goods, a cold chain that has to be proven after the fact."
 
     # Blog CTA configuration
     [params.blog.cta]
@@ -583,7 +583,7 @@ enableGitInfo = true
     [languages.fr.params.blog]
       eyebrow = "Pour les opérations, la supply chain, la finance et la conformité"
       title = "Les livres blancs, et des notes plus courtes sur les mêmes problèmes."
-      subtitle = "Les livres blancs sont les documents longs : ce que font Runink FACE et Runink PULSE, et la plateforme CORE sur laquelle les deux tournent. Les textes plus courts restent sur les problèmes qui les motivent — une déclaration en douane bloquée faute d'un document, une réclamation fret encore dans son délai, un retour qui coûte plus cher à traiter que la marchandise, une chaîne du froid qu'il faut prouver après coup."
+      subtitle = "Les livres blancs sont les documents longs : ce que font Runink FACE, Runink PULSE et Runink CORE, trois produits distincts. Les textes plus courts restent sur les problèmes qui les motivent — une déclaration en douane bloquée faute d'un document, une réclamation fret encore dans son délai, un retour qui coûte plus cher à traiter que la marchandise, une chaîne du froid qu'il faut prouver après coup."
 
     # See the note on [params.footer] in the English block: these are body copy at
     # the foot of every French page, and rule 12 gives them no exemption.
@@ -744,7 +744,7 @@ enableGitInfo = true
     [languages.es.params.blog]
       eyebrow = "Para operaciones, cadena de suministro, finanzas y cumplimiento"
       title = "Los informes técnicos, y notas más breves sobre los mismos problemas."
-      subtitle = "Los informes técnicos son los documentos largos: qué hacen Runink FACE y Runink PULSE, y la plataforma CORE sobre la que funcionan ambos. Los textos más breves se quedan con los problemas que hay detrás — una entrada de aduana retenida por un documento que falta, una reclamación de flete aún dentro de su plazo, una devolución que cuesta más tramitar que la propia mercancía, una cadena de frío que hay que demostrar después."
+      subtitle = "Los informes técnicos son los documentos largos: qué hacen Runink FACE, Runink PULSE y Runink CORE, tres productos distintos. Los textos más breves se quedan con los problemas que hay detrás — una entrada de aduana retenida por un documento que falta, una reclamación de flete aún dentro de su plazo, una devolución que cuesta más tramitar que la propia mercancía, una cadena de frío que hay que demostrar después."
 
     # Same as the French block above. "Biblioteca", "Sectores" and "Precios" come
     # from the Spanish menu below, "Libros blancos" from
@@ -890,7 +890,7 @@ enableGitInfo = true
     [languages.pt.params.blog]
       eyebrow = "Para operações, cadeia de suprimentos, finanças e compliance"
       title = "Whitepapers, e notas mais curtas sobre os mesmos problemas."
-      subtitle = "Os whitepapers são os documentos longos: o que Runink FACE e Runink PULSE fazem, e a plataforma CORE sobre a qual os dois rodam. Os textos mais curtos ficam com os problemas por trás deles — uma declaração aduaneira retida por falta de um documento, um pedido de indenização de frete ainda dentro do prazo, uma devolução que custa mais para processar do que a mercadoria, uma cadeia de frio que precisa ser comprovada depois."
+      subtitle = "Os whitepapers são os documentos longos: o que Runink FACE, Runink PULSE e Runink CORE fazem, três produtos distintos. Os textos mais curtos ficam com os problemas por trás deles — uma declaração aduaneira retida por falta de um documento, um pedido de indenização de frete ainda dentro do prazo, uma devolução que custa mais para processar do que a mercadoria, uma cadeia de frio que precisa ser comprovada depois."
 
     # Same as the French and Spanish blocks above. "Biblioteca", "Setores" and
     # "Preços" come from the Portuguese menu below, "Whitepapers" is the name

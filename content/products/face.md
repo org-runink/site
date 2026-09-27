@@ -2,10 +2,8 @@
 title: "Runink FACE"
 description: "Runink's main product. It reads the orders, carrier records, sensor feeds and claim files you already hold, works out what the combined picture means, and puts one drafted action in front of the person who can approve it."
 layout: "landing"
-# /products/ is this page's alias, not a page of its own — see
-# content/products/_index.md for why the section index is not rendered.
-aliases:
-  - /products/
+# /products/ used to be this page's alias while the section index was not
+# rendered. It renders now (content/products/_index.md), so the alias is gone.
 badge: "FACE"
 # badgeColor removed, not re-pointed. It held #7c3aed, a pre-migration vendor
 # violet that is not a Runink colour (DESIGN.md §2: colour has exactly two jobs,
@@ -24,6 +22,10 @@ badge: "FACE"
     primary_button_url="/#contact"
     secondary_button_text="Read the FACE paper"
     secondary_button_url="/blog/whitepapers/runink-face/"
+    tertiary_button_text="📖 Technical reference"
+    tertiary_button_url="https://docs.runink.org/core/docs/devex/"
+    # Docs architecture: All Runink docs at docs.runink.org/<product>/
+    # FACE uses CORE's DevEx docs (sessions, MCP tools, agent fleet)
     size="normal"
     gradient-from="var(--rk-sunk)"
     gradient-to="var(--rk-ground)"
@@ -62,8 +64,8 @@ FACE is the product that reads all of it, and it is the one this company is buil
 >}}
 {{< card
     icon="server-stack"
-    title="Runink core"
-    description="The platform underneath, not something bought on its own. It is the answer to where FACE runs and who can see what it reads."
+    title="Runink CORE"
+    description="A separate product, sold on its own. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
     link="/blog/whitepapers/runink-core/"
 >}}
 {{< /card-grid >}}
@@ -206,7 +208,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
     "questions": [
         {
             "question": "Is FACE the same thing as Runink PULSE?",
-            "answer": "No. They are separate products. FACE is the main one and the subject of this page: logistics, fulfilment, forecasting, claims, returns and compliance. PULSE is a marketing engine — audit, research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink core is a third thing again: the platform both of them run on, not something used on its own."
+            "answer": "No. They are separate products. FACE is the main one and the subject of this page: logistics, fulfilment, forecasting, claims, returns and compliance. PULSE is a marketing engine — audit, research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink CORE is a third product, also sold separately: the operations layer you run on your own hardware to keep your Runink applications and your own data in order. Its paper describes it."
         },
         {
             "question": "Has this been run on an operation like mine?",
@@ -234,7 +236,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
         },
         {
             "question": "Is there anything we can put in someone's hands today?",
-            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly. The sovereign server image, the Runink River Sovereignty Server (RIVER), is on the same page and is request-access, because it is the platform underneath rather than an app."
+            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly. The server image that carries Runink CORE is on the same page and is request-access, because it is the platform underneath rather than an app."
         },
         {
             "question": "What does it cost?",

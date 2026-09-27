@@ -1,0 +1,17 @@
+runink-pulse: site 8 paras, mirror 9 paras
+  site -> mirror MISSING : 8  (check-whitepaper-mirrors.sh fails on these)
+  mirror -> site ORPHAN  : 6  (stale prose still in the handout, excl. cover + furniture)
+
+--- 6 paragraph(s) in the MIRROR but not the SITE ---
+
+[1] # Runink PULSE
+
+[2] Cover blurb for the fixture.
+
+[3] ## Contents
+
+[4] - **Page 1** — Cover
+
+[5] ## Stale chapter
+
+[6] Stale prose that must not survive.
