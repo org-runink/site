@@ -17,7 +17,20 @@
   everywhere else on this site. An Offer with no price is valid; an Offer with an
   invented one is a lie in a machine-readable format, which is worse than in
   prose because nothing reads it sceptically.
+
+  `product_name`/`product_url` FRONT MATTER, ADDED WITHOUT CHANGING THE DEFAULT.
+  This partial named the product "Runink FACE" and pointed `url` at
+  "products/face/" unconditionally, correct only because content/pricing.md was
+  the one page with `layout: "pricing"` that this ran on. A second product's
+  pricing page (content/products/core-pricing.md) with the same layout would
+  otherwise emit a SoftwareApplication claiming to be Runink FACE. Both values
+  now come from the page's own front matter, defaulting to the two literals
+  this partial always used, so content/pricing.md (which sets neither) renders
+  byte-for-byte as before.
 */ -}}
+{{- $productName := .Params.product_name | default "Runink FACE" -}}
+{{- $productURL := .Params.product_url | default "products/face/" -}}
+{{- $productSubCategory := .Params.product_subcategory | default "Logistics and supply chain operations" -}}
 {{- $tiers := slice -}}
 {{- $raw := .RawContent -}}
 {{- range findRESubmatch `"name"\s*:\s*"([^"]+)"[\s\S]{0,400}?"price_monthly"\s*:\s*"([^"]+)"[\s\S]{0,200}?"price_yearly"\s*:\s*"([^"]+)"` $raw -}}
@@ -32,13 +45,13 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": {{ printf "%s#software" $.Permalink | jsonify | safeJS }},
-  "name": "Runink FACE",
+  "name": {{ $productName | jsonify | safeJS }},
   "applicationCategory": "BusinessApplication",
-  "applicationSubCategory": "Logistics and supply chain operations",
+  "applicationSubCategory": {{ $productSubCategory | jsonify | safeJS }},
   "operatingSystem": "Runs on infrastructure the customer controls",
   "publisher": { "@id": "https://runink.org/#organization" },
   "isPartOf": { "@id": "https://runink.org/#website" },
-  "url": {{ "products/face/" | absURL | jsonify | safeJS }},
+  "url": {{ $productURL | absURL | jsonify | safeJS }},
   "offers": [
     {{- $first := true }}
     {{- range . }}

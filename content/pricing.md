@@ -32,6 +32,33 @@ author: "Runink"
 # an operations director, a claims lead or a compliance officer does. The seven
 # in front of them are the domain questions, and every answer is traceable to a
 # use-case page or to the use-cases index rather than written for this page.
+#
+# BUSINESS OUTCOME FEES ARE NOW A NAMED BAND, NOT ONLY A FAQ ANSWER. The two
+# fees (Auto-Provisioning; Claims & Short-Pay Recovery) used to live only in
+# "What am I actually paying for?", read by someone who had already scrolled
+# past the seat cards. They are unchanged numbers — reused verbatim from that
+# FAQ answer and from the outcome_strategies rows already on the Lite/Dedicated
+# cards — surfaced via the `features-list` shortcode (no caller anywhere in
+# this repo until now; needed no template change) between the scenario band
+# and the price toggle. No third fee for avoided demurrage/detention was
+# added: the owner deferred that pending its own modelling, and reverse-
+# logistics/cold-chain value stays inside the existing Claims Recovery framing.
+#
+# THE INTRO LINE ABOVE THAT BAND IS PLAIN MARKDOWN ON PURPOSE, NEVER A `<div>`.
+# `unsafe = false` in hugo.toml replaces a literal HTML tag typed into a
+# content body with `<!-- raw HTML omitted -->` — the exact defect
+# pricing-table-2.html's own comment documents having already eaten both of
+# this page's opening paragraphs once, and a first draft of this note made the
+# same mistake with a `{{/* */}}` block, which content files don't parse as a
+# template comment either — it rendered as visible text until this rewrite.
+#
+# THE GX10 SOVEREIGNTY COMPUTE APPLIANCE IS NEW (added alongside the fee band).
+# It is a leased, bundled line inside Dedicated/Enterprise, not a separate
+# SKU — the "FEATURES" line on those two cards points to the FAQ, which states
+# the 1-3 year term and the depreciation-shaped Early Termination Fee
+# (100% / 60% / 25% of remaining payments). The Enterprise-consulting and
+# marketplace-committed-spend FAQ entries are additions of the same kind:
+# real, decided terms that had no answer on this page before.
 ---
 
 {{< pricing-table-2 >}}
@@ -111,6 +138,14 @@ author: "Runink"
 }
 {{< /pricing-table-2 >}}
 
+**A separate kind of charge.** Everything above is the seat price: flat, set by headcount, unaffected by how much you use it. These two are the opposite of that on purpose — nothing is billed until FACE has already created or protected money for you.
+
+{{< features-list
+    title="Business Outcome Fees"
+    feature1="Auto-Provisioning|1% to 3% of the transaction value FACE places on your behalf, capped at $50 per order. A large bulk order is never penalised for its size."
+    feature2="Claims & Short-Pay Recovery|20% of what is recovered. Success-fee only — nothing is billed when nothing is recovered."
+>}}
+
 {{< pricing-toggle >}}
 {
   "options": [
@@ -171,7 +206,9 @@ author: "Runink"
         "RUNS ON MACHINES KEPT FOR YOUR COMPANY ALONE",
         "1,000 UNITS PER PERSON, PLUS 2,000 FOR EVERY 10",
         "YOUR OWN WEB ADDRESS",
-        "FIRST CALL ON THE CAPACITY YOU PAY FOR"
+        "FIRST CALL ON THE CAPACITY YOU PAY FOR",
+        "5,000 UNITS PER PERSON, PLUS 10,000 FOR EVERY 10",
+        "OPTION: THE GX10 SOVEREIGNTY APPLIANCE, FROM ~$275/MO BUNDLED IN ON A 3-YEAR TERM (SEE FAQ)"
       ],
       "button": {
         "text": "TALK ABOUT DEDICATED",
@@ -198,7 +235,8 @@ author: "Runink"
         "RUNS ON YOUR PREMISES, INCLUDING SITES KEPT OFF THE NETWORK",
         "CAPACITY SIZED AND MANAGED WITH YOU",
         "EVERYTHING IN THE DEDICATED LICENCE",
-        "A FULL RECORD OF WHO DID WHAT, AND WHEN"
+        "A FULL RECORD OF WHO DID WHAT, AND WHEN",
+        "OPTION: THE GX10 SOVEREIGNTY APPLIANCE, PRICED WITH YOU AT ENTERPRISE SCALE (SEE FAQ)"
       ],
       "button": {
         "text": "TALK TO US",
@@ -250,7 +288,7 @@ author: "Runink"
     },
     {
       "question": "What is a Compute Unit?",
-      "answer": "It is the meter for machine time, the way a kilowatt-hour is the meter for electricity. Runink counts capacity in **Compute Units** so that what you were given and what you have used are stated in the same terms, and both are on screen in the console rather than arriving at the end of the month.\n\nEvery **Dedicated** seat carries 1,000 units, and your organisation gets a further 2,000 units for every 10 seats you hold. Those units are pooled, so a heavy week for one person draws on the same allowance as a quiet week for another."
+      "answer": "It is the meter for machine time, the way a kilowatt-hour is the meter for electricity. Runink counts capacity in **Compute Units** so that what you were given and what you have used are stated in the same terms, and both are on screen in the console rather than arriving at the end of the month.\n\nEvery **Dedicated** seat carries 5,000 units, and your organisation gets a further 10,000 units for every 10 seats you hold. Those units are pooled, so a heavy week for one person draws on the same allowance as a quiet week for another. That allowance is sized against what the underlying compute actually costs us to run, not against what would keep you buying overage — a number picked to look generous while running out fast helps nobody."
     },
     {
       "question": "What happens if we go over the allowance?",
@@ -263,6 +301,18 @@ author: "Runink"
     {
       "question": "Do we have to sign for a year?",
       "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $86 per person, or a year at a time at $75 — the same 15% difference shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because both involve setting machines aside for your company specifically, and that capacity is reserved whether or not you use it in a given week."
+    },
+    {
+      "question": "What is the sovereignty compute appliance, and what happens if we exit the lease early?",
+      "answer": "For Dedicated and Enterprise, you can add a dedicated **sovereignty compute appliance** — the ASUS Ascent GX10, built on NVIDIA's GB10 Grace Blackwell superchip — as the physical box FACE runs on for full on-premises isolation. It is **leased monthly and bundled into your seat price as one line**, not billed as a separate SKU you have to reason about on its own. On Dedicated, that bundled line runs **from around $275 a month on a 3-year term**; a 1 or 2 year term carries a higher monthly rate to reflect the faster amortization. On Enterprise it is priced with you as part of the wider conversation.\n\nThe lease is a **1 to 3 year commitment**. Exiting early carries an **Early Termination Fee tied to what the hardware is actually worth at that point, not a flat number**: 100% of the remaining payments in year one, 60% in year two of a 2 to 3 year term, and 25% in the final stretch of a 3 year term. That schedule tracks the hardware's real residual and resale value — steepest when the least depreciation has happened, and easing as more of it has."
+    },
+    {
+      "question": "What does Enterprise onboarding cost, beyond the licence?",
+      "answer": "Enterprise deployments carry onboarding and integration consulting, priced at **$300 per hour**, sold in **$15,000 blocks of 50 hours**. That work is split with whoever delivers it: **two thirds goes to the partner or consultant doing the implementation**, and **one third is retained by Runink** to keep partner-privileged instances running and provide ongoing support. It is scoped with you as part of the Enterprise conversation, not added afterward."
+    },
+    {
+      "question": "We already have committed spend on GCP, Snowflake or Databricks. Can we buy FACE against that?",
+      "answer": "Yes, and the economics work in your favour twice over. Runink is on **Google Cloud Marketplace** (a VM image running on your own GKE cluster), **Snowflake** (a Native App in Snowpark Container Services) and **Databricks** (a Solution Accelerator / partner listing) — the same pattern our own build infrastructure already uses to run jobs on Cloud Run, SPCS and Databricks directly: the work runs on compute you already pay that platform for, and we charge our seat and Compute Unit price on top of it rather than adding an infrastructure markup of our own.\n\nThat means two things. First, you draw down budget you have already negotiated and already committed, rather than opening a fresh vendor line item. Second, because the compute is billed to you directly by GCP, Snowflake or Databricks rather than provisioned and billed by us, there is no separate infrastructure margin for us to stack on top of theirs — you pay their compute rate and our licence rate, not ours on top of theirs. We do not quote a discount here; the rate against your committed spend is between you and that platform. Ask us which of the three fits how you already buy. This path does not extend to AWS today."
     },
     {
       "question": "Why does using it more not cost more?",

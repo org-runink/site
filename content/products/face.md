@@ -13,6 +13,13 @@ badge: "FACE"
 # renders this page — so the field is deleted rather than given a new value. If
 # a listing ever needs a colour for FACE, the category is logistics:
 # --rk-cat-logistics-ink / --rk-cat-logistics-lift. Not a literal.
+#
+# Docs architecture: All Runink docs live at docs.runink.org/<product>/. The
+# hero's tertiary_button_url below points at CORE's DevEx docs (sessions, MCP
+# tools, agent fleet) rather than a FACE-specific docs tree. That note used to
+# sit as a bare '#' comment inside the {{< hero >}} shortcode's own parameter
+# list, which Hugo's shortcode-argument parser does not accept as a comment
+# (unlike frontmatter, which is plain YAML) — it broke `hugo build` outright.
 ---
 
 {{< hero
