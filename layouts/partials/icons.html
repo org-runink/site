@@ -1,11 +1,11 @@
 {{- $iconClass := .class | default (printf "w-%s h-%s" (.size | default "6") (.size | default "6")) -}}
-{{- $color := .color | default "currentColor" -}}
-{{- $style := "" -}}
-{{- if .color -}}
-{{- $style = printf "color: %s;" .color -}}
-{{- end -}}
-
-<svg class="{{ $iconClass }}" style="{{ $style }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+{{- /* Only the colour VALUE is interpolated, inside a literal `color:` declaration.
+  Interpolating the whole declaration ("color: #hex;" as one value in the style
+  attribute) hands Go's CSS escaper a `;`, which it refuses, and the attribute
+  renders as style="ZgotmplZ": the icon silently loses its colour (/pricing/, #254).
+  A hex value passes the escaper as-is. A var(...) would not (parentheses): colour
+  the icon through `class` (e.g. text-signal) instead, or see DESIGN.md §10. */ -}}
+<svg class="{{ $iconClass }}"{{ with .color }} style="color: {{ . }}"{{ end }} fill="none" stroke="currentColor" viewBox="0 0 24 24"
   aria-hidden="true">
   {{- if or (eq .name "lightbulb") (eq .name "light-bulb") -}}
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
