@@ -27,6 +27,7 @@ rp:
     - { text: "Book a consultation", url: "/#contact", style: "primary" }
     - { text: "Read the CORE paper", url: "/blog/whitepapers/runink-core/", style: "ghost" }
     - { text: "📖 Read the docs", url: "https://docs.runink.org/core/", style: "ghost" }
+    # Documentation: All Runink product docs at docs.runink.org/<product>/
   fine: "A product in its own right, sold separately · in English, Spanish, French and Portuguese"
   plate:
     name: "Runink CORE"
