@@ -26,6 +26,7 @@ rp:
   cta:
     - { text: "Book a consultation", url: "/#contact", style: "primary" }
     - { text: "Read the PULSE paper", url: "/blog/whitepapers/runink-pulse/", style: "ghost" }
+    - { text: "📖 Technical reference", url: "https://docs.runink.org/core/docs/intelligence/", style: "ghost" }
   fine: "A separate product from FACE and CORE · in English, Spanish, French and Portuguese"
   plate:
     name: "Runink PULSE"
