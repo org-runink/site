@@ -24,8 +24,6 @@ badge: "FACE"
     secondary_button_url="/blog/whitepapers/runink-face/"
     tertiary_button_text="📖 Technical reference"
     tertiary_button_url="https://docs.runink.org/core/docs/devex/"
-    # Docs architecture: All Runink docs at docs.runink.org/<product>/
-    # FACE uses CORE's DevEx docs (sessions, MCP tools, agent fleet)
     size="normal"
     gradient-from="var(--rk-sunk)"
     gradient-to="var(--rk-ground)"
