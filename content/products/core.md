@@ -77,7 +77,7 @@ rp:
     items:
       - { url: "/blog/whitepapers/runink-core/", title: "The Runink CORE paper", note: "Every page of the console: the question it answers, who uses it, and why it is worth having.", cta: "Read the paper" }
       - { url: "/blog/whitepapers/runink-core-atlas/", title: "Runink CORE and Atlas", note: "A joint paper with Logical Leap: Atlas's oversight screens inside CORE, on your own data, with a second opinion built in.", cta: "Read the paper" }
-      - { url: "/pricing/", title: "Pricing", note: "You pay per person, and each person comes with an allowance of computing capacity included.", cta: "See the plans" }
+      - { url: "/products/core-pricing/", title: "Pricing", note: "You pay per person, and each person comes with an allowance of computing capacity included. No success fees, ever.", cta: "See the plans" }
   final:
     heading: "Bring one system you would like to stop worrying about."
     body: "Half an hour, with whoever owns it in the room. We will show you what CORE reads from it, what it keeps, and who can change it."

@@ -1,5 +1,24 @@
 {{ $data := .Inner | transform.Unmarshal }}
 {{/*
+  OPTIONAL `link_base`, ADDED WITHOUT CHANGING THE DEFAULT.
+
+  The scenario band was built for exactly one page — /pricing/ — whose items
+  are all use-case slugs, so the resolve-and-link logic below was written with
+  "/use-cases/" burned into it twice. A second page using this band for a
+  different product's own real pages (not use-cases) has nothing to point at
+  under that prefix.
+
+  `link_base` defaults to "/use-cases/", so a content file that does not set
+  it — every existing call site, in every language — resolves and links
+  exactly as before, byte for byte. A content file that DOES set it points
+  `$item.page` at a path under that base instead. Per-item `note` (below,
+  next to where the resolved-page description used to be the only source) is
+  the matching escape hatch on the text side: an explicit sentence a content
+  file supplies directly, for the case where the linked page is real but is
+  not the kind of page whose own Description doubles as the right hook line.
+*/}}
+{{ $linkBase := $data.link_base | default "/use-cases/" }}
+{{/*
   WHAT THIS FILE IS NOW, AND WHY IT IS NOT CALLED WHAT IT DOES.
 
   It used to be a second, generic pricing-card grid — three cards with a
@@ -133,16 +152,20 @@
                 <ul class="space-y-6">
                     {{ range .items }}
                     {{ $item := . }}
-                    {{ $p := site.GetPage (printf "/use-cases/%s" $item.page) }}
+                    {{ $p := site.GetPage (printf "%s%s" $linkBase $item.page) }}
                     <li>
-                        <a href="{{ with $p }}{{ .RelPermalink }}{{ else }}{{ printf "/use-cases/%s/" $item.page | relURL }}{{ end }}"
+                        <a href="{{ with $p }}{{ .RelPermalink }}{{ else }}{{ printf "%s%s" $linkBase $item.page | relURL }}{{ end }}"
                             class="text-signal font-bold italic tracking-tight underline decoration-signal/40 underline-offset-4 hover:decoration-signal">{{
                             $item.name }}</a>
+                        {{ if $item.note }}
+                        <p class="text-sm text-stone-400 font-medium leading-snug mt-2">{{ $item.note }}</p>
+                        {{ else }}
                         {{ with $p }}
                         {{ $d := .Description }}
                         {{ $hook := index (split $d ". ") 0 }}
                         {{ if ne $hook $d }}{{ $hook = printf "%s." $hook }}{{ end }}
                         <p class="text-sm text-stone-400 font-medium leading-snug mt-2">{{ $hook }}</p>
+                        {{ end }}
                         {{ end }}
                     </li>
                     {{ end }}
