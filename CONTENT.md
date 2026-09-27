@@ -95,8 +95,8 @@ go run readability.go public          # every page, worst first, with banned wor
 go run readability.go -min 45 public  # exit 1 below the floor
 
 # what .github/workflows/deploy.yaml runs, against its own docs/ build:
-go run readability.go -min 45 \
-  -exclude /tags/,/categories/,/es/,/fr/,/pt/,/license/,/privacy/ docs
+go run readability.go -min 45 -banned-fatal \
+  -exclude /tags/,/categories/,/es/,/fr/,/pt/ docs
 ```
 
 It strips the site chrome first, because the header and footer are the same words on
@@ -125,7 +125,7 @@ of the 200 pages carrying enough body copy to score, and the worst of those is
 `/blog/procurement-spend-analytics-visibility/` at 49.3 — so a page has 4.3 points to fall
 before it breaks the build. `-exclude` does not lower the floor: every page is still
 measured and still printed with its score, and every ungated row is marked `~`, so what is
-not enforced is visible in the run rather than hidden inside a flag. Three groups sit
+not enforced is visible in the run rather than hidden inside a flag. Two groups sit
 behind that flag, for two quite different reasons:
 
 - `/tags/`, `/categories/` — **the measurement is invalid here, not failing.** These are
@@ -135,18 +135,13 @@ behind that flag, for two quite different reasons:
   sitemap.
 - `/es/`, `/fr/`, `/pt/` — the paragraph above already says these are not scored. The tool
   had been scoring them anyway, against the rule it implements.
-- `/license/`, `/privacy/` — **neither of the above. This is a waiver of real debt.** Both
-  are indexed English prose, both are in the sitemap, and this site's own `/luna-privacy/`
-  scores 61.6 — which is the proof that a policy page clears 45 when somebody writes one in
-  plain language. These two score 21.4 and 26.5 because nobody has. They are named in the
-  workflow so the gate can protect the other 86 pages now instead of waiting on a rewrite.
-  Rewrite them and delete them from that line; do not add a third page to it without an
-  argument of the same kind.
+`/license/` and `/privacy/` used to be a third group, a waiver of real debt (21.4 and
+26.5). Both were rewritten (54.2 and 63.9) and removed from the list; that is the only way
+a waiver here ends. Do not add a page to it without an argument of the same kind.
 
-**The banned-word list is reported, not enforced.** `readability.go` prints `BANNED:`
-beside any page carrying one, and exits on the floor alone — so a reintroduced "leverage"
-ships green. The corpus is clean today, zero hits across 200 pages, which is the only
-reason this is a note rather than an incident. Read the `BANNED:` column.
+**The banned-word list is enforced** (`-banned-fatal`, since 2026-09-12): a page carrying
+a banned word fails the build, excluded pages included — `-exclude` waives only the
+Flesch floor.
 
 ## 4. If it needs a caveat, it does not go on the site
 
@@ -320,13 +315,19 @@ rm -rf public && hugo --gc --destination public   # confirm the page count, not 
 
 go run linkcheck.go public                        # rule 8 — paths AND fragments
 go run readability.go public                      # rule 3 — every page, worst first
-go run readability.go -min 45 \
-  -exclude /tags/,/categories/,/es/,/fr/,/pt/,/license/,/privacy/ public
+go run readability.go -min 45 -banned-fatal \
+  -exclude /tags/,/categories/,/es/,/fr/,/pt/ public
                                                   # rule 3 — the gate CI runs
 
 node scripts/check-content-doctrine.mjs           # and again with --rendered public
 node scripts/check-rendered-output.mjs public
 node scripts/check-nav-distinct.mjs public
+node scripts/check-orphan-pages.mjs public         # rule 9 — every page has an inbound link
+node scripts/check-content-template-syntax.mjs
+node packages/runink-ui/scripts/check-contrast.mjs
+node packages/runink-ui/scripts/check-usage.mjs
+node scripts/gen-contrast-proof.mjs --check
+node scripts/check-design-doc.mjs
 node scripts/check-token-contrast.mjs
 node scripts/check-token-syntax.mjs
 node scripts/check-token-channels.mjs
@@ -383,8 +384,8 @@ The tooled rules are not fully tooled either, and the gaps are where things ship
   `../pulse/grpc`, which a CI checkout of this repo does not have. It wants both the source
   and the rendered file, and it false-positives on posts describing the customer's own
   problem, so it needs a reader at both ends.
-- **Rule 3** gates the floor, on English non-taxonomy pages. Its banned-word list is printed
-  and not enforced, and the translations are not scored at all.
+- **Rule 3** gates the floor on English non-taxonomy pages, and the banned-word list on
+  every page. The translations are not scored for Flesch at all.
 - **Rule 8** gates paths and fragments in the site chrome. Body copy is reported only, under
   `--all`. The one-hostname half is checked by nothing — grep for it.
 - **Rule 13** is the one that says why this list matters: none of the above looks at a page.
