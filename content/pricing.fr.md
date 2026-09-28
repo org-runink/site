@@ -1,6 +1,6 @@
 ---
 title: "Tarifs"
-description: "Les tâches d'exploitation pour lesquelles Runink FACE est construit, et ce que coûte une licence pour les faire tourner. Vous payez pour le nombre de personnes qui l'utilisent ; chaque personne inclut une dotation de capacité de calcul, donc l'utiliser davantage n'augmente pas la facture."
+description: "Les tâches d'exploitation pour lesquelles Runink FACE est construit, et ce que coûte une licence pour les faire tourner. Vous payez pour le nombre de personnes qui l'utilisent, et vous choisissez où le travail tourne : sur les machines partagées de Runink, dans votre propre compte cloud ou dans vos propres locaux."
 layout: "pricing"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
@@ -20,8 +20,8 @@ author: "Runink"
 {{< pricing-table-2 >}}
 {
   "intro": [
-    "Vous payez au nombre de personnes qui utilisent Runink. Chaque personne comprend dans le prix une dotation de capacité de calcul.",
-    "C'est toute la logique. La facture suit votre effectif, pas votre usage : une équipe qui trouve à Runink un usage intensif n'ouvre pas une ligne de dépense qui grandit avec lui. Mais le travail passe d'abord, parce que c'est la partie sur laquelle un prix mérite d'être discuté."
+    "Vous payez au nombre de personnes qui utilisent Runink, et vous choisissez où le travail tourne : sur les machines partagées de Runink, dans votre propre compte cloud ou dans vos propres locaux.",
+    "C'est toute la logique. Les trois licences ci-dessous se distinguent sur cette seule question, l'endroit où le travail tourne, et le prix en découle. Mais le travail passe d'abord, parce que c'est la partie sur laquelle un prix mérite d'être discuté."
   ],
   "eyebrow": "Le travail",
   "heading": "Jumeaux Numériques d'Opérations",
@@ -98,7 +98,7 @@ author: "Runink"
 {
   "options": [
     { "label": "Paiement Mensuel", "value": "monthly" },
-    { "label": "Paiement Annuel (15% de Moins)", "value": "yearly" }
+    { "label": "Paiement Annuel (Environ 16 % de Moins)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -107,26 +107,26 @@ author: "Runink"
 {
   "plans": [
     {
-      "pill": "SUR UNE MACHINE PARTAGÉE",
+      "pill": "SUR LES MACHINES PARTAGÉES DE RUNINK",
       "pill_color": "stone",
       "name": "LICENCE LITE",
       "subtitle": "POUR LES ÉQUIPES DE 1 À 9 PERSONNES",
       "price_color": "stone",
-      "price_monthly": "86",
+      "price_monthly": "89",
       "price_yearly": "75",
       "price_subtitle": "PAR PERSONNE, PAR MOIS",
-      "credits": "CALCUL INCLUS<br>SUR UNE RÉSERVE COMMUNE",
+      "credits": "18 000 UNITÉS DE CALCUL<br>PAR PERSONNE ET PAR MOIS",
       "outcome_strategies": [
-        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence. Pas combien elles l'utilisent."},
+        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence, plus les unités utilisées au-delà de la dotation."},
         {"label": "ENGAGEMENT MINIMUM", "value": "Un mois."},
         {"label": "SI NOUS RÉCUPÉRONS DE L'ARGENT POUR VOUS", "value": "20 % de ce qui est récupéré. Rien si rien n'est récupéré."},
         {"label": "FRAIS DE MISE EN SERVICE", "value": "De 1 % à 3 %, jamais plus de 50 $."}
       ],
       "features": [
-        "S'EXÉCUTE SUR UNE MACHINE PARTAGÉE AVEC D'AUTRES CLIENTS",
-        "CAPACITÉ DE CALCUL INCLUSE AVEC CHAQUE PERSONNE",
-        "L'ENSEMBLE STANDARD D'ASSISTANTS AUTOMATIQUES",
-        "LE POINT DE DÉPART POUR UNE PREMIÈRE ÉQUIPE"
+        "TOURNE SUR LES MACHINES PARTAGÉES DE RUNINK, CHACUN SON TOUR AVEC LE TRAVAIL DES AUTRES CLIENTS",
+        "18 000 UNITÉS PAR PERSONNE ET PAR MOIS, MISES EN COMMUN DANS L'ÉQUIPE",
+        "DES UNITÉS EN PLUS À L'USAGE, OU ACHETÉES D'AVANCE : 10 % DE MOINS POUR UN MOIS, 20 % DE MOINS POUR UN AN",
+        "JUSQU'À 900 UNITÉS PAR PERSONNE ET PAR HEURE ; AU-DELÀ DE CE RYTHME, LE TRAVAIL ATTEND SON TOUR"
       ],
       "button": {
         "text": "DÉMARRER AVEC LITE",
@@ -135,26 +135,26 @@ author: "Runink"
       }
     },
     {
-      "pill": "SUR VOTRE PROPRE MACHINE",
+      "pill": "DANS VOTRE PROPRE COMPTE CLOUD",
       "pill_color": "orange",
       "name": "LICENCE DÉDIÉE",
       "subtitle": "POUR 10 PERSONNES ET PLUS",
       "price_color": "orange",
-      "price_monthly": "75",
-      "price_yearly": "75",
-      "price_subtitle": "PAR PERSONNE, PAR MOIS",
-      "credits": "CALCUL INCLUS<br>SUR VOTRE PROPRE RÉSERVE",
+      "price_monthly": "149",
+      "price_yearly": "149",
+      "price_subtitle": "PAR PERSONNE, PAR MOIS, AVEC UN CONTRAT ANNUEL",
+      "credits": "UNITÉS DE CALCUL ILLIMITÉES<br>SUR VOTRE PROPRE CLOUD",
       "outcome_strategies": [
-        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence. Pas combien elles l'utilisent."},
+        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence, plus 1 % de ce que votre cloud facture pour les exécuteurs."},
         {"label": "ENGAGEMENT MINIMUM", "value": "Un an."},
         {"label": "SI NOUS RÉCUPÉRONS DE L'ARGENT POUR VOUS", "value": "20 % de ce qui est récupéré. Rien si rien n'est récupéré."},
         {"label": "FRAIS DE MISE EN SERVICE", "value": "De 1 % à 3 %, jamais plus de 50 $."}
       ],
       "features": [
-        "S'EXÉCUTE SUR DES MACHINES RÉSERVÉES À VOTRE SEULE ENTREPRISE",
-        "5 000 UNITÉS PAR PERSONNE, PLUS 10 000 PAR TRANCHE DE 10",
-        "VOTRE PROPRE ADRESSE WEB",
-        "PRIORITÉ SUR LA CAPACITÉ QUE VOUS PAYEZ"
+        "DES EXÉCUTEURS DANS VOTRE PROPRE PROJET GOOGLE CLOUD, OU VOTRE COMPTE DATABRICKS OU SNOWFLAKE",
+        "UNITÉS DE CALCUL ILLIMITÉES",
+        "VOTRE CLOUD VOUS FACTURE LE CALCUL DIRECTEMENT",
+        "VOTRE PROPRE ADRESSE WEB"
       ],
       "button": {
         "text": "PARLONS DE DÉDIÉE",
@@ -163,24 +163,24 @@ author: "Runink"
       }
     },
     {
-      "pill": "DANS VOTRE PROPRE BÂTIMENT",
+      "pill": "DANS VOS LOCAUX OU DANS VOTRE CLOUD",
       "pill_color": "stone",
       "name": "LICENCE ENTERPRISE",
-      "subtitle": "POUR L'HÉBERGER VOUS-MÊME",
+      "subtitle": "POUR LE FAIRE TOURNER OÙ VOUS VOULEZ",
       "price_monthly": "CUSTOM",
       "price_yearly": "CUSTOM",
       "price_subtitle": "PRIX CONVENU AVEC VOUS",
-      "credits": "CALCUL INCLUS<br>DIMENSIONNÉ AVEC VOUS",
+      "credits": "UNITÉS DE CALCUL ILLIMITÉES<br>LÀ OÙ VOUS LE FAITES TOURNER",
       "outcome_strategies": [
-        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "La capacité dont vous avez besoin et les niveaux de service que vous fixez."},
+        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "L'endroit où il tourne et les niveaux de service que vous fixez."},
         {"label": "ENGAGEMENT MINIMUM", "value": "Convenu avec vous."},
         {"label": "SI NOUS RÉCUPÉRONS DE L'ARGENT POUR VOUS", "value": "Convenu avec vous et écrit dans le contrat."},
         {"label": "FRAIS DE MISE EN SERVICE", "value": "Convenus avec vous et écrits dans le contrat."}
       ],
       "features": [
-        "S'EXÉCUTE DANS VOS LOCAUX, MÊME SUR DES SITES HORS RÉSEAU",
-        "CAPACITÉ DIMENSIONNÉE ET GÉRÉE AVEC VOUS",
-        "TOUT CE QUE CONTIENT LA LICENCE DÉDIÉE",
+        "DES EXÉCUTEURS SUR VOS PROPRES SERVEURS, Y COMPRIS DES SITES HORS RÉSEAU",
+        "OU DANS VOTRE PROPRE COMPTE CLOUD",
+        "UNITÉS DE CALCUL ILLIMITÉES",
         "UN REGISTRE COMPLET DE QUI A FAIT QUOI, ET QUAND"
       ],
       "button": {
@@ -192,6 +192,7 @@ author: "Runink"
   ]
 }
 {{< /pricing-table-1 >}}
+
 
 
 {{< faq >}}
@@ -225,32 +226,33 @@ author: "Runink"
     },
     {
       "question": "Où vont nos données ?",
-      "answer": "Sur des machines que vous contrôlez, et nulle part ailleurs. Les fichiers de commande, les papiers de douane, les relevés de capteurs et le raisonnement qui porte dessus tournent tous sur du matériel que vous exploitez. Rien ne part chez un fournisseur de modèles extérieur.\n\nC'est la réponse qu'une revue de sécurité réclame avant de laisser un fournisseur détenir ses données de commande. C'est aussi pourquoi les trois licences ci-dessus se distinguent par la machine sur laquelle elles tournent : c'est la première question qu'un acheteur en secteur réglementé doit trancher."
+      "answer": "Sur les machines que nomme votre licence, et nulle part ailleurs : les machines partagées de Runink en Lite, des exécuteurs dans votre propre compte cloud en Dédiée, vos propres serveurs en Enterprise. Les fichiers de commande, les papiers de douane, les relevés de capteurs et le raisonnement qui porte dessus restent là. Rien ne part chez un fournisseur de modèles extérieur.\n\nC'est la réponse qu'une revue de sécurité réclame avant de laisser un fournisseur détenir ses données de commande. C'est aussi pourquoi les trois licences ci-dessus se distinguent par l'endroit où le travail tourne : c'est la première question qu'un acheteur en secteur réglementé doit trancher."
     },
     {
       "question": "Que suis-je en train de payer, exactement ?",
-      "answer": "Des postes. Un **poste**, c'est une personne qui utilise Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nChaque poste inclut aussi une dotation de capacité de calcul : le temps de machine que Runink emploie pour lire vos documents, vérifier vos enregistrements et rédiger le travail. Cette dotation est comprise dans le prix du poste. Vous n'êtes facturé ni à la question, ni au document, ni au rapport.\n\nCes postes sont ceux de FACE. PULSE et CORE sont des produits distincts, chacun avec son propre abonnement. Les seuls frais en plus d'un poste FACE sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
+      "answer": "Des postes. Un **poste**, c'est une personne qui utilise Runink FACE. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nLa licence que vous choisissez décide où le travail tourne. **Lite** tourne sur les machines partagées de Runink et inclut des Unités de Calcul avec chaque poste. **Dédiée** tourne sur des exécuteurs dans votre propre compte cloud, sans limite d'unités : votre cloud vous facture ce calcul directement, et Runink ajoute 1 % de ce que coûtent ces exécuteurs. **Enterprise** tourne dans vos locaux ou dans votre propre cloud, à un prix convenu avec vous.\n\nCes postes sont ceux de FACE. PULSE et CORE sont des produits distincts, chacun avec son propre abonnement. En dehors de la licence, les seuls frais sur un poste FACE sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
     },
     {
       "question": "Qu'est-ce qu'une Unité de Calcul ?",
-      "answer": "C'est la façon dont Runink compte le travail. Chaque analyse que Runink exécute puise des **Unités de Calcul** dans votre dotation — une collecte FACE, par exemple, en consomme 25 —, de sorte que ce qui vous a été attribué et ce que vous avez consommé s'expriment dans les mêmes termes, et les deux chiffres sont à l'écran dans la console au lieu d'arriver en fin de mois.\n\nChaque poste **Dédié** porte 5 000 unités, et votre organisation reçoit 10 000 unités de plus par tranche de 10 postes détenus. Ces unités sont mises en commun : une semaine intense pour une personne puise dans la même dotation qu'une semaine calme pour une autre."
+      "answer": "C'est la façon dont Runink compte le travail sur ses machines partagées. Chaque analyse que Runink exécute puise des **Unités de Calcul** dans votre dotation, de sorte que ce qui vous a été attribué et ce que vous avez consommé s'expriment dans les mêmes termes, et les deux chiffres sont à l'écran dans la console au lieu d'arriver en fin de mois.\n\nChaque poste **Lite** porte 18 000 unités par mois, mises en commun dans l'équipe : une semaine intense pour une personne puise dans la même dotation qu'une semaine calme pour une autre.\n\nSur **Dédiée** et **Enterprise**, le travail tourne dans votre propre cloud ou sur vos propres serveurs, et les unités sont illimitées."
     },
     {
       "question": "Que se passe-t-il si nous dépassons la dotation ?",
-      "answer": "Les unités consommées au-delà de la dotation sont facturées **0,10 $ par tranche de 100 unités**. En pratique, cette ligne reste vide pour le travail courant du quotidien et apparaît quand vous lancez quelque chose de très gros en une seule fois : retraiter une année de documents en un après-midi, par exemple. Pour un gros traitement ponctuel, le temps de machine est aussi proposé séparément, à **5,00 $ de l'heure**.\n\nVous voyez le total en cours dans la console et vous pouvez fixer un budget en face, de sorte que la première nouvelle d'un mois chargé ne soit pas la facture."
+      "answer": "Sur la **Licence Lite**, vous choisissez comment payer le supplément. Les unités au-delà de la dotation sont facturées à l'usage, **0,10 $ par tranche de 100 unités**, ou vous pouvez les acheter d'avance : **10 % de moins** pour un mois, **20 % de moins** pour un an. Dédiée et Enterprise n'ont pas de dotation à dépasser.\n\nVous voyez le total en cours dans la console et vous pouvez fixer un budget en face, de sorte que la première nouvelle d'un mois chargé ne soit pas la facture."
     },
     {
       "question": "Quelle licence nous convient ?",
-      "answer": "Comptez d'abord vos personnes.\n\nMoins de dix : la **Licence Lite** est la bonne. Elle tourne sur une machine partagée avec d'autres clients, et c'est la seule qui se prend au mois — une évaluation n'exige donc pas un engagement d'un an.\n\nDix ou plus : la **Licence Dédiée** coûte moins par personne et tourne sur des machines réservées à votre seule entreprise, avec votre propre adresse web et la priorité sur la capacité que vous payez. Elle se prend à l'année.\n\nSi vos informations ne peuvent pas sortir de votre propre bâtiment, c'est **Enterprise**, et la conversation commence par l'endroit où cela doit tourner."
+      "answer": "Décidez où le travail doit tourner.\n\nMoins de dix personnes : la **Licence Lite** est la bonne. Elle tourne sur les machines partagées de Runink, au prix le plus bas, et c'est la seule qui se prend au mois — une évaluation n'exige donc pas un engagement d'un an. Le travail y attend son tour avec celui des autres clients.\n\nDix ou plus : la **Licence Dédiée** tourne sur des exécuteurs dans votre propre projet Google Cloud, ou votre compte Databricks ou Snowflake. Elle coûte plus par personne que Lite et apporte des Unités de Calcul illimitées ; votre cloud vous facture le calcul. Elle se prend à l'année.\n\nSi le travail doit tourner sur vos propres serveurs, y compris des sites hors réseau, c'est **Enterprise**, et la conversation commence par l'endroit où cela doit tourner."
     },
     {
       "question": "Faut-il signer pour un an ?",
-      "answer": "Seulement pour Dédiée et Enterprise. La **Licence Lite** se prend au mois à 86 $ par personne, ou à l'année à 75 $ — le même écart de 15 % que montre le sélecteur ci-dessus.\n\nDédiée et Enterprise se prennent à l'année parce que les deux supposent de mettre des machines de côté pour votre entreprise en particulier, et cette capacité reste réservée que vous l'utilisiez ou non une semaine donnée."
+      "answer": "Seulement pour Dédiée et Enterprise. La **Licence Lite** se prend au mois à 89 $ par personne, ou à l'année à 75 $ — le même écart, d'environ 16 %, que montre le sélecteur ci-dessus.\n\nDédiée et Enterprise se prennent à l'année parce que les deux mettent en place des exécuteurs pour votre entreprise en particulier, dans votre propre cloud ou sur vos propres serveurs."
     },
     {
-      "question": "Pourquoi l'utiliser davantage ne coûte-t-il pas plus cher ?",
-      "answer": "Parce que le raisonnement tourne sur du matériel et non sur le service compté d'un tiers. Le coût d'une question, c'est l'électricité qu'il faut pour y répondre.\n\nLa conséquence pratique est budgétaire. Votre dépense dépend de la capacité que vous faites tourner, décidée une fois, et non d'un chiffre qui bouge selon le nombre de questions posées par votre équipe le mois dernier. Une équipe qui trouve à Runink un usage intensif ne découvre pas un coût qui grandit avec ce succès."
+      "question": "Que coûte un usage plus intensif ?",
+      "answer": "Sur **Lite**, une équipe peut utiliser jusqu'à 900 unités par personne et par heure. Au-delà de ce rythme, le travail attend son tour dans la file ; il n'est jamais refusé, et le rythme lui-même ne coûte rien de plus. Les unités au-delà de la dotation mensuelle se paient à l'usage ou s'achètent d'avance, comme indiqué plus haut.\n\nSur **Dédiée**, les unités sont illimitées : un usage plus intensif apparaît sur la facture de votre propre cloud comme le calcul consommé, plus 1 % de ce montant pour Runink. Sur **Enterprise**, il tourne là où vous faites déjà tourner vos systèmes.\n\nDans tous les cas, votre dépense suit des décisions que vous avez prises — combien de postes, et où le travail tourne — et non un prix par question."
     }
+
   ]
 }
 {{< /faq >}}
