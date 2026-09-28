@@ -1,5 +1,0 @@
-# actionlint configuration. public-ci is the label of the dedicated self-hosted
-# runner set for the public repositories (.github/workflows/deploy.yaml).
-self-hosted-runner:
-  labels:
-    - public-ci
