@@ -107,11 +107,11 @@ Verified here 2026-09-27 (no `node_modules` in the worktree): `go vet` on the th
 ## How changes ship
 
 Branch → PR against `main`. `deploy.yaml` runs every gate and the full build on the PR.
-**Runners (owner decision 2026-09-28):** pushes and PRs from branches of this repo run on
-`[self-hosted, public-ci]`, the dedicated public-repo runner set (ephemeral, no route to
-internal systems, no secrets), never on the private repos' `k8s`/`cluster-egress` runners.
-PRs from forks run the same steps (a YAML anchor) on GitHub-hosted `ubuntu-latest`, job
-`build-fork-pr`, read-only and never deploying. Keep that split in any new job.
+**Runners (owner decision 2026-09-28, replacing the earlier self-hosted `public-ci` plan):**
+this is a PUBLIC repository, so every job runs on GitHub-hosted `ubuntu-latest`. Only the
+private Runink repositories use the self-hosted runners; public code never runs on them.
+PRs from forks run the same steps (a YAML anchor) in the job `build-fork-pr`, read-only and
+never deploying. Keep that split in any new job.
 Merge to `main` deploys: `peaceiris/actions-gh-pages` **force-pushes an orphan** `gh-pages`
 from `docs/`. Only a push to `main` deploys; PR runs never touch `gh-pages`. Setting the repo
 variable `SITE_PAGES_SOURCE=actions` (together with Pages source "GitHub Actions") switches to

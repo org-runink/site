@@ -1,15 +1,13 @@
 # Build, gate and publish runink.org.
 #
-# WHERE IT RUNS (owner decision 2026-09-28: Actions use Runink's own runners)
+# WHERE IT RUNS (owner decision 2026-09-28: public repositories use GitHub-hosted runners;
+# only Runink's private repositories use the self-hosted ones, so public code never runs on them)
 #
-#   * push to main, and pull requests from a branch of THIS repository:
-#     [self-hosted, public-ci] -- the dedicated runner set for the public repos
-#     (ephemeral, one job per runner, no route to internal systems, no runner
-#     secrets). Never the private repos' runners (k8s, cluster-egress,
-#     ci-inference-caller).
-#   * pull requests from a FORK: GitHub-hosted ubuntu-latest, read-only token,
-#     no secrets (GitHub withholds them from fork runs), and the deploy steps
-#     are skipped. Fork code never reaches a self-hosted runner from this file.
+#   * push to main, and pull requests from a branch of THIS repository: job `deploy`, on
+#     GitHub-hosted ubuntu-latest. Only a push to main deploys.
+#   * pull requests from a FORK: job `build-fork-pr`, GitHub-hosted ubuntu-latest,
+#     read-only token, no secrets (GitHub withholds them from fork runs), and the deploy
+#     steps are skipped.
 #     Both jobs run the SAME steps (the YAML anchor `site-steps` below), so a
 #     fork PR gets the identical build and gates.
 #
@@ -18,9 +16,8 @@
 # "Require approval for all external contributors" (a maintainer reads the
 # workflow diff before approving the run).
 #
-# What the public-ci runner must provide: outbound HTTPS to github.com,
-# nodejs.org/npm, go.dev (Node, pnpm, Hugo and Go are installed by the steps),
-# git, tar, and about 2 GB of disk. No docker, no sudo, no KVM.
+# The steps install Node, pnpm, Hugo and Go themselves (pinned), so the job needs nothing
+# preinstalled beyond git and tar.
 
 name: Deploy Github Pages
 
@@ -36,10 +33,10 @@ concurrency:
 
 jobs:
   deploy:
-    name: build, gate and deploy (self-hosted public-ci)
+    name: build, gate and deploy
     # push to main, or a pull request whose head branch lives in this repository.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: [self-hosted, public-ci]
+    runs-on: ubuntu-latest
     timeout-minutes: 30
 
     # The repo and org default_workflow_permissions is "read", which makes the
@@ -548,7 +545,7 @@ jobs:
     name: deploy to GitHub Pages (actions source)
     needs: deploy
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SITE_PAGES_SOURCE == 'actions'
-    runs-on: [self-hosted, public-ci]
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
       pages: write
