@@ -70,7 +70,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
 {{< card
     icon="server-stack"
     title="Runink CORE"
-    description="A separate product, sold on its own. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
+    description="A separate product, covered by the same Runink seat. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
     link="/blog/whitepapers/runink-core/"
 >}}
 {{< /card-grid >}}
@@ -213,7 +213,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
     "questions": [
         {
             "question": "Is FACE the same thing as Runink PULSE?",
-            "answer": "No. They are separate products. FACE is the main one and the subject of this page: logistics, fulfilment, forecasting, claims, returns and compliance. PULSE is a marketing engine — audit, research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink CORE is a third product, also sold separately: the operations layer you run on your own hardware to keep your Runink applications and your own data in order. Its paper describes it."
+            "answer": "No. They are separate products. FACE is the main one and the subject of this page: logistics, fulfilment, forecasting, claims, returns and compliance. PULSE is a marketing engine — audit, research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink CORE is a third product: the operations layer you run on your own hardware to keep your Runink applications and your own data in order. Its paper describes it. One licence covers them all: a Runink seat includes FACE, CORE, PULSE and FORGE (in preview)."
         },
         {
             "question": "Has this been run on an operation like mine?",

@@ -12,8 +12,9 @@ product_subcategory: "IT operations, AI governance and application platform"
 # This page shares its shortcodes and its billing SHAPE with content/pricing.md
 # (FACE's page) because it is genuinely the same infrastructure: seat-based
 # licences, a pooled Compute Unit allowance per seat, the same overage rate.
-# The seat prices ($86/$75), the CU formula (1,000 per seat + 2,000 per 10
-# seats) and the overage rate ($0.10/100 CU or $5.00/hour) are copied from
+# The seat prices ($86/$75), the CU formula (5,000 per seat + 10,000 per 10
+# seats), the overage rate ($0.10/100 CU over the allowance) and the separate
+# batch option ($5.00 per compute hour) are copied from
 # content/pricing.md verbatim, not re-derived — re-pricing CORE's infrastructure
 # is not a call this page makes.
 #
@@ -107,7 +108,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       ]
     },
     {
-      "label": "FORGE",
+      "label": "FORGE (PREVIEW)",
       "deck": "How does a written brief become a working application?",
       "items": [
         { "page": "", "name": "Describe it, the model proposes the steps", "note": "Describe what you want in plain words. The company's own model proposes the steps on a canvas." },
@@ -151,7 +152,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       "features": [
         "RUNS ON A MACHINE SHARED WITH OTHER CUSTOMERS",
         "COMPUTING CAPACITY INCLUDED WITH EVERY PERSON",
-        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
+        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE (PREVIEW)",
         "THE ENTRY POINT FOR A FIRST TEAM"
       ],
       "button": {
@@ -255,11 +256,11 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "What is a Compute Unit?",
-      "answer": "It is the meter for machine time, the way a kilowatt-hour is the meter for electricity. CORE counts capacity in **Compute Units** so that what you were given and what you have used are stated in the same terms, both readable in the console rather than arriving at the end of the month.\n\nThe Model cards and Inference pages show how much of that capacity a model reserves and uses, so sizing your allowance is a reading rather than a guess. Every **Dedicated** seat carries 5,000 units, and your organisation gets a further 10,000 units for every 10 seats you hold. Those units are pooled, so a heavy week on one console page draws on the same allowance as a quiet week on another. That allowance is sized against what the underlying compute actually costs us to run, not against what would keep you buying overage."
+      "answer": "It is how Runink counts work. Each analysis Runink runs draws **Compute Units** from your allowance — a FACE fetch run, for example, draws 25 units — so that what you were given and what you have used are stated in the same terms, both readable in the console rather than arriving at the end of the month.\n\nEvery **Dedicated** seat carries 5,000 units, and your organisation gets a further 10,000 units for every 10 seats you hold. Those units are pooled, so a heavy week on one console page draws on the same allowance as a quiet week on another."
     },
     {
       "question": "What happens if we go over the allowance?",
-      "answer": "Extra capacity is charged at **$0.10 per 100 units**, or **$5.00 per hour of machine time**. In practice that line stays empty for ordinary day-to-day running and appears when you run something very large in one go — re-running Resolve's map across every connected system, or a full Model & agent audit across every application, in one afternoon, for example.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
+      "answer": "Units used beyond the allowance are charged at **$0.10 per 100 units**. In practice that line stays empty for ordinary day-to-day running and appears when you run something very large in one go — re-running Resolve's map across every connected system, or a full Model & agent audit across every application, in one afternoon, for example. For a large one-off batch, machine time is also available as a separate option at **$5.00 per hour**.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
     },
     {
       "question": "Which licence fits us?",
@@ -279,7 +280,7 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "We already have committed spend with GCP, Snowflake or Databricks. Can we buy CORE that way?",
-      "answer": "Yes, and the economics work in your favour twice over. CORE is going onto the GCP Marketplace as a VM image running on your own GKE cluster, onto Snowflake as a Native App running in Snowpark Container Services, and onto Databricks as a Solution Accelerator through a partner listing — the same pattern our own build infrastructure already uses to run jobs on Cloud Run, SPCS and Databricks directly: the work runs on compute you already pay that platform for, and we charge our seat and Compute Unit price on top of it rather than adding an infrastructure markup of our own.\n\nIf you already carry committed spend with one of those three, buying CORE through it draws down spend you have already budgeted and already negotiated a rate for, rather than opening a new vendor contract. And because the compute is billed to you directly by GCP, Snowflake or Databricks rather than provisioned and billed by us, there is no separate infrastructure margin for us to stack on top of theirs — you pay their compute rate and our licence rate, not ours on top of theirs. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises. This is not yet available through AWS."
+      "answer": "Ask us. CORE is packaged to run on compute you already pay those platforms for — as a Compute Engine image on Google Cloud, or as a Native App in Snowpark Container Services on Snowflake — and we work out with you and the platform how the purchase is made.\n\nWhere CORE runs that way, the compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate and our seat and Compute Unit price. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises."
     },
     {
       "question": "Why does CORE never charge a success fee?",

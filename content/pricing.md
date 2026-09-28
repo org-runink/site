@@ -204,7 +204,6 @@ author: "Runink"
       ],
       "features": [
         "RUNS ON MACHINES KEPT FOR YOUR COMPANY ALONE",
-        "1,000 UNITS PER PERSON, PLUS 2,000 FOR EVERY 10",
         "YOUR OWN WEB ADDRESS",
         "FIRST CALL ON THE CAPACITY YOU PAY FOR",
         "5,000 UNITS PER PERSON, PLUS 10,000 FOR EVERY 10",
@@ -284,15 +283,15 @@ author: "Runink"
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "Seats. A **seat** is one person who uses Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nEach seat also comes with an allowance of computing capacity — the machine time Runink uses to read your documents, check your records and draft the work. That allowance is included in the seat price. You are not billed by the question, the document or the report."
+      "answer": "Seats. A **seat** is one person who uses Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nEach seat also comes with an allowance of computing capacity — the machine time Runink uses to read your documents, check your records and draft the work. That allowance is included in the seat price. You are not billed by the question, the document or the report.\n\nOne seat covers FACE, CORE, PULSE and FORGE (in preview). The only fees on top of it are the usage fees on FACE's automated actions, set out above."
     },
     {
       "question": "What is a Compute Unit?",
-      "answer": "It is the meter for machine time, the way a kilowatt-hour is the meter for electricity. Runink counts capacity in **Compute Units** so that what you were given and what you have used are stated in the same terms, and both are on screen in the console rather than arriving at the end of the month.\n\nEvery **Dedicated** seat carries 5,000 units, and your organisation gets a further 10,000 units for every 10 seats you hold. Those units are pooled, so a heavy week for one person draws on the same allowance as a quiet week for another. That allowance is sized against what the underlying compute actually costs us to run, not against what would keep you buying overage — a number picked to look generous while running out fast helps nobody."
+      "answer": "It is how Runink counts work. Each analysis Runink runs draws **Compute Units** from your allowance — a FACE fetch run, for example, draws 25 units — so that what you were given and what you have used are stated in the same terms, and both are on screen in the console rather than arriving at the end of the month.\n\nEvery **Dedicated** seat carries 5,000 units, and your organisation gets a further 10,000 units for every 10 seats you hold. Those units are pooled, so a heavy week for one person draws on the same allowance as a quiet week for another."
     },
     {
       "question": "What happens if we go over the allowance?",
-      "answer": "Extra capacity is charged at **$0.10 per 100 units**, or **$5.00 per hour of machine time**. In practice that line stays empty for ordinary day-to-day work and appears when you run something very large in one go — reprocessing a year of documents in an afternoon, for example.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
+      "answer": "Units used beyond the allowance are charged at **$0.10 per 100 units**. In practice that line stays empty for ordinary day-to-day work and appears when you run something very large in one go — reprocessing a year of documents in an afternoon, for example. For a large one-off batch, machine time is also available as a separate option at **$5.00 per hour**.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
     },
     {
       "question": "Which licence fits us?",
@@ -312,7 +311,7 @@ author: "Runink"
     },
     {
       "question": "We already have committed spend on GCP, Snowflake or Databricks. Can we buy FACE against that?",
-      "answer": "Yes, and the economics work in your favour twice over. Runink is on **Google Cloud Marketplace** (a VM image running on your own GKE cluster), **Snowflake** (a Native App in Snowpark Container Services) and **Databricks** (a Solution Accelerator / partner listing) — the same pattern our own build infrastructure already uses to run jobs on Cloud Run, SPCS and Databricks directly: the work runs on compute you already pay that platform for, and we charge our seat and Compute Unit price on top of it rather than adding an infrastructure markup of our own.\n\nThat means two things. First, you draw down budget you have already negotiated and already committed, rather than opening a fresh vendor line item. Second, because the compute is billed to you directly by GCP, Snowflake or Databricks rather than provisioned and billed by us, there is no separate infrastructure margin for us to stack on top of theirs — you pay their compute rate and our licence rate, not ours on top of theirs. We do not quote a discount here; the rate against your committed spend is between you and that platform. Ask us which of the three fits how you already buy. This path does not extend to AWS today."
+      "answer": "Ask us. Runink is packaged to run on compute you already pay those platforms for — as a Compute Engine image on Google Cloud, or as a Native App in Snowpark Container Services on Snowflake — and we work out with you and the platform how the purchase is made.\n\nWhere FACE runs that way, the compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate and our seat and Compute Unit price. We do not quote a discount here; the rate against your committed spend is between you and that platform."
     },
     {
       "question": "Why does using it more not cost more?",

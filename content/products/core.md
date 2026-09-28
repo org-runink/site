@@ -28,7 +28,7 @@ rp:
     - { text: "Read the CORE paper", url: "/blog/whitepapers/runink-core/", style: "ghost" }
     - { text: "📖 Read the docs", url: "https://docs.runink.org/core/", style: "ghost" }
     # Documentation: All Runink product docs at docs.runink.org/<product>/
-  fine: "A product in its own right, sold separately · in English, Spanish, French and Portuguese"
+  fine: "A product in its own right, covered by the same Runink seat as FACE · in English, Spanish, French and Portuguese"
   plate:
     name: "Runink CORE"
     sub: "One console, five parts. Each answers one question."
@@ -37,11 +37,11 @@ rp:
       - { k: "DevEx", v: "Is the platform running, and did our changes ship?" }
       - { k: "DataEx", v: "What may our models and agents do, and can we trust their work?" }
       - { k: "Intelligence", v: "What does our data hold, and where do money or controls slip?" }
-      - { k: "FORGE", v: "How does a written brief become a working application?" }
+      - { k: "FORGE (preview)", v: "How does a written brief become a working application?" }
     foot: "It asks before it acts."
   mission: "Where does our information go? To a machine you own, *and it stays there.*"
   facts:
-    - { k: "5 parts", v: "Overview, DevEx, DataEx, Intelligence and FORGE, on one menu" }
+    - { k: "5 parts", v: "Overview, DevEx, DataEx, Intelligence and FORGE (in preview), on one menu" }
     - { k: "1 command", v: "brings the whole platform up on one workstation" }
     - { k: "your model", v: "the assistant, the helpers and FORGE all run on your hardware" }
     - { k: "every action", v: "recorded with a name, in a record anyone signed in can verify" }
@@ -64,7 +64,7 @@ rp:
       - { k: "dataex", title: "AI you can answer for", body: "Model cards list each model's source, version, licence and test evidence, checked against what is live. Autonomy is a setting you choose for each kind of action, and every kind starts with a person approving each act." }
       - { k: "intelligence", title: "See what your data holds", body: "Dashboards for the analyst, the finance lead and the programme office, built on one set of figures. Data quality, capital spending, business rules and lineage, each computed from your own records or shown as absent with the reason." }
       - { k: "resolve", title: "An inventory read, not remembered", body: "Resolve maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
-      - { k: "forge", title: "From a brief to an application", body: "Describe what you want in plain words. The company's own model proposes the steps on a canvas, and nothing is filed until a person approves. The brief never leaves your hardware." }
+      - { k: "forge", title: "From a brief to an application", body: "In preview. Describe what you want in plain words. The company's own model proposes the steps on a canvas, and nothing is filed until a person approves. The brief never leaves your hardware." }
   steps:
     heading: "See it on your own hardware"
     intro: "CORE runs on one machine, from one downloaded file, with one command. The version on your workstation is the version that runs on your machines."
