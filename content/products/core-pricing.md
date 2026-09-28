@@ -111,7 +111,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       "items": [
         { "page": "", "name": "Describe it, the model proposes the steps", "note": "Describe what you want in plain words. The company's own model proposes the steps on a canvas." },
         { "page": "", "name": "Nothing filed until a person approves", "note": "An approved brief goes, word for word, to coding agents as a work item. Nothing is filed until a person approves it." },
-        { "page": "", "name": "The brief never leaves your hardware", "note": "The brief never leaves the company's hardware, from the first draft to the working application." }
+        { "page": "", "name": "The brief stays with your own model", "note": "The brief stays with the model you run yourself, from the first draft to the working application; we are confirming there is no other path out before promising more than that." }
       ]
     }
   ],
