@@ -229,7 +229,7 @@ author: "Runink"
     },
     {
       "question": "¿Qué estoy pagando en realidad?",
-      "answer": "Puestos. Un **puesto** es una persona que usa Runink. Cuenta las personas que lo necesitan, multiplica por el precio de arriba, y eso es la licencia.\n\nCada puesto incluye además una asignación de capacidad de cómputo: el tiempo de máquina que Runink emplea para leer sus documentos, revisar sus registros y redactar el trabajo. Esa asignación va incluida en el precio del puesto. No se le cobra por pregunta, por documento ni por informe.\n\nUn mismo puesto cubre FACE, CORE, PULSE y FORGE (en versión preliminar). Las únicas tarifas adicionales son las de uso sobre las acciones automáticas de FACE, detalladas arriba."
+      "answer": "Puestos. Un **puesto** es una persona que usa Runink. Cuenta las personas que lo necesitan, multiplica por el precio de arriba, y eso es la licencia.\n\nCada puesto incluye además una asignación de capacidad de cómputo: el tiempo de máquina que Runink emplea para leer sus documentos, revisar sus registros y redactar el trabajo. Esa asignación va incluida en el precio del puesto. No se le cobra por pregunta, por documento ni por informe.\n\nEstos puestos son de FACE. PULSE y CORE son productos distintos, cada uno con su propia suscripción. Las únicas tarifas adicionales a un puesto de FACE son las de uso sobre las acciones automáticas de FACE, detalladas arriba."
     },
     {
       "question": "¿Qué es una Unidad de Cómputo?",

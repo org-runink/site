@@ -229,7 +229,7 @@ author: "Runink"
     },
     {
       "question": "Que suis-je en train de payer, exactement ?",
-      "answer": "Des postes. Un **poste**, c'est une personne qui utilise Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nChaque poste inclut aussi une dotation de capacité de calcul : le temps de machine que Runink emploie pour lire vos documents, vérifier vos enregistrements et rédiger le travail. Cette dotation est comprise dans le prix du poste. Vous n'êtes facturé ni à la question, ni au document, ni au rapport.\n\nUn même poste couvre FACE, CORE, PULSE et FORGE (en préversion). Les seuls frais en plus sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
+      "answer": "Des postes. Un **poste**, c'est une personne qui utilise Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nChaque poste inclut aussi une dotation de capacité de calcul : le temps de machine que Runink emploie pour lire vos documents, vérifier vos enregistrements et rédiger le travail. Cette dotation est comprise dans le prix du poste. Vous n'êtes facturé ni à la question, ni au document, ni au rapport.\n\nCes postes sont ceux de FACE. PULSE et CORE sont des produits distincts, chacun avec son propre abonnement. Les seuls frais en plus d'un poste FACE sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
     },
     {
       "question": "Qu'est-ce qu'une Unité de Calcul ?",

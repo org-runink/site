@@ -29,7 +29,7 @@ rp:
     - { text: "📖 Technical reference", url: "https://docs.runink.org/core/docs/intelligence/", style: "ghost" }
   # Docs architecture: All Runink docs at docs.runink.org/<product>/
   # PULSE uses CORE's Intelligence docs (findings, analysis, reasoning)
-  fine: "Included in the same Runink seat as FACE and CORE · in English, Spanish, French and Portuguese"
+  fine: "A separate product from FACE and CORE · in English, Spanish, French and Portuguese"
   plate:
     name: "Runink PULSE"
     sub: "One application, four stages, one shared picture of your business."
@@ -75,7 +75,7 @@ rp:
     heading: "Read the detail"
     items:
       - { url: "/blog/whitepapers/runink-pulse/", title: "The Runink PULSE paper", note: "Every stage and every screen, what it is built on, who owns it, and how to work out what it is worth on your own numbers.", cta: "Read the paper" }
-      - { url: "/pricing/", title: "Pricing", note: "PULSE comes with the same Runink seat as FACE and CORE: one licence per person, with a shared allowance of computing capacity.", cta: "See the plans" }
+      - { url: "/pricing/", title: "Pricing", note: "Per seat, with a shared allowance of computing capacity, on three levels from a small team to a deployment on your own premises.", cta: "See the plans" }
   final:
     heading: "Bring your website and one campaign you never finished."
     body: "Half an hour, with whoever owns marketing in the room. We will walk through what an audit of your own site says, and what the first piece of work would look like."
