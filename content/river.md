@@ -43,7 +43,7 @@ rp:
   cta:
     - { text: "Install with one command", url: "#rp-steps-title", style: "primary" }
     - { text: "Read the documentation", url: "https://docs.runink.org/river/", style: "ghost" }
-  fine: "MIT userspace · GPL-2.0-only kernel · CDDL-1.0 ZFS · CC-BY-4.0 artwork · proposed to the LF AI & Data Foundation as a Sandbox project"
+  fine: "MIT userspace · GPL-2.0-only kernel · CDDL-1.0 ZFS · CC-BY-4.0 artwork"
   shots:
     - { src: "/images/products/river/desktop.jpg", w: 1280, h: 800, bar: "Runink River · Plasma", alt: "The installed Runink River desktop: KDE Plasma on the river-lines wallpaper, with the Runink River mark in the corner." }
     - { src: "/images/products/river/installer-welcome.jpg", w: 1280, h: 800, bar: "Install Runink River", alt: "The graphical installer's welcome screen: choose English, Spanish, French or Portuguese and a keyboard layout, then Next." }
