@@ -64,7 +64,7 @@ rp:
       - { k: "dataex", title: "AI you can answer for", body: "Model cards list each model's source, version, licence and test evidence, checked against what is live. Autonomy is a setting you choose for each kind of action, and every kind starts with a person approving each act." }
       - { k: "intelligence", title: "See what your data holds", body: "Dashboards for the analyst, the finance lead and the programme office, built on one set of figures. Data quality, capital spending, business rules and lineage, each computed from your own records or shown as absent with the reason." }
       - { k: "resolve", title: "An inventory read, not remembered", body: "Resolve maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
-      - { k: "forge", title: "From a brief to an application", body: "In preview. Describe what you want in plain words. The company's own model proposes the steps on a canvas, and nothing is filed until a person approves. The brief never leaves your hardware." }
+      - { k: "forge", title: "From a brief to an application", body: "In preview. Describe what you want in plain words. The company's own model proposes the steps on a canvas, and nothing is filed until a person approves. The brief stays with the model you run yourself; we are confirming there is no other path out before promising more than that." }
   steps:
     heading: "See it on your own hardware"
     intro: "CORE runs on one machine, from one downloaded file, with one command. The version on your workstation is the version that runs on your machines."
