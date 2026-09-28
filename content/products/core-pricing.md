@@ -1,6 +1,6 @@
 ---
 title: "CORE Pricing"
-description: "What a licence to run Runink CORE costs. You pay for each node CORE runs on, on your own hardware, and nothing is metered. There is no second bill: CORE never charges a percentage of anything it touches."
+description: "What a licence to run Runink CORE costs. You choose where it runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: CORE never charges a percentage of anything it finds, fixes or ships."
 layout: "pricing"
 date: "2026-09-27T00:00:00Z"
 author: "Runink"
@@ -9,12 +9,15 @@ product_url: "products/core/"
 product_subcategory: "IT operations, AI governance and application platform"
 # WHERE EVERY CLAIM ON THIS PAGE COMES FROM.
 #
-# PRICES ARE THE OWNER-APPROVED PRICE BOOK OF 2026-09-28 (billing#18, the
-# `plans.go` CORE catalogue): CORE Node $990 per node per month, yearly only,
-# on the customer's own hardware, nothing metered, FORGE (preview) included;
-# CORE Enterprise priced with the customer. CORE is sold separately from FACE
-# and PULSE, so it shares this page's shortcodes with content/pricing.md but
-# not its seat prices or Compute Unit allowance. Change prices in billing first.
+# PRICES ARE THE OWNER-APPROVED MODEL V2 (2026-09-28, billing catalogue): the
+# licence says where the work runs. CORE Lite (1-9, Runink's shared machines):
+# $75 yearly / $89 monthly, 18,000 units a person, then $0.10 per 100 units or
+# units bought ahead (10% less a month, 20% less a year), up to 900 units a
+# person an hour before work waits its turn. CORE Dedicated (runners in the
+# customer's own cloud account): $249 a month for the first node + $149 per
+# extra node, yearly, unlimited units, plus 1% of those runners' cloud cost.
+# Enterprise: priced with you. CORE is sold separately from FACE and PULSE.
+# Change the billing catalogue first, then here.
 #
 # WHAT IS NOT SHARED: FACE's page prices a "success fee" (20% of recovered
 # money) and an automatic set-up fee (1%-3%) on top of the seat price. CORE has
@@ -56,8 +59,8 @@ product_subcategory: "IT operations, AI governance and application platform"
 {
   "link_base": "/blog/whitepapers/runink-core/",
   "intro": [
-    "You pay for each node Runink CORE runs on, on your own hardware. Nothing is metered: the machines are yours, so there is no allowance to run out of. There is no second bill either: CORE never takes a percentage of anything it touches, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
-    "That is the whole shape of it. The bill follows the nodes you run, not what CORE finds, fixes or ships, so a platform team that puts CORE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
+    "You choose where Runink CORE runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: CORE never takes a percentage of anything it finds, fixes or ships, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
+    "That is the whole shape of it. The bill follows the seats or nodes you run, not what CORE finds, fixes or ships, so a platform team that puts CORE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
   ],
   "eyebrow": "The console",
   "heading": "One Console, Five Parts",
@@ -112,14 +115,15 @@ product_subcategory: "IT operations, AI governance and application platform"
       ]
     }
   ],
-  "outro": "The two licences below differ on one question: how many nodes you run, and whether the terms are standard or written with you. There is no second question about a percentage of anything CORE finds, fixes or ships — that question does not exist here."
+  "outro": "The three licences below differ on one question: where CORE runs. There is no second question about a percentage of anything CORE finds, fixes or ships — that question does not exist here."
 }
 {{< /pricing-table-2 >}}
 
 {{< pricing-toggle >}}
 {
   "options": [
-    { "label": "Yearly Contract", "value": "monthly" }
+    { "label": "Pay Monthly", "value": "monthly" },
+    { "label": "Pay Yearly (About 16% Less)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -128,52 +132,80 @@ product_subcategory: "IT operations, AI governance and application platform"
 {
   "plans": [
     {
-      "pill": "ON YOUR OWN HARDWARE",
-      "pill_color": "orange",
-      "name": "CORE NODE",
-      "subtitle": "FOR EACH NODE CORE RUNS ON",
-      "price_color": "orange",
-      "price_monthly": "990",
-      "price_yearly": "990",
-      "price_subtitle": "PER NODE, PER MONTH, ON A YEARLY CONTRACT",
-      "credits": "YOUR OWN MACHINES<br>NOTHING METERED",
+      "pill": "ON RUNINK'S SHARED MACHINES",
+      "pill_color": "stone",
+      "name": "LITE LICENCE",
+      "subtitle": "FOR TEAMS OF 1 TO 9 PEOPLE",
+      "price_color": "stone",
+      "price_monthly": "89",
+      "price_yearly": "75",
+      "price_subtitle": "PER PERSON, PER MONTH",
+      "credits": "18,000 COMPUTE UNITS<br>PER PERSON, PER MONTH",
       "outcome_strategies": [
-        {"label": "WHAT SETS THE BILL", "value": "How many nodes CORE runs on. Not how much it is used."},
+        {"label": "WHAT SETS THE BILL", "value": "How many people you licence, plus any units you use beyond the allowance."},
+        {"label": "SHORTEST COMMITMENT", "value": "One month."},
+        {"label": "SUCCESS FEES", "value": "None. CORE never takes a percentage of anything it finds, fixes or ships."},
+        {"label": "AUTOMATIC SET-UP FEE", "value": "None."}
+      ],
+      "features": [
+        "RUNS ON RUNINK'S SHARED MACHINES, TAKING ITS TURN ALONGSIDE OTHER CUSTOMERS' WORK",
+        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE (PREVIEW)",
+        "MORE UNITS AS YOU GO, OR BOUGHT AHEAD: 10% LESS FOR A MONTH, 20% LESS FOR A YEAR",
+        "UP TO 900 UNITS PER PERSON PER HOUR; WORK PAST THAT PACE WAITS ITS TURN"
+      ],
+      "button": {
+        "text": "START WITH LITE",
+        "url": "/#contact",
+        "style": "outline"
+      }
+    },
+    {
+      "pill": "IN YOUR OWN CLOUD ACCOUNT",
+      "pill_color": "orange",
+      "name": "DEDICATED LICENCE",
+      "subtitle": "PRICED PER NODE",
+      "price_color": "orange",
+      "price_monthly": "249",
+      "price_yearly": "249",
+      "price_subtitle": "A MONTH FOR THE FIRST NODE, THEN $149 FOR EACH EXTRA NODE, ON A YEARLY CONTRACT",
+      "credits": "UNLIMITED COMPUTE UNITS<br>ON YOUR OWN CLOUD",
+      "outcome_strategies": [
+        {"label": "WHAT SETS THE BILL", "value": "How many nodes you run, plus 1% of what your cloud charges for the runners."},
         {"label": "SHORTEST COMMITMENT", "value": "One year."},
         {"label": "SUCCESS FEES", "value": "None. Audit records and deploy pipelines are not the kind of thing a success fee should attach to."},
         {"label": "AUTOMATIC SET-UP FEE", "value": "None."}
       ],
       "features": [
-        "RUNS ON HARDWARE YOU OWN",
+        "RUNNERS IN YOUR OWN GOOGLE CLOUD PROJECT, DATABRICKS OR SNOWFLAKE ACCOUNT",
         "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE (PREVIEW)",
-        "NOTHING METERED: THE MACHINES ARE YOURS",
+        "UNLIMITED COMPUTE UNITS; YOUR CLOUD BILLS YOU FOR THE COMPUTE DIRECTLY",
         "YOUR OWN WEB ADDRESS"
       ],
       "button": {
-        "text": "TALK ABOUT CORE",
+        "text": "TALK ABOUT DEDICATED",
         "url": "/#contact",
         "style": "solid"
       }
     },
     {
-      "pill": "IN YOUR OWN BUILDING",
+      "pill": "ON YOUR PREMISES OR YOUR CLOUD",
       "pill_color": "stone",
       "name": "ENTERPRISE LICENCE",
-      "subtitle": "FOR HOSTING IT YOURSELF",
+      "subtitle": "FOR RUNNING IT WHERE YOU CHOOSE",
       "price_monthly": "CUSTOM",
       "price_yearly": "CUSTOM",
       "price_subtitle": "PRICED WITH YOU",
-      "credits": "YOUR OWN MACHINES<br>SIZED WITH YOU",
+      "credits": "UNLIMITED COMPUTE UNITS<br>WHERE YOU RUN IT",
       "outcome_strategies": [
-        {"label": "WHAT SETS THE BILL", "value": "The sites you run and the service levels you set."},
+        {"label": "WHAT SETS THE BILL", "value": "Where it runs and the service levels you set."},
         {"label": "SHORTEST COMMITMENT", "value": "Agreed with you."},
-        {"label": "SUCCESS FEES", "value": "None. Not on this licence, not on any other. CORE never takes a percentage of anything it touches."},
+        {"label": "SUCCESS FEES", "value": "None. Not on this licence, not on any other. CORE never takes a percentage of anything it finds, fixes or ships."},
         {"label": "ONBOARDING & CONSULTING", "value": "Scoped and quoted with you."}
       ],
       "features": [
-        "RUNS ON YOUR PREMISES, INCLUDING SITES KEPT OFF THE NETWORK",
-        "MORE THAN ONE SITE, PLANNED WITH YOU",
-        "EVERYTHING IN THE CORE NODE LICENCE",
+        "RUNNERS ON YOUR OWN SERVERS, INCLUDING SITES KEPT OFF THE NETWORK",
+        "OR IN YOUR OWN CLOUD ACCOUNT",
+        "UNLIMITED COMPUTE UNITS",
         "A FULL RECORD OF WHO DID WHAT, AND WHEN"
       ],
       "button": {
@@ -185,6 +217,7 @@ product_subcategory: "IT operations, AI governance and application platform"
   ]
 }
 {{< /pricing-table-1 >}}
+
 
 
 {{< faq >}}
@@ -214,23 +247,27 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "Where does our data go?",
-      "answer": "To a machine you own, and it stays there. The model, the records, the files and the certificate authority all run on your hardware. Nothing is sent to an outside AI service, and nothing is sent out to be trained on — there is no account with an outside model provider for it to be sent to.\n\nDeleting a document removes its influence completely, because nothing is left behind in the model. That is the answer a security review asks for before it will let a platform hold the company's information at all."
+      "answer": "To the machines your licence names, and it stays there: Runink's own shared machines on Lite, runners in your own cloud account on Dedicated, your own servers on Enterprise. Nothing is sent to an outside AI service, and nothing is sent out to be trained on — there is no account with an outside model provider for it to be sent to.\n\nDeleting a document removes its influence completely, because nothing is left behind in the model. That is the answer a security review asks for before it will let a platform hold the company's information at all."
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "Nodes. A **node** is one machine of yours that CORE runs on. You count the machines, multiply by the price above, and that is the licence.\n\nCORE runs the assistant, the Harness, the helpers and FORGE on those machines, so the computing is already yours. You are not billed by the person, the question, the deployment or the finding."
+      "answer": "It depends on where CORE runs. On **Lite**, seats: a **seat** is one person who uses Runink CORE, and each comes with Compute Units on Runink's shared machines. On **Dedicated**, nodes: $249 a month for the first node and $149 for each one after it, with runners in your own cloud account and no limit on units. Your cloud bills you for that compute directly, and Runink adds 1% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nYou are not billed by the question, the deployment or the finding."
     },
     {
-      "question": "Is anything metered?",
-      "answer": "No. CORE runs on hardware you own, so there is no allowance to use up and no overage line on the invoice. A heavy week re-running Resolve's map across every connected system costs what a quiet week costs."
+      "question": "What is a Compute Unit?",
+      "answer": "It is how Runink counts work on its shared machines. What CORE runs for you — the assistant, the Harness, the helpers, FORGE — draws **Compute Units** from your allowance, so that what you were given and what you have used are stated in the same terms, both readable in the console rather than arriving at the end of the month.\n\nEvery **Lite** seat carries 18,000 units a month, pooled across the team. On **Dedicated** and **Enterprise** the work runs in your own cloud or on your own servers, and units are unlimited."
+    },
+    {
+      "question": "What happens if we go over the allowance?",
+      "answer": "On the **Lite Licence**, you choose how to pay for more. Units beyond the allowance are charged as you go at **$0.10 per 100 units**, or you can buy units in advance: **10% less** for a month's worth, **20% less** for a year's. Dedicated and Enterprise have no allowance to go over.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
     },
     {
       "question": "Which licence fits us?",
-      "answer": "Count your machines first.\n\nIf CORE runs on machines you own at one site, the **CORE Node** licence is the fit: one price per node, a year at a time.\n\nIf it has to run across several sites, or somewhere kept off the network, that is **Enterprise**, and the conversation starts with where it has to run."
+      "answer": "Decide where CORE should run.\n\nUnder ten people, the **Lite Licence** is the fit. It runs on Runink's shared machines at the lowest price, and it is the only one you can take a month at a time — so an evaluation does not need a year's commitment. Work there takes its turn alongside other customers' work.\n\nIf CORE should run in your own Google Cloud project, or your Databricks or Snowflake account, that is **Dedicated**, priced per node, with unlimited Compute Units. It is taken a year at a time.\n\nIf it has to run on your own servers, including sites kept off the network, that is **Enterprise**, and the conversation starts with where it has to run."
     },
     {
       "question": "Do we have to sign for a year?",
-      "answer": "Yes. CORE is licensed a year at a time, at $990 per node per month, because it runs your platform: the audit record, the deploy pipeline and the data connections are not something to switch on for a month and off again. Enterprise terms are agreed with you."
+      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $89 per person, or a year at a time at $75 — the same difference, about 16%, shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because CORE runs your platform there: the audit record, the deploy pipeline and the data connections are not something to switch on for a month and off again."
     },
     {
       "question": "What does Enterprise onboarding and consulting cost?",
@@ -238,16 +275,17 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "We already have committed spend with GCP, Snowflake or Databricks. Can we buy CORE that way?",
-      "answer": "Ask us. CORE is packaged to run on compute you already pay those platforms for — as a Compute Engine image on Google Cloud, or as a Native App in Snowpark Container Services on Snowflake — and we work out with you and the platform how the purchase is made.\n\nWhere CORE runs that way, the compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate and our per-node price. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises."
+      "answer": "Yes: that is the **Dedicated Licence**. Its runners run in your own Google Cloud project, or your Snowflake or Databricks account, on compute you already pay that platform for.\n\nThe compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate, our per-node price, and 1% of what those runners cost. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises."
     },
     {
       "question": "Why does CORE never charge a success fee?",
-      "answer": "Because CORE is compute-only, by design, and that was a deliberate choice rather than an oversight. CORE never takes a percentage of anything it touches — audit records and deploy pipelines are not the kind of thing a success fee should attach to. There is no reading of \"CORE verified your audit chain\" or \"CORE shipped your deploy\" that turns into a dollar figure you would want a vendor billing a cut of.\n\nSo every licence above is priced the same way: by the nodes CORE runs on. What you are billed follows the machines you run, never a percentage of what the console found, fixed or shipped."
+      "answer": "Because CORE is priced on where it runs, by design, and that was a deliberate choice rather than an oversight. CORE never takes a percentage of anything it finds, fixes or ships — audit records and deploy pipelines are not the kind of thing a success fee should attach to. There is no reading of \"CORE verified your audit chain\" or \"CORE shipped your deploy\" that turns into a dollar figure you would want a vendor billing a cut of.\n\nSo every licence above is priced by seats or nodes, and by where the work runs — never by what the console found, fixed or shipped."
     },
     {
-      "question": "Why does using it more not cost more?",
-      "answer": "Because the model runs on the company's own hardware, so a team that finds heavy use for the assistant, the helpers or FORGE is not billed by the question. The cost of a question is the electricity to answer it.\n\nThe practical consequence is a budgeting one. Your spend is a function of the capacity you run, decided once, rather than a number that moves with how many questions your team asked last month. A team that finds heavy use for CORE does not discover a cost that grows with that success."
+      "question": "What does heavier use cost?",
+      "answer": "On **Lite**, a team can use up to 900 units per person per hour. Work past that pace waits its turn in line; it is never refused, and the pace itself costs nothing extra. Units beyond the monthly allowance are paid as you go or bought ahead, as above.\n\nOn **Dedicated**, units are unlimited: heavier use shows up on your own cloud bill as the compute it used, plus 1% of that from Runink. On **Enterprise** it runs where you already run things.\n\nEither way a team that finds heavy use for the assistant, the helpers or FORGE is not billed by the question."
     }
+
   ]
 }
 {{< /faq >}}
