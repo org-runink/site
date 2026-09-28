@@ -152,7 +152,7 @@ author: "Runink"
       ],
       "features": [
         "RODA EM MÁQUINAS RESERVADAS SÓ PARA SUA EMPRESA",
-        "1.000 UNIDADES POR PESSOA, MAIS 2.000 A CADA 10",
+        "5.000 UNIDADES POR PESSOA, MAIS 10.000 A CADA 10",
         "SEU PRÓPRIO ENDEREÇO NA WEB",
         "PRIORIDADE SOBRE A CAPACIDADE QUE VOCÊ PAGA"
       ],
@@ -229,15 +229,15 @@ author: "Runink"
     },
     {
       "question": "O que eu estou pagando, afinal?",
-      "answer": "Assentos. Um **assento** é uma pessoa que usa o Runink. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.\n\nCada assento também vem com uma cota de capacidade de computação: o tempo de máquina que o Runink usa para ler seus documentos, conferir seus registros e redigir o trabalho. Essa cota está incluída no preço do assento. Você não é cobrado por pergunta, por documento nem por relatório."
+      "answer": "Assentos. Um **assento** é uma pessoa que usa o Runink. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.\n\nCada assento também vem com uma cota de capacidade de computação: o tempo de máquina que o Runink usa para ler seus documentos, conferir seus registros e redigir o trabalho. Essa cota está incluída no preço do assento. Você não é cobrado por pergunta, por documento nem por relatório.\n\nUm mesmo assento cobre FACE, CORE, PULSE e FORGE (em prévia). As únicas taxas adicionais são as taxas de uso sobre as ações automáticas do FACE, detalhadas acima."
     },
     {
       "question": "O que é uma Unidade de Computação?",
-      "answer": "É o medidor do tempo de máquina, assim como o quilowatt-hora é o medidor da eletricidade. O Runink mede a capacidade em **Unidades de Computação** para que o que foi concedido a você e o que você já gastou sejam expressos nos mesmos termos, e os dois números ficam na tela do console em vez de chegarem no fim do mês.\n\nCada assento **Dedicado** traz 1.000 unidades, e sua organização recebe mais 2.000 unidades a cada 10 assentos contratados. Essas unidades são comuns a todos, então uma semana pesada de uma pessoa sai da mesma cota que uma semana tranquila de outra."
+      "answer": "É a forma como o Runink conta o trabalho. Cada análise que o Runink executa consome **Unidades de Computação** da sua cota — uma coleta do FACE, por exemplo, consome 25 unidades —, de modo que o que foi concedido a você e o que você já gastou sejam expressos nos mesmos termos, e os dois números ficam na tela do console em vez de chegarem no fim do mês.\n\nCada assento **Dedicado** traz 5.000 unidades, e sua organização recebe mais 10.000 unidades a cada 10 assentos contratados. Essas unidades são comuns a todos, então uma semana pesada de uma pessoa sai da mesma cota que uma semana tranquila de outra."
     },
     {
       "question": "O que acontece se passarmos da cota?",
-      "answer": "A capacidade adicional é cobrada a **$0,10 por 100 unidades**, ou **$5,00 por hora de máquina**. Na prática, essa linha fica vazia no trabalho comum do dia a dia e aparece quando você roda algo muito grande de uma vez só: reprocessar um ano de documentos em uma tarde, por exemplo.\n\nVocê vê o total acumulado no console e pode fixar um orçamento, de modo que a primeira notícia de um mês pesado não seja a fatura."
+      "answer": "As unidades usadas além da cota são cobradas a **$0,10 por 100 unidades**. Na prática, essa linha fica vazia no trabalho comum do dia a dia e aparece quando você roda algo muito grande de uma vez só: reprocessar um ano de documentos em uma tarde, por exemplo. Para um lote grande e pontual, o tempo de máquina também está disponível como opção à parte, a **$5,00 por hora**.\n\nVocê vê o total acumulado no console e pode fixar um orçamento, de modo que a primeira notícia de um mês pesado não seja a fatura."
     },
     {
       "question": "Qual licença serve para nós?",

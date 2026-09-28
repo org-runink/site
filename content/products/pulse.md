@@ -1,7 +1,7 @@
 ---
 title: "Runink PULSE"
 layout: "product"
-description: "Runink PULSE is one marketing application your own team operates: it audits your site and social presence, researches your market, finds leads and writes the material, with every channel off until you turn it on and the reasoning on hardware you control."
+description: "Runink PULSE is one marketing application your own team operates: it audits your site and social presence, researches your market, finds leads and writes the material, with publishing off until you turn it on and the reasoning on hardware you control."
 next_about: "Runink PULSE"
 # Where every claim here comes from: the PULSE paper, content/blog/whitepapers/
 # runink-pulse.md, and the pulse repository's README. Nothing on this page goes
@@ -29,21 +29,21 @@ rp:
     - { text: "📖 Technical reference", url: "https://docs.runink.org/core/docs/intelligence/", style: "ghost" }
   # Docs architecture: All Runink docs at docs.runink.org/<product>/
   # PULSE uses CORE's Intelligence docs (findings, analysis, reasoning)
-  fine: "A separate product from FACE and CORE · in English, Spanish, French and Portuguese"
+  fine: "Included in the same Runink seat as FACE and CORE · in English, Spanish, French and Portuguese"
   plate:
     name: "Runink PULSE"
     sub: "One application, four stages, one shared picture of your business."
     rows:
       - { k: "Diagnose", v: "A scored read of your site and social presence, and a plan for each channel." }
       - { k: "Attract", v: "Market research, and leads found on the public web with a first contact drafted." }
-      - { k: "Create", v: "One brief becomes posts, whitepapers, short videos, decks and courses." }
+      - { k: "Create", v: "One brief becomes LinkedIn posts, blog articles, whitepapers and courses." }
       - { k: "Retain", v: "Customer profiles, journey maps and 30-day follow-up cycles." }
-    foot: "Every channel off until you turn it on."
-  mission: "One application. Your own machines. *Every channel off until you turn it on.*"
+    foot: "Publishing off until you turn it on."
+  mission: "One application. Your own machines. *Publishing off until you turn it on.*"
   facts:
     - { k: "9 measures", v: "in every site audit, each made of checks you can read" }
     - { k: "4 stages", v: "diagnose, attract, create and retain, on one application" }
-    - { k: "off by default", v: "every publishing channel, until you arm it" }
+    - { k: "off by default", v: "publishing, until you arm it" }
     - { k: "your hardware", v: "where the writing and the analysis run" }
   split:
     eyebrow: "The review queue"
@@ -62,20 +62,20 @@ rp:
       - { k: "diagnose", title: "Site Audit", body: "A web address goes in. Back comes a relevance score across nine measures, from search and AI visibility to trust and retention, a business diagnosis, and ranked recommendations you can act on from the same screen." }
       - { k: "attract", title: "Market research", body: "The topics moving in your sector, the channels your competitors publish on, and the podcasts, publications and events where your subject belongs. Mark a result useful or not, and the next round learns from it." }
       - { k: "attract", title: "Lead prospecting", body: "Describe a niche and PULSE finds matching companies on the public web. For each one it drafts a cold email, a call script and a LinkedIn message, written from what is known about that company." }
-      - { k: "create", title: "One brief, every channel", body: "A single brief becomes posts shaped for each channel, plus whitepapers, podcasts, short videos, decks, infographics, reports and courses. A 30-day plan says what publishes, where and when." }
+      - { k: "create", title: "One brief, several formats", body: "A single brief becomes LinkedIn posts, blog articles, whitepapers and courses. A 30-day plan says what publishes, where and when." }
       - { k: "retain", title: "Follow-up that shows a cooling account", body: "Customer 360 profiles and journey maps show where each account stands. Structured 30-day cycles carry an evolution score, so a quiet relationship shows up as a trend, not a surprise at renewal." }
       - { k: "cost", title: "A machine, not a meter", body: "The work runs on machines you own, on ordinary processors. Producing more material does not produce a bigger bill, so the second angle on a campaign gets tried." }
   steps:
     heading: "The first afternoon moves no data anywhere"
     items:
       - { title: "Audit your own site", body: "PULSE runs on a single workstation. Point Site Audit at your website and read the nine scores, the ranked recommendations and the diagnosis." }
-      - { title: "Run one piece end to end", body: "Take the biggest gap the audit names. Brief a whitepaper on it, watch it stream in, edit it, approve it, and fan it out into posts and emails." }
+      - { title: "Run one piece end to end", body: "Take the biggest gap the audit names. Brief a whitepaper on it, watch it stream in, edit it, approve it, and fan it out into LinkedIn posts and a blog article." }
       - { title: "Then decide", body: "If the output is good enough for your name to go on it, installing PULSE on your own machines and connecting your accounts is a short next conversation." }
   papers:
     heading: "Read the detail"
     items:
       - { url: "/blog/whitepapers/runink-pulse/", title: "The Runink PULSE paper", note: "Every stage and every screen, what it is built on, who owns it, and how to work out what it is worth on your own numbers.", cta: "Read the paper" }
-      - { url: "/pricing/", title: "Pricing", note: "Per seat, with a shared allowance of computing capacity, on three levels from a small team to a deployment on your own premises.", cta: "See the plans" }
+      - { url: "/pricing/", title: "Pricing", note: "PULSE comes with the same Runink seat as FACE and CORE: one licence per person, with a shared allowance of computing capacity.", cta: "See the plans" }
   final:
     heading: "Bring your website and one campaign you never finished."
     body: "Half an hour, with whoever owns marketing in the room. We will walk through what an audit of your own site says, and what the first piece of work would look like."

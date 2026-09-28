@@ -152,7 +152,7 @@ author: "Runink"
       ],
       "features": [
         "S'EXÉCUTE SUR DES MACHINES RÉSERVÉES À VOTRE SEULE ENTREPRISE",
-        "1 000 UNITÉS PAR PERSONNE, PLUS 2 000 PAR TRANCHE DE 10",
+        "5 000 UNITÉS PAR PERSONNE, PLUS 10 000 PAR TRANCHE DE 10",
         "VOTRE PROPRE ADRESSE WEB",
         "PRIORITÉ SUR LA CAPACITÉ QUE VOUS PAYEZ"
       ],
@@ -229,15 +229,15 @@ author: "Runink"
     },
     {
       "question": "Que suis-je en train de payer, exactement ?",
-      "answer": "Des postes. Un **poste**, c'est une personne qui utilise Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nChaque poste inclut aussi une dotation de capacité de calcul : le temps de machine que Runink emploie pour lire vos documents, vérifier vos enregistrements et rédiger le travail. Cette dotation est comprise dans le prix du poste. Vous n'êtes facturé ni à la question, ni au document, ni au rapport."
+      "answer": "Des postes. Un **poste**, c'est une personne qui utilise Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nChaque poste inclut aussi une dotation de capacité de calcul : le temps de machine que Runink emploie pour lire vos documents, vérifier vos enregistrements et rédiger le travail. Cette dotation est comprise dans le prix du poste. Vous n'êtes facturé ni à la question, ni au document, ni au rapport.\n\nUn même poste couvre FACE, CORE, PULSE et FORGE (en préversion). Les seuls frais en plus sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
     },
     {
       "question": "Qu'est-ce qu'une Unité de Calcul ?",
-      "answer": "C'est le compteur du temps de machine, comme le kilowattheure est le compteur de l'électricité. Runink mesure la capacité en **Unités de Calcul** pour que ce qui vous a été attribué et ce que vous avez consommé s'expriment dans les mêmes termes, et les deux chiffres sont à l'écran dans la console au lieu d'arriver en fin de mois.\n\nChaque poste **Dédié** porte 1 000 unités, et votre organisation reçoit 2 000 unités de plus par tranche de 10 postes détenus. Ces unités sont mises en commun : une semaine intense pour une personne puise dans la même dotation qu'une semaine calme pour une autre."
+      "answer": "C'est la façon dont Runink compte le travail. Chaque analyse que Runink exécute puise des **Unités de Calcul** dans votre dotation — une collecte FACE, par exemple, en consomme 25 —, de sorte que ce qui vous a été attribué et ce que vous avez consommé s'expriment dans les mêmes termes, et les deux chiffres sont à l'écran dans la console au lieu d'arriver en fin de mois.\n\nChaque poste **Dédié** porte 5 000 unités, et votre organisation reçoit 10 000 unités de plus par tranche de 10 postes détenus. Ces unités sont mises en commun : une semaine intense pour une personne puise dans la même dotation qu'une semaine calme pour une autre."
     },
     {
       "question": "Que se passe-t-il si nous dépassons la dotation ?",
-      "answer": "La capacité supplémentaire est facturée **0,10 $ par tranche de 100 unités**, ou **5,00 $ par heure de machine**. En pratique, cette ligne reste vide pour le travail courant du quotidien et apparaît quand vous lancez quelque chose de très gros en une seule fois : retraiter une année de documents en un après-midi, par exemple.\n\nVous voyez le total en cours dans la console et vous pouvez fixer un budget en face, de sorte que la première nouvelle d'un mois chargé ne soit pas la facture."
+      "answer": "Les unités consommées au-delà de la dotation sont facturées **0,10 $ par tranche de 100 unités**. En pratique, cette ligne reste vide pour le travail courant du quotidien et apparaît quand vous lancez quelque chose de très gros en une seule fois : retraiter une année de documents en un après-midi, par exemple. Pour un gros traitement ponctuel, le temps de machine est aussi proposé séparément, à **5,00 $ de l'heure**.\n\nVous voyez le total en cours dans la console et vous pouvez fixer un budget en face, de sorte que la première nouvelle d'un mois chargé ne soit pas la facture."
     },
     {
       "question": "Quelle licence nous convient ?",

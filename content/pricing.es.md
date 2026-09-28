@@ -152,7 +152,7 @@ author: "Runink"
       ],
       "features": [
         "SE EJECUTA EN MÁQUINAS RESERVADAS SOLO PARA SU EMPRESA",
-        "1.000 UNIDADES POR PERSONA, MÁS 2.000 POR CADA 10",
+        "5.000 UNIDADES POR PERSONA, MÁS 10.000 POR CADA 10",
         "SU PROPIA DIRECCIÓN WEB",
         "PRIORIDAD SOBRE LA CAPACIDAD QUE PAGA"
       ],
@@ -229,15 +229,15 @@ author: "Runink"
     },
     {
       "question": "¿Qué estoy pagando en realidad?",
-      "answer": "Puestos. Un **puesto** es una persona que usa Runink. Cuenta las personas que lo necesitan, multiplica por el precio de arriba, y eso es la licencia.\n\nCada puesto incluye además una asignación de capacidad de cómputo: el tiempo de máquina que Runink emplea para leer sus documentos, revisar sus registros y redactar el trabajo. Esa asignación va incluida en el precio del puesto. No se le cobra por pregunta, por documento ni por informe."
+      "answer": "Puestos. Un **puesto** es una persona que usa Runink. Cuenta las personas que lo necesitan, multiplica por el precio de arriba, y eso es la licencia.\n\nCada puesto incluye además una asignación de capacidad de cómputo: el tiempo de máquina que Runink emplea para leer sus documentos, revisar sus registros y redactar el trabajo. Esa asignación va incluida en el precio del puesto. No se le cobra por pregunta, por documento ni por informe.\n\nUn mismo puesto cubre FACE, CORE, PULSE y FORGE (en versión preliminar). Las únicas tarifas adicionales son las de uso sobre las acciones automáticas de FACE, detalladas arriba."
     },
     {
       "question": "¿Qué es una Unidad de Cómputo?",
-      "answer": "Es el contador del tiempo de máquina, igual que el kilovatio-hora es el contador de la electricidad. Runink mide la capacidad en **Unidades de Cómputo** para que lo que se le ha asignado y lo que ha gastado se expresen en los mismos términos, y ambas cifras están en pantalla en la consola en lugar de llegar a fin de mes.\n\nCada puesto **Dedicado** lleva 1.000 unidades, y su organización recibe otras 2.000 unidades por cada 10 puestos que contrate. Esas unidades son comunes, así que una semana intensa de una persona sale del mismo fondo que una semana tranquila de otra."
+      "answer": "Es la forma en que Runink cuenta el trabajo. Cada análisis que Runink ejecuta consume **Unidades de Cómputo** de su asignación —una extracción de FACE, por ejemplo, consume 25 unidades—, de modo que lo que se le ha asignado y lo que ha gastado se expresan en los mismos términos, y ambas cifras están en pantalla en la consola en lugar de llegar a fin de mes.\n\nCada puesto **Dedicado** lleva 5.000 unidades, y su organización recibe otras 10.000 unidades por cada 10 puestos que contrate. Esas unidades son comunes, así que una semana intensa de una persona sale del mismo fondo que una semana tranquila de otra."
     },
     {
       "question": "¿Qué pasa si superamos la asignación?",
-      "answer": "La capacidad adicional se cobra a **$0,10 por cada 100 unidades**, o **$5,00 por hora de máquina**. En la práctica esa línea queda vacía en el trabajo corriente del día a día y aparece cuando se ejecuta algo muy grande de una sola vez: reprocesar un año de documentos en una tarde, por ejemplo.\n\nPuede ver el total acumulado en la consola y fijar un presupuesto, de modo que la primera noticia de un mes intenso no sea la factura."
+      "answer": "Las unidades que superan la asignación se cobran a **$0,10 por cada 100 unidades**. En la práctica esa línea queda vacía en el trabajo corriente del día a día y aparece cuando se ejecuta algo muy grande de una sola vez: reprocesar un año de documentos en una tarde, por ejemplo. Para un lote grande y puntual, el tiempo de máquina también está disponible como opción aparte, a **$5,00 por hora**.\n\nPuede ver el total acumulado en la consola y fijar un presupuesto, de modo que la primera noticia de un mes intenso no sea la factura."
     },
     {
       "question": "¿Qué licencia nos conviene?",
