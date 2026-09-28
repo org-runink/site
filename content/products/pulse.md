@@ -75,7 +75,7 @@ rp:
     heading: "Read the detail"
     items:
       - { url: "/blog/whitepapers/runink-pulse/", title: "The Runink PULSE paper", note: "Every stage and every screen, what it is built on, who owns it, and how to work out what it is worth on your own numbers.", cta: "Read the paper" }
-      - { url: "/pricing/", title: "Pricing", note: "Per seat, with a shared allowance of computing capacity, on three levels from a small team to a deployment on your own premises.", cta: "See the plans" }
+      - { url: "/#contact", title: "Pricing", note: "PULSE Lite is $99 per person a month on a yearly plan, or $119 month to month, for teams of 1 to 9. Larger teams are quoted.", cta: "Ask about PULSE" }
   final:
     heading: "Bring your website and one campaign you never finished."
     body: "Half an hour, with whoever owns marketing in the room. We will walk through what an audit of your own site says, and what the first piece of work would look like."

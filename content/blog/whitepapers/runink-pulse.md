@@ -806,20 +806,16 @@ end of the second.
 Licensing is per seat — one seat for each person who uses the software — with a shared
 allowance of computing capacity. That allowance is counted in a unit called a Compute Unit,
 so what you have and what you have used are stated in the same terms. Current pricing is
-published on runink.org. Three levels are offered.
+published on runink.org. Two levels are offered.
 
 **Lite licence** — for teams of one to nine seats, running on capacity shared with other
 customers, available on monthly or annual commitment. This is the entry point for a small
 marketing function, and the monthly option means an evaluation does not require an annual
 contract.
 
-**Dedicated licence** — for ten seats and above, on annual commitment. This sets aside
-computing capacity for your organisation alone, gives you your own web address and first call
-on that capacity, and a substantially larger shared allowance.
-
-**Enterprise** — for deployments you host yourself on your own premises, including those with
-no connection to the outside world, with a fuller record of who did what and terms set to
-your requirements. This is the level for regulated industries and for organisations whose
+**Enterprise** — for ten seats and above, quoted with you. It includes deployments you host
+yourself on your own premises, including those with no connection to the outside world, with
+a fuller record of who did what and terms set to your requirements. This is the level for regulated industries and for organisations whose
 deployment must sit entirely inside their own boundary.
 
 What you use is visible in the console rather than arriving as a surprise. The Billing

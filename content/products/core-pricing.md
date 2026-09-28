@@ -1,6 +1,6 @@
 ---
 title: "CORE Pricing"
-description: "What a licence to run Runink CORE costs. You pay for the number of people who use it; each person comes with an allowance of computing capacity included. There is no second bill: CORE never charges a percentage of anything it touches."
+description: "What a licence to run Runink CORE costs. You pay for each node CORE runs on, on your own hardware, and nothing is metered. There is no second bill: CORE never charges a percentage of anything it touches."
 layout: "pricing"
 date: "2026-09-27T00:00:00Z"
 author: "Runink"
@@ -9,14 +9,12 @@ product_url: "products/core/"
 product_subcategory: "IT operations, AI governance and application platform"
 # WHERE EVERY CLAIM ON THIS PAGE COMES FROM.
 #
-# This page shares its shortcodes and its billing SHAPE with content/pricing.md
-# (FACE's page) because it is genuinely the same infrastructure: seat-based
-# licences, a pooled Compute Unit allowance per seat, the same overage rate.
-# The seat prices ($86/$75), the CU formula (5,000 per seat + 10,000 per 10
-# seats), the overage rate ($0.10/100 CU over the allowance) and the separate
-# batch option ($5.00 per compute hour) are copied from
-# content/pricing.md verbatim, not re-derived — re-pricing CORE's infrastructure
-# is not a call this page makes.
+# PRICES ARE THE OWNER-APPROVED PRICE BOOK OF 2026-09-28 (billing#18, the
+# `plans.go` CORE catalogue): CORE Node $990 per node per month, yearly only,
+# on the customer's own hardware, nothing metered, FORGE (preview) included;
+# CORE Enterprise priced with the customer. CORE is sold separately from FACE
+# and PULSE, so it shares this page's shortcodes with content/pricing.md but
+# not its seat prices or Compute Unit allowance. Change prices in billing first.
 #
 # WHAT IS NOT SHARED: FACE's page prices a "success fee" (20% of recovered
 # money) and an automatic set-up fee (1%-3%) on top of the seat price. CORE has
@@ -37,13 +35,10 @@ product_subcategory: "IT operations, AI governance and application platform"
 # core.md's own facts still count "5 parts... on one menu" — so Resolve's
 # item sits inside the Intelligence group, where the source puts it.
 #
-# GX10 hardware, its Early Termination Fee schedule, and the Enterprise
-# onboarding/consulting pricing ($300/hr in $15,000 blocks) are new commercial
-# terms decided by the owner (2026-09-27), not drawn from an existing content
-# file. The onboarding split ($10,000 partner / $5,000 Runink per block) is
-# carried over verbatim from ../../face/COMMERCIAL_STRATEGY.md section D,
-# because Enterprise onboarding is the same consulting motion regardless of
-# which product it onboards.
+# NO ENTERPRISE SOVEREIGNTY DETAILS ON THIS PAGE (owner, 2026-09-28): no
+# hardware or appliance pricing, no field devices, no onboarding or consulting
+# rates, no partner splits. The GX10 lease terms and the $300/hour consulting
+# split were removed for that reason; onboarding is quoted with the customer.
 #
 # English only, like content/products/core.md itself ("English only, like
 # /river/ and /downloads/") — no .es/.fr/.pt sibling files for this page.
@@ -61,8 +56,8 @@ product_subcategory: "IT operations, AI governance and application platform"
 {
   "link_base": "/blog/whitepapers/runink-core/",
   "intro": [
-    "You pay for the number of people who use Runink CORE. Each person comes with an allowance of computing capacity included in the price. There is no second bill: CORE never takes a percentage of anything it touches, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
-    "That is the whole shape of it. The bill follows your headcount, not what CORE finds, fixes or ships, so a platform team that puts CORE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
+    "You pay for each node Runink CORE runs on, on your own hardware. Nothing is metered: the machines are yours, so there is no allowance to run out of. There is no second bill either: CORE never takes a percentage of anything it touches, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
+    "That is the whole shape of it. The bill follows the nodes you run, not what CORE finds, fixes or ships, so a platform team that puts CORE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
   ],
   "eyebrow": "The console",
   "heading": "One Console, Five Parts",
@@ -117,15 +112,14 @@ product_subcategory: "IT operations, AI governance and application platform"
       ]
     }
   ],
-  "outro": "The three licences below differ on one question: how many people need it, and whose machine it runs on. There is no second question about a percentage of anything CORE finds, fixes or ships — that question does not exist here."
+  "outro": "The two licences below differ on one question: how many nodes you run, and whether the terms are standard or written with you. There is no second question about a percentage of anything CORE finds, fixes or ships — that question does not exist here."
 }
 {{< /pricing-table-2 >}}
 
 {{< pricing-toggle >}}
 {
   "options": [
-    { "label": "Pay Monthly", "value": "monthly" },
-    { "label": "Pay Yearly (15% Less)", "value": "yearly" }
+    { "label": "Yearly Contract", "value": "monthly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -134,57 +128,29 @@ product_subcategory: "IT operations, AI governance and application platform"
 {
   "plans": [
     {
-      "pill": "ON A SHARED MACHINE",
-      "pill_color": "stone",
-      "name": "LITE LICENCE",
-      "subtitle": "FOR TEAMS OF 1 TO 9 PEOPLE",
-      "price_color": "stone",
-      "price_monthly": "86",
-      "price_yearly": "75",
-      "price_subtitle": "PER PERSON, PER MONTH",
-      "credits": "COMPUTING INCLUDED<br>FROM A SHARED POOL",
+      "pill": "ON YOUR OWN HARDWARE",
+      "pill_color": "orange",
+      "name": "CORE NODE",
+      "subtitle": "FOR EACH NODE CORE RUNS ON",
+      "price_color": "orange",
+      "price_monthly": "990",
+      "price_yearly": "990",
+      "price_subtitle": "PER NODE, PER MONTH, ON A YEARLY CONTRACT",
+      "credits": "YOUR OWN MACHINES<br>NOTHING METERED",
       "outcome_strategies": [
-        {"label": "WHAT SETS THE BILL", "value": "How many people you licence. Not how much they use it."},
-        {"label": "SHORTEST COMMITMENT", "value": "One month."},
-        {"label": "SUCCESS FEES", "value": "None. CORE is priced on compute, never on a percentage of anything it touches."},
+        {"label": "WHAT SETS THE BILL", "value": "How many nodes CORE runs on. Not how much it is used."},
+        {"label": "SHORTEST COMMITMENT", "value": "One year."},
+        {"label": "SUCCESS FEES", "value": "None. Audit records and deploy pipelines are not the kind of thing a success fee should attach to."},
         {"label": "AUTOMATIC SET-UP FEE", "value": "None."}
       ],
       "features": [
-        "RUNS ON A MACHINE SHARED WITH OTHER CUSTOMERS",
-        "COMPUTING CAPACITY INCLUDED WITH EVERY PERSON",
+        "RUNS ON HARDWARE YOU OWN",
         "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE (PREVIEW)",
-        "THE ENTRY POINT FOR A FIRST TEAM"
+        "NOTHING METERED: THE MACHINES ARE YOURS",
+        "YOUR OWN WEB ADDRESS"
       ],
       "button": {
-        "text": "START WITH LITE",
-        "url": "/#contact",
-        "style": "outline"
-      }
-    },
-    {
-      "pill": "ON YOUR OWN MACHINE",
-      "pill_color": "orange",
-      "name": "DEDICATED LICENCE",
-      "subtitle": "FOR 10 PEOPLE AND UP",
-      "price_color": "orange",
-      "price_monthly": "75",
-      "price_yearly": "75",
-      "price_subtitle": "PER PERSON, PER MONTH",
-      "credits": "COMPUTING INCLUDED<br>FROM YOUR OWN POOL",
-      "outcome_strategies": [
-        {"label": "WHAT SETS THE BILL", "value": "How many people you licence. Not how much they use it."},
-        {"label": "SHORTEST COMMITMENT", "value": "One year."},
-        {"label": "SUCCESS FEES", "value": "None. Audit records and deploy pipelines are not the kind of thing a success fee should attach to."},
-        {"label": "GX10 APPLIANCE", "value": "From ~$275/month on a 3-year term, bundled into this price as one line. See the FAQ for shorter terms and what an early exit costs."}
-      ],
-      "features": [
-        "RUNS ON MACHINES KEPT FOR YOUR COMPANY ALONE",
-        "5,000 UNITS PER PERSON, PLUS 10,000 FOR EVERY 10",
-        "YOUR OWN WEB ADDRESS",
-        "THE GX10 SOVEREIGNTY APPLIANCE, FROM ~$275/MO, BUNDLED IN"
-      ],
-      "button": {
-        "text": "TALK ABOUT DEDICATED",
+        "text": "TALK ABOUT CORE",
         "url": "/#contact",
         "style": "solid"
       }
@@ -197,17 +163,17 @@ product_subcategory: "IT operations, AI governance and application platform"
       "price_monthly": "CUSTOM",
       "price_yearly": "CUSTOM",
       "price_subtitle": "PRICED WITH YOU",
-      "credits": "COMPUTING INCLUDED<br>SIZED WITH YOU",
+      "credits": "YOUR OWN MACHINES<br>SIZED WITH YOU",
       "outcome_strategies": [
-        {"label": "WHAT SETS THE BILL", "value": "The capacity you need and the service levels you set."},
+        {"label": "WHAT SETS THE BILL", "value": "The sites you run and the service levels you set."},
         {"label": "SHORTEST COMMITMENT", "value": "Agreed with you."},
         {"label": "SUCCESS FEES", "value": "None. Not on this licence, not on any other. CORE never takes a percentage of anything it touches."},
-        {"label": "ONBOARDING & CONSULTING", "value": "$300 per hour, sold in $15,000 blocks of 50 hours. See the FAQ for how that splits."}
+        {"label": "ONBOARDING & CONSULTING", "value": "Scoped and quoted with you."}
       ],
       "features": [
         "RUNS ON YOUR PREMISES, INCLUDING SITES KEPT OFF THE NETWORK",
-        "CAPACITY SIZED AND MANAGED WITH YOU",
-        "EVERYTHING IN THE DEDICATED LICENCE, INCLUDING THE GX10 APPLIANCE WHERE YOU WANT IT",
+        "MORE THAN ONE SITE, PLANNED WITH YOU",
+        "EVERYTHING IN THE CORE NODE LICENCE",
         "A FULL RECORD OF WHO DID WHAT, AND WHEN"
       ],
       "button": {
@@ -252,39 +218,31 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "Seats. A **seat** is one person who uses Runink CORE. You count the people who need it, multiply by the price above, and that is the licence.\n\nEach seat also comes with an allowance of computing capacity — the machine time CORE uses to run the assistant, the Harness, the helpers and FORGE on your behalf. That allowance is included in the seat price. You are not billed by the question, the deployment or the finding."
+      "answer": "Nodes. A **node** is one machine of yours that CORE runs on. You count the machines, multiply by the price above, and that is the licence.\n\nCORE runs the assistant, the Harness, the helpers and FORGE on those machines, so the computing is already yours. You are not billed by the person, the question, the deployment or the finding."
     },
     {
-      "question": "What is a Compute Unit?",
-      "answer": "It is how Runink counts work. Each analysis Runink runs draws **Compute Units** from your allowance — a FACE fetch run, for example, draws 25 units — so that what you were given and what you have used are stated in the same terms, both readable in the console rather than arriving at the end of the month.\n\nEvery **Dedicated** seat carries 5,000 units, and your organisation gets a further 10,000 units for every 10 seats you hold. Those units are pooled, so a heavy week on one console page draws on the same allowance as a quiet week on another."
-    },
-    {
-      "question": "What happens if we go over the allowance?",
-      "answer": "Units used beyond the allowance are charged at **$0.10 per 100 units**. In practice that line stays empty for ordinary day-to-day running and appears when you run something very large in one go — re-running Resolve's map across every connected system, or a full Model & agent audit across every application, in one afternoon, for example. For a large one-off batch, machine time is also available as a separate option at **$5.00 per hour**.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
+      "question": "Is anything metered?",
+      "answer": "No. CORE runs on hardware you own, so there is no allowance to use up and no overage line on the invoice. A heavy week re-running Resolve's map across every connected system costs what a quiet week costs."
     },
     {
       "question": "Which licence fits us?",
-      "answer": "Count your people first.\n\nUnder ten, the **Lite Licence** is the fit. It runs on a machine shared with other customers, and it is the only one you can take a month at a time — so an evaluation does not need a year's commitment.\n\nTen or more, the **Dedicated Licence** costs less per person and runs on machines kept for your company alone, with your own web address and first call on the capacity you pay for. It is taken a year at a time.\n\nIf your information cannot leave your own building, that is **Enterprise**, and the conversation starts with where it has to run."
+      "answer": "Count your machines first.\n\nIf CORE runs on machines you own at one site, the **CORE Node** licence is the fit: one price per node, a year at a time.\n\nIf it has to run across several sites, or somewhere kept off the network, that is **Enterprise**, and the conversation starts with where it has to run."
     },
     {
       "question": "Do we have to sign for a year?",
-      "answer": "Only for Dedicated and Enterprise, and only for the seat licence itself. The **Lite Licence** can be taken month by month at $86 per person, or a year at a time at $75 — the same 15% difference shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because both involve setting machines aside for your company specifically, and that capacity is reserved whether or not you use it in a given week. The GX10 appliance, where you take one, carries its own separate term — see the next question."
-    },
-    {
-      "question": "What is the GX10, and what happens if we exit the lease early?",
-      "answer": "The GX10 is the ASUS Ascent GX10, built on NVIDIA's GB10 Grace Blackwell superchip: a dedicated sovereignty compute appliance you can run CORE (and FACE) on, for full on-premises sovereignty. On Dedicated and Enterprise it is leased monthly and bundled into your seat price as one line, rather than a separate SKU you have to reason about on its own — you sign one commitment, of one to three years. On Dedicated, that bundled line runs from around **$275 a month on a 3-year term**; a 1 or 2 year term carries a higher monthly rate to reflect the faster amortization. On Enterprise it is priced with you.\n\nExiting early carries an Early Termination Fee, and it is scaled rather than flat because it is tracking what the hardware is actually worth used, not punishing you for leaving. Exit in year one and it is 100% of the lease payments left on your term — the card has barely depreciated and Runink is carrying the full cost of it. Exit in year two of a two- or three-year term and it drops to 60% of what remains. Exit in the final stretch of a three-year term and it is 25% — by then the card has done most of its useful life and is worth less to recover. The number moves with the hardware's own resale value, the same honest logic as the rest of this page."
+      "answer": "Yes. CORE is licensed a year at a time, at $990 per node per month, because it runs your platform: the audit record, the deploy pipeline and the data connections are not something to switch on for a month and off again. Enterprise terms are agreed with you."
     },
     {
       "question": "What does Enterprise onboarding and consulting cost?",
-      "answer": "Enterprise deployments require onboarding and integration time, priced at **$300 per hour**, sold in **$15,000 blocks of 50 hours**. This is a fixed motion regardless of which Runink product is being onboarded — the same rate and the same blocks apply whether the work is a CORE rollout or a FACE one.\n\nOf each $15,000 block, $10,000 goes directly to the partner or consulting team doing the implementation, and $5,000 is retained by Runink to maintain partner-privileged instances, run marketing sessions, and provide dedicated support behind the partner. Neither half is a success fee — it is priced and paid the same whether the deployment finds a great deal wrong or nothing at all."
+      "answer": "Onboarding and consulting are scoped and quoted with you as part of the Enterprise conversation."
     },
     {
       "question": "We already have committed spend with GCP, Snowflake or Databricks. Can we buy CORE that way?",
-      "answer": "Ask us. CORE is packaged to run on compute you already pay those platforms for — as a Compute Engine image on Google Cloud, or as a Native App in Snowpark Container Services on Snowflake — and we work out with you and the platform how the purchase is made.\n\nWhere CORE runs that way, the compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate and our seat and Compute Unit price. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises."
+      "answer": "Ask us. CORE is packaged to run on compute you already pay those platforms for — as a Compute Engine image on Google Cloud, or as a Native App in Snowpark Container Services on Snowflake — and we work out with you and the platform how the purchase is made.\n\nWhere CORE runs that way, the compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate and our per-node price. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises."
     },
     {
       "question": "Why does CORE never charge a success fee?",
-      "answer": "Because CORE is compute-only, by design, and that was a deliberate choice rather than an oversight. CORE never takes a percentage of anything it touches — audit records and deploy pipelines are not the kind of thing a success fee should attach to. There is no reading of \"CORE verified your audit chain\" or \"CORE shipped your deploy\" that turns into a dollar figure you would want a vendor billing a cut of.\n\nSo every licence above is priced the same way: seats, plus the computing capacity that comes with them. What you are billed follows your headcount, never a percentage of what the console found, fixed or shipped."
+      "answer": "Because CORE is compute-only, by design, and that was a deliberate choice rather than an oversight. CORE never takes a percentage of anything it touches — audit records and deploy pipelines are not the kind of thing a success fee should attach to. There is no reading of \"CORE verified your audit chain\" or \"CORE shipped your deploy\" that turns into a dollar figure you would want a vendor billing a cut of.\n\nSo every licence above is priced the same way: by the nodes CORE runs on. What you are billed follows the machines you run, never a percentage of what the console found, fixed or shipped."
     },
     {
       "question": "Why does using it more not cost more?",

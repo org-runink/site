@@ -52,13 +52,15 @@ author: "Runink"
 # same mistake with a `{{/* */}}` block, which content files don't parse as a
 # template comment either — it rendered as visible text until this rewrite.
 #
-# THE GX10 SOVEREIGNTY COMPUTE APPLIANCE IS NEW (added alongside the fee band).
-# It is a leased, bundled line inside Dedicated/Enterprise, not a separate
-# SKU — the "FEATURES" line on those two cards points to the FAQ, which states
-# the 1-3 year term and the depreciation-shaped Early Termination Fee
-# (100% / 60% / 25% of remaining payments). The Enterprise-consulting and
-# marketplace-committed-spend FAQ entries are additions of the same kind:
-# real, decided terms that had no answer on this page before.
+# PRICES ARE THE OWNER-APPROVED PRICE BOOK OF 2026-09-28 (billing#18, the
+# `plans.go` catalogue): Lite $149 yearly / $179 monthly with 36,000 units a
+# person a month; Dedicated $149 a person plus $1,500 a month for the machine,
+# nothing metered. Change them there first, then here.
+#
+# NO ENTERPRISE SOVEREIGNTY DETAILS ON THIS PAGE (owner, 2026-09-28): no
+# hardware or appliance pricing, no field devices, no onboarding or consulting
+# rates, no partner splits. The GX10 lease FAQ and the $300/hour consulting FAQ
+# were removed for that reason; the onboarding question now says it is quoted.
 ---
 
 {{< pricing-table-2 >}}
@@ -150,7 +152,7 @@ author: "Runink"
 {
   "options": [
     { "label": "Pay Monthly", "value": "monthly" },
-    { "label": "Pay Yearly (15% Less)", "value": "yearly" }
+    { "label": "Pay Yearly (About 17% Less)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -164,8 +166,8 @@ author: "Runink"
       "name": "LITE LICENCE",
       "subtitle": "FOR TEAMS OF 1 TO 9 PEOPLE",
       "price_color": "stone",
-      "price_monthly": "86",
-      "price_yearly": "75",
+      "price_monthly": "179",
+      "price_yearly": "149",
       "price_subtitle": "PER PERSON, PER MONTH",
       "credits": "COMPUTING INCLUDED<br>FROM A SHARED POOL",
       "outcome_strategies": [
@@ -176,7 +178,7 @@ author: "Runink"
       ],
       "features": [
         "RUNS ON A MACHINE SHARED WITH OTHER CUSTOMERS",
-        "COMPUTING CAPACITY INCLUDED WITH EVERY PERSON",
+        "36,000 COMPUTE UNITS PER PERSON PER MONTH, POOLED ACROSS THE TEAM",
         "THE STANDARD SET OF AUTOMATED HELPERS",
         "THE ENTRY POINT FOR A FIRST TEAM"
       ],
@@ -192,12 +194,12 @@ author: "Runink"
       "name": "DEDICATED LICENCE",
       "subtitle": "FOR 10 PEOPLE AND UP",
       "price_color": "orange",
-      "price_monthly": "75",
-      "price_yearly": "75",
-      "price_subtitle": "PER PERSON, PER MONTH",
-      "credits": "COMPUTING INCLUDED<br>FROM YOUR OWN POOL",
+      "price_monthly": "149",
+      "price_yearly": "149",
+      "price_subtitle": "PER PERSON, PER MONTH, PLUS $1,500 A MONTH FOR YOUR OWN MACHINE",
+      "credits": "YOUR OWN MACHINE<br>NOTHING METERED",
       "outcome_strategies": [
-        {"label": "WHAT SETS THE BILL", "value": "How many people you licence. Not how much they use it."},
+        {"label": "WHAT SETS THE BILL", "value": "How many people you licence, plus one flat monthly fee for your machine."},
         {"label": "SHORTEST COMMITMENT", "value": "One year."},
         {"label": "IF WE RECOVER MONEY FOR YOU", "value": "20% of what is recovered. Nothing when nothing is recovered."},
         {"label": "AUTOMATIC SET-UP FEE", "value": "1% to 3%, never more than $50."}
@@ -206,8 +208,7 @@ author: "Runink"
         "RUNS ON MACHINES KEPT FOR YOUR COMPANY ALONE",
         "YOUR OWN WEB ADDRESS",
         "FIRST CALL ON THE CAPACITY YOU PAY FOR",
-        "5,000 UNITS PER PERSON, PLUS 10,000 FOR EVERY 10",
-        "OPTION: THE GX10 SOVEREIGNTY APPLIANCE, FROM ~$275/MO BUNDLED IN ON A 3-YEAR TERM (SEE FAQ)"
+        "NOTHING METERED: THE MACHINE IS YOURS"
       ],
       "button": {
         "text": "TALK ABOUT DEDICATED",
@@ -234,8 +235,7 @@ author: "Runink"
         "RUNS ON YOUR PREMISES, INCLUDING SITES KEPT OFF THE NETWORK",
         "CAPACITY SIZED AND MANAGED WITH YOU",
         "EVERYTHING IN THE DEDICATED LICENCE",
-        "A FULL RECORD OF WHO DID WHAT, AND WHEN",
-        "OPTION: THE GX10 SOVEREIGNTY APPLIANCE, PRICED WITH YOU AT ENTERPRISE SCALE (SEE FAQ)"
+        "A FULL RECORD OF WHO DID WHAT, AND WHEN"
       ],
       "button": {
         "text": "TALK TO US",
@@ -283,31 +283,27 @@ author: "Runink"
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "Seats. A **seat** is one person who uses Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nEach seat also comes with an allowance of computing capacity — the machine time Runink uses to read your documents, check your records and draft the work. That allowance is included in the seat price. You are not billed by the question, the document or the report.\n\nThese seats are for FACE. PULSE and CORE are separate products, each sold with its own subscription. The only fees on top of a FACE seat are the usage fees on FACE's automated actions, set out above."
+      "answer": "Seats. A **seat** is one person who uses Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nEach seat also comes with an allowance of computing capacity — the machine time Runink uses to read your documents, check your records and draft the work. That allowance is included in the seat price. You are not billed by the question, the document or the report.\n\nThese seats are for FACE. PULSE and CORE are separate products, each sold with its own subscription. The Dedicated Licence adds one flat monthly fee for your own machine; beyond that, the only fees on top of a FACE seat are the usage fees on FACE's automated actions, set out above."
     },
     {
       "question": "What is a Compute Unit?",
-      "answer": "It is how Runink counts work. Each analysis Runink runs draws **Compute Units** from your allowance — a FACE fetch run, for example, draws 25 units — so that what you were given and what you have used are stated in the same terms, and both are on screen in the console rather than arriving at the end of the month.\n\nEvery **Dedicated** seat carries 5,000 units, and your organisation gets a further 10,000 units for every 10 seats you hold. Those units are pooled, so a heavy week for one person draws on the same allowance as a quiet week for another."
+      "answer": "It is how Runink counts work on a shared machine. Each analysis Runink runs draws **Compute Units** from your allowance, so that what you were given and what you have used are stated in the same terms, and both are on screen in the console rather than arriving at the end of the month.\n\nEvery **Lite** seat carries 36,000 units a month. Those units are pooled across the team, so a heavy week for one person draws on the same allowance as a quiet week for another.\n\nOn **Dedicated** and **Enterprise** the machines are kept for you, so nothing is metered."
     },
     {
       "question": "What happens if we go over the allowance?",
-      "answer": "Units used beyond the allowance are charged at **$0.10 per 100 units**. In practice that line stays empty for ordinary day-to-day work and appears when you run something very large in one go — reprocessing a year of documents in an afternoon, for example. For a large one-off batch, machine time is also available as a separate option at **$5.00 per hour**.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
+      "answer": "On the **Lite Licence**, units used beyond the allowance are charged at **$0.10 per 100 units**. In practice that line stays empty for ordinary day-to-day work and appears when you run something very large in one go — reprocessing a year of documents in an afternoon, for example. Dedicated and Enterprise are not metered, so there is nothing to go over.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
     },
     {
       "question": "Which licence fits us?",
-      "answer": "Count your people first.\n\nUnder ten, the **Lite Licence** is the fit. It runs on a machine shared with other customers, and it is the only one you can take a month at a time — so an evaluation does not need a year's commitment.\n\nTen or more, the **Dedicated Licence** costs less per person and runs on machines kept for your company alone, with your own web address and first call on the capacity you pay for. It is taken a year at a time.\n\nIf your information cannot leave your own building, that is **Enterprise**, and the conversation starts with where it has to run."
+      "answer": "Count your people first.\n\nUnder ten, the **Lite Licence** is the fit. It runs on a machine shared with other customers, and it is the only one you can take a month at a time — so an evaluation does not need a year's commitment.\n\nTen or more, the **Dedicated Licence** runs on machines kept for your company alone, with your own web address, one flat monthly fee for the machine and nothing metered. It is taken a year at a time.\n\nIf your information cannot leave your own building, that is **Enterprise**, and the conversation starts with where it has to run."
     },
     {
       "question": "Do we have to sign for a year?",
-      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $86 per person, or a year at a time at $75 — the same 15% difference shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because both involve setting machines aside for your company specifically, and that capacity is reserved whether or not you use it in a given week."
-    },
-    {
-      "question": "What is the sovereignty compute appliance, and what happens if we exit the lease early?",
-      "answer": "For Dedicated and Enterprise, you can add a dedicated **sovereignty compute appliance** — the ASUS Ascent GX10, built on NVIDIA's GB10 Grace Blackwell superchip — as the physical box FACE runs on for full on-premises isolation. It is **leased monthly and bundled into your seat price as one line**, not billed as a separate SKU you have to reason about on its own. On Dedicated, that bundled line runs **from around $275 a month on a 3-year term**; a 1 or 2 year term carries a higher monthly rate to reflect the faster amortization. On Enterprise it is priced with you as part of the wider conversation.\n\nThe lease is a **1 to 3 year commitment**. Exiting early carries an **Early Termination Fee tied to what the hardware is actually worth at that point, not a flat number**: 100% of the remaining payments in year one, 60% in year two of a 2 to 3 year term, and 25% in the final stretch of a 3 year term. That schedule tracks the hardware's real residual and resale value — steepest when the least depreciation has happened, and easing as more of it has."
+      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $179 per person, or a year at a time at $149 — the same difference, about 17%, shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because both involve setting machines aside for your company specifically, and that capacity is reserved whether or not you use it in a given week."
     },
     {
       "question": "What does Enterprise onboarding cost, beyond the licence?",
-      "answer": "Enterprise deployments carry onboarding and integration consulting, priced at **$300 per hour**, sold in **$15,000 blocks of 50 hours**. That work is split with whoever delivers it: **two thirds goes to the partner or consultant doing the implementation**, and **one third is retained by Runink** to keep partner-privileged instances running and provide ongoing support. It is scoped with you as part of the Enterprise conversation, not added afterward."
+      "answer": "Onboarding and consulting are scoped and quoted with you as part of the Enterprise conversation."
     },
     {
       "question": "We already have committed spend on GCP, Snowflake or Databricks. Can we buy FACE against that?",

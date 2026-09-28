@@ -98,7 +98,7 @@ author: "Runink"
 {
   "options": [
     { "label": "Paiement Mensuel", "value": "monthly" },
-    { "label": "Paiement Annuel (15% de Moins)", "value": "yearly" }
+    { "label": "Paiement Annuel (Environ 17 % de Moins)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -112,8 +112,8 @@ author: "Runink"
       "name": "LICENCE LITE",
       "subtitle": "POUR LES ÉQUIPES DE 1 À 9 PERSONNES",
       "price_color": "stone",
-      "price_monthly": "86",
-      "price_yearly": "75",
+      "price_monthly": "179",
+      "price_yearly": "149",
       "price_subtitle": "PAR PERSONNE, PAR MOIS",
       "credits": "CALCUL INCLUS<br>SUR UNE RÉSERVE COMMUNE",
       "outcome_strategies": [
@@ -124,7 +124,7 @@ author: "Runink"
       ],
       "features": [
         "S'EXÉCUTE SUR UNE MACHINE PARTAGÉE AVEC D'AUTRES CLIENTS",
-        "CAPACITÉ DE CALCUL INCLUSE AVEC CHAQUE PERSONNE",
+        "36 000 UNITÉS DE CALCUL PAR PERSONNE ET PAR MOIS, MISES EN COMMUN DANS L'ÉQUIPE",
         "L'ENSEMBLE STANDARD D'ASSISTANTS AUTOMATIQUES",
         "LE POINT DE DÉPART POUR UNE PREMIÈRE ÉQUIPE"
       ],
@@ -140,19 +140,19 @@ author: "Runink"
       "name": "LICENCE DÉDIÉE",
       "subtitle": "POUR 10 PERSONNES ET PLUS",
       "price_color": "orange",
-      "price_monthly": "75",
-      "price_yearly": "75",
-      "price_subtitle": "PAR PERSONNE, PAR MOIS",
-      "credits": "CALCUL INCLUS<br>SUR VOTRE PROPRE RÉSERVE",
+      "price_monthly": "149",
+      "price_yearly": "149",
+      "price_subtitle": "PAR PERSONNE, PAR MOIS, PLUS 1 500 $ PAR MOIS POUR VOTRE PROPRE MACHINE",
+      "credits": "VOTRE PROPRE MACHINE<br>RIEN N'EST MESURÉ",
       "outcome_strategies": [
-        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence. Pas combien elles l'utilisent."},
+        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence, plus un forfait mensuel fixe pour votre machine."},
         {"label": "ENGAGEMENT MINIMUM", "value": "Un an."},
         {"label": "SI NOUS RÉCUPÉRONS DE L'ARGENT POUR VOUS", "value": "20 % de ce qui est récupéré. Rien si rien n'est récupéré."},
         {"label": "FRAIS DE MISE EN SERVICE", "value": "De 1 % à 3 %, jamais plus de 50 $."}
       ],
       "features": [
         "S'EXÉCUTE SUR DES MACHINES RÉSERVÉES À VOTRE SEULE ENTREPRISE",
-        "5 000 UNITÉS PAR PERSONNE, PLUS 10 000 PAR TRANCHE DE 10",
+        "RIEN N'EST MESURÉ : LA MACHINE EST À VOUS",
         "VOTRE PROPRE ADRESSE WEB",
         "PRIORITÉ SUR LA CAPACITÉ QUE VOUS PAYEZ"
       ],
@@ -229,23 +229,23 @@ author: "Runink"
     },
     {
       "question": "Que suis-je en train de payer, exactement ?",
-      "answer": "Des postes. Un **poste**, c'est une personne qui utilise Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nChaque poste inclut aussi une dotation de capacité de calcul : le temps de machine que Runink emploie pour lire vos documents, vérifier vos enregistrements et rédiger le travail. Cette dotation est comprise dans le prix du poste. Vous n'êtes facturé ni à la question, ni au document, ni au rapport.\n\nCes postes sont ceux de FACE. PULSE et CORE sont des produits distincts, chacun avec son propre abonnement. Les seuls frais en plus d'un poste FACE sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
+      "answer": "Des postes. Un **poste**, c'est une personne qui utilise Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nChaque poste inclut aussi une dotation de capacité de calcul : le temps de machine que Runink emploie pour lire vos documents, vérifier vos enregistrements et rédiger le travail. Cette dotation est comprise dans le prix du poste. Vous n'êtes facturé ni à la question, ni au document, ni au rapport.\n\nCes postes sont ceux de FACE. PULSE et CORE sont des produits distincts, chacun avec son propre abonnement. La Licence Dédiée ajoute un forfait mensuel fixe pour votre propre machine ; au-delà, les seuls frais en plus d'un poste FACE sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
     },
     {
       "question": "Qu'est-ce qu'une Unité de Calcul ?",
-      "answer": "C'est la façon dont Runink compte le travail. Chaque analyse que Runink exécute puise des **Unités de Calcul** dans votre dotation — une collecte FACE, par exemple, en consomme 25 —, de sorte que ce qui vous a été attribué et ce que vous avez consommé s'expriment dans les mêmes termes, et les deux chiffres sont à l'écran dans la console au lieu d'arriver en fin de mois.\n\nChaque poste **Dédié** porte 5 000 unités, et votre organisation reçoit 10 000 unités de plus par tranche de 10 postes détenus. Ces unités sont mises en commun : une semaine intense pour une personne puise dans la même dotation qu'une semaine calme pour une autre."
+      "answer": "C'est la façon dont Runink compte le travail sur une machine partagée. Chaque analyse que Runink exécute puise des **Unités de Calcul** dans votre dotation, de sorte que ce qui vous a été attribué et ce que vous avez consommé s'expriment dans les mêmes termes, et les deux chiffres sont à l'écran dans la console au lieu d'arriver en fin de mois.\n\nChaque poste **Lite** porte 36 000 unités par mois. Ces unités sont mises en commun dans l'équipe : une semaine intense pour une personne puise dans la même dotation qu'une semaine calme pour une autre.\n\nSur **Dédiée** et **Enterprise**, les machines sont réservées pour vous : rien n'est mesuré."
     },
     {
       "question": "Que se passe-t-il si nous dépassons la dotation ?",
-      "answer": "Les unités consommées au-delà de la dotation sont facturées **0,10 $ par tranche de 100 unités**. En pratique, cette ligne reste vide pour le travail courant du quotidien et apparaît quand vous lancez quelque chose de très gros en une seule fois : retraiter une année de documents en un après-midi, par exemple. Pour un gros traitement ponctuel, le temps de machine est aussi proposé séparément, à **5,00 $ de l'heure**.\n\nVous voyez le total en cours dans la console et vous pouvez fixer un budget en face, de sorte que la première nouvelle d'un mois chargé ne soit pas la facture."
+      "answer": "Sur la **Licence Lite**, les unités consommées au-delà de la dotation sont facturées **0,10 $ par tranche de 100 unités**. En pratique, cette ligne reste vide pour le travail courant du quotidien et apparaît quand vous lancez quelque chose de très gros en une seule fois : retraiter une année de documents en un après-midi, par exemple. Dédiée et Enterprise ne sont pas mesurées : il n'y a rien à dépasser.\n\nVous voyez le total en cours dans la console et vous pouvez fixer un budget en face, de sorte que la première nouvelle d'un mois chargé ne soit pas la facture."
     },
     {
       "question": "Quelle licence nous convient ?",
-      "answer": "Comptez d'abord vos personnes.\n\nMoins de dix : la **Licence Lite** est la bonne. Elle tourne sur une machine partagée avec d'autres clients, et c'est la seule qui se prend au mois — une évaluation n'exige donc pas un engagement d'un an.\n\nDix ou plus : la **Licence Dédiée** coûte moins par personne et tourne sur des machines réservées à votre seule entreprise, avec votre propre adresse web et la priorité sur la capacité que vous payez. Elle se prend à l'année.\n\nSi vos informations ne peuvent pas sortir de votre propre bâtiment, c'est **Enterprise**, et la conversation commence par l'endroit où cela doit tourner."
+      "answer": "Comptez d'abord vos personnes.\n\nMoins de dix : la **Licence Lite** est la bonne. Elle tourne sur une machine partagée avec d'autres clients, et c'est la seule qui se prend au mois — une évaluation n'exige donc pas un engagement d'un an.\n\nDix ou plus : la **Licence Dédiée** tourne sur des machines réservées à votre seule entreprise, avec votre propre adresse web, un forfait mensuel fixe pour la machine et rien de mesuré. Elle se prend à l'année.\n\nSi vos informations ne peuvent pas sortir de votre propre bâtiment, c'est **Enterprise**, et la conversation commence par l'endroit où cela doit tourner."
     },
     {
       "question": "Faut-il signer pour un an ?",
-      "answer": "Seulement pour Dédiée et Enterprise. La **Licence Lite** se prend au mois à 86 $ par personne, ou à l'année à 75 $ — le même écart de 15 % que montre le sélecteur ci-dessus.\n\nDédiée et Enterprise se prennent à l'année parce que les deux supposent de mettre des machines de côté pour votre entreprise en particulier, et cette capacité reste réservée que vous l'utilisiez ou non une semaine donnée."
+      "answer": "Seulement pour Dédiée et Enterprise. La **Licence Lite** se prend au mois à 179 $ par personne, ou à l'année à 149 $ — le même écart, d'environ 17 %, que montre le sélecteur ci-dessus.\n\nDédiée et Enterprise se prennent à l'année parce que les deux supposent de mettre des machines de côté pour votre entreprise en particulier, et cette capacité reste réservée que vous l'utilisiez ou non une semaine donnée."
     },
     {
       "question": "Pourquoi l'utiliser davantage ne coûte-t-il pas plus cher ?",

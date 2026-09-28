@@ -98,7 +98,7 @@ author: "Runink"
 {
   "options": [
     { "label": "Pagamento Mensal", "value": "monthly" },
-    { "label": "Pagamento Anual (15% Menos)", "value": "yearly" }
+    { "label": "Pagamento Anual (Cerca de 17% Menos)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -112,8 +112,8 @@ author: "Runink"
       "name": "LICENÇA LITE",
       "subtitle": "PARA EQUIPES DE 1 A 9 PESSOAS",
       "price_color": "stone",
-      "price_monthly": "86",
-      "price_yearly": "75",
+      "price_monthly": "179",
+      "price_yearly": "149",
       "price_subtitle": "POR PESSOA, POR MÊS",
       "credits": "COMPUTAÇÃO INCLUÍDA<br>DE UMA RESERVA COMPARTILHADA",
       "outcome_strategies": [
@@ -124,7 +124,7 @@ author: "Runink"
       ],
       "features": [
         "RODA EM UMA MÁQUINA COMPARTILHADA COM OUTROS CLIENTES",
-        "CAPACIDADE DE COMPUTAÇÃO INCLUÍDA COM CADA PESSOA",
+        "36.000 UNIDADES DE COMPUTAÇÃO POR PESSOA POR MÊS, COMUNS A TODA A EQUIPE",
         "O CONJUNTO PADRÃO DE ASSISTENTES AUTOMÁTICOS",
         "O PONTO DE PARTIDA PARA UMA PRIMEIRA EQUIPE"
       ],
@@ -140,19 +140,19 @@ author: "Runink"
       "name": "LICENÇA DEDICADA",
       "subtitle": "PARA 10 PESSOAS OU MAIS",
       "price_color": "orange",
-      "price_monthly": "75",
-      "price_yearly": "75",
-      "price_subtitle": "POR PESSOA, POR MÊS",
-      "credits": "COMPUTAÇÃO INCLUÍDA<br>DA SUA PRÓPRIA RESERVA",
+      "price_monthly": "149",
+      "price_yearly": "149",
+      "price_subtitle": "POR PESSOA, POR MÊS, MAIS $1.500 POR MÊS PELA SUA PRÓPRIA MÁQUINA",
+      "credits": "SUA PRÓPRIA MÁQUINA<br>NADA É MEDIDO",
       "outcome_strategies": [
-        {"label": "O QUE DEFINE A CONTA", "value": "Quantas pessoas você licencia. Não quanto elas usam."},
+        {"label": "O QUE DEFINE A CONTA", "value": "Quantas pessoas você licencia, mais uma taxa mensal fixa pela sua máquina."},
         {"label": "COMPROMISSO MÍNIMO", "value": "Um ano."},
         {"label": "SE RECUPERARMOS DINHEIRO PARA VOCÊ", "value": "20% do que for recuperado. Nada quando nada é recuperado."},
         {"label": "TAXA DE ATIVAÇÃO AUTOMÁTICA", "value": "De 1% a 3%, nunca mais de $50."}
       ],
       "features": [
         "RODA EM MÁQUINAS RESERVADAS SÓ PARA SUA EMPRESA",
-        "5.000 UNIDADES POR PESSOA, MAIS 10.000 A CADA 10",
+        "NADA É MEDIDO: A MÁQUINA É SUA",
         "SEU PRÓPRIO ENDEREÇO NA WEB",
         "PRIORIDADE SOBRE A CAPACIDADE QUE VOCÊ PAGA"
       ],
@@ -229,23 +229,23 @@ author: "Runink"
     },
     {
       "question": "O que eu estou pagando, afinal?",
-      "answer": "Assentos. Um **assento** é uma pessoa que usa o Runink. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.\n\nCada assento também vem com uma cota de capacidade de computação: o tempo de máquina que o Runink usa para ler seus documentos, conferir seus registros e redigir o trabalho. Essa cota está incluída no preço do assento. Você não é cobrado por pergunta, por documento nem por relatório.\n\nEstes assentos são do FACE. PULSE e CORE são produtos separados, cada um com sua própria assinatura. As únicas taxas adicionais a um assento do FACE são as taxas de uso sobre as ações automáticas do FACE, detalhadas acima."
+      "answer": "Assentos. Um **assento** é uma pessoa que usa o Runink. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.\n\nCada assento também vem com uma cota de capacidade de computação: o tempo de máquina que o Runink usa para ler seus documentos, conferir seus registros e redigir o trabalho. Essa cota está incluída no preço do assento. Você não é cobrado por pergunta, por documento nem por relatório.\n\nEstes assentos são do FACE. PULSE e CORE são produtos separados, cada um com sua própria assinatura. A Licença Dedicada acrescenta uma taxa mensal fixa pela sua própria máquina; fora isso, as únicas taxas adicionais a um assento do FACE são as taxas de uso sobre as ações automáticas do FACE, detalhadas acima."
     },
     {
       "question": "O que é uma Unidade de Computação?",
-      "answer": "É a forma como o Runink conta o trabalho. Cada análise que o Runink executa consome **Unidades de Computação** da sua cota — uma coleta do FACE, por exemplo, consome 25 unidades —, de modo que o que foi concedido a você e o que você já gastou sejam expressos nos mesmos termos, e os dois números ficam na tela do console em vez de chegarem no fim do mês.\n\nCada assento **Dedicado** traz 5.000 unidades, e sua organização recebe mais 10.000 unidades a cada 10 assentos contratados. Essas unidades são comuns a todos, então uma semana pesada de uma pessoa sai da mesma cota que uma semana tranquila de outra."
+      "answer": "É a forma como o Runink conta o trabalho em uma máquina compartilhada. Cada análise que o Runink executa consome **Unidades de Computação** da sua cota, de modo que o que foi concedido a você e o que você já gastou sejam expressos nos mesmos termos, e os dois números ficam na tela do console em vez de chegarem no fim do mês.\n\nCada assento **Lite** traz 36.000 unidades por mês. Essas unidades são comuns a toda a equipe, então uma semana pesada de uma pessoa sai da mesma cota que uma semana tranquila de outra.\n\nNa **Dedicada** e na **Enterprise** as máquinas ficam reservadas para você, então nada é medido."
     },
     {
       "question": "O que acontece se passarmos da cota?",
-      "answer": "As unidades usadas além da cota são cobradas a **$0,10 por 100 unidades**. Na prática, essa linha fica vazia no trabalho comum do dia a dia e aparece quando você roda algo muito grande de uma vez só: reprocessar um ano de documentos em uma tarde, por exemplo. Para um lote grande e pontual, o tempo de máquina também está disponível como opção à parte, a **$5,00 por hora**.\n\nVocê vê o total acumulado no console e pode fixar um orçamento, de modo que a primeira notícia de um mês pesado não seja a fatura."
+      "answer": "Na **Licença Lite**, as unidades usadas além da cota são cobradas a **$0,10 por 100 unidades**. Na prática, essa linha fica vazia no trabalho comum do dia a dia e aparece quando você roda algo muito grande de uma vez só: reprocessar um ano de documentos em uma tarde, por exemplo. A Dedicada e a Enterprise não são medidas, então não há o que ultrapassar.\n\nVocê vê o total acumulado no console e pode fixar um orçamento, de modo que a primeira notícia de um mês pesado não seja a fatura."
     },
     {
       "question": "Qual licença serve para nós?",
-      "answer": "Conte primeiro as suas pessoas.\n\nMenos de dez: a **Licença Lite**. Ela roda em uma máquina compartilhada com outros clientes e é a única que pode ser contratada mês a mês, então uma avaliação não exige um compromisso de um ano.\n\nDez ou mais: a **Licença Dedicada** custa menos por pessoa e roda em máquinas reservadas só para a sua empresa, com o seu próprio endereço na web e prioridade sobre a capacidade que você paga. Ela é contratada por um ano.\n\nSe as suas informações não podem sair do seu próprio prédio, isso é **Enterprise**, e a conversa começa por onde ele precisa rodar."
+      "answer": "Conte primeiro as suas pessoas.\n\nMenos de dez: a **Licença Lite**. Ela roda em uma máquina compartilhada com outros clientes e é a única que pode ser contratada mês a mês, então uma avaliação não exige um compromisso de um ano.\n\nDez ou mais: a **Licença Dedicada** roda em máquinas reservadas só para a sua empresa, com o seu próprio endereço na web, uma taxa mensal fixa pela máquina e nada medido. Ela é contratada por um ano.\n\nSe as suas informações não podem sair do seu próprio prédio, isso é **Enterprise**, e a conversa começa por onde ele precisa rodar."
     },
     {
       "question": "Precisamos assinar por um ano?",
-      "answer": "Só na Dedicada e na Enterprise. A **Licença Lite** pode ser contratada mês a mês por $86 por pessoa, ou por um ano por $75: a mesma diferença de 15% que o seletor acima mostra.\n\nA Dedicada e a Enterprise são contratadas por um ano porque as duas envolvem separar máquinas para a sua empresa especificamente, e essa capacidade fica reservada quer você a use ou não em uma dada semana."
+      "answer": "Só na Dedicada e na Enterprise. A **Licença Lite** pode ser contratada mês a mês por $179 por pessoa, ou por um ano por $149: a mesma diferença, de cerca de 17%, que o seletor acima mostra.\n\nA Dedicada e a Enterprise são contratadas por um ano porque as duas envolvem separar máquinas para a sua empresa especificamente, e essa capacidade fica reservada quer você a use ou não em uma dada semana."
     },
     {
       "question": "Por que usar mais não custa mais?",
