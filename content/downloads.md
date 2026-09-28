@@ -10,7 +10,7 @@ layout: "company"
 # was rewritten: this file used to call the server image "Runink River").
 # The previous version set the three side by side in one row of equal cards,
 # which read as one product family with three equal members.
-description: "Get the Runink FACE app for Android, the separate Runink PULSE app, or request access to the Runink Server image, which puts Runink CORE on hardware you own."
+description: "Get the Runink FACE app for Android, the separate Runink PULSE app, install the open-source Runink River workstation with one command, or request access to the Runink Server image, which puts Runink CORE on hardware you own."
 date: "2026-08-11T00:00:00Z"
 ---
 
@@ -27,14 +27,15 @@ date: "2026-08-11T00:00:00Z"
   <div class="max-w-6xl mx-auto">
 
     <p class="text-stone-400 mb-10 max-w-3xl">
-      Three separate things live on this page. <strong class="text-stone-200">Runink FACE</strong>
+      Four separate things live on this page. <strong class="text-stone-200">Runink FACE</strong>
       is our main product. It reads your logistics records on its own and drafts the
       action; a named person approves it. <strong class="text-stone-200">Runink PULSE</strong> is a different
       product for market analysis and marketing, listed here because it ships an
       app too, not because it is part of FACE. The
       <strong class="text-stone-200">Runink Server</strong> image is neither: it
       is the server image carrying Runink CORE, a separate product in its own right, which is the answer to
-      where your data is processed and who can see it.
+      where your data is processed and who can see it. <strong class="text-stone-200">Runink River</strong> is the
+      open-source developer workstation the server image is built on, and it installs with one command.
     </p>
 
     <!-- NOTE: these three cards used to carry the pre-migration vendor palette
@@ -86,6 +87,22 @@ date: "2026-08-11T00:00:00Z"
       <a href="{{< contacturl >}}"
          class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide bg-signal-fill hover:bg-signal-fill-hover text-on-fill transition-colors">
         Request Access
+      </a>
+    </div>
+
+    <div class="md:col-span-3 h-full bg-stone-800 p-8 rounded-lg shadow-lg border border-stone-700 flex flex-col">
+      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink River — open source — any Linux machine</div>
+      <h3 class="text-2xl font-bold text-white mb-3">The developer workstation, in one command</h3>
+      <p class="text-stone-400 mb-6 flex-1 max-w-3xl">
+        Downloads the latest Runink River release and checks its signature against the
+        Runink River Release Engineering key, fingerprint
+        <code class="text-stone-200">95C0 A7B9 7D54 7413 E426 60DD B06F E756 26F1 5BF3</code>, and its sha256.
+        An image that fails either check is refused, and nothing runs as root.
+      </p>
+      <pre class="mb-6 overflow-x-auto rounded bg-stone-900 p-4 text-sm text-stone-200"><code>curl -fsSL https://raw.githubusercontent.com/org-runink/river/main/install.sh | sh</code></pre>
+      <a href="/river/"
+         class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide bg-signal-fill hover:bg-signal-fill-hover text-on-fill transition-colors">
+        Install Runink River
       </a>
     </div>
 
