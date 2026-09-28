@@ -1,10 +1,30 @@
-# This is a basic workflow to help you get started with Actions
+# Build, gate and publish runink.org.
+#
+# WHERE IT RUNS (owner decision 2026-09-28: Actions use Runink's own runners)
+#
+#   * push to main, and pull requests from a branch of THIS repository:
+#     [self-hosted, public-ci] -- the dedicated runner set for the public repos
+#     (ephemeral, one job per runner, no route to internal systems, no runner
+#     secrets). Never the private repos' runners (k8s, cluster-egress,
+#     ci-inference-caller).
+#   * pull requests from a FORK: GitHub-hosted ubuntu-latest, read-only token,
+#     no secrets (GitHub withholds them from fork runs), and the deploy steps
+#     are skipped. Fork code never reaches a self-hosted runner from this file.
+#     Both jobs run the SAME steps (the YAML anchor `site-steps` below), so a
+#     fork PR gets the identical build and gates.
+#
+# The `if:` guards route unmodified workflows correctly. A fork PR can also edit
+# this file, so the real control for fork code is the repository setting
+# "Require approval for all external contributors" (a maintainer reads the
+# workflow diff before approving the run).
+#
+# What the public-ci runner must provide: outbound HTTPS to github.com,
+# nodejs.org/npm, go.dev (Node, pnpm, Hugo and Go are installed by the steps),
+# git, tar, and about 2 GB of disk. No docker, no sudo, no KVM.
 
 name: Deploy Github Pages
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
@@ -16,7 +36,11 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    name: build, gate and deploy (self-hosted public-ci)
+    # push to main, or a pull request whose head branch lives in this repository.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, public-ci]
+    timeout-minutes: 30
 
     # The repo and org default_workflow_permissions is "read", which makes the
     # gh-pages push below fail with 403 (github-actions[bot] denied). Request
@@ -25,18 +49,22 @@ jobs:
     # narrower than the read-everything default it replaces.
     #
     # contents: write -- actions-gh-pages publishes by force-pushing a commit
-    # to the gh-pages branch, which is a write to repository contents. No other
-    # scope is used: nothing here comments on PRs, touches packages, or uses
-    # the native Pages deployment API (which would need pages/id-token).
+    # to the gh-pages branch, which is a write to repository contents. The
+    # native Pages deployment (pages: write, id-token: write) is its own job,
+    # `pages` at the bottom, so this job never holds those scopes.
     permissions:
       contents: write
 
-    steps:
+    steps: &site-steps
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         env:
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         with:
+          # The deploy step authenticates with its own github_token input; no
+          # step needs the token left in .git/config, which on a self-hosted
+          # runner would outlive the step that needed it.
+          persist-credentials: false
           submodules: recursive
           # Full history, because hugo.toml sets enableGitInfo and maps
           # frontmatter lastmod to :git; a shallow clone gives Hugo no commit
@@ -53,7 +81,7 @@ jobs:
         run: git submodule update --init --recursive --force
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         env:
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         with:
@@ -237,7 +265,7 @@ jobs:
         run: pnpm run build
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
         with:
           hugo-version: '0.147.3'
           extended: true
@@ -352,6 +380,17 @@ jobs:
       # page may be dense prose without being marketing copy, and a taxonomy
       # listing whose score is meaningless still has a readable title. So an
       # excluded page is ungated on its score and still gated on its vocabulary.
+      # The two `go run` gates below (GOTOOLCHAIN=local) used the Go that the
+      # GitHub-hosted image preinstalls. A self-hosted runner brings none, so
+      # install it here, pinned to the go directive of the repo's only Go
+      # module. No cache: a cache another run wrote must not feed a gate
+      # (cache poisoning), and these are stdlib-only scripts.
+      - name: Setup Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6.5.0
+        with:
+          go-version-file: scripts/mirror/go.mod
+          cache: false
+
       - name: Check plain-language floor
         env:
           GOTOOLCHAIN: local
@@ -462,11 +501,62 @@ jobs:
       # never touch gh-pages: that branch is what runink.org serves, and the
       # publish below is a force push with force_orphan, so a PR build
       # overwriting it is not reversible.
-      - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3
+      #
+      # Two publishing paths, chosen by the repository variable
+      # SITE_PAGES_SOURCE, so the owner can switch without a code change:
+      #   * unset (today): force-push docs/ to gh-pages, which Pages serves as
+      #     a branch source. GitHub then runs its own "pages build and
+      #     deployment" workflow for the branch, and that one always runs on a
+      #     GitHub-hosted runner.
+      #   * 'actions': upload docs/ as a Pages artifact and deploy it with
+      #     actions/deploy-pages in the `pages` job below (OIDC, works from a
+      #     self-hosted runner), which removes the GitHub-hosted run. Set it in
+      #     the same minute as switching Settings > Pages > Source to "GitHub
+      #     Actions"; the custom domain (static/CNAME, runink.org) carries over.
+      - name: Deploy to GitHub Pages (gh-pages branch)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SITE_PAGES_SOURCE != 'actions'
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
           publish_branch: gh-pages
           force_orphan: true
+
+      - name: Upload the site as a Pages artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SITE_PAGES_SOURCE == 'actions'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ./docs
+
+  # Pull requests from forks: the same steps, on a GitHub-hosted runner with a
+  # read-only token. Every deploy step above is gated on a push to main, so
+  # nothing is published from here, and repository secrets are not passed to
+  # fork runs (the three HUGO_PARAMS_* URLs are empty there, as they always were).
+  build-fork-pr:
+    name: build and gate (fork PR, GitHub-hosted)
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps: *site-steps
+
+  # Native Pages deployment, only when SITE_PAGES_SOURCE is 'actions' (see the
+  # deploy steps above). deploy-pages authenticates with the job's OIDC token,
+  # so it works from a self-hosted runner; it needs no checkout.
+  pages:
+    name: deploy to GitHub Pages (actions source)
+    needs: deploy
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SITE_PAGES_SOURCE == 'actions'
+    runs-on: [self-hosted, public-ci]
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
