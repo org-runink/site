@@ -283,7 +283,7 @@ author: "Runink"
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "Seats. A **seat** is one person who uses Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nEach seat also comes with an allowance of computing capacity — the machine time Runink uses to read your documents, check your records and draft the work. That allowance is included in the seat price. You are not billed by the question, the document or the report.\n\nOne seat covers FACE, CORE, PULSE and FORGE (in preview). The only fees on top of it are the usage fees on FACE's automated actions, set out above."
+      "answer": "Seats. A **seat** is one person who uses Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nEach seat also comes with an allowance of computing capacity — the machine time Runink uses to read your documents, check your records and draft the work. That allowance is included in the seat price. You are not billed by the question, the document or the report.\n\nThese seats are for FACE. PULSE and CORE are separate products, each sold with its own subscription. The only fees on top of a FACE seat are the usage fees on FACE's automated actions, set out above."
     },
     {
       "question": "What is a Compute Unit?",

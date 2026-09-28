@@ -229,7 +229,7 @@ author: "Runink"
     },
     {
       "question": "O que eu estou pagando, afinal?",
-      "answer": "Assentos. Um **assento** é uma pessoa que usa o Runink. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.\n\nCada assento também vem com uma cota de capacidade de computação: o tempo de máquina que o Runink usa para ler seus documentos, conferir seus registros e redigir o trabalho. Essa cota está incluída no preço do assento. Você não é cobrado por pergunta, por documento nem por relatório.\n\nUm mesmo assento cobre FACE, CORE, PULSE e FORGE (em prévia). As únicas taxas adicionais são as taxas de uso sobre as ações automáticas do FACE, detalhadas acima."
+      "answer": "Assentos. Um **assento** é uma pessoa que usa o Runink. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.\n\nCada assento também vem com uma cota de capacidade de computação: o tempo de máquina que o Runink usa para ler seus documentos, conferir seus registros e redigir o trabalho. Essa cota está incluída no preço do assento. Você não é cobrado por pergunta, por documento nem por relatório.\n\nEstes assentos são do FACE. PULSE e CORE são produtos separados, cada um com sua própria assinatura. As únicas taxas adicionais a um assento do FACE são as taxas de uso sobre as ações automáticas do FACE, detalhadas acima."
     },
     {
       "question": "O que é uma Unidade de Computação?",

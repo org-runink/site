@@ -28,7 +28,7 @@ rp:
     - { text: "Read the CORE paper", url: "/blog/whitepapers/runink-core/", style: "ghost" }
     - { text: "📖 Read the docs", url: "https://docs.runink.org/core/", style: "ghost" }
     # Documentation: All Runink product docs at docs.runink.org/<product>/
-  fine: "A product in its own right, covered by the same Runink seat as FACE · in English, Spanish, French and Portuguese"
+  fine: "A product in its own right, sold separately · in English, Spanish, French and Portuguese"
   plate:
     name: "Runink CORE"
     sub: "One console, five parts. Each answers one question."
