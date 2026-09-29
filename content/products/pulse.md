@@ -254,9 +254,9 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
 {{< section-container class="py-16" >}}
 <div class="max-w-4xl mx-auto px-4">
     <div class="border-l-4 border-signal pl-6 space-y-4">
-        <h2 class="text-2xl font-bold text-white">It ships as part of the Runink Server.</h2>
+        <h2 class="text-2xl font-bold text-white">It arrives as part of the upcoming Runink Server.</h2>
         <p class="text-lg text-slate-300 leading-relaxed">
-            PULSE is part of the same Runink Server build as Runink CORE — with FORGE inside it — and Runink FACE. A company standing up the Server gets PULSE already there, not a separate product to source and wire in afterwards. PULSE, FACE and CORE stay billed separately: what changes is that they arrive together.
+            PULSE is part of the same Runink Server build as Runink CORE — with FORGE inside it — and Runink FACE. A company standing up the Server will get PULSE already there, not a separate product to source and wire in afterwards. PULSE, FACE and CORE stay billed separately: what changes is that they arrive together.
         </p>
     </div>
 </div>

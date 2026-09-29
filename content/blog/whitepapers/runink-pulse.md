@@ -73,9 +73,10 @@ positioning, your customer records and your pipeline stay inside your estate. Th
 property of how the product is built, not a policy setting you have to trust somebody to
 honour.
 
-PULSE now ships as part of the current Runink Server build — the same install that carries
-Runink CORE, with FORGE inside it, and Runink FACE. A company standing up the Server gets
-PULSE already there, not a separate product to source and wire in afterwards.
+PULSE is part of the current Runink Server build, arriving in the upcoming release — the same
+install that carries Runink CORE, with FORGE inside it, and Runink FACE. A company standing up
+the Server will get PULSE already there, not a separate product to source and wire in
+afterwards.
 
 ## The problem, in your terms
 
