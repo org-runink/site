@@ -10,7 +10,26 @@ next_about: "Runink CORE"
 #
 # No screenshot. The only console screenshot in the core repository shows an error
 # screen, so the hero carries the console's five parts as type instead of an invented
-# picture of a screen.
+# picture of a screen. Checked again 2026-09-29: core/.claude/skills/run-core/
+# console-screenshot.png is still the "Cannot reach the console API" error state, not
+# a fresh capture, so the typographic treatment stands.
+#
+# Enriched 2026-09-29, staying inside the `rp.features` grid this layout already uses
+# (layouts/_default/product.html has no {{ .Content }} slot, so a page here cannot
+# grow past its rp: fields the way content/products/face.md can). Three cards added:
+# `trust` (Harness + Judgements, DataEx section), `local` (CORE's own egress-audit
+# paragraph, added to the whitepaper the same day — see that file's own note), and
+# `cost` (the lease/no-meter material from "It runs the same way everywhere" and "The
+# model is yours"). All three summarise paragraphs the paper already carried but this
+# page had not used.
+#
+# Deliberately NOT added: a "Backlog hunter" agent and built-in GitHub CI runners,
+# both real work in progress this session but not yet shipped. CONTENT.md rule 2 bars
+# stating what a product "plans to add", with no exception for a clearly-labelled
+# "upcoming" tag, so neither goes on this public page or into the paper until each
+# actually ships — at which point it is a `rp.features` item here and a new section
+# there, the same way FORGE was added when it existed to describe. Flagged for the
+# owner in the PR description rather than guessed around.
 #
 # The name is spelled out as the core README defines it: Control · Orchestration ·
 # Resilience · Enforcement (owner, 2026-09-26: every product name spelled out).
@@ -62,9 +81,12 @@ rp:
       - { k: "overview", title: "Start the day in one look", body: "Headline readings, then a *Needs attention* list, worst first, each item linking to the page that deals with it. Ask CORE, the assistant, does a task in plain words and shows every step it took." }
       - { k: "devex", title: "Know what shipped", body: "GitOps shows whether what is running matches what was written down. Deploy lineage shows whether a change reached production. Press *Verify now* on the Audit chain and it names the first record that was altered." }
       - { k: "dataex", title: "AI you can answer for", body: "Model cards list each model's source, version, licence and test evidence, checked against what is live. Autonomy is a setting you choose for each kind of action, and every kind starts with a person approving each act." }
+      - { k: "trust", title: "A second opinion before you act", body: "Findings on the Harness arrive with a proposed remedy — start a named helper, file a tracking item, or acknowledge it — confirmed and written to the Audit chain before it happens. Where a finding matters, an independent assessor reads the evidence first and says whether it agrees, disagrees or could not judge, never blended into a score." }
       - { k: "intelligence", title: "See what your data holds", body: "Dashboards for the analyst, the finance lead and the programme office, built on one set of figures. Data quality, capital spending, business rules and lineage, each computed from your own records or shown as absent with the reason." }
       - { k: "resolve", title: "An inventory read, not remembered", body: "Resolve maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
+      - { k: "local", title: "No outbound connection, in our own test run", body: "In our audit run, CORE made no outbound connection while testing, exploring, mapping and assessing your sources; integrations you turn on, such as GitHub or Stripe, connect only to their own services. That was one run, about six seconds, on a development machine, with Chrome and the host out of scope, no model wired in, and no such integration configured for it." }
       - { k: "forge", title: "From a brief to an application", body: "In preview. Describe what you want in plain words. The company's own model proposes the steps on a canvas, and nothing is filed until a person approves. The brief stays with the model you run yourself; we are confirming there is no other path out before promising more than that." }
+      - { k: "cost", title: "Your own machines, not a bill that grows", body: "One command runs the whole platform on a workstation; one command puts it onto machines you own, in the same shape. Deployments carry a lease and an owner, and the platform removes them when the lease ends. Because the model runs on hardware you already own, asking it more does not raise the bill — budgeting becomes a capacity decision made once, not a bill read every month." }
   steps:
     heading: "See it on your own hardware"
     intro: "CORE runs on one machine, from one downloaded file, with one command. The version on your workstation is the version that runs on your machines."
