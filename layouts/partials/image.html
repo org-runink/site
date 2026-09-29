@@ -26,17 +26,31 @@
   {{ end }}
   
   {{ if $img }}
-    {{/* EXIF Extraction (if missing manual fields) */}}
+    {{/* EXIF Extraction (if missing manual fields). Guarded on SubType: an SVG
+         is not a processable image resource and $img.Exif errors outright
+         rather than returning nil, which used to abort the whole render the
+         first time a page (this one) pointed the figure shortcode at an SVG —
+         every prior caller happened to pass a raster image. */}}
+    {{ if ne $img.MediaType.SubType "svg" }}
     {{ if $img.Exif }}
       {{ if eq $caption "" }}{{ with $img.Exif.Tags.ImageDescription }}{{ $caption = . }}{{ $alt = . }}{{ end }}{{ end }}
       {{ if eq $creator "" }}{{ with $img.Exif.Tags.Artist }}{{ $creator = . }}{{ end }}{{ end }}
       {{ if eq $license "" }}{{ with $img.Exif.Tags.Copyright }}{{ $license = . }}{{ end }}{{ end }}
     {{ end }}
+    {{ end }}
 
     {{ if eq $img.MediaType.SubType "svg" }}
       {{ $finalUrl = $img.RelPermalink }}
-      {{ $finalWidth = $img.Width }}
-      {{ $finalHeight = $img.Height }}
+      {{/* An SVG only exposes Width/Height when its root element carries
+           explicit width/height attributes (Hugo's ImageResourceWithMeta).
+           A viewBox-only SVG — every figure under assets/figures/whitepapers/
+           is exactly this — does not, and calling .Width on it errors outright
+           rather than returning zero. Guarded rather than assumed: the browser
+           renders an <img> with no width/height fine off the viewBox. */}}
+      {{ if reflect.IsImageResourceWithMeta $img }}
+        {{ $finalWidth = $img.Width }}
+        {{ $finalHeight = $img.Height }}
+      {{ end }}
     {{ else }}
       {{ $resized := $img.Resize (printf "%s webp" $width) }}
       {{ $finalUrl = $resized.RelPermalink }}

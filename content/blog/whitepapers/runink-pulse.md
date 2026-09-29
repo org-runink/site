@@ -9,7 +9,7 @@ product: "Runink PULSE"
 subtitle: "Prescriptive Unified Lead & Social Engine"
 description: "A whitepaper for executives, marketing leaders and the people who sign off on where company data goes. One application your own team operates, on hardware you control."
 weight: 30
-date: 2026-09-03T00:00:00Z
+date: 2026-09-29T00:00:00Z
 source_pages: 23
 audience: "Executives, marketing leaders, and the people who sign off on where company data goes"
 blurb: "One application a marketing team operates directly. It audits your website and social presence, researches your market, prospects the public web for leads, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft with a status and an approve against it, on channels that stay disarmed until you arm them."
@@ -72,6 +72,11 @@ runs on hardware you control, on your own premises or on your own group of machi
 positioning, your customer records and your pipeline stay inside your estate. This is a
 property of how the product is built, not a policy setting you have to trust somebody to
 honour.
+
+PULSE is part of the current Runink Server build, arriving in the upcoming release — the same
+install that carries Runink CORE, with FORGE inside it, and Runink FACE. A company standing up
+the Server will get PULSE already there, not a separate product to source and wire in
+afterwards.
 
 ## The problem, in your terms
 
@@ -290,9 +295,14 @@ already work.
 
 **Voice.** A voice sales agent handles conversation directly. In the console it is
 press-to-talk: you speak, it listens, the sales specialist responds, and the reply is
-spoken back — all on your own machines. For outbound calling, PULSE connects to a telephone
-exchange you host yourself, so calls run through infrastructure you own rather than a
-per-minute service.
+spoken back — all on your own machines, on the same pair of speech engines every Runink
+console speaks and listens with, in CORE and FACE as much as here. For outbound calling,
+PULSE connects to a telephone exchange you host yourself, so calls run through
+infrastructure you own rather than a per-minute service.
+
+**WhatsApp.** A lead can also be reached on WhatsApp, through your own Twilio connection.
+It is optional: without one configured, the channel is simply off, and nothing else in
+PULSE depends on it.
 
 ## Create: one brief, every channel
 
@@ -750,14 +760,16 @@ You should not, on trust. You should run the two-step test on page 23 and look a
 with your own name notionally on it, because that is the only judgement that matters for
 material you will publish.
 
-What the product does to earn that look is four things. Every audit score opens out into the
+What the product does to earn that look is five things. Every audit score opens out into the
 measures beneath it and then into the individual checks, so a number is always traceable to
 what was actually examined. Generation streams as it happens, so a wrong direction is visible
 while it is being taken. Every piece carries an explicit status and an explicit approve or
 reject, and every publishing channel is disarmed until somebody arms it — with the honest
-boundary between those two controls set out on page 18 rather than blurred. And the
-weightings behind the scoring are settings you can read, which means you can disagree with
-them specifically rather than in general.
+boundary between those two controls set out on page 18 rather than blurred. The weightings
+behind the scoring are settings you can read, which means you can disagree with them
+specifically rather than in general. And a diagnostic in progress carries a reasoning trace —
+the real actions it took and the sources behind them, alongside the streaming text — so a
+finding is something you can open up rather than something you take on faith.
 
 ## What adopting PULSE involves
 
