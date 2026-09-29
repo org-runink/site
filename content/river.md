@@ -19,6 +19,15 @@ description: "Runink River is a developer workstation on s6: KDE Plasma, the lin
 # https://github.com/org-runink/river is public, and the documentation is served at
 # https://docs.runink.org/river/. Both answer 200, so the page links them.
 #
+# 2026-09-29: each "Built for people who ship data work" card now links the matching
+# docs page, the installer split section links the installer guide, and the closing
+# band links the brand-assets page. Every path was curled for a 200 and a matching
+# <title> against docs.runink.org/river/sitemap.xml before use (none of these are
+# guesses): docs/features/{s6,kernel,zfs-encryption,firewall,sandbox}/, docs/security/,
+# docs/features/installer/, docs/brand/. The security card links docs/security/
+# (the section index) rather than a docs/features/security/ page, since the sitemap
+# has no such page.
+#
 # The one-line install (the steps band's terminal) runs the repository's install.sh.
 # Every claim about it was checked against install.sh on main: it downloads the latest
 # release, verifies SHA256SUMS.asc against the pinned Release Engineering key
@@ -63,17 +72,18 @@ rp:
       - "**With or without internet.** It copies the running system onto your disk, so it needs nothing from the network."
       - "**A recovery key, shown once.** Write it down or save it to a second stick before you go on."
     shot: { src: "/images/products/river/installer-disk.jpg", w: 1280, h: 800, bar: "Your computer", alt: "The installer's machine screen: processor and memory, and the one disk it will erase, shown with its serial number." }
+    link: { text: "Read the installer guide", url: "https://docs.runink.org/river/docs/features/installer/" }
   features:
     id: "inside"
     heading: "Built for people who ship data work"
     intro: "Six parts, each small enough to read and each chosen so the machine behaves the same way every time it starts."
     items:
-      - { k: "init", title: "s6, never systemd", body: "s6 starts the machine and supervises every service. The desktop, Bluetooth and printing are s6 services too. Services are plain directories you can read, not unit files." }
-      - { k: "kernel", title: "linux-runink", body: "The zen kernel on the 7.2.x stable series, tuned for long data jobs: 250 Hz, lazy preemption, huge pages on request, BBR. The desktop boots with full preemption, so Plasma stays quick." }
-      - { k: "storage", title: "Encrypted ZFS, with rollback", body: "Every dataset sits under one encryption root, and `/home` has its own. Take a snapshot of the system before an update, and one reboot takes you back to it. Swap lives in RAM." }
-      - { k: "network", title: "Default-deny firewall", body: "Nothing gets in unless you open it, and everything you start can go out. It loads before the network does. Wi-Fi, DHCP and printers on your network keep working, and SSH stays closed until you list it." }
-      - { k: "sandbox", title: "river-sandbox", body: "Run a build script from a pull request, or code a model wrote, with no network unless you ask and no way to reach your keys or secrets. A request for one of those folders is refused, not trimmed." }
-      - { k: "security", title: "Kept locked down", body: "CPU mitigations and memory hardening stay on. Modules are signed with a key made for each build. Secret files are owned by one account, and their modes are checked again at every boot." }
+      - { k: "init", title: "s6, never systemd", body: "s6 starts the machine and supervises every service. The desktop, Bluetooth and printing are s6 services too. Services are plain directories you can read, not unit files.", url: "https://docs.runink.org/river/docs/features/s6/" }
+      - { k: "kernel", title: "linux-runink", body: "The zen kernel on the 7.2.x stable series, tuned for long data jobs: 250 Hz, lazy preemption, huge pages on request, BBR. The desktop boots with full preemption, so Plasma stays quick.", url: "https://docs.runink.org/river/docs/features/kernel/" }
+      - { k: "storage", title: "Encrypted ZFS, with rollback", body: "Every dataset sits under one encryption root, and `/home` has its own. Take a snapshot of the system before an update, and one reboot takes you back to it. Swap lives in RAM.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
+      - { k: "network", title: "Default-deny firewall", body: "Nothing gets in unless you open it, and everything you start can go out. It loads before the network does. Wi-Fi, DHCP and printers on your network keep working, and SSH stays closed until you list it.", url: "https://docs.runink.org/river/docs/features/firewall/" }
+      - { k: "sandbox", title: "river-sandbox", body: "Run a build script from a pull request, or code a model wrote, with no network unless you ask and no way to reach your keys or secrets. A request for one of those folders is refused, not trimmed.", url: "https://docs.runink.org/river/docs/features/sandbox/" }
+      - { k: "security", title: "Kept locked down", body: "CPU mitigations and memory hardening stay on. Modules are signed with a key made for each build. Secret files are owned by one account, and their modes are checked again at every boot.", url: "https://docs.runink.org/river/docs/security/" }
   steps:
     heading: "Install with one command"
     intro: "Run this on any Linux machine. It downloads the latest Runink River release and checks it against the Runink River Release Engineering key, fingerprint `95C0 A7B9 7D54 7413 E426 60DD B06F E756 26F1 5BF3`, published at [runink.org/.well-known/gpg-key.txt](/.well-known/gpg-key.txt) and in the repository's KEYS file. It also checks the image's sha256. An image that fails either check is refused."
@@ -98,4 +108,5 @@ rp:
     cta:
       - { text: "Book a consultation", url: "/#contact", style: "primary" }
       - { text: "Explore Runink's products", url: "/products/", style: "ghost" }
+      - { text: "Brand assets", url: "https://docs.runink.org/river/docs/brand/", style: "ghost" }
 ---
