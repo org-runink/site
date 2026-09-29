@@ -41,16 +41,15 @@
 
     {{ if eq $img.MediaType.SubType "svg" }}
       {{ $finalUrl = $img.RelPermalink }}
-      {{/* An SVG only exposes Width/Height when its root element carries
-           explicit width/height attributes (Hugo's ImageResourceWithMeta).
-           A viewBox-only SVG — every figure under assets/figures/whitepapers/
-           is exactly this — does not, and calling .Width on it errors outright
-           rather than returning zero. Guarded rather than assumed: the browser
-           renders an <img> with no width/height fine off the viewBox. */}}
-      {{ if reflect.IsImageResourceWithMeta $img }}
-        {{ $finalWidth = $img.Width }}
-        {{ $finalHeight = $img.Height }}
-      {{ end }}
+      {{/* An SVG only exposes Width/Height when its root element carries explicit
+           width/height attributes (Hugo's ImageResourceWithMeta) -- a viewBox-only SVG,
+           every figure under assets/figures/whitepapers/ included, does not, and calling
+           .Width on one errors outright rather than returning zero.
+           reflect.IsImageResourceWithMeta would guard that, but it does not exist in the
+           CI-pinned Hugo 0.147.3 (only in newer Hugo) -- it passed a local build on a newer
+           Hugo and broke the pinned CI build, so it is not used here. Simplest safe fix:
+           never read Width/Height off an SVG at all. The browser renders an <img> with
+           neither attribute fine off the viewBox; no page has needed them for one. */}}
     {{ else }}
       {{ $resized := $img.Resize (printf "%s webp" $width) }}
       {{ $finalUrl = $resized.RelPermalink }}
