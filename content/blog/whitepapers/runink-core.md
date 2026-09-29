@@ -4,6 +4,11 @@ headline: "Run your software, your AI and your data on your own machines, and se
 # The label the closing ask carries into the contact form, so an enquiry
 # arrives naming the paper it came from. `product:` is not usable for this —
 # two of the four papers are both "Runink CORE".
+#
+# Added 2026-09-29: a paragraph under "Where does our information go?" reporting
+# CORE's own egress audit run, on the same footing FACE's paper already carries
+# for its own audit run (limits stated in the sentence itself, never "provably").
+# content/products/core.md's features grid carries the same fact, shortened.
 next_about: "The Runink CORE paper"
 product: "Runink CORE"
 subtitle: "The operations layer for companies that keep their own data"
@@ -1198,6 +1203,15 @@ engineering conversation can use the same figure.
 **Where does our information go?**
 To machines you own. The model, the records, the files and the certificate
 authority all run on your hardware. No outside service is called for AI.
+
+In our audit run, CORE made no outbound connection while testing, exploring,
+mapping and assessing your sources. Integrations you turn on, such as GitHub or
+Stripe, connect only to their own services. That was one run, about six
+seconds, on a development machine: Chrome and the host itself were out of
+scope, no model was wired in, so the model path went untested, and no GitHub,
+Stripe or metrics integration was configured for it. Ask us where the wider
+check — every path, on every release — stands before you rely on it going
+further.
 
 **Is our material used to train anything?**
 No. Nothing is sent out to be trained on, and there is no account with an
