@@ -53,6 +53,37 @@ product_subcategory: "IT operations, AI governance and application platform"
 # unqualified /core-pricing/ beside the generic /pricing/. content/products/
 # _index.md is a hand-curated switchboard (`items`, not a section listing), so
 # adding this file does not add an unwanted card there.
+#
+# 2026-10-01: removed two sentences that promised a CONSOLE CAPABILITY CORE does
+# not have yet. The "What is a Compute Unit?" answer said what you were given and
+# what you have used are "both readable in the console rather than arriving at the
+# end of the month", and the overage answer said "You can see the running total in
+# the console and set a budget against it, so the first you hear of a heavy month
+# is not the invoice." Neither is true for CORE today: core's own
+# grpc/operators/core/internal/console/billing_ui.go states it in its header —
+# "Meter NONE. CORE keeps no per-tenant usage ledger; /api/finops is allocated-CU
+# showback, not metered usage" — so the console renders "Compute units: Not
+# measured", and a grep of the console and billing packages finds no compute-spend
+# budget feature at all (the "budget" hits are a refresh timer, the customer's own
+# CapEx KPIs, and the assistant's token budget). A buyer sold visible usage would
+# have discovered this after paying, which is CONTENT.md rule 2 and rule 4.
+#
+# WHAT WAS DELIBERATELY KEPT: the prices and the overage terms ($0.10 per 100
+# units, 10%/20% for units bought ahead) and the 18,000-unit allowance. Those are
+# owner-approved model-v2 commercial terms from the billing catalogue, not product
+# capability claims, and this page's own rule above is to change the catalogue
+# first. Also kept: FACE's and PULSE's equivalent wording on content/pricing.md and
+# content/products/pulse.md, because BOTH of those are backed — FACE has a real
+# tenant-scoped ledger (consumedCU in face/grpc/cmd/core_services.go) plus
+# GetComputeBudget/persistComputeBudgets, and PULSE meters through
+# billing.Meter.Usage(MetricComputeUnits) in grpc/cmd/metering_service.go. CORE was
+# the only one of the three without a meter.
+#
+# PUT BOTH SENTENCES BACK when CORE's meter is in a RELEASE, not merely merged.
+# org-runink-30 is wiring CORE's meter now by reusing FACE's accounting through
+# ui/billing's shared UsageStore/UsageMeter (owner decision 2026-10-01: reuse, do
+# not rebuild) and will report the merge and the release separately. Merged is not
+# shipped — the same bar this repo used for the digital-twin copy.
 ---
 
 {{< pricing-table-2 >}}
@@ -255,11 +286,11 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "What is a Compute Unit?",
-      "answer": "It is how Runink counts work on its shared machines. What CORE runs for you — the assistant, the Harness, the helpers, FORGE — draws **Compute Units** from your allowance, so that what you were given and what you have used are stated in the same terms, both readable in the console rather than arriving at the end of the month.\n\nEvery **Lite** seat carries 18,000 units a month, pooled across the team. On **Dedicated** and **Enterprise** the work runs in your own cloud or on your own servers, and units are unlimited."
+      "answer": "It is how Runink counts work on its shared machines. What CORE runs for you — the assistant, the Harness, the helpers, FORGE — draws **Compute Units** from your allowance.\n\nEvery **Lite** seat carries 18,000 units a month, pooled across the team. On **Dedicated** and **Enterprise** the work runs in your own cloud or on your own servers, and units are unlimited."
     },
     {
       "question": "What happens if we go over the allowance?",
-      "answer": "On the **Lite Licence**, you choose how to pay for more. Units beyond the allowance are charged as you go at **$0.10 per 100 units**, or you can buy units in advance: **10% less** for a month's worth, **20% less** for a year's. Dedicated and Enterprise have no allowance to go over.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
+      "answer": "On the **Lite Licence**, you choose how to pay for more. Units beyond the allowance are charged as you go at **$0.10 per 100 units**, or you can buy units in advance: **10% less** for a month's worth, **20% less** for a year's. Dedicated and Enterprise have no allowance to go over."
     },
     {
       "question": "Which licence fits us?",
