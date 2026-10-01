@@ -10,7 +10,7 @@ subtitle: "Fulfilment Autonomous Claims Engine"
 description: "A whitepaper for operations, finance and supply-chain leadership. How Runink FACE reads your operational data, works out what is going wrong, and drafts the fix for a named person to approve."
 weight: 10
 date: 2026-09-03T00:00:00Z
-source_pages: 30
+source_pages: 31
 audience: "Operations, finance and supply-chain leadership"
 blurb: "Scattered across a dozen systems that were never designed to talk to each other. FACE assembles it, works out what the combined picture means, and produces a specific, reviewable recommendation with the underlying records attached — for a named person to approve."
 deck: |
@@ -40,13 +40,14 @@ register:
   - { page: 18, title: "How control is kept" }
   - { page: 19, title: "Compliance posture" }
   - { page: 20, title: "What it connects to" }
-  - { page: 21, page_end: 23, title: "The questions a buyer asks" }
-  - { page: 24, title: "Who this is for" }
-  - { page: 25, page_end: 26, title: "What it is worth, computed on your own numbers" }
-  - { page: 27, title: "What adopting it involves" }
-  - { page: 28, title: "The commercial shape" }
-  - { page: 29, title: "The argument in one page" }
-  - { page: 30, title: "The next step" }
+  - { page: 21, title: "Coming in the next Server release" }
+  - { page: 22, page_end: 24, title: "The questions a buyer asks" }
+  - { page: 25, title: "Who this is for" }
+  - { page: 26, page_end: 27, title: "What it is worth, computed on your own numbers" }
+  - { page: 28, title: "What adopting it involves" }
+  - { page: 29, title: "The commercial shape" }
+  - { page: 30, title: "The argument in one page" }
+  - { page: 31, title: "The next step" }
 ---
 
 ## What this document is
@@ -1267,6 +1268,110 @@ Where an operation already runs its own analytical infrastructure, work can
 be sent to it directly — including a path that executes inside Snowflake,
 and the setting up of Databricks clusters and jobs — so the analysis runs
 close to the data rather than moving the data to the analysis.
+
+## Coming in the next Server release
+
+Everything earlier in this paper describes FACE as it runs today. This
+chapter describes work that is finished and accepted into FACE, and that
+arrives with the next release of the Runink Server. It reaches your machines
+when that release is installed, so ask us which release you are running
+before you plan around any of it.
+
+### A working model of your site
+
+FACE will keep a model of the operation itself — what is often called a
+digital twin. It holds your sites, docks, trailers, pallets and the devices
+on them, and how each one relates to the others: the pallet is on the
+trailer, the trailer is at the dock, the dock is part of the site.
+
+Each item can carry the identifier the GS1 EPCIS 2.0 standard gives it — the
+same numbering your trading partners already use for locations and shipping
+units. An identifier is checked before it is accepted, check digit
+included.
+
+Devices have a register of their own. Each one is expected to report in on a
+stated schedule, and a device that misses its check-ins is shown as a device
+fault. A probe that has gone quiet reads as a problem to fix, not as a calm
+night.
+
+### Sensor readings, around the clock
+
+A sensor feed can be kept open all the time, so a reading taken at three in
+the morning is heard at three in the morning. FACE listens over MQTT, the
+messaging standard most sensor hubs and reefer controllers already publish
+on.
+
+Each reading is written to an encrypted store before FACE accepts it. If the
+connection drops, the readings waiting on the hub are collected when it
+comes back.
+
+### Unusual readings, raised for a person
+
+As readings arrive, FACE watches each stream for values that leave the range
+the source itself states, or that break from the stream's own pattern.
+
+What it finds is a proposal for a person. It joins the queue with the
+readings behind it, and someone acknowledges it or dismisses it with a
+reason. Their name goes on the record either way. Any action that follows
+goes through the same approval as everything else in this paper.
+
+### Factory plans and building drawings
+
+Upload the plan of a site and FACE reads it. Building models in IFC and
+drawings in DXF — the open formats that design tools export — are read
+directly. A scanned plan in a PDF, or a photograph of one, is read by the
+vision model running on your own hardware. What it sees comes back as
+proposals, and an operator confirms or rejects each one before it counts.
+For a DWG file, the answer is to export it as DXF or IFC from your drawing
+tool and upload that.
+
+From a plan, FACE works out:
+
+- the area of each zone;
+- where the doors and docks are, and which zones each one connects;
+- the shortest route from one area to another through the doors;
+- whether each door is wide enough for a vehicle width you enter, such as a
+  forklift's. A door whose width the drawing does not give is marked not
+  measured, never passed.
+
+Ask it to explain the plan and each point in the answer cites the measured
+fact it came from. An answer that cites nothing is marked as unsupported.
+
+Zones, docks and yard slots that an operator confirms become part of the
+site model above. A sensor placed in a zone then shows up on the plan where
+it is.
+
+### Paperwork read from the camera
+
+Photograph a bill of lading, a packing list, an invoice or a checklist, and
+FACE reads it into fields and tables rather than one block of text.
+
+It then checks what can be checked. Quantity times unit price is set against
+each line total, and the columns are added up against the stated total. The
+check digits on GS1 shipping and product numbers, and on container numbers,
+are verified.
+
+Anything it cannot confirm is flagged for a person to check. Each value
+stays exactly as it was read: FACE marks it rather than changing it. A
+person can correct a value, and the correction is recorded with their name,
+next to the original reading.
+
+### Who may decide what
+
+Each kind of action can be given a level of authority, set as written
+policy:
+
+- **advisory** — it is advice, and nothing is sent;
+- **guarded** — one named person approves it;
+- **dual approval** — two different people approve it, for example above a
+  value you choose or where safety or regulation is involved;
+- **deny** — it is not allowed to run.
+
+Before any approved action runs, FACE writes an entry in a decision log:
+who decided, under which rule, on which records. If that entry cannot be
+written, the action does not run. Each entry is chained to the one before
+it, so an entry that is later changed, removed or reordered shows up when
+the log is checked.
 
 ## The questions a buyer asks
 
