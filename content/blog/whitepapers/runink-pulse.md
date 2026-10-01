@@ -820,8 +820,9 @@ from Runink's other products. Current pricing is published on runink.org. Three 
 offered, told apart by where the work runs.
 
 **Lite licence** — for teams of one to nine seats, running on Runink's shared machines,
-where your work takes its turn alongside other customers'. It is available on monthly or
-annual commitment. This is the entry point for a small marketing function, and the monthly
+where your work takes its turn alongside other customers'. Each seat gets 10 tasks a day at
+full speed; after that, tasks keep running at a slower pace until midnight in the person's
+own time zone, when the count starts again. It is available on monthly or annual commitment. This is the entry point for a small marketing function, and the monthly
 option means an evaluation does not require an annual contract.
 
 **Dedicated licence** — for ten seats and above, on annual commitment, running on runners in
