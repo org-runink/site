@@ -1,7 +1,7 @@
 ---
 title: "Runink River"
 layout: "product"
-description: "Runink River is a developer workstation on s6: KDE Plasma, the linux-runink kernel, an encrypted ZFS root with boot environments, a default-deny firewall, river-sandbox and a graphical installer, for data and AI work on hardware you own."
+description: "Runink River is a developer workstation on s6: KDE Plasma, the linux-runink kernel, an encrypted ZFS disk with snapshot rollback, a default-deny firewall, river-sandbox and a graphical installer, for data and AI work on hardware you own."
 # Where this page comes from. It is the Runink River landing page the owner approved
 # for the river repository's documentation site (branch docs/hugo-site, river#128),
 # moved here so runink.org holds the product page and the river docs hold the detail.
@@ -43,6 +43,34 @@ description: "Runink River is a developer workstation on s6: KDE Plasma, the lin
 # rp.features (each card already links its docs page) and papers; the hero now leads
 # with why an open-source workstation matters before naming the kernel.
 #
+# 2026-10-01 (mine): CONTENT.md rule 3 pass — same business-value/less-jargon restyle
+# already done to the CORE/FACE/PULSE product pages, applied here. Changed: the ZFS
+# "boot environments" / "encryption root" vocabulary (hero promise, meta description,
+# the storage card body) into plain language — "an encrypted ZFS disk with snapshot
+# rollback" and "the whole disk is encrypted, and `/home` is encrypted separately" —
+# since a buyer has no use for either implementation term, and the storage card
+# already explained the rollback mechanism in plain English without naming it. The
+# kernel card's engineering parameter list ("250 Hz, lazy preemption, huge pages on
+# request, BBR") became outcome language: what a heavy background job does to the
+# desktop and to memory and network, not the scheduler/timer settings that produce
+# it. The "s6, never systemd" feature-card title became "See exactly what's
+# running" — the business value is transparency about what's running, which the
+# card's own body already states ("plain directories you can read, not unit
+# files"); s6 is still named there, once, for a reader who wants the precise term.
+# The matching "s6 / PID 1" fact-card value became "one program starts and
+# supervises everything" for the same reason, keeping "s6" as the stat label.
+# Left alone, on purpose: the "RIVER · Raft-Integrated Validated Event Runtime"
+# lockup — it is the same deliberate, owner-approved acronym-spelling pattern as
+# CORE's "Control · Orchestration · Resilience · Enforcement" lockup, and it is
+# repeated verbatim on the homepage (all four languages) and content/products/_index.md;
+# changing it here only would make this page disagree with the rest of the site, and
+# those pages are out of scope for a river.md-only pass. Also left alone: the
+# "default-deny firewall" wording (already plain) and the "aes-256-gcm" /
+# "7.2.x zen" fact-card stats (precise, correct technical names used the same way
+# the FACE/CORE passes kept other exact figures and terms). No availability,
+# release-status or CTA wording touched: "Get the source" / "Read the
+# documentation" and their URLs are byte-for-byte what they were before this pass.
+#
 # English only, like /downloads/, so no translation is left behind.
 #
 # The share card: 1200x675, the site's og:image frame (see baseof.html). Rendered
@@ -53,7 +81,7 @@ rp:
   logo: "/images/brand/river-mark.svg"
   lockup: "RIVER · Raft-Integrated Validated Event Runtime"
   title: "The developer workstation, now open source."
-  promise: "Every line of Runink River is public today, free to read and build on. Underneath: KDE Plasma on s6, never systemd, the zen-based `linux-runink` kernel, an encrypted ZFS root with boot environments, a default-deny firewall and a graphical installer, for data, analytics and AI work on hardware you own."
+  promise: "Every line of Runink River is public today, free to read and build on. Underneath: KDE Plasma on s6, never systemd, the zen-based `linux-runink` kernel, an encrypted ZFS disk with snapshot rollback, a default-deny firewall and a graphical installer, for data, analytics and AI work on hardware you own."
   cta:
     - { text: "Get the source", url: "https://github.com/org-runink/river", style: "primary" }
     - { text: "Read the documentation", url: "https://docs.runink.org/river/", style: "ghost" }
@@ -65,7 +93,7 @@ rp:
   facts:
     - { k: "7.2.x zen", v: "one kernel, built from signed sources" }
     - { k: "aes-256-gcm", v: "every ZFS dataset, from the first boot" }
-    - { k: "s6", v: "PID 1 and every service on the machine" }
+    - { k: "s6", v: "one program starts and supervises everything" }
     - { k: "4 languages", v: "English, Spanish, French and Portuguese in the installer" }
   split:
     eyebrow: "Graphical installer"
@@ -83,9 +111,9 @@ rp:
     heading: "Built for people who ship data work"
     intro: "Six parts, each small enough to read and each chosen so the machine behaves the same way every time it starts."
     items:
-      - { k: "init", title: "s6, never systemd", body: "s6 starts the machine and supervises every service. The desktop, Bluetooth and printing are s6 services too. Services are plain directories you can read, not unit files.", url: "https://docs.runink.org/river/docs/features/s6/" }
-      - { k: "kernel", title: "linux-runink", body: "The zen kernel on the 7.2.x stable series, tuned for long data jobs: 250 Hz, lazy preemption, huge pages on request, BBR. The desktop boots with full preemption, so Plasma stays quick.", url: "https://docs.runink.org/river/docs/features/kernel/" }
-      - { k: "storage", title: "Encrypted ZFS, with rollback", body: "Every dataset sits under one encryption root, and `/home` has its own. Take a snapshot of the system before an update, and one reboot takes you back to it. Swap lives in RAM.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
+      - { k: "init", title: "See exactly what's running", body: "s6 starts the machine and supervises every service. The desktop, Bluetooth and printing are s6 services too. Services are plain directories you can read, not unit files.", url: "https://docs.runink.org/river/docs/features/s6/" }
+      - { k: "kernel", title: "linux-runink", body: "The zen kernel on the 7.2.x stable series, tuned for long-running data jobs: it keeps a heavy job running efficiently instead of switching away from it, hands out memory in larger blocks for big data sets, and keeps network transfers fast under load. The desktop still boots with full preemption, so Plasma stays responsive while that job runs in the background.", url: "https://docs.runink.org/river/docs/features/kernel/" }
+      - { k: "storage", title: "Encrypted ZFS, with rollback", body: "The whole disk is encrypted, and `/home` is encrypted separately from the rest of the system. Take a snapshot of the system before an update, and one reboot takes you back to it. Swap lives in RAM.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
       - { k: "network", title: "Default-deny firewall", body: "Nothing gets in unless you open it, and everything you start can go out. It loads before the network does. Wi-Fi, DHCP and printers on your network keep working, and SSH stays closed until you list it.", url: "https://docs.runink.org/river/docs/features/firewall/" }
       - { k: "sandbox", title: "river-sandbox", body: "Run a build script from a pull request, or code a model wrote, with no network unless you ask and no way to reach your keys or secrets. A request for one of those folders is refused, not trimmed.", url: "https://docs.runink.org/river/docs/features/sandbox/" }
       - { k: "security", title: "Kept locked down", body: "CPU mitigations and memory hardening stay on. Modules are signed with a key made for each build. Secret files are owned by one account, and their modes are checked again at every boot.", url: "https://docs.runink.org/river/docs/security/" }
