@@ -50,11 +50,10 @@ next_about: "Runink CORE"
 # same sentence they appear in or are plain enough compound English not to need a
 # gloss. No fact changed — only the label and the sentence around it.
 #
-# Updated 2026-10-01 (owner decision): a `devices` card for the built-in MQTT
-# broker on the Runink Server image. It is built but not yet shipped, so the owner
-# chose to state it as "coming in the next Runink Server release" — a narrow,
-# dated exception to the note above about upcoming work; drop the label when that
-# release ships. The `papers` pricing note now follows /products/core-pricing/
+# Updated 2026-10-01: a `devices` card was added and taken out again the same day;
+# it goes back only on the CORE owner's word that the Server release carrying it has
+# passed acceptance (the parked text is kept outside this repo). The note above about
+# upcoming work stands. The `papers` pricing note now follows /products/core-pricing/
 # (priced by where CORE runs, a team allowance of Compute Units, sold on its own)
 # and says nothing about where the allowance is read until that can be shown.
 #
@@ -113,7 +112,6 @@ rp:
       - { k: "resolve", title: "An inventory read, not remembered", body: "Resolve maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
       - { k: "local", title: "No outbound connection, in our own test run", body: "In our audit run, CORE made no outbound connection while testing, exploring, mapping and assessing your sources; integrations you turn on, such as GitHub or Stripe, connect only to their own services. That was one run, about six seconds, on a development machine, with Chrome and the host out of scope, no model wired in, and no such integration configured for it." }
       - { k: "forge", title: "From a brief to an application", body: "In preview. Describe what you want in plain words. The company's own model proposes the steps on a canvas, and nothing is filed until a person approves. The brief stays with the model you run yourself; we are confirming there is no other path out before promising more than that." }
-      - { k: "devices", title: "Sensors that report to your own server", body: "Coming in the next Runink Server release. The Server image, which puts CORE on machines you own, gains a built-in MQTT broker: the meeting point where sensors and devices send their readings. It is built from source. Each device and the broker prove who they are to each other with certificates (mutual TLS), and warnings are set to sound well before any reading is lost. The readings go to your own server and stay there." }
       - { k: "cost", title: "Your own machines, not a bill that grows", body: "One command runs the whole platform on a workstation; one command puts it onto machines you own, in the same shape. Deployments carry a lease and an owner, and the platform removes them when the lease ends. Because the model runs on hardware you already own, asking it more does not raise the bill — budgeting becomes a capacity decision made once, not a bill read every month." }
   steps:
     heading: "See it on your own hardware"
