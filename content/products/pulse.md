@@ -157,7 +157,7 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
         <ul class="space-y-6 mt-8">
             <li><span class="text-signal font-bold block mb-1">Market research</span> <span class="text-slate-300">Trending topics in your sector, competitor channels worth watching, and the podcasts, publications and events where your subject belongs. Mark a result useful or not, and the next round learns from it — the improvement stays with your account.</span></li>
             <li><span class="text-signal font-bold block mb-1">Lead prospecting</span> <span class="text-slate-300">Describe a niche and PULSE searches the public web for matching companies. For each one it drafts a cold email, a call script and a LinkedIn message, written from what is known about that specific company. Leads move through a pipeline — new, contacted, qualified, won or lost — and synchronise with HubSpot, so sales keeps working where it already works.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Voice, and WhatsApp</span> <span class="text-slate-300">A voice sales agent handles conversation directly: press-to-talk in the console, on the same pair of speech engines every Runink console uses, all on your own machines. For outbound calling, PULSE connects to a telephone exchange you host yourself. A lead can also be reached on WhatsApp through your own Twilio connection — optional, and the channel is simply off without one.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Voice, and WhatsApp</span> <span class="text-slate-300">A voice sales agent handles conversation directly — press-to-talk in the console, listening and replying as the call happens, all on your own machines. For outbound calling, PULSE connects to a telephone exchange you host yourself. A lead can also be reached on WhatsApp through your own Twilio connection — optional, and the channel is simply off without one.</span></li>
         </ul>
     </div>
 </div>
@@ -289,7 +289,7 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
         },
         {
             "question": "Does it need training on our business first?",
-            "answer": "No, and there is nothing to label or upload in advance. The model PULSE writes with is held as weight files on your own machine, the same on your first day and your five hundredth. What makes the output yours is reading at the moment of the question: your site audit, your positioning documents, your prior material and your customer records are indexed on your machine, and the relevant passages are retrieved and placed into the brief as it is written, with the source travelling alongside. Deleting a document removes its influence entirely — nothing is left behind in a set of weights."
+            "answer": "No, and there is nothing to label or upload in advance. The model PULSE writes with lives on your own machine as a file, the same on your first day and your five hundredth. What makes the output yours is reading at the moment of the question: your site audit, your positioning documents, your prior material and your customer records are indexed on your machine, and the relevant passages are retrieved and placed into the brief as it is written, with the source travelling alongside. Deleting a document removes its influence entirely — nothing is left behind in the model."
         },
         {
             "question": "What happens when it cannot work something out?",
