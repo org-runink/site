@@ -31,6 +31,25 @@ next_about: "Runink CORE"
 # there, the same way FORGE was added when it existed to describe. Flagged for the
 # owner in the PR description rather than guessed around.
 #
+# Restyled 2026-10-01 (owner request): "DevEx" and "DataEx" are CORE's own internal
+# console menu-category names (Developer Experience / Data Experience) and had been
+# exposed straight to a buyer with no gloss, in the `plate` facts row, the `facts`
+# count and the `features` item keys — exactly the "vocabulary that names an
+# implementation" CONTENT.md rule 3 says to delete. Fixed by leading every
+# buyer-facing spot with the plain-language outcome (delivery confidence; AI you can
+# govern and trust) and demoting DevEx/DataEx to a one-line parenthetical gloss for
+# a reader who already knows CORE's own console — never the primary label. The
+# `features` card titles ("Know what shipped", "AI you can answer for") already did
+# this correctly and are untouched; only their small `k` kicker tags, which had
+# literally rendered the raw labels "devex"/"dataex" in small caps above the title,
+# are renamed. Same treatment for "the Harness" in the `trust` card, which CONTENT.md
+# also names as a console-menu term worth checking: it is now glossed once, in
+# parentheses, at its first mention on the page. FORGE, Resolve, GitOps and "Audit
+# chain" were checked and left alone — FORGE is a named, intentionally-branded studio
+# the paper introduces as such; the other three are either already explained in the
+# same sentence they appear in or are plain enough compound English not to need a
+# gloss. No fact changed — only the label and the sentence around it.
+#
 # The name is spelled out as the core README defines it: Control · Orchestration ·
 # Resilience · Enforcement (owner, 2026-09-26: every product name spelled out).
 #
@@ -53,14 +72,14 @@ rp:
     sub: "One console, five parts. Each answers one question."
     rows:
       - { k: "Overview", v: "Is anything wrong, and where do I go next?" }
-      - { k: "DevEx", v: "Is the platform running, and did our changes ship?" }
-      - { k: "DataEx", v: "What may our models and agents do, and can we trust their work?" }
+      - { k: "Delivery", v: "Is the platform running, and did our changes actually ship? (CORE's own console calls this part DevEx.)" }
+      - { k: "AI governance", v: "What may our models and agents do, and can we trust their work? (CORE's own console calls this part DataEx.)" }
       - { k: "Intelligence", v: "What does our data hold, and where do money or controls slip?" }
       - { k: "FORGE (preview)", v: "How does a written brief become a working application?" }
     foot: "It asks before it acts."
   mission: "Where does our information go? To a machine you own, *and it stays there.*"
   facts:
-    - { k: "5 parts", v: "Overview, DevEx, DataEx, Intelligence and FORGE (in preview), on one menu" }
+    - { k: "5 parts", v: "Overview, Delivery, AI governance, Intelligence and FORGE (in preview), on one menu" }
     - { k: "1 command", v: "brings the whole platform up on one workstation" }
     - { k: "your model", v: "the assistant, the helpers and FORGE all run on your hardware" }
     - { k: "every action", v: "recorded with a name, in a record anyone signed in can verify" }
@@ -79,9 +98,9 @@ rp:
     intro: "Every page opens the same way: one status line, a headline, and where the reading came from and when it was taken."
     items:
       - { k: "overview", title: "Start the day in one look", body: "Headline readings, then a *Needs attention* list, worst first, each item linking to the page that deals with it. Ask CORE, the assistant, does a task in plain words and shows every step it took." }
-      - { k: "devex", title: "Know what shipped", body: "GitOps shows whether what is running matches what was written down. Deploy lineage shows whether a change reached production. Press *Verify now* on the Audit chain and it names the first record that was altered." }
-      - { k: "dataex", title: "AI you can answer for", body: "Model cards list each model's source, version, licence and test evidence, checked against what is live. Autonomy is a setting you choose for each kind of action, and every kind starts with a person approving each act." }
-      - { k: "trust", title: "A second opinion before you act", body: "Findings on the Harness arrive with a proposed remedy — start a named helper, file a tracking item, or acknowledge it — confirmed and written to the Audit chain before it happens. Where a finding matters, an independent assessor reads the evidence first and says whether it agrees, disagrees or could not judge, never blended into a score." }
+      - { k: "delivery", title: "Know what shipped", body: "GitOps shows whether what is running matches what was written down. Deploy lineage shows whether a change reached production. Press *Verify now* on the Audit chain and it names the first record that was altered." }
+      - { k: "govern", title: "AI you can answer for", body: "Model cards list each model's source, version, licence and test evidence, checked against what is live. Autonomy is a setting you choose for each kind of action, and every kind starts with a person approving each act." }
+      - { k: "trust", title: "A second opinion before you act", body: "Findings arrive with a proposed remedy — start a named helper, file a tracking item, or acknowledge it — confirmed and written to the Audit chain before it happens. (CORE's console calls this queue the Harness.) Where a finding matters, an independent assessor reads the evidence first and says whether it agrees, disagrees or could not judge, never blended into a score." }
       - { k: "intelligence", title: "See what your data holds", body: "Dashboards for the analyst, the finance lead and the programme office, built on one set of figures. Data quality, capital spending, business rules and lineage, each computed from your own records or shown as absent with the reason." }
       - { k: "resolve", title: "An inventory read, not remembered", body: "Resolve maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
       - { k: "local", title: "No outbound connection, in our own test run", body: "In our audit run, CORE made no outbound connection while testing, exploring, mapping and assessing your sources; integrations you turn on, such as GitHub or Stripe, connect only to their own services. That was one run, about six seconds, on a development machine, with Chrome and the host out of scope, no model wired in, and no such integration configured for it." }
