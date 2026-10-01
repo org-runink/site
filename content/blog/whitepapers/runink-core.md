@@ -10,9 +10,9 @@ headline: "Run your software, your AI and your data on your own machines, and se
 # for its own audit run (limits stated in the sentence itself, never "provably").
 # content/products/core.md's features grid carries the same fact, shortened.
 #
-# Updated 2026-10-01 (owner): a "Sensors and devices report to your own server"
-# section, labelled as coming in the next Runink Server release because it is
-# built but not yet shipped; change that label when the release ships. The
+# Updated 2026-10-01: a "Sensors and devices report to your own server" section
+# was added and taken out again the same day; it goes back only on the CORE
+# owner's word that the Server release carrying it has passed acceptance. The
 # commercial model now follows the pricing page (priced by where CORE runs, a
 # team allowance of Compute Units, sold on its own), and no longer says where
 # the allowance is read; that sentence returns once it can be shown.
@@ -1040,20 +1040,6 @@ records can be verified by anyone signed in.
 **The result:** assurance becomes a by-product of the work rather than a
 project. The cost of answering who did what, when and why is paid by the system
 as it runs.
-
-### Sensors and devices report to your own server
-
-This is coming in the next Runink Server release. The Runink Server image puts
-CORE on machines you own. It gains a built-in MQTT broker: the meeting point
-where sensors and devices send their readings. The broker is built from source,
-like the rest of the image. Each device and the broker prove who they are to
-each other with certificates, which is called mutual TLS. The broker keeps
-track of how full its queue of waiting readings is, and its warnings are set to
-sound well before any reading is lost.
-
-**The result:** readings from a factory floor, a warehouse or a cold room go to
-a machine you own and stay there. The answer to "where does our information
-go?" stays the same for your devices as for everything else in this paper.
 
 ## Who CORE is for
 
