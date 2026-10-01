@@ -170,6 +170,45 @@ FACE is the product that reads all of it, and it is the one this company is buil
 
 {{< /section-container >}}
 
+{{< section-container class="py-20" >}}
+<div class="max-w-5xl mx-auto px-4">
+    <div class="mb-16 max-w-3xl">
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">Coming in the next Server release</div>
+        <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">What arrives with the next release.</h2>
+        <p class="text-xl text-ink-2 leading-relaxed">Everything above is FACE as it runs today. The six items below are finished and accepted into FACE, and they arrive with the next release of the Runink Server. They reach your machines when that release is installed, so ask us which release you are running before you plan around them.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
+            <h3 class="text-2xl font-bold text-white mb-4">A working model of your site</h3>
+            <p class="text-slate-300">FACE will keep a model of the operation itself, often called a digital twin: your sites, docks, trailers, pallets and the devices on them, and how each relates to the others. Items carry the identifiers of the GS1 EPCIS 2.0 standard, the numbering your trading partners already use. Each device is expected to report in on a stated schedule, and one that misses its check-ins shows as a device fault.</p>
+        </div>
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
+            <h3 class="text-2xl font-bold text-white mb-4">Sensor readings, around the clock</h3>
+            <p class="text-slate-300">A sensor feed can stay open all the time over MQTT, the messaging standard most sensor hubs and reefer controllers already use, so a reading at three in the morning is heard at three in the morning. Each reading is written to an encrypted store before it is accepted, and readings waiting on the hub are collected when a dropped connection comes back.</p>
+        </div>
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
+            <h3 class="text-2xl font-bold text-white mb-4">Unusual readings, raised for a person</h3>
+            <p class="text-slate-300">FACE watches each stream for readings that leave their stated range or break from the stream's own pattern. What it finds is a proposal: it joins the queue with the readings behind it, and a named person acknowledges it or dismisses it with a reason. Any action that follows goes through the same approval as everything else on this page.</p>
+        </div>
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
+            <h3 class="text-2xl font-bold text-white mb-4">Factory plans and building drawings</h3>
+            <p class="text-slate-300">IFC building models and DXF drawings are read directly. A scanned plan or a photo of one is read by the vision model on your own hardware, as proposals an operator confirms. FACE works out zone areas, where the doors and docks are, routes between areas, and whether each door is wide enough for a vehicle width you enter, such as a forklift's. Ask it to explain the plan and each point cites the fact it came from. Confirmed zones join the site model. For a DWG file, export it as DXF or IFC and upload that.</p>
+        </div>
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
+            <h3 class="text-2xl font-bold text-white mb-4">Paperwork read from the camera</h3>
+            <p class="text-slate-300">Photograph a bill of lading, a packing list, an invoice or a checklist, and FACE reads it into fields and tables. It checks line totals and column totals, and the check digits on GS1 shipping numbers and container numbers. Anything it cannot confirm is flagged for a person to check, and every value stays as it was read until a person corrects it.</p>
+        </div>
+        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
+            <h3 class="text-2xl font-bold text-white mb-4">Who may decide what</h3>
+            <p class="text-slate-300">Each kind of action gets a level of authority, set as written policy: advisory, guarded by one approver, dual approval by two different people, or deny. Before any approved action runs, FACE writes who decided, under which rule and on which records into a decision log. Each entry is chained to the last, so a changed or missing entry shows up when the log is checked.</p>
+        </div>
+    </div>
+
+    <p class="text-lg text-ink-2 leading-relaxed mt-10">The long version of each, with what a person sees and confirms, is in the <a href="/blog/whitepapers/runink-face/" class="text-signal underline decoration-signal/40 hover:decoration-signal">FACE paper</a>.</p>
+</div>
+{{< /section-container >}}
+
 {{< section-container class="py-20 bg-stone-900" >}}
 <div class="max-w-5xl mx-auto px-4">
     <div class="mb-16 max-w-3xl">
