@@ -416,8 +416,7 @@ assistant hands work to. You can add a specialist, see the roster, and activate 
 deactivate any of them — which means the division of labour is something you configure
 rather than something you infer.
 
-**Billing** shows which plan you are on, how many people are licensed, and how much computing
-capacity you have used, and lets you set a budget for that capacity.
+**Billing** shows which plan you are on and how many people are licensed.
 
 The console runs in a browser, as an Android application from Google Play, and as a Linux
 desktop application. It keeps a copy of results on the machine itself, so a review session in
@@ -815,31 +814,30 @@ end of the second.
 
 ## Commercial model
 
-Licensing is per seat — one seat for each person who uses the software — with a shared
-allowance of computing capacity. That allowance is counted in a unit called a Compute Unit,
-so what you have and what you have used are stated in the same terms. Current pricing is
-published on runink.org. Three levels are offered, told apart by where the work runs.
+Licensing is per seat — one seat for each person who uses the software — and the seat
+covers the work that person puts through it. PULSE is sold on its own subscription, apart
+from Runink's other products. Current pricing is published on runink.org. Three levels are
+offered, told apart by where the work runs.
 
-**Lite licence** — for teams of one to nine seats, running on Runink's shared machines with
-Compute Units included, available on monthly or annual commitment. This is the entry point for a small
-marketing function, and the monthly option means an evaluation does not require an annual
-contract.
+**Lite licence** — for teams of one to nine seats, running on Runink's shared machines,
+where your work takes its turn alongside other customers'. It is available on monthly or
+annual commitment. This is the entry point for a small marketing function, and the monthly
+option means an evaluation does not require an annual contract.
 
 **Dedicated licence** — for ten seats and above, on annual commitment, running on runners in
-your own cloud account (a Google Cloud project, or a Databricks or Snowflake account) with
-no limit on Compute Units. Your cloud bills you for that compute directly.
+your own cloud account (a Google Cloud project, or a Databricks or Snowflake account). Your
+cloud bills you for that compute directly.
 
 **Enterprise** — quoted with you. It includes deployments you host yourself on your own
 premises, including those with no connection to the outside world, with
 a fuller record of who did what and terms set to your requirements. This is the level for regulated industries and for organisations whose
 deployment must sit entirely inside their own boundary.
 
-What you use is visible in the console rather than arriving as a surprise. The Billing
-screen shows which plan you are on, how many people are licensed and how many Compute Units
-have been used, and lets you set a budget for them.
+What you pay is visible in the console rather than arriving as a surprise. The Billing
+screen shows which plan you are on and how many people are licensed.
 
-The economics are what changes behaviour. The cost is a function of the capacity you run, not
-of how much work you put through it. Under a per-word or per-generation arrangement, every additional draft is a
+The economics are what changes behaviour. The cost is a function of how many people use it,
+not of how much work they put through it. Under a per-word or per-generation arrangement, every additional draft is a
 decision with a price attached, and teams ration accordingly — one angle per campaign, one
 language, one format. When the marginal cost of an additional draft is the electricity to
 produce it, the rationing stops, and the second angle, the third language and the fourth
@@ -903,7 +901,7 @@ the input the sponsor cares about most and the one marketing least often produce
 | Add | **Coverage gained** — see the caution below | Additional pieces the same team can now produce × the value of a piece to you |
 | Add | **Responses that become possible** | Days removed from decision-to-publish × occasions per year when timing decided whether it was worth publishing at all |
 | Add | **Pipeline effect** | Deals worked that would not have been worked × your win rate × average deal value |
-| Subtract | **Cost side** | Seats × the published price + the machine you run |
+| Subtract | **Cost side** | Seats × the published price, plus your own cloud's bill for that compute on Dedicated |
 
 Sum the four, subtract the fifth, divide the annual result by the monthly cost, and you have
 a payback period in months. This paper does not state one, because every term belongs to you.
