@@ -9,6 +9,13 @@ headline: "Run your software, your AI and your data on your own machines, and se
 # CORE's own egress audit run, on the same footing FACE's paper already carries
 # for its own audit run (limits stated in the sentence itself, never "provably").
 # content/products/core.md's features grid carries the same fact, shortened.
+#
+# Updated 2026-10-01 (owner): a "Sensors and devices report to your own server"
+# section, labelled as coming in the next Runink Server release because it is
+# built but not yet shipped; change that label when the release ships. The
+# commercial model now follows the pricing page (priced by where CORE runs, a
+# team allowance of Compute Units, sold on its own), and no longer says where
+# the allowance is read; that sentence returns once it can be shown.
 next_about: "The Runink CORE paper"
 product: "Runink CORE"
 subtitle: "The operations layer for companies that keep their own data"
@@ -1034,6 +1041,20 @@ records can be verified by anyone signed in.
 project. The cost of answering who did what, when and why is paid by the system
 as it runs.
 
+### Sensors and devices report to your own server
+
+This is coming in the next Runink Server release. The Runink Server image puts
+CORE on machines you own. It gains a built-in MQTT broker: the meeting point
+where sensors and devices send their readings. The broker is built from source,
+like the rest of the image. Each device and the broker prove who they are to
+each other with certificates, which is called mutual TLS. The broker keeps
+track of how full its queue of waiting readings is, and its warnings are set to
+sound well before any reading is lost.
+
+**The result:** readings from a factory floor, a warehouse or a cold room go to
+a machine you own and stay there. The answer to "where does our information
+go?" stays the same for your devices as for everything else in this paper.
+
 ## Who CORE is for
 
 ### The company that runs several applications with a small platform team
@@ -1179,24 +1200,30 @@ they cannot be recovered once CORE is running:
 
 ## The commercial model
 
-Runink publishes its prices on the [pricing page](/pricing/). You pay for the
-number of people who use the platform, and each person comes with an allowance
-of computing capacity included. The console counts that allowance in its own
-unit, so what you have and what you have used are stated in the same terms.
+Runink publishes its prices on the [pricing page](/pricing/). CORE is priced by
+where it runs, at three levels:
 
-There are three levels: a shared level for a first team, a dedicated level for a
-company running its estate on CORE, and an enterprise level for deployments you
-host yourself on your own premises.
+- **A shared level for a first team,** on Runink's shared machines. It is a
+  team plan: you pay for the number of people who use CORE, and the team comes
+  with an allowance of Compute Units, the measure of the work CORE does for
+  you.
+- **A dedicated level** for a company running its estate on CORE, in its own
+  cloud account, priced per machine.
+- **An enterprise level** for deployments you host yourself on your own
+  premises, priced with you.
 
-Two things follow from charging per person with capacity included.
+CORE is sold on its own. Runink FACE and Runink PULSE each have their own
+subscription, and a CORE plan and its allowance cover CORE.
 
-**Using the software more does not cost more.** The model runs on the company's
-own hardware, so a team that finds heavy use for the assistant, the helpers or
-FORGE is not billed by the question.
+Two things follow from this shape.
+
+**On your own machines, using the software more does not cost more.** There the
+model runs on the company's own hardware, so a team that finds heavy use for
+the assistant, the helpers or FORGE is not billed by the question.
 
 **Capacity is tied to a purpose.** Every deployment carries an initiative and an
-owner from the moment it is requested, so a finance conversation and an
-engineering conversation can use the same figure.
+owner from the moment it is requested, so every piece of capacity that is
+running has somebody who asked for it and a reason it exists.
 
 ## Answers to the questions we are usually asked
 
