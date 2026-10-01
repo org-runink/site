@@ -313,7 +313,7 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
         },
         {
             "question": "What does it cost?",
-            "answer": "PULSE is priced by the seat: you pay for each person who uses it, and the seat covers the work that person puts through it. PULSE Lite runs on Runink's shared machines, where your work takes its turn: $59 a seat a month, or $49 a seat a month on an annual plan, for teams of one to nine. Dedicated is $99 a seat a month, for ten seats and up, running on runners in your own cloud account, which bills you for that compute directly. Enterprise, including deployments with no connection to the outside world, is quoted with you. PULSE, FACE and CORE are each sold on their own subscription, so a PULSE seat is a seat in PULSE."
+            "answer": "PULSE is priced by the seat: you pay for each person who uses it, and the seat covers the work that person puts through it. PULSE Lite runs on Runink's shared machines, where your work takes its turn: $59 a seat a month, or $49 a seat a month on an annual plan, for teams of one to nine. Each Lite seat gets 10 tasks a day at full speed; after that, tasks keep running at a slower pace until midnight in your time zone, when the count starts again. Dedicated is $99 a seat a month, for ten seats and up, running on runners in your own cloud account, which bills you for that compute directly. Enterprise, including deployments with no connection to the outside world, is quoted with you. PULSE, FACE and CORE are each sold on their own subscription, so a PULSE seat is a seat in PULSE."
         }
     ]
 }
