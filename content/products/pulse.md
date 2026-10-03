@@ -1,6 +1,6 @@
 ---
 title: "Runink PULSE"
-description: "Runink PULSE is marketing software your own team runs: it finds leads, drafts the replies, campaigns and follow-ups, and shows which channel brings customers in. A person on your team approves what goes out. Priced per seat."
+description: "Runink PULSE is marketing software your own team runs: it finds leads, drafts the replies, campaigns and follow-ups, and shows which channel brings customers in. Your team decides what goes out. Priced per seat."
 layout: "landing"
 badge: "PULSE"
 next_about: "Runink PULSE"
@@ -41,7 +41,7 @@ image: "/images/products/pulse-og.jpg"
 
 {{< hero
     headline="The lead who wrote at nine at night bought from whoever answered first."
-    sub_headline="**Runink PULSE** is marketing software your own team runs. It finds the companies worth calling, drafts the reply, the campaign and the follow-up, and shows which channel brings customers in. A person on your team approves what goes out. You pay per seat, not per tool."
+    sub_headline="**Runink PULSE** is marketing software your own team runs. It finds the companies worth calling, drafts the reply, the campaign and the follow-up, and shows which channel brings customers in. Your team decides what goes out. You pay per seat, not per tool."
     primary_button_text="Book a consultation"
     primary_button_url="/#contact"
     secondary_button_text="Read the PULSE paper"
@@ -84,7 +84,7 @@ Who PULSE is for.
 </h2>
 
 <p class="text-xl text-ink-2 leading-relaxed">
-The owner of a small or mid-size business, and the people who sell and market for it. You know the week. Messages from new leads sit until somebody has a minute. Campaign copy gets written at night, after the real work. An agency retainer pays for routine posts. Several tools each charge per seat, and none of them can say which channel brought a customer in.
+The owner of a small or mid-size business, and the people who sell and market for it. You know the week. Messages from new leads sit until somebody has a minute. Campaign copy gets written at night, after the real work. An agency retainer pays for routine posts. Several tools each charge per seat, and it is still hard to say which channel brought a customer in.
 </p>
 
 <p class="text-xl text-ink-2 leading-relaxed">
@@ -121,7 +121,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 
 <div class="max-w-4xl mx-auto px-4 mb-20">
 <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">Four jobs that eat your week, done from one brief.</h2>
-<p class="text-xl text-ink-2 leading-relaxed">Each stage feeds the next from the same reading of your business. Nobody writes a fresh brief for every tool. And every stage ends in a review queue, with a person deciding what leaves.</p>
+<p class="text-xl text-ink-2 leading-relaxed">Each stage feeds the next from the same reading of your business. Nobody writes a fresh brief for every tool. What PULSE drafts goes to a review queue, where a person decides what leaves.</p>
 </div>
 
 <div class="max-w-7xl mx-auto px-4 space-y-32">
@@ -136,7 +136,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Site Audit</span> <span class="text-slate-300">Each measure is a set of checks you can read. Can search engines read your pages? How fast do they load? Who links to you? Is there something to click and a way to buy? When some data is missing, that measure is set aside. The score never blames you for something nobody could measure.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Site Audit</span> <span class="text-slate-300">Each measure is a set of checks you can read. Can search engines read your pages? How fast do they load? Who links to you? Is there something to click and a way to buy? When some data is missing, that measure is set aside. Something nobody could measure does not lower your score.</span></li>
             <li><span class="text-signal font-bold block mb-1">Your channels, read together</span> <span class="text-slate-300">Your website, LinkedIn, Instagram and TikTok, turned into one written business analysis. Export it and put it in front of your partners or your board.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Fewer outside audits bought from an agency or consultant. Fewer hours spent guessing which fix matters most.</span></li>
         </ul>
@@ -188,7 +188,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">You approve every piece</span> <span class="text-slate-300">Each piece carries one status: draft, waiting for review, approved, rejected, published, archived. At any moment you see what is waiting on you and what actually went out.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Drafts wait for your review</span> <span class="text-slate-300">Each piece carries one status: draft, waiting for review, approved, rejected, published, archived. At any moment you see what is waiting on you and what actually went out.</span></li>
             <li><span class="text-signal font-bold block mb-1">A plan for the month</span> <span class="text-slate-300">PULSE writes a channel-by-channel plan, then turns it into a dated schedule: what publishes, on which channel, in which week.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Agency hours for routine copy. Evenings an owner spends writing. A separate scheduler, design tool and writing tool, each with its own seat price.</span></li>
         </ul>
@@ -251,7 +251,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 <div class="max-w-5xl mx-auto px-4">
     <div class="mb-16 max-w-3xl">
         <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">One seat price, not a stack of subscriptions.</h2>
-        <p class="text-xl text-ink-2 leading-relaxed">A scheduler, a design tool, a writing tool and a lead list each send their own invoice. PULSE is priced per seat, and the seat covers the work that person puts through it. Writing a second version of a campaign does not add to the bill, so it gets tried.</p>
+        <p class="text-xl text-ink-2 leading-relaxed">A scheduler, a design tool, a writing tool and a lead list each send their own invoice. PULSE is priced per seat, and the seat covers the work that person puts through it. Writing a second version of a campaign does not add to the price, so it gets tried.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -264,8 +264,8 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
             <p class="text-slate-300">PULSE runs on ordinary processors. A trial needs a well-specified developer workstation, not a server purchase. That is capital you keep.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Volume does not change the bill</h3>
-            <p class="text-slate-300">A team that writes ten pieces a month and a team that writes two hundred pay for the same seats. A second angle, or a second language, becomes ordinary rather than rationed.</p>
+            <h3 class="text-2xl font-bold text-white mb-4">Volume does not change the price</h3>
+            <p class="text-slate-300">A team that writes ten pieces a month and a team that writes two hundred pay for the same seats. The price stays the same. On Lite, each seat gets 10 tasks a day at full speed; after that, tasks keep running at a slower pace until midnight in your time zone.</p>
         </div>
     </div>
 </div>
@@ -312,7 +312,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "Does it need training on our business first?",
-            "answer": "No. There is nothing to label or upload in advance. When PULSE writes, it reads your site audit, your positioning documents, your earlier material and your customer records on your own machine, and keeps the source next to the draft. Delete a document and PULSE stops using it. Nothing of it stays behind."
+            "answer": "No. There is nothing to label or upload in advance. When PULSE writes, it reads your site audit, your positioning documents, your earlier material and your customer records on your own machine, and keeps the source next to the draft. Delete a document and PULSE stops using it."
         },
         {
             "question": "What happens when it cannot work something out?",
