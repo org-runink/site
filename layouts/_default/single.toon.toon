@@ -1,28 +1,36 @@
+{{- /*
+  `toon_of` (a page path) makes this page emit another page's TOON. It exists
+  for the TOON-only stubs that keep a renamed page's old index.toon URL alive
+  for one release: Hugo `aliases` redirect the HTML only, and agents and
+  crawlers read the TOON directly. A stub has no HTML and is never listed.
+*/ -}}
+{{- $p := . -}}
+{{- with .Params.toon_of }}{{ $p = site.GetPage . }}{{ end -}}
 page_context[1]:
-  - title: {{ .Title | jsonify }}
-    permalink: {{ .Permalink | jsonify }}
-    date: {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }}
-    category: {{ .Type | jsonify }}
-    description: {{ .Params.description | default .Summary | plainify | jsonify }}
-    content: {{ .Plain | jsonify }}
-    {{- $tags := default slice .Params.tags }}
+  - title: {{ $p.Title | jsonify }}
+    permalink: {{ $p.Permalink | jsonify }}
+    date: {{ $p.Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }}
+    category: {{ $p.Type | jsonify }}
+    description: {{ $p.Params.description | default $p.Summary | plainify | jsonify }}
+    content: {{ $p.Plain | jsonify }}
+    {{- $tags := default slice $p.Params.tags }}
     tags[{{ len $tags }}]:
     {{- range $tag := $tags }}
       - {{ $tag | jsonify }}
     {{- end }}
-    {{- $partnerships := default slice .Params.partnerships }}
+    {{- $partnerships := default slice $p.Params.partnerships }}
     partnerships[{{ len $partnerships }}]:
     {{- range $partner := $partnerships }}
       - name: {{ $partner.name | jsonify }}
         url: {{ $partner.url | default "" | jsonify }}
     {{- end }}
-    {{- $case_studies := default slice .Params.case_studies }}
+    {{- $case_studies := default slice $p.Params.case_studies }}
     case_studies[{{ len $case_studies }}]:
     {{- range $case := $case_studies }}
       - headline: {{ $case.title | jsonify }}
         url: {{ $case.url | default "" | jsonify }}
     {{- end }}
-    {{- $compliance := default slice .Params.compliance }}
+    {{- $compliance := default slice $p.Params.compliance }}
     compliance[{{ len $compliance }}]:
     {{- range $standard := $compliance }}
       - name: {{ $standard.name | jsonify }}
