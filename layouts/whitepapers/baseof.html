@@ -49,77 +49,10 @@
     <!-- Google Analytics -->
     {{ partialCached "google-analytics" . }}
 
-    <!-- SEO Variables -->
-    {{ $seoTitle := default (printf "%s | %s" .Title .Site.Title) .Params.seo_title }}
-    {{ $seoDescription := default .Summary .Description }}
-    {{ $seoDescription = default $seoDescription .Params.seo_description }}
-    {{ $seoDescription = default .Site.Params.description $seoDescription }}
-    {{ $canonicalUrl := default .Permalink .Params.canonicalUrl }}
-
-    {{ $seoImage := "" }}
-    {{ $imgUrl := default .Site.Params.logo .Site.Params.image }}
-    {{ $imgUrl = default $imgUrl .Params.image }}
-    {{ with $imgUrl }}
-      {{ $img := resources.Get . }}
-      {{ if $img }}
-        {{ if eq $img.MediaType.SubType "svg" }}
-          {{ $seoImage = $img.Permalink }}
-        {{ else }}
-          {{/* Fill, not Resize. Hugo's own docs: "If you specify both width and
-                       height... the image will be non-proportionally scaled (stretched or
-                       squashed)." Every source here is a 1024x1024 square, so Resize
-                       "1200x630" was squashing the artwork vertically and shipping the
-                       distorted result as the og:image, the twitter:image and
-                       Article.image on 46 posts. Fill crops to the frame instead, which
-                       loses edges but never lies about the shape.
-          
-                       1200x675 rather than 1200x630: Google documents 16x9 for a large
-                       Discover image, and 1200x630 is 1.90:1 — a social-card ratio that
-                       predates Discover. 675 is the true 16x9 height at 1200 wide, clears
-                       the 1200px minimum, and is still fine as an og:image. */}}
-          {{ $seoImage = ($img.Fill "1200x675 webp").Permalink }}
-        {{ end }}
-      {{ else }}
-        {{ $seoImage = . | absURL }}
-      {{ end }}
-    {{ end }}
-
-    <title>{{ $seoTitle }}</title>
-
-    <meta name="description" content="{{ $seoDescription }}">
-    <meta name="author" content="{{ .Site.Params.author | default .Site.Title }}">
-    {{/* max-image-preview:large is what makes a page eligible for Google Discover
-         and for a large image in a search result. Google documents it as the
-         control on preview size; without it the preview is restricted to a
-         thumbnail, and Discover is a card surface built around a large image —
-         so omitting it is closer to opting out than to leaving a default.
-
-         max-snippet:-1 and max-video-preview:-1 remove the text and video
-         preview caps for the same reason: this site wants to be quoted, and a
-         truncated snippet is a worse answer with our name on it.
-
-         Appended only to indexable pages. A page that sets its own `robots` —
-         /design/ and /igo-demo/ are noindex — keeps exactly what it asked for,
-         because attaching preview directives to a page we do not want indexed
-         is noise at best and contradictory at worst. */}}
-    {{ $robots := .Params.robots | default "index, follow" }}
-    {{ if not (strings.Contains (lower $robots) "noindex") }}
-      {{ $robots = printf "%s, max-image-preview:large, max-snippet:-1, max-video-preview:-1" $robots }}
-    {{ end }}
-    <meta name="robots" content="{{ $robots }}">
-
-    <meta property="og:title" content="{{ $seoTitle }}">
-    <meta property="og:description" content="{{ $seoDescription }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ $canonicalUrl }}">
-    <meta property="og:site_name" content="{{ .Site.Title }}">
-    {{ with $seoImage }}<meta property="og:image" content="{{ . }}">{{ end }}
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $seoTitle }}">
-    <meta name="twitter:description" content="{{ $seoDescription }}">
-    {{ with .Site.Params.twitter }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
-    {{ with $seoImage }}<meta name="twitter:image" content="{{ . }}">{{ end }}
+    {{/* Title, description, robots, Open Graph, Twitter, canonical and
+         hreflang: the same partial _default/baseof.html calls, so the two
+         shells cannot drift apart again. */}}
+    {{ partial "seo-head.html" . }}
 
     {{/* A 32px icon and a 180px touch icon, not one 536x658 PNG.
 
@@ -142,7 +75,6 @@
          on its own centre first so the mark is not distorted by the downscale. */}}
     <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32.png" | relURL }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}">
-    <link rel="canonical" href="{{ $canonicalUrl }}">
 
     {{/* ------------------------------------------------------------------
          FONTS — self-hosted, and these pages were the first place that was

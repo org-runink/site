@@ -1,0 +1,54 @@
+{{- /*
+  The SoftwareApplication a product page is about, or an empty dict.
+
+  Returned rather than printed, so schema.html can point the page's WebPage
+  `mainEntity` at its @id and print both.
+
+  KEYED BY PATH, HERE, ON PURPOSE. The four product pages are English only and
+  their URLs are what the rest of the site links; a front-matter key would be
+  one more thing a copy edit could drop. If a product page moves, move its line.
+
+  WHAT IS SAID, AND WHAT IS NOT.
+  - name and description come from the page itself (its title and its own
+    description), so the entity says what the visible page says.
+  - `audience` restates who the page says it is for, in the page's own words.
+  - NO `offers` here. Prices are published on the pricing pages, and
+    schema-product.html states them there, read from the price table the
+    reader sees, under this same @id — so a crawler that reads both pages gets
+    one product with its prices, and this page cannot state a price that its
+    reader cannot see. PULSE's prices sit inside an FAQ answer rather than a
+    price table, so PULSE carries no Offer anywhere until it has one.
+  - NO `operatingSystem`. The earlier pricing node said "Runs on
+    infrastructure the customer controls", which stopped being true when the
+    Lite licences moved onto Runink's shared machines.
+  - NO aggregateRating or review, ever: there are none to report.
+  - River is free and open source, which its page says in its first line, so
+    it carries isAccessibleForFree. It carries no Offer and no download URL:
+    there is no published release to point at yet.
+*/ -}}
+{{- $entries := dict
+    "/products/face/" (dict "category" "BusinessApplication" "sub" "Logistics and supply chain operations" "audience" "Logistics, freight, claims and operations teams")
+    "/products/tide/" (dict "category" "BusinessApplication" "sub" "IT operations, AI governance and application platform" "audience" "Engineering, platform and data teams")
+    "/products/pulse/" (dict "category" "BusinessApplication" "sub" "Marketing" "audience" "Marketing teams")
+    "/river/" (dict "category" "Operating system" "sub" "Workstation operating system for data, analytics and AI work" "audience" "People who do data, analytics and AI work" "free" true)
+-}}
+{{- $out := dict -}}
+{{- if and .IsPage (eq .Language.Lang "en") -}}
+  {{- with index $entries .RelPermalink -}}
+    {{- $e := . -}}
+    {{- $out = dict
+        "@type" "SoftwareApplication"
+        "@id" (printf "%s#software" $.Permalink)
+        "name" $.Title
+        "url" $.Permalink
+        "applicationCategory" $e.category
+        "applicationSubCategory" $e.sub
+        "audience" (dict "@type" "Audience" "audienceType" $e.audience)
+        "publisher" (dict "@id" "https://runink.org/#organization")
+        "creator" (dict "@id" "https://runink.org/#organization")
+    -}}
+    {{- with $.Description }}{{ $out = merge $out (dict "description" .) }}{{ end -}}
+    {{- with $e.free }}{{ $out = merge $out (dict "isAccessibleForFree" true) }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

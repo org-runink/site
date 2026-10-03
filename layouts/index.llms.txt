@@ -1,41 +1,55 @@
 {{- /*
   /llms.txt — a curated map of this site for models that answer questions about it.
 
-  WHY IT IS CURATED AND NOT A DUMP. The site has 993 English pages, and 566 of
-  them are tag and category term pages. A crawler left to its own devices reaches
-  for whichever of those ranked, and answers out of a list of article titles. This
-  file names the handful of pages that actually carry an argument, in the order a
-  person should read them, so a model reaching for us gets the papers and the
-  product page instead.
+  WHY IT IS CURATED AND NOT A DUMP. Most of the site's English pages are tag
+  and category term pages. A crawler left to its own devices reaches for
+  whichever of those ranked, and answers out of a list of article titles. This
+  file names the pages that actually carry an argument, in the order a person
+  should read them.
 
-  It is body copy. CONTENT.md rules 1 and 3 apply to every line: no invented
-  figures, no vague quantifiers, and a non-technical buyer has to be able to
-  restate it. The summaries below come from each page's own `description`, which
-  has already been through that pass.
+  GENERATED FROM THE PAGES, NOT RESTATED HERE. Each product line is the product
+  page's own title and `description`, read at build time — so when a product
+  page is rewritten (as all four were in October 2026, to lead with the
+  reader's daily burden and the cost it cuts), this file says the same thing in
+  the same build. The only hand-written sentences are the framing ones below,
+  and CONTENT.md rules 1 and 3 apply to every one of them.
 
   Self-hosted plain text, no external request — rule 7.
 */ -}}
+{{- $products := slice "/products/face" "/products/tide" "/products/pulse" "/river" -}}
+{{- $pricing := dict "/products/face" "/pricing" "/products/tide" "/products/tide-pricing" -}}
 # Runink
 
-> {{ .Site.Params.description | default "Runink FACE reads the logistics records a business already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on infrastructure the customer controls." }}
+> {{ .Site.Params.organization_description | default .Site.Params.description }}
 
-Runink sells separate products, each on its own. **Runink FACE** reads records a
-logistics or finance operation already holds, compares each against the rule that
-governs it, and drafts an action for a named person to approve. **Runink PULSE**
-is for market analysis and marketing. **Runink TIDE** is the operations layer a
-company runs on its own hardware to keep its Runink applications and its own data
-in order, which is the answer to where data is processed and who can see it.
+Runink TIDE was called Runink CORE until October 2026; links to the old
+/products/core/ address still arrive at the TIDE page.
 
-Two things are true of all of it and are worth knowing before reading further.
-Every drafted action waits for a named person; approving it is what sends it, and
-who approved it is recorded. And the models run on hardware the customer
-controls — nothing is sent to an outside model provider.
+## What each product is
+
+{{ range $products }}{{ with site.GetPage . }}
+### {{ .Title }}
+
+{{ .Description }}
+
+- Product page: {{ .Permalink }}
+{{- with index $pricing (strings.TrimSuffix "/" .Path) }}{{ with site.GetPage . }}
+- Prices: {{ .Permalink }} — {{ .Description }}
+{{- end }}{{ end }}
+{{ end }}{{ end }}
+## True of FACE, TIDE and PULSE
+
+Each is sold on its own subscription, priced by the person or by the machine
+it runs on, never as a bundle. Every drafted action waits for a named person;
+approving it is what sends it, and who approved it is recorded. Each one can
+run on Runink's shared machines, in the customer's own cloud account, or on the
+customer's own premises.
 
 We have not been audited against SOC 2, ISO 27001 or any other framework by an
 external auditor. The software is built against them and will tell you what it
 checked; it does not claim a certification it does not hold. There are no
-published customer results, case studies or return-on-investment figures on this
-site, and that is deliberate — where a number would go, the pages name the
+published customer results, case studies or return-on-investment figures on
+this site, and that is deliberate — where a number would go, the pages name the
 measure and say where to find it in your own systems instead.
 
 ## The long documents
@@ -43,13 +57,6 @@ measure and say where to find it in your own systems instead.
 {{ with site.GetPage "/blog/whitepapers" }}{{ range .Pages.ByWeight }}
 - [{{ .Title }}]({{ .Permalink }}): {{ with .Params.blurb }}{{ . }}{{ else }}{{ .Description }}{{ end }}
 {{- end }}{{ end }}
-
-## The products
-
-- [Runink FACE]({{ "products/face/" | absURL }}): what it reads, what it drafts, and where it stops.
-- [Runink FACE pricing]({{ "pricing/" | absURL }}): seats and a compute allowance, with the prices published.
-- [Runink PULSE]({{ "blog/whitepapers/runink-pulse/" | absURL }}): the long document on what it does.
-- [Runink TIDE]({{ "blog/whitepapers/runink-tide/" | absURL }}): the long document that is its product home.
 
 ## Where it fits
 
@@ -65,15 +72,21 @@ measure and say where to find it in your own systems instead.
 
 ## Shorter pieces
 
-Several dozen articles on the operational problems behind the documents above —
-held customs entries, freight claims inside their filing window, returns that cost
-more to handle than the goods, demurrage, cross-docking, cold chain, procurement
-visibility. Index: [{{ "blog/" | absURL }}]({{ "blog/" | absURL }})
+Articles on the operational problems behind the documents above — held customs
+entries, freight claims inside their filing window, returns that cost more to
+handle than the goods, demurrage, cross-docking, cold chain, procurement
+visibility. Index: {{ "blog/" | absURL }}
+
+## Company
+
+{{ with site.GetPage "/company" }}- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}{{ end }}
+{{ with site.GetPage "/trust" }}- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}{{ end }}
 
 ## Other languages
 
-Spanish, French and Portuguese cover the homepage, the product and pricing pages
-and the twelve scenario pages. The articles and the papers are English only.
+Spanish, French and Portuguese cover the homepage, the Runink FACE pricing
+page, the company and trust pages, the library and the scenario pages. The
+product pages, the articles and the papers are in English.
 {{ range site.Home.AllTranslations }}{{ if ne .Language.Lang "en" }}
 - {{ .Language.LanguageName }}: {{ .Permalink }}
 {{- end }}{{ end }}

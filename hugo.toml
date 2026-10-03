@@ -76,7 +76,18 @@ enableGitInfo = true
   # description chain in baseof.html a no-op and shipped an empty description,
   # og:description and twitter:description on 587 of 722 pages.
   description = "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control."
+  # The company in one sentence: the Organization and WebSite nodes in
+  # partials/schema-org.html, the head of /llms.txt and of robots.txt. Body
+  # copy like `description` above (rules 1 and 3); every clause restates a
+  # product page's own description. Kept separate from `description`, which is
+  # FACE's sentence because the home page leads with FACE.
+  organization_description = "Runink makes four separate products: Runink FACE for logistics, freight, claims and operations teams; Runink TIDE for engineering, platform and data teams; Runink PULSE for marketing teams; and Runink River, a free, open-source workstation operating system for data, analytics and AI work. FACE, TIDE and PULSE are each sold on their own subscription."
   logo = "/images/logo.png"
+  # The share card a page falls back to when it has no `image` of its own:
+  # 1200x675, the 16:9 frame Google documents for a large Discover image. It
+  # replaces the 512px logo, which was being scaled up 2.3x and cropped to fill
+  # that frame. See partials/seo-head.html.
+  images = ["/images/og/runink-og.jpg"]
   googleAnalytics ='G-SEECKDWZNJ'
 
   # Embedded-app endpoints (Cloud Run URLs) for the /pulse and /demo iframes.

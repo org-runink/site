@@ -32,7 +32,12 @@
       "@id": {{ $org | jsonify | safeJS }},
       "name": "Runink",
       "url": "https://runink.org/",
-      "description": {{ .Site.Params.description | jsonify | safeJS }},
+      {{/* The company, not one product. params.description is FACE's
+           sentence, because it is the fallback meta description and the home
+           page leads with FACE; as the Organization's own description it told
+           every answer engine that Runink is one logistics product, on a site
+           that sells four. */}}
+      "description": {{ .Site.Params.organization_description | default .Site.Params.description | jsonify | safeJS }},
       {{/* Resolved through resources.Get so the URL is one Hugo has actually
            published, not one built by string concatenation.
 
@@ -67,6 +72,7 @@
       "@id": {{ $site | jsonify | safeJS }},
       "url": "https://runink.org/",
       "name": "Runink",
+      "description": {{ .Site.Params.organization_description | default .Site.Params.description | jsonify | safeJS }},
       "publisher": { "@id": {{ $org | jsonify | safeJS }} },
       "inLanguage": {{ .Language.Lang | jsonify | safeJS }}
     }{{ if .Ancestors }},

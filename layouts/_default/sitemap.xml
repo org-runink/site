@@ -11,8 +11,10 @@
 
   The only thing this template changes is WHICH pages are listed. Everything
   else — lastmod, changefreq, priority, the alternate-language links — is the
-  built-in behaviour, reproduced rather than altered, so switching the filter off
-  restores exactly what Hugo would have emitted.
+  built-in behaviour, reproduced rather than altered — with one addition: a
+  translated page also lists its English version as `x-default`, the same set
+  the page's own <head> declares (partials/seo-head.html). Google reads both,
+  and two signals that disagree are weighed less than two that match.
 
   `.Kind` is the filter, not a path match. A path match would break the first
   time a taxonomy is renamed, and it would also catch a real page that happened
@@ -45,7 +47,12 @@
       rel="alternate"
       hreflang="{{ .Language.LanguageCode }}"
       href="{{ .Permalink }}"
-    />{{ end }}{{ end }}
+    />{{ end }}{{ range .AllTranslations }}{{ if eq .Language.Lang "en" }}
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="{{ .Permalink }}"
+    />{{ end }}{{ end }}{{ end }}
   </url>
   {{ end }}
   {{ end }}

@@ -31,49 +31,44 @@
 {{- $productName := .Params.product_name | default "Runink FACE" -}}
 {{- $productURL := .Params.product_url | default "products/face/" -}}
 {{- $productSubCategory := .Params.product_subcategory | default "Logistics and supply chain operations" -}}
+{{- /* 2026-10: three corrections, each one a sentence a reader could not see.
+
+     - `unitText` was the literal "per person, per month" on every tier. TIDE's
+       Dedicated licence is priced per NODE, so the node said $249 a person
+       where the card says $249 for the first node. The card's own
+       `price_subtitle` is now carried as the offer's description, in the
+       page's language, exactly as the reader sees it under the price.
+     - `operatingSystem: "Runs on infrastructure the customer controls"` is
+       gone: the Lite licences run on Runink's shared machines.
+     - The @id is the PRODUCT page's (`<product_url>#software`), not this
+       pricing page's, so these offers attach to the same entity that
+       schema-software.html declares on the product page. */ -}}
 {{- $tiers := slice -}}
 {{- $raw := .RawContent -}}
-{{- range findRESubmatch `"name"\s*:\s*"([^"]+)"[\s\S]{0,400}?"price_monthly"\s*:\s*"([^"]+)"[\s\S]{0,200}?"price_yearly"\s*:\s*"([^"]+)"` $raw -}}
-  {{- $name := index . 1 -}}
-  {{- $monthly := index . 2 -}}
-  {{- $yearly := index . 3 -}}
-  {{- $tiers = $tiers | append (dict "name" $name "monthly" $monthly "yearly" $yearly) -}}
+{{- range findRESubmatch `"name"\s*:\s*"([^"]+)"[\s\S]{0,400}?"price_monthly"\s*:\s*"([^"]+)"[\s\S]{0,200}?"price_yearly"\s*:\s*"([^"]+)"(?:[\s\S]{0,40}?"price_subtitle"\s*:\s*"([^"]+)")?` $raw -}}
+  {{- $tiers = $tiers | append (dict "name" (index . 1) "monthly" (index . 2) "yearly" (index . 3) "subtitle" (index . 4)) -}}
 {{- end -}}
 {{- with $tiers }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "@id": {{ printf "%s#software" $.Permalink | jsonify | safeJS }},
-  "name": {{ $productName | jsonify | safeJS }},
-  "applicationCategory": "BusinessApplication",
-  "applicationSubCategory": {{ $productSubCategory | jsonify | safeJS }},
-  "operatingSystem": "Runs on infrastructure the customer controls",
-  "publisher": { "@id": "https://runink.org/#organization" },
-  "isPartOf": { "@id": "https://runink.org/#website" },
-  "url": {{ $productURL | absURL | jsonify | safeJS }},
-  "offers": [
-    {{- $first := true }}
-    {{- range . }}
-    {{- $num := (replaceRE `[^0-9.]` "" .monthly) }}
-    {{- if not $first }},{{ end }}{{ $first = false }}
-    {
-      "@type": "Offer",
-      "name": {{ .name | jsonify | safeJS }},
-      "category": "seat licence"
-      {{- if $num -}}
-      ,
-      "price": {{ $num | jsonify | safeJS }},
-      "priceCurrency": "USD",
-      "unitText": "per person, per month",
-      "availability": "https://schema.org/InStock"
-      {{- else -}}
-      ,
-      "description": "Priced with the customer."
-      {{- end }}
-    }
-    {{- end }}
-  ]
-}
-</script>
+{{- $offers := slice }}
+{{- range . }}
+  {{- $o := dict "@type" "Offer" "name" (.name | lower | title) }}
+  {{- $num := replaceRE `[^0-9.]` "" .monthly }}
+  {{- if $num }}
+    {{- $o = merge $o (dict "price" $num "priceCurrency" "USD" "availability" "https://schema.org/InStock") }}
+  {{- end }}
+  {{- with .subtitle }}{{ $o = merge $o (dict "description" (. | lower | strings.FirstUpper)) }}{{ end }}
+  {{- $offers = $offers | append $o }}
+{{- end }}
+{{- $node := dict
+    "@context" "https://schema.org"
+    "@type" "SoftwareApplication"
+    "@id" (printf "%s#software" ($productURL | absURL))
+    "name" $productName
+    "url" ($productURL | absURL)
+    "applicationCategory" "BusinessApplication"
+    "applicationSubCategory" $productSubCategory
+    "publisher" (dict "@id" "https://runink.org/#organization")
+    "offers" $offers
+}}
+<script type="application/ld+json">{{ $node | jsonify (dict "indent" "  ") | safeJS }}</script>
 {{- end -}}
