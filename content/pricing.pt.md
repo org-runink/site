@@ -35,19 +35,19 @@ author: "Runink"
       {
         "name": "Paralegais",
         "accent": "Digitais",
-        "body": "Sua equipe jurídica e de conformidade automatizada. Eles ingerem faturas de frete autonomamente, cruzam acordos de SLA e registram instantaneamente contestações irrefutáveis para recuperar margens perdidas de transportadoras sem intervenção manual.",
+        "body": "Sua mesa de contestações e recuperação. Eles leem as faturas de frete, os comprovantes de entrega e seus acordos de nível de serviço (SLA), reúnem as evidências de cada contestação por falta, avaria ou atraso e a redigem dentro do prazo da transportadora. Uma pessoa da sua equipe aprova cada contestação antes do envio.",
         "focus": "Foco: Contestações e Recuperação"
       },
       {
         "name": "Compradores",
         "accent": "Estatísticos",
-        "body": "Sua unidade de planejamento de demanda autônoma. Eles ingerem de forma inteligente as tendências de mercado e a velocidade de vendas para prever necessidades exatas de estoque, orquestrando dinamicamente a alocação de estoque em toda a sua rede de distribuição.",
+        "body": "Sua mesa de planejamento de demanda. Eles testam métodos de previsão com o seu próprio histórico de vendas, ficam com o que melhor o teria previsto e apontam onde a cobertura de estoque não alcança o prazo de reposição. Transferências e pedidos são propostos para aprovação dos seus planejadores.",
         "focus": "Foco: Estoque e Atendimento"
       },
       {
         "name": "Operadores de",
         "accent": "Receita",
-        "body": "Seus auditores financeiros forenses. Eles auditam meticulosamente cada linha de fatura em relação aos contratos negociados com as transportadoras, sinalizando taxas fantasmas automaticamente e executando pagamentos a menor para interromper perdas de margem.",
+        "body": "Sua mesa de auditoria de frete. Eles conferem cada linha de fatura com os contratos negociados e confirmações de tarifa, apontam as taxas que o contrato não sustenta e redigem cada pagamento a menor com suas evidências. Sua equipe financeira decide o que é retido.",
         "focus": "Foco: Finanças e Reconciliação"
       }
     ]

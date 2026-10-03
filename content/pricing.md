@@ -85,19 +85,19 @@ author: "Runink"
       {
         "name": "Digital",
         "accent": "Paralegals",
-        "body": "Your automated legal and compliance team. They autonomously ingest freight bills, cross-reference SLA agreements, and instantly file irrefutable claims to recover lost margins from carriers without manual intervention.",
+        "body": "Your claims and recovery desk. They read freight bills, proofs of delivery and your SLA terms, assemble the evidence for each shortage, damage or late-delivery claim, and draft it inside the carrier's filing window. A person on your team approves every claim before it is filed.",
         "focus": "Focus: Claims & Recovery"
       },
       {
         "name": "Statistical",
         "accent": "Buyers",
-        "body": "Your autonomous demand planning unit. They intelligently ingest market trends and sales velocity to predict exact stock needs, dynamically orchestrating inventory allocation across your entire distribution network.",
+        "body": "Your demand planning desk. They test forecasting methods against your own sales history, keep the one that would have predicted it best, and flag where stock cover falls short of lead time. Transfers and reorders are proposed for your planners to approve.",
         "focus": "Focus: Inventory & Fulfilment"
       },
       {
         "name": "Revenue",
         "accent": "Operators",
-        "body": "Your forensic financial auditors. They meticulously audit every invoice line against your negotiated carrier contracts, automatically flagging ghost fees and executing Short-Pays to halt margin leakage.",
+        "body": "Your freight audit desk. They check every invoice line against your negotiated carrier contracts and rate confirmations, flag fees and accessorials the contract does not support, and draft each short-pay with its evidence. Your finance team decides what is withheld.",
         "focus": "Focus: Finance & Reconciliation"
       }
     ]

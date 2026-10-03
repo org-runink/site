@@ -35,19 +35,19 @@ author: "Runink"
       {
         "name": "Paralegales",
         "accent": "Digitales",
-        "body": "Su equipo legal y de cumplimiento automatizado. Ingieren de forma autónoma las facturas de transporte, cotejan los acuerdos de nivel de servicio (SLA) y presentan instantáneamente reclamaciones irrefutables para recuperar los márgenes perdidos de los transportistas sin intervención manual.",
+        "body": "Su mesa de reclamaciones y recuperación. Leen las facturas de transporte, las pruebas de entrega y sus acuerdos de nivel de servicio (SLA), reúnen las pruebas de cada reclamación por faltante, daño o retraso y la redactan dentro del plazo del transportista. Una persona de su equipo aprueba cada reclamación antes de presentarla.",
         "focus": "Foco: Reclamaciones y Recuperación"
       },
       {
         "name": "Compradores",
         "accent": "Estadísticos",
-        "body": "Su unidad de planificación de demanda autónoma. Analizan de manera inteligente las tendencias del mercado y la velocidad de ventas para predecir las necesidades exactas de stock, orquestando dinámicamente la asignación de inventario en toda su red de distribución.",
+        "body": "Su mesa de planificación de la demanda. Prueban métodos de previsión con su propio historial de ventas, se quedan con el que mejor lo habría predicho y señalan dónde la cobertura de stock no alcanza el plazo de reposición. Los traslados y pedidos se proponen para que sus planificadores los aprueben.",
         "focus": "Foco: Inventario y Cumplimiento"
       },
       {
         "name": "Operadores de",
         "accent": "Ingresos",
-        "body": "Sus auditores financieros forenses. Auditan meticulosamente cada línea de factura contra sus contratos de transporte negociados, marcando tarifas fantasmas automáticamente y ejecutando retenciones de pago para detener la pérdida de margen.",
+        "body": "Su mesa de auditoría de fletes. Revisan cada línea de factura contra sus contratos negociados y confirmaciones de tarifa, señalan los cargos que el contrato no respalda y redactan cada descuento de pago con sus pruebas. Su equipo de finanzas decide qué se retiene.",
         "focus": "Foco: Finanzas y Reconciliación"
       }
     ]
