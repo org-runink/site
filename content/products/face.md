@@ -230,6 +230,8 @@ FACE is the product that reads all of it, and it is the one this company is buil
             <p class="text-slate-300">FACE runs on Runink core, the platform underneath it. Services identify themselves to each other on every call and hold nothing long-lived. The cockpit your team uses is the same boundary your auditors are given.</p>
         </div>
     </div>
+
+    <p class="text-lg text-ink-2 leading-relaxed mt-10">Who decides, which models run, how data is kept apart and how our controls map to the standards your auditors use, each with a link to the public documentation behind it: <a href="/trust/" class="text-signal underline decoration-signal/40 hover:decoration-signal">Trust &amp; Compliance</a>.</p>
 </div>
 {{< /section-container >}}
 

@@ -125,6 +125,7 @@ rp:
     items:
       - { url: "/blog/whitepapers/runink-core/", title: "The Runink CORE paper", note: "Every page of the console: the question it answers, who uses it, and why it is worth having.", cta: "Read the paper" }
       - { url: "/blog/whitepapers/runink-core-atlas/", title: "Runink CORE and Atlas", note: "A joint paper with Logical Leap: Atlas's oversight screens inside CORE, on your own data, with a second opinion built in.", cta: "Read the paper" }
+      - { url: "/trust/", title: "Trust & Compliance", note: "Who decides, where the models run, the audit chain anyone signed in can check, and how our controls map to five standards. Each claim links to the public documentation behind it.", cta: "Read the page" }
       - { url: "/products/core-pricing/", title: "Pricing", note: "Priced by where CORE runs: per person on Runink's shared machines, as a team plan with an allowance of Compute Units; per machine in your own cloud; with you on your own premises. Sold on its own. No success fees, ever.", cta: "See the plans" }
   final:
     heading: "Bring one system you would like to stop worrying about."
