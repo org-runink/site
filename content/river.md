@@ -74,7 +74,7 @@ description: "Runink River is a free, open-source workstation operating system f
 # 2026-10-03 (mine): business-value pass, same brief as the TIDE/FACE/PULSE pages. The
 # page now leads with the reader's week, not with the parts list: days lost setting up a
 # new machine (the installer split), a laptop that can't be trusted with sensitive data,
-# an update that breaks and costs a day, a heavy job that freezes the screen, code you
+# an update that breaks and costs a day, a long data job that slows to a crawl, code you
 # didn't write, and paying for cloud workstations to do work your own hardware can do.
 # Each card names the burden, says what River does about it in plain verbs, and stops.
 # The rp.steps band is back, with no terminal block and no install command: it now holds
@@ -85,7 +85,9 @@ description: "Runink River is a free, open-source workstation operating system f
 # river docs' feature pages state; nothing new. Still no install command, download or
 # release link, and the page does not promise an installed, working desktop: the first
 # screenshot's alt text dropped "installed" for that reason. Lockup, CTAs and their URLs
-# are unchanged.
+# are unchanged. No line promises a responsive desktop either (the kernel card speaks to
+# the job's pace, not the screen), and the encryption card says a lost machine is
+# protected when it is switched off, since a running or sleeping one has its disks unlocked.
 #
 # English only, like /downloads/, so no translation is left behind.
 #
@@ -97,7 +99,7 @@ rp:
   logo: "/images/brand/river-mark.svg"
   lockup: "RIVER · Raft-Integrated Validated Event Runtime"
   title: "Put the machines you already own to work on your data."
-  promise: "Runink River is a free, open-source operating system for data, analytics and AI workstations. The disk is locked from the first boot. A bad update rolls back with one reboot. A heavy job runs without freezing your screen. There is no per-seat licence, and every line is public."
+  promise: "Runink River is a free, open-source operating system for data, analytics and AI workstations. The disk is locked from the first boot. A bad update rolls back with one reboot. A long data job keeps its pace under load. There is no per-seat licence, and every line is public."
   cta:
     - { text: "Get the source", url: "https://github.com/org-runink/river", style: "primary" }
     - { text: "Read the documentation", url: "https://docs.runink.org/river/", style: "ghost" }
@@ -129,8 +131,8 @@ rp:
     intro: "Each card starts with a day your team already knows. Then it says what River does about it. The technical name is on the label, and the docs page behind each card has the detail."
     items:
       - { k: "storage · ZFS", title: "An update breaks, and the day is gone", body: "Take a snapshot of the system before an update. If the update goes wrong, one reboot takes you back to it, and your files are not touched. The fix is a restart, not a rebuild.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
-      - { k: "encryption", title: "Sensitive data on a laptop that can walk away", body: "The whole disk is encrypted from the first boot, and `/home` is encrypted separately from the rest of the system. The key is typed at start-up, so a lost machine holds files nobody can read without it. Swap lives in RAM, so nothing spills to disk unlocked.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
-      - { k: "kernel · linux-runink", title: "A heavy job freezes the screen", body: "The kernel keeps a long data job running instead of switching away from it, hands out memory in larger blocks for big data sets, and keeps network transfers fast under load. The desktop still gets its turn, so you keep working while the job runs.", url: "https://docs.runink.org/river/docs/features/kernel/" }
+      - { k: "encryption", title: "Sensitive data on a laptop that can walk away", body: "The whole disk is encrypted from the first boot, and `/home` is encrypted separately from the rest of the system. The key is typed at start-up, so a lost machine that is switched off holds files nobody can read without the key. Swap lives in RAM, so nothing spills to disk unlocked.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
+      - { k: "kernel · linux-runink", title: "A long data job slows to a crawl", body: "The kernel keeps a long data job running instead of switching away from it, hands out memory in larger blocks for big data sets, and keeps network transfers fast under load.", url: "https://docs.runink.org/river/docs/features/kernel/" }
       - { k: "sandbox", title: "Running code you didn't write", body: "A build script from a pull request, a tool an AI assistant wrote, a dependency's install hook. `river-sandbox` runs it with no network unless you ask, and no way to reach your keys or secrets. A request for one of those folders is refused, not trimmed.", url: "https://docs.runink.org/river/docs/features/sandbox/" }
       - { k: "network · firewall", title: "Something on the network you never opened", body: "Nothing gets in unless you open it, and everything you start can go out. The firewall loads before the network does. Wi-Fi, DHCP and printers keep working, and SSH stays closed until you list it.", url: "https://docs.runink.org/river/docs/features/firewall/" }
       - { k: "init · s6 · security", title: "Nobody can say what is running", body: "One program, s6, starts the machine and watches every service. Services are plain directories IT can read, not unit files. Hardening stays on, modules are signed with a key made for each build, and secret files are checked again at every boot.", url: "https://docs.runink.org/river/docs/security/" }
@@ -140,7 +142,7 @@ rp:
     items:
       - { title: "No per-seat licence", body: "River is free and open source. Adding an analyst adds hardware, not an operating-system bill. **Opex.**" }
       - { title: "Hardware you own, put to work", body: "Data and AI work that would go to a rented cloud workstation can run on the laptops and desktops you already bought. **Capex** you have spent, and **Opex** you don't add." }
-      - { title: "Fewer lost days", body: "Less time setting up machines, rebuilding after a bad update, or waiting on a frozen screen. Count it in staff hours. **Opex.**" }
+      - { title: "Fewer lost days", body: "Less time setting up machines, rebuilding after a bad update, or waiting on a slow job. Count it in staff hours. **Opex.**" }
   papers:
     heading: "See it for yourself"
     items:
