@@ -3,14 +3,14 @@ title: "Downloads"
 layout: "company"
 # Order is the attribution here. Runink FACE is the flagship and leads the page;
 # Runink PULSE is a separate product, not a FACE companion app; and the server
-# image is not a product at all: it carries Runink CORE, which is a third product
+# image is not a product at all: it carries Runink TIDE, which is a third product
 # sold on its own (the owner, 26 September 2026). The server image is the Runink
 # Server distribution, built on Runink River; Runink River itself is the developer
 # workstation and has its own page at /river/ (corrected 2026-09-26, when that page
 # was rewritten: this file used to call the server image "Runink River").
 # The previous version set the three side by side in one row of equal cards,
 # which read as one product family with three equal members.
-description: "Get the Runink FACE app for Android, the separate Runink PULSE app, install the open-source Runink River workstation with one command, or request access to the Runink Server image, which puts Runink CORE on hardware you own."
+description: "Get the Runink FACE app for Android, the separate Runink PULSE app, install the open-source Runink River workstation with one command, or request access to the Runink Server image, which puts Runink TIDE on hardware you own."
 date: "2026-08-11T00:00:00Z"
 ---
 
@@ -33,7 +33,7 @@ date: "2026-08-11T00:00:00Z"
       product for market analysis and marketing, listed here because it ships an
       app too, not because it is part of FACE. The
       <strong class="text-stone-200">Runink Server</strong> image is neither: it
-      is the server image carrying Runink CORE, a separate product in its own right, which is the answer to
+      is the server image carrying Runink TIDE, a separate product in its own right, which is the answer to
       where your data is processed and who can see it. <strong class="text-stone-200">Runink River</strong> is the
       open-source developer workstation the server image is built on, and it installs with one command.
     </p>
@@ -79,7 +79,7 @@ date: "2026-08-11T00:00:00Z"
       <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink Server — the server image</div>
       <h3 class="text-2xl font-bold text-white mb-3">Runink Server</h3>
       <p class="text-stone-400 mb-8 flex-1">
-        The Runink Server image puts Runink CORE on your own box: the layer FACE and PULSE run on, so that
+        The Runink Server image puts Runink TIDE on your own box: the layer FACE and PULSE run on, so that
         your data and the reasoning over it never leave hardware you own. Provisioned
         per deployment, not offered as a public download.
         It is built on <a href="/river/" class="underline">Runink River</a>, the developer workstation.

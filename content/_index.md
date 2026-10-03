@@ -466,8 +466,8 @@ paper:
 #
 # `page` (2026-09-26): a product with its own page opens that page, and the paper
 # is one click further, from the page's "Read the detail" block. Runink River has a
-# page and no paper; the joint CORE and Atlas paper has no page and still opens the
-# paper. `sub` carries the meaning of each product name (FACE, PULSE, CORE, RIVER), in
+# page and no paper; the joint TIDE and Atlas paper has no page and still opens the
+# paper. `sub` carries the meaning of each product name (FACE, PULSE, TIDE, RIVER), in
 # English in every language.
 products_heading: "Runink products you may have heard of"
 products_intro: "Four products, each with its own page, and one joint paper. The pages say what each product is; the papers behind them explain the mechanism: what the software looks at, what it produces, who approves it, and where it runs."
@@ -484,15 +484,15 @@ products:
     name: "Runink PULSE"
     sub: "Prescriptive Unified Lead & Social Engine"
     line: "A separate product, not a FACE feature. The audit, the research, the prospecting and the material a marketing team publishes, on one application the team operates directly."
-  - page: "/products/core"
-    paper: "runink-core"
-    name: "Runink CORE"
-    sub: "Control · Orchestration · Resilience · Enforcement"
+  - page: "/products/tide"
+    paper: "runink-tide"
+    name: "Runink TIDE"
+    sub: "Trusted Intelligence for Developer & Data Experience"
     line: "A product in its own right, sold separately. It is the answer to where your data is processed and who can see it, which is the question every other page here eventually arrives at."
-  - paper: "runink-core-atlas"
-    name: "Runink CORE and Atlas"
+  - paper: "runink-tide-atlas"
+    name: "Runink TIDE and Atlas"
     sub: "A joint paper with Logical Leap"
-    line: "Atlas's oversight screens, running inside CORE on your own data, with a second opinion built in for the findings an outside platform submits. Written with Logical Leap rather than about them."
+    line: "Atlas's oversight screens, running inside TIDE on your own data, with a second opinion built in for the findings an outside platform submits. Written with Logical Leap rather than about them."
   - page: "/river"
     name: "Runink River"
     sub: "Raft-Integrated Validated Event Runtime"

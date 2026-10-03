@@ -3,7 +3,7 @@ date: 2026-09-07T00:00:00Z
 title: "Insurance"
 description: "Claims decisioning, reserving and reinsurance recovery, delegated authority and conduct evidence. How Runink FACE sets the rule as written beside the logic your systems actually run, and sorts every rule into aligned, drift, shadow or missing."
 # This page is Runink FACE, and the attribution was previously absent — the
-# page named no product and linked to the CORE-and-Atlas paper, which made it
+# page named no product and linked to the TIDE and Atlas paper, which made it
 # read as the platform arrangement described on the banking and telecom pages.
 # It is not. Insurance is a FACE domain in the most literal sense: FACE's
 # Finance domain types `claim`, `reserve`, `adjuster`, `premium`, `deductible`,
@@ -12,10 +12,10 @@ description: "Claims decisioning, reserving and reinsurance recovery, delegated 
 # registry carries a real Guidewire connector alongside SAP, D365, Salesforce
 # and the SQL engines, and the rules-as-written-against-rules-as-applied
 # mechanism on this page is FACE's Rules Recon — four states named in
-# grpc/agents/templates/rules_recon.jinja, not the CORE assessor.
+# grpc/agents/templates/rules_recon.jinja, not the TIDE assessor.
 #
 # What was cut, and why the paper link moved: the outcomes claimed "a second,
-# independent judgement" on every finding. That is CORE's assessor, which
+# independent judgement" on every finding. That is TIDE's assessor, which
 # accepts findings from an outside submitting platform through a credentialed
 # door and hands verdicts back. FACE does not submit its findings there — there
 # is no wiring between the two — so the page was selling a join that does not
@@ -167,5 +167,5 @@ cta_text: "Book a consultation"
 paper:
   text: "Read the FACE paper"
   url: "/blog/whitepapers/runink-face/"
-  note: "Runink FACE is the product behind this page, and the link has been moved to match: it previously pointed at the CORE and Atlas paper, which describes a different arrangement — a partner's assessment platform submitting findings for the Runink CORE platform to judge. FACE does not submit findings there, so a second independent judgement is not something this page can offer you, and the claim has been removed rather than softened. The FACE paper is the long version of what is here: what gets read, what a finding contains, who approves it and where it runs. No case studies, no customer names and no return-on-investment figures — nothing on this page describes work performed for an insurer, because none has been."
+  note: "Runink FACE is the product behind this page, and the link has been moved to match: it previously pointed at the TIDE and Atlas paper, which describes a different arrangement — a partner's assessment platform submitting findings for the Runink TIDE platform to judge. FACE does not submit findings there, so a second independent judgement is not something this page can offer you, and the claim has been removed rather than softened. The FACE paper is the long version of what is here: what gets read, what a finding contains, who approves it and where it runs. No case studies, no customer names and no return-on-investment figures — nothing on this page describes work performed for an insurer, because none has been."
 ---

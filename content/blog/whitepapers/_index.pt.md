@@ -6,17 +6,17 @@ title: "Whitepapers"
 # matter is per-file, so the English one does not cover these.
 type: whitepapers
 headline: "Documentos que começam pelo que pode ser comprovado."
-description: "Documentos extensos sobre o Runink FACE, o Runink PULSE e o Runink CORE, três produtos distintos. Sem estudos de caso, sem nomes de clientes e sem números de retorno: o mecanismo, e onde cada afirmação se apoia."
+description: "Documentos extensos sobre o Runink FACE, o Runink PULSE e o Runink TIDE, três produtos distintos. Sem estudos de caso, sem nomes de clientes e sem números de retorno: o mecanismo, e onde cada afirmação se apoia."
 deck: |
   Documentos extensos, cada um sobre um produto da Runink ou sobre um acordo
   com um parceiro. Os primeiros tratam do **Runink FACE**. O **Runink PULSE** é um produto diferente, de análise de mercado e
   marketing, e o documento dele descreve o próprio trabalho, não o do FACE.
-  O **Runink CORE** é um produto por si só, vendido separadamente. É a camada
+  O **Runink TIDE** é um produto por si só, vendido separadamente. É a camada
   de operações que você roda no seu próprio hardware para manter em ordem os
   seus aplicativos Runink e os seus próprios dados, e a resposta honesta a onde
   os seus dados são processados e quem pode vê-los. O documento dele é onde
   este site o descreve. Os documentos conjuntos com a Logical Leap tratam das telas
-  de supervisão do Atlas, que rodam dentro do CORE.
+  de supervisão do Atlas, que rodam dentro do TIDE.
 
   Os documentos estão escritos em inglês. As páginas deste site estão em
   português; os documentos longos ainda não estão.

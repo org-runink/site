@@ -2,7 +2,7 @@
 title: "What Runink FACE Is Built For"
 # This section is Runink FACE's scenarios and nothing else. FACE is the flagship.
 # Runink PULSE (market analysis) is a separate product with its own material, and
-# CORE is a third, separate product — neither of their capabilities may be
+# TIDE is a third, separate product — neither of their capabilities may be
 # listed here, because a reader who cannot tell which product does which job
 # reads the whole set as one product's track record.
 #
@@ -125,7 +125,7 @@ Approving is designed to end the work rather than start it. The reply names what
 
 ## Two Things Worth Knowing Up Front
 
-**Your data stays on your machines.** The order files, the customs papers, the sensor readings and the reasoning about them all run on hardware you control — FACE runs on the Runink CORE platform, which is what makes that a property of the build rather than a setting somebody has to honour. Nothing goes to an outside model provider. That is the kind of answer a security review asks for before it will let a supplier hold its order data.
+**Your data stays on your machines.** The order files, the customs papers, the sensor readings and the reasoning about them all run on hardware you control — FACE runs on the Runink TIDE platform, which is what makes that a property of the build rather than a setting somebody has to honour. Nothing goes to an outside model provider. That is the kind of answer a security review asks for before it will let a supplier hold its order data.
 
 **The queue is where you decide.** Every item arrives with its reasoning and the records it rests on, so you can read why it was proposed before you agree to it. What you approve is what gets carried out, and an item you leave alone stays where it is. Which kinds of work are worth putting through the queue in the first place is a question you answer when you set it up — not a value threshold the software polices on your behalf.
 
@@ -133,4 +133,4 @@ Approving is designed to end the work rather than start it. The reply names what
 
 None of the scenarios above is a customer result. They are written from what the software is built to do, in the vocabulary of the people who own the problem, and they have not been run against any customer's data. Nothing here is a case study, and there are no figures in it, because the figures would be ours and the ones that matter are yours.
 
-Runink PULSE, the market-analysis product, and the CORE platform FACE runs on are covered in [their own papers](/blog/whitepapers/). They are not on this page, and none of the jobs above is a result belonging to either of them.
+Runink PULSE, the market-analysis product, and the TIDE platform FACE runs on are covered in [their own papers](/blog/whitepapers/). They are not on this page, and none of the jobs above is a result belonging to either of them.

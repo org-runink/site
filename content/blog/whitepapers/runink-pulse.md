@@ -3,7 +3,7 @@ title: "Runink PULSE — Prescriptive Unified Lead & Social Engine"
 headline: "A marketing engine that runs inside your own business."
 # The label the closing ask carries into the contact form, so an enquiry
 # arrives naming the paper it came from. `product:` is not usable for this —
-# two of the four papers are both "Runink CORE".
+# two of the four papers are both "Runink TIDE".
 next_about: "The Runink PULSE paper"
 product: "Runink PULSE"
 subtitle: "Prescriptive Unified Lead & Social Engine"
@@ -74,7 +74,7 @@ property of how the product is built, not a policy setting you have to trust som
 honour.
 
 PULSE is part of the current Runink Server build, arriving in the upcoming release — the same
-install that carries Runink CORE, with FORGE inside it, and Runink FACE. A company standing up
+install that carries Runink TIDE, with FORGE inside it, and Runink FACE. A company standing up
 the Server will get PULSE already there, not a separate product to source and wire in
 afterwards.
 
@@ -296,7 +296,7 @@ already work.
 **Voice.** A voice sales agent handles conversation directly. In the console it is
 press-to-talk: you speak, it listens, the sales specialist responds, and the reply is
 spoken back — all on your own machines, on the same pair of speech engines every Runink
-console speaks and listens with, in CORE and FACE as much as here. For outbound calling,
+console speaks and listens with, in TIDE and FACE as much as here. For outbound calling,
 PULSE connects to a telephone exchange you host yourself, so calls run through
 infrastructure you own rather than a per-minute service.
 

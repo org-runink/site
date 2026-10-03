@@ -3,7 +3,7 @@
 
   What it draws, and what it deliberately refuses to draw:
 
-    - It is two doors in one wall, not a pipeline. The wall is CORE's edge.
+    - It is two doors in one wall, not a pipeline. The wall is TIDE's edge.
       A finding comes in through the upper door and the verdict goes back out
       through the lower one, and the two doors are drawn with DIFFERENT marks
       (a filled lozenge, a hollow ring) because they are opened by different
@@ -66,7 +66,7 @@
     <path d="M176,110 C 210,110 214,136 250,136" style="stroke-width:1.7;stroke-opacity:0.7"/>
   </g>
 
-  <!-- the wall: CORE's edge, with a gap at each door -->
+  <!-- the wall: TIDE's edge, with a gap at each door -->
   <g style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2">
     <path d="M250,8 V92"/>
     <path d="M250,144 V216"/>
@@ -127,7 +127,7 @@
     <path d="M540,118 C 566,118 574,182 612,182"/>
   </g>
 
-  <!-- a number: CORE divides the raw counts again itself -->
+  <!-- a number: TIDE divides the raw counts again itself -->
   <g style="fill:var(--ink-3,#57534e)">
     <rect x="600" y="46" width="86" height="7" rx="3.5"/>
     <rect x="600" y="60" width="64" height="7" rx="3.5"/>

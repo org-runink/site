@@ -12,7 +12,7 @@ next_about: "Runink PULSE"
 # it: Prescriptive Unified Lead & Social Engine (owner, 2026-09-26).
 #
 # Rewritten 2026-09-29 from the fixed `rp:` product-page template (layout:
-# "product", still used by /products/core/ and /river/) onto layout: "landing" —
+# "product", still used by /products/tide/ and /river/) onto layout: "landing" —
 # the same shortcode vocabulary content/products/face.md uses (hero,
 # section-container, card-grid, card, figure, faq, cta). The owner's word for the
 # previous version was that it "isn't that appealing"; face.md is the richest
@@ -78,7 +78,7 @@ PULSE, and what it is not.
 </h2>
 
 <p class="text-xl text-ink-2 leading-relaxed">
-PULSE is a separate product from FACE and from CORE, sold on its own. It does not read your logistics or claims records, and it is not the operations layer your other applications run on. What it does: audit your website and social presence, research your market, find the companies worth talking to, and write the material — all from one shared understanding of your business.
+PULSE is a separate product from FACE and from Runink TIDE, sold on its own. It does not read your logistics or claims records, and it is not the operations layer your other applications run on. What it does: audit your website and social presence, research your market, find the companies worth talking to, and write the material — all from one shared understanding of your business.
 </p>
 </div>
 
@@ -98,9 +98,9 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
 >}}
 {{< card
     icon="server-stack"
-    title="Runink CORE"
+    title="Runink TIDE"
     description="A separate product, sold on its own. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
-    link="/blog/whitepapers/runink-core/"
+    link="/blog/whitepapers/runink-tide/"
 >}}
 {{< /card-grid >}}
 </div>
@@ -258,7 +258,7 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
     <div class="border-l-4 border-signal pl-6 space-y-4">
         <h2 class="text-2xl font-bold text-white">It arrives as part of the upcoming Runink Server.</h2>
         <p class="text-lg text-slate-300 leading-relaxed">
-            PULSE is part of the same Runink Server build as Runink CORE — with FORGE inside it — and Runink FACE. A company standing up the Server will get PULSE already there, not a separate product to source and wire in afterwards. PULSE, FACE and CORE stay billed separately: what changes is that they arrive together.
+            PULSE is part of the same Runink Server build as Runink TIDE — with FORGE inside it — and Runink FACE. A company standing up the Server will get PULSE already there, not a separate product to source and wire in afterwards. PULSE, FACE and TIDE stay billed separately: what changes is that they arrive together.
         </p>
     </div>
 </div>
@@ -283,7 +283,7 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
     "questions": [
         {
             "question": "Is PULSE the same thing as Runink FACE?",
-            "answer": "No. They are separate products. PULSE is a marketing engine: site and social audit, market research, lead prospecting and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve — nothing on this page is a FACE capability, and a FACE result is not a PULSE result. Runink CORE is a third product, also sold separately: the operations layer you run on your own hardware. Its paper describes it."
+            "answer": "No. They are separate products. PULSE is a marketing engine: site and social audit, market research, lead prospecting and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve — nothing on this page is a FACE capability, and a FACE result is not a PULSE result. Runink TIDE is a third product, also sold separately: the operations layer you run on your own hardware. Its paper describes it."
         },
         {
             "question": "Does PULSE publish on its own, or do we?",
@@ -315,7 +315,7 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
         },
         {
             "question": "What does it cost?",
-            "answer": "PULSE is priced by the seat: you pay for each person who uses it, and the seat covers the work that person puts through it. PULSE Lite runs on Runink's shared machines, where your work takes its turn: $59 a seat a month, or $49 a seat a month on an annual plan, for teams of one to nine. Each Lite seat gets 10 tasks a day at full speed; after that, tasks keep running at a slower pace until midnight in your time zone, when the count starts again. Dedicated is $99 a seat a month, for ten seats and up, running on runners in your own cloud account, which bills you for that compute directly. Enterprise, including deployments with no connection to the outside world, is quoted with you. PULSE, FACE and CORE are each sold on their own subscription, so a PULSE seat is a seat in PULSE."
+            "answer": "PULSE is priced by the seat: you pay for each person who uses it, and the seat covers the work that person puts through it. PULSE Lite runs on Runink's shared machines, where your work takes its turn: $59 a seat a month, or $49 a seat a month on an annual plan, for teams of one to nine. Each Lite seat gets 10 tasks a day at full speed; after that, tasks keep running at a slower pace until midnight in your time zone, when the count starts again. Dedicated is $99 a seat a month, for ten seats and up, running on runners in your own cloud account, which bills you for that compute directly. Enterprise, including deployments with no connection to the outside world, is quoted with you. PULSE, FACE and TIDE are each sold on their own subscription, so a PULSE seat is a seat in PULSE."
         }
     ]
 }

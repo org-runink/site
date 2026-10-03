@@ -6,17 +6,17 @@ title: "Libros blancos"
 # matter is per-file, so the English one does not cover these.
 type: whitepapers
 headline: "Documentos que empiezan por lo que puede demostrarse."
-description: "Documentos extensos sobre Runink FACE, Runink PULSE y Runink CORE, tres productos distintos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación."
+description: "Documentos extensos sobre Runink FACE, Runink PULSE y Runink TIDE, tres productos distintos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación."
 deck: |
   Documentos extensos, cada uno sobre un producto de Runink o sobre un acuerdo
   con un socio. Los primeros tratan de **Runink FACE**. **Runink PULSE** es un producto distinto, de análisis de mercado y
   marketing, y su documento describe su propio trabajo, no el de FACE.
-  **Runink CORE** es un producto por derecho propio, que se vende por separado.
+  **Runink TIDE** es un producto por derecho propio, que se vende por separado.
   Es la capa de operaciones que usted ejecuta en su propio hardware para
   mantener en orden sus aplicaciones de Runink y sus propios datos, y la
   respuesta honesta a dónde se procesan sus datos y quién puede verlos. Su
   documento es donde este sitio lo describe. Los documentos conjuntos con Logical Leap tratan de las pantallas
-  de supervisión de Atlas, que funcionan dentro de CORE.
+  de supervisión de Atlas, que funcionan dentro de TIDE.
 
   No contienen casos de cliente, ni nombres, ni cifras de retorno de la
   inversión. Lo que explican es el mecanismo: qué mira el software, qué

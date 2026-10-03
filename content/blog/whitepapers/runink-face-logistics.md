@@ -2233,7 +2233,7 @@ automation setup rather than an island in it.
 ### FACE within Runink
 
 FACE is one of two Runink products. The other is PULSE, a digital-marketing
-engine built the same way. Both sit on a shared platform called CORE, which
+engine built the same way. Both sit on a shared platform called Runink TIDE, which
 is what makes the installation, identity and separation properties described
 in this document consistent across them.
 

@@ -13,7 +13,7 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Cenários financeiros e teste de hipóteses</p>
-<p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o Fulfilment Autonomous Claims Engine. O FACE roda sobre a plataforma Runink core, mas o trabalho desta página é do próprio FACE.</p>
+<p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o Fulfilment Autonomous Claims Engine. O FACE roda sobre a plataforma Runink TIDE, mas o trabalho desta página é do próprio FACE.</p>
 
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">

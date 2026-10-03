@@ -22,7 +22,7 @@
 Runink sells separate products, each on its own. **Runink FACE** reads records a
 logistics or finance operation already holds, compares each against the rule that
 governs it, and drafts an action for a named person to approve. **Runink PULSE**
-is for market analysis and marketing. **Runink CORE** is the operations layer a
+is for market analysis and marketing. **Runink TIDE** is the operations layer a
 company runs on its own hardware to keep its Runink applications and its own data
 in order, which is the answer to where data is processed and who can see it.
 
@@ -49,7 +49,7 @@ measure and say where to find it in your own systems instead.
 - [Runink FACE]({{ "products/face/" | absURL }}): what it reads, what it drafts, and where it stops.
 - [Runink FACE pricing]({{ "pricing/" | absURL }}): seats and a compute allowance, with the prices published.
 - [Runink PULSE]({{ "blog/whitepapers/runink-pulse/" | absURL }}): the long document on what it does.
-- [Runink CORE]({{ "blog/whitepapers/runink-core/" | absURL }}): the long document that is its product home.
+- [Runink TIDE]({{ "blog/whitepapers/runink-tide/" | absURL }}): the long document that is its product home.
 
 ## Where it fits
 

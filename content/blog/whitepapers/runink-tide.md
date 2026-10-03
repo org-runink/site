@@ -1,32 +1,33 @@
 ---
-title: "Runink CORE — The operations layer for companies that keep their own data"
+title: "Runink TIDE — The operations layer for companies that keep their own data"
+aliases: ["/blog/whitepapers/runink-core/"]
 headline: "Run your software, your AI and your data on your own machines, and see all of it from one screen."
 # The label the closing ask carries into the contact form, so an enquiry
 # arrives naming the paper it came from. `product:` is not usable for this —
-# two of the four papers are both "Runink CORE".
+# two of the four papers are both "Runink TIDE".
 #
 # Added 2026-09-29: a paragraph under "Where does our information go?" reporting
-# CORE's own egress audit run, on the same footing FACE's paper already carries
+# TIDE's own egress audit run, on the same footing FACE's paper already carries
 # for its own audit run (limits stated in the sentence itself, never "provably").
-# content/products/core.md's features grid carries the same fact, shortened.
+# content/products/tide.md's features grid carries the same fact, shortened.
 #
 # Updated 2026-10-01: a "Sensors and devices report to your own server" section
-# was added and taken out again the same day; it goes back only on the CORE
+# was added and taken out again the same day; it goes back only on the TIDE
 # owner's word that the Server release carrying it has passed acceptance. The
-# commercial model now follows the pricing page (priced by where CORE runs, a
+# commercial model now follows the pricing page (priced by where TIDE runs, a
 # team allowance of Compute Units, sold on its own), and no longer says where
 # the allowance is read; that sentence returns once it can be shown.
-next_about: "The Runink CORE paper"
-product: "Runink CORE"
+next_about: "The Runink TIDE paper"
+product: "Runink TIDE"
 subtitle: "The operations layer for companies that keep their own data"
-description: "What Runink CORE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx, Intelligence and FORGE, page by page, with the business value of each and what adopting it involves."
+description: "What Runink TIDE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx, Intelligence and FORGE, page by page, with the business value of each and what adopting it involves."
 weight: 20
 date: 2026-09-26T00:00:00Z
 source_pages: 23
 audience: "Executive, technology, data and risk stakeholders"
 blurb: "The operations layer a company runs on its own machines. One console shows whether the platform is healthy and your changes shipped, what your AI models and agents are allowed to do, what your data holds and where spending goes wrong, and turns a written brief into a working application with a person approving each step."
 deck: |
-  **Runink CORE is the operations layer a company runs on machines it owns.**
+  **Runink TIDE is the operations layer a company runs on machines it owns.**
   It keeps the company's software healthy, governs the AI models and agents
   that work inside it, watches the company's own data, and turns a written
   brief into a working application. Its AI model runs on those same machines.
@@ -51,8 +52,8 @@ register:
   - { page: 15, title: "FORGE: from a written brief to a working application" }
   - { page: 16, title: "On every screen" }
   - { page: 17, title: "What it is built on, and why that matters commercially" }
-  - { page: 18, title: "Who CORE is for" }
-  - { page: 19, title: "What adopting CORE involves" }
+  - { page: 18, title: "Who TIDE is for" }
+  - { page: 19, title: "What adopting TIDE involves" }
   - { page: 20, title: "The commercial model" }
   - { page: 21, page_end: 22, title: "Answers to the questions we are usually asked" }
   - { page: 23, title: "The next step" }
@@ -60,22 +61,22 @@ register:
 
 ## Executive summary
 
-Runink CORE is the layer beneath a company's software. It runs that software on
+Runink TIDE is the layer beneath a company's software. It runs that software on
 machines the company owns. It shows one person, on one screen, what is happening
 across all of it. It keeps a record of every change a person makes, and anyone
 signed in can check that the record is intact.
 
-It also runs the company's own AI. The language model CORE uses — the kind of
+It also runs the company's own AI. The language model TIDE uses — the kind of
 system that reads and writes plain English — runs on the company's hardware. The
 automated helpers that review changes, sort reports and check rules use that
 model too. Nothing is sent to an outside AI service. That one fact turns a
 security review from a negotiation into a description.
 
-CORE is a product in its own right, sold separately. Runink FACE and Runink
+TIDE is a product in its own right, sold separately. Runink FACE and Runink
 PULSE are distinct products that work together with it: where a company runs
-them, CORE is the layer they run on.
+them, TIDE is the layer they run on.
 
-CORE's console is split into five parts. Each answers one question.
+TIDE's console is split into five parts. Each answers one question.
 
 - **Overview** — is anything wrong, and where do I go next?
 - **DevEx**, short for developer experience — is the platform running as it
@@ -141,9 +142,9 @@ involved, a security review asks where the information goes, who else can see
 it, and what happens to it after. If the design sends it out, the honest answer
 stalls the deal.
 
-### What CORE changes
+### What TIDE changes
 
-CORE provides the common foundations once, for every application: somewhere to
+TIDE provides the common foundations once, for every application: somewhere to
 run, one way to prove identity, a way to reach company data, one place to look,
 and a way to get changes made. And it does all of it on the company's own
 machines, with the company's own model. The security question then has a short
@@ -188,7 +189,7 @@ to the page where it can be dealt with. Then the most recent helper runs, and
 one line for each part of the platform — services, deployments and the AI
 models — each a link to its own page.
 
-At the foot of the page is **Ask CORE**, an assistant. A person types, or
+At the foot of the page is **Ask TIDE**, an assistant. A person types, or
 speaks, a request in plain language: list what exists, tell me the state of that
 one, create a deployment of this application for this team. The assistant
 carries out the request with the same controls a person would use, and shows
@@ -447,7 +448,7 @@ each allowed to do?
 
 **Who uses it.** The head of data, the risk officer and the engineering lead.
 
-**What it shows.** Every agent CORE knows about, each fact shown once. CORE's
+**What it shows.** Every agent TIDE knows about, each fact shown once. TIDE's
 own agents appear with their purpose, whether they are switched on, which model
 they use, and the limits they work under. The agents inside the Runink
 applications appear with their health, their model, and the written rules each
@@ -479,7 +480,7 @@ where that capacity goes, so sizing is a reading, not a guess.
 
 ### Connections
 
-**The question.** Which of our systems does CORE know how to reach, and who may
+**The question.** Which of our systems does TIDE know how to reach, and who may
 change that?
 
 **Who uses it.** The head of data, platform engineers and the security lead.
@@ -504,7 +505,7 @@ change a connection, and every attempt, refusals included, is recorded.
 
 ### Runners
 
-**The question.** What reaches our data sources on CORE's behalf, and is it
+**The question.** What reaches our data sources on TIDE's behalf, and is it
 healthy?
 
 **Who uses it.** Platform engineers and the security lead.
@@ -513,7 +514,7 @@ healthy?
 source when an administrator asks it to. The Runink-managed runner is listed
 first and cannot be revoked. A company can also add runners of its own, on its
 own network: an administrator gives each one a name and an address, and the
-runner uses a one-time ticket to obtain its certificate. CORE then connects to
+runner uses a one-time ticket to obtain its certificate. TIDE then connects to
 it at that address, and both ends prove who they are before anything moves.
 For each runner the page shows whether it is connected, when it was last seen,
 its version, when its certificate expires and how much work it has in hand.
@@ -528,13 +529,13 @@ health never touches the data itself.
 
 ### Trust › Harness
 
-**The question.** What is wrong, and what can CORE do about it?
+**The question.** What is wrong, and what can TIDE do about it?
 
 **Who uses it.** The operations lead, the security lead and the compliance
 officer.
 
 **What it shows.** Findings about risk and compliance, each with its evidence
-and a proposed remedy. Under each finding are only the actions CORE can really
+and a proposed remedy. Under each finding are only the actions TIDE can really
 take: start a named helper, file a tracking item, or acknowledge the finding.
 Every action is confirmed first, then written to the audit chain before it
 happens, and its result is shown in place. An action the console cannot take
@@ -625,7 +626,7 @@ been handed?
 **Who uses it.** The risk officer, the compliance officer and internal audit.
 
 **What it shows.** Findings sent in by an outside assessment platform, each with
-CORE's own verdict: agree, disagree, or unable to judge, each on its own line and
+TIDE's own verdict: agree, disagree, or unable to judge, each on its own line and
 never blended into a score. "Nothing was sent in" and "never judged" are said in
 those words, and never read as agreement. The page also lists the assessor's
 recent runs.
@@ -633,19 +634,19 @@ recent runs.
 **Why it matters.** A finding checked by the same system that raised it is not
 checked. A second, separate reading before a person acts means people spend
 their time on findings that hold up, and can see which ones were not assessed.
-The joint paper on CORE and Atlas describes how that assessor reaches a verdict.
+The joint paper on TIDE and Atlas describes how that assessor reaches a verdict.
 
 ## Intelligence: what our data holds, and where it goes wrong
 
 The Intelligence pages look outward, at the company's own data and spending.
 Most of them are the Atlas oversight pages, built with our partner Logical Leap,
-running inside CORE on CORE's own data. Resolve, which reads the structure of
-the company's systems, is a Runink capability that CORE shares with FACE.
+running inside TIDE on TIDE's own data. Resolve, which reads the structure of
+the company's systems, is a Runink capability that TIDE shares with FACE.
 Every figure on these pages is computed from the company's own records and
 feeds, or shown as absent with the reason.
 
 This section summarises each page. The joint paper,
-[Runink CORE and Atlas](/blog/whitepapers/runink-core-atlas/), covers them in
+[Runink TIDE and Atlas](/blog/whitepapers/runink-tide-atlas/), covers them in
 depth.
 
 ### The three dashboards: Analyst, CFO and PMO
@@ -761,11 +762,11 @@ the checks an auditor reads describe the same estate.
 
 ### Sources and Settings
 
-**The question.** Which systems may CORE read, and who may change that?
+**The question.** Which systems may TIDE read, and who may change that?
 
 **Who uses it.** The head of data and the security lead.
 
-**What it shows.** *Sources* shows one card for each system CORE is connected
+**What it shows.** *Sources* shows one card for each system TIDE is connected
 to: the business domain it was grouped into, whether it answered when last
 checked, and a switch that grants it to the Intelligence workspace. Granting
 records a permission without reaching the system. Connections themselves are
@@ -788,7 +789,7 @@ answered its last test, whether the estate has been mapped, where what a
 source declares disagrees with what its data shows, the data-quality score for
 capital spending, and the data-governance findings. What could not be read is
 listed with its reason. From here an administrator can run an audit, each one
-an action CORE already has: test a source, explore it, read its access
+an action TIDE already has: test a source, explore it, read its access
 patterns, map the estate, or pull a capital-spending feed. Every run is
 confirmed first and recorded. This is also where the runner for an audit is
 chosen: Runink managed by default, or one of the company's own registered
@@ -823,8 +824,8 @@ inspection do not. The list was drawn once, by hand, and the systems moved on
 without it. Resolve builds that inventory from the systems themselves, when an
 administrator asks, and keeps nothing a security reviewer would object to.
 
-Resolve is one capability that Runink CORE and Runink FACE share: the same
-page, doing the same work, in both products. In CORE it sits in the menu under
+Resolve is one capability that Runink TIDE and Runink FACE share: the same
+page, doing the same work, in both products. In TIDE it sits in the menu under
 Intelligence › Resolve.
 
 ### What it lets you do
@@ -899,7 +900,7 @@ outcome, and refusals are written too.
 Lineage page: the keys a source declares between its tables, the domains that
 span more than one source, and which datasets were read and written.
 
-**The data-governance checks.** CORE's data-governance helper assesses data
+**The data-governance checks.** TIDE's data-governance helper assesses data
 quality and personal-data exposure from what Explore and Read access patterns
 recorded. On quality, it flags a column declared as never empty that holds
 empty values, and a table with no declared primary key. On personal data, it
@@ -931,7 +932,7 @@ exactly what was reached, by whom, on which runner, and what was kept.
 
 FORGE is Runink's studio for making new software. It builds web applications and
 pipelines — a pipeline here is a set of steps that moves and prepares data on a
-schedule. It is served inside CORE, under CORE's sign-in, as its own part of the
+schedule. It is served inside TIDE, under TIDE's sign-in, as its own part of the
 menu.
 
 ### Studio
@@ -982,12 +983,12 @@ recorded against their name.
 
 ## What it is built on, and why that matters commercially
 
-Each property in this section describes how CORE is built. Each has a commercial
+Each property in this section describes how TIDE is built. Each has a commercial
 result, and the result is the reason to care.
 
 ### The model is yours
 
-CORE runs its own language model on the company's own hardware. The assistant,
+TIDE runs its own language model on the company's own hardware. The assistant,
 the automated helpers, the coding sessions and the FORGE studio all use it. No
 outside AI service is called, and no outside account is needed. A published list
 of outside AI libraries and their web addresses is checked against every change
@@ -1041,12 +1042,12 @@ records can be verified by anyone signed in.
 project. The cost of answering who did what, when and why is paid by the system
 as it runs.
 
-## Who CORE is for
+## Who TIDE is for
 
 ### The company that runs several applications with a small platform team
 
 If a handful of people keep everything running, and each is the only one who
-understands part of it, CORE helps from the first week. One screen, remedies
+understands part of it, TIDE helps from the first week. One screen, remedies
 written next to the readings, and helpers that take the repetitive work.
 
 The sign of fit: your operations knowledge lives mostly in people's heads, and
@@ -1107,7 +1108,7 @@ them in the language of another.
 Each can reach their own answer on their own hardware, without committing to
 anything.
 
-## What adopting CORE involves
+## What adopting TIDE involves
 
 Five steps, in this order. Each one is worth doing on its own, and each answers
 a question the next step assumes.
@@ -1116,7 +1117,7 @@ a question the next step assumes.
 | --- | --- | --- | --- |
 | 1 | One workstation | Run the whole platform on it with one command | Whether the screens can be trusted: which ones say they did not measure something |
 | 2 | Machines you own and your sign-in arrangement | Put the platform on them with one command, in the same shape | Nothing new. Same screens, more room |
-| 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what Resolve shows about it | Whether CORE reads your data the way your security lead needs |
+| 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what Resolve shows about it | Whether TIDE reads your data the way your security lead needs |
 | 4 | Somebody outside the platform team | Have them request a deployment, and watch it expire | Whether useful work happens without the platform team in the loop |
 | 5 | One code repository | Switch on one helper and watch it before arming it | Whether the helpers save real time, judged on what they would have published |
 
@@ -1126,7 +1127,7 @@ Download the control tool and run one command. The whole platform comes up on
 the workstation: the applications, the model, the console and the full security
 arrangement. Look at Overview, the Harness and the Audit chain first. Together
 they show the honesty rule, the remedy habit and the record, which are what set
-CORE apart from a dashboard.
+TIDE apart from a dashboard.
 
 ### Step two: put it on machines you own
 
@@ -1136,7 +1137,7 @@ things that change are size and who has access.
 ### Step three: connect one real data source
 
 Choose one system and add it on DataEx › Connections. Explore it in Resolve
-and read what CORE kept about it: structure and counts, and no values. Then
+and read what TIDE kept about it: structure and counts, and no values. Then
 sign in as someone who is not on the permitted list and try to change it. Read
 the record the refusal leaves in the Audit chain. That is the interaction to show
 your security lead.
@@ -1162,13 +1163,13 @@ are, the compliance check if written rules and real controls have drifted apart.
   owner and the console are enough for ordinary running.
 - Your sign-in arrangement and the list of people allowed in.
 - A decision about who may change data connections and who may arm agents. These
-  are the policy decisions CORE asks you to make explicitly, and they are best
+  are the policy decisions TIDE asks you to make explicitly, and they are best
   made in the first week.
 
 ### How to see the value in your own records
 
 Write down four readings in the first week, before anything changes, because
-they cannot be recovered once CORE is running:
+they cannot be recovered once TIDE is running:
 
 - **Specialist time.** For each person who is the only one who understands part
   of your estate, have them tally for one week the requests nobody else could
@@ -1186,20 +1187,20 @@ they cannot be recovered once CORE is running:
 
 ## The commercial model
 
-Runink publishes its prices on the [pricing page](/pricing/). CORE is priced by
+Runink publishes its prices on the [pricing page](/pricing/). TIDE is priced by
 where it runs, at three levels:
 
 - **A shared level for a first team,** on Runink's shared machines. It is a
-  team plan: you pay for the number of people who use CORE, and the team comes
-  with an allowance of Compute Units, the measure of the work CORE does for
+  team plan: you pay for the number of people who use TIDE, and the team comes
+  with an allowance of Compute Units, the measure of the work TIDE does for
   you.
-- **A dedicated level** for a company running its estate on CORE, in its own
+- **A dedicated level** for a company running its estate on TIDE, in its own
   cloud account, priced per machine.
 - **An enterprise level** for deployments you host yourself on your own
   premises, priced with you.
 
-CORE is sold on its own. Runink FACE and Runink PULSE each have their own
-subscription, and a CORE plan and its allowance cover CORE.
+TIDE is sold on its own. Runink FACE and Runink PULSE each have their own
+subscription, and a TIDE plan and its allowance cover TIDE.
 
 Two things follow from this shape.
 
@@ -1217,7 +1218,7 @@ running has somebody who asked for it and a reason it exists.
 To machines you own. The model, the records, the files and the certificate
 authority all run on your hardware. No outside service is called for AI.
 
-In our audit run, CORE made no outbound connection while testing, exploring,
+In our audit run, TIDE made no outbound connection while testing, exploring,
 mapping and assessing your sources. Integrations you turn on, such as GitHub or
 Stripe, connect only to their own services. That was one run, about six
 seconds, on a development machine: Chrome and the host itself were out of
@@ -1291,9 +1292,9 @@ decided as you go.
 
 ## The next step
 
-The most useful thing to do with this paper is to see CORE running.
+The most useful thing to do with this paper is to see TIDE running.
 
-CORE runs on one machine, from one downloaded file, with one command. There is
+TIDE runs on one machine, from one downloaded file, with one command. There is
 no environment to set up for you and nothing to sign before you see it work. The
 version on your workstation is the version that runs on your machines.
 
@@ -1313,6 +1314,6 @@ in your own words. That is the basis on which we would like to be judged.
 
 ### Talk to us
 
-To see CORE on your own hardware, or to talk about your estate,
+To see TIDE on your own hardware, or to talk about your estate,
 [book a consultation](/#contact) at runink.org/#contact, or write to
 paes@runink.org.

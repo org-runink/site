@@ -10,12 +10,12 @@
 # It is a short switchboard, not a brochure: one line per product and the page
 # behind it, drawn by layouts/products/list.html in the product-page design. The
 # order is the attribution the owner set on /downloads/: FACE is the flagship; PULSE
-# and CORE are separate products sold on their own; Runink River is the open
+# and TIDE are separate products sold on their own; Runink River is the open
 # workstation.
 #
 # English only, like the product pages it links to.
 title: "Runink products"
-description: "Runink FACE, Runink CORE, Runink PULSE and Runink River: what each one is, and the page that explains it."
+description: "Runink FACE, Runink TIDE, Runink PULSE and Runink River: what each one is, and the page that explains it."
 image: "/images/products/products-og.jpg"
 intro: "Separate products, each with its own page, and each one runs on hardware you own."
 items:
@@ -23,9 +23,9 @@ items:
     meaning: "FACE · Fulfilment Autonomous Claims Engine"
     url: "/products/face/"
     line: "Runink's main product, for logistics and the claims, returns and compliance work that hangs off it. It reads the records you already hold and drafts the action for a named person to approve."
-  - name: "Runink CORE"
-    meaning: "CORE · Control · Orchestration · Resilience · Enforcement"
-    url: "/products/core/"
+  - name: "Runink TIDE"
+    meaning: "TIDE · Trusted Intelligence for Developer & Data Experience"
+    url: "/products/tide/"
     line: "One console for your software, your AI models and agents, and your data, with its own model running on your machines. A product in its own right, sold separately."
   - name: "Runink PULSE"
     meaning: "PULSE · Prescriptive Unified Lead & Social Engine"
