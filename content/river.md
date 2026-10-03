@@ -1,7 +1,7 @@
 ---
 title: "Runink River"
 layout: "product"
-description: "Runink River is a developer workstation on s6: KDE Plasma, the linux-runink kernel, an encrypted ZFS disk with snapshot rollback, a default-deny firewall, river-sandbox and a graphical installer, for data and AI work on hardware you own."
+description: "Runink River is a free, open-source workstation operating system for data, analytics and AI work on hardware you own. The disk is encrypted, a bad update rolls back with one reboot, nothing gets in unless you open it, and there is no per-seat licence."
 # Where this page comes from. It is the Runink River landing page the owner approved
 # for the river repository's documentation site (branch docs/hugo-site, river#128),
 # moved here so runink.org holds the product page and the river docs hold the detail.
@@ -71,6 +71,22 @@ description: "Runink River is a developer workstation on s6: KDE Plasma, the lin
 # release-status or CTA wording touched: "Get the source" / "Read the
 # documentation" and their URLs are byte-for-byte what they were before this pass.
 #
+# 2026-10-03 (mine): business-value pass, same brief as the TIDE/FACE/PULSE pages. The
+# page now leads with the reader's week, not with the parts list: days lost setting up a
+# new machine (the installer split), a laptop that can't be trusted with sensitive data,
+# an update that breaks and costs a day, a heavy job that freezes the screen, code you
+# didn't write, and paying for cloud workstations to do work your own hardware can do.
+# Each card names the burden, says what River does about it in plain verbs, and stops.
+# The rp.steps band is back, with no terminal block and no install command: it now holds
+# the three cost lines (no per-seat licence, hardware you own put to work, fewer lost
+# days), with no figures (CONTENT.md rule 1). Technology names (s6, ZFS, KDE Plasma,
+# linux-runink) moved out of the hero and down to the card labels and bodies, where the
+# technical evaluator reads them. Every claim is one the cards already made, or the
+# river docs' feature pages state; nothing new. Still no install command, download or
+# release link, and the page does not promise an installed, working desktop: the first
+# screenshot's alt text dropped "installed" for that reason. Lockup, CTAs and their URLs
+# are unchanged.
+#
 # English only, like /downloads/, so no translation is left behind.
 #
 # The share card: 1200x675, the site's og:image frame (see baseof.html). Rendered
@@ -80,43 +96,51 @@ image: "/images/products/river-og.jpg"
 rp:
   logo: "/images/brand/river-mark.svg"
   lockup: "RIVER · Raft-Integrated Validated Event Runtime"
-  title: "The developer workstation, now open source."
-  promise: "Every line of Runink River is public today, free to read and build on. Underneath: KDE Plasma on s6, never systemd, the zen-based `linux-runink` kernel, an encrypted ZFS disk with snapshot rollback, a default-deny firewall and a graphical installer, for data, analytics and AI work on hardware you own."
+  title: "Put the machines you already own to work on your data."
+  promise: "Runink River is a free, open-source operating system for data, analytics and AI workstations. The disk is locked from the first boot. A bad update rolls back with one reboot. A heavy job runs without freezing your screen. There is no per-seat licence, and every line is public."
   cta:
     - { text: "Get the source", url: "https://github.com/org-runink/river", style: "primary" }
     - { text: "Read the documentation", url: "https://docs.runink.org/river/", style: "ghost" }
   fine: "MIT userspace · GPL-2.0-only kernel · CDDL-1.0 ZFS · CC-BY-4.0 artwork"
   shots:
-    - { src: "/images/products/river/desktop.jpg", w: 1280, h: 800, bar: "Runink River · Plasma", alt: "The installed Runink River desktop: KDE Plasma on the river-lines wallpaper, with the Runink River mark in the corner." }
+    - { src: "/images/products/river/desktop.jpg", w: 1280, h: 800, bar: "Runink River · Plasma", alt: "The Runink River desktop: KDE Plasma on the river-lines wallpaper, with the Runink River mark in the corner." }
     - { src: "/images/products/river/installer-welcome.jpg", w: 1280, h: 800, bar: "Install Runink River", alt: "The graphical installer's welcome screen: choose English, Spanish, French or Portuguese and a keyboard layout, then Next." }
   mission: "You shouldn't have to trust an operating system you can't look inside. *So we opened ours.*"
   facts:
-    - { k: "7.2.x zen", v: "one kernel, built from signed sources" }
-    - { k: "aes-256-gcm", v: "every ZFS dataset, from the first boot" }
-    - { k: "s6", v: "one program starts and supervises everything" }
+    - { k: "No licence fee", v: "free to use on every machine you own" }
+    - { k: "Locked disk", v: "your files and the system encrypted, from the first boot" }
+    - { k: "One reboot", v: "back to the system you had before the update" }
     - { k: "4 languages", v: "English, Spanish, French and Portuguese in the installer" }
   split:
-    eyebrow: "Graphical installer"
-    heading: "Click Next. It knows your machine."
+    eyebrow: "A new machine"
+    heading: "A new laptop shouldn't cost days of setup."
     body:
-      - "The installer is written for someone who has never installed an operating system. It measures the processor, memory and disks, and plans the install before it touches anything. You answer a few plain questions: language, keyboard, network, a name and a password."
+      - "Someone in IT, or the analyst themselves, loses days getting a new machine ready. The River installer is written for someone who has never installed an operating system. It reads the processor, memory and disks, and plans the install before it touches anything. You answer a few plain questions: language, keyboard, network, a name and a password."
+      - "That is staff time back, for IT and for the person waiting on the machine."
     list:
-      - "**One erase gate.** The disks it will erase are listed with their serial numbers, and you type a word to confirm."
+      - "**You approve the erase.** The disks it will erase are listed with their serial numbers, and you type a word to confirm."
       - "**With or without internet.** It copies the running system onto your disk, so it needs nothing from the network."
       - "**A recovery key, shown once.** Write it down or save it to a second stick before you go on."
     shot: { src: "/images/products/river/installer-disk.jpg", w: 1280, h: 800, bar: "Your computer", alt: "The installer's machine screen: processor and memory, and the one disk it will erase, shown with its serial number." }
     link: { text: "Read the installer guide", url: "https://docs.runink.org/river/docs/features/installer/" }
   features:
     id: "inside"
-    heading: "Built for people who ship data work"
-    intro: "Six parts, each small enough to read and each chosen so the machine behaves the same way every time it starts."
+    heading: "The bad days it is built to prevent"
+    intro: "Each card starts with a day your team already knows. Then it says what River does about it. The technical name is on the label, and the docs page behind each card has the detail."
     items:
-      - { k: "init", title: "See exactly what's running", body: "s6 starts the machine and supervises every service. The desktop, Bluetooth and printing are s6 services too. Services are plain directories you can read, not unit files.", url: "https://docs.runink.org/river/docs/features/s6/" }
-      - { k: "kernel", title: "linux-runink", body: "The zen kernel on the 7.2.x stable series, tuned for long-running data jobs: it keeps a heavy job running efficiently instead of switching away from it, hands out memory in larger blocks for big data sets, and keeps network transfers fast under load. The desktop still boots with full preemption, so Plasma stays responsive while that job runs in the background.", url: "https://docs.runink.org/river/docs/features/kernel/" }
-      - { k: "storage", title: "Encrypted ZFS, with rollback", body: "The whole disk is encrypted, and `/home` is encrypted separately from the rest of the system. Take a snapshot of the system before an update, and one reboot takes you back to it. Swap lives in RAM.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
-      - { k: "network", title: "Default-deny firewall", body: "Nothing gets in unless you open it, and everything you start can go out. It loads before the network does. Wi-Fi, DHCP and printers on your network keep working, and SSH stays closed until you list it.", url: "https://docs.runink.org/river/docs/features/firewall/" }
-      - { k: "sandbox", title: "river-sandbox", body: "Run a build script from a pull request, or code a model wrote, with no network unless you ask and no way to reach your keys or secrets. A request for one of those folders is refused, not trimmed.", url: "https://docs.runink.org/river/docs/features/sandbox/" }
-      - { k: "security", title: "Kept locked down", body: "CPU mitigations and memory hardening stay on. Modules are signed with a key made for each build. Secret files are owned by one account, and their modes are checked again at every boot.", url: "https://docs.runink.org/river/docs/security/" }
+      - { k: "storage · ZFS", title: "An update breaks, and the day is gone", body: "Take a snapshot of the system before an update. If the update goes wrong, one reboot takes you back to it, and your files are not touched. The fix is a restart, not a rebuild.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
+      - { k: "encryption", title: "Sensitive data on a laptop that can walk away", body: "The whole disk is encrypted from the first boot, and `/home` is encrypted separately from the rest of the system. The key is typed at start-up, so a lost machine holds files nobody can read without it. Swap lives in RAM, so nothing spills to disk unlocked.", url: "https://docs.runink.org/river/docs/features/zfs-encryption/" }
+      - { k: "kernel · linux-runink", title: "A heavy job freezes the screen", body: "The kernel keeps a long data job running instead of switching away from it, hands out memory in larger blocks for big data sets, and keeps network transfers fast under load. The desktop still gets its turn, so you keep working while the job runs.", url: "https://docs.runink.org/river/docs/features/kernel/" }
+      - { k: "sandbox", title: "Running code you didn't write", body: "A build script from a pull request, a tool an AI assistant wrote, a dependency's install hook. `river-sandbox` runs it with no network unless you ask, and no way to reach your keys or secrets. A request for one of those folders is refused, not trimmed.", url: "https://docs.runink.org/river/docs/features/sandbox/" }
+      - { k: "network · firewall", title: "Something on the network you never opened", body: "Nothing gets in unless you open it, and everything you start can go out. The firewall loads before the network does. Wi-Fi, DHCP and printers keep working, and SSH stays closed until you list it.", url: "https://docs.runink.org/river/docs/features/firewall/" }
+      - { k: "init · s6 · security", title: "Nobody can say what is running", body: "One program, s6, starts the machine and watches every service. Services are plain directories IT can read, not unit files. Hardening stays on, modules are signed with a key made for each build, and secret files are checked again at every boot.", url: "https://docs.runink.org/river/docs/security/" }
+  steps:
+    heading: "What it's worth to your budget"
+    intro: "We put no number here. Your own records show what each line costs you today."
+    items:
+      - { title: "No per-seat licence", body: "River is free and open source. Adding an analyst adds hardware, not an operating-system bill. **Opex.**" }
+      - { title: "Hardware you own, put to work", body: "Data and AI work that would go to a rented cloud workstation can run on the laptops and desktops you already bought. **Capex** you have spent, and **Opex** you don't add." }
+      - { title: "Fewer lost days", body: "Less time setting up machines, rebuilding after a bad update, or waiting on a frozen screen. Count it in staff hours. **Opex.**" }
   papers:
     heading: "See it for yourself"
     items:
