@@ -16,7 +16,7 @@
 # English only, like the product pages it links to.
 title: "Runink products"
 description: "Runink FACE, Runink TIDE, Runink PULSE and Runink River: what each one is, and the page that explains it."
-image: "/images/products/products-og.jpg"
+image: "/images/og/products-og.jpg"
 intro: "Separate products, each with its own page, and each one runs on hardware you own."
 items:
   - name: "Runink FACE"

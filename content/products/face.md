@@ -6,7 +6,7 @@ title: "Runink FACE"
 seo_title: "Runink FACE: freight overcharges and claims, caught in time"
 seo_description: "For freight, claims and operations teams. Runink FACE reads your invoices and claim files, finds the overcharge and the expiring claim, and drafts the fix."
 image: "/images/face/cockpit.png"
-description: "For logistics, freight, claims and operations teams. FACE reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the broken rule, and drafts the next step for a named person to approve. It runs on hardware you control."
+description: "For logistics, freight, claims and operations teams. FACE reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the broken rule, and drafts the next step for a named person to approve. It runs on your own servers or cloud account, or on Runink's shared machines to start, and no outside AI service is called."
 layout: "landing"
 # /products/ used to be this page's alias while the section index was not
 # rendered. It renders now (content/products/_index.md), so the alias is gone.
@@ -46,7 +46,7 @@ badge: "FACE"
 {{< section-container class="pt-16 pb-0 relative z-10" id="what-is-runink-face" >}}
 <div class="max-w-4xl mx-auto text-left space-y-4">
 <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">What is Runink FACE?</h2>
-<p class="text-xl text-ink-2 leading-relaxed">Runink FACE is software from Runink for logistics, freight, claims and operations teams. It reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step for a named person to approve. It runs on hardware you control, and it is licensed per person who uses it, sold on its own.</p>
+<p class="text-xl text-ink-2 leading-relaxed">Runink FACE is software from Runink for logistics, freight, claims and operations teams. It reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step for a named person to approve. It runs on your own servers or cloud account, or on Runink's shared machines to start, with no outside AI service; it is licensed per person who uses it, sold on its own.</p>
 </div>
 {{< /section-container >}}
 
@@ -324,7 +324,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         },
         {
             "question": "Can we run it on our own servers, with no outside AI service?",
-            "answer": "Yes. FACE runs on hardware you control, and the language model it reasons with is one you run yourself. It sends its questions to exactly one model server, the one you point it at, so there is no per-question bill from an outside vendor. The full answer, including the two paths that do reach outside, is under *Where does our data go?* below."
+            "answer": "Yes. On the Dedicated and Enterprise licences FACE runs in your own cloud account or on your own servers; Lite runs on Runink's shared machines. On every licence the work stays on the machines your licence names, and nothing goes to an outside model provider, so there is no per-question bill from an outside vendor. The full answer, including the two paths that do reach outside, is under *Where does our data go?* below."
         },
         {
             "question": "Has this been run on an operation like mine?",
