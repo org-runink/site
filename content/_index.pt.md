@@ -6,6 +6,11 @@
 # English and hugo.toml already lists them in English in the Portuguese menu.
 # The link goes to the same /industries/... page in every language.
 title: "Runink"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink | Pegue cobranças indevidas e reclamações a tempo"
+seo_description: "Cobranças indevidas pagas, reclamações vencidas, regras quebradas. O Runink FACE lê os registros que você já tem e redige a correção para alguém aprovar."
 description: "Você descobre quando já é tarde para contestar. Um contêiner fica parado porque um documento está errado e a diária começa nesse mesmo dia. O Runink FACE lê os registros que os seus sistemas já guardam, compara cada um com a regra que o rege e coloca uma ação redigida diante de quem decide."
 # THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
 #
@@ -434,17 +439,17 @@ products:
     paper: "runink-face"
     name: "Runink FACE"
     sub: "Fulfilment Autonomous Claims Engine"
-    line: "O desta página. Declarações retidas, sinistros ainda dentro do prazo, cadeia de frio lida depois da baixa, demanda que cresceu subindo a cadeia."
+    line: "O desta página, para times de logística, frete, sinistros e operações. Encontra a cobrança indevida que ninguém contestou, a reclamação prestes a vencer e a regra que alguém quebrou, e redige o próximo passo para uma pessoa nomeada aprovar. Roda em hardware que você controla."
   - page: "/products/pulse"
     paper: "runink-pulse"
     name: "Runink PULSE"
     sub: "Prescriptive Unified Lead & Social Engine"
-    line: "Um produto separado, não um recurso do FACE. A auditoria, a pesquisa, a prospecção e o material que um time de marketing publica, em um aplicativo só que o time opera direto."
+    line: "Um produto separado, para a pequena e média empresa e para quem vende e faz marketing nela. Encontra as empresas que vale a pena procurar, redige a resposta, a campanha e o acompanhamento, e mostra qual canal traz clientes. O seu time decide o que sai. Preço por usuário."
   - page: "/products/tide"
     paper: "runink-tide"
     name: "Runink TIDE"
     sub: "Trusted Intelligence for Developer & Data Experience"
-    line: "Um produto por si só, vendido separadamente. É a resposta para onde os seus dados são processados e quem pode vê-los, que é a pergunta a que toda outra página daqui acaba chegando."
+    line: "Um produto separado, para times de engenharia, plataforma e dados. Tira da semana deles as perguntas de sempre: o que quebrou e por quê, se a correção já está no ar, qual número está certo, quem mudou o quê. Os assistentes redigem; uma pessoa nomeada aprova. Roda nos seus servidores, na sua conta de nuvem ou nas máquinas compartilhadas da Runink."
   - paper: "runink-tide-atlas"
     name: "Runink TIDE e Atlas"
     sub: "Um documento conjunto com a Logical Leap"
@@ -452,7 +457,7 @@ products:
   - page: "/river"
     name: "Runink River"
     sub: "Raft-Integrated Validated Event Runtime"
-    line: "Uma estação de trabalho para desenvolvedores sobre s6: KDE Plasma, raiz ZFS criptografada, firewall que bloqueia por padrão e instalador gráfico, para trabalhar com dados e IA no seu próprio hardware."
+    line: "Um sistema operacional livre e de código aberto para as estações de trabalho de dados, análise e IA que você já tem. O disco é criptografado desde o primeiro boot, uma atualização ruim é desfeita com uma reinicialização e não há licença por usuário."
 products_more_text: "Como construímos, e com quem"
 products_more_url: "/company"
 

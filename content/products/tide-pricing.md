@@ -1,5 +1,11 @@
 ---
 title: "Runink TIDE Pricing"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink TIDE pricing: per person, per node or on-premises"
+seo_description: "What a Runink TIDE licence costs: per person on Runink's shared machines, per node in your own cloud, or priced with you on your premises. No success fees."
+image: "/images/products/tide-og.jpg"
 aliases: ["/products/core-pricing/"]
 description: "What a licence to run Runink TIDE costs. You choose where it runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDE never charges a percentage of anything it finds, fixes or ships."
 layout: "pricing"

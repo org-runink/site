@@ -1,6 +1,11 @@
 ---
 date: 2026-09-07T00:00:00Z
 title: "Industries"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink by industry: logistics, insurance, banking, telecom"
+seo_description: "Five industries, three Runink products. Find the page that reads like your week, see which product fits it, and the measures to track your own figures."
 description: "Five industries, three products. Runink FACE covers logistics and supply chain and insurance; Runink PULSE covers marketing; banking and telecom describe the Runink TIDE and Atlas oversight arrangement. Find the one that reads like your week, and see which product it is."
 # Hugo resolves layouts by TYPE. The section directory is already named
 # "industries", so type defaults correctly, but it is set explicitly here and

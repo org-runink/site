@@ -1,5 +1,11 @@
 ---
 title: "Runink FACE"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink FACE: freight overcharges and claims, caught in time"
+seo_description: "For freight, claims and operations teams. Runink FACE reads your invoices and claim files, finds the overcharge and the expiring claim, and drafts the fix."
+image: "/images/face/cockpit.png"
 description: "For logistics, freight, claims and operations teams. FACE reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the broken rule, and drafts the next step for a named person to approve. It runs on hardware you control."
 layout: "landing"
 # /products/ used to be this page's alias while the section index was not
@@ -36,6 +42,13 @@ badge: "FACE"
     gradient-to="var(--rk-ground)"
     gradient-angle="135"
 >}}
+
+{{< section-container class="pt-16 pb-0 relative z-10" id="what-is-runink-face" >}}
+<div class="max-w-4xl mx-auto text-left space-y-4">
+<h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">What is Runink FACE?</h2>
+<p class="text-xl text-ink-2 leading-relaxed">Runink FACE is software from Runink for logistics, freight, claims and operations teams. It reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step for a named person to approve. It runs on hardware you control, and it is licensed per person who uses it, sold on its own.</p>
+</div>
+{{< /section-container >}}
 
 {{< section-container class="py-20 relative z-10" >}}
 
@@ -300,6 +313,18 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         {
             "question": "Is FACE the same thing as Runink PULSE?",
             "answer": "No. They are separate products, each sold on its own. FACE is the subject of this page: freight, fulfilment, forecasting, claims, returns and compliance. PULSE is for marketing teams — research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink TIDE is a third product, also sold separately: the operations layer you run on your own hardware to keep your Runink applications and your own data in order. Its paper describes it."
+        },
+        {
+            "question": "How do I stop overpaying freight invoices?",
+            "answer": "Check every invoice, not only the big ones. Disputing one by hand means pulling the carrier's receipt, matching it to the weighbridge reading, finding the rate that applied that day and drafting the letter. That takes most of a morning, so the small ones get paid. FACE reads the invoices and the records behind them, checks them against the rules you work to, and assembles the case with every record attached. Your freight-audit analyst reviews it and decides whether to send it."
+        },
+        {
+            "question": "How do I stop freight claims from expiring before anyone files them?",
+            "answer": "Make each claim file cheap to build. A damaged load is money back only inside the filing window, and when building the file costs more than the claim is worth, the small claims quietly expire. FACE gathers the claim, the policy, the reserve and the records, and drafts the action. An adjuster decides, on the file FACE put in front of them."
+        },
+        {
+            "question": "Can we run it on our own servers, with no outside AI service?",
+            "answer": "Yes. FACE runs on hardware you control, and the language model it reasons with is one you run yourself. It sends its questions to exactly one model server, the one you point it at, so there is no per-question bill from an outside vendor. The full answer, including the two paths that do reach outside, is under *Where does our data go?* below."
         },
         {
             "question": "Has this been run on an operation like mine?",

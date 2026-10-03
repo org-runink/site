@@ -1,5 +1,11 @@
 ---
 title: "À Quoi Sert Runink FACE"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink FACE : sinistres, chaîne du froid, retours, demande"
+seo_description: "Ce pour quoi Runink FACE est fait : sinistres, chaîne du froid, retours, demande et conformité. Les preuves sont chez vous ; une personne approuve."
+image: "/images/face/cockpit.png"
 product: "Runink FACE"
 description: "Les sujets opérationnels pour lesquels Runink FACE est fait. Dans chacun, les faits sont déjà dans vos systèmes et personne n'a les heures pour les rassembler, et chacun se termine par une personne qui approuve une action rédigée, pas par un tableau de bord de plus."
 layout: "section"

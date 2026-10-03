@@ -1,5 +1,10 @@
 ---
 title: "Runink River"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink River: free open-source OS for data workstations"
+seo_description: "Runink River is a free, open-source OS for data and AI workstations you own: encrypted disk, one-reboot rollback after a bad update, no per-seat licence."
 layout: "product"
 description: "Runink River is a free, open-source workstation operating system for data, analytics and AI work on hardware you own. The disk is encrypted, a bad update rolls back with one reboot, nothing gets in unless you open it, and there is no per-seat licence."
 # Where this page comes from. It is the Runink River landing page the owner approved
@@ -94,12 +99,18 @@ description: "Runink River is a free, open-source workstation operating system f
 # The share card: 1200x675, the site's og:image frame (see baseof.html). Rendered
 # from the page's own fonts and palette with headless Chromium; see the PR for the
 # source HTML.
+#
+# 2026-10-03 (search pass): `promise`, the line under the h1, is also the page's
+# answer to "What is Runink River?" for search and answer engines. It names the
+# product and the company, who it is for, what it takes off their week, and how
+# it is run and paid for, in three sentences that can be quoted alone. Keep it
+# self-contained: no "it" that needs the line above to make sense.
 image: "/images/products/river-og.jpg"
 rp:
   logo: "/images/brand/river-mark.svg"
   lockup: "RIVER · Raft-Integrated Validated Event Runtime"
   title: "Put the machines you already own to work on your data."
-  promise: "Runink River is a free, open-source operating system for data, analytics and AI workstations. The disk is locked from the first boot. A bad update rolls back with one reboot. A long data job keeps its pace under load. There is no per-seat licence, and every line is public."
+  promise: "Runink River is a free, open-source operating system from Runink for the data, analytics and AI workstations you already own. The disk is locked from the first boot, a bad update rolls back with one reboot, and a long data job keeps its pace under load. There is no per-seat licence, and every line is public."
   cta:
     - { text: "Get the source", url: "https://github.com/org-runink/river", style: "primary" }
     - { text: "Read the documentation", url: "https://docs.runink.org/river/", style: "ghost" }

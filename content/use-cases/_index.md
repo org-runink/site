@@ -1,5 +1,11 @@
 ---
 title: "What Runink FACE Is Built For"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink FACE use cases: claims, cold chain, returns, demand"
+seo_description: "The jobs Runink FACE is built for: freight claims, cold chain, returns, stock and demand planning, compliance. The evidence is yours; a person approves."
+image: "/images/face/cockpit.png"
 # This section is Runink FACE's scenarios and nothing else. FACE is the flagship.
 # Runink PULSE (market analysis) is a separate product with its own material, and
 # TIDE is a third, separate product — neither of their capabilities may be

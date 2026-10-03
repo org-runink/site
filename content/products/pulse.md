@@ -1,5 +1,10 @@
 ---
 title: "Runink PULSE"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink PULSE: answer leads first, spend less on agencies"
+seo_description: "Runink PULSE finds the companies worth calling, drafts replies, campaigns and follow-ups, and shows which channel brings customers in. Your team approves."
 description: "Runink PULSE is marketing software your own team runs: it finds leads, drafts the replies, campaigns and follow-ups, and shows which channel brings customers in. Your team decides what goes out. Priced per seat."
 layout: "landing"
 badge: "PULSE"
@@ -51,6 +56,13 @@ image: "/images/products/pulse-og.jpg"
     gradient-to="var(--rk-ground)"
     gradient-angle="135"
 >}}
+
+{{< section-container class="pt-16 pb-0 relative z-10" id="what-is-runink-pulse" >}}
+<div class="max-w-4xl mx-auto text-left space-y-4">
+<h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">What is Runink PULSE?</h2>
+<p class="text-xl text-ink-2 leading-relaxed">Runink PULSE is marketing software from Runink for small and mid-size businesses and the people who sell and market for them. It finds the companies worth calling, drafts the reply, the campaign and the follow-up, and shows which channel brings customers in, while your team decides what goes out. It runs on Runink's shared machines, in your own cloud account or inside your own estate, and it is priced per seat, sold on its own.</p>
+</div>
+{{< /section-container >}}
 
 {{< section-container class="py-16 relative z-10" >}}
 <div class="max-w-5xl mx-auto">
@@ -305,6 +317,18 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         {
             "question": "Is PULSE the same thing as Runink FACE?",
             "answer": "No. They are separate products. PULSE is for marketing and sales: site and social audit, market research, finding leads and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDE is a third product, also sold separately: the operations layer you run on your own hardware. Its paper describes it."
+        },
+        {
+            "question": "How do I answer new leads faster?",
+            "answer": "Take the first part of the work off your people. Describe the customer you want, and PULSE finds companies that match and drafts a cold email, a call script and a LinkedIn message for each. Connect WhatsApp through your own Twilio account, and it can answer people already in your HubSpot contacts at any hour, with each reply checked before it is sent. The owner decides whether it answers on its own, and one setting turns those replies off."
+        },
+        {
+            "question": "How do I spend less on an agency for routine posts?",
+            "answer": "Draft the routine work yourselves, from one brief. PULSE turns one brief into LinkedIn posts, blog articles, whitepapers and courses, and writes a dated plan of what publishes on which channel in which week. Every draft waits for review, and nothing goes out until someone switches that channel on. The seat price stays the same however many pieces you write."
+        },
+        {
+            "question": "Can we run PULSE on our own servers?",
+            "answer": "Yes. The same software runs on one workstation to try it out, and on one machine or several inside your own estate for daily use. It runs on ordinary processors, with no graphics card required, and no outside AI service is called. PULSE Lite runs on Runink's shared machines instead; the cost answer below lists each plan and where it runs."
         },
         {
             "question": "Does PULSE publish on its own, or do we?",

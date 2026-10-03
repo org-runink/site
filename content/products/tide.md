@@ -1,5 +1,10 @@
 ---
 title: "Runink TIDE"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink TIDE: what broke, what shipped, which number is right"
+seo_description: "Runink TIDE takes repeat questions off engineering and data teams: what broke, did the fix ship, which number is right. A person approves each change."
 layout: "product"
 description: "Runink TIDE takes the repeat questions off engineering, platform and data teams: what broke and why, whether a fix shipped, which number is right, who changed what. Run it on your own servers, in your own cloud account, or on Runink's shared machines to start. Helpers propose; a person approves."
 next_about: "Runink TIDE"
@@ -86,11 +91,17 @@ aliases: ["/products/core/"]
 # Every claim still comes from the TIDE paper; the `resolve` card was folded away
 # rather than reworded, and the console's own words (DevEx, DataEx, Harness) stay
 # only as small section labels, each explained by the burden it removes.
+#
+# 2026-10-03 (search pass): `promise`, the line under the h1, is also the page's
+# answer to "What is Runink TIDE?" for search and answer engines. It names the
+# product and the company, who it is for, what it takes off their week, and how
+# it is run and paid for, in three sentences that can be quoted alone. Keep it
+# self-contained: no "it" that needs the line above to make sense.
 image: "/images/products/tide-og.jpg"
 rp:
   lockup: "TIDE · Trusted Intelligence for Developer & Data Experience"
   title: "Know what broke, what shipped and which number is right. On your servers, your cloud or ours."
-  promise: "**Runink TIDE** takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, which dashboard is right, who changed this. Helpers draft the answer or the fix. A named person approves it. Run it on your own servers or cloud account and your data stays there. No plan sends it to an outside AI service."
+  promise: "**Runink TIDE** is software from Runink that takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, which dashboard is right, who changed this. Helpers draft the answer or the fix, and a named person approves it. Run it on Runink's shared machines, or on your own servers or cloud account so your data stays there; it is licensed by where it runs, and no plan sends your data to an outside AI service."
   cta:
     - { text: "Book a consultation", url: "/#contact", style: "primary" }
     - { text: "Read the TIDE paper", url: "/blog/whitepapers/runink-tide/", style: "ghost" }
