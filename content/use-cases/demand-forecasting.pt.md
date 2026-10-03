@@ -71,7 +71,7 @@ author: "Runink"
                 Isto é o sinal, não a resposta. O que comprar, quanta cobertura manter e qual fornecedor ainda consegue cumprir a data é o trabalho seguinte, e está descrito em <a href="/pt/use-cases/fulfillment-optimization/">cobertura de estoque e planejamento de fornecedores</a>. A previsão diz que o item virou e com quanta confiança; o abastecimento decide o que fazer a respeito. Mantê-los separados é de propósito, porque as duas coisas são discutidas por pessoas diferentes.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                O que chega a uma pessoa é uma coisa só: este item, a virada, o método por trás dela, os períodos sobre os quais foi testada, e uma mudança redigida no plano. Uma pessoa com nome aprova, edita ou recusa, e essa decisão fica anotada. Aprovar é o que envia — e onde um passo por trás disso ainda não tem nada implementado, sendo uma escrita no seu sistema de planejamento o exemplo honesto, a resposta nomeia esse passo como não executado em vez de relatar a mudança como feita. A decisão e a execução são anotadas como dois fatos diferentes, porque são. Roda em máquinas suas, e o histórico nunca sai delas.
+                O que chega a uma pessoa é uma coisa só: este item, a virada, o método por trás dela, os períodos sobre os quais foi testada, e uma mudança redigida no plano. Uma pessoa com nome aprova, edita ou recusa, e essa decisão fica anotada. Aprovar é o que envia — e onde um passo por trás disso ainda não tem nada implementado, sendo uma escrita no seu sistema de planejamento o exemplo honesto, a resposta nomeia esse passo como não executado em vez de relatar a mudança como feita. A decisão e a execução são anotadas como dois fatos diferentes, porque são. Roda nas máquinas que o seu plano indica, e o histórico não vai para nenhum serviço de IA externo.
             </p>
         </div>
         <div>
@@ -115,7 +115,7 @@ author: "Runink"
     },
     {
       "question": "O nosso histórico de vendas sai do prédio?",
-      "answer": "Roda em máquinas suas, e o histórico nunca sai delas. A decomposição, o teste de estabilidade, o ajuste dos modelos e a pontuação acontecem todos ali."
+      "answer": "Roda nas máquinas que o seu plano indica, e o histórico não vai para nenhum serviço de IA externo. A decomposição, o teste de estabilidade, o ajuste dos modelos e a pontuação acontecem todos ali."
     },
     {
       "question": "Quem muda o plano?",

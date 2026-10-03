@@ -128,7 +128,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
 {{< card
     icon="server-stack"
     title="Runink TIDE"
-    description="A separate product, sold on its own. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
+    description="A separate product, sold on its own. The operations layer for your engineering and data teams, on your servers, your cloud or ours, and the answer to where your data is processed and who can see it. It has its own paper."
     link="/blog/whitepapers/runink-tide/"
 >}}
 {{< /card-grid >}}
@@ -312,7 +312,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
     "questions": [
         {
             "question": "Is FACE the same thing as Runink PULSE?",
-            "answer": "No. They are separate products, each sold on its own. FACE is the subject of this page: freight, fulfilment, forecasting, claims, returns and compliance. PULSE is for marketing teams — research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink TIDE is a third product, also sold separately: the operations layer you run on your own hardware to keep your Runink applications and your own data in order. Its paper describes it."
+            "answer": "No. They are separate products, each sold on its own. FACE is the subject of this page: freight, fulfilment, forecasting, claims, returns and compliance. PULSE is for marketing teams — research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink TIDE is a third product, also sold separately: the operations layer for your engineering and data teams, on your servers, your cloud or ours, that keeps your Runink applications and your own data in order. Its paper describes it."
         },
         {
             "question": "How do I stop overpaying freight invoices?",

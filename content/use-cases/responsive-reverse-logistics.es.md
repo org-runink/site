@@ -116,7 +116,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
     },
     {
       "question": "¿Y si nuestros registros no pueden salir del edificio?",
-      "answer": "Entonces nada de esto cambia. El triaje es una política escrita y aritmética sobre cuatro campos que teclea el muelle, y se ejecuta donde usted ejecuta FACE, en máquinas suyas."
+      "answer": "Entonces nada de esto cambia. El triaje es una política escrita y aritmética sobre cuatro campos que teclea el muelle, y se ejecuta donde usted ejecuta FACE."
     },
     {
       "question": "¿Cómo sabríamos si ha servido de algo?",

@@ -16,7 +16,7 @@ author: "Runink"
 # TRANSLATION OF content/company.md. Rule 12: this is a page, not a copy — when
 # the English page changes, this one changes in the same commit or it comes down.
 #
-# THE SOVEREIGNTY CARD ("Vos enregistrements restent sur vos machines") CARRIES A
+# THE SOVEREIGNTY CARD ("Aucun service d'IA extérieur ne lit vos enregistrements") CARRIES A
 # CONSTRAINT. It must stay an architectural property — how the thing is built —
 # and must not be hardened into a claim that a check refuses the code, because
 # that is not supportable for FACE and /products/face/ says the opposite. The
@@ -41,7 +41,7 @@ author: "Runink"
       L'essentiel de ce qu'une équipe d'exploitation, de finance ou de conformité doit trancher se trouve déjà dans des systèmes qu'elle paie, sous une forme que personne n'a le temps de lire.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
-      Nous nous connectons à ces systèmes, gardons la copie de travail sur des machines que le client contrôle, et montrons le raisonnement derrière chaque réponse pour que la personne qui signe puisse le vérifier.
+      Nous nous connectons à ces systèmes, gardons la copie de travail sur les machines prévues par l'offre du client, et montrons le raisonnement derrière chaque réponse pour que la personne qui signe puisse le vérifier.
     </p>
   </div>
 
@@ -51,7 +51,7 @@ author: "Runink"
       Un travail où le logiciel lit et où une personne décide — et où la trace de tout cela est assez complète pour être remise à un auditeur, à un régulateur ou à une contrepartie sans avoir à la préparer.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
-      C'est ce vers quoi nous construisons, et non ce que nous prétendons avoir achevé. C'est pourquoi chaque réponse arrive comme un projet qui attend un nom, pourquoi un contrôle qui n'a pas pu être exécuté le dit au lieu de passer, et pourquoi le raisonnement sur les enregistrements d'un client se fait sur les machines de ce client.
+      C'est ce vers quoi nous construisons, et non ce que nous prétendons avoir achevé. C'est pourquoi chaque réponse arrive comme un projet qui attend un nom, pourquoi un contrôle qui n'a pas pu être exécuté le dit au lieu de passer, et pourquoi le raisonnement sur les enregistrements d'un client ne part jamais vers un service d'IA extérieur.
     </p>
   </div>
 {{< /section-container >}}
@@ -84,9 +84,9 @@ author: "Runink"
           description="Quand une partie d'un traitement n'a pas lieu, le résultat dit laquelle et pourquoi. Un logiciel qui annonce un succès pour un travail qu'il n'a pas fait est l'échec contre lequel nous avons conçu le plus fermement."
       >}}
       {{< value-card
-          title="Vos enregistrements restent sur vos machines"
+          title="Aucun service d'IA extérieur ne lit vos enregistrements"
           icon="scale"
-          description="Les modèles tournent sur des machines que vous contrôlez, et il y a un seul point d'inférence : celui que vous configurez. Le raisonnement sur vos fichiers a lieu là où sont vos fichiers. C'est ainsi que c'est construit, et non un interrupteur que quelqu'un règle, alors demandez-nous de parcourir la frontière avec vous plutôt que de vous fier à la phrase."
+          description="Les modèles tournent sur les machines prévues par votre offre, vos propres serveurs, votre compte cloud ou les machines partagées de Runink, et il y a un seul point d'inférence : celui qui est configuré pour votre offre. C'est ainsi que c'est construit, et non un interrupteur que quelqu'un règle, alors demandez-nous de parcourir la frontière avec vous plutôt que de vous fier à la phrase."
       >}}
       {{< value-card
           title="Nous ne revendiquons pas de certifications"

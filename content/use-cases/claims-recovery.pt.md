@@ -123,7 +123,7 @@ author: "Runink"
     },
     {
       "question": "E se os nossos arquivos não puderem sair do prédio?",
-      "answer": "Então não saem. O raciocínio roda em máquinas que você controla, e o modelo com que ele raciocina é um que você mesmo executa, não um serviço operado por outra pessoa. Os seus registros de embarque, as suas faturas e a sua correspondência são lidos onde já vivem, e a leitura acontece do seu lado da fronteira.<br><br>É assim que o software é construído, não é uma chave que se liga, de modo que é uma propriedade que a sua própria revisão de segurança pode examinar. Peça para percorrermos essa fronteira com você, em vez de aceitar uma frase numa página web."
+      "answer": "Então não saem. O raciocínio roda nas máquinas que o seu plano indica, e o modelo com que ele raciocina roda lá também, não num serviço de IA externo. Os seus registros de embarque, as suas faturas e a sua correspondência são lidos nessas máquinas e em nenhum outro lugar.<br><br>É assim que o software é construído, não é uma chave que se liga, de modo que é uma propriedade que a sua própria revisão de segurança pode examinar. Peça para percorrermos essa fronteira com você, em vez de aceitar uma frase numa página web."
     }
   ]
 }

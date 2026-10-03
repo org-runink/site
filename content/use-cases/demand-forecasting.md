@@ -68,7 +68,7 @@ author: "Runink"
                 This is the signal, not the response. What to order, how much cover to hold and which supplier can still make the date is the next job along, and it is described in <a href="/use-cases/fulfillment-optimization">stock cover and supplier planning</a>. Forecasting says the line has turned and how confident that is; fulfilment decides what to do about it. Keeping them apart is deliberate, because the two get argued by different people.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                What reaches a person is one item: this line, the turn, the method behind it, the periods it was tested over, and a drafted change to the plan. A named person approves it, edits it or rejects it, and that decision is kept on the record. Approving is what sends it — and where a step behind it has nothing implemented yet, a write into your planning system being the honest example, the response names that step as not executed rather than reporting the change as made. The decision and the execution are recorded as two different facts, because they are. It runs on machines you own, and the history never leaves them.
+                What reaches a person is one item: this line, the turn, the method behind it, the periods it was tested over, and a drafted change to the plan. A named person approves it, edits it or rejects it, and that decision is kept on the record. Approving is what sends it — and where a step behind it has nothing implemented yet, a write into your planning system being the honest example, the response names that step as not executed rather than reporting the change as made. The decision and the execution are recorded as two different facts, because they are. It runs on the machines your plan names, and the history goes to no outside AI service.
             </p>
         </div>
         <div>
@@ -112,7 +112,7 @@ author: "Runink"
     },
     {
       "question": "Does our sales history leave the building?",
-      "answer": "It runs on machines you own, and the history never leaves them. The decomposition, the steadiness test, the model fitting and the scoring all happen there."
+      "answer": "It runs on the machines your plan names, and the history goes to no outside AI service. The decomposition, the steadiness test, the model fitting and the scoring all happen there."
     },
     {
       "question": "Who changes the plan?",

@@ -89,7 +89,7 @@ figure:
   today_label: "Comment on le lit aujourd'hui"
   today_note: "Le volume a eu raison du contrôle : on lit un échantillon et on suppose que le reste lui ressemble. Les enregistrements qui divergent sont déjà dans le champ."
   read_label: "Comment Runink le lit"
-  read_note: "Chaque enregistrement est comparé à la règle qui le gouverne, la nuit, sur vos propres machines. Ce qui diverge ressort nommément."
+  read_note: "Chaque enregistrement est comparé à la règle qui le gouverne, la nuit, sur vos serveurs, dans votre cloud ou dans le nôtre. Ce qui diverge ressort nommément."
   beats:
     - title: "Les enregistrements existent déjà"
       body: "Commandes, sinistres, ordres de paiement, détail des appels, contrats et relevés de capteurs — dans les systèmes que vous exploitez déjà."
@@ -173,8 +173,8 @@ industries:
         steps:
           - step: "L'image arrive"
             body: "Une photo prise sur un terminal à la porte, ou une vue extraite d'une caméra de parc. Avant que quoi que ce soit ne la lise, on vérifie que c'est une image : l'en-tête est décodé seul, le format doit être l'un des deux, et la taille est plafonnée en octets comme en pixels. Un PDF, un conteneur vidéo ou des octets bruts sont refusés à cette étape."
-          - step: "Un modèle la lit, sur votre matériel"
-            body: "L'image est réduite à une taille que le modèle peut prendre et lue par un modèle de vision qui tourne sur des machines que vous contrôlez. Ce qui revient est une observation écrite, rattachée à l'image exacte dont elle est tirée, de sorte que la phrase et sa preuve ne se séparent pas."
+          - step: "Un modèle la lit, sans aucun service d'IA extérieur"
+            body: "L'image est réduite à une taille que le modèle peut prendre et lue par un modèle de vision qui tourne sur les machines prévues par votre offre, pas par un service extérieur. Ce qui revient est une observation écrite, rattachée à l'image exacte dont elle est tirée, de sorte que la phrase et sa preuve ne se séparent pas."
           - step: "Les papiers sont lus à côté"
             body: "L'enregistrement de l'expédition, la remise, et l'état dans lequel les documents disent que la charge devrait être. L'observation est confrontée à ce qui était déjà écrit plutôt qu'à un seuil choisi par quelqu'un."
           - step: "Ce qui diffère sort nommé"
@@ -416,8 +416,8 @@ why:
     title: "Une personne nommée décide"
     body: "Un constat arrive sous forme d'action rédigée, et il attend. C'est l'approbation qui l'envoie. Qui a approuvé, quand, et ce qui a été modifié reste au dossier, pour pouvoir expliquer plus tard sans tout reconstituer."
   - glyph: "held"
-    title: "Vos enregistrements restent sur vos machines"
-    body: "Les fichiers et le raisonnement qui porte dessus s'exécutent sur du matériel que vous contrôlez. Rien n'est envoyé à un fournisseur de modèles extérieur, ce qui est en général le chemin le plus court à travers une revue de sécurité."
+    title: "Aucun service d'IA extérieur ne voit vos enregistrements"
+    body: "En Dédiée et en Enterprise, les fichiers et le raisonnement qui porte dessus s'exécutent sur vos propres serveurs ou dans votre compte cloud ; en Lite, sur les machines partagées de Runink. Quelle que soit l'offre, rien n'est envoyé à un fournisseur de modèles extérieur, ce qui est en général le chemin le plus court à travers une revue de sécurité."
 
 paper:
   text: "Lire le livre blanc FACE"
@@ -440,7 +440,7 @@ products:
     paper: "runink-face"
     name: "Runink FACE"
     sub: "Fulfilment Autonomous Claims Engine"
-    line: "Celui dont parle cette page, pour les équipes logistique, transport, sinistres et exploitation. Il repère la surfacturation que personne n'a contestée, la réclamation sur le point d'expirer et la règle enfreinte, puis rédige l'étape suivante pour qu'une personne nommée l'approuve. Il tourne sur du matériel que vous contrôlez."
+    line: "Celui dont parle cette page, pour les équipes logistique, transport, sinistres et exploitation. Il repère la surfacturation que personne n'a contestée, la réclamation sur le point d'expirer et la règle enfreinte, puis rédige l'étape suivante pour qu'une personne nommée l'approuve. Il tourne sur vos serveurs, dans votre compte cloud ou sur les machines partagées de Runink."
   - page: "/products/pulse"
     paper: "runink-pulse"
     name: "Runink PULSE"

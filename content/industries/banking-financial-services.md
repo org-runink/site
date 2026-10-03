@@ -63,7 +63,7 @@ owners:
   - role: "Operations"
     line: "A departure from the plan is noticed while a remedy is still available, instead of becoming a recovery action later."
   - role: "Security and IT"
-    line: "The model doing the reading runs on your own hardware. The records, the files and the credentials stay on your systems."
+    line: "The model doing the reading runs where TIDE runs, never at an outside AI service. The records, the files and the credentials stay on the machines your plan names."
 
 outcomes_heading: "What the arrangement changes"
 outcomes:
@@ -105,8 +105,8 @@ measures:
 
 foundations_heading: "Two things that make the above possible"
 foundations:
-  - name: "The reasoning runs on hardware you own"
-    plain: "The records, the contracts and the working-out stay inside your estate. The judging model is the cluster's own inference plane: there is no other endpoint, no API key, no vendor SDK and no fallback, and no code path that would take an external model plane. So no customer record, no payment instruction and no draft finding is sent anywhere to be read."
+  - name: "The reasoning goes to no outside model service"
+    plain: "The records, the contracts and the working-out stay on the machines TIDE runs on. The judging model is the cluster's own inference plane: there is no other endpoint, no API key, no vendor SDK and no fallback, and no code path that would take an external model plane. So no customer record, no payment instruction and no draft finding is sent anywhere to be read."
     measured_by: "The length of your own third-party risk and model governance review. What is reviewed is software you run, so there is no external model service to assess and no data-transfer clause to negotiate — though the arrangement as a whole does involve a second vendor, Logical Leap, which your third-party risk process will want to see. When a supervisor asks how a decision was reached, the answer is a record of what was decided, what it cited and who approved it, hash-chained and held by you."
   # Corrected. This said public material is read "rather than by a search
   # company acting for you", which implied no search engine sees the query. The
@@ -114,7 +114,7 @@ foundations:
   # the result pages itself. The true and still-strong claim is the one in the
   # last sentence, which was already right: there is no vendor account.
   - name: "Open-web research with no vendor account behind it"
-    plain: "Public material — filings, court and registry records, press — is found through a public search endpoint queried from inside your estate, and the pages behind the results are then fetched and read by your own browser rather than summarised for you by a paid research service."
+    plain: "Public material — filings, court and registry records, press — is found through a public search endpoint queried from the machines your plan names, and the pages behind the results are then fetched and read by a browser on those same machines rather than summarised for you by a paid research service."
     measured_by: "Adverse-media and counterparty research, where the question is more sensitive than the answer. The search engine sees the query, as it would from any browser. What does not exist is an account: no API key, no vendor contract, no per-question bill, so no supplier accumulates a history of the names your bank has been asking about, filed under your bank and retained on their terms. That is the part that matters when the name is market-sensitive or the file later becomes evidence."
 
 next_heading: "See whether it fits"

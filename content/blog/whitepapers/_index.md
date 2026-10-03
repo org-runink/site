@@ -57,7 +57,7 @@ deck: |
   with a partner. The ones at the top are about **Runink FACE**. **Runink PULSE** is a different product, for market analysis and
   marketing, and its paper describes its own work rather than FACE's.
   **Runink TIDE** is a product in its own right, sold separately. It is the
-  operations layer you run on your own hardware to keep your Runink
+  operations layer, on your servers, your cloud or ours, that keeps your Runink
   applications and your own data in order, and the honest answer to where your
   data is processed and who can see it. Its paper is where this site describes
   it. The joint papers with Logical Leap cover Atlas's oversight screens, which

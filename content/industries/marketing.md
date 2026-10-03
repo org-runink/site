@@ -48,7 +48,7 @@ owners:
   - role: "The marketing lead"
     line: "Your time moves from producing material to deciding about it. PULSE's approval queue becomes the surface you work on."
   - role: "IT and information security"
-    line: "The reasoning and the writing run on machines you control. That is a property of the Runink TIDE platform PULSE runs on, not a setting somebody in the marketing team has to remember to honour."
+    line: "The reasoning and the writing run on your servers, your cloud or ours, never at an outside AI service. That is a property of the Runink TIDE platform PULSE runs on, not a setting somebody in the marketing team has to remember to honour."
   - role: "Sales"
     line: "PULSE researches a prospect and drafts a cold email, a call script and a direct message per company, and leads synchronise to the customer-record system the team already works in."
   - role: "The board"
@@ -93,8 +93,8 @@ measures:
 
 foundations_heading: "Two things that make the above possible — and neither is a marketing feature"
 foundations:
-  - name: "Your material stays on machines you own"
-    plain: "The analysis and the writing happen on hardware inside your own network. Customer lists, pricing logic, unpublished plans and positioning you have not announced are processed there, not handed to an outside model provider to learn from. This comes from the Runink TIDE platform that PULSE is deployed on — the layer that runs the software and holds the connections to your own data — rather than from anything in the marketing product itself."
+  - name: "No outside AI service learns from your material"
+    plain: "The analysis and the writing happen on the machines PULSE runs on. Customer lists, pricing logic, unpublished plans and positioning you have not announced are processed there, not handed to an outside model provider to learn from. This comes from the Runink TIDE platform that PULSE is deployed on — the layer that runs the software and holds the connections to your own data — rather than from anything in the marketing product itself."
     measured_by: "The review that stands between a marketing team and a new tool. When legal or security asks where company material is processed, the answer is the name of a machine, given once and in writing — the same answer a customer's security questionnaire and a data-residency clause need."
   - name: "Open-web research that does not announce itself"
     plain: "PULSE reads the public web directly, through Runink's own headless-browser engine driven over ordinary public search results and the pages behind them, rather than putting your questions through a search company's paid service. The engine is shared Runink infrastructure, not a PULSE feature — PULSE is one of the products that uses it."

@@ -121,7 +121,7 @@ author: "Runink"
     },
     {
       "question": "What if our files cannot leave the building?",
-      "answer": "Then they do not. The reasoning runs on machines you control, and the model it reasons with is one you run yourself rather than a service somebody else operates. Your shipping records, invoices and correspondence are read where they already live, and the reading happens on your side of the boundary.<br><br>This is how the software is built rather than a setting to switch on, so it is a property your own security review can examine. Ask us to walk the boundary with you rather than taking a sentence on a web page for it."
+      "answer": "Then they do not. The reasoning runs on the machines your plan names, and the model it reasons with runs there too rather than at an outside AI service. Your shipping records, invoices and correspondence are read on those machines and nowhere else.<br><br>This is how the software is built rather than a setting to switch on, so it is a property your own security review can examine. Ask us to walk the boundary with you rather than taking a sentence on a web page for it."
     }
   ]
 }

@@ -84,7 +84,7 @@ image: "/images/products/pulse-og.jpg"
       <p class="text-sm text-ink-2 leading-relaxed">See a customer cooling before the renewal, not after.</p>
     </div>
   </div>
-  <p class="text-sm text-ink-3 mt-8">Nothing publishes until you switch it on. Your customer lists stay on hardware you control.</p>
+  <p class="text-sm text-ink-3 mt-8">Nothing publishes until you switch it on. Your customer lists stay on the machines your plan names, and no outside AI service reads them.</p>
 </div>
 {{< /section-container >}}
 
@@ -121,7 +121,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 {{< card
     icon="server-stack"
     title="Runink TIDE"
-    description="A separate product, sold on its own. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
+    description="A separate product, sold on its own. The operations layer for your engineering and data teams, on your servers, your cloud or ours, and the answer to where your data is processed and who can see it. It has its own paper."
     link="/blog/whitepapers/runink-tide/"
 >}}
 {{< /card-grid >}}
@@ -250,8 +250,8 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
             <p class="text-slate-300">Research and copy appear on screen as they are produced. You stop a wrong angle early, before anyone has spent an hour on it.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Your customer lists stay in</h3>
-            <p class="text-slate-300">Your positioning, your customer lists and your pipeline are processed inside your own network. No outside company runs a database holding your working data.</p>
+            <h3 class="text-2xl font-bold text-white mb-4">No outside AI service sees your lists</h3>
+            <p class="text-slate-300">Your positioning, your customer lists and your pipeline are processed on the machines your plan names: your own servers or cloud account on Dedicated and Enterprise, Runink's shared machines on Lite. No outside company runs a database holding your working data.</p>
         </div>
     </div>
 
@@ -269,7 +269,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">It runs where you put it</h3>
-            <p class="text-slate-300">The same software runs on one workstation to try it out, and on one machine or several inside your own estate for daily use. No outside AI service is called.</p>
+            <p class="text-slate-300">The same software runs on one workstation to try it out, and on one machine or several inside your own estate for daily use. PULSE Lite runs on Runink's shared machines instead. No outside AI service is called on any plan.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">No graphics card to buy</h3>
@@ -316,7 +316,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
     "questions": [
         {
             "question": "Is PULSE the same thing as Runink FACE?",
-            "answer": "No. They are separate products. PULSE is for marketing and sales: site and social audit, market research, finding leads and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDE is a third product, also sold separately: the operations layer you run on your own hardware. Its paper describes it."
+            "answer": "No. They are separate products. PULSE is for marketing and sales: site and social audit, market research, finding leads and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDE is a third product, also sold separately: the operations layer for your engineering and data teams, on your servers, your cloud or ours. Its paper describes it."
         },
         {
             "question": "How do I answer new leads faster?",
@@ -348,7 +348,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "Where does our data go?",
-            "answer": "Onto hardware you control. Working data is kept in a database inside the application itself, copied continuously into file storage you own, and restored from that copy when the application starts. No outside company runs a database holding your positioning, your customer records or your pipeline. No material is sent out to be trained on, and there is no account with an outside AI provider for it to be sent to."
+            "answer": "Onto the machines your plan names: your own servers or cloud account on Dedicated and Enterprise, Runink's shared machines on Lite. Working data is kept in a database inside the application itself, copied continuously into file storage on those same machines, and restored from that copy when the application starts. No outside company runs a database holding your positioning, your customer records or your pipeline. No material is sent out to be trained on, and there is no account with an outside AI provider for it to be sent to."
         },
         {
             "question": "Does it need special hardware?",

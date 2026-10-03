@@ -131,7 +131,7 @@ Approving is designed to end the work rather than start it. The reply names what
 
 ## Two Things Worth Knowing Up Front
 
-**Your data stays on your machines.** The order files, the customs papers, the sensor readings and the reasoning about them all run on hardware you control — FACE runs on the Runink TIDE platform, which is what makes that a property of the build rather than a setting somebody has to honour. Nothing goes to an outside model provider. That is the kind of answer a security review asks for before it will let a supplier hold its order data.
+**No outside AI service reads your data.** The order files, the customs papers, the sensor readings and the reasoning about them all run on the machines your plan names (your own servers or cloud account, or Runink's shared machines) — FACE runs on the Runink TIDE platform, which is what makes that a property of the build rather than a setting somebody has to honour. Nothing goes to an outside model provider. That is the kind of answer a security review asks for before it will let a supplier hold its order data.
 
 **The queue is where you decide.** Every item arrives with its reasoning and the records it rests on, so you can read why it was proposed before you agree to it. What you approve is what gets carried out, and an item you leave alone stays where it is. Which kinds of work are worth putting through the queue in the first place is a question you answer when you set it up — not a value threshold the software polices on your behalf.
 

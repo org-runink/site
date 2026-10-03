@@ -56,7 +56,7 @@ We use what we collect to run the Runink Ecosystem.
 
 ### To analyze it, and to act on it
 
-*   **Model Training.** We use it to refine two kinds of model: the ones that detect anomalies, and the ones that make decisions. **Note:** we never train shared models on your proprietary data. The models that reason over your material run on hardware you control. Your material is not sent to an outside model provider. We map our controls to the SOC 2, ISO 27001 and ISO 42001 frameworks. That mapping is our own statement. It is not a certification issued by an auditor.
+*   **Model Training.** We use it to refine two kinds of model: the ones that detect anomalies, and the ones that make decisions. **Note:** we never train shared models on your proprietary data. The models that reason over your material run on the machines your plan names: your own servers or cloud account, or Runink's shared machines. Your material is not sent to an outside model provider. We map our controls to the SOC 2, ISO 27001 and ISO 42001 frameworks. That mapping is our own statement. It is not a certification issued by an auditor.
 *   **Operations Models.** We use it to power the systems that detect risks and recommend actions.
 
 ### To bill you, and to tune the platform

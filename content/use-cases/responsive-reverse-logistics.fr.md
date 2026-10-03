@@ -116,7 +116,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
     },
     {
       "question": "Et si nos enregistrements ne peuvent pas quitter le bâtiment ?",
-      "answer": "Alors rien de tout cela ne change. Le triage est une politique écrite et de l'arithmétique sur quatre champs saisis au quai, et il tourne là où vous faites tourner FACE, sur des machines qui sont à vous."
+      "answer": "Alors rien de tout cela ne change. Le triage est une politique écrite et de l'arithmétique sur quatre champs saisis au quai, et il tourne là où vous faites tourner FACE."
     },
     {
       "question": "Comment saurions-nous si cela a servi à quelque chose ?",

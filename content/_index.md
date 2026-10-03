@@ -109,7 +109,7 @@ figure:
   today_label: "How it is read today"
   today_note: "Volume defeated inspection, so a sample is read and the rest is assumed to look like it. The records that differ are already in the field."
   read_label: "How Runink reads it"
-  read_note: "Every record is compared against the rule that governs it, overnight, on your own machines. What differs comes out by name."
+  read_note: "Every record is compared against the rule that governs it, overnight, on your servers, your cloud or ours. What differs comes out by name."
   beats:
     - title: "The records already exist"
       body: "Orders, claims, payment instructions, call detail, contracts and sensor readings — in the systems you already run."
@@ -199,8 +199,8 @@ industries:
         steps:
           - step: "The frame arrives"
             body: "A photograph taken on a handheld at the door, or a still pulled off a yard camera. Before anything reads it, it is checked to be an image: the header is decoded on its own, the format has to be one of two, and the size is capped both in bytes and in pixels. A PDF, a video container or raw bytes are refused at that step."
-          - step: "A model reads it, on your hardware"
-            body: "The frame is reduced to a size the model can take and read by a vision model running on machines you control. What comes back is a written observation tied to the exact frame it was read from, so the sentence and the evidence for it stay together."
+          - step: "A model reads it, with no outside AI service"
+            body: "The frame is reduced to a size the model can take and read by a vision model that runs on the machines your plan names, not by an outside service. What comes back is a written observation tied to the exact frame it was read from, so the sentence and the evidence for it stay together."
           - step: "The paperwork is read beside it"
             body: "The consignment record, the handover, and the condition the documents say the load should be in. The observation is set against what was already written down rather than against a threshold somebody picked."
           - step: "What differs comes out named"
@@ -442,8 +442,8 @@ why:
     title: "A named person decides"
     body: "A finding arrives as a drafted action and waits. Approving it is what sends it, and who approved it, when, and what they changed stays on the record — so the reason can be given later without assembling it again."
   - glyph: "held"
-    title: "Your records stay on your machines"
-    body: "The files and the reasoning about them run on hardware you control. Nothing is sent to an outside model provider, which is usually the shortest route through a security review."
+    title: "No outside AI service sees your records"
+    body: "On Dedicated and Enterprise, the files and the reasoning about them run on your own servers or cloud account; on Lite, on Runink's shared machines. On every plan, nothing is sent to an outside model provider, which is usually the shortest route through a security review."
 
 paper:
   text: "Read the FACE paper"
@@ -483,7 +483,7 @@ products:
     paper: "runink-face"
     name: "Runink FACE"
     sub: "Fulfilment Autonomous Claims Engine"
-    line: "The one this page is about, for logistics, freight, claims and operations teams. It finds the overcharge nobody challenged, the claim about to run out of time and the rule somebody broke, then drafts the next step for a named person to approve. It runs on hardware you control."
+    line: "The one this page is about, for logistics, freight, claims and operations teams. It finds the overcharge nobody challenged, the claim about to run out of time and the rule somebody broke, then drafts the next step for a named person to approve. It runs on your servers, your cloud account or Runink's shared machines."
   - page: "/products/pulse"
     paper: "runink-pulse"
     name: "Runink PULSE"

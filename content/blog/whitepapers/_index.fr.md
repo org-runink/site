@@ -12,8 +12,8 @@ deck: |
   avec un partenaire. Les premiers portent sur **Runink FACE**. **Runink PULSE** est un produit différent, d'analyse de marché et de
   marketing, et son document décrit son propre travail, pas celui de FACE.
   **Runink TIDE** est un produit à part entière, vendu séparément. C'est la
-  couche d'exploitation que vous faites tourner sur votre propre matériel pour
-  tenir en ordre vos applications Runink et vos propres données, et la réponse
+  couche d'exploitation, sur vos serveurs, dans votre cloud ou dans le nôtre,
+  qui tient en ordre vos applications Runink et vos propres données, et la réponse
   honnête à la question de savoir où vos données sont traitées et qui peut les
   voir. Son document est l'endroit où ce site le décrit. Les documents communs
   avec Logical Leap portent sur les écrans de surveillance d'Atlas, qui

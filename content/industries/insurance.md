@@ -56,7 +56,7 @@ owners:
   - role: "Finance"
     line: "Where the written terms and what was charged or accrued diverge is stated plainly, with the clause and the records behind it."
   - role: "IT and security"
-    line: "The reasoning runs on your hardware and the records stay on your systems, so the security review is a description, not a negotiation."
+    line: "The reasoning runs where FACE runs, never at an outside AI service, so the security review is a description, not a negotiation."
 
 outcomes_heading: "What Runink FACE changes"
 outcomes:
@@ -149,8 +149,8 @@ measures:
 
 foundations_heading: "Two things that make the above possible"
 foundations:
-  - name: "Claim files stay on your own machines"
-    plain: "The reasoning runs on machines you own. Claimant details, medical evidence and adjuster notes are read where they already sit, and the model FACE reasons with is one you run: no third-party model dependency, one inference endpoint, the one you configure."
+  - name: "Claim files go to no outside AI service"
+    plain: "The reasoning runs on the machines your plan names: your own servers or cloud account, or Runink's shared machines. Claimant details, medical evidence and adjuster notes are read there, and the model FACE reasons with runs there too: no third-party model dependency, one inference endpoint, the one set up for your plan."
     measured_by: "The privacy assessment before any claims tooling goes live: no transfer out to a model provider to argue about. And when a supervisor asks who read a claimant's file, and under what authority, the answer is a record. Two things to hear from us rather than discover: this is how the software is built and not a property any test enforces, so it is a code review you can run; and personal detail is masked in transit by a redaction pass covering email addresses, card numbers, telephone numbers, national identification numbers and network addresses, plus named credential fields, called at more than thirty places — real code, and code that carries no tests of its own. We would rather tell you that than let you assume it was certified."
   # Corrected. This claimed "No outside search service sits in the path" and
   # "the question stays inside". The shared engine puts the query to a public
@@ -158,7 +158,7 @@ foundations:
   # itself. A search engine does see the query. The real, defensible property
   # is the absence of a vendor account the query is filed under.
   - name: "Outside checks with no account attached to them"
-    plain: "When a file needs public sources — adverse media on a claimant, a supplier's history, a court listing — the search runs from your own infrastructure through a public search endpoint, and your own browser fetches and reads the pages behind the results."
+    plain: "When a file needs public sources — adverse media on a claimant, a supplier's history, a court listing — the search runs from the machines your plan names through a public search endpoint, and a browser on those same machines fetches and reads the pages behind the results."
     measured_by: "Not invisibility: the search engine sees the query as it would from any browser, and anyone telling you otherwise is selling something. What is absent is the account. No API key, no vendor contract, no per-question bill — so no supplier is building a record of which claimants your firm has been asking about, filed under your firm's name and retained on their terms. That is the difference between a check you can run on a sensitive file and one your privacy officer stops."
 
 next_heading: "See whether it fits"

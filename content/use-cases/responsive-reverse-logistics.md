@@ -116,7 +116,7 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
     },
     {
       "question": "What if our records cannot leave the building?",
-      "answer": "Then nothing about this changes. The triage is a written-down policy and arithmetic on four fields the dock types, and it runs where you run FACE, on machines you own."
+      "answer": "Then nothing about this changes. The triage is a written-down policy and arithmetic on four fields the dock types, and it runs where you run FACE."
     },
     {
       "question": "How would we tell whether it made any difference?",

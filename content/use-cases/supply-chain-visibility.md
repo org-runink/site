@@ -77,7 +77,7 @@ author: "Runink"
                 Where an area of the picture turns into a line about to run short, the response is the next job along, in <a href="/use-cases/fulfillment-optimization">stock cover and supplier planning</a>, and the signal underneath it is <a href="/use-cases/demand-forecasting">demand forecasting</a>. Visibility is what makes those two arguable from the same set of facts instead of from three exports.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                What arrives at a person is a short ranked list of proposed actions with the records attached, not a diagram to admire. A named person approves, edits or rejects each one, and that sign-off is kept. Approving is what sends it, and a decided item leaves the queue instead of coming back round next time somebody opens the board. Where a step behind the approval has no implementation yet, the response names that step as not executed rather than reporting the action as complete — so the board shows what was decided and separately what was actually carried out. It all runs on machines you own.
+                What arrives at a person is a short ranked list of proposed actions with the records attached, not a diagram to admire. A named person approves, edits or rejects each one, and that sign-off is kept. Approving is what sends it, and a decided item leaves the queue instead of coming back round next time somebody opens the board. Where a step behind the approval has no implementation yet, the response names that step as not executed rather than reporting the action as complete — so the board shows what was decided and separately what was actually carried out. It all runs where FACE runs, with no outside AI service.
             </p>
         </div>
         <div>
@@ -125,7 +125,7 @@ author: "Runink"
     },
     {
       "question": "Can we ask it questions in our own words?",
-      "answer": "Yes, in the vocabulary you already use, narrowed to whichever areas you are looking at, with the map and the recognised rules behind the answer. You get the reasoning as well as the reply. It all runs on machines you own."
+      "answer": "Yes, in the vocabulary you already use, narrowed to whichever areas you are looking at, with the map and the recognised rules behind the answer. You get the reasoning as well as the reply. It all runs where FACE runs, with no outside AI service."
     },
     {
       "question": "What reaches a person at the end of it?",

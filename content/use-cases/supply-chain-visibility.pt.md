@@ -80,7 +80,7 @@ author: "Runink"
                 Onde uma parte do retrato vira um item a ponto de faltar, a resposta é o próximo trabalho da fila, em <a href="/pt/use-cases/fulfillment-optimization">cobertura de estoque e planejamento de fornecedores</a>, e o sinal por baixo dele é a <a href="/use-cases/demand-forecasting">previsão de demanda</a>. A visibilidade é o que torna esses dois discutíveis a partir do mesmo conjunto de fatos, em vez de a partir de três extrações.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                O que chega a uma pessoa é uma lista curta e ordenada de ações propostas com os registros anexados, não um diagrama para admirar. Uma pessoa com nome aprova, edita ou recusa cada uma, e esse aval é guardado. Aprovar é o que manda adiante, e um item decidido sai da fila em vez de voltar na próxima vez que alguém abre o quadro. Onde uma etapa por trás da aprovação ainda não tem implementação, a resposta nomeia essa etapa como não executada, em vez de dar a ação por concluída &mdash; então o quadro mostra o que foi decidido e, separadamente, o que de fato foi executado. Tudo roda em máquinas que são suas.
+                O que chega a uma pessoa é uma lista curta e ordenada de ações propostas com os registros anexados, não um diagrama para admirar. Uma pessoa com nome aprova, edita ou recusa cada uma, e esse aval é guardado. Aprovar é o que manda adiante, e um item decidido sai da fila em vez de voltar na próxima vez que alguém abre o quadro. Onde uma etapa por trás da aprovação ainda não tem implementação, a resposta nomeia essa etapa como não executada, em vez de dar a ação por concluída &mdash; então o quadro mostra o que foi decidido e, separadamente, o que de fato foi executado. Tudo roda onde o FACE roda, sem nenhum serviço de IA externo.
             </p>
         </div>
         <div>
@@ -128,7 +128,7 @@ author: "Runink"
     },
     {
       "question": "Dá para perguntar com as nossas próprias palavras?",
-      "answer": "Dá, no vocabulário que você já usa, limitado às áreas que estiver olhando, com o mapa e as regras reconhecidas por trás da resposta. Você recebe o raciocínio além da resposta. Tudo isso roda em máquinas suas."
+      "answer": "Dá, no vocabulário que você já usa, limitado às áreas que estiver olhando, com o mapa e as regras reconhecidas por trás da resposta. Você recebe o raciocínio além da resposta. Tudo isso roda onde o FACE roda, sem nenhum serviço de IA externo."
     },
     {
       "question": "O que chega a uma pessoa no fim?",

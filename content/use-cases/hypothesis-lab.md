@@ -19,7 +19,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">The change has to be written down before it can be argued.</strong> A hypothesis is stated explicitly, together with the rules it touches — the reorder points, the lead times, the service commitments your business already runs on. Most of the value is in that step, and it is the step normally skipped.</li>
 <li><strong class="text-stone-200">What comes back is reasoning, ranked, with the rule it invoked.</strong> Each consequence is tied to the specific rule it follows from, so you can disagree with it on the merits. It is an argument you can check, not a number to accept.</li>
-<li><strong class="text-stone-200">Nothing is executed, and nothing is connected.</strong> The engine has no write path to your systems and does not touch them. It reasons over the rules you gave it, on your own hardware — the scenario never leaves the building.</li>
+<li><strong class="text-stone-200">Nothing is executed, and nothing is connected.</strong> The engine has no write path to your systems and does not touch them. It reasons over the rules you gave it, where FACE runs — the scenario goes to no outside AI service.</li>
 <li><strong class="text-stone-200">You can make it rough on purpose.</strong> Push a lane a week late. Drop a supplier. Let a load run warm. Plans that only work when everything goes right show it here, not at the quarter end.</li>
 </ul>
 
@@ -66,7 +66,7 @@ author: "Runink"
                 So what comes back is an argument, not an answer. That is the useful thing and it is worth saying plainly: a projection presented as a decision is worse than no projection, because it moves the judgement from someone accountable to a piece of software that is not. What this gives the room is the case laid out &mdash; which rules the change collides with, in what order they bite, and what somebody would have to believe for the plan to hold. The decision stays where it was.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Two consequences of that are worth having. Stating the hypothesis forces the assumptions into writing, which is the step teams skip and the reason two people can argue for an hour and turn out to have been discussing different plans. And because the reasoning happens on your own hardware, the scenario you are considering &mdash; which supplier you might drop, which lane you might cut &mdash; never leaves the building.
+                Two consequences of that are worth having. Stating the hypothesis forces the assumptions into writing, which is the step teams skip and the reason two people can argue for an hour and turn out to have been discussing different plans. And because the reasoning happens where FACE runs, the scenario you are considering &mdash; which supplier you might drop, which lane you might cut &mdash; goes to no outside AI service.
             </p>
             <p class="text-lg text-stone-400 font-medium">
                 You can also make it rough on purpose. Run the lane a week late. Take the second source away. Let a chilled load drift. A plan that only holds when the week goes well will fall over here, in front of you, while it still costs nothing to find out.
@@ -113,7 +113,7 @@ author: "Runink"
     },
     {
       "question": "Does it touch the systems we run the business on?",
-      "answer": "It reasons over the rules you handed it, and it does that on your own hardware. The plant, the warehouse and the accounts keep running on their systems, untouched by the exercise — an experiment inside the live system is not an experiment, which is why nobody sensible runs one.<br><br>The other half of that is discretion. The scenario you are considering — which supplier you might drop, which lane you might cut — is exactly the kind of thing you would not want discussed outside the building, and the reasoning happens where you can see it."
+      "answer": "It reasons over the rules you handed it, and it does that where FACE runs, not at an outside AI service. The plant, the warehouse and the accounts keep running on their systems, untouched by the exercise — an experiment inside the live system is not an experiment, which is why nobody sensible runs one.<br><br>The other half of that is discretion. The scenario you are considering — which supplier you might drop, which lane you might cut — is exactly the kind of thing you would not want discussed outside the building, and the reasoning happens where you can see it."
     },
     {
       "question": "What does it do when the rules we gave it do not settle the question?",
