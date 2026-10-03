@@ -224,6 +224,8 @@ PULSE is a separate product from FACE and from CORE, sold on its own. It does no
             <p class="text-slate-300">Your positioning, your customer lists and your pipeline are processed inside your own network. There is no managed database elsewhere holding your working data.</p>
         </div>
     </div>
+
+    <p class="text-lg text-ink-2 leading-relaxed mt-10">Who decides, which models run, the rules every agent works inside, and how our controls map to the standards your auditors use, each with a link to the public documentation behind it: <a href="/trust/" class="text-signal underline decoration-signal/40 hover:decoration-signal">Trust &amp; Compliance</a>.</p>
 </div>
 {{< /section-container >}}
 

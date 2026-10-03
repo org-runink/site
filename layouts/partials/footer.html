@@ -133,6 +133,7 @@
       "cases"      "/use-cases"
       "articles"   "/blog"
       "about"      "/company"
+      "trust"      "/trust"
       "license"    "/license"
       "privacy"    "/privacy") -}}
   {{- $u := printf "%s/" $path | relURL -}}
@@ -206,6 +207,10 @@
         <h2 class="rk-label mb-2" id="rk-foot-company">{{ $f.company }}</h2>
         <ul class="m-0 list-none p-0">
           <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "about" }}">{{ $f.about }}</a></li>
+          {{/* /trust/ exists in all four languages, so GetPage resolves the
+               reader's own. It sits under the company it describes, beside the
+               licence and the privacy policy. */}}
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "trust" }}">{{ $f.trust }}</a></li>
           <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "license" }}">{{ $f.license }}</a></li>
           <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "privacy" }}">{{ $f.privacy }}</a></li>
         </ul>
