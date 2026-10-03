@@ -1,30 +1,31 @@
 ---
-title: "Runink CORE and Atlas — Continuous oversight, with a second opinion built in"
+title: "Runink TIDE and Atlas — Continuous oversight, with a second opinion built in"
+aliases: ["/blog/whitepapers/runink-core-atlas/"]
 headline: "Continuous oversight, with a second opinion built in."
 # The label the closing ask carries into the contact form, so an enquiry
 # arrives naming the paper it came from. `product:` is not usable for this —
-# two of the four papers are both "Runink CORE".
-next_about: "The CORE and Atlas paper"
-product: "Runink CORE"
+# two of the four papers are both "Runink TIDE".
+next_about: "The TIDE and Atlas paper"
+product: "Runink TIDE"
 subtitle: "A joint paper with Logical Leap's Atlas"
 jointly_with: "Logical Leap"
 partner_url: "https://logicalleap.io/atlas"
-description: "A joint paper from Runink and Logical Leap. CORE's Intelligence pages bring Atlas's oversight screens into CORE and fill them with the company's own data. This paper walks through each Atlas page: the question it answers, who uses it, and why it is worth having. It then shows how the rest of CORE backs the work with a second opinion, a record nobody can quietly edit, and a person who approves."
+description: "A joint paper from Runink and Logical Leap. TIDE's Intelligence pages bring Atlas's oversight screens into TIDE and fill them with the company's own data. This paper walks through each Atlas page: the question it answers, who uses it, and why it is worth having. It then shows how the rest of TIDE backs the work with a second opinion, a record nobody can quietly edit, and a person who approves."
 weight: 40
 date: 2026-09-26T00:00:00Z
 source_pages: 22
 audience: "Finance, project, data, operations, audit, risk and compliance leaders"
-blurb: "Atlas, from Logical Leap, is a set of screens for watching capital spending and data quality. CORE runs those screens as its Intelligence pages, on the company's own hardware and the company's own data. This paper goes through each Atlas page in turn, then shows how the rest of CORE adds a second opinion, a record in which any edit shows, and a person's approval before anything changes."
+blurb: "Atlas, from Logical Leap, is a set of screens for watching capital spending and data quality. TIDE runs those screens as its Intelligence pages, on the company's own hardware and the company's own data. This paper goes through each Atlas page in turn, then shows how the rest of TIDE adds a second opinion, a record in which any edit shows, and a person's approval before anything changes."
 deck: |
   Atlas, from Logical Leap, is a set of screens for watching capital spending
-  and the quality of the data behind it. Runink CORE runs software on machines
+  and the quality of the data behind it. Runink TIDE runs software on machines
   a company owns, with a language model the company runs itself and a record
   of every change and who made it.
 
-  CORE's **Intelligence** pages bring Atlas's screens into CORE and feed them
+  TIDE's **Intelligence** pages bring Atlas's screens into TIDE and feed them
   with the company's own records. This paper walks through each Atlas page: the
   question it answers, the person who uses it, what it lets them do, and why
-  that is worth having. Then it shows how the rest of CORE backs the work: a
+  that is worth having. Then it shows how the rest of TIDE backs the work: a
   second, independent opinion on submitted findings, a record that anyone
   signed in can check, and a person who approves before a rule or a fix
   changes.
@@ -45,7 +46,7 @@ register:
   - { page: 14, title: "Sources and Resolve: reaching your systems on purpose" }
   - { page: 15, title: "Settings and Deploy lineage" }
   - { page: 16, title: "The second opinion: what judging means" }
-  - { page: 17, title: "How the rest of CORE supports the oversight story" }
+  - { page: 17, title: "How the rest of TIDE supports the oversight story" }
   - { page: 18, title: "For finance, operations and compliance leaders" }
   - { page: 19, title: "Continuous versus periodic: a comparison" }
   - { page: 20, title: "What it is worth, computed on your own numbers" }
@@ -75,13 +76,13 @@ capital spending and the quality of the data behind it. It checks each record ag
 rules a company has written down, ranks what it finds by what is at stake, and keeps an
 unbroken trail from the original plan to the money spent.
 
-**CORE runs it on the company's own ground.** CORE's Intelligence pages are Atlas's
-screens and Atlas's capital-spending rule book, running inside CORE on the company's own
+**TIDE runs it on the company's own ground.** TIDE's Intelligence pages are Atlas's
+screens and Atlas's capital-spending rule book, running inside TIDE on the company's own
 hardware. Every figure on those pages is computed from the company's own records. Nothing
 is sample data, and a figure that cannot be computed says so, with the reason, instead of
 showing a zero.
 
-**CORE adds the second opinion.** Oversight creates a queue the moment it works. CORE
+**TIDE adds the second opinion.** Oversight creates a queue the moment it works. TIDE
 does three things so the queue can be trusted:
 
 - An independent assessor reads each finding an outside assessment platform submits, and
@@ -240,9 +241,9 @@ Logical Leap describes six capabilities:
 
 Logical Leap arranges access to Atlas through a walkthrough with its team.
 
-### Runink CORE
+### Runink TIDE
 
-CORE is the layer a company runs on its own hardware to keep its software and its data
+TIDE is the layer a company runs on its own hardware to keep its software and its data
 healthy, governed and explainable. Its console sorts the work into categories. The two
 that matter most here are:
 
@@ -252,20 +253,20 @@ that matter most here are:
   what they may do, and whether their work can be trusted.
 
 Beside them sit **Overview**, the front door, and **DevEx** (developer experience), which
-covers whether the platform is running and whether changes shipped. The main CORE paper
-covers every category: [Runink CORE — the operations layer for companies that keep their
-own data](/blog/whitepapers/runink-core/).
+covers whether the platform is running and whether changes shipped. The main TIDE paper
+covers every category: [Runink TIDE — the operations layer for companies that keep their
+own data](/blog/whitepapers/runink-tide/).
 
 ### How the two fit together
 
 Logical Leap designed Atlas's screens and its capital-spending rule book for the people
-who do this work every day. CORE runs both inside its console, on the company's own
-machines, under CORE's sign-in, and against the company's own records.
+who do this work every day. TIDE runs both inside its console, on the company's own
+machines, under TIDE's sign-in, and against the company's own records.
 
 That split is deliberate. Capital oversight has its own vocabulary: plan, approve,
 procure, spend, capitalise; commitment, variance, lead time, Go-Live. Logical Leap built
 its screens around that vocabulary, and a general-purpose screen would make the work
-harder. CORE contributes what sits underneath: the machines, the model, the connections to
+harder. TIDE contributes what sits underneath: the machines, the model, the connections to
 the company's systems, the named people who may change things, and the record of who did.
 
 ## How to read the Intelligence pages
@@ -274,7 +275,7 @@ Every Intelligence page follows three rules, and a reader who knows them can tru
 they see.
 
 **Every figure is the company's own.** There is no sample data on these pages. Each figure is
-computed by CORE from records the company has loaded or connected.
+computed by TIDE from records the company has loaded or connected.
 
 **Not measured is never shown as zero.** When a figure cannot be computed, the page shows
 the reason in its place. An empty dataset has no quality score, not a score of zero. A
@@ -288,7 +289,7 @@ attempt to change something is recorded, refusals included.
 
 The chapters below follow the order of the menu. They cover the Atlas pages, and the
 Resolve and Deploy lineage pages that sit beside them. The Data audit page is described in
-the [Runink CORE paper](/blog/whitepapers/runink-core/#data-audit).
+the [Runink TIDE paper](/blog/whitepapers/runink-tide/#data-audit).
 
 ## The three dashboards: Analyst, CFO and PMO
 
@@ -314,7 +315,7 @@ open findings and critical risks. Below it:
 - findings by severity and by rule, with an exception queue;
 - long-lead items, and whether each purchase leaves enough lead time before Go-Live;
 - data quality by dimension, with the top issues;
-- the open backlog of fixes, and what CORE's agents have been doing.
+- the open backlog of fixes, and what TIDE's agents have been doing.
 
 **Why it is worth having.** The analyst's week today is spent building this picture from
 several systems. Here it is built for them from the records, and every tile links to the
@@ -333,7 +334,7 @@ prepares their pack.
 that remains. Spend by category. Two risk lines that matter most to finance: spending with
 no valid approval behind it, and spending above the approved amount. A control
 effectiveness view that shows each control area's score and the rules it is built from. A
-separate section, marked as CORE's own, shows CORE's compliance controls and an estimate of
+separate section, marked as TIDE's own, shows TIDE's compliance controls and an estimate of
 the machine capacity each initiative uses, labelled as an estimate.
 
 **Why it is worth having.** Unapproved and over-approved spend are the two lines a finance
@@ -348,11 +349,11 @@ which are at risk?
 
 **Who uses it.** The director of the project management office (PMO).
 
-**What it shows.** The page treats each of CORE's initiatives as a project, and says so on
+**What it shows.** The page treats each of TIDE's initiatives as a project, and says so on
 screen. It counts active initiatives, those on track, and those at risk, judged from
 whether the software each initiative runs is healthy. It shows the trend of open
-data-governance findings over time, and a governance scorecard: each open risk CORE has
-found, how severe it is, and the fix CORE proposes, or a plain statement that it needs a
+data-governance findings over time, and a governance scorecard: each open risk TIDE has
+found, how severe it is, and the fix TIDE proposes, or a plain statement that it needs a
 person.
 
 **Why it is worth having.** A portfolio status built from status reports is only as fresh
@@ -368,7 +369,7 @@ it getting better or worse?
 
 **What it shows.** A data-quality (DQ) score for the capital-spending records, with its
 formula on screen: records with no finding, divided by all records. An active issues list
-from CORE's most recent data-governance review. A trend over the past week. Quality by
+from TIDE's most recent data-governance review. A trend over the past week. Quality by
 dimension. A header sentence written from real counts: how many connections are
 registered, when the last review ran, and how many review runs there have been. A count
 that could not be read is left out of the sentence rather than written as zero.
@@ -474,13 +475,13 @@ internal audit.
 
 **What it shows.** Every rule in the rule book, with its status, its owner, how many
 findings it has raised, and any open change. Each rule also shows its effect, read from
-CORE and not guessed: whether it is scored, running as a dry run, or not evaluated. A dry
+TIDE and not guessed: whether it is scored, running as a dry run, or not evaluated. A dry
 run and a scored rule never look alike.
 
 **What it lets you do.** Anyone signed in may propose a change to a rule's status or
 threshold, and must give a reason. The change is then decided by the rule's owner or an
 administrator, and never by the person who proposed it. This is the four-eyes rule, and
-CORE enforces it itself; the page simply mirrors it by greying out the approve button on
+TIDE enforces it itself; the page simply mirrors it by greying out the approve button on
 your own proposal. An administrator assigns owners.
 
 Status is not decoration. A rejected rule raises no findings. A rule still in draft or
@@ -505,11 +506,11 @@ and who agreed to it?
 manager who owns the follow-up.
 
 **What it lets you do.** A playbook has triggers and steps. A trigger can be a person
-pressing Run, a schedule, a report from one of CORE's agents, or a new scan of capital
+pressing Run, a schedule, a report from one of TIDE's agents, or a new scan of capital
 records. For example: run this when the data-governance agent reports a failing control,
 or when a capital scan finds critical issues. The steps can:
 
-- start one of CORE's agents, such as data governance, compliance, dependency risk, the
+- start one of TIDE's agents, such as data governance, compliance, dependency risk, the
   independent assessor, or the curator that writes release notes;
 - run a new capital scan;
 - wait for a named person's approval;
@@ -544,8 +545,8 @@ along the way is its quality weak?
 **Who uses it.** The data architect and data stewards.
 
 **What it shows.** A map from source systems, through the applications that take data from
-them, to where the data lands. Sources are the ones registered in CORE. Links are drawn
-only where CORE observed them: where an application reported data moving, or where
+them, to where the data lands. Sources are the ones registered in TIDE. Links are drawn
+only where TIDE observed them: where an application reported data moving, or where
 Resolve read a relationship from the systems themselves, such as a key a source declares
 between two tables or a dataset the source's own access log shows being read. A declared
 source and an observed flow are drawn differently, so a reader never mistakes a plan
@@ -571,7 +572,7 @@ works on a copy and writes nothing.
 A fix is then approved or dismissed, with a note, by the rule's owner or an administrator.
 An approval is a recorded decision: the fix is made in the source system, and the finding
 clears on the next load. The decision log is the audit trail. Below the capital queue sits
-CORE's wider list of findings from its own reviews and compliance checks.
+TIDE's wider list of findings from its own reviews and compliance checks.
 
 **Why it is worth having.** A fix that opens two new problems is worse than no fix. The dry
 run shows that before anyone touches a source system. The recorded decision means the
@@ -584,10 +585,10 @@ question "who approved this change to the records?" always has an answer.
 **Who uses it.** The chief data officer, the head of internal audit, and whoever reports to
 an audit committee.
 
-**What it shows.** The history of CORE's data-governance reviews, with open findings over
+**What it shows.** The history of TIDE's data-governance reviews, with open findings over
 time. The history of capital scans: for each load, the quality score, records failed,
 findings opened and closed since the previous load, counts by severity, and scores by
-dimension. CORE's view of data and AI maturity. The runs of CORE's review agents. The
+dimension. TIDE's view of data and AI maturity. The runs of TIDE's review agents. The
 history can be exported with one click.
 
 **Why it is worth having.** A board asks whether things are improving. The usual answer is
@@ -596,7 +597,7 @@ its data shows as a gap in the line, not a drop to zero.
 
 ## Sources and Resolve: reaching your systems on purpose
 
-These two pages are where CORE meets the company's own systems. Both follow one principle:
+These two pages are where TIDE meets the company's own systems. Both follow one principle:
 nothing reaches a company system unless a named administrator pressed a button and
 confirmed it.
 
@@ -607,13 +608,13 @@ state is each one in?
 
 **Who uses it.** The IT lead or data platform owner, and the security reviewer.
 
-**What it lets you do.** One card for each system registered in CORE. Each card has a switch
+**What it lets you do.** One card for each system registered in TIDE. Each card has a switch
 that grants that system to the Intelligence workspace; granting records a permission and
 reaches nothing. The card shows the business domain the system was grouped into, whether
 its credentials are in place, and whether it answered when last checked — or that it has
 not been checked, which is never shown as down. A grant whose system has since been
 removed is shown as missing, with a way to revoke it. The page also carries the catalogue
-of the kinds of system CORE can connect to.
+of the kinds of system TIDE can connect to.
 
 The systems themselves are created, edited, re-keyed, tested and removed in one place,
 **DataEx › Connections**, and each card links there. A new connection is a three-step
@@ -627,7 +628,7 @@ attempt, allowed or refused, is recorded.
 way, the same warehouse ends up connected several times, under several accounts, with
 several people each thinking somebody else looks after it. One list of connections, one
 catalogue and one record turn "what reaches our finance warehouse, and under whose
-account?" into a screen, and the grant switch keeps "CORE knows about it" apart from "these
+account?" into a screen, and the grant switch keeps "TIDE knows about it" apart from "these
 pages may use it".
 
 ### Resolve
@@ -637,10 +638,10 @@ is it used?
 
 **Who uses it.** The data platform owner, the data architect and data stewards.
 
-Resolve is one capability that Runink CORE and Runink FACE share: the same page, doing the
+Resolve is one capability that Runink TIDE and Runink FACE share: the same page, doing the
 same work, in both products.
 
-**What it lets you do.** Resolve is the one place CORE reaches into a company system, and
+**What it lets you do.** Resolve is the one place TIDE reaches into a company system, and
 only when an administrator presses a button and confirms it. The confirmation says what
 will be reached and what will be kept. There are four actions:
 
@@ -658,7 +659,7 @@ will be reached and what will be kept. There are four actions:
   declared relationship the data contradicts), *shadow* (a relationship the data shows and
   nothing declares) and *missing* (a declared key whose target is not in the estate).
 
-Every call is read-only and time-limited. CORE keeps structure and counts. It never keeps
+Every call is read-only and time-limited. TIDE keeps structure and counts. It never keeps
 a cell value, a sample row, a smallest or largest value, or the name of a person or
 account. A credential is opened for one call and dropped. Opening the page reaches
 nothing; only the four actions do. Each action names the runner chosen for it, and every
@@ -668,13 +669,13 @@ action is recorded, refusals included.
 
 - **Lineage** shows the relationships Resolve observed: declared keys between tables,
   domains that span more than one source, and which datasets are read and written.
-- **CORE's data-governance checks** assess data quality and personal-data exposure from
+- **TIDE's data-governance checks** assess data quality and personal-data exposure from
   what Explore and Read access patterns recorded. A column declared as never empty that
   holds empty values is flagged, as is a table with no declared primary key. So is a column
   whose name and declared type mark it as likely personal data and that carries no mask
   from the source, and such a column when more than ten distinct accounts read it. The
   checks are rules, with no model involved. Their findings name columns, never values, and
-  appear in CORE's data-governance review. A source nobody has explored is reported as not
+  appear in TIDE's data-governance review. A source nobody has explored is reported as not
   yet explored, never as clean.
 
 **Why it is worth having.** Most companies believe they have an inventory of their data,
@@ -693,7 +694,7 @@ complete?
 
 **Who uses it.** The administrator who runs the workspace.
 
-**What it lets you do.** Choose the rule engine that supplies the rule book; CORE's own
+**What it lets you do.** Choose the rule engine that supplies the rule book; TIDE's own
 capital-spending engine is the one that runs here, and the page shows how many rules it
 holds. Walk through setup: find agents, grant sources, connect the rule engine, confirm.
 The checklist is checked against what exists now, not against what was once ticked, and
@@ -701,11 +702,11 @@ the page shows who completed setup and when. Reset the workspace, with a require
 the page states exactly what a reset clears and what it keeps. A reset clears the agents
 in the workspace, the granted sources, the engine choice and the record that setup was
 completed. Capital feeds, scan history, rule changes and decisions, the list of agents and
-CORE's list of connections are all kept. Every change on this page is for an
+TIDE's list of connections are all kept. Every change on this page is for an
 administrator, and is recorded.
 
 The page also shows, read-only, two related settings kept elsewhere: the latest check of
-the business rules against the written policy, and the code repositories CORE's own agents
+the business rules against the written policy, and the code repositories TIDE's own agents
 work on, which are changed on the Account page.
 
 **Why it is worth having.** Setup that is checked against reality cannot drift into a list
@@ -717,12 +718,12 @@ auditor will later ask for.
 **The question it answers.** Did my change ship?
 
 **Who uses it.** The engineering lead and the release manager. It sits here because
-Intelligence is where CORE answers questions about what it knows; it is about software
+Intelligence is where TIDE answers questions about what it knows; it is about software
 releases, not data lineage.
 
 **What it shows.** Paste the identifier of a change. For each piece of software it touched,
-the page shows whether it was merged, reviewed by CORE's agents, built, stored, rolled out
-and running. A stage CORE did not measure is shown as a hole, and a change CORE does not
+the page shows whether it was merged, reviewed by TIDE's agents, built, stored, rolled out
+and running. A stage TIDE did not measure is shown as a hole, and a change TIDE does not
 know is shown as not measured, never as "did not ship".
 
 **Why it is worth having.** "Is the fix live?" is asked in every incident. A page that
@@ -735,8 +736,8 @@ A system that produces findings and also rates them has one opinion, expressed t
 finding read by a separate assessor, reasoning a different way, gets two, and where they
 disagree there is something worth a person's attention.
 
-CORE has such an assessor, called the judge. It reads findings that an outside assessment
-platform submits to CORE, and states for each whether the evidence carries it. Its results
+TIDE has such an assessor, called the judge. It reads findings that an outside assessment
+platform submits to TIDE, and states for each whether the evidence carries it. Its results
 are on the DataEx › Judgements page.
 
 ### It is not a second search
@@ -747,7 +748,7 @@ question: does the evidence cited carry the claim?
 ### Two doors, and the door decides
 
 Findings come in through one door, opened by a secret issued to the submitting platform.
-Verdicts go in through another, opened by a different credential that belongs to CORE's
+Verdicts go in through another, opened by a different credential that belongs to TIDE's
 judge.
 
 A verdict that arrives at the findings door is thrown away. The submitting platform's secret
@@ -757,12 +758,12 @@ sender fills in.** Where no secret has been issued, the findings door accepts no
 
 ### Two vocabularies, kept apart
 
-CORE's verdict is one of four. It **concurs**. It **dissents**. It is **unable to judge**.
-Or the subject is **out of scope**: not one CORE has standing to rule on.
+TIDE's verdict is one of four. It **concurs**. It **dissents**. It is **unable to judge**.
+Or the subject is **out of scope**: not one TIDE has standing to rule on.
 
 What the submitter concluded about its own finding is kept apart: it asserted the claim,
-refuted it, or could not tell. Merging the two is how "CORE concurred" comes to mean "the
-submitter said so and nobody checked." So CORE refuses the merge.
+refuted it, or could not tell. Merging the two is how "TIDE concurred" comes to mean "the
+submitter said so and nobody checked." So TIDE refuses the merge.
 
 ### Checks come first, and numbers are recomputed
 
@@ -773,22 +774,22 @@ must be recent enough to speak to the present. Each check that fires ends the ma
 states its reason in a sentence.
 
 A claim that carries a number is settled by arithmetic and never reaches a model. Where a
-finding claims a rate, CORE divides the raw counts again itself. A figure the submitter's
+finding claims a rate, TIDE divides the raw counts again itself. A figure the submitter's
 own evidence does not reproduce is a dissent, with the arithmetic named. A count divided by
 nothing is unable to judge, never a rate of zero.
 
 ### The model is asked one question, and never told the answer
 
-Only a claim in prose reaches CORE's model, running on the company's own hardware. It is
+Only a claim in prose reaches TIDE's model, running on the company's own hardware. It is
 asked one question: does this evidence support this claim? It is never told what the
 submitter concluded, and the software gives it no way to be told. The step from "the
-evidence supports this" to "CORE concurs" happens afterwards, in code. So the model can
+evidence supports this" to "TIDE concurs" happens afterwards, in code. So the model can
 neither rubber-stamp the submitter nor contradict it by reflex.
 
 Where no model is reachable, the answer is unable to judge, with that as the reason. Never
 agreement by default.
 
-![On the left, transactions as they happen, and the one that produced a finding. The finding crosses CORE's edge through the findings door, opened by the submitting platform's own secret. Inside, it passes a series of checks run in order, drawn as a comb; two of the three findings shown stop at a check, and each stop carries its own reason. What survives forks. A claim carrying a number goes to a sum CORE performs itself on the raw counts. A claim in prose goes to a single ring, one question put to the model, and a second strand, what the submitter concluded, is drawn reaching towards that ring and stopping short of it. Both branches arrive at a verdict kept against the finding, which leaves through a second door lower down the same wall, opened by a different credential.](figures/whitepapers/atlas-verdict-path.svg "Two doors in one wall. A finding comes in through the first; the verdict goes back out through the second, which a different credential opens.")
+![On the left, transactions as they happen, and the one that produced a finding. The finding crosses TIDE's edge through the findings door, opened by the submitting platform's own secret. Inside, it passes a series of checks run in order, drawn as a comb; two of the three findings shown stop at a check, and each stop carries its own reason. What survives forks. A claim carrying a number goes to a sum TIDE performs itself on the raw counts. A claim in prose goes to a single ring, one question put to the model, and a second strand, what the submitter concluded, is drawn reaching towards that ring and stopping short of it. Both branches arrive at a verdict kept against the finding, which leaves through a second door lower down the same wall, opened by a different credential.](figures/whitepapers/atlas-verdict-path.svg "Two doors in one wall. A finding comes in through the first; the verdict goes back out through the second, which a different credential opens.")
 
 ### Why unable to judge matters
 
@@ -800,23 +801,23 @@ An assessor whose confident answers and whose guesses look the same is soon igno
 reads the verdicts back on the same connection it used to submit, and a signed-in person
 reads them on the Judgements page.
 
-## How the rest of CORE supports the oversight story
+## How the rest of TIDE supports the oversight story
 
-The Intelligence pages say what is wrong. Four other parts of CORE say whether to believe
+The Intelligence pages say what is wrong. Four other parts of TIDE say whether to believe
 it, who may act on it, and what happened afterwards. Each is covered in full in the [main
-CORE paper](/blog/whitepapers/runink-core/); here is what each adds to oversight.
+TIDE paper](/blog/whitepapers/runink-tide/); here is what each adds to oversight.
 
 **DataEx › Judgements: the second opinion.** This page shows the latest batch of submitted
-findings, each with CORE's verdict, and the history of the judge's runs. Verdicts are four
+findings, each with TIDE's verdict, and the history of the judge's runs. Verdicts are four
 words on four lines, never a score. "Nothing submitted" and "never judged" are said in
 those words, never shown as agreement. A reviewer sees at a glance which findings an
 independent assessor backed, which it disputed, and which still need a person.
 
-**DataEx › Trust: Harness, Guardrails and Policy.** The Harness lists what CORE has found
+**DataEx › Trust: Harness, Guardrails and Policy.** The Harness lists what TIDE has found
 wrong, worst first, each with its evidence and a proposed fix. From there a person can
 start an agent, file an issue, or acknowledge the finding. Guardrails & autonomy sets, for
 each of those actions, whether it is switched off or waits for a person's click, and every
-action starts at a person's click. Hard limits drawn from rules CORE already enforces keep
+action starts at a person's click. Hard limits drawn from rules TIDE already enforces keep
 some findings at a person's click whatever the setting, and every change to a level is
 written to the audit record before it takes effect. The Policy page shows who may do what:
 which named lists of people are in force, and your own standing on each.
@@ -829,11 +830,11 @@ anyone signed in can run it, even a person not allowed to read the records thems
 Refused attempts are recorded too. In an incident review, the refusals are often the more
 telling half.
 
-**DataEx › Agents: who does the work.** This page lists every agent CORE knows, each fact
-once: CORE's own agents, the agents inside the company's Runink applications, and a
+**DataEx › Agents: who does the work.** This page lists every agent TIDE knows, each fact
+once: TIDE's own agents, the agents inside the company's Runink applications, and a
 register of the company's other agents. For each it shows the model it uses, its limits,
 the screening rules applied to what it writes, and whether it is reporting. The register of
-other agents is a list of facts only; CORE never calls, polls or sends data to an agent on
+other agents is a list of facts only; TIDE never calls, polls or sends data to an agent on
 it. An auditor asking "what automated workers touch our data, and under what limits?" gets
 one page as the answer.
 
@@ -875,7 +876,7 @@ who made it and when. That sequence is the evidence, written as the work happens
 and anyone signed in can run the check.
 
 **Two people for every change that matters.** Rule changes, fix decisions, playbook
-activation and playbook approvals all need a second person, and CORE enforces it.
+activation and playbook approvals all need a second person, and TIDE enforces it.
 
 **Nothing reaches your systems by accident.** Only an administrator's confirmed action
 reaches a source, and only to read. A security reviewer can test this in an afternoon:
@@ -890,7 +891,7 @@ change is accepted, and a change that added one would be refused.
 
 ## Continuous versus periodic: a comparison
 
-| | Periodic, manual review | The Intelligence pages, with CORE behind them |
+| | Periodic, manual review | The Intelligence pages, with TIDE behind them |
 |---|---|---|
 | **Records examined** | A sample, chosen to estimate a rate | Every record, at every load |
 | **When a finding appears** | After the period closes | When the records are loaded, while the decision is open |
@@ -985,7 +986,7 @@ would rather be judged on that measurement than on any figure either one publish
 
 ### The reasoning runs on your hardware
 
-CORE runs its own model on machines the company owns. The judge and every agent that uses
+TIDE runs its own model on machines the company owns. The judge and every agent that uses
 a model are served by it. No outside service is called for reasoning.
 
 **So the security review becomes a description.** The question that stalls these
@@ -1053,4 +1054,4 @@ Two conversations, in either order.
 
 For Atlas and the capital-oversight side: **logicalleap.io/atlas**.
 
-For CORE, where it runs, and the second opinion: **paes@runink.org**, **runink.org**.
+For TIDE, where it runs, and the second opinion: **paes@runink.org**, **runink.org**.

@@ -11,7 +11,7 @@ description: "Runink River is a developer workstation on s6: KDE Plasma, the lin
 #
 # What changed from the page this replaces: Runink River used to be described here as
 # the Runink sovereignty server. It is the developer workstation now; the server image
-# that carries Runink CORE is a separate, downstream distribution. The mascot and
+# that carries Runink TIDE is a separate, downstream distribution. The mascot and
 # brand-files block moved to the river repository's own documentation (owner,
 # 2026-09-26: "put this within the river repo").
 #
@@ -44,7 +44,7 @@ description: "Runink River is a developer workstation on s6: KDE Plasma, the lin
 # with why an open-source workstation matters before naming the kernel.
 #
 # 2026-10-01 (mine): CONTENT.md rule 3 pass — same business-value/less-jargon restyle
-# already done to the CORE/FACE/PULSE product pages, applied here. Changed: the ZFS
+# already done to the TIDE/FACE/PULSE product pages, applied here. Changed: the ZFS
 # "boot environments" / "encryption root" vocabulary (hero promise, meta description,
 # the storage card body) into plain language — "an encrypted ZFS disk with snapshot
 # rollback" and "the whole disk is encrypted, and `/home` is encrypted separately" —
@@ -61,13 +61,13 @@ description: "Runink River is a developer workstation on s6: KDE Plasma, the lin
 # supervises everything" for the same reason, keeping "s6" as the stat label.
 # Left alone, on purpose: the "RIVER · Raft-Integrated Validated Event Runtime"
 # lockup — it is the same deliberate, owner-approved acronym-spelling pattern as
-# CORE's "Control · Orchestration · Resilience · Enforcement" lockup, and it is
+# Runink TIDE's "Trusted Intelligence for Developer & Data Experience" lockup, and it is
 # repeated verbatim on the homepage (all four languages) and content/products/_index.md;
 # changing it here only would make this page disagree with the rest of the site, and
 # those pages are out of scope for a river.md-only pass. Also left alone: the
 # "default-deny firewall" wording (already plain) and the "aes-256-gcm" /
 # "7.2.x zen" fact-card stats (precise, correct technical names used the same way
-# the FACE/CORE passes kept other exact figures and terms). No availability,
+# the FACE/TIDE passes kept other exact figures and terms). No availability,
 # release-status or CTA wording touched: "Get the source" / "Read the
 # documentation" and their URLs are byte-for-byte what they were before this pass.
 #

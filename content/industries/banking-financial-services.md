@@ -1,12 +1,12 @@
 ---
 date: 2026-09-07T00:00:00Z
 title: "Banking & Financial Services"
-description: "Payment instruction integrity, third-party risk, decision governance, fee and interest calculation. The Runink CORE and Atlas oversight arrangement: an assessment platform produces findings, and CORE judges each one on separate credentials before a person is asked to act."
+description: "Payment instruction integrity, third-party risk, decision governance, fee and interest calculation. The Runink TIDE and Atlas oversight arrangement: an assessment platform produces findings, and TIDE judges each one on separate credentials before a person is asked to act."
 # ATTRIBUTION, and the thing a reader most needs to know before reading on.
 #
 # This page is NOT Runink FACE and not one Runink product on its own. It
-# describes the joint arrangement in the CORE-and-Atlas paper: Atlas, from
-# Logical Leap, watches the flow and produces findings; the Runink CORE platform
+# describes the joint arrangement in the TIDE and Atlas paper: Atlas, from
+# Logical Leap, watches the flow and produces findings; the Runink TIDE platform
 # receives them through a credentialed door, judges each one, and hands verdicts
 # back. Nothing in FACE covers payment instruction integrity, interconnect,
 # model governance or rate cards — there is no banking connector and no banking
@@ -15,20 +15,20 @@ description: "Payment instruction integrity, third-party risk, decision governan
 #
 # TWO THINGS TO KNOW ABOUT THE HALVES, both of which the page now states:
 #
-#   * CORE's half — findings in, verdicts back, on a different credential from
+#   * TIDE's half — findings in, verdicts back, on a different credential from
 #     the one the findings arrived on — is BUILT and exercised end to end in
 #     automated testing. The eight deterministic gates, the recomputed
 #     arithmetic and the unable-to-judge verdict are all real.
 #   * The producer half is Atlas, which is a partner's product offered in
-#     private beta, and the direction where CORE reaches into Atlas is a named
+#     private beta, and the direction where TIDE reaches into Atlas is a named
 #     way in with nothing written behind it. It waits on a written description
 #     from Logical Leap's side.
 #
 # The page no longer labels which half is built. CONTENT.md rule 4 (11 Sept
 # 2026) retired the footing marks, and rule 2 forbids saying what a product
-# lacks: so the copy states CORE's half plainly, names Atlas as the producer,
+# lacks: so the copy states TIDE's half plainly, names Atlas as the producer,
 # and leaves out what would have needed a "not built" label.
-product: "Runink CORE + Atlas"
+product: "Runink TIDE + Atlas"
 weight: 30
 # category: binds this page to the palette's category tokens via the
 # .rk-cat-* class the layout emits. It replaces an `accent:` hex, which
@@ -36,9 +36,9 @@ weight: 30
 # injected into a style attribute that nothing read any more. A class can
 # follow the ground; a literal cannot.
 category: "banking"
-card: "Runink CORE with Logical Leap's Atlas — payment instruction integrity, third-party risk, decision governance and the evidence a supervisor asks for. An architecture joining two separate products, ours and Logical Leap's."
+card: "Runink TIDE with Logical Leap's Atlas — payment instruction integrity, third-party risk, decision governance and the evidence a supervisor asks for. An architecture joining two separate products, ours and Logical Leap's."
 headline: "You are not asked whether the control exists. You are asked to show that it operated."
-deck: "Payment instruction changes, credit decisions, fee calculations, transaction monitoring, model governance, third-party risk. Every one is a written rule applied to a flow, under an authority that expects the rule to be demonstrable rather than asserted. Read this page as an architecture rather than a single product: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap. Nothing here has been run at a bank."
+deck: "Payment instruction changes, credit decisions, fee calculations, transaction monitoring, model governance, third-party risk. Every one is a written rule applied to a flow, under an authority that expects the rule to be demonstrable rather than asserted. Read this page as an architecture rather than a single product: it describes the Runink TIDE platform working with Atlas, an assessment platform from Logical Leap. Nothing here has been run at a bank."
 
 problems_heading: "Where it goes wrong"
 problems:
@@ -57,7 +57,7 @@ owners:
   - role: "Compliance and risk"
     line: "The answer moves from \"controls were operating effectively during the period\" to a list: the exceptions found, when each was found, what was decided and by whom — with the ones that could not be judged named as that, rather than folded in as passes."
   - role: "Internal audit and control testing"
-    line: "The design's answer to sampling is that the population tested is the population and the exceptions come back as named items. Reading your stream is Atlas's work; judging each finding it sends is CORE's."
+    line: "The design's answer to sampling is that the population tested is the population and the exceptions come back as named items. Reading your stream is Atlas's work; judging each finding it sends is TIDE's."
   - role: "Finance"
     line: "Where the tier applied and the tier earned differ, and where the accrual differs from what the agreement earns, is stated with the clause it was read from."
   - role: "Operations"
@@ -67,7 +67,7 @@ owners:
 
 outcomes_heading: "What the arrangement changes"
 outcomes:
-  # Kept and sharpened: this is CORE's half, and it is the strongest thing on
+  # Kept and sharpened: this is TIDE's half, and it is the strongest thing on
   # the page. The credential separation is enforced by which door the message
   # arrived at, never by a field the sender fills in.
   - "A finding submitted for judgement is graded on a different credential from the one it was submitted with. The two are separate doors: a verdict arriving at the findings door is discarded, and the submitting platform's own secret is refused by name at the verdict door, with the refusal saying why. A submitter cannot grade its own work, and that is decided by what credential was presented rather than by a flag in the message — a flag is something a sender sets, a credential is something a sender either holds or does not."
@@ -120,14 +120,14 @@ foundations:
 next_heading: "See whether it fits"
 next_body: "Bring one control and the systems it is supposed to live in — the verification rule on payment destinations, a supplier agreement, a rate card. A short session is usually enough to see whether the written rule and the applied rule still match, and whether this arrangement is the right shape for you or whether you are better served waiting."
 cta_text: "Book a consultation"
-# The link stays on the CORE and Atlas paper, and deliberately so. Unlike the
+# The link stays on the TIDE and Atlas paper, and deliberately so. Unlike the
 # insurance page, the mechanism described here really is that arrangement's and
 # not FACE's: two doors on separate credentials, eight deterministic gates,
 # recomputed arithmetic, unable-to-judge as a first-class verdict. Repointing it
 # at the FACE paper would have sent a banking reader to a logistics product.
 # The note sends the reader to the paper's chapter on what judging means.
 paper:
-  text: "Read the CORE and Atlas paper"
-  url: "/blog/whitepapers/runink-core-atlas/"
+  text: "Read the TIDE and Atlas paper"
+  url: "/blog/whitepapers/runink-tide-atlas/"
   note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how the arithmetic is recomputed, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names, no return-on-investment figures, and no bank has run this."
 ---

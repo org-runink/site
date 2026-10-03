@@ -86,7 +86,7 @@ Aprobar está pensado para terminar el trabajo, no para empezarlo. La respuesta 
 
 ## Dos Cosas Que Conviene Saber De Entrada
 
-**Sus datos se quedan en sus máquinas.** Los ficheros de pedidos, los papeles de aduana, las lecturas de los sensores y el razonamiento sobre todo ello se ejecutan en hardware que usted controla: FACE corre sobre la plataforma Runink CORE, y eso es lo que hace de ello una propiedad de cómo está construido y no un ajuste que alguien tenga que respetar. Nada va a un proveedor de modelos externo. Esa es la clase de respuesta que pide una revisión de seguridad antes de dejar que un proveedor guarde sus datos de pedido.
+**Sus datos se quedan en sus máquinas.** Los ficheros de pedidos, los papeles de aduana, las lecturas de los sensores y el razonamiento sobre todo ello se ejecutan en hardware que usted controla: FACE corre sobre la plataforma Runink TIDE, y eso es lo que hace de ello una propiedad de cómo está construido y no un ajuste que alguien tenga que respetar. Nada va a un proveedor de modelos externo. Esa es la clase de respuesta que pide una revisión de seguridad antes de dejar que un proveedor guarde sus datos de pedido.
 
 **La cola es donde usted decide.** Cada elemento llega con su razonamiento y con los registros en los que se apoya, así que puede leer por qué se propuso antes de aceptarlo. Lo que usted aprueba es lo que se lleva a cabo, y lo que deja quieto se queda donde está. Qué clase de trabajo merece pasar por la cola es algo que usted responde al montarlo, no un umbral de importe que el software vigile en su nombre.
 
@@ -94,4 +94,4 @@ Aprobar está pensado para terminar el trabajo, no para empezarlo. La respuesta 
 
 Ninguno de los escenarios de arriba es un resultado de cliente. Están escritos a partir de lo que el software está hecho para hacer, en el vocabulario de quien tiene el problema a su cargo, y no se han ejecutado contra los datos de ningún cliente. Aquí no hay ningún caso de éxito ni ninguna cifra, porque las cifras serían nuestras y las que importan son las suyas.
 
-Runink PULSE, el producto de análisis de mercado, y la plataforma CORE sobre la que corre FACE se tratan en [sus propios informes](/es/blog/whitepapers/). No están en esta página, y ninguno de los trabajos de arriba es un resultado que pertenezca a ninguno de los dos.
+Runink PULSE, el producto de análisis de mercado, y la plataforma TIDE sobre la que corre FACE se tratan en [sus propios informes](/es/blog/whitepapers/). No están en esta página, y ninguno de los trabajos de arriba es un resultado que pertenezca a ninguno de los dos.

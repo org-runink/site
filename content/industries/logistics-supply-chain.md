@@ -6,7 +6,7 @@ description: "Held customs entries, freight claims that expire unfiled, cold cha
 # Engine, and the product this company is built around. Logistics is FACE's home
 # domain: `Logistics` is one of the business domains it types records into, and
 # the fulfilment, returns, claims and customs work below maps to named RPCs.
-# Nothing here is Runink PULSE, and nothing here is the CORE-and-Atlas
+# Nothing here is Runink PULSE, and nothing here is the TIDE and Atlas
 # arrangement described on the banking and telecom pages.
 product: "Runink FACE"
 weight: 10

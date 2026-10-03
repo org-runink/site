@@ -1,26 +1,27 @@
 ---
-title: "Runink CORE and Atlas for Banking"
+title: "Runink TIDE and Atlas for Banking"
+aliases: ["/blog/whitepapers/runink-core-atlas-banking/"]
 headline: "You are not asked whether the control exists. You are asked to show that it operated."
 # The label the closing ask carries into the contact form, so an enquiry
 # arrives naming the paper it came from.
-next_about: "The CORE and Atlas banking paper"
-product: "Runink CORE"
+next_about: "The TIDE and Atlas banking paper"
+product: "Runink TIDE"
 subtitle: "Four banking problems, and the console pages that answer them"
-description: "How a bank's payments, third-party risk, model risk, audit, finance and security teams use the Runink CORE console on four problems: payment instruction integrity, third-party risk, decision governance, and fee and interest calculation."
+description: "How a bank's payments, third-party risk, model risk, audit, finance and security teams use the Runink TIDE console on four problems: payment instruction integrity, third-party risk, decision governance, and fee and interest calculation."
 weight: 30
 date: 2026-09-26T00:00:00Z
 audience: "Payments, risk, audit, finance and security leaders at banks"
-blurb: "Four problems every bank carries, and for each one the CORE console pages its people would open: who owns the problem, what each page gives them, and where in their own systems they find today's baseline."
+blurb: "Four problems every bank carries, and for each one the TIDE console pages its people would open: who owns the problem, what each page gives them, and where in their own systems they find today's baseline."
 deck: |
   Payment instructions, suppliers, automated decisions, fees and interest.
   Each is a written rule applied to a flow of work, under a supervisor who
   expects the rule to be shown working rather than described.
 
   This paper takes those four problems in turn. For each one it names the
-  person who owns it, the Runink CORE console pages that person would open,
+  person who owns it, the Runink TIDE console pages that person would open,
   and what each page puts in front of them.
 
-  **CORE runs on hardware the bank owns, and so does the AI model it reasons
+  **TIDE runs on hardware the bank owns, and so does the AI model it reasons
   with.**
 register:
   - { page: 1, title: "Executive summary" }
@@ -41,12 +42,12 @@ about it. The evidence exists somewhere. It is spread across the payment system,
 supplier file, the model inventory, the finance ledger and a shared drive, and it is
 assembled by hand when somebody asks.
 
-Runink CORE is the operations layer a company runs on its own hardware to keep its software
+Runink TIDE is the operations layer a company runs on its own hardware to keep its software
 and its data healthy, governed and explainable. Its console is where a bank's people would
 look at that evidence in one place, act on it, and leave a record of what they did.
 
-This paper does not describe CORE in general. The
-[Runink CORE paper](/blog/whitepapers/runink-core/) does that. It takes four problems a bank
+This paper does not describe TIDE in general. The
+[Runink TIDE paper](/blog/whitepapers/runink-tide/) does that. It takes four problems a bank
 already owns and, for each one, walks through the console pages the owner would open:
 
 - **Payment instruction integrity**, owned by Payments Operations: does every payment
@@ -88,9 +89,9 @@ question, and knowing the question tells a reader where to look.
 | **DataEx** (data experience) | What are our AI models and agents, what may they do, and can their work be trusted? |
 | **DevEx** (developer experience) | Is the platform running as intended, and did our changes ship? |
 
-Intelligence carries the Atlas oversight pages, built with Logical Leap, alongside CORE's own
+Intelligence carries the Atlas oversight pages, built with Logical Leap, alongside TIDE's own
 pages for mapping the data estate. The
-[CORE and Atlas paper](/blog/whitepapers/runink-core-atlas/) explains that arrangement in
+[TIDE and Atlas paper](/blog/whitepapers/runink-tide-atlas/) explains that arrangement in
 depth.
 
 ### Where findings come from
@@ -98,19 +99,19 @@ depth.
 A finding is a statement that something is wrong, with the evidence behind it. In the pages
 below, findings reach a person from three places.
 
-1. **The spending rule book.** CORE checks a company's capital plan, its capital requests
+1. **The spending rule book.** TIDE checks a company's capital plan, its capital requests
    and its spend against a book of approval controls. Every spend line must carry an
    approval that points to a real request. A purchase order must not be dated before its
    approval. Spend above the approved amount, beyond the margin the rule sets, needs a
    second approver. A request must name its supplier. The feeds are uploaded, or pulled
    from a registered source, and in both cases a person previews them before they are
    committed.
-2. **Governance reviews of the bank's own sources.** CORE reviews each registered data
+2. **Governance reviews of the bank's own sources.** TIDE reviews each registered data
    source against governance and risk controls and publishes what it finds. Where it
    cannot assess something, it says so for that source, with the reason, rather than
    guessing.
 3. **Findings an assessment platform submits for judgement.** A platform the bank runs can
-   send its findings to CORE through a dedicated, credentialed door. CORE forms its own
+   send its findings to TIDE through a dedicated, credentialed door. TIDE forms its own
    verdict on each one. The chapter on decision governance explains how.
 
 ## Payment instruction integrity
@@ -132,14 +133,14 @@ bank is sampled: volume.
 
 | Page | What it gives them |
 | --- | --- |
-| **Intelligence › Sources** | The systems CORE is allowed to read, one card each: the payment system, the supplier file, the ledger. Each card says whether the source was reachable when last checked, or that it has not been checked. Each system is added and changed on DataEx › Connections, where its credentials are held apart from its settings and encrypted, and where changes can be limited to a named list of administrators. |
+| **Intelligence › Sources** | The systems TIDE is allowed to read, one card each: the payment system, the supplier file, the ledger. Each card says whether the source was reachable when last checked, or that it has not been checked. Each system is added and changed on DataEx › Connections, where its credentials are held apart from its settings and encrypted, and where changes can be limited to a named list of administrators. |
 | **Intelligence › Resolve** | What those systems actually hold. On an administrator's explicit action, Resolve tests each connection, explores its structure (tables, columns, types and declared keys) and counts how many distinct accounts use each dataset. It keeps the structure and the counts. It never keeps customer values, sample rows or the names of the accounts. This is how Payments Operations learns which systems hold payee details before anyone claims a control covers them. |
 | **Intelligence › CapEx monitor** | The spending rule book run over every line of the plan, request and spend feeds the bank has loaded, not over a sample. Each finding names the rule, the record and the remedy the rule book gives. |
 | **Intelligence › CapEx lineage** | Any finding traced along its chain: this payment, the approval it cites, the plan line that approval belongs to. A payment with no approval behind it shows as an orphan. |
 | **Intelligence › CFO dashboard** | Planned, approved and actual spend side by side, and a risk summary that totals spend without authorisation and spend beyond its approval. A figure the feeds cannot answer is drawn with its reason, not as zero. |
 | **Intelligence › Analyst dashboard** | The same feeds from the working analyst's side: open findings by severity, and a health scorecard where an area with nothing to measure reads "not assessed" rather than green. |
 | **Intelligence › Remediation** | The queue of findings, each with the rule book's remedy. A person can dry-run a fix against a copy of the feeds to see the before and after, then approve it or dismiss it. The decision is made by the rule's owner or an administrator, never by the person who proposed it. An approved fix is recorded as a decision and applied in the source system, and the finding clears on the next load. |
-| **DataEx › Judgements** | Where the bank's own monitoring raises a finding, such as a payee's bank details changed without call-back, the finding can be submitted with its evidence and CORE returns its own verdict. More on this under decision governance. |
+| **DataEx › Judgements** | Where the bank's own monitoring raises a finding, such as a payee's bank details changed without call-back, the finding can be submitted with its evidence and TIDE returns its own verdict. More on this under decision governance. |
 | **DevEx › Audit chain** | Every approval, dismissal and change of rule owner, with the person, the time and the outcome. |
 
 ### What changes, and why
@@ -192,16 +193,16 @@ adds a new third party: the vendor, and often the vendor's own model provider be
 | **Intelligence › CapEx monitor** | Spend and requests checked against the rule book, including the rule that a request must name its supplier and the rule that spend must match the type of item that was planned. A request to pay nobody in particular shows up as a finding. |
 | **Intelligence › Resolve** | The estate grouped into business domains, with every link between datasets marked as declared by the source, inferred from the data, or named as a guess. It also shows where what a source declares about itself disagrees with what its data shows. For a supplier question such as "which datasets could this provider's systems read?", this is where the answer starts. |
 | **Intelligence › Lineage** | Where data moves: from each registered source, through the application that extracts it, to where it lands. A link is drawn only where movement was observed, never guessed, and governance findings sit on the nodes they concern. |
-| **DataEx › Model cards** | The AI inside CORE, described the way a supplier review asks: where the model came from, its licence, its intended use, its known limits and the evidence for them, beside what is actually running. The health mark is green only when the two agree. |
+| **DataEx › Model cards** | The AI inside TIDE, described the way a supplier review asks: where the model came from, its licence, its intended use, its known limits and the evidence for them, beside what is actually running. The health mark is green only when the two agree. |
 | **DataEx › Policy & ReBAC** | The access lists for each kind of privileged change, such as changing a data connection or ending someone else's session, how many people are on each, and whether you are one of them. |
 | **DataEx › Secrets & PKI** | The certificate authority that vouches for each of the platform's internal services, and the console's own sign-in settings. |
 | **DevEx › Audit chain** | Every connection added, changed or removed, and every attempt that was refused, with the person and the time. |
 
 ### What changes, and why
 
-The AI stops being a third party. CORE's model runs on the bank's own hardware. There is no
+The AI stops being a third party. TIDE's model runs on the bank's own hardware. There is no
 outside AI service in the path, so no payment record, supplier contract or draft finding is
-sent to one to be read. A third-party review of CORE's AI becomes a review of software the
+sent to one to be read. A third-party review of TIDE's AI becomes a review of software the
 bank runs, described by its model card, rather than a negotiation over another company's
 data handling.
 
@@ -242,10 +243,10 @@ supervisor asks who approved it, the answer has to be rebuilt.
 
 | Page | What it gives them |
 | --- | --- |
-| **DataEx › Model cards** | The model inventory for CORE's own AI: one card per model tier, with its source, licence, intended use, known limits and evidence, beside what is running now. |
-| **DataEx › Agents** | Every automated agent CORE knows, each fact stated once: what it is, whether it is switched on, which model it uses, what gate it must pass and how much it may do on its own. |
+| **DataEx › Model cards** | The model inventory for TIDE's own AI: one card per model tier, with its source, licence, intended use, known limits and evidence, beside what is running now. |
+| **DataEx › Agents** | Every automated agent TIDE knows, each fact stated once: what it is, whether it is switched on, which model it uses, what gate it must pass and how much it may do on its own. |
 | **DataEx › Guardrails & autonomy** | Each class of action the Harness can take, set to off or to wait for a person, with overrides per business domain and hard limits above them. Every class starts with a person in the loop. Recent activity for each class is read from the audit chain. |
-| **DataEx › Harness** | Findings about the platform's own risk and compliance, each with a proposed remedy and only the actions CORE can really take: start a named automated agent, file a tracking issue, or acknowledge. Each act is confirmed, then written to the audit chain before it happens. |
+| **DataEx › Harness** | Findings about the platform's own risk and compliance, each with a proposed remedy and only the actions TIDE can really take: start a named automated agent, file a tracking issue, or acknowledge. Each act is confirmed, then written to the audit chain before it happens. |
 | **DataEx › Judgements** | The independent second opinion. It is described in full below. |
 | **Intelligence › Business rules** | The rule book, with a named owner and a status for every rule. A change is proposed by one person and decided by the rule's owner or an administrator, never by the proposer. A rule not yet approved still runs, but its findings are shown as a dry run and kept out of every score, and the scores say which rules they leave out. A rejected rule produces nothing. |
 | **Intelligence › Playbooks** | Step-by-step responses to findings, such as "start this reviewer, then wait for this approver". A playbook is switched on by an administrator who did not write it, and an approval step is decided by its named approver, never by the person who started the run. |
@@ -261,7 +262,7 @@ through a second door, on a different credential. That separation is decided by 
 credential was presented, not by a field in the message that a sender could fill in.
 
 **Numbers are checked with arithmetic, not opinion.** Where a finding claims a rate, the
-counts behind it travel with it, and CORE works the rate out again. If the counts do not
+counts behind it travel with it, and TIDE works the rate out again. If the counts do not
 give the claimed figure, the verdict is a disagreement, with the arithmetic shown. A count
 divided by nothing is "unable to judge", never a rate of zero. A claim that carries a number
 never reaches the AI model at all.
@@ -272,7 +273,7 @@ afterwards, so the model cannot simply agree with it. If the model cannot be rea
 verdict is "unable to judge", with that stated as the reason.
 
 **The verdicts are words, not a score.** Each finding gets one: agrees, disagrees, unable to
-judge, or outside what CORE can assess. "Unable to judge" is never counted as agreement,
+judge, or outside what TIDE can assess. "Unable to judge" is never counted as agreement,
 and "nothing has been submitted" is said as that, never as a clean result.
 
 ### What changes, and why
@@ -286,7 +287,7 @@ decider and the time are in the decision log and in the audit chain, written whe
 change was made.
 
 A second opinion arrives before a person acts. A finding from an assessment platform
-reaches the bank's people with CORE's own verdict beside it, including the ones CORE could
+reaches the bank's people with TIDE's own verdict beside it, including the ones TIDE could
 not judge, named as such.
 
 ### Your baseline
@@ -370,7 +371,7 @@ Two points matter most to these readers.
 describes a decision. A record written at the time of the decision is the decision. The
 audit chain and the decision logs are the second kind.
 
-**The record is held by the bank.** CORE and its AI model run on hardware the bank owns.
+**The record is held by the bank.** TIDE and its AI model run on hardware the bank owns.
 The audit chain, the findings, the verdicts and the credentials stay on the bank's systems.
 
 We have not been audited against SOX, DORA or any other banking regulation. What this paper
@@ -381,12 +382,12 @@ evidence is worth to it.
 
 This paper is deliberately narrow. For depth, two longer papers sit behind it.
 
-- The [Runink CORE paper](/blog/whitepapers/runink-core/) covers the whole platform: how it
+- The [Runink TIDE paper](/blog/whitepapers/runink-tide/) covers the whole platform: how it
   runs the software, holds the data connections, governs who may touch them and carries
-  changes from written to running. It is at runink.org/blog/whitepapers/runink-core/.
-- The [CORE and Atlas paper](/blog/whitepapers/runink-core-atlas/), written with Logical
+  changes from written to running. It is at runink.org/blog/whitepapers/runink-tide/.
+- The [TIDE and Atlas paper](/blog/whitepapers/runink-tide-atlas/), written with Logical
   Leap, covers the oversight arrangement: what a finding contains, how it is checked, and
-  why an independent assessor matters. It is at runink.org/blog/whitepapers/runink-core-atlas/.
+  why an independent assessor matters. It is at runink.org/blog/whitepapers/runink-tide-atlas/.
 
 The quickest test of fit is one control. Bring the approval rule on supplier payments, a
 supplier agreement, or a rate card, together with the person who owns it. In a short

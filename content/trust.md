@@ -35,7 +35,7 @@ next:
 # 3. THE EXCEPTIONS ARE NAMED. "A person decides" is only honest with its two
 #    documented exceptions beside it: FACE's own self-healing (restart, isolate,
 #    roll back, add capacity — a fixed list, never destructive, an operator can
-#    switch it off) and CORE's issue triager applying labels from an allowed
+#    switch it off) and TIDE's issue triager applying labels from an allowed
 #    list. If another agent gains the right to act alone, it goes in that list
 #    the same day, or the headline comes down.
 # 4. NOTHING UNRELEASED. No test evidence or autonomous release-testing
@@ -80,11 +80,11 @@ next:
     <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Agents draft. A named person decides.</h2>
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Runink's agents read records and write drafts: a claim file, a code fix, a post, a reply. The draft waits. A named person approves it, edits it or rejects it, and the record keeps who that was and when.</p>
-      <p>In Runink CORE, those decisions go into an audit chain. Each entry is linked to the one before it, so an entry that was changed, removed or moved out of order shows up. Anyone signed in to the CORE console can press <em>Verify now</em> and have the whole chain checked. Reading the entries themselves is kept to the administrators you name.</p>
+      <p>In Runink TIDE, those decisions go into an audit chain. Each entry is linked to the one before it, so an entry that was changed, removed or moved out of order shows up. Anyone signed in to the TIDE console can press <em>Verify now</em> and have the whole chain checked. Reading the entries themselves is kept to the administrators you name.</p>
       <p>Two things do act on their own, and we would rather you read them here than find them later:</p>
       <ul class="list-disc pl-6 space-y-3">
         <li><strong class="text-ink">FACE looks after its own health.</strong> When part of FACE stops responding, it can restart it, cut off a dependency that keeps failing, roll back the most recent change, or add capacity. It picks only from that fixed list. It never deletes data, shuts a machine down or turns off a security control. When it is unsure, it tells a person instead of acting. An operator can switch the automatic part off.</li>
-        <li><strong class="text-ink">CORE's issue triager labels new issues.</strong> It picks labels only from the list the repository allows, and only after an independent check agrees. A person can change them at any time, and decides who works on the issue.</li>
+        <li><strong class="text-ink">TIDE's issue triager labels new issues.</strong> It picks labels only from the list the repository allows, and only after an independent check agrees. A person can change them at any time, and decides who works on the issue.</li>
       </ul>
       <p>Everything else waits for a person.</p>
     </div>
@@ -92,10 +92,10 @@ next:
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>
       <ul class="space-y-2 text-base">
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/analysis/agents-and-oversight/">FACE: agents and oversight</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">CORE: what each agent may do, and what a person decides</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/devex/cluster-gitops/">CORE: the audit chain and how it is checked</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: what each agent may do, and what a person decides</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/devex/cluster-gitops/">TIDE: the audit chain and how it is checked</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/operations/configuration/">FACE: the setting that switches automatic self-healing off</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/issue-triager/">CORE: the issue triager's model card</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/issue-triager/">TIDE: the issue triager's model card</a></li>
       </ul>
     </div>
   </div>
@@ -116,7 +116,7 @@ next:
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/ai-safety/">FACE: AI safety, guardrails and untrusted data</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">PULSE: guardrails before the model, per agent</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/concepts/judging-ladder/">PULSE: the second check on proposals</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">CORE: each agent's guardrails, on its model card</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: each agent's guardrails, on its model card</a></li>
       </ul>
     </div>
   </div>
@@ -127,7 +127,7 @@ next:
     <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">3 · Where the models run</p>
     <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Open models we name, and no AI vendor in between.</h2>
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
-      <p>FACE, CORE and PULSE run their models where the product runs. Put it on a Runink Server on your premises, or in your own cloud account, and the models run on your infrastructure too. Choose Runink's shared machines instead, and they run on ours. Either way, no third-party AI service is called, and your records, the prompts built from them and the answers go to no model vendor.</p>
+      <p>FACE, TIDE and PULSE run their models where the product runs. Put it on a Runink Server on your premises, or in your own cloud account, and the models run on your infrastructure too. Choose Runink's shared machines instead, and they run on ours. Either way, no third-party AI service is called, and your records, the prompts built from them and the answers go to no model vendor.</p>
       <p>LUNA, our personal companion app, runs its models on servers Runink operates. It calls no third-party AI service either.</p>
       <p>The models are open, and we name them by maker and licence:</p>
     </div>
@@ -151,7 +151,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">CORE model cards</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE model cards</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">PULSE model cards</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/models/">LUNA model cards</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/sovereign-inference/">FACE: sovereign inference</a></li>
@@ -192,7 +192,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/dataex/models-inference/">CORE: usage shown as absent, not zero</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/dataex/models-inference/">TIDE: usage shown as absent, not zero</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/audit-lineage/">FACE: what the record holds, and what it leaves empty</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/guide/privacy/">LUNA: the markers you will see for a missing value</a></li>
       </ul>
@@ -243,7 +243,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/compliance-evidence/">CORE: the evidence agent and the five standards</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/compliance-evidence/">TIDE: the evidence agent and the five standards</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/compliance/">FACE: compliance posture</a></li>
       </ul>
     </div>

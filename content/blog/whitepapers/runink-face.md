@@ -3,7 +3,7 @@ title: "Runink FACE — Fulfilment Autonomous Claims Engine"
 headline: "The evidence of your next loss is already in your systems."
 # The label the closing ask carries into the contact form, so an enquiry
 # arrives naming the paper it came from. `product:` is not usable for this —
-# two of the four papers are both "Runink CORE".
+# two of the four papers are both "Runink TIDE".
 next_about: "The Runink FACE paper"
 product: "Runink FACE"
 subtitle: "Fulfilment Autonomous Claims Engine"
@@ -2002,7 +2002,7 @@ automation setup rather than an island in it.
 ### FACE within Runink
 
 FACE is one of two Runink products. The other is PULSE, a digital-marketing
-engine built the same way. Both sit on a shared platform called CORE, which
+engine built the same way. Both sit on a shared platform called Runink TIDE, which
 is what makes the installation, identity and separation properties described
 in this document consistent across them.
 

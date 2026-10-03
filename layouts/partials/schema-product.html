@@ -22,7 +22,7 @@
   This partial named the product "Runink FACE" and pointed `url` at
   "products/face/" unconditionally, correct only because content/pricing.md was
   the one page with `layout: "pricing"` that this ran on. A second product's
-  pricing page (content/products/core-pricing.md) with the same layout would
+  pricing page (content/products/tide-pricing.md) with the same layout would
   otherwise emit a SoftwareApplication claiming to be Runink FACE. Both values
   now come from the page's own front matter, defaulting to the two literals
   this partial always used, so content/pricing.md (which sets neither) renders

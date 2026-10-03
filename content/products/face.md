@@ -15,7 +15,7 @@ badge: "FACE"
 # --rk-cat-logistics-ink / --rk-cat-logistics-lift. Not a literal.
 #
 # Docs architecture: All Runink docs live at docs.runink.org/<product>/. The
-# hero's tertiary_button_url below points at CORE's DevEx docs (sessions, MCP
+# hero's tertiary_button_url below points at TIDE's DevEx docs (sessions, MCP
 # tools, agent fleet) rather than a FACE-specific docs tree. That note used to
 # sit as a bare '#' comment inside the {{< hero >}} shortcode's own parameter
 # list, which Hugo's shortcode-argument parser does not accept as a comment
@@ -30,7 +30,7 @@ badge: "FACE"
     secondary_button_text="Read the FACE paper"
     secondary_button_url="/blog/whitepapers/runink-face/"
     tertiary_button_text="📖 Technical reference"
-    tertiary_button_url="https://docs.runink.org/core/docs/devex/"
+    tertiary_button_url="https://docs.runink.org/tide/docs/devex/"
     size="normal"
     gradient-from="var(--rk-sunk)"
     gradient-to="var(--rk-ground)"
@@ -69,9 +69,9 @@ FACE is the product that reads all of it, and it is the one this company is buil
 >}}
 {{< card
     icon="server-stack"
-    title="Runink CORE"
+    title="Runink TIDE"
     description="A separate product, sold on its own. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
-    link="/blog/whitepapers/runink-core/"
+    link="/blog/whitepapers/runink-tide/"
 >}}
 {{< /card-grid >}}
 </div>
@@ -226,8 +226,8 @@ FACE is the product that reads all of it, and it is the one this company is buil
             <p class="text-slate-300">When an answer needs the open web — a carrier's standing, a customs ruling, a published tariff, a consignee you are unsure about — FACE runs the search from your own infrastructure through a public search endpoint, then fetches and reads the pages itself, and the extracted page comes attached to the finding. The search engine sees the query, as it would from any browser. What does not happen is the part that matters commercially: there is no vendor account, no API key and no per-question bill, so no supplier is building a history of the names your company has been asking about, filed under your company.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">On Runink core, inside your boundary</h3>
-            <p class="text-slate-300">FACE runs on Runink core, the platform underneath it. Services identify themselves to each other on every call and hold nothing long-lived. The cockpit your team uses is the same boundary your auditors are given.</p>
+            <h3 class="text-2xl font-bold text-white mb-4">On Runink TIDE, inside your boundary</h3>
+            <p class="text-slate-300">FACE runs on Runink TIDE, the platform underneath it. Services identify themselves to each other on every call and hold nothing long-lived. The cockpit your team uses is the same boundary your auditors are given.</p>
         </div>
     </div>
 
@@ -254,7 +254,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
     "questions": [
         {
             "question": "Is FACE the same thing as Runink PULSE?",
-            "answer": "No. They are separate products. FACE is the main one and the subject of this page: logistics, fulfilment, forecasting, claims, returns and compliance. PULSE is a marketing engine — audit, research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink CORE is a third product, also sold separately: the operations layer you run on your own hardware to keep your Runink applications and your own data in order. Its paper describes it."
+            "answer": "No. They are separate products. FACE is the main one and the subject of this page: logistics, fulfilment, forecasting, claims, returns and compliance. PULSE is a marketing engine — audit, research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink TIDE is a third product, also sold separately: the operations layer you run on your own hardware to keep your Runink applications and your own data in order. Its paper describes it."
         },
         {
             "question": "Has this been run on an operation like mine?",
@@ -282,7 +282,7 @@ FACE is the product that reads all of it, and it is the one this company is buil
         },
         {
             "question": "Is there anything we can put in someone's hands today?",
-            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly. The server image that carries Runink CORE is on the same page and is request-access, because it is the platform underneath rather than an app."
+            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly. The server image that carries Runink TIDE is on the same page and is request-access, because it is the platform underneath rather than an app."
         },
         {
             "question": "What does it cost?",

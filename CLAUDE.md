@@ -17,7 +17,7 @@ app endpoint, or anything not backed by a Runink repository (see `CONTENT.md`).
   `//go:build ignore` scripts. It imports nothing from core/face/pulse.
 - **Content is sourced from** the product repos: claims must be backed by `../face`,
   `../pulse`, `../core`, `../river` (verify against their `origin/main`, not a checkout).
-- **Product pages here:** `content/products/{core,core-pricing,face,pulse}.md`,
+- **Product pages here:** `content/products/{tide,tide-pricing,face,pulse}.md`,
   `content/river.md` (Runink River, layout `product`), `content/pricing*.md`,
   `content/downloads.md`, `content/luna-privacy.md`.
 - **Not here:** the Runink River documentation site lives in the river repo
@@ -100,7 +100,8 @@ Verified here 2026-09-27 (no `node_modules` in the worktree): `go vet` on the th
   `var()` in a `style` attribute needs `| safeCSS`.
 - **A fix lands in every language** (en/es/fr/pt) in the same change, or the translation is
   withdrawn (rule 12).
-- Product names: FORGE is served inside CORE (no forge domain); "Runink River" in prose;
+- Product names: "Runink TIDE" (formerly CORE) at the first mention on a page, then "TIDE",
+  never a bare "Tide"; FORGE is served inside TIDE (no forge domain); "Runink River" in prose;
   River is the developer workstation, the Server ISO is a separate downstream image.
 - No Python in this repo.
 

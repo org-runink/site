@@ -46,22 +46,22 @@ more:
   link_url: "/blog/"
 headline: "Papers that open with what can be proven."
 # FACE first: it is `weight: 10`, and it is what the list sorts to the top.
-# FACE, PULSE and CORE are named as three separate products, each sold on its
+# FACE, PULSE and TIDE are named as three separate products, each sold on its
 # own (the owner, 26 September 2026), so that nothing in one paper reads as
-# another product's capability. CORE has no landing page: its paper IS its
+# another product's capability. TIDE has no landing page: its paper IS its
 # product home, so this deck is where a reader learns it is a product at all.
-# The wording once said CORE was "not a product"; that was wrong.
-description: "Long-form documents on Runink FACE, Runink PULSE and Runink CORE, three separate products. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
+# The wording once said TIDE was "not a product"; that was wrong.
+description: "Long-form documents on Runink FACE, Runink PULSE and Runink TIDE, three separate products. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
 deck: |
   Long-form documents, each about one Runink product or about an arrangement
   with a partner. The ones at the top are about **Runink FACE**. **Runink PULSE** is a different product, for market analysis and
   marketing, and its paper describes its own work rather than FACE's.
-  **Runink CORE** is a product in its own right, sold separately. It is the
+  **Runink TIDE** is a product in its own right, sold separately. It is the
   operations layer you run on your own hardware to keep your Runink
   applications and your own data in order, and the honest answer to where your
   data is processed and who can see it. Its paper is where this site describes
   it. The joint papers with Logical Leap cover Atlas's oversight screens, which
-  run inside CORE.
+  run inside TIDE.
 
   They carry no case studies, no customer names and no return-on-investment
   figures. Those things are easy to write and impossible to check, and a buyer

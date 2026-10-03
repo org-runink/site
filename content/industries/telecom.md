@@ -1,22 +1,22 @@
 ---
 date: 2026-09-07T00:00:00Z
 title: "Telecom"
-description: "Revenue assurance, rating and billing, interconnect settlement, network capital programmes. The Runink CORE and Atlas oversight arrangement applied to two records that ought to agree, at the transaction."
+description: "Revenue assurance, rating and billing, interconnect settlement, network capital programmes. The Runink TIDE and Atlas oversight arrangement applied to two records that ought to agree, at the transaction."
 # Same attribution as the banking page, and for the same reason. This is the
-# Runink CORE and Atlas arrangement, not Runink FACE and not one product on our
+# Runink TIDE and Atlas arrangement, not Runink FACE and not one product on our
 # price list. There is nothing in FACE that touches mediation, rating,
 # interconnect settlement or subscriber plan terms — no connector, no domain —
 # so this page could only ever have been the platform arrangement, and it said
 # so nowhere.
 #
-# The built half is CORE's judging: findings arrive through one credentialed
+# The built half is TIDE's judging: findings arrive through one credentialed
 # door, are gated deterministically, have any arithmetic recomputed, and leave
 # as verdicts through a second door on a different credential. The producing
 # half — reading every rated record against that subscriber's plan terms — is
 # the assessment platform's, and that platform (Atlas, from Logical Leap) is in
-# private beta. The page states CORE's half plainly and no longer labels which
+# private beta. The page states TIDE's half plainly and no longer labels which
 # half is built: CONTENT.md rules 2 and 4.
-product: "Runink CORE + Atlas"
+product: "Runink TIDE + Atlas"
 weight: 40
 # category: binds this page to the palette's category tokens via the
 # .rk-cat-* class the layout emits. It replaces an `accent:` hex, which
@@ -24,9 +24,9 @@ weight: 40
 # injected into a style attribute that nothing read any more. A class can
 # follow the ground; a literal cannot.
 category: "telecom"
-card: "Runink CORE with Logical Leap's Atlas — revenue assurance, rating and billing, interconnect settlement, and rollout across many small sites. An architecture joining two separate products, ours and Logical Leap's."
+card: "Runink TIDE with Logical Leap's Atlas — revenue assurance, rating and billing, interconnect settlement, and rollout across many small sites. An architecture joining two separate products, ours and Logical Leap's."
 headline: "Revenue assurance exists because the volume defeated inspection."
-deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples. Read this page as an architecture: it describes the Runink CORE platform working with Atlas, an assessment platform from Logical Leap. No operator has run it."
+deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples. Read this page as an architecture: it describes the Runink TIDE platform working with Atlas, an assessment platform from Logical Leap. No operator has run it."
 
 problems_heading: "Where it goes wrong"
 problems:
@@ -55,8 +55,8 @@ owners:
 
 outcomes_heading: "What the arrangement changes"
 outcomes:
-  - "The population tested is the population, so exceptions come back as named accounts a re-rate can still fix, rather than as an estimated error rate. Reading every rated record against that subscriber's own plan terms is Atlas's work; judging each finding it sends is CORE's."
-  - "Each finding that reaches CORE is gated deterministically before anything is put to a model: it must be complete enough to read, it must carry evidence, at least one piece must be readable, it must be about the subject of the finding rather than something adjacent, it must not be the claim written out a second time, and dated evidence must be recent enough to say something about the present. Each gate that fires ends the matter and states its own reason in a sentence a person reads."
+  - "The population tested is the population, so exceptions come back as named accounts a re-rate can still fix, rather than as an estimated error rate. Reading every rated record against that subscriber's own plan terms is Atlas's work; judging each finding it sends is TIDE's."
+  - "Each finding that reaches TIDE is gated deterministically before anything is put to a model: it must be complete enough to read, it must carry evidence, at least one piece must be readable, it must be about the subject of the finding rather than something adjacent, it must not be the claim written out a second time, and dated evidence must be recent enough to say something about the present. Each gate that fires ends the matter and states its own reason in a sentence a person reads."
   - "A finding claiming a rate is settled by arithmetic on the raw counts, recomputed rather than accepted, and never goes near a model. A count divided by nothing is unable to judge, never a rate of zero. Two readings of the same traffic that disagree are unable to judge, never averaged into a third figure neither party observed — which for interconnect is the whole argument."
   - "The judging happens on a different credential from the submitting, enforced by which door the message arrived at rather than by a field the sender fills in. A submitter cannot grade its own work."
   - "Unable to judge is a verdict in its own right and never renders as agreement. No evidence, evidence that only restates the claim, evidence about a different subject, evidence past the staleness horizon, an unreadable answer, or a submitter who could not determine the matter either: each ends there, with the reason written next to it, and goes to a person. An assessor whose confident answers and whose guesses look identical is ignored within a week, and this is the discipline that stops that."
@@ -98,13 +98,13 @@ foundations:
 next_heading: "See whether it fits"
 next_body: "Bring one comparison and the agreement that governs it — rating output against plan terms, or a month of interconnect traffic against the settlement. Half an hour is usually enough to see whether the differences that matter are the shape this finds. Bring today's figures for the measures above too; they are your baseline."
 cta_text: "Book a consultation"
-# Link kept on the CORE and Atlas paper. Unlike the insurance page, the
+# Link kept on the TIDE and Atlas paper. Unlike the insurance page, the
 # mechanism here genuinely is that arrangement's and not FACE's — FACE has no
 # rating, mediation or interconnect capability of any kind — so repointing this
 # at the FACE paper would send a revenue-assurance reader to a logistics
 # product. The note sends them to the paper's chapter on what judging means.
 paper:
-  text: "Read the CORE and Atlas paper"
-  url: "/blog/whitepapers/runink-core-atlas/"
+  text: "Read the TIDE and Atlas paper"
+  url: "/blog/whitepapers/runink-tide-atlas/"
   note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how a rate is recomputed rather than accepted, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names, no return-on-investment figures, and no operator has run it."
 ---

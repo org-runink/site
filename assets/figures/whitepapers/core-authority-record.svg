@@ -1,5 +1,5 @@
 <!--
-  CORE paper — "The whole rule, on one page": what happens when somebody asks
+  TIDE paper — "The whole rule, on one page": what happens when somebody asks
   to create, change or remove a data connection.
 
   The shape the chapter says is worth noticing is that BOTH refusals and the
@@ -10,7 +10,7 @@
   The two gates are the same ring glyph twice, and so are the two refusals.
   That repetition is the argument:
 
-    gate 1  — a ring with a person inside it: can CORE name this person?
+    gate 1  — a ring with a person inside it: can TIDE name this person?
     gate 2  — a ring with a tick inside it:   are they permitted to do this?
 
     refusal 1 — the ring, EMPTY. Nobody can be named for it.
@@ -38,7 +38,7 @@
   <circle cx="26" cy="58" r="9" style="fill:var(--ink,#1c1917)"/>
   <path d="M40,58 H216" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.2;stroke-linecap:round"/>
 
-  <!-- gate one: can CORE name this person? -->
+  <!-- gate one: can TIDE name this person? -->
   <circle cx="250" cy="58" r="30"
           style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.6"/>
   <circle cx="250" cy="49" r="7" style="fill:var(--ink,#1c1917)"/>
