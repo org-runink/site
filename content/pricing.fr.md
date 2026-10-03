@@ -35,19 +35,19 @@ author: "Runink"
       {
         "name": "Paralégaux",
         "accent": "Digitaux",
-        "body": "Votre équipe juridique et de conformité automatisée. Ils ingèrent les factures de transport de façon autonome, comparent les accords de niveau de service (SLA) et déposent instantanément des réclamations irréfutables pour récupérer les marges perdues auprès des transporteurs, sans intervention manuelle.",
+        "body": "Votre cellule litiges et récupération. Ils lisent les factures de transport, les preuves de livraison et vos accords de niveau de service (SLA), rassemblent les preuves de chaque réclamation pour manquant, avarie ou retard et la rédigent dans le délai du transporteur. Une personne de votre équipe approuve chaque réclamation avant son dépôt.",
         "focus": "Focus : Litiges et Récupération"
       },
       {
         "name": "Acheteurs",
         "accent": "Statistiques",
-        "body": "Votre unité autonome de planification de la demande. Ils analysent intelligemment les tendances du marché et la vitesse des ventes pour prédire les besoins exacts de stockage, orchestrant de manière dynamique la répartition des stocks sur l'ensemble de votre réseau.",
+        "body": "Votre cellule de planification de la demande. Ils testent des méthodes de prévision sur votre propre historique de ventes, retiennent celle qui l'aurait le mieux prédit et signalent où la couverture de stock ne couvre pas le délai d'approvisionnement. Transferts et réapprovisionnements sont proposés à l'approbation de vos planificateurs.",
         "focus": "Focus : Stock et Exécution"
       },
       {
         "name": "Opérateurs de",
         "accent": "Revenus",
-        "body": "Vos auditeurs financiers légaux. Ils auditent méticuleusement chaque ligne de facture par rapport à vos contrats de transport négociés, signalent automatiquement les frais indus et exécutent des retenues de paiement pour stopper les fuites de marge.",
+        "body": "Votre cellule d'audit transport. Ils contrôlent chaque ligne de facture par rapport à vos contrats négociés et confirmations de tarif, signalent les frais que le contrat ne justifie pas et rédigent chaque retenue de paiement avec ses preuves. Votre équipe finance décide de ce qui est retenu.",
         "focus": "Focus : Finance et Réconciliation"
       }
     ]
