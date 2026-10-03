@@ -1,7 +1,7 @@
 ---
 title: "Runink TIDE"
 layout: "product"
-description: "Runink TIDE is the operations layer a company runs on machines it owns. One console shows whether your software is healthy, what your AI models and agents may do, what your data holds, and turns a written brief into a working application."
+description: "Runink TIDE takes the repeat questions off engineering, platform and data teams: what broke and why, whether a fix shipped, which number is right, who changed what. Run it on your own servers, in your own cloud account, or on Runink's shared machines to start. Helpers propose; a person approves."
 next_about: "Runink TIDE"
 aliases: ["/products/core/"]
 # RENAMED 2026-10: this product was called Runink CORE and is now Runink TIDE
@@ -75,11 +75,22 @@ aliases: ["/products/core/"]
 # English only, like /river/ and /downloads/, so no translation is left behind; the
 # homepage card that links here falls back to this page on /es/, /fr/ and /pt/ and
 # says the page is in English.
+#
+# Rewritten 2026-10-03 (owner: "business value, not AI hype"). Every card now
+# opens on a burden the buyer carries (the on-call page, the unread pull request,
+# the audit rebuilt by hand, the forgotten environment, the wrong number found by
+# the business first, two teams with two figures, the AI inventory nobody keeps,
+# data that cannot leave), then says what TIDE does in plain verbs, then names the
+# cost line it touches. No figure was added: the steps intro carries the paper's
+# own method ("How to see the value in your own records") instead of a number.
+# Every claim still comes from the TIDE paper; the `resolve` card was folded away
+# rather than reworded, and the console's own words (DevEx, DataEx, Harness) stay
+# only as small section labels, each explained by the burden it removes.
 image: "/images/products/tide-og.jpg"
 rp:
   lockup: "TIDE · Trusted Intelligence for Developer & Data Experience"
-  title: "Your software, your AI and your data, on machines you own."
-  promise: "**Runink TIDE** keeps your company's software healthy, governs the AI models and agents that work inside it, watches your own data, and turns a written brief into a working application. Its AI model runs on those same machines. No outside AI service is called."
+  title: "Know what broke, what shipped and which number is right. On your servers, your cloud or ours."
+  promise: "**Runink TIDE** takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, which dashboard is right, who changed this. Helpers draft the answer or the fix. A named person approves it. Run it on your own servers or cloud account and your data stays there. No plan sends it to an outside AI service."
   cta:
     - { text: "Book a consultation", url: "/#contact", style: "primary" }
     - { text: "Read the TIDE paper", url: "/blog/whitepapers/runink-tide/", style: "ghost" }
@@ -88,50 +99,52 @@ rp:
   fine: "A product in its own right, sold separately · in English, Spanish, French and Portuguese"
   plate:
     name: "Runink TIDE"
-    sub: "One console, five parts. Each answers one question."
+    sub: "One console, five parts. Each one takes a question off somebody's week."
     rows:
-      - { k: "Overview", v: "Is anything wrong, and where do I go next?" }
-      - { k: "Delivery", v: "Is the platform running, and did our changes actually ship? (TIDE's own console calls this part DevEx.)" }
-      - { k: "AI governance", v: "What may our models and agents do, and can we trust their work? (TIDE's own console calls this part DataEx.)" }
-      - { k: "Intelligence", v: "What does our data hold, and where do money or controls slip?" }
-      - { k: "FORGE (preview)", v: "How does a written brief become a working application?" }
+      - { k: "Overview", v: "What is wrong right now, and where do I look first?" }
+      - { k: "Delivery", v: "Is the platform up, and did my fix actually ship? (The console calls this part DevEx.)" }
+      - { k: "AI oversight", v: "Which AI do we run, what may it do, and who checked its work? (The console calls this part DataEx.)" }
+      - { k: "Intelligence", v: "Which number is right, and where are money or controls slipping?" }
+      - { k: "FORGE (preview)", v: "How does a small tool a team asks for get built without waiting its turn?" }
     foot: "It asks before it acts."
-  mission: "Where does our information go? To a machine you own, *and it stays there.*"
+  mission: "Where does our information go? To the machines your plan names, *and it stays there.*"
   facts:
-    - { k: "5 parts", v: "Overview, Delivery, AI governance, Intelligence and FORGE (in preview), on one menu" }
-    - { k: "1 command", v: "brings the whole platform up on one workstation" }
-    - { k: "your model", v: "the assistant, the helpers and FORGE all run on your hardware" }
+    - { k: "1 screen", v: "for whoever is on duty, in place of one screen for each system" }
+    - { k: "1 command", v: "brings the whole platform up on one workstation, so you can try it on your own hardware" }
+    - { k: "every deployment", v: "has a named owner and an end date, and is removed when the date comes" }
     - { k: "every action", v: "recorded with a name, in a record anyone signed in can verify" }
   split:
-    eyebrow: "Three habits on every page"
+    eyebrow: "Why your team can act on what it shows"
     heading: "It says what it knows. It asks before it acts."
     body:
-      - "Most companies now run more software than any one person understands. TIDE gives every application the same foundations once: somewhere to run, one way to prove who you are, a way to reach company data, one place to look, and a way to get changes made."
+      - "A dashboard that shows zero when it means *I did not look* gets the wrong person woken, or nobody. A tool that changes things on its own gets switched off after the first surprise. TIDE is built the other way round."
     list:
       - "**Not known is not zero.** A figure the console could not read is shown as not known, never drawn as a zero, so nobody decides on a reading nobody took."
-      - "**A person approves.** The automated helpers propose. Nothing is filed, changed or published until someone with the right to decide says yes."
+      - "**A person approves.** The helpers propose. Nothing is filed, changed or published until someone with the right to decide says yes."
       - "**A second opinion.** Where a finding matters, an independent assessor reads the evidence first. It can agree, disagree or say it could not judge."
     link: { text: "How the console is arranged", url: "/blog/whitepapers/runink-tide/" }
   features:
-    heading: "What each part of the console does"
-    intro: "Every page opens the same way: one status line, a headline, and where the reading came from and when it was taken."
+    heading: "What it takes off your team's week"
+    intro: "Each card starts with a burden your team carries. Then it says what TIDE does about it, and which cost it touches. A person approves anything that files, changes or publishes."
     items:
-      - { k: "overview", title: "Start the day in one look", body: "Headline readings, then a *Needs attention* list, worst first, each item linking to the page that deals with it. Ask TIDE, the assistant, does a task in plain words and shows every step it took." }
-      - { k: "delivery", title: "Know what shipped", body: "GitOps shows whether what is running matches what was written down. Deploy lineage shows whether a change reached production. Press *Verify now* on the Audit chain and it names the first record that was altered." }
-      - { k: "govern", title: "AI you can answer for", body: "Model cards list each model's source, version, licence and test evidence, checked against what is live. Autonomy is a setting you choose for each kind of action, and every kind starts with a person approving each act." }
-      - { k: "trust", title: "A second opinion before you act", body: "Findings arrive with a proposed remedy — start a named helper, file a tracking item, or acknowledge it — confirmed and written to the Audit chain before it happens. (TIDE's console calls this queue the Harness.) Where a finding matters, an independent assessor reads the evidence first and says whether it agrees, disagrees or could not judge, never blended into a score." }
-      - { k: "intelligence", title: "See what your data holds", body: "Dashboards for the analyst, the finance lead and the programme office, built on one set of figures. Data quality, capital spending, business rules and lineage, each computed from your own records or shown as absent with the reason." }
-      - { k: "resolve", title: "An inventory read, not remembered", body: "Resolve maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
-      - { k: "local", title: "No outbound connection, in our own test run", body: "In our audit run, TIDE made no outbound connection while testing, exploring, mapping and assessing your sources; integrations you turn on, such as GitHub or Stripe, connect only to their own services. That was one run, about six seconds, on a development machine, with Chrome and the host out of scope, no model wired in, and no such integration configured for it." }
-      - { k: "forge", title: "From a brief to an application", body: "In preview. Describe what you want in plain words. The company's own model proposes the steps on a canvas, and nothing is filed until a person approves. The brief stays with the model you run yourself; we are confirming there is no other path out before promising more than that." }
-      - { k: "cost", title: "Your own machines, not a bill that grows", body: "One command runs the whole platform on a workstation; one command puts it onto machines you own, in the same shape. Deployments carry a lease and an owner, and the platform removes them when the lease ends. Because the model runs on hardware you already own, asking it more does not raise the bill — budgeting becomes a capacity decision made once, not a bill read every month." }
+      - { k: "Overview · on call", title: "The call at 2 a.m. that a written reason could have answered", body: "The person on duty has a screen for each system and none for all of them. Finding the problem takes longer than fixing it. TIDE opens on one *Needs attention* list, worst first. Each item has a plain reason and a link to the page that deals with it. Where TIDE has a remedy, it sits next to the reading, so the know-how belongs to the company, not to a few heads. A health check runs apart from the machines it watches, so it keeps watching when they fail. **Cost it touches:** specialist hours, and an on-call rota only a few names can staff." }
+      - { k: "DevEx · changes", title: "Pull requests that wait days for a first read", body: "A change sits until a busy senior engineer has time to look. TIDE's reviewer helper reads changes on the repositories you choose. It lists what it found, worst first, with the evidence. Until a person arms it, it only reports what it would have said. Your engineers still decide what merges. Then *Deploy lineage* shows each change merged, reviewed, built and running, so *is my fix live?* needs no message to the platform team. **Cost it touches:** senior engineering hours spent on first reads and status questions." }
+      - { k: "DevEx · audit", title: "Audit evidence rebuilt by hand before every review", body: "Before each audit, somebody spends days piecing together who changed what, and on whose authority. TIDE writes it down as the work happens. Every console action is recorded with the person's name, refused attempts included. Press *Verify now* on the Audit chain and it names the first record that was altered. One audit page gives a single verdict over the platform's checks, and lists any check it could not read instead of counting it as a pass. **Cost it touches:** the person-days your last audit took, and outside help to prepare for the next one." }
+      - { k: "DevEx · capacity", title: "Paying for environments nobody remembers", body: "A test environment is set up for a week and runs for months, because removing it is nobody's job. In TIDE every deployment carries a named owner, a reason and an end date from the moment it is requested. It is flagged as the date gets close. When the date comes, the platform removes it. **Cost it touches:** the cloud or server bill for idle capacity." }
+      - { k: "Intelligence · data", title: "Broken data, found by the business first", body: "The first sign of a broken feed is often a manager asking why a report looks wrong. On one page, a data steward sees whether each source answered its last test, where a source's own description disagrees with what it holds, and the open data-quality issues, and can check them all again on demand. *Lineage* traces each report back to the systems it comes from, with the trouble spots marked. Fixes wait in a queue where a person approves, tests or dismisses each one, and every decision is kept. **Cost it touches:** rework, and the hours spent tracing a wrong number back to its source." }
+      - { k: "Intelligence · one figure", title: "Two teams, two numbers, one meeting", body: "Finance and the programme office bring different figures and spend the meeting reconciling them. TIDE's analyst, finance and programme-office dashboards are built on one set of figures, worked out the same way, from your own records. A figure TIDE could not read is shown as not known. Planned, requested and actual capital spending are checked against each other with a published rule book. **Cost it touches:** analyst hours spent reconciling spreadsheets, and money that leaves before anyone checks." }
+      - { k: "DataEx · AI oversight", title: "Nobody can list every AI helper in use", body: "When the board, a customer or a regulator asks which AI you run and what it may do, the answer is a spreadsheet nobody trusts. TIDE keeps that list for you. It records each one's source, version, licence and test evidence, checked against what is actually running, and what each helper is allowed to do. How much a helper may do on its own is a setting you choose for each kind of action, and every kind starts with a person approving each act. **Cost it touches:** risk and compliance hours spent answering the same questions again." }
+      - { k: "Private by design", title: "Data that cannot leave, so outside AI tools are off-limits", body: "Customer records, contracts and claims cannot go to somebody else's service, so the quick AI tools are ruled out, and promising evaluations end at *where does that run?* On the Dedicated and Enterprise plans, TIDE runs in your own cloud account or on your own servers. Its assistant, its helpers and FORGE run there too, and records, files, secrets and certificates stay there. On every plan, no outside AI service is called. **Cost it touches:** security reviews that stall a purchase, and a bill from an outside AI service that grows with every question." }
+      - { k: "Checked", title: "No outbound connection, in our own test run", body: "In our audit run, TIDE made no outbound connection while testing, exploring, mapping and assessing your sources; integrations you turn on, such as GitHub or Stripe, connect only to their own services. That was one run, about six seconds, on a development machine, with Chrome and the host out of scope, no model wired in, and no such integration configured for it." }
+      - { k: "FORGE (preview)", title: "The small tool a team needs waits behind the roadmap", body: "In preview. A product owner describes the tool, or the scheduled steps that move and prepare a set of data, in plain words. TIDE proposes the steps on a canvas, and nothing is filed until that person approves. The approved brief goes to coding helpers as a work item. The result comes back as a change for your engineers to review. The brief stays on the machines your plan names; we are confirming there is no other path out before promising more than that. **Cost it touches:** engineering and contractor time spent on small internal tools." }
+      - { k: "Cost", title: "Not billed by the question", body: "Each new application rebuilds the same foundations: sign-in, secrets, a way to reach company data, somewhere to run, something watching it. Each tool bought to fill a gap brings its own account and its own bill. TIDE gives every application those foundations once. On every plan, heavy use of the assistant, the helpers or FORGE is not billed by the question. On your own servers, budgeting becomes a capacity decision made once, not a usage bill read every month. **Cost it touches:** engineering time spent rebuilding foundations, and servers you already own put to work." }
   steps:
     heading: "See it on your own hardware"
-    intro: "TIDE runs on one machine, from one downloaded file, with one command. The version on your workstation is the version that runs on your machines."
+    intro: "Before you start, write down two readings from your own records: the person-days your last audit took to answer *who did what, and on whose authority*, and every environment running today with the date it was last used. Both should fall once TIDE is in place. TIDE runs on one machine, from one downloaded file, with one command, and the version on your workstation is the version that runs on your servers."
     items:
-      - { title: "In an afternoon", body: "Open Overview and notice which readings say they have not been measured. Open the Harness and read a remedy. Open the Audit chain and press *Verify now*." }
-      - { title: "In a day", body: "Add one real data source. Try to change it as somebody who is not on the permitted list, and read the record that refusal leaves." }
-      - { title: "In a week", body: "Put it on machines you own. Have somebody outside the platform team request a deployment, and watch it remove itself when its lease ends." }
+      - { title: "In an afternoon", body: "Open Overview and notice which readings say they have not been measured, instead of a reassuring zero. Open the findings queue (the console calls it the Harness) and read a proposed remedy. Open the Audit chain and press *Verify now*." }
+      - { title: "In a day", body: "Add one real data source. Try to change it as somebody who is not on the permitted list, and read the record that refusal leaves. That is the record your security lead will ask for." }
+      - { title: "In a week", body: "Put it on servers you own. Have somebody outside the platform team request a deployment, and watch it remove itself when its end date comes. Switch on the reviewer for one repository and read what it would have said before you arm it." }
   papers:
     heading: "Read the detail"
     items:
