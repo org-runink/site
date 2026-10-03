@@ -92,10 +92,10 @@ next:
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>
       <ul class="space-y-2 text-base">
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/analysis/agents-and-oversight/">FACE: agents and oversight</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: what each agent may do, and what a person decides</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/devex/cluster-gitops/">TIDE: the audit chain and how it is checked</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">TIDE: what each agent may do, and what a person decides</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/devex/cluster-gitops/">TIDE: the audit chain and how it is checked</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/operations/configuration/">FACE: the setting that switches automatic self-healing off</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/issue-triager/">TIDE: the issue triager's model card</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/issue-triager/">TIDE: the issue triager's model card</a></li>
       </ul>
     </div>
   </div>
@@ -116,7 +116,7 @@ next:
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/ai-safety/">FACE: AI safety, guardrails and untrusted data</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">PULSE: guardrails before the model, per agent</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/concepts/judging-ladder/">PULSE: the second check on proposals</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: each agent's guardrails, on its model card</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">TIDE: each agent's guardrails, on its model card</a></li>
       </ul>
     </div>
   </div>
@@ -151,7 +151,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE model cards</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">TIDE model cards</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">PULSE model cards</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/models/">LUNA model cards</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/sovereign-inference/">FACE: sovereign inference</a></li>
@@ -192,7 +192,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/dataex/models-inference/">TIDE: usage shown as absent, not zero</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/dataex/models-inference/">TIDE: usage shown as absent, not zero</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/audit-lineage/">FACE: what the record holds, and what it leaves empty</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/guide/privacy/">LUNA: the markers you will see for a missing value</a></li>
       </ul>
@@ -243,7 +243,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/compliance-evidence/">TIDE: the evidence agent and the five standards</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/compliance-evidence/">TIDE: the evidence agent and the five standards</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/compliance/">FACE: compliance posture</a></li>
       </ul>
     </div>

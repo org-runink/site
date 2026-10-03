@@ -61,10 +61,10 @@ next:
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
       <ul class="space-y-2 text-base">
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/analysis/agents-and-oversight/">FACE: os agentes e sua supervisão</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: o que cada agente pode fazer e o que uma pessoa decide</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/devex/cluster-gitops/">TIDE: a cadeia de auditoria e como ela é conferida</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">TIDE: o que cada agente pode fazer e o que uma pessoa decide</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/devex/cluster-gitops/">TIDE: a cadeia de auditoria e como ela é conferida</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/operations/configuration/">FACE: a configuração que desliga a autorrecuperação automática</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/issue-triager/">TIDE: a ficha de modelo do classificador de issues</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/issue-triager/">TIDE: a ficha de modelo do classificador de issues</a></li>
       </ul>
     </div>
   </div>
@@ -85,7 +85,7 @@ next:
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/ai-safety/">FACE: segurança da IA, salvaguardas e dados não confiáveis</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">PULSE: salvaguardas antes do modelo, agente por agente</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/concepts/judging-ladder/">PULSE: a segunda verificação das propostas</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: as salvaguardas de cada agente, na sua ficha de modelo</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">TIDE: as salvaguardas de cada agente, na sua ficha de modelo</a></li>
       </ul>
     </div>
   </div>
@@ -120,7 +120,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">Fichas de modelo do TIDE</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">Fichas de modelo do TIDE</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">Fichas de modelo do PULSE</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/models/">Fichas de modelo do LUNA</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/sovereign-inference/">FACE: inferência soberana</a></li>
@@ -161,7 +161,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/dataex/models-inference/">TIDE: o uso, mostrado como ausente e não como zero</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/dataex/models-inference/">TIDE: o uso, mostrado como ausente e não como zero</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/audit-lineage/">FACE: o que o registro guarda e o que deixa vazio</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/guide/privacy/">LUNA: as marcas que você vê quando falta um valor</a></li>
       </ul>
@@ -212,7 +212,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/compliance-evidence/">TIDE: o agente de evidências e as cinco normas</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/compliance-evidence/">TIDE: o agente de evidências e as cinco normas</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/compliance/">FACE: postura de conformidade</a></li>
       </ul>
     </div>

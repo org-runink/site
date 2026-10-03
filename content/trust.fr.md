@@ -60,10 +60,10 @@ next:
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Lire les preuves (en anglais)</p>
       <ul class="space-y-2 text-base">
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/analysis/agents-and-oversight/">FACE : les agents et leur supervision</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE : ce que chaque agent peut faire, et ce qu'une personne décide</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/devex/cluster-gitops/">TIDE : la chaîne d'audit et sa vérification</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">TIDE : ce que chaque agent peut faire, et ce qu'une personne décide</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/devex/cluster-gitops/">TIDE : la chaîne d'audit et sa vérification</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/operations/configuration/">FACE : le réglage qui désactive l'auto-réparation automatique</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/issue-triager/">TIDE : la fiche modèle du trieur de tickets</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/issue-triager/">TIDE : la fiche modèle du trieur de tickets</a></li>
       </ul>
     </div>
   </div>
@@ -84,7 +84,7 @@ next:
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/ai-safety/">FACE : sûreté de l'IA, garde-fous et données non fiables</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">PULSE : les garde-fous avant le modèle, agent par agent</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/concepts/judging-ladder/">PULSE : la seconde vérification des propositions</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE : les garde-fous de chaque agent, sur sa fiche modèle</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">TIDE : les garde-fous de chaque agent, sur sa fiche modèle</a></li>
       </ul>
     </div>
   </div>
@@ -119,7 +119,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Lire les preuves (en anglais)</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">Fiches modèles de TIDE</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/">Fiches modèles de TIDE</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">Fiches modèles de PULSE</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/models/">Fiches modèles de LUNA</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/sovereign-inference/">FACE : l'inférence souveraine</a></li>
@@ -160,7 +160,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Lire les preuves (en anglais)</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/dataex/models-inference/">TIDE : une mesure absente n'est pas un zéro</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/dataex/models-inference/">TIDE : une mesure absente n'est pas un zéro</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/audit-lineage/">FACE : ce que contient le registre, et ce qu'il laisse vide</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/guide/privacy/">LUNA : les marques affichées pour une valeur manquante</a></li>
       </ul>
@@ -211,7 +211,7 @@ next:
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Lire les preuves (en anglais)</p>
       <ul class="space-y-2 text-base">
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/compliance-evidence/">TIDE : l'agent de preuves et les cinq normes</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/core/docs/models/compliance-evidence/">TIDE : l'agent de preuves et les cinq normes</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/compliance/">FACE : la posture de conformité</a></li>
       </ul>
     </div>
