@@ -17,7 +17,7 @@ package mirror
 // only one whose cover boundary is a literal page marker rather than a
 // structural feature, the only one that writes NO trailing newline, and the
 // only one with no --dry-run and no pre-write validation at all. See
-// rebuild_core.go for why the four were not collapsed.
+// rebuild_tide.go for why the four were not collapsed.
 
 import (
 	"fmt"

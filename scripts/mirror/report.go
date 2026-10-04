@@ -7,7 +7,7 @@ package mirror
 import "fmt"
 
 // Report is the line rebuild-runink-core.py printed after writing.
-func (s CoreStats) Report(path string) string {
+func (s TideStats) Report(path string) string {
 	return fmt.Sprintf("rebuilt %s: %d lines, %d chapters, %d pages\n",
 		path, s.Lines, s.Chapters, s.Pages)
 }

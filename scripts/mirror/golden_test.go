@@ -96,10 +96,10 @@ func TestRebuildMatchesPythonGolden(t *testing.T) {
 		build  func(site, old string) (string, string, error)
 		stdout string
 	}{
-		{"runink-core", func(s, o string) (string, string, error) {
-			out, st, err := BuildCore(s, o)
-			return out, st.Report("MIRRORDIR/runink-core-whitepaper.md"), err
-		}, "rebuild-core.stdout"},
+		{"runink-tide", func(s, o string) (string, string, error) {
+			out, st, err := BuildTide(s, o)
+			return out, st.Report("MIRRORDIR/runink-tide-whitepaper.md"), err
+		}, "rebuild-tide.stdout"},
 		{"runink-face", func(s, o string) (string, string, error) {
 			out, st, err := BuildFace(s, o)
 			return out, st.Report("MIRRORDIR/runink-face-whitepaper.md"), err
@@ -108,10 +108,10 @@ func TestRebuildMatchesPythonGolden(t *testing.T) {
 			out, st, err := BuildPulse(s, o)
 			return out, st.Report("MIRRORDIR/runink-pulse-whitepaper.md"), err
 		}, "rebuild-pulse.stdout"},
-		{"runink-core-atlas", func(s, o string) (string, string, error) {
+		{"runink-tide-atlas", func(s, o string) (string, string, error) {
 			out, pages, chapters, err := BuildAtlas(s, o)
-			return out, AtlasReport("MIRRORDIR/runink-core-atlas-whitepaper.md", pages, chapters), err
-		}, "rebuild-core-atlas.stdout"},
+			return out, AtlasReport("MIRRORDIR/runink-tide-atlas-whitepaper.md", pages, chapters), err
+		}, "rebuild-tide-atlas.stdout"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			got, report, err := tc.build(site(t, tc.name), mirrorFile(t, tdDrift, tc.name))
@@ -134,7 +134,7 @@ func TestRebuildMatchesPythonGolden(t *testing.T) {
 // property that lets a developer run a rebuild without first checking whether
 // it has already been run.
 func TestRebuildIsIdempotent(t *testing.T) {
-	for _, name := range []string{"runink-core", "runink-face", "runink-pulse", "runink-core-atlas"} {
+	for _, name := range []string{"runink-tide", "runink-face", "runink-pulse", "runink-tide-atlas"} {
 		t.Run(name, func(t *testing.T) {
 			clean := mirrorFile(t, tdClean, name)
 			got, err := rebuildByName(name, site(t, name), clean)
@@ -151,8 +151,8 @@ func TestRebuildIsIdempotent(t *testing.T) {
 
 func rebuildByName(name, siteText, old string) (string, error) {
 	switch name {
-	case "runink-core":
-		out, _, err := BuildCore(siteText, old)
+	case "runink-tide":
+		out, _, err := BuildTide(siteText, old)
 		return out, err
 	case "runink-face":
 		out, _, err := BuildFace(siteText, old)
@@ -160,7 +160,7 @@ func rebuildByName(name, siteText, old string) (string, error) {
 	case "runink-pulse":
 		out, _, err := BuildPulse(siteText, old)
 		return out, err
-	case "runink-core-atlas":
+	case "runink-tide-atlas":
 		out, _, _, err := BuildAtlas(siteText, old)
 		return out, err
 	}
@@ -189,7 +189,7 @@ func TestAuditMatchesPythonGolden(t *testing.T) {
 	}
 	for _, d := range dirs {
 		label, dir := d.label, d.dir
-		for _, name := range []string{"runink-face", "runink-core", "runink-pulse", "runink-core-atlas"} {
+		for _, name := range []string{"runink-face", "runink-tide", "runink-pulse", "runink-tide-atlas"} {
 			for _, mm := range modes {
 				tag, mode := mm.tag, mm.mode
 				t.Run(label+"/"+name+"/"+tag, func(t *testing.T) {
@@ -212,7 +212,7 @@ func TestAuditMatchesPythonGolden(t *testing.T) {
 // in EITHER direction, 0 when it has not.
 func TestAuditExitCode(t *testing.T) {
 	var buf bytes.Buffer
-	code, err := Audit(&buf, tdSite, tdDrift, "runink-core", AuditSummary)
+	code, err := Audit(&buf, tdSite, tdDrift, "runink-tide", AuditSummary)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -220,7 +220,7 @@ func TestAuditExitCode(t *testing.T) {
 		t.Errorf("drifted mirror: exit %d, want 1", code)
 	}
 	buf.Reset()
-	code, err = Audit(&buf, tdSite, tdClean, "runink-core", AuditSummary)
+	code, err = Audit(&buf, tdSite, tdClean, "runink-tide", AuditSummary)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -232,7 +232,7 @@ func TestAuditExitCode(t *testing.T) {
 // ------------------------------------------------------------------ verify
 
 func TestVerifyMatchesPythonGolden(t *testing.T) {
-	names := []string{"runink-face", "runink-core", "runink-pulse", "runink-core-atlas"}
+	names := []string{"runink-face", "runink-tide", "runink-pulse", "runink-tide-atlas"}
 	for _, tc := range []struct {
 		golden          string
 		mirrorDir, back string
@@ -289,7 +289,7 @@ func TestLiveMirrorsAreIdempotent(t *testing.T) {
 	if _, err := os.Stat(liveMirror); err != nil {
 		t.Skipf("no mirror directory at %s: %v", liveMirror, err)
 	}
-	for _, name := range []string{"runink-core", "runink-face", "runink-pulse", "runink-core-atlas"} {
+	for _, name := range []string{"runink-tide", "runink-face", "runink-pulse", "runink-tide-atlas"} {
 		t.Run(name, func(t *testing.T) {
 			s, err := os.ReadFile(filepath.Join(liveSite, name+".md"))
 			if err != nil {

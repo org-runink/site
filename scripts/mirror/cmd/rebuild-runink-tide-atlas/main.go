@@ -1,11 +1,11 @@
-// Command rebuild-runink-core-atlas rewrites the runink-core-atlas print
+// Command rebuild-runink-tide-atlas rewrites the runink-tide-atlas print
 // mirror from the site source. Replaces
 // scripts/mirror/rebuild-runink-core-atlas.py.
 //
 // Run from the site repo root. MIRROR_DIR overrides ../pitch-decks.
 //
-//	go run ./scripts/mirror/cmd/rebuild-runink-core-atlas            rebuild
-//	go run ./scripts/mirror/cmd/rebuild-runink-core-atlas --dry-run  print the whole file to stdout
+//	go run ./scripts/mirror/cmd/rebuild-runink-tide-atlas            rebuild
+//	go run ./scripts/mirror/cmd/rebuild-runink-tide-atlas --dry-run  print the whole file to stdout
 //
 // The cover furniture is read from a copy of the mirror rather than from the
 // one being written, so the command can be re-run against its own output. It
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
-	site := filepath.Join(mirror.SiteDir, "runink-core-atlas.md")
-	mir := filepath.Join(mirror.MirrorDir(), "runink-core-atlas-whitepaper.md")
+	site := filepath.Join(mirror.SiteDir, "runink-tide-atlas.md")
+	mir := filepath.Join(mirror.MirrorDir(), "runink-tide-atlas-whitepaper.md")
 	orig := mir
 	// LookupEnv, not Getenv: os.environ.get() does not fall back for an
 	// explicitly empty value, and a caller who exports one is asking a

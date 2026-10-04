@@ -1,10 +1,10 @@
-// Command rebuild-runink-core rewrites the runink-core print mirror from the
-// runink-core site source. Replaces scripts/mirror/rebuild-runink-core.py.
+// Command rebuild-runink-tide rewrites the runink-tide print mirror from the
+// runink-tide site source. Replaces scripts/mirror/rebuild-runink-core.py.
 //
 // Run from the site repo root. MIRROR_DIR overrides ../pitch-decks.
 //
-//	go run ./scripts/mirror/cmd/rebuild-runink-core            rebuild
-//	go run ./scripts/mirror/cmd/rebuild-runink-core --dry-run  structural summary only
+//	go run ./scripts/mirror/cmd/rebuild-runink-tide            rebuild
+//	go run ./scripts/mirror/cmd/rebuild-runink-tide --dry-run  structural summary only
 //
 // Paths are repo-relative with an overridable mirror directory, matching
 // check-whitepaper-mirrors.sh. They were absolute when the Python was written,
@@ -22,21 +22,21 @@ import (
 )
 
 func main() {
-	site := filepath.Join(mirror.SiteDir, "runink-core.md")
-	mir := filepath.Join(mirror.MirrorDir(), "runink-core-whitepaper.md")
+	site := filepath.Join(mirror.SiteDir, "runink-tide.md")
+	mir := filepath.Join(mirror.MirrorDir(), "runink-tide-whitepaper.md")
 
 	siteText := mustRead(site)
 	oldText := mustRead(mir)
 
 	if hasFlag("--dry-run") {
 		w := bufio.NewWriter(os.Stdout)
-		err := mirror.CoreDryRun(w, siteText, oldText)
+		err := mirror.TideDryRun(w, siteText, oldText)
 		w.Flush()
 		check(err)
 		return
 	}
 
-	out, st, err := mirror.BuildCore(siteText, oldText)
+	out, st, err := mirror.BuildTide(siteText, oldText)
 	check(err)
 
 	// Written to a sibling temp file and renamed over the target, so an

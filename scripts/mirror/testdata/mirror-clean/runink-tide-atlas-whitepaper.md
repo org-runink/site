@@ -1,4 +1,4 @@
-# Runink CORE and Atlas
+# Runink TIDE and Atlas
 
 ### Headline for the fixture
 
@@ -22,7 +22,7 @@ Opening prose for the fixture.
 Runink · runink.org
 Logical Leap · logicalleap.example
 
-*Runink CORE and Atlas — page 2 of 5*
+*Runink TIDE and Atlas — page 2 of 5*
 
 ---
 
@@ -34,7 +34,7 @@ Alpha prose one.
 
 Alpha prose two.
 
-*Runink CORE and Atlas — page 3 of 5*
+*Runink TIDE and Atlas — page 3 of 5*
 
 ---
 
@@ -44,6 +44,6 @@ Beta prose.
 
 ---
 
-*Runink CORE and Atlas. Continuous oversight of the fixture.*
+*Runink TIDE and Atlas. Continuous oversight of the fixture.*
 
-*Runink CORE and Atlas — page 5 of 5*
+*Runink TIDE and Atlas — page 5 of 5*

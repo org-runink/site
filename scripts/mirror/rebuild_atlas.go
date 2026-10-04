@@ -1,6 +1,6 @@
 package mirror
 
-// Rebuild pitch-decks/runink-core-atlas-whitepaper.md from the site source.
+// Rebuild pitch-decks/runink-tide-atlas-whitepaper.md from the site source.
 // Ported from scripts/mirror/rebuild-runink-core-atlas.py.
 //
 // The site source is the truth. The mirror is that body with print furniture
@@ -19,7 +19,7 @@ package mirror
 //
 // Chapter one is NOT emitted in the body: it lives in the cover, folded. That
 // fold is the single largest reason the four rebuilders are four rebuilders
-// and not one — see rebuild_core.go.
+// and not one — see rebuild_tide.go.
 
 import (
 	"fmt"
@@ -34,7 +34,7 @@ import (
 const atlasLegacyFold = "**What this paper is, and which part of it runs.**"
 
 // AtlasPaper is the name the mirror prints in its own page markers.
-const AtlasPaper = "Runink CORE and Atlas"
+const AtlasPaper = "Runink TIDE and Atlas"
 
 var (
 	atlasRegHeadRe = regexp.MustCompile(`\Aregister:\s*\z`)
@@ -60,7 +60,7 @@ func BuildAtlas(site, orig string) (text string, totalPages, chapterCount int, e
 	// register: the paper's own pagination map
 	//
 	// This parser STOPS at the first line after `register:` that does not
-	// match, where core's skips such a line and face's and pulse's scan the
+	// match, where tide's skips such a line and face's and pulse's scan the
 	// whole front matter. Kept as it was: on a malformed register the three
 	// behaviours diverge, and that is precisely when the difference matters.
 	var register []RegEntry
@@ -168,7 +168,7 @@ func BuildAtlas(site, orig string) (text string, totalPages, chapterCount int, e
 		return "", 0, 0, fmt.Errorf("the closing colophon moved")
 	}
 	colophon := old[len(old)-3] // the closing sign-off line
-	if !strings.HasPrefix(colophon, "*Runink CORE and Atlas. Continuous oversight") {
+	if !strings.HasPrefix(colophon, "*Runink TIDE and Atlas. Continuous oversight") {
 		return "", 0, 0, fmt.Errorf("the closing colophon moved")
 	}
 

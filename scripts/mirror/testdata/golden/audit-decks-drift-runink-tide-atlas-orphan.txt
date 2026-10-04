@@ -1,10 +1,10 @@
-runink-core-atlas: site 8 paras, mirror 16 paras
+runink-tide-atlas: site 8 paras, mirror 16 paras
   site -> mirror MISSING : 7  (check-whitepaper-mirrors.sh fails on these)
   mirror -> site ORPHAN  : 11  (stale prose still in the handout, excl. cover + furniture)
 
 --- 11 paragraph(s) in the MIRROR but not the SITE ---
 
-[1] # Runink CORE and Atlas
+[1] # Runink TIDE and Atlas
 
 [2] ### Headline for the fixture
 

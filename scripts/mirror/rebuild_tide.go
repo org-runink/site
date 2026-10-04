@@ -1,20 +1,20 @@
 package mirror
 
-// Rebuild the runink-core PRINT MIRROR from the runink-core SITE SOURCE.
+// Rebuild the runink-tide PRINT MIRROR from the runink-tide SITE SOURCE.
 // Ported from scripts/mirror/rebuild-runink-core.py.
 //
 // The mirror is the site body with print furniture wrapped round it. This
 // rebuilds it from scratch rather than patching, which is the only way stale
 // prose struck from the site actually leaves the handout.
 //
-// Furniture convention found in pitch-decks/runink-core-whitepaper.md
+// Furniture convention found in pitch-decks/runink-tide-whitepaper.md
 // (verified, not assumed):
 //
 //   - a cover block: everything before the first "## " chapter heading
 //   - chapter headings are PLAIN "## Title", identical to the site source
 //     (no "## Page N — Title" as in the FACE mirror)
 //   - NO <div style="page-break"> divs (the FACE mirror has 28; this one has 0)
-//   - a page footer after every chapter:   *Runink CORE — page N of T*
+//   - a page footer after every chapter:   *Runink TIDE — page N of T*
 //     followed by a "---" rule, then the next chapter
 //   - a closing colophon before the final footer
 //
@@ -26,12 +26,12 @@ package mirror
 //
 // # Why this is not one parameterised rebuilder shared with the other three
 //
-// Because almost nothing above is shared. CORE takes its cover from the first
+// Because almost nothing above is shared. TIDE takes its cover from the first
 // "## " in the old mirror; FACE takes it from the first page-break div, PULSE
 // from a literal "*Page 1 — Cover*" marker, ATLAS from the line its folded
-// chapter one starts on. CORE finds its colophon by scanning backwards for the
+// chapter one starts on. TIDE finds its colophon by scanning backwards for the
 // last non-footer paragraph; ATLAS reads the third line from the end; FACE keeps a whole
-// "### Contact" block; PULSE has none. CORE collapses runs of blank lines at
+// "### Contact" block; PULSE has none. TIDE collapses runs of blank lines at
 // the end and PULSE writes no trailing newline at all. Those are four
 // different algorithms wearing the same job title, and a single function with
 // a paper-shaped config struct would have had a branch at every one of them.
@@ -44,19 +44,19 @@ import (
 	"strings"
 )
 
-const coreFooterFmt = "*Runink CORE — page %d of %d*"
+const tideFooterFmt = "*Runink TIDE — page %d of %d*"
 
 var (
-	coreFooterRe   = regexp.MustCompile(`\A\*Runink CORE — page \d+ of \d+\*\z`)
-	coreRuleRe     = regexp.MustCompile(`\A-{3,}\z`)
-	coreRegisterRe = regexp.MustCompile(`(?m)^register:\n((?:  - .*\n)+)`)
-	coreRegPageRe  = regexp.MustCompile(`page:\s*(\d+)`)
-	coreRegEndRe   = regexp.MustCompile(`page_end:\s*(\d+)`)
-	coreRegTitleRe = regexp.MustCompile(`title:\s*"([^"]*)"`)
-	coreChapterRe  = regexp.MustCompile(`(?m)^(## .+)$`)
-	coreFirstH2Re  = regexp.MustCompile(`(?m)^## `)
-	coreCoverPg1Re = regexp.MustCompile(`(?m)^\*Runink CORE — page 1 of \d+\*$`)
-	coreBlankRunRe = regexp.MustCompile(`\n{3,}`)
+	tideFooterRe   = regexp.MustCompile(`\A\*Runink TIDE — page \d+ of \d+\*\z`)
+	tideRuleRe     = regexp.MustCompile(`\A-{3,}\z`)
+	tideRegisterRe = regexp.MustCompile(`(?m)^register:\n((?:  - .*\n)+)`)
+	tideRegPageRe  = regexp.MustCompile(`page:\s*(\d+)`)
+	tideRegEndRe   = regexp.MustCompile(`page_end:\s*(\d+)`)
+	tideRegTitleRe = regexp.MustCompile(`title:\s*"([^"]*)"`)
+	tideChapterRe  = regexp.MustCompile(`(?m)^(## .+)$`)
+	tideFirstH2Re  = regexp.MustCompile(`(?m)^## `)
+	tideCoverPg1Re = regexp.MustCompile(`(?m)^\*Runink TIDE — page 1 of \d+\*$`)
+	tideBlankRunRe = regexp.MustCompile(`\n{3,}`)
 )
 
 // RegEntry is one `register:` row: the page it starts on, the page it ends on
@@ -73,7 +73,7 @@ type Chapter struct {
 	Text    string
 }
 
-// coreParseRegister reads the `register:` list of {page, title} /
+// tideParseRegister reads the `register:` list of {page, title} /
 // {page, page_end, title}.
 //
 // Note this is NOT the same parser the other three use. It finds the register
@@ -84,16 +84,16 @@ type Chapter struct {
 // that does not; ATLAS demands the same shape but STOPS at the first line that
 // does not match. Those three behaviours differ on malformed input, which is
 // exactly when it matters, so they are not merged.
-func coreParseRegister(front string) ([]RegEntry, error) {
-	block := coreRegisterRe.FindStringSubmatch(front)
+func tideParseRegister(front string) ([]RegEntry, error) {
+	block := tideRegisterRe.FindStringSubmatch(front)
 	if block == nil {
 		return nil, fmt.Errorf("site front matter has no register:")
 	}
 	var entries []RegEntry
 	for _, line := range strings.Split(strings.TrimSuffix(block[1], "\n"), "\n") {
-		page := coreRegPageRe.FindStringSubmatch(line)
-		end := coreRegEndRe.FindStringSubmatch(line)
-		title := coreRegTitleRe.FindStringSubmatch(line)
+		page := tideRegPageRe.FindStringSubmatch(line)
+		end := tideRegEndRe.FindStringSubmatch(line)
+		title := tideRegTitleRe.FindStringSubmatch(line)
 		if page == nil || title == nil {
 			return nil, fmt.Errorf("unparsable register line: %s", line)
 		}
@@ -107,10 +107,10 @@ func coreParseRegister(front string) ([]RegEntry, error) {
 	return entries, nil
 }
 
-// coreSplitChapters splits a body into [(heading, text_after_heading), ...] on
+// tideSplitChapters splits a body into [(heading, text_after_heading), ...] on
 // "## " lines.
-func coreSplitChapters(body string) ([]Chapter, error) {
-	parts := SplitCaptured(coreChapterRe, body)
+func tideSplitChapters(body string) ([]Chapter, error) {
+	parts := SplitCaptured(tideChapterRe, body)
 	if strings.TrimSpace(parts[0]) != "" {
 		return nil, fmt.Errorf("site body has prose before its first chapter heading")
 	}
@@ -124,40 +124,40 @@ func coreSplitChapters(body string) ([]Chapter, error) {
 	return out, nil
 }
 
-// CoreStats is what the script reports after writing.
-type CoreStats struct {
+// TideStats is what the script reports after writing.
+type TideStats struct {
 	Lines    int // len(new.splitlines())
 	Chapters int
 	Pages    int
 }
 
-// BuildCore assembles the new mirror from the site source and the existing
+// BuildTide assembles the new mirror from the site source and the existing
 // mirror (which supplies the cover and the colophon, the two pieces of
 // bespoke print furniture with no counterpart in the site source).
 //
 // It is a pure function of its two inputs so the acceptance diff can run it
 // without touching a file.
-func BuildCore(site, old string) (string, CoreStats, error) {
-	var st CoreStats
+func BuildTide(site, old string) (string, TideStats, error) {
+	var st TideStats
 	front, body, ok := SplitFrontMatter(site)
 	if !ok {
 		return "", st, fmt.Errorf("site source has no front matter")
 	}
-	register, err := coreParseRegister(front)
+	register, err := tideParseRegister(front)
 	if err != nil {
 		return "", st, err
 	}
-	chapters, err := coreSplitChapters(body)
+	chapters, err := tideSplitChapters(body)
 	if err != nil {
 		return "", st, err
 	}
-	cover, colophon, total, err := coreFurniture(old, register, chapters)
+	cover, colophon, total, err := tideFurniture(old, register, chapters)
 	if err != nil {
 		return "", st, err
 	}
 
 	// ---- rewrite the cover's own page-1 footer to the new page total.
-	cover = coreCoverPg1Re.ReplaceAllLiteralString(cover, fmt.Sprintf(coreFooterFmt, 1, total))
+	cover = tideCoverPg1Re.ReplaceAllLiteralString(cover, fmt.Sprintf(tideFooterFmt, 1, total))
 
 	out := []string{cover, ""}
 	for i, ch := range chapters {
@@ -165,26 +165,26 @@ func BuildCore(site, old string) (string, CoreStats, error) {
 		out = append(out, ch.Heading, "", ch.Text, "")
 		if i == len(chapters)-1 {
 			// last chapter: rule, colophon, final footer, no trailing rule.
-			out = append(out, "---", "", colophon, "", fmt.Sprintf(coreFooterFmt, reg.Last, total))
+			out = append(out, "---", "", colophon, "", fmt.Sprintf(tideFooterFmt, reg.Last, total))
 		} else {
-			out = append(out, fmt.Sprintf(coreFooterFmt, reg.Last, total), "", "---", "")
+			out = append(out, fmt.Sprintf(tideFooterFmt, reg.Last, total), "", "---", "")
 		}
 	}
 
 	newText := strings.TrimRight(strings.Join(out, "\n"), "\n") + "\n"
-	newText = coreBlankRunRe.ReplaceAllLiteralString(newText, "\n\n")
+	newText = tideBlankRunRe.ReplaceAllLiteralString(newText, "\n\n")
 	// newText always ends in exactly one "\n", so splitlines() counts the same
 	// as the newlines do.
-	st = CoreStats{Lines: strings.Count(newText, "\n"), Chapters: len(chapters), Pages: total}
+	st = TideStats{Lines: strings.Count(newText, "\n"), Chapters: len(chapters), Pages: total}
 	return newText, st, nil
 }
 
-// coreFurniture pulls the cover and colophon out of the old mirror and checks
-// the register against the body. Split out so BuildCore and the --dry-run
+// tideFurniture pulls the cover and colophon out of the old mirror and checks
+// the register against the body. Split out so BuildTide and the --dry-run
 // summary agree by construction.
-func coreFurniture(old string, register []RegEntry, chapters []Chapter) (cover, colophon string, total int, err error) {
+func tideFurniture(old string, register []RegEntry, chapters []Chapter) (cover, colophon string, total int, err error) {
 	// ---- the cover block: everything before the mirror's first "## " heading.
-	loc := coreFirstH2Re.FindStringIndex(old)
+	loc := tideFirstH2Re.FindStringIndex(old)
 	if loc == nil {
 		return "", "", 0, fmt.Errorf(`mirror has no "## " chapter heading; refusing to guess a cover`)
 	}
@@ -195,7 +195,7 @@ func coreFurniture(old string, register []RegEntry, chapters []Chapter) (cover, 
 	found := false
 	for i := len(tail) - 1; i >= 0; i-- {
 		p := tail[i]
-		if !coreFooterRe.MatchString(p) && !coreRuleRe.MatchString(p) {
+		if !tideFooterRe.MatchString(p) && !tideRuleRe.MatchString(p) {
 			colophon, found = p, true
 			break
 		}
@@ -218,22 +218,22 @@ func coreFurniture(old string, register []RegEntry, chapters []Chapter) (cover, 
 	return cover, colophon, register[len(register)-1].Last, nil
 }
 
-// CoreDryRun prints the structural summary rebuild-runink-core.py --dry-run
+// TideDryRun prints the structural summary rebuild-runink-core.py --dry-run
 // printed, and writes nothing.
-func CoreDryRun(w io.Writer, site, old string) error {
+func TideDryRun(w io.Writer, site, old string) error {
 	front, body, ok := SplitFrontMatter(site)
 	if !ok {
 		return fmt.Errorf("site source has no front matter")
 	}
-	register, err := coreParseRegister(front)
+	register, err := tideParseRegister(front)
 	if err != nil {
 		return err
 	}
-	chapters, err := coreSplitChapters(body)
+	chapters, err := tideSplitChapters(body)
 	if err != nil {
 		return err
 	}
-	cover, colophon, total, err := coreFurniture(old, register, chapters)
+	cover, colophon, total, err := tideFurniture(old, register, chapters)
 	if err != nil {
 		return err
 	}
