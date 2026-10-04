@@ -30,7 +30,11 @@ try {
   for (const card of cards) {
     if (want.length && !want.includes(card.id)) continue;
     const mark = pathToFileURL(join(root, card.mark || 'assets/images/brand/runink-dog-head.svg')).href;
+    // A mark drawn in its own colours (the River roundel) is shown as an image;
+    // the one-colour dog head is a mask that takes the card's ink.
+    const markEl = card.markImage ? `<img class="mark-img" src="${mark}" alt="">` : '<div class="mark"></div>';
     const html = template
+      .replace('<div class="mark"></div>', markEl)
       .replaceAll('{{FONTS}}', fonts)
       .replaceAll('{{MARK}}', mark)
       .replace('{{TITLE}}', esc(card.title))

@@ -55,6 +55,16 @@
       "subtitle": "FACE · for logistics, freight, claims and operations teams",
       "headline": ["The claim nobody had a morning for is", "still money you are owed."],
       "out": ["static/images/og/face-og.jpg"]
+    },
+    {
+      "id": "river",
+      "page": "content/river.md",
+      "title": "Runink River",
+      "subtitle": "Free · open source · for data and AI workstations",
+      "headline": ["Put the machines you already own", "to work on your data."],
+      "mark": "static/images/brand/river-mark.svg",
+      "markImage": true,
+      "out": ["static/images/products/river-og.jpg"]
     }
   ]
 }

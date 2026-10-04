@@ -7,5 +7,5 @@ subtitle, headline lines and output file.
 Regenerate with `node scripts/og-cards/render.mjs [id ...]` (needs `google-chrome-stable`
 or `$CHROME`, and ImageMagick's `magick`), then look at every card it wrote before
 committing. Headlines are a page's own hero copy, under CONTENT.md like any body copy.
-The Runink River card (`static/images/products/river-og.jpg`) uses the River mark and
-is not drawn from this template.
+A card with `"markImage": true` shows its `mark` in its own colours (the River roundel)
+instead of as a one-colour mask.
