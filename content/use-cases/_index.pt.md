@@ -1,5 +1,11 @@
 ---
 title: "Para Que Serve O Runink FACE"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink FACE: sinistros, cadeia de frio, devoluções, demanda"
+seo_description: "Os trabalhos para os quais o Runink FACE foi feito: sinistros, cadeia de frio, devoluções, demanda e conformidade. A evidência já é sua; uma pessoa aprova."
+image: "/images/face/cockpit.png"
 product: "Runink FACE"
 description: "As frentes operacionais para as quais o Runink FACE foi feito. Em todas elas a evidência já está nos seus sistemas e ninguém tem as horas para juntá-la, e todas terminam com uma pessoa aprovando uma ação já redigida, não lendo mais um painel."
 layout: "section"
@@ -86,7 +92,7 @@ Aprovar é para encerrar o trabalho, não para começá-lo. A resposta nomeia o 
 
 ## Duas Coisas Que Vale Saber De Saída
 
-**Seus dados ficam nas suas máquinas.** Os arquivos de pedido, os papéis de alfândega, as leituras dos sensores e o raciocínio sobre tudo isso rodam em hardware que você controla: o FACE roda sobre a plataforma Runink TIDE, e é isso que faz disso uma propriedade de como ele foi construído, e não um ajuste que alguém precisa respeitar. Nada vai para um fornecedor de modelos de fora. É o tipo de resposta que uma revisão de segurança pede antes de deixar um fornecedor guardar os dados de pedido dela.
+**Nenhum serviço de IA externo lê seus dados.** Os arquivos de pedido, os papéis de alfândega, as leituras dos sensores e o raciocínio sobre tudo isso rodam nas máquinas que o seu plano indica (os seus próprios servidores ou a sua conta de nuvem, ou as máquinas compartilhadas da Runink): o FACE roda sobre a plataforma Runink TIDE, e é isso que faz disso uma propriedade de como ele foi construído, e não um ajuste que alguém precisa respeitar. Nada vai para um fornecedor de modelos de fora. É o tipo de resposta que uma revisão de segurança pede antes de deixar um fornecedor guardar os dados de pedido dela.
 
 **A fila é onde você decide.** Cada item chega com o raciocínio dele e com os registros em que se apoia, então você pode ler por que foi proposto antes de aceitar. O que você aprova é o que é executado, e o item que você deixa quieto fica onde está. Que tipo de trabalho vale passar pela fila é pergunta que você responde na montagem, não um limite de valor que o software fiscalize por você.
 

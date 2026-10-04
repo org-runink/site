@@ -1,5 +1,10 @@
 ---
 title: "Runink PULSE"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink PULSE: answer leads first, spend less on agencies"
+seo_description: "Runink PULSE finds the companies worth calling, drafts replies, campaigns and follow-ups, and shows which channel brings customers in. Your team approves."
 description: "Runink PULSE is marketing software your own team runs: it finds leads, drafts the replies, campaigns and follow-ups, and shows which channel brings customers in. Your team decides what goes out. Priced per seat."
 layout: "landing"
 badge: "PULSE"
@@ -52,6 +57,13 @@ image: "/images/products/pulse-og.jpg"
     gradient-angle="135"
 >}}
 
+{{< section-container class="pt-16 pb-0 relative z-10" id="what-is-runink-pulse" >}}
+<div class="max-w-4xl mx-auto text-left space-y-4">
+<h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">What is Runink PULSE?</h2>
+<p class="text-xl text-ink-2 leading-relaxed">Runink PULSE is marketing software from Runink for small and mid-size businesses and the people who sell and market for them. It finds the companies worth calling, drafts the reply, the campaign and the follow-up, and shows which channel brings customers in, while your team decides what goes out. It runs on Runink's shared machines, in your own cloud account or inside your own estate, and it is priced per seat, sold on its own.</p>
+</div>
+{{< /section-container >}}
+
 {{< section-container class="py-16 relative z-10" >}}
 <div class="max-w-5xl mx-auto">
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
@@ -72,7 +84,7 @@ image: "/images/products/pulse-og.jpg"
       <p class="text-sm text-ink-2 leading-relaxed">See a customer cooling before the renewal, not after.</p>
     </div>
   </div>
-  <p class="text-sm text-ink-3 mt-8">Nothing publishes until you switch it on. Your customer lists stay on hardware you control.</p>
+  <p class="text-sm text-ink-3 mt-8">Nothing publishes until you switch it on. Your customer lists stay on the machines your plan names, and no outside AI service reads them.</p>
 </div>
 {{< /section-container >}}
 
@@ -109,7 +121,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 {{< card
     icon="server-stack"
     title="Runink TIDE"
-    description="A separate product, sold on its own. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
+    description="A separate product, sold on its own. The operations layer for your engineering and data teams, on your servers, your cloud or ours, and the answer to where your data is processed and who can see it. It has its own paper."
     link="/blog/whitepapers/runink-tide/"
 >}}
 {{< /card-grid >}}
@@ -238,8 +250,8 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
             <p class="text-slate-300">Research and copy appear on screen as they are produced. You stop a wrong angle early, before anyone has spent an hour on it.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Your customer lists stay in</h3>
-            <p class="text-slate-300">Your positioning, your customer lists and your pipeline are processed inside your own network. No outside company runs a database holding your working data.</p>
+            <h3 class="text-2xl font-bold text-white mb-4">No outside AI service sees your lists</h3>
+            <p class="text-slate-300">Your positioning, your customer lists and your pipeline are processed on the machines your plan names: your own servers or cloud account on Dedicated and Enterprise, Runink's shared machines on Lite. No outside company runs a database holding your working data.</p>
         </div>
     </div>
 
@@ -257,7 +269,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">It runs where you put it</h3>
-            <p class="text-slate-300">The same software runs on one workstation to try it out, and on one machine or several inside your own estate for daily use. No outside AI service is called.</p>
+            <p class="text-slate-300">The same software runs on one workstation to try it out, and on one machine or several inside your own estate for daily use. PULSE Lite runs on Runink's shared machines instead. No outside AI service is called on any plan.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">No graphics card to buy</h3>
@@ -304,7 +316,19 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
     "questions": [
         {
             "question": "Is PULSE the same thing as Runink FACE?",
-            "answer": "No. They are separate products. PULSE is for marketing and sales: site and social audit, market research, finding leads and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDE is a third product, also sold separately: the operations layer you run on your own hardware. Its paper describes it."
+            "answer": "No. They are separate products. PULSE is for marketing and sales: site and social audit, market research, finding leads and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDE is a third product, also sold separately: the operations layer for your engineering and data teams, on your servers, your cloud or ours. Its paper describes it."
+        },
+        {
+            "question": "How do I answer new leads faster?",
+            "answer": "Take the first part of the work off your people. Describe the customer you want, and PULSE finds companies that match and drafts a cold email, a call script and a LinkedIn message for each. Connect WhatsApp through your own Twilio account, and it can answer people already in your HubSpot contacts at any hour, with each reply checked before it is sent. The owner decides whether it answers on its own, and one setting turns those replies off."
+        },
+        {
+            "question": "How do I spend less on an agency for routine posts?",
+            "answer": "Draft the routine work yourselves, from one brief. PULSE turns one brief into LinkedIn posts, blog articles, whitepapers and courses, and writes a dated plan of what publishes on which channel in which week. Every draft waits for review, and nothing goes out until someone switches that channel on. The seat price stays the same however many pieces you write."
+        },
+        {
+            "question": "Can we run PULSE on our own servers?",
+            "answer": "Yes. The same software runs on one workstation to try it out, and on one machine or several inside your own estate for daily use. It runs on ordinary processors, with no graphics card required, and no outside AI service is called. PULSE Lite runs on Runink's shared machines instead; the cost answer below lists each plan and where it runs."
         },
         {
             "question": "Does PULSE publish on its own, or do we?",
@@ -324,7 +348,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "Where does our data go?",
-            "answer": "Onto hardware you control. Working data is kept in a database inside the application itself, copied continuously into file storage you own, and restored from that copy when the application starts. No outside company runs a database holding your positioning, your customer records or your pipeline. No material is sent out to be trained on, and there is no account with an outside AI provider for it to be sent to."
+            "answer": "Onto the machines your plan names: your own servers or cloud account on Dedicated and Enterprise, Runink's shared machines on Lite. Working data is kept in a database inside the application itself, copied continuously into file storage on those same machines, and restored from that copy when the application starts. No outside company runs a database holding your positioning, your customer records or your pipeline. No material is sent out to be trained on, and there is no account with an outside AI provider for it to be sent to."
         },
         {
             "question": "Does it need special hardware?",

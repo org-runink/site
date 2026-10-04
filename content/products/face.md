@@ -1,6 +1,12 @@
 ---
 title: "Runink FACE"
-description: "For logistics, freight, claims and operations teams. FACE reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the broken rule, and drafts the next step for a named person to approve. It runs on hardware you control."
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink FACE: freight overcharges and claims, caught in time"
+seo_description: "For freight, claims and operations teams. Runink FACE reads your invoices and claim files, finds the overcharge and the expiring claim, and drafts the fix."
+image: "/images/face/cockpit.png"
+description: "For logistics, freight, claims and operations teams. FACE reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the broken rule, and drafts the next step for a named person to approve. It runs on your own servers or cloud account, or on Runink's shared machines to start, and no outside AI service is called."
 layout: "landing"
 # /products/ used to be this page's alias while the section index was not
 # rendered. It renders now (content/products/_index.md), so the alias is gone.
@@ -24,7 +30,7 @@ badge: "FACE"
 
 {{< hero
     headline="The claim nobody had a morning for is still money you are owed."
-    sub_headline="**Runink FACE** is for logistics, freight, claims and operations teams. It reads the invoices, orders, carrier records and claim files you already keep. It finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step. A named person approves it. It runs on hardware you control, so your records stay in the building."
+    sub_headline="**Runink FACE** is for logistics, freight, claims and operations teams. It reads the invoices, orders, carrier records and claim files you already keep. It finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step. A named person approves it. Run it on your own servers or cloud account and your records never leave them. On every plan, Runink's shared machines included, no outside AI service sees them."
     primary_button_text="Book a consultation"
     primary_button_url="/#contact"
     secondary_button_text="Read the FACE paper"
@@ -36,6 +42,13 @@ badge: "FACE"
     gradient-to="var(--rk-ground)"
     gradient-angle="135"
 >}}
+
+{{< section-container class="pt-16 pb-0 relative z-10" id="what-is-runink-face" >}}
+<div class="max-w-4xl mx-auto text-left space-y-4">
+<h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">What is Runink FACE?</h2>
+<p class="text-xl text-ink-2 leading-relaxed">Runink FACE is software from Runink for logistics, freight, claims and operations teams. It reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step for a named person to approve. It runs on your own servers or cloud account, or on Runink's shared machines to start, with no outside AI service; it is licensed per person who uses it, sold on its own.</p>
+</div>
+{{< /section-container >}}
 
 {{< section-container class="py-20 relative z-10" >}}
 
@@ -69,7 +82,7 @@ That gap costs you in three places. Money you were owed and never asked for. Ski
     <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
         <h3 class="text-2xl font-bold text-white mb-4">Paperwork typed in twice</h3>
         <p class="text-slate-300">Spreadsheets, scanned pages and invoices arrive, and somebody keys them into another system. Every retyped figure is a chance for a typo, and somebody pays to fix it later.</p>
-        <p class="text-slate-300 mt-4"><span class="text-signal font-bold">What FACE does:</span> it reads a spreadsheet properly, formulas and all. It transcribes a scanned page on your own hardware. Where a page is unusable, it says so instead of guessing.</p>
+        <p class="text-slate-300 mt-4"><span class="text-signal font-bold">What FACE does:</span> it reads a spreadsheet properly, formulas and all. It transcribes a scanned page on the machines FACE runs on, not at an outside service. Where a page is unusable, it says so instead of guessing.</p>
         <p class="text-slate-300 mt-4"><span class="text-signal font-bold">What it is worth:</span> fewer hours of data entry and less rework.</p>
     </div>
     <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
@@ -81,7 +94,7 @@ That gap costs you in three places. Money you were owed and never asked for. Ski
     <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
         <h3 class="text-2xl font-bold text-white mb-4">Carrier checks done in a spreadsheet</h3>
         <p class="text-slate-300">Before you trust a new carrier or consignee, somebody searches the web, copies what they find into a sheet and hopes it is current. A customs ruling or a published tariff gets the same treatment.</p>
-        <p class="text-slate-300 mt-4"><span class="text-signal font-bold">What FACE does:</span> once your admin turns web research on, it searches from your own servers, reads the pages, and attaches what it read to the finding. A person makes the call.</p>
+        <p class="text-slate-300 mt-4"><span class="text-signal font-bold">What FACE does:</span> once your admin turns web research on, it searches from the machines FACE runs on, reads the pages, and attaches what it read to the finding. A person makes the call.</p>
         <p class="text-slate-300 mt-4"><span class="text-signal font-bold">What it is worth:</span> fewer hours of copy and paste. No research subscription billed per question, and no outside vendor keeping a list of the names you checked.</p>
     </div>
     <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
@@ -115,7 +128,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
 {{< card
     icon="server-stack"
     title="Runink TIDE"
-    description="A separate product, sold on its own. The operations layer you run on your own hardware, and the answer to where your data is processed and who can see it. It has its own paper."
+    description="A separate product, sold on its own. The operations layer for your engineering and data teams, on your servers, your cloud or ours, and the answer to where your data is processed and who can see it. It has its own paper."
     link="/blog/whitepapers/runink-tide/"
 >}}
 {{< /card-grid >}}
@@ -205,7 +218,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         <ul class="space-y-6 mt-8">
             <li><span class="text-signal font-bold block mb-1">Your procedures, written down once</span> <span class="text-slate-300">The rules you already work to — the day you stop waiting on a carrier, the duplicate purchase order, the vendor request with nothing behind it — are stated once and checked against every record. They are no longer remembered by whoever is on shift.</span></li>
             <li><span class="text-signal font-bold block mb-1">Why it fired, on which records</span> <span class="text-slate-300">Afterwards you can open a finding and read the rule, the records underneath it and the reasoning that joined them. A drafted letter nobody can check is not worth signing.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Documents arrive as documents</span> <span class="text-ink-2">A spreadsheet is read properly — the cells, the formulas behind them, the named ranges and the macros — because that is where the working usually is. A scanned page is transcribed on your own hardware. Where a page comes back unusable, the result says so instead of returning a confident blank.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Documents arrive as documents</span> <span class="text-ink-2">A spreadsheet is read properly — the cells, the formulas behind them, the named ranges and the macros — because that is where the working usually is. A scanned page is transcribed on the machines FACE runs on, not at an outside service. Where a page comes back unusable, the result says so instead of returning a confident blank.</span></li>
             <li><span class="text-signal font-bold block mb-1">Could not check is an answer</span> <span class="text-slate-300">Where a check could not run — nothing to read, an answer that came back unusable — the result is <em>unable to assess</em>. It says in words that this is not a finding that the thing is compliant. Zero and nobody-measured are kept apart on purpose, and a connection nobody has contacted is never reported as verified. A checker whose confident answers and blanks look the same is worth nothing by the second week.</span></li>
         </ul>
     </div>
@@ -238,7 +251,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">Factory plans and building drawings</h3>
-            <p class="text-slate-300">IFC building models and DXF drawings are read directly. A scanned plan, or a photo of one, is read on your own hardware, as proposals an operator confirms. FACE works out zone areas, where the doors and docks are, routes between areas, and whether each door is wide enough for a vehicle width you enter, such as a forklift's. Ask it to explain the plan and each point cites the fact it came from. Confirmed zones join the site model. For a DWG file, export it as DXF or IFC and upload that.</p>
+            <p class="text-slate-300">IFC building models and DXF drawings are read directly. A scanned plan, or a photo of one, is read on the machines FACE runs on, as proposals an operator confirms. FACE works out zone areas, where the doors and docks are, routes between areas, and whether each door is wide enough for a vehicle width you enter, such as a forklift's. Ask it to explain the plan and each point cites the fact it came from. Confirmed zones join the site model. For a DWG file, export it as DXF or IFC and upload that.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">Paperwork read from the camera</h3>
@@ -263,12 +276,12 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Your records stay on your machines</h3>
-            <p class="text-slate-300">The order files, the customs papers, the sensor readings and the reasoning about them run on hardware you control. The language model FACE reasons with is one you run yourself. There is no outside model provider anywhere in it, and it sends its questions to exactly one model server: the one you point it at. So there is no per-question bill from an outside vendor, and the machines doing the work are yours. That is how it is built, not a switch somebody could leave off. It is a property of the design rather than a lock a machine enforces, and we would rather you heard that from us than found it.</p>
+            <h3 class="text-2xl font-bold text-white mb-4">Your records stay on the machines you chose</h3>
+            <p class="text-slate-300">On the Dedicated and Enterprise licences, the order files, the customs papers, the sensor readings and the reasoning about them run on your own servers or in your own cloud account, so the machines doing the work are yours. On Lite they run on Runink's shared machines. On every licence there is no outside model provider anywhere in it, and FACE sends its questions to exactly one model server: the one set up for your plan. So there is no per-question bill from an outside vendor. That is how it is built, not a switch somebody could leave off. It is a property of the design rather than a lock a machine enforces, and we would rather you heard that from us than found it.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">Open-web research with no account attached to it</h3>
-            <p class="text-slate-300">Some answers need the open web — a carrier's standing, a customs ruling, a published tariff, a consignee you are unsure about. FACE runs the search from your own servers through a public search page, then fetches and reads the pages itself. The extracted page comes attached to the finding. The search engine sees the query, as it would from any browser. What does not happen matters commercially: there is no vendor account, no API key and no per-question bill. No supplier is building a history of the names your company has been checking, filed under your company.</p>
+            <p class="text-slate-300">Some answers need the open web — a carrier's standing, a customs ruling, a published tariff, a consignee you are unsure about. FACE runs the search from the machines it runs on, through a public search page, then fetches and reads the pages itself. The extracted page comes attached to the finding. The search engine sees the query, as it would from any browser. What does not happen matters commercially: there is no vendor account, no API key and no per-question bill. No supplier is building a history of the names your company has been checking, filed under your company.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">On Runink TIDE, inside your boundary</h3>
@@ -299,7 +312,19 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
     "questions": [
         {
             "question": "Is FACE the same thing as Runink PULSE?",
-            "answer": "No. They are separate products, each sold on its own. FACE is the subject of this page: freight, fulfilment, forecasting, claims, returns and compliance. PULSE is for marketing teams — research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink TIDE is a third product, also sold separately: the operations layer you run on your own hardware to keep your Runink applications and your own data in order. Its paper describes it."
+            "answer": "No. They are separate products, each sold on its own. FACE is the subject of this page: freight, fulfilment, forecasting, claims, returns and compliance. PULSE is for marketing teams — research, prospecting and the material a marketing team publishes. Nothing on this page is a PULSE capability, and a PULSE result is not a FACE result. Runink TIDE is a third product, also sold separately: the operations layer for your engineering and data teams, on your servers, your cloud or ours, that keeps your Runink applications and your own data in order. Its paper describes it."
+        },
+        {
+            "question": "How do I stop overpaying freight invoices?",
+            "answer": "Check every invoice, not only the big ones. Disputing one by hand means pulling the carrier's receipt, matching it to the weighbridge reading, finding the rate that applied that day and drafting the letter. That takes most of a morning, so the small ones get paid. FACE reads the invoices and the records behind them, checks them against the rules you work to, and assembles the case with every record attached. Your freight-audit analyst reviews it and decides whether to send it."
+        },
+        {
+            "question": "How do I stop freight claims from expiring before anyone files them?",
+            "answer": "Make each claim file cheap to build. A damaged load is money back only inside the filing window, and when building the file costs more than the claim is worth, the small claims quietly expire. FACE gathers the claim, the policy, the reserve and the records, and drafts the action. An adjuster decides, on the file FACE put in front of them."
+        },
+        {
+            "question": "Can we run it on our own servers, with no outside AI service?",
+            "answer": "Yes. On the Dedicated and Enterprise licences FACE runs in your own cloud account or on your own servers; Lite runs on Runink's shared machines. On every licence the work stays on the machines your licence names, and nothing goes to an outside model provider, so there is no per-question bill from an outside vendor. The full answer, including the two paths that do reach outside, is under *Where does our data go?* below."
         },
         {
             "question": "Has this been run on an operation like mine?",
@@ -323,7 +348,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         },
         {
             "question": "Where does our data go?",
-            "answer": "Onto hardware you control. The files and the reasoning about them stay inside your boundary, and the language model FACE reasons with is one you run yourself, not an outside provider's service. There is no outside model provider anywhere in it, and exactly one model server, the one you configure. Two honest edges to that. It is a property of how FACE is built rather than a lock a machine enforces: nothing stops an outside model from being added later, so this is something to verify for yourselves rather than something a test can prove automatically. And two paths deliberately do reach outside, because they have to: a route request goes to the routing service you configure, and open-web research puts a query to a public search endpoint. Web research is off by default for every customer; an admin has to turn it on, and even then schema, table, column and row text never leaves — a query a person typed, or a public name an admin confirmed, is the only thing that can. That fix has merged into FACE's own software; ask us whether the release you are running includes it — a merge is not the same as a shipped release. In our audit run, FACE made no outbound connection while connecting a source, running fetches, and working through the action queue and the scenario lab; its language model ran on the same machine, and external web search stayed off. That was one run, on a development machine, against a Postgres source — notifications and Google sign-in were not part of it, which is why we say no outbound connection was observed rather than that none is possible. Ask us where the wider check — every path, on every release — stands before you rely on it going further."
+            "answer": "Onto the machines your licence names, and no further: your own servers or cloud account on Dedicated and Enterprise, Runink's shared machines on Lite. The files and the reasoning about them stay there, and the language model FACE reasons with runs there too, not as an outside provider's service. There is no outside model provider anywhere in it, and exactly one model server, the one set up for your plan. Two honest edges to that. It is a property of how FACE is built rather than a lock a machine enforces: nothing stops an outside model from being added later, so this is something to verify for yourselves rather than something a test can prove automatically. And two paths deliberately do reach outside, because they have to: a route request goes to the routing service you configure, and open-web research puts a query to a public search endpoint. Web research is off by default for every customer; an admin has to turn it on, and even then schema, table, column and row text never leaves — a query a person typed, or a public name an admin confirmed, is the only thing that can. That fix has merged into FACE's own software; ask us whether the release you are running includes it — a merge is not the same as a shipped release. In our audit run, FACE made no outbound connection while connecting a source, running fetches, and working through the action queue and the scenario lab; its language model ran on the same machine, and external web search stayed off. That was one run, on a development machine, against a Postgres source — notifications and Google sign-in were not part of it, which is why we say no outbound connection was observed rather than that none is possible. Ask us where the wider check — every path, on every release — stands before you rely on it going further."
         },
         {
             "question": "Is there anything we can put in someone's hands today?",

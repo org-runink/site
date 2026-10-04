@@ -71,7 +71,7 @@ author: "Runink"
                 Esto es la señal, no la respuesta. Qué pedir, cuánta cobertura mantener y qué proveedor puede todavía llegar a la fecha es el trabajo siguiente, y está descrito en <a href="/es/use-cases/fulfillment-optimization/">cobertura de stock y planificación con proveedores</a>. La previsión dice que la referencia ha girado y con cuánta confianza; el abastecimiento decide qué hacer al respecto. Mantenerlos separados es deliberado, porque las dos cosas las discute gente distinta.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Lo que llega a una persona es un solo elemento: esta referencia, el giro, el método que hay detrás, los periodos sobre los que se probó y un cambio redactado para el plan. Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa decisión queda anotada. Aprobar es lo que lo envía — y donde un paso que hay detrás no tiene nada implementado todavía, siendo una escritura en su sistema de planificación el ejemplo honrado, la respuesta nombra ese paso como no ejecutado en vez de informar del cambio como hecho. La decisión y la ejecución se anotan como dos hechos distintos, porque lo son. Corre en máquinas suyas, y el histórico no sale nunca de ellas.
+                Lo que llega a una persona es un solo elemento: esta referencia, el giro, el método que hay detrás, los periodos sobre los que se probó y un cambio redactado para el plan. Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa decisión queda anotada. Aprobar es lo que lo envía — y donde un paso que hay detrás no tiene nada implementado todavía, siendo una escritura en su sistema de planificación el ejemplo honrado, la respuesta nombra ese paso como no ejecutado en vez de informar del cambio como hecho. La decisión y la ejecución se anotan como dos hechos distintos, porque lo son. Corre en las máquinas que indica su plan, y el histórico no va a ningún servicio de IA externo.
             </p>
         </div>
         <div>
@@ -115,7 +115,7 @@ author: "Runink"
     },
     {
       "question": "¿Sale del edificio nuestra historia de ventas?",
-      "answer": "Se ejecuta en máquinas suyas, y la historia nunca sale de ellas. La descomposición, la prueba de estabilidad, el ajuste de los modelos y la puntuación ocurren todos allí."
+      "answer": "Se ejecuta en las máquinas que indica su plan, y la historia no va a ningún servicio de IA externo. La descomposición, la prueba de estabilidad, el ajuste de los modelos y la puntuación ocurren todos allí."
     },
     {
       "question": "¿Quién cambia el plan?",

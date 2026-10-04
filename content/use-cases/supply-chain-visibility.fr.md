@@ -80,7 +80,7 @@ author: "Runink"
                 Là où un coin du tableau devient une référence en passe de manquer, la réponse est le travail suivant, dans <a href="/fr/use-cases/fulfillment-optimization">couverture de stock et plan d'approvisionnement</a>, et le signal en dessous est <a href="/use-cases/demand-forecasting">la prévision de la demande</a>. La visibilité est ce qui rend ces deux-là discutables à partir du même jeu de faits plutôt qu'à partir de trois exports.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Ce qui arrive à une personne est une courte liste classée d'actions proposées avec les enregistrements joints, pas un diagramme à admirer. Une personne nommée valide, corrige ou rejette chacune, et cet accord est conservé. C'est la validation qui l'envoie, et un élément tranché quitte la file au lieu de revenir au tour suivant quand quelqu'un ouvre le tableau. Là où une étape derrière la validation n'a pas encore d'implémentation, la réponse nomme cette étape comme non exécutée au lieu de déclarer l'action terminée &mdash; le tableau montre donc ce qui a été décidé et, séparément, ce qui a réellement été fait. Tout tourne sur des machines qui vous appartiennent.
+                Ce qui arrive à une personne est une courte liste classée d'actions proposées avec les enregistrements joints, pas un diagramme à admirer. Une personne nommée valide, corrige ou rejette chacune, et cet accord est conservé. C'est la validation qui l'envoie, et un élément tranché quitte la file au lieu de revenir au tour suivant quand quelqu'un ouvre le tableau. Là où une étape derrière la validation n'a pas encore d'implémentation, la réponse nomme cette étape comme non exécutée au lieu de déclarer l'action terminée &mdash; le tableau montre donc ce qui a été décidé et, séparément, ce qui a réellement été fait. Tout tourne là où tourne FACE, sans aucun service d'IA extérieur.
             </p>
         </div>
         <div>
@@ -128,7 +128,7 @@ author: "Runink"
     },
     {
       "question": "Pouvons-nous l'interroger avec nos propres mots ?",
-      "answer": "Oui, dans le vocabulaire que vous employez déjà, restreint aux domaines que vous regardez, avec la carte et les règles reconnues derrière la réponse. Vous obtenez le raisonnement en plus de la réponse. Tout cela tourne sur des machines qui sont à vous."
+      "answer": "Oui, dans le vocabulaire que vous employez déjà, restreint aux domaines que vous regardez, avec la carte et les règles reconnues derrière la réponse. Vous obtenez le raisonnement en plus de la réponse. Tout cela tourne là où tourne FACE, sans aucun service d'IA extérieur."
     },
     {
       "question": "Qu'est-ce qui arrive à une personne au bout du compte ?",

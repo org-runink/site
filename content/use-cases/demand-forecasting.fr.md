@@ -71,7 +71,7 @@ author: "Runink"
                 Ceci est le signal, pas la réponse. Quoi commander, quelle couverture tenir et quel fournisseur peut encore tenir la date, c'est le travail suivant, et il est décrit dans <a href="/fr/use-cases/fulfillment-optimization/">couverture de stock et plan d'approvisionnement</a>. La prévision dit que la référence a tourné et avec quelle confiance ; l'approvisionnement décide quoi en faire. Les tenir séparés est délibéré, car les deux sont débattus par des personnes différentes.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Ce qui parvient à une personne est un seul élément : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et une modification rédigée du plan. Une personne nommée l'approuve, la modifie ou la refuse, et cette décision reste au dossier. C'est l'approbation qui l'envoie — et là où une étape derrière n'a encore rien d'implémenté, une écriture dans votre système de planification étant l'exemple honnête, la réponse nomme cette étape comme non exécutée au lieu de rapporter la modification comme faite. La décision et l'exécution sont consignées comme deux faits distincts, parce qu'ils le sont. Cela tourne sur des machines qui vous appartiennent, et l'historique ne les quitte jamais.
+                Ce qui parvient à une personne est un seul élément : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et une modification rédigée du plan. Une personne nommée l'approuve, la modifie ou la refuse, et cette décision reste au dossier. C'est l'approbation qui l'envoie — et là où une étape derrière n'a encore rien d'implémenté, une écriture dans votre système de planification étant l'exemple honnête, la réponse nomme cette étape comme non exécutée au lieu de rapporter la modification comme faite. La décision et l'exécution sont consignées comme deux faits distincts, parce qu'ils le sont. Cela tourne sur les machines prévues par votre offre, et l'historique ne part vers aucun service d'IA extérieur.
             </p>
         </div>
         <div>
@@ -115,7 +115,7 @@ author: "Runink"
     },
     {
       "question": "Notre historique de ventes quitte-t-il le bâtiment ?",
-      "answer": "Cela tourne sur des machines qui sont à vous, et l'historique ne les quitte jamais. La décomposition, le test de stabilité, l'ajustement des modèles et la notation se font tous là."
+      "answer": "Cela tourne sur les machines prévues par votre offre, et l'historique ne part vers aucun service d'IA extérieur. La décomposition, le test de stabilité, l'ajustement des modèles et la notation se font tous là."
     },
     {
       "question": "Qui change le plan ?",

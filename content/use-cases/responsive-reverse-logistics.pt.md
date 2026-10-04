@@ -116,7 +116,7 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
     },
     {
       "question": "E se os nossos registros não puderem sair do prédio?",
-      "answer": "Então nada disso muda. A triagem é uma política escrita e aritmética sobre quatro campos que a doca digita, e roda onde você roda o FACE, em máquinas suas."
+      "answer": "Então nada disso muda. A triagem é uma política escrita e aritmética sobre quatro campos que a doca digita, e roda onde você roda o FACE."
     },
     {
       "question": "Como saberíamos se adiantou alguma coisa?",

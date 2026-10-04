@@ -1,5 +1,11 @@
 ---
 title: "What Runink FACE Is Built For"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink FACE use cases: claims, cold chain, returns, demand"
+seo_description: "The jobs Runink FACE is built for: freight claims, cold chain, returns, stock and demand planning, compliance. The evidence is yours; a person approves."
+image: "/images/face/cockpit.png"
 # This section is Runink FACE's scenarios and nothing else. FACE is the flagship.
 # Runink PULSE (market analysis) is a separate product with its own material, and
 # TIDE is a third, separate product — neither of their capabilities may be
@@ -125,7 +131,7 @@ Approving is designed to end the work rather than start it. The reply names what
 
 ## Two Things Worth Knowing Up Front
 
-**Your data stays on your machines.** The order files, the customs papers, the sensor readings and the reasoning about them all run on hardware you control — FACE runs on the Runink TIDE platform, which is what makes that a property of the build rather than a setting somebody has to honour. Nothing goes to an outside model provider. That is the kind of answer a security review asks for before it will let a supplier hold its order data.
+**No outside AI service reads your data.** The order files, the customs papers, the sensor readings and the reasoning about them all run on the machines your plan names (your own servers or cloud account, or Runink's shared machines) — FACE runs on the Runink TIDE platform, which is what makes that a property of the build rather than a setting somebody has to honour. Nothing goes to an outside model provider. That is the kind of answer a security review asks for before it will let a supplier hold its order data.
 
 **The queue is where you decide.** Every item arrives with its reasoning and the records it rests on, so you can read why it was proposed before you agree to it. What you approve is what gets carried out, and an item you leave alone stays where it is. Which kinds of work are worth putting through the queue in the first place is a question you answer when you set it up — not a value threshold the software polices on your behalf.
 

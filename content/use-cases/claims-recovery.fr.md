@@ -122,7 +122,7 @@ author: "Runink"
     },
     {
       "question": "Et si nos dossiers ne peuvent pas sortir de l'entreprise ?",
-      "answer": "Alors ils ne sortent pas. Le raisonnement tourne sur des machines que vous contrôlez, et le modèle avec lequel il raisonne est un modèle que vous exécutez vous-même, pas un service exploité par quelqu'un d'autre. Vos enregistrements d'expédition, vos factures et votre correspondance sont lus là où ils vivent déjà, et la lecture se fait de votre côté de la frontière.<br><br>C'est ainsi que le logiciel est construit, et non un réglage à activer : c'est donc une propriété que votre propre revue de sécurité peut examiner. Demandez-nous de parcourir cette frontière avec vous plutôt que de vous fier à une phrase sur une page web."
+      "answer": "Alors ils ne sortent pas. Le raisonnement tourne sur les machines prévues par votre offre, et le modèle avec lequel il raisonne y tourne aussi, pas chez un service d'IA extérieur. Vos enregistrements d'expédition, vos factures et votre correspondance sont lus sur ces machines et nulle part ailleurs.<br><br>C'est ainsi que le logiciel est construit, et non un réglage à activer : c'est donc une propriété que votre propre revue de sécurité peut examiner. Demandez-nous de parcourir cette frontière avec vous plutôt que de vous fier à une phrase sur une page web."
     }
   ]
 }

@@ -1,5 +1,11 @@
 ---
 title: "Pricing"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink FACE pricing: per person, run where you choose"
+seo_description: "What a Runink FACE licence costs. You pay per person who uses it and pick where it runs: Runink's shared machines, your own cloud account or your premises."
+image: "/images/face/cockpit.png"
 description: "The operational jobs Runink FACE is built for, and what a licence to run them costs. You pay for the number of people who use it, and choose where the work runs: on Runink's shared machines, in your own cloud account, or on your own premises."
 layout: "pricing"
 date: "2024-05-20T00:00:00Z"

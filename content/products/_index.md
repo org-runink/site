@@ -16,8 +16,8 @@
 # English only, like the product pages it links to.
 title: "Runink products"
 description: "Runink FACE, Runink TIDE, Runink PULSE and Runink River: what each one is, and the page that explains it."
-image: "/images/products/products-og.jpg"
-intro: "Separate products, each with its own page, and each one runs on hardware you own."
+image: "/images/og/products-og.jpg"
+intro: "Separate products, each with its own page, and each one can run on your own servers or cloud account."
 items:
   - name: "Runink FACE"
     meaning: "FACE · Fulfilment Autonomous Claims Engine"
@@ -26,7 +26,7 @@ items:
   - name: "Runink TIDE"
     meaning: "TIDE · Trusted Intelligence for Developer & Data Experience"
     url: "/products/tide/"
-    line: "One console for your software, your AI models and agents, and your data, with its own model running on your machines. A product in its own right, sold separately."
+    line: "One console for your software, your AI models and agents, and your data, with its own model running on your servers, your cloud or ours. A product in its own right, sold separately."
   - name: "Runink PULSE"
     meaning: "PULSE · Prescriptive Unified Lead & Social Engine"
     url: "/products/pulse/"

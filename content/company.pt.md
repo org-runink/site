@@ -16,7 +16,7 @@ author: "Runink"
 # TRANSLATION OF content/company.md. Rule 12: this is a page, not a copy — when
 # the English page changes, this one changes in the same commit or it comes down.
 #
-# THE SOVEREIGNTY CARD ("Os seus registros ficam nas suas máquinas") CARRIES A
+# THE SOVEREIGNTY CARD ("Nenhum serviço de IA externo lê os seus registros") CARRIES A
 # CONSTRAINT. It must stay an architectural property — how the thing is built —
 # and must not be hardened into a claim that a check refuses the code, because
 # that is not supportable for FACE and /products/face/ says the opposite. The
@@ -41,7 +41,7 @@ author: "Runink"
       Quase tudo o que uma equipe de operações, finanças ou conformidade precisa para decidir está em sistemas que ela já paga, num formato que ninguém tem tempo de ler.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
-      Nós nos conectamos a esses sistemas, mantemos a cópia de trabalho em máquinas que o cliente controla e mostramos o raciocínio por trás de cada resposta, para que quem assina possa conferir.
+      Nós nos conectamos a esses sistemas, mantemos a cópia de trabalho nas máquinas que o plano do cliente indica e mostramos o raciocínio por trás de cada resposta, para que quem assina possa conferir.
     </p>
   </div>
 
@@ -51,7 +51,7 @@ author: "Runink"
       Um trabalho em que o software lê e uma pessoa decide — e em que o registro disso é completo o bastante para ser entregue a um auditor, a um regulador ou a uma contraparte sem preparo nenhum.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
-      É para onde construímos, não algo que digamos ter terminado. É por isso que cada resposta chega como um rascunho que espera um nome, que uma verificação que não pôde rodar diz isso em vez de passar, e que o raciocínio sobre os registros de um cliente acontece nas máquinas daquele cliente.
+      É para onde construímos, não algo que digamos ter terminado. É por isso que cada resposta chega como um rascunho que espera um nome, que uma verificação que não pôde rodar diz isso em vez de passar, e que o raciocínio sobre os registros de um cliente nunca vai para um serviço de IA externo.
     </p>
   </div>
 {{< /section-container >}}
@@ -84,9 +84,9 @@ author: "Runink"
           description="Quando uma parte de um trabalho não acontece, o resultado diz qual parte e por quê. Um software que informa sucesso por um trabalho que não fez é a falha contra a qual mais projetamos."
       >}}
       {{< value-card
-          title="Os seus registros ficam nas suas máquinas"
+          title="Nenhum serviço de IA externo lê os seus registros"
           icon="scale"
-          description="Os modelos rodam em máquinas que você controla, e existe um único endpoint de inferência: o que você configura. O raciocínio sobre os seus arquivos acontece onde os seus arquivos estão. É assim que está construído, e não uma chave que alguém liga, então peça para percorrermos essa fronteira junto com você em vez de ficar com a frase."
+          description="Os modelos rodam nas máquinas que o seu plano indica, os seus próprios servidores, a sua conta de nuvem ou as máquinas compartilhadas da Runink, e existe um único endpoint de inferência: o que é configurado para o seu plano. É assim que está construído, e não uma chave que alguém liga, então peça para percorrermos essa fronteira junto com você em vez de ficar com a frase."
       >}}
       {{< value-card
           title="Não reivindicamos certificações"

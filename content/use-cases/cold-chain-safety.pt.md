@@ -21,7 +21,7 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Hoje não existe nenhuma entrada de sensores ao vivo no FACE, e não vamos insinuar que exista.</strong> Os conectores para sistemas de sensores, de etiquetas, de armazém, de pátio e de transporte são peças provisórias que falham de propósito, para que o raciocínio que vem atrás delas possa ser exercitado contra um arquivo de dados semeados enquanto o caminho de verdade é construído. Uma excursão de temperatura nos seus próprios equipamentos não é algo que isto leia ainda.</li>
-<li><strong class="text-stone-200">A câmera do pátio é a parte que está construída.</strong> Um quadro que chega de uma câmera de pátio ou de infravermelho é conferido como imagem de verdade antes de qualquer coisa lê-lo, reduzido a um tamanho que um modelo consiga engolir, e lido por um modelo de visão rodando em hardware que você controla. O que volta é uma observação escrita, amarrada ao quadro de que ela saiu.</li>
+<li><strong class="text-stone-200">A câmera do pátio é a parte que está construída.</strong> Um quadro que chega de uma câmera de pátio ou de infravermelho é conferido como imagem de verdade antes de qualquer coisa lê-lo, reduzido a um tamanho que um modelo consiga engolir, e lido por um modelo de visão que roda onde o FACE roda, não num serviço externo. O que volta é uma observação escrita, amarrada ao quadro de que ela saiu.</li>
 <li><strong class="text-stone-200">Um aviso é um pedido, não uma trava.</strong> O FACE pode transmitir um aviso &mdash; gira aquela câmera, segura aqueles movimentos de guindaste &mdash; para o que estiver inscrito no fluxo de eventos do pátio. Ele não contata nenhum atuador, não há nenhum controlador de guindaste do outro lado, e o código diz isso com essas mesmas palavras para que uma transmissão nunca possa ser lida como um movimento que foi parado. Se alguém te ofereceu um intertravamento para cargas perigosas, isto não é um.</li>
 </ul>
 
@@ -54,7 +54,7 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
                 Vamos começar pela parte que não está pronta, porque é a parte de que todo o resto depende. A leitura tem que chegar ao FACE antes que nada disso importe, e hoje ela não chega. O conector para um sistema de sensores, de etiquetas, de armazém ou de pátio é uma peça provisória que falha de propósito, para que o raciocínio construído em cima rode, no lugar, contra um arquivo de dados semeados. Numa instância comum, sem nada conectado, a fila está vazia. Antes ela era preenchida com esses exemplos semeados, apresentados como se fossem as suas operações, e isso foi removido em vez de maquiado.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                O que está construído é o lado das câmeras do pátio. Um quadro é validado como imagem de verdade antes de um modelo vê-lo, reduzido a algo que um modelo consiga engolir, e lido por um modelo de visão no seu próprio hardware — então a leitura do pátio acontece onde as imagens já estão, e as imagens não saem para a API de ninguém para serem descritas. A observação volta grudada no quadro de que saiu, e é isso que a torna contestável em vez de afirmada.
+                O que está construído é o lado das câmeras do pátio. Um quadro é validado como imagem de verdade antes de um modelo vê-lo, reduzido a algo que um modelo consiga engolir, e lido por um modelo de visão onde o FACE roda — então as imagens não saem para a API de ninguém para serem descritas. A observação volta grudada no quadro de que saiu, e é isso que a torna contestável em vez de afirmada.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Em cima disso, um aviso pode ser transmitido para tudo o que estiver acompanhando o fluxo de eventos do pátio. Vale ser exato quanto a isso, porque a categoria vende a coisa como imposição: a transmissão pede, ela não age. Nenhum atuador é contatado, não existe no processo nenhum controlador de guindaste para contatar um, e o código se recusa a relatar um aviso como se um movimento tivesse acontecido. Essa recusa é a função. Um intertravamento que não pode disparar é pior do que intertravamento nenhum, porque responde &ldquo;isso está resolvido?&rdquo; com um sim cheio de confiança.
@@ -71,7 +71,7 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">O supervisor do pátio.</strong> Hoje as regras sobre quais mercadorias podem ficar perto de quais são conhecidas, estão escritas e são conferidas por uma pessoa que também está fazendo outras quatro coisas. O que muda é que os quadros que as câmeras do pátio já gravam passam a ser lidos, e o que volta é uma observação escrita presa ao quadro de onde saiu &mdash; algo que dá para abrir e contestar, e não uma linha num caderno.</li>
                 <li><strong class="text-stone-200">Conformidade e risco.</strong> Hoje um achado sobre separação de mercadorias existe se alguém estava passando por ali. O que muda é que um aviso pode ser colocado no fluxo de eventos do pátio para o que estiver escutando, e o movimento que vem depois é redigido e espera uma pessoa nomeada aprovar, editar ou recusar. A assinatura fica guardada junto com o quadro que a originou.</li>
-                <li><strong class="text-stone-200">TI e segurança da informação.</strong> Hoje um produto de câmeras significa perguntar para qual serviço de terceiros as imagens do pátio estão sendo enviadas para serem descritas. O que muda é que o quadro é validado como imagem real e lido por um modelo de visão em hardware que você controla, então a revisão trata de máquinas que você já opera.</li>
+                <li><strong class="text-stone-200">TI e segurança da informação.</strong> Hoje um produto de câmeras significa perguntar para qual serviço de terceiros as imagens do pátio estão sendo enviadas para serem descritas. O que muda é que o quadro é validado como imagem real e lido por um modelo de visão onde o FACE roda, então a revisão trata das máquinas que o seu plano indica, não de um serviço externo.</li>
             </ul>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -97,11 +97,11 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
   "questions": [
     {
       "question": "O que o lado das câmeras lê de verdade?",
-      "answer": "Um quadro de uma câmera de pátio ou infravermelha. Confere-se que é uma imagem de verdade antes de qualquer coisa lê-la, reduz-se a um tamanho que um modelo consiga receber, e um modelo de visão rodando em hardware que você controla faz a leitura. O que volta é uma observação escrita, presa ao quadro de onde foi lida."
+      "answer": "Um quadro de uma câmera de pátio ou infravermelha. Confere-se que é uma imagem de verdade antes de qualquer coisa lê-la, reduz-se a um tamanho que um modelo consiga receber, e um modelo de visão que roda onde o FACE roda, não num serviço externo, faz a leitura. O que volta é uma observação escrita, presa ao quadro de onde foi lida."
     },
     {
       "question": "As imagens saem do local?",
-      "answer": "A leitura acontece onde as imagens já estão. O quadro é tratado no seu próprio hardware e descrito ali, e a observação volta presa àquele quadro. O pátio é lido por máquinas que já estão no pátio."
+      "answer": "Para nenhum serviço externo. O quadro é lido onde o FACE roda: nos seus próprios servidores ou na sua conta de nuvem na Dedicada e na Enterprise, nas máquinas compartilhadas da Runink na Lite. É descrito ali, e a observação volta presa àquele quadro."
     },
     {
       "question": "Se ele vir alguma coisa, para o guindaste?",

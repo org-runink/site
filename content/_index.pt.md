@@ -6,6 +6,11 @@
 # English and hugo.toml already lists them in English in the Portuguese menu.
 # The link goes to the same /industries/... page in every language.
 title: "Runink"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink | Pegue cobranças indevidas e reclamações a tempo"
+seo_description: "Cobranças indevidas pagas, reclamações vencidas, regras quebradas. O Runink FACE lê os registros que você já tem e redige a correção para alguém aprovar."
 description: "Você descobre quando já é tarde para contestar. Um contêiner fica parado porque um documento está errado e a diária começa nesse mesmo dia. O Runink FACE lê os registros que os seus sistemas já guardam, compara cada um com a regra que o rege e coloca uma ação redigida diante de quem decide."
 # THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
 #
@@ -84,7 +89,7 @@ figure:
   today_label: "Como se lê hoje"
   today_note: "O volume venceu a inspeção, então lê-se uma amostra e supõe-se que o resto se pareça com ela. Os registros que divergem já estão no campo."
   read_label: "Como a Runink lê"
-  read_note: "Cada registro é comparado com a regra que o governa, de madrugada, nas suas próprias máquinas. O que diverge sai com nome."
+  read_note: "Cada registro é comparado com a regra que o governa, de madrugada, nos seus servidores, na sua nuvem ou na nossa. O que diverge sai com nome."
   beats:
     - title: "Os registros já existem"
       body: "Pedidos, sinistros, ordens de pagamento, detalhe de chamadas, contratos e leituras de sensores — nos sistemas que você já opera."
@@ -168,8 +173,8 @@ industries:
         steps:
           - step: "A imagem chega"
             body: "Uma foto tirada num coletor na porta, ou um quadro puxado de uma câmera do pátio. Antes de qualquer coisa lê-la, verifica-se que é uma imagem: o cabeçalho é decodificado sozinho, o formato tem de ser um de dois, e o tamanho é limitado em bytes e em pixels. Um PDF, um contêiner de vídeo ou bytes soltos são recusados nesse passo."
-          - step: "Um modelo a lê, no seu hardware"
-            body: "O quadro é reduzido a um tamanho que o modelo consegue receber e lido por um modelo de visão rodando em máquinas que você controla. O que volta é uma observação escrita, presa ao quadro exato de onde foi lida, de modo que a frase e a prova dela não se separam."
+          - step: "Um modelo a lê, sem nenhum serviço de IA externo"
+            body: "O quadro é reduzido a um tamanho que o modelo consegue receber e lido por um modelo de visão que roda nas máquinas que o seu plano indica, não por um serviço externo. O que volta é uma observação escrita, presa ao quadro exato de onde foi lida, de modo que a frase e a prova dela não se separam."
           - step: "O papel é lido ao lado"
             body: "O registro da carga, a entrega e a condição em que os documentos dizem que ela deveria estar. A observação é posta contra o que já estava escrito, e não contra um limite que alguém escolheu."
           - step: "O que difere sai com nome"
@@ -411,8 +416,8 @@ why:
     title: "Quem decide é uma pessoa com nome"
     body: "Um achado chega como uma ação redigida, e espera. Aprovar é o que a envia. Quem aprovou, quando, e o que mudou fica no registro, para que o motivo possa ser dado depois sem remontar tudo de novo."
   - glyph: "held"
-    title: "Seus registros ficam nas suas máquinas"
-    body: "Os arquivos e o raciocínio sobre eles rodam em hardware que você controla. Nada é enviado a um provedor de modelos externo, o que costuma ser o caminho mais curto através de uma revisão de segurança."
+    title: "Nenhum serviço de IA externo vê seus registros"
+    body: "Na Dedicada e na Enterprise, os arquivos e o raciocínio sobre eles rodam nos seus próprios servidores ou na sua conta de nuvem; na Lite, nas máquinas compartilhadas da Runink. Em todos os planos, nada é enviado a um provedor de modelos externo, o que costuma ser o caminho mais curto através de uma revisão de segurança."
 
 paper:
   text: "Leia o paper do FACE"
@@ -434,17 +439,17 @@ products:
     paper: "runink-face"
     name: "Runink FACE"
     sub: "Fulfilment Autonomous Claims Engine"
-    line: "O desta página. Declarações retidas, sinistros ainda dentro do prazo, cadeia de frio lida depois da baixa, demanda que cresceu subindo a cadeia."
+    line: "O desta página, para times de logística, frete, sinistros e operações. Encontra a cobrança indevida que ninguém contestou, a reclamação prestes a vencer e a regra que alguém quebrou, e redige o próximo passo para uma pessoa nomeada aprovar. Roda nos seus servidores, na sua conta de nuvem ou nas máquinas compartilhadas da Runink."
   - page: "/products/pulse"
     paper: "runink-pulse"
     name: "Runink PULSE"
     sub: "Prescriptive Unified Lead & Social Engine"
-    line: "Um produto separado, não um recurso do FACE. A auditoria, a pesquisa, a prospecção e o material que um time de marketing publica, em um aplicativo só que o time opera direto."
+    line: "Um produto separado, para a pequena e média empresa e para quem vende e faz marketing nela. Encontra as empresas que vale a pena procurar, redige a resposta, a campanha e o acompanhamento, e mostra qual canal traz clientes. O seu time decide o que sai. Preço por usuário."
   - page: "/products/tide"
     paper: "runink-tide"
     name: "Runink TIDE"
     sub: "Trusted Intelligence for Developer & Data Experience"
-    line: "Um produto por si só, vendido separadamente. É a resposta para onde os seus dados são processados e quem pode vê-los, que é a pergunta a que toda outra página daqui acaba chegando."
+    line: "Um produto separado, para times de engenharia, plataforma e dados. Tira da semana deles as perguntas de sempre: o que quebrou e por quê, se a correção já está no ar, qual número está certo, quem mudou o quê. Os assistentes redigem; uma pessoa nomeada aprova. Roda nos seus servidores, na sua conta de nuvem ou nas máquinas compartilhadas da Runink."
   - paper: "runink-tide-atlas"
     name: "Runink TIDE e Atlas"
     sub: "Um documento conjunto com a Logical Leap"
@@ -452,7 +457,7 @@ products:
   - page: "/river"
     name: "Runink River"
     sub: "Raft-Integrated Validated Event Runtime"
-    line: "Uma estação de trabalho para desenvolvedores sobre s6: KDE Plasma, raiz ZFS criptografada, firewall que bloqueia por padrão e instalador gráfico, para trabalhar com dados e IA no seu próprio hardware."
+    line: "Um sistema operacional livre e de código aberto para as estações de trabalho de dados, análise e IA que você já tem. O disco é criptografado desde o primeiro boot, uma atualização ruim é desfeita com uma reinicialização e não há licença por usuário."
 products_more_text: "Como construímos, e com quem"
 products_more_url: "/company"
 

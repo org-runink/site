@@ -19,7 +19,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">El cambio tiene que estar escrito antes de poder discutirlo.</strong> Una hipótesis se enuncia de forma explícita, junto con las reglas que toca — los puntos de pedido, los plazos de entrega, los compromisos de servicio con los que su negocio ya funciona. Casi todo el valor está en ese paso, y es el paso que normalmente se salta.</li>
 <li><strong class="text-stone-200">Lo que vuelve es razonamiento, ordenado por importancia, con la regla que invocó.</strong> Cada consecuencia queda atada a la regla concreta de la que se deriva, así que usted puede discutirla por el fondo. Es un argumento que puede comprobar, no un número que aceptar.</li>
-<li><strong class="text-stone-200">Nada se ejecuta, y nada está conectado.</strong> El motor no tiene ningún camino de escritura hacia sus sistemas y no los toca. Razona sobre las reglas que usted le dio, en su propio hardware — el escenario no sale nunca del edificio.</li>
+<li><strong class="text-stone-200">Nada se ejecuta, y nada está conectado.</strong> El motor no tiene ningún camino de escritura hacia sus sistemas y no los toca. Razona sobre las reglas que usted le dio, donde corre FACE — el escenario no va a ningún servicio de IA externo.</li>
 <li><strong class="text-stone-200">Puede ponerlo difícil a propósito.</strong> Retrase una ruta una semana. Quite un proveedor. Deje que una carga se caliente. Los planes que solo funcionan cuando todo sale bien lo enseñan aquí, no al cierre del trimestre.</li>
 </ul>
 
@@ -66,7 +66,7 @@ author: "Runink"
                 Así que lo que vuelve es un argumento, no una respuesta. Eso es lo útil, y conviene decirlo sin rodeos: una proyección presentada como una decisión es peor que no tener proyección, porque mueve el juicio de alguien que responde a un trozo de software que no responde. Lo que esto le da a la sala es el caso expuesto &mdash; con qué reglas choca el cambio, en qué orden muerden, y qué tendría que creer alguien para que el plan se sostuviera. La decisión se queda donde estaba.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                De eso salen dos consecuencias que vale la pena tener. Enunciar la hipótesis obliga a poner los supuestos por escrito, que es el paso que los equipos se saltan y la razón por la que dos personas pueden discutir una hora y resultar que estaban hablando de planes distintos. Y como el razonamiento ocurre en su propio hardware, el escenario que está considerando &mdash; qué proveedor podría quitar, qué ruta podría cortar &mdash; no sale nunca del edificio.
+                De eso salen dos consecuencias que vale la pena tener. Enunciar la hipótesis obliga a poner los supuestos por escrito, que es el paso que los equipos se saltan y la razón por la que dos personas pueden discutir una hora y resultar que estaban hablando de planes distintos. Y como el razonamiento ocurre donde corre FACE, el escenario que está considerando &mdash; qué proveedor podría quitar, qué ruta podría cortar &mdash; no va a ningún servicio de IA externo.
             </p>
             <p class="text-lg text-stone-400 font-medium">
                 También puede ponerlo difícil a propósito. Haga la ruta con una semana de retraso. Quite la segunda fuente de suministro. Deje que una carga refrigerada se desvíe. Un plan que solo se sostiene cuando la semana va bien se caerá aquí, delante de usted, mientras averiguarlo todavía no cuesta nada.
@@ -114,7 +114,7 @@ author: "Runink"
     },
     {
       "question": "¿Toca los sistemas con los que funciona el negocio?",
-      "answer": "Razona sobre las reglas que usted le entregó, y lo hace en su propio hardware. La planta, el almacén y la contabilidad siguen funcionando sobre sus sistemas, sin que el ejercicio los roce: un experimento dentro del sistema vivo no es un experimento, y por eso nadie sensato lo hace.<br><br>La otra mitad de eso es la discreción. El escenario que usted está considerando &mdash; a qué proveedor podría dejar, qué ruta podría cortar &mdash; es exactamente lo que no querría que se hablara fuera del edificio, y el razonamiento ocurre donde usted lo ve."
+      "answer": "Razona sobre las reglas que usted le entregó, y lo hace donde corre FACE, no en un servicio de IA externo. La planta, el almacén y la contabilidad siguen funcionando sobre sus sistemas, sin que el ejercicio los roce: un experimento dentro del sistema vivo no es un experimento, y por eso nadie sensato lo hace.<br><br>La otra mitad de eso es la discreción. El escenario que usted está considerando &mdash; a qué proveedor podría dejar, qué ruta podría cortar &mdash; es exactamente lo que no querría que se hablara fuera del edificio, y el razonamiento ocurre donde usted lo ve."
     },
     {
       "question": "¿Qué hace cuando las reglas que le dimos no resuelven la pregunta?",

@@ -122,7 +122,7 @@ author: "Runink"
     },
     {
       "question": "¿Y si nuestros expedientes no pueden salir del edificio?",
-      "answer": "Entonces no salen. El razonamiento corre en máquinas que usted controla, y el modelo con el que razona es uno que usted mismo ejecuta, no un servicio que opera otro. Sus registros de embarque, sus facturas y su correspondencia se leen donde ya viven, y la lectura ocurre de su lado de la frontera.<br><br>Así está construido el software, no es un ajuste que se enciende, de modo que es una propiedad que su propia revisión de seguridad puede examinar. Pídanos recorrer esa frontera con usted en vez de dar por buena una frase en una página web."
+      "answer": "Entonces no salen. El razonamiento corre en las máquinas que indica su plan, y el modelo con el que razona corre allí también, no en un servicio de IA externo. Sus registros de embarque, sus facturas y su correspondencia se leen en esas máquinas y en ninguna otra parte.<br><br>Así está construido el software, no es un ajuste que se enciende, de modo que es una propiedad que su propia revisión de seguridad puede examinar. Pídanos recorrer esa frontera con usted en vez de dar por buena una frase en una página web."
     }
   ]
 }

@@ -48,7 +48,7 @@ owners:
   - role: "Le responsable marketing"
     line: "Votre temps passe de la production de matériel à la prise de décision à son sujet. La file d'attente d'approbation de PULSE devient votre surface de travail."
   - role: "L'informatique et la sécurité de l'information"
-    line: "Le raisonnement et l'écriture s'exécutent sur des machines que vous contrôlez. C'est une propriété de la plateforme Runink TIDE sur laquelle fonctionne PULSE, et non un paramètre que quelqu'un de l'équipe marketing doit se souvenir de respecter."
+    line: "Le raisonnement et l'écriture s'exécutent sur vos serveurs, dans votre cloud ou dans le nôtre, jamais chez un service d'IA extérieur. C'est une propriété de la plateforme Runink TIDE sur laquelle fonctionne PULSE, et non un paramètre que quelqu'un de l'équipe marketing doit se souvenir de respecter."
   - role: "Les ventes"
     line: "PULSE recherche un prospect et rédige un e-mail à froid, un script d'appel et un message direct par entreprise, et les prospects se synchronisent avec le système de gestion de la relation client dans lequel l'équipe travaille déjà."
   - role: "Le conseil d'administration"
@@ -93,8 +93,8 @@ measures:
 
 foundations_heading: "Deux choses qui rendent ce qui précède possible — et aucune n'est une fonctionnalité marketing"
 foundations:
-  - name: "Votre matériel reste sur des machines qui vous appartiennent"
-    plain: "L'analyse et l'écriture se produisent sur du matériel à l'intérieur de votre propre réseau. Les listes de clients, la logique de tarification, les plans non publiés et le positionnement que vous n'avez pas annoncé sont traités là, et non remis à un fournisseur de modèles externe pour qu'il apprenne. Cela provient de la plateforme Runink TIDE sur laquelle PULSE est déployé — la couche qui exécute le logiciel et maintient les connexions à vos propres données — plutôt que de quoi que ce soit dans le produit marketing lui-même."
+  - name: "Aucun service d'IA extérieur n'apprend de vos contenus"
+    plain: "L'analyse et l'écriture se font sur les machines où tourne PULSE. Les listes de clients, la logique de tarification, les plans non publiés et le positionnement que vous n'avez pas annoncé sont traités là, et non remis à un fournisseur de modèles externe pour qu'il apprenne. Cela provient de la plateforme Runink TIDE sur laquelle PULSE est déployé — la couche qui exécute le logiciel et maintient les connexions à vos propres données — plutôt que de quoi que ce soit dans le produit marketing lui-même."
     measured_by: "La révision qui se dresse entre une équipe marketing et un nouvel outil. Lorsque le service juridique ou la sécurité demande où les documents de l'entreprise sont traités, la réponse est le nom d'une machine, donné une seule fois et par écrit — la même réponse qu'exigent le questionnaire de sécurité d'un client et une clause de résidence des données."
   - name: "Recherche sur le web ouvert qui ne s'annonce pas"
     plain: "PULSE lit directement le web public, par le biais du propre moteur de navigateur headless de Runink piloté sur des résultats de recherche publics ordinaires et les pages qui les sous-tendent, plutôt que de soumettre vos questions au service payant d'une entreprise de recherche. Le moteur est une infrastructure partagée de Runink, pas une fonctionnalité PULSE — PULSE est l'un des produits qui l'utilise."

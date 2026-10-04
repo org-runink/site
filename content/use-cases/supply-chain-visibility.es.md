@@ -80,7 +80,7 @@ author: "Runink"
                 Donde un área de la foto se convierte en un artículo a punto de quedarse corto, la respuesta es el siguiente trabajo de la fila, en <a href="/es/use-cases/fulfillment-optimization">cobertura de stock y planificación con proveedores</a>, y la señal que hay debajo es la <a href="/use-cases/demand-forecasting">previsión de demanda</a>. La visibilidad es lo que hace que esas dos se puedan discutir desde el mismo conjunto de datos en vez de desde tres extracciones.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Lo que llega a una persona es una lista corta y ordenada de acciones propuestas con los registros adjuntos, no un diagrama que admirar. Una persona con nombre aprueba, edita o rechaza cada una, y esa firma se guarda. Aprobar es lo que lo manda, y un elemento decidido sale de la cola en vez de volver a dar la vuelta la próxima vez que alguien abre el tablero. Donde un paso detrás de la aprobación todavía no tiene implementación, la respuesta nombra ese paso como no ejecutado en vez de dar la acción por completa, así que el tablero muestra qué se decidió y, por separado, qué se llevó a cabo de verdad. Todo corre en máquinas suyas.
+                Lo que llega a una persona es una lista corta y ordenada de acciones propuestas con los registros adjuntos, no un diagrama que admirar. Una persona con nombre aprueba, edita o rechaza cada una, y esa firma se guarda. Aprobar es lo que lo manda, y un elemento decidido sale de la cola en vez de volver a dar la vuelta la próxima vez que alguien abre el tablero. Donde un paso detrás de la aprobación todavía no tiene implementación, la respuesta nombra ese paso como no ejecutado en vez de dar la acción por completa, así que el tablero muestra qué se decidió y, por separado, qué se llevó a cabo de verdad. Todo corre donde corre FACE, sin ningún servicio de IA externo.
             </p>
         </div>
         <div>
@@ -128,7 +128,7 @@ author: "Runink"
     },
     {
       "question": "¿Podemos preguntarle cosas con nuestras propias palabras?",
-      "answer": "Sí, con el vocabulario que ya utiliza, acotado a las áreas que esté mirando, y con el mapa y las reglas reconocidas detrás de la respuesta. Recibe el razonamiento además de la respuesta. Todo se ejecuta en máquinas suyas."
+      "answer": "Sí, con el vocabulario que ya utiliza, acotado a las áreas que esté mirando, y con el mapa y las reglas reconocidas detrás de la respuesta. Recibe el razonamiento además de la respuesta. Todo se ejecuta donde corre FACE, sin ningún servicio de IA externo."
     },
     {
       "question": "¿Qué le llega a una persona al final?",

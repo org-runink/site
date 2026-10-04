@@ -51,7 +51,7 @@ owners:
   - role: "Compliance and data protection"
     line: "Rules about subscriber data are applied to the flows, and the evidence that they operated is written as the work happens."
   - role: "Engineering and IT"
-    line: "Reasoning runs on your own hardware; records and credentials stay on your systems."
+    line: "Reasoning runs on your servers, your cloud or ours, never at an outside AI service."
 
 outcomes_heading: "What the arrangement changes"
 outcomes:
@@ -82,8 +82,8 @@ measures:
 
 foundations_heading: "Two things that make the above possible"
 foundations:
-  - name: "Your records stay on machines you own"
-    plain: "The reasoning runs on hardware you own. Subscriber records, usage detail, contracts and credentials are read where they already live. The judging model is the cluster's own inference plane — one endpoint, no API key, no vendor SDK, no fallback, and no code path that would accept an external model plane."
+  - name: "No outside AI service reads your records"
+    plain: "The reasoning runs on your servers, your cloud or ours, never at an outside AI service. Subscriber records, usage detail, contracts and credentials are read where they already live. The judging model is the cluster's own inference plane — one endpoint, no API key, no vendor SDK, no fallback, and no code path that would accept an external model plane."
     measured_by: "Call-detail and subscriber data sits under telecoms privacy and interception law and mostly cannot leave your estate. Measure this as the length of the security review before work can begin, and as whether a regulator's question about who saw what is answered from a hash-chained record rather than an investigation. One honest addition: the arrangement involves a second vendor, and your supplier assessment will want to see them as well as us."
   # Corrected. "No outside search company sits in the middle" and "that nobody
   # sees you doing" were both false absolutes: the shared engine puts the query
@@ -92,7 +92,7 @@ foundations:
   # your questions — was already in the second half of this entry, and it now
   # carries the whole claim rather than sitting under a promise of invisibility.
   - name: "Open-web research with no vendor account behind it"
-    plain: "When something has to be checked in public — a competitor's tariff, a supplier, a regulator's notice — the search runs from inside your estate through a public search endpoint, and your own browser then fetches and reads the pages behind the results rather than a research service reading them for you."
+    plain: "When something has to be checked in public — a competitor's tariff, a supplier, a regulator's notice — the search runs from the machines your plan names through a public search endpoint, and a browser on those same machines then fetches and reads the pages behind the results rather than a research service reading them for you."
     measured_by: "Not invisibility — a search engine sees the query, as it would from any browser. What is absent is the account. Researching a rival's bundle pricing through a vendor's paid service builds that vendor a dated record of what your commercial team was working on, under your name. Here there is no key, no contract and no per-question bill, so nothing accumulates and nothing is capped. Measure it by what your commercial team is willing to check at all."
 
 next_heading: "See whether it fits"

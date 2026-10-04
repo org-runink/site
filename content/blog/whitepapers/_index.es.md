@@ -12,8 +12,8 @@ deck: |
   con un socio. Los primeros tratan de **Runink FACE**. **Runink PULSE** es un producto distinto, de análisis de mercado y
   marketing, y su documento describe su propio trabajo, no el de FACE.
   **Runink TIDE** es un producto por derecho propio, que se vende por separado.
-  Es la capa de operaciones que usted ejecuta en su propio hardware para
-  mantener en orden sus aplicaciones de Runink y sus propios datos, y la
+  Es la capa de operaciones, en sus servidores, en su nube o en la nuestra,
+  que mantiene en orden sus aplicaciones de Runink y sus propios datos, y la
   respuesta honesta a dónde se procesan sus datos y quién puede verlos. Su
   documento es donde este sitio lo describe. Los documentos conjuntos con Logical Leap tratan de las pantallas
   de supervisión de Atlas, que funcionan dentro de TIDE.

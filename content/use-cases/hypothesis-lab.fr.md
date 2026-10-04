@@ -19,7 +19,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Le changement doit être écrit avant de pouvoir être débattu.</strong> Une hypothèse est énoncée explicitement, avec les règles qu'elle touche — les points de commande, les délais, les engagements de service sur lesquels votre activité fonctionne déjà. L'essentiel de la valeur est dans cette étape, et c'est l'étape qu'on saute d'ordinaire.</li>
 <li><strong class="text-stone-200">Ce qui revient est un raisonnement, classé, avec la règle qu'il a invoquée.</strong> Chaque conséquence est rattachée à la règle précise dont elle découle, de sorte que vous pouvez la contester sur le fond. C'est un argument que vous pouvez vérifier, pas un chiffre à accepter.</li>
-<li><strong class="text-stone-200">Rien n'est exécuté, et rien n'est branché.</strong> Le moteur n'a aucun chemin d'écriture vers vos systèmes et ne les touche pas. Il raisonne sur les règles que vous lui avez données, sur votre propre matériel — le scénario ne quitte jamais les murs.</li>
+<li><strong class="text-stone-200">Rien n'est exécuté, et rien n'est branché.</strong> Le moteur n'a aucun chemin d'écriture vers vos systèmes et ne les touche pas. Il raisonne sur les règles que vous lui avez données, là où tourne FACE — le scénario ne part vers aucun service d'IA extérieur.</li>
 <li><strong class="text-stone-200">Vous pouvez le rendre rude exprès.</strong> Décalez une liaison d'une semaine. Retirez un fournisseur. Laissez un chargement se réchauffer. Les plans qui ne marchent que si tout se passe bien le montrent ici, et non à la clôture du trimestre.</li>
 </ul>
 
@@ -66,7 +66,7 @@ author: "Runink"
                 Ce qui revient est donc un argument, pas une réponse. C'est cela qui est utile, et cela vaut d'être dit franchement : une projection présentée comme une décision est pire que pas de projection, car elle déplace le jugement de quelqu'un qui en répond vers un logiciel qui n'en répond pas. Ce que ceci apporte à la pièce, c'est le dossier déplié &mdash; quelles règles le changement heurte, dans quel ordre elles mordent, et ce qu'il faudrait croire pour que le plan tienne. La décision reste là où elle était.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Deux conséquences de cela valent la peine. Énoncer l'hypothèse force les présupposés à l'écrit, ce qui est l'étape que les équipes sautent et la raison pour laquelle deux personnes peuvent débattre une heure et découvrir qu'elles parlaient de plans différents. Et comme le raisonnement a lieu sur votre propre matériel, le scénario que vous envisagez &mdash; quel fournisseur vous pourriez retirer, quelle liaison vous pourriez couper &mdash; ne quitte jamais les murs.
+                Deux conséquences de cela valent la peine. Énoncer l'hypothèse force les présupposés à l'écrit, ce qui est l'étape que les équipes sautent et la raison pour laquelle deux personnes peuvent débattre une heure et découvrir qu'elles parlaient de plans différents. Et comme le raisonnement a lieu là où tourne FACE, le scénario que vous envisagez &mdash; quel fournisseur vous pourriez retirer, quelle liaison vous pourriez couper &mdash; ne part vers aucun service d'IA extérieur.
             </p>
             <p class="text-lg text-stone-400 font-medium">
                 Vous pouvez aussi le rendre rude exprès. Faites rouler la liaison avec une semaine de retard. Retirez la deuxième source. Laissez un chargement réfrigéré dériver. Un plan qui ne tient que si la semaine se passe bien s'effondrera ici, devant vous, tant que le découvrir ne coûte encore rien.
@@ -114,7 +114,7 @@ author: "Runink"
     },
     {
       "question": "Est-ce que cela touche les systèmes sur lesquels tourne l'entreprise ?",
-      "answer": "Il raisonne sur les règles que vous lui avez remises, et il le fait sur votre propre matériel. L'usine, l'entrepôt et la comptabilité continuent de tourner sur leurs systèmes, que l'exercice ne touche pas : une expérience à l'intérieur du système vivant n'est pas une expérience, et c'est pourquoi personne de sensé n'en fait.<br><br>L'autre moitié, c'est la discrétion. Le scénario que vous envisagez &mdash; quel fournisseur vous pourriez lâcher, quelle ligne vous pourriez couper &mdash; est précisément ce dont vous ne voudriez pas qu'on parle à l'extérieur, et le raisonnement a lieu là où vous le voyez."
+      "answer": "Il raisonne sur les règles que vous lui avez remises, et il le fait là où tourne FACE, pas chez un service d'IA extérieur. L'usine, l'entrepôt et la comptabilité continuent de tourner sur leurs systèmes, que l'exercice ne touche pas : une expérience à l'intérieur du système vivant n'est pas une expérience, et c'est pourquoi personne de sensé n'en fait.<br><br>L'autre moitié, c'est la discrétion. Le scénario que vous envisagez &mdash; quel fournisseur vous pourriez lâcher, quelle ligne vous pourriez couper &mdash; est précisément ce dont vous ne voudriez pas qu'on parle à l'extérieur, et le raisonnement a lieu là où vous le voyez."
     },
     {
       "question": "Que fait-il quand les règles que nous lui avons données ne tranchent pas ?",

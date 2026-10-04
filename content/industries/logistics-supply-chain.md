@@ -48,7 +48,7 @@ owners:
   - role: "Head of planning"
     line: "Safety margins are argued from your own numbers, not by seniority."
   - role: "Chief information officer"
-    line: "A shorter security review, because the data stays on your machines."
+    line: "A shorter security review, because no outside AI service reads the data."
 
 outcomes_heading: "What Runink FACE changes"
 # Four corrections in this block, all of the same kind.
@@ -121,7 +121,7 @@ coverage:
     line: "Where a return goes — shelf, refurbishment, recycling or disposal — drafted at the scan, from a policy written down so that the same grade gets the same answer every time."
     url: "/use-cases/responsive-reverse-logistics/"
   - name: "Cold chain, and what the yard camera already sees"
-    line: "A frame from a yard or infrared camera, checked to be an image and read by a vision model on hardware you control, against the handover record and the paperwork the load travels with."
+    line: "A frame from a yard or infrared camera, checked to be an image and read by a vision model where FACE runs, not at an outside service, against the handover record and the paperwork the load travels with."
     url: "/use-cases/cold-chain-safety/"
   - name: "Route planning that keeps up with the day"
     line: "The plan that was right at six in the morning is not right by ten, and nobody re-runs it because re-running it means planning a day by hand. This is about making the second run cost nothing."
@@ -172,8 +172,8 @@ measures:
 
 foundations_heading: "Two things that make the above possible"
 foundations:
-  - name: "Your data stays on your machines"
-    plain: "The order files, the customs papers, the readings and the reasoning about them stay on hardware you control, and the model FACE reasons with is one you run: no third-party model dependency, and exactly one inference endpoint — the one you point it at. Two paths do deliberately reach outside, because they must: a route request goes to the routing service you configure, and open-web research puts a query to a public search endpoint. Neither carries your records."
+  - name: "No outside AI service reads your data"
+    plain: "The order files, the customs papers, the readings and the reasoning about them stay on the machines your plan names (your own servers or cloud account, or Runink's shared machines), and the model FACE reasons with runs there too: no third-party model dependency, and exactly one inference endpoint — the one set up for your plan. Two paths do deliberately reach outside, because they must: a route request goes to the routing service you configure, and open-web research puts a query to a public search endpoint. Neither carries your records."
     measured_by: "The security review a shipper runs before it will let you hold its order data, and the customer-data clauses that today need an exception. With no model provider in the path, both have less to argue with. Ask us to walk the boundary rather than taking the sentence: this is how the software is built, not something a test enforces, so it is a code review you can run and not a certificate we hold."
   # Corrected. This used to say the question "stays with you" and set that
   # against "asking a search company". The shared engine puts the query to
@@ -182,7 +182,7 @@ foundations:
   # is genuinely different is that there is no account it is filed under — and
   # that is the part a confidentiality argument actually turns on.
   - name: "Open-web research with no account attached to it"
-    plain: "When an answer needs the open web — a carrier's standing, a customs ruling, a published rate, a party you are unsure about shipping to — the search runs from your own infrastructure through a public search endpoint, and your own browser then fetches and reads the pages behind the results."
+    plain: "When an answer needs the open web — a carrier's standing, a customs ruling, a published rate, a party you are unsure about shipping to — the search runs from the machines your plan names through a public search endpoint, and a browser on those same machines then fetches and reads the pages behind the results."
     measured_by: "Not secrecy from the search engine, which sees the query as it would from any browser. What you get is the absence of an account: no API key, no vendor contract, no per-question bill, so no supplier is accumulating a searchable history of the consignees your company has been asking about, filed under your company's name. It also means how much checking a shipment gets is decided by the shipment rather than by a monthly query cap."
 
 next_heading: "See whether it fits"

@@ -49,7 +49,7 @@ author: "Runink"
       Most of what an operations, finance or compliance team needs to decide is sitting in systems it already pays for, in a shape nobody has time to read.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
-      We connect to those systems, keep the working copy on hardware the customer controls, and show the reasoning behind every answer so the person who signs off can check it.
+      We connect to those systems, keep the working copy on the machines the customer's plan names, and show the reasoning behind every answer so the person who signs off can check it.
     </p>
   </div>
 
@@ -59,7 +59,7 @@ author: "Runink"
       Work where the software does the reading and a person does the deciding — and the record of that is complete enough to hand to an auditor, a regulator or a counterparty without preparing it first.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
-      That is what we are building towards rather than something we claim to have finished. It is why every answer arrives as a draft that waits for a name, why a check that could not run says so instead of passing, and why the reasoning about a customer's records happens on the customer's own machines.
+      That is what we are building towards rather than something we claim to have finished. It is why every answer arrives as a draft that waits for a name, why a check that could not run says so instead of passing, and why the reasoning about a customer's records never goes to an outside AI service.
     </p>
   </div>
 {{< /section-container >}}
@@ -92,9 +92,9 @@ author: "Runink"
           description="When part of a job does not happen, the result says which part and why. Software that reports success for work it did not do is the failure we designed hardest against."
       >}}
       {{< value-card
-          title="Your records stay on your hardware"
+          title="No outside AI service reads your records"
           icon="scale"
-          description="The models run on machines you control, and there is one inference endpoint: the one you configure. The reasoning about your files happens where your files are. That is how it is built rather than a switch somebody sets, so ask us to walk the boundary with you rather than taking the sentence."
+          description="The models run on the machines your plan names (your own servers or cloud account, or Runink's shared machines), and there is one inference endpoint: the one set up for your plan. That is how it is built rather than a switch somebody sets, so ask us to walk the boundary with you rather than taking the sentence."
       >}}
       {{< value-card
           title="We do not claim certifications"
@@ -114,7 +114,7 @@ author: "Runink"
   "name": "Runink",
   "url": "https://runink.org",
   "logo": "https://runink.org/images/logo.png",
-  "description": "Runink FACE reads the logistics records a business already holds — orders, carrier documents, claim files — compares them against the rules that govern them, and puts a drafted action in front of the person who owns the decision. Runs on infrastructure the customer controls.",
+  "description": "Runink FACE reads the logistics records a business already holds — orders, carrier documents, claim files — compares them against the rules that govern them, and puts a drafted action in front of the person who owns the decision. Runs on the customer's own servers or cloud account, or on Runink's shared machines.",
   "foundingDate": "2023",
   "contactPoint": {
     "@type": "ContactPoint",

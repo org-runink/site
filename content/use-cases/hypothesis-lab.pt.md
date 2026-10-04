@@ -19,7 +19,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">A mudança tem que estar escrita antes de poder ser discutida.</strong> Uma hipótese é enunciada de forma explícita, junto com as regras que ela toca — os pontos de pedido, os prazos de entrega, os compromissos de serviço com os quais o seu negócio já funciona. Quase todo o valor está nesse passo, e é o passo que normalmente se pula.</li>
 <li><strong class="text-stone-200">O que volta é raciocínio, ordenado por importância, com a regra que ele invocou.</strong> Cada consequência fica amarrada à regra específica de que ela decorre, então você pode discordar dela pelo mérito. É um argumento que você pode conferir, não um número para aceitar.</li>
-<li><strong class="text-stone-200">Nada é executado, e nada está conectado.</strong> O motor não tem nenhum caminho de escrita para os seus sistemas e não os toca. Ele raciocina sobre as regras que você deu a ele, no seu próprio hardware — o cenário nunca sai do prédio.</li>
+<li><strong class="text-stone-200">Nada é executado, e nada está conectado.</strong> O motor não tem nenhum caminho de escrita para os seus sistemas e não os toca. Ele raciocina sobre as regras que você deu a ele, onde o FACE roda — o cenário não vai para nenhum serviço de IA externo.</li>
 <li><strong class="text-stone-200">Você pode deixar difícil de propósito.</strong> Atrase uma rota em uma semana. Tire um fornecedor. Deixe uma carga esquentar. Os planos que só funcionam quando tudo dá certo mostram isso aqui, e não no fechamento do trimestre.</li>
 </ul>
 
@@ -66,7 +66,7 @@ author: "Runink"
                 Então o que volta é um argumento, não uma resposta. É isso que é útil, e vale dizer sem rodeios: uma projeção apresentada como decisão é pior do que nenhuma projeção, porque tira o julgamento de alguém que responde por ele e passa para um software que não responde. O que isto dá à sala é o caso aberto &mdash; com quais regras a mudança colide, em que ordem elas mordem, e o que alguém precisaria acreditar para o plano se sustentar. A decisão fica onde estava.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Duas consequências disso valem a pena. Enunciar a hipótese força as premissas a ficarem escritas, que é o passo que as equipes pulam e a razão pela qual duas pessoas podem discutir uma hora e descobrir que estavam falando de planos diferentes. E como o raciocínio acontece no seu próprio hardware, o cenário que você está considerando &mdash; qual fornecedor você poderia tirar, qual rota você poderia cortar &mdash; nunca sai do prédio.
+                Duas consequências disso valem a pena. Enunciar a hipótese força as premissas a ficarem escritas, que é o passo que as equipes pulam e a razão pela qual duas pessoas podem discutir uma hora e descobrir que estavam falando de planos diferentes. E como o raciocínio acontece onde o FACE roda, o cenário que você está considerando &mdash; qual fornecedor você poderia tirar, qual rota você poderia cortar &mdash; não vai para nenhum serviço de IA externo.
             </p>
             <p class="text-lg text-stone-400 font-medium">
                 Você também pode deixar difícil de propósito. Rode a rota com uma semana de atraso. Tire a segunda fonte de fornecimento. Deixe uma carga refrigerada derivar. Um plano que só se sustenta quando a semana corre bem vai cair aqui, na sua frente, enquanto descobrir isso ainda não custa nada.
@@ -114,7 +114,7 @@ author: "Runink"
     },
     {
       "question": "Ele toca os sistemas com que tocamos o negócio?",
-      "answer": "Ele raciocina sobre as regras que você entregou, e faz isso no seu próprio hardware. A fábrica, o armazém e a contabilidade seguem rodando nos sistemas deles, sem que o exercício encoste: um experimento dentro do sistema vivo não é um experimento, e por isso ninguém sensato faz um.<br><br>A outra metade disso é discrição. O cenário que você está considerando &mdash; que fornecedor você poderia deixar, que rota você poderia cortar &mdash; é exatamente o que você não gostaria de ver comentado fora do prédio, e o raciocínio acontece onde você enxerga."
+      "answer": "Ele raciocina sobre as regras que você entregou, e faz isso onde o FACE roda, não num serviço de IA externo. A fábrica, o armazém e a contabilidade seguem rodando nos sistemas deles, sem que o exercício encoste: um experimento dentro do sistema vivo não é um experimento, e por isso ninguém sensato faz um.<br><br>A outra metade disso é discrição. O cenário que você está considerando &mdash; que fornecedor você poderia deixar, que rota você poderia cortar &mdash; é exatamente o que você não gostaria de ver comentado fora do prédio, e o raciocínio acontece onde você enxerga."
     },
     {
       "question": "O que ele faz quando as regras que demos não resolvem a pergunta?",

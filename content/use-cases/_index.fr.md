@@ -1,5 +1,11 @@
 ---
 title: "À Quoi Sert Runink FACE"
+# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
+# seo_title verbatim, at most 60 characters; seo_description is the meta and card
+# description, at most 155. Visible copy on the page is unchanged by these two.
+seo_title: "Runink FACE : sinistres, chaîne du froid, retours, demande"
+seo_description: "Ce pour quoi Runink FACE est fait : sinistres, chaîne du froid, retours, demande et conformité. Les preuves sont chez vous ; une personne approuve."
+image: "/images/face/cockpit.png"
 product: "Runink FACE"
 description: "Les sujets opérationnels pour lesquels Runink FACE est fait. Dans chacun, les faits sont déjà dans vos systèmes et personne n'a les heures pour les rassembler, et chacun se termine par une personne qui approuve une action rédigée, pas par un tableau de bord de plus."
 layout: "section"
@@ -86,7 +92,7 @@ Approuver est censé terminer le travail plutôt que le commencer. La réponse n
 
 ## Deux Choses À Savoir D'Emblée
 
-**Vos données restent sur vos machines.** Les fichiers de commande, les papiers de douane, les relevés des capteurs et le raisonnement à leur sujet tournent sur du matériel que vous contrôlez : FACE tourne sur la plateforme Runink TIDE, et c'est ce qui en fait une propriété de la construction plutôt qu'un réglage que quelqu'un doit respecter. Rien ne part chez un fournisseur de modèles extérieur. C'est le genre de réponse qu'une revue de sécurité demande avant de laisser un fournisseur détenir ses données de commande.
+**Aucun service d'IA extérieur ne lit vos données.** Les fichiers de commande, les papiers de douane, les relevés des capteurs et le raisonnement à leur sujet tournent sur les machines prévues par votre offre (vos propres serveurs ou votre compte cloud, ou les machines partagées de Runink) : FACE tourne sur la plateforme Runink TIDE, et c'est ce qui en fait une propriété de la construction plutôt qu'un réglage que quelqu'un doit respecter. Rien ne part chez un fournisseur de modèles extérieur. C'est le genre de réponse qu'une revue de sécurité demande avant de laisser un fournisseur détenir ses données de commande.
 
 **La file est l'endroit où vous décidez.** Chaque élément arrive avec son raisonnement et les enregistrements sur lesquels il s'appuie, vous pouvez donc lire pourquoi il est proposé avant de l'accepter. Ce que vous approuvez est ce qui est exécuté, et un élément que vous laissez tranquille reste où il est. Quels travaux méritent de passer par la file est une question à laquelle vous répondez à l'installation, pas un seuil de montant que le logiciel surveillerait pour vous.
 

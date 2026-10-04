@@ -16,7 +16,7 @@ author: "Runink"
 # TRANSLATION OF content/company.md. Rule 12: this is a page, not a copy — when
 # the English page changes, this one changes in the same commit or it comes down.
 #
-# THE SOVEREIGNTY CARD ("Sus registros se quedan en sus máquinas") CARRIES A
+# THE SOVEREIGNTY CARD ("Ningún servicio de IA externo lee sus registros") CARRIES A
 # CONSTRAINT. It must stay an architectural property — how the thing is built —
 # and must not be hardened into a claim that a check refuses the code, because
 # that is not supportable for FACE and /products/face/ says the opposite. The
@@ -41,7 +41,7 @@ author: "Runink"
       Casi todo lo que un equipo de operaciones, finanzas o cumplimiento necesita para decidir está en sistemas que ya paga, con una forma que nadie tiene tiempo de leer.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
-      Nos conectamos a esos sistemas, guardamos la copia de trabajo en máquinas que controla el cliente y mostramos el razonamiento que hay detrás de cada respuesta, para que quien firma pueda comprobarlo.
+      Nos conectamos a esos sistemas, guardamos la copia de trabajo en las máquinas que indica el plan del cliente y mostramos el razonamiento que hay detrás de cada respuesta, para que quien firma pueda comprobarlo.
     </p>
   </div>
 
@@ -51,7 +51,7 @@ author: "Runink"
       Un trabajo en el que el software lee y una persona decide, y en el que el registro de eso está lo bastante completo como para entregárselo a un auditor, a un regulador o a una contraparte sin prepararlo antes.
     </p>
     <p class="text-lg text-ink-2 mt-6 max-w-3xl">
-      Es hacia donde construimos, no algo que digamos tener terminado. Por eso cada respuesta llega como un borrador que espera un nombre, por eso una comprobación que no pudo ejecutarse lo dice en lugar de darse por buena, y por eso el razonamiento sobre los registros de un cliente ocurre en las máquinas de ese cliente.
+      Es hacia donde construimos, no algo que digamos tener terminado. Por eso cada respuesta llega como un borrador que espera un nombre, por eso una comprobación que no pudo ejecutarse lo dice en lugar de darse por buena, y por eso el razonamiento sobre los registros de un cliente nunca va a un servicio de IA externo.
     </p>
   </div>
 {{< /section-container >}}
@@ -84,9 +84,9 @@ author: "Runink"
           description="Cuando una parte de un trabajo no ocurre, el resultado dice qué parte y por qué. Un programa que informa de éxito por un trabajo que no hizo es el fallo contra el que más hemos diseñado."
       >}}
       {{< value-card
-          title="Sus registros se quedan en sus máquinas"
+          title="Ningún servicio de IA externo lee sus registros"
           icon="scale"
-          description="Los modelos corren en máquinas que usted controla, y hay un único extremo de inferencia: el que usted configura. El razonamiento sobre sus archivos ocurre donde están sus archivos. Así es como está construido, y no un interruptor que alguien tenga que poner, así que pídanos recorrer el límite con usted en vez de quedarse con la frase."
+          description="Los modelos corren en las máquinas que indica su plan, sus propios servidores, su cuenta en la nube o las máquinas compartidas de Runink, y hay un único extremo de inferencia: el que se configura para su plan. Así es como está construido, y no un interruptor que alguien tenga que poner, así que pídanos recorrer el límite con usted en vez de quedarse con la frase."
       >}}
       {{< value-card
           title="No nos atribuimos certificaciones"
