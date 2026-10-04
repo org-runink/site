@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">A estação e a tendência são separadas.</strong> O seu próprio histórico é decomposto na tendência de fundo, na forma estacional que se repete e no que sobra. É no que sobra que uma virada aparece primeiro.</li>
 <li><strong class="text-stone-200">A previsão diz qual método a produziu, e por que aquele.</strong> Modelos que competem entre si são testados contra períodos que o seu histórico já contém, e o que previu melhor esses períodos é o que é usado. A resposta leva o nome do método que ganhou.</li>
 <li><strong class="text-stone-200">Uma série que ele não consegue ajustar é recusada, não ajustada de qualquer jeito.</strong> Períodos de menos, ou nenhum modelo que se sustente, e a resposta diz isso. Ela não volta como uma linha de aparência confiante sem nada por baixo.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Hipotético
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        Esta página descreve um mecanismo e o formato de uma semana de trabalho, não um acontecimento que aconteceu. É uma ilustração, e nenhuma parte dela foi executada contra os dados de um cliente. Nada aqui é medido, e não há números sobre o que ela devolve.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="o-sinal-virou-antes-do-plano" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">O Sinal Virou Antes Do Plano.</h2>
@@ -71,7 +63,7 @@ author: "Runink"
                 Isto é o sinal, não a resposta. O que comprar, quanta cobertura manter e qual fornecedor ainda consegue cumprir a data é o trabalho seguinte, e está descrito em <a href="/pt/use-cases/fulfillment-optimization/">cobertura de estoque e planejamento de fornecedores</a>. A previsão diz que o item virou e com quanta confiança; o abastecimento decide o que fazer a respeito. Mantê-los separados é de propósito, porque as duas coisas são discutidas por pessoas diferentes.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                O que chega a uma pessoa é uma coisa só: este item, a virada, o método por trás dela, os períodos sobre os quais foi testada, e uma mudança redigida no plano. Uma pessoa com nome aprova, edita ou recusa, e essa decisão fica anotada. Aprovar é o que envia — e onde um passo por trás disso ainda não tem nada implementado, sendo uma escrita no seu sistema de planejamento o exemplo honesto, a resposta nomeia esse passo como não executado em vez de relatar a mudança como feita. A decisão e a execução são anotadas como dois fatos diferentes, porque são. Roda nas máquinas que o seu plano indica, e o histórico não vai para nenhum serviço de IA externo.
+                O que chega a uma pessoa é uma coisa só: este item, a virada, o método por trás dela, os períodos sobre os quais foi testada, e uma mudança redigida no plano. Uma pessoa com nome aprova, edita ou recusa, e essa decisão fica anotada. Aprovar é o que envia, e a resposta nomeia cada passo que rodou e qualquer um que não pôde rodar, em vez de relatar a mudança como feita. A decisão e a execução são anotadas como dois fatos diferentes, porque são. Roda nas máquinas que o seu plano indica, e o histórico não vai para nenhum serviço de IA externo.
             </p>
         </div>
         <div>
@@ -88,7 +80,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Todo número abaixo é seu, não nosso. Não estamos oferecendo os nossos, porque não temos os seus. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
+                Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Erro de previsão, por item, contra o que de fato vendeu.</strong> Tirado do seu sistema de planejamento. Pegue um ano inteiro, porque os itens estacionais e os itens estáveis erram de formas diferentes. A questão não é o erro cair. A questão é ele ser declarado por item em vez de ser diluído numa média única e reconfortante.</li>
@@ -119,7 +111,7 @@ author: "Runink"
     },
     {
       "question": "Quem muda o plano?",
-      "answer": "Uma pessoa nomeada. O achado chega como uma mudança redigida para alguém aprovar, editar ou recusar, e essa decisão fica no registro. Aprovar é o que envia, e onde uma etapa por trás ainda não tem nada implementado &mdash; uma escrita no seu sistema de planejamento é o exemplo honesto &mdash; a resposta nomeia aquela etapa como não executada. A decisão e a execução ficam registradas como dois fatos diferentes, porque são."
+      "answer": "Uma pessoa nomeada. O achado chega como uma mudança redigida para alguém aprovar, editar ou recusar, e essa decisão fica no registro. Aprovar é o que envia, e a resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar. A decisão e a execução ficam registradas como dois fatos diferentes, porque são."
     },
     {
       "question": "Por que o resíduo é reportado em vez de descartado?",

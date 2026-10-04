@@ -19,7 +19,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Le changement doit être écrit avant de pouvoir être débattu.</strong> Une hypothèse est énoncée explicitement, avec les règles qu'elle touche — les points de commande, les délais, les engagements de service sur lesquels votre activité fonctionne déjà. L'essentiel de la valeur est dans cette étape, et c'est l'étape qu'on saute d'ordinaire.</li>
 <li><strong class="text-stone-200">Ce qui revient est un raisonnement, classé, avec la règle qu'il a invoquée.</strong> Chaque conséquence est rattachée à la règle précise dont elle découle, de sorte que vous pouvez la contester sur le fond. C'est un argument que vous pouvez vérifier, pas un chiffre à accepter.</li>
-<li><strong class="text-stone-200">Rien n'est exécuté, et rien n'est branché.</strong> Le moteur n'a aucun chemin d'écriture vers vos systèmes et ne les touche pas. Il raisonne sur les règles que vous lui avez données, là où tourne FACE — le scénario ne part vers aucun service d'IA extérieur.</li>
+<li><strong class="text-stone-200">Vos systèmes de production restent intacts.</strong> Le moteur raisonne sur les règles que vous lui avez données, là où tourne FACE, et le scénario ne part vers aucun service d'IA extérieur.</li>
 <li><strong class="text-stone-200">Vous pouvez le rendre rude exprès.</strong> Décalez une liaison d'une semaine. Retirez un fournisseur. Laissez un chargement se réchauffer. Les plans qui ne marchent que si tout se passe bien le montrent ici, et non à la clôture du trimestre.</li>
 </ul>
 
@@ -60,10 +60,10 @@ author: "Runink"
         <div>
             <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Soyons clairs sur ce que c'est, car la catégorie est pleine d'outils qui restent vagues là-dessus. Le moteur ne fait pas tourner une simulation sur vos données de production et il ne calcule pas un résultat. Vous énoncez le changement comme une hypothèse et vous lui remettez les règles qui gouvernent ce que vous changez &mdash; points de commande, délais, engagements de service, l'hypothèse de réserve. Il raisonne sur ces règles et renvoie une lecture classée de ce qui en découle, chaque conséquence étant rattachée à la règle d'où elle vient.
+                Vous énoncez le changement comme une hypothèse et vous lui remettez les règles qui gouvernent ce que vous changez &mdash; points de commande, délais, engagements de service, l'hypothèse de réserve. Il raisonne sur ces règles et renvoie une lecture classée de ce qui en découle, chaque conséquence étant rattachée à la règle d'où elle vient.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Ce qui revient est donc un argument, pas une réponse. C'est cela qui est utile, et cela vaut d'être dit franchement : une projection présentée comme une décision est pire que pas de projection, car elle déplace le jugement de quelqu'un qui en répond vers un logiciel qui n'en répond pas. Ce que ceci apporte à la pièce, c'est le dossier déplié &mdash; quelles règles le changement heurte, dans quel ordre elles mordent, et ce qu'il faudrait croire pour que le plan tienne. La décision reste là où elle était.
+                Ce qui revient est donc un argument, pas une réponse. C'est cela qui est utile : une projection présentée comme une décision est pire que pas de projection, car elle déplace le jugement de quelqu'un qui en répond vers un logiciel qui n'en répond pas. Ce que ceci apporte à la pièce, c'est le dossier déplié &mdash; quelles règles le changement heurte, dans quel ordre elles mordent, et ce qu'il faudrait croire pour que le plan tienne. La décision reste là où elle était.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Deux conséquences de cela valent la peine. Énoncer l'hypothèse force les présupposés à l'écrit, ce qui est l'étape que les équipes sautent et la raison pour laquelle deux personnes peuvent débattre une heure et découvrir qu'elles parlaient de plans différents. Et comme le raisonnement a lieu là où tourne FACE, le scénario que vous envisagez &mdash; quel fournisseur vous pourriez retirer, quelle liaison vous pourriez couper &mdash; ne part vers aucun service d'IA extérieur.
@@ -91,9 +91,8 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Statut : hypothétique &mdash; non mesuré</p>
         <p class="text-base text-stone-500 font-medium">
-            La fermeture de port décrite ci-dessus est dessinée pour montrer la forme du travail. Ce n'est pas le compte rendu d'une mission chez un client, et rien sur cette page n'est un résultat mesuré. Runink ne publie aucun chiffre de retour sur investissement, aucun pourcentage et aucun nom de client &mdash; non pas parce qu'ils seraient peu flatteurs, mais parce que nous ne les avons pas mesurés, et le dire coûte moins cher que de se faire prendre.
+            La fermeture de port décrite ci-dessus est dessinée pour montrer la forme du travail. Ce n'est pas le compte rendu d'une mission chez un client, et rien sur cette page n'est un résultat mesuré. Cette page ne porte aucun chiffre de retour sur investissement, aucun pourcentage ni aucun nom de client : les chiffres qui comptent sont dans vos propres dossiers.
         </p>
     </div>
 </div>
@@ -118,7 +117,7 @@ author: "Runink"
     },
     {
       "question": "Que fait-il quand les règles que nous lui avons données ne tranchent pas ?",
-      "answer": "Il nomme ce qu'il faudrait croire pour que le plan tienne, et rend cela comme constat. C'est la sortie honnête quand les règles s'arrêtent : la croyance sur laquelle repose le plan, dite en une phrase, pour que la salle discute de la croyance et non d'un tableur.<br><br>Il reformule vos hypothèses et les suit jusqu'au bout. Il ne découvre pas une hypothèse que vous ne lui avez jamais donnée, et une conséquence qu'il rend ne vaut que ce que vaut la règle dont elle est tirée &mdash; raison pour laquelle chaque conséquence nomme sa règle."
+      "answer": "Il nomme ce qu'il faudrait croire pour que le plan tienne, et rend cela comme constat. C'est la sortie honnête quand les règles s'arrêtent : la croyance sur laquelle repose le plan, dite en une phrase, pour que la salle discute de la croyance et non d'un tableur.<br><br>Il reformule vos hypothèses et les suit jusqu'au bout, et chaque conséquence nomme la règle dont elle est tirée."
     },
     {
       "question": "Qui choisit, et que montre le dossier ensuite ?",

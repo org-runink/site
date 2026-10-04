@@ -552,7 +552,7 @@
         <li class="hp-prod__item">
           <a class="hp-prod__link" href="{{ $p.RelPermalink }}"{{ if $foreign }} hreflang="{{ $p.Language.Lang }}"{{ end }}>
             <h3 class="hp-prod__name">{{ .name }}</h3>
-            <p class="hp-prod__sub">{{ .sub }}</p>
+            {{ with .sub }}<p class="hp-prod__sub">{{ . }}</p>{{ end }}
             <p class="hp-prod__line">{{ .line }}</p>
             <span class="hp-prod__go">
               {{ if $isPage }}{{ $.Params.products_page_cta | default "See the product" }}{{ else }}{{ $.Params.products_cta }}{{ with $p.Params.source_pages }} &middot; {{ . }} {{ $.Params.products_pages_word | default "pages" }}{{ end }}{{ end }}{{ if $foreign }}{{ with $.Params.products_lang_note }} &middot; {{ . }}{{ end }}{{ end }}

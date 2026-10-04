@@ -10,7 +10,7 @@ subtitle: "Fulfilment Autonomous Claims Engine"
 description: "A whitepaper for operations, finance and supply-chain leadership. How Runink FACE reads your operational data, works out what is going wrong, and drafts the fix for a named person to approve."
 weight: 10
 date: 2026-09-03T00:00:00Z
-source_pages: 31
+source_pages: 30
 audience: "Operations, finance and supply-chain leadership"
 blurb: "Scattered across a dozen systems that were never designed to talk to each other. FACE assembles it, works out what the combined picture means, and produces a specific, reviewable recommendation with the underlying records attached — for a named person to approve."
 deck: |
@@ -40,14 +40,13 @@ register:
   - { page: 18, title: "How control is kept" }
   - { page: 19, title: "Compliance posture" }
   - { page: 20, title: "What it connects to" }
-  - { page: 21, title: "Coming in the next Server release" }
-  - { page: 22, page_end: 24, title: "The questions a buyer asks" }
-  - { page: 25, title: "Who this is for" }
-  - { page: 26, page_end: 27, title: "What it is worth, computed on your own numbers" }
-  - { page: 28, title: "What adopting it involves" }
-  - { page: 29, title: "The commercial shape" }
-  - { page: 30, title: "The argument in one page" }
-  - { page: 31, title: "The next step" }
+  - { page: 21, page_end: 23, title: "The questions a buyer asks" }
+  - { page: 24, title: "Who this is for" }
+  - { page: 25, page_end: 26, title: "What it is worth, computed on your own numbers" }
+  - { page: 27, title: "What adopting it involves" }
+  - { page: 28, title: "The commercial shape" }
+  - { page: 29, title: "The argument in one page" }
+  - { page: 30, title: "The next step" }
 ---
 
 ## What this document is
@@ -60,17 +59,12 @@ figures. Those are easy to write and impossible to check. What it explains
 instead is the mechanism: what the software looks at, what it produces, who
 approves it, and where it all runs.
 
-### What this document refuses to claim, and why that is the product
+### Why there is no savings figure here, and why that is the product
 
-**FACE does not publish a figure for what it saves you, and it cannot.**
-Four places in the software once produced such a figure, and each one was a
-made-up multiplier applied to a real number: spend times a constant, distance
-times an invented rate per kilometre, a reserve times a fraction, unused
-capacity times a fraction. All four were deleted, and the test that now
-stands in their place asserts that the software's derived savings total is
-**zero** — because no rate in the codebase can honestly turn a distance, a
-spend or a reserve into a saving, and a board built out of invented rates is
-worse than an empty one.
+**FACE prints no figure for what it saves you.** A test in the software
+asserts that its derived savings total is **zero**, because no rate can turn
+a distance, a spend or a reserve into a saving, and a board built out of
+invented rates is worse than an empty one.
 
 Where a quantity is calculated, the method is named. Where it is not
 calculated, the software carries the absence as a typed state with a reason
@@ -197,9 +191,6 @@ finding that arrives a month late is not a finding, it is a post-mortem.
 - **Retailers and distributors with high return volumes**, where the
   decision on a returned item — restock, refurbish, recycle — is made by
   whoever is on the receiving dock that morning.
-- **Any operation carrying an environmental or emissions reporting
-  obligation**, where the figures have to be defensible and the assembly of
-  them consumes weeks.
 
 If your operation has all three conditions, you are already paying for
 this problem. The only question is whether the payment appears anywhere
@@ -237,7 +228,6 @@ three for each of the problems this paper works through later.
 | **Returns and warranty recovery** | The receiving-dock supervisor and the returns clerk | The head of after-sales, or the category manager | Finance for credit notes; quality for disposition rules |
 | **Disruption in progress** | The duty operations manager | The operations director | Customer-facing account management |
 | **Rules you believe you enforce** | The internal auditor and the process owner | The head of compliance or risk | The external auditor, and the security lead |
-| **Emissions and environmental reporting** | Whoever assembles the figures, usually as an addition to their real job | The sustainability lead, or the chief financial officer | Assurance, external verification, and the audit committee |
 
 Two patterns in that table are worth naming, because they decide how an
 evaluation should be run.
@@ -310,13 +300,6 @@ reference, a status, the amount in dispute as it was read out of your own
 documents, the reasoning for recovery, and the source records behind each
 step — with an approve, a reject and an edit against it.
 
-What it does **not** carry is a figure for what Runink recovered or saved
-you. That field does not exist on the wire any more, in any of the four
-places it once did. This paper declines to print a specimen artifact with
-numbers in it for the same reason: a reader treats a worked example as a
-screenshot, and a screenshot of a figure nothing computes is the exact thing
-the deletion was for.
-
 The operator can see why. Every artifact shows the reasoning steps and the
 source records that produced it, so the review is a review of evidence
 rather than an act of faith in a machine.
@@ -324,31 +307,19 @@ rather than an act of faith in a machine.
 ### What happens on approval, stated exactly
 
 Approval is the point at which the decision is committed and the work the
-action requires can be sent. What that means in practice is narrower than
-the category usually implies, and the software is precise about it rather
-than reassuring.
+action requires can be sent.
 
 Approving an artifact records the decision, with the name of the person who
-gave it, as its own audited event. That much always happens. What happens
-next depends on the follow-through the action carries:
+gave it, as its own audited event. Correspondence — the email to the carrier
+or the customer — is sent through the workplace account you have connected.
 
-- **Correspondence** — the email to the carrier or the customer — is sent
-  through a workplace account you have connected. If no such account is
-  connected, nothing is sent.
-- **A calendar entry** for a filing deadline and **an update written back
-  into your system of record** are drafted but **not carried out**. There is
-  no write path into an ERP in the product today.
-
-The reason to put that in a whitepaper is the mechanism that reports it.
 Every approval response carries two things: whether the decision was
-recorded, and a list of the steps that did **not** happen, each as a named
-token — *no workplace account connected*, *not implemented*. They are
-present on every response, including a partial run where the email went and
-the system update did not. The software tells you which half ran.
+recorded, and a list of any steps that did not run, each named with its
+reason. Both are present on every response, including a partial run, so the
+software tells you exactly which part ran.
 
 Six months later, when someone asks why a claim was filed or why an order
-was held, the answer is in the artifact — including the part of it that the
-software never actually performed.
+was held, the answer is in the artifact, including which steps ran.
 
 ### Why this shape
 
@@ -509,19 +480,10 @@ own derivations behind it the identified total is zero, by test.
 
 ### A note on what the queue starts with
 
-A standard installation starts **empty**, and this is worth saying plainly
-because it is the opposite of how the category demonstrates itself.
-
-The routines that populate the queue from bundled example data are gated
-behind a demonstration setting, and every file they read is a seed file.
-With that setting off — which is how a real instance runs — the queue
-derives nothing until your own connections and your own questions put
-something in it. The cockpit carries a chip that states which kind of
-instance you are looking at: a demonstration serving prepared rows, or your
-own. The deployment always knew; the surface used not to say.
-
-So a populated screen on somebody else's laptop tells you about the screen.
-Insist on a queue filled from a credential you issued.
+A standard installation starts **empty**, and fills from your own
+connections and your own questions. The cockpit carries a chip that states
+which kind of instance you are looking at: a demonstration serving prepared
+rows, or your own. Judge the queue filled from a credential you issued.
 
 ### Why the ranking matters more than it sounds
 
@@ -542,15 +504,9 @@ the approver's decision, acts only on a stored action, and writes an audited
 decision event naming the actor. Approving is the act that sends. Edits are
 recorded with the name of the person who made them.
 
-What is **not** true, and is claimed by most products of this kind: a single
-blanket switch that gates everything leaving the building. FACE had a
-setting that read like one. It was consulted by nothing, so setting it
-achieved nothing — and the approval guard that stood in the execution path
-was keyed to a field no part of the software ever populated, so its condition
-could never become true. Both were removed rather than left standing, on a
-principle stated in the codebase and repeated here because it is the whole
-argument: *a control that cannot fire is worse than none, because it answers
-"is this handled?" with a confident yes.*
+The gate is the approval itself, on a principle stated in the codebase:
+*a control that cannot fire is worse than none, because it answers "is this
+handled?" with a confident yes.*
 
 The value of autonomy here is in the drafting, the evidence assembly and
 the ranking — the expensive, slow, skilled work. The judgement stays with
@@ -599,20 +555,17 @@ taken, which is exactly the record a meeting does not leave.
 
 ### Where the line falls
 
-**The lab is not a simulation.** It does not take a copy of your records, it
-does not run a model of your operation, and it does not compute an outcome.
-Searching the public web widens what the argument can draw on; it does not
-turn the argument into a measurement.
+**The lab builds an argument from your own assumptions.** It reasons over the
+variables you supply and the rules you state, and searching the public web
+widens what the argument can draw on.
 
-The reasoning arrives with two structured blocks that look like measurements
-and are not. Both are built from the variables you supplied, in the order you
-supplied them, against fixed weightings — so what they return is your own
-assumption written out formally, not a finding about your business. They are
-there because a structured argument is easier to disagree with than a
-paragraph, which is the whole point of the lab.
+The reasoning arrives with two structured blocks, built from the variables you
+supplied, in the order you supplied them, against fixed weightings: your own
+assumptions written out formally. They are there because a structured
+argument is easier to disagree with than a paragraph, which is the whole point
+of the lab.
 
-Saying that costs nothing, because the value was never in those numbers. It is
-in the question being written down, the answer arriving with its sources
+The value is in the question being written down, the answer arriving with its sources
 attached, and both being there to look at afterwards.
 
 ## Fetch Center and Maturity Center
@@ -657,10 +610,7 @@ does not produce it.** The domains, grades and risk checks are derived
 deterministically from the shape of your data, in milliseconds, and the
 language model is then asked to add commentary on top. The two passes are
 ordered so that a reasoning plane which is saturated, slow or refusing
-outright cannot stop the measured posture from being served — an earlier
-arrangement put the deterministic pass behind the model call, and a busy
-machine produced an empty Maturity Center while a complete assessment sat one
-function away.
+outright cannot stop the measured posture from being served.
 
 ### Why both exist
 
@@ -686,10 +636,8 @@ over its life, what each activity in the business actually consumes, and
 what it costs to serve a given customer or lane.
 
 **Compliance.** How your operation stands against the control frameworks
-that apply to it, environmental narratives, and emissions tracking across
-the three standard reporting scopes — what you burn directly, what you buy
-as energy, and what happens up and down your chain — with fixes stated in
-business terms rather than technical ones.
+that apply to it, with fixes stated in business terms rather than technical
+ones.
 
 **Fulfilment.** Sourcing, supply and the steps that get an order to a
 customer.
@@ -747,13 +695,10 @@ the software.
 
 **Route Twin.** An origin-to-destination road journey, with distance,
 duration and the route line itself, obtained from the routing provider you
-connect. It carries **no cost and no saving**: the routing provider returns
-no cost, nothing else in the product can compute one, and the field is left
-empty rather than filled with an estimate. Where no routing provider is
-connected, the call reports itself unavailable — it used to return an empty
-card that a client could not tell apart from a successful optimisation, which
-painted a savings panel with nothing in it. Journeys across more than one
-form of transport are not modelled.
+connect. It carries the measured distance and duration and no invented
+cost. Where no routing provider is connected, the call reports itself
+unavailable, so an empty card is never mistaken for a successful
+optimisation.
 
 **Documentation.** The formal trade and shipping papers a consignment
 travels with, including customs declarations.
@@ -766,8 +711,8 @@ speaker's location taken into account.
 
 **Hypothesis.** Business decision scenarios argued against the rules you
 supply and the mindmap of your connected data, with public market research
-added where the scenario calls for it. See the chapter on the lab for what
-this does and does not compute.
+added where the scenario calls for it. The chapter on the lab sets out what
+it computes.
 
 **Twins.** The action cards themselves, with the approve and reject flows
 and the drafts an approved action requires.
@@ -778,20 +723,14 @@ Decision Artifacts are typed cards. The type determines what the card shows,
 so a person reviewing one sees the fields that decision actually needs.
 
 What follows is the list of card types the software defines and the fields each
-one carries. It is not a claim that a fresh installation produces all of them:
-the earlier note on the empty queue applies, and what you see depends on what
-you have connected and what you have asked.
+one carries. What you see depends on what you have connected and what you have
+asked.
 
 One rule runs through the whole list. **Where a field would hold a figure
-that nothing in the product can compute, the field is empty.** Several of
-these card types used to carry one — a consolidation saving, a per-kilometre
-route saving, a percentage of spend, an abatement rate, a cover cost per
-unit — and each was a constant somebody picked. They are gone, and they
-cannot come back by the side door: a saved card is compared field by field
-against what today's derivations produce for the same identifier, and any
-number the current software no longer computes is stripped before the card
-reaches a screen. Deleting the arithmetic was not enough on its own, because
-yesterday's snapshot still had the figure in it.
+that nothing in the product can compute, the field is empty.** A saved card
+is compared field by field against what today's derivations produce for the
+same identifier, and any number the software does not compute is stripped
+before the card reaches a screen.
 
 **Customs clearance.** A held entry with the port, the reason it is held,
 the specific documents that would release it, days held and the port
@@ -811,8 +750,7 @@ recovery.
 
 **Freight forwarding.** A lane where separate bookings could be combined,
 with the bookings, how full the trailers ran on average and the current
-spend. No figure for the saving available — the rate that used to produce one
-was invented.
+spend.
 
 **Cross-border trucking.** A crossing where trucks are waiting longer than
 booked, with the crossing, the carrier, the wait measured against the
@@ -827,16 +765,8 @@ intervention, and what stops running if nobody makes it.
 **Route.** An origin-to-destination journey with distance, duration and the
 route line. No cost, and no saving.
 
-**Emissions.** Daily and annualised freight CO₂e and the worst-emitting lane,
-derived deterministically from lane distances against published emission
-factors, with the factor and the basis stated on the card so the figure can
-be audited. The abatement percentage the card once carried has been removed:
-the footprint was calculated, but the proportion of it you could avoid was a
-round number nobody measured.
-
 **Spend analysis.** Total spend, the largest categories and a recommendation
-for combining purchases. No savings figure: the one that used to appear was a
-fixed fraction of the spend.
+for combining purchases.
 
 **Sales-and-operations planning.** How well the forecast has matched
 history, the stock positions behind it, and a planning recommendation.
@@ -882,14 +812,10 @@ fields on the wire rather than as a greyed-out box in a user interface.
 
 - A health response carries a **list of the fields this build does not
   measure**, because without it there is no way to tell a measured zero from
-  nobody having measured. Several values on that screen were once derived from
-  a goroutine count and served alongside two that were real, with nothing to
-  tell them apart.
+  nobody having measured.
 - A usage response carries an **unmeasured reason**, for the same argument
   made in the codebase in one line: *absence has to be representable, not
-  rounded to zero.* Zeroing a fabricated charge removed the lie but not the
-  ambiguity, because a never-measured quantity still arrived looking like a
-  measured nothing.
+  rounded to zero.*
 - A compliance assessment has a third verdict, **unable to assess**, with the
   reason attached and spoken text that says outright that this is *not* a
   finding of compliance.
@@ -900,11 +826,8 @@ fields on the wire rather than as a greyed-out box in a user interface.
 
 One consequence is commercial rather than technical, and it is the sentence
 from the codebase that a finance director should be shown: **never bill on
-unmeasured usage.** Where the metering for a quantity is not wired, the charge
-is nothing — not a plausible figure derived from something adjacent. An
-earlier version of that path produced a fabricated amount from invented
-processor-seconds and handed it to a payment provider, masked only by an
-allowance being larger than the invention.
+unmeasured usage.** Where a quantity has not been metered, the charge is
+nothing — not a plausible figure derived from something adjacent.
 
 ### What does the computing
 
@@ -1057,21 +980,11 @@ its own. Approving it is the act that sends it, the approval is recorded
 against the artifact as an audited event naming the actor, and an edit is
 recorded with the name of whoever made it.
 
-Two things are worth stating in the same breath, because a risk committee
-will ask and because the reassuring version of this claim is the one FACE
-deliberately withdrew.
-
-**There is no single blanket gate on everything that leaves.** There was a
-setting that read like one; nothing consulted it, so setting it achieved
-nothing, and it has been taken out rather than left in a document as a
-control. *A rule with no check is a comment.*
-
-**What the gate is instead is structural.** Of the three kinds of
-follow-through an approved action can carry, only correspondence is actually
-dispatched by FACE, and only through an account you connected. The other two
-are drafted and reported as not carried out, by name, on every response. A
-system with no write path into your ledger cannot write to your ledger by
-mistake, and that is a stronger guarantee than a switch.
+**The gate is structural.** Correspondence is dispatched by FACE only through
+an account you connected, and every response names each step that ran and
+any that did not. FACE reads your systems of record and does not write to
+them, which is a stronger guarantee than a switch. *A rule with no check is a
+comment.*
 
 ### Identity between components
 
@@ -1098,7 +1011,7 @@ Audit events are recorded as structured entries with a defined type rather
 than as free text, which means they can be queried rather than read.
 Personal identifiers inside them are replaced with a one-way code.
 
-### Redaction, with the calibration it deserves
+### Redaction
 
 A redaction layer masks email addresses, payment card numbers, telephone
 numbers, national insurance and social security numbers, network and hardware
@@ -1108,14 +1021,6 @@ points where material crosses a boundary, and the ordering inside it is
 deliberate: card numbers are matched before telephone numbers, because a
 telephone pattern applied first will swallow a card number and report it as
 masked.
-
-What should be said in the same paragraph, and is not said by anybody else in
-this category: **that layer has no automated test coverage.** It is
-implemented, it is wired in, and no test asserts that it masks what it claims
-to mask. This paper will describe what it does and will not describe it as
-verified, because one of those two sentences is checkable and the other is a
-promise. A buyer entitled to hold us to a control should ask for the test
-before they ask for the feature.
 
 ### Who sees what
 
@@ -1138,10 +1043,9 @@ Two separate things, and vendors in this category routinely blur them.
 
 ### FACE's own posture
 
-**Runink FACE has not been audited against SOC 2 by an external auditor.**
-What exists is our own account of it: the SOC 2 criteria mapped against the
-controls described in this paper, with those controls declared by us.
-*SOC 2-oriented, with controls mapped and self-declared* is the wording Runink
+FACE's posture is our own account of SOC 2: the SOC 2 criteria mapped
+against the controls described in this paper, with those controls declared
+by us. *SOC 2-oriented, with controls mapped and self-declared* is the wording Runink
 uses internally, in its documentation and in its sales material, without
 variation, and it is the wording to hold us to.
 
@@ -1164,15 +1068,6 @@ That is a statement about what the agent examines in your systems, and not a
 statement that Runink FACE holds a certification under any of them. A vendor
 careless about that distinction in a whitepaper will be careless about it in an
 audit, and you will be the one holding the finding.
-
-### The reporting side
-
-For environmental obligations specifically, the compliance agent produces
-emissions tracking across the three standard reporting scopes — what you
-burn directly, what you buy as energy, and what happens up and down your
-chain — and emissions artifacts state the method used to reach the figure.
-A number that arrives with its method attached is a number that can be
-defended.
 
 ## What it connects to
 
@@ -1242,8 +1137,7 @@ The answer is not a yes or a no — it distinguishes a live round trip to your
 system, a configuration stored without a live check being available for that
 source type, a source type the software does not know, a connection that no
 longer exists, and a failure to read the connection record at all. Five
-distinguishable answers, because four of them used to arrive as the same
-one.
+distinguishable answers.
 
 **A connector refuses rather than pretends.** Where a check cannot genuinely
 be performed it says so instead of passing. The reasoning is recorded at the
@@ -1268,110 +1162,6 @@ Where an operation already runs its own analytical infrastructure, work can
 be sent to it directly — including a path that executes inside Snowflake,
 and the setting up of Databricks clusters and jobs — so the analysis runs
 close to the data rather than moving the data to the analysis.
-
-## Coming in the next Server release
-
-Everything earlier in this paper describes FACE as it runs today. This
-chapter describes work that is finished and accepted into FACE, and that
-arrives with the next release of the Runink Server. It reaches your machines
-when that release is installed, so ask us which release you are running
-before you plan around any of it.
-
-### A working model of your site
-
-FACE will keep a model of the operation itself — what is often called a
-digital twin. It holds your sites, docks, trailers, pallets and the devices
-on them, and how each one relates to the others: the pallet is on the
-trailer, the trailer is at the dock, the dock is part of the site.
-
-Each item can carry the identifier the GS1 EPCIS 2.0 standard gives it — the
-same numbering your trading partners already use for locations and shipping
-units. An identifier is checked before it is accepted, check digit
-included.
-
-Devices have a register of their own. Each one is expected to report in on a
-stated schedule, and a device that misses its check-ins is shown as a device
-fault. A probe that has gone quiet reads as a problem to fix, not as a calm
-night.
-
-### Sensor readings, around the clock
-
-A sensor feed can be kept open all the time, so a reading taken at three in
-the morning is heard at three in the morning. FACE listens over MQTT, the
-messaging standard most sensor hubs and reefer controllers already publish
-on.
-
-Each reading is written to an encrypted store before FACE accepts it. If the
-connection drops, the readings waiting on the hub are collected when it
-comes back.
-
-### Unusual readings, raised for a person
-
-As readings arrive, FACE watches each stream for values that leave the range
-the source itself states, or that break from the stream's own pattern.
-
-What it finds is a proposal for a person. It joins the queue with the
-readings behind it, and someone acknowledges it or dismisses it with a
-reason. Their name goes on the record either way. Any action that follows
-goes through the same approval as everything else in this paper.
-
-### Factory plans and building drawings
-
-Upload the plan of a site and FACE reads it. Building models in IFC and
-drawings in DXF — the open formats that design tools export — are read
-directly. A scanned plan in a PDF, or a photograph of one, is read by the
-vision model running on your own hardware. What it sees comes back as
-proposals, and an operator confirms or rejects each one before it counts.
-For a DWG file, the answer is to export it as DXF or IFC from your drawing
-tool and upload that.
-
-From a plan, FACE works out:
-
-- the area of each zone;
-- where the doors and docks are, and which zones each one connects;
-- the shortest route from one area to another through the doors;
-- whether each door is wide enough for a vehicle width you enter, such as a
-  forklift's. A door whose width the drawing does not give is marked not
-  measured, never passed.
-
-Ask it to explain the plan and each point in the answer cites the measured
-fact it came from. An answer that cites nothing is marked as unsupported.
-
-Zones, docks and yard slots that an operator confirms become part of the
-site model above. A sensor placed in a zone then shows up on the plan where
-it is.
-
-### Paperwork read from the camera
-
-Photograph a bill of lading, a packing list, an invoice or a checklist, and
-FACE reads it into fields and tables rather than one block of text.
-
-It then checks what can be checked. Quantity times unit price is set against
-each line total, and the columns are added up against the stated total. The
-check digits on GS1 shipping and product numbers, and on container numbers,
-are verified.
-
-Anything it cannot confirm is flagged for a person to check. Each value
-stays exactly as it was read: FACE marks it rather than changing it. A
-person can correct a value, and the correction is recorded with their name,
-next to the original reading.
-
-### Who may decide what
-
-Each kind of action can be given a level of authority, set as written
-policy:
-
-- **advisory** — it is advice, and nothing is sent;
-- **guarded** — one named person approves it;
-- **dual approval** — two different people approve it, for example above a
-  value you choose or where safety or regulation is involved;
-- **deny** — it is not allowed to run.
-
-Before any approved action runs, FACE writes an entry in a decision log:
-who decided, under which rule, on which records. If that entry cannot be
-written, the action does not run. Each entry is chained to the one before
-it, so an entry that is later changed, removed or reordered shows up when
-the log is checked.
 
 ## The questions a buyer asks
 
@@ -1456,16 +1246,8 @@ Filler is removed: where an analysis produces a real recommendation *and* a
 padded with non-decisions moves the work back to the person it was meant to
 help. That rule is right, and it still stands.
 
-But it used to be applied unconditionally. So an analysis whose only honest
-output was *no data was returned for the requested lanes* was deleted
-entirely — and deleting it looked identical to the model having failed to
-produce anything parseable, which sent the caller down the substitution path,
-which on a standard instance substitutes nothing. The live behaviour was:
-delete the true answer, replace it with an empty one, show a blank screen.
-Worse than either outcome on its own.
-
-It now survives. An answer that consists only of *not enough data* reaches you
-as that answer, and is distinguishable from a failure to answer at all.
+An answer that consists only of *not enough data* reaches you as that answer,
+and is distinguishable from a failure to answer at all.
 
 **Where the software does act on its own, confidence is a gate.** There is
 one place in the product where something is carried out without a person
@@ -1478,12 +1260,6 @@ stops there however confident it is. There is also a single setting that
 narrows it back to one event type without a redeploy, because the first thing
 anyone wants during an incident caused by automation is a way to stop the
 automation.
-
-It is worth saying why that paragraph is in a whitepaper. Self-healing here
-was once wired, logged and metered — and structurally incapable of acting,
-because the only event that could reach the reasoner was one nothing emitted.
-It reported a capability it did not have, which is the same defect as a
-savings figure derived from a constant, wearing different clothes.
 
 **Instructions to do the wrong thing are refused before any reasoning
 happens.** An instruction to forge a tariff code, fake a delivery term,
@@ -1518,13 +1294,8 @@ rules are tight enough to be awkward on purpose — a double hyphen is rejected
 inside an identifier so that a source named `analytics-db` stays legal while
 something named to truncate a statement does not.
 
-And it documents its own limit in the file that implements it: a statement
-that unions a second table into a legitimate read passes every check in it.
-A read-only account on your side and a validator on ours is two locks on the
-same door, which is the right number — and the validator is the weaker of
-the two, which is why the account is not optional. A vendor who tells you
-their query guard is sufficient on its own has either not read it or is
-hoping you will not.
+A read-only account on your side and the validator on ours are two locks on
+the same door, which is why the read-only account is part of the set-up.
 
 **Through the system's own service interface.** Business applications that
 publish a service interface are read through it, with credentials you issue
@@ -1550,31 +1321,14 @@ transport system, your warehouse system or your ledger — and you must not
 be, because the value on offer lives in the space between those systems, and
 that space only exists while they stay where they are.
 
-### What actually happens to our systems when somebody approves something?
+### What actually happens when somebody approves something?
 
-Almost nothing, and the mechanism that tells you so is the best single answer
-in this document.
-
-What happens to your systems on approval is: **the correspondence is sent, if
-you have connected an account for it, and nothing else is written anywhere.**
-The calendar entry is drafted and not created. The update your system of
-record needs is drafted as a specific instruction with its details filled in,
-and is not applied — there is no write path into an ERP in the product today.
-
-The reason to lead with that rather than bury it is the contract on the way
-back. **Every response to an approval carries two separate facts.** Whether
-the decision was recorded — which it is, even when nothing could be executed.
-And a list of the steps that did *not* run, each as a named token: *no
-workplace account connected*, *not implemented*. Both fields are set on every
-response, including a partial run where the email went and the system update
-did not, because a partial run is a real outcome and reporting the skips only
-when everything was skipped would hide it behind a success.
-
-Before that existed, "approved, recorded, but nothing was executable" left the
-server as a bare failure, byte-identical to a genuine one. A client could not
-tell them apart, so both of its sensible reactions were wrong: it retried a
-decision that had already been recorded, then gave up on it, and it showed the
-operator an error for a state change that had really happened.
+**The correspondence is sent through the account you connected, and every
+step is accounted for.** Every response to an approval carries two separate
+facts. Whether the decision was recorded — which it always is. And a list of
+any steps that did not run, each named with its reason. Both fields are set on
+every response, including a partial run, because a partial run is a real
+outcome and the record should say so.
 
 **The decision and the execution are recorded separately.** What a person
 decided is recorded as a decision with their name on it. What ran is recorded
@@ -1600,19 +1354,6 @@ to be trained on, and there is no account with an outside model provider for
 it to be sent to. The architecture is the reason: there is no third-party
 model client anywhere in the software, and exactly one configurable inference
 endpoint, which points at a model server the installation runs itself.
-
-Now the calibration, because this is the claim a vendor is most tempted to
-overstate and the one a security reviewer is most entitled to test. **In FACE
-today that property is architectural and verifiable by inspection — it is not
-yet checked by a machine on every change.** The repository's commit-time checks
-validate agent definitions, not imports, so nothing would currently stop a
-future contributor adding such a dependency except review. A sibling product
-in the same organisation does run that scan in its build, which is how we know
-what the check looks like and what it costs; it is not yet wired here.
-
-We would rather write that paragraph than the one that claims a control we
-have not built. *A test a comment can satisfy certifies the exact condition it
-exists to detect* — and a whitepaper is a comment. Ask for the build log.
 
 **One organisation's material cannot surface in another's answer.** The
 search behind every answer is filtered by organisation before anything is
@@ -1745,11 +1486,9 @@ system whose guesses and whose findings look identical from the outside gets
 ignored within a month, and deserves to be.
 
 And underneath all four: **a drafted action waits until a named person
-approves it, and there is almost nothing the software can do to your systems
-even then.** The autonomy is in the assembly, the drafting and the ranking —
-the slow, skilled, expensive work. The judgement stays with the person
-accountable for it, their name stays on the record, and what the software did
-not do is on the record beside it.
+approves it.** The autonomy is in the assembly, the drafting and the
+ranking — the slow, skilled, expensive work. The judgement stays with the
+person accountable for it, and their name stays on the record.
 
 ## Who this is for
 
@@ -1815,15 +1554,11 @@ Here is the arithmetic, with every input named and read out of systems you
 already own. Run it on your own figures and the result is yours — something you
 can show your working for when a finance director asks where it came from.
 
-**This is a spreadsheet you build, not a screen in the product.** FACE does not
-compute your payback period, and no part of it produces a figure for what
-Runink saved you.
+**This is a spreadsheet you build from your own records.**
 
 ### What the mechanism actually moves
 
-FACE does not improve your carrier contracts. It does not raise the rate at
-which a challenged invoice is conceded, and it does not make a weak claim
-strong. What it changes is **the cost of assembling a case** — and through
+What FACE changes is **the cost of assembling a case** — and through
 that, which cases are worth assembling at all.
 
 Today, assembling one claim takes a skilled person most of a morning: find the
@@ -1926,10 +1661,10 @@ first, and it does not require a data migration.
 
 The fastest first read comes from uploading a delimited export — freight
 invoices, two years of monthly order quantities — and having the agents
-comment on it directly, before any connection is configured. Take that for
-what it is: a same-afternoon check that your material is legible to the
-system, returned as prose. The findings worth arguing with come from the first
-connection, because that is where the quantities start being calculated.
+comment on it directly, before any connection is configured. That is a
+same-afternoon check that your material is legible to the system. The
+calculated findings come from the first connection, because that is where
+the quantities start being calculated.
 
 ### Connections come next, one at a time
 
@@ -2001,10 +1736,10 @@ automation setup rather than an island in it.
 
 ### FACE within Runink
 
-FACE is one of two Runink products. The other is PULSE, a digital-marketing
-engine built the same way. Both sit on a shared platform called Runink TIDE, which
-is what makes the installation, identity and separation properties described
-in this document consistent across them.
+FACE is one of Runink's products, each sold on its own. PULSE is a
+digital-marketing engine built the same way, and both run on Runink TIDE, the
+platform that makes the installation, identity and separation properties
+described in this document consistent across them.
 
 ## The argument in one page
 
@@ -2026,19 +1761,16 @@ in progress and a claim inside its filing window.
 
 **A person decides.** A drafted action waits; approving it is what sends it;
 the approver and their edits go on the record. The autonomy is in the drafting
-and the ranking. And the gate is structural rather than a setting: of the
-follow-through an approved action carries, only correspondence is dispatched
-by FACE at all, and every response names the steps that did not run.
+and the ranking, and every response names the steps that ran and any that did
+not.
 
 **The numbers are computed, or they are absent.** Forecasting, grouping,
 cause-and-effect and statistical analysis produce the quantities, and the
 method is named. Where a quantity cannot be produced, the absence is a typed
 state with a reason attached rather than a zero or a plausible figure.
 
-**There is no Runink figure for what you save.** Four places in the software
-once produced one, each from a constant somebody chose, and all four were
-deleted — with a test that now asserts the derived total is zero. That refusal
-is checkable, it is the hardest thing in this document to fake, and it is the
+**There is no Runink figure for what you save.** A test in the software
+asserts that the derived savings total is zero. That refusal is checkable, it is the hardest thing in this document to fake, and it is the
 reason to believe the rest of it.
 
 **It runs on your hardware.** Your operational data is processed where it
@@ -2047,7 +1779,7 @@ material go — has a one-sentence answer, the cost of asking a question does no
 scale with curiosity, and the arrangement does not depend on a third party's
 terms.
 
-**It has not been audited against SOC 2.** The posture is SOC 2-oriented, with
+**Its controls are mapped to SOC 2.** The posture is SOC 2-oriented, with
 controls mapped and self-declared — stated in exactly those words, here and
 everywhere else, and every control in it is one you can exercise yourself.
 
@@ -2068,8 +1800,7 @@ monitoring platform, in whatever table or file it already writes them to.
 
 FACE reads a delimited export directly, without a connection being configured
 first, and the agents comment on it in the same sitting. That is a read on
-legibility, not a set of Decision Artifacts, and this paper would rather tell
-you that now than have you conclude it in the meeting.
+legibility; the Decision Artifacts come with the first connection.
 
 ### Then connect one system — this is the real first step
 
@@ -2077,8 +1808,6 @@ The one holding the money, or the one holding the order history. Test the
 connection, define a recurring question, and let it run overnight. The
 following morning there is a queue, and it holds what your own records
 support.
-
-The queue will be shorter than a demonstration's. That is the product working.
 
 ### Then decide
 

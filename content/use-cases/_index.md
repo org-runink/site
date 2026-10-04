@@ -99,7 +99,7 @@ groups:
       - page: "paralegal-review"
         name: "Contract and obligation review"
       - page: "compliance"
-        name: "Privacy and emissions"
+        name: "Privacy and audit records"
 
 next:
   label: "One next step"

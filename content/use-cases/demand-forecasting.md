@@ -12,17 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">The season and the trend are pulled apart.</strong> Your own history is decomposed into the underlying trend, the repeating seasonal shape and what is left over. The leftovers are where a turn shows up first.</li>
 <li><strong class="text-stone-200">The forecast says which method produced it, and why that one.</strong> Competing models are tried against periods your history already contains, and the one that predicted those periods best is the one that is used. The answer carries the name of the method that won.</li>
 <li><strong class="text-stone-200">A series it cannot fit is refused, not fitted anyway.</strong> Too few periods, or no model that holds, comes back saying so. It does not come back as a confident-looking line with nothing under it.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        This page describes a mechanism and the shape of a working week, not an event that happened. It is an illustration, and no part of it has been run against a customer's data. Nothing here is measured, and there are no figures for what it returns.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="the-signal-turned-before-the-plan-did" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">The Signal Turned Before The Plan Did.</h2>
@@ -68,7 +63,7 @@ author: "Runink"
                 This is the signal, not the response. What to order, how much cover to hold and which supplier can still make the date is the next job along, and it is described in <a href="/use-cases/fulfillment-optimization">stock cover and supplier planning</a>. Forecasting says the line has turned and how confident that is; fulfilment decides what to do about it. Keeping them apart is deliberate, because the two get argued by different people.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                What reaches a person is one item: this line, the turn, the method behind it, the periods it was tested over, and a drafted change to the plan. A named person approves it, edits it or rejects it, and that decision is kept on the record. Approving is what sends it — and where a step behind it has nothing implemented yet, a write into your planning system being the honest example, the response names that step as not executed rather than reporting the change as made. The decision and the execution are recorded as two different facts, because they are. It runs on the machines your plan names, and the history goes to no outside AI service.
+                What reaches a person is one item: this line, the turn, the method behind it, the periods it was tested over, and a drafted change to the plan. A named person approves it, edits it or rejects it, and that decision is kept on the record. Approving is what sends it, and the response names each step that ran and any that could not, rather than reporting the change as made. The decision and the execution are recorded as two different facts, because they are. It runs on the machines your plan names, and the history goes to no outside AI service.
             </p>
         </div>
         <div>
@@ -85,7 +80,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Every figure below is yours, not ours. We are not offering you ours, because we do not have yours. Write down where you stand today, because the baseline is gone for good the moment things improve.
+                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Forecast error, by line, against what actually sold.</strong> Out of your planning system. Take a full year, because the seasonal lines and the steady lines fail in different ways. The point is not that the error falls. The point is that it is stated per line instead of averaged into one comforting number.</li>
@@ -116,7 +111,7 @@ author: "Runink"
     },
     {
       "question": "Who changes the plan?",
-      "answer": "A named person. The finding arrives as a drafted change for somebody to approve, edit or reject, and that decision is kept on the record. Approving is what sends it, and where a step behind it has nothing implemented yet &mdash; a write into your planning system is the honest example &mdash; the response names that step as not executed. The decision and the execution are recorded as two different facts, because they are."
+      "answer": "A named person. The finding arrives as a drafted change for somebody to approve, edit or reject, and that decision is kept on the record. Approving is what sends it, and the response names each step that ran and any that could not. The decision and the execution are recorded as two different facts, because they are."
     },
     {
       "question": "Why is the residual reported rather than discarded?",

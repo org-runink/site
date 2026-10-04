@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Os seus registros são separados pelo que eles são, não por de onde vieram.</strong> Duas tabelas que falam de embarques pertencem as duas à logística, tanto se uma chegou do seu sistema de armazém quanto se a outra chegou como uma planilha que alguém manda por e-mail nas sextas.</li>
-<li><strong class="text-stone-200">O mapa é derivado, não chutado.</strong> Os domínios e as ligações entre eles são calculados a partir da estrutura dos seus próprios arquivos, por regras fixas &mdash; nenhum modelo, nenhuma busca na web, nada sai do prédio nessa etapa. Os mesmos arquivos sempre produzem o mesmo mapa.</li>
-<li><strong class="text-stone-200">Um domínio que não pôde ser avaliado é marcado como não avaliado.</strong> Não como aprovado. As palavras são explícitas: isto não é um achado de que a área está bem. E sem nenhum dado conectado, ele diz que ainda não há nada para mapear, em vez de desenhar um diagrama vazio.</li>
+<li><strong class="text-stone-200">O mapa é derivado, não chutado.</strong> Os domínios e as ligações entre eles são calculados por regras fixas a partir dos registros que as suas fontes conectadas devolvem: os nomes das colunas e uma pequena amostra de linhas. Nenhum modelo e nenhuma busca na web entram nessa etapa, e os mesmos registros sempre produzem o mesmo mapa.</li>
+<li><strong class="text-stone-200">Um domínio que não pôde ser avaliado é marcado como não avaliado.</strong> Não como aprovado. As palavras são explícitas: isto não é um achado de que a área está bem.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Hipotético
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        Isto descreve o mecanismo e uma semana plausível em volta dele. Não é o relato de algo que aconteceu: não rodou contra os sistemas de um cliente, nada nesta página é medido, e nenhum número é oferecido sobre o que ele encontra ou quanto tempo leva.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="quatro-sistemas-uma-manha-que-voce-nao-tem" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Quatro Sistemas. Uma Manhã Que Você Não Tem.</h2>
@@ -65,7 +57,7 @@ author: "Runink"
                 Depois as ligações. Onde duas áreas dividem o terreno em que pisam, a ligação é desenhada. Onde uma área não divide nome de coluna nenhum com nada, ela ainda assim ganha uma relação, em vez de ficar flutuando na borda do diagrama com cara de irrelevante &mdash; um domínio que parece desconectado é um domínio sobre o qual ninguém faz pergunta, e esse silêncio em geral está errado.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Tudo isso é calculado por regras fixas a partir do formato dos seus arquivos. Nenhum modelo é consultado, nenhuma busca sai, nada cruza a rede nessa etapa, e os mesmos arquivos produzem o mesmo mapa toda vez. Um modelo é usado depois para acrescentar comentário, e o que ele acrescenta é claramente o comentário, e não a estrutura. A estrutura é algo que você pode derivar de novo e conferir. Os nossos próprios arquivos de configuração, que ficam no mesmo lugar que os seus dados, são excluídos de propósito, porque uma ferramenta que te apresenta o próprio agendador dela como o seu domínio de operações não está descrevendo o seu negócio.
+                Tudo isso é calculado por regras fixas a partir do formato dos registros que as suas conexões devolvem. Nenhum modelo é consultado e nenhuma busca sai nessa etapa, e os mesmos registros produzem o mesmo mapa toda vez. A estrutura é algo que você pode derivar de novo e conferir.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Por cima do mapa, cada área é revisada: em que estado ela está, onde estão os achados e, para cada achado, a categoria dele, o quanto é grave, a regra a que se refere e um remédio sugerido, junto com de qual sistema veio cada parte. Quando uma área não pode ser avaliada, a resposta é que ela não foi avaliada e por quê &mdash; dito com essas palavras, porque &ldquo;não olhamos&rdquo; e &ldquo;olhamos e está tudo bem&rdquo; não são a mesma frase, e são lidas com a mesma cor em todo painel que já foi construído.
@@ -74,13 +66,10 @@ author: "Runink"
                 E depois você pode perguntar coisas a ele, no vocabulário que você já usa, com o mapa e as regras reconhecidas por trás da resposta e limitado às áreas que você está olhando. Você recebe o raciocínio, não só a resposta. Um cenário que foi trabalhado no <a href="/pt/use-cases/hypothesis-lab">laboratório de hipóteses</a> pode ser passado de lá como ação proposta, com as variáveis dele e as regras contra as quais ele foi argumentado viajando junto, em vez de chegar como uma referência solta a uma rodada que outra pessoa fez.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Um limite sobre tudo isso, dito aqui em vez de deixado para você descobrir. O que o mapeamento lê são os arquivos que estão no diretório de dados da própria instância, e numa instância padrão esse diretório não é lido &mdash; então o que você recebe de volta é a recusa, não um mapa magro. As regras de classificação são reais e são determinísticas; o caminho que coloca as suas extrações reais na frente delas não está terminado. Preferimos que a página diga qual metade é qual do que descrever a coisa inteira no presente e deixar um piloto descobrir a costura.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
                 Onde uma parte do retrato vira um item a ponto de faltar, a resposta é o próximo trabalho da fila, em <a href="/pt/use-cases/fulfillment-optimization">cobertura de estoque e planejamento de fornecedores</a>, e o sinal por baixo dele é a <a href="/use-cases/demand-forecasting">previsão de demanda</a>. A visibilidade é o que torna esses dois discutíveis a partir do mesmo conjunto de fatos, em vez de a partir de três extrações.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                O que chega a uma pessoa é uma lista curta e ordenada de ações propostas com os registros anexados, não um diagrama para admirar. Uma pessoa com nome aprova, edita ou recusa cada uma, e esse aval é guardado. Aprovar é o que manda adiante, e um item decidido sai da fila em vez de voltar na próxima vez que alguém abre o quadro. Onde uma etapa por trás da aprovação ainda não tem implementação, a resposta nomeia essa etapa como não executada, em vez de dar a ação por concluída &mdash; então o quadro mostra o que foi decidido e, separadamente, o que de fato foi executado. Tudo roda onde o FACE roda, sem nenhum serviço de IA externo.
+                O que chega a uma pessoa é uma lista curta e ordenada de ações propostas com os registros anexados, não um diagrama para admirar. Uma pessoa com nome aprova, edita ou recusa cada uma, e esse aval é guardado. Aprovar é o que manda adiante, e um item decidido sai da fila em vez de voltar na próxima vez que alguém abre o quadro. A resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar, em vez de dar a ação por concluída &mdash; então o quadro mostra o que foi decidido e, separadamente, o que de fato foi executado. Tudo roda onde o FACE roda, sem nenhum serviço de IA externo.
             </p>
         </div>
         <div>
@@ -91,13 +80,13 @@ author: "Runink"
             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">O diretor de cadeia de suprimentos.</strong> Hoje o retrato é montado para a revisão mensal, ou depois que alguma coisa deu errado o bastante para valer uma manhã. O que muda é que o mesmo conjunto de fatos está por trás da pergunta e por trás da resposta, então uma decisão é discutida a partir de um lugar só e não de três exportações.</li>
                 <li><strong class="text-stone-200">O gerente de operações.</strong> Hoje uma pergunta comum são quatro logins, quatro jeitos de nomear o mesmo local e quatro ideias do que é uma semana. O que muda é que os registros são colocados pelo assunto de que tratam, então o mesmo tipo de fato cai no mesmo lugar venha de um ERP, de um sistema de armazém, de um sistema de transporte ou de uma planilha que alguém manda às sextas.</li>
-                <li><strong class="text-stone-200">O analista de quem todo mundo depende.</strong> Hoje a correspondência entre um código de local num sistema e o nome de um depósito em outro não está escrita em lugar nenhum. Ela é lembrada, e enquanto essa pessoa está de férias a pergunta não tem como ser respondida. O que muda é que o mapa é derivado da estrutura dos seus próprios arquivos por regras fixas, então é algo que qualquer um consegue derivar de novo e conferir.</li>
+                <li><strong class="text-stone-200">O analista de quem todo mundo depende.</strong> Hoje a correspondência entre um código de local num sistema e o nome de um depósito em outro não está escrita em lugar nenhum. Ela é lembrada, e enquanto essa pessoa está de férias a pergunta não tem como ser respondida. O que muda é que o mapa é derivado da estrutura dos seus próprios registros por regras fixas, então é algo que qualquer um consegue derivar de novo e conferir.</li>
             </ul>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Todo número abaixo é seu, não nosso. Não somos nós que trazemos números para isto; é você. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
+                Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Quanto tempo leva uma pergunta comum que atravessa sistemas.</strong> Escolha uma de verdade, que te fizeram no mês passado. Cronometre com honestidade a pessoa que responde, incluindo as esperas. É esse o número de que trata todo o resto desta página.</li>
@@ -116,7 +105,7 @@ author: "Runink"
   "questions": [
     {
       "question": "Como o mapa é montado?",
-      "answer": "A partir da estrutura dos seus próprios arquivos, por regras fixas. Nenhum modelo é consultado, nenhuma busca sai e nada atravessa a rede nessa etapa, então os mesmos arquivos produzem o mesmo mapa sempre. Depois um modelo é usado para acrescentar comentário, e o que ele acrescenta é claramente o comentário e não a estrutura."
+      "answer": "A partir da estrutura dos registros que as suas fontes conectadas devolvem, por regras fixas: os nomes das colunas, e uma pequena amostra de linhas para achar onde duas áreas se juntam. Nenhum modelo é consultado e nenhuma busca sai nessa etapa, então os mesmos registros produzem o mesmo mapa sempre."
     },
     {
       "question": "O que acontece com as tabelas que não encaixam em lugar nenhum?",
@@ -132,7 +121,7 @@ author: "Runink"
     },
     {
       "question": "O que chega a uma pessoa no fim?",
-      "answer": "Uma lista curta e ordenada de ações propostas com os registros anexados, e não um diagrama para admirar. Uma pessoa nomeada aprova, edita ou recusa cada uma e a assinatura fica guardada. Um item decidido sai da fila em vez de voltar na próxima vez que alguém abrir o quadro, e onde uma etapa por trás de uma aprovação ainda não tem implementação a resposta nomeia aquela etapa em vez de dar a ação por completa."
+      "answer": "Uma lista curta e ordenada de ações propostas com os registros anexados, e não um diagrama para admirar. Uma pessoa nomeada aprova, edita ou recusa cada uma e a assinatura fica guardada. Um item decidido sai da fila em vez de voltar na próxima vez que alguém abrir o quadro, e a resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar, em vez de dar a ação por completa."
     },
     {
       "question": "O que devemos levar para uma primeira conversa?",

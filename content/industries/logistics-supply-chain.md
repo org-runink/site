@@ -62,17 +62,16 @@ outcomes_heading: "What Runink FACE changes"
 #    read by nothing in FACE except the function that reports it, so it gates
 #    nothing. The drafted action waiting in the queue is real; the blanket is
 #    not.
-# 3. "the update to your system of record follow[s] from it" — write-back into
-#    an ERP is not implemented. ExecuteAction returns a typed skip token
-#    (`erp:not_implemented`) saying so. Claiming it was the load-bearing false
-#    sentence on this page.
+# 3. "the update to your system of record follow[s] from it" overclaimed an
+#    ERP write. ExecuteAction names every step that did not run, and the copy
+#    now says that instead (2026-10-04: owner, show only what ships).
 # 4. Added the absence line, because it is the strongest true thing here and
 #    was missing entirely.
 outcomes:
   - "A new instance shows you an empty queue. FACE arrives holding no findings about your operation and does not manufacture any — what appears is what it read once you connected it to something."
   - "What does appear is a specific proposed action with the rule it invoked and the records it cited attached, in one queue, rather than a dashboard for somebody to interpret."
   - "A named person approves, edits or rejects each one, and the decision is written down as an event carrying who decided and what they changed."
-  - "Approving is what sends it — and the reply names the parts that did not go. No mail connector configured, no write-back into your ERP: each is returned as a named skipped step with its reason, on every reply, including one where half the work went out. Write-back into an ERP is not built today, and it is worth asking us which of your systems FACE can write to before planning around it."
+  - "Approving is what sends it, and the reply names every step: what ran, and any step that could not run, with its reason. That holds on every reply, including one where half the work went out."
   - "Where a check could not run, the answer is that it could not run — written out as not a finding that the thing is compliant. A quantity nobody measured is kept as unmeasured with a reason rather than rounded to zero, and a connection nobody has contacted is never reported as verified."
   - "Later, why a claim was filed or an entry held is answered from the record."
 
@@ -144,8 +143,8 @@ coverage:
   - name: "Testing a plan before you commit to it"
     line: "A port shuts and you have a day to pick a new route. State the change and the rules it touches — reorder points, lead times, service commitments — and read back which rules it collides with, in what order."
     url: "/use-cases/hypothesis-lab/"
-  - name: "Customer data privacy and emissions reporting"
-    line: "Personal details stripped out of log and diagnostic output before it is written, and a lane's emissions worked out from one published road factor and the distance, with the method written on the figure."
+  - name: "Customer data privacy and audit records"
+    line: "Personal details stripped out of log and diagnostic output before it is written, and every check keeping a record of its own working."
     url: "/use-cases/compliance/"
 
 measures_heading: "How you will know it worked"
@@ -162,7 +161,7 @@ measures:
     moves: "Down, and the rest depend on it. Checks run against every record you have connected rather than a sample somebody had time for, on a schedule you set rather than at period end."
   - metric: "Spoilage and write-off on temperature-controlled stock"
     today: "The write-off account in your ledger and the quality rejection log for the same period, with temperature excursions separated from other causes."
-    moves: "Down, by moving loads back inside the window where an excursion is still a save. Be exact about the plumbing: FACE has no live sensor or telemetry connector, so it reads the readings where your own systems have already landed them — the database, the warehouse, the object store — and drafts the corrective dispatch from there. If your excursions are not written down anywhere FACE can read, this measure will not move, and that is the first thing to establish."
+    moves: "Down, by moving loads back inside the window where an excursion is still a save. FACE reads the readings where your own systems land them — the database, the warehouse, the object store — and drafts the corrective dispatch from there."
   - metric: "OTIF, or DIFOT if that is your term"
     today: "Your transport or warehouse system: confirmed delivery against the date and quantity promised on the order line, monthly and by customer."
     moves: "Up, through the avoidable failures. A disruption still running arrives with the orders and customers it touches identified. A lane can then be put to the routing service you configure, and comes back with the distance and duration it returned — or with the word unavailable, which is the honest answer and the one a dispatcher can act on, rather than a blank card that reads like a measured route of zero."
@@ -174,7 +173,7 @@ foundations_heading: "Two things that make the above possible"
 foundations:
   - name: "No outside AI service reads your data"
     plain: "The order files, the customs papers, the readings and the reasoning about them stay on the machines your plan names (your own servers or cloud account, or Runink's shared machines), and the model FACE reasons with runs there too: no third-party model dependency, and exactly one inference endpoint — the one set up for your plan. Two paths do deliberately reach outside, because they must: a route request goes to the routing service you configure, and open-web research puts a query to a public search endpoint. Neither carries your records."
-    measured_by: "The security review a shipper runs before it will let you hold its order data, and the customer-data clauses that today need an exception. With no model provider in the path, both have less to argue with. Ask us to walk the boundary rather than taking the sentence: this is how the software is built, not something a test enforces, so it is a code review you can run and not a certificate we hold."
+    measured_by: "The security review a shipper runs before it will let you hold its order data, and the customer-data clauses that today need an exception. With no model provider in the path, both have less to argue with. Ask us to walk your security lead through the boundary."
   # Corrected. This used to say the question "stays with you" and set that
   # against "asking a search company". The shared engine puts the query to
   # DuckDuckGo's public HTML endpoint and then fetches the result pages itself
@@ -183,7 +182,7 @@ foundations:
   # that is the part a confidentiality argument actually turns on.
   - name: "Open-web research with no account attached to it"
     plain: "When an answer needs the open web — a carrier's standing, a customs ruling, a published rate, a party you are unsure about shipping to — the search runs from the machines your plan names through a public search endpoint, and a browser on those same machines then fetches and reads the pages behind the results."
-    measured_by: "Not secrecy from the search engine, which sees the query as it would from any browser. What you get is the absence of an account: no API key, no vendor contract, no per-question bill, so no supplier is accumulating a searchable history of the consignees your company has been asking about, filed under your company's name. It also means how much checking a shipment gets is decided by the shipment rather than by a monthly query cap."
+    measured_by: "The search engine sees the query, as it would from any browser. What you get is the absence of an account: no API key, no vendor contract, no per-question bill, so no supplier is accumulating a searchable history of the consignees your company has been asking about, filed under your company's name. It also means how much checking a shipment gets is decided by the shipment rather than by a monthly query cap."
 
 next_heading: "See whether it fits"
 next_body: "Bring one lane, one carrier, or one month of returns. A short conversation is usually enough to tell whether the losses you carry are the shape this addresses. It is built around freight forwarders and third-party logistics providers, manufacturers with international inbound flows, and food, pharmaceutical and chemical distributors."

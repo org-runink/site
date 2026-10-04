@@ -61,7 +61,7 @@ groups:
       - page: "paralegal-review"
         name: "Revue de contrats et d'obligations"
       - page: "compliance"
-        name: "Données personnelles et émissions"
+        name: "Données personnelles et pistes d'audit"
 
 next:
   label: "Une étape de plus"

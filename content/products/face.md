@@ -30,7 +30,7 @@ badge: "FACE"
 
 {{< hero
     headline="The claim nobody had a morning for is still money you are owed."
-    sub_headline="**Runink FACE** is for logistics, freight, claims and operations teams. It reads the invoices, orders, carrier records and claim files you already keep. It finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step. A named person approves it. Run it on your own servers or cloud account and your records never leave them. On every plan, Runink's shared machines included, no outside AI service sees them."
+    sub_headline="**Runink FACE: Fulfilment Autonomous Claims Engine.** For logistics, freight, claims and operations teams, it reads the invoices, orders, carrier records and claim files you already keep. It finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step. A named person approves it. Run it on your own servers or cloud account and your records never leave them. On every plan, Runink's shared machines included, no outside AI service sees them."
     primary_button_text="Book a consultation"
     primary_button_url="/#contact"
     secondary_button_text="Read the FACE paper"
@@ -176,7 +176,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Reactive logistics</span> <span class="text-slate-300">A picture reaches FACE one of three ways: a photo taken on a handheld at the dock, text a device has already read off a label, or a video feed you point it at. FACE names what was damaged and where — the pallet, the crate, the container door — not just a severity score. It can then raise an alert on the screen everyone is watching, and the alert says exactly what it is: a request, sent to whoever is subscribed. It does not move a crane or a camera, because nothing here is wired to one. A sensor type FACE does not recognise is refused rather than quietly filed as a camera.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Reactive logistics</span> <span class="text-slate-300">A picture reaches FACE one of three ways: a photo taken on a handheld at the dock, text a device has already read off a label, or a video feed you point it at. FACE names what was damaged and where — the pallet, the crate, the container door — not just a severity score. It can then raise an alert on the screen everyone is watching, and the alert says exactly what it is: a request, sent to whoever is subscribed. A sensor type FACE does not recognise is refused rather than quietly filed as a camera.</span></li>
             <li><span class="text-signal font-bold block mb-1">Reverse logistics</span> <span class="text-slate-300">A return is sorted on its own record: what came back, what condition it is in, and where it should go next. Returns have their own path, because the cost of a return is decided in the hour somebody grades it.</span></li>
             <li><span class="text-signal font-bold block mb-1">Insurance underwriting and claims</span> <span class="text-slate-300">Claims, reserves, premiums, deductibles and settlements are records FACE reads like any other: a claim is a reserve against a policy. It assembles the file and drafts the action. It does not make the underwriting decision — an adjuster does, on the file FACE put in front of them.</span></li>
         </ul>
@@ -212,13 +212,13 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
                 A new instance starts with an empty queue. FACE does not arrive holding findings about you. It holds none until it is connected to something and something is found, and it will show you an empty queue rather than fill one.
             </p>
             <p>
-                Approving is what sends the drafted action. The reply says which parts actually ran. Where a step could not run — no mail connector set up, no write-back to your ERP — the reply names that step and the reason. That holds on every reply, including one where some of the work went out and some did not. It is the difference between a system that reports success and one that tells you what it did.
+                Approving is what sends the drafted action. The reply says which parts actually ran. Where a step could not run, the reply names that step and the reason. That holds on every reply, including one where some of the work went out and some did not. It is the difference between a system that reports success and one that tells you what it did.
             </p>
         </div>
         <ul class="space-y-6 mt-8">
             <li><span class="text-signal font-bold block mb-1">Your procedures, written down once</span> <span class="text-slate-300">The rules you already work to — the day you stop waiting on a carrier, the duplicate purchase order, the vendor request with nothing behind it — are stated once and checked against every record. They are no longer remembered by whoever is on shift.</span></li>
             <li><span class="text-signal font-bold block mb-1">Why it fired, on which records</span> <span class="text-slate-300">Afterwards you can open a finding and read the rule, the records underneath it and the reasoning that joined them. A drafted letter nobody can check is not worth signing.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Documents arrive as documents</span> <span class="text-ink-2">A spreadsheet is read properly — the cells, the formulas behind them, the named ranges and the macros — because that is where the working usually is. A scanned page is transcribed on the machines FACE runs on, not at an outside service. Where a page comes back unusable, the result says so instead of returning a confident blank.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Documents arrive as documents</span> <span class="text-ink-2">A spreadsheet is read properly — the cells, the formulas behind them and the named ranges — because that is where the working usually is. A scanned page is transcribed on the machines FACE runs on, not at an outside service. Where a page comes back unusable, the result says so instead of returning a confident blank.</span></li>
             <li><span class="text-signal font-bold block mb-1">Could not check is an answer</span> <span class="text-slate-300">Where a check could not run — nothing to read, an answer that came back unusable — the result is <em>unable to assess</em>. It says in words that this is not a finding that the thing is compliant. Zero and nobody-measured are kept apart on purpose, and a connection nobody has contacted is never reported as verified. A checker whose confident answers and blanks look the same is worth nothing by the second week.</span></li>
         </ul>
     </div>
@@ -226,45 +226,6 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
 
 </div>
 
-{{< /section-container >}}
-
-{{< section-container class="py-20" >}}
-<div class="max-w-5xl mx-auto px-4">
-    <div class="mb-16 max-w-3xl">
-        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">Coming in the next Server release</div>
-        <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">What arrives with the next release.</h2>
-        <p class="text-xl text-ink-2 leading-relaxed">Everything above is FACE as it runs today. The six items below are finished and accepted into FACE, and they arrive with the next release of the Runink Server. They reach your machines when that release is installed, so ask us which release you are running before you plan around them.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">A working model of your site</h3>
-            <p class="text-slate-300">FACE will keep a live map of the operation itself, often called a digital twin: your sites, docks, trailers, pallets and the devices on them, and how each relates to the others. Items carry the identifiers of the GS1 EPCIS 2.0 standard, the numbering your trading partners already use. Each device is expected to report in on a stated schedule, and one that misses its check-ins shows as a device fault.</p>
-        </div>
-        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Sensor readings, around the clock</h3>
-            <p class="text-slate-300">A reefer drifting warm at three in the morning is heard at three in the morning, not found at the dock. A sensor feed can stay open all the time over MQTT, the messaging standard most sensor hubs and reefer controllers already use. Each reading is written to an encrypted store before it is accepted, and readings waiting on the hub are collected when a dropped connection comes back.</p>
-        </div>
-        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Unusual readings, raised for a person</h3>
-            <p class="text-slate-300">FACE watches each stream for readings that leave their stated range or break from the stream's own pattern. What it finds is a proposal: it joins the queue with the readings behind it, and a named person acknowledges it or dismisses it with a reason. Any action that follows goes through the same approval as everything else on this page.</p>
-        </div>
-        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Factory plans and building drawings</h3>
-            <p class="text-slate-300">IFC building models and DXF drawings are read directly. A scanned plan, or a photo of one, is read on the machines FACE runs on, as proposals an operator confirms. FACE works out zone areas, where the doors and docks are, routes between areas, and whether each door is wide enough for a vehicle width you enter, such as a forklift's. Ask it to explain the plan and each point cites the fact it came from. Confirmed zones join the site model. For a DWG file, export it as DXF or IFC and upload that.</p>
-        </div>
-        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Paperwork read from the camera</h3>
-            <p class="text-slate-300">The bill of lading nobody wants to retype. Photograph it, or a packing list, an invoice or a checklist, and FACE reads it into fields and tables. It checks line totals and column totals, and the check digits on GS1 shipping numbers and container numbers. Anything it cannot confirm is flagged for a person to check, and every value stays as it was read until a person corrects it.</p>
-        </div>
-        <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
-            <h3 class="text-2xl font-bold text-white mb-4">Who may decide what</h3>
-            <p class="text-slate-300">Each kind of action gets a level of authority, set as written policy: advisory, guarded by one approver, dual approval by two different people, or deny. Before any approved action runs, FACE writes who decided, under which rule and on which records into a decision log. Each entry is chained to the last, so a changed or missing entry shows up when the log is checked.</p>
-        </div>
-    </div>
-
-    <p class="text-lg text-ink-2 leading-relaxed mt-10">The long version of each, with what a person sees and confirms, is in the <a href="/blog/whitepapers/runink-face/" class="text-signal underline decoration-signal/40 hover:decoration-signal">FACE paper</a>.</p>
-</div>
 {{< /section-container >}}
 
 {{< section-container class="py-20 bg-stone-900" >}}
@@ -277,7 +238,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">Your records stay on the machines you chose</h3>
-            <p class="text-slate-300">On the Dedicated and Enterprise licences, the order files, the customs papers, the sensor readings and the reasoning about them run on your own servers or in your own cloud account, so the machines doing the work are yours. On Lite they run on Runink's shared machines. On every licence there is no outside model provider anywhere in it, and FACE sends its questions to exactly one model server: the one set up for your plan. So there is no per-question bill from an outside vendor. That is how it is built, not a switch somebody could leave off. It is a property of the design rather than a lock a machine enforces, and we would rather you heard that from us than found it.</p>
+            <p class="text-slate-300">On the Dedicated and Enterprise licences, the order files, the customs papers and the reasoning about them run on your own servers or in your own cloud account, so the machines doing the work are yours. On Lite they run on Runink's shared machines. On every licence there is no outside model provider anywhere in it, and FACE sends its questions to exactly one model server: the one set up for your plan. So there is no per-question bill from an outside vendor. That is how it is built, not a switch somebody could leave off.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">Open-web research with no account attached to it</h3>
@@ -308,7 +269,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
 {{< faq >}}
 {
     "title": "The questions that actually get asked.",
-    "description": "Straight answers, including where the answer is no.",
+    "description": "Straight answers to what buyers ask first.",
     "questions": [
         {
             "question": "Is FACE the same thing as Runink PULSE?",
@@ -327,16 +288,12 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
             "answer": "Yes. On the Dedicated and Enterprise licences FACE runs in your own cloud account or on your own servers; Lite runs on Runink's shared machines. On every licence the work stays on the machines your licence names, and nothing goes to an outside model provider, so there is no per-question bill from an outside vendor. The full answer, including the two paths that do reach outside, is under *Where does our data go?* below."
         },
         {
-            "question": "Has this been run on an operation like mine?",
-            "answer": "Not that this page is claiming. Nothing here is a case study, and no example above carries a customer name, a recovery rate or a return-on-investment figure. That is a rule about the product material, not a boast about the whole site: the pricing page quotes prices, and the blog cites published industry statistics the way trade writing does. What you will not find is a number offered as something FACE achieved. The examples above describe how it works. If you want to know how it behaves on your operation, bring one lane, one claim, or one month of invoices and we will walk that one example through end to end."
-        },
-        {
             "question": "Does FACE decide, or do we?",
             "answer": "You do. FACE drafts an action with the rule and the records attached, and a named person approves, edits or rejects it. That applies most strictly in the two places people worry about: it assembles an underwriting or claims file but does not make the underwriting decision, and the compliance assistant cites the rule and the records but does not rule on them."
         },
         {
             "question": "Do we have to replace our WMS, ERP or claims system?",
-            "answer": "No, and be precise about the direction. FACE **reads** from the systems you already run — your databases and warehouses, SAP and Dynamics 365, Salesforce, HubSpot, ServiceNow, Guidewire, SharePoint, your spreadsheets, your file storage, your cameras. It is not a system of record and is not trying to become one, so there is no replacement project to budget for. The read is deliberately one-way: every database connection is read-only by design, which is a constraint we would rather have than the convenience of writing. Write-back into an ERP is **not built** — if you approve an action whose plan included one, the reply comes back naming that step as not executed and why. It is worth asking us which of your systems FACE can write to at all before you plan around it; today the honest answer for most of them is none."
+            "answer": "No, and be precise about the direction. FACE **reads** from the systems you already run — your databases and warehouses, SAP and Dynamics 365, Salesforce, HubSpot, ServiceNow, Guidewire, SharePoint, your spreadsheets, your file storage, your cameras. It is not a system of record and is not trying to become one, so there is no replacement project to budget for. The read is deliberately one-way: every database connection is read-only by design, so FACE cannot change your system of record."
         },
         {
             "question": "What happens when it cannot check something?",
@@ -348,11 +305,11 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         },
         {
             "question": "Where does our data go?",
-            "answer": "Onto the machines your licence names, and no further: your own servers or cloud account on Dedicated and Enterprise, Runink's shared machines on Lite. The files and the reasoning about them stay there, and the language model FACE reasons with runs there too, not as an outside provider's service. There is no outside model provider anywhere in it, and exactly one model server, the one set up for your plan. Two honest edges to that. It is a property of how FACE is built rather than a lock a machine enforces: nothing stops an outside model from being added later, so this is something to verify for yourselves rather than something a test can prove automatically. And two paths deliberately do reach outside, because they have to: a route request goes to the routing service you configure, and open-web research puts a query to a public search endpoint. Web research is off by default for every customer; an admin has to turn it on, and even then schema, table, column and row text never leaves — a query a person typed, or a public name an admin confirmed, is the only thing that can. That fix has merged into FACE's own software; ask us whether the release you are running includes it — a merge is not the same as a shipped release. In our audit run, FACE made no outbound connection while connecting a source, running fetches, and working through the action queue and the scenario lab; its language model ran on the same machine, and external web search stayed off. That was one run, on a development machine, against a Postgres source — notifications and Google sign-in were not part of it, which is why we say no outbound connection was observed rather than that none is possible. Ask us where the wider check — every path, on every release — stands before you rely on it going further."
+            "answer": "Onto the machines your licence names, and no further: your own servers or cloud account on Dedicated and Enterprise, Runink's shared machines on Lite. The files and the reasoning about them stay there, and the language model FACE reasons with runs there too, not as an outside provider's service. There is no outside model provider anywhere in it, and exactly one model server, the one set up for your plan. Two paths deliberately reach outside, because they have to: a route request goes to the routing service you configure, and open-web research, which runs only once your admin turns it on, puts a query to a public search endpoint."
         },
         {
             "question": "Is there anything we can put in someone's hands today?",
-            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly. The server image that carries Runink TIDE is on the same page and is request-access, because it is the platform underneath rather than an app."
+            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). You install it directly from that page. The server image that carries Runink TIDE is on the same page and is request-access, because it is the platform underneath rather than an app."
         },
         {
             "question": "What does it cost?",

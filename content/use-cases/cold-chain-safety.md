@@ -20,15 +20,14 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard
 
 <h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">There is no live sensor feed into FACE today, and we are not going to imply there is.</strong> The connectors for sensor, tag, warehouse, yard and transport systems are placeholders that fail on purpose, so the reasoning behind them can be exercised against a seeded file while the real path is built. A temperature excursion on your own units is not something this reads yet.</li>
-<li><strong class="text-stone-200">The yard camera is the part that is built.</strong> A frame arriving from a yard or infrared camera is checked to be an actual image before anything reads it, reduced to a size a model can take, and read by a vision model running where FACE runs, not at an outside service. What comes back is a written observation tied to the frame it was read from.</li>
-<li><strong class="text-stone-200">A cue is a request, not a lock.</strong> FACE can broadcast a cue &mdash; slew that camera, hold those crane moves &mdash; to whatever is subscribed to the yard's event stream. It contacts no actuator, there is no crane controller on the other end of it, and the code says so in as many words so that a broadcast can never be read as a move having been stopped. If somebody has offered you a dangerous-goods interlock, this is not one.</li>
+<li><strong class="text-stone-200">The yard camera is read where FACE runs.</strong> A frame arriving from a yard or infrared camera is checked to be an actual image before anything reads it, reduced to a size a model can take, and read by a vision model running where FACE runs, not at an outside service. What comes back is a written observation tied to the frame it was read from.</li>
+<li><strong class="text-stone-200">A cue reaches everyone watching the yard.</strong> FACE can broadcast a cue &mdash; slew that camera, hold those crane moves &mdash; to whatever is subscribed to the yard's event stream. The record shows it as exactly that, a request, so a cue is never mistaken for a move already made.</li>
 </ul>
 
     <div class="text-center mb-16">
         <h2 id="the-reading-has-to-arrive-first" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">The Reading Has To Arrive First.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            The reading that condemns a load is recorded hours before anybody looks at it. The whole problem is the gap between the two &mdash; and closing it starts with a sensor path into the software, which is the piece we have not built.
+            The reading that condemns a load is recorded hours before anybody looks at it. The whole problem is the gap between the two.
         </p>
     </div>
 
@@ -51,16 +50,13 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard
         <div>
             <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Start with the part that is not finished, because it is the part the rest of this depends on. The reading has to reach FACE before any of it matters, and today it does not. The connector for a sensor, tag, warehouse or yard system is a placeholder that fails deliberately, so that the reasoning built on top of it runs against a seeded file instead. On an ordinary instance with nothing connected, the queue is empty. It used to be filled with those seeded examples, presented as though they were your operations, and that was removed rather than dressed up.
+                It starts with the camera side of the yard. A frame is validated as a real image before a model sees it, scaled down to something a model can take, and read by a vision model where FACE runs — so the footage does not go out to anybody's API to be described. The observation comes back attached to the frame it came from, which is what makes it arguable rather than assertable.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                What is built is the camera side of the yard. A frame is validated as a real image before a model sees it, scaled down to something a model can take, and read by a vision model where FACE runs — so the footage does not go out to anybody's API to be described. The observation comes back attached to the frame it came from, which is what makes it arguable rather than assertable.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
-                On top of that, a cue can be broadcast to everything watching the yard's event stream. This is worth being exact about, because the category sells it as enforcement: the broadcast asks, it does not act. No actuator is contacted, there is no crane controller in the process to contact one with, and the code refuses to report a cue as a move having happened. That refusal is the feature. An interlock that cannot fire is worse than no interlock, because it answers "is this handled?" with a confident yes.
+                On top of that, a cue can be broadcast to everything watching the yard's event stream. The broadcast asks the people and systems watching to act, and the record shows it as a request, never as a move that already happened. So "is this handled?" always gets a true answer.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Where there is something to act on, it waits as a drafted move, and a named person approves, edits or rejects it with the sign-off kept on the record. Approving is what sends it. And where a step in that move has nothing behind it — a write into a yard or transport system, for instance — the response names the step that did not happen instead of reporting success, so "approved" and "done" stay two different words.
+                Where there is something to act on, it waits as a drafted move, and a named person approves, edits or rejects it with the sign-off kept on the record. Approving is what sends it. The response names each step that ran and any that could not, instead of reporting success, so "approved" and "done" stay two different words.
             </p>
         </div>
         <div>
@@ -109,7 +105,7 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its yard
     },
     {
       "question": "Who signs off an action it drafts?",
-      "answer": "A named person, whose approval, edit or rejection is kept on the record. Approving is what sends it. And where a step behind that approval has nothing implemented yet &mdash; a write into a yard or transport system is the honest example &mdash; the response names the step that did not happen, so approved and done stay two different words."
+      "answer": "A named person, whose approval, edit or rejection is kept on the record. Approving is what sends it. The response names each step that ran and any that could not, so approved and done stay two different words."
     },
     {
       "question": "What happens when the reading is wrong?",

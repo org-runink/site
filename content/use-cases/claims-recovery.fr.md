@@ -17,8 +17,8 @@ author: "Runink"
 
 <h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">Les papiers sont réunis pour vous, et seulement ceux qui sont réellement là.</strong> La déclaration, le port, le motif du blocage, les documents qui manquent au dossier, le nombre de jours d'immobilisation et les frais journaliers arrivent au même endroit, rattachés à l'envoi auquel ils appartiennent. Pas le tarif en vigueur ce jour-là : FACE ne détient aucune grille tarifaire, aucune table de tarifs et aucun barème de surcharges. Il ne peut donc pas vous dire quel était le tarif, et il ne fera pas semblant.</li>
-<li><strong class="text-stone-200">Les quantités sont confrontées de trois côtés.</strong> Le bon de commande, la facture et le connaissement sont comparés entre eux, et là où ils divergent, le constat nomme la paire et la taille de l'écart : connaissement contre commande, connaissement contre facture. C'est un contrôle d'écarts sur ce que disent les documents, pas un rapprochement avec une bascule ni avec un tarif. Il n'y a pas non plus de relevé de pont-bascule ici.</li>
+<li><strong class="text-stone-200">Les papiers sont réunis pour vous, et seulement ceux qui sont réellement là.</strong> La déclaration, le port, le motif du blocage, les documents qui manquent au dossier, le nombre de jours d'immobilisation et les frais journaliers arrivent au même endroit, rattachés à l'envoi auquel ils appartiennent.</li>
+<li><strong class="text-stone-200">Les quantités sont confrontées de trois côtés.</strong> Le bon de commande, la facture et le connaissement sont comparés entre eux, et là où ils divergent, le constat nomme la paire et la taille de l'écart : connaissement contre commande, connaissement contre facture.</li>
 <li><strong class="text-stone-200">La lettre est rédigée, pas envoyée.</strong> Une personne nommée lit le dossier, le corrige ou le rejette, et son accord reste au dossier. Rien ne part chez le transporteur avant cela.</li>
 </ul>
 
@@ -59,7 +59,7 @@ author: "Runink"
         <div>
             <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Les contrôles tournent sur vos propres enregistrements, et la file du matin est ce que ces enregistrements disent vraiment, classée par ordre, avec les pièces jointes. Ce n'est pas un tableau de bord où aller chercher. Le corollaire mérite d'être dit, parce que la plupart des produits le cachent : ne branchez rien et la file est vide. Elle ne s'ouvre pas sur des exemples travaillés qui ressemblent à vos lignes. C'est ainsi qu'elle s'est comportée une fois, et cela a été retiré.
+                Les contrôles tournent sur vos propres enregistrements, et la file du matin est ce que ces enregistrements disent vraiment, classée par ordre, avec les pièces jointes. Ce n'est pas un tableau de bord où aller chercher. Ne branchez rien et la file est vide : elle ne s'ouvre jamais sur des exemples déguisés en vos lignes.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Côté port, l'arithmétique est de la bonne espèce. Le nombre de jours d'immobilisation du conteneur, multiplié par les frais journaliers portés sur la déclaration, et rien d'autre. Les droits de douane sont volontairement laissés hors de ce chiffre : ils sont dus de toute façon, que le conteneur bouge aujourd'hui ou dans une semaine, et les ajouter gonflerait l'exposition du montant d'une facture que personne n'a évitée. Ce qu'on vous montre, c'est le frais qui était évitable, un nombre plus petit et plus utile que celui qu'impriment la plupart des outils.
@@ -68,7 +68,7 @@ author: "Runink"
                 Une réclamation arrive déjà montée : la déclaration, le blocage et le motif invoqué, les documents qui manquent au dossier, l'écart de quantité s'il y en a un, et une lettre rédigée. Il ne reste à votre relecteur qu'une question, la seule qui vaille son temps : est-ce que le dossier tient ?
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                C'est la validation qui envoie. Et là où une étape derrière la validation n'a pas encore d'implémentation &mdash; l'écriture en retour dans votre système de référence en est l'exemple réel &mdash; la réponse nomme cette étape comme non exécutée au lieu de déclarer toute l'action faite. Personne n'apprend donc trois semaines plus tard que le dépôt n'est jamais parti. Plus tard, la raison d'un dépôt se lit au dossier. Pas dans les souvenirs de quelqu'un.
+                C'est la validation qui envoie. La réponse nomme chaque étape exécutée et toute étape qui n'a pas pu l'être, au lieu de déclarer toute l'action faite. Personne n'apprend donc trois semaines plus tard que le dépôt n'est jamais parti. Plus tard, la raison d'un dépôt se lit au dossier. Pas dans les souvenirs de quelqu'un.
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -87,9 +87,8 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Statut : hypothétique &mdash; non mesuré</p>
         <p class="text-base text-stone-500 font-medium">
-            La réclamation et le blocage au port décrits ci-dessus sont dessinés pour montrer la forme du travail. Ce ne sont pas les comptes rendus d'une mission chez un client. Nous ne publions aucun taux de recouvrement, aucun montant récupéré et aucun nom de client, parce que nous ne les avons mesurés ni sur vos enregistrements ni sur ceux de personne d'autre &mdash; et un taux de recouvrement tiré des lignes de quelqu'un d'autre ne vous dirait rien des vôtres.
+            La réclamation et le blocage au port décrits ci-dessus sont dessinés pour montrer la forme du travail. Ce ne sont pas les comptes rendus d'une mission chez un client. Cette page ne porte aucun taux de recouvrement, montant récupéré ni nom de client : un taux de recouvrement tiré des lignes de quelqu'un d'autre ne vous dirait rien des vôtres.
         </p>
     </div>
 </div>
@@ -122,7 +121,7 @@ author: "Runink"
     },
     {
       "question": "Et si nos dossiers ne peuvent pas sortir de l'entreprise ?",
-      "answer": "Alors ils ne sortent pas. Le raisonnement tourne sur les machines prévues par votre offre, et le modèle avec lequel il raisonne y tourne aussi, pas chez un service d'IA extérieur. Vos enregistrements d'expédition, vos factures et votre correspondance sont lus sur ces machines et nulle part ailleurs.<br><br>C'est ainsi que le logiciel est construit, et non un réglage à activer : c'est donc une propriété que votre propre revue de sécurité peut examiner. Demandez-nous de parcourir cette frontière avec vous plutôt que de vous fier à une phrase sur une page web."
+      "answer": "Alors ils ne sortent pas. Le raisonnement tourne sur les machines prévues par votre offre, et le modèle avec lequel il raisonne y tourne aussi, pas chez un service d'IA extérieur. Vos enregistrements d'expédition, vos factures et votre correspondance sont lus sur ces machines et nulle part ailleurs.<br><br>C'est ainsi que le logiciel est construit, et non un réglage à activer : c'est donc une propriété que votre propre revue de sécurité peut examiner. Demandez-nous de parcourir cette frontière avec votre responsable sécurité."
     }
   ]
 }

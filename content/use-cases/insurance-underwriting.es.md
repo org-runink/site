@@ -17,7 +17,7 @@ author: "Runink"
 <h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">El expediente se reúne. No se juzga.</strong> Las condiciones, los documentos del siniestro, los movimientos de reserva y el límite de autorización que se aplica a ese importe llegan a un mismo sitio, unidos al siniestro al que pertenecen.</li>
-<li><strong class="text-stone-200">Cada lectura dice de dónde viene.</strong> El texto extraído de un documento vuelve con el archivo del que se leyó y con el método que se usó para leerlo, así que una cifra del borrador se puede rastrear hasta una página en vez de darse por buena. Lo que no vuelve con ella es una puntuación de confianza por cifra &mdash; hay un número de confianza en la respuesta y es un número fijo, lo que significa que no le dice nada, y preferimos decirlo a dejar que usted lo lea como una señal de calidad.</li>
+<li><strong class="text-stone-200">Cada lectura dice de dónde viene.</strong> El texto extraído de un documento vuelve con el archivo del que se leyó y con el método que se usó para leerlo, así que una cifra del borrador se puede rastrear hasta una página en vez de darse por buena.</li>
 <li><strong class="text-stone-200">La decisión no le corresponde al software.</strong> Redacta el siguiente paso. Quien suscribe o quien lleva siniestros lo aprueba, lo reescribe o lo tira, y su nombre queda en el registro junto a lo que decidió.</li>
 </ul>
 
@@ -64,16 +64,13 @@ author: "Runink"
                 Los documentos se leen donde ya están: un PDF en un buzón SFTP, un archivo de Word en una unidad compartida, la hoja de cálculo cuyas fórmulas implementan en silencio una regla de tarificación que nadie ha escrito en ningún sitio &mdash; y las fórmulas se leen, celda por celda, no solo los valores que les toca mostrar. Lo que vuelve lleva consigo el archivo del que se leyó y el método que lo leyó, así que una cifra de un borrador lleva de vuelta a una página.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Lo que no lleva es una confianza utilizable sobre la lectura, y eso es de las cosas que preferimos que oiga aquí antes que descubrirlas. La extracción devuelve una sola puntuación para el lote y esa puntuación es una constante: es la misma si todas las páginas salieron limpias o si todas las páginas fallaron. Así que no es una señal de calidad, no debe mostrarse como tal a quien tramita, y un escaneo borroso sigue siendo un documento que alguien tiene que abrir. Tome la extracción como algo que le ha encontrado la página, no como algo que ha verificado lo que hay en ella.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
                 Luego la regla escrita se confronta con el expediente, y todo hallazgo tiene la misma forma: esto dice el documento, esto muestra el expediente, aquí es donde los dos se separan. ¿Cubre esto el texto de la póliza? ¿Estaban de verdad en el expediente los documentos que exige el procedimiento? ¿Se movió quien tramitaba dentro de la autorización que se aplica a ese importe? La comparación solo vale lo que valga la regla que usted le dio para comparar &mdash; está leyendo sus cláusulas, no una biblioteca de derecho de seguros &mdash; y donde encuentra una discrepancia cita la cláusula y el expediente a la vez, así que la primera pregunta de la revisión es sobre el caso y no sobre de dónde salieron los números.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Lo que no hace es suscribir. No tarifica un riesgo. No acepta ni rechaza. No constituye una reserva, y no liquida nada. Reúne el expediente, redacta un único siguiente paso propuesto y muestra lo que leyó para llegar ahí. Quien suscribe o quien lleva siniestros toma la decisión. Si lo que busca es software que tome la decisión en su lugar, no es esto &mdash; y debería hacerle preguntas duras a cualquier cosa que diga que sí lo es.
+                La suscripción se queda con su gente. FACE reúne el expediente, redacta un único siguiente paso propuesto y muestra lo que leyó para llegar ahí. Quien suscribe o quien lleva siniestros tarifica el riesgo, acepta o rechaza, constituye la reserva y liquida.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Aprobar el paso redactado es lo que lo envía. Rechazarlo también queda registrado, que es la parte que pierden casi todos los sistemas. Y donde el paso tiene un tramo sin nada implementado detrás &mdash;una escritura en un sistema de gestión de pólizas, por ejemplo&mdash; la respuesta nombra ese tramo como no ejecutado en vez de dar la acción por hecha, así que el expediente nunca muestra como dado un paso que solo se había aprobado. Meses después, <em class="text-stone-300">quién decidió esto y con qué base</em> se responde desde el expediente y no desde el recuerdo que alguien tenga de un martes.
+                Aprobar el paso redactado es lo que lo envía. Rechazarlo también queda registrado, que es la parte que pierden casi todos los sistemas. La respuesta nombra cada tramo que se ejecutó y cualquiera que no pudo ejecutarse, así que el expediente nunca muestra como dado un paso que solo se había aprobado. Meses después, <em class="text-stone-300">quién decidió esto y con qué base</em> se responde desde el expediente y no desde el recuerdo que alguien tenga de un martes.
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -92,17 +89,11 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="mb-2">
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-                <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Ilustrativo
-            </span>
-            <span class="ml-2 text-xs font-black uppercase tracking-[0.25em] text-stone-500">no medido</span>
-        </p>
         <p class="text-base text-stone-500 font-medium mb-4">
-            El trabajo publicado de Runink está en logística y operaciones. El siniestro, la mañana del perito y el listado delegado de arriba están dibujados para mostrar la forma del montaje &mdash; son ilustraciones de cómo funciona, no relatos de cosas que ocurrieron. En esta página no hay tasas de recuperación, ni importes de liquidación, ni tiempos de ciclo, ni nombres de clientes, porque no los hemos medido.
+            El siniestro, la mañana del perito y el listado delegado de arriba están dibujados para mostrar la forma del montaje &mdash; son ilustraciones de cómo funciona, no relatos de cosas que ocurrieron. Esta página no lleva tasas de recuperación, importes de liquidación, tiempos de ciclo ni nombres de clientes: las cifras que importan están en sus propios registros.
         </p>
         <p class="text-base text-stone-500 font-medium">
-            Nada de lo que hay aquí es una aprobación, una autorización ni una certificación de nada. El software lee registros y redacta; no ostenta ninguna facultad delegada, no es un sujeto regulado, y usarlo no cumple una obligación en su nombre. Donde una decisión tiene que tomarla una persona con facultad para tomarla, la toma esa persona y el registro dice quién era.
+            La autoridad se queda donde corresponde. El software lee registros y redacta. Donde una decisión tiene que tomarla una persona con facultad para tomarla, la toma esa persona y el registro dice quién era.
         </p>
     </div>
 </div>
@@ -111,7 +102,7 @@ author: "Runink"
 {{< faq >}}
 {
   "title": "Lo Que Una Aseguradora Pregunta Antes De Comprar",
-  "description": "Qué lee, quién decide y qué no pretende ser.",
+  "description": "Qué lee, quién decide y cómo comprobar su trabajo.",
   "questions": [
     {
       "question": "¿Qué necesita de un expediente de siniestro?",
@@ -123,7 +114,7 @@ author: "Runink"
     },
     {
       "question": "¿Cómo comprobamos una cifra que aparece en un borrador?",
-      "answer": "Siguiéndola hacia atrás. El texto extraído de un documento vuelve con el archivo del que se leyó y el método que se usó, así que una cifra del borrador lleva a una página de un documento y no a una caja negra.<br><br>Una cosa que preferimos que oiga de nosotros antes que descubrirla después: la extracción devuelve un único número de confianza por lote, y ese número es constante. Es el mismo tanto si todas las páginas salieron limpias como si todas salieron mal, así que no es una señal de calidad y no debería enseñarse a un tramitador como si lo fuera. Lea la extracción como que le ha encontrado la página. Leer la página sigue siendo cosa de una persona."
+      "answer": "Siguiéndola hacia atrás. El texto extraído de un documento vuelve con el archivo del que se leyó y el método que se usó, así que una cifra del borrador lleva a una página de un documento y no a una caja negra."
     },
     {
       "question": "¿Qué pasa cuando las condiciones y el expediente no coinciden?",
@@ -134,8 +125,8 @@ author: "Runink"
       "answer": "Confronta el acuerdo de delegación con los listados que el agente devuelve, que es una comparación de reglas contra registros a un volumen que es justo la razón por la que hoy esa lectura se hace por muestreo. Cada desacuerdo vuelve nombrando la cláusula y el registro del que se leyó, y espera a una persona.<br><br>La responsabilidad no se mueve porque se haya movido la decisión. Usted sigue respondiendo por lo que se decidió bajo el acuerdo, y lo que cambia es cuánto del listado se lee de verdad antes de que le toque responder."
     },
     {
-      "question": "¿Usar esto cumple una obligación regulatoria?",
-      "answer": "Las obligaciones se quedan con las personas y las entidades que las tienen. El software lee registros, los compara con las reglas que usted le dio y redacta; una persona con facultad para tomar la decisión la toma, y el registro dice quién era.<br><br>Con los marcos conviene ser igual de preciso, porque esa distinción es la que importa en una conversación con el supervisor. Apuntar el software a un marco significa que se le dio ese texto para leerlo y comparar contra él. No es una declaración de que Runink tenga una certificación bajo SOC 2, ISO 27001, ISO 42001 ni ninguna otra, y ninguna página nuestra dice lo contrario. Un proveedor descuidado con esa distinción en un folleto lo será también en una auditoría, y el hallazgo lo tendría usted."
+      "question": "¿Quién responde por una obligación regulatoria?",
+      "answer": "Las obligaciones se quedan con las personas y las entidades que las tienen. El software lee registros, los compara con las reglas que usted le dio y redacta; una persona con facultad para tomar la decisión la toma, y el registro dice quién era."
     }
   ]
 }

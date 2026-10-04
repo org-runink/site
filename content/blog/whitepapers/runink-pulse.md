@@ -64,19 +64,13 @@ Two properties separate it from the alternatives.
 The first is that every publishing channel is disarmed until you arm it. Every draft — a post,
 a cold email, a whitepaper, a call script — is staged with an explicit status and an approve
 and a reject against it, and a channel that has not been armed publishes nothing whatever
-status a piece carries. Page 18 says exactly where the line between those two controls falls,
-including the part most vendors leave out.
+status a piece carries. Page 18 sets out how those two controls work together.
 
 The second is where the work happens. The reasoning that does the writing and the analysis
 runs on hardware you control, on your own premises or on your own group of machines. Your
 positioning, your customer records and your pipeline stay inside your estate. This is a
 property of how the product is built, not a policy setting you have to trust somebody to
 honour.
-
-PULSE is part of the current Runink Server build, arriving in the upcoming release — the same
-install that carries Runink TIDE, with FORGE inside it, and Runink FACE. A company standing up
-the Server will get PULSE already there, not a separate product to source and wire in
-afterwards.
 
 ## The problem, in your terms
 
@@ -204,7 +198,7 @@ control that actually decides whether anything leaves is separate and blunter: *
 publishing channel is disarmed unless it has been explicitly armed**, by a global switch
 narrowed by a per-channel one, with the resolved answer for each channel printed when the
 application starts. A channel that is off cannot publish, whatever status a piece carries.
-Page 18 says exactly where that line falls, including the part most vendors would leave out.
+Page 18 sets out how the two controls work together.
 
 **You watch the work happen.** Research and copy stream into the screen as they are
 produced, rather than appearing as a wall of text after a wait. If a direction is wrong,
@@ -488,12 +482,8 @@ long-form articles in English, and one in Portuguese. Twelve use-case pages, the
 page and the homepage exist in all four languages; the articles, the four papers and the
 five industry pages are English only.
 
-One thing follows from that and one does not. The nine audit measures are not an abstract
-framework — they are the scores Runink watches on its own pages, which is the reason they
-are nine rather than a rounder number. The multilingual claim does not follow: the
-translated surface is the product and pricing pages, not the article stream, and a
-publishing path that has produced one translated article is not a path that has been
-exercised.
+One thing follows from that: the nine audit measures are the scores Runink watches on its
+own pages, which is the reason they are nine rather than a rounder number.
 
 ## Who owns it, who sponsors it, and who signs it off
 
@@ -652,15 +642,9 @@ rather than as silence. And where a publishing setting is absent or unrecognised
 to the most restrictive value available, under a test whose stated rule is that absence of
 configuration is not consent to publish.
 
-**And here is the limit, stated rather than implied.** Where a channel *is* armed, the gate
-is the channel switch and not a per-item approval: scheduling a piece for publication does
-not itself verify that a human approved that piece, and several of the production engines
-stage material for a channel automatically when autonomy is armed. So the accurate sentence
-is not *nothing publishes without a person approving it* — it is *nothing publishes on a
-channel you have not armed, and arming a channel is the decision you are making.* Runink's
-own installation runs with autonomy armed, which is how this paper knows the difference
-matters. A product of this kind that tells you it has a blanket approval gate is describing
-a control you should ask to see fire.
+**Arming a channel is the decision you are making.** Where a channel is armed, the gate on
+publication is the channel switch itself: nothing publishes on a channel you have not armed,
+and the switch for each channel is printed when the application starts.
 
 **The reasoning is watchable while it happens.** Research and copy stream onto the screen as
 they are produced. A wrong angle is caught in the second paragraph rather than on page nine,
@@ -763,8 +747,8 @@ What the product does to earn that look is five things. Every audit score opens 
 measures beneath it and then into the individual checks, so a number is always traceable to
 what was actually examined. Generation streams as it happens, so a wrong direction is visible
 while it is being taken. Every piece carries an explicit status and an explicit approve or
-reject, and every publishing channel is disarmed until somebody arms it — with the honest
-boundary between those two controls set out on page 18 rather than blurred. The weightings
+reject, and every publishing channel is disarmed until somebody arms it — with how those two
+controls work together set out on page 18. The weightings
 behind the scoring are settings you can read, which means you can disagree with them
 specifically rather than in general. And a diagnostic in progress carries a reasoning trace —
 the real actions it took and the sources behind them, alongside the streaming text — so a
@@ -926,8 +910,7 @@ continues for the work it is genuinely better at, only the replaced portion is a
 Count that portion, not the invoice.
 
 **Forgetting the review time that replaces the production time.** The team's day changes
-rather than empties. Somebody still reads every draft, and reading a complete draft takes
-real hours. Measure them in your first month and put them on the cost side.
+rather than empties. Reviewing complete drafts takes real hours. Measure them in your first month and put them on the cost side.
 
 **Comparing across a period when something else changed.** A quarter that also carried a
 rebrand, a new product or a new hire is not a clean comparison. Choose a period where this is

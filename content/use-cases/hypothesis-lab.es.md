@@ -19,7 +19,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">El cambio tiene que estar escrito antes de poder discutirlo.</strong> Una hipótesis se enuncia de forma explícita, junto con las reglas que toca — los puntos de pedido, los plazos de entrega, los compromisos de servicio con los que su negocio ya funciona. Casi todo el valor está en ese paso, y es el paso que normalmente se salta.</li>
 <li><strong class="text-stone-200">Lo que vuelve es razonamiento, ordenado por importancia, con la regla que invocó.</strong> Cada consecuencia queda atada a la regla concreta de la que se deriva, así que usted puede discutirla por el fondo. Es un argumento que puede comprobar, no un número que aceptar.</li>
-<li><strong class="text-stone-200">Nada se ejecuta, y nada está conectado.</strong> El motor no tiene ningún camino de escritura hacia sus sistemas y no los toca. Razona sobre las reglas que usted le dio, donde corre FACE — el escenario no va a ningún servicio de IA externo.</li>
+<li><strong class="text-stone-200">Sus sistemas en producción quedan intactos.</strong> El motor razona sobre las reglas que usted le dio, donde corre FACE, y el escenario no va a ningún servicio de IA externo.</li>
 <li><strong class="text-stone-200">Puede ponerlo difícil a propósito.</strong> Retrase una ruta una semana. Quite un proveedor. Deje que una carga se caliente. Los planes que solo funcionan cuando todo sale bien lo enseñan aquí, no al cierre del trimestre.</li>
 </ul>
 
@@ -60,10 +60,10 @@ author: "Runink"
         <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Conviene ser claros sobre qué es esto, porque la categoría está llena de herramientas que son vagas al respecto. El motor no ejecuta una simulación sobre sus datos en producción y no calcula un resultado. Usted enuncia el cambio como una hipótesis y le entrega las reglas que gobiernan lo que está cambiando &mdash; puntos de pedido, plazos de entrega, compromisos de servicio, el supuesto de reserva. Razona sobre esas reglas y devuelve una lectura ordenada de lo que se sigue, con cada consecuencia atada a la regla de la que salió.
+                Usted enuncia el cambio como una hipótesis y le entrega las reglas que gobiernan lo que está cambiando &mdash; puntos de pedido, plazos de entrega, compromisos de servicio, el supuesto de reserva. Razona sobre esas reglas y devuelve una lectura ordenada de lo que se sigue, con cada consecuencia atada a la regla de la que salió.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Así que lo que vuelve es un argumento, no una respuesta. Eso es lo útil, y conviene decirlo sin rodeos: una proyección presentada como una decisión es peor que no tener proyección, porque mueve el juicio de alguien que responde a un trozo de software que no responde. Lo que esto le da a la sala es el caso expuesto &mdash; con qué reglas choca el cambio, en qué orden muerden, y qué tendría que creer alguien para que el plan se sostuviera. La decisión se queda donde estaba.
+                Así que lo que vuelve es un argumento, no una respuesta. Eso es lo útil: una proyección presentada como una decisión es peor que no tener proyección, porque mueve el juicio de alguien que responde a un trozo de software que no responde. Lo que esto le da a la sala es el caso expuesto &mdash; con qué reglas choca el cambio, en qué orden muerden, y qué tendría que creer alguien para que el plan se sostuviera. La decisión se queda donde estaba.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 De eso salen dos consecuencias que vale la pena tener. Enunciar la hipótesis obliga a poner los supuestos por escrito, que es el paso que los equipos se saltan y la razón por la que dos personas pueden discutir una hora y resultar que estaban hablando de planes distintos. Y como el razonamiento ocurre donde corre FACE, el escenario que está considerando &mdash; qué proveedor podría quitar, qué ruta podría cortar &mdash; no va a ningún servicio de IA externo.
@@ -91,9 +91,8 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Situación: hipotético &mdash; no medido</p>
         <p class="text-base text-stone-500 font-medium">
-            El cierre de puerto de arriba está dibujado para mostrar la forma del trabajo. No es el relato de un trabajo con un cliente, y nada de esta página es un resultado medido. Runink no publica cifras de retorno de la inversión, ni porcentajes, ni nombres de clientes &mdash; no porque quedaran mal, sino porque no los hemos medido, y decirlo sale más barato que que nos pillen.
+            El cierre de puerto de arriba está dibujado para mostrar la forma del trabajo. No es el relato de un trabajo con un cliente, y nada de esta página es un resultado medido. Esta página no lleva cifras de retorno de la inversión, porcentajes ni nombres de clientes: las cifras que importan están en sus propios registros.
         </p>
     </div>
 </div>
@@ -118,7 +117,7 @@ author: "Runink"
     },
     {
       "question": "¿Qué hace cuando las reglas que le dimos no resuelven la pregunta?",
-      "answer": "Nombra qué tendría que creer alguien para que el plan se sostenga, y devuelve eso como el hallazgo. Esa es la salida honesta cuando las reglas se acaban: la creencia sobre la que descansa el plan, dicha en una frase, para que la sala discuta la creencia y no una hoja de cálculo.<br><br>Replantea sus supuestos y los sigue hasta el final. No descubre un supuesto que usted nunca le dio, y una consecuencia que devuelve vale lo que valga la regla de la que se sacó &mdash; por eso cada consecuencia nombra su regla."
+      "answer": "Nombra qué tendría que creer alguien para que el plan se sostenga, y devuelve eso como el hallazgo. Esa es la salida honesta cuando las reglas se acaban: la creencia sobre la que descansa el plan, dicha en una frase, para que la sala discuta la creencia y no una hoja de cálculo.<br><br>Replantea sus supuestos y los sigue hasta el final, y cada consecuencia nombra la regla de la que se sacó."
     },
     {
       "question": "¿Quién elige, y qué muestra el registro después?",

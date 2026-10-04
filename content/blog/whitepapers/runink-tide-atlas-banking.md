@@ -374,9 +374,8 @@ audit chain and the decision logs are the second kind.
 **The record is held by the bank.** TIDE and its AI model run on hardware the bank owns.
 The audit chain, the findings, the verdicts and the credentials stay on the bank's systems.
 
-We have not been audited against SOX, DORA or any other banking regulation. What this paper
-describes is what the console does, and a bank's own control framework decides what that
-evidence is worth to it.
+This paper describes what the console does, and a bank's own control framework decides what
+that evidence is worth to it.
 
 ## Where to go from here
 

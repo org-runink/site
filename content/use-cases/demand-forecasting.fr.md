@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">La saison et la tendance sont séparées.</strong> Votre propre historique est décomposé en tendance de fond, forme saisonnière qui se répète, et reste. C'est dans le reste qu'un retournement apparaît d'abord.</li>
 <li><strong class="text-stone-200">La prévision dit quelle méthode l'a produite, et pourquoi celle-là.</strong> Des modèles concurrents sont essayés sur des périodes que votre historique contient déjà, et celui qui a le mieux prédit ces périodes est celui qui est retenu. La réponse porte le nom de la méthode qui a gagné.</li>
 <li><strong class="text-stone-200">Une série qu'il ne peut pas ajuster est refusée, et non ajustée quand même.</strong> Trop peu de périodes, ou aucun modèle qui tienne, et la réponse le dit. Elle ne revient pas sous forme de courbe d'allure assurée avec rien dessous.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Hypothétique
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        Cette page décrit un mécanisme et la forme d'une semaine de travail, pas un événement qui a eu lieu. C'est une illustration, et aucune partie n'en a été exécutée sur les données d'un client. Rien ici n'est mesuré, et il n'existe aucun chiffre sur ce qu'elle renvoie.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="le-signal-a-tourne-avant-le-plan" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Le Signal A Tourné Avant Le Plan.</h2>
@@ -71,7 +63,7 @@ author: "Runink"
                 Ceci est le signal, pas la réponse. Quoi commander, quelle couverture tenir et quel fournisseur peut encore tenir la date, c'est le travail suivant, et il est décrit dans <a href="/fr/use-cases/fulfillment-optimization/">couverture de stock et plan d'approvisionnement</a>. La prévision dit que la référence a tourné et avec quelle confiance ; l'approvisionnement décide quoi en faire. Les tenir séparés est délibéré, car les deux sont débattus par des personnes différentes.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Ce qui parvient à une personne est un seul élément : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et une modification rédigée du plan. Une personne nommée l'approuve, la modifie ou la refuse, et cette décision reste au dossier. C'est l'approbation qui l'envoie — et là où une étape derrière n'a encore rien d'implémenté, une écriture dans votre système de planification étant l'exemple honnête, la réponse nomme cette étape comme non exécutée au lieu de rapporter la modification comme faite. La décision et l'exécution sont consignées comme deux faits distincts, parce qu'ils le sont. Cela tourne sur les machines prévues par votre offre, et l'historique ne part vers aucun service d'IA extérieur.
+                Ce qui parvient à une personne est un seul élément : cette référence, le retournement, la méthode derrière, les périodes sur lesquelles elle a été testée, et une modification rédigée du plan. Une personne nommée l'approuve, la modifie ou la refuse, et cette décision reste au dossier. C'est l'approbation qui l'envoie, et la réponse nomme chaque étape exécutée et toute étape qui n'a pas pu l'être, au lieu de rapporter la modification comme faite. La décision et l'exécution sont consignées comme deux faits distincts, parce qu'ils le sont. Cela tourne sur les machines prévues par votre offre, et l'historique ne part vers aucun service d'IA extérieur.
             </p>
         </div>
         <div>
@@ -88,7 +80,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous ne vous proposons pas les nôtres, car nous n'avons pas les vôtres. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
+                Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">L'erreur de prévision, par référence, face à ce qui s'est réellement vendu.</strong> Sortie de votre système de planification. Prenez une année entière, car les références saisonnières et les références régulières échouent différemment. Le but n'est pas que l'erreur baisse. Le but est qu'elle soit énoncée par référence au lieu d'être moyennée en un seul chiffre rassurant.</li>
@@ -119,7 +111,7 @@ author: "Runink"
     },
     {
       "question": "Qui change le plan ?",
-      "answer": "Une personne désignée. Le constat arrive sous forme d'un changement rédigé, à approuver, modifier ou refuser, et cette décision reste au dossier. C'est l'approbation qui l'envoie, et là où une étape derrière elle n'a encore rien d'implémenté &mdash; une écriture dans votre système de planification en est l'exemple honnête &mdash; la réponse nomme cette étape comme non exécutée. La décision et l'exécution sont enregistrées comme deux faits distincts, parce qu'elles le sont."
+      "answer": "Une personne désignée. Le constat arrive sous forme d'un changement rédigé, à approuver, modifier ou refuser, et cette décision reste au dossier. C'est l'approbation qui l'envoie, et la réponse nomme chaque étape exécutée et toute étape qui n'a pas pu l'être. La décision et l'exécution sont enregistrées comme deux faits distincts, parce qu'elles le sont."
     },
     {
       "question": "Pourquoi le résidu est-il rapporté plutôt qu'écarté ?",

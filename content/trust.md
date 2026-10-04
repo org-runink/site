@@ -40,9 +40,8 @@ next:
 #    the same day, or the headline comes down.
 # 4. NOTHING UNRELEASED. No test evidence or autonomous release-testing
 #    claims, no customer-facing framework assessment, no feature that has not
-#    shipped. That includes a "coming next" line: the site's next-release label
-#    is for work already finished and accepted, and nothing on this page's
-#    subject qualifies yet. Do not hint at it either.
+#    shipped. That includes a "coming next" line: the site carries no
+#    next-release copy anywhere (owner, 2026-10-04). Do not hint at it either.
 # 5. NO INTERNALS. No internal names, rule IDs, file paths, private repository
 #    names, ticket or pull-request numbers, hostnames, addresses, people other
 #    than the published security contact, audit findings, gaps or incidents.
@@ -81,7 +80,7 @@ next:
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Runink's agents read records and write drafts: a claim file, a code fix, a post, a reply. The draft waits. A named person approves it, edits it or rejects it, and the record keeps who that was and when.</p>
       <p>In Runink TIDE, those decisions go into an audit chain. Each entry is linked to the one before it, so an entry that was changed, removed or moved out of order shows up. Anyone signed in to the TIDE console can press <em>Verify now</em> and have the whole chain checked. Reading the entries themselves is kept to the administrators you name.</p>
-      <p>Two things do act on their own, and we would rather you read them here than find them later:</p>
+      <p>Two things act on their own, each inside a fixed limit:</p>
       <ul class="list-disc pl-6 space-y-3">
         <li><strong class="text-ink">FACE looks after its own health.</strong> When part of FACE stops responding, it can restart it, cut off a dependency that keeps failing, roll back the most recent change, or add capacity. It picks only from that fixed list. It never deletes data, shuts a machine down or turns off a security control. When it is unsure, it tells a person instead of acting. An operator can switch the automatic part off.</li>
         <li><strong class="text-ink">TIDE's issue triager labels new issues.</strong> It picks labels only from the list the repository allows, and only after an independent check agrees. A person can change them at any time, and decides who works on the issue.</li>
@@ -187,7 +186,7 @@ next:
     <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">A missing figure is shown as missing.</h2>
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>When our software could not read a figure, it says so, with the reason. It does not draw a zero, and it does not guess. A check that could not run is reported as "could not check", never as a pass. A field it does not know is left empty, not filled in.</p>
-      <p>We hold ourselves to the same rule. This page carries no statistics, and neither do the model cards: none shows an evaluation score, because none has been published.</p>
+      <p>We hold ourselves to the same rule: this page carries no statistics.</p>
     </div>
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Read the evidence</p>

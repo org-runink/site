@@ -73,7 +73,7 @@ product_subcategory: "IT operations, AI governance and application platform"
 {
   "link_base": "/blog/whitepapers/runink-tide/",
   "intro": [
-    "You choose where Runink TIDE runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDE never takes a percentage of anything it finds, fixes or ships, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
+    "This is the price of Runink TIDE: Trusted Intelligence for Developer & Data Experience. You choose where it runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDE never takes a percentage of anything it finds, fixes or ships, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
     "That is the whole shape of it. The bill follows the seats or nodes you run, not what TIDE finds, fixes or ships, so a platform team that puts TIDE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
   ],
   "eyebrow": "The console",
@@ -120,12 +120,11 @@ product_subcategory: "IT operations, AI governance and application platform"
       ]
     },
     {
-      "label": "FORGE (PREVIEW)",
+      "label": "FORGE",
       "deck": "How does a written brief become a working application?",
       "items": [
         { "page": "", "name": "Describe it, the model proposes the steps", "note": "Describe what you want in plain words. The company's own model proposes the steps on a canvas." },
-        { "page": "", "name": "Nothing filed until a person approves", "note": "An approved brief goes, word for word, to coding agents as a work item. Nothing is filed until a person approves it." },
-        { "page": "", "name": "The brief stays with your own model", "note": "The brief stays with the model you run yourself, from the first draft to the working application; we are confirming there is no other path out before promising more than that." }
+        { "page": "", "name": "Nothing filed until a person approves", "note": "An approved brief goes, word for word, to coding agents as a work item. Nothing is filed until a person approves it." }
       ]
     }
   ],
@@ -163,7 +162,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       ],
       "features": [
         "RUNS ON RUNINK'S SHARED MACHINES, TAKING ITS TURN ALONGSIDE OTHER CUSTOMERS' WORK",
-        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE (PREVIEW)",
+        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
         "MORE UNITS AS YOU GO, OR BOUGHT AHEAD: 10% LESS FOR A MONTH, 20% LESS FOR A YEAR",
         "UP TO 900 UNITS PER PERSON PER HOUR; WORK PAST THAT PACE WAITS ITS TURN"
       ],
@@ -191,7 +190,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       ],
       "features": [
         "RUNNERS IN YOUR OWN GOOGLE CLOUD PROJECT, DATABRICKS OR SNOWFLAKE ACCOUNT",
-        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE (PREVIEW)",
+        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
         "UNLIMITED COMPUTE UNITS; YOUR CLOUD BILLS YOU FOR THE COMPUTE DIRECTLY",
         "YOUR OWN WEB ADDRESS"
       ],
@@ -249,7 +248,7 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "Who approves what TIDE's helpers propose?",
-      "answer": "A person, every time. The automated helpers propose; nothing is filed, changed or published until someone with the right to decide says yes. FORGE will propose the steps to build something on a canvas, and an approved brief only then goes to coding agents as a work item. The Harness takes an action only after a person confirms it, and it is written to the Audit chain before it happens.\n\nThat holds however small the action looks. What arrives is always a proposed action, and an action nobody approves is an action that has not been taken."
+      "answer": "A person, every time. The automated helpers propose; nothing is filed, changed or published until someone with the right to decide says yes. FORGE proposes the steps to build something on a canvas, and an approved brief only then goes to coding agents as a work item. The Harness takes an action only after a person confirms it, and it is written to the Audit chain before it happens.\n\nThat holds however small the action looks. What arrives is always a proposed action, and an action nobody approves is an action that has not been taken."
     },
     {
       "question": "What does it do when it cannot tell?",

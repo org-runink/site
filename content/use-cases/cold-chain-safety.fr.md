@@ -20,15 +20,14 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
 
 <h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">Il n'y a aujourd'hui aucune arrivée de capteurs en direct dans FACE, et nous n'allons pas laisser croire le contraire.</strong> Les connecteurs pour les systèmes de capteurs, d'étiquettes, d'entrepôt, de parc et de transport sont des pièces provisoires qui échouent exprès, pour que le raisonnement posé derrière elles puisse s'exercer sur un fichier de données d'amorçage pendant que le vrai chemin se construit. Une excursion de température sur vos propres groupes, ceci ne la lit pas encore.</li>
-<li><strong class="text-stone-200">La caméra du parc est la partie qui est construite.</strong> Une image qui arrive d'une caméra de parc ou d'une caméra infrarouge est vérifiée comme étant une vraie image avant que quoi que ce soit ne la lise, réduite à une taille qu'un modèle peut avaler, et lue par un modèle de vision qui tourne là où tourne FACE, pas chez un service extérieur. Ce qui revient est une observation écrite, attachée à l'image dont elle a été tirée.</li>
-<li><strong class="text-stone-200">Un signal est une demande, pas un verrouillage.</strong> FACE peut diffuser un signal &mdash; oriente cette caméra, suspends ces mouvements de grue &mdash; à tout ce qui est abonné au flux d'événements du parc. Il ne contacte aucun actionneur, il n'y a aucun automate de grue à l'autre bout, et le code le dit en autant de mots pour qu'une diffusion ne puisse jamais se lire comme un mouvement qui aurait été arrêté. Si quelqu'un vous a proposé un verrouillage pour marchandises dangereuses, ce n'en est pas un.</li>
+<li><strong class="text-stone-200">La caméra du parc est lue là où tourne FACE.</strong> Une image qui arrive d'une caméra de parc ou d'une caméra infrarouge est vérifiée comme étant une vraie image avant que quoi que ce soit ne la lise, réduite à une taille qu'un modèle peut avaler, et lue par un modèle de vision qui tourne là où tourne FACE, pas chez un service extérieur. Ce qui revient est une observation écrite, attachée à l'image dont elle a été tirée.</li>
+<li><strong class="text-stone-200">Un signal atteint tous ceux qui surveillent le parc.</strong> FACE peut diffuser un signal &mdash; oriente cette caméra, suspends ces mouvements de grue &mdash; à tout ce qui est abonné au flux d'événements du parc. Le registre le montre pour ce qu'il est, une demande, de sorte qu'un signal n'est jamais pris pour un mouvement déjà fait.</li>
 </ul>
 
     <div class="text-center mb-16">
         <h2 id="le-releve-doit-dabord-arriver" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Le Relevé Doit D'abord Arriver.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            Le relevé qui condamne un chargement est enregistré des heures avant que quiconque le regarde. Tout le problème est l'écart entre les deux &mdash; et le réduire commence par un chemin du capteur jusqu'au logiciel, qui est justement la pièce que nous n'avons pas construite.
+            Le relevé qui condamne un chargement est enregistré des heures avant que quiconque le regarde. Tout le problème est l'écart entre les deux.
         </p>
     </div>
 
@@ -51,16 +50,13 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
         <div>
             <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Commençons par la partie qui n'est pas finie, car c'est celle dont dépend tout le reste. Le relevé doit atteindre FACE avant que rien de tout cela ne compte, et aujourd'hui il ne l'atteint pas. Le connecteur pour un système de capteurs, d'étiquettes, d'entrepôt ou de parc est une pièce provisoire qui échoue délibérément, pour que le raisonnement bâti par-dessus tourne à la place sur un fichier de données d'amorçage. Sur une instance ordinaire, sans rien de branché, la file est vide. Elle était autrefois remplie de ces exemples amorcés, présentés comme s'il s'agissait de vos opérations, et cela a été retiré plutôt que maquillé.
+                Tout commence par le versant caméras du parc. Une image est validée comme vraie image avant qu'un modèle la voie, réduite à quelque chose qu'un modèle peut avaler, et lue par un modèle de vision là où tourne FACE — les enregistrements ne partent donc pas vers l'API de qui que ce soit pour être décrits. L'observation revient attachée à l'image dont elle vient, et c'est ce qui la rend discutable au lieu d'assénée.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Ce qui est construit, c'est le versant caméras du parc. Une image est validée comme vraie image avant qu'un modèle la voie, réduite à quelque chose qu'un modèle peut avaler, et lue par un modèle de vision là où tourne FACE — les enregistrements ne partent donc pas vers l'API de qui que ce soit pour être décrits. L'observation revient attachée à l'image dont elle vient, et c'est ce qui la rend discutable au lieu d'assénée.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
-                Par-dessus cela, un signal peut être diffusé à tout ce qui surveille le flux d'événements du parc. Cela mérite d'être dit exactement, car la catégorie le vend comme une contrainte : la diffusion demande, elle n'agit pas. Aucun actionneur n'est contacté, il n'y a dans le processus aucun automate de grue pour en contacter un, et le code refuse de rapporter un signal comme un mouvement qui aurait eu lieu. Ce refus est la fonction. Un verrouillage qui ne peut pas se déclencher est pire que pas de verrouillage, car il répond &laquo;&nbsp;est-ce traité&nbsp;?&nbsp;&raquo; par un oui plein d'assurance.
+                Par-dessus cela, un signal peut être diffusé à tout ce qui surveille le flux d'événements du parc. La diffusion demande aux personnes et aux systèmes qui surveillent d'agir, et le registre la montre comme une demande, jamais comme un mouvement déjà survenu. Ainsi, &laquo;&nbsp;est-ce traité&nbsp;?&nbsp;&raquo; reçoit toujours une réponse vraie.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Là où il y a quelque chose sur quoi agir, cela attend sous forme de mouvement rédigé, et une personne nommée l'approuve, le modifie ou le refuse, le visa restant au dossier. C'est l'approbation qui l'envoie. Et là où une étape de ce mouvement n'a rien derrière elle — une écriture dans un système de parc ou de transport, par exemple — la réponse nomme l'étape qui n'a pas eu lieu au lieu de rapporter un succès, de sorte que &laquo;&nbsp;approuvé&nbsp;&raquo; et &laquo;&nbsp;fait&nbsp;&raquo; restent deux mots différents.
+                Là où il y a quelque chose sur quoi agir, cela attend sous forme de mouvement rédigé, et une personne nommée l'approuve, le modifie ou le refuse, le visa restant au dossier. C'est l'approbation qui l'envoie. La réponse nomme chaque étape exécutée et toute étape qui n'a pas pu l'être, au lieu de rapporter un succès, de sorte que &laquo;&nbsp;approuvé&nbsp;&raquo; et &laquo;&nbsp;fait&nbsp;&raquo; restent deux mots différents.
             </p>
         </div>
         <div>
@@ -109,7 +105,7 @@ ceci est un scénario <strong class="text-stone-300">Runink FACE</strong>, son v
     },
     {
       "question": "Qui valide une action qu'il rédige ?",
-      "answer": "Une personne désignée, dont l'approbation, la modification ou le refus reste au dossier. C'est l'approbation qui envoie. Et là où une étape derrière cette approbation n'a encore rien d'implémenté &mdash; une écriture dans un système de parc ou de transport en est l'exemple honnête &mdash; la réponse nomme l'étape qui n'a pas eu lieu, de sorte qu'approuvé et fait restent deux mots différents."
+      "answer": "Une personne désignée, dont l'approbation, la modification ou le refus reste au dossier. C'est l'approbation qui envoie. La réponse nomme chaque étape exécutée et toute étape qui n'a pas pu l'être, de sorte qu'approuvé et fait restent deux mots différents."
     },
     {
       "question": "Que se passe-t-il quand la lecture est fausse ?",

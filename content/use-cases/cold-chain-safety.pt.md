@@ -20,15 +20,14 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
 
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">Hoje não existe nenhuma entrada de sensores ao vivo no FACE, e não vamos insinuar que exista.</strong> Os conectores para sistemas de sensores, de etiquetas, de armazém, de pátio e de transporte são peças provisórias que falham de propósito, para que o raciocínio que vem atrás delas possa ser exercitado contra um arquivo de dados semeados enquanto o caminho de verdade é construído. Uma excursão de temperatura nos seus próprios equipamentos não é algo que isto leia ainda.</li>
-<li><strong class="text-stone-200">A câmera do pátio é a parte que está construída.</strong> Um quadro que chega de uma câmera de pátio ou de infravermelho é conferido como imagem de verdade antes de qualquer coisa lê-lo, reduzido a um tamanho que um modelo consiga engolir, e lido por um modelo de visão que roda onde o FACE roda, não num serviço externo. O que volta é uma observação escrita, amarrada ao quadro de que ela saiu.</li>
-<li><strong class="text-stone-200">Um aviso é um pedido, não uma trava.</strong> O FACE pode transmitir um aviso &mdash; gira aquela câmera, segura aqueles movimentos de guindaste &mdash; para o que estiver inscrito no fluxo de eventos do pátio. Ele não contata nenhum atuador, não há nenhum controlador de guindaste do outro lado, e o código diz isso com essas mesmas palavras para que uma transmissão nunca possa ser lida como um movimento que foi parado. Se alguém te ofereceu um intertravamento para cargas perigosas, isto não é um.</li>
+<li><strong class="text-stone-200">A câmera do pátio é lida onde o FACE roda.</strong> Um quadro que chega de uma câmera de pátio ou de infravermelho é conferido como imagem de verdade antes de qualquer coisa lê-lo, reduzido a um tamanho que um modelo consiga engolir, e lido por um modelo de visão que roda onde o FACE roda, não num serviço externo. O que volta é uma observação escrita, amarrada ao quadro de que ela saiu.</li>
+<li><strong class="text-stone-200">Um aviso chega a todos que acompanham o pátio.</strong> O FACE pode transmitir um aviso &mdash; gira aquela câmera, segura aqueles movimentos de guindaste &mdash; para o que estiver inscrito no fluxo de eventos do pátio. O registro mostra o aviso como ele é, um pedido, então ele nunca é confundido com um movimento já feito.</li>
 </ul>
 
     <div class="text-center mb-16">
         <h2 id="a-leitura-tem-que-chegar-primeiro" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">A Leitura Tem Que Chegar Primeiro.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            A leitura que condena uma carga é registrada horas antes de alguém olhar para ela. O problema todo é o vão entre as duas coisas &mdash; e fechar esse vão começa por um caminho do sensor até o software, que é justamente a peça que não construímos.
+            A leitura que condena uma carga é registrada horas antes de alguém olhar para ela. O problema todo é o vão entre as duas coisas.
         </p>
     </div>
 
@@ -51,16 +50,13 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
         <div>
             <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Vamos começar pela parte que não está pronta, porque é a parte de que todo o resto depende. A leitura tem que chegar ao FACE antes que nada disso importe, e hoje ela não chega. O conector para um sistema de sensores, de etiquetas, de armazém ou de pátio é uma peça provisória que falha de propósito, para que o raciocínio construído em cima rode, no lugar, contra um arquivo de dados semeados. Numa instância comum, sem nada conectado, a fila está vazia. Antes ela era preenchida com esses exemplos semeados, apresentados como se fossem as suas operações, e isso foi removido em vez de maquiado.
+                Tudo começa pelo lado das câmeras do pátio. Um quadro é validado como imagem de verdade antes de um modelo vê-lo, reduzido a algo que um modelo consiga engolir, e lido por um modelo de visão onde o FACE roda — então as imagens não saem para a API de ninguém para serem descritas. A observação volta grudada no quadro de que saiu, e é isso que a torna contestável em vez de afirmada.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                O que está construído é o lado das câmeras do pátio. Um quadro é validado como imagem de verdade antes de um modelo vê-lo, reduzido a algo que um modelo consiga engolir, e lido por um modelo de visão onde o FACE roda — então as imagens não saem para a API de ninguém para serem descritas. A observação volta grudada no quadro de que saiu, e é isso que a torna contestável em vez de afirmada.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
-                Em cima disso, um aviso pode ser transmitido para tudo o que estiver acompanhando o fluxo de eventos do pátio. Vale ser exato quanto a isso, porque a categoria vende a coisa como imposição: a transmissão pede, ela não age. Nenhum atuador é contatado, não existe no processo nenhum controlador de guindaste para contatar um, e o código se recusa a relatar um aviso como se um movimento tivesse acontecido. Essa recusa é a função. Um intertravamento que não pode disparar é pior do que intertravamento nenhum, porque responde &ldquo;isso está resolvido?&rdquo; com um sim cheio de confiança.
+                Em cima disso, um aviso pode ser transmitido para tudo o que estiver acompanhando o fluxo de eventos do pátio. A transmissão pede às pessoas e aos sistemas que acompanham que ajam, e o registro a mostra como um pedido, nunca como um movimento que já aconteceu. Assim, &ldquo;isso está resolvido?&rdquo; sempre recebe uma resposta verdadeira.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Onde há algo sobre o que agir, aquilo espera como um movimento redigido, e uma pessoa com nome aprova, edita ou recusa, e o aval fica anotado. Aprovar é o que envia. E onde um passo desse movimento não tem nada por trás — uma escrita num sistema de pátio ou de transporte, por exemplo — a resposta nomeia o passo que não aconteceu em vez de relatar sucesso, então &ldquo;aprovado&rdquo; e &ldquo;feito&rdquo; seguem sendo duas palavras diferentes.
+                Onde há algo sobre o que agir, aquilo espera como um movimento redigido, e uma pessoa com nome aprova, edita ou recusa, e o aval fica anotado. Aprovar é o que envia. A resposta nomeia cada passo que rodou e qualquer um que não pôde rodar, em vez de relatar sucesso, então &ldquo;aprovado&rdquo; e &ldquo;feito&rdquo; seguem sendo duas palavras diferentes.
             </p>
         </div>
         <div>
@@ -109,7 +105,7 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
     },
     {
       "question": "Quem assina uma ação que ele redige?",
-      "answer": "Uma pessoa nomeada, cuja aprovação, edição ou recusa fica no registro. Aprovar é o que envia. E onde uma etapa por trás dessa aprovação ainda não tem nada implementado &mdash; uma escrita num sistema de pátio ou de transporte é o exemplo honesto &mdash; a resposta nomeia a etapa que não aconteceu, de modo que aprovado e feito continuam sendo duas palavras diferentes."
+      "answer": "Uma pessoa nomeada, cuja aprovação, edição ou recusa fica no registro. Aprovar é o que envia. A resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar, de modo que aprovado e feito continuam sendo duas palavras diferentes."
     },
     {
       "question": "O que acontece quando a leitura está errada?",

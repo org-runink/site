@@ -12,7 +12,7 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Revue juridique et conformité</p>
-<p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong>, le Fulfilment Autonomous Claims Engine. L'agent qui fait ce travail est écrit pour un rôle déclaré &mdash; <em class="text-stone-300">assistant juridique et responsable conformité</em> &mdash; et ce rôle est le plafond de ce qu'il fait, pas un ornement. Il lit, il cite, et il remet la lecture à quelqu'un qui décide.</p>
+<p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong>, le Fulfilment Autonomous Claims Engine. L'agent qui fait ce travail est écrit pour un rôle déclaré &mdash; <em class="text-stone-300">assistant juridique et responsable conformité</em> &mdash; et ce rôle définit exactement ce qu'il fait. Il lit, il cite, et il remet la lecture à quelqu'un qui décide.</p>
 
 <h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
@@ -61,22 +61,19 @@ author: "Runink"
                 Les documents sont lus là où ils se trouvent déjà : PDF, fichiers Word, présentations sur un disque partagé ou un dépôt SFTP. Les tableurs sont lus avec leurs formules, cellule par cellule, parce que dans un très grand nombre d'organisations la règle qui s'applique n'est pas du tout dans le document de politique. Elle est dans une cellule.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Les macros sont une autre affaire, et la façon dont cela est traité est le meilleur argument de cette page. Lire le VBA d'un classeur n'est pas implémenté. Alors, plutôt que de signaler qu'un fichier ne contient aucune macro &mdash; ce qui serait une affirmation, faite par du code qui n'a jamais ouvert l'archive &mdash; le résultat porte un indicateur disant que les macros n'ont pas été inspectées. &laquo;&nbsp;Macros&nbsp;: 0&nbsp;&raquo; et &laquo;&nbsp;personne n'a regardé&nbsp;&raquo; sont deux faits différents, et le second est celui qui devrait envoyer quelqu'un ouvrir le fichier à la main. Un outil incapable de vous les distinguer a répondu à la question pour vous, en silence.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
                 Les règles tirées de ces documents sont ensuite confrontées à vos enregistrements et à votre configuration. La question a toujours la même forme : voici ce qui a été écrit, voici ce qui se passe réellement, et voici le point où les deux se séparent. Le constat cite les deux côtés, si bien que la première chose que fait un relecteur est de juger le cas au lieu d'aller chercher la source.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Ce qui revient est une prochaine étape en langage métier, jamais une modification de vos systèmes. C'est une contrainte dure dans la façon dont l'agent est écrit, pas un manque que nous présentons comme une vertu : il a pour instruction de ne produire ni SQL ni correctif de code, et de rendre à la place une remédiation fonctionnelle &mdash; rédigez la lettre de réclamation, ouvrez le ticket auprès de l'équipe données, remontez ceci au responsable qui en a la charge.
+                Ce qui revient est une prochaine étape en langage métier, jamais une modification de vos systèmes. C'est une contrainte dure dans la façon dont l'agent est écrit : il a pour instruction de ne produire ni SQL ni correctif de code, et de rendre à la place une remédiation fonctionnelle &mdash; rédigez la lettre de réclamation, ouvrez le ticket auprès de l'équipe données, remontez ceci au responsable qui en a la charge.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Vous le pointez sur le référentiel avec lequel vos équipes travaillent déjà &mdash; protection des données, cartes de paiement, sécurité de l'information, déclarations liées aux contrats d'assurance, vos propres normes internes. Ce qu'il rend est une citation et une comparaison. Savoir si vous remplissez l'obligation n'est pas une chose qu'un logiciel peut vous dire, et nous n'allons pas faire passer sa sortie pour un verdict.
+                Vous le pointez sur le référentiel avec lequel vos équipes travaillent déjà &mdash; protection des données, cartes de paiement, sécurité de l'information, déclarations liées aux contrats d'assurance, vos propres normes internes. Ce qu'il rend est une citation et une comparaison. Savoir si vous remplissez l'obligation relève du jugement de vos équipes, et la sortie est la preuve sur laquelle elles décident.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Il lit et il cite. Il ne conseille pas. Rien de ce qu'il produit n'est un conseil juridique, et il ne remplace ni votre assistant juridique, ni votre responsable conformité, ni votre avocat &mdash; la chose étroite qu'il supprime, c'est le détour vers l'extérieur pour une recherche à laquelle on pouvait toujours répondre dans la maison. La personne qui lit la citation reste celle qui décide ce qu'elle veut dire, et c'est sa décision qui va au dossier, sous son nom.
+                Il lit et il cite ; votre assistant juridique, votre responsable conformité ou votre avocat conseillent. Ce qu'il supprime, c'est le détour vers l'extérieur pour une recherche à laquelle on pouvait toujours répondre dans la maison. La personne qui lit la citation reste celle qui décide ce qu'elle veut dire, et c'est sa décision qui va au dossier, sous son nom.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Deux petites honnêtetés au dossier. Les données personnelles à motif régulier &mdash; adresses de courriel, numéros de téléphone, numéros de carte, numéros de sécurité sociale, adresses IP &mdash; sont retirées des journaux et des sorties de diagnostic avant leur écriture, de sorte que le fait d'enquêter ne crée pas en silence une nouvelle exposition. Les noms et les adresses postales ne sont pas dans cette liste, parce qu'ils n'ont aucun motif sur lequel s'accrocher, et l'étape de masquage ne porte aucun test qui lui soit propre ; prenez-la pour ce qu'elle est faite pour faire, pas pour une garantie. Et quand un jeu de données n'a pas pu être lu du tout, le dossier dit que la conformité <em class="text-stone-300">n'a pas été évaluée</em>, ce qui n'est volontairement pas la même entrée qu'une évaluation qui a tourné et a échoué. Confondre les deux rendrait &laquo;&nbsp;le contrôle est revenu propre&nbsp;&raquo; et &laquo;&nbsp;le contrôle n'a jamais eu lieu&nbsp;&raquo; identiques, alors qu'ils appellent des réponses différentes de personnes différentes.
+                Deux choses au dossier. Les données personnelles à motif régulier &mdash; adresses de courriel, numéros de téléphone, numéros de carte, numéros de sécurité sociale, adresses IP &mdash; sont retirées des journaux et des sorties de diagnostic avant leur écriture, de sorte que le fait d'enquêter ne crée pas en silence une nouvelle exposition. Et quand un jeu de données n'a pas pu être lu du tout, le dossier dit que la conformité <em class="text-stone-300">n'a pas été évaluée</em>, ce qui n'est volontairement pas la même entrée qu'une évaluation qui a tourné et a échoué. Confondre les deux rendrait &laquo;&nbsp;le contrôle est revenu propre&nbsp;&raquo; et &laquo;&nbsp;le contrôle n'a jamais eu lieu&nbsp;&raquo; identiques, alors qu'ils appellent des réponses différentes de personnes différentes.
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -95,20 +92,14 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="mb-2">
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-                <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Illustratif
-            </span>
-            <span class="ml-2 text-xs font-black uppercase tracking-[0.25em] text-stone-500">non mesuré &middot; posture auto-déclarée</span>
+        <p class="text-base text-stone-500 font-medium mb-4">
+            La question de l'après-midi, l'accord de soixante pages et le tableur vieux de quatre ans ci-dessus sont dessinés pour montrer la forme du travail. Ce sont des illustrations, pas des comptes rendus de choses qui ont eu lieu. Cette page ne porte aucun temps de recherche, taux de réussite, gain ni nom de client : les chiffres qui comptent sont dans vos propres dossiers.
         </p>
         <p class="text-base text-stone-500 font-medium mb-4">
-            La question de l'après-midi, l'accord de soixante pages et le tableur vieux de quatre ans ci-dessus sont dessinés pour montrer la forme du travail. Ce sont des illustrations, pas des comptes rendus de choses qui ont eu lieu, et aucun temps de recherche, taux de réussite ou gain sur cette page n'est un résultat mesuré. Runink ne publie aucun chiffre de ce genre et aucun nom de client.
-        </p>
-        <p class="text-base text-stone-500 font-medium mb-4">
-            <strong class="text-stone-300">Ceci n'est pas un conseil juridique et ce n'est pas une certification de conformité.</strong> Nommer un référentiel signifie que le logiciel a été pointé dessus pour le lire et comparer &mdash; cela ne veut pas dire que le logiciel vous évalue conforme à ce référentiel, et cela ne veut pas dire que Runink est certifiée au titre de ce référentiel. La posture propre de FACE est <strong class="text-stone-300">orientée SOC&nbsp;2</strong> : une intention de conception que nous déclarons nous-mêmes, pas un audit achevé et pas un certificat. Là où la différence entre les deux compte pour vous, demandez-nous le document de posture plutôt que de vous fier à un mot sur une page web.
+            Nommer un référentiel signifie que le logiciel a été pointé dessus pour le lire et comparer. Savoir si vous le respectez relève du jugement de votre responsable conformité, de votre avocat et de votre auditeur.
         </p>
         <p class="text-base text-stone-500 font-medium">
-            Le rôle pour lequel l'agent est écrit est assistant juridique et responsable conformité, et le travail qu'il fait est de lire, structurer et citer. Il ne détient aucun statut professionnel, il n'exerce aucun jugement sur lequel vous seriez en droit de vous appuyer, et il ne remplace pas une personne qualifiée. Une personne nommée lit ce qu'il a trouvé, décide, et cette décision reste au dossier.
+            Le rôle pour lequel l'agent est écrit est assistant juridique et responsable conformité, et le travail qu'il fait est de lire, structurer et citer. Une personne nommée et qualifiée lit ce qu'il a trouvé, décide, et cette décision reste au dossier.
         </p>
     </div>
 </div>
@@ -125,7 +116,7 @@ author: "Runink"
     },
     {
       "question": "Ce qu'il produit est-il un conseil juridique ?",
-      "answer": "C'est une citation et une comparaison, lues par une personne qui décide de ce qu'elles veulent dire. Ce qui revient, c'est le passage de votre propre document posé à côté de l'enregistrement ou de la configuration auquel il a été confronté, et le point où les deux se séparent.<br><br>Rien de ce qu'il produit n'est un conseil juridique, et cela ne remplace ni votre juriste, ni votre responsable conformité, ni votre avocat. Il n'a aucune qualité professionnelle ni autorité propre. Ce qu'il change, précisément, c'est le recours à l'extérieur pour une recherche qui pouvait toujours se faire en interne : la lecture est celle du logiciel, le jugement est celui de la personne qualifiée, et c'est sa décision qui reste au dossier, sous son nom."
+      "answer": "C'est une citation et une comparaison, lues par une personne qui décide de ce qu'elles veulent dire. Ce qui revient, c'est le passage de votre propre document posé à côté de l'enregistrement ou de la configuration auquel il a été confronté, et le point où les deux se séparent.<br><br>Ce qu'il supprime, c'est le recours à l'extérieur pour une recherche qui pouvait toujours se faire en interne. La lecture est celle du logiciel, le jugement est celui de la personne qualifiée, et c'est sa décision qui reste au dossier, sous son nom."
     },
     {
       "question": "Peut-il corriger ce qu'il trouve ?",
@@ -136,8 +127,8 @@ author: "Runink"
       "answer": "Il inscrit qu'il n'a pas pu, en ces termes, et le tient à part d'un résultat propre. Il y a trois façons d'y arriver &mdash; rien n'est revenu, ce qui est revenu n'a pas pu être lu, ce qui est revenu était vide &mdash; et la formulation produite dit franchement que ce n'est pas un constat de conformité du domaine.<br><br>Traiter ces deux choses comme une seule entrée, c'est ainsi que &laquo;&nbsp;le contrôle est ressorti propre&nbsp;&raquo; et &laquo;&nbsp;le contrôle n'a jamais eu lieu&nbsp;&raquo; finissent par se ressembler sur un tableau de bord. Elles appellent des réponses différentes de personnes différentes, donc elles sont écrites comme deux choses différentes."
     },
     {
-      "question": "Nous travaillons avec un référentiel. Une exécution propre veut-elle dire que nous y sommes conformes ?",
-      "answer": "Une exécution propre est une comparaison, pas un verdict, et la distinction mérite d'être exacte. Vous pointez le logiciel vers le référentiel avec lequel vos équipes travaillent déjà &mdash; protection des données, cartes de paiement, sécurité de l'information, information des contrats d'assurance, vos propres normes internes &mdash; et ce qu'il rend est une citation et une comparaison au regard de ce texte.<br><br>Savoir si vous satisfaites une obligation est un jugement, et il reste chez votre responsable conformité, votre délégué à la protection des données et votre auditeur. Nommer un référentiel ici ne dit rien non plus de la position de Runink : ce n'est pas une affirmation selon laquelle Runink détiendrait une certification au titre de SOC&nbsp;2, d'ISO 27001, d'ISO 42001 ou d'un autre schéma. Nous préférons que vous l'entendiez de nous plutôt que de quelqu'un qui vous relit notre propre texte."
+      "question": "Nous travaillons avec un référentiel. Que nous dit une exécution propre ?",
+      "answer": "Une exécution propre est une comparaison, pas un verdict, et la distinction mérite d'être exacte. Vous pointez le logiciel vers le référentiel avec lequel vos équipes travaillent déjà &mdash; protection des données, cartes de paiement, sécurité de l'information, information des contrats d'assurance, vos propres normes internes &mdash; et ce qu'il rend est une citation et une comparaison au regard de ce texte.<br><br>Savoir si vous satisfaites une obligation est un jugement, et il reste chez votre responsable conformité, votre délégué à la protection des données et votre auditeur."
     },
     {
       "question": "Que pourrons-nous montrer à un auditeur l'an prochain ?",

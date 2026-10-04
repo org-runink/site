@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Un itinéraire revient sous la forme d'une distance, d'une durée et d'un tracé sur la carte.</strong> Un départ, une arrivée et les contraintes que vous avez nommées partent vers le fournisseur de calcul d'itinéraire ; ce qui revient est une distance routière mesurée et un temps de parcours, pas un avis.</li>
 <li><strong class="text-stone-200">Aucun montant n'y est attaché, et c'est volontaire.</strong> Le fournisseur d'itinéraire renvoie une distance et une durée, et aucun coût. Donc aucune économie n'est imprimée à côté de l'itinéraire, car un chiffre que personne n'a mesuré posé à côté de deux chiffres mesurés, c'est exactement ainsi qu'une estimation finit citée comme un fait.</li>
 <li><strong class="text-stone-200">Quand le calcul n'a pas pu aboutir, il le dit.</strong> Une connexion sans identifiant d'itinéraire, ou un fournisseur qui ne renvoie rien, revient comme indisponible. Cela ne revient pas sous la forme d'une fiche d'itinéraire aux champs laissés vides, ce qui, à l'écran, ne se distingue pas d'une bonne réponse.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Tracé
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        Cette page marque où passe la ligne. L'appel d'itinéraire, la fiche qu'il produit et le refus de deviner un coût sont dans le produit. La journée de travail qui les entoure est une illustration du mécanisme, pas le compte rendu d'un événement : cela n'a pas tourné sur la flotte d'un client, et il n'y a ici aucun chiffre de distance, de durée ni d'argent économisé.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="optimal-a-six-heures-plus-a-dix" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Optimal À Six Heures. Plus À Dix.</h2>
@@ -71,10 +63,10 @@ author: "Runink"
                 L'identifiant appartient à la connexion, pas à la machine. Le service d'itinéraire est atteint avec la clé rattachée à la connexion configurée pour cela, si bien que l'ancrage est quelque chose que vous installez, que vous voyez et que vous pouvez révoquer connexion par connexion. Ce n'est pas une variable d'environnement enfouie dans un serveur que personne ne peut auditer.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Un changement est proposé, jamais imposé. Une personne nommée à la régulation le valide, le corrige ou le rejette, et le rejet est consigné comme une décision plutôt que comme un silence. Prévenir le conducteur est un autre travail et une autre page &mdash; un conducteur peut demander et recevoir la réponse à voix haute, les mains sur le volant, dans <a href="/fr/use-cases/voice-dispatch">parler aux conducteurs sans écran</a> &mdash;, même si l'appel laisse une transcription et non une acceptation, et la régulation reste propriétaire du changement. Et si la question est plus large qu'un segment &mdash; un fournisseur abandonné, un axe laissé pour une saison &mdash;, le dossier peut d'abord être posé face aux règles qu'il heurte, dans <a href="/fr/use-cases/hypothesis-lab">tester un plan avant de s'y engager</a>.
+                Un changement est proposé, jamais imposé. Une personne nommée à la régulation le valide, le corrige ou le rejette, et le rejet est consigné comme une décision plutôt que comme un silence. Prévenir le conducteur est un autre travail et une autre page &mdash; un conducteur peut demander et recevoir la réponse à voix haute, les mains sur le volant, dans <a href="/fr/use-cases/voice-dispatch">parler aux conducteurs sans écran</a> &mdash;, et l'appel laisse une transcription au dossier tandis que la régulation reste propriétaire du changement. Et si la question est plus large qu'un segment &mdash; un fournisseur abandonné, un axe laissé pour une saison &mdash;, le dossier peut d'abord être posé face aux règles qu'il heurte, dans <a href="/fr/use-cases/hypothesis-lab">tester un plan avant de s'y engager</a>.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                C'est la validation qui l'envoie, et le motif reste au dossier pour celui qui demandera dans trois mois pourquoi un camion est passé par là. Une honnêteté de plus à ce sujet, du genre sur lequel cette page est bâtie : là où une étape derrière la validation n'a rien d'implémenté derrière elle &mdash; l'écriture dans votre système de transport en est l'exemple réel &mdash;, la réponse nomme cette étape comme non exécutée au lieu de renvoyer un succès qui couvrirait l'action entière. Validé et fait sont ici deux mots différents, et c'est le logiciel qui vous dit lequel des deux il a réussi.
+                C'est la validation qui l'envoie, et le motif reste au dossier pour celui qui demandera dans trois mois pourquoi un camion est passé par là. La réponse nomme chaque étape exécutée et toute étape qui n'a pas pu l'être, au lieu de renvoyer un succès qui couvrirait l'action entière. Validé et fait sont ici deux mots différents, et c'est le logiciel qui vous dit lequel des deux il a réussi.
             </p>
         </div>
         <div>
@@ -91,7 +83,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous n'en avons aucun à nous à vous proposer. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
+                Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">À quelle fréquence une tournée est recalculée après l'affectation.</strong> La réponse la plus honnête est jamais. Prenez un mois et comptez les jours où le plan a été recalculé au lieu d'être rafistolé. C'est le chiffre sur lequel tout repose.</li>
@@ -130,7 +122,7 @@ author: "Runink"
     },
     {
       "question": "Comment le chauffeur l'apprend-il ?",
-      "answer": "C'est un autre travail et une autre page. Un chauffeur peut demander et obtenir une réponse à voix haute, les mains sur le volant, comme décrit dans [parler aux chauffeurs sans écran](/fr/use-cases/voice-dispatch/). L'appel laisse une transcription et non une acceptation, et le changement reste au bureau."
+      "answer": "C'est un autre travail et une autre page. Un chauffeur peut demander et obtenir une réponse à voix haute, les mains sur le volant, comme décrit dans [parler aux chauffeurs sans écran](/fr/use-cases/voice-dispatch/). L'appel laisse une transcription au dossier, et le changement reste au bureau."
     }
   ]
 }

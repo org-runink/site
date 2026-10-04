@@ -19,7 +19,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">The change has to be written down before it can be argued.</strong> A hypothesis is stated explicitly, together with the rules it touches — the reorder points, the lead times, the service commitments your business already runs on. Most of the value is in that step, and it is the step normally skipped.</li>
 <li><strong class="text-stone-200">What comes back is reasoning, ranked, with the rule it invoked.</strong> Each consequence is tied to the specific rule it follows from, so you can disagree with it on the merits. It is an argument you can check, not a number to accept.</li>
-<li><strong class="text-stone-200">Nothing is executed, and nothing is connected.</strong> The engine has no write path to your systems and does not touch them. It reasons over the rules you gave it, where FACE runs — the scenario goes to no outside AI service.</li>
+<li><strong class="text-stone-200">Your live systems stay untouched.</strong> The engine reasons over the rules you gave it, where FACE runs, and the scenario goes to no outside AI service.</li>
 <li><strong class="text-stone-200">You can make it rough on purpose.</strong> Push a lane a week late. Drop a supplier. Let a load run warm. Plans that only work when everything goes right show it here, not at the quarter end.</li>
 </ul>
 
@@ -60,10 +60,10 @@ author: "Runink"
         <div>
             <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Be clear about what this is, because the category is full of tools that are vague about it. The engine does not run a simulation over your live data and it does not compute an outcome. You state the change as a hypothesis and hand it the rules that govern the thing you are changing &mdash; reorder points, lead times, service commitments, the reserve assumption. It reasons over those rules and returns a ranked read of what follows, with each consequence tied to the rule it came from.
+                You state the change as a hypothesis and hand it the rules that govern the thing you are changing &mdash; reorder points, lead times, service commitments, the reserve assumption. It reasons over those rules and returns a ranked read of what follows, with each consequence tied to the rule it came from.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                So what comes back is an argument, not an answer. That is the useful thing and it is worth saying plainly: a projection presented as a decision is worse than no projection, because it moves the judgement from someone accountable to a piece of software that is not. What this gives the room is the case laid out &mdash; which rules the change collides with, in what order they bite, and what somebody would have to believe for the plan to hold. The decision stays where it was.
+                So what comes back is an argument, not an answer. That is the useful thing: a projection presented as a decision is worse than no projection, because it moves the judgement from someone accountable to a piece of software that is not. What this gives the room is the case laid out &mdash; which rules the change collides with, in what order they bite, and what somebody would have to believe for the plan to hold. The decision stays where it was.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Two consequences of that are worth having. Stating the hypothesis forces the assumptions into writing, which is the step teams skip and the reason two people can argue for an hour and turn out to have been discussing different plans. And because the reasoning happens where FACE runs, the scenario you are considering &mdash; which supplier you might drop, which lane you might cut &mdash; goes to no outside AI service.
@@ -92,7 +92,7 @@ author: "Runink"
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
         <p class="text-base text-stone-500 font-medium">
-            The port closure above is drawn to show the shape of the work. It is not an account of a customer engagement, and nothing on this page is a measured result. Runink publishes no ROI figures, no percentages and no customer names &mdash; not because they would be unflattering, but because we have not measured them and saying so is cheaper than being caught.
+            The port closure above is drawn to show the shape of the work. It is not an account of a customer engagement, and nothing on this page is a measured result. This page carries no ROI figures, percentages or customer names: the figures that matter are in your own records.
         </p>
     </div>
 </div>
@@ -117,7 +117,7 @@ author: "Runink"
     },
     {
       "question": "What does it do when the rules we gave it do not settle the question?",
-      "answer": "It names what somebody would have to believe for the plan to hold, and hands that back as the finding. That is the honest output when the rules run out: the belief the plan rests on, stated in a sentence, so the room can argue about the belief rather than about a spreadsheet.<br><br>It restates your assumptions and follows them through. It does not discover an assumption you never gave it, and a consequence it returns is only as good as the rule it was drawn from — which is why every consequence names its rule."
+      "answer": "It names what somebody would have to believe for the plan to hold, and hands that back as the finding. That is the honest output when the rules run out: the belief the plan rests on, stated in a sentence, so the room can argue about the belief rather than about a spreadsheet.<br><br>It restates your assumptions and follows them through, and every consequence names the rule it was drawn from."
     },
     {
       "question": "Who picks, and what does the record show afterwards?",
