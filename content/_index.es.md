@@ -11,6 +11,9 @@ title: "Runink"
 # description, at most 155. Visible copy on the page is unchanged by these two.
 seo_title: "Runink | Detecte sobrecostes y reclamaciones a tiempo"
 seo_description: "Sobrecostes pagados, reclamaciones vencidas, normas incumplidas. Runink FACE lee los registros que ya guarda y redacta la corrección que alguien aprueba."
+# Share card (og:image), drawn by scripts/og-cards/render.mjs from the English
+# hero. One English card serves all four languages.
+image: "/images/og/home-og.jpg"
 description: "Usted se entera cuando ya es tarde para reclamar. Un contenedor espera porque un documento está mal y el cargo empieza ese mismo día. Runink FACE lee los registros que sus sistemas ya guardan, compara cada uno con la norma que lo rige y pone una acción redactada delante de quien decide."
 # THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
 #

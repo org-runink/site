@@ -1,0 +1,77 @@
+<!doctype html>
+<!--
+  Share-card template (og:image), drawn at 1200x675. Rendered by render.mjs, which
+  replaces the {{...}} slots from cards.json. Not a site page: nothing under
+  scripts/ is published. The values below are the product-page hero's own
+  (assets/css/product.css: --rp-hero-a/b, --rp-lit, the #33362c glow), so a card
+  looks like the page it is shared from.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "Figtree Card"; src: url("{{FONTS}}/Figtree-var.woff2") format("woff2"); font-weight: 300 900; }
+@font-face { font-family: "Fira Code Card"; src: url("{{FONTS}}/FiraCode-Regular.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Playfair Card"; src: url("{{FONTS}}/PlayfairDisplay-Italic-var.woff2") format("woff2"); font-weight: 400 700; font-style: italic; }
+:root {
+  --ground-a: #1c1c1a; --ground-b: #212121; --glow: #33362c;
+  --ink: #f2f2ec; --ink-head: #ecede8; --mark: #e6e7e1;
+  --lit: #c0cc7c; --url: #8b8b82; --strand: #717168;
+}
+html, body { margin: 0; width: 1200px; height: 675px; overflow: hidden; }
+body {
+  position: relative;
+  background:
+    radial-gradient(95% 85% at 100% 0%, var(--glow) 0%, transparent 62%),
+    linear-gradient(175deg, var(--ground-a), var(--ground-b));
+  font-family: "Figtree Card", sans-serif; color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+.lockup { position: absolute; left: 84px; top: 78px; display: flex; gap: 25px; align-items: center; }
+.mark {
+  width: 74px; height: 88px; background: var(--mark); flex: none;
+  -webkit-mask: url("{{MARK}}") center / contain no-repeat; mask: url("{{MARK}}") center / contain no-repeat;
+}
+.mark-img { width: 88px; height: 88px; flex: none; margin-right: -4px; }
+.name { font-weight: 700; font-size: 37.5px; line-height: 1; color: var(--ink-head); letter-spacing: -0.005em; }
+.sub { margin-top: 14px; font-family: "Fira Code Card", monospace; font-size: 18.5px; line-height: 1; color: var(--lit); opacity: 0.9; white-space: nowrap; }
+.url { position: absolute; right: 84px; top: 93px; font-family: "Fira Code Card", monospace; font-size: 18px; color: var(--url); }
+.headline {
+  position: absolute; left: 84px; top: 200px; width: 1030px; margin: 0;
+  font-weight: 700; font-size: 58px; line-height: 67px; letter-spacing: -0.01em; color: var(--ink);
+}
+.headline span { display: block; white-space: nowrap; }
+.tagline { position: absolute; left: 84px; top: 347px; font-family: "Playfair Card", serif; font-style: italic; font-size: 29.5px; color: var(--lit); }
+svg.flow { position: absolute; left: 0; bottom: 0; width: 1200px; height: 175px; }
+.flow path { fill: none; stroke: var(--strand); stroke-width: 1; opacity: 0.6; }
+.flow path.lit { stroke: var(--lit); stroke-width: 1.6; opacity: 1; stroke-dasharray: 12 10; }
+</style>
+</head>
+<body>
+<div class="lockup">
+  <div class="mark"></div>
+  <div><div class="name">{{TITLE}}</div><div class="sub">{{SUBTITLE}}</div></div>
+</div>
+<div class="url">runink.org</div>
+<h1 class="headline" id="h">{{HEADLINE}}</h1>
+<p class="tagline">Data You Can Trust. Decisions You Can Defend.</p>
+<svg class="flow" viewBox="0 0 1200 175" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M-10 22 C 250 18, 450 18, 650 24 S 1050 44, 1160 50 S 1200 48, 1210 47" />
+  <path d="M-10 48 C 250 42, 450 42, 650 48 S 1050 70, 1160 77 S 1200 75, 1210 74" />
+  <path class="lit" d="M-10 76 C 250 68, 450 67, 650 72 S 1050 96, 1160 103 S 1200 100, 1210 99" />
+  <path d="M-10 102 C 250 96, 450 94, 650 99 S 1050 122, 1160 128 S 1200 126, 1210 125" />
+  <path d="M-10 128 C 250 122, 450 120, 650 125 S 1050 146, 1160 152 S 1200 150, 1210 149" />
+</svg>
+<script>
+// Shrink the headline until every line fits the column. Lines are given
+// explicitly in cards.json, so the break is chosen by a person, never by width.
+document.fonts.ready.then(() => {
+  const h = document.getElementById('h');
+  let size = parseFloat(getComputedStyle(h).fontSize);
+  const widest = () => Math.max(...[...h.children].map((s) => s.scrollWidth));
+  while (widest() > h.clientWidth && size > 40) { size -= 1; h.style.fontSize = size + 'px'; }
+  document.title = 'fitted ' + size;
+});
+</script>
+</body>
+</html>
