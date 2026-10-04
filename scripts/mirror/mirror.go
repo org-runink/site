@@ -88,7 +88,7 @@ var frontRe = regexp.MustCompile(`(?s)\A---\n(.*?\n)---\n`)
 // patterns below are written against; body starts at the first character after
 // the closing "---\n".
 //
-// The Python scripts spelled this two ways — r'^---\n(.*?\n)---\n' (core,
+// The Python scripts spelled this two ways — r'^---\n(.*?\n)---\n' (tide,
 // face) and r'^---\n(.*?)\n---\n' (pulse, atlas) — which differ only by that
 // newline and are otherwise the same match.
 func SplitFrontMatter(src string) (front, body string, ok bool) {
@@ -150,7 +150,7 @@ func FloorDiv(a, b int) int {
 }
 
 // PyRepr renders a Go string the way Python's repr() renders a str. Only
-// rebuild-runink-core --dry-run needs it, and only so that its output stays
+// rebuild-runink-tide --dry-run needs it, and only so that its output stays
 // diffable against the Python's.
 //
 // Limits, stated rather than discovered later: it implements the ASCII rules

@@ -39,7 +39,7 @@ var furnitureRe = regexp.MustCompile(`(?i)^(?:` +
 	`|\*Pages? \d` + // *Page 1 — Cover* / *Pages 17–18 — ...*
 	`|#{1,3} Pages? \d` + // ## Page 7 — Title / ## Pages 21–23 — Title
 	`|!\[\]` + // bare images
-	`|\*[^*\n]*page \d+[^*\n]*\*\s*$` + // *Runink CORE — page 7 of 21*
+	`|\*[^*\n]*page \d+[^*\n]*\*\s*$` + // *Runink TIDE — page 7 of 21*
 	`)`)
 
 var colophonRe = regexp.MustCompile(`\A\*[^*]+\*\z`)
@@ -86,12 +86,12 @@ func Audit(w io.Writer, siteDir, mirrorDir, name string, mode AuditMode) (int, e
 	// Keying on the words rather than on a literal "## Page " makes this work
 	// for a mirror that numbers its chapters ("## Page 2 — Executive summary",
 	// as runink-face does) and for one that does not ("## Executive summary",
-	// as runink-core does). The old "## Page " test silently produced an EMPTY
+	// as runink-tide does). The old "## Page " test silently produced an EMPTY
 	// cover for the three mirrors that title their chapters plainly, so their
 	// covers were reported as stale prose.
 	//
 	// Keying on the FIRST site chapter alone was still wrong for one mirror:
-	// runink-core-atlas folds its whole first chapter into the cover as bold
+	// runink-tide-atlas folds its whole first chapter into the cover as bold
 	// running text, so that chapter has no heading in the mirror at all and
 	// the search fell through to 0 — an empty cover again, and the tool then
 	// reported the cover as six paragraphs of stale prose. Its only fix would

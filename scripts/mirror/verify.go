@@ -18,7 +18,7 @@ import (
 )
 
 // VerifyNames is the paper order mirror-verify.py reported in.
-var VerifyNames = []string{"runink-face", "runink-core", "runink-pulse", "runink-core-atlas"}
+var VerifyNames = []string{"runink-face", "runink-tide", "runink-pulse", "runink-tide-atlas"}
 
 // DefaultBackupDir is where mirror-verify.py looked for a pre-sync copy to
 // compare sizes against. It is ~/.cache, not the repo and not /tmp.
@@ -66,7 +66,7 @@ func Verify(w io.Writer, siteDir, mirrorDir, backupDir string, names []string) (
 
 		// 2. every site chapter appears exactly once as a heading — or, for a
 		//    chapter the mirror folds into its cover, once in the cover block
-		//    as running text. runink-core-atlas folds its whole first chapter
+		//    as running text. runink-tide-atlas folds its whole first chapter
 		//    that way, which the shipped checker names in its own header as a
 		//    known, legitimate difference; demanding a heading for it would
 		//    push a correct mirror into failing, and the only way to satisfy

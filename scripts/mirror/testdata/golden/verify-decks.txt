@@ -1,4 +1,4 @@
 ok   runink-face        3 chapters, no backup to compare
-ok   runink-core        3 chapters, no backup to compare
+ok   runink-tide        3 chapters, no backup to compare
 ok   runink-pulse       3 chapters, no backup to compare
-ok   runink-core-atlas  3 chapters, no backup to compare
+ok   runink-tide-atlas  3 chapters, no backup to compare

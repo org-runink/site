@@ -35,7 +35,7 @@ program's working directory too — which breaks the repo-relative paths every o
 of these expects. So build once, then run the binaries **from the repo root**:
 
     go build -C scripts/mirror -o ~/.cache/rk-mirror/ ./cmd/...
-    ~/.cache/rk-mirror/rebuild-runink-core
+    ~/.cache/rk-mirror/rebuild-runink-tide
     ~/.cache/rk-mirror/mirror-audit runink-face --excluded
 
 `~/.cache`, not the repo and not `/tmp`. Tests: `go test ./...` from
@@ -44,7 +44,7 @@ of these expects. So build once, then run the binaries **from the repo root**:
 ## The scripts
 
     ~/.cache/rk-mirror/rebuild-<paper>        # rewrite one mirror from its source
-    ~/.cache/rk-mirror/rebuild-<paper> --dry-run   # core, face, core-atlas only
+    ~/.cache/rk-mirror/rebuild-<paper> --dry-run   # tide, face, tide-atlas only
 
 Run from the repo root. `MIRROR_DIR` overrides `../pitch-decks`. Each keeps its
 paper's cover verbatim, regenerates the body from the site source, and re-applies
@@ -65,14 +65,21 @@ a per-paper config struct would have needed a branch at every one of those.
 | paper | furniture |
 | --- | --- |
 | `runink-face` | `## Page N — Title`, `## Pages N–M — Title` for spans, a page-break div per chapter, a Contact colophon |
-| `runink-core` | plain `## Title`, `*Runink CORE — page N of 21*` under each chapter, closing colophon |
+| `runink-tide` | plain `## Title`, `*Runink TIDE — page N of 23*` under each chapter, closing colophon |
 | `runink-pulse` | plain `## Title`, a `## Contents` block the site does not have, `*Page N — Title*` markers, no trailing newline |
-| `runink-core-atlas` | plain `## Title`, and **chapter one is folded into the cover** as bold running text with no heading |
+| `runink-tide-atlas` | plain `## Title`, and **chapter one is folded into the cover** as bold running text with no heading |
+
+Those four are the papers with a print copy. `runink-face-logistics` and
+`runink-tide-atlas-banking` have none, so there is nothing to rebuild for them;
+`check-whitepaper-mirrors.sh` lists them on every run as having no print copy,
+and fails if a mirror for one of them appears without being added to its list.
+The TIDE papers were `runink-core` and `runink-core-atlas` until the CORE to
+Runink TIDE rename; their print copies and tools carry the new names.
 
 Page numbers come from each source's `register:` front matter, not from hand
 maintenance. That is load-bearing rather than cosmetic: the prose cross-
 references its own pagination ("the per-seat price is published on page 17"), and
-before this the CORE mirror was numbered to 22 pages against a 21-page register,
+before this the CORE (now TIDE) mirror was numbered to 22 pages against a 21-page register,
 so every one of those references pointed at the wrong sheet.
 
 ## The checks

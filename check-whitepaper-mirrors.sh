@@ -3,10 +3,11 @@
 #
 # WHAT IS BEING PROTECTED
 # -----------------------
-# Each of the four whitepapers exists twice:
+# Each whitepaper with a print copy exists twice (the four in MIRRORED below;
+# every other paper is named on each run as having no print copy):
 #
 #   content/blog/whitepapers/NAME.md          the site source (front matter + body)
-#   ../pitch-decks/runink-NAME-whitepaper.md  the print mirror
+#   ../pitch-decks/NAME-whitepaper.md         the print mirror
 #
 # The mirror is NOT a second draft. It is the same body with print furniture
 # wrapped round it: a cover block at the top, and page markers between the
@@ -40,7 +41,7 @@
 #
 #   - runink-face's mirror titles every chapter "## Page 9 — Attract: ..."
 #     where the site source says "## Attract: ...".
-#   - runink-core-atlas's mirror folds its whole first chapter into the cover
+#   - runink-tide-atlas's mirror folds its whole first chapter into the cover
 #     block, as bold running text with different line wrapping and a full stop
 #     the heading does not have.
 #
@@ -80,7 +81,11 @@ fi
 
 status=0
 
-for name in runink-core-atlas runink-core runink-face runink-pulse; do
+# The papers with a print copy. runink-tide and runink-tide-atlas were
+# runink-core and runink-core-atlas before the CORE to Runink TIDE rename.
+MIRRORED="runink-tide-atlas runink-tide runink-face runink-pulse"
+
+for name in $MIRRORED; do
   src="$SITE_DIR/$name.md"
   mirror="$MIRROR_DIR/$name-whitepaper.md"
 
@@ -136,6 +141,34 @@ for name in runink-core-atlas runink-core runink-face runink-pulse; do
   ' "$mirror" "$src"; then
     echo "         (site source: $src)"
     echo "         (mirror:      $mirror)"
+    status=1
+  fi
+done
+
+# Every other paper on the site: say that it has no print copy, so a paper
+# never drops out of this check silently. A print copy that exists for a paper
+# not in MIRRORED fails, because nothing above compared it to anything.
+for src in "$SITE_DIR"/*.md; do
+  name=$(basename "$src" .md)
+  case "$name" in _index*) continue ;; esac
+  # TOON-only alias stubs (the old runink-core* URLs) are not papers.
+  if grep -q '^toon_of:' "$src"; then continue; fi
+  case " $MIRRORED " in *" $name "*) continue ;; esac
+  if [ -f "$MIRROR_DIR/$name-whitepaper.md" ]; then
+    echo "UNCHECKED $name — $MIRROR_DIR/$name-whitepaper.md exists but is not in MIRRORED" >&2
+    status=1
+  else
+    echo "note   $name — no print copy"
+  fi
+done
+
+# The other direction: a print copy whose paper is gone or was renamed is a
+# handout nobody is keeping in step with anything.
+for mirror in "$MIRROR_DIR"/*-whitepaper.md; do
+  [ -e "$mirror" ] || continue
+  name=$(basename "$mirror" -whitepaper.md)
+  if [ ! -f "$SITE_DIR/$name.md" ]; then
+    echo "ORPHAN $mirror — no site paper $SITE_DIR/$name.md" >&2
     status=1
   fi
 done

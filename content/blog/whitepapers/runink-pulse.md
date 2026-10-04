@@ -1,25 +1,27 @@
 ---
 title: "Runink PULSE — Prescriptive Unified Lead & Social Engine"
-headline: "A marketing engine that runs inside your own business."
+headline: "A marketing engine your own team operates, with no outside AI service."
 # The label the closing ask carries into the contact form, so an enquiry
 # arrives naming the paper it came from. `product:` is not usable for this —
 # two of the four papers are both "Runink TIDE".
 next_about: "The Runink PULSE paper"
 product: "Runink PULSE"
 subtitle: "Prescriptive Unified Lead & Social Engine"
-description: "A whitepaper for executives, marketing leaders and the people who sign off on where company data goes. One application your own team operates, on hardware you control."
+description: "A whitepaper for executives, marketing leaders and the people who sign off on where company data goes. One application your own team operates, on your own servers or cloud account, or on Runink's shared machines to start; no outside AI service."
 weight: 30
 date: 2026-09-29T00:00:00Z
 source_pages: 23
 audience: "Executives, marketing leaders, and the people who sign off on where company data goes"
 blurb: "One application a marketing team operates directly. It audits your website and social presence, researches your market, prospects the public web for leads, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft with a status and an approve against it, on channels that stay disarmed until you arm them."
 deck: |
-  PULSE replaces the marketing patchwork with one application your own team
+  Runink PULSE: Prescriptive Unified Lead & Social Engine replaces the
+  marketing patchwork with one application your own team
   operates: audit, research, prospecting, production and follow-up, drawing on
   a single shared understanding of your business.
 
   **Every channel is disarmed until you arm it, nothing publishes on a channel
-  that is off, and the reasoning runs on hardware you control.**
+  that is off, and the reasoning runs on your own servers or cloud account,
+  or on Runink's shared machines to start. No outside AI service is called.**
 register:
   - { page: 3,  title: "Summary" }
   - { page: 4,  title: "The problem, in your terms" }
@@ -51,7 +53,7 @@ writing assistant, each holding a different fragment of what the company knows a
 And increasingly there is a habit — often undeclared — of pasting positioning notes, customer
 lists and pipeline detail into text generators owned by somebody else.
 
-Runink PULSE replaces that patchwork with one application that a marketing team operates
+Runink PULSE: Prescriptive Unified Lead & Social Engine replaces that patchwork with one application that a marketing team operates
 directly. It audits your website and social presence and scores it against nine measures.
 It researches your market, finds competitors and partners worth knowing, and prospects the
 public web for leads. It writes the posts, whitepapers, decks, short videos, podcasts,
@@ -67,8 +69,9 @@ and a reject against it, and a channel that has not been armed publishes nothing
 status a piece carries. Page 18 sets out how those two controls work together.
 
 The second is where the work happens. The reasoning that does the writing and the analysis
-runs on hardware you control, on your own premises or on your own group of machines. Your
-positioning, your customer records and your pipeline stay inside your estate. This is a
+runs on the machines your plan names: your own servers on Enterprise, your own cloud account
+on Dedicated, or Runink's shared machines on Lite. Your positioning, your customer records
+and your pipeline stay on those machines, and no outside AI service is called. This is a
 property of how the product is built, not a policy setting you have to trust somebody to
 honour.
 
@@ -153,15 +156,15 @@ be answered before a contract is signed. For companies operating under data-resi
 requirements, it can be disqualifying.
 
 PULSE answers that question differently. The system that does the reasoning and the writing
-runs on machines you control: a workstation for evaluation, or a group of machines inside
-your own estate for production. There is no managed cloud database holding your working data.
-There is no external service in the path when a whitepaper is drafted or a lead is researched.
-Your material is processed where it already lives.
+runs where PULSE runs: a workstation for evaluation, and for daily use your own servers or
+cloud account, or Runink's shared machines on Lite. There is no third-party database holding
+your working data. There is no outside AI service in the path when a whitepaper is drafted
+or a lead is researched.
 
 This has a commercial consequence beyond compliance, and it is worth stating plainly:
-because the machines are yours, the cost of running the work does not rise with how much of
-it you do. A team that produces ten pieces of material in a month and a team that produces
-two hundred are running the same hardware.
+because PULSE is priced per seat, the licence does not rise with how much work you put
+through it. A team that produces ten pieces of material in a month and a team that produces
+two hundred pay for the same seats.
 
 ## What PULSE does about it
 
@@ -289,8 +292,9 @@ already work.
 
 **Voice.** A voice sales agent handles conversation directly. In the console it is
 press-to-talk: you speak, it listens, the sales specialist responds, and the reply is
-spoken back — all on your own machines, on the same pair of speech engines every Runink
-console speaks and listens with, in TIDE and FACE as much as here. For outbound calling,
+spoken back — all on the machines PULSE runs on, with the same pair of speech engines every
+Runink console speaks and listens with: in Runink TIDE: Trusted Intelligence for Developer &
+Data Experience, and in Runink FACE: Fulfilment Autonomous Claims Engine, as much as here. For outbound calling,
 PULSE connects to a telephone exchange you host yourself, so calls run through
 infrastructure you own rather than a per-minute service.
 
@@ -421,29 +425,28 @@ picker in Settings.
 
 ## What it is built on, and why that matters commercially
 
-PULSE is built to run on machines you own rather than on somebody else's. That has five
-commercial consequences.
+PULSE is built to run on the machines your plan names, with no outside AI service. That has
+five commercial consequences.
 
 **It runs where you put it.** The same application runs directly on a workstation for
-evaluation, and on one machine or several working together inside your own estate for
-production. Evaluating it does not require moving anything anywhere. Production does not
+evaluation, and for daily use on one machine or several in your own estate, in your own
+cloud account, or on Runink's shared machines on Lite. Evaluating it does not require moving anything anywhere. Production does not
 require a different product.
 
-**Your working data stays in your storage.** It is kept in a database that lives inside the
-application itself, copied continuously into file storage you own, and restored from that
-copy when the application starts. There is no database run by somebody else in the cloud
+**Your working data stays where PULSE runs.** It is kept in a database that lives inside the
+application itself, copied continuously into file storage on those same machines, and
+restored from that copy when the application starts. There is no third-party database
 holding your customer records, your positioning or your pipeline.
 
-**The reasoning is yours.** The system that writes the copy and performs the analysis runs
-on hardware you control. Your positioning, your customer lists and your competitive
-material are processed inside your own network. When a procurement questionnaire asks where
-your data is processed, you can name the machine.
+**The reasoning stays there too.** The system that writes the copy and performs the analysis
+runs on the same machines. Your positioning, your customer lists and your competitive
+material are processed there, never by an outside AI service. When a procurement
+questionnaire asks where your data is processed, you can name the machines.
 
-**The cost does not rise with how much you use it.** Because the machines are your own, the
-economics are those of a machine rather than a meter. Producing more material does not
-produce a larger bill for producing it. A team that runs one campaign and a team that runs
-twenty are running the same hardware. This changes what is worth attempting: the marginal cost of
-trying a second angle on a campaign is close to nothing, so second angles get tried.
+**The licence does not rise with how much you use it.** PULSE is priced per seat, so
+producing more material does not produce a larger licence bill for producing it. A team
+that runs one campaign and a team that runs twenty pay for the same seats. This changes what is worth attempting: trying a second angle
+on a campaign adds nothing to the licence, so second angles get tried.
 
 **It runs on ordinary hardware.** The reasoning runs on ordinary processors where no
 specialist graphics chip is present, and production installations run on ordinary processors
@@ -477,10 +480,10 @@ git and published to GitHub Pages by a build job. PULSE produces the material; i
 host the result, and we are not going to describe a public marketing site as something it
 keeps for us.
 
-The observable state of that presence, counted from the build rather than estimated: 52
-long-form articles in English, and one in Portuguese. Twelve use-case pages, the pricing
-page and the homepage exist in all four languages; the articles, the four papers and the
-five industry pages are English only.
+The observable state of that presence, read from the build rather than estimated: the
+use-case pages, the pricing page and the homepage exist in all four languages; the
+long-form articles, the papers and the industry pages are in English, with one article also
+in Portuguese and one industry page also in French.
 
 One thing follows from that: the nine audit measures are the scores Runink watches on its
 own pages, which is the reason they are nine rather than a rounder number.
@@ -550,12 +553,13 @@ volume of work rather than a specific creative skill, that arc is the argument.
 
 **Companies selling into regulated sectors.** If your customers ask where their data is
 processed — finance, healthcare, defence, public sector, critical infrastructure — the
-processing-location question is not a preference. Running the work inside your own estate
-gives you an answer you can put in writing.
+processing-location question is not a preference. Running the work on your own servers or
+in your own cloud account, on the Enterprise or Dedicated licence, gives you an answer you
+can put in writing.
 
 **Companies operating under data-residency requirements.** Where information must remain
-within a jurisdiction, an application that runs on hardware you site is the straightforward
-way to satisfy that.
+within a jurisdiction, an application that runs on servers you site, on the Enterprise
+licence, is the straightforward way to satisfy that.
 
 **Companies with a seasonal business.** Where a small number of periods carry most of the
 year's revenue, the forward view from your own analytics data and the ability to produce a
@@ -574,19 +578,19 @@ constraint, that reasoning changes.
 
 These are the questions that come up, in roughly the order they come up in. Each answer
 describes how the product behaves rather than offering an assurance, because a description
-can be checked in an afternoon on your own machine and an assurance cannot.
+can be checked in an afternoon on a workstation of your own and an assurance cannot.
 
 ### Does it need training on our business first?
 
 No, and there is nothing for you to label or upload in advance.
 
-The writing and the analysis are done by a model held as weight files on your own machine.
-Those files are the same on your first day and your five hundredth, and you can compare them
-and confirm it.
+The writing and the analysis are done by a model held as weight files on the machine PULSE runs on.
+Those files are the same on your first day and your five hundredth, and on your own servers
+you can compare them and confirm it.
 
 What makes the output yours is not training but **reading at the moment of the question**.
 Your site audit, your positioning documents, your prior material and your customer records
-are indexed on your machine; when a brief is written, the relevant passages are retrieved and
+are indexed on that machine; when a brief is written, the relevant passages are retrieved and
 placed into the question, with the source of each travelling alongside. That is the mechanism
 behind the claim on page 5 that generic inputs produce generic copy: the inputs here are
 specific because they are your own records, read at the moment of writing.
@@ -670,9 +674,10 @@ over infrastructure you own rather than a service billed by the minute.
 
 ### Where does our material live, and is it used to train anything?
 
-**It lives on your machines.** Working data is kept in a database inside the application
-itself, copied continuously into file storage you own and restored from that copy when the
-application starts. There is no database run by somebody else holding your positioning, your
+**It lives where PULSE runs.** Working data is kept in a database inside the application
+itself, on the machines your plan names, copied continuously into file storage on those same
+machines and restored from that copy when the application starts. There is no third-party
+database holding your positioning, your
 customer records or your pipeline.
 
 **It is not used to train anything.** No material is sent out to be trained on, and there is
@@ -711,14 +716,15 @@ conversation.
 | --- | --- | --- | --- |
 | 1 | Your own website address | Run one audit on a workstation. Nothing moves anywhere | A concrete document about your own business, worth having either way |
 | 2 | The largest gap the audit names | Brief one anchor piece end to end, and fan it out into the posts, videos and emails | Whether the output is good enough for your name to go on it — the only test that decides this |
-| 3 | Your machines and a sign-in arrangement | Install it there, connect the accounts you already run | Nothing new. Same application, more people |
+| 3 | The licence that fits, and a sign-in arrangement | Put it where that licence runs it, and connect the accounts you already run | Nothing new. Same application, more people |
 | 4 | A working rhythm | Run one full 30-day cycle | Whether the team wants the working day this creates |
 
 Steps one and two cost an afternoon each and move no data anywhere, which usually means an
 evaluation can begin without a procurement conversation about data handling.
 
-**What we need from you**: machines you control; your existing account credentials for the
-channels you want connected; a sign-in arrangement and the list of addresses permitted to use
+**What we need from you**: a licence that fits where the work should run, and on Dedicated or
+Enterprise, room in your own cloud account or on your own servers; your existing account
+credentials for the channels you want connected; a sign-in arrangement and the list of addresses permitted to use
 it; and one named person who will own the approval queue. **What we do not need**: a data
 migration, a change to your customer-record system, or a period of setup before anything
 useful comes out.
@@ -769,9 +775,10 @@ The first useful output is available in the first session: run Site Audit agains
 website and read the nine scores and the ranked recommendations. That result is
 worth having whether or not you go further.
 
-**Phase two: putting it into use.** For production, PULSE is installed on your own machines —
-one of them or several working together. The Runink platform does the installing. Working
-data is kept on those machines and copied into file storage you own. The console is reached
+**Phase two: putting it into use.** For daily use, PULSE runs where your licence puts it: on
+Runink's shared machines on Lite, in your own cloud account on Dedicated, or on your own
+servers on Enterprise — one of them or several working together. The Runink platform does
+the installing. Working data is kept on those machines and copied into file storage there. The console is reached
 over an encrypted connection at a web address you choose. The reasoning runs on ordinary
 processors, so this does not mean buying specialist graphics hardware.
 
@@ -821,11 +828,11 @@ deployment must sit entirely inside their own boundary.
 What you pay is visible in the console rather than arriving as a surprise. The Billing
 screen shows which plan you are on and how many people are licensed.
 
-The economics are what changes behaviour. The cost is a function of how many people use it,
-not of how much work they put through it. Under a per-word or per-generation arrangement, every additional draft is a
+The economics are what changes behaviour. The licence is a function of how many people use
+it, not of how much work they put through it. Under a per-word or per-generation arrangement, every additional draft is a
 decision with a price attached, and teams ration accordingly — one angle per campaign, one
-language, one format. When the marginal cost of an additional draft is the electricity to
-produce it, the rationing stops, and the second angle, the third language and the fourth
+language, one format. When an additional draft does not change the seat price, the
+rationing stops, and the second angle, the third language and the fourth
 format become ordinary.
 
 ## What it is worth, computed on your own numbers
@@ -948,11 +955,11 @@ the posts, the short videos and the email sequence. That exercise tells you the 
 you actually need to know: whether the output is good enough for your name to go on it, and
 whether the working rhythm suits your team.
 
-**Then decide.** If it does, installing it on your own machines and connecting your
+**Then decide.** If it does, choosing where it runs and connecting your
 existing accounts is the next conversation, and it is a short one.
 
 To arrange an evaluation, a walkthrough of the console, or a conversation about a
-deployment inside your own estate:
+deployment on your own servers or cloud account:
 
 **paes@runink.org**
 
@@ -961,4 +968,4 @@ deployment inside your own estate:
 Runink PULSE — Prescriptive Unified Lead & Social Engine.
 
 
-One application. Your own machines. Every channel off until you turn it on.
+One application. No outside AI service. Every channel off until you turn it on.

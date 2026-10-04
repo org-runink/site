@@ -12,7 +12,7 @@ func TestFloorDiv(t *testing.T) {
 	// truncates towards zero, so they disagree on every negative non-exact
 	// division — which is every mirror that shrank.
 	cases := []struct{ a, b, want int }{
-		{-470600, 72962, -7}, // runink-core: -6.449… -> -7, NOT -6
+		{-470600, 72962, -7}, // runink-tide: -6.449… -> -7, NOT -6
 		{-374900, 62572, -6}, // runink-pulse
 		{-1645800, 93517, -18},
 		{547700, 95430, 5}, // runink-face, positive: both agree
@@ -31,12 +31,12 @@ func TestFloorDiv(t *testing.T) {
 
 func TestTruncateCountsRunesNotBytes(t *testing.T) {
 	// The prose is full of em dashes. A byte slice would cut one in half.
-	s := "Runink CORE — page 7 of 21"
-	if got := Truncate(s, 14); got != "Runink CORE — " {
-		t.Errorf("Truncate = %q, want %q", got, "Runink CORE — ")
+	s := "Runink TIDE — page 7 of 21"
+	if got := Truncate(s, 14); got != "Runink TIDE — " {
+		t.Errorf("Truncate = %q, want %q", got, "Runink TIDE — ")
 	}
-	if got := Truncate(s, 13); got != "Runink CORE —" {
-		t.Errorf("Truncate = %q, want %q", got, "Runink CORE —")
+	if got := Truncate(s, 13); got != "Runink TIDE —" {
+		t.Errorf("Truncate = %q, want %q", got, "Runink TIDE —")
 	}
 	if got := Truncate("abc", 10); got != "abc" {
 		t.Errorf("Truncate past the end = %q, want %q", got, "abc")
@@ -75,7 +75,7 @@ func TestPyRepr(t *testing.T) {
 		{`it's a "quote"`, `'it\'s a "quote"'`}, // both -> single, escape the '
 		{"line\nbreak", `'line\nbreak'`},        // \n escaped, not literal
 		{`back\slash`, `'back\\slash'`},         //
-		{"*Runink CORE — page 1 of 21*", "'*Runink CORE — page 1 of 21*'"}, // em dash passes through
+		{"*Runink TIDE — page 1 of 21*", "'*Runink TIDE — page 1 of 21*'"}, // em dash passes through
 	}
 	for _, c := range cases {
 		if got := PyRepr(c.in); got != c.want {
