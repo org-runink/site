@@ -241,8 +241,9 @@ a.rp-card:hover { border-color: var(--rp-accent); transform: translateY(-2px); }
   .rp-print-mark { display: block; text-align: center; font-size: 0.85rem; color: #000; padding: 12px; }
 }
 
-/* A product with its own mark (Runink River's raft roundel, which carries its own cream
-   ground, navy line and teal water) shows it as drawn, at the size the dog head takes. */
+/* A product with its own mark (Runink River's puppy on a raft, Runink TIDE's puppy on a
+   surfboard, each drawn in its own colours with a navy outline) shows it as drawn, at the
+   size the dog head takes. FACE and PULSE keep the dog head. */
 .rp-logo { display: block; flex: none; width: 44px; height: 44px; }
 .rp-lockup .rp-logo { width: 48px; height: 48px; }
 .rp-plate-head .rp-logo { width: 72px; height: 72px; }

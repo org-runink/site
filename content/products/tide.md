@@ -101,6 +101,7 @@ aliases: ["/products/core/"]
 # self-contained: no "it" that needs the line above to make sense.
 image: "/images/products/tide-og.jpg"
 rp:
+  logo: "/images/brand/tide-mark.svg"
   lockup: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
   title: "Know what broke, what shipped and which number is right. On your servers, your cloud or ours."
   promise: "**Runink TIDE** is software from Runink that takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, which dashboard is right, who changed this. Helpers draft the answer or the fix, and a named person approves it. Run it on Runink's shared machines, or on your own servers or cloud account so your data stays there; it is licensed by where it runs, and no plan sends your data to an outside AI service."

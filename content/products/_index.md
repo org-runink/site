@@ -26,6 +26,7 @@ items:
   - name: "Runink TIDE"
     full: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
     url: "/products/tide/"
+    logo: "/images/brand/tide-mark.svg"
     line: "One console for your software, your AI models and agents, and your data, with its own model running on your servers, your cloud or ours. A product in its own right, sold separately."
   - name: "Runink PULSE"
     full: "Runink PULSE: Prescriptive Unified Lead & Social Engine"
