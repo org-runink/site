@@ -935,10 +935,11 @@ exactly what was reached, by whom, on which runner, and what was kept.
 
 ## FORGE: from a written brief to a working application
 
-FORGE is Runink's studio for making new software. It builds web applications and
-pipelines — a pipeline here is a set of steps that moves and prepares data on a
-schedule. It is served inside TIDE, under TIDE's sign-in, as its own part of the
-menu.
+FORGE is the part of TIDE for making new software: a studio inside TIDE. It
+builds web applications and pipelines — a pipeline here is a set of steps that
+moves and prepares data on a schedule. It is served inside TIDE, under TIDE's
+sign-in, as its own part of the menu, beside Overview, DevEx, DataEx and
+Intelligence.
 
 ### Studio
 
