@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Carrier Billing on Runink</title>
+    <link>https://runink.org/tags/carrier-billing/</link>
+    <description>Recent content in Carrier Billing on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/carrier-billing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Freight Audit and Payment Automation — Stop Overpaying Your Carriers</title>
+      <link>https://runink.org/blog/freight-audit-payment-automation/</link>
+      <pubDate>Sun, 15 Mar 2026 20:23:02 +0000</pubDate>
+      <guid>https://runink.org/blog/freight-audit-payment-automation/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;What a shipper overpays its carriers is knowable, and almost nobody has measured it. The causes are billing errors, duplicate invoices and rate discrepancies that a manual process cannot catch at volume — small enough individually to survive until the dispute window closes. Automating the audit changes what gets examined rather than what gets estimated: every invoice is compared against the contracted rate, so a discrepancy arrives as a named line item with the clause it breaches.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Freight billing errors are usually small and individually unremarkable, which is why they survive until the dispute window has closed.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;A manual audit team can only validate so many invoices a day, so most of the invoice file is paid without anyone checking it against the contract.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;What you recover depends entirely on what is actually wrong with your own invoices. No supplier can give you that figure before reading them, and one who offers a recovery percentage in advance is describing somebody else&amp;rsquo;s ledger.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-are-shippers-still-overpaying-carriers-by-millions-every-year&#34;&gt;Why Are Shippers Still Overpaying Carriers by Millions Every Year?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

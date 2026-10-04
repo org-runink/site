@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    <title>Runink TIDE: what broke, what shipped, which number is right</title>
+<meta name="description" content="Runink TIDE takes repeat questions off engineering and data teams: what broke, did the fix ship, which number is right. A person approves each change.">
+<meta name="author" content="Runink">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<meta property="og:title" content="Runink TIDE: what broke, what shipped, which number is right">
+<meta property="og:description" content="Runink TIDE takes repeat questions off engineering and data teams: what broke, did the fix ship, which number is right. A person approves each change.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://runink.org/products/tide/">
+<meta property="og:site_name" content="Runink">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://runink.org/images/products/tide-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Runink TIDE">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Runink TIDE: what broke, what shipped, which number is right">
+<meta name="twitter:description" content="Runink TIDE takes repeat questions off engineering and data teams: what broke, did the fix ship, which number is right. A person approves each change.">
+
+<meta name="twitter:image" content="https://runink.org/images/products/tide-og.jpg">
+<meta name="twitter:image:alt" content="Runink TIDE">
+
+<link rel="canonical" href="https://runink.org/products/tide/">
+
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.670a95826064ac262ed90ed522e7e64c2f9361f5f0349a2d36e0a094039b0a63.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.9f0c6ef08a61cad1cf979d3b8c0b71179cdd163384135aba8504bd487eabd6ca.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.9f0c6ef08a61cad1cf979d3b8c0b71179cdd163384135aba8504bd487eabd6ca.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      
+      "description": "Runink makes four separate products: Runink FACE for logistics, freight, claims and operations teams; Runink TIDE for engineering, platform and data teams; Runink PULSE for marketing teams; and Runink River, a free, open-source workstation operating system for data, analytics and AI work. FACE, TIDE and PULSE are each sold on their own subscription.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "description": "Runink makes four separate products: Runink FACE for logistics, freight, claims and operations teams; Runink TIDE for engineering, platform and data teams; Runink PULSE for marketing teams; and Runink River, a free, open-source workstation operating system for data, analytics and AI work. FACE, TIDE and PULSE are each sold on their own subscription.",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "en"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/products/tide/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Runink products",
+          "item": "https://runink.org/products/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "Runink TIDE"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@id": "https://runink.org/products/tide/#webpage",
+  "@type": "WebPage",
+  "breadcrumb": {
+    "@id": "https://runink.org/products/tide/#breadcrumb"
+  },
+  "dateModified": "2026-10-03T20:59:10-04:00",
+  "description": "Runink TIDE takes the repeat questions off engineering, platform and data teams: what broke and why, whether a fix shipped, which number is right, who changed what. Run it on your own servers, in your own cloud account, or on Runink's shared machines to start. Helpers propose; a person approves.",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@id": "https://runink.org/#website"
+  },
+  "mainEntity": {
+    "@id": "https://runink.org/products/tide/#software"
+  },
+  "name": "Runink TIDE",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "height": 675,
+    "url": "https://runink.org/images/products/tide-og.jpg",
+    "width": 1200
+  },
+  "publisher": {
+    "@id": "https://runink.org/#organization"
+  },
+  "url": "https://runink.org/products/tide/"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@id": "https://runink.org/products/tide/#software",
+  "@type": "SoftwareApplication",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "IT operations, AI governance and application platform",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Engineering, platform and data teams"
+  },
+  "creator": {
+    "@id": "https://runink.org/#organization"
+  },
+  "description": "Runink TIDE takes the repeat questions off engineering, platform and data teams: what broke and why, whether a fix shipped, which number is right, who changed what. Run it on your own servers, in your own cloud account, or on Runink's shared machines to start. Helpers propose; a person approves.",
+  "name": "Runink TIDE",
+  "publisher": {
+    "@id": "https://runink.org/#organization"
+  },
+  "url": "https://runink.org/products/tide/"
+}</script>
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Why Runink?</a>
+                    
+                    
+                    
+                    <a href="/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Library</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Industries
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pricing/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Pricing</a>
+                    
+                    
+                    
+                    <a href="/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Company</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/?about=Runink%20TIDE#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Book your Consultation
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                        <a href="/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/fr/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/es/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                        <a href="/pt/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Why Runink?</a>
+                
+                
+                
+                <a href="/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Library</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Industries</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pricing/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Pricing</a>
+                
+                
+                
+                <a href="/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Company</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/?about=Runink%20TIDE#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Book your Consultation
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                    <a href="/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                    <a href="/fr/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                    <a href="/es/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                    <a href="/pt/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+<link rel="stylesheet" href="/css/product.min.e13634d82a05cf3bb8b9c6025bb217eb4326aa62e934d251d6f9a722dd85088b.css">
+<link rel="preload" href="/fonts/PlayfairDisplay-Italic-var.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+@font-face{font-family:"Playfair Rp";src:url("/fonts/PlayfairDisplay-Italic-var.woff2") format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
+.rp{--rp-dog:url("/images/brand/runink-dog-head.svg")}
+</style>
+
+
+
+
+<div class="rp">
+
+<section class="rp-hero" aria-labelledby="rp-hero-title">
+  <svg class="rp-flow" viewBox="0 0 1600 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g fill="none" stroke-linecap="round">
+      <path class="rp-strand" d="M-40 360 C 260 300, 520 330, 800 380 S 1320 440, 1640 330" />
+      <path class="rp-strand" d="M-40 400 C 300 350, 560 380, 820 420 S 1300 470, 1640 380" />
+      <path class="rp-strand" d="M-40 440 C 280 400, 600 430, 860 460 S 1340 500, 1640 420" />
+      <path class="rp-strand" d="M-40 480 C 320 450, 620 470, 880 500 S 1320 530, 1640 470" />
+      <path class="rp-strand" d="M-40 320 C 240 270, 540 300, 780 340 S 1300 400, 1640 290" />
+      <path class="rp-strand rp-strand-lit" d="M-40 420 C 300 370, 580 400, 840 440 S 1320 480, 1640 400" />
+    </g>
+  </svg>
+
+  <div class="rp-hero-inner">
+    <div class="rp-hero-copy">
+      
+      <p class="rp-lockup"><span class="rp-dog" aria-hidden="true"></span><span>Runink TIDE<small>TIDE · Trusted Intelligence for Developer &amp; Data Experience</small></span></p>
+      
+      <h1 id="rp-hero-title" class="rp-title">Know what broke, what shipped and which number is right. On your servers, your cloud or ours.</h1>
+      <p class="rp-sub"><strong>Runink TIDE</strong> is software from Runink that takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, which dashboard is right, who changed this. Helpers draft the answer or the fix, and a named person approves it. Run it on Runink&rsquo;s shared machines, or on your own servers or cloud account so your data stays there; it is licensed by where it runs, and no plan sends your data to an outside AI service.</p>
+      <div class="rp-cta">
+  <a class="rp-btn rp-btn-primary" href="/?about=Runink%20TIDE#contact" data-print="https://runink.org/?about=Runink%20TIDE#contact">Book a consultation</a>
+  <a class="rp-btn rp-btn-ghost" href="/blog/whitepapers/runink-tide/" data-print="https://runink.org/blog/whitepapers/runink-tide/">Read the TIDE paper</a>
+  <a class="rp-btn rp-btn-ghost" href="https://docs.runink.org/core/" data-print="https://docs.runink.org/core/">📖 Read the docs</a>
+</div>
+      <p class="rp-fine">A product in its own right, sold separately · in English, Spanish, French and Portuguese</p>
+    </div>
+
+    
+      <figure class="rp-plate" aria-label="Runink TIDE at a glance">
+        <div class="rp-plate-head">
+          <span class="rp-dog" aria-hidden="true"></span>
+          <p class="rp-plate-name">Runink TIDE<small>One console, five parts. Each one takes a question off somebody&#39;s week.</small></p>
+        </div>
+        <ul class="rp-plate-list">
+          <li><b>Overview</b><span>What is wrong right now, and where do I look first?</span></li><li><b>Delivery</b><span>Is the platform up, and did my fix actually ship? (The console calls this part DevEx.)</span></li><li><b>AI oversight</b><span>Which AI do we run, what may it do, and who checked its work? (The console calls this part DataEx.)</span></li><li><b>Intelligence</b><span>Which number is right, and where are money or controls slipping?</span></li><li><b>FORGE (preview)</b><span>How does a small tool a team asks for get built without waiting its turn?</span></li>
+        </ul>
+        <figcaption class="rp-plate-foot">It asks before it acts.</figcaption>
+      </figure>
+    
+  </div>
+</section>
+
+
+<section class="rp-mission">
+  <p>Where does our information go? To the machines your plan names, <em>and it stays there.</em></p>
+</section>
+
+
+
+<section class="rp-facts" aria-label="Runink TIDE at a glance">
+  <div class="rp-fact"><b>1 screen</b><span>for whoever is on duty, in place of one screen for each system</span></div><div class="rp-fact"><b>1 command</b><span>brings the whole platform up on one workstation, so you can try it on your own hardware</span></div><div class="rp-fact"><b>every deployment</b><span>has a named owner and an end date, and is removed when the date comes</span></div><div class="rp-fact"><b>every action</b><span>recorded with a name, in a record anyone signed in can verify</span></div>
+</section>
+
+
+
+
+<section class="rp-split rp-split-text">
+  <div class="rp-split-copy">
+    <span class="rp-eyebrow">Why your team can act on what it shows</span>
+    <h2>It says what it knows. It asks before it acts.</h2>
+    <p>A dashboard that shows zero when it means <em>I did not look</em> gets the wrong person woken, or nobody. A tool that changes things on its own gets switched off after the first surprise. TIDE is built the other way round.</p>
+    
+    <a class="rp-link" href="/blog/whitepapers/runink-tide/" data-print="https://runink.org/blog/whitepapers/runink-tide/">How the console is arranged &rarr;</a>
+  </div>
+  
+  <ul class="rp-split-list rp-split-cards"><li><strong>Not known is not zero.</strong> A figure the console could not read is shown as not known, never drawn as a zero, so nobody decides on a reading nobody took.</li><li><strong>A person approves.</strong> The helpers propose. Nothing is filed, changed or published until someone with the right to decide says yes.</li><li><strong>A second opinion.</strong> Where a finding matters, an independent assessor reads the evidence first. It can agree, disagree or say it could not judge.</li></ul>
+  
+</section>
+
+
+
+<section class="rp-features" aria-labelledby="rp-features-title">
+  <h2 id="rp-features-title" class="rp-center">What it takes off your team&#39;s week</h2>
+  <p class="rp-intro">Each card starts with a burden your team carries. Then it says what TIDE does about it, and which cost it touches. A person approves anything that files, changes or publishes.</p>
+  <div class="rp-grid">
+    
+    <div class="rp-card">
+      <span class="rp-card-k">Overview · on call</span>
+      <h3>The call at 2 a.m. that a written reason could have answered</h3>
+      <p>The person on duty has a screen for each system and none for all of them. Finding the problem takes longer than fixing it. TIDE opens on one <em>Needs attention</em> list, worst first. Each item has a plain reason and a link to the page that deals with it. Where TIDE has a remedy, it sits next to the reading, so the know-how belongs to the company, not to a few heads. A health check runs apart from the machines it watches, so it keeps watching when they fail. <strong>Cost it touches:</strong> specialist hours, and an on-call rota only a few names can staff.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">DevEx · changes</span>
+      <h3>Pull requests that wait days for a first read</h3>
+      <p>A change sits until a busy senior engineer has time to look. TIDE&rsquo;s reviewer helper reads changes on the repositories you choose. It lists what it found, worst first, with the evidence. Until a person arms it, it only reports what it would have said. Your engineers still decide what merges. Then <em>Deploy lineage</em> shows each change merged, reviewed, built and running, so <em>is my fix live?</em> needs no message to the platform team. <strong>Cost it touches:</strong> senior engineering hours spent on first reads and status questions.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">DevEx · audit</span>
+      <h3>Audit evidence rebuilt by hand before every review</h3>
+      <p>Before each audit, somebody spends days piecing together who changed what, and on whose authority. TIDE writes it down as the work happens. Every console action is recorded with the person&rsquo;s name, refused attempts included. Press <em>Verify now</em> on the Audit chain and it names the first record that was altered. One audit page gives a single verdict over the platform&rsquo;s checks, and lists any check it could not read instead of counting it as a pass. <strong>Cost it touches:</strong> the person-days your last audit took, and outside help to prepare for the next one.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">DevEx · capacity</span>
+      <h3>Paying for environments nobody remembers</h3>
+      <p>A test environment is set up for a week and runs for months, because removing it is nobody&rsquo;s job. In TIDE every deployment carries a named owner, a reason and an end date from the moment it is requested. It is flagged as the date gets close. When the date comes, the platform removes it. <strong>Cost it touches:</strong> the cloud or server bill for idle capacity.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">Intelligence · data</span>
+      <h3>Broken data, found by the business first</h3>
+      <p>The first sign of a broken feed is often a manager asking why a report looks wrong. On one page, a data steward sees whether each source answered its last test, where a source&rsquo;s own description disagrees with what it holds, and the open data-quality issues, and can check them all again on demand. <em>Lineage</em> traces each report back to the systems it comes from, with the trouble spots marked. Fixes wait in a queue where a person approves, tests or dismisses each one, and every decision is kept. <strong>Cost it touches:</strong> rework, and the hours spent tracing a wrong number back to its source.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">Intelligence · one figure</span>
+      <h3>Two teams, two numbers, one meeting</h3>
+      <p>Finance and the programme office bring different figures and spend the meeting reconciling them. TIDE&rsquo;s analyst, finance and programme-office dashboards are built on one set of figures, worked out the same way, from your own records. A figure TIDE could not read is shown as not known. Planned, requested and actual capital spending are checked against each other with a published rule book. <strong>Cost it touches:</strong> analyst hours spent reconciling spreadsheets, and money that leaves before anyone checks.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">DataEx · AI oversight</span>
+      <h3>Nobody can list every AI helper in use</h3>
+      <p>When the board, a customer or a regulator asks which AI you run and what it may do, the answer is a spreadsheet nobody trusts. TIDE keeps that list for you. It records each one&rsquo;s source, version, licence and test evidence, checked against what is actually running, and what each helper is allowed to do. How much a helper may do on its own is a setting you choose for each kind of action, and every kind starts with a person approving each act. <strong>Cost it touches:</strong> risk and compliance hours spent answering the same questions again.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">Private by design</span>
+      <h3>Data that cannot leave, so outside AI tools are off-limits</h3>
+      <p>Customer records, contracts and claims cannot go to somebody else&rsquo;s service, so the quick AI tools are ruled out, and promising evaluations end at <em>where does that run?</em> On the Dedicated and Enterprise plans, TIDE runs in your own cloud account or on your own servers. Its assistant, its helpers and FORGE run there too, and records, files, secrets and certificates stay there. On every plan, no outside AI service is called. <strong>Cost it touches:</strong> security reviews that stall a purchase, and a bill from an outside AI service that grows with every question.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">Checked</span>
+      <h3>No outbound connection, in our own test run</h3>
+      <p>In our audit run, TIDE made no outbound connection while testing, exploring, mapping and assessing your sources; integrations you turn on, such as GitHub or Stripe, connect only to their own services. That was one run, about six seconds, on a development machine, with Chrome and the host out of scope, no model wired in, and no such integration configured for it.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">FORGE (preview)</span>
+      <h3>The small tool a team needs waits behind the roadmap</h3>
+      <p>In preview. A product owner describes the tool, or the scheduled steps that move and prepare a set of data, in plain words. TIDE proposes the steps on a canvas, and nothing is filed until that person approves. The approved brief goes to coding helpers as a work item. The result comes back as a change for your engineers to review. The brief stays on the machines your plan names; we are confirming there is no other path out before promising more than that. <strong>Cost it touches:</strong> engineering and contractor time spent on small internal tools.</p>
+    </div>
+    
+    <div class="rp-card">
+      <span class="rp-card-k">Cost</span>
+      <h3>Not billed by the question</h3>
+      <p>Each new application rebuilds the same foundations: sign-in, secrets, a way to reach company data, somewhere to run, something watching it. Each tool bought to fill a gap brings its own account and its own bill. TIDE gives every application those foundations once. On every plan, heavy use of the assistant, the helpers or FORGE is not billed by the question. On your own servers, budgeting becomes a capacity decision made once, not a usage bill read every month. <strong>Cost it touches:</strong> engineering time spent rebuilding foundations, and servers you already own put to work.</p>
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="rp-steps" aria-labelledby="rp-steps-title">
+  <h2 id="rp-steps-title" class="rp-center">See it on your own hardware</h2>
+  <p class="rp-intro">Before you start, write down two readings from your own records: the person-days your last audit took to answer <em>who did what, and on whose authority</em>, and every environment running today with the date it was last used. Both should fall once TIDE is in place. TIDE runs on one machine, from one downloaded file, with one command, and the version on your workstation is the version that runs on your servers.</p>
+  <ol class="rp-step-list" style="--rp-cols: 3">
+    <li><span class="rp-step-n" aria-hidden="true">1</span><h3>In an afternoon</h3><p>Open Overview and notice which readings say they have not been measured, instead of a reassuring zero. Open the findings queue (the console calls it the Harness) and read a proposed remedy. Open the Audit chain and press <em>Verify now</em>.</p></li><li><span class="rp-step-n" aria-hidden="true">2</span><h3>In a day</h3><p>Add one real data source. Try to change it as somebody who is not on the permitted list, and read the record that refusal leaves. That is the record your security lead will ask for.</p></li><li><span class="rp-step-n" aria-hidden="true">3</span><h3>In a week</h3><p>Put it on servers you own. Have somebody outside the platform team request a deployment, and watch it remove itself when its end date comes. Switch on the reviewer for one repository and read what it would have said before you arm it.</p></li>
+  </ol>
+  
+</section>
+
+
+
+<section class="rp-papers" aria-labelledby="rp-papers-title">
+  <h2 id="rp-papers-title">Read the detail</h2>
+  <ul class="rp-paper-list">
+    
+    
+    <li><a class="rp-paper" href="/blog/whitepapers/runink-tide/" data-print="https://runink.org/blog/whitepapers/runink-tide/"><b>The Runink TIDE paper</b><span>Every page of the console: the question it answers, who uses it, and why it is worth having.</span><em>Read the paper &rarr;</em></a></li>
+    
+    
+    <li><a class="rp-paper" href="/blog/whitepapers/runink-tide-atlas/" data-print="https://runink.org/blog/whitepapers/runink-tide-atlas/"><b>Runink TIDE and Atlas</b><span>A joint paper with Logical Leap: Atlas&#39;s oversight screens inside TIDE, on your own data, with a second opinion built in.</span><em>Read the paper &rarr;</em></a></li>
+    
+    
+    <li><a class="rp-paper" href="/trust/" data-print="https://runink.org/trust/"><b>Trust &amp; Compliance</b><span>Who decides, where the models run, the audit chain anyone signed in can check, and how our controls map to five standards. Each claim links to the public documentation behind it.</span><em>Read the page &rarr;</em></a></li>
+    
+    
+    <li><a class="rp-paper" href="/products/tide-pricing/" data-print="https://runink.org/products/tide-pricing/"><b>Pricing</b><span>Priced by where TIDE runs: per person on Runink&#39;s shared machines, as a team plan with an allowance of Compute Units; per machine in your own cloud; with you on your own premises. Sold on its own. No success fees, ever.</span><em>See the plans &rarr;</em></a></li>
+    
+  </ul>
+</section>
+
+
+
+<section class="rp-final">
+  <span class="rp-dog" aria-hidden="true"></span>
+  <h2>Bring one system you would like to stop worrying about.</h2>
+  <p>Half an hour, with whoever owns it in the room. We will show you what TIDE reads from it, what it keeps, and who can change it.</p>
+  <p class="rp-tagline">Data You Can Trust. Decisions You Can Defend.</p>
+  <div class="rp-cta rp-cta-center">
+  <a class="rp-btn rp-btn-primary" href="/?about=Runink%20TIDE#contact" data-print="https://runink.org/?about=Runink%20TIDE#contact">Book a consultation</a>
+  <a class="rp-btn rp-btn-ghost" href="/blog/whitepapers/runink-tide/" data-print="https://runink.org/blog/whitepapers/runink-tide/">Read the TIDE paper</a>
+</div>
+</section>
+
+
+<p class="rp-print-mark">runink.org/products/tide/</p>
+</div>
+
+</main>
+
+        
+        
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Site footer">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contact</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/#contact-form">Write to us</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explore</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Industries</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pricing/">Pricing</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Reading</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/library/">Library</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/use-cases/">Worked scenarios</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/blog/">All articles</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Company</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/company/">About Runink</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/trust/">Trust &amp; Compliance</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">License</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. All rights reserved.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Languages: English, Français, Español, Português — choose one in the bar at the top of the page.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">We use cookies to count visits and see which pages people read. There are no ads here, so nothing is used to target you or to change what you see. Nothing is counted until you choose &#34;Allow Counting&#34;. We keep your answer for 180 days.
+            Read our <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">Privacy Policy</a> for more information.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Reject Non-Essential
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Allow Counting
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag !== 'function') return;
+            gtag('consent', 'update', {
+                'analytics_storage': granted ? 'granted' : 'denied'
+            });
+            if (granted) {
+                gtag('event', 'page_view');
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+
+    
+    
+
+
+<script src="/js/motion.27f06c26d9e54528daa49660a0af947edc690620d0240b682e3a90138640ae15.js" integrity="sha256-J/BsJtnlRSjapJZgoK&#43;UftxpBiDQJAtoLjqQE4ZArhU=" defer></script>
+
+</body>
+
+</html>

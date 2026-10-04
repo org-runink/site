@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 60" width="24" height="16">
+  <rect width="90" height="15" fill="#C8102E"/>
+  <rect y="15" width="90" height="30" fill="#FFD100"/>
+  <rect y="45" width="90" height="15" fill="#C8102E"/>
+  <!-- Simplified Coat of Arms -->
+  <g transform="translate(18, 20)">
+    <!-- Crown -->
+    <path d="M 4 2 L 6 0 L 8 2 L 10 0 L 12 2 L 12 4 L 4 4 Z" fill="#C8102E"/>
+    <!-- Shield -->
+    <path d="M 4 5 L 12 5 L 12 11 A 4 4 0 0 1 4 11 Z" fill="#C8102E" stroke="#FFD100" stroke-width="0.8"/>
+    <rect x="6" y="7" width="4" height="4" fill="#FFD100"/>
+    <!-- Pillars -->
+    <rect x="1" y="4" width="2" height="9" fill="#C8102E"/>
+    <rect x="13" y="4" width="2" height="9" fill="#C8102E"/>
+  </g>
+</svg>

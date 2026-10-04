@@ -1,0 +1,5 @@
+section_context[1]:
+  - title: "Turning Noisy Fleet Telemetry into Actionable Dispatch Insights"
+    permalink: "https://runink.org/blog/telemetry-data-reconciliation-domain-modeling/"
+    date: "2026-05-09T00:15:18Z"
+    description: "Your systems disagree about the same day. How to tell a late feed from a real problem, and who should own the answer."

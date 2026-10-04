@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "Autonomous Optimization: Achieving Six Sigma 'Improve' with Isolated Compute Runners"
+    permalink: "https://runink.org/blog/six-sigma-improve-autonomous-optimization-compute-runners/"
+    date: "2026-05-28T04:09:18Z"
+    description: "Why the Improve phase of Six Sigma stalls in logistics, and how running a test in its own separate environment lets you try a change without putting the warehouse at risk."
+  - title: "Sustaining Six Sigma 'Control' via Fulfilment Autonomous Claims Engine"
+    permalink: "https://runink.org/blog/six-sigma-control-phase-fulfilment-autonomous-claims-engine/"
+    date: "2026-02-25T18:35:52Z"
+    description: "Why the Control phase fails in logistics, how accessorial charges are read against the contract that governs them, and where the line falls between drafting a demurrage dispute and filing one."
