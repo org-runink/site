@@ -112,12 +112,6 @@ export function FallbackAccents() {
           linkLabel: 'Open the lab',
         },
         {
-          title: 'Forecast LLM Document Auditing',
-          description:
-            'Reads the document trail behind a forecast and flags the assumptions nobody wrote down.',
-          href: '/forecast-llm-document-auditing/',
-        },
-        {
           title: 'Spend Analytics',
           description:
             'Deep financial and spend analytics for immediate ROI identification and continuous cost reduction. No link on this card — it renders without the footer.',
@@ -162,12 +156,6 @@ export function OnSheet() {
             badge: 'Simulation',
             href: '/use-cases/hypothesis-lab/',
             linkLabel: 'Open the lab',
-          },
-          {
-            title: 'Forecast LLM Document Auditing',
-            description:
-              'Reads the document trail behind a forecast and flags the assumptions nobody wrote down.',
-            href: '/forecast-llm-document-auditing/',
           },
           {
             title: 'Spend Analytics',

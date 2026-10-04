@@ -141,14 +141,9 @@ either done, or open and waiting on a decision that is not an editor's to make.
 
 ## Open — needs an owner's decision
 
-### 1. `content/forecast-llm-document-auditing.md` — held as a draft
-Twelve currency figures ($45/hour, $562,500, $50M …), percentages, headed
-"Vanguard ROI Forecast", `author: "Vanguard"`, no date. All of it forbidden by
-DESIGN.md §1 and the homepage header comment. The file was **untracked**, so it
-had never been committed, but it sits under `content/` and was one `git add -A`
-from publishing. Now `draft: true` with the reasoning in its front matter.
-**Decide:** whose forecast is it, may Vanguard's name appear on runink.org, and
-does the company want a page quoting returns at all.
+### 1. `content/forecast-llm-document-auditing.md` — DELETED
+Owner decision 2026-10-04: "Delete both drafts." The held draft and its copy in
+`forecasts/` are removed; nothing on the site linked to them.
 
 ### 2. Three industry pages point at the CORE paper
 `industries/insurance.md`, `industries/telecom.md` and
