@@ -38,6 +38,8 @@
       "title": "Runink TIDE",
       "subtitle": "TIDE · Trusted Intelligence for Developer & Data Experience",
       "headline": ["Know what broke, what shipped", "and which number is right."],
+      "mark": "static/images/brand/tide-mark.svg",
+      "markImage": true,
       "out": ["static/images/products/tide-og.jpg"]
     },
     {

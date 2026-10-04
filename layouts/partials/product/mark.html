@@ -1,6 +1,7 @@
 {{- /* The logo on a product page. Runink's own products take the Runink dog head, drawn
      as a CSS mask so it takes the colour it sits on; a product with its own mark
-     (Runink River's raft roundel, BRAND.md "two logos") passes its path as .logo. */ -}}
+     (Runink River's puppy on a raft, Runink TIDE's puppy on a surfboard; BRAND.md "two logos")
+     passes its path as .logo. FACE and PULSE keep the dog head. */ -}}
 {{- $out := `<span class="rp-dog" aria-hidden="true"></span>` -}}
 {{- with .logo -}}
   {{- $out = printf `<img class="rp-logo" src="%s" alt="" width="64" height="64">` (. | relURL) -}}
