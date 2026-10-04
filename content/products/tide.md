@@ -14,8 +14,8 @@ aliases: ["/products/core/"]
 # through `aliases`. In copy, write "Runink TIDE" at the first mention on a page
 # and "TIDE" after that; never a bare "Tide", a name already crowded in AI
 # tooling. FORGE, DevEx, DataEx and Intelligence keep their names as sections
-# inside it. Links into docs.runink.org keep their /core/ paths, which work
-# today; the docs site will redirect them to /tide/ once it publishes there.
+# inside it. Links into docs.runink.org use the /tide/ paths (live since 2026-10-04;
+# the old /core/ paths redirect there).
 #
 # Where every claim here comes from: the TIDE paper, content/blog/whitepapers/
 # runink-tide.md (sections named beside each block in the PR), and the product copy
@@ -108,7 +108,7 @@ rp:
   cta:
     - { text: "Book a consultation", url: "/#contact", style: "primary" }
     - { text: "Read the TIDE paper", url: "/blog/whitepapers/runink-tide/", style: "ghost" }
-    - { text: "📖 Read the docs", url: "https://docs.runink.org/core/", style: "ghost" }
+    - { text: "📖 Read the docs", url: "https://docs.runink.org/tide/", style: "ghost" }
     # Documentation: All Runink product docs at docs.runink.org/<product>/
   fine: "A product in its own right, sold separately · in English, Spanish, French and Portuguese"
   plate:
