@@ -1,27 +1,64 @@
-User-agent: *
-Allow: /
+{{- /*
+  robots.txt — rendered from this template (hugo.toml enableRobotsTXT = true).
 
-# Answer-engine / LLM crawlers — explicitly welcomed so Runink's content is
-# eligible to be cited by AI search and assistants.
-User-agent: GPTBot
-Allow: /
+  ONE SOURCE. There used to be two: this template and static/robots.txt. Hugo
+  copies static files over rendered output, so the static file was the one
+  published and this template was dead — and the two had drifted (this one
+  named `Claude-Web`, a retired agent; that one named `Claude-User`). The
+  static copy is deleted and its decisions live here.
 
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
+  The header sentence is the Organization's own description (hugo.toml
+  organization_description), so it names all four products by their current
+  names instead of describing FACE as if it were the company.
+*/ -}}
+# runink.org
+#
+# {{ .Site.Params.organization_description | default .Site.Params.description }}
+# A curated map of the site for language models: {{ "llms.txt" | absURL }}
 
 Sitemap: {{ "sitemap.xml" | absURL }}
+
+# Everything below is one decision stated twice: crawlers that answer questions
+# are welcome, and the things that are not pages are not offered to them.
+#
+# Why allow the answer engines at all. This site's argument is that a buyer
+# should be able to check a claim rather than take it on trust, and the papers
+# and product pages are written to be read that way. A model that can quote
+# them is doing the thing the pages were written for. A robots.txt is a
+# request, not a control; we publish nothing here we would not say to
+# somebody's face.
+
+User-agent: *
+Allow: /
+Disallow: /tests/
+Disallow: /igo-demo/
+
+# Named explicitly rather than left to the wildcard, so the decision is on the
+# record and a later reader does not have to infer it from silence: search and
+# answer crawlers, and the agents that fetch a page when a person asks.
+#
+# ONE GROUP, WITH THE SAME DISALLOWS. A crawler that finds a group naming it
+# obeys that group and ignores `*` entirely, so the per-agent `Allow: /` groups
+# this replaced were quietly re-opening /tests/ and /igo-demo/ to every one of
+# them.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+User-agent: Meta-ExternalAgent
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: CCBot
+User-agent: cohere-ai
+User-agent: Bytespider
+Allow: /
+Disallow: /tests/
+Disallow: /igo-demo/

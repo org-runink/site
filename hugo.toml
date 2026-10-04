@@ -75,8 +75,19 @@ enableGitInfo = true
   # and 3 govern it. It was "" until now, which made the last step of the
   # description chain in baseof.html a no-op and shipped an empty description,
   # og:description and twitter:description on 587 of 722 pages.
-  description = "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on hardware you control."
+  description = "Runink FACE reads the records a logistics or finance operation already holds, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision. It runs on your own servers or cloud account, or on Runink's shared machines to start, with no outside AI service."
+  # The company in one sentence: the Organization and WebSite nodes in
+  # partials/schema-org.html, the head of /llms.txt and of robots.txt. Body
+  # copy like `description` above (rules 1 and 3); every clause restates a
+  # product page's own description. Kept separate from `description`, which is
+  # FACE's sentence because the home page leads with FACE.
+  organization_description = "Runink makes four separate products: Runink FACE for logistics, freight, claims and operations teams; Runink TIDE for engineering, platform and data teams; Runink PULSE for marketing teams; and Runink River, a free, open-source workstation operating system for data, analytics and AI work. FACE, TIDE and PULSE are each sold on their own subscription."
   logo = "/images/logo.png"
+  # The share card a page falls back to when it has no `image` of its own:
+  # 1200x675, the 16:9 frame Google documents for a large Discover image. It
+  # replaces the 512px logo, which was being scaled up 2.3x and cropped to fill
+  # that frame. See partials/seo-head.html.
+  images = ["/images/og/runink-og.jpg"]
   googleAnalytics ='G-SEECKDWZNJ'
 
   # Embedded-app endpoints (Cloud Run URLs) for the /pulse and /demo iframes.
@@ -103,7 +114,7 @@ enableGitInfo = true
     # "compliant") of exactly the kind the rest of this site was rewritten to remove.
     # "Compliant" is the worse of the two: FACE is SOC 2-ORIENTED, a self-declared
     # design intention, not a completed audit.
-    description = "Runink FACE reads the logistics records you already hold, compares them against the rules that govern them, and drafts an action for the person who owns the decision. It runs on infrastructure you control."
+    description = "Runink FACE reads the logistics records you already hold, compares them against the rules that govern them, and drafts an action for the person who owns the decision. It runs on your own servers or cloud account, or on Runink's shared machines to start, with no outside AI service."
     # The comments below said Indigo-600 / Purple-600. The values are the warm browns
     # of the FACE palette and always were; the labels came from the vendor theme.
     gradient_from = "#3A2F2A"
@@ -566,7 +577,7 @@ enableGitInfo = true
     [languages.fr.params.cta]
       enable = true
       title = "Runink : des données fiables. Des décisions défendables."
-      description = "Runink FACE lit les enregistrements logistiques que vous détenez déjà, les compare aux règles qui les régissent et rédige une action pour la personne qui décide. Le tout sur une infrastructure que vous contrôlez."
+      description = "Runink FACE lit les enregistrements logistiques que vous détenez déjà, les compare aux règles qui les régissent et rédige une action pour la personne qui décide. Le tout sur vos propres serveurs ou votre compte cloud, ou sur les machines partagées de Runink pour commencer, sans service d'IA extérieur."
       [languages.fr.params.cta.primary_button]
         text = "Réserver une consultation"
         url = "/fr/#contact-form"
@@ -729,7 +740,7 @@ enableGitInfo = true
     [languages.es.params.cta]
       enable = true
       title = "Runink: datos en los que confiar. Decisiones que puede defender."
-      description = "Runink FACE lee los registros logísticos que usted ya guarda, los compara con las normas que los rigen y redacta una acción para quien toma la decisión. Todo sobre una infraestructura que usted controla."
+      description = "Runink FACE lee los registros logísticos que usted ya guarda, los compara con las normas que los rigen y redacta una acción para quien toma la decisión. Todo en sus propios servidores o su cuenta en la nube, o en las máquinas compartidas de Runink para empezar, sin ningún servicio de IA externo."
       [languages.es.params.cta.primary_button]
         text = "Reserve una consulta"
         url = "/es/#contact-form"
@@ -877,7 +888,7 @@ enableGitInfo = true
     [languages.pt.params.cta]
       enable = true
       title = "Runink: dados em que confiar. Decisões que você pode defender."
-      description = "O Runink FACE lê os registros logísticos que você já mantém, compara cada um com a regra que o rege e redige uma ação para quem decide. Tudo em uma infraestrutura que você controla."
+      description = "O Runink FACE lê os registros logísticos que você já mantém, compara cada um com a regra que o rege e redige uma ação para quem decide. Tudo nos seus próprios servidores ou na sua conta de nuvem, ou nas máquinas compartilhadas da Runink para começar, sem serviço de IA externo."
       [languages.pt.params.cta.primary_button]
         text = "Agende uma consulta"
         url = "/pt/#contact-form"

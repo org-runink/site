@@ -1,221 +1,118 @@
-{{ if .IsHome }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": {{ .Site.Title | jsonify | safeJS }},
-  "url": {{ .Site.BaseURL | jsonify | safeJS }},
-  "description": {{ .Site.Params.description | jsonify | safeJS }},
+{{- /*
+  The page's own JSON-LD node. partials/schema-org.html carries the
+  Organization, the WebSite and the breadcrumbs; this says what THIS page is.
 
-  {{/* GEO Entity Relationships Injection for Homepage */}}
-  {{ with .Params.partnerships }}
-  "mentions": [
-    {{ range $index, $partner := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Organization",
-      "name": {{ $partner.name | jsonify | safeJS }},
-      "url": {{ $partner.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ],
-  {{ end }}
+  WHAT CHANGED, AND WHY (2026-10).
 
-  {{ with .Params.case_studies }}
-  "citation": [
-    {{ range $index, $case := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Article",
-      "headline": {{ $case.title | jsonify | safeJS }},
-      "url": {{ $case.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ],
-  {{ end }}
+  - Every regular page used to be typed `Article`: the product pages, the
+    pricing pages, the company page, the privacy policy. An Article asks a
+    consumer to look for an author and a publication date, and Google's Article
+    guidance is for news, blog and sports articles. Now only pages under /blog/
+    (the posts and the papers) are Articles; every other page is a `WebPage`,
+    and an index is a `CollectionPage`.
 
-  {{ with .Params.compliance }}
-  "about": [
-    {{ range $index, $standard := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Thing",
-      "name": {{ $standard.name | jsonify | safeJS }},
-      "sameAs": {{ $standard.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ]
-  {{ else }}
-  "about": []
-  {{ end }}
-}
-</script>
-{{ else if .IsPage }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ .Permalink | jsonify | safeJS }}
-  },
-  "headline": {{ .Title | jsonify | safeJS }},
-  {{ with .Params.description }}"description": {{ . | jsonify | safeJS }},{{ end }}
-  {{ $imgUrl := .Params.featured_image }}
-  {{ with $imgUrl }}
-    {{ $img := resources.Get . }}
-    {{ if $img }}
-      "image": {
-        "@type": "ImageObject",
-        {{ if eq $img.MediaType.SubType "svg" }}
-        "url": {{ $img.Permalink | jsonify | safeJS }},
-        "width": {{ $img.Width | default 1200 }},
-        "height": {{ $img.Height | default 630 }}
-        {{ else }}
-        {{/* Fill, not Resize — see the note in layouts/_default/baseof.html.
-             Resize with both dimensions squashes a square source. */}}
-        {{ $optimized := $img.Fill "1200x675 webp" }}
-        "url": {{ $optimized.Permalink | jsonify | safeJS }},
-        "width": {{ $optimized.Width }},
-        "height": {{ $optimized.Height }}
-        {{ end }}
-        {{ if $img.Exif }}
-        {{ with $img.Exif.Tags.Artist }}, "creator": { "@type": "Person", "name": {{ . | jsonify | safeJS }} }{{ end }}
-        {{ with $img.Exif.Tags.Copyright }}, "copyrightNotice": {{ . | jsonify | safeJS }}{{ end }}
-        {{ with $img.Exif.Tags.ImageDescription }}, "description": {{ . | jsonify | safeJS }}{{ end }}
-        {{ end }}
-      },
-    {{ else }}
-      "image": {
-        "@type": "ImageObject",
-        "url": {{ . | absURL | jsonify | safeJS }}
-      },
-    {{ end }}
-  {{ end }}
-  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
-  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  - The home page emitted a SECOND WebSite node, with no @id, beside the one
+    schema-org.html already emits with one, plus an empty `"about": []`. Two
+    WebSite entities for one site is a contradiction a parser has to resolve;
+    the home page now relies on the canonical node.
 
-  {{/* GEO Entity Relationships Injection */}}
-  
-  {{/* Partnerships mapped to schema.org 'mentions' */}}
-  {{ with .Params.partnerships }}
-  "mentions": [
-    {{ range $index, $partner := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Organization",
-      "name": {{ $partner.name | jsonify | safeJS }},
-      "url": {{ $partner.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ],
-  {{ end }}
+  - The `case_studies` → citation and `compliance` → about branches are gone.
+    No page has ever set either key. `compliance` was the same trap
+    trust-signals.html already removed from the visible page: one line of front
+    matter would have published a certification claim in machine-readable
+    form, and Runink holds no certification. `partnerships` → mentions stays,
+    because naming a company we actually work with is what CONTENT.md rule 11
+    permits.
 
-  {{/* Case Studies mapped to schema.org 'citation' */}}
-  {{ with .Params.case_studies }}
-  "citation": [
-    {{ range $index, $case := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Article",
-      "headline": {{ $case.title | jsonify | safeJS }},
-      "url": {{ $case.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ],
-  {{ end }}
+  - A product page now names its product as a SoftwareApplication
+    (partials/schema-software.html) and points its WebPage's mainEntity at it,
+    so an answer engine can resolve "Runink TIDE" to a product made by the
+    Organization rather than to a web page about something.
 
-  {{/* Compliance & Standards mapped to schema.org 'certification' or 'about' */}}
-  {{ with .Params.compliance }}
-  "about": [
-    {{ range $index, $standard := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Thing",
-      "name": {{ $standard.name | jsonify | safeJS }},
-      "sameAs": {{ $standard.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ],
-  {{ end }}
+  The JSON is built as a dict and serialised with jsonify, not hand-written
+  with commas between `with` blocks: the hand-written form is valid only for as
+  long as every optional key happens to be present or absent in the right
+  combination.
+*/ -}}
+{{- $org := dict "@id" "https://runink.org/#organization" -}}
+{{- $site := dict "@id" "https://runink.org/#website" -}}
+{{- $isArticle := and .IsPage (eq .Section "blog") -}}
+{{- $software := partial "schema-software.html" . -}}
 
-  {{/* AUTHOR TYPE. Every post on this site is bylined to a team — "Runink
-       Logistics Operations Team", and its Portuguese equivalent — not to an
-       individual. Typing a collective as schema.org/Person is a contradiction:
-       Google's Article guidance is explicit that Person is for people and
-       Organization is for organizations, and a Person node with no `url` and no
-       `sameAs` identifies nobody in any case.
+{{- /* The page's image: the same choice seo-head.html makes for og:image, so
+       the two never disagree. A raster under 1000 px wide is not stretched. */ -}}
+{{- $siteCard := index (.Site.Params.images | default (slice)) 0 -}}
+{{- $image := dict -}}
+{{- range slice (.Params.image | default "") (.Params.featured_image | default "") ($siteCard | default "") -}}
+  {{- if and . (not $image) -}}
+    {{- with resources.Get (strings.TrimPrefix "/" .) -}}
+      {{- if and (ne .MediaType.SubType "svg") (ge .Width 1000) -}}
+        {{- $f := . -}}
+        {{- if not (and (eq .Width 1200) (eq .Height 675)) }}{{ $f = .Fill "1200x675 jpg q82" }}{{ end -}}
+        {{- $image = dict "@type" "ImageObject" "url" $f.Permalink "width" $f.Width "height" $f.Height -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
-       So a team byline resolves to the canonical Organization node rather than
-       inventing a person. If a post is ever bylined to a named individual, that
-       name is emitted as a Person and should carry a `url` to an author page —
-       which is the honest way to earn the authorship signal, rather than typing
-       a department as a human. CONTENT.md rule 11 makes the same point in prose:
-       name the author, or let the company own the page. */}}
-  {{ $authorName := .Params.author | default .Site.Params.author | default .Site.Title }}
-  {{ $isTeam := or (strings.Contains (lower $authorName) "team") (strings.Contains (lower $authorName) "equipe") }}
-  "author": {{ if or $isTeam (eq $authorName .Site.Title) }}{ "@id": "https://runink.org/#organization" }{{ else }}{
-    "@type": "Person",
-    "name": {{ $authorName | jsonify | safeJS }}
-  }{{ end }},
-  {{/* Reference the canonical Organization by @id rather than restating name
-       and logo here. This block used to emit a skeletal Organization on every
-       one of 131 Article pages, none of which carried an @id or a url, so none
-       of them resolved to an entity. partials/schema-org.html now emits the one
-       real node on every page and this points at it. */}}
-  "publisher": { "@id": "https://runink.org/#organization" }
-}
-</script>
-{{ else if .IsNode }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": {{ .Title | jsonify | safeJS }},
-  "url": {{ .Permalink | jsonify | safeJS }},
-  "description": {{ .Description | default .Site.Params.description | jsonify | safeJS }},
+{{- $mentions := slice -}}
+{{- range .Params.partnerships -}}
+  {{- $m := dict "@type" "Organization" "name" .name -}}
+  {{- with .url }}{{ $m = merge $m (dict "url" .) }}{{ end -}}
+  {{- $mentions = $mentions | append $m -}}
+{{- end -}}
 
-  {{/* GEO Entity Relationships Injection for Collection */}}
-  {{ with .Params.partnerships }}
-  "mentions": [
-    {{ range $index, $partner := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Organization",
-      "name": {{ $partner.name | jsonify | safeJS }},
-      "url": {{ $partner.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ],
-  {{ end }}
+{{- $node := dict -}}
+{{- if .IsHome -}}
+  {{- /* Nothing: the canonical WebSite in schema-org.html is this page's node. */ -}}
+{{- else if $isArticle -}}
+  {{- /* AUTHOR TYPE. Posts are bylined to a team ("Runink Logistics
+         Operations Team"), not to a person. Typing a collective as Person is
+         a contradiction, so a team byline resolves to the Organization; a
+         named individual is emitted as a Person. CONTENT.md rule 11: name the
+         author, or let the company own the page. */ -}}
+  {{- $authorName := .Params.author | default .Site.Params.author | default .Site.Title -}}
+  {{- $isTeam := or (strings.Contains (lower $authorName) "team") (strings.Contains (lower $authorName) "equipe") -}}
+  {{- $author := $org -}}
+  {{- if not (or $isTeam (eq $authorName .Site.Title)) }}{{ $author = dict "@type" "Person" "name" $authorName }}{{ end -}}
+  {{- $node = dict
+      "@context" "https://schema.org"
+      "@type" "Article"
+      "@id" (printf "%s#article" .Permalink)
+      "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+      "headline" .Title
+      "inLanguage" .Language.Lang
+      "isPartOf" $site
+      "author" $author
+      "publisher" $org
+  -}}
+  {{- with .Description }}{{ $node = merge $node (dict "description" .) }}{{ end -}}
+  {{- with $image }}{{ $node = merge $node (dict "image" .) }}{{ end -}}
+  {{- if not .Date.IsZero }}{{ $node = merge $node (dict "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")) }}{{ end -}}
+  {{- if not .Lastmod.IsZero }}{{ $node = merge $node (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) }}{{ end -}}
+  {{- with $mentions }}{{ $node = merge $node (dict "mentions" .) }}{{ end -}}
+{{- else -}}
+  {{- $node = dict
+      "@context" "https://schema.org"
+      "@type" (cond .IsPage "WebPage" "CollectionPage")
+      "@id" (printf "%s#webpage" .Permalink)
+      "url" .Permalink
+      "name" .Title
+      "inLanguage" .Language.Lang
+      "isPartOf" $site
+      "publisher" $org
+  -}}
+  {{- with .Description }}{{ $node = merge $node (dict "description" .) }}{{ end -}}
+  {{- with $image }}{{ $node = merge $node (dict "primaryImageOfPage" .) }}{{ end -}}
+  {{- if and .IsPage (not .Lastmod.IsZero) }}{{ $node = merge $node (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) }}{{ end -}}
+  {{- if .Ancestors }}{{ $node = merge $node (dict "breadcrumb" (dict "@id" (printf "%s#breadcrumb" .Permalink))) }}{{ end -}}
+  {{- with $software }}{{ $node = merge $node (dict "mainEntity" (dict "@id" (index . "@id"))) }}{{ end -}}
+  {{- with $mentions }}{{ $node = merge $node (dict "mentions" .) }}{{ end -}}
+{{- end -}}
 
-  {{ with .Params.case_studies }}
-  "citation": [
-    {{ range $index, $case := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Article",
-      "headline": {{ $case.title | jsonify | safeJS }},
-      "url": {{ $case.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ],
-  {{ end }}
-
-  {{ with .Params.compliance }}
-  "about": [
-    {{ range $index, $standard := . }}
-    {{ if $index }},{{ end }}
-    {
-      "@type": "Thing",
-      "name": {{ $standard.name | jsonify | safeJS }},
-      "sameAs": {{ $standard.url | default "" | jsonify | safeJS }}
-    }
-    {{ end }}
-  ]
-  {{ else }}
-  "about": []
-  {{ end }}
-}
-</script>
-{{ end }}
+{{- with $node }}
+<script type="application/ld+json">{{ . | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{- end }}
+{{- with $software }}
+<script type="application/ld+json">{{ merge (dict "@context" "https://schema.org") . | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{- end }}

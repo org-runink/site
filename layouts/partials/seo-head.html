@@ -1,0 +1,202 @@
+{{- /*
+  The search and share metadata of a page: title, description, robots,
+  Open Graph, Twitter, canonical and hreflang.
+
+  ONE PARTIAL, TWO SHELLS. This block lived twice, in _default/baseof.html and
+  in whitepapers/baseof.html, and the two copies had already drifted: the
+  whitepaper copy still put `.Summary` (HTML) into a content="" attribute, had
+  no hreflang at all, and called every index page an article. Both shells now
+  call this, so a fix lands on all pages at once.
+
+  Every string this emits is read by a person — in a search result, a shared
+  link card, an answer engine's citation — so CONTENT.md rules 1 and 3 govern
+  the literals below exactly as they govern a paragraph.
+*/ -}}
+
+{{- /* TITLE.
+
+     `seo_title` in front matter wins, verbatim. Otherwise "<Title> | Runink",
+     with two exceptions that both come from reading the rendered titles:
+
+     - A title that already names the company ("Runink FACE", "Runink TIDE
+       Pricing") does not get " | Runink" again. "Runink FACE | Runink" says the
+       brand twice in 20 characters and spends the second one on nothing.
+     - A title that would run past 60 characters with the suffix drops the
+       suffix rather than being cut by the search engine mid-word. The brand is
+       the cheapest thing to lose: og:site_name and the Organization node still
+       carry it. */ -}}
+{{- $seoTitle := .Title -}}
+{{- if not .IsHome -}}
+  {{- $withBrand := printf "%s | %s" .Title .Site.Title -}}
+  {{- if and (not (strings.Contains .Title .Site.Title)) (le (strings.RuneCount $withBrand) 60) -}}
+    {{- $seoTitle = $withBrand -}}
+  {{- end -}}
+{{- end -}}
+{{- with .Params.seo_title }}{{ $seoTitle = . }}{{ end -}}
+
+{{- /* DESCRIPTION. The chain, and why each step is there:
+
+     `.Summary` is HTML, and it used to go into a content="" attribute
+     unplainified and untruncated. And `.Site.Params.description` was "" in
+     hugo.toml, which shipped `<meta name="description" content="">` on 587 of
+     722 rendered pages, and an empty og:description and twitter:description
+     with it.
+
+     Taxonomy and term pages have neither a description nor a summary, so they
+     get a sentence built from what they actually are. */ -}}
+{{- $seoDescription := "" -}}
+{{- with .Description }}{{ $seoDescription = . }}{{ end -}}
+{{- with .Params.seo_description }}{{ $seoDescription = . }}{{ end -}}
+{{- if not $seoDescription -}}
+  {{- if eq .Kind "term" -}}
+    {{- $seoDescription = printf "Articles from Runink on %s, for operations, supply chain, finance and compliance teams." .Title -}}
+  {{- else if eq .Kind "taxonomy" -}}
+    {{- $seoDescription = printf "Every %s Runink writes about, for operations, supply chain, finance and compliance teams." (lower .Title) -}}
+  {{- else -}}
+    {{- with .Summary }}{{ $seoDescription = . | plainify | htmlUnescape | chomp }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $seoDescription }}{{ $seoDescription = .Site.Params.description }}{{ end -}}
+{{- $seoDescription = $seoDescription | plainify | htmlUnescape | chomp | truncate 300 -}}
+
+{{- $canonicalUrl := default .Permalink .Params.canonicalUrl -}}
+
+{{- /* SHARE IMAGE.
+
+     Order: the page's `image`, then `featured_image`, then the site's share
+     card (`params.images`, the Hugo convention for exactly this).
+
+     The fallback used to be the 512x512 logo, put through Fill "1200x675" —
+     which means scaled up 2.3x and cropped top and bottom. Every page without
+     its own picture, the home page and the FACE page among them, offered
+     Discover and every link preview an enlarged, beheaded logo. Google asks for
+     a large image "at least 1200 px wide"; it does not mean one that was 512.
+
+     So a raster source narrower than 1000 px is no longer stretched: the page
+     falls through to the site card, which is drawn at 1200x675. 1000 rather
+     than 1200 because most article art here is a 1024 square, and filling
+     1200x675 from 1024 is a 1.17x scale on the width — visible to nobody —
+     where the logo was 2.3x.
+
+     Fill, not Resize: Resize with both dimensions squashes a square source.
+     1200x675 rather than 1200x630: Google documents 16:9 for a large Discover
+     image, and 1200x630 is a 1.90:1 social-card ratio that predates it. */ -}}
+{{- $siteCard := index (.Site.Params.images | default (slice)) 0 -}}
+{{- $candidates := slice -}}
+{{- with .Params.image }}{{ $candidates = $candidates | append . }}{{ end -}}
+{{- with .Params.featured_image }}{{ $candidates = $candidates | append . }}{{ end -}}
+{{- with $siteCard }}{{ $candidates = $candidates | append . }}{{ end -}}
+{{- $seoImage := "" -}}
+{{- $seoImageW := 0 -}}
+{{- $seoImageH := 0 -}}
+{{- $seoImageType := "" -}}
+{{- range $candidates -}}
+  {{- if not $seoImage -}}
+    {{- $img := resources.Get (strings.TrimPrefix "/" .) -}}
+    {{- if $img -}}
+      {{- if eq $img.MediaType.SubType "svg" -}}
+        {{- /* An SVG is not accepted as og:image by the large-card consumers
+               (Facebook, LinkedIn, Discover), so it is skipped rather than
+               offered. */ -}}
+      {{- else if ge $img.Width 1000 -}}
+        {{- /* A source already drawn at 1200x675 (the site card, the product
+               cards) goes out as drawn. Anything else is filled to the frame as
+               a JPEG, not WebP: WebP og:images are still dropped by some
+               link-preview consumers, and a share card that does not render is
+               worse than one that is 20 KB larger. */ -}}
+        {{- $f := $img -}}
+        {{- if not (and (eq $img.Width 1200) (eq $img.Height 675)) -}}
+          {{- $f = $img.Fill "1200x675 jpg q82" -}}
+        {{- end -}}
+        {{- $seoImage = $f.Permalink -}}
+        {{- $seoImageW = $f.Width -}}
+        {{- $seoImageH = $f.Height -}}
+        {{- $seoImageType = $f.MediaType.Type -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ROBOTS.
+
+     max-image-preview:large is what makes a page eligible for Google Discover
+     and for a large image in a search result; without it the preview is
+     restricted to a thumbnail. max-snippet:-1 and max-video-preview:-1 lift the
+     text and video caps for the same reason: this site wants to be quoted.
+
+     Taxonomy terms and lists are `noindex, follow`: they were 270 of the 356
+     URLs in the English sitemap, near-duplicate lists of article titles. The
+     links out of them still count. A page that sets its own `robots` — /design/
+     and /igo-demo/ are noindex — keeps exactly what it asked for, without the
+     preview directives. */ -}}
+{{- $isTaxonomy := or (eq .Kind "taxonomy") (eq .Kind "term") -}}
+{{- $robots := .Params.robots | default (cond $isTaxonomy "noindex, follow" "index, follow") -}}
+{{- if not (strings.Contains (lower $robots) "noindex") -}}
+  {{- $robots = printf "%s, max-image-preview:large, max-snippet:-1, max-video-preview:-1" $robots -}}
+{{- end -}}
+
+{{- /* og:type. "article" only for what is one: a dated piece under /blog/
+     (posts and the papers). A product page, a pricing page or an index is
+     not an article, and calling it one told every consumer to look for an
+     author and a publication date that were not there. */ -}}
+{{- $isArticle := and .IsPage (eq .Section "blog") -}}
+
+{{- /* og:locale, from the language. Open Graph wants ll_CC; the regions are
+     the ones hugo.toml declares for each language's `locale`. */ -}}
+{{- $ogLocales := dict "en" "en_US" "fr" "fr_FR" "es" "es_ES" "pt" "pt_BR" -}}
+
+<title>{{ $seoTitle }}</title>
+<meta name="description" content="{{ $seoDescription }}">
+<meta name="author" content="{{ .Site.Params.author | default .Site.Title }}">
+<meta name="robots" content="{{ $robots }}">
+
+<meta property="og:title" content="{{ $seoTitle }}">
+<meta property="og:description" content="{{ $seoDescription }}">
+<meta property="og:type" content="{{ if $isArticle }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ $canonicalUrl }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+{{ with index $ogLocales .Language.Lang }}<meta property="og:locale" content="{{ . }}">{{ end }}
+{{- if .IsTranslated }}{{ range .Translations }}{{ with index $ogLocales .Language.Lang }}
+<meta property="og:locale:alternate" content="{{ . }}">{{ end }}{{ end }}{{ end }}
+{{- with $seoImage }}
+<meta property="og:image" content="{{ . }}">
+<meta property="og:image:width" content="{{ $seoImageW }}">
+<meta property="og:image:height" content="{{ $seoImageH }}">
+{{ with $seoImageType }}<meta property="og:image:type" content="{{ . }}">{{ end }}
+<meta property="og:image:alt" content="{{ $.Title }}">
+{{- end }}
+{{- if $isArticle }}
+{{- /* Dates a reader can check: .Date is the front matter date, .Lastmod is
+       the commit that last changed the file (hugo.toml [frontmatter]). A page
+       with no date emits neither rather than a zero year. */}}
+{{ with .Date }}{{ if not .IsZero }}<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}{{ end }}
+{{ with .Lastmod }}{{ if not .IsZero }}<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}{{ end }}
+{{ with .Params.categories }}{{ with index . 0 }}<meta property="article:section" content="{{ . }}">{{ end }}{{ end }}
+{{- end }}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $seoTitle }}">
+<meta name="twitter:description" content="{{ $seoDescription }}">
+{{ with .Site.Params.twitter }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
+{{- with $seoImage }}
+<meta name="twitter:image" content="{{ . }}">
+<meta name="twitter:image:alt" content="{{ $.Title }}">
+{{- end }}
+
+<link rel="canonical" href="{{ $canonicalUrl }}">
+
+{{- /* hreflang, only where a translation exists. A page in English only emits
+     nothing, rather than a self-referential pair that claims a language set
+     the site does not have. x-default points at English: it is the only
+     language in which every page exists. */}}
+{{- if .IsTranslated }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{- range .Translations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{- end }}
+{{- $en := "" }}
+{{- if eq $.Language.Lang "en" }}{{ $en = $.Permalink }}{{ else }}{{ range $.Translations }}{{ if eq .Language.Lang "en" }}{{ $en = .Permalink }}{{ end }}{{ end }}{{ end }}
+{{- with $en }}
+<link rel="alternate" hreflang="x-default" href="{{ . }}">
+{{- end }}
+{{- end }}
