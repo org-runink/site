@@ -20,7 +20,7 @@ deck: |
   fonctionnent dans TIDE.
 
   Les documents sont rédigés en anglais. Les pages de ce site sont en
-  français ; les documents longs ne le sont pas encore.
+  français.
 
   Ils ne contiennent ni études de cas, ni noms de clients, ni chiffres de
   retour sur investissement. Ce qu'ils expliquent, c'est le mécanisme : ce que

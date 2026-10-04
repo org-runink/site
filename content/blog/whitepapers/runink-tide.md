@@ -6,10 +6,9 @@ headline: "Run your software, your AI and your data on your own machines, and se
 # arrives naming the paper it came from. `product:` is not usable for this —
 # two of the four papers are both "Runink TIDE".
 #
-# Added 2026-09-29: a paragraph under "Where does our information go?" reporting
-# TIDE's own egress audit run, on the same footing FACE's paper already carries
-# for its own audit run (limits stated in the sentence itself, never "provably").
-# content/products/tide.md's features grid carries the same fact, shortened.
+# Added 2026-09-29 and removed 2026-10-04: a paragraph under "Where does our
+# information go?" reporting one egress audit run with its limits. Owner: the
+# site shows what ships, with nothing qualified by a single run (CONTENT.md rules 2 and 4).
 #
 # Updated 2026-10-01: a "Sensors and devices report to your own server" section
 # was added and taken out again the same day; it goes back only on the TIDE
@@ -948,8 +947,7 @@ the person approves. An approved brief goes, word for word, to coding agents as
 a work item, and the result comes back as a change for people to review.
 
 **Why it matters.** The distance from "we need a small tool for this" to a first
-working version gets shorter, and every step is visible and approved. The brief
-never leaves the company's hardware.
+working version gets shorter, and every step is visible and approved.
 
 ### Applications
 
@@ -1217,15 +1215,6 @@ running has somebody who asked for it and a reason it exists.
 **Where does our information go?**
 To machines you own. The model, the records, the files and the certificate
 authority all run on your hardware. No outside service is called for AI.
-
-In our audit run, TIDE made no outbound connection while testing, exploring,
-mapping and assessing your sources. Integrations you turn on, such as GitHub or
-Stripe, connect only to their own services. That was one run, about six
-seconds, on a development machine: Chrome and the host itself were out of
-scope, no model was wired in, so the model path went untested, and no GitHub,
-Stripe or metrics integration was configured for it. Ask us where the wider
-check — every path, on every release — stands before you rely on it going
-further.
 
 **Is our material used to train anything?**
 No. Nothing is sent out to be trained on, and there is no account with an

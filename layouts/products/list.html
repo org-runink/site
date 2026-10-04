@@ -29,9 +29,9 @@
         <a class="rp-paper rp-index-card" href="{{ .url | relURL }}" data-print="{{ .url | absURL }}">
           <span class="rp-index-name">
             {{ with .logo }}<img class="rp-logo" src="{{ . | relURL }}" alt="" width="44" height="44">{{ else }}<span class="rp-dog" aria-hidden="true"></span>{{ end }}
-            <b>{{ .name }}</b>
+            <b>{{ .full | default .name }}</b>
           </span>
-          <small class="rp-index-meaning">{{ .meaning }}</small>
+          {{ with .meaning }}<small class="rp-index-meaning">{{ . }}</small>{{ end }}
           <span>{{ .line }}</span>
           <em>See {{ .name }} &rarr;</em>
         </a>

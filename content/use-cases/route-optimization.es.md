@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Una ruta vuelve como una distancia, una duración y una línea en el mapa.</strong> Un origen, un destino y las restricciones que usted ha nombrado salen hacia el proveedor de rutas; lo que vuelve es una distancia de carretera medida y un tiempo de viaje, no una opinión.</li>
 <li><strong class="text-stone-200">No se le adjunta dinero, y es a propósito.</strong> El proveedor de rutas devuelve distancia y tiempo, y ningún coste. Así que no se imprime ningún ahorro al lado de la ruta, porque una cifra que nadie ha medido puesta junto a dos que sí se midieron es la manera en que una estimación acaba citada como un hecho.</li>
 <li><strong class="text-stone-200">Cuando no se ha podido calcular, lo dice.</strong> Una conexión sin credencial de rutas, o un proveedor que no devuelve nada, vuelve como no disponible. No vuelve como una tarjeta de ruta con los campos vacíos, que en una pantalla es indistinguible de una buena respuesta.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Trazado
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        Esta página marca dónde cae la línea. La llamada de rutas, la tarjeta que produce y la negativa a suponer un coste están en el producto. La jornada de trabajo que hay a su alrededor es una ilustración del mecanismo, no el relato de algo que ocurrió: no se ha corrido contra la flota de un cliente, y aquí no hay cifras de distancia, de tiempo ni de dinero ahorrado.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="optimo-a-las-seis-no-a-las-diez" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Óptimo A Las Seis. No A Las Diez.</h2>
@@ -71,10 +63,10 @@ author: "Runink"
                 La credencial pertenece a la conexión, no a la máquina. A las rutas se llega con la clave que va pegada a la conexión que se configuró para ello, así que el anclaje es algo que usted monta, puede ver y puede revocar conexión por conexión. No es una variable de entorno metida en un servidor que nadie puede auditar.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Un cambio se propone, nunca se impone. Una persona con nombre en la mesa lo aprueba, lo edita o lo rechaza, y rechazar queda registrado como una decisión y no como un silencio. Avisar al conductor es otro trabajo y otra página &mdash; un conductor puede preguntar y ser respondido en voz alta con las manos en el volante, en <a href="/es/use-cases/voice-dispatch">hablar con los conductores sin pantalla</a> &mdash;, aunque la llamada deja una transcripción y no una aceptación, y el cambio sigue siendo de la mesa. Y si la pregunta es más grande que un tramo &mdash; un proveedor dado de baja, un corredor abandonado por una temporada &mdash;, el caso se puede exponer primero contra las reglas con las que choca, en <a href="/es/use-cases/hypothesis-lab">probar un plan antes de comprometerse con él</a>.
+                Un cambio se propone, nunca se impone. Una persona con nombre en la mesa lo aprueba, lo edita o lo rechaza, y rechazar queda registrado como una decisión y no como un silencio. Avisar al conductor es otro trabajo y otra página &mdash; un conductor puede preguntar y ser respondido en voz alta con las manos en el volante, en <a href="/es/use-cases/voice-dispatch">hablar con los conductores sin pantalla</a> &mdash;, y la llamada deja una transcripción en el registro mientras el cambio es de la mesa. Y si la pregunta es más grande que un tramo &mdash; un proveedor dado de baja, un corredor abandonado por una temporada &mdash;, el caso se puede exponer primero contra las reglas con las que choca, en <a href="/es/use-cases/hypothesis-lab">probar un plan antes de comprometerse con él</a>.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Aprobar es lo que lo manda, y el motivo se queda en el registro para quien pregunte dentro de tres meses por qué un camión fue por ahí. Una honestidad más sobre eso, del tipo sobre el que está construida esta página: donde un paso detrás de la aprobación no tiene nada implementado por debajo &mdash; la escritura en su sistema de transporte es el ejemplo real &mdash;, la respuesta nombra ese paso como no ejecutado en vez de devolver un éxito que cubra la acción entera. Aprobado y hecho son aquí dos palabras distintas, y es el software el que le dice cuál de las dos consiguió.
+                Aprobar es lo que lo manda, y el motivo se queda en el registro para quien pregunte dentro de tres meses por qué un camión fue por ahí. La respuesta nombra cada paso que se ejecutó y cualquiera que no pudo ejecutarse, en vez de devolver un éxito que cubra la acción entera. Aprobado y hecho son aquí dos palabras distintas, y es el software el que le dice cuál de las dos consiguió.
             </p>
         </div>
         <div>
@@ -91,7 +83,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Todas las cifras de abajo son suyas, no nuestras. No tenemos ninguna propia que ofrecerle. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoren.
+                Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoren.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Cada cuánto se vuelve a calcular una ruta después de despachar.</strong> La respuesta más honesta es nunca. Tome un mes y cuente los días en que el plan se recalculó en vez de parchearse. Este es el número sobre el que gira todo lo demás.</li>
@@ -130,7 +122,7 @@ author: "Runink"
     },
     {
       "question": "¿Cómo se entera el conductor?",
-      "answer": "Ese es otro trabajo y otra página. Un conductor puede preguntar y recibir respuesta en voz alta con las manos en el volante, como se describe en [hablar con los conductores sin pantalla](/es/use-cases/voice-dispatch/). La llamada deja una transcripción y no una aceptación, y el cambio sigue siendo de la mesa."
+      "answer": "Ese es otro trabajo y otra página. Un conductor puede preguntar y recibir respuesta en voz alta con las manos en el volante, como se describe en [hablar con los conductores sin pantalla](/es/use-cases/voice-dispatch/). La llamada deja una transcripción en el registro, y el cambio es de la mesa."
     }
   ]
 }

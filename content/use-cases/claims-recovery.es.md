@@ -17,8 +17,8 @@ author: "Runink"
 
 <h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">El papeleo se reúne por usted, y solo las partes que de verdad están ahí.</strong> La entrada, el puerto, el motivo por el que está retenida, los documentos que faltan en el expediente, los días que lleva retenida y el cargo por día llegan a un mismo sitio, unidos al envío al que pertenecen. No la tarifa que regía ese día: FACE no guarda tarifario, ni tabla de tarifas, ni cuadro de recargos, así que no puede decirle cuál era la tarifa y no va a fingir que sí.</li>
-<li><strong class="text-stone-200">Las cantidades se comparan de tres maneras.</strong> El pedido de compra, la factura y el conocimiento de embarque se confrontan entre sí, y donde no coinciden el hallazgo nombra la pareja y el tamaño de la diferencia: conocimiento contra pedido, conocimiento contra factura. Eso es una comprobación de discrepancias sobre lo que dicen los documentos, no un cuadre contra una báscula ni contra una tarifa. Aquí tampoco hay señal de báscula de camiones.</li>
+<li><strong class="text-stone-200">El papeleo se reúne por usted, y solo las partes que de verdad están ahí.</strong> La entrada, el puerto, el motivo por el que está retenida, los documentos que faltan en el expediente, los días que lleva retenida y el cargo por día llegan a un mismo sitio, unidos al envío al que pertenecen.</li>
+<li><strong class="text-stone-200">Las cantidades se comparan de tres maneras.</strong> El pedido de compra, la factura y el conocimiento de embarque se confrontan entre sí, y donde no coinciden el hallazgo nombra la pareja y el tamaño de la diferencia: conocimiento contra pedido, conocimiento contra factura.</li>
 <li><strong class="text-stone-200">La carta se redacta, no se envía.</strong> Una persona con nombre lee el caso, lo edita o lo rechaza, y esa firma queda en el registro. Nada llega al transportista antes.</li>
 </ul>
 
@@ -59,7 +59,7 @@ author: "Runink"
         <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Las comprobaciones corren contra sus propios registros, y la lista de la mañana es lo que esos registros dicen de verdad, ordenada y con los documentos ya adjuntos. No es un panel por el que usted tenga que ir buscando. El corolario merece decirse, porque casi todos los productos lo esconden: si no conecta nada, la lista está vacía. No se abre con ejemplos preparados que parecen sus rutas. Así se comportó una vez, y se quitó.
+                Las comprobaciones corren contra sus propios registros, y la lista de la mañana es lo que esos registros dicen de verdad, ordenada y con los documentos ya adjuntos. No es un panel por el que usted tenga que ir buscando. Si no conecta nada, la lista está vacía: nunca se abre con ejemplos preparados disfrazados de sus rutas.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 En la parte del puerto la aritmética es de la clase honesta. Los días que la caja lleva retenida, multiplicados por el cargo diario que figura en la entrada, y nada más. El arancel se deja fuera de esa cifra a propósito, porque el arancel se debe igual, se mueva la caja hoy o en una semana, y sumarlo inflaría la exposición por el valor de una factura que nadie evitó. Lo que se le muestra es el cargo que sí era evitable, que es un número más pequeño y más útil que el que imprime la mayoría de las herramientas.
@@ -68,7 +68,7 @@ author: "Runink"
                 La reclamación llega ya armada: la entrada, la retención y el motivo que se dio para ella, los documentos que faltan en el expediente, la discrepancia de cantidad si la hay, y una carta redactada. A quien revisa le queda una sola pregunta, que es la única que merece su tiempo: ¿se sostiene este caso?
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Aprobarla es lo que la envía. Y donde un paso detrás de la aprobación todavía no tiene implementación &mdash;la escritura de vuelta en su sistema de registro es el ejemplo real&mdash; la respuesta nombra ese paso como no ejecutado en vez de dar la acción entera por hecha, así que nadie se entera tres semanas después de que la presentación nunca salió. Más tarde, por qué se presentó una reclamación se responde desde el registro y no desde la memoria.
+                Aprobarla es lo que la envía. La respuesta nombra cada paso que se ejecutó y cualquiera que no pudo ejecutarse, en vez de dar la acción entera por hecha, así que nadie se entera tres semanas después de que la presentación nunca salió. Más tarde, por qué se presentó una reclamación se responde desde el registro y no desde la memoria.
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -87,9 +87,8 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Situación: hipotético &mdash; no medido</p>
         <p class="text-base text-stone-500 font-medium">
-            La reclamación y la retención en puerto de arriba están dibujadas para mostrar la forma del trabajo. No son el relato de un trabajo con un cliente. No publicamos tasas de recuperación, ni importes recuperados, ni nombres de clientes, porque no los hemos medido sobre sus registros ni sobre los de nadie &mdash; y una tasa de recuperación sacada de las rutas de otro no le diría nada de las suyas.
+            La reclamación y la retención en puerto de arriba están dibujadas para mostrar la forma del trabajo. No son el relato de un trabajo con un cliente. Esta página no lleva tasas de recuperación, importes recuperados ni nombres de clientes: una tasa de recuperación sacada de las rutas de otro no le diría nada de las suyas.
         </p>
     </div>
 </div>
@@ -122,7 +121,7 @@ author: "Runink"
     },
     {
       "question": "¿Y si nuestros expedientes no pueden salir del edificio?",
-      "answer": "Entonces no salen. El razonamiento corre en las máquinas que indica su plan, y el modelo con el que razona corre allí también, no en un servicio de IA externo. Sus registros de embarque, sus facturas y su correspondencia se leen en esas máquinas y en ninguna otra parte.<br><br>Así está construido el software, no es un ajuste que se enciende, de modo que es una propiedad que su propia revisión de seguridad puede examinar. Pídanos recorrer esa frontera con usted en vez de dar por buena una frase en una página web."
+      "answer": "Entonces no salen. El razonamiento corre en las máquinas que indica su plan, y el modelo con el que razona corre allí también, no en un servicio de IA externo. Sus registros de embarque, sus facturas y su correspondencia se leen en esas máquinas y en ninguna otra parte.<br><br>Así está construido el software, no es un ajuste que se enciende, de modo que es una propiedad que su propia revisión de seguridad puede examinar. Pídanos recorrer esa frontera con su responsable de seguridad."
     }
   ]
 }

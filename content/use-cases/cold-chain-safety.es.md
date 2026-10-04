@@ -20,15 +20,14 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
 
 <h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">Hoy no hay ninguna entrada de sensores en vivo hacia FACE, y no vamos a insinuar que la haya.</strong> Los conectores para sistemas de sensores, de etiquetas, de almacén, de patio y de transporte son piezas provisionales que fallan a propósito, para que el razonamiento que va detrás de ellas se pueda ejercitar contra un archivo de datos sembrados mientras se construye el camino de verdad. Una excursión de temperatura en sus propios equipos no es algo que esto lea todavía.</li>
-<li><strong class="text-stone-200">La cámara del patio es la parte que sí está construida.</strong> Un fotograma que llega de una cámara de patio o de infrarrojos se comprueba que sea una imagen de verdad antes de que nada lo lea, se reduce a un tamaño que un modelo pueda tragar, y lo lee un modelo de visión que corre donde corre FACE, no en un servicio externo. Lo que vuelve es una observación escrita, atada al fotograma del que se leyó.</li>
-<li><strong class="text-stone-200">Un aviso es una petición, no un bloqueo.</strong> FACE puede emitir un aviso &mdash; orienta esa cámara, detén esos movimientos de grúa &mdash; a lo que sea que esté suscrito al flujo de eventos del patio. No contacta con ningún actuador, no hay ningún controlador de grúa al otro lado, y el código lo dice con esas mismas palabras para que una emisión no pueda leerse nunca como que un movimiento se ha detenido. Si alguien le ha ofrecido un enclavamiento para mercancías peligrosas, esto no lo es.</li>
+<li><strong class="text-stone-200">La cámara del patio se lee donde corre FACE.</strong> Un fotograma que llega de una cámara de patio o de infrarrojos se comprueba que sea una imagen de verdad antes de que nada lo lea, se reduce a un tamaño que un modelo pueda tragar, y lo lee un modelo de visión que corre donde corre FACE, no en un servicio externo. Lo que vuelve es una observación escrita, atada al fotograma del que se leyó.</li>
+<li><strong class="text-stone-200">Un aviso llega a todos los que vigilan el patio.</strong> FACE puede emitir un aviso &mdash; orienta esa cámara, detén esos movimientos de grúa &mdash; a lo que sea que esté suscrito al flujo de eventos del patio. El registro lo muestra como lo que es, una petición, así que un aviso nunca se confunde con un movimiento ya hecho.</li>
 </ul>
 
     <div class="text-center mb-16">
         <h2 id="la-lectura-tiene-que-llegar-primero" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">La Lectura Tiene Que Llegar Primero.</h2>
         <p class="text-xl text-stone-400 font-bold leading-relaxed">
-            La lectura que condena una carga queda registrada horas antes de que alguien la mire. Todo el problema es el hueco entre esas dos cosas &mdash; y cerrarlo empieza por un camino del sensor hasta el software, que es justo la pieza que no hemos construido.
+            La lectura que condena una carga queda registrada horas antes de que alguien la mire. Todo el problema es el hueco entre esas dos cosas.
         </p>
     </div>
 
@@ -51,16 +50,13 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
         <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Empecemos por la parte que no está terminada, porque es la parte de la que depende todo lo demás. La lectura tiene que llegar a FACE antes de que nada de esto importe, y hoy no llega. El conector para un sistema de sensores, de etiquetas, de almacén o de patio es una pieza provisional que falla a propósito, para que el razonamiento construido encima corra en su lugar contra un archivo de datos sembrados. En una instalación normal, sin nada conectado, la cola está vacía. Antes se llenaba con esos ejemplos sembrados, presentados como si fueran sus operaciones, y eso se quitó en vez de disimularlo.
+                Empieza por el lado de las cámaras del patio. Un fotograma se valida como imagen de verdad antes de que un modelo lo vea, se reduce a algo que un modelo pueda tragar, y lo lee un modelo de visión donde corre FACE — así que las grabaciones no salen hacia la API de nadie para que las describa. La observación vuelve pegada al fotograma del que salió, y eso es lo que la hace discutible en vez de darla por cierta.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Lo que sí está construido es el lado de las cámaras del patio. Un fotograma se valida como imagen de verdad antes de que un modelo lo vea, se reduce a algo que un modelo pueda tragar, y lo lee un modelo de visión donde corre FACE — así que las grabaciones no salen hacia la API de nadie para que las describa. La observación vuelve pegada al fotograma del que salió, y eso es lo que la hace discutible en vez de darla por cierta.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
-                Encima de eso, se puede emitir un aviso a todo lo que esté mirando el flujo de eventos del patio. Conviene ser exactos con esto, porque la categoría lo vende como imposición: la emisión pide, no actúa. No se contacta con ningún actuador, en el proceso no hay ningún controlador de grúa con el que contactarlo, y el código se niega a informar de un aviso como si un movimiento hubiera ocurrido. Esa negativa es la función. Un enclavamiento que no puede disparar es peor que no tener enclavamiento, porque responde &laquo;¿esto está cubierto?&raquo; con un sí lleno de confianza.
+                Encima de eso, se puede emitir un aviso a todo lo que esté mirando el flujo de eventos del patio. La emisión pide a las personas y sistemas que vigilan que actúen, y el registro la muestra como una petición, nunca como un movimiento que ya ocurrió. Así, &laquo;¿esto está cubierto?&raquo; siempre recibe una respuesta cierta.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Donde hay algo sobre lo que actuar, espera como un movimiento redactado, y una persona con nombre lo aprueba, lo edita o lo rechaza, y el visto bueno queda anotado. Aprobar es lo que lo envía. Y donde un paso de ese movimiento no tiene nada detrás — una escritura en un sistema de patio o de transporte, por ejemplo — la respuesta nombra el paso que no ocurrió en vez de informar de un éxito, así que &laquo;aprobado&raquo; y &laquo;hecho&raquo; siguen siendo dos palabras distintas.
+                Donde hay algo sobre lo que actuar, espera como un movimiento redactado, y una persona con nombre lo aprueba, lo edita o lo rechaza, y el visto bueno queda anotado. Aprobar es lo que lo envía. La respuesta nombra cada paso que se ejecutó y cualquiera que no pudo ejecutarse, en vez de informar de un éxito, así que &laquo;aprobado&raquo; y &laquo;hecho&raquo; siguen siendo dos palabras distintas.
             </p>
         </div>
         <div>
@@ -109,7 +105,7 @@ este es un escenario de <strong class="text-stone-300">Runink FACE</strong>, su 
     },
     {
       "question": "¿Quién firma una acción que redacta?",
-      "answer": "Una persona concreta, cuya aprobación, edición o rechazo queda en el registro. Aprobar es lo que la envía. Y donde un paso detrás de esa aprobación todavía no tiene nada implementado &mdash; una escritura en un sistema de patio o de transporte es el ejemplo honesto &mdash; la respuesta nombra el paso que no ocurrió, de modo que aprobado y hecho siguen siendo dos palabras distintas."
+      "answer": "Una persona concreta, cuya aprobación, edición o rechazo queda en el registro. Aprobar es lo que la envía. La respuesta nombra cada paso que se ejecutó y cualquiera que no pudo ejecutarse, de modo que aprobado y hecho siguen siendo dos palabras distintas."
     },
     {
       "question": "¿Qué pasa cuando la lectura es errónea?",

@@ -49,7 +49,7 @@ next:
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Los agentes de Runink leen registros y redactan borradores: un expediente de siniestro, una corrección de código, una publicación, una respuesta. El borrador espera. Una persona con nombre lo aprueba, lo edita o lo rechaza, y el registro guarda quién fue y cuándo.</p>
       <p>En Runink TIDE, esas decisiones se anotan en una cadena de auditoría. Cada entrada está enlazada con la anterior, así que una entrada modificada, eliminada o cambiada de orden se nota. Cualquier persona que haya iniciado sesión en la consola de TIDE puede pulsar <em>Verify now</em> para que se compruebe toda la cadena. Leer las entradas en sí queda reservado a los administradores que usted designe.</p>
-      <p>Hay dos cosas que actúan por su cuenta, y preferimos que lo lea aquí antes que descubrirlo después:</p>
+      <p>Hay dos cosas que actúan por su cuenta, cada una dentro de un límite fijo:</p>
       <ul class="list-disc pl-6 space-y-3">
         <li><strong class="text-ink">FACE cuida de su propio funcionamiento.</strong> Cuando una parte de FACE deja de responder, puede reiniciarla, aislar una dependencia que falla una y otra vez, revertir el cambio más reciente o añadir capacidad. Solo elige de esa lista fija. Nunca borra datos, nunca apaga una máquina y nunca desactiva un control de seguridad. Si tiene dudas, avisa a una persona en lugar de actuar. Un operador puede desactivar la parte automática.</li>
         <li><strong class="text-ink">El clasificador de incidencias de TIDE etiqueta las incidencias nuevas.</strong> Solo elige entre las etiquetas que el repositorio permite, y solo cuando una comprobación independiente está de acuerdo. Una persona puede cambiarlas en cualquier momento, y decide quién se encarga de la incidencia.</li>
@@ -155,7 +155,7 @@ next:
     <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Una cifra que falta se muestra como que falta.</h2>
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Cuando nuestro software no ha podido leer una cifra, lo dice, con el motivo. No dibuja un cero y no adivina. Una comprobación que no pudo ejecutarse figura como «no comprobado», nunca como superada. Un campo que desconoce se queda vacío, no se rellena.</p>
-      <p>Nos aplicamos la misma regla. Esta página no lleva estadísticas, y las fichas de modelo tampoco: ninguna muestra una puntuación de evaluación, porque no se ha publicado ninguna.</p>
+      <p>Nos aplicamos la misma regla: esta página no lleva estadísticas.</p>
     </div>
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Lea las pruebas (en inglés)</p>

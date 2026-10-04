@@ -61,7 +61,7 @@ groups:
       - page: "paralegal-review"
         name: "Revisión de contratos y obligaciones"
       - page: "compliance"
-        name: "Datos personales y emisiones"
+        name: "Datos personales y registros de auditoría"
 
 next:
   label: "Un paso más"

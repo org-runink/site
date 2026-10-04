@@ -26,7 +26,7 @@ author: "Runink"
 {{< pricing-table-2 >}}
 {
   "intro": [
-    "Você paga pelo número de pessoas que usam o Runink e escolhe onde o trabalho roda: nas máquinas compartilhadas do Runink, na sua própria conta na nuvem ou nas suas próprias instalações.",
+    "Este é o preço do Runink FACE: Fulfilment Autonomous Claims Engine. Você paga pelo número de pessoas que o usam e escolhe onde o trabalho roda: nas máquinas compartilhadas do Runink, na sua própria conta na nuvem ou nas suas próprias instalações.",
     "É toda a lógica. As três licenças abaixo se diferenciam por essa única pergunta, onde o trabalho roda, e o preço decorre dela. Mas o trabalho vem primeiro, porque é a parte sobre a qual vale a pena discutir um preço."
   ],
   "eyebrow": "O trabalho",
@@ -92,7 +92,7 @@ author: "Runink"
       "items": [
         { "page": "insurance-underwriting", "name": "Subscrição e processos de sinistro" },
         { "page": "paralegal-review", "name": "Revisão de contratos e obrigações" },
-        { "page": "compliance", "name": "Dados pessoais e emissões" }
+        { "page": "compliance", "name": "Dados pessoais e registros de auditoria" }
       ]
     }
   ],

@@ -18,8 +18,8 @@ author: "Runink"
 
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">A papelada é reunida para você, e só as partes que de fato estão lá.</strong> A declaração, o porto, o motivo da retenção, os documentos que faltam no processo, os dias que a carga está parada e a cobrança por dia chegam num lugar só, ligados ao embarque a que pertencem. Não a tarifa que valia no dia: o FACE não guarda tabela de frete, nem tabela de tarifas, nem tabela de taxas acessórias, então não pode dizer qual era a tarifa e não vai fingir que pode.</li>
-<li><strong class="text-stone-200">As quantidades são conferidas de três lados.</strong> O pedido de compra, a nota fiscal e o conhecimento de embarque são comparados entre si, e onde divergem o achado nomeia o par e o tamanho da diferença: conhecimento contra pedido, conhecimento contra nota. Isso é uma conferência de divergências sobre o que os documentos dizem, não um acerto contra uma balança nem contra uma tarifa. Aqui também não há leitura de balança rodoviária.</li>
+<li><strong class="text-stone-200">A papelada é reunida para você, e só as partes que de fato estão lá.</strong> A declaração, o porto, o motivo da retenção, os documentos que faltam no processo, os dias que a carga está parada e a cobrança por dia chegam num lugar só, ligados ao embarque a que pertencem.</li>
+<li><strong class="text-stone-200">As quantidades são conferidas de três lados.</strong> O pedido de compra, a nota fiscal e o conhecimento de embarque são comparados entre si, e onde divergem o achado nomeia o par e o tamanho da diferença: conhecimento contra pedido, conhecimento contra nota.</li>
 <li><strong class="text-stone-200">A carta é redigida, não enviada.</strong> Uma pessoa com nome lê o caso, edita ou recusa, e esse aval fica no registro. Nada vai para a transportadora antes disso.</li>
 </ul>
 
@@ -60,7 +60,7 @@ author: "Runink"
         <div>
             <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                As conferências rodam contra os seus próprios registros, e a fila da manhã é o que esses registros de fato dizem, em ordem de prioridade, com os documentos anexados. Não é mais um painel para você ir procurar. O que vem junto vale ser dito, porque quase todo produto esconde: se você não conecta nada, a fila fica vazia. Ela não abre com exemplos prontos que parecem as suas rotas. Foi assim que ela se comportou uma vez, e isso foi retirado.
+                As conferências rodam contra os seus próprios registros, e a fila da manhã é o que esses registros de fato dizem, em ordem de prioridade, com os documentos anexados. Não é mais um painel para você ir procurar. Se você não conecta nada, a fila fica vazia: ela nunca abre com exemplos prontos disfarçados das suas rotas.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 No lado do porto, a conta é do tipo honesto. Os dias em que o contêiner ficou parado, multiplicados pela cobrança diária que consta na declaração, e nada mais. O imposto fica de fora dessa cifra de propósito, porque o imposto é devido de qualquer jeito, saia o contêiner hoje ou daqui a uma semana, e somá-lo inflaria a exposição pelo valor de uma conta que ninguém evitou. O que se mostra a você é a cobrança que era evitável, um número menor e mais útil do que o que a maioria das ferramentas imprime.
@@ -69,7 +69,7 @@ author: "Runink"
                 A contestação chega pronta: a declaração, a retenção e o motivo declarado dela, os documentos que faltam no processo, a divergência de quantidade se houver, e uma carta já redigida. Sobra para quem revisa uma pergunta só, que é a única que vale o tempo dela: este caso se sustenta?
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Aprovar é o que envia. E onde uma etapa atrás da aprovação ainda não tem implementação &mdash; a gravação de volta no seu sistema de registro é o exemplo real &mdash; a resposta nomeia essa etapa como não executada, em vez de dar a ação inteira por concluída. Assim ninguém descobre três semanas depois que o registro nunca saiu. Depois, por que uma contestação foi registrada se responde pelo registro, e não pela memória de alguém.
+                Aprovar é o que envia. A resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar, em vez de dar a ação inteira por concluída. Assim ninguém descobre três semanas depois que o registro nunca saiu. Depois, por que uma contestação foi registrada se responde pelo registro, e não pela memória de alguém.
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -88,9 +88,8 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Situação: hipotético &mdash; não medido</p>
         <p class="text-base text-stone-500 font-medium">
-            A contestação e a retenção no porto acima são desenhadas para mostrar a forma do trabalho. Não são o relato de um trabalho com cliente. Não publicamos taxas de recuperação, nem valores recuperados, nem nomes de clientes, porque não medimos nada disso nos seus registros nem nos de ninguém &mdash; e uma taxa de recuperação tirada das rotas de outro não diria nada sobre as suas.
+            A contestação e a retenção no porto acima são desenhadas para mostrar a forma do trabalho. Não são o relato de um trabalho com cliente. Esta página não traz taxas de recuperação, valores recuperados nem nomes de clientes: uma taxa de recuperação tirada das rotas de outro não diria nada sobre as suas.
         </p>
     </div>
 </div>
@@ -123,7 +122,7 @@ author: "Runink"
     },
     {
       "question": "E se os nossos arquivos não puderem sair do prédio?",
-      "answer": "Então não saem. O raciocínio roda nas máquinas que o seu plano indica, e o modelo com que ele raciocina roda lá também, não num serviço de IA externo. Os seus registros de embarque, as suas faturas e a sua correspondência são lidos nessas máquinas e em nenhum outro lugar.<br><br>É assim que o software é construído, não é uma chave que se liga, de modo que é uma propriedade que a sua própria revisão de segurança pode examinar. Peça para percorrermos essa fronteira com você, em vez de aceitar uma frase numa página web."
+      "answer": "Então não saem. O raciocínio roda nas máquinas que o seu plano indica, e o modelo com que ele raciocina roda lá também, não num serviço de IA externo. Os seus registros de embarque, as suas faturas e a sua correspondência são lidos nessas máquinas e em nenhum outro lugar.<br><br>É assim que o software é construído, não é uma chave que se liga, de modo que é uma propriedade que a sua própria revisão de segurança pode examinar. Peça para percorrermos essa fronteira com o seu responsável de segurança."
     }
   ]
 }

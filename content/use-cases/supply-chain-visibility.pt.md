@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Os seus registros são separados pelo que eles são, não por de onde vieram.</strong> Duas tabelas que falam de embarques pertencem as duas à logística, tanto se uma chegou do seu sistema de armazém quanto se a outra chegou como uma planilha que alguém manda por e-mail nas sextas.</li>
 <li><strong class="text-stone-200">O mapa é derivado, não chutado.</strong> Os domínios e as ligações entre eles são calculados a partir da estrutura dos seus próprios arquivos, por regras fixas &mdash; nenhum modelo, nenhuma busca na web, nada sai do prédio nessa etapa. Os mesmos arquivos sempre produzem o mesmo mapa.</li>
 <li><strong class="text-stone-200">Um domínio que não pôde ser avaliado é marcado como não avaliado.</strong> Não como aprovado. As palavras são explícitas: isto não é um achado de que a área está bem. E sem nenhum dado conectado, ele diz que ainda não há nada para mapear, em vez de desenhar um diagrama vazio.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Hipotético
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        Isto descreve o mecanismo e uma semana plausível em volta dele. Não é o relato de algo que aconteceu: não rodou contra os sistemas de um cliente, nada nesta página é medido, e nenhum número é oferecido sobre o que ele encontra ou quanto tempo leva.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="quatro-sistemas-uma-manha-que-voce-nao-tem" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Quatro Sistemas. Uma Manhã Que Você Não Tem.</h2>
@@ -74,13 +66,10 @@ author: "Runink"
                 E depois você pode perguntar coisas a ele, no vocabulário que você já usa, com o mapa e as regras reconhecidas por trás da resposta e limitado às áreas que você está olhando. Você recebe o raciocínio, não só a resposta. Um cenário que foi trabalhado no <a href="/pt/use-cases/hypothesis-lab">laboratório de hipóteses</a> pode ser passado de lá como ação proposta, com as variáveis dele e as regras contra as quais ele foi argumentado viajando junto, em vez de chegar como uma referência solta a uma rodada que outra pessoa fez.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Um limite sobre tudo isso, dito aqui em vez de deixado para você descobrir. O que o mapeamento lê são os arquivos que estão no diretório de dados da própria instância, e numa instância padrão esse diretório não é lido &mdash; então o que você recebe de volta é a recusa, não um mapa magro. As regras de classificação são reais e são determinísticas; o caminho que coloca as suas extrações reais na frente delas não está terminado. Preferimos que a página diga qual metade é qual do que descrever a coisa inteira no presente e deixar um piloto descobrir a costura.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
                 Onde uma parte do retrato vira um item a ponto de faltar, a resposta é o próximo trabalho da fila, em <a href="/pt/use-cases/fulfillment-optimization">cobertura de estoque e planejamento de fornecedores</a>, e o sinal por baixo dele é a <a href="/use-cases/demand-forecasting">previsão de demanda</a>. A visibilidade é o que torna esses dois discutíveis a partir do mesmo conjunto de fatos, em vez de a partir de três extrações.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                O que chega a uma pessoa é uma lista curta e ordenada de ações propostas com os registros anexados, não um diagrama para admirar. Uma pessoa com nome aprova, edita ou recusa cada uma, e esse aval é guardado. Aprovar é o que manda adiante, e um item decidido sai da fila em vez de voltar na próxima vez que alguém abre o quadro. Onde uma etapa por trás da aprovação ainda não tem implementação, a resposta nomeia essa etapa como não executada, em vez de dar a ação por concluída &mdash; então o quadro mostra o que foi decidido e, separadamente, o que de fato foi executado. Tudo roda onde o FACE roda, sem nenhum serviço de IA externo.
+                O que chega a uma pessoa é uma lista curta e ordenada de ações propostas com os registros anexados, não um diagrama para admirar. Uma pessoa com nome aprova, edita ou recusa cada uma, e esse aval é guardado. Aprovar é o que manda adiante, e um item decidido sai da fila em vez de voltar na próxima vez que alguém abre o quadro. A resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar, em vez de dar a ação por concluída &mdash; então o quadro mostra o que foi decidido e, separadamente, o que de fato foi executado. Tudo roda onde o FACE roda, sem nenhum serviço de IA externo.
             </p>
         </div>
         <div>
@@ -97,7 +86,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-voce-vai-saber-que-funcionou" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Como Você Vai Saber Que Funcionou</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Todo número abaixo é seu, não nosso. Não somos nós que trazemos números para isto; é você. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
+                Todo número abaixo é seu, não nosso. Anote onde você está hoje, porque a linha de base se perde para sempre no momento em que as coisas melhoram.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Quanto tempo leva uma pergunta comum que atravessa sistemas.</strong> Escolha uma de verdade, que te fizeram no mês passado. Cronometre com honestidade a pessoa que responde, incluindo as esperas. É esse o número de que trata todo o resto desta página.</li>
@@ -132,7 +121,7 @@ author: "Runink"
     },
     {
       "question": "O que chega a uma pessoa no fim?",
-      "answer": "Uma lista curta e ordenada de ações propostas com os registros anexados, e não um diagrama para admirar. Uma pessoa nomeada aprova, edita ou recusa cada uma e a assinatura fica guardada. Um item decidido sai da fila em vez de voltar na próxima vez que alguém abrir o quadro, e onde uma etapa por trás de uma aprovação ainda não tem implementação a resposta nomeia aquela etapa em vez de dar a ação por completa."
+      "answer": "Uma lista curta e ordenada de ações propostas com os registros anexados, e não um diagrama para admirar. Uma pessoa nomeada aprova, edita ou recusa cada uma e a assinatura fica guardada. Um item decidido sai da fila em vez de voltar na próxima vez que alguém abrir o quadro, e a resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar, em vez de dar a ação por completa."
     },
     {
       "question": "O que devemos levar para uma primeira conversa?",

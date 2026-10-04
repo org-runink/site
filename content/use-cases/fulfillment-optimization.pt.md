@@ -20,9 +20,8 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
 
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">O aviso diz qual limite foi cruzado, em palavras.</strong> O ponto de pedido, o mínimo e o máximo são os que você já usa: o FACE não os inventa e não os deduz de um prazo de entrega que ele nunca viu. O que ele devolve é o limite que foi cruzado e o nível que cruzou, por escrito, para que o aviso possa ser discutido em vez de apenas recebido.</li>
+<li><strong class="text-stone-200">O aviso diz qual limite foi cruzado, em palavras.</strong> O ponto de pedido, o mínimo e o máximo são os que você já usa. O que ele devolve é o limite que foi cruzado e o nível que cruzou, por escrito, para que o aviso possa ser discutido em vez de apenas recebido.</li>
 <li><strong class="text-stone-200">A previsão diz o quanto confiar nela.</strong> Toda projeção nomeia o modelo &mdash; escolhido separando o trecho mais recente do seu próprio histórico e reajustando cada candidato sobre o que veio antes dele &mdash; e quantos períodos ele teve para aprender. Quando o histórico de um item não prevê a si mesmo, isso também é um dos achados.</li>
-<li><strong class="text-stone-200">O aviso de estoque não vem com uma lista curta, e é melhor dizer isso do que sugerir o contrário.</strong> A única ordenação de fornecedores que existe no FACE ordena nomes pelas estrelas de avaliações públicas, tiradas de um arquivo de amostra semeado, e o que ela alimenta é um cartão de RFP de compras, não o aviso de estoque &mdash; e quando nenhum nome avaliado passa do corte, o campo que ela preenche é uma instrução literal para que você mesmo qualifique dois ou três. Numa instância comum, sem nada conectado, nada ordena alternativas para o item exposto: o que o aviso devolve é o limite, o nível que o cruzou e o motivo, e nenhuma lista de fornecedores. O FACE também não guarda tabela de frete, então não há diferença de preço para anexar, e uma inventada seria o número mais citável da página e o menos real.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -54,16 +53,13 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
                 O FACE lê o seu próprio histórico de vendas para tirar dele a época do ano e a tendência por baixo, e confere a projeção contra períodos que não foram mostrados a ele. É essa a metade que te diz que um item está virando mais cedo do que o plano pensa.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                O gatilho no estoque em si é de propósito sem graça, e vale dizer o que ele é em vez do que ele parece. O ponto de pedido, o piso e o teto vêm de você. O FACE compara o nível contra eles e devolve o limite que foi cruzado e o nível que cruzou, em palavras simples, e não uma cor num quadradinho. Ele não deduz o limite a partir do prazo de entrega de um fornecedor: não existe modelo de prazo aqui dentro, e um aviso marcado contra um número que o software chutou seria pior do que o alerta de nível que você já tem, porque pareceria mais esperto.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
-                O que chega é mais estreito do que uma decisão de compra, e a lacuna é a parte que vale nomear. O aviso devolve o limite que foi cruzado, o nível que o cruzou e o motivo, por escrito. Ele não devolve o fornecedor que costuma atender o item, e não devolve alternativas ordenadas &mdash; a única ordenação que existe no produto lê estrelas de avaliação de um arquivo de amostra semeado e as prende a um cartão de RFP de compras, não a isto. Numa instância com os seus próprios sistemas conectados não há aqui lista curta nenhuma até que esse caminho seja construído, e uma lista vazia é a resposta honesta em vez de um exemplo pronto com o seu nome em cima. Também não há comparação de preço a fazer: o FACE não tem tabela de frete, nem tabela de tarifas, nem consulta de tarifa histórica, então a diferença de custo entre dois fornecedores não é coisa que ele possa te dizer &mdash; e uma inventada seria o primeiro número citado de volta para você na reunião.
+                O gatilho no estoque em si é de propósito simples. O ponto de pedido, o piso e o teto vêm de você. O FACE compara o nível contra eles e devolve o limite que foi cruzado e o nível que cruzou, em palavras simples, e não uma cor num quadradinho.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 A previsão que está por baixo disso é <a href="/use-cases/demand-forecasting/" class="underline decoration-stone-700 hover:text-stone-300">um cenário do FACE por conta própria</a> &mdash; como uma série é lida, qual modelo é escolhido e o que ele diz quando um item simplesmente não é previsível. Esta página é sobre a decisão de compra que sai disso.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Uma pessoa com nome aprova, edita ou recusa, e esse aval fica no registro. Aprovar é o que manda adiante. E onde uma etapa da ação redigida ainda não tem nada atrás dela &mdash; a gravação no seu ERP é o exemplo honesto &mdash; a resposta nomeia essa etapa como não executada, em vez de dar a coisa inteira por concluída. Você é informado de qual parte da ação aconteceu, e é isso que separa um sistema em que se confia de um sistema que é preciso ir conferir. As margens de segurança passam então a ser discutidas pelos seus próprios números, e não por hierarquia.
+                Uma pessoa com nome aprova, edita ou recusa, e esse aval fica no registro. Aprovar é o que manda adiante. A resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar, em vez de dar a coisa inteira por concluída. Você é informado de qual parte da ação aconteceu, e é isso que separa um sistema em que se confia de um sistema que é preciso ir conferir. As margens de segurança passam então a ser discutidas pelos seus próprios números, e não por hierarquia.
             </p>
         </div>
         <div>
@@ -103,7 +99,7 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
     },
     {
       "question": "O que exatamente o gatilho devolve?",
-      "answer": "O limite que foi cruzado, o nível que o cruzou e o motivo, escritos por extenso em vez de mostrados como uma cor num quadrinho. É isso, e está escrito assim para que o aviso possa ser discutido em vez de apenas recebido."
+      "answer": "O limite que foi cruzado, o nível que o cruzou e o motivo, escritos por extenso em vez de mostrados como uma cor num quadrinho. Está escrito assim para que o aviso possa ser discutido em vez de apenas recebido."
     },
     {
       "question": "Quanto dá para confiar na previsão que está por baixo?",
@@ -111,7 +107,7 @@ este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o la
     },
     {
       "question": "Quem assina o pedido que ele redige?",
-      "answer": "Uma pessoa nomeada aprova, edita ou recusa, e essa assinatura fica no registro. Aprovar é o que envia adiante. Onde uma etapa da ação redigida ainda não tem nada por trás &mdash; uma escrita no seu ERP é o exemplo honesto &mdash; a resposta nomeia aquela etapa como não executada em vez de dar o conjunto por feito, então você fica sabendo qual parte da ação aconteceu."
+      "answer": "Uma pessoa nomeada aprova, edita ou recusa, e essa assinatura fica no registro. Aprovar é o que envia adiante. A resposta nomeia cada etapa que rodou e qualquer uma que não pôde rodar, em vez de dar o conjunto por feito, então você fica sabendo qual parte da ação aconteceu."
     },
     {
       "question": "Onde está a previsão em si?",

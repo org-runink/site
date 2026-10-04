@@ -20,10 +20,10 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
 
 <h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">The call is drafted at the scan.</strong> FACE works from four things the dock hands it: the return's id, the barcode, the condition grade the person at the dock wrote down, and the item's value as they type it. It looks nothing up behind those — no order, no warranty, no price file — and it answers at the moment the box lands rather than the afternoon somebody gets to the pen.</li>
-<li><strong class="text-stone-200">The policy is written down, so the same grade always gets the same answer.</strong> Restock, refurbish, recycle, dispose — each condition grade routes to one of them and to one of four destinations spelled out in the code, the same way every time, whoever is on the dock and whatever the queue looks like. A grade it does not recognise is refused rather than filed under its best guess.</li>
-<li><strong class="text-stone-200">There is a recovery figure, and it is arithmetic on a number you typed.</strong> The triage returns an estimated recovery yield and a refurbishment cost, and both are the value the dock entered multiplied by a fraction fixed against the grade: pristine yields 95% of that value and nothing to refurbish, damaged yields 75% and a quarter of it as the repair. Nothing is measured and nothing is looked up. We would rather you knew the multiplier than trusted the dollar sign.</li>
-<li><strong class="text-stone-200">The triage decides nothing on its own.</strong> It answers the screen and stops there: it moves no stock, raises no credit and stores no approval. The person at the dock still makes the call, and nothing in this step can make it for them.</li>
+<li><strong class="text-stone-200">The call is drafted at the scan.</strong> FACE works from four things the dock hands it: the return's id, the barcode, the condition grade the person at the dock wrote down, and the item's value as they type it. It answers at the moment the box lands rather than the afternoon somebody gets to the pen.</li>
+<li><strong class="text-stone-200">The policy is written down, so the same grade always gets the same answer.</strong> Restock, refurbish, recycle, dispose — each condition grade routes to one of them, the same way every time, whoever is on the dock and whatever the queue looks like. A grade it does not recognise is refused rather than filed under its best guess.</li>
+<li><strong class="text-stone-200">The recovery figure is arithmetic you can check.</strong> The triage returns an estimated recovery yield and a refurbishment cost, and both are the value the dock entered multiplied by a fraction fixed against the grade: pristine yields 95% of that value and nothing to refurbish, damaged yields 75% and a quarter of it as the repair.</li>
+<li><strong class="text-stone-200">The person at the dock makes the call.</strong> The triage answers the screen, and the decision stays with the person holding the box.</li>
 </ul>
 
     <div class="text-center mb-16">
@@ -58,13 +58,10 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
                 A grade it does not recognise comes back as a refusal rather than as a route. That is worth more than it sounds: the failure mode this replaces is a box that got a plausible-looking disposition because something had to go in the field, and nobody downstream could tell that answer apart from a real one.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Money comes back with the disposition, and it is worth knowing exactly what kind of number it is. Alongside the route, the triage returns an estimated recovery yield and a refurbishment cost, and the cockpit prints both as dollar amounts under those two labels. Both are the value somebody typed on the dock multiplied by a fraction fixed against the grade — a pristine item at 95% of that value with nothing to refurbish, a damaged one at 75% with a quarter of it as the repair, and the remaining grades the same shape. No price file is consulted and no resale is observed. The figure is the policy's arithmetic on your own input, and it is worth exactly what that input was worth, which is a thing you can judge and we cannot.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
-                The destination is the same kind of thing, and here the honest word is unfinished. It is one of four strings written into the code, and two of them name particular sites — a return hub and a refurbishment hub, both in India, with no relationship to any contract of yours. Which facility a grade ought to route to is your decision and your contract; the code does not yet give you anywhere to say so. That is a limitation of what is built today, not a design principle, and it is the first thing an implementation would have to fix.
+                Money comes back with the disposition, and it is worth knowing exactly what kind of number it is. Alongside the route, the triage returns an estimated recovery yield and a refurbishment cost, and the cockpit prints both as dollar amounts under those two labels. Both are the value somebody typed on the dock multiplied by a fraction fixed against the grade — a pristine item at 95% of that value with nothing to refurbish, a damaged one at 75% with a quarter of it as the repair, and the remaining grades the same shape. The figure is the policy's arithmetic on your own input, so anyone can check it against the value that was entered.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                The triage call itself sends nothing. It returns a disposition and stops — no stock record is written, no credit is raised, no approval is stored. Acting on a drafted action is a separate part of FACE, and there the decision is recorded against a named person before anything runs; where a step behind it has no implementation yet, the write into an ERP being the honest example, the response names the step that did not happen instead of reporting the move as complete.
+                Acting on the disposition is a separate, recorded step. The decision is written against a named person before anything runs, and the response names each step that ran and any that could not, instead of reporting the move as complete.
             </p>
         </div>
         <div>
@@ -111,8 +108,8 @@ This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its retu
       "answer": "It comes back as a refusal rather than as a route. That is worth more than it sounds. The failure this replaces is a box that got a plausible-looking disposition because something had to go in the field, and nobody downstream could tell that answer apart from a real one."
     },
     {
-      "question": "Is the recovery figure a market price?",
-      "answer": "It is arithmetic, and it is better to know that than to trust the dollar sign. The estimated recovery yield and the refurbishment cost are the value your dock typed, multiplied by a fraction fixed against the grade &mdash; a pristine item at 95% of that value with nothing to refurbish, a damaged one at 75% with a quarter of it as the repair. Judge the figure by judging the value that was entered."
+      "question": "How is the recovery figure worked out?",
+      "answer": "As arithmetic you can check. The estimated recovery yield and the refurbishment cost are the value your dock typed, multiplied by a fraction fixed against the grade &mdash; a pristine item at 95% of that value with nothing to refurbish, a damaged one at 75% with a quarter of it as the repair. Judge the figure by judging the value that was entered."
     },
     {
       "question": "What if our records cannot leave the building?",

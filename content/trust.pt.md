@@ -50,7 +50,7 @@ next:
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Os agentes da Runink leem registros e redigem rascunhos: um processo de sinistro, uma correção de código, uma publicação, uma resposta. O rascunho fica aguardando. Uma pessoa com nome aprova, edita ou rejeita, e o registro guarda quem foi e quando.</p>
       <p>No Runink TIDE, essas decisões vão para uma cadeia de auditoria. Cada entrada é ligada à anterior, então uma entrada alterada, removida ou fora de ordem fica visível. Qualquer pessoa conectada ao console do TIDE pode clicar em <em>Verify now</em> para que a cadeia inteira seja conferida. A leitura das entradas em si fica restrita aos administradores que você indicar.</p>
-      <p>Duas coisas agem sozinhas, e preferimos que você leia isso aqui a descobrir depois:</p>
+      <p>Duas coisas agem sozinhas, cada uma dentro de um limite fixo:</p>
       <ul class="list-disc pl-6 space-y-3">
         <li><strong class="text-ink">O FACE cuida do próprio funcionamento.</strong> Quando uma parte do FACE para de responder, ele pode reiniciá-la, isolar uma dependência que falha repetidamente, desfazer a alteração mais recente ou adicionar capacidade. Ele só escolhe dessa lista fixa. Nunca apaga dados, nunca desliga uma máquina e nunca desativa um controle de segurança. Na dúvida, avisa uma pessoa em vez de agir. Um operador pode desligar a parte automática.</li>
         <li><strong class="text-ink">O classificador de issues do TIDE coloca etiquetas nas issues novas.</strong> Ele só escolhe entre as etiquetas que o repositório permite, e só quando uma verificação independente concorda. Uma pessoa pode mudá-las a qualquer momento, e decide quem cuida da issue.</li>
@@ -156,7 +156,7 @@ next:
     <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Um número que falta aparece como faltando.</h2>
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Quando nosso software não consegue ler um número, ele diz isso, com o motivo. Ele não desenha um zero e não chuta. Uma verificação que não pôde rodar aparece como "não verificado", nunca como aprovada. Um campo que ele não conhece fica vazio, não é preenchido.</p>
-      <p>Seguimos a mesma regra. Esta página não traz estatísticas, e as fichas de modelo também não: nenhuma mostra uma nota de avaliação, porque nenhuma foi publicada.</p>
+      <p>Seguimos a mesma regra: esta página não traz estatísticas.</p>
     </div>
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>

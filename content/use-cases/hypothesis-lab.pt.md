@@ -19,7 +19,7 @@ author: "Runink"
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">A mudança tem que estar escrita antes de poder ser discutida.</strong> Uma hipótese é enunciada de forma explícita, junto com as regras que ela toca — os pontos de pedido, os prazos de entrega, os compromissos de serviço com os quais o seu negócio já funciona. Quase todo o valor está nesse passo, e é o passo que normalmente se pula.</li>
 <li><strong class="text-stone-200">O que volta é raciocínio, ordenado por importância, com a regra que ele invocou.</strong> Cada consequência fica amarrada à regra específica de que ela decorre, então você pode discordar dela pelo mérito. É um argumento que você pode conferir, não um número para aceitar.</li>
-<li><strong class="text-stone-200">Nada é executado, e nada está conectado.</strong> O motor não tem nenhum caminho de escrita para os seus sistemas e não os toca. Ele raciocina sobre as regras que você deu a ele, onde o FACE roda — o cenário não vai para nenhum serviço de IA externo.</li>
+<li><strong class="text-stone-200">Os seus sistemas de produção ficam intactos.</strong> O motor raciocina sobre as regras que você deu a ele, onde o FACE roda, e o cenário não vai para nenhum serviço de IA externo.</li>
 <li><strong class="text-stone-200">Você pode deixar difícil de propósito.</strong> Atrase uma rota em uma semana. Tire um fornecedor. Deixe uma carga esquentar. Os planos que só funcionam quando tudo dá certo mostram isso aqui, e não no fechamento do trimestre.</li>
 </ul>
 
@@ -60,10 +60,10 @@ author: "Runink"
         <div>
             <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Vale ser claro sobre o que isto é, porque a categoria está cheia de ferramentas que são vagas quanto a isso. O motor não roda uma simulação sobre os seus dados de produção e não calcula um resultado. Você enuncia a mudança como uma hipótese e entrega a ele as regras que governam aquilo que você está mudando &mdash; pontos de pedido, prazos de entrega, compromissos de serviço, a premissa de reserva. Ele raciocina sobre essas regras e devolve uma leitura ordenada do que decorre daí, com cada consequência amarrada à regra de que ela saiu.
+                Você enuncia a mudança como uma hipótese e entrega a ele as regras que governam aquilo que você está mudando &mdash; pontos de pedido, prazos de entrega, compromissos de serviço, a premissa de reserva. Ele raciocina sobre essas regras e devolve uma leitura ordenada do que decorre daí, com cada consequência amarrada à regra de que ela saiu.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Então o que volta é um argumento, não uma resposta. É isso que é útil, e vale dizer sem rodeios: uma projeção apresentada como decisão é pior do que nenhuma projeção, porque tira o julgamento de alguém que responde por ele e passa para um software que não responde. O que isto dá à sala é o caso aberto &mdash; com quais regras a mudança colide, em que ordem elas mordem, e o que alguém precisaria acreditar para o plano se sustentar. A decisão fica onde estava.
+                Então o que volta é um argumento, não uma resposta. É isso que é útil: uma projeção apresentada como decisão é pior do que nenhuma projeção, porque tira o julgamento de alguém que responde por ele e passa para um software que não responde. O que isto dá à sala é o caso aberto &mdash; com quais regras a mudança colide, em que ordem elas mordem, e o que alguém precisaria acreditar para o plano se sustentar. A decisão fica onde estava.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Duas consequências disso valem a pena. Enunciar a hipótese força as premissas a ficarem escritas, que é o passo que as equipes pulam e a razão pela qual duas pessoas podem discutir uma hora e descobrir que estavam falando de planos diferentes. E como o raciocínio acontece onde o FACE roda, o cenário que você está considerando &mdash; qual fornecedor você poderia tirar, qual rota você poderia cortar &mdash; não vai para nenhum serviço de IA externo.
@@ -91,9 +91,8 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.25em] text-stone-400 mb-2">Situação: hipotético &mdash; não medido</p>
         <p class="text-base text-stone-500 font-medium">
-            O fechamento de porto acima é desenhado para mostrar a forma do trabalho. Não é o relato de um trabalho com cliente, e nada nesta página é resultado medido. A Runink não publica números de retorno sobre investimento, nem percentuais, nem nomes de clientes &mdash; não porque seriam pouco lisonjeiros, mas porque não os medimos, e dizer isso sai mais barato do que ser pego.
+            O fechamento de porto acima é desenhado para mostrar a forma do trabalho. Não é o relato de um trabalho com cliente, e nada nesta página é resultado medido. Esta página não traz números de retorno sobre investimento, percentuais nem nomes de clientes: os números que importam estão nos seus próprios registros.
         </p>
     </div>
 </div>
@@ -118,7 +117,7 @@ author: "Runink"
     },
     {
       "question": "O que ele faz quando as regras que demos não resolvem a pergunta?",
-      "answer": "Ele nomeia no que alguém teria de acreditar para o plano se sustentar, e devolve isso como o achado. Essa é a saída honesta quando as regras acabam: a crença em que o plano se apoia, dita numa frase, para a sala discutir a crença e não uma planilha.<br><br>Ele reapresenta as suas premissas e as segue até o fim. Ele não descobre uma premissa que você nunca deu, e uma consequência que ele devolve vale o que valer a regra de onde foi tirada &mdash; por isso cada consequência nomeia a sua regra."
+      "answer": "Ele nomeia no que alguém teria de acreditar para o plano se sustentar, e devolve isso como o achado. Essa é a saída honesta quando as regras acabam: a crença em que o plano se apoia, dita numa frase, para a sala discutir a crença e não uma planilha.<br><br>Ele reapresenta as suas premissas e as segue até o fim, e cada consequência nomeia a regra de onde foi tirada."
     },
     {
       "question": "Quem escolhe, e o que o registro mostra depois?",

@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">La estación y la tendencia se separan.</strong> Su propio histórico se descompone en la tendencia de fondo, la forma estacional que se repite y lo que queda. Lo que queda es donde un giro aparece primero.</li>
 <li><strong class="text-stone-200">La previsión dice qué método la produjo, y por qué ese.</strong> Se prueban modelos que compiten entre sí contra periodos que su histórico ya contiene, y el que predijo mejor esos periodos es el que se usa. La respuesta lleva el nombre del método que ganó.</li>
 <li><strong class="text-stone-200">Una serie que no puede ajustar se rechaza, no se ajusta de todas formas.</strong> Si hay demasiados pocos periodos, o si ningún modelo se sostiene, la respuesta lo dice. No vuelve como una línea de aspecto seguro sin nada debajo.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Hipotético
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        Esta página describe un mecanismo y la forma de una semana de trabajo, no un suceso que ocurrió. Es una ilustración, y ninguna parte de ella se ha ejecutado contra los datos de un cliente. Nada de lo que hay aquí está medido, y no hay cifras de lo que devuelve.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="la-senal-giro-antes-que-el-plan" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">La Señal Giró Antes Que El Plan.</h2>
@@ -71,7 +63,7 @@ author: "Runink"
                 Esto es la señal, no la respuesta. Qué pedir, cuánta cobertura mantener y qué proveedor puede todavía llegar a la fecha es el trabajo siguiente, y está descrito en <a href="/es/use-cases/fulfillment-optimization/">cobertura de stock y planificación con proveedores</a>. La previsión dice que la referencia ha girado y con cuánta confianza; el abastecimiento decide qué hacer al respecto. Mantenerlos separados es deliberado, porque las dos cosas las discute gente distinta.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Lo que llega a una persona es un solo elemento: esta referencia, el giro, el método que hay detrás, los periodos sobre los que se probó y un cambio redactado para el plan. Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa decisión queda anotada. Aprobar es lo que lo envía — y donde un paso que hay detrás no tiene nada implementado todavía, siendo una escritura en su sistema de planificación el ejemplo honrado, la respuesta nombra ese paso como no ejecutado en vez de informar del cambio como hecho. La decisión y la ejecución se anotan como dos hechos distintos, porque lo son. Corre en las máquinas que indica su plan, y el histórico no va a ningún servicio de IA externo.
+                Lo que llega a una persona es un solo elemento: esta referencia, el giro, el método que hay detrás, los periodos sobre los que se probó y un cambio redactado para el plan. Una persona con nombre lo aprueba, lo edita o lo rechaza, y esa decisión queda anotada. Aprobar es lo que lo envía, y la respuesta nombra cada paso que se ejecutó y cualquiera que no pudo ejecutarse, en vez de informar del cambio como hecho. La decisión y la ejecución se anotan como dos hechos distintos, porque lo son. Corre en las máquinas que indica su plan, y el histórico no va a ningún servicio de IA externo.
             </p>
         </div>
         <div>
@@ -88,7 +80,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="como-sabra-que-ha-funcionado" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Cómo Sabrá Que Ha Funcionado</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Todas las cifras de abajo son suyas, no nuestras. No le ofrecemos las nuestras, porque no tenemos las suyas. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
+                Todas las cifras de abajo son suyas, no nuestras. Anote dónde está hoy, porque el punto de partida se pierde para siempre en cuanto las cosas mejoran.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Error de previsión, por referencia, contra lo que se vendió de verdad.</strong> Sacado de su sistema de planificación. Tome un año completo, porque las referencias estacionales y las estables fallan de maneras distintas. La idea no es que el error baje. La idea es que se diga por referencia en vez de promediarse en un único número reconfortante.</li>
@@ -119,7 +111,7 @@ author: "Runink"
     },
     {
       "question": "¿Quién cambia el plan?",
-      "answer": "Una persona concreta. El hallazgo llega como un cambio redactado para que alguien lo apruebe, lo edite o lo rechace, y esa decisión queda en el registro. Aprobar es lo que lo envía, y donde un paso posterior todavía no tiene nada implementado &mdash; una escritura en su sistema de planificación es el ejemplo honesto &mdash; la respuesta nombra ese paso como no ejecutado. La decisión y la ejecución se registran como dos hechos distintos, porque lo son."
+      "answer": "Una persona concreta. El hallazgo llega como un cambio redactado para que alguien lo apruebe, lo edite o lo rechace, y esa decisión queda en el registro. Aprobar es lo que lo envía, y la respuesta nombra cada paso que se ejecutó y cualquiera que no pudo ejecutarse. La decisión y la ejecución se registran como dos hechos distintos, porque lo son."
     },
     {
       "question": "¿Por qué se informa del residuo en vez de descartarlo?",

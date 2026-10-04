@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">A route comes back as a distance, a duration and a line on the map.</strong> An origin, a destination and the constraints you named go out to the routing provider; what comes back is a measured road distance and a travel time, not an opinion.</li>
 <li><strong class="text-stone-200">No money is attached to it, on purpose.</strong> The routing provider returns distance and time and no cost. So no saving is printed next to the route, because a figure nobody measured sitting beside two that were is how an estimate gets quoted as a fact.</li>
 <li><strong class="text-stone-200">When it could not be worked out, it says so.</strong> No routing credential on the connection, or a provider that returns nothing, comes back as unavailable. It comes back saying so, rather than with the fields left empty, which on a screen is indistinguishable from a good answer.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Drawn
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        This page marks where the line falls. The routing call, the answer it returns and the refusal to guess a cost are in the product. The working day around them is an illustration of the mechanism, not an account of an event: it has not been run against a customer's fleet, and there are no figures here for distance, time or money saved.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="optimal-at-six-not-at-ten" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Optimal At Six. Not At Ten.</h2>
@@ -71,10 +63,10 @@ author: "Runink"
                 The credential belongs to the connection, not to the machine. Routing is reached with the key attached to the connection that was configured for it, so the grounding is something you set up, can see and can revoke per connection. It is not an environment variable baked into a server that nobody can audit.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                A change is proposed, never imposed. A named person on the desk approves it, edits it or rejects it, and rejecting is recorded as a decision rather than as silence. Telling the driver is a separate job and a separate page — a driver can ask and be answered out loud with their hands on the wheel, in <a href="/use-cases/voice-dispatch">talking to drivers without a screen</a>, though the call leaves a transcript rather than an acceptance, and the desk still owns the change. And if the question is bigger than one leg &mdash; a supplier dropped, a lane given up for a season &mdash; the case for it can be laid out against the rules it collides with first, in <a href="/use-cases/hypothesis-lab">testing a plan before you commit to it</a>.
+                A change is proposed, never imposed. A named person on the desk approves it, edits it or rejects it, and rejecting is recorded as a decision rather than as silence. Telling the driver is a separate job and a separate page — a driver can ask and be answered out loud with their hands on the wheel, in <a href="/use-cases/voice-dispatch">talking to drivers without a screen</a>, and the call leaves a transcript on the record while the desk owns the change. And if the question is bigger than one leg &mdash; a supplier dropped, a lane given up for a season &mdash; the case for it can be laid out against the rules it collides with first, in <a href="/use-cases/hypothesis-lab">testing a plan before you commit to it</a>.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Approving is what sends it, and the reason stays on the record for whoever asks in three months why a truck went that way. One more honesty about that, of the kind this page is built on: where a step behind the approval has nothing implemented behind it — the write into your transport system is the real example — the answer names that step as not executed rather than returning a success that covers the whole action. Approved and done are two different words here, and the software is the one that tells you which it managed.
+                Approving is what sends it, and the reason stays on the record for whoever asks in three months why a truck went that way. The answer names each step that ran and any that could not, rather than returning a success that covers the whole action. Approved and done are two different words here, and the software is the one that tells you which it managed.
             </p>
         </div>
         <div>
@@ -91,7 +83,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Every figure below is yours, not ours. We have none of our own to offer you. Write down where you stand today, because the baseline is gone for good the moment things improve.
+                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">How often a route is re-run after dispatch.</strong> Most honest answer is never. Take a month and count the days the plan was recalculated rather than patched. This is the number the whole thing turns on.</li>
@@ -130,7 +122,7 @@ author: "Runink"
     },
     {
       "question": "How does the driver find out?",
-      "answer": "That is a separate job and a separate page. A driver can ask and be answered out loud with their hands on the wheel, described in [talking to drivers without a screen](/use-cases/voice-dispatch/). The call leaves a transcript rather than an acceptance, and the desk still owns the change."
+      "answer": "That is a separate job and a separate page. A driver can ask and be answered out loud with their hands on the wheel, described in [talking to drivers without a screen](/use-cases/voice-dispatch/). The call leaves a transcript on the record, and the desk owns the change."
     }
   ]
 }

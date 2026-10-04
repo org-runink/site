@@ -19,7 +19,7 @@ deck: |
   de supervisão do Atlas, que rodam dentro do TIDE.
 
   Os documentos estão escritos em inglês. As páginas deste site estão em
-  português; os documentos longos ainda não estão.
+  português.
 
   Não trazem estudos de caso, nomes de clientes nem números de retorno sobre o
   investimento. O que explicam é o mecanismo: o que o software examina, o que

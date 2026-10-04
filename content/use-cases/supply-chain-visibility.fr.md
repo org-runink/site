@@ -12,20 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Vos enregistrements sont triés selon ce qu'ils sont, pas selon leur provenance.</strong> Deux tables qui parlent d'expéditions relèvent toutes les deux de la logistique, que l'une soit arrivée de votre système d'entrepôt et l'autre sous forme de tableur que quelqu'un envoie par courriel le vendredi.</li>
 <li><strong class="text-stone-200">La carte est dérivée, pas devinée.</strong> Les domaines et les liens entre eux sont établis à partir de la structure de vos propres fichiers, par des règles fixes &mdash; aucun modèle, aucune recherche web, rien ne sort de la maison à cette étape. Les mêmes fichiers produisent toujours la même carte.</li>
 <li><strong class="text-stone-200">Un domaine qui n'a pas pu être évalué est marqué comme non évalué.</strong> Pas comme conforme. Les mots sont explicites : ce n'est pas un constat que le domaine va bien. Et sans aucune donnée connectée, il dit qu'il n'y a encore rien à cartographier plutôt que de dessiner un diagramme vide.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-        <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Hypothétique
-    </span>
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        Ceci décrit le mécanisme et une semaine plausible autour de lui. Ce n'est pas le compte rendu d'un événement : cela n'a pas tourné sur les systèmes d'un client, rien sur cette page n'est mesuré, et aucun chiffre n'est avancé sur ce qu'il trouve ni sur le temps qu'il y met.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="quatre-systemes-une-matinee-que-vous-navez-pas" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Quatre Systèmes. Une Matinée Que Vous N'avez Pas.</h2>
@@ -74,13 +66,10 @@ author: "Runink"
                 Et ensuite vous pouvez lui poser des questions, dans le vocabulaire que vous employez déjà, avec la carte et les règles reconnues derrière la réponse, et restreint aux domaines que vous regardez. Vous obtenez le raisonnement, pas seulement la réponse. Un scénario travaillé dans <a href="/fr/use-cases/hypothesis-lab">le laboratoire d'hypothèses</a> peut être transmis de là comme action proposée, avec ses variables et les règles face auxquelles il a été argumenté qui voyagent avec lui, plutôt que d'arriver comme une référence nue à une exécution faite par quelqu'un d'autre.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Une limite à tout cela, énoncée ici plutôt que laissée à votre découverte. Ce que la cartographie lit, ce sont les fichiers posés dans le répertoire de données de l'instance elle-même, et sur une instance standard ce répertoire n'est pas lu &mdash; de sorte que ce que vous obtenez en retour est le refus, pas une carte maigre. Les règles de classement sont réelles et elles sont déterministes ; le chemin qui amène vos exports réels devant elles n'est pas terminé. Nous préférons que la page dise quelle moitié est laquelle plutôt que de décrire l'ensemble au présent et de laisser un pilote découvrir la couture.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
                 Là où un coin du tableau devient une référence en passe de manquer, la réponse est le travail suivant, dans <a href="/fr/use-cases/fulfillment-optimization">couverture de stock et plan d'approvisionnement</a>, et le signal en dessous est <a href="/use-cases/demand-forecasting">la prévision de la demande</a>. La visibilité est ce qui rend ces deux-là discutables à partir du même jeu de faits plutôt qu'à partir de trois exports.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Ce qui arrive à une personne est une courte liste classée d'actions proposées avec les enregistrements joints, pas un diagramme à admirer. Une personne nommée valide, corrige ou rejette chacune, et cet accord est conservé. C'est la validation qui l'envoie, et un élément tranché quitte la file au lieu de revenir au tour suivant quand quelqu'un ouvre le tableau. Là où une étape derrière la validation n'a pas encore d'implémentation, la réponse nomme cette étape comme non exécutée au lieu de déclarer l'action terminée &mdash; le tableau montre donc ce qui a été décidé et, séparément, ce qui a réellement été fait. Tout tourne là où tourne FACE, sans aucun service d'IA extérieur.
+                Ce qui arrive à une personne est une courte liste classée d'actions proposées avec les enregistrements joints, pas un diagramme à admirer. Une personne nommée valide, corrige ou rejette chacune, et cet accord est conservé. C'est la validation qui l'envoie, et un élément tranché quitte la file au lieu de revenir au tour suivant quand quelqu'un ouvre le tableau. La réponse nomme chaque étape exécutée et toute étape qui n'a pas pu l'être, au lieu de déclarer l'action terminée &mdash; le tableau montre donc ce qui a été décidé et, séparément, ce qui a réellement été fait. Tout tourne là où tourne FACE, sans aucun service d'IA extérieur.
             </p>
         </div>
         <div>
@@ -97,7 +86,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="comment-vous-saurez-que-cela-a-marche" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">Comment Vous Saurez Que Cela A Marché</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Nous n'apportons pas de chiffres ici ; c'est vous qui les apportez. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
+                Chaque chiffre ci-dessous est le vôtre, pas le nôtre. Notez où vous en êtes aujourd'hui, car ce point de départ est perdu pour de bon dès que les choses s'améliorent.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Combien de temps prend une question ordinaire qui traverse les systèmes.</strong> Prenez-en une vraie, qu'on vous a posée le mois dernier. Chronométrez honnêtement la personne qui y répond, attentes comprises. C'est le chiffre dont parle tout le reste de cette page.</li>
@@ -132,7 +121,7 @@ author: "Runink"
     },
     {
       "question": "Qu'est-ce qui arrive à une personne au bout du compte ?",
-      "answer": "Une courte liste classée d'actions proposées avec les enregistrements joints, pas un schéma à admirer. Une personne désignée approuve, modifie ou refuse chacune, et la validation est conservée. Un élément tranché quitte la file au lieu de revenir la prochaine fois que quelqu'un ouvre le tableau, et là où une étape derrière une approbation n'a pas encore d'implémentation, la réponse nomme cette étape au lieu de donner l'action pour terminée."
+      "answer": "Une courte liste classée d'actions proposées avec les enregistrements joints, pas un schéma à admirer. Une personne désignée approuve, modifie ou refuse chacune, et la validation est conservée. Un élément tranché quitte la file au lieu de revenir la prochaine fois que quelqu'un ouvre le tableau, et la réponse nomme chaque étape exécutée et toute étape qui n'a pas pu l'être, au lieu de donner l'action pour terminée."
     },
     {
       "question": "Qu'apporter à une première conversation ?",

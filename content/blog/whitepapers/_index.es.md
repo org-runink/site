@@ -23,7 +23,7 @@ deck: |
   produce, quién lo aprueba y dónde se ejecuta todo.
 
   Los documentos están escritos en inglés. Las páginas de este sitio
-  están en español; los documentos largos todavía no lo están.
+  están en español.
 
   Donde un documento describe algo que hemos construido, lo dice con claridad.
   Donde describe un acuerdo con el producto de otra empresa, dice qué parte de

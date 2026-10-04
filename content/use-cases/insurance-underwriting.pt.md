@@ -17,7 +17,7 @@ author: "Runink"
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">O processo é reunido. Ele não é julgado.</strong> As condições, os documentos do sinistro, as movimentações de reserva e o limite de alçada que vale naquele valor chegam num lugar só, ligados ao sinistro a que pertencem.</li>
-<li><strong class="text-stone-200">Cada leitura diz de onde veio.</strong> O texto extraído de um documento volta com o arquivo de onde foi lido e com o método usado para ler, então um número do rascunho pode ser rastreado até uma página, em vez de ser aceito por confiança. O que não volta junto é uma pontuação de confiança por número &mdash; existe um número de confiança na resposta e ele é fixo, o que significa que não diz nada a você, e preferimos dizer isso a deixar que você o leia como sinal de qualidade.</li>
+<li><strong class="text-stone-200">Cada leitura diz de onde veio.</strong> O texto extraído de um documento volta com o arquivo de onde foi lido e com o método usado para ler, então um número do rascunho pode ser rastreado até uma página, em vez de ser aceito por confiança.</li>
 <li><strong class="text-stone-200">A decisão não é do software.</strong> Ele redige o próximo passo. Quem subscreve ou quem responde por sinistros aprova, reescreve ou descarta, e o nome dessa pessoa fica no registro ao lado do que ela decidiu.</li>
 </ul>
 
@@ -64,16 +64,13 @@ author: "Runink"
                 Os documentos são lidos onde já estão: um PDF numa pasta SFTP, um arquivo do Word num drive compartilhado, a planilha cujas fórmulas implementam em silêncio uma regra de tarifação que ninguém escreveu em lugar nenhum &mdash; e as fórmulas são lidas, célula por célula, não só os valores que elas por acaso mostram. O que volta carrega o arquivo de onde foi lido e o método que leu, então um número num rascunho leva de volta a uma página.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                O que ele não carrega é uma confiança utilizável sobre a leitura, e isso é do tipo de coisa que preferimos que você ouça aqui em vez de descobrir. A extração devolve uma pontuação só para o lote, e essa pontuação é uma constante: é a mesma se todas as páginas saíram limpas ou se todas as páginas falharam. Então não é um sinal de qualidade, não deve ser mostrada como tal a quem analisa o sinistro, e uma digitalização embaçada continua sendo um documento que alguém precisa abrir. Trate a extração como tendo achado a página para você, não como tendo verificado o que está nela.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
                 Depois a regra escrita é confrontada com o processo, e todo achado tem a mesma forma: isto é o que o documento diz, isto é o que o processo mostra, aqui é onde os dois se separam. As condições cobrem este caso? Os documentos que o procedimento exige estavam de fato no processo? Quem analisou ficou dentro da alçada que vale naquele valor? A comparação vale só o que valer a regra que você deu para comparar &mdash; ele está lendo as suas cláusulas, não uma biblioteca de direito de seguros &mdash; e onde encontra uma divergência cita a cláusula e o registro juntos, então a primeira pergunta na revisão é sobre o caso, e não sobre de onde saíram os números.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                O que ele não faz é subscrever. Não tarifa um risco. Não aceita nem recusa. Não constitui reserva, e não liquida nada. Ele reúne o processo, redige um único próximo passo proposto e mostra o que leu para chegar ali. Quem subscreve ou quem responde por sinistros é que decide. Se o que você procura é software que decida no lugar dessa pessoa, não é este &mdash; e você deveria fazer perguntas duras a qualquer coisa que diga que é.
+                A subscrição fica com a sua equipe. O FACE reúne o processo, redige um único próximo passo proposto e mostra o que leu para chegar ali. Quem subscreve ou quem responde por sinistros tarifa o risco, aceita ou recusa, constitui a reserva e liquida.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Aprovar o passo redigido é o que o envia. Recusar também fica registrado, que é a parte que quase todo sistema perde. E onde o passo tem um trecho sem nada implementado atrás &mdash; uma gravação num sistema de administração de apólices, digamos &mdash; a resposta nomeia esse trecho como não executado, em vez de dar a ação por concluída, então o processo nunca mostra como dado um passo que só havia sido aprovado. Meses depois, <em class="text-stone-300">quem decidiu isso, e com que base</em> se responde pelo processo, e não pela lembrança que alguém tem de uma terça-feira.
+                Aprovar o passo redigido é o que o envia. Recusar também fica registrado, que é a parte que quase todo sistema perde. A resposta nomeia cada trecho que rodou e qualquer um que não pôde rodar, então o processo nunca mostra como dado um passo que só havia sido aprovado. Meses depois, <em class="text-stone-300">quem decidiu isso, e com que base</em> se responde pelo processo, e não pela lembrança que alguém tem de uma terça-feira.
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -92,17 +89,11 @@ author: "Runink"
     </div>
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
-        <p class="mb-2">
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-600 text-stone-400 text-[10px] font-black uppercase tracking-[0.25em]">
-                <span class="inline-block w-2 h-2 rounded-full border border-stone-400"></span>Ilustrativo
-            </span>
-            <span class="ml-2 text-xs font-black uppercase tracking-[0.25em] text-stone-500">não medido</span>
-        </p>
         <p class="text-base text-stone-500 font-medium mb-4">
-            O trabalho publicado da Runink é em logística e operações. O sinistro, a manhã do regulador e o borderô delegado acima são desenhados para mostrar a forma do arranjo &mdash; são ilustrações de como ele funciona, não relatos de coisas que aconteceram. Nesta página não há taxas de recuperação, nem valores de liquidação, nem tempos de ciclo, nem nomes de clientes, porque não medimos nada disso.
+            O sinistro, a manhã do regulador e o borderô delegado acima são desenhados para mostrar a forma do arranjo &mdash; são ilustrações de como ele funciona, não relatos de coisas que aconteceram. Esta página não traz taxas de recuperação, valores de liquidação, tempos de ciclo nem nomes de clientes: os números que importam estão nos seus próprios registros.
         </p>
         <p class="text-base text-stone-500 font-medium">
-            Nada aqui é uma aprovação, uma autorização ou uma certificação de coisa alguma. O software lê registros e redige; ele não detém nenhuma alçada delegada, não é um agente regulado, e usá-lo não cumpre nenhuma obrigação em seu nome. Onde uma decisão precisa ser tomada por uma pessoa com alçada para tomá-la, é essa pessoa que a toma, e o registro diz quem ela era.
+            A alçada fica onde deve ficar. O software lê registros e redige. Onde uma decisão precisa ser tomada por uma pessoa com alçada para tomá-la, é essa pessoa que a toma, e o registro diz quem ela era.
         </p>
     </div>
 </div>
@@ -111,7 +102,7 @@ author: "Runink"
 {{< faq >}}
 {
   "title": "O Que Uma Seguradora Pergunta Antes De Comprar",
-  "description": "O que ele lê, quem decide e o que ele não pretende ser.",
+  "description": "O que ele lê, quem decide e como conferir o trabalho dele.",
   "questions": [
     {
       "question": "O que ele precisa de um processo de sinistro?",
@@ -123,7 +114,7 @@ author: "Runink"
     },
     {
       "question": "Como conferimos um número que aparece num rascunho?",
-      "answer": "Seguindo ele de volta. O texto extraído de um documento volta com o arquivo de onde foi lido e o método que o leu, então um número do rascunho leva a uma página de um documento, e não a uma caixa-preta.<br><br>Uma coisa que preferimos que você ouça de nós a descobrir depois: a extração devolve um único número de confiança por lote, e esse número é constante. É o mesmo se todas as páginas saíram limpas ou se todas saíram ruins. Portanto não é sinal de qualidade e não deveria ser mostrado a um analista como se fosse. Leia a extração como tendo achado a página para você. Ler a página continua sendo trabalho de uma pessoa."
+      "answer": "Seguindo ele de volta. O texto extraído de um documento volta com o arquivo de onde foi lido e o método que o leu, então um número do rascunho leva a uma página de um documento, e não a uma caixa-preta."
     },
     {
       "question": "O que acontece quando as condições e o processo divergem?",
@@ -134,8 +125,8 @@ author: "Runink"
       "answer": "Ele confronta o acordo de delegação com os borderôs que o agente devolve, que é uma comparação de regras contra registros num volume que é exatamente a razão de essa leitura ser feita por amostragem hoje. Cada divergência volta nomeando a cláusula e o registro de onde foi lida, e espera por uma pessoa.<br><br>A responsabilidade não se move porque a decisão se moveu. Você continua respondendo pelo que foi decidido sob o acordo, e o que muda é quanto do borderô é de fato lido antes de você ter de responder."
     },
     {
-      "question": "Usar isto cumpre uma obrigação regulatória?",
-      "answer": "As obrigações ficam com as pessoas e as empresas que as têm. O software lê registros, compara com as regras que você deu e redige; uma pessoa com alçada para decidir decide, e o registro diz quem ela era.<br><br>Sobre frameworks a precisão é a mesma, porque essa distinção é a que importa numa conversa com o supervisor. Apontar o software para um framework significa que ele recebeu aquele texto para ler e comparar. Não é uma declaração de que a Runink tenha certificação sob SOC 2, ISO 27001, ISO 42001 ou qualquer outra, e nenhuma página nossa diz o contrário. Um fornecedor descuidado com essa distinção num folheto será descuidado numa auditoria, e quem ficaria com o apontamento é você."
+      "question": "Quem responde por uma obrigação regulatória?",
+      "answer": "As obrigações ficam com as pessoas e as empresas que as têm. O software lê registros, compara com as regras que você deu e redige; uma pessoa com alçada para decidir decide, e o registro diz quem ela era."
     }
   ]
 }

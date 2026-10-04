@@ -472,8 +472,10 @@ paper:
 # `page` (2026-09-26): a product with its own page opens that page, and the paper
 # is one click further, from the page's "Read the detail" block. Runink River has a
 # page and no paper; the joint TIDE and Atlas paper has no page and still opens the
-# paper. `sub` carries the meaning of each product name (FACE, PULSE, TIDE, RIVER), in
-# English in every language.
+# paper. FACE, PULSE and TIDE carry their meaning in `name` itself, in the form
+# "Runink FACE: Fulfilment Autonomous Claims Engine" (owner, 2026-10-04: keep each
+# product and its acronym on our pages); `sub` carries RIVER's lockup and the joint
+# paper's note. The expansions stay in English in every language.
 products_heading: "Runink products you may have heard of"
 products_intro: "Four products, each with its own page, and one joint paper. The pages say what each product is; the papers behind them explain the mechanism: what the software looks at, what it produces, who approves it, and where it runs."
 products_cta: "Read the paper"
@@ -481,18 +483,15 @@ products_page_cta: "See the product"
 products:
   - page: "/products/face"
     paper: "runink-face"
-    name: "Runink FACE"
-    sub: "Fulfilment Autonomous Claims Engine"
+    name: "Runink FACE: Fulfilment Autonomous Claims Engine"
     line: "The one this page is about, for logistics, freight, claims and operations teams. It finds the overcharge nobody challenged, the claim about to run out of time and the rule somebody broke, then drafts the next step for a named person to approve. It runs on your servers, your cloud account or Runink's shared machines."
   - page: "/products/pulse"
     paper: "runink-pulse"
-    name: "Runink PULSE"
-    sub: "Prescriptive Unified Lead & Social Engine"
+    name: "Runink PULSE: Prescriptive Unified Lead & Social Engine"
     line: "A separate product, for a small or mid-size business and the people who sell and market for it. It finds the companies worth calling, drafts the reply, the campaign and the follow-up, and shows which channel brings customers in. Your team decides what goes out. Priced per seat."
   - page: "/products/tide"
     paper: "runink-tide"
-    name: "Runink TIDE"
-    sub: "Trusted Intelligence for Developer & Data Experience"
+    name: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
     line: "A separate product, for engineering, platform and data teams. It takes the repeat questions off their week: what broke and why, whether a fix shipped, which number is right, who changed what. Helpers draft; a named person approves. It runs on your servers, your cloud account or Runink's shared machines."
   - paper: "runink-tide-atlas"
     name: "Runink TIDE and Atlas"

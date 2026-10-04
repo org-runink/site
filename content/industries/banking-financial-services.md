@@ -38,7 +38,7 @@ weight: 30
 category: "banking"
 card: "Runink TIDE with Logical Leap's Atlas — payment instruction integrity, third-party risk, decision governance and the evidence a supervisor asks for. An architecture joining two separate products, ours and Logical Leap's."
 headline: "You are not asked whether the control exists. You are asked to show that it operated."
-deck: "Payment instruction changes, credit decisions, fee calculations, transaction monitoring, model governance, third-party risk. Every one is a written rule applied to a flow, under an authority that expects the rule to be demonstrable rather than asserted. Read this page as an architecture rather than a single product: it describes the Runink TIDE platform working with Atlas, an assessment platform from Logical Leap. Nothing here has been run at a bank."
+deck: "Payment instruction changes, credit decisions, fee calculations, transaction monitoring, model governance, third-party risk. Every one is a written rule applied to a flow, under an authority that expects the rule to be demonstrable rather than asserted. Read this page as an architecture rather than a single product: it describes the Runink TIDE platform working with Atlas, an assessment platform from Logical Leap."
 
 problems_heading: "Where it goes wrong"
 problems:
@@ -82,7 +82,7 @@ outcomes:
   - "Specific paths fail closed rather than open: an unconfigured ingest refuses rather than accepting anything, an undeclared identity is refused, and where no secret has been issued the findings door accepts nothing rather than accepting everyone — so a configuration nobody finished cannot quietly become an open one."
 
 measures_heading: "How you will know it worked"
-measures_intro: "None of these numbers are ours. They are yours, and most already sit in a report somebody runs monthly. Write down where you stand today before anything starts: the baseline stops being recoverable the moment things improve. The right-hand column says what the arrangement would move and why — it is the mechanism argued, not an outcome anybody has observed, because no bank has run this."
+measures_intro: "None of these numbers are ours. They are yours, and most already sit in a report somebody runs monthly. Write down where you stand today before anything starts: the baseline stops being recoverable the moment things improve. The right-hand column says which way each figure should move, and by what mechanism."
 measures:
   - metric: "Time to close an audit or regulatory finding"
     today: "Your issue register — raised date to closure date, for findings closed in the last four quarters. Split those that waited on evidence from those that waited on a decision."
@@ -95,7 +95,7 @@ measures:
     moves: "Down, and the fall is in the finding rather than the reviewing: the reviewer gets the record made at the time of the decision, not a pack built later to describe it."
   - metric: "Reconciliation breaks and their ageing"
     today: "Your month-end break report: open items, value bands, days outstanding, and how many were cleared with no cause recorded."
-    moves: "Fewer aged items, and fewer cleared with nothing written down, because a run of movements that each sit inside the usual range can be raised on the shape of the sequence rather than on any single month. Note what the machine does and does not do there: it says the sequence is unusual against the available history, cites the series, and files the item for a person. It has no view on the cause, because attributing one needs somebody who knows what changed operationally that month."
+    moves: "Fewer aged items, and fewer cleared with nothing written down, because a run of movements that each sit inside the usual range can be raised on the shape of the sequence rather than on any single month. The machine says the sequence is unusual against the available history, cites the series, and files the item for a person, who knows what changed operationally that month and names the cause."
   - metric: "Control-testing coverage and exception rate"
     today: "Your testing plan for the last cycle: per control, the population in scope against the population actually tested, and the exceptions found."
     moves: "Coverage toward the whole population, and the exception rate becomes a count of named items rather than an estimate drawn from a sample."
@@ -107,7 +107,7 @@ foundations_heading: "Two things that make the above possible"
 foundations:
   - name: "The reasoning goes to no outside model service"
     plain: "The records, the contracts and the working-out stay on the machines TIDE runs on. The judging model is the cluster's own inference plane: there is no other endpoint, no API key, no vendor SDK and no fallback, and no code path that would take an external model plane. So no customer record, no payment instruction and no draft finding is sent anywhere to be read."
-    measured_by: "The length of your own third-party risk and model governance review. What is reviewed is software you run, so there is no external model service to assess and no data-transfer clause to negotiate — though the arrangement as a whole does involve a second vendor, Logical Leap, which your third-party risk process will want to see. When a supervisor asks how a decision was reached, the answer is a record of what was decided, what it cited and who approved it, hash-chained and held by you."
+    measured_by: "The length of your own third-party risk and model governance review. What is reviewed is software you run, so there is no external model service to assess and no data-transfer clause to negotiate. When a supervisor asks how a decision was reached, the answer is a record of what was decided, what it cited and who approved it, hash-chained and held by you."
   # Corrected. This said public material is read "rather than by a search
   # company acting for you", which implied no search engine sees the query. The
   # shared engine puts the query to a public search endpoint and then fetches
@@ -118,7 +118,7 @@ foundations:
     measured_by: "Adverse-media and counterparty research, where the question is more sensitive than the answer. The search engine sees the query, as it would from any browser. What does not exist is an account: no API key, no vendor contract, no per-question bill, so no supplier accumulates a history of the names your bank has been asking about, filed under your bank and retained on their terms. That is the part that matters when the name is market-sensitive or the file later becomes evidence."
 
 next_heading: "See whether it fits"
-next_body: "Bring one control and the systems it is supposed to live in — the verification rule on payment destinations, a supplier agreement, a rate card. A short session is usually enough to see whether the written rule and the applied rule still match, and whether this arrangement is the right shape for you or whether you are better served waiting."
+next_body: "Bring one control and the systems it is supposed to live in — the verification rule on payment destinations, a supplier agreement, a rate card. A short session is usually enough to see whether the written rule and the applied rule still match, and whether this arrangement is the right shape for you."
 cta_text: "Book a consultation"
 # The link stays on the TIDE and Atlas paper, and deliberately so. Unlike the
 # insurance page, the mechanism described here really is that arrangement's and
@@ -129,5 +129,5 @@ cta_text: "Book a consultation"
 paper:
   text: "Read the TIDE and Atlas paper"
   url: "/blog/whitepapers/runink-tide-atlas/"
-  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how the arithmetic is recomputed, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names, no return-on-investment figures, and no bank has run this."
+  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how the arithmetic is recomputed, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names and no return-on-investment figures."
 ---

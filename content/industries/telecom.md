@@ -26,7 +26,7 @@ weight: 40
 category: "telecom"
 card: "Runink TIDE with Logical Leap's Atlas — revenue assurance, rating and billing, interconnect settlement, and rollout across many small sites. An architecture joining two separate products, ours and Logical Leap's."
 headline: "Revenue assurance exists because the volume defeated inspection."
-deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples. Read this page as an architecture: it describes the Runink TIDE platform working with Atlas, an assessment platform from Logical Leap. No operator has run it."
+deck: "Service delivered against service rated. Rated against billed. Billed against collected. Your interconnect traffic against theirs. Each is two records that ought to agree, over a stream too long to read — which is why the work was built on samples. Read this page as an architecture: it describes the Runink TIDE platform working with Atlas, an assessment platform from Logical Leap."
 
 problems_heading: "Where it goes wrong"
 problems:
@@ -62,7 +62,7 @@ outcomes:
   - "Unable to judge is a verdict in its own right and never renders as agreement. No evidence, evidence that only restates the claim, evidence about a different subject, evidence past the staleness horizon, an unreadable answer, or a submitter who could not determine the matter either: each ends there, with the reason written next to it, and goes to a person. An assessor whose confident answers and whose guesses look identical is ignored within a week, and this is the discipline that stops that."
 
 measures_heading: "How you will know it worked"
-measures_intro: "The figures below are yours, not ours. Write down where you stand today, before anything changes — a baseline stops being recoverable once things start improving. The right-hand column is the mechanism argued, not an outcome observed: no operator has run this arrangement."
+measures_intro: "The figures below are yours, not ours. Write down where you stand today, before anything changes — a baseline stops being recoverable once things start improving. The right-hand column says which way each figure should move, and by what mechanism."
 measures:
   - metric: "Rating accuracy, and the usage it under-bills"
     today: "The rating error rate revenue assurance reports upward, and the sample size and month behind it. Then a month of mediated usage against what billing charged."
@@ -84,7 +84,7 @@ foundations_heading: "Two things that make the above possible"
 foundations:
   - name: "No outside AI service reads your records"
     plain: "The reasoning runs on your servers, your cloud or ours, never at an outside AI service. Subscriber records, usage detail, contracts and credentials are read where they already live. The judging model is the cluster's own inference plane — one endpoint, no API key, no vendor SDK, no fallback, and no code path that would accept an external model plane."
-    measured_by: "Call-detail and subscriber data sits under telecoms privacy and interception law and mostly cannot leave your estate. Measure this as the length of the security review before work can begin, and as whether a regulator's question about who saw what is answered from a hash-chained record rather than an investigation. One honest addition: the arrangement involves a second vendor, and your supplier assessment will want to see them as well as us."
+    measured_by: "Call-detail and subscriber data sits under telecoms privacy and interception law and mostly cannot leave your estate. Measure this as the length of the security review before work can begin, and as whether a regulator's question about who saw what is answered from a hash-chained record rather than an investigation."
   # Corrected. "No outside search company sits in the middle" and "that nobody
   # sees you doing" were both false absolutes: the shared engine puts the query
   # to a public search endpoint before fetching the pages itself. The
@@ -93,7 +93,7 @@ foundations:
   # carries the whole claim rather than sitting under a promise of invisibility.
   - name: "Open-web research with no vendor account behind it"
     plain: "When something has to be checked in public — a competitor's tariff, a supplier, a regulator's notice — the search runs from the machines your plan names through a public search endpoint, and a browser on those same machines then fetches and reads the pages behind the results rather than a research service reading them for you."
-    measured_by: "Not invisibility — a search engine sees the query, as it would from any browser. What is absent is the account. Researching a rival's bundle pricing through a vendor's paid service builds that vendor a dated record of what your commercial team was working on, under your name. Here there is no key, no contract and no per-question bill, so nothing accumulates and nothing is capped. Measure it by what your commercial team is willing to check at all."
+    measured_by: "A search engine sees the query, as it would from any browser. What is absent is the account. Researching a rival's bundle pricing through a vendor's paid service builds that vendor a dated record of what your commercial team was working on, under your name. Here there is no key, no contract and no per-question bill, so nothing accumulates and nothing is capped. Measure it by what your commercial team is willing to check at all."
 
 next_heading: "See whether it fits"
 next_body: "Bring one comparison and the agreement that governs it — rating output against plan terms, or a month of interconnect traffic against the settlement. Half an hour is usually enough to see whether the differences that matter are the shape this finds. Bring today's figures for the measures above too; they are your baseline."
@@ -106,5 +106,5 @@ cta_text: "Book a consultation"
 paper:
   text: "Read the TIDE and Atlas paper"
   url: "/blog/whitepapers/runink-tide-atlas/"
-  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how a rate is recomputed rather than accepted, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names, no return-on-investment figures, and no operator has run it."
+  note: "The long version of the arrangement on this page, written jointly with Logical Leap: what a finding contains, the checks it passes before anything reaches a model, how a rate is recomputed rather than accepted, and how a second judgement is formed on a separate credential. Start at the chapter on what judging means. No case studies, no customer names and no return-on-investment figures."
 ---

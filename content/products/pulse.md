@@ -46,7 +46,7 @@ image: "/images/products/pulse-og.jpg"
 
 {{< hero
     headline="The lead who wrote at nine at night bought from whoever answered first."
-    sub_headline="**Runink PULSE** is marketing software your own team runs. It finds the companies worth calling, drafts the reply, the campaign and the follow-up, and shows which channel brings customers in. Your team decides what goes out. You pay per seat, not per tool."
+    sub_headline="**Runink PULSE: Prescriptive Unified Lead & Social Engine.** Marketing software your own team runs. It finds the companies worth calling, drafts the reply, the campaign and the follow-up, and shows which channel brings customers in. Your team decides what goes out. You pay per seat, not per tool."
     primary_button_text="Book a consultation"
     primary_button_url="/#contact"
     secondary_button_text="Read the PULSE paper"
@@ -284,17 +284,6 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 {{< /section-container >}}
 
 {{< section-container class="py-16" >}}
-<div class="max-w-4xl mx-auto px-4">
-    <div class="border-l-4 border-signal pl-6 space-y-4">
-        <h2 class="text-2xl font-bold text-white">It arrives as part of the upcoming Runink Server.</h2>
-        <p class="text-lg text-slate-300 leading-relaxed">
-            PULSE is part of the same Runink Server build as Runink TIDE — with FORGE inside it — and Runink FACE. A company standing up the Server will get PULSE already there, not a separate product to source and wire in afterwards. PULSE, FACE and TIDE stay billed separately: what changes is that they arrive together.
-        </p>
-    </div>
-</div>
-{{< /section-container >}}
-
-{{< section-container class="py-16" >}}
 <div class="max-w-3xl mx-auto px-4">
     <div class="border-l-4 border-signal pl-6 space-y-4">
         <p class="text-sm font-bold uppercase tracking-[0.2em] text-signal">Your numbers, not ours</p>
@@ -312,7 +301,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 {{< faq >}}
 {
     "title": "The questions that actually get asked.",
-    "description": "Straight answers, including where the answer is no.",
+    "description": "Straight answers to what buyers ask first.",
     "questions": [
         {
             "question": "Is PULSE the same thing as Runink FACE?",
@@ -356,7 +345,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "Is there anything we can put in someone's hands today?",
-            "answer": "An Android build of the console is on the [downloads page](/downloads/). It is a debug-signed early-access build you install directly, not signed for the Play Store."
+            "answer": "An Android build of the console is on the [downloads page](/downloads/). You install it directly from that page."
         },
         {
             "question": "What does it cost?",

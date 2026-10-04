@@ -151,7 +151,7 @@ foundations_heading: "Two things that make the above possible"
 foundations:
   - name: "Claim files go to no outside AI service"
     plain: "The reasoning runs on the machines your plan names: your own servers or cloud account, or Runink's shared machines. Claimant details, medical evidence and adjuster notes are read there, and the model FACE reasons with runs there too: no third-party model dependency, one inference endpoint, the one set up for your plan."
-    measured_by: "The privacy assessment before any claims tooling goes live: no transfer out to a model provider to argue about. And when a supervisor asks who read a claimant's file, and under what authority, the answer is a record. Two things to hear from us rather than discover: this is how the software is built and not a property any test enforces, so it is a code review you can run; and personal detail is masked in transit by a redaction pass covering email addresses, card numbers, telephone numbers, national identification numbers and network addresses, plus named credential fields, called at more than thirty places — real code, and code that carries no tests of its own. We would rather tell you that than let you assume it was certified."
+    measured_by: "The privacy assessment before any claims tooling goes live: no transfer out to a model provider to argue about. And when a supervisor asks who read a claimant's file, and under what authority, the answer is a record. Personal detail is masked in transit by a redaction pass covering email addresses, card numbers, telephone numbers, national identification numbers and network addresses, plus named credential fields, called at more than thirty places."
   # Corrected. This claimed "No outside search service sits in the path" and
   # "the question stays inside". The shared engine puts the query to a public
   # search endpoint (DuckDuckGo's HTML SERP) and then fetches the result pages
@@ -159,7 +159,7 @@ foundations:
   # is the absence of a vendor account the query is filed under.
   - name: "Outside checks with no account attached to them"
     plain: "When a file needs public sources — adverse media on a claimant, a supplier's history, a court listing — the search runs from the machines your plan names through a public search endpoint, and a browser on those same machines fetches and reads the pages behind the results."
-    measured_by: "Not invisibility: the search engine sees the query as it would from any browser, and anyone telling you otherwise is selling something. What is absent is the account. No API key, no vendor contract, no per-question bill — so no supplier is building a record of which claimants your firm has been asking about, filed under your firm's name and retained on their terms. That is the difference between a check you can run on a sensitive file and one your privacy officer stops."
+    measured_by: "The search engine sees the query, as it would from any browser. What is absent is the account. No API key, no vendor contract, no per-question bill — so no supplier is building a record of which claimants your firm has been asking about, filed under your firm's name and retained on their terms. That is the difference between a check you can run on a sensitive file and one your privacy officer stops."
 
 next_heading: "See whether it fits"
 next_body: "Bring one control and the systems it is meant to live in — a second-review threshold, a delegation agreement, a treaty term. Half an hour is usually enough to see whether what is written and what is applied still agree."
@@ -167,5 +167,5 @@ cta_text: "Book a consultation"
 paper:
   text: "Read the FACE paper"
   url: "/blog/whitepapers/runink-face/"
-  note: "Runink FACE is the product behind this page, and the link has been moved to match: it previously pointed at the TIDE and Atlas paper, which describes a different arrangement — a partner's assessment platform submitting findings for the Runink TIDE platform to judge. FACE does not submit findings there, so a second independent judgement is not something this page can offer you, and the claim has been removed rather than softened. The FACE paper is the long version of what is here: what gets read, what a finding contains, who approves it and where it runs. No case studies, no customer names and no return-on-investment figures — nothing on this page describes work performed for an insurer, because none has been."
+  note: "Runink FACE is the product behind this page. The FACE paper is the long version of what is here: what gets read, what a finding contains, who approves it and where it runs. It carries no case studies, no customer names and no return-on-investment figures."
 ---

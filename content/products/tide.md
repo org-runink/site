@@ -35,7 +35,9 @@ aliases: ["/products/core/"]
 # paragraph, added to the whitepaper the same day — see that file's own note), and
 # `cost` (the lease/no-meter material from "It runs the same way everywhere" and "The
 # model is yours"). All three summarise paragraphs the paper already carried but this
-# page had not used.
+# page had not used. The `local` card ("Checked", one audit run) was removed
+# 2026-10-04 with the paper's matching paragraph: owner, show only what ships, and
+# nothing qualified by a single run (CONTENT.md rules 2 and 4).
 #
 # Deliberately NOT added: a "Backlog hunter" agent and built-in GitHub CI runners,
 # both real work in progress this session but not yet shipped. CONTENT.md rule 2 bars
@@ -99,7 +101,7 @@ aliases: ["/products/core/"]
 # self-contained: no "it" that needs the line above to make sense.
 image: "/images/products/tide-og.jpg"
 rp:
-  lockup: "TIDE · Trusted Intelligence for Developer & Data Experience"
+  lockup: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
   title: "Know what broke, what shipped and which number is right. On your servers, your cloud or ours."
   promise: "**Runink TIDE** is software from Runink that takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, which dashboard is right, who changed this. Helpers draft the answer or the fix, and a named person approves it. Run it on Runink's shared machines, or on your own servers or cloud account so your data stays there; it is licensed by where it runs, and no plan sends your data to an outside AI service."
   cta:
@@ -116,7 +118,7 @@ rp:
       - { k: "Delivery", v: "Is the platform up, and did my fix actually ship? (The console calls this part DevEx.)" }
       - { k: "AI oversight", v: "Which AI do we run, what may it do, and who checked its work? (The console calls this part DataEx.)" }
       - { k: "Intelligence", v: "Which number is right, and where are money or controls slipping?" }
-      - { k: "FORGE (preview)", v: "How does a small tool a team asks for get built without waiting its turn?" }
+      - { k: "FORGE", v: "How does a small tool a team asks for get built without waiting its turn?" }
     foot: "It asks before it acts."
   mission: "Where does our information go? To the machines your plan names, *and it stays there.*"
   facts:
@@ -146,8 +148,7 @@ rp:
       - { k: "Intelligence · one figure", title: "Two teams, two numbers, one meeting", body: "Finance and the programme office bring different figures and spend the meeting reconciling them. TIDE's analyst, finance and programme-office dashboards are built on one set of figures, worked out the same way, from your own records. A figure TIDE could not read is shown as not known. Planned, requested and actual capital spending are checked against each other with a published rule book. **Cost it touches:** analyst hours spent reconciling spreadsheets, and money that leaves before anyone checks." }
       - { k: "DataEx · AI oversight", title: "Nobody can list every AI helper in use", body: "When the board, a customer or a regulator asks which AI you run and what it may do, the answer is a spreadsheet nobody trusts. TIDE keeps that list for you. It records each one's source, version, licence and test evidence, checked against what is actually running, and what each helper is allowed to do. How much a helper may do on its own is a setting you choose for each kind of action, and every kind starts with a person approving each act. **Cost it touches:** risk and compliance hours spent answering the same questions again." }
       - { k: "Private by design", title: "Data that cannot leave, so outside AI tools are off-limits", body: "Customer records, contracts and claims cannot go to somebody else's service, so the quick AI tools are ruled out, and promising evaluations end at *where does that run?* On the Dedicated and Enterprise plans, TIDE runs in your own cloud account or on your own servers. Its assistant, its helpers and FORGE run there too, and records, files, secrets and certificates stay there. On every plan, no outside AI service is called. **Cost it touches:** security reviews that stall a purchase, and a bill from an outside AI service that grows with every question." }
-      - { k: "Checked", title: "No outbound connection, in our own test run", body: "In our audit run, TIDE made no outbound connection while testing, exploring, mapping and assessing your sources; integrations you turn on, such as GitHub or Stripe, connect only to their own services. That was one run, about six seconds, on a development machine, with Chrome and the host out of scope, no model wired in, and no such integration configured for it." }
-      - { k: "FORGE (preview)", title: "The small tool a team needs waits behind the roadmap", body: "In preview. A product owner describes the tool, or the scheduled steps that move and prepare a set of data, in plain words. TIDE proposes the steps on a canvas, and nothing is filed until that person approves. The approved brief goes to coding helpers as a work item. The result comes back as a change for your engineers to review. The brief stays on the machines your plan names; we are confirming there is no other path out before promising more than that. **Cost it touches:** engineering and contractor time spent on small internal tools." }
+      - { k: "FORGE", title: "The small tool a team needs waits behind the roadmap", body: "A product owner describes the tool, or the scheduled steps that move and prepare a set of data, in plain words. TIDE proposes the steps on a canvas, and nothing is filed until that person approves. The approved brief goes to coding helpers as a work item. The result comes back as a change for your engineers to review. **Cost it touches:** engineering and contractor time spent on small internal tools." }
       - { k: "Cost", title: "Not billed by the question", body: "Each new application rebuilds the same foundations: sign-in, secrets, a way to reach company data, somewhere to run, something watching it. Each tool bought to fill a gap brings its own account and its own bill. TIDE gives every application those foundations once. On every plan, heavy use of the assistant, the helpers or FORGE is not billed by the question. On your own servers, budgeting becomes a capacity decision made once, not a usage bill read every month. **Cost it touches:** engineering time spent rebuilding foundations, and servers you already own put to work." }
   steps:
     heading: "See it on your own hardware"

@@ -49,7 +49,7 @@ next:
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Les agents de Runink lisent des enregistrements et rédigent des brouillons : un dossier de sinistre, une correction de code, une publication, une réponse. Le brouillon attend. Une personne nommée l'approuve, le modifie ou le rejette, et le registre garde qui c'était et quand.</p>
       <p>Dans Runink TIDE, ces décisions sont inscrites dans une chaîne d'audit. Chaque entrée est liée à la précédente : une entrée modifiée, supprimée ou déplacée se voit. Toute personne connectée à la console TIDE peut appuyer sur <em>Verify now</em> pour faire vérifier toute la chaîne. La lecture des entrées elles-mêmes reste réservée aux administrateurs que vous désignez.</p>
-      <p>Deux choses agissent seules, et nous préférons que vous le lisiez ici plutôt que de le découvrir plus tard :</p>
+      <p>Deux choses agissent seules, chacune dans une limite fixe :</p>
       <ul class="list-disc pl-6 space-y-3">
         <li><strong class="text-ink">FACE veille sur son propre fonctionnement.</strong> Quand une partie de FACE ne répond plus, il peut la redémarrer, isoler une dépendance qui échoue sans cesse, annuler le changement le plus récent ou ajouter de la capacité. Il ne choisit que dans cette liste fixe. Il ne supprime jamais de données, n'éteint jamais une machine et ne désactive jamais un contrôle de sécurité. En cas de doute, il prévient une personne au lieu d'agir. Un opérateur peut désactiver la partie automatique.</li>
         <li><strong class="text-ink">Le trieur de tickets de TIDE étiquette les nouveaux tickets.</strong> Il ne choisit que parmi les étiquettes autorisées par le dépôt, et seulement après l'accord d'une vérification indépendante. Une personne peut les changer à tout moment, et décide qui traite le ticket.</li>
@@ -155,7 +155,7 @@ next:
     <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Un chiffre manquant est montré comme manquant.</h2>
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Quand nos logiciels n'ont pas pu lire un chiffre, ils le disent, avec la raison. Ils n'affichent pas de zéro et ne devinent pas. Un contrôle qui n'a pas pu s'exécuter est signalé comme « non vérifié », jamais comme réussi. Un champ inconnu reste vide, il n'est pas rempli.</p>
-      <p>Nous nous tenons à la même règle. Cette page ne contient aucune statistique, et les fiches modèles non plus : aucune n'affiche de score d'évaluation, parce qu'aucun n'a été publié.</p>
+      <p>Nous nous tenons à la même règle : cette page ne contient aucune statistique.</p>
     </div>
     <div class="mt-10 border-t border-rule pt-6">
       <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Lire les preuves (en anglais)</p>

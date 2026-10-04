@@ -12,17 +12,12 @@ author: "Runink"
 <div class="max-w-5xl mx-auto px-4">
 
 <h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
-<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-8">
+<ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Your records are sorted by what they are, not by where they came from.</strong> Two tables about shipments both belong to logistics whether one arrived from your warehouse system and the other as a spreadsheet somebody emails on Fridays.</li>
 <li><strong class="text-stone-200">The map is derived, not guessed.</strong> The domains and the joins between them are worked out from the structure of your own files by fixed rules — no model, no web search, nothing leaving the building for that step. The same files always produce the same map.</li>
 <li><strong class="text-stone-200">A domain it could not assess is marked as not assessed.</strong> Not as a pass. The words are explicit: this is not a finding that the area is fine. And with no data connected, it says there is nothing to map yet rather than drawing an empty diagram.</li>
 </ul>
 
-<p class="mb-12">
-    <span class="block mt-3 text-sm text-stone-500 font-medium">
-        This describes the mechanism and a plausible week around it. It is not an account of something that happened: it has not been run against a customer's systems, nothing on this page is measured, and no figure is offered for what it finds or how long it takes.
-    </span>
-</p>
 
     <div class="text-center mb-16">
         <h2 id="four-systems-one-morning-you-do-not-have" class="text-5xl md:text-6xl font-black !text-white text-white drop-shadow-md italic tracking-tighter uppercase mb-6">Four Systems. One Morning You Do Not Have.</h2>
@@ -71,13 +66,10 @@ author: "Runink"
                 And then you can ask it things, in the vocabulary you already use, with the map and the recognised rules behind the answer and narrowed to whichever areas you are looking at. You get the reasoning, not just the reply. A scenario that has been worked through in <a href="/use-cases/hypothesis-lab">the hypothesis lab</a> can be handed across from there as a proposed action, with its variables and the rules it was argued against travelling with it rather than arriving as a bare reference to a run somebody else did.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                One limit on all of that, stated here rather than left for you to find. What the mapping reads is the files sitting in the instance's own data directory, and on a standard instance that directory is not read — so what you get back is the refusal, not a thin map. The classification rules are real and they are deterministic; the path that lands your live extracts in front of them is not finished. We would rather the page said which half is which than describe the whole thing in the present tense and let a pilot discover the seam.
-            </p>
-            <p class="text-lg text-stone-400 font-medium mb-6">
                 Where an area of the picture turns into a line about to run short, the response is the next job along, in <a href="/use-cases/fulfillment-optimization">stock cover and supplier planning</a>, and the signal underneath it is <a href="/use-cases/demand-forecasting">demand forecasting</a>. Visibility is what makes those two arguable from the same set of facts instead of from three exports.
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                What arrives at a person is a short ranked list of proposed actions with the records attached, not a diagram to admire. A named person approves, edits or rejects each one, and that sign-off is kept. Approving is what sends it, and a decided item leaves the queue instead of coming back round next time somebody opens the board. Where a step behind the approval has no implementation yet, the response names that step as not executed rather than reporting the action as complete — so the board shows what was decided and separately what was actually carried out. It all runs where FACE runs, with no outside AI service.
+                What arrives at a person is a short ranked list of proposed actions with the records attached, not a diagram to admire. A named person approves, edits or rejects each one, and that sign-off is kept. Approving is what sends it, and a decided item leaves the queue instead of coming back round next time somebody opens the board. The response names each step that ran and any that could not, rather than reporting the action as complete — so the board shows what was decided and separately what was actually carried out. It all runs where FACE runs, with no outside AI service.
             </p>
         </div>
         <div>
@@ -94,7 +86,7 @@ author: "Runink"
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
              <h3 id="how-you-will-know-it-worked" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-signal-fill to-signal-fill-hover mb-4 tracking-tighter uppercase italic drop-shadow-lg">How You Will Know It Worked</h3>
              <p class="text-lg text-stone-400 font-medium mb-6">
-                Every figure below is yours, not ours. We are not bringing numbers to this; you are. Write down where you stand today, because the baseline is gone for good the moment things improve.
+                Every figure below is yours, not ours. Write down where you stand today, because the baseline is gone for good the moment things improve.
              </p>
              <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">How long one ordinary cross-system question takes.</strong> Pick a real one you were asked last month. Time the person who answers it, honestly, including the waiting. That is the number everything else on this page is about.</li>
@@ -129,7 +121,7 @@ author: "Runink"
     },
     {
       "question": "What reaches a person at the end of it?",
-      "answer": "A short ranked list of proposed actions with the records attached, rather than a diagram to admire. A named person approves, edits or rejects each one and the sign-off is kept. A decided item leaves the queue instead of coming back round the next time somebody opens the board, and where a step behind an approval has no implementation yet the response names that step rather than reporting the action as complete."
+      "answer": "A short ranked list of proposed actions with the records attached, rather than a diagram to admire. A named person approves, edits or rejects each one and the sign-off is kept. A decided item leaves the queue instead of coming back round the next time somebody opens the board, and the response names each step that ran and any that could not, rather than reporting the action as complete."
     },
     {
       "question": "What should we bring to a first conversation?",

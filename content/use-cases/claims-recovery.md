@@ -17,8 +17,8 @@ author: "Runink"
 
 <h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
-<li><strong class="text-stone-200">The paperwork is gathered for you, and only the parts that are really there.</strong> The entry, the port, the reason it is held, the documents that are missing, the days it has been held and the per-day charge arrive in one place, joined to the shipment they belong to. Not the rate that applied on the date: FACE holds no rate card, no tariff table and no accessorial schedule, so it cannot tell you what the rate was and will not pretend to.</li>
-<li><strong class="text-stone-200">Quantities are checked three ways.</strong> The purchase order, the invoice and the bill of lading are compared against each other, and where they disagree the finding names the pair and the size of the gap &mdash; bill of lading against order, bill of lading against invoice. That is a discrepancy check on what the documents say, not a reconciliation against a scale or a rate: there is no weighbridge feed here either.</li>
+<li><strong class="text-stone-200">The paperwork is gathered for you, and only the parts that are really there.</strong> The entry, the port, the reason it is held, the documents that are missing, the days it has been held and the per-day charge arrive in one place, joined to the shipment they belong to.</li>
+<li><strong class="text-stone-200">Quantities are checked three ways.</strong> The purchase order, the invoice and the bill of lading are compared against each other, and where they disagree the finding names the pair and the size of the gap &mdash; bill of lading against order, bill of lading against invoice.</li>
 <li><strong class="text-stone-200">The letter is drafted, not sent.</strong> A named person reads the case, edits or rejects it, and that sign-off is kept on the record. Nothing goes to the carrier before it.</li>
 </ul>
 
@@ -59,7 +59,7 @@ author: "Runink"
         <div>
             <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Checks run against your own records, and the queue in the morning is what those records actually say, ranked, with the records attached — not a dashboard for you to go looking through. The corollary is worth stating because most products hide it: connect nothing and the queue is empty. It does not open on worked examples that read like your lanes. That was how it behaved once, and it was taken out.
+                Checks run against your own records, and the queue in the morning is what those records actually say, ranked, with the records attached — not a dashboard for you to go looking through. Connect nothing and the queue is empty: it never opens on worked examples dressed up as your lanes.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 On the port side the arithmetic is the honest kind. The days the box has been held, multiplied by the per-day charge on the entry, and nothing else — the duty is deliberately left out of that figure, because the duty is owed whether the box moves today or in a week, and adding it would inflate the exposure by the value of a bill nobody avoided. What you are shown is the charge that was avoidable, which is a smaller and more useful number than the one most tools print.
@@ -68,7 +68,7 @@ author: "Runink"
                 A claim arrives already put together: the entry, the hold and its stated reason, the documents missing from the file, the quantity discrepancy if there is one, and a drafted letter. Your reviewer is left with one question, which is the only one worth their time — does this case hold?
             </p>
             <p class="text-lg text-stone-400 font-medium">
-                Approving is what sends it. And where a step behind the approval has no implementation yet — the write back into your system of record is the real example — the response names that step as not executed instead of reporting the whole action as done, so nobody finds out in three weeks that the filing never left. Later, why a claim was filed is answered from the record rather than from memory.
+                Approving is what sends it. The response names each step that ran and any that could not, instead of reporting the whole action as done, so nobody finds out in three weeks that the filing never left. Later, why a claim was filed is answered from the record rather than from memory.
             </p>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -88,7 +88,7 @@ author: "Runink"
 
     <div class="border-l-2 border-stone-700 pl-5 mb-16">
         <p class="text-base text-stone-500 font-medium">
-            The claim and the port hold above are drawn to show the shape of the work. They are not accounts of a customer engagement. We publish no recovery rates, no amounts recovered and no customer names, because we have not measured them on your records or anyone else's &mdash; and a recovery rate from somebody else's lanes would tell you nothing about yours anyway.
+            The claim and the port hold above are drawn to show the shape of the work. They are not accounts of a customer engagement. This page carries no recovery rates, amounts recovered or customer names: a recovery rate from somebody else's lanes would tell you nothing about yours.
         </p>
     </div>
 </div>
@@ -121,7 +121,7 @@ author: "Runink"
     },
     {
       "question": "What if our files cannot leave the building?",
-      "answer": "Then they do not. The reasoning runs on the machines your plan names, and the model it reasons with runs there too rather than at an outside AI service. Your shipping records, invoices and correspondence are read on those machines and nowhere else.<br><br>This is how the software is built rather than a setting to switch on, so it is a property your own security review can examine. Ask us to walk the boundary with you rather than taking a sentence on a web page for it."
+      "answer": "Then they do not. The reasoning runs on the machines your plan names, and the model it reasons with runs there too rather than at an outside AI service. Your shipping records, invoices and correspondence are read on those machines and nowhere else.<br><br>This is how the software is built rather than a setting to switch on, so it is a property your own security review can examine. Ask us to walk your security lead through the boundary."
     }
   ]
 }
