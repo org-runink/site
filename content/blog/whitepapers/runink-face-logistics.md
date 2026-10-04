@@ -15,7 +15,8 @@ blurb: Scattered across a dozen systems that were never designed to talk to each
   FACE assembles it, works out what the combined picture means, and produces a specific,
   reviewable recommendation with the underlying records attached — for a named person
   to approve.
-deck: 'Runink FACE reads your operational data, works out what is going wrong,
+deck: 'Runink FACE: Fulfilment Autonomous Claims Engine reads your operational data,
+  works out what is going wrong,
 
   and drafts the fix — the order to hold, the reroute, the declaration, the
 
@@ -114,7 +115,7 @@ owners:
 - role: Head of planning
   line: Safety margins are argued from your own numbers, not by seniority.
 - role: Chief information officer
-  line: A shorter security review, because the data stays on your machines.
+  line: A shorter security review, because no outside AI service reads the data.
 outcomes_heading: What Runink FACE changes
 outcomes:
 - A new instance shows you an empty queue. FACE arrives holding no findings about
@@ -144,8 +145,8 @@ coverage:
   url: /use-cases/responsive-reverse-logistics/
 - name: Cold chain, and what the yard camera already sees
   line: A frame from a yard or infrared camera, checked to be an image and read by
-    a vision model on hardware you control, against the handover record and the paperwork
-    the load travels with.
+    a vision model where FACE runs, not at an outside service, against the handover
+    record and the paperwork the load travels with.
   url: /use-cases/cold-chain-safety/
 - name: Route planning that keeps up with the day
   line: The plan that was right at six in the morning is not right by ten, and nobody
@@ -236,11 +237,12 @@ measures:
     drawing a line through them.
 foundations_heading: Two things that make the above possible
 foundations:
-- name: Your data stays on your machines
+- name: No outside AI service reads your data
   plain: 'The order files, the customs papers, the readings and the reasoning about
-    them stay on hardware you control, and the model FACE reasons with is one you
-    run: no third-party model dependency, and exactly one inference endpoint — the
-    one you point it at. Two paths do deliberately reach outside, because they must:
+    them stay on the machines your plan names (your own servers or cloud account, or
+    Runink''s shared machines), and the model FACE reasons with runs there too: no
+    third-party model dependency, and exactly one inference endpoint — the one set
+    up for your plan. Two paths do deliberately reach outside, because they must:
     a route request goes to the routing service you configure, and open-web research
     puts a query to a public search endpoint. Neither carries your records.'
   measured_by: 'The security review a shipper runs before it will let you hold its
@@ -250,8 +252,8 @@ foundations:
 - name: Open-web research with no account attached to it
   plain: When an answer needs the open web — a carrier's standing, a customs ruling,
     a published rate, a party you are unsure about shipping to — the search runs from
-    your own infrastructure through a public search endpoint, and your own browser
-    then fetches and reads the pages behind the results.
+    the machines your plan names through a public search endpoint, and a browser on
+    those same machines then fetches and reads the pages behind the results.
   measured_by: 'The search engine sees the query, as it would from any browser.
     What you get is the absence of an account: no API key, no vendor
     contract, no per-question bill, so no supplier is accumulating a searchable history
@@ -275,8 +277,9 @@ paper:
 
 ## What this document is
 
-This is a description of a working product, written for the person who has
-to decide whether to buy it.
+This is a description of a working product, Runink FACE: Fulfilment
+Autonomous Claims Engine, written for the person who has to decide whether
+to buy it.
 
 It contains no case studies, no customer names and no return-on-investment
 figures. Those are easy to write and impossible to check. What it explains
@@ -1112,7 +1115,8 @@ Operations do not happen at a desk. The product is reachable from the
 places the work actually occurs.
 
 **Voice.** A live voice agent, so an operator or driver can ask and instruct
-hands-free. Both the listening and the speaking run on your own machines.
+hands-free. Both the listening and the speaking run on the same machines as
+the rest of FACE.
 
 **Phone messaging.** A WhatsApp and SMS channel reaches the same agents
 from an ordinary phone, with no application to install on a driver's
@@ -1147,35 +1151,40 @@ approved, regardless of which door it came in through.
 
 ## Where it runs, and why that is a commercial matter
 
-FACE runs on hardware you control.
+FACE runs on the machines your licence names: your own servers on
+Enterprise, your own cloud account on Dedicated, or Runink's shared machines
+on Lite. No outside AI service is called on any of them.
 
 The reasoning that reads your operational data is performed by the
-platform's own reasoning software, running on your own machines. Your
+platform's own reasoning software, running on those same machines. Your
 logistics data, your contracts, your customer records and your claims
-correspondence are processed where they already sit.
+correspondence are processed there and sent to no outside AI service.
 
 ### Three consequences a buyer should weigh
 
 **The data question stops being a negotiation.** Much of every enterprise
 purchase cycle for analytical software is spent establishing where data goes
-and who else can see it. When the analysis runs on your own hardware, that
-conversation is a description rather than a negotiation, because the answer
-is *here*.
+and who else can see it. When the analysis runs on machines your licence
+names, with no outside AI service, that conversation is a description rather
+than a negotiation, because the answer is one place you can name.
 
-**The cost does not scale with how much you use it.** Because the reasoning
-runs on machines you already own, the cost of asking another question is
-the cost of the electricity. That changes behaviour: teams ask the small
+**Usage is not priced per query.** On Dedicated and Enterprise the reasoning
+runs in your own cloud account or on your own servers, so another question
+costs the computing it uses. On Lite it draws on the Compute Units the
+licence includes. That changes behaviour: teams ask the small
 questions, and the small questions are where the recoveries hide. Usage
 priced per query teaches people to ration their curiosity.
 
-**It survives your suppliers.** A system whose reasoning happens on your own
-hardware does not change its terms, its pricing or its availability because
-a third party revised a policy.
+**It survives your suppliers.** On every licence the reasoning calls no
+outside AI service, so it does not change its terms, its pricing or its
+availability because an AI provider revised a policy.
 
 ### The shape of an installation
 
-The same software runs on a single workstation for evaluation, and on one
-server or a small group of them inside your own walls for production.
+The same software runs on a single workstation for evaluation. For daily use
+it runs on one server or a small group of them inside your own walls on
+Enterprise, in your own cloud account on Dedicated, or on Runink's shared
+machines on Lite.
 There is no managed cloud database in the middle.
 
 Where no specialist graphics hardware is available, the reasoning runs on
@@ -1188,7 +1197,7 @@ product, and an overnight run has all night.
 
 The system's own operating records — connections, schedules, artifacts,
 approvals — are held in a small database that lives with the software.
-It is copied continuously to file storage you control, and restored
+It is copied continuously to file storage on those same machines, and restored
 automatically when the system starts. Keeping that consistent is the
 platform's job rather than a task on somebody's list.
 
@@ -1392,20 +1401,20 @@ close to the data rather than moving the data to the analysis.
 These are the questions that actually come up, in roughly the order they
 come up in. The answers are descriptions of how the product behaves rather
 than assurances, because a description can be checked in an afternoon on
-your own hardware and an assurance cannot.
+a workstation of your own and an assurance cannot.
 
 ### Does it need us to train it first?
 
 No. There is no training step, and there is nothing for you to label.
 
-The reasoning runs on a model held as a set of weight files on your own
-machine. Those files are the same on your first day and on your five
-hundredth. You can confirm that yourself by comparing them, which is a more
+The reasoning runs on a model held as a set of weight files on the machine
+FACE runs on. Those files are the same on your first day and on your five
+hundredth. On your own servers you can confirm that yourself by comparing them, which is a more
 useful kind of assurance than a sentence in a contract.
 
 What makes the output specific to your business is not training but
 **reading at the moment of the question**. Your documents, your records and
-your policies are indexed on your own machine. When a question is asked, the
+your policies are indexed on that same machine. When a question is asked, the
 passages that bear on it are retrieved and placed in front of the model as
 part of the question, with the source of each passage travelling alongside
 it. That is why every finding can name the record it came from: the record
@@ -1565,13 +1574,14 @@ the two answers that question wrongly and confidently.
 
 ### Where does our data live, and is it used to train anything?
 
-**It lives on your machines.** Records, files, the search index behind every
-answer, the credentials, and the authority that issues the platform's
-internal credentials are all held on hardware you control. There is no
-managed database run by somebody else holding your operational data. The
-system's own working records are kept in a small database beside the
-software and copied continuously into file storage you own, so the backup
-surface is one thing you already control rather than several you do not.
+**It lives on the machines your licence names.** Records, files, the search
+index behind every answer, the credentials, and the authority that issues
+the platform's internal credentials are all held there: your own servers on
+Enterprise, your own cloud account on Dedicated, Runink's shared machines on
+Lite. There is no managed database run by a third party holding your
+operational data. The system's own working records are kept in a small
+database beside the software and copied continuously into file storage on
+those same machines, so the backup surface is one thing rather than several.
 
 **It is not used to train anything.** No customer material is sent anywhere
 to be trained on, and there is no account with an outside model provider for
@@ -1631,7 +1641,7 @@ almost entirely on how quickly your side can produce a credential.
 | --- | --- | --- | --- |
 | 1 | One file: a spreadsheet of invoices, a folder of correspondence | Analysed directly, with no connection configured first | Findings on your own data, in the same session |
 | 2 | One credential, read-only, to the system holding the money | Connection created and tested on the screen; a recurring question set to run overnight | A populated queue the following morning |
-| 3 | Machines and a sign-in arrangement | The same software on your hardware, installed once and maintained after | The steady state |
+| 3 | The licence that fits, and a sign-in arrangement | The same software where that licence runs it: Runink's shared machines, your own cloud account or your own servers | The steady state |
 | 4 | The second system and the third | Each connection makes the previous ones more useful | Compounding, not waiting for completeness |
 
 In words: you can have a finding on your own data before any connection
@@ -1642,8 +1652,10 @@ widening, and widening pays immediately rather than at the end.
 **What we need from you** is short, and it is worth having ready before the
 first conversation rather than assembling it during the third.
 
-- **Machines you control**, with room for the model. Ordinary processors are
-  supported.
+- **A licence that fits where the work should run.** On Dedicated or
+  Enterprise, room for the model in your own cloud account or on your own
+  servers; ordinary processors are supported. Lite needs no machines of your
+  own.
 - **One read-only credential** for the system you want read first. Read-only
   is the right posture and we would rather you insisted on it.
 - **A sign-in arrangement**: your company identity provider or an
@@ -1755,11 +1767,13 @@ rather than a conversation.
 ### The chief information officer
 
 You are being asked to approve another system that wants a copy of the
-company's operational data. This one runs on your hardware, reads the
-systems you already own, replaces none of them, and its internal
+company's operational data. This one runs on your own servers or cloud
+account, or on Runink's shared machines on Lite, calls no outside AI
+service, reads the systems you already own, replaces none of them, and its internal
 components prove who they are to each other with short-lived credentials
 that are replaced on a cycle. The specific promise: the question your review
-opens with has a one-sentence answer, because the data does not go anywhere.
+opens with has a one-sentence answer, because the data goes nowhere beyond
+the machines your licence names.
 
 ### The chief executive
 
@@ -1907,11 +1921,12 @@ Recurring questions run overnight on an interval you set. The queue is
 populated when the team arrives. This is the steady state, and it is where
 the product stops being a project and becomes part of the day.
 
-### Production sits inside your own walls
+### Production runs where your licence says
 
-Production is the same software on one server or a small group of them,
-inside your own environment. Installations are declared once and maintained
-automatically thereafter.
+Production is the same software on the machines your licence names: one
+server or a small group of them inside your own environment on Enterprise,
+your own cloud account on Dedicated, or Runink's shared machines on Lite.
+Installations are declared once and maintained automatically thereafter.
 
 ### What it asks of your people
 
@@ -1933,8 +1948,9 @@ through the product itself.
 
 There is a usage view, and an operator can set a budget against it, which is
 what makes consumption a decision rather than a discovery at the end of a month.
-Because the reasoning runs on your own machines, it is a view of your own
-capacity rather than a meter you are billed against per question.
+On Dedicated and Enterprise it is a view of your own capacity rather than a
+meter you are billed against per question; on Lite it shows the Compute Units
+the licence includes.
 
 Where a quantity on that view has not been sampled, the response carries the
 reason it is absent rather than a zero that reads as a measured nothing — which
@@ -1960,9 +1976,10 @@ automation setup rather than an island in it.
 
 ### FACE within Runink
 
-FACE is one of Runink's products, each sold on its own. PULSE is a
-digital-marketing engine built the same way, and both run on Runink TIDE, the
-platform that makes the installation, identity and separation properties
+FACE is one of Runink's products, each sold on its own. Runink PULSE:
+Prescriptive Unified Lead & Social Engine is a digital-marketing engine built
+the same way, and both run on Runink TIDE: Trusted Intelligence for Developer
+& Data Experience, the platform that makes the installation, identity and separation properties
 described in this document consistent across them.
 
 ## The argument in one page
@@ -1997,10 +2014,10 @@ state with a reason attached rather than a zero or a plausible figure.
 asserts that the derived savings total is zero. That refusal is checkable, it is the hardest thing in this document to fake, and it is the
 reason to believe the rest of it.
 
-**It runs on your hardware.** Your operational data is processed where it
-already sits. The question a security review opens with — where does our
-material go — has a one-sentence answer, the cost of asking a question does not
-scale with curiosity, and the arrangement does not depend on a third party's
+**It runs where your licence says.** Your operational data is processed on
+your own servers or cloud account, or on Runink's shared machines to start,
+and no outside AI service is called. The question a security review opens with — where does our
+material go — has a one-sentence answer, usage is not priced per query, and the arrangement does not depend on a third party's
 terms.
 
 **Its controls are mapped to SOC 2.** The posture is SOC 2-oriented, with

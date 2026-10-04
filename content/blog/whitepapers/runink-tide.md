@@ -1,7 +1,7 @@
 ---
 title: "Runink TIDE — The operations layer for companies that keep their own data"
 aliases: ["/blog/whitepapers/runink-core/"]
-headline: "Run your software, your AI and your data on your own machines, and see all of it from one screen."
+headline: "Run your software, your AI and your data on your own servers or cloud account, or on Runink's shared machines to start, and see all of it from one screen."
 # The label the closing ask carries into the contact form, so an enquiry
 # arrives naming the paper it came from. `product:` is not usable for this —
 # two of the four papers are both "Runink TIDE".
@@ -24,21 +24,23 @@ weight: 20
 date: 2026-09-26T00:00:00Z
 source_pages: 23
 audience: "Executive, technology, data and risk stakeholders"
-blurb: "The operations layer a company runs on its own machines. One console shows whether the platform is healthy and your changes shipped, what your AI models and agents are allowed to do, what your data holds and where spending goes wrong, and turns a written brief into a working application with a person approving each step."
+blurb: "The operations layer a company runs on its own servers or cloud account, or on Runink's shared machines to start, with no outside AI service. One console shows whether the platform is healthy and your changes shipped, what your AI models and agents are allowed to do, what your data holds and where spending goes wrong, and turns a written brief into a working application with a person approving each step."
 deck: |
-  **Runink TIDE is the operations layer a company runs on machines it owns.**
-  It keeps the company's software healthy, governs the AI models and agents
-  that work inside it, watches the company's own data, and turns a written
-  brief into a working application. Its AI model runs on those same machines.
-  No outside AI service is called.
+  **Runink TIDE: Trusted Intelligence for Developer & Data Experience.** It is
+  the operations layer a company runs on its own servers or cloud account, or
+  on Runink's shared machines to start. It keeps the company's software
+  healthy, governs the AI models and agents that work inside it, watches the
+  company's own data, and turns a written brief into a working application.
+  Its AI model runs on the same machines as the rest of TIDE. No outside AI
+  service is called.
 
-  It is for companies whose information has to stay under their own control,
-  and whose small technical team looks after more software than any one
+  It is for companies that need a plain answer to where their information
+  goes, and whose small technical team looks after more software than any one
   person can hold in their head.
 
   **One console, five parts: Overview, DevEx, DataEx, Intelligence and FORGE.
-  This paper walks through every page of it.** To see it on your own
-  hardware, [book a consultation](/#contact).
+  This paper walks through every page of it.** To see it running,
+  [book a consultation](/#contact).
 register:
   - { page: 2,  title: "Executive summary" }
   - { page: 3,  title: "Why a company that keeps its own data needs this" }
@@ -60,20 +62,23 @@ register:
 
 ## Executive summary
 
-Runink TIDE is the layer beneath a company's software. It runs that software on
-machines the company owns. It shows one person, on one screen, what is happening
-across all of it. It keeps a record of every change a person makes, and anyone
-signed in can check that the record is intact.
+Runink TIDE: Trusted Intelligence for Developer & Data Experience is the layer
+beneath a company's software. It runs that software on the company's own
+servers or cloud account, or on Runink's shared machines for a first team. It
+shows one person, on one screen, what is happening across all of it. It keeps a
+record of every change a person makes, and anyone signed in can check that the
+record is intact.
 
 It also runs the company's own AI. The language model TIDE uses — the kind of
-system that reads and writes plain English — runs on the company's hardware. The
+system that reads and writes plain English — runs on those same machines. The
 automated helpers that review changes, sort reports and check rules use that
 model too. Nothing is sent to an outside AI service. That one fact turns a
 security review from a negotiation into a description.
 
-TIDE is a product in its own right, sold separately. Runink FACE and Runink
-PULSE are distinct products that work together with it: where a company runs
-them, TIDE is the layer they run on.
+TIDE is a product in its own right, sold separately. Two other Runink products
+work together with it, each sold on its own: Runink FACE: Fulfilment Autonomous
+Claims Engine, and Runink PULSE: Prescriptive Unified Lead & Social Engine.
+Where a company runs them, TIDE is the layer they run on.
 
 TIDE's console is split into five parts. Each answers one question.
 
@@ -145,10 +150,11 @@ stalls the deal.
 
 TIDE provides the common foundations once, for every application: somewhere to
 run, one way to prove identity, a way to reach company data, one place to look,
-and a way to get changes made. And it does all of it on the company's own
-machines, with the company's own model. The security question then has a short
-answer that holds up: the information goes to a machine you own, and stays
-there.
+and a way to get changes made. It does all of it on the machines the company's
+plan names, with a model that runs there too: the company's own servers or
+cloud account, or Runink's shared machines to start. The security question then
+has a short answer that holds up: the information goes to those machines and
+stays there, and no outside AI service is called.
 
 ## How the console is arranged
 
@@ -473,8 +479,8 @@ each application's agents have sent through the models, and the computing
 capacity allocated to each deployment. Anything not measured is shown as a gap
 with its reason.
 
-**Why it matters.** Because the models run on the company's own hardware, using
-them more does not open a bill that grows with every question. This page shows
+**Why it matters.** Because the models run where TIDE runs, with no outside AI
+service, using them more is not billed by the question. This page shows
 where that capacity goes, so sizing is a reading, not a guess.
 
 ### Connections
@@ -986,28 +992,31 @@ result, and the result is the reason to care.
 
 ### The model is yours
 
-TIDE runs its own language model on the company's own hardware. The assistant,
-the automated helpers, the coding sessions and the FORGE studio all use it. No
+TIDE runs its own language model on the machines TIDE runs on: the company's
+own servers or cloud account, or Runink's shared machines on Lite. The
+assistant, the automated helpers, the coding sessions and the FORGE studio all
+use it. No
 outside AI service is called, and no outside account is needed. A published list
 of outside AI libraries and their web addresses is checked against every change
 to the software, and a change that brings one in is stopped.
 
 **The result:** the question that stalls these deals — where does our
-information go — has a one-sentence answer. It goes to a machine you own and
-stays there. That answer opens doors to buyers who are otherwise closed: the
-regulated insurer, the public body, and the company whose contracts confine its
-customers' data.
+information go — has a one-sentence answer. It goes to the machines your plan
+names and stays there. That answer opens doors to buyers who are otherwise
+closed: the regulated insurer, the public body, and the company whose contracts
+confine its customers' data.
 
-**A second result is the shape of the cost.** The model runs on hardware the
-company already owns, so the cost of asking does not rise with every question.
-Budgeting becomes a capacity decision made once, not a usage bill read every
-month.
+**A second result is the shape of the cost.** On Dedicated and Enterprise the
+model runs in the company's own cloud account or on its own servers, so the cost
+of asking does not rise with every question. Budgeting becomes a capacity
+decision made once, not a usage bill read every month. On Lite, the team's work
+draws on a monthly allowance of Compute Units.
 
-### Everything else is yours too
+### Everything else stays there too
 
 Records, files, the authority that issues the platform's certificates, and the
-secrets are all held on the company's own machines. No outside database run by
-somebody else holds company information.
+secrets are all held on the same machines as the model. No outside database run
+by a third party holds company information.
 
 **The result:** the boundary is real. One outside service holding company data
 would make the whole claim conditional, and a claim with an exception in it does
@@ -1016,11 +1025,11 @@ not survive a procurement questionnaire.
 ### It runs the same way everywhere
 
 One command brings up the whole platform on a single workstation. One command
-puts it onto the machines a company owns. The arrangement is the same shape in
-both places.
+puts it onto a company's own servers. The arrangement is the same shape in both
+places.
 
-**The result:** a shorter evaluation. A prospect can run the real thing on their
-own hardware, without procurement and without a cut-down demo version. What they
+**The result:** a shorter evaluation. A prospect can run the real thing on a
+workstation of their own, without procurement and without a cut-down demo version. What they
 evaluate is what they buy.
 
 ### It removes what it created
@@ -1055,7 +1064,8 @@ only a few names can staff the on-call rota.
 
 Regulated finance, insurance, healthcare, public bodies, and any company under a
 contract that confines its customers' records. For these buyers, running
-everything on their own machines is the condition of the conversation.
+everything on their own servers or in their own cloud account, on the Enterprise
+or Dedicated plan, is the condition of the conversation.
 
 The sign of fit: a promising evaluation has ended at the question "and where
 does that run?"
@@ -1103,8 +1113,8 @@ them in the language of another.
 - **The engineering lead** opens Runs, Reviews and Deploy lineage, and watches
   one helper for a week before arming it.
 
-Each can reach their own answer on their own hardware, without committing to
-anything.
+Each can reach their own answer on a workstation of their own, without
+committing to anything.
 
 ## What adopting TIDE involves
 
@@ -1114,7 +1124,7 @@ a question the next step assumes.
 | | What you bring | The step | What it settles |
 | --- | --- | --- | --- |
 | 1 | One workstation | Run the whole platform on it with one command | Whether the screens can be trusted: which ones say they did not measure something |
-| 2 | Machines you own and your sign-in arrangement | Put the platform on them with one command, in the same shape | Nothing new. Same screens, more room |
+| 2 | The plan that fits, and your sign-in arrangement | Put the platform where that plan runs it: Runink's shared machines, your own cloud account or your own servers | Nothing new. Same screens, more room |
 | 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what Resolve shows about it | Whether TIDE reads your data the way your security lead needs |
 | 4 | Somebody outside the platform team | Have them request a deployment, and watch it expire | Whether useful work happens without the platform team in the loop |
 | 5 | One code repository | Switch on one helper and watch it before arming it | Whether the helpers save real time, judged on what they would have published |
@@ -1127,10 +1137,12 @@ arrangement. Look at Overview, the Harness and the Audit chain first. Together
 they show the honesty rule, the remedy habit and the record, which are what set
 TIDE apart from a dashboard.
 
-### Step two: put it on machines you own
+### Step two: put it where your plan runs it
 
-One command sets up the machines and installs the platform. From here the only
-things that change are size and who has access.
+On Lite it runs on Runink's shared machines. On Dedicated it runs in your own
+cloud account. On Enterprise, one command sets up your own servers and installs
+the platform. From here the only things that change are size and who has
+access.
 
 ### Step three: connect one real data source
 
@@ -1155,8 +1167,9 @@ are, the compliance check if written rules and real controls have drifted apart.
 
 ### What you need on your side
 
-- Machines you control, with room for the model. Ordinary processors work;
-  specialist accelerator chips are used where they are present.
+- On Dedicated or Enterprise, room for the model in your own cloud account or
+  on your own servers. Ordinary processors work; specialist accelerator chips
+  are used where they are present. Lite needs no machines of your own.
 - One named person to own the platform. The operating model is built so that one
   owner and the console are enough for ordinary running.
 - Your sign-in arrangement and the list of people allowed in.
@@ -1195,16 +1208,17 @@ where it runs, at three levels:
 - **A dedicated level** for a company running its estate on TIDE, in its own
   cloud account, priced per machine.
 - **An enterprise level** for deployments you host yourself on your own
-  premises, priced with you.
+  servers or cloud, priced with you.
 
 TIDE is sold on its own. Runink FACE and Runink PULSE each have their own
 subscription, and a TIDE plan and its allowance cover TIDE.
 
 Two things follow from this shape.
 
-**On your own machines, using the software more does not cost more.** There the
-model runs on the company's own hardware, so a team that finds heavy use for
-the assistant, the helpers or FORGE is not billed by the question.
+**Heavier use is not billed by the question.** On Dedicated and Enterprise the
+model runs in your own cloud account or on your own servers, so a team that
+finds heavy use for the assistant, the helpers or FORGE sees it as the computing
+it used. On Lite, that work draws on the team's allowance of Compute Units.
 
 **Capacity is tied to a purpose.** Every deployment carries an initiative and an
 owner from the moment it is requested, so every piece of capacity that is
@@ -1213,13 +1227,15 @@ running has somebody who asked for it and a reason it exists.
 ## Answers to the questions we are usually asked
 
 **Where does our information go?**
-To machines you own. The model, the records, the files and the certificate
-authority all run on your hardware. No outside service is called for AI.
+To the machines your plan names, and it stays there: Runink's shared machines
+on Lite, your own cloud account on Dedicated, your own servers or cloud on
+Enterprise. The model, the records, the files and the certificate authority all
+run there. No outside service is called for AI.
 
 **Is our material used to train anything?**
 No. Nothing is sent out to be trained on, and there is no account with an
 outside model provider for it to be sent to. What makes an answer specific to
-you is that your own material is indexed on your machines and the relevant parts
+you is that your own material is indexed where TIDE runs and the relevant parts
 are placed into the question when it is asked. Deleting a document removes its
 influence completely, because nothing is left behind in the model.
 
@@ -1271,7 +1287,7 @@ enough for ordinary running. Deployments come from a request and remove
 themselves when their lease ends.
 
 **How does it grow as we grow?**
-By adding machines. A new machine joins the installation and starts taking
+On Dedicated and Enterprise, by adding machines. A new machine joins the installation and starts taking
 work, and the Namespaces page shows what landed where. A machine can be set
 aside for one application so its work does not compete with anything else.
 
@@ -1285,7 +1301,8 @@ The most useful thing to do with this paper is to see TIDE running.
 
 TIDE runs on one machine, from one downloaded file, with one command. There is
 no environment to set up for you and nothing to sign before you see it work. The
-version on your workstation is the version that runs on your machines.
+version on your workstation is the version that runs on your servers or in your
+cloud account.
 
 **In an afternoon,** open Overview and notice which readings say they have not
 been measured. Open the Harness and read a remedy. Open the Audit chain and press
@@ -1294,15 +1311,15 @@ been measured. Open the Harness and read a remedy. Open the Audit chain and pres
 **In a day,** add one real data source. Try to change it as somebody who is not
 on the permitted list, and read the record that refusal leaves.
 
-**In a week,** put it on machines you own. Have somebody outside the platform
+**In a week,** put it where your plan runs it. Have somebody outside the platform
 team request a deployment and watch it expire. Switch on one helper and read
 what it would have published.
 
-At the end of that week you will have your own answers, from your own hardware,
+At the end of that week you will have your own answers, from your own records,
 in your own words. That is the basis on which we would like to be judged.
 
 ### Talk to us
 
-To see TIDE on your own hardware, or to talk about your estate,
+To see TIDE running, or to talk about your estate,
 [book a consultation](/#contact) at runink.org/#contact, or write to
 paes@runink.org.

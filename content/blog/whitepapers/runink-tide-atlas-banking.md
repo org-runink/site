@@ -18,11 +18,13 @@ deck: |
   expects the rule to be shown working rather than described.
 
   This paper takes those four problems in turn. For each one it names the
-  person who owns it, the Runink TIDE console pages that person would open,
+  person who owns it, the console pages of Runink TIDE: Trusted Intelligence
+  for Developer & Data Experience that person would open,
   and what each page puts in front of them.
 
-  **TIDE runs on hardware the bank owns, and so does the AI model it reasons
-  with.**
+  **TIDE runs on the bank's own servers or cloud account, or on Runink's
+  shared machines to start, and the AI model it reasons with runs there too.
+  No outside AI service is called.**
 register:
   - { page: 1, title: "Executive summary" }
   - { page: 2, title: "How the console is laid out" }
@@ -42,8 +44,9 @@ about it. The evidence exists somewhere. It is spread across the payment system,
 supplier file, the model inventory, the finance ledger and a shared drive, and it is
 assembled by hand when somebody asks.
 
-Runink TIDE is the operations layer a company runs on its own hardware to keep its software
-and its data healthy, governed and explainable. Its console is where a bank's people would
+Runink TIDE: Trusted Intelligence for Developer & Data Experience is the operations layer a
+company runs on its own servers or cloud account, or on Runink's shared machines to start,
+to keep its software and its data healthy, governed and explainable. Its console is where a bank's people would
 look at that evidence in one place, act on it, and leave a record of what they did.
 
 This paper does not describe TIDE in general. The
@@ -200,10 +203,11 @@ adds a new third party: the vendor, and often the vendor's own model provider be
 
 ### What changes, and why
 
-The AI stops being a third party. TIDE's model runs on the bank's own hardware. There is no
+The AI stops being a third party. TIDE's model runs where TIDE runs: on Dedicated and
+Enterprise, in the bank's own cloud account or on its own servers. On every plan there is no
 outside AI service in the path, so no payment record, supplier contract or draft finding is
-sent to one to be read. A third-party review of TIDE's AI becomes a review of software the
-bank runs, described by its model card, rather than a negotiation over another company's
+sent to one to be read. A third-party review of TIDE's AI becomes a review of TIDE's own
+software, described by its model card, rather than a negotiation over another company's
 data handling.
 
 The supplier question gets a structural answer. Resolve and Lineage show which systems hold
@@ -371,8 +375,10 @@ Two points matter most to these readers.
 describes a decision. A record written at the time of the decision is the decision. The
 audit chain and the decision logs are the second kind.
 
-**The record is held by the bank.** TIDE and its AI model run on hardware the bank owns.
-The audit chain, the findings, the verdicts and the credentials stay on the bank's systems.
+**The record stays where TIDE runs.** On Dedicated and Enterprise, TIDE and its AI model run
+in the bank's own cloud account or on its own servers, so the audit chain, the findings, the
+verdicts and the credentials stay on the bank's systems. On every plan, none of it goes to
+an outside AI service.
 
 This paper describes what the console does, and a bank's own control framework decides what
 that evidence is worth to it.

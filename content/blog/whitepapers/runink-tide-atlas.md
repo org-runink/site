@@ -15,12 +15,14 @@ weight: 40
 date: 2026-09-26T00:00:00Z
 source_pages: 22
 audience: "Finance, project, data, operations, audit, risk and compliance leaders"
-blurb: "Atlas, from Logical Leap, is a set of screens for watching capital spending and data quality. TIDE runs those screens as its Intelligence pages, on the company's own hardware and the company's own data. This paper goes through each Atlas page in turn, then shows how the rest of TIDE adds a second opinion, a record in which any edit shows, and a person's approval before anything changes."
+blurb: "Atlas, from Logical Leap, is a set of screens for watching capital spending and data quality. TIDE runs those screens as its Intelligence pages, against the company's own data, on the company's own servers or cloud account, or on Runink's shared machines to start, with no outside AI service. This paper goes through each Atlas page in turn, then shows how the rest of TIDE adds a second opinion, a record in which any edit shows, and a person's approval before anything changes."
 deck: |
   Atlas, from Logical Leap, is a set of screens for watching capital spending
-  and the quality of the data behind it. Runink TIDE runs software on machines
-  a company owns, with a language model the company runs itself and a record
-  of every change and who made it.
+  and the quality of the data behind it. Runink TIDE: Trusted Intelligence for
+  Developer & Data Experience runs software on a company's own servers or
+  cloud account, or on Runink's shared machines to start, with a language
+  model that runs there too, no outside AI service, and a record of every
+  change and who made it.
 
   TIDE's **Intelligence** pages bring Atlas's screens into TIDE and feed them
   with the company's own records. This paper walks through each Atlas page: the
@@ -76,9 +78,11 @@ capital spending and the quality of the data behind it. It checks each record ag
 rules a company has written down, ranks what it finds by what is at stake, and keeps an
 unbroken trail from the original plan to the money spent.
 
-**TIDE runs it on the company's own ground.** TIDE's Intelligence pages are Atlas's
-screens and Atlas's capital-spending rule book, running inside TIDE on the company's own
-hardware. Every figure on those pages is computed from the company's own records. Nothing
+**TIDE runs it where the company's plan puts it.** TIDE's Intelligence pages are
+Atlas's screens and Atlas's capital-spending rule book, running inside Runink TIDE:
+Trusted Intelligence for Developer & Data Experience, on the company's own servers or
+cloud account, or on Runink's shared machines to start, with no outside AI service.
+Every figure on those pages is computed from the company's own records. Nothing
 is sample data, and a figure that cannot be computed says so, with the reason, instead of
 showing a zero.
 
@@ -243,8 +247,9 @@ Logical Leap arranges access to Atlas through a walkthrough with its team.
 
 ### Runink TIDE
 
-TIDE is the layer a company runs on its own hardware to keep its software and its data
-healthy, governed and explainable. Its console sorts the work into categories. The two
+TIDE is the layer a company runs on its own servers or cloud account, or on Runink's
+shared machines to start, to keep its software and its data healthy, governed and
+explainable. Its console sorts the work into categories. The two
 that matter most here are:
 
 - **Intelligence**: what the company's data holds, how good it is, and where spending or
@@ -260,8 +265,8 @@ own data](/blog/whitepapers/runink-tide/).
 ### How the two fit together
 
 Logical Leap designed Atlas's screens and its capital-spending rule book for the people
-who do this work every day. TIDE runs both inside its console, on the company's own
-machines, under TIDE's sign-in, and against the company's own records.
+who do this work every day. TIDE runs both inside its console, on the machines the
+company's plan names, under TIDE's sign-in, and against the company's own records.
 
 That split is deliberate. Capital oversight has its own vocabulary: plan, approve,
 procure, spend, capitalise; commitment, variance, lead time, Go-Live. Logical Leap built
@@ -638,8 +643,8 @@ is it used?
 
 **Who uses it.** The data platform owner, the data architect and data stewards.
 
-Resolve is one capability that Runink TIDE and Runink FACE share: the same page, doing the
-same work, in both products.
+Resolve is one capability that Runink TIDE and Runink FACE: Fulfilment Autonomous Claims
+Engine share: the same page, doing the same work, in both products.
 
 **What it lets you do.** Resolve is the one place TIDE reaches into a company system, and
 only when an administrator presses a button and confirms it. The confirmation says what
@@ -780,7 +785,7 @@ nothing is unable to judge, never a rate of zero.
 
 ### The model is asked one question, and never told the answer
 
-Only a claim in prose reaches TIDE's model, running on the company's own hardware. It is
+Only a claim in prose reaches TIDE's model, running where TIDE runs. It is
 asked one question: does this evidence support this claim? It is never told what the
 submitter concluded, and the software gives it no way to be told. The step from "the
 evidence supports this" to "TIDE concurs" happens afterwards, in code. So the model can
@@ -884,7 +889,7 @@ sign in as somebody not on the list, try to change a source, watch the refusal b
 read the record it left.
 
 **Is our material used to train a model?** No. The model is a set of files read from disk
-on the company's own machine. There is no training step, no step that sends material out
+on the machine TIDE runs on. There is no training step, no step that sends material out
 to be trained on, and no account with a model provider for it to go to. A published list
 of outside AI libraries and their addresses is checked against the source before every
 change is accepted, and a change that added one would be refused.
@@ -984,25 +989,28 @@ would rather be judged on that measurement than on any figure either one publish
 
 ## What it is built on, and why that matters
 
-### The reasoning runs on your hardware
+### The reasoning runs where TIDE runs
 
-TIDE runs its own model on machines the company owns. The judge and every agent that uses
+TIDE runs its own model on the machines the company's plan names: its own servers or cloud
+account, or Runink's shared machines on Lite. The judge and every agent that uses
 a model are served by it. No outside service is called for reasoning.
 
 **So the security review becomes a description.** The question that stalls these
-evaluations, "where does our information go?", has a short answer: to a machine you own,
-and it stays there.
+evaluations, "where does our information go?", has a short answer: to the machines your plan
+names, and it stays there.
 
-**And the cost has a different shape.** Because the model runs on the company's hardware,
-the cost of reasoning does not rise with each item examined. That matters here, because the
-point is to examine every record rather than a sample. Budgeting becomes a question of
-capacity, settled once, rather than a bill that grows every month.
+**And the cost has a different shape.** On Dedicated and Enterprise the model runs in the
+company's own cloud account or on its own servers, so the cost of reasoning does not rise
+with each item examined. That matters here, because the point is to examine every record
+rather than a sample. Budgeting becomes a question of capacity, settled once, rather than a
+bill that grows every month. On Lite, the work draws on a monthly allowance of Compute
+Units.
 
 ### The records stay there too
 
 The capital records, rule decisions, playbooks, the audit record and the console's own data
-are held on the company's own systems and encrypted there. There is no outside database
-holding company information.
+are held on the same machines as the model and encrypted there. There is no outside
+database run by a third party holding company information.
 
 ### Every change has a name on it
 

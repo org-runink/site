@@ -54,9 +54,9 @@ headline: "Papers that open with what can be proven."
 description: "Long-form documents on Runink FACE, Runink PULSE and Runink TIDE, three separate products. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
 deck: |
   Long-form documents, each about one Runink product or about an arrangement
-  with a partner. The ones at the top are about **Runink FACE**. **Runink PULSE** is a different product, for market analysis and
+  with a partner. The ones at the top are about **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** is a different product, for market analysis and
   marketing, and its paper describes its own work rather than FACE's.
-  **Runink TIDE** is a product in its own right, sold separately. It is the
+  **Runink TIDE: Trusted Intelligence for Developer & Data Experience** is a product in its own right, sold separately. It is the
   operations layer, on your servers, your cloud or ours, that keeps your Runink
   applications and your own data in order, and the honest answer to where your
   data is processed and who can see it. Its paper is where this site describes

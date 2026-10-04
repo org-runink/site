@@ -9,9 +9,9 @@ headline: "Des documents qui commencent par ce qui peut être prouvé."
 description: "Documents détaillés sur Runink FACE, Runink PULSE et Runink TIDE, trois produits distincts. Pas d'études de cas, pas de noms de clients, pas de chiffres de retour sur investissement : le mécanisme, et sur quoi repose chaque affirmation."
 deck: |
   Des documents détaillés, chacun consacré à un produit Runink ou à un accord
-  avec un partenaire. Les premiers portent sur **Runink FACE**. **Runink PULSE** est un produit différent, d'analyse de marché et de
+  avec un partenaire. Les premiers portent sur **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** est un produit différent, d'analyse de marché et de
   marketing, et son document décrit son propre travail, pas celui de FACE.
-  **Runink TIDE** est un produit à part entière, vendu séparément. C'est la
+  **Runink TIDE: Trusted Intelligence for Developer & Data Experience** est un produit à part entière, vendu séparément. C'est la
   couche d'exploitation, sur vos serveurs, dans votre cloud ou dans le nôtre,
   qui tient en ordre vos applications Runink et vos propres données, et la réponse
   honnête à la question de savoir où vos données sont traitées et qui peut les
