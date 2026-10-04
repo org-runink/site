@@ -910,8 +910,7 @@ continues for the work it is genuinely better at, only the replaced portion is a
 Count that portion, not the invoice.
 
 **Forgetting the review time that replaces the production time.** The team's day changes
-rather than empties. Somebody still reads every draft, and reading a complete draft takes
-real hours. Measure them in your first month and put them on the cost side.
+rather than empties. Reviewing complete drafts takes real hours. Measure them in your first month and put them on the cost side.
 
 **Comparing across a period when something else changed.** A quarter that also carried a
 rebrand, a new product or a new hire is not a clean comparison. Choose a period where this is

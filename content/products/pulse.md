@@ -84,7 +84,7 @@ image: "/images/products/pulse-og.jpg"
       <p class="text-sm text-ink-2 leading-relaxed">See a customer cooling before the renewal, not after.</p>
     </div>
   </div>
-  <p class="text-sm text-ink-3 mt-8">Nothing publishes until you switch it on. Your customer lists stay on the machines your plan names, and no outside AI service reads them.</p>
+  <p class="text-sm text-ink-3 mt-8">No channel publishes until you switch it on. Your customer lists stay on the machines your plan names, and no outside AI service reads them.</p>
 </div>
 {{< /section-container >}}
 
@@ -133,7 +133,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 
 <div class="max-w-4xl mx-auto px-4 mb-20">
 <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">Four jobs that eat your week, done from one brief.</h2>
-<p class="text-xl text-ink-2 leading-relaxed">Each stage feeds the next from the same reading of your business. Nobody writes a fresh brief for every tool. What PULSE drafts goes to a review queue, where a person decides what leaves.</p>
+<p class="text-xl text-ink-2 leading-relaxed">Each stage feeds the next from the same reading of your business. Nobody writes a fresh brief for every tool. What PULSE drafts goes to a review queue, and your team decides which channels it may go out on.</p>
 </div>
 
 <div class="max-w-7xl mx-auto px-4 space-y-32">
@@ -180,7 +180,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         <ul class="space-y-6 mt-8">
             <li><span class="text-signal font-bold block mb-1">Finding the companies</span> <span class="text-slate-300">Describe the kind of customer you want. PULSE searches the public web for companies that match. For each one it drafts a cold email, a call script and a LinkedIn message, written from what it read about that company. Leads move through a pipeline: new, contacted, qualified, won or lost. They sync with HubSpot, so sales keeps working where it already works.</span></li>
             <li><span class="text-signal font-bold block mb-1">Knowing the market</span> <span class="text-slate-300">Topics trending in your sector, competitor channels worth watching, and the podcasts, publications and events where your subject belongs. Mark a result useful or not, and the next round learns from it.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Answering on WhatsApp</span> <span class="text-slate-300">Connect WhatsApp through your own Twilio account, and PULSE can answer messages from people already in your HubSpot contacts, at any hour. Each incoming message is treated as information, never as an instruction, and each reply is checked before it is sent. The owner decides whether PULSE answers on its own. One setting turns those replies off.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Answering on WhatsApp</span> <span class="text-slate-300">Connect WhatsApp through your own Twilio account, and PULSE can answer messages from people already in your HubSpot contacts, at any hour. Each incoming message is treated as information, never as an instruction, and each reply is checked before it is sent. Once WhatsApp is connected, PULSE answers on its own, and one setting turns those replies off.</span></li>
             <li><span class="text-signal font-bold block mb-1">Phone calls</span> <span class="text-slate-300">A voice sales agent talks with a lead in the console, listening and replying as the call happens. For outbound calls, PULSE connects to a phone exchange you host yourself, so there is no per-minute calling service to pay.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Fewer sales hours spent building lists and writing first drafts. No per-minute calling bill. And revenue that leaks today, every time a lead waits too long for an answer.</span></li>
         </ul>
@@ -200,7 +200,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Drafts wait for your review</span> <span class="text-slate-300">Each piece carries one status: draft, waiting for review, approved, rejected, published, archived. At any moment you see what is waiting on you and what actually went out.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Every draft has a status</span> <span class="text-slate-300">Each piece carries one status: draft, waiting for review, approved, rejected, published, archived. At any moment you see what is waiting on you and what actually went out.</span></li>
             <li><span class="text-signal font-bold block mb-1">A plan for the month</span> <span class="text-slate-300">PULSE writes a channel-by-channel plan, then turns it into a dated schedule: what publishes, on which channel, in which week.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Agency hours for routine copy. Evenings an owner spends writing. A separate scheduler, design tool and writing tool, each with its own seat price.</span></li>
         </ul>
@@ -236,8 +236,8 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 {{< section-container class="py-20 bg-stone-900" >}}
 <div class="max-w-5xl mx-auto px-4">
     <div class="mb-16 max-w-3xl">
-        <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">Nothing goes out until you say so.</h2>
-        <p class="text-xl text-ink-2 leading-relaxed">PULSE drafts. A person on your team sends. Every draft, whether a post, a cold email, a call script or a whitepaper, arrives with a status and an approve and a reject. The switch that decides whether anything leaves is separate, and it starts off. The one exception is WhatsApp replies, and only when the owner leaves them on.</p>
+        <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">Your team decides what goes out.</h2>
+        <p class="text-xl text-ink-2 leading-relaxed">PULSE drafts, and your team decides what goes out. Every draft, whether a post, a cold email, a call script or a whitepaper, arrives with a status and an approve and a reject. The switch that decides whether anything leaves on a channel is separate, and it starts off. WhatsApp replies are the exception: once WhatsApp is connected, PULSE answers on its own until the owner turns that setting off.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -309,11 +309,11 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "How do I answer new leads faster?",
-            "answer": "Take the first part of the work off your people. Describe the customer you want, and PULSE finds companies that match and drafts a cold email, a call script and a LinkedIn message for each. Connect WhatsApp through your own Twilio account, and it can answer people already in your HubSpot contacts at any hour, with each reply checked before it is sent. The owner decides whether it answers on its own, and one setting turns those replies off."
+            "answer": "Take the first part of the work off your people. Describe the customer you want, and PULSE finds companies that match and drafts a cold email, a call script and a LinkedIn message for each. Connect WhatsApp through your own Twilio account, and it can answer people already in your HubSpot contacts at any hour, with each reply checked before it is sent. Once WhatsApp is connected it answers on its own, and one setting turns those replies off."
         },
         {
             "question": "How do I spend less on an agency for routine posts?",
-            "answer": "Draft the routine work yourselves, from one brief. PULSE turns one brief into LinkedIn posts, blog articles, whitepapers and courses, and writes a dated plan of what publishes on which channel in which week. Every draft waits for review, and nothing goes out until someone switches that channel on. The seat price stays the same however many pieces you write."
+            "answer": "Draft the routine work yourselves, from one brief. PULSE turns one brief into LinkedIn posts, blog articles, whitepapers and courses, and writes a dated plan of what publishes on which channel in which week. Every draft carries a review status, and nothing goes out on a channel until someone switches that channel on. The seat price stays the same however many pieces you write."
         },
         {
             "question": "Can we run PULSE on our own servers?",
@@ -321,7 +321,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "Does PULSE publish on its own, or do we?",
-            "answer": "You do. Every draft — a post, a cold email, a call script, a whitepaper — carries a status and an approve or reject. The control that decides whether anything leaves is separate. Every publishing channel stays off until someone switches it on, with one main switch and one per channel. A channel that is off sends nothing, whatever status a draft carries. WhatsApp replies are the one thing PULSE can send by itself, only to people already in your HubSpot contacts, and the owner can turn them off with one setting."
+            "answer": "You decide. Every draft — a post, a cold email, a call script, a whitepaper — carries a status and an approve or reject. The control that decides whether anything leaves is separate. Every publishing channel stays off until someone switches it on, with one main switch and one per channel. A channel that is off sends nothing, whatever status a draft carries, and switching a channel on is the decision that lets material go out on it. WhatsApp replies go out on their own once WhatsApp is connected, only to people already in your HubSpot contacts, and the owner can turn them off with one setting."
         },
         {
             "question": "Does it need training on our business first?",

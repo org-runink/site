@@ -14,8 +14,8 @@ author: "Runink"
 <h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Vos enregistrements sont triés selon ce qu'ils sont, pas selon leur provenance.</strong> Deux tables qui parlent d'expéditions relèvent toutes les deux de la logistique, que l'une soit arrivée de votre système d'entrepôt et l'autre sous forme de tableur que quelqu'un envoie par courriel le vendredi.</li>
-<li><strong class="text-stone-200">La carte est dérivée, pas devinée.</strong> Les domaines et les liens entre eux sont établis à partir de la structure de vos propres fichiers, par des règles fixes &mdash; aucun modèle, aucune recherche web, rien ne sort de la maison à cette étape. Les mêmes fichiers produisent toujours la même carte.</li>
-<li><strong class="text-stone-200">Un domaine qui n'a pas pu être évalué est marqué comme non évalué.</strong> Pas comme conforme. Les mots sont explicites : ce n'est pas un constat que le domaine va bien. Et sans aucune donnée connectée, il dit qu'il n'y a encore rien à cartographier plutôt que de dessiner un diagramme vide.</li>
+<li><strong class="text-stone-200">La carte est dérivée, pas devinée.</strong> Les domaines et les liens entre eux sont établis par des règles fixes à partir des enregistrements que renvoient vos sources connectées : les noms de leurs colonnes et un petit échantillon de lignes. Aucun modèle ni aucune recherche web n'interviennent à cette étape, et les mêmes enregistrements produisent toujours la même carte.</li>
+<li><strong class="text-stone-200">Un domaine qui n'a pas pu être évalué est marqué comme non évalué.</strong> Pas comme conforme. Les mots sont explicites : ce n'est pas un constat que le domaine va bien.</li>
 </ul>
 
 
@@ -57,7 +57,7 @@ author: "Runink"
                 Ensuite les liens. Là où deux domaines partagent le terrain sur lequel ils se tiennent, le lien est tracé. Là où un domaine ne partage aucun nom de colonne avec quoi que ce soit d'autre, il reçoit tout de même une relation plutôt que de flotter au bord du diagramme avec l'air d'être hors sujet &mdash; un domaine qui paraît déconnecté est un domaine sur lequel personne ne pose de question, et ce silence a généralement tort.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Tout cela est établi par des règles fixes à partir de la forme de vos fichiers. Aucun modèle n'est interrogé, aucune recherche ne sort, rien ne traverse le réseau à cette étape, et les mêmes fichiers produisent la même carte chaque fois. Un modèle est employé ensuite pour ajouter du commentaire, et ce qu'il ajoute est clairement le commentaire, pas la structure. La structure est quelque chose que vous pouvez re-dériver et vérifier. Nos propres fichiers de configuration, qui se trouvent au même endroit que vos données, sont délibérément exclus, parce qu'un outil qui vous présente son propre ordonnanceur comme votre domaine d'exploitation ne décrit pas votre activité.
+                Tout cela est établi par des règles fixes à partir de la forme des enregistrements que renvoient vos connexions. Aucun modèle n'est interrogé et aucune recherche ne sort à cette étape, et les mêmes enregistrements produisent la même carte chaque fois. La structure est quelque chose que vous pouvez re-dériver et vérifier.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Par-dessus la carte, chaque domaine est passé en revue : dans quel état il est, où sont les constats, et pour chaque constat sa catégorie, sa gravité, la règle à laquelle il se rapporte et un remède suggéré, avec le système dont chaque morceau provient. Quand un domaine ne peut pas être évalué, la réponse est qu'il n'a pas été évalué, et pourquoi &mdash; dit avec ces mots, parce que &laquo;&nbsp;nous n'avons pas regardé&nbsp;&raquo; et &laquo;&nbsp;nous avons regardé et tout va bien&nbsp;&raquo; ne sont pas la même phrase, et se lisent de la même couleur sur tous les tableaux de bord jamais construits.
@@ -80,7 +80,7 @@ author: "Runink"
             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">Le directeur supply chain.</strong> Aujourd'hui l'image est assemblée pour la revue mensuelle, ou une fois que quelque chose a assez mal tourné pour mériter une matinée. Ce qui change, c'est que le même ensemble de faits se trouve derrière la question et derrière la réponse, si bien qu'une décision se discute depuis un seul endroit et non depuis trois exports.</li>
                 <li><strong class="text-stone-200">Le responsable d'exploitation.</strong> Aujourd'hui une question ordinaire, ce sont quatre connexions, quatre façons de nommer le même site et quatre idées de ce qu'est une semaine. Ce qui change, c'est que les enregistrements sont classés selon ce dont ils parlent, si bien que le même type de fait atterrit au même endroit qu'il vienne d'un ERP, d'un système d'entrepôt, d'un système de transport ou d'un tableur que quelqu'un envoie le vendredi.</li>
-                <li><strong class="text-stone-200">L'analyste sur qui tout le monde compte.</strong> Aujourd'hui la correspondance entre un code de site dans un système et un nom de dépôt dans un autre n'est écrite nulle part. Elle est retenue, et pendant que cette personne est en congé la question ne peut pas être traitée. Ce qui change, c'est que la carte est dérivée de la structure de vos propres fichiers par des règles fixes, donc c'est quelque chose que n'importe qui peut redériver et vérifier.</li>
+                <li><strong class="text-stone-200">L'analyste sur qui tout le monde compte.</strong> Aujourd'hui la correspondance entre un code de site dans un système et un nom de dépôt dans un autre n'est écrite nulle part. Elle est retenue, et pendant que cette personne est en congé la question ne peut pas être traitée. Ce qui change, c'est que la carte est dérivée de la structure de vos propres enregistrements par des règles fixes, donc c'est quelque chose que n'importe qui peut redériver et vérifier.</li>
             </ul>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -105,7 +105,7 @@ author: "Runink"
   "questions": [
     {
       "question": "Comment la carte est-elle établie ?",
-      "answer": "À partir de la structure de vos propres fichiers, par des règles fixes. Aucun modèle n'est interrogé, aucune recherche ne sort et rien ne traverse le réseau à cette étape, si bien que les mêmes fichiers produisent toujours la même carte. Un modèle est utilisé ensuite pour ajouter un commentaire, et ce qu'il ajoute est clairement le commentaire et non la structure."
+      "answer": "À partir de la structure des enregistrements que renvoient vos sources connectées, par des règles fixes : les noms des colonnes, et un petit échantillon de lignes pour trouver où deux domaines se rejoignent. Aucun modèle n'est interrogé et aucune recherche ne sort à cette étape, si bien que les mêmes enregistrements produisent toujours la même carte."
     },
     {
       "question": "Que deviennent les tables qui n'entrent nulle part ?",

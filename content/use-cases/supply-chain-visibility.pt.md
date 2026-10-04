@@ -14,8 +14,8 @@ author: "Runink"
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Os seus registros são separados pelo que eles são, não por de onde vieram.</strong> Duas tabelas que falam de embarques pertencem as duas à logística, tanto se uma chegou do seu sistema de armazém quanto se a outra chegou como uma planilha que alguém manda por e-mail nas sextas.</li>
-<li><strong class="text-stone-200">O mapa é derivado, não chutado.</strong> Os domínios e as ligações entre eles são calculados a partir da estrutura dos seus próprios arquivos, por regras fixas &mdash; nenhum modelo, nenhuma busca na web, nada sai do prédio nessa etapa. Os mesmos arquivos sempre produzem o mesmo mapa.</li>
-<li><strong class="text-stone-200">Um domínio que não pôde ser avaliado é marcado como não avaliado.</strong> Não como aprovado. As palavras são explícitas: isto não é um achado de que a área está bem. E sem nenhum dado conectado, ele diz que ainda não há nada para mapear, em vez de desenhar um diagrama vazio.</li>
+<li><strong class="text-stone-200">O mapa é derivado, não chutado.</strong> Os domínios e as ligações entre eles são calculados por regras fixas a partir dos registros que as suas fontes conectadas devolvem: os nomes das colunas e uma pequena amostra de linhas. Nenhum modelo e nenhuma busca na web entram nessa etapa, e os mesmos registros sempre produzem o mesmo mapa.</li>
+<li><strong class="text-stone-200">Um domínio que não pôde ser avaliado é marcado como não avaliado.</strong> Não como aprovado. As palavras são explícitas: isto não é um achado de que a área está bem.</li>
 </ul>
 
 
@@ -57,7 +57,7 @@ author: "Runink"
                 Depois as ligações. Onde duas áreas dividem o terreno em que pisam, a ligação é desenhada. Onde uma área não divide nome de coluna nenhum com nada, ela ainda assim ganha uma relação, em vez de ficar flutuando na borda do diagrama com cara de irrelevante &mdash; um domínio que parece desconectado é um domínio sobre o qual ninguém faz pergunta, e esse silêncio em geral está errado.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                Tudo isso é calculado por regras fixas a partir do formato dos seus arquivos. Nenhum modelo é consultado, nenhuma busca sai, nada cruza a rede nessa etapa, e os mesmos arquivos produzem o mesmo mapa toda vez. Um modelo é usado depois para acrescentar comentário, e o que ele acrescenta é claramente o comentário, e não a estrutura. A estrutura é algo que você pode derivar de novo e conferir. Os nossos próprios arquivos de configuração, que ficam no mesmo lugar que os seus dados, são excluídos de propósito, porque uma ferramenta que te apresenta o próprio agendador dela como o seu domínio de operações não está descrevendo o seu negócio.
+                Tudo isso é calculado por regras fixas a partir do formato dos registros que as suas conexões devolvem. Nenhum modelo é consultado e nenhuma busca sai nessa etapa, e os mesmos registros produzem o mesmo mapa toda vez. A estrutura é algo que você pode derivar de novo e conferir.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Por cima do mapa, cada área é revisada: em que estado ela está, onde estão os achados e, para cada achado, a categoria dele, o quanto é grave, a regra a que se refere e um remédio sugerido, junto com de qual sistema veio cada parte. Quando uma área não pode ser avaliada, a resposta é que ela não foi avaliada e por quê &mdash; dito com essas palavras, porque &ldquo;não olhamos&rdquo; e &ldquo;olhamos e está tudo bem&rdquo; não são a mesma frase, e são lidas com a mesma cor em todo painel que já foi construído.
@@ -80,7 +80,7 @@ author: "Runink"
             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">O diretor de cadeia de suprimentos.</strong> Hoje o retrato é montado para a revisão mensal, ou depois que alguma coisa deu errado o bastante para valer uma manhã. O que muda é que o mesmo conjunto de fatos está por trás da pergunta e por trás da resposta, então uma decisão é discutida a partir de um lugar só e não de três exportações.</li>
                 <li><strong class="text-stone-200">O gerente de operações.</strong> Hoje uma pergunta comum são quatro logins, quatro jeitos de nomear o mesmo local e quatro ideias do que é uma semana. O que muda é que os registros são colocados pelo assunto de que tratam, então o mesmo tipo de fato cai no mesmo lugar venha de um ERP, de um sistema de armazém, de um sistema de transporte ou de uma planilha que alguém manda às sextas.</li>
-                <li><strong class="text-stone-200">O analista de quem todo mundo depende.</strong> Hoje a correspondência entre um código de local num sistema e o nome de um depósito em outro não está escrita em lugar nenhum. Ela é lembrada, e enquanto essa pessoa está de férias a pergunta não tem como ser respondida. O que muda é que o mapa é derivado da estrutura dos seus próprios arquivos por regras fixas, então é algo que qualquer um consegue derivar de novo e conferir.</li>
+                <li><strong class="text-stone-200">O analista de quem todo mundo depende.</strong> Hoje a correspondência entre um código de local num sistema e o nome de um depósito em outro não está escrita em lugar nenhum. Ela é lembrada, e enquanto essa pessoa está de férias a pergunta não tem como ser respondida. O que muda é que o mapa é derivado da estrutura dos seus próprios registros por regras fixas, então é algo que qualquer um consegue derivar de novo e conferir.</li>
             </ul>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -105,7 +105,7 @@ author: "Runink"
   "questions": [
     {
       "question": "Como o mapa é montado?",
-      "answer": "A partir da estrutura dos seus próprios arquivos, por regras fixas. Nenhum modelo é consultado, nenhuma busca sai e nada atravessa a rede nessa etapa, então os mesmos arquivos produzem o mesmo mapa sempre. Depois um modelo é usado para acrescentar comentário, e o que ele acrescenta é claramente o comentário e não a estrutura."
+      "answer": "A partir da estrutura dos registros que as suas fontes conectadas devolvem, por regras fixas: os nomes das colunas, e uma pequena amostra de linhas para achar onde duas áreas se juntam. Nenhum modelo é consultado e nenhuma busca sai nessa etapa, então os mesmos registros produzem o mesmo mapa sempre."
     },
     {
       "question": "O que acontece com as tabelas que não encaixam em lugar nenhum?",

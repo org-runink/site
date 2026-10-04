@@ -14,8 +14,8 @@ author: "Runink"
 <h2 id="in-short" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">In Short</h2>
 <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6 mb-12">
 <li><strong class="text-stone-200">Your records are sorted by what they are, not by where they came from.</strong> Two tables about shipments both belong to logistics whether one arrived from your warehouse system and the other as a spreadsheet somebody emails on Fridays.</li>
-<li><strong class="text-stone-200">The map is derived, not guessed.</strong> The domains and the joins between them are worked out from the structure of your own files by fixed rules — no model, no web search, nothing leaving the building for that step. The same files always produce the same map.</li>
-<li><strong class="text-stone-200">A domain it could not assess is marked as not assessed.</strong> Not as a pass. The words are explicit: this is not a finding that the area is fine. And with no data connected, it says there is nothing to map yet rather than drawing an empty diagram.</li>
+<li><strong class="text-stone-200">The map is derived, not guessed.</strong> The domains and the joins between them are worked out by fixed rules from the records your connected sources return: their column names and a small sample of rows. No model and no web search take part in that step, and the same records always produce the same map.</li>
+<li><strong class="text-stone-200">A domain it could not assess is marked as not assessed.</strong> Not as a pass. The words are explicit: this is not a finding that the area is fine.</li>
 </ul>
 
 
@@ -57,7 +57,7 @@ author: "Runink"
                 Then the joins. Where two areas share the ground they stand on, the link is drawn. Where an area shares no column name with anything else, it still gets a relationship rather than being left floating on the edge of the diagram looking irrelevant — a domain that appears unconnected is a domain nobody asks a question about, and that silence is usually wrong.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
-                All of that is worked out by fixed rules from the shape of your files. No model is asked, no search goes out, nothing crosses the network for that step, and the same files produce the same map every time. A model is used afterwards to add commentary, and what it adds is clearly the commentary rather than the structure. The structure is something you can re-derive and check. Our own configuration files, which sit in the same place as your data, are deliberately excluded, because a tool that reports its own scheduler to you as your operations domain is not describing your business.
+                All of that is worked out by fixed rules from the shape of the records your connections return. No model is asked and no search goes out for that step, and the same records produce the same map every time. The structure is something you can re-derive and check.
             </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 On top of the map, each area is reviewed: what state it is in, where the findings are, and for each finding its category, how serious it is, the rule it relates to and a suggested remedy, along with which system each part of it came from. When an area cannot be assessed, the answer is that it was not assessed and why — stated in those words, because "we did not look" and "we looked and it is fine" are not the same sentence and get read as the same colour on every dashboard ever built.
@@ -80,7 +80,7 @@ author: "Runink"
             <ul class="text-lg text-stone-400 font-medium space-y-4 list-disc pl-6">
                 <li><strong class="text-stone-200">The supply chain director.</strong> Today the picture gets assembled for the monthly review, or once something has gone badly enough to be worth a morning. What changes is that the same set of facts sits behind the question and behind the answer, so a decision is argued from one place rather than from three exports.</li>
                 <li><strong class="text-stone-200">The operations manager.</strong> Today one ordinary question means four logins, four ways of naming the same site and four ideas of what a week is. What changes is that records are placed by what they are about, so the same kind of fact lands in the same place whether it came from an ERP, a warehouse system, a transport system or a spreadsheet somebody emails on Fridays.</li>
-                <li><strong class="text-stone-200">The analyst everybody relies on.</strong> Today the mapping between a site code in one system and a depot name in another is not written down anywhere. It is remembered, and while that person is on leave the question cannot be answered at all. What changes is that the map is derived from the structure of your own files by fixed rules, so it is something anyone can re-derive and check.</li>
+                <li><strong class="text-stone-200">The analyst everybody relies on.</strong> Today the mapping between a site code in one system and a depot name in another is not written down anywhere. It is remembered, and while that person is on leave the question cannot be answered at all. What changes is that the map is derived from the structure of your own records by fixed rules, so it is something anyone can re-derive and check.</li>
             </ul>
         </div>
         <div class="bg-sheet p-8 rounded-lg border border-stone-800/80 shadow-2xl">
@@ -105,7 +105,7 @@ author: "Runink"
   "questions": [
     {
       "question": "How is the map worked out?",
-      "answer": "From the structure of your own files, by fixed rules. No model is asked, no search goes out and nothing crosses the network for that step, so the same files produce the same map every time. A model is used afterwards to add commentary, and what it adds is clearly the commentary rather than the structure."
+      "answer": "From the structure of the records your connected sources return, by fixed rules: column names, and a small sample of rows to find where two areas join. No model is asked and no search goes out for that step, so the same records produce the same map every time."
     },
     {
       "question": "What happens to the tables that do not fit anywhere?",
