@@ -36,6 +36,17 @@ enableGitInfo = true
 # NOTE: this requires full git history at build time. A shallow clone silently
 # yields no git info and falls back to mtime again, which is exactly the state
 # this was in — .github/workflows/deploy.yaml now checks out with fetch-depth: 0.
+
+# The French /fr/industries/ list has no content file of its own (only
+# industries/marketing.fr.md is translated), so it cannot carry front matter.
+# This gives it the same share card as the English industries index, which
+# sets the image in its own front matter. The path matches the section page
+# only, never the industry pages under it.
+[[cascade]]
+  image = "/images/og/industries-og.jpg"
+  [cascade._target]
+    path = "/industries"
+
 [frontmatter]
   lastmod = [":git", "lastmod", "date"]
 

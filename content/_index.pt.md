@@ -11,6 +11,9 @@ title: "Runink"
 # description, at most 155. Visible copy on the page is unchanged by these two.
 seo_title: "Runink | Pegue cobranças indevidas e reclamações a tempo"
 seo_description: "Cobranças indevidas pagas, reclamações vencidas, regras quebradas. O Runink FACE lê os registros que você já tem e redige a correção para alguém aprovar."
+# Share card (og:image), drawn by scripts/og-cards/render.mjs from the English
+# hero. One English card serves all four languages.
+image: "/images/og/home-og.jpg"
 description: "Você descobre quando já é tarde para contestar. Um contêiner fica parado porque um documento está errado e a diária começa nesse mesmo dia. O Runink FACE lê os registros que os seus sistemas já guardam, compara cada um com a regra que o rege e coloca uma ação redigida diante de quem decide."
 # THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
 #

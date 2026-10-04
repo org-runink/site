@@ -1,0 +1,60 @@
+{
+  "cards": [
+    {
+      "id": "home",
+      "page": "content/_index.md (and es, fr, pt)",
+      "title": "Runink",
+      "subtitle": "FACE · TIDE · PULSE · River",
+      "headline": ["You find out when", "it is too late to argue."],
+      "out": ["static/images/og/home-og.jpg"]
+    },
+    {
+      "id": "site",
+      "page": "hugo.toml params.images: the card a page without its own image falls back to",
+      "title": "Runink",
+      "subtitle": "FACE · TIDE · PULSE · River",
+      "headline": ["You find out when", "it is too late to argue."],
+      "out": ["static/images/og/runink-og.jpg"]
+    },
+    {
+      "id": "industries",
+      "page": "content/industries/_index.md",
+      "title": "Runink industries",
+      "subtitle": "Logistics · Insurance · Banking · Telecom · Marketing",
+      "headline": ["Find your operation,", "not our product names."],
+      "out": ["static/images/og/industries-og.jpg"]
+    },
+    {
+      "id": "products",
+      "page": "content/products/_index.md",
+      "title": "Runink products",
+      "subtitle": "FACE · TIDE · PULSE · River",
+      "headline": ["Separate products. Each one can run", "on your own servers or cloud account."],
+      "out": ["static/images/og/products-og.jpg", "static/images/products/products-og.jpg"]
+    },
+    {
+      "id": "tide",
+      "page": "content/products/tide.md, content/products/tide-pricing.md",
+      "title": "Runink TIDE",
+      "subtitle": "TIDE · Trusted Intelligence for Developer & Data Experience",
+      "headline": ["Know what broke, what shipped", "and which number is right."],
+      "out": ["static/images/products/tide-og.jpg"]
+    },
+    {
+      "id": "pulse",
+      "page": "content/products/pulse.md",
+      "title": "Runink PULSE",
+      "subtitle": "PULSE · Prescriptive Unified Lead & Social Engine",
+      "headline": ["The lead who wrote at nine at night", "bought from whoever answered first."],
+      "out": ["static/images/products/pulse-og.jpg"]
+    },
+    {
+      "id": "face",
+      "page": "content/products/face.md",
+      "title": "Runink FACE",
+      "subtitle": "FACE · for logistics, freight, claims and operations teams",
+      "headline": ["The claim nobody had a morning for is", "still money you are owed."],
+      "out": ["static/images/og/face-og.jpg"]
+    }
+  ]
+}

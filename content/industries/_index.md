@@ -6,6 +6,9 @@ title: "Industries"
 # description, at most 155. Visible copy on the page is unchanged by these two.
 seo_title: "Runink by industry: logistics, insurance, banking, telecom"
 seo_description: "Five industries, three Runink products. Find the page that reads like your week, see which product fits it, and the measures to track your own figures."
+# Share card (og:image), drawn by scripts/og-cards/render.mjs from this page's own
+# `headline` below.
+image: "/images/og/industries-og.jpg"
 description: "Five industries, three products. Runink FACE covers logistics and supply chain and insurance; Runink PULSE covers marketing; banking and telecom describe the Runink TIDE and Atlas oversight arrangement. Find the one that reads like your week, and see which product it is."
 # Hugo resolves layouts by TYPE. The section directory is already named
 # "industries", so type defaults correctly, but it is set explicitly here and

@@ -11,6 +11,9 @@ title: "Runink"
 # description, at most 155. Visible copy on the page is unchanged by these two.
 seo_title: "Runink | Repérez surfacturations et réclamations à temps"
 seo_description: "Surfacturations payées, réclamations expirées, règles enfreintes. Runink FACE lit vos données existantes et rédige la correction qu'une personne approuve."
+# Share card (og:image), drawn by scripts/og-cards/render.mjs from the English
+# hero. One English card serves all four languages.
+image: "/images/og/home-og.jpg"
 description: "Vous l'apprenez quand il est trop tard pour contester. Un conteneur attend parce qu'un document est faux et les frais courent dès ce jour-là. Runink FACE lit les enregistrements que vos systèmes détiennent déjà, compare chacun à la règle qui le régit et place une action rédigée devant la personne qui décide."
 # THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
 #

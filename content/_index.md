@@ -27,6 +27,9 @@ title: "Runink"
 # description, at most 155. Visible copy on the page is unchanged by these two.
 seo_title: "Runink | Catch overcharges and expiring claims in time"
 seo_description: "Overcharges paid, claims left to expire, rules broken on a busy shift. Runink FACE reads the records you keep and drafts the fix for a person to approve."
+# Share card (og:image), drawn by scripts/og-cards/render.mjs from the English
+# hero. One English card serves all four languages.
+image: "/images/og/home-og.jpg"
 description: "You find out when it is too late to argue. A container sits because one form is wrong and the charge starts that day. Runink FACE reads the records your systems already hold, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision."
 # THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
 #
