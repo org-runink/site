@@ -197,7 +197,7 @@ adds a new third party: the vendor, and often the vendor's own model provider be
 | **Intelligence › Resolve** | The estate grouped into business domains, with every link between datasets marked as declared by the source, inferred from the data, or named as a guess. It also shows where what a source declares about itself disagrees with what its data shows. For a supplier question such as "which datasets could this provider's systems read?", this is where the answer starts. |
 | **Intelligence › Lineage** | Where data moves: from each registered source, through the application that extracts it, to where it lands. A link is drawn only where movement was observed, never guessed, and governance findings sit on the nodes they concern. |
 | **DataEx › Model cards** | The AI inside TIDE, described the way a supplier review asks: where the model came from, its licence, its intended use, its known limits and the evidence for them, beside what is actually running. The health mark is green only when the two agree. |
-| **DataEx › Policy & ReBAC** | The access lists for each kind of privileged change, such as changing a data connection or ending someone else's session, how many people are on each, and whether you are one of them. |
+| **DataEx › Policy & ReBAC** | The named lists of people allowed to make each kind of privileged change, such as changing a data connection or ending someone else's session: how many people are on each list, and whether you are on it — never who else is. It also shows who holds which role inside each deployment, and until when. |
 | **DataEx › Secrets & PKI** | The certificate authority that vouches for each of the platform's internal services, and the console's own sign-in settings. |
 | **DevEx › Audit chain** | Every connection added, changed or removed, and every attempt that was refused, with the person and the time. |
 
@@ -367,7 +367,7 @@ every chapter above.
 | **DevEx › Audit chain** | Every privileged change in the console, whether it was allowed, refused or failed, with the person, the time, the action and the outcome. Each entry carries a fingerprint computed over the one before it, so a later edit to any entry shows. "Verify now" walks the whole chain link by link and says where a break is. Anyone signed in can run that check, even a person who is not allowed to read the entries themselves. |
 | **DevEx › Session admins** | The short list of people who may read the full audit trail and end another person's session. The list cannot be emptied, since nobody could then undo it, and every change to it is recorded before it takes effect. |
 | **DevEx › Reviews** | The history of every review the platform runs, with findings by severity and the evidence for each, so a reviewer can see what was found and when without asking. |
-| **DataEx › Policy & ReBAC** | For each kind of privileged change, how many people may make it, and whether the reader is one of them. |
+| **DataEx › Policy & ReBAC** | For each kind of privileged change, the named list of people allowed to make it: how many are on it, and whether the reader is one of them. It also shows who holds which role inside each deployment, and until when. |
 
 Two points matter most to these readers.
 
