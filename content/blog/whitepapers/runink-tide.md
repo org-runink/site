@@ -571,13 +571,12 @@ a decision made once at installation and forgotten.
 
 **Who uses it.** The security lead and internal audit.
 
-**What it shows.** ReBAC stands for relationship-based access control: rules
-about who may act on what. The page lists the named groups of people allowed to
-sign in, to arm agents, to change data connections, to make changes on the
-Intelligence pages, and to end other people's sessions. For each list it shows
-how many people are on it, what happens if it is left empty, and whether *you*
-are on it — never who else is. It also shows the access granted inside each
-deployment.
+**What it shows.** The named lists of people allowed to sign in, to arm agents,
+to change data connections, to make changes on the Intelligence pages, and to
+end other people's sessions. For each list it shows how many people are on it,
+what happens if it is left empty, and whether *you* are on it — never who else
+is. It also shows the role-based grants inside each deployment: who holds which
+role, and until when.
 
 **Why it matters.** Being signed in and being allowed are two different things.
 Plenty of people should be able to see that a connection to the finance
@@ -1246,8 +1245,9 @@ it. The Harness takes an action only after a person confirms it, and records it
 before it happens. FORGE files nothing until a person presses send.
 
 **Who can change a connection to one of our systems?**
-Only people on the list shown in Policy & ReBAC. Everyone else is refused, and
-the refusal is recorded in the Audit chain with their name.
+The people on the connection-admins list shown in Policy & ReBAC. When that list
+is set, everyone else is refused, and the refusal is recorded in the Audit chain
+with their name.
 
 **How do we know the record has not been altered?**
 Open the Audit chain and press *Verify now*. The console walks every record and
