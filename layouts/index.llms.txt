@@ -22,9 +22,6 @@
 
 > {{ .Site.Params.organization_description | default .Site.Params.description }}
 
-Runink TIDE was called Runink CORE until October 2026; links to the old
-/products/core/ address still arrive at the TIDE page.
-
 ## What each product is
 
 {{ range $products }}{{ with site.GetPage . }}
