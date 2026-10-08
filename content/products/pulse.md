@@ -38,6 +38,18 @@ next_about: "Runink PULSE"
 # (assets/figures/whitepapers/pulse-one-brief.svg) — a diagram, not a screenshot,
 # and it holds no third-party data.
 #
+# Updated 2026-10-08 for what pulse main ships (e3244a4), each line checked in the
+# pulse code: the one-line audit ("One line to start", pulse#258,
+# grpc/cmd/audit_pipeline.go), the daily LinkedIn draft with its copy button
+# (pulse#251, grpc/cmd/linkedin_draft.go), audit research kept on the Market view
+# with its source and date and guest shows joining the influencer list (pulse#255,
+# grpc/cmd/radar_hydration.go), the owner-named publishers (pulse#253,
+# grpc/cmd/publisher_allowlist.go), and outbound calls starting switched off
+# (pulse#253, grpc/cmd/lead_server.go). The paper was not changed.
+#
+# TODO(screenshot): the "Audit of example.com" card from the assistant, mid-run,
+# beside "One line to start". Only once a screenshot exists with no third-party data.
+#
 # English only, like /river/ and /downloads/, so no translation is left behind; the
 # homepage card that links here falls back to this page on /es/, /fr/ and /pt/ and
 # says the page is in English.
@@ -149,6 +161,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         </div>
         <ul class="space-y-6 mt-8">
             <li><span class="text-signal font-bold block mb-1">Site Audit</span> <span class="text-slate-300">Each measure is a set of checks you can read. Can search engines read your pages? How fast do they load? Who links to you? Is there something to click and a way to buy? When some data is missing, that measure is set aside. Something nobody could measure does not lower your score.</span></li>
+            <li><span class="text-signal font-bold block mb-1">One line to start</span> <span class="text-slate-300">Type "Audit" and your web address. PULSE reads your site, scores it and writes the diagnosis. Then it fills in the rest from that one reading: drafts waiting for your approval, a draft campaign, a 30-day follow-up plan, customer profiles, market research and the first leads. Each step shows where its result came from: read on the web, or worked out from what PULSE read.</span></li>
             <li><span class="text-signal font-bold block mb-1">Your channels, read together</span> <span class="text-slate-300">Your website, LinkedIn, Instagram and TikTok, turned into one written business analysis. Export it and put it in front of your partners or your board.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Fewer outside audits bought from an agency or consultant. Fewer hours spent guessing which fix matters most.</span></li>
         </ul>
@@ -179,9 +192,9 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         </div>
         <ul class="space-y-6 mt-8">
             <li><span class="text-signal font-bold block mb-1">Finding the companies</span> <span class="text-slate-300">Describe the kind of customer you want. PULSE searches the public web for companies that match. For each one it drafts a cold email, a call script and a LinkedIn message, written from what it read about that company. Leads move through a pipeline: new, contacted, qualified, won or lost. They sync with HubSpot, so sales keeps working where it already works.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Knowing the market</span> <span class="text-slate-300">Topics trending in your sector, competitor channels worth watching, and the podcasts, publications and events where your subject belongs. Mark a result useful or not, and the next round learns from it.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Knowing the market</span> <span class="text-slate-300">Topics trending in your sector, competitor channels worth watching, and the podcasts, publications and events where your subject belongs. What an audit finds stays on the Market view, each item with the site it was found on and the date. Shows worth a guest spot also join your influencer list, scored by how well they fit your subject. Mark a result useful or not, and the next round learns from it.</span></li>
             <li><span class="text-signal font-bold block mb-1">Answering on WhatsApp</span> <span class="text-slate-300">Connect WhatsApp through your own Twilio account, and PULSE can answer messages from people already in your HubSpot contacts, at any hour. Each incoming message is treated as information, never as an instruction, and each reply is checked before it is sent. Once WhatsApp is connected, PULSE answers on its own, and one setting turns those replies off.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Phone calls</span> <span class="text-slate-300">A voice sales agent talks with a lead in the console, listening and replying as the call happens. For outbound calls, PULSE connects to a phone exchange you host yourself, so there is no per-minute calling service to pay.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Phone calls</span> <span class="text-slate-300">A voice sales agent talks with a lead in the console, listening and replying as the call happens. For outbound calls, PULSE connects to a phone exchange you host yourself, so there is no per-minute calling service to pay. Outbound calling starts switched off: an administrator turns it on, and only people with editing rights place calls.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Fewer sales hours spent building lists and writing first drafts. No per-minute calling bill. And revenue that leaks today, every time a lead waits too long for an answer.</span></li>
         </ul>
     </div>
@@ -201,6 +214,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         </div>
         <ul class="space-y-6 mt-8">
             <li><span class="text-signal font-bold block mb-1">Every draft has a status</span> <span class="text-slate-300">Each piece carries one status: draft, waiting for review, approved, rejected, published, archived. At any moment you see what is waiting on you and what actually went out.</span></li>
+            <li><span class="text-signal font-bold block mb-1">A LinkedIn post every day</span> <span class="text-slate-300">For each active campaign, PULSE drafts one LinkedIn post a day and puts it in your review queue. Copy it with one click and post it from your own profile.</span></li>
             <li><span class="text-signal font-bold block mb-1">A plan for the month</span> <span class="text-slate-300">PULSE writes a channel-by-channel plan, then turns it into a dated schedule: what publishes, on which channel, in which week.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Agency hours for routine copy. Evenings an owner spends writing. A separate scheduler, design tool and writing tool, each with its own seat price.</span></li>
         </ul>
@@ -243,7 +257,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">Channels start switched off</h3>
-            <p class="text-slate-300">One main switch, then one per channel, decides what may publish. A channel that is off sends nothing, even an approved draft. Approving a draft says the content is right. Switching a channel on says it may go out.</p>
+            <p class="text-slate-300">One main switch, then one per channel, decides what may publish. A channel that is off sends nothing, even an approved draft. Approving a draft says the content is right. Switching a channel on says it may go out. On the company's own LinkedIn, blog and podcast, only the people the owner names can publish.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">You watch it being written</h3>
