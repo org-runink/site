@@ -2,7 +2,7 @@
 title: "Testar um Plano Antes de se Comprometer"
 description: "Um porto fecha e você tem um dia para escolher uma rota nova. Enuncie a mudança como uma hipótese, junto com as regras que ela toca, e receba o caso aberto — com quais regras ela colide, em que ordem, e o que alguém precisaria acreditar para o plano se sustentar. A decisão fica com a pessoa que responde por ela."
 layout: "use_case"
-badge: "Motor de Hipóteses"
+badge: "Swarm Intelligence"
 badgeColor: "#ec4899"
 product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
@@ -59,6 +59,9 @@ author: "Runink"
         </div>
         <div>
             <h2 id="o-que-acontece-no-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">O Que Acontece No Lugar</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Isso acontece no <strong class="text-stone-200">Swarm Intelligence</strong>, em Simulate no FACE. Vários agentes trabalham juntos a mesma hipótese, e os cenários em andamento ficam lado a lado, para que a sala possa compará-los. Ao lado, o <strong class="text-stone-200">Causal Matrix</strong> mostra o que move o quê na sua operação e o que muda quando um desses fatores é alterado de propósito &mdash; útil quando a pergunta é menos qual regra uma mudança atinge e mais o que ela põe em movimento.
+            </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Você enuncia a mudança como uma hipótese e entrega a ele as regras que governam aquilo que você está mudando &mdash; pontos de pedido, prazos de entrega, compromissos de serviço, a premissa de reserva. Ele raciocina sobre essas regras e devolve uma leitura ordenada do que decorre daí, com cada consequência amarrada à regra de que ela saiu.
             </p>

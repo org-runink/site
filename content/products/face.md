@@ -5,7 +5,11 @@ title: "Runink FACE"
 # description, at most 155. Visible copy on the page is unchanged by these two.
 seo_title: "Runink FACE: freight overcharges and claims, caught in time"
 seo_description: "For freight, claims and operations teams. Runink FACE reads your invoices and claim files, finds the overcharge and the expiring claim, and drafts the fix."
-image: "/images/face/cockpit.png"
+# No share image: the earlier one (/images/face/cockpit.png) showed retired UI, so
+# this page falls back to the site card until a current screenshot exists.
+#
+# Feature sections follow the FACE left rail as it is today (2026-10-10): Reconcile,
+# Fetch, Simulate, Twins. If the rail changes, change this page with it.
 description: "For logistics, freight, claims and operations teams. FACE reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the broken rule, and drafts the next step for a named person to approve. It runs on your own servers or cloud account, or on Runink's shared machines to start, and no outside AI service is called."
 layout: "landing"
 # /products/ used to be this page's alias while the section index was not
@@ -136,66 +140,98 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
 
 {{< /section-container >}}
 
-{{< section-container class="py-10" >}}
+{{< section-container class="py-10" id="inside-face" >}}
 
 <div class="max-w-4xl mx-auto px-4 mb-20">
-<h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">Nine kinds of work, in three groups your operation already knows.</h2>
-<p class="text-xl text-ink-2 leading-relaxed">What is coming and how it moves. What happens when it goes wrong. And being able to show, afterwards, why you did what you did.</p>
+<h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">One menu, four sections: Reconcile, Fetch, Simulate, Twins.</h2>
+<p class="text-xl text-ink-2 leading-relaxed">FACE has one menu, down the left of the screen, and nothing else to find your way through. Reconcile shows where your records stand. Fetch brings them in. Simulate tests a change before you make it. Twins puts the result on a map and in front of the person who approves it. Your account and billing sit at the foot of the same menu.</p>
 </div>
 
 <div class="max-w-7xl mx-auto px-4 space-y-32">
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-    <div>
-        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">1. The forward flow</div>
-        <h3 class="text-4xl font-bold text-white mb-6">Plan it, hold it, move it.</h3>
+    <div class="md:col-span-2">
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">1. Reconcile</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Where your records stand, on one page.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                Three questions decide the week: how much is coming, whether it is on the shelf, and how it gets there. Planning, buying and dispatch usually answer them in three systems, on three different days. When the answers disagree, the fix is air freight.
+                Reconcile is the page FACE opens on. Its first line says how many business areas were read, what was found, and what to do about it. Below that, the same page goes as deep as you want to read. There is no second report to ask for.
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Demand forecasting</span> <span class="text-slate-300">Your own order history is put through the steps a statistician would run by hand. Two kinds of forecast are tried, and the one that did better on your past data wins. What comes back names the method, the test it was chosen by, and the points that did not fit. With fewer than five data points it declines and says so. The planner argues from a stated method, not from seniority, and nobody is paid to rebuild it next quarter.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Inventory fulfilment</span> <span class="text-slate-300">Stock and fulfilment records are read from the systems that hold them — your database, your warehouse platform, your ERP, your spreadsheets, your file storage. They are set against the orders you have already promised. A shortfall shows up while ordering is still routine, before it becomes air freight. Every one of those reads is read-only by design: the query is checked before it is sent, so a connection cannot write to your system of record. The F in FACE is fulfilment.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Route optimisation</span> <span class="text-slate-300">A lane is sent to the routing service you configure, and the distance and time it returns come back with the request. If no routing service is set up, or it returns nothing, the answer is the word unavailable. You never get a blank card a dispatcher could read as a route of zero.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Reconcile</span> <span class="text-slate-300">Each business area your records cover — supply, orders, claims, finance — gets a score on six counts. Is the data sound? Are the fields filled in? Can each figure be traced to where it came from? Is it current? Is it covered by a policy? What does it cost to keep? Next to it, a matrix shows how those areas connect to each other. Then rules: which of your rules are actually enforced in your systems, and which are only written down somewhere. Last, readiness, in three groups: how mature your data is, how ready it is for AI, and what it costs to run in the cloud.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Entities</span> <span class="text-slate-300">The things your records are about — orders, suppliers, sites, shipments, assets — found in whatever source holds them and joined into one list, even when the systems behind them were never joined. Filter by kind, or search by name. The list stays current as the records change.</span></li>
         </ul>
-    </div>
-    <div class="relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-signal-fill to-signal-fill-hover opacity-25 blur transition duration-1000 group-hover:opacity-50"></div>
-        {{< figure src="/images/face/cockpit.png" alt="The cockpit's evidence panel: citations, saved hypotheses, active rules and the action queue, each named and each stated as empty on an instance with nothing connected" class="relative rounded-lg shadow-2xl border border-white/10" >}}
+        <!-- SCREENSHOT: Reconcile — the Reconcile landing page: the header line (areas read, findings, measures to take), the domain posture rings, the cross-domain relational matrix and the readiness indicators grouped by category -->
     </div>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-    <div class="order-1 md:order-2 md:col-span-2">
-        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">2. When it goes wrong</div>
-        <h3 class="text-4xl font-bold text-white mb-6">The exception arrives named.</h3>
+    <div class="md:col-span-2">
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">2. Fetch</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Bring in what you already run, and choose what stays on.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                Three kinds of bad news: damage on site, goods coming back, and money being claimed. Each is written down somewhere before anybody acts. Each has its own path through FACE, not a note stuck to an order.
+                Fetch is where FACE reads your systems. You decide which sources it reads and which machines do the work, each with its own on and off switch. While a fetch runs, a card in the middle of the screen shows each step as it happens and how it ended. Open its reasoning if you want to see why.
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Reactive logistics</span> <span class="text-slate-300">A picture reaches FACE one of three ways: a photo taken on a handheld at the dock, text a device has already read off a label, or a video feed you point it at. FACE names what was damaged and where — the pallet, the crate, the container door — not just a severity score. It can then raise an alert on the screen everyone is watching, and the alert says exactly what it is: a request, sent to whoever is subscribed. A sensor type FACE does not recognise is refused rather than quietly filed as a camera.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Reverse logistics</span> <span class="text-slate-300">A return is sorted on its own record: what came back, what condition it is in, and where it should go next. Returns have their own path, because the cost of a return is decided in the hour somebody grades it.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Insurance underwriting and claims</span> <span class="text-slate-300">Claims, reserves, premiums, deductibles and settlements are records FACE reads like any other: a claim is a reserve against a policy. It assembles the file and drafts the action. It does not make the underwriting decision — an adjuster does, on the file FACE put in front of them.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Fetch</span> <span class="text-slate-300">Ask a question or give an instruction in plain words, or start from a suggested one. Your active connections and the machines that run the work are shown as cards, each with an Active switch. Cameras, devices, handheld readers and live sensors appear here as connections like any other: a photo taken at the dock, a label a device has already read, a video feed you point it at. Every run is kept in a history, step by step, so you can check later what it read and what it did.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Connections</span> <span class="text-slate-300">Every source FACE reads: databases and data warehouses, business software, logistics systems, files, web pages, and live streams — GPS trackers, RFID tags and other equipment that reports as it goes. Cameras, devices, handheld readers and live sensors connect here too. Credentials are sealed when you enter them, and you can test a connection before you rely on it. Every database read is read-only by design: the query is checked before it is sent, so a connection cannot write to your system of record.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Knowledge</span> <span class="text-slate-300">Your documents and what FACE knows from them, in one place. Add files and search them. A spreadsheet is read properly — the cells, the formulas behind them and the named ranges — because that is where the working usually is. From a scanned page, FACE pulls out the tables, the filled-in fields and the ticked boxes, on the machines FACE runs on, not at an outside service. Where a page comes back unusable, it says so instead of returning a confident blank.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Schedules</span> <span class="text-slate-300">Set a fetch up once and it runs when you choose: the Monday report nobody has to rebuild by hand. A scheduled run shows the same step-by-step card and keeps the same record as one you start yourself.</span></li>
         </ul>
+        <!-- SCREENSHOT: Fetch — the Fetch page: the question box with fetch starters, the Active connections and Compute runners cards with their Active switches, and the execution history with one run's phases -->
     </div>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-    <div>
-        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">3. Before you commit, and after you are asked</div>
-        <h3 class="text-4xl font-bold text-white mb-6">Being able to show the reasoning.</h3>
+    <div class="md:col-span-2">
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">3. Simulate</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Test a change before you commit to it.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                Two of the hardest conversations in an operation are the one before a change and the one months after it. Both need the same thing: the records the decision rested on, still joined up. Without them, you pay somebody to dig them out again.
+                Two of the hardest conversations in an operation are the one before a change and the one months after it. Both need the same thing: the records the decision rested on, still joined up. Simulate keeps them joined, and none of it changes anything in your systems.
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Supply chain management</span> <span class="text-slate-300">Your orders, suppliers, sites and shipments are joined into one picture, even when the systems behind them were never joined. That picture stays current as the records change.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Test a change before you commit to it</span> <span class="text-slate-300">State a change — a lane a week late, a supplier dropped, a different reserve — and the rules it touches. FACE lays out the case: which rules the change runs into, in what order, and each result tied to the rule behind it. It is reasoning you can argue with, not a number to accept. It changes nothing, and the decision stays with the person accountable for it.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Paralegal and compliance</span> <span class="text-slate-300">A compliance assistant whose stated role is paralegal. It reads policy documents, the rules taken from your own procedures, and the system's own logs. It cites the rule and the records behind a finding, and drafts the fix — the letter, the ticket, the notice. It reads and cites. A person decides.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Swarm Intelligence</span> <span class="text-slate-300">State a hypothesis — a lane a week late, a supplier dropped, a different reserve — and several AI agents work it through together, each from its own angle. Running scenarios stay listed, and you can start a new one at any time. What comes back is reasoning you can argue with, not a number to accept. The decision stays with the person accountable for it.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Rules</span> <span class="text-slate-300">The rules you already work to — the day you stop waiting on a carrier, the duplicate purchase order, the vendor request with nothing behind it — are written down once and checked against every record. Each rule can be held up against your policy documents, so you can see where the two disagree. A compliance assistant whose stated role is paralegal reads those policies and cites the rule and the records behind a finding. It drafts the fix — the letter, the ticket, the notice. A person decides.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Metasearch Trends</span> <span class="text-slate-300">Search for a term across what FACE has read, and see how it has moved over time.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Causal Matrix</span> <span class="text-slate-300">What drives what in your operation, laid out so you can see it. Change one thing and see what it would move, and which rules it would run into, in what order, each result tied to the rule behind it.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Demand forecasting</span> <span class="text-slate-300">Your own order history is put through the steps a statistician would run by hand. Two kinds of forecast are tried, and the one that did better on your past data wins. What comes back names the method, the test it was chosen by, and the points that did not fit. With fewer than five data points it declines and says so.</span></li>
+        </ul>
+        <!-- SCREENSHOT: Swarm Intelligence — the Swarm Intelligence page: a hypothesis being simulated by several agents, the active scenarios list and the New simulation action -->
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div class="md:col-span-2">
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">4. Twins</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Your operation on a map, and the orders waiting on a decision.</h3>
+        <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
+            <p>
+                A twin is a live copy of something real — a site, an asset, an order — kept current from your own records. Twins shows them where they are, and puts every proposed action in front of the person who approves it.
+            </p>
+        </div>
+        <ul class="space-y-6 mt-8">
+            <li><span class="text-signal font-bold block mb-1">Map</span> <span class="text-slate-300">A 3-D map of your operation. Your assets stand as blocks at their real locations, taken from the sources you connected. Routes are drawn in the proposed stop order, over the order you run today. Any connection that reports a position — a camera, a device, a sensor, a handheld reader — adds a live layer on top, and one panel turns each layer on or off, showing how old its data is and where it came from. Tap a place and its details open over the map, with the actions proposed for it, each with Approve and Reject. The savings summary lives here. The map needs no key from you; if you prefer your own map provider, you can bring its key.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Today's command</span> <span class="text-slate-300">The same proposed actions as a list of orders, each with its line items. A person approves or rejects each one.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Routes</span> <span class="text-slate-300">A lane is sent to the routing service you configure, and the distance and time it returns come back with the request. If no routing service is set up, or it returns nothing, the answer is the word unavailable. You never get a blank a dispatcher could read as a route of zero.</span></li>
+        </ul>
+        <!-- SCREENSHOT: Map — the Twins map: extruded asset blocks, a route in proposed stop order, a few live layers on, the layer panel open with data age, and one place tapped with its twin cards (Approve/Reject) open over the map -->
+        <!-- SCREENSHOT: Today's command — the list of orders with their line items, each with Approve and Reject -->
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div class="md:col-span-2">
+        <div class="inline-block px-3 py-1 rounded bg-signal-wash text-signal font-bold mb-4 tracking-wide">On every page</div>
+        <h3 class="text-4xl font-bold text-white mb-6">Ask, watch it work, and check it afterwards.</h3>
+        <ul class="space-y-6 mt-8">
+            <li><span class="text-signal font-bold block mb-1">The assistant</span> <span class="text-slate-300">A chat in the corner of every page. Ask about what you are looking at, in plain words.</span></li>
+            <li><span class="text-signal font-bold block mb-1">The last fetch, always in view</span> <span class="text-slate-300">A strip at the top says how the last fetch went, with a link to its full record.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Straight about readiness</span> <span class="text-slate-300">If the language model FACE reasons with is still starting up, a strip says so, rather than letting a question wait in silence.</span></li>
         </ul>
     </div>
 </div>
@@ -206,7 +242,10 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         <h3 class="text-4xl font-bold text-white mb-6">The drafted action waits. Approving is what sends it.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                All nine end in the same place. A finding is held as one specific proposed action, with the rule and the records attached. A named person approves, edits or rejects it. That decision is written down with their name on it — who approved, when, and what they changed. When the auditor or the customer asks why, the answer is already assembled.
+                Every section ends in the same place. A finding is held as one specific proposed action, with the rule and the records attached, on the map and in Today's command. A named person approves or rejects it. That decision is written down with their name on it — who decided, and when. When the auditor or the customer asks why, the answer is already assembled.
+            </p>
+            <p>
+                The same holds for claims. A claim is a reserve against a policy, and FACE reads claims, reserves, premiums and settlements like any other record. It assembles the file and drafts the action. It does not make the underwriting decision — an adjuster does, on the file FACE put in front of them.
             </p>
             <p>
                 A new instance starts with an empty queue. FACE does not arrive holding findings about you. It holds none until it is connected to something and something is found, and it will show you an empty queue rather than fill one.
@@ -216,9 +255,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Your procedures, written down once</span> <span class="text-slate-300">The rules you already work to — the day you stop waiting on a carrier, the duplicate purchase order, the vendor request with nothing behind it — are stated once and checked against every record. They are no longer remembered by whoever is on shift.</span></li>
             <li><span class="text-signal font-bold block mb-1">Why it fired, on which records</span> <span class="text-slate-300">Afterwards you can open a finding and read the rule, the records underneath it and the reasoning that joined them. A drafted letter nobody can check is not worth signing.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Documents arrive as documents</span> <span class="text-ink-2">A spreadsheet is read properly — the cells, the formulas behind them and the named ranges — because that is where the working usually is. A scanned page is transcribed on the machines FACE runs on, not at an outside service. Where a page comes back unusable, the result says so instead of returning a confident blank.</span></li>
             <li><span class="text-signal font-bold block mb-1">Could not check is an answer</span> <span class="text-slate-300">Where a check could not run — nothing to read, an answer that came back unusable — the result is <em>unable to assess</em>. It says in words that this is not a finding that the thing is compliant. Zero and nobody-measured are kept apart on purpose, and a connection nobody has contacted is never reported as verified. A checker whose confident answers and blanks look the same is worth nothing by the second week.</span></li>
         </ul>
     </div>
@@ -232,7 +269,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
 <div class="max-w-5xl mx-auto px-4">
     <div class="mb-16 max-w-3xl">
         <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">When the data cannot leave the building</h2>
-        <p class="text-xl text-ink-2 leading-relaxed">For many freight and claims teams, a cloud tool is off the table before the demo starts. Customer files, customs papers and claim records cannot go to somebody else's servers. This section is for the person who has to say yes to that. These are properties of how FACE is built, not results anybody is reporting.</p>
+        <p class="text-xl text-ink-2 leading-relaxed">For many freight and claims teams, a cloud tool is off the table before anyone has seen it. Customer files, customs papers and claim records cannot go to somebody else's servers. This section is for the person who has to say yes to that. These are properties of how FACE is built, not results anybody is reporting.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -289,7 +326,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         },
         {
             "question": "Does FACE decide, or do we?",
-            "answer": "You do. FACE drafts an action with the rule and the records attached, and a named person approves, edits or rejects it. That applies most strictly in the two places people worry about: it assembles an underwriting or claims file but does not make the underwriting decision, and the compliance assistant cites the rule and the records but does not rule on them."
+            "answer": "You do. FACE drafts an action with the rule and the records attached, and a named person approves or rejects it. That applies most strictly in the two places people worry about: it assembles an underwriting or claims file but does not make the underwriting decision, and the compliance assistant cites the rule and the records but does not rule on them."
         },
         {
             "question": "Do we have to replace our WMS, ERP or claims system?",
@@ -309,7 +346,7 @@ FACE is one product, sold on its own. Two other names appear on this site. They 
         },
         {
             "question": "Is there anything we can put in someone's hands today?",
-            "answer": "An Android build of the cockpit — the ranked queue, the records behind each item, and the approve or reject — is on the [downloads page](/downloads/). You install it directly from that page. The server image that carries Runink TIDE is on the same page and is request-access, because it is the platform underneath rather than an app."
+            "answer": "An Android build of FACE — the actions waiting on a decision, the records behind each one, and the approve or reject — is on the [downloads page](/downloads/). You install it directly from that page. The server image that carries Runink TIDE is on the same page and is request-access, because it is the platform underneath rather than an app."
         },
         {
             "question": "What does it cost?",
