@@ -2,7 +2,7 @@
 title: "Éprouver un Plan Avant de s'y Engager"
 description: "Un port ferme et vous avez une journée pour choisir un nouvel itinéraire. Énoncez le changement comme une hypothèse, avec les règles qu'il touche, et recevez le dossier déplié — quelles règles il heurte, dans quel ordre, et ce qu'il faudrait croire pour que le plan tienne. La décision reste chez la personne qui en répond."
 layout: "use_case"
-badge: "Moteur d'Hypothèses"
+badge: "Swarm Intelligence"
 badgeColor: "#ec4899"
 product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
@@ -59,6 +59,9 @@ author: "Runink"
         </div>
         <div>
             <h2 id="ce-qui-se-passe-a-la-place" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Ce Qui Se Passe À La Place</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Cela se passe dans <strong class="text-stone-200">Swarm Intelligence</strong>, sous Simulate dans FACE. Plusieurs agents travaillent ensemble la même hypothèse, et les scénarios en cours sont posés côte à côte, pour que la salle puisse les comparer. À côté, <strong class="text-stone-200">Causal Matrix</strong> montre ce qui entraîne quoi dans votre exploitation, et ce qui change quand on déplace volontairement l'un de ces leviers &mdash; utile quand la question est moins de savoir quelle règle un changement heurte que ce qu'il met en mouvement.
+            </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Vous énoncez le changement comme une hypothèse et vous lui remettez les règles qui gouvernent ce que vous changez &mdash; points de commande, délais, engagements de service, l'hypothèse de réserve. Il raisonne sur ces règles et renvoie une lecture classée de ce qui en découle, chaque conséquence étant rattachée à la règle d'où elle vient.
             </p>

@@ -6,13 +6,12 @@ description: "Claims decisioning, reserving and reinsurance recovery, delegated 
 # page named no product and linked to the TIDE and Atlas paper, which made it
 # read as the platform arrangement described on the banking and telecom pages.
 # It is not. Insurance is a FACE domain in the most literal sense: FACE's
-# Finance domain types `claim`, `reserve`, `adjuster`, `premium`, `deductible`,
-# `settlement`, `payout` and `underwrit` (internal/ai/business_domains.go, whose
-# own comment is "a claim is a reserve against a policy"), the connector
-# registry carries a real Guidewire connector alongside SAP, D365, Salesforce
-# and the SQL engines, and the rules-as-written-against-rules-as-applied
-# mechanism on this page is FACE's Rules Recon — four states named in
-# grpc/agents/templates/rules_recon.jinja, not the TIDE assessor.
+# Finance domain covers claims, reserves, adjusters, premiums, deductibles,
+# settlements, payouts and underwriting ("a claim is a reserve against a
+# policy"), FACE connects to Guidewire alongside SAP, D365, Salesforce and the
+# SQL engines, and the rules-as-written-against-rules-as-applied mechanism on
+# this page is FACE's rules reconciliation agent (shown on its Reconcile
+# page) with its four states, not the TIDE assessor.
 #
 # What was cut, and why the paper link moved: the outcomes claimed "a second,
 # independent judgement" on every finding. That is TIDE's assessor, which

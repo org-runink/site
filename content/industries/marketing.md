@@ -7,7 +7,7 @@ description: "Weeks-long turnaround, a stack that does not talk to itself, and e
 # than on any other industry page, because Marketing is also one of the business
 # domains FACE classifies records into (campaign, click, impression, conversion,
 # channel, audience, keyword, engagement, reach, spend, ads, analytics — see
-# face/grpc/internal/ai/business_domains.go). A marketing record being read is
+# FACE's own business-domain list). A marketing record being read is
 # therefore not automatically this product. Attribute by product, not by topic:
 # the capabilities below are PULSE services (DiagnosticService.AuditURL,
 # RadarService, ContentService, StudioService, LeadService), and the two

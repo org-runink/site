@@ -4,13 +4,9 @@
 # escalation existed only on the text side. Both were wrong, and the page had the
 # shape right and the attribution backwards.
 #
-#   face/grpc/cmd/fetch_server.go:4936  the six keywords, on the VOICE utterance
-#   face/grpc/cmd/fetch_server.go:4941  a match changes the tone instruction
-#   face/grpc/cmd/fetch_server.go:4947  and sends the caller's own words to
-#                                       escalationTarget(), when one is configured
-#   face/grpc/cmd/whatsapp.go:117       the same six keywords on inbound text
-#   face/grpc/cmd/whatsapp.go:86,106    and there, the two paths that page nobody
-#                                       are logged as paging nobody
+#   Copy may say FACE listens for these keywords on calls and messages and
+#   escalates to the contact the customer configures. Never promise that a
+#   person is always paged: that depends on the customer configuring one.
 #
 # The six words are named on the page rather than described as "a short list",
 # because they are the whole of the mechanism and a reader can hold them.

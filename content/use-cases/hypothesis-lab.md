@@ -2,7 +2,7 @@
 title: "Testing a Plan Before You Commit to It"
 description: "A port shuts and you have a day to pick a new route. State the change as a hypothesis and the rules it touches, and get back the case laid out — which rules it collides with, in what order, and what someone would have to believe for the plan to hold. The decision stays with the person accountable for it."
 layout: "use_case"
-badge: "Hypothesis Engine"
+badge: "Swarm Intelligence"
 badgeColor: "#ec4899"
 product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
@@ -59,6 +59,9 @@ author: "Runink"
         </div>
         <div>
             <h2 id="what-happens-instead" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">What Happens Instead</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                This happens in <strong class="text-stone-200">Swarm Intelligence</strong>, under Simulate in FACE. Several agents work the same hypothesis together, and the scenarios in progress sit side by side, so the room can compare them. Beside it, <strong class="text-stone-200">Causal Matrix</strong> sets out what drives what in your operation, and what changes when one of those drivers is moved on purpose &mdash; useful when the question is less which rule a change hits than what it sets moving.
+            </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 You state the change as a hypothesis and hand it the rules that govern the thing you are changing &mdash; reorder points, lead times, service commitments, the reserve assumption. It reasons over those rules and returns a ranked read of what follows, with each consequence tied to the rule it came from.
             </p>

@@ -2,7 +2,7 @@
 title: "Poner a Prueba un Plan Antes de Comprometerse"
 description: "Un puerto cierra y usted tiene un día para elegir una ruta nueva. Enuncie el cambio como una hipótesis junto con las reglas que toca, y reciba el caso expuesto — con qué reglas choca, en qué orden, y qué tendría que creer alguien para que el plan se sostuviera. La decisión se queda con la persona que responde por ella."
 layout: "use_case"
-badge: "Motor de Hipótesis"
+badge: "Swarm Intelligence"
 badgeColor: "#ec4899"
 product: "Runink FACE"
 date: "2024-05-20T00:00:00Z"
@@ -59,6 +59,9 @@ author: "Runink"
         </div>
         <div>
             <h2 id="que-ocurre-en-su-lugar" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6">Qué Ocurre En Su Lugar</h2>
+            <p class="text-lg text-stone-400 font-medium mb-6">
+                Esto ocurre en <strong class="text-stone-200">Swarm Intelligence</strong>, dentro de Simulate en FACE. Varios agentes trabajan juntos la misma hipótesis, y los escenarios en curso quedan uno junto a otro, para que la sala pueda compararlos. Al lado, <strong class="text-stone-200">Causal Matrix</strong> expone qué impulsa qué en su operación y qué cambia cuando se mueve a propósito uno de esos impulsores &mdash; útil cuando la pregunta no es tanto qué regla toca un cambio como qué pone en marcha.
+            </p>
             <p class="text-lg text-stone-400 font-medium mb-6">
                 Usted enuncia el cambio como una hipótesis y le entrega las reglas que gobiernan lo que está cambiando &mdash; puntos de pedido, plazos de entrega, compromisos de servicio, el supuesto de reserva. Razona sobre esas reglas y devuelve una lectura ordenada de lo que se sigue, con cada consecuencia atada a la regla de la que salió.
             </p>

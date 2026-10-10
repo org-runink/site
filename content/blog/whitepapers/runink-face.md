@@ -28,10 +28,10 @@ register:
   - { page: 6,  title: "What the problem costs" }
   - { page: 7,  title: "What FACE does about it" }
   - { page: 8,  title: "How it works, in four steps" }
-  - { page: 9,  title: "Rules Recon: what you think you enforce" }
-  - { page: 10, title: "Actionable Twins: one queue, ranked" }
-  - { page: 11, title: "Hypothesis Lab: state it before you commit" }
-  - { page: 12, title: "Fetch Center and Maturity Center" }
+  - { page: 9,  title: "Reconcile: what you think you enforce" }
+  - { page: 10, title: "Twins: one queue, ranked" }
+  - { page: 11, title: "Swarm Intelligence: state it before you commit" }
+  - { page: 12, title: "Fetch and Knowledge" }
   - { page: 13, title: "What the analysis actually covers" }
   - { page: 14, title: "What the queue is made of" }
   - { page: 15, title: "The numbers are computed, or they are absent" }
@@ -352,8 +352,9 @@ connection is tested at the moment it is created, so a misconfigured
 connection is caught at setup rather than discovered as silence three weeks
 later.
 
-Connections are managed in one place, and questions can be set to run on a
-recurring interval rather than being asked by hand each time.
+Connections are managed in one place, each with a switch that makes it
+active or not, and questions can be set to run on a recurring interval
+rather than being asked by hand each time.
 
 ### Extract
 
@@ -393,8 +394,11 @@ claims, compliance, finance, fulfilment, maintenance, returns, sensor
 readings, routing, documentation, images, voice.
 
 They work in a visible loop: consider, act, look at the result, consider
-again, for a bounded number of steps. The intermediate steps appear on the
-screen as they happen, so a running job is legible rather than a spinner.
+again, for a bounded number of steps. While any fetch runs, a card in the
+middle of the screen shows its phases as they happen — querying the source,
+writing the query, profiling the data, sorting it into business domains,
+reading its business rules — then the outcome, with the reasoning a click
+away. A running job is legible rather than a spinner.
 
 ### Recommend
 
@@ -406,7 +410,7 @@ Each run leaves a step-by-step record that can be replayed and inspected
 afterwards. If you want to know how the system reached a conclusion in
 March, you open March's record and walk it.
 
-## Rules Recon: what you think you enforce
+## Reconcile: what you think you enforce
 
 Most businesses have two rulebooks. The one written down, and the one
 running.
@@ -416,8 +420,26 @@ a contract schedule. The running one lives in the systems: in a validation
 somebody added in 2019, in a workflow condition, in a threshold nobody
 remembers setting.
 
-They are never the same rulebook. **Rules Recon** — a reconnaissance of the
-rules — shows you the difference.
+They are never the same rulebook. **Reconcile**, the page FACE opens on,
+shows you the difference.
+
+It is one page, and it reads from the top down. A header states how many
+business domains were analysed, how many findings came out, and how many
+measures there are to take. Below it, a posture view rates each domain on
+quality, fill rate, lineage, freshness, policy and cost. Then a matrix of the
+domains and the relationships between them, drawn from your connected data.
+Then the rules reconciliation: which rules are enforced, and which are only
+declared. Last, readiness indicators grouped by category — data maturity, AI
+enablement and FinOps, the discipline of keeping cloud and compute spend
+in check.
+
+<!-- SCREENSHOT: Reconcile — the landing page top to bottom: the header with domains analysed, findings and measures; the domain posture rings; the cross-domain relational matrix; the rules reconciliation; the readiness indicators by category. -->
+
+The rules themselves are written and kept under Simulate, in **Rules**, where
+each one can be created and reconciled against the policy documents it came
+from. Beside Reconcile, **Entities** lists every twin entity discovered in
+your sources, whichever source it came from, to be filtered by class or
+searched.
 
 ### The four states
 
@@ -442,27 +464,66 @@ performs. The rule exists in the document and nowhere else.
 
 Because it is the cheapest question in the building and nobody can answer
 it. An auditor asks whether you enforce a control. The honest answer is
-usually *we believe so*. Rules Recon converts that into a list, with each
+usually *we believe so*. Reconcile converts that into a list, with each
 rule stated in plain English and naming the source it was read out of —
 data, document, telemetry record or system configuration.
 
 Shadow rules are the ones that surprise people. They are the reason the
 system behaves in ways the policy cannot explain.
 
-## Actionable Twins: one queue, ranked
+### The direction of travel
+
+A single finding is an event. A trend in findings is a management signal,
+and the readiness indicators at the foot of the page are where it is read:
+how the operation stands on data maturity, AI enablement and FinOps,
+domain by domain.
+
+One property of that posture is worth naming, because it is the kind of
+thing that only gets built after it has gone wrong once. **The model enriches
+the posture; it does not produce it.** The domains, grades and risk checks
+are derived deterministically from the shape of your data, in milliseconds,
+and the language model is then asked to add commentary on top. The two passes
+are ordered so that a reasoning plane which is saturated, slow or refusing
+outright cannot stop the measured posture from being served.
+
+Where the operation intends to go from here arrives as a transformation plan:
+a Decision Artifact like any other, phased, reviewable, evidenced and
+approvable.
+
+## Twins: one queue, ranked
 
 Findings are worthless if they arrive in seven different places.
 
-**Actionable Twins** is the single queue. The name is worth a sentence: each
-entry is a working copy of one real thing in your operation — a shipment, a
-return, a customs entry, a piece of equipment — carrying what the system
-knows about it and what it proposes doing. A twin of the thing, and one you
-can act on rather than only look at.
+**Twins** is where they arrive, all of them. Each entry is an *actionable
+twin*, and the name is worth a sentence: a working copy of one real thing in
+your operation — a shipment, an order, a return, a customs entry, a piece of
+equipment — carrying what the system knows about it and what it proposes
+doing. A twin of the thing, and one you can act on rather than only look at.
 
 Every agent's output — compliance, finance, operations, planning, savings,
 sustainability, procurement — consolidates into that one ranked list, each
 entry carrying a severity band and whatever quantities its own card type is
 defined to hold.
+
+The same twins are shown two ways.
+
+**Map** is the first. Your assets sit at their physical locations as blocks
+on a three-dimensional map, placed from the data sources you configured.
+Routes are drawn in the proposed stop order over the current one, and the
+live layers drawn from the connections that report positions, and the
+footprints of your sites read from BIM/CAD plan files, sit on top, each switchable from a layer
+panel that shows how old its data is and where it came from. Tap a place and
+its details and its twin cards open over the map, with approve and reject on
+each. The map needs no key of its own; a customer who wants their own base
+map can bring one.
+
+<!-- SCREENSHOT: Twins › Map — the 3-D map with asset blocks, a route in proposed stop order, live layers switched on in the layer panel, and a place tapped with its actionable twin cards (Approve/Reject) open over the map. -->
+
+**Today's command** is the second: the same actionable twins written as
+orders, each with its line items, so the day's work reads the way a
+warehouse or a transport desk already thinks about it.
+
+<!-- SCREENSHOT: Twins › Today's command — the list of orders, each expanded to its line items, with Approve and Reject on each order. -->
 
 ### What an operator does here
 
@@ -471,9 +532,10 @@ evidence, approve, edit or reject.
 
 Decisions are recorded against the card with the actor's name, and approved
 and rejected are the only two terminal states the server writes. Financial
-actions are gathered on a separate board that splits what has been
-identified from what an operator has actually committed to — two figures
-that must differ while anything is still pending, or the split is decorative.
+actions are gathered in a savings summary on the map, and only there, which
+splits what has been identified from what an operator has actually committed
+to — two figures that must differ while anything is still pending, or the
+split is decorative.
 
 Both figures are sums of amounts that came out of your own records. Neither
 is a Runink estimate of your recovery, and with nothing but the software's
@@ -482,9 +544,8 @@ own derivations behind it the identified total is zero, by test.
 ### A note on what the queue starts with
 
 A standard installation starts **empty**, and fills from your own
-connections and your own questions. The cockpit carries a chip that states
-which kind of instance you are looking at: a demonstration serving prepared
-rows, or your own. Judge the queue filled from a credential you issued.
+connections and your own questions. Every entry in it traces back to a
+credential you issued, which is the right basis on which to judge it.
 
 ### Why the ranking matters more than it sounds
 
@@ -513,7 +574,7 @@ The value of autonomy here is in the drafting, the evidence assembly and
 the ranking — the expensive, slow, skilled work. The judgement stays with
 the person accountable for it.
 
-## Hypothesis Lab: state it before you commit
+## Swarm Intelligence: state it before you commit
 
 Some decisions are too large to make from a queue. Consolidating a lane.
 Changing a sourcing pattern. Moving stock ahead of a season. Cutting a safety
@@ -521,8 +582,10 @@ margin that may be doing more harm than good. Being wrong is expensive and
 being slow is also expensive, which is the worst combination a management team
 faces.
 
-**Hypothesis Lab** is where those are written down and argued before they are
-committed. You state the change in ordinary words, and you hand it the **rules
+**Swarm Intelligence**, under Simulate, is where those are written down and
+argued before they are committed: several agents work the same hypothesis
+together, and the scenarios in progress sit side by side on one page. You
+state the change in ordinary words, and you hand it the **rules
 that govern the thing you are changing** — the reorder points, the lead times,
 the service commitments, the reserve assumptions — together with the variables
 you think matter and the order you think they act in. That material, plus the
@@ -550,13 +613,13 @@ number you have to accept.
 **In the promotion being a recorded act.** A scenario does not become an
 action because somebody senior liked it. It becomes an action when somebody
 named moves it into the queue and approves it, and both facts go on the record
-together. The lab puts the options in a row; the room picks one — and the
+together. The simulation puts the options in a row; the room picks one — and the
 record of why a structural decision was taken exists at the moment it was
 taken, which is exactly the record a meeting does not leave.
 
 ### Where the line falls
 
-**The lab builds an argument from your own assumptions.** It reasons over the
+**The simulation builds an argument from your own assumptions.** It reasons over the
 variables you supply and the rules you state, and searching the public web
 widens what the argument can draw on.
 
@@ -564,61 +627,76 @@ The reasoning arrives with two structured blocks, built from the variables you
 supplied, in the order you supplied them, against fixed weightings: your own
 assumptions written out formally. They are there because a structured
 argument is easier to disagree with than a paragraph, which is the whole point
-of the lab.
+of the simulation.
 
 The value is in the question being written down, the answer arriving with its sources
 attached, and both being there to look at afterwards.
 
-## Fetch Center and Maturity Center
+<!-- SCREENSHOT: Simulate › Swarm Intelligence — a hypothesis being worked by several agents, with the active scenarios beside it and the "new simulation" entry. -->
 
-### Fetch Center — where the questions live
+Three other entries sit beside it under Simulate. **Rules** is where the
+business rules are written and checked against the policy documents they
+came from. **Metasearch Trends** searches for a term and shows how it has
+moved over time. **Causal Matrix** sets out what drives what, and what
+changes when one of those drivers is moved on purpose.
 
-Fetch Center is the front door to your connected systems.
+## Fetch and Knowledge
 
-Connections are created, tested and managed here. Recurring questions are
-defined here and run on a schedule you set — created, activated, paused or
-deleted from the screen, without an engineer.
+### Fetch — where the questions live
 
-Each run leaves a step-by-step record you can replay. That is the
-difference between an answer and an answer that survives an audit: you can
-go back and see the run, the sources it touched, and the steps it took.
+Fetch is the front door to your connected systems.
 
-An operator can also skip the connection entirely and upload a file
-directly. A set of agents — posture, rules, documentation, compliance,
-finance, routing — read it and stream their findings back as they are
-written. Two limits are worth knowing before you judge that path on its
-output. It reads **delimited text** — comma- or tab-separated exports, plain
-text — as text; a binary workbook or a PDF is passed through as a sample
-rather than parsed into rows. And what comes back is **prose from a language
-model, not arithmetic**: if a dollar figure appears in it, that figure was
-composed rather than calculated, which is precisely the distinction the
-chapter on quantities is about. Treat the upload path as a fast read on
-whether the material is legible to the system, not as a finding you can take
-to a carrier.
+You ask a question or give an instruction here, in ordinary words, or start
+from one of the ready-made starters. Below that, every active connection is
+a card with a switch, and so is every compute runner — the machines that
+carry out the work — so which systems are read, and where the work runs, is
+decided on one page. Live sources are connections like any other: cameras,
+devices, field readers and live sensors each appear here as a connection
+card.
 
-### Maturity Center — the direction of travel
+<!-- SCREENSHOT: Fetch — the question box and starters, the Active connections cards with their Active switches (including a camera or sensor connection), the Compute runners cards, and one run in the execution history opened to its phases. -->
 
-A single finding is an event. A trend in findings is a management signal.
+Connections themselves are created, tested and managed under
+**Connections**. Recurring questions are defined under **Schedules** and run
+on an interval you set — created, activated, paused or deleted from the
+screen, without an engineer.
 
-Maturity Center tracks how the operation is doing over time and produces a
-phased plan from where it is now to where it intends to be.
-That plan arrives as a Decision Artifact like any other: reviewable,
-evidenced, approvable.
+Each run leaves a step-by-step record you can replay, phase by phase. That
+is the difference between an answer and an answer that survives an audit:
+you can go back and see the run, the sources it touched, and the steps it
+took. A strip at the top of every page states how the last fetch went, with
+a link straight to its audit.
 
-One property of it is worth naming, because it is the kind of thing that only
-gets built after it has gone wrong once. **The model enriches the posture; it
-does not produce it.** The domains, grades and risk checks are derived
-deterministically from the shape of your data, in milliseconds, and the
-language model is then asked to add commentary on top. The two passes are
-ordered so that a reasoning plane which is saturated, slow or refusing
-outright cannot stop the measured posture from being served.
+An operator can also skip the connection entirely and add a file directly.
+A set of agents — posture, rules, documentation, compliance, finance,
+routing — read it and stream their findings back as they are written. Two
+limits are worth knowing before you judge that path on its output. It reads
+**delimited text** — comma- or tab-separated exports, plain text — as text;
+documents such as scans and PDFs are read by Knowledge, below. And what
+comes back is **prose from a language model, not arithmetic**: if a dollar
+figure appears in it, that figure was composed rather than calculated, which
+is precisely the distinction the chapter on quantities is about. Treat the
+upload path as a fast read on whether the material is legible to the system,
+not as a finding you can take to a carrier.
+
+### Knowledge — what has been written down
+
+Knowledge keeps your documents in one place. Files are added here, and the
+text is read out of them — including the tables, the labelled fields and the
+ticked or unticked boxes of a form — so a scanned customs declaration or a
+signed delivery note becomes something that can be searched and quoted, not
+an image in a folder. Everything added is searchable from the same page.
+
+<!-- SCREENSHOT: Fetch › Knowledge — Add files, a document opened to its extracted tables, fields and checkboxes, and the search box with results. -->
 
 ### Why both exist
 
-Fetch Center answers *what is happening this week*. Maturity Center answers
-*are we getting better*. Operations teams need the first daily. Boards ask
-for the second quarterly, and usually receive an opinion instead of an
-answer.
+Fetch reads what your systems hold now. Knowledge holds what your
+organisation has written down: the policies, contracts and papers a finding
+is checked against. Reconcile needs both, because the running rulebook comes
+from the first and the written one from the second. Operations teams use
+the first daily. Boards ask whether the two agree, and usually receive an
+opinion instead of an answer.
 
 ## What the analysis actually covers
 
@@ -643,7 +721,7 @@ ones.
 **Fulfilment.** Sourcing, supply and the steps that get an order to a
 customer.
 
-**Rules Recon.** Business and governance rules read out of data, documents,
+**Rules reconciliation.** Business and governance rules read out of data, documents,
 telemetry records and system configuration, each stated in plain English and
 naming the source it came from.
 
@@ -712,7 +790,7 @@ speaker's location taken into account.
 
 **Hypothesis.** Business decision scenarios argued against the rules you
 supply and the mindmap of your connected data, with public market research
-added where the scenario calls for it. The chapter on the lab sets out what
+added where the scenario calls for it. The chapter on Swarm Intelligence sets out what
 it computes.
 
 **Twins.** The action cards themselves, with the approve and reject flows
@@ -820,8 +898,9 @@ fields on the wire rather than as a greyed-out box in a user interface.
 - A compliance assessment has a third verdict, **unable to assess**, with the
   reason attached and spoken text that says outright that this is *not* a
   finding of compliance.
-- The cockpit's provenance marker carries **failed** as a member of the type
-  rather than as a hidden badge, so every place in the interface that
+- The provenance badge on each result — live, cached, offline, low confidence —
+  carries **failed** as a member of the type
+  rather than as a hidden state, so every place in the interface that
   switches on provenance is forced by the compiler to say what it does with
   it.
 
@@ -896,22 +975,28 @@ the rest of FACE.
 from an ordinary phone, with no application to install on a driver's
 device.
 
-**Cameras.** Live camera feeds or captured images are examined for damage
-and anomalies at transport hubs, airports and infrastructure, with the
-results appearing on the operator's screen as they are produced. Damage
-grading becomes a record rather than an argument between two parties'
-recollections.
+**The assistant.** A chat assistant sits in the corner of every page, so a
+question can be asked from wherever the operator happens to be working.
 
-**Documents.** Uploads are routed automatically by what they are — text
-pulled out of documents, tables pulled out of spreadsheets, structure
-pulled out of source repositories. The person uploading does not choose a
-route; they upload the file.
+**Cameras and sensors.** A camera, a device, a field reader or a live
+sensor is connected like any other source and switched on in Fetch. Live
+camera feeds or captured images are examined for damage and anomalies at
+transport hubs, airports and infrastructure, with the results appearing on
+the operator's screen as they are produced, and sources that report a position
+appear as layers on the Twins map. Damage grading becomes a
+record rather than an argument between two parties' recollections.
+
+**Documents.** Files added to Knowledge are routed automatically by what
+they are — text, tables, fields and checkboxes pulled out of documents,
+tables pulled out of spreadsheets, structure pulled out of source
+repositories. The person adding a file does not choose a route; they add
+the file.
 
 **Direct file analysis.** A delimited export can be read on its own, without
 a connection being configured first, and several agents comment on it as the
 text streams back. What comes back is prose rather than calculated
-quantities — see the Fetch Center chapter for the limits, which are worth
-knowing before you judge the product on that path.
+quantities — see the chapter on Fetch and Knowledge for the limits, which
+are worth knowing before you judge the product on that path.
 
 **Four languages.** The operator interface ships in English, Spanish,
 French and Portuguese, which matters for any operation whose warehouse
@@ -1005,6 +1090,8 @@ itself.
 Text arriving from outside is checked before it reaches the reasoning step,
 so that a document or a message cannot smuggle in an instruction of its
 own. Database queries are checked on every connection before they run.
+The rules that do this checking are kept under Admin, apart from the pages
+where the work is done, so changing them is an administrator's act.
 
 ### Credentials at rest
 
@@ -1136,6 +1223,13 @@ warehouse or telemetry platform already produces, or the table it already
 writes to. It needs no credential to a device and no change window, and it
 is a working connection this week.
 
+### Live and streaming sources
+
+Message streams such as Kafka. Cameras, devices, field readers and live
+sensors, each a connection type of its own. Each of these is switched on in
+Fetch, and those that report a position are drawn as a layer on the Twins
+map.
+
 ### Four properties worth noting
 
 **Connections are tested at the moment they are created.** A connection that
@@ -1168,7 +1262,9 @@ systems have to stay where they are for the value to exist.
 Where an operation already runs its own analytical infrastructure, work can
 be sent to it directly — including a path that executes inside Snowflake,
 and the setting up of Databricks clusters and jobs — so the analysis runs
-close to the data rather than moving the data to the analysis.
+close to the data rather than moving the data to the analysis. The compute
+runners that carry the work are listed in Fetch beside the connections, each
+with its own switch.
 
 ## The questions a buyer asks
 
@@ -1532,7 +1628,7 @@ safety margins is settled with your own numbers rather than seniority.
 ### The head of compliance or risk
 
 You are asked whether controls are enforced and you answer from belief.
-Rules Recon converts that into a list with four states and a named source
+Reconcile converts that into a list with four states and a named source
 per rule. The compliance agent reports how you stand against the frameworks
 that apply to you, with each finding marked pass, fail or warning. The
 specific promise: the answer to *do we enforce this* becomes a document
@@ -1552,10 +1648,11 @@ the machines your licence names.
 ### The chief executive
 
 You want the operation to catch its own problems and you want the
-improvement to be visible. Maturity Center tracks how the operation is
-doing over time and produces the phased plan; the financial board shows what
-was identified and what was approved. The specific promise: operational
-improvement becomes something you can read, quarter over quarter — and the
+improvement to be visible. Reconcile states where the operation stands,
+domain by domain, and the transformation plan sets out the phased path from
+there; the savings summary on the map shows what was identified and what was
+approved. The specific promise: operational improvement becomes something
+you can read every time you open it, quarter over quarter — and the
 figure you read will be smaller and more defensible than the one a competing
 vendor will show you, for a reason this paper states outright in its first
 chapter.
@@ -1734,12 +1831,22 @@ measurement or it is not raised.
 
 ### What is included in the operator experience
 
-Beyond the six main destinations, the interface provides a side panel for
-the recurring work — voice, and the compliance, finance and operations
-fixes, today's instruction, the drafts waiting to go out, and the camera
-connection — a view of what the agents are currently working on, progress
-shown as each run proceeds, step-by-step records you can replay, and a
-support console.
+One menu down the left side carries everything, in four sections:
+**Reconcile** (the landing page, and the entities discovered in your data),
+**Fetch** (Fetch itself, Connections, Knowledge and Schedules),
+**Simulate** (Swarm Intelligence, Rules, Metasearch Trends and Causal
+Matrix) and **Twins** (the Map and Today's command), with Account and
+Billing at its foot. On every page there is the chat assistant, a strip at
+the top stating how the last fetch went with a link to its audit, and — while
+any fetch runs — a card showing each of its phases and its outcome, with the
+reasoning one click away. If the model is not ready to answer, a notice says
+so rather than leaving a question unanswered without explanation.
+Step-by-step records of every run can be replayed afterwards.
+
+<!-- SCREENSHOT: Left rail — the four labelled sections (Reconcile, Fetch, Simulate, Twins) with Account and Billing at the foot, the assistant chat open in the corner, and the activity card showing a running fetch's phases. -->
+
+Pages held for administrators — among them the rules that guard what the
+reasoning step will accept — sit under Admin, apart from this menu.
 
 ### Working alongside your other systems
 
