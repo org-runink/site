@@ -58,13 +58,10 @@ outcomes_heading: "Ce que Runink PULSE change"
 outcomes:
   - "Un diagnostic PULSE alimente l'analyse des canaux, le plan de contenu, le calendrier et chaque brouillon, de sorte que ce qui est publié porte un seul argument plutôt que quatre versions de celui-ci."
   # Narrowed for the same reason as the FACE approval claim in
-  # content/use-cases/_index.md. The review queue and the approve/reject are real
-  # (ContentService.ApproveContent / RejectContent), and the six statuses in the
-  # next line are a real column. What is NOT real is an interlock:
-  # PublishingService.SchedulePost (pulse/grpc/cmd/publishing_server.go:27) inserts
-  # into scheduled_posts without checking that the content it references is in
-  # `approved`. So this may be claimed as a discipline the queue supports, never as
-  # a guarantee that nothing can reach a customer unapproved.
+  # content/use-cases/_index.md. The review queue, its approve and reject, and the
+  # six statuses on the line after next are all real. The claim stops where it
+  # does on purpose: it describes a discipline the queue supports, never a
+  # guarantee that nothing can reach a customer unapproved. Do not strengthen it.
   - "Chaque brouillon — article, livre blanc, e-mail à froid, script d'appel — atterrit dans une file d'attente de révision avec une approbation et un rejet, et l'approbation est une étape franchie par une personne désignée plutôt qu'une formalité accomplie par le système pour elle. Voyez cela comme le lieu où le travail est validé, et non comme un verrouillage sur chaque voie de sortie possible."
   - "Chaque pièce a un statut défini : brouillon, en attente de révision, approuvé, rejeté, publié, archivé. Ce sont les six statuts que PULSE conserve réellement, afin que ce qui vous attend et ce qui est réellement sorti soient tous deux visibles."
   - "Marquer un résultat PULSE comme utile ou non se répercute sur le cycle suivant, de sorte que la compréhension s'accumule dans un système au lieu de la tête d'une seule personne."

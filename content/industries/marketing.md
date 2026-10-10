@@ -58,13 +58,10 @@ outcomes_heading: "What Runink PULSE changes"
 outcomes:
   - "One PULSE diagnosis feeds the channel analysis, the content plan, the schedule and every draft, so what goes out carries one argument rather than four versions of it."
   # Narrowed for the same reason as the FACE approval claim in
-  # content/use-cases/_index.md. The review queue and the approve/reject are real
-  # (ContentService.ApproveContent / RejectContent), and the six statuses in the
-  # next line are a real column. What is NOT real is an interlock:
-  # PublishingService.SchedulePost (pulse/grpc/cmd/publishing_server.go:27) inserts
-  # into scheduled_posts without checking that the content it references is in
-  # `approved`. So this may be claimed as a discipline the queue supports, never as
-  # a guarantee that nothing can reach a customer unapproved.
+  # content/use-cases/_index.md. The review queue, its approve and reject, and the
+  # six statuses on the line after next are all real. The claim stops where it
+  # does on purpose: it describes a discipline the queue supports, never a
+  # guarantee that nothing can reach a customer unapproved. Do not strengthen it.
   - "Every draft — post, whitepaper, cold email, call script — lands in a review queue with an approve and a reject, and approving is a step a named person takes rather than a formality the system performs for them. Read it as the place the work is cleared, not as an interlock wired across every route something could leave by."
   - "Every piece has one stated status: draft, waiting for review, approved, rejected, published, archived. Those six are the statuses PULSE actually keeps, so what is waiting on you and what actually went out are both visible."
   - "Marking a PULSE result useful or not carries into the next round, so understanding accumulates in a system instead of in one person's head."
