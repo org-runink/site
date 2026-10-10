@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Whitepapers on Runink</title>
+    <link>https://runink.org/categories/whitepapers/</link>
+    <description>Recent content in Whitepapers on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Oct 2026 08:26:18 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/categories/whitepapers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Runink FACE — Fulfilment Autonomous Claims Engine</title>
+      <link>https://runink.org/blog/whitepapers/runink-face/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-face/</guid>
+      <description>&lt;h2 id=&#34;what-this-document-is&#34;&gt;What this document is&lt;/h2&gt;&lt;p&gt;This is a description of a working product, Runink FACE: Fulfilment&#xA;Autonomous Claims Engine, written for the person who has to decide whether&#xA;to buy it.&lt;/p&gt;&#xA;&lt;p&gt;It contains no case studies, no customer names and no return-on-investment&#xA;figures. Those are easy to write and impossible to check. What it explains&#xA;instead is the mechanism: what the software looks at, what it produces, who&#xA;approves it, and where it all runs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink FACE — Logistics &amp; Supply Chain Whitepaper</title>
+      <link>https://runink.org/blog/whitepapers/runink-face-logistics/</link>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-face-logistics/</guid>
+      <description>&lt;h2 id=&#34;what-this-document-is&#34;&gt;What this document is&lt;/h2&gt;&lt;p&gt;This is a description of a working product, Runink FACE: Fulfilment&#xA;Autonomous Claims Engine, written for the person who has to decide whether&#xA;to buy it.&lt;/p&gt;&#xA;&lt;p&gt;It contains no case studies, no customer names and no return-on-investment&#xA;figures. Those are easy to write and impossible to check. What it explains&#xA;instead is the mechanism: what the software looks at, what it produces, who&#xA;approves it, and where it all runs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink TIDE — The operations layer for companies that keep their own data</title>
+      <link>https://runink.org/blog/whitepapers/runink-tide/</link>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-tide/</guid>
+      <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive summary&lt;/h2&gt;&lt;p&gt;Runink TIDE: Trusted Intelligence for Developer &amp;amp; Data Experience is the layer&#xA;beneath a company&amp;rsquo;s software. It runs that software on the company&amp;rsquo;s own&#xA;servers or cloud account, or on Runink&amp;rsquo;s shared machines for a first team. It&#xA;shows one person, on one screen, what is happening across all of it. It keeps a&#xA;record of every change a person makes, and anyone signed in can check that the&#xA;record is intact.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink PULSE — Prescriptive Unified Lead &amp; Social Engine</title>
+      <link>https://runink.org/blog/whitepapers/runink-pulse/</link>
+      <pubDate>Tue, 29 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-pulse/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&lt;p&gt;Most companies smaller than the very largest run marketing as a patchwork. There is an agency&#xA;on retainer for the work nobody in-house has time for. There is a tool for scheduling posts,&#xA;a CRM holding the customer records, a screen of website statistics, a design tool and a&#xA;writing assistant, each holding a different fragment of what the company knows about itself.&#xA;And increasingly there is a habit — often undeclared — of pasting positioning notes, customer&#xA;lists and pipeline detail into text generators owned by somebody else.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink TIDE and Atlas for Banking</title>
+      <link>https://runink.org/blog/whitepapers/runink-tide-atlas-banking/</link>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-tide-atlas-banking/</guid>
+      <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive summary&lt;/h2&gt;&lt;p&gt;A bank does not fail an examination because it lacked a control. It fails because it&#xA;cannot show that the control ran, on which items, what it found, and who decided what to do&#xA;about it. The evidence exists somewhere. It is spread across the payment system, the&#xA;supplier file, the model inventory, the finance ledger and a shared drive, and it is&#xA;assembled by hand when somebody asks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink TIDE and Atlas — Continuous oversight, with a second opinion built in</title>
+      <link>https://runink.org/blog/whitepapers/runink-tide-atlas/</link>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/blog/whitepapers/runink-tide-atlas/</guid>
+      <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive summary&lt;/h2&gt;&lt;p&gt;Companies find their most expensive mistakes late.&lt;/p&gt;&#xA;&lt;p&gt;A capital project runs over budget, and the overrun shows up in the quarter-end pack. A&#xA;supplier bills against a purchase order that nobody checked again, and the gap surfaces in&#xA;an audit sample months later. A rule everyone thinks is enforced was switched off during a&#xA;system upgrade, and nobody notices until a regulator asks for proof.&lt;/p&gt;&#xA;&lt;p&gt;None of these is a failure of intelligence. Each is a failure of timing. The facts needed&#xA;for a better decision were already in a system the company owned, before the money was&#xA;committed. What was missing was somebody reading them at the moment it mattered.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

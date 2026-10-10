@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Runink products on Runink</title>
+    <link>https://runink.org/products/</link>
+    <description>Recent content in Runink products on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://runink.org/products/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Runink TIDE Pricing</title>
+      <link>https://runink.org/products/tide-pricing/</link>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/products/tide-pricing/</guid>
+      <description>&lt;div class=&#34;max-w-3xl mx-auto text-center mb-4&#34;&gt;&#xA;    &#xA;    &lt;p class=&#34;text-xl text-stone-300 mb-6 font-medium leading-relaxed&#34;&gt;&#xA;        This is the price of Runink TIDE: Trusted Intelligence for Developer &amp;amp; Data Experience. You choose where it runs: on Runink&amp;#39;s shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDE never takes a percentage of anything it finds, fixes or ships, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink FACE</title>
+      <link>https://runink.org/products/face/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/products/face/</guid>
+      <description>&lt;section class=&#34;relative overflow-hidden py-24 md:py-32&#34; style=&#34;background:linear-gradient(135deg,var(--rk-sunk),var(--rk-ground))&#34;&gt;&#xA;&#xA;    &#xA;&#xA;    &#xA;    &#xA;&#xA;    &lt;div class=&#34;container relative z-10&#34;&gt;&#xA;        &lt;div class=&#34;grid lg:grid-cols-12 gap-12 items-center&#34;&gt;&#xA;&#xA;            &#xA;            &lt;div class=&#34;lg:col-span-6 space-y-8 relative&#34;&gt;&#xA;                &#xA;                &lt;div&#xA;                    class=&#34;absolute -top-20 -left-20 w-64 h-64 bg-signal-fill/20 rounded-full blur-[100px] pointer-events-none opacity-50&#34;&gt;&#xA;                &lt;/div&gt;&#xA;&#xA;                &lt;h1 class=&#34;text-4xl md:text-5xl lg:text-6xl font-bold leading-normal text-white tracking-normal drop-shadow-xl&#34;&gt;&#xA;                    The claim nobody had a morning for is still money you are owed.&#xA;                &lt;/h1&gt;&#xA;&#xA;                &lt;p&#xA;                    class=&#34;text-xl text-ink-2 leading-relaxed drop-shadow-md border-l-4 border-signal pl-6&#34;&gt;&#xA;                    &lt;strong&gt;Runink FACE: Fulfilment Autonomous Claims Engine.&lt;/strong&gt; For logistics, freight, claims and operations teams, it reads the invoices, orders, carrier records and claim files you already keep. It finds the overcharge, the claim about to expire and the rule somebody broke, and drafts the next step. A named person approves it. Run it on your own servers or cloud account and your records never leave them. On every plan, Runink&amp;rsquo;s shared machines included, no outside AI service sees them.&#xA;                &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink PULSE</title>
+      <link>https://runink.org/products/pulse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/products/pulse/</guid>
+      <description>&lt;section class=&#34;relative overflow-hidden py-24 md:py-32&#34; style=&#34;background:linear-gradient(135deg,var(--rk-sunk),var(--rk-ground))&#34;&gt;&#xA;&#xA;    &#xA;&#xA;    &#xA;    &#xA;&#xA;    &lt;div class=&#34;container relative z-10&#34;&gt;&#xA;        &lt;div class=&#34;grid lg:grid-cols-12 gap-12 items-center&#34;&gt;&#xA;&#xA;            &#xA;            &lt;div class=&#34;lg:col-span-6 space-y-8 relative&#34;&gt;&#xA;                &#xA;                &lt;div&#xA;                    class=&#34;absolute -top-20 -left-20 w-64 h-64 bg-signal-fill/20 rounded-full blur-[100px] pointer-events-none opacity-50&#34;&gt;&#xA;                &lt;/div&gt;&#xA;&#xA;                &lt;h1 class=&#34;text-4xl md:text-5xl lg:text-6xl font-bold leading-normal text-white tracking-normal drop-shadow-xl&#34;&gt;&#xA;                    The lead who wrote at nine at night bought from whoever answered first.&#xA;                &lt;/h1&gt;&#xA;&#xA;                &lt;p&#xA;                    class=&#34;text-xl text-ink-2 leading-relaxed drop-shadow-md border-l-4 border-signal pl-6&#34;&gt;&#xA;                    &lt;strong&gt;Runink PULSE: Prescriptive Unified Lead &amp;amp; Social Engine.&lt;/strong&gt; Marketing software your own team runs. It finds the companies worth calling, drafts the reply, the campaign and the follow-up, and shows which channel brings customers in. Your team decides what goes out. You pay per seat, not per tool.&#xA;                &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Runink TIDE</title>
+      <link>https://runink.org/products/tide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://runink.org/products/tide/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

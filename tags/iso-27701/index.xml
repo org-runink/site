@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ISO 27701 on Runink</title>
+    <link>https://runink.org/tags/iso-27701/</link>
+    <description>Recent content in ISO 27701 on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/iso-27701/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why ISO 8000, ISO 27000, ISO 27017, ISO 27018, ISO 42001 &amp; ISO 27701 Matter for Data‑Driven Business Success</title>
+      <link>https://runink.org/blog/iso-standards-data-driven-business/</link>
+      <pubDate>Thu, 16 Apr 2026 11:07:10 +0000</pubDate>
+      <guid>https://runink.org/blog/iso-standards-data-driven-business/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Six ISO standards cover the ground a data-driven business has to cover. ISO 8000 sets out what good data looks like. The ISO 27000 family covers information security. ISO 27017 and ISO 27018 add the cloud cases: security controls, and the handling of personal data. ISO 42001 is the management standard for artificial intelligence. ISO 27701 adds privacy to an existing security management system. Each one asks for written policies, named owners and evidence you can show an auditor.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data quality:&lt;/strong&gt; ISO 8000 defines what accurate, complete, consistent and timely data means, and how to exchange master data between organizations.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Security and cloud:&lt;/strong&gt; the ISO 27000 family covers information security management; ISO 27017 and ISO 27018 cover cloud services and personal data held in them.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Models and privacy:&lt;/strong&gt; ISO 42001 sets management requirements for artificial intelligence. ISO 27701 extends a security management system to cover privacy, so the two are audited together rather than twice.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Most companies now run on data. Forecasts, pricing, customer contact and product decisions all draw on it. Data is only worth what its accuracy, its security and its provenance are worth. One breach, one privacy complaint or one bad dataset and the work stops while people argue about whether the numbers can be trusted.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+
+<html lang="pt" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+
+
+    
+    
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  try {
+    if (window.localStorage && localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {
+    
+
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-SEECKDWZNJ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEECKDWZNJ"></script>
+
+
+
+    
+    <title>Confiança e conformidade | Runink</title>
+<meta name="description" content="Como a Runink deixa cada decisão nas mãos de uma pessoa, onde os modelos rodam, como os dados ficam separados, como as versões são assinadas, como nossos controles se alinham ao SOC 2, à ISO/IEC 27001, à ISO 31000, à ISO/IEC 42001 e ao PCI DSS v4.0, e como relatar um problema de segurança.">
+<meta name="author" content="Runink">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<meta property="og:title" content="Confiança e conformidade | Runink">
+<meta property="og:description" content="Como a Runink deixa cada decisão nas mãos de uma pessoa, onde os modelos rodam, como os dados ficam separados, como as versões são assinadas, como nossos controles se alinham ao SOC 2, à ISO/IEC 27001, à ISO 31000, à ISO/IEC 42001 e ao PCI DSS v4.0, e como relatar um problema de segurança.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://runink.org/pt/trust/">
+<meta property="og:site_name" content="Runink">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:image" content="https://runink.org/images/og/runink-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Confiança e conformidade">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Confiança e conformidade | Runink">
+<meta name="twitter:description" content="Como a Runink deixa cada decisão nas mãos de uma pessoa, onde os modelos rodam, como os dados ficam separados, como as versões são assinadas, como nossos controles se alinham ao SOC 2, à ISO/IEC 27001, à ISO 31000, à ISO/IEC 42001 e ao PCI DSS v4.0, e como relatar um problema de segurança.">
+
+<meta name="twitter:image" content="https://runink.org/images/og/runink-og.jpg">
+<meta name="twitter:image:alt" content="Confiança e conformidade">
+
+<link rel="canonical" href="https://runink.org/pt/trust/">
+<link rel="alternate" hreflang="pt" href="https://runink.org/pt/trust/">
+<link rel="alternate" hreflang="en" href="https://runink.org/trust/">
+<link rel="alternate" hreflang="fr" href="https://runink.org/fr/trust/">
+<link rel="alternate" hreflang="es" href="https://runink.org/es/trust/">
+<link rel="alternate" hreflang="x-default" href="https://runink.org/trust/">
+
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
+
+  
+<link rel="preload" href="/fonts/Figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+
+
+    
+    <link rel="stylesheet" href="/css/tokens.min.670a95826064ac262ed90ed522e7e64c2f9361f5f0349a2d36e0a094039b0a63.css">
+    
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('rk-ground');
+      if (stored === 'console' || stored === 'sheet') {
+        document.documentElement.setAttribute('data-ground', stored);
+      }
+    } catch (e) {
+      
+
+    }
+  })();
+</script>
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="preload" href="/css/main.min.dad0cd8c35f4981b9c1676e31165eec0a1f90c4681669caba01dc4e78d34bf1b.css" as="style">
+    <link rel="stylesheet" href="/css/main.min.dad0cd8c35f4981b9c1676e31165eec0a1f90c4681669caba01dc4e78d34bf1b.css">
+    
+    
+
+    
+    
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runink.org/#organization",
+      "name": "Runink",
+      "url": "https://runink.org/",
+      
+      "description": "Runink makes four separate products: Runink FACE for logistics, freight, claims and operations teams; Runink TIDE for engineering, platform and data teams; Runink PULSE for marketing teams; and Runink River, a free, open-source workstation operating system for data, analytics and AI work. FACE, TIDE and PULSE are each sold on their own subscription.",
+      
+      
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://runink.org/images/logo.png",
+        "width":  512 ,
+        "height":  512 
+      },
+      
+      "email": "paes@runink.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/runink",
+        "https://github.com/org-runink"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runink.org/#website",
+      "url": "https://runink.org/",
+      "name": "Runink",
+      "description": "Runink makes four separate products: Runink FACE for logistics, freight, claims and operations teams; Runink TIDE for engineering, platform and data teams; Runink PULSE for marketing teams; and Runink River, a free, open-source workstation operating system for data, analytics and AI work. FACE, TIDE and PULSE are each sold on their own subscription.",
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": "pt"
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://runink.org/pt/trust/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Runink",
+          "item": "https://runink.org/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "Confiança e conformidade"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@id": "https://runink.org/pt/trust/#webpage",
+  "@type": "WebPage",
+  "breadcrumb": {
+    "@id": "https://runink.org/pt/trust/#breadcrumb"
+  },
+  "dateModified": "2026-10-04T19:45:14-04:00",
+  "description": "Como a Runink deixa cada decisão nas mãos de uma pessoa, onde os modelos rodam, como os dados ficam separados, como as versões são assinadas, como nossos controles se alinham ao SOC 2, à ISO/IEC 27001, à ISO 31000, à ISO/IEC 42001 e ao PCI DSS v4.0, e como relatar um problema de segurança.",
+  "inLanguage": "pt",
+  "isPartOf": {
+    "@id": "https://runink.org/#website"
+  },
+  "name": "Confiança e conformidade",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "height": 675,
+    "url": "https://runink.org/images/og/runink-og.jpg",
+    "width": 1200
+  },
+  "publisher": {
+    "@id": "https://runink.org/#organization"
+  },
+  "url": "https://runink.org/pt/trust/"
+}</script>
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+    
+    
+    
+    
+    <div class="fixed top-0 left-0 right-0 z-50">
+        
+
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <header
+        class="fixed w-full top-0 z-50 bg-stone-900/90 backdrop-blur-sm border-b border-stone-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex items-center justify-between h-20">
+                
+                
+                <a href="https://runink.org/" class="flex items-center space-x-3 group">
+    <div
+        class="relative w-10 h-10 overflow-hidden rounded-lg bg-stone-800 border border-stone-700 shadow-lg group-hover:border-signal transition-colors duration-300">
+        
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+  <img src="/images/logo_hu_90b94ea80d00a62d.webp" alt="Runink Logo" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-300" width="80" height="80" loading="eager" fetchpriority="high">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": "https://runink.org/images/logo_hu_90b94ea80d00a62d.webp"
+  , "width":  80 
+  , "height":  80 
+  
+  
+  
+}
+</script>
+
+        
+    </div>
+    <span class="text-2xl font-bold text-white tracking-tight">Runink</span>
+</a>
+
+
+                
+                <div
+                    class="hidden md:flex items-center space-x-6">
+                    
+                    
+                    <a href="/pt/#why-runink"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Por que Runink?</a>
+                    
+                    
+                    
+                    <a href="/pt/library/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Biblioteca</a>
+                    
+                    
+                    
+                    <div class="relative group">
+                        
+                        <a href="/industries/"
+                            class="flex items-center text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2">
+                            Setores
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-72 opacity-0
+                            invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100
+                            group-focus-within:visible transition-all duration-200
+                            ease-in-out">
+                            <div class="py-6 bg-stone-800 border border-stone-700 shadow-xl
+                                rounded-lg">
+                                
+                                <a href="/industries/logistics-supply-chain/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Logistics &amp; Supply Chain</a>
+                                
+                                <a href="/industries/insurance/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Insurance</a>
+                                
+                                <a href="/industries/banking-financial-services/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Banking &amp; Financial Services</a>
+                                
+                                <a href="/industries/telecom/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Telecom</a>
+                                
+                                <a href="/industries/marketing/" class="block px-8 py-3 text-sm text-[#F5F1E8] hover:bg-stone-700 hover:text-white">Marketing</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <a href="/pt/pricing"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Preços</a>
+                    
+                    
+                    
+                    <a href="/pt/company/"
+                        class="text-base text-ink-2 hover:text-ink font-bold transition duration-200 py-4 px-2 inline-block">Empresa</a>
+                    
+                    
+                </div>
+
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    
+                        
+
+                        
+                        <a href="/pt/?about=Confian%C3%A7a%20e%20conformidade#contact-form"
+                            class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-on-fill transition-all duration-300 bg-gradient-to-r from-signal-fill to-signal-fill-hover rounded-lg hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5">
+                            Agende uma Consulta
+                        </a>
+                        
+                    
+
+                    
+                    
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+
+                    
+                    <div class="flex items-center space-x-3 pl-3 border-l border-rule">
+                        
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/trust/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="English (UK)">
+                            <img src="/images/flags/gb.svg" alt="English (UK)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/fr/trust/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Français (France)">
+                            <img src="/images/flags/fr.svg" alt="Français (France)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/es/trust/" class="flex items-center transition-all duration-200 hover:scale-110 opacity-50 hover:opacity-100" title="Español (España)">
+                            <img src="/images/flags/es.svg" alt="Español (España)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                        <a href="/pt/trust/" class="flex items-center transition-all duration-200 hover:scale-110 ring-2 ring-signal ring-offset-2 ring-offset-stone-900 rounded-sm" title="Português (Brasil)">
+                            <img src="/images/flags/br.svg" alt="Português (Brasil)" class="w-6 h-4 object-cover rounded-sm">
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="md:hidden">
+                    <label for="nav-toggle"
+                        class="p-2 rounded-lg text-ink-2 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:ring-offset-stone-900 transition-colors cursor-pointer">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+  aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        
+        <div
+            class="nav-content md:hidden w-full fixed left-0 right-0 top-20 bg-stone-900 border-t border-stone-800 shadow-lg">
+            <div class="w-full px-6 py-4">
+                
+                
+                <a href="/pt/#why-runink"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Por que Runink?</a>
+                
+                
+                
+                <a href="/pt/library/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Biblioteca</a>
+                
+                
+                
+                <div class="py-2">
+                    
+                    <a href="/industries/" class="block text-xl text-ink-2 hover:text-signal font-bold mb-2 transition duration-200">Setores</a>
+                    <div class="pl-4">
+                        
+                        <a href="/industries/logistics-supply-chain/" class="block text-ink-3 hover:text-signal py-2">Logistics &amp; Supply Chain</a>
+                        
+                        <a href="/industries/insurance/" class="block text-ink-3 hover:text-signal py-2">Insurance</a>
+                        
+                        <a href="/industries/banking-financial-services/" class="block text-ink-3 hover:text-signal py-2">Banking &amp; Financial Services</a>
+                        
+                        <a href="/industries/telecom/" class="block text-ink-3 hover:text-signal py-2">Telecom</a>
+                        
+                        <a href="/industries/marketing/" class="block text-ink-3 hover:text-signal py-2">Marketing</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/pt/pricing"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Preços</a>
+                
+                
+                
+                <a href="/pt/company/"
+                    class="block text-xl text-ink-2 hover:text-signal font-bold transition duration-200 py-2">Empresa</a>
+                
+                
+
+                
+                <div class="pt-4 space-y-4">
+                    
+
+                    
+                    <a href="/pt/?about=Confian%C3%A7a%20e%20conformidade#contact-form"
+                        class="block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-gradient-to-r from-signal-fill to-signal-fill-hover text-on-fill hover:opacity-90 hover:scale-[1.02]">
+                        Agende uma Consulta
+                    </a>
+                    
+                </div>
+                
+                
+                
+                <div class="flex items-center justify-between py-3 border-t border-rule">
+                  <span class="text-sm font-medium text-ink-2">Appearance</span>
+                  
+<button type="button"
+        class="rk-ground-toggle inline-flex items-center justify-center w-9 h-9 rounded-lg border border-rule text-ink-2 transition-colors duration-200 hover:bg-sunk hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        aria-pressed="false"
+        aria-label="Switch to dark">
+  <svg class="rk-ground-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+       aria-hidden="true" focusable="false">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+                </div>
+
+                
+                <div class="flex items-center justify-center space-x-6 pt-6 mt-6 border-t border-rule">
+                    
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/trust/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/gb.svg" alt="English" class="w-6 h-4 object-cover rounded-sm">
+                        <span>English</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/fr/trust/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/fr.svg" alt="Français" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Français</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/es/trust/" class="flex items-center space-x-2 text-stone-300 ">
+                        <img src="/images/flags/es.svg" alt="Español" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Español</span>
+                    </a>
+
+                    
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    <a href="/pt/trust/" class="flex items-center space-x-2 text-stone-300 text-white font-bold">
+                        <img src="/images/flags/br.svg" alt="Português" class="w-6 h-4 object-cover rounded-sm">
+                        <span>Português</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .mobile-menu-wrapper {
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-content {
+            display: none;
+        }
+
+        .nav-toggle:checked~header .nav-content {
+            display: block;
+        }
+
+         
+        @media (prefers-reduced-motion: reduce) {
+
+            .mobile-menu-wrapper a,
+            .mobile-menu-wrapper .group>div {
+                transition: none !important;
+            }
+
+            .mobile-menu-wrapper a:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</div>
+    </div>
+
+    
+    <div class="pt-20">
+        
+<main id="content">
+
+
+<div class="bg-canvas min-h-screen relative overflow-hidden">
+  
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-900 via-stone-950 to-stone-950 z-0">
+</div>
+
+
+
+<div class="absolute inset-0 opacity-20 pointer-events-none z-0"
+    style="background-image: linear-gradient(var(--rk-rule-strong) 1px, transparent 1px), linear-gradient(90deg, var(--rk-rule-strong) 1px, transparent 1px); background-size: 60px 60px;">
+</div>
+
+
+  <div class="container mx-auto px-4 py-20 md:py-24 relative z-10">
+    <header class="max-w-5xl">
+      
+      <p class="inline-flex items-center px-5 py-2 mb-7 rounded-lg border border-signal/40 text-signal text-xs md:text-sm font-black uppercase tracking-[0.22em]">
+        Confiança e conformidade
+      </p>
+      
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-signal uppercase italic tracking-tighter leading-[0.92] mb-6">
+        Uma pessoa decide. O registro diz quem.
+      </h1>
+      
+      <p class="text-lg md:text-xl text-ink-2 max-w-3xl leading-relaxed">O que nosso software pode fazer sozinho, onde ele roda e o que ele deixa por escrito. Cada seção termina com links para a documentação pública que mostra isso, para que você possa conferir cada linha em vez de confiar na nossa palavra.</p>
+      
+    </header>
+  </div>
+
+  <div class="container mx-auto px-4 pb-8 relative z-10">
+    
+<section class="pt-4 pb-12">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">Nesta página</p>
+    <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 text-lg text-ink-2 list-decimal pl-6">
+      <li><a class="text-ink hover:text-signal underline decoration-rule" href="#a-person-decides">Uma pessoa decide</a></li>
+      <li><a class="text-ink hover:text-signal underline decoration-rule" href="#guardrails">Salvaguardas em cada agente</a></li>
+      <li><a class="text-ink hover:text-signal underline decoration-rule" href="#where-models-run">Onde os modelos rodam</a></li>
+      <li><a class="text-ink hover:text-signal underline decoration-rule" href="#data-kept-apart">Seus dados, separados</a></li>
+      <li><a class="text-ink hover:text-signal underline decoration-rule" href="#not-known">Desconhecido não é zero</a></li>
+      <li><a class="text-ink hover:text-signal underline decoration-rule" href="#signed-releases">Versões assinadas</a></li>
+      <li><a class="text-ink hover:text-signal underline decoration-rule" href="#standards">As normas com que nos alinhamos</a></li>
+      <li><a class="text-ink hover:text-signal underline decoration-rule" href="#report-a-problem">Relatar um problema de segurança</a></li>
+    </ol>
+  </div>
+
+    </div>
+</section>
+
+
+<section class="py-16 bg-stone-900" id="a-person-decides">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">1 · Uma pessoa decide</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Os agentes redigem. Uma pessoa com nome decide.</h2>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5">
+      <p>Os agentes da Runink leem registros e redigem rascunhos: um processo de sinistro, uma correção de código, uma publicação, uma resposta. O rascunho fica aguardando. Uma pessoa com nome aprova, edita ou rejeita, e o registro guarda quem foi e quando.</p>
+      <p>No Runink TIDE, essas decisões vão para uma cadeia de auditoria. Cada entrada é ligada à anterior, então uma entrada alterada, removida ou fora de ordem fica visível. Qualquer pessoa conectada ao console do TIDE pode clicar em <em>Verify now</em> para que a cadeia inteira seja conferida. A leitura das entradas em si fica restrita aos administradores que você indicar.</p>
+      <p>Duas coisas agem sozinhas, cada uma dentro de um limite fixo:</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong class="text-ink">O FACE cuida do próprio funcionamento.</strong> Quando uma parte do FACE para de responder, ele pode reiniciá-la, isolar uma dependência que falha repetidamente, desfazer a alteração mais recente ou adicionar capacidade. Ele só escolhe dessa lista fixa. Nunca apaga dados, nunca desliga uma máquina e nunca desativa um controle de segurança. Na dúvida, avisa uma pessoa em vez de agir. Um operador pode desligar a parte automática.</li>
+        <li><strong class="text-ink">O classificador de issues do TIDE coloca etiquetas nas issues novas.</strong> Ele só escolhe entre as etiquetas que o repositório permite, e só quando uma verificação independente concorda. Uma pessoa pode mudá-las a qualquer momento, e decide quem cuida da issue.</li>
+      </ul>
+      <p>Todo o resto espera por uma pessoa.</p>
+    </div>
+    <div class="mt-10 border-t border-rule pt-6">
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
+      <ul class="space-y-2 text-base">
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/analysis/agents-and-oversight/">FACE: os agentes e sua supervisão</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: o que cada agente pode fazer e o que uma pessoa decide</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/devex/cluster-gitops/">TIDE: a cadeia de auditoria e como ela é conferida</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/operations/configuration/">FACE: a configuração que desliga a autorrecuperação automática</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/issue-triager/">TIDE: a ficha de modelo do classificador de issues</a></li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+</section>
+
+
+<section class="py-16" id="guardrails">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">2 · Salvaguardas</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Cada agente trabalha dentro de regras escritas.</h2>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5">
+      <p>Cada agente que chama um modelo tem um juiz de políticas à sua frente. O juiz confere um pedido contra regras escritas antes que o modelo o veja, e confere o que o agente escreve antes que seja enviado ou publicado. Um pedido que viola uma regra é recusado, e a recusa fica registrada.</p>
+      <p>As regras de segurança seguem o OWASP Top 10 for LLM Applications, a lista publicada das formas mais comuns de atacar uma aplicação de IA. Elas cobrem tentativas de passar por cima das instruções do agente (a injeção de prompt), tentativas de extrair segredos ou outras informações sensíveis e pedidos para chegar a lugares onde o agente não tem nada a fazer.</p>
+      <p>Registros, páginas da web e documentos que um agente lê são tratados como dados, nunca como instruções. Uma linha de um registro de frete que diz "ignore suas regras" é lida como parte desse registro. Quando um agente propõe uma ação, uma segunda verificação lê as evidências que a execução reuniu. Se ela discordar, a ação fica retida. Se não conseguir decidir, ela diz isso em vez de deixar passar.</p>
+    </div>
+    <div class="mt-10 border-t border-rule pt-6">
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
+      <ul class="space-y-2 text-base">
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/ai-safety/">FACE: segurança da IA, salvaguardas e dados não confiáveis</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">PULSE: salvaguardas antes do modelo, agente por agente</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/concepts/judging-ladder/">PULSE: a segunda verificação das propostas</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: as salvaguardas de cada agente, na sua ficha de modelo</a></li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+</section>
+
+
+<section class="py-16 bg-stone-900" id="where-models-run">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">3 · Onde os modelos rodam</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Modelos abertos, com nome, sem um fornecedor de IA no meio.</h2>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5">
+      <p>FACE, TIDE e PULSE rodam seus modelos onde o produto roda. Instale em um Runink Server nas suas instalações ou na sua própria conta na nuvem, e os modelos também rodam na sua infraestrutura. Escolha as máquinas compartilhadas da Runink, e eles rodam nas nossas. Nos dois casos, nenhum serviço de IA de terceiros é chamado: seus registros, os prompts montados a partir deles e as respostas não vão para nenhum fornecedor de modelos.</p>
+      <p>O LUNA, nosso aplicativo de companhia pessoal, roda seus modelos em servidores operados pela Runink. Ele também não chama nenhum serviço de IA de terceiros.</p>
+      <p>Os modelos são abertos, e nós os indicamos com o autor e a licença:</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      <div class="border border-rule rounded-lg p-6">
+        <p class="font-mono text-sm text-ink mb-2">Qwen3.6-35B-A3B</p>
+        <p class="text-ink-2 text-base">O modelo geral, usado pela maioria dos agentes. Criado pela Qwen, com licença Apache-2.0.</p>
+      </div>
+      <div class="border border-rule rounded-lg p-6">
+        <p class="font-mono text-sm text-ink mb-2">Qwen3-Coder-30B-A3B</p>
+        <p class="text-ink-2 text-base">O modelo de código, para revisar e redigir código. Criado pela Qwen, com licença Apache-2.0.</p>
+      </div>
+      <div class="border border-rule rounded-lg p-6">
+        <p class="font-mono text-sm text-ink mb-2">Qwen3-VL-8B-Instruct</p>
+        <p class="text-ink-2 text-base">O modelo de visão, para páginas digitalizadas e fotos. Criado pela Qwen, com licença Apache-2.0.</p>
+      </div>
+    </div>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5 mt-8">
+      <p>Cada agente tem uma ficha de modelo pública: o que faz, o que lê, o que uma pessoa continua decidindo, em qual modelo roda, onde roda e onde para.</p>
+    </div>
+    <div class="mt-10 border-t border-rule pt-6">
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
+      <ul class="space-y-2 text-base">
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">Fichas de modelo do TIDE</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/models/">Fichas de modelo do PULSE</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/models/">Fichas de modelo do LUNA</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/sovereign-inference/">FACE: inferência soberana</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/pulse/docs/concepts/sovereign-inference/">PULSE: inferência soberana</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/guide/privacy/">LUNA: privacidade e dados</a></li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+</section>
+
+
+<section class="py-16" id="data-kept-apart">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">4 · Seus dados, separados</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">O registro de outra pessoa? "Não encontrado".</h2>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5">
+      <p>Os dados de cada pessoa, e os de cada cliente, ficam separados no servidor. Os dados que um pedido pode alcançar dependem da identidade verificada no login, não do que o próprio pedido diz.</p>
+      <p>Peça um registro que pertence a outra pessoa e a resposta é "não encontrado", a mesma de um registro que não existe. A resposta nem sequer confirma que o registro está lá.</p>
+      <p>O FACE vai um passo além: cada cliente tem sua própria instância do FACE, então os dados de um cliente nunca dividem uma instância com os de outro.</p>
+    </div>
+    <div class="mt-10 border-t border-rule pt-6">
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
+      <ul class="space-y-2 text-base">
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/identity-access/">FACE: identidade, acesso e escopo</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/guide/privacy/">LUNA: quem pode ler seus dados</a></li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+</section>
+
+
+<section class="py-16 bg-stone-900" id="not-known">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">5 · Desconhecido não é zero</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Um número que falta aparece como faltando.</h2>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5">
+      <p>Quando nosso software não consegue ler um número, ele diz isso, com o motivo. Ele não desenha um zero e não chuta. Uma verificação que não pôde rodar aparece como "não verificado", nunca como aprovada. Um campo que ele não conhece fica vazio, não é preenchido.</p>
+      <p>Seguimos a mesma regra: esta página não traz estatísticas.</p>
+    </div>
+    <div class="mt-10 border-t border-rule pt-6">
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
+      <ul class="space-y-2 text-base">
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/dataex/models-inference/">TIDE: o uso, mostrado como ausente e não como zero</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/audit-lineage/">FACE: o que o registro guarda e o que deixa vazio</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/luna/docs/guide/privacy/">LUNA: as marcas que você vê quando falta um valor</a></li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+</section>
+
+
+<section class="py-16" id="signed-releases">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">6 · Versões assinadas</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Uma pessoa assina cada versão, longe da compilação.</h2>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5">
+      <p>As versões e os pacotes do Runink River são assinados com uma única chave de publicação. O responsável pelas versões guarda a chave privada offline. Ela nunca fica na CI e nunca é guardada como segredo de um repositório.</p>
+      <p>As máquinas de compilação só produzem arquivos não assinados e seus checksums. O responsável compara esses arquivos com uma compilação própria e depois assina. Antes que uma versão seja publicada, uma etapa automática confere a assinatura e os checksums. A CI verifica; ela nunca assina.</p>
+      <p>O <a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://github.com/org-runink/river/blob/main/KEYS">arquivo KEYS</a> público é a referência. Confira a chave por esta impressão digital, nunca pelo nome:</p>
+    </div>
+    <p class="mt-6 font-mono text-base md:text-lg text-ink border border-rule rounded-lg px-5 py-4 select-all break-all">95C0 A7B9 7D54 7413 E426 60DD B06F E756 26F1 5BF3</p>
+    <div class="mt-10 border-t border-rule pt-6">
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
+      <ul class="space-y-2 text-base">
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/river/docs/security/release-signing/">River: a assinatura das versões</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/river/docs/security/verify/">River: verifique uma versão você mesmo</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://github.com/org-runink/river/blob/main/KEYS">O arquivo KEYS</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="/.well-known/gpg-key.txt">A chave pública, servida a partir de runink.org</a></li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+</section>
+
+
+<section class="py-16 bg-stone-900" id="standards">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">7 · As normas com que nos alinhamos</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Nossos próprios controles, relacionados a cinco normas.</h2>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5">
+      <p>Mantemos um índice escrito dos nossos próprios controles de segurança: como os dados são criptografados em trânsito e em repouso, como o login recusa por padrão, como os dados de cada cliente ficam separados, como os segredos são tratados, entre outros. Cada controle indica o código que o executa, e cada um está relacionado às partes destas normas que ele atende:</p>
+    </div>
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6 text-lg text-ink">
+      <li class="border border-rule rounded-lg px-5 py-3">SOC 2</li>
+      <li class="border border-rule rounded-lg px-5 py-3">ISO/IEC 27001</li>
+      <li class="border border-rule rounded-lg px-5 py-3">ISO 31000</li>
+      <li class="border border-rule rounded-lg px-5 py-3">ISO/IEC 42001</li>
+      <li class="border border-rule rounded-lg px-5 py-3">PCI DSS v4.0</li>
+    </ul>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5 mt-8">
+      <p class="border-l-4 border-signal pl-5 text-ink"><strong>A Runink não é certificada em nenhuma dessas normas; alinhamento não é certificação.</strong></p>
+      <p>Um agente de evidências lê o índice e confere se o código indicado por cada controle continua lá. Ele registra evidências, nunca um veredito. Qualquer declaração formal em relação a uma dessas normas viria de um auditor independente, não de nós nem do nosso software.</p>
+    </div>
+    <div class="mt-10 border-t border-rule pt-6">
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
+      <ul class="space-y-2 text-base">
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/compliance-evidence/">TIDE: o agente de evidências e as cinco normas</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/security/compliance/">FACE: postura de conformidade</a></li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+</section>
+
+
+<section class="py-16" id="report-a-problem">
+    <div class="container mx-auto px-4" data-motion="reveal">
+        
+  <div class="max-w-4xl">
+    <p class="text-xs font-black uppercase tracking-[0.2em] text-signal mb-4">8 · Relatar um problema de segurança</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Encontrou algo? Conte para nós em particular.</h2>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5">
+      <p>Por favor, não abra uma issue pública para um problema de segurança. Escreva para:</p>
+    </div>
+    <p class="mt-6 font-mono text-lg md:text-xl text-ink border border-rule rounded-lg px-5 py-4 select-all">security@runink.org</p>
+    <div class="text-lg text-ink-2 leading-relaxed space-y-5 mt-6">
+      <p>Você pode <a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="mailto:security@runink.org">abrir no seu aplicativo de e-mail</a> ou copiar o endereço acima. Para criptografar seu relato, use a chave de publicação da seção 6 e confira antes a impressão digital. Conte o que foi afetado e em qual versão, o que um atacante poderia fazer e como reproduzir, se puder. Para o Runink River, você também pode usar o botão de relato privado na aba Security do repositório.</p>
+    </div>
+    <div class="mt-10 border-t border-rule pt-6">
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Leia as evidências (em inglês)</p>
+      <ul class="space-y-2 text-base">
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/river/docs/security/reporting/">River: como relatar e o que acontece depois</a></li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+</section>
+
+
+  </div>
+
+  
+  <div class="container mx-auto px-4 pb-8 relative z-10">
+    
+
+
+
+<section class="max-w-6xl mx-auto pt-4 pb-16" aria-labelledby="leadership-heading">
+  <h2 id="leadership-heading" class="text-3xl md:text-4xl font-bold mb-4">Com quem você trabalharia</h2>
+  <p class="text-xl text-ink-2 max-w-3xl mb-10">A Runink é dirigida pelo fundador. A pessoa na primeira reunião é a mesma que desenhou aquilo que está em discussão.</p>
+
+  <div class="border border-rule bg-sheet rounded-xl p-6 md:p-10">
+
+    <div class="flex items-center gap-5 mb-8">
+      <span class="text-signal shrink-0" aria-hidden="true">
+        <svg viewBox="0 0 96 96" width="60" height="60" fill="none" role="presentation">
+          <path d="M22 24 V 68 M22 24 H 34 A 22 22 0 0 1 34 68 H 22"
+                stroke="currentColor" stroke-width="5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M60 24 V 68 M60 24 H 68 A 13 13 0 0 1 68 50 H 60"
+                stroke="currentColor" stroke-width="5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 80 H 82" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round"/>
+        </svg>
+      </span>
+      <div>
+        <h3 class="text-2xl md:text-3xl font-bold text-ink mb-1">Dan Paes</h3>
+        <p class="text-sm font-black uppercase tracking-[0.18em] text-signal">Diretor-executivo e fundador técnico</p>
+      </div>
+    </div>
+
+    
+    <div class="max-w-[68ch] space-y-4 mb-10">
+      <p class="text-base leading-relaxed text-ink-2">Dan Paes passou mais de vinte anos dentro da empresa dos outros, conduzindo programas de transformação digital e de modernização em larga escala para organizações globais. Do tipo demorado: o que se substitui é aquilo em que o negócio está rodando naquela manhã, e o trabalho é julgado por se alguma coisa quebrou.</p><p class="text-base leading-relaxed text-ink-2">Ele fundou a Runink e a dirige como diretor-executivo. Fundador técnico é a metade mais útil desse título: ele define a arquitetura e trabalha no código, de modo que quem responde a uma pergunta de arquitetura numa primeira reunião é quem decidiu a resposta, e a distância entre uma pergunta e uma mudança é curta.</p><p class="text-base leading-relaxed text-ink-2">É também por isso que a plataforma tem o formato que tem. Ela roda em hardware que o cliente controla, e o raciocínio sobre os dados dele fica ali. Essa é a maneira mais cara de construir e fecha o caminho conveniente, que é o tipo de decisão que precisa ser resolvida por quem é dono da arquitetura em vez de ficar onde possa ser negociada em silêncio.</p><p class="text-base leading-relaxed text-ink-2">Ele é Embaixador FINOS. A FINOS é a Fintech Open Source Foundation, parte da Linux Foundation, e o trabalho ali é interoperabilidade entre instituições que compartilham um mercado mas não a infraestrutura e nunca os dados. É o mesmo problema para o qual esta plataforma aponta, discutido em aberto, diante de gente que diz quando está errado.</p>
+    </div>
+    
+
+    
+    
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 list-none pl-0" data-motion="reveal">
+      
+      <li class="border-t border-rule pt-4">
+        <p class="text-base font-bold text-ink mb-1">Mais de 20 anos</p>
+        <p class="text-sm leading-relaxed text-ink-2">Transformação digital e modernização em larga escala para grandes empresas.</p>
+      </li>
+      
+      <li class="border-t border-rule pt-4">
+        <p class="text-base font-bold text-ink mb-1">Diretor-executivo e fundador técnico</p>
+        <p class="text-sm leading-relaxed text-ink-2">Runink. Define a arquitetura e escreve código nela.</p>
+      </li>
+      
+      <li class="border-t border-rule pt-4">
+        <p class="text-base font-bold text-ink mb-1">Embaixador FINOS</p>
+        <p class="text-sm leading-relaxed text-ink-2">Fintech Open Source Foundation, um projeto da Linux Foundation. Interoperabilidade open source, em público.</p>
+      </li>
+      
+    </ul>
+    
+
+    
+    
+    <div>
+      <p class="text-xs font-black uppercase tracking-[0.2em] text-ink-2 mb-3">Confira qualquer um destes pontos</p>
+      <ul class="flex flex-wrap gap-x-8 gap-y-2 list-none pl-0">
+        
+        <li>
+          <a class="text-signal underline underline-offset-4" href="https://www.linkedin.com/in/danspaes/"
+             rel="noopener noreferrer">linkedin.com/in/danspaes</a>
+        </li>
+        
+        <li>
+          <a class="text-signal underline underline-offset-4" href="https://www.finos.org/ambassador-program"
+             rel="noopener noreferrer">finos.org/ambassador-program</a>
+        </li>
+        
+        <li>
+          <a class="text-signal underline underline-offset-4" href="mailto:paes@runink.org"
+             >paes@runink.org</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+</section>
+
+
+  </div>
+
+  <div class="container mx-auto px-4 pb-20 relative z-10">
+    
+
+
+
+
+<section class="mt-12 md:mt-16" aria-labelledby="next-step-head">
+  
+<div class="flex items-center gap-3.5 mb-6">
+  <span class="flex-none w-6 border-t-[3px] border-signal" aria-hidden="true"></span>
+  <h2 id="next-step-head" class="min-w-0 m-0 font-heading text-[0.9375rem] font-extrabold uppercase tracking-[0.12em] text-ink-2">Um próximo passo</h2>
+  <span class="flex-1 border-t border-rule" aria-hidden="true"></span>
+  
+</div>
+
+  <div class="rk-next border border-rule bg-sheet rounded-xl p-6 md:p-8">
+    <h3 class="mt-0 mb-3 font-heading text-xl md:text-2xl font-bold leading-tight text-ink">Peça para mostrarmos qualquer linha desta página.</h3>
+    <p class="mt-0 mb-6 text-ink-2 text-base leading-relaxed max-w-[62ch]">Meia hora com quem cuida de segurança ou conformidade do seu lado. Escolha uma seção: abrimos o software funcionando e o registro que ele mantém, não um slide sobre o assunto.</p>
+    <a class="inline-flex items-center bg-signal-fill text-on-fill no-underline rounded-lg px-5 py-3 font-heading text-xs font-extrabold uppercase tracking-[0.12em] hover:bg-signal-fill-hover transition-colors"
+       href="/pt/?about=Confian%C3%A7a&#43;e&#43;conformidade#contact-form">Agende uma consulta</a>
+    
+  </div>
+</section>
+
+
+  </div>
+</div>
+
+</main>
+
+        
+        
+
+        
+        
+        
+
+
+    </div>
+
+    
+    
+<footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="Rodapé">
+
+  <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+
+      
+      <div class="col-span-2 lg:col-span-1">
+        <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
+
+        
+        <h2 class="rk-label mt-6 mb-2">Contato</h2>
+        <ul class="m-0 list-none p-0">
+          
+          <li><a class="block py-1 text-sm leading-6 text-signal hover:underline" href="/pt/#contact-form">Escreva para nós</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="mailto:paes@runink.org">paes@runink.org</a></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="rk-foot-explore">
+        <h2 class="rk-label mb-2" id="rk-foot-explore">Explorar</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/industries/">Setores</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/pricing/">Preços</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/downloads/">Downloads</a></li>
+        </ul>
+      </nav>
+
+      
+      <nav aria-labelledby="rk-foot-reading">
+        <h2 class="rk-label mb-2" id="rk-foot-reading">Leituras</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/library/">Biblioteca</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/blog/whitepapers/">Whitepapers</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/use-cases/">Cenários de trabalho</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/blog/">Todos os artigos</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-company">
+        <h2 class="rk-label mb-2" id="rk-foot-company">Empresa</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/company/">Sobre a Runink</a></li>
+          
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/pt/trust/">Confiança e conformidade</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/license/">Licença</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="/privacy/">Política de privacidade</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  
+  <div class="border-t border-rule">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+      
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; 2026 Runink. Todos os direitos reservados.</p>
+      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">Idiomas: English, Français, Español, Português — escolha um na barra no topo da página.</p>
+
+      
+      <p class="rk-foot-paper">Runink &middot; runink.org &middot; paes@runink.org &middot; &copy; 2026 Runink</p>
+    </div>
+  </div>
+
+  <style>
+     
+    .rk-foot a:focus-visible {
+      outline: 2px solid var(--rk-focus);
+      outline-offset: 3px;
+      border-radius: var(--rk-r-1);
+    }
+
+     
+    @media (prefers-reduced-motion: reduce) {
+      .rk-foot a { transition: none !important; }
+    }
+
+    .rk-foot-paper { display: none; }
+
+    @media print {
+       
+      body > .fixed,
+      #consent-banner,
+      .mobile-menu-wrapper { display: none !important; }
+
+       
+      .rk-foot-nav,
+      .rk-foot-screen { display: none !important; }
+
+      .rk-foot-paper {
+        display: block;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--rk-text-3);
+      }
+
+       
+      .rk-foot {
+        margin-top: 10pt !important;
+        background: none !important;
+        break-inside: avoid;
+      }
+
+      .rk-foot > div { padding: 0 !important; }
+      .rk-foot > div + div { border-top: 1px solid var(--rk-rule); padding-top: 5pt !important; }
+    }
+  </style>
+</footer>
+
+    
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-stone-900 text-stone-300 p-4 z-50 flex flex-col md:flex-row items-center justify-between shadow-2xl border-t border-stone-800" style="display: none;">
+    <div class="mb-4 md:mb-0 max-w-3xl">
+        <p class="text-sm">Usamos cookies para contar visitas e ver quais páginas são lidas. Não há anúncios aqui, então nada é usado para direcionar nada a você nem para mudar o que você vê. Nada é contado até você escolher &#34;Permitir a contagem&#34;. Guardamos a sua resposta por 180 dias.
+            Leia a nossa <a href="/privacy/" class="text-stone-100 hover:text-primary-400 underline">política de privacidade</a> para mais informações.
+        </p>
+    </div>
+    <div class="flex space-x-4">
+        <button id="reject-cookies" class="px-4 py-2 text-sm border border-stone-600 rounded-lg hover:bg-stone-800 transition-colors">
+            Recusar o não essencial
+        </button>
+        
+        <button id="accept-cookies" class="px-4 py-2 text-sm bg-signal-fill text-on-fill rounded-lg hover:bg-signal-fill-hover transition-colors">
+            Permitir a contagem
+        </button>
+    </div>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('consent-banner');
+    const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
+    const now = Date.now();
+    
+    
+    
+    
+    
+    const ttl = 180 * 24 * 60 * 60 * 1000;
+
+    if (!consentTimestamp || (now - parseInt(consentTimestamp, 10) >= ttl)) {
+        consentBanner.style.display = '';
+        localStorage.removeItem('cookieConsent');
+        localStorage.removeItem('cookieConsentTimestamp');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function setConsent(granted) {
+            if (typeof gtag !== 'function') return;
+            gtag('consent', 'update', {
+                'analytics_storage': granted ? 'granted' : 'denied'
+            });
+            if (granted) {
+                gtag('event', 'page_view');
+            }
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(true);
+            consentBanner.style.display = 'none';
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentTimestamp', Date.now().toString());
+            setConsent(false);
+            consentBanner.style.display = 'none';
+        });
+    });
+})();
+</script>
+
+
+    
+    
+    <script src="/js/main.js" defer></script>
+
+    
+    
+
+
+<script src="/js/motion.27f06c26d9e54528daa49660a0af947edc690620d0240b682e3a90138640ae15.js" integrity="sha256-J/BsJtnlRSjapJZgoK&#43;UftxpBiDQJAtoLjqQE4ZArhU=" defer></script>
+
+</body>
+
+</html>
