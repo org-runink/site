@@ -1666,6 +1666,125 @@
     .hp-row__owner { grid-column: 3; grid-row: 1 / span 2; }
   }
 
+  /* ---- revenue leaks: one card per loss ---------------------------------- */
+
+  .hp-leaks {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 700px) {
+    .hp-leaks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1100px) {
+    .hp-leaks { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .hp-leak {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent-edge);
+    border-radius: var(--rk-r-3);
+    padding: 1.25rem 1.375rem 1.375rem;
+    min-width: 0;
+  }
+  .hp-leak h3 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0;
+  }
+  .hp-leak p { margin: 0; font-size: 0.9375rem; line-height: 1.6; color: var(--ink-2); }
+  .hp-leak__owner {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .hp-leak__does { padding-top: 0.625rem; border-top: 1px solid var(--rule); }
+  .hp-leak__does b { color: var(--ink); }
+
+  /* ---- compare: a real table that reflows on a phone --------------------- */
+
+  .hp-sr {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .hp-cmp__wrap { max-width: 100%; }
+  .hp-cmp {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .hp-cmp th, .hp-cmp td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.875rem 1rem 0.875rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hp-cmp thead th {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 2px solid var(--accent-edge);
+  }
+  .hp-cmp tbody th { color: var(--ink); font-weight: 700; width: 22%; }
+  .hp-cmp td:last-child { color: var(--ink); }
+  /* Under 700px a three-column table either scrolls sideways or crushes, so
+     each row becomes a block: the topic, then each side labelled by its
+     column head through data the header row already carries. */
+  @media (max-width: 699px) {
+    .hp-cmp thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .hp-cmp, .hp-cmp tbody, .hp-cmp tr, .hp-cmp th, .hp-cmp td { display: block; width: auto; }
+    .hp-cmp tr { padding: 0.75rem 0; border-bottom: 1px solid var(--rule); }
+    .hp-cmp th, .hp-cmp td { border: 0; padding: 0.25rem 0; }
+    .hp-cmp td::before {
+      content: attr(data-col);
+      display: block;
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--ink-2);
+    }
+  }
+  .hp-cmp__note { max-width: 62ch; margin: 1rem 0 0; font-size: 0.875rem; line-height: 1.6; color: var(--ink-2); }
+
+  /* ---- questions --------------------------------------------------------- */
+
+  .hp-faq {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .hp-faq { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .hp-faq__item { padding: 1rem 0 1.125rem; border-top: 1px solid var(--rule); }
+  .hp-faq__item h3 {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 0.5rem;
+  }
+  .hp-faq__item p { margin: 0; font-size: 0.9375rem; line-height: 1.65; color: var(--ink-2); }
+  .hp-faq__item a { color: var(--ink); text-decoration: underline; }
+
   /* ---- why: three glyphs ------------------------------------------------ */
 
   .hp-why {
@@ -2091,7 +2210,25 @@
 
     /* Keep every block whole on one sheet, and never orphan a heading. */
     .hp-field, .hp-why__item, .hp-row, .hp-contact,
-    .hp-field__panel { break-inside: avoid; page-break-inside: avoid; }
+    .hp-field__panel, .hp-leak, .hp-faq__item,
+    .hp-cmp tr { break-inside: avoid; page-break-inside: avoid; }
+
+    /* The new blocks on paper: three leak cards across, the table kept as a
+       table (a printed sheet is under the 700px break), ink borders. */
+    .hp-leaks { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8pt; }
+    .hp-leak { padding: 8pt 9pt; border-radius: 0; border-color: var(--rk-rule-strong); border-top-color: var(--rk-rule-strong); }
+    .hp-leak h3 { font-size: 10.5pt; color: var(--rk-text); }
+    .hp-leak p, .hp-faq__item p, .hp-cmp { font-size: 8.5pt; }
+    .hp-cmp thead { position: static; width: auto; height: auto; overflow: visible; clip: auto; display: table-header-group; }
+    .hp-cmp { display: table; }
+    .hp-cmp tbody { display: table-row-group; }
+    .hp-cmp tr { display: table-row; }
+    .hp-cmp th, .hp-cmp td { display: table-cell; padding: 4pt 8pt 4pt 0; border-bottom: 1px solid var(--rk-rule-strong); }
+    .hp-cmp td::before { content: none; }
+    .hp-cmp thead th { border-bottom: 2px solid var(--rk-rule-strong); color: var(--rk-text); }
+    .hp-faq { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14pt; }
+    .hp-faq__item { padding: 6pt 0; border-top-color: var(--rk-rule-strong); }
+    .hp-faq__item h3 { font-size: 10pt; color: var(--rk-text); }
     .hp-head, .hp-intro, .hp-hero {
       break-after: avoid; page-break-after: avoid;
       break-inside: avoid; page-break-inside: avoid;

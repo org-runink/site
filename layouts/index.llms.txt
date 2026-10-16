@@ -67,6 +67,14 @@ measure and say where to find it in your own systems instead.
 - [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
 {{- end }}{{ end }}
 
+## Questions answered on the homepage
+
+Read from the homepage's own `faq` front matter at build time, so this list and
+the visible page say the same words.
+{{ range site.Home.Params.faq }}
+- {{ .q }} {{ .a | markdownify | plainify | htmlUnescape }}
+{{- end }}
+
 ## Shorter pieces
 
 Articles on the operational problems behind the documents above — held customs

@@ -25,12 +25,12 @@ title: "Runink"
 # Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
 # seo_title verbatim, at most 60 characters; seo_description is the meta and card
 # description, at most 155. Visible copy on the page is unchanged by these two.
-seo_title: "Runink | Catch overcharges and expiring claims in time"
-seo_description: "Overcharges paid, claims left to expire, rules broken on a busy shift. Runink FACE reads the records you keep and drafts the fix for a person to approve."
+seo_title: "Runink FACE | Revenue leakage audit for freight and claims"
+seo_description: "For field operations and revenue leaders. Runink FACE finds freight overcharges, expiring claims and stale orders in your records, and drafts the fix."
 # Share card (og:image), drawn by scripts/og-cards/render.mjs from the English
 # hero. One English card serves all four languages.
 image: "/images/og/home-og.jpg"
-description: "You find out when it is too late to argue. A container sits because one form is wrong and the charge starts that day. Runink FACE reads the records your systems already hold, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision."
+description: "Revenue leaks out of records you already keep: a carrier overcharge nobody disputed, a damage claim left to expire, a fulfilment plan that went stale by mid-morning. Runink FACE turns those scattered records into fulfilment orders and claim submissions, finds the root cause behind each loss, and drafts a defensible action for one approval."
 # THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
 #
 # `ground: console` puts data-ground on <html>, which re-binds every --rk-*
@@ -45,17 +45,17 @@ ground: "console"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
 hero:
-  eyebrow: "Logistics · Insurance · Banking · Telecom · Marketing"
-  line1: "You find out when"
-  line2: "it is too late to argue."
-  deck: "A reefer drifts warm overnight. A review threshold is raised to clear a backlog and never put back. A rating change is right for the promotion and wrong for a legacy plan. Every one of them was written down somewhere before it cost anything."
+  eyebrow: "For field operations managers, CROs and revenue operations"
+  line1: "Revenue leaks out of"
+  line2: "records you already keep."
+  deck: "A carrier overcharge paid because disputing it takes a morning. A damage claim left to expire. A fulfilment plan that was right at six and wrong by ten. Each one was written down somewhere before it cost anything."
   fig_label: "Every record, read against its own rule"
   stance_label: "Where we stand"
   stance:
     - "An action software takes on its own leaves nobody to ask afterwards."
     - "So this one drafts, and waits."
     - "The approval is the record: a name, a time, and the reason it was sent, kept together."
-  product_line: "**Runink FACE** is the product behind that: it reads the records your systems already hold, compares each one against the rule that governs it, and puts a drafted action in front of the person who owns the decision."
+  product_line: "**Runink FACE: Fulfilment Autonomous Claims Engine** turns those scattered, noisy records into fulfilment orders and claim submissions. Its actionable twins keep auditing your systems, find the root cause behind each loss and draft a defensible action with the evidence attached. Hours of manual work become one approval."
   cta_primary: "Find your industry"
   cta_secondary: "Book a consultation"
 
@@ -435,15 +435,75 @@ industries:
           - step: "A named person sends it"
             body: "Every draft lands in a review queue with an approve and a reject, and carries one visible status while it waits. Approving is a step somebody takes rather than a formality the system performs for them."
 
+# WHERE THE REVENUE LEAKS — written for the field operations manager who sees
+# these every week and the revenue leader who sees them every quarter. Each
+# "does" line is backed by FACE on origin/main (rule 4) and carries no figure
+# (rule 1). A loss FACE does not draft for gets no card (rule 2).
+leaks_heading: "Where revenue leaks, and what FACE drafts for each"
+leaks_intro: "Six losses a field operations manager sees every week and a revenue leader sees every quarter. Each one sits in records you already keep, and none of them needs a new system to find."
+leaks_does_label: "What FACE drafts:"
+leaks:
+  - owner: "Freight audit · Finance"
+    title: "Carrier overcharges and duplicate bills"
+    cost: "Disputing one invoice means pulling the receipt, the weight and the rate that applied that day. That takes a morning, so only the big ones get done. The rest are paid."
+    does: "It reads every invoice against the records behind it and the rates you agreed, flags the overcharge and the bill paid twice, and drafts the dispute with each record attached."
+  - owner: "Claims · Recovery desk"
+    title: "Damage, shortage and late-delivery claims that expire"
+    cost: "A claim is money back only inside the carrier's filing window. When building the file costs more than the claim, the small ones quietly lapse."
+    does: "It gathers the freight bill, the proof of delivery and your service terms, and drafts the claim inside the window. A person approves it before it is filed."
+  - owner: "Operations director · Trade compliance"
+    title: "Demurrage and detention on a held container"
+    cost: "A container sits on a hold because one paper is missing, and the daily charge starts that day."
+    does: "It names the held entry and the missing paper, counts the charge from your own rate, and puts the fix in front of the person who can clear it."
+  - owner: "Field operations manager"
+    title: "Fulfilment plans that go stale by mid-morning"
+    cost: "The plan that was right at six is wrong by ten, and nobody re-runs it. Orders wait while somebody reconciles four screens."
+    does: "It keeps a twin of each site, asset and order current from your records, and drafts the fulfilment orders, line by line, for one approval."
+  - owner: "Field operations · Quality"
+    title: "Cold-chain loss found after the load is spoiled"
+    cost: "A reefer drifts warm overnight and nobody opens the door until morning. By then the evidence is the load."
+    does: "It reads the photo from the door beside the consignment papers, names the pallet that differs, and drafts the claim with the evidence tied to it."
+  - owner: "CRO · Revenue operations"
+    title: "The same loss every month, with no cause on file"
+    cost: "Recovering a credit fixes one invoice. The carrier, lane or step that caused it keeps causing it."
+    does: "It ranks the causes behind each claim by how much fixing each one would change it, so the fix that matters most is on top, with the records behind it."
+
+# HOW THIS DIFFERS FROM A RECOVERY SERVICE. General terms, no company named
+# (rule 11). Every FACE cell is a property of how FACE is built. Pricing is not a
+# row: FACE has its own success fee on recoveries, and that lives on /pricing/.
+compare:
+  heading: "Software your team runs, not a service that files for you"
+  intro: "Most recovery offers are an outside service. You hand over invoices or carrier logins, they file, and a credit comes back. That recovers money once. FACE is built to show why it was lost, and to put the next step with the person who owns it."
+  col_topic: "Question"
+  col_them: "An outside recovery service"
+  col_us: "Runink FACE"
+  rows:
+    - topic: "What it reads"
+      them: "The invoices and tracking data you hand over, often with your carrier account logins."
+      us: "The records your systems already hold: orders, invoices, claim files, documents, photos and live feeds."
+    - topic: "What comes back"
+      them: "A credit, and a list of what was filed."
+      us: "A drafted dispute, claim or fulfilment order, with the root cause and the records behind it."
+    - topic: "Who decides"
+      them: "The service files on your behalf."
+      us: "A named person on your team approves each one. Their name and the time stay on the record."
+    - topic: "Where your records go"
+      them: "Into the provider's systems."
+      us: "Onto the machines your licence names: your servers, your cloud account or Runink's shared machines. No outside AI service sees them."
+    - topic: "What it covers"
+      them: "Usually one kind of invoice."
+      us: "Freight bills, claims, port charges, cold chain, fulfilment orders and the rules you work to."
+  note: "Prices, including the success fee on recovered claims, are on the [pricing page](/pricing/)."
+
 why_heading: "What changes in the week"
 why_intro: "Three changes, and they are the ones that move the lines above."
 why:
   - glyph: "finding"
-    title: "You get the finding, not the data"
-    body: "A dashboard shows you a number and leaves the work to you. This arrives as one specific proposed action, ranked, with the rule it invoked and the records it cited attached to it."
+    title: "Twins that keep auditing"
+    body: "A twin is a live copy of a site, an asset or an order, kept current from your own records. Each one is checked against the rules you work to on the schedule you set, so a loss arrives as a finding with its root cause and records attached."
   - glyph: "approve"
-    title: "A named person decides"
-    body: "A finding arrives as a drafted action and waits. Approving it is what sends it, and who approved it, when, and what they changed stays on the record — so the reason can be given later without assembling it again."
+    title: "One approval, and it holds up"
+    body: "Each finding arrives as a drafted action: a dispute, a claim or a fulfilment order, with the rule it broke and the records it cites. One approval sends it. Who approved it, when, and what they changed stays on the record."
   - glyph: "held"
     title: "No outside AI service sees your records"
     body: "On Dedicated and Enterprise, the files and the reasoning about them run on your own servers or cloud account; on Lite, on Runink's shared machines. On every plan, nothing is sent to an outside model provider, which is usually the shortest route through a security review."
@@ -506,6 +566,30 @@ products:
     line: "A free, open-source operating system for the data, analytics and AI workstations you already own. The disk is encrypted from the first boot, a bad update rolls back with one reboot, and there is no per-seat licence."
 products_more_text: "How we build it, and who"
 products_more_url: "/company"
+
+# THE QUESTIONS — visible on the page and restated as FAQPage JSON-LD by
+# layouts/index.html. Rule 1 holds for both: no figure, no outcome claimed.
+faq_heading: "Questions revenue and operations leaders ask first"
+faq_intro: "Short answers. The FACE page and the FACE paper carry the long ones."
+faq:
+  - q: "What is revenue leakage in logistics?"
+    a: "Money a shipper was owed, or should never have paid, and did not get back: carrier overcharges, bills paid twice, claims left to expire, demurrage on a held container and orders that miss their window. It is almost always written down in your own systems before anyone acts on it."
+  - q: "How do I find freight overcharges without checking every invoice by hand?"
+    a: "Compare every invoice with the records behind it: the receipt, the weight and the rate that applied that day. Runink FACE makes that comparison on every invoice, flags the overcharge and the duplicate, and drafts the dispute with the records attached for your analyst to approve."
+  - q: "How do I stop freight claims from expiring?"
+    a: "Make each claim file cheap to build. FACE gathers the freight bill, the proof of delivery and your service terms, and drafts the claim inside the carrier's filing window. A person on your team approves it before it is filed."
+  - q: "What is an actionable twin?"
+    a: "A live copy of something real, such as a site, an asset or an order, kept current from your own records. In Runink FACE each twin is checked against the rules you work to, and what differs comes back as a drafted action. It waits on the map and in Today's command for a named person to approve or reject."
+  - q: "How does FACE find the root cause of a loss?"
+    a: "For each claim it lists the causes behind it and estimates how much fixing each one would change the outcome, then ranks them. The fix that matters most is on top, with the records behind it, so the talk with a carrier or a site starts from evidence."
+  - q: "Is FACE an outsourced audit or recovery service?"
+    a: "No. It is software your team runs. It drafts, and a named person on your team approves each dispute, claim and order before anything is sent. Prices, including the success fee on recovered claims, are on the [pricing page](/pricing/)."
+  - q: "Do we need to replace our TMS, WMS or ERP?"
+    a: "No. FACE reads from the systems you already run: databases, business software, logistics systems, files, carrier records and live feeds from trackers and sensors. It is not a system of record and is not trying to become one."
+  - q: "Does our data leave our servers?"
+    a: "On the Dedicated and Enterprise licences FACE runs on your own servers or in your own cloud account. Lite runs on Runink's shared machines. On every licence, nothing is sent to an outside AI model provider."
+  - q: "Who in the company uses it?"
+    a: "Field operations managers, for fulfilment orders and exceptions. Claims and freight audit teams, for disputes and claims. Finance and revenue leaders, for the credits recovered and the causes behind them. Each person approves what is theirs."
 
 contact:
   heading: "Bring one lane, one claim, or one month of invoices."
