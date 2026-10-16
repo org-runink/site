@@ -1751,6 +1751,7 @@
     .hp-cmp, .hp-cmp tbody, .hp-cmp tr, .hp-cmp th, .hp-cmp td { display: block; width: auto; }
     .hp-cmp tr { padding: 0.75rem 0; border-bottom: 1px solid var(--rule); }
     .hp-cmp th, .hp-cmp td { border: 0; padding: 0.25rem 0; }
+    .hp-cmp tbody th { width: auto; }
     .hp-cmp td::before {
       content: attr(data-col);
       display: block;
@@ -1762,6 +1763,7 @@
     }
   }
   .hp-cmp__note { max-width: 62ch; margin: 1rem 0 0; font-size: 0.875rem; line-height: 1.6; color: var(--ink-2); }
+  .hp-cmp__note a { color: var(--ink); text-decoration: underline; }
 
   /* ---- questions --------------------------------------------------------- */
 
