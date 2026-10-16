@@ -243,6 +243,78 @@
     </figure>
     {{ end }}
 
+    {{/* 4b. WHERE THE REVENUE LEAKS — the page's answer to the revenue and
+         field-operations reader, in the order they would audit their own week.
+
+         Each card names a loss in the reader's words, says who owns it, and
+         says what FACE drafts for it. Every "does" line must be defensible from
+         FACE's code on origin/main (CONTENT.md rule 4) and none may carry a
+         figure (rule 1). A loss FACE does not draft for does not get a card —
+         rule 2 forbids saying so, so the card simply is not there. */}}
+    {{ with .Params.leaks }}
+    <section class="hp-sec" id="revenue-leaks" aria-labelledby="leaks-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="leaks-heading">{{ $.Params.leaks_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.leaks_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <ul class="hp-leaks">
+        {{ range . }}
+        <li class="hp-leak">
+          <p class="hp-leak__owner">{{ .owner }}</p>
+          <h3>{{ .title }}</h3>
+          <p class="hp-leak__cost">{{ .cost }}</p>
+          <p class="hp-leak__does"><b>{{ $.Params.leaks_does_label }}</b> {{ .does }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{/* 4c. HOW THIS DIFFERS FROM A RECOVERY SERVICE.
+
+         The buyer comparing us has usually met an outsourced audit or recovery
+         service first. This states what each kind of offer does, in general
+         terms, and names no company: CONTENT.md rule 11 keeps third-party names
+         to cited sources. Every "us" cell is a property of how FACE is built
+         and must survive the rule-4 test; no row may describe what FACE lacks
+         (rule 2). Pricing is deliberately not a row: FACE's own price list has
+         a success fee on recoveries, and the pricing page is where that lives.
+         A real <table>, because a comparison is tabular data and answer
+         engines read table rows as facts. */}}
+    {{ with .Params.compare }}{{ $c := . }}
+    <section class="hp-sec" id="compare" aria-labelledby="compare-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="compare-heading">{{ .heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with .intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <div class="hp-cmp__wrap">
+        <table class="hp-cmp">
+          <thead>
+            <tr>
+              <th scope="col"><span class="hp-sr">{{ .col_topic }}</span></th>
+              <th scope="col">{{ .col_them }}</th>
+              <th scope="col">{{ .col_us }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range .rows }}
+            <tr>
+              <th scope="row">{{ .topic }}</th>
+              <td data-col="{{ $c.col_them }}">{{ .them }}</td>
+              <td data-col="{{ $c.col_us }}">{{ .us }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+      {{ with .note }}<p class="hp-cmp__note">{{ . | markdownify }}</p>{{ end }}
+    </section>
+    {{ end }}
+
     {{/* 5. Only now, how it works — and still in the buyer's words. The id is
          the one the header menu links to in all four languages. */}}
     {{ with .Params.why }}
@@ -573,6 +645,53 @@
       {{ end }}
       {{ end }}
     </section>
+    {{ end }}
+
+    {{/* 6c. THE QUESTIONS A BUYER TYPES INTO A SEARCH BOX OR AN ASSISTANT.
+
+         Plain h3 + p rather than <details>: an answer hidden behind a click
+         prints as nothing and is weighted lower by crawlers. The FAQPage below
+         restates these exact words — partials/schema-faq.html only runs for
+         .IsPage, and the home page is not one, so it is emitted here. Rule 1
+         applies to the schema as much as to the prose: anything untrue here is
+         untrue twice. */}}
+    {{ with .Params.faq }}
+    <section class="hp-sec" id="questions" aria-labelledby="faq-heading">
+      <div class="hp-head">
+        <span class="hp-head__mark" aria-hidden="true"></span>
+        <h2 class="hp-head__label" id="faq-heading">{{ $.Params.faq_heading }}</h2>
+        <span class="hp-head__rule" aria-hidden="true"></span>
+      </div>
+      {{ with $.Params.faq_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
+      <div class="hp-faq">
+        {{ range $i, $f := . }}
+        <div class="hp-faq__item" id="q-{{ add $i 1 }}">
+          <h3>{{ $f.q }}</h3>
+          <p>{{ $f.a | markdownify }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": {{ printf "%s#questions" $.Permalink | jsonify | safeJS }},
+      "isPartOf": { "@id": "https://runink.org/#website" },
+      "publisher": { "@id": "https://runink.org/#organization" },
+      "inLanguage": {{ $.Language.Lang | jsonify | safeJS }},
+      "mainEntity": [
+        {{- range $i, $f := . }}{{ if $i }},{{ end }}
+        {
+          "@type": "Question",
+          "name": {{ $f.q | jsonify | safeJS }},
+          "url": {{ printf "%s#q-%d" $.Permalink (add $i 1) | jsonify | safeJS }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ $f.a | markdownify | plainify | htmlUnescape | jsonify | safeJS }} }
+        }
+        {{- end }}
+      ]
+    }
+    </script>
     {{ end }}
 
     <!-- 7. One next step -->
