@@ -126,6 +126,15 @@
 {{- $s := newScratch -}}
 {{- range $key, $path := (dict
       "industries" "/industries"
+      "face"       "/products/face"
+      "pulse"      "/products/pulse"
+      "tide"       "/products/tide"
+      "river"      "/river"
+      "ind_logistics" "/industries/logistics-supply-chain"
+      "ind_insurance" "/industries/insurance"
+      "ind_banking"   "/industries/banking-financial-services"
+      "ind_telecom"   "/industries/telecom"
+      "ind_marketing" "/industries/marketing"
       "pricing"    "/pricing"
       "downloads"  "/downloads"
       "library"    "/library"
@@ -151,14 +160,14 @@
 <footer class="rk-foot mt-auto bg-sunk border-t border-rule" aria-label="{{ $f.label }}">
 
   <div class="rk-foot-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-x-8 lg:grid-cols-5">
 
       {{/* Full width on a phone, a quarter at 1440. The wordmark is text rather
            than the logo partial: partials/logo.html links to .Site.BaseURL — the
            ENGLISH home, absolutely — and the header already carries that control
            on screen at all times. A mark that is identification rather than a
            control does not need to be a link. */}}
-      <div class="col-span-2 lg:col-span-1">
+      <div class="col-span-2 sm:col-span-3 lg:col-span-1">
         <p class="m-0 font-heading text-2xl font-bold tracking-tight text-ink">Runink</p>
 
         {{/* No id on this one, unlike the three below: it labels a pair of
@@ -178,12 +187,35 @@
         </ul>
       </div>
 
-      <nav aria-labelledby="rk-foot-explore">
-        <h2 class="rk-label mb-2" id="rk-foot-explore">{{ $f.explore }}</h2>
+      {{/* FIVE COLUMNS (2026-10-17). The homepage used to end in its own block
+           of product, industry and company links directly above this footer,
+           and the two repeated each other (Company, Library, Pricing, Trust
+           twice in one screen). That block is gone; the links it carried live
+           here once, on every page — which is also what keeps /products/*,
+           /river/ and the five industry pages inside CONTENT.md rule 9.
+           Product and industry pages exist in English only, so on a translated
+           site those links fall back to the English path (the $s map above).
+           Product names stay short here: this column lists products rather than
+           introducing them, and each product page opens on its full name. */}}
+      <nav aria-labelledby="rk-foot-products">
+        <h2 class="rk-label mb-2" id="rk-foot-products">{{ $f.products }}</h2>
         <ul class="m-0 list-none p-0">
-          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "industries" }}">{{ $f.industries }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "face" }}">Runink FACE</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "pulse" }}">Runink PULSE</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "tide" }}">Runink TIDE</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "river" }}">Runink River</a></li>
           <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "pricing" }}">{{ $f.pricing }}</a></li>
-          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "downloads" }}">{{ $f.downloads }}</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="rk-foot-industries">
+        <h2 class="rk-label mb-2" id="rk-foot-industries">{{ $f.industries }}</h2>
+        <ul class="m-0 list-none p-0">
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "ind_logistics" }}">{{ $f.ind_logistics }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "ind_insurance" }}">{{ $f.ind_insurance }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "ind_banking" }}">{{ $f.ind_banking }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "ind_telecom" }}">{{ $f.ind_telecom }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "ind_marketing" }}">{{ $f.ind_marketing }}</a></li>
         </ul>
       </nav>
 
@@ -191,8 +223,7 @@
            is the hierarchy: content/library/_index.md is the single answer to
            "what is this for and how far can I read into it", and the papers and
            the scenarios are what it sends a reader to. /blog/ closes the column
-           because it is the shallowest end of the same shelf — and because until
-           now it had no chrome link at all. */}}
+           because it is the shallowest end of the same shelf. */}}
       <nav aria-labelledby="rk-foot-reading">
         <h2 class="rk-label mb-2" id="rk-foot-reading">{{ $f.reading }}</h2>
         <ul class="m-0 list-none p-0">
@@ -211,10 +242,12 @@
                reader's own. It sits under the company it describes, beside the
                licence and the privacy policy. */}}
           <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "trust" }}">{{ $f.trust }}</a></li>
+          <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "downloads" }}">{{ $f.downloads }}</a></li>
           <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "license" }}">{{ $f.license }}</a></li>
           <li><a class="block py-1 text-sm leading-6 text-ink-2 hover:text-ink transition-colors duration-200" href="{{ $s.Get "privacy" }}">{{ $f.privacy }}</a></li>
         </ul>
       </nav>
+
 
     </div>
   </div>
@@ -226,7 +259,16 @@
       {{/* now.Format rather than a literal: a hardcoded year is wrong from
            1 January and nothing fails when it is. */}}
       <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">&copy; {{ now.Format "2006" }} Runink. {{ $f.rights }}</p>
-      <p class="rk-foot-screen m-0 text-sm leading-6 text-ink-3">{{ $f.languages }}</p>
+      {{/* Each language home, by name in its own language. The footer is cached
+           once per language with no page in hand, so it cannot point at THIS
+           page's translation; the header switcher does that. */}}
+      <nav class="rk-foot-screen" aria-label="{{ $f.languages }}">
+        <ul class="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 text-sm leading-6">
+          {{- range $.Site.Sites }}{{ with .Home }}
+          <li><a class="text-ink-3 hover:text-ink transition-colors duration-200" href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}"{{ if eq .Language.Lang $.Site.Language.Lang }} aria-current="true"{{ end }}>{{ index (dict "en" "English" "fr" "Français" "es" "Español" "pt" "Português") .Language.Lang | default .Language.Lang }}</a></li>
+          {{- end }}{{ end }}
+        </ul>
+      </nav>
 
       {{/* Paper only — see the print note at the top of this file. Plain text,
            no anchor, so there is no destination to print after it. */}}
@@ -254,6 +296,7 @@
       .rk-foot a { transition: none !important; }
     }
 
+    .rk-foot a[aria-current] { color: var(--rk-text); font-weight: 600; }
     .rk-foot-paper { display: none; }
 
     @media print {

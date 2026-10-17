@@ -199,6 +199,12 @@ enableGitInfo = true
     company = "Company"
 
     industries = "Industries"
+    products = "Products"
+    ind_logistics = "Logistics & Supply Chain"
+    ind_insurance = "Insurance"
+    ind_banking = "Banking & Financial Services"
+    ind_telecom = "Telecom"
+    ind_marketing = "Marketing"
     pricing = "Pricing"
     downloads = "Downloads"
 
@@ -212,7 +218,7 @@ enableGitInfo = true
     license = "License"
     privacy = "Privacy policy"
 
-    languages = "Languages: English, Français, Español, Português — choose one in the bar at the top of the page."
+    languages = "Languages"
     rights = "All rights reserved."
 
   [params.header]
@@ -632,6 +638,12 @@ enableGitInfo = true
       reading = "Lectures"
       company = "Entreprise"
       industries = "Secteurs"
+      products = "Produits"
+      ind_logistics = "Logistique et supply chain"
+      ind_insurance = "Assurance"
+      ind_banking = "Banque et services financiers"
+      ind_telecom = "Télécoms"
+      ind_marketing = "Marketing"
       pricing = "Tarifs"
       downloads = "Téléchargements"
       library = "Bibliothèque"
@@ -642,7 +654,7 @@ enableGitInfo = true
       trust = "Confiance et conformité"
       license = "Licence"
       privacy = "Politique de confidentialité"
-      languages = "Langues : English, Français, Español, Português — à choisir dans la barre en haut de la page."
+      languages = "Langues"
       rights = "Tous droits réservés."
 
     [[languages.fr.menu.main]]
@@ -782,6 +794,12 @@ enableGitInfo = true
       reading = "Lecturas"
       company = "Empresa"
       industries = "Sectores"
+      products = "Productos"
+      ind_logistics = "Logística y cadena de suministro"
+      ind_insurance = "Seguros"
+      ind_banking = "Banca y servicios financieros"
+      ind_telecom = "Telecomunicaciones"
+      ind_marketing = "Marketing"
       pricing = "Precios"
       downloads = "Descargas"
       library = "Biblioteca"
@@ -792,7 +810,7 @@ enableGitInfo = true
       trust = "Confianza y cumplimiento"
       license = "Licencia"
       privacy = "Política de privacidad"
-      languages = "Idiomas: English, Français, Español, Português — elija uno en la barra superior de la página."
+      languages = "Idiomas"
       rights = "Todos los derechos reservados."
 
     [[languages.es.menu.main]]
@@ -930,6 +948,12 @@ enableGitInfo = true
       reading = "Leituras"
       company = "Empresa"
       industries = "Setores"
+      products = "Produtos"
+      ind_logistics = "Logística e cadeia de suprimentos"
+      ind_insurance = "Seguros"
+      ind_banking = "Bancos e serviços financeiros"
+      ind_telecom = "Telecom"
+      ind_marketing = "Marketing"
       pricing = "Preços"
       downloads = "Downloads"
       library = "Biblioteca"
@@ -940,7 +964,7 @@ enableGitInfo = true
       trust = "Confiança e conformidade"
       license = "Licença"
       privacy = "Política de privacidade"
-      languages = "Idiomas: English, Français, Español, Português — escolha um na barra no topo da página."
+      languages = "Idiomas"
       rights = "Todos os direitos reservados."
 
     [[languages.pt.menu.main]]

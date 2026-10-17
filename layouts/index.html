@@ -54,7 +54,6 @@
     {{ partial "v2/offer.html" (dict "p" .Params.offer) }}
     {{ partial "v2/faq.html" (dict "p" .Params.faq "page" .) }}
     {{ if .Params.contact }}{{ partial "home/contact.html" . }}{{ end }}
-    {{ partial "v2/links.html" (dict "p" .Params.more) }}
 
     <p class="hp-mark">runink.org</p>
   </div>
