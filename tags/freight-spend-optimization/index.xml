@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Freight Spend Optimization on Runink</title>
+    <link>https://runink.org/tags/freight-spend-optimization/</link>
+    <description>Recent content in Freight Spend Optimization on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/freight-spend-optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Measuring IT Spend Against Logistics Output</title>
+      <link>https://runink.org/blog/improving-cloud-roi-finops-domain-model-data-mesh/</link>
+      <pubDate>Tue, 26 May 2026 05:53:17 +0000</pubDate>
+      <guid>https://runink.org/blog/improving-cloud-roi-finops-domain-model-data-mesh/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;A department can only say what its technology spend bought if one named team owns both the spend and the data behind it. Give each area of the business an owner, tag every resource to that owner, and show the owner the bill. Then compare the monthly bill against the work that area handled in the same month. The figure comes out of your own billing data, not out of a vendor&amp;rsquo;s estimate.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;One owner per area of the business:&lt;/strong&gt; when transport, warehousing and procurement each own their own data and their own bill, the cost question has a person to answer it.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Four standard cloud controls:&lt;/strong&gt; tag every resource, set a budget the owner can see, bill it back to them, and report it monthly. None of the four is hard. Most operations are missing at least two.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Measure in your own data:&lt;/strong&gt; cost per area per month, set against the loads, order lines or claims that area handled in the same month. Both numbers already exist. Almost nobody puts them side by side.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;tying-technology-spend-to-freight-output&#34;&gt;Tying Technology Spend to Freight Output&lt;/h2&gt;&#xA;&lt;p&gt;Most logistics businesses can say what they spent on cloud last quarter. Far fewer can say which part of the operation spent it, or what moved as a result. The gap is not a reporting problem. It is an ownership problem, and it is fixable with plain controls rather than new software.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

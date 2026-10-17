@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JIT Delivery on Runink</title>
+    <link>https://runink.org/tags/jit-delivery/</link>
+    <description>Recent content in JIT Delivery on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/jit-delivery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Logistics of Food Service: Cold Chain Integrity and JIT Restaurant Delivery</title>
+      <link>https://runink.org/blog/food-service-cold-chain-logistics-restaurant-delivery/</link>
+      <pubDate>Sat, 21 Mar 2026 11:52:12 +0000</pubDate>
+      <guid>https://runink.org/blog/food-service-cold-chain-logistics-restaurant-delivery/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Food service logistics runs on a short clock. Perishable goods have to stay inside their temperature range from supplier to kitchen, arrive inside narrow delivery windows, and be picked by expiry date. The facts needed to manage that are already recorded: reefer temperature logs, warehouse sensor readings, receiving scans and route timestamps. The work is reading them against each other while the product is still sellable.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Temperature is the product.&lt;/strong&gt; A load that leaves its range can be rejected or written off, so the reading matters as much as the delivery.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;JIT delivery is a timing problem.&lt;/strong&gt; Restaurants hold little stock, so they depend on frequent small deliveries, cross-docking and short dock turnaround.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance is a records problem.&lt;/strong&gt; Food safety rules ask you to show an unbroken temperature and custody trail for each batch, which means the records have to be kept and readable.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-is-cold-chain-integrity-the-backbone-of-food-service-logistics&#34;&gt;Why Is Cold Chain Integrity the Backbone of Food Service Logistics?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

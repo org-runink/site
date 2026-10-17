@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workflow Automation on Runink</title>
+    <link>https://runink.org/tags/workflow-automation/</link>
+    <description>Recent content in Workflow Automation on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 16:55:46 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/workflow-automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Is a Digital Twin? How Autonomous Decisions Are Reshaping the Supply Chain</title>
+      <link>https://runink.org/blog/digital-twin-autonomous-decisions/</link>
+      <pubDate>Fri, 22 May 2026 21:40:59 +0000</pubDate>
+      <guid>https://runink.org/blog/digital-twin-autonomous-decisions/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;A supply chain digital twin is a live copy of a physical operation, kept current from the records and sensors that operation already produces. They come in four sizes: a part, a piece of equipment, a site, and a whole process. Adding a decision engine to one moves the work from watching to proposing — and raises the question this article is really about, which is who signs the proposal off.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;A supply chain digital twin&lt;/strong&gt; is a live copy of physical assets and workflows, kept up to date from the data those assets report.&lt;/li&gt;&#xA;&lt;li&gt;They come in four sizes: &lt;strong&gt;a component, a piece of equipment, a site, and a whole process.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Autonomous decisions&lt;/strong&gt; are what vendors add on top: software that does not just warn you, but works out what to do about it.&lt;/li&gt;&#xA;&lt;li&gt;The hard part is not the reasoning. It is the approval line: which steps software may take on its own, and which ones a named person has to own because they carry legal or commercial liability.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;1-where-digital-twins-came-from&#34;&gt;1. Where Digital Twins Came From&lt;/h2&gt;&#xA;&lt;p&gt;For decades, supply chain managers have tracked goods through a mix of dashboards, overnight EDI messages and phone calls. Visibility was the bottleneck. As trade networks got more tangled and resilience became a board-level subject, simply &lt;em&gt;seeing&lt;/em&gt; a delayed shipment stopped being enough. That gap is what digital twins are sold to fill.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Automated Decision Systems and Open-Source Tools Optimize Dropshipping Logistics</title>
+      <link>https://runink.org/blog/automated-open-source-dropshipping-logistics/</link>
+      <pubDate>Thu, 26 Feb 2026 09:24:58 +0000</pubDate>
+      <guid>https://runink.org/blog/automated-open-source-dropshipping-logistics/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;A dropshipping operation runs on other people&amp;rsquo;s stock and other people&amp;rsquo;s trucks. Automation helps only where it reads live data: current stock, current tracking, current road conditions. Two open pieces make that practical — a standard way to connect a model to your own systems, and open map data you can host yourself. Neither removes the need to decide who signs off on a change.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;A model is only as current as what it can read.&lt;/strong&gt; Connected to your order and stock records, it answers from today. Without that, it guesses.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Model Context Protocol (MCP):&lt;/strong&gt; an open standard for connecting a model to tools and databases, so it can fetch live order, stock and tracking data.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Openrouteservice and OpenStreetMap:&lt;/strong&gt; open routing and map data you can run on your own servers, with no per-call licence.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The thing to check:&lt;/strong&gt; can you see which records an answer was based on? If not, you cannot audit it.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Dropshipping means coordinating parts you do not own. Several suppliers. Stock levels that move hourly. Shipping routes. Customers asking where their parcel is.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

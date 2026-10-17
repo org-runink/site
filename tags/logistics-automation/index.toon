@@ -1,0 +1,13 @@
+section_context[3]:
+  - title: "Modal Shift and Route Optimization in Rail-Road Networks"
+    permalink: "https://runink.org/blog/runink-modal-shift-optimization/"
+    date: "2026-06-15T10:07:34Z"
+    description: "How a rail-versus-road comparison is actually made, where rail-truck handovers break down, and what a routing engine can and cannot tell you."
+  - title: "Data Governance and the Return on Automated Dispatch: What to Measure"
+    permalink: "https://runink.org/blog/data-governance-logistics-roi/"
+    date: "2026-04-06T00:40:02Z"
+    description: "Automated routing, dispatch and sourcing tools only work on data someone keeps in order. Which four effects governance actually has, and where to find your own baseline for each."
+  - title: "How Automated Decision Systems and Open-Source Tools Optimize Dropshipping Logistics"
+    permalink: "https://runink.org/blog/automated-open-source-dropshipping-logistics/"
+    date: "2026-02-26T09:24:58Z"
+    description: "What open standards and open map data actually do for a dropshipping operation: live data behind each decision, routing you can host yourself, and the checks to run before you trust either."

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Route Optimization on Runink</title>
+    <link>https://runink.org/tags/route-optimization/</link>
+    <description>Recent content in Route Optimization on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/route-optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modal Shift and Route Optimization in Rail-Road Networks</title>
+      <link>https://runink.org/blog/runink-modal-shift-optimization/</link>
+      <pubDate>Mon, 15 Jun 2026 10:07:34 +0000</pubDate>
+      <guid>https://runink.org/blog/runink-modal-shift-optimization/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;A modal shift decision is a comparison. For one consignment, on one lane, you weigh the rail option against the road option on the things the shipper cares about: how long it takes, how reliable it is, what it costs and what it emits. The data for that comparison sits in different systems — rail timetables, road conditions, how long trailers wait at the terminal — and each is read at a different time. So the comparison gets made once, at planning, and is not made again when the day changes.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Modal shift is a comparison, not a policy.&lt;/strong&gt; It holds for the consignment, the lane and the day it was made for.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rail-truck handovers are where multimodal plans come apart.&lt;/strong&gt; Congestion and waiting time at the handover often cost more than the modal choice saved.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The cost of re-planning is the real constraint.&lt;/strong&gt; Most operations have the data to re-run the decision at midday. What they do not have is the hours to re-plan a day by hand.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Where rail meets road, capacity goes to waste and costs rise. Trailers wait. Slots go unfilled. Recent disruption on key sea routes has also made the choice a continuity question, not only a cost one: if one route closes, what else can carry the load?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Last-Mile Delivery Optimization — Why It&#39;s the Most Expensive and Most Important Part of Your Supply Chain</title>
+      <link>https://runink.org/blog/last-mile-delivery-optimization/</link>
+      <pubDate>Mon, 27 Apr 2026 17:37:45 +0000</pubDate>
+      <guid>https://runink.org/blog/last-mile-delivery-optimization/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;The last mile is the most expensive leg of the journey. The Capgemini Research Institute puts it at up to 53% of total shipping costs. Three levers are available to most operations: re-plan routes during the day rather than the night before, move some parcels to staffed collection points, and use your own delivery history to flag the drops likely to fail before the van leaves. Which lever pays depends on one figure: how many of your deliveries needed a second attempt last quarter.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;A failed delivery is two journeys.&lt;/strong&gt; Both were paid for. Only one could have earned anything. This is usually the largest recoverable cost in the last mile.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Customer expectations have already moved.&lt;/strong&gt; Tracking, narrow windows and same-day options are now the baseline, not a selling point.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The levers are well understood and do not need new infrastructure.&lt;/strong&gt; Live re-routing, collection points, and reading your own failure history. What is missing in most operations is the measurement, not the tooling.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-does-last-mile-delivery-consume-over-half-of-total-shipping-costs&#34;&gt;Why Does Last-Mile Delivery Consume Over Half of Total Shipping Costs?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

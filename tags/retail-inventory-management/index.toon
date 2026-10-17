@@ -1,0 +1,5 @@
+section_context[1]:
+  - title: "Reconciling Complex Logistics Data Safely: Methods for Data Reliability"
+    permalink: "https://runink.org/blog/reconciling-complex-data-logistics-solutions/"
+    date: "2026-03-15T15:11:52Z"
+    description: "Why automated systems produce confident wrong answers in supply chains, and four practical methods — better questions, reranking, embedding adapters and tuning — that keep answers tied to real records."

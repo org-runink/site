@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Industry 4.0 Procurement on Runink</title>
+    <link>https://runink.org/tags/industry-4.0-procurement/</link>
+    <description>Recent content in Industry 4.0 Procurement on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/industry-4.0-procurement/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Governance and the Return on Automated Dispatch: What to Measure</title>
+      <link>https://runink.org/blog/data-governance-logistics-roi/</link>
+      <pubDate>Mon, 06 Apr 2026 00:40:02 +0000</pubDate>
+      <guid>https://runink.org/blog/data-governance-logistics-roi/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Automated routing and sourcing tools read your records. If the records disagree, the tool picks one and nobody knows which. Data governance is the unglamorous work of deciding what each field means, who owns it, and how fresh it has to be. The return shows up as fewer hours spent reconciling and fewer decisions made on stale data — both countable in your own systems.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;A tool is only as current as the records it reads.&lt;/strong&gt; Automation does not fix a wrong address; it acts on it faster.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Bad data costs in specific places.&lt;/strong&gt; Duplicate supplier records. Two spellings of the same site. A stock figure from last night used for a promise made now.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The return is measurable, but not by us.&lt;/strong&gt; The figures live in your ticket queue, your invoice file and your stock records. Start there.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;why-do-dispatch-systems-struggle-with-the-data-they-are-given&#34;&gt;Why do dispatch systems struggle with the data they are given?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
