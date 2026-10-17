@@ -1,0 +1,18 @@
+{{/* Short cards: verb, title, one line, owner. Call with (dict "p" <block> "id" "..."). */}}
+{{ with .p }}
+<section class="hp-sec" id="{{ $.id }}" aria-labelledby="{{ $.id }}-heading">
+  <h2 class="h2-h" id="{{ $.id }}-heading">{{ .heading }}</h2>
+  {{ with .lead }}<p class="h2-lead">{{ . }}</p>{{ end }}
+  <ul class="h2-leaks">
+    {{ range .items }}
+    <li class="h2-leak">
+      {{ with .verb }}<p class="h2-leak__verb">{{ . }}</p>{{ end }}
+      <h3>{{ .title }}</h3>
+      <p>{{ .line }}</p>
+      {{ with .owner }}<p class="h2-leak__owner">{{ . }}</p>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ with .more }}<p class="h2-more"><a href="{{ .url | relURL }}">{{ .text }} <span aria-hidden="true">&rarr;</span></a></p>{{ end }}
+</section>
+{{ end }}

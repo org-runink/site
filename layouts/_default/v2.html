@@ -1,0 +1,35 @@
+{{/*
+  A product page built from the same blocks as the homepage (partials/v2/).
+  Used by content/products/face.md (`layout: "v2"`). Every block is optional
+  and renders only when its front-matter key is present, in this order:
+
+    hero → problem → jobs → tour → gate → machines → compare → offer → faq → more
+
+  CONTENT.md applies to every string in the front matter exactly as to body
+  copy: no invented figures (rule 1), never state what the product lacks
+  (rule 2), plain language (rule 3), and each "what it does" sentence must be
+  defensible from the product's origin/main (rule 4).
+
+  The faq block emits its own FAQPage JSON-LD, so a page on this layout must
+  not also use the direct-answer shortcode (schema-faq.html would emit a
+  second one). This layout has no {{ .Content }} slot.
+*/}}
+{{ define "main" }}
+<div class="hp hp2" style="--rk-accent: {{ "var(--rk-signal)" | safeCSS }};">
+  {{ partial "home/style.html" . }}
+  {{ partial "home/v2-style.html" . }}
+  <div class="hp-wrap">
+    {{ with .Params.hero }}{{ partial "v2/hero.html" (dict "h" . "page" $) }}{{ end }}
+    {{ partial "v2/problem.html" (dict "p" .Params.problem "id" "problem") }}
+    {{ partial "v2/cards.html" (dict "p" .Params.jobs "id" "jobs") }}
+    {{ partial "v2/tour.html" (dict "p" .Params.tour) }}
+    {{ partial "v2/facts.html" (dict "p" .Params.gate "id" "approval") }}
+    {{ partial "v2/facts.html" (dict "p" .Params.machines "id" "your-machines") }}
+    {{ partial "v2/compare.html" (dict "p" .Params.compare) }}
+    {{ partial "v2/offer.html" (dict "p" .Params.offer) }}
+    {{ partial "v2/faq.html" (dict "p" .Params.faq "page" .) }}
+    {{ partial "v2/links.html" (dict "p" .Params.more) }}
+    <p class="hp-mark">runink.org</p>
+  </div>
+</div>
+{{ end }}

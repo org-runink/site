@@ -1,0 +1,19 @@
+{{/* Numbered steps. Call with (dict "p" <block> "id" "..."). On the homepage
+     the id must stay "why-runink": every language's header menu links there. */}}
+{{ with .p }}
+<section class="hp-sec" id="{{ $.id }}" aria-labelledby="{{ $.id }}-heading">
+  <h2 class="h2-h" id="{{ $.id }}-heading">{{ .heading }}</h2>
+  {{ with .lead }}<p class="h2-lead">{{ . }}</p>{{ end }}
+  <ol class="h2-steps">
+    {{ range $i, $s := .steps }}
+    <li class="h2-step">
+      <p class="h2-step__n" aria-hidden="true">{{ add $i 1 }}</p>
+      <h3>{{ $s.title }}</h3>
+      <p>{{ $s.body }}</p>
+      {{ $ss := $s.shot | default dict }}{{ if $ss.src }}<img class="h2-step__shot" src="{{ $ss.src | relURL }}" alt="{{ $ss.alt }}" loading="lazy" decoding="async">{{ end }}
+    </li>
+    {{ end }}
+  </ol>
+  {{ with .more }}<p class="h2-more"><a href="{{ .url | relURL }}">{{ .text }} <span aria-hidden="true">&rarr;</span></a></p>{{ end }}
+</section>
+{{ end }}
