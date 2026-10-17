@@ -194,16 +194,6 @@ more:
       links:
         - { text: "The FACE paper", url: "/blog/whitepapers/runink-face/" }
         - { text: "A claim, from record to approval", url: "/use-cases/claims-recovery/" }
-        - { text: "Logistics & Supply Chain", url: "/industries/logistics-supply-chain/" }
-    - label: "Buying"
-      links:
-        - { text: "Pricing", url: "/pricing/" }
-        - { text: "Downloads", url: "/downloads/" }
-        - { text: "Trust and compliance", url: "/trust/" }
+        - { text: "Freight claims, filed in time", url: "/blog/freight-claims-loss-damage-shortage/" }
         - { text: "Technical reference", url: "https://docs.runink.org/tide/docs/devex/" }
-    - label: "Other Runink products"
-      links:
-        - { text: "Runink PULSE: Prescriptive Unified Lead & Social Engine", url: "/products/pulse/" }
-        - { text: "Runink TIDE: Trusted Intelligence for Developer & Data Experience", url: "/products/tide/" }
-        - { text: "Runink River", url: "/river/" }
 ---
