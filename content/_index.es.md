@@ -14,10 +14,10 @@ hero:
   eyebrow: "Para responsables de operaciones de campo e ingresos"
   line1: "Dispute cada sobrecoste."
   line2: "No solo los grandes."
-  sub: "Runink FACE revisa cada factura de flete contra sus tarifas y registros, redacta la disputa con la evidencia adjunta y la envía cuando usted aprueba."
+  sub: "Runink FACE revisa cada factura de flete contra sus tarifas y registros, redacta la disputa y la envía cuando usted aprueba."
   cta_primary: "Envíe un mes de facturas"
   cta_secondary: "Vea cómo funciona"
-  note: "Runink FACE: Fulfilment Autonomous Claims Engine. Corre en sus servidores, en su nube o en la nuestra."
+  note: "Runink FACE: Fulfilment Autonomous Claims Engine. En sus servidores o los nuestros. Sin servicio de IA externo."
   shot:
     src: ""
     alt: ""
@@ -27,119 +27,68 @@ hero:
     title: "runink face · órdenes del día"
     status: "ESPERA SU DECISIÓN"
     kind: "Disputa redactada · factura del transportista"
-    head: "El peso facturado es mayor que el peso del ticket de báscula."
+    head: "El peso facturado supera el del ticket de báscula."
     rule_label: "Norma:"
-    rule: "facturar con el peso registrado en la recogida, a la tarifa del acuerdo."
+    rule: "facturar el peso de recogida a la tarifa acordada."
     records_label: "Registros adjuntos"
     records:
       - { tag: "INV", name: "carrier_invoice_7731.pdf", state: "leído" }
       - { tag: "BOL", name: "bill_of_lading_MSKU4419.pdf", state: "leído" }
       - { tag: "RATE", name: "rate_agreement_2026.xlsx", state: "comparado" }
     cause_label: "Causa probable"
-    cause: "El transportista volvió a pesar en el centro de distribución y facturó ese peso. Misma ruta, mismo patrón en facturas anteriores."
+    cause: "Repesado en el centro. Misma ruta, mismo patrón antes."
     acts: ["Aprobar", "Editar", "Rechazar"]
-    stamp: "Aprobado por A. Morgan · 09:14 · disputa enviada con tres registros"
-    caption: "Ejemplo dibujado de una disputa redactada. Los nombres y registros son ilustrativos."
-
-problem:
-  heading: "Disputar una factura lleva una mañana. Por eso casi todas se pagan."
-  before_label: "Hoy"
-  before:
-    - "Alguien busca el comprobante, el peso y la tarifa de una sola factura."
-    - "Solo los sobrecostes grandes justifican esa mañana."
-    - "Las reclamaciones pequeñas vencen dentro del plazo."
-    - "El mismo transportista repite el mismo error el mes siguiente."
-  after_label: "Con Runink FACE"
-  after:
-    - "Cada factura se revisa contra sus tarifas y registros."
-    - "Cada sobrecoste llega como una disputa redactada, con los registros adjuntos."
-    - "Las reclamaciones se redactan mientras el plazo sigue abierto."
-    - "La causa queda ordenada, para corregirla en su origen."
+    stamp: "Aprobado por A. Morgan · 09:14 · enviado con tres registros"
+    caption: "Ejemplo dibujado. Nombres y registros ilustrativos."
 
 how:
   heading: "Cómo funciona"
   steps:
     - title: "Lee lo que ya guarda"
-      body: "Facturas, pedidos, pruebas de entrega, expedientes de reclamación, registros portuarios y sensores, desde los sistemas que ya usa. Nada que sustituir."
+      body: "Facturas, pedidos, reclamaciones, registros portuarios y sensores. Nada que sustituir."
     - title: "Redacta la acción"
-      body: "Una disputa, una reclamación o una orden de cumplimiento, con la norma incumplida, los registros que la respaldan y la causa probable."
+      body: "Una disputa, reclamación u orden, con la norma, los registros y la causa probable."
     - title: "Usted la aprueba"
-      body: "Un clic la envía. Su nombre, la hora y cualquier cambio quedan en el registro, para que el motivo se sostenga después."
+      body: "Un clic la envía. Su nombre y la hora quedan en el registro."
   more: { text: "Todo lo que hace FACE (en inglés)", url: "/products/face/" }
 
 leaks:
   heading: "Seis lugares por donde se escapan los ingresos"
   items:
-    - verb: "Detéctelo"
-      title: "Sobrecostes del transportista y facturas duplicadas"
-      line: "Cada factura revisada contra sus tarifas, no solo las grandes."
-      owner: "Auditoría de fletes · Finanzas"
-    - verb: "Reclámelo"
-      title: "Reclamaciones por daños, faltantes y retrasos"
-      line: "Redactadas dentro del plazo del transportista, con la evidencia adjunta."
-      owner: "Reclamaciones"
-    - verb: "Libérelo"
-      title: "Demoras y detención"
-      line: "El contenedor retenido y el documento que falta, nombrados mientras corre el cargo."
-      owner: "Operaciones · Cumplimiento aduanero"
-    - verb: "Rehágalo"
-      title: "Planes de cumplimiento obsoletos"
-      line: "Órdenes de cumplimiento redactadas con datos en vivo cuando el plan de la mañana deja de servir."
-      owner: "Operaciones de campo"
-    - verb: "Pruébelo"
-      title: "Pérdidas en la cadena de frío"
-      line: "La foto de la puerta leída junto a los documentos, y la reclamación redactada."
-      owner: "Operaciones de campo · Calidad"
-    - verb: "Corríjalo"
-      title: "La misma pérdida cada mes"
-      line: "Causas ordenadas según cuánto cambiaría corregir cada una."
-      owner: "CRO · Operaciones de ingresos"
-  more: { text: "Recorra una reclamación, del registro a la aprobación", url: "/es/use-cases/claims-recovery/" }
+    - { verb: "Detéctelo", title: "Sobrecostes y facturas duplicadas", line: "Cada factura revisada contra sus tarifas.", owner: "Auditoría de fletes · Finanzas" }
+    - { verb: "Reclámelo", title: "Daños, faltantes y retrasos", line: "Redactadas dentro del plazo, con la evidencia.", owner: "Reclamaciones" }
+    - { verb: "Libérelo", title: "Demoras y detención", line: "El contenedor retenido y el documento que falta, a tiempo.", owner: "Operaciones · Cumplimiento aduanero" }
+    - { verb: "Rehágalo", title: "Planes de cumplimiento obsoletos", line: "Nuevas órdenes cuando el plan de la mañana falla.", owner: "Operaciones de campo" }
+    - { verb: "Pruébelo", title: "Pérdidas en la cadena de frío", line: "Foto de la puerta y documentos, reclamación redactada.", owner: "Operaciones de campo · Calidad" }
+    - { verb: "Corríjalo", title: "La misma pérdida cada mes", line: "Causas ordenadas por la corrección que más importa.", owner: "CRO · Operaciones de ingresos" }
+  more: { text: "Cómo presentar una reclamación a tiempo", url: "/es/use-cases/claims-recovery/" }
 
 machines:
   heading: "Corre en sus máquinas"
-  lead: "La mayoría de las herramientas de este mercado son un servicio alojado. FACE puede correr en sus propios servidores o en su nube, así que facturas, reclamaciones y documentos aduaneros se quedan donde están."
   facts:
-    - title: "Sus servidores o su nube"
-      body: "Con las licencias Dedicada y Enterprise, el trabajo corre en máquinas que usted controla. Lite corre en las máquinas compartidas de Runink."
-    - title: "Sin servicio de IA externo"
-      body: "El modelo de lenguaje corre donde corre FACE. Con cualquier licencia, nada se envía a un proveedor de modelos externo."
-    - title: "Sus sistemas quedan como están"
-      body: "FACE lee sus registros y los deja como están. Nada que migrar, ni un nuevo sistema de registro."
-    - title: "Un registro de cada decisión"
-      body: "Quién aprobó, cuándo y qué cambió queda con cada acción, listo para cuando lo pida un auditor."
+    - { title: "Sus servidores o su nube", body: "Dedicada y Enterprise corren en máquinas que usted controla." }
+    - { title: "Sin servicio de IA externo", body: "El modelo corre donde corre FACE, con cualquier licencia." }
+    - { title: "Cada decisión registrada", body: "Quién aprobó, cuándo y qué cambió." }
   more: { text: "Confianza y cumplimiento", url: "/es/trust/" }
 
 compare:
   heading: "Software que usted opera, no un servicio que reclama por usted"
   col_topic: "Pregunta"
-  col_them: "Un servicio de recobro externo"
+  col_them: "Servicio de recobro externo"
   col_us: "Runink FACE"
   rows:
-    - topic: "Qué lee"
-      them: "Las facturas que usted entrega, a menudo con sus accesos del transportista."
-      us: "Los registros que sus sistemas ya guardan: pedidos, facturas, reclamaciones, documentos, fotos y datos en vivo."
-    - topic: "Qué devuelve"
-      them: "Un abono y una lista de lo reclamado."
-      us: "Una disputa, reclamación u orden redactada, con la causa y los registros que la respaldan."
-    - topic: "Quién decide"
-      them: "El servicio reclama en su nombre."
-      us: "Una persona con nombre de su equipo aprueba cada una."
-    - topic: "Adónde van sus registros"
-      them: "A los sistemas del proveedor."
-      us: "A las máquinas que nombra su licencia. Ningún servicio de IA externo los ve."
-  note: "Los precios, incluida la comisión de éxito sobre las reclamaciones recuperadas, están en la [página de precios](/es/pricing/)."
+    - { topic: "Qué lee", them: "Las facturas que entrega, a menudo con sus accesos.", us: "Todo registro que sus sistemas ya guardan." }
+    - { topic: "Qué devuelve", them: "Un abono.", us: "Una acción redactada, su causa y sus registros." }
+    - { topic: "Quién decide", them: "El servicio.", us: "Una persona con nombre de su equipo." }
+    - { topic: "Adónde van los registros", them: "A los sistemas del proveedor.", us: "A las máquinas de su licencia." }
+  note: "Precios, incluida la comisión de éxito sobre reclamaciones recuperadas: [precios](/es/pricing/)."
 
 offer:
   heading: "Empiece con un mes de facturas"
-  lead: "La forma más rápida de saber si encaja son sus propios registros. No ponemos ninguna cifra en esta página; su mes le mostrará la suya."
   steps:
-    - title: "Usted envía un mes"
-      body: "Facturas de flete o reclamaciones, y la hoja de tarifas con la que deberían coincidir."
-    - title: "Lo leemos en FACE"
-      body: "Cada factura contra su tarifa y sus registros. Nada va a un servicio de IA externo."
-    - title: "Lo recorremos con usted"
-      body: "Media hora con quien es dueño del problema: lo encontrado, las acciones redactadas y sus causas."
+    - { title: "Envíe un mes", body: "Facturas o reclamaciones, y su hoja de tarifas." }
+    - { title: "Lo leemos en FACE", body: "Cada línea, contra su tarifa y sus registros." }
+    - { title: "Lo recorremos con usted", body: "Media hora: hallazgos, borradores y causas." }
   cta: "Envíe un mes de facturas"
 
 faq:

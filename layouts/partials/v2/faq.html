@@ -12,15 +12,19 @@
     <div class="h2-faq__group">
       <p class="h2-faq__label">{{ .label }}</p>
       {{ range .items }}{{ $n = add $n 1 }}
-      <div class="hp-faq__item" id="q-{{ $n }}">
-        <h3>{{ .q }}</h3>
+      <details class="hp-faq__item h2-qa" id="q-{{ $n }}">
+        <summary><h3>{{ .q }}</h3></summary>
         <p>{{ .a | markdownify }}</p>
-      </div>
+      </details>
       {{ end }}
     </div>
     {{ end }}
   </div>
 </section>
+{{/* Answers fold under their question on screen; paper gets them all.
+     The full text stays in the HTML and in the FAQPage JSON-LD below, so
+     crawlers and answer engines read every answer either way. */}}
+<script>addEventListener("beforeprint",function(){document.querySelectorAll("details.h2-qa").forEach(function(d){d.open=true})});</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

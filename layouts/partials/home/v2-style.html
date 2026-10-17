@@ -39,6 +39,7 @@
   .hp2 .h2-hero .hp-h1 { margin-bottom: 1.25rem; font-size: clamp(2.25rem, 7vw, 3rem); line-height: 1.04; }
   @media (min-width: 1000px) { .hp2 .h2-hero .hp-h1 { font-size: clamp(2.5rem, 3.6vw, 3.375rem); } }
   .hp2 .h2-hero .hp-h1__b { display: block; }
+  .h2-hero .hp-cta, .h2-hero .hp-cta-ghost { padding: 0.875rem 1.25rem; }
   .h2-sub { font-size: 1.1875rem; line-height: 1.55; color: var(--ink-2); max-width: 34rem; margin: 0 0 1.75rem; }
   .h2-sub strong { color: var(--ink); }
   .h2-note { margin: 1rem 0 0; font-size: 0.875rem; color: var(--ink-2); }
@@ -157,6 +158,12 @@
   .h2-faq { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem 2.5rem; }
   @media (min-width: 960px) { .h2-faq { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .h2-faq__label { margin: 0 0 0.25rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--accent-ink); }
+  .h2-qa summary { cursor: pointer; list-style: none; display: flex; gap: 0.75rem; align-items: baseline; }
+  .h2-qa summary::-webkit-details-marker { display: none; }
+  .h2-qa summary::before { content: "+"; flex: none; width: 1rem; font-weight: 800; color: var(--accent-ink); }
+  .h2-qa[open] summary::before { content: "\2212"; }
+  .h2-qa summary h3 { margin: 0 !important; }
+  .h2-qa > p { margin-top: 0.5rem !important; padding-left: 1.75rem; }
 
   /* ---- tour: areas of the product ------------------------------------ */
   .h2-tour { display: grid; gap: 1rem; }
