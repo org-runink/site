@@ -1,0 +1,189 @@
+{{/*
+  Styles for the rebuilt homepage (layouts/index.html, 2026-10-16). It sits on
+  top of home/style.html, which still supplies the shell (.hp, .hp-wrap,
+  .hp-sec), the hero type (.hp-eyebrow, .hp-h1), the buttons (.hp-cta,
+  .hp-cta-ghost), the comparison table (.hp-cmp), the question items
+  (.hp-faq__item) and the contact block.
+
+  Colours are tokens only (DESIGN.md; check-usage). Every block prints as ink on
+  white with nothing carried by colour alone (CONTENT.md rule 6).
+*/}}
+<style>
+  /* ---- section heading: one line, no rule furniture ------------------- */
+  .hp2 .h2-h {
+    font-family: var(--font-display);
+    font-size: clamp(1.625rem, 3vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 1.25rem;
+    max-width: 26ch;
+  }
+  .hp2 .h2-lead { max-width: 60ch; margin: -0.25rem 0 1.5rem; font-size: 1.0625rem; line-height: 1.6; color: var(--ink-2); }
+  .hp2 .h2-more { margin: 1.25rem 0 0; font-weight: 700; }
+  .hp2 .h2-more a { color: var(--accent-ink); text-decoration: none; }
+  .hp2 .h2-more a:hover { text-decoration: underline; }
+
+  /* ---- hero: copy left, product right ---------------------------------- */
+  .h2-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  @media (min-width: 1000px) {
+    .h2-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; margin-bottom: 5.5rem; }
+  }
+  .hp2 .h2-hero .hp-h1 { margin-bottom: 1.25rem; font-size: clamp(2.25rem, 7vw, 3rem); line-height: 1.04; }
+  @media (min-width: 1000px) { .hp2 .h2-hero .hp-h1 { font-size: clamp(2.5rem, 3.6vw, 3.375rem); } }
+  .hp2 .h2-hero .hp-h1__b { display: block; }
+  .h2-sub { font-size: 1.1875rem; line-height: 1.55; color: var(--ink-2); max-width: 34rem; margin: 0 0 1.75rem; }
+  .h2-sub strong { color: var(--ink); }
+  .h2-note { margin: 1rem 0 0; font-size: 0.875rem; color: var(--ink-2); }
+  .h2-hero__fig { margin: 0; min-width: 0; }
+  .h2-shot { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--rk-r-3); }
+  .h2-cap { margin-top: 0.75rem; font-size: 0.8125rem; color: var(--ink-2); }
+
+  /* The drawn approval card — the product's own shape, in tokens. */
+  .h2-card {
+    background-color: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: var(--rk-r-3);
+    overflow: hidden;
+    font-size: 0.875rem;
+    color: var(--ink-2);
+  }
+  .h2-card__bar {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    background-color: var(--rk-sunk);
+    font-family: var(--rk-font-util);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+  .h2-card__dots { display: inline-flex; gap: 0.3rem; }
+  .h2-card__dots i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background-color: var(--rule); }
+  .h2-card__title { flex: 1; color: var(--ink); }
+  .h2-card__live { color: var(--accent-ink); font-weight: 700; }
+  .h2-card__body { padding: 1.125rem 1.25rem 1.25rem; }
+  .h2-card__kind { margin: 0 0 0.25rem; font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--accent-ink); }
+  .h2-card__head { margin: 0 0 0.75rem; font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; line-height: 1.2; color: var(--ink); }
+  .h2-card__why { margin: 0 0 1rem; line-height: 1.5; }
+  .h2-card__why b { color: var(--ink); }
+  .h2-card__label { margin: 0 0 0.375rem; font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+  .h2-card__recs { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.375rem; }
+  .h2-card__recs li {
+    display: flex; align-items: center; gap: 0.625rem;
+    padding: 0.4rem 0.625rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--rk-r-2);
+    background-color: var(--canvas);
+    min-width: 0;
+  }
+  .h2-tag { flex: none; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.125rem 0.375rem; border-radius: 3px; background-color: var(--accent-wash); color: var(--accent-ink); }
+  .h2-file { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--rk-font-util); font-size: 0.8125rem; color: var(--ink); }
+  .h2-state { flex: none; font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .h2-card__cause { margin: 0 0 1.125rem; line-height: 1.5; color: var(--ink); }
+  .h2-card__acts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .h2-btn {
+    display: inline-block; padding: 0.4rem 0.875rem;
+    border: 1px solid var(--rk-rule-strong);
+    border-radius: var(--rk-r-2);
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink);
+  }
+  .h2-btn--go { background-color: var(--rk-signal-fill); border-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill); }
+  .h2-card__stamp {
+    margin: 1rem 0 0; padding-top: 0.75rem;
+    border-top: 1px dashed var(--rule);
+    font-family: var(--rk-font-util);
+    font-size: 0.75rem; letter-spacing: 0.04em; color: var(--ink);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .h2-btn--go { animation: h2-press 0.5s ease-out 1.6s 1 both; }
+    .h2-card__stamp { animation: h2-stamp 0.5s ease-out 2.1s 1 both; }
+  }
+  @keyframes h2-press { 0% { transform: scale(1); } 40% { transform: scale(0.94); } 100% { transform: scale(1); } }
+  @keyframes h2-stamp { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+  /* ---- problem: before / after ----------------------------------------- */
+  .h2-ba { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  @media (min-width: 760px) { .h2-ba { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .h2-ba__col { padding: 1.375rem 1.5rem; border: 1px solid var(--rule); border-radius: var(--rk-r-3); background-color: var(--sheet); }
+  .h2-ba__col--after { border-color: var(--accent-edge); }
+  .h2-ba__label { margin: 0 0 0.75rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--ink); }
+  .h2-ba__col--after .h2-ba__label { color: var(--accent-ink); }
+  .h2-ba ul { margin: 0; padding-left: 1.125rem; display: grid; gap: 0.5rem; line-height: 1.55; }
+
+  /* ---- how: three steps ------------------------------------------------- */
+  .h2-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  @media (min-width: 860px) { .h2-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .h2-step { padding: 1.375rem 1.5rem; border: 1px solid var(--rule); border-radius: var(--rk-r-3); background-color: var(--sheet); min-width: 0; }
+  .h2-step__n { margin: 0 0 0.75rem; width: 2rem; height: 2rem; display: grid; place-items: center; border-radius: 50%; border: 2px solid var(--accent-edge); color: var(--accent-ink); font-weight: 800; }
+  .h2-step h3 { margin: 0 0 0.5rem; font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: var(--ink); }
+  .h2-step p { margin: 0; line-height: 1.6; }
+  .h2-step__shot { display: block; width: 100%; height: auto; margin-top: 1rem; border: 1px solid var(--rule); border-radius: var(--rk-r-2); }
+
+  /* ---- leaks: six short cards ------------------------------------------ */
+  .h2-leaks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  @media (min-width: 700px) { .h2-leaks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1040px) { .h2-leaks { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .h2-leak { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.25rem 1.375rem; border: 1px solid var(--rule); border-left: 3px solid var(--accent-edge); border-radius: var(--rk-r-3); background-color: var(--sheet); }
+  .h2-leak__verb { margin: 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--accent-ink); }
+  .h2-leak h3 { margin: 0; font-family: var(--font-display); font-size: 1.125rem; font-weight: 800; line-height: 1.2; color: var(--ink); }
+  .h2-leak p { margin: 0; line-height: 1.55; }
+  .h2-leak__owner { margin-top: auto !important; padding-top: 0.5rem; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* ---- panels: machines and offer ------------------------------------- */
+  .h2-panel { padding: 2rem 1.5rem; border: 1px solid var(--rule); border-radius: var(--rk-r-3); background-color: var(--sheet); }
+  @media (min-width: 768px) { .h2-panel { padding: 2.75rem 3rem; } }
+  .h2-panel--signal { border-color: var(--accent-edge); background-color: var(--accent-wash); }
+  .h2-facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem 2.5rem; }
+  @media (min-width: 760px) { .h2-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .h2-facts li { padding-left: 1rem; border-left: 2px solid var(--accent-edge); line-height: 1.55; }
+  .h2-facts b, .h2-offer b { display: block; margin-bottom: 0.25rem; color: var(--ink); }
+  .h2-offer { margin: 0 0 1.75rem; padding: 0; list-style: none; counter-reset: h2o; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  @media (min-width: 760px) { .h2-offer { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .h2-offer li { counter-increment: h2o; line-height: 1.55; }
+  .h2-offer li::before { content: counter(h2o); display: grid; place-items: center; width: 1.75rem; height: 1.75rem; margin-bottom: 0.5rem; border-radius: 50%; background-color: var(--rk-signal-fill); color: var(--rk-on-signal-fill); font-weight: 800; }
+
+  /* ---- comparison: tighter in this layout ------------------------------ */
+  .hp2 .hp-cmp tbody th { width: 24%; }
+
+  /* ---- questions, grouped --------------------------------------------- */
+  .h2-faq { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem 2.5rem; }
+  @media (min-width: 960px) { .h2-faq { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .h2-faq__label { margin: 0 0 0.25rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--accent-ink); }
+
+  /* ---- everything else ------------------------------------------------- */
+  .h2-elsewhere { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+  @media (min-width: 760px) { .h2-elsewhere { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .h2-elsewhere__label { margin: 0 0 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--ink); }
+  .h2-elsewhere ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.375rem; font-size: 0.9375rem; }
+  .h2-elsewhere a { color: var(--ink-2); text-decoration: none; }
+  .h2-elsewhere a:hover { color: var(--ink); text-decoration: underline; }
+
+  /* ---- paper --------------------------------------------------------- */
+  @media print {
+    .h2-hero { grid-template-columns: 1.1fr 1fr; gap: 14pt; margin-bottom: 14pt; }
+    .h2-sub { font-size: 10pt; }
+    .h2-card, .h2-step, .h2-leak, .h2-ba__col, .h2-panel, .h2-shot, .h2-step__shot, .h2-card__recs li, .h2-btn {
+      border-color: var(--rk-rule-strong) !important; border-radius: 0; background: none !important; box-shadow: none;
+    }
+    .h2-btn--go { font-weight: 800; text-decoration: underline; color: var(--rk-text) !important; }
+    .h2-card__stamp, .h2-btn--go { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .h2-steps, .h2-offer { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8pt; }
+    .h2-leaks { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8pt; }
+    .h2-ba, .h2-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8pt; }
+    .h2-faq { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8pt; }
+    .h2-step, .h2-leak, .h2-ba__col, .h2-panel { padding: 8pt 9pt; break-inside: avoid; page-break-inside: avoid; }
+    .h2-h { font-size: 13pt; color: var(--rk-text); break-after: avoid; }
+    .h2-leak__verb, .h2-ba__label, .h2-faq__label, .h2-card__kind, .h2-card__live { color: var(--rk-text) !important; }
+    .h2-offer li::before { background: none; border: 1px solid var(--rk-rule-strong); color: var(--rk-text); }
+    .h2-elsewhere { display: none; }
+    .h2-more a::after { content: " (" attr(href) ")"; font-weight: 400; }
+  }
+</style>

@@ -1,673 +1,224 @@
 {{/*
-  The homepage — a qualification funnel, not a brochure.
+  THE HOMEPAGE, REBUILT 2026-10-16 FOR ONE READER.
 
-  It used to be four lines, `{{ .Content }}`, and the page was built out of
-  shortcodes in content/_index.md. That is how it grew into an essay: markdown
-  with no fixed slots takes as much copy as anyone pours into it, and the review
-  of the customer-facing material found the result overwhelming, written in
-  programming vocabulary, and led by the technology rather than by the customer's
-  problem.
+  The reader is a field operations manager or a revenue leader (CRO, RevOps) at
+  a shipper, distributor or 3PL. The page sells one product, Runink FACE, and
+  one first step: send one month of invoices. The earlier page ran to about
+  7,500 words across five industries and four products, showed no product
+  screen, and repeated its central idea three times. This one aims at about
+  1,000 words, shows the product, and says each thing once.
 
-  So this file is a fixed, short set of slots driven entirely from front matter —
-  a headline, one picture, five industries, the product's name, three reasons,
-  one next step — and there is deliberately no {{ .Content }} slot to pour an
-  essay into. Depth belongs in /industries/ and /blog/whitepapers/, and the page
-  links to both.
+  ORDER, AND WHY.
+    1. hero      — the claim and the product, side by side. The figure is a real
+                   screenshot when `hero.shot.src` is set; until then it is the
+                   drawn approval card below, labelled as a worked example.
+    2. problem   — today versus with FACE, two columns read at a glance.
+    3. how       — three steps. id="why-runink" stays: every language's header
+                   menu links to /#why-runink.
+    4. leaks     — the six losses, one line each.
+    5. machines  — where it runs. The one property no competitor offers.
+    6. compare   — four rows against an outside recovery service.
+    7. offer     — what happens when you send one month of invoices.
+    8. faq       — grouped questions, restated as FAQPage JSON-LD.
+    9. contact   — partials/home/contact.html (ids #contact and #contact-form
+                   are load-bearing; see that file).
+   10. more      — the other industries and products as one block of links.
+                   It keeps the inbound links to /company/, /products/* and
+                   /river (CONTENT.md rule 9).
 
-  The order is the argument: the buyer's problem, then the picture of it, then
-  the five industries in the buyer's own vocabulary, and only then the name of
-  the product and anything at all about how it works. Nothing above the fourth
-  block names a product or a technology.
+  NO NUMBERS ANYWHERE ON THIS PAGE (CONTENT.md rule 1). The drawn approval card
+  carries record names and a time of day, never an amount: an amount there would
+  read as a result. Every "what FACE does" sentence must be defensible from FACE
+  on origin/main (rule 4).
 
-  Every block below the hero is guarded on its own front-matter key, which is
-  what lets the four locales hold different sets of slots: a key a locale does
-  not carry renders nothing at all rather than an empty band. `product` is the
-  one key English has and the three translations do not, and that guard is what
-  keeps it invisible there until it is translated.
-
-  There is one further fallback. If a locale's front matter has no `hero`, the
-  page falls back to rendering its markdown, so a half-translated file cannot
-  ship an empty homepage in that language. All four locales carry full front
-  matter today; the fallback exists so that stays a choice rather than a
-  requirement.
-
-  Two ids on this page are load-bearing and are asserted by the build check:
-  #why-runink, which the header menu links to in every language, and
-  #contact-form inside partials/home/contact.html.
+  Screenshots go under static/images/home/; set `src` in each language's front
+  matter (one image can serve all four).
 */}}
 {{ define "main" }}
 {{ if not .Params.hero }}
-{{/* No front matter for this locale: render whatever markdown it has, on the
-     site's own surface, rather than an empty page. */}}
 {{ .Content }}
 {{ else }}
-{{/* The homepage has no industry of its own, so it takes the site's single
-     accent. It is a token rather than a literal so it follows the ground.
-
-     This used to inject `--accent`, which home/style.html derived -ink/-wash/
-     -edge from. That stylesheet reads --rk-accent now, so the old property fed
-     nothing — the homepage was shipping a dead attribute. The five industry
-     rows below re-bind --rk-accent with a .rk-cat-* class, which beats this
-     because it is set on the element rather than inherited from it.
-
-     safeCSS is load-bearing, not decoration: Go's contextual escaper runs every
-     style-attribute value through a CSS filter that rejects "(" and ")" and
-     substitutes ZgotmplZ, so an unmarked var() collapses the whole chain. A hex
-     got through for years because a hex has no parentheses. */}}
-<div class="hp" style="--rk-accent: {{ "var(--rk-signal)" | safeCSS }};">
+<div class="hp hp2" style="--rk-accent: {{ "var(--rk-signal)" | safeCSS }};">
   {{ partial "home/style.html" . }}
+  {{ partial "home/v2-style.html" . }}
 
   <div class="hp-wrap">
-
     {{ $h := .Params.hero }}
 
-    {{/* 1. The buyer's problem, in one sentence — and beside it, the one claim
-         on this page somebody could disagree with.
-
-         WHY THE STANCE IS HERE AND NOT LOWER. Everything below the hero argues
-         that the software is careful. None of it says what this company thinks,
-         and a page with no position is a page a reader has no reason to trust
-         over the next one. The test a stance has to pass is that its opposite
-         is a position somebody actually holds — and "software should act
-         without waiting for a person" is what most of this market is selling,
-         so this is a real disagreement rather than a value nobody would oppose.
-
-         It is also what fixes the hero's shape. At desktop the headline, deck
-         and buttons occupy the left 55% and the right 45% was empty, so the
-         first screen of the site read as unfinished. Below 1024px it stacks
-         under the buttons, where it reads as a closing line to the hero rather
-         than as an aside.
-
-         It states a design position in the present tense, which is the safe
-         side of rule 2: what the software does and why, never what it is
-         missing. "This one drafts, and waits" is conduct. */}}
-    {{/* Three siblings, not two, and that is for the phone. In source order a
-         reader on a 390px screen gets the eyebrow and the headline, then the
-         picture that makes the claim, then the argument and the buttons — which
-         is the sequence the page wants and the one it could not have while the
-         figure was a single block after everything else. At 1024px and up the
-         grid puts head and body in the left column and spans the figure down
-         the right, so the desktop reading order is unchanged. */}}
-    {{/* THE SKY. A constellation of the systems a customer already runs, drawn
-         behind the hero and parallaxed against the scroll — see
-         partials/home/constellation.html for what it draws and why it is in our
-         own tokens rather than the reference's navy and lime. It is decoration:
-         aria-hidden, dropped in print, and skipped entirely under reduced
-         motion, so nothing on this page depends on it. */}}
-    <div class="hp-sky" aria-hidden="true">
-      {{ partial "home/constellation.html" (dict "variant" "sky") }}
-    </div>
-
-    <header class="hp-hero">
-      <div class="hp-hero__head">
+    {{/* 1. HERO */}}
+    <header class="h2-hero">
+      <div class="h2-hero__copy">
         <p class="hp-eyebrow">{{ $h.eyebrow }}</p>
-        <h1 class="hp-h1">
-          {{ $h.line1 }}
-          <span class="hp-h1__b">{{ $h.line2 }}</span>
-        </h1>
-      </div>
-
-      {{/* THE FIELD, AT THE SIZE THE ARGUMENT DESERVES.
-
-           What was here before: the stance, three sentences, in a column 45% of
-           the viewport wide and 660px tall. The docblock above says the stance
-           was put here to fix an empty right half. It did not. At 1440 the
-           sentences ended 320px short of the bottom of their own column, and
-           that gap sat exactly where the eye lands after the headline — so the
-           first screen of the site was a wall of prose with a hole in it. On a
-           phone it was worse: the whole fold was type, with nothing to look at.
-
-           The figure was four screens down, boxed in a card, at a third of the
-           width it needed. It is the one picture this company owns: the same
-           field of records twice, mark for mark, unread and then read. It makes
-           the entire argument in about half a second without a word, which is
-           what a hero is for and what no paragraph here was managing.
-
-           The stance did not go; it became the caption. Those three sentences
-           are the one claim on this page somebody could disagree with, and they
-           read better under the picture they describe than beside a headline
-           they do not.
-
-           The sweep is the argument, not decoration. It travels left to right
-           across a field that does not otherwise move: no marks appear, none
-           are added, the same records go from unread to read as the read passes
-           over them. prefers-reduced-motion gets the finished state with no
-           sweep at all, and print gets it too — see the @media blocks in
-           home/style.html. */}}
-      <figure class="hp-hero__fig">
-        {{ with $h.fig_label }}<figcaption class="hp-hero__fig-label">{{ . }}</figcaption>{{ end }}
-        <div class="hp-hero__fig-frame">
-          {{ partial "home/field-figure.html" (dict "variant" "both") }}
-        </div>
-        {{ with $h.stance }}
-        <div class="hp-hero__stance" aria-label="{{ $h.stance_label }}">
-          {{ range . }}<p class="hp-hero__stance-line">{{ . }}</p>{{ end }}
-        </div>
-        {{ end }}
-      </figure>
-
-      <div class="hp-hero__body">
-        <p class="hp-deck">{{ $h.deck }}</p>
-        {{/* The product name lives here rather than in a band four screens
-             down: a reader landing from insurance or telecom needs the name and
-             the one-sentence mechanism before they will scroll at all.
-             markdownify because the name is bold in the source, and a name is
-             the one thing on this line that should be. */}}
-        {{ with $h.product_line }}<p class="hp-product-line">{{ . | markdownify }}</p>{{ end }}
+        <h1 class="hp-h1">{{ $h.line1 }} <span class="hp-h1__b">{{ $h.line2 }}</span></h1>
+        <p class="h2-sub">{{ $h.sub | markdownify }}</p>
         <div class="hp-actions">
-          <a class="hp-cta" href="{{ "/industries/" | relURL }}">{{ $h.cta_primary }}</a>
-          <a class="hp-cta-ghost" href="#contact-form">{{ $h.cta_secondary }}</a>
+          <a class="hp-cta" href="#offer">{{ $h.cta_primary }}</a>
+          <a class="hp-cta-ghost" href="#why-runink">{{ $h.cta_secondary }}</a>
         </div>
+        {{ with $h.note }}<p class="h2-note">{{ . }}</p>{{ end }}
       </div>
+
+      <figure class="h2-hero__fig">
+        {{ $shot := $h.shot | default dict }}
+        {{ if $shot.src }}
+          <img class="h2-shot" src="{{ $shot.src | relURL }}" alt="{{ $shot.alt }}" width="{{ $shot.width | default 1280 }}" height="{{ $shot.height | default 800 }}" decoding="async">
+          {{ with $shot.caption }}<figcaption class="h2-cap">{{ . }}</figcaption>{{ end }}
+        {{ else }}{{ with $h.card }}
+        {{/* THE DRAWN APPROVAL CARD. What FACE's "Today's command" puts in front
+             of a person: one drafted action, the records it cites, the cause,
+             and the three choices. The stamp plays once on load (CSS only) and
+             is static under reduced motion and on paper. */}}
+        <div class="h2-card" role="img" aria-label="{{ .alt }}">
+          <div class="h2-card__bar">
+            <span class="h2-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="h2-card__title">{{ .title }}</span>
+            <span class="h2-card__live">{{ .status }}</span>
+          </div>
+          <div class="h2-card__body">
+            <p class="h2-card__kind">{{ .kind }}</p>
+            <p class="h2-card__head">{{ .head }}</p>
+            <p class="h2-card__why"><b>{{ .rule_label }}</b> {{ .rule }}</p>
+            <p class="h2-card__label">{{ .records_label }}</p>
+            <ul class="h2-card__recs">
+              {{ range .records }}<li><span class="h2-tag">{{ .tag }}</span><span class="h2-file">{{ .name }}</span><span class="h2-state">{{ .state }}</span></li>{{ end }}
+            </ul>
+            <p class="h2-card__label">{{ .cause_label }}</p>
+            <p class="h2-card__cause">{{ .cause }}</p>
+            <div class="h2-card__acts">
+              <span class="h2-btn h2-btn--go">{{ index .acts 0 }}</span>
+              <span class="h2-btn">{{ index .acts 1 }}</span>
+              <span class="h2-btn">{{ index .acts 2 }}</span>
+            </div>
+            <p class="h2-card__stamp">{{ .stamp }}</p>
+          </div>
+        </div>
+        <figcaption class="h2-cap">{{ .caption }}</figcaption>
+        {{ end }}{{ end }}
+      </figure>
     </header>
 
-    {{/* 1c. Where it shows up in the operating numbers.
-
-         THE MISSING HALF OF THE STORY. The page went from "here is your week" to
-         "here is what the software does" without ever naming the line any of it
-         costs money on. An operations director could recognise every row above
-         and still have nothing to forward to a finance director.
-
-         RULE 1 IS THE WHOLE DESIGN OF THIS BLOCK. It names a measure and says
-         where in the reader's own systems to find it, and it puts no number
-         anywhere. That is precisely the permission rule 1 grants and precisely
-         the line it draws: naming demurrage is a neutral domain fact; asserting
-         what you would save is not. Every "where yours is" points at a document
-         the reader already owns — a carrier invoice, a write-off account, a
-         credit note — so the figure at the end of the sentence is theirs.
-
-         If a column ever acquires a number, this block has broken its own
-         promise in its own intro, which is the first place to look. */}}
-    {{/* THE OPERATING-NUMBERS LINES AND THE BEFORE/AFTER PAIR ARE NOT HERE ANY
-         MORE. They were a five-row band and a two-panel figure, both sitting
-         between the hero and the industries, and both were the same five
-         industries told a third and fourth time: a reader met Logistics as a
-         cost line here, as a before/after there, and as a row further down, and
-         had to hold the three together themselves.
-
-         They now open inside each industry's own row, where the scenario that
-         explains them already is. One industry, one place: how it is read
-         today, how Runink reads it, and the line it shows up on in your own
-         numbers — followed by the flow and the worked case that were already
-         there. Nothing was rewritten to do it; the copy is the same copy, read
-         off the same `opex` entries, joined to the industry by its page slug.
-         The labels come from `figure` and `opex_heading`, so all four languages
-         keep the words they already had. */}}
-
-    {{/* 2. The picture of the problem. Two panels of the same field of records:
-         one where a sample is read, one where all of it is. It is placed before
-         any explanation on purpose — the review asked for visuals a business
-         reader can take in without being walked through them. */}}
-    {{ with .Params.figure }}
-    {{/* THE ARTWORK IS GONE FROM HERE, BECAUSE IT IS NOW IN THE HERO.
-
-         This block used to carry the field twice, side by side, labelled "how
-         it is read today" and "how Runink reads it". That was the right place
-         for it while the fold was a wall of prose. It is not any more: the hero
-         shows the same 144 marks going from unread to read, so a reader who has
-         scrolled this far has already had the argument made, and meeting the
-         identical grid again four screens down reads as a page repeating itself
-         rather than building.
-
-         The two labels and their notes stay, because they are the before and
-         after in words and they say something the picture cannot: that a sample
-         is read AND the rest is assumed to look like it. Losing the artwork
-         costs this section nothing it was not already saying twice. */}}
-    <figure class="hp-field">
-      {{/* THE ARTWORK CAME BACK, AS THE OTHER PICTURE.
-
-           The note above records why the field left this block: the hero shows
-           the same marks and meeting them twice read as repetition. What this
-           section was left with was three sentences and a caption, in the one
-           slot on the page that had been carrying a picture.
-
-           This is a different picture making a different half of the argument.
-           The hero says the whole field is read; this says what happens to a
-           record once it has been — the rule it is compared against, and the
-           drafted action that stops and waits for a name. The three stage labels
-           ARE `figure.beats`, read from the same front matter as the list under
-           it, so the picture and the prose cannot drift apart.
-
-           It animates, on the terms set out in assets/js/motion.js: the markup
-           below is the finished state, the script sets the starting state at run
-           time, and reduced motion, no JavaScript and paper all get this. */}}
-      <div class="hp-pipe__frame" data-ground="console">
-        {{ partial "home/pipeline-figure.html" (dict "figure" .) }}
+    {{/* 2. PROBLEM: today, and with FACE */}}
+    {{ with .Params.problem }}
+    <section class="hp-sec" id="problem" aria-labelledby="problem-heading">
+      <h2 class="h2-h" id="problem-heading">{{ .heading }}</h2>
+      <div class="h2-ba">
+        <div class="h2-ba__col">
+          <p class="h2-ba__label">{{ .before_label }}</p>
+          <ul>{{ range .before }}<li>{{ . }}</li>{{ end }}</ul>
+        </div>
+        <div class="h2-ba__col h2-ba__col--after">
+          <p class="h2-ba__label">{{ .after_label }}</p>
+          <ul>{{ range .after }}<li>{{ . }}</li>{{ end }}</ul>
+        </div>
       </div>
-      <ol class="hp-beats">
-        {{ range .beats }}
-        <li class="hp-beat"><b>{{ .title }}</b>{{ .body }}</li>
-        {{ end }}
-      </ol>
-      <figcaption class="hp-caption">{{ .caption }}</figcaption>
-    </figure>
-    {{ end }}
-
-    {{/* 4b. WHERE THE REVENUE LEAKS — the page's answer to the revenue and
-         field-operations reader, in the order they would audit their own week.
-
-         Each card names a loss in the reader's words, says who owns it, and
-         says what FACE drafts for it. Every "does" line must be defensible from
-         FACE's code on origin/main (CONTENT.md rule 4) and none may carry a
-         figure (rule 1). A loss FACE does not draft for does not get a card —
-         rule 2 forbids saying so, so the card simply is not there. */}}
-    {{ with .Params.leaks }}
-    <section class="hp-sec" id="revenue-leaks" aria-labelledby="leaks-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="leaks-heading">{{ $.Params.leaks_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.leaks_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      <ul class="hp-leaks">
-        {{ range . }}
-        <li class="hp-leak">
-          <p class="hp-leak__owner">{{ .owner }}</p>
-          <h3>{{ .title }}</h3>
-          <p class="hp-leak__cost">{{ .cost }}</p>
-          <p class="hp-leak__does"><b>{{ $.Params.leaks_does_label }}</b> {{ .does }}</p>
-        </li>
-        {{ end }}
-      </ul>
     </section>
     {{ end }}
 
-    {{/* 4c. HOW THIS DIFFERS FROM A RECOVERY SERVICE.
+    {{/* 3. HOW IT WORKS. The id is the header menu's target in all four
+         languages; renaming it breaks "Why Runink?" everywhere. */}}
+    {{ with .Params.how }}
+    <section class="hp-sec" id="why-runink" aria-labelledby="how-heading">
+      <h2 class="h2-h" id="how-heading">{{ .heading }}</h2>
+      <ol class="h2-steps">
+        {{ range $i, $s := .steps }}
+        <li class="h2-step">
+          <p class="h2-step__n" aria-hidden="true">{{ add $i 1 }}</p>
+          <h3>{{ $s.title }}</h3>
+          <p>{{ $s.body }}</p>
+          {{ $ss := $s.shot | default dict }}{{ if $ss.src }}<img class="h2-step__shot" src="{{ $ss.src | relURL }}" alt="{{ $ss.alt }}" loading="lazy" decoding="async">{{ end }}
+        </li>
+        {{ end }}
+      </ol>
+      {{ with .more }}<p class="h2-more"><a href="{{ .url | relURL }}">{{ .text }} <span aria-hidden="true">&rarr;</span></a></p>{{ end }}
+    </section>
+    {{ end }}
 
-         The buyer comparing us has usually met an outsourced audit or recovery
-         service first. This states what each kind of offer does, in general
-         terms, and names no company: CONTENT.md rule 11 keeps third-party names
-         to cited sources. Every "us" cell is a property of how FACE is built
-         and must survive the rule-4 test; no row may describe what FACE lacks
-         (rule 2). Pricing is deliberately not a row: FACE's own price list has
-         a success fee on recoveries, and the pricing page is where that lives.
-         A real <table>, because a comparison is tabular data and answer
-         engines read table rows as facts. */}}
+    {{/* 4. THE SIX LOSSES. One line each; the FACE page carries the long form. */}}
+    {{ with .Params.leaks }}
+    <section class="hp-sec" id="revenue-leaks" aria-labelledby="leaks-heading">
+      <h2 class="h2-h" id="leaks-heading">{{ .heading }}</h2>
+      <ul class="h2-leaks">
+        {{ range .items }}
+        <li class="h2-leak">
+          <p class="h2-leak__verb">{{ .verb }}</p>
+          <h3>{{ .title }}</h3>
+          <p>{{ .line }}</p>
+          <p class="h2-leak__owner">{{ .owner }}</p>
+        </li>
+        {{ end }}
+      </ul>
+      {{ with .more }}<p class="h2-more"><a href="{{ .url | relURL }}">{{ .text }} <span aria-hidden="true">&rarr;</span></a></p>{{ end }}
+    </section>
+    {{ end }}
+
+    {{/* 5. WHERE IT RUNS — the property nobody else in this market offers.
+         Every item is a property of how FACE is built. */}}
+    {{ with .Params.machines }}
+    <section class="hp-sec h2-panel" id="your-machines" aria-labelledby="machines-heading">
+      <h2 class="h2-h" id="machines-heading">{{ .heading }}</h2>
+      <p class="h2-lead">{{ .lead }}</p>
+      <ul class="h2-facts">
+        {{ range .facts }}<li><b>{{ .title }}</b> {{ .body }}</li>{{ end }}
+      </ul>
+      {{ with .more }}<p class="h2-more"><a href="{{ .url | relURL }}">{{ .text }} <span aria-hidden="true">&rarr;</span></a></p>{{ end }}
+    </section>
+    {{ end }}
+
+    {{/* 6. COMPARISON. No company named (rule 11); pricing is not a row because
+         FACE has its own success fee, which /pricing/ states. */}}
     {{ with .Params.compare }}{{ $c := . }}
     <section class="hp-sec" id="compare" aria-labelledby="compare-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="compare-heading">{{ .heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with .intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      <div class="hp-cmp__wrap">
-        <table class="hp-cmp">
-          <thead>
-            <tr>
-              <th scope="col"><span class="hp-sr">{{ .col_topic }}</span></th>
-              <th scope="col">{{ .col_them }}</th>
-              <th scope="col">{{ .col_us }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{ range .rows }}
-            <tr>
-              <th scope="row">{{ .topic }}</th>
-              <td data-col="{{ $c.col_them }}">{{ .them }}</td>
-              <td data-col="{{ $c.col_us }}">{{ .us }}</td>
-            </tr>
-            {{ end }}
-          </tbody>
-        </table>
-      </div>
+      <h2 class="h2-h" id="compare-heading">{{ .heading }}</h2>
+      <table class="hp-cmp">
+        <thead><tr>
+          <th scope="col"><span class="hp-sr">{{ .col_topic }}</span></th>
+          <th scope="col">{{ .col_them }}</th>
+          <th scope="col">{{ .col_us }}</th>
+        </tr></thead>
+        <tbody>
+          {{ range .rows }}
+          <tr>
+            <th scope="row">{{ .topic }}</th>
+            <td data-col="{{ $c.col_them }}">{{ .them }}</td>
+            <td data-col="{{ $c.col_us }}">{{ .us }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
       {{ with .note }}<p class="hp-cmp__note">{{ . | markdownify }}</p>{{ end }}
     </section>
     {{ end }}
 
-    {{/* 5. Only now, how it works — and still in the buyer's words. The id is
-         the one the header menu links to in all four languages. */}}
-    {{ with .Params.why }}
-    <section class="hp-sec" id="why-runink" aria-labelledby="why-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="why-heading">{{ $.Params.why_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.why_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      {{/* The three cards land in order the first time they are scrolled to.
-           Enhancement only: they are rendered here in full and the attribute
-           does nothing without JavaScript, with reduced motion, or on paper. */}}
-      <ul class="hp-why" data-motion="reveal">
-        {{ range . }}
-        <li class="hp-why__item">
-          <div class="hp-why__plate">
-            {{ partial "home/glyph.html" (dict "variant" .glyph) }}
-          </div>
-          <h3>{{ .title }}</h3>
-          <p>{{ .body }}</p>
-        </li>
-        {{ end }}
-      </ul>
-
-      {{/* The one link out to the long version. It used to be the only place on
-           the page a product name appeared, which is why block 4 exists; now it
-           is where a reader who has been given the name goes for the detail. It
-           is a single line on purpose: the page's job is to start a
-           conversation, and a second call to action competing with the
-           consultation would cost it that. */}}
-      {{ with $.Params.paper }}
-      <p class="hp-paper">
-        <a class="hp-cta-ghost" href="{{ .url }}">{{ .text }}</a>
-        <span class="hp-paper__note">{{ .note }}</span>
-      </p>
-      {{ end }}
+    {{/* 7. THE OFFER — the first step the hero button points at. */}}
+    {{ with .Params.offer }}
+    <section class="hp-sec h2-panel h2-panel--signal" id="offer" aria-labelledby="offer-heading">
+      <h2 class="h2-h" id="offer-heading">{{ .heading }}</h2>
+      <p class="h2-lead">{{ .lead }}</p>
+      <ol class="h2-offer">
+        {{ range .steps }}<li><b>{{ .title }}</b> {{ .body }}</li>{{ end }}
+      </ol>
+      <div class="hp-actions"><a class="hp-cta" href="#contact-form">{{ .cta }}</a></div>
     </section>
     {{ end }}
 
-    {{/* 7. The five industries — moved BELOW the logistics story.
-
-         It used to sit third, between the picture of the problem and the name
-         of the product, which put Banking, Telecom and Marketing in the middle
-         of a narrative written for shippers, fulfilment, underwriting and
-         claims. The reader following that story was interrupted by three
-         verticals they do not work in.
-
-         It answers "who else carries this shape of problem", which is a
-         question worth answering AFTER the shape has been shown rather than
-         during. The five industry pages keep their inbound link either way.
-
-         Originally: The five industries, as five lines of one instrument rather than as
-         five cards. /industries/ is already the card switchboard; repeating it
-         here would make one of the two pages redundant. Read down, the five
-         lines say that this is one shape of problem seen five ways, and the
-         third column tells a reader whose job it is — the review asked for
-         exactly that, by name.
-
-         Title, link and accent are read from the industry page itself wherever
-         one exists, so they cannot drift from the section; the front-matter
-         values are the fallback that keeps the block intact on the localised
-         sites, where the industry pages do not exist as translations. */}}
-    {{/* 6b. THE CONSTELLATION — the systems, before the industries that run them.
-
-         It sits here rather than behind the hero, where it started: a labelled
-         diagram under body copy is a competition a reader has to decide to
-         ignore, and the labels landed across the headline. In its own band it is
-         a picture with a caption, which is what it was always drawing.
-
-         The five named systems take the five industry hues, so a reader meets
-         the colours here and then meets them again as the ledger rows directly
-         below — the band is the bridge into that section rather than a break
-         before it. */}}
-    {{ with .Params.constellation }}
-    <section class="hp-sec hp-const" aria-labelledby="constellation-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="constellation-heading">{{ .label }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with .intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      <div class="hp-const__frame">
-        {{ partial "home/constellation.html" (dict "variant" "figure" "copy" .) }}
-      </div>
-      {{ with .legend }}
-      <ul class="hp-const__legend">
-        {{ range $i, $l := . }}
-        <li class="hp-const__key hp-const__key--{{ $i }}"><span aria-hidden="true"></span>{{ $l }}</li>
-        {{ end }}
-      </ul>
-      {{ end }}
-    </section>
-    {{ end }}
-
-    {{ with .Params.industries }}
-    <section class="hp-sec" aria-labelledby="industries-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="industries-heading">{{ $.Params.industries_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.industries_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-
-      {{ with $.Params.industries_columns }}
-      <div class="hp-ledger__head" aria-hidden="true">
-        <span>{{ .name }}</span>
-        <span>{{ .cost }}</span>
-        <span>{{ .owner }}</span>
-      </div>
-      {{ end }}
-
-      <ul class="hp-ledger">
-        {{ range . }}
-        {{ $name := .name }}
-        {{ $url := printf "/industries/%s/" .page }}
-        {{/* The category comes from the industry page itself, so the homepage
-             cannot drift from it. It used to carry its own `accent:` hex per
-             row, which quietly became the source of truth whenever the industry
-             page lacked one — five pre-rebrand hues living in a second place. */}}
-        {{ $cat := "" }}
-        {{/* The owners come from the industry page for the same reason the
-             category does: both pages name the roles whose week this changes,
-             and two lists meant one saying "Internal audit" while the other said
-             "Internal audit and control testing" for the same job. The ledger
-             column holds three, so it takes the first three the industry page
-             states and the order is that page's. `owners` in this front matter
-             stays as the fallback the localised sites render — see below. */}}
-        {{ $owners := .owners }}
-        {{ with site.GetPage (printf "/industries/%s" .page) }}
-          {{ $name = .Title }}
-          {{ $url = .RelPermalink }}
-          {{ $cat = .Params.category }}
-          {{ with .Params.owners }}
-            {{ $roles := slice }}
-            {{ range first 3 . }}{{ $roles = $roles | append .role }}{{ end }}
-            {{ with $roles }}{{ $owners = . }}{{ end }}
-          {{ end }}
-        {{ end }}
-        {{/* The industry pages are English-only, so on /es/, /fr/ and /pt/ this
-             lookup found nothing and every row in this ledger rendered with no
-             category mark at all — five identical grey rows where English gets
-             five colours. Nothing caught it: the markup is valid, the rows
-             render, and the only symptom is a colour that is not there. The
-             name and the link stay with the current-language lookup, because
-             those legitimately differ; only the hue falls back, and a hue does
-             not need translating. */}}
-        {{ if not $cat }}
-          {{ with (index site.Sites 0).GetPage (printf "/industries/%s" .page) }}{{ $cat = .Params.category }}{{ end }}
-        {{ end }}
-        {{/* Each row OPENS rather than navigating away. The flow that used to
-             run across the page and the two walkthroughs under it were both
-             about one industry, so they live inside that industry's row now,
-             and every other industry gets the same shape.
-
-             <details>, not a script. It is native, it needs no JavaScript, it is
-             keyboard-operable and screen-reader-announced for free, and the
-             print rule below forces every one of them open — a collapsed
-             section prints as nothing, and content that silently vanishes from
-             the leave-behind is the failure mode this site's doctrine is built
-             against.
-
-             The link to the industry page moves INSIDE the open body. A summary
-             that both expands and navigates is two actions on one control. */}}
-        <li class="hp-line hp-accent{{ with $cat }} rk-cat-{{ . }}{{ end }}">
-          <details class="hp-ind">
-            <summary class="hp-row">
-              <p class="hp-row__name">
-                <span class="hp-row__tick" aria-hidden="true"></span>{{ $name }}
-              </p>
-              <p class="hp-row__cost">{{ .cost }}</p>
-              <p class="hp-row__owner">
-                {{ range $owners }}<span>{{ . }}</span>{{ end }}
-              </p>
-              <p class="hp-row__go" aria-hidden="true">{{ $.Params.industries_open }}</p>
-            </summary>
-
-            <div class="hp-ind__body">
-              {{/* This industry's own before/after and its own operating line,
-                   joined to the `opex` entry by page slug. Reusing the labels
-                   from `figure` and `opex_heading` rather than writing new ones
-                   is what keeps es/fr/pt reading correctly without a single new
-                   translated string for the headings. */}}
-              {{ $slug := .page }}
-              {{ $reads := .reads }}
-              {{ $ox := false }}
-              {{ range $.Params.opex }}{{ if eq .page $slug }}{{ $ox = . }}{{ end }}{{ end }}
-              {{ with $f := $.Params.figure }}
-              <div class="hp-field__panels hp-ind__read">
-                <div class="hp-field__panel">
-                  <p class="hp-field__label">{{ $f.today_label }}</p>
-                  <p class="hp-field__note">{{ with $ox }}{{ .driver }}{{ end }}</p>
-                </div>
-                <div class="hp-field__panel hp-field__panel--now">
-                  <p class="hp-field__label">{{ $f.read_label }}</p>
-                  <p class="hp-field__note">{{ $reads }}</p>
-                </div>
-              </div>
-              {{ end }}
-
-              {{/* The band markup and its classes are the ones the standalone
-                   section used, deliberately: those rules are already
-                   print-aware and already pass the token gates, so reusing them
-                   keeps one design for this device instead of leaving ~100
-                   lines of .hp-opex CSS shipped on every homepage with nothing
-                   emitting it. The DRIVER column is dropped here and only the
-                   line and the reader's own source remain — the driver is the
-                   "how it is read today" panel directly above, and printing it
-                   twice in one row would read as the page repeating itself. */}}
-              {{ with $ox }}
-              <p class="rk-steps__label">{{ $.Params.opex_heading }}</p>
-              <ul class="hp-opex">
-                <li class="hp-opex__band">
-                  <span class="hp-opex__rule" aria-hidden="true"></span>
-                  <h4 class="hp-opex__line">{{ .line }}</h4>
-                  <div class="hp-opex__facts">
-                    <div>
-                      <p class="hp-opex__fact-label">{{ $.Params.opex_col_where }}</p>
-                      <p class="hp-opex__fact-body hp-opex__where">{{ .where }}</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              {{ end }}
-
-              {{/* The moments and the worked cases, through the partial the five
-                   industry pages render from this same front matter. The row a
-                   reader opens here and the page behind "See the fit" are one
-                   device reading one source — see shared/worked-case-style.html. */}}
-              {{ partial "shared/worked-case.html" (dict "flow" .flow "cases" .cases) }}
-
-              <p class="hp-more">
-                <a class="hp-more__link" href="{{ $url }}">{{ $.Params.industries_cta }} <span aria-hidden="true">&rarr;</span></a>
-              </p>
-            </div>
-          </details>
-        </li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-
-    {{/* 8. The other products, and the way through to who builds them.
-
-         THIS REPLACED THE LEADERSHIP BLOCK, and that has a cost worth writing
-         down: data/leadership.yaml was the only place on this site where a
-         person is named, and an outside audit called a resolvable founder the
-         highest-leverage credibility item this company has.
-
-         He is one click away rather than gone, and the last row here is what
-         carries him. That row is load-bearing for a second reason as well:
-         /company/ had exactly one inbound link in a 433-page build and this was
-         it. Take the row out and rule 9 breaks on the page rule 9 names.
-
-         Title, URL and page count are resolved from each paper rather than
-         repeated, so a renamed or moved paper cannot leave a wrong number or a
-         dead row behind. The front-matter `name` stays authoritative as the
-         scannable label. */}}
-    {{ with .Params.products }}
-    <section class="hp-sec hp-prod-sec" aria-labelledby="products-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="products-heading">{{ $.Params.products_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.products_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      <ul class="hp-prod">
-        {{ range . }}
-        {{/* The papers are written in English and have no translations, so on
-             /es/, /fr/ and /pt/ `site.GetPage` returns nothing and the card
-             silently disappears. Before this fallback existed, all three
-             translated homepages rendered this band as a heading and an intro
-             over an empty list — a section that announces four products and
-             then shows none.
-
-             Falling back to the default-language site is the honest fix only
-             because the card says so: `products_lang_note` puts the paper's
-             language on the link itself, so a reader knows what they are
-             opening before they open it rather than after. Where the note is
-             absent (English) nothing is added.
-
-             `site.Sites` rather than `hugo.Sites`: this repo's CI pins Hugo
-             0.147.3 and `hugo.Sites` did not exist until 0.156, so the newer
-             spelling builds locally and fails the deploy. */}}
-        {{/* A PRODUCT PAGE, WHEN THERE IS ONE, IS WHAT THE CARD OPENS.
-             `page` names it (/products/face, /products/tide, /products/pulse,
-             /river); the paper is one click further, from the product page's own
-             "Read the detail" block. A card with no `page` — the joint TIDE and
-             Atlas paper — still opens its paper, with the page count, as before.
-             A card may have a page and no paper (Runink River has no paper).
-             The product pages are English only, so the same default-language
-             fallback and language note apply to them as to the papers. */}}
-        {{ $p := false }}
-        {{ $isPage := false }}
-        {{ with .page }}
-          {{ $p = site.GetPage . }}
-          {{ if not $p }}{{ $p = (index site.Sites 0).GetPage . }}{{ end }}
-          {{ if $p }}{{ $isPage = true }}{{ end }}
-        {{ end }}
-        {{ if and (not $p) .paper }}
-          {{ $path := printf "/blog/whitepapers/%s" .paper }}
-          {{ $p = site.GetPage $path }}
-          {{ if not $p }}{{ $p = (index site.Sites 0).GetPage $path }}{{ end }}
-        {{ end }}
-        {{ if $p }}
-        {{ $foreign := ne $p.Language.Lang site.Language.Lang }}
-        <li class="hp-prod__item">
-          <a class="hp-prod__link" href="{{ $p.RelPermalink }}"{{ if $foreign }} hreflang="{{ $p.Language.Lang }}"{{ end }}>
-            <h3 class="hp-prod__name">{{ .name }}</h3>
-            {{ with .sub }}<p class="hp-prod__sub">{{ . }}</p>{{ end }}
-            <p class="hp-prod__line">{{ .line }}</p>
-            <span class="hp-prod__go">
-              {{ if $isPage }}{{ $.Params.products_page_cta | default "See the product" }}{{ else }}{{ $.Params.products_cta }}{{ with $p.Params.source_pages }} &middot; {{ . }} {{ $.Params.products_pages_word | default "pages" }}{{ end }}{{ end }}{{ if $foreign }}{{ with $.Params.products_lang_note }} &middot; {{ . }}{{ end }}{{ end }}
-              <span aria-hidden="true">&rarr;</span>
-            </span>
-          </a>
-        </li>
-        {{ end }}
-        {{ end }}
-      </ul>
-      {{ with $.Params.products_more_url }}
-      {{ $more := site.GetPage . }}
-      {{ if not $more }}{{ $more = (index site.Sites 0).GetPage . }}{{ end }}
-      {{ with $more }}
-      <p class="hp-more">
-        <a class="hp-more__link" href="{{ .RelPermalink }}"{{ if ne .Language.Lang site.Language.Lang }} hreflang="{{ .Language.Lang }}"{{ end }}>{{ $.Params.products_more_text }} <span aria-hidden="true">&rarr;</span></a>
-      </p>
-      {{ end }}
-      {{ end }}
-    </section>
-    {{ end }}
-
-    {{/* 6c. THE QUESTIONS A BUYER TYPES INTO A SEARCH BOX OR AN ASSISTANT.
-
-         Plain h3 + p rather than <details>: an answer hidden behind a click
-         prints as nothing and is weighted lower by crawlers. The FAQPage below
-         restates these exact words — partials/schema-faq.html only runs for
-         .IsPage, and the home page is not one, so it is emitted here. Rule 1
-         applies to the schema as much as to the prose: anything untrue here is
-         untrue twice. */}}
+    {{/* 8. QUESTIONS, grouped. Plain h3 + p so they print and are read by
+         crawlers; restated as FAQPage JSON-LD (schema-faq.html only runs for
+         .IsPage, and the home page is not one). Rule 1 holds for both. */}}
     {{ with .Params.faq }}
+    {{ $all := slice }}{{ range .groups }}{{ range .items }}{{ $all = $all | append . }}{{ end }}{{ end }}
     <section class="hp-sec" id="questions" aria-labelledby="faq-heading">
-      <div class="hp-head">
-        <span class="hp-head__mark" aria-hidden="true"></span>
-        <h2 class="hp-head__label" id="faq-heading">{{ $.Params.faq_heading }}</h2>
-        <span class="hp-head__rule" aria-hidden="true"></span>
-      </div>
-      {{ with $.Params.faq_intro }}<p class="hp-intro">{{ . }}</p>{{ end }}
-      <div class="hp-faq">
-        {{ range $i, $f := . }}
-        <div class="hp-faq__item" id="q-{{ add $i 1 }}">
-          <h3>{{ $f.q }}</h3>
-          <p>{{ $f.a | markdownify }}</p>
+      <h2 class="h2-h" id="faq-heading">{{ .heading }}</h2>
+      <div class="h2-faq">
+        {{ $n := 0 }}
+        {{ range .groups }}
+        <div class="h2-faq__group">
+          <p class="h2-faq__label">{{ .label }}</p>
+          {{ range .items }}{{ $n = add $n 1 }}
+          <div class="hp-faq__item" id="q-{{ $n }}">
+            <h3>{{ .q }}</h3>
+            <p>{{ .a | markdownify }}</p>
+          </div>
+          {{ end }}
         </div>
         {{ end }}
       </div>
@@ -681,7 +232,7 @@
       "publisher": { "@id": "https://runink.org/#organization" },
       "inLanguage": {{ $.Language.Lang | jsonify | safeJS }},
       "mainEntity": [
-        {{- range $i, $f := . }}{{ if $i }},{{ end }}
+        {{- range $i, $f := $all }}{{ if $i }},{{ end }}
         {
           "@type": "Question",
           "name": {{ $f.q | jsonify | safeJS }},
@@ -694,15 +245,23 @@
     </script>
     {{ end }}
 
-    <!-- 7. One next step -->
+    {{/* 9. The one next step. */}}
     {{ if .Params.contact }}{{ partial "home/contact.html" . }}{{ end }}
 
-    {{/* Print only. The printed sheet has no site header on it, so without this
-         a leave-behind carries nothing that says where it came from. */}}
-    <p class="hp-mark">runink.org</p>
+    {{/* 10. Everything else Runink does. Load-bearing for rule 9. */}}
+    {{ with .Params.more }}
+    <nav class="h2-elsewhere" aria-label="{{ .label }}">
+      {{ range .groups }}
+      <div>
+        <p class="h2-elsewhere__label">{{ .label }}</p>
+        <ul>{{ range .links }}<li><a href="{{ .url | relURL }}">{{ .text }}</a></li>{{ end }}</ul>
+      </div>
+      {{ end }}
+    </nav>
+    {{ end }}
 
+    <p class="hp-mark">runink.org</p>
   </div>
 </div>
 {{ end }}
-{{/* The motion bundle is emitted site-wide by _default/baseof.html. */}}
 {{ end }}
