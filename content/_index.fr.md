@@ -14,132 +14,81 @@ hero:
   eyebrow: "Pour les responsables des opérations terrain et du revenu"
   line1: "Contestez chaque surfacturation."
   line2: "Pas seulement les grosses."
-  sub: "Runink FACE vérifie chaque facture de fret face à vos tarifs et enregistrements, rédige la contestation preuves jointes, et l'envoie quand vous approuvez."
+  sub: "Runink FACE vérifie chaque facture de fret face à vos tarifs et enregistrements, rédige la contestation et l'envoie quand vous approuvez."
   cta_primary: "Envoyez un mois de factures"
   cta_secondary: "Voir comment ça marche"
-  note: "Runink FACE: Fulfilment Autonomous Claims Engine. Sur vos serveurs, votre cloud ou le nôtre."
+  note: "Runink FACE: Fulfilment Autonomous Claims Engine. Sur vos serveurs ou les nôtres. Aucun service d'IA extérieur."
   shot:
     src: ""
     alt: ""
     caption: ""
   card:
-    alt: "Une contestation de fret rédigée dans Runink FACE, avec la règle enfreinte, les trois enregistrements qui la justifient, la cause probable et les boutons Approuver, Modifier et Rejeter."
+    alt: "Une contestation de fret rédigée dans Runink FACE, avec la règle enfreinte, les trois pièces qui la justifient, la cause probable et les boutons Approuver, Modifier et Rejeter."
     title: "runink face · ordres du jour"
     status: "EN ATTENTE DE VOUS"
     kind: "Contestation rédigée · facture transporteur"
-    head: "Le poids facturé dépasse le poids du ticket de pesée."
+    head: "Le poids facturé dépasse le ticket de pesée."
     rule_label: "Règle :"
-    rule: "facturer au poids relevé à l'enlèvement, au tarif du contrat."
+    rule: "facturer le poids à l'enlèvement, au tarif convenu."
     records_label: "Pièces jointes"
     records:
       - { tag: "INV", name: "carrier_invoice_7731.pdf", state: "lu" }
       - { tag: "BOL", name: "bill_of_lading_MSKU4419.pdf", state: "lu" }
       - { tag: "RATE", name: "rate_agreement_2026.xlsx", state: "comparé" }
     cause_label: "Cause probable"
-    cause: "Le transporteur a repesé au hub et facturé ce poids. Même ligne, même schéma sur les factures précédentes."
+    cause: "Repesé au hub. Même ligne, même schéma avant."
     acts: ["Approuver", "Modifier", "Rejeter"]
-    stamp: "Approuvé par A. Morgan · 09:14 · contestation envoyée avec trois pièces"
-    caption: "Exemple dessiné d'une contestation rédigée. Les noms et les pièces sont illustratifs."
-
-problem:
-  heading: "Contester une facture prend une matinée. Alors la plupart sont payées."
-  before_label: "Aujourd'hui"
-  before:
-    - "Quelqu'un retrouve le bon, le poids et le tarif d'une seule facture."
-    - "Seules les grosses surfacturations valent cette matinée."
-    - "Les petites réclamations expirent dans le délai."
-    - "Le même transporteur refait la même erreur le mois suivant."
-  after_label: "Avec Runink FACE"
-  after:
-    - "Chaque facture est vérifiée face à vos tarifs et enregistrements."
-    - "Chaque surfacturation arrive comme une contestation rédigée, pièces jointes."
-    - "Les réclamations sont rédigées tant que le délai court encore."
-    - "La cause est classée, pour la corriger à la source."
+    stamp: "Approuvé par A. Morgan · 09:14 · envoyé avec trois pièces"
+    caption: "Exemple dessiné. Noms et pièces illustratifs."
 
 how:
   heading: "Comment ça marche"
   steps:
-    - title: "Il lit ce que vous gardez déjà"
-      body: "Factures, commandes, preuves de livraison, dossiers de sinistre, données portuaires et capteurs, depuis les systèmes que vous utilisez. Rien à remplacer."
+    - title: "Il lit ce que vous gardez"
+      body: "Factures, commandes, sinistres, données portuaires et capteurs. Rien à remplacer."
     - title: "Il rédige l'action"
-      body: "Une contestation, une réclamation ou un ordre d'exécution, avec la règle enfreinte, les enregistrements qui la justifient et la cause probable."
+      body: "Une contestation, une réclamation ou un ordre, avec la règle, les pièces et la cause probable."
     - title: "Vous l'approuvez"
-      body: "Un clic l'envoie. Votre nom, l'heure et toute modification restent consignés, pour que le motif tienne plus tard."
+      body: "Un clic l'envoie. Votre nom et l'heure restent consignés."
   more: { text: "Tout ce que fait FACE (en anglais)", url: "/products/face/" }
 
 leaks:
   heading: "Six endroits où le revenu fuit"
   items:
-    - verb: "Repérez-la"
-      title: "Surfacturations et factures en double"
-      line: "Chaque facture vérifiée face à vos tarifs, pas seulement les grosses."
-      owner: "Audit fret · Finance"
-    - verb: "Déposez-la"
-      title: "Réclamations pour avarie, manquant ou retard"
-      line: "Rédigées dans le délai du transporteur, preuves jointes."
-      owner: "Service sinistres"
-    - verb: "Débloquez-le"
-      title: "Surestaries et détention"
-      line: "Le conteneur bloqué et le document manquant, nommés pendant que la pénalité court."
-      owner: "Opérations · Conformité douanière"
-    - verb: "Refaites-le"
-      title: "Plans d'exécution périmés"
-      line: "Ordres d'exécution rédigés à partir des données en direct quand le plan du matin ne tient plus."
-      owner: "Opérations terrain"
-    - verb: "Prouvez-la"
-      title: "Pertes de chaîne du froid"
-      line: "La photo prise à la porte lue avec les documents, et la réclamation rédigée."
-      owner: "Opérations terrain · Qualité"
-    - verb: "Corrigez-la"
-      title: "La même perte chaque mois"
-      line: "Causes classées selon ce que corriger chacune changerait."
-      owner: "CRO · Opérations du revenu"
-  more: { text: "Suivez une réclamation, de l'enregistrement à l'approbation", url: "/fr/use-cases/claims-recovery/" }
+    - { verb: "Repérez-la", title: "Surfacturations et doublons", line: "Chaque facture vérifiée face à vos tarifs.", owner: "Audit fret · Finance" }
+    - { verb: "Déposez-la", title: "Avaries, manquants et retards", line: "Rédigées dans le délai, preuves jointes.", owner: "Service sinistres" }
+    - { verb: "Débloquez-le", title: "Surestaries et détention", line: "Le conteneur bloqué et la pièce manquante, nommés tôt.", owner: "Opérations · Conformité douanière" }
+    - { verb: "Refaites-le", title: "Plans d'exécution périmés", line: "Nouveaux ordres quand le plan du matin casse.", owner: "Opérations terrain" }
+    - { verb: "Prouvez-la", title: "Pertes de chaîne du froid", line: "Photo de la porte et documents, réclamation rédigée.", owner: "Opérations terrain · Qualité" }
+    - { verb: "Corrigez-la", title: "La même perte chaque mois", line: "Causes classées par la correction qui compte le plus.", owner: "CRO · Opérations du revenu" }
+  more: { text: "Déposer une réclamation dans le délai", url: "/fr/use-cases/claims-recovery/" }
 
 machines:
   heading: "Il s'exécute sur vos machines"
-  lead: "La plupart des outils de ce marché sont un service hébergé. FACE peut s'exécuter sur vos propres serveurs ou dans votre cloud, donc factures, dossiers de sinistre et documents douaniers restent où ils sont."
   facts:
-    - title: "Vos serveurs ou votre cloud"
-      body: "Avec les licences Dédiée et Enterprise, le travail s'exécute sur des machines que vous contrôlez. Lite s'exécute sur les machines partagées de Runink."
-    - title: "Aucun service d'IA extérieur"
-      body: "Le modèle de langage s'exécute là où FACE s'exécute. Quelle que soit la licence, rien n'est envoyé à un fournisseur de modèles extérieur."
-    - title: "Vos systèmes restent tels quels"
-      body: "FACE lit vos enregistrements et les laisse tels quels. Rien à migrer, pas de nouveau système de référence."
-    - title: "Une trace de chaque décision"
-      body: "Qui a approuvé, quand et ce qui a été modifié reste avec chaque action, prêt quand un auditeur le demande."
+    - { title: "Vos serveurs ou votre cloud", body: "Dédiée et Enterprise s'exécutent sur des machines que vous contrôlez." }
+    - { title: "Aucun service d'IA extérieur", body: "Le modèle tourne là où tourne FACE, quelle que soit la licence." }
+    - { title: "Chaque décision consignée", body: "Qui a approuvé, quand, et ce qui a changé." }
   more: { text: "Confiance et conformité", url: "/fr/trust/" }
 
 compare:
   heading: "Un logiciel que vous utilisez, pas un service qui réclame à votre place"
   col_topic: "Question"
-  col_them: "Un service de recouvrement extérieur"
+  col_them: "Service de recouvrement extérieur"
   col_us: "Runink FACE"
   rows:
-    - topic: "Ce qu'il lit"
-      them: "Les factures que vous lui remettez, souvent avec vos accès transporteur."
-      us: "Les enregistrements que vos systèmes gardent déjà : commandes, factures, sinistres, documents, photos et flux en direct."
-    - topic: "Ce qui revient"
-      them: "Un avoir, et la liste de ce qui a été réclamé."
-      us: "Une contestation, une réclamation ou un ordre rédigé, avec la cause et les enregistrements qui le justifient."
-    - topic: "Qui décide"
-      them: "Le service réclame en votre nom."
-      us: "Une personne nommée de votre équipe approuve chacun."
-    - topic: "Où vont vos enregistrements"
-      them: "Dans les systèmes du prestataire."
-      us: "Sur les machines que nomme votre licence. Aucun service d'IA extérieur ne les voit."
-  note: "Les prix, y compris la commission de succès sur les réclamations recouvrées, figurent sur la [page des tarifs](/fr/pricing/)."
+    - { topic: "Ce qu'il lit", them: "Les factures remises, souvent avec vos accès.", us: "Tout ce que vos systèmes gardent déjà." }
+    - { topic: "Ce qui revient", them: "Un avoir.", us: "Une action rédigée, sa cause et ses pièces." }
+    - { topic: "Qui décide", them: "Le service.", us: "Une personne nommée de votre équipe." }
+    - { topic: "Où vont vos données", them: "Chez le prestataire.", us: "Sur les machines de votre licence." }
+  note: "Les prix, y compris la commission de succès sur les réclamations recouvrées : [tarifs](/fr/pricing/)."
 
 offer:
   heading: "Commencez par un mois de factures"
-  lead: "Le moyen le plus rapide de savoir si cela vous convient, ce sont vos propres enregistrements. Nous ne mettons aucun chiffre sur cette page ; votre mois vous montrera le vôtre."
   steps:
-    - title: "Vous envoyez un mois"
-      body: "Factures de fret ou réclamations, et la grille tarifaire à laquelle elles devraient correspondre."
-    - title: "Nous le lisons dans FACE"
-      body: "Chaque facture face à son tarif et ses enregistrements. Rien ne part vers un service d'IA extérieur."
-    - title: "Nous le parcourons avec vous"
-      body: "Une demi-heure avec la personne qui porte le problème : ce qui a été trouvé, les actions rédigées et leurs causes."
+    - { title: "Envoyez un mois", body: "Factures ou réclamations, et votre grille tarifaire." }
+    - { title: "Nous le lisons dans FACE", body: "Chaque ligne, face à son tarif et ses pièces." }
+    - { title: "Nous le parcourons avec vous", body: "Une demi-heure : constats, brouillons et causes." }
   cta: "Envoyez un mois de factures"
 
 faq:

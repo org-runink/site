@@ -3,7 +3,7 @@
 {{ with .p }}
 <section class="hp-sec h2-panel h2-panel--signal" id="offer" aria-labelledby="offer-heading">
   <h2 class="h2-h" id="offer-heading">{{ .heading }}</h2>
-  <p class="h2-lead">{{ .lead }}</p>
+  {{ with .lead }}<p class="h2-lead">{{ . }}</p>{{ end }}
   <ol class="h2-offer">
     {{ range .steps }}<li><b>{{ .title }}</b> {{ .body }}</li>{{ end }}
   </ol>
