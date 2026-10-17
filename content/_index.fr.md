@@ -119,29 +119,6 @@ faq:
         - q: "Qui l'utilise dans l'entreprise ?"
           a: "Les responsables des opérations terrain pour les ordres d'exécution et les exceptions, les équipes sinistres et audit fret pour les contestations et réclamations, et les responsables du revenu pour ce qui a été récupéré et pourquoi c'était perdu."
 
-more:
-  label: "Plus de Runink"
-  groups:
-    - label: "Secteurs (en anglais)"
-      links:
-        - { text: "Logistics & Supply Chain", url: "/industries/logistics-supply-chain/" }
-        - { text: "Insurance", url: "/industries/insurance/" }
-        - { text: "Banking & Financial Services", url: "/industries/banking-financial-services/" }
-        - { text: "Telecom", url: "/industries/telecom/" }
-        - { text: "Marketing", url: "/fr/industries/marketing/" }
-    - label: "Produits (en anglais)"
-      links:
-        - { text: "Runink FACE: Fulfilment Autonomous Claims Engine", url: "/products/face/" }
-        - { text: "Runink PULSE: Prescriptive Unified Lead & Social Engine", url: "/products/pulse/" }
-        - { text: "Runink TIDE: Trusted Intelligence for Developer & Data Experience", url: "/products/tide/" }
-        - { text: "Runink River", url: "/river/" }
-    - label: "Entreprise"
-      links:
-        - { text: "Qui le construit", url: "/fr/company/" }
-        - { text: "Tarifs", url: "/fr/pricing/" }
-        - { text: "Bibliothèque", url: "/fr/library/" }
-        - { text: "Confiance et conformité", url: "/fr/trust/" }
-
 contact:
   heading: "Envoyez un mois de factures."
   deck: "Factures de fret ou réclamations, et la grille tarifaire à laquelle elles devraient correspondre. Si vos pertes ne sont pas celles que FACE traite, nous vous le dirons."

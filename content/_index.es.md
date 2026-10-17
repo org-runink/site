@@ -119,29 +119,6 @@ faq:
         - q: "¿Quién lo usa en la empresa?"
           a: "Los gerentes de operaciones de campo para órdenes de cumplimiento y excepciones, los equipos de reclamaciones y auditoría de fletes para disputas y reclamaciones, y los responsables de ingresos para lo recuperado y por qué se perdió."
 
-more:
-  label: "Más de Runink"
-  groups:
-    - label: "Sectores (en inglés)"
-      links:
-        - { text: "Logistics & Supply Chain", url: "/industries/logistics-supply-chain/" }
-        - { text: "Insurance", url: "/industries/insurance/" }
-        - { text: "Banking & Financial Services", url: "/industries/banking-financial-services/" }
-        - { text: "Telecom", url: "/industries/telecom/" }
-        - { text: "Marketing", url: "/industries/marketing/" }
-    - label: "Productos (en inglés)"
-      links:
-        - { text: "Runink FACE: Fulfilment Autonomous Claims Engine", url: "/products/face/" }
-        - { text: "Runink PULSE: Prescriptive Unified Lead & Social Engine", url: "/products/pulse/" }
-        - { text: "Runink TIDE: Trusted Intelligence for Developer & Data Experience", url: "/products/tide/" }
-        - { text: "Runink River", url: "/river/" }
-    - label: "Empresa"
-      links:
-        - { text: "Quién lo construye", url: "/es/company/" }
-        - { text: "Precios", url: "/es/pricing/" }
-        - { text: "Biblioteca", url: "/es/library/" }
-        - { text: "Confianza y cumplimiento", url: "/es/trust/" }
-
 contact:
   heading: "Envíe un mes de facturas."
   deck: "Facturas de flete o reclamaciones, y la hoja de tarifas con la que deberían coincidir. Si sus pérdidas no tienen la forma que FACE resuelve, se lo diremos."

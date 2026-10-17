@@ -120,30 +120,6 @@ faq:
         - q: "Who in the company uses it?"
           a: "Field operations managers for fulfilment orders and exceptions, claims and freight audit teams for disputes and claims, and revenue leaders for what was recovered and why it was lost."
 
-more:
-  label: "More from Runink"
-  groups:
-    - label: "Industries"
-      links:
-        - { text: "Logistics & Supply Chain", url: "/industries/logistics-supply-chain/" }
-        - { text: "Insurance", url: "/industries/insurance/" }
-        - { text: "Banking & Financial Services", url: "/industries/banking-financial-services/" }
-        - { text: "Telecom", url: "/industries/telecom/" }
-        - { text: "Marketing", url: "/industries/marketing/" }
-    - label: "Products"
-      links:
-        - { text: "Runink FACE: Fulfilment Autonomous Claims Engine", url: "/products/face/" }
-        - { text: "Runink PULSE: Prescriptive Unified Lead & Social Engine", url: "/products/pulse/" }
-        - { text: "Runink TIDE: Trusted Intelligence for Developer & Data Experience", url: "/products/tide/" }
-        - { text: "Runink River", url: "/river/" }
-    - label: "Company"
-      links:
-        - { text: "Who builds it", url: "/company/" }
-        - { text: "Pricing", url: "/pricing/" }
-        - { text: "The FACE paper", url: "/blog/whitepapers/runink-face/" }
-        - { text: "Library", url: "/library/" }
-        - { text: "Trust and compliance", url: "/trust/" }
-
 contact:
   heading: "Send one month of invoices."
   deck: "Freight invoices or claims, and the rate sheet they should match. If the losses you carry are not the shape FACE addresses, we will say so."
