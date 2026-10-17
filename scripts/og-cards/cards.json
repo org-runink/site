@@ -3,9 +3,9 @@
     {
       "id": "home",
       "page": "content/_index.md (and es, fr, pt)",
-      "title": "Runink",
-      "subtitle": "FACE · TIDE · PULSE · River",
-      "headline": ["You find out when", "it is too late to argue."],
+      "title": "Runink FACE",
+      "subtitle": "Fulfilment Autonomous Claims Engine",
+      "headline": ["Dispute every overcharge.", "Not just the big ones."],
       "out": ["static/images/og/home-og.jpg"]
     },
     {
