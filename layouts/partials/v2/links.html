@@ -1,0 +1,12 @@
+{{/* Grouped links at the foot of a page. Load-bearing for CONTENT.md rule 9
+     on the homepage. Call with (dict "p" <block>). */}}
+{{ with .p }}
+<nav class="h2-elsewhere" aria-label="{{ .label }}">
+  {{ range .groups }}
+  <div>
+    <p class="h2-elsewhere__label">{{ .label }}</p>
+    <ul>{{ range .links }}<li><a href="{{ .url | relURL }}">{{ .text }}</a></li>{{ end }}</ul>
+  </div>
+  {{ end }}
+</nav>
+{{ end }}

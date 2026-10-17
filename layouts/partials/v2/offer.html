@@ -1,0 +1,12 @@
+{{/* The first step. Call with (dict "p" <block>). The CTA goes to the
+     homepage form unless cta_url is set. */}}
+{{ with .p }}
+<section class="hp-sec h2-panel h2-panel--signal" id="offer" aria-labelledby="offer-heading">
+  <h2 class="h2-h" id="offer-heading">{{ .heading }}</h2>
+  {{ with .lead }}<p class="h2-lead">{{ . }}</p>{{ end }}
+  <ol class="h2-offer">
+    {{ range .steps }}<li><b>{{ .title }}</b> {{ .body }}</li>{{ end }}
+  </ol>
+  <div class="hp-actions"><a class="hp-cta" href="{{ .cta_url | default "#contact-form" }}">{{ .cta }}</a></div>
+</section>
+{{ end }}

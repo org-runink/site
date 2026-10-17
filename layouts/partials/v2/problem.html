@@ -1,0 +1,16 @@
+{{/* Today vs. with the product. Call with (dict "p" <block> "id" "problem"). */}}
+{{ with .p }}
+<section class="hp-sec" id="{{ $.id | default "problem" }}" aria-labelledby="{{ $.id | default "problem" }}-heading">
+  <h2 class="h2-h" id="{{ $.id | default "problem" }}-heading">{{ .heading }}</h2>
+  <div class="h2-ba">
+    <div class="h2-ba__col">
+      <p class="h2-ba__label">{{ .before_label }}</p>
+      <ul>{{ range .before }}<li>{{ . }}</li>{{ end }}</ul>
+    </div>
+    <div class="h2-ba__col h2-ba__col--after">
+      <p class="h2-ba__label">{{ .after_label }}</p>
+      <ul>{{ range .after }}<li>{{ . }}</li>{{ end }}</ul>
+    </div>
+  </div>
+</section>
+{{ end }}

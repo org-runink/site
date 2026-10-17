@@ -1,0 +1,23 @@
+{{/* Comparison table. No company named (CONTENT.md rule 11). Call with (dict "p" <block>). */}}
+{{ with .p }}{{ $c := . }}
+<section class="hp-sec" id="compare" aria-labelledby="compare-heading">
+  <h2 class="h2-h" id="compare-heading">{{ .heading }}</h2>
+  <table class="hp-cmp">
+    <thead><tr>
+      <th scope="col"><span class="hp-sr">{{ .col_topic }}</span></th>
+      <th scope="col">{{ .col_them }}</th>
+      <th scope="col">{{ .col_us }}</th>
+    </tr></thead>
+    <tbody>
+      {{ range .rows }}
+      <tr>
+        <th scope="row">{{ .topic }}</th>
+        <td data-col="{{ $c.col_them }}">{{ .them }}</td>
+        <td data-col="{{ $c.col_us }}">{{ .us }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+  {{ with .note }}<p class="hp-cmp__note">{{ . | markdownify }}</p>{{ end }}
+</section>
+{{ end }}
