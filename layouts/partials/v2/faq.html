@@ -1,0 +1,44 @@
+{{/* Grouped questions, restated as FAQPage JSON-LD. Plain h3 + p so they print
+     and crawlers read them. Rule 1 holds for the schema as much as the prose.
+     Call with (dict "p" <block> "page" .). Do not use on a page that also uses
+     the direct-answer shortcode: schema-faq.html would emit a second FAQPage. */}}
+{{ with .p }}{{ $page := $.page }}
+{{ $all := slice }}{{ range .groups }}{{ range .items }}{{ $all = $all | append . }}{{ end }}{{ end }}
+<section class="hp-sec" id="questions" aria-labelledby="faq-heading">
+  <h2 class="h2-h" id="faq-heading">{{ .heading }}</h2>
+  <div class="h2-faq">
+    {{ $n := 0 }}
+    {{ range .groups }}
+    <div class="h2-faq__group">
+      <p class="h2-faq__label">{{ .label }}</p>
+      {{ range .items }}{{ $n = add $n 1 }}
+      <div class="hp-faq__item" id="q-{{ $n }}">
+        <h3>{{ .q }}</h3>
+        <p>{{ .a | markdownify }}</p>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": {{ printf "%s#questions" $page.Permalink | jsonify | safeJS }},
+  "isPartOf": { "@id": "https://runink.org/#website" },
+  "publisher": { "@id": "https://runink.org/#organization" },
+  "inLanguage": {{ $page.Language.Lang | jsonify | safeJS }},
+  "mainEntity": [
+    {{- range $i, $f := $all }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $f.q | jsonify | safeJS }},
+      "url": {{ printf "%s#q-%d" $page.Permalink (add $i 1) | jsonify | safeJS }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ $f.a | markdownify | plainify | htmlUnescape | jsonify | safeJS }} }
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{ end }}

@@ -1,0 +1,51 @@
+{{/* Hero: claim on the left, product on the right.
+     Call with (dict "h" <hero params> "page" .). The figure is a real
+     screenshot when h.shot.src is set, otherwise the drawn approval card
+     (h.card), captioned as an illustration. */}}
+{{ $h := .h }}
+<header class="h2-hero">
+  <div class="h2-hero__copy">
+    <p class="hp-eyebrow">{{ $h.eyebrow }}</p>
+    {{ if $h.h1 }}<h1 class="hp-h1">{{ $h.h1 }}</h1>{{ else }}<h1 class="hp-h1">{{ $h.line1 }} <span class="hp-h1__b">{{ $h.line2 }}</span></h1>{{ end }}
+    <p class="h2-sub">{{ $h.sub | markdownify }}</p>
+    <div class="hp-actions">
+      <a class="hp-cta" href="{{ $h.cta_primary_url | default "#offer" }}">{{ $h.cta_primary }}</a>
+      {{ with $h.cta_secondary }}<a class="hp-cta-ghost" href="{{ $h.cta_secondary_url | default "#why-runink" }}">{{ . }}</a>{{ end }}
+    </div>
+    {{ with $h.note }}<p class="h2-note">{{ . }}</p>{{ end }}
+  </div>
+
+  <figure class="h2-hero__fig">
+    {{ $shot := $h.shot | default dict }}
+    {{ if $shot.src }}
+      <img class="h2-shot" src="{{ $shot.src | relURL }}" alt="{{ $shot.alt }}" width="{{ $shot.width | default 1280 }}" height="{{ $shot.height | default 800 }}" decoding="async">
+      {{ with $shot.caption }}<figcaption class="h2-cap">{{ . }}</figcaption>{{ end }}
+    {{ else }}{{ with $h.card }}
+    <div class="h2-card" role="img" aria-label="{{ .alt }}">
+      <div class="h2-card__bar">
+        <span class="h2-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="h2-card__title">{{ .title }}</span>
+        <span class="h2-card__live">{{ .status }}</span>
+      </div>
+      <div class="h2-card__body">
+        <p class="h2-card__kind">{{ .kind }}</p>
+        <p class="h2-card__head">{{ .head }}</p>
+        <p class="h2-card__why"><b>{{ .rule_label }}</b> {{ .rule }}</p>
+        <p class="h2-card__label">{{ .records_label }}</p>
+        <ul class="h2-card__recs">
+          {{ range .records }}<li><span class="h2-tag">{{ .tag }}</span><span class="h2-file">{{ .name }}</span><span class="h2-state">{{ .state }}</span></li>{{ end }}
+        </ul>
+        <p class="h2-card__label">{{ .cause_label }}</p>
+        <p class="h2-card__cause">{{ .cause }}</p>
+        <div class="h2-card__acts">
+          <span class="h2-btn h2-btn--go">{{ index .acts 0 }}</span>
+          <span class="h2-btn">{{ index .acts 1 }}</span>
+          <span class="h2-btn">{{ index .acts 2 }}</span>
+        </div>
+        <p class="h2-card__stamp">{{ .stamp }}</p>
+      </div>
+    </div>
+    <figcaption class="h2-cap">{{ .caption }}</figcaption>
+    {{ end }}{{ end }}
+  </figure>
+</header>

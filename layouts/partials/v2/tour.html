@@ -1,0 +1,21 @@
+{{/* Product tour: one row per area of the product, each with a short body,
+     a few named parts and an optional screenshot. Call with (dict "p" <block>). */}}
+{{ with .p }}
+<section class="hp-sec" id="{{ .id | default "inside" }}" aria-labelledby="tour-heading">
+  <h2 class="h2-h" id="tour-heading">{{ .heading }}</h2>
+  {{ with .lead }}<p class="h2-lead">{{ . }}</p>{{ end }}
+  <div class="h2-tour">
+    {{ range .areas }}
+    <article class="h2-area" id="{{ .id }}">
+      <div class="h2-area__copy">
+        <p class="h2-area__tag">{{ .tag }}</p>
+        <h3>{{ .title }}</h3>
+        <p>{{ .body }}</p>
+        {{ with .parts }}<ul class="h2-area__parts">{{ range . }}<li><b>{{ .name }}</b> {{ .text }}</li>{{ end }}</ul>{{ end }}
+      </div>
+      {{ $s := .shot | default dict }}{{ if $s.src }}<img class="h2-area__shot" src="{{ $s.src | relURL }}" alt="{{ $s.alt }}" loading="lazy" decoding="async">{{ end }}
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
