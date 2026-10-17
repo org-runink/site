@@ -71,9 +71,9 @@ measure and say where to find it in your own systems instead.
 
 Read from the homepage's own `faq` front matter at build time, so this list and
 the visible page say the same words.
-{{ range site.Home.Params.faq }}
+{{ with site.Home.Params.faq }}{{ range .groups }}{{ range .items }}
 - {{ .q }} {{ .a | markdownify | plainify | htmlUnescape }}
-{{- end }}
+{{- end }}{{ end }}{{ end }}
 
 ## Shorter pieces
 

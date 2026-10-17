@@ -1,545 +1,201 @@
 ---
-# Front matter only — see the notes in content/_index.md. The same rules apply
-# here: no figures of any kind, no aliases, and nothing below the front matter.
-#
-# The industry names stay in English because the industry pages themselves are
-# English and hugo.toml already lists them in English in the French menu. The
-# link goes to the same /industries/... page in every language.
+# Traduction de content/_index.md. Voir l'en-tête de layouts/index.html.
+# AUCUN CHIFFRE SUR CETTE PAGE (CONTENT.md règle 1). PAS D'ALIASES.
 title: "Runink"
-# Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
-# seo_title verbatim, at most 60 characters; seo_description is the meta and card
-# description, at most 155. Visible copy on the page is unchanged by these two.
-seo_title: "Runink FACE | Audit des fuites de revenus fret et sinistres"
-seo_description: "Pour les opérations terrain et le revenu. Runink FACE repère surfacturations de fret, réclamations qui expirent et commandes périmées, et rédige la suite."
-# Share card (og:image), drawn by scripts/og-cards/render.mjs from the English
-# hero. One English card serves all four languages.
+seo_title: "Runink FACE | Contestez chaque surfacturation de fret"
+seo_description: "Runink FACE vérifie chaque facture de fret face à vos tarifs et enregistrements, rédige la contestation preuves jointes, et l'envoie quand vous approuvez."
 image: "/images/og/home-og.jpg"
-description: "Le revenu fuit par des enregistrements que vous gardez déjà : une surfacturation du transporteur que personne n'a contestée, une réclamation pour avarie laissée expirer, un plan de livraison périmé en milieu de matinée. Runink FACE transforme ces enregistrements épars en ordres d'exécution et en réclamations, trouve la cause racine de chaque perte et rédige une action défendable pour une seule approbation."
-# THE HOME PAGE IS DARK, AND IT IS THE ONLY MARKETING PAGE THAT IS.
-#
-# `ground: console` puts data-ground on <html>, which re-binds every --rk-*
-# token to the dark end of the same ramp — one identity, two registers
-# (DESIGN.md 8), not a second palette. The rest of the site keeps the sheet.
-#
-# It is a default, not a lock: a reader who has used the switch in the header
-# has their choice stored, and rk-ground-script.html overwrites this attribute
-# with it before first paint. The printed sheet is unaffected either way —
-# tokens.css binds the console ground to white and black under @media print.
+description: "Runink FACE: Fulfilment Autonomous Claims Engine. Il vérifie chaque facture de fret face à vos tarifs et enregistrements, rédige la contestation ou la réclamation preuves jointes, et l'envoie quand une personne nommée l'approuve. Il s'exécute sur vos propres serveurs ou votre cloud, sans service d'IA extérieur."
 ground: "console"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
+
 hero:
-  eyebrow: "Pour les responsables des opérations terrain, les directeurs du revenu (CRO) et RevOps"
-  line1: "Le revenu fuit par"
-  line2: "des données que vous gardez déjà."
-  deck: "Une surfacturation du transporteur payée parce que la contester prend une matinée. Une réclamation pour avarie laissée expirer. Un plan de livraison juste à six heures et faux à dix. Chacun a été écrit quelque part avant de coûter quoi que ce soit."
-  fig_label: "Chaque enregistrement, lu face à sa propre règle"
-  stance_label: "Notre position"
-  stance:
-    - "Une action que le logiciel prend de lui-même ne laisse personne à qui demander ensuite."
-    - "Alors celui-ci rédige, et attend."
-    - "L'approbation est la trace : un nom, une heure et la raison de l'envoi, gardés ensemble."
-  product_line: "**Runink FACE: Fulfilment Autonomous Claims Engine** transforme ces enregistrements épars et bruités en ordres d'exécution et en réclamations prêtes à déposer. Ses jumeaux actionnables continuent d'auditer vos systèmes, trouvent la cause racine de chaque perte et rédigent une action défendable, preuves jointes. Des heures de travail manuel deviennent une seule approbation."
-  cta_primary: "Trouvez votre secteur"
-  cta_secondary: "Prendre rendez-vous"
+  eyebrow: "Pour les responsables des opérations terrain et du revenu"
+  line1: "Contestez chaque surfacturation."
+  line2: "Pas seulement les grosses."
+  sub: "Runink FACE vérifie chaque facture de fret face à vos tarifs et enregistrements, rédige la contestation preuves jointes, et l'envoie quand vous approuvez."
+  cta_primary: "Envoyez un mois de factures"
+  cta_secondary: "Voir comment ça marche"
+  note: "Runink FACE: Fulfilment Autonomous Claims Engine. Sur vos serveurs, votre cloud ou le nôtre."
+  shot:
+    src: ""
+    alt: ""
+    caption: ""
+  card:
+    alt: "Une contestation de fret rédigée dans Runink FACE, avec la règle enfreinte, les trois enregistrements qui la justifient, la cause probable et les boutons Approuver, Modifier et Rejeter."
+    title: "runink face · ordres du jour"
+    status: "EN ATTENTE DE VOUS"
+    kind: "Contestation rédigée · facture transporteur"
+    head: "Le poids facturé dépasse le poids du ticket de pesée."
+    rule_label: "Règle :"
+    rule: "facturer au poids relevé à l'enlèvement, au tarif du contrat."
+    records_label: "Pièces jointes"
+    records:
+      - { tag: "INV", name: "carrier_invoice_7731.pdf", state: "lu" }
+      - { tag: "BOL", name: "bill_of_lading_MSKU4419.pdf", state: "lu" }
+      - { tag: "RATE", name: "rate_agreement_2026.xlsx", state: "comparé" }
+    cause_label: "Cause probable"
+    cause: "Le transporteur a repesé au hub et facturé ce poids. Même ligne, même schéma sur les factures précédentes."
+    acts: ["Approuver", "Modifier", "Rejeter"]
+    stamp: "Approuvé par A. Morgan · 09:14 · contestation envoyée avec trois pièces"
+    caption: "Exemple dessiné d'une contestation rédigée. Les noms et les pièces sont illustratifs."
 
+problem:
+  heading: "Contester une facture prend une matinée. Alors la plupart sont payées."
+  before_label: "Aujourd'hui"
+  before:
+    - "Quelqu'un retrouve le bon, le poids et le tarif d'une seule facture."
+    - "Seules les grosses surfacturations valent cette matinée."
+    - "Les petites réclamations expirent dans le délai."
+    - "Le même transporteur refait la même erreur le mois suivant."
+  after_label: "Avec Runink FACE"
+  after:
+    - "Chaque facture est vérifiée face à vos tarifs et enregistrements."
+    - "Chaque surfacturation arrive comme une contestation rédigée, pièces jointes."
+    - "Les réclamations sont rédigées tant que le délai court encore."
+    - "La cause est classée, pour la corriger à la source."
 
-# Ver content/_index.md.
-opex_heading: "Où cela apparaît dans vos chiffres d'exploitation"
-opex_intro: "Aucun chiffre ici ne nous appartient. Chacune de ces lignes est une ligne que vous portez déjà, avec ce qui la fait bouger et où trouver votre propre chiffre. Une page qui vous annonce ce que vous allez économiser devine, à propos d'une exploitation qu'elle n'a jamais vue."
-opex_col_industry: "Secteur"
-opex_col_line: "La ligne"
-opex_col_driver: "Ce qui la fait bouger"
-opex_col_where: "Où est la vôtre"
-opex:
-  - page: "logistics-supply-chain"
-    industry: "Logistique et Chaîne d'Approvisionnement"
-    line: "Surestaries, détention et les sinistres qui expirent"
-    driver: "Un conteneur retenu que personne n'a rapproché du document qu'il attend, pendant que le temps franc s'écoule. Un délai qui se referme pendant que les pièces sont dans quatre systèmes."
-    where: "Les lignes accessoires sur la facture du transporteur, face au compteur de temps franc de la déclaration. Sinistres déposés face aux sinistres possibles."
-  - page: "insurance"
-    industry: "Assurance"
-    line: "Réserves et recours validés sur un échantillon"
-    driver: "Un seuil de second examen relevé pour vider une file, les conditions du contrat portant toujours l'ancien chiffre et personne ne tranchant."
-    where: "La part des dossiers ayant eu un second examen, face au chiffre qu'annoncent vos conditions."
-  - page: "banking-financial-services"
-    industry: "Banque et Services Financiers"
-    line: "Des écarts qui tiennent dans la fourchette que vous validez toujours"
-    driver: "Un mouvement qui tient dans la fourchette tous les mois, donc rien ne remonte et personne ne lit la suite que les mois dessinent."
-    where: "L'ancienneté des postes ouverts, face au nombre de mois pendant lesquels chacun a été porté."
-  - page: "telecom"
-    industry: "Télécoms"
-    line: "Des erreurs de tarification qui arrivent en taux, pas en comptes"
-    driver: "Un changement de tarification juste pour la promotion et faux pour un forfait hérité, trop petit pour bouger un agrégat et trop tard pour retarifer quand il le bouge."
-    where: "Le taux d'erreur que la revenue assurance fait remonter, et la taille d'échantillon et le mois derrière."
-  - page: "marketing"
-    industry: "Marketing"
-    line: "Un travail qui repart de la page blanche"
-    driver: "L'outil d'audit sait que le site est lent ; celui qui rédige, non, et il continue d'écrire pour une page où personne ne reste. Celui-ci est Runink PULSE, pas FACE."
-    where: "Le temps qu'un brief met à devenir quelque chose de publié, et la part du trimestre précédent que le suivant a réutilisée."
-opex_note: "Apportez l'une de ces lignes et un mois des enregistrements qui sont derrière. Cela suffit à dire si les pertes que vous portez ont la forme de celles que cela traite, et c'est la seule façon honnête pour l'un comme pour l'autre de le savoir."
+how:
+  heading: "Comment ça marche"
+  steps:
+    - title: "Il lit ce que vous gardez déjà"
+      body: "Factures, commandes, preuves de livraison, dossiers de sinistre, données portuaires et capteurs, depuis les systèmes que vous utilisez. Rien à remplacer."
+    - title: "Il rédige l'action"
+      body: "Une contestation, une réclamation ou un ordre d'exécution, avec la règle enfreinte, les enregistrements qui la justifient et la cause probable."
+    - title: "Vous l'approuvez"
+      body: "Un clic l'envoie. Votre nom, l'heure et toute modification restent consignés, pour que le motif tienne plus tard."
+  more: { text: "Tout ce que fait FACE (en anglais)", url: "/products/face/" }
 
-figure:
-  console:
-    title: "runink face · lecture"
-    live: "LECTURE"
-    states: ["LU", "COMPARÉ", "LU", "EN ATTENTE"]
-    rule_name: "La règle qui le régit"
-    rule_terms: ["CONDITIONS DU CONTRAT", "SEUIL", "LIMITE D'ENGAGEMENT"]
-    gate_name: "Action rédigée · attend un nom"
-    acts: ["APPROUVER", "MODIFIER", "REJETER"]
-    alt: "Les enregistrements que vos systèmes détiennent déjà sont lus un par un au regard de la règle qui les régit, et ce qui diffère arrive sous la forme d'une action rédigée qui attend qu'une personne nommée l'approuve, la modifie ou la rejette."
-  today_label: "Comment on le lit aujourd'hui"
-  today_note: "Le volume a eu raison du contrôle : on lit un échantillon et on suppose que le reste lui ressemble. Les enregistrements qui divergent sont déjà dans le champ."
-  read_label: "Comment Runink le lit"
-  read_note: "Chaque enregistrement est comparé à la règle qui le gouverne, la nuit, sur vos serveurs, dans votre cloud ou dans le nôtre. Ce qui diverge ressort nommément."
-  beats:
-    - title: "Les enregistrements existent déjà"
-      body: "Commandes, sinistres, ordres de paiement, détail des appels, contrats et relevés de capteurs — dans les systèmes que vous exploitez déjà."
-    - title: "Ils sont tous lus"
-      body: "Pas un balayage mensuel sur un échantillon. La comparaison se fait enregistrement par enregistrement, donc une anomalie arrive nommément plutôt que sous forme de taux estimé."
-    - title: "Une personne décide de la suite"
-      body: "Chaque constat arrive avec la règle enfreinte, les enregistrements qui l'étayent et une action rédigée, pour que quelqu'un l'approuve, la corrige ou la refuse."
-  caption: "Le délai, chez vous, entre le moment où une chose est enregistrée et celui où quelqu'un agit dessus est un chiffre qui mérite d'être connu. Très peu d'organisations l'ont mesuré. C'est en général là que se loge le coût, et c'est une bonne première chose à mesurer ensemble."
-
-constellation:
-  label: "Vos systèmes, lus ensemble"
-  intro: "Chacun d'eux détient déjà une partie de la réponse, et aucun ne la détient entière. Runink FACE les lit au regard des règles qui les régissent, si bien qu'un écart arrive comme un élément accompagné de ses enregistrements plutôt que comme quatre écrans que quelqu'un doit rapprocher."
-  eyebrow: "LES LIGNES SONT LE TRAVAIL"
-  nodes: ["TMS", "ERP", "SUIVI", "SINISTRES", "COMPTABILITÉ", "TARIFICATION", "CANAUX"]
-  spurs: ["PORTAIL D'ENTRÉE", "CAMÉRA", "COURRIEL", "PORTAIL"]
-  hub: "LUS ENSEMBLE"
-  legend:
-    - "Les systèmes que vous faites déjà tourner"
-    - "Les enregistrements qui arrivent d'ailleurs"
-    - "Un lecteur, et la règle au regard de laquelle il lit"
-  alt: "Les systèmes qu'une entreprise fait déjà tourner — son système de transport, ses dossiers de sinistres, sa comptabilité, sa configuration de tarification et les canaux sur lesquels elle publie — dessinés comme des points reliés par des lignes à un lecteur au centre, qui les lit tous au regard des règles qui les régissent."
-
-industries_heading: "Cinq secteurs, une même forme de problème"
-industries_intro: "Trouvez la ligne qui ressemble à votre semaine. Chacune s'ouvre sur les situations que ce secteur vit vraiment — la chaîne du froid, une déclaration en douane, la limite d'une machine, un dossier de sinistre, une clause — et chacune est suivie depuis le document qui la déclenche jusqu'à la personne qui approuve ce qu'on en fait."
-industries_open: "Ouvrir"
-industries_cta: "Voir si cela correspond"
-industries_columns:
-  name: "Secteur"
-  cost: "Ce que cela vous coûte en silence"
-  owner: "Qui en a la charge chez vous"
-industries:
-  - page: "logistics-supply-chain"
-    name: "Logistics & Supply Chain"
-    cost: "Une déclaration bloquée au port faute d'un document, pendant que les frais journaliers courent. Une réclamation fret encore dans son délai de dépôt que personne n'a eu la matinée pour monter."
-    reads: "Chaque déclaration est comparée à la règle qui la gouverne — retenue, sous examen ou immobilisée, avec un nombre de jours de retenue supérieur à zéro — de sorte qu'une retenue arrive comme une déclaration nommée, avec les frais comptés sur votre propre tarif."
-    owners:
-      - "Directeur des opérations"
-      - "Directeur financier"
-      - "Conformité douanière"
-    flow:
-      - when: "Avant l'expédition"
-        jobs:
-          - name: "Demande et exécution"
-            line: "Une ligne bouge des semaines avant le point de commande, et le plan rattrape après la rupture."
-          - name: "Limites des machines"
-            line: "Le groupe froid, le convoyeur et le chariot notent toute la journée ce qu'ils font, et quelqu'un le lit une fois que la marchandise est la preuve."
-      - when: "En transit"
-        jobs:
-          - name: "Chaîne du froid"
-            line: "Un conteneur se réchauffe dans la nuit et personne n'ouvre la porte avant le matin."
-          - name: "Logistique réactive"
-            line: "Le plan qui était bon à six heures ne l'est plus à dix, et personne ne le relance."
-          - name: "Déclaration en douane"
-            line: "Le conteneur est arrêté à la frontière et la déclaration sous laquelle il a été présenté est une autre histoire, dans un autre système."
-      - when: "Au retour"
-        jobs:
-          - name: "Logistique inverse"
-            line: "Un retour vaut le plus le jour où il revient, et la décision de classement attend."
-      - when: "Quand l'argent bouge"
-        jobs:
-          - name: "Sinistres et litiges"
-            line: "Un sinistre expire parce que le monter prend une matinée que personne n'avait cette semaine-là."
-          - name: "Souscription"
-            line: "Les conditions, le rapport de sinistre, l'historique de réserves et la limite d'engagement sont à quatre endroits."
-    cases:
-      - label: "Retenue en douane · Un conteneur retenu au port, de la retenue à la mainlevée"
-        steps:
-          - step: "La retenue apparaît"
-            body: "Une déclaration revient retenue, sous examen ou immobilisée, et le nombre de jours de retenue dépasse zéro. Cette combinaison est tout le test — c'est une règle fixe, pas une appréciation, et elle s'applique à toutes les déclarations et non à celles que quelqu'un a pensé à vérifier."
-          - step: "Le coût est compté sur votre propre tarif"
-            body: "Les jours de retenue, multipliés par le tarif journalier de surestarie de votre propre accord. C'est toute l'arithmétique. C'est le chiffre qui court déjà pendant que la déclaration attend dans une file que personne ne lit en entier."
-          - step: "Le document manquant est nommé"
-            body: "Le motif de la retenue et les documents en attente sortent de l'enregistrement de la déclaration et sont inscrits sur l'élément, de sorte que la personne qui le reprend ne commence pas par chercher ce qui ne va pas."
-          - step: "Le responsable est vérifié"
-            body: "Séparément, les déclarations sont lues à la recherche d'un importateur officiel vide, rempli avec le destinataire, ou portant un texte de remplissage saisi une fois. Celles-là portent des droits et des taxes sans personne pour en répondre, et elles sont levées comme élément distinct avec le montant en jeu."
-          - step: "Chaque euro est compté une fois"
-            body: "La surestarie d'une déclaration retenue et les droits d'une déclaration sans responsable ne sont pas le même argent, et les compter comme un seul chiffre est la façon la plus courante de gonfler ce genre de total. Ils restent séparés, délibérément, et un test échoue s'ils venaient à se confondre."
-          - step: "Une personne nommée décide"
-            body: "L'élément attend. C'est l'approbation qui envoie quelque chose, et qui a approuvé, quand, et ce qui a été modifié est consigné. Si une partie de ce qui a été rédigé n'a pas pu être exécutée, le résultat nomme cette partie au lieu d'annoncer une réussite."
-      - label: "Chaîne du froid · Un frigorifique réchauffé, de la porte au sinistre déclaré"
-        steps:
-          - step: "L'image arrive"
-            body: "Une photo prise sur un terminal à la porte, ou une vue extraite d'une caméra de parc. Avant que quoi que ce soit ne la lise, on vérifie que c'est une image : l'en-tête est décodé seul, le format doit être l'un des deux, et la taille est plafonnée en octets comme en pixels. Un PDF, un conteneur vidéo ou des octets bruts sont refusés à cette étape."
-          - step: "Un modèle la lit, sans aucun service d'IA extérieur"
-            body: "L'image est réduite à une taille que le modèle peut prendre et lue par un modèle de vision qui tourne sur les machines prévues par votre offre, pas par un service extérieur. Ce qui revient est une observation écrite, rattachée à l'image exacte dont elle est tirée, de sorte que la phrase et sa preuve ne se séparent pas."
-          - step: "Les papiers sont lus à côté"
-            body: "L'enregistrement de l'expédition, la remise, et l'état dans lequel les documents disent que la charge devrait être. L'observation est confrontée à ce qui était déjà écrit plutôt qu'à un seuil choisi par quelqu'un."
-          - step: "Ce qui diffère sort nommé"
-            body: "La palette, la caisse, la porte du conteneur — nommées, dans les mots qu'une personne emploierait. On ne discute pas d'un score de gravité devant un transporteur. D'une partie nommée d'une expédition nommée, si."
-          - step: "Le signal parvient à la personne qui en répond"
-            body: "Un signal peut être diffusé à ce qui est abonné au flux d'événements du parc, et le dossier le garde pour ce qu'il est : demandé. Ce qui suit relève de la décision de quelqu'un, et le dossier le dit plutôt que de laisser croire qu'un mouvement a été arrêté."
-          - step: "Une personne nommée décide"
-            body: "L'élément attend, exactement comme la déclaration retenue. C'est l'approbation qui envoie quoi que ce soit, et qui a approuvé, quand, et ce qui a été modifié est consigné."
-      - label: "Déclaration en douane · Un manifeste rejeté, du dépôt au document qu'il a nommé"
-        steps:
-          - step: "On lit le dépôt, pas la mainlevée"
-            body: "Un conteneur peut être arrêté à la frontière avec un manifeste que l'autorité a accepté, et un dépôt peut être rejeté alors que la marchandise roule encore. Retenu est un état de dédouanement, rejeté est un état de dépôt. Chacun est lu là où il est écrit, et jamais l'un pour l'autre."
-          - step: "Le code repart tel qu'il a été écrit"
-            body: "Le code d'exception que portait le rejet arrive mot pour mot, avec le manifeste auquel il se rattache, le port où il a été déposé et qui l'a déposé. Votre commissionnaire reçoit la référence à citer, et non la reformulation qu'on en a faite."
-          - step: "Chaque document manquant sort sur sa propre ligne"
-            body: "Chaque document que le dépôt a signalé comme manquant sort comme un élément à part, avec l'enregistrement dont il a été lu. Ce qui manque et à qui cela revient est la première chose sur la page, au lieu d'être ce que quelqu'un en déduit."
-          - step: "Le silence est écrit comme un silence"
-            body: "Là où les enregistrements ne disent pas ce que le dépôt a donné, cela devient un constat à part entière. Lire l'état de dédouanement comme un état de dépôt affirmerait un dépôt que personne n'a déclaré, donc cela n'est jamais fait : un conteneur peut être retenu avec son manifeste accepté."
-          - step: "Le retard est compté une fois"
-            body: "Les surestaries qui courent sur ce conteneur sont déjà comptées par l'élément de retenue ci-dessus ; ici elles circulent comme montant en jeu et non comme une seconde charge. Un retard compté deux fois est la façon la plus courante de gonfler un total, et un test échoue si les deux se confondent."
-          - step: "Une personne nommée décide"
-            body: "Ce qui part est le document que l'on présente à un commissionnaire ou à une autorité portuaire, et il part quand quelqu'un l'approuve. Qui l'a approuvé, quand, et ce qu'il a changé restent avec lui."
-      - label: "Limites des machines · Une machine qui dérive vers la limite que son propre relevé déclare"
-        steps:
-          - step: "Une limite que personne n'a déclarée n'est pas une limite"
-            body: "Le chiffre auquel une mesure est comparée est lu dans le relevé de la machine elle-même : une température d'alarme, un point de déclenchement, un seuil de remplacement. Là où le relevé dit seulement à quelle valeur la machine tournait quand elle était saine, la dérive est signalée et rien n'est projeté contre elle, car une valeur de référence saine n'est pas un point où quelque chose casse."
-          - step: "Les mesures sont comparées dans l'ordre"
-            body: "La première mesure de la fenêtre, la dernière, combien étaient comparables, et la distance qui sépare la dernière de la limite déclarée. Chaque chiffre porte la mesure d'où il vient, si bien que votre technicien vérifie le calcul contre le relevé au lieu de le croire."
-          - step: "La droite tracée entre elles est un calcul, pas une prévision"
-            body: "Là où les mesures le permettent, une droite entre la première et la dernière dit quand elle atteindrait la limite déclarée à ce rythme. C'est la description de deux mesures, et chaque document de ce type le dit sur sa propre face."
-          - step: "Ni probabilité, ni confiance, ni durée de vie restante"
-            body: "Aucune des trois n'est sur le document, et c'est structurel plutôt qu'une affaire de formulation : il n'existe pas de champ pour les recevoir. Un score de panne ajusté sur une poignée de mesures se lit comme une mesure alors qu'il n'en est pas une. Un chiffre qu'un planificateur peut recalculer vaut mieux qu'un chiffre sûr de lui qu'il ne peut pas."
-          - step: "Une personne nommée planifie l'intervention"
-            body: "L'élément arrive à la maintenance avec la machine, la voie de mesure, la limite déclarée et les mesures qui la portent. Approuver est ce qui ouvre l'ordre de travail, et qui a approuvé, quand, et ce qu'il a changé restent consignés."
-  - page: "insurance"
-    name: "Insurance"
-    cost: "Un seuil de second examen relevé pour résorber un retard, censé être provisoire, jamais rétabli et jamais tranché. Des mouvements de provision vérifiés par sondage parce que le flux est trop long à lire."
-    reads: "Le chiffre à partir duquel un sinistre exige un second examen est extrait des conditions du contrat elles-mêmes et comparé à ce que l'outil a appliqué, de sorte qu'un dossier examiné sur le mauvais seuil revient nommé plutôt que vérifié par sondage."
-    owners:
-      - "Opérations sinistres"
-      - "Conformité et risques"
-      - "Audit interne"
-    flow:
-      - when: "quand l'autorité est déléguée"
-        jobs:
-          - name: "Souscription déléguée"
-            line: "Vous répondez toujours de ce qui est décidé au titre de l'accord, et les rapports que l'agent renvoie doivent être lus au regard de celui-ci."
-      - when: "quand un sinistre est déclaré"
-        jobs:
-          - name: "Expertise de la marchandise"
-            line: "Ce qui a été perdu, dans quelles conditions il voyageait et ce que la garantie déclare qu'il vaut sont dans le dossier, dans l'enregistrement de l'expédition et dans le contrat, et quelqu'un réunit les trois à la main."
-          - name: "Clauses et délais"
-            line: "Un paragraphe tranche la question et une date décide s'il vaut encore la peine de la poser, et retrouver les deux prend un après-midi."
-      - when: "quand le dossier est ouvert"
-        jobs:
-          - name: "Second examen"
-            line: "L'outil applique un chiffre tandis que les conditions du contrat en portent toujours un autre, et lequel des deux fait foi se tranche la première fois qu'on pose la question."
-      - when: "à la clôture"
-        jobs:
-          - name: "Réserves et recours"
-            line: "Les termes du traité fixent ce que vous pouvez récupérer, et savoir si un sinistre a été présenté sous les bons relève d'une lecture du traité face au dossier."
-    cases:
-      - label: "Dérive du contrôle · Un seuil de second examen, du relèvement dans l'outil à la décision consignée"
-        steps:
-          - step: "Les conditions du contrat sont lues"
-            body: "La clause qui fixe le montant à partir duquel un sinistre exige un second examen est extraite du document de police. Elle revient énoncée en français simple, avec le document dont elle a été tirée nommé à côté."
-          - step: "La règle de l'outil est lue"
-            body: "Séparément, le système de sinistres est lu pour le seuil qu'il applique réellement à un dossier aujourd'hui. Il est lu là où il se trouve : la connexion à vos données de sinistres lit les enregistrements et les laisse telles quelles."
-          - step: "L'écart est nommé dérive"
-            body: "Chaque règle tombe dans l'un de quatre états. Alignée : la police le dit et les systèmes le font. Dérive : les systèmes font quelque chose d'approchant. Ombre : une logique tourne qu'aucune police ne décrit. Manquante : la police décrit un contrôle que rien n'exécute. Un seuil relevé dans l'outil et laissé hors du document revient en dérive. Lisez cela comme une reconnaissance : le constat nomme le document de police et l'implémentation dont il a été tiré, et porte une confiance, de sorte qu'un responsable conformité vérifie une affirmation précise face à deux sources nommées."
-          - step: "Le constat arrive dans une file"
-            body: "Il porte l'observation, la règle invoquée, les enregistrements cités, une gravité et une action proposée précise. Celui-ci dépend de l'appétit au risque — si le seuil relevé est celui que vous voulez désormais — alors il attend, l'ambiguïté nommée et la rédaction déjà faite."
-          - step: "Une personne nommée décide"
-            body: "Quelqu'un approuve, modifie ou rejette l'action rédigée, et cette décision est consignée comme un événement portant son auteur. Que les conditions soient mises à jour au nouveau chiffre ou que l'outil revienne à l'ancien, l'observation, la règle, les enregistrements et l'approbation sont conservés au fil du travail. Quand un auditeur demande ce que ce contrôle a fait, répondre consiste à retrouver."
-      - label: "Souscription marchandises · Un dossier de sinistre monté pour celui qui doit décider"
-        steps:
-          - step: "Le dossier est monté sur les enregistrements, pas sur le récit"
-            body: "Ce que les enregistrements disent manquant, ce qu'ils disent endommagé, sur quelle expédition la marchandise voyageait, et ce que la garantie déclare qu'elle vaut. Chaque chiffre est cité au moment où il est lu, si bien que le souscripteur ouvre un document au lieu de quatre systèmes."
-          - step: "La franchise est énoncée et jamais déduite"
-            body: "La retirer du sinistre produit un montant recouvrable, et ce calcul ne veut dire quelque chose qu'une fois que quelqu'un a décidé que la police répond. Cette décision appartient au souscripteur, donc le chiffre est laissé là où il peut la prendre."
-          - step: "Les conditions que pose la garantie sont auditées à part"
-            body: "Une plage de température, une norme d'emballage, un itinéraire sécurisé — chacune lue face aux enregistrements qui l'ont tenue ou non. L'audit ne lit jamais le sinistre et le dossier ne lit jamais l'audit. Réunir les deux dans un paragraphe compose un moyen de défense sur la garantie, et le composer relève du souscripteur, pas du logiciel."
-          - step: "N'avoir pas pu regarder n'est pas n'avoir rien trouvé"
-            body: "Une condition dont les enregistrements ne disent rien revient comme non établie, jamais comme tenue. Une plage écrite dans une unité n'est pas comparée à une sonde qui enregistre dans une autre, car convertir invente une précision que les enregistrements n'ont jamais eue. Un sinistre refusé sur une condition supposée est payé par l'assuré, qui n'apprend jamais pourquoi."
-          - step: "La personne qui a l'autorité décide"
-            body: "Rien ici n'engage, ne règle ni ne refuse. L'expertise et l'audit se rattachent à la même expédition, arrivent ensemble, et attendent la personne qui a la main sur le dossier."
-      - label: "Revue juridique · La clause qui tranche, et l'enregistrement auquel elle a été confrontée"
-        steps:
-          - step: "La question est la question ordinaire"
-            body: "Peuvent-ils sous-traiter ceci. La durée de conservation que nous appliquons est-elle celle que nous avons promise. Quelque part dans l'accord, un paragraphe tranche, et le retrouver est tout le coût."
-          - step: "Le passage revient avec l'enregistrement à côté"
-            body: "La clause est lue dans le document et énoncée en langage clair, avec le document dont elle vient nommé. La règle telle qu'elle tourne est lue là où elle tourne. Les deux arrivent côte à côte, si bien que la conversation commence à l'écart et non à la recherche."
-          - step: "Une date est calculée par une règle nommée, et refuse de deviner"
-            body: "Un délai de réclamation ou une fenêtre de dépôt est calculé depuis une date de l'enregistrement par une règle qui cite le texte dont elle vient, et elle dit de quel événement elle est partie : le jour où la marchandise est arrivée, ou le jour où elle aurait dû. Là où l'enregistrement ne porte aucune date exploitable, aucune date n'est produite : l'élément le dit et porte l'avertissement à la place."
-          - step: "Vérifié et conforme et n'a pas pu être vérifié sont deux entrées"
-            body: "La plupart des outils montrent les deux comme une coche. Ici la seconde est un état à part entière, avec la raison écrite en une phrase : rien n'est revenu, ce qui est revenu n'a pas pu être lu, ce qui est revenu était vide. C'est exactement l'entrée qu'un audit cherche."
-          - step: "Il rend une note, et le jugement reste le vôtre"
-            body: "Ce qui revient est une étape suivante en langage métier : rédiger cette lettre, ouvrir ce ticket, porter ceci au responsable du dispositif. La lecture est celle du logiciel. Décider de ce qu'elle veut dire est celle de la personne, et son nom reste sur l'enregistrement qui le dit."
-  - page: "banking-financial-services"
-    name: "Banking & Financial Services"
-    cost: "Un écart qui grandit à l'intérieur de la fourchette que l'on valide toujours : aucun mois ne remonte, et personne ne lit la séquence. Un contrat fournisseur que personne n'a rouvert depuis la signature."
-    reads: "Chaque écart est lu face à la suite que ses propres mois dessinent plutôt qu'à la fourchette dans laquelle il tient, de sorte qu'un mouvement validé tous les mois cesse de disparaître dans l'agrégat."
-    owners:
-      - "Conformité et risques"
-      - "Audit interne"
-      - "Finance"
-    flow:
-      - when: "quand la destination d'un paiement change"
-        jobs:
-          - name: "Vérification de la destination"
-            line: "Savoir si la règle sur la destination d'un paiement a été appliquée par le système ou suivie par une personne se découvre plutôt après le paiement qu'avant."
-      - when: "après la signature"
-        jobs:
-          - name: "Obligations du fournisseur"
-            line: "Le contrat porte des obligations de niveau de service, de sous-traitance, de traitement des données et de notification, et le relire face à la relation que vous avez réellement est une comparaison qu'on fait quand quelque chose a déjà mal tourné."
-      - when: "au moment de la facturation"
-        jobs:
-          - name: "Grille tarifaire"
-            line: "Paliers, seuils et conditions de produit font de la commission un rapprochement entre ce que disent les conditions et ce qui a été facturé."
-    cases:
-      - label: "Postes ouverts · Un écart de rapprochement, d'une série de mois validés à une décision consignée"
-        steps:
-          - step: "Le mois passe comme d'habitude"
-            body: "Le mouvement tient dans la fourchette déjà validée auparavant. Il est validé comme le mois précédent, et pris seul il se lit comme ce mois-là."
-          - step: "C'est la série qui est lue, pas le mois"
-            body: "La comparaison porte sur la série plutôt que sur le dernier chiffre. Ce qui ressort est la forme d'une suite de mouvements, chacun tenant dans la fourchette pris isolément."
-          - step: "L'élément est levé avec sa série"
-            body: "L'élément dit que la séquence est inhabituelle au regard de l'historique disponible, et cite la série dont elle est tirée. Les mois, les montants et la fourchette dans laquelle ils tenaient l'accompagnent, de sorte que la personne qui l'ouvre commence avec les pièces devant elle."
-          - step: "Une personne nommée décide"
-            body: "L'élément attend dans une file, la série qu'il cite déjà jointe. L'approuver, le corriger ou le rejeter est sa décision, et la cause, c'est elle qui l'écrit : la nommer demande quelqu'un qui sait ce qui a changé dans l'exploitation ce mois-là."
-          - step: "Le dossier répond à la demande suivante"
-            body: "Qui a décidé, quand, ce qui a été cité et ce qui a été modifié restent ensemble, chaque entrée chaînée à la précédente, de sorte qu'une modification ultérieure du dossier se voit. Quand le superviseur ou l'audit interne pose la question, la réponse se lit au lieu d'être remontée."
-      - label: "Obligations fournisseurs · Les niveaux de service que le contrat chiffre déjà, face à ce qui a été livré"
-        steps:
-          - step: "Les obligations sont lues dans l'accord"
-            body: "Niveaux de service, sous-traitance, traitement des données, notification. Chacune revient énoncée en langage clair avec la clause dont elle a été lue, si bien que ce que vous avez signé se lit sans ouvrir le dossier."
-          - step: "Ce qui a été livré est lu là où c'est enregistré"
-            body: "Les enregistrements de ce que le fournisseur a réellement livré sont lus là où ils se trouvent déjà, et confrontés au niveau que l'accord fixe. La comparaison va élément par élément plutôt que par échantillon, si bien qu'un manquement arrive nommé et non en pourcentage."
-          - step: "Un manquement que le contrat chiffre déjà porte ce chiffre"
-            body: "Là où l'accord prévoit un avoir pour le manquement, le montant est le calcul de l'accord lui-même sur les manquements confirmés. C'est de l'argent déjà dû au titre d'un document que les deux parties ont signé, et non une réclamation inventée par-dessus."
-          - step: "Une personne nommée décide de ce qui est demandé"
-            body: "Réclamer l'avoir, y renoncer ou l'inscrire à la prochaine revue est une décision commerciale, et elle le reste. L'élément attend avec la clause, les enregistrements et le calcul joints, et l'approbation garde qui a décidé et pourquoi."
-  - page: "telecom"
-    name: "Telecom"
-    cost: "Un changement de tarification juste pour la promotion et faux pour un forfait hérité, trop petit pour bouger un agrégat. Un balayage qui rend un taux d'erreur quand les opérations ont besoin des comptes nommément."
-    reads: "La sortie tarifée de chaque compte est lue face aux conditions du forfait de cet abonné, enregistrement par enregistrement plutôt que par un balayage mensuel sur un échantillon."
-    owners:
-      - "Revenue assurance"
-      - "Règlement d'interconnexion"
-      - "Finance et achats"
-    flow:
-      - when: "quand la consommation est tarifée"
-        jobs:
-          - name: "Revenue assurance"
-            line: "La tarification est l'endroit où les conditions du forfait rencontrent la consommation, et un changement fait pour un produit retombe sur tous les comptes que ce paramétrage touche."
-      - when: "à la clôture de période"
-        jobs:
-          - name: "Règlement d'interconnexion"
-            line: "Votre trafic, le relevé du même trafic chez la contrepartie et l'accord qui fixe les tarifs font trois sources, et la seule différence qui compte apparaît à la clôture, déjà en poste ouvert avec une ancienneté."
-      - when: "pendant la construction des sites"
-        jobs:
-          - name: "Déploiement du réseau"
-            line: "Les dépenses approuvées, les bons de commande, les équipements reçus et les sites qui portent du trafic ne se retrouvent côte à côte que lorsque quelqu'un monte cette vue à la main, et un site livré puis jamais mis en service y passe inaperçu."
-    cases:
-      - label: "Assurance revenus · Un changement de tarification faux pour un forfait hérité, du premier appel mal tarifé à une retarification approuvée"
-        steps:
-          - step: "La tarification est lue face au forfait"
-            body: "La sortie tarifée de chaque compte est lue face aux conditions du forfait de cet abonné, et la comparaison se fait enregistrement par enregistrement plutôt que par un balayage mensuel sur un échantillon. Ce qui revient, ce sont les comptes nommés, ce dont une retarification a besoin, plutôt qu'un taux d'erreur, ce dont un rapport a besoin."
-          - step: "Le constat porte ses pièces"
-            body: "Avant que quoi que ce soit n'aille à un modèle, le constat est contrôlé : assez complet pour être lu, accompagné de pièces, avec au moins une pièce lisible, portant sur le compte qu'il nomme et non sur quelque chose d'à côté, et daté d'assez près pour dire quelque chose du présent. Une pièce qui ne fait que réécrire l'affirmation clôt l'affaire là. Chaque contrôle qui se déclenche écrit son propre motif dans une phrase qu'une personne lit."
-          - step: "Le taux est recalculé"
-            body: "Un constat qui affirme un taux est tranché par l'arithmétique sur les comptages bruts, recalculée et non reprise telle quelle. Un comptage divisé par rien revient comme impossible à juger."
-          - step: "Une seconde habilitation forme le verdict"
-            body: "Le jugement s'exécute sur une habilitation différente de celle du dépôt, et l'habilitation que porte un message est déterminée par la porte à laquelle il est arrivé, pas par un champ que l'expéditeur remplit. Un verdict « impossible à juger » est une réponse à part entière : il arrive avec son motif inscrit à côté et passe à une personne, exactement comme un désaccord."
-          - step: "Revenue assurance approuve la retarification"
-            body: "L'élément attend avec le compte nommé, les conditions de forfait face auxquelles il a été lu, et les enregistrements dont il vient. C'est l'approbation qui envoie quoi que ce soit, et qui a approuvé, quand, et ce qui a été modifié reste au dossier. Le remède est une correction de paramétrage et une retarification, faite tant qu'une retarification répare encore."
-      - label: "Règlement d'interconnexion · Deux enregistrements du même trafic qui ne concordent pas"
-        steps:
-          - step: "Les deux côtés sont lus face à l'accord"
-            body: "Votre enregistrement du trafic, l'enregistrement que la contrepartie a du même trafic, et l'accord qui fixe les tarifs. La lecture a lieu tant que les deux côtés gardent le détail, et non à la clôture du cycle, quand l'un des deux ne l'a plus."
-          - step: "Un désaccord n'est jamais moyenné"
-            body: "Deux lectures du même trafic qui diffèrent reviennent comme impossible de trancher, avec les deux chiffres et l'endroit d'où chacun a été lu. Couper la poire en deux produit un troisième chiffre qu'aucune des parties n'a observé, et dans un règlement ce chiffre n'est défendable par personne."
-          - step: "Impossible de trancher est une réponse, avec sa raison à côté"
-            body: "Aucune preuve, une preuve qui ne fait que réécrire l'affirmation, une preuve sur un autre compte, une preuve trop ancienne pour dire quoi que ce soit du présent : chacune arrête là, écrit sa propre raison en une phrase qu'une personne lit, et part vers une personne."
-          - step: "Une personne nommée le porte à la contrepartie"
-            body: "L'élément porte la période, les deux enregistrements et le tarif que l'accord fixe. Approuver est ce qui l'envoie, et ce qui a été cité et ce qui a été changé restent consignés pour que le cycle suivant en parte."
-  - page: "marketing"
-    name: "Marketing"
-    cost: "L'outil d'audit sait que le site est lent. L'outil de contenu l'ignore et continue d'écrire pour une page où personne ne reste. Chaque campagne repart d'une page blanche."
-    reads: "Votre site et les canaux sur lesquels vous publiez sont lus d'abord, de sorte que le brief suivant part de là où vous en êtes réellement plutôt que d'une page blanche."
-    owners:
-      - "Le responsable marketing"
-      - "Les ventes"
-      - "DSI et sécurité de l'information"
-    flow:
-      - when: "avant la première ligne"
-        jobs:
-          - name: "Décider quoi dire"
-            line: "Ce qu'il faut écrire ensuite dépend de ce que le site fait déjà, et ces deux réponses vivent dans des outils différents."
-      - when: "du brief à la publication"
-        jobs:
-          - name: "Le faire sortir"
-            line: "Brief, rédaction, relecture, programmation : chaque étape attend la précédente, donc c'est votre propre délai qui décide si vous pouvez répondre à l'annonce d'un concurrent."
-      - when: "quand un lead arrive"
-        jobs:
-          - name: "Relancer"
-            line: "Votre système client sait qu'un lead s'est tu à la troisième semaine ; l'outil de programmation, non."
-    cases:
-      - label: "Audit du site · Une page où personne ne reste, de l'audit qui la trouve à un brouillon approuvé"
-        steps:
-          - step: "L'audit lit votre site"
-            body: "Vous apportez votre site et les canaux sur lesquels vous publiez. Les lire et vous dire où vous en êtes est la première chose que fait Runink PULSE. Ce qu'il trouve revient classé, et s'applique depuis le même écran."
-          - step: "Un diagnostic nourrit chaque canal"
-            body: "Ce même diagnostic nourrit l'analyse des canaux, le plan de contenu, le calendrier et chaque brouillon. Ce qui sort porte un seul argument plutôt que quatre versions du même."
-          - step: "Le brief devient un brouillon"
-            body: "Le brief entre et un brouillon revient. Il attend ensuite dans une file où vous le voyez, au lieu de se taire entre une étape et la suivante."
-          - step: "Chaque pièce porte un état"
-            body: "Brouillon, en attente de relecture, approuvée, rejetée, publiée, archivée. Ce sont les états que PULSE tient, donc vous voyez ce qui vous attend et ce qui est réellement sorti."
-          - step: "Une personne nommée approuve"
-            body: "Chaque brouillon — article, livre blanc, e-mail à froid, script d'appel — arrive dans une file de relecture avec un approuver et un rejeter. Approuver est un geste que pose une personne nommée, et non une formalité que le système accomplit à sa place."
-      - label: "Relance commerciale · Un contact qui s'est tu en troisième semaine"
-        steps:
-          - step: "C'est la fiche client qui dit qu'il s'est tu"
-            body: "Le contact, l'étape qu'il a atteinte et le jour où il a bougé pour la dernière fois sont lus dans le système client où l'équipe travaille déjà, et non dans une seconde liste tenue à côté."
-          - step: "L'entreprise est étudiée avant qu'une ligne soit écrite"
-            body: "Runink PULSE lit d'abord ce qui est public sur cette entreprise, si bien que ce qu'il rédige part de ce qu'il a trouvé et non d'un modèle où l'on a glissé un nom."
-          - step: "La relance revient écrite pour cette entreprise-là"
-            body: "Un courriel de prospection, un script d'appel et un message direct par entreprise, et les contacts se synchronisent vers le système client, si bien que la vente continue de travailler là où elle travaille déjà."
-          - step: "Une personne nommée l'envoie"
-            body: "Chaque brouillon arrive dans une file de relecture avec un approuver et un rejeter, et porte un statut visible pendant qu'il attend. Approuver est une étape que quelqu'un prend, et non une formalité que le système accomplit à sa place."
-
-leaks_heading: "Où le revenu fuit, et ce que FACE rédige pour chaque cas"
-leaks_intro: "Six pertes qu'un responsable des opérations terrain voit chaque semaine et qu'un directeur du revenu voit chaque trimestre. Chacune se trouve dans des enregistrements que vous gardez déjà, et aucune n'exige un nouveau système pour la trouver."
-leaks_does_label: "Ce que FACE rédige :"
 leaks:
-  - owner: "Audit fret · Finance"
-    title: "Surfacturations du transporteur et factures en double"
-    cost: "Contester une facture, c'est retrouver le bon, le poids et le tarif applicable ce jour-là. Cela prend une matinée, donc seules les grosses sont contestées. Les autres sont payées."
-    does: "Il lit chaque facture face aux enregistrements qui la justifient et aux tarifs convenus, signale la surfacturation et la facture payée deux fois, et rédige la contestation avec chaque pièce jointe."
-  - owner: "Sinistres · Recouvrement"
-    title: "Réclamations pour avarie, manquant ou retard qui expirent"
-    cost: "Une réclamation ne rapporte de l'argent que dans le délai du transporteur. Quand monter le dossier coûte plus que la réclamation, les petites expirent en silence."
-    does: "Il réunit la lettre de voiture, la preuve de livraison et vos conditions de service, et rédige la réclamation dans le délai. Une personne l'approuve avant le dépôt."
-  - owner: "Direction des opérations · Conformité douanière"
-    title: "Surestaries et détention d'un conteneur bloqué"
-    cost: "Un conteneur est bloqué parce qu'il manque un document, et la pénalité journalière court dès ce jour-là."
-    does: "Il nomme l'entrée bloquée et le document manquant, calcule la pénalité à partir de votre propre tarif et place la solution devant la personne qui peut la débloquer."
-  - owner: "Responsable des opérations terrain"
-    title: "Plans d'exécution périmés en milieu de matinée"
-    cost: "Le plan juste à six heures est faux à dix, et personne ne le relance. Les commandes attendent pendant que quelqu'un rapproche quatre écrans."
-    does: "Il tient à jour un jumeau de chaque site, actif et commande à partir de vos enregistrements, et rédige les ordres d'exécution, ligne par ligne, pour une seule approbation."
-  - owner: "Opérations terrain · Qualité"
-    title: "Pertes de chaîne du froid découvertes une fois la marchandise perdue"
-    cost: "Un frigorifique se réchauffe dans la nuit et personne n'ouvre la porte avant le matin. À ce moment-là, la preuve, c'est la marchandise."
-    does: "Il lit la photo prise à la porte à côté des documents d'expédition, nomme la palette qui diffère et rédige la réclamation avec la preuve qui s'y rattache."
-  - owner: "CRO · Opérations du revenu"
-    title: "La même perte chaque mois, sans cause consignée"
-    cost: "Récupérer un avoir corrige une facture. Le transporteur, la ligne ou l'étape qui l'a causée continue de la causer."
-    does: "Il classe les causes de chaque réclamation selon ce que corriger chacune changerait, pour que la correction qui compte le plus soit en haut, avec ses enregistrements."
+  heading: "Six endroits où le revenu fuit"
+  items:
+    - verb: "Repérez-la"
+      title: "Surfacturations et factures en double"
+      line: "Chaque facture vérifiée face à vos tarifs, pas seulement les grosses."
+      owner: "Audit fret · Finance"
+    - verb: "Déposez-la"
+      title: "Réclamations pour avarie, manquant ou retard"
+      line: "Rédigées dans le délai du transporteur, preuves jointes."
+      owner: "Service sinistres"
+    - verb: "Débloquez-le"
+      title: "Surestaries et détention"
+      line: "Le conteneur bloqué et le document manquant, nommés pendant que la pénalité court."
+      owner: "Opérations · Conformité douanière"
+    - verb: "Refaites-le"
+      title: "Plans d'exécution périmés"
+      line: "Ordres d'exécution rédigés à partir des données en direct quand le plan du matin ne tient plus."
+      owner: "Opérations terrain"
+    - verb: "Prouvez-la"
+      title: "Pertes de chaîne du froid"
+      line: "La photo prise à la porte lue avec les documents, et la réclamation rédigée."
+      owner: "Opérations terrain · Qualité"
+    - verb: "Corrigez-la"
+      title: "La même perte chaque mois"
+      line: "Causes classées selon ce que corriger chacune changerait."
+      owner: "CRO · Opérations du revenu"
+  more: { text: "Suivez une réclamation, de l'enregistrement à l'approbation", url: "/fr/use-cases/claims-recovery/" }
+
+machines:
+  heading: "Il s'exécute sur vos machines"
+  lead: "La plupart des outils de ce marché sont un service hébergé. FACE peut s'exécuter sur vos propres serveurs ou dans votre cloud, donc factures, dossiers de sinistre et documents douaniers restent où ils sont."
+  facts:
+    - title: "Vos serveurs ou votre cloud"
+      body: "Avec les licences Dédiée et Enterprise, le travail s'exécute sur des machines que vous contrôlez. Lite s'exécute sur les machines partagées de Runink."
+    - title: "Aucun service d'IA extérieur"
+      body: "Le modèle de langage s'exécute là où FACE s'exécute. Quelle que soit la licence, rien n'est envoyé à un fournisseur de modèles extérieur."
+    - title: "Vos systèmes restent tels quels"
+      body: "FACE lit vos enregistrements et les laisse tels quels. Rien à migrer, pas de nouveau système de référence."
+    - title: "Une trace de chaque décision"
+      body: "Qui a approuvé, quand et ce qui a été modifié reste avec chaque action, prêt quand un auditeur le demande."
+  more: { text: "Confiance et conformité", url: "/fr/trust/" }
 
 compare:
-  heading: "Un logiciel que votre équipe utilise, pas un service qui réclame à votre place"
-  intro: "La plupart des offres de recouvrement sont un service extérieur. Vous remettez factures ou accès transporteur, ils réclament, et un avoir revient. Cela récupère l'argent une fois. FACE est conçu pour montrer pourquoi il a été perdu, et pour confier l'étape suivante à la personne concernée."
+  heading: "Un logiciel que vous utilisez, pas un service qui réclame à votre place"
   col_topic: "Question"
   col_them: "Un service de recouvrement extérieur"
   col_us: "Runink FACE"
   rows:
     - topic: "Ce qu'il lit"
-      them: "Les factures et les données de suivi que vous lui remettez, souvent avec vos accès au compte transporteur."
-      us: "Les enregistrements que vos systèmes gardent déjà : commandes, factures, dossiers de sinistre, documents, photos et flux en direct."
+      them: "Les factures que vous lui remettez, souvent avec vos accès transporteur."
+      us: "Les enregistrements que vos systèmes gardent déjà : commandes, factures, sinistres, documents, photos et flux en direct."
     - topic: "Ce qui revient"
       them: "Un avoir, et la liste de ce qui a été réclamé."
-      us: "Une contestation, une réclamation ou un ordre d'exécution rédigé, avec la cause racine et les enregistrements qui la justifient."
+      us: "Une contestation, une réclamation ou un ordre rédigé, avec la cause et les enregistrements qui le justifient."
     - topic: "Qui décide"
       them: "Le service réclame en votre nom."
-      us: "Une personne nommée de votre équipe approuve chacun. Son nom et l'heure restent consignés."
+      us: "Une personne nommée de votre équipe approuve chacun."
     - topic: "Où vont vos enregistrements"
       them: "Dans les systèmes du prestataire."
-      us: "Sur les machines que nomme votre licence : vos serveurs, votre compte cloud ou les machines partagées de Runink. Aucun service d'IA extérieur ne les voit."
-    - topic: "Ce qu'il couvre"
-      them: "En général, un seul type de facture."
-      us: "Factures de fret, réclamations, frais portuaires, chaîne du froid, ordres d'exécution et les règles que vous appliquez."
+      us: "Sur les machines que nomme votre licence. Aucun service d'IA extérieur ne les voit."
   note: "Les prix, y compris la commission de succès sur les réclamations recouvrées, figurent sur la [page des tarifs](/fr/pricing/)."
 
-why_heading: "Ce qui change dans la semaine"
-why_intro: "Trois changements, et ce sont ceux qui font bouger les lignes ci-dessus."
-why:
-  - glyph: "finding"
-    title: "Des jumeaux qui continuent d'auditer"
-    body: "Un jumeau est une copie vivante d'un site, d'un actif ou d'une commande, tenue à jour à partir de vos propres enregistrements. Chacun est confronté aux règles que vous appliquez, au rythme que vous fixez, si bien qu'une perte arrive comme un constat, avec sa cause racine et ses enregistrements joints."
-  - glyph: "approve"
-    title: "Une approbation, et elle tient"
-    body: "Chaque constat arrive comme une action rédigée : une contestation, une réclamation ou un ordre d'exécution, avec la règle enfreinte et les enregistrements cités. Une approbation l'envoie. Qui a approuvé, quand, et ce qui a été modifié reste consigné."
-  - glyph: "held"
-    title: "Aucun service d'IA extérieur ne voit vos enregistrements"
-    body: "En Dédiée et en Enterprise, les fichiers et le raisonnement qui porte dessus s'exécutent sur vos propres serveurs ou dans votre compte cloud ; en Lite, sur les machines partagées de Runink. Quelle que soit l'offre, rien n'est envoyé à un fournisseur de modèles extérieur, ce qui est en général le chemin le plus court à travers une revue de sécurité."
+offer:
+  heading: "Commencez par un mois de factures"
+  lead: "Le moyen le plus rapide de savoir si cela vous convient, ce sont vos propres enregistrements. Nous ne mettons aucun chiffre sur cette page ; votre mois vous montrera le vôtre."
+  steps:
+    - title: "Vous envoyez un mois"
+      body: "Factures de fret ou réclamations, et la grille tarifaire à laquelle elles devraient correspondre."
+    - title: "Nous le lisons dans FACE"
+      body: "Chaque facture face à son tarif et ses enregistrements. Rien ne part vers un service d'IA extérieur."
+    - title: "Nous le parcourons avec vous"
+      body: "Une demi-heure avec la personne qui porte le problème : ce qui a été trouvé, les actions rédigées et leurs causes."
+  cta: "Envoyez un mois de factures"
 
-paper:
-  text: "Lire le livre blanc FACE"
-  url: "/blog/whitepapers/runink-face/"
-  note: "La version longue : ce qui est lu, ce qui est produit, qui approuve et où cela s'exécute."
-
-# Traduction de proof_* dans content/_index.md. Les valeurs `says:` ne sont PAS
-# traduites : ce sont des chaînes littérales du code source, et une citation
-# traduite n'est plus une citation. La ligne qui les suit dit ce qu'elles
-# signifient.
-
-products_heading: "Les produits Runink dont vous avez peut-être entendu parler"
-products_intro: "Quatre produits, chacun avec sa propre page, et un document commun. Les pages disent ce qu'est chaque produit ; les documents derrière elles expliquent le mécanisme : ce que le logiciel lit, ce qu'il produit, qui l'approuve et où il s'exécute."
-products_cta: "Lire le document"
-products_page_cta: "Voir le produit"
-products_pages_word: "pages"
-products_lang_note: "en anglais"
-products:
-  - page: "/products/face"
-    paper: "runink-face"
-    name: "Runink FACE: Fulfilment Autonomous Claims Engine"
-    line: "Celui dont parle cette page, pour les équipes logistique, transport, sinistres et exploitation. Il repère la surfacturation que personne n'a contestée, la réclamation sur le point d'expirer et la règle enfreinte, puis rédige l'étape suivante pour qu'une personne nommée l'approuve. Il tourne sur vos serveurs, dans votre compte cloud ou sur les machines partagées de Runink."
-  - page: "/products/pulse"
-    paper: "runink-pulse"
-    name: "Runink PULSE: Prescriptive Unified Lead & Social Engine"
-    line: "Un produit distinct, pour la petite et moyenne entreprise et ceux qui y vendent et font le marketing. Il trouve les entreprises à appeler, rédige la réponse, la campagne et la relance, et montre quel canal amène des clients. Votre équipe décide de ce qui part. Facturé par utilisateur."
-  - page: "/products/tide"
-    paper: "runink-tide"
-    name: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
-    line: "Un produit distinct, pour les équipes d'ingénierie, de plateforme et de données. Il leur retire les questions qui reviennent chaque semaine : qu'est-ce qui a cassé et pourquoi, le correctif est-il en ligne, quel chiffre est le bon, qui a changé quoi. Les assistants rédigent ; une personne nommée approuve. Il tourne sur vos serveurs, dans votre compte cloud ou sur les machines partagées de Runink."
-  - paper: "runink-tide-atlas"
-    name: "Runink TIDE et Atlas"
-    sub: "Un document commun avec Logical Leap"
-    line: "Les écrans de surveillance d'Atlas, dans TIDE et sur vos propres données, avec un second avis intégré pour les constats qu'une plateforme externe soumet. Écrit avec Logical Leap plutôt qu'à son sujet."
-  - page: "/river"
-    name: "Runink River"
-    sub: "Raft-Integrated Validated Event Runtime"
-    line: "Un système d'exploitation libre et open source pour les postes de travail données, analytique et IA que vous possédez déjà. Le disque est chiffré dès le premier démarrage, une mise à jour ratée s'annule en un redémarrage, et il n'y a pas de licence par poste."
-products_more_text: "Comment nous le construisons, et avec qui"
-products_more_url: "/company"
-
-faq_heading: "Les premières questions des responsables du revenu et des opérations"
-faq_intro: "Des réponses courtes. La page FACE et le livre blanc FACE donnent les longues."
 faq:
-  - q: "Qu'est-ce qu'une fuite de revenus en logistique ?"
-    a: "De l'argent dû à un chargeur, ou qu'il n'aurait jamais dû payer, et qu'il n'a pas récupéré : surfacturations du transporteur, factures payées deux fois, réclamations expirées, surestaries d'un conteneur bloqué et commandes hors délai. C'est presque toujours écrit dans vos propres systèmes avant que quelqu'un n'agisse."
-  - q: "Comment repérer les surfacturations de fret sans vérifier chaque facture à la main ?"
-    a: "Comparez chaque facture aux enregistrements qui la justifient : le bon, le poids et le tarif applicable ce jour-là. Runink FACE fait cette comparaison sur chaque facture, signale la surfacturation et le doublon, et rédige la contestation, pièces jointes, pour que votre analyste l'approuve."
-  - q: "Comment éviter que les réclamations de fret expirent ?"
-    a: "Rendez chaque dossier peu coûteux à monter. FACE réunit la lettre de voiture, la preuve de livraison et vos conditions de service, et rédige la réclamation dans le délai du transporteur. Une personne de votre équipe l'approuve avant le dépôt."
-  - q: "Qu'est-ce qu'un jumeau actionnable ?"
-    a: "Une copie vivante de quelque chose de réel, comme un site, un actif ou une commande, tenue à jour à partir de vos propres enregistrements. Dans Runink FACE, chaque jumeau est confronté aux règles que vous appliquez, et ce qui diffère revient comme une action rédigée. Elle attend sur la carte et dans la liste des ordres du jour qu'une personne nommée l'approuve ou la rejette."
-  - q: "Comment FACE trouve-t-il la cause racine d'une perte ?"
-    a: "Pour chaque réclamation, il liste les causes, estime ce que corriger chacune changerait au résultat, puis les classe. La correction qui compte le plus est en haut, avec ses enregistrements, si bien que la discussion avec un transporteur ou un site commence par les preuves."
-  - q: "FACE est-il un service externalisé d'audit ou de recouvrement ?"
-    a: "Non. C'est un logiciel que votre équipe utilise. Il rédige, et une personne nommée de votre équipe approuve chaque contestation, réclamation et ordre avant tout envoi. Les prix, y compris la commission de succès sur les réclamations recouvrées, figurent sur la [page des tarifs](/fr/pricing/)."
-  - q: "Faut-il remplacer notre TMS, WMS ou ERP ?"
-    a: "Non. FACE lit les systèmes que vous utilisez déjà : bases de données, logiciels de gestion, systèmes logistiques, fichiers, données des transporteurs et flux en direct des traceurs et capteurs. Ce n'est pas un système de référence et il ne cherche pas à le devenir."
-  - q: "Nos données quittent-elles nos serveurs ?"
-    a: "Avec les licences Dédiée et Enterprise, FACE s'exécute sur vos propres serveurs ou dans votre compte cloud. Lite s'exécute sur les machines partagées de Runink. Quelle que soit la licence, rien n'est envoyé à un fournisseur extérieur de modèles d'IA."
-  - q: "Qui l'utilise dans l'entreprise ?"
-    a: "Les responsables des opérations terrain, pour les ordres d'exécution et les exceptions. Les équipes sinistres et audit fret, pour les contestations et les réclamations. La finance et les responsables du revenu, pour les avoirs récupérés et leurs causes. Chacun approuve ce qui le concerne."
+  heading: "Questions"
+  groups:
+    - label: "Recouvrement"
+      items:
+        - q: "Qu'est-ce qu'une fuite de revenus en logistique ?"
+          a: "De l'argent dû à un chargeur, ou qu'il n'aurait jamais dû payer, et qu'il n'a pas récupéré : surfacturations, factures payées deux fois, réclamations expirées, surestaries d'un conteneur bloqué et commandes hors délai."
+        - q: "Comment repérer les surfacturations de fret sans vérifier chaque facture à la main ?"
+          a: "Comparez chaque facture aux enregistrements qui la justifient : le bon, le poids et le tarif applicable ce jour-là. Runink FACE le fait pour chaque facture et rédige la contestation pour que votre analyste l'approuve."
+        - q: "Comment éviter que les réclamations de fret expirent ?"
+          a: "Rendez chaque réclamation peu coûteuse à monter. FACE réunit la lettre de voiture, la preuve de livraison et vos conditions de service, et rédige la réclamation dans le délai du transporteur."
+    - label: "Fonctionnement"
+      items:
+        - q: "Qu'est-ce qu'un jumeau actionnable ?"
+          a: "Une copie vivante d'un site, d'un actif ou d'une commande, tenue à jour à partir de vos enregistrements. FACE confronte chaque jumeau à vos règles et transforme ce qui diffère en action rédigée qu'une personne approuve."
+        - q: "Comment FACE trouve-t-il la cause racine d'une perte ?"
+          a: "Pour chaque réclamation, il liste les causes, estime ce que corriger chacune changerait et les classe, avec les enregistrements de chacune."
+        - q: "Faut-il remplacer notre TMS, WMS ou ERP ?"
+          a: "Non. FACE lit les systèmes que vous utilisez déjà et laisse vos enregistrements tels quels."
+    - label: "Achat"
+      items:
+        - q: "FACE est-il un service de recouvrement externalisé ?"
+          a: "Non. C'est un logiciel que votre équipe utilise, et une personne nommée approuve chaque contestation, réclamation et ordre. Les prix, y compris la commission de succès sur les réclamations recouvrées, figurent sur la [page des tarifs](/fr/pricing/)."
+        - q: "Nos données quittent-elles nos serveurs ?"
+          a: "Avec les licences Dédiée et Enterprise, FACE s'exécute sur vos propres serveurs ou votre cloud. Quelle que soit la licence, rien n'est envoyé à un fournisseur extérieur de modèles d'IA."
+        - q: "Qui l'utilise dans l'entreprise ?"
+          a: "Les responsables des opérations terrain pour les ordres d'exécution et les exceptions, les équipes sinistres et audit fret pour les contestations et réclamations, et les responsables du revenu pour ce qui a été récupéré et pourquoi c'était perdu."
+
+more:
+  label: "Plus de Runink"
+  groups:
+    - label: "Secteurs (en anglais)"
+      links:
+        - { text: "Logistics & Supply Chain", url: "/industries/logistics-supply-chain/" }
+        - { text: "Insurance", url: "/industries/insurance/" }
+        - { text: "Banking & Financial Services", url: "/industries/banking-financial-services/" }
+        - { text: "Telecom", url: "/industries/telecom/" }
+        - { text: "Marketing", url: "/fr/industries/marketing/" }
+    - label: "Produits (en anglais)"
+      links:
+        - { text: "Runink FACE: Fulfilment Autonomous Claims Engine", url: "/products/face/" }
+        - { text: "Runink PULSE: Prescriptive Unified Lead & Social Engine", url: "/products/pulse/" }
+        - { text: "Runink TIDE: Trusted Intelligence for Developer & Data Experience", url: "/products/tide/" }
+        - { text: "Runink River", url: "/river/" }
+    - label: "Entreprise"
+      links:
+        - { text: "Qui le construit", url: "/fr/company/" }
+        - { text: "Tarifs", url: "/fr/pricing/" }
+        - { text: "Bibliothèque", url: "/fr/library/" }
+        - { text: "Confiance et conformité", url: "/fr/trust/" }
 
 contact:
-  heading: "Apportez une ligne, un sinistre, ou un mois de factures."
-  deck: "Une courte conversation suffit en général à dire si les pertes que vous portez ont la forme de ce que cela traite. Si ce n'est pas le cas, nous vous le dirons."
+  heading: "Envoyez un mois de factures."
+  deck: "Factures de fret ou réclamations, et la grille tarifaire à laquelle elles devraient correspondre. Si vos pertes ne sont pas celles que FACE traite, nous vous le dirons."
   book_title: "Prendre rendez-vous"
   book_body: "Une demi-heure, avec la personne qui a le problème en charge dans la pièce. Nous déroulerons un exemple réel de chez vous, de bout en bout."
   book_cta: "Choisir un créneau"
