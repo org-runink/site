@@ -31,6 +31,8 @@ items:
   - name: "Runink PULSE"
     full: "Runink PULSE: Prescriptive Unified Lead & Social Engine"
     url: "/products/pulse/"
+    logo: "/images/brand/pulse-persona.webp"
+    logo_alt: "PULSE"
     line: "One marketing application your team operates: the audit, the research, the leads and the material, with every channel off until you turn it on."
   - name: "Runink River"
     meaning: "RIVER · Raft-Integrated Validated Event Runtime"

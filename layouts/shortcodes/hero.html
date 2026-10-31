@@ -6,6 +6,8 @@
 {{ $secondary_button_url := .Get "secondary_button_url" }}
 {{ $hero_image := .Get "hero_image" }}
 {{ $background_image := .Get "background_image" }}
+{{ $persona := .Get "persona" }}
+{{ $persona_label := .Get "persona_label" }}
 {{ $gradient_from := .Get "gradient-from" }}
 {{ $gradient_to := .Get "gradient-to" }}
 {{ $gradient_angle := .Get "gradient-angle" | default "180" }}
@@ -124,7 +126,18 @@
                         class="absolute inset-0 rounded-xl bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
                     </div>
                 </div>
-                {{ end }}
+                {{ else }}{{ with $persona }}
+                {{/* A product's persona (Runink PULSE's puppy) in the empty right
+                     column: one source in assets/, two sizes written by Hugo at
+                     build time, and the product's acronym under it. */}}
+                {{ $res := resources.Get (strings.TrimPrefix "/" .) }}
+                {{ $one := $res.Resize "320x webp q90 drawing Lanczos" }}
+                {{ $two := $res.Resize "640x webp q90 drawing Lanczos" }}
+                <figure class="relative z-10 flex flex-col items-center gap-4 m-0">
+                    <img src="{{ $one.RelPermalink }}" srcset="{{ $one.RelPermalink }} 1x, {{ $two.RelPermalink }} 2x" alt="{{ $persona_label }}" width="{{ $one.Width }}" height="{{ $one.Height }}" class="w-56 md:w-72 lg:w-80 h-auto" fetchpriority="high">
+                    {{ with $persona_label }}<figcaption class="text-xs font-bold uppercase tracking-[0.2em] text-signal">{{ . }}</figcaption>{{ end }}
+                </figure>
+                {{ end }}{{ end }}
 
                 <!-- Background Orbs -->
                 <div
