@@ -48,6 +48,8 @@
       "title": "Runink PULSE",
       "subtitle": "PULSE · Prescriptive Unified Lead & Social Engine",
       "headline": ["The lead who wrote at nine at night", "bought from whoever answered first."],
+      "mark": "assets/images/brand/pulse-persona.webp",
+      "markImage": true,
       "out": ["static/images/products/pulse-og.jpg"]
     },
     {

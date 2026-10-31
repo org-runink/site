@@ -1,0 +1,18 @@
+{{- /* A product's own logo as an <img>. Takes (dict "src" path "size" px "alt" text).
+     An SVG (Runink River, Runink TIDE) is served as it is. A raster logo (the PULSE
+     persona, assets/images/brand/pulse-persona.webp) is one source in assets/, and
+     Hugo writes the two sizes the page needs, 1x and 2x, as WebP at build time; the
+     source itself is never published. Anything else (an SVG) is linked as given. */ -}}
+{{- $size := .size | default 44 -}}
+{{- $alt := .alt | default "" | htmlEscape -}}
+{{- $res := resources.Get (strings.TrimPrefix "/" .src) -}}
+{{- $out := "" -}}
+{{- if and $res (ne $res.MediaType.SubType "svg") (eq $res.ResourceType "image") -}}
+  {{- $one := $res.Resize (printf "%dx webp q90 drawing Lanczos" $size) -}}
+  {{- $two := $res.Resize (printf "%dx webp q90 drawing Lanczos" (mul $size 2)) -}}
+  {{- $out = printf `<img class="rp-logo" src="%s" srcset="%s 1x, %s 2x" alt="%s" width="%d" height="%d">` $one.RelPermalink $one.RelPermalink $two.RelPermalink $alt $one.Width $one.Height -}}
+{{- else -}}
+  {{- $url := .src | relURL -}}
+  {{- $out = printf `<img class="rp-logo" src="%s" alt="%s" width="%d" height="%d">` $url $alt $size $size -}}
+{{- end -}}
+{{- return ($out | safeHTML) -}}

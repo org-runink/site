@@ -43,6 +43,11 @@ next_about: "Runink PULSE"
 # assistant's audit card mid-run, beside "One line to start"; it goes in only once
 # one exists with no third-party data on it.
 #
+# The hero shows the PULSE persona (owner, 2026-10-31: each product gets its own
+# cartoon persona; the Runink logo stays the company's). One source,
+# assets/images/brand/pulse-persona.webp; Hugo writes the sizes. It is a mark, not a
+# product image, so the note above about screenshots still stands.
+#
 # Refreshed 2026-10-10 against the shipped product, with every line checked
 # against what it actually does. What was added: the one-line audit now says what
 # each step records — where its result came from, and why a step that could not
@@ -72,6 +77,8 @@ image: "/images/products/pulse-og.jpg"
     primary_button_url="/#contact"
     secondary_button_text="Read the PULSE paper"
     secondary_button_url="/blog/whitepapers/runink-pulse/"
+    persona="images/brand/pulse-persona.webp"
+    persona_label="PULSE"
     size="normal"
     gradient-from="var(--rk-sunk)"
     gradient-to="var(--rk-ground)"
