@@ -5,6 +5,7 @@
 {{ $h := .h }}
 <header class="h2-hero">
   <div class="h2-hero__copy">
+    {{ with $h.mark }}<img class="h2-mark" src="{{ . | relURL }}" alt="" width="96" height="96" decoding="async">{{ end }}
     <p class="hp-eyebrow">{{ $h.eyebrow }}</p>
     {{ if $h.h1 }}<h1 class="hp-h1">{{ $h.h1 }}</h1>{{ else }}<h1 class="hp-h1">{{ $h.line1 }} <span class="hp-h1__b">{{ $h.line2 }}</span></h1>{{ end }}
     <p class="h2-sub">{{ $h.sub | markdownify }}</p>
