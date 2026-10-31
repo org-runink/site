@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modal Shift on Runink</title>
+    <link>https://runink.org/tags/modal-shift/</link>
+    <description>Recent content in Modal Shift on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/modal-shift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modal Shift and Route Optimization in Rail-Road Networks</title>
+      <link>https://runink.org/blog/runink-modal-shift-optimization/</link>
+      <pubDate>Mon, 15 Jun 2026 10:07:34 +0000</pubDate>
+      <guid>https://runink.org/blog/runink-modal-shift-optimization/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;A modal shift decision is a comparison. For one consignment, on one lane, you weigh the rail option against the road option on the things the shipper cares about: how long it takes, how reliable it is, what it costs and what it emits. The data for that comparison sits in different systems — rail timetables, road conditions, how long trailers wait at the terminal — and each is read at a different time. So the comparison gets made once, at planning, and is not made again when the day changes.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Modal shift is a comparison, not a policy.&lt;/strong&gt; It holds for the consignment, the lane and the day it was made for.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rail-truck handovers are where multimodal plans come apart.&lt;/strong&gt; Congestion and waiting time at the handover often cost more than the modal choice saved.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The cost of re-planning is the real constraint.&lt;/strong&gt; Most operations have the data to re-run the decision at midday. What they do not have is the hours to re-plan a day by hand.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Where rail meets road, capacity goes to waste and costs rise. Trailers wait. Slots go unfilled. Recent disruption on key sea routes has also made the choice a continuity question, not only a cost one: if one route closes, what else can carry the load?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

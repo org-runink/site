@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "Cold-Chain Claims: Turning a Temperature Excursion into a Claim That Holds Up"
+    permalink: "https://runink.org/blog/cold-chain-claims-temperature-excursion/"
+    date: "2026-10-17T10:00:00Z"
+    description: "A load that drifts warm is a claim only if the evidence is gathered in time. What a cold-chain claim needs, and why most excursions end as write-offs."
+  - title: "Cold Chain Logistics — Why Temperature Excursions Cost More Than You Think"
+    permalink: "https://runink.org/blog/cold-chain-logistics-temperature-control/"
+    date: "2026-06-09T19:24:39Z"
+    description: "A temperature breach destroys product value and creates a compliance problem, and the reading that proves it is usually already in your own sensor data. Why the gap between the reading and somebody acting on it is where the loss sits."

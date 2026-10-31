@@ -1,0 +1,172 @@
+<!--
+  PULSE paper — "Create: one brief, every channel".
+
+  This is deliberately the inverse of the convergence figure the industries
+  pages carry. There, many records are drawn together into one finding. Here
+  one brief opens out into many pieces. Same house, opposite direction, and the
+  approval ring in the middle is the same glyph in both, because it is the same
+  act: a named person putting their name to something.
+
+  Three movements, left to right:
+
+    1  ONE sheet. Not a stack — the whole claim of the chapter is that the
+       input is singular.
+    2  A fan into a field of pieces whose SHAPES differ: wide bars for long
+       form, paired squares for pictures, tall narrow blocks for short video,
+       broken runs for email. Nothing is labelled; the silhouette is what says
+       "written for the channel it is going to, in the shape that channel
+       expects". Every piece carries one status mark.
+    3  A convergence at one ring, then a fan again into a dated schedule.
+
+  Two pieces are drawn hollow and their strands stop before the line, because
+  every piece has ONE stated status and not all of them are approved. Approved
+  and not-approved are told apart by fill and by whether the strand arrives —
+  two channels, neither of them colour, so the distinction survives a greyscale
+  print.
+
+  Nothing crosses the vertical line except through the ring: publishing
+  schedules approved posts, and only those.
+
+  No text inside the artwork; at 360px the viewBox scales to about a third.
+  Every var() carries a literal fallback so the file still reads correctly when
+  opened on its own, outside the page that defines the tokens.
+-->
+<svg viewBox="0 0 1000 268" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- one brief -->
+  <rect x="20" y="84" width="160" height="98" rx="10"
+        style="fill:var(--paper,#F5F1E8);stroke:var(--ink,#1c1917);stroke-width:2.4"/>
+  <rect x="36" y="100" width="52" height="9" rx="4.5" style="fill:var(--runs,#5F6F3E)"/>
+  <g style="fill:var(--rule,#D9CDB8)">
+    <rect x="36" y="122" width="124" height="7" rx="3.5"/>
+    <rect x="36" y="138" width="108" height="7" rx="3.5"/>
+    <rect x="36" y="154" width="82"  height="7" rx="3.5"/>
+  </g>
+
+  <!-- opened out into every channel -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-linecap:round">
+    <path d="M180,133 C 260,133 268,21  344,21"  style="stroke-width:1.3;stroke-opacity:0.3"/>
+    <path d="M180,133 C 260,133 268,51  344,51"  style="stroke-width:1.4;stroke-opacity:0.36"/>
+    <path d="M180,133 C 260,133 268,81  344,81"  style="stroke-width:1.6;stroke-opacity:0.42"/>
+    <path d="M180,133 C 260,133 268,107 344,107" style="stroke-width:1.8;stroke-opacity:0.5"/>
+    <path d="M180,133 C 260,133 268,133 344,133" style="stroke-width:1.9;stroke-opacity:0.55"/>
+    <path d="M180,133 C 260,133 268,159 344,159" style="stroke-width:1.8;stroke-opacity:0.5"/>
+    <path d="M180,133 C 260,133 268,185 344,185" style="stroke-width:1.6;stroke-opacity:0.42"/>
+    <path d="M180,133 C 260,133 268,213 344,213" style="stroke-width:1.4;stroke-opacity:0.36"/>
+    <path d="M180,133 C 260,133 268,241 344,241" style="stroke-width:1.3;stroke-opacity:0.3"/>
+  </g>
+
+  <!-- the pieces, each in the shape its channel expects -->
+  <g style="fill:var(--ink-3,#57534e);fill-opacity:0.88">
+    <rect x="352" y="14"  width="158" height="15" rx="7.5"/>
+
+    <rect x="352" y="38"  width="26" height="26" rx="4"/>
+    <rect x="386" y="38"  width="26" height="26" rx="4"/>
+    <rect x="420" y="38"  width="26" height="26" rx="4"/>
+
+    <rect x="352" y="94"  width="130" height="15" rx="7.5"/>
+
+    <rect x="352" y="126" width="62" height="12" rx="6"/>
+    <rect x="422" y="126" width="44" height="12" rx="6"/>
+    <rect x="474" y="126" width="54" height="12" rx="6"/>
+
+    <rect x="352" y="152" width="146" height="15" rx="7.5"/>
+
+    <rect x="352" y="234" width="18" height="28" rx="4"/>
+    <rect x="378" y="234" width="18" height="28" rx="4"/>
+    <rect x="404" y="234" width="18" height="28" rx="4"/>
+  </g>
+
+  <!-- two pieces that carry a different status -->
+  <g style="fill:var(--paper,#F5F1E8);stroke:var(--ink-3,#57534e);stroke-width:1.8">
+    <rect x="352" y="72"  width="18" height="28" rx="4"/>
+    <rect x="378" y="72"  width="18" height="28" rx="4"/>
+    <rect x="404" y="72"  width="18" height="28" rx="4"/>
+    <rect x="352" y="178" width="26" height="26" rx="4"/>
+    <rect x="386" y="178" width="26" height="26" rx="4"/>
+    <rect x="352" y="206" width="112" height="15" rx="7.5"/>
+  </g>
+
+  <!-- one stated status on every piece -->
+  <g style="fill:var(--runs,#5F6F3E)">
+    <circle cx="596" cy="21"  r="6"/>
+    <circle cx="596" cy="51"  r="6"/>
+    <circle cx="596" cy="101" r="6"/>
+    <circle cx="596" cy="132" r="6"/>
+    <circle cx="596" cy="159" r="6"/>
+    <circle cx="596" cy="248" r="6"/>
+  </g>
+  <g style="fill:var(--paper,#F5F1E8);stroke:var(--ink-3,#57534e);stroke-width:2">
+    <circle cx="596" cy="86"  r="6"/>
+    <circle cx="596" cy="191" r="6"/>
+    <circle cx="596" cy="213" r="6"/>
+  </g>
+
+  <!-- what is approved comes to the ring; what is not, stops -->
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-linecap:round">
+    <path d="M606,21  C 660,21  664,104 694,124" style="stroke-width:1.7"/>
+    <path d="M606,51  C 660,51  666,110 694,128" style="stroke-width:1.7"/>
+    <path d="M606,101 C 656,101 668,118 692,130" style="stroke-width:1.7"/>
+    <path d="M606,132 H690" style="stroke-width:1.9"/>
+    <path d="M606,159 C 656,159 668,148 692,138" style="stroke-width:1.7"/>
+    <path d="M606,248 C 660,248 666,164 694,144" style="stroke-width:1.7"/>
+  </g>
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.5;stroke-opacity:0.6">
+    <path d="M606,86  H654" stroke-dasharray="5 6"/>
+    <path d="M606,191 H654" stroke-dasharray="5 6"/>
+    <path d="M606,213 H654" stroke-dasharray="5 6"/>
+  </g>
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:2.6;stroke-linecap:round">
+    <path d="M660,78  V94"/>
+    <path d="M660,183 V199"/>
+    <path d="M660,205 V221"/>
+  </g>
+
+  <!-- only approved posts are scheduled -->
+  <path d="M726,8 V260" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:2.6"/>
+  <circle cx="726" cy="133" r="30"
+          style="fill:var(--paper,#F5F1E8);stroke:var(--runs,#5F6F3E);stroke-width:3"/>
+  <path d="M713,133 L723,143 L741,121"
+        style="fill:none;stroke:var(--runs,#5F6F3E);stroke-width:3.6;stroke-linecap:round;stroke-linejoin:round"/>
+
+  <g style="fill:none;stroke:var(--ink-3,#57534e);stroke-width:1.7;stroke-linecap:round">
+    <path d="M756,124 C 782,110 788,70  810,70"/>
+    <path d="M758,130 C 784,126 790,108 810,108"/>
+    <path d="M758,138 C 784,142 790,146 810,146"/>
+    <path d="M756,144 C 782,158 788,184 810,184"/>
+  </g>
+
+  <!-- a dated schedule: what publishes, on which channel, in which week -->
+  <g style="fill:var(--ink-3,#57534e)">
+    <rect x="812" y="20" width="26" height="6" rx="3"/>
+    <rect x="856" y="20" width="26" height="6" rx="3"/>
+    <rect x="900" y="20" width="26" height="6" rx="3"/>
+    <rect x="944" y="20" width="26" height="6" rx="3"/>
+  </g>
+  <path d="M810,36 H986" style="fill:none;stroke:var(--ink,#1c1917);stroke-width:1.8"/>
+
+  <g style="fill:none;stroke:var(--rule,#D9CDB8);stroke-width:1.6">
+    <rect x="810" y="56"  width="40" height="26" rx="4"/>
+    <rect x="898" y="56"  width="40" height="26" rx="4"/>
+    <rect x="854" y="94"  width="40" height="26" rx="4"/>
+    <rect x="942" y="94"  width="40" height="26" rx="4"/>
+    <rect x="810" y="132" width="40" height="26" rx="4"/>
+    <rect x="898" y="132" width="40" height="26" rx="4"/>
+    <rect x="854" y="170" width="40" height="26" rx="4"/>
+    <rect x="810" y="208" width="40" height="26" rx="4"/>
+    <rect x="942" y="208" width="40" height="26" rx="4"/>
+  </g>
+  <g style="fill:var(--ink-3,#57534e)">
+    <rect x="854" y="56"  width="40" height="26" rx="4"/>
+    <rect x="942" y="56"  width="40" height="26" rx="4"/>
+    <rect x="810" y="94"  width="40" height="26" rx="4"/>
+    <rect x="898" y="94"  width="40" height="26" rx="4"/>
+    <rect x="854" y="132" width="40" height="26" rx="4"/>
+    <rect x="942" y="132" width="40" height="26" rx="4"/>
+    <rect x="810" y="170" width="40" height="26" rx="4"/>
+    <rect x="898" y="170" width="40" height="26" rx="4"/>
+    <rect x="942" y="170" width="40" height="26" rx="4"/>
+    <rect x="854" y="208" width="40" height="26" rx="4"/>
+    <rect x="898" y="208" width="40" height="26" rx="4"/>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Predictive Maintenance on Runink</title>
+    <link>https://runink.org/tags/predictive-maintenance/</link>
+    <description>Recent content in Predictive Maintenance on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/predictive-maintenance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fleet Safety and Risk Management — Preventing Accidents Before They Happen with Predictive Analytics</title>
+      <link>https://runink.org/blog/fleet-safety-risk-management/</link>
+      <pubDate>Sun, 15 Mar 2026 14:45:31 +0000</pubDate>
+      <guid>https://runink.org/blog/fleet-safety-risk-management/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Fleet safety is a financial and liability question before it is a compliance one. The records that would tell you where the next claim is coming from already exist: telematics events, ELD (electronic logging device) logs, maintenance work orders and your insurer&amp;rsquo;s loss runs. The work is reading them in time to act, and measuring the program against your own preventable-accident rate and your own renewal, not against somebody else&amp;rsquo;s figures.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Reactive safety programs pay late.&lt;/strong&gt; Post-incident reporting means the first time a pattern is discussed is after the claim. Meanwhile CSA scores (Compliance, Safety, Accountability — the public FMCSA scores shippers check), premiums and litigation exposure all move in the same direction.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Telematics becomes useful when it is ranked.&lt;/strong&gt; A single hard-braking alert tells you nothing. Drivers ordered by hard braking, speeding and HOS (hours of service) violations over a quarter tell you where coaching time should go.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Measure it with your own numbers.&lt;/strong&gt; Pull your preventable-accident count per million miles for the last four quarters, and your loss runs — the claims history your insurer issues — for the same period. Those are the two figures a renewal is priced on, and they are the two to watch.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-are-reactive-safety-programs-failing-fleet-operators&#34;&gt;Why Are Reactive Safety Programs Failing Fleet Operators?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

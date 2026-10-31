@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "Emissions, Waste and the Cost of Reading Supply Chain Records Late"
+    permalink: "https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/"
+    date: "2026-06-06T02:16:21Z"
+    description: "Where supply chain emissions actually come from in a wholesale network — empty miles, buffer inventory, expedites and dwell — and why the reduction levers available without capital expenditure are all reading problems rather than routing problems."
+  - title: "Point-of-Sale Data in Logistics: Using Store-Level Sales Data for Demand Sensing"
+    permalink: "https://runink.org/blog/pos-data-logistics-demand-sensing/"
+    date: "2026-05-29T00:24:23Z"
+    description: "How store-level point-of-sale data gives supply chain planners a shorter demand signal than a quarterly forecast, and what it changes in freight execution."
