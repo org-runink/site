@@ -4,8 +4,9 @@ title: "Runink FACE"
 # page ran long, repeated itself and held placeholder comments where screenshots
 # were meant to go. Every sentence below is carried over from the verified copy
 # it replaces or from FACE on origin/main (CONTENT.md rule 4); none carries a
-# figure (rule 1). Sections follow the FACE left rail as it is today: Reconcile,
-# Fetch, Simulate, Twins. If the rail changes, change the tour with it.
+# figure (rule 1). Sections follow the FACE left rail as it is today (2026-10-31):
+# Ask and Briefs, Options and Why, Actionable Twins. If the rail changes, change
+# the tour with it.
 seo_title: "Runink FACE: freight overcharges and claims, caught in time"
 seo_description: "For freight, claims and field operations teams. Runink FACE reads your invoices and claim files, finds the overcharge and the expiring claim, and drafts the fix."
 description: "Runink FACE: Fulfilment Autonomous Claims Engine. It reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the broken rule, and drafts the next step for a named person to approve. It runs on your own servers or cloud account, or on Runink's shared machines, and no outside AI service is called."
@@ -13,6 +14,10 @@ layout: "v2"
 badge: "FACE"
 
 hero:
+  # FACE's own persona (owner, 2026-10-31): the pup with the magnifier and the
+  # parcel, a 144 px render of brand/face-persona.png in org-runink/face. The
+  # Runink dog head stays the company's mark.
+  mark: "/images/brand/face-mark.png"
   eyebrow: "Runink FACE: Fulfilment Autonomous Claims Engine"
   h1: "Every overcharge, claim and stale order, drafted for one approval."
   sub: "FACE reads the invoices, orders, carrier records and claim files you already keep. It finds what you are owed and what broke, and drafts the next step. A named person approves it."
@@ -25,7 +30,7 @@ hero:
     src: ""
   card:
     alt: "A drafted damage claim in Runink FACE, with the rule it rests on, the three records behind it, the likely cause, and Approve, Edit and Reject buttons."
-    title: "runink face · today's command"
+    title: "runink face · actionable twins"
     status: "WAITING ON YOU"
     kind: "Drafted claim · damaged load"
     head: "A pallet arrived crushed. The filing window is still open."
@@ -87,41 +92,31 @@ jobs:
 
 tour:
   id: "inside-face"
-  heading: "Inside FACE: Reconcile, Fetch, Simulate, Twins"
-  lead: "One menu down the left of the screen. Reconcile shows where your records stand, Fetch brings them in, Simulate tests a change before you make it, and Twins puts the result in front of the person who approves it."
+  heading: "Inside FACE: Ask, Options, Why, Actionable Twins"
+  lead: "One menu down the left of the screen, in the order you use it. Ask a question and get the answer first, see what you could do about it on Options, see why on Why, and approve the action on Actionable Twins."
   areas:
-    - id: "reconcile"
-      tag: "Reconcile"
-      title: "Where your records stand, on one page."
-      body: "The page FACE opens on. Its first line says how many business areas were read, what was found and what to do about it."
+    - id: "ask"
+      tag: "Ask and Briefs"
+      title: "Ask in plain words. The answer comes first."
+      body: "Ask a question, or start from a suggested one. You choose which sources it reads, and the answer leads, with the records behind it a click away."
       parts:
-        - { name: "Business area health", text: "Each area is scored on six counts: sound data, filled fields, traceable figures, freshness, policy cover and the cost to keep it." }
-        - { name: "Entities", text: "Orders, suppliers, sites, shipments and assets, joined into one list even when the systems behind them never were." }
-    - id: "fetch"
-      tag: "Fetch"
-      title: "Bring in what you already run."
-      body: "Ask a question in plain words, or start from a suggested one. You choose which sources it reads and which machines do the work."
+        - { name: "Sources", text: "Databases, business software, logistics systems, files, web pages and live feeds from trackers, RFID tags and sensors, added once in Settings and picked per question." }
+        - { name: "Briefs", text: "Set a question up once and it runs when you choose, or when your data changes, for the person it is for. A brief reads all your sources unless you pick some." }
+    - id: "options"
+      tag: "Options and Why"
+      title: "What you could do, and why FACE thinks so."
+      body: "Nothing here changes your systems. Options lists what you could do about the answer, side by side; Why shows the rules and documents it rests on."
       parts:
-        - { name: "Connections", text: "Databases, business software, logistics systems, files, web pages and live feeds from trackers, RFID tags and sensors." }
-        - { name: "Knowledge", text: "Your documents in one place: spreadsheets with their formulas, and the tables and filled-in fields from scanned pages." }
-        - { name: "Schedules", text: "Set a fetch up once and it runs when you choose, with the same record as one you start yourself." }
-    - id: "simulate"
-      tag: "Simulate"
-      title: "Test a change before you commit to it."
-      body: "Nothing here changes your systems. It keeps the records a decision rests on joined up, before the change and after it."
-      parts:
-        - { name: "What-if scenarios", text: "A lane a week late, a supplier dropped, a different reserve: worked through from several angles, with reasoning you can argue with." }
-        - { name: "Rules", text: "The rules you already work to, written down once, checked against every record and held up against your policy documents." }
-        - { name: "What drives what", text: "Change one thing and see what it would move, and which rules it would run into." }
-        - { name: "Demand forecasting", text: "Two kinds of forecast tried on your own order history. The one that did better wins, and the method is named." }
+        - { name: "Options", text: "The what-ifs built from your run: a lane a week late, a supplier dropped, a different reserve, each with the reasoning you can argue with." }
+        - { name: "Why", text: "The rules you already work to, written down once, checked against every record and held up against the policy documents that are their source." }
     - id: "twins"
-      tag: "Twins"
-      title: "Your operation on a map, and the orders waiting on a decision."
-      body: "A twin is a live copy of something real, such as a site, an asset or an order, kept current from your own records."
+      tag: "Actionable Twins"
+      title: "The decisions waiting on you, and where they are."
+      body: "A twin is a live copy of something real, such as a site, an asset or an order, kept current from your own records. Each one that needs a decision becomes a card."
       parts:
-        - { name: "Map", text: "Your assets at their real locations, routes in the proposed stop order, and live layers from anything that reports a position." }
-        - { name: "Today's command", text: "The proposed actions as a list of orders with their line items. A person approves or rejects each one." }
-        - { name: "Routes", text: "Distance and time from the routing service you configure. If none answers, the answer is the word unavailable, never a zero." }
+        - { name: "Lanes", text: "What is waiting for you, what is in flight and what came back. A person approves or rejects each card." }
+        - { name: "Map", text: "The same twins at their real locations, routes in the proposed stop order, and live layers from anything that reports a position." }
+        - { name: "Follow-ups", text: "Chasing a supplier or carrier by text or voice about a decision, opened from the same page." }
 
 gate:
   heading: "The drafted action waits. Approving is what sends it."

@@ -22,6 +22,7 @@ items:
   - name: "Runink FACE"
     full: "Runink FACE: Fulfilment Autonomous Claims Engine"
     url: "/products/face/"
+    logo: "/images/brand/face-mark.png"
     line: "Runink's main product, for logistics and the claims, returns and compliance work that hangs off it. It reads the records you already hold and drafts the action for a named person to approve."
   - name: "Runink TIDE"
     full: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"

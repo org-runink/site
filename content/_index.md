@@ -25,7 +25,7 @@ hero:
     caption: ""
   card:
     alt: "A drafted freight dispute in Runink FACE, with the rule it broke, the three records behind it, the likely cause, and Approve, Edit and Reject buttons."
-    title: "runink face · today's command"
+    title: "runink face · actionable twins"
     status: "WAITING ON YOU"
     kind: "Drafted dispute · carrier invoice"
     head: "Billed weight is higher than the scale ticket."

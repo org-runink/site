@@ -58,6 +58,8 @@
       "title": "Runink FACE",
       "subtitle": "FACE · for logistics, freight, claims and operations teams",
       "headline": ["The claim nobody had a morning for is", "still money you are owed."],
+      "mark": "static/images/brand/face-mark.png",
+      "markImage": true,
       "out": ["static/images/og/face-og.jpg"]
     },
     {
