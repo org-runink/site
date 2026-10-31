@@ -28,7 +28,7 @@
       <li>
         <a class="rp-paper rp-index-card" href="{{ .url | relURL }}" data-print="{{ .url | absURL }}">
           <span class="rp-index-name">
-            {{ with .logo }}<img class="rp-logo" src="{{ . | relURL }}" alt="" width="44" height="44">{{ else }}<span class="rp-dog" aria-hidden="true"></span>{{ end }}
+            {{ if .logo }}{{ partial "product/logo.html" (dict "src" .logo "size" 44 "alt" .logo_alt) }}{{ else }}<span class="rp-dog" aria-hidden="true"></span>{{ end }}
             <b>{{ .full | default .name }}</b>
           </span>
           {{ with .meaning }}<small class="rp-index-meaning">{{ . }}</small>{{ end }}
