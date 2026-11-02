@@ -12,7 +12,7 @@ weight: 30
 date: 2026-09-29T00:00:00Z
 source_pages: 23
 audience: "Executives, marketing leaders, and the people who sign off on where company data goes"
-blurb: "One application a marketing team operates directly. It audits your website and social presence, researches your market, prospects the public web for leads, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft with a status and an approve against it, on channels that stay disarmed until you arm them."
+blurb: "One application a marketing team operates directly. It runs a check-up of your website and market, finds leads and public tenders, and writes the material that carries somebody from first hearing of you to buying from you — staging every draft with a status and an approve against it, on channels that stay disarmed until you arm them."
 deck: |
   Runink PULSE: Prescriptive Unified Lead & Social Engine replaces the
   marketing patchwork with one application your own team
@@ -54,18 +54,17 @@ And increasingly there is a habit — often undeclared — of pasting positionin
 lists and pipeline detail into text generators owned by somebody else.
 
 Runink PULSE: Prescriptive Unified Lead & Social Engine replaces that patchwork with one application that a marketing team operates
-directly. It audits your website and social presence and scores it against nine measures.
-It researches your market, finds competitors and partners worth knowing, and prospects the
-public web for leads. It writes the posts, whitepapers, decks, short videos, podcasts,
-infographics, reports and courses that carry somebody from first hearing of you to buying
-from you — what marketers call the funnel. It maps customer journeys, runs structured
-30-day follow-up cycles, and reads the numbers back to you.
+directly. It runs a check-up of your website and scores it against nine measures.
+It researches your market, finds competitors and partners worth knowing, and finds leads on
+the public web and in public tenders. It writes the posts, carousels, short videos, articles,
+guides, newsletters, podcasts, infographics, reports and courses that carry somebody from
+first hearing of you to buying from you — what marketers call the funnel. It keeps a 30-day
+plan running, and reads the numbers back to you.
 
 Two properties separate it from the alternatives.
 
 The first is that every publishing channel is disarmed until you arm it. Every draft — a post,
-a cold email, a whitepaper, a call script — is staged with an explicit status and an approve
-and a reject against it, and a channel that has not been armed publishes nothing whatever
+a cold email, a guide, a call script — waits for an approve or a discard, and a channel that has not been armed publishes nothing whatever
 status a piece carries. Page 18 sets out how those two controls work together.
 
 The second is where the work happens. The reasoning that does the writing and the analysis
@@ -158,7 +157,7 @@ requirements, it can be disqualifying.
 PULSE answers that question differently. The system that does the reasoning and the writing
 runs where PULSE runs: a workstation for evaluation, and for daily use your own servers or
 cloud account, or Runink's shared machines on Lite. There is no third-party database holding
-your working data. There is no outside AI service in the path when a whitepaper is drafted
+your working data. There is no outside AI service in the path when a guide is drafted
 or a lead is researched.
 
 This has a commercial consequence beyond compliance, and it is worth stating plainly:
@@ -177,41 +176,42 @@ a re-briefing.
 your position — nine measures — a business diagnosis, and a prescription for each channel.
 This is the baseline everything else works from.
 
-**Attract.** Market research surfaces the topics moving in your sector, the competitor
-channels worth watching, the influencers and the partnership targets worth approaching.
-Lead prospecting searches the public web for companies matching a niche you describe, and
-drafts the first contact for each one.
+**Attract.** Market research surfaces what people in your sector are talking about, the
+competitors worth watching, and the partners worth approaching. Lead prospecting searches
+the public web for companies matching a niche you describe, and drafts the first contact for
+each one. Public tenders that need what you sell join the same board.
 
-**Create.** A single brief becomes channel-specific posts, a whitepaper, a set of short
-videos, a presentation, a podcast, an infographic, a report or a full course. All of it
+**Create.** Studio turns the same reading into channel-specific posts, carousels, short
+videos, a guide, a podcast episode, an infographic, a report or a full course. All of it
 carries the same understanding of your positioning, because all of it draws on the same
 diagnosis.
 
-**Retain.** Customer profiles and journey maps show where each account is. Structured
-30-day follow-up cycles keep every relationship moving, with an evolution score that makes
-a quiet account visible before it is a lost one. Metrics and a forward view of traffic show
-what is working.
+**Retain.** A 30-day plan keeps the follow-up on a schedule, measured from your weekly
+check-ins, and a daily check names the leads that may go quiet before they are lost. The
+results your accounts report show what is working.
 
 Around all four stages sit two constants.
 
 **A review queue, and a channel switch that is off by default.** Every draft — a LinkedIn
-post, a cold email, a call script, a whitepaper — arrives with an explicit status and an
-approve and a reject against it, so at any moment you can see what is waiting on you. The
+post, a cold email, a call script, a guide — waits in **Drafts to approve** with an approve
+and a discard against it, so at any moment you can see what is waiting on you. The
 control that actually decides whether anything leaves is separate and blunter: **every
 publishing channel is disarmed unless it has been explicitly armed**, by a global switch
 narrowed by a per-channel one, with the resolved answer for each channel printed when the
 application starts. A channel that is off cannot publish, whatever status a piece carries.
 Page 18 sets out how the two controls work together.
 
-**You watch the work happen.** Research and copy stream into the screen as they are
-produced, rather than appearing as a wall of text after a wait. If a direction is wrong,
-you see it while it is being taken.
+**Every step says where its answer came from.** A check-up is a list of stages. A stage that
+wrote something says whether it was read on the web, worked out by the model, or both. A
+stage that could not finish says why, and the page it would have filled stays empty rather
+than holding something made up to look complete.
 
 ## Diagnose: knowing where you actually stand
 
-Site Audit is the starting point and the single analysis hub. A URL goes in. One result
-comes back, on a tabbed page, carrying three things at once: a relevance score, a full
-business diagnosis, and market research findings for the same business.
+The check-up is the starting point, and Brand Analysis — the page PULSE opens on — is where
+its result lives. A web address goes in. One result comes back, as one card per question,
+carrying three things at once: a site score, a full business diagnosis, and market research
+findings for the same business.
 
 The score is not a single number with no account of where it came from. It opens out into
 nine measures, each of which is itself made up of smaller checks you can read:
@@ -250,57 +250,63 @@ can be tuned to what your business actually cares about. And they are re-balance
 whichever sources of data are available for a given site, so a score always reflects what was
 measured rather than being dragged down by something that could not be.
 
-The audit ends in ranked recommendations, and those recommendations can be applied from the
-same screen — not exported to a ticket that somebody opens in a fortnight.
+The site score ends in ranked fixes. Connect your website repository, and once your
+administrator allows it, PULSE proposes each fix as a pull request for your developer to
+review and merge — not a ticket that somebody opens in a fortnight. PULSE never merges and
+never changes your main branch.
 
-Alongside the audit, a multichannel diagnostic reads your website, LinkedIn, Instagram and
-TikTok together and produces a written business analysis you can export as a PDF and put in
-front of a board.
+Alongside the score, the diagnosis is written out as a business analysis you can export as a
+PDF and put in front of a board.
 
 ## Attract: finding the people worth talking to
 
 Two things happen in this stage: understanding the market, and finding specific companies
 in it.
 
-**Market research.** PULSE surfaces trending posts in your sector, discovers the hashtags
-and topics carrying attention, and suggests profiles worth following. It discovers
-competitor channels — where your competitors are publishing and what is working for them.
-It finds guest and appearance opportunities: podcasts, publications and events where your
-subject matter belongs. And it drafts partnership outreach for the organisations worth
-approaching.
+**Market research.** PULSE surfaces what people in your sector are talking about, with the
+posts it found and where it found them. It names your competitors — the ones you gave it,
+the sites search engines show instead of yours — and runs the same checks on their home
+pages as on yours, so you can see where you win and where you lose. It finds partners:
+businesses, associations, newsletters, podcasts and shows where your subject belongs, each
+with the email, phone or LinkedIn its own page publishes. And it drafts a partnership message
+for each one, for you to send yourself.
 
-Research draws on two places. It reads the live public web through a browser that
-extracts the readable substance of each page rather than the navigation and the banners.
-And it reads your own material — your documents, your audit results, your prior work —
-through a search that combines exact keyword matching with meaning-based matching, so a
-question phrased one way still finds material phrased another.
-
-When you mark a result as useful or not, that judgement carries into the next round of
-research. The system gets more useful to you specifically, and that improvement stays with
-you.
+Research reads the live public web through a browser that extracts the readable substance of
+each page rather than the navigation and the banners. A finding names the site it came from.
 
 **Lead prospecting.** Describe a niche — the kind of company, the market, the region — and
-PULSE searches the public web for organisations matching it, and returns them as prospects.
+PULSE searches the public web for organisations matching it that publish a way to reach
+them, and returns them as leads.
 
 For each one, it drafts three pieces: a personalised cold email, a cold-call script, and a
 LinkedIn direct message. Each is written from what is known about that specific company and
 from the diagnosis of their business, not from a template with the company name dropped in.
+An email draft can be sent from your own mailbox, and with Gmail or Microsoft 365 PULSE sees
+who replied.
 
-Leads move through a pipeline you work as a board: new, contacted, qualified, then won or
-lost. Leads synchronise with HubSpot, so the sales team continues to work where they
-already work.
+Leads move across one board: new, talking, proposal, then won or lost. Each day, **To do
+today** gives one next step for every lead that is due. Leads synchronise with HubSpot, so the
+sales team continues to work where they already work.
 
-**Voice.** A voice sales agent handles conversation directly. In the console it is
-press-to-talk: you speak, it listens, the sales specialist responds, and the reply is
-spoken back — all on the machines PULSE runs on, with the same pair of speech engines every
-Runink console speaks and listens with: in Runink TIDE: Trusted Intelligence for Developer &
-Data Experience, and in Runink FACE: Fulfilment Autonomous Claims Engine, as much as here. For outbound calling,
-PULSE connects to a telephone exchange you host yourself, so calls run through
-infrastructure you own rather than a per-minute service.
+**Public tenders.** PULSE reads official open tender data every day, and the public tenders
+that need what you sell join the same board, each marked as a tender. It drafts a response
+for you to read. You decide, and you submit.
 
-**WhatsApp.** A lead can also be reached on WhatsApp, through your own Twilio connection.
-It is optional: without one configured, the channel is simply off, and nothing else in
-PULSE depends on it.
+**Voice.** The voice commands bar on every page takes spoken or typed commands, such as
+"audit" and a web address. Speech runs on the machines PULSE runs on, with the same speech
+engines every Runink console speaks and listens with: in Runink TIDE: Trusted Intelligence
+for Developer & Data Experience, and in Runink FACE: Fulfilment Autonomous Claims Engine,
+as much as here.
+
+**AI calls.** PULSE can call a lead with an AI assistant that says it is an AI calling for your
+company, says the call is recorded, follows the lead's call script, and writes the outcome and
+the next step to the lead. Calls start switched off. An administrator turns them on, and PULSE
+refuses a call without the lead's recorded consent, outside 08:00 to 21:00 in the lead's own
+time, or to a number on your do-not-call list.
+
+**WhatsApp.** People already in your HubSpot contacts can also reach you on WhatsApp, through
+your own Twilio connection. Automatic replies start switched off, and your administrator turns
+them on.
 
 ## Create: one brief, every channel
 
@@ -309,45 +315,46 @@ at every stage, from a first glance to a signed deal.
 
 ![One sheet on the left — a single brief, not a stack — opens out into a field of pieces whose shapes differ: long bars for written pieces, paired squares for pictures, tall narrow blocks for short video, broken runs for email. Every piece carries one status mark. A vertical line runs down the picture with a single ring in it, a tick, and only the pieces whose status mark is filled reach that ring; the ones that do not are drawn hollow and their strands stop short of the line. Past the ring the strands open out again into a dated grid of slots, some filled and some empty, which is the schedule of what publishes and when.](figures/whitepapers/pulse-one-brief.svg "One brief, opened out into every channel. The ring is the review; the schedule past it only reaches a channel that has been armed.")
 
-**Channel content.** Posts are written for the channel they are going to, in the shape and
-the tone that channel expects. The supported set covers LinkedIn, Instagram, TikTok,
-blog, email, X, YouTube, Facebook, whitepaper, book outline, webinar, course and podcast.
+**Studio.** Studio is where content is made and kept. Each piece is written for the channel
+it is going to, in the shape and the tone that channel expects:
 
-**Studio.** Six long-form generators sit in Studio:
+- **Instagram** — posts, carousels, Reels and Stories, and a plan for the week.
+- **YouTube** — Shorts scripts.
+- **LinkedIn** — posts, carousels and company page updates.
+- **Blog and email** — articles, question-and-answer pages, newsletters and follow-up emails.
+- **Long reads and audio** — guides, customer stories, reports and podcast episodes.
+- **Learning** — online courses, and study guides with a quiz. These are the pieces that turn
+  a customer into someone who recommends you, and they are usually the first thing a
+  stretched team stops producing.
+- **Visual** — infographics, mind maps, timelines and comparison tables.
 
-- **Whitepapers** — long, structured documents for people who have only just heard of you,
-  and for the sales team to hand over.
-- **Podcasts** — episode material, produced as audio.
-- **Shorts** — short-form video.
-- **Presentations** — decks.
-- **Infographics** — visual explanations of a position or a dataset.
-- **Reports** — periodic written analysis.
+**Checked before you see it.** Each draft runs through checks for its format — the opening
+line, the caption, the slides, the hashtags. If a check fails, PULSE rewrites the draft once.
+A check that could not run is shown as not checked, never as a pass.
 
-Alongside them, Content Strategy produces a channel-by-channel plan, and the strategy
-planner produces a dated 30-day schedule of work — what publishes, on which channel, in
-which week.
+**Your brand, drawn.** PULSE reads your brand palette and logo from your own site, and you can
+change them in Settings. Carousel slides, post images and video frames are drawn in those
+colours. Text that does not fit a slide fails its check rather than being cut.
 
-**Courses.** Teaching sequences for customer education and for the programmes that establish
-your expertise in a subject. These are the pieces that turn a customer into someone who
-recommends you, and they are usually the first thing a stretched team stops producing.
+**Reels, Stories and Shorts.** Attach your own video, or approve the script and PULSE makes
+the short video from it: the script's lines drawn on upright frames in your colours, read
+aloud by your PULSE's speech service.
 
-**Creatives.** Pictures are produced on the same machines and stored against the campaign
-they belong to. Short videos are assembled frame by frame from pictures produced the same
-way.
+**Mentions that are real.** An Instagram piece mentions only accounts PULSE has on record —
+your partners, your leads, or a name you gave it — and looks each one up on Instagram before
+tagging it.
 
-**The approval stages.** Every piece of content has one stated status: draft, waiting for
-review, approved, rejected, published, archived. Those stages are not decoration. They are
-how you can tell, at any moment, what is waiting on you, what has been rejected and why,
-and what actually went out.
+**Campaigns** hold the work together. A campaign is a goal with dates, channels and a plan of
+phases and posts, laid out from the time your team actually has, and each campaign has its
+own page. Every post sits in one column of the Campaigns board: planned, drafts to approve,
+scheduled, sent. A post's step trail says whether it went out, was held back, failed or
+missed its time, and why. Those columns are not decoration. They are how you can tell, at
+any moment, what is waiting on you and what actually went out.
 
-**Campaigns** hold the work together, carry a budget, and move through draft, active,
-paused, completed and archived.
-
-**Publishing** schedules approved posts and shows what is queued.
-
-Generation streams as it happens. You watch a whitepaper take shape rather than waiting for
-one to appear, which means you catch a wrong angle in the second paragraph instead of on
-page nine.
+**Download, or Autopilot.** Any approved piece can be downloaded as files to post yourself:
+the pictures, the video and the caption. With Instagram, YouTube, LinkedIn or your website
+connected and Autopilot on, an approved post goes out at the account's best time, measured
+from your own posts' results.
 
 ## Retain: keeping what you fought to win
 
@@ -355,73 +362,61 @@ Winning customers gets the attention and keeping them pays the bills. PULSE trea
 as a proper part of the work rather than an afterthought bolted onto a customer-record
 system.
 
-**Customer 360** generates a living profile for a customer or a segment: what they care
-about, what they respond to, where they are in their relationship with you. From that
-profile it maps a journey — the sequence of touches that account has had and the one that
-should come next.
+**Your 30-day plan.** The check-up turns its findings into a 30-day plan: tasks week by week,
+a calendar by channel, and where you started against where you are. Progress is measured from
+your weekly check-ins — new followers, posts, engagement, leads and how the week went — and the
+rest of the cycle can be re-planned from them. A trend you can see beats a surprise at renewal.
 
-**Persona Profile** holds the detail behind each persona, so the people writing to that
-audience are writing to a specific person rather than a category.
+**Leads that may go quiet.** A daily check lists the leads that may go quiet, with its reason,
+on **To do today**, beside the leads who replied to your email and the next step for each lead
+that is due.
 
-**Intelligence Console** is where audience analysis is worked: the screen for understanding
-who is actually paying attention.
+**Results.** Each post's reach, views, reactions and comments come from Instagram, LinkedIn
+and YouTube as those platforms report them. Visits, page views, ad clicks and spend come from
+Google Analytics and Google Ads; search clicks, positions and the pages losing clicks come from
+Google Search Console. A figure nothing measured says "Not measured", never zero. A report
+over any period you name comes out as a PDF in your language, built from those measured
+figures only.
 
-**Follow-up** runs structured 30-day cycles. Each cycle has a weekly planner, task states
-you move, saved check-ins that record what was discussed, and an evolution score with its
-history. The score is the useful part: it makes a cooling relationship visible as a trend
-rather than as a surprise at renewal.
-
-**Influencers** are listed, saved and tracked as a working roster rather than a spreadsheet
-somebody maintains.
-
-**Metrics and Insights.** Metrics reports impressions, clicks, conversions and return, with
-a day-by-day view of how those move and a view of how they split across channels, and a
-written reading of what the numbers mean. Analytics pulls in your Google Analytics figures
-and produces both a trend and a forward view, so a seasonal peak is visible while there is
-still time to prepare for it.
-
-**Content Gaps** compares what you publish against what your competitors publish, and names
-the subjects your market is asking about that you have not addressed. Impact Analytics
-shows which of your material is doing the work.
+**Ideas from what your market asks.** The topics your customers search for that your site does
+not cover come first. Then come post ideas for one kind of customer, one problem and one angle,
+each with the findings behind it. From those gaps, PULSE may propose a campaign, which waits
+for you to accept it.
 
 ## The console, screen by screen
 
 The console is organised around what you are trying to do, not around how the software is
-put together. Five groups.
+put together. Two groups, and your settings.
 
-**Overview** — the hub, the Marketing Console, Site Audit, Insights, Impact Analytics and
-Content Gaps. This is where you go to find out how things stand.
+**Audience** — **Brand Analysis**, where PULSE opens: one card per question, each with its own
+page, from your plan and your leads to your market, how people see you, ideas for what to
+post, and your results. And **Leads**: the people who could buy from you and the public tenders
+that need what you sell, on one board, with **Partners** beside them.
 
-**Audience** — Influencers, Customer 360, Persona Profile, Intelligence Console, Leads and
-Follow-up. This is where you go to work on people: who to watch, who to partner with, who
-to sell to, and how to keep them.
+**Content** — **Campaigns**: the board of posts, each campaign's own page with its plan, and
+the campaigns PULSE proposes. And **Studio**: **Make something new** and **My Library**, where
+each piece can be edited, approved, scheduled, downloaded or made again.
 
-**Content** — Campaigns, Creatives, Approval and Schedule, plus Courses. This is where work
-is framed, reviewed and queued.
+**Settings** — **Account** (your language, your brand palette and logo), **Integrations**,
+**Clients** for agencies that run several clients apart, and **Subscription**. An
+administrator also reaches **Admin** from Account.
 
-**Studio** — Content Strategy, Strategy Roadmap, Whitepapers, Podcasts, Shorts,
-Presentations, Infographics and Reports. This is where the material itself is produced.
+**Integrations** connects PULSE to the accounts you already run. Instagram, YouTube and
+LinkedIn connect through the platform's own sign-in, and each card says what PULSE may do
+there: publish, read results, read comments. Google Search Console connects the same way,
+read-only. Google Analytics, Google Ads and HubSpot take a key or token you create on that
+platform. Your website takes a GitHub token, to publish blog articles and to propose fixes as
+pull requests. Your own Gmail, Microsoft 365 or mail server sends your emails. Each card says
+whether it is ready, or what is missing, and you disconnect from the same card.
 
-**System** — Integrations, AI Team, Settings and Billing.
+**Assistant and voice.** The assistant sits in the corner of every page, and the voice commands
+bar takes spoken or typed commands. Ask about your own data, or type "Audit" and a web
+address to start a check-up.
 
-**Integrations** connects PULSE to the accounts you already run: LinkedIn, Instagram,
-TikTok, Facebook, X, YouTube, Google Ads, Google Analytics, HubSpot, Mailchimp, Spotify and
-GitHub. Each connection is configured in the console and tested before you rely on it, and
-can be disconnected from the same screen.
+**Subscription** shows which plan you are on and how many people are licensed.
 
-**AI Team** is a roster of named specialists, each with a defined role, that the in-console
-assistant hands work to. You can add a specialist, see the roster, and activate or
-deactivate any of them — which means the division of labour is something you configure
-rather than something you infer.
-
-**Billing** shows which plan you are on and how many people are licensed.
-
-The console runs in a browser, as an Android application from Google Play, and as a Linux
-desktop application. It keeps a copy of results on the machine itself, so a review session in
-a meeting room with a poor connection keeps working.
-
-The interface is available in English, Spanish, French and Portuguese, with a language
-picker in Settings.
+PULSE runs in a web browser, in English, Spanish, French and Portuguese. Pick the language in
+Settings → Account.
 
 ## What it is built on, and why that matters commercially
 
@@ -454,8 +449,8 @@ alone. This is not a specialist installation requiring specialist procurement.
 
 **Controls.** The console and the server behind it answer at the same web address, reached
 over an encrypted connection whose certificates Runink's own platform issues rather than an
-outside authority. People sign in with an email address and a password, or — where a
-deployment is set up that way — only with a Google account, and only if that address is on a
+outside authority. People sign in with a username and a password, or — where a
+deployment is set up that way — with a Google account, and only if that address is on a
 named list. What a person can see and do follows from three things at once: the role they
 hold, the attributes recorded against them, and what they are related to, such as the
 accounts they own. Personal details in a request are handled by the platform's own protection
@@ -589,37 +584,30 @@ Those files are the same on your first day and your five hundredth, and on your 
 you can compare them and confirm it.
 
 What makes the output yours is not training but **reading at the moment of the question**.
-Your site audit, your positioning documents, your prior material and your customer records
-are indexed on that machine; when a brief is written, the relevant passages are retrieved and
-placed into the question, with the source of each travelling alongside. That is the mechanism
-behind the claim on page 5 that generic inputs produce generic copy: the inputs here are
-specific because they are your own records, read at the moment of writing.
+Your check-up, your answers about your business, your leads and your earlier work are held on
+that machine, and a draft is written from them, with the findings behind it kept alongside.
+That is the mechanism behind the claim on page 5 that generic inputs produce generic copy: the
+inputs here are specific because they are your own records, read at the moment of writing.
 
-It is also why deleting a document removes its influence entirely. Nothing is left behind in
-a set of weights.
+Nothing about your business is written into the model itself.
 
 ### How does it get better over time?
 
-Four ways, none of which changes the model.
+Three ways, none of which changes the model.
 
-**Your judgements carry forward.** When you mark a research result as useful or not, that
-judgement is kept and shapes the next round. Approvals and rejections in the content queue
-are recorded the same way. The improvement accumulates against your account rather than
-walking out with whoever made it, which is exactly what does not happen when the knowledge
-lives with an agency account manager.
+**Your own results set the timing.** Once enough of your posts have results, PULSE measures
+the days and hours that got the most reactions and comments on each account, and Autopilot
+queues approved posts at those times. Until then it uses a starting schedule and says so. The
+improvement accumulates against your account rather than walking out with whoever made it,
+which is exactly what does not happen when the knowledge lives with an agency account manager.
 
-**The material it can reach grows.** Every audit run, every piece produced and every document
-indexed widens what the next brief can be written from.
+**The material it can reach grows.** Every check-up, every lead and every piece produced
+widens what the next brief can be written from.
 
 **The scoring is yours to tune.** The nine measures and the checks beneath them carry
 weightings held as settings rather than fixed rules, so the balance can be set to what your
 business actually competes on. They are also re-balanced around whichever data sources were
 available for a given site, so a score always reflects what was measured.
-
-**The quantitative work is chosen by testing.** Where a forward view is produced from your
-analytics history, candidate methods are fitted to the earlier part of that history and asked
-to predict the part held back; the one that missed by less is used, and how far each missed
-travels with the answer.
 
 ### What happens when it cannot work something out?
 
@@ -631,9 +619,9 @@ is the single commonest way audit tools mislead.
 **A source that failed is reported as failed**, distinctly from one that was simply not
 applicable, because the two need different responses from you.
 
-**A disarmed channel publishes nothing, and an unset setting is never consent.** Every draft
-carries one stated status — draft, waiting for review, approved, rejected, published,
-archived — so at any moment you can see what is waiting on you and what actually went out.
+**A disarmed channel publishes nothing, and an unset setting is never consent.** Every post
+sits in one column of the Campaigns board — planned, drafts to approve, scheduled, sent — so at
+any moment you can see what is waiting on you and what actually went out.
 A channel that has been switched off stays off even for approved material: an approval is
 consent to the *content*, and switching a channel off is a statement about the *channel*.
 Content held back that way is recorded as **held back** — its own terminal status, distinct
@@ -650,16 +638,16 @@ configuration is not consent to publish.
 publication is the channel switch itself: nothing publishes on a channel you have not armed,
 and the switch for each channel is printed when the application starts.
 
-**The reasoning is watchable while it happens.** Research and copy stream onto the screen as
-they are produced. A wrong angle is caught in the second paragraph rather than on page nine,
-which is a more practical form of quality control than any confidence score.
+**A missed time is never made up later.** A post whose time passed while it waited for
+approval is marked missed and is never sent late. Reschedule it or remove it; the choice
+stays with you.
 
 ### How does it work with the systems we already run?
 
-PULSE connects to the accounts you already have — your social channels, your advertising and
-analytics accounts, your customer-record system, your mailing platform — configured in the
-console and tested there before you rely on any of them, and disconnected from the same
-screen.
+PULSE connects to the accounts you already have — Instagram, YouTube and LinkedIn, Google
+Analytics, Google Ads and Search Console, HubSpot, your website repository and your own
+mailbox — each on its own card in Settings → Integrations, which says whether it is ready or
+what is missing, and disconnected from the same card.
 
 Leads synchronise into your customer-record system, so the sales team keeps working where
 they already work rather than being asked to move. That direction matters: PULSE is not
@@ -668,9 +656,6 @@ for a migration you did not budget for.
 
 Web research reads the public web through a browser the platform drives itself, extracting
 the readable substance of a page rather than the navigation and the banners.
-
-For outbound calling, PULSE connects to a telephone exchange you host yourself, so calls run
-over infrastructure you own rather than a service billed by the minute.
 
 ### Where does our material live, and is it used to train anything?
 
@@ -733,10 +718,9 @@ useful comes out.
 
 Yes, and the core case on page 16 assumes exactly that: one to five people in marketing.
 
-The operator is a marketing person, not an engineer. Connections are configured in the
-console. Briefs are written in ordinary language. The roster of specialists the assistant
-hands work to is something you configure from a screen rather than something you infer, so
-the division of labour is deliberate.
+The operator is a marketing person, not an engineer. Connections are made on one settings
+page, most of them through the platform's own sign-in. Briefs are written in ordinary
+language, and a check-up starts from one line: "Audit" and your web address.
 
 The honest framing, repeated from page 19, is that the technical part is the small part. What
 determines whether adoption succeeds is a change in working habit — the team's centre of
@@ -751,14 +735,13 @@ material you will publish.
 
 What the product does to earn that look is five things. Every audit score opens out into the
 measures beneath it and then into the individual checks, so a number is always traceable to
-what was actually examined. Generation streams as it happens, so a wrong direction is visible
-while it is being taken. Every piece carries an explicit status and an explicit approve or
-reject, and every publishing channel is disarmed until somebody arms it — with how those two
-controls work together set out on page 18. The weightings
-behind the scoring are settings you can read, which means you can disagree with them
-specifically rather than in general. And a diagnostic in progress carries a reasoning trace —
-the real actions it took and the sources behind them, alongside the streaming text — so a
-finding is something you can open up rather than something you take on faith.
+what was actually examined. Every draft shows the checks it passed, the ones that need work
+and the ones that could not be run. Every piece waits for an explicit approve or discard, and
+every publishing channel is disarmed until somebody arms it — with how those two controls work
+together set out on page 18. The weightings behind the scoring are settings you can read,
+which means you can disagree with them specifically rather than in general. And every stage of
+a check-up records where its answer came from and why a stage could not finish, so a finding
+is something you can open up rather than something you take on faith.
 
 ## What adopting PULSE involves
 
@@ -771,8 +754,8 @@ purchase.
 No data moves anywhere to run an evaluation, which usually means an evaluation can begin
 without a procurement conversation about data handling.
 
-The first useful output is available in the first session: run Site Audit against your own
-website and read the nine scores and the ranked recommendations. That result is
+The first useful output is available in the first session: run a check-up of your own
+website and read the nine scores and the ranked fixes. That result is
 worth having whether or not you go further.
 
 **Phase two: putting it into use.** For daily use, PULSE runs where your licence puts it: on
@@ -782,22 +765,23 @@ the installing. Working data is kept on those machines and copied into file stor
 over an encrypted connection at a web address you choose. The reasoning runs on ordinary
 processors, so this does not mean buying specialist graphics hardware.
 
-Then connect the accounts you already run: your social channels, Google Ads and Analytics,
-HubSpot, Mailchimp and the rest. Each connection is configured and tested in the console
-before you rely on it.
+Then connect the accounts you already run: Instagram, YouTube and LinkedIn, Google Analytics,
+Google Ads and Search Console, HubSpot, your website and your mailbox. Each card in Settings →
+Integrations says whether its connection is ready before you rely on it.
 
 **Phase three: working practice.** This is the part that determines whether adoption
 succeeds, and it is a change in habit rather than in technology.
 
 The team's centre of gravity moves from producing material to deciding about it. That is a
-different working day. The Approval queue becomes the main surface — the place where the
-lead spends time, exercising judgement on complete drafts rather than assembling them.
+different working day. **Drafts to approve** on the Campaigns board becomes the main
+surface — the place where the lead spends time, exercising judgement on complete drafts
+rather than assembling them.
 
-Three habits make the difference. Give feedback on research results, because that judgement
-carries forward. Keep the 30-day cycle running rather than treating it as a launch
-exercise, because the evolution score only tells you something when it has a history. And
-configure the AI Team roster to match how your team actually divides work, so the division
-of labour is deliberate.
+Three habits make the difference. Fill in the weekly check-in, because your 30-day plan
+measures progress from it. Keep the 30-day cycle running rather than treating it as a launch
+exercise, because a trend only tells you something when it has a history. And connect the
+accounts that report results, so the best times to post are measured from your own posts
+rather than taken from a starting schedule.
 
 A reasonable expectation: a first audit and a first anchor piece within the first week. A
 first full 30-day cycle completed within the first month. A settled working rhythm by the
@@ -825,8 +809,8 @@ premises, including those with no connection to the outside world, with
 a fuller record of who did what and terms set to your requirements. This is the level for regulated industries and for organisations whose
 deployment must sit entirely inside their own boundary.
 
-What you pay is visible in the console rather than arriving as a surprise. The Billing
-screen shows which plan you are on and how many people are licensed.
+What you pay is visible in the console rather than arriving as a surprise. Settings →
+Subscription shows which plan you are on and how many people are licensed.
 
 The economics are what changes behaviour. The licence is a function of how many people use
 it, not of how much work they put through it. Under a per-word or per-generation arrangement, every additional draft is a
@@ -943,15 +927,15 @@ defensible figure at the end of the quarter and an argument about whether it fel
 
 The most useful first move costs you an afternoon and moves no data anywhere.
 
-**Run an audit of your own site.** PULSE runs on a single workstation. Point Site Audit at
-your own website and read what comes back: the nine scores, the ranked
-recommendations, the business diagnosis, the market research for your sector. That is a
-concrete document about your own business, produced in a session, and it is worth having
-regardless of what you decide next.
+**Run a check-up of your own site.** PULSE runs on a single workstation. Type "Audit" and
+your own web address, and read what comes back on Brand Analysis: the nine scores, the ranked
+fixes, the business diagnosis, the market research for your sector. That is a concrete
+document about your own business, produced in a session, and it is worth having regardless of
+what you decide next.
 
-**Then run one anchor piece end to end.** Take the largest gap the audit names, brief a
-whitepaper on it in Studio, watch it stream in, edit it, approve it, and fan it out into
-the posts, the short videos and the email sequence. That exercise tells you the two things
+**Then run one anchor piece end to end.** Take the largest gap the check-up names, make a
+guide on it in Studio, read its checks, edit it, approve it, and make the posts, the short
+videos and the follow-up emails from the same reading. That exercise tells you the two things
 you actually need to know: whether the output is good enough for your name to go on it, and
 whether the working rhythm suits your team.
 

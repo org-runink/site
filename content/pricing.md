@@ -3,10 +3,10 @@ title: "Pricing"
 # Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
 # seo_title verbatim, at most 60 characters; seo_description is the meta and card
 # description, at most 155. Visible copy on the page is unchanged by these two.
-seo_title: "Runink FACE pricing: per person, run where you choose"
-seo_description: "What a Runink FACE licence costs. You pay per person who uses it and pick where it runs: Runink's shared machines, your own cloud account or your premises."
+seo_title: "FACE by Runink pricing: per person, run where you choose"
+seo_description: "What a FACE by Runink licence costs. You pay per person who uses it and pick where it runs: Runink's shared machines, your own cloud account or your premises."
 image: "/images/face/cockpit.png"
-description: "The operational jobs Runink FACE is built for, and what a licence to run them costs. You pay for the number of people who use it, and choose where the work runs: on Runink's shared machines, in your own cloud account, or on your own premises."
+description: "The operational jobs FACE by Runink is built for, and what a licence to run them costs. You pay for the number of people who use it, and choose where the work runs: on Runink's shared machines, in your own cloud account, or on your own premises."
 layout: "pricing"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
@@ -76,13 +76,13 @@ author: "Runink"
 {{< pricing-table-2 >}}
 {
   "intro": [
-    "This is the price of Runink FACE: Fulfilment Autonomous Claims Engine. You pay for the number of people who use it, and you choose where the work runs: on Runink's shared machines, in your own cloud account, or on your own premises.",
+    "This is the price of FACE by Runink: Fulfilment Autonomous Claims Engine. You pay for the number of people who use it, and you choose where the work runs: on Runink's shared machines, in your own cloud account, or on your own premises.",
     "That is the whole shape of it. The three licences below differ on that one question of where the work runs, and the price follows from it. What the work is comes first, though, because that is the part a price is worth arguing about."
   ],
   "eyebrow": "The work",
   "heading": "Operations Actionable Twins",
   "lead": [
-    "These are the operational jobs Runink FACE is built for. In each one the evidence is already in your systems and nobody has the hours to join it up. Each one ends with a person approving a drafted action rather than reading another dashboard.",
+    "These are the operational jobs FACE by Runink is built for. In each one the evidence is already in your systems and nobody has the hours to join it up. Each one ends with a person approving a drafted action rather than reading another dashboard.",
     "They are grouped by when in the operation the problem turns up. Each opens onto the page that explains it: what it reads, what it drafts, and the measures to write your own figures against."
   ],
   "personas": {
@@ -294,7 +294,7 @@ author: "Runink"
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "Seats. A **seat** is one person who uses Runink FACE. You count the people who need it, multiply by the price above, and that is the licence.\n\nThe licence you pick decides where the work runs. **Lite** runs on Runink's shared machines and includes Compute Units with every seat. **Dedicated** runs on runners in your own cloud account with no limit on units: your cloud bills you for that compute directly, and Runink adds 1% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nThese seats are for FACE. PULSE and Runink TIDE are separate products, each sold with its own subscription. Beyond the licence, the only fees on a FACE seat are the usage fees on FACE's automated actions, set out above."
+      "answer": "Seats. A **seat** is one person who uses FACE by Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nThe licence you pick decides where the work runs. **Lite** runs on Runink's shared machines and includes Compute Units with every seat. **Dedicated** runs on runners in your own cloud account with no limit on units: your cloud bills you for that compute directly, and Runink adds 1% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nThese seats are for FACE. PULSE and Runink TIDE are separate products, each sold with its own subscription. Beyond the licence, the only fees on a FACE seat are the usage fees on FACE's automated actions, set out above."
     },
     {
       "question": "What is a Compute Unit?",

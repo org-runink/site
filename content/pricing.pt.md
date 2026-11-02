@@ -3,10 +3,10 @@ title: "Preços"
 # Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
 # seo_title verbatim, at most 60 characters; seo_description is the meta and card
 # description, at most 155. Visible copy on the page is unchanged by these two.
-seo_title: "Preços do Runink FACE: por pessoa, onde você escolher"
-seo_description: "Quanto custa uma licença do Runink FACE. Você paga por pessoa e escolhe onde roda: nas máquinas compartilhadas da Runink, na sua nuvem ou no seu local."
+seo_title: "Preços do FACE by Runink: por pessoa, onde você escolher"
+seo_description: "Quanto custa uma licença do FACE by Runink. Você paga por pessoa e escolhe onde roda: nas máquinas compartilhadas da Runink, na sua nuvem ou no seu local."
 image: "/images/face/cockpit.png"
-description: "Os trabalhos operacionais para os quais o Runink FACE foi feito, e quanto custa uma licença para rodá-los. Você paga pelo número de pessoas que o usam e escolhe onde o trabalho roda: nas máquinas compartilhadas do Runink, na sua própria conta na nuvem ou nas suas próprias instalações."
+description: "Os trabalhos operacionais para os quais o FACE by Runink foi feito, e quanto custa uma licença para rodá-los. Você paga pelo número de pessoas que o usam e escolhe onde o trabalho roda: nas máquinas compartilhadas do Runink, na sua própria conta na nuvem ou nas suas próprias instalações."
 layout: "pricing"
 date: "2024-05-20T00:00:00Z"
 author: "Runink"
@@ -26,13 +26,13 @@ author: "Runink"
 {{< pricing-table-2 >}}
 {
   "intro": [
-    "Este é o preço do Runink FACE: Fulfilment Autonomous Claims Engine. Você paga pelo número de pessoas que o usam e escolhe onde o trabalho roda: nas máquinas compartilhadas do Runink, na sua própria conta na nuvem ou nas suas próprias instalações.",
+    "Este é o preço do FACE by Runink: Fulfilment Autonomous Claims Engine. Você paga pelo número de pessoas que o usam e escolhe onde o trabalho roda: nas máquinas compartilhadas do Runink, na sua própria conta na nuvem ou nas suas próprias instalações.",
     "É toda a lógica. As três licenças abaixo se diferenciam por essa única pergunta, onde o trabalho roda, e o preço decorre dela. Mas o trabalho vem primeiro, porque é a parte sobre a qual vale a pena discutir um preço."
   ],
   "eyebrow": "O trabalho",
   "heading": "Gêmeos Digitais de Operações",
   "lead": [
-    "Estes são os trabalhos operacionais para os quais o Runink FACE foi feito. Em cada um, as evidências já estão nos seus sistemas e ninguém tem as horas para juntá-las. E cada um termina com uma pessoa aprovando uma ação redigida, não lendo mais um painel.",
+    "Estes são os trabalhos operacionais para os quais o FACE by Runink foi feito. Em cada um, as evidências já estão nos seus sistemas e ninguém tem as horas para juntá-las. E cada um termina com uma pessoa aprovando uma ação redigida, não lendo mais um painel.",
     "Estão agrupados pelo momento da operação em que o problema aparece. Cada um abre a página que o explica: o que ele lê, o que ele redige, e as medidas para escrever os seus próprios números."
   ],
   "personas": {
@@ -236,7 +236,7 @@ author: "Runink"
     },
     {
       "question": "O que eu estou pagando, afinal?",
-      "answer": "Assentos. Um **assento** é uma pessoa que usa o Runink FACE. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.\n\nA licença que você escolhe decide onde o trabalho roda. A **Lite** roda nas máquinas compartilhadas do Runink e inclui Unidades de Computação em cada assento. A **Dedicada** roda em executores na sua própria conta na nuvem, sem limite de unidades: a sua nuvem cobra essa computação diretamente de você, e o Runink acrescenta 1% do que esses executores custam. A **Enterprise** roda nas suas instalações ou na sua própria nuvem, com preço definido com você.\n\nEstes assentos são do FACE. PULSE e Runink TIDE são produtos separados, cada um com sua própria assinatura. Além da licença, as únicas taxas sobre um assento do FACE são as taxas de uso sobre as ações automáticas do FACE, detalhadas acima."
+      "answer": "Assentos. Um **assento** é uma pessoa que usa o FACE by Runink. Você conta as pessoas que precisam dele, multiplica pelo preço acima, e isso é a licença.\n\nA licença que você escolhe decide onde o trabalho roda. A **Lite** roda nas máquinas compartilhadas do Runink e inclui Unidades de Computação em cada assento. A **Dedicada** roda em executores na sua própria conta na nuvem, sem limite de unidades: a sua nuvem cobra essa computação diretamente de você, e o Runink acrescenta 1% do que esses executores custam. A **Enterprise** roda nas suas instalações ou na sua própria nuvem, com preço definido com você.\n\nEstes assentos são do FACE. PULSE e Runink TIDE são produtos separados, cada um com sua própria assinatura. Além da licença, as únicas taxas sobre um assento do FACE são as taxas de uso sobre as ações automáticas do FACE, detalhadas acima."
     },
     {
       "question": "O que é uma Unidade de Computação?",

@@ -64,6 +64,15 @@ next_about: "Runink PULSE"
 # suggestion that research is retrieved from an index. Ask before adding any of
 # them back.
 #
+# Refreshed 2026-11-02 against PULSE Release 10 and its user guide
+# (docs.runink.org/pulse): the page now uses the app's own names — Brand
+# Analysis, Leads (with public tenders and Partners), Campaigns with each
+# campaign's page, Studio with Download, and Settings → Integrations. Gone with
+# the pages the app retired: the per-customer profile, the follow-up screen, the
+# market view, the influencer list, TikTok, and the Android download. WhatsApp
+# replies are described as the product ships them: off until an administrator
+# turns them on.
+#
 # English only, like /river/ and /downloads/, so no translation is left behind; the
 # homepage card that links here falls back to this page on /es/, /fr/ and /pt/ and
 # says the page is in English.
@@ -109,7 +118,7 @@ image: "/images/products/pulse-og.jpg"
     </div>
     <div class="border-l-2 border-signal pl-4">
       <span class="block text-xs font-bold uppercase tracking-[0.2em] text-signal mb-1">Retain</span>
-      <p class="text-sm text-ink-2 leading-relaxed">See a customer cooling before the renewal, not after.</p>
+      <p class="text-sm text-ink-2 leading-relaxed">See what each post brought in, and who may go quiet.</p>
     </div>
   </div>
   <p class="text-sm text-ink-3 mt-8">No channel publishes until you switch it on. Your customer lists stay on the machines your plan names, and no outside AI service reads them.</p>
@@ -172,14 +181,15 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         <h3 class="text-4xl font-bold text-white mb-6">You pay for a website. Is it bringing anyone in?</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                Most owners cannot answer that without paying someone to look. PULSE looks for you. Give it your web address. It scores your site on nine measures, writes a plain diagnosis, and ranks what to fix first. You act on the list from the same screen.
+                Most owners cannot answer that without paying someone to look. PULSE looks for you. Give it your web address. It runs a check-up: it scores your site on nine measures, writes a plain diagnosis, and ranks what to fix first. The result opens on Brand Analysis, the page PULSE starts on.
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Site Audit</span> <span class="text-slate-300">Each measure is a set of checks you can read. Can search engines read your pages? How fast do they load? Who links to you? Is there something to click and a way to buy? A check that needs a source you have not connected is set aside and listed by name, and the rest of the measure is weighed around it. Something nobody could measure does not lower your score — and each measure says how much of it was measured, so a high score on thin coverage cannot pass for a high score on full coverage. The weightings behind all nine are settings you can read, so you can disagree with one in particular rather than with the score in general.</span></li>
-            <li><span class="text-signal font-bold block mb-1">One line to start</span> <span class="text-slate-300">Type "Audit" and your web address into the assistant, or say it. PULSE reads your site, scores it and writes the diagnosis. Then it fills in the rest from that one reading: drafts waiting for your approval, a draft campaign, a 30-day follow-up plan, customer profiles, a draft course, market research and the first leads. It runs in minutes, and it keeps running if you close the page. Ask again within a day and you get that same audit back, with the date it ran on it, until you say run it again.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Site score</span> <span class="text-slate-300">Each measure is a set of checks you can read. Can search engines read your pages? How fast do they load? Who links to you? Is there something to click and a way to buy? A check that needs a source you have not connected is set aside and listed by name, and the rest of the measure is weighed around it. Something nobody could measure does not lower your score — and each measure says how much of it was measured, so a high score on thin coverage cannot pass for a high score on full coverage. The weightings behind all nine are settings you can read, so you can disagree with one in particular rather than with the score in general.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Fixes as pull requests</span> <span class="text-slate-300">Connect your website repository in Settings → Integrations, and once your administrator has switched site fixes on, PULSE proposes each fix the site score found as a pull request. Your developer reviews it and merges it. PULSE never merges and never changes your main branch.</span></li>
+            <li><span class="text-signal font-bold block mb-1">One line to start</span> <span class="text-slate-300">Type "Audit" and your web address into the assistant, or say it. PULSE reads your site, scores it and writes the diagnosis. Then it fills in the rest from that one reading: drafts waiting for your approval, a proposed campaign, a 30-day plan, content ideas for each kind of customer, the competitors and partners it found, and the first leads. It runs in minutes, and it keeps running if you close the page. Ask again within a day and you get that same audit back, with the date it ran on it, until you say run it again.</span></li>
             <li><span class="text-signal font-bold block mb-1">Every step says where it got that</span> <span class="text-slate-300">The audit comes back as a list of steps. A step that wrote something says whether it was read on the web, worked out by the model, or both, and shows the first address it read. A step that could not finish says why, in words, and the page it would have filled stays empty. Nothing is filled with something made up to look complete.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Your channels, read together</span> <span class="text-slate-300">Your website, LinkedIn, Instagram and TikTok, turned into one written business analysis. Export it and put it in front of your partners or your board.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Brand Analysis</span> <span class="text-slate-300">One card per question, each with its own page: can people find you, in search and in AI answers; who you compete with and where you win; partners to contact; what people in your market are talking about; and how your business comes across. A card nobody could measure says "Not measured", never zero. Export the written diagnosis as a PDF and put it in front of your partners or your board.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Fewer outside audits bought from an agency or consultant. Fewer hours spent guessing which fix matters most.</span></li>
         </ul>
     </div>
@@ -208,11 +218,13 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Finding the companies</span> <span class="text-slate-300">Describe the kind of customer you want. PULSE searches the public web for companies that match. For each one it drafts a cold email, a call script and a LinkedIn message, written from what it read about that company. Leads move through a pipeline: new, contacted, qualified, won or lost. They sync with HubSpot, so sales keeps working where it already works.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Knowing the market</span> <span class="text-slate-300">Topics trending in your sector, competitor channels worth watching, and the podcasts, publications and events where your subject belongs. What an audit finds stays on the Market view, each item with the site it was found on and the date. Shows worth a guest spot also join your influencer list, scored by how well they fit your subject. An audience size appears only where the source actually stated one. Mark a result useful or not, and the next round learns from it.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Answering on WhatsApp</span> <span class="text-slate-300">Connect WhatsApp through your own Twilio account, and PULSE can answer messages from people already in your HubSpot contacts, at any hour. Each incoming message is treated as information, never as an instruction, and each reply is checked before it is sent. Once WhatsApp is connected, PULSE answers on its own, and one setting turns those replies off.</span></li>
-            <li><span class="text-signal font-bold block mb-1">Phone calls</span> <span class="text-slate-300">PULSE places a call to a lead through a phone exchange you host yourself, so there is no per-minute calling service to pay. The sales agent hears what the person says and answers in its own voice, while the call is happening. Outbound calling starts switched off: an administrator turns it on, and only people with editing rights place calls. Consent, calling hours and recording notices stay your decision, as the law requires.</span></li>
-            <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Fewer sales hours spent building lists and writing first drafts. No per-minute calling bill. And revenue that leaks today, every time a lead waits too long for an answer.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Finding the companies</span> <span class="text-slate-300">Describe the kind of customer you want. PULSE searches the public web for companies that publish a way to reach them. For each one it drafts a cold email, a call script and a LinkedIn message, written from what it read about that company. Leads move across one board: new, talking, proposal, won or lost. Sync with HubSpot, so sales keeps working where it already works, and send an email draft from your own Gmail or Microsoft 365 mailbox, which also shows you who replied.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Public tenders</span> <span class="text-slate-300">PULSE reads official open tender data every day and puts the public tenders that need what you sell on the same Leads board, each marked as a public tender. It drafts a response for you to read. You decide, and you submit.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Partners and the market</span> <span class="text-slate-300">The businesses, associations, newsletters and shows worth working with, each with the email, phone or LinkedIn its own page publishes, on Leads → Partners. On Brand Analysis: what people in your market are talking about, and who you compete with. Each item names the site it was found on. An audience size appears only where the source actually stated one.</span></li>
+            <li><span class="text-signal font-bold block mb-1">To do today</span> <span class="text-slate-300">One next step per lead that is due, in plain words, with Do it and Skip. Leads who replied to your email, and leads that may go quiet, are listed there too.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Answering on WhatsApp</span> <span class="text-slate-300">Connect WhatsApp through your own Twilio account, and PULSE can answer messages from people already in your HubSpot contacts, at any hour. Each incoming message is treated as information, never as an instruction, and each reply is checked before it is sent. Automatic replies start switched off; your administrator turns them on.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Phone calls</span> <span class="text-slate-300">PULSE can call a lead with an AI assistant. It says it is an AI calling for your company, says the call is recorded, follows the lead's call script, and writes the outcome and the next step to the lead. Calls start switched off: an administrator turns them on, and only people with editing rights place them. PULSE refuses a call without the lead's recorded consent, outside 08:00 to 21:00 in the lead's own time, or to a number on your do-not-call list.</span></li>
+            <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Fewer sales hours spent building lists, reading tender sites and writing first drafts. And revenue that leaks today, every time a lead waits too long for an answer.</span></li>
         </ul>
     </div>
 </div>
@@ -223,16 +235,18 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         <h3 class="text-4xl font-bold text-white mb-6">Campaign copy, written at night, after the real work.</h3>
         <div class="text-lg text-slate-200 space-y-6 leading-relaxed">
             <p>
-                Or paid for every month, through an agency retainer for posts that are mostly routine. PULSE drafts that work for you. One brief becomes LinkedIn posts, blog articles, whitepapers and a course. Studio adds a two-host podcast script, a hook-first script with its shot list for a short video, a deck written slide by slide with speaker notes, an infographic laid out section by section, and a report over the period you name. Every piece starts from the same reading of your business, so the message holds across channels.
+                Or paid for every month, through an agency retainer for posts that are mostly routine. PULSE drafts that work for you, in Studio. It writes Instagram posts, carousels, Reels and Stories, YouTube Shorts scripts, LinkedIn posts and carousels, blog articles, newsletters and follow-up emails, guides, customer stories, reports, podcast episodes, online courses and infographics. Every piece starts from the same reading of your business, so the message holds across channels.
             </p>
             <p>
-                The text appears on screen as it is written, so a wrong angle is caught in the second paragraph, not on page nine. A longer piece says which part of the work it is on — waiting for the model, writing, then the editorial pass — and a piece that was cut short says so. Half a document is never handed to you as a finished one.
+                PULSE checks each draft before you see it: the opening line, the caption, the slides, the hashtags. If a check fails, PULSE rewrites the draft once, and a check it could not run is shown as not checked, never as a pass.
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Every draft has a status</span> <span class="text-slate-300">Each piece carries one status: draft, waiting for review, approved, rejected, published, archived. At any moment you see what is waiting on you and what actually went out.</span></li>
-            <li><span class="text-signal font-bold block mb-1">A LinkedIn post every day</span> <span class="text-slate-300">For each active campaign, PULSE drafts one LinkedIn post a day and puts it in your review queue. Copy it with one click and post it from your own profile.</span></li>
-            <li><span class="text-signal font-bold block mb-1">A plan for the month</span> <span class="text-slate-300">PULSE writes a channel-by-channel plan, then turns it into a dated schedule: what publishes, on which channel, in which week. It queues only on the channels you have switched on.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Campaigns, each with its own page</span> <span class="text-slate-300">A campaign is a goal with dates, channels and a plan of phases and posts, laid out from the time your team actually has. Every post sits in one column of the Campaigns board: planned, drafts to approve, scheduled, sent. Its step trail says whether it went out, was held back, failed or missed its time, and why.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Your brand on every picture</span> <span class="text-slate-300">PULSE reads your brand palette and logo from your own site, and you can change them in Settings. Carousel slides, post images and video frames are drawn in those colours, with text colours checked for contrast.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Reels, Stories and Shorts</span> <span class="text-slate-300">Attach your own video, or approve the script and PULSE makes the short video from it: the lines drawn on upright frames in your colours, read aloud by your PULSE's speech service.</span></li>
+            <li><span class="text-signal font-bold block mb-1">@mentions that are real</span> <span class="text-slate-300">An Instagram piece mentions only accounts PULSE has on record — your partners, your leads, or a name you gave it — and looks each one up on Instagram before tagging it.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Download, or let it post</span> <span class="text-slate-300">Download any approved piece as files you can post yourself: the pictures, the video and the caption. Or connect Instagram, YouTube, LinkedIn or your website, and with Autopilot on, an approved post goes out at the account's best time, measured from your own posts' results.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Agency hours for routine copy. Evenings an owner spends writing. A separate scheduler and a separate writing tool, each with its own seat price.</span></li>
         </ul>
     </div>
@@ -252,10 +266,10 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
             </p>
         </div>
         <ul class="space-y-6 mt-8">
-            <li><span class="text-signal font-bold block mb-1">Channel results, in plain words</span> <span class="text-slate-300">Impressions, clicks, conversions and return, day by day and split by channel, read from the accounts you connect. A written note says what the numbers mean, and a forecast carries a range around it so you can see how much of it is guesswork. Content Gaps compares what you publish with your competitors, and names the questions your market asks that you have not answered.</span></li>
-            <li><span class="text-signal font-bold block mb-1">A figure it could not get stays blank</span> <span class="text-slate-300">PULSE shows only figures it actually read. A number it could not obtain is shown as a dash. It is never rounded down to zero and never estimated, so a quiet channel and a channel nobody measured never look the same on the screen.</span></li>
-            <li><span class="text-signal font-bold block mb-1">One profile per customer</span> <span class="text-slate-300">What a customer or segment cares about, what they respond to, and where they stand with you. It lists the touches that account has had, and suggests the one that should come next.</span></li>
-            <li><span class="text-signal font-bold block mb-1">30-day follow-up</span> <span class="text-slate-300">A weekly planner, tasks you move along, saved check-ins, and a score with its history. A cooling customer shows up as a trend, not a surprise at renewal.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Results, in plain words</span> <span class="text-slate-300">Each post's reach, views, reactions and comments as Instagram, LinkedIn and YouTube report them. Visits, ad clicks and spend from Google Analytics and Google Ads. Search clicks, positions and pages losing clicks from Google Search Console. All of it on Brand Analysis, with a PDF report over any period you name.</span></li>
+            <li><span class="text-signal font-bold block mb-1">A figure it could not get stays blank</span> <span class="text-slate-300">PULSE shows only figures it actually read. A number it could not obtain says "Not measured". It is never rounded down to zero and never estimated, so a quiet channel and a channel nobody measured never look the same on the screen.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Ideas from what your market asks</span> <span class="text-slate-300">The topics your customers search for that your site does not cover, then post ideas for one kind of customer, one problem and one angle, each with the findings behind it.</span></li>
+            <li><span class="text-signal font-bold block mb-1">Your 30-day plan</span> <span class="text-slate-300">Tasks week by week, a calendar by channel, and where you started against where you are, measured from your weekly check-ins. Leads that may go quiet show up on To do today, before the renewal, not after it.</span></li>
             <li><span class="text-signal font-bold block mb-1">What it is worth</span> <span class="text-slate-300">Opex. Ad spend kept on channels that convert, and taken off the ones that do not. Revenue kept, because a quiet customer gets a call in time.</span></li>
         </ul>
     </div>
@@ -269,7 +283,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 <div class="max-w-5xl mx-auto px-4">
     <div class="mb-16 max-w-3xl">
         <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">Your team decides what goes out.</h2>
-        <p class="text-xl text-ink-2 leading-relaxed">PULSE drafts, and your team decides what goes out. Every draft, whether a post, a cold email, a call script or a whitepaper, arrives with a status and an approve and a reject. The switch that decides whether anything leaves on a channel is separate, and it starts off. WhatsApp replies are the exception: once WhatsApp is connected, PULSE answers on its own until the owner turns that setting off.</p>
+        <p class="text-xl text-ink-2 leading-relaxed">PULSE drafts, and your team decides what goes out. Every draft, whether a post, a cold email, a call script or a guide, waits for an approve or a discard. The switch that decides whether anything leaves on a channel is separate, and it starts off. Automatic replies, on WhatsApp or to comments, also start off, and stay off until someone turns them on.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -279,7 +293,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">A second pass before it reaches you</h3>
-            <p class="text-slate-300">The agents propose. Before a prescription, a content gap or a plan for the quarter is saved, a judge checks it against the evidence the run actually gathered. One the judge disagrees with is held back and listed as held back. One it could not rule on is kept and marked as such. Disagreement is never shown to you as agreement, and a held-back prescription never becomes a draft or a scheduled post.</p>
+            <p class="text-slate-300">The agents propose. Before a prescription, a content idea, a campaign plan or a site fix is saved, PULSE's reviewer checks it against the evidence the run actually gathered. One the reviewer disagrees with is held back and listed as held back. One it could not rule on is kept and marked as such. Disagreement is never shown to you as agreement, and a held-back prescription never becomes a draft or a scheduled post.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">No outside AI service sees your lists</h3>
@@ -301,7 +315,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">It runs where you put it</h3>
-            <p class="text-slate-300">The same software runs on one workstation to try it out, and on one machine or several inside your own estate for daily use. PULSE Lite runs on Runink's shared machines instead. No outside AI service is called on any plan. The console opens in a browser, on an Android phone and on a Linux desktop, in English, Spanish, French and Portuguese.</p>
+            <p class="text-slate-300">The same software runs on one workstation to try it out, and on one machine or several inside your own estate for daily use. PULSE Lite runs on Runink's shared machines instead. No outside AI service is called on any plan. PULSE opens in a web browser, in English, Spanish, French and Portuguese.</p>
         </div>
         <div class="bg-ink/5 p-8 rounded-xl border border-ink/10">
             <h3 class="text-2xl font-bold text-white mb-4">No graphics card to buy</h3>
@@ -337,15 +351,15 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
     "questions": [
         {
             "question": "Is PULSE the same thing as Runink FACE?",
-            "answer": "No. They are separate products. PULSE is for marketing and sales: site and social audit, market research, finding leads and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDE is a third product, also sold separately: the operations layer for your engineering and data teams, on your servers, your cloud or ours. Its paper describes it."
+            "answer": "No. They are separate products. PULSE is for marketing and sales: the check-up of your site and market, finding leads and public tenders, and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDE is a third product, also sold separately: the operations layer for your engineering and data teams, on your servers, your cloud or ours. Its paper describes it."
         },
         {
             "question": "How do I answer new leads faster?",
-            "answer": "Take the first part of the work off your people. Describe the customer you want, and PULSE finds companies that match and drafts a cold email, a call script and a LinkedIn message for each. Connect WhatsApp through your own Twilio account, and it can answer people already in your HubSpot contacts at any hour, with each reply checked before it is sent. Once WhatsApp is connected it answers on its own, and one setting turns those replies off."
+            "answer": "Take the first part of the work off your people. Describe the customer you want, and PULSE finds companies that match and drafts a cold email, a call script and a LinkedIn message for each. To do today lists one next step for each lead that is due, and the leads who replied to your email. Connect WhatsApp through your own Twilio account, and once your administrator turns automatic replies on, PULSE can answer people already in your HubSpot contacts at any hour, with each reply checked before it is sent."
         },
         {
             "question": "How do I spend less on an agency for routine posts?",
-            "answer": "Draft the routine work yourselves, from one brief. PULSE turns one brief into LinkedIn posts, blog articles, whitepapers and a course, and Studio adds a two-host podcast script, a short-video script with its shot list, a deck with speaker notes, an infographic laid out section by section, and a report over the period you name. It also writes a dated plan of what publishes on which channel in which week. Every draft carries a review status, and nothing goes out on a channel until someone switches that channel on. The seat price stays the same however many pieces you write."
+            "answer": "Draft the routine work yourselves, in Studio. PULSE writes Instagram posts, carousels, Reels and Stories, YouTube Shorts scripts, LinkedIn posts, blog articles, newsletters, guides, podcast episodes, courses and reports, in your brand's colours. Each campaign gets a dated plan of which post goes out on which channel and when. Every draft waits on the Campaigns board for your approval, and nothing goes out on a channel until someone switches that channel on. The seat price stays the same however many pieces you write."
         },
         {
             "question": "Can we run PULSE on our own servers?",
@@ -353,23 +367,23 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "Does PULSE publish on its own, or do we?",
-            "answer": "You decide. Every draft — a post, a cold email, a call script, a whitepaper — carries a status and an approve or reject. The control that decides whether anything leaves is separate. Every publishing channel stays off until someone switches it on, with one main switch and one per channel. A channel that is off sends nothing, whatever status a draft carries, and switching a channel on is the decision that lets material go out on it. On the channels that post as the company itself — its own LinkedIn, its blog, its podcast — only the people the owner names by name can publish at all. WhatsApp replies go out on their own once WhatsApp is connected, only to people already in your HubSpot contacts, and the owner can turn them off with one setting."
+            "answer": "You decide. Every draft — a post, a cold email, a call script, a guide — waits for an approve or a discard. The control that decides whether anything leaves is separate. Every publishing channel stays off until someone switches it on, with one main switch and one per channel. A channel that is off sends nothing, whatever status a draft carries, and switching a channel on is the decision that lets material go out on it. On the channels that post as the company itself — its own LinkedIn, its blog, its podcast — only the people the owner names by name can publish at all. With Autopilot on for an account, an approved post waits for that account's best time; nothing you have not approved is queued. Automatic replies on WhatsApp go only to people already in your HubSpot contacts, and they start switched off until your administrator turns them on."
         },
         {
             "question": "Does it need training on our business first?",
-            "answer": "No. There is nothing to label or upload in advance. When PULSE writes, it reads your own material at the moment of the question — your site audit, your positioning documents, your earlier work and your customer records, held on the machines your plan names — and keeps the source next to the draft. Delete a document and PULSE stops using it. Nothing about your business is baked into the model, which is the same file on your first day and your five hundredth."
+            "answer": "No. There is nothing to label or upload in advance. When PULSE writes, it reads your own material at the moment of the question — your check-up, your answers about your business, your leads and your earlier work, held on the machines your plan names. Nothing about your business is baked into the model, which is the same file on your first day and your five hundredth."
         },
         {
             "question": "What happens when it cannot work something out?",
-            "answer": "It says so. If a Site Audit check depends on a source you have not connected, that check is set aside and named, and the rest of the measure is weighed around it. The score is not quietly lowered by something nobody measured. In the one-line audit, each step records where its result came from — read on the web, worked out by the model, or both — and a step that could not finish gives the reason, while the page it would have filled stays empty. A source that failed is reported as failed, separate from one that did not apply. And a channel that is switched off stays off, even for approved material. That material is marked as held back, with a stated reason, so you can tell it apart from both published and failed."
+            "answer": "It says so. If a site-score check depends on a source you have not connected, that check is set aside and named, and the rest of the measure is weighed around it. The score is not quietly lowered by something nobody measured. In the one-line audit, each step records where its result came from — read on the web, worked out by the model, or both — and a step that could not finish gives the reason, while the page it would have filled stays empty. A source that failed is reported as failed, separate from one that did not apply. And a channel that is switched off stays off, even for approved material. That material is marked as held back, with a stated reason, so you can tell it apart from both published and failed."
         },
         {
             "question": "How do we know it is not making the numbers up?",
-            "answer": "Because it only shows figures it read. Impressions, clicks, conversions and return come from the advertising and analytics accounts you connect, and nowhere else — an audit never writes a performance number. A figure PULSE could not obtain is shown as a dash rather than a zero or an estimate. An influencer or podcast found by research carries a score for how well it fits your subject, not an audience figure, and an audience size appears only where the source stated one. Every audit score opens out into the measures beneath it and then into the individual checks, so a number is always traceable to what was examined."
+            "answer": "Because it only shows figures it read. Impressions, clicks, conversions and return come from the advertising and analytics accounts you connect, and nowhere else — an audit never writes a performance number. A figure PULSE could not obtain says \"Not measured\" rather than showing a zero or an estimate. A partner or show found by a check-up carries a score for how well it fits your subject, not an audience figure, and an audience size appears only where the source stated one. Every audit score opens out into the measures beneath it and then into the individual checks, so a number is always traceable to what was examined."
         },
         {
             "question": "How does it work with the systems we already run?",
-            "answer": "PULSE connects to the accounts you already have — your social accounts, Google Ads and Google Analytics, and HubSpot. You create the token or key on the platform itself, paste it into the console, and test the connection there before you rely on it; it is stored sealed, never shown again, and you disconnect it from the same screen. Leads sync into HubSpot rather than PULSE trying to become your customer-record system, so sales keeps working where it already works."
+            "answer": "Through Settings → Integrations, one card per account. Instagram, YouTube, LinkedIn and Google Search Console connect through the platform's own sign-in. Google Analytics and Google Ads take a key you create in Google Cloud, HubSpot takes an access token, and your website repository takes a GitHub token for that one repository. Your own Gmail, Microsoft 365 or mail server sends your emails. Each card says whether it is ready, or what is missing, and you disconnect from the same card. Tokens are stored encrypted and never shown again. Leads sync into HubSpot rather than PULSE trying to become your customer-record system, so sales keeps working where it already works."
         },
         {
             "question": "Where does our data go?",
@@ -381,7 +395,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "Is there anything we can put in someone's hands today?",
-            "answer": "An Android build of the console is on the [downloads page](/downloads/). You install it directly from that page."
+            "answer": "PULSE itself. It opens in a web browser at your organisation's PULSE address, and the [getting-started guide](https://docs.runink.org/pulse/docs/getting-started/) walks through signing in and the first check-up."
         },
         {
             "question": "What does it cost?",

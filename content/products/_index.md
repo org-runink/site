@@ -34,7 +34,7 @@ items:
     url: "/products/pulse/"
     logo: "/images/brand/pulse-persona.webp"
     logo_alt: "PULSE"
-    line: "One marketing application your team operates: the audit, the research, the leads and the material, with every channel off until you turn it on."
+    line: "Marketing software your own team runs: Brand Analysis, Leads with public tenders, Campaigns and Studio. Your team approves the drafts and decides which channels may publish."
   - name: "Runink River"
     meaning: "RIVER · Raft-Integrated Validated Event Runtime"
     url: "/river/"
