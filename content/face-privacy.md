@@ -105,6 +105,8 @@ FACE uses the camera on one screen, and only while that screen is open.
   stores **what it read**, up to 64 KB of text per file, with the run that
   used it, so that the run's history can show it later. It does not store the
   file itself.
+* **Site plans** are different: a site plan you upload on the Twins map is
+  stored as the original file.
 
 ### Microphone and voice
 
@@ -139,8 +141,11 @@ background listening and no wake word.
 * The app keeps a **local cache** of recent fetch runs, traces, connection
   summaries and runners, so that history opens offline. It also keeps a queue
   of changes waiting to reach the server. This cache is an ordinary,
-  **unencrypted** database in the app's private storage, and **signing out
-  does not clear it**. Uninstalling the app or clearing its storage does.
+  **unencrypted** database in the app's private storage. **Signing out clears
+  it**, after your sessions end on the server; only the app's language setting
+  is kept. A change that had not reached the server yet is dropped at sign-out
+  rather than sent later under whoever signs in next. The cache is excluded
+  from Android backup and device transfer, so it never leaves the phone.
 
 ---
 
@@ -239,9 +244,11 @@ No system is perfectly secure, and we do not claim FACE is.
 
 ## Deleting your account and your data
 
-**There is no self-service account deletion in the app today.** The Profile
-page's "Close account & take my data" button tells you so and does not start a
-deletion.
+**The app cannot delete an account by itself.** The Profile page's "Close
+account & take my data" button opens a request: it emails
+**privacy@runink.org** for you and links the
+[account-deletion page](/account-deletion/). Nothing is deleted from that
+screen.
 
 * Your organisation's FACE administrator can remove you from the instance on
   the Admin page. That deletes your FACE account record and ends your sessions.
