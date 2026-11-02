@@ -59,12 +59,12 @@ outcomes:
   - "Un diagnostic PULSE alimente l'analyse des canaux, le plan de contenu, le calendrier et chaque brouillon, de sorte que ce qui est publié porte un seul argument plutôt que quatre versions de celui-ci."
   # Narrowed for the same reason as the FACE approval claim in
   # content/use-cases/_index.md. The review queue, its approve and reject, and the
-  # six statuses on the line after next are all real. The claim stops where it
+  # board columns on the line after next (PULSE R10) are all real. The claim stops where it
   # does on purpose: it describes a discipline the queue supports, never a
   # guarantee that nothing can reach a customer unapproved. Do not strengthen it.
-  - "Chaque brouillon — article, livre blanc, e-mail à froid, script d'appel — atterrit dans une file d'attente de révision avec une approbation et un rejet, et l'approbation est une étape franchie par une personne désignée plutôt qu'une formalité accomplie par le système pour elle. Voyez cela comme le lieu où le travail est validé, et non comme un verrouillage sur chaque voie de sortie possible."
-  - "Chaque pièce a un statut défini : brouillon, en attente de révision, approuvé, rejeté, publié, archivé. Ce sont les six statuts que PULSE conserve réellement, afin que ce qui vous attend et ce qui est réellement sorti soient tous deux visibles."
-  - "Marquer un résultat PULSE comme utile ou non se répercute sur le cycle suivant, de sorte que la compréhension s'accumule dans un système au lieu de la tête d'une seule personne."
+  - "Chaque brouillon — article, guide, e-mail à froid, script d'appel — atterrit dans une file d'attente de révision avec une approbation et un rejet, et l'approbation est une étape franchie par une personne désignée plutôt qu'une formalité accomplie par le système pour elle. Voyez cela comme le lieu où le travail est validé, et non comme un verrouillage sur chaque voie de sortie possible."
+  - "Chaque publication occupe une colonne du tableau Campagnes : prévue, brouillons à approuver, programmée, envoyée. Une publication retenue, en échec ou dont l'heure est passée l'indique, avec la raison, afin que ce qui vous attend et ce qui est réellement sorti soient tous deux visibles."
+  - "Chaque bilan est conservé, avec le plan, les prospects et les idées de contenu qu'il a produits, de sorte que la campagne suivante part de ce que la précédente a trouvé, et non de la mémoire d'une seule personne."
 
 measures_heading: "Comment vous saurez que cela a fonctionné"
 measures_intro: "Ces chiffres sont les vôtres, pas les nôtres. Notez où vous en êtes la première semaine — une fois que le rythme de travail change, ce qui vous indiquerait d'où vous êtes parti est ce qui a changé."
@@ -86,7 +86,7 @@ measures:
     moves: "Temps de qualification en baisse, part qualifiée en hausse, car PULSE attache des recherches sur cette entreprise spécifique à la prise de contact au lieu de laisser cela à assembler manuellement par la suite."
   - metric: "Visibilité organique et façon dont le site est perçu par les moteurs de recherche"
     today: "Impressions et clics depuis votre console de recherche pour le trimestre écoulé, accompagnés d'un audit évalué du site conservé depuis votre premier jour, avant que quoi que ce soit ne soit modifié."
-    moves: "Hausse, car l'audit de PULSE renvoie ses recommandations classées et les applique depuis le même écran plutôt que de les exporter vers un ticket que quelqu'un ouvre quinze jours plus tard."
+    moves: "Hausse, car le score de site de PULSE classe ses corrections et, une fois le dépôt de votre site web connecté, propose chacune sous forme de pull request que vous relisez et fusionnez, plutôt que de la laisser dans un ticket que quelqu'un ouvre quinze jours plus tard."
 
 foundations_heading: "Deux choses qui rendent ce qui précède possible — et aucune n'est une fonctionnalité marketing"
 foundations:

@@ -59,12 +59,12 @@ outcomes:
   - "One PULSE diagnosis feeds the channel analysis, the content plan, the schedule and every draft, so what goes out carries one argument rather than four versions of it."
   # Narrowed for the same reason as the FACE approval claim in
   # content/use-cases/_index.md. The review queue, its approve and reject, and the
-  # six statuses on the line after next are all real. The claim stops where it
+  # board columns on the line after next (PULSE R10) are all real. The claim stops where it
   # does on purpose: it describes a discipline the queue supports, never a
   # guarantee that nothing can reach a customer unapproved. Do not strengthen it.
-  - "Every draft — post, whitepaper, cold email, call script — lands in a review queue with an approve and a reject, and approving is a step a named person takes rather than a formality the system performs for them. Read it as the place the work is cleared, not as an interlock wired across every route something could leave by."
-  - "Every piece has one stated status: draft, waiting for review, approved, rejected, published, archived. Those six are the statuses PULSE actually keeps, so what is waiting on you and what actually went out are both visible."
-  - "Marking a PULSE result useful or not carries into the next round, so understanding accumulates in a system instead of in one person's head."
+  - "Every draft — post, guide, cold email, call script — lands in a review queue with an approve and a reject, and approving is a step a named person takes rather than a formality the system performs for them. Read it as the place the work is cleared, not as an interlock wired across every route something could leave by."
+  - "Every post sits in one column of the Campaigns board: planned, drafts to approve, scheduled, sent. A post that was held back, failed or missed its time says so, with the reason, so what is waiting on you and what actually went out are both visible."
+  - "Each check-up is kept, with the plan, the leads and the content ideas it produced, so the next campaign starts from what the last one found instead of from one person's memory."
 
 measures_heading: "How you will know it worked"
 measures_intro: "These numbers are yours, not ours. Write down where you stand in the first week — once the working rhythm changes, the thing that would tell you where you started is the thing that changed."
@@ -86,7 +86,7 @@ measures:
     moves: "Time to qualify down, qualified share up, because PULSE attaches research on that specific company to the outreach instead of leaving it to be assembled by hand afterwards."
   - metric: "Organic visibility, and how the site reads to search engines"
     today: "Impressions and clicks from your search console for the trailing quarter, alongside a scored audit of the site kept from your first day, before anything is changed."
-    moves: "Up, because PULSE's audit returns its recommendations ranked and applies them from the same screen rather than exporting them to a ticket somebody opens in a fortnight."
+    moves: "Up, because PULSE's site score ranks its fixes, and with your website repository connected it proposes each one as a pull request for you to review and merge, rather than leaving it in a ticket somebody opens in a fortnight."
 
 foundations_heading: "Two things that make the above possible — and neither is a marketing feature"
 foundations:

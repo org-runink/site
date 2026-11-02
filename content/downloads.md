@@ -1,7 +1,7 @@
 ---
 title: "Downloads"
 layout: "company"
-# Order is the attribution here. Runink FACE is the flagship and leads the page;
+# Order is the attribution here. FACE by Runink is the flagship and leads the page;
 # Runink PULSE is a separate product, not a FACE companion app; and the server
 # image is not a product at all: it carries Runink TIDE, which is a third product
 # sold on its own (the owner, 26 September 2026). The server image is the Runink
@@ -10,7 +10,7 @@ layout: "company"
 # was rewritten: this file used to call the server image "Runink River").
 # The previous version set the three side by side in one row of equal cards,
 # which read as one product family with three equal members.
-description: "Get the Runink FACE app for Android, the separate Runink PULSE app, read about the open-source Runink River workstation, or request access to the Runink Server image, which puts Runink TIDE on hardware you own."
+description: "Read about the FACE by Runink app for Android, learn how to open the separate Runink PULSE web app, read about the open-source Runink River workstation, or request access to the Runink Server image, which puts Runink TIDE on hardware you own."
 date: "2026-08-11T00:00:00Z"
 ---
 
@@ -18,7 +18,7 @@ date: "2026-08-11T00:00:00Z"
   <div class="text-center max-w-3xl mx-auto">
     <h1 class="text-4xl md:text-5xl font-bold mb-6">Downloads</h1>
     <p class="text-xl text-ink-2">
-      Take Runink FACE with you, or run the platform on your own hardware.
+      Take FACE by Runink with you, or run the platform on your own hardware.
     </p>
   </div>
 {{< /section-container >}}
@@ -27,11 +27,11 @@ date: "2026-08-11T00:00:00Z"
   <div class="max-w-6xl mx-auto">
 
     <p class="text-stone-400 mb-10 max-w-3xl">
-      Four separate things live on this page. <strong class="text-stone-200">Runink FACE</strong>
+      Four separate things live on this page. <strong class="text-stone-200">FACE by Runink</strong>
       is our main product. It reads your logistics records on its own and drafts the
       action; a named person approves it. <strong class="text-stone-200">Runink PULSE</strong> is a different
-      product for market analysis and marketing, listed here because it ships an
-      app too, not because it is part of FACE. The
+      product for marketing teams, listed here because people ask where to get it, not
+      because it is part of FACE: it opens in a web browser. The
       <strong class="text-stone-200">Runink Server</strong> image is neither: it
       is the server image carrying Runink TIDE, a separate product in its own right, which is the answer to
       where your data is processed and who can see it. <strong class="text-stone-200">Runink River</strong> is the
@@ -46,32 +46,32 @@ date: "2026-08-11T00:00:00Z"
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
     <div class="md:col-span-3 h-full bg-stone-800 p-8 rounded-lg shadow-lg border border-stone-700 flex flex-col">
-      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink FACE — the product — Android</div>
+      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">FACE by Runink — the product — Android</div>
       <h3 class="text-2xl font-bold text-white mb-3">Operations, in your pocket</h3>
       <p class="text-stone-400 mb-8 flex-1 max-w-3xl">
-        The cockpit for Runink FACE: the ranked queue of proposed actions, the records
-        behind each one, and the approve or reject. A debug-signed build you
-        install directly. It is not signed for the Play Store.
+        The cockpit for FACE by Runink: the ranked queue of proposed actions, the records
+        behind each one, and the approve or reject.
       </p>
-      <a href="https://github.com/org-runink/site/releases/download/face-android/app-debug.apk"
+      <a href="/products/face/"
          class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide bg-signal-fill hover:bg-signal-fill-hover text-on-fill transition-colors">
-        Download APK
+        About FACE by Runink
       </a>
     </div>
 
     <div class="md:col-span-2 h-full bg-stone-800 p-8 rounded-lg shadow-lg border border-stone-700 flex flex-col">
-      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink PULSE — a separate product — Android</div>
-      <h3 class="text-2xl font-bold text-white mb-3">Run your agency from the field</h3>
+      <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink PULSE — a separate product — web app</div>
+      <h3 class="text-2xl font-bold text-white mb-3">PULSE opens in your browser</h3>
       <p class="text-stone-400 mb-8 flex-1">
-        Market analysis and marketing work, with the same review-and-approve step in
-        front of the material it drafts. A different product from FACE, with its own
-        <a href="/blog/whitepapers/runink-pulse/" class="underline">paper</a>. A
-        debug-signed build you install directly. It is not signed
-        for the Play Store.
+        Brand Analysis, Leads, Campaigns and Studio for your own marketing team,
+        with your team approving what goes out. A different product from FACE, with
+        its own <a href="/blog/whitepapers/runink-pulse/" class="underline">paper</a>.
+        Sign in at your organisation's PULSE address in a web browser; the
+        <a href="https://docs.runink.org/pulse/docs/getting-started/" class="underline">getting-started guide</a>
+        shows the first steps.
       </p>
-      <a href="https://github.com/org-runink/site/releases/download/pulse-android/app-release.apk"
+      <a href="/products/pulse/"
          class="inline-block self-start text-center px-6 py-3 rounded-lg font-bold uppercase tracking-wide bg-signal-fill hover:bg-signal-fill-hover text-on-fill transition-colors">
-        Download APK
+        About Runink PULSE
       </a>
     </div>
 
