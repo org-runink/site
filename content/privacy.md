@@ -22,6 +22,9 @@ what the app itself handles:
     stays on the phone are covered by [the FACE privacy policy](/face-privacy/).
     This policy still covers your organisation's account and the operational
     data FACE processes for it.
+*   **PULSE** (`org.runink.pulse`): sign-in, what you make in PULSE, connected
+    accounts and voice commands are covered by
+    [the PULSE privacy policy](/pulse-privacy/).
 *   **Luna** (`org.runink.luna`) handles a different kind of data and is
     covered by [the Luna privacy policy](/luna-privacy/), not by this one.
 
