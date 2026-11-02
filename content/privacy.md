@@ -15,9 +15,17 @@ At Runink, we take your privacy seriously. This policy explains how we collect, 
 
 ## Other Runink Apps
 
-The Luna mobile app is published separately and handles a different kind of
-data. It is covered by [the Luna privacy policy](/luna-privacy/), not by this
-one.
+Runink's mobile apps are published separately and each has its own policy for
+what the app itself handles:
+
+*   **FACE** (`org.runink.face`): sign-in, the camera, the microphone and what
+    stays on the phone are covered by [the FACE privacy policy](/face-privacy/).
+    This policy still covers your organisation's account and the operational
+    data FACE processes for it.
+*   **Luna** (`org.runink.luna`) handles a different kind of data and is
+    covered by [the Luna privacy policy](/luna-privacy/), not by this one.
+
+To ask for an account to be deleted, see [Delete your account](/account-deletion/).
 
 ---
 
