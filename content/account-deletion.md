@@ -5,8 +5,8 @@ layout: "simple"
 ---
 
 This page explains how to ask for your account to be deleted in each app
-Runink publishes. None of these apps can delete an account by itself today, so
-deletion is done on request.
+Runink publishes. Where an app cannot delete an account by itself, deletion is
+done on request.
 
 ---
 
@@ -34,6 +34,43 @@ FACE administrator can also remove you on the instance's Admin page.
   have no stated retention today.
 
 The [FACE privacy policy](/face-privacy/) describes everything FACE stores.
+
+---
+
+## PULSE (`org.runink.pulse`)
+
+PULSE is a marketing workspace your organisation buys per seat. You sign in
+with Google.
+
+**To delete your account in the app:** Account › Privacy and your account ›
+Delete my account, then type your account's email to confirm. This is in PULSE
+releases that include it; an older app does not have it.
+
+**To ask for deletion without the app:** email **privacy@runink.org** from the
+address you sign in to PULSE with, with the subject "Delete my PULSE account".
+
+**What is deleted:**
+
+* your PULSE account record: your email address, name and role;
+* your open sessions, which end at once;
+* what PULSE keeps under your account: audits, drafts, campaigns and plans,
+  leads and follow-ups, connected accounts and their access tokens, and your
+  settings.
+
+**What is kept, and why:**
+
+* Posts and messages already published stay on the networks they were sent
+  to (LinkedIn, Instagram, YouTube, email, WhatsApp, SMS). Runink cannot
+  remove them there.
+* Images and other media you uploaded are stored encrypted and are not yet
+  removed with the account. Ask at the address above to have them removed.
+* The database replica keeps earlier copies until its retention removes them.
+* Server logs, which can contain the text of a voice command. They have no
+  stated retention today.
+* An organisation's only administrator cannot delete their own account in the
+  app, so the organisation keeps one; ask at the address above.
+
+The [PULSE privacy policy](/pulse-privacy/) describes everything PULSE stores.
 
 ---
 
