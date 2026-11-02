@@ -39,5 +39,5 @@ items:
     meaning: "RIVER · Raft-Integrated Validated Event Runtime"
     url: "/river/"
     logo: "/images/brand/river-mark.svg"
-    line: "A developer workstation on s6: KDE Plasma, an encrypted ZFS root, a default-deny firewall and a graphical installer, for data and AI work on hardware you own."
+    line: "A developer workstation on s6 with the DEsk desktop, an encrypted ZFS root, a default-deny firewall and a graphical installer, for data and AI work on hardware you own."
 ---

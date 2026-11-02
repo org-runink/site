@@ -84,7 +84,7 @@ description: "Runink River is a free, open-source workstation operating system f
 # Each card names the burden, says what River does about it in plain verbs, and stops.
 # The rp.steps band is back, with no terminal block and no install command: it now holds
 # the three cost lines (no per-seat licence, hardware you own put to work, fewer lost
-# days), with no figures (CONTENT.md rule 1). Technology names (s6, ZFS, KDE Plasma,
+# days), with no figures (CONTENT.md rule 1). Technology names (s6, ZFS,
 # linux-runink) moved out of the hero and down to the card labels and bodies, where the
 # technical evaluator reads them. Every claim is one the cards already made, or the
 # river docs' feature pages state; nothing new. Still no install command, download or
@@ -116,7 +116,6 @@ rp:
     - { text: "Read the documentation", url: "https://docs.runink.org/river/", style: "ghost" }
   fine: "MIT userspace · GPL-2.0-only kernel · CDDL-1.0 ZFS · CC-BY-4.0 artwork"
   shots:
-    - { src: "/images/products/river/desktop.jpg", w: 1280, h: 800, bar: "Runink River · Plasma", alt: "The Runink River desktop: KDE Plasma on the river-lines wallpaper, with the Runink River mark in the corner." }
     - { src: "/images/products/river/installer-welcome.jpg", w: 1280, h: 800, bar: "Install Runink River", alt: "The graphical installer's welcome screen: choose English, Spanish, French or Portuguese and a keyboard layout, then Next." }
   mission: "You shouldn't have to trust an operating system you can't look inside. *So we opened ours.*"
   facts:

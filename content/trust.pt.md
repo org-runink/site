@@ -62,7 +62,7 @@ next:
       <ul class="space-y-2 text-base">
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/analysis/agents-and-oversight/">FACE: os agentes e sua supervisão</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/">TIDE: o que cada agente pode fazer e o que uma pessoa decide</a></li>
-        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/devex/cluster-gitops/">TIDE: a cadeia de auditoria e como ela é conferida</a></li>
+        <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/devex/audit-chain/">TIDE: a cadeia de auditoria e como ela é conferida</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/face/docs/operations/configuration/">FACE: a configuração que desliga a autorrecuperação automática</a></li>
         <li><a class="text-signal underline decoration-signal/40 hover:decoration-signal" href="https://docs.runink.org/tide/docs/models/issue-triager/">TIDE: a ficha de modelo do classificador de issues</a></li>
       </ul>
