@@ -114,9 +114,9 @@ product_subcategory: "IT operations, AI governance and application platform"
       "label": "Intelligence",
       "deck": "What does our data hold, and where do money or controls slip?",
       "items": [
-        { "page": "", "name": "Three dashboards, one set of figures", "note": "Dashboards for the analyst, the finance lead and the programme office, built on one set of figures." },
+        { "page": "", "name": "Two dashboards, one set of figures", "note": "Dashboards for the analyst and the finance lead, built on one set of figures." },
         { "page": "", "name": "Computed, or shown absent with the reason", "note": "Data quality, capital spending, business rules and lineage, each computed from your own records or shown as absent with the reason." },
-        { "page": "", "name": "Resolve: an inventory read, not remembered", "note": "Resolve maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
+        { "page": "", "name": "Estate: an inventory read, not remembered", "note": "Estate maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
       ]
     },
     {
@@ -244,7 +244,7 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "What does TIDE need from us before it can do any of this?",
-      "answer": "Not much to start. One downloaded file and one command bring the whole platform up on a workstation, so you can open Overview and see which readings say they have not been measured, open the Harness and read a remedy, and open the Audit chain and press Verify now — all before anything is installed on machines you own.\n\nAdding one real data source, and putting it on machines you control, are the next steps, each at your own pace. What it needs from your side to begin is a named owner and a decision about who may change data connections and who may arm agents. Everything else can be decided as you go."
+      "answer": "Not much to start. One downloaded file and one command bring the whole platform up on a workstation, so you can open Overview and see which readings say they have not been measured, open the findings queue (Trust, on the Agents page) and read a remedy, and open the Audit chain and press Verify now — all before anything is installed on machines you own.\n\nAdding one real data source, and putting it on machines you control, are the next steps, each at your own pace. What it needs from your side to begin is a named owner and a decision about who may change data connections and who may arm agents. Everything else can be decided as you go."
     },
     {
       "question": "Who approves what TIDE's helpers propose?",
@@ -256,7 +256,7 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "How do we know the record has not been altered?",
-      "answer": "Open the Audit chain and press **Verify now**. The console walks every record and names the first one that was edited, removed, inserted or moved, rather than asking you to trust that nothing changed.\n\nThe same page is where GitOps shows whether what is running matches what was written down, and Deploy lineage shows whether a given change reached production — so \"what actually shipped\" is a reading, not a memory."
+      "answer": "Open the Audit chain and press **Verify now**. The console walks every record and names the first one that was edited, removed, inserted or moved, rather than asking you to trust that nothing changed.\n\nThe same page holds Deploy lineage, which shows whether a given change reached production, and GitOps, under Clusters, shows whether what is running matches what was written down — so \"what actually shipped\" is a reading, not a memory."
     },
     {
       "question": "Where does our data go?",
