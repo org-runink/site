@@ -104,7 +104,7 @@ author: "Runink"
 {
   "options": [
     { "label": "Pago Mensual", "value": "monthly" },
-    { "label": "Pago Anual (Alrededor de 16% Menos)", "value": "yearly" }
+    { "label": "Pago Anual (Alrededor de 14% Menos)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -118,20 +118,20 @@ author: "Runink"
       "name": "LICENCIA LITE",
       "subtitle": "PARA EQUIPOS DE 1 A 9 PERSONAS",
       "price_color": "stone",
-      "price_monthly": "89",
-      "price_yearly": "75",
+      "price_monthly": "99",
+      "price_yearly": "85",
       "price_subtitle": "POR PERSONA, AL MES",
       "credits": "18.000 UNIDADES DE CÓMPUTO<br>POR PERSONA Y MES",
       "outcome_strategies": [
         {"label": "QUÉ DETERMINA LA FACTURA", "value": "Cuántas personas contrata, más las unidades que use por encima de la asignación."},
         {"label": "COMPROMISO MÍNIMO", "value": "Un mes."},
         {"label": "SI RECUPERAMOS DINERO PARA USTED", "value": "20% de lo recuperado. Nada si no se recupera nada."},
-        {"label": "TARIFA DE PUESTA EN MARCHA", "value": "Del 1% al 3%, nunca más de $50."}
+        {"label": "TARIFA DE PUESTA EN MARCHA", "value": "Del 1% al 3% de un pedido aprobado y confirmado, nunca más de $150 por pedido."}
       ],
       "features": [
         "SE EJECUTA EN LAS MÁQUINAS COMPARTIDAS DE RUNINK, POR TURNOS CON EL TRABAJO DE OTROS CLIENTES",
         "18.000 UNIDADES POR PERSONA Y MES, COMUNES A TODO EL EQUIPO",
-        "MÁS UNIDADES SEGÚN USE, O COMPRADAS POR ADELANTADO: 10% MENOS POR UN MES, 20% MENOS POR UN AÑO",
+        "MÁS UNIDADES SEGÚN USE, O COMPRADAS POR ADELANTADO: 5% MENOS POR UN MES, 10% MENOS POR UN AÑO",
         "HASTA 900 UNIDADES POR PERSONA Y HORA; EL TRABAJO QUE PASA DE ESE RITMO ESPERA SU TURNO"
       ],
       "button": {
@@ -146,15 +146,15 @@ author: "Runink"
       "name": "LICENCIA DEDICADA",
       "subtitle": "PARA 10 PERSONAS O MÁS",
       "price_color": "orange",
-      "price_monthly": "149",
-      "price_yearly": "149",
+      "price_monthly": "165",
+      "price_yearly": "165",
       "price_subtitle": "POR PERSONA, AL MES, CON CONTRATO ANUAL",
       "credits": "UNIDADES DE CÓMPUTO ILIMITADAS<br>EN SU PROPIA NUBE",
       "outcome_strategies": [
-        {"label": "QUÉ DETERMINA LA FACTURA", "value": "Cuántas personas contrata, más el 1% de lo que su nube cobra por los ejecutores."},
+        {"label": "QUÉ DETERMINA LA FACTURA", "value": "Cuántas personas contrata, más el 1,5% de lo que su nube cobra por los ejecutores."},
         {"label": "COMPROMISO MÍNIMO", "value": "Un año."},
         {"label": "SI RECUPERAMOS DINERO PARA USTED", "value": "20% de lo recuperado. Nada si no se recupera nada."},
-        {"label": "TARIFA DE PUESTA EN MARCHA", "value": "Del 1% al 3%, nunca más de $50."}
+        {"label": "TARIFA DE PUESTA EN MARCHA", "value": "Del 1% al 3% de un pedido aprobado y confirmado, nunca más de $150 por pedido."}
       ],
       "features": [
         "EJECUTORES EN SU PROPIO PROYECTO DE GOOGLE CLOUD, O EN SU CUENTA DE DATABRICKS O SNOWFLAKE",
@@ -199,6 +199,102 @@ author: "Runink"
 }
 {{< /pricing-table-1 >}}
 
+{{< pricing-estimator >}}
+{
+  "copy": {
+    "eyebrow": "Estimación",
+    "title": "Calcule lo que cuesta FACE by Runink",
+    "intro": "Elija su situación, escriba sus propias cifras y obtenga un importe mensual y otro anual, con el cálculo a la vista junto a cada línea. Solo usa los precios publicados en esta página.",
+    "notice": "Una estimación, no un presupuesto.",
+    "examples": "Cada casilla parte de un valor neutro que usted cambia. Nada en ellas es una promesa ni una predicción de lo que pagará o recuperará.",
+    "noscript": "El estimador necesita JavaScript. Sin él, las tarjetas de licencia de arriba tienen los mismos precios.",
+    "scenarioLegend": "¿Cuál de estos casos es el suyo?",
+    "scenarios": [
+      {"id": "lead", "label": "Estoy evaluando", "help": "Solo puestos: lo que cuesta la licencia para mi equipo."},
+      {"id": "prospect", "label": "Estoy calculando el ahorro", "help": "Añade la recuperación de reclamaciones y los pedidos, y los compara con las tarifas."},
+      {"id": "customer", "label": "Soy cliente y reviso mi factura", "help": "Puestos, unidades usadas, reclamaciones y pedidos de este mes: las líneas de la factura."},
+      {"id": "market", "label": "Compro a través de Google Cloud Marketplace", "help": "Los mismos precios de lista, y dónde se factura cada parte."}
+    ],
+    "seats": "Cuántas personas lo usarán",
+    "seatRange": "De 1 a {liteMax} personas: Lite, en las máquinas compartidas de Runink. {dedMin} o más: Dedicada, en su propia cuenta en la nube.",
+    "premises": "El trabajo debe ejecutarse en mis propias instalaciones (Enterprise)",
+    "cycle": "Ciclo de facturación (solo Lite)",
+    "cycle_yearly": "Anual",
+    "cycle_monthly": "Mensual",
+    "units": "Unidades que espera usar en un mes, entre todo el equipo",
+    "unitsHint": "Las unidades incluidas con cada persona se agrupan en el equipo. Las unidades compradas por adelantado se toman como usadas por completo.",
+    "unitsPay": "Cómo paga las unidades por encima de la asignación",
+    "pay_payg": "Según el uso",
+    "pay_month": "Compradas por adelantado para un mes",
+    "pay_year": "Compradas por adelantado para un año",
+    "runner": "Coste en la nube de los ejecutores en un mes (dólares estadounidenses)",
+    "runnerHint": "Lo que su propia nube cobra por los ejecutores. Usted se lo paga a su nube; Runink añade un porcentaje de ese importe.",
+    "claims": "Recuperación de reclamaciones en un mes (dólares estadounidenses)",
+    "claimsHint": "Solo cuenta el dinero que ha vuelto de verdad. No se debe nada cuando no vuelve nada.",
+    "orders": "Pedidos de abastecimiento aprobados y confirmados en un mes",
+    "ordersHint": "Cuente solo los pedidos que usted aprobó y que están confirmados. No se debe tarifa por ningún otro.",
+    "orderAvg": "Valor medio de un pedido (dólares estadounidenses)",
+    "rate": "Tasa de puesta en marcha automática (porcentaje)",
+    "rateHint": "Se acuerda con usted dentro del intervalo publicado. Parte del extremo superior del intervalo para que la estimación nunca quede baja.",
+    "resultsTitle": "Su estimación",
+    "tierLine": "Licencia para estas respuestas: {tier}.",
+    "tier_lite": "Lite, en las máquinas compartidas de Runink",
+    "tier_dedicated": "Dedicada, en su propia cuenta en la nube",
+    "tier_enterprise": "Enterprise, en sus instalaciones",
+    "summary": "Unos {monthly} al mes, {yearly} al año.",
+    "enterpriseSummary": "Enterprise se presupuesta con usted. Díganos dónde debe ejecutarse y le daremos un presupuesto.",
+    "enterpriseLabel": "Licencia Enterprise",
+    "pricedWithYou": "Presupuestado con usted",
+    "enterpriseFormula": "No hay precio de lista. Lo deciden el lugar donde se ejecuta y los niveles de servicio que usted fije. Las tarifas por acciones automáticas se acuerdan con usted y se escriben en el contrato.",
+    "colItem": "Concepto",
+    "colAmount": "Importe",
+    "colFormula": "Cómo se calcula",
+    "unlimited": "Ilimitadas",
+    "notInTotal": "No entra en el total.",
+    "line_seats": "Personas",
+    "f_seats": "{seats} personas × {price} por persona al mes",
+    "line_units_within": "Unidades adicionales",
+    "f_units_within": "{used} unidades usadas, dentro de las {included} incluidas: nada adicional",
+    "line_units_payg": "Unidades adicionales, según el uso",
+    "f_units_payg": "{used} usadas − {included} incluidas = {extra} adicionales. {blocks} bloques de 100 × {rate}",
+    "line_units_month": "Unidades adicionales, compradas un mes por adelantado",
+    "f_units_month": "{used} usadas − {included} incluidas = {extra} adicionales. {blocks} bloques de 100 × {rate}, menos {off}",
+    "line_units_year": "Unidades adicionales, compradas un año por adelantado",
+    "f_units_year": "{used} usadas − {included} incluidas = {extra} adicionales. {blocks} bloques de 100 × {rate}, menos {off}",
+    "line_units_unlimited": "Unidades",
+    "f_units_unlimited": "Ilimitadas: el trabajo se ejecuta en su propia cuenta en la nube",
+    "line_runner": "Tarifa de ejecutores",
+    "f_runner": "{pct} de los {cost} que su nube cobra por los ejecutores",
+    "line_runner_cloud": "Coste en la nube de los ejecutores",
+    "f_runner_cloud": "{cost} al mes, pagados a su propia nube.",
+    "line_claims": "Tarifa de recuperación de reclamaciones",
+    "f_claims": "{pct} de {amount} de recuperación",
+    "line_orders": "Tarifa de puesta en marcha automática",
+    "f_orders": "{orders} pedidos × {each} cada uno. Un pedido: {pct} de {avg} = {raw}, nunca más de {cap}",
+    "totalMonthly": "Total al mes",
+    "f_totalMonthly": "Las líneas de arriba, sin las marcadas como fuera del total",
+    "totalYearly": "Total al año",
+    "f_totalYearly": "Total al mes × 12",
+    "netTitle": "Sus propias cifras: la recuperación frente a las tarifas",
+    "netRecovery": "Recuperación que escribió",
+    "f_netRecovery": "El importe escrito arriba, por mes",
+    "netFees": "Tarifas",
+    "f_netFees": "El total al mes de arriba",
+    "netMonthly": "Neto al mes",
+    "f_netMonthly": "Recuperación − tarifas",
+    "netYearly": "Neto al año",
+    "f_netYearly": "Neto al mes × 12",
+    "netNote": "Son las cifras que usted escribió. No son un resultado que Runink prometa.",
+    "marketSeat": "A través de Google Cloud Marketplace, la tarifa de los puestos se factura mediante la ficha.",
+    "marketRunner": "El cómputo de los ejecutores va en su propia factura de Google Cloud. No entra en el total de arriba.",
+    "customerNote": "Use las cifras de su propia consola de este mes. La factura es la referencia; si una línea difiere, pregúntenos.",
+    "currencyNote": "Los precios son precios de lista en dólares estadounidenses. Las facturas se emiten en la moneda de su región, convertida al tipo mensual del Banco Central Europeo.",
+    "footer": "Las cifras anuales suponen que cada mes se parece al que usted describe. Los pedidos se cobran uno a uno en la factura, así que una mezcla de pedidos pequeños y grandes puede diferir de un promedio.",
+    "pct": "{n}%"
+  }
+}
+{{< /pricing-estimator >}}
+
 
 
 {{< faq >}}
@@ -236,7 +332,7 @@ author: "Runink"
     },
     {
       "question": "¿Qué estoy pagando en realidad?",
-      "answer": "Puestos. Un **puesto** es una persona que usa FACE by Runink. Cuenta las personas que lo necesitan, multiplica por el precio de arriba, y eso es la licencia.\n\nLa licencia que elija decide dónde se ejecuta el trabajo. **Lite** se ejecuta en las máquinas compartidas de Runink e incluye Unidades de Cómputo con cada puesto. **Dedicada** se ejecuta en ejecutores de su propia cuenta en la nube, sin límite de unidades: su nube le factura ese cómputo directamente, y Runink añade el 1% de lo que cuestan esos ejecutores. **Enterprise** se ejecuta en sus instalaciones o en su propia nube, con precio acordado con usted.\n\nEstos puestos son de FACE. PULSE y Runink TIDE son productos distintos, cada uno con su propia suscripción. Aparte de la licencia, las únicas tarifas sobre un puesto de FACE son las de uso sobre las acciones automáticas de FACE, detalladas arriba."
+      "answer": "Puestos. Un **puesto** es una persona que usa FACE by Runink. Cuenta las personas que lo necesitan, multiplica por el precio de arriba, y eso es la licencia.\n\nLa licencia que elija decide dónde se ejecuta el trabajo. **Lite** se ejecuta en las máquinas compartidas de Runink e incluye Unidades de Cómputo con cada puesto. **Dedicada** se ejecuta en ejecutores de su propia cuenta en la nube, sin límite de unidades: su nube le factura ese cómputo directamente, y Runink añade el 1,5% de lo que cuestan esos ejecutores. **Enterprise** se ejecuta en sus instalaciones o en su propia nube, con precio acordado con usted.\n\nEstos puestos son de FACE. PULSE y Runink TIDE son productos distintos, cada uno con su propia suscripción. Aparte de la licencia, las únicas tarifas sobre un puesto de FACE son las de uso sobre las acciones automáticas de FACE, detalladas arriba."
     },
     {
       "question": "¿Qué es una Unidad de Cómputo?",
@@ -244,7 +340,7 @@ author: "Runink"
     },
     {
       "question": "¿Qué pasa si superamos la asignación?",
-      "answer": "En la **Licencia Lite**, usted elige cómo pagar el resto. Las unidades por encima de la asignación se cobran según se usan a **$0,10 por cada 100 unidades**, o puede comprarlas por adelantado: **un 10% menos** por las de un mes, **un 20% menos** por las de un año. Dedicada y Enterprise no tienen asignación que superar.\n\nPuede ver el total acumulado en la consola y fijar un presupuesto, de modo que la primera noticia de un mes intenso no sea la factura."
+      "answer": "En la **Licencia Lite**, usted elige cómo pagar el resto. Las unidades por encima de la asignación se cobran según se usan a **$0,12 por cada 100 unidades**, o puede comprarlas por adelantado: **un 5% menos** por las de un mes, **un 10% menos** por las de un año. Dedicada y Enterprise no tienen asignación que superar.\n\nPuede ver el total acumulado en la consola y fijar un presupuesto, de modo que la primera noticia de un mes intenso no sea la factura."
     },
     {
       "question": "¿Qué licencia nos conviene?",
@@ -252,11 +348,15 @@ author: "Runink"
     },
     {
       "question": "¿Hay que firmar por un año?",
-      "answer": "Solo en Dedicada y Enterprise. La **Licencia Lite** puede contratarse mes a mes a $89 por persona, o por un año a $75: la misma diferencia, de alrededor del 16%, que muestra el selector de arriba.\n\nDedicada y Enterprise se contratan por un año porque ambas preparan ejecutores para su empresa en concreto, en su propia nube o en sus propios servidores."
+      "answer": "Solo en Dedicada y Enterprise. La **Licencia Lite** puede contratarse mes a mes a $99 por persona, o por un año a $85: la misma diferencia, de alrededor del 14%, que muestra el selector de arriba.\n\nDedicada y Enterprise se contratan por un año porque ambas preparan ejecutores para su empresa en concreto, en su propia nube o en sus propios servidores."
     },
     {
       "question": "¿Cuánto cuesta un uso más intenso?",
-      "answer": "En **Lite**, un equipo puede usar hasta 900 unidades por persona y hora. El trabajo que pasa de ese ritmo espera su turno en la cola; nunca se rechaza, y el ritmo en sí no cuesta nada extra. Las unidades por encima de la asignación mensual se pagan según se usan o se compran por adelantado, como se explica arriba.\n\nEn **Dedicada**, las unidades son ilimitadas: un uso más intenso aparece en la factura de su propia nube como el cómputo que usó, más el 1% de eso por parte de Runink. En **Enterprise** se ejecuta donde usted ya ejecuta lo suyo.\n\nEn todos los casos, su gasto sigue decisiones que usted tomó —cuántos puestos y dónde se ejecuta el trabajo— y no un precio por pregunta."
+      "answer": "En **Lite**, un equipo puede usar hasta 900 unidades por persona y hora. El trabajo que pasa de ese ritmo espera su turno en la cola; nunca se rechaza, y el ritmo en sí no cuesta nada extra. Las unidades por encima de la asignación mensual se pagan según se usan o se compran por adelantado, como se explica arriba.\n\nEn **Dedicada**, las unidades son ilimitadas: un uso más intenso aparece en la factura de su propia nube como el cómputo que usó, más el 1,5% de eso por parte de Runink. En **Enterprise** se ejecuta donde usted ya ejecuta lo suyo.\n\nEn todos los casos, su gasto sigue decisiones que usted tomó —cuántos puestos y dónde se ejecuta el trabajo— y no un precio por pregunta."
+    },
+    {
+      "question": "¿Cómo empieza un proyecto con FACE y cuánto cuestan los servicios?",
+      "answer": "FACE empieza con una **auditoría de su panorama actual** y una **hoja de ruta** de implantación construida sobre ella. Empezamos por mirar, no por vender: la auditoría describe su entorno tal como es; la hoja de ruta dice qué viene después. Cuesta **$200 o 200 € la hora, en bloques de 50 horas**: un bloque para la auditoría y otro para la hoja de ruta.\n\nLos paquetes de acompañamiento Enterprise añaden, cada uno **bajo petición**: un piloto de pago (60 días de prueba de valor con sus propios datos, guiado por la hoja de ruta), la puesta en marcha y la consultoría, y el soporte y las actualizaciones (planes pasivos de actualizaciones y correcciones, planes activos con ingenieros asignados y tiempos de respuesta). Los prestan Runink y sus socios."
     }
 
   ]

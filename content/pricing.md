@@ -58,19 +58,32 @@ author: "Runink"
 # same mistake with a `{{/* */}}` block, which content files don't parse as a
 # template comment either — it rendered as visible text until this rewrite.
 #
-# PRICES ARE THE OWNER-APPROVED MODEL V2 (2026-09-28, billing catalogue): the
+# PRICES ARE THE OWNER-APPROVED MODEL V2 (2026-09-28; FACE prices and the CU, prepaid and runner-fee figures of the 2026-11-06 price book): the
 # licence says where the work runs. Lite (1-9, Runink's shared machines):
-# $75 yearly / $89 monthly, 18,000 units a person, then $0.10 per 100 units or
-# units bought ahead (10% less a month, 20% less a year), up to 900 units a
+# $85 yearly / $99 monthly, 18,000 units a person, then $0.12 per 100 units or
+# units bought ahead (5% less a month, 10% less a year), up to 900 units a
 # person an hour before work waits its turn. Dedicated (10+, runners in the
-# customer's own cloud account): $149 a person, yearly, unlimited units, plus 1%
+# customer's own cloud account): $165 a person, yearly, unlimited units, plus 1.5%
 # of those runners' cloud cost. Enterprise: priced with you. Change the billing
 # catalogue first, then here.
 #
+# THE ESTIMATOR (owner, 2026-11-05) reads its prices from data/pricing.json, never
+# from this file. Change billing first, then data/pricing.json, then the card text
+# above in all four languages; assets/js/__tests__/pricing-estimator.test.js fails
+# when the cards and the data disagree. The auto-provisioning fee is 1-3% of an
+# approved and confirmed fulfilment order, capped at $150 per order.
+#
+# SERVICES (owner, 2026-11-05, rate 2026-11-06; billing business model §9b D6, and the shared
+# foundation for services copy): FACE starts with a landscape audit and roadmap at
+# $200 or EUR 200 an hour, in 50-hour blocks (two blocks); that hourly rate is the
+# only services figure on this page. The paid pilot, onboarding and consulting,
+# and support and updates are Enterprise add-ons priced "Upon request". Their
+# fixed prices, the support uplifts, retainers and partner splits stay internal.
+#
 # NO ENTERPRISE SOVEREIGNTY DETAILS ON THIS PAGE (owner, 2026-09-28): no
 # hardware or appliance pricing, no field devices, no onboarding or consulting
-# rates, no partner splits. The GX10 lease FAQ and the $300/hour consulting FAQ
-# were removed for that reason; the onboarding question now says it is quoted.
+# totals, no partner splits. The GX10 lease FAQ and the old consulting-rate FAQ
+# were removed for that reason.
 ---
 
 {{< pricing-table-2 >}}
@@ -154,7 +167,7 @@ author: "Runink"
 
 {{< features-list
     title="Business Outcome Fees"
-    feature1="Auto-Provisioning|1% to 3% of the transaction value FACE places on your behalf, capped at $50 per order. A large bulk order is never penalised for its size."
+    feature1="Auto-Provisioning|1% to 3% of the transaction value FACE places on your behalf, capped at $150 per order, and billed only on orders you have approved and that are confirmed. A large bulk order is never penalised for its size."
     feature2="Claims & Short-Pay Recovery|20% of what is recovered. Success-fee only — nothing is billed when nothing is recovered."
 >}}
 
@@ -162,7 +175,7 @@ author: "Runink"
 {
   "options": [
     { "label": "Pay Monthly", "value": "monthly" },
-    { "label": "Pay Yearly (About 16% Less)", "value": "yearly" }
+    { "label": "Pay Yearly (About 14% Less)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -176,20 +189,20 @@ author: "Runink"
       "name": "LITE LICENCE",
       "subtitle": "FOR TEAMS OF 1 TO 9 PEOPLE",
       "price_color": "stone",
-      "price_monthly": "89",
-      "price_yearly": "75",
+      "price_monthly": "99",
+      "price_yearly": "85",
       "price_subtitle": "PER PERSON, PER MONTH",
       "credits": "18,000 COMPUTE UNITS<br>PER PERSON, PER MONTH",
       "outcome_strategies": [
         {"label": "WHAT SETS THE BILL", "value": "How many people you licence, plus any units you use beyond the allowance."},
         {"label": "SHORTEST COMMITMENT", "value": "One month."},
         {"label": "IF WE RECOVER MONEY FOR YOU", "value": "20% of what is recovered. Nothing when nothing is recovered."},
-        {"label": "AUTOMATIC SET-UP FEE", "value": "1% to 3%, never more than $50."}
+        {"label": "AUTOMATIC SET-UP FEE", "value": "1% to 3% of an approved and confirmed order, never more than $150 per order."}
       ],
       "features": [
         "RUNS ON RUNINK'S SHARED MACHINES, TAKING ITS TURN ALONGSIDE OTHER CUSTOMERS' WORK",
         "18,000 UNITS PER PERSON PER MONTH, POOLED ACROSS THE TEAM",
-        "MORE UNITS AS YOU GO, OR BOUGHT AHEAD: 10% LESS FOR A MONTH, 20% LESS FOR A YEAR",
+        "MORE UNITS AS YOU GO, OR BOUGHT AHEAD: 5% LESS FOR A MONTH, 10% LESS FOR A YEAR",
         "UP TO 900 UNITS PER PERSON PER HOUR; WORK PAST THAT PACE WAITS ITS TURN"
       ],
       "button": {
@@ -204,15 +217,15 @@ author: "Runink"
       "name": "DEDICATED LICENCE",
       "subtitle": "FOR 10 PEOPLE AND UP",
       "price_color": "orange",
-      "price_monthly": "149",
-      "price_yearly": "149",
+      "price_monthly": "165",
+      "price_yearly": "165",
       "price_subtitle": "PER PERSON, PER MONTH, ON A YEARLY CONTRACT",
       "credits": "UNLIMITED COMPUTE UNITS<br>ON YOUR OWN CLOUD",
       "outcome_strategies": [
-        {"label": "WHAT SETS THE BILL", "value": "How many people you licence, plus 1% of what your cloud charges for the runners."},
+        {"label": "WHAT SETS THE BILL", "value": "How many people you licence, plus 1.5% of what your cloud charges for the runners."},
         {"label": "SHORTEST COMMITMENT", "value": "One year."},
         {"label": "IF WE RECOVER MONEY FOR YOU", "value": "20% of what is recovered. Nothing when nothing is recovered."},
-        {"label": "AUTOMATIC SET-UP FEE", "value": "1% to 3%, never more than $50."}
+        {"label": "AUTOMATIC SET-UP FEE", "value": "1% to 3% of an approved and confirmed order, never more than $150 per order."}
       ],
       "features": [
         "RUNNERS IN YOUR OWN GOOGLE CLOUD PROJECT, DATABRICKS OR SNOWFLAKE ACCOUNT",
@@ -257,6 +270,102 @@ author: "Runink"
 }
 {{< /pricing-table-1 >}}
 
+{{< pricing-estimator >}}
+{
+  "copy": {
+    "eyebrow": "Estimate",
+    "title": "Estimate what FACE by Runink costs",
+    "intro": "Pick the situation that is yours, type your own numbers, and get a monthly and a yearly figure with the working shown beside every line. It uses only the prices published on this page.",
+    "notice": "An estimate, not a quote.",
+    "examples": "Every box starts at a neutral value that you change. Nothing in it is a promise or a prediction of what you will pay or get back.",
+    "noscript": "The estimator needs JavaScript. Without it, the licence cards above carry the same prices.",
+    "scenarioLegend": "Which of these is you?",
+    "scenarios": [
+      {"id": "lead", "label": "I am evaluating", "help": "Seats only: what the licence costs for my team."},
+      {"id": "prospect", "label": "I am sizing the savings", "help": "Adds claims recovery and orders, then sets them against the fees."},
+      {"id": "customer", "label": "I am a customer checking my bill", "help": "Seats, units used, claims and orders this month: the invoice lines."},
+      {"id": "market", "label": "I am buying through Google Cloud Marketplace", "help": "The same list prices, and where each part is billed."}
+    ],
+    "seats": "How many people will use it",
+    "seatRange": "1 to {liteMax} people: Lite, on Runink's shared machines. {dedMin} or more: Dedicated, in your own cloud account.",
+    "premises": "The work must run on my own premises (Enterprise)",
+    "cycle": "Billing cycle (Lite only)",
+    "cycle_yearly": "Yearly",
+    "cycle_monthly": "Monthly",
+    "units": "Units you expect to use in a month, across the team",
+    "unitsHint": "The units included with each person are pooled across the team. Units bought ahead are taken as fully used.",
+    "unitsPay": "How you pay for units beyond the allowance",
+    "pay_payg": "As you go",
+    "pay_month": "Bought ahead for a month",
+    "pay_year": "Bought ahead for a year",
+    "runner": "Runner cloud cost in a month (US dollars)",
+    "runnerHint": "What your own cloud charges for the runners. You pay that to your cloud; Runink adds a percentage of it.",
+    "claims": "Claims recovery in a month (US dollars)",
+    "claimsHint": "Only money that has actually come back counts. Nothing is due when nothing comes back.",
+    "orders": "Approved and confirmed fulfilment orders in a month",
+    "ordersHint": "Count only orders you approved and that are confirmed. No fee is due on any other order.",
+    "orderAvg": "Average value of one order (US dollars)",
+    "rate": "Auto-provisioning rate (percent)",
+    "rateHint": "Agreed with you within the published range. It starts at the top of the range so the estimate is never low.",
+    "resultsTitle": "Your estimate",
+    "tierLine": "Licence for these answers: {tier}.",
+    "tier_lite": "Lite, on Runink's shared machines",
+    "tier_dedicated": "Dedicated, in your own cloud account",
+    "tier_enterprise": "Enterprise, on your premises",
+    "summary": "About {monthly} a month, {yearly} a year.",
+    "enterpriseSummary": "Enterprise is priced with you. Tell us where it must run and we will quote.",
+    "enterpriseLabel": "Enterprise licence",
+    "pricedWithYou": "Priced with you",
+    "enterpriseFormula": "There is no list price. Where it runs and the service levels you set decide it. Fees on automated actions are agreed with you and written into the contract.",
+    "colItem": "Item",
+    "colAmount": "Amount",
+    "colFormula": "How it is worked out",
+    "unlimited": "Unlimited",
+    "notInTotal": "Not in the total.",
+    "line_seats": "People",
+    "f_seats": "{seats} people × {price} per person per month",
+    "line_units_within": "Extra units",
+    "f_units_within": "{used} units used, within the {included} included: nothing extra",
+    "line_units_payg": "Extra units, as you go",
+    "f_units_payg": "{used} used − {included} included = {extra} extra. {blocks} blocks of 100 × {rate}",
+    "line_units_month": "Extra units, bought a month ahead",
+    "f_units_month": "{used} used − {included} included = {extra} extra. {blocks} blocks of 100 × {rate}, less {off}",
+    "line_units_year": "Extra units, bought a year ahead",
+    "f_units_year": "{used} used − {included} included = {extra} extra. {blocks} blocks of 100 × {rate}, less {off}",
+    "line_units_unlimited": "Units",
+    "f_units_unlimited": "Unlimited: the work runs in your own cloud account",
+    "line_runner": "Runner fee",
+    "f_runner": "{pct} of the {cost} your cloud charges for the runners",
+    "line_runner_cloud": "Runner cloud cost",
+    "f_runner_cloud": "{cost} a month, paid to your own cloud.",
+    "line_claims": "Claims recovery fee",
+    "f_claims": "{pct} of {amount} of claims recovery",
+    "line_orders": "Auto-provisioning fee",
+    "f_orders": "{orders} orders × {each} each. One order: {pct} of {avg} = {raw}, never more than {cap}",
+    "totalMonthly": "Total a month",
+    "f_totalMonthly": "The lines above, without any line marked not in the total",
+    "totalYearly": "Total a year",
+    "f_totalYearly": "Total a month × 12",
+    "netTitle": "Your own figures: claims recovery set against the fees",
+    "netRecovery": "Claims recovery you typed",
+    "f_netRecovery": "The amount you entered above, per month",
+    "netFees": "Fees",
+    "f_netFees": "The total a month above",
+    "netMonthly": "Net a month",
+    "f_netMonthly": "Claims recovery − fees",
+    "netYearly": "Net a year",
+    "f_netYearly": "Net a month × 12",
+    "netNote": "These are the figures you typed. They are not a result that Runink promises.",
+    "marketSeat": "Through Google Cloud Marketplace the seat fee is billed through the listing.",
+    "marketRunner": "The runner compute is on your own Google Cloud bill. It is not in the total above.",
+    "customerNote": "Use the figures from your own console for this month. Your invoice is the record; if a line differs, ask us.",
+    "currencyNote": "Prices are list prices in US dollars. Invoices are in your regional currency, converted at the European Central Bank monthly rate.",
+    "footer": "Yearly figures assume every month looks like the one you describe. Orders are priced one by one on the invoice, so a mix of small and large orders can differ from an average.",
+    "pct": "{n}%"
+  }
+}
+{{< /pricing-estimator >}}
+
 
 
 {{< faq >}}
@@ -294,7 +403,7 @@ author: "Runink"
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "Seats. A **seat** is one person who uses FACE by Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nThe licence you pick decides where the work runs. **Lite** runs on Runink's shared machines and includes Compute Units with every seat. **Dedicated** runs on runners in your own cloud account with no limit on units: your cloud bills you for that compute directly, and Runink adds 1% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nThese seats are for FACE. PULSE and Runink TIDE are separate products, each sold with its own subscription. Beyond the licence, the only fees on a FACE seat are the usage fees on FACE's automated actions, set out above."
+      "answer": "Seats. A **seat** is one person who uses FACE by Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nThe licence you pick decides where the work runs. **Lite** runs on Runink's shared machines and includes Compute Units with every seat. **Dedicated** runs on runners in your own cloud account with no limit on units: your cloud bills you for that compute directly, and Runink adds 1.5% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nThese seats are for FACE. PULSE and Runink TIDE are separate products, each sold with its own subscription. Beyond the licence, the only fees on a FACE seat are the usage fees on FACE's automated actions, set out above."
     },
     {
       "question": "What is a Compute Unit?",
@@ -302,7 +411,7 @@ author: "Runink"
     },
     {
       "question": "What happens if we go over the allowance?",
-      "answer": "On the **Lite Licence**, you choose how to pay for more. Units beyond the allowance are charged as you go at **$0.10 per 100 units**, or you can buy units in advance: **10% less** for a month's worth, **20% less** for a year's. Dedicated and Enterprise have no allowance to go over.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
+      "answer": "On the **Lite Licence**, you choose how to pay for more. Units beyond the allowance are charged as you go at **$0.12 per 100 units**, or you can buy units in advance: **5% less** for a month's worth, **10% less** for a year's. Dedicated and Enterprise have no allowance to go over.\n\nYou can see the running total in the console and set a budget against it, so the first you hear of a heavy month is not the invoice."
     },
     {
       "question": "Which licence fits us?",
@@ -310,19 +419,19 @@ author: "Runink"
     },
     {
       "question": "Do we have to sign for a year?",
-      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $89 per person, or a year at a time at $75 — the same difference, about 16%, shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because both set runners up for your company specifically, in your own cloud or on your own servers."
+      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $99 per person, or a year at a time at $85 — the same difference, about 14%, shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because both set runners up for your company specifically, in your own cloud or on your own servers."
     },
     {
-      "question": "What does Enterprise onboarding cost, beyond the licence?",
-      "answer": "Onboarding and consulting are scoped and quoted with you as part of the Enterprise conversation."
+      "question": "How does a FACE project start, and what do the services cost?",
+      "answer": "With a **landscape audit and roadmap**. We start by looking, not selling: an audit of your current landscape, then an implementation roadmap built on it. The audit describes your environment as it is; the roadmap says what comes next. It is **$200 or €200 an hour, in 50-hour blocks**: one block for the audit, one for the roadmap.\n\nThe Enterprise engagement packages add the following, each priced **Upon request**: a paid pilot (60 days of proof of value on your own data, run from the roadmap), onboarding and consulting, and support and updates (passive plans for updates and fixes, active plans with named engineers and response times). They are delivered by Runink and its partners."
     },
     {
       "question": "We already have committed spend on GCP, Snowflake or Databricks. Can we buy FACE against that?",
-      "answer": "Yes: that is the **Dedicated Licence**. Its runners run in your own Google Cloud project, or your Snowflake or Databricks account, on compute you already pay that platform for.\n\nThe compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate, our seat price, and 1% of what those runners cost. We do not quote a discount here; the rate against your committed spend is between you and that platform."
+      "answer": "Yes: that is the **Dedicated Licence**. Its runners run in your own Google Cloud project, or your Snowflake or Databricks account, on compute you already pay that platform for.\n\nThe compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate, our seat price, and 1.5% of what those runners cost. We do not quote a discount here; the rate against your committed spend is between you and that platform."
     },
     {
       "question": "What does heavier use cost?",
-      "answer": "On **Lite**, a team can use up to 900 units per person per hour. Work past that pace waits its turn in line; it is never refused, and the pace itself costs nothing extra. Units beyond the monthly allowance are paid as you go or bought ahead, as above.\n\nOn **Dedicated**, units are unlimited: heavier use shows up on your own cloud bill as the compute it used, plus 1% of that from Runink. On **Enterprise** it runs where you already run things.\n\nEither way your spend follows decisions you made — how many seats, and where the work runs — rather than a price per question."
+      "answer": "On **Lite**, a team can use up to 900 units per person per hour. Work past that pace waits its turn in line; it is never refused, and the pace itself costs nothing extra. Units beyond the monthly allowance are paid as you go or bought ahead, as above.\n\nOn **Dedicated**, units are unlimited: heavier use shows up on your own cloud bill as the compute it used, plus 1.5% of that from Runink. On **Enterprise** it runs where you already run things.\n\nEither way your spend follows decisions you made — how many seats, and where the work runs — rather than a price per question."
     }
 
   ]
