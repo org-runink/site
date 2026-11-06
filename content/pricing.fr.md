@@ -104,7 +104,7 @@ author: "Runink"
 {
   "options": [
     { "label": "Paiement Mensuel", "value": "monthly" },
-    { "label": "Paiement Annuel (Environ 16 % de Moins)", "value": "yearly" }
+    { "label": "Paiement Annuel (Environ 14 % de Moins)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -118,20 +118,20 @@ author: "Runink"
       "name": "LICENCE LITE",
       "subtitle": "POUR LES ÉQUIPES DE 1 À 9 PERSONNES",
       "price_color": "stone",
-      "price_monthly": "89",
-      "price_yearly": "75",
+      "price_monthly": "99",
+      "price_yearly": "85",
       "price_subtitle": "PAR PERSONNE, PAR MOIS",
       "credits": "18 000 UNITÉS DE CALCUL<br>PAR PERSONNE ET PAR MOIS",
       "outcome_strategies": [
         {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence, plus les unités utilisées au-delà de la dotation."},
         {"label": "ENGAGEMENT MINIMUM", "value": "Un mois."},
         {"label": "SI NOUS RÉCUPÉRONS DE L'ARGENT POUR VOUS", "value": "20 % de ce qui est récupéré. Rien si rien n'est récupéré."},
-        {"label": "FRAIS DE MISE EN SERVICE", "value": "De 1 % à 3 %, jamais plus de 50 $."}
+        {"label": "FRAIS DE MISE EN SERVICE", "value": "De 1 % à 3 % d'une commande approuvée et confirmée, jamais plus de 150 $ par commande."}
       ],
       "features": [
         "TOURNE SUR LES MACHINES PARTAGÉES DE RUNINK, CHACUN SON TOUR AVEC LE TRAVAIL DES AUTRES CLIENTS",
         "18 000 UNITÉS PAR PERSONNE ET PAR MOIS, MISES EN COMMUN DANS L'ÉQUIPE",
-        "DES UNITÉS EN PLUS À L'USAGE, OU ACHETÉES D'AVANCE : 10 % DE MOINS POUR UN MOIS, 20 % DE MOINS POUR UN AN",
+        "DES UNITÉS EN PLUS À L'USAGE, OU ACHETÉES D'AVANCE : 5 % DE MOINS POUR UN MOIS, 10 % DE MOINS POUR UN AN",
         "JUSQU'À 900 UNITÉS PAR PERSONNE ET PAR HEURE ; AU-DELÀ DE CE RYTHME, LE TRAVAIL ATTEND SON TOUR"
       ],
       "button": {
@@ -146,15 +146,15 @@ author: "Runink"
       "name": "LICENCE DÉDIÉE",
       "subtitle": "POUR 10 PERSONNES ET PLUS",
       "price_color": "orange",
-      "price_monthly": "149",
-      "price_yearly": "149",
+      "price_monthly": "165",
+      "price_yearly": "165",
       "price_subtitle": "PAR PERSONNE, PAR MOIS, AVEC UN CONTRAT ANNUEL",
       "credits": "UNITÉS DE CALCUL ILLIMITÉES<br>SUR VOTRE PROPRE CLOUD",
       "outcome_strategies": [
-        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence, plus 1 % de ce que votre cloud facture pour les exécuteurs."},
+        {"label": "CE QUI DÉTERMINE LA FACTURE", "value": "Combien de personnes vous mettez sous licence, plus 1,5 % de ce que votre cloud facture pour les exécuteurs."},
         {"label": "ENGAGEMENT MINIMUM", "value": "Un an."},
         {"label": "SI NOUS RÉCUPÉRONS DE L'ARGENT POUR VOUS", "value": "20 % de ce qui est récupéré. Rien si rien n'est récupéré."},
-        {"label": "FRAIS DE MISE EN SERVICE", "value": "De 1 % à 3 %, jamais plus de 50 $."}
+        {"label": "FRAIS DE MISE EN SERVICE", "value": "De 1 % à 3 % d'une commande approuvée et confirmée, jamais plus de 150 $ par commande."}
       ],
       "features": [
         "DES EXÉCUTEURS DANS VOTRE PROPRE PROJET GOOGLE CLOUD, OU VOTRE COMPTE DATABRICKS OU SNOWFLAKE",
@@ -199,6 +199,102 @@ author: "Runink"
 }
 {{< /pricing-table-1 >}}
 
+{{< pricing-estimator >}}
+{
+  "copy": {
+    "eyebrow": "Estimation",
+    "title": "Estimez ce que coûte FACE by Runink",
+    "intro": "Choisissez votre situation, saisissez vos propres chiffres et obtenez un montant mensuel et un montant annuel, avec le calcul affiché à côté de chaque ligne. Seuls les prix publiés sur cette page sont utilisés.",
+    "notice": "Une estimation, pas un devis.",
+    "examples": "Chaque champ part d'une valeur neutre que vous modifiez. Rien n'y est une promesse ni une prévision de ce que vous paierez ou récupérerez.",
+    "noscript": "L'estimateur a besoin de JavaScript. Sans lui, les cartes de licence ci-dessus portent les mêmes prix.",
+    "scenarioLegend": "Lequel de ces cas est le vôtre ?",
+    "scenarios": [
+      {"id": "lead", "label": "J'évalue", "help": "Des postes seulement : ce que coûte la licence pour mon équipe."},
+      {"id": "prospect", "label": "Je chiffre les gains", "help": "Ajoute le recouvrement des réclamations et les commandes, puis les compare aux frais."},
+      {"id": "customer", "label": "Je suis client et je vérifie ma facture", "help": "Postes, unités utilisées, réclamations et commandes de ce mois : les lignes de la facture."},
+      {"id": "market", "label": "J'achète via Google Cloud Marketplace", "help": "Les mêmes prix catalogue, et où chaque partie est facturée."}
+    ],
+    "seats": "Combien de personnes l'utiliseront",
+    "seatRange": "De 1 à {liteMax} personnes : Lite, sur les machines partagées de Runink. À partir de {dedMin} : Dédiée, dans votre propre compte cloud.",
+    "premises": "Le travail doit tourner dans mes propres locaux (Enterprise)",
+    "cycle": "Cycle de facturation (Lite seulement)",
+    "cycle_yearly": "Annuel",
+    "cycle_monthly": "Mensuel",
+    "units": "Unités que vous comptez utiliser en un mois, pour toute l'équipe",
+    "unitsHint": "Les unités incluses pour chaque personne sont mises en commun dans l'équipe. Les unités achetées d'avance sont considérées comme entièrement utilisées.",
+    "unitsPay": "Comment vous payez les unités au-delà de l'allocation",
+    "pay_payg": "Au fil de l'eau",
+    "pay_month": "Achetées d'avance pour un mois",
+    "pay_year": "Achetées d'avance pour un an",
+    "runner": "Coût cloud des exécuteurs en un mois (dollars américains)",
+    "runnerHint": "Ce que votre propre cloud facture pour les exécuteurs. Vous le payez à votre cloud ; Runink y ajoute un pourcentage.",
+    "claims": "Recouvrement de réclamations en un mois (dollars américains)",
+    "claimsHint": "Seul l'argent réellement revenu compte. Rien n'est dû quand rien ne revient.",
+    "orders": "Commandes d'approvisionnement approuvées et confirmées en un mois",
+    "ordersHint": "Ne comptez que les commandes que vous avez approuvées et qui sont confirmées. Aucun frais n'est dû sur les autres.",
+    "orderAvg": "Valeur moyenne d'une commande (dollars américains)",
+    "rate": "Taux de mise en service automatique (pourcentage)",
+    "rateHint": "Convenu avec vous dans la fourchette publiée. Il part du haut de la fourchette pour que l'estimation ne soit jamais trop basse.",
+    "resultsTitle": "Votre estimation",
+    "tierLine": "Licence pour ces réponses : {tier}.",
+    "tier_lite": "Lite, sur les machines partagées de Runink",
+    "tier_dedicated": "Dédiée, dans votre propre compte cloud",
+    "tier_enterprise": "Enterprise, dans vos locaux",
+    "summary": "Environ {monthly} par mois, {yearly} par an.",
+    "enterpriseSummary": "Enterprise est chiffré avec vous. Dites-nous où le travail doit tourner et nous établirons un devis.",
+    "enterpriseLabel": "Licence Enterprise",
+    "pricedWithYou": "Chiffré avec vous",
+    "enterpriseFormula": "Il n'y a pas de prix catalogue. L'endroit où cela tourne et les niveaux de service que vous fixez le déterminent. Les frais sur les actions automatisées sont convenus avec vous et inscrits au contrat.",
+    "colItem": "Ligne",
+    "colAmount": "Montant",
+    "colFormula": "Comment il est calculé",
+    "unlimited": "Illimité",
+    "notInTotal": "Hors du total.",
+    "line_seats": "Personnes",
+    "f_seats": "{seats} personnes × {price} par personne et par mois",
+    "line_units_within": "Unités supplémentaires",
+    "f_units_within": "{used} unités utilisées, dans les {included} incluses : rien en plus",
+    "line_units_payg": "Unités supplémentaires, au fil de l'eau",
+    "f_units_payg": "{used} utilisées − {included} incluses = {extra} en plus. {blocks} blocs de 100 × {rate}",
+    "line_units_month": "Unités supplémentaires, achetées un mois d'avance",
+    "f_units_month": "{used} utilisées − {included} incluses = {extra} en plus. {blocks} blocs de 100 × {rate}, moins {off}",
+    "line_units_year": "Unités supplémentaires, achetées un an d'avance",
+    "f_units_year": "{used} utilisées − {included} incluses = {extra} en plus. {blocks} blocs de 100 × {rate}, moins {off}",
+    "line_units_unlimited": "Unités",
+    "f_units_unlimited": "Illimitées : le travail tourne dans votre propre compte cloud",
+    "line_runner": "Frais d'exécuteurs",
+    "f_runner": "{pct} des {cost} que votre cloud facture pour les exécuteurs",
+    "line_runner_cloud": "Coût cloud des exécuteurs",
+    "f_runner_cloud": "{cost} par mois, payés à votre propre cloud.",
+    "line_claims": "Frais de recouvrement de réclamations",
+    "f_claims": "{pct} de {amount} de recouvrement",
+    "line_orders": "Frais de mise en service automatique",
+    "f_orders": "{orders} commandes × {each} chacune. Une commande : {pct} de {avg} = {raw}, jamais plus de {cap}",
+    "totalMonthly": "Total par mois",
+    "f_totalMonthly": "Les lignes ci-dessus, sans celles marquées hors du total",
+    "totalYearly": "Total par an",
+    "f_totalYearly": "Total par mois × 12",
+    "netTitle": "Vos propres chiffres : le recouvrement face aux frais",
+    "netRecovery": "Recouvrement que vous avez saisi",
+    "f_netRecovery": "Le montant saisi ci-dessus, par mois",
+    "netFees": "Frais",
+    "f_netFees": "Le total par mois ci-dessus",
+    "netMonthly": "Net par mois",
+    "f_netMonthly": "Recouvrement − frais",
+    "netYearly": "Net par an",
+    "f_netYearly": "Net par mois × 12",
+    "netNote": "Ce sont les chiffres que vous avez saisis. Ce n'est pas un résultat promis par Runink.",
+    "marketSeat": "Via Google Cloud Marketplace, le prix des postes est facturé par l'intermédiaire de la fiche.",
+    "marketRunner": "Le calcul des exécuteurs figure sur votre propre facture Google Cloud. Il n'est pas dans le total ci-dessus.",
+    "customerNote": "Utilisez les chiffres de votre propre console pour ce mois. Votre facture fait foi ; si une ligne diffère, demandez-nous.",
+    "currencyNote": "Les prix sont des prix catalogue en dollars américains. Les factures sont en devise de votre région, converties au taux mensuel de la Banque centrale européenne.",
+    "footer": "Les montants annuels supposent que chaque mois ressemble à celui que vous décrivez. Les commandes sont facturées une par une, donc un mélange de petites et de grandes commandes peut différer d'une moyenne.",
+    "pct": "{n} %"
+  }
+}
+{{< /pricing-estimator >}}
+
 
 
 {{< faq >}}
@@ -236,7 +332,7 @@ author: "Runink"
     },
     {
       "question": "Que suis-je en train de payer, exactement ?",
-      "answer": "Des postes. Un **poste**, c'est une personne qui utilise FACE by Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nLa licence que vous choisissez décide où le travail tourne. **Lite** tourne sur les machines partagées de Runink et inclut des Unités de Calcul avec chaque poste. **Dédiée** tourne sur des exécuteurs dans votre propre compte cloud, sans limite d'unités : votre cloud vous facture ce calcul directement, et Runink ajoute 1 % de ce que coûtent ces exécuteurs. **Enterprise** tourne dans vos locaux ou dans votre propre cloud, à un prix convenu avec vous.\n\nCes postes sont ceux de FACE. PULSE et Runink TIDE sont des produits distincts, chacun avec son propre abonnement. En dehors de la licence, les seuls frais sur un poste FACE sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
+      "answer": "Des postes. Un **poste**, c'est une personne qui utilise FACE by Runink. Vous comptez les personnes qui en ont besoin, vous multipliez par le prix ci-dessus, et c'est la licence.\n\nLa licence que vous choisissez décide où le travail tourne. **Lite** tourne sur les machines partagées de Runink et inclut des Unités de Calcul avec chaque poste. **Dédiée** tourne sur des exécuteurs dans votre propre compte cloud, sans limite d'unités : votre cloud vous facture ce calcul directement, et Runink ajoute 1,5 % de ce que coûtent ces exécuteurs. **Enterprise** tourne dans vos locaux ou dans votre propre cloud, à un prix convenu avec vous.\n\nCes postes sont ceux de FACE. PULSE et Runink TIDE sont des produits distincts, chacun avec son propre abonnement. En dehors de la licence, les seuls frais sur un poste FACE sont les frais d'usage sur les actions automatiques de FACE, détaillés plus haut."
     },
     {
       "question": "Qu'est-ce qu'une Unité de Calcul ?",
@@ -244,7 +340,7 @@ author: "Runink"
     },
     {
       "question": "Que se passe-t-il si nous dépassons la dotation ?",
-      "answer": "Sur la **Licence Lite**, vous choisissez comment payer le supplément. Les unités au-delà de la dotation sont facturées à l'usage, **0,10 $ par tranche de 100 unités**, ou vous pouvez les acheter d'avance : **10 % de moins** pour un mois, **20 % de moins** pour un an. Dédiée et Enterprise n'ont pas de dotation à dépasser.\n\nVous voyez le total en cours dans la console et vous pouvez fixer un budget en face, de sorte que la première nouvelle d'un mois chargé ne soit pas la facture."
+      "answer": "Sur la **Licence Lite**, vous choisissez comment payer le supplément. Les unités au-delà de la dotation sont facturées à l'usage, **0,12 $ par tranche de 100 unités**, ou vous pouvez les acheter d'avance : **5 % de moins** pour un mois, **10 % de moins** pour un an. Dédiée et Enterprise n'ont pas de dotation à dépasser.\n\nVous voyez le total en cours dans la console et vous pouvez fixer un budget en face, de sorte que la première nouvelle d'un mois chargé ne soit pas la facture."
     },
     {
       "question": "Quelle licence nous convient ?",
@@ -252,11 +348,15 @@ author: "Runink"
     },
     {
       "question": "Faut-il signer pour un an ?",
-      "answer": "Seulement pour Dédiée et Enterprise. La **Licence Lite** se prend au mois à 89 $ par personne, ou à l'année à 75 $ — le même écart, d'environ 16 %, que montre le sélecteur ci-dessus.\n\nDédiée et Enterprise se prennent à l'année parce que les deux mettent en place des exécuteurs pour votre entreprise en particulier, dans votre propre cloud ou sur vos propres serveurs."
+      "answer": "Seulement pour Dédiée et Enterprise. La **Licence Lite** se prend au mois à 99 $ par personne, ou à l'année à 85 $ — le même écart, d'environ 14 %, que montre le sélecteur ci-dessus.\n\nDédiée et Enterprise se prennent à l'année parce que les deux mettent en place des exécuteurs pour votre entreprise en particulier, dans votre propre cloud ou sur vos propres serveurs."
     },
     {
       "question": "Que coûte un usage plus intensif ?",
-      "answer": "Sur **Lite**, une équipe peut utiliser jusqu'à 900 unités par personne et par heure. Au-delà de ce rythme, le travail attend son tour dans la file ; il n'est jamais refusé, et le rythme lui-même ne coûte rien de plus. Les unités au-delà de la dotation mensuelle se paient à l'usage ou s'achètent d'avance, comme indiqué plus haut.\n\nSur **Dédiée**, les unités sont illimitées : un usage plus intensif apparaît sur la facture de votre propre cloud comme le calcul consommé, plus 1 % de ce montant pour Runink. Sur **Enterprise**, il tourne là où vous faites déjà tourner vos systèmes.\n\nDans tous les cas, votre dépense suit des décisions que vous avez prises — combien de postes, et où le travail tourne — et non un prix par question."
+      "answer": "Sur **Lite**, une équipe peut utiliser jusqu'à 900 unités par personne et par heure. Au-delà de ce rythme, le travail attend son tour dans la file ; il n'est jamais refusé, et le rythme lui-même ne coûte rien de plus. Les unités au-delà de la dotation mensuelle se paient à l'usage ou s'achètent d'avance, comme indiqué plus haut.\n\nSur **Dédiée**, les unités sont illimitées : un usage plus intensif apparaît sur la facture de votre propre cloud comme le calcul consommé, plus 1,5 % de ce montant pour Runink. Sur **Enterprise**, il tourne là où vous faites déjà tourner vos systèmes.\n\nDans tous les cas, votre dépense suit des décisions que vous avez prises — combien de postes, et où le travail tourne — et non un prix par question."
+    },
+    {
+      "question": "Comment commence un projet FACE, et que coûtent les services ?",
+      "answer": "FACE commence par un **audit de votre paysage actuel**, puis une **feuille de route** de mise en œuvre bâtie sur cet audit. Nous commençons par regarder, pas par vendre : l'audit décrit votre environnement tel qu'il est ; la feuille de route dit ce qui vient ensuite. Le tarif est de **200 $ ou 200 € par heure, en blocs de 50 heures** : un bloc pour l'audit, un pour la feuille de route.\n\nLes offres d'accompagnement Enterprise ajoutent, chacune **sur demande** : un pilote payant (60 jours de preuve de valeur sur vos propres données, mené à partir de la feuille de route), la mise en route et le conseil, le support et les mises à jour (formules passives pour les mises à jour et les correctifs, formules actives avec des ingénieurs nommés et des délais de réponse). Elles sont assurées par Runink et ses partenaires."
     }
 
   ]

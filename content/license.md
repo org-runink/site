@@ -35,7 +35,7 @@ Work that the platform runs for you spends **Capacity Units (CUs)**. That work i
 
 Some autonomous execution features carry a performance-based variable fee. You get those features in the **Dedicated License** and **Enterprise** tiers.
 
-*   **Auto-Provisioning.** We bill a 3% commission on auto-provisioned purchase orders.
+*   **Auto-Provisioning.** We bill 1% to 3% of the value of each auto-provisioned fulfilment order, never more than $150 per order, and only on orders you have approved and that are confirmed.
 *   **Claims & Revenue Recovery.** We bill a success fee. It is 20% of recovered funds. We only win when you win.
 
 ### 4. Enterprise & On-Premises Deployments

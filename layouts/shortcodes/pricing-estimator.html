@@ -1,0 +1,155 @@
+{{ $json := .Inner | transform.Unmarshal }}
+{{ $c := $json.copy }}
+{{/*
+  THE PRICING ESTIMATOR. One shortcode, one script (assets/js/pricing-estimator.js).
+
+  PRICES ARE NOT HERE. They are read from data/pricing.json and copied into the
+  config block at the bottom, so the calculator and the licence cards cannot be
+  edited apart: assets/js/__tests__/pricing-estimator.test.js fails when the card
+  text in any of the four pricing pages disagrees with that file.
+
+  THE WORDS ARE IN THE CONTENT FILE. Each of content/pricing{,.es,.fr,.pt}.md calls
+  this shortcode with its own `copy` block, as the other shortcodes on the page do,
+  so a language is added or fixed in one place. The formulas are templates with
+  {tokens}; the script fills them with figures formatted for the reader's locale.
+
+  PROGRESSIVE ENHANCEMENT, AS motion.js PROMISES. The form is inert markup that is
+  hidden until the script has run. Nothing the page says is lost without it: the
+  licence cards above carry the same prices, and the <noscript> line says so.
+
+  NOTHING HERE MAY SHOW A COST, A MARGIN, A PARTNER SHARE, HARDWARE, ONBOARDING OR
+  CONSULTING (owner, 2026-09-28). data/pricing.json has no such field, so there is
+  nothing to print. The 'Google Cloud Marketplace' scenario shows the same list
+  prices and says where each part is billed; it shows no one's share.
+*/}}
+{{ $p := site.Data.pricing }}
+{{ $rules := dict "currency" $p.currency "lite" $p.lite "dedicated" $p.dedicated "units" $p.units "outcome" $p.outcome }}
+{{ $locales := dict "en" "en-US" "fr" "fr-FR" "es" "es-ES" "pt" "pt-BR" }}
+{{ $locale := index $locales .Page.Language.Lang | default "en-US" }}
+{{ $cfg := dict "rules" $rules "copy" $c "locale" $locale }}
+{{ $js := resources.Get "js/pricing-estimator.js" | js.Build (dict "minify" hugo.IsProduction "target" "es2018") }}
+{{ if hugo.IsProduction }}{{ $js = $js | fingerprint }}{{ end }}
+
+<section id="estimator" class="rk-estimator py-16 relative z-10" data-pricing-estimator aria-labelledby="est-title">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mb-3">{{ $c.eyebrow }}</p>
+    <h2 id="est-title" class="text-3xl font-bold mb-4">{{ $c.title }}</h2>
+    <p class="text-ink-2 text-lg leading-relaxed mb-2">{{ $c.intro }}</p>
+    <p class="text-ink-2 leading-relaxed mb-8"><strong>{{ $c.notice }}</strong> {{ $c.examples }}</p>
+
+    <noscript><p class="text-ink-2">{{ $c.noscript }}</p></noscript>
+
+    <div data-est-app hidden class="rounded-lg border border-stone-800 bg-sheet p-6 md:p-8">
+      <form novalidate>
+        <fieldset class="mb-8">
+          <legend class="text-xs font-bold text-stone-500 uppercase tracking-widest mb-3">{{ $c.scenarioLegend }}</legend>
+          <div class="grid gap-3 md:grid-cols-2">
+            {{ range $i, $s := $c.scenarios }}
+            <label class="flex gap-3 items-start rounded-lg border border-stone-800 bg-sunk p-4 cursor-pointer">
+              <input type="radio" name="scenario" value="{{ $s.id }}" class="mt-1"{{ if eq $i 0 }} checked{{ end }}>
+              <span><span class="block font-semibold text-ink">{{ $s.label }}</span><span class="block text-sm text-ink-2">{{ $s.help }}</span></span>
+            </label>
+            {{ end }}
+          </div>
+        </fieldset>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <div data-field="seats" class="space-y-2">
+            <label for="est-seats" class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.seats }}</label>
+            <input id="est-seats" name="seats" type="number" inputmode="numeric" min="1" step="1" value="5" aria-describedby="est-seats-hint"
+              class="w-full bg-sunk border border-stone-800 rounded-lg p-3 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal">
+            <p id="est-seats-hint" class="text-sm text-ink-2" data-est-seatrange></p>
+          </div>
+
+          <div data-field="premises" class="space-y-2 flex items-end">
+            <label class="flex gap-3 items-start text-ink">
+              <input type="checkbox" name="premises" class="mt-1">
+              <span>{{ $c.premises }}</span>
+            </label>
+          </div>
+
+          <fieldset data-field="cycle" class="space-y-2">
+            <legend class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.cycle }}</legend>
+            <label class="flex gap-3 text-ink"><input type="radio" name="cycle" value="yearly" checked> <span>{{ $c.cycle_yearly }}</span></label>
+            <label class="flex gap-3 text-ink"><input type="radio" name="cycle" value="monthly"> <span>{{ $c.cycle_monthly }}</span></label>
+          </fieldset>
+
+          <div data-field="units" class="space-y-2">
+            <label for="est-units" class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.units }}</label>
+            <input id="est-units" name="units" type="number" inputmode="numeric" min="0" step="1" value="0" aria-describedby="est-units-hint"
+              class="w-full bg-sunk border border-stone-800 rounded-lg p-3 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal">
+            <p id="est-units-hint" class="text-sm text-ink-2">{{ $c.unitsHint }}</p>
+          </div>
+
+          <fieldset data-field="unitsPay" class="space-y-2">
+            <legend class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.unitsPay }}</legend>
+            <label class="flex gap-3 text-ink"><input type="radio" name="unitsPay" value="payg" checked> <span>{{ $c.pay_payg }}</span></label>
+            <label class="flex gap-3 text-ink"><input type="radio" name="unitsPay" value="month"> <span>{{ $c.pay_month }}</span></label>
+            <label class="flex gap-3 text-ink"><input type="radio" name="unitsPay" value="year"> <span>{{ $c.pay_year }}</span></label>
+          </fieldset>
+
+          <div data-field="runner" class="space-y-2">
+            <label for="est-runner" class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.runner }}</label>
+            <input id="est-runner" name="runner" type="number" inputmode="decimal" min="0" step="any" value="0" aria-describedby="est-runner-hint"
+              class="w-full bg-sunk border border-stone-800 rounded-lg p-3 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal">
+            <p id="est-runner-hint" class="text-sm text-ink-2">{{ $c.runnerHint }}</p>
+          </div>
+
+          <div data-field="claims" class="space-y-2">
+            <label for="est-claims" class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.claims }}</label>
+            <input id="est-claims" name="claims" type="number" inputmode="decimal" min="0" step="any" value="0" aria-describedby="est-claims-hint"
+              class="w-full bg-sunk border border-stone-800 rounded-lg p-3 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal">
+            <p id="est-claims-hint" class="text-sm text-ink-2">{{ $c.claimsHint }}</p>
+          </div>
+
+          <div data-field="orders" class="space-y-2">
+            <label for="est-orders" class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.orders }}</label>
+            <input id="est-orders" name="orders" type="number" inputmode="numeric" min="0" step="1" value="0" aria-describedby="est-orders-hint"
+              class="w-full bg-sunk border border-stone-800 rounded-lg p-3 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal">
+            <p id="est-orders-hint" class="text-sm text-ink-2">{{ $c.ordersHint }}</p>
+          </div>
+
+          <div data-field="orderAvg" class="space-y-2">
+            <label for="est-orderavg" class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.orderAvg }}</label>
+            <input id="est-orderavg" name="orderAvg" type="number" inputmode="decimal" min="0" step="any" value="0"
+              class="w-full bg-sunk border border-stone-800 rounded-lg p-3 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal">
+          </div>
+
+          <div data-field="rate" class="space-y-2">
+            <label for="est-rate" class="text-xs font-bold text-stone-500 uppercase tracking-widest">{{ $c.rate }}</label>
+            <input id="est-rate" name="rate" type="number" inputmode="decimal" min="{{ div $p.outcome.provisioningMinBps 100 }}" max="{{ div $p.outcome.provisioningMaxBps 100 }}" step="0.5" value="{{ div $p.outcome.provisioningMaxBps 100 }}" aria-describedby="est-rate-hint"
+              class="w-full bg-sunk border border-stone-800 rounded-lg p-3 text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal">
+            <p id="est-rate-hint" class="text-sm text-ink-2">{{ $c.rateHint }}</p>
+          </div>
+        </div>
+      </form>
+
+      <div class="mt-10" role="region" aria-labelledby="est-results-title">
+        <h3 id="est-results-title" class="text-xl font-bold mb-1">{{ $c.resultsTitle }}</h3>
+        <p class="text-sm text-ink-2 mb-4" data-est-tier></p>
+        <p class="text-lg font-semibold text-ink mb-4" data-est-summary aria-live="polite"></p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <caption class="sr-only">{{ $c.resultsTitle }}</caption>
+            <thead>
+              <tr class="border-b border-stone-800 text-xs font-bold text-stone-500 uppercase tracking-widest">
+                <th scope="col" class="py-2 pr-4">{{ $c.colItem }}</th>
+                <th scope="col" class="py-2 pr-4">{{ $c.colAmount }}</th>
+                <th scope="col" class="py-2">{{ $c.colFormula }}</th>
+              </tr>
+            </thead>
+            <tbody data-est-rows></tbody>
+          </table>
+        </div>
+        <div class="mt-6" data-est-net></div>
+        <div class="mt-6 space-y-2" data-est-notes></div>
+        <p class="mt-6 text-sm text-ink-2">{{ $c.currencyNote }}</p>
+        <p class="mt-2 text-sm text-ink-2">{{ $c.footer }}</p>
+      </div>
+    </div>
+
+    {{/* safeJS, not safeHTML: html/template treats an application/json script as JavaScript and would re-encode a safeHTML value as one quoted JSON string, so the page got a string, not the config. jsonify already escapes <, > and &. */}}
+    <script type="application/json" data-est-config>{{ $cfg | jsonify | safeJS }}</script>
+  </div>
+</section>
+<script src="{{ $js.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
