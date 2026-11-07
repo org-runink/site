@@ -1,5 +1,5 @@
 {
-  "_note": "FACE list prices in USD, in ONE place. The pricing estimator (layouts/shortcodes/pricing-estimator.html, assets/js/pricing-estimator.js) reads this file and nothing else. The licence cards in content/pricing{,.es,.fr,.pt}.md hold the same figures as text; assets/js/__tests__/pricing-estimator.test.js fails if they drift apart. The source is the billing price book (model v3): change billing first, then here, then the cards. PUBLIC FIELDS ONLY: no cost, margin, partner split, hardware, onboarding or consulting rate belongs in this file.",
+  "_note": "List prices in USD, in ONE place. The top-level lite/dedicated/units/outcome blocks are FACE: the pricing estimator (layouts/shortcodes/pricing-estimator.html, assets/js/pricing-estimator.js) reads them and nothing else. The tide and pulse blocks are Runink TIDE and Runink PULSE (price book 2026-11-06), stated as text on content/products/tide-pricing*.md and pulse-pricing*.md. The licence cards in content/pricing{,.es,.fr,.pt}.md and those pages hold the same figures as text; the jest tests in assets/js/__tests__/ fail if they drift apart. The source is the billing price book: change billing first, then here, then the cards. PUBLIC FIELDS ONLY: no cost, margin, partner split, hardware, onboarding or consulting rate belongs in this file.",
   "currency": "USD",
   "lite": {
     "minSeats": 1,
@@ -23,5 +23,37 @@
     "provisioningMinBps": 100,
     "provisioningMaxBps": 300,
     "provisioningCapCentsPerOrder": 15000
+  },
+  "tide": {
+    "lite": {
+      "minSeats": 1,
+      "maxSeats": 9,
+      "seatYearlyCents": 8500,
+      "seatMonthlyCents": 9900,
+      "unitsPerSeat": 18000
+    },
+    "dedicated": {
+      "firstNodeMonthlyCents": 27900,
+      "extraNodeMonthlyCents": 16900,
+      "runnerFeeBps": 150
+    },
+    "units": {
+      "overageCentsPer100": 12,
+      "prepaidMonthOffPct": 5,
+      "prepaidYearOffPct": 10
+    }
+  },
+  "pulse": {
+    "lite": {
+      "minSeats": 1,
+      "maxSeats": 9,
+      "seatYearlyCents": 5500,
+      "seatMonthlyCents": 6500,
+      "fastTasksPerSeatPerDay": 10
+    },
+    "dedicated": {
+      "minSeats": 10,
+      "seatYearlyCents": 10900
+    }
   }
 }

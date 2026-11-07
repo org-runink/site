@@ -17,7 +17,7 @@
   Self-hosted plain text, no external request — rule 7.
 */ -}}
 {{- $products := slice "/products/face" "/products/tide" "/products/pulse" "/river" -}}
-{{- $pricing := dict "/products/face" "/pricing" "/products/tide" "/products/tide-pricing" -}}
+{{- $pricing := dict "/products/face" "/pricing" "/products/tide" "/products/tide-pricing" "/products/pulse" "/products/pulse-pricing" -}}
 # Runink
 
 > {{ .Site.Params.organization_description | default .Site.Params.description }}
@@ -89,8 +89,9 @@ visibility. Index: {{ "blog/" | absURL }}
 
 ## Other languages
 
-Spanish, French and Portuguese cover the homepage, the Runink FACE pricing
-page, the company and trust pages, the library and the scenario pages. The
+Spanish, French and Portuguese cover the homepage, the pricing pages of
+Runink FACE, Runink TIDE and Runink PULSE, the company and trust pages, the
+library and the scenario pages. The
 product pages, the articles and the papers are in English.
 {{ range site.Home.AllTranslations }}{{ if ne .Language.Lang "en" }}
 - {{ .Language.LanguageName }}: {{ .Permalink }}

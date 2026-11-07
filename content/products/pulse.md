@@ -32,7 +32,8 @@ next_about: "Runink PULSE"
 # now reads: the burden, what PULSE does about it, who still decides, and which
 # cost line it touches. No figures: the "work out your own figure" section tells
 # the reader where to find theirs. The PULSE Lite quota copy in the FAQ is
-# owner-approved wording; keep it exactly as it is, and the prices with it.
+# owner-approved wording; keep it exactly as it is. The prices are the price book of
+# 2026-11-06 (data/pricing.json "pulse"; /products/pulse-pricing/ carries the cards).
 #
 # No screenshot. The screenshots that exist show an older interface filled with a
 # real third party's profiles and photographs, which cannot go on a public page.
@@ -399,7 +400,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "What does it cost?",
-            "answer": "PULSE is priced by the seat: you pay for each person who uses it, and the seat covers the work that person puts through it. PULSE Lite runs on Runink's shared machines, where your work takes its turn: $59 a seat a month, or $49 a seat a month on an annual plan, for teams of one to nine. Each Lite seat gets 10 tasks a day at full speed; after that, tasks keep running at a slower pace until midnight in your time zone, when the count starts again. Dedicated is $99 a seat a month, for ten seats and up, running on runners in your own cloud account, which bills you for that compute directly. Enterprise, including deployments with no connection to the outside world, is quoted with you. PULSE, FACE and TIDE are each sold on their own subscription, so a PULSE seat is a seat in PULSE."
+            "answer": "PULSE is priced by the seat: you pay for each person who uses it, and the seat covers the work that person puts through it. PULSE Lite runs on Runink's shared machines, where your work takes its turn: $65 a seat a month, or $55 a seat a month on an annual plan, for teams of one to nine. Each Lite seat gets 10 tasks a day at full speed; after that, tasks keep running at a slower pace until midnight in your time zone, when the count starts again. Dedicated is $109 a seat a month, for ten seats and up, running on runners in your own cloud account, which bills you for that compute directly. Enterprise, including deployments with no connection to the outside world, is quoted with you. PULSE, FACE and TIDE are each sold on their own subscription, so a PULSE seat is a seat in PULSE. Every plan, and what an automated voice agent costs by comparison, is on [the PULSE pricing page](/products/pulse-pricing/)."
         }
     ]
 }
