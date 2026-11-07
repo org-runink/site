@@ -16,15 +16,17 @@ product_url: "products/tide/"
 product_subcategory: "IT operations, AI governance and application platform"
 # WHERE EVERY CLAIM ON THIS PAGE COMES FROM.
 #
-# PRICES ARE THE OWNER-APPROVED MODEL V2 (2026-09-28, billing catalogue): the
+# PRICES ARE THE PRICE BOOK OF 2026-11-06 (billing#36, data/pricing.json "tide"): the
 # licence says where the work runs. TIDE Lite (1-9, Runink's shared machines):
-# $75 yearly / $89 monthly, 18,000 units a person, then $0.10 per 100 units or
-# units bought ahead (10% less a month, 20% less a year), up to 900 units a
+# $85 yearly / $99 monthly, 18,000 units a person, then $0.12 per 100 units or
+# units bought ahead (5% less a month, 10% less a year), up to 900 units a
 # person an hour before work waits its turn. TIDE Dedicated (runners in the
-# customer's own cloud account): $249 a month for the first node + $149 per
-# extra node, yearly, unlimited units, plus 1% of those runners' cloud cost.
+# customer's own cloud account): $279 a month for the first node + $169 per
+# extra node, yearly, unlimited units, plus 1.5% of those runners' cloud cost.
 # Enterprise: priced with you. TIDE is sold separately from FACE and PULSE.
-# Change the billing catalogue first, then here.
+# Change the billing catalogue first, then data/pricing.json, then the cards here
+# and in the three translations; assets/js/__tests__/tide-pulse-pricing.test.js
+# fails when they disagree.
 #
 # WHAT IS NOT SHARED: FACE's page prices a "success fee" (20% of recovered
 # money) and an automatic set-up fee (1%-3%) on top of the seat price. TIDE has
@@ -47,11 +49,15 @@ product_subcategory: "IT operations, AI governance and application platform"
 #
 # NO ENTERPRISE SOVEREIGNTY DETAILS ON THIS PAGE (owner, 2026-09-28): no
 # hardware or appliance pricing, no field devices, no onboarding or consulting
-# rates, no partner splits. The GX10 lease terms and the $300/hour consulting
-# split were removed for that reason; onboarding is quoted with the customer.
+# totals, no partner splits. The GX10 lease terms and the old consulting
+# split were removed for that reason. SERVICES (owner, 2026-11-05, rate
+# 2026-11-06, as on /pricing/ for FACE): the landscape audit and roadmap at $200
+# or EUR 200 an hour in 50-hour blocks is the only services figure; the pilot,
+# onboarding and consulting, and support and updates are "Upon request".
 #
-# English only, like content/products/tide.md itself ("English only, like
-# /river/ and /downloads/") — no .es/.fr/.pt sibling files for this page.
+# FOUR LANGUAGES since 2026-11-06 (tide-pricing.fr/.es/.pt.md), like /pricing/:
+# a change lands in all four in the same commit (CONTENT.md rule 12). The
+# product page content/products/tide.md stays English only.
 #
 # URL: this file lives at content/products/tide-pricing.md rather than at
 # content root (where content/pricing.md sits), so its section is "products"
@@ -136,7 +142,7 @@ product_subcategory: "IT operations, AI governance and application platform"
 {
   "options": [
     { "label": "Pay Monthly", "value": "monthly" },
-    { "label": "Pay Yearly (About 16% Less)", "value": "yearly" }
+    { "label": "Pay Yearly (About 14% Less)", "value": "yearly" }
   ]
 }
 {{< /pricing-toggle >}}
@@ -150,8 +156,8 @@ product_subcategory: "IT operations, AI governance and application platform"
       "name": "LITE LICENCE",
       "subtitle": "FOR TEAMS OF 1 TO 9 PEOPLE",
       "price_color": "stone",
-      "price_monthly": "89",
-      "price_yearly": "75",
+      "price_monthly": "99",
+      "price_yearly": "85",
       "price_subtitle": "PER PERSON, PER MONTH",
       "credits": "18,000 COMPUTE UNITS<br>PER PERSON, PER MONTH",
       "outcome_strategies": [
@@ -163,7 +169,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       "features": [
         "RUNS ON RUNINK'S SHARED MACHINES, TAKING ITS TURN ALONGSIDE OTHER CUSTOMERS' WORK",
         "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
-        "MORE UNITS AS YOU GO, OR BOUGHT AHEAD: 10% LESS FOR A MONTH, 20% LESS FOR A YEAR",
+        "MORE UNITS AS YOU GO, OR BOUGHT AHEAD: 5% LESS FOR A MONTH, 10% LESS FOR A YEAR",
         "UP TO 900 UNITS PER PERSON PER HOUR; WORK PAST THAT PACE WAITS ITS TURN"
       ],
       "button": {
@@ -178,12 +184,12 @@ product_subcategory: "IT operations, AI governance and application platform"
       "name": "DEDICATED LICENCE",
       "subtitle": "PRICED PER NODE",
       "price_color": "orange",
-      "price_monthly": "249",
-      "price_yearly": "249",
-      "price_subtitle": "A MONTH FOR THE FIRST NODE, THEN $149 FOR EACH EXTRA NODE, ON A YEARLY CONTRACT",
+      "price_monthly": "279",
+      "price_yearly": "279",
+      "price_subtitle": "A MONTH FOR THE FIRST NODE, THEN $169 FOR EACH EXTRA NODE, ON A YEARLY CONTRACT",
       "credits": "UNLIMITED COMPUTE UNITS<br>ON YOUR OWN CLOUD",
       "outcome_strategies": [
-        {"label": "WHAT SETS THE BILL", "value": "How many nodes you run, plus 1% of what your cloud charges for the runners."},
+        {"label": "WHAT SETS THE BILL", "value": "How many nodes you run, plus 1.5% of what your cloud charges for the runners."},
         {"label": "SHORTEST COMMITMENT", "value": "One year."},
         {"label": "SUCCESS FEES", "value": "None. Audit records and deploy pipelines are not the kind of thing a success fee should attach to."},
         {"label": "AUTOMATIC SET-UP FEE", "value": "None."}
@@ -231,6 +237,21 @@ product_subcategory: "IT operations, AI governance and application platform"
 }
 {{< /pricing-table-1 >}}
 
+## What automated voice agents cost, and what TIDE does instead
+
+Cloud voice agents are billed by the minute. These are the prices on each vendor's own pricing page, in US dollars, as published on 6 November 2026:
+
+- [Retell AI](https://www.retellai.com/pricing) lists $0.07 to $0.31 a minute for its voice agents.
+- [Bland AI](https://www.bland.ai/pricing) lists $0.14 a minute on its Start plan, and $0.12 a minute plus $299 a month on its Build plan. Phone charges are billed on top.
+- [Vapi](https://vapi.ai/pricing) lists $0.05 a minute for hosting, with the speech and language models charged on top. Its own estimate for 1,000 minutes a month is $82 to $129.
+
+At 10,000 minutes a month, Retell's published range comes to $700 to $3,100, before phone charges.
+
+Runink TIDE is priced by seat or by node, never by the minute. What it brings to AI that speaks to your customers is the record an auditor asks for. The EU AI Act asks that people be told they are talking to an AI system, at the latest when they first interact with it ([Regulation (EU) 2024/1689, Article 50](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689)). In the US, the FCC has ruled that a call made with an AI-generated voice needs the prior express consent of the person called ([FCC 24-17](https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf), adopted 2 February 2024). So an auditor will ask which model spoke, which version, and who approved the change. For each model TIDE serves, its model card lists the source, version, licence and test evidence, checked against what is live. Every action a person approves in the Harness is written to the Audit chain before it happens.
+
+On Enterprise, TIDE runs on your own servers with your own models, and nothing is sent to an outside AI service. The phone line is still billed by your carrier, by the minute.
+
+
 
 
 {{< faq >}}
@@ -264,7 +285,7 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "It depends on where TIDE runs. On **Lite**, seats: a **seat** is one person who uses Runink TIDE, and each comes with Compute Units on Runink's shared machines. On **Dedicated**, nodes: $249 a month for the first node and $149 for each one after it, with runners in your own cloud account and no limit on units. Your cloud bills you for that compute directly, and Runink adds 1% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nYou are not billed by the question, the deployment or the finding."
+      "answer": "It depends on where TIDE runs. On **Lite**, seats: a **seat** is one person who uses Runink TIDE, and each comes with Compute Units on Runink's shared machines. On **Dedicated**, nodes: $279 a month for the first node and $169 for each one after it, with runners in your own cloud account and no limit on units. Your cloud bills you for that compute directly, and Runink adds 1.5% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nYou are not billed by the question, the deployment or the finding."
     },
     {
       "question": "What is a Compute Unit?",
@@ -272,7 +293,7 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "What happens if we go over the allowance?",
-      "answer": "On the **Lite Licence**, you choose how to pay for more. Units beyond the allowance are charged as you go at **$0.10 per 100 units**, or you can buy units in advance: **10% less** for a month's worth, **20% less** for a year's. Dedicated and Enterprise have no allowance to go over."
+      "answer": "On the **Lite Licence**, you choose how to pay for more. Units beyond the allowance are charged as you go at **$0.12 per 100 units**, or you can buy units in advance: **5% less** for a month's worth, **10% less** for a year's. Dedicated and Enterprise have no allowance to go over."
     },
     {
       "question": "Which licence fits us?",
@@ -280,15 +301,15 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "Do we have to sign for a year?",
-      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $89 per person, or a year at a time at $75 — the same difference, about 16%, shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because TIDE runs your platform there: the audit record, the deploy pipeline and the data connections are not something to switch on for a month and off again."
+      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $99 per person, or a year at a time at $85 — the same difference, about 14%, shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because TIDE runs your platform there: the audit record, the deploy pipeline and the data connections are not something to switch on for a month and off again."
     },
     {
-      "question": "What does Enterprise onboarding and consulting cost?",
-      "answer": "Onboarding and consulting are scoped and quoted with you as part of the Enterprise conversation."
+      "question": "How does a TIDE project start, and what do the services cost?",
+      "answer": "With a **landscape audit and roadmap**. We start by looking, not selling: an audit of your current landscape, then an implementation roadmap built on it. The audit describes your environment as it is; the roadmap says what comes next. It is **$200 or €200 an hour, in 50-hour blocks**: one block for the audit, one for the roadmap.\n\nThe Enterprise engagement packages add the following, each priced **Upon request**: a paid pilot (60 days of proof of value on your own estate, run from the roadmap), onboarding and consulting, and support and updates (passive plans for updates and fixes, active plans with named engineers and response times). They are delivered by Runink and its partners."
     },
     {
       "question": "We already have committed spend with GCP, Snowflake or Databricks. Can we buy TIDE that way?",
-      "answer": "Yes: that is the **Dedicated Licence**. Its runners run in your own Google Cloud project, or your Snowflake or Databricks account, on compute you already pay that platform for.\n\nThe compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate, our per-node price, and 1% of what those runners cost. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises."
+      "answer": "Yes: that is the **Dedicated Licence**. Its runners run in your own Google Cloud project, or your Snowflake or Databricks account, on compute you already pay that platform for.\n\nThe compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate, our per-node price, and 1.5% of what those runners cost. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises."
     },
     {
       "question": "Why does TIDE never charge a success fee?",
@@ -296,7 +317,7 @@ product_subcategory: "IT operations, AI governance and application platform"
     },
     {
       "question": "What does heavier use cost?",
-      "answer": "On **Lite**, a team can use up to 900 units per person per hour. Work past that pace waits its turn in line; it is never refused, and the pace itself costs nothing extra. Units beyond the monthly allowance are paid as you go or bought ahead, as above.\n\nOn **Dedicated**, units are unlimited: heavier use shows up on your own cloud bill as the compute it used, plus 1% of that from Runink. On **Enterprise** it runs where you already run things.\n\nEither way a team that finds heavy use for the assistant, the helpers or FORGE is not billed by the question."
+      "answer": "On **Lite**, a team can use up to 900 units per person per hour. Work past that pace waits its turn in line; it is never refused, and the pace itself costs nothing extra. Units beyond the monthly allowance are paid as you go or bought ahead, as above.\n\nOn **Dedicated**, units are unlimited: heavier use shows up on your own cloud bill as the compute it used, plus 1.5% of that from Runink. On **Enterprise** it runs where you already run things.\n\nEither way a team that finds heavy use for the assistant, the helpers or FORGE is not billed by the question."
     }
 
   ]

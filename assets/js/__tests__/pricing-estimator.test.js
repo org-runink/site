@@ -174,7 +174,7 @@ describe('prices live in one place', () => {
   test('data/pricing.json carries no cost, margin, partner, hardware, onboarding or consulting field', () => {
     const d = JSON.parse(read('data/pricing.json'));
     delete d._note;
-    expect(Object.keys(d).sort()).toEqual(['currency', 'dedicated', 'lite', 'outcome', 'units']);
+    expect(Object.keys(d).sort()).toEqual(['currency', 'dedicated', 'lite', 'outcome', 'pulse', 'tide', 'units']);
     expect(JSON.stringify(d)).not.toMatch(/cost|margin|partner|hardware|onboarding|consult|share|split/i);
   });
   test('the script carries no price literal of its own', () => {
