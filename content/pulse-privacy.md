@@ -76,6 +76,39 @@ with the subject "Delete my PULSE account". What is deleted and what is kept:
 
 ---
 
+## Children
+
+PULSE is a marketing workspace for businesses. It is not directed at children,
+and only people an organisation has admitted can use it.
+
+---
+
+## Changes
+
+We will update this page when PULSE's behaviour changes, and update the date
+below.
+
+---
+
+## Your rights and complaints
+
+Runink is published by **Technologies Runink Inc.**, Montréal, Québec, Canada.
+
+You can ask us to show you the personal information we hold about you, to
+correct it, to delete it, or to give you a copy. Email **privacy@runink.org**.
+We read that mailbox, and we answer within 30 days.
+
+If you are not satisfied with our answer, you can complain to the
+**Commission d'accès à l'information du Québec** or to the **Office of the
+Privacy Commissioner of Canada**.
+
+This policy is governed by the laws of Québec and the federal laws of Canada
+that apply there.
+
+---
+
 ## Contact
 
-privacy@runink.org
+* **Email:** privacy@runink.org
+
+*Last Updated: November 2026*
