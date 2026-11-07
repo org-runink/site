@@ -71,8 +71,8 @@ verify:
   # one page that actually verifies what the biography above asserts.
   - text: "finos.org/ambassador-program"
     url: "https://www.finos.org/ambassador-program"
-  - text: "paes@runink.org"
-    url: "mailto:paes@runink.org"
+  - text: "contact@runink.org"
+    url: "mailto:contact@runink.org"
 
 # The label on the link out to /company/, rendered by
 # layouts/partials/home/leadership.html. The three translated files carry no

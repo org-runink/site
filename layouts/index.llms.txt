@@ -99,4 +99,4 @@ product pages, the articles and the papers are in English.
 
 ## Contact
 
-Write to paes@runink.org, or use the form at {{ "#contact-form" | absURL }}.
+Write to contact@runink.org, or use the form at {{ "#contact-form" | absURL }}.
