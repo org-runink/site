@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Actionable Twins on Runink</title>
+    <link>https://runink.org/tags/actionable-twins/</link>
+    <description>Recent content in Actionable Twins on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 16:55:46 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/actionable-twins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Is a Digital Twin? How Autonomous Decisions Are Reshaping the Supply Chain</title>
+      <link>https://runink.org/blog/digital-twin-autonomous-decisions/</link>
+      <pubDate>Fri, 22 May 2026 21:40:59 +0000</pubDate>
+      <guid>https://runink.org/blog/digital-twin-autonomous-decisions/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;A supply chain digital twin is a live copy of a physical operation, kept current from the records and sensors that operation already produces. They come in four sizes: a part, a piece of equipment, a site, and a whole process. Adding a decision engine to one moves the work from watching to proposing — and raises the question this article is really about, which is who signs the proposal off.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;A supply chain digital twin&lt;/strong&gt; is a live copy of physical assets and workflows, kept up to date from the data those assets report.&lt;/li&gt;&#xA;&lt;li&gt;They come in four sizes: &lt;strong&gt;a component, a piece of equipment, a site, and a whole process.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Autonomous decisions&lt;/strong&gt; are what vendors add on top: software that does not just warn you, but works out what to do about it.&lt;/li&gt;&#xA;&lt;li&gt;The hard part is not the reasoning. It is the approval line: which steps software may take on its own, and which ones a named person has to own because they carry legal or commercial liability.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;1-where-digital-twins-came-from&#34;&gt;1. Where Digital Twins Came From&lt;/h2&gt;&#xA;&lt;p&gt;For decades, supply chain managers have tracked goods through a mix of dashboards, overnight EDI messages and phone calls. Visibility was the bottleneck. As trade networks got more tangled and resilience became a board-level subject, simply &lt;em&gt;seeing&lt;/em&gt; a delayed shipment stopped being enough. That gap is what digital twins are sold to fill.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

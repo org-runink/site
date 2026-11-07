@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Decisões Autônomas on Runink</title>
+    <link>https://runink.org/pt/tags/decis%C3%B5es-aut%C3%B4nomas/</link>
+    <description>Recent content in Decisões Autônomas on Runink</description>
+    <generator>Hugo</generator>
+    <language>pt</language>
+    <lastBuildDate>Fri, 11 Sep 2026 16:55:46 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/pt/tags/decis%C3%B5es-aut%C3%B4nomas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>O que é um Gêmeo Digital? Como Decisões Autônomas estão Remodelando a Cadeia de Suprimentos</title>
+      <link>https://runink.org/pt/blog/gemeo-digital-decisoes-autonomas/</link>
+      <pubDate>Sat, 23 May 2026 21:21:26 +0000</pubDate>
+      <guid>https://runink.org/pt/blog/gemeo-digital-decisoes-autonomas/</guid>
+      <description>&lt;h2 id=&#34;quais-são-as-principais-conclusões-deste-resumo-executivo&#34;&gt;Quais são as principais conclusões deste resumo executivo?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Um gêmeo digital da cadeia de suprimentos é uma cópia viva de uma operação física, mantida atualizada a partir dos registros e sensores que essa operação já produz. Existem em quatro tamanhos: uma peça, um equipamento, um site e um processo inteiro. Acrescentar um motor de decisão a um deles leva o trabalho de observar para propor — e levanta a questão de que este artigo realmente trata, que é quem assina a proposta.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Um gêmeo digital da cadeia de suprimentos&lt;/strong&gt; é uma cópia viva de ativos e fluxos de trabalho físicos, mantida atualizada a partir dos dados que esses ativos reportam.&lt;/li&gt;&#xA;&lt;li&gt;Existem em quatro tamanhos: &lt;strong&gt;um componente, um equipamento, um site e um processo inteiro.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Decisões autônomas&lt;/strong&gt; são o que os fornecedores acrescentam por cima: um software que não apenas avisa, mas calcula o que fazer a respeito.&lt;/li&gt;&#xA;&lt;li&gt;A parte difícil não é o raciocínio. É a linha de aprovação: quais passos o software pode dar sozinho, e quais uma pessoa com nome precisa assumir porque carregam responsabilidade legal ou comercial.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;1-de-onde-vieram-os-gêmeos-digitais&#34;&gt;1. De onde vieram os gêmeos digitais&lt;/h2&gt;&#xA;&lt;p&gt;Durante décadas, gestores da cadeia de suprimentos acompanharam mercadorias por uma mistura de painéis, mensagens EDI processadas de madrugada e telefonemas. A visibilidade era o gargalo. À medida que as redes de comércio ficaram mais emaranhadas e a resiliência virou assunto de conselho, simplesmente &lt;em&gt;ver&lt;/em&gt; um embarque atrasado deixou de bastar. É essa lacuna que os gêmeos digitais são vendidos para preencher.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

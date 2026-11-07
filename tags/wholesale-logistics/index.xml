@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wholesale Logistics on Runink</title>
+    <link>https://runink.org/tags/wholesale-logistics/</link>
+    <description>Recent content in Wholesale Logistics on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 07:07:18 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/wholesale-logistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emissions, Waste and the Cost of Reading Supply Chain Records Late</title>
+      <link>https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/</link>
+      <pubDate>Sat, 06 Jun 2026 02:16:21 +0000</pubDate>
+      <guid>https://runink.org/blog/advanced-analytics-supply-chain-emissions-reduction/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Most avoidable supply chain emissions are the exhaust of operational lateness. An expedite gets booked because a signal was read a week after it was written down. A half-empty truck goes out to recover a missed window. A refrigerated container runs on a generator while it waits for drayage, the short truck move between port and warehouse. The levers that address all three are reading and scheduling levers rather than fleet levers, which is why they are available without capital expenditure.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Access is the premise, not the benefit.&lt;/strong&gt; Software can only act on the order, shipment and production records you already hold, and only as fast as it is allowed to read them.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Forecasting and routing are different problems.&lt;/strong&gt; One reduces over-production and rush freight. The other reduces miles driven. Conflating them is how an emissions program ends up unable to say which change produced which result.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No supplier can give you the figure.&lt;/strong&gt; The size of the opportunity depends on your own baseline, and in most operations that baseline has never been measured.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;how-does-connecting-advanced-systems-to-the-supply-chain-nervous-system-tms-oms-mrp-mes-impact-your-strategy&#34;&gt;How Does Connecting Advanced Systems to the Supply Chain Nervous System (TMS, OMS, MRP, MES) Impact Your Strategy?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-1&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
