@@ -40,7 +40,7 @@ more:
 note: |
   Les documents sont publiés en anglais. Les liens ci-dessus mènent à la
   version anglaise complète. Pour un échange en français, écrivez à
-  [paes@runink.org](mailto:paes@runink.org).
+  [contact@runink.org](mailto:contact@runink.org).
 next:
   label: "Une étape de plus"
   title: "Vous avez lu le mécanisme. L'étape suivante est l'une des vôtres."

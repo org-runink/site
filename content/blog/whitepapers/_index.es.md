@@ -37,7 +37,7 @@ more:
 note: |
   Los documentos se publican en inglés. Los enlaces de arriba llevan a
   la versión inglesa completa. Para una conversación en español, escriba a
-  [paes@runink.org](mailto:paes@runink.org).
+  [contact@runink.org](mailto:contact@runink.org).
 next:
   label: "Un paso más"
   title: "Ya ha leído el mecanismo. El siguiente paso es uno suyo."
