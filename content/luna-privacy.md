@@ -290,8 +290,25 @@ disclosure at the same time.
 
 ---
 
+## Your rights and complaints
+
+Runink is published by **Technologies Runink Inc.**, Montréal, Québec, Canada.
+
+You can ask us to show you the personal information we hold about you, to
+correct it, to delete it, or to give you a copy. Email **privacy@runink.org**.
+We read that mailbox, and we answer within 30 days.
+
+If you are not satisfied with our answer, you can complain to the
+**Commission d'accès à l'information du Québec** or to the **Office of the
+Privacy Commissioner of Canada**.
+
+This policy is governed by the laws of Québec and the federal laws of Canada
+that apply there.
+
+---
+
 ## Contact
 
 * **Email:** privacy@runink.org
 
-*Last Updated: September 2026*
+*Last Updated: November 2026*
