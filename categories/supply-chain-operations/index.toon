@@ -1,0 +1,13 @@
+section_context[3]:
+  - title: "Visual Merchandising \u0026 Upstream Replenishment: The Logistics of Shelf Availability"
+    permalink: "https://runink.org/blog/visual-merchandising-upstream-replenishment/"
+    date: "2026-05-02T07:57:56Z"
+    description: "How aligning visual merchandising with upstream replenishment, warehouse slotting and delivery schedules decides whether a display stays stocked."
+  - title: "Six Sigma Logistics: Defining Metrics with Global Telemetry Data Lakes"
+    permalink: "https://runink.org/blog/six-sigma-logistics-define-measure-telemetry-data-lakes/"
+    date: "2026-04-13T10:37:24Z"
+    description: "How the Define and Measure phases of Six Sigma change when every logistics system's raw records are kept in one place, and what to ask of an ingestion layer before you choose one."
+  - title: "The \"Endless Aisle\" Supply Chain: How Omnichannel Fulfillment Powers Retail"
+    permalink: "https://runink.org/blog/endless-aisle-omnichannel-fulfillment-logistics/"
+    date: "2026-04-07T12:51:41Z"
+    description: "How distributed order management, accurate inventory records and cross-docking let a retailer sell stock held anywhere in its network."

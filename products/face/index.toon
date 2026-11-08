@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Runink FACE"
+    permalink: "https://runink.org/products/face/"
+    date: "0001-01-01T00:00:00Z"
+    category: "products"
+    description: "Runink FACE: Fulfilment Autonomous Claims Engine. It reads the invoices, orders, carrier records and claim files you already keep, finds the overcharge, the claim about to expire and the broken rule, and drafts the next step for a named person to approve. It runs on your own servers or cloud account, or on Runink's shared machines, and no outside AI service is called."
+    content: ""
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:
