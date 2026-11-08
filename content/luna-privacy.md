@@ -232,7 +232,8 @@ means:
   ask. There is no in-app delete button today.
 
 To have your Luna data deleted, or to ask what is stored about you, email
-**privacy@runink.org** from the address your Luna account uses. Deleting your
+**privacy@runink.org** from the address your Luna account uses. We answer
+within 30 days. Deleting your
 data does not require you to lose access to the app; removing your address from
 the allowlist and deleting your data are separate actions and you can request
 either or both.
