@@ -117,7 +117,7 @@ rp:
       - { k: "AI oversight", v: "Which AI do we run, what may it do, and who checked its work? (The console calls this part DataEx.)" }
       - { k: "Intelligence", v: "Which number is right, and where are money or controls slipping?" }
       - { k: "FORGE", v: "How does a small tool a team asks for get built without waiting its turn?" }
-    foot: "It asks before it acts."
+    foot: "It acts within the limits you set."
   mission: "Where does our information go? To the machines your plan names, *and it stays there.*"
   facts:
     - { k: "1 screen", v: "for whoever is on duty, in place of one screen for each system" }
@@ -126,12 +126,12 @@ rp:
     - { k: "every action", v: "recorded with a name, in a record anyone signed in can verify" }
   split:
     eyebrow: "Why your team can act on what it shows"
-    heading: "It says what it knows. It asks before it acts."
+    heading: "It says what it knows. It acts within the limits you set."
     body:
-      - "A dashboard that shows zero when it means *I did not look* gets the wrong person woken, or nobody. A tool that changes things on its own gets switched off after the first surprise. TIDE is built the other way round."
+      - "A dashboard that shows zero when it means *I did not look* gets the wrong person woken, or nobody. A tool that changes things on its own, with no limits and no record, gets switched off after the first surprise. TIDE acts only inside limits a person set, and records every act before it happens."
     list:
       - "**Not known is not zero.** A figure the console could not read is shown as not known, never drawn as a zero, so nobody decides on a reading nobody took."
-      - "**A person approves.** The helpers propose. Nothing is filed, changed or published until someone with the right to decide says yes."
+      - "**Limits a person sets.** An administrator decides which kinds of action may run without a click, after a dry run, under a daily cap and an off switch. Approved plans run unattended within those limits. Everything else waits in one queue for someone with the right to decide."
       - "**A second opinion.** Where a finding matters, an independent assessor reads the evidence first. It can agree, disagree or say it could not judge."
     link: { text: "How the console is arranged", url: "/blog/whitepapers/runink-tide/" }
   features:

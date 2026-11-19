@@ -99,9 +99,14 @@ read is shown as not known. It is never drawn as a zero. A screen that says
 "nothing happened" when it means "I did not look" is worse than no screen,
 because people make decisions on it.
 
-**It asks before it acts.** The automated helpers propose. A person approves.
-Nothing is filed, changed or published on the company's behalf until someone
-with the right to decide has said yes.
+**It acts within the limits you set, and shows its work.** An administrator decides which kinds
+of action TIDE may take without a click. It starts with a dry run that shows what TIDE would
+have done, and it runs under a daily cap and an off switch. Approved plans run unattended within
+your policies and guardrails: a reviewing model checks every step before it runs, and a plan stops
+at the first step a guardrail refuses. Everything outside those limits waits for a person, in
+one queue. Every act is written to a tamper-evident record before it happens, and the overview
+shows what TIDE did since your last visit. Merging code, handling secrets and deleting data
+always stay with a person.
 
 **It keeps a second opinion.** Where a finding matters, an independent assessor
 reads the evidence behind it before a person is asked to act. It can agree,
