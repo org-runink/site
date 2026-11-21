@@ -120,6 +120,16 @@ it there at any time without uninstalling Luna.
   yourself. If it isn't there, Luna tells you so rather than silently showing
   no steps.
 
+### Service counts
+
+To keep Luna's assistant safe and working, our servers count how often its assistant runs, whether a
+run finished, was stopped by a safety rule, or failed, and whether its own quality check passed. These
+are plain counts, grouped by hour. They contain none of your messages, replies or notes, no reason for a
+stop, and nothing about your health. They are not tied to your name or account, and they cannot be
+traced back to you. They go to Runink's own operations service and are never shared or sold. Because
+they hold nothing that identifies you, there is nothing in them to delete when you ask us to delete
+your account at privacy@runink.org.
+
 ### On your device
 
 The app stores on the device: your session token, your email address and
@@ -134,7 +144,9 @@ Signing out deletes the session record.
 
 * **No advertising.** There are no ads, no ad SDK, no advertising identifier.
 * **No analytics and no crash-reporting SDK.** No Firebase, no Crashlytics, no
-  attribution or measurement library of any kind is built into the app.
+  attribution or measurement library of any kind is built into the app. The only usage numbers
+  are the anonymous hourly counts of the assistant described under "Service counts" above, kept
+  on our own servers.
 * **No location history.** Luna does read your GPS position, but only on the
   activity-tracking screen and only while a session is running — see
   "Location" above. No coordinates and no route are ever sent to us or stored
