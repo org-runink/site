@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "Tarifs Runink PULSE"
+    permalink: "https://runink.org/fr/products/pulse-pricing/"
+    date: "2026-11-06T00:00:00Z"
+    description: "Ce que coûte une licence pour faire tourner Runink PULSE. Vous payez pour chaque personne qui l'utilise, et vous choisissez où il tourne : sur les machines partagées de Runink, dans votre propre compte cloud, ou dans votre propre environnement, à un prix convenu avec vous."
+  - title: "Tarifs Runink TIDE"
+    permalink: "https://runink.org/fr/products/tide-pricing/"
+    date: "2026-09-27T00:00:00Z"
+    description: "Ce que coûte une licence pour faire tourner Runink TIDE. Vous choisissez où il tourne : sur les machines partagées de Runink, au prix par personne ; dans votre propre compte cloud, au prix par nœud ; ou dans vos propres locaux, à un prix convenu avec vous. Il n'y a pas de seconde facture : TIDE ne prélève jamais de pourcentage sur ce qu'il trouve, corrige ou livre."

@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "What Is a Digital Twin? How Autonomous Decisions Are Reshaping the Supply Chain"
+    permalink: "https://runink.org/blog/digital-twin-autonomous-decisions/"
+    date: "2026-05-22T21:40:59Z"
+    description: "What a supply chain digital twin is, the four kinds it comes in, and where the line falls between software that reasons about a disruption and software that acts on it."
+  - title: "How Automated Decision Systems and Open-Source Tools Optimize Dropshipping Logistics"
+    permalink: "https://runink.org/blog/automated-open-source-dropshipping-logistics/"
+    date: "2026-02-26T09:24:58Z"
+    description: "What open standards and open map data actually do for a dropshipping operation: live data behind each decision, routing you can host yourself, and the checks to run before you trust either."

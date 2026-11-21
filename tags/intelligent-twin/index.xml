@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intelligent Twin on Runink</title>
+    <link>https://runink.org/tags/intelligent-twin/</link>
+    <description>Recent content in Intelligent Twin on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/intelligent-twin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Digital Twin Maturity Model: Efficiency and ESG in Modern Logistics</title>
+      <link>https://runink.org/blog/digital-twin-evolution-logistics/</link>
+      <pubDate>Sat, 13 Jun 2026 20:24:00 +0000</pubDate>
+      <guid>https://runink.org/blog/digital-twin-evolution-logistics/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Digital twins are sold at three levels: a picture of what is happening, an adviser that suggests a recovery plan, and a system that carries the plan out on its own. All three depend on the same thing — records good enough to reason over. The choice of level is a governance choice, not a technical one, because the third level moves the decision off a person&amp;rsquo;s desk.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Level 1 (a picture):&lt;/strong&gt; a current view of the physical operation, drawn from the data it already reports. Useful, and passive.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Level 2 (an adviser):&lt;/strong&gt; it reads the pattern, and when something breaks it suggests a recovery plan. A person still decides.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Level 3 (it acts):&lt;/strong&gt; it works out a response to a situation nobody planned for and carries it out directly in the order or transport system.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data quality is the floor:&lt;/strong&gt; none of the three levels works on records that are incomplete, late or contradictory. That part cannot be bought.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sustainability follows from the routing:&lt;/strong&gt; a load that is not run empty does not burn the fuel, which is the mechanism behind most reported Scope 3 reductions in transport.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-the-three-levels-of-digital-twin-maturity&#34;&gt;1. The Three Levels of Digital Twin Maturity&lt;/h2&gt;&#xA;&lt;p&gt;&amp;ldquo;Digital twin&amp;rdquo; covers a wide range of things. Some are a map with vehicles on it. Some reason about the operation. A buyer comparing two products described with the same phrase is often comparing two different categories, so it is worth separating them.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

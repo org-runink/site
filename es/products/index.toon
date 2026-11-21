@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "Precios de Runink PULSE"
+    permalink: "https://runink.org/es/products/pulse-pricing/"
+    date: "2026-11-06T00:00:00Z"
+    description: "Lo que cuesta una licencia para ejecutar Runink PULSE. Usted paga por cada persona que lo usa, y elige dónde se ejecuta: en las máquinas compartidas de Runink, en su propia cuenta en la nube o dentro de su propio entorno, con un precio acordado con usted."
+  - title: "Precios de Runink TIDE"
+    permalink: "https://runink.org/es/products/tide-pricing/"
+    date: "2026-09-27T00:00:00Z"
+    description: "Lo que cuesta una licencia para ejecutar Runink TIDE. Usted elige dónde se ejecuta: en las máquinas compartidas de Runink, con precio por persona; en su propia cuenta en la nube, con precio por nodo; o en sus propias instalaciones, con un precio acordado con usted. No hay una segunda factura: TIDE nunca cobra un porcentaje de lo que encuentra, corrige o entrega."

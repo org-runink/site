@@ -1,0 +1,9 @@
+section_context[2]:
+  - title: "Modal Shift and Route Optimization in Rail-Road Networks"
+    permalink: "https://runink.org/blog/runink-modal-shift-optimization/"
+    date: "2026-06-15T10:07:34Z"
+    description: "How a rail-versus-road comparison is actually made, where rail-truck handovers break down, and what a routing engine can and cannot tell you."
+  - title: "Last-Mile Delivery Optimization — Why It's the Most Expensive and Most Important Part of Your Supply Chain"
+    permalink: "https://runink.org/blog/last-mile-delivery-optimization/"
+    date: "2026-04-27T17:37:45Z"
+    description: "Capgemini puts last-mile delivery at up to 53% of total shipping costs. Here is where that money goes, which levers move it, and the one figure to measure first."

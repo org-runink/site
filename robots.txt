@@ -1,0 +1,51 @@
+# runink.org
+#
+# Runink makes four separate products: Runink FACE for logistics, freight, claims and operations teams; Runink TIDE for engineering, platform and data teams; Runink PULSE for marketing teams; and Runink River, a free, open-source workstation operating system for data, analytics and AI work. FACE, TIDE and PULSE are each sold on their own subscription.
+# A curated map of the site for language models: https://runink.org/llms.txt
+
+Sitemap: https://runink.org/sitemap.xml
+
+# Everything below is one decision stated twice: crawlers that answer questions
+# are welcome, and the things that are not pages are not offered to them.
+#
+# Why allow the answer engines at all. This site's argument is that a buyer
+# should be able to check a claim rather than take it on trust, and the papers
+# and product pages are written to be read that way. A model that can quote
+# them is doing the thing the pages were written for. A robots.txt is a
+# request, not a control; we publish nothing here we would not say to
+# somebody's face.
+
+User-agent: *
+Allow: /
+Disallow: /tests/
+Disallow: /igo-demo/
+
+# Named explicitly rather than left to the wildcard, so the decision is on the
+# record and a later reader does not have to infer it from silence: search and
+# answer crawlers, and the agents that fetch a page when a person asks.
+#
+# ONE GROUP, WITH THE SAME DISALLOWS. A crawler that finds a group naming it
+# obeys that group and ignores `*` entirely, so the per-agent `Allow: /` groups
+# this replaced were quietly re-opening /tests/ and /igo-demo/ to every one of
+# them.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+User-agent: Meta-ExternalAgent
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: CCBot
+User-agent: cohere-ai
+User-agent: Bytespider
+Allow: /
+Disallow: /tests/
+Disallow: /igo-demo/

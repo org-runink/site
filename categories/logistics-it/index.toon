@@ -1,0 +1,5 @@
+section_context[1]:
+  - title: "Autonomous Optimization: Achieving Six Sigma 'Improve' with Isolated Compute Runners"
+    permalink: "https://runink.org/blog/six-sigma-improve-autonomous-optimization-compute-runners/"
+    date: "2026-05-28T04:09:18Z"
+    description: "Why the Improve phase of Six Sigma stalls in logistics, and how running a test in its own separate environment lets you try a change without putting the warehouse at risk."

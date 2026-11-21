@@ -1,0 +1,11 @@
+page_context[1]:
+  - title: "Downloads"
+    permalink: "https://runink.org/downloads/"
+    date: "2026-08-11T00:00:00Z"
+    category: "page"
+    description: "Read about the FACE by Runink app for Android, learn how to open the separate Runink PULSE web app, read about the open-source Runink River workstation, or request access to the Runink Server image, which puts Runink TIDE on hardware you own."
+    content: " Downloads Take FACE by Runink with you, or run the platform on your own hardware. Four separate things live on this page. FACE by Runink is our main product. It reads your logistics records on its own and drafts the action; a named person approves it. Runink PULSE is a different product for marketing teams, listed here because people ask where to get it, not because it is part of FACE: it opens in a web browser. The Runink Server image is neither: it is the server image carrying Runink TIDE, a separate product in its own right, which is the answer to where your data is processed and who can see it. Runink River is the open-source developer workstation the server image is built on. FACE by Runink — the product — Android Operations, in your pocket The cockpit for FACE by Runink: the ranked queue of proposed actions, the records behind each one, and the approve or reject. About FACE by Runink Runink PULSE — a separate product — web app PULSE opens in your browser Brand Analysis, Leads, Campaigns and Studio for your own marketing team, with your team approving what goes out. A different product from FACE, with its own paper. Sign in at your organisation's PULSE address in a web browser; the getting-started guide shows the first steps. About Runink PULSE Runink Server — the server image Runink Server The Runink Server image puts Runink TIDE on your own box: the layer FACE and PULSE run on, so that your data and the reasoning over it never leave hardware you own. Provisioned per deployment, not offered as a public download. It is built on Runink River, the developer workstation. Request Access Runink River — open source The developer workstation, open source Runink River is the free, open-source operating system for data, analytics and AI workstations you own, and the base the server image is built on. Every line of it is public. About Runink River "
+    tags[0]:
+    partnerships[0]:
+    case_studies[0]:
+    compliance[0]:
