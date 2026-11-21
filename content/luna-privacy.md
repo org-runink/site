@@ -120,6 +120,14 @@ it there at any time without uninstalling Luna.
   yourself. If it isn't there, Luna tells you so rather than silently showing
   no steps.
 
+### Food orders and reservations (only when you ask)
+
+If you ask Luna to find a restaurant, a table or a food order, Luna sends the words of that one request, such as
+the kind of food and the place you named, to Runink's own search service and shows you the results. Luna does not
+use your location, health records or history for this, and it asks you for the place instead of guessing it. Luna
+does not book, order or pay for anything: you open a result and finish on the provider's own page, where that
+provider's privacy policy applies. These requests are not saved in your conversation history.
+
 ### Service counts
 
 To keep Luna's assistant safe and working, our servers count how often its assistant runs, whether a
