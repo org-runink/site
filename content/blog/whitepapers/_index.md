@@ -53,15 +53,14 @@ headline: "Papers that open with what can be proven."
 # The wording once said TIDE was "not a product"; that was wrong.
 description: "Long-form documents on Runink FACE, Runink PULSE and Runink TIDE, three separate products. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
 deck: |
-  Long-form documents, each about one Runink product or about an arrangement
-  with a partner. The ones at the top are about **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** is a different product, for market analysis and
+  Long-form documents, each about one Runink product.
+  The ones at the top are about **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** is a different product, for market analysis and
   marketing, and its paper describes its own work rather than FACE's.
   **Runink TIDE: Trusted Intelligence for Developer & Data Experience** is a product in its own right, sold separately. It is the
   operations layer, on your servers, your cloud or ours, that keeps your Runink
   applications and your own data in order, and the honest answer to where your
   data is processed and who can see it. Its paper is where this site describes
-  it. The joint papers with Logical Leap cover Atlas's oversight screens, which
-  run inside TIDE.
+  it.
 
   They carry no case studies, no customer names and no return-on-investment
   figures. Those things are easy to write and impossible to check, and a buyer
@@ -69,9 +68,7 @@ deck: |
   these papers explain instead is the mechanism: what the software looks at,
   what it produces, who approves it, and where it all runs.
 
-  Where a paper describes something we have built, it says so plainly. Where it
-  describes an arrangement with another company's product, it says which part of
-  that arrangement is ours. We have not been audited against SOC 2 or ISO
+  Where a paper describes something we have built, it says so plainly. We have not been audited against SOC 2 or ISO
   27001 by anyone, and the papers say that in their own sentences rather than in
   a footnote.
 next:

@@ -63,6 +63,7 @@ node packages/runink-ui/scripts/check-contrast.mjs
 node packages/runink-ui/scripts/check-usage.mjs
 node scripts/check-content-doctrine.mjs
 node scripts/check-content-template-syntax.mjs
+node scripts/check-retired-name.mjs
 node scripts/gen-contrast-proof.mjs --check
 node scripts/check-token-syntax.mjs
 node scripts/check-token-channels.mjs

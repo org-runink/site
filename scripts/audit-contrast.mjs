@@ -45,7 +45,7 @@ let paths = arg('--paths', '')
         no markup, and the detail pages are where the prose lives. */
      '/blog/automated-open-source-dropshipping-logistics/',
      '/use-cases/claims-recovery/',
-     '/industries/banking-financial-services/',
+     '/industries/insurance/',
      '/products/face/'];
 
 if (argv.includes('--all')) {

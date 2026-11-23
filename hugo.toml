@@ -202,8 +202,6 @@ enableGitInfo = true
     products = "Products"
     ind_logistics = "Logistics & Supply Chain"
     ind_insurance = "Insurance"
-    ind_banking = "Banking & Financial Services"
-    ind_telecom = "Telecom"
     ind_marketing = "Marketing"
     pricing = "Pricing"
     downloads = "Downloads"
@@ -517,8 +515,6 @@ enableGitInfo = true
         submenu = [
           { name = "Logistics & Supply Chain", url = "/industries/logistics-supply-chain/" },
           { name = "Insurance", url = "/industries/insurance/" },
-          { name = "Banking & Financial Services", url = "/industries/banking-financial-services/" },
-          { name = "Telecom", url = "/industries/telecom/" },
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
@@ -641,8 +637,6 @@ enableGitInfo = true
       products = "Produits"
       ind_logistics = "Logistique et supply chain"
       ind_insurance = "Assurance"
-      ind_banking = "Banque et services financiers"
-      ind_telecom = "Télécoms"
       ind_marketing = "Marketing"
       pricing = "Tarifs"
       downloads = "Téléchargements"
@@ -678,8 +672,6 @@ enableGitInfo = true
         submenu = [
           { name = "Logistics & Supply Chain", url = "/industries/logistics-supply-chain/" },
           { name = "Insurance", url = "/industries/insurance/" },
-          { name = "Banking & Financial Services", url = "/industries/banking-financial-services/" },
-          { name = "Telecom", url = "/industries/telecom/" },
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
@@ -797,8 +789,6 @@ enableGitInfo = true
       products = "Productos"
       ind_logistics = "Logística y cadena de suministro"
       ind_insurance = "Seguros"
-      ind_banking = "Banca y servicios financieros"
-      ind_telecom = "Telecomunicaciones"
       ind_marketing = "Marketing"
       pricing = "Precios"
       downloads = "Descargas"
@@ -833,8 +823,6 @@ enableGitInfo = true
         submenu = [
           { name = "Logistics & Supply Chain", url = "/industries/logistics-supply-chain/" },
           { name = "Insurance", url = "/industries/insurance/" },
-          { name = "Banking & Financial Services", url = "/industries/banking-financial-services/" },
-          { name = "Telecom", url = "/industries/telecom/" },
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 
@@ -951,8 +939,6 @@ enableGitInfo = true
       products = "Produtos"
       ind_logistics = "Logística e cadeia de suprimentos"
       ind_insurance = "Seguros"
-      ind_banking = "Bancos e serviços financeiros"
-      ind_telecom = "Telecom"
       ind_marketing = "Marketing"
       pricing = "Preços"
       downloads = "Downloads"
@@ -987,8 +973,6 @@ enableGitInfo = true
         submenu = [
           { name = "Logistics & Supply Chain", url = "/industries/logistics-supply-chain/" },
           { name = "Insurance", url = "/industries/insurance/" },
-          { name = "Banking & Financial Services", url = "/industries/banking-financial-services/" },
-          { name = "Telecom", url = "/industries/telecom/" },
           { name = "Marketing", url = "/industries/marketing/" },
         ]
 

@@ -16,9 +16,9 @@ package mirror
 // Everything between those is copied byte-for-byte from the site body, which
 // is the only way stale prose is guaranteed gone.
 //
-// FACE is the only one of the four that refuses to write when a site paragraph
+// FACE is the only one of the three that refuses to write when a site paragraph
 // would be lost or an image line would change, and the only one that leaves a
-// .bak behind. See rebuild_tide.go for why the four were not collapsed.
+// .bak behind. See rebuild_tide.go for why the three were not collapsed.
 
 import (
 	"fmt"

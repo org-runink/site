@@ -1,20 +1,20 @@
-// Package mirror rebuilds and audits the four whitepaper print mirrors.
+// Package mirror rebuilds and audits the three whitepaper print mirrors.
 //
 // Each whitepaper exists twice: the site source under
 // content/blog/whitepapers/, and a print mirror in ../pitch-decks/ — the
 // document a salesperson hands to a prospect. The site source is the truth;
 // the mirror is the same body with print furniture wrapped round it.
 //
-// This package holds only what all six tools genuinely share — squashing,
+// This package holds only what all five tools genuinely share — squashing,
 // paragraph splitting, front-matter splitting, the Python-re.split shim. The
-// four rebuilders do NOT share a register parser or a chapter splitter even
+// three rebuilders do NOT share a register parser or a chapter splitter even
 // where theirs look alike, because theirs are not alike: see the file comment
 // on each rebuild_*.go.
 //
 // # Ported from Python, and faithful on purpose
 //
-// This replaced six Python scripts (mirror-audit.py, mirror-verify.py and
-// rebuild-runink-{core,face,pulse,core-atlas}.py). The acceptance test was a
+// This replaced five Python scripts (mirror-audit.py, mirror-verify.py and
+// rebuild-runink-{core,face,pulse}.py). The acceptance test was a
 // byte-for-byte diff of the rebuilt mirrors against the ones the Python
 // produced, which are the files committed in ../pitch-decks/. That means the
 // port reproduces the Python's defects as well as its intent. Where it does,
@@ -89,7 +89,7 @@ var frontRe = regexp.MustCompile(`(?s)\A---\n(.*?\n)---\n`)
 // the closing "---\n".
 //
 // The Python scripts spelled this two ways — r'^---\n(.*?\n)---\n' (tide,
-// face) and r'^---\n(.*?)\n---\n' (pulse, atlas) — which differ only by that
+// face) and r'^---\n(.*?)\n---\n' (pulse) — which differ only by that
 // newline and are otherwise the same match.
 func SplitFrontMatter(src string) (front, body string, ok bool) {
 	m := frontRe.FindStringSubmatchIndex(src)
@@ -140,7 +140,7 @@ func Fields(s string) string { return strings.Join(strings.Fields(s), " ") }
 // FloorDiv is Python's // on ints: it rounds towards negative infinity, where
 // Go's / truncates towards zero. mirror-verify reports a size delta as a
 // percentage and every mirror that shrank has a negative one, so the two
-// disagree on three of the four papers (-6.45% prints as -7, not -6).
+// disagree on three of the papers (-6.45% prints as -7, not -6).
 func FloorDiv(a, b int) int {
 	q := a / b
 	if (a%b != 0) && ((a < 0) != (b < 0)) {

@@ -1,6 +1,6 @@
 package mirror
 
-// Post-sync structural check on all four print mirrors.
+// Post-sync structural check on all three print mirrors.
 // Ported from scripts/mirror/mirror-verify.py.
 //
 // Audit answers "do the words match". This answers "is it still a document" —
@@ -18,7 +18,7 @@ import (
 )
 
 // VerifyNames is the paper order mirror-verify.py reported in.
-var VerifyNames = []string{"runink-face", "runink-tide", "runink-pulse", "runink-tide-atlas"}
+var VerifyNames = []string{"runink-face", "runink-tide", "runink-pulse"}
 
 // DefaultBackupDir is where mirror-verify.py looked for a pre-sync copy to
 // compare sizes against. It is ~/.cache, not the repo and not /tmp.
@@ -66,7 +66,7 @@ func Verify(w io.Writer, siteDir, mirrorDir, backupDir string, names []string) (
 
 		// 2. every site chapter appears exactly once as a heading — or, for a
 		//    chapter the mirror folds into its cover, once in the cover block
-		//    as running text. runink-tide-atlas folds its whole first chapter
+		//    as running text. a mirror may fold its whole first chapter
 		//    that way, which the shipped checker names in its own header as a
 		//    known, legitimate difference; demanding a heading for it would
 		//    push a correct mirror into failing, and the only way to satisfy
@@ -140,7 +140,7 @@ func Verify(w io.Writer, siteDir, mirrorDir, backupDir string, names []string) (
 			}
 			// Python's // floors; Go's / truncates. Every mirror that shrank
 			// has a negative numerator here, so the two disagree on three of
-			// the four papers.
+			// the three papers.
 			pct := FloorDiv((now-was)*100, den)
 			note = fmt.Sprintf("%d -> %d bytes (%+d%%)", was, now, pct)
 			if float64(now) < float64(was)*0.4 {

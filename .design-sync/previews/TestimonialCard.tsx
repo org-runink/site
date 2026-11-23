@@ -40,7 +40,7 @@ export function InitialsFallback() {
   return (
     <TestimonialCard
       name="Marco Silva"
-      role="VP Supply Chain, Atlas Freight"
+      role="VP Supply Chain, Summit Freight"
       quote="Every workflow learns, predicts and adapts. We cut operational drag without adding headcount."
     />
   );

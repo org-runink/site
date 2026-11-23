@@ -41,8 +41,8 @@ func main() {
 
 	// Written to a sibling temp file and renamed over the target, so an
 	// interrupted run cannot leave a half-written handout behind. This is the
-	// only one of the four that writes atomically; FACE leaves a .bak instead,
-	// PULSE and ATLAS do neither.
+	// only one of the three that writes atomically; FACE leaves a .bak instead,
+	// PULSE does neither.
 	tmp := mir + ".new"
 	check(os.WriteFile(tmp, []byte(out), 0o644))
 	check(os.Rename(tmp, mir))

@@ -91,7 +91,7 @@ func Audit(w io.Writer, siteDir, mirrorDir, name string, mode AuditMode) (int, e
 	// covers were reported as stale prose.
 	//
 	// Keying on the FIRST site chapter alone was still wrong for one mirror:
-	// runink-tide-atlas folds its whole first chapter into the cover as bold
+	// a mirror may fold its whole first chapter into the cover as bold
 	// running text, so that chapter has no heading in the mirror at all and
 	// the search fell through to 0 — an empty cover again, and the tool then
 	// reported the cover as six paragraphs of stale prose. Its only fix would

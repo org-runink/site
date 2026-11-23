@@ -24,15 +24,14 @@ package mirror
 // carried a chapter ("What a working day looks like") that the site no longer
 // has; the register is 21 pages, so the rebuilt mirror is 21.
 //
-// # Why this is not one parameterised rebuilder shared with the other three
+// # Why this is not one parameterised rebuilder shared with the other two
 //
 // Because almost nothing above is shared. TIDE takes its cover from the first
 // "## " in the old mirror; FACE takes it from the first page-break div, PULSE
-// from a literal "*Page 1 — Cover*" marker, ATLAS from the line its folded
-// chapter one starts on. TIDE finds its colophon by scanning backwards for the
-// last non-footer paragraph; ATLAS reads the third line from the end; FACE keeps a whole
+// from a literal "*Page 1 — Cover*" marker. TIDE finds its colophon by scanning
+// backwards for the last non-footer paragraph; FACE keeps a whole
 // "### Contact" block; PULSE has none. TIDE collapses runs of blank lines at
-// the end and PULSE writes no trailing newline at all. Those are four
+// the end and PULSE writes no trailing newline at all. Those are three
 // different algorithms wearing the same job title, and a single function with
 // a paper-shaped config struct would have had a branch at every one of them.
 
@@ -76,13 +75,12 @@ type Chapter struct {
 // tideParseRegister reads the `register:` list of {page, title} /
 // {page, page_end, title}.
 //
-// Note this is NOT the same parser the other three use. It finds the register
+// Note this is NOT the same parser the other two use. It finds the register
 // block as a whole and then picks each field out of a line with three
 // independent searches, so it accepts any field order and any spacing. FACE
 // and PULSE instead demand the whole line match one strict
 // "- { page: N, page_end: M, title: "..." }" shape and silently skip a line
-// that does not; ATLAS demands the same shape but STOPS at the first line that
-// does not match. Those three behaviours differ on malformed input, which is
+// that does not. Those behaviours differ on malformed input, which is
 // exactly when it matters, so they are not merged.
 func tideParseRegister(front string) ([]RegEntry, error) {
 	block := tideRegisterRe.FindStringSubmatch(front)

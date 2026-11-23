@@ -2,8 +2,7 @@
 title: "Runink PULSE — Prescriptive Unified Lead & Social Engine"
 headline: "A marketing engine your own team operates, with no outside AI service."
 # The label the closing ask carries into the contact form, so an enquiry
-# arrives naming the paper it came from. `product:` is not usable for this —
-# two of the four papers are both "Runink TIDE".
+# arrives naming the paper it came from.
 next_about: "The Runink PULSE paper"
 product: "Runink PULSE"
 subtitle: "Prescriptive Unified Lead & Social Engine"

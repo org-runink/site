@@ -8,15 +8,14 @@ type: whitepapers
 headline: "Documentos que empiezan por lo que puede demostrarse."
 description: "Documentos extensos sobre Runink FACE, Runink PULSE y Runink TIDE, tres productos distintos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación."
 deck: |
-  Documentos extensos, cada uno sobre un producto de Runink o sobre un acuerdo
-  con un socio. Los primeros tratan de **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** es un producto distinto, de análisis de mercado y
+  Documentos extensos, cada uno sobre un producto de Runink.
+  Los primeros tratan de **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** es un producto distinto, de análisis de mercado y
   marketing, y su documento describe su propio trabajo, no el de FACE.
   **Runink TIDE: Trusted Intelligence for Developer & Data Experience** es un producto por derecho propio, que se vende por separado.
   Es la capa de operaciones, en sus servidores, en su nube o en la nuestra,
   que mantiene en orden sus aplicaciones de Runink y sus propios datos, y la
   respuesta honesta a dónde se procesan sus datos y quién puede verlos. Su
-  documento es donde este sitio lo describe. Los documentos conjuntos con Logical Leap tratan de las pantallas
-  de supervisión de Atlas, que funcionan dentro de TIDE.
+  documento es donde este sitio lo describe.
 
   No contienen casos de cliente, ni nombres, ni cifras de retorno de la
   inversión. Lo que explican es el mecanismo: qué mira el software, qué
@@ -26,8 +25,7 @@ deck: |
   están en español.
 
   Donde un documento describe algo que hemos construido, lo dice con claridad.
-  Donde describe un acuerdo con el producto de otra empresa, dice qué parte de
-  ese acuerdo es nuestra. Nadie nos ha auditado contra SOC 2 ni ISO 27001, y
+  Nadie nos ha auditado contra SOC 2 ni ISO 27001, y
   los documentos lo dicen en sus propias frases, no en una nota al pie.
 more:
   label: "Textos más breves"

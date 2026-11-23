@@ -24,9 +24,9 @@ product_subcategory: "Operaciones de TI, gobierno de la IA y plataforma de aplic
     "Esa es toda la forma del precio. La factura sigue a los puestos o nodos que usted ejecuta, no a lo que TIDE encuentra, corrige o entrega, así que un equipo de plataforma que usa TIDE a fondo no abre una nueva partida que crece con el uso. Lo que hace la consola va primero, sin embargo, porque es la parte que vale la pena discutir."
   ],
   "eyebrow": "La consola",
-  "heading": "Una consola, cinco partes",
+  "heading": "Una consola, cuatro partes",
   "lead": [
-    "Estas son las cinco partes de las que está hecha la consola de TIDE. Cada una responde a una pregunta, y cada una lleva a más detalle en el documento técnico de TIDE.",
+    "Estas son las cuatro partes de las que está hecha la consola de TIDE. Cada una responde a una pregunta, y cada una lleva a más detalle en el documento técnico de TIDE.",
     "Están en el orden que usa el propio menú de la consola: el orden en que una persona acude cuando tiene la pregunta, no un orden inventado para esta página."
   ],
   "groups": [
@@ -55,15 +55,6 @@ product_subcategory: "Operaciones de TI, gobierno de la IA y plataforma de aplic
         { "page": "", "name": "Fichas de modelo, contrastadas con lo que está en marcha", "note": "Las fichas de modelo indican el origen, la versión, la licencia y las pruebas de cada modelo, contrastadas con lo que está en marcha." },
         { "page": "", "name": "La autonomía es un ajuste, nunca un valor por defecto", "note": "La autonomía es un ajuste que usted elige para cada tipo de acción, y cada tipo empieza con una persona que aprueba cada acto." },
         { "page": "", "name": "Una segunda opinión, registrada", "note": "Cuando un hallazgo importa, un evaluador independiente lee primero las pruebas. Puede estar de acuerdo, en desacuerdo o decir que no pudo juzgar." }
-      ]
-    },
-    {
-      "label": "Intelligence",
-      "deck": "¿Qué contienen nuestros datos, y dónde se escapan el dinero o los controles?",
-      "items": [
-        { "page": "", "name": "Dos paneles, un solo conjunto de cifras", "note": "Paneles para el analista y para el responsable financiero, construidos sobre un solo conjunto de cifras." },
-        { "page": "", "name": "Calculado, o mostrado como ausente con el motivo", "note": "Calidad de los datos, gasto de capital, reglas de negocio y linaje, cada uno calculado a partir de sus propios registros o mostrado como ausente con el motivo." },
-        { "page": "", "name": "Estate: un inventario leído, no recordado", "note": "Estate traza qué sistemas guardan qué datos y cómo se conectan, cuando un administrador lo pide. Guarda solo estructura y recuentos, nunca un valor, y marca cada enlace como declarado, inferido o supuesto." }
       ]
     },
     {
@@ -109,7 +100,7 @@ product_subcategory: "Operaciones de TI, gobierno de la IA y plataforma de aplic
       ],
       "features": [
         "SE EJECUTA EN LAS MÁQUINAS COMPARTIDAS DE RUNINK, POR TURNOS CON EL TRABAJO DE OTROS CLIENTES",
-        "LAS CINCO PARTES DE LA CONSOLA: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
+        "LAS CUATRO PARTES DE LA CONSOLA: OVERVIEW, DEVEX, DATAEX, FORGE",
         "MÁS UNIDADES SEGÚN USO, O COMPRADAS POR ADELANTADO: 5% MENOS POR UN MES, 10% MENOS POR UN AÑO",
         "HASTA 900 UNIDADES POR PERSONA Y HORA; EL TRABAJO POR ENCIMA DE ESE RITMO ESPERA SU TURNO"
       ],
@@ -137,7 +128,7 @@ product_subcategory: "Operaciones de TI, gobierno de la IA y plataforma de aplic
       ],
       "features": [
         "EJECUTORES EN SU PROPIO PROYECTO DE GOOGLE CLOUD, O EN SU CUENTA DE DATABRICKS O SNOWFLAKE",
-        "LAS CINCO PARTES DE LA CONSOLA: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
+        "LAS CUATRO PARTES DE LA CONSOLA: OVERVIEW, DEVEX, DATAEX, FORGE",
         "UNIDADES DE CÓMPUTO ILIMITADAS; SU NUBE LE FACTURA EL CÓMPUTO DIRECTAMENTE",
         "SU PROPIA DIRECCIÓN WEB"
       ],
