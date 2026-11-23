@@ -1,4 +1,4 @@
-// Command mirror-verify is a post-sync structural check on all four print
+// Command mirror-verify is a post-sync structural check on all three print
 // mirrors. Replaces scripts/mirror/mirror-verify.py.
 //
 // mirror-audit answers "do the words match". This answers "is it still a

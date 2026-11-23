@@ -13,7 +13,3 @@ FAIL runink-pulse       3 chapters, no backup to compare
        - chapter heading missing: "Alpha chapter"
        - chapter heading missing: "Beta chapter"
        - figure line differs: source ['![alt text](figures/whitepapers/fixture.svg "Caption")'] vs mirror []
-FAIL runink-tide-atlas  3 chapters, no backup to compare
-       - chapter heading missing: "Alpha chapter"
-       - chapter heading missing: "Beta chapter"
-       - figure line differs: source ['![alt text](figures/whitepapers/fixture.svg "Caption")'] vs mirror []

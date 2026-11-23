@@ -4,7 +4,7 @@ package mirror
 //
 // # What the goldens are, and what they are not
 //
-// testdata/site/ holds four synthetic papers — one per paper CONVENTION, not
+// testdata/site/ holds three synthetic papers — one per paper CONVENTION, not
 // the real whitepapers, which live under content/blog/whitepapers/ and whose
 // mirrors live in ../pitch-decks/, a sibling directory that is deliberately
 // not part of this repository. testdata/mirror-drift/ holds a deliberately
@@ -20,7 +20,7 @@ package mirror
 // # What these do NOT establish
 //
 //   - Not that the port is right on the REAL papers. That was checked
-//     separately and by hand — rebuilding all four real mirrors with the
+//     separately and by hand — rebuilding all three real mirrors with the
 //     Python and with the Go from the same inputs and diffing the results byte
 //     for byte, twice: once from the committed mirrors and once from the
 //     pre-sync September copies in ~/.cache/rk-mirror-backup. It cannot be
@@ -108,10 +108,6 @@ func TestRebuildMatchesPythonGolden(t *testing.T) {
 			out, st, err := BuildPulse(s, o)
 			return out, st.Report("MIRRORDIR/runink-pulse-whitepaper.md"), err
 		}, "rebuild-pulse.stdout"},
-		{"runink-tide-atlas", func(s, o string) (string, string, error) {
-			out, pages, chapters, err := BuildAtlas(s, o)
-			return out, AtlasReport("MIRRORDIR/runink-tide-atlas-whitepaper.md", pages, chapters), err
-		}, "rebuild-tide-atlas.stdout"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			got, report, err := tc.build(site(t, tc.name), mirrorFile(t, tdDrift, tc.name))
@@ -130,11 +126,11 @@ func TestRebuildMatchesPythonGolden(t *testing.T) {
 }
 
 // TestRebuildIsIdempotent pins the claim scripts/mirror/README.md makes about
-// all four: re-running one reproduces its own output byte for byte. It is the
+// all three: re-running one reproduces its own output byte for byte. It is the
 // property that lets a developer run a rebuild without first checking whether
 // it has already been run.
 func TestRebuildIsIdempotent(t *testing.T) {
-	for _, name := range []string{"runink-tide", "runink-face", "runink-pulse", "runink-tide-atlas"} {
+	for _, name := range []string{"runink-tide", "runink-face", "runink-pulse"} {
 		t.Run(name, func(t *testing.T) {
 			clean := mirrorFile(t, tdClean, name)
 			got, err := rebuildByName(name, site(t, name), clean)
@@ -159,9 +155,6 @@ func rebuildByName(name, siteText, old string) (string, error) {
 		return out, err
 	case "runink-pulse":
 		out, _, err := BuildPulse(siteText, old)
-		return out, err
-	case "runink-tide-atlas":
-		out, _, _, err := BuildAtlas(siteText, old)
 		return out, err
 	}
 	panic("unknown paper " + name)
@@ -189,7 +182,7 @@ func TestAuditMatchesPythonGolden(t *testing.T) {
 	}
 	for _, d := range dirs {
 		label, dir := d.label, d.dir
-		for _, name := range []string{"runink-face", "runink-tide", "runink-pulse", "runink-tide-atlas"} {
+		for _, name := range []string{"runink-face", "runink-tide", "runink-pulse"} {
 			for _, mm := range modes {
 				tag, mode := mm.tag, mm.mode
 				t.Run(label+"/"+name+"/"+tag, func(t *testing.T) {
@@ -232,7 +225,7 @@ func TestAuditExitCode(t *testing.T) {
 // ------------------------------------------------------------------ verify
 
 func TestVerifyMatchesPythonGolden(t *testing.T) {
-	names := []string{"runink-face", "runink-tide", "runink-pulse", "runink-tide-atlas"}
+	names := []string{"runink-face", "runink-tide", "runink-pulse"}
 	for _, tc := range []struct {
 		golden          string
 		mirrorDir, back string
@@ -289,7 +282,7 @@ func TestLiveMirrorsAreIdempotent(t *testing.T) {
 	if _, err := os.Stat(liveMirror); err != nil {
 		t.Skipf("no mirror directory at %s: %v", liveMirror, err)
 	}
-	for _, name := range []string{"runink-tide", "runink-face", "runink-pulse", "runink-tide-atlas"} {
+	for _, name := range []string{"runink-tide", "runink-face", "runink-pulse"} {
 		t.Run(name, func(t *testing.T) {
 			s, err := os.ReadFile(filepath.Join(liveSite, name+".md"))
 			if err != nil {

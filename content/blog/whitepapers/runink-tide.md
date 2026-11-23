@@ -3,8 +3,7 @@ title: "Runink TIDE — The operations layer for companies that keep their own d
 aliases: ["/blog/whitepapers/runink-core/"]
 headline: "Run your software, your AI and your data on your own servers or cloud account, or on Runink's shared machines to start, and see all of it from one screen."
 # The label the closing ask carries into the contact form, so an enquiry
-# arrives naming the paper it came from. `product:` is not usable for this —
-# two of the four papers are both "Runink TIDE".
+# arrives naming the paper it came from.
 #
 # Added 2026-09-29 and removed 2026-10-04: a paragraph under "Where does our
 # information go?" reporting one egress audit run with its limits. Owner: the
@@ -19,18 +18,17 @@ headline: "Run your software, your AI and your data on your own servers or cloud
 next_about: "The Runink TIDE paper"
 product: "Runink TIDE"
 subtitle: "The operations layer for companies that keep their own data"
-description: "What Runink TIDE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx, Intelligence and FORGE, page by page, with the business value of each and what adopting it involves."
+description: "What Runink TIDE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx and FORGE, page by page, with the business value of each and what adopting it involves."
 weight: 20
 date: 2026-09-26T00:00:00Z
-source_pages: 23
+source_pages: 20
 audience: "Executive, technology, data and risk stakeholders"
-blurb: "The operations layer a company runs on its own servers or cloud account, or on Runink's shared machines to start, with no outside AI service. One console shows whether the platform is healthy and your changes shipped, what your AI models and agents are allowed to do, what your data holds and where spending goes wrong, and turns a written brief into a working application with a person approving each step."
+blurb: "The operations layer a company runs on its own servers or cloud account, or on Runink's shared machines to start, with no outside AI service. One console shows whether the platform is healthy and your changes shipped, what your AI models and agents are allowed to do, and turns a written brief into a working application with a person approving each step."
 deck: |
   **Runink TIDE: Trusted Intelligence for Developer & Data Experience.** It is
   the operations layer a company runs on its own servers or cloud account, or
   on Runink's shared machines to start. It keeps the company's software
-  healthy, governs the AI models and agents that work inside it, watches the
-  company's own data, and turns a written brief into a working application.
+  healthy, governs the AI models and agents that work inside it, and turns a written brief into a working application.
   Its AI model runs on the same machines as the rest of TIDE. No outside AI
   service is called.
 
@@ -38,7 +36,7 @@ deck: |
   goes, and whose small technical team looks after more software than any one
   person can hold in their head.
 
-  **One console, five parts: Overview, DevEx, DataEx, Intelligence and FORGE.
+  **One console, four parts: Overview, DevEx, DataEx and FORGE.
   This paper walks through every page of it.** To see it running,
   [book a consultation](/#contact).
 register:
@@ -48,16 +46,14 @@ register:
   - { page: 5,  title: "Overview: is anything wrong, and where do I go next" }
   - { page: 6,  page_end: 8, title: "DevEx: is the platform running, and did our changes ship" }
   - { page: 9,  page_end: 11, title: "DataEx: can our models and agents be trusted" }
-  - { page: 12, page_end: 13, title: "Intelligence: what our data holds, and where it goes wrong" }
-  - { page: 14, title: "Resolve: what is in your data, and how it connects" }
-  - { page: 15, title: "FORGE: from a written brief to a working application" }
-  - { page: 16, title: "On every screen" }
-  - { page: 17, title: "What it is built on, and why that matters commercially" }
-  - { page: 18, title: "Who TIDE is for" }
-  - { page: 19, title: "What adopting TIDE involves" }
-  - { page: 20, title: "The commercial model" }
-  - { page: 21, page_end: 22, title: "Answers to the questions we are usually asked" }
-  - { page: 23, title: "The next step" }
+  - { page: 12, title: "FORGE: from a written brief to a working application" }
+  - { page: 13, title: "On every screen" }
+  - { page: 14, title: "What it is built on, and why that matters commercially" }
+  - { page: 15, title: "Who TIDE is for" }
+  - { page: 16, title: "What adopting TIDE involves" }
+  - { page: 17, title: "The commercial model" }
+  - { page: 18, page_end: 19, title: "Answers to the questions we are usually asked" }
+  - { page: 20, title: "The next step" }
 ---
 
 ## Executive summary
@@ -80,15 +76,13 @@ work together with it, each sold on its own: Runink FACE: Fulfilment Autonomous
 Claims Engine, and Runink PULSE: Prescriptive Unified Lead & Social Engine.
 Where a company runs them, TIDE is the layer they run on.
 
-TIDE's console is split into five parts. Each answers one question.
+TIDE's console is split into four parts. Each answers one question.
 
 - **Overview** — is anything wrong, and where do I go next?
 - **DevEx**, short for developer experience — is the platform running as it
   should, and did our changes ship?
 - **DataEx**, short for data experience — what are our AI models and agents,
   what are they allowed to do, and can their work be trusted?
-- **Intelligence** — what does our data hold, how good is it, and where are
-  spending or controls going wrong?
 - **FORGE** — how do we turn a written brief into a working application, with a
   person approving each step?
 
@@ -173,7 +167,6 @@ have. Some groups have small headings inside them, such as *Cluster* or
 | **Overview** | Is anything wrong, and where do I go next? | Anyone on duty; the operations lead |
 | **DevEx** | Is the platform running as it should, and did our changes ship? | Platform engineers, the engineering lead, the security lead |
 | **DataEx** | What are our models and agents, what may they do, and can we trust their work? | The head of data, the risk and compliance officers, the security lead |
-| **Intelligence** | What does our data hold, how good is it, and where is money or control slipping? | The finance lead, the portfolio office, data stewards, analysts |
 | **FORGE** | How do we turn a brief into a working application, with a person approving each step? | Product owners and the engineering lead |
 
 Every page opens the same way: one status line with a single verdict, a
@@ -577,7 +570,7 @@ a decision made once at installation and forgotten.
 **Who uses it.** The security lead and internal audit.
 
 **What it shows.** The named lists of people allowed to sign in, to arm agents,
-to change data connections, to make changes on the Intelligence pages, and to
+to change data connections, and to
 end other people's sessions. For each list it shows how many people are on it,
 what happens if it is left empty, and whether *you* are on it — never who else
 is. It also shows the role-based grants inside each deployment: who holds which
@@ -643,307 +636,14 @@ recent runs.
 **Why it matters.** A finding checked by the same system that raised it is not
 checked. A second, separate reading before a person acts means people spend
 their time on findings that hold up, and can see which ones were not assessed.
-The joint paper on TIDE and Atlas describes how that assessor reaches a verdict.
-
-## Intelligence: what our data holds, and where it goes wrong
-
-The Intelligence pages look outward, at the company's own data and spending.
-Most of them are the Atlas oversight pages, built with our partner Logical Leap,
-running inside TIDE on TIDE's own data. Resolve, which reads the structure of
-the company's systems, is a Runink capability that TIDE shares with FACE.
-Every figure on these pages is computed from the company's own records and
-feeds, or shown as absent with the reason.
-
-This section summarises each page. The joint paper,
-[Runink TIDE and Atlas](/blog/whitepapers/runink-tide-atlas/), covers them in
-depth.
-
-### The three dashboards: Analyst, CFO and PMO
-
-**The question.** Where does our capital spending stand, from my seat?
-
-**Who uses it.** The capital governance analyst, the chief financial officer and
-the director of the portfolio or programme office.
-
-**What it shows.** Three views of the same information. The *Analyst dashboard*
-shows how ready projects are and what needs checking. The *CFO dashboard* shows
-the financial summary: approved budget, requests and spending. The *PMO
-dashboard* shows the portfolio, where a project maps to an initiative the
-platform already tracks.
-
-**Why it matters.** Finance and the programme office argue from the same figures,
-worked out the same way, rather than reconciling two spreadsheets first.
-
-### DQ overview and Progress
-
-**The question.** How good is our data, and is it getting better?
-
-**Who uses it.** Data stewards and the head of data.
-
-**What it shows.** DQ stands for data quality. The *DQ overview* summarises the
-data sources, the business rules checked against them, and the open issues. The
-*Progress* page compares recent data governance checks over time, so a steward
-can see whether open issues are falling.
-
-**Why it matters.** Data quality stops being an opinion. It becomes a list of
-issues that goes down, or does not, with each check kept.
-
-### CapEx monitor and CapEx lineage
-
-**The question.** Does our spending match what was requested and planned?
-
-**Who uses it.** The capital governance analyst and the finance lead.
-
-**What it shows.** CapEx means capital expenditure. The *CapEx monitor* takes the
-three feeds a company uploads — the plan, the requests and the spending — and
-checks them against each other with a published rule book, in one view. *CapEx
-lineage* traces any finding back and forth along that chain: from spending, to
-the approval, to the plan.
-
-**Why it matters.** Money that leaves before anyone checks is the costly kind.
-Checking as the feeds arrive, rather than at the quarterly review, moves the
-check closer to the decision.
-
-### Perspectives
-
-**The question.** Who cares about capital governance, and what does each of
-them need?
-
-**Who uses it.** Anyone setting up the practice, and the executives it serves.
-
-**What it shows.** A framework page: the stakeholders who read capital
-governance and what each one focuses on.
-
-**Why it matters.** It gives a new programme a shared map of whose questions it
-has to answer.
-
-### Business rules and Orchestrator (playbooks)
-
-**The question.** Which rules do we enforce, and what happens when one fails?
-
-**Who uses it.** The compliance officer, rule owners and the head of data.
-
-**What it shows.** *Business rules* lists the capital rule book: each rule's
-status, effect, owner and findings. A change to a rule is proposed by one person
-and approved by another. The same page shows whether the rules built into the
-software still match the policy that was signed off. *Orchestrator* is where
-playbooks are written: a playbook is a set of steps that runs when a finding
-appears, such as starting a named helper. A playbook can be drafted from the
-rules that fail most often, and then edited by a person.
-
-**Why it matters.** Written rules drift from enforced rules quietly. Two people
-on every rule change, and a standing check that code matches policy, make that
-drift visible.
-
-### Lineage and Remediation
-
-**The question.** Where does this data come from, and what are we doing about
-the problems in it?
-
-**Who uses it.** Data stewards, the head of data and the compliance officer.
-
-**What it shows.** *Lineage* draws the path from each source system to the
-reports built on it, with the trouble spots marked. It also shows the
-relationships Resolve read from the systems themselves: the keys a source
-declares between its tables, the domains that span more than one source, and
-which datasets are read and written. *Remediation* is the queue
-of proposed fixes. For capital findings a person can approve, test or dismiss
-each one, and every decision is kept as an audit trail. An approved fix is a
-recorded decision; the change itself is made at the source system.
-
-**Why it matters.** People trust a report more when they can see where its
-numbers came from. And every fix decision has a name and a reason attached.
-
-### Resolve
-
-**The question.** What is actually in our systems, and how does it all connect?
-
-**Who uses it.** The head of data, data stewards and the security lead.
-
-**What it shows.** Resolve reads the structure of the company's systems when an
-administrator asks it to, and draws them as one map of business domains and the
-links between them. It has its own chapter after this one, because several
-other pages are built on what it reads.
-
-**Why it matters.** Lineage, the data-quality checks and the personal-data
-checks all start from what Resolve recorded, so the map a steward reads and
-the checks an auditor reads describe the same estate.
-
-### Sources and Settings
-
-**The question.** Which systems may TIDE read, and who may change that?
-
-**Who uses it.** The head of data and the security lead.
-
-**What it shows.** *Sources* shows one card for each system TIDE is connected
-to: the business domain it was grouped into, whether it answered when last
-checked, and a switch that grants it to the Intelligence workspace. Granting
-records a permission without reaching the system. Connections themselves are
-created and changed on DataEx › Connections, and each card links there.
-*Settings* holds the workspace choices for the Intelligence pages, stored on
-the server and recorded.
-
-**Why it matters.** The security lead can answer "what reaches this system, and
-on whose say-so" from a screen.
-
-### Data audit
-
-**The question.** Does our data pass its checks today, and can we check it
-again now?
-
-**Who uses it.** The head of data, data stewards and the security lead.
-
-**What it shows.** One verdict over the data checks: whether each source
-answered its last test, whether the estate has been mapped, where what a
-source declares disagrees with what its data shows, the data-quality score for
-capital spending, and the data-governance findings. What could not be read is
-listed with its reason. From here an administrator can run an audit, each one
-an action TIDE already has: test a source, explore it, read its access
-patterns, map the estate, or pull a capital-spending feed. Every run is
-confirmed first and recorded. This is also where the runner for an audit is
-chosen: Runink managed by default, or one of the company's own registered
-runners. The choice travels with the request and is kept in the record. A
-person can also start the data-governance helper through an existing
-playbook. Past map runs, capital-spending scans and data-governance runs are
-listed underneath.
-
-**Why it matters.** A steward can re-check the data on demand, from one page,
-and a security lead can see exactly what each audit reached and which runner
-it named.
-
-### Deploy lineage
-
-**The question.** Did my change ship?
-
-**Who uses it.** Developers and the engineering lead.
-
-**What it shows.** For each change, the stages it passed through: merged,
-reviewed by the helpers, built, stored, rolled out and running. A stage that
-could not be measured is shown as a gap. A change the platform does not
-recognise is shown as unmeasured, never as "did not ship". This is about
-software releases, not data; data lineage has its own page above.
-
-**Why it matters.** "Is my fix live?" is one of the most asked questions in any
-engineering team. This page answers it without a message to the platform team.
-
-## Resolve: what is in your data, and how it connects
-
-Most companies believe they have an inventory of their data, and on
-inspection do not. The list was drawn once, by hand, and the systems moved on
-without it. Resolve builds that inventory from the systems themselves, when an
-administrator asks, and keeps nothing a security reviewer would object to.
-
-Resolve is one capability that Runink TIDE and Runink FACE share: the same
-page, doing the same work, in both products. In TIDE it sits in the menu under
-Intelligence › Resolve.
-
-### What it lets you do
-
-There are four actions. Each one is started by a named administrator, and
-each asks for a confirmation that says what will be reached and what will be
-kept.
-
-- **Test** a source: does it answer?
-- **Explore** a source, to record its structure: its datasets and columns, the
-  type each column is declared as, the keys that link its tables, and row
-  counts where the source states them. It also records which columns the
-  source itself marks as personal data, and whether it masks them. Where the
-  source can count them, Explore notes how many values in a column are empty
-  and how many are different.
-- **Read access patterns** over a window the administrator chooses: how many
-  times each dataset was read and written, and by how many distinct accounts.
-  These are counts. The accounts are never named.
-- **Map the estate** — the estate being every system that holds company data.
-  The map covers the sources granted to the Intelligence workspace, or every
-  source Resolve can read when none are granted.
-
-### How the map is made
-
-**It works out what each dataset is about.** Not which system it came from,
-but what it *means*: customers, orders, payments, products, staff. It reads
-that from the names of the tables and columns. So a customer table in the
-billing system and a customer table in the support system land in the same
-business domain, without anyone keeping a mapping by hand.
-
-**It draws the links, and says what each one rests on.** The result is best
-pictured as a mindmap of the company's data: datasets fall into domains, and
-the lines between them are the real relationships. Every line is marked with
-its evidence. It was *declared* by the source, as a key the system itself
-defines. Or it was *inferred*, from a declared key, from shared vocabulary or
-from matching values. Or it is a *guess*, such as two rare columns with the
-same name and nothing declared, and it is called a guess. There is no
-confidence score to blur the three together.
-
-**It puts what it could not read first.** A source that did not answer, or a
-view it had no permission to see, is listed at the top with the reason the
-source gave. Datasets that fit no domain are listed on their own, rather than
-forced into one.
-
-**It compares what is declared with what is there.** Where a source declares
-a relationship and its data contradicts it, that is *drift*. Where the data
-shows a relationship nothing declares, that is *shadow*. Where a declared key
-points at something that is not in the estate, that is *missing*.
-
-**The map is worked out by rules, not written by a model.** The domains, the
-links and the comparisons come from fixed rules applied to names, declared
-keys and counts. The same estate gives the same map every time, and a busy or
-unavailable language model cannot change it or hold it up.
-
-### What it keeps, and when it reaches a system
-
-Resolve keeps structure and counts only. No cell value, sample row, smallest
-or largest value, account name or credential is kept or shown. A credential
-is opened for one call and then dropped. Every call only reads, and each has a
-time limit.
-
-Opening the page reaches nothing. The page shows what the last action
-recorded, and only the four actions reach a source — never a timer, and never
-a page load. Each action names its runner, the worker described under
-DataEx › Runners: the one the administrator chose for that action, or the one
-the source is set to use. Every action is written to the Audit chain with its
-outcome, and refusals are written too.
-
-### What it feeds
-
-**Lineage.** When an action finishes, the relationships it read go onto the
-Lineage page: the keys a source declares between its tables, the domains that
-span more than one source, and which datasets were read and written.
-
-**The data-governance checks.** TIDE's data-governance helper assesses data
-quality and personal-data exposure from what Explore and Read access patterns
-recorded. On quality, it flags a column declared as never empty that holds
-empty values, and a table with no declared primary key. On personal data, it
-flags columns whose name and declared type mark them as likely personal data
-and that carry no mask from the source, and such columns when more than ten
-distinct accounts read them. Findings name the column, never a value in it.
-These checks are rules, with no model involved, and they appear on Reviews
-under data governance. A source nobody has explored is reported as not yet
-explored, never as clean.
-
-### Where the value is
-
-**In an inventory that is read, not remembered.** The map comes from the
-systems as they are today, on request, so it does not age the way a diagram
-does.
-
-**In evidence that is named.** A steward can tell a key the source declared
-from a link the map inferred, and both from a guess, before relying on any of
-them.
-
-**In one reading behind several pages.** The map, the lineage and the
-governance checks all start from the same recorded description, so they
-cannot quietly disagree about what the estate holds.
-
-**In a short security review.** The security lead can read, on screen,
-exactly what was reached, by whom, on which runner, and what was kept.
 
 ## FORGE: from a written brief to a working application
 
 FORGE is the part of TIDE for making new software: a studio inside TIDE. It
 builds web applications and pipelines — a pipeline here is a set of steps that
 moves and prepares data on a schedule. It is served inside TIDE, under TIDE's
-sign-in, as its own part of the menu, beside Overview, DevEx, DataEx and
-Intelligence.
+sign-in, as its own part of the menu, beside Overview, DevEx and
+DataEx.
 
 ### Studio
 
@@ -1084,14 +784,6 @@ independent second opinion on findings.
 
 The sign of fit: nobody in the company can list every AI agent in use today.
 
-### The finance and data leaders who need one version of the truth
-
-If capital spending is checked at the quarterly review, and data quality is
-argued rather than measured, the Intelligence pages put both on a screen that
-finance, the programme office and data stewards share.
-
-The sign of fit: two teams bring two different numbers to the same meeting.
-
 ### Who feels it, who sponsors it, and who signs it off
 
 A purchase like this involves three people who are almost never the same
@@ -1103,7 +795,6 @@ them in the language of another.
 | **Several applications, small platform team** | The people on the on-call rota | The engineering or technology lead | The security lead |
 | **Data that cannot leave** | Whoever answers the residency question each time it is asked | The executive who answers to the regulator | Compliance, data protection and the security lead |
 | **AI that has to answer for itself** | The head of data | The chief risk or technology officer | Compliance and internal audit |
-| **One version of the truth** | Analysts and data stewards | The chief financial officer | Internal audit |
 
 ### What each one should look at
 
@@ -1113,8 +804,6 @@ them in the language of another.
   reads Policy & ReBAC and Secrets & PKI, and checks where the model runs.
 - **The head of data** opens Model cards and Agents, and asks whether that is
   the inventory they would give a regulator.
-- **The finance lead** opens the CFO dashboard and Instances, and looks at how
-  spending and computing capacity are tied to initiatives and owners.
 - **The engineering lead** opens Runs, Reviews and Deploy lineage, and watches
   one helper for a week before arming it.
 
@@ -1130,7 +819,7 @@ a question the next step assumes.
 | --- | --- | --- | --- |
 | 1 | One workstation | Run the whole platform on it with one command | Whether the screens can be trusted: which ones say they did not measure something |
 | 2 | The plan that fits, and your sign-in arrangement | Put the platform where that plan runs it: Runink's shared machines, your own cloud account or your own servers | Nothing new. Same screens, more room |
-| 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what Resolve shows about it | Whether TIDE reads your data the way your security lead needs |
+| 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what TIDE shows about it | Whether TIDE reads your data the way your security lead needs |
 | 4 | Somebody outside the platform team | Have them request a deployment, and watch it expire | Whether useful work happens without the platform team in the loop |
 | 5 | One code repository | Switch on one helper and watch it before arming it | Whether the helpers save real time, judged on what they would have published |
 
@@ -1151,8 +840,8 @@ access.
 
 ### Step three: connect one real data source
 
-Choose one system and add it on DataEx › Connections. Explore it in Resolve
-and read what TIDE kept about it: structure and counts, and no values. Then
+Choose one system and add it on DataEx › Connections. Read what TIDE kept
+about it: structure and counts, and no values. Then
 sign in as someone who is not on the permitted list and try to change it. Read
 the record the refusal leaves in the Audit chain. That is the interaction to show
 your security lead.

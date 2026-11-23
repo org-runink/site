@@ -184,6 +184,10 @@ jobs:
       - name: Guard against template syntax in content bodies
         run: node scripts/check-content-template-syntax.mjs
 
+      # The retired subsystem's name must not appear anywhere in tracked files.
+      - name: Guard against the retired name
+        run: node scripts/check-retired-name.mjs
+
       # Site-side palette guards, added when the marketing site moved from the
       # black canvas onto FACE's two-ground token system. All three cover
       # failures that render without erroring, which is the only reason they

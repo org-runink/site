@@ -8,16 +8,14 @@ type: whitepapers
 headline: "Des documents qui commencent par ce qui peut être prouvé."
 description: "Documents détaillés sur Runink FACE, Runink PULSE et Runink TIDE, trois produits distincts. Pas d'études de cas, pas de noms de clients, pas de chiffres de retour sur investissement : le mécanisme, et sur quoi repose chaque affirmation."
 deck: |
-  Des documents détaillés, chacun consacré à un produit Runink ou à un accord
-  avec un partenaire. Les premiers portent sur **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** est un produit différent, d'analyse de marché et de
+  Des documents détaillés, chacun consacré à un produit Runink.
+  Les premiers portent sur **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** est un produit différent, d'analyse de marché et de
   marketing, et son document décrit son propre travail, pas celui de FACE.
   **Runink TIDE: Trusted Intelligence for Developer & Data Experience** est un produit à part entière, vendu séparément. C'est la
   couche d'exploitation, sur vos serveurs, dans votre cloud ou dans le nôtre,
   qui tient en ordre vos applications Runink et vos propres données, et la réponse
   honnête à la question de savoir où vos données sont traitées et qui peut les
-  voir. Son document est l'endroit où ce site le décrit. Les documents communs
-  avec Logical Leap portent sur les écrans de surveillance d'Atlas, qui
-  fonctionnent dans TIDE.
+  voir. Son document est l'endroit où ce site le décrit.
 
   Les documents sont rédigés en anglais. Les pages de ce site sont en
   français.
@@ -28,8 +26,7 @@ deck: |
   s'exécute.
 
   Là où un document décrit quelque chose que nous avons construit, il le dit
-  clairement. Là où il décrit un accord avec le produit d'une autre entreprise,
-  il dit quelle partie de cet accord est la nôtre. Personne ne nous a
+  clairement. Personne ne nous a
   audités au regard de SOC 2 ou d'ISO 27001, et les documents le disent dans
   leurs propres phrases plutôt qu'en note de bas de page.
 more:

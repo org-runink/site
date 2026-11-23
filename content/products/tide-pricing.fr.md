@@ -24,9 +24,9 @@ product_subcategory: "Exploitation informatique, gouvernance de l'IA et platefor
     "Voilà toute la forme du prix. La facture suit les postes ou les nœuds que vous faites tourner, pas ce que TIDE trouve, corrige ou livre : une équipe plateforme qui utilise beaucoup TIDE ne voit pas apparaître une nouvelle ligne qui grossit avec l'usage. Ce que fait la console vient d'abord, pourtant, car c'est la partie qui mérite d'être discutée."
   ],
   "eyebrow": "La console",
-  "heading": "Une console, cinq parties",
+  "heading": "Une console, quatre parties",
   "lead": [
-    "Voici les cinq parties dont la console TIDE est faite. Chacune répond à une question, et chacune ouvre sur plus de détails dans le livre blanc de TIDE.",
+    "Voici les quatre parties dont la console TIDE est faite. Chacune répond à une question, et chacune ouvre sur plus de détails dans le livre blanc de TIDE.",
     "Elles sont rangées dans l'ordre du menu de la console : l'ordre dans lequel une personne y va quand elle a la question, pas un ordre inventé pour cette page."
   ],
   "groups": [
@@ -55,15 +55,6 @@ product_subcategory: "Exploitation informatique, gouvernance de l'IA et platefor
         { "page": "", "name": "Fiches de modèle, comparées à ce qui tourne", "note": "Les fiches de modèle listent la source, la version, la licence et les preuves de test de chaque modèle, comparées à ce qui tourne." },
         { "page": "", "name": "L'autonomie est un réglage, jamais un défaut", "note": "L'autonomie est un réglage que vous choisissez pour chaque type d'action, et chaque type commence avec une personne qui approuve chaque acte." },
         { "page": "", "name": "Un second avis, consigné", "note": "Quand une constatation compte, un évaluateur indépendant lit d'abord les preuves. Il peut être d'accord, en désaccord, ou dire qu'il n'a pas pu juger." }
-      ]
-    },
-    {
-      "label": "Intelligence",
-      "deck": "Que contiennent nos données, et où l'argent ou les contrôles dérapent-ils ?",
-      "items": [
-        { "page": "", "name": "Deux tableaux de bord, un seul jeu de chiffres", "note": "Des tableaux de bord pour l'analyste et pour le responsable financier, bâtis sur un seul jeu de chiffres." },
-        { "page": "", "name": "Calculé, ou affiché absent avec la raison", "note": "Qualité des données, dépenses d'investissement, règles métier et lignée, chacune calculée à partir de vos propres données ou affichée absente avec la raison." },
-        { "page": "", "name": "Estate : un inventaire lu, pas mémorisé", "note": "Estate cartographie quels systèmes détiennent quelles données et comment ils sont reliés, quand un administrateur le demande. Il ne garde que la structure et les comptages, jamais une valeur, et marque chaque lien comme déclaré, déduit ou supposé." }
       ]
     },
     {
@@ -109,7 +100,7 @@ product_subcategory: "Exploitation informatique, gouvernance de l'IA et platefor
       ],
       "features": [
         "TOURNE SUR LES MACHINES PARTAGÉES DE RUNINK, À SON TOUR AVEC LE TRAVAIL DES AUTRES CLIENTS",
-        "LES CINQ PARTIES DE LA CONSOLE : OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
+        "LES QUATRE PARTIES DE LA CONSOLE : OVERVIEW, DEVEX, DATAEX, FORGE",
         "PLUS D'UNITÉS À L'USAGE, OU ACHETÉES D'AVANCE : 5 % DE MOINS POUR UN MOIS, 10 % DE MOINS POUR UN AN",
         "JUSQU'À 900 UNITÉS PAR PERSONNE ET PAR HEURE ; AU-DELÀ, LE TRAVAIL ATTEND SON TOUR"
       ],
@@ -137,7 +128,7 @@ product_subcategory: "Exploitation informatique, gouvernance de l'IA et platefor
       ],
       "features": [
         "EXÉCUTEURS DANS VOTRE PROPRE PROJET GOOGLE CLOUD, COMPTE DATABRICKS OU SNOWFLAKE",
-        "LES CINQ PARTIES DE LA CONSOLE : OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
+        "LES QUATRE PARTIES DE LA CONSOLE : OVERVIEW, DEVEX, DATAEX, FORGE",
         "UNITÉS DE CALCUL ILLIMITÉES ; VOTRE CLOUD VOUS FACTURE DIRECTEMENT LE CALCUL",
         "VOTRE PROPRE ADRESSE WEB"
       ],

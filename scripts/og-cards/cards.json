@@ -20,7 +20,7 @@
       "id": "industries",
       "page": "content/industries/_index.md",
       "title": "Runink industries",
-      "subtitle": "Logistics · Insurance · Banking · Telecom · Marketing",
+      "subtitle": "Logistics · Insurance · Marketing",
       "headline": ["Find your operation,", "not our product names."],
       "out": ["static/images/og/industries-og.jpg"]
     },
@@ -37,7 +37,7 @@
       "page": "content/products/tide.md, content/products/tide-pricing.md",
       "title": "Runink TIDE",
       "subtitle": "TIDE · Trusted Intelligence for Developer & Data Experience",
-      "headline": ["Know what broke, what shipped", "and which number is right."],
+      "headline": ["Know what broke", "and what shipped."],
       "mark": "static/images/brand/tide-mark.png",
       "markImage": true,
       "out": ["static/images/products/tide-og.jpg"]

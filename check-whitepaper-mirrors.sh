@@ -37,15 +37,12 @@
 # WHAT IT COMPARES, AND WHY NOT A PLAIN DIFF
 # ------------------------------------------
 # A line-by-line diff was the first thing tried and it is the wrong tool, for
-# two reasons that are both real and both pre-existing:
+# a reason that is real and pre-existing:
 #
 #   - runink-face's mirror titles every chapter "## Page 9 — Attract: ..."
 #     where the site source says "## Attract: ...".
-#   - runink-tide-atlas's mirror folds its whole first chapter into the cover
-#     block, as bold running text with different line wrapping and a full stop
-#     the heading does not have.
 #
-# Neither is drift. Both would make a line diff permanently red, and a check
+# That is not drift. It would make a line diff permanently red, and a check
 # that is red on a good day is a check nobody reads.
 #
 # So the comparison is per PARAGRAPH, and each paragraph is reduced to its
@@ -81,9 +78,9 @@ fi
 
 status=0
 
-# The papers with a print copy. runink-tide and runink-tide-atlas were
-# runink-core and runink-core-atlas before the CORE to Runink TIDE rename.
-MIRRORED="runink-tide-atlas runink-tide runink-face runink-pulse"
+# The papers with a print copy. runink-tide was
+# runink-core before the CORE to Runink TIDE rename.
+MIRRORED="runink-tide runink-face runink-pulse"
 
 for name in $MIRRORED; do
   src="$SITE_DIR/$name.md"

@@ -5,10 +5,10 @@ and a print mirror in `../pitch-decks/` — the document a salesperson hands to 
 prospect. The site source is the truth. The mirror is the same body with print
 furniture wrapped round it.
 
-On 11 September 2026 the four mirrors had drifted from their sources by 206
+On 11 September 2026 the mirrors had drifted from their sources by 206
 paragraphs in one direction and 376 in the other, because the source paragraphs
 had been rewritten by an editorial claims pass and the mirrors had not. Struck
-claims were still being handed to prospects: the CORE and Atlas mirror alone
+claims were still being handed to prospects: the CORE mirror alone
 still carried four entire sector chapters — Insurance, Banking, Telecoms,
 Marketing — that had been cut from the site as unfounded.
 
@@ -44,7 +44,7 @@ of these expects. So build once, then run the binaries **from the repo root**:
 ## The scripts
 
     ~/.cache/rk-mirror/rebuild-<paper>        # rewrite one mirror from its source
-    ~/.cache/rk-mirror/rebuild-<paper> --dry-run   # tide, face, tide-atlas only
+    ~/.cache/rk-mirror/rebuild-<paper> --dry-run   # tide and face only
 
 Run from the repo root. `MIRROR_DIR` overrides `../pitch-decks`. Each keeps its
 paper's cover verbatim, regenerates the body from the site source, and re-applies
@@ -55,9 +55,9 @@ byte. `go test` pins that idempotence, on fixtures always and on the real
 mirrors when `../pitch-decks` is present.
 
 **No two papers share a convention**, which is why there is a program each
-rather than one loop. That survived the port to Go deliberately: the four differ
+rather than one loop. That survived the port to Go deliberately: the three differ
 in how the cover is found (first `## `, first page-break div, a literal
-`*Page 1 — Cover*` marker, the line the folded chapter one starts on), how the colophon is
+`*Page 1 — Cover*` marker), how the colophon is
 found, whether there is validation before writing, whether the file ends in a
 newline, and whether a chapter is folded into the cover. A single rebuilder with
 a per-paper config struct would have needed a branch at every one of those.
@@ -67,14 +67,12 @@ a per-paper config struct would have needed a branch at every one of those.
 | `runink-face` | `## Page N — Title`, `## Pages N–M — Title` for spans, a page-break div per chapter, a Contact colophon |
 | `runink-tide` | plain `## Title`, `*Runink TIDE — page N of 23*` under each chapter, closing colophon |
 | `runink-pulse` | plain `## Title`, a `## Contents` block the site does not have, `*Page N — Title*` markers, no trailing newline |
-| `runink-tide-atlas` | plain `## Title`, and **chapter one is folded into the cover** as bold running text with no heading |
 
-Those four are the papers with a print copy. `runink-face-logistics` and
-`runink-tide-atlas-banking` have none, so there is nothing to rebuild for them;
-`check-whitepaper-mirrors.sh` lists them on every run as having no print copy,
-and fails if a mirror for one of them appears without being added to its list.
-The TIDE papers were `runink-core` and `runink-core-atlas` until the CORE to
-Runink TIDE rename; their print copies and tools carry the new names.
+Those three are the papers with a print copy. `runink-face-logistics` has none, so there is nothing to rebuild for it;
+`check-whitepaper-mirrors.sh` lists it on every run as having no print copy,
+and fails if a mirror for it appears without being added to its list.
+The TIDE paper was `runink-core` until the CORE to
+Runink TIDE rename; its print copy and tools carry the new name.
 
 Page numbers come from each source's `register:` front matter, not from hand
 maintenance. That is load-bearing rather than cosmetic: the prose cross-
@@ -89,7 +87,7 @@ so every one of those references pointed at the wrong sheet.
     ~/.cache/rk-mirror/mirror-audit <paper> --missing    # site-only paragraphs
     ~/.cache/rk-mirror/mirror-audit <paper> --orphan     # mirror-only paragraphs
     ~/.cache/rk-mirror/mirror-audit <paper> --excluded   # what was treated as furniture
-    ~/.cache/rk-mirror/mirror-verify                     # structural, all four
+    ~/.cache/rk-mirror/mirror-verify                     # structural, all three
 
 `mirror-audit` exists because the shipped check compares in one direction, so
 a claim struck from the site and left in a mirror is invisible to it. Read
@@ -112,6 +110,6 @@ every paper, so it wants its own commit and its own reading.
 with no counterpart in the site source, so nothing compares it to anything. Both
 covers that were wrong in September were wrong invisibly: FACE carried a deck the
 site had rewritten, and CORE promised the reader a chapter that had been struck
-from the paper it introduces. The FACE and Atlas scripts now re-derive the deck
+from the paper it introduces. The FACE script now re-derives the deck
 region from the source's `deck:` front matter, which closes part of it. The rest
 of a cover you have to read.

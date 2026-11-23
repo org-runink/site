@@ -39,8 +39,7 @@ deployment adds you. The app has no sign-up form.
 
 The questions you ask, the chat text you type, the commands you run and the
 notes you save go to your deployment and are kept there. On the web, you can
-also choose a file to import (for example, a CapEx file). The file goes to
-your deployment.
+also choose a file to import. The file goes to your deployment.
 
 ### On your device
 

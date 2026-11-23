@@ -2,10 +2,7 @@
 date: 2026-09-07T00:00:00Z
 title: "Insurance"
 description: "Claims decisioning, reserving and reinsurance recovery, delegated authority and conduct evidence. How Runink FACE sets the rule as written beside the logic your systems actually run, and sorts every rule into aligned, drift, shadow or missing."
-# This page is Runink FACE, and the attribution was previously absent — the
-# page named no product and linked to the TIDE and Atlas paper, which made it
-# read as the platform arrangement described on the banking and telecom pages.
-# It is not. Insurance is a FACE domain in the most literal sense: FACE's
+# This page is Runink FACE. Insurance is a FACE domain in the most literal sense: FACE's
 # Finance domain covers claims, reserves, adjusters, premiums, deductibles,
 # settlements, payouts and underwriting ("a claim is a reserve against a
 # policy"), FACE connects to Guidewire alongside SAP, D365, Salesforce and the

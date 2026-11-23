@@ -2,8 +2,7 @@
 title: "Runink FACE — Fulfilment Autonomous Claims Engine"
 headline: "The evidence of your next loss is already in your systems."
 # The label the closing ask carries into the contact form, so an enquiry
-# arrives naming the paper it came from. `product:` is not usable for this —
-# two of the four papers are both "Runink TIDE".
+# arrives naming the paper it came from.
 next_about: "The Runink FACE paper"
 product: "Runink FACE"
 subtitle: "Fulfilment Autonomous Claims Engine"

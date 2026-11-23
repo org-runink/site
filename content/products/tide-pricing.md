@@ -34,18 +34,15 @@ product_subcategory: "IT operations, AI governance and application platform"
 # never charge a success fee?" — and every outcome_strategies row below says so
 # rather than staying silent about it.
 #
-# THE SCENARIO BAND is built from TIDE's own five real console parts —
-# Overview, DevEx, DataEx, Intelligence, FORGE — exactly as content/products/
+# THE SCENARIO BAND is built from TIDE's own four real console parts —
+# Overview, DevEx, DataEx, FORGE — exactly as content/products/
 # tide.md's `rp.plate.rows` and `rp.facts` name them, and as the whitepaper's
 # own table states them (content/blog/whitepapers/runink-tide.md, "How the
 # console is arranged"). Every group deck and item note below is lifted
 # word-for-word, or trimmed to one clause without adding a word, from
 # tide.md's `rp.features.items` bodies (keys: overview, devex, dataex,
-# intelligence, resolve, forge) or from the whitepaper. Nothing here is a
-# capability TIDE does not already claim elsewhere. There is no sixth group
-# for "Resolve" — the whitepaper places it directly after Intelligence and
-# tide.md's own facts still count "5 parts... on one menu" — so Resolve's
-# item sits inside the Intelligence group, where the source puts it.
+# forge) or from the whitepaper. Nothing here is a
+# capability TIDE does not already claim elsewhere.
 #
 # NO ENTERPRISE SOVEREIGNTY DETAILS ON THIS PAGE (owner, 2026-09-28): no
 # hardware or appliance pricing, no field devices, no onboarding or consulting
@@ -83,9 +80,9 @@ product_subcategory: "IT operations, AI governance and application platform"
     "That is the whole shape of it. The bill follows the seats or nodes you run, not what TIDE finds, fixes or ships, so a platform team that puts TIDE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
   ],
   "eyebrow": "The console",
-  "heading": "One Console, Five Parts",
+  "heading": "One Console, Four Parts",
   "lead": [
-    "These are the five parts the TIDE console is built from. Each one answers one question, and each opens onto more detail in the TIDE paper.",
+    "These are the four parts the TIDE console is built from. Each one answers one question, and each opens onto more detail in the TIDE paper.",
     "They are grouped in the order the console's own menu uses them — the order a person goes to when they have the question, not an order invented for this page."
   ],
   "groups": [
@@ -114,15 +111,6 @@ product_subcategory: "IT operations, AI governance and application platform"
         { "page": "", "name": "Model cards, checked against what's live", "note": "Model cards list each model's source, version, licence and test evidence, checked against what is live." },
         { "page": "", "name": "Autonomy is a setting, never a default", "note": "Autonomy is a setting you choose for each kind of action, and every kind starts with a person approving each act." },
         { "page": "", "name": "A second opinion, on the record", "note": "Where a finding matters, an independent assessor reads the evidence first. It can agree, disagree or say it could not judge." }
-      ]
-    },
-    {
-      "label": "Intelligence",
-      "deck": "What does our data hold, and where do money or controls slip?",
-      "items": [
-        { "page": "", "name": "Two dashboards, one set of figures", "note": "Dashboards for the analyst and the finance lead, built on one set of figures." },
-        { "page": "", "name": "Computed, or shown absent with the reason", "note": "Data quality, capital spending, business rules and lineage, each computed from your own records or shown as absent with the reason." },
-        { "page": "", "name": "Estate: an inventory read, not remembered", "note": "Estate maps which systems hold which data and how they connect, when an administrator asks. It keeps structure and counts only, never a value, and marks each link as declared, inferred or a guess." }
       ]
     },
     {
@@ -168,7 +156,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       ],
       "features": [
         "RUNS ON RUNINK'S SHARED MACHINES, TAKING ITS TURN ALONGSIDE OTHER CUSTOMERS' WORK",
-        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
+        "ALL FOUR CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, FORGE",
         "MORE UNITS AS YOU GO, OR BOUGHT AHEAD: 5% LESS FOR A MONTH, 10% LESS FOR A YEAR",
         "UP TO 900 UNITS PER PERSON PER HOUR; WORK PAST THAT PACE WAITS ITS TURN"
       ],
@@ -196,7 +184,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       ],
       "features": [
         "RUNNERS IN YOUR OWN GOOGLE CLOUD PROJECT, DATABRICKS OR SNOWFLAKE ACCOUNT",
-        "ALL FIVE CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, INTELLIGENCE, FORGE",
+        "ALL FOUR CONSOLE PARTS: OVERVIEW, DEVEX, DATAEX, FORGE",
         "UNLIMITED COMPUTE UNITS; YOUR CLOUD BILLS YOU FOR THE COMPUTE DIRECTLY",
         "YOUR OWN WEB ADDRESS"
       ],

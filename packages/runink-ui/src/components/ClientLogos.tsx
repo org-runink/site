@@ -46,7 +46,7 @@ export interface ClientLogosProps extends HTMLAttributes<HTMLElement> {
  *     { name: 'Northbound Logistics', logo: '/images/logos/customer-1.png' },
  *     { name: 'Harbor Freight Systems', logo: '/images/logos/customer-2.png' },
  *     { name: 'Meridian 3PL', logo: '/images/logos/customer-3.png' },
- *     { name: 'Atlas Customs Brokers', logo: '/images/logos/customer-4.png' },
+ *     { name: 'Summit Customs Brokers', logo: '/images/logos/customer-4.png' },
  *   ]}
  * />
  */

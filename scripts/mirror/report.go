@@ -31,8 +31,3 @@ func (s PulseStats) Report(path string) string {
 		"  cover block: %d lines kept verbatim\n  contents block: %d entries\n",
 		path, s.Chapters, s.RegisterCount, s.CoverLines, s.ContentsCount)
 }
-
-// AtlasReport is the line rebuild-runink-core-atlas.py printed after writing.
-func AtlasReport(path string, pages, chapters int) string {
-	return fmt.Sprintf("wrote %s (%d pages, %d chapters)\n", path, pages, chapters)
-}

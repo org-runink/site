@@ -39,7 +39,7 @@ const CORE: ClientLogo[] = [
   logo('Northbound Logistics', 'chevron'),
   logo('Harbor Freight Systems', 'block'),
   logo('Meridian 3PL', 'ring'),
-  logo('Atlas Customs Brokers', 'block'),
+  logo('Summit Customs Brokers', 'block'),
 ];
 
 /** Enough marks that the marquee track is visibly longer than the viewport. */

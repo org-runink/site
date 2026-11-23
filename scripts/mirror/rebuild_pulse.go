@@ -13,11 +13,11 @@ package mirror
 // Nothing in the body is authored here: every chapter is copied out of the
 // site source, which is the single source of truth.
 //
-// PULSE is the only one of the four that generates a table of contents, the
+// PULSE is the only one of the three that generates a table of contents, the
 // only one whose cover boundary is a literal page marker rather than a
 // structural feature, the only one that writes NO trailing newline, and the
 // only one with no --dry-run and no pre-write validation at all. See
-// rebuild_tide.go for why the four were not collapsed.
+// rebuild_tide.go for why the three were not collapsed.
 
 import (
 	"fmt"

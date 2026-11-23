@@ -82,9 +82,6 @@
 >   ingest, a cue that is broadcast rather than actuated: *"NOTHING HERE ACTUATES
 >   ANYTHING, so nothing here may claim it did"*). Its `badge: "IoT Sentinel"` now reads
 >   against the body — left alone deliberately, since `_index.md` may key off it.
-> - **`banking-financial-services.md` / `telecom.md`** — CORE+Atlas-led, and Atlas is a
->   third party's unreleased product. Outcomes are now labelled Built / Not built, but
->   these pages still present the platform as a customer-facing product.
 > - **Four blog posts** whose whole premise is a claim that cannot be supported:
 >   `runink-modal-shift-optimization`, `advanced-analytics-supply-chain-emissions-reduction`,
 >   `digital-twin-evolution-logistics`, `what-is-digital-twin-agentic-decisions`, plus
@@ -145,25 +142,13 @@ either done, or open and waiting on a decision that is not an editor's to make.
 Owner decision 2026-10-04: "Delete both drafts." The held draft and its copy in
 `forecasts/` are removed; nothing on the site linked to them.
 
-### 2. Three industry pages point at the CORE paper
-`industries/insurance.md`, `industries/telecom.md` and
-`industries/banking-financial-services.md` all end with *"Read the CORE paper"* →
-`/blog/whitepapers/runink-core-atlas/`.
-
-Insurance is FACE domain #8 and now has its own FACE page, so sending an
-insurance reader to a CORE paper looks wrong — **but** each page's `note`
-describes "a second independent judgement", which *is* the Atlas assessor design.
-So either the paper link is wrong, or these pages are genuinely CORE-led and are
-presenting CORE as a customer-facing product, which this pass was told not to do.
-**Not repointed, deliberately** — it is a product question, not a copy question.
-
-### 3. `content/blog/whitepapers/runink-core.md` sells the platform as a product
+### 2. `content/blog/whitepapers/runink-core.md` sells the platform as a product
 "Who CORE is for", "What adopting CORE involves", "The commercial model", with
 per-seat currency. This — not the FACE or PULSE papers — is where CORE is priced
 and segmented like an end-user product. Fixing it is a rewrite of four chapters
 **plus** a commercial decision about whether CORE is sold separately at all.
 
-### 4. `content/industries/_index.md` has no attribution
+### 3. `content/industries/_index.md` has no attribution
 "The five industries Runink is built around" — four are FACE-shaped, one
 (marketing) is PULSE, and a reader has no way to tell which is which.
 

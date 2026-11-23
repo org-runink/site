@@ -37,7 +37,7 @@ export function Default() {
  * image, so a statically screenshotted team grid always reads as portrait frames.
  */
 export function InitialsFallback() {
-  return <TeamMember name="Marco Silva" role="VP Supply Chain, Atlas Freight" />;
+  return <TeamMember name="Marco Silva" role="VP Supply Chain, Summit Freight" />;
 }
 
 /** Initials fallback with the LinkedIn badge still on it — the badge sits over the panel, not the photo. */

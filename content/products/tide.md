@@ -3,17 +3,17 @@ title: "Runink TIDE"
 # Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
 # seo_title verbatim, at most 60 characters; seo_description is the meta and card
 # description, at most 155. Visible copy on the page is unchanged by these two.
-seo_title: "Runink TIDE: what broke, what shipped, which number is right"
-seo_description: "Runink TIDE takes repeat questions off engineering and data teams: what broke, did the fix ship, which number is right. A person approves each change."
+seo_title: "Runink TIDE: what broke, and what shipped"
+seo_description: "Runink TIDE takes repeat questions off engineering and data teams: what broke, did the fix ship. A person approves each change."
 layout: "product"
-description: "Runink TIDE takes the repeat questions off engineering, platform and data teams: what broke and why, whether a fix shipped, which number is right, who changed what. Run it on your own servers, in your own cloud account, or on Runink's shared machines to start. Helpers propose; a person approves."
+description: "Runink TIDE takes the repeat questions off engineering, platform and data teams: what broke and why, whether a fix shipped, who changed what. Run it on your own servers, in your own cloud account, or on Runink's shared machines to start. Helpers propose; a person approves."
 next_about: "Runink TIDE"
 aliases: ["/products/core/"]
 # RENAMED 2026-10: this product was called Runink CORE and is now Runink TIDE
 # (Trusted Intelligence for Developer & Data Experience). The old URL stays live
 # through `aliases`. In copy, write "Runink TIDE" at the first mention on a page
 # and "TIDE" after that; never a bare "Tide", a name already crowded in AI
-# tooling. FORGE, DevEx, DataEx and Intelligence keep their names as sections
+# tooling. FORGE, DevEx and DataEx keep their names as sections
 # inside it. Links into docs.runink.org use the /tide/ paths (live since 2026-10-04;
 # the old /core/ paths redirect there).
 #
@@ -22,7 +22,7 @@ aliases: ["/products/core/"]
 # of #246 "Present Runink TIDE as a product in its own right". Nothing on this page
 # goes beyond what that paper says. If the paper changes, change this page with it.
 #
-# No screenshot: the hero carries the console's five parts as type instead of a
+# No screenshot: the hero carries the console's four parts as type instead of a
 # picture of a screen that does not show the product working.
 #
 # Enriched 2026-09-29, staying inside the `rp.features` grid this layout already uses
@@ -100,8 +100,8 @@ image: "/images/products/tide-og.jpg"
 rp:
   logo: "/images/brand/tide-mark.png"
   lockup: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
-  title: "Know what broke, what shipped and which number is right. On your servers, your cloud or ours."
-  promise: "**Runink TIDE** is software from Runink that takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, which dashboard is right, who changed this. Helpers draft the answer or the fix, and a named person approves it. Run it on Runink's shared machines, or on your own servers or cloud account so your data stays there; it is licensed by where it runs, and no plan sends your data to an outside AI service."
+  title: "Know what broke and what shipped. On your servers, your cloud or ours."
+  promise: "**Runink TIDE** is software from Runink that takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, who changed this. Helpers draft the answer or the fix, and a named person approves it. Run it on Runink's shared machines, or on your own servers or cloud account so your data stays there; it is licensed by where it runs, and no plan sends your data to an outside AI service."
   cta:
     - { text: "Book a consultation", url: "/#contact", style: "primary" }
     - { text: "Read the TIDE paper", url: "/blog/whitepapers/runink-tide/", style: "ghost" }
@@ -110,12 +110,11 @@ rp:
   fine: "A product in its own right, sold separately · in English, Spanish, French and Portuguese"
   plate:
     name: "Runink TIDE"
-    sub: "One console, five parts. Each one takes a question off somebody's week."
+    sub: "One console, four parts. Each one takes a question off somebody's week."
     rows:
       - { k: "Overview", v: "What is wrong right now, and where do I look first?" }
       - { k: "Delivery", v: "Is the platform up, and did my fix actually ship? (The console calls this part DevEx.)" }
       - { k: "AI oversight", v: "Which AI do we run, what may it do, and who checked its work? (The console calls this part DataEx.)" }
-      - { k: "Intelligence", v: "Which number is right, and where are money or controls slipping?" }
       - { k: "FORGE", v: "How does a small tool a team asks for get built without waiting its turn?" }
     foot: "It acts within the limits you set."
   mission: "Where does our information go? To the machines your plan names, *and it stays there.*"
@@ -142,8 +141,6 @@ rp:
       - { k: "DevEx · changes", title: "Pull requests that wait days for a first read", body: "A change sits until a busy senior engineer has time to look. TIDE's reviewer helper reads changes on the repositories you choose. It lists what it found, worst first, with the evidence. Until a person arms it, it only reports what it would have said. Your engineers still decide what merges. Then *Deploy lineage* shows each change merged, reviewed, built and running, so *is my fix live?* needs no message to the platform team. **Cost it touches:** senior engineering hours spent on first reads and status questions." }
       - { k: "DevEx · audit", title: "Audit evidence rebuilt by hand before every review", body: "Before each audit, somebody spends days piecing together who changed what, and on whose authority. TIDE writes it down as the work happens. Every console action is recorded with the person's name, refused attempts included. Press *Verify now* on the Audit chain and it names the first record that was altered. One audit page gives a single verdict over the platform's checks, and lists any check it could not read instead of counting it as a pass. **Cost it touches:** the person-days your last audit took, and outside help to prepare for the next one." }
       - { k: "DevEx · capacity", title: "Paying for environments nobody remembers", body: "A test environment is set up for a week and runs for months, because removing it is nobody's job. In TIDE every deployment carries a named owner, a reason and an end date from the moment it is requested. It is flagged as the date gets close. When the date comes, the platform removes it. **Cost it touches:** the cloud or server bill for idle capacity." }
-      - { k: "Intelligence · data", title: "Broken data, found by the business first", body: "The first sign of a broken feed is often a manager asking why a report looks wrong. On one page, a data steward sees whether each source answered its last test, where a source's own description disagrees with what it holds, and the open data-quality issues, and can check them all again on demand. *Lineage* traces each report back to the systems it comes from, with the trouble spots marked. Fixes wait in a queue where a person approves, tests or dismisses each one, and every decision is kept. **Cost it touches:** rework, and the hours spent tracing a wrong number back to its source." }
-      - { k: "Intelligence · one figure", title: "Two teams, two numbers, one meeting", body: "Finance and the analysts bring different figures and spend the meeting reconciling them. TIDE's analyst and finance dashboards are built on one set of figures, worked out the same way, from your own records. A figure TIDE could not read is shown as not known. Planned, requested and actual capital spending are checked against each other with a published rule book. **Cost it touches:** analyst hours spent reconciling spreadsheets, and money that leaves before anyone checks." }
       - { k: "DataEx · AI oversight", title: "Nobody can list every AI helper in use", body: "When the board, a customer or a regulator asks which AI you run and what it may do, the answer is a spreadsheet nobody trusts. TIDE keeps that list for you. It records each one's source, version, licence and test evidence, checked against what is actually running, and what each helper is allowed to do. Each helper has one page that holds what it does, which model answers it, who may switch it on and the level of autonomy it has. How much a helper may do on its own is a setting you choose for each kind of action, and every kind starts with a person approving each act. **Cost it touches:** risk and compliance hours spent answering the same questions again." }
       - { k: "Private by design", title: "Data that cannot leave, so outside AI tools are off-limits", body: "Customer records, contracts and claims cannot go to somebody else's service, so the quick AI tools are ruled out, and promising evaluations end at *where does that run?* On the Dedicated and Enterprise plans, TIDE runs in your own cloud account or on your own servers. Its assistant, its helpers and FORGE run there too, and records, files, secrets and certificates stay there. On every plan, no outside AI service is called. **Cost it touches:** security reviews that stall a purchase, and a bill from an outside AI service that grows with every question." }
       - { k: "FORGE", title: "The small tool a team needs waits behind the roadmap", body: "A product owner describes the tool, or the scheduled steps that move and prepare a set of data, in plain words. TIDE proposes the steps on a canvas, and nothing is filed until that person approves. The approved brief goes to coding helpers as a work item. The result comes back as a change for your engineers to review. **Cost it touches:** engineering and contractor time spent on small internal tools." }
@@ -159,7 +156,6 @@ rp:
     heading: "Read the detail"
     items:
       - { url: "/blog/whitepapers/runink-tide/", title: "The Runink TIDE paper", note: "Every page of the console: the question it answers, who uses it, and why it is worth having.", cta: "Read the paper" }
-      - { url: "/blog/whitepapers/runink-tide-atlas/", title: "Runink TIDE and Atlas", note: "A joint paper with Logical Leap: Atlas's oversight screens inside TIDE, on your own data, with a second opinion built in.", cta: "Read the paper" }
       - { url: "/trust/", title: "Trust & Compliance", note: "Who decides, where the models run, the audit chain anyone signed in can check, and how our controls map to five standards. Each claim links to the public documentation behind it.", cta: "Read the page" }
       - { url: "/products/tide-pricing/", title: "Pricing", note: "Priced by where TIDE runs: per person on Runink's shared machines, as a team plan with an allowance of Compute Units; per machine in your own cloud; with you on your own premises. Sold on its own. No success fees, ever.", cta: "See the plans" }
   final:

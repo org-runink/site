@@ -8,15 +8,14 @@ type: whitepapers
 headline: "Documentos que começam pelo que pode ser comprovado."
 description: "Documentos extensos sobre o Runink FACE, o Runink PULSE e o Runink TIDE, três produtos distintos. Sem estudos de caso, sem nomes de clientes e sem números de retorno: o mecanismo, e onde cada afirmação se apoia."
 deck: |
-  Documentos extensos, cada um sobre um produto da Runink ou sobre um acordo
-  com um parceiro. Os primeiros tratam do **Runink FACE: Fulfilment Autonomous Claims Engine**. O **Runink PULSE: Prescriptive Unified Lead & Social Engine** é um produto diferente, de análise de mercado e
+  Documentos extensos, cada um sobre um produto da Runink.
+  Os primeiros tratam do **Runink FACE: Fulfilment Autonomous Claims Engine**. O **Runink PULSE: Prescriptive Unified Lead & Social Engine** é um produto diferente, de análise de mercado e
   marketing, e o documento dele descreve o próprio trabalho, não o do FACE.
   O **Runink TIDE: Trusted Intelligence for Developer & Data Experience** é um produto por si só, vendido separadamente. É a camada
   de operações, nos seus servidores, na sua nuvem ou na nossa, que mantém em ordem os
   seus aplicativos Runink e os seus próprios dados, e a resposta honesta a onde
   os seus dados são processados e quem pode vê-los. O documento dele é onde
-  este site o descreve. Os documentos conjuntos com a Logical Leap tratam das telas
-  de supervisão do Atlas, que rodam dentro do TIDE.
+  este site o descreve.
 
   Os documentos estão escritos em inglês. As páginas deste site estão em
   português.
@@ -26,8 +25,7 @@ deck: |
   produz, quem aprova e onde tudo isso roda.
 
   Onde um documento descreve algo que construímos, ele diz isso com clareza.
-  Onde descreve um acordo com o produto de outra empresa, diz qual parte desse
-  acordo é nossa. Ninguém nos auditou contra SOC 2 ou ISO 27001, e os
+  Ninguém nos auditou contra SOC 2 ou ISO 27001, e os
   documentos dizem isso nas próprias frases, não numa nota de rodapé.
 more:
   label: "Textos mais curtos"
