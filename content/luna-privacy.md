@@ -136,7 +136,7 @@ are plain counts, grouped by hour. They contain none of your messages, replies o
 stop, and nothing about your health. They are not tied to your name or account, and they cannot be
 traced back to you. They go to Runink's own operations service and are never shared or sold. Because
 they hold nothing that identifies you, there is nothing in them to delete when you ask us to delete
-your account at privacy@runink.org.
+your account at contact@runink.org.
 
 ### On your device
 
@@ -252,7 +252,7 @@ means:
   ask. There is no in-app delete button today.
 
 To have your Luna data deleted, or to ask what is stored about you, email
-**privacy@runink.org** from the address your Luna account uses. We answer
+**contact@runink.org** from the address your Luna account uses. We answer
 within 30 days. Deleting your
 data does not require you to lose access to the app; removing your address from
 the allowlist and deleting your data are separate actions and you can request
@@ -275,7 +275,7 @@ either or both.
   upload.
 * **Signing out** removes the session and your email from the device.
 * **Access, correction, export and deletion** — email
-  privacy@runink.org.
+  contact@runink.org.
 
 ---
 
@@ -316,7 +316,7 @@ disclosure at the same time.
 Runink is published by **Technologies Runink Inc.**, Montréal, Québec, Canada.
 
 You can ask us to show you the personal information we hold about you, to
-correct it, to delete it, or to give you a copy. Email **privacy@runink.org**.
+correct it, to delete it, or to give you a copy. For privacy requests, email **contact@runink.org**.
 We read that mailbox, and we answer within 30 days.
 
 If you are not satisfied with our answer, you can complain to the
@@ -330,6 +330,6 @@ that apply there.
 
 ## Contact
 
-* **Email:** privacy@runink.org
+* **Email:** contact@runink.org
 
 *Last Updated: November 2026*

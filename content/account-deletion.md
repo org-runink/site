@@ -51,7 +51,7 @@ address.
 **Not reached by the in-app deletion:** an older copy of FACE's sign-in table,
 from before FACE moved its storage, is keyed by your email address and is not
 reached by the in-app deletion. An operator removes it on request: write to
-**privacy@runink.org** from your sign-in address. Also not rewritten: fetch run
+**contact@runink.org** from your sign-in address. Also not rewritten: fetch run
 history, archive marks, trend-topic exclusions and uploaded-document manifests
 (they keep the opaque account number, not an email).
 
@@ -60,7 +60,7 @@ that FACE itself cannot change, so deleting your account does not remove your
 address from it. If it is still listed, signing in with Google again creates a
 new, empty account; ask your organisation's administrator to remove you.
 
-**Without the app:** email **privacy@runink.org** from your sign-in address
+**Without the app:** email **contact@runink.org** from your sign-in address
 with the subject "Delete my FACE account". For a copy of your data first, use
 the subject "Export my FACE data" (there is no in-app export).
 
@@ -82,7 +82,7 @@ belong to that client and are deleted when the client's account is deleted. A
 deployment's only admin must make another member an admin first.
 
 **Some copies stay for now:** earlier versions in storage history, and entries
-in append-only logs. To have those erased, email **privacy@runink.org** from
+in append-only logs. To have those erased, email **contact@runink.org** from
 the address you sign in with, with the subject "Delete my PULSE account". If
 you cannot sign in, use the same address.
 
@@ -101,7 +101,7 @@ describes everything PULSE stores.
 Luna has no delete button in the app today. Deletion is done by an operator on
 request.
 
-**To ask for deletion:** email **privacy@runink.org** from the Google account you
+**To ask for deletion:** email **contact@runink.org** from the Google account you
 sign in to Luna with, with the subject "Delete my Luna account". We answer
 within 30 days. Your access to Luna (the allowlist) and your data are separate:
 you can ask for either or both.
@@ -124,11 +124,11 @@ it in Manage billing first.
 
 Your organisation's access grant stays until your administrator removes it.
 Earlier versions in storage history, and entries in append-only logs, stay
-until they are erased; to have them erased, email **privacy@runink.org** from
+until they are erased; to have them erased, email **contact@runink.org** from
 the address you sign in with.
 
 The [TIDE privacy policy](/tide-privacy/) describes what TIDE stores.
 
 ---
 
-Questions about any of this: **privacy@runink.org**.
+Questions about any of this: **contact@runink.org**.
