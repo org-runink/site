@@ -70,7 +70,7 @@ In the app: **Account › Privacy and your account › Delete my account**. This
 signs you out everywhere and deletes your account and what PULSE keeps under
 it. Posts already published stay on the networks they went to.
 
-Without the app: email **privacy@runink.org** from your account's address,
+Without the app: email **contact@runink.org** from your account's address,
 with the subject "Delete my PULSE account". What is deleted and what is kept:
 [Delete your account](/account-deletion/).
 
@@ -95,7 +95,7 @@ below.
 Runink is published by **Technologies Runink Inc.**, Montréal, Québec, Canada.
 
 You can ask us to show you the personal information we hold about you, to
-correct it, to delete it, or to give you a copy. Email **privacy@runink.org**.
+correct it, to delete it, or to give you a copy. For privacy requests, email **contact@runink.org**.
 We read that mailbox, and we answer within 30 days.
 
 If you are not satisfied with our answer, you can complain to the
@@ -109,6 +109,6 @@ that apply there.
 
 ## Contact
 
-* **Email:** privacy@runink.org
+* **Email:** contact@runink.org
 
 *Last Updated: November 2026*

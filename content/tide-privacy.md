@@ -109,7 +109,7 @@ We post changes on this page and update the date below.
 Runink is published by **Technologies Runink Inc.**, Montréal, Québec, Canada.
 
 You can ask us to show you the personal information we hold about you, to
-correct it, to delete it, or to give you a copy. Email **privacy@runink.org**.
+correct it, to delete it, or to give you a copy. For privacy requests, email **contact@runink.org**.
 We read that mailbox, and we answer within 30 days.
 
 If you are not satisfied with our answer, you can complain to the
@@ -123,6 +123,6 @@ that apply there.
 
 ## Contact
 
-*   **Email:** privacy@runink.org
+*   **Email:** contact@runink.org
 
 *Last Updated: November 2026*

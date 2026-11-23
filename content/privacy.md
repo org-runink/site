@@ -122,7 +122,7 @@ We may update this policy from time to time. We will tell you about a change by 
 
 Do you have a question about this policy? Here is how to reach us.
 
-*   **Email:** privacy@runink.org
+*   **Email:** contact@runink.org
 *   **Mailing Address:** Email us to ask for our current mailing address.
 
 *Last Updated: January 2026*

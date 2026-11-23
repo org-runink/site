@@ -246,14 +246,14 @@ No system is perfectly secure, and we do not claim FACE is.
 
 **The app cannot delete an account by itself.** The Profile page's "Close
 account & take my data" button opens a request: it emails
-**privacy@runink.org** for you and links the
+**contact@runink.org** for you and links the
 [account-deletion page](/account-deletion/). Nothing is deleted from that
 screen.
 
 * Your organisation's FACE administrator can remove you from the instance on
   the Admin page. That deletes your FACE account record and ends your sessions.
 * To ask for your account and the personal data tied to it to be deleted, or
-  to ask what is stored about you, email **privacy@runink.org** from the
+  to ask what is stored about you, email **contact@runink.org** from the
   address you sign in with. Data that belongs to your organisation, rather
   than to you personally, is deleted at your organisation's request.
 
@@ -268,7 +268,7 @@ screen.
   instead.
 * **Signing out** ends your sessions on the server and removes your token from
   the phone.
-* **Access, correction, export and deletion:** email privacy@runink.org.
+* **Access, correction, export and deletion:** email contact@runink.org.
 
 ---
 
@@ -291,7 +291,7 @@ below.
 Runink is published by **Technologies Runink Inc.**, Montréal, Québec, Canada.
 
 You can ask us to show you the personal information we hold about you, to
-correct it, to delete it, or to give you a copy. Email **privacy@runink.org**.
+correct it, to delete it, or to give you a copy. For privacy requests, email **contact@runink.org**.
 We read that mailbox, and we answer within 30 days.
 
 If you are not satisfied with our answer, you can complain to the
@@ -305,6 +305,6 @@ that apply there.
 
 ## Contact
 
-* **Email:** privacy@runink.org
+* **Email:** contact@runink.org
 
 *Last Updated: November 2026*
