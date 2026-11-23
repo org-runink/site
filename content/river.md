@@ -158,6 +158,7 @@ rp:
     items:
       - { url: "https://docs.runink.org/river/", title: "Runink River documentation", note: "Install, features, the sandbox, the firewall and the release process.", cta: "Open the docs" }
       - { url: "https://github.com/org-runink/river", title: "Source on GitHub", note: "The distribution, the installer, install.sh and the KEYS file.", cta: "Open the repository" }
+      - { url: "/river/kernel/", title: "linux-runink, the kernel", note: "How it differs from linux-zen, and how to install it on Arch Linux from the AUR.", cta: "Read about the kernel" }
   final:
     heading: "Want Runink River on your team's machines?"
     body: "Tell us about the work your developers and analysts do, and the hardware they do it on. We will walk you through Runink River on a machine like theirs."
