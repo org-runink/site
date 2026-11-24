@@ -3,7 +3,7 @@
 # The HTML at /blog/whitepapers/runink-core/ is a Hugo alias on the new page; this file keeps the old
 # index.toon there serving the new page's TOON (see _default/single.toon.toon).
 # No HTML, never listed, not in the sitemap. Delete after one release.
-title: "Runink TIDE paper"
+title: "Runink TIDDE paper"
 url: "/blog/whitepapers/runink-core/"
 toon_of: "/blog/whitepapers/runink-tide"
 outputs: ["TOON"]

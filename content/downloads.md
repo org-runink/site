@@ -10,7 +10,7 @@ layout: "company"
 # was rewritten: this file used to call the server image "Runink River").
 # The previous version set the three side by side in one row of equal cards,
 # which read as one product family with three equal members.
-description: "Read about the FACE by Runink app for Android, learn how to open the separate Runink PULSE web app, read about the open-source Runink River workstation, or request access to the Runink Server image, which puts Runink TIDE on hardware you own."
+description: "Read about the FACE by Runink app for Android, learn how to open the separate Runink PULSE web app, read about the open-source Runink River workstation, or request access to the Runink Server image, which puts Runink TIDDE on hardware you own."
 date: "2026-08-11T00:00:00Z"
 ---
 
@@ -33,7 +33,7 @@ date: "2026-08-11T00:00:00Z"
       product for marketing teams, listed here because people ask where to get it, not
       because it is part of FACE: it opens in a web browser. The
       <strong class="text-stone-200">Runink Server</strong> image is neither: it
-      is the server image carrying Runink TIDE, a separate product in its own right, which is the answer to
+      is the server image carrying Runink TIDDE, a separate product in its own right, which is the answer to
       where your data is processed and who can see it. <strong class="text-stone-200">Runink River</strong> is the
       open-source developer workstation the server image is built on.
     </p>
@@ -79,7 +79,7 @@ date: "2026-08-11T00:00:00Z"
       <div class="text-xs font-black uppercase tracking-[0.25em] mb-3 text-signal">Runink Server — the server image</div>
       <h3 class="text-2xl font-bold text-white mb-3">Runink Server</h3>
       <p class="text-stone-400 mb-8 flex-1">
-        The Runink Server image puts Runink TIDE on your own box: the layer FACE and PULSE run on, so that
+        The Runink Server image puts Runink TIDDE on your own box: the layer FACE and PULSE run on, so that
         your data and the reasoning over it never leave hardware you own. Provisioned
         per deployment, not offered as a public download.
         It is built on <a href="/river/" class="underline">Runink River</a>, the developer workstation.

@@ -1,17 +1,17 @@
 ---
-title: "Runink TIDE Pricing"
+title: "Runink TIDDE Pricing"
 # Search and share-card text (CONTENT.md rules 1 and 3 apply): the <title> is
 # seo_title verbatim, at most 60 characters; seo_description is the meta and card
 # description, at most 155. Visible copy on the page is unchanged by these two.
-seo_title: "Runink TIDE pricing: per person, per node or on-premises"
-seo_description: "What a Runink TIDE licence costs: per person on Runink's shared machines, per node in your own cloud, or priced with you on your premises. No success fees."
+seo_title: "Runink TIDDE pricing: per person, per node or on-premises"
+seo_description: "What a Runink TIDDE licence costs: per person on Runink's shared machines, per node in your own cloud, or priced with you on your premises. No success fees."
 image: "/images/products/tide-og.jpg"
 aliases: ["/products/core-pricing/"]
-description: "What a licence to run Runink TIDE costs. You choose where it runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDE never charges a percentage of anything it finds, fixes or ships."
+description: "What a licence to run Runink TIDDE costs. You choose where it runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDDE never charges a percentage of anything it finds, fixes or ships."
 layout: "pricing"
 date: "2026-09-27T00:00:00Z"
 author: "Runink"
-product_name: "Runink TIDE"
+product_name: "Runink TIDDE"
 product_url: "products/tide/"
 product_subcategory: "IT operations, AI governance and application platform"
 # WHERE EVERY CLAIM ON THIS PAGE COMES FROM.
@@ -77,12 +77,12 @@ product_subcategory: "IT operations, AI governance and application platform"
   "link_base": "/blog/whitepapers/runink-tide/",
   "intro": [
     "This is the price of Runink TIDE: Trusted Intelligence for Developer & Data Experience. You choose where it runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDE never takes a percentage of anything it finds, fixes or ships, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
-    "That is the whole shape of it. The bill follows the seats or nodes you run, not what TIDE finds, fixes or ships, so a platform team that puts TIDE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
+    "That is the whole shape of it. The bill follows the seats or nodes you run, not what TIDDE finds, fixes or ships, so a platform team that puts TIDDE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
   ],
   "eyebrow": "The console",
   "heading": "One Console, Four Parts",
   "lead": [
-    "These are the four parts the TIDE console is built from. Each one answers one question, and each opens onto more detail in the TIDE paper.",
+    "These are the four parts the TIDDE console is built from. Each one answers one question, and each opens onto more detail in the TIDDE paper.",
     "They are grouped in the order the console's own menu uses them — the order a person goes to when they have the question, not an order invented for this page."
   ],
   "groups": [
@@ -91,7 +91,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       "deck": "Is anything wrong, and where do I go next?",
       "items": [
         { "page": "", "name": "Needs attention, worst first", "note": "Headline readings, then a Needs attention list, worst first, each item linking to the page that deals with it." },
-        { "page": "", "name": "Ask TIDE in plain words", "note": "Ask TIDE, the assistant, does a task in plain words and shows every step it took." },
+        { "page": "", "name": "Ask TIDDE in plain words", "note": "Ask TIDDE, the assistant, does a task in plain words and shows every step it took." },
         { "page": "", "name": "Not known is never shown as a zero", "note": "A figure the console could not read is shown as not known, never drawn as a zero, so nobody decides on a reading nobody took." }
       ]
     },
@@ -122,7 +122,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       ]
     }
   ],
-  "outro": "The three licences below differ on one question: where TIDE runs. There is no second question about a percentage of anything TIDE finds, fixes or ships — that question does not exist here."
+  "outro": "The three licences below differ on one question: where TIDDE runs. There is no second question about a percentage of anything TIDDE finds, fixes or ships — that question does not exist here."
 }
 {{< /pricing-table-2 >}}
 
@@ -151,7 +151,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       "outcome_strategies": [
         {"label": "WHAT SETS THE BILL", "value": "How many people you licence, plus any units you use beyond the allowance."},
         {"label": "SHORTEST COMMITMENT", "value": "One month."},
-        {"label": "SUCCESS FEES", "value": "None. TIDE never takes a percentage of anything it finds, fixes or ships."},
+        {"label": "SUCCESS FEES", "value": "None. TIDDE never takes a percentage of anything it finds, fixes or ships."},
         {"label": "AUTOMATIC SET-UP FEE", "value": "None."}
       ],
       "features": [
@@ -206,7 +206,7 @@ product_subcategory: "IT operations, AI governance and application platform"
       "outcome_strategies": [
         {"label": "WHAT SETS THE BILL", "value": "Where it runs and the service levels you set."},
         {"label": "SHORTEST COMMITMENT", "value": "Agreed with you."},
-        {"label": "SUCCESS FEES", "value": "None. Not on this licence, not on any other. TIDE never takes a percentage of anything it finds, fixes or ships."},
+        {"label": "SUCCESS FEES", "value": "None. Not on this licence, not on any other. TIDDE never takes a percentage of anything it finds, fixes or ships."},
         {"label": "ONBOARDING & CONSULTING", "value": "Scoped and quoted with you."}
       ],
       "features": [
@@ -225,7 +225,7 @@ product_subcategory: "IT operations, AI governance and application platform"
 }
 {{< /pricing-table-1 >}}
 
-## What automated voice agents cost, and what TIDE does instead
+## What automated voice agents cost, and what TIDDE does instead
 
 Cloud voice agents are billed by the minute. These are the prices on each vendor's own pricing page, in US dollars, as published on 6 November 2026:
 
@@ -235,9 +235,9 @@ Cloud voice agents are billed by the minute. These are the prices on each vendor
 
 At 10,000 minutes a month, Retell's published range comes to $700 to $3,100, before phone charges.
 
-Runink TIDE is priced by seat or by node, never by the minute. What it brings to AI that speaks to your customers is the record an auditor asks for. The EU AI Act asks that people be told they are talking to an AI system, at the latest when they first interact with it ([Regulation (EU) 2024/1689, Article 50](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689)). In the US, the FCC has ruled that a call made with an AI-generated voice needs the prior express consent of the person called ([FCC 24-17](https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf), adopted 2 February 2024). So an auditor will ask which model spoke, which version, and who approved the change. For each model TIDE serves, its model card lists the source, version, licence and test evidence, checked against what is live. Every action a person approves in the Harness is written to the Audit chain before it happens.
+Runink TIDDE is priced by seat or by node, never by the minute. What it brings to AI that speaks to your customers is the record an auditor asks for. The EU AI Act asks that people be told they are talking to an AI system, at the latest when they first interact with it ([Regulation (EU) 2024/1689, Article 50](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689)). In the US, the FCC has ruled that a call made with an AI-generated voice needs the prior express consent of the person called ([FCC 24-17](https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf), adopted 2 February 2024). So an auditor will ask which model spoke, which version, and who approved the change. For each model TIDDE serves, its model card lists the source, version, licence and test evidence, checked against what is live. Every action a person approves in the Harness is written to the Audit chain before it happens.
 
-On Enterprise, TIDE runs on your own servers with your own models, and nothing is sent to an outside AI service. The phone line is still billed by your carrier, by the minute.
+On Enterprise, TIDDE runs on your own servers with your own models, and nothing is sent to an outside AI service. The phone line is still billed by your carrier, by the minute.
 
 
 
@@ -248,15 +248,15 @@ On Enterprise, TIDE runs on your own servers with your own models, and nothing i
   "description": "What the console does and who decides it, then what you are charged for.",
   "questions": [
     {
-      "question": "We run more software than any one person understands. Will TIDE touch that?",
-      "answer": "That is the problem TIDE is built for. Most companies run applications from different teams, vendors and years, each with its own way of being started, watched and changed, and its own idea of who may touch the company's information.\n\nTIDE gives every application the same foundations once: somewhere to run, one way to prove who you are, a way to reach company data, one place to look, and a way to get changes made. The five groups above are that one place to look, and each opens onto the console page that answers the question in its own heading."
+      "question": "We run more software than any one person understands. Will TIDDE touch that?",
+      "answer": "That is the problem TIDDE is built for. Most companies run applications from different teams, vendors and years, each with its own way of being started, watched and changed, and its own idea of who may touch the company's information.\n\nTIDDE gives every application the same foundations once: somewhere to run, one way to prove who you are, a way to reach company data, one place to look, and a way to get changes made. The five groups above are that one place to look, and each opens onto the console page that answers the question in its own heading."
     },
     {
-      "question": "What does TIDE need from us before it can do any of this?",
+      "question": "What does TIDDE need from us before it can do any of this?",
       "answer": "Not much to start. One downloaded file and one command bring the whole platform up on a workstation, so you can open Overview and see which readings say they have not been measured, open the findings queue (Trust, on the Agents page) and read a remedy, and open the Audit chain and press Verify now — all before anything is installed on machines you own.\n\nAdding one real data source, and putting it on machines you control, are the next steps, each at your own pace. What it needs from your side to begin is a named owner and a decision about who may change data connections and who may arm agents. Everything else can be decided as you go."
     },
     {
-      "question": "Who approves what TIDE's helpers propose?",
+      "question": "Who approves what TIDDE's helpers propose?",
       "answer": "A person, every time. The automated helpers propose; nothing is filed, changed or published until someone with the right to decide says yes. FORGE proposes the steps to build something on a canvas, and an approved brief only then goes to coding agents as a work item. The Harness takes an action only after a person confirms it, and it is written to the Audit chain before it happens.\n\nThat holds however small the action looks. What arrives is always a proposed action, and an action nobody approves is an action that has not been taken."
     },
     {
@@ -273,11 +273,11 @@ On Enterprise, TIDE runs on your own servers with your own models, and nothing i
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "It depends on where TIDE runs. On **Lite**, seats: a **seat** is one person who uses Runink TIDE, and each comes with Compute Units on Runink's shared machines. On **Dedicated**, nodes: $279 a month for the first node and $169 for each one after it, with runners in your own cloud account and no limit on units. Your cloud bills you for that compute directly, and Runink adds 1.5% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nYou are not billed by the question, the deployment or the finding."
+      "answer": "It depends on where TIDDE runs. On **Lite**, seats: a **seat** is one person who uses Runink TIDDE, and each comes with Compute Units on Runink's shared machines. On **Dedicated**, nodes: $279 a month for the first node and $169 for each one after it, with runners in your own cloud account and no limit on units. Your cloud bills you for that compute directly, and Runink adds 1.5% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nYou are not billed by the question, the deployment or the finding."
     },
     {
       "question": "What is a Compute Unit?",
-      "answer": "It is how Runink counts work on its shared machines. Asking TIDE a question — and the work it does to ground that answer in your own data — draws **Compute Units** from your allowance.\n\nEvery **Lite** seat carries 18,000 units a month, pooled across the team. On **Dedicated** and **Enterprise** the work runs in your own cloud or on your own servers, and units are unlimited."
+      "answer": "It is how Runink counts work on its shared machines. Asking TIDDE a question — and the work it does to ground that answer in your own data — draws **Compute Units** from your allowance.\n\nEvery **Lite** seat carries 18,000 units a month, pooled across the team. On **Dedicated** and **Enterprise** the work runs in your own cloud or on your own servers, and units are unlimited."
     },
     {
       "question": "What happens if we go over the allowance?",
@@ -285,23 +285,23 @@ On Enterprise, TIDE runs on your own servers with your own models, and nothing i
     },
     {
       "question": "Which licence fits us?",
-      "answer": "Decide where TIDE should run.\n\nUnder ten people, the **Lite Licence** is the fit. It runs on Runink's shared machines at the lowest price, and it is the only one you can take a month at a time — so an evaluation does not need a year's commitment. Work there takes its turn alongside other customers' work.\n\nIf TIDE should run in your own Google Cloud project, or your Databricks or Snowflake account, that is **Dedicated**, priced per node, with unlimited Compute Units. It is taken a year at a time.\n\nIf it has to run on your own servers, including sites kept off the network, that is **Enterprise**, and the conversation starts with where it has to run."
+      "answer": "Decide where TIDDE should run.\n\nUnder ten people, the **Lite Licence** is the fit. It runs on Runink's shared machines at the lowest price, and it is the only one you can take a month at a time — so an evaluation does not need a year's commitment. Work there takes its turn alongside other customers' work.\n\nIf TIDDE should run in your own Google Cloud project, or your Databricks or Snowflake account, that is **Dedicated**, priced per node, with unlimited Compute Units. It is taken a year at a time.\n\nIf it has to run on your own servers, including sites kept off the network, that is **Enterprise**, and the conversation starts with where it has to run."
     },
     {
       "question": "Do we have to sign for a year?",
-      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $99 per person, or a year at a time at $85 — the same difference, about 14%, shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because TIDE runs your platform there: the audit record, the deploy pipeline and the data connections are not something to switch on for a month and off again."
+      "answer": "Only for Dedicated and Enterprise. The **Lite Licence** can be taken month by month at $99 per person, or a year at a time at $85 — the same difference, about 14%, shown by the toggle above.\n\nDedicated and Enterprise are a year at a time because TIDDE runs your platform there: the audit record, the deploy pipeline and the data connections are not something to switch on for a month and off again."
     },
     {
-      "question": "How does a TIDE project start, and what do the services cost?",
+      "question": "How does a TIDDE project start, and what do the services cost?",
       "answer": "With a **landscape audit and roadmap**. We start by looking, not selling: an audit of your current landscape, then an implementation roadmap built on it. The audit describes your environment as it is; the roadmap says what comes next. It is **$200 or €200 an hour, in 50-hour blocks**: one block for the audit, one for the roadmap.\n\nThe Enterprise engagement packages add the following, each priced **Upon request**: a paid pilot (60 days of proof of value on your own estate, run from the roadmap), onboarding and consulting, and support and updates (passive plans for updates and fixes, active plans with named engineers and response times). They are delivered by Runink and its partners."
     },
     {
-      "question": "We already have committed spend with GCP, Snowflake or Databricks. Can we buy TIDE that way?",
+      "question": "We already have committed spend with GCP, Snowflake or Databricks. Can we buy TIDDE that way?",
       "answer": "Yes: that is the **Dedicated Licence**. Its runners run in your own Google Cloud project, or your Snowflake or Databricks account, on compute you already pay that platform for.\n\nThe compute is billed to you directly by the platform rather than provisioned and billed by us, so there is no infrastructure margin of ours stacked on top of theirs: you pay their compute rate, our per-node price, and 1.5% of what those runners cost. Whatever discount your committed spend gives you is between you and that cloud provider — not a number Runink sets or promises."
     },
     {
-      "question": "Why does TIDE never charge a success fee?",
-      "answer": "Because TIDE is priced on where it runs, by design, and that was a deliberate choice rather than an oversight. TIDE never takes a percentage of anything it finds, fixes or ships — audit records and deploy pipelines are not the kind of thing a success fee should attach to. There is no reading of \"TIDE verified your audit chain\" or \"TIDE shipped your deploy\" that turns into a dollar figure you would want a vendor billing a cut of.\n\nSo every licence above is priced by seats or nodes, and by where the work runs — never by what the console found, fixed or shipped."
+      "question": "Why does TIDDE never charge a success fee?",
+      "answer": "Because TIDDE is priced on where it runs, by design, and that was a deliberate choice rather than an oversight. TIDDE never takes a percentage of anything it finds, fixes or ships — audit records and deploy pipelines are not the kind of thing a success fee should attach to. There is no reading of \"TIDDE verified your audit chain\" or \"TIDDE shipped your deploy\" that turns into a dollar figure you would want a vendor billing a cut of.\n\nSo every licence above is priced by seats or nodes, and by where the work runs — never by what the console found, fixed or shipped."
     },
     {
       "question": "What does heavier use cost?",

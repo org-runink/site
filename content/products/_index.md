@@ -15,7 +15,7 @@
 #
 # English only, like the product pages it links to.
 title: "Runink products"
-description: "Runink FACE, Runink TIDE, Runink PULSE and Runink River: what each one is, and the page that explains it."
+description: "Runink FACE, Runink TIDDE, Runink PULSE and Runink River: what each one is, and the page that explains it."
 image: "/images/og/products-og.jpg"
 intro: "Separate products, each with its own page, and each one can run on your own servers or cloud account."
 items:
@@ -24,7 +24,7 @@ items:
     url: "/products/face/"
     logo: "/images/brand/face-mark.png"
     line: "Runink's main product, for logistics and the claims, returns and compliance work that hangs off it. It reads the records you already hold and drafts the action for a named person to approve."
-  - name: "Runink TIDE"
+  - name: "Runink TIDDE"
     full: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
     url: "/products/tide/"
     logo: "/images/brand/tide-mark.png"

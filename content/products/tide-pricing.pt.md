@@ -1,13 +1,13 @@
 ---
-title: "Preços do Runink TIDE"
-seo_title: "Preços do Runink TIDE: por pessoa, por nó ou no seu local"
-seo_description: "Quanto custa uma licença do Runink TIDE: por pessoa nas máquinas compartilhadas do Runink, por nó na sua nuvem, ou definido com você nas suas instalações."
+title: "Preços do Runink TIDDE"
+seo_title: "Preços do Runink TIDDE: por pessoa, por nó ou no seu local"
+seo_description: "Quanto custa uma licença do Runink TIDDE: por pessoa nas máquinas compartilhadas do Runink, por nó na sua nuvem, ou definido com você nas suas instalações."
 image: "/images/products/tide-og.jpg"
-description: "Quanto custa uma licença para rodar o Runink TIDE. Você escolhe onde ele roda: nas máquinas compartilhadas do Runink, com preço por pessoa; na sua própria conta na nuvem, com preço por nó; ou nas suas próprias instalações, com preço definido com você. Não há uma segunda conta: o TIDE nunca cobra uma porcentagem do que encontra, corrige ou entrega."
+description: "Quanto custa uma licença para rodar o Runink TIDDE. Você escolhe onde ele roda: nas máquinas compartilhadas do Runink, com preço por pessoa; na sua própria conta na nuvem, com preço por nó; ou nas suas próprias instalações, com preço definido com você. Não há uma segunda conta: o TIDDE nunca cobra uma porcentagem do que encontra, corrige ou entrega."
 layout: "pricing"
 date: "2026-09-27T00:00:00Z"
 author: "Runink"
-product_name: "Runink TIDE"
+product_name: "Runink TIDDE"
 product_url: "products/tide/"
 product_subcategory: "Operações de TI, governança de IA e plataforma de aplicações"
 # Translation of content/products/tide-pricing.md. Every rule in that file's
@@ -21,12 +21,12 @@ product_subcategory: "Operações de TI, governança de IA e plataforma de aplic
   "link_base": "/blog/whitepapers/runink-tide/",
   "intro": [
     "Este é o preço do Runink TIDE: Trusted Intelligence for Developer & Data Experience. Você escolhe onde ele roda: nas máquinas compartilhadas do Runink, com preço por pessoa; na sua própria conta na nuvem, com preço por nó; ou nas suas próprias instalações, com preço definido com você. Não há uma segunda conta: o TIDE nunca cobra uma porcentagem do que encontra, corrige ou entrega, porque um registro de auditoria ou um pipeline de implantação não é o tipo de coisa a que uma taxa de sucesso deva se prender.",
-    "Essa é toda a forma do preço. A conta acompanha os assentos ou nós que você roda, não o que o TIDE encontra, corrige ou entrega, então uma equipe de plataforma que usa muito o TIDE não abre uma nova linha que cresce com o uso. O que o console faz vem primeiro, porém, porque é a parte que vale a pena discutir."
+    "Essa é toda a forma do preço. A conta acompanha os assentos ou nós que você roda, não o que o TIDDE encontra, corrige ou entrega, então uma equipe de plataforma que usa muito o TIDDE não abre uma nova linha que cresce com o uso. O que o console faz vem primeiro, porém, porque é a parte que vale a pena discutir."
   ],
   "eyebrow": "O console",
   "heading": "Um console, quatro partes",
   "lead": [
-    "Estas são as quatro partes de que o console do TIDE é feito. Cada uma responde a uma pergunta, e cada uma leva a mais detalhes no white paper do TIDE.",
+    "Estas são as quatro partes de que o console do TIDDE é feito. Cada uma responde a uma pergunta, e cada uma leva a mais detalhes no white paper do TIDDE.",
     "Elas seguem a ordem do próprio menu do console: a ordem em que uma pessoa vai quando tem a pergunta, não uma ordem inventada para esta página."
   ],
   "groups": [
@@ -35,7 +35,7 @@ product_subcategory: "Operações de TI, governança de IA e plataforma de aplic
       "deck": "Há algo errado, e para onde vou em seguida?",
       "items": [
         { "page": "", "name": "O que precisa de atenção, o pior primeiro", "note": "As leituras principais e depois uma lista do que precisa de atenção, o pior primeiro, cada item levando à página que trata dele." },
-        { "page": "", "name": "Pergunte ao TIDE em palavras simples", "note": "O Ask TIDE, o assistente, faz uma tarefa pedida em palavras simples e mostra cada passo que deu." },
+        { "page": "", "name": "Pergunte ao TIDDE em palavras simples", "note": "O Ask TIDDE, o assistente, faz uma tarefa pedida em palavras simples e mostra cada passo que deu." },
         { "page": "", "name": "O desconhecido nunca aparece como zero", "note": "Um número que o console não conseguiu ler aparece como desconhecido, nunca desenhado como zero, para que ninguém decida com base numa leitura que ninguém fez." }
       ]
     },
@@ -66,7 +66,7 @@ product_subcategory: "Operações de TI, governança de IA e plataforma de aplic
       ]
     }
   ],
-  "outro": "As três licenças abaixo diferem numa só pergunta: onde o TIDE roda. Não há uma segunda pergunta sobre uma porcentagem do que o TIDE encontra, corrige ou entrega: essa pergunta não existe aqui."
+  "outro": "As três licenças abaixo diferem numa só pergunta: onde o TIDDE roda. Não há uma segunda pergunta sobre uma porcentagem do que o TIDDE encontra, corrige ou entrega: essa pergunta não existe aqui."
 }
 {{< /pricing-table-2 >}}
 
@@ -95,7 +95,7 @@ product_subcategory: "Operações de TI, governança de IA e plataforma de aplic
       "outcome_strategies": [
         {"label": "O QUE DEFINE A CONTA", "value": "Quantas pessoas você licencia, mais as unidades usadas além da cota."},
         {"label": "COMPROMISSO MÍNIMO", "value": "Um mês."},
-        {"label": "TAXA DE SUCESSO", "value": "Nenhuma. O TIDE nunca cobra uma porcentagem do que encontra, corrige ou entrega."},
+        {"label": "TAXA DE SUCESSO", "value": "Nenhuma. O TIDDE nunca cobra uma porcentagem do que encontra, corrige ou entrega."},
         {"label": "TAXA DE CONFIGURAÇÃO", "value": "Nenhuma."}
       ],
       "features": [
@@ -150,7 +150,7 @@ product_subcategory: "Operações de TI, governança de IA e plataforma de aplic
       "outcome_strategies": [
         {"label": "O QUE DEFINE A CONTA", "value": "Onde ele roda e os níveis de serviço que você fixa."},
         {"label": "COMPROMISSO MÍNIMO", "value": "Combinado com você."},
-        {"label": "TAXA DE SUCESSO", "value": "Nenhuma. Nem nesta licença, nem em nenhuma outra. O TIDE nunca cobra uma porcentagem do que encontra, corrige ou entrega."},
+        {"label": "TAXA DE SUCESSO", "value": "Nenhuma. Nem nesta licença, nem em nenhuma outra. O TIDDE nunca cobra uma porcentagem do que encontra, corrige ou entrega."},
         {"label": "IMPLANTAÇÃO E CONSULTORIA", "value": "Definidas e orçadas com você."}
       ],
       "features": [
@@ -169,7 +169,7 @@ product_subcategory: "Operações de TI, governança de IA e plataforma de aplic
 }
 {{< /pricing-table-1 >}}
 
-## Quanto custam os agentes de voz automatizados, e o que o TIDE faz no lugar
+## Quanto custam os agentes de voz automatizados, e o que o TIDDE faz no lugar
 
 Os agentes de voz na nuvem são cobrados por minuto. Estes são os preços publicados na página de preços de cada fornecedor, em dólares americanos, consultados em 6 de novembro de 2026:
 
@@ -179,9 +179,9 @@ Os agentes de voz na nuvem são cobrados por minuto. Estes são os preços publi
 
 Com 10.000 minutos por mês, a faixa publicada pelo Retell dá de $700 a $3.100, antes da telefonia.
 
-O Runink TIDE é cobrado por assento ou por nó, nunca por minuto. O que ele traz para uma IA que fala com os seus clientes é o registro que um auditor pede. O Regulamento europeu de IA exige que as pessoas sejam informadas de que estão interagindo com um sistema de IA, no máximo na primeira interação ([Regulamento (UE) 2024/1689, artigo 50](https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=OJ:L_202401689)). Nos Estados Unidos, a FCC decidiu que uma chamada feita com uma voz gerada por IA precisa do consentimento prévio e expresso da pessoa chamada ([FCC 24-17](https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf), adotada em 2 de fevereiro de 2024). Então um auditor vai perguntar qual modelo falou, em qual versão e quem aprovou a mudança. Para cada modelo que o TIDE serve, a ficha de modelo lista a origem, a versão, a licença e as evidências de teste, conferidas com o que está no ar. Cada ação que uma pessoa aprova no Harness é escrita na cadeia de auditoria antes de acontecer.
+O Runink TIDDE é cobrado por assento ou por nó, nunca por minuto. O que ele traz para uma IA que fala com os seus clientes é o registro que um auditor pede. O Regulamento europeu de IA exige que as pessoas sejam informadas de que estão interagindo com um sistema de IA, no máximo na primeira interação ([Regulamento (UE) 2024/1689, artigo 50](https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=OJ:L_202401689)). Nos Estados Unidos, a FCC decidiu que uma chamada feita com uma voz gerada por IA precisa do consentimento prévio e expresso da pessoa chamada ([FCC 24-17](https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf), adotada em 2 de fevereiro de 2024). Então um auditor vai perguntar qual modelo falou, em qual versão e quem aprovou a mudança. Para cada modelo que o TIDDE serve, a ficha de modelo lista a origem, a versão, a licença e as evidências de teste, conferidas com o que está no ar. Cada ação que uma pessoa aprova no Harness é escrita na cadeia de auditoria antes de acontecer.
 
-No Enterprise, o TIDE roda nos seus próprios servidores com os seus próprios modelos, e nada é enviado a um serviço de IA externo. A linha telefônica continua sendo cobrada pela sua operadora, por minuto.
+No Enterprise, o TIDDE roda nos seus próprios servidores com os seus próprios modelos, e nada é enviado a um serviço de IA externo. A linha telefônica continua sendo cobrada pela sua operadora, por minuto.
 
 {{< faq >}}
 {
@@ -189,15 +189,15 @@ No Enterprise, o TIDE roda nos seus próprios servidores com os seus próprios m
   "description": "O que o console faz e quem decide, e depois o que é cobrado.",
   "questions": [
     {
-      "question": "Rodamos mais software do que uma só pessoa entende. O TIDE cuida disso?",
-      "answer": "É o problema para o qual o TIDE foi feito. A maioria das empresas roda aplicações de equipes, fornecedores e anos diferentes, cada uma com o seu jeito de ser iniciada, acompanhada e alterada, e a sua própria ideia de quem pode mexer nas informações da empresa.\n\nO TIDE dá a cada aplicação os mesmos alicerces uma única vez: um lugar para rodar, uma só forma de provar quem você é, um jeito de chegar aos dados da empresa, um só lugar para olhar e uma forma de fazer as mudanças acontecerem. Os cinco grupos acima são esse lugar único, e cada um leva à página do console que responde à pergunta do seu título."
+      "question": "Rodamos mais software do que uma só pessoa entende. O TIDDE cuida disso?",
+      "answer": "É o problema para o qual o TIDDE foi feito. A maioria das empresas roda aplicações de equipes, fornecedores e anos diferentes, cada uma com o seu jeito de ser iniciada, acompanhada e alterada, e a sua própria ideia de quem pode mexer nas informações da empresa.\n\nO TIDDE dá a cada aplicação os mesmos alicerces uma única vez: um lugar para rodar, uma só forma de provar quem você é, um jeito de chegar aos dados da empresa, um só lugar para olhar e uma forma de fazer as mudanças acontecerem. Os cinco grupos acima são esse lugar único, e cada um leva à página do console que responde à pergunta do seu título."
     },
     {
-      "question": "Do que o TIDE precisa de nós antes de fazer tudo isso?",
+      "question": "Do que o TIDDE precisa de nós antes de fazer tudo isso?",
       "answer": "De pouco para começar. Um arquivo baixado e um comando sobem a plataforma inteira numa estação de trabalho, então você pode abrir o Overview e ver quais leituras dizem que não foram medidas, abrir a fila de achados (Trust, na página Agents) e ler uma correção proposta, e abrir a cadeia de auditoria e clicar em Verify now, tudo antes de instalar qualquer coisa em máquinas suas.\n\nAcrescentar uma fonte de dados real, e levá-la para máquinas que você controla, são os passos seguintes, cada um no seu ritmo. Para começar, do seu lado, é preciso um responsável nomeado e uma decisão sobre quem pode mudar as conexões de dados e quem pode ativar agentes. O resto pode ser decidido no caminho."
     },
     {
-      "question": "Quem aprova o que os assistentes do TIDE propõem?",
+      "question": "Quem aprova o que os assistentes do TIDDE propõem?",
       "answer": "Uma pessoa, sempre. Os assistentes automáticos propõem; nada é registrado, alterado ou publicado até que alguém com direito de decidir diga sim. O FORGE propõe numa tela os passos para construir algo, e só então um pedido aprovado vai para agentes de programação como tarefa. O Harness só age depois que uma pessoa confirma, e a ação é escrita na cadeia de auditoria antes de acontecer.\n\nIsso vale por menor que a ação pareça. O que chega é sempre uma ação proposta, e uma ação que ninguém aprova é uma ação que não foi feita."
     },
     {
@@ -214,11 +214,11 @@ No Enterprise, o TIDE roda nos seus próprios servidores com os seus próprios m
     },
     {
       "question": "O que exatamente estou pagando?",
-      "answer": "Depende de onde o TIDE roda. Na **Lite**, assentos: um **assento** é uma pessoa que usa o Runink TIDE, e cada um vem com Unidades de Computação nas máquinas compartilhadas do Runink. Na **Dedicada**, nós: $279 por mês pelo primeiro nó e $169 por cada um depois dele, com executores na sua própria conta na nuvem e sem limite de unidades. A sua nuvem cobra essa computação diretamente de você, e o Runink acrescenta 1,5% do que esses executores custam. O **Enterprise** roda nas suas próprias instalações ou na sua própria nuvem, com preço definido com você.\n\nVocê não é cobrado por pergunta, por implantação nem por achado."
+      "answer": "Depende de onde o TIDDE roda. Na **Lite**, assentos: um **assento** é uma pessoa que usa o Runink TIDDE, e cada um vem com Unidades de Computação nas máquinas compartilhadas do Runink. Na **Dedicada**, nós: $279 por mês pelo primeiro nó e $169 por cada um depois dele, com executores na sua própria conta na nuvem e sem limite de unidades. A sua nuvem cobra essa computação diretamente de você, e o Runink acrescenta 1,5% do que esses executores custam. O **Enterprise** roda nas suas próprias instalações ou na sua própria nuvem, com preço definido com você.\n\nVocê não é cobrado por pergunta, por implantação nem por achado."
     },
     {
       "question": "O que é uma Unidade de Computação?",
-      "answer": "É como o Runink conta o trabalho nas suas máquinas compartilhadas. Fazer uma pergunta ao TIDE, e o trabalho que ele faz para basear a resposta nos seus próprios dados, consome **Unidades de Computação** da sua cota.\n\nCada assento **Lite** traz 18.000 unidades por mês, compartilhadas na equipe. Na **Dedicada** e no **Enterprise**, o trabalho roda na sua própria nuvem ou nos seus próprios servidores, e as unidades são ilimitadas."
+      "answer": "É como o Runink conta o trabalho nas suas máquinas compartilhadas. Fazer uma pergunta ao TIDDE, e o trabalho que ele faz para basear a resposta nos seus próprios dados, consome **Unidades de Computação** da sua cota.\n\nCada assento **Lite** traz 18.000 unidades por mês, compartilhadas na equipe. Na **Dedicada** e no **Enterprise**, o trabalho roda na sua própria nuvem ou nos seus próprios servidores, e as unidades são ilimitadas."
     },
     {
       "question": "O que acontece se passarmos da cota?",
@@ -226,23 +226,23 @@ No Enterprise, o TIDE roda nos seus próprios servidores com os seus próprios m
     },
     {
       "question": "Qual licença combina conosco?",
-      "answer": "Decida onde o TIDE deve rodar.\n\nCom menos de dez pessoas, a **Licença Lite** é a indicada. Ela roda nas máquinas compartilhadas do Runink pelo menor preço, e é a única que você pode contratar mês a mês, então uma avaliação não exige um compromisso de um ano. Lá o trabalho espera a sua vez junto ao de outros clientes.\n\nSe o TIDE deve rodar no seu próprio projeto do Google Cloud, ou na sua conta Databricks ou Snowflake, é a **Dedicada**, com preço por nó e Unidades de Computação ilimitadas. Ela é contratada por ano.\n\nSe ele tem de rodar nos seus próprios servidores, inclusive em locais fora da rede, é o **Enterprise**, e a conversa começa por onde ele tem de rodar."
+      "answer": "Decida onde o TIDDE deve rodar.\n\nCom menos de dez pessoas, a **Licença Lite** é a indicada. Ela roda nas máquinas compartilhadas do Runink pelo menor preço, e é a única que você pode contratar mês a mês, então uma avaliação não exige um compromisso de um ano. Lá o trabalho espera a sua vez junto ao de outros clientes.\n\nSe o TIDDE deve rodar no seu próprio projeto do Google Cloud, ou na sua conta Databricks ou Snowflake, é a **Dedicada**, com preço por nó e Unidades de Computação ilimitadas. Ela é contratada por ano.\n\nSe ele tem de rodar nos seus próprios servidores, inclusive em locais fora da rede, é o **Enterprise**, e a conversa começa por onde ele tem de rodar."
     },
     {
       "question": "Temos de assinar por um ano?",
-      "answer": "Só na Dedicada e no Enterprise. A **Licença Lite** pode ser contratada mês a mês a $99 por pessoa, ou por um ano a $85: a mesma diferença, cerca de 14%, que o seletor acima mostra.\n\nA Dedicada e o Enterprise são contratados por ano porque o TIDE roda a sua plataforma ali: o registro de auditoria, o pipeline de implantação e as conexões de dados não são algo para ligar por um mês e desligar depois."
+      "answer": "Só na Dedicada e no Enterprise. A **Licença Lite** pode ser contratada mês a mês a $99 por pessoa, ou por um ano a $85: a mesma diferença, cerca de 14%, que o seletor acima mostra.\n\nA Dedicada e o Enterprise são contratados por ano porque o TIDDE roda a sua plataforma ali: o registro de auditoria, o pipeline de implantação e as conexões de dados não são algo para ligar por um mês e desligar depois."
     },
     {
-      "question": "Como começa um projeto com o TIDE e quanto custam os serviços?",
-      "answer": "O TIDE começa com uma **auditoria do seu cenário atual** e um **roteiro** de implantação construído sobre ela. Começamos olhando, não vendendo: a auditoria descreve o seu ambiente como ele é; o roteiro diz o que vem depois. O preço é **$200 ou €200 por hora, em blocos de 50 horas**: um bloco para a auditoria e outro para o roteiro.\n\nOs pacotes de acompanhamento Enterprise acrescentam, cada um **sob consulta**: um piloto pago (60 dias de prova de valor no seu próprio ambiente, conduzido a partir do roteiro), a implantação e a consultoria, e o suporte e as atualizações (planos passivos de atualizações e correções, planos ativos com engenheiros designados e prazos de resposta). São prestados pelo Runink e pelos seus parceiros."
+      "question": "Como começa um projeto com o TIDDE e quanto custam os serviços?",
+      "answer": "O TIDDE começa com uma **auditoria do seu cenário atual** e um **roteiro** de implantação construído sobre ela. Começamos olhando, não vendendo: a auditoria descreve o seu ambiente como ele é; o roteiro diz o que vem depois. O preço é **$200 ou €200 por hora, em blocos de 50 horas**: um bloco para a auditoria e outro para o roteiro.\n\nOs pacotes de acompanhamento Enterprise acrescentam, cada um **sob consulta**: um piloto pago (60 dias de prova de valor no seu próprio ambiente, conduzido a partir do roteiro), a implantação e a consultoria, e o suporte e as atualizações (planos passivos de atualizações e correções, planos ativos com engenheiros designados e prazos de resposta). São prestados pelo Runink e pelos seus parceiros."
     },
     {
-      "question": "Já temos compromisso de gasto com GCP, Snowflake ou Databricks. Podemos comprar o TIDE por esse caminho?",
+      "question": "Já temos compromisso de gasto com GCP, Snowflake ou Databricks. Podemos comprar o TIDDE por esse caminho?",
       "answer": "Sim: é a **Licença Dedicada**. Os executores dela rodam no seu próprio projeto do Google Cloud, ou na sua conta Snowflake ou Databricks, numa computação que você já paga a essa plataforma.\n\nA plataforma cobra a computação diretamente de você, em vez de nós a provisionarmos e cobrarmos, então nenhuma margem nossa de infraestrutura se soma à deles: você paga a tarifa de computação deles, o nosso preço por nó e 1,5% do que esses executores custam. O desconto que o seu compromisso de gasto der fica entre você e esse provedor de nuvem: não é um número que o Runink fixe ou prometa."
     },
     {
-      "question": "Por que o TIDE nunca cobra uma taxa de sucesso?",
-      "answer": "Porque o preço do TIDE depende de onde ele roda, e essa foi uma escolha deliberada, não um descuido. O TIDE nunca cobra uma porcentagem do que encontra, corrige ou entrega: registros de auditoria e pipelines de implantação não são o tipo de coisa a que uma taxa de sucesso deva se prender. Não há como transformar \"o TIDE verificou a sua cadeia de auditoria\" ou \"o TIDE entregou a sua implantação\" num valor sobre o qual você quisesse que um fornecedor cobrasse uma parte.\n\nEntão cada licença acima tem preço por assentos ou nós, e por onde o trabalho roda, nunca pelo que o console encontrou, corrigiu ou entregou."
+      "question": "Por que o TIDDE nunca cobra uma taxa de sucesso?",
+      "answer": "Porque o preço do TIDDE depende de onde ele roda, e essa foi uma escolha deliberada, não um descuido. O TIDDE nunca cobra uma porcentagem do que encontra, corrige ou entrega: registros de auditoria e pipelines de implantação não são o tipo de coisa a que uma taxa de sucesso deva se prender. Não há como transformar \"o TIDDE verificou a sua cadeia de auditoria\" ou \"o TIDDE entregou a sua implantação\" num valor sobre o qual você quisesse que um fornecedor cobrasse uma parte.\n\nEntão cada licença acima tem preço por assentos ou nós, e por onde o trabalho roda, nunca pelo que o console encontrou, corrigiu ou entregou."
     },
     {
       "question": "Quanto custa um uso mais intenso?",

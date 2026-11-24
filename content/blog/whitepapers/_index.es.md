@@ -6,7 +6,7 @@ title: "Libros blancos"
 # matter is per-file, so the English one does not cover these.
 type: whitepapers
 headline: "Documentos que empiezan por lo que puede demostrarse."
-description: "Documentos extensos sobre Runink FACE, Runink PULSE y Runink TIDE, tres productos distintos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación."
+description: "Documentos extensos sobre Runink FACE, Runink PULSE y Runink TIDDE, tres productos distintos. Sin casos de cliente, sin nombres y sin cifras de retorno: el mecanismo, y dónde se apoya cada afirmación."
 deck: |
   Documentos extensos, cada uno sobre un producto de Runink.
   Los primeros tratan de **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** es un producto distinto, de análisis de mercado y

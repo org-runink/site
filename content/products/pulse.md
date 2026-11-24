@@ -138,7 +138,7 @@ The owner of a small or mid-size business, and the people who sell and market fo
 </p>
 
 <p class="text-xl text-ink-2 leading-relaxed">
-PULSE puts that work in one place. It is a separate product from FACE and from Runink TIDE, sold on its own.
+PULSE puts that work in one place. It is a separate product from FACE and from Runink TIDDE, sold on its own.
 </p>
 </div>
 
@@ -158,7 +158,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 >}}
 {{< card
     icon="server-stack"
-    title="Runink TIDE"
+    title="Runink TIDDE"
     description="A separate product, sold on its own. The operations layer for your engineering and data teams, on your servers, your cloud or ours, and the answer to where your data is processed and who can see it. It has its own paper."
     link="/blog/whitepapers/runink-tide/"
 >}}
@@ -352,7 +352,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
     "questions": [
         {
             "question": "Is PULSE the same thing as Runink FACE?",
-            "answer": "No. They are separate products. PULSE is for marketing and sales: the check-up of your site and market, finding leads and public tenders, and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDE is a third product, also sold separately: the operations layer for your engineering and data teams, on your servers, your cloud or ours. Its paper describes it."
+            "answer": "No. They are separate products. PULSE is for marketing and sales: the check-up of your site and market, finding leads and public tenders, and the material a marketing team publishes. FACE reads logistics, fulfilment and claims records and drafts an action for a named person to approve. Nothing on this page is a FACE capability. Runink TIDDE is a third product, also sold separately: the operations layer for your engineering and data teams, on your servers, your cloud or ours. Its paper describes it."
         },
         {
             "question": "How do I answer new leads faster?",
@@ -400,7 +400,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
         },
         {
             "question": "What does it cost?",
-            "answer": "PULSE is priced by the seat: you pay for each person who uses it, and the seat covers the work that person puts through it. PULSE Lite runs on Runink's shared machines, where your work takes its turn: $65 a seat a month, or $55 a seat a month on an annual plan, for teams of one to nine. Each Lite seat gets 10 tasks a day at full speed; after that, tasks keep running at a slower pace until midnight in your time zone, when the count starts again. Dedicated is $109 a seat a month, for ten seats and up, running on runners in your own cloud account, which bills you for that compute directly. Enterprise, including deployments with no connection to the outside world, is quoted with you. PULSE, FACE and TIDE are each sold on their own subscription, so a PULSE seat is a seat in PULSE. Every plan, and what an automated voice agent costs by comparison, is on [the PULSE pricing page](/products/pulse-pricing/)."
+            "answer": "PULSE is priced by the seat: you pay for each person who uses it, and the seat covers the work that person puts through it. PULSE Lite runs on Runink's shared machines, where your work takes its turn: $65 a seat a month, or $55 a seat a month on an annual plan, for teams of one to nine. Each Lite seat gets 10 tasks a day at full speed; after that, tasks keep running at a slower pace until midnight in your time zone, when the count starts again. Dedicated is $109 a seat a month, for ten seats and up, running on runners in your own cloud account, which bills you for that compute directly. Enterprise, including deployments with no connection to the outside world, is quoted with you. PULSE, FACE and TIDDE are each sold on their own subscription, so a PULSE seat is a seat in PULSE. Every plan, and what an automated voice agent costs by comparison, is on [the PULSE pricing page](/products/pulse-pricing/)."
         }
     ]
 }

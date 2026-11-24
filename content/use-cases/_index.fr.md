@@ -92,7 +92,7 @@ Approuver est censé terminer le travail plutôt que le commencer. La réponse n
 
 ## Deux Choses À Savoir D'Emblée
 
-**Aucun service d'IA extérieur ne lit vos données.** Les fichiers de commande, les papiers de douane, les relevés des capteurs et le raisonnement à leur sujet tournent sur les machines prévues par votre offre (vos propres serveurs ou votre compte cloud, ou les machines partagées de Runink) : FACE tourne sur la plateforme Runink TIDE, et c'est ce qui en fait une propriété de la construction plutôt qu'un réglage que quelqu'un doit respecter. Rien ne part chez un fournisseur de modèles extérieur. C'est le genre de réponse qu'une revue de sécurité demande avant de laisser un fournisseur détenir ses données de commande.
+**Aucun service d'IA extérieur ne lit vos données.** Les fichiers de commande, les papiers de douane, les relevés des capteurs et le raisonnement à leur sujet tournent sur les machines prévues par votre offre (vos propres serveurs ou votre compte cloud, ou les machines partagées de Runink) : FACE tourne sur la plateforme Runink TIDDE, et c'est ce qui en fait une propriété de la construction plutôt qu'un réglage que quelqu'un doit respecter. Rien ne part chez un fournisseur de modèles extérieur. C'est le genre de réponse qu'une revue de sécurité demande avant de laisser un fournisseur détenir ses données de commande.
 
 **La file est l'endroit où vous décidez.** Chaque élément arrive avec son raisonnement et les enregistrements sur lesquels il s'appuie, vous pouvez donc lire pourquoi il est proposé avant de l'accepter. Ce que vous approuvez est ce qui est exécuté, et un élément que vous laissez tranquille reste où il est. Quels travaux méritent de passer par la file est une question à laquelle vous répondez à l'installation, pas un seuil de montant que le logiciel surveillerait pour vous.
 
@@ -100,4 +100,4 @@ Approuver est censé terminer le travail plutôt que le commencer. La réponse n
 
 Aucun des scénarios ci-dessus n'est un résultat client. Ils sont écrits à partir de ce que le logiciel est fait pour faire, dans le vocabulaire des gens qui portent le problème, et ils n'ont jamais été passés sur les données d'un client. Il n'y a ici aucune étude de cas et aucun chiffre, parce que les chiffres seraient les nôtres et que ceux qui comptent sont les vôtres.
 
-Runink PULSE, le produit d'analyse de marché, et la plateforme TIDE sur laquelle tourne FACE sont traités dans [leurs propres livres blancs](/fr/blog/whitepapers/). Ils ne sont pas sur cette page, et aucun des sujets ci-dessus n'est un résultat qui appartiendrait à l'un ou à l'autre.
+Runink PULSE, le produit d'analyse de marché, et la plateforme TIDDE sur laquelle tourne FACE sont traités dans [leurs propres livres blancs](/fr/blog/whitepapers/). Ils ne sont pas sur cette page, et aucun des sujets ci-dessus n'est un résultat qui appartiendrait à l'un ou à l'autre.

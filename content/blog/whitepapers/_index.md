@@ -51,7 +51,7 @@ headline: "Papers that open with what can be proven."
 # another product's capability. TIDE has no landing page: its paper IS its
 # product home, so this deck is where a reader learns it is a product at all.
 # The wording once said TIDE was "not a product"; that was wrong.
-description: "Long-form documents on Runink FACE, Runink PULSE and Runink TIDE, three separate products. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
+description: "Long-form documents on Runink FACE, Runink PULSE and Runink TIDDE, three separate products. No case studies, no customer names and no return-on-investment figures — the mechanism instead, and where every claim stands."
 deck: |
   Long-form documents, each about one Runink product.
   The ones at the top are about **Runink FACE: Fulfilment Autonomous Claims Engine**. **Runink PULSE: Prescriptive Unified Lead & Social Engine** is a different product, for market analysis and
