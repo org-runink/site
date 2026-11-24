@@ -4,10 +4,10 @@ runink-tide: site 8 paras, mirror 7 paras
 
 --- 4 paragraph(s) in the MIRROR but not the SITE ---
 
-[1] # Runink TIDE
+[1] # Runink TIDDE
 
 [2] ## Stale chapter
 
 [3] Stale prose that must not survive.
 
-[4] *Runink TIDE. The closing colophon.*
+[4] *Runink TIDDE. The closing colophon.*

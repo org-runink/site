@@ -12,7 +12,7 @@
       "id": "site",
       "page": "hugo.toml params.images: the card a page without its own image falls back to",
       "title": "Runink",
-      "subtitle": "FACE · TIDE · PULSE · River",
+      "subtitle": "FACE · TIDDE · PULSE · River",
       "headline": ["You find out when", "it is too late to argue."],
       "out": ["static/images/og/runink-og.jpg"]
     },
@@ -28,14 +28,14 @@
       "id": "products",
       "page": "content/products/_index.md",
       "title": "Runink products",
-      "subtitle": "FACE · TIDE · PULSE · River",
+      "subtitle": "FACE · TIDDE · PULSE · River",
       "headline": ["Separate products. Each one can run", "on your own servers or cloud account."],
       "out": ["static/images/og/products-og.jpg", "static/images/products/products-og.jpg"]
     },
     {
       "id": "tide",
       "page": "content/products/tide.md, content/products/tide-pricing.md",
-      "title": "Runink TIDE",
+      "title": "Runink TIDDE",
       "subtitle": "TIDE · Trusted Intelligence for Developer & Data Experience",
       "headline": ["Know what broke", "and what shipped."],
       "mark": "static/images/brand/tide-mark.png",

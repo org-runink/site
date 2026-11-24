@@ -39,7 +39,7 @@ var furnitureRe = regexp.MustCompile(`(?i)^(?:` +
 	`|\*Pages? \d` + // *Page 1 — Cover* / *Pages 17–18 — ...*
 	`|#{1,3} Pages? \d` + // ## Page 7 — Title / ## Pages 21–23 — Title
 	`|!\[\]` + // bare images
-	`|\*[^*\n]*page \d+[^*\n]*\*\s*$` + // *Runink TIDE — page 7 of 21*
+	`|\*[^*\n]*page \d+[^*\n]*\*\s*$` + // *Runink TIDDE — page 7 of 21*
 	`)`)
 
 var colophonRe = regexp.MustCompile(`\A\*[^*]+\*\z`)

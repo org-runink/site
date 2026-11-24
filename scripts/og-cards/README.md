@@ -8,4 +8,4 @@ Regenerate with `node scripts/og-cards/render.mjs [id ...]` (needs `google-chrom
 or `$CHROME`, and ImageMagick's `magick`), then look at every card it wrote before
 committing. Headlines are a page's own hero copy, under CONTENT.md like any body copy.
 A card with `"markImage": true` shows its `mark` in its own colours (the Runink River
-and Runink TIDE marks, and the Runink PULSE persona) instead of as a one-colour mask.
+and Runink TIDDE marks, and the Runink PULSE persona) instead of as a one-colour mask.
