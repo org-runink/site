@@ -1,0 +1,51 @@
+# The team — the three people whose names are on the founding-team slide, shown on /company/.
+#
+# WHAT MAY GO IN HERE. The same rule as leadership.yaml: only things a reader can check for
+# themselves, a role, a tenure, a named foundation, a public profile. A `summary` is optional
+# and is drawn only when it is present; a person with no summary shows a photograph, a name and
+# a role, and nothing is invented to fill the space. Never a promised outcome, never a claim
+# about what the product lacks.
+#
+# DECISION. Owner, 2026-11-25: the company page shows each member with a photograph and a
+# description. That replaces the earlier choice of one name and no portrait for this block;
+# leadership.yaml still carries the longer biography of the chief executive.
+#
+# PHOTOGRAPHS. static/images/team/<slug>.png, circular, transparent corners. The three first
+# ones were cut from a screenshot (150 px); replace each with the original file (a square crop,
+# at least 480 px) under the same name and nothing else changes.
+
+label:
+  en: "The team"
+  es: "El equipo"
+  fr: "L'équipe"
+  pt: "A equipe"
+
+members:
+  - name: "Daniel Paes"
+    photo: "images/team/daniel-paes.png"
+    role:
+      en: "Founder & CEO"
+      es: "Fundador y CEO"
+      fr: "Fondateur et PDG"
+      pt: "Fundador e CEO"
+    summary:
+      en: "More than twenty years leading digital transformation and modernisation programmes for global enterprises. FINOS Ambassador."
+      es: "Más de veinte años liderando programas de transformación digital y modernización para empresas globales. Embajador de FINOS."
+      fr: "Plus de vingt ans à conduire des programmes de transformation numérique et de modernisation pour des entreprises mondiales. Ambassadeur FINOS."
+      pt: "Mais de vinte anos conduzindo programas de transformação digital e modernização para empresas globais. Embaixador do FINOS."
+
+  - name: "Wissam Farag"
+    photo: "images/team/wissam-farag.png"
+    role:
+      en: "CTO"
+      es: "CTO"
+      fr: "CTO"
+      pt: "CTO"
+
+  - name: "Meryem Tenhim"
+    photo: "images/team/meryem-tenhim.png"
+    role:
+      en: "CRO"
+      es: "CRO"
+      fr: "CRO"
+      pt: "CRO"

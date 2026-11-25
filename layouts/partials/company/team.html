@@ -1,0 +1,35 @@
+{{/*
+  The team on /company/: a photograph, a name, a role and, when there is one, a
+  verifiable summary, for each member in data/team.yaml. Owner, 2026-11-25. The
+  longer biography of the chief executive stays in partials/company/leadership.html.
+
+  AN EMPTY SUMMARY DRAWS NOTHING. A member without one shows the photograph, name
+  and role only; no sentence is written to fill the card, and data/team.yaml says
+  what may go in a summary.
+
+  NO EXTERNAL REQUEST. The photographs are files under static/images/team/, served
+  from this host, like every other asset (CONTENT.md rule 7). Each carries an alt
+  text with the name, and the whole block prints: nothing here is a background.
+
+  ONE LOOKUP FOR FOUR LANGUAGES. label, role and summary are maps keyed by language;
+  a language without its entry falls back to English, never to an empty card.
+*/}}
+{{ $lang := site.Language.Lang }}
+{{ with site.Data.team }}
+<section class="max-w-6xl mx-auto pt-4 pb-12" aria-labelledby="team-heading">
+  <h2 id="team-heading" class="text-3xl md:text-4xl font-bold mb-10">{{ index .label $lang | default .label.en }}</h2>
+  <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 list-none pl-0" data-motion="reveal">
+    {{ range .members }}
+    {{ $role := index .role $lang | default .role.en }}
+    {{ $summary := "" }}{{ with .summary }}{{ $summary = index . $lang | default .en }}{{ end }}
+    <li class="border border-rule bg-sheet rounded-xl p-6 text-center">
+      <img class="mx-auto mb-5 w-28 h-28 rounded-full object-cover" src="{{ .photo | relURL }}"
+           width="112" height="112" alt="{{ printf "Portrait of %s" .name }}" loading="lazy" decoding="async">
+      <h3 class="text-xl font-bold text-ink mb-1">{{ .name }}</h3>
+      <p class="text-sm font-black uppercase tracking-[0.18em] text-signal">{{ $role }}</p>
+      {{ with $summary }}<p class="text-sm leading-relaxed text-ink-2 mt-4 text-left">{{ . }}</p>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
