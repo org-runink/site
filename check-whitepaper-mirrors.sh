@@ -79,7 +79,7 @@ fi
 status=0
 
 # The papers with a print copy. runink-tide was
-# runink-core before the CORE to Runink TIDE rename.
+# runink-core before the CORE to Runink TIDDE rename.
 MIRRORED="runink-tide runink-face runink-pulse"
 
 for name in $MIRRORED; do

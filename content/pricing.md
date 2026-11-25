@@ -403,7 +403,7 @@ author: "Runink"
     },
     {
       "question": "What am I actually paying for?",
-      "answer": "Seats. A **seat** is one person who uses FACE by Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nThe licence you pick decides where the work runs. **Lite** runs on Runink's shared machines and includes Compute Units with every seat. **Dedicated** runs on runners in your own cloud account with no limit on units: your cloud bills you for that compute directly, and Runink adds 1.5% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nThese seats are for FACE. PULSE and Runink TIDE are separate products, each sold with its own subscription. Beyond the licence, the only fees on a FACE seat are the usage fees on FACE's automated actions, set out above."
+      "answer": "Seats. A **seat** is one person who uses FACE by Runink. You count the people who need it, multiply by the price above, and that is the licence.\n\nThe licence you pick decides where the work runs. **Lite** runs on Runink's shared machines and includes Compute Units with every seat. **Dedicated** runs on runners in your own cloud account with no limit on units: your cloud bills you for that compute directly, and Runink adds 1.5% of what those runners cost. **Enterprise** runs on your own premises or in your own cloud, priced with you.\n\nThese seats are for FACE. PULSE and Runink TIDDE are separate products, each sold with its own subscription. Beyond the licence, the only fees on a FACE seat are the usage fees on FACE's automated actions, set out above."
     },
     {
       "question": "What is a Compute Unit?",

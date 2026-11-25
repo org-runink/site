@@ -102,8 +102,8 @@ Verified here 2026-09-27 (no `node_modules` in the worktree): `go vet` on the th
   `var()` in a `style` attribute needs `| safeCSS`.
 - **A fix lands in every language** (en/es/fr/pt) in the same change, or the translation is
   withdrawn (rule 12).
-- Product names: "Runink TIDE" (formerly CORE) at the first mention on a page, then "TIDE",
-  never a bare "Tide"; FORGE is served inside TIDE (no forge domain); "Runink River" in prose;
+- Product names: "Runink TIDDE" (formerly CORE) at the first mention on a page, then "TIDDE",
+  never a bare "Tidde"; FORGE is served inside TIDDE (no forge domain); "Runink River" in prose;
   River is the developer workstation, the Server ISO is a separate downstream image.
 - No Python in this repo.
 

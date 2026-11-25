@@ -1,5 +1,5 @@
 /**
- * Runink TIDE and Runink PULSE pricing pages (price book 2026-11-06): the cards in
+ * Runink TIDDE and Runink PULSE pricing pages (price book 2026-11-06): the cards in
  * four languages agree with data/pricing.json, the services answer follows the
  * same rule as FACE's, and the voice-agent section quotes only vendor prices that
  * were read on the vendor's own page, each with its link and the date it was read.
@@ -23,7 +23,7 @@ const cardPrices = (src) => ({
 const num = (s) => new RegExp(String(s).replace('.', '[.,]'));
 
 describe('the data holds the price book of 2026-11-06', () => {
-  test('TIDE', () => {
+  test('TIDDE', () => {
     expect(data.tide.lite.seatYearlyCents).toBe(8500);
     expect(data.tide.lite.seatMonthlyCents).toBe(9900);
     expect(data.tide.dedicated.firstNodeMonthlyCents).toBe(27900);
@@ -41,7 +41,7 @@ describe('the data holds the price book of 2026-11-06', () => {
   });
 });
 
-describe.each(LANGS)('TIDE pricing, %s', (l) => {
+describe.each(LANGS)('TIDDE pricing, %s', (l) => {
   const src = read(file('tide-pricing', l));
   const t = data.tide;
   test('the cards agree with data/pricing.json', () => {
@@ -56,7 +56,7 @@ describe.each(LANGS)('TIDE pricing, %s', (l) => {
     expect(src).toMatch(/18[ ,.  ]?000/);
     expect(src).toMatch(/\b900\b/);
   });
-  test('no superseded TIDE price survives', () => {
+  test('no superseded TIDDE price survives', () => {
     expect(body(src)).not.toMatch(/\$\s?(75|89|249|149)\b|\b(75|89|249|149) \$|0[.,]10\b|20\s?%|\b16\s?%/);
   });
 });
@@ -146,7 +146,7 @@ describe.each(['tide-pricing', 'pulse-pricing'].flatMap((b) => LANGS.map((l) => 
   test('no margin language', () => expect(v).not.toMatch(/margin|marge|margen|75\s*%|90\s*%/i));
 });
 
-describe.each(LANGS)('TIDE sovereign voice carries no number, %s', (l) => {
+describe.each(LANGS)('TIDDE sovereign voice carries no number, %s', (l) => {
   test('the last paragraph of the voice section has no figure', () => {
     const v = voiceSection(read(file('tide-pricing', l))).trim();
     const last = v.split(/\n\s*\n/).pop();

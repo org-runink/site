@@ -31,12 +31,12 @@ func TestFloorDiv(t *testing.T) {
 
 func TestTruncateCountsRunesNotBytes(t *testing.T) {
 	// The prose is full of em dashes. A byte slice would cut one in half.
-	s := "Runink TIDE — page 7 of 21"
-	if got := Truncate(s, 14); got != "Runink TIDE — " {
-		t.Errorf("Truncate = %q, want %q", got, "Runink TIDE — ")
+	s := "Runink TIDDE — page 7 of 21"
+	if got := Truncate(s, 15); got != "Runink TIDDE — " {
+		t.Errorf("Truncate = %q, want %q", got, "Runink TIDDE — ")
 	}
-	if got := Truncate(s, 13); got != "Runink TIDE —" {
-		t.Errorf("Truncate = %q, want %q", got, "Runink TIDE —")
+	if got := Truncate(s, 14); got != "Runink TIDDE —" {
+		t.Errorf("Truncate = %q, want %q", got, "Runink TIDDE —")
 	}
 	if got := Truncate("abc", 10); got != "abc" {
 		t.Errorf("Truncate past the end = %q, want %q", got, "abc")
@@ -75,7 +75,7 @@ func TestPyRepr(t *testing.T) {
 		{`it's a "quote"`, `'it\'s a "quote"'`}, // both -> single, escape the '
 		{"line\nbreak", `'line\nbreak'`},        // \n escaped, not literal
 		{`back\slash`, `'back\\slash'`},         //
-		{"*Runink TIDE — page 1 of 21*", "'*Runink TIDE — page 1 of 21*'"}, // em dash passes through
+		{"*Runink TIDDE — page 1 of 21*", "'*Runink TIDDE — page 1 of 21*'"}, // em dash passes through
 	}
 	for _, c := range cases {
 		if got := PyRepr(c.in); got != c.want {

@@ -3,7 +3,7 @@
       SPDX-License-Identifier: LicenseRef-Runink-Trademark
       Runink TIDE community mark, primary (32 px and up): the River M2 puppy, riding a coral
       surfboard in front of a curling teal wave. Same art as tide-mascot.svg. -->
- <title>Runink TIDE</title>
+ <title>Runink TIDDE</title>
  <defs><linearGradient id="tide-m2-a" y2="1"><stop stop-color="#a45c33" offset="0"/><stop stop-color="#7a4023" offset="1"/></linearGradient></defs>
  <path d="M70 470C26 462 18 410 34 372 56 326 104 304 160 292 250 270 330 200 420 186C476 178 506 212 504 254 502 286 476 300 460 286 448 274 456 254 472 258C456 238 432 240 424 268 414 312 418 384 444 444z" fill="#5fb7b0" stroke="#1d2b3a" stroke-linejoin="round" stroke-width="10"/>
  <path d="m432 200q36-8 56 14" fill="none" stroke="#fdf5e6" stroke-linecap="round" stroke-width="8"/><path d="m40 400q20-40 64-60" fill="none" stroke="#fdf5e6" stroke-linecap="round" stroke-width="8"/>

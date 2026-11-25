@@ -1,4 +1,4 @@
 ok   runink-face        3 chapters, 700 -> 534 bytes (-24%)
-ok   runink-tide        3 chapters, 300 -> 413 bytes (+37%)
+ok   runink-tide        3 chapters, 300 -> 419 bytes (+39%)
 FAIL runink-pulse       3 chapters, 5000 -> 661 bytes (-87%)
        - lost more than 60% of the file: 5000 -> 661 bytes (-87%)

@@ -65,7 +65,7 @@ a per-paper config struct would have needed a branch at every one of those.
 | paper | furniture |
 | --- | --- |
 | `runink-face` | `## Page N — Title`, `## Pages N–M — Title` for spans, a page-break div per chapter, a Contact colophon |
-| `runink-tide` | plain `## Title`, `*Runink TIDE — page N of 23*` under each chapter, closing colophon |
+| `runink-tide` | plain `## Title`, `*Runink TIDDE — page N of 23*` under each chapter, closing colophon |
 | `runink-pulse` | plain `## Title`, a `## Contents` block the site does not have, `*Page N — Title*` markers, no trailing newline |
 
 Those three are the papers with a print copy. `runink-face-logistics` has none, so there is nothing to rebuild for it;

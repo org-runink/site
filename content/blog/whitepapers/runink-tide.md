@@ -1,5 +1,5 @@
 ---
-title: "Runink TIDE — The operations layer for companies that keep their own data"
+title: "Runink TIDDE — The operations layer for companies that keep their own data"
 aliases: ["/blog/whitepapers/runink-core/"]
 headline: "Run your software, your AI and your data on your own servers or cloud account, or on Runink's shared machines to start, and see all of it from one screen."
 # The label the closing ask carries into the contact form, so an enquiry
@@ -15,10 +15,10 @@ headline: "Run your software, your AI and your data on your own servers or cloud
 # commercial model now follows the pricing page (priced by where TIDE runs, a
 # team allowance of Compute Units, sold on its own), and no longer says where
 # the allowance is read; that sentence returns once it can be shown.
-next_about: "The Runink TIDE paper"
-product: "Runink TIDE"
+next_about: "The Runink TIDDE paper"
+product: "Runink TIDDE"
 subtitle: "The operations layer for companies that keep their own data"
-description: "What Runink TIDE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx and FORGE, page by page, with the business value of each and what adopting it involves."
+description: "What Runink TIDDE is, who it is for, and what each part of its console does: Overview, DevEx, DataEx and FORGE, page by page, with the business value of each and what adopting it involves."
 weight: 20
 date: 2026-09-26T00:00:00Z
 source_pages: 20
@@ -29,7 +29,7 @@ deck: |
   the operations layer a company runs on its own servers or cloud account, or
   on Runink's shared machines to start. It keeps the company's software
   healthy, governs the AI models and agents that work inside it, and turns a written brief into a working application.
-  Its AI model runs on the same machines as the rest of TIDE. No outside AI
+  Its AI model runs on the same machines as the rest of TIDDE. No outside AI
   service is called.
 
   It is for companies that need a plain answer to where their information
@@ -49,8 +49,8 @@ register:
   - { page: 12, title: "FORGE: from a written brief to a working application" }
   - { page: 13, title: "On every screen" }
   - { page: 14, title: "What it is built on, and why that matters commercially" }
-  - { page: 15, title: "Who TIDE is for" }
-  - { page: 16, title: "What adopting TIDE involves" }
+  - { page: 15, title: "Who TIDDE is for" }
+  - { page: 16, title: "What adopting TIDDE involves" }
   - { page: 17, title: "The commercial model" }
   - { page: 18, page_end: 19, title: "Answers to the questions we are usually asked" }
   - { page: 20, title: "The next step" }
@@ -65,18 +65,18 @@ shows one person, on one screen, what is happening across all of it. It keeps a
 record of every change a person makes, and anyone signed in can check that the
 record is intact.
 
-It also runs the company's own AI. The language model TIDE uses — the kind of
+It also runs the company's own AI. The language model TIDDE uses — the kind of
 system that reads and writes plain English — runs on those same machines. The
 automated helpers that review changes, sort reports and check rules use that
 model too. Nothing is sent to an outside AI service. That one fact turns a
 security review from a negotiation into a description.
 
-TIDE is a product in its own right, sold separately. Two other Runink products
+TIDDE is a product in its own right, sold separately. Two other Runink products
 work together with it, each sold on its own: Runink FACE: Fulfilment Autonomous
 Claims Engine, and Runink PULSE: Prescriptive Unified Lead & Social Engine.
-Where a company runs them, TIDE is the layer they run on.
+Where a company runs them, TIDDE is the layer they run on.
 
-TIDE's console is split into four parts. Each answers one question.
+TIDDE's console is split into four parts. Each answers one question.
 
 - **Overview** — is anything wrong, and where do I go next?
 - **DevEx**, short for developer experience — is the platform running as it
@@ -94,12 +94,12 @@ read is shown as not known. It is never drawn as a zero. A screen that says
 because people make decisions on it.
 
 **It acts within the limits you set, and shows its work.** An administrator decides which kinds
-of action TIDE may take without a click. It starts with a dry run that shows what TIDE would
+of action TIDDE may take without a click. It starts with a dry run that shows what TIDDE would
 have done, and it runs under a daily cap and an off switch. Approved plans run unattended within
 your policies and guardrails: a reviewing model checks every step before it runs, and a plan stops
 at the first step a guardrail refuses. Everything outside those limits waits for a person, in
 one queue. Every act is written to a tamper-evident record before it happens, and the overview
-shows what TIDE did since your last visit. Merging code, handling secrets and deleting data
+shows what TIDDE did since your last visit. Merging code, handling secrets and deleting data
 always stay with a person.
 
 **It keeps a second opinion.** Where a finding matters, an independent assessor
@@ -145,9 +145,9 @@ involved, a security review asks where the information goes, who else can see
 it, and what happens to it after. If the design sends it out, the honest answer
 stalls the deal.
 
-### What TIDE changes
+### What TIDDE changes
 
-TIDE provides the common foundations once, for every application: somewhere to
+TIDDE provides the common foundations once, for every application: somewhere to
 run, one way to prove identity, a way to reach company data, one place to look,
 and a way to get changes made. It does all of it on the machines the company's
 plan names, with a model that runs there too: the company's own servers or
@@ -192,7 +192,7 @@ to the page where it can be dealt with. Then the most recent helper runs, and
 one line for each part of the platform — services, deployments and the AI
 models — each a link to its own page.
 
-At the foot of the page is **Ask TIDE**, an assistant. A person types, or
+At the foot of the page is **Ask TIDDE**, an assistant. A person types, or
 speaks, a request in plain language: list what exists, tell me the state of that
 one, create a deployment of this application for this team. The assistant
 carries out the request with the same controls a person would use, and shows
@@ -451,7 +451,7 @@ each allowed to do?
 
 **Who uses it.** The head of data, the risk officer and the engineering lead.
 
-**What it shows.** Every agent TIDE knows about, each fact shown once. TIDE's
+**What it shows.** Every agent TIDDE knows about, each fact shown once. TIDDE's
 own agents appear with their purpose, whether they are switched on, which model
 they use, and the limits they work under. The agents inside the Runink
 applications appear with their health, their model, and the written rules each
@@ -477,13 +477,13 @@ each application's agents have sent through the models, and the computing
 capacity allocated to each deployment. Anything not measured is shown as a gap
 with its reason.
 
-**Why it matters.** Because the models run where TIDE runs, with no outside AI
+**Why it matters.** Because the models run where TIDDE runs, with no outside AI
 service, using them more is not billed by the question. This page shows
 where that capacity goes, so sizing is a reading, not a guess.
 
 ### Connections
 
-**The question.** Which of our systems does TIDE know how to reach, and who may
+**The question.** Which of our systems does TIDDE know how to reach, and who may
 change that?
 
 **Who uses it.** The head of data, platform engineers and the security lead.
@@ -508,7 +508,7 @@ change a connection, and every attempt, refusals included, is recorded.
 
 ### Runners
 
-**The question.** What reaches our data sources on TIDE's behalf, and is it
+**The question.** What reaches our data sources on TIDDE's behalf, and is it
 healthy?
 
 **Who uses it.** Platform engineers and the security lead.
@@ -517,7 +517,7 @@ healthy?
 source when an administrator asks it to. The Runink-managed runner is listed
 first and cannot be revoked. A company can also add runners of its own, on its
 own network: an administrator gives each one a name and an address, and the
-runner uses a one-time ticket to obtain its certificate. TIDE then connects to
+runner uses a one-time ticket to obtain its certificate. TIDDE then connects to
 it at that address, and both ends prove who they are before anything moves.
 For each runner the page shows whether it is connected, when it was last seen,
 its version, when its certificate expires and how much work it has in hand.
@@ -532,13 +532,13 @@ health never touches the data itself.
 
 ### Trust › Harness
 
-**The question.** What is wrong, and what can TIDE do about it?
+**The question.** What is wrong, and what can TIDDE do about it?
 
 **Who uses it.** The operations lead, the security lead and the compliance
 officer.
 
 **What it shows.** Findings about risk and compliance, each with its evidence
-and a proposed remedy. Under each finding are only the actions TIDE can really
+and a proposed remedy. Under each finding are only the actions TIDDE can really
 take: start a named helper, file a tracking item, or acknowledge the finding.
 Every action is confirmed first, then written to the audit chain before it
 happens, and its result is shown in place. An action the console cannot take
@@ -628,7 +628,7 @@ been handed?
 **Who uses it.** The risk officer, the compliance officer and internal audit.
 
 **What it shows.** Findings sent in by an outside assessment platform, each with
-TIDE's own verdict: agree, disagree, or unable to judge, each on its own line and
+TIDDE's own verdict: agree, disagree, or unable to judge, each on its own line and
 never blended into a score. "Nothing was sent in" and "never judged" are said in
 those words, and never read as agreement. The page also lists the assessor's
 recent runs.
@@ -639,9 +639,9 @@ their time on findings that hold up, and can see which ones were not assessed.
 
 ## FORGE: from a written brief to a working application
 
-FORGE is the part of TIDE for making new software: a studio inside TIDE. It
+FORGE is the part of TIDDE for making new software: a studio inside TIDDE. It
 builds web applications and pipelines — a pipeline here is a set of steps that
-moves and prepares data on a schedule. It is served inside TIDE, under TIDE's
+moves and prepares data on a schedule. It is served inside TIDDE, under TIDDE's
 sign-in, as its own part of the menu, beside Overview, DevEx and
 DataEx.
 
@@ -692,12 +692,12 @@ recorded against their name.
 
 ## What it is built on, and why that matters commercially
 
-Each property in this section describes how TIDE is built. Each has a commercial
+Each property in this section describes how TIDDE is built. Each has a commercial
 result, and the result is the reason to care.
 
 ### The model is yours
 
-TIDE runs its own language model on the machines TIDE runs on: the company's
+TIDDE runs its own language model on the machines TIDDE runs on: the company's
 own servers or cloud account, or Runink's shared machines on Lite. The
 assistant, the automated helpers, the coding sessions and the FORGE studio all
 use it. No
@@ -754,12 +754,12 @@ records can be verified by anyone signed in.
 project. The cost of answering who did what, when and why is paid by the system
 as it runs.
 
-## Who TIDE is for
+## Who TIDDE is for
 
 ### The company that runs several applications with a small platform team
 
 If a handful of people keep everything running, and each is the only one who
-understands part of it, TIDE helps from the first week. One screen, remedies
+understands part of it, TIDDE helps from the first week. One screen, remedies
 written next to the readings, and helpers that take the repetitive work.
 
 The sign of fit: your operations knowledge lives mostly in people's heads, and
@@ -810,7 +810,7 @@ them in the language of another.
 Each can reach their own answer on a workstation of their own, without
 committing to anything.
 
-## What adopting TIDE involves
+## What adopting TIDDE involves
 
 Five steps, in this order. Each one is worth doing on its own, and each answers
 a question the next step assumes.
@@ -819,7 +819,7 @@ a question the next step assumes.
 | --- | --- | --- | --- |
 | 1 | One workstation | Run the whole platform on it with one command | Whether the screens can be trusted: which ones say they did not measure something |
 | 2 | The plan that fits, and your sign-in arrangement | Put the platform where that plan runs it: Runink's shared machines, your own cloud account or your own servers | Nothing new. Same screens, more room |
-| 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what TIDE shows about it | Whether TIDE reads your data the way your security lead needs |
+| 3 | One data source you would like to stop worrying about | Add it on DataEx › Connections, and read what TIDDE shows about it | Whether TIDDE reads your data the way your security lead needs |
 | 4 | Somebody outside the platform team | Have them request a deployment, and watch it expire | Whether useful work happens without the platform team in the loop |
 | 5 | One code repository | Switch on one helper and watch it before arming it | Whether the helpers save real time, judged on what they would have published |
 
@@ -829,7 +829,7 @@ Download the control tool and run one command. The whole platform comes up on
 the workstation: the applications, the model, the console and the full security
 arrangement. Look at Overview, the Harness and the Audit chain first. Together
 they show the honesty rule, the remedy habit and the record, which are what set
-TIDE apart from a dashboard.
+TIDDE apart from a dashboard.
 
 ### Step two: put it where your plan runs it
 
@@ -840,7 +840,7 @@ access.
 
 ### Step three: connect one real data source
 
-Choose one system and add it on DataEx › Connections. Read what TIDE kept
+Choose one system and add it on DataEx › Connections. Read what TIDDE kept
 about it: structure and counts, and no values. Then
 sign in as someone who is not on the permitted list and try to change it. Read
 the record the refusal leaves in the Audit chain. That is the interaction to show
@@ -868,13 +868,13 @@ are, the compliance check if written rules and real controls have drifted apart.
   owner and the console are enough for ordinary running.
 - Your sign-in arrangement and the list of people allowed in.
 - A decision about who may change data connections and who may arm agents. These
-  are the policy decisions TIDE asks you to make explicitly, and they are best
+  are the policy decisions TIDDE asks you to make explicitly, and they are best
   made in the first week.
 
 ### How to see the value in your own records
 
 Write down four readings in the first week, before anything changes, because
-they cannot be recovered once TIDE is running:
+they cannot be recovered once TIDDE is running:
 
 - **Specialist time.** For each person who is the only one who understands part
   of your estate, have them tally for one week the requests nobody else could
@@ -892,20 +892,20 @@ they cannot be recovered once TIDE is running:
 
 ## The commercial model
 
-Runink publishes its prices on the [pricing page](/pricing/). TIDE is priced by
+Runink publishes its prices on the [pricing page](/pricing/). TIDDE is priced by
 where it runs, at three levels:
 
 - **A shared level for a first team,** on Runink's shared machines. It is a
-  team plan: you pay for the number of people who use TIDE, and the team comes
-  with an allowance of Compute Units, the measure of the work TIDE does for
+  team plan: you pay for the number of people who use TIDDE, and the team comes
+  with an allowance of Compute Units, the measure of the work TIDDE does for
   you.
-- **A dedicated level** for a company running its estate on TIDE, in its own
+- **A dedicated level** for a company running its estate on TIDDE, in its own
   cloud account, priced per machine.
 - **An enterprise level** for deployments you host yourself on your own
   servers or cloud, priced with you.
 
-TIDE is sold on its own. Runink FACE and Runink PULSE each have their own
-subscription, and a TIDE plan and its allowance cover TIDE.
+TIDDE is sold on its own. Runink FACE and Runink PULSE each have their own
+subscription, and a TIDDE plan and its allowance cover TIDDE.
 
 Two things follow from this shape.
 
@@ -929,7 +929,7 @@ run there. No outside service is called for AI.
 **Is our material used to train anything?**
 No. Nothing is sent out to be trained on, and there is no account with an
 outside model provider for it to be sent to. What makes an answer specific to
-you is that your own material is indexed where TIDE runs and the relevant parts
+you is that your own material is indexed where TIDDE runs and the relevant parts
 are placed into the question when it is asked. Deleting a document removes its
 influence completely, because nothing is left behind in the model.
 
@@ -992,9 +992,9 @@ decided as you go.
 
 ## The next step
 
-The most useful thing to do with this paper is to see TIDE running.
+The most useful thing to do with this paper is to see TIDDE running.
 
-TIDE runs on one machine, from one downloaded file, with one command. There is
+TIDDE runs on one machine, from one downloaded file, with one command. There is
 no environment to set up for you and nothing to sign before you see it work. The
 version on your workstation is the version that runs on your servers or in your
 cloud account.
@@ -1015,6 +1015,6 @@ in your own words. That is the basis on which we would like to be judged.
 
 ### Talk to us
 
-To see TIDE running, or to talk about your estate,
+To see TIDDE running, or to talk about your estate,
 [book a consultation](/#contact) at runink.org/#contact, or write to
 paes@runink.org.

@@ -14,7 +14,7 @@ package mirror
 //   - chapter headings are PLAIN "## Title", identical to the site source
 //     (no "## Page N — Title" as in the FACE mirror)
 //   - NO <div style="page-break"> divs (the FACE mirror has 28; this one has 0)
-//   - a page footer after every chapter:   *Runink TIDE — page N of T*
+//   - a page footer after every chapter:   *Runink TIDDE — page N of T*
 //     followed by a "---" rule, then the next chapter
 //   - a closing colophon before the final footer
 //
@@ -26,11 +26,11 @@ package mirror
 //
 // # Why this is not one parameterised rebuilder shared with the other two
 //
-// Because almost nothing above is shared. TIDE takes its cover from the first
+// Because almost nothing above is shared. TIDDE takes its cover from the first
 // "## " in the old mirror; FACE takes it from the first page-break div, PULSE
-// from a literal "*Page 1 — Cover*" marker. TIDE finds its colophon by scanning
+// from a literal "*Page 1 — Cover*" marker. TIDDE finds its colophon by scanning
 // backwards for the last non-footer paragraph; FACE keeps a whole
-// "### Contact" block; PULSE has none. TIDE collapses runs of blank lines at
+// "### Contact" block; PULSE has none. TIDDE collapses runs of blank lines at
 // the end and PULSE writes no trailing newline at all. Those are three
 // different algorithms wearing the same job title, and a single function with
 // a paper-shaped config struct would have had a branch at every one of them.
@@ -43,10 +43,10 @@ import (
 	"strings"
 )
 
-const tideFooterFmt = "*Runink TIDE — page %d of %d*"
+const tideFooterFmt = "*Runink TIDDE — page %d of %d*"
 
 var (
-	tideFooterRe   = regexp.MustCompile(`\A\*Runink TIDE — page \d+ of \d+\*\z`)
+	tideFooterRe   = regexp.MustCompile(`\A\*Runink TIDDE — page \d+ of \d+\*\z`)
 	tideRuleRe     = regexp.MustCompile(`\A-{3,}\z`)
 	tideRegisterRe = regexp.MustCompile(`(?m)^register:\n((?:  - .*\n)+)`)
 	tideRegPageRe  = regexp.MustCompile(`page:\s*(\d+)`)
@@ -54,7 +54,7 @@ var (
 	tideRegTitleRe = regexp.MustCompile(`title:\s*"([^"]*)"`)
 	tideChapterRe  = regexp.MustCompile(`(?m)^(## .+)$`)
 	tideFirstH2Re  = regexp.MustCompile(`(?m)^## `)
-	tideCoverPg1Re = regexp.MustCompile(`(?m)^\*Runink TIDE — page 1 of \d+\*$`)
+	tideCoverPg1Re = regexp.MustCompile(`(?m)^\*Runink TIDDE — page 1 of \d+\*$`)
 	tideBlankRunRe = regexp.MustCompile(`\n{3,}`)
 )
 

@@ -1,12 +1,12 @@
-# Runink TIDE
+# Runink TIDDE
 
-*Runink TIDE — page 1 of 5*
+*Runink TIDDE — page 1 of 5*
 
 ## What this paper is, and which part of it runs
 
 Opening prose for the fixture.
 
-*Runink TIDE — page 2 of 5*
+*Runink TIDDE — page 2 of 5*
 
 ---
 
@@ -18,7 +18,7 @@ Alpha prose one.
 
 Alpha prose two.
 
-*Runink TIDE — page 3 of 5*
+*Runink TIDDE — page 3 of 5*
 
 ---
 
@@ -28,6 +28,6 @@ Beta prose.
 
 ---
 
-*Runink TIDE. The closing colophon.*
+*Runink TIDDE. The closing colophon.*
 
-*Runink TIDE — page 5 of 5*
+*Runink TIDDE — page 5 of 5*

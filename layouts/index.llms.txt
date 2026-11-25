@@ -34,7 +34,7 @@
 - Prices: {{ .Permalink }} — {{ .Description }}
 {{- end }}{{ end }}
 {{ end }}{{ end }}
-## True of FACE, TIDE and PULSE
+## True of FACE, TIDDE and PULSE
 
 Each is sold on its own subscription, priced by the person or by the machine
 it runs on, never as a bundle. Every drafted action waits for a named person;
@@ -90,7 +90,7 @@ visibility. Index: {{ "blog/" | absURL }}
 ## Other languages
 
 Spanish, French and Portuguese cover the homepage, the pricing pages of
-Runink FACE, Runink TIDE and Runink PULSE, the company and trust pages, the
+Runink FACE, Runink TIDDE and Runink PULSE, the company and trust pages, the
 library and the scenario pages. The
 product pages, the articles and the papers are in English.
 {{ range site.Home.AllTranslations }}{{ if ne .Language.Lang "en" }}
