@@ -3,7 +3,7 @@ title: "Downloads"
 layout: "company"
 # Order is the attribution here. FACE by Runink is the flagship and leads the page;
 # Runink PULSE is a separate product, not a FACE companion app; and the server
-# image is not a product at all: it carries Runink TIDE, which is a third product
+# image is not a product at all: it carries Runink TIDDE, which is a third product
 # sold on its own (the owner, 26 September 2026). The server image is the Runink
 # Server distribution, built on Runink River; Runink River itself is the developer
 # workstation and has its own page at /river/ (corrected 2026-09-26, when that page

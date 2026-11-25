@@ -110,12 +110,12 @@ What Luna stores is described in the [Luna privacy policy](/luna-privacy/).
 
 ---
 
-## TIDE (`org.runink.tide`)
+## TIDDE (`org.runink.tide`)
 
 **In the app:** Settings › User › Delete my account: type your e-mail to
-confirm. All your sessions end first, then TIDE deletes your personas, your
+confirm. All your sessions end first, then TIDDE deletes your personas, your
 briefs (including briefs sent to you), your seat, your admin role, and your
-project chats and Ask TIDE history.
+project chats and Ask TIDDE history.
 
 **Some records are kept:** the audit log, the records of a subscription you
 bought, and organisation records that name you as the person who acted. These
@@ -127,7 +127,7 @@ Earlier versions in storage history, and entries in append-only logs, stay
 until they are erased; to have them erased, email **contact@runink.org** from
 the address you sign in with.
 
-The [TIDE privacy policy](/tide-privacy/) describes what TIDE stores.
+The [TIDDE privacy policy](/tide-privacy/) describes what TIDDE stores.
 
 ---
 

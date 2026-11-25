@@ -10,7 +10,7 @@
 # It is a short switchboard, not a brochure: one line per product and the page
 # behind it, drawn by layouts/products/list.html in the product-page design. The
 # order is the attribution the owner set on /downloads/: FACE is the flagship; PULSE
-# and TIDE are separate products sold on their own; Runink River is the open
+# and TIDDE are separate products sold on their own; Runink River is the open
 # workstation.
 #
 # English only, like the product pages it links to.
@@ -25,7 +25,7 @@ items:
     logo: "/images/brand/face-mark.png"
     line: "Runink's main product, for logistics and the claims, returns and compliance work that hangs off it. It reads the records you already hold and drafts the action for a named person to approve."
   - name: "Runink TIDDE"
-    full: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
+    full: "Runink TIDDE: Trusted Intelligence for Developer & Data Experience"
     url: "/products/tide/"
     logo: "/images/brand/tide-mark.png"
     line: "One console for your software, your AI models and agents, and your data, with its own model running on your servers, your cloud or ours. A product in its own right, sold separately."

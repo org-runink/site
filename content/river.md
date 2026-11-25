@@ -16,7 +16,7 @@ description: "Runink River is a free, open-source workstation operating system f
 #
 # What changed from the page this replaces: Runink River used to be described here as
 # the Runink sovereignty server. It is the developer workstation now; the server image
-# that carries Runink TIDE is a separate, downstream distribution. The mascot and
+# that carries Runink TIDDE is a separate, downstream distribution. The mascot and
 # brand-files block moved to the river repository's own documentation (owner,
 # 2026-09-26: "put this within the river repo").
 #
@@ -49,7 +49,7 @@ description: "Runink River is a free, open-source workstation operating system f
 # with why an open-source workstation matters before naming the kernel.
 #
 # 2026-10-01 (mine): CONTENT.md rule 3 pass — same business-value/less-jargon restyle
-# already done to the TIDE/FACE/PULSE product pages, applied here. Changed: the ZFS
+# already done to the TIDDE/FACE/PULSE product pages, applied here. Changed: the ZFS
 # "boot environments" / "encryption root" vocabulary (hero promise, meta description,
 # the storage card body) into plain language — "an encrypted ZFS disk with snapshot
 # rollback" and "the whole disk is encrypted, and `/home` is encrypted separately" —
@@ -66,7 +66,7 @@ description: "Runink River is a free, open-source workstation operating system f
 # supervises everything" for the same reason, keeping "s6" as the stat label.
 # Left alone, on purpose: the "RIVER · Raft-Integrated Validated Event Runtime"
 # lockup — it is the same deliberate, owner-approved acronym-spelling pattern as
-# Runink TIDE's "Trusted Intelligence for Developer & Data Experience" lockup, and it is
+# Runink TIDDE's "Trusted Intelligence for Developer & Data Experience" lockup, and it is
 # repeated verbatim on the homepage (all four languages) and content/products/_index.md;
 # changing it here only would make this page disagree with the rest of the site, and
 # those pages are out of scope for a river.md-only pass. Also left alone: the
@@ -76,7 +76,7 @@ description: "Runink River is a free, open-source workstation operating system f
 # release-status or CTA wording touched: "Get the source" / "Read the
 # documentation" and their URLs are byte-for-byte what they were before this pass.
 #
-# 2026-10-03 (mine): business-value pass, same brief as the TIDE/FACE/PULSE pages. The
+# 2026-10-03 (mine): business-value pass, same brief as the TIDDE/FACE/PULSE pages. The
 # page now leads with the reader's week, not with the parts list: days lost setting up a
 # new machine (the installer split), a laptop that can't be trusted with sensitive data,
 # an update that breaks and costs a day, a long data job that slows to a crawl, code you

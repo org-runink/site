@@ -10,9 +10,9 @@ headline: "Run your software, your AI and your data on your own servers or cloud
 # site shows what ships, with nothing qualified by a single run (CONTENT.md rules 2 and 4).
 #
 # Updated 2026-10-01: a "Sensors and devices report to your own server" section
-# was added and taken out again the same day; it goes back only on the TIDE
+# was added and taken out again the same day; it goes back only on the TIDDE
 # owner's word that the Server release carrying it has passed acceptance. The
-# commercial model now follows the pricing page (priced by where TIDE runs, a
+# commercial model now follows the pricing page (priced by where TIDDE runs, a
 # team allowance of Compute Units, sold on its own), and no longer says where
 # the allowance is read; that sentence returns once it can be shown.
 next_about: "The Runink TIDDE paper"
@@ -25,7 +25,7 @@ source_pages: 20
 audience: "Executive, technology, data and risk stakeholders"
 blurb: "The operations layer a company runs on its own servers or cloud account, or on Runink's shared machines to start, with no outside AI service. One console shows whether the platform is healthy and your changes shipped, what your AI models and agents are allowed to do, and turns a written brief into a working application with a person approving each step."
 deck: |
-  **Runink TIDE: Trusted Intelligence for Developer & Data Experience.** It is
+  **Runink TIDDE: Trusted Intelligence for Developer & Data Experience.** It is
   the operations layer a company runs on its own servers or cloud account, or
   on Runink's shared machines to start. It keeps the company's software
   healthy, governs the AI models and agents that work inside it, and turns a written brief into a working application.
@@ -58,7 +58,7 @@ register:
 
 ## Executive summary
 
-Runink TIDE: Trusted Intelligence for Developer & Data Experience is the layer
+Runink TIDDE: Trusted Intelligence for Developer & Data Experience is the layer
 beneath a company's software. It runs that software on the company's own
 servers or cloud account, or on Runink's shared machines for a first team. It
 shows one person, on one screen, what is happening across all of it. It keeps a

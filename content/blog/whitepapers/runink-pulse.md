@@ -293,7 +293,7 @@ for you to read. You decide, and you submit.
 
 **Voice.** The voice commands bar on every page takes spoken or typed commands, such as
 "audit" and a web address. Speech runs on the machines PULSE runs on, with the same speech
-engines every Runink console speaks and listens with: in Runink TIDE: Trusted Intelligence
+engines every Runink console speaks and listens with: in Runink TIDDE: Trusted Intelligence
 for Developer & Data Experience, and in Runink FACE: Fulfilment Autonomous Claims Engine,
 as much as here.
 
