@@ -9,17 +9,17 @@ layout: "product"
 description: "Runink TIDDE takes the repeat questions off engineering, platform and data teams: what broke and why, whether a fix shipped, who changed what. Run it on your own servers, in your own cloud account, or on Runink's shared machines to start. Helpers propose; a person approves."
 next_about: "Runink TIDDE"
 aliases: ["/products/core/"]
-# RENAMED 2026-10: this product was called Runink CORE and is now Runink TIDE
+# RENAMED 2026-10: this product was called Runink CORE and is now Runink TIDDE
 # (Trusted Intelligence for Developer & Data Experience). The old URL stays live
-# through `aliases`. In copy, write "Runink TIDE" at the first mention on a page
-# and "TIDE" after that; never a bare "Tide", a name already crowded in AI
+# through `aliases`. In copy, write "Runink TIDDE" at the first mention on a page
+# and "TIDDE" after that; never a bare "Tide", a name already crowded in AI
 # tooling. FORGE, DevEx and DataEx keep their names as sections
 # inside it. Links into docs.runink.org use the /tide/ paths (live since 2026-10-04;
 # the old /core/ paths redirect there).
 #
-# Where every claim here comes from: the TIDE paper, content/blog/whitepapers/
+# Where every claim here comes from: the TIDDE paper, content/blog/whitepapers/
 # runink-tide.md (sections named beside each block in the PR), and the product copy
-# of #246 "Present Runink TIDE as a product in its own right". Nothing on this page
+# of #246 "Present Runink TIDDE as a product in its own right". Nothing on this page
 # goes beyond what that paper says. If the paper changes, change this page with it.
 #
 # No screenshot: the hero carries the console's four parts as type instead of a
@@ -28,7 +28,7 @@ aliases: ["/products/core/"]
 # Enriched 2026-09-29, staying inside the `rp.features` grid this layout already uses
 # (layouts/_default/product.html has no {{ .Content }} slot, so a page here cannot
 # grow past its rp: fields the way content/products/face.md can). Three cards added:
-# `trust` (Harness + Judgements, DataEx section), `local` (TIDE's own egress-audit
+# `trust` (Harness + Judgements, DataEx section), `local` (TIDDE's own egress-audit
 # paragraph, added to the whitepaper the same day — see that file's own note), and
 # `cost` (the lease/no-meter material from "It runs the same way everywhere" and "The
 # model is yours"). All three summarise paragraphs the paper already carried but this
@@ -44,14 +44,14 @@ aliases: ["/products/core/"]
 # there, the same way FORGE was added when it existed to describe. Flagged for the
 # owner in the PR description rather than guessed around.
 #
-# Restyled 2026-10-01 (owner request): "DevEx" and "DataEx" are TIDE's own internal
+# Restyled 2026-10-01 (owner request): "DevEx" and "DataEx" are TIDDE's own internal
 # console menu-category names (Developer Experience / Data Experience) and had been
 # exposed straight to a buyer with no gloss, in the `plate` facts row, the `facts`
 # count and the `features` item keys — exactly the "vocabulary that names an
 # implementation" CONTENT.md rule 3 says to delete. Fixed by leading every
 # buyer-facing spot with the plain-language outcome (delivery confidence; AI you can
 # govern and trust) and demoting DevEx/DataEx to a one-line parenthetical gloss for
-# a reader who already knows TIDE's own console — never the primary label. The
+# a reader who already knows TIDDE's own console — never the primary label. The
 # `features` card titles ("Know what shipped", "AI you can answer for") already did
 # this correctly and are untouched; only their small `k` kicker tags, which had
 # literally rendered the raw labels "devex"/"dataex" in small caps above the title,
@@ -64,10 +64,10 @@ aliases: ["/products/core/"]
 # gloss. No fact changed — only the label and the sentence around it.
 #
 # Updated 2026-10-01: a `devices` card was added and taken out again the same day;
-# it goes back only on the TIDE owner's word that the Server release carrying it has
+# it goes back only on the TIDDE owner's word that the Server release carrying it has
 # passed acceptance (the parked text is kept outside this repo). The note above about
 # upcoming work stands. The `papers` pricing note now follows /products/tide-pricing/
-# (priced by where TIDE runs, a team allowance of Compute Units, sold on its own)
+# (priced by where TIDDE runs, a team allowance of Compute Units, sold on its own)
 # and says nothing about where the allowance is read until that can be shown.
 #
 # The name is spelled out once, here in the hero lockup: Trusted Intelligence for
@@ -84,22 +84,22 @@ aliases: ["/products/core/"]
 # opens on a burden the buyer carries (the on-call page, the unread pull request,
 # the audit rebuilt by hand, the forgotten environment, the wrong number found by
 # the business first, two teams with two figures, the AI inventory nobody keeps,
-# data that cannot leave), then says what TIDE does in plain verbs, then names the
+# data that cannot leave), then says what TIDDE does in plain verbs, then names the
 # cost line it touches. No figure was added: the steps intro carries the paper's
 # own method ("How to see the value in your own records") instead of a number.
-# Every claim still comes from the TIDE paper; the `resolve` card was folded away
+# Every claim still comes from the TIDDE paper; the `resolve` card was folded away
 # rather than reworded, and the console's own words (DevEx, DataEx, Harness) stay
 # only as small section labels, each explained by the burden it removes.
 #
 # 2026-10-03 (search pass): `promise`, the line under the h1, is also the page's
-# answer to "What is Runink TIDE?" for search and answer engines. It names the
+# answer to "What is Runink TIDDE?" for search and answer engines. It names the
 # product and the company, who it is for, what it takes off their week, and how
 # it is run and paid for, in three sentences that can be quoted alone. Keep it
 # self-contained: no "it" that needs the line above to make sense.
 image: "/images/products/tide-og.jpg"
 rp:
   logo: "/images/brand/tide-mark.png"
-  lockup: "Runink TIDE: Trusted Intelligence for Developer & Data Experience"
+  lockup: "Runink TIDDE: Trusted Intelligence for Developer & Data Experience"
   title: "Know what broke and what shipped. On your servers, your cloud or ours."
   promise: "**Runink TIDDE** is software from Runink that takes the repeat questions off your engineering, platform and data teams: why did it break, is the fix live, who changed this. Helpers draft the answer or the fix, and a named person approves it. Run it on Runink's shared machines, or on your own servers or cloud account so your data stays there; it is licensed by where it runs, and no plan sends your data to an outside AI service."
   cta:

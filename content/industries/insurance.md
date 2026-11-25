@@ -8,10 +8,10 @@ description: "Claims decisioning, reserving and reinsurance recovery, delegated 
 # policy"), FACE connects to Guidewire alongside SAP, D365, Salesforce and the
 # SQL engines, and the rules-as-written-against-rules-as-applied mechanism on
 # this page is FACE's rules reconciliation agent (shown on its Reconcile
-# page) with its four states, not the TIDE assessor.
+# page) with its four states, not the TIDDE assessor.
 #
 # What was cut, and why the paper link moved: the outcomes claimed "a second,
-# independent judgement" on every finding. That is TIDE's assessor, which
+# independent judgement" on every finding. That is TIDDE's assessor, which
 # accepts findings from an outside submitting platform through a credentialed
 # door and hands verdicts back. FACE does not submit its findings there — there
 # is no wiring between the two — so the page was selling a join that does not

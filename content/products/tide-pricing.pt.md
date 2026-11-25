@@ -20,7 +20,7 @@ product_subcategory: "Operações de TI, governança de IA e plataforma de aplic
 {
   "link_base": "/blog/whitepapers/runink-tide/",
   "intro": [
-    "Este é o preço do Runink TIDE: Trusted Intelligence for Developer & Data Experience. Você escolhe onde ele roda: nas máquinas compartilhadas do Runink, com preço por pessoa; na sua própria conta na nuvem, com preço por nó; ou nas suas próprias instalações, com preço definido com você. Não há uma segunda conta: o TIDE nunca cobra uma porcentagem do que encontra, corrige ou entrega, porque um registro de auditoria ou um pipeline de implantação não é o tipo de coisa a que uma taxa de sucesso deva se prender.",
+    "Este é o preço do Runink TIDDE: Trusted Intelligence for Developer & Data Experience. Você escolhe onde ele roda: nas máquinas compartilhadas do Runink, com preço por pessoa; na sua própria conta na nuvem, com preço por nó; ou nas suas próprias instalações, com preço definido com você. Não há uma segunda conta: o TIDDE nunca cobra uma porcentagem do que encontra, corrige ou entrega, porque um registro de auditoria ou um pipeline de implantação não é o tipo de coisa a que uma taxa de sucesso deva se prender.",
     "Essa é toda a forma do preço. A conta acompanha os assentos ou nós que você roda, não o que o TIDDE encontra, corrige ou entrega, então uma equipe de plataforma que usa muito o TIDDE não abre uma nova linha que cresce com o uso. O que o console faz vem primeiro, porém, porque é a parte que vale a pena discutir."
   ],
   "eyebrow": "O console",

@@ -35,7 +35,7 @@ next:
 # 3. THE EXCEPTIONS ARE NAMED. "A person decides" is only honest with its two
 #    documented exceptions beside it: FACE's own self-healing (restart, isolate,
 #    roll back, add capacity — a fixed list, never destructive, an operator can
-#    switch it off) and TIDE's issue triager applying labels from an allowed
+#    switch it off) and TIDDE's issue triager applying labels from an allowed
 #    list. If another agent gains the right to act alone, it goes in that list
 #    the same day, or the headline comes down.
 # 4. NOTHING UNRELEASED. No test evidence or autonomous release-testing

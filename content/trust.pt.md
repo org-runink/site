@@ -23,7 +23,7 @@ next:
 # not used to describe Runink); the two exceptions to "a person decides" stay
 # named; nothing unreleased; no internals; no figures; no prices.
 #
-# Product names (FACE, TIDE, PULSE, LUNA, Runink River) and standard names stay
+# Product names (FACE, TIDDE, PULSE, LUNA, Runink River) and standard names stay
 # as they are written in English.
 ---
 

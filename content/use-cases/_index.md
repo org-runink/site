@@ -8,7 +8,7 @@ seo_description: "The jobs Runink FACE is built for: freight claims, cold chain,
 image: "/images/face/cockpit.png"
 # This section is Runink FACE's scenarios and nothing else. FACE is the flagship.
 # Runink PULSE (market analysis) is a separate product with its own material, and
-# TIDE is a third, separate product — neither of their capabilities may be
+# TIDDE is a third, separate product — neither of their capabilities may be
 # listed here, because a reader who cannot tell which product does which job
 # reads the whole set as one product's track record.
 #

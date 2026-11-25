@@ -11,7 +11,7 @@ deck: |
   Documentos extensos, cada um sobre um produto da Runink.
   Os primeiros tratam do **Runink FACE: Fulfilment Autonomous Claims Engine**. O **Runink PULSE: Prescriptive Unified Lead & Social Engine** é um produto diferente, de análise de mercado e
   marketing, e o documento dele descreve o próprio trabalho, não o do FACE.
-  O **Runink TIDE: Trusted Intelligence for Developer & Data Experience** é um produto por si só, vendido separadamente. É a camada
+  O **Runink TIDDE: Trusted Intelligence for Developer & Data Experience** é um produto por si só, vendido separadamente. É a camada
   de operações, nos seus servidores, na sua nuvem ou na nossa, que mantém em ordem os
   seus aplicativos Runink e os seus próprios dados, e a resposta honesta a onde
   os seus dados são processados e quem pode vê-los. O documento dele é onde

@@ -17,24 +17,24 @@ product_subcategory: "IT operations, AI governance and application platform"
 # WHERE EVERY CLAIM ON THIS PAGE COMES FROM.
 #
 # PRICES ARE THE PRICE BOOK OF 2026-11-06 (billing#36, data/pricing.json "tide"): the
-# licence says where the work runs. TIDE Lite (1-9, Runink's shared machines):
+# licence says where the work runs. TIDDE Lite (1-9, Runink's shared machines):
 # $85 yearly / $99 monthly, 18,000 units a person, then $0.12 per 100 units or
 # units bought ahead (5% less a month, 10% less a year), up to 900 units a
-# person an hour before work waits its turn. TIDE Dedicated (runners in the
+# person an hour before work waits its turn. TIDDE Dedicated (runners in the
 # customer's own cloud account): $279 a month for the first node + $169 per
 # extra node, yearly, unlimited units, plus 1.5% of those runners' cloud cost.
-# Enterprise: priced with you. TIDE is sold separately from FACE and PULSE.
+# Enterprise: priced with you. TIDDE is sold separately from FACE and PULSE.
 # Change the billing catalogue first, then data/pricing.json, then the cards here
 # and in the three translations; assets/js/__tests__/tide-pulse-pricing.test.js
 # fails when they disagree.
 #
 # WHAT IS NOT SHARED: FACE's page prices a "success fee" (20% of recovered
-# money) and an automatic set-up fee (1%-3%) on top of the seat price. TIDE has
-# neither. It is compute-only by design — see the FAQ entry "Why does TIDE
+# money) and an automatic set-up fee (1%-3%) on top of the seat price. TIDDE has
+# neither. It is compute-only by design — see the FAQ entry "Why does TIDDE
 # never charge a success fee?" — and every outcome_strategies row below says so
 # rather than staying silent about it.
 #
-# THE SCENARIO BAND is built from TIDE's own four real console parts —
+# THE SCENARIO BAND is built from TIDDE's own four real console parts —
 # Overview, DevEx, DataEx, FORGE — exactly as content/products/
 # tide.md's `rp.plate.rows` and `rp.facts` name them, and as the whitepaper's
 # own table states them (content/blog/whitepapers/runink-tide.md, "How the
@@ -42,7 +42,7 @@ product_subcategory: "IT operations, AI governance and application platform"
 # word-for-word, or trimmed to one clause without adding a word, from
 # tide.md's `rp.features.items` bodies (keys: overview, devex, dataex,
 # forge) or from the whitepaper. Nothing here is a
-# capability TIDE does not already claim elsewhere.
+# capability TIDDE does not already claim elsewhere.
 #
 # NO ENTERPRISE SOVEREIGNTY DETAILS ON THIS PAGE (owner, 2026-09-28): no
 # hardware or appliance pricing, no field devices, no onboarding or consulting
@@ -65,18 +65,18 @@ product_subcategory: "IT operations, AI governance and application platform"
 # adding this file does not add an unwanted card there.
 #
 # COMPUTE UNIT WORDING (2026-10-01): the "What is a Compute Unit?" and overage
-# answers say only what the TIDE release customers run today supports, and name
+# answers say only what the TIDDE release customers run today supports, and name
 # only the work that draws units. The prices, the overage terms and the allowance
 # are the billing catalogue's and change there first. Before adding wording about
 # usage or budgets in the console, or widening what draws units, confirm it against
-# the shipped TIDE release with the TIDE owner — a merge is not a release.
+# the shipped TIDDE release with the TIDDE owner — a merge is not a release.
 ---
 
 {{< pricing-table-2 >}}
 {
   "link_base": "/blog/whitepapers/runink-tide/",
   "intro": [
-    "This is the price of Runink TIDE: Trusted Intelligence for Developer & Data Experience. You choose where it runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDE never takes a percentage of anything it finds, fixes or ships, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
+    "This is the price of Runink TIDDE: Trusted Intelligence for Developer & Data Experience. You choose where it runs: on Runink's shared machines, priced per person; in your own cloud account, priced per node; or on your own premises, priced with you. There is no second bill: TIDDE never takes a percentage of anything it finds, fixes or ships, because an audit record or a deploy pipeline is not the kind of thing a success fee should attach to.",
     "That is the whole shape of it. The bill follows the seats or nodes you run, not what TIDDE finds, fixes or ships, so a platform team that puts TIDDE to heavy use does not open a new line item that grows with it. What the console actually does comes first, though, because that is the part worth arguing about."
   ],
   "eyebrow": "The console",

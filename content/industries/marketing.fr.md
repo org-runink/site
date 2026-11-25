@@ -11,7 +11,7 @@ description: "Des délais de plusieurs semaines, une pile technologique qui ne c
 # therefore not automatically this product. Attribute by product, not by topic:
 # the capabilities below are PULSE services (DiagnosticService.AuditURL,
 # RadarService, ContentService, StudioService, LeadService), and the two
-# foundations at the bottom belong to the TIDE platform and the shared web
+# foundations at the bottom belong to the TIDDE platform and the shared web
 # engine that PULSE runs on.
 #
 # `product` is not rendered by layouts/industries/single.html today. It is set so
