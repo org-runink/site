@@ -36,7 +36,7 @@ jobs:
     name: build, gate and deploy
     # push to main, or a pull request whose head branch lives in this repository.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, public-ci]
     timeout-minutes: 30
 
     # The repo and org default_workflow_permissions is "read", which makes the
@@ -546,7 +546,7 @@ jobs:
   build-fork-pr:
     name: build and gate (fork PR, GitHub-hosted)
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, public-ci]
     timeout-minutes: 30
     permissions:
       contents: read
@@ -559,7 +559,7 @@ jobs:
     name: deploy to GitHub Pages (actions source)
     needs: deploy
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SITE_PAGES_SOURCE == 'actions'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, public-ci]
     timeout-minutes: 10
     permissions:
       pages: write
