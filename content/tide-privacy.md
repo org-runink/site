@@ -1,28 +1,28 @@
 ---
-title: "Runink TIDE — Privacy Policy"
-description: "How the Runink TIDE console and its Android app (org.runink.tide) handle your data."
+title: "Runink TIDDE — Privacy Policy"
+description: "How the Runink TIDDE console and its Android app (org.runink.tide) handle your data."
 layout: "simple"
 ---
 
-This policy covers the **Runink TIDE** console, on the web and as the Android
-app published by Runink (application id `org.runink.tide`), and the TIDE
+This policy covers the **Runink TIDDE** (Trusted Intelligence for Developer & Data Experience) console, on the web and as the Android
+app published by Runink (application id `org.runink.tide`), and the TIDDE
 deployment it connects to. For the rest of the Runink platform, see the
 [general privacy policy](/privacy).
 
-TIDE is a console for a deployment that you or your organisation run. The app
+TIDDE is a console for a deployment that you or your organisation run. The app
 is a window onto that deployment. We do not host your deployment, and we do
 not receive your data through the app.
 
 ---
 
-## Who can use TIDE
+## Who can use TIDDE
 
-TIDE is not open to the public. An administrator of your organisation's
+TIDDE is not open to the public. An administrator of your organisation's
 deployment adds you. The app has no sign-up form.
 
 ---
 
-## What TIDE handles
+## What TIDDE handles
 
 ### Your account
 
@@ -35,7 +35,7 @@ deployment adds you. The app has no sign-up form.
 * **Your session.** Your deployment sets it, and it ends after 12 hours by
   default. Signing out ends it.
 
-### What you do in TIDE
+### What you do in TIDDE
 
 The questions you ask, the chat text you type, the commands you run and the
 notes you save go to your deployment and are kept there. On the web, you can
@@ -56,7 +56,7 @@ into text. **The Android app does not ask for the microphone.**
 
 ---
 
-## What TIDE does **not** collect
+## What TIDDE does **not** collect
 
 * **No advertising, no analytics and no crash-reporting service** in the app.
   It contains no Firebase, Crashlytics, Sentry or similar library.
@@ -94,7 +94,7 @@ We do not sell your data, and we do not share it with anyone for advertising.
 
 ## Children
 
-TIDE is a business console for administrators. It is not meant for children.
+TIDDE is a business console for administrators. It is not meant for children.
 
 ---
 
