@@ -151,7 +151,7 @@ rp:
     intro: "We put no number here. Your own records show what each line costs you today."
     items:
       - { title: "No per-seat licence", body: "River is free and open source. Adding an analyst adds hardware, not an operating-system bill. **Opex.**" }
-      - { title: "Hardware you own, put to work", body: "Data and AI work that would go to a rented cloud workstation can run on the laptops and desktops you already bought. **Capex** you have spent, and **Opex** you don't add." }
+      - { title: "Hardware you own, put to work", body: "Data and AI work that would go to a rented cloud workstation can run on the laptops and desktops you already bought. That hardware is already paid for, and it adds no **Opex**." }
       - { title: "Fewer lost days", body: "Less time setting up machines, rebuilding after a bad update, or waiting on a slow job. Count it in staff hours. **Opex.**" }
   papers:
     heading: "See it for yourself"
