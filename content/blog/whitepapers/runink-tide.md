@@ -72,7 +72,7 @@ model too. Nothing is sent to an outside AI service. That one fact turns a
 security review from a negotiation into a description.
 
 TIDDE is a product in its own right, sold separately. Two other Runink products
-work together with it, each sold on its own: Runink FACE: Fulfilment Autonomous
+work together with it, each sold on its own: Runink FACE (Fulfilment Autonomous Claims Engine): Fulfilment Autonomous
 Claims Engine, and Runink PULSE: Prescriptive Unified Lead & Social Engine.
 Where a company runs them, TIDDE is the layer they run on.
 

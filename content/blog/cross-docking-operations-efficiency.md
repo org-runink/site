@@ -103,7 +103,7 @@ A traditional cross-dock runs on a static schedule plus manual recovery when the
 
 **Working out knock-on effects.** Spotting a disruption — a carrier no-show, a short shipment, a quality hold — and working out what it breaks downstream before it breaks it. Whether the resulting reroute, door reassignment and notification go out on their own or wait for a supervisor's approval is the single most consequential question to ask a vendor in this category, because the answer determines who carries the consequences of a wrong call.
 
-[Runink FACE](/products/face/) answers it one way: the reading and the comparison run unattended, and the proposed action goes to a named person to approve, edit or reject. [Connect with our team](/#contact-form) to walk through what that looks like against your own dock schedule.
+[Runink FACE (Fulfilment Autonomous Claims Engine)](/products/face/) answers it one way: the reading and the comparison run unattended, and the proposed action goes to a named person to approve, edit or reject. [Connect with our team](/#contact-form) to walk through what that looks like against your own dock schedule.
 
 ---
 

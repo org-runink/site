@@ -109,7 +109,7 @@ If your S&OP meetings end without decisions, if the planners spend more time rec
 
 Companies that progress up the maturity stages share one trait: they fix the records first. That means replacing hand-moved, fragmented figures with one agreed definition per figure and a way to get back to the source.
 
-[Demand forecasting](/use-cases/demand-forecasting/) is one of the kinds of work Runink FACE does: it reads the order and sell-through history you already hold, produces a forecast at the level you ask for, and shows the records it was built from so a planner can argue with it rather than accept it. That is one input to an S&OP process, not a replacement for one — the cross-functional discipline is the part no software supplies.
+[Demand forecasting](/use-cases/demand-forecasting/) is one of the kinds of work Runink FACE (Fulfilment Autonomous Claims Engine) does: it reads the order and sell-through history you already hold, produces a forecast at the level you ask for, and shows the records it was built from so a planner can argue with it rather than accept it. That is one input to an S&OP process, not a replacement for one — the cross-functional discipline is the part no software supplies.
 
 The first diagnostic is free and unwelcome: at your last S&OP meeting, how much of the time went on reconciling numbers rather than deciding anything? [Get in touch](/#contact-form) if it would help to work through what that reconciliation is costing.
 

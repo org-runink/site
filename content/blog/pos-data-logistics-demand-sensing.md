@@ -107,7 +107,7 @@ POS data is a shorter demand signal than a forecast, not a better one. Read toge
 
 Supply chain resilience is not only a matter of moving boxes faster. Reacting to stockouts with expedited freight and a scramble in the warehouse is expensive, and most of the cost is avoidable with a signal that arrives earlier. Sending store-level sales data to the people who plan freight is that earlier signal. Software turns the volume of checkout records into something a planner can act on, and the planner still decides where the stock goes.
 
-Demand forecasting from POS and order history is one of the kinds of work Runink FACE does: it reads the records you already hold, produces a forecast at the level you ask for, and shows the records the forecast was built from. What it does not do is act on that forecast by itself — each proposed replenishment or reposition goes to a named person to approve, edit or reject. [Contact our logistics team](/#contact-form) if you want to see the mechanism against your own POS feed.
+Demand forecasting from POS and order history is one of the kinds of work Runink FACE (Fulfilment Autonomous Claims Engine) does: it reads the records you already hold, produces a forecast at the level you ask for, and shows the records the forecast was built from. What it does not do is act on that forecast by itself — each proposed replenishment or reposition goes to a named person to approve, edit or reject. [Contact our logistics team](/#contact-form) if you want to see the mechanism against your own POS feed.
 
 ---
 

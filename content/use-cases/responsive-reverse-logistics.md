@@ -13,7 +13,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Reverse logistics</p>
+<p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE (Fulfilment Autonomous Claims Engine) &middot; Reverse logistics</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
 This is a <strong class="text-stone-300">Runink FACE</strong> scenario, its returns and circular-economy side. What follows is what the product is built to do and how it would run against your own records. It is an illustration of the mechanism, not an account of a deployment. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">What FACE is</a>.
 </p>

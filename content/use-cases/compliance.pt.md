@@ -13,7 +13,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Conformidade e registros de auditoria</p>
+<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE (Fulfilment Autonomous Claims Engine) &middot; Conformidade e registros de auditoria</p>
 <p class="text-base text-stone-500 font-medium mb-10">Este é um cenário do <strong class="text-stone-300">Runink FACE</strong>. As conferências descritas aqui leem os registros que o FACE guarda dos seus embarques e dos seus relatórios, e fazem parte do próprio FACE.</p>
 
 <h2 id="em-resumo" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">Em Resumo</h2>

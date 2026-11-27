@@ -82,7 +82,7 @@ Three differences matter. Emissions move from something counted afterwards to so
 
 ---
 
-## 4. Where Runink FACE Sits on This Model
+## 4. Where Runink FACE (Fulfilment Autonomous Claims Engine) Sits on This Model
 
 {{< direct-answer >}}
 Runink FACE is built for the middle of this model and stops short of the top on purpose. It reads the records, works out what they mean together, and drafts the action — the short-pay, the claim rebuttal, the reallocation, the compliance note. The draft then waits in a queue for a named person to approve, edit or reject, and the decision is recorded against that person.

@@ -72,7 +72,7 @@ next:
   about: "Os cenários"
 
 ---
-## O Problema De Que O Runink FACE Parte
+## O Problema De Que O Runink FACE (Fulfilment Autonomous Claims Engine) Parte
 
 Todas as frentes acima têm o mesmo formato. Os dados de que você precisa já estão registrados em algum lugar do seu negócio. Estão em quatro sistemas, em quatro formatos, e juntá-los custa uma manhã que ninguém tem.
 
@@ -92,7 +92,7 @@ Aprovar é para encerrar o trabalho, não para começá-lo. A resposta nomeia o 
 
 ## Duas Coisas Que Vale Saber De Saída
 
-**Nenhum serviço de IA externo lê seus dados.** Os arquivos de pedido, os papéis de alfândega, as leituras dos sensores e o raciocínio sobre tudo isso rodam nas máquinas que o seu plano indica (os seus próprios servidores ou a sua conta de nuvem, ou as máquinas compartilhadas da Runink): o FACE roda sobre a plataforma Runink TIDDE, e é isso que faz disso uma propriedade de como ele foi construído, e não um ajuste que alguém precisa respeitar. Nada vai para um fornecedor de modelos de fora. É o tipo de resposta que uma revisão de segurança pede antes de deixar um fornecedor guardar os dados de pedido dela.
+**Nenhum serviço de IA externo lê seus dados.** Os arquivos de pedido, os papéis de alfândega, as leituras dos sensores e o raciocínio sobre tudo isso rodam nas máquinas que o seu plano indica (os seus próprios servidores ou a sua conta de nuvem, ou as máquinas compartilhadas da Runink): o FACE roda sobre a plataforma Runink TIDDE (Trusted Intelligence for Developer & Data Experience), e é isso que faz disso uma propriedade de como ele foi construído, e não um ajuste que alguém precisa respeitar. Nada vai para um fornecedor de modelos de fora. É o tipo de resposta que uma revisão de segurança pede antes de deixar um fornecedor guardar os dados de pedido dela.
 
 **A fila é onde você decide.** Cada item chega com o raciocínio dele e com os registros em que se apoia, então você pode ler por que foi proposto antes de aceitar. O que você aprova é o que é executado, e o item que você deixa quieto fica onde está. Que tipo de trabalho vale passar pela fila é pergunta que você responde na montagem, não um limite de valor que o software fiscalize por você.
 
@@ -100,4 +100,4 @@ Aprovar é para encerrar o trabalho, não para começá-lo. A resposta nomeia o 
 
 Nenhum dos cenários acima é resultado de cliente. Eles são escritos a partir do que o software foi feito para fazer, no vocabulário de quem carrega o problema, e não foram rodados contra os dados de cliente nenhum. Não há estudo de caso nem número nesta página, porque os números seriam nossos e os que importam são os seus.
 
-A Runink PULSE, o produto de análise de mercado, e a plataforma TIDDE sobre a qual o FACE roda são tratadas nos [papers delas](/pt/blog/whitepapers/). Elas não estão nesta página, e nenhuma das frentes acima é resultado que pertença a uma das duas.
+A Runink PULSE (Prescriptive Unified Lead & Social Engine), o produto de análise de mercado, e a plataforma TIDDE sobre a qual o FACE roda são tratadas nos [papers delas](/pt/blog/whitepapers/). Elas não estão nesta página, e nenhuma das frentes acima é resultado que pertença a uma das duas.

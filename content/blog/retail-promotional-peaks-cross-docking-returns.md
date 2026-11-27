@@ -109,7 +109,7 @@ Spare carrier capacity lets you move the load when your first choice declines. C
 
 None of that depends on new software. It depends on three facts, on the day: what is on each inbound trailer, which outbound order it is meant to fill, and how long each handover is actually taking. Most operations hold those three in three separate systems and only line them up afterwards, in the post-mortem. Closing that gap before the next promotion — even by hand, even at one site — is worth more than any tool bought in October.
 
-Runink FACE reads records of that kind across the systems that already hold them, and raises the mismatches as named items for someone to act on. It will not tell you what your peak cost you. That figure is yours to measure, and it is a good first one to have. The [Use Cases](/use-cases/) pages set out the mechanisms, or [Contact Us](/#contact-form).
+Runink FACE (Fulfilment Autonomous Claims Engine) reads records of that kind across the systems that already hold them, and raises the mismatches as named items for someone to act on. It will not tell you what your peak cost you. That figure is yours to measure, and it is a good first one to have. The [Use Cases](/use-cases/) pages set out the mechanisms, or [Contact Us](/#contact-form).
 
 ---
 

@@ -94,7 +94,7 @@ Moving from reactive returns processing to a managed reverse flow takes three th
 
 **Closing the loop.** Every return carries information: why it came back, what condition it was in, how long the decision took, and where the item finished. Fed back to buying, product and marketing, that information is what reduces the next quarter's return rate. Left in the returns system, it is just history.
 
-[Reverse logistics](/use-cases/responsive-reverse-logistics/) is one of the kinds of work Runink FACE does. It reads the return intake record against the disposition rule that applies to that item and its condition, and where the two do not line up it raises that return by name with a drafted disposition for someone to approve. The recovery value itself is not estimated for you: what a graded item is worth depends on the channel you can actually sell it into, and a number nobody measured sitting next to ones that were is how an estimate becomes a quoted fact.
+[Reverse logistics](/use-cases/responsive-reverse-logistics/) is one of the kinds of work Runink FACE (Fulfilment Autonomous Claims Engine) does. It reads the return intake record against the disposition rule that applies to that item and its condition, and where the two do not line up it raises that return by name with a drafted disposition for someone to approve. The recovery value itself is not estimated for you: what a graded item is worth depends on the channel you can actually sell it into, and a number nobody measured sitting next to ones that were is how an estimate becomes a quoted fact.
 
 ---
 

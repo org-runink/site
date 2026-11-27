@@ -95,7 +95,7 @@ The Improve phase stalls for a practical reason more often than an analytical on
 
 If your continuous improvement programme is full of findings and short of changes, the bottleneck is probably not your analysis. It is that every proposed change needs somewhere to run, and there is nowhere to run it.
 
-Runink FACE runs on hardware the operation owns. That is a property of how it is installed, not a separate feature. The [supply chain visibility use cases](/use-cases/) set out what it reads and what it hands to a person to decide. [Contact our operations team](/#contact-form) if you want to go through how it is deployed.
+Runink FACE (Fulfilment Autonomous Claims Engine) runs on hardware the operation owns. That is a property of how it is installed, not a separate feature. The [supply chain visibility use cases](/use-cases/) set out what it reads and what it hands to a person to decide. [Contact our operations team](/#contact-form) if you want to go through how it is deployed.
 
 ---
 

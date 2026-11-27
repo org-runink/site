@@ -95,7 +95,7 @@ Cold chain work comes down to three readings per load: what the temperature did,
 
 Mastering the food service supply chain takes more than insulated trailers and fast deliveries. It takes knowing, per load rather than per month, what the temperature actually did in transit, how much shelf life was consumed on the way, and which delivery window was missed as a result. Those three facts are almost always recorded — by the reefer telemetry, by the receiving scan, by the route log — and almost never read against each other in time to matter.
 
-That is the reading problem Runink FACE works on: comparing records held in separate systems against the rule that governs them, and raising what differs as a named load rather than a spoilage rate. The decision about what to do with a flagged load stays with your quality team. [Get in touch](/#contact-form) if you want to walk the mechanism through against your own reefer and receiving data.
+That is the reading problem Runink FACE (Fulfilment Autonomous Claims Engine) works on: comparing records held in separate systems against the rule that governs them, and raising what differs as a named load rather than a spoilage rate. The decision about what to do with a flagged load stays with your quality team. [Get in touch](/#contact-form) if you want to walk the mechanism through against your own reefer and receiving data.
 
 ---
 

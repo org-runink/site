@@ -36,7 +36,7 @@ product_subcategory: "Marketing, lead generation and sales outreach"
 # same commit (CONTENT.md rule 12). content/products/pulse.md stays English only.
 ---
 
-This is the price of Runink PULSE. You pay for each person who uses it, and the seat covers the work that person puts through it. You choose where it runs: on Runink's shared machines, in your own cloud account, or inside your own estate. Writing a second version of a campaign does not add to the price.
+This is the price of Runink PULSE (Prescriptive Unified Lead & Social Engine). You pay for each person who uses it, and the seat covers the work that person puts through it. You choose where it runs: on Runink's shared machines, in your own cloud account, or inside your own estate. Writing a second version of a campaign does not add to the price.
 
 {{< pricing-toggle >}}
 {

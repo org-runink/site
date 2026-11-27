@@ -111,7 +111,7 @@ Software can make the document easier to read across many shipments. It does not
 
 The bill of lading has lasted because it standardises trust between strangers. The friction in it is the part technology can address.
 
-**Runink FACE** works on the consequence rather than the document. When a consignment is held because a paper is missing or wrong, the charge starts running that day, and the entry sits in a queue nobody reads end to end. FACE takes the entry records — the hold reason, which documents are outstanding, how many days it has been held, the agreed per-day rate — and produces one item naming the entry, what is missing, and what the hold has cost so far, for a person to approve an action on. The arithmetic is fixed and stated; no model is involved in it. The legal positions stay with your counsel, and the three functions above are still where liability sits.
+**Runink FACE (Fulfilment Autonomous Claims Engine)** works on the consequence rather than the document. When a consignment is held because a paper is missing or wrong, the charge starts running that day, and the entry sits in a queue nobody reads end to end. FACE takes the entry records — the hold reason, which documents are outstanding, how many days it has been held, the agreed per-day rate — and produces one item naming the entry, what is missing, and what the hold has cost so far, for a person to approve an action on. The arithmetic is fixed and stated; no model is involved in it. The legal positions stay with your counsel, and the three functions above are still where liability sits.
 
 *Want to look at your own documents? [Book a consultation](/#contact-form).*
 

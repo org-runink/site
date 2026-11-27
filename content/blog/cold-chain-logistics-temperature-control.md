@@ -103,7 +103,7 @@ Excursions will keep happening on long multimodal journeys. The question is whet
 
 Moving from reading afterwards to reading as it arrives is an operations decision before it is a software one. Decide who is told, what that person may do without asking, and when a load is past saving.
 
-[Runink FACE](/use-cases/cold-chain-safety/) is built for that reading. It checks sensor data from refrigerated units as the stream arrives. A drift comes out with the unit named, the load on it, the reading that breached, and a corrective dispatch drafted for a person to approve. That is an illustration of a mechanism rather than an account of a deployment — the scenario has not been run against a customer's telemetry, and there are no figures here for what it would save.
+[Runink FACE (Fulfilment Autonomous Claims Engine)](/use-cases/cold-chain-safety/) is built for that reading. It checks sensor data from refrigerated units as the stream arrives. A drift comes out with the unit named, the load on it, the reading that breached, and a corrective dispatch drafted for a person to approve. That is an illustration of a mechanism rather than an account of a deployment — the scenario has not been run against a customer's telemetry, and there are no figures here for what it would save.
 
 ---
 
