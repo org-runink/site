@@ -25,9 +25,9 @@ what the app itself handles:
 *   **PULSE** (`org.runink.pulse`): sign-in, what you make in PULSE, connected
     accounts and voice commands are covered by
     [the PULSE privacy policy](/pulse-privacy/).
-*   **Runink TIDE** (`org.runink.tide`): sign-in, what you do in the console and
+*   **Runink TIDDE** (`org.runink.tide`): sign-in, what you do in the console and
     what stays on your device are covered by
-    [the TIDE privacy policy](/tide-privacy/).
+    [the TIDDE privacy policy](/tide-privacy/).
 *   **Luna** (`org.runink.luna`) handles a different kind of data and is
     covered by [the Luna privacy policy](/luna-privacy/), not by this one.
 
@@ -125,4 +125,4 @@ Do you have a question about this policy? Here is how to reach us.
 *   **Email:** contact@runink.org
 *   **Mailing Address:** Email us to ask for our current mailing address.
 
-*Last Updated: January 2026*
+*Last Updated: November 2026*
