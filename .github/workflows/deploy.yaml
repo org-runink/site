@@ -1,20 +1,17 @@
 # Build, gate and publish runink.org.
 #
-# WHERE IT RUNS (owner decision 2026-09-28: public repositories use GitHub-hosted runners;
-# only Runink's private repositories use the self-hosted ones, so public code never runs on them)
+# WHERE IT RUNS (owner, 2026-11-27: no GitHub-hosted runner anywhere; public repositories run
+# on Runink's isolated public pool, `public-ci` on rnk, as the unprivileged user rnkpublic)
 #
-#   * push to main, and pull requests from a branch of THIS repository: job `deploy`, on
-#     GitHub-hosted ubuntu-latest. Only a push to main deploys.
-#   * pull requests from a FORK: job `build-fork-pr`, GitHub-hosted ubuntu-latest,
-#     read-only token, no secrets (GitHub withholds them from fork runs), and the deploy
-#     steps are skipped.
-#     Both jobs run the SAME steps (the YAML anchor `site-steps` below), so a
-#     fork PR gets the identical build and gates.
+#   ONE job, `build, gate and deploy`, for every push to main and EVERY pull request,
+#   fork PRs included, so the required check always runs and is never skipped (a
+#   skipped required check counts as passing). Only a push to main deploys: every
+#   deploy step is gated on it. A fork run gets a read-only token and no secrets
+#   from GitHub itself, whatever this file says.
 #
-# The `if:` guards route unmodified workflows correctly. A fork PR can also edit
-# this file, so the real control for fork code is the repository setting
-# "Require approval for all external contributors" (a maintainer reads the
-# workflow diff before approving the run).
+# A fork PR can edit this file, so the real control for fork code is the repository
+# setting "Require approval for all outside collaborators" (a maintainer reads the
+# workflow diff before approving the run) plus the pool's isolation.
 #
 # The steps install Node, pnpm, Hugo and Go themselves (pinned), so the job needs nothing
 # preinstalled beyond git and tar.
@@ -34,8 +31,6 @@ concurrency:
 jobs:
   deploy:
     name: build, gate and deploy
-    # push to main, or a pull request whose head branch lives in this repository.
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: [self-hosted, public-ci]
     timeout-minutes: 30
 
@@ -52,7 +47,7 @@ jobs:
     permissions:
       contents: write
 
-    steps: &site-steps
+    steps:
       - name: Checkout repository
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         env:
@@ -538,19 +533,6 @@ jobs:
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: ./docs
-
-  # Pull requests from forks: the same steps, on a GitHub-hosted runner with a
-  # read-only token. Every deploy step above is gated on a push to main, so
-  # nothing is published from here, and repository secrets are not passed to
-  # fork runs (the three HUGO_PARAMS_* URLs are empty there, as they always were).
-  build-fork-pr:
-    name: build and gate (fork PR, GitHub-hosted)
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
-    runs-on: [self-hosted, public-ci]
-    timeout-minutes: 30
-    permissions:
-      contents: read
-    steps: *site-steps
 
   # Native Pages deployment, only when SITE_PAGES_SOURCE is 'actions' (see the
   # deploy steps above). deploy-pages authenticates with the job's OIDC token,
