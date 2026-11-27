@@ -184,7 +184,7 @@ Two things: the definitions have to be fed by the events rather than maintained 
 
 The aim is that any figure can be questioned and the answer is records, not a definition. That is what makes a measure arguable in a room full of people who own different parts of it.
 
-Runink FACE takes the narrow version of this seriously rather than the broad one. When it raises a finding, the finding arrives with the rule it breached and the records behind it attached. The person deciding reads the evidence instead of trusting a score. That is a different goal from watching everything.
+Runink FACE (Fulfilment Autonomous Claims Engine) takes the narrow version of this seriously rather than the broad one. When it raises a finding, the finding arrives with the rule it breached and the records behind it attached. The person deciding reads the evidence instead of trusting a score. That is a different goal from watching everything.
 
 ---
 

@@ -13,7 +13,7 @@ product_subcategory: "Marketing, geração de leads e prospecção comercial"
 # comments applies here.
 ---
 
-Este é o preço do Runink PULSE. Você paga por cada pessoa que o usa, e o assento cobre o trabalho que essa pessoa faz nele. Você escolhe onde ele roda: nas máquinas compartilhadas do Runink, na sua própria conta na nuvem ou dentro do seu próprio ambiente. Escrever uma segunda versão de uma campanha não aumenta o preço.
+Este é o preço do Runink PULSE (Prescriptive Unified Lead & Social Engine). Você paga por cada pessoa que o usa, e o assento cobre o trabalho que essa pessoa faz nele. Você escolhe onde ele roda: nas máquinas compartilhadas do Runink, na sua própria conta na nuvem ou dentro do seu próprio ambiente. Escrever uma segunda versão de uma campanha não aumenta o preço.
 
 {{< pricing-toggle >}}
 {

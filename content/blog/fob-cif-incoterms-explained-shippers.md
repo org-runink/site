@@ -111,7 +111,7 @@ For high-value shipments where cover and carrier performance matter, FOB gives y
 
 Either way the discipline is the same. You need to see the cargo, know where your liability sits at each handoff, and act before dwell, a cover gap or a claim dispute eats the margin.
 
-The practical test is whether anyone in your business can state, for a consignment currently in transit, which Incoterm governs it, where the risk transfer point falls, and whether that point has been passed. In most operations the Incoterm lives in the contract file and the cargo position lives in a carrier portal, and nobody reads the two together until a claim forces it. [Runink FACE](/products/face/) reads records of that kind out of the systems that already hold them and raises the mismatches as named consignments; the [compliance](/use-cases/compliance/) and [supply chain visibility](/use-cases/supply-chain-visibility/) pages set out the mechanism.
+The practical test is whether anyone in your business can state, for a consignment currently in transit, which Incoterm governs it, where the risk transfer point falls, and whether that point has been passed. In most operations the Incoterm lives in the contract file and the cargo position lives in a carrier portal, and nobody reads the two together until a claim forces it. [Runink FACE (Fulfilment Autonomous Claims Engine)](/products/face/) reads records of that kind out of the systems that already hold them and raises the mismatches as named consignments; the [compliance](/use-cases/compliance/) and [supply chain visibility](/use-cases/supply-chain-visibility/) pages set out the mechanism.
 
 ---
 

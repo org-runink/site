@@ -13,7 +13,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE &middot; Cobertura de estoque</p>
+<p class="text-[10px] font-black uppercase tracking-[0.25em] text-stone-500 mt-4 mb-3">Runink FACE (Fulfilment Autonomous Claims Engine) &middot; Cobertura de estoque</p>
 <p class="text-sm text-stone-500 font-medium mb-10 max-w-3xl">
 este é um cenário do <strong class="text-stone-300">Runink FACE</strong>, o lado de abastecimento dele. O que vem a seguir é o que o produto foi feito para fazer e como ele rodaria contra os seus próprios registros. É uma ilustração do mecanismo, não o relato de uma implantação. <a href="/blog/whitepapers/runink-face/" class="underline decoration-stone-700 hover:text-stone-300">O que é o FACE</a>.
 </p>

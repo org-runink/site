@@ -103,7 +103,7 @@ An address that has failed repeatedly is not a surprise. It is a record you alre
 
 The same history helps with capacity. A volume projection by postcode area, a few days ahead, lets you move vans, adjust shifts and book extra drivers before the spike lands rather than during it.
 
-Two capabilities sit underneath all of this, and they are worth separating. One is [demand forecasting](/use-cases/demand-forecasting/) — a volume projection by area, with the history it came from attached, so a planner can argue with it. The other is [route optimization](/use-cases/route-optimization/) — the measured distance and travel time for a leg under current conditions, cheap enough to ask again after lunch. Runink FACE does both. Neither prints a saving next to the answer. The routing provider does not return one, and an invented figure beside two measured ones is how an estimate gets quoted back as a fact.
+Two capabilities sit underneath all of this, and they are worth separating. One is [demand forecasting](/use-cases/demand-forecasting/) — a volume projection by area, with the history it came from attached, so a planner can argue with it. The other is [route optimization](/use-cases/route-optimization/) — the measured distance and travel time for a leg under current conditions, cheap enough to ask again after lunch. Runink FACE (Fulfilment Autonomous Claims Engine) does both. Neither prints a saving next to the answer. The routing provider does not return one, and an invented figure beside two measured ones is how an estimate gets quoted back as a fact.
 
 ---
 

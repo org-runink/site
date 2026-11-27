@@ -130,7 +130,7 @@ The route from spreadsheets to automated decisions is real. It needs operational
 
 The hardest step is the last one: moving from seeing the problem to acting on it. Most teams stall there, not because the software does not exist, but because acting on a record means trusting it, and trust has to be earned phase by phase.
 
-[Runink FACE](/products/face/) is built for that step. It reads the records an operation already holds, compares what it finds against the rules that govern it, and puts one drafted action in front of the person who can approve it. It replaces none of the systems underneath, and it acts on nothing without that approval.
+[Runink FACE (Fulfilment Autonomous Claims Engine)](/products/face/) is built for that step. It reads the records an operation already holds, compares what it finds against the rules that govern it, and puts one drafted action in front of the person who can approve it. It replaces none of the systems underneath, and it acts on nothing without that approval.
 
 If your programme has stalled at dashboards, the first thing to establish is not which product to buy. It is how long your operation takes today to go from something being recorded to somebody acting on it. Few operations have ever counted it, and it is usually where the cost sits. [Talk to us](/#contact-form) if it would help to work it out.
 

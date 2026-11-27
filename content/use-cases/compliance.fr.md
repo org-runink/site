@@ -12,7 +12,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Conformité et pistes d'audit</p>
+<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE (Fulfilment Autonomous Claims Engine) &middot; Conformité et pistes d'audit</p>
 <p class="text-base text-stone-500 font-medium mb-10">Ceci est un scénario pour <strong class="text-stone-300">Runink FACE</strong>. Les contrôles décrits ici lisent les enregistrements que FACE tient de vos envois et de vos rapports, et ils font partie de FACE lui-même.</p>
 
 <h2 id="en-bref" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Bref</h2>

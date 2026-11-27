@@ -79,7 +79,7 @@ next:
     <h2 class="text-3xl md:text-4xl font-bold text-ink mb-6">Agents draft. A named person decides.</h2>
     <div class="text-lg text-ink-2 leading-relaxed space-y-5">
       <p>Runink's agents read records and write drafts: a claim file, a code fix, a post, a reply. The draft waits. A named person approves it, edits it or rejects it, and the record keeps who that was and when.</p>
-      <p>In Runink TIDDE, those decisions go into an audit chain. Each entry is linked to the one before it, so an entry that was changed, removed or moved out of order shows up. Anyone signed in to the TIDDE console can press <em>Verify now</em> and have the whole chain checked. Reading the entries themselves is kept to the administrators you name.</p>
+      <p>In Runink TIDDE (Trusted Intelligence for Developer & Data Experience), those decisions go into an audit chain. Each entry is linked to the one before it, so an entry that was changed, removed or moved out of order shows up. Anyone signed in to the TIDDE console can press <em>Verify now</em> and have the whole chain checked. Reading the entries themselves is kept to the administrators you name.</p>
       <p>Two things act on their own, each inside a fixed limit:</p>
       <ul class="list-disc pl-6 space-y-3">
         <li><strong class="text-ink">FACE looks after its own health.</strong> When part of FACE stops responding, it can restart it, cut off a dependency that keeps failing, roll back the most recent change, or add capacity. It picks only from that fixed list. It never deletes data, shuts a machine down or turns off a security control. When it is unsure, it tells a person instead of acting. An operator can switch the automatic part off.</li>

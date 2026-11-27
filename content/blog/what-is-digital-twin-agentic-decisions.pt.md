@@ -86,7 +86,7 @@ Os passos de um a oito são leitura e raciocínio. O passo nove é diferente em 
 Os passos de um a oito são raciocínio, e raciocínio pode rodar sem supervisão. O passo nove é um ato: move dinheiro, altera um compromisso com um cliente, ou cria um registro legal. Traçar a linha entre os dois é uma decisão de governança, e deve ser tomada antes de escolher o software, e não descoberta depois.
 {{< /direct-answer >}}
 
-Esta é a questão de projeto que o Runink FACE responde de um jeito específico. O FACE lê os registros que uma operação já mantém, calcula o que o quadro combinado significa, e redige a ação — o pagamento parcial, a contestação de sinistro, a realocação, a nota de conformidade. O rascunho então espera numa fila para que uma pessoa com nome aprove, edite ou rejeite, e a decisão fica registrada no nome dessa pessoa.
+Esta é a questão de projeto que o Runink FACE (Fulfilment Autonomous Claims Engine) responde de um jeito específico. O FACE lê os registros que uma operação já mantém, calcula o que o quadro combinado significa, e redige a ação — o pagamento parcial, a contestação de sinistro, a realocação, a nota de conformidade. O rascunho então espera numa fila para que uma pessoa com nome aprove, edite ou rejeite, e a decisão fica registrada no nome dessa pessoa.
 
 Essa é uma afirmação mais estreita do que a categoria costuma fazer, e é estreita de propósito. Em sinistros, aduana e pagamento, o ato carrega responsabilidade, e responsabilidade não se transfere para um software.
 

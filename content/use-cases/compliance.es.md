@@ -12,7 +12,7 @@ author: "Runink"
 {{< section-container class="py-8" >}}
 <div class="max-w-5xl mx-auto px-4">
 
-<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE &middot; Cumplimiento y registros de auditoría</p>
+<p class="text-xs font-black uppercase tracking-[0.25em] text-stone-500 mb-2">Runink FACE (Fulfilment Autonomous Claims Engine) &middot; Cumplimiento y registros de auditoría</p>
 <p class="text-base text-stone-500 font-medium mb-10">Este es un escenario de <strong class="text-stone-300">Runink FACE</strong>. Las comprobaciones que se describen aquí leen los registros que FACE guarda de sus envíos y de sus informes, y son parte del propio FACE.</p>
 
 <h2 id="en-resumen" class="text-3xl font-black italic tracking-tighter uppercase !text-white text-white drop-shadow-md mb-6 mt-8">En Resumen</h2>

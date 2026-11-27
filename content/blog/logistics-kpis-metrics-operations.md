@@ -109,7 +109,7 @@ The useful job is narrow: read the same records your reports read, compare each 
 
 The hard part is not picking measures. It is keeping them accurate across split systems: transport, warehouse, yard, planning, carrier EDI feeds, and telemetry from equipment.
 
-[Runink FACE](/products/face/) reads across those sources and compares each record against the rule that governs it. An outlier then arrives as a named lane, carrier or facility rather than as a moved average. The measures, and what counts as acceptable on each, stay yours to set.
+[Runink FACE (Fulfilment Autonomous Claims Engine)](/products/face/) reads across those sources and compares each record against the rule that governs it. An outlier then arrives as a named lane, carrier or facility rather than as a moved average. The measures, and what counts as acceptable on each, stay yours to set.
 
 The distinction worth keeping is between a report that states a rate and a process that produces an exception someone has to close. A monthly deck is the first. It is comfortable, and nobody can act on it. [Connect with the Runink team](/#contact-form) if you want to talk through which of your ten could be read record by record instead.
 

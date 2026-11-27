@@ -2085,7 +2085,7 @@ automation setup rather than an island in it.
 
 FACE is one of Runink's products, each sold on its own. Runink PULSE:
 Prescriptive Unified Lead & Social Engine is a digital-marketing engine built
-the same way, and both run on Runink TIDDE: Trusted Intelligence for Developer
+the same way, and both run on Runink TIDDE (Trusted Intelligence for Developer & Data Experience): Trusted Intelligence for Developer
 & Data Experience, the platform that makes the installation, identity and separation properties
 described in this document consistent across them.
 

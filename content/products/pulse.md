@@ -138,7 +138,7 @@ The owner of a small or mid-size business, and the people who sell and market fo
 </p>
 
 <p class="text-xl text-ink-2 leading-relaxed">
-PULSE puts that work in one place. It is a separate product from FACE and from Runink TIDDE, sold on its own.
+PULSE puts that work in one place. It is a separate product from FACE and from Runink TIDDE (Trusted Intelligence for Developer & Data Experience), sold on its own.
 </p>
 </div>
 
@@ -152,7 +152,7 @@ PULSE puts that work in one place. It is a separate product from FACE and from R
 >}}
 {{< card
     icon="map"
-    title="Runink FACE"
+    title="Runink FACE (Fulfilment Autonomous Claims Engine)"
     description="A separate product, not a PULSE feature. Logistics, fulfilment, claims, returns and the compliance work around them. It has its own paper."
     link="/blog/whitepapers/runink-face/"
 >}}

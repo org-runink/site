@@ -29,11 +29,11 @@ date: "2026-08-11T00:00:00Z"
     <p class="text-stone-400 mb-10 max-w-3xl">
       Four separate things live on this page. <strong class="text-stone-200">FACE by Runink</strong>
       is our main product. It reads your logistics records on its own and drafts the
-      action; a named person approves it. <strong class="text-stone-200">Runink PULSE</strong> is a different
+      action; a named person approves it. <strong class="text-stone-200">Runink PULSE (Prescriptive Unified Lead & Social Engine)</strong> is a different
       product for marketing teams, listed here because people ask where to get it, not
       because it is part of FACE: it opens in a web browser. The
       <strong class="text-stone-200">Runink Server</strong> image is neither: it
-      is the server image carrying Runink TIDDE, a separate product in its own right, which is the answer to
+      is the server image carrying Runink TIDDE (Trusted Intelligence for Developer & Data Experience), a separate product in its own right, which is the answer to
       where your data is processed and who can see it. <strong class="text-stone-200">Runink River</strong> is the
       open-source developer workstation the server image is built on.
     </p>

@@ -100,7 +100,7 @@ Moving from periodic DMAIC projects to checks that run continuously is a change 
 
 Periodic, backward-looking process improvement is a poor fit for a network that changes daily. The shift worth making is from improvement projects to continuous reading. The shift to be careful about is the one from continuous reading to unattended action, because that is the point at which accountability for a decision quietly changes hands.
 
-The part worth buying now is the continuous reading and the drafted proposal. The part to hold back on is unattended execution, because accountability for a reroute or a short-pay does not move to the software that proposed it. [Runink FACE](/products/face/) is built to that split: the reading and the reasoning run continuously, and each resulting action waits for a named person to approve, edit or reject it.
+The part worth buying now is the continuous reading and the drafted proposal. The part to hold back on is unattended execution, because accountability for a reroute or a short-pay does not move to the software that proposed it. [Runink FACE (Fulfilment Autonomous Claims Engine)](/products/face/) is built to that split: the reading and the reasoning run continuously, and each resulting action waits for a named person to approve, edit or reject it.
 
 [Contact Runink](/#contact-form) if you want to go through where that line would fall in your own operation.
 

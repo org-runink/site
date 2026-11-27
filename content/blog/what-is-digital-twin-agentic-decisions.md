@@ -86,7 +86,7 @@ Steps one to eight are reading and reasoning. Step nine is different in kind, an
 Steps one to eight are reasoning, and reasoning can run unattended. Step nine is an act: it moves money, changes a commitment to a customer, or creates a legal record. Drawing the line between the two is a governance decision, and it should be made before the software is chosen rather than discovered afterwards.
 {{< /direct-answer >}}
 
-This is the design question Runink FACE answers in one specific way. FACE reads the records an operation already holds, works out what the combined picture means, and drafts the action — the short-pay, the claim rebuttal, the reallocation, the compliance note. The draft then waits in a queue for a named person to approve, edit or reject, and the decision is recorded against that person.
+This is the design question Runink FACE (Fulfilment Autonomous Claims Engine) answers in one specific way. FACE reads the records an operation already holds, works out what the combined picture means, and drafts the action — the short-pay, the claim rebuttal, the reallocation, the compliance note. The draft then waits in a queue for a named person to approve, edit or reject, and the decision is recorded against that person.
 
 That is a narrower claim than the category usually makes, and it is narrow on purpose. In claims, customs and payment, the act carries liability, and liability does not transfer to software.
 

@@ -93,7 +93,7 @@ The best defence is not negotiating longer free time. It is closing the informat
 
 Note what each one does and does not do. The countdown prevents charges that were about to start. The prediction improves the odds that a pickup lines up with the box being available. The invoice check recovers only charges the records show were invalid; it does not negotiate, and it will not recover a valid charge. A programme sold as one percentage saving is hiding which of the three it is doing.
 
-*The [Runink FACE use cases](/use-cases/) set out how accessorial charges are read against the contract and the operational record, and what is handed to a person to decide.*
+*The [Runink FACE (Fulfilment Autonomous Claims Engine) use cases](/use-cases/) set out how accessorial charges are read against the contract and the operational record, and what is handed to a person to decide.*
 
 ---
 

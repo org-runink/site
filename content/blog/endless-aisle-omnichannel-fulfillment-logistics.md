@@ -92,7 +92,7 @@ The endless aisle works when order routing, inventory counts and cross-dock flow
 
 The "endless aisle" is now a baseline expectation rather than a differentiator, and the pressure lands on fulfillment operations. For a VP of Retail Supply Chain the mandate is to offer the whole catalogue, ship it accurately, and keep the cost per order in hand. That means the DCs, the transit network and the stores have to work off the same numbers rather than their own.
 
-Runink FACE works on the fulfillment side of this: it reads order, inventory and carrier records out of the systems that already hold them, compares each one against the rule that governs it, and puts a drafted action in front of the person who can approve it. No action is taken without that approval. [Contact the Runink team](/#contact-form) if you want to walk through the mechanism against your own order flow.
+Runink FACE (Fulfilment Autonomous Claims Engine) works on the fulfillment side of this: it reads order, inventory and carrier records out of the systems that already hold them, compares each one against the rule that governs it, and puts a drafted action in front of the person who can approve it. No action is taken without that approval. [Contact the Runink team](/#contact-form) if you want to walk through the mechanism against your own order flow.
 
 ---
 

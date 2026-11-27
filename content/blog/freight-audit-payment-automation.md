@@ -83,7 +83,7 @@ Peak season makes it worse. When volumes rise in Q4 or during a promotion, the b
 Automating the audit moves the work from sampling to comparison. Every invoice is read and every line is compared against the rate in the contract that governs it, before payment rather than after, so a discrepancy arrives as a named line item with a variance and a clause attached.
 {{< /direct-answer >}}
 
-Automation is not the manual process run faster. It changes what gets examined. Reading invoices against the contract that governs them is one of the kinds of work [Runink FACE](/products/face/) does, and five things distinguish it from a quicker manual review:
+Automation is not the manual process run faster. It changes what gets examined. Reading invoices against the contract that governs them is one of the kinds of work [Runink FACE (Fulfilment Autonomous Claims Engine)](/products/face/) does, and five things distinguish it from a quicker manual review:
 
 **Every invoice, not a sample.** Each invoice, each line item and each accessorial charge is compared with the contracted rate. There is no sample to draw and no backlog to work down. A discrepancy is raised before payment rather than found in a quarterly reconciliation months later.
 
