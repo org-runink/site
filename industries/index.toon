@@ -1,0 +1,13 @@
+section_context[3]:
+  - title: "Logistics \u0026 Supply Chain"
+    permalink: "https://runink.org/industries/logistics-supply-chain/"
+    date: "2026-09-07T00:00:00Z"
+    description: "Held customs entries, freight claims that expire unfiled, cold chain read after the write-off, and demand that grew on the way up the chain. How Runink puts the evidence in front of the person who can act on it."
+  - title: "Insurance"
+    permalink: "https://runink.org/industries/insurance/"
+    date: "2026-09-07T00:00:00Z"
+    description: "Claims decisioning, reserving and reinsurance recovery, delegated authority and conduct evidence. How Runink FACE sets the rule as written beside the logic your systems actually run, and sorts every rule into aligned, drift, shadow or missing."
+  - title: "Marketing"
+    permalink: "https://runink.org/industries/marketing/"
+    date: "2026-09-07T00:00:00Z"
+    description: "Weeks-long turnaround, a stack that does not talk to itself, and effort that never compounds. Runink PULSE puts one diagnosis behind every channel, with a named person approving every draft."

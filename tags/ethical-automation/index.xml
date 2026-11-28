@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ethical Automation on Runink</title>
+    <link>https://runink.org/tags/ethical-automation/</link>
+    <description>Recent content in Ethical Automation on Runink</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2026 06:45:10 -0400</lastBuildDate>
+    <atom:link href="https://runink.org/tags/ethical-automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Securing the Future of Automated Systems: How Information Security Enables Ethical Automation in Logistics</title>
+      <link>https://runink.org/blog/information-security-ethical-automation-logistics/</link>
+      <pubDate>Sat, 28 Mar 2026 05:00:45 +0000</pubDate>
+      <guid>https://runink.org/blog/information-security-ethical-automation-logistics/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-key-takeaways-from-this-executive-summary&#34;&gt;What are the Key Takeaways from this Executive Summary?&lt;/h2&gt;&#xA;&lt;div class=&#34;aeo-direct-answer&#34; id=&#34;answer-0&#34;&gt;&#xA;  &lt;p class=&#34;aeo-direct-answer__label&#34;&gt;Quick answer&lt;/p&gt;&#xA;  &lt;div class=&#34;aeo-direct-answer__text&#34;&gt;Automation can only be trusted as far as the data under it can be trusted. That makes information security the first question, not the last one. In logistics it comes down to four things: knowing the data has not been tampered with, knowing who is allowed to use the system, keeping personal data out of it where you can, and being able to show afterwards how an answer was reached.&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Security comes before ethics, in order of work:&lt;/strong&gt; a system fed with data anyone can alter will produce answers nobody can defend.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Identity theft is now a governance question:&lt;/strong&gt; Denmark has proposed giving citizens rights over their own face and voice, which tells you where regulators are heading.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data integrity keeps forecasts honest:&lt;/strong&gt; checksums, version control and a record of where each input came from are what stand between a routing model and a poisoned input.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Access control limits the damage:&lt;/strong&gt; multi-factor authentication and narrow permissions mean a stolen password buys less.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Privacy by design is cheaper than privacy by retrofit:&lt;/strong&gt; decide what personal data the system never needs before you build it.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Automation is now doing ordinary work in ordinary businesses: drafting documents, reading records, sorting exceptions. It also brings risks that are new in kind. An automated system can produce a wrong answer confidently, expose data it should not have seen, or be used to impersonate someone. In logistics, where one wrong instruction moves physical goods, those risks are operational rather than theoretical.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
