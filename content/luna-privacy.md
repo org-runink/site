@@ -57,9 +57,12 @@ removed the same way.
   step goals, and level-up records.
 * Training plans and nutrition plans, including the calorie and macronutrient
   targets derived from them.
-* Your body mass, when you give it, is used to compute nutrition targets. It is
-  not stored as a separate field, but it will appear inside whatever you typed
-  and inside the plan's written rationale.
+* Your body measurements, when you give them, are stored as records in your profile: weight, body fat and the other
+  figures a scale or Health Connect reports, tape-measure circumferences (waist, hip, chest, neck, thigh, upper arm)
+  and two ratios the server works out from them (waist to height, waist to hip). Each record says where it came from:
+  typed by you, read from a photo, or from Health Connect. Nothing is filled in for you, and a ratio is worked out only
+  when both figures it needs are there. Your body mass is also used to compute nutrition targets, and it will appear
+  inside whatever you typed and inside the plan's written rationale.
 
 ### Photos and video
 
@@ -67,6 +70,15 @@ removed the same way.
   still frames — are sent to our servers, read by our own vision model, and
   then discarded. **We do not keep the image.** What we keep is the resulting
   text (for example "Meal analysis: …"), stored as part of your conversation.
+* **Photos that read a number.** A photo of a nutrition label, of a tape measure held against you, or of the screen of a
+  smart scale or a ring's app is sent to our servers and read by our own vision model for the numbers printed on it,
+  then discarded: **we do not keep the image**. For a tape measure you say which part of the body it is for; Luna never
+  decides that from the picture. Nothing from these reads is saved until you have looked at it and confirmed it, and
+  a scale or ring screen is read figure by figure, so you can leave out any one. A score a vendor prints (a sleep or
+  readiness score, for example) is not read.
+* **Documents and animals or plants.** A document you attach (for example a PDF of a plan, a resume or a program sheet) is
+  turned into page images on your phone, sent to our vision model and used for that reply; a photo of an animal or a
+  plant is read the same way. We do not keep these images either.
 * Photos are normally resized and re-encoded before upload, which removes
   camera metadata such as GPS tags. If the app cannot decode the file (some
   iPhone HEIC photos), the **original file is uploaded unchanged, including any
